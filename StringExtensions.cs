@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -31,6 +32,22 @@ namespace Stringier {
 		/// <param name="RegexOptions">A bitwise combination of the enumeration values that specify options for matching.</param>
 		/// <returns>A collection of the Match objects found by the search. If no matches are found, the method returns an empty collection object.</returns>
 		public static MatchCollection Matches(this String String, String Pattern, RegexOptions RegexOptions = RegexOptions.None) => Regex.Matches(String, Pattern, RegexOptions);
+
+		/// <summary>
+		/// Converts the specified string to title case (except for words that are entirely in uppercase, which are considered to be acronyms).
+		/// </summary>
+		/// <param name="String">The string to convert to title case.</param>
+		/// <param name="Culture">A predefined CultureInfo identifier, LCID property of an existing CultureInfo object, or Windows-only culture identifier.</param>
+		/// <returns>The specified string converted to title case.</returns>
+		public static String ToTitleCase(this String String, Int32 Culture) => new CultureInfo(Culture).TextInfo.ToTitleCase(String);
+
+		/// <summary>
+		/// Converts the specified string to title case (except for words that are entirely in uppercase, which are considered to be acronyms).
+		/// </summary>
+		/// <param name="String">The string to convert to title case.</param>
+		/// <param name="Culture">A predefined CultureInfo name, Name of an existing CultureInfo, or Windows-only culture name. name is not case-sensitive.</param>
+		/// <returns>The specified string converted to title case.</returns>
+		public static String ToTitleCase(this String String, String Culture) => new CultureInfo(Culture).TextInfo.ToTitleCase(String);
 
 	}
 }
