@@ -33,6 +33,15 @@ namespace Stringier {
 		/// <returns>A collection of the Match objects found by the search. If no matches are found, the method returns an empty collection object.</returns>
 		public static MatchCollection Matches(this String String, String Pattern, RegexOptions RegexOptions = RegexOptions.None) => Regex.Matches(String, Pattern, RegexOptions);
 
+		/// <summary>
+		/// In a specified input string, replaces all strings that match a specified regular expression with a specified replacement string. Specified options modify the matching operation.
+		/// </summary>
+		/// <param name="String">The string to search for a match.</param>
+		/// <param name="Pattern">The regular expression pattern to match.</param>
+		/// <param name="Replacement">The replacement string.</param>
+		/// <param name="RegexOptions">A bitwise combination of the enumeration values that provide options for matching.</param>
+		/// <returns>A new string that is identical to the input string, except that the replacement string takes the place of each matched string. If pattern is not matched in the current instance, the method returns the current instance unchanged.</returns>
+		public static String Replace(this String String, String Pattern, String Replacement, RegexOptions RegexOptions = RegexOptions.None) => Regex.Replace(String, Pattern, Replacement, RegexOptions);
 
 		/// <summary>
 		/// Converts the specified string to title case (except for words that are entirely in uppercase, which are considered to be acronyms).
