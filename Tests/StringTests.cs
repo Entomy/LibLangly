@@ -16,6 +16,8 @@ namespace Tests {
 		[TestMethod]
 		public void Clean() {
 			Assert.AreEqual("Hello World", "Hello  World".Clean());
+			Assert.AreEqual("Hello World", "Hello       World".Clean());
+			Assert.AreEqual("Hello World", "  Hello    World ".Clean());
 		}
 
 		[TestMethod]
@@ -34,6 +36,8 @@ namespace Tests {
 		public void Words() {
 			Assert.AreEqual("Hello", "Hello World".Words()[0]);
 			Assert.AreEqual("World", "Hello World".Words()[1]);
+			Assert.AreEqual("Hello", " Hello   World".Words()[0]);
+			Assert.AreEqual("World", " Hello   World".Words()[1]);
 		}
 
 	}

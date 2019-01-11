@@ -50,7 +50,7 @@ namespace System {
 		/// <param name="Pattern">The regular expression pattern to match.</param>
 		/// <param name="RegexOptions">A bitwise combination of the enumeration values that provide options for matching.</param>
 		/// <returns>true if the regular expression finds a match; otherwise, false.</returns>
-		public static Boolean IsMatch(this String String, String Pattern, RegexOptions RegexOptions = RegexOptions.None) => Regex.IsMatch(String, Pattern, RegexOptions);
+		public static Boolean IsMatch(this String String, String Pattern, RegexOptions RegexOptions) => Regex.IsMatch(String, Pattern, RegexOptions);
 
 		/// <summary>
 		/// Searches an input string for a substring that matches a regular expression pattern and returns the first occurrence as a single Match object.
@@ -59,7 +59,7 @@ namespace System {
 		/// <param name="Pattern">The regular expression pattern to match.</param>
 		/// <param name="RegexOptions">A bitwise combination of the enumeration values that provide options for matching.</param>
 		/// <returns>An object that contains information about the match.</returns>
-		public static Match Match(this String String, String Pattern, RegexOptions RegexOptions = RegexOptions.None) => Regex.Match(String, Pattern, RegexOptions);
+		public static Match Match(this String String, String Pattern, RegexOptions RegexOptions) => Regex.Match(String, Pattern, RegexOptions);
 
 		/// <summary>
 		/// Searches an input string for all occurrences of a regular expression and returns all the matches.
@@ -68,7 +68,7 @@ namespace System {
 		/// <param name="Pattern">The regular expression pattern to match.</param>
 		/// <param name="RegexOptions">A bitwise combination of the enumeration values that specify options for matching.</param>
 		/// <returns>A collection of the Match objects found by the search. If no matches are found, the method returns an empty collection object.</returns>
-		public static MatchCollection Matches(this String String, String Pattern, RegexOptions RegexOptions = RegexOptions.None) => Regex.Matches(String, Pattern, RegexOptions);
+		public static MatchCollection Matches(this String String, String Pattern, RegexOptions RegexOptions) => Regex.Matches(String, Pattern, RegexOptions);
 
 		/// <summary>
 		/// Count all occurences of <paramref name="CharToCount"/> in <paramref name="String"/>
