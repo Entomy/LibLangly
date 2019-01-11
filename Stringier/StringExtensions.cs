@@ -26,7 +26,6 @@ namespace System {
 				i++;
 				j += Size;
 			}
-			Console.WriteLine("Result: " + String.Join(",", Result));
 			return Result;
 		}
 
