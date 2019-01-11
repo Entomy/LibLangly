@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Globalization;
-using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
 
 namespace System {
@@ -51,6 +51,21 @@ namespace System {
 		/// <param name="RegexOptions">A bitwise combination of the enumeration values that provide options for matching.</param>
 		/// <returns>true if the regular expression finds a match; otherwise, false.</returns>
 		public static Boolean IsMatch(this String String, String Pattern, RegexOptions RegexOptions = RegexOptions.None) => Regex.IsMatch(String, Pattern, RegexOptions);
+
+		/// <summary>
+		/// Join words within the <paramref name="String"/> together without spaces
+		/// </summary>
+		/// <param name="String">String to join</param>
+		/// <returns>Joined string</returns>
+		public static String JoinWords(this String String) => String.Join("", String.Split(' '));
+
+		/// <summary>
+		/// Join words within the <paramref name="String"/> together with <paramref name="Separator"/>
+		/// </summary>
+		/// <param name="String">String to join</param>
+		/// <param name="Separator">String to use as a separator between words</param>
+		/// <returns>Joined string</returns>
+		public static String JoinWords(this String String, String Separator) => String.Join(Separator, String.Split(' '));
 
 		/// <summary>
 		/// Searches an input string for a substring that matches a regular expression pattern and returns the first occurrence as a single Match object.
