@@ -111,6 +111,54 @@ namespace System {
 		public static String Replace(this String String, String Pattern, String Replacement, RegexOptions RegexOptions = RegexOptions.None) => Regex.Replace(String, Pattern, Replacement, RegexOptions);
 
 		/// <summary>
+		/// Converts the specified string to Pascal case (except for words that are entirely in uppercase, which are considered to be acronyms).
+		/// </summary>
+		/// <param name="String">The string to convert to Pascal case.</param>
+		/// <returns>The specified string converted to Pascal case.</returns>
+		public static String ToPascalCase(this String String) {
+			String Result = "";
+			foreach (String S in String.Words()) {
+				Result += S.ToTitleCase();
+			}
+			return Result;
+		}
+
+		/// <summary>
+		/// Converts the specified string to Pascal case (except for words that are entirely in uppercase, which are considered to be acronyms).
+		/// </summary>
+		/// <param name="String">The string to convert to Pascal case.</param>
+		/// <param name="Culture">A predefined CultureInfo identifier, LCID property of an existing CultureInfo object, or Windows-only culture identifier.</param>
+		/// <returns>The specified string converted to Pascal case.</returns>
+		public static String ToPascalCase(this String String, Int32 Culture) {
+			String Result = "";
+			foreach (String S in String.Words()) {
+				Result += S.ToTitleCase(Culture);
+			}
+			return Result;
+		}
+
+		/// <summary>
+		/// Converts the specified string to Pascal case (except for words that are entirely in uppercase, which are considered to be acronyms).
+		/// </summary>
+		/// <param name="String">The string to convert to Pascal case.</param>
+		/// <param name="Culture">A predefined CultureInfo name, Name of an existing CultureInfo, or Windows-only culture name. name is not case-sensitive.</param>
+		/// <returns>The specified string converted to Pascal case.</returns>
+		public static String ToPascalCase(this String String, String Culture) {
+			String Result = "";
+			foreach (String S in String.Words()) {
+				Result += S.ToTitleCase(Culture);
+			}
+			return Result;
+		}
+
+		/// <summary>
+		/// Converts the specified string to title case (except for words that are entirely in uppercase, which are considered to be acronyms).
+		/// </summary>
+		/// <param name="String">The string to convert to title case.</param>
+		/// <returns>The specified string converted to title case.</returns>
+		public static String ToTitleCase(this String String) => new CultureInfo(CultureInfo.InvariantCulture.Name).TextInfo.ToTitleCase(String);
+
+		/// <summary>
 		/// Converts the specified string to title case (except for words that are entirely in uppercase, which are considered to be acronyms).
 		/// </summary>
 		/// <param name="String">The string to convert to title case.</param>

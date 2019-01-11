@@ -26,6 +26,11 @@ namespace Tests {
 		}
 
 		[TestMethod]
+		public void ToPascalCase() {
+			Assert.AreEqual("HelloWorld", "hello world".ToPascalCase());
+		}
+
+		[TestMethod]
 		public void Words() {
 			Assert.AreEqual("Hello", "Hello World".Words()[0]);
 			Assert.AreEqual("World", "Hello World".Words()[1]);
