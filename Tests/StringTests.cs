@@ -19,15 +19,16 @@ namespace Tests {
 		}
 
 		[TestMethod]
-		public void JoinWords() {
-			Assert.AreEqual("HelloWorld", "Hello World".JoinWords());
-		}
-
-		[TestMethod]
 		public void Occurences() {
 			Assert.AreEqual(2, "Hello World".Occurences('o'));
 			Assert.AreEqual(3, "Hello World".Occurences('l'));
 			Assert.AreEqual(4, "Hello World".Occurences('e', 'l'));
+		}
+
+		[TestMethod]
+		public void Words() {
+			Assert.AreEqual("Hello", "Hello World".Words()[0]);
+			Assert.AreEqual("World", "Hello World".Words()[1]);
 		}
 
 	}

@@ -53,21 +53,6 @@ namespace System {
 		public static Boolean IsMatch(this String String, String Pattern, RegexOptions RegexOptions = RegexOptions.None) => Regex.IsMatch(String, Pattern, RegexOptions);
 
 		/// <summary>
-		/// Join words within the <paramref name="String"/> together without spaces
-		/// </summary>
-		/// <param name="String">String to join</param>
-		/// <returns>Joined string</returns>
-		public static String JoinWords(this String String) => String.Join("", String.Split(' '));
-
-		/// <summary>
-		/// Join words within the <paramref name="String"/> together with <paramref name="Separator"/>
-		/// </summary>
-		/// <param name="String">String to join</param>
-		/// <param name="Separator">String to use as a separator between words</param>
-		/// <returns>Joined string</returns>
-		public static String JoinWords(this String String, String Separator) => String.Join(Separator, String.Split(' '));
-
-		/// <summary>
 		/// Searches an input string for a substring that matches a regular expression pattern and returns the first occurrence as a single Match object.
 		/// </summary>
 		/// <param name="String">The string to search for a match.</param>
@@ -140,6 +125,13 @@ namespace System {
 		/// <param name="Culture">A predefined CultureInfo name, Name of an existing CultureInfo, or Windows-only culture name. name is not case-sensitive.</param>
 		/// <returns>The specified string converted to title case.</returns>
 		public static String ToTitleCase(this String String, String Culture) => new CultureInfo(Culture).TextInfo.ToTitleCase(String);
+
+		/// <summary>
+		/// Separate the <paramref name="String"/> into its words
+		/// </summary>
+		/// <param name="String">String to separate</param>
+		/// <returns>Array of words within the <paramref name="String"/></returns>
+		public static String[] Words(this String String) => String.Clean().Split(' ');
 
 	}
 }
