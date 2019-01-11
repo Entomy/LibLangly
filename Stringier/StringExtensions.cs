@@ -30,6 +30,19 @@ namespace System {
 		}
 
 		/// <summary>
+		/// Trim and replace multiple spaces with a single space
+		/// </summary>
+		/// <param name="String">String to clean</param>
+		/// <returns>Cleaned up string</returns>
+		public static String Clean(this String String) {
+			String Result = String;
+			while (Regex.IsMatch(Result, @"  ")) {
+				Result = Result.Replace(@"  ", " ");
+			}
+			return Result.Trim();
+		}
+
+		/// <summary>
 		/// Indicates whether the regular expression finds a match in the input string.
 		/// </summary>
 		/// <param name="String">The string to search for a match.</param>

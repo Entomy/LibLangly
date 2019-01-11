@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests {
 	[TestClass]
-	public class StringExtensions {
+	public class StringTests {
 		[TestMethod]
 		public void Chop() {
 			Assert.AreEqual("abc", "abcdefg".Chop(3)[0]);
@@ -11,6 +11,11 @@ namespace Tests {
 			Assert.AreEqual("g", "abcdefg".Chop(3)[2]);
 			Assert.AreEqual("abcd", "abcdefg".Chop(4)[0]);
 			Assert.AreEqual("efg", "abcdefg".Chop(4)[1]);
+		}
+
+		[TestMethod]
+		public void Clean() {
+			Assert.AreEqual("Hello World", "Hello  World".Clean());
 		}
 	}
 }
