@@ -1,10 +1,34 @@
 ﻿using System;
 using System.Globalization;
-using System.Text;
+using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace Stringier {
+namespace System {
 	public static class StringExtensions {
+
+		/// <summary>
+		/// Chop the <paramref name="String"/> into chunks of <paramref name="Size"/>
+		/// </summary>
+		/// <param name="String">String to chop</param>
+		/// <param name="Size">Size of chunks to chop into</param>
+		/// <returns>Array of chunks</returns>
+		public static String[] Chop(this String String, Int32 Size) {
+			Int32 i = 0;
+			Int32 j = 0;
+			Int32 k = String.Length / Size + 1;
+			String[] Result = new String[k];
+			while (i < k) {
+				if ((j + Size) > String.Length) {
+					Result[i] = String.Substring(j, String.Length - j);
+				} else {
+					Result[i] = String.Substring(j, Size);
+				}
+				i++;
+				j += Size;
+			}
+			Console.WriteLine("Result: " + String.Join(",", Result));
+			return Result;
+		}
 
 		/// <summary>
 		/// Indicates whether the regular expression finds a match in the input string.
