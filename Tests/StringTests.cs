@@ -17,5 +17,12 @@ namespace Tests {
 		public void Clean() {
 			Assert.AreEqual("Hello World", "Hello  World".Clean());
 		}
+
+		[TestMethod]
+		public void Occurences() {
+			Assert.AreEqual(2, "Hello World".Occurences('o'));
+			Assert.AreEqual(3, "Hello World".Occurences('l'));
+			Assert.AreEqual(4, "Hello World".Occurences('e', 'l'));
+		}
 	}
 }

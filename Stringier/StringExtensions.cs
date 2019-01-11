@@ -42,6 +42,7 @@ namespace System {
 			return Result.Trim();
 		}
 
+
 		/// <summary>
 		/// Indicates whether the regular expression finds a match in the input string.
 		/// </summary>
@@ -68,6 +69,36 @@ namespace System {
 		/// <param name="RegexOptions">A bitwise combination of the enumeration values that specify options for matching.</param>
 		/// <returns>A collection of the Match objects found by the search. If no matches are found, the method returns an empty collection object.</returns>
 		public static MatchCollection Matches(this String String, String Pattern, RegexOptions RegexOptions = RegexOptions.None) => Regex.Matches(String, Pattern, RegexOptions);
+
+		/// <summary>
+		/// Count all occurences of <paramref name="CharToCount"/> in <paramref name="String"/>
+		/// </summary>
+		/// <param name="String">String to count occurences within</param>
+		/// <param name="CharToCount">Char to count occurences of</param>
+		/// <returns>The ammount of occurences found</returns>
+		public static Int32 Occurences(this String String, Char CharToCount) {
+			Int32 c = 0;
+			foreach (Char C in String) {
+				if (C == CharToCount) c++;
+			}
+			return c;
+		}
+
+		/// <summary>
+		/// Count all occurences of <paramref name="CharsToCount"/> in <paramref name="String"/>
+		/// </summary>
+		/// <param name="String">String to count occurences within</param>
+		/// <param name="CharsToCount">Chars to count occurences of</param>
+		/// <returns>The ammount of occurences found</returns>
+		public static Int32 Occurences(this String String, params Char[] CharsToCount) {
+			Int32 c = 0;
+			foreach (Char Char in CharsToCount) {
+				foreach (Char C in String) {
+					if (C == Char) c++;
+				}
+			}
+			return c;
+		}
 
 		/// <summary>
 		/// In a specified input string, replaces all strings that match a specified regular expression with a specified replacement string. Specified options modify the matching operation.
