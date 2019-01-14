@@ -28,6 +28,11 @@ namespace Tests {
 		}
 
 		[TestMethod]
+		public void ToCamelCase() {
+			Assert.AreEqual("helloWorld", "hello world".ToCamelCase());
+		}
+
+		[TestMethod]
 		public void ToPascalCase() {
 			Assert.AreEqual("HelloWorld", "hello world".ToPascalCase());
 		}

@@ -111,6 +111,29 @@ namespace System {
 		public static String Replace(this String String, String Pattern, String Replacement, RegexOptions RegexOptions = RegexOptions.None) => Regex.Replace(String, Pattern, Replacement, RegexOptions);
 
 		/// <summary>
+		/// Converts the specified string to camel case (except for words that are entirely in uppercase, which are considered to be acronyms).
+		/// </summary>
+		/// <param name="String">The string to convert to camel case.</param>
+		/// <returns>The specified string converted to camel case</returns>
+		public static String ToCamelCase(this String String) => Char.ToLowerInvariant(String[0]) + String.ToPascalCase().Substring(1);
+
+		/// <summary>
+		/// Converts the specified string to camel case (except for words that are entirely in uppercase, which are considered to be acronyms).
+		/// </summary>
+		/// <param name="String">The string to convert to camel case.</param>
+		/// <param name="Culture">A predefined CultureInfo identifier, LCID property of an existing CultureInfo object, or Windows-only culture identifier.</param>
+		/// <returns>The specified string converted to camel case</returns>
+		public static String ToCamelCase(this String String, Int32 Culture) => Char.ToLower(String[0], CultureInfo.GetCultureInfo(Culture)) + String.ToPascalCase(Culture).Substring(1);
+
+		/// <summary>
+		/// Converts the specified string to camel case (except for words that are entirely in uppercase, which are considered to be acronyms).
+		/// </summary>
+		/// <param name="String">The string to convert to camel case.</param>
+		/// <param name="Culture">A predefined CultureInfo name, Name of an existing CultureInfo, or Windows-only culture name. name is not case-sensitive.</param>
+		/// <returns>The specified string converted to camel case.</returns>
+		public static String ToCamelCase(this String String, String Culture) => Char.ToLower(String[0], CultureInfo.GetCultureInfo(Culture)) + String.ToPascalCase(Culture).Substring(1);
+
+		/// <summary>
 		/// Converts the specified string to Pascal case (except for words that are entirely in uppercase, which are considered to be acronyms).
 		/// </summary>
 		/// <param name="String">The string to convert to Pascal case.</param>
