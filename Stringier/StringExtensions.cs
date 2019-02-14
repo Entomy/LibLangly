@@ -52,6 +52,14 @@ namespace System {
 		public static Boolean IsMatch(this String String, String Pattern, RegexOptions RegexOptions) => Regex.IsMatch(String, Pattern, RegexOptions);
 
 		/// <summary>
+		/// Indicates whether the regular expression finds a match in the input string.
+		/// </summary>
+		/// <param name="String">The string to search for a match</param>
+		/// <param name="Regex">The Regex object to use.</param>
+		/// <returns>true if the regular expression finds a match; otherwise, false.</returns>
+		public static Boolean IsMatch(this String String, Regex Regex) => Regex.IsMatch(String);
+
+		/// <summary>
 		/// Concatenates all the elements of a string array, using the specified separator between each element.
 		/// </summary>
 		/// <param name="Strings">An array that contains the strings to concatenate.</param>
@@ -77,6 +85,14 @@ namespace System {
 		public static Match Match(this String String, String Pattern, RegexOptions RegexOptions) => Regex.Match(String, Pattern, RegexOptions);
 
 		/// <summary>
+		/// Searches an input string for a substring that matches a regular expression pattern and returns the first occurrence as a single Match object.
+		/// </summary>
+		/// <param name="String">The string to search for a match.</param>
+		/// <param name="Regex">The Regex object to use.</param>
+		/// <returns>An object that contains information about the match.</returns>
+		public static Match Match(this String String, Regex Regex) => Regex.Match(String);
+
+		/// <summary>
 		/// Searches an input string for all occurrences of a regular expression and returns all the matches.
 		/// </summary>
 		/// <param name="String">The string to search for a match.</param>
@@ -84,6 +100,14 @@ namespace System {
 		/// <param name="RegexOptions">A bitwise combination of the enumeration values that specify options for matching.</param>
 		/// <returns>A collection of the Match objects found by the search. If no matches are found, the method returns an empty collection object.</returns>
 		public static MatchCollection Matches(this String String, String Pattern, RegexOptions RegexOptions) => Regex.Matches(String, Pattern, RegexOptions);
+
+		/// <summary>
+		/// Searches an input string for all occurrences of a regular expression and returns all the matches.
+		/// </summary>
+		/// <param name="String">The string to search for a match.</param>
+		/// <param name="Regex">The Regex object to use.</param>
+		/// <returns>A collection of the Match objects found by the search. If no matches are found, the method returns an empty collection object.</returns>
+		public static MatchCollection Matches(this String String, Regex Regex) => Regex.Matches(String);
 
 		/// <summary>
 		/// Count all occurences of <paramref name="CharToCount"/> in <paramref name="String"/>
