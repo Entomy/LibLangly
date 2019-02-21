@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -68,12 +69,28 @@ namespace System {
 		public static String Join(this String[] Strings, Char Separator) => String.Join(Separator.ToString(), Strings);
 
 		/// <summary>
+		/// Concatenates all the elements of a string enumerable, using the specified separator between each element.
+		/// </summary>
+		/// <param name="Strings">An enumerable that contains the strings to concatenate.</param>
+		/// <param name="Separator">The char to use as a separator. Separator is included in the returned string only if value has more than one element.</param>
+		/// <returns>A string that consists of the elements in value delimited by the separator char. If value is an empty enumerable, the method returns Empty.</returns>
+		public static String Join(this IEnumerable<String> Strings, Char Separator) => String.Join(Separator.ToString(), Strings);
+
+		/// <summary>
 		/// Concatenates all the elements of a string array, using the specified separator between each element.
 		/// </summary>
 		/// <param name="Strings">An array that contains the strings to concatenate.</param>
 		/// <param name="Separator">The string to use as a separator. Separator is included in the returned string only if value has more than one element.</param>
 		/// <returns>A string that consists of the elements in value delimited by the separator string. If value is an empty array, the method returns Empty.</returns>
 		public static String Join(this String[] Strings, String Separator) => String.Join(Separator, Strings);
+
+		/// <summary>
+		/// Concatenates all the elements of a string enumerable, using the specified separator between each element.
+		/// </summary>
+		/// <param name="Strings">An enumerable that contains the strings to concatenate.</param>
+		/// <param name="Separator">The string to use as a separator. Separator is included in the returned string only if value has more than one element.</param>
+		/// <returns>A string that consists of the elements in value delimited by the separator string. If value is an empty enumerable, the method returns Empty.</returns>
+		public static String Join(this IEnumerable<String> Strings, String Separator) => String.Join(Separator, Strings);
 
 		/// <summary>
 		/// Searches an input string for a substring that matches a regular expression pattern and returns the first occurrence as a single Match object.
