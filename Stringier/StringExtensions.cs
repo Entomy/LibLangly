@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -165,6 +166,14 @@ namespace System {
 		/// <param name="RegexOptions">A bitwise combination of the enumeration values that provide options for matching.</param>
 		/// <returns>A new string that is identical to the input string, except that the replacement string takes the place of each matched string. If pattern is not matched in the current instance, the method returns the current instance unchanged.</returns>
 		public static String Replace(this String String, String Pattern, String Replacement, RegexOptions RegexOptions = RegexOptions.None) => Regex.Replace(String, Pattern, Replacement, RegexOptions);
+
+		/// <summary>
+		/// Splits a string into substrings based on the strings in an array.
+		/// </summary>
+		/// <param name="String">The string to split.</param>
+		/// <param name="Separator">A string array that delimits the substrings in this string, an empty array that contains no delimiters, or null.</param>
+		/// <returns>A string array that delimits the substrings in this string, an empty array that contains no delimiters, or null.</returns>
+		public static String[] Split(this String String, params String[] Separator) => String.Split(Separator, StringSplitOptions.None);
 
 		/// <summary>
 		/// Converts the specified string to camel case (except for words that are entirely in uppercase, which are considered to be acronyms).
