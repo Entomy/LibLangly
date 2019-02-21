@@ -53,6 +53,34 @@ namespace System {
 		public static Boolean Contains(this String String, Char Value) => String.Contains(Value.ToString());
 
 		/// <summary>
+		/// Ensures the <paramref name="String"/> beings with the <paramref name="Required"/> string, adding it if necessary.
+		/// </summary>
+		/// <param name="String">The string to ensure.</param>
+		/// <param name="Required">The required beginning.</param>
+		/// <returns>A string with the ensured beginning.</returns>
+		public static String EnsureBeginsWith(this String String, String Required) {
+			if (String.IsMatch("^" + Required, RegexOptions.None)) {
+				return String;
+			} else {
+				return Required + String;
+			}
+		}
+		
+		/// <summary>
+		/// Ensures the <paramref name="String"/> ends with the <paramref name="Required"/> string, adding it if necessary.
+		/// </summary>
+		/// <param name="String">The string to ensure.</param>
+		/// <param name="Required">The required ending.</param>
+		/// <returns>A string with the ensured ending.</returns>
+		public static String EnsureEndsWith(this String String, String Required) {
+			if (String.IsMatch(Required + "$", RegexOptions.None)) {
+				return String;
+			} else {
+				return String + Required;
+			}
+		}
+
+		/// <summary>
 		/// Indicates whether the regular expression finds a match in the input string.
 		/// </summary>
 		/// <param name="String">The string to search for a match.</param>
