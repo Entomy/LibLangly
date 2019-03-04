@@ -59,7 +59,7 @@ namespace System {
 		/// <param name="Required">The required beginning.</param>
 		/// <returns>A string with the ensured beginning.</returns>
 		public static String EnsureBeginsWith(this String String, String Required) {
-			if (String.IsMatch("^" + Required, RegexOptions.None)) {
+			if (String.IsMatch(RegexOptions.None, "^" + Required)) {
 				return String;
 			} else {
 				return Required + String;
@@ -73,7 +73,7 @@ namespace System {
 		/// <param name="Required">The required ending.</param>
 		/// <returns>A string with the ensured ending.</returns>
 		public static String EnsureEndsWith(this String String, String Required) {
-			if (String.IsMatch(Required + "$", RegexOptions.None)) {
+			if (String.IsMatch(RegexOptions.None, Required + "$")) {
 				return String;
 			} else {
 				return String + Required;
@@ -84,18 +84,89 @@ namespace System {
 		/// Indicates whether the regular expression finds a match in the input string.
 		/// </summary>
 		/// <param name="String">The string to search for a match.</param>
+		/// <param name="Regex">The Regex object to use.</param>
+		/// <returns>true if the regular expression finds a match; otherwise, false.</returns>
+		public static Boolean IsMatch(this String String, Regex Regex) => Regex.IsMatch(String);
+
+		/// <summary>
+		/// Indicates whether the regular expression finds a match in the input string.
+		/// </summary>
+		/// <param name="String">The string to search for a match.</param>
 		/// <param name="Pattern">The regular expression pattern to match.</param>
 		/// <param name="RegexOptions">A bitwise combination of the enumeration values that provide options for matching.</param>
 		/// <returns>true if the regular expression finds a match; otherwise, false.</returns>
+		/// <remarks>
+		/// This has been made obsolete by what is basically the same method <see cref="IsMatch(String, RegexOptions, String)"/>, but with <paramref name="Pattern"/> and <paramref name="RegexOptions"/> reversed. This was done for orthogonality with <see cref="IsMatchAll(String, RegexOptions, String[])"/>.
+		/// </remarks>
+		[Obsolete("Please use the new form String.IsMatch(RegexOption, String)")]
 		public static Boolean IsMatch(this String String, String Pattern, RegexOptions RegexOptions) => Regex.IsMatch(String, Pattern, RegexOptions);
 
 		/// <summary>
 		/// Indicates whether the regular expression finds a match in the input string.
 		/// </summary>
-		/// <param name="String">The string to search for a match</param>
-		/// <param name="Regex">The Regex object to use.</param>
+		/// <param name="String">The string to search for a match.</param>
+		/// <param name="RegexOptions">A bitwise combination of the enumeration values that provide options for matching.</param>
+		/// <param name="Pattern">The regular expression pattern to match.</param>
 		/// <returns>true if the regular expression finds a match; otherwise, false.</returns>
-		public static Boolean IsMatch(this String String, Regex Regex) => Regex.IsMatch(String);
+		public static Boolean IsMatch(this String String, RegexOptions RegexOptions, String Pattern) => Regex.IsMatch(String, Pattern, RegexOptions);
+
+		/// <summary>
+		/// Indicates whether the regular expressions all find a match in the input string.
+		/// </summary>
+		/// <param name="String">The string to search for a match.</param>
+		/// <param name="Regexes">An array of the Regex objects to use.</param>
+		/// <returns>true if the regular expressions all find a match; otherwise, false.</returns>
+		public static Boolean IsMatchAll(this String String, params Regex[] Regexes) {
+			Boolean Result = true;
+			foreach (Regex Regex in Regexes) {
+				Result &= String.IsMatch(Regex);
+			}
+			return Result;
+		}
+
+		/// <summary>
+		/// Indicates whether the regular expressions all find a match in the input string.
+		/// </summary>
+		/// <param name="String">The string to search for a match.</param>
+		/// <param name="RegexOptions">A bitwise combination of the enumeration values that provide options for matching.</param>
+		/// <param name="Patterns">An array of the regular expression pattern to match.</param>
+		/// <returns>true if the regular expressions all find a match; otherwise, false.</returns>
+		public static Boolean IsMatchAll(this String String, RegexOptions RegexOptions, params String[] Patterns) {
+			Boolean Result = true;
+			foreach (String Pattern in Patterns) {
+				Result &= String.IsMatch(RegexOptions, Pattern);
+			}
+			return Result;
+		}
+
+		/// <summary>
+		/// Indicates whether any of the regular expressions find a match in the input string.
+		/// </summary>
+		/// <param name="String">The string to search for a match.</param>
+		/// <param name="Regexes">An array of the Regex objects to use.</param>
+		/// <returns>true if any of the regular expressions find a match; otherwise false.</returns>
+		public static Boolean IsMatchAny(this String String, params Regex[] Regexes) {
+			Boolean Result = false;
+			foreach (Regex Regex in Regexes) {
+				Result |= String.IsMatch(Regex);
+			}
+			return Result;
+		}
+
+		/// <summary>
+		/// Indicates whether any of the regular expressions find a match in the input string.
+		/// </summary>
+		/// <param name="String">The string to search for a match.</param>
+		/// <param name="RegexOptions">A bitwise combination of the enumeration values that provide options for matching.</param>
+		/// <param name="Patterns">An array of the regular expression pattern to match.</param>
+		/// <returns>true if any of the regular expressions find a match; otherwise false.</returns>
+		public static Boolean IsMatchAny(this String String, RegexOptions RegexOptions, params String[] Patterns) {
+			Boolean Result = false;
+			foreach (String Pattern in Patterns) {
+				Result |= String.IsMatch(RegexOptions, Pattern);
+			}
+			return Result;
+		}
 
 		/// <summary>
 		/// Concatenates all the elements of a string array, using the specified separator between each element.
