@@ -92,13 +92,17 @@ namespace System {
 		/// Indicates whether the regular expression finds a match in the input string.
 		/// </summary>
 		/// <param name="String">The string to search for a match.</param>
+		/// <param name="Pattern">The regular expression pattern to match, using <see cref="Stringier.DefaultRegexOptions"/>.</param>
+		/// <returns>true if the regular expression finds a match; otherwise, false.</returns>
+		public static Boolean IsMatch(this String String, String Pattern) => Regex.IsMatch(String, Pattern, Stringier.DefaultRegexOptions);
+
+		/// <summary>
+		/// Indicates whether the regular expression finds a match in the input string.
+		/// </summary>
+		/// <param name="String">The string to search for a match.</param>
 		/// <param name="Pattern">The regular expression pattern to match.</param>
 		/// <param name="RegexOptions">A bitwise combination of the enumeration values that provide options for matching.</param>
 		/// <returns>true if the regular expression finds a match; otherwise, false.</returns>
-		/// <remarks>
-		/// This has been made obsolete by what is basically the same method <see cref="IsMatch(String, RegexOptions, String)"/>, but with <paramref name="Pattern"/> and <paramref name="RegexOptions"/> reversed. This was done for orthogonality with <see cref="IsMatchAll(String, RegexOptions, String[])"/>.
-		/// </remarks>
-		[Obsolete("Please use the new form String.IsMatch(RegexOption, String)")]
 		public static Boolean IsMatch(this String String, String Pattern, RegexOptions RegexOptions) => Regex.IsMatch(String, Pattern, RegexOptions);
 
 		/// <summary>
@@ -128,6 +132,14 @@ namespace System {
 		/// Indicates whether the regular expressions all find a match in the input string.
 		/// </summary>
 		/// <param name="String">The string to search for a match.</param>
+		/// <param name="Patterns">An array of the regular expression pattern to match, using <see cref="Stringier.DefaultRegexOptions"/>.</param>
+		/// <returns>true if the regular expressions all find a match; otherwise, false.</returns>
+		public static Boolean IsMatchAll(this String String, params String[] Patterns) => IsMatchAll(String, Stringier.DefaultRegexOptions, Patterns);
+
+		/// <summary>
+		/// Indicates whether the regular expressions all find a match in the input string.
+		/// </summary>
+		/// <param name="String">The string to search for a match.</param>
 		/// <param name="RegexOptions">A bitwise combination of the enumeration values that provide options for matching.</param>
 		/// <param name="Patterns">An array of the regular expression pattern to match.</param>
 		/// <returns>true if the regular expressions all find a match; otherwise, false.</returns>
@@ -152,6 +164,14 @@ namespace System {
 			}
 			return Result;
 		}
+
+		/// <summary>
+		/// Indicates whether any of the regular expressions find a match in the input string.
+		/// </summary>
+		/// <param name="String">The string to search for a match.</param>
+		/// <param name="Patterns">An array of the regular expression pattern to match, using <see cref="Stringier.DefaultRegexOptions"/>.</param>
+		/// <returns>true if any of the regular expressions find a match; otherwise false.</returns>
+		public static Boolean IsMatchAny(this String String, params String[] Patterns) => IsMatchAny(String, Stringier.DefaultRegexOptions, Patterns);
 
 		/// <summary>
 		/// Indicates whether any of the regular expressions find a match in the input string.
@@ -204,6 +224,14 @@ namespace System {
 		/// Searches an input string for a substring that matches a regular expression pattern and returns the first occurrence as a single Match object.
 		/// </summary>
 		/// <param name="String">The string to search for a match.</param>
+		/// <param name="Regex">The Regex object to use.</param>
+		/// <returns>An object that contains information about the match.</returns>
+		public static Match Match(this String String, Regex Regex) => Regex.Match(String);
+
+		/// <summary>
+		/// Searches an input string for a substring that matches a regular expression pattern and returns the first occurrence as a single Match object.
+		/// </summary>
+		/// <param name="String">The string to search for a match.</param>
 		/// <param name="Pattern">The regular expression pattern to match.</param>
 		/// <param name="RegexOptions">A bitwise combination of the enumeration values that provide options for matching.</param>
 		/// <returns>An object that contains information about the match.</returns>
@@ -213,9 +241,18 @@ namespace System {
 		/// Searches an input string for a substring that matches a regular expression pattern and returns the first occurrence as a single Match object.
 		/// </summary>
 		/// <param name="String">The string to search for a match.</param>
-		/// <param name="Regex">The Regex object to use.</param>
+		/// <param name="RegexOptions">A bitwise combination of the enumeration values that provide options for matching.</param>
+		/// <param name="Pattern">The regular expression pattern to match.</param>
 		/// <returns>An object that contains information about the match.</returns>
-		public static Match Match(this String String, Regex Regex) => Regex.Match(String);
+		public static Match Match(this String String, RegexOptions RegexOptions, String Pattern) => Regex.Match(String, Pattern, RegexOptions);
+
+		/// <summary>
+		/// Searches an input string for all occurrences of a regular expression and returns all the matches.
+		/// </summary>
+		/// <param name="String">The string to search for a match.</param>
+		/// <param name="Regex">The Regex object to use.</param>
+		/// <returns>A collection of the Match objects found by the search. If no matches are found, the method returns an empty collection object.</returns>
+		public static MatchCollection Matches(this String String, Regex Regex) => Regex.Matches(String);
 
 		/// <summary>
 		/// Searches an input string for all occurrences of a regular expression and returns all the matches.
@@ -230,9 +267,10 @@ namespace System {
 		/// Searches an input string for all occurrences of a regular expression and returns all the matches.
 		/// </summary>
 		/// <param name="String">The string to search for a match.</param>
-		/// <param name="Regex">The Regex object to use.</param>
+		/// <param name="RegexOptions">A bitwise combination of the enumeration values that specify options for matching.</param>
+		/// <param name="Pattern">The regular expression pattern to match.</param>
 		/// <returns>A collection of the Match objects found by the search. If no matches are found, the method returns an empty collection object.</returns>
-		public static MatchCollection Matches(this String String, Regex Regex) => Regex.Matches(String);
+		public static MatchCollection Matches(this String String, RegexOptions RegexOptions, String Pattern) => Regex.Matches(String, Pattern, RegexOptions);
 
 		/// <summary>
 		/// Count all occurences of <paramref name="CharToCount"/> in <paramref name="String"/>
