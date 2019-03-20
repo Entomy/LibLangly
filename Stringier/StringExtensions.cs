@@ -45,6 +45,21 @@ namespace System {
 		}
 
 		/// <summary>
+		/// Trim and replace multiple <paramref name="Char"/> with a single <paramref name="Char"/>
+		/// </summary>
+		/// <param name="String">String to clean</param>
+		/// <param name="Char"></param>
+		/// <returns>Cleaned up string</returns>
+		public static String Clean(this String String, Char Char) {
+			String Result = String;
+			String Pair = "" + Char + Char;
+			while (Regex.IsMatch(Result, Pair)) {
+				Result = Result.Replace(Pair, Char);
+			}
+			return Result.Trim();
+		}
+
+		/// <summary>
 		/// Returns a value indicating whether a specified char occurs within this string.
 		/// </summary>
 		/// <param name="String">The string to check.</param>
@@ -324,6 +339,15 @@ namespace System {
 			Int32 LeftPadWidth = String.Length + ((TotalWidth - String.Length) / 2);
 			return String.PadLeft(LeftPadWidth).PadRight(TotalWidth);
 		}
+
+		/// <summary>
+		/// In the input string, replaces all strings that match a specified regular expression with a specified replacement string. Specified options modify the matching operation.
+		/// </summary>
+		/// <param name="String">The <see cref="String"/> to search for a match.</param>
+		/// <param name="OldPart">The <see cref="String"/> to be replaced.</param>
+		/// <param name="NewPart">The <see cref="Char"/> to replace all occurences of <paramref name="OldPart"/>.</param>
+		/// <returns></returns>
+		public static String Replace(this String String, String OldPart, Char NewPart) => String.Replace(OldPart, NewPart.ToString());
 
 		/// <summary>
 		/// In a specified input string, replaces all strings that match a specified regular expression with a specified replacement string. Specified options modify the matching operation.

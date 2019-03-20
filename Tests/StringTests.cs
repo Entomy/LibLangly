@@ -18,6 +18,12 @@ namespace Tests {
 			Assert.AreEqual("Hello World", "Hello  World".Clean());
 			Assert.AreEqual("Hello World", "Hello       World".Clean());
 			Assert.AreEqual("Hello World", "  Hello    World ".Clean());
+			Assert.AreEqual("Hello World", "Hellooo Wooorld".Clean('o'));
+		}
+
+		[TestMethod]
+		public void IsMatch() {
+			Assert.IsTrue("Hello World".IsMatch("^Hello"));
 		}
 
 		[TestMethod]
