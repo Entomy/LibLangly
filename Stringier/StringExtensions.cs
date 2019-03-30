@@ -443,6 +443,33 @@ namespace System {
 		}
 
 		/// <summary>
+		/// Removes all leading and trailing white-space characters from the current <paramref name="Strings"/>.
+		/// </summary>
+		/// <param name="Strings">The array of String to trim.</param>
+		/// <returns>The strings that remain after all white-space characters are removed from the start and end of each String. If no characters can be trimmed from the String, the method returns the String unchanged.</returns>
+		public static String[] Trim(this String[] Strings) {
+			String[] Result = new String[Strings.Length];
+			for (Int32 i = 0; i < Strings.Length; i++) {
+				Result[i] = Strings[i].Trim();
+			}
+			return Result;
+		}
+
+		/// <summary>
+		/// Removes all leading and trailing occurences of a set of characters specified in <paramref name="TrimChars"/> from the current <paramref name="Strings"/>.
+		/// </summary>
+		/// <param name="Strings">The array of String to trim.</param>
+		/// <param name="TrimChars">An array of Unicode characters to remove, or null.</param>
+		/// <returns>The strings that remain after all occurrences of the characters in the <paramref name="TrimChars"/> parameter are removed from the start and end of each String. If <paramref name="TrimChars"/> is null or an empty array, white-space characters are removed instead. If no characters can be trimmed from the String, the method returns the String unchanged.</returns>
+		public static String[] Trim(this String[] Strings, params Char[] TrimChars) {
+			String[] Result = new string[Strings.Length];
+			for (Int32 i = 0; i < Strings.Length; i++) {
+				Result[i] = Strings[i].Trim(TrimChars);
+			}
+			return Result;
+		}
+
+		/// <summary>
 		/// Converts the specified string to camel case (except for words that are entirely in uppercase, which are considered to be acronyms).
 		/// </summary>
 		/// <param name="String">The string to convert to camel case.</param>
