@@ -437,7 +437,7 @@ namespace System {
 		public static String Strip(this String String, params Char[] StripChars) {
 			String Result = String;
 			foreach (Char StripChar in StripChars) {
-				Result = Result.Replace(StripChar, '\0');
+				Result = Result.Replace(StripChar.ToString(), "");
 			}
 			return Result;
 		}

@@ -40,6 +40,11 @@ namespace Tests {
 		}
 
 		[TestMethod]
+		public void Strip() {
+			Assert.AreEqual("Hello World", "Hello World\n\n".Strip('\n'));
+		}
+
+		[TestMethod]
 		public void ToCamelCase() {
 			Assert.AreEqual("helloWorld", "hello world".ToCamelCase());
 		}
