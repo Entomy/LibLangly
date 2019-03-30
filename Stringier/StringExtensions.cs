@@ -368,6 +368,20 @@ namespace System {
 		public static String[] Split(this String String, params String[] Separator) => String.Split(Separator, StringSplitOptions.None);
 
 		/// <summary>
+		/// Strips the specified characters out of the <paramref name="String"/>.
+		/// </summary>
+		/// <param name="String">The string to strip.</param>
+		/// <param name="StripChars">The chars to strip out.</param>
+		/// <returns>A string with the specified chars stripped out.</returns>
+		public static String Strip(this String String, params Char[] StripChars) {
+			String Result = String;
+			foreach (Char StripChar in StripChars) {
+				Result = Result.Replace(StripChar, '\0');
+			}
+			return Result;
+		}
+
+		/// <summary>
 		/// Converts the specified string to camel case (except for words that are entirely in uppercase, which are considered to be acronyms).
 		/// </summary>
 		/// <param name="String">The string to convert to camel case.</param>
