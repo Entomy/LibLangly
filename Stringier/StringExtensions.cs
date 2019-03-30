@@ -236,6 +236,13 @@ namespace System {
 		public static String Join(this IEnumerable<String> Strings, String Separator) => String.Join(Separator, Strings);
 
 		/// <summary>
+		/// Separate the <paramref name="String"/> into its lines.
+		/// </summary>
+		/// <param name="String">String to separate.</param>
+		/// <returns>Array of lines within the <paramref name="String"/>.</returns>
+		public static String[] Lines(this String String) => String.Split('\n');
+
+		/// <summary>
 		/// Searches an input string for a substring that matches a regular expression pattern and returns the first occurrence as a single Match object.
 		/// </summary>
 		/// <param name="String">The string to search for a match.</param>
@@ -469,10 +476,10 @@ namespace System {
 		public static String ToTitleCase(this String String, String Culture) => new CultureInfo(Culture).TextInfo.ToTitleCase(String);
 
 		/// <summary>
-		/// Separate the <paramref name="String"/> into its words
+		/// Separate the <paramref name="String"/> into its words.
 		/// </summary>
-		/// <param name="String">String to separate</param>
-		/// <returns>Array of words within the <paramref name="String"/></returns>
+		/// <param name="String">String to separate.</param>
+		/// <returns>Array of words within the <paramref name="String"/>.</returns>
 		public static String[] Words(this String String) => String.Clean().Split(' ');
 
 	}
