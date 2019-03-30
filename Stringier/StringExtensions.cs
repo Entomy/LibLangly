@@ -321,11 +321,11 @@ namespace System {
 		public static MatchCollection Matches(this String String, RegexOptions RegexOptions, String Pattern) => Regex.Matches(String, Pattern, RegexOptions);
 
 		/// <summary>
-		/// Count all occurences of <paramref name="CharToCount"/> in <paramref name="String"/>
+		/// Count all occurences of <paramref name="CharToCount"/> in <paramref name="String"/>.
 		/// </summary>
-		/// <param name="String">String to count occurences within</param>
-		/// <param name="CharToCount">Char to count occurences of</param>
-		/// <returns>The ammount of occurences found</returns>
+		/// <param name="String">String to count occurences within.</param>
+		/// <param name="CharToCount">Char to count occurences of.</param>
+		/// <returns>The ammount of occurences found.</returns>
 		public static Int32 Occurences(this String String, Char CharToCount) {
 			Int32 c = 0;
 			foreach (Char C in String) {
@@ -335,17 +335,45 @@ namespace System {
 		}
 
 		/// <summary>
-		/// Count all occurences of <paramref name="CharsToCount"/> in <paramref name="String"/>
+		/// Count all occurences of <paramref name="CharsToCount"/> in <paramref name="String"/>.
 		/// </summary>
-		/// <param name="String">String to count occurences within</param>
-		/// <param name="CharsToCount">Chars to count occurences of</param>
-		/// <returns>The ammount of occurences found</returns>
+		/// <param name="String">String to count occurences within.</param>
+		/// <param name="CharsToCount">Chars to count occurences of.</param>
+		/// <returns>The ammount of occurences found.</returns>
 		public static Int32 Occurences(this String String, params Char[] CharsToCount) {
 			Int32 c = 0;
 			foreach (Char Char in CharsToCount) {
 				foreach (Char C in String) {
 					if (C == Char) c++;
 				}
+			}
+			return c;
+		}
+
+		/// <summary>
+		/// Count all occurences of <paramref name="CharToCount"/> in the <paramref name="Strings"/>.
+		/// </summary>
+		/// <param name="Strings">Enumeration of String to count occurences within./</param>
+		/// <param name="CharToCount">Char to count occurences of.</param>
+		/// <returns>The ammount of occurences found.</returns>
+		public static Int32 Occurences(this IEnumerable<String> Strings, Char CharToCount) {
+			Int32 c = 0;
+			foreach (String String in Strings) {
+				c += String.Occurences(CharToCount);
+			}
+			return c;
+		}
+
+		/// <summary>
+		/// Count all occurences of <paramref name="CharsToCount"/> in the <paramref name="Strings"/>.
+		/// </summary>
+		/// <param name="Strings">Enumeration of String to count occurences within.</param>
+		/// <param name="CharsToCount">Chars to count occurences of.</param>
+		/// <returns>The ammount of occurences found.</returns>
+		public static Int32 Occurences(this IEnumerable<String> Strings, params Char[] CharsToCount) {
+			Int32 c = 0;
+			foreach (String String in Strings) {
+				c += String.Occurences(CharsToCount);
 			}
 			return c;
 		}
