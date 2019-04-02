@@ -13,7 +13,7 @@ namespace System {
 		/// <remarks>
 		/// This can be useful when the same <see cref="RegexOptions"/> are used over and over.
 		/// </remarks>
-		public static RegexOptions DefaultRegexOptions = RegexOptions.None;
+		public static RegexOptions DefaultRegexOptions { get; } = RegexOptions.None;
 
 	}
 }

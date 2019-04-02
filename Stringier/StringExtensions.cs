@@ -52,7 +52,7 @@ namespace System {
 		/// <returns>Cleaned up string</returns>
 		public static String Clean(this String String, Char Char) {
 			String Result = String;
-			String Pair = "" + Char + Char;
+			String Pair = $"{Char}{Char}";
 			while (Regex.IsMatch(Result, Pair)) {
 				Result = Result.Replace(Pair, Char);
 			}
@@ -75,7 +75,7 @@ namespace System {
 		/// <returns>true if the value parameter occurs within any of the strings, or if the value is the empty char (''); otherwise, false.</returns>
 		public static Boolean Contains(this IEnumerable<String> Strings, Char Value) {
 			foreach (String String in Strings) {
-				if (String.Contains(Value)) return true;
+				if (String.Contains(Value)) { return true; }
 			}
 			return false;
 		}
@@ -88,7 +88,7 @@ namespace System {
 		/// <returns>true if the value parameter occurs within any of the strings, or if the value is the empty string (""); otherwise, false.</returns>
 		public static Boolean Contains(this IEnumerable<String> Strings, String Value) {
 			foreach (String String in Strings) {
-				if (String.Contains(Value)) return true;
+				if (String.Contains(Value)) { return true; }
 			}
 			return false;
 		}
@@ -329,7 +329,7 @@ namespace System {
 		public static Int32 Occurences(this String String, Char CharToCount) {
 			Int32 c = 0;
 			foreach (Char C in String) {
-				if (C == CharToCount) c++;
+				if (C == CharToCount) { c++; }
 			}
 			return c;
 		}
@@ -344,7 +344,7 @@ namespace System {
 			Int32 c = 0;
 			foreach (Char Char in CharsToCount) {
 				foreach (Char C in String) {
-					if (C == Char) c++;
+					if (C == Char) { c++; }
 				}
 			}
 			return c;
@@ -398,7 +398,7 @@ namespace System {
 		/// <returns>A new string that is equivalent to this instance, but center-aligned and padded on both sides with as many spaces as needed to create a length of totalWidth. However, if totalWidth is less than the length of this instance, the method returns a reference to the existing instance. If totalWidth is equal to the length of this instance, the method returns a new string that is identical to this instance.</returns>
 		public static String Pad(this String String, Int32 TotalWidth, Char PaddingChar) {
 			Int32 LeftPadWidth = String.Length + ((TotalWidth - String.Length) / 2);
-			return String.PadLeft(LeftPadWidth).PadRight(TotalWidth);
+			return String.PadLeft(LeftPadWidth, PaddingChar).PadRight(TotalWidth, PaddingChar);
 		}
 
 		/// <summary>
@@ -462,7 +462,7 @@ namespace System {
 		/// <param name="TrimChars">An array of Unicode characters to remove, or null.</param>
 		/// <returns>The strings that remain after all occurrences of the characters in the <paramref name="TrimChars"/> parameter are removed from the start and end of each String. If <paramref name="TrimChars"/> is null or an empty array, white-space characters are removed instead. If no characters can be trimmed from the String, the method returns the String unchanged.</returns>
 		public static String[] Trim(this String[] Strings, params Char[] TrimChars) {
-			String[] Result = new string[Strings.Length];
+			String[] Result = new String[Strings.Length];
 			for (Int32 i = 0; i < Strings.Length; i++) {
 				Result[i] = Strings[i].Trim(TrimChars);
 			}
@@ -498,11 +498,11 @@ namespace System {
 		/// <param name="String">The string to convert to Pascal case.</param>
 		/// <returns>The specified string converted to Pascal case.</returns>
 		public static String ToPascalCase(this String String) {
-			String Result = "";
+			StringBuilder Result = new StringBuilder("");
 			foreach (String S in String.Words()) {
-				Result += S.ToTitleCase();
+				Result.Append(S.ToTitleCase());
 			}
-			return Result;
+			return Result.ToString();
 		}
 
 		/// <summary>
@@ -512,11 +512,11 @@ namespace System {
 		/// <param name="Culture">A predefined CultureInfo identifier, LCID property of an existing CultureInfo object, or Windows-only culture identifier.</param>
 		/// <returns>The specified string converted to Pascal case.</returns>
 		public static String ToPascalCase(this String String, Int32 Culture) {
-			String Result = "";
+			StringBuilder Result = new StringBuilder("");
 			foreach (String S in String.Words()) {
-				Result += S.ToTitleCase(Culture);
+				Result.Append(S.ToTitleCase(Culture));
 			}
-			return Result;
+			return Result.ToString();
 		}
 
 		/// <summary>
