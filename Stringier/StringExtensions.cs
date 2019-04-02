@@ -418,7 +418,7 @@ namespace System {
 		/// <param name="Replacement">The replacement string.</param>
 		/// <param name="RegexOptions">A bitwise combination of the enumeration values that provide options for matching.</param>
 		/// <returns>A new string that is identical to the input string, except that the replacement string takes the place of each matched string. If pattern is not matched in the current instance, the method returns the current instance unchanged.</returns>
-		public static String Replace(this String String, String Pattern, String Replacement, RegexOptions RegexOptions = RegexOptions.None) => Regex.Replace(String, Pattern, Replacement, RegexOptions);
+		public static String Replace(this String String, String Pattern, String Replacement, RegexOptions RegexOptions) => Regex.Replace(String, Pattern, Replacement, RegexOptions);
 
 		/// <summary>
 		/// Splits a string into substrings based on the strings in an array.
@@ -526,11 +526,11 @@ namespace System {
 		/// <param name="Culture">A predefined CultureInfo name, Name of an existing CultureInfo, or Windows-only culture name. name is not case-sensitive.</param>
 		/// <returns>The specified string converted to Pascal case.</returns>
 		public static String ToPascalCase(this String String, String Culture) {
-			String Result = "";
+			StringBuilder Result = new StringBuilder("");
 			foreach (String S in String.Words()) {
-				Result += S.ToTitleCase(Culture);
+				Result.Append(S.ToTitleCase(Culture));
 			}
-			return Result;
+			return Result.ToString();
 		}
 
 		/// <summary>
