@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace System.Text.Patterns {
+﻿namespace System.Text.Patterns {
 	/// <summary>
 	/// Represents the result value of parsing operations
 	/// </summary>
