@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Authors>Patrick Kelly</Authors>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <Copyright>2019</Copyright>
+    <PackageProjectUrl>https://github.com/Entomy/Stringier</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Entomy/Stringier</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>string, pattern, patterns, pattern matching, parser, parsers, parser combinator</PackageTags>
+    <RootNamespace>System.Text.Patterns;</RootNamespace>
+    <Version>0.1.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Stringier\Stringier.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>

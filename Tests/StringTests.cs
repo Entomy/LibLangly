@@ -1,4 +1,5 @@
 using System;
+using System.Text.Patterns;
 using System.Text.RegularExpressions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -63,5 +64,14 @@ namespace Tests {
 			Assert.AreEqual("World", " Hello   World".Words()[1]);
 		}
 
+		[TestMethod]
+		public void Consume() {
+			Assert.AreEqual("Hello", "".Consume("Hello"));
+			Assert.AreEqual("ello", "H".Consume("Hello"));
+			Assert.AreEqual("llo", "He".Consume("Hello"));
+			Assert.AreEqual("lo", "Hel".Consume("Hello"));
+			Assert.AreEqual("o", "Hell".Consume("Hello"));
+			Assert.AreEqual("", "Hello".Consume("Hello"));
+		}
 	}
 }
