@@ -6,7 +6,7 @@
 	/// This exists to box <see cref="System.String"/> into something that we can treat as a part of a pattern
 	/// </remarks>
 	public sealed class Literal : Pattern, IEquatable<Literal> {
-		private readonly String String;
+		private readonly String String = "";
 
 		internal Literal(String String) => this.String = String;
 

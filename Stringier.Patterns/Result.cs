@@ -2,7 +2,7 @@
 	/// <summary>
 	/// Represents the result value of parsing operations
 	/// </summary>
-    public readonly struct Result {
+    public readonly struct Result : IEquatable<Result> {
 
 		private readonly Boolean Success;
 
@@ -17,5 +17,6 @@
 			this.Remaining = Remaining;
 		}
 
+		public Boolean Equals(Result other) => Success.Equals(other.Success) && Remaining.Equals(other.Remaining);
 	}
 }
