@@ -133,14 +133,6 @@ namespace System {
 		/// Indicates whether the regular expression finds a match in the input string.
 		/// </summary>
 		/// <param name="String">The string to search for a match.</param>
-		/// <param name="Pattern">The regular expression pattern to match, using <see cref="Stringier.DefaultRegexOptions"/>.</param>
-		/// <returns>true if the regular expression finds a match; otherwise, false.</returns>
-		public static Boolean IsMatch(this String String, String Pattern) => Regex.IsMatch(String, Pattern, Stringier.DefaultRegexOptions);
-
-		/// <summary>
-		/// Indicates whether the regular expression finds a match in the input string.
-		/// </summary>
-		/// <param name="String">The string to search for a match.</param>
 		/// <param name="Pattern">The regular expression pattern to match.</param>
 		/// <param name="RegexOptions">A bitwise combination of the enumeration values that provide options for matching.</param>
 		/// <returns>true if the regular expression finds a match; otherwise, false.</returns>
@@ -173,14 +165,6 @@ namespace System {
 		/// Indicates whether the regular expressions all find a match in the input string.
 		/// </summary>
 		/// <param name="String">The string to search for a match.</param>
-		/// <param name="Patterns">An array of the regular expression pattern to match, using <see cref="Stringier.DefaultRegexOptions"/>.</param>
-		/// <returns>true if the regular expressions all find a match; otherwise, false.</returns>
-		public static Boolean IsMatchAll(this String String, params String[] Patterns) => IsMatchAll(String, Stringier.DefaultRegexOptions, Patterns);
-
-		/// <summary>
-		/// Indicates whether the regular expressions all find a match in the input string.
-		/// </summary>
-		/// <param name="String">The string to search for a match.</param>
 		/// <param name="RegexOptions">A bitwise combination of the enumeration values that provide options for matching.</param>
 		/// <param name="Patterns">An array of the regular expression pattern to match.</param>
 		/// <returns>true if the regular expressions all find a match; otherwise, false.</returns>
@@ -205,14 +189,6 @@ namespace System {
 			}
 			return Result;
 		}
-
-		/// <summary>
-		/// Indicates whether any of the regular expressions find a match in the input string.
-		/// </summary>
-		/// <param name="String">The string to search for a match.</param>
-		/// <param name="Patterns">An array of the regular expression pattern to match, using <see cref="Stringier.DefaultRegexOptions"/>.</param>
-		/// <returns>true if any of the regular expressions find a match; otherwise false.</returns>
-		public static Boolean IsMatchAny(this String String, params String[] Patterns) => IsMatchAny(String, Stringier.DefaultRegexOptions, Patterns);
 
 		/// <summary>
 		/// Indicates whether any of the regular expressions find a match in the input string.

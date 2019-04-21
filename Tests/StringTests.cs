@@ -1,4 +1,5 @@
 using System;
+using System.Text.RegularExpressions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests {
@@ -23,7 +24,7 @@ namespace Tests {
 
 		[TestMethod]
 		public void IsMatch() {
-			Assert.IsTrue("Hello World".IsMatch("^Hello"));
+			Assert.IsTrue("Hello World".IsMatch("^Hello", RegexOptions.IgnoreCase));
 		}
 
 		[TestMethod]
