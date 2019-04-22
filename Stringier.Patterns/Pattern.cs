@@ -13,6 +13,8 @@
 
 		public static Alternator operator |(String Left, Pattern Right) => new Alternator((Literal)Left, Right);
 
+		public static Repeater operator *(Pattern Left, Int32 Right) => new Repeater(Left, Right);
+
 		public abstract Result Consume(String Candidate);
 
 		public abstract override Boolean Equals(Object obj);

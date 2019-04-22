@@ -7,7 +7,7 @@ namespace Tests {
 	public class CombinatorTests {
 		[TestMethod]
 		public void Constructor() {
-			Combinator _ = ((Literal)"Hello" | "Goodbye") & " world";
+			Combinator _ = ((Literal)"Hello" | "Goodbye") & " " & "world";
 		}
 
 		[TestMethod]
