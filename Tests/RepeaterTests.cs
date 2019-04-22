@@ -14,6 +14,8 @@ namespace Tests {
 		public void Consume() {
 			Repeater Repeater = (Literal)"Hi! " * 2;
 			Assert.AreEqual("Hi!", Repeater.Consume("Hi! Hi! Hi!"));
+			Pattern Pattern = (((Literal)"Hi" | "Bye") & "! ") * 2;
+			Assert.AreEqual("Hi!", Pattern.Consume("Hi! Bye! Hi!"));
 		}
 	}
 }
