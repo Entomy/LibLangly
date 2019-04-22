@@ -14,8 +14,6 @@
 
 		public static Literal operator &(Literal Left, Literal Right) => new Literal(Left.String + Right.String);
 
-		public static Alternator operator |(Literal Left, Literal Right) => new Alternator(Left, Right);
-
 		public override Result Consume(String Candidate) => String.Consume(Candidate);
 
 		public override Boolean Equals(String Other) => String.Equals(String, Other);
