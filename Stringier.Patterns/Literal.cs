@@ -14,7 +14,7 @@
 
 		public static Literal operator &(Literal Left, Literal Right) => new Literal(Left.String + Right.String);
 
-		public override Result Consume(String Candidate) => String.Consume(Candidate);
+		public override Result Consume(Result Candidate) => String.Consume(Candidate);
 
 		public override Boolean Equals(String Other) => String.Equals(String, Other);
 

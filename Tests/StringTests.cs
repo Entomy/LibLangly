@@ -66,12 +66,12 @@ namespace Tests {
 
 		[TestMethod]
 		public void Consume() {
-			Assert.AreEqual("Hello", "".Consume("Hello"));
-			Assert.AreEqual("ello", "H".Consume("Hello"));
-			Assert.AreEqual("llo", "He".Consume("Hello"));
-			Assert.AreEqual("lo", "Hel".Consume("Hello"));
-			Assert.AreEqual("o", "Hell".Consume("Hello"));
-			Assert.AreEqual("", "Hello".Consume("Hello"));
+			ResultAssert.Remains("Hello", "".Consume("Hello"));
+			ResultAssert.Remains("ello", "H".Consume("Hello"));
+			ResultAssert.Remains("llo", "He".Consume("Hello"));
+			ResultAssert.Remains("lo", "Hel".Consume("Hello"));
+			ResultAssert.Remains("o", "Hell".Consume("Hello"));
+			ResultAssert.Remains("", "Hello".Consume("Hello"));
 		}
 	}
 }

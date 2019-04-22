@@ -13,7 +13,7 @@
 			this.Count = Count;
 		}
 
-		public override Result Consume(String Candidate) {
+		public override Result Consume(Result Candidate) {
 			Result Result = new Result(true, Candidate);
 			for (Int32 i = 0; i < Count; i++) {
 				Result = Pattern.Consume(Result);

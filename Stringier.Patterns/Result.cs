@@ -12,6 +12,8 @@
 
 		public static implicit operator String(Result Result) => Result.Remaining;
 
+		public static implicit operator Result(String String) => new Result(true, String);
+
 		public Result(Boolean Success, String Remaining) {
 			this.Success = Success;
 			this.Remaining = Remaining;

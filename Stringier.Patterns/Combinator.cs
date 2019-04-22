@@ -13,7 +13,7 @@
 			this.Right = Right;
 		}
 
-		public override Result Consume(String Candidate) => Right.Consume(Left.Consume(Candidate));
+		public override Result Consume(Result Candidate) => Right.Consume(Left.Consume(Candidate));
 
 		public override Boolean Equals(Object obj) {
 			switch (obj) {

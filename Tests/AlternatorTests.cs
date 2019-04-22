@@ -13,9 +13,9 @@ namespace Tests {
 		[TestMethod]
 		public void Consume() {
 			Alternator Alternator = (Literal)"Hello" | "Goodbye";
-			Assert.AreEqual("", Alternator.Consume("Hello"));
-			Assert.AreEqual("", Alternator.Consume("Goodbye"));
-			Assert.AreEqual("!", Alternator.Consume("!"));
+			ResultAssert.Remains("", Alternator.Consume("Hello"));
+			ResultAssert.Remains("", Alternator.Consume("Goodbye"));
+			ResultAssert.Remains("!", Alternator.Consume("!"));
 		}
 	}
 }

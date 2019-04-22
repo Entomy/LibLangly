@@ -40,7 +40,8 @@
 		public static Alternator operator |(Pattern Left, String Right) => new Alternator(Left, (Literal)Right);
 
 		public static Alternator operator |(String Left, Pattern Right) => new Alternator((Literal)Left, Right);
-		public abstract Result Consume(String Candidate);
+
+		public abstract Result Consume(Result Candidate);
 
 		public abstract override Boolean Equals(Object obj);
 

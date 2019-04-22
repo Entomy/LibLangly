@@ -13,7 +13,7 @@
 			this.Right = Right;
 		}
 
-		public override Result Consume(String Candidate) {
+		public override Result Consume(Result Candidate) {
 			Result Result = Left.Consume(Candidate);
 			return Result ? Result : Right.Consume(Candidate);
 		}
