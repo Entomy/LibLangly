@@ -51,6 +51,8 @@ namespace System.Text.Patterns {
 
 		public abstract override Int32 GetHashCode();
 
+		public Spanner Span() => new Spanner(this);
+
 		public abstract override String ToString();
 	}
 }
