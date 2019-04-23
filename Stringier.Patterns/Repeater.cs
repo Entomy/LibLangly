@@ -32,8 +32,8 @@
 			}
 		}
 
-		public override Boolean Equals(String Other) {
-			Result Result = new Result(true, Other);
+		public override Boolean Equals(String other) {
+			Result Result = new Result(true, other);
 			for (Int32 i = 0; i < Count; i++) {
 				Result = Pattern.Consume(Result);
 			}

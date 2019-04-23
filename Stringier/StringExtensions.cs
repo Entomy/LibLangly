@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
-using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
 namespace System {
+	[SuppressMessage("Microsoft.Analyzers", "CA1720", Justification = "This is an extension library, of course I'm naming the calling type the type itself")]
 	public static class StringExtensions {
-
 		/// <summary>
 		/// Chop the <paramref name="String"/> into chunks of <paramref name="Size"/>
 		/// </summary>
@@ -17,7 +17,7 @@ namespace System {
 		public static String[] Chop(this String String, Int32 Size) {
 			Int32 i = 0;
 			Int32 j = 0;
-			Int32 k = String.Length / Size + 1;
+			Int32 k = (String.Length / Size) + 1;
 			String[] Result = new String[k];
 			while (i < k) {
 				if ((j + Size) > String.Length) {
@@ -38,8 +38,8 @@ namespace System {
 		/// <returns>Cleaned up string</returns>
 		public static String Clean(this String String) {
 			String Result = String;
-			while (Regex.IsMatch(Result, @"  ")) {
-				Result = Result.Replace(@"  ", " ");
+			while (Regex.IsMatch(Result, "  ")) {
+				Result = Result.Replace("  ", " ");
 			}
 			return Result.Trim();
 		}
@@ -65,7 +65,7 @@ namespace System {
 		/// <param name="String">The string to check.</param>
 		/// <param name="Value">The char to seek.</param>
 		/// <returns>true if the value parameter occurs within this string, or if value is the empty char (''); otherwise, false.</returns>
-		public static Boolean Contains(this String String, Char Value) => String.Contains(Value.ToString());
+		public static Boolean Contains(this String String, Char Value) => String.Contains(Value.ToString(CultureInfo.InvariantCulture));
 
 		/// <summary>
 		/// Returns a value indicating whether a specified char occurs within any of the strings.
@@ -106,7 +106,7 @@ namespace System {
 				return Required + String;
 			}
 		}
-		
+
 		/// <summary>
 		/// Ensures the <paramref name="String"/> ends with the <paramref name="Required"/> string, adding it if necessary.
 		/// </summary>
@@ -211,7 +211,7 @@ namespace System {
 		/// <param name="Strings">An array that contains the strings to concatenate.</param>
 		/// <param name="Separator">The char to use as a separator. Separator is included in the returned string only if value has more than one element.</param>
 		/// <returns>A string that consists of the elements in value delimited by the separator char. If value is an empty array, the method returns Empty.</returns>
-		public static String Join(this String[] Strings, Char Separator) => String.Join(Separator.ToString(), Strings);
+		public static String Join(this String[] Strings, Char Separator) => String.Join(Separator.ToString(CultureInfo.InvariantCulture), Strings);
 
 		/// <summary>
 		/// Concatenates all the elements of a string enumerable, using the specified separator between each element.
@@ -219,7 +219,7 @@ namespace System {
 		/// <param name="Strings">An enumerable that contains the strings to concatenate.</param>
 		/// <param name="Separator">The char to use as a separator. Separator is included in the returned string only if value has more than one element.</param>
 		/// <returns>A string that consists of the elements in value delimited by the separator char. If value is an empty enumerable, the method returns Empty.</returns>
-		public static String Join(this IEnumerable<String> Strings, Char Separator) => String.Join(Separator.ToString(), Strings);
+		public static String Join(this IEnumerable<String> Strings, Char Separator) => String.Join(Separator.ToString(CultureInfo.InvariantCulture), Strings);
 
 		/// <summary>
 		/// Concatenates all the elements of a string array, using the specified separator between each element.
@@ -384,7 +384,7 @@ namespace System {
 		/// <param name="OldPart">The <see cref="String"/> to be replaced.</param>
 		/// <param name="NewPart">The <see cref="Char"/> to replace all occurences of <paramref name="OldPart"/>.</param>
 		/// <returns></returns>
-		public static String Replace(this String String, String OldPart, Char NewPart) => String.Replace(OldPart, NewPart.ToString());
+		public static String Replace(this String String, String OldPart, Char NewPart) => String.Replace(OldPart, NewPart.ToString(CultureInfo.InvariantCulture));
 
 		/// <summary>
 		/// In a specified input string, replaces all strings that match a specified regular expression with a specified replacement string. Specified options modify the matching operation.
@@ -413,7 +413,7 @@ namespace System {
 		public static String Strip(this String String, params Char[] StripChars) {
 			String Result = String;
 			foreach (Char StripChar in StripChars) {
-				Result = Result.Replace(StripChar.ToString(), "");
+				Result = Result.Replace(StripChar.ToString(CultureInfo.InvariantCulture), "");
 			}
 			return Result;
 		}
@@ -538,6 +538,5 @@ namespace System {
 		/// <param name="String">String to separate.</param>
 		/// <returns>Array of words within the <paramref name="String"/>.</returns>
 		public static String[] Words(this String String) => String.Clean().Split(' ');
-
 	}
 }

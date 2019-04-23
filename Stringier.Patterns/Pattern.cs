@@ -1,6 +1,8 @@
-﻿namespace System.Text.Patterns {
-	public abstract class Pattern : IEquatable<String> {
+﻿using System.Diagnostics.CodeAnalysis;
 
+namespace System.Text.Patterns {
+	[SuppressMessage("Microsoft.Analyzers", "CA2225", Justification = "While operators are being overridden, they aren't strictly what they were. Semantics are kept the same, but you wouldn't call repetition 'multiplication'")]
+	public abstract class Pattern : IEquatable<String> {
 		/// <summary>
 		/// All control characters
 		/// </summary>
@@ -45,7 +47,7 @@
 
 		public abstract override Boolean Equals(Object obj);
 
-		public abstract Boolean Equals(String Other);
+		public abstract Boolean Equals(String other);
 
 		public abstract override Int32 GetHashCode();
 

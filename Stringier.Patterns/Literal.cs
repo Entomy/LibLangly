@@ -1,10 +1,13 @@
-﻿namespace System.Text.Patterns {
-	/// <summary>
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace System.Text.Patterns {
+	/// <summary>	
 	/// Represents a literal pattern
 	/// </summary>
 	/// <remarks>
 	/// This exists to box <see cref="System.String"/> into something that we can treat as a part of a pattern
 	/// </remarks>
+	[SuppressMessage("Microsoft.Analyzers", "CA2225", Justification = "While operators are being overridden, they aren't strictly what they were. Semantics are kept the same, but you wouldn't call repetition 'multiplication'")]
 	public sealed class Literal : Pattern, IEquatable<Literal> {
 		private readonly String String = "";
 
@@ -16,9 +19,9 @@
 
 		public override Result Consume(Result Candidate) => String.Consume(Candidate);
 
-		public override Boolean Equals(String Other) => String.Equals(String, Other);
+		public override Boolean Equals(String other) => String.Equals(String, other, StringComparison.InvariantCulture);
 
-		public Boolean Equals(Literal Other) => String.Equals(Other.String);
+		public Boolean Equals(Literal other) => String.Equals(other.String, StringComparison.InvariantCulture);
 
 		public override Boolean Equals(Object obj) {
 			switch (obj) {

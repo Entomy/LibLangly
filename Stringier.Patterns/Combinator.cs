@@ -26,7 +26,7 @@
 			}
 		}
 
-		public override Boolean Equals(String Other) => String.Equals(Left.Consume(Other), Right);
+		public override Boolean Equals(String other) => String.Equals(Left.Consume(other), Right);
 
 		public Boolean Equals(Combinator other) => Left.Equals(other.Left) && Right.Equals(other.Right);
 

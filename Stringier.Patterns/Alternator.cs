@@ -3,7 +3,6 @@
 	/// Represents an alternator pattern
 	/// </summary>
 	public sealed class Alternator : Pattern, IEquatable<Alternator> {
-
 		private readonly Pattern Left;
 
 		private readonly Pattern Right;
