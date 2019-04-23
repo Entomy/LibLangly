@@ -65,7 +65,7 @@ namespace System {
 		/// <param name="String">The string to check.</param>
 		/// <param name="Value">The char to seek.</param>
 		/// <returns>true if the value parameter occurs within this string, or if value is the empty char (''); otherwise, false.</returns>
-		public static Boolean Contains(this String String, Char Value) => String.Contains(Value.ToString(CultureInfo.InvariantCulture));
+		public static Boolean Contains(this String String, Char Value) => String.Contains(Value.ToString());
 
 		/// <summary>
 		/// Returns a value indicating whether a specified char occurs within any of the strings.
@@ -211,7 +211,7 @@ namespace System {
 		/// <param name="Strings">An array that contains the strings to concatenate.</param>
 		/// <param name="Separator">The char to use as a separator. Separator is included in the returned string only if value has more than one element.</param>
 		/// <returns>A string that consists of the elements in value delimited by the separator char. If value is an empty array, the method returns Empty.</returns>
-		public static String Join(this String[] Strings, Char Separator) => String.Join(Separator.ToString(CultureInfo.InvariantCulture), Strings);
+		public static String Join(this String[] Strings, Char Separator) => String.Join(Separator.ToString(), Strings);
 
 		/// <summary>
 		/// Concatenates all the elements of a string enumerable, using the specified separator between each element.
@@ -219,7 +219,7 @@ namespace System {
 		/// <param name="Strings">An enumerable that contains the strings to concatenate.</param>
 		/// <param name="Separator">The char to use as a separator. Separator is included in the returned string only if value has more than one element.</param>
 		/// <returns>A string that consists of the elements in value delimited by the separator char. If value is an empty enumerable, the method returns Empty.</returns>
-		public static String Join(this IEnumerable<String> Strings, Char Separator) => String.Join(Separator.ToString(CultureInfo.InvariantCulture), Strings);
+		public static String Join(this IEnumerable<String> Strings, Char Separator) => String.Join(Separator.ToString(), Strings);
 
 		/// <summary>
 		/// Concatenates all the elements of a string array, using the specified separator between each element.
@@ -384,7 +384,7 @@ namespace System {
 		/// <param name="OldPart">The <see cref="String"/> to be replaced.</param>
 		/// <param name="NewPart">The <see cref="Char"/> to replace all occurences of <paramref name="OldPart"/>.</param>
 		/// <returns></returns>
-		public static String Replace(this String String, String OldPart, Char NewPart) => String.Replace(OldPart, NewPart.ToString(CultureInfo.InvariantCulture));
+		public static String Replace(this String String, String OldPart, Char NewPart) => String.Replace(OldPart, NewPart.ToString());
 
 		/// <summary>
 		/// In a specified input string, replaces all strings that match a specified regular expression with a specified replacement string. Specified options modify the matching operation.
@@ -413,7 +413,7 @@ namespace System {
 		public static String Strip(this String String, params Char[] StripChars) {
 			String Result = String;
 			foreach (Char StripChar in StripChars) {
-				Result = Result.Replace(StripChar.ToString(CultureInfo.InvariantCulture), "");
+				Result = Result.Replace(StripChar.ToString(), "");
 			}
 			return Result;
 		}

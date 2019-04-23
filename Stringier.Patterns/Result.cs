@@ -2,7 +2,7 @@
 	/// <summary>
 	/// Represents the result value of parsing operations
 	/// </summary>
-	public readonly struct Result : IEquatable<Result> {
+	public readonly struct Result : IEquatable<Result>, IEquatable<String> {
 		private readonly String Remaining;
 
 		private readonly Boolean Success;
@@ -20,12 +20,24 @@
 
 		public static Boolean operator !=(Result left, Result right) => !left.Equals(right);
 
+		public static Boolean operator !=(Result left, String right) => !left.Equals(right);
+
+		public static Boolean operator !=(String left, Result right) => !right.Equals(left);
+
 		public static Boolean operator ==(Result left, Result right) => left.Equals(right);
 
-		public Boolean Equals(Result other) => Success.Equals(other.Success) && String.Equals(Remaining, other.Remaining, StringComparison.InvariantCulture);
+		public static Boolean operator ==(Result left, String right) => left.Equals(right);
+
+		public static Boolean operator ==(String left, Result right) => right.Equals(left);
+
+		public Boolean Equals(Result other) => Success.Equals(other.Success) && String.Equals(Remaining, other.Remaining, StringComparison.Ordinal);
+
+		public Boolean Equals(String other) => String.Equals(Remaining, other, StringComparison.InvariantCulture);
 
 		public override Boolean Equals(Object obj) {
 			switch (obj) {
+			case String Other:
+				return Equals(Other);
 			case Result Other:
 				return Equals(Other);
 			default:
