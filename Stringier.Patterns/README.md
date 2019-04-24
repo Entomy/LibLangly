@@ -50,7 +50,7 @@ Pattern matching is largely based around the idea of goal-direction. The two mos
 
 > But wait, C# can't return multiple values!
 
-While true, this is remarkably pedantic. Whether you return an array, a struct, a class, or a tuple, you are returning multiple values wrapped up as one value. All the parsing methods return `Result` which contains both the success state (`Boolean`) and the result of the operation (`String`). `Result` implicitly casts to both `Boolean` and `String` and can be used as such. This allows some conveniences without adding new methods.
+While true, this is remarkably pedantic. Whether you return an array, a struct, a class, or a tuple, you are returning multiple values as one conceptual value. All the parsing methods return `Result` which contains both the success state (`Boolean`) and the result of the operation (`String`). `Result` implicitly casts to both `Boolean` and `String` and can be used as such. This allows some conveniences without adding new methods.
 
 Only want to check if a `String` begins with a certain pattern?
 
@@ -116,3 +116,11 @@ Pattern patternName = pattern.Span();
 ~~~~
 
 Spanners require the pattern to exist at least once, but will repeat until the pattern can no longer be matched, and are equivalent to the regex `pattern+`.
+
+### OptorSpanners
+
+~~~~csharp
+Pattern patternName = ~pattern.Span();
+~~~~
+
+Technically not its own type, but this does represent a Regex symbol that doesn't have a direct matching. It is equivalent to the regex `pattern*`.
