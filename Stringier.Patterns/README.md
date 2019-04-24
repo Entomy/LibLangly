@@ -93,10 +93,18 @@ Pattern patternName = pattern1 & pattern2;
 
 Combinators require both patterns in sequence and are equivalent to the regex `(pattern1)(pattern2)` with the unnecessary parenthesis added for readability.
 
+### Optor
+
+~~~~csharp
+Pattern patternName = ~pattern;
+~~~~
+
+Optors make the pattern completly optional, so success is always true, and are equivalent to the regex `(pattern)?`.
+
 ### Repeater
 
 ~~~~csharp
-Pattern patternName = literalPattern1 * 3; //repeats the pattern three times
+Pattern patternName = pattern * 3; //repeats the pattern three times
 ~~~~
 
 Repeaters require the pattern to repeat the specified number of times, and can be thought of the multiplcation to patterns when combinators are addition. The above example would be equivalent to the regex `pattern{3}`.

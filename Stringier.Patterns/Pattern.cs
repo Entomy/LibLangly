@@ -43,6 +43,8 @@ namespace System.Text.Patterns {
 
 		public static Alternator operator |(String Left, Pattern Right) => new Alternator((Literal)Left, Right);
 
+		public static Optor operator ~(Pattern Pattern) => new Optor(Pattern);
+
 		public abstract Result Consume(Result Candidate);
 
 		public abstract Result Consume(Result Candidate, out String Capture);
