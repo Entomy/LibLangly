@@ -1,6 +1,6 @@
 ﻿namespace System.Text.Patterns {
 	/// <summary>
-	/// Represents the result value of parsing operations
+	/// Represents the result value of parsing operations. There are two main components. The first is a Boolean representing success of the operation. The second is the remaining string after the operation. This type can be used as if it is either individual type.
 	/// </summary>
 	public readonly struct Result : IEquatable<Result>, IEquatable<String> {
 		private readonly String Remaining;

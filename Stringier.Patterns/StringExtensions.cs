@@ -16,7 +16,7 @@ namespace System.Text.Patterns {
 		/// </summary>
 		/// <param name="Pattern">The <see cref="String"/> to match</param>
 		/// <param name="Candidate">The <see cref="String"/> to consume</param>
-		/// <param name="Consumed">The <see cref="String"/> that was consumed, empty if not matched</param>
+		/// <param name="Capture">The <see cref="String"/> that was consumed, empty if not matched</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the remaining string</returns>
 		public static Result Consume(this String Pattern, String Candidate, out String Capture) {
 			if (Pattern.Length > Candidate.Length) {

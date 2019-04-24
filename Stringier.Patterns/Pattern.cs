@@ -1,7 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-
-namespace System.Text.Patterns {
-	[SuppressMessage("Microsoft.Analyzers", "CA2225", Justification = "While operators are being overridden, they aren't strictly what they were. Semantics are kept the same, but you wouldn't call repetition 'multiplication'")]
+﻿namespace System.Text.Patterns {
 	public abstract class Pattern : IEquatable<String> {
 		/// <summary>
 		/// All control characters
@@ -29,24 +26,82 @@ namespace System.Text.Patterns {
 		//TODO: This should include format characters as well
 		public static readonly Pattern Whitespace = ControlCharacter | LineSeparator | ParagraphSeparator | SpaceSeparator;
 
+		/// <summary>
+		/// Combine the two patterns, one after another
+		/// </summary>
+		/// <param name="Left"></param>
+		/// <param name="Right"></param>
+		/// <returns>The new <see cref="Pattern"/></returns>
 		public static Combinator operator &(Pattern Left, Pattern Right) => new Combinator(Left, Right);
 
+		/// <summary>
+		/// Combine the two patterns, one after another
+		/// </summary>
+		/// <param name="Left"></param>
+		/// <param name="Right"></param>
+		/// <returns>The new <see cref="Pattern"/></returns>
 		public static Combinator operator &(Pattern Left, String Right) => new Combinator(Left, (Literal)Right);
 
+		/// <summary>
+		/// Combine the two patterns, one after another
+		/// </summary>
+		/// <param name="Left"></param>
+		/// <param name="Right"></param>
+		/// <returns>The new <see cref="Pattern"/></returns>
 		public static Combinator operator &(String Left, Pattern Right) => new Combinator((Literal)Left, Right);
 
+		/// <summary>
+		/// Repeats the pattern the specified number of times
+		/// </summary>
+		/// <param name="Left">The <see cref="Pattern"/> to repeat</param>
+		/// <param name="Right">The number of repetitions</param>
+		/// <returns>The new <see cref="Pattern"/></returns>
 		public static Repeater operator *(Pattern Left, Int32 Right) => new Repeater(Left, Right);
 
+		/// <summary>
+		/// Alternate the two patterns, accepting either
+		/// </summary>
+		/// <param name="Left"></param>
+		/// <param name="Right"></param>
+		/// <returns>The new <see cref="Pattern"/></returns>
 		public static Alternator operator |(Pattern Left, Pattern Right) => new Alternator(Left, Right);
 
+		/// <summary>
+		/// Alternate the two patterns, accepting either
+		/// </summary>
+		/// <param name="Left"></param>
+		/// <param name="Right"></param>
+		/// <returns>The new <see cref="Pattern"/></returns>
 		public static Alternator operator |(Pattern Left, String Right) => new Alternator(Left, (Literal)Right);
 
+		/// <summary>
+		/// Alternate the two patterns, accepting either
+		/// </summary>
+		/// <param name="Left"></param>
+		/// <param name="Right"></param>
+		/// <returns>The new <see cref="Pattern"/></returns>
 		public static Alternator operator |(String Left, Pattern Right) => new Alternator((Literal)Left, Right);
 
+		/// <summary>
+		/// Makes the <paramref name="Pattern"/> optional
+		/// </summary>
+		/// <param name="Pattern"></param>
+		/// <returns>The new <see cref="Pattern"/></returns>
 		public static Optor operator ~(Pattern Pattern) => new Optor(Pattern);
 
+		/// <summary>
+		/// Attempt to consume the <paramref name="Pattern"/> from the <paramref name="Candidate"/>
+		/// </summary>
+		/// <param name="Candidate">The <see cref="String"/> to consume</param>
+		/// <returns>A <see cref="Result"/> containing whether a match occured and the remaining string</returns>
 		public abstract Result Consume(Result Candidate);
 
+		/// <summary>
+		/// Attempt to consume the <paramref name="Pattern"/> from the <paramref name="Candidate"/>
+		/// </summary>
+		/// <param name="Candidate">The <see cref="String"/> to consume</param>
+		/// <param name="Capture">The <see cref="String"/> that was consumed, empty if not matched</param>
+		/// <returns>A <see cref="Result"/> containing whether a match occured and the remaining string</returns>
 		public abstract Result Consume(Result Candidate, out String Capture);
 
 		public abstract override Boolean Equals(Object obj);
