@@ -19,5 +19,12 @@ namespace Tests {
 			ResultAssert.Remains("Goodbye world!", Optor.Consume("Goodbye world!", out Capture));
 			Assert.AreEqual("", Capture);
 		}
+
+		[TestMethod]
+		public void SpanConsume() {
+			Pattern OptorSpan = ~((Literal)" ").Span();
+			ResultAssert.Remains("Hello", OptorSpan.Consume("  Hello"));
+			ResultAssert.Remains("Hello", OptorSpan.Consume("Hello"));
+		}
 	}
 }
