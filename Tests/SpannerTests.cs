@@ -12,8 +12,9 @@ namespace Tests {
 
 		[TestMethod]
 		public void Consume() {
-			Spanner Spanner = Pattern.Whitespace.Span();
-			ResultAssert.Remains("Hi!", Spanner.Consume("  \t Hi!"));
+			Spanner Whitespace = Pattern.Whitespace.Span();
+			ResultAssert.Remains("Hi!", Whitespace.Consume("  \t Hi!", out String Capture));
+			Assert.AreEqual("  \t ", Capture);
 		}
 	}
 }

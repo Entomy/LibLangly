@@ -12,9 +12,11 @@
 			this.Right = Right;
 		}
 
-		public override Result Consume(Result Candidate) {
-			Result Result = Left.Consume(Candidate);
-			return Result ? Result : Right.Consume(Candidate);
+		public override Result Consume(Result Candidate) => Consume(Candidate, out _);
+
+		public override Result Consume(Result Candidate, out String Capture) {
+			Result Result = Left.Consume(Candidate, out Capture);
+			return Result ? Result : Right.Consume(Candidate, out Capture);
 		}
 
 		public override Boolean Equals(String other) => Left.Equals(other) || Right.Equals(other);

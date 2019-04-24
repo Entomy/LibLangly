@@ -73,5 +73,12 @@ namespace Tests {
 			ResultAssert.Remains("o", "Hell".Consume("Hello"));
 			ResultAssert.Remains("", "Hello".Consume("Hello"));
 		}
+
+		[TestMethod]
+		public void ConsumeOutput() {
+			String Output;
+			"Hi!".Consume("Hi!Bye!", out Output);
+			Assert.AreEqual("Hi!", Output);
+		}
 	}
 }

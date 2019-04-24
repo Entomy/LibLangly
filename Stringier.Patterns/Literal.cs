@@ -17,7 +17,9 @@ namespace System.Text.Patterns {
 
 		public static Literal operator &(Literal Left, Literal Right) => new Literal(Left.String + Right.String);
 
-		public override Result Consume(Result Candidate) => String.Consume(Candidate);
+		public override Result Consume(Result Candidate) => Consume(Candidate, out _);
+
+		public override Result Consume(Result Candidate, out String Capture) => String.Consume(Candidate, out Capture);
 
 		public override Boolean Equals(String other) => String.Equals(String, other, StringComparison.InvariantCulture);
 

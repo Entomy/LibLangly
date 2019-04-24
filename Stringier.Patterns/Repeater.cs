@@ -13,11 +13,17 @@
 			this.Count = Count;
 		}
 
-		public override Result Consume(Result Candidate) {
+		public override Result Consume(Result Candidate) => Consume(Candidate, out _);
+
+		public override Result Consume(Result Candidate, out String Capture) {
+			StringBuilder CaptureBuilder = new StringBuilder();
+			String capture;
 			Result Result = new Result(true, Candidate);
 			for (Int32 i = 0; i < Count; i++) {
-				Result = Pattern.Consume(Result);
+				Result = Pattern.Consume(Result, out capture);
+				CaptureBuilder.Append(capture);
 			}
+			Capture = CaptureBuilder.ToString();
 			return Result;
 		}
 

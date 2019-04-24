@@ -3,7 +3,6 @@
 	/// Represents a combinator pattern
 	/// </summary>
 	public sealed class Combinator : Pattern, IEquatable<Combinator> {
-
 		private readonly Pattern Left;
 
 		private readonly Pattern Right;
@@ -13,7 +12,19 @@
 			this.Right = Right;
 		}
 
-		public override Result Consume(Result Candidate) => Right.Consume(Left.Consume(Candidate));
+		public override Result Consume(Result Candidate) => Consume(Candidate, out _);
+
+		public override Result Consume(Result Candidate, out String Capture) {
+			StringBuilder CaptureBuilder = new StringBuilder();
+			String capture;
+			Result Result = Candidate;
+			Result = Left.Consume(Result, out capture);
+			CaptureBuilder.Append(capture);
+			Result = Right.Consume(Result, out capture);
+			CaptureBuilder.Append(capture);
+			Capture = CaptureBuilder.ToString();
+			return Result;
+		}
 
 		public override Boolean Equals(Object obj) {
 			switch (obj) {

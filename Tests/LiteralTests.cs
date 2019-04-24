@@ -14,7 +14,8 @@ namespace Tests {
 
 		[TestMethod]
 		public void Consume() {
-			ResultAssert.Remains("!", ((Literal)"Hello" & " " & "World").Consume("Hello World!"));
+			ResultAssert.Remains("!", ((Literal)"Hello" & " " & "World").Consume("Hello World!", out String Capture));
+			Assert.AreEqual("Hello World", Capture);
 		}
 	}
 }

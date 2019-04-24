@@ -45,6 +45,8 @@ namespace System.Text.Patterns {
 
 		public abstract Result Consume(Result Candidate);
 
+		public abstract Result Consume(Result Candidate, out String Capture);
+
 		public abstract override Boolean Equals(Object obj);
 
 		public abstract Boolean Equals(String other);

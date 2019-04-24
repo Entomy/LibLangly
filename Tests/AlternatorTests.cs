@@ -13,9 +13,13 @@ namespace Tests {
 		[TestMethod]
 		public void Consume() {
 			Alternator Alternator = (Literal)"Hello" | "Goodbye";
-			ResultAssert.Remains("", Alternator.Consume("Hello"));
-			ResultAssert.Remains("", Alternator.Consume("Goodbye"));
-			ResultAssert.Remains("!", Alternator.Consume("!"));
+			String Capture;
+			ResultAssert.Remains("", Alternator.Consume("Hello", out Capture));
+			Assert.AreEqual("Hello", Capture);
+			ResultAssert.Remains("", Alternator.Consume("Goodbye", out Capture));
+			Assert.AreEqual("Goodbye", Capture);
+			ResultAssert.Remains("!", Alternator.Consume("!", out Capture));
+			Assert.AreEqual("", Capture);
 		}
 	}
 }

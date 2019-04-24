@@ -7,11 +7,17 @@
 
 		internal Spanner(Pattern Pattern) => this.Pattern = Pattern;
 
-		public override Result Consume(Result Candidate) {
-			Result Result = Pattern.Consume(Candidate);
+		public override Result Consume(Result Candidate) => Consume(Candidate, out _);
+
+		public override Result Consume(Result Candidate, out String Capture) {
+			StringBuilder CaptureBuilder = new StringBuilder();
+			String capture;
+			Result Result = Candidate;
 			while (Result) {
-				Result = Pattern.Consume(Result);
+				Result = Pattern.Consume(Result, out capture);
+				CaptureBuilder.Append(capture);
 			}
+			Capture = CaptureBuilder.ToString();
 			return Result;
 		}
 
