@@ -80,5 +80,10 @@ namespace Tests {
 			"Hi!".Consume("Hi!Bye!", out Output);
 			Assert.AreEqual("Hi!", Output);
 		}
+
+		[TestMethod]
+		public void ConsumeCaseInsensitive() {
+			ResultAssert.Remains("", "HELLO".Consume("Hello", StringComparison.OrdinalIgnoreCase));
+		}
 	}
 }

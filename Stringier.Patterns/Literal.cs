@@ -8,22 +8,25 @@
 	public sealed class Literal : Pattern, IEquatable<Literal> {
 		private readonly String String = "";
 
-		internal Literal(String String) => this.String = String;
+		/// <summary>
+		/// The <see cref="StringComparison"/> to use during pattern matching
+		/// </summary>
+		private readonly StringComparison ComparisonType = StringComparison.CurrentCulture;
+
+		internal Literal(String String) : this(String, StringComparison.CurrentCulture) { }
+
+		internal Literal(String String, StringComparison ComparisonType) {
+			this.String = String;
+			this.ComparisonType = ComparisonType;
+		}
 
 		public static implicit operator Literal(String String) => new Literal(String);
 
-		/// <summary>
-		/// Combine two literals into another literal
-		/// </summary>
-		/// <param name="Left">The first <see cref="Literal"/></param>
-		/// <param name="Right">The second <see cref="Literal"/></param>
-		/// <returns>A new <see cref="Literal"/> combining <paramref name="Left"/> and <paramref name="Right"/></returns>
-		public static Literal operator &(Literal Left, Literal Right) => new Literal(Left.String + Right.String);
+		public static implicit operator Literal((String String, StringComparison ComparisonType) Pattern) => new Literal(Pattern.String, Pattern.ComparisonType);
 
 		/// <summary>
 		/// Attempt to consume the <paramref name="Pattern"/> from the <paramref name="Candidate"/>
 		/// </summary>
-		/// <param name="Pattern">The <see cref="String"/> to match</param>
 		/// <param name="Candidate">The <see cref="String"/> to consume</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the remaining string</returns>
 		public override Result Consume(Result Candidate) => Consume(Candidate, out _);
@@ -31,11 +34,10 @@
 		/// <summary>
 		/// Attempt to consume the <paramref name="Pattern"/> from the <paramref name="Candidate"/>
 		/// </summary>
-		/// <param name="Pattern">The <see cref="String"/> to match</param>
 		/// <param name="Candidate">The <see cref="String"/> to consume</param>
-		/// <param name="Consumed">The <see cref="String"/> that was consumed, empty if not matched</param>
+		/// <param name="Capture">The <see cref="String"/> that was consumed, empty if not matched</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the remaining string</returns>
-		public override Result Consume(Result Candidate, out String Capture) => String.Consume(Candidate, out Capture);
+		public override Result Consume(Result Candidate, out String Capture) => String.Consume(Candidate, ComparisonType, out Capture);
 
 		public override Boolean Equals(String other) => String.Equals(String, other, StringComparison.InvariantCulture);
 
