@@ -2,6 +2,9 @@
 	/// <summary>
 	/// Represents the result value of parsing operations. There are two main components. The first is a Boolean representing success of the operation. The second is the captured string during the operation. This type can be used as if it is either individual type.
 	/// </summary>
+	/// <remarks>
+	/// It's not really either value, but rather a <see cref="ReadOnlySpan{T}"/> with special logic for comparisons and conversions
+	/// </remarks>
 	public ref struct Result {
 		private readonly ReadOnlySpan<Char> Capture;
 

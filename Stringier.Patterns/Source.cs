@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace System.Text.Patterns {
+	/// <summary>
+	/// Represents a parsing source
+	/// </summary>
 	public ref struct Source {
 		private readonly ReadOnlySpan<Char> Buffer;
 
@@ -13,11 +16,11 @@ namespace System.Text.Patterns {
 
 		public Int32 Length => Buffer.Length - Position;
 
-		public Int32 Position { get; internal set; }
+		internal Int32 Position { get; set; }
 
-		public ReadOnlySpan<Char> Peek(Int32 Count) => Buffer.Slice(Position, Count);
+		internal ReadOnlySpan<Char> Peek(Int32 Count) => Buffer.Slice(Position, Count);
 
-		public ReadOnlySpan<Char> Read(Int32 Count) {
+		internal ReadOnlySpan<Char> Read(Int32 Count) {
 			ReadOnlySpan<Char> Result = Peek(Count);
 			Position += Count;
 			return Result;
