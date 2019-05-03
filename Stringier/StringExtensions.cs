@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Text;
 using System.Text.RegularExpressions;
 
 namespace System {
-	[SuppressMessage("Microsoft.Analyzers", "CA1720", Justification = "This is an extension library, of course I'm naming the calling type the type itself")]
 	public static class StringExtensions {
 		/// <summary>
 		/// Chop the <paramref name="String"/> into chunks of <paramref name="Size"/>
