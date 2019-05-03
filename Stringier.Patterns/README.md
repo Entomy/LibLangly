@@ -19,6 +19,11 @@ Literal patternName = "Text to match";
 ~~~~
 or
 ~~~~csharp
+Literal patternName = ("Text to match", StringComparison.CurrentCultureIgnoreCase);
+// Comparisons of this Literal will use the StringComparison value
+~~~~
+or
+~~~~csharp
 Pattern patternName = literalPattern1 & (literalPattern2 | literalPattern3);
 ~~~~
 
@@ -26,20 +31,14 @@ Pattern patternName = literalPattern1 & (literalPattern2 | literalPattern3);
 
 ~~~~csharp
 patternName.Consume("Candidate text");
-//Assuming Consume captures "Candidate" this will return true and " text"
-~~~~
-or
-~~~~csharp
-patternName.Consume("Candidate text", out String Capture);
-//Assuming Consume captures "Candidate" this will return true and " text"
-//And Capture will be "Candidate"
+//Assuming Consume captures "Candidate" this will return true and "Candidate"
 ~~~~
 
 ### Inline (Quick Match)
 
 ~~~~csharp
 "Hello".Consume("Hello World!");
-//Captures "Hello" and returns true and " World!"
+//Assuming "Hello" captures "Hello" (which it obviously will) this will return true and "Hello"
 ~~~~
 
 ## Concepts
@@ -52,15 +51,9 @@ Pattern matching is largely based around the idea of goal-direction. The two mos
 
 While true, this is remarkably pedantic. Whether you return an array, a struct, a class, or a tuple, you are returning multiple values as one conceptual value. All the parsing methods return `Result` which contains both the success state (`Boolean`) and the result of the operation (`String`). `Result` implicitly casts to both `Boolean` and `String` and can be used as such. This allows some conveniences without adding new methods.
 
-Only want to check if a `String` begins with a certain pattern?
+> So every return passes two values? Isn't that a lot of extra memory?
 
-~~~~csharp
-if (patternName.Consume("Candidate")) { /* do something */ }
-~~~~
-
-It's that easy.
-
-It's also important to note that all parsing methods operate on `Result`, which you can't call any meaningful constructor for (`Result` is a `readonly struct` so it has a publically visible default constructor, but this isn't useful). However you don't need a constructor nor overload to use these methods. `String` implicitly converts to a `Result` with success.
+One, no not really, a single `Boolean` isn't very large. Two, it doesn't actually pass a `Boolean` at all. An empty string is recognized as a failure. Essentially `Result` is a box of `String` with special comparisons and implicit conversions. In other words, the behavior of `Parse` and `TryParse` combined into one method. And, getting technical, we're not actually passing around `String` either. We're actually passing around [`Span<Char>`](https://docs.microsoft.com/en-us/dotnet/api/system.span-1) for performance reasons; actually passing around references to parts of the string, preventing copying in most situations.
 
 ### Literal
 
