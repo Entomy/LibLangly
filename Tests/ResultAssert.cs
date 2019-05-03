@@ -9,9 +9,9 @@ namespace Tests {
 			if (Actual) { throw new AssertFailedException("ResultAssert.Fails failed"); }
 		}
 
-		public static void Remains(String Expected, Result Actual) {
+		public static void Captures(String Expected, Result Actual) {
 			if (Actual != Expected) {
-				throw new AssertFailedException($"ResultAssert.Remains failed. Expected: <{Expected}>. Actual: <{Actual}>.");
+				throw new AssertFailedException($"ResultAssert.Captures failed. Expected: <{Expected}>. Actual: <{(String)Actual}>.");
 			}
 		}
 

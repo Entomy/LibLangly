@@ -7,19 +7,16 @@ namespace Tests {
 	public class CombinatorTests {
 		[TestMethod]
 		public void Constructor() {
-			Combinator _ = ((Literal)"Hello" | "Goodbye") & " " & "world";
+			Combinator _ = (Literal)"Hello" & " " & "world";
 		}
 
 		[TestMethod]
 		public void Consume() {
-			Combinator Combinator = ((Literal)"Hello" | "Goodbye") & " " & "world";
-			String Capture;
-			ResultAssert.Remains("", Combinator.Consume("Hello world", out Capture));
-			Assert.AreEqual("Hello world", Capture);
-			ResultAssert.Remains("", Combinator.Consume("Goodbye world", out Capture));
-			Assert.AreEqual("Goodbye world", Capture);
-			ResultAssert.Remains("World", Combinator.Consume("Hello World", out Capture)); // Remember, string comparisons are case sensitive, so "World" isn't a match
-			Assert.AreEqual("Hello ", Capture);
+			Combinator HelloWorld = (Literal)"Hello" & " " & "world";
+			Combinator GoodbyeWorld = (Literal)"Goodbye" & " " & "world";
+			ResultAssert.Captures("Hello world", HelloWorld.Consume("Hello world"));
+			ResultAssert.Captures("Goodbye world", GoodbyeWorld.Consume("Goodbye world"));
+			ResultAssert.Captures("Hello ", HelloWorld.Consume("Hello World")); // Remember, string comparisons are case sensitive by default, so "World" isn't a match
 		}
 	}
 }

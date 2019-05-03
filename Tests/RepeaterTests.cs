@@ -12,13 +12,8 @@ namespace Tests {
 
 		[TestMethod]
 		public void Consume() {
-			String Capture;
 			Repeater Repeater = (Literal)"Hi! " * 2;
-			ResultAssert.Remains("Hi!", Repeater.Consume("Hi! Hi! Hi!", out Capture));
-			Assert.AreEqual("Hi! Hi! ", Capture);
-			Pattern Pattern = (((Literal)"Hi" | "Bye") & "! ") * 2;
-			ResultAssert.Remains("Hi!", Pattern.Consume("Hi! Bye! Hi!", out Capture));
-			Assert.AreEqual("Hi! Bye! ", Capture);
+			ResultAssert.Captures("Hi! Hi! ", Repeater.Consume("Hi! Hi! Hi!"));
 		}
 	}
 }

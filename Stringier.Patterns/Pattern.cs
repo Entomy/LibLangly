@@ -90,19 +90,21 @@
 		public static Optor operator ~(Pattern Pattern) => new Optor(Pattern);
 
 		/// <summary>
-		/// Attempt to consume the <paramref name="Pattern"/> from the <paramref name="Candidate"/>
+		/// Attempt to consume the <see cref="Pattern"/> from the <paramref name="Source"/>
 		/// </summary>
-		/// <param name="Candidate">The <see cref="String"/> to consume</param>
-		/// <returns>A <see cref="Result"/> containing whether a match occured and the remaining string</returns>
-		public abstract Result Consume(Result Candidate);
+		/// <param name="Source">The <see cref="String"/> to consume</param>
+		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured string</returns>
+		public Result Consume(String Source) {
+			Source source = new Source(Source);
+			return Consume(ref source);
+		}
 
 		/// <summary>
-		/// Attempt to consume the <paramref name="Pattern"/> from the <paramref name="Candidate"/>
+		/// Attempt to consume the <see cref="Pattern"/> from the <paramref name="Source"/>, adjusting the position in the <paramref name="Source"/> as appropriate
 		/// </summary>
-		/// <param name="Candidate">The <see cref="String"/> to consume</param>
-		/// <param name="Capture">The <see cref="String"/> that was consumed, empty if not matched</param>
-		/// <returns>A <see cref="Result"/> containing whether a match occured and the remaining string</returns>
-		public abstract Result Consume(Result Candidate, out String Capture);
+		/// <param name="Source">The <see cref="Source"/> to consume</param>
+		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured string</returns>
+		public abstract Result Consume(ref Source Source);
 
 		public abstract override Boolean Equals(Object obj);
 

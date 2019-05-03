@@ -13,18 +13,8 @@ namespace Tests {
 		[TestMethod]
 		public void Consume() {
 			Optor Optor = ~(Literal)"Hello";
-			String Capture;
-			ResultAssert.Remains(" world!", Optor.Consume("Hello world!", out Capture));
-			Assert.AreEqual("Hello", Capture);
-			ResultAssert.Remains("Goodbye world!", Optor.Consume("Goodbye world!", out Capture));
-			Assert.AreEqual("", Capture);
-		}
-
-		[TestMethod]
-		public void SpanConsume() {
-			Pattern OptorSpan = ~((Literal)" ").Span();
-			ResultAssert.Remains("Hello", OptorSpan.Consume("  Hello"));
-			ResultAssert.Remains("Hello", OptorSpan.Consume("Hello"));
+			ResultAssert.Captures("Hello", Optor.Consume("Hello world!"));
+			ResultAssert.Captures("", Optor.Consume("Goodbye world!"));
 		}
 	}
 }

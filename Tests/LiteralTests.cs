@@ -13,17 +13,22 @@ namespace Tests {
 
 		[TestMethod]
 		public void Consume() {
-			ResultAssert.Remains("!", ((Literal)"Hello" & " " & "World").Consume("Hello World!", out String Capture));
-			Assert.AreEqual("Hello World", Capture);
+			Literal Hello = "Hello";
+			Literal Space = " ";
+			Literal World = "World";
+			ResultAssert.Captures("Hello", Hello.Consume("Hello World!"));
+			Source Source = new Source("Hello World");
+			ResultAssert.Captures("Hello", Hello.Consume(ref Source));
+			ResultAssert.Captures(" ", Space.Consume(ref Source));
+			ResultAssert.Captures("World", World.Consume(ref Source));
 		}
 
 		[TestMethod]
 		public void ConsumeCaseInsensitive() {
-			Literal Hello = ("HELLO", StringComparison.OrdinalIgnoreCase);
-			Literal World = ("WORLD", StringComparison.OrdinalIgnoreCase);
-			ResultAssert.Remains("!", (Hello & " " & World).Consume("HELLO WORLD!"));
-			ResultAssert.Remains("!", (Hello & " " & World).Consume("Hello World!"));
-			ResultAssert.Remains("!", (Hello & " " & World).Consume("hello world!"));
+			Literal HelloWorld = ("HELLO WORLD", StringComparison.OrdinalIgnoreCase);
+			ResultAssert.Captures("HELLO WORLD", HelloWorld.Consume("HELLO WORLD!"));
+			ResultAssert.Captures("Hello World", HelloWorld.Consume("Hello World!"));
+			ResultAssert.Captures("hello world", HelloWorld.Consume("hello world!"));
 		}
 	}
 }

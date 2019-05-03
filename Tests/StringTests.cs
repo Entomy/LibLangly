@@ -66,24 +66,27 @@ namespace Tests {
 
 		[TestMethod]
 		public void Consume() {
-			ResultAssert.Remains("Hello", "".Consume("Hello"));
-			ResultAssert.Remains("ello", "H".Consume("Hello"));
-			ResultAssert.Remains("llo", "He".Consume("Hello"));
-			ResultAssert.Remains("lo", "Hel".Consume("Hello"));
-			ResultAssert.Remains("o", "Hell".Consume("Hello"));
-			ResultAssert.Remains("", "Hello".Consume("Hello"));
-		}
-
-		[TestMethod]
-		public void ConsumeOutput() {
-			String Output;
-			"Hi!".Consume("Hi!Bye!", out Output);
-			Assert.AreEqual("Hi!", Output);
+			ResultAssert.Captures("", "".Consume("Hello"));
+			ResultAssert.Captures("H", "H".Consume("Hello"));
+			ResultAssert.Captures("He", "He".Consume("Hello"));
+			ResultAssert.Captures("Hel", "Hel".Consume("Hello"));
+			ResultAssert.Captures("Hell", "Hell".Consume("Hello"));
+			ResultAssert.Captures("Hello", "Hello".Consume("Hello"));
 		}
 
 		[TestMethod]
 		public void ConsumeCaseInsensitive() {
-			ResultAssert.Remains("", "HELLO".Consume("Hello", StringComparison.OrdinalIgnoreCase));
+			ResultAssert.Captures("Hello", "HELLO".Consume("Hello", StringComparison.OrdinalIgnoreCase));
+		}
+
+		[TestMethod]
+		public void ConsumeSource() {
+			Source Source = new Source("Hello");
+			ResultAssert.Captures("H", "H".Consume(ref Source));
+			ResultAssert.Captures("e", "e".Consume(ref Source));
+			ResultAssert.Captures("l", "l".Consume(ref Source));
+			ResultAssert.Captures("l", "l".Consume(ref Source));
+			ResultAssert.Captures("o", "o".Consume(ref Source));
 		}
 	}
 }

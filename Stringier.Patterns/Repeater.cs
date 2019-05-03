@@ -14,30 +14,16 @@
 		}
 
 		/// <summary>
-		/// Attempt to consume the <paramref name="Pattern"/> from the <paramref name="Candidate"/>
+		/// Attempt to consume the <see cref="Pattern"/> from the <paramref name="Source"/>, adjusting the position in the <paramref name="Source"/> as appropriate
 		/// </summary>
-		/// <param name="Pattern">The <see cref="String"/> to match</param>
-		/// <param name="Candidate">The <see cref="String"/> to consume</param>
-		/// <returns>A <see cref="Result"/> containing whether a match occured and the remaining string</returns>
-		public override Result Consume(Result Candidate) => Consume(Candidate, out _);
-
-		/// <summary>
-		/// Attempt to consume the <paramref name="Pattern"/> from the <paramref name="Candidate"/>
-		/// </summary>
-		/// <param name="Pattern">The <see cref="String"/> to match</param>
-		/// <param name="Candidate">The <see cref="String"/> to consume</param>
-		/// <param name="Consumed">The <see cref="String"/> that was consumed, empty if not matched</param>
-		/// <returns>A <see cref="Result"/> containing whether a match occured and the remaining string</returns>
-		public override Result Consume(Result Candidate, out String Capture) {
+		/// <param name="Source">The <see cref="Source"/> to consume</param>
+		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured string</returns>
+		public override Result Consume(ref Source Source) {
 			StringBuilder CaptureBuilder = new StringBuilder();
-			String capture;
-			Result Result = new Result(true, Candidate);
 			for (Int32 i = 0; i < Count; i++) {
-				Result = Pattern.Consume(Result, out capture);
-				CaptureBuilder.Append(capture);
+				CaptureBuilder.Append((String)Pattern.Consume(ref Source));
 			}
-			Capture = CaptureBuilder.ToString();
-			return Result;
+			return new Result(CaptureBuilder.ToString().AsSpan());
 		}
 
 		public override Boolean Equals(Object obj) {
@@ -52,9 +38,10 @@
 		}
 
 		public override Boolean Equals(String other) {
-			Result Result = new Result(true, other);
+			Source Source = new Source(other);
+			Result Result = new Result();
 			for (Int32 i = 0; i < Count; i++) {
-				Result = Pattern.Consume(Result);
+				Result = Pattern.Consume(ref Source);
 			}
 			return Result;
 		}
