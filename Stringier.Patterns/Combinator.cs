@@ -21,10 +21,10 @@
 			//? This is almost certainly inefficient; we should probably calculate the range and slice from Source instead
 			StringBuilder CaptureBuilder = new StringBuilder();
 			Result Result = Left.Consume(ref Source);
-			if (!Result) goto Done;
+			if (!Result) { goto Done; }
 			CaptureBuilder.Append((String)Result);
 			Result = Right.Consume(ref Source);
-			if (!Result) goto Done;
+			if (!Result) { goto Done; }
 			CaptureBuilder.Append((String)Result);
 		Done:
 			return new Result(CaptureBuilder.ToString());

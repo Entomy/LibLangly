@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.IO;
 
 namespace System.Text.Patterns {
 	/// <summary>
@@ -11,6 +9,13 @@ namespace System.Text.Patterns {
 
 		public Source(String String) {
 			Buffer = String.AsSpan();
+			Position = 0;
+		}
+
+		public Source(Stream Stream) {
+			using (StreamReader Reader = new StreamReader(Stream)) {
+				Buffer = Reader.ReadToEnd().AsSpan();
+			}
 			Position = 0;
 		}
 

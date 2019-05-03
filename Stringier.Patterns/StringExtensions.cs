@@ -39,7 +39,7 @@ namespace System.Text.Patterns {
 		/// <param name="ComparisonType">The <see cref="StringComparison"/> to use for pattern matching</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the consumed string</returns>
 		public static Result Consume(this String Pattern, ref Source Source, StringComparison ComparisonType) {
-			if (Pattern.Length > Source.Length) return new Result(); //Prevents matching against sources shorter than the pattern.
+			if (Pattern.Length > Source.Length) { return new Result(); } //Prevents matching against sources shorter than the pattern.
 			ReadOnlySpan<Char> Peek = Source.Peek(Pattern.Length);
 			if (String.Equals(Pattern, Peek.ToString(), ComparisonType)) {
 				Source.Position += Peek.Length;

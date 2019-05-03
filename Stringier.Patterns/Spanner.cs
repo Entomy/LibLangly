@@ -17,7 +17,7 @@
 			Result Result = new Result(" ");
 			while (Result) {
 				Result = Pattern.Consume(ref Source);
-				if (!Result) goto Done;
+				if (!Result) { goto Done; }
 				CaptureBuilder.Append((String)Result);
 			}
 		Done:
