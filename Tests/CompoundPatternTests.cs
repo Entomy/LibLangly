@@ -14,8 +14,8 @@ namespace Tests {
 
 		[TestMethod]
 		public void AlternateSpanner() {
-			Spanner Whitespace = Pattern.Whitespace.Span();
-			ResultAssert.Captures("  \t ", Whitespace.Consume("  \t Hi!"));
+			Spanner Identation = (Latin.Space | "\t").Span();
+			ResultAssert.Captures("  \t ", Identation.Consume("  \t Hi!"));
 		}
 
 		[TestMethod]
