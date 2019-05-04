@@ -12,6 +12,7 @@
 		private readonly StringComparison ComparisonType = StringComparison.CurrentCulture;
 
 		private readonly String String = "";
+
 		internal Literal(String String) : this(String, StringComparison.CurrentCulture) { }
 
 		internal Literal(String String, StringComparison ComparisonType) {
