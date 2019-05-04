@@ -1,16 +1,19 @@
 ﻿namespace System.Text.Patterns {
-	public abstract partial class Pattern : IEquatable<String> {
+	public static class Control {
 		/// <summary>
 		/// C0 Control Characters
 		/// </summary>
 		/// <see href="https://www.unicode.org/charts/PDF/U0000.pdf"/>
-		public static readonly Pattern C0ControlCharacter = new Checker((Char) => (0x00 <= Char && Char <= 0x1F) || Char == 0x7F);
+		public static readonly Pattern C0ControlCharacter = new Checker((Char) =>
+			(0x00 <= Char && Char <= 0x1F) ||
+			Char == 0x7F);
 
 		/// <summary>
 		/// C1 Control Characters
 		/// </summary>
 		/// <see href="https://www.unicode.org/charts/PDF/U0080.pdf"/>
-		public static readonly Pattern C1ControlCharacter = new Checker((Char) => 0x80 <= Char && Char <= 0xA0);
+		public static readonly Pattern C1ControlCharacter = new Checker((Char) =>
+			0x80 <= Char && Char <= 0xA0);
 
 		/// <summary>
 		/// All Control Characters

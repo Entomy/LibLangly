@@ -1,5 +1,5 @@
 ﻿namespace System.Text.Patterns {
-	public abstract partial class Pattern : IEquatable<String> {
+	public abstract class Pattern : IEquatable<String> {
 		/// <summary>
 		/// Combine the two patterns, one after another
 		/// </summary>
