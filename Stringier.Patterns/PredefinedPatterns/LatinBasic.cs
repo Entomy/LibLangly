@@ -3,6 +3,7 @@
 		/// <summary>
 		/// Basic Latin Letter
 		/// </summary>
+		/// <see href="https://www.unicode.org/charts/PDF/U0000.pdf"/>
 		public static readonly Pattern BasicLetter = BasicLowercase | BasicUppercase;
 
 		/// <summary>
