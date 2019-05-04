@@ -14,13 +14,13 @@ namespace Tests {
 
 		[TestMethod]
 		public void AlternateSpanner() {
-			Spanner Indentation = (Latin.Space | "\t").Span();
+			Spanner Indentation = +(Latin.Space | "\t");
 			ResultAssert.Captures("  \t ", Indentation.Consume("  \t Hi!"));
 		}
 
 		[TestMethod]
 		public void OptorSpanner() {
-			Pattern Pattern = ~((Literal)" ").Span();
+			Pattern Pattern = ~+(Literal)" ";
 			ResultAssert.Captures("  ", Pattern.Consume("  Hello"));
 			ResultAssert.Captures("", Pattern.Consume("Hello"));
 		}

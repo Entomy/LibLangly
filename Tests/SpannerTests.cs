@@ -7,12 +7,12 @@ namespace Tests {
 	public class SpannerTests {
 		[TestMethod]
 		public void Constructor() {
-			Spanner _ = Latin.Space.Span();
+			Spanner _ = +Latin.Space;
 		}
 
 		[TestMethod]
 		public void Consume() {
-			Spanner Whitespace = ((Literal)" ").Span();
+			Spanner Whitespace = +(Literal)" ";
 			ResultAssert.Captures("    ", Whitespace.Consume("    Hi!"));
 		}
 	}

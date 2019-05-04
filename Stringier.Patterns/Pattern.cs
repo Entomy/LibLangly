@@ -57,6 +57,13 @@
 		public static Alternator operator |(String Left, Pattern Right) => new Alternator((Literal)Left, Right);
 
 		/// <summary>
+		/// Makes the <paramref name="Pattern"/> span
+		/// </summary>
+		/// <param name="Pattern"></param>
+		/// <returns></returns>
+		public static Spanner operator +(Pattern Pattern) => new Spanner(Pattern);
+
+		/// <summary>
 		/// Makes the <paramref name="Pattern"/> optional
 		/// </summary>
 		/// <param name="Pattern"></param>
@@ -85,8 +92,6 @@
 		public abstract Boolean Equals(String other);
 
 		public abstract override Int32 GetHashCode();
-
-		public Spanner Span() => new Spanner(this);
 
 		public abstract override String ToString();
 	}
