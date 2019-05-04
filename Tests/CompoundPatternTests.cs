@@ -14,8 +14,8 @@ namespace Tests {
 
 		[TestMethod]
 		public void AlternateSpanner() {
-			Spanner Identation = (Latin.Space | "\t").Span();
-			ResultAssert.Captures("  \t ", Identation.Consume("  \t Hi!"));
+			Spanner Indentation = (Latin.Space | "\t").Span();
+			ResultAssert.Captures("  \t ", Indentation.Consume("  \t Hi!"));
 		}
 
 		[TestMethod]
