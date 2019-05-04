@@ -23,7 +23,11 @@ namespace System.Text.Patterns {
 
 		internal Int32 Position { get; set; }
 
+		internal ref readonly Char Peek() => ref Buffer[Position];
+
 		internal ReadOnlySpan<Char> Peek(Int32 Count) => Buffer.Slice(Position, Count);
+
+		internal ref readonly Char Read() => ref Buffer[Position++];
 
 		internal ReadOnlySpan<Char> Read(Int32 Count) {
 			ReadOnlySpan<Char> Result = Peek(Count);
