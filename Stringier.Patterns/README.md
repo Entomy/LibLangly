@@ -105,7 +105,7 @@ Repeaters require the pattern to repeat the specified number of times, and can b
 ### Spanner
 
 ~~~~csharp
-Pattern patternName = pattern.Span();
+Pattern patternName = +pattern;
 ~~~~
 
 Spanners require the pattern to exist at least once, but will repeat until the pattern can no longer be matched, and are equivalent to the regex `pattern+`.
@@ -113,7 +113,13 @@ Spanners require the pattern to exist at least once, but will repeat until the p
 ### OptorSpanners
 
 ~~~~csharp
-Pattern patternName = ~pattern.Span();
+Pattern patternName = ~+pattern;
+~~~~
+or
+~~~~csharp
+Pattern patternName = +~pattern;
 ~~~~
 
 Technically not its own type, but this does represent a Regex symbol that doesn't have a direct matching. It is equivalent to the regex `pattern*`.
+
+I'm not sure if one of these forms is superior to the other. Conceptually they are the same though.
