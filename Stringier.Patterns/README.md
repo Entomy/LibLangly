@@ -15,16 +15,18 @@ In most situations, there's only three usage patterns you'll need to know.
 ### Declaration
 
 ~~~~csharp
-Literal patternName = "Text to match";
+Pattern patternName = "Text to match";
+// Comparison of a Literal
 ~~~~
 or
 ~~~~csharp
-Literal patternName = ("Text to match", StringComparison.CurrentCultureIgnoreCase);
+Pattern patternName = ("Text to match", StringComparison.CurrentCultureIgnoreCase);
 // Comparisons of this Literal will use the StringComparison value
 ~~~~
 or
 ~~~~csharp
 Pattern patternName = literalPattern1 & (literalPattern2 | literalPattern3);
+// Comparison of an actual pattern
 ~~~~
 
 ### Matching
@@ -58,7 +60,7 @@ One, no not really, a single `Boolean` isn't very large. Two, it doesn't actuall
 ### Literal
 
 ~~~~csharp
-Literal patternName = "Literal Pattern";
+Pattern patternName = "Literal Pattern";
 ~~~~
 
 This is an exact 1:1 match pattern, and is equivalent to
@@ -67,8 +69,9 @@ This is an exact 1:1 match pattern, and is equivalent to
 ~~~~~
 **Literal** is meant mostly as a building block for patterns. Because pattern operators expect to use a **Literal**, which is not a string, the convenient syntax shown above only applies to **Literal**. Use inside a pattern operator might require a cast like
 ~~~~csharp
-(Literal)"Literal Pattern" & "Other Literal Pattern"
+(Pattern)"Literal Pattern" & "Other Literal Pattern"
 ~~~~
+This is generally only required as the very first member
 
 ### Alternator
 
