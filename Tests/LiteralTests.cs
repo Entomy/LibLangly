@@ -7,15 +7,14 @@ namespace Tests {
 	public class LiteralTests {
 		[TestMethod]
 		public void Constructor() {
-			Literal _;
-			_ = "Hello";
+			Pattern _ = "Hello";
 		}
 
 		[TestMethod]
 		public void Consume() {
-			Literal Hello = "Hello";
-			Literal Space = " ";
-			Literal World = "World";
+			Pattern Hello = "Hello";
+			Pattern Space = " ";
+			Pattern World = "World";
 			ResultAssert.Captures("Hello", Hello.Consume("Hello World!"));
 			Source Source = new Source("Hello World");
 			ResultAssert.Captures("Hello", Hello.Consume(ref Source));
@@ -25,7 +24,7 @@ namespace Tests {
 
 		[TestMethod]
 		public void ConsumeCaseInsensitive() {
-			Literal HelloWorld = ("HELLO WORLD", StringComparison.OrdinalIgnoreCase);
+			Pattern HelloWorld = ("HELLO WORLD", StringComparison.OrdinalIgnoreCase);
 			ResultAssert.Captures("HELLO WORLD", HelloWorld.Consume("HELLO WORLD!"));
 			ResultAssert.Captures("Hello World", HelloWorld.Consume("Hello World!"));
 			ResultAssert.Captures("hello world", HelloWorld.Consume("hello world!"));

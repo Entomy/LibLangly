@@ -6,10 +6,12 @@ namespace System.Text.Patterns {
 	/// <summary>
 	/// Represents the optor pattern
 	/// </summary>
-	public sealed class Optor : Pattern, IEquatable<Optor> {
-		private readonly Pattern Pattern;
+	internal sealed class Optor : Node, IEquatable<Optor> {
+		private readonly Node Pattern;
 
-		internal Optor(Pattern Pattern) => this.Pattern = Pattern;
+		internal Optor(Node Pattern) => this.Pattern = Pattern;
+
+		internal Optor(Pattern Pattern) : this(Pattern.Head) { }
 
 		/// <summary>
 		/// Attempt to consume the <see cref="Pattern"/> from the <paramref name="Source"/>, adjusting the position in the <paramref name="Source"/> as appropriate

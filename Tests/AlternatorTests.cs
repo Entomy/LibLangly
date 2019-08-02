@@ -7,12 +7,12 @@ namespace Tests {
 	public class AlternatorTests {
 		[TestMethod]
 		public void Constructor() {
-			Alternator _ = (Literal)"Hello" | "Goodbye";
+			Pattern _ = (Pattern)"Hello" | "Goodbye";
 		}
 
 		[TestMethod]
 		public void Consume() {
-			Alternator Alternator = (Literal)"Hello" | "Goodbye";
+			Pattern Alternator = (Pattern)"Hello" | "Goodbye";
 			ResultAssert.Captures("Hello", Alternator.Consume("Hello"));
 			ResultAssert.Captures("Goodbye", Alternator.Consume("Goodbye"));
 			ResultAssert.Captures("", Alternator.Consume("!"));

@@ -6,7 +6,7 @@ namespace Benchmarks {
 	[CoreJob, CoreRtJob]
 	public class AlternatorComparison {
 
-		Alternator Alternator = (Literal)"Hello" | "Goodbye";
+		Pattern Alternator = (Pattern)"Hello" | "Goodbye";
 
 		Regex Regex = new Regex("^(Hello|Goodbye)");
 

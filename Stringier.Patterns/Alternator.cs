@@ -2,22 +2,17 @@
 	/// <summary>
 	/// Represents an alternator pattern
 	/// </summary>
-	public sealed class Alternator : Pattern, IEquatable<Alternator> {
-		private readonly Pattern Left;
+	internal sealed class Alternator : Node, IEquatable<Alternator> {
+		private readonly Node Left;
 
-		private readonly Pattern Right;
+		private readonly Node Right;
 
-		internal Alternator(Pattern Left, Pattern Right) {
+		internal Alternator(Node Left, Node Right) {
 			this.Left = Left;
 			this.Right = Right;
 		}
 
-		internal Alternator(params String[] Literals) {
-			Left = new Literal(Literals[0]);
-			for (Int32 i = 1; i < Literals.Length; i++) {
-				Right |= new Literal(Literals[i]);
-			}
-		}
+		internal Alternator(Pattern Left, Pattern Right) : this(Left.Head, Right.Head) { }
 
 		/// <summary>
 		/// Attempt to consume the <see cref="Alternator"/> from the <paramref name="Source"/>, adjusting the position in the <paramref name="Source"/> as appropriate

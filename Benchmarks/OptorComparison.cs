@@ -6,7 +6,7 @@ namespace Benchmarks {
 	[CoreJob, CoreRtJob]
 	public class OptorComparison {
 
-		Optor Optor = ~(Literal)"Hello";
+		Pattern Optor = ~(Pattern)"Hello";
 
 		Regex Regex = new Regex("^(Hello)?");
 

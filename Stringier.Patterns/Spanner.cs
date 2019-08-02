@@ -2,10 +2,12 @@
 	/// <summary>
 	/// Represents a spanner pattern
 	/// </summary>
-	public sealed class Spanner : Pattern, IEquatable<Spanner> {
-		private readonly Pattern Pattern;
+	internal sealed class Spanner : Node, IEquatable<Spanner> {
+		private readonly Node Pattern;
 
-		internal Spanner(Pattern Pattern) => this.Pattern = Pattern;
+		internal Spanner(Node Pattern) => this.Pattern = Pattern;
+
+		internal Spanner(Pattern Pattern) : this(Pattern.Head) { }
 
 		/// <summary>
 		/// Attempt to consume the <see cref="Pattern"/> from the <paramref name="Source"/>, adjusting the position in the <paramref name="Source"/> as appropriate

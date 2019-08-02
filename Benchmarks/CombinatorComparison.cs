@@ -6,7 +6,7 @@ namespace Benchmarks {
 	[CoreJob, CoreRtJob]
 	public class CombinatorComparison {
 
-		Combinator Combinator = (Literal)"Hello" & "World";
+		Pattern Combinator = (Pattern)"Hello" & "World";
 
 		Regex Regex = new Regex("^(Hello)(World)");
 

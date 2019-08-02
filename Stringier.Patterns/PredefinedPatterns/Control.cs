@@ -4,7 +4,7 @@
 		/// C0 Control Characters
 		/// </summary>
 		/// <see href="https://www.unicode.org/charts/PDF/U0000.pdf"/>
-		public static readonly Pattern C0ControlCharacter = new Checker((Char) =>
+		public static readonly Pattern C0ControlCharacter = (Pattern)((Char) =>
 			(0x00 <= Char && Char <= 0x1F) ||
 			Char == 0x7F);
 
@@ -12,7 +12,7 @@
 		/// C1 Control Characters
 		/// </summary>
 		/// <see href="https://www.unicode.org/charts/PDF/U0080.pdf"/>
-		public static readonly Pattern C1ControlCharacter = new Checker((Char) =>
+		public static readonly Pattern C1ControlCharacter = (Pattern)((Char) =>
 			0x80 <= Char && Char <= 0xA0);
 
 		/// <summary>
@@ -21,24 +21,24 @@
 		/// <see href="https://www.unicode.org/charts/PDF/U0080.pdf"/>
 		public static readonly Pattern ControlCharacter = C0ControlCharacter | C1ControlCharacter;
 
-		public static readonly Literal CarriageReturn = "\u000D";
+		public static readonly Pattern CarriageReturn = "\u000D";
 
-		public static readonly Literal FormFeed = "\u000C";
+		public static readonly Pattern FormFeed = "\u000C";
 
-		public static readonly Literal LineFeed = "\u000A";
+		public static readonly Pattern LineFeed = "\u000A";
 
-		public static readonly Literal LineSeparator = "\u2028";
+		public static readonly Pattern LineSeparator = "\u2028";
 
-		public static readonly Literal NextLine = "\u0085";
+		public static readonly Pattern NextLine = "\u0085";
 
-		public static readonly Literal ParagraphSeparator = "\u2029";
+		public static readonly Pattern ParagraphSeparator = "\u2029";
 
 		/// <summary>
 		/// Line terminator used by UNIX and macOS systems by convention
 		/// </summary>
 		public static readonly Pattern UnixLineTerminator = LineFeed;
 
-		public static readonly Literal VerticalTab = "\u000B";
+		public static readonly Pattern VerticalTab = "\u000B";
 
 		/// <summary>
 		/// Line terminator used by Windows systems by convention

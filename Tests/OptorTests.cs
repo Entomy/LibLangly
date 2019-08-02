@@ -7,12 +7,12 @@ namespace Tests {
 	public class OptorTests {
 		[TestMethod]
 		public void Constructor() {
-			Optor _ = ~(Literal)"Hello";
+			Pattern _ = ~(Pattern)"Hello";
 		}
 
 		[TestMethod]
 		public void Consume() {
-			Optor Optor = ~(Literal)"Hello";
+			Pattern Optor = ~(Pattern)"Hello";
 			ResultAssert.Captures("Hello", Optor.Consume("Hello world!"));
 			ResultAssert.Captures("", Optor.Consume("Goodbye world!"));
 		}

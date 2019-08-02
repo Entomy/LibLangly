@@ -2,15 +2,17 @@
 	/// <summary>
 	/// Represents a combinator pattern
 	/// </summary>
-	public sealed class Combinator : Pattern, IEquatable<Combinator> {
-		private readonly Pattern Left;
+	internal sealed class Combinator : Node, IEquatable<Combinator> {
+		private readonly Node Left;
 
-		private readonly Pattern Right;
+		private readonly Node Right;
 
-		internal Combinator(Pattern Left, Pattern Right) {
+		internal Combinator(Node Left, Node Right) {
 			this.Left = Left;
 			this.Right = Right;
 		}
+
+		internal Combinator(Pattern Left, Pattern Right) : this(Left.Head, Right.Head) { }
 
 		/// <summary>
 		/// Attempt to consume the <see cref="Pattern"/> from the <paramref name="Source"/>, adjusting the position in the <paramref name="Source"/> as appropriate

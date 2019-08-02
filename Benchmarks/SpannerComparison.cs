@@ -6,7 +6,7 @@ namespace Benchmarks {
 	[CoreJob, CoreRtJob]
 	public class SpannerComparison {
 
-		Spanner Spanner = +(Literal)"Hi!";
+		Pattern Spanner = +(Pattern)"Hi!";
 
 		Regex Regex = new Regex("^(Hi!)+");
 

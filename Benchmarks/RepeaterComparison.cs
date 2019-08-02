@@ -6,7 +6,7 @@ namespace Benchmarks {
 	[CoreJob, CoreRtJob]
 	public class RepeaterComparison {
 
-		Repeater Repeater = (Literal)"Hi!" * 2;
+		Pattern Repeater = (Pattern)"Hi!" * 2;
 
 		Regex Regex = new Regex("^(Hi!){2}");
 

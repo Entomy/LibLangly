@@ -2,16 +2,18 @@
 	/// <summary>
 	/// Represents a repeater pattern
 	/// </summary>
-	public sealed class Repeater : Pattern, IEquatable<Repeater> {
+	internal sealed class Repeater : Node, IEquatable<Repeater> {
 
-		private readonly Pattern Pattern;
+		private readonly Node Pattern;
 
 		private readonly Int32 Count;
 
-		internal Repeater(Pattern Pattern, Int32 Count) {
+		internal Repeater(Node Pattern, Int32 Count) {
 			this.Pattern = Pattern;
 			this.Count = Count;
 		}
+
+		internal Repeater(Pattern Pattern, Int32 Count) : this(Pattern.Head, Count) { }
 
 		/// <summary>
 		/// Attempt to consume the <see cref="Pattern"/> from the <paramref name="Source"/>, adjusting the position in the <paramref name="Source"/> as appropriate

@@ -6,7 +6,7 @@ namespace Benchmarks {
 	[CoreJob, CoreRtJob]
 	public class LiteralComparison {
 
-		Literal Literal = "Hello";
+		Pattern Literal = "Hello";
 
 		Regex Regex = new Regex("^Hello");
 
