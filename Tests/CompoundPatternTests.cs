@@ -16,6 +16,8 @@ namespace Tests {
 		public void AlternateSpanner() {
 			Pattern Indentation = +(Latin.Space | "\t");
 			ResultAssert.Captures("  \t ", Indentation.Consume("  \t Hi!"));
+			Pattern Identifier = Latin.Letter & +(Latin.Letter | "_");
+			ResultAssert.Captures("Hello_World", Identifier.Consume("Hello_World"));
 		}
 
 		[TestMethod]

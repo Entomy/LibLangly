@@ -13,7 +13,10 @@
 
 		public static implicit operator Checker(Func<Char, Boolean> Check) => new Checker(Check);
 
-		public override Result Consume(ref Source Source) => Check(Source.Peek()) ? new Result(Source.Read(1)) : new Result();
+		public override Result Consume(ref Source Source) {
+			if (Source.Length == 0) return new Result();
+			return Check(Source.Peek()) ? new Result(Source.Read(1)) : new Result();
+		}
 
 		public override Boolean Equals(Object obj) {
 			switch (obj) {
