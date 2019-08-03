@@ -24,7 +24,16 @@ namespace Tests {
 		}
 
 		[DataTestMethod]
+		[DataRow("ā")]
+		[DataRow("ř")]
+		public void ExtendedALowercaseTests(String Char) {
+			Assert.IsTrue(Latin.ExtendedALowercase.Consume(Char));
+		}
+
+		[DataTestMethod]
 		[DataRow("a")]
+		[DataRow("A")]
+		[DataRow("ą")]
 		public void LetterTests(String Char) {
 			Assert.IsTrue(Latin.Letter.Consume(Char));
 		}
