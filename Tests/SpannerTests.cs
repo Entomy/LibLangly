@@ -7,7 +7,7 @@ namespace Tests {
 	public class SpannerTests {
 		[TestMethod]
 		public void Constructor() {
-			Pattern _ = +Latin.Space;
+			Pattern _ = +(Pattern)" ";
 		}
 
 		[TestMethod]
