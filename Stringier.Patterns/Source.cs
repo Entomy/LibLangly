@@ -19,6 +19,8 @@ namespace System.Text.Patterns {
 			Position = 0;
 		}
 
+		public Boolean EOF => Length == 0;
+
 		public Int32 Length => Buffer.Length - Position;
 
 		internal Int32 Position { get; set; }
