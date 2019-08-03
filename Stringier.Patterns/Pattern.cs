@@ -170,11 +170,19 @@ namespace System.Text.Patterns {
 
 		public static readonly Pattern UppercaseLetter = (Pattern)((Char) => Char.GetUnicodeCategory() == UnicodeCategory.UppercaseLetter);
 
-		#endregion
-
-		#region Predefined Patterns
-
 		public static readonly Pattern Letter = LowercaseLetter | TitlecaseLetter | UppercaseLetter;
+
+		public static readonly Pattern Mark = EnclosingMark | NonSpacingMark | SpacingCombiningMark;
+
+		public static readonly Pattern Number = DecimalDigitNumber | LetterNumber | OtherNumber;
+
+		public static readonly Pattern Punctuation = ConnectorPunctutation | DashPunctutation | FinalQuotePunctuation | InitialQuotePunctuation | OpenPunctuation | OtherPunctuation;
+
+		public static readonly Pattern Symbol = CurrencySymbol | MathSymbol | ModifierSymbol | OtherSymbol;
+
+		public static readonly Pattern Separator = LineSeparator | ParagraphSeparator | SpaceSeparator;
+
+		public static readonly Pattern Graphic = Letter | Mark | Number | Punctuation | Symbol | SpaceSeparator;
 
 		#endregion
 	}
