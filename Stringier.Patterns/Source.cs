@@ -19,10 +19,22 @@ namespace System.Text.Patterns {
 			Position = 0;
 		}
 
+		/// <summary>
+		/// Whether currently at the end of the source
+		/// </summary>
 		public Boolean EOF => Length == 0;
 
+		/// <summary>
+		/// The remaining length of the source
+		/// </summary>
 		public Int32 Length => Buffer.Length - Position;
 
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <remarks>
+		/// This is for internal manipulation, such as resetting the index after a failed consume
+		/// </remarks>
 		internal Int32 Position { get; set; }
 
 		internal ref readonly Char Peek() => ref Buffer[Position];
