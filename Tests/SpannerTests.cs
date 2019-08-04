@@ -15,5 +15,11 @@ namespace Tests {
 			Pattern Whitespace = +(Pattern)" ";
 			ResultAssert.Captures("    ", Whitespace.Consume("    Hi!"));
 		}
+
+		[TestMethod]
+		public void ConsumeFail() {
+			Pattern Whitespace = +(Pattern)" ";
+			ResultAssert.Fails(Whitespace.Consume("Hi!  "));
+		}
 	}
 }

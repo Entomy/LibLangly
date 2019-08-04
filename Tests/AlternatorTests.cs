@@ -17,5 +17,11 @@ namespace Tests {
 			ResultAssert.Captures("Goodbye", Alternator.Consume("Goodbye"));
 			ResultAssert.Captures("", Alternator.Consume("!"));
 		}
+
+		[TestMethod]
+		public void ConsumeFail() {
+			Pattern Alternator = (Pattern)"Hello" | "Goodbye";
+			ResultAssert.Fails(Alternator.Consume("How are you?"));
+		}
 	}
 }

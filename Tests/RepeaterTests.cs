@@ -15,5 +15,11 @@ namespace Tests {
 			Pattern Repeater = (Pattern)"Hi! " * 2;
 			ResultAssert.Captures("Hi! Hi! ", Repeater.Consume("Hi! Hi! Hi!"));
 		}
+
+		[TestMethod]
+		public void ConsumeFail() {
+			Pattern Repeater = (Pattern)"Hi! " * 2;
+			ResultAssert.Fails(Repeater.Consume("Bye!"));
+		}
 	}
 }

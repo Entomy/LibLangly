@@ -29,5 +29,12 @@ namespace Tests {
 			ResultAssert.Captures("Hello World", HelloWorld.Consume("Hello World!"));
 			ResultAssert.Captures("hello world", HelloWorld.Consume("hello world!"));
 		}
+
+		[TestMethod]
+		public void ConsumeFail() {
+			Pattern Hello = "Hello";
+			ResultAssert.Fails(Hello.Consume("Hell"));
+			ResultAssert.Fails(Hello.Consume("Bacon"));
+		}
 	}
 }
