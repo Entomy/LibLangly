@@ -16,14 +16,14 @@
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured string</returns>
 		public override Result Consume(ref Source Source) {
 			StringBuilder CaptureBuilder = new StringBuilder();
-			Result Result = new Result(" ");
+			Result Result = new Result("", true);
 			while (Result) {
 				Result = Pattern.Consume(ref Source);
 				if (!Result) { goto Done; }
 				CaptureBuilder.Append((String)Result);
 			}
 		Done:
-			return new Result(CaptureBuilder.ToString());
+			return new Result(CaptureBuilder.ToString(), Result);
 		}
 
 		public override Boolean Equals(Object obj) {

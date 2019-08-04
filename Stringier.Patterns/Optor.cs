@@ -19,7 +19,9 @@ namespace System.Text.Patterns {
 		/// <param name="Source">The <see cref="Source"/> to consume</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured string</returns>
 		public override Result Consume(ref Source Source) {
-			return Pattern.Consume(ref Source);
+			Result Result = Pattern.Consume(ref Source);
+			Result.Success = true; //Consuming an optional pattern is always considered successful, the only thing that changes is what is captured
+			return Result;
 		}
 
 		public override Boolean Equals(Object obj) {

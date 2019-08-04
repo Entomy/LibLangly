@@ -4,9 +4,9 @@
 	/// </summary>
 	internal sealed class Repeater : Node, IEquatable<Repeater> {
 
-		private readonly Node Pattern;
-
 		private readonly Int32 Count;
+
+		private readonly Node Pattern;
 
 		internal Repeater(Node Pattern, Int32 Count) {
 			this.Pattern = Pattern;
@@ -22,10 +22,14 @@
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured string</returns>
 		public override Result Consume(ref Source Source) {
 			StringBuilder CaptureBuilder = new StringBuilder();
+			Result Result = new Result("", false);
 			for (Int32 i = 0; i < Count; i++) {
-				CaptureBuilder.Append((String)Pattern.Consume(ref Source));
+				Result = Pattern.Consume(ref Source);
+				if (!Result) { goto Done; }
+				CaptureBuilder.Append((String)Result);
 			}
-			return new Result(CaptureBuilder.ToString().AsSpan());
+		Done:
+			return new Result(CaptureBuilder.ToString(), Result);
 		}
 
 		public override Boolean Equals(Object obj) {

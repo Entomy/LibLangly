@@ -20,16 +20,20 @@
 		/// <param name="Source">The <see cref="Source"/> to consume</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured string</returns>
 		public override Result Consume(ref Source Source) {
+			Int32 OriginalPosition = Source.Position;
 			//? This is almost certainly inefficient; we should probably calculate the range and slice from Source instead
 			StringBuilder CaptureBuilder = new StringBuilder();
 			Result Result = Left.Consume(ref Source);
-			if (!Result) { goto Done; }
+			if (!Result) { goto Cleanup; }
 			CaptureBuilder.Append((String)Result);
 			Result = Right.Consume(ref Source);
-			if (!Result) { goto Done; }
+			if (!Result) { goto Cleanup; }
 			CaptureBuilder.Append((String)Result);
+			goto Done;
+		Cleanup:
+			Source.Position = OriginalPosition;
 		Done:
-			return new Result(CaptureBuilder.ToString());
+			return new Result(CaptureBuilder.ToString(), Result);
 		}
 
 		public override Boolean Equals(Object obj) {

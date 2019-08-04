@@ -2,23 +2,34 @@
 	/// <summary>
 	/// Represents the result value of parsing operations. There are two main components. The first is a Boolean representing success of the operation. The second is the captured string during the operation. This type can be used as if it is either individual type.
 	/// </summary>
-	/// <remarks>
-	/// It's not really either value, but rather a <see cref="ReadOnlySpan{T}"/> with special logic for comparisons and conversions
-	/// </remarks>
 	public ref struct Result {
+		internal Boolean Success;
+
 		private readonly ReadOnlySpan<Char> Capture;
 
 		public Result(ReadOnlySpan<Char> Capture) {
+			this.Success = true;
+			this.Capture = Capture;
+		}
+
+		public Result(ReadOnlySpan<Char> Capture, Boolean Success) {
+			this.Success = Success;
 			this.Capture = Capture;
 		}
 
 		public Result(String Capture) {
+			this.Success = true;
+			this.Capture = Capture.AsSpan();
+		}
+
+		public Result(String Capture, Boolean Success) {
+			this.Success = Success;
 			this.Capture = Capture.AsSpan();
 		}
 
 		public Char this[Int32 Index] => Capture[Index];
 
-		public static implicit operator Boolean(Result Result) => Result.Capture.Length > 0;
+		public static implicit operator Boolean(Result Result) => Result.Success;
 
 		public static implicit operator String(Result Result) => Result.Capture.ToString();
 
