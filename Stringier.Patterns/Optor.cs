@@ -14,6 +14,11 @@ namespace System.Text.Patterns {
 		internal Optor(Pattern Pattern) : this(Pattern.Head) { }
 
 		/// <summary>
+		/// The maximum length possibly matched by this pattern
+		/// </summary>
+		internal override Int64 MaxLength => Pattern.MaxLength;
+
+		/// <summary>
 		/// Attempt to consume the <see cref="Pattern"/> from the <paramref name="Source"/>, adjusting the position in the <paramref name="Source"/> as appropriate
 		/// </summary>
 		/// <param name="Source">The <see cref="Source"/> to consume</param>

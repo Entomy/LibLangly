@@ -9,7 +9,6 @@ namespace Benchmarks {
 			BenchmarkRunner.Run<LiteralComparison>();
 			BenchmarkRunner.Run<OptorComparison>();
 			BenchmarkRunner.Run<RepeaterComparison>();
-			BenchmarkRunner.Run<SpannerComparison>();
 		}
 	}
 }

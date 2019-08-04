@@ -16,6 +16,11 @@
 		internal Repeater(Pattern Pattern, Int32 Count) : this(Pattern.Head, Count) { }
 
 		/// <summary>
+		/// The maximum length possibly matched by this pattern
+		/// </summary>
+		internal override Int64 MaxLength => Pattern.MaxLength * Count;
+
+		/// <summary>
 		/// Attempt to consume the <see cref="Pattern"/> from the <paramref name="Source"/>, adjusting the position in the <paramref name="Source"/> as appropriate
 		/// </summary>
 		/// <param name="Source">The <see cref="Source"/> to consume</param>

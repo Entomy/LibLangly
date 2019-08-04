@@ -9,6 +9,11 @@
 	internal sealed class Checker : Node, IEquatable<Checker> {
 		private readonly Func<Char, Boolean> Check;
 
+		/// <summary>
+		/// The maximum length possibly matched by this pattern
+		/// </summary>
+		internal override Int64 MaxLength => 1;
+
 		internal Checker(Func<Char, Boolean> Check) => this.Check = Check;
 
 		public static implicit operator Checker(Func<Char, Boolean> Check) => new Checker(Check);

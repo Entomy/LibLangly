@@ -77,13 +77,6 @@ namespace System.Text.Patterns {
 		public static Pattern operator ~(Pattern Pattern) => new Pattern(new Optor(Pattern));
 
 		/// <summary>
-		/// Makes the <paramref name="Pattern"/> span
-		/// </summary>
-		/// <param name="Pattern"></param>
-		/// <returns></returns>
-		public static Pattern operator +(Pattern Pattern) => new Pattern(new Spanner(Pattern));
-
-		/// <summary>
 		/// Attempt to consume the <see cref="Pattern"/> from the <paramref name="Source"/>
 		/// </summary>
 		/// <param name="Source">The <see cref="String"/> to consume</param>

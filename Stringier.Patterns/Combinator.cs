@@ -15,6 +15,11 @@
 		internal Combinator(Pattern Left, Pattern Right) : this(Left.Head, Right.Head) { }
 
 		/// <summary>
+		/// The maximum length possibly matched by this pattern
+		/// </summary>
+		internal override Int64 MaxLength => Left.MaxLength + Right.MaxLength;
+
+		/// <summary>
 		/// Attempt to consume the <see cref="Pattern"/> from the <paramref name="Source"/>, adjusting the position in the <paramref name="Source"/> as appropriate
 		/// </summary>
 		/// <param name="Source">The <see cref="Source"/> to consume</param>

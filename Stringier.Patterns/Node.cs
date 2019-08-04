@@ -9,6 +9,11 @@ namespace System.Text.Patterns {
 	internal abstract class Node : IEquatable<String> {
 
 		/// <summary>
+		/// The maximum length possibly matched by this pattern
+		/// </summary>
+		internal abstract Int64 MaxLength { get; }
+
+		/// <summary>
 		/// Attempt to consume the <see cref="Pattern"/> from the <paramref name="Source"/>
 		/// </summary>
 		/// <param name="Source">The <see cref="String"/> to consume</param>
