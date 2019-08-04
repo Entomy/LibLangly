@@ -16,6 +16,8 @@
 			this.Capture = Capture.AsSpan();
 		}
 
+		public Char this[Int32 Index] => Capture[Index];
+
 		public static implicit operator Boolean(Result Result) => Result.Capture.Length > 0;
 
 		public static implicit operator String(Result Result) => Result.Capture.ToString();
