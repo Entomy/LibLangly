@@ -29,6 +29,8 @@
 
 		public Char this[Int32 Index] => Capture[Index];
 
+		public Int32 Length => Capture.Length;
+
 		public static implicit operator Boolean(Result Result) => Result.Success;
 
 		public static implicit operator String(Result Result) => Result.Capture.ToString();

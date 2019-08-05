@@ -16,7 +16,7 @@
 		/// <summary>
 		/// The maximum length possibly matched by this pattern
 		/// </summary>
-		internal override Int64 MaxLength => String.Length;
+		internal override Int32 MaxLength => String.Length;
 
 		internal Literal(String String) : this(String, StringComparison.CurrentCulture) { }
 

@@ -16,13 +16,13 @@ namespace Tests {
 			Pattern GoodbyeWorld = (Pattern)"Goodbye" & " " & "world";
 			ResultAssert.Captures("Hello world", HelloWorld.Consume("Hello world"));
 			ResultAssert.Captures("Goodbye world", GoodbyeWorld.Consume("Goodbye world"));
-			ResultAssert.Captures("Hello ", HelloWorld.Consume("Hello World")); // Remember, string comparisons are case sensitive by default, so "World" isn't a match
 		}
 
 		[TestMethod]
 		public void ConsumeFail() {
 			Pattern HelloWorld = (Pattern)"Hello" & " " & "world";
 			ResultAssert.Fails(HelloWorld.Consume("Hello everyone"));
+			ResultAssert.Fails(HelloWorld.Consume("Hello World")); // Remember, string comparisons are case sensitive by default, so "World" isn't a match
 		}
 	}
 }

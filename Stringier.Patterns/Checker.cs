@@ -12,7 +12,7 @@
 		/// <summary>
 		/// The maximum length possibly matched by this pattern
 		/// </summary>
-		internal override Int64 MaxLength => 1;
+		internal override Int32 MaxLength => 1;
 
 		internal Checker(Func<Char, Boolean> Check) => this.Check = Check;
 

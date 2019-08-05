@@ -17,7 +17,7 @@
 		/// <summary>
 		/// The maximum length possibly matched by this pattern
 		/// </summary>
-		internal override Int64 MaxLength => Left.MaxLength + Right.MaxLength;
+		internal override Int32 MaxLength => Left.MaxLength + Right.MaxLength;
 
 		/// <summary>
 		/// Attempt to consume the <see cref="Pattern"/> from the <paramref name="Source"/>, adjusting the position in the <paramref name="Source"/> as appropriate
@@ -26,19 +26,21 @@
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured string</returns>
 		public override Result Consume(ref Source Source) {
 			Int32 OriginalPosition = Source.Position;
-			//? This is almost certainly inefficient; we should probably calculate the range and slice from Source instead
-			StringBuilder CaptureBuilder = new StringBuilder();
-			Result Result = Left.Consume(ref Source);
+			Result Result;
+			// Try consuming the left side
+			Result = Left.Consume(ref Source);
 			if (!Result) { goto Cleanup; }
-			CaptureBuilder.Append((String)Result);
+			// Try consuming the right side
 			Result = Right.Consume(ref Source);
 			if (!Result) { goto Cleanup; }
-			CaptureBuilder.Append((String)Result);
+			// Skip cleanup
 			goto Done;
 		Cleanup:
 			Source.Position = OriginalPosition;
 		Done:
-			return new Result(CaptureBuilder.ToString(), Result);
+			Int32 FinalPosition = Source.Position;
+			Source.Position = OriginalPosition;
+			return new Result(Source.Read(FinalPosition - OriginalPosition), Result);
 		}
 
 		public override Boolean Equals(Object obj) {

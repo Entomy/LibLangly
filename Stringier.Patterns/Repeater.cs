@@ -18,7 +18,7 @@
 		/// <summary>
 		/// The maximum length possibly matched by this pattern
 		/// </summary>
-		internal override Int64 MaxLength => Pattern.MaxLength * Count;
+		internal override Int32 MaxLength => Pattern.MaxLength * Count;
 
 		/// <summary>
 		/// Attempt to consume the <see cref="Pattern"/> from the <paramref name="Source"/>, adjusting the position in the <paramref name="Source"/> as appropriate

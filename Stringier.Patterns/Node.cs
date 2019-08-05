@@ -11,7 +11,7 @@ namespace System.Text.Patterns {
 		/// <summary>
 		/// The maximum length possibly matched by this pattern
 		/// </summary>
-		internal abstract Int64 MaxLength { get; }
+		internal abstract Int32 MaxLength { get; }
 
 		/// <summary>
 		/// Attempt to consume the <see cref="Pattern"/> from the <paramref name="Source"/>
