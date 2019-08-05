@@ -26,15 +26,20 @@
 		/// <param name="Source">The <see cref="Source"/> to consume</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured string</returns>
 		public override Result Consume(ref Source Source) {
-			StringBuilder CaptureBuilder = new StringBuilder();
+			Int32 OriginalPosition = Source.Position;
 			Result Result = new Result("", false);
 			for (Int32 i = 0; i < Count; i++) {
 				Result = Pattern.Consume(ref Source);
-				if (!Result) { goto Done; }
-				CaptureBuilder.Append((String)Result);
+				if (!Result) { goto Cleanup; }
 			}
+			// Skip cleanup
+			goto Done;
+		Cleanup:
+			Source.Position = OriginalPosition;
 		Done:
-			return new Result(CaptureBuilder.ToString(), Result);
+			Int32 FinalPosition = Source.Position;
+			Source.Position = OriginalPosition;
+			return new Result(Source.Read(FinalPosition - OriginalPosition), Result);
 		}
 
 		public override Boolean Equals(Object obj) {
