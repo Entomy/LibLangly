@@ -2,7 +2,7 @@
 using BenchmarkDotNet.Running;
 
 namespace Benchmarks {
-	class Program {
+	static class Program {
 		static void Main() {
 			BenchmarkRunner.Run<AlternatorComparison>();
 			BenchmarkRunner.Run<CombinatorComparison>();
