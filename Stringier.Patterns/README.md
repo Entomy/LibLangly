@@ -104,25 +104,3 @@ Pattern patternName = pattern * 3; //repeats the pattern three times
 ~~~~
 
 Repeaters require the pattern to repeat the specified number of times, and can be thought of the multiplcation to patterns when combinators are addition. The above example would be equivalent to the regex `pattern{3}`.
-
-### Spanner
-
-~~~~csharp
-Pattern patternName = +pattern;
-~~~~
-
-Spanners require the pattern to exist at least once, but will repeat until the pattern can no longer be matched, and are equivalent to the regex `pattern+`.
-
-### OptorSpanners
-
-~~~~csharp
-Pattern patternName = ~+pattern;
-~~~~
-or
-~~~~csharp
-Pattern patternName = +~pattern;
-~~~~
-
-Technically not its own type, but this does represent a Regex symbol that doesn't have a direct matching. It is equivalent to the regex `pattern*`.
-
-I'm not sure if one of these forms is superior to the other. Conceptually they are the same though.
