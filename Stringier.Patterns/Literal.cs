@@ -41,7 +41,7 @@
 		/// </summary>
 		/// <param name="Source">The <see cref="Source"/> to consume</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured string</returns>
-		public override Result Span(ref Source Source) => throw new NotImplementedException();
+		public override Result Span(ref Source Source) => String.Span(ref Source, ComparisonType);
 
 		public override Boolean Equals(String other) => String.Equals(String, other, StringComparison.InvariantCulture);
 

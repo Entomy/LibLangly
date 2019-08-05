@@ -36,5 +36,14 @@ namespace Tests {
 			ResultAssert.Fails(Hello.Consume("Hell"));
 			ResultAssert.Fails(Hello.Consume("Bacon"));
 		}
+
+		[TestMethod]
+		public void Span() {
+			ResultAssert.Captures("", ((Pattern)"").Span("    Hello"));
+			ResultAssert.Captures("", ((Pattern)" ").Span("Hello"));
+			ResultAssert.Captures(" ", ((Pattern)" ").Span(" Hello"));
+			ResultAssert.Captures("    ", ((Pattern)" ").Span("    Hello"));
+
+		}
 	}
 }
