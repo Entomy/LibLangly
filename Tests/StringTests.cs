@@ -72,6 +72,9 @@ namespace Tests {
 			ResultAssert.Captures("Hel", "Hel".Consume("Hello"));
 			ResultAssert.Captures("Hell", "Hell".Consume("Hello"));
 			ResultAssert.Captures("Hello", "Hello".Consume("Hello"));
+
+			ResultAssert.Captures(" ", " ".Consume("    Hello"));
+			ResultAssert.Succeeds(" ".Consume("    Hello"));
 		}
 
 		[TestMethod]
@@ -87,6 +90,20 @@ namespace Tests {
 			ResultAssert.Captures("l", "l".Consume(ref Source));
 			ResultAssert.Captures("l", "l".Consume(ref Source));
 			ResultAssert.Captures("o", "o".Consume(ref Source));
+		}
+
+		[TestMethod]
+		public void ConsumeFail() {
+			ResultAssert.Fails("w".Consume("Hello"));
+			ResultAssert.Fails(" ".Consume("Hello"));
+		}
+
+		[TestMethod]
+		public void Span() {
+			ResultAssert.Captures("", "".Span("    Hello"));
+			ResultAssert.Captures("", " ".Span("Hello"));
+			ResultAssert.Captures(" ", " ".Span(" Hello"));
+			ResultAssert.Captures("    ", " ".Span("    Hello"));
 		}
 	}
 }

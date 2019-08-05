@@ -30,6 +30,23 @@ namespace System.Text.Patterns {
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured string</returns>
 		public abstract Result Consume(ref Source Source);
 
+		/// <summary>
+		/// Attempt to span the <see cref="Pattern"/> from the <paramref name="Source"/>
+		/// </summary>
+		/// <param name="Source"></param>
+		/// <returns></returns>
+		public Result Span(String Source) {
+			Source source = new Source(Source);
+			return Span(ref source);
+		}
+
+		/// <summary>
+		/// Attempt to span the <see cref="Pattern"/> from the <paramref name="Source"/>, adjusting the position in the <paramref name="Source"/> as appropriate
+		/// </summary>
+		/// <param name="Source"></param>
+		/// <returns></returns>
+		public abstract Result Span(ref Source Source);
+
 		public abstract override Boolean Equals(Object obj);
 
 		public abstract Boolean Equals(String other);

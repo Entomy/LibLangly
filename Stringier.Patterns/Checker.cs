@@ -23,6 +23,13 @@
 			return Check(Source.Peek()) ? new Result(Source.Read(1)) : new Result();
 		}
 
+		/// <summary>
+		/// Attempt to span the <see cref="Pattern"/> from the <paramref name="Source"/>, adjusting the position in the <paramref name="Source"/> as appropriate
+		/// </summary>
+		/// <param name="Source">The <see cref="Source"/> to consume</param>
+		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured string</returns>
+		public override Result Span(ref Source Source) => throw new NotImplementedException();
+
 		public override Boolean Equals(Object obj) {
 			switch (obj) {
 			case String Other:

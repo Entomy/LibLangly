@@ -93,6 +93,23 @@ namespace System.Text.Patterns {
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured string</returns>
 		public Result Consume(ref Source Source) => Head.Consume(ref Source);
 
+		/// <summary>
+		/// Attempt to span the <see cref="Pattern"/> from the <paramref name="Source"/>
+		/// </summary>
+		/// <param name="Source">The <see cref="Source"/> to consume</param>
+		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured string</returns>
+		public Result Span(String Source) {
+			Source source = new Source(Source);
+			return Span(ref source);
+		}
+
+		/// <summary>
+		/// Attempt to span the <see cref="Pattern"/> from the <paramref name="Source"/>, adjusting the position in the <paramref name="Source"/> as appropriate
+		/// </summary>
+		/// <param name="Source">The <see cref="Source"/> to consume</param>
+		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured string</returns>
+		public Result Span(ref Source Source) => Head.Span(ref Source);
+
 		public override Boolean Equals(Object obj) => Head.Equals(obj);
 
 		public Boolean Equals(String other) => Head.Equals(other);

@@ -32,6 +32,13 @@
 			return Result;
 		}
 
+		/// <summary>
+		/// Attempt to span the <see cref="Pattern"/> from the <paramref name="Source"/>, adjusting the position in the <paramref name="Source"/> as appropriate
+		/// </summary>
+		/// <param name="Source">The <see cref="Source"/> to consume</param>
+		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured string</returns>
+		public override Result Span(ref Source Source) => throw new NotImplementedException();
+
 		public override Boolean Equals(String other) => Left.Equals(other) || Right.Equals(other);
 
 		public override Boolean Equals(Object obj) {
