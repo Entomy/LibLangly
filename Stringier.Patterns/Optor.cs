@@ -34,7 +34,11 @@ namespace System.Text.Patterns {
 		/// </summary>
 		/// <param name="Source">The <see cref="Source"/> to consume</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured string</returns>
-		public override Result Span(ref Source Source) => throw new NotImplementedException();
+		public override Result Span(ref Source Source) {
+			Result Result = Pattern.Span(ref Source);
+			Result.Success = true; //Consuming an optional pattern is always considered successful, the only thing that changes is what is captured
+			return Result;
+		}
 
 		public override Boolean Equals(Object obj) {
 			switch (obj) {
