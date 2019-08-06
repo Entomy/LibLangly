@@ -14,28 +14,12 @@ namespace System.Text.Patterns {
 		internal Optor(Pattern Pattern) : this(Pattern.Head) { }
 
 		/// <summary>
-		/// The maximum length possibly matched by this pattern
-		/// </summary>
-		internal override Int32 MaxLength => Pattern.MaxLength;
-
-		/// <summary>
 		/// Attempt to consume the <see cref="Pattern"/> from the <paramref name="Source"/>, adjusting the position in the <paramref name="Source"/> as appropriate
 		/// </summary>
 		/// <param name="Source">The <see cref="Source"/> to consume</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured string</returns>
 		public override Result Consume(ref Source Source) {
 			Result Result = Pattern.Consume(ref Source);
-			Result.Success = true; //Consuming an optional pattern is always considered successful, the only thing that changes is what is captured
-			return Result;
-		}
-
-		/// <summary>
-		/// Attempt to span the <see cref="Pattern"/> from the <paramref name="Source"/>, adjusting the position in the <paramref name="Source"/> as appropriate
-		/// </summary>
-		/// <param name="Source">The <see cref="Source"/> to consume</param>
-		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured string</returns>
-		public override Result Span(ref Source Source) {
-			Result Result = Pattern.Span(ref Source);
 			Result.Success = true; //Consuming an optional pattern is always considered successful, the only thing that changes is what is captured
 			return Result;
 		}

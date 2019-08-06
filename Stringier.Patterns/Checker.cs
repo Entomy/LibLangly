@@ -9,11 +9,6 @@
 	internal sealed class Checker : Node, IEquatable<Checker> {
 		private readonly Func<Char, Boolean> Check;
 
-		/// <summary>
-		/// The maximum length possibly matched by this pattern
-		/// </summary>
-		internal override Int32 MaxLength => 1;
-
 		internal Checker(Func<Char, Boolean> Check) => this.Check = Check;
 
 		public static implicit operator Checker(Func<Char, Boolean> Check) => new Checker(Check);
@@ -21,22 +16,6 @@
 		public override Result Consume(ref Source Source) {
 			if (Source.Length == 0) { return new Result(); }
 			return Check(Source.Peek()) ? new Result(Source.Read(1)) : new Result();
-		}
-
-		/// <summary>
-		/// Attempt to span the <see cref="Pattern"/> from the <paramref name="Source"/>, adjusting the position in the <paramref name="Source"/> as appropriate
-		/// </summary>
-		/// <param name="Source">The <see cref="Source"/> to consume</param>
-		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured string</returns>
-		public override Result Span(ref Source Source) {
-			if (Source.Length == 0) { return new Result(); }
-			Int32 OriginalPosition = Source.Position;
-			while (Check(Source.Peek())) {
-				Source.Position += 1;
-			}
-			Int32 FinalPosition = Source.Position;
-			Source.Position = OriginalPosition;
-			return new Result(Source.Read(FinalPosition - OriginalPosition), true);
 		}
 
 		public override Boolean Equals(Object obj) {

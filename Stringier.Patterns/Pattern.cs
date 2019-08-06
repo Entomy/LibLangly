@@ -77,6 +77,13 @@ namespace System.Text.Patterns {
 		public static Pattern operator ~(Pattern Pattern) => new Pattern(new Optor(Pattern));
 
 		/// <summary>
+		/// Makes the <paramref name="Pattern"/> span
+		/// </summary>
+		/// <param name="Pattern"></param>
+		/// <returns></returns>
+		public static Pattern operator +(Pattern Pattern) => new Pattern(new Spanner(Pattern));
+
+		/// <summary>
 		/// Attempt to consume the <see cref="Pattern"/> from the <paramref name="Source"/>
 		/// </summary>
 		/// <param name="Source">The <see cref="String"/> to consume</param>
@@ -92,23 +99,6 @@ namespace System.Text.Patterns {
 		/// <param name="Source">The <see cref="Source"/> to consume</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured string</returns>
 		public Result Consume(ref Source Source) => Head.Consume(ref Source);
-
-		/// <summary>
-		/// Attempt to span the <see cref="Pattern"/> from the <paramref name="Source"/>
-		/// </summary>
-		/// <param name="Source">The <see cref="Source"/> to consume</param>
-		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured string</returns>
-		public Result Span(String Source) {
-			Source source = new Source(Source);
-			return Span(ref source);
-		}
-
-		/// <summary>
-		/// Attempt to span the <see cref="Pattern"/> from the <paramref name="Source"/>, adjusting the position in the <paramref name="Source"/> as appropriate
-		/// </summary>
-		/// <param name="Source">The <see cref="Source"/> to consume</param>
-		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured string</returns>
-		public Result Span(ref Source Source) => Head.Span(ref Source);
 
 		public override Boolean Equals(Object obj) => Head.Equals(obj);
 

@@ -17,12 +17,5 @@ namespace Tests {
 			ResultAssert.Captures("", Optor.Consume("Goodbye world!"));
 			ResultAssert.Succeeds(Optor.Consume("Goodbye world!"));
 		}
-
-		[TestMethod]
-		public void Span() {
-			Pattern Optor = ~(Pattern)"Hello";
-			ResultAssert.Captures("Hello", Optor.Span("Hello world!"));
-			ResultAssert.Captures("", Optor.Span("Goodbye world!"));
-		}
 	}
 }
