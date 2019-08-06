@@ -15,15 +15,14 @@
 		/// <param name="Source">The <see cref="Source"/> to consume</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured string</returns>
 		public override Result Consume(ref Source Source) {
-			StringBuilder CaptureBuilder = new StringBuilder();
+			Int32 OriginalPosition = Source.Position;
 			Result Result = new Result("", true);
 			while (Result) {
 				Result = Pattern.Consume(ref Source);
-				if (!Result) { goto Done; }
-				CaptureBuilder.Append((String)Result);
 			}
-		Done:
-			return new Result(CaptureBuilder.ToString(), Result);
+			Int32 FinalPosition = Source.Position;
+			Source.Position = OriginalPosition;
+			return new Result(Source.Read(FinalPosition - OriginalPosition), Result);
 		}
 
 		public override Boolean Equals(Object obj) {
