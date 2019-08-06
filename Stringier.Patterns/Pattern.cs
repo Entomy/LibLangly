@@ -185,5 +185,11 @@ namespace System.Text.Patterns {
 		public static readonly Pattern Graphic = Letter | Mark | Number | Punctuation | Symbol | SpaceSeparator;
 
 		#endregion
+
+		#region Additional Patterns
+
+		public static readonly Pattern Any = (Pattern)((Char) => true);
+
+		#endregion
 	}
 }
