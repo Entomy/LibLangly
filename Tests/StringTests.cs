@@ -97,5 +97,11 @@ namespace Tests {
 			ResultAssert.Fails("w".Consume("Hello"));
 			ResultAssert.Fails(" ".Consume("Hello"));
 		}
+
+		[TestMethod]
+		public void Neglect() {
+			ResultAssert.Captures("", "Hello".Neglect("Hello"));
+			ResultAssert.Captures("World", "Hello".Neglect("World"));
+		}
 	}
 }
