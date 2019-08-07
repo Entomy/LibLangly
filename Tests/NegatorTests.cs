@@ -25,5 +25,16 @@ namespace Tests {
 			ResultAssert.Captures("World", Negator.Consume("World"));
 		}
 
+		[TestMethod]
+		public void ConsumeOptor() {
+			Pattern Negator = !~(Pattern)"Hello";
+
+			ResultAssert.Captures("", Negator.Consume("Hello"));
+			ResultAssert.Succeeds(Negator.Consume("Hello"));
+
+			ResultAssert.Captures("World", Negator.Consume("World"));
+			ResultAssert.Succeeds(Negator.Consume("World"));
+		}
+
 	}
 }
