@@ -19,6 +19,15 @@ namespace Tests {
 		}
 
 		[TestMethod]
+		public void ConsumeCombinator() {
+			Pattern Negator = !((Pattern)"Hello" & "!");
+			ResultAssert.Captures("", Negator.Consume("Hello"));
+			ResultAssert.Captures("", Negator.Consume("Hello!"));
+			ResultAssert.Captures("", Negator.Consume("Oh no!")); // This is supposed to fail because while the first part succeeds because it doesn't match, the second part is a stand alone '!' which matches, causing the whole expression to fail. By contrast: "Hello!".Neglect("Oh no!") would pass. This is correct, albeit a bit surprising, behavior.
+			ResultAssert.Captures("Oh no?", Negator.Consume("Oh no?"));
+		}
+
+		[TestMethod]
 		public void ConsumeLiteral() {
 			Pattern Negator = !(Pattern)"Hello";
 			ResultAssert.Captures("", Negator.Consume("Hello"));
