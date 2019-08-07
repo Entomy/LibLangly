@@ -77,6 +77,13 @@ namespace System.Text.Patterns {
 		public static Pattern operator ~(Pattern Pattern) => new Pattern(new Optor(Pattern));
 
 		/// <summary>
+		/// Makes the <paramref name="Pattern"/> negative
+		/// </summary>
+		/// <param name="Pattern"></param>
+		/// <returns>The new <see cref="Pattern"/></returns>
+		public static Pattern operator !(Pattern Pattern) => new Pattern(new Negator(Pattern));
+
+		/// <summary>
 		/// Makes the <paramref name="Pattern"/> span
 		/// </summary>
 		/// <param name="Pattern"></param>
