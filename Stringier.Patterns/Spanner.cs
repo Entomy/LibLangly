@@ -42,7 +42,16 @@
 
 		public override Int32 GetHashCode() => Pattern.GetHashCode();
 
-		public override Result Neglect(ref Source Source) => throw new NotImplementedException();
+		public override Result Neglect(ref Source Source) {
+			Int32 OriginalPosition = Source.Position;
+			Result Result = new Result("", true);
+			while (Result) {
+				Result = Pattern.Neglect(ref Source);
+			}
+			Int32 FinalPosition = Source.Position;
+			Source.Position = OriginalPosition;
+			return new Result(Source.Read(FinalPosition - OriginalPosition), Result);
+		}
 
 		public override String ToString() => Pattern.ToString();
 	}

@@ -43,5 +43,12 @@ namespace Tests {
 			ResultAssert.Captures("Oh!Oh!", Negator.Consume("Oh!Oh!"));
 		}
 
+		[TestMethod]
+		public void ConsumeSpanner() {
+			Pattern Negator = !+(Pattern)";";
+			ResultAssert.Captures("", Negator.Consume(";"));
+			ResultAssert.Captures("123456789", Negator.Consume("123456789;"));
+		}
+
 	}
 }
