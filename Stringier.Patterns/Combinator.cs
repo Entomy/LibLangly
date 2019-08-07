@@ -56,16 +56,13 @@
 		public override Int32 GetHashCode() => Left.GetHashCode() & Right.GetHashCode();
 
 		public override Result Neglect(ref Source Source) {
-			Console.WriteLine($"Neglect({Source.ToString()})");
 			Int32 OriginalPosition = Source.Position;
 			Result Result;
 			// Try consuming the left side
 			Result = Left.Neglect(ref Source);
-			Console.WriteLine("Left.Capture: " + Result);
 			if (!Result) { goto Cleanup; }
 			// Try consuming the right side
 			Result = Right.Neglect(ref Source);
-			Console.WriteLine("Right.Capture: " + Result);
 			if (!Result) { goto Cleanup; }
 			// Skip cleanup
 			goto Done;

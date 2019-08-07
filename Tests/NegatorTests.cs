@@ -11,6 +11,14 @@ namespace Tests {
 		}
 
 		[TestMethod]
+		public void ConsumeAlternator() {
+			Pattern Negator = !((Pattern)"Hello" | "Goodbye");
+			ResultAssert.Captures("", Negator.Consume("Hello"));
+			ResultAssert.Captures("", Negator.Consume("Goodbye"));
+			ResultAssert.Captures("World", Negator.Consume("Worldeater"));
+		}
+
+		[TestMethod]
 		public void ConsumeChecker() {
 			Pattern Negator = !(Pattern)((Char) => 0x30 <= Char && Char <= 0x39);
 			ResultAssert.Captures("", Negator.Consume("3"));

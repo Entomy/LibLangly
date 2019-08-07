@@ -44,7 +44,15 @@
 
 		public override Int32 GetHashCode() => Left.GetHashCode() | Right.GetHashCode();
 
-		public override Result Neglect(ref Source Source) => throw new NotImplementedException();
+		public override Result Neglect(ref Source Source) {
+			Int32 OriginalPosition = Source.Position;
+			Result Result = Right.Neglect(ref Source);
+			if (Result) {
+				Source.Position = OriginalPosition;
+				Result = Left.Neglect(ref Source);
+			}
+			return Result;
+		}
 
 		public override String ToString() => $"{Left} | {Right}";
 	}
