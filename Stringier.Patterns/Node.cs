@@ -31,7 +31,23 @@ namespace System.Text.Patterns {
 
 		public abstract override Int32 GetHashCode();
 
-		public abstract override String ToString();
+		/// <summary>
+		/// Attempt to consume from the <paramref name="Source"/> while neglecting the <paramref name="Pattern"/>
+		/// </summary>
+		/// <param name="Source">The <see cref="String"/> to consume</param>
+		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured string</returns>
+		public Result Neglect(String Source) {
+			Source source = new Source(Source);
+			return Consume(ref source);
+		}
 
+		/// <summary>
+		/// Attempt to consume from the <paramref name="Source"/> while neglecting the <paramref name="Pattern"/>
+		/// </summary>
+		/// <param name="Source">The <see cref="Source"/> to consume</param>
+		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured string</returns>
+		public abstract Result Neglect(ref Source Source);
+
+		public abstract override String ToString();
 	}
 }

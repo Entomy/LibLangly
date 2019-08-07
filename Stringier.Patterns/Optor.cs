@@ -41,6 +41,8 @@ namespace System.Text.Patterns {
 
 		public override Int32 GetHashCode() => ~Pattern.GetHashCode();
 
+		public override Result Neglect(ref Source Source) => throw new NotImplementedException();
+
 		public override String ToString() => $"~{Pattern}";
 	}
 }

@@ -61,6 +61,8 @@
 
 		public override Int32 GetHashCode() => Pattern.GetHashCode() ^ Count.GetHashCode();
 
+		public override Result Neglect(ref Source Source) => throw new NotImplementedException();
+
 		public override String ToString() {
 			StringBuilder Result = new StringBuilder();
 			for (Int32 i = 0; i < Count; i++) {

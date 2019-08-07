@@ -55,6 +55,8 @@
 
 		public override Int32 GetHashCode() => Left.GetHashCode() & Right.GetHashCode();
 
+		public override Result Neglect(ref Source Source) => throw new NotImplementedException();
+
 		public override String ToString() => Left.ToString() + Right.ToString();
 	}
 }

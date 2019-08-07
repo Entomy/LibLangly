@@ -35,6 +35,11 @@
 
 		public override Int32 GetHashCode() => Check.GetHashCode();
 
+		public override Result Neglect(ref Source Source) {
+			if (Source.Length == 0) { return new Result(); }
+			return Check(Source.Peek()) ? new Result() : new Result(Source.Read(1));
+		}
+
 		public override String ToString() => Check.ToString();
 	}
 }
