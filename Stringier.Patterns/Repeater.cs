@@ -61,7 +61,22 @@
 
 		public override Int32 GetHashCode() => Pattern.GetHashCode() ^ Count.GetHashCode();
 
-		public override Result Neglect(ref Source Source) => throw new NotImplementedException();
+		public override Result Neglect(ref Source Source) {
+			Int32 OriginalPosition = Source.Position;
+			Result Result = new Result("", false);
+			for (Int32 i = 0; i < Count; i++) {
+				Result = Pattern.Neglect(ref Source);
+				if (!Result) { goto Cleanup; }
+			}
+			// Skip cleanup
+			goto Done;
+		Cleanup:
+			Source.Position = OriginalPosition;
+		Done:
+			Int32 FinalPosition = Source.Position;
+			Source.Position = OriginalPosition;
+			return new Result(Source.Read(FinalPosition - OriginalPosition), Result);
+		}
 
 		public override String ToString() {
 			StringBuilder Result = new StringBuilder();

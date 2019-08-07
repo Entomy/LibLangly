@@ -36,5 +36,12 @@ namespace Tests {
 			ResultAssert.Succeeds(Negator.Consume("World"));
 		}
 
+		[TestMethod]
+		public void ConsumeRepeater() {
+			Pattern Negator = !((Pattern)"Hi!" * 2);
+			ResultAssert.Captures("", Negator.Consume("Hi!Hi!"));
+			ResultAssert.Captures("Oh!Oh!", Negator.Consume("Oh!Oh!"));
+		}
+
 	}
 }
