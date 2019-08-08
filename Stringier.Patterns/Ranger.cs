@@ -11,6 +11,8 @@ namespace System.Text.Patterns {
 
 		private readonly Node To;
 
+		private readonly Node? Escape;
+
 		internal Ranger(Node From, Node To) {
 			this.From = From;
 			this.To = To;
@@ -18,11 +20,25 @@ namespace System.Text.Patterns {
 
 		internal Ranger(Pattern From, Pattern To) : this(From.Head, To.Head) { }
 
+		internal Ranger(Node From, Node To, Node Escape) {
+			this.From = From;
+			this.To = To;
+			this.Escape = Escape;
+		}
+
+		internal Ranger(Pattern From, Pattern To, Pattern Escape) : this(From.Head, To.Head, Escape.Head) { }
+
 		public static implicit operator Ranger((String From, String To) Range) => new Ranger(Range.From, Range.To);
+
+		public static implicit operator Ranger((String From, String To, String Escape) Range) => new Ranger(Range.From, Range.To, Range.Escape);
 
 		public static implicit operator Ranger((Node From, Node To) Range) => new Ranger(Range.From, Range.To);
 
+		public static implicit operator Ranger((Node From, Node To, Node Escape) Range) => new Ranger(Range.From, Range.To, Range.Escape);
+
 		public static implicit operator Ranger((Pattern From, Pattern To) Range) => new Ranger(Range.From, Range.To);
+
+		public static implicit operator Ranger((Pattern From, Pattern To, Pattern Escape) Range) => new Ranger(Range.From, Range.To, Range.Escape);
 
 		/// <summary>
 		/// Attempt to consume the <see cref="Pattern"/> from the <paramref name="Source"/>, adjusting the position in the <paramref name="Source"/> as appropriate
@@ -36,6 +52,7 @@ namespace System.Text.Patterns {
 			Result = To.Consume(ref Source);
 			while (!Result) {
 				Source.Position++;
+				if (!(Escape is null)) { Escape.Consume(ref Source); } //If an escape is defined, check for it now and advance if found, before checking the end of the range
 				Result = To.Consume(ref Source);
 			}
 			goto Done;

@@ -17,6 +17,10 @@ namespace System.Text.Patterns {
 
 		public static implicit operator Pattern((Pattern From, Pattern To) Range) => new Pattern(new Ranger(Range.From, Range.To));
 
+		public static implicit operator Pattern((String From, String To, String Escape) Range) => new Pattern(new Ranger(Range.From, Range.To, Range.Escape));
+
+		public static implicit operator Pattern((Pattern From, Pattern To, Pattern Escape) Range) => new Pattern(new Ranger(Range.From, Range.To, Range.Escape));
+
 		/// <summary>
 		/// Combine the two patterns, one after another
 		/// </summary>
