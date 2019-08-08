@@ -89,6 +89,14 @@ Pattern patternName = pattern1 & pattern2;
 
 Combinators require both patterns in sequence and are equivalent to the regex `(pattern1)(pattern2)` with the unnecessary parenthesis added for readability.
 
+### Negator
+
+~~~~csharp
+Pattern patternName = !pattern;
+~~~~
+
+Negators exclude the specified pattern, instead consuming anything of the same length. This is not a concept easy to express with regex, but given the pattern `!"hi"` it would be similar to `/[^h][^i]/`.
+
 ### Optor
 
 ~~~~csharp
@@ -97,10 +105,50 @@ Pattern patternName = ~pattern;
 
 Optors make the pattern completly optional, so success is always true, and are equivalent to the regex `(pattern)?`.
 
+### Ranger
+
+~~~~csharp
+Pattern patternName = (From: startPattern, To: endPattern);
+~~~~
+or
+~~~~csharp
+Pattern patternName = (From: startPattern, To: endPattern, Escape: escapePattern);
+~~~~
+
+Rangers are totally foreign to regex, also some parsers are able to synthesize the behavior. The behavior is to simply try matching the `From` at the current position, then continue to read everything until the `To` is matched, which also consumes that. Optionally, an `Escape` may be defined, which is attempted to be matched before `To` and is used primarily for matching string literals which have language defined escape sequences for the delimiting character.
+
+To provide a few examples of how this behavior is useful:
+
+~~~~csharp
+Pattern letStatement = (From: "let", To: ";"); //This will match an entire let statement in a language which has semicolon terminated statements
+~~~~
+
+~~~~csharp
+Pattern cString = (From: "\"", To: "\"", Escape: "\\\""); //This will match an entire C string literal, while including double-quote escapes
+~~~~
+
 ### Repeater
 
 ~~~~csharp
 Pattern patternName = pattern * 3; //repeats the pattern three times
 ~~~~
 
-Repeaters require the pattern to repeat the specified number of times, and can be thought of the multiplcation to patterns when combinators are addition. The above example would be equivalent to the regex `pattern{3}`.
+Repeaters require the pattern to repeat the specified number of times, and can be thought of the multiplcation to patterns when combinators are addition. The above example would be equivalent to the regex `(pattern){3}`.
+
+### Spanner
+
+~~~~csharp
+Pattern patternName = +pattern;
+~~~~
+
+Spanners require the pattern to exist at least once, but will repeat until the pattern can no longer be matched, and are equivalent to the regex `(pattern)+`.
+
+### Checker
+
+~~~~csharp
+Pattern patternName = (Pattern)((Char) =>
+    //Logic
+);
+~~~~
+
+Checkers aren't normally used, but seeing as they form the basis of a lot of predefined patterns because of their usability, they are also exposed publicly to enable certain complex patterns or greatly simplify complex patterns. Instead of doing checks through the pattern API, the check, held only against a single character, is done programmatically. The check is a lamba which takes a single character and returns a boolean. Anything can be done in this context. Overwhelmingly you don't want to use this.
