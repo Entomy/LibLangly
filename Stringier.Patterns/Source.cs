@@ -9,14 +9,14 @@ namespace System.Text.Patterns {
 
 		public Source(String String) {
 			Buffer = String.AsSpan();
-			Position = 0;
+			position = 0;
 		}
 
 		public Source(Stream Stream) {
 			using (StreamReader Reader = new StreamReader(Stream)) {
 				Buffer = Reader.ReadToEnd().AsSpan();
 			}
-			Position = 0;
+			position = 0;
 		}
 
 		/// <summary>
@@ -29,13 +29,21 @@ namespace System.Text.Patterns {
 		/// </summary>
 		public Int32 Length => Buffer.Length - Position;
 
+		private Int32 position;
+
 		/// <summary>
 		/// 
 		/// </summary>
 		/// <remarks>
 		/// This is for internal manipulation, such as resetting the index after a failed consume
 		/// </remarks>
-		internal Int32 Position { get; set; }
+		internal Int32 Position {
+			get => position;
+			set {
+				position = value;
+				if (Length < 0) { throw new IndexOutOfRangeException(); }
+			}
+		}
 
 		internal ref readonly Char Peek() => ref Buffer[Position];
 

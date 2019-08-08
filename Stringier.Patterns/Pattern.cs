@@ -13,6 +13,10 @@ namespace System.Text.Patterns {
 
 		public static implicit operator Pattern((String String, StringComparison ComparisonType) Pattern) => new Pattern(new Literal(Pattern.String, Pattern.ComparisonType));
 
+		public static implicit operator Pattern((String From, String To) Range) => new Pattern(new Ranger(Range.From, Range.To));
+
+		public static implicit operator Pattern((Pattern From, Pattern To) Range) => new Pattern(new Ranger(Range.From, Range.To));
+
 		/// <summary>
 		/// Combine the two patterns, one after another
 		/// </summary>
