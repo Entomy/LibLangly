@@ -7,7 +7,9 @@ namespace Benchmarks {
 			BenchmarkRunner.Run<AlternatorComparison>();
 			BenchmarkRunner.Run<CombinatorComparison>();
 			BenchmarkRunner.Run<LiteralComparison>();
+			BenchmarkRunner.Run<NegatorComparison>();
 			BenchmarkRunner.Run<OptorComparison>();
+			BenchmarkRunner.Run<RangerComparison>();
 			BenchmarkRunner.Run<RepeaterComparison>();
 			BenchmarkRunner.Run<SpannerComparison>();
 		}
