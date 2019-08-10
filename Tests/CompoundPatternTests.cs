@@ -32,6 +32,33 @@ namespace Tests {
 		}
 
 		[TestMethod]
+		public void Number() {
+			Result Result;
+
+			Pattern Numeral = Pattern.DecimalDigitNumber & ~+("_" | Pattern.DecimalDigitNumber);
+
+			Result = Numeral.Consume("42");
+			Assert.That.Succeeds(Result);
+			Assert.That.Captures("42", Result);
+
+			Result = Numeral.Consume("4_2");
+			Assert.That.Succeeds(Result);
+			Assert.That.Captures("4_2", Result);
+
+			Pattern Fraction = "." & Numeral;
+
+			Result = Fraction.Consume(".0");
+			Assert.That.Succeeds(Result);
+			Assert.That.Captures(".0", Result);
+
+			Pattern RealNumeral = Numeral & ~Fraction;
+
+			Result = RealNumeral.Consume("42.0");
+			Assert.That.Succeeds(Result);
+			Assert.That.Captures("42.0", Result);
+		}
+
+		[TestMethod]
 		public void OptorSpanner() {
 			Pattern Pattern = ~+(Pattern)" ";
 			Assert.That.Captures("  ", Pattern.Consume("  Hello"));
