@@ -15,19 +15,43 @@ namespace Tests {
 			Pattern Hello = "Hello";
 			Pattern Space = " ";
 			Pattern World = "World";
-			Assert.That.Captures("Hello", Hello.Consume("Hello World!"));
+			Result Result;
+
+			Result = Hello.Consume("Hello World!");
+			Assert.That.Succeeds(Result);
+			Assert.That.Captures("Hello", Result);
+
 			Source Source = new Source("Hello World");
-			Assert.That.Captures("Hello", Hello.Consume(ref Source));
-			Assert.That.Captures(" ", Space.Consume(ref Source));
-			Assert.That.Captures("World", World.Consume(ref Source));
+
+			Result = Hello.Consume(ref Source);
+			Assert.That.Succeeds(Result);
+			Assert.That.Captures("Hello", Result);
+
+			Result = Space.Consume(ref Source);
+			Assert.That.Succeeds(Result);
+			Assert.That.Captures(" ", Result);
+
+			Result = World.Consume(ref Source);
+			Assert.That.Succeeds(Result);
+			Assert.That.Captures("World", Result);
 		}
 
 		[TestMethod]
 		public void ConsumeCaseInsensitive() {
 			Pattern HelloWorld = ("HELLO WORLD", StringComparison.OrdinalIgnoreCase);
-			Assert.That.Captures("HELLO WORLD", HelloWorld.Consume("HELLO WORLD!"));
-			Assert.That.Captures("Hello World", HelloWorld.Consume("Hello World!"));
-			Assert.That.Captures("hello world", HelloWorld.Consume("hello world!"));
+			Result Result;
+
+			Result = HelloWorld.Consume("HELLO WORLD!");
+			Assert.That.Succeeds(Result);
+			Assert.That.Captures("HELLO WORLD", Result);
+
+			Result = HelloWorld.Consume("Hello World!");
+			Assert.That.Succeeds(Result);
+			Assert.That.Captures("Hello World", Result);
+
+			Result = HelloWorld.Consume("hello world!");
+			Assert.That.Succeeds(Result);
+			Assert.That.Captures("hello world", Result);
 		}
 
 		[TestMethod]
