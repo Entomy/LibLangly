@@ -14,8 +14,15 @@ namespace Tests {
 		public void Consume() {
 			Pattern HelloWorld = (Pattern)"Hello" & " " & "world";
 			Pattern GoodbyeWorld = (Pattern)"Goodbye" & " " & "world";
-			Assert.That.Captures("Hello world", HelloWorld.Consume("Hello world"));
-			Assert.That.Captures("Goodbye world", GoodbyeWorld.Consume("Goodbye world"));
+			Result Result;
+
+			Result = HelloWorld.Consume("Hello world");
+			Assert.That.Succeeds(Result);
+			Assert.That.Captures("Hello world", Result);
+
+			Result = GoodbyeWorld.Consume("Goodbye world");
+			Assert.That.Succeeds(Result);
+			Assert.That.Captures("Goodbye world", Result);
 		}
 
 		[TestMethod]

@@ -13,8 +13,15 @@ namespace Tests {
 		[TestMethod]
 		public void Consume() {
 			Pattern Whitespace = +(Pattern)" ";
-			Assert.That.Captures(" ", Whitespace.Consume(" Hi!"));
-			Assert.That.Captures("    ", Whitespace.Consume("    Hi!"));
+			Result Result;
+
+			Result = Whitespace.Consume(" Hi!");
+			Assert.That.Succeeds(Result);
+			Assert.That.Captures(" ", Result);
+
+			Result = Whitespace.Consume("    Hi!");
+			Assert.That.Succeeds(Result);
+			Assert.That.Captures("    ", Result);
 		}
 
 		[TestMethod]

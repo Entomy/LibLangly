@@ -22,7 +22,8 @@
 			}
 			Int32 FinalPosition = Source.Position;
 			Source.Position = OriginalPosition;
-			return new Result(Source.Read(FinalPosition - OriginalPosition), Result);
+			Boolean Success = FinalPosition - OriginalPosition > 0;
+			return new Result(Source.Read(FinalPosition - OriginalPosition), Success);
 		}
 
 		public override Boolean Equals(Object obj) {

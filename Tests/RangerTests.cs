@@ -13,20 +13,44 @@ namespace Tests {
 		[TestMethod]
 		public void Consume() {
 			Pattern Ranger = (From: "Hello", To: ";");
-			Assert.That.Captures("Hello;", Ranger.Consume("Hello;"));
-			Assert.That.Captures("Hello World;", Ranger.Consume("Hello World;"));
+			Result Result;
+
+			Result = Ranger.Consume("Hello;");
+			Assert.That.Succeeds(Result);
+			Assert.That.Captures("Hello;", Result);
+
+			Result = Ranger.Consume("Hello World;");
+			Assert.That.Succeeds(Result);
+			Assert.That.Captures("Hello World;", Result);
 		}
 
 		[TestMethod]
 		public void EscapedConsume() {
 			Pattern Ranger = (From: "\"", To: "\"", Escape: "\"\"");
-			Assert.That.Captures("\"\"", Ranger.Consume("\"\""));
-			Assert.That.Captures("\"H\"", Ranger.Consume("\"H\""));
-			Assert.That.Captures("\"Hello\"", Ranger.Consume("\"Hello\""));
-			Assert.That.Captures("\"Hello\"\"Goodbye\"", Ranger.Consume("\"Hello\"\"Goodbye\""));
+			Result Result;
+
+			Result = Ranger.Consume("\"\"");
+			Assert.That.Succeeds(Result);
+			Assert.That.Captures("\"\"", Result);
+
+			Result = Ranger.Consume("\"H\"");
+			Assert.That.Succeeds(Result);
+			Assert.That.Captures("\"H\"", Result);
+
+			Result = Ranger.Consume("\"Hello\"");
+			Assert.That.Succeeds(Result);
+			Assert.That.Captures("\"Hello\"", Result);
+
+			Result = Ranger.Consume("\"Hello\"\"Goodbye\"");
+			Assert.That.Succeeds(Result);
+			Assert.That.Captures("\"Hello\"\"Goodbye\"", Result);
+
 			// Should also check for C style escapes
 			Ranger = (From: "\"", To: "\"", Escape: "\\\"");
-			Assert.That.Captures("\"Hello\\\"Goodbye\"", Ranger.Consume("\"Hello\\\"Goodbye\""));
+
+			Result = Ranger.Consume("\"Hello\\\"Goodbye\"");
+			Assert.That.Succeeds(Result);
+			Assert.That.Captures("\"Hello\\\"Goodbye\"", Result);
 		}
 
 	}

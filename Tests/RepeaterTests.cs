@@ -13,13 +13,19 @@ namespace Tests {
 		[TestMethod]
 		public void Consume() {
 			Pattern Repeater = (Pattern)"Hi! " * 2;
-			Assert.That.Captures("Hi! Hi! ", Repeater.Consume("Hi! Hi! Hi!"));
+			Result Result;
+
+			Result = Repeater.Consume("Hi! Hi! Hi!");
+			Assert.That.Succeeds(Result);
+			Assert.That.Captures("Hi! Hi! ", Result);
 		}
 
 		[TestMethod]
 		public void ConsumeFail() {
 			Pattern Repeater = (Pattern)"Hi! " * 2;
-			Assert.That.Fails(Repeater.Consume("Bye!"));
+
+			Result Result = Repeater.Consume("Bye!");
+			Assert.That.Fails(Result);
 		}
 	}
 }

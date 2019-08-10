@@ -13,9 +13,19 @@ namespace Tests {
 		[TestMethod]
 		public void Consume() {
 			Pattern Alternator = (Pattern)"Hello" | "Goodbye";
-			Assert.That.Captures("Hello", Alternator.Consume("Hello"));
-			Assert.That.Captures("Goodbye", Alternator.Consume("Goodbye"));
-			Assert.That.Captures("", Alternator.Consume("!"));
+			Result Result;
+
+			Result = Alternator.Consume("Hello");
+			Assert.That.Succeeds(Result);
+			Assert.That.Captures("Hello", Result);
+
+			Result = Alternator.Consume("Goodbye");
+			Assert.That.Succeeds(Result);
+			Assert.That.Captures("Goodbye", Result);
+
+			Result = Alternator.Consume("!");
+			Assert.That.Fails(Result);
+			Assert.That.Captures("", Result);
 		}
 
 		[TestMethod]
