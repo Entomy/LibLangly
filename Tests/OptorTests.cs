@@ -13,9 +13,9 @@ namespace Tests {
 		[TestMethod]
 		public void Consume() {
 			Pattern Optor = ~(Pattern)"Hello";
-			ResultAssert.Captures("Hello", Optor.Consume("Hello world!"));
-			ResultAssert.Captures("", Optor.Consume("Goodbye world!"));
-			ResultAssert.Succeeds(Optor.Consume("Goodbye world!"));
+			Assert.That.Captures("Hello", Optor.Consume("Hello world!"));
+			Assert.That.Captures("", Optor.Consume("Goodbye world!"));
+			Assert.That.Succeeds(Optor.Consume("Goodbye world!"));
 		}
 	}
 }
