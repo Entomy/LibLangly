@@ -203,6 +203,14 @@ namespace System.Text.Patterns {
 
 		#region Additional Patterns
 
+		/// <summary>
+		/// Not a UNICODE group, but instead, the various line terminators Operating Systems recognize.
+		/// </summary>
+		/// <remarks>
+		/// The CR+LF used by Windows, DOS, OS2, PalmOS, and others is checked first, because otherwise only the single CR would be matched. Similarly, because RISC OS uses LF+CR this check occurs directly after CR+LF, before any single characters.
+		/// </remarks>
+		public static readonly Pattern LineTerminator = (Pattern)"\u000D\u000A" | "\u000A\u000D" | "\u000A" | "\u000B" | "\u000C" | "\u000D" | "\u0085" | "\u2028" | "\u2029";
+
 		public static readonly Pattern Any = (Pattern)((Char) => true);
 
 		#endregion
