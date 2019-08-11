@@ -51,6 +51,7 @@ namespace System.Text.Patterns {
 			if (!Result) { goto Cleanup; }
 			Result = To.Consume(ref Source);
 			while (!Result) {
+				if (Source.EOF) { goto Cleanup; } //If we're already at the end, abort
 				Source.Position++;
 				if (!(Escape is null)) { Escape.Consume(ref Source); } //If an escape is defined, check for it now and advance if found, before checking the end of the range
 				Result = To.Consume(ref Source);

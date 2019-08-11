@@ -19,6 +19,24 @@ namespace Tests {
 		}
 
 		[TestMethod]
+		public void Comment() {
+			Pattern Pattern = (From: "--", To: Pattern.LineTerminator);
+			Result Result;
+
+			Result = Pattern.Consume("--This should fail");
+			Assert.That.Fails(Result);
+
+			Result = Pattern.Consume("--This is a comment\n");
+			Assert.That.Succeeds(Result);
+			Assert.That.Captures("--This is a comment\n", Result);
+
+			Result = Pattern.Consume("--This is a comment\nExample_Function();");
+			Assert.That.Succeeds(Result);
+			Assert.That.Captures("--This is a comment\n", Result);
+
+		}
+
+		[TestMethod]
 		public void Identifier() {
 			Pattern Pattern = Pattern.Letter & +(Pattern.Letter | Pattern.DecimalDigitNumber | "_");
 
