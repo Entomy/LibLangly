@@ -53,7 +53,17 @@ namespace Tests {
 		public void Number() {
 			Result Result;
 
-			Pattern Numeral = Pattern.DecimalDigitNumber & ~+("_" | Pattern.DecimalDigitNumber);
+			Pattern NumeralPattern = Pattern.DecimalDigitNumber & ~+("_" | Pattern.DecimalDigitNumber);
+
+			Pattern ExtendedDigitPattern = Pattern.DecimalDigitNumber | "a" | "A" | "b" | "B" | "c" | "C" | "d" | "D" | "e" | "E" | "f" | "F";
+
+			Pattern BasedNumeralPattern = ExtendedDigitPattern & +("_" | ExtendedDigitPattern);
+
+			Pattern SignPattern = (Pattern)"+" | "-";
+
+			Pattern ExponentPattern = ("E", StringComparison.OrdinalIgnoreCase) & ~SignPattern & NumeralPattern;
+
+			Pattern Numeral = NumeralPattern & ~("." & NumeralPattern) & ~ExponentPattern;
 
 			Result = Numeral.Consume("42");
 			Assert.That.Succeeds(Result);
