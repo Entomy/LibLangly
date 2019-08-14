@@ -141,5 +141,24 @@ namespace System {
 			return Result.Join();
 		}
 
+		/// <summary>
+		/// Converts the string representation of a number to its 32-bit signed integer equivalent.
+		/// </summary>
+		/// <param name="Char">A char containing a number to convert.</param>
+		/// <returns>A 32-bit signed integer equivalent to the number contained in <paramref name="Char"/>.</returns>
+		public static Int32 ParseInt32(this Char Char) => Char switch {
+			'0' => 0,
+			'1' => 1,
+			'2' => 2,
+			'3' => 3,
+			'4' => 4,
+			'5' => 5,
+			'6' => 6,
+			'7' => 7,
+			'8' => 8,
+			'9' => 9,
+			_ => throw new FormatException("Char is not of the correct format."),
+		};
+
 	}
 }
