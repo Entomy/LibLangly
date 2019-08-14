@@ -4,6 +4,8 @@ using BenchmarkDotNet.Running;
 namespace Benchmarks {
 	static class Program {
 		static void Main() {
+			BenchmarkRunner.Run<Int32ParseCharComparison>();
+			BenchmarkRunner.Run<Int32ParseStringComparison>();
 			BenchmarkRunner.Run<AlternatorComparison>();
 			BenchmarkRunner.Run<CombinatorComparison>();
 			BenchmarkRunner.Run<LiteralComparison>();
