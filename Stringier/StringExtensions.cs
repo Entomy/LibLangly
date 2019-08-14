@@ -385,6 +385,14 @@ namespace System {
 		public static Int32 ParseInt32(this String String, NumberStyles Style, IFormatProvider Provider) => Int32.Parse(String, Style, Provider);
 
 		/// <summary>
+		/// Converts the string representation of a number in a specified style to its 32-bit signed integer equivalent.
+		/// </summary>
+		/// <param name="String">A string containing a number to convert.</param>
+		/// <param name="Style">A bitwise combination of the enumeration values that indicates the style elements that can be present in <paramref name="String"/>. A typical value to specify is <see cref="NumberStyles.Integer"/>.</param>
+		/// <returns>A 32-bit signed integer equivalent to the number specified in <paramref name="String"/>.</returns>
+		public static Int32 ParseInt32(this String String, NumberStyles Style) => Int32.Parse(String, Style);
+
+		/// <summary>
 		/// Converts the string representation of a number to its 32-bit signed integer equivalent.
 		/// </summary>
 		/// <param name="String">A string containing a number to convert.</param>
