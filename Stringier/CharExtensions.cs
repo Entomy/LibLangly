@@ -142,6 +142,25 @@ namespace System {
 		}
 
 		/// <summary>
+		/// Converts the string representation of a number to its 16-bit signed integer equivalent.
+		/// </summary>
+		/// <param name="Char">A char containing a number to convert.</param>
+		/// <returns>A 16-bit signed integer equivalent to the number contained in <paramref name="Char"/>.</returns>
+		public static Int16 ParseInt16(this Char Char) => Char switch {
+			'0' => (Int16)0,
+			'1' => (Int16)1,
+			'2' => (Int16)2,
+			'3' => (Int16)3,
+			'4' => (Int16)4,
+			'5' => (Int16)5,
+			'6' => (Int16)6,
+			'7' => (Int16)7,
+			'8' => (Int16)8,
+			'9' => (Int16)9,
+			_ => throw new FormatException("Char is not of the correct format."),
+		};
+
+		/// <summary>
 		/// Converts the string representation of a number to its 32-bit signed integer equivalent.
 		/// </summary>
 		/// <param name="Char">A char containing a number to convert.</param>
