@@ -469,7 +469,7 @@ namespace System {
 		/// <param name="String">A string containing a number to convert.</param>
 		/// <param name="Provider">An object that supplies culture-specific formatting information about <paramref name="String"/>.</param>
 		/// <returns>A 64-bit signed integer equivalent to the number specified in <paramref name="String"/>.</returns>
-		public static Int64 ParseInt64(this String String, IFormatProvider Provider) => Int64.Parse(String);
+		public static Int64 ParseInt64(this String String, IFormatProvider Provider) => Int64.Parse(String, Provider);
 
 		/// <summary>
 		/// In the input string, replaces all strings that match a specified regular expression with a specified replacement string. Specified options modify the matching operation.
