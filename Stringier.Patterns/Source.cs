@@ -32,7 +32,7 @@ namespace System.Text.Patterns {
 		private Int32 position;
 
 		/// <summary>
-		/// 
+		/// The position within the source buffer
 		/// </summary>
 		/// <remarks>
 		/// This is for internal manipulation, such as resetting the index after a failed consume
