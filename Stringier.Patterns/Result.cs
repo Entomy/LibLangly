@@ -35,6 +35,8 @@
 
 		public static implicit operator String(Result Result) => Result.Capture.ToString();
 
+		public static implicit operator Source(Result Result) => new Source(Result.Capture);
+
 		public override String ToString() => Capture.ToString();
 
 	}

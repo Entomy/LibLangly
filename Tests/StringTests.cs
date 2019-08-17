@@ -137,6 +137,13 @@ namespace Tests {
 		}
 
 		[TestMethod]
+		public void ConsumeResult() {
+			Source Source = new Source("Hello World! How are you today?");
+			Result Result = "Hello World!".Consume(ref Source, StringComparison.OrdinalIgnoreCase);
+			Assert.That.Captures("Hello", "Hello".Consume(Result));
+		}
+
+		[TestMethod]
 		public void Neglect() {
 			Result Result;
 

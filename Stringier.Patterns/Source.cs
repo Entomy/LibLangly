@@ -19,6 +19,11 @@ namespace System.Text.Patterns {
 			position = 0;
 		}
 
+		public Source(ReadOnlySpan<Char> Span) {
+			Buffer = Span;
+			position = 0;
+		}
+
 		/// <summary>
 		/// Whether currently at the end of the source
 		/// </summary>
