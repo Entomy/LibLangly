@@ -3,15 +3,37 @@
 	/// Represents an alternator pattern
 	/// </summary>
 	internal sealed class Alternator : Node, IEquatable<Alternator> {
+		/// <summary>
+		/// The left pattern
+		/// </summary>
+		/// <remarks>
+		/// Normally this is checked first, although negators check it last
+		/// </remarks>
 		private readonly Node Left;
 
+		/// <summary>
+		/// The right pattern
+		/// </summary>
+		/// <remarks>
+		/// Normally this is checked last, although negators check if first
+		/// </remarks>
 		private readonly Node Right;
 
+		/// <summary>
+		/// Construct a new alternator from the two specified <see cref="Node"/>
+		/// </summary>
+		/// <param name="Left">The lefthand <see cref="Node"/></param>
+		/// <param name="Right">The righthand <see cref="Node"/></param>
 		internal Alternator(Node Left, Node Right) {
 			this.Left = Left;
 			this.Right = Right;
 		}
 
+		/// <summary>
+		/// Construct a new alternator from the two specified <see cref="Pattern"/>
+		/// </summary>
+		/// <param name="Left">The lefthand <see cref="Pattern"/></param>
+		/// <param name="Right">The righthand <see cref="Pattern"/></param>
 		internal Alternator(Pattern Left, Pattern Right) : this(Left.Head, Right.Head) { }
 
 		/// <summary>
@@ -48,6 +70,11 @@
 		/// <returns>A 32-bit signed integer hash code.</returns>
 		public override Int32 GetHashCode() => Left.GetHashCode() | Right.GetHashCode();
 
+		/// <summary>
+		/// Attempt to consume from the <paramref name="Source"/> while neglecting this <see cref="Pattern"/>
+		/// </summary>
+		/// <param name="Source">The <see cref="Source"/> to consume</param>
+		/// <returns>A <see cref="Result"/> containing whether a match occured and the consumed string</returns>
 		public override Result Neglect(ref Source Source) {
 			Int32 OriginalPosition = Source.Position;
 			Result Result = Right.Neglect(ref Source);

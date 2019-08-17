@@ -87,10 +87,10 @@ namespace System.Text.Patterns {
 		public override Int32 GetHashCode() => From.GetHashCode() ^ To.GetHashCode();
 
 		/// <summary>
-		/// Attempt to consume from the <paramref name="Source"/> while neglecting the <see cref="Pattern"/>
+		/// Attempt to consume from the <paramref name="Source"/> while neglecting this <see cref="Pattern"/>
 		/// </summary>
 		/// <param name="Source">The <see cref="Source"/> to consume</param>
-		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured string</returns>
+		/// <returns>A <see cref="Result"/> containing whether a match occured and the consumed string</returns>
 		public override Result Neglect(ref Source Source) => throw new NotImplementedException();
 
 		/// <summary>

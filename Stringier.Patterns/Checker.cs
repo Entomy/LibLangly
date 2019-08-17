@@ -9,10 +9,19 @@
 	internal sealed class Checker : Node, IEquatable<Checker> {
 		private readonly Func<Char, Boolean> Check;
 
+		/// <summary>
+		/// Construct a new <see cref="Checker"/> from the specified <paramref name="Check"/>
+		/// </summary>
+		/// <param name="Check">A <see cref="Func{T, TResult}"/> taking a <see cref="Char"/> and returning a <see cref="Boolean"/></param>
 		internal Checker(Func<Char, Boolean> Check) => this.Check = Check;
 
 		public static implicit operator Checker(Func<Char, Boolean> Check) => new Checker(Check);
 
+		/// <summary>
+		/// Attempt to consume the <see cref="Pattern"/> from the <paramref name="Source"/>, adjusting the position in the <paramref name="Source"/> as appropriate
+		/// </summary>
+		/// <param name="Source">The <see cref="Source"/> to consume</param>
+		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured string</returns>
 		public override Result Consume(ref Source Source) {
 			if (Source.Length == 0) { return new Result(); }
 			return Check(Source.Peek()) ? new Result(Source.Read(1)) : new Result();
@@ -39,6 +48,11 @@
 		/// <returns>A 32-bit signed integer hash code.</returns>
 		public override Int32 GetHashCode() => Check.GetHashCode();
 
+		/// <summary>
+		/// Attempt to consume from the <paramref name="Source"/> while neglecting this <see cref="Pattern"/>
+		/// </summary>
+		/// <param name="Source">The <see cref="Source"/> to consume</param>
+		/// <returns>A <see cref="Result"/> containing whether a match occured and the consumed string</returns>
 		public override Result Neglect(ref Source Source) {
 			if (Source.Length == 0) { return new Result(); }
 			return Check(Source.Peek()) ? new Result() : new Result(Source.Read(1));

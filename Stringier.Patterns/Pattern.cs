@@ -1,10 +1,22 @@
 ﻿using System.Globalization;
 
 namespace System.Text.Patterns {
+	/// <summary>
+	/// Represents a textual pattern
+	/// </summary>
 	public class Pattern : IEquatable<String> {
-
+		/// <summary>
+		/// The head node of the pattern
+		/// </summary>
+		/// <remarks>
+		/// Any pattern itself is essentially an unballanced binary tree; this is the starting point
+		/// </remarks>
 		internal readonly Node Head;
 
+		/// <summary>
+		/// Construct a new Pattern with the specified <paramref name="Head"/>
+		/// </summary>
+		/// <param name="Head">The <see cref="Node"/> to set as the head of this pattern</param>
 		internal Pattern(Node Head) => this.Head = Head;
 
 		public static explicit operator Pattern(Func<Char, Boolean> Check) => new Pattern(new Checker(Check));
@@ -115,6 +127,11 @@ namespace System.Text.Patterns {
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured string</returns>
 		public Result Consume(ref Source Source) => Head.Consume(ref Source);
 
+		/// <summary>
+		/// Determines whether two object instances are equal.
+		/// </summary>
+		/// <param name="obj">The object to compare with the current object.</param>
+		/// <returns>true if the specified object is equal to the current object; otherwise, false.</returns>
 		public override Boolean Equals(Object obj) => Head.Equals(obj);
 
 		public Boolean Equals(String other) => Head.Equals(other);

@@ -59,6 +59,11 @@
 		/// <returns>A 32-bit signed integer hash code.</returns>
 		public override Int32 GetHashCode() => Left.GetHashCode() & Right.GetHashCode();
 
+		/// <summary>
+		/// Attempt to consume from the <paramref name="Source"/> while neglecting this <see cref="Pattern"/>
+		/// </summary>
+		/// <param name="Source">The <see cref="Source"/> to consume</param>
+		/// <returns>A <see cref="Result"/> containing whether a match occured and the consumed string</returns>
 		public override Result Neglect(ref Source Source) {
 			Int32 OriginalPosition = Source.Position;
 			Result Result;
