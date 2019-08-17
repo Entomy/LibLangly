@@ -236,6 +236,9 @@ namespace System.Text.Patterns {
 		/// </remarks>
 		public static readonly Pattern LineTerminator = (Pattern)"\u000D\u000A" | "\u000A\u000D" | "\u000A" | "\u000B" | "\u000C" | "\u000D" | "\u0085" | "\u2028" | "\u2029";
 
+		/// <summary>
+		/// Matches any possible character
+		/// </summary>
 		public static readonly Pattern Any = (Pattern)((Char) => true);
 
 		#endregion
