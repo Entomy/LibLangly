@@ -39,6 +39,10 @@ namespace System.Text.Patterns {
 
 		public Boolean Equals(Optor other) => Pattern.Equals(other.Pattern);
 
+		/// <summary>
+		/// Returns the hash code for this instance.
+		/// </summary>
+		/// <returns>A 32-bit signed integer hash code.</returns>
 		public override Int32 GetHashCode() => ~Pattern.GetHashCode();
 
 		/// <summary>
@@ -52,6 +56,10 @@ namespace System.Text.Patterns {
 			return Result;
 		}
 
+		/// <summary>
+		/// Returns a string that represents the current object.
+		/// </summary>
+		/// <returns>A string that represents the current object.</returns>
 		public override String ToString() => $"~{Pattern}";
 	}
 }

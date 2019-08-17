@@ -80,6 +80,10 @@ namespace System.Text.Patterns {
 
 		public Boolean Equals(Ranger other) => From.Equals(other.From) && To.Equals(other.To);
 
+		/// <summary>
+		/// Returns the hash code for this instance.
+		/// </summary>
+		/// <returns>A 32-bit signed integer hash code.</returns>
 		public override Int32 GetHashCode() => From.GetHashCode() ^ To.GetHashCode();
 
 		/// <summary>
@@ -89,6 +93,10 @@ namespace System.Text.Patterns {
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured string</returns>
 		public override Result Neglect(ref Source Source) => throw new NotImplementedException();
 
+		/// <summary>
+		/// Returns a string that represents the current object.
+		/// </summary>
+		/// <returns>A string that represents the current object.</returns>
 		public override String ToString() => $"from={From} to={To}";
 	}
 }

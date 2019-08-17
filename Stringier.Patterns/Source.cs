@@ -62,6 +62,10 @@ namespace System.Text.Patterns {
 			return Result;
 		}
 
+		/// <summary>
+		/// Returns a string that represents the current object.
+		/// </summary>
+		/// <returns>A string that represents the current object.</returns>
 		public override String ToString() => Buffer.Slice(Position).ToString();
 	}
 }

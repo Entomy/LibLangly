@@ -37,6 +37,10 @@
 
 		public static implicit operator Source(Result Result) => new Source(Result.Capture);
 
+		/// <summary>
+		/// Returns a string that represents the current object.
+		/// </summary>
+		/// <returns>A string that represents the current object.</returns>
 		public override String ToString() => Capture.ToString();
 
 	}

@@ -29,6 +29,10 @@ namespace System.Text.Patterns {
 
 		public abstract Boolean Equals(String other);
 
+		/// <summary>
+		/// Returns the hash code for this instance.
+		/// </summary>
+		/// <returns>A 32-bit signed integer hash code.</returns>
 		public abstract override Int32 GetHashCode();
 
 		/// <summary>
@@ -48,6 +52,10 @@ namespace System.Text.Patterns {
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured string</returns>
 		public abstract Result Neglect(ref Source Source);
 
+		/// <summary>
+		/// Returns a string that represents the current object.
+		/// </summary>
+		/// <returns>A string that represents the current object.</returns>
 		public abstract override String ToString();
 	}
 }

@@ -53,6 +53,10 @@
 
 		public Boolean Equals(Combinator other) => Left.Equals(other.Left) && Right.Equals(other.Right);
 
+		/// <summary>
+		/// Returns the hash code for this instance.
+		/// </summary>
+		/// <returns>A 32-bit signed integer hash code.</returns>
 		public override Int32 GetHashCode() => Left.GetHashCode() & Right.GetHashCode();
 
 		public override Result Neglect(ref Source Source) {
@@ -74,6 +78,10 @@
 			return new Result(Source.Read(FinalPosition - OriginalPosition), Result);
 		}
 
+		/// <summary>
+		/// Returns a string that represents the current object.
+		/// </summary>
+		/// <returns>A string that represents the current object.</returns>
 		public override String ToString() => Left.ToString() + Right.ToString();
 	}
 }

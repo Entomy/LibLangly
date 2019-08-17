@@ -59,6 +59,10 @@
 
 		public Boolean Equals(Repeater other) => Pattern.Equals(other.Pattern) && Count.Equals(other.Count);
 
+		/// <summary>
+		/// Returns the hash code for this instance.
+		/// </summary>
+		/// <returns>A 32-bit signed integer hash code.</returns>
 		public override Int32 GetHashCode() => Pattern.GetHashCode() ^ Count.GetHashCode();
 
 		public override Result Neglect(ref Source Source) {
@@ -78,6 +82,10 @@
 			return new Result(Source.Read(FinalPosition - OriginalPosition), Result);
 		}
 
+		/// <summary>
+		/// Returns a string that represents the current object.
+		/// </summary>
+		/// <returns>A string that represents the current object.</returns>
 		public override String ToString() {
 			StringBuilder Result = new StringBuilder();
 			for (Int32 i = 0; i < Count; i++) {
