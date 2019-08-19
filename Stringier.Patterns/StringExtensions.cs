@@ -41,7 +41,7 @@ namespace System.Text.Patterns {
 		public static Result Consume(this String Pattern, ref Source Source, StringComparison ComparisonType) {
 			if (Pattern.Length > Source.Length) { return new Result(); } //Prevents matching against sources shorter than the pattern.
 			ReadOnlySpan<Char> Peek = Source.Peek(Pattern.Length);
-			if (String.Equals(Pattern, Peek.ToString(), ComparisonType)) {
+			if (Stringier.Equals(Pattern, Peek.ToString(), ComparisonType)) {
 				Source.Position += Peek.Length;
 				return new Result(Peek, true);
 			} else {
@@ -87,7 +87,7 @@ namespace System.Text.Patterns {
 		public static Result Neglect(this String Pattern, ref Source Source, StringComparison ComparisonType) {
 			if (Pattern.Length > Source.Length) { return new Result(); } //Prevents matching against sources shorter than the pattern.
 			ReadOnlySpan<Char> Peek = Source.Peek(Pattern.Length);
-			if (!String.Equals(Pattern, Peek.ToString(), ComparisonType)) {
+			if (!Stringier.Equals(Pattern, Peek.ToString(), ComparisonType)) {
 				Source.Position += Peek.Length;
 				return new Result(Peek, true);
 			} else {
@@ -141,7 +141,7 @@ namespace System.Text.Patterns {
 			// We're going to manually break out of this loop
 			while (true) {
 				Peek = Source.Peek(Pattern.Length);
-				if (String.Equals(Pattern, Peek.ToString(), ComparisonType)) {
+				if (Stringier.Equals(Pattern, Peek.ToString(), ComparisonType)) {
 					Source.Position += Peek.Length;
 				} else {
 					goto Done;

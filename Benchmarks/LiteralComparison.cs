@@ -11,10 +11,22 @@ namespace Benchmarks {
 		Regex Regex = new Regex("^Hello");
 
 		[Benchmark]
-		public Result LiteralConsume() => Literal.Consume("Hello");
+		public Result LiteralConsumeCase1() => Literal.Consume("Hello");
 
 		[Benchmark]
-		public Match RegexMatch() => Regex.Match("Hello");
+		public Result LiteralConsumeCase2() => Literal.Consume("World");
+
+		[Benchmark]
+		public Result LiteralConsumeCase3() => Literal.Consume("H");
+
+		[Benchmark]
+		public Match RegexMatchCase1() => Regex.Match("Hello");
+
+		[Benchmark]
+		public Match RegexMatchCase2() => Regex.Match("World");
+
+		[Benchmark]
+		public Match RegexMatchCase3() => Regex.Match("H");
 
 	}
 }
