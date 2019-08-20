@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 using System.Text.Patterns;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -50,6 +51,24 @@ namespace Tests {
 		}
 
 		[TestMethod]
+		public void IPv4Address() {
+			Pattern Digit = (~((Pattern)((C) => C=='1' || C=='2') & Pattern.DecimalDigitNumber) | Pattern.DecimalDigitNumber) & ~Pattern.DecimalDigitNumber;
+			Pattern Address = Digit & "." & Digit & "." & Digit & "." & Digit;
+			Result Result;
+
+			Result = Digit.Consume("1");
+			Assert.That.Captures("1", Result);
+			Result = Digit.Consume("11");
+			Assert.That.Captures("11", Result);
+			Result = Digit.Consume("111");
+			Assert.That.Captures("111",Result);
+
+			Result = Address.Consume("192.168.1.1");
+			Assert.That.Succeeds(Result);
+			Assert.That.Captures("192.168.1.1", Result);
+		}
+
+		[TestMethod]
 		public void Number() {
 			Result Result;
 
@@ -94,6 +113,14 @@ namespace Tests {
 		}
 
 		[TestMethod]
+		public void PhoneNumber() {
+			Pattern Pattern = Pattern.Number * 3 & "-" & Pattern.Number * 3 & "-" & Pattern.Number * 4;
+			Result Result = Pattern.Consume("555-555-5555");
+			Assert.That.Succeeds(Result);
+			Assert.That.Captures("555-555-5555", Result);
+		}
+
+		[TestMethod]
 		public void Separator() {
 			Pattern Pattern = +(Pattern.Separator | "\t");
 			Assert.That.Captures("  \t ", Pattern.Consume("  \t Hello"));
@@ -103,6 +130,35 @@ namespace Tests {
 		public void StringLiteral() {
 			Pattern Pattern = (From: "\"", To: "\"", Escape: "\\\"");
 			Assert.That.Captures("\"hello\\\"world\"", Pattern.Consume("\"hello\\\"world\""));
+		}
+
+		[TestMethod]
+		public void WebAddress() {
+			Pattern Protocol = "http" & ~(Pattern)"s" & "://";
+			Pattern Host = +(Pattern.Letter | Pattern.Number | "-") & "." & ~(+(Pattern.Letter | Pattern.Number | "-") & ".") & Pattern.Letter * 3;
+			Pattern Location = +("/" & +(Pattern.Letter | Pattern.Number | "-" | "_"));
+			Pattern Address = ~Protocol & Host & ~Location;
+			Result Result;
+
+			Result = Protocol.Consume("http://");
+			Assert.That.Captures("http://", Result);
+			Result = Protocol.Consume("https://");
+			Assert.That.Captures("https://", Result);
+
+			Result = Host.Consume("google.com");
+			Assert.That.Captures("google.com", Result);
+			Result = Host.Consume("www.google.com");
+			Assert.That.Captures("www.google.com", Result);
+
+			Result = Location.Consume("/about");
+			Assert.That.Captures("/about", Result);
+
+			Result = Address.Consume("www.google.com");
+			Assert.That.Captures("www.google.com", Result);
+			Result = Address.Consume("http://www.google.com");
+			Assert.That.Captures("http://www.google.com", Result);
+			Result = Address.Consume("http://www.google.com/about");
+			Assert.That.Captures("http://www.google.com/about", Result);
 		}
 
 	}

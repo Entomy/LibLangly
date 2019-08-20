@@ -8,7 +8,8 @@ namespace Benchmarks {
 			//BenchmarkRunner.Run<Int32ParseStringComparison>();
 			//BenchmarkRunner.Run<AlternatorComparison>();
 			//BenchmarkRunner.Run<CombinatorComparison>();
-			BenchmarkRunner.Run<LiteralComparison>();
+			BenchmarkRunner.Run<CompoundPatternComparison>();
+			//BenchmarkRunner.Run<LiteralComparison>();
 			//BenchmarkRunner.Run<NegatorComparison>();
 			//BenchmarkRunner.Run<OptorComparison>();
 			//BenchmarkRunner.Run<RangerComparison>();
