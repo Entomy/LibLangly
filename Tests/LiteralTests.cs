@@ -13,7 +13,7 @@ namespace Tests {
 		[TestMethod]
 		public void Consume() {
 			Pattern Hello = "Hello";
-			Pattern Space = " ";
+			Pattern Space = ' ';
 			Pattern World = "World";
 			Result Result;
 

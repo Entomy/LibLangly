@@ -17,7 +17,7 @@ namespace Benchmarks {
 
 		[Benchmark]
 		public Result IdentifierPattern() {
-			Pattern Pattern = Pattern.Letter & +(Pattern.Letter | Pattern.DecimalDigitNumber | "_");
+			Pattern Pattern = Pattern.Letter & +(Pattern.Letter | Pattern.DecimalDigitNumber | '_');
 			return Pattern.Consume("Hello_World");
 		}
 
@@ -26,7 +26,7 @@ namespace Benchmarks {
 
 		[Benchmark]
 		public Result IPv4AddressPattern() {
-			Pattern Digit = (~((Pattern)((C) => C == '1' || C == '2') & Pattern.DecimalDigitNumber) | Pattern.DecimalDigitNumber) & ~Pattern.DecimalDigitNumber;
+			Pattern Digit = (~(((Pattern)'1' | '2') & Pattern.DecimalDigitNumber) | Pattern.DecimalDigitNumber) & ~Pattern.DecimalDigitNumber;
 			Pattern Address = Digit & "." & Digit & "." & Digit & "." & Digit;
 			return Address.Consume("192.168.1.1");
 		}
@@ -36,7 +36,7 @@ namespace Benchmarks {
 
 		[Benchmark]
 		public Result PhoneNumberPattern() {
-			Pattern Pattern = Pattern.Number * 3 & "-" & Pattern.Number * 3 & "-" & Pattern.Number * 4;
+			Pattern Pattern = Pattern.Number * 3 & '-' & Pattern.Number * 3 & '-' & Pattern.Number * 4;
 			return Pattern.Consume("555-555-5555");
 		}
 
@@ -54,9 +54,9 @@ namespace Benchmarks {
 
 		[Benchmark]
 		public Result WebAddressPattern() {
-			Pattern Protocol = "http" & ~(Pattern)"s" & "://";
-			Pattern Host = +(Pattern.Letter | Pattern.Number | "-") & "." & ~(+(Pattern.Letter | Pattern.Number | "-") & ".") & Pattern.Letter * 3;
-			Pattern Location = +("/" & +(Pattern.Letter | Pattern.Number | "-" | "_"));
+			Pattern Protocol = "http" & ~(Pattern)'s' & "://";
+			Pattern Host = +(Pattern.Letter | Pattern.Number | '-') & '.' & ~(+(Pattern.Letter | Pattern.Number | '-') & '.') & Pattern.Letter * 3;
+			Pattern Location = +('/' & +(Pattern.Letter | Pattern.Number | '-' | '_'));
 			Pattern Address = ~Protocol & Host & ~Location;
 			return Address.Consume("http://www.google.com/about");
 		}

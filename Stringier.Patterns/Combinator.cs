@@ -1,4 +1,4 @@
 ﻿namespace System.Text.Patterns {
-	public abstract class Combinator : Node {
+	internal abstract class Combinator : Node {
 	}
 }

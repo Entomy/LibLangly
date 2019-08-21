@@ -1,4 +1,4 @@
 ﻿namespace System.Text.Patterns {
-	public abstract class Primative : Node {
+	internal abstract class Primative : Node {
 	}
 }

@@ -21,9 +21,13 @@ namespace System.Text.Patterns {
 
 		public static explicit operator Pattern(Func<Char, Boolean> Check) => new Pattern(new Checker(Check));
 
-		public static implicit operator Pattern(String String) => new Pattern(new Literal(String));
+		public static implicit operator Pattern(Char Char) => new Pattern(new CharLiteral(Char));
 
-		public static implicit operator Pattern((String String, StringComparison ComparisonType) Pattern) => new Pattern(new Literal(Pattern.String, Pattern.ComparisonType));
+		public static implicit operator Pattern((Char Char, StringComparison ComparisonType) Pattern) => new Pattern(new CharLiteral(Pattern.Char, Pattern.ComparisonType));
+
+		public static implicit operator Pattern(String String) => new Pattern(new StringLiteral(String));
+
+		public static implicit operator Pattern((String String, StringComparison ComparisonType) Pattern) => new Pattern(new StringLiteral(Pattern.String, Pattern.ComparisonType));
 
 		public static implicit operator Pattern((String From, String To) Range) => new Pattern(new Ranger(Range.From, Range.To));
 
@@ -47,7 +51,23 @@ namespace System.Text.Patterns {
 		/// <param name="Left"></param>
 		/// <param name="Right"></param>
 		/// <returns>The new <see cref="Pattern"/></returns>
+		public static Pattern operator &(Pattern Left, Char Right) => new Pattern(new Concatenator(Left, Right));
+
+		/// <summary>
+		/// Combine the two patterns, one after another
+		/// </summary>
+		/// <param name="Left"></param>
+		/// <param name="Right"></param>
+		/// <returns>The new <see cref="Pattern"/></returns>
 		public static Pattern operator &(Pattern Left, String Right) => new Pattern(new Concatenator(Left, Right));
+
+		/// <summary>
+		/// Combine the two patterns, one after another
+		/// </summary>
+		/// <param name="Left"></param>
+		/// <param name="Right"></param>
+		/// <returns>The new <see cref="Pattern"/></returns>
+		public static Pattern operator &(Char Left, Pattern Right) => new Pattern(new Concatenator(Left, Right));
 
 		/// <summary>
 		/// Combine the two patterns, one after another
@@ -79,7 +99,23 @@ namespace System.Text.Patterns {
 		/// <param name="Left"></param>
 		/// <param name="Right"></param>
 		/// <returns>The new <see cref="Pattern"/></returns>
+		public static Pattern operator |(Pattern Left, Char Right) => new Pattern(new Alternator(Left, Right));
+
+		/// <summary>
+		/// Alternate the two patterns, accepting either
+		/// </summary>
+		/// <param name="Left"></param>
+		/// <param name="Right"></param>
+		/// <returns>The new <see cref="Pattern"/></returns>
 		public static Pattern operator |(Pattern Left, String Right) => new Pattern(new Alternator(Left, Right));
+
+		/// <summary>
+		/// Alternate the two patterns, accepting either
+		/// </summary>
+		/// <param name="Left"></param>
+		/// <param name="Right"></param>
+		/// <returns>The new <see cref="Pattern"/></returns>
+		public static Pattern operator |(Char Left, Pattern Right) => new Pattern(new Alternator(Left, Right));
 
 		/// <summary>
 		/// Alternate the two patterns, accepting either

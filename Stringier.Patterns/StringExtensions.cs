@@ -1,7 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-
-namespace System.Text.Patterns {
-	[SuppressMessage("Microsoft.Analyzers", "CA1720", Justification = "This is an extension library, of course I'm naming the calling type the type itself")]
+﻿namespace System.Text.Patterns {
 	public static class StringExtensions {
 		/// <summary>
 		/// Attempt to consume the <paramref name="Pattern"/> from the <paramref name="Source"/>
@@ -12,7 +9,7 @@ namespace System.Text.Patterns {
 		public static Result Consume(this String Pattern, String Source) => Pattern.Consume(Source, StringComparison.CurrentCulture);
 
 		/// <summary>
-		/// Attempt to consume the <paramref name="Pattern"/> from the <paramref name="Candidate"/>
+		/// Attempt to consume the <paramref name="Pattern"/> from the <paramref name="Source"/>
 		/// </summary>
 		/// <param name="Pattern">The <see cref="String"/> to match</param>
 		/// <param name="Source">The <see cref="Source"/> to consume</param>

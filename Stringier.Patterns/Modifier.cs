@@ -1,4 +1,4 @@
 ﻿namespace System.Text.Patterns {
-	public abstract class Modifier : Node {
+	internal abstract class Modifier : Node {
 	}
 }

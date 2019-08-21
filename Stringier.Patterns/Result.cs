@@ -16,6 +16,10 @@
 		/// </remarks>
 		private readonly ReadOnlySpan<Char> Capture;
 
+		internal Result(Char Capture) : this(new ReadOnlySpan<Char>(new Char[] { Capture })) { }
+
+		internal Result(Char Capture, Boolean Success) : this(new ReadOnlySpan<Char>(new Char[] { Capture }), Success) { }
+
 		internal Result(ReadOnlySpan<Char> Capture) {
 			this.Success = true;
 			this.Capture = Capture;

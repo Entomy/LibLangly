@@ -2,6 +2,12 @@
 using System.Globalization;
 
 namespace System.Text.Patterns {
+	/// <summary>
+	/// Contains internal methods useful throughout this assembly
+	/// </summary>
+	/// <remarks>
+	/// While some of these could theoretically be useful outside this assembly, the simple fact is the actual behavior diverges from their standard analogues in a way that while useful for Stringier, could introduce unexpected behavior for others. It is for the best that they stay internal.
+	/// </remarks>
 	internal static class Stringier {
 		internal static Boolean Equals(Char a, Char b) => a.Equals(b);
 
