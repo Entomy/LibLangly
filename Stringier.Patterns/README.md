@@ -42,6 +42,11 @@ patternName.Consume("Candidate text");
 "Hello".Consume("Hello World!");
 //Assuming "Hello" captures "Hello" (which it obviously will) this will return true and "Hello"
 ~~~~
+or
+~~~~csharp
+' '.Consume(" okay ");
+//Assuming ' ' captures the first character in " okay " (which it obviously will) this will return true and " ".
+~~~~
 
 ## Concepts
 
@@ -62,10 +67,14 @@ One, no not really, a single `Boolean` isn't very large. Two, it doesn't actuall
 ~~~~csharp
 Pattern patternName = "Literal Pattern";
 ~~~~
+or
+~~~~csharp
+Pattern patternName = 'p';
+~~~~
 
 This is an exact 1:1 match pattern, and is equivalent to
 ~~~~csharp
-"pattern" == "candidate"`
+"pattern" == "candidate"
 ~~~~~
 **Literal** is meant mostly as a building block for patterns. Because pattern operators expect to use a **Literal**, which is not a string, the convenient syntax shown above only applies to **Literal**. Use inside a pattern operator might require a cast like
 ~~~~csharp
