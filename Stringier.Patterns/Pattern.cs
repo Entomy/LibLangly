@@ -39,7 +39,7 @@ namespace System.Text.Patterns {
 		/// <param name="Left"></param>
 		/// <param name="Right"></param>
 		/// <returns>The new <see cref="Pattern"/></returns>
-		public static Pattern operator &(Pattern Left, Pattern Right) => new Pattern(new Combinator(Left, Right));
+		public static Pattern operator &(Pattern Left, Pattern Right) => new Pattern(new Concatenator(Left, Right));
 
 		/// <summary>
 		/// Combine the two patterns, one after another
@@ -47,7 +47,7 @@ namespace System.Text.Patterns {
 		/// <param name="Left"></param>
 		/// <param name="Right"></param>
 		/// <returns>The new <see cref="Pattern"/></returns>
-		public static Pattern operator &(Pattern Left, String Right) => new Pattern(new Combinator(Left, Right));
+		public static Pattern operator &(Pattern Left, String Right) => new Pattern(new Concatenator(Left, Right));
 
 		/// <summary>
 		/// Combine the two patterns, one after another
@@ -55,7 +55,7 @@ namespace System.Text.Patterns {
 		/// <param name="Left"></param>
 		/// <param name="Right"></param>
 		/// <returns>The new <see cref="Pattern"/></returns>
-		public static Pattern operator &(String Left, Pattern Right) => new Pattern(new Combinator(Left, Right));
+		public static Pattern operator &(String Left, Pattern Right) => new Pattern(new Concatenator(Left, Right));
 
 		/// <summary>
 		/// Repeats the pattern the specified number of times

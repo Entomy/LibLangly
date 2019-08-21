@@ -6,7 +6,7 @@
 	/// Specifically, it's used in the construction of predefined patterns. This is because it's considerably easier to define a range of codepoints and check for the existance within that. The code to do this is clunky and awkward however, so not something to expose publicly.
 	/// Testing: While it might seem like testing this class is somehow not possible because of the visibility, this isn't the case at all. <see cref="Checker"/> is exposed, non-obviously, through the predefined patterns, and can easily be checked that way; if those fail while the isolated tests pass, the issue is almost certainly with this class.
 	/// </remarks>
-	internal sealed class Checker : Node, IEquatable<Checker> {
+	internal sealed class Checker : Primative, IEquatable<Checker> {
 		private readonly Func<Char, Boolean> Check;
 
 		/// <summary>

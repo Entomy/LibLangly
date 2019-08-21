@@ -1,19 +1,18 @@
 ﻿namespace System.Text.Patterns {
 	/// <summary>
-	/// Represents a repeater pattern
+	/// Represents a concatenator pattern
 	/// </summary>
-	internal sealed class Repeater : Modifier, IEquatable<Repeater> {
+	internal sealed class Concatenator : Combinator, IEquatable<Concatenator> {
+		private readonly Node Left;
 
-		private readonly Int32 Count;
+		private readonly Node Right;
 
-		private readonly Node Pattern;
-
-		internal Repeater(Node Pattern, Int32 Count) {
-			this.Pattern = Pattern;
-			this.Count = Count;
+		internal Concatenator(Node Left, Node Right) {
+			this.Left = Left;
+			this.Right = Right;
 		}
 
-		internal Repeater(Pattern Pattern, Int32 Count) : this(Pattern.Head, Count) { }
+		internal Concatenator(Pattern Left, Pattern Right) : this(Left.Head, Right.Head) { }
 
 		/// <summary>
 		/// Attempt to consume the <see cref="Pattern"/> from the <paramref name="Source"/>, adjusting the position in the <paramref name="Source"/> as appropriate
@@ -22,11 +21,13 @@
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured string</returns>
 		public override Result Consume(ref Source Source) {
 			Int32 OriginalPosition = Source.Position;
-			Result Result = new Result("", false);
-			for (Int32 i = 0; i < Count; i++) {
-				Result = Pattern.Consume(ref Source);
-				if (!Result) { goto Cleanup; }
-			}
+			Result Result;
+			// Try consuming the left side
+			Result = Left.Consume(ref Source);
+			if (!Result) { goto Cleanup; }
+			// Try consuming the right side
+			Result = Right.Consume(ref Source);
+			if (!Result) { goto Cleanup; }
 			// Skip cleanup
 			goto Done;
 		Cleanup:
@@ -39,7 +40,7 @@
 
 		public override Boolean Equals(Object obj) {
 			switch (obj) {
-			case Repeater Other:
+			case Concatenator Other:
 				return Equals(Other);
 			case String Other:
 				return Equals(Other);
@@ -48,22 +49,15 @@
 			}
 		}
 
-		public override Boolean Equals(String other) {
-			Source Source = new Source(other);
-			Result Result = new Result();
-			for (Int32 i = 0; i < Count; i++) {
-				Result = Pattern.Consume(ref Source);
-			}
-			return Result;
-		}
+		public override Boolean Equals(String other) => throw new NotImplementedException();
 
-		public Boolean Equals(Repeater other) => Pattern.Equals(other.Pattern) && Count.Equals(other.Count);
+		public Boolean Equals(Concatenator other) => Left.Equals(other.Left) && Right.Equals(other.Right);
 
 		/// <summary>
 		/// Returns the hash code for this instance.
 		/// </summary>
 		/// <returns>A 32-bit signed integer hash code.</returns>
-		public override Int32 GetHashCode() => Pattern.GetHashCode() ^ Count.GetHashCode();
+		public override Int32 GetHashCode() => Left.GetHashCode() & Right.GetHashCode();
 
 		/// <summary>
 		/// Attempt to consume from the <paramref name="Source"/> while neglecting this <see cref="Pattern"/>
@@ -72,11 +66,13 @@
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the consumed string</returns>
 		public override Result Neglect(ref Source Source) {
 			Int32 OriginalPosition = Source.Position;
-			Result Result = new Result("", false);
-			for (Int32 i = 0; i < Count; i++) {
-				Result = Pattern.Neglect(ref Source);
-				if (!Result) { goto Cleanup; }
-			}
+			Result Result;
+			// Try consuming the left side
+			Result = Left.Neglect(ref Source);
+			if (!Result) { goto Cleanup; }
+			// Try consuming the right side
+			Result = Right.Neglect(ref Source);
+			if (!Result) { goto Cleanup; }
 			// Skip cleanup
 			goto Done;
 		Cleanup:
@@ -91,12 +87,6 @@
 		/// Returns a string that represents the current object.
 		/// </summary>
 		/// <returns>A string that represents the current object.</returns>
-		public override String ToString() {
-			StringBuilder Result = new StringBuilder();
-			for (Int32 i = 0; i < Count; i++) {
-				Result.Append(Pattern);
-			}
-			return Result.ToString();
-		}
+		public override String ToString() => Left.ToString() + Right.ToString();
 	}
 }

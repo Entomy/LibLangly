@@ -6,7 +6,7 @@ namespace System.Text.Patterns {
 	/// <summary>
 	/// Represents the ranger pattern
 	/// </summary>
-	internal sealed class Ranger : Node, IEquatable<Ranger> {
+	internal sealed class Ranger : Combinator, IEquatable<Ranger> {
 		private readonly Node From;
 
 		private readonly Node To;

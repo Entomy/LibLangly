@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests {
 	[TestClass]
-	public class CombinatorTests {
+	public class ConcatenatorTests {
 		[TestMethod]
 		public void Constructor() {
 			Pattern _ = (Pattern)"Hello" & " " & "world";

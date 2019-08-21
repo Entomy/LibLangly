@@ -27,7 +27,7 @@ namespace Tests {
 		}
 
 		[TestMethod]
-		public void ConsumeCombinator() {
+		public void ConsumeConcatenator() {
 			Pattern Negator = !((Pattern)"Hello" & "!");
 			Assert.That.Captures("", Negator.Consume("Hello"));
 			Assert.That.Captures("", Negator.Consume("Hello!"));
