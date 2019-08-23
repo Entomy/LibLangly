@@ -4,7 +4,7 @@ namespace System.Text.Patterns {
 	/// <summary>
 	/// Represents a textual pattern
 	/// </summary>
-	public class Pattern : IEquatable<String> {
+	public readonly struct Pattern : IEquatable<Pattern>, IEquatable<String> {
 		/// <summary>
 		/// The head node of the pattern
 		/// </summary>
@@ -168,7 +168,18 @@ namespace System.Text.Patterns {
 		/// </summary>
 		/// <param name="obj">The object to compare with the current object.</param>
 		/// <returns>true if the specified object is equal to the current object; otherwise, false.</returns>
-		public override Boolean Equals(Object obj) => Head.Equals(obj);
+		public override Boolean Equals(Object obj) {
+			switch (obj) {
+			case Pattern other:
+				return Equals(other);
+			case String other:
+				return Equals(other);
+			default:
+				return false;
+			}
+		}
+
+		public Boolean Equals(Pattern other) => Head.Equals(other.Head);
 
 		public Boolean Equals(String other) => Head.Equals(other);
 
