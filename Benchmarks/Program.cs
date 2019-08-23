@@ -1,5 +1,4 @@
-﻿using System;
-using BenchmarkDotNet.Running;
+﻿using BenchmarkDotNet.Running;
 
 namespace Benchmarks {
 	static class Program {
@@ -14,6 +13,7 @@ namespace Benchmarks {
 			BenchmarkRunner.Run<OptorComparison>();
 			BenchmarkRunner.Run<RangeComparison>();
 			BenchmarkRunner.Run<RepeaterComparison>();
+			BenchmarkRunner.Run<SliceSubstringComparison>();
 			BenchmarkRunner.Run<SpannerComparison>();
 			BenchmarkRunner.Run<StringComparison>();
 		}
