@@ -82,6 +82,8 @@ This is an exact 1:1 match pattern, and is equivalent to
 ~~~~
 This is generally only required as the very first member
 
+Consider using characters anywhere a single character should be matched. While a string containing a single element will perform the same match, character matching is quicker.
+
 ### Alternator
 
 ~~~~csharp
@@ -114,27 +116,29 @@ Pattern patternName = ~pattern;
 
 Optors make the pattern completly optional, so success is always true, and are equivalent to the regex `(pattern)?`.
 
-### Ranger
+### Range Patterns
 
 ~~~~csharp
-Pattern patternName = (From: startPattern, To: endPattern);
+RangePattern patternName = new RangePattern(From: startPattern, To: endPattern);
 ~~~~
 or
 ~~~~csharp
-Pattern patternName = (From: startPattern, To: endPattern, Escape: escapePattern);
+rangePattern patternName = new RangePattern(From: startPattern, To: endPattern, Escape: escapePattern);
 ~~~~
 
-Rangers are totally foreign to regex, also some parsers are able to synthesize the behavior. The behavior is to simply try matching the `From` at the current position, then continue to read everything until the `To` is matched, which also consumes that. Optionally, an `Escape` may be defined, which is attempted to be matched before `To` and is used primarily for matching string literals which have language defined escape sequences for the delimiting character.
+Ranger Patterns are totally foreign to Regex, although some parsers are able to synthesize the behavior. The behavior is to simply try matching the `From` at the current position, then continue to read everything until the `To` is matched, which also consumes that. Optionally, an `Escape` may be defined, which is attempted to be matched before `To` and is used primarily for matching string literals which have language defined escape sequences for the delimiting character.
 
 To provide a few examples of how this behavior is useful:
 
 ~~~~csharp
-Pattern letStatement = (From: "let", To: ";"); //This will match an entire let statement in a language which has semicolon terminated statements
+RangePattern letStatement = new RangePattern(From: "let", To: ";"); //This will match an entire let statement in a language which has semicolon terminated statements
 ~~~~
 
 ~~~~csharp
-Pattern cString = (From: "\"", To: "\"", Escape: "\\\""); //This will match an entire C string literal, while including double-quote escapes
+RangePattern cString = new RangePattern(From: "\"", To: "\"", Escape: "\\\""); //This will match an entire C string literal, while including double-quote escapes
 ~~~~
+
+It is important to understand that this is not a modified pattern, but rather a new `struct`. That is because some of the modifiers, especially `Negator`, do not conceptually apply to a range (what is a negated range capture?).
 
 ### Repeater
 
