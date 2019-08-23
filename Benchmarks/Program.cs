@@ -12,7 +12,7 @@ namespace Benchmarks {
 			//BenchmarkRunner.Run<LiteralComparison>();
 			//BenchmarkRunner.Run<NegatorComparison>();
 			//BenchmarkRunner.Run<OptorComparison>();
-			//BenchmarkRunner.Run<RangerComparison>();
+			BenchmarkRunner.Run<RangeComparison>();
 			//BenchmarkRunner.Run<RepeaterComparison>();
 			//BenchmarkRunner.Run<SpannerComparison>();
 			//BenchmarkRunner.Run<StringComparison>();

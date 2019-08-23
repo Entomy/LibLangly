@@ -8,8 +8,8 @@ namespace Benchmarks {
 
 		[Benchmark]
 		public Result CommentPattern() {
-			Pattern Pattern = (From: "--", To: Pattern.LineTerminator);
-			return Pattern.Consume("--Comment");
+			RangePattern Range = new RangePattern("--", Pattern.LineTerminator);
+			return Range.Consume("--Comment");
 		}
 
 		[Benchmark]
@@ -45,8 +45,8 @@ namespace Benchmarks {
 
 		[Benchmark]
 		public Result StringPattern() {
-			Pattern Pattern = (From: "\"", To: "\"", Escape: "\\\"");
-			return Pattern.Consume("\"Hello\\\"World\"");
+			RangePattern Range = new RangePattern("\"", "\"", "\\\"");
+			return Range.Consume("\"Hello\\\"World\"");
 		}
 
 		[Benchmark]

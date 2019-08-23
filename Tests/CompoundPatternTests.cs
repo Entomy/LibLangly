@@ -21,17 +21,17 @@ namespace Tests {
 
 		[TestMethod]
 		public void Comment() {
-			Pattern Pattern = (From: "--", To: Pattern.LineTerminator);
+			RangePattern Range = new RangePattern("--", Pattern.LineTerminator);
 			Result Result;
 
-			Result = Pattern.Consume("--This should fail");
+			Result = Range.Consume("--This should fail");
 			Assert.That.Fails(Result);
 
-			Result = Pattern.Consume("--This is a comment\n");
+			Result = Range.Consume("--This is a comment\n");
 			Assert.That.Succeeds(Result);
 			Assert.That.Captures("--This is a comment\n", Result);
 
-			Result = Pattern.Consume("--This is a comment\nExample_Function();");
+			Result = Range.Consume("--This is a comment\nExample_Function();");
 			Assert.That.Succeeds(Result);
 			Assert.That.Captures("--This is a comment\n", Result);
 
@@ -128,8 +128,8 @@ namespace Tests {
 
 		[TestMethod]
 		public void StringLiteral() {
-			Pattern Pattern = (From: "\"", To: "\"", Escape: "\\\"");
-			Assert.That.Captures("\"hello\\\"world\"", Pattern.Consume("\"hello\\\"world\""));
+			RangePattern Range = new RangePattern("\"", "\"", "\\\"");
+			Assert.That.Captures("\"hello\\\"world\"", Range.Consume("\"hello\\\"world\""));
 		}
 
 		[TestMethod]

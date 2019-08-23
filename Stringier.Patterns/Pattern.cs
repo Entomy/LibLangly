@@ -14,7 +14,7 @@ namespace System.Text.Patterns {
 		internal readonly Node Head;
 
 		/// <summary>
-		/// Construct a new Pattern with the specified <paramref name="Head"/>
+		/// Construct a new <see cref="Pattern"/> with the specified <paramref name="Head"/>
 		/// </summary>
 		/// <param name="Head">The <see cref="Node"/> to set as the head of this pattern</param>
 		internal Pattern(Node Head) => this.Head = Head;
@@ -28,14 +28,6 @@ namespace System.Text.Patterns {
 		public static implicit operator Pattern(String String) => new Pattern(new StringLiteral(String));
 
 		public static implicit operator Pattern((String String, StringComparison ComparisonType) Pattern) => new Pattern(new StringLiteral(Pattern.String, Pattern.ComparisonType));
-
-		public static implicit operator Pattern((String From, String To) Range) => new Pattern(new Ranger(Range.From, Range.To));
-
-		public static implicit operator Pattern((Pattern From, Pattern To) Range) => new Pattern(new Ranger(Range.From, Range.To));
-
-		public static implicit operator Pattern((String From, String To, String Escape) Range) => new Pattern(new Ranger(Range.From, Range.To, Range.Escape));
-
-		public static implicit operator Pattern((Pattern From, Pattern To, Pattern Escape) Range) => new Pattern(new Ranger(Range.From, Range.To, Range.Escape));
 
 		/// <summary>
 		/// Combine the two patterns, one after another
