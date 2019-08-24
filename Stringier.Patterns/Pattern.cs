@@ -138,6 +138,8 @@ namespace System.Text.Patterns {
 		/// <returns></returns>
 		public static Pattern operator +(Pattern Pattern) => new Pattern(new Spanner(Pattern));
 
+		public Pattern Capture(out Capture Capture) => new Pattern(new Capturer(this, out Capture));
+
 		/// <summary>
 		/// Attempt to consume the <see cref="Pattern"/> from the <paramref name="Source"/>
 		/// </summary>

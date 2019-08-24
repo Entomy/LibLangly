@@ -15,6 +15,12 @@ namespace Tests {
 			}
 		}
 
+		public static void Captures(this Assert Assert, String Expected, Capture Actual) {
+			if (!Actual.Equals(Expected)) {
+				throw new AssertFailedException($"Assert.That.Captures failed. Expected: <{Expected}>. Actual: <{Actual}>.");
+			}
+		}
+
 		public static void Succeeds(this Assert Assert, Result Actual) {
 			if (!Actual) { throw new AssertFailedException("Assert.That.Succeeds failed."); }
 		}
