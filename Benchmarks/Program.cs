@@ -36,17 +36,98 @@ namespace Benchmarks {
 			Console.ResetColor();
 			ConsoleKeyInfo Choice = Console.ReadKey();
 			Console.WriteLine();
-			Console.WriteLine();
 			switch (Choice.KeyChar.ToUpperInvariant()) {
 			case '1':
-				BenchmarkRunner.Run<AlternatorComparison>();
-				BenchmarkRunner.Run<ConcatenatorComparison>();
-				BenchmarkRunner.Run<LiteralComparison>();
-				BenchmarkRunner.Run<NegatorComparison>();
-				BenchmarkRunner.Run<OptorComparison>();
-				BenchmarkRunner.Run<RangeComparison>();
-				BenchmarkRunner.Run<RepeaterComparison>();
-				BenchmarkRunner.Run<SpannerComparison>();
+				Console.ForegroundColor = ConsoleColor.DarkYellow;
+				Console.Write(" [1] ");
+				Console.ResetColor();
+				Console.WriteLine("Alternator Benchmarks");
+				Console.ResetColor();
+				Console.ForegroundColor = ConsoleColor.DarkYellow;
+				Console.Write(" [2] ");
+				Console.ResetColor();
+				Console.WriteLine("Concatenator Benchmarks");
+				Console.ResetColor();
+				Console.ForegroundColor = ConsoleColor.DarkYellow;
+				Console.Write(" [3] ");
+				Console.ResetColor();
+				Console.WriteLine("Literal Benchmarks");
+				Console.ResetColor();
+				Console.ForegroundColor = ConsoleColor.DarkYellow;
+				Console.Write(" [4] ");
+				Console.ResetColor();
+				Console.WriteLine("Negator Benchmarks");
+				Console.ResetColor();
+				Console.ForegroundColor = ConsoleColor.DarkYellow;
+				Console.Write(" [5] ");
+				Console.ResetColor();
+				Console.WriteLine("Optor Benchmarks");
+				Console.ResetColor();
+				Console.ForegroundColor = ConsoleColor.DarkYellow;
+				Console.Write(" [6] ");
+				Console.ResetColor();
+				Console.WriteLine("Range Benchmarks");
+				Console.ResetColor();
+				Console.ForegroundColor = ConsoleColor.DarkYellow;
+				Console.Write(" [7] ");
+				Console.ResetColor();
+				Console.WriteLine("Repeater Benchmarks");
+				Console.ResetColor();
+				Console.ForegroundColor = ConsoleColor.DarkYellow;
+				Console.Write(" [8] ");
+				Console.ResetColor();
+				Console.WriteLine("Spanner Benchmarks");
+				Console.ResetColor();
+				Console.ForegroundColor = ConsoleColor.DarkYellow;
+				Console.Write(" [A] ");
+				Console.ResetColor();
+				Console.WriteLine("All Benchmarks");
+				Console.ResetColor();
+				Console.ForegroundColor = ConsoleColor.DarkRed;
+				Console.Write(" [B] ");
+				Console.ResetColor();
+				Console.WriteLine("Back");
+				Console.ResetColor();
+			EnterConceptChoice:
+				Console.ForegroundColor = ConsoleColor.DarkGreen;
+				Console.Write(" Choice: ");
+				Console.ResetColor();
+				Choice = Console.ReadKey();
+				Console.WriteLine();
+				Boolean All = false;
+				switch (Choice.KeyChar.ToUpperInvariant()) {
+				case 'A':
+					All = true;
+					goto case '1';
+				case '1':
+					BenchmarkRunner.Run<AlternatorComparison>();
+					if (All) { goto case '2'; } else { break; }
+				case '2':
+					BenchmarkRunner.Run<ConcatenatorComparison>();
+					if (All) { goto case '3'; } else { break; }
+				case '3':
+					BenchmarkRunner.Run<LiteralComparison>();
+					if (All) { goto case '4'; } else { break; }
+				case '4':
+					BenchmarkRunner.Run<NegatorComparison>();
+					if (All) { goto case '5'; } else { break; }
+				case '5':
+					BenchmarkRunner.Run<OptorComparison>();
+					if (All) { goto case '6'; } else { break; }
+				case '6':
+					BenchmarkRunner.Run<RangeComparison>();
+					if (All) { goto case '7'; } else { break; }
+				case '7':
+					BenchmarkRunner.Run<RepeaterComparison>();
+					if (All) { goto case '8'; } else { break; }
+				case '8':
+					BenchmarkRunner.Run<SpannerComparison>();
+					break;
+				case 'B':
+					goto ListChoice;
+				default:
+					goto EnterConceptChoice;
+				}
 				break;
 			case '2':
 				BenchmarkRunner.Run<CompoundPatternComparison>();
