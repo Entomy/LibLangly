@@ -1,4 +1,5 @@
-﻿using System.Text.Patterns;
+﻿using System;
+using System.Text.Patterns;
 using System.Text.RegularExpressions;
 using BenchmarkDotNet.Attributes;
 
@@ -10,17 +11,14 @@ namespace Benchmarks {
 
 		Regex Regex = new Regex("^[^H][^e][^l][^l][^o]");
 
-		[Benchmark]
-		public Result NegatorConsumeCase1() => Negator.Consume("World");
+		[Params("World", "Hello")]
+		public String Source { get; set; }
 
 		[Benchmark]
-		public Result NegatorConsumeCase2() => Negator.Consume("Hello");
+		public Result NegatorConsume() => Negator.Consume(Source);
 
-		[Benchmark]
-		public Match RegexMatchCase1() => Regex.Match("World");
-
-		[Benchmark]
-		public Match RegexMatchCase2() => Regex.Match("Hello");
+		[Benchmark(Baseline = true)]
+		public Match RegexMatch() => Regex.Match(Source);
 
 	}
 }

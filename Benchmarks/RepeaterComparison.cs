@@ -1,4 +1,5 @@
-﻿using System.Text.Patterns;
+﻿using System;
+using System.Text.Patterns;
 using System.Text.RegularExpressions;
 using BenchmarkDotNet.Attributes;
 
@@ -10,11 +11,14 @@ namespace Benchmarks {
 
 		Regex Regex = new Regex("^(Hi!){2}");
 
-		[Benchmark]
-		public Result RepeaterConsume() => Repeater.Consume("Hi!Hi!");
+		[Params("Hi!Hi!", "Hi!Hi!Hi!", "Hi!")]
+		public String Source { get; set; }
 
 		[Benchmark]
-		public Match RegexMatch() => Regex.Match("Hi!Hi!");
+		public Result RepeaterConsume() => Repeater.Consume(Source);
+
+		[Benchmark(Baseline = true)]
+		public Match RegexMatch() => Regex.Match(Source);
 
 	}
 }

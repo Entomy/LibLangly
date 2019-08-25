@@ -1,4 +1,5 @@
-﻿using System.Text.Patterns;
+﻿using System;
+using System.Text.Patterns;
 using System.Text.RegularExpressions;
 using BenchmarkDotNet.Attributes;
 
@@ -10,16 +11,13 @@ namespace Benchmarks {
 
 		Regex Regex = new Regex("^(Hello|Goodbye)");
 
-		[Benchmark]
-		public Result AlternatorConsumeCase1() => Alternator.Consume("Hello");
+		[Params("Hello", "Goodbye")]
+		public String Source { get; set; }
 
 		[Benchmark]
-		public Result AlternatorConsumeCase2() => Alternator.Consume("Goodbye");
+		public Result AlternatorConsume() => Alternator.Consume(Source);
 
-		[Benchmark]
-		public Match RegexMatchCase1() => Regex.Match("Hello");
-
-		[Benchmark]
-		public Match RegexMatchCase2() => Regex.Match("Goodbye");
+		[Benchmark(Baseline = true)]
+		public Match RegexMatch() => Regex.Match(Source);
 	}
 }
