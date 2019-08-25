@@ -9,6 +9,8 @@
 	internal sealed class Checker : Node, IPrimative, IEquatable<Checker> {
 		private readonly Func<Char, Boolean> Check;
 
+		Int32 IPrimative.Length => 1;
+
 		/// <summary>
 		/// Construct a new <see cref="Checker"/> from the specified <paramref name="Check"/>
 		/// </summary>

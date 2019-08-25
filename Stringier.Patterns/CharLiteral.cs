@@ -13,6 +13,8 @@ namespace System.Text.Patterns {
 		/// </summary>
 		private readonly StringComparison ComparisonType = StringComparison.CurrentCulture;
 
+		Int32 IPrimative.Length => 1;
+
 		internal CharLiteral(Char Char) : this(Char, StringComparison.CurrentCulture) { }
 
 		internal CharLiteral(Char Char, StringComparison ComparisonType) {

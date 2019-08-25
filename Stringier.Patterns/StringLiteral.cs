@@ -13,6 +13,8 @@
 
 		private readonly String String = "";
 
+		Int32 IPrimative.Length => String.Length;
+
 		internal StringLiteral(String String) : this(String, StringComparison.CurrentCulture) { }
 
 		internal StringLiteral(String String, StringComparison ComparisonType) {

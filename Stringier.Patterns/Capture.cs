@@ -9,6 +9,8 @@ namespace System.Text.Patterns {
 
 		internal Capture() => Value = "";
 
+		public Int32 Length => Value.Length;
+
 		public static implicit operator Pattern(Capture Capture) => new Pattern(new CaptureLiteral(Capture));
 
 		public override Boolean Equals(Object obj) {

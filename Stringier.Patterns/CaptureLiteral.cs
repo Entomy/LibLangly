@@ -8,6 +8,8 @@ namespace System.Text.Patterns {
 
 		internal CaptureLiteral(Capture Capture) => this.Capture = Capture;
 
+		Int32 IPrimative.Length => Capture.Length;
+
 		public override Result Consume(ref Source Source) => Capture.Value.Consume(ref Source);
 
 		public override Boolean Equals(Object obj) {
