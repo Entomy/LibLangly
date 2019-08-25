@@ -2,7 +2,7 @@
 	/// <summary>
 	/// Represents a spanner pattern
 	/// </summary>
-	internal sealed class Spanner : IComplexNode, IModifier, IEquatable<Spanner> {
+	internal sealed class Spanner : IComplexNode, IEquatable<Spanner> {
 		private readonly INode Pattern;
 
 		internal Spanner(INode Pattern) => this.Pattern = Pattern;

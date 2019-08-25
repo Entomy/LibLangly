@@ -2,7 +2,7 @@
 	/// <summary>
 	/// Represents a repeater pattern
 	/// </summary>
-	internal sealed class Repeater : INode, IModifier, IEquatable<Repeater> {
+	internal sealed class Repeater : INode, IEquatable<Repeater> {
 
 		private readonly Int32 Count;
 

@@ -6,7 +6,7 @@ namespace System.Text.Patterns {
 	/// <summary>
 	/// Represents a capturer pattern
 	/// </summary>
-	internal sealed class Capturer : INode, IModifier, IEquatable<Capturer> {
+	internal sealed class Capturer : INode, IEquatable<Capturer> {
 		private readonly INode Pattern;
 
 		private readonly Capture Capture = new Capture();

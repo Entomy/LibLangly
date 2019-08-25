@@ -2,7 +2,7 @@
 	/// <summary>
 	/// Represents a concatenator pattern
 	/// </summary>
-	internal sealed class Concatenator : IComplexNode, ICombinator, IEquatable<Concatenator> {
+	internal sealed class Concatenator : IComplexNode, IEquatable<Concatenator> {
 		private readonly INode Left;
 
 		private readonly INode Right;

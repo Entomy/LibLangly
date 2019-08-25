@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace System.Text.Patterns {
-	internal sealed class PrimativeConcatenator : IPrimativeNode, ICombinator, IEquatable<PrimativeConcatenator> {
+	internal sealed class PrimativeConcatenator : IPrimativeNode, IEquatable<PrimativeConcatenator> {
 		private readonly IPrimativeNode Left;
 
 		private readonly IPrimativeNode Right;

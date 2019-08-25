@@ -6,7 +6,7 @@ namespace System.Text.Patterns {
 	/// <summary>
 	/// Represents the optor pattern
 	/// </summary>
-	internal sealed class Optor : INode, IModifier, IEquatable<Optor> {
+	internal sealed class Optor : INode, IEquatable<Optor> {
 		private readonly INode Pattern;
 
 		internal Optor(INode Pattern) => this.Pattern = Pattern;

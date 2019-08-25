@@ -2,7 +2,7 @@
 	/// <summary>
 	/// Represents a negator pattern
 	/// </summary>
-	internal sealed class Negator : INode, IModifier, IEquatable<Negator> {
+	internal sealed class Negator : INode, IEquatable<Negator> {
 		private readonly INode Pattern;
 
 		internal Negator(INode Pattern) => this.Pattern = Pattern;
