@@ -6,7 +6,7 @@
 	/// Specifically, it's used in the construction of predefined patterns. This is because it's considerably easier to define a range of codepoints and check for the existance within that. The code to do this is clunky and awkward however, so not something to expose publicly.
 	/// Testing: While it might seem like testing this class is somehow not possible because of the visibility, this isn't the case at all. <see cref="Checker"/> is exposed, non-obviously, through the predefined patterns, and can easily be checked that way; if those fail while the isolated tests pass, the issue is almost certainly with this class.
 	/// </remarks>
-	internal sealed class Checker : Node, IPrimative, IEquatable<Checker> {
+	internal sealed class Checker : IPrimativeNode, IEquatable<Checker> {
 		private readonly Func<Char, Boolean> Check;
 
 		Int32 IPrimative.Length => 1;
@@ -20,11 +20,21 @@
 		public static implicit operator Checker(Func<Char, Boolean> Check) => new Checker(Check);
 
 		/// <summary>
+		/// Attempt to consume the <see cref="Pattern"/> from the <paramref name="Source"/>
+		/// </summary>
+		/// <param name="Source">The <see cref="String"/> to consume</param>
+		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/></returns>
+		public Result Consume(String Source) {
+			Source source = new Source(Source);
+			return Consume(ref source);
+		}
+
+		/// <summary>
 		/// Attempt to consume the <see cref="Pattern"/> from the <paramref name="Source"/>, adjusting the position in the <paramref name="Source"/> as appropriate
 		/// </summary>
 		/// <param name="Source">The <see cref="Source"/> to consume</param>
-		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured string</returns>
-		public override Result Consume(ref Source Source) {
+		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/></returns>
+		public Result Consume(ref Source Source) {
 			if (Source.Length == 0) { return new Result(); }
 			return Check(Source.Peek()) ? new Result(Source.Read(1)) : new Result();
 		}
@@ -40,7 +50,7 @@
 			}
 		}
 
-		public override Boolean Equals(String other) => throw new NotImplementedException();
+		public Boolean Equals(String other) => throw new NotImplementedException();
 
 		public Boolean Equals(Checker other) => Check.Equals(other);
 
@@ -51,11 +61,21 @@
 		public override Int32 GetHashCode() => Check.GetHashCode();
 
 		/// <summary>
-		/// Attempt to consume from the <paramref name="Source"/> while neglecting this <see cref="Pattern"/>
+		/// Attempt to consume from the <paramref name="Source"/> while neglecting the <see name="Pattern"/>
+		/// </summary>
+		/// <param name="Source">The <see cref="String"/> to consume</param>
+		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/></returns>
+		public Result Neglect(String Source) {
+			Source source = new Source(Source);
+			return Neglect(ref source);
+		}
+
+		/// <summary>
+		/// Attempt to consume from the <paramref name="Source"/> while neglecting the <see cref="Pattern"/>, adjusting the position in the <paramref name="Source"/> as appropriate
 		/// </summary>
 		/// <param name="Source">The <see cref="Source"/> to consume</param>
-		/// <returns>A <see cref="Result"/> containing whether a match occured and the consumed string</returns>
-		public override Result Neglect(ref Source Source) {
+		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/></returns>
+		public Result Neglect(ref Source Source) {
 			if (Source.Length == 0) { return new Result(); }
 			return Check(Source.Peek()) ? new Result() : new Result(Source.Read(1));
 		}

@@ -4,7 +4,7 @@ namespace System.Text.Patterns {
 	/// <summary>
 	/// Represents a named capture component
 	/// </summary>
-	public class Capture : IEquatable<Capture>, IEquatable<String> {
+	public sealed class Capture : IEquatable<Capture>, IEquatable<String> {
 		internal String Value;
 
 		internal Capture() => Value = "";
@@ -24,9 +24,9 @@ namespace System.Text.Patterns {
 			}
 		}
 
-		public Boolean Equals(Capture other) => String.Equals(Value, other);
+		public Boolean Equals(Capture other) => Stringier.Equals(Value, other);
 
-		public Boolean Equals(String other) => String.Equals(Value, other);
+		public Boolean Equals(String other) => Stringier.Equals(Value, other);
 
 		public override Int32 GetHashCode() => Value.GetHashCode();
 
