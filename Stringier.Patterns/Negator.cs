@@ -2,7 +2,7 @@
 	/// <summary>
 	/// Represents a negator pattern
 	/// </summary>
-	internal sealed class Negator : Node, IModifier, IEquatable<Negator> {
+	internal sealed class Negator : INode, IModifier, IEquatable<Negator> {
 		private readonly INode Pattern;
 
 		internal Negator(INode Pattern) => this.Pattern = Pattern;
@@ -14,7 +14,7 @@
 		/// </summary>
 		/// <param name="Source">The <see cref="Source"/> to consume</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured string</returns>
-		public override Result Consume(ref Source Source) => Pattern.Neglect(ref Source);
+		public Result Consume(ref Source Source) => Pattern.Neglect(ref Source);
 
 		public override Boolean Equals(Object obj) {
 			switch (obj) {
@@ -27,7 +27,7 @@
 			}
 		}
 
-		public override Boolean Equals(String other) => Pattern.Equals(other);
+		public Boolean Equals(String other) => Pattern.Equals(other);
 
 		public Boolean Equals(Negator other) => Pattern.Equals(other.Pattern);
 
@@ -42,7 +42,7 @@
 		/// </summary>
 		/// <param name="Source">The <see cref="Source"/> to consume</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the consumed string</returns>
-		public override Result Neglect(ref Source Source) => Pattern.Consume(ref Source);
+		public Result Neglect(ref Source Source) => Pattern.Consume(ref Source);
 
 		/// <summary>
 		/// Returns a string that represents the current object.

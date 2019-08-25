@@ -2,7 +2,7 @@
 	/// <summary>
 	/// Represents a spanner pattern
 	/// </summary>
-	internal sealed class Spanner : Node, IModifier, IEquatable<Spanner> {
+	internal sealed class Spanner : IComplexNode, IModifier, IEquatable<Spanner> {
 		private readonly INode Pattern;
 
 		internal Spanner(INode Pattern) => this.Pattern = Pattern;
@@ -14,7 +14,7 @@
 		/// </summary>
 		/// <param name="Source">The <see cref="Source"/> to consume</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured string</returns>
-		public override Result Consume(ref Source Source) {
+		public Result Consume(ref Source Source) {
 			Int32 OriginalPosition = Source.Position;
 			Result Result = new Result("", true);
 			while (Result) {
@@ -37,7 +37,7 @@
 			}
 		}
 
-		public override Boolean Equals(String other) => Pattern.Equals(other);
+		public Boolean Equals(String other) => Pattern.Equals(other);
 
 		public Boolean Equals(Spanner other) => Pattern.Equals(other.Pattern);
 
@@ -52,7 +52,7 @@
 		/// </summary>
 		/// <param name="Source">The <see cref="Source"/> to consume</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the consumed string</returns>
-		public override Result Neglect(ref Source Source) {
+		public Result Neglect(ref Source Source) {
 			Int32 OriginalPosition = Source.Position;
 			Result Result = new Result("", true);
 			while (Result) {

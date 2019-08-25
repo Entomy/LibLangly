@@ -6,7 +6,7 @@ namespace System.Text.Patterns {
 	/// <summary>
 	/// Represents a capturer pattern
 	/// </summary>
-	internal sealed class Capturer : Node, IModifier, IEquatable<Capturer> {
+	internal sealed class Capturer : INode, IModifier, IEquatable<Capturer> {
 		private readonly INode Pattern;
 
 		private readonly Capture Capture = new Capture();
@@ -18,7 +18,7 @@ namespace System.Text.Patterns {
 
 		internal Capturer(Pattern Pattern, out Capture Capture) : this(Pattern.Head, out Capture) { }
 
-		public override Result Consume(ref Source Source) {
+		public Result Consume(ref Source Source) {
 			Result Result = Pattern.Consume(ref Source);
 			Capture.Value = Result;
 			return Result;
@@ -35,13 +35,13 @@ namespace System.Text.Patterns {
 			}
 		}
 
-		public override Boolean Equals(String other) => Pattern.Equals(other);
+		public Boolean Equals(String other) => Pattern.Equals(other);
 
 		public Boolean Equals(Capturer other) => Pattern.Equals(other);
 
 		public override Int32 GetHashCode() => Pattern.GetHashCode();
 
-		public override Result Neglect(ref Source Source) {
+		public Result Neglect(ref Source Source) {
 			Result Result = Pattern.Neglect(ref Source);
 			Capture.Value = Result;
 			return Result;

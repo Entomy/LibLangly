@@ -2,7 +2,7 @@
 	/// <summary>
 	/// Represents an alternator pattern
 	/// </summary>
-	internal sealed class Alternator : Node, ICombinator, IEquatable<Alternator> {
+	internal sealed class Alternator : IComplexNode, ICombinator, IEquatable<Alternator> {
 		/// <summary>
 		/// The left pattern
 		/// </summary>
@@ -41,7 +41,7 @@
 		/// </summary>
 		/// <param name="Source">The <see cref="Source"/> to consume</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured string</returns>
-		public override Result Consume(ref Source Source) {
+		public Result Consume(ref Source Source) {
 			Result Result = Left.Consume(ref Source);
 			if (!Result) {
 				Result = Right.Consume(ref Source);
@@ -49,7 +49,7 @@
 			return Result;
 		}
 
-		public override Boolean Equals(String other) => Left.Equals(other) || Right.Equals(other);
+		public Boolean Equals(String other) => Left.Equals(other) || Right.Equals(other);
 
 		public override Boolean Equals(Object obj) {
 			switch (obj) {
@@ -75,7 +75,7 @@
 		/// </summary>
 		/// <param name="Source">The <see cref="Source"/> to consume</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the consumed string</returns>
-		public override Result Neglect(ref Source Source) {
+		public Result Neglect(ref Source Source) {
 			Int32 OriginalPosition = Source.Position;
 			Result Result = Right.Neglect(ref Source);
 			if (Result) {

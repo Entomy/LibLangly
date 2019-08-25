@@ -4,7 +4,7 @@ namespace System.Text.Patterns {
 	/// <summary>
 	/// Represents part of a <see cref="Pattern"/>
 	/// </summary>
-	internal interface INode : IParser, IEquatable<String> {
+	internal interface INode : IParser {
 		/// <summary>
 		/// Attempt to consume from the <paramref name="Source"/> while neglecting the <see cref="Pattern"/>, adjusting the position in the <paramref name="Source"/> as appropriate
 		/// </summary>

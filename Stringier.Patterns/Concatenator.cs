@@ -2,7 +2,7 @@
 	/// <summary>
 	/// Represents a concatenator pattern
 	/// </summary>
-	internal sealed class Concatenator : Node, ICombinator, IEquatable<Concatenator> {
+	internal sealed class Concatenator : IComplexNode, ICombinator, IEquatable<Concatenator> {
 		private readonly INode Left;
 
 		private readonly INode Right;
@@ -19,7 +19,7 @@
 		/// </summary>
 		/// <param name="Source">The <see cref="Source"/> to consume</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured string</returns>
-		public override Result Consume(ref Source Source) {
+		public Result Consume(ref Source Source) {
 			Int32 OriginalPosition = Source.Position;
 			Result Result;
 			// Try consuming the left side
@@ -49,7 +49,7 @@
 			}
 		}
 
-		public override Boolean Equals(String other) => throw new NotImplementedException();
+		public Boolean Equals(String other) => throw new NotImplementedException();
 
 		public Boolean Equals(Concatenator other) => Left.Equals(other.Left) && Right.Equals(other.Right);
 
@@ -64,7 +64,7 @@
 		/// </summary>
 		/// <param name="Source">The <see cref="Source"/> to consume</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the consumed string</returns>
-		public override Result Neglect(ref Source Source) {
+		public Result Neglect(ref Source Source) {
 			Int32 OriginalPosition = Source.Position;
 			Result Result;
 			// Try consuming the left side

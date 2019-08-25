@@ -2,7 +2,7 @@
 	/// <summary>
 	/// Represents a repeater pattern
 	/// </summary>
-	internal sealed class Repeater : Node, IModifier, IEquatable<Repeater> {
+	internal sealed class Repeater : INode, IModifier, IEquatable<Repeater> {
 
 		private readonly Int32 Count;
 
@@ -20,7 +20,7 @@
 		/// </summary>
 		/// <param name="Source">The <see cref="Source"/> to consume</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured string</returns>
-		public override Result Consume(ref Source Source) {
+		public Result Consume(ref Source Source) {
 			Int32 OriginalPosition = Source.Position;
 			Result Result = new Result("", false);
 			for (Int32 i = 0; i < Count; i++) {
@@ -48,7 +48,7 @@
 			}
 		}
 
-		public override Boolean Equals(String other) {
+		public Boolean Equals(String other) {
 			Source Source = new Source(other);
 			Result Result = new Result();
 			for (Int32 i = 0; i < Count; i++) {
@@ -70,7 +70,7 @@
 		/// </summary>
 		/// <param name="Source">The <see cref="Source"/> to consume</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the consumed string</returns>
-		public override Result Neglect(ref Source Source) {
+		public Result Neglect(ref Source Source) {
 			Int32 OriginalPosition = Source.Position;
 			Result Result = new Result("", false);
 			for (Int32 i = 0; i < Count; i++) {

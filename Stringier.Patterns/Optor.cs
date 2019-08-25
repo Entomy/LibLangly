@@ -6,7 +6,7 @@ namespace System.Text.Patterns {
 	/// <summary>
 	/// Represents the optor pattern
 	/// </summary>
-	internal sealed class Optor : Node, IModifier, IEquatable<Optor> {
+	internal sealed class Optor : INode, IModifier, IEquatable<Optor> {
 		private readonly INode Pattern;
 
 		internal Optor(INode Pattern) => this.Pattern = Pattern;
@@ -18,7 +18,7 @@ namespace System.Text.Patterns {
 		/// </summary>
 		/// <param name="Source">The <see cref="Source"/> to consume</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured string</returns>
-		public override Result Consume(ref Source Source) {
+		public Result Consume(ref Source Source) {
 			Result Result = Pattern.Consume(ref Source);
 			Result.Success = true; //Consuming an optional pattern is always considered successful, the only thing that changes is what is captured
 			return Result;
@@ -35,7 +35,7 @@ namespace System.Text.Patterns {
 			}
 		}
 
-		public override Boolean Equals(String other) => Pattern.Equals(other);
+		public Boolean Equals(String other) => Pattern.Equals(other);
 
 		public Boolean Equals(Optor other) => Pattern.Equals(other.Pattern);
 
@@ -50,7 +50,7 @@ namespace System.Text.Patterns {
 		/// </summary>
 		/// <param name="Source">The <see cref="Source"/> to consume</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the consumed string</returns>
-		public override Result Neglect(ref Source Source) {
+		public Result Neglect(ref Source Source) {
 			Result Result = Pattern.Neglect(ref Source);
 			Result.Success = true; //Consuming an optional pattern is always considered successful, the only thing that changes is what is captured
 			return Result;
