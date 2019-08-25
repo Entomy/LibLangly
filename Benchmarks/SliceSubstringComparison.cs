@@ -6,9 +6,9 @@ namespace Benchmarks {
 	public class SliceSubstringComparison {
 
 		[Benchmark]
-		public String Slice() => "Hello World"[3..8];
+		public String Slice() => "Hello World"[3..7];
 
-		[Benchmark]
+		[Benchmark(Baseline = true)]
 		public String Substring() => "Hello World".Substring(3, 5);
 
 	}
