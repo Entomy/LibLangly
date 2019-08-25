@@ -111,6 +111,21 @@ namespace System.Text.Patterns {
 		}
 
 		/// <summary>
+		/// Retrieves a substring from this instance. The substring starts at a specified character position and continues to the end of the string.
+		/// </summary>
+		/// <param name="startIndex">The zero-based starting character position of a substring in this instance.</param>
+		/// <returns>A <see cref="String"/> that is equivalent to the substring that begins at <paramref name="startIndex"/> in this instance, or Empty if <paramref name="startIndex"/> is equal to the length of this instance.</returns>
+		internal ReadOnlySpan<Char> Substring(Int32 startIndex) => Buffer.Slice(startIndex);
+
+		/// <summary>
+		/// Retrieves a substring from this instance. The substring starts at a specified character position and has a specified length.
+		/// </summary>
+		/// <param name="startIndex">The zero-based starting character position of a substring in this instance.</param>
+		/// <param name="length">The number of characters in the substring.</param>
+		/// <returns>A <see cref="String"/> that is equivalent to the substring of length <paramref name="length"/> that begins at <paramref name="startIndex"/> in this instance, or Empty if <paramref name="startIndex"/> is equal to the length of this instance and <paramref name="length"/> is zero.</returns>
+		internal ReadOnlySpan<Char> Substring(Int32 startIndex, Int32 length) => Buffer.Slice(startIndex, length);
+
+		/// <summary>
 		/// Returns a string that represents the current object.
 		/// </summary>
 		/// <returns>A string that represents the current object.</returns>

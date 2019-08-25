@@ -33,6 +33,55 @@ namespace System.Text.Patterns {
 
 		internal static Boolean Equals(String a, String b) => String.Equals(a, b);
 
+		internal static Boolean Equals(String a, ReadOnlySpan<Char> b) {
+			if (a.Length != b.Length) { return false; }
+			for (Int32 i = 0; i < a.Length; i++) {
+				if (!Equals(a[i], b[i])) { return false; }
+			}
+			return true;
+		}
+
+		internal static Boolean Equals(ReadOnlySpan<Char> a, String b) {
+			if (a.Length != b.Length) { return false; }
+			for (Int32 i = 0; i < a.Length; i++) {
+				if (!Equals(a[i], b[i])) { return false; }
+			}
+			return true;
+		}
+
+		internal static Boolean Equals(ReadOnlySpan<Char> a, ReadOnlySpan<Char> b) {
+			if (a.Length != b.Length) { return false; }
+			for (Int32 i = 0; i < a.Length; i++) {
+				if (!Equals(a[i], b[i])) { return false; }
+			}
+			return true;
+		}
+
 		internal static Boolean Equals(String a, String b, StringComparison ComparisonType) => String.Equals(a, b, ComparisonType);
+
+		internal static Boolean Equals(String a, ReadOnlySpan<Char> b, StringComparison ComparisonType) {
+			if (a.Length != b.Length) { return false; }
+			for (Int32 i = 0; i < a.Length; i++) {
+				if (!Equals(a[i], b[i], ComparisonType)) { return false; }
+			}
+			return true;
+		}
+
+		internal static Boolean Equals(ReadOnlySpan<Char> a, String b, StringComparison ComparisonType) {
+			if (a.Length != b.Length) { return false; }
+			for (Int32 i = 0; i < a.Length; i++) {
+				if (!Equals(a[i], b[i], ComparisonType)) { return false; }
+			}
+			return true;
+		}
+
+		internal static Boolean Equals(ReadOnlySpan<Char> a, ReadOnlySpan<Char> b, StringComparison ComparisonType) {
+			if (a.Length != b.Length) { return false; }
+			for (Int32 i = 0; i < a.Length; i++) {
+				if (!Equals(a[i], b[i], ComparisonType)) { return false; }
+			}
+			return true;
+		}
+
 	}
 }
