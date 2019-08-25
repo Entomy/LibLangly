@@ -1,4 +1,4 @@
 ﻿namespace System.Text.Patterns {
-	internal interface IModifier : INode {
+	internal interface IModifier {
 	}
 }

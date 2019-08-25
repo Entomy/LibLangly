@@ -1,5 +1,5 @@
 ﻿namespace System.Text.Patterns {
-	internal interface IPrimative : INode {
+	internal interface IPrimative {
 		Int32 Length { get; }
 	}
 }

@@ -1,4 +1,4 @@
 ﻿namespace System.Text.Patterns {
-	internal interface ICombinator : INode {
+	internal interface ICombinator {
 	}
 }
