@@ -8,24 +8,24 @@ namespace System.Text.Patterns {
 		/// <summary>
 		/// The head node of the "From" pattern
 		/// </summary>
-		internal readonly Node From;
+		internal readonly INode From;
 
 		/// <summary>
 		/// The head node of the "To" pattern
 		/// </summary>
-		internal readonly Node To;
+		internal readonly INode To;
 
 		/// <summary>
 		/// The head node of the "Escape" pattern
 		/// </summary>
-		internal readonly Node? Escape;
+		internal readonly INode? Escape;
 
 		/// <summary>
 		/// Construct a new <see cref="RangePattern"/> with the specified <paramref name="From"/> and <paramref name="To"/>
 		/// </summary>
-		/// <param name="From">The <see cref="Node"/> to set as the head of the "From" pattern</param>
-		/// <param name="To">The <see cref="Node"/> to set as the head of the "To" pattern</param>
-		internal RangePattern(Node From, Node To) {
+		/// <param name="From">The <see cref="INode"/> to set as the head of the "From" pattern</param>
+		/// <param name="To">The <see cref="INode"/> to set as the head of the "To" pattern</param>
+		internal RangePattern(INode From, INode To) {
 			this.From = From;
 			this.To = To;
 			this.Escape = null;
@@ -41,10 +41,10 @@ namespace System.Text.Patterns {
 		/// <summary>
 		/// Construct a new <see cref="RangePattern"/> with the specified <paramref name="From"/> and <paramref name="To"/>, allowing <paramref name="Escape"/> without ending the capture
 		/// </summary>
-		/// <param name="From">The <see cref="Node"/> to set as the head of the "From" pattern</param>
-		/// <param name="To">The <see cref="Node"/> to set as the head of the "To" pattern</param>
-		/// <param name="Escape"The <see cref="Node"/> to set as the head of the "Escape" pattern
-		internal RangePattern(Node From, Node To, Node Escape) {
+		/// <param name="From">The <see cref="INode"/> to set as the head of the "From" pattern</param>
+		/// <param name="To">The <see cref="INode"/> to set as the head of the "To" pattern</param>
+		/// <param name="Escape"The <see cref="INode"/> to set as the head of the "Escape" pattern
+		internal RangePattern(INode From, INode To, INode Escape) {
 			this.From = From;
 			this.To = To;
 			this.Escape = Escape;

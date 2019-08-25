@@ -3,11 +3,11 @@
 	/// Represents a concatenator pattern
 	/// </summary>
 	internal sealed class Concatenator : Node, ICombinator, IEquatable<Concatenator> {
-		private readonly Node Left;
+		private readonly INode Left;
 
-		private readonly Node Right;
+		private readonly INode Right;
 
-		internal Concatenator(Node Left, Node Right) {
+		internal Concatenator(INode Left, INode Right) {
 			this.Left = Left;
 			this.Right = Right;
 		}

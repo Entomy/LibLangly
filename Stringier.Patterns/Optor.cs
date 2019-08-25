@@ -7,9 +7,9 @@ namespace System.Text.Patterns {
 	/// Represents the optor pattern
 	/// </summary>
 	internal sealed class Optor : Node, IModifier, IEquatable<Optor> {
-		private readonly Node Pattern;
+		private readonly INode Pattern;
 
-		internal Optor(Node Pattern) => this.Pattern = Pattern;
+		internal Optor(INode Pattern) => this.Pattern = Pattern;
 
 		internal Optor(Pattern Pattern) : this(Pattern.Head) { }
 

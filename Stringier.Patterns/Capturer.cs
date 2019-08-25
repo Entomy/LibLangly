@@ -7,11 +7,11 @@ namespace System.Text.Patterns {
 	/// Represents a capturer pattern
 	/// </summary>
 	internal sealed class Capturer : Node, IModifier, IEquatable<Capturer> {
-		private readonly Node Pattern;
+		private readonly INode Pattern;
 
 		private readonly Capture Capture = new Capture();
 
-		internal Capturer(Node Pattern, out Capture Capture) {
+		internal Capturer(INode Pattern, out Capture Capture) {
 			this.Pattern = Pattern;
 			Capture = this.Capture;
 		}

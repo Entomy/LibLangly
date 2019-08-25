@@ -3,9 +3,9 @@
 	/// Represents a spanner pattern
 	/// </summary>
 	internal sealed class Spanner : Node, IModifier, IEquatable<Spanner> {
-		private readonly Node Pattern;
+		private readonly INode Pattern;
 
-		internal Spanner(Node Pattern) => this.Pattern = Pattern;
+		internal Spanner(INode Pattern) => this.Pattern = Pattern;
 
 		internal Spanner(Pattern Pattern) : this(Pattern.Head) { }
 

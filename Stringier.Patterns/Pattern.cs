@@ -11,13 +11,13 @@ namespace System.Text.Patterns {
 		/// <remarks>
 		/// Any pattern itself is essentially an unballanced binary tree; this is the starting point
 		/// </remarks>
-		internal readonly Node Head;
+		internal readonly INode Head;
 
 		/// <summary>
 		/// Construct a new <see cref="Pattern"/> with the specified <paramref name="Head"/>
 		/// </summary>
-		/// <param name="Head">The <see cref="Node"/> to set as the head of this pattern</param>
-		internal Pattern(Node Head) => this.Head = Head;
+		/// <param name="Head">The <see cref="INode"/> to set as the head of this pattern</param>
+		internal Pattern(INode Head) => this.Head = Head;
 
 		public static explicit operator Pattern(Func<Char, Boolean> Check) => new Pattern(new Checker(Check));
 

@@ -9,7 +9,7 @@
 		/// <remarks>
 		/// Normally this is checked first, although negators check it last
 		/// </remarks>
-		private readonly Node Left;
+		private readonly INode Left;
 
 		/// <summary>
 		/// The right pattern
@@ -17,14 +17,14 @@
 		/// <remarks>
 		/// Normally this is checked last, although negators check if first
 		/// </remarks>
-		private readonly Node Right;
+		private readonly INode Right;
 
 		/// <summary>
-		/// Construct a new alternator from the two specified <see cref="Node"/>
+		/// Construct a new alternator from the two specified <see cref="INode"/>
 		/// </summary>
-		/// <param name="Left">The lefthand <see cref="Node"/></param>
-		/// <param name="Right">The righthand <see cref="Node"/></param>
-		internal Alternator(Node Left, Node Right) {
+		/// <param name="Left">The lefthand <see cref="INode"/></param>
+		/// <param name="Right">The righthand <see cref="INode"/></param>
+		internal Alternator(INode Left, INode Right) {
 			this.Left = Left;
 			this.Right = Right;
 		}

@@ -3,9 +3,9 @@
 	/// Represents a negator pattern
 	/// </summary>
 	internal sealed class Negator : Node, IModifier, IEquatable<Negator> {
-		private readonly Node Pattern;
+		private readonly INode Pattern;
 
-		internal Negator(Node Pattern) => this.Pattern = Pattern;
+		internal Negator(INode Pattern) => this.Pattern = Pattern;
 
 		internal Negator(Pattern Pattern) : this(Pattern.Head) { }
 

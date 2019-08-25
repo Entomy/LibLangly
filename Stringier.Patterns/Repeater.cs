@@ -6,9 +6,9 @@
 
 		private readonly Int32 Count;
 
-		private readonly Node Pattern;
+		private readonly INode Pattern;
 
-		internal Repeater(Node Pattern, Int32 Count) {
+		internal Repeater(INode Pattern, Int32 Count) {
 			this.Pattern = Pattern;
 			this.Count = Count;
 		}
