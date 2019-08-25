@@ -27,16 +27,6 @@
 		public static implicit operator StringLiteral((String String, StringComparison ComparisonType) Pattern) => new StringLiteral(Pattern.String, Pattern.ComparisonType);
 
 		/// <summary>
-		/// Attempt to consume the <see cref="Pattern"/> from the <paramref name="Source"/>
-		/// </summary>
-		/// <param name="Source">The <see cref="String"/> to consume</param>
-		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/></returns>
-		public Result Consume(String Source) {
-			Source source = new Source(Source);
-			return Consume(ref source);
-		}
-
-		/// <summary>
 		/// Attempt to consume the <see cref="Pattern"/> from the <paramref name="Source"/>, adjusting the position in the <paramref name="Source"/> as appropriate
 		/// </summary>
 		/// <param name="Source">The <see cref="Source"/> to consume</param>
@@ -63,16 +53,6 @@
 		/// </summary>
 		/// <returns>A 32-bit signed integer hash code.</returns>
 		public override Int32 GetHashCode() => String.GetHashCode();
-
-		/// <summary>
-		/// Attempt to consume from the <paramref name="Source"/> while neglecting the <see name="Pattern"/>
-		/// </summary>
-		/// <param name="Source">The <see cref="String"/> to consume</param>
-		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/></returns>
-		public Result Neglect(String Source) {
-			Source source = new Source(Source);
-			return Neglect(ref source);
-		}
 
 		/// <summary>
 		/// Attempt to consume from the <paramref name="Source"/> while neglecting the <see cref="Pattern"/>, adjusting the position in the <paramref name="Source"/> as appropriate
