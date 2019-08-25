@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace System.Text.Patterns {
-	internal sealed class CaptureLiteral : Primative, IEquatable<CaptureLiteral> {
+	internal sealed class CaptureLiteral : Node, IPrimative, IEquatable<CaptureLiteral> {
 		private readonly Capture Capture;
 
 		internal CaptureLiteral(Capture Capture) => this.Capture = Capture;

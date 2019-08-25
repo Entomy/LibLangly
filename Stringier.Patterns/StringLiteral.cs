@@ -5,7 +5,7 @@
 	/// <remarks>
 	/// This exists to box <see cref="System.String"/> into something that we can treat as a part of a pattern
 	/// </remarks>
-	internal sealed class StringLiteral : Primative, IEquatable<StringLiteral> {
+	internal sealed class StringLiteral : Node, IPrimative, IEquatable<StringLiteral> {
 		/// <summary>
 		/// The <see cref="StringComparison"/> to use during pattern matching
 		/// </summary>

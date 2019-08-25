@@ -2,7 +2,7 @@
 	/// <summary>
 	/// Represents an alternator pattern
 	/// </summary>
-	internal sealed class Alternator : Combinator, IEquatable<Alternator> {
+	internal sealed class Alternator : Node, ICombinator, IEquatable<Alternator> {
 		/// <summary>
 		/// The left pattern
 		/// </summary>

@@ -2,7 +2,7 @@
 	/// <summary>
 	/// Represents a repeater pattern
 	/// </summary>
-	internal sealed class Repeater : Modifier, IEquatable<Repeater> {
+	internal sealed class Repeater : Node, IModifier, IEquatable<Repeater> {
 
 		private readonly Int32 Count;
 

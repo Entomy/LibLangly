@@ -5,14 +5,14 @@
 /// This exists to box <see cref="System.Char"/> into something that we can treat as a part of a pattern
 /// </remarks>
 namespace System.Text.Patterns {
-	internal sealed class CharLiteral : Primative, IEquatable<Char>, IEquatable<CharLiteral> {
+	internal sealed class CharLiteral : Node, IPrimative, IEquatable<Char>, IEquatable<CharLiteral> {
 		private readonly Char Char = '\u0000';
 
 		/// <summary>
 		/// The <see cref="StringComparison"/> to use during pattern matching
 		/// </summary>
 		private readonly StringComparison ComparisonType = StringComparison.CurrentCulture;
-		
+
 		internal CharLiteral(Char Char) : this(Char, StringComparison.CurrentCulture) { }
 
 		internal CharLiteral(Char Char, StringComparison ComparisonType) {

@@ -6,7 +6,7 @@ namespace System.Text.Patterns {
 	/// <summary>
 	/// Represents part of a <see cref="Pattern"/>
 	/// </summary>
-	internal abstract class Node : IEquatable<String> {
+	internal abstract class Node : INode, IEquatable<String> {
 
 		/// <summary>
 		/// Attempt to consume the <see cref="Pattern"/> from the <paramref name="Source"/>
