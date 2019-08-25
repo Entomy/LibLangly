@@ -11,7 +11,7 @@ namespace System.Text.Patterns {
 		/// <summary>
 		/// The <see cref="StringComparison"/> to use during pattern matching
 		/// </summary>
-		private readonly StringComparison ComparisonType = StringComparison.CurrentCulture;
+		private readonly StringComparison ComparisonType = Stringier.DefaultComparisonType;
 
 		Int32 IPrimative.Length => 1;
 

@@ -9,7 +9,7 @@
 		/// <summary>
 		/// The <see cref="StringComparison"/> to use during pattern matching
 		/// </summary>
-		private readonly StringComparison ComparisonType = StringComparison.CurrentCulture;
+		private readonly StringComparison ComparisonType = Stringier.DefaultComparisonType;
 
 		private readonly String String = "";
 

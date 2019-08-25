@@ -3,12 +3,19 @@ using System.Globalization;
 
 namespace System.Text.Patterns {
 	/// <summary>
-	/// Contains internal methods useful throughout this assembly
+	/// Contains configuration of the pattern engine
 	/// </summary>
 	/// <remarks>
+	/// This also includes internal utilities for use in implementing the pattern engine
 	/// While some of these could theoretically be useful outside this assembly, the simple fact is the actual behavior diverges from their standard analogues in a way that while useful for Stringier, could introduce unexpected behavior for others. It is for the best that they stay internal.
+	/// Furthermore, many of these may simply call their String counterpart. This is so that implementations may be swapped out quickly for testing.
 	/// </remarks>
-	internal static class Stringier {
+	public static class Stringier {
+		/// <summary>
+		/// The <see cref="StringComparison"/> to use by default
+		/// </summary>
+		public static StringComparison DefaultComparisonType = StringComparison.CurrentCultureIgnoreCase;
+
 		internal static Boolean Equals(Char a, Char b) => a.Equals(b);
 
 		internal static Boolean Equals(Char a, Char b, StringComparison ComparisonType) {
@@ -24,12 +31,8 @@ namespace System.Text.Patterns {
 			}
 		}
 
-		internal static Boolean Equals(String a, String b) => a[0].Equals(b[0]) && String.Equals(a, b);
+		internal static Boolean Equals(String a, String b) => String.Equals(a, b);
 
-		internal static Boolean Equals(String a, String b, StringComparison ComparisonType) {
-			if (a.Length == 0 && b.Length == 0) { return true; }
-			if (a.Length == 0 || b.Length == 0) { return false; }
-			return Equals(a[0], b[0], ComparisonType) && String.Equals(a, b, ComparisonType);
-		}
+		internal static Boolean Equals(String a, String b, StringComparison ComparisonType) => String.Equals(a, b, ComparisonType);
 	}
 }
