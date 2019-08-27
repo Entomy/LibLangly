@@ -4,6 +4,7 @@ using BenchmarkDotNet.Running;
 namespace Benchmarks {
 	static class Program {
 		static void Main() {
+			Boolean All = false;
 		ListChoice:
 			Console.ForegroundColor = ConsoleColor.DarkYellow;
 			Console.Write(" [0] ");
@@ -37,6 +38,59 @@ namespace Benchmarks {
 			ConsoleKeyInfo Choice = Console.ReadKey();
 			Console.WriteLine();
 			switch (Choice.KeyChar.ToUpperInvariant()) {
+			case '0':
+				Console.ForegroundColor = ConsoleColor.DarkYellow;
+				Console.Write(" [1] ");
+				Console.ResetColor();
+				Console.WriteLine("Alternator vs Checker");
+				Console.ForegroundColor = ConsoleColor.DarkYellow;
+				Console.Write(" [2] ");
+				Console.ResetColor();
+				Console.WriteLine("Int32.Parse(Char) vs Char.ParseInt32()");
+				Console.ForegroundColor = ConsoleColor.DarkYellow;
+				Console.Write(" [3] ");
+				Console.ResetColor();
+				Console.WriteLine("Int32.Parse(String) vs String.ParseInt32()");
+				Console.ForegroundColor = ConsoleColor.DarkYellow;
+				Console.Write(" [4] ");
+				Console.ResetColor();
+				Console.WriteLine("String[x..y] vs String.Substring(x, l)");
+				Console.ForegroundColor = ConsoleColor.DarkYellow;
+				Console.Write(" [A] ");
+				Console.ResetColor();
+				Console.WriteLine("All Benchmarks");
+				Console.ForegroundColor = ConsoleColor.DarkRed;
+				Console.Write(" [B] ");
+				Console.ResetColor();
+				Console.WriteLine("Back");
+			EnterChrestomathyChoice:
+				Console.ForegroundColor = ConsoleColor.DarkGreen;
+				Console.Write(" Choice: ");
+				Console.ResetColor();
+				Choice = Console.ReadKey();
+				Console.WriteLine();
+				switch (Choice.KeyChar.ToUpperInvariant()) {
+				case 'A':
+					All = true;
+					goto case '1';
+				case '1':
+					BenchmarkRunner.Run<CheckerComparison>();
+					if (All) { goto case '2'; } else { break; }
+				case '2':
+					BenchmarkRunner.Run<Int32ParseCharComparison>();
+					if (All) { goto case '3'; } else { break; }
+				case '3':
+					BenchmarkRunner.Run<Int32ParseStringComparison>();
+					if (All) { goto case '4'; } else { break; }
+				case '4':
+					BenchmarkRunner.Run<SliceSubstringComparison>();
+					break;
+				case 'B':
+					goto ListChoice;
+				default:
+					goto EnterChrestomathyChoice;
+				}
+				break;
 			case '1':
 				Console.ForegroundColor = ConsoleColor.DarkYellow;
 				Console.Write(" [1] ");
@@ -94,7 +148,6 @@ namespace Benchmarks {
 				Console.ResetColor();
 				Choice = Console.ReadKey();
 				Console.WriteLine();
-				Boolean All = false;
 				switch (Choice.KeyChar.ToUpperInvariant()) {
 				case 'A':
 					All = true;
@@ -131,11 +184,6 @@ namespace Benchmarks {
 				break;
 			case '2':
 				BenchmarkRunner.Run<CompoundPatternComparison>();
-				break;
-			case '0':
-				BenchmarkRunner.Run<Int32ParseCharComparison>();
-				BenchmarkRunner.Run<Int32ParseStringComparison>();
-				BenchmarkRunner.Run<SliceSubstringComparison>();
 				break;
 			case 'Q':
 				return;
