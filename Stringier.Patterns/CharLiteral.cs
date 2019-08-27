@@ -15,7 +15,7 @@ namespace System.Text.Patterns {
 
 		Int32 IPrimative.Length => 1;
 
-		internal CharLiteral(Char Char) : this(Char, StringComparison.CurrentCulture) { }
+		internal CharLiteral(Char Char) : this(Char, Stringier.DefaultComparisonType) { }
 
 		internal CharLiteral(Char Char, StringComparison ComparisonType) {
 			this.Char = Char;
