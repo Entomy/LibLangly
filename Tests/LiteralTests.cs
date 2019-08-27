@@ -34,6 +34,13 @@ namespace Tests {
 			Result = World.Consume(ref Source);
 			Assert.That.Succeeds(Result);
 			Assert.That.Captures("World", Result);
+
+			Result = Hello.Consume("Hell");
+			Assert.That.Fails(Result);
+
+			Result = Hello.Consume("Bacon");
+			Assert.That.Fails(Result);
+
 		}
 
 		[TestMethod]
@@ -52,13 +59,6 @@ namespace Tests {
 			Result = HelloWorld.Consume("hello world!");
 			Assert.That.Succeeds(Result);
 			Assert.That.Captures("hello world", Result);
-		}
-
-		[TestMethod]
-		public void ConsumeFail() {
-			Pattern Hello = "Hello";
-			Assert.That.Fails(Hello.Consume("Hell"));
-			Assert.That.Fails(Hello.Consume("Bacon"));
 		}
 	}
 }

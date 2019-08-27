@@ -5,7 +5,7 @@
 	/// <remarks>
 	/// This exists to box <see cref="System.String"/> into something that we can treat as a part of a pattern
 	/// </remarks>
-	internal sealed class StringLiteral : IPrimativeNode, IEquatable<StringLiteral> {
+	internal sealed class StringLiteral : IComplexNode, IPrimativeNode, IEquatable<StringLiteral> {
 		/// <summary>
 		/// The <see cref="StringComparison"/> to use during pattern matching
 		/// </summary>
@@ -22,12 +22,8 @@
 			this.ComparisonType = ComparisonType;
 		}
 
-		public static implicit operator StringLiteral(String String) => new StringLiteral(String);
-
-		public static implicit operator StringLiteral((String String, StringComparison ComparisonType) Pattern) => new StringLiteral(Pattern.String, Pattern.ComparisonType);
-
 		/// <summary>
-		/// Attempt to consume the <see cref="Pattern"/> from the <paramref name="Source"/>, adjusting the position in the <paramref name="Source"/> as appropriate
+		/// Attempt to consume the <see cref="ComplexPattern"/> from the <paramref name="Source"/>, adjusting the position in the <paramref name="Source"/> as appropriate
 		/// </summary>
 		/// <param name="Source">The <see cref="Source"/> to consume</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/></returns>
@@ -55,7 +51,7 @@
 		public override Int32 GetHashCode() => String.GetHashCode();
 
 		/// <summary>
-		/// Attempt to consume from the <paramref name="Source"/> while neglecting the <see cref="Pattern"/>, adjusting the position in the <paramref name="Source"/> as appropriate
+		/// Attempt to consume from the <paramref name="Source"/> while neglecting the <see cref="ComplexPattern"/>, adjusting the position in the <paramref name="Source"/> as appropriate
 		/// </summary>
 		/// <param name="Source">The <see cref="Source"/> to consume</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/></returns>

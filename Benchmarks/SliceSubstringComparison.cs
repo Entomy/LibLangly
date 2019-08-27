@@ -2,7 +2,7 @@
 using BenchmarkDotNet.Attributes;
 
 namespace Benchmarks {
-	[CoreJob, CoreRtJob]
+	[ClrJob, CoreJob, CoreRtJob]
 	public class SliceSubstringComparison {
 
 		[Benchmark]

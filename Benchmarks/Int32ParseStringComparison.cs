@@ -2,7 +2,7 @@
 using BenchmarkDotNet.Attributes;
 
 namespace Benchmarks {
-	[CoreJob, CoreRtJob]
+	[ClrJob, CoreJob, CoreRtJob]
 	public class Int32ParseStringComparison {
 
 		[Params("1", "42", "1337", "1234567890")]

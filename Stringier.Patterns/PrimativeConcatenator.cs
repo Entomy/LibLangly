@@ -13,30 +13,22 @@ namespace System.Text.Patterns {
 			this.Right = Right;
 		}
 
+		internal PrimativeConcatenator(IPrimativeNode Left, Char Right) : this(Left, new CharLiteral(Right)) { }
+
+		internal PrimativeConcatenator(Char Left, IPrimativeNode Right) : this(new CharLiteral(Left), Right) { }
+
+		internal PrimativeConcatenator(IPrimativeNode Left, String Right) : this(Left, new StringLiteral(Right)) { }
+
+		internal PrimativeConcatenator(String Left, IPrimativeNode Right) : this(new StringLiteral(Left), Right) { }
+
 		public Int32 Length => Left.Length + Right.Length;
 
-		public Result Consume(String Source) {
-			Source source = new Source(Source);
-			return Consume(ref source);
-		}
-
 		public Result Consume(ref Source Source) {
-			Int32 OriginalPosition = Source.Position;
-			Result Result;
-			// Try consuming the left side
-			Result = Left.Consume(ref Source);
-			if (!Result) { goto Cleanup; }
-			// Try consuming the right side
-			Result = Right.Consume(ref Source);
-			if (!Result) { goto Cleanup; }
-			// Skip cleanup
-			goto Done;
-		Cleanup:
-			Source.Position = OriginalPosition;
-		Done:
-			Int32 FinalPosition = Source.Position;
-			Source.Position = OriginalPosition;
-			return new Result(Source.Read(FinalPosition - OriginalPosition), Result);
+			if (this.Length > Source.Length) { return new Result(); }
+			Boolean Success =
+				Left.Equals(Source.Substring(Source.Position, Left.Length))
+				&& Right.Equals(Source.Substring(Source.Position + Left.Length, Right.Length));
+			return Success ? new Result(Source.Read(this.Length), Success) : new Result();
 		}
 
 		public override Boolean Equals(Object obj) {
@@ -56,9 +48,14 @@ namespace System.Text.Patterns {
 
 		public override Int32 GetHashCode() => Left.GetHashCode() & Right.GetHashCode();
 
-		public Result Neglect(String Source) => throw new NotImplementedException();
-
-		public Result Neglect(ref Source Source) => throw new NotImplementedException();
+		public Result Neglect(ref Source Source) {
+			Int32 OriginalPosition = Source.Position;
+			if (this.Length > Source.Length) { return new Result(); }
+			Boolean Success =
+				!Left.Equals(Source.Substring(OriginalPosition, Left.Length))
+				&& !Right.Equals(Source.Substring(OriginalPosition + Left.Length, Right.Length));
+			return Success ? new Result(Source.Read(this.Length), Success) : new Result();
+		}
 
 		public override String ToString() => $"{Left}{Right}";
 

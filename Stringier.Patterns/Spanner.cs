@@ -1,19 +1,9 @@
 ﻿namespace System.Text.Patterns {
-	/// <summary>
-	/// Represents a spanner pattern
-	/// </summary>
 	internal sealed class Spanner : IComplexNode, IEquatable<Spanner> {
 		private readonly INode Pattern;
 
 		internal Spanner(INode Pattern) => this.Pattern = Pattern;
 
-		internal Spanner(Pattern Pattern) : this(Pattern.Head) { }
-
-		/// <summary>
-		/// Attempt to consume the <see cref="Pattern"/> from the <paramref name="Source"/>, adjusting the position in the <paramref name="Source"/> as appropriate
-		/// </summary>
-		/// <param name="Source">The <see cref="Source"/> to consume</param>
-		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured string</returns>
 		public Result Consume(ref Source Source) {
 			Int32 OriginalPosition = Source.Position;
 			Result Result = new Result("", true);
@@ -28,10 +18,10 @@
 
 		public override Boolean Equals(Object obj) {
 			switch (obj) {
-			case Spanner Other:
-				return Equals(Other);
-			case String Other:
-				return Equals(Other);
+			case Spanner other:
+				return Equals(other);
+			case String other:
+				return Equals(other);
 			default:
 				return false;
 			}
@@ -41,17 +31,8 @@
 
 		public Boolean Equals(Spanner other) => Pattern.Equals(other.Pattern);
 
-		/// <summary>
-		/// Returns the hash code for this instance.
-		/// </summary>
-		/// <returns>A 32-bit signed integer hash code.</returns>
 		public override Int32 GetHashCode() => Pattern.GetHashCode();
 
-		/// <summary>
-		/// Attempt to consume from the <paramref name="Source"/> while neglecting this <see cref="Pattern"/>
-		/// </summary>
-		/// <param name="Source">The <see cref="Source"/> to consume</param>
-		/// <returns>A <see cref="Result"/> containing whether a match occured and the consumed string</returns>
 		public Result Neglect(ref Source Source) {
 			Int32 OriginalPosition = Source.Position;
 			Result Result = new Result("", true);
@@ -63,10 +44,6 @@
 			return new Result(Source.Read(FinalPosition - OriginalPosition), Result);
 		}
 
-		/// <summary>
-		/// Returns a string that represents the current object.
-		/// </summary>
-		/// <returns>A string that represents the current object.</returns>
-		public override String ToString() => Pattern.ToString();
+		public override String ToString() => $"+{Pattern}";
 	}
 }

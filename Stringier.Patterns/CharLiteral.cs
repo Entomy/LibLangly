@@ -5,7 +5,7 @@
 /// This exists to box <see cref="System.Char"/> into something that we can treat as a part of a pattern
 /// </remarks>
 namespace System.Text.Patterns {
-	internal sealed class CharLiteral : IPrimativeNode, IEquatable<Char>, IEquatable<CharLiteral> {
+	internal sealed class CharLiteral : IComplexNode, IPrimativeNode, IEquatable<Char>, IEquatable<CharLiteral> {
 		private readonly Char Char = '\u0000';
 
 		/// <summary>
@@ -22,19 +22,15 @@ namespace System.Text.Patterns {
 			this.ComparisonType = ComparisonType;
 		}
 
-		public static implicit operator CharLiteral(Char Char) => new CharLiteral(Char);
-
-		public static implicit operator CharLiteral((Char Char, StringComparison ComparisonType) Pattern) => new CharLiteral(Pattern.Char, Pattern.ComparisonType);
-
 		/// <summary>
-		/// Attempt to consume the <see cref="Pattern"/> from the <paramref name="Source"/>
+		/// Attempt to consume the <see cref="ComplexPattern"/> from the <paramref name="Source"/>
 		/// </summary>
 		/// <param name="Source">The <see cref="String"/> to consume</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/></returns>
 		public Result Consume(String Source) => Char.Consume(Source, ComparisonType);
 
 		/// <summary>
-		/// Attempt to consume the <see cref="Pattern"/> from the <paramref name="Source"/>, adjusting the position in the <paramref name="Source"/> as appropriate
+		/// Attempt to consume the <see cref="ComplexPattern"/> from the <paramref name="Source"/>, adjusting the position in the <paramref name="Source"/> as appropriate
 		/// </summary>
 		/// <param name="Source">The <see cref="Source"/> to consume</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/></returns>
@@ -71,7 +67,7 @@ namespace System.Text.Patterns {
 		public Result Neglect(String Source) => Char.Neglect(Source, ComparisonType);
 
 		/// <summary>
-		/// Attempt to consume from the <paramref name="Source"/> while neglecting the <see cref="Pattern"/>, adjusting the position in the <paramref name="Source"/> as appropriate
+		/// Attempt to consume from the <paramref name="Source"/> while neglecting the <see cref="ComplexPattern"/>, adjusting the position in the <paramref name="Source"/> as appropriate
 		/// </summary>
 		/// <param name="Source">The <see cref="Source"/> to consume</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/></returns>

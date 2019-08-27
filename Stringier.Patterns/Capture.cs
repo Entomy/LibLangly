@@ -1,17 +1,15 @@
-﻿using System;
-
-namespace System.Text.Patterns {
+﻿namespace System.Text.Patterns {
 	/// <summary>
 	/// Represents a named capture component
 	/// </summary>
-	public sealed class Capture : IEquatable<Capture>, IEquatable<String> {
+	public sealed class Capture : IComplexNode, IPrimativeNode, IEquatable<Capture> {
 		internal String Value;
 
 		internal Capture() => Value = "";
 
 		public Int32 Length => Value.Length;
 
-		public static implicit operator Pattern(Capture Capture) => new Pattern(new CaptureLiteral(Capture));
+		public Result Consume(ref Source Source) => Value.Consume(ref Source);
 
 		public override Boolean Equals(Object obj) {
 			switch (obj) {
@@ -30,6 +28,8 @@ namespace System.Text.Patterns {
 
 		public override Int32 GetHashCode() => Value.GetHashCode();
 
-		public override String ToString() => Value;
+		public Result Neglect(ref Source Source) => Value.Neglect(ref Source);
+
+		public override String ToString() => $"{Value}";
 	}
 }

@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 using BenchmarkDotNet.Attributes;
 
 namespace Benchmarks {
-	[CoreJob, CoreRtJob]
+	[ClrJob, CoreJob, CoreRtJob]
 	public class NegatorComparison {
 
 		Pattern Negator = !(Pattern)"Hello";

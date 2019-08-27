@@ -34,7 +34,7 @@ namespace Tests {
 			Assert.That.Captures("", Negator.Consume("Oh no!")); // This is supposed to fail because while the first part succeeds because it doesn't match, the second part is a stand alone '!' which matches, causing the whole expression to fail. By contrast: "Hello!".Neglect("Oh no!") would pass. This is correct, albeit a bit surprising, behavior.
 			Assert.That.Captures("Oh no?", Negator.Consume("Oh no?"));
 		}
-
+		
 		[TestMethod]
 		public void ConsumeLiteral() {
 			Pattern Negator = !(Pattern)"Hello";
@@ -66,6 +66,5 @@ namespace Tests {
 			Assert.That.Captures("", Negator.Consume(";"));
 			Assert.That.Captures("123456789", Negator.Consume("123456789;"));
 		}
-
 	}
 }

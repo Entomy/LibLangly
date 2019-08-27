@@ -22,12 +22,9 @@ namespace Tests {
 			Result = Whitespace.Consume("    Hi!");
 			Assert.That.Succeeds(Result);
 			Assert.That.Captures("    ", Result);
-		}
 
-		[TestMethod]
-		public void ConsumeFail() {
-			Pattern Whitespace = +(Pattern)" ";
-			Assert.That.Fails(Whitespace.Consume("Hi!  "));
+			Result = Whitespace.Consume("Hi!  ");
+			Assert.That.Fails(Result);
 		}
 	}
 }

@@ -7,12 +7,12 @@ namespace Tests {
 	public class RangerTests {
 		[TestMethod]
 		public void Constructor() {
-			RangePattern _ = new RangePattern("Hello", ";");
+			Pattern _ = (From: "Hello", To: ";");
 		}
 
 		[TestMethod]
 		public void Consume() {
-			RangePattern Ranger = new RangePattern("Hello", ";");
+			Pattern Ranger = (From: "Hello", To: ";");
 			Result Result;
 
 			Result = Ranger.Consume("Hello;");
@@ -26,7 +26,7 @@ namespace Tests {
 
 		[TestMethod]
 		public void EscapedConsume() {
-			RangePattern Ranger = new RangePattern("\"","\"", "\"\"");
+			Pattern Ranger = (From: "\"", To: "\"", Escape: "\"\"");
 			Result Result;
 
 			Result = Ranger.Consume("\"\"");
@@ -46,12 +46,11 @@ namespace Tests {
 			Assert.That.Captures("\"Hello\"\"Goodbye\"", Result);
 
 			// Should also check for C style escapes
-			Ranger = new RangePattern("\"", "\"", "\\\"");
+			Ranger = (From: "\"", To: "\"", Escape: "\\\"");
 
 			Result = Ranger.Consume("\"Hello\\\"Goodbye\"");
 			Assert.That.Succeeds(Result);
 			Assert.That.Captures("\"Hello\\\"Goodbye\"", Result);
 		}
-
 	}
 }

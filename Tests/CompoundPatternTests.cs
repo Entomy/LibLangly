@@ -21,7 +21,7 @@ namespace Tests {
 
 		[TestMethod]
 		public void Comment() {
-			RangePattern Range = new RangePattern("--", Pattern.LineTerminator);
+			Pattern Range = (From: "--", To: Pattern.LineTerminator);
 			Result Result;
 
 			Result = Range.Consume("--This should fail");
@@ -52,7 +52,7 @@ namespace Tests {
 
 		[TestMethod]
 		public void IPv4Address() {
-			Pattern Digit = (~((Pattern)((C) => C=='1' || C=='2') & Pattern.DecimalDigitNumber) | Pattern.DecimalDigitNumber) & ~Pattern.DecimalDigitNumber;
+			Pattern Digit = (~(((Pattern)'1' | '2') & Pattern.DecimalDigitNumber) | Pattern.DecimalDigitNumber) & ~Pattern.DecimalDigitNumber;
 			Pattern Address = Digit & "." & Digit & "." & Digit & "." & Digit;
 			Result Result;
 
@@ -128,7 +128,7 @@ namespace Tests {
 
 		[TestMethod]
 		public void StringLiteral() {
-			RangePattern Range = new RangePattern("\"", "\"", "\\\"");
+			Pattern Range = (From: "\"", To: "\"", Escape: "\\\"");
 			Assert.That.Captures("\"hello\\\"world\"", Range.Consume("\"hello\\\"world\""));
 		}
 

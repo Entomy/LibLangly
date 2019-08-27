@@ -1,5 +1,35 @@
 ﻿namespace System.Text.Patterns {
 	public static class CharExtensions {
+		#region Alternator
+
+		internal static Pattern Alternate(this Char Left, Pattern Right) {
+			switch (Right) {
+			case ComplexPattern right:
+				return new ComplexPattern(new Alternator(Left, right.Head));
+			case PrimativePattern right:
+				return new ComplexPattern(new Alternator(Left, right.Head));
+			default:
+				throw new ArgumentException("Pattern type wasn't handled", nameof(Right));
+			}
+		}
+
+		#endregion
+
+		#region Concatenator
+
+		internal static Pattern Concatenate(this Char Left, Pattern Right) {
+			switch (Right) {
+			case ComplexPattern right:
+				return new ComplexPattern(new ComplexConcatenator(Left, right.Head));
+			case PrimativePattern right:
+				return new PrimativePattern(new PrimativeConcatenator(Left, right.Head));
+			default:
+				throw new ArgumentException("Pattern type wasn't handled", nameof(Right));
+			}
+		}
+
+		#endregion
+
 		/// <summary>
 		/// Attempt to consume the <paramref name="Pattern"/> from the <paramref name="Source"/>
 		/// </summary>

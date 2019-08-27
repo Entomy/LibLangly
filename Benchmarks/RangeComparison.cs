@@ -4,10 +4,10 @@ using System.Text.RegularExpressions;
 using BenchmarkDotNet.Attributes;
 
 namespace Benchmarks {
-	[CoreJob, CoreRtJob]
+	[ClrJob, CoreJob, CoreRtJob]
 	public class RangeComparison {
 
-		RangePattern Pattern = new RangePattern("Hello", ";");
+		Pattern Pattern = (From: "Hello", To: ";");
 
 		Regex Regex = new Regex("^Hello.*;$");
 

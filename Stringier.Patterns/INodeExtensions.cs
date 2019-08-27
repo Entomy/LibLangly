@@ -15,7 +15,7 @@ namespace System.Text.Patterns {
 		}
 
 		/// <summary>
-		/// Attempt to consume from the <paramref name="Source"/> while neglecting the <see cref="Pattern"/>
+		/// Attempt to consume from the <paramref name="Source"/> while neglecting the <see cref="ComplexPattern"/>
 		/// </summary>
 		/// <param name="Source">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to consume</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/></returns>

@@ -4,142 +4,7 @@ namespace System.Text.Patterns {
 	/// <summary>
 	/// Represents a textual pattern
 	/// </summary>
-	public readonly struct Pattern : IEquatable<Pattern>, IEquatable<String> {
-		/// <summary>
-		/// The head node of the pattern
-		/// </summary>
-		/// <remarks>
-		/// Any pattern itself is essentially an unballanced binary tree; this is the starting point
-		/// </remarks>
-		internal readonly INode Head;
-
-		/// <summary>
-		/// Construct a new <see cref="Pattern"/> with the specified <paramref name="Head"/>
-		/// </summary>
-		/// <param name="Head">The <see cref="INode"/> to set as the head of this pattern</param>
-		internal Pattern(INode Head) => this.Head = Head;
-
-		public static explicit operator Pattern(Func<Char, Boolean> Check) => new Pattern(new Checker(Check));
-
-		public static implicit operator Pattern(Char Char) => new Pattern(new CharLiteral(Char));
-
-		public static implicit operator Pattern((Char Char, StringComparison ComparisonType) Pattern) => new Pattern(new CharLiteral(Pattern.Char, Pattern.ComparisonType));
-
-		public static implicit operator Pattern(String String) => new Pattern(new StringLiteral(String));
-
-		public static implicit operator Pattern((String String, StringComparison ComparisonType) Pattern) => new Pattern(new StringLiteral(Pattern.String, Pattern.ComparisonType));
-
-		/// <summary>
-		/// Combine the two patterns, one after another
-		/// </summary>
-		/// <param name="Left"></param>
-		/// <param name="Right"></param>
-		/// <returns>The new <see cref="Pattern"/></returns>
-		public static Pattern operator &(Pattern Left, Pattern Right) => new Pattern(new Concatenator(Left, Right));
-
-		/// <summary>
-		/// Combine the two patterns, one after another
-		/// </summary>
-		/// <param name="Left"></param>
-		/// <param name="Right"></param>
-		/// <returns>The new <see cref="Pattern"/></returns>
-		public static Pattern operator &(Pattern Left, Char Right) => new Pattern(new Concatenator(Left, Right));
-
-		/// <summary>
-		/// Combine the two patterns, one after another
-		/// </summary>
-		/// <param name="Left"></param>
-		/// <param name="Right"></param>
-		/// <returns>The new <see cref="Pattern"/></returns>
-		public static Pattern operator &(Pattern Left, String Right) => new Pattern(new Concatenator(Left, Right));
-
-		/// <summary>
-		/// Combine the two patterns, one after another
-		/// </summary>
-		/// <param name="Left"></param>
-		/// <param name="Right"></param>
-		/// <returns>The new <see cref="Pattern"/></returns>
-		public static Pattern operator &(Char Left, Pattern Right) => new Pattern(new Concatenator(Left, Right));
-
-		/// <summary>
-		/// Combine the two patterns, one after another
-		/// </summary>
-		/// <param name="Left"></param>
-		/// <param name="Right"></param>
-		/// <returns>The new <see cref="Pattern"/></returns>
-		public static Pattern operator &(String Left, Pattern Right) => new Pattern(new Concatenator(Left, Right));
-
-		/// <summary>
-		/// Repeats the pattern the specified number of times
-		/// </summary>
-		/// <param name="Left">The <see cref="Pattern"/> to repeat</param>
-		/// <param name="Right">The number of repetitions</param>
-		/// <returns>The new <see cref="Pattern"/></returns>
-		public static Pattern operator *(Pattern Left, Int32 Right) => new Pattern(new Repeater(Left, Right));
-
-		/// <summary>
-		/// Alternate the two patterns, accepting either
-		/// </summary>
-		/// <param name="Left"></param>
-		/// <param name="Right"></param>
-		/// <returns>The new <see cref="Pattern"/></returns>
-		public static Pattern operator |(Pattern Left, Pattern Right) => new Pattern(new Alternator(Left, Right));
-
-		/// <summary>
-		/// Alternate the two patterns, accepting either
-		/// </summary>
-		/// <param name="Left"></param>
-		/// <param name="Right"></param>
-		/// <returns>The new <see cref="Pattern"/></returns>
-		public static Pattern operator |(Pattern Left, Char Right) => new Pattern(new Alternator(Left, Right));
-
-		/// <summary>
-		/// Alternate the two patterns, accepting either
-		/// </summary>
-		/// <param name="Left"></param>
-		/// <param name="Right"></param>
-		/// <returns>The new <see cref="Pattern"/></returns>
-		public static Pattern operator |(Pattern Left, String Right) => new Pattern(new Alternator(Left, Right));
-
-		/// <summary>
-		/// Alternate the two patterns, accepting either
-		/// </summary>
-		/// <param name="Left"></param>
-		/// <param name="Right"></param>
-		/// <returns>The new <see cref="Pattern"/></returns>
-		public static Pattern operator |(Char Left, Pattern Right) => new Pattern(new Alternator(Left, Right));
-
-		/// <summary>
-		/// Alternate the two patterns, accepting either
-		/// </summary>
-		/// <param name="Left"></param>
-		/// <param name="Right"></param>
-		/// <returns>The new <see cref="Pattern"/></returns>
-		public static Pattern operator |(String Left, Pattern Right) => new Pattern(new Alternator(Left, Right));
-
-		/// <summary>
-		/// Makes the <paramref name="Pattern"/> optional
-		/// </summary>
-		/// <param name="Pattern"></param>
-		/// <returns>The new <see cref="Pattern"/></returns>
-		public static Pattern operator ~(Pattern Pattern) => new Pattern(new Optor(Pattern));
-
-		/// <summary>
-		/// Makes the <paramref name="Pattern"/> negative
-		/// </summary>
-		/// <param name="Pattern"></param>
-		/// <returns>The new <see cref="Pattern"/></returns>
-		public static Pattern operator !(Pattern Pattern) => new Pattern(new Negator(Pattern));
-
-		/// <summary>
-		/// Makes the <paramref name="Pattern"/> span
-		/// </summary>
-		/// <param name="Pattern"></param>
-		/// <returns></returns>
-		public static Pattern operator +(Pattern Pattern) => new Pattern(new Spanner(Pattern));
-
-		public Pattern Capture(out Capture Capture) => new Pattern(new Capturer(this, out Capture));
-
+	public abstract class Pattern {
 		/// <summary>
 		/// Attempt to consume the <see cref="Pattern"/> from the <paramref name="Source"/>
 		/// </summary>
@@ -155,101 +20,167 @@ namespace System.Text.Patterns {
 		/// </summary>
 		/// <param name="Source">The <see cref="Source"/> to consume</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured string</returns>
-		public Result Consume(ref Source Source) => Head.Consume(ref Source);
+		public abstract Result Consume(ref Source Source);
 
-		/// <summary>
-		/// Determines whether two object instances are equal.
-		/// </summary>
-		/// <param name="obj">The object to compare with the current object.</param>
-		/// <returns>true if the specified object is equal to the current object; otherwise, false.</returns>
-		public override Boolean Equals(Object obj) {
-			switch (obj) {
-			case Pattern other:
-				return Equals(other);
-			case String other:
-				return Equals(other);
-			default:
-				return false;
-			}
-		}
+		public static implicit operator Pattern(Char Char) => new PrimativePattern(new CharLiteral(Char));
 
-		public Boolean Equals(Pattern other) => Head.Equals(other.Head);
+		public static implicit operator Pattern((Char Char, StringComparison ComparisonType) Pattern) => new PrimativePattern(new CharLiteral(Pattern.Char, Pattern.ComparisonType));
 
-		public Boolean Equals(String other) => Head.Equals(other);
+		public static implicit operator Pattern(String Pattern) => new PrimativePattern(new StringLiteral(Pattern));
 
-		/// <summary>
-		/// Returns the hash code for this instance.
-		/// </summary>
-		/// <returns>A 32-bit signed integer hash code.</returns>
-		public override Int32 GetHashCode() => Head.GetHashCode();
+		public static implicit operator Pattern((String String, StringComparison ComparisonType) Pattern) => new PrimativePattern(new StringLiteral(Pattern.String, Pattern.ComparisonType));
 
-		/// <summary>
-		/// Returns a string that represents the current object.
-		/// </summary>
-		/// <returns>A string that represents the current object.</returns>
-		public override String ToString() => Head.ToString();
+		public static implicit operator Pattern(Capture Capture) => new PrimativePattern(Capture);
+
+		public static implicit operator Pattern(Func<Char, Boolean> Check) => new PrimativePattern(new Checker(Check));
+
+		#region Alternator
+
+		public abstract Pattern Alternate(Pattern Right);
+
+		public abstract Pattern Alternate(Char Right);
+
+		public abstract Pattern Alternate(String Right);
+
+		public static Pattern operator |(Pattern Left, Pattern Right) => Left.Alternate(Right);
+
+		public static Pattern operator |(Pattern Left, Char Right) => Left.Alternate(Right);
+
+		public static Pattern operator |(Char Left, Pattern Right) => Left.Alternate(Right);
+
+		public static Pattern operator |(Pattern Left, String Right) => Left.Alternate(Right);
+
+		public static Pattern operator |(String Left, Pattern Right) => Left.Alternate(Right);
+
+		#endregion
+
+		#region Capturer
+
+		public abstract Pattern Capture(out Capture Capture);
+
+		#endregion
+
+		#region Concatenator
+
+		public abstract Pattern Concatenate(Pattern Right);
+
+		public abstract Pattern Concatenate(Char Right);
+
+		public abstract Pattern Concatenate(String Right);
+
+		public static Pattern operator &(Pattern Left, Pattern Right) => Left.Concatenate(Right);
+
+		public static Pattern operator &(Pattern Left, Char Right) => Left.Concatenate(Right);
+
+		public static Pattern operator &(Char Left, Pattern Right) => Left.Concatenate(Right);
+
+		public static Pattern operator &(Pattern Left, String Right) => Left.Concatenate(Right);
+
+		public static Pattern operator &(String Left, Pattern Right) => Left.Concatenate(Right);
+
+		#endregion
+
+		#region Negator
+
+		public abstract Pattern Negate();
+
+		public static Pattern operator !(Pattern Pattern) => Pattern.Negate();
+
+		#endregion
+
+		#region Optor
+
+		public abstract Pattern Optional();
+
+		public static Pattern operator ~(Pattern Pattern) => Pattern.Optional();
+
+		#endregion
+
+		#region Ranger
+
+		public static implicit operator Pattern((Pattern From, Pattern To) Range) => new ComplexPattern(new Ranger(Range.From, Range.To));
+
+		public static implicit operator Pattern((Pattern From, Pattern To, Pattern Escape) Range) => new ComplexPattern(new EscapedRanger(Range.From, Range.To, Range.Escape));
+
+		#endregion
+
+		#region Repeater
+
+		public abstract Pattern Repeat(Int32 Count);
+
+		public static Pattern operator *(Pattern Left, Int32 Count) => Left.Repeat(Count);
+
+		#endregion
+
+		#region Spanner
+
+		public abstract Pattern Span();
+
+		public static Pattern operator +(Pattern Pattern) => Pattern.Span();
+
+		#endregion
 
 		#region Unicode Category Patterns
 
-		public static readonly Pattern ClosePunctuation = (Pattern)((Char) => Char.GetUnicodeCategory() == UnicodeCategory.ClosePunctuation);
+		public static readonly Pattern ClosePunctuation = new Checker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.ClosePunctuation);
 
-		public static readonly Pattern ConnectorPunctutation = (Pattern)((Char) => Char.GetUnicodeCategory() == UnicodeCategory.ConnectorPunctuation);
+		public static readonly Pattern ConnectorPunctutation = new Checker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.ConnectorPunctuation);
 
-		public static readonly Pattern Control = (Pattern)((Char) => Char.GetUnicodeCategory() == UnicodeCategory.Control);
+		public static readonly Pattern Control = new Checker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.Control);
 
-		public static readonly Pattern CurrencySymbol = (Pattern)((Char) => Char.GetUnicodeCategory() == UnicodeCategory.CurrencySymbol);
+		public static readonly Pattern CurrencySymbol = new Checker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.CurrencySymbol);
 
-		public static readonly Pattern DashPunctutation = (Pattern)((Char) => Char.GetUnicodeCategory() == UnicodeCategory.DashPunctuation);
+		public static readonly Pattern DashPunctutation = new Checker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.DashPunctuation);
 
-		public static readonly Pattern DecimalDigitNumber = (Pattern)((Char) => Char.GetUnicodeCategory() == UnicodeCategory.DecimalDigitNumber);
+		public static readonly Pattern DecimalDigitNumber = new Checker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.DecimalDigitNumber);
 
-		public static readonly Pattern EnclosingMark = (Pattern)((Char) => Char.GetUnicodeCategory() == UnicodeCategory.EnclosingMark);
+		public static readonly Pattern EnclosingMark = new Checker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.EnclosingMark);
 
-		public static readonly Pattern FinalQuotePunctuation = (Pattern)((Char) => Char.GetUnicodeCategory() == UnicodeCategory.FinalQuotePunctuation);
+		public static readonly Pattern FinalQuotePunctuation = new Checker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.FinalQuotePunctuation);
 
-		public static readonly Pattern Format = (Pattern)((Char) => Char.GetUnicodeCategory() == UnicodeCategory.Format);
+		public static readonly Pattern Format = new Checker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.Format);
 
-		public static readonly Pattern InitialQuotePunctuation = (Pattern)((Char) => Char.GetUnicodeCategory() == UnicodeCategory.InitialQuotePunctuation);
+		public static readonly Pattern InitialQuotePunctuation = new Checker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.InitialQuotePunctuation);
 
-		public static readonly Pattern LetterNumber = (Pattern)((Char) => Char.GetUnicodeCategory() == UnicodeCategory.LetterNumber);
+		public static readonly Pattern LetterNumber = new Checker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.LetterNumber);
 
-		public static readonly Pattern LineSeparator = (Pattern)((Char) => Char.GetUnicodeCategory() == UnicodeCategory.LineSeparator);
+		public static readonly Pattern LineSeparator = new Checker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.LineSeparator);
 
-		public static readonly Pattern LowercaseLetter = (Pattern)((Char) => Char.GetUnicodeCategory() == UnicodeCategory.LowercaseLetter);
+		public static readonly Pattern LowercaseLetter = new Checker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.LowercaseLetter);
 
-		public static readonly Pattern MathSymbol = (Pattern)((Char) => Char.GetUnicodeCategory() == UnicodeCategory.MathSymbol);
+		public static readonly Pattern MathSymbol = new Checker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.MathSymbol);
 
-		public static readonly Pattern ModifierLetter = (Pattern)((Char) => Char.GetUnicodeCategory() == UnicodeCategory.ModifierLetter);
+		public static readonly Pattern ModifierLetter = new Checker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.ModifierLetter);
 
-		public static readonly Pattern ModifierSymbol = (Pattern)((Char) => Char.GetUnicodeCategory() == UnicodeCategory.ModifierSymbol);
+		public static readonly Pattern ModifierSymbol = new Checker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.ModifierSymbol);
 
-		public static readonly Pattern NonSpacingMark = (Pattern)((Char) => Char.GetUnicodeCategory() == UnicodeCategory.NonSpacingMark);
+		public static readonly Pattern NonSpacingMark = new Checker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.NonSpacingMark);
 
-		public static readonly Pattern OpenPunctuation = (Pattern)((Char) => Char.GetUnicodeCategory() == UnicodeCategory.OpenPunctuation);
+		public static readonly Pattern OpenPunctuation = new Checker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.OpenPunctuation);
 
-		public static readonly Pattern OtherLetter = (Pattern)((Char) => Char.GetUnicodeCategory() == UnicodeCategory.OpenPunctuation);
+		public static readonly Pattern OtherLetter = new Checker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.OpenPunctuation);
 
-		public static readonly Pattern OtherNotAssigned = (Pattern)((Char) => Char.GetUnicodeCategory() == UnicodeCategory.OtherNotAssigned);
+		public static readonly Pattern OtherNotAssigned = new Checker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.OtherNotAssigned);
 
-		public static readonly Pattern OtherNumber = (Pattern)((Char) => Char.GetUnicodeCategory() == UnicodeCategory.OtherNumber);
+		public static readonly Pattern OtherNumber = new Checker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.OtherNumber);
 
-		public static readonly Pattern OtherPunctuation = (Pattern)((Char) => Char.GetUnicodeCategory() == UnicodeCategory.OtherPunctuation);
+		public static readonly Pattern OtherPunctuation = new Checker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.OtherPunctuation);
 
-		public static readonly Pattern OtherSymbol = (Pattern)((Char) => Char.GetUnicodeCategory() == UnicodeCategory.OtherSymbol);
+		public static readonly Pattern OtherSymbol = new Checker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.OtherSymbol);
 
-		public static readonly Pattern ParagraphSeparator = (Pattern)((Char) => Char.GetUnicodeCategory() == UnicodeCategory.ParagraphSeparator);
+		public static readonly Pattern ParagraphSeparator = new Checker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.ParagraphSeparator);
 
-		public static readonly Pattern PrivateUse = (Pattern)((Char) => Char.GetUnicodeCategory() == UnicodeCategory.PrivateUse);
+		public static readonly Pattern PrivateUse = new Checker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.PrivateUse);
 
-		public static readonly Pattern SpaceSeparator = (Pattern)((Char) => Char.GetUnicodeCategory() == UnicodeCategory.SpaceSeparator);
+		public static readonly Pattern SpaceSeparator = new Checker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.SpaceSeparator);
 
-		public static readonly Pattern SpacingCombiningMark = (Pattern)((Char) => Char.GetUnicodeCategory() == UnicodeCategory.SpacingCombiningMark);
+		public static readonly Pattern SpacingCombiningMark = new Checker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.SpacingCombiningMark);
 
-		public static readonly Pattern Surrogate = (Pattern)((Char) => Char.GetUnicodeCategory() == UnicodeCategory.Surrogate);
+		public static readonly Pattern Surrogate = new Checker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.Surrogate);
 
-		public static readonly Pattern TitlecaseLetter = (Pattern)((Char) => Char.GetUnicodeCategory() == UnicodeCategory.TitlecaseLetter);
+		public static readonly Pattern TitlecaseLetter = new Checker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.TitlecaseLetter);
 
-		public static readonly Pattern UppercaseLetter = (Pattern)((Char) => Char.GetUnicodeCategory() == UnicodeCategory.UppercaseLetter);
+		public static readonly Pattern UppercaseLetter = new Checker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.UppercaseLetter);
 
 		public static readonly Pattern Letter = LowercaseLetter | TitlecaseLetter | UppercaseLetter;
 
@@ -280,7 +211,7 @@ namespace System.Text.Patterns {
 		/// <summary>
 		/// Matches any possible character
 		/// </summary>
-		public static readonly Pattern Any = (Pattern)((Char) => true);
+		public static readonly Pattern Any = new Checker((Char) => true);
 
 		#endregion
 	}

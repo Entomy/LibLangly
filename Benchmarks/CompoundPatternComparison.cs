@@ -3,12 +3,12 @@ using System.Text.RegularExpressions;
 using BenchmarkDotNet.Attributes;
 
 namespace Benchmarks {
-	[CoreJob, CoreRtJob]
+	[ClrJob, CoreJob, CoreRtJob]
+	[MemoryDiagnoser]
 	public class CompoundPatternComparison {
-
 		[Benchmark]
 		public Result CommentPattern() {
-			RangePattern Range = new RangePattern("--", Pattern.LineTerminator);
+			Pattern Range = (From: "--", To: Pattern.LineTerminator);
 			return Range.Consume("--Comment");
 		}
 
@@ -43,9 +43,10 @@ namespace Benchmarks {
 		[Benchmark]
 		public Match PhoneNumberRegex() => new Regex(@"\d{3}-\d{3}-\d{4}").Match("555-555-5555");
 
+		
 		[Benchmark]
 		public Result StringPattern() {
-			RangePattern Range = new RangePattern("\"", "\"", "\\\"");
+			Pattern Range = (From: "\"", To: "\"", Escape: "\\\"");
 			return Range.Consume("\"Hello\\\"World\"");
 		}
 
@@ -63,6 +64,5 @@ namespace Benchmarks {
 
 		[Benchmark]
 		public Match WebAddressRegex() => new Regex(@"https?://((\w|-)+\.)?(\w|_)+\.\w{3}(/(\w|\d|-|_)+)*").Match("http://www.google.com/about");
-
 	}
 }

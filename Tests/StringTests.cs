@@ -95,6 +95,9 @@ namespace Tests {
 			Result = " ".Consume("    Hello");
 			Assert.That.Succeeds(Result);
 			Assert.That.Captures(" ", Result);
+
+			Assert.That.Fails("w".Consume("Hello"));
+			Assert.That.Fails(" ".Consume("Hello"));
 		}
 
 		[TestMethod]
@@ -128,12 +131,6 @@ namespace Tests {
 			Result = "o".Consume(ref Source);
 			Assert.That.Succeeds(Result);
 			Assert.That.Captures("o", Result);
-		}
-
-		[TestMethod]
-		public void ConsumeFail() {
-			Assert.That.Fails("w".Consume("Hello"));
-			Assert.That.Fails(" ".Consume("Hello"));
 		}
 
 		[TestMethod]

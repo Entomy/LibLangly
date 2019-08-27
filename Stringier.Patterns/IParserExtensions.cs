@@ -5,7 +5,7 @@ using System.Text;
 namespace System.Text.Patterns {
 	internal static class IParserExtensions {
 		/// <summary>
-		/// Attempt to consume the <see cref="Pattern"/> from the <paramref name="Source"/>
+		/// Attempt to consume the <see cref="ComplexPattern"/> from the <paramref name="Source"/>
 		/// </summary>
 		/// <param name="Source">The <see cref="String"/> to consume</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/></returns>
@@ -15,7 +15,7 @@ namespace System.Text.Patterns {
 		}
 
 		/// <summary>
-		/// Attempt to consume the <see cref="Pattern"/> from the <paramref name="Source"/>
+		/// Attempt to consume the <see cref="ComplexPattern"/> from the <paramref name="Source"/>
 		/// </summary>
 		/// <param name="Source">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to consume</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/></returns>
@@ -23,5 +23,7 @@ namespace System.Text.Patterns {
 			Source source = new Source(Source);
 			return Parser.Consume(ref source);
 		}
+
+		internal static Boolean Equals(this IParser Parser, ReadOnlySpan<Char> other) => Stringier.Equals(Parser.ToString(), other);
 	}
 }

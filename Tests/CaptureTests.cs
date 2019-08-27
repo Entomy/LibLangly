@@ -31,7 +31,7 @@ namespace Tests {
 			Pattern Start = "Hello " & (+Pattern.Letter).Capture(out Capture Capture) & "!";
 			Pattern Stop = (Pattern)"Goodbye " & Capture & ".";
 			Result Result;
-			RangePattern Range = new RangePattern(Start, Stop);
+			Pattern Range = (From: Start, To: Stop);
 
 			Result = Range.Consume("Hello World! How are you today? Goodbye World. Have a good day.");
 			Assert.That.Succeeds(Result);

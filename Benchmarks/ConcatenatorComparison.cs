@@ -4,14 +4,14 @@ using System.Text.RegularExpressions;
 using BenchmarkDotNet.Attributes;
 
 namespace Benchmarks {
-	[CoreJob, CoreRtJob]
+	[ClrJob, CoreJob, CoreRtJob]
 	public class ConcatenatorComparison {
 
-		Pattern Concatenator = (Pattern)"Hello" & "World";
+		Pattern Concatenator = (Pattern)"Hello" & ' ' & "World";
 
-		Regex Regex = new Regex("^(Hello)(World)");
+		Regex Regex = new Regex("^Hello World");
 
-		[Params("HelloWorld", "Hello")]
+		[Params("Hello World", "Hello")]
 		public String Source { get; set; }
 
 		[Benchmark]

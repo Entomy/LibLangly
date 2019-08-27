@@ -6,7 +6,7 @@
 	/// Specifically, it's used in the construction of predefined patterns. This is because it's considerably easier to define a range of codepoints and check for the existance within that. The code to do this is clunky and awkward however, so not something to expose publicly.
 	/// Testing: While it might seem like testing this class is somehow not possible because of the visibility, this isn't the case at all. <see cref="Checker"/> is exposed, non-obviously, through the predefined patterns, and can easily be checked that way; if those fail while the isolated tests pass, the issue is almost certainly with this class.
 	/// </remarks>
-	internal sealed class Checker : IPrimativeNode, IEquatable<Checker> {
+	internal sealed class Checker : IComplexNode, IPrimativeNode, IEquatable<Checker> {
 		private readonly Func<Char, Boolean> Check;
 
 		Int32 IPrimative.Length => 1;
@@ -17,20 +17,10 @@
 		/// <param name="Check">A <see cref="Func{T, TResult}"/> taking a <see cref="Char"/> and returning a <see cref="Boolean"/></param>
 		internal Checker(Func<Char, Boolean> Check) => this.Check = Check;
 
-		public static implicit operator Checker(Func<Char, Boolean> Check) => new Checker(Check);
+		public static implicit operator Pattern(Checker Checker) => new PrimativePattern(Checker);
 
 		/// <summary>
-		/// Attempt to consume the <see cref="Pattern"/> from the <paramref name="Source"/>
-		/// </summary>
-		/// <param name="Source">The <see cref="String"/> to consume</param>
-		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/></returns>
-		public Result Consume(String Source) {
-			Source source = new Source(Source);
-			return Consume(ref source);
-		}
-
-		/// <summary>
-		/// Attempt to consume the <see cref="Pattern"/> from the <paramref name="Source"/>, adjusting the position in the <paramref name="Source"/> as appropriate
+		/// Attempt to consume the <see cref="ComplexPattern"/> from the <paramref name="Source"/>, adjusting the position in the <paramref name="Source"/> as appropriate
 		/// </summary>
 		/// <param name="Source">The <see cref="Source"/> to consume</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/></returns>
@@ -71,7 +61,7 @@
 		}
 
 		/// <summary>
-		/// Attempt to consume from the <paramref name="Source"/> while neglecting the <see cref="Pattern"/>, adjusting the position in the <paramref name="Source"/> as appropriate
+		/// Attempt to consume from the <paramref name="Source"/> while neglecting the <see cref="ComplexPattern"/>, adjusting the position in the <paramref name="Source"/> as appropriate
 		/// </summary>
 		/// <param name="Source">The <see cref="Source"/> to consume</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/></returns>
