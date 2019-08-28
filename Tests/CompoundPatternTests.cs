@@ -145,6 +145,11 @@ namespace Tests {
 		}
 
 		[TestMethod]
+		public void SpannerOptor() {
+			Assert.ThrowsException<PatternConstructionException>(() => +~(Pattern)" ");
+		}
+
+		[TestMethod]
 		public void StringLiteral() {
 			Pattern Range = (From: "\"", To: "\"", Escape: "\\\"");
 			Assert.That.Captures("\"hello\\\"world\"", Range.Consume("\"hello\\\"world\""));
