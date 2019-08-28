@@ -119,11 +119,15 @@ Optors make the pattern completly optional, so success is always true, and are e
 ### Range Patterns
 
 ~~~~csharp
-RangePattern patternName = new RangePattern(From: startPattern, To: endPattern);
+Pattern patternName = (From: startPattern, To: endPattern);
 ~~~~
 or
 ~~~~csharp
-rangePattern patternName = new RangePattern(From: startPattern, To: endPattern, Escape: escapePattern);
+Pattern patternName = (From: startPattern, To: endPattern, Escape: escapePattern);
+~~~~
+or
+~~~~csharp
+Pattern patternName = (From: startPattern, To: endPattern, Nested: true);
 ~~~~
 
 Ranger Patterns are totally foreign to Regex, although some parsers are able to synthesize the behavior. The behavior is to simply try matching the `From` at the current position, then continue to read everything until the `To` is matched, which also consumes that. Optionally, an `Escape` may be defined, which is attempted to be matched before `To` and is used primarily for matching string literals which have language defined escape sequences for the delimiting character.
@@ -131,11 +135,15 @@ Ranger Patterns are totally foreign to Regex, although some parsers are able to 
 To provide a few examples of how this behavior is useful:
 
 ~~~~csharp
-RangePattern letStatement = new RangePattern(From: "let", To: ";"); //This will match an entire let statement in a language which has semicolon terminated statements
+Pattern letStatement = (From: "let", To: ";"); //This will match an entire let statement in a language which has semicolon terminated statements
 ~~~~
 
 ~~~~csharp
-RangePattern cString = new RangePattern(From: "\"", To: "\"", Escape: "\\\""); //This will match an entire C string literal, while including double-quote escapes
+Pattern cString = (From: "\"", To: "\"", Escape: "\\\""); //This will match an entire C string literal, while including double-quote escapes
+~~~~
+
+~~~~csharp
+Pattern cppComment = (From: "/*", To: "*/", Nested: true); //This will match a C++ comment, even if there is another comment nested inside of it
 ~~~~
 
 It is important to understand that this is not a modified pattern, but rather a new `struct`. That is because some of the modifiers, especially `Negator`, do not conceptually apply to a range (what is a negated range capture?).
