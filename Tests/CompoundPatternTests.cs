@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text.RegularExpressions;
 using System.Text.Patterns;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -66,6 +65,23 @@ namespace Tests {
 			Result = Address.Consume("192.168.1.1");
 			Assert.That.Succeeds(Result);
 			Assert.That.Captures("192.168.1.1", Result);
+		}
+
+		[TestMethod]
+		public void NestedPackage() {
+			Pattern Identifier = Pattern.Letter & +(Pattern.Letter | Pattern.DecimalDigitNumber | "_");
+			Pattern Package = (
+				From: "package" & +Pattern.SpaceSeparator & Identifier.Capture(out Capture Name),
+				To: "end" & +Pattern.SpaceSeparator & Name & ';');
+			Result Result;
+
+			Result = Package.Consume("package Top\nend Top;");
+			Assert.That.Succeeds(Result);
+			Assert.That.Captures("package Top\nend Top;", Result);
+
+			Result = Package.Consume("package Top\npackage Nest\nend Nest;\nend Top;");
+			Assert.That.Succeeds(Result);
+			Assert.That.Captures("package Top\npackage Nest\nend Nest;\nend Top;", Result);
 		}
 
 		[TestMethod]
