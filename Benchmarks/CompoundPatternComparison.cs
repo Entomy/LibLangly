@@ -35,6 +35,18 @@ namespace Benchmarks {
 		public Match IPv4AddressRegex() => new Regex(@"[12]?\d{1,2}.[12]?\d{1,2}.[12]?\d{1,2}.[12]?\d{1,2}").Match("192.168.1.1");
 
 		[Benchmark]
+		public Result NestedPackagePattern() {
+			Pattern Identifier = Pattern.Letter & +(Pattern.Letter | Pattern.DecimalDigitNumber | "_");
+			Pattern Package = (
+				From: "package" & +Pattern.SpaceSeparator & Identifier.Capture(out System.Text.Patterns.Capture Name),
+				To: "end" & +Pattern.SpaceSeparator & Name & ';');
+			return Package.Consume("package Top\npackage Nest\nend Nest;\nend Top;");
+		}
+
+		[Benchmark]
+		public Match NestedPackageRegex() => new Regex(@"package\s+(?<Name>\w(\w|\d|_)*).*end\s+\k<Name>;", RegexOptions.Singleline).Match("package Top\npackage Nest\nend Nest;\nend Top;");
+
+		[Benchmark]
 		public Result PhoneNumberPattern() {
 			Pattern Pattern = Pattern.Number * 3 & '-' & Pattern.Number * 3 & '-' & Pattern.Number * 4;
 			return Pattern.Consume("555-555-5555");

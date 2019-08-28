@@ -4,12 +4,12 @@ namespace System.Text.Patterns {
 	/// <summary>
 	/// Represents a textual pattern
 	/// </summary>
-	public abstract class Pattern {
+	public abstract class Pattern : IEquatable<String> {
 		/// <summary>
 		/// Attempt to consume the <see cref="Pattern"/> from the <paramref name="Source"/>
 		/// </summary>
 		/// <param name="Source">The <see cref="String"/> to consume</param>
-		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured string</returns>
+		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/></returns>
 		public Result Consume(String Source) {
 			Source source = new Source(Source);
 			return Consume(ref source);
@@ -19,20 +19,51 @@ namespace System.Text.Patterns {
 		/// Attempt to consume the <see cref="Pattern"/> from the <paramref name="Source"/>, adjusting the position in the <paramref name="Source"/> as appropriate
 		/// </summary>
 		/// <param name="Source">The <see cref="Source"/> to consume</param>
-		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured string</returns>
+		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/></returns>
 		public abstract Result Consume(ref Source Source);
 
-		public static implicit operator Pattern(Char Char) => new PrimativePattern(new CharLiteral(Char));
+		public abstract override Boolean Equals(Object obj);
 
-		public static implicit operator Pattern((Char Char, StringComparison ComparisonType) Pattern) => new PrimativePattern(new CharLiteral(Pattern.Char, Pattern.ComparisonType));
+		public abstract Boolean Equals(ReadOnlySpan<Char> other);
 
-		public static implicit operator Pattern(String Pattern) => new PrimativePattern(new StringLiteral(Pattern));
+		public abstract Boolean Equals(String other);
 
-		public static implicit operator Pattern((String String, StringComparison ComparisonType) Pattern) => new PrimativePattern(new StringLiteral(Pattern.String, Pattern.ComparisonType));
+		public abstract override Int32 GetHashCode();
 
-		public static implicit operator Pattern(Capture Capture) => new PrimativePattern(Capture);
+		/// <summary>
+		/// Attempt to consume the <see cref="Pattern"/> from the <paramref name="Source"/>
+		/// </summary>
+		/// <param name="Source">The <see cref="String"/> to consume</param>
+		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/></returns>
+		internal protected Result Neglect(String Source) {
+			Source source = new Source(Source);
+			return Consume(ref source);
+		}
 
-		public static implicit operator Pattern(Func<Char, Boolean> Check) => new PrimativePattern(new Checker(Check));
+		/// <summary>
+		/// Attempt to consume from the <paramref name="Source"/> while neglecting the <see cref="Pattern"/>, adjusting the position in the <paramref name="Source"/> as appropriate
+		/// </summary>
+		/// <param name="Source">The <see cref="Source"/> to consume</param>
+		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/></returns>
+		internal protected abstract Result Neglect(ref Source Source);
+
+		/// <summary>
+		/// Returns a <see cref="String"/> that represents the current object.
+		/// </summary>
+		/// <returns>A <see cref="String"/> that represents the current object.</returns>
+		public abstract override String ToString();
+
+		#region Literals
+
+		public static implicit operator Pattern(Char Char) => new CharLiteral(Char);
+
+		public static implicit operator Pattern((Char Char, StringComparison ComparisonType) Pattern) => new CharLiteral(Pattern.Char, Pattern.ComparisonType);
+
+		public static implicit operator Pattern(String Pattern) => new StringLiteral(Pattern);
+
+		public static implicit operator Pattern((String String, StringComparison ComparisonType) Pattern) => new StringLiteral(Pattern.String, Pattern.ComparisonType);
+
+		#endregion
 
 		#region Alternator
 
@@ -57,6 +88,12 @@ namespace System.Text.Patterns {
 		#region Capturer
 
 		public abstract Pattern Capture(out Capture Capture);
+
+		#endregion
+
+		#region Checker
+
+		public static implicit operator Pattern(Func<Char, Boolean> Check) => new Checker(Check);
 
 		#endregion
 
@@ -98,11 +135,11 @@ namespace System.Text.Patterns {
 
 		#region Ranger
 
-		public static implicit operator Pattern((Pattern From, Pattern To) Range) => new ComplexPattern(new Ranger(Range.From, Range.To));
+		public static implicit operator Pattern((Pattern From, Pattern To) Range) => new Ranger(Range.From, Range.To);
 
-		public static implicit operator Pattern((Pattern From, Pattern To, Pattern Escape) Range) => new ComplexPattern(new EscapedRanger(Range.From, Range.To, Range.Escape));
+		public static implicit operator Pattern((Pattern From, Pattern To, Pattern Escape) Range) => new EscapedRanger(Range.From, Range.To, Range.Escape);
 
-		public static implicit operator Pattern((Pattern From, Pattern To, Boolean Nested) Range) => Range.Nested ? new ComplexPattern(new NestedRanger(Range.From, Range.To)) : new ComplexPattern(new Ranger(Range.From, Range.To));
+		public static implicit operator Pattern((Pattern From, Pattern To, Boolean Nested) Range) => Range.Nested ? new NestedRanger(Range.From, Range.To) : new Ranger(Range.From, Range.To);
 
 		#endregion
 

@@ -903,22 +903,6 @@ references:
   commentId: T:System.Text.Patterns.Capture
   fullName: System.Text.Patterns.Capture
   nameWithType: Capture
-- uid: System.Text.Patterns.Capture.Consume(System.Text.Patterns.Source@)
-  name: Consume(ref Source)
-  href: api/System.Text.Patterns.Capture.html#System_Text_Patterns_Capture_Consume_System_Text_Patterns_Source__
-  commentId: M:System.Text.Patterns.Capture.Consume(System.Text.Patterns.Source@)
-  name.vb: Consume(ByRef Source)
-  fullName: System.Text.Patterns.Capture.Consume(ref System.Text.Patterns.Source)
-  fullName.vb: System.Text.Patterns.Capture.Consume(ByRef System.Text.Patterns.Source)
-  nameWithType: Capture.Consume(ref Source)
-  nameWithType.vb: Capture.Consume(ByRef Source)
-- uid: System.Text.Patterns.Capture.Consume*
-  name: Consume
-  href: api/System.Text.Patterns.Capture.html#System_Text_Patterns_Capture_Consume_
-  commentId: Overload:System.Text.Patterns.Capture.Consume
-  isSpec: "True"
-  fullName: System.Text.Patterns.Capture.Consume
-  nameWithType: Capture.Consume
 - uid: System.Text.Patterns.Capture.Equals(System.Object)
   name: Equals(Object)
   href: api/System.Text.Patterns.Capture.html#System_Text_Patterns_Capture_Equals_System_Object_
@@ -970,22 +954,25 @@ references:
   isSpec: "True"
   fullName: System.Text.Patterns.Capture.Length
   nameWithType: Capture.Length
-- uid: System.Text.Patterns.Capture.Neglect(System.Text.Patterns.Source@)
-  name: Neglect(ref Source)
-  href: api/System.Text.Patterns.Capture.html#System_Text_Patterns_Capture_Neglect_System_Text_Patterns_Source__
-  commentId: M:System.Text.Patterns.Capture.Neglect(System.Text.Patterns.Source@)
-  name.vb: Neglect(ByRef Source)
-  fullName: System.Text.Patterns.Capture.Neglect(ref System.Text.Patterns.Source)
-  fullName.vb: System.Text.Patterns.Capture.Neglect(ByRef System.Text.Patterns.Source)
-  nameWithType: Capture.Neglect(ref Source)
-  nameWithType.vb: Capture.Neglect(ByRef Source)
-- uid: System.Text.Patterns.Capture.Neglect*
-  name: Neglect
-  href: api/System.Text.Patterns.Capture.html#System_Text_Patterns_Capture_Neglect_
-  commentId: Overload:System.Text.Patterns.Capture.Neglect
+- uid: System.Text.Patterns.Capture.op_Implicit(System.Text.Patterns.Capture)~System.Text.Patterns.Pattern
+  name: Implicit(Capture to Pattern)
+  href: api/System.Text.Patterns.Capture.html#System_Text_Patterns_Capture_op_Implicit_System_Text_Patterns_Capture__System_Text_Patterns_Pattern
+  commentId: M:System.Text.Patterns.Capture.op_Implicit(System.Text.Patterns.Capture)~System.Text.Patterns.Pattern
+  name.vb: Widening(Capture to Pattern)
+  fullName: System.Text.Patterns.Capture.Implicit(System.Text.Patterns.Capture to System.Text.Patterns.Pattern)
+  fullName.vb: System.Text.Patterns.Capture.Widening(System.Text.Patterns.Capture to System.Text.Patterns.Pattern)
+  nameWithType: Capture.Implicit(Capture to Pattern)
+  nameWithType.vb: Capture.Widening(Capture to Pattern)
+- uid: System.Text.Patterns.Capture.op_Implicit*
+  name: Implicit
+  href: api/System.Text.Patterns.Capture.html#System_Text_Patterns_Capture_op_Implicit_
+  commentId: Overload:System.Text.Patterns.Capture.op_Implicit
   isSpec: "True"
-  fullName: System.Text.Patterns.Capture.Neglect
-  nameWithType: Capture.Neglect
+  name.vb: Widening
+  fullName: System.Text.Patterns.Capture.Implicit
+  fullName.vb: System.Text.Patterns.Capture.Widening
+  nameWithType: Capture.Implicit
+  nameWithType.vb: Capture.Widening
 - uid: System.Text.Patterns.Capture.ToString
   name: ToString()
   href: api/System.Text.Patterns.Capture.html#System_Text_Patterns_Capture_ToString
@@ -1258,6 +1245,34 @@ references:
   commentId: F:System.Text.Patterns.Pattern.EnclosingMark
   fullName: System.Text.Patterns.Pattern.EnclosingMark
   nameWithType: Pattern.EnclosingMark
+- uid: System.Text.Patterns.Pattern.Equals(System.Object)
+  name: Equals(Object)
+  href: api/System.Text.Patterns.Pattern.html#System_Text_Patterns_Pattern_Equals_System_Object_
+  commentId: M:System.Text.Patterns.Pattern.Equals(System.Object)
+  fullName: System.Text.Patterns.Pattern.Equals(System.Object)
+  nameWithType: Pattern.Equals(Object)
+- uid: System.Text.Patterns.Pattern.Equals(System.ReadOnlySpan{System.Char})
+  name: Equals(ReadOnlySpan<Char>)
+  href: api/System.Text.Patterns.Pattern.html#System_Text_Patterns_Pattern_Equals_System_ReadOnlySpan_System_Char__
+  commentId: M:System.Text.Patterns.Pattern.Equals(System.ReadOnlySpan{System.Char})
+  name.vb: Equals(ReadOnlySpan(Of Char))
+  fullName: System.Text.Patterns.Pattern.Equals(System.ReadOnlySpan<System.Char>)
+  fullName.vb: System.Text.Patterns.Pattern.Equals(System.ReadOnlySpan(Of System.Char))
+  nameWithType: Pattern.Equals(ReadOnlySpan<Char>)
+  nameWithType.vb: Pattern.Equals(ReadOnlySpan(Of Char))
+- uid: System.Text.Patterns.Pattern.Equals(System.String)
+  name: Equals(String)
+  href: api/System.Text.Patterns.Pattern.html#System_Text_Patterns_Pattern_Equals_System_String_
+  commentId: M:System.Text.Patterns.Pattern.Equals(System.String)
+  fullName: System.Text.Patterns.Pattern.Equals(System.String)
+  nameWithType: Pattern.Equals(String)
+- uid: System.Text.Patterns.Pattern.Equals*
+  name: Equals
+  href: api/System.Text.Patterns.Pattern.html#System_Text_Patterns_Pattern_Equals_
+  commentId: Overload:System.Text.Patterns.Pattern.Equals
+  isSpec: "True"
+  fullName: System.Text.Patterns.Pattern.Equals
+  nameWithType: Pattern.Equals
 - uid: System.Text.Patterns.Pattern.FinalQuotePunctuation
   name: FinalQuotePunctuation
   href: api/System.Text.Patterns.Pattern.html#System_Text_Patterns_Pattern_FinalQuotePunctuation
@@ -1270,6 +1285,19 @@ references:
   commentId: F:System.Text.Patterns.Pattern.Format
   fullName: System.Text.Patterns.Pattern.Format
   nameWithType: Pattern.Format
+- uid: System.Text.Patterns.Pattern.GetHashCode
+  name: GetHashCode()
+  href: api/System.Text.Patterns.Pattern.html#System_Text_Patterns_Pattern_GetHashCode
+  commentId: M:System.Text.Patterns.Pattern.GetHashCode
+  fullName: System.Text.Patterns.Pattern.GetHashCode()
+  nameWithType: Pattern.GetHashCode()
+- uid: System.Text.Patterns.Pattern.GetHashCode*
+  name: GetHashCode
+  href: api/System.Text.Patterns.Pattern.html#System_Text_Patterns_Pattern_GetHashCode_
+  commentId: Overload:System.Text.Patterns.Pattern.GetHashCode
+  isSpec: "True"
+  fullName: System.Text.Patterns.Pattern.GetHashCode
+  nameWithType: Pattern.GetHashCode
 - uid: System.Text.Patterns.Pattern.Graphic
   name: Graphic
   href: api/System.Text.Patterns.Pattern.html#System_Text_Patterns_Pattern_Graphic
@@ -1349,6 +1377,28 @@ references:
   isSpec: "True"
   fullName: System.Text.Patterns.Pattern.Negate
   nameWithType: Pattern.Negate
+- uid: System.Text.Patterns.Pattern.Neglect(System.String)
+  name: Neglect(String)
+  href: api/System.Text.Patterns.Pattern.html#System_Text_Patterns_Pattern_Neglect_System_String_
+  commentId: M:System.Text.Patterns.Pattern.Neglect(System.String)
+  fullName: System.Text.Patterns.Pattern.Neglect(System.String)
+  nameWithType: Pattern.Neglect(String)
+- uid: System.Text.Patterns.Pattern.Neglect(System.Text.Patterns.Source@)
+  name: Neglect(ref Source)
+  href: api/System.Text.Patterns.Pattern.html#System_Text_Patterns_Pattern_Neglect_System_Text_Patterns_Source__
+  commentId: M:System.Text.Patterns.Pattern.Neglect(System.Text.Patterns.Source@)
+  name.vb: Neglect(ByRef Source)
+  fullName: System.Text.Patterns.Pattern.Neglect(ref System.Text.Patterns.Source)
+  fullName.vb: System.Text.Patterns.Pattern.Neglect(ByRef System.Text.Patterns.Source)
+  nameWithType: Pattern.Neglect(ref Source)
+  nameWithType.vb: Pattern.Neglect(ByRef Source)
+- uid: System.Text.Patterns.Pattern.Neglect*
+  name: Neglect
+  href: api/System.Text.Patterns.Pattern.html#System_Text_Patterns_Pattern_Neglect_
+  commentId: Overload:System.Text.Patterns.Pattern.Neglect
+  isSpec: "True"
+  fullName: System.Text.Patterns.Pattern.Neglect
+  nameWithType: Pattern.Neglect
 - uid: System.Text.Patterns.Pattern.NonSpacingMark
   name: NonSpacingMark
   href: api/System.Text.Patterns.Pattern.html#System_Text_Patterns_Pattern_NonSpacingMark
@@ -1462,15 +1512,6 @@ references:
   fullName.vb: System.Text.Patterns.Pattern.Widening(System.String to System.Text.Patterns.Pattern)
   nameWithType: Pattern.Implicit(String to Pattern)
   nameWithType.vb: Pattern.Widening(String to Pattern)
-- uid: System.Text.Patterns.Pattern.op_Implicit(System.Text.Patterns.Capture)~System.Text.Patterns.Pattern
-  name: Implicit(Capture to Pattern)
-  href: api/System.Text.Patterns.Pattern.html#System_Text_Patterns_Pattern_op_Implicit_System_Text_Patterns_Capture__System_Text_Patterns_Pattern
-  commentId: M:System.Text.Patterns.Pattern.op_Implicit(System.Text.Patterns.Capture)~System.Text.Patterns.Pattern
-  name.vb: Widening(Capture to Pattern)
-  fullName: System.Text.Patterns.Pattern.Implicit(System.Text.Patterns.Capture to System.Text.Patterns.Pattern)
-  fullName.vb: System.Text.Patterns.Pattern.Widening(System.Text.Patterns.Capture to System.Text.Patterns.Pattern)
-  nameWithType: Pattern.Implicit(Capture to Pattern)
-  nameWithType.vb: Pattern.Widening(Capture to Pattern)
 - uid: System.Text.Patterns.Pattern.op_Implicit(System.ValueTuple{System.Char,System.StringComparison})~System.Text.Patterns.Pattern
   name: Implicit((Char Char, StringComparison ComparisonType) to Pattern)
   href: api/System.Text.Patterns.Pattern.html#System_Text_Patterns_Pattern_op_Implicit_System_ValueTuple_System_Char_System_StringComparison___System_Text_Patterns_Pattern
@@ -1707,6 +1748,19 @@ references:
   commentId: F:System.Text.Patterns.Pattern.TitlecaseLetter
   fullName: System.Text.Patterns.Pattern.TitlecaseLetter
   nameWithType: Pattern.TitlecaseLetter
+- uid: System.Text.Patterns.Pattern.ToString
+  name: ToString()
+  href: api/System.Text.Patterns.Pattern.html#System_Text_Patterns_Pattern_ToString
+  commentId: M:System.Text.Patterns.Pattern.ToString
+  fullName: System.Text.Patterns.Pattern.ToString()
+  nameWithType: Pattern.ToString()
+- uid: System.Text.Patterns.Pattern.ToString*
+  name: ToString
+  href: api/System.Text.Patterns.Pattern.html#System_Text_Patterns_Pattern_ToString_
+  commentId: Overload:System.Text.Patterns.Pattern.ToString
+  isSpec: "True"
+  fullName: System.Text.Patterns.Pattern.ToString
+  nameWithType: Pattern.ToString
 - uid: System.Text.Patterns.Pattern.UppercaseLetter
   name: UppercaseLetter
   href: api/System.Text.Patterns.Pattern.html#System_Text_Patterns_Pattern_UppercaseLetter

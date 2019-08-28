@@ -2,10 +2,6 @@
 	internal sealed class NestedRanger : Ranger, IEquatable<NestedRanger> {
 		private Int32 Level;
 
-		internal NestedRanger(INode From, INode To) : base(From, To) {
-			Level = 0;
-		}
-
 		internal NestedRanger(Pattern From, Pattern To) : base(From, To) {
 			Level = 0;
 		}
@@ -32,6 +28,6 @@
 
 		public Boolean Equals(NestedRanger other) => base.Equals(other);
 
-		public override Result Neglect(ref Source Source) => throw new NotImplementedException();
+		protected internal override Result Neglect(ref Source Source) => throw new NotImplementedException();
 	}
 }

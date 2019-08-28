@@ -1,23 +1,23 @@
 ﻿namespace System.Text.Patterns {
-	internal sealed class ComplexConcatenator : IComplexNode, IEquatable<ComplexConcatenator> {
-		private readonly INode Left;
+	internal sealed class ComplexConcatenator : ComplexPattern, IEquatable<ComplexConcatenator> {
+		private readonly Pattern Left;
 
-		private readonly INode Right;
+		private readonly Pattern Right;
 
-		internal ComplexConcatenator(INode Left, INode Right) {
+		internal ComplexConcatenator(Pattern Left, Pattern Right) {
 			this.Left = Left;
 			this.Right = Right;
 		}
 
-		internal ComplexConcatenator(IComplexNode Left, Char Right) : this(Left, new CharLiteral(Right)) { }
+		internal ComplexConcatenator(Pattern Left, Char Right) : this(Left, new CharLiteral(Right)) { }
 
-		internal ComplexConcatenator(Char Left, IComplexNode Right) : this(new CharLiteral(Left), Right) { }
+		internal ComplexConcatenator(Char Left, Pattern Right) : this(new CharLiteral(Left), Right) { }
 
-		internal ComplexConcatenator(IComplexNode Left, String Right) : this(Left, new StringLiteral(Right)) { }
+		internal ComplexConcatenator(Pattern Left, String Right) : this(Left, new StringLiteral(Right)) { }
 
-		internal ComplexConcatenator(String Left, IComplexNode Right) : this(new StringLiteral(Left), Right) { }
+		internal ComplexConcatenator(String Left, Pattern Right) : this(new StringLiteral(Left), Right) { }
 
-		public Result Consume(ref Source Source) {
+		public override Result Consume(ref Source Source) {
 			Int32 OriginalPosition = Source.Position;
 			Result Result;
 			// Try consuming the left side
@@ -47,13 +47,25 @@
 			}
 		}
 
-		public Boolean Equals(String other) => throw new NotImplementedException();
+		public override Boolean Equals(ReadOnlySpan<Char> other) {
+			Source Source = new Source(other);
+			if (!Left.Consume(ref Source)) { return false; }
+			if (!Right.Consume(ref Source)) { return false; }
+			return Source.Length != 0;
+		}
+
+		public override Boolean Equals(String other) {
+			Source Source = new Source(other);
+			if (!Left.Consume(ref Source)) { return false; }
+			if (!Right.Consume(ref Source)) { return false; }
+			return Source.Length != 0;
+		}
 
 		public Boolean Equals(ComplexConcatenator other) => Left.Equals(other.Left) && Right.Equals(other.Right);
 
 		public override Int32 GetHashCode() => Left.GetHashCode() & Right.GetHashCode();
 
-		public Result Neglect(ref Source Source) {
+		protected internal override Result Neglect(ref Source Source) {
 			Int32 OriginalPosition = Source.Position;
 			Result Result;
 			// Try consuming the left side

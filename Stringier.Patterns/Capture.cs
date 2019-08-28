@@ -2,14 +2,14 @@
 	/// <summary>
 	/// Represents a named capture component
 	/// </summary>
-	public sealed class Capture : IComplexNode, IPrimativeNode, IEquatable<Capture> {
+	public sealed class Capture : IEquatable<Capture> {
 		internal String Value;
 
 		internal Capture() => Value = "";
 
-		public Int32 Length => Value.Length;
+		public static implicit operator Pattern(Capture Capture) => new CaptureLiteral(Capture);
 
-		public Result Consume(ref Source Source) => Value.Consume(ref Source);
+		public Int32 Length => Value.Length;
 
 		public override Boolean Equals(Object obj) {
 			switch (obj) {
@@ -27,8 +27,6 @@
 		public Boolean Equals(String other) => Stringier.Equals(Value, other);
 
 		public override Int32 GetHashCode() => Value.GetHashCode();
-
-		public Result Neglect(ref Source Source) => Value.Neglect(ref Source);
 
 		public override String ToString() => $"{Value}";
 	}

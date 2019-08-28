@@ -1,37 +1,14 @@
 ﻿namespace System.Text.Patterns {
-	internal class Ranger : IComplexNode, IEquatable<Ranger> {
-		internal protected readonly INode From;
-		internal protected readonly INode To;
+	internal class Ranger : ComplexPattern, IEquatable<Ranger> {
+		internal protected readonly Pattern From;
+		internal protected readonly Pattern To;
 
-		internal protected Ranger(INode From, INode To) {
+		internal protected Ranger(Pattern From, Pattern To) {
 			this.From = From;
 			this.To = To;
 		}
 
-		internal protected Ranger(Pattern From, Pattern To) {
-			switch (From) {
-			case ComplexPattern from:
-				this.From = from.Head;
-				break;
-			case PrimativePattern from:
-				this.From = from.Head;
-				break;
-			default:
-				throw new ArgumentException("Pattern type wasn't handled", nameof(From));
-			}
-			switch (To) {
-			case ComplexPattern to:
-				this.To = to.Head;
-				break;
-			case PrimativePattern to:
-				this.To = to.Head;
-				break;
-			default:
-				throw new ArgumentException("Pattern type wasn't handled", nameof(To));
-			}
-		}
-
-		public virtual Result Consume(ref Source Source) {
+		public override Result Consume(ref Source Source) {
 			Int32 OriginalPosition = Source.Position;
 			Result Result = From.Consume(ref Source);
 			if (!Result) { goto Cleanup; }
@@ -61,13 +38,15 @@
 			}
 		}
 
-		public virtual Boolean Equals(String other) => throw new NotImplementedException();
+		public override Boolean Equals(ReadOnlySpan<Char> other) => throw new NotImplementedException();
+
+		public override Boolean Equals(String other) => throw new NotImplementedException();
 
 		public Boolean Equals(Ranger other) => From.Equals(other.From) && To.Equals(other.To);
 
 		public override Int32 GetHashCode() => From.GetHashCode() ^ To.GetHashCode();
 
-		public virtual Result Neglect(ref Source Source) => throw new NotImplementedException();
+		protected internal override Result Neglect(ref Source Source) => throw new NotImplementedException();
 
 		public override String ToString() => $"from=({From}) to=({To})";
 	}

@@ -41,12 +41,7 @@ namespace Tests {
 			Result = Hello.Consume("Bacon");
 			Assert.That.Fails(Result);
 
-		}
-
-		[TestMethod]
-		public void ConsumeCaseInsensitive() {
-			Pattern HelloWorld = ("HELLO WORLD", StringComparison.OrdinalIgnoreCase);
-			Result Result;
+			Pattern HelloWorld = Hello & Space & World;
 
 			Result = HelloWorld.Consume("HELLO WORLD!");
 			Assert.That.Succeeds(Result);
@@ -59,6 +54,28 @@ namespace Tests {
 			Result = HelloWorld.Consume("hello world!");
 			Assert.That.Succeeds(Result);
 			Assert.That.Captures("hello world", Result);
+		}
+
+		[TestMethod]
+		public void Equal() {
+			Pattern Hello = "Hello";
+			Pattern Space = ' ';
+			Pattern World = "World";
+
+			Assert.IsTrue(Hello.Equals("Hello"));
+			Assert.IsFalse(Hello.Equals("Hello "));
+			Assert.IsFalse(Hello.Equals("Hell"));
+			Assert.IsFalse(Hello.Equals("World"));
+
+			Assert.IsTrue(Space.Equals(" "));
+			Assert.IsFalse(Space.Equals("  "));
+			Assert.IsFalse(Space.Equals("a"));
+
+			Pattern HelloWorld = Hello & Space & World;
+
+			Assert.IsTrue(HelloWorld.Equals("Hello World"));
+			Assert.IsFalse(HelloWorld.Equals("Hello"));
+			Assert.IsFalse(HelloWorld.Equals("Hello Bacon"));
 		}
 	}
 }

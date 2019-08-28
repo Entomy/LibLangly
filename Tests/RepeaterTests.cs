@@ -22,5 +22,15 @@ namespace Tests {
 			Result = Repeater.Consume("Bye!");
 			Assert.That.Fails(Result);
 		}
+
+		[TestMethod]
+		public void Equal() {
+			Pattern Repeater = (Pattern)"Hi!" * 2;
+
+			Assert.IsTrue(Repeater.Equals("Hi!Hi!"));
+			Assert.IsFalse(Repeater.Equals("Hi!"));
+			Assert.IsFalse(Repeater.Equals("Hi!Ho."));
+			Assert.IsFalse(Repeater.Equals("Hi!Hi!Hi!"));
+		}
 	}
 }

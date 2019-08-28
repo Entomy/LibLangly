@@ -26,5 +26,20 @@ namespace Tests {
 			Result = Whitespace.Consume("Hi!  ");
 			Assert.That.Fails(Result);
 		}
+
+		[TestMethod]
+		public void Equal() {
+			Pattern AB = +(Pattern)"AB";
+
+			Assert.IsFalse(AB.Equals(""));
+			Assert.IsFalse(AB.Equals("A"));
+			Assert.IsTrue(AB.Equals("AB"));
+			Assert.IsFalse(AB.Equals("ABA"));
+			Assert.IsTrue(AB.Equals("ABAB"));
+			Assert.IsFalse(AB.Equals("ABABA"));
+
+			Assert.IsFalse(AB.Equals("AAB"));
+			Assert.IsFalse(AB.Equals("ABB"));
+		}
 	}
 }

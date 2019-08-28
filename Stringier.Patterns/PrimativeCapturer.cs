@@ -1,19 +1,19 @@
 ﻿namespace System.Text.Patterns {
-	internal sealed class PrimativeCapturer : IPrimativeNode, IEquatable<PrimativeCapturer> {
-		private readonly IPrimativeNode Pattern;
+	internal sealed class PrimativeCapturer : PrimativePattern, IEquatable<PrimativeCapturer> {
+		private readonly PrimativePattern Pattern;
 
-		private readonly Capture Capture = new Capture();
+		private readonly Capture capture = new Capture();
 
-		internal PrimativeCapturer(IPrimativeNode Pattern, out Capture Capture) {
+		protected internal override Int32 Length => Pattern.Length;
+
+		internal PrimativeCapturer(PrimativePattern Pattern, out Capture capture) {
 			this.Pattern = Pattern;
-			Capture = this.Capture;
+			capture = this.capture;
 		}
 
-		Int32 IPrimative.Length => Pattern.Length;
-
-		public Result Consume(ref Source Source) {
+		public override Result Consume(ref Source Source) {
 			Result Result = Pattern.Consume(ref Source);
-			Capture.Value = Result;
+			capture.Value = Result;
 			return Result;
 		}
 
@@ -28,15 +28,23 @@
 			}
 		}
 
-		public Boolean Equals(String other) => Pattern.Equals(other);
+		public override Boolean Equals(ReadOnlySpan<Char> other) {
+			capture.Value = other.ToString();
+			return Pattern.Equals(other);
+		}
+
+		public override Boolean Equals(String other) {
+			capture.Value = other;
+			return Pattern.Equals(other);
+		}
 
 		public Boolean Equals(PrimativeCapturer other) => Pattern.Equals(other);
 
 		public override Int32 GetHashCode() => Pattern.GetHashCode();
 
-		public Result Neglect(ref Source Source) {
+		protected internal override Result Neglect(ref Source Source) {
 			Result Result = Pattern.Neglect(ref Source);
-			Capture.Value = Result;
+			capture.Value = Result;
 			return Result;
 		}
 

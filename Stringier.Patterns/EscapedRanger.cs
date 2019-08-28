@@ -1,22 +1,9 @@
 ﻿namespace System.Text.Patterns {
 	internal sealed class EscapedRanger : Ranger, IEquatable<EscapedRanger> {
-		internal readonly INode Escape;
-
-		internal EscapedRanger(INode From, INode To, INode Escape) : base(From, To) {
-			this.Escape = Escape;
-		}
+		internal readonly Pattern Escape;
 
 		internal EscapedRanger(Pattern From, Pattern To, Pattern Escape) : base(From, To) {
-			switch (Escape) {
-			case ComplexPattern escape:
-				this.Escape = escape.Head;
-				break;
-			case PrimativePattern escape:
-				this.Escape = escape.Head;
-				break;
-			default:
-				throw new ArgumentException("Pattern type wasn't handled", nameof(Escape));
-			}
+			this.Escape = Escape;
 		}
 
 		public override Result Consume(ref Source Source) {
@@ -56,7 +43,7 @@
 
 		public override Int32 GetHashCode() => base.GetHashCode() ^ Escape.GetHashCode();
 
-		public override Result Neglect(ref Source Source) => throw new NotImplementedException();
+		protected internal override Result Neglect(ref Source Source) => throw new NotImplementedException();
 
 		public override String ToString() => $"from=({From}) to=({To}) escape=({Escape})";
 	}

@@ -1,15 +1,15 @@
 ﻿namespace System.Text.Patterns {
-	internal sealed class ComplexRepeater : IComplexNode, IEquatable<ComplexRepeater> {
+	internal sealed class ComplexRepeater : ComplexPattern, IEquatable<ComplexRepeater> {
 		private readonly Int32 Count;
 
-		private readonly IComplexNode Pattern;
+		private readonly Pattern Pattern;
 
-		internal ComplexRepeater(IComplexNode Pattern, Int32 Count) {
+		internal ComplexRepeater(Pattern Pattern, Int32 Count) {
 			this.Pattern = Pattern;
 			this.Count = Count;
 		}
 
-		public Result Consume(ref Source Source) {
+		public override Result Consume(ref Source Source) {
 			Int32 OriginalPosition = Source.Position;
 			Result Result = new Result("", false);
 			for (Int32 i = 0; i < Count; i++) {
@@ -37,12 +37,23 @@
 			}
 		}
 
-		public Boolean Equals(String other) {
+		public override Boolean Equals(ReadOnlySpan<Char> other) {
 			Source Source = new Source(other);
 			Result Result = new Result();
 			for (Int32 i = 0; i < Count; i++) {
 				Result = Pattern.Consume(ref Source);
 			}
+			if (Source.Length != 0) { return false; }
+			return Result;
+		}
+
+		public override Boolean Equals(String other) {
+			Source Source = new Source(other);
+			Result Result = new Result();
+			for (Int32 i = 0; i < Count; i++) {
+				Result = Pattern.Consume(ref Source);
+			}
+			if (Source.Length != 0) { return false; }
 			return Result;
 		}
 
@@ -50,7 +61,7 @@
 
 		public override Int32 GetHashCode() => Pattern.GetHashCode() ^ Count.GetHashCode();
 
-		public Result Neglect(ref Source Source) {
+		protected internal override Result Neglect(ref Source Source) {
 			Int32 OriginalPosition = Source.Position;
 			Result Result = new Result("", false);
 			for (Int32 i = 0; i < Count; i++) {
@@ -67,6 +78,6 @@
 			return new Result(Source.Read(FinalPosition - OriginalPosition), Result);
 		}
 
-		public override String ToString() => $"({Pattern})×{Count}";
+		public override String ToString() => $"{Pattern}×{Count}";
 	}
 }

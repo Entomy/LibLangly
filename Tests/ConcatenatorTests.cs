@@ -27,9 +27,6 @@ namespace Tests {
 			Result = HelloWorld.Consume("Hello everyone");
 			Assert.That.Fails(Result);
 
-			Result = HelloWorld.Consume("Hello World");
-			Assert.That.Fails(Result); // Remember, string comparisons are case sensitive by default, so "World" isn't a match
-
 			Result = GoodbyeWorld.Consume("Hello world");
 			Assert.That.Fails(Result);
 		}

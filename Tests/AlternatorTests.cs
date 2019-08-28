@@ -26,12 +26,16 @@ namespace Tests {
 			Result = Alternator.Consume("!");
 			Assert.That.Fails(Result);
 			Assert.That.Captures("", Result);
+
+			Assert.That.Fails(Alternator.Consume("How are you?"));
 		}
 
 		[TestMethod]
-		public void ConsumeFail() {
+		public void Equal() {
 			Pattern Alternator = (Pattern)"Hello" | "Goodbye";
-			Assert.That.Fails(Alternator.Consume("How are you?"));
+			Assert.IsTrue(Alternator.Equals("Hello"));
+			Assert.IsTrue(Alternator.Equals("Goodbye"));
+			Assert.IsFalse(Alternator.Equals("World"));
 		}
 	}
 }

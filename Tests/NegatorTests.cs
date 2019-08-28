@@ -66,5 +66,13 @@ namespace Tests {
 			Assert.That.Captures("", Negator.Consume(";"));
 			Assert.That.Captures("123456789", Negator.Consume("123456789;"));
 		}
+
+		[TestMethod]
+		public void Equal() {
+			Pattern Negator = !(Pattern)"Hello";
+			Assert.IsTrue(Negator.Equals("World"));
+			Assert.IsTrue(Negator.Equals("Hello "));
+			Assert.IsFalse(Negator.Equals("Hello"));
+		}
 	}
 }

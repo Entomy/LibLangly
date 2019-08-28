@@ -1,10 +1,10 @@
 ﻿namespace System.Text.Patterns {
-	internal sealed class ComplexNegator : IComplexNode, IEquatable<ComplexNegator> {
-		private readonly IComplexNode Pattern;
+	internal sealed class ComplexNegator : ComplexPattern, IEquatable<ComplexNegator> {
+		private readonly Pattern Pattern;
 
-		internal ComplexNegator(IComplexNode Pattern) => this.Pattern = Pattern;
+		internal ComplexNegator(Pattern Pattern) => this.Pattern = Pattern;
 
-		public Result Consume(ref Source Source) => Pattern.Neglect(ref Source);
+		public override Result Consume(ref Source Source) => Pattern.Neglect(ref Source);
 
 		public override Boolean Equals(Object obj) {
 			switch (obj) {
@@ -17,13 +17,15 @@
 			}
 		}
 
-		public Boolean Equals(String other) => !Pattern.Equals(other);
+		public override Boolean Equals(ReadOnlySpan<Char> other) => !Pattern.Equals(other);
+
+		public override Boolean Equals(String other) => !Pattern.Equals(other);
 
 		public Boolean Equals(ComplexNegator other) => Pattern.Equals(other.Pattern);
 
 		public override Int32 GetHashCode() => -Pattern.GetHashCode();
 
-		public Result Neglect(ref Source Source) => Pattern.Consume(ref Source);
+		protected internal override Result Neglect(ref Source Source) => Pattern.Consume(ref Source);
 
 		public override String ToString() => $"!{Pattern}";
 	}

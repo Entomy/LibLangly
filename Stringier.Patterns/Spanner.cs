@@ -1,10 +1,10 @@
 ﻿namespace System.Text.Patterns {
-	internal sealed class Spanner : IComplexNode, IEquatable<Spanner> {
-		private readonly INode Pattern;
+	internal sealed class Spanner : ComplexPattern, IEquatable<Spanner> {
+		private readonly Pattern Pattern;
 
-		internal Spanner(INode Pattern) => this.Pattern = Pattern;
+		internal Spanner(Pattern Pattern) => this.Pattern = Pattern;
 
-		public Result Consume(ref Source Source) {
+		public override Result Consume(ref Source Source) {
 			Int32 OriginalPosition = Source.Position;
 			Result Result = new Result("", true);
 			while (Result) {
@@ -27,13 +27,31 @@
 			}
 		}
 
-		public Boolean Equals(String other) => Pattern.Equals(other);
+		public override Boolean Equals(ReadOnlySpan<Char> other) {
+			Source Source = new Source(other);
+			Result Result = new Result("", true);
+			while (Result) {
+				Result = Consume(ref Source);
+				if (Source.Length == 0) { break; }
+			}
+			return Result;
+		}
+
+		public override Boolean Equals(String other) {
+			Source Source = new Source(other);
+			Result Result = new Result("", true);
+			while (Result) {
+				Result = Consume(ref Source);
+				if (Source.Length == 0) { break; }
+			}
+			return Result;
+		}
 
 		public Boolean Equals(Spanner other) => Pattern.Equals(other.Pattern);
 
 		public override Int32 GetHashCode() => Pattern.GetHashCode();
 
-		public Result Neglect(ref Source Source) {
+		protected internal override Result Neglect(ref Source Source) {
 			Int32 OriginalPosition = Source.Position;
 			Result Result = new Result("", true);
 			while (Result) {

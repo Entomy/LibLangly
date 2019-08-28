@@ -2,16 +2,7 @@
 	public static class StringExtensions {
 		#region Alternator
 
-		internal static Pattern Alternate(this String Left, Pattern Right) {
-			switch (Right) {
-			case ComplexPattern right:
-				return new ComplexPattern(new Alternator(Left, right.Head));
-			case PrimativePattern right:
-				return new ComplexPattern(new Alternator(Left, right.Head));
-			default:
-				throw new ArgumentException("Pattern type wasn't handled", nameof(Right));
-			}
-		}
+		internal static Pattern Alternate(this String Left, Pattern Right) => new Alternator(Left, Right);
 
 		#endregion
 
@@ -19,12 +10,10 @@
 
 		internal static Pattern Concatenate(this String Left, Pattern Right) {
 			switch (Right) {
-			case ComplexPattern right:
-				return new ComplexPattern(new ComplexConcatenator(Left, right.Head));
 			case PrimativePattern right:
-				return new PrimativePattern(new PrimativeConcatenator(Left, right.Head));
+				return new PrimativeConcatenator(Left, right);
 			default:
-				throw new ArgumentException("Pattern type wasn't handled", nameof(Right));
+				return new ComplexConcatenator(Left, Right);
 			}
 		}
 

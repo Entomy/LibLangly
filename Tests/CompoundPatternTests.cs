@@ -76,15 +76,17 @@ namespace Tests {
 			Result Result;
 
 			Result = Package.Consume("package Top\nend Top;");
-			Assert.That.Succeeds(Result);
+			//Assert.That.Succeeds(Result);
+			Assert.That.Captures("Top", Name);
 			Assert.That.Captures("package Top\nend Top;", Result);
 
 			Result = Package.Consume("package Top\npackage Nest\nend Nest;\nend Top;");
-			Assert.That.Succeeds(Result);
+			//Assert.That.Succeeds(Result);
+			Assert.That.Captures("Top", Name);
 			Assert.That.Captures("package Top\npackage Nest\nend Nest;\nend Top;", Result);
-		}
+	}
 
-		[TestMethod]
+	[TestMethod]
 		public void Number() {
 			Result Result;
 

@@ -12,31 +12,39 @@ namespace Tests {
 
 		[TestMethod]
 		public void Consume() {
-			Pattern Capturer = (+Pattern.Letter).Capture(out Capture Capture);
+			Capture Capture;
+			Pattern Capturer = (+Pattern.Letter).Capture(out Capture);
 			Result Result;
 
 			Result = Capturer.Consume("Hello");
-			Assert.That.Succeeds(Result);
 			Assert.That.Captures("Hello", Result);
 			Assert.That.Captures("Hello", Capture);
-
-			Result = ("Hello " & Capturer).Consume("Hello World");
 			Assert.That.Succeeds(Result);
-			Assert.That.Captures("Hello World", Result);
-			Assert.That.Captures("World", Capture);
-		}
 
-		[TestMethod]
-		public void ConsumeRange() {
-			Pattern Start = "Hello " & (+Pattern.Letter).Capture(out Capture Capture) & "!";
+			Pattern Start = "Hello " & (+Pattern.Letter).Capture(out Capture) & "!";
+
+			Result = Start.Consume("Hello World!");
+			Assert.That.Captures("Hello World!", Result);
+			Assert.That.Captures("World", Capture);
+			Assert.That.Succeeds(Result);
+
 			Pattern Stop = (Pattern)"Goodbye " & Capture & ".";
-			Result Result;
-			Pattern Range = (From: Start, To: Stop);
 
-			Result = Range.Consume("Hello World! How are you today? Goodbye World. Have a good day.");
+			Result = Stop.Consume("Goodbye World.");
+			Assert.That.Captures("Goodbye World.", Result);
 			Assert.That.Succeeds(Result);
-			Assert.That.Captures("Hello World! How are you today? Goodbye World.", Result);
-			Assert.That.Captures("World", Capture);
+
+			Result = Start.Consume("Hello Range!");
+			Assert.That.Captures("Hello Range!", Result);
+			Assert.That.Captures("Range", Capture);
+			Assert.That.Succeeds(Result);
+
+			Pattern Range = (Start, Stop);
+
+			Result = Range.Consume("Hello Range! How are you today? Goodbye Range. Have a good day.");
+			Assert.That.Captures("Range", Capture);
+			Assert.That.Captures("Hello Range! How are you today? Goodbye Range.", Result);
+			Assert.That.Succeeds(Result);
 		}
 	}
 }

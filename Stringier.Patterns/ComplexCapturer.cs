@@ -1,17 +1,17 @@
 ﻿namespace System.Text.Patterns {
-	internal sealed class ComplexCapturer : IComplexNode, IEquatable<ComplexCapturer> {
-		private readonly IComplexNode Pattern;
+	internal sealed class ComplexCapturer : ComplexPattern, IEquatable<ComplexCapturer> {
+		private readonly Pattern Pattern;
 
-		private readonly Capture Capture = new Capture();
+		private readonly Capture capture = new Capture();
 
-		internal ComplexCapturer(IComplexNode Pattern, out Capture Capture) {
+		internal ComplexCapturer(Pattern Pattern, out Capture capture) {
 			this.Pattern = Pattern;
-			Capture = this.Capture;
+			capture = this.capture;
 		}
 
-		public Result Consume(ref Source Source) {
+		public override Result Consume(ref Source Source) {
 			Result Result = Pattern.Consume(ref Source);
-			Capture.Value = Result;
+			capture.Value = Result;
 			return Result;
 		}
 
@@ -26,15 +26,23 @@
 			}
 		}
 
-		public Boolean Equals(String other) => Pattern.Equals(other);
+		public override Boolean Equals(ReadOnlySpan<Char> other) {
+			capture.Value = other.ToString();
+			return Pattern.Equals(other);
+		}
+
+		public override Boolean Equals(String other) {
+			capture.Value = other;
+			return Pattern.Equals(other);
+		}
 
 		public Boolean Equals(ComplexCapturer other) => Pattern.Equals(other);
 
 		public override Int32 GetHashCode() => Pattern.GetHashCode();
 
-		public Result Neglect(ref Source Source) {
+		protected internal override Result Neglect(ref Source Source) {
 			Result Result = Pattern.Neglect(ref Source);
-			Capture.Value = Result;
+			capture.Value = Result;
 			return Result;
 		}
 
