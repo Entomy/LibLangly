@@ -4,12 +4,16 @@
 [![Nuget](https://img.shields.io/nuget/dt/Stringier.svg?label=Stringier&logo=Nuget)](https://www.nuget.org/packages/Stringier/)
 [![Nuget](https://img.shields.io/nuget/dt/Stringier.Patterns.svg?label=Stringier.Patterns&logo=nuget)](https://www.nuget.org/packages/Stringier.Patterns/)
 
+# Documentation:
+
+Thanks to [GitHub Pages](https://pages.github.com/), documentation is available [here](https://entomy.github.io/Stringier/)
+
 # Subprojects:
 
-## [Stringier](https://github.com/Entomy/Stringier/blob/master/Stringier/README.md)
+## [Stringier](https://github.com/Entomy/Stringier/tree/master/Stringier)
 
 *Stringier* was born out of my typical use case of C#: working with text. While I generally really like the language, it could be better. Some of this is syntax related. Some of this is missing features. This project exists to remedy that.
 
-## [Stringier.Patterns](https://github.com/Entomy/Stringier/blob/master/Stringier.Patterns/README.md)
+## [Stringier.Patterns](https://github.com/Entomy/Stringier/tree/master/Stringier.Patterns)
 
 *Stringier.Patterns* extends *Stringier* with further support for pattern declaration and parsing of those patterns. If you're doing a lot of text parsing or text processing, this is probably of interest to you.
