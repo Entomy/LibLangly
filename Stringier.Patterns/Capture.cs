@@ -26,7 +26,7 @@
 
 		public Boolean Equals(String other) => Stringier.Equals(Value, other);
 
-		public override Int32 GetHashCode() => Value.GetHashCode();
+		public override Int32 GetHashCode() => base.GetHashCode();
 
 		public override String ToString() => $"{Value}";
 	}

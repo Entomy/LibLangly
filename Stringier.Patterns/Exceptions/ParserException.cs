@@ -4,11 +4,11 @@
 	/// </summary>
 	[Serializable]
 	public abstract class ParserException : StringierException {
-		public ParserException() { }
+		protected ParserException() { }
 
-		public ParserException(String message) : base(message) { }
+		protected ParserException(String message) : base(message) { }
 
-		public ParserException(String message, Exception inner) : base(message, inner) { }
+		protected ParserException(String message, Exception inner) : base(message, inner) { }
 
 		protected ParserException(
 		  Runtime.Serialization.SerializationInfo info,
