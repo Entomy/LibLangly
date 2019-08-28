@@ -52,5 +52,18 @@ namespace Tests {
 			Assert.That.Succeeds(Result);
 			Assert.That.Captures("\"Hello\\\"Goodbye\"", Result);
 		}
+
+		[TestMethod]
+		public void NestedConsume() {
+			Pattern Ranger = (From: "if", To: "end if", Nested: true);
+			Result Result;
+
+			Result = Ranger.Consume("if\nif\nend if\nbacon\nend if\nfoobar");
+			Assert.That.Succeeds(Result);
+			Assert.That.Captures("if\nif\nend if\nbacon\nend if", Result);
+
+			Result = Ranger.Consume("if\nif\nend if\nbacon\nfoobar");
+			Assert.That.Fails(Result);
+		}
 	}
 }

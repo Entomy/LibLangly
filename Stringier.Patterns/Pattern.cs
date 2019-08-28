@@ -102,6 +102,8 @@ namespace System.Text.Patterns {
 
 		public static implicit operator Pattern((Pattern From, Pattern To, Pattern Escape) Range) => new ComplexPattern(new EscapedRanger(Range.From, Range.To, Range.Escape));
 
+		public static implicit operator Pattern((Pattern From, Pattern To, Boolean Nested) Range) => Range.Nested ? new ComplexPattern(new NestedRanger(Range.From, Range.To)) : new ComplexPattern(new Ranger(Range.From, Range.To));
+
 		#endregion
 
 		#region Repeater
