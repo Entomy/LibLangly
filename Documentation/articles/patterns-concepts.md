@@ -12,8 +12,6 @@ Patterns form the base of this system. Similar to how patterns work in **Regex**
 
 `Pattern` was designed for complex grammars. `Regex` was designed for [regular languages](https://en.wikipedia.org/wiki/Regular_language), one of the simpliest forms of language. This makes `Patter` far more capable in what it can parse. In fact, the features of **Stringier.Patterns** was designed around needing to parse complex languages like programming languages.
 
-It's also worth mentioning that, unlike tools such as [flex](https://en.wikipedia.org/wiki/Flex_(lexical_analyser_generator)) or [bison](https://en.wikipedia.org/wiki/GNU_Bison), no preprocessing stage is required at all; the definitions exist in your source code, are written using syntax you are already familiar with, and are built by the compiler and runtime.
-
 ### Literal
 
 Literals in the context of `Pattern` are just like literals in your programming language. In fact, they are even the same thing.

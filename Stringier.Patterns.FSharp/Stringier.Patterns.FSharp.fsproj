@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Authors>Patrick Kelly</Authors>
+    <Description>Provides F# support for Stringier.Patterns</Description>
+    <Copyright>2019</Copyright>
+    <PackageProjectUrl>https://github.com/Entomy/Stringier</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Entomy/Stringier</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>fsharp, string, pattern, patterns, pattern matching, parser, parsers, parser combinator</PackageTags>
+    <Version>0.1.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="AlternatorExtensions.fs" />
+    <Compile Include="ConcatenatorExtensions.fs" />
+    <Compile Include="NegatorExtensions.fs" />
+    <Compile Include="OptorExtensions.fs" />
+    <Compile Include="RepeaterExtensions.fs" />
+    <Compile Include="SpannerExtensions.fs" />
+    <Compile Include="Functions.fs" />
+    <Compile Include="Operators.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Stringier.Patterns\Stringier.Patterns.csproj" />
+    <ProjectReference Include="..\Stringier\Stringier.csproj" />
+  </ItemGroup>
+
+</Project>

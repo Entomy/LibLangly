@@ -2,8 +2,8 @@
 using System.Text.Patterns;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Tests {
-	internal static class AssertExtensions {
+namespace System.Text.Patterns {
+	public static class AssertExtensions {
 
 		public static void Fails(this Assert Assert, Result Actual) {
 			if (Actual) { throw new AssertFailedException("Assert.That.Fails failed"); }

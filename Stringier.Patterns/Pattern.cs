@@ -67,6 +67,24 @@ namespace System.Text.Patterns {
 
 		#region Alternator
 
+		public static Pattern Alternator(Pattern Left, Pattern Right) => Left.Alternate(Right);
+
+		public static Pattern Alternator(Pattern Left, String Right) => Left.Alternate(Right);
+
+		public static Pattern Alternator(String Left, Pattern Right) => Left.Alternate(Right);
+
+		public static Pattern Alternator(Pattern Left, Char Right) => Left.Alternate(Right);
+
+		public static Pattern Alternator(Char Left, Pattern Right) => Left.Alternate(Right);
+
+		public static Pattern Alternator(String Left, String Right) => Left.Alternate(Right);
+
+		public static Pattern Alternator(String Left, Char Right) => Left.Alternate(Right);
+
+		public static Pattern Alternator(Char Left, String Right) => Left.Alternate(Right);
+
+		public static Pattern Alternator(Char Left, Char Right) => Left.Alternate(Right);
+
 		public abstract Pattern Alternate(Pattern Right);
 
 		public abstract Pattern Alternate(Char Right);
@@ -99,6 +117,24 @@ namespace System.Text.Patterns {
 
 		#region Concatenator
 
+		public static Pattern Concatenate(Pattern Left, Pattern Right) => Left.Concatenate(Right);
+
+		public static Pattern Concatenate(Pattern Left, String Right) => Left.Concatenate(Right);
+
+		public static Pattern Concatenate(String Left, Pattern Right) => Left.Concatenate(Right);
+
+		public static Pattern Concatenate(Pattern Left, Char Right) => Left.Concatenate(Right);
+
+		public static Pattern Concatenate(Char Left, Pattern Right) => Left.Concatenate(Right);
+
+		public static Pattern Concatenate(String Left, String Right) => Left.Concatenate(Right);
+
+		public static Pattern Concatenate(String Left, Char Right) => Left.Concatenate(Right);
+
+		public static Pattern Concatenate(Char Left, String Right) => Left.Concatenate(Right);
+
+		public static Pattern Concatenate(Char Left, Char Right) => Left.Concatenate(Right);
+
 		public abstract Pattern Concatenate(Pattern Right);
 
 		public abstract Pattern Concatenate(Char Right);
@@ -119,6 +155,13 @@ namespace System.Text.Patterns {
 
 		#region Negator
 
+		public static Pattern Negate(Pattern Pattern) => Pattern.Negate();
+
+		public static Pattern Negate(String Pattern) => new StringLiteral(Pattern).Negate();
+
+		public static Pattern Negate(Char Pattern) => new CharLiteral(Pattern).Negate();
+
+
 		public abstract Pattern Negate();
 
 		public static Pattern operator !(Pattern Pattern) => Pattern.Negate();
@@ -126,6 +169,12 @@ namespace System.Text.Patterns {
 		#endregion
 
 		#region Optor
+
+		public static Pattern Optional(Pattern Pattern) => Pattern.Optional();
+
+		public static Pattern Optional(String Pattern) => new StringLiteral(Pattern).Optional();
+
+		public static Pattern Optional(Char Pattern) => new CharLiteral(Pattern).Optional();
 
 		public abstract Pattern Optional();
 
@@ -145,6 +194,12 @@ namespace System.Text.Patterns {
 
 		#region Repeater
 
+		public static Pattern Repeat(Pattern Value, Int32 Count) => Value.Repeat(Count);
+
+		public static Pattern Repeat(String Value, Int32 Count) => new StringLiteral(Value).Repeat(Count);
+
+		public static Pattern Repeat(Char Value, Int32 Count) => new CharLiteral(Value).Repeat(Count);
+
 		public abstract Pattern Repeat(Int32 Count);
 
 		public static Pattern operator *(Pattern Left, Int32 Count) => Left.Repeat(Count);
@@ -152,6 +207,12 @@ namespace System.Text.Patterns {
 		#endregion
 
 		#region Spanner
+
+		public static Pattern Span(Pattern Pattern) => Pattern.Span();
+
+		public static Pattern Span(String Pattern) => new StringLiteral(Pattern).Span();
+
+		public static Pattern Span(Char Pattern) => new CharLiteral(Pattern).Span();
 
 		public abstract Pattern Span();
 
