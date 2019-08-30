@@ -4,11 +4,11 @@
 
 		#region Alternator
 
-		public override Pattern Alternate(Pattern Right) => new Alternator(this, Right);
+		internal override Pattern Alternate(Pattern Right) => new Alternator(this, Right);
 
-		public override Pattern Alternate(Char Right) => new Alternator(this, Right);
+		internal override Pattern Alternate(Char Right) => new Alternator(this, Right);
 
-		public override Pattern Alternate(String Right) => new Alternator(this, Right);
+		internal override Pattern Alternate(String Right) => new Alternator(this, Right);
 
 		#endregion
 
@@ -20,7 +20,7 @@
 
 		#region Concatenator
 
-		public override Pattern Concatenate(Pattern Right) {
+		internal override Pattern Concatenate(Pattern Right) {
 			switch (Right) {
 			case PrimativePattern right:
 				return new PrimativeConcatenator(this, right);
@@ -29,33 +29,33 @@
 			}
 		}
 
-		public override Pattern Concatenate(Char Right) => new PrimativeConcatenator(this, Right);
+		internal override Pattern Concatenate(Char Right) => new PrimativeConcatenator(this, Right);
 
-		public override Pattern Concatenate(String Right) => new PrimativeConcatenator(this, Right);
+		internal override Pattern Concatenate(String Right) => new PrimativeConcatenator(this, Right);
 
 		#endregion
 
 		#region Negator
 
-		public override Pattern Negate() => new PrimativeNegator(this);
+		internal override Pattern Negate() => new PrimativeNegator(this);
 
 		#endregion
 
 		#region Optor
 
-		public override Pattern Optional() => new Optor(this);
+		internal override Pattern Optional() => new Optor(this);
 
 		#endregion
 
 		#region Repeater
 
-		public override Pattern Repeat(Int32 Count) => new PrimativeRepeater(this, Count);
+		internal override Pattern Repeat(Int32 Count) => new PrimativeRepeater(this, Count);
 
 		#endregion
 
 		#region Spanner
 
-		public override Pattern Span() => new Spanner(this);
+		internal override Pattern Span() => new Spanner(this);
 
 		#endregion
 	}

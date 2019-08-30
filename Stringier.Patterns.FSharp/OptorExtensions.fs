@@ -1,8 +1,9 @@
 ﻿namespace System.Text.Patterns
 
 open System
+open System.Text.Patterns.Bindings
 
 type OptorExtensions =
-    static member Option(value:Pattern) = Pattern.Optional(value)
-    static member Option(value:String) = Pattern.Optional(value)
-    static member Option(value:Char) = Pattern.Optional(value)
+    static member Option(value:Pattern) = PatternBindings.Optor(value)
+    static member Option(value:String) = PatternBindings.Optor(value)
+    static member Option(value:Char) = PatternBindings.Optor(value)

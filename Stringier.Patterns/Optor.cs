@@ -39,7 +39,7 @@
 
 		#region Spanner
 
-		public override Pattern Span() => throw new PatternConstructionException("Options can not span, as it creates an infinite loop. You probably want to make a span optional instead.");
+		internal override Pattern Span() => throw new PatternConstructionException("Options can not span, as it creates an infinite loop. You probably want to make a span optional instead.");
 
 		#endregion
 	}
