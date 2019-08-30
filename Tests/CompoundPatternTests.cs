@@ -20,19 +20,16 @@ namespace Tests {
 
 		[TestMethod]
 		public void Comment() {
-			Pattern Range = (From: "--", To: Pattern.LineTerminator);
+			Pattern Range = "--" & +!(Pattern)"\n";
 			Result Result;
 
-			Result = Range.Consume("--This should fail");
-			Assert.That.Fails(Result);
-
 			Result = Range.Consume("--This is a comment\n");
+			Assert.That.Captures("--This is a comment", Result);
 			Assert.That.Succeeds(Result);
-			Assert.That.Captures("--This is a comment\n", Result);
 
 			Result = Range.Consume("--This is a comment\nExample_Function();");
+			Assert.That.Captures("--This is a comment", Result);
 			Assert.That.Succeeds(Result);
-			Assert.That.Captures("--This is a comment\n", Result);
 
 		}
 

@@ -5,6 +5,10 @@ namespace System.Text.Patterns.Bindings {
 	/// Holds useful definitions for creating bindings to <see cref="Pattern"/>
 	/// </summary>
 	public static class PatternBindings {
+		public static Pattern Literal(String String) => new StringLiteral(String);
+
+		public static Pattern Literal(Char Char) => new CharLiteral(Char);
+
 		public static Pattern Alternator(Pattern Left, Pattern Right) => Left.Alternate(Right);
 
 		public static Pattern Alternator(Pattern Left, String Right) => Left.Alternate(Right);
@@ -68,6 +72,5 @@ namespace System.Text.Patterns.Bindings {
 		public static Pattern Spanner(String Pattern) => new StringLiteral(Pattern).Span();
 
 		public static Pattern Spanner(Char Pattern) => new CharLiteral(Pattern).Span();
-
 	}
 }

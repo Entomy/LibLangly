@@ -8,7 +8,7 @@ namespace Benchmarks {
 	public class CompoundPatternComparison {
 		[Benchmark]
 		public Result CommentPattern() {
-			Pattern Range = (From: "--", To: Pattern.LineTerminator);
+			Pattern Range = "--" & +!(Pattern)"\n";
 			return Range.Consume("--Comment");
 		}
 
