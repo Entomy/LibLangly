@@ -7,7 +7,7 @@ namespace Benchmarks {
 	[ClrJob, CoreJob, CoreRtJob]
 	public class OptorComparison {
 
-		Pattern Optor = ~(Pattern)"Hello";
+		Pattern Optor = -(Pattern)"Hello";
 
 		Regex Regex = new Regex("^(Hello)?");
 

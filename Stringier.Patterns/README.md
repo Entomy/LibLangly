@@ -111,10 +111,12 @@ Negators exclude the specified pattern, instead consuming anything of the same l
 ### Optor
 
 ~~~~csharp
-Pattern patternName = ~pattern;
+Pattern patternName = -pattern;
 ~~~~
 
 Optors make the pattern completly optional, so success is always true, and are equivalent to the regex `(pattern)?`.
+
+The operator for declaring these used to be `~` instead of `-`. This had to be changed for two reasons. One is that both `!` and `~` are `Not` in VisualBasic, causing a collision that can't resolve in one case. The other is that the resolution it went with was `Not` being for optors, which just reads horribly. I appologize for any inconveniences this change may have caused, but this is still preview software, so issues like this are still being discovered and dealt with.
 
 ### Range Patterns
 

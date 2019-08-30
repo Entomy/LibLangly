@@ -44,7 +44,7 @@ namespace Tests {
 
 		[TestMethod]
 		public void ConsumeOptor() {
-			Pattern Negator = !~(Pattern)"Hello";
+			Pattern Negator = !-(Pattern)"Hello";
 
 			Assert.That.Captures("", Negator.Consume("Hello"));
 			Assert.That.Succeeds(Negator.Consume("Hello"));

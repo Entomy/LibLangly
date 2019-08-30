@@ -51,7 +51,7 @@ namespace Tests {
 
 		[TestMethod]
 		public void IPv4Address() {
-			Pattern Digit = (~(((Pattern)'1' | '2') & Pattern.DecimalDigitNumber) | Pattern.DecimalDigitNumber) & ~Pattern.DecimalDigitNumber;
+			Pattern Digit = (-(((Pattern)'1' | '2') & Pattern.DecimalDigitNumber) | Pattern.DecimalDigitNumber) & -Pattern.DecimalDigitNumber;
 			Pattern Address = Digit & "." & Digit & "." & Digit & "." & Digit;
 			Result Result;
 
@@ -90,7 +90,7 @@ namespace Tests {
 		public void Number() {
 			Result Result;
 
-			Pattern NumeralPattern = Pattern.DecimalDigitNumber & ~+("_" | Pattern.DecimalDigitNumber);
+			Pattern NumeralPattern = Pattern.DecimalDigitNumber & -+("_" | Pattern.DecimalDigitNumber);
 
 			Pattern ExtendedDigitPattern = Pattern.DecimalDigitNumber | "a" | "A" | "b" | "B" | "c" | "C" | "d" | "D" | "e" | "E" | "f" | "F";
 
@@ -98,9 +98,9 @@ namespace Tests {
 
 			Pattern SignPattern = (Pattern)"+" | "-";
 
-			Pattern ExponentPattern = ("E", StringComparison.OrdinalIgnoreCase) & ~SignPattern & NumeralPattern;
+			Pattern ExponentPattern = ("E", StringComparison.OrdinalIgnoreCase) & -SignPattern & NumeralPattern;
 
-			Pattern Numeral = NumeralPattern & ~("." & NumeralPattern) & ~ExponentPattern;
+			Pattern Numeral = NumeralPattern & -("." & NumeralPattern) & -ExponentPattern;
 
 			Result = Numeral.Consume("42");
 			Assert.That.Succeeds(Result);
@@ -116,7 +116,7 @@ namespace Tests {
 			Assert.That.Succeeds(Result);
 			Assert.That.Captures(".0", Result);
 
-			Pattern RealNumeral = Numeral & ~Fraction;
+			Pattern RealNumeral = Numeral & -Fraction;
 
 			Result = RealNumeral.Consume("42.0");
 			Assert.That.Succeeds(Result);
@@ -125,7 +125,7 @@ namespace Tests {
 
 		[TestMethod]
 		public void OptorSpanner() {
-			Pattern Pattern = ~+(Pattern)" ";
+			Pattern Pattern = -+(Pattern)" ";
 			Assert.That.Captures("  ", Pattern.Consume("  Hello"));
 			Assert.That.Captures("", Pattern.Consume("Hello"));
 		}
@@ -146,7 +146,7 @@ namespace Tests {
 
 		[TestMethod]
 		public void SpannerOptor() {
-			Assert.ThrowsException<PatternConstructionException>(() => +~(Pattern)" ");
+			Assert.ThrowsException<PatternConstructionException>(() => +-(Pattern)" ");
 		}
 
 		[TestMethod]
@@ -157,10 +157,10 @@ namespace Tests {
 
 		[TestMethod]
 		public void WebAddress() {
-			Pattern Protocol = "http" & ~(Pattern)"s" & "://";
-			Pattern Host = +(Pattern.Letter | Pattern.Number | "-") & "." & ~(+(Pattern.Letter | Pattern.Number | "-") & ".") & Pattern.Letter * 3;
+			Pattern Protocol = "http" & -(Pattern)"s" & "://";
+			Pattern Host = +(Pattern.Letter | Pattern.Number | "-") & "." & -(+(Pattern.Letter | Pattern.Number | "-") & ".") & Pattern.Letter * 3;
 			Pattern Location = +("/" & +(Pattern.Letter | Pattern.Number | "-" | "_"));
-			Pattern Address = ~Protocol & Host & ~Location;
+			Pattern Address = -Protocol & Host & -Location;
 			Result Result;
 
 			Result = Protocol.Consume("http://");

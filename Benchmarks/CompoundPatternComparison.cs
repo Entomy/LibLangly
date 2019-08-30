@@ -26,7 +26,7 @@ namespace Benchmarks {
 
 		[Benchmark]
 		public Result IPv4AddressPattern() {
-			Pattern Digit = (~(((Pattern)'1' | '2') & Pattern.DecimalDigitNumber) | Pattern.DecimalDigitNumber) & ~Pattern.DecimalDigitNumber;
+			Pattern Digit = (-(((Pattern)'1' | '2') & Pattern.DecimalDigitNumber) | Pattern.DecimalDigitNumber) & -Pattern.DecimalDigitNumber;
 			Pattern Address = Digit & "." & Digit & "." & Digit & "." & Digit;
 			return Address.Consume("192.168.1.1");
 		}
@@ -67,10 +67,10 @@ namespace Benchmarks {
 
 		[Benchmark]
 		public Result WebAddressPattern() {
-			Pattern Protocol = "http" & ~(Pattern)'s' & "://";
-			Pattern Host = +(Pattern.Letter | Pattern.Number | '-') & '.' & ~(+(Pattern.Letter | Pattern.Number | '-') & '.') & Pattern.Letter * 3;
+			Pattern Protocol = "http" & -(Pattern)'s' & "://";
+			Pattern Host = +(Pattern.Letter | Pattern.Number | '-') & '.' & -(+(Pattern.Letter | Pattern.Number | '-') & '.') & Pattern.Letter * 3;
 			Pattern Location = +('/' & +(Pattern.Letter | Pattern.Number | '-' | '_'));
-			Pattern Address = ~Protocol & Host & ~Location;
+			Pattern Address = -Protocol & Host & -Location;
 			return Address.Consume("http://www.google.com/about");
 		}
 

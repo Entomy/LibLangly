@@ -164,6 +164,11 @@ namespace System.Text.Patterns {
 
 		public abstract Pattern Negate();
 
+		/// <summary>
+		/// Marks the <paramref name="Pattern"/> as negated
+		/// </summary>
+		/// <param name="Pattern"></param>
+		/// <returns></returns>
 		public static Pattern operator !(Pattern Pattern) => Pattern.Negate();
 
 		#endregion
@@ -178,7 +183,12 @@ namespace System.Text.Patterns {
 
 		public abstract Pattern Optional();
 
-		public static Pattern operator ~(Pattern Pattern) => Pattern.Optional();
+		/// <summary>
+		/// Marks the <paramref name="Pattern"/> as optional
+		/// </summary>
+		/// <param name="Pattern"></param>
+		/// <returns></returns>
+		public static Pattern operator -(Pattern Pattern) => Pattern.Optional();
 
 		#endregion
 
@@ -202,7 +212,13 @@ namespace System.Text.Patterns {
 
 		public abstract Pattern Repeat(Int32 Count);
 
-		public static Pattern operator *(Pattern Left, Int32 Count) => Left.Repeat(Count);
+		/// <summary>
+		/// Marks the <paramref name="Pattern"/> as repeating <paramref name="Count"/> times
+		/// </summary>
+		/// <param name="Pattern"></param>
+		/// <param name="Count"></param>
+		/// <returns></returns>
+		public static Pattern operator *(Pattern Pattern, Int32 Count) => Pattern.Repeat(Count);
 
 		#endregion
 
@@ -216,6 +232,11 @@ namespace System.Text.Patterns {
 
 		public abstract Pattern Span();
 
+		/// <summary>
+		/// Marks the <paramref name="Pattern"/> as spanning
+		/// </summary>
+		/// <param name="Pattern"></param>
+		/// <returns></returns>
 		public static Pattern operator +(Pattern Pattern) => Pattern.Span();
 
 		#endregion

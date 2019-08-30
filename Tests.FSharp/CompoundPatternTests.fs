@@ -31,6 +31,7 @@ type CompoundPatternTests() =
         let mutable result = address.Consume("192.168.1.1")
         Assert.That.Captures("192.168.1.1", result)
 
+    // This test is against something in the FParsec documentation that they make out to be quite difficult, that is why it's only in the F# tests
     [<TestMethod>]
     member this.NumberInBracket() =
         let number = '[' >> Pattern.Number >> ']'
