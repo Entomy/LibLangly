@@ -8,7 +8,7 @@ It's also a cross language library, and will work on at least [C#](https://en.wi
 
 Patterns form the base of this system. Similar to how patterns work in **Regex** they represent what the parser will attempt to parse. However that's basically the end of the similarities.
 
-`Pattern` is a first class type. `Regex` lives inside of [String](https://docs.microsoft.com/en-us/dotnet/api/system.string?view=netframework-4.8). This has a major implication: You work with `Pattern` with whatever [.NET](https://dotnet.microsoft.com/) language you feel like. You assign them to proper variables, and can combine them. No [copypasta](https://www.urbandictionary.com/define.php?term=copypasta).
+`Pattern` is a first class type. `Regex` lives inside of [String](https://docs.microsoft.com/en-us/dotnet/api/system.string). This has a major implication: You work with `Pattern` with whatever [.NET](https://dotnet.microsoft.com/) language you feel like. You assign them to proper variables, and can combine them. No [copypasta](https://www.urbandictionary.com/define.php?term=copypasta).
 
 `Pattern` was designed for complex grammars. `Regex` was designed for [regular languages](https://en.wikipedia.org/wiki/Regular_language), one of the simpliest forms of language. This makes `Patter` far more capable in what it can parse. In fact, the features of **Stringier.Patterns** was designed around needing to parse complex languages like programming languages.
 
@@ -36,7 +36,7 @@ Method calls exist in the event a programming language does not support operator
 
 Combinators _combine_ patterns. This includes concepts like concatenation or alternates. Combinators are most often declared with binary operators, although there are exceptions.
 
-A special class of combinators is that of the `Range`, which is declared as a [`Tuple`](https://docs.microsoft.com/en-us/dotnet/api/system.tuple?view=netframework-4.8) instead. This serves two main purposes. One is that most languages do not have a satisfactory operator to use to represent the concept. Two is that certain `Range` types have third parameters and lack any possible operator.
+A special class of combinators is that of the `Range`, which is declared as a [`Tuple`](https://docs.microsoft.com/en-us/dotnet/api/system.tuple) instead. This serves two main purposes. One is that most languages do not have a satisfactory operator to use to represent the concept. Two is that certain `Range` types have third parameters and lack any possible operator.
 
 Method calls exist in the event a programming language does not support operator overloading. Their use is generally discouraged because it hampers readability.
 

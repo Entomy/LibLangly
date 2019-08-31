@@ -61,6 +61,96 @@ namespace System.Text.Patterns.Bindings {
 
 		public static Pattern Optor(Char Pattern) => new CharLiteral(Pattern).Optional();
 
+		public static Pattern Ranger(Pattern From, Pattern To) => new Ranger(From, To);
+
+		public static Pattern Ranger(Pattern From, String To) => new Ranger(From, new StringLiteral(To));
+
+		public static Pattern Ranger(String From, Pattern To) => new Ranger(new StringLiteral(From), To);
+
+		public static Pattern Ranger(Pattern From, Char To) => new Ranger(From, new CharLiteral(To));
+
+		public static Pattern Ranger(Char From, Pattern To) => new Ranger(new CharLiteral(From), To);
+
+		public static Pattern Ranger(String From, String To) => new Ranger(new StringLiteral(From), new StringLiteral(To));
+
+		public static Pattern Ranger(String From, Char To) => new Ranger(new StringLiteral(From), new CharLiteral(To));
+
+		public static Pattern Ranger(Char From, String To) => new Ranger(new CharLiteral(From), new StringLiteral(To));
+
+		public static Pattern Ranger(Char From, Char To) => new Ranger(new CharLiteral(From), new CharLiteral(To));
+
+		public static Pattern Ranger(Pattern From, Pattern To, Pattern Escape) => new EscapedRanger(From, To, Escape);
+
+		public static Pattern Ranger(Pattern From, Pattern To, String Escape) => new EscapedRanger(From, To, Escape);
+
+		public static Pattern Ranger(Pattern From, Pattern To, Char Escape) => new EscapedRanger(From, To, Escape);
+
+		public static Pattern Ranger(Pattern From, String To, Pattern Escape) => new EscapedRanger(From, To, Escape);
+
+		public static Pattern Ranger(Pattern From, String To, String Escape) => new EscapedRanger(From, To, Escape);
+
+		public static Pattern Ranger(Pattern From, String To, Char Escape) => new EscapedRanger(From, To, Escape);
+
+		public static Pattern Ranger(String From, Pattern To, Pattern Escape) => new EscapedRanger(From, To, Escape);
+
+		public static Pattern Ranger(String From, Pattern To, String Escape) => new EscapedRanger(From, To, Escape);
+
+		public static Pattern Ranger(String From, Pattern To, Char Escape) => new EscapedRanger(From, To, Escape);
+
+		public static Pattern Ranger(Pattern From, Char To, Pattern Escape) => new EscapedRanger(From, To, Escape);
+
+		public static Pattern Ranger(Pattern From, Char To, String Escape) => new EscapedRanger(From, To, Escape);
+
+		public static Pattern Ranger(Pattern From, Char To, Char Escape) => new EscapedRanger(From, To, Escape);
+
+		public static Pattern Ranger(Char From, Pattern To, Pattern Escape) => new EscapedRanger(From, To, Escape);
+
+		public static Pattern Ranger(Char From, Pattern To, String Escape) => new EscapedRanger(From, To, Escape);
+
+		public static Pattern Ranger(Char From, Pattern To, Char Escape) => new EscapedRanger(From, To, Escape);
+
+		public static Pattern Ranger(String From, String To, Pattern Escape) => new EscapedRanger(From, To, Escape);
+
+		public static Pattern Ranger(String From, String To, String Escape) => new EscapedRanger(From, To, Escape);
+
+		public static Pattern Ranger(String From, String To, Char Escape) => new EscapedRanger(From, To, Escape);
+
+		public static Pattern Ranger(String From, Char To, Pattern Escape) => new EscapedRanger(From, To, Escape);
+
+		public static Pattern Ranger(String From, Char To, String Escape) => new EscapedRanger(From, To, Escape);
+
+		public static Pattern Ranger(String From, Char To, Char Escape) => new EscapedRanger(From, To, Escape);
+
+		public static Pattern Ranger(Char From, String To, Pattern Escape) => new EscapedRanger(From, To, Escape);
+
+		public static Pattern Ranger(Char From, String To, String Escape) => new EscapedRanger(From, To, Escape);
+
+		public static Pattern Ranger(Char From, String To, Char Escape) => new EscapedRanger(From, To, Escape);
+		
+		public static Pattern Ranger(Char From, Char To, Pattern Escape) => new EscapedRanger(From, To, Escape);
+
+		public static Pattern Ranger(Char From, Char To, String Escape) => new EscapedRanger(From, To, Escape);
+
+		public static Pattern Ranger(Char From, Char To, Char Escape) => new EscapedRanger(From, To, Escape);
+
+		public static Pattern Ranger(Pattern From, Pattern To, Boolean Nested) => Nested ? new NestedRanger(From, To) : new Ranger(From, To);
+
+		public static Pattern Ranger(Pattern From, String To, Boolean Nested) => Nested ? new NestedRanger(From, To) : new Ranger(From, To);
+
+		public static Pattern Ranger(String From, Pattern To, Boolean Nested) => Nested ? new NestedRanger(From, To) : new Ranger(From, To);
+
+		public static Pattern Ranger(Pattern From, Char To, Boolean Nested) => Nested ? new NestedRanger(From, To) : new Ranger(From, To);
+
+		public static Pattern Ranger(Char From, Pattern To, Boolean Nested) => Nested ? new NestedRanger(From, To) : new Ranger(From, To);
+
+		public static Pattern Ranger(String From, String To, Boolean Nested) => Nested ? new NestedRanger(From, To) : new Ranger(From, To);
+
+		public static Pattern Ranger(String From, Char To, Boolean Nested) => Nested ? new NestedRanger(From, To) : new Ranger(From, To);
+
+		public static Pattern Ranger(Char From, String To, Boolean Nested) => Nested ? new NestedRanger(From, To) : new Ranger(From, To);
+
+		public static Pattern Ranger(Char From, Char To, Boolean Nested) => Nested ? new NestedRanger(From, To) : new Ranger(From, To);
+
 		public static Pattern Repeater(Pattern Value, Int32 Count) => Value.Repeat(Count);
 
 		public static Pattern Repeater(String Value, Int32 Count) => new StringLiteral(Value).Repeat(Count);
