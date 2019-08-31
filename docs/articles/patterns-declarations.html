@@ -72,6 +72,7 @@
 <p><strong>Stringier.Patterns</strong> primarily works through a declarative programming approach, as such, it's very important to understand the different ways to declare patterns and how they work.</p>
 <p>This article also serves to demonstrate a distinct advantage over <a href="https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex"><code>Regex</code></a>.</p>
 <h2 id="literal-declaration">Literal Declaration</h2>
+<p>Literals are just the exact value, converted into a <code>Pattern</code>. All literals perform exact matches, and are the base component of all <code>Pattern</code>.</p>
 <pre><code class="lang-csharp">Pattern patternName = 'c';
 //Matches the specified character
 </code></pre>
@@ -93,6 +94,7 @@
 <h2 id="combinators">Combinators</h2>
 <p>Combinators take two (or more) different patterns and combine them into a single pattern.</p>
 <h3 id="alternate">Alternate</h3>
+<p>Alternates allow either pattern to match. If one fails, the other will be attempted.</p>
 <pre><code class="lang-csharp">Pattern patternName = firstPattern | secondPattern;
 </code></pre>
 <pre><code class="lang-fsharp">let patternName = firstPattern || secondPattern
@@ -112,7 +114,9 @@
 </code></pre>
 <pre><code class="lang-fsharp">let patternName = &quot;First Literal&quot; || &quot;Second Literal&quot;
 </code></pre>
+<p><em>Note</em>: The order of these is dependent on the parser and specific behavior should not be assumed</p>
 <h3 id="concatenate">Concatenate</h3>
+<p>Concatenates the two patterns, checking them in order. This is identical in concept to string concatenation, and if concatenating literals, will function entirely the same way.</p>
 <pre><code class="lang-csharp">Pattern patternName = firstPattern &amp; secondPattern;
 </code></pre>
 <pre><code class="lang-fsharp">let patternName = firstPattern &amp;&amp; secondPattern
@@ -134,15 +138,18 @@
 </code></pre>
 <h3 id="range">Range</h3>
 <h4 id="basic-range">Basic Range</h4>
+<p>Matches everything from <code>From</code> to <code>To</code>.</p>
 <pre><code class="lang-csharp">Pattern patternName = (From: fromPattern, To: toPattern);
 </code></pre>
 <pre><code class="lang-fsharp">
 </code></pre>
 <h4 id="escaped-range">Escaped Range</h4>
+<p>Matches everything from <code>From</code> to <code>To</code>, but allows an <code>Escape</code> sequence.</p>
 <pre><code class="lang-csharp">Pattern patternName = (From: fromPattern, To: toPattern, Escape: escapePattern);
 </code></pre>
 <pre><code class="lang-fsharp"></code></pre>
 <h4 id="nested-range">Nested Range</h4>
+<p>Matches everything from <code>From</code> to <code>To</code>, but allows nesting of the pattern.</p>
 <pre><code class="lang-csharp">Pattern patternName = (From: fromPattern, To: toPattern, Nested: true);
 </code></pre>
 <pre><code class="lang-fsharp"></code></pre>
@@ -150,6 +157,7 @@
 <h2 id="modifiers">Modifiers</h2>
 <p>Modifiers alter the semantics of pattern</p>
 <h3 id="negate">Negate</h3>
+<p>Modifies the pattern in a way that it will match anything <em>not</em> the pattern. That is, it will match the same length of the pattern, but only if it would not be a match normally.</p>
 <pre><code class="lang-csharp">Pattern patternName = !otherPattern;
 </code></pre>
 <pre><code class="lang-fsharp">let patternName = -otherPattern
@@ -160,6 +168,7 @@
 <pre><code class="lang-fsharp">let patternName = -&quot;Literal&quot;
 </code></pre>
 <h3 id="option">Option</h3>
+<p>Modifies the pattern in a way that allows it to be present or absent and still match. This is accomplished by marking the result successful regardless of whether it really is or not.</p>
 <pre><code class="lang-csharp">Pattern patternName = -otherPattern;
 </code></pre>
 <pre><code class="lang-fsharp">let patternName = ~~otherPattern
@@ -170,6 +179,7 @@
 <pre><code class="lang-fsharp">let patternName = ~~&quot;Literal&quot;
 </code></pre>
 <h3 id="repeat">Repeat</h3>
+<p>Modifies the pattern in a way that repeats it a specified amount.</p>
 <pre><code class="lang-csharp">Pattern patternName = otherPattern * 3;
 </code></pre>
 <pre><code class="lang-fsharp">let patternName = otherPattern * 3
@@ -180,6 +190,7 @@
 <pre><code class="lang-fsharp">let patternName = &quot;Literal&quot; * 3
 </code></pre>
 <h3 id="span">Span</h3>
+<p>Modifies the pattern in a way that lets it repeat until it no longer can, &quot;spanning&quot; a section of text.</p>
 <pre><code class="lang-csharp">Pattern patternName = +otherPattern;
 </code></pre>
 <pre><code class="lang-fsharp">let patternName = +otherPattern

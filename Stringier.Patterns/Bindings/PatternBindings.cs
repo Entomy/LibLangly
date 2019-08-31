@@ -29,7 +29,7 @@ namespace System.Text.Patterns.Bindings {
 
 		public static Pattern Capturer(Pattern Pattern, out Capture Capture) => Pattern.Capture(out Capture);
 
-		public static Pattern Checker(Func<Char, Boolean> Check) => new Checker(Check);
+		public static Pattern Checker(Func<Char, Boolean> Check) => new CharChecker(Check);
 
 		public static Pattern Concatenator(Pattern Left, Pattern Right) => Left.Concatenate(Right);
 

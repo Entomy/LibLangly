@@ -1,6 +1,6 @@
 ﻿namespace System.Text.Patterns {
 	[Serializable]
-	public class ConsumeFailedException : Exception {
+	public class ConsumeFailedException : ParserException {
 		public ConsumeFailedException() { }
 
 		public ConsumeFailedException(String message) : base(message) { }
