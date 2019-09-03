@@ -9,6 +9,8 @@
 			this.Count = Count;
 		}
 
+		protected internal override Boolean CheckFirstChar(ref Source Source) => Pattern.CheckFirstChar(ref Source);
+
 		public override Result Consume(ref Source Source) {
 			Int32 OriginalPosition = Source.Position;
 			Result Result = new Result("", false);

@@ -23,6 +23,13 @@
 		protected internal override Int32 Length => String.Length;
 
 		/// <summary>
+		/// Check the first <see cref="Char"/> of the <paramref name="Source"/> against this <see cref="Pattern"/>
+		/// </summary>
+		/// <param name="Source"></param>
+		/// <returns>True if a full parse would possibly match, false if definately not</returns>
+		protected internal override Boolean CheckFirstChar(ref Source Source) => Stringier.Equals(String[0], Source.Peek());
+
+		/// <summary>
 		/// Attempt to consume the <see cref="ComplexPattern"/> from the <paramref name="Source"/>, adjusting the position in the <paramref name="Source"/> as appropriate
 		/// </summary>
 		/// <param name="Source">The <see cref="Source"/> to consume</param>

@@ -4,6 +4,8 @@
 
 		internal ComplexNegator(Pattern Pattern) => this.Pattern = Pattern;
 
+		protected internal override Boolean CheckFirstChar(ref Source Source) => Pattern.CheckFirstChar(ref Source);
+
 		public override Result Consume(ref Source Source) => Pattern.Neglect(ref Source);
 
 		public override Boolean Equals(Object obj) {

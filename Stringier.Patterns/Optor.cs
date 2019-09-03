@@ -4,6 +4,8 @@
 
 		internal Optor(Pattern Pattern) => this.Pattern = Pattern;
 
+		protected internal override Boolean CheckFirstChar(ref Source Source) => Pattern.CheckFirstChar(ref Source);
+
 		public override Result Consume(ref Source Source) {
 			Result Result = Pattern.Consume(ref Source);
 			Result.Success = true; //Consuming an optional pattern is always considered successful, the only thing that changes is what is captured
