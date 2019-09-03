@@ -17,7 +17,7 @@ type CompoundPatternComparison() =
     let phoneNumberPattern = Pattern.Number * 3 >> '-' >> Pattern.Number * 3 >> '-' >> Pattern.Number * 4
     let phoneNumberParsec = attempt (digit .>>. digit .>>. digit .>>. pchar '-' .>>. digit .>>. digit .>>. digit .>>. pchar '-' .>>. digit .>>. digit .>>. digit .>>. digit)
 
-    let stringLiteralPattern = erange "\"" "\"" "\""
+    let stringLiteralPattern = erange "\"" "\"" "\\\""
     let normalChar = satisfy (fun c -> c <> '\\' && c <> '"')
     let unescape c = match c with
                      | 'n' -> '\n'
