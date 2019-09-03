@@ -17,8 +17,6 @@ namespace System.Text.Patterns {
 
 		protected internal override Int32 Length => Pattern.Length * Count;
 
-		protected internal override Boolean CheckFirstChar(ref Source Source) => Pattern.CheckFirstChar(ref Source);
-
 		public override Result Consume(ref Source Source) {
 			if (this.Length > Source.Length) { return new Result(); }
 			Int32 length = 0;

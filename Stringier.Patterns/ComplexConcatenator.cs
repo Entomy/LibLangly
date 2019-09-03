@@ -17,8 +17,6 @@
 
 		internal ComplexConcatenator(String Left, Pattern Right) : this(new StringLiteral(Left), Right) { }
 
-		protected internal override Boolean CheckFirstChar(ref Source Source) => Left.CheckFirstChar(ref Source);
-
 		public override Result Consume(ref Source Source) {
 			Int32 OriginalPosition = Source.Position;
 			Result Result;

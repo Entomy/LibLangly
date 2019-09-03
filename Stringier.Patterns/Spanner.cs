@@ -4,8 +4,6 @@
 
 		internal Spanner(Pattern Pattern) => this.Pattern = Pattern;
 
-		protected internal override Boolean CheckFirstChar(ref Source Source) => Pattern.CheckFirstChar(ref Source);
-
 		public override Result Consume(ref Source Source) {
 			Int32 OriginalPosition = Source.Position;
 			Result Result = new Result("", true);

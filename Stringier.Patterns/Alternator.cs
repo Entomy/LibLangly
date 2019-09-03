@@ -16,18 +16,12 @@
 
 		internal Alternator(String Left, Pattern Right) : this(new StringLiteral(Left), Right) { }
 
-		protected internal override Boolean CheckFirstChar(ref Source Source) {
-			Boolean Result = Left.CheckFirstChar(ref Source);
-			return Result ? Result : Right.CheckFirstChar(ref Source);
-		}
-
 		public override Result Consume(ref Source Source) {
-			if (Left.CheckFirstChar(ref Source)) {
-				return Left.Consume(ref Source);
-			} else if (Right.CheckFirstChar(ref Source)) {
-				return Right.Consume(ref Source);
+			Result Result = Left.Consume(ref Source);
+			if (!Result) {
+				Result = Right.Consume(ref Source);
 			}
-			return new Result("", false);
+			return Result;
 		}
 
 		public override Boolean Equals(Object obj) {
@@ -50,12 +44,13 @@
 		public override Int32 GetHashCode() => Left.GetHashCode() | Right.GetHashCode();
 
 		protected internal override Result Neglect(ref Source Source) {
-			if (!Left.CheckFirstChar(ref Source)) {
-				return Left.Neglect(ref Source);
-			} else if (!Right.CheckFirstChar(ref Source)) {
-				return Right.Neglect(ref Source);
+			Int32 OriginalPosition = Source.Position;
+			Result Result = Right.Neglect(ref Source);
+			if (Result) {
+				Source.Position = OriginalPosition;
+				Result = Left.Neglect(ref Source);
 			}
-			return new Result("", false);
+			return Result;
 		}
 
 		public override String ToString() => $"({Left}|{Right})";

@@ -17,13 +17,6 @@ namespace System.Text.Patterns {
 
 		protected internal override Int32 Length => capture.Length;
 
-		/// <summary>
-		/// Check the first <see cref="Char"/> of the <paramref name="Source"/> against this <see cref="Pattern"/>
-		/// </summary>
-		/// <param name="Source"></param>
-		/// <returns>True if a full parse would possibly match, false if definately not</returns>
-		protected internal override Boolean CheckFirstChar(ref Source Source) => Stringier.Equals(capture.Value[0], Source.Peek());
-
 		public override Result Consume(ref Source Source) => capture.Value.Consume(ref Source, ComparisonType);
 
 		public override Boolean Equals(Object obj) {

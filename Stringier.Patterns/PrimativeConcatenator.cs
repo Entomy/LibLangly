@@ -23,8 +23,6 @@ namespace System.Text.Patterns {
 
 		protected internal override Int32 Length => Left.Length + Right.Length;
 
-		protected internal override Boolean CheckFirstChar(ref Source Source) => Left.CheckFirstChar(ref Source);
-
 		public override Result Consume(ref Source Source) {
 			if (this.Length > Source.Length) { return new Result(); }
 			Boolean Success =

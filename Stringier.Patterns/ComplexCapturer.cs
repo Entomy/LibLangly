@@ -9,8 +9,6 @@
 			capture = this.capture;
 		}
 
-		protected internal override Boolean CheckFirstChar(ref Source Source) => Pattern.CheckFirstChar(ref Source);
-
 		public override Result Consume(ref Source Source) {
 			Result Result = Pattern.Consume(ref Source);
 			capture.Value = Result;

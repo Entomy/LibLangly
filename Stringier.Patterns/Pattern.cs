@@ -6,23 +6,6 @@ namespace System.Text.Patterns {
 	/// </summary>
 	public abstract class Pattern : IEquatable<String> {
 		/// <summary>
-		/// Check the first <see cref="Char"/> of the <paramref name="Source"/> against this <see cref="Pattern"/>
-		/// </summary>
-		/// <param name="Source"></param>
-		/// <returns>True if a full parse would possibly match, false if definately not</returns>
-		internal protected Boolean CheckFirstChar(String Source) {
-			Source source = new Source(Source);
-			return CheckFirstChar(ref source);
-		}
-
-		/// <summary>
-		/// Check the first <see cref="Char"/> of the <paramref name="Source"/> against this <see cref="Pattern"/>
-		/// </summary>
-		/// <param name="Source"></param>
-		/// <returns>True if a full parse would possibly match, false if definately not</returns>
-		internal protected abstract Boolean CheckFirstChar(ref Source Source);
-
-		/// <summary>
 		/// Attempt to consume the <see cref="Pattern"/> from the <paramref name="Source"/>
 		/// </summary>
 		/// <param name="Source">The <see cref="String"/> to consume</param>
@@ -43,11 +26,6 @@ namespace System.Text.Patterns {
 
 		public abstract Boolean Equals(ReadOnlySpan<Char> other);
 
-		/// <summary>
-		/// Check the specified <see cref="String"/> exactly equals this <see cref="Pattern"/>
-		/// </summary>
-		/// <param name="other">The <see cref="String"/> to check</param>
-		/// <returns>True if an exact match, false if not an exact match</returns>
 		public abstract Boolean Equals(String other);
 
 		public abstract override Int32 GetHashCode();

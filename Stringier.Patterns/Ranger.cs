@@ -8,8 +8,6 @@
 			this.To = To;
 		}
 
-		protected internal override Boolean CheckFirstChar(ref Source Source) => From.CheckFirstChar(ref Source);
-
 		public override Result Consume(ref Source Source) {
 			Int32 OriginalPosition = Source.Position;
 			Result Result = From.Consume(ref Source);
