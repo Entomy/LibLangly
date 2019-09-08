@@ -4,6 +4,9 @@ namespace System.Text.Patterns.Bindings {
 	/// <summary>
 	/// Holds useful definitions for creating bindings to <see cref="Pattern"/>
 	/// </summary>
+	/// <remarks>
+	/// The entire point of this is to make it easy to declare bindings to this library from another language which does not map directly, such as F#.
+	/// </remarks>
 	public static class PatternBindings {
 		public static Pattern Literal(String String) => new StringLiteral(String);
 

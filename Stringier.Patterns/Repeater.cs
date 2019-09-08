@@ -4,11 +4,16 @@ using System.Text;
 
 namespace System.Text.Patterns {
 	internal sealed class Repeater : Pattern, IEquatable<Repeater> {
-
 		private readonly Int32 Count;
 
 		private readonly Pattern Pattern;
 
+		/// <summary>
+		/// Construct a new <see cref="Repeater"/>.
+		/// </summary>
+		/// <param name="Pattern"></param>
+		/// <param name="Count"></param>
+		/// <exception cref="ArgumentOutOfRangeException"><paramref name="Count"/> must be a positive integer.</exception>
 		internal Repeater(Pattern Pattern, Int32 Count) {
 			this.Pattern = Pattern;
 			if (Count < 1) { throw new ArgumentOutOfRangeException(nameof(Count), "Count must be positive"); }

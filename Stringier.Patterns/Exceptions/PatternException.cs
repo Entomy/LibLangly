@@ -9,8 +9,8 @@ namespace System.Text.Patterns {
 	[Serializable]
 	public abstract class PatternException : StringierException {
 		protected PatternException() { }
-		protected PatternException(string message) : base(message) { }
-		protected PatternException(string message, Exception inner) : base(message, inner) { }
+		protected PatternException(String message) : base(message) { }
+		protected PatternException(String message, Exception inner) : base(message, inner) { }
 		protected PatternException(
 		  Runtime.Serialization.SerializationInfo info,
 		  Runtime.Serialization.StreamingContext context) : base(info, context) { }

@@ -19,7 +19,7 @@ namespace System.Text.Patterns {
 		/// <param name="String">A <see cref="String"/> to use as a source</param>
 		public Source(String String) {
 			Buffer = String.AsSpan();
-			position = 0;
+			Position = 0;
 		}
 
 		/// <summary>
@@ -30,7 +30,7 @@ namespace System.Text.Patterns {
 			using (StreamReader Reader = new StreamReader(Stream)) {
 				Buffer = Reader.ReadToEnd().AsSpan();
 			}
-			position = 0;
+			Position = 0;
 		}
 
 		/// <summary>
@@ -39,7 +39,7 @@ namespace System.Text.Patterns {
 		/// <param name="Span">A <see cref="Span{T}"/> to use as a source</param>
 		public Source(Span<Char> Span) {
 			Buffer = Span;
-			position = 0;
+			Position = 0;
 		}
 
 		/// <summary>
@@ -48,7 +48,7 @@ namespace System.Text.Patterns {
 		/// <param name="Span">A <see cref="ReadOnlySpan{T}"/> to use as a source</param>
 		public Source(ReadOnlySpan<Char> Span) {
 			Buffer = Span;
-			position = 0;
+			Position = 0;
 		}
 
 		/// <summary>
@@ -62,23 +62,12 @@ namespace System.Text.Patterns {
 		public Int32 Length => Buffer.Length - Position;
 
 		/// <summary>
-		/// Private position value, manipulate with <see cref="Position"/> instead
-		/// </summary>
-		private Int32 position;
-
-		/// <summary>
 		/// The position within the source buffer
 		/// </summary>
 		/// <remarks>
 		/// This is for internal manipulation, such as resetting the index after a failed consume
 		/// </remarks>
-		internal Int32 Position {
-			get => position;
-			set {
-				position = value;
-				if (Length < 0) { throw new IndexOutOfRangeException(); }
-			}
-		}
+		internal Int32 Position { get; set; }
 
 		/// <summary>
 		/// Peek at the next <see cref="Char"/> without advancing the position
