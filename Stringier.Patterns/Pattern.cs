@@ -70,20 +70,55 @@ namespace System.Text.Patterns {
 
 		internal virtual Pattern Alternate(String Right) => new Alternator(this, Right);
 
+		/// <summary>
+		/// Declares <paramref name="Right"/> to be an alternate of <paramref name="Left"/>
+		/// </summary>
+		/// <param name="Left">The <see cref="Pattern"/> to check first</param>
+		/// <param name="Right">The <see cref="Pattern"/> to check if <paramref name="Left"/> does not match</param>
+		/// <returns></returns>
 		public static Pattern operator |(Pattern Left, Pattern Right) => Left.Alternate(Right);
 
+		/// <summary>
+		/// Declares <paramref name="Right"/> to be an alternate of <paramref name="Left"/>
+		/// </summary>
+		/// <param name="Left">The <see cref="Pattern"/> to check first</param>
+		/// <param name="Right">The <see cref="Char"/> to check if <paramref name="Left"/> does not match</param>
+		/// <returns></returns>
 		public static Pattern operator |(Pattern Left, Char Right) => Left.Alternate(Right);
 
+		/// <summary>
+		/// Declares <paramref name="Right"/> to be an alternate of <paramref name="Left"/>
+		/// </summary>
+		/// <param name="Left">The <see cref="Char"/> to check first</param>
+		/// <param name="Right">The <see cref="Pattern"/> to check if <paramref name="Left"/> does not match</param>
+		/// <returns></returns>
 		public static Pattern operator |(Char Left, Pattern Right) => Left.Alternate(Right);
 
+		/// <summary>
+		/// Declares <paramref name="Right"/> to be an alternate of <paramref name="Left"/>
+		/// </summary>
+		/// <param name="Left">The <see cref="Pattern"/> to check first</param>
+		/// <param name="Right">The <see cref="String"/> to check if <paramref name="Left"/> does not match</param>
+		/// <returns></returns>
 		public static Pattern operator |(Pattern Left, String Right) => Left.Alternate(Right);
 
+		/// <summary>
+		/// Declares <paramref name="Right"/> to be an alternate of <paramref name="Left"/>
+		/// </summary>
+		/// <param name="Left">The <see cref="String"/> to check first</param>
+		/// <param name="Right">The <see cref="Pattern"/> to check if <paramref name="Left"/> does not match</param>
+		/// <returns></returns>
 		public static Pattern operator |(String Left, Pattern Right) => Left.Alternate(Right);
 
 		#endregion
 
 		#region Capturer
 
+		/// <summary>
+		/// Declares this <see cref="Pattern"/> should be captured into <paramref name="Capture"/> for later reference
+		/// </summary>
+		/// <param name="Capture">A <see cref="Patterns.Capture"/> object to store into.</param>
+		/// <returns></returns>
 		public virtual Pattern Capture(out Capture Capture) => new Capturer(this, out Capture);
 
 		#endregion
@@ -102,14 +137,44 @@ namespace System.Text.Patterns {
 
 		internal virtual Pattern Concatenate(String Right) => new Concatenator(this, Right);
 
+		/// <summary>
+		/// Concatenates the patterns so that <paramref name="Left"/> comes before <paramref name="Right"/>
+		/// </summary>
+		/// <param name="Left">The preceeding <see cref="Pattern"/></param>
+		/// <param name="Right">The succeeding <see cref="Pattern"/></param>
+		/// <returns></returns>
 		public static Pattern operator &(Pattern Left, Pattern Right) => Left.Concatenate(Right);
 
+		/// <summary>
+		/// Concatenates the patterns so that <paramref name="Left"/> comes before <paramref name="Right"/>
+		/// </summary>
+		/// <param name="Left">The preceeding <see cref="Pattern"/></param>
+		/// <param name="Right">The succeeding <see cref="Char"/></param>
+		/// <returns></returns>
 		public static Pattern operator &(Pattern Left, Char Right) => Left.Concatenate(Right);
 
+		/// <summary>
+		/// Concatenates the patterns so that <paramref name="Left"/> comes before <paramref name="Right"/>
+		/// </summary>
+		/// <param name="Left">The preceeding <see cref="Char"/></param>
+		/// <param name="Right">The succeeding <see cref="Pattern"/></param>
+		/// <returns></returns>
 		public static Pattern operator &(Char Left, Pattern Right) => Left.Concatenate(Right);
 
+		/// <summary>
+		/// Concatenates the patterns so that <paramref name="Left"/> comes before <paramref name="Right"/>
+		/// </summary>
+		/// <param name="Left">The preceeding <see cref="Pattern"/></param>
+		/// <param name="Right">The succeeding <see cref="String"/></param>
+		/// <returns></returns>
 		public static Pattern operator &(Pattern Left, String Right) => Left.Concatenate(Right);
 
+		/// <summary>
+		/// Concatenates the patterns so that <paramref name="Left"/> comes before <paramref name="Right"/>
+		/// </summary>
+		/// <param name="Left">The preceeding <see cref="String"/></param>
+		/// <param name="Right">The succeeding <see cref="Pattern"/></param>
+		/// <returns></returns>
 		public static Pattern operator &(String Left, Pattern Right) => Left.Concatenate(Right);
 
 		#endregion

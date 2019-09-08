@@ -13,5 +13,7 @@ module NegatorExtensions =
 
     let inline negate< ^t, ^a, ^b     when (^t or ^a) : (static member Negate : ^a -> ^b     )> value      = ((^t or ^a) : (static member Negate : ^a -> ^b     )(value))
 
-    /// <summary></summary>
+    /// <summary>
+    /// Marks the <paramref name="value"/> as negated
+    /// </summary>
     let inline ( ~- ) value = negate<Binding, _, _> value

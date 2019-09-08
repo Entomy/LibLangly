@@ -13,5 +13,7 @@ module OptorExtensions =
 
     let inline option< ^t, ^a, ^b     when (^t or ^a) : (static member Option : ^a -> ^b     )> value      = ((^t or ^a) : (static member Option : ^a -> ^b     )(value))
 
-    /// <summary></summary>
+    /// <summary>
+    /// Marks the <paramref name="value"/> as optional
+    /// </summary>
     let inline ( ~~ ) value = option<Binding, _, _> value

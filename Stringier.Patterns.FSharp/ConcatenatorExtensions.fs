@@ -19,6 +19,10 @@ module ConcatenatorExtensions =
 
     let inline concat< ^t, ^a, ^b, ^c when (^t or ^a) : (static member Concat : ^a * ^b -> ^c)> left right = ((^t or ^a) : (static member Concat : ^a * ^b -> ^c)(left, right))
 
-    /// <summary></summary>
+    /// <summary>
+    /// Concatenates the patterns so that <paramref name="left"/> comes before <paramref name="right"/>
+    /// </summary>
+    /// <param name="left">The preceeding pattern</param>
+    /// <param name="right">The succeeding pattern</param>
     let inline ( >> ) left right = concat<Binding, _, _, _> left right
 

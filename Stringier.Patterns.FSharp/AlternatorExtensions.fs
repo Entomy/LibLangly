@@ -21,5 +21,9 @@ module AlternatorExtensions =
 
     let inline altern< ^t, ^a, ^b, ^c when (^t or ^a) : (static member Altern : ^a * ^b -> ^c)> left right = ((^t or ^a) : (static member Altern : ^a * ^b -> ^c)(left, right))
 
-    /// <summary></summary>
+    /// <summary>
+    /// Declares <paramref name="right"/> to be an alternate of <paramref name="left"/>
+    /// </summary>
+    /// <param name="left">The pattern to check first</param>
+    /// <param name="right">The pattern to check if <paramref name="left"/> does not match</param>
     let inline ( || ) left right = altern<Binding, _, _, _> left right

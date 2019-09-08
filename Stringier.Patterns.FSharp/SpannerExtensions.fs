@@ -12,5 +12,7 @@ module SpannerExtensions =
 
     let inline spannr< ^t, ^a, ^b     when (^t or ^a) : (static member Spannr : ^a -> ^b     )> value      = ((^t or ^a) : (static member Spannr : ^a -> ^b     )(value))
 
-    /// <summary></summary>
+    /// <summary>
+    /// Marks the <paramref name="value"/> as spanning
+    /// </summary>
     let inline ( ~+ ) value = spannr<Binding, _, _> value
