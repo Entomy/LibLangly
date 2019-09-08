@@ -29,7 +29,7 @@ Pattern patternName = ("Text to match", StringComparison.Ordinal);
 //Matches the entire peice of text using ordinal case-sensitive rules
 ~~~~
 ~~~~fsharp
-// F# doesn't support this yet
+let patternName = p ("Text to match", StringComparison.Ordinal);
 ~~~~
 
 As F# does not support implicit conversions, `p` exists as a function to do this conversion. The name comes from the convention used with [`FParsec`](http://www.quanttec.com/fparsec/). Note that you should only need to do this for literals, as pattern operators were made sufficiently generic to automagically convert `Char` and `String`.
@@ -114,7 +114,7 @@ Matches everything from `From` to `To`.
 Pattern patternName = (From: fromPattern, To: toPattern);
 ~~~~
 ~~~~fsharp
-
+let patternName = range fromPattern toPattern
 ~~~~
 
 #### Escaped Range
@@ -125,6 +125,7 @@ Matches everything from `From` to `To`, but allows an `Escape` sequence.
 Pattern patternName = (From: fromPattern, To: toPattern, Escape: escapePattern);
 ~~~~
 ~~~~fsharp
+let patternName = erange fromPattern toPattern escapePattern
 ~~~~
 
 #### Nested Range
@@ -135,6 +136,7 @@ Matches everything from `From` to `To`, but allows nesting of the pattern.
 Pattern patternName = (From: fromPattern, To: toPattern, Nested: true);
 ~~~~
 ~~~~fsharp
+let patternName = nrange fromPattern toPattern
 ~~~~
 
 *Note*: if `Nested: false` instead, a `Basic Range` is constructed as if `Nested:` was never declared.

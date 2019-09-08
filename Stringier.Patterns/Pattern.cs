@@ -304,19 +304,79 @@ namespace System.Text.Patterns {
 
 		public static readonly Pattern UppercaseLetter = new CharChecker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.UppercaseLetter);
 
-		public static readonly Pattern Letter = LowercaseLetter | TitlecaseLetter | UppercaseLetter;
+		public static readonly Pattern Letter = new CharChecker((Char) => Char.GetUnicodeCategory() switch {
+			UnicodeCategory.UppercaseLetter => true,
+			UnicodeCategory.LowercaseLetter => true,
+			UnicodeCategory.TitlecaseLetter => true,
+			_ => false
+		});
 
-		public static readonly Pattern Mark = EnclosingMark | NonSpacingMark | SpacingCombiningMark;
+		public static readonly Pattern Mark = new CharChecker((Char) => Char.GetUnicodeCategory() switch {
+			UnicodeCategory.EnclosingMark => true,
+			UnicodeCategory.NonSpacingMark => true,
+			UnicodeCategory.SpacingCombiningMark => true,
+			_ => false
+		});
 
-		public static readonly Pattern Number = DecimalDigitNumber | LetterNumber | OtherNumber;
+		public static readonly Pattern Number = new CharChecker((Char) => Char.GetUnicodeCategory() switch {
+			UnicodeCategory.DecimalDigitNumber => true,
+			UnicodeCategory.LetterNumber => true,
+			UnicodeCategory.OtherNumber => true,
+			_ => false
+		});
 
-		public static readonly Pattern Punctuation = ConnectorPunctutation | DashPunctutation | FinalQuotePunctuation | InitialQuotePunctuation | OpenPunctuation | OtherPunctuation;
+		public static readonly Pattern Punctuation = new CharChecker((Char) => Char.GetUnicodeCategory() switch {
+			UnicodeCategory.ConnectorPunctuation => true,
+			UnicodeCategory.DashPunctuation => true,
+			UnicodeCategory.FinalQuotePunctuation => true,
+			UnicodeCategory.InitialQuotePunctuation => true,
+			UnicodeCategory.OpenPunctuation => true,
+			UnicodeCategory.ClosePunctuation => true,
+			UnicodeCategory.OtherPunctuation => true,
+			_ => false
+		});
 
-		public static readonly Pattern Symbol = CurrencySymbol | MathSymbol | ModifierSymbol | OtherSymbol;
+		public static readonly Pattern Symbol = new CharChecker((Char) => Char.GetUnicodeCategory() switch {
+			UnicodeCategory.CurrencySymbol => true,
+			UnicodeCategory.MathSymbol => true,
+			UnicodeCategory.ModifierSymbol => true,
+			UnicodeCategory.OtherSymbol => true,
+			_ => false
+		});
 
-		public static readonly Pattern Separator = LineSeparator | ParagraphSeparator | SpaceSeparator;
+		public static readonly Pattern Separator = new CharChecker((Char) => Char.GetUnicodeCategory() switch {
+			UnicodeCategory.LineSeparator => true,
+			UnicodeCategory.ParagraphSeparator => true,
+			UnicodeCategory.SpaceSeparator => true,
+			_ => false
+		});
 
-		public static readonly Pattern Graphic = Letter | Mark | Number | Punctuation | Symbol | SpaceSeparator;
+		public static readonly Pattern Graphic = new CharChecker((Char) => Char.GetUnicodeCategory() switch {
+			UnicodeCategory.UppercaseLetter => true,
+			UnicodeCategory.LowercaseLetter => true,
+			UnicodeCategory.TitlecaseLetter => true,
+			UnicodeCategory.EnclosingMark => true,
+			UnicodeCategory.NonSpacingMark => true,
+			UnicodeCategory.SpacingCombiningMark => true,
+			UnicodeCategory.DecimalDigitNumber => true,
+			UnicodeCategory.LetterNumber => true,
+			UnicodeCategory.OtherNumber => true,
+			UnicodeCategory.ConnectorPunctuation => true,
+			UnicodeCategory.DashPunctuation => true,
+			UnicodeCategory.FinalQuotePunctuation => true,
+			UnicodeCategory.InitialQuotePunctuation => true,
+			UnicodeCategory.OpenPunctuation => true,
+			UnicodeCategory.ClosePunctuation => true,
+			UnicodeCategory.OtherPunctuation => true,
+			UnicodeCategory.CurrencySymbol => true,
+			UnicodeCategory.MathSymbol => true,
+			UnicodeCategory.ModifierSymbol => true,
+			UnicodeCategory.OtherSymbol => true,
+			UnicodeCategory.LineSeparator => true,
+			UnicodeCategory.ParagraphSeparator => true,
+			UnicodeCategory.SpaceSeparator => true,
+			_ => false
+		});
 
 		#endregion
 

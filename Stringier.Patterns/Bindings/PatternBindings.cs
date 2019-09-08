@@ -7,7 +7,11 @@ namespace System.Text.Patterns.Bindings {
 	public static class PatternBindings {
 		public static Pattern Literal(String String) => new StringLiteral(String);
 
+		public static Pattern Literal(String String, StringComparison ComparisonType) => new StringLiteral(String, ComparisonType);
+
 		public static Pattern Literal(Char Char) => new CharLiteral(Char);
+
+		public static Pattern Literal(Char Char, StringComparison ComparisonType) => new CharLiteral(Char, ComparisonType);
 
 		public static Pattern Alternator(Pattern Left, Pattern Right) => Left.Alternate(Right);
 

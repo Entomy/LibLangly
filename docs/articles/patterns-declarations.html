@@ -88,7 +88,7 @@
 <pre><code class="lang-csharp">Pattern patternName = (&quot;Text to match&quot;, StringComparison.Ordinal);
 //Matches the entire peice of text using ordinal case-sensitive rules
 </code></pre>
-<pre><code class="lang-fsharp">// F# doesn't support this yet
+<pre><code class="lang-fsharp">let patternName = p (&quot;Text to match&quot;, StringComparison.Ordinal);
 </code></pre>
 <p>As F# does not support implicit conversions, <code>p</code> exists as a function to do this conversion. The name comes from the convention used with <a href="http://www.quanttec.com/fparsec/"><code>FParsec</code></a>. Note that you should only need to do this for literals, as pattern operators were made sufficiently generic to automagically convert <code>Char</code> and <code>String</code>.</p>
 <h2 id="combinators">Combinators</h2>
@@ -141,18 +141,20 @@
 <p>Matches everything from <code>From</code> to <code>To</code>.</p>
 <pre><code class="lang-csharp">Pattern patternName = (From: fromPattern, To: toPattern);
 </code></pre>
-<pre><code class="lang-fsharp">
+<pre><code class="lang-fsharp">let patternName = range fromPattern toPattern
 </code></pre>
 <h4 id="escaped-range">Escaped Range</h4>
 <p>Matches everything from <code>From</code> to <code>To</code>, but allows an <code>Escape</code> sequence.</p>
 <pre><code class="lang-csharp">Pattern patternName = (From: fromPattern, To: toPattern, Escape: escapePattern);
 </code></pre>
-<pre><code class="lang-fsharp"></code></pre>
+<pre><code class="lang-fsharp">let patternName = erange fromPattern toPattern escapePattern
+</code></pre>
 <h4 id="nested-range">Nested Range</h4>
 <p>Matches everything from <code>From</code> to <code>To</code>, but allows nesting of the pattern.</p>
 <pre><code class="lang-csharp">Pattern patternName = (From: fromPattern, To: toPattern, Nested: true);
 </code></pre>
-<pre><code class="lang-fsharp"></code></pre>
+<pre><code class="lang-fsharp">let patternName = nrange fromPattern toPattern
+</code></pre>
 <p><em>Note</em>: if <code>Nested: false</code> instead, a <code>Basic Range</code> is constructed as if <code>Nested:</code> was never declared.</p>
 <h2 id="modifiers">Modifiers</h2>
 <p>Modifiers alter the semantics of pattern</p>
