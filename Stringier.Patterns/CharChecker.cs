@@ -12,12 +12,13 @@
 		/// <summary>
 		/// Construct a new <see cref="CharChecker"/> from the specified <paramref name="Check"/>
 		/// </summary>
+		/// <param name="Name">The name to refer to this as</param>
 		/// <param name="Check">A <see cref="Func{T, TResult}"/> taking a <see cref="Char"/> and returning a <see cref="Boolean"/></param>
-		internal CharChecker(Func<Char, Boolean> Check) => this.Check = Check;
+		internal CharChecker(String Name, Func<Char, Boolean> Check) : base(Name) => this.Check = Check;
 
 		internal override void Consume(ref Source Source, ref Result Result) {
 			if (Source.Length == 0) {
-				Result.Error = new EndOfSourceError(Expected: Check.ToString());
+				Result.Error = new EndOfSourceError(Expected: ToString());
 			} else {
 				if (Check(Source.Peek())) {
 					Source.Position++;
@@ -70,6 +71,6 @@
 		/// Returns a string that represents the current object.
 		/// </summary>
 		/// <returns>A string that represents the current object.</returns>
-		public override String ToString() => $"{Check}";
+		public override String ToString() => $"┋{Name}┋";
 	}
 }

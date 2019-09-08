@@ -20,7 +20,7 @@ namespace Tests {
 
 		[TestMethod]
 		public void ConsumeChecker() {
-			Pattern Negator = !(Pattern)((Char) => 0x30 <= Char && Char <= 0x39);
+			Pattern Negator = !(Pattern)(nameof(Negator), (Char) => 0x30 <= Char && Char <= 0x39);
 			Assert.That.Captures("", Negator.Consume("3"));
 			Assert.That.Captures("", Negator.Consume("7"));
 			Assert.That.Captures("A", Negator.Consume("A"));

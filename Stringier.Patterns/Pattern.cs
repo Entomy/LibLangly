@@ -125,7 +125,7 @@ namespace System.Text.Patterns {
 
 		#region Checker
 
-		public static implicit operator Pattern(Func<Char, Boolean> Check) => new CharChecker(Check);
+		public static implicit operator Pattern((String Name, Func<Char, Boolean> Check) Checker) => new CharChecker(Checker.Name, Checker.Check);
 
 		#endregion
 
@@ -244,88 +244,88 @@ namespace System.Text.Patterns {
 
 		#region Unicode Category Patterns
 
-		public static readonly Pattern ClosePunctuation = new CharChecker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.ClosePunctuation);
+		public static readonly Pattern ClosePunctuation = new CharChecker("[Pe]", (Char) => Char.GetUnicodeCategory() == UnicodeCategory.ClosePunctuation);
 
-		public static readonly Pattern ConnectorPunctutation = new CharChecker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.ConnectorPunctuation);
+		public static readonly Pattern ConnectorPunctutation = new CharChecker("[Pc]", (Char) => Char.GetUnicodeCategory() == UnicodeCategory.ConnectorPunctuation);
 
-		public static readonly Pattern Control = new CharChecker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.Control);
+		public static readonly Pattern Control = new CharChecker("[Cc]", (Char) => Char.GetUnicodeCategory() == UnicodeCategory.Control);
 
-		public static readonly Pattern CurrencySymbol = new CharChecker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.CurrencySymbol);
+		public static readonly Pattern CurrencySymbol = new CharChecker("[Sc]", (Char) => Char.GetUnicodeCategory() == UnicodeCategory.CurrencySymbol);
 
-		public static readonly Pattern DashPunctutation = new CharChecker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.DashPunctuation);
+		public static readonly Pattern DashPunctutation = new CharChecker("[Pd]", (Char) => Char.GetUnicodeCategory() == UnicodeCategory.DashPunctuation);
 
-		public static readonly Pattern DecimalDigitNumber = new CharChecker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.DecimalDigitNumber);
+		public static readonly Pattern DecimalDigitNumber = new CharChecker("[Nd]", (Char) => Char.GetUnicodeCategory() == UnicodeCategory.DecimalDigitNumber);
 
-		public static readonly Pattern EnclosingMark = new CharChecker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.EnclosingMark);
+		public static readonly Pattern EnclosingMark = new CharChecker("[Me]", (Char) => Char.GetUnicodeCategory() == UnicodeCategory.EnclosingMark);
 
-		public static readonly Pattern FinalQuotePunctuation = new CharChecker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.FinalQuotePunctuation);
+		public static readonly Pattern FinalQuotePunctuation = new CharChecker("[Pf]", (Char) => Char.GetUnicodeCategory() == UnicodeCategory.FinalQuotePunctuation);
 
-		public static readonly Pattern Format = new CharChecker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.Format);
+		public static readonly Pattern Format = new CharChecker("[Cf]", (Char) => Char.GetUnicodeCategory() == UnicodeCategory.Format);
 
-		public static readonly Pattern InitialQuotePunctuation = new CharChecker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.InitialQuotePunctuation);
+		public static readonly Pattern InitialQuotePunctuation = new CharChecker("[Pi]", (Char) => Char.GetUnicodeCategory() == UnicodeCategory.InitialQuotePunctuation);
 
-		public static readonly Pattern LetterNumber = new CharChecker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.LetterNumber);
+		public static readonly Pattern LetterNumber = new CharChecker("[Nl]", (Char) => Char.GetUnicodeCategory() == UnicodeCategory.LetterNumber);
 
-		public static readonly Pattern LineSeparator = new CharChecker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.LineSeparator);
+		public static readonly Pattern LineSeparator = new CharChecker("[Zl]", (Char) => Char.GetUnicodeCategory() == UnicodeCategory.LineSeparator);
 
-		public static readonly Pattern LowercaseLetter = new CharChecker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.LowercaseLetter);
+		public static readonly Pattern LowercaseLetter = new CharChecker("[Ll]", (Char) => Char.GetUnicodeCategory() == UnicodeCategory.LowercaseLetter);
 
-		public static readonly Pattern MathSymbol = new CharChecker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.MathSymbol);
+		public static readonly Pattern MathSymbol = new CharChecker("[Sm]", (Char) => Char.GetUnicodeCategory() == UnicodeCategory.MathSymbol);
 
-		public static readonly Pattern ModifierLetter = new CharChecker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.ModifierLetter);
+		public static readonly Pattern ModifierLetter = new CharChecker("[Lm]", (Char) => Char.GetUnicodeCategory() == UnicodeCategory.ModifierLetter);
 
-		public static readonly Pattern ModifierSymbol = new CharChecker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.ModifierSymbol);
+		public static readonly Pattern ModifierSymbol = new CharChecker("[Sk]", (Char) => Char.GetUnicodeCategory() == UnicodeCategory.ModifierSymbol);
 
-		public static readonly Pattern NonSpacingMark = new CharChecker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.NonSpacingMark);
+		public static readonly Pattern NonSpacingMark = new CharChecker("[Mn]", (Char) => Char.GetUnicodeCategory() == UnicodeCategory.NonSpacingMark);
 
-		public static readonly Pattern OpenPunctuation = new CharChecker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.OpenPunctuation);
+		public static readonly Pattern OpenPunctuation = new CharChecker("[Ps]", (Char) => Char.GetUnicodeCategory() == UnicodeCategory.OpenPunctuation);
 
-		public static readonly Pattern OtherLetter = new CharChecker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.OpenPunctuation);
+		public static readonly Pattern OtherLetter = new CharChecker("[Lo]", (Char) => Char.GetUnicodeCategory() == UnicodeCategory.OpenPunctuation);
 
-		public static readonly Pattern OtherNotAssigned = new CharChecker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.OtherNotAssigned);
+		public static readonly Pattern OtherNotAssigned = new CharChecker("[Cn]", (Char) => Char.GetUnicodeCategory() == UnicodeCategory.OtherNotAssigned);
 
-		public static readonly Pattern OtherNumber = new CharChecker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.OtherNumber);
+		public static readonly Pattern OtherNumber = new CharChecker("[No]", (Char) => Char.GetUnicodeCategory() == UnicodeCategory.OtherNumber);
 
-		public static readonly Pattern OtherPunctuation = new CharChecker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.OtherPunctuation);
+		public static readonly Pattern OtherPunctuation = new CharChecker("[Po]", (Char) => Char.GetUnicodeCategory() == UnicodeCategory.OtherPunctuation);
 
-		public static readonly Pattern OtherSymbol = new CharChecker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.OtherSymbol);
+		public static readonly Pattern OtherSymbol = new CharChecker("[So]", (Char) => Char.GetUnicodeCategory() == UnicodeCategory.OtherSymbol);
 
-		public static readonly Pattern ParagraphSeparator = new CharChecker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.ParagraphSeparator);
+		public static readonly Pattern ParagraphSeparator = new CharChecker("[Zp]", (Char) => Char.GetUnicodeCategory() == UnicodeCategory.ParagraphSeparator);
 
-		public static readonly Pattern PrivateUse = new CharChecker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.PrivateUse);
+		public static readonly Pattern PrivateUse = new CharChecker("[Co]", (Char) => Char.GetUnicodeCategory() == UnicodeCategory.PrivateUse);
 
-		public static readonly Pattern SpaceSeparator = new CharChecker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.SpaceSeparator);
+		public static readonly Pattern SpaceSeparator = new CharChecker("[Zs]", (Char) => Char.GetUnicodeCategory() == UnicodeCategory.SpaceSeparator);
 
-		public static readonly Pattern SpacingCombiningMark = new CharChecker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.SpacingCombiningMark);
+		public static readonly Pattern SpacingCombiningMark = new CharChecker("[Mc]", (Char) => Char.GetUnicodeCategory() == UnicodeCategory.SpacingCombiningMark);
 
-		public static readonly Pattern Surrogate = new CharChecker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.Surrogate);
+		public static readonly Pattern Surrogate = new CharChecker("[Cs]", (Char) => Char.GetUnicodeCategory() == UnicodeCategory.Surrogate);
 
-		public static readonly Pattern TitlecaseLetter = new CharChecker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.TitlecaseLetter);
+		public static readonly Pattern TitlecaseLetter = new CharChecker("[Lt]", (Char) => Char.GetUnicodeCategory() == UnicodeCategory.TitlecaseLetter);
 
-		public static readonly Pattern UppercaseLetter = new CharChecker((Char) => Char.GetUnicodeCategory() == UnicodeCategory.UppercaseLetter);
+		public static readonly Pattern UppercaseLetter = new CharChecker("[Lu]", (Char) => Char.GetUnicodeCategory() == UnicodeCategory.UppercaseLetter);
 
-		public static readonly Pattern Letter = new CharChecker((Char) => Char.GetUnicodeCategory() switch {
+		public static readonly Pattern Letter = new CharChecker("[L*]", (Char) => Char.GetUnicodeCategory() switch {
 			UnicodeCategory.UppercaseLetter => true,
 			UnicodeCategory.LowercaseLetter => true,
 			UnicodeCategory.TitlecaseLetter => true,
 			_ => false
 		});
 
-		public static readonly Pattern Mark = new CharChecker((Char) => Char.GetUnicodeCategory() switch {
+		public static readonly Pattern Mark = new CharChecker("[M*]", (Char) => Char.GetUnicodeCategory() switch {
 			UnicodeCategory.EnclosingMark => true,
 			UnicodeCategory.NonSpacingMark => true,
 			UnicodeCategory.SpacingCombiningMark => true,
 			_ => false
 		});
 
-		public static readonly Pattern Number = new CharChecker((Char) => Char.GetUnicodeCategory() switch {
+		public static readonly Pattern Number = new CharChecker("[N*]", (Char) => Char.GetUnicodeCategory() switch {
 			UnicodeCategory.DecimalDigitNumber => true,
 			UnicodeCategory.LetterNumber => true,
 			UnicodeCategory.OtherNumber => true,
 			_ => false
 		});
 
-		public static readonly Pattern Punctuation = new CharChecker((Char) => Char.GetUnicodeCategory() switch {
+		public static readonly Pattern Punctuation = new CharChecker("[P*]", (Char) => Char.GetUnicodeCategory() switch {
 			UnicodeCategory.ConnectorPunctuation => true,
 			UnicodeCategory.DashPunctuation => true,
 			UnicodeCategory.FinalQuotePunctuation => true,
@@ -336,7 +336,7 @@ namespace System.Text.Patterns {
 			_ => false
 		});
 
-		public static readonly Pattern Symbol = new CharChecker((Char) => Char.GetUnicodeCategory() switch {
+		public static readonly Pattern Symbol = new CharChecker("[S*]", (Char) => Char.GetUnicodeCategory() switch {
 			UnicodeCategory.CurrencySymbol => true,
 			UnicodeCategory.MathSymbol => true,
 			UnicodeCategory.ModifierSymbol => true,
@@ -344,14 +344,14 @@ namespace System.Text.Patterns {
 			_ => false
 		});
 
-		public static readonly Pattern Separator = new CharChecker((Char) => Char.GetUnicodeCategory() switch {
+		public static readonly Pattern Separator = new CharChecker("[Z*]", (Char) => Char.GetUnicodeCategory() switch {
 			UnicodeCategory.LineSeparator => true,
 			UnicodeCategory.ParagraphSeparator => true,
 			UnicodeCategory.SpaceSeparator => true,
 			_ => false
 		});
 
-		public static readonly Pattern Graphic = new CharChecker((Char) => Char.GetUnicodeCategory() switch {
+		public static readonly Pattern Graphic = new CharChecker("[G*]", (Char) => Char.GetUnicodeCategory() switch {
 			UnicodeCategory.UppercaseLetter => true,
 			UnicodeCategory.LowercaseLetter => true,
 			UnicodeCategory.TitlecaseLetter => true,
@@ -393,7 +393,7 @@ namespace System.Text.Patterns {
 		/// <summary>
 		/// Matches any possible character
 		/// </summary>
-		public static readonly Pattern Any = new CharChecker((_) => true);
+		public static readonly Pattern Any = new CharChecker("*", (_) => true);
 
 		#endregion
 	}

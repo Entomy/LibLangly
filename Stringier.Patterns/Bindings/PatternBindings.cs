@@ -33,7 +33,7 @@ namespace System.Text.Patterns.Bindings {
 
 		public static Pattern Capturer(Pattern Pattern, out Capture Capture) => Pattern.Capture(out Capture);
 
-		public static Pattern Checker(Func<Char, Boolean> Check) => new CharChecker(Check);
+		public static Pattern Checker(String Name, Func<Char, Boolean> Check) => new CharChecker(Name, Check);
 
 		public static Pattern Concatenator(Pattern Left, Pattern Right) => Left.Concatenate(Right);
 
@@ -130,7 +130,7 @@ namespace System.Text.Patterns.Bindings {
 		public static Pattern Ranger(Char From, String To, String Escape) => new EscapedRanger(From, To, Escape);
 
 		public static Pattern Ranger(Char From, String To, Char Escape) => new EscapedRanger(From, To, Escape);
-		
+
 		public static Pattern Ranger(Char From, Char To, Pattern Escape) => new EscapedRanger(From, To, Escape);
 
 		public static Pattern Ranger(Char From, Char To, String Escape) => new EscapedRanger(From, To, Escape);

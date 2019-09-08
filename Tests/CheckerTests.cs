@@ -7,7 +7,7 @@ namespace Tests {
 	public class CheckerTests {
 		[TestMethod]
 		public void Equal() {
-			Pattern Checker = (Pattern)((Char) => Char == 'a' || Char == '1');
+			Pattern Checker = (Pattern)(nameof(Checker), (Char) => Char == 'a' || Char == '1');
 			Assert.IsTrue(Checker.Equals("a"));
 			Assert.IsTrue(Checker.Equals("1"));
 			Assert.IsFalse(Checker.Equals("b"));

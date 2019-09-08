@@ -45,6 +45,6 @@ namespace System.Text.Patterns {
 
 		public override Int32 GetHashCode() => Pattern.GetHashCode() ^ Count.GetHashCode();
 
-		public override String ToString() => $"{Pattern}×{Count}";
+		public override String ToString() => $"{Count}╣{Pattern}║";
 	}
 }

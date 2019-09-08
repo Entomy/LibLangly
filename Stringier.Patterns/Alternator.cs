@@ -55,6 +55,6 @@
 
 		public override Int32 GetHashCode() => Left.GetHashCode() | Right.GetHashCode();
 
-		public override String ToString() => $"┃{Left}┆{Right}┃";
+		public override String ToString() => $"┃{Left}│{Right}┃";
 	}
 }

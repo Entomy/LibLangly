@@ -1024,15 +1024,15 @@ references:
   isSpec: "True"
   fullName: System.Text.Patterns.Bindings.PatternBindings.Capturer
   nameWithType: PatternBindings.Capturer
-- uid: System.Text.Patterns.Bindings.PatternBindings.Checker(System.Func{System.Char,System.Boolean})
-  name: Checker(Func<Char, Boolean>)
-  href: api/System.Text.Patterns.Bindings.PatternBindings.html#System_Text_Patterns_Bindings_PatternBindings_Checker_System_Func_System_Char_System_Boolean__
-  commentId: M:System.Text.Patterns.Bindings.PatternBindings.Checker(System.Func{System.Char,System.Boolean})
-  name.vb: Checker(Func(Of Char, Boolean))
-  fullName: System.Text.Patterns.Bindings.PatternBindings.Checker(System.Func<System.Char, System.Boolean>)
-  fullName.vb: System.Text.Patterns.Bindings.PatternBindings.Checker(System.Func(Of System.Char, System.Boolean))
-  nameWithType: PatternBindings.Checker(Func<Char, Boolean>)
-  nameWithType.vb: PatternBindings.Checker(Func(Of Char, Boolean))
+- uid: System.Text.Patterns.Bindings.PatternBindings.Checker(System.String,System.Func{System.Char,System.Boolean})
+  name: Checker(String, Func<Char, Boolean>)
+  href: api/System.Text.Patterns.Bindings.PatternBindings.html#System_Text_Patterns_Bindings_PatternBindings_Checker_System_String_System_Func_System_Char_System_Boolean__
+  commentId: M:System.Text.Patterns.Bindings.PatternBindings.Checker(System.String,System.Func{System.Char,System.Boolean})
+  name.vb: Checker(String, Func(Of Char, Boolean))
+  fullName: System.Text.Patterns.Bindings.PatternBindings.Checker(System.String, System.Func<System.Char, System.Boolean>)
+  fullName.vb: System.Text.Patterns.Bindings.PatternBindings.Checker(System.String, System.Func(Of System.Char, System.Boolean))
+  nameWithType: PatternBindings.Checker(String, Func<Char, Boolean>)
+  nameWithType.vb: PatternBindings.Checker(String, Func(Of Char, Boolean))
 - uid: System.Text.Patterns.Bindings.PatternBindings.Checker*
   name: Checker
   href: api/System.Text.Patterns.Bindings.PatternBindings.html#System_Text_Patterns_Bindings_PatternBindings_Checker_
@@ -1553,19 +1553,6 @@ references:
   isSpec: "True"
   fullName: System.Text.Patterns.Capture.GetHashCode
   nameWithType: Capture.GetHashCode
-- uid: System.Text.Patterns.Capture.Length
-  name: Length
-  href: api/System.Text.Patterns.Capture.html#System_Text_Patterns_Capture_Length
-  commentId: P:System.Text.Patterns.Capture.Length
-  fullName: System.Text.Patterns.Capture.Length
-  nameWithType: Capture.Length
-- uid: System.Text.Patterns.Capture.Length*
-  name: Length
-  href: api/System.Text.Patterns.Capture.html#System_Text_Patterns_Capture_Length_
-  commentId: Overload:System.Text.Patterns.Capture.Length
-  isSpec: "True"
-  fullName: System.Text.Patterns.Capture.Length
-  nameWithType: Capture.Length
 - uid: System.Text.Patterns.Capture.op_Implicit(System.Text.Patterns.Capture)~System.Text.Patterns.Pattern
   name: Implicit(Capture to Pattern)
   href: api/System.Text.Patterns.Capture.html#System_Text_Patterns_Capture_op_Implicit_System_Text_Patterns_Capture__System_Text_Patterns_Pattern
@@ -1641,12 +1628,6 @@ references:
   isSpec: "True"
   fullName: System.Text.Patterns.CharExtensions.Consume
   nameWithType: CharExtensions.Consume
-- uid: System.Text.Patterns.Checker
-  name: Checker
-  href: api/System.Text.Patterns.Checker.html
-  commentId: T:System.Text.Patterns.Checker
-  fullName: System.Text.Patterns.Checker
-  nameWithType: Checker
 - uid: System.Text.Patterns.ConsumeFailedException
   name: ConsumeFailedException
   href: api/System.Text.Patterns.ConsumeFailedException.html
@@ -2071,15 +2052,6 @@ references:
   fullName.vb: System.Text.Patterns.Pattern.Widening(System.Char to System.Text.Patterns.Pattern)
   nameWithType: Pattern.Implicit(Char to Pattern)
   nameWithType.vb: Pattern.Widening(Char to Pattern)
-- uid: System.Text.Patterns.Pattern.op_Implicit(System.Func{System.Char,System.Boolean})~System.Text.Patterns.Pattern
-  name: Implicit(Func<Char, Boolean> to Pattern)
-  href: api/System.Text.Patterns.Pattern.html#System_Text_Patterns_Pattern_op_Implicit_System_Func_System_Char_System_Boolean___System_Text_Patterns_Pattern
-  commentId: M:System.Text.Patterns.Pattern.op_Implicit(System.Func{System.Char,System.Boolean})~System.Text.Patterns.Pattern
-  name.vb: Widening(Func(Of Char, Boolean) to Pattern)
-  fullName: System.Text.Patterns.Pattern.Implicit(System.Func<System.Char, System.Boolean> to System.Text.Patterns.Pattern)
-  fullName.vb: System.Text.Patterns.Pattern.Widening(System.Func(Of System.Char, System.Boolean) to System.Text.Patterns.Pattern)
-  nameWithType: Pattern.Implicit(Func<Char, Boolean> to Pattern)
-  nameWithType.vb: Pattern.Widening(Func(Of Char, Boolean) to Pattern)
 - uid: System.Text.Patterns.Pattern.op_Implicit(System.String)~System.Text.Patterns.Pattern
   name: Implicit(String to Pattern)
   href: api/System.Text.Patterns.Pattern.html#System_Text_Patterns_Pattern_op_Implicit_System_String__System_Text_Patterns_Pattern
@@ -2098,6 +2070,15 @@ references:
   fullName.vb: System.Text.Patterns.Pattern.Widening(System.ValueTuple(Of System.Char, System.StringComparison) to System.Text.Patterns.Pattern)
   nameWithType: Pattern.Implicit((Char Char, StringComparison ComparisonType) to Pattern)
   nameWithType.vb: Pattern.Widening((Char As Char, ComparisonType As StringComparison) to Pattern)
+- uid: System.Text.Patterns.Pattern.op_Implicit(System.ValueTuple{System.String,System.Func{System.Char,System.Boolean}})~System.Text.Patterns.Pattern
+  name: Implicit((String Name, Func<Char, Boolean> Check) to Pattern)
+  href: api/System.Text.Patterns.Pattern.html#System_Text_Patterns_Pattern_op_Implicit_System_ValueTuple_System_String_System_Func_System_Char_System_Boolean____System_Text_Patterns_Pattern
+  commentId: M:System.Text.Patterns.Pattern.op_Implicit(System.ValueTuple{System.String,System.Func{System.Char,System.Boolean}})~System.Text.Patterns.Pattern
+  name.vb: Widening((Name As String, Check As Func(Of Char, Boolean)) to Pattern)
+  fullName: System.Text.Patterns.Pattern.Implicit(System.ValueTuple<System.String, System.Func<System.Char, System.Boolean>> to System.Text.Patterns.Pattern)
+  fullName.vb: System.Text.Patterns.Pattern.Widening(System.ValueTuple(Of System.String, System.Func(Of System.Char, System.Boolean)) to System.Text.Patterns.Pattern)
+  nameWithType: Pattern.Implicit((String Name, Func<Char, Boolean> Check) to Pattern)
+  nameWithType.vb: Pattern.Widening((Name As String, Check As Func(Of Char, Boolean)) to Pattern)
 - uid: System.Text.Patterns.Pattern.op_Implicit(System.ValueTuple{System.String,System.StringComparison})~System.Text.Patterns.Pattern
   name: Implicit((String String, StringComparison ComparisonType) to Pattern)
   href: api/System.Text.Patterns.Pattern.html#System_Text_Patterns_Pattern_op_Implicit_System_ValueTuple_System_String_System_StringComparison___System_Text_Patterns_Pattern

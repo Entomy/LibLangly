@@ -1,4 +1,7 @@
 ﻿namespace System.Text.Patterns {
-	public abstract class Checker : Pattern {
+	internal abstract class Checker : Pattern {
+		internal protected readonly String Name;
+
+		internal protected Checker(String Name) => this.Name = Name;
 	}
 }

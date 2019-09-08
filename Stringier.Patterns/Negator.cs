@@ -67,6 +67,6 @@
 
 		public override Int32 GetHashCode() => -Pattern.GetHashCode();
 
-		public override String ToString() => $"!║{Pattern}║";
+		public override String ToString() => $"!╣{Pattern}║";
 	}
 }
