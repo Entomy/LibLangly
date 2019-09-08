@@ -20,32 +20,29 @@ namespace System.Text.Patterns {
 		/// </summary>
 		/// <param name="Source">The <see cref="Source"/> to consume</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/></returns>
-		public abstract Result Consume(ref Source Source);
+		public Result Consume(ref Source Source) {
+			Result Result = new Result(ref Source);
+			Consume(ref Source, ref Result);
+			return Result;
+		}
+
+		internal abstract void Consume(ref Source Source, ref Result Result);
+
+		internal abstract void Neglect(ref Source Source, ref Result Result);
 
 		public abstract override Boolean Equals(Object obj);
 
-		public abstract Boolean Equals(ReadOnlySpan<Char> other);
-
-		public abstract Boolean Equals(String other);
-
-		public abstract override Int32 GetHashCode();
-
-		/// <summary>
-		/// Attempt to consume the <see cref="Pattern"/> from the <paramref name="Source"/>
-		/// </summary>
-		/// <param name="Source">The <see cref="String"/> to consume</param>
-		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/></returns>
-		internal protected Result Neglect(String Source) {
-			Source source = new Source(Source);
-			return Consume(ref source);
+		public virtual Boolean Equals(ReadOnlySpan<Char> other) {
+			Source Source = new Source(other);
+			return Consume(ref Source) && Source.Length == 0;
 		}
 
-		/// <summary>
-		/// Attempt to consume from the <paramref name="Source"/> while neglecting the <see cref="Pattern"/>, adjusting the position in the <paramref name="Source"/> as appropriate
-		/// </summary>
-		/// <param name="Source">The <see cref="Source"/> to consume</param>
-		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/></returns>
-		internal protected abstract Result Neglect(ref Source Source);
+		public virtual Boolean Equals(String other) {
+			Source Source = new Source(other);
+			return Consume(ref Source) && Source.Length == 0;
+		}
+
+		public abstract override Int32 GetHashCode();
 
 		/// <summary>
 		/// Returns a <see cref="String"/> that represents the current object.
@@ -67,11 +64,11 @@ namespace System.Text.Patterns {
 
 		#region Alternator
 
-		internal abstract Pattern Alternate(Pattern Right);
+		internal virtual Pattern Alternate(Pattern Right) => new Alternator(this, Right);
 
-		internal abstract Pattern Alternate(Char Right);
+		internal virtual Pattern Alternate(Char Right) => new Alternator(this, Right);
 
-		internal abstract Pattern Alternate(String Right);
+		internal virtual Pattern Alternate(String Right) => new Alternator(this, Right);
 
 		public static Pattern operator |(Pattern Left, Pattern Right) => Left.Alternate(Right);
 
@@ -87,7 +84,7 @@ namespace System.Text.Patterns {
 
 		#region Capturer
 
-		public abstract Pattern Capture(out Capture Capture);
+		public virtual Pattern Capture(out Capture Capture) => new Capturer(this, out Capture);
 
 		#endregion
 
@@ -99,11 +96,11 @@ namespace System.Text.Patterns {
 
 		#region Concatenator
 
-		internal abstract Pattern Concatenate(Pattern Right);
+		internal virtual Pattern Concatenate(Pattern Right) => new Concatenator(this, Right);
 
-		internal abstract Pattern Concatenate(Char Right);
+		internal virtual Pattern Concatenate(Char Right) => new Concatenator(this, Right);
 
-		internal abstract Pattern Concatenate(String Right);
+		internal virtual Pattern Concatenate(String Right) => new Concatenator(this, Right);
 
 		public static Pattern operator &(Pattern Left, Pattern Right) => Left.Concatenate(Right);
 
@@ -119,7 +116,7 @@ namespace System.Text.Patterns {
 
 		#region Negator
 
-		internal abstract Pattern Negate();
+		internal virtual Pattern Negate() => new Negator(this);
 
 		/// <summary>
 		/// Marks the <paramref name="Pattern"/> as negated
@@ -132,7 +129,7 @@ namespace System.Text.Patterns {
 
 		#region Optor
 
-		internal abstract Pattern Optional();
+		internal virtual Pattern Optional() => new Optor(this);
 
 		/// <summary>
 		/// Marks the <paramref name="Pattern"/> as optional
@@ -155,7 +152,7 @@ namespace System.Text.Patterns {
 
 		#region Repeater
 
-		internal abstract Pattern Repeat(Int32 Count);
+		internal virtual Pattern Repeat(Int32 Count) => new Repeater(this, Count);
 
 		/// <summary>
 		/// Marks the <paramref name="Pattern"/> as repeating <paramref name="Count"/> times
@@ -169,7 +166,7 @@ namespace System.Text.Patterns {
 
 		#region Spanner
 
-		internal abstract Pattern Span();
+		internal virtual Pattern Span() => new Spanner(this);
 
 		/// <summary>
 		/// Marks the <paramref name="Pattern"/> as spanning

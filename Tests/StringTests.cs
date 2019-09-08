@@ -69,42 +69,35 @@ namespace Tests {
 			Result Result;
 
 			Result = "".Consume("Hello");
-			Assert.That.Succeeds(Result);
 			Assert.That.Captures("", Result);
+			Assert.That.Succeeds(Result);
 
 			Result = "H".Consume("Hello");
-			Assert.That.Succeeds(Result);
 			Assert.That.Captures("H", Result);
+			Assert.That.Succeeds(Result);
 
 			Result = "He".Consume("Hello");
-			Assert.That.Succeeds(Result);
 			Assert.That.Captures("He", Result);
+			Assert.That.Succeeds(Result);
 
 			Result = "Hel".Consume("Hello");
-			Assert.That.Succeeds(Result);
 			Assert.That.Captures("Hel", Result);
+			Assert.That.Succeeds(Result);
 
 			Result = "Hell".Consume("Hello");
-			Assert.That.Succeeds(Result);
 			Assert.That.Captures("Hell", Result);
+			Assert.That.Succeeds(Result);
 
 			Result = "Hello".Consume("Hello");
-			Assert.That.Succeeds(Result);
 			Assert.That.Captures("Hello", Result);
+			Assert.That.Succeeds(Result);
 
 			Result = " ".Consume("    Hello");
-			Assert.That.Succeeds(Result);
 			Assert.That.Captures(" ", Result);
+			Assert.That.Succeeds(Result);
 
 			Assert.That.Fails("w".Consume("Hello"));
 			Assert.That.Fails(" ".Consume("Hello"));
-		}
-
-		[TestMethod]
-		public void ConsumeCaseInsensitive() {
-			Result Result = "HELLO".Consume("Hello", StringComparison.OrdinalIgnoreCase);
-			Assert.That.Succeeds(Result);
-			Assert.That.Captures("Hello", Result);
 		}
 
 		[TestMethod]
@@ -113,44 +106,24 @@ namespace Tests {
 			Result Result;
 
 			Result = "H".Consume(ref Source);
-			Assert.That.Succeeds(Result);
 			Assert.That.Captures("H", Result);
+			Assert.That.Succeeds(Result);
 
 			Result = "e".Consume(ref Source);
-			Assert.That.Succeeds(Result);
 			Assert.That.Captures("e", Result);
+			Assert.That.Succeeds(Result);
 
 			Result = "l".Consume(ref Source);
-			Assert.That.Succeeds(Result);
 			Assert.That.Captures("l", Result);
+			Assert.That.Succeeds(Result);
 
 			Result = "l".Consume(ref Source);
-			Assert.That.Succeeds(Result);
 			Assert.That.Captures("l", Result);
+			Assert.That.Succeeds(Result);
 
 			Result = "o".Consume(ref Source);
-			Assert.That.Succeeds(Result);
 			Assert.That.Captures("o", Result);
-		}
-
-		[TestMethod]
-		public void ConsumeResult() {
-			Source Source = new Source("Hello World! How are you today?");
-			Result Result = "Hello World!".Consume(ref Source, StringComparison.OrdinalIgnoreCase);
-			Assert.That.Captures("Hello", "Hello".Consume(Result));
-		}
-
-		[TestMethod]
-		public void Neglect() {
-			Result Result;
-
-			Result = "Hello".Neglect("Hello");
-			Assert.That.Fails(Result);
-			Assert.That.Captures("", Result);
-
-			Result = "Hello".Neglect("World");
 			Assert.That.Succeeds(Result);
-			Assert.That.Captures("World", Result);
 		}
 	}
 }

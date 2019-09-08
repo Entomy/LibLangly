@@ -7,21 +7,22 @@ namespace Tests {
 	public class RangerTests {
 		[TestMethod]
 		public void Constructor() {
-			Pattern _ = (From: "Hello", To: ";");
+			Pattern _ = (From: "Hello", To: ';');
 		}
 
 		[TestMethod]
 		public void Consume() {
-			Pattern Ranger = (From: "Hello", To: ";");
+			Pattern Ranger = (From: "Hello", To: ';');
 			Result Result;
 
 			Result = Ranger.Consume("Hello;");
-			Assert.That.Succeeds(Result);
 			Assert.That.Captures("Hello;", Result);
+			Assert.That.Succeeds(Result);
+
 
 			Result = Ranger.Consume("Hello World;");
-			Assert.That.Succeeds(Result);
 			Assert.That.Captures("Hello World;", Result);
+			Assert.That.Succeeds(Result);
 		}
 
 		[TestMethod]

@@ -18,22 +18,22 @@ namespace Tests {
 			Result Result;
 
 			Result = Hello.Consume("Hello World!");
-			Assert.That.Succeeds(Result);
 			Assert.That.Captures("Hello", Result);
+			Assert.That.Succeeds(Result);
 
 			Source Source = new Source("Hello World");
 
 			Result = Hello.Consume(ref Source);
-			Assert.That.Succeeds(Result);
 			Assert.That.Captures("Hello", Result);
+			Assert.That.Succeeds(Result);
 
 			Result = Space.Consume(ref Source);
-			Assert.That.Succeeds(Result);
 			Assert.That.Captures(" ", Result);
+			Assert.That.Succeeds(Result);
 
 			Result = World.Consume(ref Source);
-			Assert.That.Succeeds(Result);
 			Assert.That.Captures("World", Result);
+			Assert.That.Succeeds(Result);
 
 			Result = Hello.Consume("Hell");
 			Assert.That.Fails(Result);
@@ -41,19 +41,19 @@ namespace Tests {
 			Result = Hello.Consume("Bacon");
 			Assert.That.Fails(Result);
 
-			Pattern HelloWorld = Hello & Space & World;
+			Pattern HelloWorld = Hello & Space & World; //This isn't a normal concatenator, but rather, should be optimized into a single StringLiteral
 
 			Result = HelloWorld.Consume("HELLO WORLD!");
-			Assert.That.Succeeds(Result);
 			Assert.That.Captures("HELLO WORLD", Result);
+			Assert.That.Succeeds(Result);
 
 			Result = HelloWorld.Consume("Hello World!");
-			Assert.That.Succeeds(Result);
 			Assert.That.Captures("Hello World", Result);
+			Assert.That.Succeeds(Result);
 
 			Result = HelloWorld.Consume("hello world!");
-			Assert.That.Succeeds(Result);
 			Assert.That.Captures("hello world", Result);
+			Assert.That.Succeeds(Result);
 		}
 
 		[TestMethod]
@@ -71,7 +71,7 @@ namespace Tests {
 			Assert.IsFalse(Space.Equals("  "));
 			Assert.IsFalse(Space.Equals("a"));
 
-			Pattern HelloWorld = Hello & Space & World;
+			Pattern HelloWorld = Hello & Space & World; //This isn't a normal concatenator, but rather, should be optimized into a single StringLiteral
 
 			Assert.IsTrue(HelloWorld.Equals("Hello World"));
 			Assert.IsFalse(HelloWorld.Equals("Hello"));

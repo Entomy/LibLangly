@@ -5,13 +5,13 @@
 /// This exists to box <see cref="System.Char"/> into something that we can treat as a part of a pattern
 /// </remarks>
 namespace System.Text.Patterns {
-	internal sealed class CharLiteral : PrimativePattern, IEquatable<Char>, IEquatable<CharLiteral> {
-		private readonly Char Char = '\u0000';
+	internal sealed class CharLiteral : Literal, IEquatable<Char>, IEquatable<CharLiteral> {
+		internal readonly Char Char = '\u0000';
 
 		/// <summary>
 		/// The <see cref="StringComparison"/> to use during pattern matching
 		/// </summary>
-		private readonly StringComparison ComparisonType = Stringier.DefaultComparisonType;
+		internal readonly StringComparison ComparisonType = Stringier.DefaultComparisonType;
 
 		internal CharLiteral(Char Char) : this(Char, Stringier.DefaultComparisonType) { }
 
@@ -20,14 +20,9 @@ namespace System.Text.Patterns {
 			this.ComparisonType = ComparisonType;
 		}
 
-		protected internal override Int32 Length => 1;
+		internal override void Consume(ref Source Source, ref Result Result) => Char.Consume(ref Source, ref Result, ComparisonType);
 
-		/// <summary>
-		/// Attempt to consume the <see cref="ComplexPattern"/> from the <paramref name="Source"/>, adjusting the position in the <paramref name="Source"/> as appropriate
-		/// </summary>
-		/// <param name="Source">The <see cref="Source"/> to consume</param>
-		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/></returns>
-		public override Result Consume(ref Source Source) => Char.Consume(ref Source, ComparisonType);
+		internal override void Neglect(ref Source Source, ref Result Result) => Char.Neglect(ref Source, ref Result, ComparisonType);
 
 		public override Boolean Equals(Object obj) {
 			switch (obj) {
@@ -58,11 +53,43 @@ namespace System.Text.Patterns {
 
 		public override String ToString() => $"{Char}";
 
-		/// <summary>
-		/// Attempt to consume from the <paramref name="Source"/> while neglecting the <see cref="ComplexPattern"/>, adjusting the position in the <paramref name="Source"/> as appropriate
-		/// </summary>
-		/// <param name="Source">The <see cref="Source"/> to consume</param>
-		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/></returns>
-		protected internal override Result Neglect(ref Source Source) => Char.Neglect(ref Source, ComparisonType);
+		#region Concatenator
+
+		internal override Pattern Concatenate(Pattern Right) {
+			switch (Right) {
+			case StringLiteral right:
+				if (ComparisonType != right.ComparisonType) { goto default; }
+				return new StringLiteral(Char + right.String);
+			case CharLiteral right:
+				if (ComparisonType != right.ComparisonType) { goto default; }
+				return new StringLiteral(Char.ToString() + right.Char.ToString());
+			default:
+				return base.Concatenate(Right);
+			}
+		}
+
+		internal override Pattern Concatenate(String Right) {
+			if (ComparisonType == Stringier.DefaultComparisonType) {
+				return new StringLiteral(Char + Right);
+			} else {
+				return new Concatenator(this, Right);
+			}
+		}
+
+		internal override Pattern Concatenate(Char Right) {
+			if (ComparisonType == Stringier.DefaultComparisonType) {
+				return new StringLiteral("" + Char + Right);
+			} else {
+				return new Concatenator(this, Right);
+			}
+		}
+
+		#endregion
+
+		#region Repeater
+
+		internal override Pattern Repeat(Int32 Count) => new StringLiteral(Char.Repeat(Count));
+
+		#endregion
 	}
 }

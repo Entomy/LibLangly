@@ -1,5 +1,5 @@
 ﻿namespace System.Text.Patterns {
-	internal sealed class Alternator : ComplexPattern, IEquatable<Alternator> {
+	internal sealed class Alternator : Pattern, IEquatable<Alternator> {
 		private readonly Pattern Left;
 		private readonly Pattern Right;
 
@@ -16,12 +16,28 @@
 
 		internal Alternator(String Left, Pattern Right) : this(new StringLiteral(Left), Right) { }
 
-		public override Result Consume(ref Source Source) {
-			Result Result = Left.Consume(ref Source);
+		internal override void Consume(ref Source Source, ref Result Result) {
+			Error? Error;
+			Left.Consume(ref Source, ref Result);
 			if (!Result) {
-				Result = Right.Consume(ref Source);
+				Error = Result.Error; //Store the error
+				Result.Error = null; //Clear the error
+				Right.Consume(ref Source, ref Result);
+				if (!Result) {
+					Result.Error = Error; //Resassign the first error, since both failed, but we want to be clear of that
+				}
 			}
-			return Result;
+		}
+
+		internal override void Neglect(ref Source Source, ref Result Result) {
+			Int32 OriginalPosition = Source.Position;
+			Int32 OriginalLength = Result.Length;
+			Right.Neglect(ref Source, ref Result);
+			if (Result) {
+				Source.Position = OriginalPosition;
+				Result.Length = OriginalLength;
+				Left.Neglect(ref Source, ref Result);
+			}
 		}
 
 		public override Boolean Equals(Object obj) {
@@ -35,24 +51,10 @@
 			}
 		}
 
-		public override Boolean Equals(ReadOnlySpan<Char> other) => Left.Equals(other) || Right.Equals(other);
-
-		public override Boolean Equals(String other) => Left.Equals(other) || Right.Equals(other);
-
 		public Boolean Equals(Alternator other) => Left.Equals(other.Left) && Right.Equals(other.Right);
 
 		public override Int32 GetHashCode() => Left.GetHashCode() | Right.GetHashCode();
 
-		protected internal override Result Neglect(ref Source Source) {
-			Int32 OriginalPosition = Source.Position;
-			Result Result = Right.Neglect(ref Source);
-			if (Result) {
-				Source.Position = OriginalPosition;
-				Result = Left.Neglect(ref Source);
-			}
-			return Result;
-		}
-
-		public override String ToString() => $"({Left}|{Right})";
+		public override String ToString() => $"┃{Left}┆{Right}┃";
 	}
 }

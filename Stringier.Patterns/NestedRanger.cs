@@ -6,28 +6,25 @@
 			Level = 0;
 		}
 
-		public override Result Consume(ref Source Source) {
-			Int32 OriginalPosition = Source.Position;
-			if (From.Consume(ref Source)) {
-				Level++;
-			}
+		internal override void Consume(ref Source Source, ref Result Result) {
+			From.Consume(ref Source, ref Result);
+			if (Result) { Level++; }
 			while (Level > 0) {
-				if (Source.EOF) { goto Cleanup; } //If we're already at the end, abort
+				if (Source.EOF) { break; }
 				Source.Position++;
-				if (From.Consume(ref Source)) { Level++; }
-				if (To.Consume(ref Source)) { Level--; }
+				Result.Length++;
+				From.Consume(ref Source, ref Result);
+				if (Result) { Level++; }
+				To.Consume(ref Source, ref Result);
+				if (Result) { Level--; }
 			}
-			goto Done;
-		Cleanup:
-			Source.Position = OriginalPosition;
-		Done:
-			Int32 FinalPosition = Source.Position;
-			Source.Position = OriginalPosition;
-			return new Result(Source.Read(FinalPosition - OriginalPosition), Level == 0);
+			if (Level != 0) {
+				Result.Error = new ConsumeFailedError(Expected: this.ToString());
+			}
 		}
 
-		public Boolean Equals(NestedRanger other) => base.Equals(other);
+		internal override void Neglect(ref Source Source, ref Result Result) => base.Neglect(ref Source, ref Result);
 
-		protected internal override Result Neglect(ref Source Source) => throw new NotImplementedException();
+		public Boolean Equals(NestedRanger other) => base.Equals(other);
 	}
 }

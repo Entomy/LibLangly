@@ -5,6 +5,7 @@ using BenchmarkDotNet.Attributes;
 
 namespace Benchmarks {
 	[ClrJob, CoreJob, CoreRtJob]
+	[MemoryDiagnoser]
 	public class RepeaterComparison {
 
 		Pattern Repeater = (Pattern)"Hi!" * 2;

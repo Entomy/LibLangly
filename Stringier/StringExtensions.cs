@@ -472,6 +472,21 @@ namespace System {
 		public static Int64 ParseInt64(this String String, IFormatProvider Provider) => Int64.Parse(String, Provider);
 
 		/// <summary>
+		/// Repeat the <paramref name="String"/> <paramref name="Count"/> times.
+		/// </summary>
+		/// <param name="String">The <see cref="String"/> to repeat.</param>
+		/// <param name="Count">The amount of times to repeat the <paramref name="String"/>.</param>
+		/// <returns>A <see cref="String"/> containing the repeated <paramref name="String"/>.</returns>
+		public static String Repeat(this String String, Int32 Count) {
+			if (Count <= 0) { throw new ArgumentOutOfRangeException(nameof(Count), "Count must be a positive integer"); }
+			StringBuilder StringBuilder = new StringBuilder(String.Length * Count);
+			for (Int32 i = 0; i < Count; i++) {
+				StringBuilder.Append(String);
+			}
+			return StringBuilder.ToString();
+		}
+
+		/// <summary>
 		/// In the input string, replaces all strings that match a specified regular expression with a specified replacement string. Specified options modify the matching operation.
 		/// </summary>
 		/// <param name="String">The <see cref="String"/> to search for a match.</param>

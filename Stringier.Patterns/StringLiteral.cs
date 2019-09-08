@@ -5,13 +5,13 @@
 	/// <remarks>
 	/// This exists to box <see cref="System.String"/> into something that we can treat as a part of a pattern
 	/// </remarks>
-	internal sealed class StringLiteral : PrimativePattern, IEquatable<StringLiteral> {
+	internal sealed class StringLiteral : Literal, IEquatable<StringLiteral> {
 		/// <summary>
 		/// The <see cref="StringComparison"/> to use during pattern matching
 		/// </summary>
-		private readonly StringComparison ComparisonType = Stringier.DefaultComparisonType;
+		internal readonly StringComparison ComparisonType = Stringier.DefaultComparisonType;
 
-		private readonly String String = "";
+		internal readonly String String = "";
 
 		internal StringLiteral(String String) : this(String, Stringier.DefaultComparisonType) { }
 
@@ -20,14 +20,9 @@
 			this.ComparisonType = ComparisonType;
 		}
 
-		protected internal override Int32 Length => String.Length;
+		internal override void Consume(ref Source Source, ref Result Result) => String.Consume(ref Source, ref Result, ComparisonType);
 
-		/// <summary>
-		/// Attempt to consume the <see cref="ComplexPattern"/> from the <paramref name="Source"/>, adjusting the position in the <paramref name="Source"/> as appropriate
-		/// </summary>
-		/// <param name="Source">The <see cref="Source"/> to consume</param>
-		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/></returns>
-		public override Result Consume(ref Source Source) => String.Consume(ref Source, ComparisonType);
+		internal override void Neglect(ref Source Source, ref Result Result) => String.Neglect(ref Source, ref Result, ComparisonType);
 
 		public override Boolean Equals(Object obj) {
 			switch (obj) {
@@ -53,16 +48,48 @@
 		public override Int32 GetHashCode() => String.GetHashCode();
 
 		/// <summary>
-		/// Attempt to consume from the <paramref name="Source"/> while neglecting the <see cref="ComplexPattern"/>, adjusting the position in the <paramref name="Source"/> as appropriate
-		/// </summary>
-		/// <param name="Source">The <see cref="Source"/> to consume</param>
-		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/></returns>
-		protected internal override Result Neglect(ref Source Source) => String.Neglect(ref Source, ComparisonType);
-
-		/// <summary>
 		/// Returns a string that represents the current object.
 		/// </summary>
 		/// <returns>A string that represents the current object.</returns>
 		public override String ToString() => $"{String}";
+
+		#region Concatenator
+
+		internal override Pattern Concatenate(Pattern Right) {
+			switch (Right) {
+			case StringLiteral right:
+				if (ComparisonType != right.ComparisonType) { goto default; }
+				return new StringLiteral(String + right.String);
+			case CharLiteral right:
+				if (ComparisonType != right.ComparisonType) { goto default; }
+				return new StringLiteral(String + right.Char);
+			default:
+				return base.Concatenate(Right);
+			}
+		}
+
+		internal override Pattern Concatenate(String Right) {
+			if (ComparisonType == Stringier.DefaultComparisonType) {
+				return new StringLiteral(String + Right);
+			} else {
+				return new Concatenator(this, Right);
+			}
+		}
+
+		internal override Pattern Concatenate(Char Right) {
+			if (ComparisonType == Stringier.DefaultComparisonType) {
+				return new StringLiteral(String + Right);
+			} else {
+				return new Concatenator(this, Right);
+			}
+		}
+
+		#endregion
+
+		#region Repeater
+
+		internal override Pattern Repeat(Int32 Count) => new StringLiteral(String.Repeat(Count));
+
+		#endregion
 	}
 }

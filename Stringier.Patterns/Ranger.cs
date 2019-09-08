@@ -1,5 +1,5 @@
 ﻿namespace System.Text.Patterns {
-	internal class Ranger : ComplexPattern, IEquatable<Ranger> {
+	internal class Ranger : Pattern, IEquatable<Ranger> {
 		internal protected readonly Pattern From;
 		internal protected readonly Pattern To;
 
@@ -8,24 +8,25 @@
 			this.To = To;
 		}
 
-		public override Result Consume(ref Source Source) {
-			Int32 OriginalPosition = Source.Position;
-			Result Result = From.Consume(ref Source);
-			if (!Result) { goto Cleanup; }
-			Result = To.Consume(ref Source);
-			while (!Result) {
-				if (Source.EOF) { goto Cleanup; } //If we're already at the end, abort
-				Source.Position++;
-				Result = To.Consume(ref Source);
+		internal override void Consume(ref Source Source, ref Result Result) {
+			From.Consume(ref Source, ref Result);
+			if (!Result) {
+				Result.Error = new ConsumeFailedError(Expected: From.ToString());
+				return;
 			}
-			goto Done;
-		Cleanup:
-			Source.Position = OriginalPosition;
-		Done:
-			Int32 FinalPosition = Source.Position;
-			Source.Position = OriginalPosition;
-			return new Result(Source.Read(FinalPosition - OriginalPosition), Result);
+			To.Consume(ref Source, ref Result);
+			while (!Result) {
+				if (Source.EOF) { break; }
+				Source.Position++;
+				Result.Length++;
+				To.Consume(ref Source, ref Result);
+			}
+			if (!Result) {
+				Result.Error = new EndOfSourceError(Expected: To.ToString());
+			}
 		}
+
+		internal override void Neglect(ref Source Source, ref Result Result) => throw new NotImplementedException();
 
 		public override Boolean Equals(Object obj) {
 			switch (obj) {
@@ -38,16 +39,16 @@
 			}
 		}
 
-		public override Boolean Equals(ReadOnlySpan<Char> other) => throw new NotImplementedException();
-
-		public override Boolean Equals(String other) => throw new NotImplementedException();
-
 		public Boolean Equals(Ranger other) => From.Equals(other.From) && To.Equals(other.To);
 
 		public override Int32 GetHashCode() => From.GetHashCode() ^ To.GetHashCode();
 
-		protected internal override Result Neglect(ref Source Source) => throw new NotImplementedException();
-
 		public override String ToString() => $"from=({From}) to=({To})";
+
+		#region Negator
+
+		internal override Pattern Negate() => throw new PatternConstructionException("Ranges can not be negated, as there is no valid concept to describe this behavior");
+
+		#endregion
 	}
 }

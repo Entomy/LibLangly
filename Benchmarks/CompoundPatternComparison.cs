@@ -55,7 +55,7 @@ namespace Benchmarks {
 		[Benchmark]
 		public Match PhoneNumberRegex() => new Regex(@"\d{3}-\d{3}-\d{4}").Match("555-555-5555");
 
-		
+
 		[Benchmark]
 		public Result StringPattern() {
 			Pattern Range = (From: "\"", To: "\"", Escape: "\\\"");

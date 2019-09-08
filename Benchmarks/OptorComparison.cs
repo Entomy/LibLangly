@@ -5,6 +5,7 @@ using BenchmarkDotNet.Attributes;
 
 namespace Benchmarks {
 	[ClrJob, CoreJob, CoreRtJob]
+	[MemoryDiagnoser]
 	public class OptorComparison {
 
 		Pattern Optor = -(Pattern)"Hello";

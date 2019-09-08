@@ -57,7 +57,7 @@ namespace Tests {
 			Result = Digit.Consume("11");
 			Assert.That.Captures("11", Result);
 			Result = Digit.Consume("111");
-			Assert.That.Captures("111",Result);
+			Assert.That.Captures("111", Result);
 
 			Result = Address.Consume("192.168.1.1");
 			Assert.That.Succeeds(Result);
@@ -73,17 +73,17 @@ namespace Tests {
 			Result Result;
 
 			Result = Package.Consume("package Top\nend Top;");
-			//Assert.That.Succeeds(Result);
 			Assert.That.Captures("Top", Name);
 			Assert.That.Captures("package Top\nend Top;", Result);
+			Assert.That.Succeeds(Result);
 
 			Result = Package.Consume("package Top\npackage Nest\nend Nest;\nend Top;");
-			//Assert.That.Succeeds(Result);
 			Assert.That.Captures("Top", Name);
 			Assert.That.Captures("package Top\npackage Nest\nend Nest;\nend Top;", Result);
-	}
+			Assert.That.Succeeds(Result);
+		}
 
-	[TestMethod]
+		[TestMethod]
 		public void Number() {
 			Result Result;
 

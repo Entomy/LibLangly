@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.Patterns;
 using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Running;
 
@@ -57,6 +58,14 @@ namespace Benchmarks {
 				Console.ResetColor();
 				Console.WriteLine("String[x..y] vs String.Substring(x, l)");
 				Console.ForegroundColor = ConsoleColor.DarkYellow;
+				Console.Write(" [5] ");
+				Console.ResetColor();
+				Console.WriteLine("String Culture Comparison");
+				Console.ForegroundColor = ConsoleColor.DarkYellow;
+				Console.Write(" [6] ");
+				Console.ResetColor();
+				Console.WriteLine("String Equality Approaches");
+				Console.ForegroundColor = ConsoleColor.DarkYellow;
 				Console.Write(" [A] ");
 				Console.ResetColor();
 				Console.WriteLine("All Benchmarks");
@@ -85,6 +94,12 @@ namespace Benchmarks {
 					if (All) { goto case '4'; } else { break; }
 				case '4':
 					BenchmarkRunner.Run<SliceSubstringComparison>();
+					break;
+				case '5':
+					BenchmarkRunner.Run<StringCultureComparison>();
+					break;
+				case '6':
+					BenchmarkRunner.Run<StringEqualsComparison>();
 					break;
 				case 'B':
 					goto ListChoice;

@@ -22,7 +22,7 @@ namespace System.Text.Patterns {
 		}
 
 		public static void Succeeds(this Assert Assert, Result Actual) {
-			if (!Actual) { throw new AssertFailedException("Assert.That.Succeeds failed."); }
+			if (!Actual) { throw new AssertFailedException($"Assert.That.Succeeds failed."); }
 		}
 	}
 }

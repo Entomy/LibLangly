@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace System.Text.Patterns {
-	internal sealed class CaptureLiteral : PrimativePattern, IEquatable<CaptureLiteral> {
+	internal sealed class CaptureLiteral : Literal, IEquatable<CaptureLiteral> {
 		private readonly StringComparison ComparisonType = Stringier.DefaultComparisonType;
 
 		private readonly Capture capture;
@@ -15,9 +15,9 @@ namespace System.Text.Patterns {
 			this.ComparisonType = ComparisonType;
 		}
 
-		protected internal override Int32 Length => capture.Length;
+		internal override void Consume(ref Source Source, ref Result Result) => capture.Value.Consume(ref Source, ref Result, ComparisonType);
 
-		public override Result Consume(ref Source Source) => capture.Value.Consume(ref Source, ComparisonType);
+		internal override void Neglect(ref Source Source, ref Result Result) => capture.Value.Neglect(ref Source, ref Result, ComparisonType);
 
 		public override Boolean Equals(Object obj) {
 			switch (obj) {
@@ -37,8 +37,6 @@ namespace System.Text.Patterns {
 		public Boolean Equals(CaptureLiteral other) => capture.Equals(other.capture) && ComparisonType.Equals(other.ComparisonType);
 
 		public override Int32 GetHashCode() => capture.GetHashCode();
-
-		protected internal override Result Neglect(ref Source Source) => capture.Value.Neglect(ref Source, ComparisonType);
 
 		public override String ToString() => $"{capture}";
 	}

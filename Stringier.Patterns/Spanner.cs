@@ -1,20 +1,48 @@
 ﻿namespace System.Text.Patterns {
-	internal sealed class Spanner : ComplexPattern, IEquatable<Spanner> {
+	internal sealed class Spanner : Pattern, IEquatable<Spanner> {
 		private readonly Pattern Pattern;
 
 		internal Spanner(Pattern Pattern) => this.Pattern = Pattern;
 
-		public override Result Consume(ref Source Source) {
+		internal override void Consume(ref Source Source, ref Result Result) {
+			//Store the source position and result length, because backtracking has to be done on the entire span unit
 			Int32 OriginalPosition = Source.Position;
-			Result Result = new Result("", true);
-			while (Result) {
-				Result = Pattern.Consume(ref Source);
+			Int32 OriginalLength = Result.Length;
+			//We need to confirm the pattern exists at least once
+			Pattern.Consume(ref Source, ref Result);
+			if (!Result) {
+				//Backtrack
+				Source.Position = OriginalPosition;
+				Result.Length = OriginalLength;
+				return;
 			}
-			Int32 FinalPosition = Source.Position;
-			Source.Position = OriginalPosition;
-			Boolean Success = FinalPosition - OriginalPosition > 0;
-			return new Result(Source.Read(FinalPosition - OriginalPosition), Success);
+			//Now continue to consume as much as possible
+			while (Result) {
+				//Update the positions so we can backtrack this unit
+				OriginalPosition = Source.Position;
+				OriginalLength = Result.Length;
+				//Try consuming
+				Pattern.Consume(ref Source, ref Result);
+				if (!Result) {
+					//Before we break out, backtrack
+					Source.Position = OriginalPosition;
+					Result.Length = OriginalLength;
+				}
+			}
+			Result.Error = null; //As long as the first pattern matched, this consume is successful; we just stop on the eventual fail
 		}
+
+		internal override void Neglect(ref Source Source, ref Result Result) {
+			//We need to confirm the pattern exists at least once
+			Pattern.Neglect(ref Source, ref Result);
+			if (!Result) { return; }
+			//Now continue to consume as much as possible
+			while (Result) {
+				Pattern.Neglect(ref Source, ref Result);
+			}
+			Result.Error = null; //As long as the first pattern matched, this consume is successful; we just stop on the eventual fail
+		}
+
 
 		public override Boolean Equals(Object obj) {
 			switch (obj) {
@@ -27,40 +55,9 @@
 			}
 		}
 
-		public override Boolean Equals(ReadOnlySpan<Char> other) {
-			Source Source = new Source(other);
-			Result Result = new Result("", true);
-			while (Result) {
-				Result = Consume(ref Source);
-				if (Source.Length == 0) { break; }
-			}
-			return Result;
-		}
-
-		public override Boolean Equals(String other) {
-			Source Source = new Source(other);
-			Result Result = new Result("", true);
-			while (Result) {
-				Result = Consume(ref Source);
-				if (Source.Length == 0) { break; }
-			}
-			return Result;
-		}
-
 		public Boolean Equals(Spanner other) => Pattern.Equals(other.Pattern);
 
 		public override Int32 GetHashCode() => Pattern.GetHashCode();
-
-		protected internal override Result Neglect(ref Source Source) {
-			Int32 OriginalPosition = Source.Position;
-			Result Result = new Result("", true);
-			while (Result) {
-				Result = Pattern.Neglect(ref Source);
-			}
-			Int32 FinalPosition = Source.Position;
-			Source.Position = OriginalPosition;
-			return new Result(Source.Read(FinalPosition - OriginalPosition), Result);
-		}
 
 		public override String ToString() => $"+{Pattern}";
 	}

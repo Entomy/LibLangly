@@ -5,6 +5,7 @@ using BenchmarkDotNet.Attributes;
 
 namespace Benchmarks {
 	[ClrJob, CoreJob, CoreRtJob]
+	[MemoryDiagnoser]
 	public class AlternatorComparison {
 
 		Pattern Alternator = (Pattern)"Hello" | "Goodbye";
