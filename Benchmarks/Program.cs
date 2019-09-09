@@ -48,21 +48,25 @@ namespace Benchmarks {
 				Console.ForegroundColor = ConsoleColor.DarkYellow;
 				Console.Write(" [2] ");
 				Console.ResetColor();
-				Console.WriteLine("Int32.Parse(Char) vs Char.ParseInt32()");
+				Console.WriteLine("Construction Comparison");
 				Console.ForegroundColor = ConsoleColor.DarkYellow;
 				Console.Write(" [3] ");
 				Console.ResetColor();
-				Console.WriteLine("Int32.Parse(String) vs String.ParseInt32()");
+				Console.WriteLine("Int32.Parse(Char) vs Char.ParseInt32()");
 				Console.ForegroundColor = ConsoleColor.DarkYellow;
 				Console.Write(" [4] ");
 				Console.ResetColor();
-				Console.WriteLine("String[x..y] vs String.Substring(x, l)");
+				Console.WriteLine("Int32.Parse(String) vs String.ParseInt32()");
 				Console.ForegroundColor = ConsoleColor.DarkYellow;
 				Console.Write(" [5] ");
 				Console.ResetColor();
-				Console.WriteLine("String Culture Comparison");
+				Console.WriteLine("String[x..y] vs String.Substring(x, l)");
 				Console.ForegroundColor = ConsoleColor.DarkYellow;
 				Console.Write(" [6] ");
+				Console.ResetColor();
+				Console.WriteLine("String Culture Comparison");
+				Console.ForegroundColor = ConsoleColor.DarkYellow;
+				Console.Write(" [7] ");
 				Console.ResetColor();
 				Console.WriteLine("String Equality Approaches");
 				Console.ForegroundColor = ConsoleColor.DarkYellow;
@@ -87,18 +91,21 @@ namespace Benchmarks {
 					BenchmarkRunner.Run<CheckerComparison>();
 					if (All) { goto case '2'; } else { break; }
 				case '2':
-					BenchmarkRunner.Run<Int32ParseCharComparison>();
+					BenchmarkRunner.Run<ConstructionComparison>();
 					if (All) { goto case '3'; } else { break; }
 				case '3':
-					BenchmarkRunner.Run<Int32ParseStringComparison>();
+					BenchmarkRunner.Run<Int32ParseCharComparison>();
 					if (All) { goto case '4'; } else { break; }
 				case '4':
-					BenchmarkRunner.Run<SliceSubstringComparison>();
-					break;
+					BenchmarkRunner.Run<Int32ParseStringComparison>();
+					if (All) { goto case '5'; } else { break; }
 				case '5':
-					BenchmarkRunner.Run<StringCultureComparison>();
-					break;
+					BenchmarkRunner.Run<SliceSubstringComparison>();
+					if (All) { goto case '6'; } else { break; }
 				case '6':
+					BenchmarkRunner.Run<StringCultureComparison>();
+					if (All) { goto case '7'; } else { break; }
+				case '7':
 					BenchmarkRunner.Run<StringEqualsComparison>();
 					break;
 				case 'B':
@@ -108,6 +115,11 @@ namespace Benchmarks {
 				}
 				break;
 			case '1':
+				Console.ForegroundColor = ConsoleColor.DarkYellow;
+				Console.Write(" [0] ");
+				Console.ResetColor();
+				Console.WriteLine("Failure Benchmarks");
+				Console.ResetColor();
 				Console.ForegroundColor = ConsoleColor.DarkYellow;
 				Console.Write(" [1] ");
 				Console.ResetColor();
@@ -167,7 +179,10 @@ namespace Benchmarks {
 				switch (Choice.KeyChar.ToUpperInvariant()) {
 				case 'A':
 					All = true;
-					goto case '1';
+					goto case '0';
+				case '0':
+					BenchmarkRunner.Run<FailureComparison>();
+					if (All) { goto case '1'; } else { break; }
 				case '1':
 					BenchmarkRunner.Run<AlternatorComparison>();
 					if (All) { goto case '2'; } else { break; }

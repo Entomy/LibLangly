@@ -6,75 +6,80 @@ namespace Benchmarks {
 	[ClrJob, CoreJob, CoreRtJob]
 	[MemoryDiagnoser]
 	public class CompoundPatternComparison {
-		[Benchmark]
-		public Result CommentPattern() {
-			Pattern Range = "--" & +!(Pattern)"\n";
-			return Range.Consume("--Comment");
-		}
+		readonly static Pattern commentPattern = "--" & +!(Pattern)"\n";
 
 		[Benchmark]
-		public Match CommentRegex() => new Regex("^--.*", RegexOptions.Singleline).Match("--Comment");
+		public Result CommentPattern() => commentPattern.Consume("--Comment");
+
+		readonly static Regex commentRegex = new Regex("^--.*", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
 		[Benchmark]
-		public Result IdentifierPattern() {
-			Pattern Pattern = Pattern.Letter & +(Pattern.Letter | Pattern.DecimalDigitNumber | '_');
-			return Pattern.Consume("Hello_World");
-		}
+		public Match CommentRegex() => commentRegex.Match("--Comment");
+
+		readonly static Pattern identifierPattern = Pattern.Letter & +(Pattern.Letter | Pattern.DecimalDigitNumber | '_');
 
 		[Benchmark]
-		public Match IdentifierRegex() => new Regex("\\w(\\w|_)+").Match("Hello_World");
+		public Result IdentifierPattern() => identifierPattern.Consume("Hello_World");
+
+		readonly static Regex identifierRegex = new Regex("\\w(\\w|_)+", RegexOptions.IgnoreCase);
 
 		[Benchmark]
-		public Result IPv4AddressPattern() {
-			Pattern Digit = (-(((Pattern)'1' | '2') & Pattern.DecimalDigitNumber) | Pattern.DecimalDigitNumber) & -Pattern.DecimalDigitNumber;
-			Pattern Address = Digit & "." & Digit & "." & Digit & "." & Digit;
-			return Address.Consume("192.168.1.1");
-		}
+		public Match IdentifierRegex() => identifierRegex.Match("Hello_World");
+
+		readonly static Pattern ipv4Digit = (-(((Pattern)'1' | '2') & Pattern.DecimalDigitNumber) | Pattern.DecimalDigitNumber) & -Pattern.DecimalDigitNumber;
+		readonly static Pattern ipv4AddressPattern = ipv4Digit & "." & ipv4Digit & "." & ipv4Digit & "." & ipv4Digit;
 
 		[Benchmark]
-		public Match IPv4AddressRegex() => new Regex(@"[12]?\d{1,2}.[12]?\d{1,2}.[12]?\d{1,2}.[12]?\d{1,2}").Match("192.168.1.1");
+		public Result IPv4AddressPattern() => ipv4AddressPattern.Consume("192.168.1.1");
+
+		readonly static Regex ipv4AddressRegex = new Regex(@"[12]?\d{1,2}.[12]?\d{1,2}.[12]?\d{1,2}.[12]?\d{1,2}", RegexOptions.IgnoreCase);
 
 		[Benchmark]
-		public Result NestedPackagePattern() {
-			Pattern Identifier = Pattern.Letter & +(Pattern.Letter | Pattern.DecimalDigitNumber | "_");
-			Pattern Package = (
-				From: "package" & +Pattern.SpaceSeparator & Identifier.Capture(out System.Text.Patterns.Capture Name),
+		public Match IPv4AddressRegex() => ipv4AddressRegex.Match("192.168.1.1");
+
+		readonly static Pattern nestedPackagePattern = (
+				From: "package" & +Pattern.SpaceSeparator & identifierPattern.Capture(out System.Text.Patterns.Capture Name),
 				To: "end" & +Pattern.SpaceSeparator & Name & ';');
-			return Package.Consume("package Top\npackage Nest\nend Nest;\nend Top;");
-		}
 
 		[Benchmark]
-		public Match NestedPackageRegex() => new Regex(@"package\s+(?<Name>\w(\w|\d|_)*).*end\s+\k<Name>;", RegexOptions.Singleline).Match("package Top\npackage Nest\nend Nest;\nend Top;");
+		public Result NestedPackagePattern() => nestedPackagePattern.Consume("package Top\npackage Nest\nend Nest;\nend Top;");
+
+		readonly static Regex nestedPackageRegex = new Regex(@"package\s+(?<Name>\w(\w|\d|_)*).*end\s+\k<Name>;", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
 		[Benchmark]
-		public Result PhoneNumberPattern() {
-			Pattern Pattern = Pattern.Number * 3 & '-' & Pattern.Number * 3 & '-' & Pattern.Number * 4;
-			return Pattern.Consume("555-555-5555");
-		}
+		public Match NestedPackageRegex() => nestedPackageRegex.Match("package Top\npackage Nest\nend Nest;\nend Top;");
+
+		readonly static Pattern phoneNumberPattern = Pattern.Number * 3 & '-' & Pattern.Number * 3 & '-' & Pattern.Number * 4;
 
 		[Benchmark]
-		public Match PhoneNumberRegex() => new Regex(@"\d{3}-\d{3}-\d{4}").Match("555-555-5555");
+		public Result PhoneNumberPattern() => phoneNumberPattern.Consume("555-555-5555");
 
-
-		[Benchmark]
-		public Result StringPattern() {
-			Pattern Range = (From: "\"", To: "\"", Escape: "\\\"");
-			return Range.Consume("\"Hello\\\"World\"");
-		}
+		readonly static Regex phoneNumberRegex = new Regex(@"\d{3}-\d{3}-\d{4}", RegexOptions.IgnoreCase);
 
 		[Benchmark]
-		public Match StringRegex() => new Regex("\"(\\.|[^\"])*\"").Match("\"Hello\\\"World\"");
+		public Match PhoneNumberRegex() => phoneNumberRegex.Match("555-555-5555");
+
+		readonly static Pattern stringPattern = (From: "\"", To: "\"", Escape: "\\\"");
 
 		[Benchmark]
-		public Result WebAddressPattern() {
-			Pattern Protocol = "http" & -(Pattern)'s' & "://";
-			Pattern Host = +(Pattern.Letter | Pattern.Number | "-") & "." & (Pattern.Letter * 3 & Source.End | +(Pattern.Letter | Pattern.Number | "-") & "." & Pattern.Letter * 3);
-			Pattern Location = +('/' & +(Pattern.Letter | Pattern.Number | '-' | '_'));
-			Pattern Address = -Protocol & Host & -Location;
-			return Address.Consume("http://www.google.com/about");
-		}
+		public Result StringPattern() => stringPattern.Consume("\"Hello\\\"World\"");
+
+		readonly static Regex stringRegex = new Regex("\"(\\.|[^\"])*\"", RegexOptions.IgnoreCase);
 
 		[Benchmark]
-		public Match WebAddressRegex() => new Regex(@"https?://((\w|-)+\.)?(\w|_)+\.\w{3}(/(\w|\d|-|_)+)*").Match("http://www.google.com/about");
+		public Match StringRegex() => stringRegex.Match("\"Hello\\\"World\"");
+
+		readonly static Pattern webAddressPattern =
+			-("http" & -(Pattern)'s' & "://")
+			& +(Pattern.Letter | Pattern.Number | "-") & "." & (Pattern.Letter * 3 & Source.End | +(Pattern.Letter | Pattern.Number | "-") & "." & Pattern.Letter * 3)
+			& -+('/' & +(Pattern.Letter | Pattern.Number | '-' | '_'));
+
+		[Benchmark]
+		public Result WebAddressPattern() => webAddressPattern.Consume("http://www.google.com/about");
+
+		readonly static Regex webAddressRegex = new Regex(@"https?://((\w|-)+\.)?(\w|_)+\.\w{3}(/(\w|\d|-|_)+)*", RegexOptions.IgnoreCase);
+
+		[Benchmark]
+		public Match WebAddressRegex() => webAddressRegex.Match("http://www.google.com/about");
 	}
 }

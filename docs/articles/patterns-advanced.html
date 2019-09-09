@@ -79,6 +79,12 @@
 <p><code>nameof()</code> can be any string, but this is recommended.</p>
 <p>The function lambda must take a <code>Char</code> as a parameter and return a <code>Boolean</code>, but otherwise you are free to declare whatever logic desired.</p>
 <p>A large amount of predefined patterns are actually implemented this way.</p>
+<h3 id="endchecker">EndChecker</h3>
+<pre><code class="lang-csharp">Pattern endOfSource = Source.End;
+</code></pre>
+<pre><code class="lang-fsharp">let endOfSource = Source.End;
+</code></pre>
+<p>Checks that the parser is currently at the end of the source, setting a <code>ConsumeParserError</code> if not. This is essentially a highly specialized lookahead.</p>
 <h2 id="self-optimization">Self Optimization</h2>
 <p><strong>Stringier.Patterns</strong> holds a unique and rare feature: it is self optimizing. This means that you do not need to be intimately aware of what the fastest way to do something is; generally speaking the pattern will become, at construction time (that is, when what you declared is initialized), the most optimal equivalent declaration. This is not an exhaustive description of these optimizations, but merely seeks to explain the approach taken.</p>
 <p>Typically, patterns are declared with operators that combine or modify them. These operators call methods which are dispatching. These all have &quot;reasonable default&quot; behaviors defined, but are overridden in certain cases to provide specific optimizations.</p>
