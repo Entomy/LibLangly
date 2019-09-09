@@ -1,4 +1,7 @@
 ﻿namespace System.Text.Patterns {
+	/// <summary>
+	/// Thrown when at the end of source, but still trying to parse
+	/// </summary>
 	[Serializable]
 	public class EndOfSourceException : ParserException {
 		public EndOfSourceException() { }

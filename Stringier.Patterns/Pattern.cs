@@ -30,24 +30,43 @@ namespace System.Text.Patterns {
 
 		internal abstract void Neglect(ref Source Source, ref Result Result);
 
+		/// <summary>
+		/// Determines whether this instance and a specified object, which must also be a String object, have the same value.
+		/// </summary>
+		/// <param name="obj"></param>
+		/// <returns></returns>
 		public abstract override Boolean Equals(Object obj);
 
+		/// <summary>
+		/// Determines whether the specified <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> can be represented by this <see cref="Pattern"/>.
+		/// </summary>
+		/// <param name="other">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to check against this <see cref="Pattern"/>.</param>
+		/// <returns><c>true</c> if representable; otherwise, <c>false</c>.</returns>
 		public virtual Boolean Equals(ReadOnlySpan<Char> other) {
 			Source Source = new Source(other);
 			return Consume(ref Source) && Source.Length == 0;
 		}
 
+		/// <summary>
+		/// Determines whether the specified <see cref="String"/> can be represented by this <see cref="Pattern"/>.
+		/// </summary>
+		/// <param name="other">The <see cref="String"/> to check against this <see cref="Pattern"/>.</param>
+		/// <returns><c>true</c> if representable; otherwise, <c>false</c>.</returns>
 		public virtual Boolean Equals(String other) {
 			Source Source = new Source(other);
 			return Consume(ref Source) && Source.Length == 0;
 		}
 
+		/// <summary>
+		/// Returns the hash code for this <see cref="Pattern"/>.
+		/// </summary>
+		/// <returns>A 32-bit signed integer hash code.</returns>
 		public abstract override Int32 GetHashCode();
 
 		/// <summary>
-		/// Returns a <see cref="String"/> that represents the current object.
+		/// Returns a <see cref="String"/> that represents the current <see cref="Pattern"/>.
 		/// </summary>
-		/// <returns>A <see cref="String"/> that represents the current object.</returns>
+		/// <returns>A <see cref="String"/> that represents the current <see cref="Pattern"/>.</returns>
 		public abstract override String ToString();
 
 		#region Literals
@@ -113,6 +132,8 @@ namespace System.Text.Patterns {
 		#endregion
 
 		#region Capturer
+
+		public static implicit operator Pattern(Capture Capture) => new CaptureLiteral(Capture);
 
 		/// <summary>
 		/// Declares this <see cref="Pattern"/> should be captured into <paramref name="Capture"/> for later reference

@@ -1,4 +1,7 @@
 ﻿namespace System.Text.Patterns {
+	/// <summary>
+	/// Thrown when a Consume failed to match
+	/// </summary>
 	[Serializable]
 	public class ConsumeFailedException : ParserException {
 		public ConsumeFailedException() { }

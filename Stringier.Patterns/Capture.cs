@@ -12,8 +12,11 @@
 
 		internal Capture() => Value = "";
 
-		public static implicit operator Pattern(Capture Capture) => new CaptureLiteral(Capture);
-
+		/// <summary>
+		/// Determines whether two <see cref="Object"/> instances are equal.
+		/// </summary>
+		/// <param name="obj">The <see cref="Object"/> to compare with the current object.</param>
+		/// <returns><c>true</c> if the specified <see cref="Object"/> is equal to the current object; otherwise, <c>false</c>.</returns>
 		public override Boolean Equals(Object obj) {
 			switch (obj) {
 			case Capture other:
@@ -25,12 +28,30 @@
 			}
 		}
 
+		/// <summary>
+		/// Determines whether two <see cref="Capture"/> instances are equal.
+		/// </summary>
+		/// <param name="other">The <see cref="Capture"/> to compare with the current object.</param>
+		/// <returns><c>true</c> if the specified <see cref="Capture"/> is equal to the current object; otherwise, <c>false</c>.</returns>
 		public Boolean Equals(Capture other) => Stringier.Equals(Value, other);
 
+		/// <summary>
+		/// Determines whether the <see cref="String"/> instance is equal to the current object.
+		/// </summary>
+		/// <param name="other">The <see cref="String"/> to compare with the current object.</param>
+		/// <returns><c>true</c> if the specified <see cref="String"/> is equal to the current object; otherwise, <c>false</c>.</returns>
 		public Boolean Equals(String other) => Stringier.Equals(Value, other);
 
-		public override Int32 GetHashCode() => base.GetHashCode();
+		/// <summary>
+		/// Returns the hash code for this <see cref="Capture"/>.
+		/// </summary>
+		/// <returns>A 32-bit signed integer hash code.</returns>
+		public override Int32 GetHashCode() => Value.GetHashCode();
 
+		/// <summary>
+		/// Converts the value of this instance to a <see cref="String"/>.
+		/// </summary>
+		/// <returns>Returns the captured <see cref="String"/></returns>
 		public override String ToString() => $"{Value}";
 	}
 }

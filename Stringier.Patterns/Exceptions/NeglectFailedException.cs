@@ -1,4 +1,7 @@
 ﻿namespace System.Text.Patterns {
+	/// <summary>
+	/// Thrown when a Neglect failed to match
+	/// </summary>
 	[Serializable]
 	public class NeglectFailedException : ParserException {
 		public NeglectFailedException() { }

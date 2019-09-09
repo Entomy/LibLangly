@@ -1,4 +1,7 @@
 ﻿namespace System.Text.Patterns {
+	/// <summary>
+	/// Thrown during errors in parser construction
+	/// </summary>
 	[Serializable]
 	public sealed class PatternConstructionException : PatternException {
 		public PatternConstructionException() { }
