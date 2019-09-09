@@ -43,7 +43,6 @@ type CompoundPatternTests() =
     member this.PhoneNumber() =
         let number = Pattern.Number * 3 >> '-' >> Pattern.Number * 3 >> '-' >> Pattern.Number * 4
         let result = number.Consume("555-555-5555")
-        Assert.That.Succeeds(result)
         Assert.That.Captures("555-555-5555", result)
 
     [<TestMethod>]

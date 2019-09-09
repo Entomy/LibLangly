@@ -16,7 +16,6 @@ namespace Tests {
 			Result Result;
 
 			Result = Repeater.Consume("Hi! Hi! Hi!");
-			Assert.That.Succeeds(Result);
 			Assert.That.Captures("Hi! Hi! ", Result);
 
 			Result = Repeater.Consume("Bye!");

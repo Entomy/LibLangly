@@ -19,21 +19,17 @@ namespace Tests {
 
 			Result = Hello.Consume("Hello World!");
 			Assert.That.Captures("Hello", Result);
-			Assert.That.Succeeds(Result);
 
 			Source Source = new Source("Hello World");
 
 			Result = Hello.Consume(ref Source);
 			Assert.That.Captures("Hello", Result);
-			Assert.That.Succeeds(Result);
 
 			Result = Space.Consume(ref Source);
 			Assert.That.Captures(" ", Result);
-			Assert.That.Succeeds(Result);
 
 			Result = World.Consume(ref Source);
 			Assert.That.Captures("World", Result);
-			Assert.That.Succeeds(Result);
 
 			Result = Hello.Consume("Hell");
 			Assert.That.Fails(Result);
@@ -45,15 +41,12 @@ namespace Tests {
 
 			Result = HelloWorld.Consume("HELLO WORLD!");
 			Assert.That.Captures("HELLO WORLD", Result);
-			Assert.That.Succeeds(Result);
 
 			Result = HelloWorld.Consume("Hello World!");
 			Assert.That.Captures("Hello World", Result);
-			Assert.That.Succeeds(Result);
 
 			Result = HelloWorld.Consume("hello world!");
 			Assert.That.Captures("hello world", Result);
-			Assert.That.Succeeds(Result);
 		}
 
 		[TestMethod]

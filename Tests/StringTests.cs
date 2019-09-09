@@ -70,31 +70,24 @@ namespace Tests {
 
 			Result = "".Consume("Hello");
 			Assert.That.Captures("", Result);
-			Assert.That.Succeeds(Result);
 
 			Result = "H".Consume("Hello");
 			Assert.That.Captures("H", Result);
-			Assert.That.Succeeds(Result);
 
 			Result = "He".Consume("Hello");
 			Assert.That.Captures("He", Result);
-			Assert.That.Succeeds(Result);
 
 			Result = "Hel".Consume("Hello");
 			Assert.That.Captures("Hel", Result);
-			Assert.That.Succeeds(Result);
 
 			Result = "Hell".Consume("Hello");
 			Assert.That.Captures("Hell", Result);
-			Assert.That.Succeeds(Result);
 
 			Result = "Hello".Consume("Hello");
 			Assert.That.Captures("Hello", Result);
-			Assert.That.Succeeds(Result);
 
 			Result = " ".Consume("    Hello");
 			Assert.That.Captures(" ", Result);
-			Assert.That.Succeeds(Result);
 
 			Assert.That.Fails("w".Consume("Hello"));
 			Assert.That.Fails(" ".Consume("Hello"));
@@ -107,23 +100,18 @@ namespace Tests {
 
 			Result = "H".Consume(ref Source);
 			Assert.That.Captures("H", Result);
-			Assert.That.Succeeds(Result);
 
 			Result = "e".Consume(ref Source);
 			Assert.That.Captures("e", Result);
-			Assert.That.Succeeds(Result);
 
 			Result = "l".Consume(ref Source);
 			Assert.That.Captures("l", Result);
-			Assert.That.Succeeds(Result);
 
 			Result = "l".Consume(ref Source);
 			Assert.That.Captures("l", Result);
-			Assert.That.Succeeds(Result);
 
 			Result = "o".Consume(ref Source);
 			Assert.That.Captures("o", Result);
-			Assert.That.Succeeds(Result);
 		}
 	}
 }

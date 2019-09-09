@@ -68,7 +68,7 @@ namespace Benchmarks {
 		[Benchmark]
 		public Result WebAddressPattern() {
 			Pattern Protocol = "http" & -(Pattern)'s' & "://";
-			Pattern Host = +(Pattern.Letter | Pattern.Number | '-') & '.' & -(+(Pattern.Letter | Pattern.Number | '-') & '.') & Pattern.Letter * 3;
+			Pattern Host = +(Pattern.Letter | Pattern.Number | "-") & "." & (Pattern.Letter * 3 & Source.End | +(Pattern.Letter | Pattern.Number | "-") & "." & Pattern.Letter * 3);
 			Pattern Location = +('/' & +(Pattern.Letter | Pattern.Number | '-' | '_'));
 			Pattern Address = -Protocol & Host & -Location;
 			return Address.Consume("http://www.google.com/about");

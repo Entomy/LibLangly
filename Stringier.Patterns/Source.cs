@@ -119,5 +119,10 @@ namespace System.Text.Patterns {
 		/// </summary>
 		/// <returns>A string that represents the current object.</returns>
 		public override String ToString() => Buffer.Slice(Position).ToString();
+
+		/// <summary>
+		/// Check for the end of the <see cref="Source"/>
+		/// </summary>
+		public static Pattern End => new EndChecker();
 	}
 }

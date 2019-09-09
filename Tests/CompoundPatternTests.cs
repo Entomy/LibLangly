@@ -25,11 +25,9 @@ namespace Tests {
 
 			Result = Range.Consume("--This is a comment\n");
 			Assert.That.Captures("--This is a comment", Result);
-			Assert.That.Succeeds(Result);
 
 			Result = Range.Consume("--This is a comment\nExample_Function();");
 			Assert.That.Captures("--This is a comment", Result);
-			Assert.That.Succeeds(Result);
 
 		}
 
@@ -37,10 +35,8 @@ namespace Tests {
 		public void Identifier() {
 			Pattern Pattern = Pattern.Letter & +(Pattern.Letter | Pattern.DecimalDigitNumber | "_");
 
-			Assert.That.Succeeds(Pattern.Consume("hello"));
 			Assert.That.Captures("hello", Pattern.Consume("hello"));
 
-			Assert.That.Succeeds(Pattern.Consume("example_name"));
 			Assert.That.Captures("example_name", Pattern.Consume("example_name"));
 
 			Assert.That.Fails(Pattern.Consume("_fail"));
@@ -60,7 +56,6 @@ namespace Tests {
 			Assert.That.Captures("111", Result);
 
 			Result = Address.Consume("192.168.1.1");
-			Assert.That.Succeeds(Result);
 			Assert.That.Captures("192.168.1.1", Result);
 		}
 
@@ -75,12 +70,10 @@ namespace Tests {
 			Result = Package.Consume("package Top\nend Top;");
 			Assert.That.Captures("Top", Name);
 			Assert.That.Captures("package Top\nend Top;", Result);
-			Assert.That.Succeeds(Result);
 
 			Result = Package.Consume("package Top\npackage Nest\nend Nest;\nend Top;");
 			Assert.That.Captures("Top", Name);
 			Assert.That.Captures("package Top\npackage Nest\nend Nest;\nend Top;", Result);
-			Assert.That.Succeeds(Result);
 		}
 
 		[TestMethod]
@@ -100,23 +93,19 @@ namespace Tests {
 			Pattern Numeral = NumeralPattern & -("." & NumeralPattern) & -ExponentPattern;
 
 			Result = Numeral.Consume("42");
-			Assert.That.Succeeds(Result);
 			Assert.That.Captures("42", Result);
 
 			Result = Numeral.Consume("4_2");
-			Assert.That.Succeeds(Result);
 			Assert.That.Captures("4_2", Result);
 
 			Pattern Fraction = "." & Numeral;
 
 			Result = Fraction.Consume(".0");
-			Assert.That.Succeeds(Result);
 			Assert.That.Captures(".0", Result);
 
 			Pattern RealNumeral = Numeral & -Fraction;
 
 			Result = RealNumeral.Consume("42.0");
-			Assert.That.Succeeds(Result);
 			Assert.That.Captures("42.0", Result);
 		}
 
@@ -131,7 +120,6 @@ namespace Tests {
 		public void PhoneNumber() {
 			Pattern Pattern = Pattern.Number * 3 & "-" & Pattern.Number * 3 & "-" & Pattern.Number * 4;
 			Result Result = Pattern.Consume("555-555-5555");
-			Assert.That.Succeeds(Result);
 			Assert.That.Captures("555-555-5555", Result);
 		}
 
@@ -155,7 +143,7 @@ namespace Tests {
 		[TestMethod]
 		public void WebAddress() {
 			Pattern Protocol = "http" & -(Pattern)"s" & "://";
-			Pattern Host = +(Pattern.Letter | Pattern.Number | "-") & "." & -(+(Pattern.Letter | Pattern.Number | "-") & ".") & Pattern.Letter * 3;
+			Pattern Host = +(Pattern.Letter | Pattern.Number | "-") & "." & (Pattern.Letter * 3 & Source.End | +(Pattern.Letter | Pattern.Number | "-") & "." & Pattern.Letter * 3);
 			Pattern Location = +("/" & +(Pattern.Letter | Pattern.Number | "-" | "_"));
 			Pattern Address = -Protocol & Host & -Location;
 			Result Result;

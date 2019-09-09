@@ -10,7 +10,8 @@ namespace System.Text.Patterns {
 		}
 
 		public static void Captures(this Assert Assert, String Expected, Result Actual) {
-			if (Actual != Expected) {
+			Actual.ThrowException();
+			if (!Expected.Equals(Actual)) {
 				throw new AssertFailedException($"Assert.That.Captures failed. Expected: <{Expected}>. Actual: <{(String)Actual}>.");
 			}
 		}
@@ -19,10 +20,6 @@ namespace System.Text.Patterns {
 			if (!Actual.Equals(Expected)) {
 				throw new AssertFailedException($"Assert.That.Captures failed. Expected: <{Expected}>. Actual: <{Actual}>.");
 			}
-		}
-
-		public static void Succeeds(this Assert Assert, Result Actual) {
-			if (!Actual) { throw new AssertFailedException($"Assert.That.Succeeds failed."); }
 		}
 	}
 }

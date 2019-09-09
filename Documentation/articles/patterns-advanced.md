@@ -19,6 +19,18 @@ The function lambda must take a `Char` as a parameter and return a `Boolean`, bu
 
 A large amount of predefined patterns are actually implemented this way.
 
+### EndChecker
+
+~~~~csharp
+Pattern endOfSource = Source.End;
+~~~~
+~~~~fsharp
+let endOfSource = Source.End;
+~~~~
+
+Checks that the parser is currently at the end of the source, setting a `ConsumeParserError` if not. This is essentially a highly specialized lookahead.
+
+
 ## Self Optimization
 
 **Stringier.Patterns** holds a unique and rare feature: it is self optimizing. This means that you do not need to be intimately aware of what the fastest way to do something is; generally speaking the pattern will become, at construction time (that is, when what you declared is initialized), the most optimal equivalent declaration. This is not an exhaustive description of these optimizations, but merely seeks to explain the approach taken.

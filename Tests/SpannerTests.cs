@@ -16,11 +16,9 @@ namespace Tests {
 			Result Result;
 
 			Result = Whitespace.Consume(" Hi!");
-			Assert.That.Succeeds(Result);
 			Assert.That.Captures(" ", Result);
 
 			Result = Whitespace.Consume("    Hi!");
-			Assert.That.Succeeds(Result);
 			Assert.That.Captures("    ", Result);
 
 			Result = Whitespace.Consume("Hi!  ");

@@ -17,11 +17,9 @@ namespace Tests {
 			Result Result;
 
 			Result = HelloWorld.Consume("Hello world");
-			Assert.That.Succeeds(Result);
 			Assert.That.Captures("Hello world", Result);
 
 			Result = GoodbyeWorld.Consume("Goodbye world");
-			Assert.That.Succeeds(Result);
 			Assert.That.Captures("Goodbye world", Result);
 
 			Result = HelloWorld.Consume("Hello everyone");

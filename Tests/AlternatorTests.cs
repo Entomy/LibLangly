@@ -17,14 +17,11 @@ namespace Tests {
 
 			Result = Alternator.Consume("Hello");
 			Assert.That.Captures("Hello", Result);
-			Assert.That.Succeeds(Result);
 
 			Result = Alternator.Consume("Goodbye");
 			Assert.That.Captures("Goodbye", Result);
-			Assert.That.Succeeds(Result);
 
 			Result = Alternator.Consume("!");
-			Assert.That.Captures("", Result);
 			Assert.That.Fails(Result);
 
 			Assert.That.Fails(Alternator.Consume("How are you?"));
