@@ -12,6 +12,8 @@
 
 		#endregion
 
+		internal static Boolean CheckHeader(this Char Pattern, ref Source Source) => Pattern.Equals(Source.Peek());
+
 		/// <summary>
 		/// Attempt to consume the <paramref name="Pattern"/> from the <paramref name="Source"/>
 		/// </summary>

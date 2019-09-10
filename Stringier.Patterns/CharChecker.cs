@@ -16,6 +16,8 @@
 		/// <param name="Check">A <see cref="Func{T, TResult}"/> taking a <see cref="Char"/> and returning a <see cref="Boolean"/></param>
 		internal CharChecker(String Name, Func<Char, Boolean> Check) : base(Name) => this.Check = Check;
 
+		internal override Boolean CheckHeader(ref Source Source) => Check(Source.Peek());
+
 		internal override void Consume(ref Source Source, ref Result Result) {
 			if (Source.Length == 0) {
 				Result.Error = new EndOfSourceError(Expected: ToString());

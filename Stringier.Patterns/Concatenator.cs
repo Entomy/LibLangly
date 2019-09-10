@@ -21,6 +21,8 @@ namespace System.Text.Patterns {
 
 		internal Concatenator(String Left, Pattern Right) : this(new StringLiteral(Left), Right) { }
 
+		internal override Boolean CheckHeader(ref Source Source) => Left.CheckHeader(ref Source);
+
 		internal override void Consume(ref Source Source, ref Result Result) {
 			Left.Consume(ref Source, ref Result);
 			if (!Result) { return; }

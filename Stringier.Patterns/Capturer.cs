@@ -9,6 +9,8 @@
 			capture = this.capture;
 		}
 
+		internal override Boolean CheckHeader(ref Source Source) => Pattern.CheckHeader(ref Source);
+
 		internal override void Consume(ref Source Source, ref Result Result) {
 			Int32 OriginalPosition = Source.Position;
 			Pattern.Consume(ref Source, ref Result);

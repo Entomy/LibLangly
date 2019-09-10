@@ -8,6 +8,8 @@
 			this.To = To;
 		}
 
+		internal override Boolean CheckHeader(ref Source Source) => From.CheckHeader(ref Source);
+
 		internal override void Consume(ref Source Source, ref Result Result) {
 			From.Consume(ref Source, ref Result);
 			if (!Result) {
@@ -19,7 +21,7 @@
 				if (Source.EOF) { break; }
 				Source.Position++;
 				Result.Length++;
-				To.Consume(ref Source, ref Result);
+				if (To.CheckHeader(ref Source)) { To.Consume(ref Source, ref Result); }
 			}
 			if (!Result) {
 				Result.Error = new EndOfSourceError(Expected: To.ToString());

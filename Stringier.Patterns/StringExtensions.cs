@@ -12,6 +12,8 @@
 
 		#endregion
 
+		internal static Boolean CheckHeader(this String Pattern, ref Source Source) => Pattern[0].CheckHeader(ref Source);
+
 		/// <summary>
 		/// Attempt to consume the <paramref name="Pattern"/> from the <paramref name="Source"/>
 		/// </summary>

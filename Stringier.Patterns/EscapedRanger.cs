@@ -17,8 +17,8 @@
 				if (Source.EOF) { break; }
 				Source.Position++;
 				Result.Length++;
-				Escape.Consume(ref Source, ref Result); //Check for the escape before checking for the end of the range
-				To.Consume(ref Source, ref Result);
+				if (Escape.CheckHeader(ref Source)) { Escape.Consume(ref Source, ref Result); } //Check for the escape before checking for the end of the range
+				if (To.CheckHeader(ref Source)) { To.Consume(ref Source, ref Result); }
 			}
 			if (!Result) {
 				Result.Error = new EndOfSourceError(Expected: To.ToString());

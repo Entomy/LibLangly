@@ -4,6 +4,8 @@
 
 		internal Optor(Pattern Pattern) => this.Pattern = Pattern;
 
+		internal override Boolean CheckHeader(ref Source Source) => Pattern.CheckHeader(ref Source); //This isn't supposed to work like an optor normally, as it's a performance optimization, not a parser
+
 		internal override void Consume(ref Source Source, ref Result Result) {
 			Pattern.Consume(ref Source, ref Result);
 			Result.Error = null; //If a pattern is optional, it doesn't matter if it's there or not, so we never actually have an error

@@ -20,6 +20,8 @@
 			this.ComparisonType = ComparisonType;
 		}
 
+		internal override Boolean CheckHeader(ref Source Source) => String.CheckHeader(ref Source);
+
 		internal override void Consume(ref Source Source, ref Result Result) => String.Consume(ref Source, ref Result, ComparisonType);
 
 		internal override void Neglect(ref Source Source, ref Result Result) => String.Neglect(ref Source, ref Result, ComparisonType);

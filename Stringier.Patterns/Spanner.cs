@@ -4,6 +4,8 @@
 
 		internal Spanner(Pattern Pattern) => this.Pattern = Pattern;
 
+		internal override Boolean CheckHeader(ref Source Source) => Pattern.CheckHeader(ref Source);
+
 		internal override void Consume(ref Source Source, ref Result Result) {
 			//Store the source position and result length, because backtracking has to be done on the entire span unit
 			Int32 OriginalPosition = Source.Position;

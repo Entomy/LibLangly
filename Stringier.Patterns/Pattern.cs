@@ -6,6 +6,16 @@ namespace System.Text.Patterns {
 	/// </summary>
 	public abstract class Pattern : IEquatable<String> {
 		/// <summary>
+		/// Checks the first character in the <paramref name="Source"/> against the header of this pattern
+		/// </summary>
+		/// <remarks>
+		/// This is primarily used to check whether a pattern may exist at the current position.
+		/// </remarks>
+		/// <param name="Source">The <see cref="Source"/> to check against</param>
+		/// <returns><c>true</c> if this <see cref="Pattern"/> may be present, <c>false</c> if definately not.</returns>
+		internal abstract Boolean CheckHeader(ref Source Source);
+
+		/// <summary>
 		/// Attempt to consume the <see cref="Pattern"/> from the <paramref name="Source"/>
 		/// </summary>
 		/// <param name="Source">The <see cref="String"/> to consume</param>

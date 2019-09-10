@@ -4,6 +4,8 @@
 
 		internal Negator(Pattern Pattern) => this.Pattern = Pattern;
 
+		internal override Boolean CheckHeader(ref Source Source) => !Pattern.CheckHeader(ref Source);
+
 		internal override void Consume(ref Source Source, ref Result Result) {
 			Pattern.Neglect(ref Source, ref Result);
 		}

@@ -20,6 +20,8 @@ namespace System.Text.Patterns {
 			this.Count = Count;
 		}
 
+		internal override Boolean CheckHeader(ref Source Source) => Pattern.CheckHeader(ref Source);
+
 		internal override void Consume(ref Source Source, ref Result Result) {
 			for (Int32 i = 0; i < Count; i++) {
 				Pattern.Consume(ref Source, ref Result);

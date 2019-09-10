@@ -13,9 +13,9 @@
 				if (Source.EOF) { break; }
 				Source.Position++;
 				Result.Length++;
-				From.Consume(ref Source, ref Result);
+				if (From.CheckHeader(ref Source)) { From.Consume(ref Source, ref Result); }
 				if (Result) { Level++; }
-				To.Consume(ref Source, ref Result);
+				if (To.CheckHeader(ref Source)) { To.Consume(ref Source, ref Result); }
 				if (Result) { Level--; }
 			}
 			if (Level != 0) {

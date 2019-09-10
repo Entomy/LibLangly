@@ -3,6 +3,8 @@
 
 		internal EndChecker() : base("␃") { }
 
+		internal override Boolean CheckHeader(ref Source Source) => Source.EOF;
+
 		internal override void Consume(ref Source Source, ref Result Result) {
 			if (!Source.EOF) { Result.Error = new ConsumeFailedError(Expected: ToString()); }
 		}

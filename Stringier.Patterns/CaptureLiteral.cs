@@ -15,6 +15,8 @@ namespace System.Text.Patterns {
 			this.ComparisonType = ComparisonType;
 		}
 
+		internal override Boolean CheckHeader(ref Source Source) => capture.Value.CheckHeader(ref Source);
+
 		internal override void Consume(ref Source Source, ref Result Result) => capture.Value.Consume(ref Source, ref Result, ComparisonType);
 
 		internal override void Neglect(ref Source Source, ref Result Result) => capture.Value.Neglect(ref Source, ref Result, ComparisonType);
