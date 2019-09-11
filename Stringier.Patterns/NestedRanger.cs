@@ -13,10 +13,14 @@
 				if (Source.EOF) { break; }
 				Source.Position++;
 				Result.Length++;
-				if (From.CheckHeader(ref Source)) { From.Consume(ref Source, ref Result); }
-				if (Result) { Level++; }
-				if (To.CheckHeader(ref Source)) { To.Consume(ref Source, ref Result); }
-				if (Result) { Level--; }
+				if (From.CheckHeader(ref Source)) {
+					From.Consume(ref Source, ref Result);
+					if (Result) { Level++; }
+				}
+				if (To.CheckHeader(ref Source)) {
+					To.Consume(ref Source, ref Result);
+					if (Result) { Level--; }
+				}
 			}
 			if (Level != 0) {
 				Result.Error = new ConsumeFailedError(Expected: this.ToString());

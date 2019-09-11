@@ -17,13 +17,18 @@
 				if (Source.EOF) { break; }
 				Source.Position++;
 				Result.Length++;
-				if (Escape.CheckHeader(ref Source)) { Escape.Consume(ref Source, ref Result); } //Check for the escape before checking for the end of the range
-				if (To.CheckHeader(ref Source)) { To.Consume(ref Source, ref Result); }
+				//Check for the escape before checking for the end of the range
+				if (Escape.CheckHeader(ref Source)) {
+					Escape.Consume(ref Source, ref Result);
+					Result.Error = new ConsumeFailedError(Expected: To.ToString()); //We need an error to continue the loop, and this is the current error
+				} 
+				if (To.CheckHeader(ref Source)) {
+					To.Consume(ref Source, ref Result);
+				}
 			}
 			if (!Result) {
 				Result.Error = new EndOfSourceError(Expected: To.ToString());
 			}
-
 		}
 
 		internal override void Neglect(ref Source Source, ref Result Result) => base.Neglect(ref Source, ref Result);
