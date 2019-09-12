@@ -6,7 +6,7 @@ namespace Benchmarks {
 	[ClrJob, CoreJob, CoreRtJob]
 	[MemoryDiagnoser]
 	public class CompoundPatternComparison {
-		readonly static Pattern commentPattern = "--" & +!(Pattern)"\n";
+		readonly static Pattern commentPattern = "--" & +!(Pattern)'\n';
 
 		[Benchmark]
 		public Result CommentPattern() => commentPattern.Consume("--Comment");
