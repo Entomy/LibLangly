@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 using BenchmarkDotNet.Attributes;
 
 namespace Benchmarks {
-	[ClrJob]
+	[ClrJob, CoreJob, CoreRtJob]
 	[MemoryDiagnoser]
 	public class GibberishComparison {
 
