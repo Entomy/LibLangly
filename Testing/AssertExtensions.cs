@@ -21,5 +21,9 @@ namespace System.Text.Patterns {
 				throw new AssertFailedException($"Assert.That.Captures failed. Expected: <{Expected}>. Actual: <{Actual}>.");
 			}
 		}
+
+		public static void Succeeds(this Assert Assert, Result Actual) {
+			Actual.ThrowException();
+		}
 	}
 }

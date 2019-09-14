@@ -59,6 +59,7 @@
     <Compile Include="FailureComparison.fs" />
     <Compile Include="ConstructionComparison.fs" />
     <Compile Include="CompoundPatternComparison.fs" />
+    <Compile Include="GibberishComparison.fs" />
     <Compile Include="Program.fs" />
     <None Include="App.config" />
     <Content Include="packages.config" />
@@ -213,6 +214,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Gibberish\Gibberish.vbproj">
+      <Name>Gibberish</Name>
+      <Project>{52102c42-4698-43eb-a6be-a717951efcc5}</Project>
+      <Private>True</Private>
+    </ProjectReference>
     <ProjectReference Include="..\Stringier.Patterns.FSharp\Stringier.Patterns.FSharp.fsproj">
       <Name>Stringier.Patterns.FSharp</Name>
       <Project>{18e3d46d-b619-4dc4-b477-ff885fffd38e}</Project>

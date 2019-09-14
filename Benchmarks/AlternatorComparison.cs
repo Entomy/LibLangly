@@ -10,7 +10,7 @@ namespace Benchmarks {
 
 		Pattern Alternator = (Pattern)"Hello" | "Goodbye";
 
-		Regex Regex = new Regex("^(Hello|Goodbye)");
+		Regex Regex = new Regex("^(?:Hello|Goodbye)");
 
 		[Params("Hello", "Goodbye")]
 		public String Source { get; set; }

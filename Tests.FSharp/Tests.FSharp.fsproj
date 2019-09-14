@@ -10,16 +10,19 @@
   <ItemGroup>
     <Compile Include="CompoundPatternTests.fs" />
     <Compile Include="LiteralTests.fs" />
+    <Compile Include="GibberishTests.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="FParsec" Version="1.0.3" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.0.0-preview-20181205-02" />
     <PackageReference Include="MSTest.TestAdapter" Version="1.4.0" />
     <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Gibberish\Gibberish.vbproj" />
     <ProjectReference Include="..\Stringier.Patterns.FSharp\Stringier.Patterns.FSharp.fsproj" />
     <ProjectReference Include="..\Stringier.Patterns\Stringier.Patterns.csproj" />
     <ProjectReference Include="..\Stringier\Stringier.csproj" />

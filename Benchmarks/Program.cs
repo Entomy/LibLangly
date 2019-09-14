@@ -29,6 +29,13 @@ namespace Benchmarks {
 			Console.ForegroundColor = ConsoleColor.DarkGray;
 			Console.WriteLine(" (Run these if interested in serious performance against alternative models)");
 			Console.ResetColor();
+			Console.ForegroundColor = ConsoleColor.DarkYellow;
+			Console.Write(" [3] ");
+			Console.ResetColor();
+			Console.Write("Stress Test Benchmarks");
+			Console.ForegroundColor = ConsoleColor.DarkGray;
+			Console.WriteLine(" (Run these if interested in serious performance against alternative models)");
+			Console.ResetColor();
 			Console.ForegroundColor = ConsoleColor.DarkRed;
 			Console.Write(" [Q] ");
 			Console.ResetColor();
@@ -215,6 +222,9 @@ namespace Benchmarks {
 				break;
 			case '2':
 				BenchmarkRunner.Run<CompoundPatternComparison>();
+				break;
+			case '3':
+				BenchmarkRunner.Run<GibberishComparison>();
 				break;
 			case 'Q':
 				return;

@@ -21,7 +21,7 @@ namespace Benchmarks {
 		[Benchmark]
 		public Result IdentifierPattern() => identifierPattern.Consume("Hello_World");
 
-		readonly static Regex identifierRegex = new Regex("\\w(\\w|_)+", RegexOptions.IgnoreCase);
+		readonly static Regex identifierRegex = new Regex("\\w(?:\\w|_)+", RegexOptions.IgnoreCase);
 
 		[Benchmark]
 		public Match IdentifierRegex() => identifierRegex.Match("Hello_World");
@@ -64,7 +64,7 @@ namespace Benchmarks {
 		[Benchmark]
 		public Result StringPattern() => stringPattern.Consume("\"Hello\\\"World\"");
 
-		readonly static Regex stringRegex = new Regex("\"(\\.|[^\"])*\"", RegexOptions.IgnoreCase);
+		readonly static Regex stringRegex = new Regex("\"(?:\\.|[^\"])*\"", RegexOptions.IgnoreCase);
 
 		[Benchmark]
 		public Match StringRegex() => stringRegex.Match("\"Hello\\\"World\"");
@@ -77,7 +77,7 @@ namespace Benchmarks {
 		[Benchmark]
 		public Result WebAddressPattern() => webAddressPattern.Consume("http://www.google.com/about");
 
-		readonly static Regex webAddressRegex = new Regex(@"https?://((\w|-)+\.)?(\w|_)+\.\w{3}(/(\w|\d|-|_)+)*", RegexOptions.IgnoreCase);
+		readonly static Regex webAddressRegex = new Regex(@"https?://(?:(?:\w|-)+\.)?(?:\w|_)+\.\w{3}(/(?:\w|\d|-|_)+)*", RegexOptions.IgnoreCase);
 
 		[Benchmark]
 		public Match WebAddressRegex() => webAddressRegex.Match("http://www.google.com/about");
