@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 using BenchmarkDotNet.Attributes;
 
 namespace Benchmarks {
-	[ClrJob, CoreJob, CoreRtJob]
+	[ClrJob]
 	[MemoryDiagnoser]
 	public class GibberishComparison {
 
@@ -14,7 +14,7 @@ namespace Benchmarks {
 
 		public String badGibberish = Gibberish.Generate(4, Bad: true);
 
-		readonly Pattern pattern = +(+Pattern.Letter | +(Pattern)' ') & Source.End;
+		readonly Pattern pattern = +(+(Pattern)("Letter", (Char) => 'a' <= Char && Char <= 'z') | +(Pattern)' ') & Source.End;
 
 		readonly Regex regex = new Regex(@"(?:[a-z]+| +)+$", RegexOptions.Singleline);
 

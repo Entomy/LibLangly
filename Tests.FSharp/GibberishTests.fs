@@ -1,6 +1,5 @@
 ﻿namespace Tests.FSharp
 
-open System
 open System.IO
 open System.Text
 open System.Text.Patterns
@@ -13,7 +12,7 @@ type GibberishTests () =
     [<TestMethod>]
     member this.PatternTest() =
         let mutable source = new Source(Gibberish.Generate(16))
-        let word:Pattern = +Pattern.Letter
+        let word:Pattern = +(check "letter" (fun (char) -> 'a' <= char && char <= 'z'))
         let space:Pattern = +' '
         let doc:Pattern = +(word || space) >> Source.End
         Assert.That.Succeeds(doc.Consume(&source))

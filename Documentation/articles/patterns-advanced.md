@@ -10,12 +10,14 @@ Checkers are a special pattern type which are not meant for normal use. Unlike t
 Pattern patternName = (Pattern)(nameof(patternName), (Char) => { return Boolean; });
 ~~~~
 ~~~~fsharp
-// This isn't supported in F# yet
+let patternName = check "patternName" (fun (char) -> bool)
 ~~~~
 
-`nameof()` can be any string, but this is recommended.
+`nameof()` can be any string, but this is recommended. In languages like F# which lack `nameof`, you must use a variable or string literal.
 
 The function lambda must take a `Char` as a parameter and return a `Boolean`, but otherwise you are free to declare whatever logic desired.
+
+In F#, either the standard lambas `Func<Char, Boolean>` or F# lambas `(char -> bool)` are viable.
 
 A large amount of predefined patterns are actually implemented this way.
 

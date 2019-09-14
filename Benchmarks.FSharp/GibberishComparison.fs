@@ -1,5 +1,6 @@
 ﻿namespace Benchmarks
 
+open System
 open System.IO
 open System.Text
 open System.Text.Patterns
@@ -9,7 +10,7 @@ open BenchmarkDotNet.Attributes
 [<ClrJob>]
 [<MemoryDiagnoser>]
 type GibberishComparison() =
-    let patternWord:Pattern = +Pattern.Letter
+    let patternWord:Pattern = +(check "letter" (new Func<Char,Boolean>(fun (char) -> 'a' <= char && char <= 'z')))
     let patternSpace:Pattern = +' '
     let pattern:Pattern = +(patternWord || patternSpace) >> Source.End
 

@@ -18,8 +18,10 @@ module AlternatorExtensions =
         static member Altern(left:String, right:Char) = PatternBindings.Alternator(left, right)
         static member Altern(left:Char, right:String) = PatternBindings.Alternator(left, right)
         static member Altern(left:Char, right:Char) = PatternBindings.Alternator(left, right)
+        // These keep the boolean || in tact
+        static member Altern(left:Boolean, right:Boolean) = left || right
 
-    let inline altern< ^t, ^a, ^b, ^c when (^t or ^a) : (static member Altern : ^a * ^b -> ^c)> left right = ((^t or ^a) : (static member Altern : ^a * ^b -> ^c)(left, right))
+    let inline private altern< ^t, ^a, ^b, ^c when (^t or ^a) : (static member Altern : ^a * ^b -> ^c)> left right = ((^t or ^a) : (static member Altern : ^a * ^b -> ^c)(left, right))
 
     /// <summary>
     /// Declares <paramref name="right"/> to be an alternate of <paramref name="left"/>
