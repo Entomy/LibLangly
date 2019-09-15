@@ -6,6 +6,8 @@ Checkers are a special pattern type which are not meant for normal use. Unlike t
 
 ### CharChecker
 
+Checks a `Char` with the specified function.
+
 ~~~~csharp
 Pattern patternName = (Pattern)(nameof(patternName), (Char) => { return Boolean; });
 ~~~~
@@ -20,6 +22,32 @@ The function lambda must take a `Char` as a parameter and return a `Boolean`, bu
 In F#, either the standard lambas `Func<Char, Boolean>` or F# lambas `(char -> bool)` are viable.
 
 A large amount of predefined patterns are actually implemented this way.
+
+### StringChecker
+
+Checks a variable length `String` with the specified function.
+* The first entry checks the "head" or first character, and is followed by whether a "head" is required.
+* The second entry checks the "body" or the middle characters, and is followed by whether a "body" is required.
+* The third entry checks the "tail" or the last character, and is followed by whether a "tail" is required.
+
+This is used to define fairly sophisticated and otherwise complex patterns for single strings, like identifiers in programming languages, although it has other uses.
+
+~~~~csharp
+Pattern patternName = (Pattern)(nameof(patternName),
+	(Char) => { return Boolean; }, true,
+	(Char) => { return Boolean; }, true,
+	(Char) => { return Boolean; }, true);
+~~~~
+~~~~fsharp
+// This feature is not available from F# yet
+~~~~
+
+`nameof()` can be any string, but this is recommended. In languages like F# which lack `nameof`, you must use a variable or string literal.
+
+The function lambda must take a `Char` as a parameter and return a `Boolean`, but otherwise you are free to declare whatever logic desired.
+
+As a shorthand, if all three are required, the boolean parameters may be omitted.
+
 
 ### EndChecker
 

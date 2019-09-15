@@ -74,10 +74,11 @@
 <h3 id="charchecker">CharChecker</h3>
 <pre><code class="lang-csharp">Pattern patternName = (Pattern)(nameof(patternName), (Char) =&gt; { return Boolean; });
 </code></pre>
-<pre><code class="lang-fsharp">// This isn't supported in F# yet
+<pre><code class="lang-fsharp">let patternName = check &quot;patternName&quot; (fun (char) -&gt; bool)
 </code></pre>
-<p><code>nameof()</code> can be any string, but this is recommended.</p>
+<p><code>nameof()</code> can be any string, but this is recommended. In languages like F# which lack <code>nameof</code>, you must use a variable or string literal.</p>
 <p>The function lambda must take a <code>Char</code> as a parameter and return a <code>Boolean</code>, but otherwise you are free to declare whatever logic desired.</p>
+<p>In F#, either the standard lambas <code>Func&lt;Char, Boolean&gt;</code> or F# lambas <code>(char -&gt; bool)</code> are viable.</p>
 <p>A large amount of predefined patterns are actually implemented this way.</p>
 <h3 id="endchecker">EndChecker</h3>
 <pre><code class="lang-csharp">Pattern endOfSource = Source.End;

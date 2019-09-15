@@ -158,6 +158,10 @@ namespace System.Text.Patterns {
 
 		public static implicit operator Pattern((String Name, Func<Char, Boolean> Check) Checker) => new CharChecker(Checker.Name, Checker.Check);
 
+		public static implicit operator Pattern((String Name, Func<Char, Boolean> HeadCheck, Func<Char, Boolean> BodyCheck, Func<Char, Boolean> TailCheck) Checker) => new StringChecker(Checker.Name, Checker.HeadCheck, Checker.BodyCheck, Checker.TailCheck);
+
+		public static implicit operator Pattern((String Name, Func<Char, Boolean> HeadCheck, Boolean HeadRequired, Func<Char, Boolean> BodyCheck, Boolean BodyRequired, Func<Char, Boolean> TailCheck, Boolean TailRequired) Checker) => new StringChecker(Checker.Name, Checker.HeadCheck, Checker.HeadRequired, Checker.BodyCheck, Checker.BodyRequired, Checker.TailCheck, Checker.TailRequired);
+
 		#endregion
 
 		#region Concatenator

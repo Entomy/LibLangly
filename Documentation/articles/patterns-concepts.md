@@ -2,7 +2,7 @@
 
 **Stringier.Patterns** is a parsing engine with a radically different approach from what you're probably familiar with. It was primarily designed with reusability of patterns in mind, and general usability second. That being said, it happens to be extremely fast and lightweight, without being theory heavy.
 
-It's also a cross language library, and will work on at least [C#](https://en.wikipedia.org/wiki/C_Sharp_%28programming_language%29) and [VisualBasic](https://en.wikipedia.org/wiki/Visual_Basic_.NET). Specialized support for [F#](https://en.wikipedia.org/wiki/F_Sharp_(programming_language)) is planned but not implemented as of 8/28/2019.
+It's also a cross language library, and will work on at least [C#](https://en.wikipedia.org/wiki/C_Sharp_%28programming_language%29), [VisualBasic](https://en.wikipedia.org/wiki/Visual_Basic_.NET) and [F#](https://en.wikipedia.org/wiki/F_Sharp_(programming_language)).
 
 ## Pattern
 

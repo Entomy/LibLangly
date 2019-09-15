@@ -11,7 +11,7 @@ open FParsec
 type GibberishTests () =
     [<TestMethod>]
     member this.PatternTest() =
-        let mutable source = new Source(Gibberish.Generate(16))
+        let mutable source = new Source(Gibberish.Generate(32))
         let word:Pattern = +(check "letter" (fun (char) -> 'a' <= char && char <= 'z'))
         let space:Pattern = +' '
         let doc:Pattern = +(word || space) >> Source.End
@@ -20,7 +20,7 @@ type GibberishTests () =
     [<TestMethod>]
     member this.RegexTest() =
         let regex = new Regex(@"(?:[a-z]+| +)+$", RegexOptions.Singleline);
-        Assert.IsTrue(regex.IsMatch(Gibberish.Generate(16)))
+        Assert.IsTrue(regex.IsMatch(Gibberish.Generate(32)))
 
     [<TestMethod>]
     member this.FParsecTest() =
