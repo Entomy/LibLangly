@@ -16,6 +16,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="README.md" />
     <Compile Include="LiteralExtensions.fs" />
     <Compile Include="AlternatorExtensions.fs" />
     <Compile Include="ConcatenatorExtensions.fs" />
@@ -38,6 +39,10 @@
   <ItemGroup>
     <ProjectReference Include="..\Stringier.Patterns\Stringier.Patterns.csproj" />
     <ProjectReference Include="..\Stringier\Stringier.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="FSharp.Core" Version="4.7.0" />
   </ItemGroup>
 
 </Project>

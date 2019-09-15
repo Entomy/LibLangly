@@ -8,7 +8,7 @@
     <title>Stringier.Patterns Advanced Concepts </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Stringier.Patterns Advanced Concepts ">
-    <meta name="generator" content="docfx 2.45.0.0">
+    <meta name="generator" content="docfx 2.45.1.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -72,6 +72,7 @@
 <h2 id="checkers">Checkers</h2>
 <p>Checkers are a special pattern type which are not meant for normal use. Unlike the typical case where the pattern describes what to match, a checker is a function which is ran against a candidate when determining a match. This is substantially faster and should be viewed as hand writing parts of the resulting parser.</p>
 <h3 id="charchecker">CharChecker</h3>
+<p>Checks a <code>Char</code> with the specified function.</p>
 <pre><code class="lang-csharp">Pattern patternName = (Pattern)(nameof(patternName), (Char) =&gt; { return Boolean; });
 </code></pre>
 <pre><code class="lang-fsharp">let patternName = check &quot;patternName&quot; (fun (char) -&gt; bool)
@@ -80,6 +81,24 @@
 <p>The function lambda must take a <code>Char</code> as a parameter and return a <code>Boolean</code>, but otherwise you are free to declare whatever logic desired.</p>
 <p>In F#, either the standard lambas <code>Func&lt;Char, Boolean&gt;</code> or F# lambas <code>(char -&gt; bool)</code> are viable.</p>
 <p>A large amount of predefined patterns are actually implemented this way.</p>
+<h3 id="stringchecker">StringChecker</h3>
+<p>Checks a variable length <code>String</code> with the specified function.</p>
+<ul>
+<li>The first entry checks the &quot;head&quot; or first character, and is followed by whether a &quot;head&quot; is required.</li>
+<li>The second entry checks the &quot;body&quot; or the middle characters, and is followed by whether a &quot;body&quot; is required.</li>
+<li>The third entry checks the &quot;tail&quot; or the last character, and is followed by whether a &quot;tail&quot; is required.</li>
+</ul>
+<p>This is used to define fairly sophisticated and otherwise complex patterns for single strings, like identifiers in programming languages, although it has other uses.</p>
+<pre><code class="lang-csharp">Pattern patternName = (Pattern)(nameof(patternName),
+	(Char) =&gt; { return Boolean; }, true,
+	(Char) =&gt; { return Boolean; }, true,
+	(Char) =&gt; { return Boolean; }, true);
+</code></pre>
+<pre><code class="lang-fsharp">// This feature is not available from F# yet
+</code></pre>
+<p><code>nameof()</code> can be any string, but this is recommended. In languages like F# which lack <code>nameof</code>, you must use a variable or string literal.</p>
+<p>The function lambda must take a <code>Char</code> as a parameter and return a <code>Boolean</code>, but otherwise you are free to declare whatever logic desired.</p>
+<p>As a shorthand, if all three are required, the boolean parameters may be omitted.</p>
 <h3 id="endchecker">EndChecker</h3>
 <pre><code class="lang-csharp">Pattern endOfSource = Source.End;
 </code></pre>

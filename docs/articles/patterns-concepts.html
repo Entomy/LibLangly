@@ -8,7 +8,7 @@
     <title>Stringier.Patterns Concepts </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Stringier.Patterns Concepts ">
-    <meta name="generator" content="docfx 2.45.0.0">
+    <meta name="generator" content="docfx 2.45.1.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -70,7 +70,7 @@
 <h1 id="stringierpatterns-concepts">Stringier.Patterns Concepts</h1>
 
 <p><strong>Stringier.Patterns</strong> is a parsing engine with a radically different approach from what you're probably familiar with. It was primarily designed with reusability of patterns in mind, and general usability second. That being said, it happens to be extremely fast and lightweight, without being theory heavy.</p>
-<p>It's also a cross language library, and will work on at least <a href="https://en.wikipedia.org/wiki/C_Sharp_%28programming_language%29">C#</a> and <a href="https://en.wikipedia.org/wiki/Visual_Basic_.NET">VisualBasic</a>. Specialized support for <a href="https://en.wikipedia.org/wiki/F_Sharp_(programming_language)">F#</a> is planned but not implemented as of 8/28/2019.</p>
+<p>It's also a cross language library, and will work on at least <a href="https://en.wikipedia.org/wiki/C_Sharp_%28programming_language%29">C#</a>, <a href="https://en.wikipedia.org/wiki/Visual_Basic_.NET">VisualBasic</a> and <a href="https://en.wikipedia.org/wiki/F_Sharp_(programming_language)">F#</a>.</p>
 <h2 id="pattern">Pattern</h2>
 <p>Patterns form the base of this system. Similar to how patterns work in <strong>Regex</strong> they represent what the parser will attempt to parse. However that's basically the end of the similarities.</p>
 <p><code>Pattern</code> is a first class type. <code>Regex</code> lives inside of <a href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a>. This has a major implication: You work with <code>Pattern</code> with whatever <a href="https://dotnet.microsoft.com/">.NET</a> language you feel like. You assign them to proper variables, and can combine them. No <a href="https://www.urbandictionary.com/define.php?term=copypasta">copypasta</a>.</p>
