@@ -148,7 +148,7 @@ namespace Tests {
 			Assert.That.Captures("a_c", StringChecker.Consume("a_c"));
 			Assert.That.Captures("a_c", StringChecker.Consume("a_c "));
 			Assert.That.Fails(StringChecker.Consume("ab_"));
-			Assert.That.Fails(StringChecker.Consume("ab_" ));
+			Assert.That.Fails(StringChecker.Consume("ab_ "));
 			Assert.That.Fails(StringChecker.Consume("-bc"));
 			Assert.That.Fails(StringChecker.Consume("-bc "));
 			Assert.That.Captures("a-c", StringChecker.Consume("a-c"));
@@ -179,6 +179,68 @@ namespace Tests {
 			Assert.That.Captures("a_c_e", StringChecker.Consume("a_c_e "));
 			Assert.That.Captures("a___e", StringChecker.Consume("a___e"));
 			Assert.That.Captures("a___e", StringChecker.Consume("a___e "));
+
+			StringChecker = (Pattern)(nameof(StringChecker),
+				(Char) => Char.IsLetter() || Char == '_', true,
+				(Char) => Char.IsLetterOrDigit() || Char == '_' || Char == '-', true,
+				(Char) => Char.IsLetterOrDigit(), false);
+			Assert.That.Fails(StringChecker.Consume("a"));
+			Assert.That.Fails(StringChecker.Consume("a "));
+			Assert.That.Captures("aa", StringChecker.Consume("aa"));
+			Assert.That.Captures("aa", StringChecker.Consume("aa "));
+			Assert.That.Captures("_a", StringChecker.Consume("_a"));
+			Assert.That.Captures("_a", StringChecker.Consume("_a "));
+			Assert.That.Captures("a_", StringChecker.Consume("a_"));
+			Assert.That.Captures("a_", StringChecker.Consume("a_ "));
+			Assert.That.Fails(StringChecker.Consume("1b"));
+			Assert.That.Fails(StringChecker.Consume("1b "));
+			Assert.That.Captures("a2", StringChecker.Consume("a2"));
+			Assert.That.Captures("a2", StringChecker.Consume("a2 "));
+			Assert.That.Fails(StringChecker.Consume("12"));
+			Assert.That.Fails(StringChecker.Consume("12 "));
+			Assert.That.Captures("abc", StringChecker.Consume("abc"));
+			Assert.That.Captures("abc", StringChecker.Consume("abc "));
+			Assert.That.Captures("_bc", StringChecker.Consume("_bc"));
+			Assert.That.Captures("_bc", StringChecker.Consume("_bc "));
+			Assert.That.Captures("a_c", StringChecker.Consume("a_c"));
+			Assert.That.Captures("a_c", StringChecker.Consume("a_c "));
+			Assert.That.Captures("ab_", StringChecker.Consume("ab_"));
+			Assert.That.Captures("ab_", StringChecker.Consume("ab_ "));
+			Assert.That.Fails(StringChecker.Consume("-bc"));
+			Assert.That.Fails(StringChecker.Consume("-bc "));
+			Assert.That.Captures("a-c", StringChecker.Consume("a-c"));
+			Assert.That.Captures("a-c", StringChecker.Consume("a-c "));
+			Assert.That.Captures("ab-", StringChecker.Consume("ab-"));
+			Assert.That.Captures("ab-", StringChecker.Consume("ab- "));
+			Assert.That.Fails(StringChecker.Consume("1bc"));
+			Assert.That.Fails(StringChecker.Consume("1bc "));
+			Assert.That.Captures("a2c", StringChecker.Consume("a2c"));
+			Assert.That.Captures("a2c", StringChecker.Consume("a2c "));
+			Assert.That.Captures("ab3", StringChecker.Consume("ab3"));
+			Assert.That.Captures("ab3", StringChecker.Consume("ab3 "));
+			Assert.That.Captures("a23", StringChecker.Consume("a23"));
+			Assert.That.Captures("a23", StringChecker.Consume("a23 "));
+			Assert.That.Fails(StringChecker.Consume("123"));
+			Assert.That.Fails(StringChecker.Consume("123 "));
+			Assert.That.Captures("a_cde", StringChecker.Consume("a_cde"));
+			Assert.That.Captures("a_cde", StringChecker.Consume("a_cde "));
+			Assert.That.Captures("ab_de", StringChecker.Consume("ab_de"));
+			Assert.That.Captures("ab_de", StringChecker.Consume("ab_de "));
+			Assert.That.Captures("abc_e", StringChecker.Consume("abc_e"));
+			Assert.That.Captures("abc_e", StringChecker.Consume("abc_e "));
+			Assert.That.Captures("a__de", StringChecker.Consume("a__de"));
+			Assert.That.Captures("a__de", StringChecker.Consume("a__de "));
+			Assert.That.Captures("ab__e", StringChecker.Consume("ab__e"));
+			Assert.That.Captures("ab__e", StringChecker.Consume("ab__e "));
+			Assert.That.Captures("a_c_e", StringChecker.Consume("a_c_e"));
+			Assert.That.Captures("a_c_e", StringChecker.Consume("a_c_e "));
+			Assert.That.Captures("a___e", StringChecker.Consume("a___e"));
+			Assert.That.Captures("a___e", StringChecker.Consume("a___e "));
+
+			Assert.ThrowsException<PatternConstructionException>(() => (Pattern)(nameof(StringChecker),
+				(Char) => Char.IsLetter() || Char == '_', false,
+				(Char) => Char.IsLetterOrDigit() || Char == '_' || Char == '-', false,
+				(Char) => Char.IsLetterOrDigit(), false));
 		}
 
 		[TestMethod]
