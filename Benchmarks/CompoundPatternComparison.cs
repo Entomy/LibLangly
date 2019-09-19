@@ -1,4 +1,5 @@
-﻿using System.Text.Patterns;
+﻿using System;
+using System.Text.Patterns;
 using System.Text.RegularExpressions;
 using BenchmarkDotNet.Attributes;
 
@@ -9,14 +10,18 @@ namespace Benchmarks {
 		readonly static Pattern commentPattern = "--" & +!(Pattern)'\n';
 
 		[Benchmark]
-		public Result CommentPattern() => commentPattern.Consume("--Comment");
+		public Result CommentPattern() => commentPattern.Consume("--Comment\n");
 
 		readonly static Regex commentRegex = new Regex("^--.*", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
 		[Benchmark]
-		public Match CommentRegex() => commentRegex.Match("--Comment");
+		public Match CommentRegex() => commentRegex.Match("--Comment\n");
 
-		readonly static Pattern identifierPattern = Pattern.Letter & +(Pattern.Letter | Pattern.DecimalDigitNumber | '_');
+		readonly static Pattern identifierPattern = (Pattern)(nameof(identifierPattern),
+			(Char) => Char.IsLetter(), true,
+			(Char) => Char.IsLetter() || Char == '_', true,
+			(Char) => Char.IsLetter() || Char == '_', false);
+			//Pattern.Letter & +(Pattern.Letter | Pattern.DecimalDigitNumber | '_');
 
 		[Benchmark]
 		public Result IdentifierPattern() => identifierPattern.Consume("Hello_World");
@@ -26,7 +31,10 @@ namespace Benchmarks {
 		[Benchmark]
 		public Match IdentifierRegex() => identifierRegex.Match("Hello_World");
 
-		readonly static Pattern ipv4Digit = (-(((Pattern)'1' | '2') & Pattern.DecimalDigitNumber) | Pattern.DecimalDigitNumber) & -Pattern.DecimalDigitNumber;
+		readonly static Pattern ipv4Digit = (Pattern)(nameof(ipv4Digit),
+			(Char) => '0' <= Char && Char <= '2', false,
+			(Char) => '0' <= Char && Char <= '9', false,
+			(Char) => '0' <= Char && Char <= '9', true);
 		readonly static Pattern ipv4AddressPattern = ipv4Digit & "." & ipv4Digit & "." & ipv4Digit & "." & ipv4Digit;
 
 		[Benchmark]

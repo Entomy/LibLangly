@@ -29,10 +29,10 @@ type CompoundPatternComparison() =
                                       (manyChars (normalChar <|> escapedChar)))
 
     [<Benchmark>]
-    member this.CommentPattern() = commentPattern.Consume("--Comment");
+    member this.CommentPattern() = commentPattern.Consume("--Comment\n");
 
     [<Benchmark>]
-    member this.CommentParsec() = run commentParsec "--Comment"
+    member this.CommentParsec() = run commentParsec "--Comment\n"
 
     [<Benchmark>]
     member this.IdentifierPattern() = identifierPattern.Consume("Hello_World")

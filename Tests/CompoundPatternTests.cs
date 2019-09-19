@@ -33,7 +33,10 @@ namespace Tests {
 
 		[TestMethod]
 		public void Identifier() {
-			Pattern Pattern = Pattern.Letter & +(Pattern.Letter | Pattern.DecimalDigitNumber | "_");
+			Pattern Pattern = (Pattern)(nameof(Pattern),
+			(Char) => Char.IsLetter(), true,
+			(Char) => Char.IsLetter() || Char == '_', true,
+			(Char) => Char.IsLetter() || Char == '_', false);
 
 			Assert.That.Captures("hello", Pattern.Consume("hello"));
 
@@ -44,7 +47,10 @@ namespace Tests {
 
 		[TestMethod]
 		public void IPv4Address() {
-			Pattern Digit = (-(((Pattern)'1' | '2') & Pattern.DecimalDigitNumber) | Pattern.DecimalDigitNumber) & -Pattern.DecimalDigitNumber;
+			Pattern Digit = (Pattern)(nameof(Digit),
+			(Char) => '0' <= Char && Char <= '2', false,
+			(Char) => '0' <= Char && Char <= '9', false,
+			(Char) => '0' <= Char && Char <= '9', true);
 			Pattern Address = Digit & "." & Digit & "." & Digit & "." & Digit;
 			Result Result;
 
