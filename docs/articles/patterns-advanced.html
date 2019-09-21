@@ -71,9 +71,10 @@
 
 <h2 id="checkers">Checkers</h2>
 <p>Checkers are a special pattern type which are not meant for normal use. Unlike the typical case where the pattern describes what to match, a checker is a function which is ran against a candidate when determining a match. This is substantially faster and should be viewed as hand writing parts of the resulting parser.</p>
+<p>These were formerlly exposed through implicit/explicit conversions of a single delegate into the pattern, then from a tuple of the name and delegate into the pattern. As more checkers were added, it became clear expanding this approach was not viable. The entire approach now is exposed through a static method <code>Pattern.Check()</code>, which is well documented about its behavior.</p>
 <h3 id="charchecker">CharChecker</h3>
 <p>Checks a <code>Char</code> with the specified function.</p>
-<pre><code class="lang-csharp">Pattern patternName = (Pattern)(nameof(patternName), (Char) =&gt; { return Boolean; });
+<pre><code class="lang-csharp">Pattern patternName = Pattern.Check(nameof(patternName), (Char) =&gt; { return Boolean; });
 </code></pre>
 <pre><code class="lang-fsharp">let patternName = check &quot;patternName&quot; (fun (char) -&gt; bool)
 </code></pre>
@@ -89,7 +90,7 @@
 <li>The third entry checks the &quot;tail&quot; or the last character, and is followed by whether a &quot;tail&quot; is required.</li>
 </ul>
 <p>This is used to define fairly sophisticated and otherwise complex patterns for single strings, like identifiers in programming languages, although it has other uses.</p>
-<pre><code class="lang-csharp">Pattern patternName = (Pattern)(nameof(patternName),
+<pre><code class="lang-csharp">Pattern patternName = Pattern.Check(nameof(patternName),
 	(Char) =&gt; { return Boolean; }, true,
 	(Char) =&gt; { return Boolean; }, true,
 	(Char) =&gt; { return Boolean; }, true);

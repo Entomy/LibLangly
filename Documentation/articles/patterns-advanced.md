@@ -4,12 +4,14 @@
 
 Checkers are a special pattern type which are not meant for normal use. Unlike the typical case where the pattern describes what to match, a checker is a function which is ran against a candidate when determining a match. This is substantially faster and should be viewed as hand writing parts of the resulting parser.
 
+These were formerlly exposed through implicit/explicit conversions of a single delegate into the pattern, then from a tuple of the name and delegate into the pattern. As more checkers were added, it became clear expanding this approach was not viable. The entire approach now is exposed through a static method `Pattern.Check()`, which is well documented about its behavior.
+
 ### CharChecker
 
 Checks a `Char` with the specified function.
 
 ~~~~csharp
-Pattern patternName = (Pattern)(nameof(patternName), (Char) => { return Boolean; });
+Pattern patternName = Pattern.Check(nameof(patternName), (Char) => { return Boolean; });
 ~~~~
 ~~~~fsharp
 let patternName = check "patternName" (fun (char) -> bool)
@@ -33,7 +35,7 @@ Checks a variable length `String` with the specified function.
 This is used to define fairly sophisticated and otherwise complex patterns for single strings, like identifiers in programming languages, although it has other uses.
 
 ~~~~csharp
-Pattern patternName = (Pattern)(nameof(patternName),
+Pattern patternName = Pattern.Check(nameof(patternName),
 	(Char) => { return Boolean; }, true,
 	(Char) => { return Boolean; }, true,
 	(Char) => { return Boolean; }, true);
