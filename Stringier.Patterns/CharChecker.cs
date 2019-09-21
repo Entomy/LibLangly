@@ -7,7 +7,7 @@
 	/// Testing: While it might seem like testing this class is somehow not possible because of the visibility, this isn't the case at all. <see cref="CharChecker"/> is exposed, non-obviously, through the predefined patterns, and can easily be checked that way; if those fail while the isolated tests pass, the issue is almost certainly with this class.
 	/// </remarks>
 	internal sealed class CharChecker : Checker, IEquatable<CharChecker> {
-		internal readonly Func<Char, Boolean> Check;
+		internal new readonly Func<Char, Boolean> Check;
 
 		/// <summary>
 		/// Construct a new <see cref="CharChecker"/> from the specified <paramref name="Check"/>

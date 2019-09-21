@@ -14,7 +14,7 @@ namespace Benchmarks {
 
 		public String badGibberish = Gibberish.Generate(4, Bad: true);
 
-		readonly Pattern pattern = +(+(Pattern)("Letter", (Char) => 'a' <= Char && Char <= 'z') | +(Pattern)' ') & Source.End;
+		readonly Pattern pattern = +(+Pattern.Check("Letter", (Char) => 'a' <= Char && Char <= 'z') | +(Pattern)' ') & Source.End;
 
 		readonly Regex regex = new Regex(@"(?:[a-z]+| +)+$", RegexOptions.Singleline);
 

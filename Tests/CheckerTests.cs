@@ -9,7 +9,7 @@ namespace Tests {
 		public void StringCheckerConsume() {
 			//!This is a sophisticated, therefore fragile, pattern type. It needs to be exhaustively tested against a very large battery. Do not remove these no matter how redundant they may seem, for they are not.
 
-			Pattern StringChecker = (Pattern)(nameof(StringChecker),
+			Pattern StringChecker = Pattern.Check(nameof(StringChecker),
 				(Char) => Char.IsLetter() || Char == '_', true,
 				(Char) => Char.IsLetterOrDigit() || Char == '_' || Char == '-', true,
 				(Char) => Char.IsLetterOrDigit(), true);
@@ -66,7 +66,7 @@ namespace Tests {
 			Assert.That.Captures("a___e", StringChecker.Consume("a___e"));
 			Assert.That.Captures("a___e", StringChecker.Consume("a___e "));
 
-			StringChecker = (Pattern)(nameof(StringChecker),
+			StringChecker = Pattern.Check(nameof(StringChecker),
 				(Char) => Char.IsLetter() || Char == '_', false,
 				(Char) => Char.IsLetterOrDigit() || Char == '_' || Char == '-', true,
 				(Char) => Char.IsLetterOrDigit(), true);
@@ -123,7 +123,7 @@ namespace Tests {
 			Assert.That.Captures("a___e", StringChecker.Consume("a___e"));
 			Assert.That.Captures("a___e", StringChecker.Consume("a___e "));
 
-			StringChecker = (Pattern)(nameof(StringChecker),
+			StringChecker = Pattern.Check(nameof(StringChecker),
 				(Char) => Char.IsLetter() || Char == '_', true,
 				(Char) => Char.IsLetterOrDigit() || Char == '_' || Char == '-', false,
 				(Char) => Char.IsLetterOrDigit(), true);
@@ -180,7 +180,7 @@ namespace Tests {
 			Assert.That.Captures("a___e", StringChecker.Consume("a___e"));
 			Assert.That.Captures("a___e", StringChecker.Consume("a___e "));
 
-			StringChecker = (Pattern)(nameof(StringChecker),
+			StringChecker = Pattern.Check(nameof(StringChecker),
 				(Char) => Char.IsLetter() || Char == '_', true,
 				(Char) => Char.IsLetterOrDigit() || Char == '_' || Char == '-', true,
 				(Char) => Char.IsLetterOrDigit(), false);
@@ -237,7 +237,7 @@ namespace Tests {
 			Assert.That.Captures("a___e", StringChecker.Consume("a___e"));
 			Assert.That.Captures("a___e", StringChecker.Consume("a___e "));
 
-			StringChecker = (Pattern)(nameof(StringChecker),
+			StringChecker = Pattern.Check(nameof(StringChecker),
 				(Char) => Char.IsLetter() || Char == '_', false,
 				(Char) => Char.IsLetterOrDigit() || Char == '_' || Char == '-', false,
 				(Char) => Char.IsLetterOrDigit(), true);
@@ -296,7 +296,7 @@ namespace Tests {
 			Assert.That.Captures("a___e", StringChecker.Consume("a___e"));
 			Assert.That.Captures("a___e", StringChecker.Consume("a___e "));
 
-			StringChecker = (Pattern)(nameof(StringChecker),
+			StringChecker = Pattern.Check(nameof(StringChecker),
 				(Char) => Char.IsLetter() || Char == '_', false,
 				(Char) => Char.IsLetterOrDigit() || Char == '_' || Char == '-', true,
 				(Char) => Char.IsLetterOrDigit(), false);
@@ -355,7 +355,7 @@ namespace Tests {
 			Assert.That.Captures("a___e", StringChecker.Consume("a___e"));
 			Assert.That.Captures("a___e", StringChecker.Consume("a___e "));
 
-			StringChecker = (Pattern)(nameof(StringChecker),
+			StringChecker = Pattern.Check(nameof(StringChecker),
 				(Char) => Char.IsLetter() || Char == '_', true,
 				(Char) => Char.IsLetterOrDigit() || Char == '_' || Char == '-', false,
 				(Char) => Char.IsLetterOrDigit(), false);
@@ -414,7 +414,7 @@ namespace Tests {
 			Assert.That.Captures("a___e", StringChecker.Consume("a___e"));
 			Assert.That.Captures("a___e", StringChecker.Consume("a___e "));
 
-			Assert.ThrowsException<PatternConstructionException>(() => (Pattern)(nameof(StringChecker),
+			Assert.ThrowsException<PatternConstructionException>(() => Pattern.Check(nameof(StringChecker),
 				(Char) => Char.IsLetter() || Char == '_', false,
 				(Char) => Char.IsLetterOrDigit() || Char == '_' || Char == '-', false,
 				(Char) => Char.IsLetterOrDigit(), false));
@@ -422,7 +422,7 @@ namespace Tests {
 
 		[TestMethod]
 		public void CharCheckerEqual() {
-			Pattern CharChecker = (Pattern)(nameof(CharChecker), (Char) => Char == 'a' || Char == '1');
+			Pattern CharChecker = Pattern.Check(nameof(CharChecker), (Char) => Char == 'a' || Char == '1');
 			Assert.IsTrue(CharChecker.Equals("a"));
 			Assert.IsTrue(CharChecker.Equals("1"));
 			Assert.IsFalse(CharChecker.Equals("b"));

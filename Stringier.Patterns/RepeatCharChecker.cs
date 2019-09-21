@@ -1,6 +1,6 @@
 ﻿namespace System.Text.Patterns {
 	internal sealed class RepeatCharChecker : Checker, IEquatable<RepeatCharChecker> {
-		internal readonly Func<Char, Boolean> Check;
+		internal new readonly Func<Char, Boolean> Check;
 
 		internal readonly Int32 Length;
 

@@ -17,11 +17,10 @@ namespace Benchmarks {
 		[Benchmark]
 		public Match CommentRegex() => commentRegex.Match("--Comment\n");
 
-		readonly static Pattern identifierPattern = (Pattern)(nameof(identifierPattern),
+		readonly static Pattern identifierPattern = Pattern.Check(nameof(identifierPattern),
 			(Char) => Char.IsLetter(), true,
 			(Char) => Char.IsLetter() || Char == '_', true,
 			(Char) => Char.IsLetter() || Char == '_', false);
-			//Pattern.Letter & +(Pattern.Letter | Pattern.DecimalDigitNumber | '_');
 
 		[Benchmark]
 		public Result IdentifierPattern() => identifierPattern.Consume("Hello_World");
@@ -31,7 +30,7 @@ namespace Benchmarks {
 		[Benchmark]
 		public Match IdentifierRegex() => identifierRegex.Match("Hello_World");
 
-		readonly static Pattern ipv4Digit = (Pattern)(nameof(ipv4Digit),
+		readonly static Pattern ipv4Digit = Pattern.Check(nameof(ipv4Digit),
 			(Char) => '0' <= Char && Char <= '2', false,
 			(Char) => '0' <= Char && Char <= '9', false,
 			(Char) => '0' <= Char && Char <= '9', true);

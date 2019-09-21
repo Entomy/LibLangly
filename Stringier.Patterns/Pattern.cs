@@ -156,11 +156,45 @@ namespace System.Text.Patterns {
 
 		#region Checker
 
+		[Obsolete("Use Pattern.Check() now")]
 		public static implicit operator Pattern((String Name, Func<Char, Boolean> Check) Checker) => new CharChecker(Checker.Name, Checker.Check);
 
+		/// <summary>
+		/// Use the <paramref name="Check"/> to represent a single character.
+		/// </summary>
+		/// <param name="Name">Name to display this pattern as.</param>
+		/// <param name="Check">A <see cref="Func{T, TResult}"/> to validate the character.</param>
+		/// <returns></returns>
+		public static Pattern Check(String Name, Func<Char, Boolean> Check) => new CharChecker(Name, Check);
+
+		[Obsolete("Use Pattern.Check() now")]
 		public static implicit operator Pattern((String Name, Func<Char, Boolean> HeadCheck, Func<Char, Boolean> BodyCheck, Func<Char, Boolean> TailCheck) Checker) => new StringChecker(Checker.Name, Checker.HeadCheck, Checker.BodyCheck, Checker.TailCheck);
 
+		/// <summary>
+		/// Use the specified <paramref name="HeadCheck"/>, <paramref name="BodyCheck"/>, and <paramref name="TailCheck"/> to represent a variable length string. The head and tail are only present once, with the body being repeatable.
+		/// </summary>
+		/// <param name="Name">Name to display this pattern as.</param>
+		/// <param name="HeadCheck">A <see cref="Func{T, TResult}"/> to validate the head.</param>
+		/// <param name="BodyCheck">A <see cref="Func{T, TResult}"/> to validate the body, which may repeat.</param>
+		/// <param name="TailCheck">A <see cref="Func{T, TResult}"/> to validate the tail.</param>
+		/// <returns></returns>
+		public static Pattern Check(String Name, Func<Char, Boolean> HeadCheck, Func<Char, Boolean> BodyCheck, Func<Char, Boolean> TailCheck) => new StringChecker(Name, HeadCheck, BodyCheck, TailCheck);
+
+		[Obsolete("Use Pattern.Check() now")]
 		public static implicit operator Pattern((String Name, Func<Char, Boolean> HeadCheck, Boolean HeadRequired, Func<Char, Boolean> BodyCheck, Boolean BodyRequired, Func<Char, Boolean> TailCheck, Boolean TailRequired) Checker) => new StringChecker(Checker.Name, Checker.HeadCheck, Checker.HeadRequired, Checker.BodyCheck, Checker.BodyRequired, Checker.TailCheck, Checker.TailRequired);
+
+		/// <summary>
+		/// Use the specified <paramref name="HeadCheck"/>, <paramref name="BodyCheck"/>, and <paramref name="TailCheck"/> to represent a variable length string, along with whether each check is required for a valid string. The head and tail are only present once, with the body being repeatable.
+		/// </summary>
+		/// <param name="Name">Name to display this pattern as.</param>
+		/// <param name="HeadCheck">A <see cref="Func{T, TResult}"/> to validate the head.</param>
+		/// <param name="HeadRequired">Whether the <paramref name="HeadCheck"/> is required.</param>
+		/// <param name="BodyCheck">A <see cref="Func{T, TResult}"/> to validate the body, which may repeat.</param>
+		/// <param name="BodyRequired">Whether the <paramref name="BodyCheck"/> is required.</param>
+		/// <param name="TailCheck">A <see cref="Func{T, TResult}"/> to validate the tail.</param>
+		/// <param name="TailRequired">Whether the <paramref name="TailRequired"/> is required.</param>
+		/// <returns></returns>
+		public static Pattern Check(String Name, Func<Char, Boolean> HeadCheck, Boolean HeadRequired, Func<Char, Boolean> BodyCheck, Boolean BodyRequired, Func<Char, Boolean> TailCheck, Boolean TailRequired) => new StringChecker(Name, HeadCheck, HeadRequired, BodyCheck, BodyRequired, TailCheck, TailRequired);
 
 		#endregion
 

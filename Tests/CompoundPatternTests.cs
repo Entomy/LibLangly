@@ -33,7 +33,7 @@ namespace Tests {
 
 		[TestMethod]
 		public void Identifier() {
-			Pattern Pattern = (Pattern)(nameof(Pattern),
+			Pattern Pattern = Pattern.Check(nameof(Pattern),
 			(Char) => Char.IsLetter(), true,
 			(Char) => Char.IsLetter() || Char == '_', true,
 			(Char) => Char.IsLetter() || Char == '_', false);
@@ -47,7 +47,7 @@ namespace Tests {
 
 		[TestMethod]
 		public void IPv4Address() {
-			Pattern Digit = (Pattern)(nameof(Digit),
+			Pattern Digit = Pattern.Check(nameof(Digit),
 			(Char) => '0' <= Char && Char <= '2', false,
 			(Char) => '0' <= Char && Char <= '9', false,
 			(Char) => '0' <= Char && Char <= '9', true);
