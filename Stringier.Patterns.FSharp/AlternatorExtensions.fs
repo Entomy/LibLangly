@@ -24,7 +24,7 @@ module AlternatorExtensions =
     let inline private altern< ^t, ^a, ^b, ^c when (^t or ^a) : (static member Altern : ^a * ^b -> ^c)> left right = ((^t or ^a) : (static member Altern : ^a * ^b -> ^c)(left, right))
 
     /// <summary>
-    /// Declares <paramref name="right"/> to be an alternate of <paramref name="left"/>
+    /// Binary "or". If a pattern, declares <paramref name="right"/> to be an alternate of <paramref name="left"/>; <paramref name="left"/> or <paramref name="right"/>
     /// </summary>
     /// <param name="left">The pattern to check first</param>
     /// <param name="right">The pattern to check if <paramref name="left"/> does not match</param>
