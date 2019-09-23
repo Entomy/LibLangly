@@ -1,6 +1,4 @@
-﻿using System.Text.Patterns;
-
-namespace System.Text.Patterns.Bindings {
+﻿namespace System.Text.Patterns.Bindings {
 	/// <summary>
 	/// Holds useful definitions for creating bindings to <see cref="Pattern"/>
 	/// </summary>
