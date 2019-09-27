@@ -428,6 +428,31 @@ namespace Tests {
 			Assert.IsFalse(CharChecker.Equals("b"));
 			Assert.IsFalse(CharChecker.Equals("a1"));
 		}
+
+		[TestMethod]
+		public void WordCheckerConsume() {
+			Pattern WordChecker = Pattern.Check(nameof(WordChecker), Bias.Head,
+				(Char) => Char == '_',
+				(Char) => Char.IsLetter(),
+				(Char) => Char.IsLetterOrDigit());
+			Assert.That.Captures("_", WordChecker.Consume("_"));
+			Assert.That.Fails(WordChecker.Consume("b"));
+			Assert.That.Fails(WordChecker.Consume("3"));
+			Assert.That.Captures("_3", WordChecker.Consume("_3"));
+			Assert.That.Captures("_b3", WordChecker.Consume("_b3"));
+			Assert.That.Captures("_example", WordChecker.Consume("_example"));
+
+			WordChecker = Pattern.Check(nameof(WordChecker), Bias.Tail,
+				(Char) => Char == '_',
+				(Char) => Char.IsLetter(),
+				(Char) => Char.IsLetterOrDigit());
+			Assert.That.Fails(WordChecker.Consume("_"));
+			Assert.That.Captures("b", WordChecker.Consume("b"));
+			Assert.That.Captures("3", WordChecker.Consume("3"));
+			Assert.That.Captures("_3", WordChecker.Consume("_3"));
+			Assert.That.Captures("_b3", WordChecker.Consume("_b3"));
+			Assert.That.Captures("_example", WordChecker.Consume("_example"));
+		}
 	}
 }
 

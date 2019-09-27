@@ -196,6 +196,17 @@ namespace System.Text.Patterns {
 		/// <returns></returns>
 		public static Pattern Check(String Name, Func<Char, Boolean> HeadCheck, Boolean HeadRequired, Func<Char, Boolean> BodyCheck, Boolean BodyRequired, Func<Char, Boolean> TailCheck, Boolean TailRequired) => new StringChecker(Name, HeadCheck, HeadRequired, BodyCheck, BodyRequired, TailCheck, TailRequired);
 
+		/// <summary>
+		/// Use the specified <paramref name="HeadCheck"/>, <paramref name="BodyCheck"/>, and <paramref name="TailCheck"/> to represent the valid form of a word, along with the <paramref name="Bias"/>.
+		/// </summary>
+		/// <param name="Name">Name to display this pattern as.</param>
+		/// <param name="Bias">Endian bias of the word. Head bias requires the head if only one letter is present. Tail bias requires the tail if only one letter is present.</param>
+		/// <param name="HeadCheck">A <see cref="Func{T, TResult}"/> to validate the head.</param>
+		/// <param name="BodyCheck">A <see cref="Func{T, TResult}"/> to validate the body, which may repeat.</param>
+		/// <param name="TailCheck">A <see cref="Func{T, TResult}"/> to validate the tail.</param>
+		/// <returns></returns>
+		public static Pattern Check(String Name, Bias Bias, Func<Char, Boolean> HeadCheck, Func<Char, Boolean> BodyCheck, Func<Char, Boolean> TailCheck) => new WordChecker(Name, Bias, HeadCheck, BodyCheck, TailCheck);
+
 		#endregion
 
 		#region Concatenator
