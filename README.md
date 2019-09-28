@@ -1,3 +1,4 @@
+[![Build Status](https://dev.azure.com/p-kell/Stringier/_apis/build/status/Entomy.Stringier?branchName=master)](https://dev.azure.com/p-kell/Stringier/_build/latest?definitionId=2&branchName=master)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/02ab838da67f4c929ef985b3f7d8a732)](https://www.codacy.com/app/Entomy/Stringier?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Entomy/Stringier&amp;utm_campaign=Badge_Grade)
 [![Beerpay](https://img.shields.io/beerpay/Entomy/Stringier.svg)](https://beerpay.io/Entomy/Stringier)
 

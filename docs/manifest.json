@@ -41,6 +41,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/System.Text.Patterns.Bias.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/System.Text.Patterns.Bias.html",
+          "hash": "Yklt5QARvy3hBiUEKx8ulw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/System.Text.Patterns.Bindings.PatternBindings.yml",
       "output": {
         ".html": {
@@ -153,7 +165,7 @@
       "output": {
         ".html": {
           "relative_path": "api/System.Text.Patterns.Pattern.html",
-          "hash": "Mccu5oj5LkqiOABqvXPYlg=="
+          "hash": "qhhI0b87ecIeuVdmpr2WoA=="
         }
       },
       "is_incremental": true,
@@ -237,7 +249,7 @@
       "output": {
         ".html": {
           "relative_path": "api/System.Text.Patterns.html",
-          "hash": "JiuwZydcxyva1SoUYImCyg=="
+          "hash": "jx+QLkle1tmMaj7reCTXBw=="
         }
       },
       "is_incremental": true,
@@ -273,7 +285,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "OzCsb3cbK8BWVact2H+OqQ=="
+          "hash": "srIVUtAMzpmw5de/yiB14w=="
         }
       },
       "is_incremental": false,
@@ -397,6 +409,12 @@
         "skipped_file_count": 0
       },
       "processors": {
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 22,
+          "skipped_file_count": 22
+        },
         "ConceptualDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
@@ -409,12 +427,6 @@
           "incrementalPhase": "build",
           "total_file_count": 0,
           "skipped_file_count": 0
-        },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": true,
-          "incrementalPhase": "build",
-          "total_file_count": 21,
-          "skipped_file_count": 21
         }
       }
     },
