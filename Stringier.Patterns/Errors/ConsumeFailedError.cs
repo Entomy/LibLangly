@@ -1,19 +1,14 @@
 ﻿namespace System.Text.Patterns {
 	internal sealed class ConsumeFailedError : Error {
-		private readonly String expected;
 
-		internal ConsumeFailedError(Char Expected) {
-			expected = Expected.ToString();
-		}
+		internal ConsumeFailedError(Char Expected) : base(Expected.ToString()) { }
 
-		internal ConsumeFailedError(String Expected) {
-			expected = Expected;
-		}
+		internal ConsumeFailedError(String Expected) : base(Expected) { }
 
-		internal ConsumeFailedError(ReadOnlySpan<Char> Expected) {
-			expected = Expected.ToString();
-		}
+		internal ConsumeFailedError(ReadOnlySpan<Char> Expected) : base(Expected.ToString()) { }
 
-		internal override void Throw() => throw new ConsumeFailedException($"Consume failed. Expected: {expected}.");
+		internal ConsumeFailedError(Pattern Expected) : base(Expected.ToString()) { }
+
+		internal override void Throw() => throw new ConsumeFailedException($"Consume failed. Expected: {@string}.");
 	}
 }

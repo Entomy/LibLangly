@@ -1,15 +1,11 @@
 ﻿namespace System.Text.Patterns {
 	internal sealed class EndOfSourceError : Error {
-		private readonly String expected;
+		internal EndOfSourceError(Char Expected) : base(Expected.ToString()) { }
 
-		internal EndOfSourceError(Char Expected) {
-			expected = Expected.ToString();
-		}
+		internal EndOfSourceError(String Expected) : base(Expected) { }
 
-		internal EndOfSourceError(String Expected) {
-			expected = Expected;
-		}
+		internal EndOfSourceError(Pattern Expected) : base(Expected.ToString()) { }
 
-		internal override void Throw() => throw new EndOfSourceException($"End of source has been reached before able to parse. Expected: {expected}");
+		internal override void Throw() => throw new EndOfSourceException($"End of source has been reached before able to parse. Expected: {@string}");
 	}
 }

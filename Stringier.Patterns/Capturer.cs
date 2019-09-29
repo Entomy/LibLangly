@@ -23,7 +23,7 @@
 			capture.Value = Source.Substring(OriginalPosition, Source.Position - OriginalPosition).ToString();
 		}
 
-		public override Boolean Equals(Object obj) {
+		public override Boolean Equals(Object? obj) {
 			switch (obj) {
 			case Capturer other:
 				return Equals(other);

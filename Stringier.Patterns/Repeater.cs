@@ -37,7 +37,7 @@ namespace System.Text.Patterns {
 		}
 
 
-		public override Boolean Equals(Object obj) {
+		public override Boolean Equals(Object? obj) {
 			switch (obj) {
 			case Repeater other:
 				return Equals(other);

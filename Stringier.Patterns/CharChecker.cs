@@ -20,33 +20,33 @@
 
 		internal override void Consume(ref Source Source, ref Result Result) {
 			if (Source.Length == 0) {
-				Result.Error = new EndOfSourceError(Expected: ToString());
+				Result.Error = new EndOfSourceError(Expected: this);
 			} else {
 				if (Check(Source.Peek())) {
 					Source.Position++;
 					Result.Length++;
 					Result.Error = null;
 				} else {
-					Result.Error = new ConsumeFailedError(Expected: ToString());
+					Result.Error = new ConsumeFailedError(Expected: this);
 				}
 			}
 		}
 
 		internal override void Neglect(ref Source Source, ref Result Result) {
 			if (Source.Length == 0) {
-				Result.Error = new EndOfSourceError(Expected: Check.ToString());
+				Result.Error = new EndOfSourceError(Expected: this);
 			} else {
 				if (!Check(Source.Peek())) {
 					Source.Position++;
 					Result.Length++;
 					Result.Error = null;
 				} else {
-					Result.Error = new NeglectFailedError(Neglected: ToString());
+					Result.Error = new NeglectFailedError(Neglected: this);
 				}
 			}
 		}
 
-		public override Boolean Equals(Object obj) {
+		public override Boolean Equals(Object? obj) {
 			switch (obj) {
 			case CharChecker other:
 				return Equals(other);

@@ -13,16 +13,16 @@
 
 		internal override void Consume(ref Source Source, ref Result Result) {
 			if (Source.EOF) {
-				Result.Error = new EndOfSourceError(Expected: ToString());
+				Result.Error = new EndOfSourceError(Expected: this);
 			} else {
 				for (Int32 i = 0; i < Length; i++) {
-					if (Source.EOF) { Result.Error = new ConsumeFailedError(Expected: ToString()); }
+					if (Source.EOF) { Result.Error = new ConsumeFailedError(Expected: this); }
 					if (Check(Source.Peek())) {
 						Source.Position++;
 						Result.Length++;
 						Result.Error = null;
 					} else {
-						Result.Error = new ConsumeFailedError(Expected: ToString());
+						Result.Error = new ConsumeFailedError(Expected: this);
 						break;
 					}
 				}
@@ -34,20 +34,20 @@
 				Result.Error = new EndOfSourceError(Expected: ToString());
 			} else {
 				for (Int32 i = 0; i < Length; i++) {
-					if (Source.EOF) { Result.Error = new NeglectFailedError(Neglected: ToString()); }
+					if (Source.EOF) { Result.Error = new NeglectFailedError(Neglected: this); }
 					if (!Check(Source.Peek())) {
 						Source.Position++;
 						Result.Length++;
 						Result.Error = null;
 					} else {
-						Result.Error = new NeglectFailedError(Neglected: ToString());
+						Result.Error = new NeglectFailedError(Neglected: this);
 						break;
 					}
 				}
 			}
 		}
 
-		public override Boolean Equals(Object obj) {
+		public override Boolean Equals(Object? obj) {
 			switch (obj) {
 			case RepeatCharChecker other:
 				return Equals(other);

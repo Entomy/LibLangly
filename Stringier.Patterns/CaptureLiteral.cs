@@ -21,7 +21,7 @@ namespace System.Text.Patterns {
 
 		internal override void Neglect(ref Source Source, ref Result Result) => capture.Value.Neglect(ref Source, ref Result, ComparisonType);
 
-		public override Boolean Equals(Object obj) {
+		public override Boolean Equals(Object? obj) {
 			switch (obj) {
 			case CaptureLiteral other:
 				return Equals(other);

@@ -17,7 +17,7 @@
 		/// </summary>
 		/// <param name="obj">The <see cref="Object"/> to compare with the current object.</param>
 		/// <returns><c>true</c> if the specified <see cref="Object"/> is equal to the current object; otherwise, <c>false</c>.</returns>
-		public override Boolean Equals(Object obj) {
+		public override Boolean Equals(Object? obj) {
 			switch (obj) {
 			case Capture other:
 				return Equals(other);
@@ -33,7 +33,7 @@
 		/// </summary>
 		/// <param name="other">The <see cref="Capture"/> to compare with the current object.</param>
 		/// <returns><c>true</c> if the specified <see cref="Capture"/> is equal to the current object; otherwise, <c>false</c>.</returns>
-		public Boolean Equals(Capture other) => Stringier.Equals(Value, other);
+		public Boolean Equals(Capture other) => Stringier.Equals(Value, other.Value);
 
 		/// <summary>
 		/// Determines whether the <see cref="String"/> instance is equal to the current object.

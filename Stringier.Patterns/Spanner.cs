@@ -46,7 +46,7 @@
 		}
 
 
-		public override Boolean Equals(Object obj) {
+		public override Boolean Equals(Object? obj) {
 			switch (obj) {
 			case Spanner other:
 				return Equals(other);

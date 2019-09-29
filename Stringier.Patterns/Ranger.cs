@@ -13,7 +13,7 @@
 		internal override void Consume(ref Source Source, ref Result Result) {
 			From.Consume(ref Source, ref Result);
 			if (!Result) {
-				Result.Error = new ConsumeFailedError(Expected: From.ToString());
+				Result.Error = new ConsumeFailedError(Expected: From);
 				return;
 			}
 			To.Consume(ref Source, ref Result);
@@ -24,13 +24,13 @@
 				if (To.CheckHeader(ref Source)) { To.Consume(ref Source, ref Result); }
 			}
 			if (!Result) {
-				Result.Error = new EndOfSourceError(Expected: To.ToString());
+				Result.Error = new EndOfSourceError(Expected: To);
 			}
 		}
 
 		internal override void Neglect(ref Source Source, ref Result Result) => throw new NotImplementedException();
 
-		public override Boolean Equals(Object obj) {
+		public override Boolean Equals(Object? obj) {
 			switch (obj) {
 			case Ranger other:
 				return Equals(other);

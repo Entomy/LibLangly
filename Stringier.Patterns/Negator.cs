@@ -14,7 +14,7 @@
 			Pattern.Consume(ref Source, ref Result);
 		}
 
-		public override Boolean Equals(Object obj) {
+		public override Boolean Equals(Object? obj) {
 			switch (obj) {
 			case Negator other:
 				return Equals(other);

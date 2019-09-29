@@ -44,7 +44,7 @@
 			FoundBody = false;
 			//If we reached the end of the source we have an error
 			if (Source.EOF) {
-				Result.Error = new EndOfSourceError(Expected: ToString());
+				Result.Error = new EndOfSourceError(Expected: this);
 				return;
 			}
 			//Check for the head
@@ -54,7 +54,7 @@
 				Result.Length++;
 			} else {
 				//If it's not, we have an error
-				Result.Error = new ConsumeFailedError(Expected: ToString());
+				Result.Error = new ConsumeFailedError(Expected: this);
 				return;
 			}
 		}
@@ -64,7 +64,7 @@
 			FoundBody = false;
 			//If we reached the end of the source we have an error
 			if (Source.EOF) {
-				Result.Error = new EndOfSourceError(Expected: ToString());
+				Result.Error = new EndOfSourceError(Expected: this);
 				return;
 			}
 			//The head isn't required, so we're going to check for the body first
@@ -73,7 +73,7 @@
 				FoundBody = true;
 			} else if (!HeadCheck(Source.Peek())) {
 				//The head wasn't found, so we have an error
-				Result.Error = new ConsumeFailedError(Expected: ToString());
+				Result.Error = new ConsumeFailedError(Expected: this);
 				return;
 			}
 			//So regardless of whether the head or body was found, advance like normal. If the body was found, we've already marked that.
@@ -116,7 +116,7 @@
 		private void ConsumeRequiredTail(ref Source Source, ref Result Result, in Boolean FoundBody) {
 			//If we reached the end of the source we have an error
 			if (Source.EOF) {
-				Result.Error = new EndOfSourceError(Expected: ToString());
+				Result.Error = new EndOfSourceError(Expected: this);
 				return;
 			}
 			//Check for the tail
@@ -124,7 +124,7 @@
 				//Have we found the body earlier?
 				if (!FoundBody) {
 					//If not, set the error
-					Result.Error = new ConsumeFailedError(Expected: ToString());
+					Result.Error = new ConsumeFailedError(Expected: this);
 					return;
 				}
 				//We found the tail, so advance
@@ -132,20 +132,20 @@
 				Result.Length++;
 			} else {
 				//No tail was found, so set the error
-				Result.Error = new ConsumeFailedError(Expected: ToString());
+				Result.Error = new ConsumeFailedError(Expected: this);
 			}
 		}
 
 		private void ConsumeOptionalTail(ref Source Source, ref Result Result, in Boolean FoundBody) {
 			//If we reached the end of the source we have an error
 			if (Source.EOF) {
-				Result.Error = new EndOfSourceError(Expected: ToString());
+				Result.Error = new EndOfSourceError(Expected: this);
 				return;
 			}
 			//Have we found the body earlier?
 			if (!FoundBody) {
 				//If not, set the error
-				Result.Error = new ConsumeFailedError(Expected: ToString());
+				Result.Error = new ConsumeFailedError(Expected: this);
 				return;
 			}
 			// We never actually check for the tail, because it doesn't matter. When checking the body, it progressed as far as it could, and either is right in front of the tail, or reached the end of source and backtracked. Both situations have us right before the "tail", which is either actually the tail, or the last part of the body which needs to be reconsumed. So optimize out the check and just advance
@@ -155,7 +155,7 @@
 
 		internal override void Neglect(ref Source Source, ref Result Result) => throw new NotImplementedException();
 
-		public override Boolean Equals(Object obj) {
+		public override Boolean Equals(Object? obj) {
 			switch (obj) {
 			case StringChecker other:
 				return Equals(other);

@@ -35,7 +35,7 @@ namespace System.Text.Patterns {
 			Right.Neglect(ref Source, ref Result);
 		}
 
-		public override Boolean Equals(Object obj) {
+		public override Boolean Equals(Object? obj) {
 			switch (obj) {
 			case Concatenator other:
 				return Equals(other);

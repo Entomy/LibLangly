@@ -42,7 +42,7 @@
 			}
 		}
 
-		public override Boolean Equals(Object obj) {
+		public override Boolean Equals(Object? obj) {
 			switch (obj) {
 			case Alternator other:
 				return Equals(other);

@@ -45,7 +45,7 @@ namespace System.Text.Patterns {
 		/// </summary>
 		/// <param name="obj"></param>
 		/// <returns></returns>
-		public abstract override Boolean Equals(Object obj);
+		public abstract override Boolean Equals(Object? obj);
 
 		/// <summary>
 		/// Determines whether the specified <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> can be represented by this <see cref="Pattern"/>.

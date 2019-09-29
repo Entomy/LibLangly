@@ -17,7 +17,7 @@
 		}
 
 
-		public override Boolean Equals(Object obj) {
+		public override Boolean Equals(Object? obj) {
 			switch (obj) {
 			case Optor other:
 				return Equals(other);

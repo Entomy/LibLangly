@@ -15,7 +15,7 @@ namespace System.Text.Patterns {
 			this.TailCheck = TailCheck;
 		}
 
-		public override Boolean Equals(Object obj) {
+		public override Boolean Equals(Object? obj) {
 			switch (obj) {
 			case StringChecker other:
 				return Equals(other);
@@ -54,7 +54,7 @@ namespace System.Text.Patterns {
 					return;
 				} else {
 					//If it's not, set the error
-					Result.Error = new ConsumeFailedError(Expected: ToString());
+					Result.Error = new ConsumeFailedError(Expected: this);
 					return;
 				}
 			}
@@ -99,13 +99,13 @@ namespace System.Text.Patterns {
 							Result.Length++;
 						} else {
 							//If it's not, set the error
-							Result.Error = new ConsumeFailedError(Expected: ToString());
+							Result.Error = new ConsumeFailedError(Expected: this);
 						}
 					}
 					return;
 				} else {
 					//If it's not, set the error
-					Result.Error = new ConsumeFailedError(Expected: ToString());
+					Result.Error = new ConsumeFailedError(Expected: this);
 					return;
 				}
 			}

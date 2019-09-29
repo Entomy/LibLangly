@@ -23,7 +23,7 @@
 				}
 			}
 			if (Level != 0) {
-				Result.Error = new ConsumeFailedError(Expected: this.ToString());
+				Result.Error = new ConsumeFailedError(Expected: this);
 			}
 		}
 

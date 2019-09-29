@@ -6,14 +6,14 @@
 		internal override Boolean CheckHeader(ref Source Source) => Source.EOF;
 
 		internal override void Consume(ref Source Source, ref Result Result) {
-			if (!Source.EOF) { Result.Error = new ConsumeFailedError(Expected: ToString()); }
+			if (!Source.EOF) { Result.Error = new ConsumeFailedError(Expected: this); }
 		}
 
 		internal override void Neglect(ref Source Source, ref Result Result) {
-			if (Source.EOF) { Result.Error = new ConsumeFailedError(Expected: ToString()); }
+			if (Source.EOF) { Result.Error = new ConsumeFailedError(Expected: this); }
 		}
 
-		public override Boolean Equals(Object obj) {
+		public override Boolean Equals(Object? obj) {
 			switch (obj) {
 			case EndChecker other:
 				return Equals(other);

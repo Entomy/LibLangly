@@ -9,7 +9,7 @@
 		internal override void Consume(ref Source Source, ref Result Result) {
 			From.Consume(ref Source, ref Result);
 			if (!Result) {
-				Result.Error = new ConsumeFailedError(Expected: From.ToString());
+				Result.Error = new ConsumeFailedError(Expected: From);
 				return;
 			}
 			To.Consume(ref Source, ref Result);
@@ -20,20 +20,20 @@
 				//Check for the escape before checking for the end of the range
 				if (Escape.CheckHeader(ref Source)) {
 					Escape.Consume(ref Source, ref Result);
-					Result.Error = new ConsumeFailedError(Expected: To.ToString()); //We need an error to continue the loop, and this is the current error
+					Result.Error = new ConsumeFailedError(Expected: To); //We need an error to continue the loop, and this is the current error
 				} 
 				if (To.CheckHeader(ref Source)) {
 					To.Consume(ref Source, ref Result);
 				}
 			}
 			if (!Result) {
-				Result.Error = new EndOfSourceError(Expected: To.ToString());
+				Result.Error = new EndOfSourceError(Expected: To);
 			}
 		}
 
 		internal override void Neglect(ref Source Source, ref Result Result) => base.Neglect(ref Source, ref Result);
 
-		public override Boolean Equals(Object obj) {
+		public override Boolean Equals(Object? obj) {
 			switch (obj) {
 			case EscapedRanger other:
 				return Equals(other);
