@@ -18,6 +18,16 @@ namespace System.Text.Patterns {
 		/// <summary>
 		/// Attempt to consume the <see cref="Pattern"/> from the <paramref name="Source"/>
 		/// </summary>
+		/// <param name="Source">The <see cref="Result"/> to consume</param>
+		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/></returns>
+		public Result Consume(Result Source) {
+			Source source = new Source(Source);
+			return Consume(ref source);
+		}
+
+		/// <summary>
+		/// Attempt to consume the <see cref="Pattern"/> from the <paramref name="Source"/>
+		/// </summary>
 		/// <param name="Source">The <see cref="String"/> to consume</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/></returns>
 		public Result Consume(String Source) {

@@ -52,6 +52,20 @@ namespace System.Text.Patterns {
 		}
 
 		/// <summary>
+		/// Construct a new <see cref="Source"/>, using the <paramref name="Result"/>
+		/// </summary>
+		/// <param name="Result">A <see cref="Result"/> to use as the source</param>
+		public Source(Result Result) {
+			Buffer = Result;
+			Position = 0;
+		}
+
+		/// <summary>
+		/// Check for the end of the <see cref="Source"/>
+		/// </summary>
+		public static Pattern End => new EndChecker();
+
+		/// <summary>
 		/// Whether currently at the end of the source
 		/// </summary>
 		public Boolean EOF => Length == 0;
@@ -68,6 +82,12 @@ namespace System.Text.Patterns {
 		/// This is for internal manipulation, such as resetting the index after a failed consume
 		/// </remarks>
 		internal Int32 Position { get; set; }
+
+		/// <summary>
+		/// Returns a string that represents the current object.
+		/// </summary>
+		/// <returns>A string that represents the current object.</returns>
+		public override String ToString() => Buffer.Slice(Position).ToString();
 
 		/// <summary>
 		/// Peek at the next <see cref="Char"/> without advancing the position
@@ -113,16 +133,5 @@ namespace System.Text.Patterns {
 		/// <param name="length">The number of characters in the substring.</param>
 		/// <returns>A <see cref="String"/> that is equivalent to the substring of length <paramref name="length"/> that begins at <paramref name="startIndex"/> in this instance, or Empty if <paramref name="startIndex"/> is equal to the length of this instance and <paramref name="length"/> is zero.</returns>
 		internal ReadOnlySpan<Char> Substring(Int32 startIndex, Int32 length) => Buffer.Slice(startIndex, length);
-
-		/// <summary>
-		/// Returns a string that represents the current object.
-		/// </summary>
-		/// <returns>A string that represents the current object.</returns>
-		public override String ToString() => Buffer.Slice(Position).ToString();
-
-		/// <summary>
-		/// Check for the end of the <see cref="Source"/>
-		/// </summary>
-		public static Pattern End => new EndChecker();
 	}
 }

@@ -39,6 +39,8 @@
 
 		public static implicit operator Boolean(Result Result) => Result.Error is null;
 
+		public static implicit operator ReadOnlySpan<Char>(Result Result) => Result.Source.Substring(Result.Start, Result.Length);
+
 		public static implicit operator String(Result Result) => Result.Source.Substring(Result.Start, Result.Length).ToString();
 
 		/// <summary>

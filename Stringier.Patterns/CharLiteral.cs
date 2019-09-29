@@ -1,10 +1,10 @@
-﻿/// <summary>	
-/// Represents a literal pattern
-/// </summary>
-/// <remarks>
-/// This exists to box <see cref="System.Char"/> into something that we can treat as a part of a pattern
-/// </remarks>
-namespace System.Text.Patterns {
+﻿namespace System.Text.Patterns {
+	/// <summary>	
+	/// Represents a literal pattern
+	/// </summary>
+	/// <remarks>
+	/// This exists to box <see cref="System.Char"/> into something that we can treat as a part of a pattern
+	/// </remarks>
 	internal sealed class CharLiteral : Literal, IEquatable<Char>, IEquatable<CharLiteral> {
 		internal readonly Char Char = '\u0000';
 
