@@ -100,6 +100,25 @@
 <p><code>nameof()</code> can be any string, but this is recommended. In languages like F# which lack <code>nameof</code>, you must use a variable or string literal.</p>
 <p>The function lambda must take a <code>Char</code> as a parameter and return a <code>Boolean</code>, but otherwise you are free to declare whatever logic desired.</p>
 <p>As a shorthand, if all three are required, the boolean parameters may be omitted.</p>
+<h3 id="wordchecker">WordChecker</h3>
+<p>Checks a variable length <code>String</code> with the specified function.</p>
+<ul>
+<li>The first entry checks the &quot;head&quot; or first character, and is followed by whether a &quot;head&quot; is required.</li>
+<li>The second entry checks the &quot;body&quot; or the middle characters, and is followed by whether a &quot;body&quot; is required.</li>
+<li>The third entry checks the &quot;tail&quot; or the last character, and is followed by whether a &quot;tail&quot; is required.</li>
+</ul>
+<p>This is used to define fairly sophisticated and otherwise complex patterns for single strings, like identifiers in programming languages, although it has other uses.</p>
+<p>It is a variation of <code>StringChecker</code> and uses rules more similar to how humans read words, but is otherwise very similar.</p>
+<pre><code class="lang-csharp">Pattern patternName = Pattern.Check(nameof(patternName), Bias.Head,
+	(Char) =&gt; { return Boolean; },
+	(Char) =&gt; { return Boolean; },
+	(Char) =&gt; { return Boolean; });
+</code></pre>
+<pre><code class="lang-fsharp">// This feature is not available from F# yet
+</code></pre>
+<p><code>nameof()</code> can be any string, but this recommended. In languages like F# which lack <code>nameof</code> you must use a variable or string literal.</p>
+<p>The function lambda must take a <code>Char</code> as a parameter and return a <code>Boolean</code>, but otherwise you are free to declare whatever logic desired.</p>
+<p>The bias is used when a &quot;word&quot; is only one letter long, and decides whether the head or tail is most important (must be present).</p>
 <h3 id="endchecker">EndChecker</h3>
 <pre><code class="lang-csharp">Pattern endOfSource = Source.End;
 </code></pre>

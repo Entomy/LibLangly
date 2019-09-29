@@ -50,6 +50,32 @@ The function lambda must take a `Char` as a parameter and return a `Boolean`, bu
 
 As a shorthand, if all three are required, the boolean parameters may be omitted.
 
+### WordChecker
+
+Checks a variable length `String` with the specified function.
+* The first entry checks the "head" or first character, and is followed by whether a "head" is required.
+* The second entry checks the "body" or the middle characters, and is followed by whether a "body" is required.
+* The third entry checks the "tail" or the last character, and is followed by whether a "tail" is required.
+
+This is used to define fairly sophisticated and otherwise complex patterns for single strings, like identifiers in programming languages, although it has other uses.
+
+It is a variation of `StringChecker` and uses rules more similar to how humans read words, but is otherwise very similar.
+
+~~~~csharp
+Pattern patternName = Pattern.Check(nameof(patternName), Bias.Head,
+	(Char) => { return Boolean; },
+	(Char) => { return Boolean; },
+	(Char) => { return Boolean; });
+~~~~
+~~~~fsharp
+// This feature is not available from F# yet
+~~~~
+
+`nameof()` can be any string, but this recommended. In languages like F# which lack `nameof` you must use a variable or string literal.
+
+The function lambda must take a `Char` as a parameter and return a `Boolean`, but otherwise you are free to declare whatever logic desired.
+
+The bias is used when a "word" is only one letter long, and decides whether the head or tail is most important (must be present).
 
 ### EndChecker
 
