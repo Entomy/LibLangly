@@ -58,5 +58,15 @@
 		public override Int32 GetHashCode() => Left.GetHashCode() | Right.GetHashCode();
 
 		public override String ToString() => $"┃{Left}│{Right}┃";
+
+		#region Alternator
+
+		internal override Pattern Alternate(Char Right) => new ChainAlternator(this.Left, this.Right, new CharLiteral(Right));
+
+		internal override Pattern Alternate(String Right) => new ChainAlternator(this.Left, this.Right, new StringLiteral(Right));
+
+		internal override Pattern Alternate(Pattern Right) => new ChainAlternator(this.Left, this.Right, Right);
+
+		#endregion
 	}
 }

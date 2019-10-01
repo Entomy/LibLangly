@@ -25,6 +25,17 @@ namespace Tests {
 			Assert.That.Fails(Result);
 
 			Assert.That.Fails(Alternator.Consume("How are you?"));
+
+			Pattern ChainAlternator = (Pattern)"Hello" | "Hi" | "Howdy";
+
+			Result = ChainAlternator.Consume("Hello");
+			Assert.That.Captures("Hello", Result);
+
+			Result = ChainAlternator.Consume("Hi");
+			Assert.That.Captures("Hi", Result);
+
+			Result = ChainAlternator.Consume("Howdy");
+			Assert.That.Captures("Howdy", Result);
 		}
 
 		[TestMethod]
