@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Text.Patterns;
 using System.Text.RegularExpressions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -26,6 +27,12 @@ namespace Tests {
 		[TestMethod]
 		public void IsMatch() {
 			Assert.IsTrue("Hello World".IsMatch("^Hello", RegexOptions.IgnoreCase));
+		}
+
+		[TestMethod]
+		public void Join() {
+			IEnumerable<Pattern> Objects = new Pattern[] { "1", "3" };
+			Assert.AreEqual("1,3", Objects.Join(','));
 		}
 
 		[TestMethod]
