@@ -66,6 +66,22 @@ namespace Tests {
 		}
 
 		[TestMethod]
+		public void NamedStatement() {
+			Result Result;
+			Pattern Identifier = Pattern.Check(nameof(Identifier), Bias.Head,
+			(Char) => Char.IsLetter() || Char == '_',
+			(Char) => Char.IsLetterOrDigit() || Char == '_',
+			(Char) => Char.IsLetterOrDigit());
+			Result = Identifier.Consume("Name");
+			Assert.That.Captures("Name", Result);
+
+			Pattern Statement = "statement" & +Pattern.Separator & Identifier.Capture(out Capture Name);
+			Result = Statement.Consume("statement Name");
+			Assert.That.Captures("statement Name", Result);
+			Assert.That.Captures("Name", Name);
+		}
+
+		[TestMethod]
 		public void NestedPackage() {
 			Pattern Identifier = Pattern.Letter & +(Pattern.Letter | Pattern.DecimalDigitNumber | "_");
 			Pattern Package = (

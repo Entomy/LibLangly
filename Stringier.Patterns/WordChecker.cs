@@ -40,40 +40,48 @@ namespace System.Text.Patterns {
 				Result.Error = new EndOfSourceError(Expected: ToString());
 				return;
 			}
+			//Now do the appropriate parse
+			switch (Bias) {
+			case Bias.Tail:
+				ConsumeTailBiased(ref Source, ref Result);
+				break;
+			case Bias.Head:
+			default:
+				ConsumeHeadBiased(ref Source, ref Result);
+				break;
+			}
+		}
+
+		private void ConsumeHeadBiased(ref Source Source, ref Result Result) {
+			//We'll need to make sure we find the bias
+			Boolean FoundBias = false;
 			//Check for the head
 			if (HeadCheck(Source.Peek())) {
-				//If it's found, advance
+				//If it's found, advance, and mark that we found the bias
 				Source.Position++;
 				Result.Length++;
+				FoundBias = true;
 			} else {
-				//The head wasn't found, so if we're tail biased check for the tail
-				if (Bias == Bias.Tail && TailCheck(Source.Peek())) {
-					//If it's found, advance and return
-					Source.Position++;
-					Result.Length++;
-					return;
-				} else {
-					//If it's not, set the error
-					Result.Error = new ConsumeFailedError(Expected: this);
-					return;
-				}
+				//The head wasn't found so set the error
+				Result.Error = new ConsumeFailedError(Expected: this);
+				return;
 			}
 			//Now deal with the entire body
-			Boolean FoundBody = false;
-			//Loop repeatedly, we'll break out internally
 			while (true) {
-				//If we reached the end of the source, backtrack so we can check for the tail
+				//If we reached the end of the source
 				if (Source.EOF) {
+					//Backtrack so we can check for the tail
 					Source.Position--;
 					Result.Length--;
+					//And also claim the bias was never found, so we can do a special check later
+					FoundBias = false;
 					break;
 				}
 				//Check for the body
 				if (BodyCheck(Source.Peek())) {
-					//If it's found, advance, and mark that we found it
+					//If it's found, advance
 					Source.Position++;
 					Result.Length++;
-					FoundBody = true;
 				} else {
 					//If it's not, break out so we can check for the tail
 					break;
@@ -86,8 +94,9 @@ namespace System.Text.Patterns {
 				Result.Length++;
 				return;
 			} else {
-				//The tail wasn't found, so if we're head biased check for the head again
-				if (Bias == Bias.Head && HeadCheck(Source.Peek())) {
+				//The tail wasn't found so we need to do some trickery
+				//Check for the head again, but only if the head was not found earlier
+				if (!FoundBias && HeadCheck(Source.Peek())) {
 					//If it's found, advance and return
 					Source.Position++;
 					Result.Length++;
@@ -104,7 +113,77 @@ namespace System.Text.Patterns {
 					}
 					return;
 				} else {
+					//If it's not, have we found the bias?
+					if (!FoundBias) {
+						//We haven't so set the error
+						Result.Error = new ConsumeFailedError(Expected: this);
+					}
+					return;
+				}
+			}
+		}
+
+		private void ConsumeTailBiased(ref Source Source, ref Result Result) {
+			//We'll need to make sure we find the bias
+			Boolean FoundBias = false;
+			//Check for the head
+			if (HeadCheck(Source.Peek())) {
+				//If it's found, advance
+				Source.Position++;
+				Result.Length++;
+			} else {
+				//The head wasn't found, so check for the tail
+				if (TailCheck(Source.Peek())) {
+					//If it's found, advance, and return
+					Source.Position++;
+					Result.Length++;
+					return;
+				} else {
 					//If it's not, set the error
+					Result.Error = new ConsumeFailedError(Expected: this);
+					return;
+				}
+			}
+			//Now deal with the entire body
+			Boolean FoundBody = false;
+			while (true) {
+				//If we reached the end of the source
+				if (Source.EOF) {
+					//Backtrack so we can check for the tail
+					Source.Position--;
+					Result.Length--;
+					break;
+				}
+				//Check for the body
+				if (BodyCheck(Source.Peek())) {
+					//If it's found, advance
+					Source.Position++;
+					Result.Length++;
+					FoundBody = true;
+				} else {
+					//If it's not, break out so we can check for the tail
+					break;
+				}
+			}
+			//Check for the tail
+			Boolean BacktrackedForTail = false;
+			//If we're at the end of the source, backtrack, and check for the tail
+			TailCheck:
+			if (TailCheck(Source.Peek())) {
+				//If it's found, advance and return
+				Source.Position++;
+				Result.Length++;
+				return;
+			} else {
+				//The tail wasn't found so we need to do some trickery
+				//If we found the body but haven't found the tail, backtrack in case the last character was a valid tail
+				if (FoundBody & !BacktrackedForTail) {
+					Source.Position--;
+					Result.Length--;
+					BacktrackedForTail = true;
+					goto TailCheck;
+				} else {
+					//The tail wasn't found so set the error
 					Result.Error = new ConsumeFailedError(Expected: this);
 					return;
 				}
