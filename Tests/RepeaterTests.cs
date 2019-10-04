@@ -16,10 +16,10 @@ namespace Tests {
 			Result Result;
 
 			Result = Repeater.Consume("Hi! Hi! Hi!");
-			Assert.That.Captures("Hi! Hi! ", Result);
+			ResultAssert.Captures("Hi! Hi! ", Result);
 
 			Result = Repeater.Consume("Bye!");
-			Assert.That.Fails(Result);
+			ResultAssert.Fails(Result);
 		}
 
 		[TestMethod]

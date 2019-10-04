@@ -16,13 +16,13 @@ namespace Tests {
 			Result Result;
 
 			Result = Whitespace.Consume(" Hi!");
-			Assert.That.Captures(" ", Result);
+			ResultAssert.Captures(" ", Result);
 
 			Result = Whitespace.Consume("    Hi!");
-			Assert.That.Captures("    ", Result);
+			ResultAssert.Captures("    ", Result);
 
 			Result = Whitespace.Consume("Hi!  ");
-			Assert.That.Fails(Result);
+			ResultAssert.Fails(Result);
 		}
 
 		[TestMethod]

@@ -16,26 +16,26 @@ namespace Tests {
 			Result Result;
 
 			Result = Alternator.Consume("Hello");
-			Assert.That.Captures("Hello", Result);
+			ResultAssert.Captures("Hello", Result);
 
 			Result = Alternator.Consume("Goodbye");
-			Assert.That.Captures("Goodbye", Result);
+			ResultAssert.Captures("Goodbye", Result);
 
 			Result = Alternator.Consume("!");
-			Assert.That.Fails(Result);
+			ResultAssert.Fails(Result);
 
-			Assert.That.Fails(Alternator.Consume("How are you?"));
+			ResultAssert.Fails(Alternator.Consume("How are you?"));
 
 			Pattern ChainAlternator = (Pattern)"Hello" | "Hi" | "Howdy";
 
 			Result = ChainAlternator.Consume("Hello");
-			Assert.That.Captures("Hello", Result);
+			ResultAssert.Captures("Hello", Result);
 
 			Result = ChainAlternator.Consume("Hi");
-			Assert.That.Captures("Hi", Result);
+			ResultAssert.Captures("Hi", Result);
 
 			Result = ChainAlternator.Consume("Howdy");
-			Assert.That.Captures("Howdy", Result);
+			ResultAssert.Captures("Howdy", Result);
 		}
 
 		[TestMethod]

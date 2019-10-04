@@ -16,10 +16,10 @@ namespace Tests {
 			Result Result;
 
 			Result = Optor.Consume("Hello world!");
-			Assert.That.Captures("Hello", Result);
+			ResultAssert.Captures("Hello", Result);
 
 			Result = Optor.Consume("Goodbye world!");
-			Assert.That.Captures("", Result);
+			ResultAssert.Captures("", Result);
 		}
 	}
 }

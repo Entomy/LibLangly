@@ -9,13 +9,13 @@ namespace Tests {
 		[TestMethod]
 		public void AlernateRepeater() {
 			Pattern Pattern = (((Pattern)"Hi" | "Bye") & "! ") * 2;
-			Assert.That.Captures("Hi! Bye! ", Pattern.Consume("Hi! Bye! Hi!"));
+			ResultAssert.Captures("Hi! Bye! ", Pattern.Consume("Hi! Bye! Hi!"));
 		}
 
 		[TestMethod]
 		public void AlternateSpanner() {
 			Pattern Indentation = +(Pattern.SpaceSeparator | "\t");
-			Assert.That.Captures("  \t ", Indentation.Consume("  \t Hi!"));
+			ResultAssert.Captures("  \t ", Indentation.Consume("  \t Hi!"));
 		}
 
 		[TestMethod]
@@ -24,10 +24,10 @@ namespace Tests {
 			Result Result;
 
 			Result = Range.Consume("--This is a comment\n");
-			Assert.That.Captures("--This is a comment", Result);
+			ResultAssert.Captures("--This is a comment", Result);
 
 			Result = Range.Consume("--This is a comment\nExample_Function();");
-			Assert.That.Captures("--This is a comment", Result);
+			ResultAssert.Captures("--This is a comment", Result);
 
 		}
 
@@ -38,11 +38,11 @@ namespace Tests {
 			(Char) => Char.IsLetter() || Char == '_', true,
 			(Char) => Char.IsLetter() || Char == '_', false);
 
-			Assert.That.Captures("hello", Pattern.Consume("hello"));
+			ResultAssert.Captures("hello", Pattern.Consume("hello"));
 
-			Assert.That.Captures("example_name", Pattern.Consume("example_name"));
+			ResultAssert.Captures("example_name", Pattern.Consume("example_name"));
 
-			Assert.That.Fails(Pattern.Consume("_fail"));
+			ResultAssert.Fails(Pattern.Consume("_fail"));
 		}
 
 		[TestMethod]
@@ -55,14 +55,14 @@ namespace Tests {
 			Result Result;
 
 			Result = Digit.Consume("1");
-			Assert.That.Captures("1", Result);
+			ResultAssert.Captures("1", Result);
 			Result = Digit.Consume("11");
-			Assert.That.Captures("11", Result);
+			ResultAssert.Captures("11", Result);
 			Result = Digit.Consume("111");
-			Assert.That.Captures("111", Result);
+			ResultAssert.Captures("111", Result);
 
 			Result = Address.Consume("192.168.1.1");
-			Assert.That.Captures("192.168.1.1", Result);
+			ResultAssert.Captures("192.168.1.1", Result);
 		}
 
 		[TestMethod]
@@ -73,12 +73,12 @@ namespace Tests {
 			(Char) => Char.IsLetterOrDigit() || Char == '_',
 			(Char) => Char.IsLetterOrDigit());
 			Result = Identifier.Consume("Name");
-			Assert.That.Captures("Name", Result);
+			ResultAssert.Captures("Name", Result);
 
 			Pattern Statement = "statement" & +Pattern.Separator & Identifier.Capture(out Capture Name);
 			Result = Statement.Consume("statement Name");
-			Assert.That.Captures("statement Name", Result);
-			Assert.That.Captures("Name", Name);
+			ResultAssert.Captures("statement Name", Result);
+			CaptureAssert.Captures("Name", Name);
 		}
 
 		[TestMethod]
@@ -90,12 +90,12 @@ namespace Tests {
 			Result Result;
 
 			Result = Package.Consume("package Top\nend Top;");
-			Assert.That.Captures("Top", Name);
-			Assert.That.Captures("package Top\nend Top;", Result);
+			CaptureAssert.Captures("Top", Name);
+			ResultAssert.Captures("package Top\nend Top;", Result);
 
 			Result = Package.Consume("package Top\npackage Nest\nend Nest;\nend Top;");
-			Assert.That.Captures("Top", Name);
-			Assert.That.Captures("package Top\npackage Nest\nend Nest;\nend Top;", Result);
+			CaptureAssert.Captures("Top", Name);
+			ResultAssert.Captures("package Top\npackage Nest\nend Nest;\nend Top;", Result);
 		}
 
 		[TestMethod]
@@ -115,40 +115,40 @@ namespace Tests {
 			Pattern Numeral = NumeralPattern & -("." & NumeralPattern) & -ExponentPattern;
 
 			Result = Numeral.Consume("42");
-			Assert.That.Captures("42", Result);
+			ResultAssert.Captures("42", Result);
 
 			Result = Numeral.Consume("4_2");
-			Assert.That.Captures("4_2", Result);
+			ResultAssert.Captures("4_2", Result);
 
 			Pattern Fraction = "." & Numeral;
 
 			Result = Fraction.Consume(".0");
-			Assert.That.Captures(".0", Result);
+			ResultAssert.Captures(".0", Result);
 
 			Pattern RealNumeral = Numeral & -Fraction;
 
 			Result = RealNumeral.Consume("42.0");
-			Assert.That.Captures("42.0", Result);
+			ResultAssert.Captures("42.0", Result);
 		}
 
 		[TestMethod]
 		public void OptorSpanner() {
 			Pattern Pattern = -+(Pattern)" ";
-			Assert.That.Captures("  ", Pattern.Consume("  Hello"));
-			Assert.That.Captures("", Pattern.Consume("Hello"));
+			ResultAssert.Captures("  ", Pattern.Consume("  Hello"));
+			ResultAssert.Captures("", Pattern.Consume("Hello"));
 		}
 
 		[TestMethod]
 		public void PhoneNumber() {
 			Pattern Pattern = Pattern.Number * 3 & "-" & Pattern.Number * 3 & "-" & Pattern.Number * 4;
 			Result Result = Pattern.Consume("555-555-5555");
-			Assert.That.Captures("555-555-5555", Result);
+			ResultAssert.Captures("555-555-5555", Result);
 		}
 
 		[TestMethod]
 		public void Separator() {
 			Pattern Pattern = +(Pattern.Separator | "\t");
-			Assert.That.Captures("  \t ", Pattern.Consume("  \t Hello"));
+			ResultAssert.Captures("  \t ", Pattern.Consume("  \t Hello"));
 		}
 
 		[TestMethod]
@@ -159,7 +159,7 @@ namespace Tests {
 		[TestMethod]
 		public void StringLiteral() {
 			Pattern Range = (From: "\"", To: "\"", Escape: "\\\"");
-			Assert.That.Captures("\"hello\\\"world\"", Range.Consume("\"hello\\\"world\""));
+			ResultAssert.Captures("\"hello\\\"world\"", Range.Consume("\"hello\\\"world\""));
 		}
 
 		[TestMethod]
@@ -171,24 +171,24 @@ namespace Tests {
 			Result Result;
 
 			Result = Protocol.Consume("http://");
-			Assert.That.Captures("http://", Result);
+			ResultAssert.Captures("http://", Result);
 			Result = Protocol.Consume("https://");
-			Assert.That.Captures("https://", Result);
+			ResultAssert.Captures("https://", Result);
 
 			Result = Host.Consume("google.com");
-			Assert.That.Captures("google.com", Result);
+			ResultAssert.Captures("google.com", Result);
 			Result = Host.Consume("www.google.com");
-			Assert.That.Captures("www.google.com", Result);
+			ResultAssert.Captures("www.google.com", Result);
 
 			Result = Location.Consume("/about");
-			Assert.That.Captures("/about", Result);
+			ResultAssert.Captures("/about", Result);
 
 			Result = Address.Consume("www.google.com");
-			Assert.That.Captures("www.google.com", Result);
+			ResultAssert.Captures("www.google.com", Result);
 			Result = Address.Consume("http://www.google.com");
-			Assert.That.Captures("http://www.google.com", Result);
+			ResultAssert.Captures("http://www.google.com", Result);
 			Result = Address.Consume("http://www.google.com/about");
-			Assert.That.Captures("http://www.google.com/about", Result);
+			ResultAssert.Captures("http://www.google.com/about", Result);
 		}
 
 	}

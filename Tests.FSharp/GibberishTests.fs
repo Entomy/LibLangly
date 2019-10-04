@@ -15,7 +15,7 @@ type GibberishTests () =
         let word:Pattern = +(check "letter" (fun (char) -> 'a' <= char && char <= 'z'))
         let space:Pattern = +' '
         let doc:Pattern = +(word || space) >> Source.End
-        Assert.That.Succeeds(doc.Consume(&source))
+        ResultAssert.Succeeds(doc.Consume(&source))
 
     [<TestMethod>]
     member this.RegexTest() =
@@ -27,7 +27,7 @@ type GibberishTests () =
         let word = many1Chars (anyOf "abcdefghijklmnopqrstuvwxyz")
         let space = many1Chars (pchar ' ')
         let doc = many(word <|> space) .>>. eof
-        let result = run doc (Gibberish.Generate(16))
+        let result = run doc (Gibberish.Generate(32))
         match result with
         | Success(_, _, _) -> ()
         | Failure(_, _, _) -> Assert.Fail()

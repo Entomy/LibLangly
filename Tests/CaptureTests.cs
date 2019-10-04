@@ -17,29 +17,29 @@ namespace Tests {
 			Result Result;
 
 			Result = Capturer.Consume("Hello");
-			Assert.That.Captures("Hello", Result);
-			Assert.That.Captures("Hello", Capture);
+			ResultAssert.Captures("Hello", Result);
+			CaptureAssert.Captures("Hello", Capture);
 
 			Pattern Start = "Hello " & (+Pattern.Letter).Capture(out Capture) & "!";
 
 			Result = Start.Consume("Hello World!");
-			Assert.That.Captures("Hello World!", Result);
-			Assert.That.Captures("World", Capture);
+			ResultAssert.Captures("Hello World!", Result);
+			CaptureAssert.Captures("World", Capture);
 
 			Pattern Stop = (Pattern)"Goodbye " & Capture & ".";
 
 			Result = Stop.Consume("Goodbye World.");
-			Assert.That.Captures("Goodbye World.", Result);
+			ResultAssert.Captures("Goodbye World.", Result);
 
 			Result = Start.Consume("Hello Range!");
-			Assert.That.Captures("Hello Range!", Result);
-			Assert.That.Captures("Range", Capture);
+			ResultAssert.Captures("Hello Range!", Result);
+			CaptureAssert.Captures("Range", Capture);
 
 			Pattern Range = (Start, Stop);
 
 			Result = Range.Consume("Hello Range! How are you today? Goodbye Range. Have a good day.");
-			Assert.That.Captures("Range", Capture);
-			Assert.That.Captures("Hello Range! How are you today? Goodbye Range.", Result);
+			ResultAssert.Captures("Hello Range! How are you today? Goodbye Range.", Result);
+			CaptureAssert.Captures("Range", Capture);
 		}
 	}
 }

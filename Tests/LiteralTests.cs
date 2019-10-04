@@ -18,35 +18,35 @@ namespace Tests {
 			Result Result;
 
 			Result = Hello.Consume("Hello World!");
-			Assert.That.Captures("Hello", Result);
+			ResultAssert.Captures("Hello", Result);
 
 			Source Source = new Source("Hello World");
 
 			Result = Hello.Consume(ref Source);
-			Assert.That.Captures("Hello", Result);
+			ResultAssert.Captures("Hello", Result);
 
 			Result = Space.Consume(ref Source);
-			Assert.That.Captures(" ", Result);
+			ResultAssert.Captures(" ", Result);
 
 			Result = World.Consume(ref Source);
-			Assert.That.Captures("World", Result);
+			ResultAssert.Captures("World", Result);
 
 			Result = Hello.Consume("Hell");
-			Assert.That.Fails(Result);
+			ResultAssert.Fails(Result);
 
 			Result = Hello.Consume("Bacon");
-			Assert.That.Fails(Result);
+			ResultAssert.Fails(Result);
 
 			Pattern HelloWorld = Hello & Space & World; //This isn't a normal concatenator, but rather, should be optimized into a single StringLiteral
 
 			Result = HelloWorld.Consume("HELLO WORLD!");
-			Assert.That.Captures("HELLO WORLD", Result);
+			ResultAssert.Captures("HELLO WORLD", Result);
 
 			Result = HelloWorld.Consume("Hello World!");
-			Assert.That.Captures("Hello World", Result);
+			ResultAssert.Captures("Hello World", Result);
 
 			Result = HelloWorld.Consume("hello world!");
-			Assert.That.Captures("hello world", Result);
+			ResultAssert.Captures("hello world", Result);
 		}
 
 		[TestMethod]

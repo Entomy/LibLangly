@@ -10,13 +10,13 @@ type CompoundPatternTests() =
         let pattern = Pattern.Letter >> +(Pattern.Letter || Pattern.DecimalDigitNumber || '_')
         
         let mutable result = pattern.Consume("hello")
-        Assert.That.Captures("hello", result)
+        ResultAssert.Captures("hello", result)
         
         result <- pattern.Consume("example_name")
-        Assert.That.Captures("example_name", result)
+        ResultAssert.Captures("example_name", result)
 
         result <- pattern.Consume("_fail")
-        Assert.That.Fails(result)
+        ResultAssert.Fails(result)
 
     [<TestMethod>]
     member this.IPv4Address() =
@@ -24,26 +24,26 @@ type CompoundPatternTests() =
         let address = digit >> '.' >> digit >> '.' >> digit >> '.' >> digit
 
         
-        Assert.That.Captures("1", digit.Consume("1"))
-        Assert.That.Captures("11", digit.Consume("11"))
-        Assert.That.Captures("111", digit.Consume("111"))
+        ResultAssert.Captures("1", digit.Consume("1"))
+        ResultAssert.Captures("11", digit.Consume("11"))
+        ResultAssert.Captures("111", digit.Consume("111"))
 
         let mutable result = address.Consume("192.168.1.1")
-        Assert.That.Captures("192.168.1.1", result)
+        ResultAssert.Captures("192.168.1.1", result)
 
     // This test is against something in the FParsec documentation that they make out to be quite difficult, that is why it's only in the F# tests
     [<TestMethod>]
     member this.NumberInBracket() =
         let number = '[' >> Pattern.Number >> ']'
         let numberList = +(number >> ~~(+Pattern.SpaceSeparator)) >> "[c]"
-        Assert.That.Captures("[1] [2] [c]", numberList.Consume("[1] [2] [c]"))
+        ResultAssert.Captures("[1] [2] [c]", numberList.Consume("[1] [2] [c]"))
 
 
     [<TestMethod>]
     member this.PhoneNumber() =
         let number = Pattern.Number * 3 >> '-' >> Pattern.Number * 3 >> '-' >> Pattern.Number * 4
         let result = number.Consume("555-555-5555")
-        Assert.That.Captures("555-555-5555", result)
+        ResultAssert.Captures("555-555-5555", result)
 
     [<TestMethod>]
     member this.WebAddress() =
@@ -52,8 +52,8 @@ type CompoundPatternTests() =
         let location = +('/' >> +(Pattern.Letter || Pattern.Number || '-' || '_'))
         let address = ~~protocol >> host >> ~~location
         let mutable result = address.Consume("www.google.com")
-        Assert.That.Captures("www.google.com", result)
+        ResultAssert.Captures("www.google.com", result)
         result <- address.Consume("http://www.google.com")
-        Assert.That.Captures("http://www.google.com", result)
+        ResultAssert.Captures("http://www.google.com", result)
         result <- address.Consume("http://www.google.com/about")
-        Assert.That.Captures("http://www.google.com/about", result)
+        ResultAssert.Captures("http://www.google.com/about", result)

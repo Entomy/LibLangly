@@ -16,11 +16,11 @@ namespace Tests {
 			Result Result;
 
 			Result = Ranger.Consume("Hello;");
-			Assert.That.Captures("Hello;", Result);
+			ResultAssert.Captures("Hello;", Result);
 
 
 			Result = Ranger.Consume("Hello World;");
-			Assert.That.Captures("Hello World;", Result);
+			ResultAssert.Captures("Hello World;", Result);
 		}
 
 		[TestMethod]
@@ -29,22 +29,22 @@ namespace Tests {
 			Result Result;
 
 			Result = Ranger.Consume("\"\"");
-			Assert.That.Captures("\"\"", Result);
+			ResultAssert.Captures("\"\"", Result);
 
 			Result = Ranger.Consume("\"H\"");
-			Assert.That.Captures("\"H\"", Result);
+			ResultAssert.Captures("\"H\"", Result);
 
 			Result = Ranger.Consume("\"Hello\"");
-			Assert.That.Captures("\"Hello\"", Result);
+			ResultAssert.Captures("\"Hello\"", Result);
 
 			Result = Ranger.Consume("\"Hello\"\"Goodbye\"");
-			Assert.That.Captures("\"Hello\"\"Goodbye\"", Result);
+			ResultAssert.Captures("\"Hello\"\"Goodbye\"", Result);
 
 			// Should also check for C style escapes
 			Ranger = (From: "\"", To: "\"", Escape: "\\\"");
 
 			Result = Ranger.Consume("\"Hello\\\"Goodbye\"");
-			Assert.That.Captures("\"Hello\\\"Goodbye\"", Result);
+			ResultAssert.Captures("\"Hello\\\"Goodbye\"", Result);
 		}
 
 		[TestMethod]
@@ -53,10 +53,10 @@ namespace Tests {
 			Result Result;
 
 			Result = Ranger.Consume("if\nif\nend if\nbacon\nend if\nfoobar");
-			Assert.That.Captures("if\nif\nend if\nbacon\nend if", Result);
+			ResultAssert.Captures("if\nif\nend if\nbacon\nend if", Result);
 
 			Result = Ranger.Consume("if\nif\nend if\nbacon\nfoobar");
-			Assert.That.Fails(Result);
+			ResultAssert.Fails(Result);
 		}
 	}
 }

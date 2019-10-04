@@ -13,57 +13,57 @@ namespace Tests {
 		[TestMethod]
 		public void ConsumeAlternator() {
 			Pattern Negator = !((Pattern)"Hello" | "Goodbye");
-			Assert.That.Fails(Negator.Consume("Hello"));
-			Assert.That.Fails(Negator.Consume("Goodbye"));
-			Assert.That.Captures("World", Negator.Consume("Worldeater"));
+			ResultAssert.Fails(Negator.Consume("Hello"));
+			ResultAssert.Fails(Negator.Consume("Goodbye"));
+			ResultAssert.Captures("World", Negator.Consume("Worldeater"));
 		}
 
 		[TestMethod]
 		public void ConsumeChecker() {
 			Pattern Negator = !Pattern.Check(nameof(Negator), (Char) => 0x30 <= Char && Char <= 0x39);
-			Assert.That.Fails(Negator.Consume("3"));
-			Assert.That.Fails(Negator.Consume("7"));
-			Assert.That.Captures("A", Negator.Consume("A"));
+			ResultAssert.Fails(Negator.Consume("3"));
+			ResultAssert.Fails(Negator.Consume("7"));
+			ResultAssert.Captures("A", Negator.Consume("A"));
 		}
 
 		[TestMethod]
 		public void ConsumeConcatenator() {
 			Pattern Negator = !((Pattern)"Hello" & '!');
-			Assert.That.Fails(Negator.Consume("Hello"));
-			Assert.That.Fails(Negator.Consume("Hello!"));
-			Assert.That.Captures("Hello.", Negator.Consume("Hello."));
-			Assert.That.Captures("Oh no!", Negator.Consume("Oh no!"));
-			Assert.That.Captures("Oh no?", Negator.Consume("Oh no?"));
+			ResultAssert.Fails(Negator.Consume("Hello"));
+			ResultAssert.Fails(Negator.Consume("Hello!"));
+			ResultAssert.Captures("Hello.", Negator.Consume("Hello."));
+			ResultAssert.Captures("Oh no!", Negator.Consume("Oh no!"));
+			ResultAssert.Captures("Oh no?", Negator.Consume("Oh no?"));
 		}
 
 		[TestMethod]
 		public void ConsumeLiteral() {
 			Pattern Negator = !(Pattern)"Hello";
-			Assert.That.Fails(Negator.Consume("Hello"));
-			Assert.That.Captures("World", Negator.Consume("World"));
+			ResultAssert.Fails(Negator.Consume("Hello"));
+			ResultAssert.Captures("World", Negator.Consume("World"));
 		}
 
 		[TestMethod]
 		public void ConsumeOptor() {
 			Pattern Negator = !-(Pattern)"Hello";
 
-			Assert.That.Captures("", Negator.Consume("Hello"));
+			ResultAssert.Captures("", Negator.Consume("Hello"));
 
-			Assert.That.Captures("World", Negator.Consume("World"));
+			ResultAssert.Captures("World", Negator.Consume("World"));
 		}
 
 		[TestMethod]
 		public void ConsumeRepeater() {
 			Pattern Negator = !((Pattern)"Hi!" * 2);
-			Assert.That.Fails(Negator.Consume("Hi!Hi!"));
-			Assert.That.Captures("Oh!Oh!", Negator.Consume("Oh!Oh!"));
+			ResultAssert.Fails(Negator.Consume("Hi!Hi!"));
+			ResultAssert.Captures("Oh!Oh!", Negator.Consume("Oh!Oh!"));
 		}
 
 		[TestMethod]
 		public void ConsumeSpanner() {
 			Pattern Negator = !+(Pattern)";";
-			Assert.That.Fails(Negator.Consume(";"));
-			Assert.That.Captures("123456789", Negator.Consume("123456789;"));
+			ResultAssert.Fails(Negator.Consume(";"));
+			ResultAssert.Captures("123456789", Negator.Consume("123456789;"));
 		}
 
 		[TestMethod]

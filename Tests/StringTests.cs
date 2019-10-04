@@ -76,28 +76,28 @@ namespace Tests {
 			Result Result;
 
 			Result = "".Consume("Hello");
-			Assert.That.Captures("", Result);
+			ResultAssert.Captures("", Result);
 
 			Result = "H".Consume("Hello");
-			Assert.That.Captures("H", Result);
+			ResultAssert.Captures("H", Result);
 
 			Result = "He".Consume("Hello");
-			Assert.That.Captures("He", Result);
+			ResultAssert.Captures("He", Result);
 
 			Result = "Hel".Consume("Hello");
-			Assert.That.Captures("Hel", Result);
+			ResultAssert.Captures("Hel", Result);
 
 			Result = "Hell".Consume("Hello");
-			Assert.That.Captures("Hell", Result);
+			ResultAssert.Captures("Hell", Result);
 
 			Result = "Hello".Consume("Hello");
-			Assert.That.Captures("Hello", Result);
+			ResultAssert.Captures("Hello", Result);
 
 			Result = " ".Consume("    Hello");
-			Assert.That.Captures(" ", Result);
+			ResultAssert.Captures(" ", Result);
 
-			Assert.That.Fails("w".Consume("Hello"));
-			Assert.That.Fails(" ".Consume("Hello"));
+			ResultAssert.Fails("w".Consume("Hello"));
+			ResultAssert.Fails(" ".Consume("Hello"));
 		}
 
 		[TestMethod]
@@ -106,19 +106,19 @@ namespace Tests {
 			Result Result;
 
 			Result = "H".Consume(ref Source);
-			Assert.That.Captures("H", Result);
+			ResultAssert.Captures("H", Result);
 
 			Result = "e".Consume(ref Source);
-			Assert.That.Captures("e", Result);
+			ResultAssert.Captures("e", Result);
 
 			Result = "l".Consume(ref Source);
-			Assert.That.Captures("l", Result);
+			ResultAssert.Captures("l", Result);
 
 			Result = "l".Consume(ref Source);
-			Assert.That.Captures("l", Result);
+			ResultAssert.Captures("l", Result);
 
 			Result = "o".Consume(ref Source);
-			Assert.That.Captures("o", Result);
+			ResultAssert.Captures("o", Result);
 		}
 	}
 }

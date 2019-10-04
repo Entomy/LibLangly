@@ -17,16 +17,16 @@ namespace Tests {
 			Result Result;
 
 			Result = HelloWorld.Consume("Hello world");
-			Assert.That.Captures("Hello world", Result);
+			ResultAssert.Captures("Hello world", Result);
 
 			Result = GoodbyeWorld.Consume("Goodbye world");
-			Assert.That.Captures("Goodbye world", Result);
+			ResultAssert.Captures("Goodbye world", Result);
 
 			Result = HelloWorld.Consume("Hello everyone");
-			Assert.That.Fails(Result);
+			ResultAssert.Fails(Result);
 
 			Result = GoodbyeWorld.Consume("Hello world");
-			Assert.That.Fails(Result);
+			ResultAssert.Fails(Result);
 		}
 	}
 }
