@@ -19,6 +19,16 @@ namespace Tests {
 		}
 
 		[TestMethod]
+		public void Backtrack() {
+			Pattern End1 = "end" & +(Pattern)' ' & "first";
+			Pattern End2 = "end" & +(Pattern)' ' & "second";
+			Source Source = new Source("end second");
+			//If backtracking doesn't occur, parsing End2 will fail, because "end" and the space will have been consumed
+			ResultAssert.Fails(End1.Consume(ref Source));
+			ResultAssert.Captures("end second", End2.Consume(ref Source));
+		}
+
+		[TestMethod]
 		public void Comment() {
 			Pattern Range = "--" & +!(Pattern)"\n";
 			Result Result;

@@ -42,7 +42,11 @@ namespace System.Text.Patterns {
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/></returns>
 		public Result Consume(ref Source Source) {
 			Result Result = new Result(ref Source);
+			Int32 OriginalPosition = Source.Position;
 			Consume(ref Source, ref Result);
+			if (!Result) {
+				Source.Position = OriginalPosition;
+			}
 			return Result;
 		}
 
