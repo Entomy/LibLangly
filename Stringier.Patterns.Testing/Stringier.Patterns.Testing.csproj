@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
@@ -13,6 +13,8 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>test, mstest, testing, stringier, pattern, patterns</PackageTags>
     <RootNamespace>Microsoft.VisualStudio.TestTools.UnitTesting</RootNamespace>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
 
   <ItemGroup>
