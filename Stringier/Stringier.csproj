@@ -10,7 +10,7 @@
     <RepositoryUrl>https://github.com/Entomy/Stringier</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageLicenseUrl></PackageLicenseUrl>
-    <Version>1.17.0</Version>
+    <Version>1.17.1</Version>
     <PackageTags>string, regex, string manipulation</PackageTags>
     <RootNamespace>System</RootNamespace>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
@@ -20,6 +20,7 @@
 		<NullableContextOptions>enable</NullableContextOptions>
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<PackageIcon>Logo.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -31,6 +32,7 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+		<None Include="..\Logo.png" Pack="true" Visible="true" PackagePath="\" />
   </ItemGroup>
 
 </Project>

@@ -12,12 +12,13 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>string, pattern, patterns, pattern matching, parser, parsers, parser combinator</PackageTags>
     <RootNamespace>System.Text.Patterns</RootNamespace>
-    <Version>1.4.2</Version>
+    <Version>1.4.3</Version>
     <Description>Provides SNOBOL4 or UNICON inspired patterns and parsing</Description>
     <LangVersion>8.0</LangVersion>
 		<Nullable>enable</Nullable>
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<PackageIcon>Logo.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -29,6 +30,7 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+		<None Include="..\Logo.png" Pack="true" Visible="true" PackagePath="\" />
   </ItemGroup>
 
 </Project>
