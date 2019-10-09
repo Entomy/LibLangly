@@ -30,13 +30,13 @@ namespace Tests {
 
 		[TestMethod]
 		public void Comment() {
-			Pattern Range = "--" & +!(Pattern)"\n";
+			Pattern Comment = "--" & +!Pattern.LineTerminator;
 			Result Result;
 
-			Result = Range.Consume("--This is a comment\n");
+			Result = Comment.Consume("--This is a comment\n");
 			ResultAssert.Captures("--This is a comment", Result);
 
-			Result = Range.Consume("--This is a comment\nExample_Function();");
+			Result = Comment.Consume("--This is a comment\nExample_Function();");
 			ResultAssert.Captures("--This is a comment", Result);
 
 		}

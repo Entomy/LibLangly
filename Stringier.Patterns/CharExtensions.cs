@@ -2,7 +2,14 @@
 	public static class CharExtensions {
 		#region Alternator
 
-		internal static Pattern Alternate(this Char Left, Pattern Right) => new Alternator(Left, Right);
+		internal static Pattern Alternate(this Char Left, Pattern Right) {
+			switch (Right) {
+			case ChainAlternator chain:
+				return new ChainAlternator(Left, chain.Patterns);
+			default:
+				return new Alternator(Left, Right);
+			}
+		}
 
 		#endregion
 

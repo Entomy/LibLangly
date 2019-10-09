@@ -1,9 +1,27 @@
 ﻿namespace System.Text.Patterns {
 	internal sealed class ChainAlternator : Pattern, IEquatable<ChainAlternator> {
-		private readonly Pattern[] Patterns;
+		internal readonly Pattern[] Patterns;
 
 		internal ChainAlternator(params Pattern[] Patterns) {
 			this.Patterns = Patterns;
+		}
+
+		internal ChainAlternator(Pattern FirstPattern, Pattern[] OtherPatterns) {
+			Patterns = new Pattern[OtherPatterns.Length + 1];
+			Patterns[0] = FirstPattern;
+			OtherPatterns.CopyTo(Patterns, 1);
+		}
+
+		internal ChainAlternator(Pattern[] OtherPatterns, Pattern LastPattern) {
+			Patterns = new Pattern[OtherPatterns.Length + 1];
+			OtherPatterns.CopyTo(Patterns, 0);
+			Patterns[Patterns.Length - 1] = LastPattern;
+		}
+
+		internal ChainAlternator(Pattern[] FirstPatterns, Pattern[] LastPatterns) {
+			Patterns = new Pattern[FirstPatterns.Length + LastPatterns.Length];
+			FirstPatterns.CopyTo(Patterns, 0);
+			LastPatterns.CopyTo(Patterns, FirstPatterns.Length);
 		}
 
 		internal override Boolean CheckHeader(ref Source Source) {
@@ -22,7 +40,23 @@
 			}
 		}
 
-		internal override void Neglect(ref Source Source, ref Result Result) => throw new NotImplementedException();
+		internal override void Neglect(ref Source Source, ref Result Result) {
+			Int32 OriginalPosition = Source.Position;
+			Int32 OriginalLength = Result.Length;
+			Int32 ShortestPattern = Int32.MaxValue;
+			for (Int32 i = Patterns.Length - 1; i >= 0; i--) {
+				Patterns[i].Neglect(ref Source, ref Result);
+				if (Result.Length < ShortestPattern) { ShortestPattern = Result.Length - OriginalLength; }
+				if (Result) {
+					Source.Position = OriginalPosition;
+					Result.Length = OriginalLength;
+				} else {
+					return;
+				}
+			}
+			Source.Position += ShortestPattern;
+			Result.Length += ShortestPattern;
+		}
 
 		public override Boolean Equals(Object? obj) {
 			switch (obj) {
@@ -48,5 +82,22 @@
 			Builder.Append("┃");
 			return Builder.ToString();
 		}
+
+		#region Alternate
+
+		internal override Pattern Alternate(Char Right) => new ChainAlternator(Patterns, new CharLiteral(Right));
+
+		internal override Pattern Alternate(String Right) => new ChainAlternator(Patterns, new StringLiteral(Right));
+
+		internal override Pattern Alternate(Pattern Right) {
+			switch (Right) {
+			case ChainAlternator chain:
+				return new ChainAlternator(Patterns, chain.Patterns);
+			default:
+				return base.Alternate(Right);
+			}
+		}
+
+		#endregion
 	}
 }

@@ -7,12 +7,12 @@ namespace Benchmarks {
 	[ClrJob, CoreJob, CoreRtJob]
 	[MemoryDiagnoser]
 	public class CompoundPatternComparison {
-		readonly static Pattern commentPattern = "--" & +!(Pattern)'\n';
+		readonly static Pattern commentPattern = "--" & +!Pattern.LineTerminator;
 
 		[Benchmark]
 		public Result CommentPattern() => commentPattern.Consume("--Comment\n");
 
-		readonly static Regex commentRegex = new Regex("^--.*", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+		readonly static Regex commentRegex = new Regex("^--.*$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
 		[Benchmark]
 		public Match CommentRegex() => commentRegex.Match("--Comment\n");
