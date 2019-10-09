@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace System.Text.Patterns {
 	/// <summary>
@@ -306,6 +307,12 @@ namespace System.Text.Patterns {
 		public static implicit operator Pattern((Pattern From, Pattern To, Pattern Escape) Range) => new EscapedRanger(Range.From, Range.To, Range.Escape);
 
 		public static implicit operator Pattern((Pattern From, Pattern To, Boolean Nested) Range) => Range.Nested ? new NestedRanger(Range.From, Range.To) : new Ranger(Range.From, Range.To);
+
+		#endregion
+
+		#region RegexAdapter
+
+		public static implicit operator Pattern(Regex Regex) => new RegexAdapter(Regex);
 
 		#endregion
 
