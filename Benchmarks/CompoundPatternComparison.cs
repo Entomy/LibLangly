@@ -12,7 +12,7 @@ namespace Benchmarks {
 		[Benchmark]
 		public Result CommentPattern() => commentPattern.Consume("--Comment\n");
 
-		readonly static Regex commentRegex = new Regex("^--.*$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+		readonly static Regex commentRegex = new Regex("^--(?:[^\u000D][^\u000A]|[^\u000A][^\u000D]|[^\u000A]|[^\u000B]|[^\u000C]|[^\u000D]|[^\u0085]|[^\u2028]|[^\u2029])+", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
 		[Benchmark]
 		public Match CommentRegex() => commentRegex.Match("--Comment\n");
