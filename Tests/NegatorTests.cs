@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text.Patterns;
+using System.Text.RegularExpressions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests {
@@ -50,6 +51,14 @@ namespace Tests {
 			ResultAssert.Captures("", Negator.Consume("Hello"));
 
 			ResultAssert.Captures("World", Negator.Consume("World"));
+		}
+
+		[TestMethod]
+		public void ConsumeRegex() {
+			Pattern Negator = !(Pattern)new Regex(@"^hello");
+			ResultAssert.Captures("world", Negator.Consume("world"));
+			ResultAssert.Fails(Negator.Consume("hello"));
+			ResultAssert.Captures("Hello", Negator.Consume("Hello world")); //This one succeeds because the regex is case sensitive
 		}
 
 		[TestMethod]

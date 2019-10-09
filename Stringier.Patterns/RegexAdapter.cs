@@ -24,7 +24,7 @@ namespace System.Text.Patterns {
 			}
 		}
 
-		internal override void Neglect(ref Source Source, ref Result Result) => throw new NotImplementedException();
+		internal override void Neglect(ref Source Source, ref Result Result) => throw new InvalidOperationException("Regex can not be negated");
 
 		public override Boolean Equals(Object? obj) {
 			switch (obj) {
@@ -42,5 +42,11 @@ namespace System.Text.Patterns {
 		public override Int32 GetHashCode() => Regex.GetHashCode();
 
 		public override String ToString() => $"╱{Regex}╱";
+
+		#region Negator
+
+		internal override Pattern Negate() => throw new PatternConstructionException("Regex can not be negated");
+
+		#endregion
 	}
 }
