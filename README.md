@@ -6,6 +6,8 @@
 
 Thanks to [GitHub Pages](https://pages.github.com/), documentation is available [here](https://entomy.github.io/Stringier/)
 
+This project uses framework multitargeting to support as broad of a userbase as possible. This does mean on certain targets, some functionality will be missing. [MULTITARGET.md](https://github.com/Entomy/Stringier/blob/master/MULTITARGET.md) breaks this down.
+
 # Subprojects:
 
 ## [Stringier](https://github.com/Entomy/Stringier/tree/master/Stringier) [![Nuget](https://img.shields.io/nuget/dt/Stringier.svg?label=Stringier&logo=Nuget)](https://www.nuget.org/packages/Stringier/)

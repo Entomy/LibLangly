@@ -55,10 +55,7 @@ namespace Tests {
 
 		[TestMethod]
 		public void ConsumeRegex() {
-			Pattern Negator = !(Pattern)new Regex(@"^hello");
-			ResultAssert.Captures("world", Negator.Consume("world"));
-			ResultAssert.Fails(Negator.Consume("hello"));
-			ResultAssert.Captures("Hello", Negator.Consume("Hello world")); //This one succeeds because the regex is case sensitive
+			Assert.ThrowsException<PatternConstructionException>(() => !(Pattern)new Regex(@"^hello"));
 		}
 
 		[TestMethod]

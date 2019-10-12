@@ -570,13 +570,16 @@ namespace System {
 			return Result;
 		}
 
+#if NETSTANDARD2_0 || NETSTANDARD2_1
 		/// <summary>
 		/// Converts the specified string to camel case (except for words that are entirely in uppercase, which are considered to be acronyms).
 		/// </summary>
 		/// <param name="String">The string to convert to camel case.</param>
 		/// <returns>The specified string converted to camel case</returns>
 		public static String ToCamelCase(this String String) => Char.ToLowerInvariant(String[0]) + String.ToPascalCase().Substring(1);
+#endif
 
+#if NETSTANDARD2_0 || NETSTANDARD2_1
 		/// <summary>
 		/// Converts the specified string to camel case (except for words that are entirely in uppercase, which are considered to be acronyms).
 		/// </summary>
@@ -584,7 +587,9 @@ namespace System {
 		/// <param name="Culture">A predefined CultureInfo identifier, LCID property of an existing CultureInfo object, or Windows-only culture identifier.</param>
 		/// <returns>The specified string converted to camel case</returns>
 		public static String ToCamelCase(this String String, Int32 Culture) => Char.ToLower(String[0], CultureInfo.GetCultureInfo(Culture)) + String.ToPascalCase(Culture).Substring(1);
+#endif
 
+#if NETSTANDARD2_0 || NETSTANDARD2_1
 		/// <summary>
 		/// Converts the specified string to camel case (except for words that are entirely in uppercase, which are considered to be acronyms).
 		/// </summary>
@@ -592,7 +597,9 @@ namespace System {
 		/// <param name="Culture">A predefined CultureInfo name, Name of an existing CultureInfo, or Windows-only culture name. name is not case-sensitive.</param>
 		/// <returns>The specified string converted to camel case.</returns>
 		public static String ToCamelCase(this String String, String Culture) => Char.ToLower(String[0], CultureInfo.GetCultureInfo(Culture)) + String.ToPascalCase(Culture).Substring(1);
+#endif
 
+#if NETSTANDARD2_0 || NETSTANDARD2_1
 		/// <summary>
 		/// Converts the specified string to Pascal case (except for words that are entirely in uppercase, which are considered to be acronyms).
 		/// </summary>
@@ -605,7 +612,9 @@ namespace System {
 			}
 			return Result.ToString();
 		}
+#endif
 
+#if NETSTANDARD2_0 || NETSTANDARD2_1
 		/// <summary>
 		/// Converts the specified string to Pascal case (except for words that are entirely in uppercase, which are considered to be acronyms).
 		/// </summary>
@@ -619,7 +628,9 @@ namespace System {
 			}
 			return Result.ToString();
 		}
+#endif
 
+#if NETSTANDARD2_0 || NETSTANDARD2_1
 		/// <summary>
 		/// Converts the specified string to Pascal case (except for words that are entirely in uppercase, which are considered to be acronyms).
 		/// </summary>
@@ -633,14 +644,18 @@ namespace System {
 			}
 			return Result.ToString();
 		}
+#endif
 
+#if NETSTANDARD2_0 || NETSTANDARD2_1
 		/// <summary>
 		/// Converts the specified string to title case (except for words that are entirely in uppercase, which are considered to be acronyms).
 		/// </summary>
 		/// <param name="String">The string to convert to title case.</param>
 		/// <returns>The specified string converted to title case.</returns>
 		public static String ToTitleCase(this String String) => new CultureInfo(CultureInfo.InvariantCulture.Name).TextInfo.ToTitleCase(String);
+#endif
 
+#if NETSTANDARD2_0 || NETSTANDARD2_1
 		/// <summary>
 		/// Converts the specified string to title case (except for words that are entirely in uppercase, which are considered to be acronyms).
 		/// </summary>
@@ -648,7 +663,9 @@ namespace System {
 		/// <param name="Culture">A predefined CultureInfo identifier, LCID property of an existing CultureInfo object, or Windows-only culture identifier.</param>
 		/// <returns>The specified string converted to title case.</returns>
 		public static String ToTitleCase(this String String, Int32 Culture) => new CultureInfo(Culture).TextInfo.ToTitleCase(String);
+#endif
 
+#if NETSTANDARD2_0 || NETSTANDARD2_1
 		/// <summary>
 		/// Converts the specified string to title case (except for words that are entirely in uppercase, which are considered to be acronyms).
 		/// </summary>
@@ -656,6 +673,7 @@ namespace System {
 		/// <param name="Culture">A predefined CultureInfo name, Name of an existing CultureInfo, or Windows-only culture name. name is not case-sensitive.</param>
 		/// <returns>The specified string converted to title case.</returns>
 		public static String ToTitleCase(this String String, String Culture) => new CultureInfo(Culture).TextInfo.ToTitleCase(String);
+#endif
 
 		/// <summary>
 		/// Separate the <paramref name="String"/> into its words.

@@ -9,7 +9,13 @@ namespace System {
 		/// </summary>
 		/// <param name="Char">The Unicode character to categorize.</param>
 		/// <returns>A <see cref="UnicodeCategory"/> value that identifies the group that contains <paramref name="Char"/>.</returns>
-		public static UnicodeCategory GetUnicodeCategory(this Char Char) => Char.GetUnicodeCategory(Char);
+		public static UnicodeCategory GetUnicodeCategory(this Char Char) {
+#if NETSTANDARD1_6
+			return CharUnicodeInfo.GetUnicodeCategory(Char);
+#else
+			return Char.GetUnicodeCategory(Char);
+#endif
+		}
 
 		/// <summary>
 		/// Indicates whether the specified Unicode character is categorized as a control character.
@@ -88,12 +94,14 @@ namespace System {
 		/// <returns>true if <paramref name="Char"/> is either a high surrogate or a low surrogate; otherwise, false.</returns>
 		public static Boolean IsSurrogate(this Char Char) => Char.IsSurrogate(Char);
 
+#if NETSTANDARD2_0 || NETSTANDARD2_1
 		/// <summary>
 		/// Indicates whether two specified <see cref="Char"/> objects form a surrogate pair.
 		/// </summary>
 		/// <param name="Pair">The pair of characters to evaluate as a surrogate pair</param>
 		/// <returns>true if the numeric value of the high and low parameters are their respective surrogate parts; otherwise false</returns>
 		public static Boolean IsSurrogatePair(this (Char High, Char Low) Pair) => Char.IsSurrogatePair(Pair.High, Pair.Low);
+#endif
 
 		/// <summary>
 		/// Indicates whether the specified Unicode character is categorized as a symbol character.
@@ -146,7 +154,8 @@ namespace System {
 		/// </summary>
 		/// <param name="Char">A char containing a number to convert.</param>
 		/// <returns>A 16-bit signed integer equivalent to the number contained in <paramref name="Char"/>.</returns>
-		public static Int16 ParseInt16(this Char Char) => Char switch {
+		public static Int16 ParseInt16(this Char Char) => Char switch
+		{
 			'0' => (Int16)0,
 			'1' => (Int16)1,
 			'2' => (Int16)2,
@@ -168,7 +177,8 @@ namespace System {
 		/// <returns>A 16-bit signed integer equivalent to the number contained in <paramref name="Char"/>.</returns>
 		public static Int16 ParseInt16(this Char Char, NumberStyles Style) {
 			if (Style.HasFlag(NumberStyles.AllowHexSpecifier)) {
-				return Char switch {
+				return Char switch
+				{
 					'0' => (Int16)0x0,
 					'1' => (Int16)0x1,
 					'2' => (Int16)0x2,
@@ -203,7 +213,8 @@ namespace System {
 		/// </summary>
 		/// <param name="Char">A char containing a number to convert.</param>
 		/// <returns>A 32-bit signed integer equivalent to the number contained in <paramref name="Char"/>.</returns>
-		public static Int32 ParseInt32(this Char Char) => Char switch {
+		public static Int32 ParseInt32(this Char Char) => Char switch
+		{
 			'0' => 0,
 			'1' => 1,
 			'2' => 2,
@@ -339,7 +350,15 @@ namespace System {
 		/// <param name="Char">The Unicode character to convert.</param>
 		/// <param name="Culture">An object that supplies culture-specific casing rules.</param>
 		/// <returns>The lowercase equivalent of <paramref name="Char"/>, modified according to <paramref name="Culture"/>, or the unchanged value of <paramref name="Char"/>, if <paramref name="Char"/> is already lowercase or not alphabetic.</returns>
-		public static Char ToLower(this Char Char, CultureInfo Culture) => Char.ToLower(Char, Culture);
+		public static Char ToLower(this Char Char, CultureInfo Culture) {
+#if NETSTANDARD1_6
+			//This was taken from CoreFX, and is the property of the .NET Foundation and contributors
+			if (Culture is null) { throw new ArgumentNullException(nameof(Culture)); }
+			return Culture.TextInfo.ToLower(Char);
+#else
+			return Char.ToLower(Char, Culture);
+#endif
+		}
 
 		/// <summary>
 		/// Converts the value of a Unicode character to its lowercase equivalent using the casing rules of the invariant culture.
@@ -361,7 +380,15 @@ namespace System {
 		/// <param name="Char">The Unicode character to convert.</param>
 		/// <param name="Culture">An object that supplies culture-specific casing rules.</param>
 		/// <returns>The uppercase equivalent of <paramref name="Char"/>, modified according to <paramref name="Culture"/>, or the unchanged value of <paramref name="Char"/> if <paramref name="Char"/> is already uppercase, has no uppercase equivalent, or is not alphabetic.</returns>
-		public static Char ToUpper(this Char Char, CultureInfo Culture) => Char.ToUpper(Char, Culture);
+		public static Char ToUpper(this Char Char, CultureInfo Culture) {
+#if NETSTANDARD1_6
+			//This was taken from CoreFX, and is the property of the .NET Foundation and contributors
+			if (Culture is null) { throw new ArgumentNullException(nameof(Culture)); }
+			return Culture.TextInfo.ToLower(Char);
+#else
+			return Char.ToUpper(Char, Culture);
+#endif
+		}
 
 		/// <summary>
 		/// Converts the value of a Unicode character to its uppercase equivalent using the casing rules of the invariant culture.

@@ -22,8 +22,10 @@ namespace System.Text.Patterns {
 			switch (ComparisonType) {
 			case StringComparison.CurrentCultureIgnoreCase:
 				return a.ToUpper(CultureInfo.CurrentCulture).Equals(b.ToUpper(CultureInfo.CurrentCulture));
+#if NETSTANDARD2_0 || NETSTANDARD2_1
 			case StringComparison.InvariantCultureIgnoreCase:
 				return a.ToUpperInvariant().Equals(b.ToUpperInvariant());
+#endif
 			case StringComparison.OrdinalIgnoreCase:
 				return a.ToUpper().Equals(b.ToUpper());
 			default:

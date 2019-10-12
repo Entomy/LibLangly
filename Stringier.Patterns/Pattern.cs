@@ -98,11 +98,15 @@ namespace System.Text.Patterns {
 
 		public static implicit operator Pattern(Char Char) => new CharLiteral(Char);
 
+#if NETSTANDARD2_0 || NETSTANDARD2_1
 		public static implicit operator Pattern((Char Char, StringComparison ComparisonType) Pattern) => new CharLiteral(Pattern.Char, Pattern.ComparisonType);
+#endif
 
 		public static implicit operator Pattern(String Pattern) => new StringLiteral(Pattern);
 
+#if NETSTANDARD2_0 || NETSTANDARD2_1
 		public static implicit operator Pattern((String String, StringComparison ComparisonType) Pattern) => new StringLiteral(Pattern.String, Pattern.ComparisonType);
+#endif
 
 		#endregion
 
@@ -171,8 +175,10 @@ namespace System.Text.Patterns {
 
 		#region Checker
 
+#if NETSTANDARD2_0 || NETSTANDARD2_1
 		[Obsolete("Use Pattern.Check() now")]
 		public static implicit operator Pattern((String Name, Func<Char, Boolean> Check) Checker) => new CharChecker(Checker.Name, Checker.Check);
+#endif
 
 		/// <summary>
 		/// Use the <paramref name="Check"/> to represent a single character.
@@ -182,8 +188,10 @@ namespace System.Text.Patterns {
 		/// <returns></returns>
 		public static Pattern Check(String Name, Func<Char, Boolean> Check) => new CharChecker(Name, Check);
 
+#if NETSTANDARD2_0 || NETSTANDARD2_1
 		[Obsolete("Use Pattern.Check() now")]
 		public static implicit operator Pattern((String Name, Func<Char, Boolean> HeadCheck, Func<Char, Boolean> BodyCheck, Func<Char, Boolean> TailCheck) Checker) => new StringChecker(Checker.Name, Checker.HeadCheck, Checker.BodyCheck, Checker.TailCheck);
+#endif
 
 		/// <summary>
 		/// Use the specified <paramref name="HeadCheck"/>, <paramref name="BodyCheck"/>, and <paramref name="TailCheck"/> to represent a variable length string. The head and tail are only present once, with the body being repeatable.
@@ -195,8 +203,10 @@ namespace System.Text.Patterns {
 		/// <returns></returns>
 		public static Pattern Check(String Name, Func<Char, Boolean> HeadCheck, Func<Char, Boolean> BodyCheck, Func<Char, Boolean> TailCheck) => new StringChecker(Name, HeadCheck, BodyCheck, TailCheck);
 
+#if NETSTANDARD2_0 || NETSTANDARD2_1
 		[Obsolete("Use Pattern.Check() now")]
 		public static implicit operator Pattern((String Name, Func<Char, Boolean> HeadCheck, Boolean HeadRequired, Func<Char, Boolean> BodyCheck, Boolean BodyRequired, Func<Char, Boolean> TailCheck, Boolean TailRequired) Checker) => new StringChecker(Checker.Name, Checker.HeadCheck, Checker.HeadRequired, Checker.BodyCheck, Checker.BodyRequired, Checker.TailCheck, Checker.TailRequired);
+#endif
 
 		/// <summary>
 		/// Use the specified <paramref name="HeadCheck"/>, <paramref name="BodyCheck"/>, and <paramref name="TailCheck"/> to represent a variable length string, along with whether each check is required for a valid string. The head and tail are only present once, with the body being repeatable.
@@ -302,11 +312,45 @@ namespace System.Text.Patterns {
 
 		#region Ranger
 
+#if NETSTANDARD2_0 || NETSTANDARD2_1
+		[Obsolete("Use Pattern.Range() now")]
 		public static implicit operator Pattern((Pattern From, Pattern To) Range) => new Ranger(Range.From, Range.To);
+#endif
 
+		/// <summary>
+		/// Create a pattern representing the range <paramref name="From"/> until <paramref name="To"/>.
+		/// </summary>
+		/// <param name="From">Begining <see cref="Pattern"/>.</param>
+		/// <param name="To">Ending <see cref="Pattern"/>.</param>
+		public static Pattern Range(Pattern From, Pattern To) => new Ranger(From, To);
+
+#if NETSTANDARD2_0 || NETSTANDARD2_1
+		[Obsolete("Use Pattern.Range() now")]
 		public static implicit operator Pattern((Pattern From, Pattern To, Pattern Escape) Range) => new EscapedRanger(Range.From, Range.To, Range.Escape);
+#endif
 
+		/// <summary>
+		/// Create a pattern representing the range <paramref name="From"/> until <paramref name="To"/>, allowing an <paramref name="Escape"/>.
+		/// </summary>
+		/// <param name="From">Begining <see cref="Pattern"/>.</param>
+		/// <param name="To">Ending <see cref="Pattern"/>.</param>
+		/// <param name="Escape">Escape <see cref="Pattern"/>./</param>
+		public static Pattern Range(Pattern From, Pattern To, Pattern Escape) => new EscapedRanger(From, To, Escape);
+
+#if NETSTANDARD2_0 || NETSTANDARD2_1
+		[Obsolete("Use Pattern.NestedRange() now")]
 		public static implicit operator Pattern((Pattern From, Pattern To, Boolean Nested) Range) => Range.Nested ? new NestedRanger(Range.From, Range.To) : new Ranger(Range.From, Range.To);
+#endif
+
+		/// <summary>
+		/// Create a pattern representing the range <paramref name="From"/> until <paramref name="To"/>, that allows nesting of this pattern inside of itself.
+		/// </summary>
+		/// <remarks>
+		/// The easiest way to explain this is that is shows up a lot in programming, with things like if-then-else statements which can contain other if-then-else statements.
+		/// </remarks>
+		/// <param name="From">Begining <see cref="Pattern"/>.</param>
+		/// <param name="To">Ending <see cref="Pattern"/>.</param>
+		public static Pattern NestedRange(Pattern From, Pattern To) => new NestedRanger(From, To);
 
 		#endregion
 
