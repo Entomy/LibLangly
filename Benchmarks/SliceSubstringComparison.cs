@@ -5,7 +5,7 @@ namespace Benchmarks {
 	[ClrJob, CoreJob, CoreRtJob]
 	[MemoryDiagnoser]
 	public class SliceSubstringComparison {
-#if !NET48
+#if !NETFRAMEWORK
 		[Benchmark]
 		public String Slice() => "Hello World"[3..7];
 #endif
