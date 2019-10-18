@@ -44,6 +44,63 @@
 		public static implicit operator String(Result Result) => Result.Source.Substring(Result.Start, Result.Length).ToString();
 
 		/// <summary>
+		/// Determines whether the specified object is equal to the current object.
+		/// </summary>
+		/// <param name="obj">The object to compare with the current object.</param>
+		/// <returns><c>true</c> if the specified object is equal to the current object; otherwise, <c>false</c>.</returns>
+		public override Boolean Equals(Object obj) {
+			switch (obj) {
+			case String other:
+				return Equals(other);
+			default:
+				return false;
+			}
+		}
+
+		public static Boolean operator ==(Result left, Result right) => left.Equals(right);
+
+		public static Boolean operator !=(Result left, Result right) => !left.Equals(right);
+
+		/// <summary>
+		/// Determines whether this <see cref="Result"/> and the <paramref name="other"/> <see cref="Result"/> are equal.
+		/// </summary>
+		/// <param name="other">The <see cref="Result"/> to compare to</param>
+		/// <returns><c>true</c> if equal; otherwise, <c>false</c>.</returns>
+		public Boolean Equals(Result other) => Source.Equals(other.Source);
+
+		public static Boolean operator ==(String left, Result right) => right.Equals(left);
+
+		public static Boolean operator ==(Result left, String right) => left.Equals(right);
+
+		public static Boolean operator !=(String left, Result right) => !right.Equals(left);
+
+		public static Boolean operator !=(Result left, String right) => !left.Equals(right);
+
+		/// <summary>
+		/// Determines whether this <see cref="Result"/> and the <paramref name="other"/> <see cref="String"/> are equal.
+		/// </summary>
+		/// <param name="other">The <see cref="String"/> to compare to</param>
+		/// <returns><c>true</c> if equal; otherwise, <c>false</c>.</returns>
+		public Boolean Equals(String other) => Stringier.Equals(Source.Substring(Start, Length), other);
+
+		public static Boolean operator ==(ReadOnlySpan<Char> left, Result right) => right.Equals(left);
+
+		public static Boolean operator ==(Result left, ReadOnlySpan<Char> right) => left.Equals(right);
+
+		public static Boolean operator !=(ReadOnlySpan<Char> left, Result right) => !right.Equals(left);
+
+		public static Boolean operator !=(Result left, ReadOnlySpan<Char> right) => !left.Equals(right);
+
+		/// <summary>
+		/// Determines whether this <see cref="Result"/> and the <paramref name="other"/> <see cref="ReadOnlySpan<Char>"/> are equal.
+		/// </summary>
+		/// <param name="other">The <see cref="ReadOnlySpan<Char>"/> to compare to</param>
+		/// <returns><c>true</c> if equal; otherwise, <c>false</c>.</returns>
+		public Boolean Equals(ReadOnlySpan<Char> other) => Stringier.Equals(Source.Substring(Start, Length), other);
+
+		public override Int32 GetHashCode() => Source.GetHashCode() ^ Start.GetHashCode() ^ Length.GetHashCode() ^ Error?.GetHashCode() ?? 0;
+
+		/// <summary>
 		/// Throw a <see cref="ParserException"/> based on the error that occured, if any
 		/// </summary>
 		public void ThrowException() => Error?.Throw();

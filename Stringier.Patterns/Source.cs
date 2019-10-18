@@ -83,6 +83,24 @@ namespace System.Text.Patterns {
 		/// </remarks>
 		internal Int32 Position { get; set; }
 
+		public override Boolean Equals(Object obj) => false;
+
+		public static Boolean operator ==(Source left, Source right) => left.Equals(right);
+
+		public static Boolean operator !=(Source left, Source right) => !left.Equals(right);
+
+		/// <summary>
+		/// Determines whether this <see cref="Source"/> and the <paramref name="other"/> <see cref="Source"/> are equal.
+		/// </summary>
+		/// <param name="other">The <see cref="Source"/> to compare to</param>
+		/// <returns><c>true</c> if equal; otherwise, <c>false</c>.</returns>
+		/// <remarks>
+		/// <see cref="Source"/> equality doesn't care at all where the cursor is currently. Conceptually, the cursor is a separate object, and is only present inside of this structure for performance considerations and type requirements.
+		/// </remarks>
+		public Boolean Equals(Source other) => Stringier.Equals(Buffer, other.Buffer, StringComparison.Ordinal);
+
+		public override Int32 GetHashCode() => 0;
+
 		/// <summary>
 		/// Returns a string that represents the current object.
 		/// </summary>
@@ -118,6 +136,24 @@ namespace System.Text.Patterns {
 			Position += Count;
 			return Result;
 		}
+
+		/// <summary>
+		/// Attempt to restore the state of this <see cref="Source"/> from the specified <paramref name="State"/>.
+		/// </summary>
+		/// <param name="State">A <see cref="SourceState"/> object to restore from.</param>
+		public void Restore(ref SourceState State) {
+			if (State.Source == this) {
+				Position = State.Position;
+			} else {
+				throw new SourceStateMismatchException();
+			}
+		}
+
+		/// <summary>
+		/// Store the current state of this <see cref="Source"/> into a <see cref="SourceState"/> object.
+		/// </summary>
+		/// <returns>The <see cref="SourceState"/> representing the current state.</returns>
+		public SourceState Store() => new SourceState(this, Position);
 
 		/// <summary>
 		/// Retrieves a substring from this instance. The substring starts at a specified character position and continues to the end of the string.
