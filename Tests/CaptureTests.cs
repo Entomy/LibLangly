@@ -35,7 +35,7 @@ namespace Tests {
 			ResultAssert.Captures("Hello Range!", Result);
 			CaptureAssert.Captures("Range", Capture);
 
-			Pattern Range = (Start, Stop);
+			Pattern Range = Pattern.Range(Start, Stop);
 
 			Result = Range.Consume("Hello Range! How are you today? Goodbye Range. Have a good day.");
 			ResultAssert.Captures("Hello Range! How are you today? Goodbye Range.", Result);

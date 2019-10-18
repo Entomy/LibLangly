@@ -94,7 +94,7 @@ namespace Tests {
 		[TestMethod]
 		public void NestedPackage() {
 			Pattern Identifier = Pattern.Letter & +(Pattern.Letter | Pattern.DecimalDigitNumber | "_");
-			Pattern Package = (
+			Pattern Package = Pattern.Range(
 				From: "package" & +Pattern.SpaceSeparator & Identifier.Capture(out Capture Name),
 				To: "end" & +Pattern.SpaceSeparator & Name & ';');
 			Result Result;
@@ -168,7 +168,7 @@ namespace Tests {
 
 		[TestMethod]
 		public void StringLiteral() {
-			Pattern Range = (From: "\"", To: "\"", Escape: "\\\"");
+			Pattern Range = Pattern.Range(From: "\"", To: "\"", Escape: "\\\"");
 			ResultAssert.Captures("\"hello\\\"world\"", Range.Consume("\"hello\\\"world\""));
 		}
 

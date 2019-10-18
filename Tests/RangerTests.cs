@@ -7,12 +7,12 @@ namespace Tests {
 	public class RangerTests {
 		[TestMethod]
 		public void Constructor() {
-			Pattern _ = (From: "Hello", To: ';');
+			Pattern _ = Pattern.Range(From: "Hello", To: ';');
 		}
 
 		[TestMethod]
 		public void Consume() {
-			Pattern Ranger = (From: "Hello", To: ';');
+			Pattern Ranger = Pattern.Range(From: "Hello", To: ';');
 			Result Result;
 
 			Result = Ranger.Consume("Hello;");
@@ -25,7 +25,7 @@ namespace Tests {
 
 		[TestMethod]
 		public void EscapedConsume() {
-			Pattern Ranger = (From: "\"", To: "\"", Escape: "\"\"");
+			Pattern Ranger = Pattern.Range(From: "\"", To: "\"", Escape: "\"\"");
 			Result Result;
 
 			Result = Ranger.Consume("\"\"");
@@ -41,7 +41,7 @@ namespace Tests {
 			ResultAssert.Captures("\"Hello\"\"Goodbye\"", Result);
 
 			// Should also check for C style escapes
-			Ranger = (From: "\"", To: "\"", Escape: "\\\"");
+			Ranger = Pattern.Range(From: "\"", To: "\"", Escape: "\\\"");
 
 			Result = Ranger.Consume("\"Hello\\\"Goodbye\"");
 			ResultAssert.Captures("\"Hello\\\"Goodbye\"", Result);
@@ -49,7 +49,7 @@ namespace Tests {
 
 		[TestMethod]
 		public void NestedConsume() {
-			Pattern Ranger = (From: "if", To: "end if", Nested: true);
+			Pattern Ranger = Pattern.NestedRange(From: "if", To: "end if");
 			Result Result;
 
 			Result = Ranger.Consume("if\nif\nend if\nbacon\nend if\nfoobar");

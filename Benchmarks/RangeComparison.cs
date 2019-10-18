@@ -8,7 +8,7 @@ namespace Benchmarks {
 	[MemoryDiagnoser]
 	public class RangeComparison {
 
-		Pattern Pattern = (From: "Hello", To: ";");
+		Pattern Pattern = Pattern.Range(From: "Hello", To: ";");
 
 		Regex Regex = new Regex("^Hello.*;$");
 

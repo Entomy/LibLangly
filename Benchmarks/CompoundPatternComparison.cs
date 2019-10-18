@@ -44,7 +44,7 @@ namespace Benchmarks {
 		[Benchmark]
 		public Match IPv4AddressRegex() => ipv4AddressRegex.Match("192.168.1.1");
 
-		readonly static Pattern nestedPackagePattern = (
+		readonly static Pattern nestedPackagePattern = Pattern.Range(
 				From: "package" & +Pattern.SpaceSeparator & identifierPattern.Capture(out System.Text.Patterns.Capture Name),
 				To: "end" & +Pattern.SpaceSeparator & Name & ';');
 
@@ -66,7 +66,7 @@ namespace Benchmarks {
 		[Benchmark]
 		public Match PhoneNumberRegex() => phoneNumberRegex.Match("555-555-5555");
 
-		readonly static Pattern stringPattern = (From: "\"", To: "\"", Escape: "\\\"");
+		readonly static Pattern stringPattern = Pattern.Range(From: "\"", To: "\"", Escape: "\\\"");
 
 		[Benchmark]
 		public Result StringPattern() => stringPattern.Consume("\"Hello\\\"World\"");

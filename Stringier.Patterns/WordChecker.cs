@@ -7,7 +7,9 @@ namespace System.Text.Patterns {
 		internal readonly Func<Char, Boolean> BodyCheck;
 		internal readonly Func<Char, Boolean> HeadCheck;
 		internal readonly Func<Char, Boolean> TailCheck;
+
 		private readonly Bias Bias;
+
 		internal WordChecker(String Name, Bias Bias, Func<Char, Boolean> HeadCheck, Func<Char, Boolean> BodyCheck, Func<Char, Boolean> TailCheck) : base(Name) {
 			this.Bias = Bias;
 			this.HeadCheck = HeadCheck;
@@ -124,8 +126,6 @@ namespace System.Text.Patterns {
 		}
 
 		private void ConsumeTailBiased(ref Source Source, ref Result Result) {
-			//We'll need to make sure we find the bias
-			Boolean FoundBias = false;
 			//Check for the head
 			if (HeadCheck(Source.Peek())) {
 				//If it's found, advance
