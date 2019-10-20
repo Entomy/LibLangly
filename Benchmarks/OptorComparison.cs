@@ -15,10 +15,10 @@ namespace Benchmarks {
 		[Params("Hello", "World")]
 		public String Source { get; set; }
 
-		[Benchmark]
+		[Benchmark(Baseline = true)]
 		public Result OptorConsume() => Optor.Consume(Source);
 
-		[Benchmark(Baseline = true)]
+		[Benchmark]
 		public Match RegexMatch() => Regex.Match(Source);
 
 	}

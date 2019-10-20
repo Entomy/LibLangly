@@ -15,11 +15,11 @@ namespace Benchmarks {
 		[Params("Hello World;", "Hello World", "Goodbye World;")]
 		public String Source { get; set; }
 
-		[Benchmark]
-		public Result RangeConsume() => Pattern.Consume(Source);
-
 		[Benchmark(Baseline = true)]
-		public Match RegexMatch() => Regex.Match(Source);
+		public Result Stringier() => Pattern.Consume(Source);
+
+		[Benchmark]
+		public Match MSRegex() => Regex.Match(Source);
 
 	}
 }

@@ -15,10 +15,10 @@ namespace Benchmarks {
 		[Params("Hi!Hi!", "Hi!Hi!Hi!", "Hi!")]
 		public String Source { get; set; }
 
-		[Benchmark]
+		[Benchmark(Baseline = true)]
 		public Result RepeaterConsume() => Repeater.Consume(Source);
 
-		[Benchmark(Baseline = true)]
+		[Benchmark]
 		public Match RegexMatch() => Regex.Match(Source);
 
 	}

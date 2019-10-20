@@ -8,18 +8,18 @@ namespace Benchmarks {
 	[MemoryDiagnoser]
 	public class ConcatenatorComparison {
 
-		Pattern Concatenator = (Pattern)"Hello" & ' ' & "World";
+		readonly Pattern Concatenator = (Pattern)"Hello" & ' ' & "World";
 
-		Regex Regex = new Regex("^Hello World");
+		readonly Regex Regex = new Regex("^Hello World");
 
-		[Params("Hello World", "Hello")]
+		[Params("Hello World", "Hello", "Failure")]
 		public String Source { get; set; }
 
-		[Benchmark]
-		public Result ConcatenatorConsume() => Concatenator.Consume(Source);
-
 		[Benchmark(Baseline = true)]
-		public Match RegexMatch() => Regex.Match(Source);
+		public Result Stringier() => Concatenator.Consume(Source);
+
+		[Benchmark]
+		public Match MSRegex() => Regex.Match(Source);
 
 	}
 }

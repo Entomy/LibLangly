@@ -123,11 +123,6 @@ namespace Benchmarks {
 				break;
 			case '1':
 				Console.ForegroundColor = ConsoleColor.DarkYellow;
-				Console.Write(" [0] ");
-				Console.ResetColor();
-				Console.WriteLine("Failure Benchmarks");
-				Console.ResetColor();
-				Console.ForegroundColor = ConsoleColor.DarkYellow;
 				Console.Write(" [1] ");
 				Console.ResetColor();
 				Console.WriteLine("Alternator Benchmarks");
@@ -186,10 +181,7 @@ namespace Benchmarks {
 				switch (Choice.KeyChar.ToUpperInvariant()) {
 				case 'A':
 					All = true;
-					goto case '0';
-				case '0':
-					BenchmarkRunner.Run<FailureComparison>();
-					if (All) { goto case '1'; } else { break; }
+					goto case '1';
 				case '1':
 					BenchmarkRunner.Run<AlternatorComparison>();
 					if (All) { goto case '2'; } else { break; }

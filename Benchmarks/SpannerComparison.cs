@@ -8,18 +8,18 @@ namespace Benchmarks {
 	[MemoryDiagnoser]
 	public class SpannerComparison {
 
-		Pattern Spanner = +(Pattern)"Hi!";
+		readonly Pattern Spanner = +(Pattern)"Hi!";
 
-		Regex Regex = new Regex("^(Hi!)+");
+		readonly Regex Regex = new Regex("^(Hi!)+");
 
 		[Params("Hi!Hi!", "Hi!Hi!Hi!", "Hi!", "Okay?")]
 		public String Source { get; set; }
 
-		[Benchmark]
-		public Result SpannerConsume() => Spanner.Consume(Source);
-
 		[Benchmark(Baseline = true)]
-		public Match RegexMatch() => Regex.Match(Source);
+		public Result Stringier() => Spanner.Consume(Source);
+
+		[Benchmark]
+		public Match MSRegex() => Regex.Match(Source);
 
 	}
 }

@@ -8,17 +8,17 @@ namespace Benchmarks {
 	[MemoryDiagnoser]
 	public class AlternatorComparison {
 
-		Pattern Alternator = (Pattern)"Hello" | "Goodbye";
+		readonly Pattern Alternator = (Pattern)"Hello" | "Goodbye";
 
-		Regex Regex = new Regex("^(?:Hello|Goodbye)");
+		readonly Regex Regex = new Regex("^(?:Hello|Goodbye)");
 
-		[Params("Hello", "Goodbye")]
+		[Params("Hello", "Goodbye", "Failure")]
 		public String Source { get; set; }
 
-		[Benchmark]
-		public Result AlternatorConsume() => Alternator.Consume(Source);
-
 		[Benchmark(Baseline = true)]
-		public Match RegexMatch() => Regex.Match(Source);
+		public Result Stringier() => Alternator.Consume(Source);
+
+		[Benchmark]
+		public Match MSRegex() => Regex.Match(Source);
 	}
 }

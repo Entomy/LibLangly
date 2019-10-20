@@ -8,18 +8,18 @@ namespace Benchmarks {
 	[MemoryDiagnoser]
 	public class NegatorComparison {
 
-		Pattern Negator = !(Pattern)"Hello";
+		readonly Pattern Negator = !(Pattern)"Hello";
 
-		Regex Regex = new Regex("^[^H][^e][^l][^l][^o]");
+		readonly Regex Regex = new Regex("^[^H][^e][^l][^l][^o]");
 
 		[Params("World", "Hello")]
 		public String Source { get; set; }
 
-		[Benchmark]
-		public Result NegatorConsume() => Negator.Consume(Source);
-
 		[Benchmark(Baseline = true)]
-		public Match RegexMatch() => Regex.Match(Source);
+		public Result Stringier() => Negator.Consume(Source);
+
+		[Benchmark]
+		public Match MSRegex() => Regex.Match(Source);
 
 	}
 }

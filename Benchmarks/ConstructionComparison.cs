@@ -9,16 +9,16 @@ namespace Benchmarks {
 	public class ConstructionComparison {
 
 		[Benchmark]
-		public Pattern PatternLiteral() => "Hello";
+		public Pattern StringierLiteral() => "Hello";
 
 		[Benchmark]
-		public Pattern PatternComplex() => Pattern.Number * 3 & '-' & Pattern.Number * 3 & '-' & Pattern.Number * 4;
+		public Pattern StringierComplex() => Pattern.Number * 3 & '-' & Pattern.Number * 3 & '-' & Pattern.Number * 4;
 
 		[Benchmark]
-		public Regex RegexLiteral() => new Regex("Hello", RegexOptions.IgnoreCase);
+		public Regex MSRegexLiteral() => new Regex("Hello", RegexOptions.IgnoreCase);
 
 		[Benchmark]
-		public Regex RegexComplex() => new Regex(@"\d{3}-\d{3}-\d{4}", RegexOptions.IgnoreCase);
+		public Regex MSRegexComplex() => new Regex(@"\d{3}-\d{3}-\d{4}", RegexOptions.IgnoreCase);
 
 	}
 }
