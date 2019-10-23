@@ -20,28 +20,28 @@
 
 		internal override void Consume(ref Source Source, ref Result Result) {
 			if (Source.Length == 0) {
-				Result.Error = new EndOfSourceError(Expected: this);
+				Result.Error.Set(ErrorType.EndOfSource, this);
 			} else {
 				if (Check(Source.Peek())) {
 					Source.Position++;
 					Result.Length++;
-					Result.Error = null;
+					Result.Error.Clear();
 				} else {
-					Result.Error = new ConsumeFailedError(Expected: this);
+					Result.Error.Set(ErrorType.ConsumeFailed, this);
 				}
 			}
 		}
 
 		internal override void Neglect(ref Source Source, ref Result Result) {
 			if (Source.Length == 0) {
-				Result.Error = new EndOfSourceError(Expected: this);
+				Result.Error.Set(ErrorType.EndOfSource, this);
 			} else {
 				if (!Check(Source.Peek())) {
 					Source.Position++;
 					Result.Length++;
-					Result.Error = null;
+					Result.Error.Clear();
 				} else {
-					Result.Error = new NeglectFailedError(Neglected: this);
+					Result.Error.Set(ErrorType.NeglectFailed, this);
 				}
 			}
 		}

@@ -39,7 +39,7 @@ namespace System.Text.Patterns {
 		internal override void Consume(ref Source Source, ref Result Result) {
 			//If we reached the end of the source we have an error
 			if (Source.EOF) {
-				Result.Error = new EndOfSourceError(Expected: ToString());
+				Result.Error.Set(ErrorType.EndOfSource, this);
 				return;
 			}
 			//Now do the appropriate parse
@@ -65,7 +65,7 @@ namespace System.Text.Patterns {
 				FoundBias = true;
 			} else {
 				//The head wasn't found so set the error
-				Result.Error = new ConsumeFailedError(Expected: this);
+				Result.Error.Set(ErrorType.ConsumeFailed, this);
 				return;
 			}
 			//Now deal with the entire body
@@ -110,7 +110,7 @@ namespace System.Text.Patterns {
 							Result.Length++;
 						} else {
 							//If it's not, set the error
-							Result.Error = new ConsumeFailedError(Expected: this);
+							Result.Error.Set(ErrorType.ConsumeFailed, this);
 						}
 					}
 					return;
@@ -118,7 +118,7 @@ namespace System.Text.Patterns {
 					//If it's not, have we found the bias?
 					if (!FoundBias) {
 						//We haven't so set the error
-						Result.Error = new ConsumeFailedError(Expected: this);
+						Result.Error.Set(ErrorType.ConsumeFailed, this);
 					}
 					return;
 				}
@@ -140,7 +140,7 @@ namespace System.Text.Patterns {
 					return;
 				} else {
 					//If it's not, set the error
-					Result.Error = new ConsumeFailedError(Expected: this);
+					Result.Error.Set(ErrorType.ConsumeFailed, this);
 					return;
 				}
 			}
@@ -184,7 +184,7 @@ namespace System.Text.Patterns {
 					goto TailCheck;
 				} else {
 					//The tail wasn't found so set the error
-					Result.Error = new ConsumeFailedError(Expected: this);
+					Result.Error.Set(ErrorType.ConsumeFailed, this);
 					return;
 				}
 			}

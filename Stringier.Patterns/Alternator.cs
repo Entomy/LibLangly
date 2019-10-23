@@ -19,11 +19,10 @@
 		internal override Boolean CheckHeader(ref Source Source) => Left.CheckHeader(ref Source) ? true : Right.CheckHeader(ref Source);
 
 		internal override void Consume(ref Source Source, ref Result Result) {
-			Error? Error;
 			Left.Consume(ref Source, ref Result);
 			if (!Result) {
-				Error = Result.Error; //Store the error
-				Result.Error = null; //Clear the error
+				Error Error = Result.Error; //Store the error
+				Result.Error.Clear();
 				Right.Consume(ref Source, ref Result);
 				if (!Result) {
 					Result.Error = Error; //Resassign the first error, since both failed, but we want to be clear of that

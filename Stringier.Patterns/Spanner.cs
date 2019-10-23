@@ -31,7 +31,7 @@
 					Result.Length = OriginalLength;
 				}
 			}
-			Result.Error = null; //As long as the first pattern matched, this consume is successful; we just stop on the eventual fail
+			Result.Error.Clear(); //As long as the first pattern matched, this consume is successful; we just stop on the eventual fail
 		}
 
 		internal override void Neglect(ref Source Source, ref Result Result) {
@@ -42,7 +42,7 @@
 			while (Result) {
 				Pattern.Neglect(ref Source, ref Result);
 			}
-			Result.Error = null; //As long as the first pattern matched, this consume is successful; we just stop on the eventual fail
+			Result.Error.Clear(); //As long as the first pattern matched, this consume is successful; we just stop on the eventual fail
 		}
 
 

@@ -13,9 +13,9 @@
 		internal readonly Int32 Start;
 
 		/// <summary>
-		/// Whether any <see cref="Error"/> occured during parsing; <c>null</c> is successful
+		/// Whether any <see cref="Error"/> occured during parsing; <see cref="ErrorType.None"/> is successful
 		/// </summary>
-		internal Error? Error;
+		internal Error Error;
 
 		/// <summary>
 		/// The <see cref="Source"/> this <see cref="Result"/> is from
@@ -23,7 +23,7 @@
 		private readonly Source Source;
 
 		internal Result(ref Source Source) {
-			this.Error = null;
+			this.Error = new Error();
 			this.Source = Source;
 			this.Start = Source.Position;
 			this.Length = 0;
@@ -37,7 +37,7 @@
 			internal set;
 		}
 
-		public static implicit operator Boolean(Result Result) => Result.Error is null;
+		public static implicit operator Boolean(Result Result) => Result.Error.Type == ErrorType.None;
 
 		public static implicit operator ReadOnlySpan<Char>(Result Result) => Result.Source.Substring(Result.Start, Result.Length);
 
@@ -98,12 +98,12 @@
 		/// <returns><c>true</c> if equal; otherwise, <c>false</c>.</returns>
 		public Boolean Equals(ReadOnlySpan<Char> other) => Stringier.Equals(Source.Substring(Start, Length), other);
 
-		public override Int32 GetHashCode() => Source.GetHashCode() ^ Start.GetHashCode() ^ Length.GetHashCode() ^ Error?.GetHashCode() ?? 0;
+		public override Int32 GetHashCode() => Source.GetHashCode() ^ Start.GetHashCode() ^ Length.GetHashCode();
 
 		/// <summary>
 		/// Throw a <see cref="ParserException"/> based on the error that occured, if any
 		/// </summary>
-		public void ThrowException() => Error?.Throw();
+		public void ThrowException() => Error.Throw();
 
 		/// <summary>
 		/// Returns a string that represents the current object.

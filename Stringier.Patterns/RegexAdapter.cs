@@ -20,7 +20,7 @@ namespace System.Text.Patterns {
 				Source.Position += Match.Length;
 				Result.Length += Match.Length;
 			} else {
-				Result.Error = new ConsumeFailedError(Expected: this);
+				Result.Error.Set(ErrorType.ConsumeFailed, this);
 			}
 		}
 

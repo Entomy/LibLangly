@@ -86,15 +86,15 @@
 
 		internal static void Consume(this String Pattern, ref Source Source, ref Result Result, StringComparison ComparisonType) {
 			if (Pattern.Length > Source.Length) {
-				Result.Error = new EndOfSourceError(Expected: Pattern);
+				Result.Error.Set(ErrorType.EndOfSource, Pattern);
 			} else {
 				ReadOnlySpan<Char> Peek = Source.Peek(Pattern.Length);
 				if (Stringier.Equals(Pattern, Peek, ComparisonType)) {
 					Source.Position += Peek.Length;
 					Result.Length += Peek.Length;
-					Result.Error = null;
+					Result.Error.Clear();
 				} else {
-					Result.Error = new ConsumeFailedError(Expected: Pattern);
+					Result.Error.Set(ErrorType.ConsumeFailed, Pattern);
 				}
 			}
 		}
@@ -103,15 +103,15 @@
 
 		internal static void Neglect(this String Pattern, ref Source Source, ref Result Result, StringComparison ComparisonType) {
 			if (Pattern.Length > Source.Length) {
-				Result.Error = new EndOfSourceError(Expected: Pattern);
+				Result.Error.Set(ErrorType.EndOfSource, Pattern);
 			} else {
 				ReadOnlySpan<Char> Peek = Source.Peek(Pattern.Length);
 				if (!Stringier.Equals(Pattern, Peek, ComparisonType)) {
 					Source.Position += Peek.Length;
 					Result.Length += Peek.Length;
-					Result.Error = null;
+					Result.Error.Clear();
 				} else {
-					Result.Error = new NeglectFailedError(Neglected: Pattern);
+					Result.Error.Set(ErrorType.NeglectFailed, Pattern);
 				}
 			}
 		}

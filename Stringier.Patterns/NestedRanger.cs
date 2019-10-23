@@ -23,7 +23,7 @@
 				}
 			}
 			if (Level != 0) {
-				Result.Error = new ConsumeFailedError(Expected: this);
+				Result.Error.Set(ErrorType.ConsumeFailed, this);
 			}
 		}
 

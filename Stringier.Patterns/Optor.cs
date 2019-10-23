@@ -8,12 +8,12 @@
 
 		internal override void Consume(ref Source Source, ref Result Result) {
 			Pattern.Consume(ref Source, ref Result);
-			Result.Error = null; //If a pattern is optional, it doesn't matter if it's there or not, so we never actually have an error
+			Result.Error.Clear(); //If a pattern is optional, it doesn't matter if it's there or not, so we never actually have an error
 		}
 
 		internal override void Neglect(ref Source Source, ref Result Result) {
 			Pattern.Neglect(ref Source, ref Result);
-			Result.Error = null; //If a pattern is optional, it doesn't matter if it's there or not, so we never actually have an error
+			Result.Error.Clear(); //If a pattern is optional, it doesn't matter if it's there or not, so we never actually have an error
 		}
 
 

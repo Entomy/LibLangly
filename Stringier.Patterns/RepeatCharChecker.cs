@@ -13,16 +13,16 @@
 
 		internal override void Consume(ref Source Source, ref Result Result) {
 			if (Source.EOF) {
-				Result.Error = new EndOfSourceError(Expected: this);
+				Result.Error.Set(ErrorType.EndOfSource, this);
 			} else {
 				for (Int32 i = 0; i < Length; i++) {
-					if (Source.EOF) { Result.Error = new ConsumeFailedError(Expected: this); }
+					if (Source.EOF) { Result.Error.Set(ErrorType.ConsumeFailed, this); }
 					if (Check(Source.Peek())) {
 						Source.Position++;
 						Result.Length++;
-						Result.Error = null;
+						Result.Error.Clear();
 					} else {
-						Result.Error = new ConsumeFailedError(Expected: this);
+						Result.Error.Set(ErrorType.ConsumeFailed, this);
 						break;
 					}
 				}
@@ -31,16 +31,16 @@
 
 		internal override void Neglect(ref Source Source, ref Result Result) {
 			if (Source.EOF) {
-				Result.Error = new EndOfSourceError(Expected: ToString());
+				Result.Error.Set(ErrorType.EndOfSource, this);
 			} else {
 				for (Int32 i = 0; i < Length; i++) {
-					if (Source.EOF) { Result.Error = new NeglectFailedError(Neglected: this); }
+					if (Source.EOF) { Result.Error.Set(ErrorType.NeglectFailed, this); }
 					if (!Check(Source.Peek())) {
 						Source.Position++;
 						Result.Length++;
-						Result.Error = null;
+						Result.Error.Clear();
 					} else {
-						Result.Error = new NeglectFailedError(Neglected: this);
+						Result.Error.Set(ErrorType.NeglectFailed, this);
 						break;
 					}
 				}

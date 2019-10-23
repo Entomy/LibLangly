@@ -6,11 +6,11 @@
 		internal override Boolean CheckHeader(ref Source Source) => Source.EOF;
 
 		internal override void Consume(ref Source Source, ref Result Result) {
-			if (!Source.EOF) { Result.Error = new ConsumeFailedError(Expected: this); }
+			if (!Source.EOF) { Result.Error.Set(ErrorType.ConsumeFailed, this); }
 		}
 
 		internal override void Neglect(ref Source Source, ref Result Result) {
-			if (Source.EOF) { Result.Error = new ConsumeFailedError(Expected: this); }
+			if (Source.EOF) { Result.Error.Set(ErrorType.NeglectFailed, this); }
 		}
 
 		public override Boolean Equals(Object? obj) {
