@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Numerics;
 using BenchmarkDotNet.Attributes;
 
 namespace Benchmarks {
@@ -25,7 +26,10 @@ namespace Benchmarks {
 		}
 
 		[Benchmark]
-		public Boolean HashBeforeEquals() => A.GetHashCode() != B.GetHashCode() ? false : String.Equals(A, B);
+		public Boolean HashBeforeEquals() => A.GetHashCode() == B.GetHashCode() ? String.Equals(A, B) : false;
+
+		[Benchmark]
+		public Boolean FirstCharBeforeEquals() => A[0] == B[0] ? String.Equals(A, B) : false;
 
 	}
 }
