@@ -120,7 +120,7 @@ namespace Tests {
 
 			Pattern SignPattern = (Pattern)"+" | "-";
 
-			Pattern ExponentPattern = ("E", StringComparison.OrdinalIgnoreCase) & -SignPattern & NumeralPattern;
+			Pattern ExponentPattern = "E".With(StringComparison.OrdinalIgnoreCase) & -SignPattern & NumeralPattern;
 
 			Pattern Numeral = NumeralPattern & -("." & NumeralPattern) & -ExponentPattern;
 

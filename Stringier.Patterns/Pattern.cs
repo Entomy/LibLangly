@@ -99,12 +99,14 @@ namespace System.Text.Patterns {
 		public static implicit operator Pattern(Char Char) => new CharLiteral(Char);
 
 #if NETSTANDARD2_0 || NETSTANDARD2_1
+		[Obsolete("Use Char.With(ComparisonType) now")]
 		public static implicit operator Pattern((Char Char, StringComparison ComparisonType) Pattern) => new CharLiteral(Pattern.Char, Pattern.ComparisonType);
 #endif
 
 		public static implicit operator Pattern(String Pattern) => new StringLiteral(Pattern);
 
 #if NETSTANDARD2_0 || NETSTANDARD2_1
+		[Obsolete("Use Char.With(ComparisonType) now")]
 		public static implicit operator Pattern((String String, StringComparison ComparisonType) Pattern) => new StringLiteral(Pattern.String, Pattern.ComparisonType);
 #endif
 

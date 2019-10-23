@@ -13,7 +13,7 @@ This project uses framework multitargeting to support as broad of a userbase as 
 
 ## Stringier.Patterns
 
-* `CharLiteral` and `StringLiteral` can not include a cultural comparison because of a lack of `Tuple` or `ValueTuple` support.
+* Creation of `CharLiteral` and `StringLiteral` through tuples is not possible, although this has become [`Obsolete`](https://docs.microsoft.com/en-us/dotnet/api/system.obsoleteattribute) anyways. `With(ComparisonType)` works on any target.
 * `StringComparison` can not be `InvariantCulture` or `InvariantCultureIgnoreCase`.
-* Creation of certain `Pattern` types throught tuples is not possible, although this has become [`Obsolete`](https://docs.microsoft.com/en-us/dotnet/api/system.obsoleteattribute) anyways.
+* Creation of certain `Pattern` types through tuples is not possible, although this has become [`Obsolete`](https://docs.microsoft.com/en-us/dotnet/api/system.obsoleteattribute) anyways.
 * Exceptions are not [`Serializable`](https://docs.microsoft.com/en-us/dotnet/api/system.serializableattribute).

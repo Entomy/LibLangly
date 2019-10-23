@@ -115,5 +115,14 @@
 				}
 			}
 		}
+
+		/// <summary>
+		/// Create a <see cref="Pattern"/> for the specified <paramref name="String"/>, with the <paramref name="ComparisonType"/>.
+		/// </summary>
+		/// <param name="String">The <see cref="String"/> literal.</param>
+		/// <param name="ComparisonType">The <see cref="StringComparison"/> type to use.</param>
+		/// <returns>The resulting <see cref="Pattern"/>.</returns>
+		public static Pattern With(this String String, StringComparison ComparisonType) => new StringLiteral(String, ComparisonType);
+
 	}
 }

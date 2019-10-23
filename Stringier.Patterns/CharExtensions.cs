@@ -94,5 +94,13 @@
 			}
 		}
 
+		/// <summary>
+		/// Create a <see cref="Pattern"/> for the specified <paramref name="Char"/>, with the <paramref name="ComparisonType"/>.
+		/// </summary>
+		/// <param name="Char">The <see cref="Char"/> literal.</param>
+		/// <param name="ComparisonType">The <see cref="StringComparison"/> type to use.</param>
+		/// <returns>The resulting <see cref="Pattern"/>.</returns>
+		public static Pattern With(this Char Char, StringComparison ComparisonType) => new CharLiteral(Char, ComparisonType);
+
 	}
 }
