@@ -21,6 +21,7 @@ namespace Microsoft.VisualStudio.TestTools.UnitTesting {
 		/// <param name="Expected">The <see cref="String"/> of expected text.</param>
 		/// <param name="Actual">The parser <see cref="Result"/>.</param>
 		public static void Captures(String Expected, Result Actual) {
+			if (Expected is null) { throw new ArgumentNullException(nameof(Expected)); }
 			Actual.ThrowException();
 			if (!Expected.Equals(Actual)) {
 				throw new AssertFailedException($"ResultAssert.Captures failed. Expected: <{Expected}>. Actual: <{(String)Actual}>.");
