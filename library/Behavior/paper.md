@@ -7,6 +7,10 @@ tags:
 authors:
   - name: Patrick Kelly
     orcid: 0000-0002-6293-1084
+    affiliation: 1
+affiliations:
+  - name: 
+    index: 1
 date: 18 October 2019
 bibliography: paper.bib
 ---
