@@ -1,0 +1,1 @@
+This is currently just a dump of performance related stuff in the original paper. There are recommended size limits that I'm trying to follow, so performance stuff was taken out to keep within that limit. Work on this will pick back up again at some later point, but is here for archiving.
