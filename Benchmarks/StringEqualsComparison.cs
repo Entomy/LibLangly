@@ -17,10 +17,16 @@ namespace Benchmarks {
 		public Boolean NETEquals() => String.Equals(A, B);
 
 		[Benchmark]
+		public Boolean CompareToEquals() {
+			return A.CompareTo(B) == 0;
+		}
+
+		[Benchmark]
 		public Boolean ForeachEquals() {
 			if (A.Length != B.Length) { return false; }
 			for (Int32 i = 0; i < A.Length; i++) {
-				if (A[i] != B[i]) return false;
+				if (A[i] != B[i])
+					return false;
 			}
 			return true;
 		}
