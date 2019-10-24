@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text.Patterns;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests {
@@ -46,6 +47,15 @@ namespace Tests {
 		public void Pad() {
 			Assert.AreEqual("  Hello  ", "Hello".Pad(9));
 			Assert.AreEqual("  Hello   ", "Hello".Pad(10));
+		}
+
+		[TestMethod]
+		public void ParallelForEquals() {
+			String A = "Hello";
+			String B = "Hello";
+			Boolean Result = true;
+			Parallel.For(0, 5, (i) => Result &= A[i] == B[i]);
+			Assert.IsTrue(Result);
 		}
 
 		[TestMethod]

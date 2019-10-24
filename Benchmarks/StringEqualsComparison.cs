@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Numerics;
+using System.Threading.Tasks;
 using BenchmarkDotNet.Attributes;
 
 namespace Benchmarks {
@@ -30,6 +30,13 @@ namespace Benchmarks {
 
 		[Benchmark]
 		public Boolean FirstCharBeforeEquals() => A[0] == B[0] ? String.Equals(A, B) : false;
+
+		[Benchmark]
+		public Boolean ParallelForEquals() {
+			Boolean Result = true;
+			Parallel.For(0, 5, (i) => Result &= A[i] == B[i]);
+			return Result;
+		}
 
 	}
 }
