@@ -26,6 +26,23 @@ namespace Benchmarks {
 		}
 
 		[Benchmark]
+		public unsafe Boolean UnsafeForeachEquals() {
+			String A = "Hello";
+			String B = "Hello";
+			if (A.Length != B.Length) { return false; }
+			fixed (Char* a = A) {
+				fixed (Char* b = B) {
+					for (Int32 i = 0; i < A.Length; i++) {
+						if (a[i] != b[i]) {
+							return false;
+						}
+					}
+				}
+			}
+			return true;
+		}
+
+		[Benchmark]
 		public Boolean HashBeforeEquals() => A.GetHashCode() == B.GetHashCode() ? String.Equals(A, B) : false;
 
 		[Benchmark]

@@ -5,7 +5,8 @@
     <TargetFrameworks>netcoreapp3.0;net472</TargetFrameworks>
     <LangVersion>8.0</LangVersion>
     <StartupObject>Benchmarks.Program</StartupObject>
-  </PropertyGroup>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	</PropertyGroup>
 
   <ItemGroup>
     <Compile Remove="BenchmarkDotNet.Artifacts\**" />

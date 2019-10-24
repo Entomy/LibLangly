@@ -74,6 +74,29 @@ namespace Tests {
 		}
 
 		[TestMethod]
+		public unsafe void UnsafeForeachEquals() {
+			String A = "Hello";
+			String B = "Hello";
+			Boolean R = true;
+			if (A.Length != B.Length) {
+				R = false;
+				goto Assertion;
+			}
+			fixed (Char* a = A) {
+				fixed (Char* b = B) {
+					for (Int32 i = 0; i < A.Length; i++) {
+						if (a[i] != b[i]) {
+							R = false;
+							break;
+						}
+					}
+				}
+			}
+		Assertion:
+			Assert.IsTrue(R);
+		}
+
+		[TestMethod]
 		public void Words() {
 			Assert.AreEqual("Hello", "Hello World".Words()[0]);
 			Assert.AreEqual("World", "Hello World".Words()[1]);
