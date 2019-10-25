@@ -2,6 +2,12 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/02ab838da67f4c929ef985b3f7d8a732)](https://www.codacy.com/app/Entomy/Stringier?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Entomy/Stringier&amp;utm_campaign=Badge_Grade)
 [![Beerpay](https://img.shields.io/beerpay/Entomy/Stringier.svg)](https://beerpay.io/Entomy/Stringier)
 
+Stringier is a collection of projects to make working with text better.
+
+Extension methods? ✔️ High performance parsing? ✔️ Cultural awareness? ✔️
+
+Everyone works with text. Let's make it better.
+
 # Documentation:
 
 Thanks to [GitHub Pages](https://pages.github.com/), documentation is available [here](https://entomy.github.io/Stringier/)
