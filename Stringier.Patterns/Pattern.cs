@@ -295,7 +295,7 @@ namespace System.Text.Patterns {
 		#region Jumper
 
 		public Pattern Target(out Target Target) {
-			Head.Target(out Target);
+			Target = new Target(this);
 			return this;
 		}
 

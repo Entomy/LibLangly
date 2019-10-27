@@ -148,10 +148,5 @@ namespace System.Text.Patterns {
 		internal virtual Node Repeat(Int32 Count) => new Repeater(this, Count);
 
 		internal virtual Node Span() => new Spanner(this);
-
-		internal Node Target(out Target Target) {
-			Target = new Target(this);
-			return this;
-		}
 	}
 }
