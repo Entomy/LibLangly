@@ -149,5 +149,9 @@ namespace System.Text.Patterns {
 
 		internal virtual Node Span() => new Spanner(this);
 
+		internal Node Target(out Target Target) {
+			Target = new Target(this);
+			return this;
+		}
 	}
 }

@@ -292,6 +292,15 @@ namespace System.Text.Patterns {
 
 		#endregion
 
+		#region Jumper
+
+		public Pattern Target(out Target Target) {
+			Head.Target(out Target);
+			return this;
+		}
+
+		#endregion
+
 		#region Negator
 
 		/// <summary>
