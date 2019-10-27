@@ -5,7 +5,6 @@ open System.Text
 open System.Text.Patterns
 open System.Text.RegularExpressions
 open Microsoft.VisualStudio.TestTools.UnitTesting
-open FParsec
 
 [<TestClass>]
 type GibberishTests () =
@@ -21,13 +20,3 @@ type GibberishTests () =
     member this.RegexTest() =
         let regex = new Regex(@"(?:[a-z]+| +)+$", RegexOptions.Singleline);
         Assert.IsTrue(regex.IsMatch(Gibberish.Generate(128)))
-
-    [<TestMethod>]
-    member this.FParsecTest() =
-        let word = many1Chars (anyOf "abcdefghijklmnopqrstuvwxyz")
-        let space = many1Chars (pchar ' ')
-        let doc = many(word <|> space) .>>. eof
-        let result = run doc (Gibberish.Generate(128))
-        match result with
-        | Success(_, _, _) -> ()
-        | Failure(_, _, _) -> Assert.Fail()
