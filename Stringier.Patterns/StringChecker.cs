@@ -28,9 +28,21 @@
 			//To make this easier to reason about, the implementation has been split, and this function actually just calls the requested one
 			//This actually causes a small amount of optimization, beleive it or not. In a unified approach, two of these checks would have to occur inside of the body loop, and multiple times within the same iteration, which means they are repeated several times instead of just once here. This also prevents possible branch misprediction problems.
 			Boolean FoundBody;
-			if (HeadRequired) { ConsumeRequiredHead(ref Source, ref Result, out FoundBody); } else { ConsumeOptionalHead(ref Source, ref Result, out FoundBody); }
-			if (BodyRequired) { ConsumeRequiredBody(ref Source, ref Result, ref FoundBody); } else { ConsumeOptionalBody(ref Source, ref Result, ref FoundBody); }
-			if (TailRequired) { ConsumeRequiredTail(ref Source, ref Result, in FoundBody); } else { ConsumeOptionalTail(ref Source, ref Result, in FoundBody); }
+			if (HeadRequired) {
+				ConsumeRequiredHead(ref Source, ref Result, out FoundBody);
+			} else {
+				ConsumeOptionalHead(ref Source, ref Result, out FoundBody);
+			}
+			if (BodyRequired) {
+				ConsumeRequiredBody(ref Source, ref Result, ref FoundBody);
+			} else {
+				ConsumeOptionalBody(ref Source, ref Result, ref FoundBody);
+			}
+			if (TailRequired) {
+				ConsumeRequiredTail(ref Source, ref Result, in FoundBody);
+			} else {
+				ConsumeOptionalTail(ref Source, ref Result, in FoundBody);
+			}
 			//Because these are generalized, they don't validate length, so we do that now
 			if ((HeadRequired && BodyRequired && TailRequired && Result.Length < 3) //If all three are required, the length must be at least 3
 			|| (!(HeadRequired ^ BodyRequired ^ TailRequired) && Result.Length < 2) //If two are required, the length must be at least 2

@@ -8,7 +8,12 @@
 			this.Right = Right;
 		}
 
-		internal override Boolean CheckHeader(ref Source Source) => Source.EOF ? false : (Left(Source.Peek()) ? true : Right(Source.Peek()));
+		internal override Boolean CheckHeader(ref Source Source) {
+			if (Source.EOF) {
+				return false;
+			}
+			return Left(Source.Peek()) ? true : Right(Source.Peek());
+		}
 
 		internal override void Consume(ref Source Source, ref Result Result) {
 			if (Source.EOF) {

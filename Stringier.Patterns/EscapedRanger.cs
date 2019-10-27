@@ -14,14 +14,16 @@
 			}
 			To.Consume(ref Source, ref Result);
 			while (!Result) {
-				if (Source.EOF) { break; }
+				if (Source.EOF) {
+					break;
+				}
 				Source.Position++;
 				Result.Length++;
 				//Check for the escape before checking for the end of the range
 				if (Escape.CheckHeader(ref Source)) {
 					Escape.Consume(ref Source, ref Result);
 					Result.Error.Set(ErrorType.ConsumeFailed, To); //We need an error to continue the loop, and this is the current error
-				} 
+				}
 				if (To.CheckHeader(ref Source)) {
 					To.Consume(ref Source, ref Result);
 				}

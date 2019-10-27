@@ -134,91 +134,240 @@
 
 		public static Pattern Ranger(Pattern From, Pattern To) => new Pattern(new Ranger(From.Head, To.Head));
 
-		public static Pattern Ranger(Pattern From, String To) => new Pattern(new Ranger(From.Head, new StringLiteral(To)));
+		public static Pattern Ranger(Pattern From, String To) {
+			if (To is null) {
+				throw new ArgumentNullException(nameof(To));
+			}
+			return new Pattern(new Ranger(From.Head, new StringLiteral(To)));
+		}
 
-		public static Pattern Ranger(String From, Pattern To) => new Pattern(new Ranger(new StringLiteral(From), To.Head));
+		public static Pattern Ranger(String From, Pattern To) {
+			if (From is null) {
+				throw new ArgumentNullException(nameof(From));
+			}
+			return new Pattern(new Ranger(new StringLiteral(From), To.Head));
+		}
 
 		public static Pattern Ranger(Pattern From, Char To) => new Pattern(new Ranger(From.Head, new CharLiteral(To)));
 
 		public static Pattern Ranger(Char From, Pattern To) => new Pattern(new Ranger(new CharLiteral(From), To.Head));
 
-		public static Pattern Ranger(String From, String To) => new Pattern(new Ranger(new StringLiteral(From), new StringLiteral(To)));
+		public static Pattern Ranger(String From, String To) {
+			if (From is null || To is null) {
+				throw new ArgumentNullException(From is null ? nameof(From) : nameof(To));
+			}
+			return new Pattern(new Ranger(new StringLiteral(From), new StringLiteral(To)));
+		}
 
-		public static Pattern Ranger(String From, Char To) => new Pattern(new Ranger(new StringLiteral(From), new CharLiteral(To)));
+		public static Pattern Ranger(String From, Char To) {
+			if (From is null) {
+				throw new ArgumentNullException(nameof(From));
+			}
+			return new Pattern(new Ranger(new StringLiteral(From), new CharLiteral(To)));
+		}
 
-		public static Pattern Ranger(Char From, String To) => new Pattern(new Ranger(new CharLiteral(From), new StringLiteral(To)));
+		public static Pattern Ranger(Char From, String To) {
+			if (To is null) {
+				throw new ArgumentNullException(nameof(To));
+			}
+			return new Pattern(new Ranger(new CharLiteral(From), new StringLiteral(To)));
+		}
 
 		public static Pattern Ranger(Char From, Char To) => new Pattern(new Ranger(new CharLiteral(From), new CharLiteral(To)));
 
 		public static Pattern Ranger(Pattern From, Pattern To, Pattern Escape) => new Pattern(new EscapedRanger(From.Head, To.Head, Escape.Head));
 
-		public static Pattern Ranger(Pattern From, Pattern To, String Escape) => new Pattern(new EscapedRanger(From.Head, To.Head, new StringLiteral(Escape)));
+		public static Pattern Ranger(Pattern From, Pattern To, String Escape) {
+			if (Escape is null) {
+				throw new ArgumentNullException(nameof(Escape));
+			}
+			return new Pattern(new EscapedRanger(From.Head, To.Head, new StringLiteral(Escape)));
+		}
 
 		public static Pattern Ranger(Pattern From, Pattern To, Char Escape) => new Pattern(new EscapedRanger(From.Head, To.Head, new CharLiteral(Escape)));
 
-		public static Pattern Ranger(Pattern From, String To, Pattern Escape) => new Pattern(new EscapedRanger(From.Head, new StringLiteral(To), Escape.Head));
+		public static Pattern Ranger(Pattern From, String To, Pattern Escape) {
+			if (To is null) {
+				throw new ArgumentNullException(nameof(To));
+			}
+			return new Pattern(new EscapedRanger(From.Head, new StringLiteral(To), Escape.Head));
+		}
 
-		public static Pattern Ranger(Pattern From, String To, String Escape) => new Pattern(new EscapedRanger(From.Head, new StringLiteral(To), new StringLiteral(Escape)));
+		public static Pattern Ranger(Pattern From, String To, String Escape) {
+			if (To is null || Escape is null) {
+				throw new ArgumentNullException(To is null ? nameof(To) : nameof(Escape));
+			}
+			return new Pattern(new EscapedRanger(From.Head, new StringLiteral(To), new StringLiteral(Escape)));
+		}
 
-		public static Pattern Ranger(Pattern From, String To, Char Escape) => new Pattern(new EscapedRanger(From.Head, new StringLiteral(To), new CharLiteral(Escape)));
+		public static Pattern Ranger(Pattern From, String To, Char Escape) {
+			if (To is null) {
+				throw new ArgumentNullException(nameof(To));
+			}
+			return new Pattern(new EscapedRanger(From.Head, new StringLiteral(To), new CharLiteral(Escape)));
+		}
 
-		public static Pattern Ranger(String From, Pattern To, Pattern Escape) => new Pattern(new EscapedRanger(new StringLiteral(From), To.Head, Escape.Head));
+		public static Pattern Ranger(String From, Pattern To, Pattern Escape) {
+			if (From is null) {
+				throw new ArgumentNullException(nameof(From));
+			}
+			return new Pattern(new EscapedRanger(new StringLiteral(From), To.Head, Escape.Head));
+		}
 
-		public static Pattern Ranger(String From, Pattern To, String Escape) => new Pattern(new EscapedRanger(new StringLiteral(From), To.Head, new StringLiteral(Escape)));
+		public static Pattern Ranger(String From, Pattern To, String Escape) {
+			if (From is null || Escape is null) {
+				throw new ArgumentNullException(From is null ? nameof(From) : nameof(Escape));
+			}
+			return new Pattern(new EscapedRanger(new StringLiteral(From), To.Head, new StringLiteral(Escape)));
+		}
 
-		public static Pattern Ranger(String From, Pattern To, Char Escape) => new Pattern(new EscapedRanger(new StringLiteral(From), To.Head, new CharLiteral(Escape)));
+		public static Pattern Ranger(String From, Pattern To, Char Escape) {
+			if (From is null) {
+				throw new ArgumentNullException(nameof(From));
+			}
+			return new Pattern(new EscapedRanger(new StringLiteral(From), To.Head, new CharLiteral(Escape)));
+		}
 
 		public static Pattern Ranger(Pattern From, Char To, Pattern Escape) => new Pattern(new EscapedRanger(From.Head, new CharLiteral(To), Escape.Head));
 
-		public static Pattern Ranger(Pattern From, Char To, String Escape) => new Pattern(new EscapedRanger(From.Head, new CharLiteral(To), new StringLiteral(Escape)));
+		public static Pattern Ranger(Pattern From, Char To, String Escape) {
+			if (Escape is null) {
+				throw new ArgumentNullException(nameof(Escape));
+			}
+			return new Pattern(new EscapedRanger(From.Head, new CharLiteral(To), new StringLiteral(Escape)));
+		}
 
 		public static Pattern Ranger(Pattern From, Char To, Char Escape) => new Pattern(new EscapedRanger(From.Head, new CharLiteral(To), new CharLiteral(Escape)));
 
 		public static Pattern Ranger(Char From, Pattern To, Pattern Escape) => new Pattern(new EscapedRanger(new CharLiteral(From), To.Head, Escape.Head));
 
-		public static Pattern Ranger(Char From, Pattern To, String Escape) => new Pattern(new EscapedRanger(new CharLiteral(From), To.Head, new StringLiteral(Escape)));
+		public static Pattern Ranger(Char From, Pattern To, String Escape) {
+			if (Escape is null) {
+				throw new ArgumentNullException(nameof(Escape));
+			}
+			return new Pattern(new EscapedRanger(new CharLiteral(From), To.Head, new StringLiteral(Escape)));
+		}
 
 		public static Pattern Ranger(Char From, Pattern To, Char Escape) => new Pattern(new EscapedRanger(new CharLiteral(From), To.Head, new CharLiteral(Escape)));
 
-		public static Pattern Ranger(String From, String To, Pattern Escape) => new Pattern(new EscapedRanger(new StringLiteral(From), new StringLiteral(To), Escape.Head));
+		public static Pattern Ranger(String From, String To, Pattern Escape) {
+			if (From is null || To is null) {
+				throw new ArgumentNullException(From is null ? nameof(From) : nameof(To));
+			}
+			return new Pattern(new EscapedRanger(new StringLiteral(From), new StringLiteral(To), Escape.Head));
+		}
 
-		public static Pattern Ranger(String From, String To, String Escape) => new Pattern(new EscapedRanger(new StringLiteral(From), new StringLiteral(To), new StringLiteral(Escape)));
+		public static Pattern Ranger(String From, String To, String Escape) {
+			if (From is null || To is null || Escape is null) {
+				if (From is null) {
+					throw new ArgumentNullException(nameof(From));
+				} else {
+					throw new ArgumentNullException(To is null ? nameof(To) : nameof(Escape));
+				}
+			}
+			return new Pattern(new EscapedRanger(new StringLiteral(From), new StringLiteral(To), new StringLiteral(Escape)));
+		}
 
-		public static Pattern Ranger(String From, String To, Char Escape) => new Pattern(new EscapedRanger(new StringLiteral(From), new StringLiteral(To), new CharLiteral(Escape)));
+		public static Pattern Ranger(String From, String To, Char Escape) {
+			if (From is null || To is null) {
+				throw new ArgumentNullException(From is null ? nameof(From) : nameof(To));
+			}
+			return new Pattern(new EscapedRanger(new StringLiteral(From), new StringLiteral(To), new CharLiteral(Escape)));
+		}
 
-		public static Pattern Ranger(String From, Char To, Pattern Escape) => new Pattern(new EscapedRanger(new StringLiteral(From), new CharLiteral(To), Escape.Head));
+		public static Pattern Ranger(String From, Char To, Pattern Escape) {
+			if (From is null) {
+				throw new ArgumentNullException(nameof(From));
+			}
+			return new Pattern(new EscapedRanger(new StringLiteral(From), new CharLiteral(To), Escape.Head));
+		}
 
-		public static Pattern Ranger(String From, Char To, String Escape) => new Pattern(new EscapedRanger(new StringLiteral(From), new CharLiteral(To), new StringLiteral(Escape)));
+		public static Pattern Ranger(String From, Char To, String Escape) {
+			if (From is null || Escape is null) {
+				throw new ArgumentNullException(From is null ? nameof(From) : nameof(Escape));
+			}
+			return new Pattern(new EscapedRanger(new StringLiteral(From), new CharLiteral(To), new StringLiteral(Escape)));
+		}
 
-		public static Pattern Ranger(String From, Char To, Char Escape) => new Pattern(new EscapedRanger(new StringLiteral(From), new CharLiteral(To), new CharLiteral(Escape)));
+		public static Pattern Ranger(String From, Char To, Char Escape) {
+			if (From is null) {
+				throw new ArgumentNullException(nameof(From));
+			}
+			return new Pattern(new EscapedRanger(new StringLiteral(From), new CharLiteral(To), new CharLiteral(Escape)));
+		}
 
-		public static Pattern Ranger(Char From, String To, Pattern Escape) => new Pattern(new EscapedRanger(new CharLiteral(From), new StringLiteral(To), Escape.Head));
+		public static Pattern Ranger(Char From, String To, Pattern Escape) {
+			if (To is null) {
+				throw new ArgumentNullException(nameof(To));
+			}
+			return new Pattern(new EscapedRanger(new CharLiteral(From), new StringLiteral(To), Escape.Head));
+		}
 
-		public static Pattern Ranger(Char From, String To, String Escape) => new Pattern(new EscapedRanger(new CharLiteral(From), new StringLiteral(To), new StringLiteral(Escape)));
+		public static Pattern Ranger(Char From, String To, String Escape) {
+			if (To is null || Escape is null) {
+				throw new ArgumentNullException(To is null ? nameof(To) : nameof(Escape));
+			}
+			return new Pattern(new EscapedRanger(new CharLiteral(From), new StringLiteral(To), new StringLiteral(Escape)));
+		}
 
-		public static Pattern Ranger(Char From, String To, Char Escape) => new Pattern(new EscapedRanger(new CharLiteral(From), new StringLiteral(To), new CharLiteral(Escape)));
+		public static Pattern Ranger(Char From, String To, Char Escape) {
+			if (To is null) {
+				throw new ArgumentNullException(nameof(To));
+			}
+			return new Pattern(new EscapedRanger(new CharLiteral(From), new StringLiteral(To), new CharLiteral(Escape)));
+		}
 
 		public static Pattern Ranger(Char From, Char To, Pattern Escape) => new Pattern(new EscapedRanger(new CharLiteral(From), new CharLiteral(To), Escape.Head));
 
-		public static Pattern Ranger(Char From, Char To, String Escape) => new Pattern(new EscapedRanger(new CharLiteral(From), new CharLiteral(To), new StringLiteral(Escape)));
+		public static Pattern Ranger(Char From, Char To, String Escape) {
+			if (Escape is null) {
+				throw new ArgumentNullException(nameof(Escape));
+			}
+			return new Pattern(new EscapedRanger(new CharLiteral(From), new CharLiteral(To), new StringLiteral(Escape)));
+		}
 
 		public static Pattern Ranger(Char From, Char To, Char Escape) => new Pattern(new EscapedRanger(new CharLiteral(From), new CharLiteral(To), new CharLiteral(Escape)));
 
 		public static Pattern NestedRanger(Pattern From, Pattern To) => new Pattern(new NestedRanger(From.Head, To.Head));
 
-		public static Pattern NestedRanger(Pattern From, String To) => new Pattern(new NestedRanger(From.Head, new StringLiteral(To)));
+		public static Pattern NestedRanger(Pattern From, String To) {
+			if (To is null) {
+				throw new ArgumentNullException(nameof(To));
+			}
+			return new Pattern(new NestedRanger(From.Head, new StringLiteral(To)));
+		}
 
-		public static Pattern NestedRanger(String From, Pattern To) => new Pattern(new NestedRanger(new StringLiteral(From), To.Head));
+		public static Pattern NestedRanger(String From, Pattern To) {
+			if (From is null) {
+				throw new ArgumentNullException(nameof(From));
+			}
+			return new Pattern(new NestedRanger(new StringLiteral(From), To.Head));
+		}
 
 		public static Pattern NestedRanger(Pattern From, Char To) => new Pattern(new NestedRanger(From.Head, new CharLiteral(To)));
 
 		public static Pattern NestedRanger(Char From, Pattern To) => new Pattern(new NestedRanger(new CharLiteral(From), To.Head));
 
-		public static Pattern NestedRanger(String From, String To) => new Pattern(new NestedRanger(new StringLiteral(From), new StringLiteral(To)));
+		public static Pattern NestedRanger(String From, String To) {
+			if (From is null || To is null) {
+				throw new ArgumentNullException(From is null ? nameof(From) : nameof(To));
+			}
+			return new Pattern(new NestedRanger(new StringLiteral(From), new StringLiteral(To)));
+		}
 
-		public static Pattern NestedRanger(String From, Char To) => new Pattern(new NestedRanger(new StringLiteral(From), new CharLiteral(To)));
+		public static Pattern NestedRanger(String From, Char To) {
+			if (From is null) {
+				throw new ArgumentNullException(nameof(From));
+			}
+			return new Pattern(new NestedRanger(new StringLiteral(From), new CharLiteral(To)));
+		}
 
-		public static Pattern NestedRanger(Char From, String To) => new Pattern(new NestedRanger(new CharLiteral(From), new StringLiteral(To)));
+		public static Pattern NestedRanger(Char From, String To) {
+			if (To is null) {
+				throw new ArgumentNullException(nameof(To));
+			}
+			return new Pattern(new NestedRanger(new CharLiteral(From), new StringLiteral(To)));
+		}
 
 		public static Pattern NestedRanger(Char From, Char To) => new Pattern(new NestedRanger(new CharLiteral(From), new CharLiteral(To)));
 

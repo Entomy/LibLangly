@@ -46,7 +46,9 @@
 			Int32 ShortestPattern = Int32.MaxValue;
 			for (Int32 i = Nodes.Length - 1; i >= 0; i--) {
 				Nodes[i].Neglect(ref Source, ref Result);
-				if (Result.Length < ShortestPattern) { ShortestPattern = Result.Length - OriginalLength; }
+				if (Result.Length < ShortestPattern) {
+					ShortestPattern = Result.Length - OriginalLength;
+				}
 				if (Result) {
 					Source.Position = OriginalPosition;
 					Result.Length = OriginalLength;

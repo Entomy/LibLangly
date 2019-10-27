@@ -21,14 +21,16 @@
 				if (Source.EOF) { break; }
 				Source.Position++;
 				Result.Length++;
-				if (To.CheckHeader(ref Source)) { To.Consume(ref Source, ref Result); }
+				if (To.CheckHeader(ref Source)) {
+					To.Consume(ref Source, ref Result);
+				}
 			}
 			if (!Result) {
 				Result.Error.Set(ErrorType.EndOfSource, To);
 			}
 		}
 
-		internal override void Neglect(ref Source Source, ref Result Result) => throw new NotImplementedException();
+		internal override void Neglect(ref Source Source, ref Result Result) => throw new NotSupportedException();
 
 		public override Boolean Equals(Node node) {
 			switch (node) {
