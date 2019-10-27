@@ -4,7 +4,7 @@
 
 Stringier is a collection of projects to make working with text better.
 
-Extension methods? ✔️¸ High performance parsing? ✔️¸
+Extension methods? ✔️ High performance parsing? ✔️ Easy to use? ✔️
 
 Everyone works with text. Let's make it better.
 
