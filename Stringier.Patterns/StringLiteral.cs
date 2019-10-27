@@ -29,7 +29,12 @@
 
 		public override Boolean Equals(ReadOnlySpan<Char> other) => Stringier.Equals(String, other, IsCaseSensitive);
 
-		public override Boolean Equals(String other) => Stringier.Equals(String, other, IsCaseSensitive);
+		public override Boolean Equals(String other) {
+			if (other is null) {
+				throw new ArgumentNullException(nameof(other));
+			}
+			return Stringier.Equals(String, other, IsCaseSensitive);
+		}
 
 		public Boolean Equals(StringLiteral other) => IsCaseSensitive.Equals(other.IsCaseSensitive) && Stringier.Equals(String, other.String, IsCaseSensitive);
 
@@ -48,6 +53,9 @@
 		#region Concatenator
 
 		internal override Node Concatenate(Node Right) {
+			if (Right is null) {
+				throw new ArgumentNullException(nameof(Right));
+			}
 			switch (Right) {
 			case StringLiteral right:
 				if (IsCaseSensitive.Equals(right.IsCaseSensitive)) {
@@ -66,7 +74,12 @@
 			}
 		}
 
-		internal override Node Concatenate(String Right) => new StringLiteral(String + Right);
+		internal override Node Concatenate(String Right) {
+			if (Right is null) {
+				throw new ArgumentNullException(nameof(Right));
+			}
+			return new StringLiteral(String + Right);
+		}
 
 		internal override Node Concatenate(Char Right)=> new StringLiteral(String + Right);
 

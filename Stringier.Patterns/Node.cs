@@ -94,19 +94,39 @@ namespace System.Text.Patterns {
 		/// <returns>A <see cref="String"/> that represents the current <see cref="Pattern"/>.</returns>
 		public abstract override String ToString();
 
-		internal virtual Node Alternate(Node Right) => new Alternator(this, Right);
+		internal virtual Node Alternate(Node Right) {
+			if (Right is null) {
+				throw new ArgumentNullException(nameof(Right));
+			}
+			return new Alternator(this, Right);
+		}
 
 		internal virtual Node Alternate(Char Right) => new Alternator(this, new CharLiteral(Right));
 
-		internal virtual Node Alternate(String Right) => new Alternator(this, new StringLiteral(Right));
+		internal virtual Node Alternate(String Right) {
+			if (Right is null) {
+				throw new ArgumentNullException(nameof(Right));
+			}
+			return new Alternator(this, new StringLiteral(Right));
+		}
 
 		internal Node Capture(out Capture Capture) => new Capturer(this, out Capture);
 
-		internal virtual Node Concatenate(Node Right) => new Concatenator(this, Right);
+		internal virtual Node Concatenate(Node Right) {
+			if (Right is null) {
+				throw new ArgumentNullException(nameof(Right));
+			}
+			return new Concatenator(this, Right);
+		}
 
 		internal virtual Node Concatenate(Char Right) => new Concatenator(this, new CharLiteral(Right));
 
-		internal virtual Node Concatenate(String Right) => new Concatenator(this, new StringLiteral(Right));
+		internal virtual Node Concatenate(String Right) {
+			if (Right is null) {
+				throw new ArgumentNullException(nameof(Right));
+			}
+			return new Concatenator(this, new StringLiteral(Right));
+		}
 
 		internal virtual Node Negate() => new Negator(this);
 

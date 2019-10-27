@@ -140,11 +140,7 @@ namespace System {
 		public static String Join(this Char[] Chars, Char Separator) {
 			Char[] Result = new Char[Chars.Length * 2 - 1];
 			for (Int32 i = 0; i < Chars.Length * 2 - 1; i++) {
-				if (i % 2 == 0) {
-					Result[i] = Chars[i / 2];
-				} else {
-					Result[i] = Separator;
-				}
+				Result[i] = i % 2 == 0 ? Chars[i / 2] : Separator;
 			}
 			return Result.Join();
 		}

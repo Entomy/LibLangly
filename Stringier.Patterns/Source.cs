@@ -18,6 +18,9 @@ namespace System.Text.Patterns {
 		/// </summary>
 		/// <param name="String">A <see cref="String"/> to use as a source</param>
 		public Source(String String) {
+			if (String is null) {
+				throw new ArgumentNullException(nameof(String));
+			}
 			Buffer = String.AsSpan();
 			Position = 0;
 		}
@@ -27,6 +30,9 @@ namespace System.Text.Patterns {
 		/// </summary>
 		/// <param name="Stream">A <see cref="Stream"/> to use as a source</param>
 		public Source(Stream Stream) {
+			if (Stream is null) {
+				throw new ArgumentNullException(nameof(Stream));
+			}
 			using (StreamReader Reader = new StreamReader(Stream)) {
 				Buffer = Reader.ReadToEnd().AsSpan();
 			}

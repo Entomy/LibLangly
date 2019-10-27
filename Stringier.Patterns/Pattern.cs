@@ -26,6 +26,9 @@ namespace System.Text.Patterns {
 		/// <param name="Source">The <see cref="String"/> to consume</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/></returns>
 		public Result Consume(String Source) {
+			if (Source is null) {
+				throw new ArgumentNullException(nameof(Source));
+			}
 			Source source = new Source(Source);
 			return Consume(ref source);
 		}
@@ -75,7 +78,12 @@ namespace System.Text.Patterns {
 		/// </summary>
 		/// <param name="other">The <see cref="String"/> to check against this <see cref="Pattern"/>.</param>
 		/// <returns><c>true</c> if representable; otherwise, <c>false</c>.</returns>
-		public Boolean Equals(String other) => Head.Equals(other);
+		public Boolean Equals(String other) {
+			if (other is null) {
+				throw new ArgumentNullException(nameof(other));
+			}
+			return Head.Equals(other);
+		}
 
 		/// <summary>
 		/// Returns the hash code for this <see cref="Pattern"/>.
@@ -129,7 +137,12 @@ namespace System.Text.Patterns {
 		/// <param name="Left">The <see cref="Pattern"/> to check first</param>
 		/// <param name="Right">The <see cref="String"/> to check if <paramref name="Left"/> does not match</param>
 		/// <returns></returns>
-		public static Pattern operator |(Pattern Left, String Right) => new Pattern(Left.Head.Alternate(new StringLiteral(Right)));
+		public static Pattern operator |(Pattern Left, String Right) {
+			if (Right is null) {
+				throw new ArgumentNullException(nameof(Right));
+			}
+			return new Pattern(Left.Head.Alternate(new StringLiteral(Right)));
+		}
 
 		/// <summary>
 		/// Declares <paramref name="Right"/> to be an alternate of <paramref name="Left"/>
@@ -137,7 +150,12 @@ namespace System.Text.Patterns {
 		/// <param name="Left">The <see cref="String"/> to check first</param>
 		/// <param name="Right">The <see cref="Pattern"/> to check if <paramref name="Left"/> does not match</param>
 		/// <returns></returns>
-		public static Pattern operator |(String Left, Pattern Right) => new Pattern(new StringLiteral(Left).Alternate(Right.Head));
+		public static Pattern operator |(String Left, Pattern Right) {
+			if (Left is null) {
+				throw new ArgumentNullException(nameof(Left));
+			}
+			return new Pattern(new StringLiteral(Left).Alternate(Right.Head));
+		}
 
 		#endregion
 
@@ -162,7 +180,12 @@ namespace System.Text.Patterns {
 		/// <param name="Name">Name to display this pattern as.</param>
 		/// <param name="Check">A <see cref="Func{T, TResult}"/> to validate the character.</param>
 		/// <returns></returns>
-		public static Pattern Check(String Name, Func<Char, Boolean> Check) => new Pattern(new CharChecker(Name, Check));
+		public static Pattern Check(String Name, Func<Char, Boolean> Check) {
+			if (Name is null) {
+				throw new ArgumentNullException(nameof(Name));
+			}
+			return new Pattern(new CharChecker(Name, Check));
+		}
 
 		/// <summary>
 		/// Use the specified <paramref name="HeadCheck"/>, <paramref name="BodyCheck"/>, and <paramref name="TailCheck"/> to represent a variable length string. The head and tail are only present once, with the body being repeatable.
@@ -172,7 +195,12 @@ namespace System.Text.Patterns {
 		/// <param name="BodyCheck">A <see cref="Func{T, TResult}"/> to validate the body, which may repeat.</param>
 		/// <param name="TailCheck">A <see cref="Func{T, TResult}"/> to validate the tail.</param>
 		/// <returns></returns>
-		public static Pattern Check(String Name, Func<Char, Boolean> HeadCheck, Func<Char, Boolean> BodyCheck, Func<Char, Boolean> TailCheck) => new Pattern(new StringChecker(Name, HeadCheck, BodyCheck, TailCheck));
+		public static Pattern Check(String Name, Func<Char, Boolean> HeadCheck, Func<Char, Boolean> BodyCheck, Func<Char, Boolean> TailCheck) {
+			if (Name is null) {
+				throw new ArgumentNullException(nameof(Name));
+			}
+			return new Pattern(new StringChecker(Name, HeadCheck, BodyCheck, TailCheck));
+		}
 
 		/// <summary>
 		/// Use the specified <paramref name="HeadCheck"/>, <paramref name="BodyCheck"/>, and <paramref name="TailCheck"/> to represent a variable length string, along with whether each check is required for a valid string. The head and tail are only present once, with the body being repeatable.
@@ -185,7 +213,12 @@ namespace System.Text.Patterns {
 		/// <param name="TailCheck">A <see cref="Func{T, TResult}"/> to validate the tail.</param>
 		/// <param name="TailRequired">Whether the <paramref name="TailRequired"/> is required.</param>
 		/// <returns></returns>
-		public static Pattern Check(String Name, Func<Char, Boolean> HeadCheck, Boolean HeadRequired, Func<Char, Boolean> BodyCheck, Boolean BodyRequired, Func<Char, Boolean> TailCheck, Boolean TailRequired) => new Pattern(new StringChecker(Name, HeadCheck, HeadRequired, BodyCheck, BodyRequired, TailCheck, TailRequired));
+		public static Pattern Check(String Name, Func<Char, Boolean> HeadCheck, Boolean HeadRequired, Func<Char, Boolean> BodyCheck, Boolean BodyRequired, Func<Char, Boolean> TailCheck, Boolean TailRequired) {
+			if (Name is null) {
+				throw new ArgumentNullException(nameof(Name));
+			}
+			return new Pattern(new StringChecker(Name, HeadCheck, HeadRequired, BodyCheck, BodyRequired, TailCheck, TailRequired));
+		}
 
 		/// <summary>
 		/// Use the specified <paramref name="HeadCheck"/>, <paramref name="BodyCheck"/>, and <paramref name="TailCheck"/> to represent the valid form of a word, along with the <paramref name="Bias"/>.
@@ -196,7 +229,12 @@ namespace System.Text.Patterns {
 		/// <param name="BodyCheck">A <see cref="Func{T, TResult}"/> to validate the body, which may repeat.</param>
 		/// <param name="TailCheck">A <see cref="Func{T, TResult}"/> to validate the tail.</param>
 		/// <returns></returns>
-		public static Pattern Check(String Name, Bias Bias, Func<Char, Boolean> HeadCheck, Func<Char, Boolean> BodyCheck, Func<Char, Boolean> TailCheck) => new Pattern(new WordChecker(Name, Bias, HeadCheck, BodyCheck, TailCheck));
+		public static Pattern Check(String Name, Bias Bias, Func<Char, Boolean> HeadCheck, Func<Char, Boolean> BodyCheck, Func<Char, Boolean> TailCheck) {
+			if (Name is null) {
+				throw new ArgumentNullException(nameof(Name));
+			}
+			return new Pattern(new WordChecker(Name, Bias, HeadCheck, BodyCheck, TailCheck));
+		}
 
 		#endregion
 
@@ -232,7 +270,12 @@ namespace System.Text.Patterns {
 		/// <param name="Left">The preceeding <see cref="Pattern"/></param>
 		/// <param name="Right">The succeeding <see cref="String"/></param>
 		/// <returns></returns>
-		public static Pattern operator &(Pattern Left, String Right) => new Pattern(Left.Head.Concatenate(new StringLiteral(Right)));
+		public static Pattern operator &(Pattern Left, String Right) {
+			if (Right is null) {
+				throw new ArgumentNullException(nameof(Right));
+			}
+			return new Pattern(Left.Head.Concatenate(new StringLiteral(Right)));
+		}
 
 		/// <summary>
 		/// Concatenates the patterns so that <paramref name="Left"/> comes before <paramref name="Right"/>
@@ -240,7 +283,12 @@ namespace System.Text.Patterns {
 		/// <param name="Left">The preceeding <see cref="String"/></param>
 		/// <param name="Right">The succeeding <see cref="Pattern"/></param>
 		/// <returns></returns>
-		public static Pattern operator &(String Left, Pattern Right) => new Pattern(new StringLiteral(Left).Concatenate(Right.Head));
+		public static Pattern operator &(String Left, Pattern Right) {
+			if (Left is null) {
+				throw new ArgumentNullException(nameof(Left));
+			}
+			return new Pattern(new StringLiteral(Left).Concatenate(Right.Head));
+		}
 
 		#endregion
 

@@ -20,7 +20,12 @@
 
 		public static Boolean operator !=(String Left, Capture Right) => !Right.Equals(Left);
 
-		public Boolean Equals(String other) => Stringier.Equals(Value, other, true);
+		public Boolean Equals(String other) {
+			if (other is null) {
+				throw new ArgumentNullException(nameof(other));
+			}
+			return Stringier.Equals(Value, other, true);
+		}
 
 		/// <summary>
 		/// Converts the value of this instance to a <see cref="String"/>.

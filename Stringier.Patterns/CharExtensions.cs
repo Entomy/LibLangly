@@ -10,7 +10,12 @@
 		/// <param name="Pattern">The <see cref="Char"/> to match</param>
 		/// <param name="Source">The <see cref="String"/> to consume</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the consumed string</returns>
-		public static Result Consume(this Char Pattern, String Source) => Pattern.Consume(Source, true);
+		public static Result Consume(this Char Pattern, String Source) {
+			if (Source is null) {
+				throw new ArgumentNullException(nameof(Source));
+			}
+			return Pattern.Consume(Source, true);
+		}
 
 		/// <summary>
 		/// Attempt to consume the <paramref name="Pattern"/> from the <paramref name="Source"/>
@@ -20,6 +25,9 @@
 		/// <param name="ComparisonType">The <see cref="StringComparison"/> to use for pattern matching</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the consumed string</returns>
 		public static Result Consume(this Char Pattern, String Source, Boolean CaseSensitive) {
+			if (Source is null) {
+				throw new ArgumentNullException(nameof(Source));
+			}
 			Source source = new Source(Source);
 			return Pattern.Consume(ref source, CaseSensitive);
 		}
