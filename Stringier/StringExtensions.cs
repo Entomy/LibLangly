@@ -510,7 +510,9 @@ namespace System {
 		/// <param name="Count">The amount of times to repeat the <paramref name="String"/>.</param>
 		/// <returns>A <see cref="String"/> containing the repeated <paramref name="String"/>.</returns>
 		public static String Repeat(this String String, Int32 Count) {
-			if (Count <= 0) { throw new ArgumentOutOfRangeException(nameof(Count), "Count must be a positive integer"); }
+			if (Count <= 0) {
+				throw new ArgumentOutOfRangeException(nameof(Count), "Count must be a positive integer");
+			}
 			StringBuilder StringBuilder = new StringBuilder(String.Length * Count);
 			for (Int32 i = 0; i < Count; i++) {
 				StringBuilder.Append(String);

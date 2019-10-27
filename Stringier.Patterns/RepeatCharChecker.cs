@@ -16,7 +16,9 @@
 				Result.Error.Set(ErrorType.EndOfSource, this);
 			} else {
 				for (Int32 i = 0; i < Length; i++) {
-					if (Source.EOF) { Result.Error.Set(ErrorType.ConsumeFailed, this); }
+					if (Source.EOF) {
+						Result.Error.Set(ErrorType.ConsumeFailed, this);
+					}
 					if (Check(Source.Peek())) {
 						Source.Position++;
 						Result.Length++;
@@ -34,7 +36,9 @@
 				Result.Error.Set(ErrorType.EndOfSource, this);
 			} else {
 				for (Int32 i = 0; i < Length; i++) {
-					if (Source.EOF) { Result.Error.Set(ErrorType.NeglectFailed, this); }
+					if (Source.EOF) {
+						Result.Error.Set(ErrorType.NeglectFailed, this);
+					}
 					if (!Check(Source.Peek())) {
 						Source.Position++;
 						Result.Length++;

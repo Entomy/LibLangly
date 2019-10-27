@@ -80,7 +80,7 @@ namespace System.Text.Patterns {
 		/// <returns><c>true</c> if representable; otherwise, <c>false</c>.</returns>
 		public Boolean Equals(String other) {
 			if (other is null) {
-				throw new ArgumentNullException(nameof(other));
+				return false;
 			}
 			return Head.Equals(other);
 		}

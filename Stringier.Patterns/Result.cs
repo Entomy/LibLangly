@@ -68,20 +68,45 @@
 		/// <returns><c>true</c> if equal; otherwise, <c>false</c>.</returns>
 		public Boolean Equals(Result other) => Source.Equals(other.Source);
 
-		public static Boolean operator ==(String left, Result right) => right.Equals(left);
+		public static Boolean operator ==(String left, Result right) {
+			if (left is null) {
+				return false;
+			}
+			return right.Equals(left);
+		}
 
-		public static Boolean operator ==(Result left, String right) => left.Equals(right);
+		public static Boolean operator ==(Result left, String right) {
+			if (right is null) {
+				return false;
+			}
+			return left.Equals(right);
+		}
 
-		public static Boolean operator !=(String left, Result right) => !right.Equals(left);
+		public static Boolean operator !=(String left, Result right) {
+			if (left is null) {
+				return false;
+			}
+			return !right.Equals(left);
+		}
 
-		public static Boolean operator !=(Result left, String right) => !left.Equals(right);
+		public static Boolean operator !=(Result left, String right) {
+			if (right is null) {
+				return false;
+			}
+			return !left.Equals(right);
+		}
 
 		/// <summary>
 		/// Determines whether this <see cref="Result"/> and the <paramref name="other"/> <see cref="String"/> are equal.
 		/// </summary>
 		/// <param name="other">The <see cref="String"/> to compare to</param>
 		/// <returns><c>true</c> if equal; otherwise, <c>false</c>.</returns>
-		public Boolean Equals(String other) => Stringier.Equals(Source.Substring(Start, Length), other);
+		public Boolean Equals(String other) {
+			if (other is null) {
+				return false;
+			}
+			return Stringier.Equals(Source.Substring(Start, Length), other);
+		}
 
 		public static Boolean operator ==(ReadOnlySpan<Char> left, Result right) => right.Equals(left);
 

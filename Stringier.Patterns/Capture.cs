@@ -12,17 +12,37 @@
 
 		internal Capture() => Value = "";
 
-		public static Boolean operator ==(Capture Left, String Right) => Left.Equals(Right);
+		public static Boolean operator ==(Capture Left, String Right) {
+			if (Left is null || Right is null) {
+				return false;
+			}
+			return Left.Equals(Right);
+		}
 
-		public static Boolean operator ==(String Left, Capture Right) => Right.Equals(Left);
+		public static Boolean operator ==(String Left, Capture Right) {
+			if (Left is null || Right is null) {
+				return false;
+			}
+			return Right.Equals(Left);
+		}
 
-		public static Boolean operator !=(Capture Left, String Right) => !Left.Equals(Right);
+		public static Boolean operator !=(Capture Left, String Right) {
+			if (Left is null || Right is null) {
+				return false;
+			}
+			return !Left.Equals(Right);
+		}
 
-		public static Boolean operator !=(String Left, Capture Right) => !Right.Equals(Left);
+		public static Boolean operator !=(String Left, Capture Right) {
+			if (Left is null || Right is null) {
+				return false;
+			}
+			return !Right.Equals(Left);
+		}
 
 		public Boolean Equals(String other) {
 			if (other is null) {
-				throw new ArgumentNullException(nameof(other));
+				return false;
 			}
 			return Stringier.Equals(Value, other, true);
 		}

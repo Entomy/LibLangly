@@ -17,19 +17,47 @@
 
 		public static Pattern Alternator(Pattern Left, Pattern Right) => new Pattern(Left.Head.Alternate(Right.Head));
 
-		public static Pattern Alternator(Pattern Left, String Right) => new Pattern(Left.Head.Alternate(new StringLiteral(Right)));
+		public static Pattern Alternator(Pattern Left, String Right) {
+			if (Right is null) {
+				throw new ArgumentNullException(nameof(Right));
+			}
+			return new Pattern(Left.Head.Alternate(new StringLiteral(Right)));
+		}
 
-		public static Pattern Alternator(String Left, Pattern Right) => new Pattern(new StringLiteral(Left).Alternate(Right.Head));
+		public static Pattern Alternator(String Left, Pattern Right) {
+			if (Left is null) {
+				throw new ArgumentNullException(nameof(Left));
+			}
+			return new Pattern(new StringLiteral(Left).Alternate(Right.Head));
+		}
 
 		public static Pattern Alternator(Pattern Left, Char Right) => new Pattern(Left.Head.Alternate(new CharLiteral(Right)));
 
 		public static Pattern Alternator(Char Left, Pattern Right) => new Pattern(new CharLiteral(Left).Alternate(Right.Head));
 
-		public static Pattern Alternator(String Left, String Right) => new Pattern(new StringLiteral(Left).Alternate(new StringLiteral(Right)));
+		public static Pattern Alternator(String Left, String Right) {
+			if (Left is null) {
+				throw new ArgumentNullException(nameof(Left));
+			} else if (Right is null) {
+				throw new ArgumentNullException(nameof(Right));
+			}
+			return new Pattern(new StringLiteral(Left).Alternate(new StringLiteral(Right)));
+		}
 
-		public static Pattern Alternator(String Left, Char Right) => new Pattern(new StringLiteral(Left).Alternate(new CharLiteral(Right)));
+		public static Pattern Alternator(String Left, Char Right) {
+			if (Left is null) {
+				throw new ArgumentNullException(nameof(Left));
+			}
+			return new Pattern(new StringLiteral(Left).Alternate(new CharLiteral(Right)));
+		}
 
-		public static Pattern Alternator(Char Left, String Right) => new Pattern(new CharLiteral(Left).Alternate(new StringLiteral(Right)));
+
+		public static Pattern Alternator(Char Left, String Right) {
+			if (Right is null) {
+				throw new ArgumentNullException(nameof(Right));
+			}
+			return new Pattern(new CharLiteral(Left).Alternate(new StringLiteral(Right)));
+		}
 
 		public static Pattern Alternator(Char Left, Char Right) => new Pattern(new CharLiteral(Left).Alternate(new CharLiteral(Right)));
 
@@ -39,31 +67,68 @@
 
 		public static Pattern Concatenator(Pattern Left, Pattern Right) => new Pattern(Left.Head.Concatenate(Right.Head));
 
-		public static Pattern Concatenator(Pattern Left, String Right) => new Pattern(Left.Head.Concatenate(new StringLiteral(Right)));
+		public static Pattern Concatenator(Pattern Left, String Right) {
+			if (Right is null) {
+				throw new ArgumentNullException(nameof(Right));
+			}
+			return new Pattern(Left.Head.Concatenate(new StringLiteral(Right)));
+		}
 
-		public static Pattern Concatenator(String Left, Pattern Right) => new Pattern(new StringLiteral(Left).Concatenate(Right.Head));
+		public static Pattern Concatenator(String Left, Pattern Right) {
+			if (Left is null) {
+				throw new ArgumentNullException(nameof(Left));
+			}
+			return new Pattern(new StringLiteral(Left).Concatenate(Right.Head));
+		}
 
 		public static Pattern Concatenator(Pattern Left, Char Right) => new Pattern(Left.Head.Concatenate(new CharLiteral(Right)));
 
 		public static Pattern Concatenator(Char Left, Pattern Right) => new Pattern(new CharLiteral(Left).Concatenate(Right.Head));
 
-		public static Pattern Concatenator(String Left, String Right) => new Pattern(new StringLiteral(Left).Concatenate(new StringLiteral(Right)));
+		public static Pattern Concatenator(String Left, String Right) {
+			if (Left is null) {
+				throw new ArgumentNullException(nameof(Left));
+			} else if (Right is null) {
+				throw new ArgumentNullException(nameof(Right));
+			}
+			return new Pattern(new StringLiteral(Left).Concatenate(new StringLiteral(Right)));
+		}
 
-		public static Pattern Concatenator(String Left, Char Right) => new Pattern(new StringLiteral(Left).Concatenate(new CharLiteral(Right)));
+		public static Pattern Concatenator(String Left, Char Right) {
+			if (Left is null) {
+				throw new ArgumentNullException(nameof(Left));
+			}
+			return new Pattern(new StringLiteral(Left).Concatenate(new CharLiteral(Right)));
+		}
 
-		public static Pattern Concatenator(Char Left, String Right) => new Pattern(new CharLiteral(Left).Concatenate(new StringLiteral(Right)));
+		public static Pattern Concatenator(Char Left, String Right) {
+			if (Right is null) {
+				throw new ArgumentNullException(nameof(Right));
+			}
+			return new Pattern(new CharLiteral(Left).Concatenate(new StringLiteral(Right)));
+		}
 
 		public static Pattern Concatenator(Char Left, Char Right) => new Pattern(new CharLiteral(Left).Concatenate(new CharLiteral(Right)));
 
 		public static Pattern Negator(Pattern Pattern) => new Pattern(Pattern.Head.Negate());
 
-		public static Pattern Negator(String Pattern) => new Pattern(new StringLiteral(Pattern).Negate());
+		public static Pattern Negator(String Pattern) {
+			if (Pattern is null) {
+				throw new ArgumentNullException(nameof(Pattern));
+			}
+			return new Pattern(new StringLiteral(Pattern).Negate());
+		}
 
 		public static Pattern Negator(Char Pattern) => new Pattern(new CharLiteral(Pattern).Negate());
 
 		public static Pattern Optor(Pattern Pattern) => new Pattern(Pattern.Head.Optional());
 
-		public static Pattern Optor(String Pattern) => new Pattern(new StringLiteral(Pattern).Optional());
+		public static Pattern Optor(String Pattern) {
+			if (Pattern is null) {
+				throw new ArgumentNullException(nameof(Pattern));
+			}
+			return new Pattern(new StringLiteral(Pattern).Optional());
+		}
 
 		public static Pattern Optor(Char Pattern) => new Pattern(new CharLiteral(Pattern).Optional());
 
@@ -159,13 +224,23 @@
 
 		public static Pattern Repeater(Pattern Pattern, Int32 Count) => new Pattern(Pattern.Head.Repeat(Count));
 
-		public static Pattern Repeater(String Pattern, Int32 Count) => new Pattern(new StringLiteral(Pattern).Repeat(Count));
+		public static Pattern Repeater(String Pattern, Int32 Count) {
+			if (Pattern is null) {
+				throw new ArgumentNullException(nameof(Pattern));
+			}
+			return new Pattern(new StringLiteral(Pattern).Repeat(Count));
+		}
 
 		public static Pattern Repeater(Char Pattern, Int32 Count) => new Pattern(new CharLiteral(Pattern).Repeat(Count));
 
 		public static Pattern Spanner(Pattern Pattern) => new Pattern(Pattern.Head.Span());
 
-		public static Pattern Spanner(String Pattern) => new Pattern(new StringLiteral(Pattern).Span());
+		public static Pattern Spanner(String Pattern) {
+			if (Pattern is null) {
+				throw new ArgumentNullException(nameof(Pattern));
+			}
+			return new Pattern(new StringLiteral(Pattern).Span());
+		}
 
 		public static Pattern Spanner(Char Pattern) => new Pattern(new CharLiteral(Pattern).Span());
 	}

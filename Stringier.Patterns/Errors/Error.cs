@@ -22,6 +22,9 @@ namespace System.Text.Patterns {
 		}
 
 		internal void Set(ErrorType Type, Node Node) {
+			if (Node is null) {
+				throw new ArgumentNullException(nameof(Node));
+			}
 			this.Type = Type;
 			this.Data = ErrorData.Node;
 			this.Node = Node;
@@ -34,6 +37,9 @@ namespace System.Text.Patterns {
 		}
 
 		internal void Set(ErrorType Type, String String) {
+			if (String is null) {
+				throw new ArgumentNullException(nameof(String));
+			}
 			this.Type = Type;
 			this.Data = ErrorData.String;
 			this.String = String;

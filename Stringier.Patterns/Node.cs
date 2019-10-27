@@ -31,9 +31,19 @@ namespace System.Text.Patterns {
 		/// <param name="Result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/></param>
 		internal abstract void Neglect(ref Source Source, ref Result Result);
 
-		public static Boolean operator ==(Node Left, Node Right) => Left.Equals(Right);
+		public static Boolean operator ==(Node Left, Node Right) {
+			if (Left is null || Right is null) {
+				return false;
+			}
+			return Left.Equals(Right);
+		}
 
-		public static Boolean operator !=(Node Left, Node Right) => !Left.Equals(Right);
+		public static Boolean operator !=(Node Left, Node Right) {
+			if (Left is null || Right is null) {
+				return false;
+			}
+			return !Left.Equals(Right);
+		}
 
 		/// <summary>
 		/// Determines whether this instance and a specified object have the same value.
@@ -76,6 +86,9 @@ namespace System.Text.Patterns {
 		/// <param name="other">The <see cref="String"/> to check against this <see cref="Pattern"/>.</param>
 		/// <returns><c>true</c> if representable; otherwise, <c>false</c>.</returns>
 		public virtual Boolean Equals(String other) {
+			if (other is null) {
+				return false;
+			}
 			Source Source = new Source(other);
 			Result Result = new Result(ref Source);
 			Consume(ref Source, ref Result);
