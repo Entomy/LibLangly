@@ -8,7 +8,7 @@
 			this.Right = Right;
 		}
 
-		internal override Boolean CheckHeader(ref Source Source) => Left.CheckHeader(ref Source) ? true : Right.CheckHeader(ref Source);
+		internal override Boolean CheckHeader(ref Source Source) => Left.CheckHeader(ref Source) || Right.CheckHeader(ref Source);
 
 		internal override void Consume(ref Source Source, ref Result Result) {
 			Left.Consume(ref Source, ref Result);

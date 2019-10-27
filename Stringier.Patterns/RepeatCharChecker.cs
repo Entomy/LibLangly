@@ -9,7 +9,7 @@
 			this.Length = Length;
 		}
 
-		internal override Boolean CheckHeader(ref Source Source) => Source.EOF ? false : Check(Source.Peek());
+		internal override Boolean CheckHeader(ref Source Source) => !Source.EOF && Check(Source.Peek());
 
 		internal override void Consume(ref Source Source, ref Result Result) {
 			if (Source.EOF) {
@@ -61,7 +61,9 @@
 		}
 
 		public override Boolean Equals(ReadOnlySpan<Char> other) {
-			if (other.Length != Length) { return false; }
+			if (other.Length != Length) {
+				return false;
+			}
 			for (Int32 i = 0; i < Length; i++) {
 				if (!Check(other[i])) { return false; }
 			}
@@ -69,7 +71,9 @@
 		}
 
 		public override Boolean Equals(String other) {
-			if (other.Length != Length) { return false; }
+			if (other.Length != Length) {
+				return false;
+			}
 			for (Int32 i = 0; i < Length; i++) {
 				if (!Check(other[i])) { return false; }
 			}

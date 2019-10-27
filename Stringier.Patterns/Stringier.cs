@@ -66,5 +66,7 @@ namespace System.Text.Patterns {
 			return true;
 		}
 
+		internal static Random RNG = new Random();
+
 	}
 }

@@ -1,6 +1,6 @@
 ﻿namespace System.Text.Patterns {
 	public static class CharExtensions {
-		internal static Boolean CheckHeader(this Char Pattern, ref Source Source) => Source.EOF ? false : Pattern.Equals(Source.Peek());
+		internal static Boolean CheckHeader(this Char Pattern, ref Source Source) => !Source.EOF && Pattern.Equals(Source.Peek());
 
 		public static Pattern CaseSensitive(this Char Pattern) => new Pattern(new CharLiteral(Pattern, true));
 

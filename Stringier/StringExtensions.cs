@@ -13,6 +13,9 @@ namespace System {
 		/// <param name="Size">Size of chunks to chop into</param>
 		/// <returns>Array of chunks</returns>
 		public static String[] Chop(this String String, Int32 Size) {
+			if (String is null) {
+				throw new ArgumentNullException(nameof(String));
+			}
 			Int32 i = 0;
 			Int32 j = 0;
 			Int32 k = (String.Length / Size) + 1;
@@ -35,6 +38,9 @@ namespace System {
 		/// <param name="String">String to clean</param>
 		/// <returns>Cleaned up string</returns>
 		public static String Clean(this String String) {
+			if (String is null) {
+				throw new ArgumentNullException(nameof(String));
+			}
 			String Result = String;
 			while (Regex.IsMatch(Result, "  ")) {
 				Result = Result.Replace("  ", " ");
@@ -49,6 +55,9 @@ namespace System {
 		/// <param name="Char"></param>
 		/// <returns>Cleaned up string</returns>
 		public static String Clean(this String String, Char Char) {
+			if (String is null) {
+				throw new ArgumentNullException(nameof(String));
+			}
 			String Result = String;
 			String Pair = $"{Char}{Char}";
 			while (Regex.IsMatch(Result, Pair)) {
@@ -63,7 +72,12 @@ namespace System {
 		/// <param name="String">The string to check.</param>
 		/// <param name="Value">The char to seek.</param>
 		/// <returns>true if the value parameter occurs within this string, or if value is the empty char (''); otherwise, false.</returns>
-		public static Boolean Contains(this String String, Char Value) => String.Contains(Value.ToString());
+		public static Boolean Contains(this String String, Char Value) {
+			if (String is null) {
+				throw new ArgumentNullException(nameof(String));
+			}
+			return String.Contains(Value.ToString());
+		}
 
 		/// <summary>
 		/// Returns a value indicating whether a specified char occurs within any of the strings.
@@ -72,6 +86,9 @@ namespace System {
 		/// <param name="Value">The char to seek.</param>
 		/// <returns>true if the value parameter occurs within any of the strings, or if the value is the empty char (''); otherwise, false.</returns>
 		public static Boolean Contains(this IEnumerable<String> Strings, Char Value) {
+			if (Strings is null) {
+				throw new ArgumentNullException(nameof(Strings));
+			}
 			foreach (String String in Strings) {
 				if (String.Contains(Value)) { return true; }
 			}
@@ -85,6 +102,9 @@ namespace System {
 		/// <param name="Value">The string to seek.</param>
 		/// <returns>true if the value parameter occurs within any of the strings, or if the value is the empty string (""); otherwise, false.</returns>
 		public static Boolean Contains(this IEnumerable<String> Strings, String Value) {
+			if (Strings is null || Value is null) {
+				throw new ArgumentNullException(Strings is null ? nameof(Strings) : nameof(Value));
+			}
 			foreach (String String in Strings) {
 				if (String.Contains(Value)) { return true; }
 			}
@@ -98,6 +118,9 @@ namespace System {
 		/// <param name="Required">The required beginning.</param>
 		/// <returns>A string with the ensured beginning.</returns>
 		public static String EnsureBeginsWith(this String String, String Required) {
+			if (String is null || Required is null) {
+				throw new ArgumentNullException(String is null ? nameof(String) : nameof(Required));
+			}
 			if (String.IsMatch(RegexOptions.None, "^" + Required)) {
 				return String;
 			} else {
@@ -112,6 +135,9 @@ namespace System {
 		/// <param name="Required">The required ending.</param>
 		/// <returns>A string with the ensured ending.</returns>
 		public static String EnsureEndsWith(this String String, String Required) {
+			if (String is null || Required is null) {
+				throw new ArgumentNullException(String is null ? nameof(String) : nameof(Required));
+			}
 			if (String.IsMatch(RegexOptions.None, Required + "$")) {
 				return String;
 			} else {
@@ -272,7 +298,12 @@ namespace System {
 		/// </summary>
 		/// <param name="String">String to separate.</param>
 		/// <returns>Array of lines within the <paramref name="String"/>.</returns>
-		public static String[] Lines(this String String) => String.Split('\n');
+		public static String[] Lines(this String String) {
+			if (String is null) {
+				throw new ArgumentNullException(nameof(String));
+			}
+			return String.Split('\n');
+		}
 
 		/// <summary>
 		/// Searches an input string for a substring that matches a regular expression pattern and returns the first occurrence as a single Match object.
@@ -333,6 +364,9 @@ namespace System {
 		/// <param name="CharToCount">Char to count occurences of.</param>
 		/// <returns>The ammount of occurences found.</returns>
 		public static Int32 Occurences(this String String, Char CharToCount) {
+			if (String is null) {
+				throw new ArgumentNullException(nameof(String));
+			}
 			Int32 c = 0;
 			foreach (Char C in String) {
 				if (C == CharToCount) { c++; }
@@ -347,6 +381,9 @@ namespace System {
 		/// <param name="CharsToCount">Chars to count occurences of.</param>
 		/// <returns>The ammount of occurences found.</returns>
 		public static Int32 Occurences(this String String, params Char[] CharsToCount) {
+			if (String is null) {
+				throw new ArgumentNullException(nameof(String));
+			}
 			Int32 c = 0;
 			foreach (Char Char in CharsToCount) {
 				foreach (Char C in String) {
@@ -363,6 +400,9 @@ namespace System {
 		/// <param name="CharToCount">Char to count occurences of.</param>
 		/// <returns>The ammount of occurences found.</returns>
 		public static Int32 Occurences(this IEnumerable<String> Strings, Char CharToCount) {
+			if (Strings is null) {
+				throw new ArgumentNullException(nameof(Strings));
+			}
 			Int32 c = 0;
 			foreach (String String in Strings) {
 				c += String.Occurences(CharToCount);
@@ -377,6 +417,9 @@ namespace System {
 		/// <param name="CharsToCount">Chars to count occurences of.</param>
 		/// <returns>The ammount of occurences found.</returns>
 		public static Int32 Occurences(this IEnumerable<String> Strings, params Char[] CharsToCount) {
+			if (Strings is null || CharsToCount is null) {
+				throw new ArgumentNullException(Strings is null ? nameof(Strings) : nameof(CharsToCount));
+			}
 			Int32 c = 0;
 			foreach (String String in Strings) {
 				c += String.Occurences(CharsToCount);
@@ -391,6 +434,9 @@ namespace System {
 		/// <param name="TotalWidth">The number of characters in the resulting string, equal to the number of original characters plus any additional padding characters.</param>
 		/// <returns>A new string that is equivalent to this instance, but center-aligned and padded on both sides with as many spaces as needed to create a length of totalWidth. However, if totalWidth is less than the length of this instance, the method returns a reference to the existing instance. If totalWidth is equal to the length of this instance, the method returns a new string that is identical to this instance.</returns>
 		public static String Pad(this String String, Int32 TotalWidth) {
+			if (String is null) {
+				throw new ArgumentNullException(nameof(String));
+			}
 			Int32 LeftPadWidth = String.Length + ((TotalWidth - String.Length) / 2);
 			return String.PadLeft(LeftPadWidth).PadRight(TotalWidth);
 		}
@@ -403,6 +449,9 @@ namespace System {
 		/// <param name="PaddingChar">A Unicode padding character.</param>
 		/// <returns>A new string that is equivalent to this instance, but center-aligned and padded on both sides with as many spaces as needed to create a length of totalWidth. However, if totalWidth is less than the length of this instance, the method returns a reference to the existing instance. If totalWidth is equal to the length of this instance, the method returns a new string that is identical to this instance.</returns>
 		public static String Pad(this String String, Int32 TotalWidth, Char PaddingChar) {
+			if (String is null) {
+				throw new ArgumentNullException(nameof(String));
+			}
 			Int32 LeftPadWidth = String.Length + ((TotalWidth - String.Length) / 2);
 			return String.PadLeft(LeftPadWidth, PaddingChar).PadRight(TotalWidth, PaddingChar);
 		}
@@ -414,7 +463,12 @@ namespace System {
 		/// <param name="Style">A bitwise combination of enumeration values that indicates the style elements that can be present in <paramref name="String"/>. A typical value to specify is <see cref="NumberStyles.Integer"/>.</param>
 		/// <param name="Provider">An object that supplies culture-specific information about the format of <paramref name="String"/>.</param>
 		/// <returns>A 16-bit signed integer equivalent to the number specified in <paramref name="String"/>.</returns>
-		public static Int16 ParseInt16(this String String, NumberStyles Style, IFormatProvider Provider) => Int16.Parse(String, Style, Provider);
+		public static Int16 ParseInt16(this String String, NumberStyles Style, IFormatProvider Provider) {
+			if (String is null) {
+				throw new ArgumentNullException(nameof(String));
+			}
+			return Int16.Parse(String, Style, Provider);
+		}
 
 		/// <summary>
 		/// Converts the string representation of a number in a specified style to its 16-bit signed integer equivalent.
@@ -422,14 +476,24 @@ namespace System {
 		/// <param name="String">A string containing a number to convert.</param>
 		/// <param name="Style">A bitwise combination of the enumeration values that indicates the style elements that can be present in <paramref name="String"/>. A typical value to specify is <see cref="NumberStyles.Integer"/>.</param>
 		/// <returns>A 16-bit signed integer equivalent to the number specified in <paramref name="String"/>.</returns>
-		public static Int16 ParseInt16(this String String, NumberStyles Style) => Int16.Parse(String, Style);
+		public static Int16 ParseInt16(this String String, NumberStyles Style) {
+			if (String is null) {
+				throw new ArgumentNullException(nameof(String));
+			}
+			return Int16.Parse(String, Style);
+		}
 
 		/// <summary>
 		/// Converts the string representation of a number to its 16-bit signed integer equivalent.
 		/// </summary>
 		/// <param name="String">A string containing a number to convert.</param>
 		/// <returns>A 16-bit signed integer equivalent to the number contained in <paramref name="String"/>.</returns>
-		public static Int16 ParseInt16(this String String) => Int16.Parse(String);
+		public static Int16 ParseInt16(this String String) {
+			if (String is null) {
+				throw new ArgumentNullException(nameof(String));
+			}
+			return Int16.Parse(String);
+		}
 
 		/// <summary>
 		/// Converts the string representation of a number in a specified culture-specific format to its 16-bit signed integer equivalent.
@@ -437,7 +501,12 @@ namespace System {
 		/// <param name="String">A string containing a number to convert.</param>
 		/// <param name="Provider">An object that supplies culture-specific formatting information about <paramref name="String"/>.</param>
 		/// <returns>A 16-bit signed integer equivalent to the number specified in <paramref name="String"/>.</returns>
-		public static Int16 ParseInt16(this String String, IFormatProvider Provider) => Int16.Parse(String, Provider);
+		public static Int16 ParseInt16(this String String, IFormatProvider Provider) {
+			if (String is null) {
+				throw new ArgumentNullException(nameof(String));
+			}
+			return Int16.Parse(String, Provider);
+		}
 
 		/// <summary>
 		/// Converts the string representation of a number in a specified style and culture-specific format to its 32-bit signed integer equivalent.
@@ -446,7 +515,12 @@ namespace System {
 		/// <param name="Style">A bitwise combination of enumeration values that indicates the style elements that can be present in <paramref name="String"/>. A typical value to specify is <see cref="NumberStyles.Integer"/>.</param>
 		/// <param name="Provider">An object that supplies culture-specific information about the format of <paramref name="String"/>.</param>
 		/// <returns>A 32-bit signed integer equivalent to the number specified in <paramref name="String"/>.</returns>
-		public static Int32 ParseInt32(this String String, NumberStyles Style, IFormatProvider Provider) => Int32.Parse(String, Style, Provider);
+		public static Int32 ParseInt32(this String String, NumberStyles Style, IFormatProvider Provider) {
+			if (String is null) {
+				throw new ArgumentNullException(nameof(String));
+			}
+			return Int32.Parse(String, Style, Provider);
+		}
 
 		/// <summary>
 		/// Converts the string representation of a number in a specified style to its 32-bit signed integer equivalent.
@@ -454,14 +528,24 @@ namespace System {
 		/// <param name="String">A string containing a number to convert.</param>
 		/// <param name="Style">A bitwise combination of the enumeration values that indicates the style elements that can be present in <paramref name="String"/>. A typical value to specify is <see cref="NumberStyles.Integer"/>.</param>
 		/// <returns>A 32-bit signed integer equivalent to the number specified in <paramref name="String"/>.</returns>
-		public static Int32 ParseInt32(this String String, NumberStyles Style) => Int32.Parse(String, Style);
+		public static Int32 ParseInt32(this String String, NumberStyles Style) {
+			if (String is null) {
+				throw new ArgumentNullException(nameof(String));
+			}
+			return Int32.Parse(String, Style);
+		}
 
 		/// <summary>
 		/// Converts the string representation of a number to its 32-bit signed integer equivalent.
 		/// </summary>
 		/// <param name="String">A string containing a number to convert.</param>
 		/// <returns>A 32-bit signed integer equivalent to the number contained in <paramref name="String"/>.</returns>
-		public static Int32 ParseInt32(this String String) => Int32.Parse(String);
+		public static Int32 ParseInt32(this String String) {
+			if (String is null) {
+				throw new ArgumentNullException(nameof(String));
+			}
+			return Int32.Parse(String);
+		}
 
 		/// <summary>
 		/// Converts the string representation of a number in a specified culture-specific format to its 32-bit signed integer equivalent.
@@ -469,7 +553,12 @@ namespace System {
 		/// <param name="String">A string containing a number to convert.</param>
 		/// <param name="Provider">An object that supplies culture-specific formatting information about <paramref name="String"/>.</param>
 		/// <returns>A 32-bit signed integer equivalent to the number specified in <paramref name="String"/>.</returns>
-		public static Int32 ParseInt32(this String String, IFormatProvider Provider) => Int32.Parse(String, Provider);
+		public static Int32 ParseInt32(this String String, IFormatProvider Provider) {
+			if (String is null) {
+				throw new ArgumentNullException(nameof(String));
+			}
+			return Int32.Parse(String, Provider);
+		}
 
 		/// <summary>
 		/// Converts the string representation of a number in a specified style and culture-specific format to its 64-bit signed integer equivalent.
@@ -478,7 +567,12 @@ namespace System {
 		/// <param name="Style">A bitwise combination of enumeration values that indicates the style elements that can be present in <paramref name="String"/>. A typical value to specify is <see cref="NumberStyles.Integer"/>.</param>
 		/// <param name="Provider">An object that supplies culture-specific information about the format of <paramref name="String"/>.</param>
 		/// <returns>A 64-bit signed integer equivalent to the number specified in <paramref name="String"/>.</returns>
-		public static Int64 ParseInt64(this String String, NumberStyles Style, IFormatProvider Provider) => Int64.Parse(String, Style, Provider);
+		public static Int64 ParseInt64(this String String, NumberStyles Style, IFormatProvider Provider) {
+			if (String is null) {
+				throw new ArgumentNullException(nameof(String));
+			}
+			return Int64.Parse(String, Style, Provider);
+		}
 
 		/// <summary>
 		/// Converts the string representation of a number in a specified style to its 64-bit signed integer equivalent.
@@ -486,14 +580,24 @@ namespace System {
 		/// <param name="String">A string containing a number to convert.</param>
 		/// <param name="Style">A bitwise combination of the enumeration values that indicates the style elements that can be present in <paramref name="String"/>. A typical value to specify is <see cref="NumberStyles.Integer"/>.</param>
 		/// <returns>A 64-bit signed integer equivalent to the number specified in <paramref name="String"/>.</returns>
-		public static Int64 ParseInt64(this String String, NumberStyles Style) => Int64.Parse(String, Style);
+		public static Int64 ParseInt64(this String String, NumberStyles Style) {
+			if (String is null) {
+				throw new ArgumentNullException(nameof(String));
+			}
+			return Int64.Parse(String, Style);
+		}
 
 		/// <summary>
 		/// Converts the string representation of a number to its 64-bit signed integer equivalent.
 		/// </summary>
 		/// <param name="String">A string containing a number to convert.</param>
 		/// <returns>A 64-bit signed integer equivalent to the number contained in <paramref name="String"/>.</returns>
-		public static Int64 ParseInt64(this String String) => Int64.Parse(String);
+		public static Int64 ParseInt64(this String String) {
+			if (String is null) {
+				throw new ArgumentNullException(nameof(String));
+			}
+			return Int64.Parse(String);
+		}
 
 		/// <summary>
 		/// Converts the string representation of a number in a specified culture-specific format to its 64-bit signed integer equivalent.
@@ -501,7 +605,12 @@ namespace System {
 		/// <param name="String">A string containing a number to convert.</param>
 		/// <param name="Provider">An object that supplies culture-specific formatting information about <paramref name="String"/>.</param>
 		/// <returns>A 64-bit signed integer equivalent to the number specified in <paramref name="String"/>.</returns>
-		public static Int64 ParseInt64(this String String, IFormatProvider Provider) => Int64.Parse(String, Provider);
+		public static Int64 ParseInt64(this String String, IFormatProvider Provider) {
+			if (String is null) {
+				throw new ArgumentNullException(nameof(String));
+			}
+			return Int64.Parse(String, Provider);
+		}
 
 		/// <summary>
 		/// Repeat the <paramref name="String"/> <paramref name="Count"/> times.
@@ -510,6 +619,9 @@ namespace System {
 		/// <param name="Count">The amount of times to repeat the <paramref name="String"/>.</param>
 		/// <returns>A <see cref="String"/> containing the repeated <paramref name="String"/>.</returns>
 		public static String Repeat(this String String, Int32 Count) {
+			if (String is null) {
+				throw new ArgumentNullException(nameof(String));
+			}
 			if (Count <= 0) {
 				throw new ArgumentOutOfRangeException(nameof(Count), "Count must be a positive integer");
 			}
@@ -698,6 +810,11 @@ namespace System {
 		/// </summary>
 		/// <param name="String">String to separate.</param>
 		/// <returns>Array of words within the <paramref name="String"/>.</returns>
-		public static String[] Words(this String String) => String.Clean().Split(' ');
+		public static String[] Words(this String String) {
+			if (String is null) {
+				throw new ArgumentNullException(nameof(String));
+			}
+			return String.Clean().Split(' ');
+		}
 	}
 }

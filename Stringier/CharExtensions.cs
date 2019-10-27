@@ -129,7 +129,12 @@ namespace System {
 		/// </summary>
 		/// <param name="Chars">The <see cref="Char[]"/> to join.</param>
 		/// <returns>The joined <see cref="String"/>.</returns>
-		public static String Join(this Char[] Chars) => new String(Chars);
+		public static String Join(this Char[] Chars) {
+			if (Chars is null) {
+				throw new ArgumentNullException(nameof(Chars));
+			}
+			return new String(Chars);
+		}
 
 		/// <summary>
 		/// Joins the <paramref name="Chars"/> with <paramref name="Separator"/> into a string.
@@ -138,6 +143,9 @@ namespace System {
 		/// <param name="Separator">The <see cref="Char"/> to interleave.</param>
 		/// <returns>The joined <see cref="String"/>.</returns>
 		public static String Join(this Char[] Chars, Char Separator) {
+			if (Chars is null) {
+				throw new ArgumentNullException(nameof(Chars));
+			}
 			Char[] Result = new Char[Chars.Length * 2 - 1];
 			for (Int32 i = 0; i < Chars.Length * 2 - 1; i++) {
 				Result[i] = i % 2 == 0 ? Chars[i / 2] : Separator;
@@ -347,6 +355,9 @@ namespace System {
 		/// <param name="Culture">An object that supplies culture-specific casing rules.</param>
 		/// <returns>The lowercase equivalent of <paramref name="Char"/>, modified according to <paramref name="Culture"/>, or the unchanged value of <paramref name="Char"/>, if <paramref name="Char"/> is already lowercase or not alphabetic.</returns>
 		public static Char ToLower(this Char Char, CultureInfo Culture) {
+			if (Culture is null) {
+				throw new ArgumentNullException(nameof(Culture));
+			}
 #if NETSTANDARD1_6
 			//This was taken from CoreFX, and is the property of the .NET Foundation and contributors
 			if (Culture is null) { throw new ArgumentNullException(nameof(Culture)); }
@@ -377,6 +388,9 @@ namespace System {
 		/// <param name="Culture">An object that supplies culture-specific casing rules.</param>
 		/// <returns>The uppercase equivalent of <paramref name="Char"/>, modified according to <paramref name="Culture"/>, or the unchanged value of <paramref name="Char"/> if <paramref name="Char"/> is already uppercase, has no uppercase equivalent, or is not alphabetic.</returns>
 		public static Char ToUpper(this Char Char, CultureInfo Culture) {
+			if (Culture is null) {
+				throw new ArgumentNullException(nameof(Culture));
+			}
 #if NETSTANDARD1_6
 			//This was taken from CoreFX, and is the property of the .NET Foundation and contributors
 			if (Culture is null) { throw new ArgumentNullException(nameof(Culture)); }

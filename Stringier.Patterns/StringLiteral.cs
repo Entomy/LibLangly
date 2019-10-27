@@ -31,7 +31,7 @@
 
 		public override Boolean Equals(String other) {
 			if (other is null) {
-				throw new ArgumentNullException(nameof(other));
+				return false;
 			}
 			return Stringier.Equals(String, other, IsCaseSensitive);
 		}
