@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class Pattern
+    <title>Struct Pattern
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class Pattern
+    <meta name="title" content="Struct Pattern
    ">
     <meta name="generator" content="docfx 2.45.1.0">
     
@@ -71,24 +71,20 @@
             <article class="content wrap" id="_content" data-uid="System.Text.Patterns.Pattern">
   
   
-  <h1 id="System_Text_Patterns_Pattern" data-uid="System.Text.Patterns.Pattern" class="text-break">Class Pattern
+  <h1 id="System_Text_Patterns_Pattern" data-uid="System.Text.Patterns.Pattern" class="text-break">Struct Pattern
   </h1>
   <div class="markdown level0 summary"><p>Represents a textual pattern</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  <div class="inheritance">
-    <h5>Inheritance</h5>
-    <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">Pattern</span></div>
-  </div>
   <div classs="implements">
     <h5>Implements</h5>
+    <div><span class="xref">System.IEquatable</span>&lt;<a class="xref" href="System.Text.Patterns.Pattern.html">Pattern</a>&gt;</div>
     <div><span class="xref">System.IEquatable</span>&lt;<span class="xref">System.String</span>&gt;</div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <span class="xref">System.Object.Equals(System.Object)</span>
+      <span class="xref">System.ValueType.Equals(System.Object)</span>
     </div>
     <div>
       <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
@@ -99,15 +95,12 @@
     <div>
       <span class="xref">System.Object.GetType()</span>
     </div>
-    <div>
-      <span class="xref">System.Object.MemberwiseClone()</span>
-    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="System.Text.Patterns.html">System.Text.Patterns</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
   <h5 id="System_Text_Patterns_Pattern_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class Pattern : IEquatable&lt;string&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public struct Pattern : IEquatable&lt;Pattern&gt;, IEquatable&lt;string&gt;</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
@@ -866,7 +859,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual Pattern Capture(out Capture Capture)</code></pre>
+    <pre><code class="lang-csharp hljs">public Pattern Capture(out Capture Capture)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1305,7 +1298,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual bool Equals(ReadOnlySpan&lt;char&gt; other)</code></pre>
+    <pre><code class="lang-csharp hljs">public bool Equals(ReadOnlySpan&lt;char&gt; other)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1345,12 +1338,12 @@
   
   <a id="System_Text_Patterns_Pattern_Equals_" data-uid="System.Text.Patterns.Pattern.Equals*"></a>
   <h4 id="System_Text_Patterns_Pattern_Equals_System_Nullable_System_Object__" data-uid="System.Text.Patterns.Pattern.Equals(System.Nullable{System.Object})">Equals(Nullable&lt;Object&gt;)</h4>
-  <div class="markdown level1 summary"><p>Determines whether this instance and a specified object, which must also be a String object, have the same value.</p>
+  <div class="markdown level1 summary"><p>Determines whether this instance and a specified object have the same value.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract override bool Equals(object? obj)</code></pre>
+    <pre><code class="lang-csharp hljs">public override bool Equals(object? obj)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1393,7 +1386,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual bool Equals(string other)</code></pre>
+    <pre><code class="lang-csharp hljs">public bool Equals(string other)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1431,6 +1424,49 @@
   </table>
   
   
+  <a id="System_Text_Patterns_Pattern_Equals_" data-uid="System.Text.Patterns.Pattern.Equals*"></a>
+  <h4 id="System_Text_Patterns_Pattern_Equals_System_Text_Patterns_Pattern_" data-uid="System.Text.Patterns.Pattern.Equals(System.Text.Patterns.Pattern)">Equals(Pattern)</h4>
+  <div class="markdown level1 summary"><p>Determines whether this instance and a specified object have the same value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(Pattern other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="System.Text.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">other</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
   <a id="System_Text_Patterns_Pattern_GetHashCode_" data-uid="System.Text.Patterns.Pattern.GetHashCode*"></a>
   <h4 id="System_Text_Patterns_Pattern_GetHashCode" data-uid="System.Text.Patterns.Pattern.GetHashCode">GetHashCode()</h4>
   <div class="markdown level1 summary"><p>Returns the hash code for this <a class="xref" href="System.Text.Patterns.Pattern.html">Pattern</a>.</p>
@@ -1438,7 +1474,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract override int GetHashCode()</code></pre>
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1457,7 +1493,7 @@
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">System.Object.GetHashCode()</span></div>
+  <div><span class="xref">System.ValueType.GetHashCode()</span></div>
   
   
   <a id="System_Text_Patterns_Pattern_NestedRange_" data-uid="System.Text.Patterns.Pattern.NestedRange*"></a>
@@ -1626,7 +1662,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract override string ToString()</code></pre>
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1645,7 +1681,7 @@
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">System.Object.ToString()</span></div>
+  <div><span class="xref">System.ValueType.ToString()</span></div>
   <h3 id="operators">Operators
   </h3>
   
@@ -2150,6 +2186,53 @@
   </table>
   
   
+  <a id="System_Text_Patterns_Pattern_op_Equality_" data-uid="System.Text.Patterns.Pattern.op_Equality*"></a>
+  <h4 id="System_Text_Patterns_Pattern_op_Equality_System_Text_Patterns_Pattern_System_Text_Patterns_Pattern_" data-uid="System.Text.Patterns.Pattern.op_Equality(System.Text.Patterns.Pattern,System.Text.Patterns.Pattern)">Equality(Pattern, Pattern)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator ==(Pattern Left, Pattern Right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="System.Text.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">Left</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="System.Text.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">Right</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
   <a id="System_Text_Patterns_Pattern_op_Implicit_" data-uid="System.Text.Patterns.Pattern.op_Implicit*"></a>
   <h4 id="System_Text_Patterns_Pattern_op_Implicit_Regex__System_Text_Patterns_Pattern" data-uid="System.Text.Patterns.Pattern.op_Implicit(Regex)~System.Text.Patterns.Pattern">Implicit(Regex to Pattern)</h4>
   <div class="markdown level1 summary"></div>
@@ -2312,6 +2395,53 @@
     <tbody>
       <tr>
         <td><a class="xref" href="System.Text.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Text_Patterns_Pattern_op_Inequality_" data-uid="System.Text.Patterns.Pattern.op_Inequality*"></a>
+  <h4 id="System_Text_Patterns_Pattern_op_Inequality_System_Text_Patterns_Pattern_System_Text_Patterns_Pattern_" data-uid="System.Text.Patterns.Pattern.op_Inequality(System.Text.Patterns.Pattern,System.Text.Patterns.Pattern)">Inequality(Pattern, Pattern)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator !=(Pattern Left, Pattern Right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="System.Text.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">Left</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="System.Text.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">Right</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -2494,6 +2624,9 @@
     </tbody>
   </table>
   <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.IEquatable&lt;T&gt;</span>
+  </div>
   <div>
       <span class="xref">System.IEquatable&lt;T&gt;</span>
   </div>

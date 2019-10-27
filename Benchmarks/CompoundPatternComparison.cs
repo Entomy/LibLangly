@@ -78,7 +78,7 @@ namespace Benchmarks {
 
 		readonly static Pattern webAddressPattern =
 			-("http" & -(Pattern)'s' & "://")
-			& +(Pattern.Letter | Pattern.Number | "-") & "." & (Pattern.Letter * 3 & Source.End | +(Pattern.Letter | Pattern.Number | "-") & "." & Pattern.Letter * 3)
+			& +(Pattern.Letter | Pattern.Number | "-") & "." & (Pattern.Letter * 3 & Pattern.EndOfSource | +(Pattern.Letter | Pattern.Number | "-") & "." & Pattern.Letter * 3)
 			& -+('/' & +(Pattern.Letter | Pattern.Number | '-' | '_'));
 
 		[Benchmark]

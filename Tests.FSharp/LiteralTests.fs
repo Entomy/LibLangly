@@ -9,5 +9,4 @@ type LiteralTests() =
     [<TestMethod>]
     member this.Constructor() =
         let defaultComparison = p"Hello"
-        let explicitComparison = p("Hello", StringComparison.Ordinal)
         ()

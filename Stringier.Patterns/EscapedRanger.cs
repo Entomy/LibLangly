@@ -1,8 +1,8 @@
 ﻿namespace System.Text.Patterns {
 	internal sealed class EscapedRanger : Ranger, IEquatable<EscapedRanger> {
-		internal readonly Pattern Escape;
+		internal readonly Node Escape;
 
-		internal EscapedRanger(Pattern From, Pattern To, Pattern Escape) : base(From, To) {
+		internal EscapedRanger(Node From, Node To, Node Escape) : base(From, To) {
 			this.Escape = Escape;
 		}
 
@@ -33,11 +33,9 @@
 
 		internal override void Neglect(ref Source Source, ref Result Result) => base.Neglect(ref Source, ref Result);
 
-		public override Boolean Equals(Object? obj) {
-			switch (obj) {
+		public override Boolean Equals(Node node) {
+			switch (node) {
 			case EscapedRanger other:
-				return Equals(other);
-			case String other:
 				return Equals(other);
 			default:
 				return false;

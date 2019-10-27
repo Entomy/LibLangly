@@ -120,7 +120,7 @@ namespace Tests {
 
 			Pattern SignPattern = (Pattern)"+" | "-";
 
-			Pattern ExponentPattern = "E".With(StringComparison.OrdinalIgnoreCase) & -SignPattern & NumeralPattern;
+			Pattern ExponentPattern = "E" & -SignPattern & NumeralPattern;
 
 			Pattern Numeral = NumeralPattern & -("." & NumeralPattern) & -ExponentPattern;
 
@@ -175,7 +175,7 @@ namespace Tests {
 		[TestMethod]
 		public void WebAddress() {
 			Pattern Protocol = "http" & -(Pattern)"s" & "://";
-			Pattern Host = +(Pattern.Letter | Pattern.Number | "-") & "." & (Pattern.Letter * 3 & Source.End | +(Pattern.Letter | Pattern.Number | "-") & "." & Pattern.Letter * 3);
+			Pattern Host = +(Pattern.Letter | Pattern.Number | "-") & "." & (Pattern.Letter * 3 & Pattern.EndOfSource | +(Pattern.Letter | Pattern.Number | "-") & "." & Pattern.Letter * 3);
 			Pattern Location = +("/" & +(Pattern.Letter | Pattern.Number | "-" | "_"));
 			Pattern Address = -Protocol & Host & -Location;
 			Result Result;

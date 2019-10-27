@@ -61,11 +61,6 @@ namespace System.Text.Patterns {
 		}
 
 		/// <summary>
-		/// Check for the end of the <see cref="Source"/>
-		/// </summary>
-		public static Pattern End => new EndChecker();
-
-		/// <summary>
 		/// Whether currently at the end of the source
 		/// </summary>
 		public Boolean EOF => Length == 0;
@@ -97,7 +92,7 @@ namespace System.Text.Patterns {
 		/// <remarks>
 		/// <see cref="Source"/> equality doesn't care at all where the cursor is currently. Conceptually, the cursor is a separate object, and is only present inside of this structure for performance considerations and type requirements.
 		/// </remarks>
-		public Boolean Equals(Source other) => Stringier.Equals(Buffer, other.Buffer, StringComparison.Ordinal);
+		public Boolean Equals(Source other) => Stringier.Equals(Buffer, other.Buffer, true);
 
 		public override Int32 GetHashCode() => 0;
 

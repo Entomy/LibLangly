@@ -6,42 +6,32 @@
 	/// This exists to box <see cref="System.String"/> into something that we can treat as a part of a pattern
 	/// </remarks>
 	internal sealed class StringLiteral : Literal, IEquatable<StringLiteral> {
-		/// <summary>
-		/// The <see cref="StringComparison"/> to use during pattern matching
-		/// </summary>
-		internal readonly StringComparison ComparisonType = Stringier.DefaultComparisonType;
-
 		internal readonly String String = "";
 
-		internal StringLiteral(String String) : this(String, Stringier.DefaultComparisonType) { }
+		internal StringLiteral(String String) : this(String, false) { }
 
-		internal StringLiteral(String String, StringComparison ComparisonType) {
-			this.String = String;
-			this.ComparisonType = ComparisonType;
-		}
+		internal StringLiteral(String String, Boolean IsCaseSensitive) : base(IsCaseSensitive) => this.String = String;
 
 		internal override Boolean CheckHeader(ref Source Source) => String.CheckHeader(ref Source);
 
-		internal override void Consume(ref Source Source, ref Result Result) => String.Consume(ref Source, ref Result, ComparisonType);
+		internal override void Consume(ref Source Source, ref Result Result) => String.Consume(ref Source, ref Result, IsCaseSensitive);
 
-		internal override void Neglect(ref Source Source, ref Result Result) => String.Neglect(ref Source, ref Result, ComparisonType);
+		internal override void Neglect(ref Source Source, ref Result Result) => String.Neglect(ref Source, ref Result, IsCaseSensitive);
 
-		public override Boolean Equals(Object? obj) {
-			switch (obj) {
+		public override Boolean Equals(Node node) {
+			switch (node) {
 			case StringLiteral other:
-				return Equals(other);
-			case String other:
 				return Equals(other);
 			default:
 				return false;
 			}
 		}
 
-		public override Boolean Equals(ReadOnlySpan<Char> other) => Stringier.Equals(String, other, ComparisonType);
+		public override Boolean Equals(ReadOnlySpan<Char> other) => Stringier.Equals(String, other, IsCaseSensitive);
 
-		public override Boolean Equals(String other) => Stringier.Equals(String, other, ComparisonType);
+		public override Boolean Equals(String other) => Stringier.Equals(String, other, IsCaseSensitive);
 
-		public Boolean Equals(StringLiteral other) => Stringier.Equals(String, other.String, ComparisonType);
+		public Boolean Equals(StringLiteral other) => IsCaseSensitive.Equals(other.IsCaseSensitive) && Stringier.Equals(String, other.String, IsCaseSensitive);
 
 		/// <summary>
 		/// Returns the hash code for this instance.
@@ -57,40 +47,34 @@
 
 		#region Concatenator
 
-		internal override Pattern Concatenate(Pattern Right) {
+		internal override Node Concatenate(Node Right) {
 			switch (Right) {
 			case StringLiteral right:
-				if (ComparisonType != right.ComparisonType) { goto default; }
-				return new StringLiteral(String + right.String);
+				if (IsCaseSensitive.Equals(right.IsCaseSensitive)) {
+					return new StringLiteral(String + right.String);
+				} else {
+					goto default;
+				}
 			case CharLiteral right:
-				if (ComparisonType != right.ComparisonType) { goto default; }
-				return new StringLiteral(String + right.Char);
+				if (IsCaseSensitive.Equals(right.IsCaseSensitive)) {
+					return new StringLiteral(String + right.Char);
+				} else {
+					goto default;
+				}
 			default:
 				return base.Concatenate(Right);
 			}
 		}
 
-		internal override Pattern Concatenate(String Right) {
-			if (ComparisonType == Stringier.DefaultComparisonType) {
-				return new StringLiteral(String + Right);
-			} else {
-				return new Concatenator(this, Right);
-			}
-		}
+		internal override Node Concatenate(String Right) => new StringLiteral(String + Right);
 
-		internal override Pattern Concatenate(Char Right) {
-			if (ComparisonType == Stringier.DefaultComparisonType) {
-				return new StringLiteral(String + Right);
-			} else {
-				return new Concatenator(this, Right);
-			}
-		}
+		internal override Node Concatenate(Char Right)=> new StringLiteral(String + Right);
 
 		#endregion
 
 		#region Repeater
 
-		internal override Pattern Repeat(Int32 Count) => new StringLiteral(String.Repeat(Count));
+		internal override Node Repeat(Int32 Count) => new StringLiteral(String.Repeat(Count));
 
 		#endregion
 	}

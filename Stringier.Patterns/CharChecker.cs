@@ -7,7 +7,7 @@
 	/// Testing: While it might seem like testing this class is somehow not possible because of the visibility, this isn't the case at all. <see cref="CharChecker"/> is exposed, non-obviously, through the predefined patterns, and can easily be checked that way; if those fail while the isolated tests pass, the issue is almost certainly with this class.
 	/// </remarks>
 	internal sealed class CharChecker : Checker, IEquatable<CharChecker> {
-		internal new readonly Func<Char, Boolean> Check;
+		internal readonly Func<Char, Boolean> Check;
 
 		/// <summary>
 		/// Construct a new <see cref="CharChecker"/> from the specified <paramref name="Check"/>
@@ -46,11 +46,9 @@
 			}
 		}
 
-		public override Boolean Equals(Object? obj) {
-			switch (obj) {
+		public override Boolean Equals(Node node) {
+			switch (node) {
 			case CharChecker other:
-				return Equals(other);
-			case String other:
 				return Equals(other);
 			default:
 				return false;
@@ -77,7 +75,7 @@
 
 		#region Alternator
 
-		internal override Pattern Alternate(Pattern Right) {
+		internal override Node Alternate(Node Right) {
 			switch (Right) {
 			case CharChecker right:
 				return new AlternateCharChecker(Name, Check, right.Check);
@@ -90,7 +88,7 @@
 
 		#region Repeater
 
-		internal override Pattern Repeat(Int32 Count) => new RepeatCharChecker(Name, Check, Count);
+		internal override Node Repeat(Int32 Count) => new RepeatCharChecker(Name, Check, Count);
 
 		#endregion
 	}

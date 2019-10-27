@@ -3,23 +3,15 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace System.Text.Patterns {
-	internal sealed class Concatenator : Pattern, IEquatable<Concatenator> {
-		private readonly Pattern Left;
+	internal sealed class Concatenator : Node, IEquatable<Concatenator> {
+		private readonly Node Left;
 
-		private readonly Pattern Right;
+		private readonly Node Right;
 
-		internal Concatenator(Pattern Left, Pattern Right) {
+		internal Concatenator(Node Left, Node Right) {
 			this.Left = Left;
 			this.Right = Right;
 		}
-
-		internal Concatenator(Pattern Left, Char Right) : this(Left, new CharLiteral(Right)) { }
-
-		internal Concatenator(Char Left, Pattern Right) : this(new CharLiteral(Left), Right) { }
-
-		internal Concatenator(Pattern Left, String Right) : this(Left, new StringLiteral(Right)) { }
-
-		internal Concatenator(String Left, Pattern Right) : this(new StringLiteral(Left), Right) { }
 
 		internal override Boolean CheckHeader(ref Source Source) => Left.CheckHeader(ref Source);
 
@@ -35,11 +27,9 @@ namespace System.Text.Patterns {
 			Right.Neglect(ref Source, ref Result);
 		}
 
-		public override Boolean Equals(Object? obj) {
-			switch (obj) {
+		public override Boolean Equals(Node node) {
+			switch (node) {
 			case Concatenator other:
-				return Equals(other);
-			case String other:
 				return Equals(other);
 			default:
 				return false;

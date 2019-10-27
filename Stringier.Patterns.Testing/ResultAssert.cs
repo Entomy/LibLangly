@@ -23,7 +23,7 @@ namespace Microsoft.VisualStudio.TestTools.UnitTesting {
 		public static void Captures(String Expected, Result Actual) {
 			if (Expected is null) { throw new ArgumentNullException(nameof(Expected)); }
 			Actual.ThrowException();
-			if (!Expected.Equals(Actual)) {
+			if (Expected != Actual) {
 				throw new AssertFailedException($"ResultAssert.Captures failed. Expected: <{Expected}>. Actual: <{(String)Actual}>.");
 			}
 		}

@@ -13,11 +13,9 @@
 			if (Source.EOF) { Result.Error.Set(ErrorType.NeglectFailed, this); }
 		}
 
-		public override Boolean Equals(Object? obj) {
-			switch (obj) {
+		public override Boolean Equals(Node node) {
+			switch (node) {
 			case EndChecker other:
-				return Equals(other);
-			case String other:
 				return Equals(other);
 			default:
 				return false;

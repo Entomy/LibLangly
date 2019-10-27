@@ -252,6 +252,22 @@ namespace System {
 		public static String Join(this IEnumerable<Object> Objects, String Separator) => String.Join(Separator.ToString(), Objects);
 
 		/// <summary>
+		/// Concatenates all the elements of an object enumerable, using the specified separator between each element.
+		/// </summary>
+		/// <param name="Objects">An enumerable that contains the objects to concatenate.</param>
+		/// <param name="Separator">The char to use as a separator. Separator is included in the returned string only if <paramref name="Objects"/> has more than one element.</param>
+		/// <returns>A string that consists of the elements in <paramref name="Objects"/> delimited by the <paramref name="Separator"/> char. If <paramref name="Objects"/> is an empty enumerable, the method returns <see cref="String.Empty"/>.</returns>
+		public static String Join<T>(this IEnumerable<T> Objects, Char Separator) => String.Join(Separator.ToString(), Objects);
+
+		/// <summary>
+		/// Concatenates all the elements of an object enumerable, using the specified separator between each element.
+		/// </summary>
+		/// <param name="Objects">An enumerable that contains the objects to concatenate.</param>
+		/// <param name="Separator">The string to use as a separator. Separator is included in the returned string only if <paramref name="Objects"/> has more than one element.</param>
+		/// <returns>A string that consists of the elements in <paramref name="Objects"/> delimited by the <paramref name="Separator"/> char. If <paramref name="Objects"/> is an empty enumerable, the method returns <see cref="String.Empty"/>.</returns>
+		public static String Join<T>(this IEnumerable<T> Objects, String Separator) => String.Join(Separator, Objects);
+
+		/// <summary>
 		/// Separate the <paramref name="String"/> into its lines.
 		/// </summary>
 		/// <param name="String">String to separate.</param>

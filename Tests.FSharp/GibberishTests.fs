@@ -14,7 +14,7 @@ type GibberishTests () =
         let mutable source = new Source(Gibberish.Generate(128))
         let word:Pattern = +(check "letter" (fun (char) -> 'a' <= char && char <= 'z'))
         let space:Pattern = +' '
-        let doc:Pattern = +(word || space) >> Source.End
+        let doc:Pattern = +(word || space) >> Pattern.EndOfSource
         ResultAssert.Succeeds(doc.Consume(&source))
 
     [<TestMethod>]

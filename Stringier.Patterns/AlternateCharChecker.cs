@@ -38,11 +38,9 @@
 			}
 		}
 
-		public override Boolean Equals(Object? obj) {
-			switch (obj) {
+		public override Boolean Equals(Node node) {
+			switch (node) {
 			case AlternateCharChecker other:
-				return Equals(other);
-			case String other:
 				return Equals(other);
 			default:
 				return false;

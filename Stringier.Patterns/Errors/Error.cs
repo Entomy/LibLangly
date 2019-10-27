@@ -7,6 +7,7 @@ namespace System.Text.Patterns {
 		[FieldOffset(1)] private ErrorData Data;
 		[FieldOffset(0)] private Int32 Code;
 		[FieldOffset(4)] private Char Char;
+		[FieldOffset(8)] private Node Node;
 		[FieldOffset(8)] private Pattern Pattern;
 		[FieldOffset(8)] private String String;
 
@@ -18,6 +19,12 @@ namespace System.Text.Patterns {
 			this.Type = Type;
 			this.Data = ErrorData.Char;
 			this.Char = Char;
+		}
+
+		internal void Set(ErrorType Type, Node Node) {
+			this.Type = Type;
+			this.Data = ErrorData.Node;
+			this.Node = Node;
 		}
 
 		internal void Set(ErrorType Type, Pattern Pattern) {
@@ -39,6 +46,9 @@ namespace System.Text.Patterns {
 				return;
 			case ErrorData.Char:
 				String = Char.ToString();
+				break;
+			case ErrorData.Node:
+				String = Node.ToString();
 				break;
 			case ErrorData.Pattern:
 				String = Pattern.ToString();

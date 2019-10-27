@@ -155,11 +155,9 @@
 
 		internal override void Neglect(ref Source Source, ref Result Result) => throw new NotImplementedException();
 
-		public override Boolean Equals(Object? obj) {
-			switch (obj) {
+		public override Boolean Equals(Node node) {
+			switch (node) {
 			case StringChecker other:
-				return Equals(other);
-			case String other:
 				return Equals(other);
 			default:
 				return false;

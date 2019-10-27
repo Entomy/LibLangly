@@ -1,6 +1,6 @@
 ﻿namespace System.Text.Patterns {
 	internal sealed class RepeatCharChecker : Checker, IEquatable<RepeatCharChecker> {
-		internal new readonly Func<Char, Boolean> Check;
+		internal readonly Func<Char, Boolean> Check;
 
 		internal readonly Int32 Length;
 
@@ -47,11 +47,9 @@
 			}
 		}
 
-		public override Boolean Equals(Object? obj) {
-			switch (obj) {
+		public override Boolean Equals(Node node) {
+			switch (node) {
 			case RepeatCharChecker other:
-				return Equals(other);
-			case String other:
 				return Equals(other);
 			default:
 				return false;

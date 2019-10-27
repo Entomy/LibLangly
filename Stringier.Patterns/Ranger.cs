@@ -1,9 +1,9 @@
 ﻿namespace System.Text.Patterns {
-	internal class Ranger : Pattern, IEquatable<Ranger> {
-		internal protected readonly Pattern From;
-		internal protected readonly Pattern To;
+	internal class Ranger : Node, IEquatable<Ranger> {
+		internal protected readonly Node From;
+		internal protected readonly Node To;
 
-		internal protected Ranger(Pattern From, Pattern To) {
+		internal protected Ranger(Node From, Node To) {
 			this.From = From;
 			this.To = To;
 		}
@@ -30,11 +30,9 @@
 
 		internal override void Neglect(ref Source Source, ref Result Result) => throw new NotImplementedException();
 
-		public override Boolean Equals(Object? obj) {
-			switch (obj) {
+		public override Boolean Equals(Node node) {
+			switch (node) {
 			case Ranger other:
-				return Equals(other);
-			case String other:
 				return Equals(other);
 			default:
 				return false;
@@ -49,7 +47,7 @@
 
 		#region Negator
 
-		internal override Pattern Negate() => throw new PatternConstructionException("Ranges can not be negated, as there is no valid concept to describe this behavior");
+		internal override Node Negate() => throw new PatternConstructionException("Ranges can not be negated, as there is no valid concept to describe this behavior");
 
 		#endregion
 	}

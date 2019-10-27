@@ -81,15 +81,123 @@
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">PatternStack</span></div>
   </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.Collections.ICollection</span></div>
+    <div><span class="xref">System.Collections.IEnumerable</span></div>
+    <div><span class="xref">System.Collections.IEnumerable</span>&lt;<span class="xref">Node</span>&gt;</div>
+    <div><span class="xref">IReadOnlyCollection</span>&lt;<span class="xref">Node</span>&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="System.Collections.Specialized.html">System.Collections.Specialized</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
   <h5 id="System_Collections_Specialized_PatternStack_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class PatternStack : Stack&lt;Pattern&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class PatternStack : ICollection, IEnumerable, IEnumerable&lt;Node&gt;, IReadOnlyCollection&lt;Node&gt;</code></pre>
   </div>
   <h5 id="System_Collections_Specialized_PatternStack_remarks"><strong>Remarks</strong></h5>
   <div class="markdown level0 remarks"><p>This is primarily intended to help with pattern expressions in bespoke languages.</p>
 </div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="System_Collections_Specialized_PatternStack_Count_" data-uid="System.Collections.Specialized.PatternStack.Count*"></a>
+  <h4 id="System_Collections_Specialized_PatternStack_Count" data-uid="System.Collections.Specialized.PatternStack.Count">Count</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Count { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Specialized_PatternStack_IsSynchronized_" data-uid="System.Collections.Specialized.PatternStack.IsSynchronized*"></a>
+  <h4 id="System_Collections_Specialized_PatternStack_IsSynchronized" data-uid="System.Collections.Specialized.PatternStack.IsSynchronized">IsSynchronized</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsSynchronized { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Specialized_PatternStack_SyncRoot_" data-uid="System.Collections.Specialized.PatternStack.SyncRoot*"></a>
+  <h4 id="System_Collections_Specialized_PatternStack_SyncRoot" data-uid="System.Collections.Specialized.PatternStack.SyncRoot">SyncRoot</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public object SyncRoot { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="methods">Methods
   </h3>
   
@@ -225,6 +333,86 @@
   </div>
   
   
+  <a id="System_Collections_Specialized_PatternStack_Peek_" data-uid="System.Collections.Specialized.PatternStack.Peek*"></a>
+  <h4 id="System_Collections_Specialized_PatternStack_Peek" data-uid="System.Collections.Specialized.PatternStack.Peek">Peek()</h4>
+  <div class="markdown level1 summary"><p>Returns the object at the top of the <a class="xref" href="System.Collections.Specialized.PatternStack.html">PatternStack</a> without removing it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Pattern Peek()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Pattern</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Specialized_PatternStack_Pop_" data-uid="System.Collections.Specialized.PatternStack.Pop*"></a>
+  <h4 id="System_Collections_Specialized_PatternStack_Pop" data-uid="System.Collections.Specialized.PatternStack.Pop">Pop()</h4>
+  <div class="markdown level1 summary"><p>Removes and returns the <see cref="!:Pattern"></see> at the top of the <a class="xref" href="System.Collections.Specialized.PatternStack.html">PatternStack</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Pattern Pop()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Pattern</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Specialized_PatternStack_Push_" data-uid="System.Collections.Specialized.PatternStack.Push*"></a>
+  <h4 id="System_Collections_Specialized_PatternStack_Push_Pattern_" data-uid="System.Collections.Specialized.PatternStack.Push(Pattern)">Push(Pattern)</h4>
+  <div class="markdown level1 summary"><p>Inserts an object at the top of the <a class="xref" href="System.Collections.Specialized.PatternStack.html">PatternStack</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Push(Pattern Pattern)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Pattern</span></td>
+        <td><span class="parametername">Pattern</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
   <a id="System_Collections_Specialized_PatternStack_Span_" data-uid="System.Collections.Specialized.PatternStack.Span*"></a>
   <h4 id="System_Collections_Specialized_PatternStack_Span" data-uid="System.Collections.Specialized.PatternStack.Span">Span()</h4>
   <div class="markdown level1 summary"><p>Declares the top element of the stack as spanning, and then pushes the resulting pattern back on.</p>
@@ -233,6 +421,78 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void Span()</code></pre>
+  </div>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  
+  
+  <a id="System_Collections_Specialized_PatternStack_System_Collections_ICollection_CopyTo_" data-uid="System.Collections.Specialized.PatternStack.System#Collections#ICollection#CopyTo*"></a>
+  <h4 id="System_Collections_Specialized_PatternStack_System_Collections_ICollection_CopyTo_System_Array_System_Int32_" data-uid="System.Collections.Specialized.PatternStack.System#Collections#ICollection#CopyTo(System.Array,System.Int32)">ICollection.CopyTo(Array, Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void ICollection.CopyTo(Array array, int index)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Array</span></td>
+        <td><span class="parametername">array</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">index</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Collections_Specialized_PatternStack_System_Collections_IEnumerable_GetEnumerator_" data-uid="System.Collections.Specialized.PatternStack.System#Collections#IEnumerable#GetEnumerator*"></a>
+  <h4 id="System_Collections_Specialized_PatternStack_System_Collections_IEnumerable_GetEnumerator" data-uid="System.Collections.Specialized.PatternStack.System#Collections#IEnumerable#GetEnumerator">IEnumerable.GetEnumerator()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerator IEnumerable.GetEnumerator()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.IEnumerator</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.Collections.ICollection</span>
+  </div>
+  <div>
+      <span class="xref">System.Collections.IEnumerable</span>
+  </div>
+  <div>
+      <span class="xref">System.Collections.IEnumerable&lt;&gt;</span>
+  </div>
+  <div>
+      <span class="xref">IReadOnlyCollection&lt;&gt;</span>
   </div>
 </article>
           </div>

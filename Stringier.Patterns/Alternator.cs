@@ -1,20 +1,12 @@
 ﻿namespace System.Text.Patterns {
-	internal sealed class Alternator : Pattern, IEquatable<Alternator> {
-		private readonly Pattern Left;
-		private readonly Pattern Right;
+	internal sealed class Alternator : Node, IEquatable<Alternator> {
+		private readonly Node Left;
+		private readonly Node Right;
 
-		internal Alternator(Pattern Left, Pattern Right) {
+		internal Alternator(Node Left, Node Right) {
 			this.Left = Left;
 			this.Right = Right;
 		}
-
-		internal Alternator(Pattern Left, Char Right) : this(Left, new CharLiteral(Right)) { }
-
-		internal Alternator(Char Left, Pattern Right) : this(new CharLiteral(Left), Right) { }
-
-		internal Alternator(Pattern Left, String Right) : this(Left, new StringLiteral(Right)) { }
-
-		internal Alternator(String Left, Pattern Right) : this(new StringLiteral(Left), Right) { }
 
 		internal override Boolean CheckHeader(ref Source Source) => Left.CheckHeader(ref Source) ? true : Right.CheckHeader(ref Source);
 
@@ -41,11 +33,9 @@
 			}
 		}
 
-		public override Boolean Equals(Object? obj) {
-			switch (obj) {
+		public override Boolean Equals(Node node) {
+			switch (node) {
 			case Alternator other:
-				return Equals(other);
-			case String other:
 				return Equals(other);
 			default:
 				return false;
@@ -60,17 +50,17 @@
 
 		#region Alternator
 
-		internal override Pattern Alternate(Char Right) => new ChainAlternator(this.Left, this.Right, new CharLiteral(Right));
+		internal override Node Alternate(Node Right) => new ChainAlternator(this.Left, this.Right, Right);
 
-		internal override Pattern Alternate(String Right) => new ChainAlternator(this.Left, this.Right, new StringLiteral(Right));
+		internal override Node Alternate(Char Right) => new ChainAlternator(this.Left, this.Right, new CharLiteral(Right));
 
-		internal override Pattern Alternate(Pattern Right) => new ChainAlternator(this.Left, this.Right, Right);
+		internal override Node Alternate(String Right) => new ChainAlternator(this.Left, this.Right, new StringLiteral(Right));
 
 		#endregion
 
 		#region Spanner
 
-		internal override Pattern Span() {
+		internal override Node Span() {
 			if (Left is Optor || Right is Optor) {
 				throw new PatternConstructionException("One or more of the components of this alternator are optional, and the alternator is marked as spanning. Options can not span, as it creates an infinite loop. While this potentially could succeed, this is absolutely an error.");
 			} else {

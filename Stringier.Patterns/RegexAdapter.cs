@@ -1,7 +1,7 @@
 ﻿using System.Text.RegularExpressions;
 
 namespace System.Text.Patterns {
-	internal sealed class RegexAdapter : Pattern, IEquatable<RegexAdapter> {
+	internal sealed class RegexAdapter : Node, IEquatable<RegexAdapter> {
 		private readonly Regex Regex;
 
 		internal RegexAdapter(Regex Regex) {
@@ -26,11 +26,9 @@ namespace System.Text.Patterns {
 
 		internal override void Neglect(ref Source Source, ref Result Result) => throw new InvalidOperationException("Regex can not be negated");
 
-		public override Boolean Equals(Object? obj) {
-			switch (obj) {
+		public override Boolean Equals(Node node) {
+			switch (node) {
 			case RegexAdapter other:
-				return Equals(other);
-			case String other:
 				return Equals(other);
 			default:
 				return false;
@@ -45,7 +43,7 @@ namespace System.Text.Patterns {
 
 		#region Negator
 
-		internal override Pattern Negate() => throw new PatternConstructionException("Regex can not be negated");
+		internal override Node Negate() => throw new PatternConstructionException("Regex can not be negated");
 
 		#endregion
 	}

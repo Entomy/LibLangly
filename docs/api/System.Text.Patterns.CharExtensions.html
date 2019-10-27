@@ -114,6 +114,48 @@
   </h3>
   
   
+  <a id="System_Text_Patterns_CharExtensions_CaseSensitive_" data-uid="System.Text.Patterns.CharExtensions.CaseSensitive*"></a>
+  <h4 id="System_Text_Patterns_CharExtensions_CaseSensitive_System_Char_" data-uid="System.Text.Patterns.CharExtensions.CaseSensitive(System.Char)">CaseSensitive(Char)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern CaseSensitive(this char Pattern)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">Pattern</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="System.Text.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
   <a id="System_Text_Patterns_CharExtensions_Consume_" data-uid="System.Text.Patterns.CharExtensions.Consume*"></a>
   <h4 id="System_Text_Patterns_CharExtensions_Consume_System_Char_System_String_" data-uid="System.Text.Patterns.CharExtensions.Consume(System.Char,System.String)">Consume(Char, String)</h4>
   <div class="markdown level1 summary"><p>Attempt to consume the <code data-dev-comment-type="paramref" class="paramref">Pattern</code> from the <code data-dev-comment-type="paramref" class="paramref">Source</code></p>
@@ -166,13 +208,13 @@
   
   
   <a id="System_Text_Patterns_CharExtensions_Consume_" data-uid="System.Text.Patterns.CharExtensions.Consume*"></a>
-  <h4 id="System_Text_Patterns_CharExtensions_Consume_System_Char_System_String_System_StringComparison_" data-uid="System.Text.Patterns.CharExtensions.Consume(System.Char,System.String,System.StringComparison)">Consume(Char, String, StringComparison)</h4>
+  <h4 id="System_Text_Patterns_CharExtensions_Consume_System_Char_System_String_System_Boolean_" data-uid="System.Text.Patterns.CharExtensions.Consume(System.Char,System.String,System.Boolean)">Consume(Char, String, Boolean)</h4>
   <div class="markdown level1 summary"><p>Attempt to consume the <code data-dev-comment-type="paramref" class="paramref">Pattern</code> from the <code data-dev-comment-type="paramref" class="paramref">Source</code></p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Result Consume(this char Pattern, string Source, StringComparison ComparisonType)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Result Consume(this char Pattern, string Source, bool CaseSensitive)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -197,10 +239,9 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.StringComparison</span></td>
-        <td><span class="parametername">ComparisonType</span></td>
-        <td><p>The <span class="xref">System.StringComparison</span> to use for pattern matching</p>
-</td>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">CaseSensitive</span></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -274,13 +315,13 @@
   
   
   <a id="System_Text_Patterns_CharExtensions_Consume_" data-uid="System.Text.Patterns.CharExtensions.Consume*"></a>
-  <h4 id="System_Text_Patterns_CharExtensions_Consume_System_Char_System_Text_Patterns_Source__System_StringComparison_" data-uid="System.Text.Patterns.CharExtensions.Consume(System.Char,System.Text.Patterns.Source@,System.StringComparison)">Consume(Char, ref Source, StringComparison)</h4>
+  <h4 id="System_Text_Patterns_CharExtensions_Consume_System_Char_System_Text_Patterns_Source__System_Boolean_" data-uid="System.Text.Patterns.CharExtensions.Consume(System.Char,System.Text.Patterns.Source@,System.Boolean)">Consume(Char, ref Source, Boolean)</h4>
   <div class="markdown level1 summary"><p>Attempt to consume the <code data-dev-comment-type="paramref" class="paramref">Pattern</code> from the <code data-dev-comment-type="paramref" class="paramref">Source</code>, adjusting the position in the <code data-dev-comment-type="paramref" class="paramref">Source</code> as appropriate</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Result Consume(this char Pattern, ref Source Source, StringComparison ComparisonType)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Result Consume(this char Pattern, ref Source Source, bool CaseSensitive)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -305,10 +346,9 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.StringComparison</span></td>
-        <td><span class="parametername">ComparisonType</span></td>
-        <td><p>The <span class="xref">System.StringComparison</span> to use for pattern matching</p>
-</td>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">CaseSensitive</span></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -324,57 +364,6 @@
       <tr>
         <td><a class="xref" href="System.Text.Patterns.Result.html">Result</a></td>
         <td><p>A <a class="xref" href="System.Text.Patterns.Result.html">Result</a> containing whether a match occured and the consumed string</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="System_Text_Patterns_CharExtensions_With_" data-uid="System.Text.Patterns.CharExtensions.With*"></a>
-  <h4 id="System_Text_Patterns_CharExtensions_With_System_Char_System_StringComparison_" data-uid="System.Text.Patterns.CharExtensions.With(System.Char,System.StringComparison)">With(Char, StringComparison)</h4>
-  <div class="markdown level1 summary"><p>Create a <a class="xref" href="System.Text.Patterns.Pattern.html">Pattern</a> for the specified <code data-dev-comment-type="paramref" class="paramref">Char</code>, with the <code data-dev-comment-type="paramref" class="paramref">ComparisonType</code>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Pattern With(this char Char, StringComparison ComparisonType)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Char</span></td>
-        <td><span class="parametername">Char</span></td>
-        <td><p>The <span class="xref">System.Char</span> literal.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.StringComparison</span></td>
-        <td><span class="parametername">ComparisonType</span></td>
-        <td><p>The <span class="xref">System.StringComparison</span> type to use.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="System.Text.Patterns.Pattern.html">Pattern</a></td>
-        <td><p>The resulting <a class="xref" href="System.Text.Patterns.Pattern.html">Pattern</a>.</p>
 </td>
       </tr>
     </tbody>

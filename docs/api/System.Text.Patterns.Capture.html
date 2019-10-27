@@ -83,7 +83,7 @@
   </div>
   <div classs="implements">
     <h5>Implements</h5>
-    <div><span class="xref">System.IEquatable</span>&lt;<a class="xref" href="System.Text.Patterns.Capture.html">Capture</a>&gt;</div>
+    <div><span class="xref">System.IEquatable</span>&lt;<span class="xref">System.String</span>&gt;</div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -97,6 +97,9 @@
       <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
     </div>
     <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
       <span class="xref">System.Object.GetType()</span>
     </div>
     <div>
@@ -107,7 +110,7 @@
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
   <h5 id="System_Text_Patterns_Capture_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class Capture : IEquatable&lt;Capture&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class Capture : IEquatable&lt;string&gt;</code></pre>
   </div>
   <h5 id="System_Text_Patterns_Capture_remarks"><strong>Remarks</strong></h5>
   <div class="markdown level0 remarks"><p>This is used primarily in the implementation of backreferences (which are like in <a href="https://www.regular-expressions.info/backref.html">Regex</a>).</p>
@@ -117,54 +120,8 @@
   
   
   <a id="System_Text_Patterns_Capture_Equals_" data-uid="System.Text.Patterns.Capture.Equals*"></a>
-  <h4 id="System_Text_Patterns_Capture_Equals_System_Nullable_System_Object__" data-uid="System.Text.Patterns.Capture.Equals(System.Nullable{System.Object})">Equals(Nullable&lt;Object&gt;)</h4>
-  <div class="markdown level1 summary"><p>Determines whether two <span class="xref">System.Object</span> instances are equal.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override bool Equals(object? obj)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Object</span>&gt;</td>
-        <td><span class="parametername">obj</span></td>
-        <td><p>The <span class="xref">System.Object</span> to compare with the current object.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td><p><code>true</code> if the specified <span class="xref">System.Object</span> is equal to the current object; otherwise, <code>false</code>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="System_Text_Patterns_Capture_Equals_" data-uid="System.Text.Patterns.Capture.Equals*"></a>
   <h4 id="System_Text_Patterns_Capture_Equals_System_String_" data-uid="System.Text.Patterns.Capture.Equals(System.String)">Equals(String)</h4>
-  <div class="markdown level1 summary"><p>Determines whether the <span class="xref">System.String</span> instance is equal to the current object.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -183,8 +140,7 @@
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">other</span></td>
-        <td><p>The <span class="xref">System.String</span> to compare with the current object.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -199,85 +155,10 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td><p><code>true</code> if the specified <span class="xref">System.String</span> is equal to the current object; otherwise, <code>false</code>.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
-  
-  
-  <a id="System_Text_Patterns_Capture_Equals_" data-uid="System.Text.Patterns.Capture.Equals*"></a>
-  <h4 id="System_Text_Patterns_Capture_Equals_System_Text_Patterns_Capture_" data-uid="System.Text.Patterns.Capture.Equals(System.Text.Patterns.Capture)">Equals(Capture)</h4>
-  <div class="markdown level1 summary"><p>Determines whether two <a class="xref" href="System.Text.Patterns.Capture.html">Capture</a> instances are equal.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool Equals(Capture other)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="System.Text.Patterns.Capture.html">Capture</a></td>
-        <td><span class="parametername">other</span></td>
-        <td><p>The <a class="xref" href="System.Text.Patterns.Capture.html">Capture</a> to compare with the current object.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td><p><code>true</code> if the specified <a class="xref" href="System.Text.Patterns.Capture.html">Capture</a> is equal to the current object; otherwise, <code>false</code>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="System_Text_Patterns_Capture_GetHashCode_" data-uid="System.Text.Patterns.Capture.GetHashCode*"></a>
-  <h4 id="System_Text_Patterns_Capture_GetHashCode" data-uid="System.Text.Patterns.Capture.GetHashCode">GetHashCode()</h4>
-  <div class="markdown level1 summary"><p>Returns the hash code for this <a class="xref" href="System.Text.Patterns.Capture.html">Capture</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Int32</span></td>
-        <td><p>A 32-bit signed integer hash code.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">System.Object.GetHashCode()</span></div>
   
   
   <a id="System_Text_Patterns_Capture_ToString_" data-uid="System.Text.Patterns.Capture.ToString*"></a>
@@ -307,6 +188,196 @@
   </table>
   <h5 class="overrides">Overrides</h5>
   <div><span class="xref">System.Object.ToString()</span></div>
+  <h3 id="operators">Operators
+  </h3>
+  
+  
+  <a id="System_Text_Patterns_Capture_op_Equality_" data-uid="System.Text.Patterns.Capture.op_Equality*"></a>
+  <h4 id="System_Text_Patterns_Capture_op_Equality_System_String_System_Text_Patterns_Capture_" data-uid="System.Text.Patterns.Capture.op_Equality(System.String,System.Text.Patterns.Capture)">Equality(String, Capture)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator ==(string Left, Capture Right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">Left</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="System.Text.Patterns.Capture.html">Capture</a></td>
+        <td><span class="parametername">Right</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Text_Patterns_Capture_op_Equality_" data-uid="System.Text.Patterns.Capture.op_Equality*"></a>
+  <h4 id="System_Text_Patterns_Capture_op_Equality_System_Text_Patterns_Capture_System_String_" data-uid="System.Text.Patterns.Capture.op_Equality(System.Text.Patterns.Capture,System.String)">Equality(Capture, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator ==(Capture Left, string Right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="System.Text.Patterns.Capture.html">Capture</a></td>
+        <td><span class="parametername">Left</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">Right</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Text_Patterns_Capture_op_Inequality_" data-uid="System.Text.Patterns.Capture.op_Inequality*"></a>
+  <h4 id="System_Text_Patterns_Capture_op_Inequality_System_String_System_Text_Patterns_Capture_" data-uid="System.Text.Patterns.Capture.op_Inequality(System.String,System.Text.Patterns.Capture)">Inequality(String, Capture)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator !=(string Left, Capture Right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">Left</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="System.Text.Patterns.Capture.html">Capture</a></td>
+        <td><span class="parametername">Right</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_Text_Patterns_Capture_op_Inequality_" data-uid="System.Text.Patterns.Capture.op_Inequality*"></a>
+  <h4 id="System_Text_Patterns_Capture_op_Inequality_System_Text_Patterns_Capture_System_String_" data-uid="System.Text.Patterns.Capture.op_Inequality(System.Text.Patterns.Capture,System.String)">Inequality(Capture, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator !=(Capture Left, string Right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="System.Text.Patterns.Capture.html">Capture</a></td>
+        <td><span class="parametername">Left</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">Right</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="implements">Implements</h3>
   <div>
       <span class="xref">System.IEquatable&lt;T&gt;</span>

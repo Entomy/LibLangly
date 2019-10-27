@@ -2,7 +2,7 @@
 	internal sealed class NestedRanger : Ranger, IEquatable<NestedRanger> {
 		private Int32 Level;
 
-		internal NestedRanger(Pattern From, Pattern To) : base(From, To) {
+		internal NestedRanger(Node From, Node To) : base(From, To) {
 			Level = 0;
 		}
 

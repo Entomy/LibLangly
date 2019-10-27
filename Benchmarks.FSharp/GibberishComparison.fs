@@ -12,7 +12,7 @@ open BenchmarkDotNet.Attributes
 type GibberishComparison() =
     let patternWord:Pattern = +(check "letter" (new Func<Char,Boolean>(fun (char) -> 'a' <= char && char <= 'z')))
     let patternSpace:Pattern = +' '
-    let pattern:Pattern = +(patternWord || patternSpace) >> Source.End
+    let pattern:Pattern = +(patternWord || patternSpace) >> Pattern.EndOfSource
 
     let parsecWord = many1Chars (anyOf "abcdefghijklmnopqrstuvwxyz")
     let parsecSpace = many1Chars (pchar ' ')

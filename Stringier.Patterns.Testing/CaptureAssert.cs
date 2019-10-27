@@ -12,7 +12,7 @@ namespace Microsoft.VisualStudio.TestTools.UnitTesting {
 		/// <param name="Expected">The <see cref="String"/> of expected text.</param>
 		/// <param name="Actual">The <see cref="Capture"/> object.</param>
 		public static void Captures(String Expected, Capture Actual) {
-			if (!Actual.Equals(Expected)) {
+			if (Actual != Expected) {
 				throw new AssertFailedException($"CaptureAssert.Captures failed. Expected: <{Expected}>. Actual: <{Actual}>.");
 			}
 		}

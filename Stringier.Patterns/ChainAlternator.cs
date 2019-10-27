@@ -1,39 +1,39 @@
 ﻿namespace System.Text.Patterns {
-	internal sealed class ChainAlternator : Pattern, IEquatable<ChainAlternator> {
-		internal readonly Pattern[] Patterns;
+	internal sealed class ChainAlternator : Node, IEquatable<ChainAlternator> {
+		internal readonly Node[] Nodes;
 
-		internal ChainAlternator(params Pattern[] Patterns) {
-			this.Patterns = Patterns;
+		internal ChainAlternator(params Node[] Nodes) {
+			this.Nodes = Nodes;
 		}
 
-		internal ChainAlternator(Pattern FirstPattern, Pattern[] OtherPatterns) {
-			Patterns = new Pattern[OtherPatterns.Length + 1];
-			Patterns[0] = FirstPattern;
-			OtherPatterns.CopyTo(Patterns, 1);
+		internal ChainAlternator(Node FirstNode, Node[] OtherNodes) {
+			Nodes = new Node[OtherNodes.Length + 1];
+			Nodes[0] = FirstNode;
+			OtherNodes.CopyTo(Nodes, 1);
 		}
 
-		internal ChainAlternator(Pattern[] OtherPatterns, Pattern LastPattern) {
-			Patterns = new Pattern[OtherPatterns.Length + 1];
-			OtherPatterns.CopyTo(Patterns, 0);
-			Patterns[Patterns.Length - 1] = LastPattern;
+		internal ChainAlternator(Node[] OtherNodes, Node LastNode) {
+			Nodes = new Node[OtherNodes.Length + 1];
+			OtherNodes.CopyTo(Nodes, 0);
+			Nodes[Nodes.Length - 1] = LastNode;
 		}
 
-		internal ChainAlternator(Pattern[] FirstPatterns, Pattern[] LastPatterns) {
-			Patterns = new Pattern[FirstPatterns.Length + LastPatterns.Length];
-			FirstPatterns.CopyTo(Patterns, 0);
-			LastPatterns.CopyTo(Patterns, FirstPatterns.Length);
+		internal ChainAlternator(Node[] FirstNodes, Node[] LastNodes) {
+			Nodes = new Node[FirstNodes.Length + LastNodes.Length];
+			FirstNodes.CopyTo(Nodes, 0);
+			LastNodes.CopyTo(Nodes, FirstNodes.Length);
 		}
 
 		internal override Boolean CheckHeader(ref Source Source) {
-			foreach (Pattern Pattern in Patterns) {
-				if (Pattern.CheckHeader(ref Source)) { return true; }
+			foreach (Node Node in Nodes) {
+				if (Node.CheckHeader(ref Source)) { return true; }
 			}
 			return false;
 		}
 
 		internal override void Consume(ref Source Source, ref Result Result) {
-			foreach (Pattern Pattern in Patterns) {
-				Pattern.Consume(ref Source, ref Result);
+			foreach (Node Node in Nodes) {
+				Node.Consume(ref Source, ref Result);
 				if (Result) {
 					return;
 				}
@@ -44,8 +44,8 @@
 			Int32 OriginalPosition = Source.Position;
 			Int32 OriginalLength = Result.Length;
 			Int32 ShortestPattern = Int32.MaxValue;
-			for (Int32 i = Patterns.Length - 1; i >= 0; i--) {
-				Patterns[i].Neglect(ref Source, ref Result);
+			for (Int32 i = Nodes.Length - 1; i >= 0; i--) {
+				Nodes[i].Neglect(ref Source, ref Result);
 				if (Result.Length < ShortestPattern) { ShortestPattern = Result.Length - OriginalLength; }
 				if (Result) {
 					Source.Position = OriginalPosition;
@@ -58,25 +58,23 @@
 			Result.Length += ShortestPattern;
 		}
 
-		public override Boolean Equals(Object? obj) {
-			switch (obj) {
+		public override Boolean Equals(Node node) {
+			switch (node) {
 			case ChainAlternator other:
-				return Equals(other);
-			case String other:
 				return Equals(other);
 			default:
 				return false;
 			}
 		}
 
-		public Boolean Equals(ChainAlternator other) => Patterns.Equals(other.Patterns);
+		public Boolean Equals(ChainAlternator other) => Nodes.Equals(other.Nodes);
 
-		public override Int32 GetHashCode() => Patterns.GetHashCode();
+		public override Int32 GetHashCode() => Nodes.GetHashCode();
 
 		public override String ToString() {
 			StringBuilder Builder = new StringBuilder("┃");
-			foreach (Pattern Pattern in Patterns) {
-				Builder.Append($"{Pattern}│");
+			foreach (Node Node in Nodes) {
+				Builder.Append($"{Node}│");
 			}
 			Builder.Remove(Builder.Length - 1, 1);
 			Builder.Append("┃");
@@ -85,14 +83,14 @@
 
 		#region Alternate
 
-		internal override Pattern Alternate(Char Right) => new ChainAlternator(Patterns, new CharLiteral(Right));
+		internal override Node Alternate(Char Right) => new ChainAlternator(Nodes, new CharLiteral(Right));
 
-		internal override Pattern Alternate(String Right) => new ChainAlternator(Patterns, new StringLiteral(Right));
+		internal override Node Alternate(String Right) => new ChainAlternator(Nodes, new StringLiteral(Right));
 
-		internal override Pattern Alternate(Pattern Right) {
+		internal override Node Alternate(Node Right) {
 			switch (Right) {
 			case ChainAlternator chain:
-				return new ChainAlternator(Patterns, chain.Patterns);
+				return new ChainAlternator(Nodes, chain.Nodes);
 			default:
 				return base.Alternate(Right);
 			}
@@ -102,9 +100,9 @@
 
 		#region Spanner
 
-		internal override Pattern Span() {
-			foreach (Pattern Pattern in Patterns) {
-				if (Pattern is Optor) { throw new PatternConstructionException("One or more of the components of this alternator are optional, and the alternator is marked as spanning. Options can not span, as it creates an infinite loop. While this potentially could succeed, this is absolutely an error."); }
+		internal override Node Span() {
+			foreach (Node Node in Nodes) {
+				if (Node is Optor) { throw new PatternConstructionException("One or more of the components of this alternator are optional, and the alternator is marked as spanning. Options can not span, as it creates an infinite loop. While this potentially could succeed, this is absolutely an error."); }
 			}
 			return base.Span();
 		}
