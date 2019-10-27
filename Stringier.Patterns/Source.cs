@@ -14,6 +14,14 @@ namespace System.Text.Patterns {
 		private readonly ReadOnlySpan<Char> Buffer;
 
 		/// <summary>
+		/// The hash code of this instance.
+		/// </summary>
+		/// <remarks>
+		/// We don't have an actual, immutible, way to get a hash code computed from the other fields in this struct. As a result, we have to create and manage hash codes ourself.
+		/// </remarks>
+		private readonly Int32 HashCode;
+
+		/// <summary>
 		/// Construct a new <see cref="Source"/> from the specified <paramref name="String"/>
 		/// </summary>
 		/// <param name="String">A <see cref="String"/> to use as a source</param>
@@ -23,6 +31,7 @@ namespace System.Text.Patterns {
 			}
 			Buffer = String.AsSpan();
 			Position = 0;
+			HashCode = Stringier.RNG.Next();
 		}
 
 		/// <summary>
@@ -37,6 +46,7 @@ namespace System.Text.Patterns {
 				Buffer = Reader.ReadToEnd().AsSpan();
 			}
 			Position = 0;
+			HashCode = Stringier.RNG.Next();
 		}
 
 		/// <summary>
@@ -46,6 +56,7 @@ namespace System.Text.Patterns {
 		public Source(Span<Char> Span) {
 			Buffer = Span;
 			Position = 0;
+			HashCode = Stringier.RNG.Next();
 		}
 
 		/// <summary>
@@ -55,6 +66,7 @@ namespace System.Text.Patterns {
 		public Source(ReadOnlySpan<Char> Span) {
 			Buffer = Span;
 			Position = 0;
+			HashCode = Stringier.RNG.Next();
 		}
 
 		/// <summary>
@@ -64,6 +76,7 @@ namespace System.Text.Patterns {
 		public Source(Result Result) {
 			Buffer = Result;
 			Position = 0;
+			HashCode = Stringier.RNG.Next();
 		}
 
 		/// <summary>
@@ -100,7 +113,7 @@ namespace System.Text.Patterns {
 		/// </remarks>
 		public Boolean Equals(Source other) => Stringier.Equals(Buffer, other.Buffer, true);
 
-		public override Int32 GetHashCode() => 0;
+		public override Int32 GetHashCode() => HashCode;
 
 		/// <summary>
 		/// Returns a string that represents the current object.

@@ -123,7 +123,7 @@
 		/// <returns><c>true</c> if equal; otherwise, <c>false</c>.</returns>
 		public Boolean Equals(ReadOnlySpan<Char> other) => Stringier.Equals(Source.Substring(Start, Length), other);
 
-		public override Int32 GetHashCode() => Source.GetHashCode() ^ Start.GetHashCode() ^ Length.GetHashCode();
+		public override Int32 GetHashCode() => Source.GetHashCode() ^ Start.GetHashCode();
 
 		/// <summary>
 		/// Throw a <see cref="ParserException"/> based on the error that occured, if any

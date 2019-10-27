@@ -39,6 +39,6 @@
 		/// <returns><c>true</c> if equal; otherwise, <c>false</c>.</returns>
 		public Boolean Equals(SourceState other) => Position.Equals(other.Position) && Source.Equals(other.Source);
 
-		public override Int32 GetHashCode() => 0;
+		public override Int32 GetHashCode() => Source.GetHashCode();
 	}
 }
