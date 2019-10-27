@@ -11,8 +11,6 @@ strategy:
   matrix:
     linux:
       imageName: 'ubuntu-latest'
-    mac:
-      imageName: 'macOS-latest'
     windows:
       imageName: 'windows-latest'
 
@@ -43,6 +41,7 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
+    projects: '**/*.*proj'
 
 #- task: VSTest@2
 #  inputs:
