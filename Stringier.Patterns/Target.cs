@@ -4,6 +4,8 @@
 
 		internal Target(Pattern Pattern) => this.Pattern = Pattern;
 
+		public static implicit operator Pattern(Target Target) => new Pattern(new Jumper(Target));
+
 		public static Boolean operator !=(Target Left, Pattern Right) => !Left.Equals(Right);
 
 		public static Boolean operator !=(Pattern Left, Target Right) => !Right.Equals(Left);
