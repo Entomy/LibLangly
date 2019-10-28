@@ -357,7 +357,7 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "AGMQJuS0BkjatSLYw9eP4A=="
+          "hash": "tZ5AJAJc1ZBCiy+u4ToiCA=="
         }
       },
       "is_incremental": true,
@@ -381,7 +381,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/patterns-advanced.html",
-          "hash": "Kk884gXtNpALonExtIFQhg=="
+          "hash": "guTa4/ggxESUuPxwRz6fhQ=="
         }
       },
       "is_incremental": true,
@@ -393,7 +393,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/patterns-concepts.html",
-          "hash": "sstdAkcIB1uvtC5ybx86yg=="
+          "hash": "YdrvlDmT6tIe7R0eeLyD5g=="
         }
       },
       "is_incremental": true,
@@ -405,7 +405,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/patterns-configuration.html",
-          "hash": "oZmjA1k3QGBuyAZoGfi+lQ=="
+          "hash": "yKF2Si3L1N3oUgyl4/Q83A=="
         }
       },
       "is_incremental": true,
@@ -417,7 +417,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/patterns-declarations.html",
-          "hash": "mLSAjo1k+sNqclR/e0e+iw=="
+          "hash": "lM71La3limPw7dOOrx4HVg=="
         }
       },
       "is_incremental": true,
@@ -429,7 +429,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/patterns-intro.html",
-          "hash": "CZ2L6E2schT+KIHV7JX2Rg=="
+          "hash": "64i7m8vNjdfVE3veJegTyQ=="
         }
       },
       "is_incremental": true,
@@ -441,7 +441,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/stringier-intro.html",
-          "hash": "piU0mPaN5mQih/FZt7oMog=="
+          "hash": "eWnigiIfOV1+NZ7CwvNf8g=="
         }
       },
       "is_incremental": true,
@@ -465,7 +465,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "0zMgOm+cfi07QKpj9zcTRA=="
+          "hash": "/NS6DegAohDdURtOZKqqdQ=="
         }
       },
       "is_incremental": true,
@@ -493,11 +493,12 @@
         "skipped_file_count": 0
       },
       "processors": {
-        "ConceptualDocumentProcessor": {
-          "can_incremental": true,
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
-          "total_file_count": 8,
-          "skipped_file_count": 8
+          "total_file_count": 0,
+          "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
@@ -505,12 +506,11 @@
           "total_file_count": 29,
           "skipped_file_count": 29
         },
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
+          "total_file_count": 8,
+          "skipped_file_count": 8
         }
       }
     },
