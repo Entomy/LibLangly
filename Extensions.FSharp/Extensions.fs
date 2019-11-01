@@ -32,3 +32,7 @@ module Extensions =
     /// </summary>
     let join2(separator:'a)(sequence:seq<char>) = ijoin2<StringierExtensions, _, _, string> separator sequence
     
+    /// <summary>
+    /// Repeat the char, count times.
+    /// </summary>
+    let repeat(count:int32)(char:char) = char.Repeat(count)
