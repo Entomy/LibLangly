@@ -258,6 +258,822 @@
       </tr>
     </tbody>
   </table>
+  
+  
+  <a id="System_StringierExtensions_GetUnicodeCategory_" data-uid="System.StringierExtensions.GetUnicodeCategory*"></a>
+  <h4 id="System_StringierExtensions_GetUnicodeCategory_System_Char_" data-uid="System.StringierExtensions.GetUnicodeCategory(System.Char)">GetUnicodeCategory(Char)</h4>
+  <div class="markdown level1 summary"><p>Categorizes a specified Unicode character into a group identified by one of the <see cref="!:UnicodeCategory"></see> values.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static UnicodeCategory GetUnicodeCategory(this char Char)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">Char</span></td>
+        <td><p>The Unicode character to categorize.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnicodeCategory</span></td>
+        <td><p>A <see cref="!:UnicodeCategory"></see> value that identifies the group that contains <code data-dev-comment-type="paramref" class="paramref">Char</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_StringierExtensions_IsControl_" data-uid="System.StringierExtensions.IsControl*"></a>
+  <h4 id="System_StringierExtensions_IsControl_System_Char_" data-uid="System.StringierExtensions.IsControl(System.Char)">IsControl(Char)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the specified Unicode character is categorized as a control character.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsControl(this char Char)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">Char</span></td>
+        <td><p>The Unicode character to evaluate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>true if <code data-dev-comment-type="paramref" class="paramref">Char</code> is a control character; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_StringierExtensions_IsDigit_" data-uid="System.StringierExtensions.IsDigit*"></a>
+  <h4 id="System_StringierExtensions_IsDigit_System_Char_" data-uid="System.StringierExtensions.IsDigit(System.Char)">IsDigit(Char)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the specified Unicode character is categorized as a decimal digit.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsDigit(this char Char)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">Char</span></td>
+        <td><p>The Unicode character to evaluate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>true if <code data-dev-comment-type="paramref" class="paramref">Char</code> is a decimal digit; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_StringierExtensions_IsHighSurrogate_" data-uid="System.StringierExtensions.IsHighSurrogate*"></a>
+  <h4 id="System_StringierExtensions_IsHighSurrogate_System_Char_" data-uid="System.StringierExtensions.IsHighSurrogate(System.Char)">IsHighSurrogate(Char)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the specified Char object is a high surrogate.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsHighSurrogate(this char Char)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">Char</span></td>
+        <td><p>The Unicode character to evaluate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>true if the numeric value of the <code data-dev-comment-type="paramref" class="paramref">Char</code> parameter ranges from U+D800 through U+DBFF; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_StringierExtensions_IsLetter_" data-uid="System.StringierExtensions.IsLetter*"></a>
+  <h4 id="System_StringierExtensions_IsLetter_System_Char_" data-uid="System.StringierExtensions.IsLetter(System.Char)">IsLetter(Char)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether a Unicode character is categorized as a Unicode letter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsLetter(this char Char)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">Char</span></td>
+        <td><p>The Unicode character to evaluate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>true if <code data-dev-comment-type="paramref" class="paramref">Char</code> is a letter; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_StringierExtensions_IsLetterOrDigit_" data-uid="System.StringierExtensions.IsLetterOrDigit*"></a>
+  <h4 id="System_StringierExtensions_IsLetterOrDigit_System_Char_" data-uid="System.StringierExtensions.IsLetterOrDigit(System.Char)">IsLetterOrDigit(Char)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether a Unicode character is categorized as a letter or a decimal digit.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsLetterOrDigit(this char Char)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">Char</span></td>
+        <td><p>The Unicode character to evaluate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>true if <code data-dev-comment-type="paramref" class="paramref">Char</code> is a letter or a decimal digit; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_StringierExtensions_IsLower_" data-uid="System.StringierExtensions.IsLower*"></a>
+  <h4 id="System_StringierExtensions_IsLower_System_Char_" data-uid="System.StringierExtensions.IsLower(System.Char)">IsLower(Char)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the specified Unicode character is categorized as a lowercase letter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsLower(this char Char)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">Char</span></td>
+        <td><p>The Unicode character to evaluate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>true if <code data-dev-comment-type="paramref" class="paramref">Char</code> is a lowercase letter; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_StringierExtensions_IsLowSurrogate_" data-uid="System.StringierExtensions.IsLowSurrogate*"></a>
+  <h4 id="System_StringierExtensions_IsLowSurrogate_System_Char_" data-uid="System.StringierExtensions.IsLowSurrogate(System.Char)">IsLowSurrogate(Char)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the specified Char object is a low surrogate.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsLowSurrogate(this char Char)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">Char</span></td>
+        <td><p>The character to evaluate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>true if the numeric value of the <code data-dev-comment-type="paramref" class="paramref">Char</code> parameter ranges from U+DC00 through U+DFFF; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_StringierExtensions_IsNumber_" data-uid="System.StringierExtensions.IsNumber*"></a>
+  <h4 id="System_StringierExtensions_IsNumber_System_Char_" data-uid="System.StringierExtensions.IsNumber(System.Char)">IsNumber(Char)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether a Unicode character is categorized as a number.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsNumber(this char Char)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">Char</span></td>
+        <td><p>The Unicode character to evaluate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>true if <code data-dev-comment-type="paramref" class="paramref">Char</code> is a number; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_StringierExtensions_IsPunctuation_" data-uid="System.StringierExtensions.IsPunctuation*"></a>
+  <h4 id="System_StringierExtensions_IsPunctuation_System_Char_" data-uid="System.StringierExtensions.IsPunctuation(System.Char)">IsPunctuation(Char)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the specified Unicode character is categorized as a punctuation mark.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsPunctuation(this char Char)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">Char</span></td>
+        <td><p>The Unicode character to evaluate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>true if <code data-dev-comment-type="paramref" class="paramref">Char</code> is a punctuation mark; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_StringierExtensions_IsSeparator_" data-uid="System.StringierExtensions.IsSeparator*"></a>
+  <h4 id="System_StringierExtensions_IsSeparator_System_Char_" data-uid="System.StringierExtensions.IsSeparator(System.Char)">IsSeparator(Char)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether a Unicode character is categorized as a separator character.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsSeparator(this char Char)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">Char</span></td>
+        <td><p>The Unicode character to evaluate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>true if <code data-dev-comment-type="paramref" class="paramref">Char</code> is a separator character; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_StringierExtensions_IsSurrogate_" data-uid="System.StringierExtensions.IsSurrogate*"></a>
+  <h4 id="System_StringierExtensions_IsSurrogate_System_Char_" data-uid="System.StringierExtensions.IsSurrogate(System.Char)">IsSurrogate(Char)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the specified character has a surrogate code unit.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsSurrogate(this char Char)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">Char</span></td>
+        <td><p>The Unicode character to evaluate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>true if <code data-dev-comment-type="paramref" class="paramref">Char</code> is either a high surrogate or a low surrogate; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_StringierExtensions_IsSurrogatePair_" data-uid="System.StringierExtensions.IsSurrogatePair*"></a>
+  <h4 id="System_StringierExtensions_IsSurrogatePair_System_Char_System_Char_" data-uid="System.StringierExtensions.IsSurrogatePair(System.Char,System.Char)">IsSurrogatePair(Char, Char)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether this <code data-dev-comment-type="paramref" class="paramref">High</code> and the specified <code data-dev-comment-type="paramref" class="paramref">Low</code> <span class="xref">System.Char</span> form a surrogate pair.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsSurrogatePair(this char High, char Low)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">High</span></td>
+        <td><p>The high surrogate.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">Low</span></td>
+        <td><p>THe low surrogate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>true if the numeric value of the high and low parameters are their respective surrogate parts; otherwise false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_StringierExtensions_IsSymbol_" data-uid="System.StringierExtensions.IsSymbol*"></a>
+  <h4 id="System_StringierExtensions_IsSymbol_System_Char_" data-uid="System.StringierExtensions.IsSymbol(System.Char)">IsSymbol(Char)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the specified Unicode character is categorized as a symbol character.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsSymbol(this char Char)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">Char</span></td>
+        <td><p>The Unicode character to evaluate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>true if <code data-dev-comment-type="paramref" class="paramref">Char</code> is a symbol character; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_StringierExtensions_IsUpper_" data-uid="System.StringierExtensions.IsUpper*"></a>
+  <h4 id="System_StringierExtensions_IsUpper_System_Char_" data-uid="System.StringierExtensions.IsUpper(System.Char)">IsUpper(Char)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the specified Unicode character is categorized as an uppercase letter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsUpper(this char Char)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">Char</span></td>
+        <td><p>The Unicode character to evaluate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>true if <code data-dev-comment-type="paramref" class="paramref">Char</code> is an uppercase letter; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_StringierExtensions_IsWhiteSpace_" data-uid="System.StringierExtensions.IsWhiteSpace*"></a>
+  <h4 id="System_StringierExtensions_IsWhiteSpace_System_Char_" data-uid="System.StringierExtensions.IsWhiteSpace(System.Char)">IsWhiteSpace(Char)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the specified Unicode character is categorized as white space.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsWhiteSpace(this char Char)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">Char</span></td>
+        <td><p>The Unicode character to evaluate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>true if <code data-dev-comment-type="paramref" class="paramref">Char</code> is white space; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_StringierExtensions_Join_" data-uid="System.StringierExtensions.Join*"></a>
+  <h4 id="System_StringierExtensions_Join_IEnumerable_System_Char__" data-uid="System.StringierExtensions.Join(IEnumerable{System.Char})">Join(IEnumerable&lt;Char&gt;)</h4>
+  <div class="markdown level1 summary"><p>Joins the <code data-dev-comment-type="paramref" class="paramref">Chars</code> into a string.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string Join(this IEnumerable&lt;char&gt; Chars)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">System.Char</span>&gt;</td>
+        <td><span class="parametername">Chars</span></td>
+        <td><p>The <see cref="!:IEnumerable&lt;T>"></see> of <span class="xref">System.Char</span> to join.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The joined <span class="xref">System.String</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="System_StringierExtensions_Join_" data-uid="System.StringierExtensions.Join*"></a>
+  <h4 id="System_StringierExtensions_Join_System_Char___" data-uid="System.StringierExtensions.Join(System.Char[])">Join(Char[])</h4>
+  <div class="markdown level1 summary"><p>Joins the <code data-dev-comment-type="paramref" class="paramref">Chars</code> into a string.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string Join(this char[] Chars)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span>[]</td>
+        <td><span class="parametername">Chars</span></td>
+        <td><p>The <span class="xref">System.Char</span> to join.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The joined <span class="xref">System.String</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
 </article>
           </div>
           
