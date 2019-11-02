@@ -77,6 +77,16 @@ module Extensions =
         | _ -> raise(ArgumentException("Not sure how to count occurences for these types"))
 
     /// <summary>
+    /// Returns a new string that center-aligns the characters in this instance by padding them with spaces on both sides, for a specified total length.
+    /// </summary>
+    let pad(totalWidth)(string:string) = string.Pad(totalWidth)
+
+    /// <summary>
+    /// Returns a new string that center-aligns the characters in this instance by padding them with spaces on both sides, for a specified total length.
+    /// </summary>
+    let pad2(totalWidth)(padding)(string:string) = string.Pad(totalWidth, padding)
+
+    /// <summary>
     /// Repeat the char, count times.
     /// </summary>
     let repeat(count:int32)(char:char) = char.Repeat(count)
