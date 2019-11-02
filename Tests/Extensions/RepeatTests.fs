@@ -8,3 +8,7 @@ module RepeatTests =
     [<Fact>]
     let ``repeat 3 'a'`` () =
         Assert.Equal("aaa", repeat 3 'a')
+
+    [<Fact>]
+    let ``repeat 3 "hi!"`` () =
+        Assert.Equal("hi!hi!hi!", repeat 3 "hi!")

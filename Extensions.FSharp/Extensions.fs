@@ -87,6 +87,10 @@ module Extensions =
     let pad2(totalWidth)(padding)(string:string) = string.Pad(totalWidth, padding)
 
     /// <summary>
-    /// Repeat the char, count times.
+    /// Repeat the text, count times.
     /// </summary>
-    let repeat(count:int32)(char:char) = char.Repeat(count)
+    let repeat(count:int32)(text:obj) =
+        match text with
+        | :? char as char -> char.Repeat(count)
+        | :? string as string -> string.Repeat(count)
+        | _ -> raise(ArgumentException("Not sure how to repeat the text type; it might not be text"))
