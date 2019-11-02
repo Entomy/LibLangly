@@ -94,3 +94,14 @@ module Extensions =
         | :? char as char -> char.Repeat(count)
         | :? string as string -> string.Repeat(count)
         | _ -> raise(ArgumentException("Not sure how to repeat the text type; it might not be text"))
+
+    /// <summary>
+    /// Splits a string into substrings based on the separator(s).
+    /// </summary>
+    let split(separator:obj)(source:string) =
+        match separator with
+        | (:? char as char) -> source.Split(char)
+        | (:? array<char> as chars) -> source.Split(chars)
+        | (:? string as string) -> source.Split(string)
+        | (:? array<string> as strings) -> source.Split(strings)
+        | _ -> raise(ArgumentException("Wasn't passed a separator type that can be used"))
