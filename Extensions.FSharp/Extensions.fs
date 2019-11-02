@@ -42,14 +42,22 @@ module Extensions =
     /// <summary>
     /// Joins the sequence into a string.
     /// </summary>
-    let join(sequence:seq<char>) = ijoin<StringierExtensions, seq<char>, string> sequence
+    let join(sequence:obj) =
+        match sequence with
+        | :? IEnumerable<char> as charSeq -> ijoin<StringierExtensions, IEnumerable<char>, string> charSeq
+        | :? IEnumerable<string> as stringSeq -> ijoin<StringierExtensions, IEnumerable<string>, string> stringSeq
+        | _ -> raise(ArgumentException("Not sure how to join this sequence"))
 
     let inline internal ijoin2< ^t, ^a, ^b, ^c when (^t or ^a) : (static member Join : ^a * ^b -> ^c)> separator sequence = ((^t or ^a) : (static  member Join : ^a * ^b -> ^c)(sequence, separator))
 
     /// <summary>
     /// Joins the sequence into a string, interleaving the specified separator
     /// </summary>
-    let join2(separator:'a)(sequence:seq<char>) = ijoin2<StringierExtensions, _, _, string> separator sequence
+    let join2(separator:'a)(sequence:obj) = 
+        match sequence with
+        | :? IEnumerable<char> as charSeq -> ijoin2<StringierExtensions, _, _, string> separator charSeq
+        | :? IEnumerable<string> as stringSeq -> ijoin2<StringierExtensions, _, _, string> separator stringSeq
+        | _ -> raise(ArgumentException("Not sure how to join this sequence"))
     
     /// <summary>
     /// Repeat the char, count times.
