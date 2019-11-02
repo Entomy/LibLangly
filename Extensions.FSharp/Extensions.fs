@@ -59,6 +59,12 @@ module Extensions =
         | :? IEnumerable<string> as stringSeq -> ijoin2<StringierExtensions, _, _, string> separator stringSeq
         | _ -> raise(ArgumentException("Not sure how to join this sequence"))
     
+
+    /// <summary>
+    /// Separate the <paramref name="String"/> into its lines.
+    /// </summary>
+    let lines(source:string) = source.Lines()
+
     /// <summary>
     /// Repeat the char, count times.
     /// </summary>
