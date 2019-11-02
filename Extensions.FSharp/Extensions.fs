@@ -105,3 +105,8 @@ module Extensions =
         | (:? string as string) -> source.Split(string)
         | (:? array<string> as strings) -> source.Split(strings)
         | _ -> raise(ArgumentException("Wasn't passed a separator type that can be used"))
+
+    /// <summary>
+    /// Separate the string into its words.
+    /// </summary>
+    let words(source:string) = source.Words()
