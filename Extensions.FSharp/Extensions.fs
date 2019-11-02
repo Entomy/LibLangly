@@ -1,6 +1,7 @@
 ﻿namespace Stringier
 
 open System
+open System.Collections.Generic
 
 [<AutoOpen>]
 module Extensions =
@@ -17,6 +18,14 @@ module Extensions =
     /// Trim and replace multiples of the specified character with just a single character
     /// </summary>
     let clean2(char:char)(source:string):string = source.Clean(char);
+
+    let contains(value:obj)(source:obj):bool =
+        match value, source with
+        | (:? char as char), (:? string as string) -> string.Contains(char)
+        | (:? char as char), (:? seq<string> as sequence) -> sequence.Contains(char)
+        | (:? string as string), (:? string as text) -> text.Contains(string)
+        | (:? string as string), (:? seq<string> as sequence) -> sequence.Contains(string)
+        | _ -> raise(ArgumentException("Not sure how to handle this combination of type arguments"))
 
     let inline internal ijoin< ^t, ^a, ^b when (^t or ^a) : (static member Join : ^a -> ^b)> sequence = ((^t or ^a) : (static  member Join : ^a -> ^b)(sequence))
 
