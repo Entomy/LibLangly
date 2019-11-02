@@ -66,6 +66,17 @@ module Extensions =
     let lines(source:string) = source.Lines()
 
     /// <summary>
+    /// Count all occurences of seek in source
+    /// </summary>
+    let occurrences(seek:obj)(source:obj) =
+        match source, seek with
+        | (:? string as string), (:? char as char) -> string.Occurrences(char)
+        | (:? string as string), (:? array<char> as chars) -> string.Occurrences(chars)
+        | (:? seq<string> as strings), (:? char as char) -> strings.Occurrences(char)
+        | (:? seq<string> as strings), (:? array<char> as chars) -> strings.Occurrences(chars)
+        | _ -> raise(ArgumentException("Not sure how to count occurences for these types"))
+
+    /// <summary>
     /// Repeat the char, count times.
     /// </summary>
     let repeat(count:int32)(char:char) = char.Repeat(count)
