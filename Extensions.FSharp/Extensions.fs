@@ -27,6 +27,16 @@ module Extensions =
         | (:? string as string), (:? seq<string> as sequence) -> sequence.Contains(string)
         | _ -> raise(ArgumentException("Not sure how to handle this combination of type arguments"))
 
+    /// <summary>
+    /// Ensures the source begins with the required string, adding it if necessary.
+    /// </summary>
+    let ensureBegins(required:string)(source:string) = source.EnsureBeginsWith(required)
+
+    /// <summary>
+    /// Ensures the source ends with the required string, adding it if necessary.
+    /// </summary>
+    let ensureEnds(required:string)(source:string) = source.EnsureEndsWith(required)
+
     let inline internal ijoin< ^t, ^a, ^b when (^t or ^a) : (static member Join : ^a -> ^b)> sequence = ((^t or ^a) : (static  member Join : ^a -> ^b)(sequence))
 
     /// <summary>
