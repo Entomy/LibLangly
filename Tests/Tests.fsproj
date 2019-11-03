@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Patterns\StringierTests.fs" />
     <Compile Include="Extensions\ChopTests.fs" />
     <Compile Include="Extensions\CleanTests.fs" />
     <Compile Include="Extensions\ContainsTests.fs" />
@@ -37,6 +38,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Extensions.FSharp\Extensions.FSharp.fsproj" />
+    <ProjectReference Include="..\Patterns\Patterns.csproj" />
   </ItemGroup>
 
 </Project>
