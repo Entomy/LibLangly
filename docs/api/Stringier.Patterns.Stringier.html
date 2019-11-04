@@ -112,7 +112,7 @@
     <pre><code class="lang-csharp hljs">public static class Stringier</code></pre>
   </div>
   <h5 id="Stringier_Patterns_Stringier_remarks"><strong>Remarks</strong></h5>
-  <div class="markdown level0 remarks"><p>While some of these could theoretically be useful outside this assembly, the simple fact is the actual behavior diverges from their standard analogues in a way that while useful for Stringier, could introduce unexpected behavior for others. It is for the best that they stay internal.
+  <div class="markdown level0 remarks"><p>In previous versions, this was internal. It has been made public because of the code-point equality nature of it, not being available elsewhere.
 Furthermore, this provides a centralized way for quickly and easily changing the implementation of a core operation.</p>
 </div>
   <h3 id="methods">Methods
@@ -122,11 +122,12 @@ Furthermore, this provides a centralized way for quickly and easily changing the
     <a href="https://github.com/Entomy/Stringier/new/Rewrite/apiSpec/new?filename=Stringier_Patterns_Stringier_Equals_System_Char_System_Char_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Stringier.Equals(System.Char%2CSystem.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/Rewrite/Patterns/Stringier.cs/#L13">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/Rewrite/Patterns/Stringier.cs/#L18">View Source</a>
   </span>
   <a id="Stringier_Patterns_Stringier_Equals_" data-uid="Stringier.Patterns.Stringier.Equals*"></a>
   <h4 id="Stringier_Patterns_Stringier_Equals_System_Char_System_Char_" data-uid="Stringier.Patterns.Stringier.Equals(System.Char,System.Char)">Equals(Char, Char)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Compare the specified code points for equality; comparison is case insensitive.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -145,12 +146,14 @@ Furthermore, this provides a centralized way for quickly and easily changing the
       <tr>
         <td><span class="xref">System.Char</span></td>
         <td><span class="parametername">a</span></td>
-        <td></td>
+        <td><p>Code point as a <span class="xref">System.Char</span>.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Char</span></td>
         <td><span class="parametername">b</span></td>
-        <td></td>
+        <td><p>Code point as a <span class="xref">System.Char</span></p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -165,7 +168,8 @@ Furthermore, this provides a centralized way for quickly and easily changing the
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td></td>
+        <td><p><code>true</code> if code points are equal; otherwise, <code>false</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -174,11 +178,12 @@ Furthermore, this provides a centralized way for quickly and easily changing the
     <a href="https://github.com/Entomy/Stringier/new/Rewrite/apiSpec/new?filename=Stringier_Patterns_Stringier_Equals_System_Char_System_Char_System_Boolean_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Stringier.Equals(System.Char%2CSystem.Char%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/Rewrite/Patterns/Stringier.cs/#L15">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/Rewrite/Patterns/Stringier.cs/#L27">View Source</a>
   </span>
   <a id="Stringier_Patterns_Stringier_Equals_" data-uid="Stringier.Patterns.Stringier.Equals*"></a>
   <h4 id="Stringier_Patterns_Stringier_Equals_System_Char_System_Char_System_Boolean_" data-uid="Stringier.Patterns.Stringier.Equals(System.Char,System.Char,System.Boolean)">Equals(Char, Char, Boolean)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Compare the specified code points for equality.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -197,17 +202,20 @@ Furthermore, this provides a centralized way for quickly and easily changing the
       <tr>
         <td><span class="xref">System.Char</span></td>
         <td><span class="parametername">a</span></td>
-        <td></td>
+        <td><p>Code point as a <span class="xref">System.Char</span>.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Char</span></td>
         <td><span class="parametername">b</span></td>
-        <td></td>
+        <td><p>Code point as a <span class="xref">System.Char</span></p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
         <td><span class="parametername">CaseSensitive</span></td>
-        <td></td>
+        <td><p>Whether the comparison should be case sensitive.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -222,7 +230,8 @@ Furthermore, this provides a centralized way for quickly and easily changing the
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td></td>
+        <td><p><code>true</code> if code points are equal; otherwise, <code>false</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -231,11 +240,12 @@ Furthermore, this provides a centralized way for quickly and easily changing the
     <a href="https://github.com/Entomy/Stringier/new/Rewrite/apiSpec/new?filename=Stringier_Patterns_Stringier_Equals_System_Char_System_UInt16_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Stringier.Equals(System.Char%2CSystem.UInt16)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/Rewrite/Patterns/Stringier.cs/#L21">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/Rewrite/Patterns/Stringier.cs/#L52">View Source</a>
   </span>
   <a id="Stringier_Patterns_Stringier_Equals_" data-uid="Stringier.Patterns.Stringier.Equals*"></a>
   <h4 id="Stringier_Patterns_Stringier_Equals_System_Char_System_UInt16_" data-uid="Stringier.Patterns.Stringier.Equals(System.Char,System.UInt16)">Equals(Char, UInt16)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Compare the specified code points for equality; comparison is case insensitive.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -254,12 +264,14 @@ Furthermore, this provides a centralized way for quickly and easily changing the
       <tr>
         <td><span class="xref">System.Char</span></td>
         <td><span class="parametername">a</span></td>
-        <td></td>
+        <td><p>Code point as a <span class="xref">System.Char</span>.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.UInt16</span></td>
         <td><span class="parametername">b</span></td>
-        <td></td>
+        <td><p>Code point as a <span class="xref">System.UInt16</span></p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -274,7 +286,8 @@ Furthermore, this provides a centralized way for quickly and easily changing the
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td></td>
+        <td><p><code>true</code> if code points are equal; otherwise, <code>false</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -283,11 +296,12 @@ Furthermore, this provides a centralized way for quickly and easily changing the
     <a href="https://github.com/Entomy/Stringier/new/Rewrite/apiSpec/new?filename=Stringier_Patterns_Stringier_Equals_System_Char_System_UInt16_System_Boolean_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Stringier.Equals(System.Char%2CSystem.UInt16%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/Rewrite/Patterns/Stringier.cs/#L23">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/Rewrite/Patterns/Stringier.cs/#L61">View Source</a>
   </span>
   <a id="Stringier_Patterns_Stringier_Equals_" data-uid="Stringier.Patterns.Stringier.Equals*"></a>
   <h4 id="Stringier_Patterns_Stringier_Equals_System_Char_System_UInt16_System_Boolean_" data-uid="Stringier.Patterns.Stringier.Equals(System.Char,System.UInt16,System.Boolean)">Equals(Char, UInt16, Boolean)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Compare the specified code points for equality.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -306,17 +320,20 @@ Furthermore, this provides a centralized way for quickly and easily changing the
       <tr>
         <td><span class="xref">System.Char</span></td>
         <td><span class="parametername">a</span></td>
-        <td></td>
+        <td><p>Code point as a <span class="xref">System.Char</span>.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.UInt16</span></td>
         <td><span class="parametername">b</span></td>
-        <td></td>
+        <td><p>Code point as a <span class="xref">System.UInt16</span></p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
         <td><span class="parametername">CaseSensitive</span></td>
-        <td></td>
+        <td><p>Whether the comparison should be case sensitive.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -331,7 +348,8 @@ Furthermore, this provides a centralized way for quickly and easily changing the
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td></td>
+        <td><p><code>true</code> if code points are equal; otherwise, <code>false</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -340,7 +358,7 @@ Furthermore, this provides a centralized way for quickly and easily changing the
     <a href="https://github.com/Entomy/Stringier/new/Rewrite/apiSpec/new?filename=Stringier_Patterns_Stringier_Equals_System_String_System_String_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Stringier.Equals(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/Rewrite/Patterns/Stringier.cs/#L29">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/Rewrite/Patterns/Stringier.cs/#L80">View Source</a>
   </span>
   <a id="Stringier_Patterns_Stringier_Equals_" data-uid="Stringier.Patterns.Stringier.Equals*"></a>
   <h4 id="Stringier_Patterns_Stringier_Equals_System_String_System_String_" data-uid="Stringier.Patterns.Stringier.Equals(System.String,System.String)">Equals(String, String)</h4>
@@ -392,7 +410,7 @@ Furthermore, this provides a centralized way for quickly and easily changing the
     <a href="https://github.com/Entomy/Stringier/new/Rewrite/apiSpec/new?filename=Stringier_Patterns_Stringier_Equals_System_String_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Stringier.Equals(System.String%2CSystem.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/Rewrite/Patterns/Stringier.cs/#L31">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/Rewrite/Patterns/Stringier.cs/#L82">View Source</a>
   </span>
   <a id="Stringier_Patterns_Stringier_Equals_" data-uid="Stringier.Patterns.Stringier.Equals*"></a>
   <h4 id="Stringier_Patterns_Stringier_Equals_System_String_System_String_System_Boolean_" data-uid="Stringier.Patterns.Stringier.Equals(System.String,System.String,System.Boolean)">Equals(String, String, Boolean)</h4>
@@ -449,7 +467,7 @@ Furthermore, this provides a centralized way for quickly and easily changing the
     <a href="https://github.com/Entomy/Stringier/new/Rewrite/apiSpec/new?filename=Stringier_Patterns_Stringier_Equals_System_String_System_UInt16___.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Stringier.Equals(System.String%2CSystem.UInt16%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/Rewrite/Patterns/Stringier.cs/#L33">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/Rewrite/Patterns/Stringier.cs/#L84">View Source</a>
   </span>
   <a id="Stringier_Patterns_Stringier_Equals_" data-uid="Stringier.Patterns.Stringier.Equals*"></a>
   <h4 id="Stringier_Patterns_Stringier_Equals_System_String_System_UInt16___" data-uid="Stringier.Patterns.Stringier.Equals(System.String,System.UInt16[])">Equals(String, UInt16[])</h4>
@@ -501,7 +519,7 @@ Furthermore, this provides a centralized way for quickly and easily changing the
     <a href="https://github.com/Entomy/Stringier/new/Rewrite/apiSpec/new?filename=Stringier_Patterns_Stringier_Equals_System_String_System_UInt16___System_Boolean_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Stringier.Equals(System.String%2CSystem.UInt16%5B%5D%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/Rewrite/Patterns/Stringier.cs/#L35">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/Rewrite/Patterns/Stringier.cs/#L86">View Source</a>
   </span>
   <a id="Stringier_Patterns_Stringier_Equals_" data-uid="Stringier.Patterns.Stringier.Equals*"></a>
   <h4 id="Stringier_Patterns_Stringier_Equals_System_String_System_UInt16___System_Boolean_" data-uid="Stringier.Patterns.Stringier.Equals(System.String,System.UInt16[],System.Boolean)">Equals(String, UInt16[], Boolean)</h4>
@@ -558,11 +576,12 @@ Furthermore, this provides a centralized way for quickly and easily changing the
     <a href="https://github.com/Entomy/Stringier/new/Rewrite/apiSpec/new?filename=Stringier_Patterns_Stringier_Equals_System_UInt16_System_Char_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Stringier.Equals(System.UInt16%2CSystem.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/Rewrite/Patterns/Stringier.cs/#L17">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/Rewrite/Patterns/Stringier.cs/#L35">View Source</a>
   </span>
   <a id="Stringier_Patterns_Stringier_Equals_" data-uid="Stringier.Patterns.Stringier.Equals*"></a>
   <h4 id="Stringier_Patterns_Stringier_Equals_System_UInt16_System_Char_" data-uid="Stringier.Patterns.Stringier.Equals(System.UInt16,System.Char)">Equals(UInt16, Char)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Compare the specified code points for equality; comparison is case insensitive.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -581,12 +600,14 @@ Furthermore, this provides a centralized way for quickly and easily changing the
       <tr>
         <td><span class="xref">System.UInt16</span></td>
         <td><span class="parametername">a</span></td>
-        <td></td>
+        <td><p>Code point as a <span class="xref">System.UInt16</span>.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Char</span></td>
         <td><span class="parametername">b</span></td>
-        <td></td>
+        <td><p>Code point as a <span class="xref">System.Char</span></p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -601,7 +622,8 @@ Furthermore, this provides a centralized way for quickly and easily changing the
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td></td>
+        <td><p><code>true</code> if code points are equal; otherwise, <code>false</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -610,11 +632,12 @@ Furthermore, this provides a centralized way for quickly and easily changing the
     <a href="https://github.com/Entomy/Stringier/new/Rewrite/apiSpec/new?filename=Stringier_Patterns_Stringier_Equals_System_UInt16_System_Char_System_Boolean_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Stringier.Equals(System.UInt16%2CSystem.Char%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/Rewrite/Patterns/Stringier.cs/#L19">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/Rewrite/Patterns/Stringier.cs/#L44">View Source</a>
   </span>
   <a id="Stringier_Patterns_Stringier_Equals_" data-uid="Stringier.Patterns.Stringier.Equals*"></a>
   <h4 id="Stringier_Patterns_Stringier_Equals_System_UInt16_System_Char_System_Boolean_" data-uid="Stringier.Patterns.Stringier.Equals(System.UInt16,System.Char,System.Boolean)">Equals(UInt16, Char, Boolean)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Compare the specified code points for equality.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -633,17 +656,20 @@ Furthermore, this provides a centralized way for quickly and easily changing the
       <tr>
         <td><span class="xref">System.UInt16</span></td>
         <td><span class="parametername">a</span></td>
-        <td></td>
+        <td><p>Code point as a <span class="xref">System.UInt16</span>.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Char</span></td>
         <td><span class="parametername">b</span></td>
-        <td></td>
+        <td><p>Code point as a <span class="xref">System.Char</span></p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
         <td><span class="parametername">CaseSensitive</span></td>
-        <td></td>
+        <td><p>Whether the comparison should be case sensitive.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -658,7 +684,8 @@ Furthermore, this provides a centralized way for quickly and easily changing the
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td></td>
+        <td><p><code>true</code> if code points are equal; otherwise, <code>false</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -667,11 +694,12 @@ Furthermore, this provides a centralized way for quickly and easily changing the
     <a href="https://github.com/Entomy/Stringier/new/Rewrite/apiSpec/new?filename=Stringier_Patterns_Stringier_Equals_System_UInt16_System_UInt16_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Stringier.Equals(System.UInt16%2CSystem.UInt16)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/Rewrite/Patterns/Stringier.cs/#L25">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/Rewrite/Patterns/Stringier.cs/#L69">View Source</a>
   </span>
   <a id="Stringier_Patterns_Stringier_Equals_" data-uid="Stringier.Patterns.Stringier.Equals*"></a>
   <h4 id="Stringier_Patterns_Stringier_Equals_System_UInt16_System_UInt16_" data-uid="Stringier.Patterns.Stringier.Equals(System.UInt16,System.UInt16)">Equals(UInt16, UInt16)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Compare the specified code points for equality; comparison is case insensitive.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -690,12 +718,14 @@ Furthermore, this provides a centralized way for quickly and easily changing the
       <tr>
         <td><span class="xref">System.UInt16</span></td>
         <td><span class="parametername">a</span></td>
-        <td></td>
+        <td><p>Code point as a <span class="xref">System.UInt16</span>.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.UInt16</span></td>
         <td><span class="parametername">b</span></td>
-        <td></td>
+        <td><p>Code point as a <span class="xref">System.UInt16</span></p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -710,7 +740,8 @@ Furthermore, this provides a centralized way for quickly and easily changing the
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td></td>
+        <td><p><code>true</code> if code points are equal; otherwise, <code>false</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -719,11 +750,12 @@ Furthermore, this provides a centralized way for quickly and easily changing the
     <a href="https://github.com/Entomy/Stringier/new/Rewrite/apiSpec/new?filename=Stringier_Patterns_Stringier_Equals_System_UInt16_System_UInt16_System_Boolean_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Stringier.Equals(System.UInt16%2CSystem.UInt16%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/Rewrite/Patterns/Stringier.cs/#L27">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/Rewrite/Patterns/Stringier.cs/#L78">View Source</a>
   </span>
   <a id="Stringier_Patterns_Stringier_Equals_" data-uid="Stringier.Patterns.Stringier.Equals*"></a>
   <h4 id="Stringier_Patterns_Stringier_Equals_System_UInt16_System_UInt16_System_Boolean_" data-uid="Stringier.Patterns.Stringier.Equals(System.UInt16,System.UInt16,System.Boolean)">Equals(UInt16, UInt16, Boolean)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Compare the specified code points for equality.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -742,17 +774,20 @@ Furthermore, this provides a centralized way for quickly and easily changing the
       <tr>
         <td><span class="xref">System.UInt16</span></td>
         <td><span class="parametername">a</span></td>
-        <td></td>
+        <td><p>Code point as a <span class="xref">System.UInt16</span>.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.UInt16</span></td>
         <td><span class="parametername">b</span></td>
-        <td></td>
+        <td><p>Code point as a <span class="xref">System.UInt16</span></p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
         <td><span class="parametername">CaseSensitive</span></td>
-        <td></td>
+        <td><p>Whether the comparison should be case sensitive.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -767,7 +802,8 @@ Furthermore, this provides a centralized way for quickly and easily changing the
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td></td>
+        <td><p><code>true</code> if code points are equal; otherwise, <code>false</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -776,7 +812,7 @@ Furthermore, this provides a centralized way for quickly and easily changing the
     <a href="https://github.com/Entomy/Stringier/new/Rewrite/apiSpec/new?filename=Stringier_Patterns_Stringier_Equals_System_UInt16___System_String_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Stringier.Equals(System.UInt16%5B%5D%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/Rewrite/Patterns/Stringier.cs/#L43">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/Rewrite/Patterns/Stringier.cs/#L94">View Source</a>
   </span>
   <a id="Stringier_Patterns_Stringier_Equals_" data-uid="Stringier.Patterns.Stringier.Equals*"></a>
   <h4 id="Stringier_Patterns_Stringier_Equals_System_UInt16___System_String_" data-uid="Stringier.Patterns.Stringier.Equals(System.UInt16[],System.String)">Equals(UInt16[], String)</h4>
@@ -828,7 +864,7 @@ Furthermore, this provides a centralized way for quickly and easily changing the
     <a href="https://github.com/Entomy/Stringier/new/Rewrite/apiSpec/new?filename=Stringier_Patterns_Stringier_Equals_System_UInt16___System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Stringier.Equals(System.UInt16%5B%5D%2CSystem.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/Rewrite/Patterns/Stringier.cs/#L45">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/Rewrite/Patterns/Stringier.cs/#L96">View Source</a>
   </span>
   <a id="Stringier_Patterns_Stringier_Equals_" data-uid="Stringier.Patterns.Stringier.Equals*"></a>
   <h4 id="Stringier_Patterns_Stringier_Equals_System_UInt16___System_String_System_Boolean_" data-uid="Stringier.Patterns.Stringier.Equals(System.UInt16[],System.String,System.Boolean)">Equals(UInt16[], String, Boolean)</h4>
@@ -885,7 +921,7 @@ Furthermore, this provides a centralized way for quickly and easily changing the
     <a href="https://github.com/Entomy/Stringier/new/Rewrite/apiSpec/new?filename=Stringier_Patterns_Stringier_Equals_System_UInt16___System_UInt16___.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Stringier.Equals(System.UInt16%5B%5D%2CSystem.UInt16%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/Rewrite/Patterns/Stringier.cs/#L53">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/Rewrite/Patterns/Stringier.cs/#L104">View Source</a>
   </span>
   <a id="Stringier_Patterns_Stringier_Equals_" data-uid="Stringier.Patterns.Stringier.Equals*"></a>
   <h4 id="Stringier_Patterns_Stringier_Equals_System_UInt16___System_UInt16___" data-uid="Stringier.Patterns.Stringier.Equals(System.UInt16[],System.UInt16[])">Equals(UInt16[], UInt16[])</h4>
@@ -937,7 +973,7 @@ Furthermore, this provides a centralized way for quickly and easily changing the
     <a href="https://github.com/Entomy/Stringier/new/Rewrite/apiSpec/new?filename=Stringier_Patterns_Stringier_Equals_System_UInt16___System_UInt16___System_Boolean_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Stringier.Equals(System.UInt16%5B%5D%2CSystem.UInt16%5B%5D%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/Rewrite/Patterns/Stringier.cs/#L55">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/Rewrite/Patterns/Stringier.cs/#L106">View Source</a>
   </span>
   <a id="Stringier_Patterns_Stringier_Equals_" data-uid="Stringier.Patterns.Stringier.Equals*"></a>
   <h4 id="Stringier_Patterns_Stringier_Equals_System_UInt16___System_UInt16___System_Boolean_" data-uid="Stringier.Patterns.Stringier.Equals(System.UInt16[],System.UInt16[],System.Boolean)">Equals(UInt16[], UInt16[], Boolean)</h4>
@@ -1000,7 +1036,7 @@ Furthermore, this provides a centralized way for quickly and easily changing the
                     <a href="https://github.com/Entomy/Stringier/new/Rewrite/apiSpec/new?filename=Stringier_Patterns_Stringier.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Stringier%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Entomy/Stringier/blob/Rewrite/Patterns/Stringier.cs/#L12" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Entomy/Stringier/blob/Rewrite/Patterns/Stringier.cs/#L11" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
