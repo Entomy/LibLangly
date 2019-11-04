@@ -1,4 +1,5 @@
 ﻿using System;
+using Benchmarks.Extensions;
 using BenchmarkDotNet.Running;
 using Consolator.UI;
 using Consolator.UI.Theming;
@@ -7,19 +8,18 @@ using Console = Consolator.Console;
 namespace Benchmarks {
 	public static class Program {
 		internal static KeyChoiceSet MenuChoices;
-		internal static KeyChoiceSet ChrestomathyChoices;
+		internal static KeyChoiceSet ExtensionsChoices;
 
 		public static void Main() {
 			Theme.DefaultDark.Apply();
 			MenuChoices = new KeyChoiceSet(" Enter Choice: ",
-				new KeyChoice(ConsoleKey.D1, "Chrestomathy", () => {
-					Console.WriteChoices(ChrestomathyChoices);
-					Console.ReadChoice(ChrestomathyChoices);
+				new KeyChoice(ConsoleKey.D1, "Extensions", () => {
+					Console.WriteChoices(ExtensionsChoices);
+					Console.ReadChoice(ExtensionsChoices);
 				}),
 				new BackKeyChoice(ConsoleKey.Q, "Quit", () => Environment.Exit(0)));
-			ChrestomathyChoices = new KeyChoiceSet(" Enter Choice: ",
-				new KeyChoice(ConsoleKey.D1, "Source Construction", () => BenchmarkRunner.Run<SourceConstruction>() ),
-				new KeyChoice(ConsoleKey.D2, "String Equality Benchmarks", () => BenchmarkRunner.Run<StringEquality>() ),
+			ExtensionsChoices = new KeyChoiceSet(" Enter Choice: ",
+				new KeyChoice(ConsoleKey.D1, "Chop", () => BenchmarkRunner.Run<ChopBenchmarks>() ),
 				new BackKeyChoice(ConsoleKey.B, "Back", () => {
 					Console.WriteChoices(MenuChoices);
 					Console.ReadChoice(MenuChoices);
