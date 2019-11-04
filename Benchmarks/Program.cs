@@ -21,6 +21,11 @@ namespace Benchmarks {
 			ExtensionsChoices = new KeyChoiceSet(" Enter Choice: ",
 				new KeyChoice(ConsoleKey.D1, "Chop", () => BenchmarkRunner.Run<ChopBenchmarks>() ),
 				new KeyChoice(ConsoleKey.D2, "Clean", () => BenchmarkRunner.Run<CleanBenchmarks>() ),
+				new KeyChoice(ConsoleKey.D3, "Contains", () => {
+					_ = BenchmarkRunner.Run<ContainsCharStringBenchmarks>();
+					_ = BenchmarkRunner.Run<ContainsCharIEnumerableBenchmarks>();
+					_ = BenchmarkRunner.Run<ContainsStringIEnumerableBenchmarks>();
+				}),
 				new BackKeyChoice(ConsoleKey.B, "Back", () => {
 					Console.WriteChoices(MenuChoices);
 					Console.ReadChoice(MenuChoices);
