@@ -26,6 +26,7 @@ namespace Benchmarks {
 					_ = BenchmarkRunner.Run<ContainsCharIEnumerableBenchmarks>();
 					_ = BenchmarkRunner.Run<ContainsStringIEnumerableBenchmarks>();
 				}),
+				new KeyChoice(ConsoleKey.D4, "Ensure", () => BenchmarkRunner.Run<EnsureBenchmarks>() ),
 				new BackKeyChoice(ConsoleKey.B, "Back", () => {
 					Console.WriteChoices(MenuChoices);
 					Console.ReadChoice(MenuChoices);
