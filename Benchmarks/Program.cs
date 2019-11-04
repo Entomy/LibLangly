@@ -20,6 +20,7 @@ namespace Benchmarks {
 				new BackKeyChoice(ConsoleKey.Q, "Quit", () => Environment.Exit(0)));
 			ExtensionsChoices = new KeyChoiceSet(" Enter Choice: ",
 				new KeyChoice(ConsoleKey.D1, "Chop", () => BenchmarkRunner.Run<ChopBenchmarks>() ),
+				new KeyChoice(ConsoleKey.D2, "Clean", () => BenchmarkRunner.Run<CleanBenchmarks>() ),
 				new BackKeyChoice(ConsoleKey.B, "Back", () => {
 					Console.WriteChoices(MenuChoices);
 					Console.ReadChoice(MenuChoices);
