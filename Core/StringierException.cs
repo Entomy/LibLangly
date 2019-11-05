@@ -10,6 +10,6 @@ namespace Stringier {
 		protected StringierException() { }
 		protected StringierException(String message) : base(message) { }
 		protected StringierException(String message, Exception inner) : base(message, inner) { }
-		protected StringierException( SerializationInfo info, StreamingContext context) : base(info, context) { }
+		protected StringierException(SerializationInfo info, StreamingContext context) : base(info, context) { }
 	}
 }
