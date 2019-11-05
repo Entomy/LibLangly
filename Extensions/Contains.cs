@@ -5,28 +5,28 @@ namespace System {
 		/// <summary>
 		/// Returns a value indicating whether a specified char occurs within this string.
 		/// </summary>
-		/// <param name="String">The string to check.</param>
-		/// <param name="Value">The char to seek.</param>
+		/// <param name="string">The string to check.</param>
+		/// <param name="value">The char to seek.</param>
 		/// <returns>true if the value parameter occurs within this string, or if value is the empty char (''); otherwise, false.</returns>
-		public static Boolean Contains(this String String, Char Value) {
-			if (String is null) {
-				throw new ArgumentNullException(nameof(String));
+		public static Boolean Contains(this String @string, Char value) {
+			if (@string is null) {
+				throw new ArgumentNullException(nameof(@string));
 			}
-			return String.Contains(Value.ToString());
+			return @string.Contains(value.ToString());
 		}
 
 		/// <summary>
 		/// Returns a value indicating whether a specified char occurs within any of the strings.
 		/// </summary>
-		/// <param name="Strings">The enumeration of strings to check.</param>
-		/// <param name="Value">The char to seek.</param>
+		/// <param name="strings">The enumeration of strings to check.</param>
+		/// <param name="value">The char to seek.</param>
 		/// <returns>true if the value parameter occurs within any of the strings, or if the value is the empty char (''); otherwise, false.</returns>
-		public static Boolean Contains(this IEnumerable<String> Strings, Char Value) {
-			if (Strings is null) {
-				throw new ArgumentNullException(nameof(Strings));
+		public static Boolean Contains(this IEnumerable<String> strings, Char value) {
+			if (strings is null) {
+				throw new ArgumentNullException(nameof(strings));
 			}
-			foreach (String String in Strings) {
-				if (String.Contains(Value)) { return true; }
+			foreach (String String in strings) {
+				if (String.Contains(value)) { return true; }
 			}
 			return false;
 		}
@@ -34,15 +34,15 @@ namespace System {
 		/// <summary>
 		/// Returns a value indicating whether a specified string occurs within any of the strings.
 		/// </summary>
-		/// <param name="Strings">The enumeration of strings to check.</param>
-		/// <param name="Value">The string to seek.</param>
+		/// <param name="strings">The enumeration of strings to check.</param>
+		/// <param name="value">The string to seek.</param>
 		/// <returns>true if the value parameter occurs within any of the strings, or if the value is the empty string (""); otherwise, false.</returns>
-		public static Boolean Contains(this IEnumerable<String> Strings, String Value) {
-			if (Strings is null || Value is null) {
-				throw new ArgumentNullException(Strings is null ? nameof(Strings) : nameof(Value));
+		public static Boolean Contains(this IEnumerable<String> strings, String value) {
+			if (strings is null || value is null) {
+				throw new ArgumentNullException(strings is null ? nameof(strings) : nameof(value));
 			}
-			foreach (String String in Strings) {
-				if (String.Contains(Value)) { return true; }
+			foreach (String String in strings) {
+				if (String.Contains(value)) { return true; }
 			}
 			return false;
 		}

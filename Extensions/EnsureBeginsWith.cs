@@ -3,19 +3,19 @@
 namespace System {
 	public static partial class StringierExtensions {
 		/// <summary>
-		/// Ensures the <paramref name="String"/> beings with the <paramref name="Required"/> string, adding it if necessary.
+		/// Ensures the <paramref name="string"/> beings with the <paramref name="required"/> string, adding it if necessary.
 		/// </summary>
-		/// <param name="String">The string to ensure.</param>
-		/// <param name="Required">The required beginning.</param>
+		/// <param name="string">The string to ensure.</param>
+		/// <param name="required">The required beginning.</param>
 		/// <returns>A string with the ensured beginning.</returns>
-		public static String EnsureBeginsWith(this String String, String Required) {
-			if (String is null || Required is null) {
-				throw new ArgumentNullException(String is null ? nameof(String) : nameof(Required));
+		public static String EnsureBeginsWith(this String @string, String required) {
+			if (@string is null || required is null) {
+				throw new ArgumentNullException(@string is null ? nameof(@string) : nameof(required));
 			}
-			if (new Regex("^" + Required, RegexOptions.None).IsMatch(String)) {
-				return String;
+			if (new Regex("^" + required, RegexOptions.None).IsMatch(@string)) {
+				return @string;
 			} else {
-				return Required + String;
+				return required + @string;
 			}
 		}
 	}

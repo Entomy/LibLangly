@@ -3,32 +3,32 @@
 namespace System {
 	public static partial class StringierExtensions {
 		/// <summary>
-		/// Repeat the <paramref name="Char"/> <paramref name="Count"/> times.
+		/// Repeat the <paramref name="char"/> <paramref name="count"/> times.
 		/// </summary>
-		/// <param name="Char">The <see cref="Char"/> to repeat.</param>
-		/// <param name="Count">The amount of times to repeat the <paramref name="Char"/>.</param>
-		/// <returns>A <see cref="String"/> containing the repeated <paramref name="Char"/>.</returns>
-		public static String Repeat(this Char Char, Int32 Count) {
-			if (Count <= 0) { throw new ArgumentOutOfRangeException(nameof(Count), "Count must be a positive integer"); }
-			return new String(Char, Count);
+		/// <param name="char">The <see cref="Char"/> to repeat.</param>
+		/// <param name="count">The amount of times to repeat the <paramref name="char"/>.</param>
+		/// <returns>A <see cref="String"/> containing the repeated <paramref name="char"/>.</returns>
+		public static String Repeat(this Char @char, Int32 count) {
+			if (count <= 0) { throw new ArgumentOutOfRangeException(nameof(count), "Count must be a positive integer"); }
+			return new String(@char, count);
 		}
 
 		/// <summary>
-		/// Repeat the <paramref name="String"/> <paramref name="Count"/> times.
+		/// Repeat the <paramref name="string"/> <paramref name="count"/> times.
 		/// </summary>
-		/// <param name="String">The <see cref="String"/> to repeat.</param>
-		/// <param name="Count">The amount of times to repeat the <paramref name="String"/>.</param>
-		/// <returns>A <see cref="String"/> containing the repeated <paramref name="String"/>.</returns>
-		public static String Repeat(this String String, Int32 Count) {
-			if (String is null) {
-				throw new ArgumentNullException(nameof(String));
+		/// <param name="string">The <see cref="String"/> to repeat.</param>
+		/// <param name="count">The amount of times to repeat the <paramref name="string"/>.</param>
+		/// <returns>A <see cref="String"/> containing the repeated <paramref name="string"/>.</returns>
+		public static String Repeat(this String @string, Int32 count) {
+			if (@string is null) {
+				throw new ArgumentNullException(nameof(@string));
 			}
-			if (Count <= 0) {
-				throw new ArgumentOutOfRangeException(nameof(Count), "Count must be a positive integer");
+			if (count <= 0) {
+				throw new ArgumentOutOfRangeException(nameof(count), "Count must be a positive integer");
 			}
-			StringBuilder Result = new StringBuilder(String.Length * Count);
-			for (Int32 i = 0; i < Count; i++) {
-				_ = Result.Append(String);
+			StringBuilder Result = new StringBuilder(@string.Length * count);
+			for (Int32 i = 0; i < count; i++) {
+				_ = Result.Append(@string);
 			}
 			return Result.ToString();
 		}

@@ -6,15 +6,15 @@ namespace System {
 		/// <summary>
 		/// Trim and replace multiple spaces with a single space
 		/// </summary>
-		/// <param name="String">String to clean</param>
+		/// <param name="string">String to clean</param>
 		/// <returns>Cleaned up string</returns>
-		public static String Clean(this String String) {
-			if (String is null) {
-				throw new ArgumentNullException(nameof(String));
+		public static String Clean(this String @string) {
+			if (@string is null) {
+				throw new ArgumentNullException(nameof(@string));
 			}
 			StringBuilder Result = new StringBuilder();
 			Boolean AtSpace = false;
-			foreach (Char C in String) {
+			foreach (Char C in @string) {
 				if (Char.GetUnicodeCategory(C) == UnicodeCategory.SpaceSeparator) {
 					if (!AtSpace) {
 						AtSpace = true;

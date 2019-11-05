@@ -3,20 +3,20 @@
 namespace System {
 	public static partial class StringierExtensions {
 		/// <summary>
-		/// Ensures the <paramref name="String"/> ends with the <paramref name="Required"/> string, adding it if necessary.
+		/// Ensures the <paramref name="string"/> ends with the <paramref name="required"/> string, adding it if necessary.
 		/// </summary>
-		/// <param name="String">The string to ensure.</param>
-		/// <param name="Required">The required ending.</param>
+		/// <param name="string">The string to ensure.</param>
+		/// <param name="required">The required ending.</param>
 		/// <returns>A string with the ensured ending.</returns>
-		public static String EnsureEndsWith(this String String, String Required) {
-			if (String is null || Required is null) {
-				throw new ArgumentNullException(String is null ? nameof(String) : nameof(Required));
+		public static String EnsureEndsWith(this String @string, String required) {
+			if (@string is null || required is null) {
+				throw new ArgumentNullException(@string is null ? nameof(@string) : nameof(required));
 			}
-			if (new Regex(Required + "$", RegexOptions.None).IsMatch(String)) {
-				return String;
+			if (new Regex(required + "$", RegexOptions.None).IsMatch(@string)) {
+				return @string;
 			}
 			else {
-				return String + Required;
+				return @string + required;
 			}
 		}
 	}

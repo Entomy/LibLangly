@@ -3,8 +3,8 @@
 		/// <summary>
 		/// Indicates whether the specified Unicode character is categorized as white space.
 		/// </summary>
-		/// <param name="Char">The Unicode character to evaluate.</param>
-		/// <returns>true if <paramref name="Char"/> is white space; otherwise, false.</returns>
-		public static Boolean IsWhiteSpace(this Char Char) => Char.IsWhiteSpace(Char);
+		/// <param name="char">The Unicode character to evaluate.</param>
+		/// <returns>true if <paramref name="char"/> is white space; otherwise, false.</returns>
+		public static Boolean IsWhiteSpace(this Char @char) => Char.IsWhiteSpace(@char);
 	}
 }

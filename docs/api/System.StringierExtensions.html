@@ -116,12 +116,12 @@
   
   <a id="System_StringierExtensions_Chop_" data-uid="System.StringierExtensions.Chop*"></a>
   <h4 id="System_StringierExtensions_Chop_System_String_System_Int32_" data-uid="System.StringierExtensions.Chop(System.String,System.Int32)">Chop(String, Int32)</h4>
-  <div class="markdown level1 summary"><p>Chop the <code data-dev-comment-type="paramref" class="paramref">String</code> into chunks of <code data-dev-comment-type="paramref" class="paramref">Size</code></p>
+  <div class="markdown level1 summary"><p>Chop the <code data-dev-comment-type="paramref" class="paramref">string</code> into chunks of <code data-dev-comment-type="paramref" class="paramref">size</code></p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string[] Chop(this string String, int Size)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string[] Chop(this string string, int size)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -135,13 +135,13 @@
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">String</span></td>
+        <td><span class="parametername">string</span></td>
         <td><p>String to chop</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Int32</span></td>
-        <td><span class="parametername">Size</span></td>
+        <td><span class="parametername">size</span></td>
         <td><p>Size of chunks to chop into</p>
 </td>
       </tr>
@@ -172,7 +172,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string Clean(this string String)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string Clean(this string string)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -186,7 +186,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">String</span></td>
+        <td><span class="parametername">string</span></td>
         <td><p>String to clean</p>
 </td>
       </tr>
@@ -267,7 +267,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool Contains(this IEnumerable&lt;string&gt; Strings, char Value)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool Contains(this IEnumerable&lt;string&gt; strings, char value)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -281,13 +281,13 @@
     <tbody>
       <tr>
         <td><span class="xref">IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
-        <td><span class="parametername">Strings</span></td>
+        <td><span class="parametername">strings</span></td>
         <td><p>The enumeration of strings to check.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Char</span></td>
-        <td><span class="parametername">Value</span></td>
+        <td><span class="parametername">value</span></td>
         <td><p>The char to seek.</p>
 </td>
       </tr>
@@ -318,7 +318,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool Contains(this IEnumerable&lt;string&gt; Strings, string Value)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool Contains(this IEnumerable&lt;string&gt; strings, string value)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -332,13 +332,13 @@
     <tbody>
       <tr>
         <td><span class="xref">IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
-        <td><span class="parametername">Strings</span></td>
+        <td><span class="parametername">strings</span></td>
         <td><p>The enumeration of strings to check.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">Value</span></td>
+        <td><span class="parametername">value</span></td>
         <td><p>The string to seek.</p>
 </td>
       </tr>
@@ -369,7 +369,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool Contains(this string String, char Value)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool Contains(this string string, char value)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -383,13 +383,13 @@
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">String</span></td>
+        <td><span class="parametername">string</span></td>
         <td><p>The string to check.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Char</span></td>
-        <td><span class="parametername">Value</span></td>
+        <td><span class="parametername">value</span></td>
         <td><p>The char to seek.</p>
 </td>
       </tr>
@@ -415,12 +415,12 @@
   
   <a id="System_StringierExtensions_EnsureBeginsWith_" data-uid="System.StringierExtensions.EnsureBeginsWith*"></a>
   <h4 id="System_StringierExtensions_EnsureBeginsWith_System_String_System_String_" data-uid="System.StringierExtensions.EnsureBeginsWith(System.String,System.String)">EnsureBeginsWith(String, String)</h4>
-  <div class="markdown level1 summary"><p>Ensures the <code data-dev-comment-type="paramref" class="paramref">String</code> beings with the <code data-dev-comment-type="paramref" class="paramref">Required</code> string, adding it if necessary.</p>
+  <div class="markdown level1 summary"><p>Ensures the <code data-dev-comment-type="paramref" class="paramref">string</code> beings with the <code data-dev-comment-type="paramref" class="paramref">required</code> string, adding it if necessary.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string EnsureBeginsWith(this string String, string Required)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string EnsureBeginsWith(this string string, string required)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -434,13 +434,13 @@
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">String</span></td>
+        <td><span class="parametername">string</span></td>
         <td><p>The string to ensure.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">Required</span></td>
+        <td><span class="parametername">required</span></td>
         <td><p>The required beginning.</p>
 </td>
       </tr>
@@ -466,12 +466,12 @@
   
   <a id="System_StringierExtensions_EnsureEndsWith_" data-uid="System.StringierExtensions.EnsureEndsWith*"></a>
   <h4 id="System_StringierExtensions_EnsureEndsWith_System_String_System_String_" data-uid="System.StringierExtensions.EnsureEndsWith(System.String,System.String)">EnsureEndsWith(String, String)</h4>
-  <div class="markdown level1 summary"><p>Ensures the <code data-dev-comment-type="paramref" class="paramref">String</code> ends with the <code data-dev-comment-type="paramref" class="paramref">Required</code> string, adding it if necessary.</p>
+  <div class="markdown level1 summary"><p>Ensures the <code data-dev-comment-type="paramref" class="paramref">string</code> ends with the <code data-dev-comment-type="paramref" class="paramref">required</code> string, adding it if necessary.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string EnsureEndsWith(this string String, string Required)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string EnsureEndsWith(this string string, string required)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -485,13 +485,13 @@
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">String</span></td>
+        <td><span class="parametername">string</span></td>
         <td><p>The string to ensure.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">Required</span></td>
+        <td><span class="parametername">required</span></td>
         <td><p>The required ending.</p>
 </td>
       </tr>
@@ -522,7 +522,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static UnicodeCategory GetUnicodeCategory(this char Char)</code></pre>
+    <pre><code class="lang-csharp hljs">public static UnicodeCategory GetUnicodeCategory(this char char)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -536,7 +536,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Char</span></td>
-        <td><span class="parametername">Char</span></td>
+        <td><span class="parametername">char</span></td>
         <td><p>The Unicode character to categorize.</p>
 </td>
       </tr>
@@ -553,7 +553,7 @@
     <tbody>
       <tr>
         <td><span class="xref">UnicodeCategory</span></td>
-        <td><p>A <see cref="!:UnicodeCategory"></see> value that identifies the group that contains <code data-dev-comment-type="paramref" class="paramref">Char</code>.</p>
+        <td><p>A <see cref="!:UnicodeCategory"></see> value that identifies the group that contains <code data-dev-comment-type="paramref" class="paramref">char</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -567,7 +567,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool IsControl(this char Char)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool IsControl(this char char)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -581,7 +581,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Char</span></td>
-        <td><span class="parametername">Char</span></td>
+        <td><span class="parametername">char</span></td>
         <td><p>The Unicode character to evaluate.</p>
 </td>
       </tr>
@@ -598,7 +598,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td><p>true if <code data-dev-comment-type="paramref" class="paramref">Char</code> is a control character; otherwise, false.</p>
+        <td><p>true if <code data-dev-comment-type="paramref" class="paramref">char</code> is a control character; otherwise, false.</p>
 </td>
       </tr>
     </tbody>
@@ -612,7 +612,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool IsDigit(this char Char)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool IsDigit(this char char)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -626,7 +626,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Char</span></td>
-        <td><span class="parametername">Char</span></td>
+        <td><span class="parametername">char</span></td>
         <td><p>The Unicode character to evaluate.</p>
 </td>
       </tr>
@@ -643,7 +643,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td><p>true if <code data-dev-comment-type="paramref" class="paramref">Char</code> is a decimal digit; otherwise, false.</p>
+        <td><p>true if <code data-dev-comment-type="paramref" class="paramref">char</code> is a decimal digit; otherwise, false.</p>
 </td>
       </tr>
     </tbody>
@@ -657,7 +657,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool IsHighSurrogate(this char Char)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool IsHighSurrogate(this char char)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -671,7 +671,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Char</span></td>
-        <td><span class="parametername">Char</span></td>
+        <td><span class="parametername">char</span></td>
         <td><p>The Unicode character to evaluate.</p>
 </td>
       </tr>
@@ -688,7 +688,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td><p>true if the numeric value of the <code data-dev-comment-type="paramref" class="paramref">Char</code> parameter ranges from U+D800 through U+DBFF; otherwise, false.</p>
+        <td><p>true if the numeric value of the <code data-dev-comment-type="paramref" class="paramref">char</code> parameter ranges from U+D800 through U+DBFF; otherwise, false.</p>
 </td>
       </tr>
     </tbody>
@@ -702,7 +702,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool IsLetter(this char Char)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool IsLetter(this char char)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -716,7 +716,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Char</span></td>
-        <td><span class="parametername">Char</span></td>
+        <td><span class="parametername">char</span></td>
         <td><p>The Unicode character to evaluate.</p>
 </td>
       </tr>
@@ -733,7 +733,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td><p>true if <code data-dev-comment-type="paramref" class="paramref">Char</code> is a letter; otherwise, false.</p>
+        <td><p>true if <code data-dev-comment-type="paramref" class="paramref">char</code> is a letter; otherwise, false.</p>
 </td>
       </tr>
     </tbody>
@@ -747,7 +747,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool IsLetterOrDigit(this char Char)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool IsLetterOrDigit(this char char)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -761,7 +761,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Char</span></td>
-        <td><span class="parametername">Char</span></td>
+        <td><span class="parametername">char</span></td>
         <td><p>The Unicode character to evaluate.</p>
 </td>
       </tr>
@@ -778,7 +778,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td><p>true if <code data-dev-comment-type="paramref" class="paramref">Char</code> is a letter or a decimal digit; otherwise, false.</p>
+        <td><p>true if <code data-dev-comment-type="paramref" class="paramref">char</code> is a letter or a decimal digit; otherwise, false.</p>
 </td>
       </tr>
     </tbody>
@@ -792,7 +792,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool IsLower(this char Char)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool IsLower(this char char)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -806,7 +806,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Char</span></td>
-        <td><span class="parametername">Char</span></td>
+        <td><span class="parametername">char</span></td>
         <td><p>The Unicode character to evaluate.</p>
 </td>
       </tr>
@@ -823,7 +823,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td><p>true if <code data-dev-comment-type="paramref" class="paramref">Char</code> is a lowercase letter; otherwise, false.</p>
+        <td><p>true if <code data-dev-comment-type="paramref" class="paramref">char</code> is a lowercase letter; otherwise, false.</p>
 </td>
       </tr>
     </tbody>
@@ -837,7 +837,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool IsLowSurrogate(this char Char)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool IsLowSurrogate(this char char)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -851,7 +851,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Char</span></td>
-        <td><span class="parametername">Char</span></td>
+        <td><span class="parametername">char</span></td>
         <td><p>The character to evaluate.</p>
 </td>
       </tr>
@@ -868,7 +868,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td><p>true if the numeric value of the <code data-dev-comment-type="paramref" class="paramref">Char</code> parameter ranges from U+DC00 through U+DFFF; otherwise, false.</p>
+        <td><p>true if the numeric value of the <code data-dev-comment-type="paramref" class="paramref">char</code> parameter ranges from U+DC00 through U+DFFF; otherwise, false.</p>
 </td>
       </tr>
     </tbody>
@@ -882,7 +882,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool IsNumber(this char Char)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool IsNumber(this char char)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -896,7 +896,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Char</span></td>
-        <td><span class="parametername">Char</span></td>
+        <td><span class="parametername">char</span></td>
         <td><p>The Unicode character to evaluate.</p>
 </td>
       </tr>
@@ -913,7 +913,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td><p>true if <code data-dev-comment-type="paramref" class="paramref">Char</code> is a number; otherwise, false.</p>
+        <td><p>true if <code data-dev-comment-type="paramref" class="paramref">char</code> is a number; otherwise, false.</p>
 </td>
       </tr>
     </tbody>
@@ -927,7 +927,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool IsPunctuation(this char Char)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool IsPunctuation(this char char)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -941,7 +941,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Char</span></td>
-        <td><span class="parametername">Char</span></td>
+        <td><span class="parametername">char</span></td>
         <td><p>The Unicode character to evaluate.</p>
 </td>
       </tr>
@@ -958,7 +958,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td><p>true if <code data-dev-comment-type="paramref" class="paramref">Char</code> is a punctuation mark; otherwise, false.</p>
+        <td><p>true if <code data-dev-comment-type="paramref" class="paramref">char</code> is a punctuation mark; otherwise, false.</p>
 </td>
       </tr>
     </tbody>
@@ -972,7 +972,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool IsSeparator(this char Char)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool IsSeparator(this char char)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -986,7 +986,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Char</span></td>
-        <td><span class="parametername">Char</span></td>
+        <td><span class="parametername">char</span></td>
         <td><p>The Unicode character to evaluate.</p>
 </td>
       </tr>
@@ -1003,7 +1003,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td><p>true if <code data-dev-comment-type="paramref" class="paramref">Char</code> is a separator character; otherwise, false.</p>
+        <td><p>true if <code data-dev-comment-type="paramref" class="paramref">char</code> is a separator character; otherwise, false.</p>
 </td>
       </tr>
     </tbody>
@@ -1017,7 +1017,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool IsSurrogate(this char Char)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool IsSurrogate(this char char)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1031,7 +1031,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Char</span></td>
-        <td><span class="parametername">Char</span></td>
+        <td><span class="parametername">char</span></td>
         <td><p>The Unicode character to evaluate.</p>
 </td>
       </tr>
@@ -1048,7 +1048,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td><p>true if <code data-dev-comment-type="paramref" class="paramref">Char</code> is either a high surrogate or a low surrogate; otherwise, false.</p>
+        <td><p>true if <code data-dev-comment-type="paramref" class="paramref">char</code> is either a high surrogate or a low surrogate; otherwise, false.</p>
 </td>
       </tr>
     </tbody>
@@ -1057,12 +1057,12 @@
   
   <a id="System_StringierExtensions_IsSurrogatePair_" data-uid="System.StringierExtensions.IsSurrogatePair*"></a>
   <h4 id="System_StringierExtensions_IsSurrogatePair_System_Char_System_Char_" data-uid="System.StringierExtensions.IsSurrogatePair(System.Char,System.Char)">IsSurrogatePair(Char, Char)</h4>
-  <div class="markdown level1 summary"><p>Indicates whether this <code data-dev-comment-type="paramref" class="paramref">High</code> and the specified <code data-dev-comment-type="paramref" class="paramref">Low</code> <span class="xref">System.Char</span> form a surrogate pair.</p>
+  <div class="markdown level1 summary"><p>Indicates whether this <code data-dev-comment-type="paramref" class="paramref">high</code> and the specified <code data-dev-comment-type="paramref" class="paramref">low</code> <span class="xref">System.Char</span> form a surrogate pair.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool IsSurrogatePair(this char High, char Low)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool IsSurrogatePair(this char high, char low)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1076,13 +1076,13 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Char</span></td>
-        <td><span class="parametername">High</span></td>
+        <td><span class="parametername">high</span></td>
         <td><p>The high surrogate.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Char</span></td>
-        <td><span class="parametername">Low</span></td>
+        <td><span class="parametername">low</span></td>
         <td><p>THe low surrogate.</p>
 </td>
       </tr>
@@ -1113,7 +1113,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool IsSymbol(this char Char)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool IsSymbol(this char char)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1127,7 +1127,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Char</span></td>
-        <td><span class="parametername">Char</span></td>
+        <td><span class="parametername">char</span></td>
         <td><p>The Unicode character to evaluate.</p>
 </td>
       </tr>
@@ -1144,7 +1144,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td><p>true if <code data-dev-comment-type="paramref" class="paramref">Char</code> is a symbol character; otherwise, false.</p>
+        <td><p>true if <code data-dev-comment-type="paramref" class="paramref">char</code> is a symbol character; otherwise, false.</p>
 </td>
       </tr>
     </tbody>
@@ -1158,7 +1158,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool IsUpper(this char Char)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool IsUpper(this char char)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1172,7 +1172,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Char</span></td>
-        <td><span class="parametername">Char</span></td>
+        <td><span class="parametername">char</span></td>
         <td><p>The Unicode character to evaluate.</p>
 </td>
       </tr>
@@ -1189,7 +1189,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td><p>true if <code data-dev-comment-type="paramref" class="paramref">Char</code> is an uppercase letter; otherwise, false.</p>
+        <td><p>true if <code data-dev-comment-type="paramref" class="paramref">char</code> is an uppercase letter; otherwise, false.</p>
 </td>
       </tr>
     </tbody>
@@ -1203,7 +1203,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool IsWhiteSpace(this char Char)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool IsWhiteSpace(this char char)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1217,7 +1217,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Char</span></td>
-        <td><span class="parametername">Char</span></td>
+        <td><span class="parametername">char</span></td>
         <td><p>The Unicode character to evaluate.</p>
 </td>
       </tr>
@@ -1234,7 +1234,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td><p>true if <code data-dev-comment-type="paramref" class="paramref">Char</code> is white space; otherwise, false.</p>
+        <td><p>true if <code data-dev-comment-type="paramref" class="paramref">char</code> is white space; otherwise, false.</p>
 </td>
       </tr>
     </tbody>
@@ -1243,12 +1243,12 @@
   
   <a id="System_StringierExtensions_Join_" data-uid="System.StringierExtensions.Join*"></a>
   <h4 id="System_StringierExtensions_Join_IEnumerable_System_Char__" data-uid="System.StringierExtensions.Join(IEnumerable{System.Char})">Join(IEnumerable&lt;Char&gt;)</h4>
-  <div class="markdown level1 summary"><p>Joins the <code data-dev-comment-type="paramref" class="paramref">Chars</code> into a string.</p>
+  <div class="markdown level1 summary"><p>Joins the <code data-dev-comment-type="paramref" class="paramref">chars</code> into a string.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string Join(this IEnumerable&lt;char&gt; Chars)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string Join(this IEnumerable&lt;char&gt; chars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1262,7 +1262,7 @@
     <tbody>
       <tr>
         <td><span class="xref">IEnumerable</span>&lt;<span class="xref">System.Char</span>&gt;</td>
-        <td><span class="parametername">Chars</span></td>
+        <td><span class="parametername">chars</span></td>
         <td><p>The <see cref="!:IEnumerable&lt;T>"></see> of <span class="xref">System.Char</span> to join.</p>
 </td>
       </tr>
@@ -1288,12 +1288,12 @@
   
   <a id="System_StringierExtensions_Join_" data-uid="System.StringierExtensions.Join*"></a>
   <h4 id="System_StringierExtensions_Join_IEnumerable_System_Char__System_Char_" data-uid="System.StringierExtensions.Join(IEnumerable{System.Char},System.Char)">Join(IEnumerable&lt;Char&gt;, Char)</h4>
-  <div class="markdown level1 summary"><p>Joins the <code data-dev-comment-type="paramref" class="paramref">Chars</code> with <code data-dev-comment-type="paramref" class="paramref">Separator</code> into a string.</p>
+  <div class="markdown level1 summary"><p>Joins the <code data-dev-comment-type="paramref" class="paramref">chars</code> with <code data-dev-comment-type="paramref" class="paramref">separator</code> into a string.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string Join(this IEnumerable&lt;char&gt; Chars, char Separator)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string Join(this IEnumerable&lt;char&gt; chars, char separator)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1307,13 +1307,13 @@
     <tbody>
       <tr>
         <td><span class="xref">IEnumerable</span>&lt;<span class="xref">System.Char</span>&gt;</td>
-        <td><span class="parametername">Chars</span></td>
+        <td><span class="parametername">chars</span></td>
         <td><p>The <see cref="!:IEnumerable&lt;T>"></see> of <span class="xref">System.Char</span> to join.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Char</span></td>
-        <td><span class="parametername">Separator</span></td>
+        <td><span class="parametername">separator</span></td>
         <td><p>The <span class="xref">System.Char</span> to interleave.</p>
 </td>
       </tr>
@@ -1343,7 +1343,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string Join(this IEnumerable&lt;string&gt; Strings)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string Join(this IEnumerable&lt;string&gt; strings)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1357,7 +1357,7 @@
     <tbody>
       <tr>
         <td><span class="xref">IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
-        <td><span class="parametername">Strings</span></td>
+        <td><span class="parametername">strings</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -1386,7 +1386,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string Join(this IEnumerable&lt;string&gt; Strings, char Separator)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string Join(this IEnumerable&lt;string&gt; strings, char Separator)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1400,7 +1400,7 @@
     <tbody>
       <tr>
         <td><span class="xref">IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
-        <td><span class="parametername">Strings</span></td>
+        <td><span class="parametername">strings</span></td>
         <td><p>An array that contains the strings to concatenate.</p>
 </td>
       </tr>
@@ -1432,12 +1432,12 @@
   
   <a id="System_StringierExtensions_Join_" data-uid="System.StringierExtensions.Join*"></a>
   <h4 id="System_StringierExtensions_Join_System_Char___" data-uid="System.StringierExtensions.Join(System.Char[])">Join(Char[])</h4>
-  <div class="markdown level1 summary"><p>Joins the <code data-dev-comment-type="paramref" class="paramref">Chars</code> into a string.</p>
+  <div class="markdown level1 summary"><p>Joins the <code data-dev-comment-type="paramref" class="paramref">chars</code> into a string.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string Join(this char[] Chars)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string Join(this char[] chars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1451,7 +1451,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Char</span>[]</td>
-        <td><span class="parametername">Chars</span></td>
+        <td><span class="parametername">chars</span></td>
         <td><p>The <span class="xref">System.Char</span> to join.</p>
 </td>
       </tr>
@@ -1477,12 +1477,12 @@
   
   <a id="System_StringierExtensions_Join_" data-uid="System.StringierExtensions.Join*"></a>
   <h4 id="System_StringierExtensions_Join_System_Char___System_Char_" data-uid="System.StringierExtensions.Join(System.Char[],System.Char)">Join(Char[], Char)</h4>
-  <div class="markdown level1 summary"><p>Joins the <code data-dev-comment-type="paramref" class="paramref">Chars</code> with <code data-dev-comment-type="paramref" class="paramref">Separator</code> into a string.</p>
+  <div class="markdown level1 summary"><p>Joins the <code data-dev-comment-type="paramref" class="paramref">chars</code> with <code data-dev-comment-type="paramref" class="paramref">separator</code> into a string.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string Join(this char[] Chars, char Separator)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string Join(this char[] chars, char separator)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1496,13 +1496,13 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Char</span>[]</td>
-        <td><span class="parametername">Chars</span></td>
+        <td><span class="parametername">chars</span></td>
         <td><p>The <span class="xref">System.Char</span> to join.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Char</span></td>
-        <td><span class="parametername">Separator</span></td>
+        <td><span class="parametername">separator</span></td>
         <td><p>The <span class="xref">System.Char</span> to interleave.</p>
 </td>
       </tr>
@@ -1533,7 +1533,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string Join&lt;T&gt;(this IEnumerable&lt;T&gt; Objects, char Separator)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string Join&lt;T&gt;(this IEnumerable&lt;T&gt; objects, char separator)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1547,14 +1547,14 @@
     <tbody>
       <tr>
         <td><span class="xref">IEnumerable</span>&lt;T&gt;</td>
-        <td><span class="parametername">Objects</span></td>
+        <td><span class="parametername">objects</span></td>
         <td><p>An enumerable that contains the objects to concatenate.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Char</span></td>
-        <td><span class="parametername">Separator</span></td>
-        <td><p>The char to use as a separator. Separator is included in the returned string only if <code data-dev-comment-type="paramref" class="paramref">Objects</code> has more than one element.</p>
+        <td><span class="parametername">separator</span></td>
+        <td><p>The char to use as a separator. Separator is included in the returned string only if <code data-dev-comment-type="paramref" class="paramref">objects</code> has more than one element.</p>
 </td>
       </tr>
     </tbody>
@@ -1570,7 +1570,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td><p>A string that consists of the elements in <code data-dev-comment-type="paramref" class="paramref">Objects</code> delimited by the <code data-dev-comment-type="paramref" class="paramref">Separator</code> char. If <code data-dev-comment-type="paramref" class="paramref">Objects</code> is an empty enumerable, the method returns <span class="xref">System.String.Empty</span>.</p>
+        <td><p>A string that consists of the elements in <code data-dev-comment-type="paramref" class="paramref">objects</code> delimited by the <code data-dev-comment-type="paramref" class="paramref">separator</code> char. If <code data-dev-comment-type="paramref" class="paramref">objects</code> is an empty enumerable, the method returns <span class="xref">System.String.Empty</span>.</p>
 </td>
       </tr>
     </tbody>
@@ -1586,7 +1586,7 @@
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td><p>The type of the <code data-dev-comment-type="paramref" class="paramref">Objects</code> to join.</p>
+        <td><p>The type of the <code data-dev-comment-type="paramref" class="paramref">objects</code> to join.</p>
 </td>
       </tr>
     </tbody>
@@ -1595,12 +1595,12 @@
   
   <a id="System_StringierExtensions_Lines_" data-uid="System.StringierExtensions.Lines*"></a>
   <h4 id="System_StringierExtensions_Lines_System_String_" data-uid="System.StringierExtensions.Lines(System.String)">Lines(String)</h4>
-  <div class="markdown level1 summary"><p>Separate the <code data-dev-comment-type="paramref" class="paramref">String</code> into its lines.</p>
+  <div class="markdown level1 summary"><p>Separate the <code data-dev-comment-type="paramref" class="paramref">string</code> into its lines.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string[] Lines(this string String)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string[] Lines(this string string)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1614,7 +1614,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">String</span></td>
+        <td><span class="parametername">string</span></td>
         <td><p>String to separate.</p>
 </td>
       </tr>
@@ -1631,7 +1631,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.String</span>[]</td>
-        <td><p>Array of lines within the <code data-dev-comment-type="paramref" class="paramref">String</code>.</p>
+        <td><p>Array of lines within the <code data-dev-comment-type="paramref" class="paramref">string</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -1640,12 +1640,12 @@
   
   <a id="System_StringierExtensions_Occurrences_" data-uid="System.StringierExtensions.Occurrences*"></a>
   <h4 id="System_StringierExtensions_Occurrences_IEnumerable_System_String__System_Char_" data-uid="System.StringierExtensions.Occurrences(IEnumerable{System.String},System.Char)">Occurrences(IEnumerable&lt;String&gt;, Char)</h4>
-  <div class="markdown level1 summary"><p>Count all occurences of <code data-dev-comment-type="paramref" class="paramref">CharToCount</code> in the <code data-dev-comment-type="paramref" class="paramref">Strings</code>.</p>
+  <div class="markdown level1 summary"><p>Count all occurences of <code data-dev-comment-type="paramref" class="paramref">charToCount</code> in the <code data-dev-comment-type="paramref" class="paramref">strings</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int Occurrences(this IEnumerable&lt;string&gt; Strings, char CharToCount)</code></pre>
+    <pre><code class="lang-csharp hljs">public static int Occurrences(this IEnumerable&lt;string&gt; strings, char charToCount)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1659,13 +1659,13 @@
     <tbody>
       <tr>
         <td><span class="xref">IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
-        <td><span class="parametername">Strings</span></td>
+        <td><span class="parametername">strings</span></td>
         <td><p>Enumeration of String to count occurences within./</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Char</span></td>
-        <td><span class="parametername">CharToCount</span></td>
+        <td><span class="parametername">charToCount</span></td>
         <td><p>Char to count occurences of.</p>
 </td>
       </tr>
@@ -1691,12 +1691,12 @@
   
   <a id="System_StringierExtensions_Occurrences_" data-uid="System.StringierExtensions.Occurrences*"></a>
   <h4 id="System_StringierExtensions_Occurrences_IEnumerable_System_String__System_Char___" data-uid="System.StringierExtensions.Occurrences(IEnumerable{System.String},System.Char[])">Occurrences(IEnumerable&lt;String&gt;, Char[])</h4>
-  <div class="markdown level1 summary"><p>Count all occurences of <code data-dev-comment-type="paramref" class="paramref">CharsToCount</code> in the <code data-dev-comment-type="paramref" class="paramref">Strings</code>.</p>
+  <div class="markdown level1 summary"><p>Count all occurences of <code data-dev-comment-type="paramref" class="paramref">charsToCount</code> in the <code data-dev-comment-type="paramref" class="paramref">strings</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int Occurrences(this IEnumerable&lt;string&gt; Strings, params char[] CharsToCount)</code></pre>
+    <pre><code class="lang-csharp hljs">public static int Occurrences(this IEnumerable&lt;string&gt; strings, params char[] charsToCount)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1710,13 +1710,13 @@
     <tbody>
       <tr>
         <td><span class="xref">IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
-        <td><span class="parametername">Strings</span></td>
+        <td><span class="parametername">strings</span></td>
         <td><p>Enumeration of String to count occurences within.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Char</span>[]</td>
-        <td><span class="parametername">CharsToCount</span></td>
+        <td><span class="parametername">charsToCount</span></td>
         <td><p>Chars to count occurences of.</p>
 </td>
       </tr>
@@ -1742,12 +1742,12 @@
   
   <a id="System_StringierExtensions_Occurrences_" data-uid="System.StringierExtensions.Occurrences*"></a>
   <h4 id="System_StringierExtensions_Occurrences_System_String_System_Char_" data-uid="System.StringierExtensions.Occurrences(System.String,System.Char)">Occurrences(String, Char)</h4>
-  <div class="markdown level1 summary"><p>Count all occurences of <code data-dev-comment-type="paramref" class="paramref">CharToCount</code> in <code data-dev-comment-type="paramref" class="paramref">String</code>.</p>
+  <div class="markdown level1 summary"><p>Count all occurences of <code data-dev-comment-type="paramref" class="paramref">charToCount</code> in <code data-dev-comment-type="paramref" class="paramref">string</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int Occurrences(this string String, char CharToCount)</code></pre>
+    <pre><code class="lang-csharp hljs">public static int Occurrences(this string string, char charToCount)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1761,13 +1761,13 @@
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">String</span></td>
+        <td><span class="parametername">string</span></td>
         <td><p>String to count occurences within.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Char</span></td>
-        <td><span class="parametername">CharToCount</span></td>
+        <td><span class="parametername">charToCount</span></td>
         <td><p>Char to count occurences of.</p>
 </td>
       </tr>
@@ -1793,12 +1793,12 @@
   
   <a id="System_StringierExtensions_Occurrences_" data-uid="System.StringierExtensions.Occurrences*"></a>
   <h4 id="System_StringierExtensions_Occurrences_System_String_System_Char___" data-uid="System.StringierExtensions.Occurrences(System.String,System.Char[])">Occurrences(String, Char[])</h4>
-  <div class="markdown level1 summary"><p>Count all occurences of <code data-dev-comment-type="paramref" class="paramref">CharsToCount</code> in <code data-dev-comment-type="paramref" class="paramref">String</code>.</p>
+  <div class="markdown level1 summary"><p>Count all occurences of <code data-dev-comment-type="paramref" class="paramref">charsToCount</code> in <code data-dev-comment-type="paramref" class="paramref">string</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int Occurrences(this string String, params char[] CharsToCount)</code></pre>
+    <pre><code class="lang-csharp hljs">public static int Occurrences(this string string, params char[] charsToCount)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1812,13 +1812,13 @@
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">String</span></td>
+        <td><span class="parametername">string</span></td>
         <td><p>String to count occurences within.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Char</span>[]</td>
-        <td><span class="parametername">CharsToCount</span></td>
+        <td><span class="parametername">charsToCount</span></td>
         <td><p>Chars to count occurences of.</p>
 </td>
       </tr>
@@ -1849,7 +1849,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string Pad(this string String, int TotalWidth)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string Pad(this string string, int totalWidth)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1863,13 +1863,13 @@
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">String</span></td>
+        <td><span class="parametername">string</span></td>
         <td><p>The string to pad.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Int32</span></td>
-        <td><span class="parametername">TotalWidth</span></td>
+        <td><span class="parametername">totalWidth</span></td>
         <td><p>The number of characters in the resulting string, equal to the number of original characters plus any additional padding characters.</p>
 </td>
       </tr>
@@ -1900,7 +1900,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string Pad(this string String, int TotalWidth, char PaddingChar)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string Pad(this string string, int totalWidth, char paddingChar)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1914,19 +1914,19 @@
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">String</span></td>
+        <td><span class="parametername">string</span></td>
         <td><p>The string to pad.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Int32</span></td>
-        <td><span class="parametername">TotalWidth</span></td>
+        <td><span class="parametername">totalWidth</span></td>
         <td><p>The number of characters in the resulting string, equal to the number of original characters plus any additional padding characters.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Char</span></td>
-        <td><span class="parametername">PaddingChar</span></td>
+        <td><span class="parametername">paddingChar</span></td>
         <td><p>A Unicode padding character.</p>
 </td>
       </tr>
@@ -1957,7 +1957,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static short ParseInt16(this char Char)</code></pre>
+    <pre><code class="lang-csharp hljs">public static short ParseInt16(this char char)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1971,7 +1971,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Char</span></td>
-        <td><span class="parametername">Char</span></td>
+        <td><span class="parametername">char</span></td>
         <td><p>A char containing a number to convert.</p>
 </td>
       </tr>
@@ -1988,7 +1988,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Int16</span></td>
-        <td><p>A 16-bit signed integer equivalent to the number contained in <code data-dev-comment-type="paramref" class="paramref">Char</code>.</p>
+        <td><p>A 16-bit signed integer equivalent to the number contained in <code data-dev-comment-type="paramref" class="paramref">char</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -2002,7 +2002,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int ParseInt32(this char Char)</code></pre>
+    <pre><code class="lang-csharp hljs">public static int ParseInt32(this char char)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2016,7 +2016,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Char</span></td>
-        <td><span class="parametername">Char</span></td>
+        <td><span class="parametername">char</span></td>
         <td><p>A char containing a number to convert.</p>
 </td>
       </tr>
@@ -2033,7 +2033,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Int32</span></td>
-        <td><p>A 32-bit signed integer equivalent to the number contained in <code data-dev-comment-type="paramref" class="paramref">Char</code>.</p>
+        <td><p>A 32-bit signed integer equivalent to the number contained in <code data-dev-comment-type="paramref" class="paramref">char</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -2047,7 +2047,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static long ParseInt64(this char Char)</code></pre>
+    <pre><code class="lang-csharp hljs">public static long ParseInt64(this char char)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2061,7 +2061,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Char</span></td>
-        <td><span class="parametername">Char</span></td>
+        <td><span class="parametername">char</span></td>
         <td><p>A char containing a number to convert.</p>
 </td>
       </tr>
@@ -2078,7 +2078,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Int64</span></td>
-        <td><p>A 64-bit signed integer equivalent to the number contained in <code data-dev-comment-type="paramref" class="paramref">Char</code>.</p>
+        <td><p>A 64-bit signed integer equivalent to the number contained in <code data-dev-comment-type="paramref" class="paramref">char</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -2087,12 +2087,12 @@
   
   <a id="System_StringierExtensions_Repeat_" data-uid="System.StringierExtensions.Repeat*"></a>
   <h4 id="System_StringierExtensions_Repeat_System_Char_System_Int32_" data-uid="System.StringierExtensions.Repeat(System.Char,System.Int32)">Repeat(Char, Int32)</h4>
-  <div class="markdown level1 summary"><p>Repeat the <code data-dev-comment-type="paramref" class="paramref">Char</code> <code data-dev-comment-type="paramref" class="paramref">Count</code> times.</p>
+  <div class="markdown level1 summary"><p>Repeat the <code data-dev-comment-type="paramref" class="paramref">char</code> <code data-dev-comment-type="paramref" class="paramref">count</code> times.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string Repeat(this char Char, int Count)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string Repeat(this char char, int count)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2106,14 +2106,14 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Char</span></td>
-        <td><span class="parametername">Char</span></td>
+        <td><span class="parametername">char</span></td>
         <td><p>The <span class="xref">System.Char</span> to repeat.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Int32</span></td>
-        <td><span class="parametername">Count</span></td>
-        <td><p>The amount of times to repeat the <code data-dev-comment-type="paramref" class="paramref">Char</code>.</p>
+        <td><span class="parametername">count</span></td>
+        <td><p>The amount of times to repeat the <code data-dev-comment-type="paramref" class="paramref">char</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -2129,7 +2129,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td><p>A <span class="xref">System.String</span> containing the repeated <code data-dev-comment-type="paramref" class="paramref">Char</code>.</p>
+        <td><p>A <span class="xref">System.String</span> containing the repeated <code data-dev-comment-type="paramref" class="paramref">char</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -2138,12 +2138,12 @@
   
   <a id="System_StringierExtensions_Repeat_" data-uid="System.StringierExtensions.Repeat*"></a>
   <h4 id="System_StringierExtensions_Repeat_System_String_System_Int32_" data-uid="System.StringierExtensions.Repeat(System.String,System.Int32)">Repeat(String, Int32)</h4>
-  <div class="markdown level1 summary"><p>Repeat the <code data-dev-comment-type="paramref" class="paramref">String</code> <code data-dev-comment-type="paramref" class="paramref">Count</code> times.</p>
+  <div class="markdown level1 summary"><p>Repeat the <code data-dev-comment-type="paramref" class="paramref">string</code> <code data-dev-comment-type="paramref" class="paramref">count</code> times.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string Repeat(this string String, int Count)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string Repeat(this string string, int count)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2157,14 +2157,14 @@
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">String</span></td>
+        <td><span class="parametername">string</span></td>
         <td><p>The <span class="xref">System.String</span> to repeat.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Int32</span></td>
-        <td><span class="parametername">Count</span></td>
-        <td><p>The amount of times to repeat the <code data-dev-comment-type="paramref" class="paramref">String</code>.</p>
+        <td><span class="parametername">count</span></td>
+        <td><p>The amount of times to repeat the <code data-dev-comment-type="paramref" class="paramref">string</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -2180,7 +2180,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td><p>A <span class="xref">System.String</span> containing the repeated <code data-dev-comment-type="paramref" class="paramref">String</code>.</p>
+        <td><p>A <span class="xref">System.String</span> containing the repeated <code data-dev-comment-type="paramref" class="paramref">string</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -2194,7 +2194,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string[] Split(this string String, params string[] Separator)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string[] Split(this string string, params string[] separator)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2208,13 +2208,13 @@
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">String</span></td>
+        <td><span class="parametername">string</span></td>
         <td><p>The string to split.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span>[]</td>
-        <td><span class="parametername">Separator</span></td>
+        <td><span class="parametername">separator</span></td>
         <td><p>A string array that delimits the substrings in this string, an empty array that contains no delimiters, or null.</p>
 </td>
       </tr>
@@ -2245,7 +2245,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static char ToLower(this char Char)</code></pre>
+    <pre><code class="lang-csharp hljs">public static char ToLower(this char char)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2259,7 +2259,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Char</span></td>
-        <td><span class="parametername">Char</span></td>
+        <td><span class="parametername">char</span></td>
         <td><p>The Unicode character to convert.</p>
 </td>
       </tr>
@@ -2276,7 +2276,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Char</span></td>
-        <td><p>The lowercase equivalent of <code data-dev-comment-type="paramref" class="paramref">Char</code>, or the unchanged value of <code data-dev-comment-type="paramref" class="paramref">Char</code> if <code data-dev-comment-type="paramref" class="paramref">Char</code> is already lowercase, has no lowercase equivalent, or is not alphabetic.</p>
+        <td><p>The lowercase equivalent of <code data-dev-comment-type="paramref" class="paramref">char</code>, or the unchanged value of <code data-dev-comment-type="paramref" class="paramref">char</code> if <code data-dev-comment-type="paramref" class="paramref">char</code> is already lowercase, has no lowercase equivalent, or is not alphabetic.</p>
 </td>
       </tr>
     </tbody>
@@ -2290,7 +2290,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static char ToLower(this char Char, CultureInfo Culture)</code></pre>
+    <pre><code class="lang-csharp hljs">public static char ToLower(this char char, CultureInfo culture)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2304,13 +2304,13 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Char</span></td>
-        <td><span class="parametername">Char</span></td>
+        <td><span class="parametername">char</span></td>
         <td><p>The Unicode character to convert.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">CultureInfo</span></td>
-        <td><span class="parametername">Culture</span></td>
+        <td><span class="parametername">culture</span></td>
         <td><p>An object that supplies culture-specific casing rules.</p>
 </td>
       </tr>
@@ -2327,7 +2327,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Char</span></td>
-        <td><p>The lowercase equivalent of <code data-dev-comment-type="paramref" class="paramref">Char</code>, modified according to <code data-dev-comment-type="paramref" class="paramref">Culture</code>, or the unchanged value of <code data-dev-comment-type="paramref" class="paramref">Char</code>, if <code data-dev-comment-type="paramref" class="paramref">Char</code> is already lowercase or not alphabetic.</p>
+        <td><p>The lowercase equivalent of <code data-dev-comment-type="paramref" class="paramref">char</code>, modified according to <code data-dev-comment-type="paramref" class="paramref">culture</code>, or the unchanged value of <code data-dev-comment-type="paramref" class="paramref">char</code>, if <code data-dev-comment-type="paramref" class="paramref">char</code> is already lowercase or not alphabetic.</p>
 </td>
       </tr>
     </tbody>
@@ -2341,7 +2341,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static char ToLowerInvariant(this char Char)</code></pre>
+    <pre><code class="lang-csharp hljs">public static char ToLowerInvariant(this char char)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2355,7 +2355,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Char</span></td>
-        <td><span class="parametername">Char</span></td>
+        <td><span class="parametername">char</span></td>
         <td><p>The Unicode character to convert.</p>
 </td>
       </tr>
@@ -2372,7 +2372,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Char</span></td>
-        <td><p>The lowercase equivalent of the <code data-dev-comment-type="paramref" class="paramref">Char</code> parameter, or the unchanged value of <code data-dev-comment-type="paramref" class="paramref">Char</code>, if <code data-dev-comment-type="paramref" class="paramref">Char</code> is already lowercase or not alphabetic.</p>
+        <td><p>The lowercase equivalent of the <code data-dev-comment-type="paramref" class="paramref">char</code> parameter, or the unchanged value of <code data-dev-comment-type="paramref" class="paramref">char</code>, if <code data-dev-comment-type="paramref" class="paramref">char</code> is already lowercase or not alphabetic.</p>
 </td>
       </tr>
     </tbody>
@@ -2386,7 +2386,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static char ToUpper(this char Char)</code></pre>
+    <pre><code class="lang-csharp hljs">public static char ToUpper(this char char)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2400,7 +2400,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Char</span></td>
-        <td><span class="parametername">Char</span></td>
+        <td><span class="parametername">char</span></td>
         <td><p>The Unicode character to convert.</p>
 </td>
       </tr>
@@ -2417,7 +2417,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Char</span></td>
-        <td><p>The uppercase equivalent of <code data-dev-comment-type="paramref" class="paramref">Char</code>, or the unchanged value of <code data-dev-comment-type="paramref" class="paramref">Char</code> if <code data-dev-comment-type="paramref" class="paramref">Char</code> is already uppercase, has no uppercase equivalent, or is not alphabetic.</p>
+        <td><p>The uppercase equivalent of <code data-dev-comment-type="paramref" class="paramref">char</code>, or the unchanged value of <code data-dev-comment-type="paramref" class="paramref">char</code> if <code data-dev-comment-type="paramref" class="paramref">char</code> is already uppercase, has no uppercase equivalent, or is not alphabetic.</p>
 </td>
       </tr>
     </tbody>
@@ -2431,7 +2431,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static char ToUpper(this char Char, CultureInfo Culture)</code></pre>
+    <pre><code class="lang-csharp hljs">public static char ToUpper(this char char, CultureInfo culture)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2445,13 +2445,13 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Char</span></td>
-        <td><span class="parametername">Char</span></td>
+        <td><span class="parametername">char</span></td>
         <td><p>The Unicode character to convert.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">CultureInfo</span></td>
-        <td><span class="parametername">Culture</span></td>
+        <td><span class="parametername">culture</span></td>
         <td><p>An object that supplies culture-specific casing rules.</p>
 </td>
       </tr>
@@ -2468,7 +2468,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Char</span></td>
-        <td><p>The uppercase equivalent of <code data-dev-comment-type="paramref" class="paramref">Char</code>, modified according to <code data-dev-comment-type="paramref" class="paramref">Culture</code>, or the unchanged value of <code data-dev-comment-type="paramref" class="paramref">Char</code> if <code data-dev-comment-type="paramref" class="paramref">Char</code> is already uppercase, has no uppercase equivalent, or is not alphabetic.</p>
+        <td><p>The uppercase equivalent of <code data-dev-comment-type="paramref" class="paramref">char</code>, modified according to <code data-dev-comment-type="paramref" class="paramref">culture</code>, or the unchanged value of <code data-dev-comment-type="paramref" class="paramref">char</code> if <code data-dev-comment-type="paramref" class="paramref">char</code> is already uppercase, has no uppercase equivalent, or is not alphabetic.</p>
 </td>
       </tr>
     </tbody>
@@ -2482,7 +2482,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static char ToUpperInvariant(this char Char)</code></pre>
+    <pre><code class="lang-csharp hljs">public static char ToUpperInvariant(this char char)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2496,7 +2496,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Char</span></td>
-        <td><span class="parametername">Char</span></td>
+        <td><span class="parametername">char</span></td>
         <td><p>The Unicode character to convert.</p>
 </td>
       </tr>
@@ -2513,7 +2513,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Char</span></td>
-        <td><p>The uppercase equivalent of the <code data-dev-comment-type="paramref" class="paramref">Char</code> parameter, or the unchanged value of <code data-dev-comment-type="paramref" class="paramref">Char</code>, if <code data-dev-comment-type="paramref" class="paramref">Char</code> is already uppercase or not alphabetic.</p>
+        <td><p>The uppercase equivalent of the <code data-dev-comment-type="paramref" class="paramref">char</code> parameter, or the unchanged value of <code data-dev-comment-type="paramref" class="paramref">char</code>, if <code data-dev-comment-type="paramref" class="paramref">char</code> is already uppercase or not alphabetic.</p>
 </td>
       </tr>
     </tbody>
@@ -2522,12 +2522,12 @@
   
   <a id="System_StringierExtensions_Words_" data-uid="System.StringierExtensions.Words*"></a>
   <h4 id="System_StringierExtensions_Words_System_String_" data-uid="System.StringierExtensions.Words(System.String)">Words(String)</h4>
-  <div class="markdown level1 summary"><p>Separate the <code data-dev-comment-type="paramref" class="paramref">String</code> into its words.</p>
+  <div class="markdown level1 summary"><p>Separate the <code data-dev-comment-type="paramref" class="paramref">string</code> into its words.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string[] Words(this string String)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string[] Words(this string string)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2541,7 +2541,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">String</span></td>
+        <td><span class="parametername">string</span></td>
         <td><p>String to separate.</p>
 </td>
       </tr>
@@ -2558,7 +2558,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.String</span>[]</td>
-        <td><p>Array of words within the <code data-dev-comment-type="paramref" class="paramref">String</code>.</p>
+        <td><p>Array of words within the <code data-dev-comment-type="paramref" class="paramref">string</code>.</p>
 </td>
       </tr>
     </tbody>

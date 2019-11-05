@@ -3,8 +3,8 @@
 		/// <summary>
 		/// Indicates whether the specified Unicode character is categorized as a control character.
 		/// </summary>
-		/// <param name="Char">The Unicode character to evaluate.</param>
-		/// <returns>true if <paramref name="Char"/> is a control character; otherwise, false.</returns>
-		public static Boolean IsControl(this Char Char) => Char.IsControl(Char);
+		/// <param name="char">The Unicode character to evaluate.</param>
+		/// <returns>true if <paramref name="char"/> is a control character; otherwise, false.</returns>
+		public static Boolean IsControl(this Char @char) => Char.IsControl(@char);
 	}
 }

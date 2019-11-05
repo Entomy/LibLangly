@@ -1,28 +1,28 @@
 ﻿namespace System {
 	public static partial class StringierExtensions {
 		/// <summary>
-		/// Chop the <paramref name="String"/> into chunks of <paramref name="Size"/>
+		/// Chop the <paramref name="string"/> into chunks of <paramref name="size"/>
 		/// </summary>
-		/// <param name="String">String to chop</param>
-		/// <param name="Size">Size of chunks to chop into</param>
+		/// <param name="string">String to chop</param>
+		/// <param name="size">Size of chunks to chop into</param>
 		/// <returns>Array of chunks</returns>
-		public static String[] Chop(this String String, Int32 Size) {
-			if (String is null) {
-				throw new ArgumentNullException(nameof(String));
+		public static String[] Chop(this String @string, Int32 size) {
+			if (@string is null) {
+				throw new ArgumentNullException(nameof(@string));
 			}
-			if (Size <= 0) {
-				throw new ArgumentOutOfRangeException(nameof(Size), "Size must be greater than 0");
-			} else if (Size >= String.Length) {
-				return new[] { String };
+			if (size <= 0) {
+				throw new ArgumentOutOfRangeException(nameof(size), "Size must be greater than 0");
+			} else if (size >= @string.Length) {
+				return new[] { @string };
 			}
 			Int32 i = 0;
 			Int32 j = 0;
-			Int32 k = (Int32)Math.Ceiling((Double)String.Length / Size);
+			Int32 k = (Int32)Math.Ceiling((Double)@string.Length / size);
 			String[] Result = new String[k];
 			while (i < k) {
-				Result[i] = (j + Size) > String.Length ? String.Substring(j, String.Length - j) : String.Substring(j, Size);
+				Result[i] = (j + size) > @string.Length ? @string.Substring(j, @string.Length - j) : @string.Substring(j, size);
 				i++;
-				j += Size;
+				j += size;
 			}
 			return Result;
 		}

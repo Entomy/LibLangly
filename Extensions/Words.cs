@@ -1,15 +1,15 @@
 ﻿namespace System {
 	public static partial class StringierExtensions {
 		/// <summary>
-		/// Separate the <paramref name="String"/> into its words.
+		/// Separate the <paramref name="string"/> into its words.
 		/// </summary>
-		/// <param name="String">String to separate.</param>
-		/// <returns>Array of words within the <paramref name="String"/>.</returns>
-		public static String[] Words(this String String) {
-			if (String is null) {
-				throw new ArgumentNullException(nameof(String));
+		/// <param name="string">String to separate.</param>
+		/// <returns>Array of words within the <paramref name="string"/>.</returns>
+		public static String[] Words(this String @string) {
+			if (@string is null) {
+				throw new ArgumentNullException(nameof(@string));
 			}
-			return String.Clean().Split(' ');
+			return @string.Clean().Split(' ');
 		}
 	}
 }
