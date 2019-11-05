@@ -28,6 +28,7 @@ namespace Benchmarks {
 				}),
 				new KeyChoice(ConsoleKey.D4, "Ensure", () => BenchmarkRunner.Run<EnsureBenchmarks>() ),
 				new KeyChoice(ConsoleKey.D5, "Join", () => BenchmarkRunner.Run<JoinBenchmarks>() ),
+				new KeyChoice(ConsoleKey.D6, "Lines", () => BenchmarkRunner.Run<LinesBenchmarks>() ),
 				new BackKeyChoice(ConsoleKey.B, "Back", () => {
 					Console.WriteChoices(MenuChoices);
 					Console.ReadChoice(MenuChoices);
