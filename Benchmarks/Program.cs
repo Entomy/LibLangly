@@ -31,6 +31,7 @@ namespace Benchmarks {
 				new KeyChoice(ConsoleKey.D6, "Lines", () => BenchmarkRunner.Run<LinesBenchmarks>()),
 				new KeyChoice(ConsoleKey.D7, "Occurrences", () => BenchmarkRunner.Run<OccurrencesBenchmarks>()),
 				new KeyChoice(ConsoleKey.D8, "Pad", () => BenchmarkRunner.Run<PadBenchmarks>()),
+				new KeyChoice(ConsoleKey.D9, "Repeat", () => BenchmarkRunner.Run<RepeatBenchmarks>()),
 				new BackKeyChoice(ConsoleKey.B, "Back", () => { }));
 
 			while (true) {
