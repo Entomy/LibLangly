@@ -13,6 +13,6 @@ namespace Stringier.Patterns {
 
 		public PatternConstructionException(String message, Exception inner) : base(message, inner) { }
 
-		public PatternConstructionException(SerializationInfo info, StreamingContext context) : base(info, context) { }
+		private PatternConstructionException(SerializationInfo info, StreamingContext context) : base(info, context) { }
 	}
 }

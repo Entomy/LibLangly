@@ -30,6 +30,24 @@ namespace Stringier.Patterns.Errors {
 			Code = 0x0000;
 		}
 
+		public Boolean Equals(Error other) {
+			if (Type != other.Type || Data != other.Data) { return false; }
+			switch (Data) {
+			case ErrorData.None:
+				return true;
+			case ErrorData.Char:
+				return Char.Equals(other.Char);
+			case ErrorData.Node:
+				return Node.Equals(other.Node);
+			case ErrorData.Pattern:
+				return Pattern.Equals(other.Pattern);
+			case ErrorData.String:
+				return String.Equals(other.String);
+			default:
+				throw new NotImplementedException($"{Data} doesn't have a handler.");
+			}
+		}
+
 		/// <summary>
 		/// Sets the error to the <paramref name="type"/> with the <paramref name="char"/> data source.
 		/// </summary>
