@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
-using Stringier.Patterns.Nodes;
+//using Stringier.Patterns.Nodes;
 
 namespace Stringier.Patterns.Errors {
 	/// <summary>
@@ -20,8 +20,8 @@ namespace Stringier.Patterns.Errors {
 		[FieldOffset(1)] private ErrorData Data;
 		[FieldOffset(0)] private Int32 Code;
 		[FieldOffset(4)] private Char Char;
-		[FieldOffset(8)] private Node Node;
-		[FieldOffset(8)] private Pattern Pattern;
+		//[FieldOffset(8)] private Node Node;
+		//[FieldOffset(8)] private Pattern Pattern;
 		[FieldOffset(8)] private String String;
 
 		/// <summary>
@@ -38,10 +38,10 @@ namespace Stringier.Patterns.Errors {
 				return true;
 			case ErrorData.Char:
 				return Char.Equals(other.Char);
-			case ErrorData.Node:
-				return Node.Equals(other.Node);
-			case ErrorData.Pattern:
-				return Pattern.Equals(other.Pattern);
+			//case ErrorData.Node:
+			//	return Node.Equals(other.Node);
+			//case ErrorData.Pattern:
+			//	return Pattern.Equals(other.Pattern);
 			case ErrorData.String:
 				return String.Equals(other.String);
 			default:
@@ -60,30 +60,30 @@ namespace Stringier.Patterns.Errors {
 			Char = @char;
 		}
 
-		/// <summary>
-		/// Sets the error to the <paramref name="type"/> with the <paramref name="node"/> data source.
-		/// </summary>
-		/// <param name="type">The <see cref="ErrorType"/> to set.</param>
-		/// <param name="node">The <see cref="Patterns.Node"/> data source.</param>
-		internal void Set(ErrorType type, Node node) {
-			if (node is null) {
-				throw new ArgumentNullException(nameof(node));
-			}
-			this.Type = type;
-			this.Data = ErrorData.Node;
-			this.Node = node;
-		}
+		///// <summary>
+		///// Sets the error to the <paramref name="type"/> with the <paramref name="node"/> data source.
+		///// </summary>
+		///// <param name="type">The <see cref="ErrorType"/> to set.</param>
+		///// <param name="node">The <see cref="Patterns.Node"/> data source.</param>
+		//internal void Set(ErrorType type, Node node) {
+		//	if (node is null) {
+		//		throw new ArgumentNullException(nameof(node));
+		//	}
+		//	this.Type = type;
+		//	this.Data = ErrorData.Node;
+		//	this.Node = node;
+		//}
 
-		/// <summary>
-		/// Sets the error to the <paramref name="type"/> with the <paramref name="pattern"/> data source.
-		/// </summary>
-		/// <param name="type">The <see cref="ErrorType"/> to set.</param>
-		/// <param name="pattern">The <see cref="Patterns.Pattern"/> data source.</param>
-		internal void Set(ErrorType type, Pattern pattern) {
-			this.Type = type;
-			this.Data = ErrorData.Pattern;
-			this.Pattern = pattern;
-		}
+		///// <summary>
+		///// Sets the error to the <paramref name="type"/> with the <paramref name="pattern"/> data source.
+		///// </summary>
+		///// <param name="type">The <see cref="ErrorType"/> to set.</param>
+		///// <param name="pattern">The <see cref="Patterns.Pattern"/> data source.</param>
+		//internal void Set(ErrorType type, Pattern pattern) {
+		//	this.Type = type;
+		//	this.Data = ErrorData.Pattern;
+		//	this.Pattern = pattern;
+		//}
 
 		/// <summary>
 		/// Sets the error to the <paramref name="type"/> with the <paramref name="string"/> data source.
@@ -110,12 +110,12 @@ namespace Stringier.Patterns.Errors {
 			case ErrorData.Char:
 				@string = Char.ToString();
 				break;
-			case ErrorData.Node:
-				@string = Node.ToString();
-				break;
-			case ErrorData.Pattern:
-				@string = Pattern.ToString();
-				break;
+			//case ErrorData.Node:
+			//	@string = Node.ToString();
+			//	break;
+			//case ErrorData.Pattern:
+			//	@string = Pattern.ToString();
+			//	break;
 			case ErrorData.String:
 				@string = String;
 				break;
