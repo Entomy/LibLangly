@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using Stringier.Patterns.Nodes;
 
 namespace Stringier.Patterns.Errors {
 	/// <summary>
