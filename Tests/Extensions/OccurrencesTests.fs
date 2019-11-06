@@ -1,22 +1,25 @@
 ﻿namespace Tests.Extensions
 
 open System
+open System.IO
 open Stringier.Extensions
-open Xunit
+open Microsoft.VisualStudio.TestTools.UnitTesting
 
-module OccurrencesTests =
-    [<Fact>]
-    let ``occurrences 'l' "hello"`` () =
-        Assert.Equal(2, occurrences 'l' "hello")
+[<TestClass>]
+type OccurrencesTests() =
+       
+    [<TestMethod>]
+    member _.``occurrences 'l' "hello"`` () =
+        Assert.AreEqual(2, occurrences 'l' "hello")
 
-    [<Fact>]
-    let ``occurrences '?' "hello"`` () =
-        Assert.Equal(0, occurrences '?' "hello")
+    [<TestMethod>]
+    member _.``occurrences '?' "hello"`` () =
+        Assert.AreEqual(0, occurrences '?' "hello")
 
-    [<Fact>]
-    let ``occurrences [|'e';'o'|] "hello"`` () =
-        Assert.Equal(2, occurrences [|'e';'o'|] "hello")
+    [<TestMethod>]
+    member _.``occurrences [|'e';'o'|] "hello"`` () =
+        Assert.AreEqual(2, occurrences [|'e';'o'|] "hello")
 
-    [<Fact>]
-    let ``occurrences [|'e';'o'|] [|"hello";"world";"how";"are";"you";"today?"|]`` () =
-        Assert.Equal(7, occurrences [|'e';'o'|] [|"hello";"world";"how";"are";"you";"today?"|])
+    [<TestMethod>]
+    member _.``occurrences [|'e';'o'|] [|"hello";"world";"how";"are";"you";"today?"|]`` () =
+        Assert.AreEqual(7, occurrences [|'e';'o'|] [|"hello";"world";"how";"are";"you";"today?"|])

@@ -1,22 +1,24 @@
 ﻿namespace Tests.Extensions
 
-open System;
-open Stringier.Extensions;
-open Xunit;
+open System
+open Stringier.Extensions
+open Microsoft.VisualStudio.TestTools.UnitTesting
 
-module CleanTests =
-    [<Fact>]
-    let ``clean "hello world"`` () =
-        Assert.Equal("hello world", clean "hello world");
+[<TestClass>]
+type CleanTests() =
 
-    [<Fact>]
-    let ``clean "hello  world"`` () =
-        Assert.Equal("hello world", clean "hello  world");
+    [<TestMethod>]
+    member _.``clean "hello world"`` () =
+        Assert.AreEqual("hello world", clean "hello world")
 
-    [<Fact>]
-    let ``clean " hello  world "`` () =
-        Assert.Equal("hello world", clean " hello  world ");
+    [<TestMethod>]
+    member _.``clean "hello  world"`` () =
+        Assert.AreEqual("hello world", clean "hello  world")
 
-    [<Fact>]
-    let ``clean 'o' "hellooo world"`` () =
-        Assert.Equal("hello world", clean2 'o' "hellooo world");
+    [<TestMethod>]
+    member _.``clean " hello  world "`` () =
+        Assert.AreEqual("hello world", clean " hello  world ")
+
+    [<TestMethod>]
+    member _.``clean 'o' "hellooo world"`` () =
+        Assert.AreEqual("hello world", clean2 'o' "hellooo world")

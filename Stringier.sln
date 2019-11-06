@@ -19,13 +19,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Extensions", "Extensions\Ex
 EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Extensions.FSharp", "Extensions.FSharp\Extensions.FSharp.fsproj", "{F96F9790-D612-48F2-B990-FE696090E2B6}"
 EndProject
-Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Tests", "Tests\Tests.fsproj", "{6E457C08-1A65-4099-A22A-D5137C554E72}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Benchmarks", "Benchmarks\Benchmarks.csproj", "{10BE9696-6EF2-40F6-A864-8540669A31B7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Patterns", "Patterns\Patterns.csproj", "{D1CC659D-1CEE-46F7-B0BE-CCBE9F5102D7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{EA4BD5B8-5B81-4C8F-A494-D365F7F8A4C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patterns.MSTest", "Patterns.MSTest\Patterns.MSTest.csproj", "{1B3EDF55-DC47-4B00-BF5D-8651EE412BED}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Tests", "Tests\Tests.fsproj", "{CCE1E660-1AA5-42CD-8D13-5AA38ECB2C56}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,14 +61,6 @@ Global
 		{F96F9790-D612-48F2-B990-FE696090E2B6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F96F9790-D612-48F2-B990-FE696090E2B6}.Release-LowTrust|Any CPU.ActiveCfg = Release|Any CPU
 		{F96F9790-D612-48F2-B990-FE696090E2B6}.Release-LowTrust|Any CPU.Build.0 = Release|Any CPU
-		{6E457C08-1A65-4099-A22A-D5137C554E72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6E457C08-1A65-4099-A22A-D5137C554E72}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6E457C08-1A65-4099-A22A-D5137C554E72}.Debug-LowTrust|Any CPU.ActiveCfg = Debug|Any CPU
-		{6E457C08-1A65-4099-A22A-D5137C554E72}.Debug-LowTrust|Any CPU.Build.0 = Debug|Any CPU
-		{6E457C08-1A65-4099-A22A-D5137C554E72}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6E457C08-1A65-4099-A22A-D5137C554E72}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6E457C08-1A65-4099-A22A-D5137C554E72}.Release-LowTrust|Any CPU.ActiveCfg = Release|Any CPU
-		{6E457C08-1A65-4099-A22A-D5137C554E72}.Release-LowTrust|Any CPU.Build.0 = Release|Any CPU
 		{10BE9696-6EF2-40F6-A864-8540669A31B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{10BE9696-6EF2-40F6-A864-8540669A31B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10BE9696-6EF2-40F6-A864-8540669A31B7}.Debug-LowTrust|Any CPU.ActiveCfg = Debug|Any CPU
@@ -91,6 +85,22 @@ Global
 		{EA4BD5B8-5B81-4C8F-A494-D365F7F8A4C4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EA4BD5B8-5B81-4C8F-A494-D365F7F8A4C4}.Release-LowTrust|Any CPU.ActiveCfg = Release|Any CPU
 		{EA4BD5B8-5B81-4C8F-A494-D365F7F8A4C4}.Release-LowTrust|Any CPU.Build.0 = Release|Any CPU
+		{1B3EDF55-DC47-4B00-BF5D-8651EE412BED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B3EDF55-DC47-4B00-BF5D-8651EE412BED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B3EDF55-DC47-4B00-BF5D-8651EE412BED}.Debug-LowTrust|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B3EDF55-DC47-4B00-BF5D-8651EE412BED}.Debug-LowTrust|Any CPU.Build.0 = Debug|Any CPU
+		{1B3EDF55-DC47-4B00-BF5D-8651EE412BED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B3EDF55-DC47-4B00-BF5D-8651EE412BED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B3EDF55-DC47-4B00-BF5D-8651EE412BED}.Release-LowTrust|Any CPU.ActiveCfg = Release|Any CPU
+		{1B3EDF55-DC47-4B00-BF5D-8651EE412BED}.Release-LowTrust|Any CPU.Build.0 = Release|Any CPU
+		{CCE1E660-1AA5-42CD-8D13-5AA38ECB2C56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCE1E660-1AA5-42CD-8D13-5AA38ECB2C56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCE1E660-1AA5-42CD-8D13-5AA38ECB2C56}.Debug-LowTrust|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCE1E660-1AA5-42CD-8D13-5AA38ECB2C56}.Debug-LowTrust|Any CPU.Build.0 = Debug|Any CPU
+		{CCE1E660-1AA5-42CD-8D13-5AA38ECB2C56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCE1E660-1AA5-42CD-8D13-5AA38ECB2C56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCE1E660-1AA5-42CD-8D13-5AA38ECB2C56}.Release-LowTrust|Any CPU.ActiveCfg = Release|Any CPU
+		{CCE1E660-1AA5-42CD-8D13-5AA38ECB2C56}.Release-LowTrust|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

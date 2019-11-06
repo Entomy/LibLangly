@@ -2,9 +2,11 @@
 
 open System
 open Stringier.Extensions
-open Xunit
+open Microsoft.VisualStudio.TestTools.UnitTesting
 
-module WordsTests =
-    [<Fact>]
-    let ``words "hello world"`` () =
-        Assert.Equal<seq<string>>([|"hello";"world"|], words "hello world")
+[<TestClass>]
+type WordsTests () =
+    
+    [<TestMethod>]
+    member _.``words "hello world"`` () =
+        CollectionAssert.AreEqual([|"hello";"world"|], words "hello world")

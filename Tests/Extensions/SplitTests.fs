@@ -2,17 +2,18 @@
 
 open System
 open Stringier.Extensions
-open Xunit
+open Microsoft.VisualStudio.TestTools.UnitTesting
 
-module SplitTests =
-    [<Fact>]
-    let ``split ',' "comma,separated,values"`` () =
-        Assert.Equal<seq<string>>([|"comma";"separated";"values"|], split ',' "comma,separated,values")
+[<TestClass>]
+type SplitTests () =
+    [<TestMethod>]
+    member _.``split ',' "comma,separated,values"`` () =
+        CollectionAssert.AreEqual([|"comma";"separated";"values"|], split ',' "comma,separated,values")
 
-    [<Fact>]
-    let ``split ", " "comma, separated, values, 1,300"`` () =
-        Assert.Equal<seq<string>>([|"comma";"separated";"values";"1,300"|], split ", " "comma, separated, values, 1,300")
+    [<TestMethod>]
+    member _.``split ", " "comma, separated, values, 1,300"`` () =
+        CollectionAssert.AreEqual([|"comma";"separated";"values";"1,300"|], split ", " "comma, separated, values, 1,300")
     
-    [<Fact>]
-    let ``split [|',';';'|] "comma,or;semicolon;separated,values"`` () =
-        Assert.Equal<seq<string>>([|"comma";"or";"semicolon";"separated";"values"|], split [|',';';'|] "comma,or;semicolon;separated,values")
+    [<TestMethod>]
+    member _.``split [|',';';'|] "comma,or;semicolon;separated,values"`` () =
+        CollectionAssert.AreEqual([|"comma";"or";"semicolon";"separated";"values"|], split [|',';';'|] "comma,or;semicolon;separated,values")

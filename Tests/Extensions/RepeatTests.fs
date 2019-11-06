@@ -2,13 +2,15 @@
 
 open System
 open Stringier.Extensions
-open Xunit
+open Microsoft.VisualStudio.TestTools.UnitTesting
 
-module RepeatTests =
-    [<Fact>]
-    let ``repeat 3 'a'`` () =
-        Assert.Equal("aaa", repeat 3 'a')
+[<TestClass>]
+type RepeatTests() =
 
-    [<Fact>]
-    let ``repeat 3 "hi!"`` () =
-        Assert.Equal("hi!hi!hi!", repeat 3 "hi!")
+    [<TestMethod>]
+    member _.``repeat 3 'a'`` () =
+        Assert.AreEqual("aaa", repeat 3 'a')
+
+    [<TestMethod>]
+    member _.``repeat 3 "hi!"`` () =
+        Assert.AreEqual("hi!hi!hi!", repeat 3 "hi!")
