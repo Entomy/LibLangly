@@ -1,5 +1,6 @@
 ﻿using System;
 using Stringier.Patterns.Errors;
+using Stringier.Patterns.Nodes;
 
 namespace Stringier.Patterns {
 	public static class StringExtensions {
@@ -12,6 +13,14 @@ namespace Stringier.Patterns {
 		/// <param name="source">The <see cref="Source"/> to check against</param>
 		/// <returns><c>true</c> if this <paramref name="pattern"/> may be present, <c>false</c> if definately not.</returns>
 		internal static Boolean CheckHeader(this String pattern, ref Source source) => pattern[0].CheckHeader(ref source);
+
+		/// <summary>
+		/// Compare this <paramref name="pattern"/> with the given <paramref name="comparisonType"/>.
+		/// </summary>
+		/// <param name="pattern">The <see cref="String"/> pattern.</param>
+		/// <param name="comparisonType">The <see cref="StringComparison"/> to compare with.</param>
+		/// <returns>A new <see cref="Pattern"/> representing the <paramref name="pattern"/> compared with <paramref name="comparisonType"/>.</returns>
+		public static Pattern With(this String pattern, StringComparison comparisonType) => new Pattern(new StringLiteral(pattern, comparisonType));
 
 		/// <summary>
 		/// Attempt to consume the <paramref name="pattern"/> from the <paramref name="source"/>

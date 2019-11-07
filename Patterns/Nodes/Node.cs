@@ -6,7 +6,7 @@ namespace Stringier.Patterns.Nodes {
 	/// </summary>
 	internal abstract class Node : IEquatable<Node>, IEquatable<String> {
 		/// <summary>
-		/// Checks the first character in the <paramref name="Source"/> against the header of this pattern.
+		/// Checks the first character in the <paramref name="Source"/> against the header of this node.
 		/// </summary>
 		/// <remarks>
 		/// This is primarily used to check whether a pattern may exist at the current position.
@@ -57,9 +57,9 @@ namespace Stringier.Patterns.Nodes {
 		public abstract Boolean Equals(Node node);
 
 		/// <summary>
-		/// Determines whether the specified <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> can be represented by this <see cref="Pattern"/>.
+		/// Determines whether the specified <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> can be represented by this <see cref="Node"/>.
 		/// </summary>
-		/// <param name="other">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to check against this <see cref="Pattern"/>.</param>.
+		/// <param name="other">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to check against this <see cref="Node"/>.</param>.
 		/// <returns><c>true</c> if representable; otherwise, <c>false</c>.</returns>
 		public virtual Boolean Equals(ReadOnlySpan<Char> other) {
 			Source Source = new Source(other);
@@ -69,9 +69,9 @@ namespace Stringier.Patterns.Nodes {
 		}
 
 		/// <summary>
-		/// Determines whether the specified <see cref="String"/> can be represented by this <see cref="Pattern"/>.
+		/// Determines whether the specified <see cref="String"/> can be represented by this <see cref="Node"/>.
 		/// </summary>
-		/// <param name="other">The <see cref="String"/> to check against this <see cref="Pattern"/>.</param>
+		/// <param name="other">The <see cref="String"/> to check against this <see cref="Node"/>.</param>
 		/// <returns><c>true</c> if representable; otherwise, <c>false</c>.</returns>
 		public virtual Boolean Equals(String other) {
 			if (other is null) {

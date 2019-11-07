@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <Compile Include="Patterns\ExtensionTests.fs" />
+    <Compile Include="Patterns\LiteralTests.fs" />
     <Compile Include="Extensions\ChopTests.fs" />
     <Compile Include="Extensions\CleanTests.fs" />
     <Compile Include="Extensions\ContainsTests.fs" />
@@ -37,6 +38,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Extensions.FSharp\Extensions.FSharp.fsproj" />
     <ProjectReference Include="..\Extensions\Extensions.csproj" />
+    <ProjectReference Include="..\Patterns.FSharp\Patterns.FSharp.fsproj" />
     <ProjectReference Include="..\Patterns.MSTest\Patterns.MSTest.csproj" />
     <ProjectReference Include="..\Patterns\Patterns.csproj" />
   </ItemGroup>
