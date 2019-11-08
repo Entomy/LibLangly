@@ -104,22 +104,22 @@ namespace Stringier.Patterns.Nodes {
 		/// </summary>
 		/// <param name="right">The succeeding <see cref="Node"/>.</param>
 		/// <returns>A new <see cref="Node"/> concatenating this <see cref="Node"/> and <paramref name="right"/>.</returns>
-		internal override Node Concatenate(Node Right) {
-			switch (Right) {
-			case StringLiteral right:
-				if (ComparisonType.Equals(right.ComparisonType)) {
-					return new StringLiteral(Char + right.String);
+		internal override Node Concatenate(Node right) {
+			switch (right) {
+			case StringLiteral @string:
+				if (ComparisonType.Equals(@string.ComparisonType)) {
+					return new StringLiteral(Char + @string.String);
 				} else {
 					goto default;
 				}
-			case CharLiteral right:
-				if (ComparisonType.Equals(right.ComparisonType)) {
-					return new StringLiteral(Char.ToString() + right.Char.ToString());
+			case CharLiteral @char:
+				if (ComparisonType.Equals(@char.ComparisonType)) {
+					return new StringLiteral(Char.ToString() + @char.Char.ToString());
 				} else {
 					goto default;
 				}
 			default:
-				return base.Concatenate(Right);
+				return base.Concatenate(right);
 			}
 		}
 
@@ -128,14 +128,14 @@ namespace Stringier.Patterns.Nodes {
 		/// </summary>
 		/// <param name="right">The succeeding <see cref="String"/>.</param>
 		/// <returns>A new <see cref="Node"/> concatenating this <see cref="Node"/> and <paramref name="right"/>.</returns
-		internal override Node Concatenate(String Right) => new StringLiteral(Char + Right);
+		internal override Node Concatenate(String right) => new StringLiteral(Char + right);
 
 		/// <summary>
 		/// Concatenates the nodes so that this <see cref="Node"/> comes before the <paramref name="right"/> <see cref="Char"/>.
 		/// </summary>
 		/// <param name="right">The succeeding <see cref="Char"/>.</param>
 		/// <returns>A new <see cref="Node"/> concatenating this <see cref="Node"/> and <paramref name="right"/>.</returns>
-		internal override Node Concatenate(Char Right) => new StringLiteral(Char.ToString() + Right);
+		internal override Node Concatenate(Char right) => new StringLiteral(Char.ToString() + right);
 
 		#endregion
 
