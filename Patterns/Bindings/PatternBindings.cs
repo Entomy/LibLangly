@@ -78,50 +78,104 @@ namespace Stringier.Patterns.Bindings {
 
 		//public static Pattern Checker(String Name, Func<Char, Boolean> Check) => new Pattern(new CharChecker(Name, Check));
 
-		//public static Pattern Concatenator(Pattern Left, Pattern Right) => new Pattern(Left.Head.Concatenate(Right.Head));
+		/// <summary>
+		/// Concatenates the patterns so that <paramref name="left"/> comes before <paramref name="right"/>
+		/// </summary>
+		/// <param name="left">The preceeding <see cref="Pattern"/></param>
+		/// <param name="right">The succeeding <see cref="Pattern"/></param>
+		/// <returns>A new <see cref="Pattern"/> concatenating <paramref name="left"/> and <paramref name="right"/></returns>
+		public static Pattern Concatenator(Pattern left, Pattern right) => new Pattern(left.Head.Concatenate(right.Head));
 
-		//public static Pattern Concatenator(Pattern Left, String Right) {
-		//	if (Right is null) {
-		//		throw new ArgumentNullException(nameof(Right));
-		//	}
-		//	return new Pattern(Left.Head.Concatenate(new StringLiteral(Right)));
-		//}
+		/// <summary>
+		/// Concatenates the patterns so that <paramref name="left"/> comes before <paramref name="right"/>
+		/// </summary>
+		/// <param name="left">The preceeding <see cref="Pattern"/></param>
+		/// <param name="right">The succeeding <see cref="String"/></param>
+		/// <returns>A new <see cref="Pattern"/> concatenating <paramref name="left"/> and <paramref name="right"/></returns>
+		public static Pattern Concatenator(Pattern left, String right) {
+			if (right is null) {
+				throw new ArgumentNullException(nameof(right));
+			}
+			return new Pattern(left.Head.Concatenate(new StringLiteral(right)));
+		}
 
-		//public static Pattern Concatenator(String Left, Pattern Right) {
-		//	if (Left is null) {
-		//		throw new ArgumentNullException(nameof(Left));
-		//	}
-		//	return new Pattern(new StringLiteral(Left).Concatenate(Right.Head));
-		//}
+		/// <summary>
+		/// Concatenates the patterns so that <paramref name="left"/> comes before <paramref name="right"/>
+		/// </summary>
+		/// <param name="left">The preceeding <see cref="String"/></param>
+		/// <param name="right">The succeeding <see cref="Pattern"/></param>
+		/// <returns>A new <see cref="Pattern"/> concatenating <paramref name="left"/> and <paramref name="right"/></returns>
+		public static Pattern Concatenator(String left, Pattern right) {
+			if (left is null) {
+				throw new ArgumentNullException(nameof(left));
+			}
+			return new Pattern(new StringLiteral(left).Concatenate(right.Head));
+		}
 
-		//public static Pattern Concatenator(Pattern Left, Char Right) => new Pattern(Left.Head.Concatenate(new CharLiteral(Right)));
+		/// <summary>
+		/// Concatenates the patterns so that <paramref name="left"/> comes before <paramref name="right"/>
+		/// </summary>
+		/// <param name="left">The preceeding <see cref="Pattern"/></param>
+		/// <param name="right">The succeeding <see cref="Char"/></param>
+		/// <returns>A new <see cref="Pattern"/> concatenating <paramref name="left"/> and <paramref name="right"/></returns>
+		public static Pattern Concatenator(Pattern left, Char right) => new Pattern(left.Head.Concatenate(new CharLiteral(right)));
 
-		//public static Pattern Concatenator(Char Left, Pattern Right) => new Pattern(new CharLiteral(Left).Concatenate(Right.Head));
+		/// <summary>
+		/// Concatenates the patterns so that <paramref name="left"/> comes before <paramref name="right"/>
+		/// </summary>
+		/// <param name="left">The preceeding <see cref="Char"/></param>
+		/// <param name="right">The succeeding <see cref="Pattern"/></param>
+		/// <returns>A new <see cref="Pattern"/> concatenating <paramref name="left"/> and <paramref name="right"/></returns>
+		public static Pattern Concatenator(Char left, Pattern right) => new Pattern(new CharLiteral(left).Concatenate(right.Head));
 
-		//public static Pattern Concatenator(String Left, String Right) {
-		//	if (Left is null) {
-		//		throw new ArgumentNullException(nameof(Left));
-		//	} else if (Right is null) {
-		//		throw new ArgumentNullException(nameof(Right));
-		//	}
-		//	return new Pattern(new StringLiteral(Left).Concatenate(new StringLiteral(Right)));
-		//}
+		/// <summary>
+		/// Concatenates the patterns so that <paramref name="left"/> comes before <paramref name="right"/>
+		/// </summary>
+		/// <param name="left">The preceeding <see cref="String"/></param>
+		/// <param name="right">The succeeding <see cref="String"/></param>
+		/// <returns>A new <see cref="Pattern"/> concatenating <paramref name="left"/> and <paramref name="right"/></returns>
+		public static Pattern Concatenator(String left, String right) {
+			if (left is null) {
+				throw new ArgumentNullException(nameof(left));
+			} else if (right is null) {
+				throw new ArgumentNullException(nameof(right));
+			}
+			return new Pattern(new StringLiteral(left).Concatenate(new StringLiteral(right)));
+		}
 
-		//public static Pattern Concatenator(String Left, Char Right) {
-		//	if (Left is null) {
-		//		throw new ArgumentNullException(nameof(Left));
-		//	}
-		//	return new Pattern(new StringLiteral(Left).Concatenate(new CharLiteral(Right)));
-		//}
+		/// <summary>
+		/// Concatenates the patterns so that <paramref name="left"/> comes before <paramref name="right"/>
+		/// </summary>
+		/// <param name="left">The preceeding <see cref="String"/></param>
+		/// <param name="right">The succeeding <see cref="Char"/></param>
+		/// <returns>A new <see cref="Pattern"/> concatenating <paramref name="left"/> and <paramref name="right"/></returns>
+		public static Pattern Concatenator(String left, Char right) {
+			if (left is null) {
+				throw new ArgumentNullException(nameof(left));
+			}
+			return new Pattern(new StringLiteral(left).Concatenate(new CharLiteral(right)));
+		}
 
-		//public static Pattern Concatenator(Char Left, String Right) {
-		//	if (Right is null) {
-		//		throw new ArgumentNullException(nameof(Right));
-		//	}
-		//	return new Pattern(new CharLiteral(Left).Concatenate(new StringLiteral(Right)));
-		//}
+		/// <summary>
+		/// Concatenates the patterns so that <paramref name="left"/> comes before <paramref name="right"/>
+		/// </summary>
+		/// <param name="left">The preceeding <see cref="Char"/></param>
+		/// <param name="right">The succeeding <see cref="String"/></param>
+		/// <returns>A new <see cref="Pattern"/> concatenating <paramref name="left"/> and <paramref name="right"/></returns>
+		public static Pattern Concatenator(Char left, String right) {
+			if (right is null) {
+				throw new ArgumentNullException(nameof(right));
+			}
+			return new Pattern(new CharLiteral(left).Concatenate(new StringLiteral(right)));
+		}
 
-		//public static Pattern Concatenator(Char Left, Char Right) => new Pattern(new CharLiteral(Left).Concatenate(new CharLiteral(Right)));
+		/// <summary>
+		/// Concatenates the patterns so that <paramref name="left"/> comes before <paramref name="right"/>
+		/// </summary>
+		/// <param name="left">The preceeding <see cref="Char"/></param>
+		/// <param name="right">The succeeding <see cref="Char"/></param>
+		/// <returns>A new <see cref="Pattern"/> concatenating <paramref name="left"/> and <paramref name="right"/></returns>
+		public static Pattern Concatenator(Char left, Char right) => new Pattern(new CharLiteral(left).Concatenate(new CharLiteral(right)));
 
 		//public static Pattern Negator(Pattern Pattern) => new Pattern(Pattern.Head.Negate());
 

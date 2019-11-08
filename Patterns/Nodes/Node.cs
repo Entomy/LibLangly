@@ -113,21 +113,36 @@ namespace Stringier.Patterns.Nodes {
 
 		//internal Node Capture(out Capture Capture) => new Capturer(this, out Capture);
 
-		//internal virtual Node Concatenate(Node Right) {
-		//	if (Right is null) {
-		//		throw new ArgumentNullException(nameof(Right));
-		//	}
-		//	return new Concatenator(this, Right);
-		//}
+		/// <summary>
+		/// Concatenates the nodes so that this <see cref="Node"/> comes before the <paramref name="right"/> <see cref="Node"/>.
+		/// </summary>
+		/// <param name="right">The succeeding <see cref="Node"/>.</param>
+		/// <returns>A new <see cref="Node"/> concatenating this <see cref="Node"/> and <paramref name="right"/>.</returns>
+		internal virtual Node Concatenate(Node right) {
+			if (right is null) {
+				throw new ArgumentNullException(nameof(right));
+			}
+			return new Concatenator(this, right);
+		}
 
-		//internal virtual Node Concatenate(Char Right) => new Concatenator(this, new CharLiteral(Right));
+		/// <summary>
+		/// Concatenates the nodes so that this <see cref="Node"/> comes before the <paramref name="right"/> <see cref="Char"/>.
+		/// </summary>
+		/// <param name="right">The succeeding <see cref="Char"/>.</param>
+		/// <returns>A new <see cref="Node"/> concatenating this <see cref="Node"/> and <paramref name="right"/>.</returns>
+		internal virtual Node Concatenate(Char right) => new Concatenator(this, new CharLiteral(right));
 
-		//internal virtual Node Concatenate(String Right) {
-		//	if (Right is null) {
-		//		throw new ArgumentNullException(nameof(Right));
-		//	}
-		//	return new Concatenator(this, new StringLiteral(Right));
-		//}
+		/// <summary>
+		/// Concatenates the nodes so that this <see cref="Node"/> comes before the <paramref name="right"/> <see cref="String"/>.
+		/// </summary>
+		/// <param name="right">The succeeding <see cref="String"/>.</param>
+		/// <returns>A new <see cref="Node"/> concatenating this <see cref="Node"/> and <paramref name="right"/>.</returns
+		internal virtual Node Concatenate(String right) {
+			if (right is null) {
+				throw new ArgumentNullException(nameof(right));
+			}
+			return new Concatenator(this, new StringLiteral(right));
+		}
 
 		//internal virtual Node Negate() => new Negator(this);
 

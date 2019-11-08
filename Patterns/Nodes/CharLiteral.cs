@@ -97,32 +97,47 @@ namespace Stringier.Patterns.Nodes {
 		/// <returns>A <see cref="String"/> that represents the current <see cref="Node"/>.</returns>
 		public override String ToString() => $"{Char}";
 
-		//#region Concatenator
+		#region Concatenator
 
-		//internal override Node Concatenate(Node Right) {
-		//	switch (Right) {
-		//	case StringLiteral right:
-		//		if (ComparisonType.Equals(right.ComparisonType)) {
-		//			return new StringLiteral(Char + right.String);
-		//		} else {
-		//			goto default;
-		//		}
-		//	case CharLiteral right:
-		//		if (ComparisonType.Equals(right.ComparisonType)) {
-		//			return new StringLiteral(Char.ToString() + right.Char.ToString());
-		//		} else {
-		//			goto default;
-		//		}
-		//	default:
-		//		return base.Concatenate(Right);
-		//	}
-		//}
+		/// <summary>
+		/// Concatenates the nodes so that this <see cref="Node"/> comes before the <paramref name="right"/> <see cref="Node"/>.
+		/// </summary>
+		/// <param name="right">The succeeding <see cref="Node"/>.</param>
+		/// <returns>A new <see cref="Node"/> concatenating this <see cref="Node"/> and <paramref name="right"/>.</returns>
+		internal override Node Concatenate(Node Right) {
+			switch (Right) {
+			case StringLiteral right:
+				if (ComparisonType.Equals(right.ComparisonType)) {
+					return new StringLiteral(Char + right.String);
+				} else {
+					goto default;
+				}
+			case CharLiteral right:
+				if (ComparisonType.Equals(right.ComparisonType)) {
+					return new StringLiteral(Char.ToString() + right.Char.ToString());
+				} else {
+					goto default;
+				}
+			default:
+				return base.Concatenate(Right);
+			}
+		}
 
-		//internal override Node Concatenate(String Right) => new StringLiteral(Char + Right);
+		/// <summary>
+		/// Concatenates the nodes so that this <see cref="Node"/> comes before the <paramref name="right"/> <see cref="String"/>.
+		/// </summary>
+		/// <param name="right">The succeeding <see cref="String"/>.</param>
+		/// <returns>A new <see cref="Node"/> concatenating this <see cref="Node"/> and <paramref name="right"/>.</returns
+		internal override Node Concatenate(String Right) => new StringLiteral(Char + Right);
 
-		//internal override Node Concatenate(Char Right) => new StringLiteral(Char.ToString() + Right);
+		/// <summary>
+		/// Concatenates the nodes so that this <see cref="Node"/> comes before the <paramref name="right"/> <see cref="Char"/>.
+		/// </summary>
+		/// <param name="right">The succeeding <see cref="Char"/>.</param>
+		/// <returns>A new <see cref="Node"/> concatenating this <see cref="Node"/> and <paramref name="right"/>.</returns>
+		internal override Node Concatenate(Char Right) => new StringLiteral(Char.ToString() + Right);
 
-		//#endregion
+		#endregion
 
 		//#region Repeater
 
