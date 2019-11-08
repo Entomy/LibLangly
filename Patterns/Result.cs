@@ -44,9 +44,17 @@ namespace Stringier.Patterns {
 			internal set;
 		}
 
-		public static implicit operator Boolean(Result Result) => Result.Error.Type == ErrorType.None;
+		/// <summary>
+		/// Whether the parsing was successful.
+		/// </summary>
+		/// <returns><c>true</c> if successful; otherwise, <c>false</c></returns>
+		public Boolean Success => Error.Type == ErrorType.None;
 
-		public static implicit operator String(Result Result) => Result.Source.Substring(Result.Start, Result.Length).ToString();
+		public static implicit operator Boolean(Result result) => result.Success;
+
+		public static implicit operator String(Result result) => result.ToString();
+
+		public static implicit operator ReadOnlySpan<Char>(Result result) => result.AsSpan();
 
 		/// <summary>
 		/// Determines whether the specified object is equal to the current object.
