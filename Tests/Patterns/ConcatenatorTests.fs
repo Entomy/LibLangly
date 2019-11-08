@@ -30,3 +30,10 @@ type ConcatenatorTests() =
 
         result <- goodbyeWorld.Consume("Hello world")
         ResultAssert.Fails(result)
+
+    [<TestMethod>]
+    member _.``forward composition still works`` () =
+        let f x = x + 1
+        let g x = x * 2
+        let h = f >> g
+        Assert.AreEqual(4, h 1)

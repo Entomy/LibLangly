@@ -7,19 +7,18 @@ open Stringier.Patterns.Bindings
 module ConcatenatorExtensions =
 
     type Binding =
-        static member Concat(left:Pattern, right:Pattern) = PatternBindings.Concatenator(left, right)
-        static member Concat(left:String, right:Pattern) = PatternBindings.Concatenator(left, right)
-        static member Concat(left:Pattern, right:String) = PatternBindings.Concatenator(left, right)
-        static member Concat(left:Pattern, right:Char) = PatternBindings.Concatenator(left, right)
-        static member Concat(left:Char, right:Pattern) = PatternBindings.Concatenator(left, right)
-        static member Concat(left:String, right:String) = PatternBindings.Concatenator(left, right)
-        static member Concat(left:String, right:Char) = PatternBindings.Concatenator(left, right)
-        static member Concat(left:Char, right:String) = PatternBindings.Concatenator(left, right)
-        static member Concat(left:Char, right:Char) = PatternBindings.Concatenator(left, right)
+        static member Concatenate(left:Pattern, right:Pattern) = PatternBindings.Concatenator(left, right)
+        static member Concatenate(left:String, right:Pattern) = PatternBindings.Concatenator(left, right)
+        static member Concatenate(left:Pattern, right:String) = PatternBindings.Concatenator(left, right)
+        static member Concatenate(left:Pattern, right:Char) = PatternBindings.Concatenator(left, right)
+        static member Concatenate(left:Char, right:Pattern) = PatternBindings.Concatenator(left, right)
+        static member Concatenate(left:String, right:String) = PatternBindings.Concatenator(left, right)
+        static member Concatenate(left:String, right:Char) = PatternBindings.Concatenator(left, right)
+        static member Concatenate(left:Char, right:String) = PatternBindings.Concatenator(left, right)
+        static member Concatenate(left:Char, right:Char) = PatternBindings.Concatenator(left, right)
+        // This makes >> still do foreward composition
+        static member Concatenate(left, right) = left >> right
 
-    let inline private concat< ^t, ^a, ^b, ^c when (^t or ^a) : (static member Concat : ^a * ^b -> ^c)> left right = ((^t or ^a) : (static member Concat : ^a * ^b -> ^c)(left, right))
+    let inline private concatenate< ^t, ^a, ^b, ^c when (^t or ^a) : (static member Concatenate : ^a * ^b -> ^c)> left right = ((^t or ^a) : (static member Concatenate : ^a * ^b -> ^c)(left, right))
 
-    /// <summary>
-    /// Concatenates the patterns so that <paramref name="left"/> comes before <paramref name="right"/>
-    /// </summary>
-    let inline ( >> ) left right = concat<Binding, _, _, _> left right
+    let inline ( >> ) left right = concatenate<Binding, _, _, _> left right

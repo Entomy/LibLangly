@@ -28,51 +28,104 @@ namespace Stringier.Patterns.Bindings {
 			return new Pattern(new StringLiteral(@string));
 		}
 
-		//public static Pattern Alternator(Pattern Left, Pattern Right) => new Pattern(Left.Head.Alternate(Right.Head));
+		/// <summary>
+		/// Declares <paramref name="right"/> to be an alternate of <paramref name="left"/>
+		/// </summary>
+		/// <param name="left">The <see cref="Pattern"/> to check first</param>
+		/// <param name="right">The <see cref="Pattern"/> to check if <paramref name="left"/> does not match</param>
+		/// <returns>A new <see cref="Pattern"/> alternating <paramref name="left"/> and <paramref name="right"/></returns>
+		public static Pattern Alternator(Pattern left, Pattern right) => new Pattern(left.Head.Alternate(right.Head));
 
-		//public static Pattern Alternator(Pattern Left, String Right) {
-		//	if (Right is null) {
-		//		throw new ArgumentNullException(nameof(Right));
-		//	}
-		//	return new Pattern(Left.Head.Alternate(new StringLiteral(Right)));
-		//}
+		/// <summary>
+		/// Declares <paramref name="right"/> to be an alternate of <paramref name="left"/>
+		/// </summary>
+		/// <param name="left">The <see cref="Pattern"/> to check first</param>
+		/// <param name="right">The <see cref="String"/> to check if <paramref name="left"/> does not match</param>
+		/// <returns>A new <see cref="Pattern"/> alternating <paramref name="left"/> and <paramref name="right"/></returns>
+		public static Pattern Alternator(Pattern left, String right) {
+			if (right is null) {
+				throw new ArgumentNullException(nameof(right));
+			}
+			return new Pattern(left.Head.Alternate(new StringLiteral(right)));
+		}
 
-		//public static Pattern Alternator(String Left, Pattern Right) {
-		//	if (Left is null) {
-		//		throw new ArgumentNullException(nameof(Left));
-		//	}
-		//	return new Pattern(new StringLiteral(Left).Alternate(Right.Head));
-		//}
+		/// <summary>
+		/// Declares <paramref name="right"/> to be an alternate of <paramref name="left"/>
+		/// </summary>
+		/// <param name="left">The <see cref="String"/> to check first</param>
+		/// <param name="right">The <see cref="Pattern"/> to check if <paramref name="left"/> does not match</param>
+		/// <returns>A new <see cref="Pattern"/> alternating <paramref name="left"/> and <paramref name="right"/></returns>
+		public static Pattern Alternator(String left, Pattern right) {
+			if (left is null) {
+				throw new ArgumentNullException(nameof(left));
+			}
+			return new Pattern(new StringLiteral(left).Alternate(right.Head));
+		}
 
-		//public static Pattern Alternator(Pattern Left, Char Right) => new Pattern(Left.Head.Alternate(new CharLiteral(Right)));
+		/// <summary>
+		/// Declares <paramref name="right"/> to be an alternate of <paramref name="left"/>
+		/// </summary>
+		/// <param name="left">The <see cref="Pattern"/> to check first</param>
+		/// <param name="right">The <see cref="Char"/> to check if <paramref name="left"/> does not match</param>
+		/// <returns>A new <see cref="Pattern"/> alternating <paramref name="left"/> and <paramref name="right"/></returns
+		public static Pattern Alternator(Pattern left, Char right) => new Pattern(left.Head.Alternate(new CharLiteral(right)));
 
-		//public static Pattern Alternator(Char Left, Pattern Right) => new Pattern(new CharLiteral(Left).Alternate(Right.Head));
+		/// <summary>
+		/// Declares <paramref name="right"/> to be an alternate of <paramref name="left"/>
+		/// </summary>
+		/// <param name="left">The <see cref="Char"/> to check first</param>
+		/// <param name="right">The <see cref="Pattern"/> to check if <paramref name="left"/> does not match</param>
+		/// <returns>A new <see cref="Pattern"/> alternating <paramref name="left"/> and <paramref name="right"/></returns>
+		public static Pattern Alternator(Char left, Pattern right) => new Pattern(new CharLiteral(left).Alternate(right.Head));
 
-		//public static Pattern Alternator(String Left, String Right) {
-		//	if (Left is null) {
-		//		throw new ArgumentNullException(nameof(Left));
-		//	} else if (Right is null) {
-		//		throw new ArgumentNullException(nameof(Right));
-		//	}
-		//	return new Pattern(new StringLiteral(Left).Alternate(new StringLiteral(Right)));
-		//}
+		/// <summary>
+		/// Declares <paramref name="right"/> to be an alternate of <paramref name="left"/>
+		/// </summary>
+		/// <param name="left">The <see cref="String"/> to check first</param>
+		/// <param name="right">The <see cref="String"/> to check if <paramref name="left"/> does not match</param>
+		/// <returns>A new <see cref="Pattern"/> alternating <paramref name="left"/> and <paramref name="right"/></returns
+		public static Pattern Alternator(String left, String right) {
+			if (left is null) {
+				throw new ArgumentNullException(nameof(left));
+			} else if (right is null) {
+				throw new ArgumentNullException(nameof(right));
+			}
+			return new Pattern(new StringLiteral(left).Alternate(new StringLiteral(right)));
+		}
 
-		//public static Pattern Alternator(String Left, Char Right) {
-		//	if (Left is null) {
-		//		throw new ArgumentNullException(nameof(Left));
-		//	}
-		//	return new Pattern(new StringLiteral(Left).Alternate(new CharLiteral(Right)));
-		//}
+		/// <summary>
+		/// Declares <paramref name="right"/> to be an alternate of <paramref name="left"/>
+		/// </summary>
+		/// <param name="left">The <see cref="String"/> to check first</param>
+		/// <param name="right">The <see cref="Char"/> to check if <paramref name="left"/> does not match</param>
+		/// <returns>A new <see cref="Pattern"/> alternating <paramref name="left"/> and <paramref name="right"/></returns
+		public static Pattern Alternator(String left, Char right) {
+			if (left is null) {
+				throw new ArgumentNullException(nameof(left));
+			}
+			return new Pattern(new StringLiteral(left).Alternate(new CharLiteral(right)));
+		}
 
+		/// <summary>
+		/// Declares <paramref name="right"/> to be an alternate of <paramref name="left"/>
+		/// </summary>
+		/// <param name="left">The <see cref="Char"/> to check first</param>
+		/// <param name="right">The <see cref="String"/> to check if <paramref name="left"/> does not match</param>
+		/// <returns>A new <see cref="Pattern"/> alternating <paramref name="left"/> and <paramref name="right"/></returns>
+		public static Pattern Alternator(Char left, String right) {
+			if (right is null) {
+				throw new ArgumentNullException(nameof(right));
+			}
+			return new Pattern(new CharLiteral(left).Alternate(new StringLiteral(right)));
+		}
 
-		//public static Pattern Alternator(Char Left, String Right) {
-		//	if (Right is null) {
-		//		throw new ArgumentNullException(nameof(Right));
-		//	}
-		//	return new Pattern(new CharLiteral(Left).Alternate(new StringLiteral(Right)));
-		//}
-
-		//public static Pattern Alternator(Char Left, Char Right) => new Pattern(new CharLiteral(Left).Alternate(new CharLiteral(Right)));
+		/// <summary>
+		/// Declares <paramref name="right"/> to be an alternate of <paramref name="left"/>
+		/// </summary>
+		/// <param name="left">The <see cref="Char"/> to check first</param>
+		/// <param name="right">The <see cref="Char"/> to check if <paramref name="left"/> does not match</param>
+		/// <returns>A new <see cref="Pattern"/> alternating <paramref name="left"/> and <paramref name="right"/></returns>
+		public static Pattern Alternator(Char left, Char right) => new Pattern(new CharLiteral(left).Alternate(new CharLiteral(right)));
 
 		//public static Pattern Capturer(Pattern Pattern, out Capture Capture) => Pattern.Capture(out Capture);
 

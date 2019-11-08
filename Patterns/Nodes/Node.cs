@@ -95,21 +95,36 @@ namespace Stringier.Patterns.Nodes {
 		/// <returns>A <see cref="String"/> that represents the current <see cref="Node"/>.</returns>
 		public abstract override String ToString();
 
-		//internal virtual Node Alternate(Node Right) {
-		//	if (Right is null) {
-		//		throw new ArgumentNullException(nameof(Right));
-		//	}
-		//	return new Alternator(this, Right);
-		//}
+		/// <summary>
+		/// Declares <paramref name="right"/> to be an alternate of this <see cref="Node"/>.
+		/// </summary>
+		/// <param name="right">The <see cref="Node"/> to check if this <see cref="Node"/> does not match.</param>
+		/// <returns>A new <see cref="Node"/> alternating this <see cref="Node"/> and <paramref name="right"/>.</returns>
+		internal virtual Node Alternate(Node right) {
+			if (right is null) {
+				throw new ArgumentNullException(nameof(right));
+			}
+			return new Alternator(this, right);
+		}
 
-		//internal virtual Node Alternate(Char Right) => new Alternator(this, new CharLiteral(Right));
+		/// <summary>
+		/// Declares <paramref name="right"/> to be an alternate of this <see cref="Node"/>.
+		/// </summary>
+		/// <param name="right">The <see cref="Char"/> to check if this <see cref="Node"/> does not match.</param>
+		/// <returns>A new <see cref="Node"/> alternating this <see cref="Node"/> and <paramref name="right"/>.</returns>
+		internal virtual Node Alternate(Char right) => new Alternator(this, new CharLiteral(right));
 
-		//internal virtual Node Alternate(String Right) {
-		//	if (Right is null) {
-		//		throw new ArgumentNullException(nameof(Right));
-		//	}
-		//	return new Alternator(this, new StringLiteral(Right));
-		//}
+		/// <summary>
+		/// Declares <paramref name="right"/> to be an alternate of this <see cref="Node"/>.
+		/// </summary>
+		/// <param name="right">The <see cref="String"/> to check if this <see cref="Node"/> does not match.</param>
+		/// <returns>A new <see cref="Node"/> alternating this <see cref="Node"/> and <paramref name="right"/>.</returns
+		internal virtual Node Alternate(String right) {
+			if (right is null) {
+				throw new ArgumentNullException(nameof(right));
+			}
+			return new Alternator(this, new StringLiteral(right));
+		}
 
 		//internal Node Capture(out Capture Capture) => new Capturer(this, out Capture);
 
