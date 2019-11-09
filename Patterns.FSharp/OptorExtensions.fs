@@ -12,6 +12,6 @@ module OptorExtensions =
         static member Optional(pattern:Char) = PatternBindings.Optor(pattern)
         static member Optional(pattern:Capture) = PatternBindings.Optor(pattern)
 
-    let inline private ioptional< ^t, ^a, ^b when (^t or ^a) : (static member Optional : ^a -> ^b)> pattern = ((^t or ^a) : (static member Optional : ^a -> ^b)(pattern))
+    let inline private optional< ^t, ^a, ^b when (^t or ^a) : (static member Optional : ^a -> ^b)> pattern = ((^t or ^a) : (static member Optional : ^a -> ^b)(pattern))
 
-    let inline ( ~~ ) pattern = ioptional<Binder, _, Pattern> pattern
+    let inline ( ~~ ) pattern = optional<Binder, _, Pattern> pattern
