@@ -166,7 +166,7 @@ namespace Stringier.Patterns.Nodes {
 
 		//internal virtual Node Negate() => new Negator(this);
 
-		//internal virtual Node Optional() => new Optor(this);
+		internal virtual Node Optional() => new Optor(this);
 
 		//internal virtual Node Repeat(Int32 Count) => new Repeater(this, Count);
 

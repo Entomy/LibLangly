@@ -403,16 +403,43 @@ namespace Stringier.Patterns.Bindings {
 
 		//public static Pattern Negator(Char Pattern) => new Pattern(new CharLiteral(Pattern).Negate());
 
-		//public static Pattern Optor(Pattern Pattern) => new Pattern(Pattern.Head.Optional());
+		/// <summary>
+		/// Marks the <paramref name="pattern"/> as optional.
+		/// </summary>
+		/// <param name="pattern">The optional <see cref="Pattern"/>.</param>
+		/// <returns>A new <see cref="Pattern"/> which is optional.</returns>
+		public static Pattern Optor(Pattern pattern) => new Pattern(pattern.Head.Optional());
 
-		//public static Pattern Optor(String Pattern) {
-		//	if (Pattern is null) {
-		//		throw new ArgumentNullException(nameof(Pattern));
-		//	}
-		//	return new Pattern(new StringLiteral(Pattern).Optional());
-		//}
+		/// <summary>
+		/// Marks the <paramref name="pattern"/> as optional.
+		/// </summary>
+		/// <param name="pattern">The optional <see cref="String"/>.</param>
+		/// <returns>A new <see cref="Pattern"/> which is optional.</returns>
+		public static Pattern Optor(String pattern) {
+			if (pattern is null) {
+				throw new ArgumentNullException(nameof(pattern));
+			}
+			return new Pattern(new StringLiteral(pattern).Optional());
+		}
 
-		//public static Pattern Optor(Char Pattern) => new Pattern(new CharLiteral(Pattern).Optional());
+		/// <summary>
+		/// Marks the <paramref name="pattern"/> as optional.
+		/// </summary>
+		/// <param name="pattern">The optional <see cref="Char"/>.</param>
+		/// <returns>A new <see cref="Pattern"/> which is optional.</returns
+		public static Pattern Optor(Char pattern) => new Pattern(new CharLiteral(pattern).Optional());
+
+		/// <summary>
+		/// Marks the <paramref name="pattern"/> as optional.
+		/// </summary>
+		/// <param name="pattern">The optional <see cref="Capture"/>.</param>
+		/// <returns>A new <see cref="Pattern"/> which is optional.</returns
+		public static Pattern Optor(Capture pattern) {
+			if (pattern is null) {
+				throw new ArgumentNullException(nameof(pattern));
+			}
+			return new Pattern(new CaptureLiteral(pattern).Optional());
+		}
 
 		//public static Pattern Ranger(Pattern From, Pattern To) => new Pattern(new Ranger(From.Head, To.Head));
 

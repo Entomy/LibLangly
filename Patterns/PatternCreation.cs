@@ -220,16 +220,16 @@ namespace Stringier.Patterns {
 
 		//#endregion
 
-		//#region Optor
+		#region Optor
 
-		///// <summary>
-		///// Marks the <paramref name="Pattern"/> as optional
-		///// </summary>
-		///// <param name="Pattern"></param>
-		///// <returns></returns>
-		//public static Pattern operator -(Pattern Pattern) => new Pattern(Pattern.Head.Optional());
+		/// <summary>
+		/// Marks the <paramref name="pattern"/> as optional.
+		/// </summary>
+		/// <param name="pattern">The optional <see cref="Pattern"/>.</param>
+		/// <returns>A new <see cref="Pattern"/> which is optional.</returns>
+		public static Pattern operator -(Pattern pattern) => new Pattern(pattern.Head.Optional());
 
-		//#endregion
+		#endregion
 
 		//#region Ranger
 
