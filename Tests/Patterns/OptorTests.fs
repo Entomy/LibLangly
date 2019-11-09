@@ -9,7 +9,7 @@ type OptorTests() =
 
     [<TestMethod>]
     member _.``consume`` () =
-        let pattern = ~~"Hello"
+        let pattern = option "Hello"
         let mutable result = Result()
 
         result <- pattern.Consume("Hello world!")

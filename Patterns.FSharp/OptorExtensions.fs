@@ -14,4 +14,4 @@ module OptorExtensions =
 
     let inline private optional< ^t, ^a, ^b when (^t or ^a) : (static member Optional : ^a -> ^b)> pattern = ((^t or ^a) : (static member Optional : ^a -> ^b)(pattern))
 
-    let inline ( ~~ ) pattern = optional<Binder, _, Pattern> pattern
+    let inline option pattern = optional<Binder, _, Pattern> pattern

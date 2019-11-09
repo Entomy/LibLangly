@@ -278,15 +278,15 @@ namespace Stringier.Patterns {
 
 		//#endregion
 
-		//#region Spanner
+		#region Spanner
 
-		///// <summary>
-		///// Marks the <paramref name="Pattern"/> as spanning
-		///// </summary>
-		///// <param name="Pattern"></param>
-		///// <returns></returns>
-		//public static Pattern operator +(Pattern Pattern) => new Pattern(Pattern.Head.Span());
+		/// <summary>
+		/// Marks the <paramref name="Pattern"/> as spanning.
+		/// </summary>
+		/// <param name="pattern">The spanning <see cref="Pattern"/>.</param>
+		/// <returns>A new <see cref="Pattern"/> which spans.</returns>
+		public static Pattern operator +(Pattern pattern) => new Pattern(pattern.Head.Span());
 
-		//#endregion
+		#endregion
 	}
 }

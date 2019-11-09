@@ -691,15 +691,42 @@ namespace Stringier.Patterns.Bindings {
 
 		//public static Pattern Repeater(Char Pattern, Int32 Count) => new Pattern(new CharLiteral(Pattern).Repeat(Count));
 
-		//public static Pattern Spanner(Pattern Pattern) => new Pattern(Pattern.Head.Span());
+		/// <summary>
+		/// Marks the <paramref name="pattern"/> as spanning.
+		/// </summary>
+		/// <param name="pattern">The spanning <see cref="Pattern"/>.</param>
+		/// <returns>A new <see cref="Pattern"/> which is spanning.</returns>
+		public static Pattern Spanner(Pattern pattern) => new Pattern(pattern.Head.Span());
 
-		//public static Pattern Spanner(String Pattern) {
-		//	if (Pattern is null) {
-		//		throw new ArgumentNullException(nameof(Pattern));
-		//	}
-		//	return new Pattern(new StringLiteral(Pattern).Span());
-		//}
+		/// <summary>
+		/// Marks the <paramref name="pattern"/> as spanning.
+		/// </summary>
+		/// <param name="pattern">The spanning <see cref="String"/>.</param>
+		/// <returns>A new <see cref="Pattern"/> which is spanning.</returns>
+		public static Pattern Spanner(String pattern) {
+			if (pattern is null) {
+				throw new ArgumentNullException(nameof(pattern));
+			}
+			return new Pattern(new StringLiteral(pattern).Span());
+		}
 
-		//public static Pattern Spanner(Char Pattern) => new Pattern(new CharLiteral(Pattern).Span());
+		/// <summary>
+		/// Marks the <paramref name="pattern"/> as spanning.
+		/// </summary>
+		/// <param name="pattern">The spanning <see cref="Char"/>.</param>
+		/// <returns>A new <see cref="Pattern"/> which is spanning.</returns
+		public static Pattern Spanner(Char pattern) => new Pattern(new CharLiteral(pattern).Span());
+
+		/// <summary>
+		/// Marks the <paramref name="pattern"/> as spanning.
+		/// </summary>
+		/// <param name="pattern">The spanning <see cref="Capture"/>.</param>
+		/// <returns>A new <see cref="Pattern"/> which is spanning.</returns>
+		public static Pattern Spanner(Capture pattern) {
+			if (pattern is null) {
+				throw new ArgumentNullException(nameof(pattern));
+			}
+			return new Pattern(new CaptureLiteral(pattern).Span());
+		}
 	}
 }

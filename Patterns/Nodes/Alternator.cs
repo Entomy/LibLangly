@@ -127,16 +127,16 @@ namespace Stringier.Patterns.Nodes {
 
 		#endregion
 
-		//#region Spanner
+		#region Spanner
 
-		//internal override Node Span() {
-		//	if (Left is Optor || Right is Optor) {
-		//		throw new PatternConstructionException("One or more of the components of this alternator are optional, and the alternator is marked as spanning. Options can not span, as it creates an infinite loop. While this potentially could succeed, this is absolutely an error.");
-		//	} else {
-		//		return base.Span();
-		//	}
-		//}
+		internal override Node Span() {
+			if (Left is Optor || Right is Optor) {
+				throw new PatternConstructionException("One or more of the components of this alternator are optional, and the alternator is marked as spanning. Options can not span, as it creates an infinite loop. While this potentially could succeed, this is absolutely an error.");
+			} else {
+				return base.Span();
+			}
+		}
 
-		//#endregion
+		#endregion
 	}
 }
