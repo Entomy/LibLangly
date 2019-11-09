@@ -13,7 +13,7 @@ namespace Stringier.Patterns.Nodes {
 		/// <summary>
 		/// The <see cref="Patterns.Capture"/> object to capture into.
 		/// </summary>
-		private readonly Capture Capture = new Capture();
+		private readonly Capture CapStore = new Capture();
 
 		/// <summary>
 		/// Initialize a new <see cref="Capturer"/> of the given <paramref name="node"/>, to be captured into <paramref name="capture"/>.
@@ -22,7 +22,7 @@ namespace Stringier.Patterns.Nodes {
 		/// <param name="capture">The <see cref="Patterns.Capture"/> object to capture into.</param>
 		internal Capturer(Node node, out Capture capture) {
 			Node = node;
-			capture = Capture;
+			capture = CapStore;
 		}
 
 		/// <summary>
@@ -43,7 +43,7 @@ namespace Stringier.Patterns.Nodes {
 		internal override void Consume(ref Source source, ref Result result) {
 			Int32 originalPosition = source.Position;
 			Node.Consume(ref source, ref result);
-			Capture.Value = source.Substring(originalPosition, source.Position - originalPosition).ToString();
+			CapStore.Value = source.Substring(originalPosition, source.Position - originalPosition).ToString();
 		}
 
 		/// <summary>
@@ -54,7 +54,7 @@ namespace Stringier.Patterns.Nodes {
 		internal override void Neglect(ref Source source, ref Result result) {
 			Int32 originalPosition = source.Position;
 			Node.Neglect(ref source, ref result);
-			Capture.Value = source.Substring(originalPosition, source.Position - originalPosition).ToString();
+			CapStore.Value = source.Substring(originalPosition, source.Position - originalPosition).ToString();
 		}
 
 		/// <summary>
@@ -77,7 +77,7 @@ namespace Stringier.Patterns.Nodes {
 		/// <param name="other">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to check against this <see cref="Node"/>.</param>.
 		/// <returns><c>true</c> if representable; otherwise, <c>false</c>.</returns>
 		public override Boolean Equals(ReadOnlySpan<Char> other) {
-			Capture.Value = other.ToString();
+			CapStore.Value = other.ToString();
 			return Node.Equals(other);
 		}
 
@@ -87,7 +87,7 @@ namespace Stringier.Patterns.Nodes {
 		/// <param name="other">The <see cref="String"/> to check against this <see cref="Node"/>.</param>
 		/// <returns><c>true</c> if representable; otherwise, <c>false</c>.</returns>
 		public override Boolean Equals(String other) {
-			Capture.Value = other;
+			CapStore.Value = other;
 			return Node.Equals(other);
 		}
 

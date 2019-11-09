@@ -165,7 +165,7 @@ namespace Stringier.Patterns {
 		/// Attempt to restore the state of this <see cref="Source"/> from the specified <paramref name="State"/>.
 		/// </summary>
 		/// <param name="State">A <see cref="SourceState"/> object to restore from.</param>
-		public void Restore(ref SourceState State) {
+		public void Restore(SourceState State) {
 			if (State.Source == this) {
 				Position = State.Position;
 			} else {
