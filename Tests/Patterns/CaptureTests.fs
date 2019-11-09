@@ -14,22 +14,22 @@ type CaptureTests() =
         ()
 
     [<TestMethod>]
-        member _.``consume`` () =
-            let mutable capture = ref null
-            let mutable pattern = ('a' || 'b' || 'c') => capture
-            let mutable result = Result()
+    member _.``consume`` () =
+        let mutable capture = ref null
+        let mutable pattern = ('a' || 'b' || 'c') => capture
+        let mutable result = Result()
            
-            result <- pattern.Consume("a")
-            ResultAssert.Captures("a", result)
-            CaptureAssert.Captures("a", capture)
+        result <- pattern.Consume("a")
+        ResultAssert.Captures("a", result)
+        CaptureAssert.Captures("a", capture)
 
-            pattern <- ('a' || 'b' || 'c') => capture >> '!'
+        pattern <- ('a' || 'b' || 'c') => capture >> '!'
 
-            result <- pattern.Consume("a")
-            ResultAssert.Fails(result)
+        result <- pattern.Consume("a")
+        ResultAssert.Fails(result)
 
-            result <- pattern.Consume("a!")
-            ResultAssert.Captures("a!", result)
-            CaptureAssert.Captures("a", capture)
+        result <- pattern.Consume("a!")
+        ResultAssert.Captures("a!", result)
+        CaptureAssert.Captures("a", capture)
 
-            pattern <- ('a' || 'b' || 'c') => capture >> ',' >> capture
+        pattern <- ('a' || 'b' || 'c') => capture >> ',' >> capture

@@ -17,3 +17,9 @@ type OptorTests() =
 
         result <- pattern.Consume("Goodbye world!")
         ResultAssert.Captures("", result)
+
+    [<TestMethod>]
+    member _.``neglect`` () =
+        let pattern = negate (option "Hello")
+        ResultAssert.Captures("", pattern.Consume("Hello"))
+        ResultAssert.Captures("World", pattern.Consume("World"))

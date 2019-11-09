@@ -22,3 +22,10 @@ type RepeaterTests() =
     member _.``multiplication still works`` () =
         Assert.AreEqual(4, 2 * 2)
         Assert.AreEqual(6.66, 3.33 * 2.0)
+
+    [<TestMethod>]
+    member _.``neglect`` () =
+        let pattern = negate ("Hi!" * 2)
+        ResultAssert.Fails(pattern.Consume("Hi!Hi!"))
+        ResultAssert.Captures("Oh!Oh!", pattern.Consume("Oh!Oh!"))
+        ResultAssert.Captures("Oh!Hi!", pattern.Consume("Oh!Hi!"))

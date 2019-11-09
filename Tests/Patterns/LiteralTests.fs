@@ -59,3 +59,12 @@ type LiteralTests() =
         
         ResultAssert.Captures("HELLO WORLD", pattern.Consume("HELLO WORLD"))
         ResultAssert.Captures("hello world", pattern.Consume("hello world"))
+
+    [<TestMethod>]
+    member _.``neglect string`` () =
+        let pattern = negate "Hello"
+        ResultAssert.Fails(pattern.Consume("Hello"))
+        ResultAssert.Fails(pattern.Consume("Hello!"))
+        ResultAssert.Fails(pattern.Consume("Hello."))
+        ResultAssert.Captures("Oh no", pattern.Consume("Oh no!"))
+        ResultAssert.Captures("Oh no", pattern.Consume("Oh no?"))

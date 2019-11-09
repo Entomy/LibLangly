@@ -164,7 +164,7 @@ namespace Stringier.Patterns.Nodes {
 			return new Concatenator(this, new StringLiteral(right));
 		}
 
-		//internal virtual Node Negate() => new Negator(this);
+		internal virtual Node Negate() => new Negator(this);
 
 		internal virtual Node Optional() => new Optor(this);
 

@@ -392,16 +392,43 @@ namespace Stringier.Patterns.Bindings {
 			return new Pattern(new CaptureLiteral(left).Concatenate(new CharLiteral(right)));
 		}
 
-		//public static Pattern Negator(Pattern Pattern) => new Pattern(Pattern.Head.Negate());
+		/// <summary>
+		/// Marks the <paramref name="pattern"/> as negated.
+		/// </summary>
+		/// <param name="pattern">The <see cref="Pattern"/> to negate.</param>
+		/// <returns>A new <see cref="Pattern"/> which has been negated.</returns>
+		public static Pattern Negator(Pattern pattern) => new Pattern(pattern.Head.Negate());
 
-		//public static Pattern Negator(String Pattern) {
-		//	if (Pattern is null) {
-		//		throw new ArgumentNullException(nameof(Pattern));
-		//	}
-		//	return new Pattern(new StringLiteral(Pattern).Negate());
-		//}
+		/// <summary>
+		/// Marks the <paramref name="pattern"/> as negated.
+		/// </summary>
+		/// <param name="pattern">The <see cref="String"/> to negate.</param>
+		/// <returns>A new <see cref="Pattern"/> which has been negated.</returns>
+		public static Pattern Negator(String pattern) {
+			if (pattern is null) {
+				throw new ArgumentNullException(nameof(pattern));
+			}
+			return new Pattern(new StringLiteral(pattern).Negate());
+		}
 
-		//public static Pattern Negator(Char Pattern) => new Pattern(new CharLiteral(Pattern).Negate());
+		/// <summary>
+		/// Marks the <paramref name="pattern"/> as negated.
+		/// </summary>
+		/// <param name="pattern">The <see cref="Char"/> to negate.</param>
+		/// <returns>A new <see cref="Pattern"/> which has been negated.</returns
+		public static Pattern Negator(Char pattern) => new Pattern(new CharLiteral(pattern).Negate());
+
+		/// <summary>
+		/// Marks the <paramref name="pattern"/> as negated.
+		/// </summary>
+		/// <param name="pattern">The <see cref="Capture"/> to negate.</param>
+		/// <returns>A new <see cref="Pattern"/> which has been negated.</returns
+		public static Pattern Negator(Capture pattern) {
+			if (pattern is null) {
+				throw new ArgumentNullException(nameof(pattern));
+			}
+			return new Pattern(new CaptureLiteral(pattern).Negate());
+		}
 
 		/// <summary>
 		/// Marks the <paramref name="pattern"/> as optional.

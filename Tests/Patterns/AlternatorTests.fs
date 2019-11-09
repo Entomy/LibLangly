@@ -49,3 +49,10 @@ type AlternatorTests() =
         Assert.IsTrue(false || true)
         Assert.IsTrue(true || false)
         Assert.IsFalse(false || false)
+
+    [<TestMethod>]
+    member _.``neglect`` () =
+        let pattern = negate ("Hello" || "Goodbye")
+        ResultAssert.Fails(pattern.Consume("Hello"))
+        ResultAssert.Fails(pattern.Consume("Goodbye"))
+        ResultAssert.Captures("World", pattern.Consume("Worldeater"))

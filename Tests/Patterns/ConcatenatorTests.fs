@@ -37,3 +37,12 @@ type ConcatenatorTests() =
         let g x = x * 2
         let h = f >> g
         Assert.AreEqual(4, h 1)
+
+    [<TestMethod>]
+    member _.``neglect`` () =
+        let pattern = negate ("Hello" >> '!')
+        ResultAssert.Fails(pattern.Consume("Hello"))
+        ResultAssert.Fails(pattern.Consume("Hello!"))
+        ResultAssert.Captures("Hello.", pattern.Consume("Hello."))
+        ResultAssert.Captures("Oh no!", pattern.Consume("Oh no!"))
+        ResultAssert.Captures("Oh no?", pattern.Consume("Oh no?"))

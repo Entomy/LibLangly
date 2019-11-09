@@ -209,16 +209,16 @@ namespace Stringier.Patterns {
 
 		//#endregion
 
-		//#region Negator
+		#region Negator
 
-		///// <summary>
-		///// Marks the <paramref name="Pattern"/> as negated
-		///// </summary>
-		///// <param name="Pattern"></param>
-		///// <returns></returns>
-		//public static Pattern operator !(Pattern Pattern) => new Pattern(Pattern.Head.Negate());
+		/// <summary>
+		/// Marks the <paramref name="pattern"/> as negated.
+		/// </summary>
+		/// <param name="pattern">The <see cref="Pattern"/> to negate.</param>
+		/// <returns>A new <see cref="Pattern"/> which has been negated.</returns>
+		public static Pattern operator !(Pattern pattern) => new Pattern(pattern.Head.Negate());
 
-		//#endregion
+		#endregion
 
 		#region Optor
 

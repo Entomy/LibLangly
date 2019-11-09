@@ -20,3 +20,9 @@ type SpannerTests() =
 
         result <- pattern.Consume("Hi!  ")
         ResultAssert.Fails(result)
+
+    [<TestMethod>]
+    member _.``neglect`` () =
+        let pattern = negate (span ';')
+        ResultAssert.Fails(pattern.Consume(";"))
+        ResultAssert.Captures("123456789", pattern.Consume("123456789;"))
