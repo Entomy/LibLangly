@@ -46,3 +46,16 @@ type LiteralTests() =
 
         result <- world.Consume(&source)
         ResultAssert.Captures("World", result)
+
+        source <- Source("Hello World")
+        let helloWorld = hello >> space >> world
+
+        result <- helloWorld.Consume(&source)
+        ResultAssert.Captures("Hello World", result)
+
+    [<TestMethod>]
+    member _.``consume case-insensitive`` () =
+        let pattern = "Hello"/=StringComparison.OrdinalIgnoreCase >> ' ' >> "World"/=StringComparison.OrdinalIgnoreCase
+        
+        ResultAssert.Captures("HELLO WORLD", pattern.Consume("HELLO WORLD"))
+        ResultAssert.Captures("hello world", pattern.Consume("hello world"))
