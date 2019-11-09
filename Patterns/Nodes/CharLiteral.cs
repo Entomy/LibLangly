@@ -139,10 +139,10 @@ namespace Stringier.Patterns.Nodes {
 
 		#endregion
 
-		//#region Repeater
+		#region Repeater
 
-		//internal override Node Repeat(Int32 Count) => new StringLiteral(Char.Repeat(Count));
+		internal override Node Repeat(Int32 count) => new StringLiteral(Char.Repeat(count));
 
-		//#endregion
+		#endregion
 	}
 }

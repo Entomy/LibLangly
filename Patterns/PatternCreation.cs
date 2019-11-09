@@ -266,17 +266,17 @@ namespace Stringier.Patterns {
 
 		//#endregion
 
-		//#region Repeater
+		#region Repeater
 
-		///// <summary>
-		///// Marks the <paramref name="Pattern"/> as repeating <paramref name="Count"/> times
-		///// </summary>
-		///// <param name="Pattern"></param>
-		///// <param name="Count"></param>
-		///// <returns></returns>
-		//public static Pattern operator *(Pattern Pattern, Int32 Count) => new Pattern(Pattern.Head.Repeat(Count));
+		/// <summary>
+		/// Marks the <paramref name="Pattern"/> as repeating <paramref name="count"/> times
+		/// </summary>
+		/// <param name="pattern">The <see cref="Pattern"/> to repeat.</param>
+		/// <param name="count">The amount of times to repeat.</param>
+		/// <returns>A new <see cref="Pattern"/> repeated <paramref name="count"/> times.</returns>
+		public static Pattern operator *(Pattern pattern, Int32 count) => new Pattern(pattern.Head.Repeat(count));
 
-		//#endregion
+		#endregion
 
 		#region Spanner
 

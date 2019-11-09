@@ -680,16 +680,47 @@ namespace Stringier.Patterns.Bindings {
 
 		//public static Pattern NestedRanger(Char From, Char To) => new Pattern(new NestedRanger(new CharLiteral(From), new CharLiteral(To)));
 
-		//public static Pattern Repeater(Pattern Pattern, Int32 Count) => new Pattern(Pattern.Head.Repeat(Count));
+		/// <summary>
+		/// Marks the <paramref name="pattern"/> as repeating <paramref name="count"/> times.
+		/// </summary>
+		/// <param name="pattern">The <see cref="Pattern"/> to repeat.</param>
+		/// <param name="count">The amount of times to repeat.</param>
+		/// <returns>A new <see cref="Pattern"/> repeated <paramref name="count"/> times.</returns>
+		public static Pattern Repeater(Pattern pattern, Int32 count) => new Pattern(pattern.Head.Repeat(count));
 
-		//public static Pattern Repeater(String Pattern, Int32 Count) {
-		//	if (Pattern is null) {
-		//		throw new ArgumentNullException(nameof(Pattern));
-		//	}
-		//	return new Pattern(new StringLiteral(Pattern).Repeat(Count));
-		//}
+		/// <summary>
+		/// Marks the <paramref name="pattern"/> as repeating <paramref name="count"/> times.
+		/// </summary>
+		/// <param name="pattern">The <see cref="String"/> to repeat.</param>
+		/// <param name="count">The amount of times to repeat.</param>
+		/// <returns>A new <see cref="Pattern"/> repeated <paramref name="count"/> times.</returns>
+		public static Pattern Repeater(String pattern, Int32 count) {
+			if (pattern is null) {
+				throw new ArgumentNullException(nameof(pattern));
+			}
+			return new Pattern(new StringLiteral(pattern).Repeat(count));
+		}
 
-		//public static Pattern Repeater(Char Pattern, Int32 Count) => new Pattern(new CharLiteral(Pattern).Repeat(Count));
+		/// <summary>
+		/// Marks the <paramref name="pattern"/> as repeating <paramref name="count"/> times.
+		/// </summary>
+		/// <param name="pattern">The <see cref="Char"/> to repeat.</param>
+		/// <param name="count">The amount of times to repeat.</param>
+		/// <returns>A new <see cref="Pattern"/> repeated <paramref name="count"/> times.</returns>
+		public static Pattern Repeater(Char pattern, Int32 count) => new Pattern(new CharLiteral(pattern).Repeat(count));
+
+		/// <summary>
+		/// Marks the <paramref name="pattern"/> as repeating <paramref name="count"/> times.
+		/// </summary>
+		/// <param name="pattern">The <see cref="Capture"/> to repeat.</param>
+		/// <param name="count">The amount of times to repeat.</param>
+		/// <returns>A new <see cref="Pattern"/> repeated <paramref name="count"/> times.</returns>
+		public static Pattern Repeater(Capture pattern, Int32 count) {
+			if (pattern is null) {
+				throw new ArgumentNullException(nameof(pattern));
+			}
+			return new Pattern(new CaptureLiteral(pattern).Repeat(count));
+		}
 
 		/// <summary>
 		/// Marks the <paramref name="pattern"/> as spanning.

@@ -147,10 +147,10 @@ namespace Stringier.Patterns.Nodes {
 
 		#endregion
 
-		//#region Repeater
+		#region Repeater
 
-		//internal override Node Repeat(Int32 Count) => new StringLiteral(String.Repeat(Count));
+		internal override Node Repeat(Int32 count) => new StringLiteral(String.Repeat(count));
 
-		//#endregion
+		#endregion
 	}
 }
