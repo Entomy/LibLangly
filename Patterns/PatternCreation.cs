@@ -67,18 +67,18 @@ namespace Stringier.Patterns {
 
 		#endregion
 
-		//#region Capturer
+		#region Capturer
 
-		//public static implicit operator Pattern(Capture Capture) => new Pattern(new CaptureLiteral(Capture));
+		public static implicit operator Pattern(Capture Capture) => new Pattern(new CaptureLiteral(Capture));
 
-		///// <summary>
-		///// Declares this <see cref="Pattern"/> should be captured into <paramref name="Capture"/> for later reference
-		///// </summary>
-		///// <param name="Capture">A <see cref="Patterns.Capture"/> object to store into.</param>
-		///// <returns></returns>
-		//public Pattern Capture(out Capture Capture) => new Pattern(Head.Capture(out Capture));
+		/// <summary>
+		/// Declares this <see cref="Pattern"/> should be captured into <paramref name="capture"/> for later reference.
+		/// </summary>
+		/// <param name="capture">A <see cref="Patterns.Capture"/> object to store into.</param>
+		/// <returns>A new <paramref name="Pattern"/> which will capture its result into <paramref name="capture"/>.</returns>
+		public Pattern Capture(out Capture capture) => new Pattern(Head.Capture(out capture));
 
-		//#endregion
+		#endregion
 
 		//#region Checker
 

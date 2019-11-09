@@ -126,7 +126,12 @@ namespace Stringier.Patterns.Nodes {
 			return new Alternator(this, new StringLiteral(right));
 		}
 
-		//internal Node Capture(out Capture Capture) => new Capturer(this, out Capture);
+		/// <summary>
+		/// Captures this <see cref="Node"/>'s match into the <paramref name="capture"/>.
+		/// </summary>
+		/// <param name="capture">The <see cref="Patterns.Capture"/> to capture into.</param>
+		/// <returns>A new <see cref="Node"/> which will capture its contents into <paramref name="capture"/>.</returns>
+		internal Node Capture(out Capture capture) => new Capturer(this, out capture);
 
 		/// <summary>
 		/// Concatenates the nodes so that this <see cref="Node"/> comes before the <paramref name="right"/> <see cref="Node"/>.

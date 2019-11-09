@@ -417,6 +417,57 @@
   
   
   <a id="Stringier_Patterns_Bindings_PatternBindings_Alternator_" data-uid="Stringier.Patterns.Bindings.PatternBindings.Alternator*"></a>
+  <h4 id="Stringier_Patterns_Bindings_PatternBindings_Alternator_Stringier_Patterns_Capture_Stringier_Patterns_Pattern_" data-uid="Stringier.Patterns.Bindings.PatternBindings.Alternator(Stringier.Patterns.Capture,Stringier.Patterns.Pattern)">Alternator(Capture, Pattern)</h4>
+  <div class="markdown level1 summary"><p>Declares <code data-dev-comment-type="paramref" class="paramref">right</code> to be an alternate of <code data-dev-comment-type="paramref" class="paramref">left</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern Alternator(Capture left, Pattern right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Capture.html">Capture</a></td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The <a class="xref" href="Stringier.Patterns.Capture.html">Capture</a> to check first</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> to check if <code data-dev-comment-type="paramref" class="paramref">right</code> does not match</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> alternating <code data-dev-comment-type="paramref" class="paramref">left</code> and <code data-dev-comment-type="paramref" class="paramref">right</code></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_Bindings_PatternBindings_Alternator_" data-uid="Stringier.Patterns.Bindings.PatternBindings.Alternator*"></a>
   <h4 id="Stringier_Patterns_Bindings_PatternBindings_Alternator_Stringier_Patterns_Pattern_Char_" data-uid="Stringier.Patterns.Bindings.PatternBindings.Alternator(Stringier.Patterns.Pattern,Char)">Alternator(Pattern, Char)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
@@ -515,6 +566,57 @@
   
   
   <a id="Stringier_Patterns_Bindings_PatternBindings_Alternator_" data-uid="Stringier.Patterns.Bindings.PatternBindings.Alternator*"></a>
+  <h4 id="Stringier_Patterns_Bindings_PatternBindings_Alternator_Stringier_Patterns_Pattern_Stringier_Patterns_Capture_" data-uid="Stringier.Patterns.Bindings.PatternBindings.Alternator(Stringier.Patterns.Pattern,Stringier.Patterns.Capture)">Alternator(Pattern, Capture)</h4>
+  <div class="markdown level1 summary"><p>Declares <code data-dev-comment-type="paramref" class="paramref">right</code> to be an alternate of <code data-dev-comment-type="paramref" class="paramref">left</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern Alternator(Pattern left, Capture right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> to check first</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Capture.html">Capture</a></td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The <a class="xref" href="Stringier.Patterns.Capture.html">Capture</a> to check if <code data-dev-comment-type="paramref" class="paramref">right</code> does not match</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> alternating <code data-dev-comment-type="paramref" class="paramref">left</code> and <code data-dev-comment-type="paramref" class="paramref">right</code></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_Bindings_PatternBindings_Alternator_" data-uid="Stringier.Patterns.Bindings.PatternBindings.Alternator*"></a>
   <h4 id="Stringier_Patterns_Bindings_PatternBindings_Alternator_Stringier_Patterns_Pattern_Stringier_Patterns_Pattern_" data-uid="Stringier.Patterns.Bindings.PatternBindings.Alternator(Stringier.Patterns.Pattern,Stringier.Patterns.Pattern)">Alternator(Pattern, Pattern)</h4>
   <div class="markdown level1 summary"><p>Declares <code data-dev-comment-type="paramref" class="paramref">right</code> to be an alternate of <code data-dev-comment-type="paramref" class="paramref">left</code></p>
 </div>
@@ -559,6 +661,57 @@
       <tr>
         <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
         <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> alternating <code data-dev-comment-type="paramref" class="paramref">left</code> and <code data-dev-comment-type="paramref" class="paramref">right</code></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_Bindings_PatternBindings_Capturer_" data-uid="Stringier.Patterns.Bindings.PatternBindings.Capturer*"></a>
+  <h4 id="Stringier_Patterns_Bindings_PatternBindings_Capturer_Stringier_Patterns_Pattern_Stringier_Patterns_Capture__" data-uid="Stringier.Patterns.Bindings.PatternBindings.Capturer(Stringier.Patterns.Pattern,Stringier.Patterns.Capture@)">Capturer(Pattern, out Capture)</h4>
+  <div class="markdown level1 summary"><p>Declares this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> should be captured into <code data-dev-comment-type="paramref" class="paramref">capture</code> for later reference.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern Capturer(Pattern pattern, out Capture capture)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">pattern</span></td>
+        <td><p>The <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> to capture.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Capture.html">Capture</a></td>
+        <td><span class="parametername">capture</span></td>
+        <td><p>A <a class="xref" href="Stringier.Patterns.Capture.html">Capture</a> object to store into.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <code data-dev-comment-type="paramref" class="paramref">pattern</code> which will capture its result into <code data-dev-comment-type="paramref" class="paramref">capture</code>.</p>
 </td>
       </tr>
     </tbody>

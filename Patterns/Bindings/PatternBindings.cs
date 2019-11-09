@@ -127,7 +127,91 @@ namespace Stringier.Patterns.Bindings {
 		/// <returns>A new <see cref="Pattern"/> alternating <paramref name="left"/> and <paramref name="right"/></returns>
 		public static Pattern Alternator(Char left, Char right) => new Pattern(new CharLiteral(left).Alternate(new CharLiteral(right)));
 
-		//public static Pattern Capturer(Pattern Pattern, out Capture Capture) => Pattern.Capture(out Capture);
+		/// <summary>
+		/// Declares <paramref name="right"/> to be an alternate of <paramref name="left"/>
+		/// </summary>
+		/// <param name="left">The <see cref="Pattern"/> to check first</param>
+		/// <param name="right">The <see cref="Capture"/> to check if <paramref name="right"/> does not match</param>
+		/// <returns>A new <see cref="Pattern"/> alternating <paramref name="left"/> and <paramref name="right"/></returns>
+		public static Pattern Alternator(Pattern left, Capture right) {
+			if (left is null || right is null) {
+				throw new ArgumentNullException(left is null ? nameof(left) : nameof(right));
+			}
+			return new Pattern(left.Head.Alternate(new CaptureLiteral(right)));
+		}
+
+		/// <summary>
+		/// Declares <paramref name="right"/> to be an alternate of <paramref name="left"/>
+		/// </summary>
+		/// <param name="left">The <see cref="Capture"/> to check first</param>
+		/// <param name="right">The <see cref="Pattern"/> to check if <paramref name="right"/> does not match</param>
+		/// <returns>A new <see cref="Pattern"/> alternating <paramref name="left"/> and <paramref name="right"/></returns>
+		public static Pattern Alternator(Capture left, Pattern right) {
+			if (left is null || right is null) {
+				throw new ArgumentNullException(left is null ? nameof(left) : nameof(right));
+			}
+			return new Pattern(new CaptureLiteral(left).Alternate(right.Head));
+		}
+
+		/// <summary>
+		/// Declares <paramref name="right"/> to be an alternate of <paramref name="left"/>
+		/// </summary>
+		/// <param name="left">The <see cref="String"/> to check first</param>
+		/// <param name="right">The <see cref="Capture"/> to check if <paramref name="right"/> does not match</param>
+		/// <returns>A new <see cref="Pattern"/> alternating <paramref name="left"/> and <paramref name="right"/></returns>
+		public static Pattern Alternator(String left, Capture right) {
+			if (left is null || right is null) {
+				throw new ArgumentNullException(left is null ? nameof(left) : nameof(right));
+			}
+			return new Pattern(new StringLiteral(left).Alternate(new CaptureLiteral(right)));
+		}
+
+		/// <summary>
+		/// Declares <paramref name="right"/> to be an alternate of <paramref name="left"/>
+		/// </summary>
+		/// <param name="left">The <see cref="Capture"/> to check first</param>
+		/// <param name="right">The <see cref="String"/> to check if <paramref name="right"/> does not match</param>
+		/// <returns>A new <see cref="Pattern"/> alternating <paramref name="left"/> and <paramref name="right"/></returns>
+		public static Pattern Alternator(Capture left, String right) {
+			if (left is null || right is null) {
+				throw new ArgumentNullException(left is null ? nameof(left) : nameof(right));
+			}
+			return new Pattern(new CaptureLiteral(left).Alternate(new StringLiteral(right)));
+		}
+
+		/// <summary>
+		/// Declares <paramref name="right"/> to be an alternate of <paramref name="left"/>
+		/// </summary>
+		/// <param name="left">The <see cref="Char"/> to check first</param>
+		/// <param name="right">The <see cref="Capture"/> to check if <paramref name="right"/> does not match</param>
+		/// <returns>A new <see cref="Pattern"/> alternating <paramref name="left"/> and <paramref name="right"/></returns>
+		public static Pattern Alternator(Char left, Capture right) {
+			if (right is null) {
+				throw new ArgumentNullException(nameof(right));
+			}
+			return new Pattern(new CharLiteral(left).Alternate(new CaptureLiteral(right)));
+		}
+
+		/// <summary>
+		/// Declares <paramref name="right"/> to be an alternate of <paramref name="left"/>
+		/// </summary>
+		/// <param name="left">The <see cref="Capture"/> to check first</param>
+		/// <param name="right">The <see cref="Char"/> to check if <paramref name="right"/> does not match</param>
+		/// <returns>A new <see cref="Pattern"/> alternating <paramref name="left"/> and <paramref name="right"/></returns>
+		public static Pattern Alternator(Capture left, Char right) {
+			if (left is null) {
+				throw new ArgumentNullException(nameof(left));
+			}
+			return new Pattern(new CaptureLiteral(left).Alternate(new CharLiteral(right)));
+		}
+
+		/// <summary>
+		/// Declares this <see cref="Pattern"/> should be captured into <paramref name="capture"/> for later reference.
+		/// </summary>
+		/// <param name="pattern">The <see cref="Pattern"/> to capture.</param>
+		/// <param name="capture">A <see cref="Patterns.Capture"/> object to store into.</param>
+		/// <returns>A new <paramref name="pattern"/> which will capture its result into <paramref name="capture"/>.</returns>
+		public static Pattern Capturer(Pattern pattern, out Capture capture) => pattern.Capture(out capture);
 
 		//public static Pattern Checker(String Name, Func<Char, Boolean> Check) => new Pattern(new CharChecker(Name, Check));
 
@@ -229,6 +313,84 @@ namespace Stringier.Patterns.Bindings {
 		/// <param name="right">The succeeding <see cref="Char"/></param>
 		/// <returns>A new <see cref="Pattern"/> concatenating <paramref name="left"/> and <paramref name="right"/></returns>
 		public static Pattern Concatenator(Char left, Char right) => new Pattern(new CharLiteral(left).Concatenate(new CharLiteral(right)));
+
+		/// <summary>
+		/// Concatenates the patterns so that <paramref name="left"/> comes before <paramref name="right"/>
+		/// </summary>
+		/// <param name="left">The preceeding <see cref="Pattern"/></param>
+		/// <param name="right">The succeeding <see cref="Capture"/></param>
+		/// <returns>A new <see cref="Pattern"/> concatenating <paramref name="left"/> and <paramref name="right"/></returns>
+		public static Pattern Concatenator(Pattern left, Capture right) {
+			if (left is null || right is null) {
+				throw new ArgumentNullException(left is null ? nameof(left) : nameof(right));
+			}
+			return new Pattern(left.Head.Concatenate(new CaptureLiteral(right)));
+		}
+
+		/// <summary>
+		/// Concatenates the patterns so that <paramref name="left"/> comes before <paramref name="right"/>
+		/// </summary>
+		/// <param name="left">The preceeding <see cref="Capture"/></param>
+		/// <param name="right">The succeeding <see cref="Pattern"/></param>
+		/// <returns>A new <see cref="Pattern"/> concatenating <paramref name="left"/> and <paramref name="right"/></returns>
+		public static Pattern Concatenator(Capture left, Pattern right) {
+			if (left is null || right is null) {
+				throw new ArgumentNullException(left is null ? nameof(left) : nameof(right));
+			}
+			return new Pattern(new CaptureLiteral(left).Concatenate(right.Head));
+		}
+
+		/// <summary>
+		/// Concatenates the patterns so that <paramref name="left"/> comes before <paramref name="right"/>
+		/// </summary>
+		/// <param name="left">The preceeding <see cref="String"/></param>
+		/// <param name="right">The succeeding <see cref="Capture"/></param>
+		/// <returns>A new <see cref="Pattern"/> concatenating <paramref name="left"/> and <paramref name="right"/></returns>
+		public static Pattern Concatenator(String left, Capture right) {
+			if (left is null || right is null) {
+				throw new ArgumentNullException(left is null ? nameof(left) : nameof(right));
+			}
+			return new Pattern(new StringLiteral(left).Concatenate(new CaptureLiteral(right)));
+		}
+
+		/// <summary>
+		/// Concatenates the patterns so that <paramref name="left"/> comes before <paramref name="right"/>
+		/// </summary>
+		/// <param name="left">The preceeding <see cref="Capture"/></param>
+		/// <param name="right">The succeeding <see cref="String"/></param>
+		/// <returns>A new <see cref="Pattern"/> concatenating <paramref name="left"/> and <paramref name="right"/></returns>
+		public static Pattern Concatenator(Capture left, String right) {
+			if (left is null || right is null) {
+				throw new ArgumentNullException(left is null ? nameof(left) : nameof(right));
+			}
+			return new Pattern(new CaptureLiteral(left).Concatenate(new StringLiteral(right)));
+		}
+
+		/// <summary>
+		/// Concatenates the patterns so that <paramref name="left"/> comes before <paramref name="right"/>
+		/// </summary>
+		/// <param name="left">The preceeding <see cref="Char"/></param>
+		/// <param name="right">The succeeding <see cref="Capture"/></param>
+		/// <returns>A new <see cref="Pattern"/> concatenating <paramref name="left"/> and <paramref name="right"/></returns>
+		public static Pattern Concatenator(Char left, Capture right) {
+			if (right is null) {
+				throw new ArgumentNullException(nameof(right));
+			}
+			return new Pattern(new CharLiteral(left).Concatenate(new CaptureLiteral(right)));
+		}
+
+		/// <summary>
+		/// Concatenates the patterns so that <paramref name="left"/> comes before <paramref name="right"/>
+		/// </summary>
+		/// <param name="left">The preceeding <see cref="Capture"/></param>
+		/// <param name="right">The succeeding <see cref="Char"/></param>
+		/// <returns>A new <see cref="Pattern"/> concatenating <paramref name="left"/> and <paramref name="right"/></returns>
+		public static Pattern Concatenator(Capture left, Char right) {
+			if (left is null) {
+				throw new ArgumentNullException(nameof(left));
+			}
+			return new Pattern(new CaptureLiteral(left).Concatenate(new CharLiteral(right)));
+		}
 
 		//public static Pattern Negator(Pattern Pattern) => new Pattern(Pattern.Head.Negate());
 

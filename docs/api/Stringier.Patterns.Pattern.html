@@ -95,6 +95,51 @@
   </h3>
   
   
+  <a id="Stringier_Patterns_Pattern_Capture_" data-uid="Stringier.Patterns.Pattern.Capture*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Capture_Stringier_Patterns_Capture__" data-uid="Stringier.Patterns.Pattern.Capture(Stringier.Patterns.Capture@)">Capture(out Capture)</h4>
+  <div class="markdown level1 summary"><p>Declares this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> should be captured into <code data-dev-comment-type="paramref" class="paramref">capture</code> for later reference.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Pattern Capture(out Capture capture)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Capture.html">Capture</a></td>
+        <td><span class="parametername">capture</span></td>
+        <td><p>A <a class="xref" href="Stringier.Patterns.Capture.html">Capture</a> object to store into.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <code data-dev-comment-type="paramref" class="paramref">Pattern</code> which will capture its result into <code data-dev-comment-type="paramref" class="paramref">capture</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
   <a id="Stringier_Patterns_Pattern_Consume_" data-uid="Stringier.Patterns.Pattern.Consume*"></a>
   <h4 id="Stringier_Patterns_Pattern_Consume_String_" data-uid="Stringier.Patterns.Pattern.Consume(String)">Consume(String)</h4>
   <div class="markdown level1 summary"><p>Attempt to consume the <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> from the <code data-dev-comment-type="paramref" class="paramref">Source</code></p>
@@ -1086,6 +1131,48 @@
       <tr>
         <td><span class="xref">String</span></td>
         <td><span class="parametername">Pattern</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_Pattern_op_Implicit_" data-uid="Stringier.Patterns.Pattern.op_Implicit*"></a>
+  <h4 id="Stringier_Patterns_Pattern_op_Implicit_Stringier_Patterns_Capture__Stringier_Patterns_Pattern" data-uid="Stringier.Patterns.Pattern.op_Implicit(Stringier.Patterns.Capture)~Stringier.Patterns.Pattern">Implicit(Capture to Pattern)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Pattern(Capture Capture)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Capture.html">Capture</a></td>
+        <td><span class="parametername">Capture</span></td>
         <td></td>
       </tr>
     </tbody>
