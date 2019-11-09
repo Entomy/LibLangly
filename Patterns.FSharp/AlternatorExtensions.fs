@@ -18,12 +18,12 @@ module AlternatorExtensions =
         static member Alternate(left:String, right:Char) = PatternBindings.Alternator(left, right)
         static member Alternate(left:Char, right:String) = PatternBindings.Alternator(left, right)
         static member Alternate(left:Char, right:Char) = PatternBindings.Alternator(left, right)
-        static member Alternate(left:Pattern, right:Capture) = PatternBindings.Alternator(left, right)
-        static member Alternate(left:Capture, right:Pattern) = PatternBindings.Alternator(left, right)
-        static member Alternate(left:String, right:Capture) = PatternBindings.Alternator(left, right)
-        static member Alternate(left:Capture, right:String) = PatternBindings.Alternator(left, right)
-        static member Alternate(left:Char, right:Capture) = PatternBindings.Alternator(left, right)
-        static member Alternate(left:Capture, right:Char) = PatternBindings.Alternator(left, right)
+        static member Alternate(left:Pattern, right:Capture ref) = PatternBindings.Alternator(left, !right)
+        static member Alternate(left:Capture ref, right:Pattern) = PatternBindings.Alternator(!left, right)
+        static member Alternate(left:String, right:Capture ref) = PatternBindings.Alternator(left, !right)
+        static member Alternate(left:Capture ref, right:String) = PatternBindings.Alternator(!left, right)
+        static member Alternate(left:Char, right:Capture ref) = PatternBindings.Alternator(left, !right)
+        static member Alternate(left:Capture ref, right:Char) = PatternBindings.Alternator(!left, right)
         // This makes the operator still do boolean or
         static member Alternate(left, right) = left || right
 

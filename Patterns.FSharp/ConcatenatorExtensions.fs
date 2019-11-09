@@ -16,12 +16,12 @@ module ConcatenatorExtensions =
         static member Concatenate(left:String, right:Char) = PatternBindings.Concatenator(left, right)
         static member Concatenate(left:Char, right:String) = PatternBindings.Concatenator(left, right)
         static member Concatenate(left:Char, right:Char) = PatternBindings.Concatenator(left, right)
-        static member Concatenate(left:Pattern, right:Capture) = PatternBindings.Concatenator(left, right)
-        static member Concatenate(left:Capture, right:Pattern) = PatternBindings.Concatenator(left, right)
-        static member Concatenate(left:String, right:Capture) = PatternBindings.Concatenator(left, right)
-        static member Concatenate(left:Capture, right:String) = PatternBindings.Concatenator(left, right)
-        static member Concatenate(left:Char, right:Capture) = PatternBindings.Concatenator(left, right)
-        static member Concatenate(left:Capture, right:Char) = PatternBindings.Concatenator(left, right)
+        static member Concatenate(left:Pattern, right:Capture ref) = PatternBindings.Concatenator(left, !right)
+        static member Concatenate(left:Capture ref, right:Pattern) = PatternBindings.Concatenator(!left, right)
+        static member Concatenate(left:String, right:Capture ref) = PatternBindings.Concatenator(left, !right)
+        static member Concatenate(left:Capture ref, right:String) = PatternBindings.Concatenator(!left, right)
+        static member Concatenate(left:Char, right:Capture ref) = PatternBindings.Concatenator(left, !right)
+        static member Concatenate(left:Capture ref, right:Char) = PatternBindings.Concatenator(!left, right)
         // This makes >> still do foreward composition
         static member Concatenate(left, right) = left >> right
 

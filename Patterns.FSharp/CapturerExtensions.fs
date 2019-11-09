@@ -7,4 +7,4 @@ open System.Runtime.InteropServices
 [<AutoOpen>]
 module CapturerExtensions =
         
-    let inline ( => )(pattern)([<Out>] into:byref<Capture>) = PatternBindings.Capturer(pattern, &into)
+    let inline ( => )(pattern)([<Out>] into) = PatternBindings.Capturer(pattern, into)
