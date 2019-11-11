@@ -9,6 +9,7 @@ module LiteralExtensions =
     type Binder =
         static member Literal(value:string) = PatternBindings.Literal(value)
         static member Literal(value:char) = PatternBindings.Literal(value)
+        static member Literal(value:Capture ref) = PatternBindings.Literal(!value)
         static member With(pattern:String, comparisonType:StringComparison) = pattern.With(comparisonType)
         static member With(pattern:Char, comparisonType:StringComparison) = pattern.With(comparisonType)
 

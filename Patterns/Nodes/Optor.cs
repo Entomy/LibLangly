@@ -77,7 +77,7 @@ namespace Stringier.Patterns.Nodes {
 		/// <summary>
 		/// Determines whether this instance and a specified object have the same value.
 		/// </summary>
-		/// <param name="other">The <see cref="Concatenator"/> to compare with the current <see cref="Node"/>.</param>
+		/// <param name="other">The <see cref="Optor"/> to compare with the current <see cref="Node"/>.</param>
 		/// <returns><c>true</c> if the specified <see cref="Node"/> is equal to the current <see cref="Node"/>; otherwise, <c>false</c>.</returns
 		public Boolean Equals(Optor other) => Node.Equals(other.Node);
 

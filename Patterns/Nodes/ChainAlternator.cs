@@ -182,6 +182,10 @@ namespace Stringier.Patterns.Nodes {
 
 		#region Spanner
 
+		/// <summary>
+		/// Makes this <see cref="Node"/> spanning.
+		/// </summary>
+		/// <returns>A new <see cref="Node"/> which spans.</returns
 		internal override Node Span() {
 			foreach (Node Node in Nodes) {
 				if (Node is Optor) { throw new PatternConstructionException("One or more of the components of this alternator are optional, and the alternator is marked as spanning. Options can not span, as it creates an infinite loop. While this potentially could succeed, this is absolutely an error."); }

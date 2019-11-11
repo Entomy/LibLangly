@@ -164,12 +164,29 @@ namespace Stringier.Patterns.Nodes {
 			return new Concatenator(this, new StringLiteral(right));
 		}
 
+		/// <summary>
+		/// Negates this <see cref="Node"/>.
+		/// </summary>
+		/// <returns>A new <see cref="Node"/> which has been negated.</returns>
 		internal virtual Node Negate() => new Negator(this);
 
+		/// <summary>
+		/// Makes this <see cref="Node"/> optional.
+		/// </summary>
+		/// <returns>A new <see cref="Node"/> which has been made optional.</returns>
 		internal virtual Node Optional() => new Optor(this);
 
+		/// <summary>
+		/// Repeats this <see cref="Node"/> <paramref name="count"/> times.
+		/// </summary>
+		/// <param name="count">The amount of times to repeat.</param>
+		/// <returns>A new <see cref="Node"/> repeated <paramref name="count"/> times.</returns>
 		internal virtual Node Repeat(Int32 count) => new Repeater(this, count);
 
+		/// <summary>
+		/// Makes this <see cref="Node"/> spanning.
+		/// </summary>
+		/// <returns>A new <see cref="Node"/> which spans.</returns>
 		internal virtual Node Span() => new Spanner(this);
 	}
 }

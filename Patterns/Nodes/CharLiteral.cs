@@ -141,6 +141,11 @@ namespace Stringier.Patterns.Nodes {
 
 		#region Repeater
 
+		/// <summary>
+		/// Repeats this <see cref="Node"/> <paramref name="count"/> times.
+		/// </summary>
+		/// <param name="count">The amount of times to repeat.</param>
+		/// <returns>A new <see cref="Node"/> repeated <paramref name="count"/> times.</returns>
 		internal override Node Repeat(Int32 count) => new StringLiteral(Char.Repeat(count));
 
 		#endregion

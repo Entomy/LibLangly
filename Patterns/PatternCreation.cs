@@ -231,34 +231,34 @@ namespace Stringier.Patterns {
 
 		#endregion
 
-		//#region Ranger
+		#region Ranger
 
-		///// <summary>
-		///// Create a pattern representing the range <paramref name="From"/> until <paramref name="To"/>.
-		///// </summary>
-		///// <param name="From">Begining <see cref="Pattern"/>.</param>
-		///// <param name="To">Ending <see cref="Pattern"/>.</param>
-		//public static Pattern Range(Pattern From, Pattern To) => new Pattern(new Ranger(From.Head, To.Head));
+		/// <summary>
+		/// Create a pattern representing the range <paramref name="from"/> until <paramref name="to"/>.
+		/// </summary>
+		/// <param name="from">Begining <see cref="Pattern"/>.</param>
+		/// <param name="to">Ending <see cref="Pattern"/>.</param>
+		public static Pattern Range(Pattern from, Pattern to) => new Pattern(new Ranger(from.Head, to.Head));
 
-		///// <summary>
-		///// Create a pattern representing the range <paramref name="From"/> until <paramref name="To"/>, allowing an <paramref name="Escape"/>.
-		///// </summary>
-		///// <param name="From">Begining <see cref="Pattern"/>.</param>
-		///// <param name="To">Ending <see cref="Pattern"/>.</param>
-		///// <param name="Escape">Escape <see cref="Pattern"/>./</param>
-		//public static Pattern Range(Pattern From, Pattern To, Pattern Escape) => new Pattern(new EscapedRanger(From.Head, To.Head, Escape.Head));
+		/// <summary>
+		/// Create a pattern representing the range <paramref name="from"/> until <paramref name="to"/>, allowing an <paramref name="escape"/>.
+		/// </summary>
+		/// <param name="from">Begining <see cref="Pattern"/>.</param>
+		/// <param name="to">Ending <see cref="Pattern"/>.</param>
+		/// <param name="escape">Escape <see cref="Pattern"/>./</param>
+		public static Pattern Range(Pattern from, Pattern to, Pattern escape) => new Pattern(new EscapedRanger(from.Head, to.Head, escape.Head));
 
-		///// <summary>
-		///// Create a pattern representing the range <paramref name="From"/> until <paramref name="To"/>, that allows nesting of this pattern inside of itself.
-		///// </summary>
-		///// <remarks>
-		///// The easiest way to explain this is that is shows up a lot in programming, with things like if-then-else statements which can contain other if-then-else statements.
-		///// </remarks>
-		///// <param name="From">Begining <see cref="Pattern"/>.</param>
-		///// <param name="To">Ending <see cref="Pattern"/>.</param>
-		//public static Pattern NestedRange(Pattern From, Pattern To) => new Pattern(new NestedRanger(From.Head, To.Head));
+		/// <summary>
+		/// Create a pattern representing the range <paramref name="from"/> until <paramref name="to"/>, that allows nesting of this pattern inside of itself.
+		/// </summary>
+		/// <remarks>
+		/// The easiest way to explain this is that is shows up a lot in programming, with things like if-then-else statements which can contain other if-then-else statements.
+		/// </remarks>
+		/// <param name="from">Begining <see cref="Pattern"/>.</param>
+		/// <param name="to">Ending <see cref="Pattern"/>.</param>
+		public static Pattern NestedRange(Pattern from, Pattern to) => new Pattern(new NestedRanger(from.Head, to.Head));
 
-		//#endregion
+		#endregion
 
 		//#region RegexAdapter
 

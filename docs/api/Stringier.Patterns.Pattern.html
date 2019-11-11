@@ -482,6 +482,165 @@
   </table>
   
   
+  <a id="Stringier_Patterns_Pattern_NestedRange_" data-uid="Stringier.Patterns.Pattern.NestedRange*"></a>
+  <h4 id="Stringier_Patterns_Pattern_NestedRange_Stringier_Patterns_Pattern_Stringier_Patterns_Pattern_" data-uid="Stringier.Patterns.Pattern.NestedRange(Stringier.Patterns.Pattern,Stringier.Patterns.Pattern)">NestedRange(Pattern, Pattern)</h4>
+  <div class="markdown level1 summary"><p>Create a pattern representing the range <code data-dev-comment-type="paramref" class="paramref">from</code> until <code data-dev-comment-type="paramref" class="paramref">to</code>, that allows nesting of this pattern inside of itself.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern NestedRange(Pattern from, Pattern to)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">from</span></td>
+        <td><p>Begining <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">to</span></td>
+        <td><p>Ending <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Stringier_Patterns_Pattern_NestedRange_Stringier_Patterns_Pattern_Stringier_Patterns_Pattern__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The easiest way to explain this is that is shows up a lot in programming, with things like if-then-else statements which can contain other if-then-else statements.</p>
+</div>
+  
+  
+  <a id="Stringier_Patterns_Pattern_Range_" data-uid="Stringier.Patterns.Pattern.Range*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Range_Stringier_Patterns_Pattern_Stringier_Patterns_Pattern_" data-uid="Stringier.Patterns.Pattern.Range(Stringier.Patterns.Pattern,Stringier.Patterns.Pattern)">Range(Pattern, Pattern)</h4>
+  <div class="markdown level1 summary"><p>Create a pattern representing the range <code data-dev-comment-type="paramref" class="paramref">from</code> until <code data-dev-comment-type="paramref" class="paramref">to</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern Range(Pattern from, Pattern to)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">from</span></td>
+        <td><p>Begining <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">to</span></td>
+        <td><p>Ending <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_Pattern_Range_" data-uid="Stringier.Patterns.Pattern.Range*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Range_Stringier_Patterns_Pattern_Stringier_Patterns_Pattern_Stringier_Patterns_Pattern_" data-uid="Stringier.Patterns.Pattern.Range(Stringier.Patterns.Pattern,Stringier.Patterns.Pattern,Stringier.Patterns.Pattern)">Range(Pattern, Pattern, Pattern)</h4>
+  <div class="markdown level1 summary"><p>Create a pattern representing the range <code data-dev-comment-type="paramref" class="paramref">from</code> until <code data-dev-comment-type="paramref" class="paramref">to</code>, allowing an <code data-dev-comment-type="paramref" class="paramref">escape</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern Range(Pattern from, Pattern to, Pattern escape)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">from</span></td>
+        <td><p>Begining <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">to</span></td>
+        <td><p>Ending <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">escape</span></td>
+        <td><p>Escape <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a>./</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
   <a id="Stringier_Patterns_Pattern_ToString_" data-uid="Stringier.Patterns.Pattern.ToString*"></a>
   <h4 id="Stringier_Patterns_Pattern_ToString" data-uid="Stringier.Patterns.Pattern.ToString">ToString()</h4>
   <div class="markdown level1 summary"><p>Returns a <see cref="!:String"></see> that represents the current <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a>.</p>
