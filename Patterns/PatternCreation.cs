@@ -260,12 +260,6 @@ namespace Stringier.Patterns {
 
 		#endregion
 
-		//#region RegexAdapter
-
-		//public static implicit operator Pattern(Regex Regex) => new Pattern(new RegexAdapter(Regex));
-
-		//#endregion
-
 		#region Repeater
 
 		/// <summary>
