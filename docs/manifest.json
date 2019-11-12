@@ -41,6 +41,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Stringier.Patterns.Bias.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stringier.Patterns.Bias.html",
+          "hash": "lPI22Y4JRaiUttUPhuvE/A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Stringier.Patterns.Bindings.PatternBindings.yml",
       "output": {
         ".html": {
@@ -141,7 +153,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Stringier.Patterns.Pattern.html",
-          "hash": "jPKEihH4rcj6wsAMvjqwfQ=="
+          "hash": "v09+cpKAKUxvlhqJBA5clA=="
         }
       },
       "is_incremental": true,
@@ -166,6 +178,18 @@
         ".html": {
           "relative_path": "api/Stringier.Patterns.PatternException.html",
           "hash": "0J97wVPbjkQd3cv05eVyEA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stringier.Patterns.RegexExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stringier.Patterns.RegexExtensions.html",
+          "hash": "A3KyKzK5JYNFsqbZq0oAzA=="
         }
       },
       "is_incremental": true,
@@ -237,7 +261,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Stringier.Patterns.html",
-          "hash": "DXC1YNikxlYaZKG86/8wxw=="
+          "hash": "j23HxIIbXVFhybMB1xGl5w=="
         }
       },
       "is_incremental": true,
@@ -285,7 +309,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "FfHe8fXMV9J+gcX2OKf26g=="
+          "hash": "wmyeIkLagTCYV4xb4CY0Nw=="
         }
       },
       "is_incremental": false,
@@ -409,24 +433,24 @@
         "skipped_file_count": 0
       },
       "processors": {
-        "ConceptualDocumentProcessor": {
-          "can_incremental": true,
-          "incrementalPhase": "build",
-          "total_file_count": 8,
-          "skipped_file_count": 8
-        },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": true,
-          "incrementalPhase": "build",
-          "total_file_count": 22,
-          "skipped_file_count": 22
-        },
         "TocDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
           "total_file_count": 0,
           "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 24,
+          "skipped_file_count": 24
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 8,
+          "skipped_file_count": 8
         }
       }
     },

@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Globalization;
-using System.Text.RegularExpressions;
 using Stringier.Patterns.Nodes;
 
 namespace Stringier.Patterns {
-	public partial class Pattern {
+	public sealed partial class Pattern {
 		#region Literals
 
 		public static implicit operator Pattern(Char Char) => new Pattern(new CharLiteral(Char));
@@ -80,71 +78,71 @@ namespace Stringier.Patterns {
 
 		#endregion
 
-		//#region Checker
+		#region Checker
 
-		///// <summary>
-		///// Use the <paramref name="Check"/> to represent a single character.
-		///// </summary>
-		///// <param name="Name">Name to display this pattern as.</param>
-		///// <param name="Check">A <see cref="Func{T, TResult}"/> to validate the character.</param>
-		///// <returns></returns>
-		//public static Pattern Check(String Name, Func<Char, Boolean> Check) {
-		//	if (Name is null) {
-		//		throw new ArgumentNullException(nameof(Name));
-		//	}
-		//	return new Pattern(new CharChecker(Name, Check));
-		//}
+		/// <summary>
+		/// Use the <paramref name="check"/> to represent a single character.
+		/// </summary>
+		/// <param name="name">Name to display this pattern as.</param>
+		/// <param name="check">A <see cref="Func{T, TResult}"/> to validate the character.</param>
+		/// <returns></returns>
+		public static Pattern Check(String name, Func<Char, Boolean> check) {
+			if (name is null) {
+				throw new ArgumentNullException(nameof(name));
+			}
+			return new Pattern(new CharChecker(name, check));
+		}
 
-		///// <summary>
-		///// Use the specified <paramref name="HeadCheck"/>, <paramref name="BodyCheck"/>, and <paramref name="TailCheck"/> to represent a variable length string. The head and tail are only present once, with the body being repeatable.
-		///// </summary>
-		///// <param name="Name">Name to display this pattern as.</param>
-		///// <param name="HeadCheck">A <see cref="Func{T, TResult}"/> to validate the head.</param>
-		///// <param name="BodyCheck">A <see cref="Func{T, TResult}"/> to validate the body, which may repeat.</param>
-		///// <param name="TailCheck">A <see cref="Func{T, TResult}"/> to validate the tail.</param>
-		///// <returns></returns>
-		//public static Pattern Check(String Name, Func<Char, Boolean> HeadCheck, Func<Char, Boolean> BodyCheck, Func<Char, Boolean> TailCheck) {
-		//	if (Name is null) {
-		//		throw new ArgumentNullException(nameof(Name));
-		//	}
-		//	return new Pattern(new StringChecker(Name, HeadCheck, BodyCheck, TailCheck));
-		//}
+		/// <summary>
+		/// Use the specified <paramref name="headCheck"/>, <paramref name="bodyCheck"/>, and <paramref name="tailCheck"/> to represent a variable length string. The head and tail are only present once, with the body being repeatable.
+		/// </summary>
+		/// <param name="name">Name to display this pattern as.</param>
+		/// <param name="headCheck">A <see cref="Func{T, TResult}"/> to validate the head.</param>
+		/// <param name="bodyCheck">A <see cref="Func{T, TResult}"/> to validate the body, which may repeat.</param>
+		/// <param name="tailCheck">A <see cref="Func{T, TResult}"/> to validate the tail.</param>
+		/// <returns></returns>
+		public static Pattern Check(String name, Func<Char, Boolean> headCheck, Func<Char, Boolean> bodyCheck, Func<Char, Boolean> tailCheck) {
+			if (name is null) {
+				throw new ArgumentNullException(nameof(name));
+			}
+			return new Pattern(new StringChecker(name, headCheck, bodyCheck, tailCheck));
+		}
 
-		///// <summary>
-		///// Use the specified <paramref name="HeadCheck"/>, <paramref name="BodyCheck"/>, and <paramref name="TailCheck"/> to represent a variable length string, along with whether each check is required for a valid string. The head and tail are only present once, with the body being repeatable.
-		///// </summary>
-		///// <param name="Name">Name to display this pattern as.</param>
-		///// <param name="HeadCheck">A <see cref="Func{T, TResult}"/> to validate the head.</param>
-		///// <param name="HeadRequired">Whether the <paramref name="HeadCheck"/> is required.</param>
-		///// <param name="BodyCheck">A <see cref="Func{T, TResult}"/> to validate the body, which may repeat.</param>
-		///// <param name="BodyRequired">Whether the <paramref name="BodyCheck"/> is required.</param>
-		///// <param name="TailCheck">A <see cref="Func{T, TResult}"/> to validate the tail.</param>
-		///// <param name="TailRequired">Whether the <paramref name="TailRequired"/> is required.</param>
-		///// <returns></returns>
-		//public static Pattern Check(String Name, Func<Char, Boolean> HeadCheck, Boolean HeadRequired, Func<Char, Boolean> BodyCheck, Boolean BodyRequired, Func<Char, Boolean> TailCheck, Boolean TailRequired) {
-		//	if (Name is null) {
-		//		throw new ArgumentNullException(nameof(Name));
-		//	}
-		//	return new Pattern(new StringChecker(Name, HeadCheck, HeadRequired, BodyCheck, BodyRequired, TailCheck, TailRequired));
-		//}
+		/// <summary>
+		/// Use the specified <paramref name="headCheck"/>, <paramref name="bodyCheck"/>, and <paramref name="tailCheck"/> to represent a variable length string, along with whether each check is required for a valid string. The head and tail are only present once, with the body being repeatable.
+		/// </summary>
+		/// <param name="name">Name to display this pattern as.</param>
+		/// <param name="headCheck">A <see cref="Func{T, TResult}"/> to validate the head.</param>
+		/// <param name="headRequired">Whether the <paramref name="headCheck"/> is required.</param>
+		/// <param name="bodyCheck">A <see cref="Func{T, TResult}"/> to validate the body, which may repeat.</param>
+		/// <param name="bodyRequired">Whether the <paramref name="bodyCheck"/> is required.</param>
+		/// <param name="tailCheck">A <see cref="Func{T, TResult}"/> to validate the tail.</param>
+		/// <param name="tailRequired">Whether the <paramref name="tailRequired"/> is required.</param>
+		/// <returns></returns>
+		public static Pattern Check(String name, Func<Char, Boolean> headCheck, Boolean headRequired, Func<Char, Boolean> bodyCheck, Boolean bodyRequired, Func<Char, Boolean> tailCheck, Boolean tailRequired) {
+			if (name is null) {
+				throw new ArgumentNullException(nameof(name));
+			}
+			return new Pattern(new StringChecker(name, headCheck, headRequired, bodyCheck, bodyRequired, tailCheck, tailRequired));
+		}
 
-		///// <summary>
-		///// Use the specified <paramref name="HeadCheck"/>, <paramref name="BodyCheck"/>, and <paramref name="TailCheck"/> to represent the valid form of a word, along with the <paramref name="Bias"/>.
-		///// </summary>
-		///// <param name="Name">Name to display this pattern as.</param>
-		///// <param name="Bias">Endian bias of the word. Head bias requires the head if only one letter is present. Tail bias requires the tail if only one letter is present.</param>
-		///// <param name="HeadCheck">A <see cref="Func{T, TResult}"/> to validate the head.</param>
-		///// <param name="BodyCheck">A <see cref="Func{T, TResult}"/> to validate the body, which may repeat.</param>
-		///// <param name="TailCheck">A <see cref="Func{T, TResult}"/> to validate the tail.</param>
-		///// <returns></returns>
-		//public static Pattern Check(String Name, Bias Bias, Func<Char, Boolean> HeadCheck, Func<Char, Boolean> BodyCheck, Func<Char, Boolean> TailCheck) {
-		//	if (Name is null) {
-		//		throw new ArgumentNullException(nameof(Name));
-		//	}
-		//	return new Pattern(new WordChecker(Name, Bias, HeadCheck, BodyCheck, TailCheck));
-		//}
+		/// <summary>
+		/// Use the specified <paramref name="headCheck"/>, <paramref name="bodyCheck"/>, and <paramref name="tailCheck"/> to represent the valid form of a word, along with the <paramref name="bias"/>.
+		/// </summary>
+		/// <param name="name">Name to display this pattern as.</param>
+		/// <param name="bias">Endian bias of the word. Head bias requires the head if only one letter is present. Tail bias requires the tail if only one letter is present.</param>
+		/// <param name="headCheck">A <see cref="Func{T, TResult}"/> to validate the head.</param>
+		/// <param name="bodyCheck">A <see cref="Func{T, TResult}"/> to validate the body, which may repeat.</param>
+		/// <param name="tailCheck">A <see cref="Func{T, TResult}"/> to validate the tail.</param>
+		/// <returns></returns>
+		public static Pattern Check(String name, Bias bias, Func<Char, Boolean> headCheck, Func<Char, Boolean> bodyCheck, Func<Char, Boolean> tailCheck) {
+			if (name is null) {
+				throw new ArgumentNullException(nameof(name));
+			}
+			return new Pattern(new WordChecker(name, bias, headCheck, bodyCheck, tailCheck));
+		}
 
-		//#endregion
+		#endregion
 
 		#region Concatenator
 

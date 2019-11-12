@@ -5,7 +5,7 @@ namespace Stringier.Patterns {
 	/// <summary>
 	/// Represents a textual pattern
 	/// </summary>
-	public partial class Pattern : IEquatable<Pattern>, IEquatable<String> {
+	public sealed partial class Pattern : IEquatable<Pattern>, IEquatable<String> {
 		/// <summary>
 		/// The <see cref="Node"/> at the head of this <see cref="Pattern"/>; the entry point of the graph.
 		/// </summary>

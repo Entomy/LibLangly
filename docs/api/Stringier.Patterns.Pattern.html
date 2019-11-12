@@ -89,7 +89,7 @@
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
   <h5 id="Stringier_Patterns_Pattern_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Pattern : IEquatable&lt;Pattern&gt;, IEquatable&lt;String&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class Pattern : IEquatable&lt;Pattern&gt;, IEquatable&lt;String&gt;</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
@@ -135,6 +135,266 @@
         <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
         <td><p>A new <code data-dev-comment-type="paramref" class="paramref">Pattern</code> which will capture its result into <code data-dev-comment-type="paramref" class="paramref">capture</code>.</p>
 </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_Pattern_Check_" data-uid="Stringier.Patterns.Pattern.Check*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Check_String_Func_Char_Boolean__" data-uid="Stringier.Patterns.Pattern.Check(String,Func{Char,Boolean})">Check(String, Func&lt;Char, Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Use the <code data-dev-comment-type="paramref" class="paramref">check</code> to represent a single character.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern Check(String name, Func&lt;Char, Boolean&gt; check)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Name to display this pattern as.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">Char</span>, <span class="xref">Boolean</span>&gt;</td>
+        <td><span class="parametername">check</span></td>
+        <td><p>A <see cref="!:Func&lt;T, TResult>"></see> to validate the character.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_Pattern_Check_" data-uid="Stringier.Patterns.Pattern.Check*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Check_String_Func_Char_Boolean__Boolean_Func_Char_Boolean__Boolean_Func_Char_Boolean__Boolean_" data-uid="Stringier.Patterns.Pattern.Check(String,Func{Char,Boolean},Boolean,Func{Char,Boolean},Boolean,Func{Char,Boolean},Boolean)">Check(String, Func&lt;Char, Boolean&gt;, Boolean, Func&lt;Char, Boolean&gt;, Boolean, Func&lt;Char, Boolean&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Use the specified <code data-dev-comment-type="paramref" class="paramref">headCheck</code>, <code data-dev-comment-type="paramref" class="paramref">bodyCheck</code>, and <code data-dev-comment-type="paramref" class="paramref">tailCheck</code> to represent a variable length string, along with whether each check is required for a valid string. The head and tail are only present once, with the body being repeatable.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern Check(String name, Func&lt;Char, Boolean&gt; headCheck, Boolean headRequired, Func&lt;Char, Boolean&gt; bodyCheck, Boolean bodyRequired, Func&lt;Char, Boolean&gt; tailCheck, Boolean tailRequired)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Name to display this pattern as.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">Char</span>, <span class="xref">Boolean</span>&gt;</td>
+        <td><span class="parametername">headCheck</span></td>
+        <td><p>A <see cref="!:Func&lt;T, TResult>"></see> to validate the head.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><span class="parametername">headRequired</span></td>
+        <td><p>Whether the <code data-dev-comment-type="paramref" class="paramref">headCheck</code> is required.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">Char</span>, <span class="xref">Boolean</span>&gt;</td>
+        <td><span class="parametername">bodyCheck</span></td>
+        <td><p>A <see cref="!:Func&lt;T, TResult>"></see> to validate the body, which may repeat.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><span class="parametername">bodyRequired</span></td>
+        <td><p>Whether the <code data-dev-comment-type="paramref" class="paramref">bodyCheck</code> is required.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">Char</span>, <span class="xref">Boolean</span>&gt;</td>
+        <td><span class="parametername">tailCheck</span></td>
+        <td><p>A <see cref="!:Func&lt;T, TResult>"></see> to validate the tail.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><span class="parametername">tailRequired</span></td>
+        <td><p>Whether the <code data-dev-comment-type="paramref" class="paramref">tailRequired</code> is required.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_Pattern_Check_" data-uid="Stringier.Patterns.Pattern.Check*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Check_String_Func_Char_Boolean__Func_Char_Boolean__Func_Char_Boolean__" data-uid="Stringier.Patterns.Pattern.Check(String,Func{Char,Boolean},Func{Char,Boolean},Func{Char,Boolean})">Check(String, Func&lt;Char, Boolean&gt;, Func&lt;Char, Boolean&gt;, Func&lt;Char, Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Use the specified <code data-dev-comment-type="paramref" class="paramref">headCheck</code>, <code data-dev-comment-type="paramref" class="paramref">bodyCheck</code>, and <code data-dev-comment-type="paramref" class="paramref">tailCheck</code> to represent a variable length string. The head and tail are only present once, with the body being repeatable.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern Check(String name, Func&lt;Char, Boolean&gt; headCheck, Func&lt;Char, Boolean&gt; bodyCheck, Func&lt;Char, Boolean&gt; tailCheck)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Name to display this pattern as.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">Char</span>, <span class="xref">Boolean</span>&gt;</td>
+        <td><span class="parametername">headCheck</span></td>
+        <td><p>A <see cref="!:Func&lt;T, TResult>"></see> to validate the head.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">Char</span>, <span class="xref">Boolean</span>&gt;</td>
+        <td><span class="parametername">bodyCheck</span></td>
+        <td><p>A <see cref="!:Func&lt;T, TResult>"></see> to validate the body, which may repeat.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">Char</span>, <span class="xref">Boolean</span>&gt;</td>
+        <td><span class="parametername">tailCheck</span></td>
+        <td><p>A <see cref="!:Func&lt;T, TResult>"></see> to validate the tail.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_Pattern_Check_" data-uid="Stringier.Patterns.Pattern.Check*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Check_String_Stringier_Patterns_Bias_Func_Char_Boolean__Func_Char_Boolean__Func_Char_Boolean__" data-uid="Stringier.Patterns.Pattern.Check(String,Stringier.Patterns.Bias,Func{Char,Boolean},Func{Char,Boolean},Func{Char,Boolean})">Check(String, Bias, Func&lt;Char, Boolean&gt;, Func&lt;Char, Boolean&gt;, Func&lt;Char, Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Use the specified <code data-dev-comment-type="paramref" class="paramref">headCheck</code>, <code data-dev-comment-type="paramref" class="paramref">bodyCheck</code>, and <code data-dev-comment-type="paramref" class="paramref">tailCheck</code> to represent the valid form of a word, along with the <code data-dev-comment-type="paramref" class="paramref">bias</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern Check(String name, Bias bias, Func&lt;Char, Boolean&gt; headCheck, Func&lt;Char, Boolean&gt; bodyCheck, Func&lt;Char, Boolean&gt; tailCheck)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Name to display this pattern as.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Bias.html">Bias</a></td>
+        <td><span class="parametername">bias</span></td>
+        <td><p>Endian bias of the word. Head bias requires the head if only one letter is present. Tail bias requires the tail if only one letter is present.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">Char</span>, <span class="xref">Boolean</span>&gt;</td>
+        <td><span class="parametername">headCheck</span></td>
+        <td><p>A <see cref="!:Func&lt;T, TResult>"></see> to validate the head.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">Char</span>, <span class="xref">Boolean</span>&gt;</td>
+        <td><span class="parametername">bodyCheck</span></td>
+        <td><p>A <see cref="!:Func&lt;T, TResult>"></see> to validate the body, which may repeat.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">Char</span>, <span class="xref">Boolean</span>&gt;</td>
+        <td><span class="parametername">tailCheck</span></td>
+        <td><p>A <see cref="!:Func&lt;T, TResult>"></see> to validate the tail.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
       </tr>
     </tbody>
   </table>

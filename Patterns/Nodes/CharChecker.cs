@@ -141,7 +141,7 @@ namespace Stringier.Patterns.Nodes {
 		/// </summary>
 		/// <param name="count">The amount of times to repeat.</param>
 		/// <returns>A new <see cref="Node"/> repeated <paramref name="count"/> times.</returns
-		internal override Node Repeat(Int32 count) => new RepeatCharchecker(Name, Check, count);
+		internal override Node Repeat(Int32 count) => new RepeatCharChecker(Name, Check, count);
 
 		#endregion
 	}
