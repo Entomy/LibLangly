@@ -21,6 +21,7 @@
     <Compile Include="Patterns\RepeaterTests.fs" />
     <Compile Include="Patterns\SpannerTests.fs" />
     <Compile Include="Patterns\CompoundPatternTests.fs" />
+    <Compile Include="Patterns\StressTests.fs" />
     <Compile Include="Extensions\ChopTests.fs" />
     <Compile Include="Extensions\CleanTests.fs" />
     <Compile Include="Extensions\ContainsTests.fs" />
@@ -47,8 +48,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj" />
     <ProjectReference Include="..\Extensions.FSharp\Extensions.FSharp.fsproj" />
     <ProjectReference Include="..\Extensions\Extensions.csproj" />
+    <ProjectReference Include="..\Gibberish\Gibberish.csproj" />
     <ProjectReference Include="..\Patterns.FSharp\Patterns.FSharp.fsproj" />
     <ProjectReference Include="..\Patterns.MSTest\Patterns.MSTest.csproj" />
     <ProjectReference Include="..\Patterns\Patterns.csproj" />

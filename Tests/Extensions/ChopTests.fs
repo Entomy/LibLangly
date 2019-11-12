@@ -9,7 +9,7 @@ type ChopTests() =
 
     [<TestMethod>]
     member _.Chop0 () =
-        Assert.ThrowsException<ArgumentOutOfRangeException>(fun () -> chop 0 "hello world" |> ignore)
+        Assert.ThrowsException<ArgumentOutOfRangeException>(fun () -> chop 0 "hello world" |> ignore) |> ignore
 
     [<TestMethod>]
     member _.Chop1 () =
