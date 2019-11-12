@@ -6,32 +6,32 @@ namespace Stringier.Patterns.Nodes {
 	/// </summary>
 	internal abstract class Node : IEquatable<Node>, IEquatable<String> {
 		/// <summary>
-		/// Checks the first character in the <paramref name="Source"/> against the header of this node.
+		/// Checks the first character in the <paramref name="source"/> against the header of this node.
 		/// </summary>
 		/// <remarks>
 		/// This is primarily used to check whether a pattern may exist at the current position.
 		/// </remarks>
-		/// <param name="Source">The <see cref="Source"/> to check against.</param>
+		/// <param name="source">The <see cref="Source"/> to check against.</param>
 		/// <returns><c>true</c> if this <see cref="Pattern"/> may be present, <c>false</c> if definately not.</returns>
-		internal abstract Boolean CheckHeader(ref Source Source);
+		internal abstract Boolean CheckHeader(ref Source source);
 
 		/// <summary>
-		/// Call the Consume parser of this <see cref="Node"/> on the <paramref name="Source"/> with the <paramref name="Result"/>.
+		/// Call the Consume parser of this <see cref="Node"/> on the <paramref name="source"/> with the <paramref name="result"/>.
 		/// </summary>
-		/// <param name="Source">The <see cref="Source"/> to consume.</param>
-		/// <param name="Result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</param>
-		internal abstract void Consume(ref Source Source, ref Result Result);
+		/// <param name="source">The <see cref="Source"/> to consume.</param>
+		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</param>
+		internal abstract void Consume(ref Source source, ref Result result);
 
 		/// <summary>
-		/// Call the Neglect parser of this <see cref="Node"/> on the <paramref name="Source"/> with the <paramref name="Result"/>.
+		/// Call the Neglect parser of this <see cref="Node"/> on the <paramref name="source"/> with the <paramref name="result"/>.
 		/// </summary>
-		/// <param name="Source">The <see cref="Source"/> to consume.</param>
-		/// <param name="Result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</param>
-		internal abstract void Neglect(ref Source Source, ref Result Result);
+		/// <param name="source">The <see cref="Source"/> to consume.</param>
+		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</param>
+		internal abstract void Neglect(ref Source source, ref Result result);
 
-		public static Boolean operator ==(Node Left, Node Right) => Left is null || Right is null ? false : Left.Equals(Right);
+		public static Boolean operator ==(Node left, Node right) => !(left is null || right is null) && left.Equals(right);
 
-		public static Boolean operator !=(Node Left, Node Right) => Left is null || Right is null ? false : !Left.Equals(Right);
+		public static Boolean operator !=(Node left, Node right) => !(left is null || right is null) && !left.Equals(right);
 
 		/// <summary>
 		/// Determines whether the specified object is equal to the current object.
