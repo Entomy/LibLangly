@@ -25,5 +25,4 @@ type CompoundPatternTests() =
 
     [<TestMethod>]
     member _.``spaning optor`` () =
-        let pattern () = (fun () -> span(option(' '))) |> ignore
-        Assert.ThrowsException<PatternConstructionException>(Action pattern) |> ignore
+        Assert.ThrowsException<PatternConstructionException>(fun () -> span(option ' ') |> ignore) |> ignore

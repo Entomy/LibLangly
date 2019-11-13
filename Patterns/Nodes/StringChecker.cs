@@ -98,11 +98,13 @@ namespace Stringier.Patterns.Nodes {
 			} else {
 				ConsumeOptionalHead(ref source, ref result, out FoundBody);
 			}
+			if (!result) { return; }
 			if (BodyRequired) {
 				ConsumeRequiredBody(ref source, ref result, ref FoundBody);
 			} else {
 				ConsumeOptionalBody(ref source, ref result, ref FoundBody);
 			}
+			if (!result) { return; }
 			if (TailRequired) {
 				ConsumeRequiredTail(ref source, ref result, in FoundBody);
 			} else {

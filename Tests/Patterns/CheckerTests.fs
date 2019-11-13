@@ -12,7 +12,7 @@ type CheckerTests() =
         //! This is a sophisticated, therefore fragile, pattern type. It needs to be exhaustively tested against a very large battery. Do not remove these no matter how redundant they may seem, for they are not.
         let mutable pattern = Pattern.Check("pattern",
                                            (fun (char:char) -> char.IsLetter() || char = '_'), true,
-                                           (fun (char:char) -> char.IsLetterOrDigit() || char = '_'), true,
+                                           (fun (char:char) -> char.IsLetterOrDigit() || char = '-' || char = '_'), true,
                                            (fun (char:char) -> char.IsLetterOrDigit()), true)
         ResultAssert.Fails(pattern.Consume("a"))
         ResultAssert.Fails(pattern.Consume("a "))
