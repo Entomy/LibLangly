@@ -46,7 +46,12 @@ namespace Stringier.Patterns.Bindings {
 		/// <param name="left">The <see cref="Pattern"/> to check first</param>
 		/// <param name="right">The <see cref="Pattern"/> to check if <paramref name="left"/> does not match</param>
 		/// <returns>A new <see cref="Pattern"/> alternating <paramref name="left"/> and <paramref name="right"/></returns>
-		public static Pattern Alternator(Pattern left, Pattern right) => new Pattern(left.Head.Alternate(right.Head));
+		public static Pattern Alternator(Pattern left, Pattern right) {
+			if (left is null || right is null) {
+				throw new ArgumentNullException(left is null ? nameof(left) : nameof(right));
+			}
+			return new Pattern(left.Head.Alternate(right.Head));
+		}
 
 		/// <summary>
 		/// Declares this <see cref="Pattern"/> should be captured into <paramref name="capture"/> for later reference.
@@ -54,7 +59,12 @@ namespace Stringier.Patterns.Bindings {
 		/// <param name="pattern">The <see cref="Pattern"/> to capture.</param>
 		/// <param name="capture">A <see cref="Patterns.Capture"/> object to store into.</param>
 		/// <returns>A new <paramref name="pattern"/> which will capture its result into <paramref name="capture"/>.</returns>
-		public static Pattern Capturer(Pattern pattern, out Capture capture) => pattern.Capture(out capture);
+		public static Pattern Capturer(Pattern pattern, out Capture capture) {
+			if (pattern is null) {
+				throw new ArgumentNullException(nameof(pattern));
+			}
+			return pattern.Capture(out capture);
+		}
 
 		/// <summary>
 		/// Concatenates the patterns so that <paramref name="left"/> comes before <paramref name="right"/>
@@ -62,21 +72,36 @@ namespace Stringier.Patterns.Bindings {
 		/// <param name="left">The preceeding <see cref="Pattern"/></param>
 		/// <param name="right">The succeeding <see cref="Pattern"/></param>
 		/// <returns>A new <see cref="Pattern"/> concatenating <paramref name="left"/> and <paramref name="right"/></returns>
-		public static Pattern Concatenator(Pattern left, Pattern right) => new Pattern(left.Head.Concatenate(right.Head));
+		public static Pattern Concatenator(Pattern left, Pattern right) {
+			if (left is null || right is null) {
+				throw new ArgumentNullException(left is null ? nameof(left) : nameof(right));
+			}
+			return new Pattern(left.Head.Concatenate(right.Head));
+		}
 
 		/// <summary>
 		/// Marks the <paramref name="pattern"/> as negated.
 		/// </summary>
 		/// <param name="pattern">The <see cref="Pattern"/> to negate.</param>
 		/// <returns>A new <see cref="Pattern"/> which has been negated.</returns>
-		public static Pattern Negator(Pattern pattern) => new Pattern(pattern.Head.Negate());
+		public static Pattern Negator(Pattern pattern) {
+			if (pattern is null) {
+				throw new ArgumentNullException(nameof(pattern));
+			}
+			return new Pattern(pattern.Head.Negate());
+		}
 
 		/// <summary>
 		/// Marks the <paramref name="pattern"/> as optional.
 		/// </summary>
 		/// <param name="pattern">The optional <see cref="Pattern"/>.</param>
 		/// <returns>A new <see cref="Pattern"/> which is optional.</returns>
-		public static Pattern Optor(Pattern pattern) => new Pattern(pattern.Head.Optional());
+		public static Pattern Optor(Pattern pattern) {
+			if (pattern is null) {
+				throw new ArgumentNullException(nameof(pattern));
+			}
+			return new Pattern(pattern.Head.Optional());
+		}
 
 		/// <summary>
 		/// Create a pattern representing the range <paramref name="from"/> until <paramref name="to"/>.

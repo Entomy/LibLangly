@@ -12,11 +12,7 @@ namespace System {
 			if (@string is null || required is null) {
 				throw new ArgumentNullException(@string is null ? nameof(@string) : nameof(required));
 			}
-			if (new Regex("^" + required, RegexOptions.None).IsMatch(@string)) {
-				return @string;
-			} else {
-				return required + @string;
-			}
+			return new Regex("^" + required, RegexOptions.None).IsMatch(@string) ? @string : required + @string;
 		}
 	}
 }

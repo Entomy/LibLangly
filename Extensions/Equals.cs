@@ -47,7 +47,7 @@ namespace System {
 		/// <param name="span">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> instance.</param>
 		/// <param name="string">The <see cref="String"/> to compare to this instance.</param>
 		/// <returns><c>true</c> if the value of the <paramref name="other"/> parameter is the same as this span; otherwise, <c>false</c>.</returns>
-		public static Boolean Equals(this ReadOnlySpan<Char> span, String @string) => @string is null ? false : span.Equals(@string, StringComparison.CurrentCulture);
+		public static Boolean Equals(this ReadOnlySpan<Char> span, String @string) => !(@string is null) && span.Equals(@string, StringComparison.CurrentCulture);
 
 		/// <summary>
 		/// Determines whether this span and a specified <see cref="String"/> object have the same value. A parameter specifies the culture, case, and sort rules used in the comparison.
@@ -56,6 +56,6 @@ namespace System {
 		/// <param name="string">The <see cref="String"/> to compare to this instance.</param>
 		/// <param name="comparisonType">One of the enumeration values that specifies how the strings will be compared.</param>
 		/// <returns><c>true</c> if the value of the <paramref name="other"/> parameter is the same as this span; otherwise, <c>false</c>.</returns>
-		public static Boolean Equals(this ReadOnlySpan<Char> span, String @string, StringComparison comparisonType) => @string is null ? false : span.Equals(@string.AsSpan(), comparisonType);
+		public static Boolean Equals(this ReadOnlySpan<Char> span, String @string, StringComparison comparisonType) => !(@string is null) && span.Equals(@string.AsSpan(), comparisonType);
 	}
 }

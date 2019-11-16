@@ -42,7 +42,9 @@ namespace System {
 				throw new ArgumentNullException(strings is null ? nameof(strings) : nameof(value));
 			}
 			foreach (String String in strings) {
-				if (String.Contains(value)) { return true; }
+				if (String.Contains(value)) {
+					return true;
+				}
 			}
 			return false;
 		}

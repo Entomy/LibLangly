@@ -14,17 +14,18 @@
 				throw new ArgumentOutOfRangeException(nameof(size), "Size must be greater than 0");
 			} else if (size >= @string.Length) {
 				return new[] { @string };
+			} else {
+				Int32 i = 0;
+				Int32 j = 0;
+				Int32 k = (Int32)Math.Ceiling((Double)@string.Length / size);
+				String[] Result = new String[k];
+				while (i < k) {
+					Result[i] = (j + size) > @string.Length ? @string.Substring(j, @string.Length - j) : @string.Substring(j, size);
+					i++;
+					j += size;
+				}
+				return Result;
 			}
-			Int32 i = 0;
-			Int32 j = 0;
-			Int32 k = (Int32)Math.Ceiling((Double)@string.Length / size);
-			String[] Result = new String[k];
-			while (i < k) {
-				Result[i] = (j + size) > @string.Length ? @string.Substring(j, @string.Length - j) : @string.Substring(j, size);
-				i++;
-				j += size;
-			}
-			return Result;
 		}
 	}
 }

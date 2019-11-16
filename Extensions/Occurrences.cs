@@ -14,7 +14,9 @@ namespace System {
 			}
 			Int32 c = 0;
 			foreach (Char C in @string) {
-				if (C == charToCount) { c++; }
+				if (C == charToCount) {
+					c++;
+				}
 			}
 			return c;
 		}
@@ -32,7 +34,9 @@ namespace System {
 			Int32 c = 0;
 			foreach (Char Char in charsToCount) {
 				foreach (Char C in @string) {
-					if (C == Char) { c++; }
+					if (C == Char) {
+						c++;
+					}
 				}
 			}
 			return c;

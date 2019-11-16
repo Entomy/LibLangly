@@ -12,7 +12,9 @@ namespace Microsoft.VisualStudio.TestTools.UnitTesting {
 		/// </summary>
 		/// <param name="actual">The parser <see cref="Result"/>.</param>
 		public static void Fails(Result actual) {
-			if (actual) { throw new AssertFailedException(); }
+			if (actual) {
+				throw new AssertFailedException();
+			}
 		}
 
 		/// <summary>
@@ -21,7 +23,9 @@ namespace Microsoft.VisualStudio.TestTools.UnitTesting {
 		/// <param name="expected">The <see cref="String"/> of expected text.</param>
 		/// <param name="actual">The parser <see cref="Result"/>.</param>
 		public static void Captures(String expected, Result actual) {
-			if (expected is null) { throw new ArgumentNullException(nameof(expected)); }
+			if (expected is null) {
+				throw new ArgumentNullException(nameof(expected));
+			}
 			actual.ThrowException();
 			if (expected != actual) {
 				throw new AssertFailedException($"ResultAssert.Captures failed. Expected: <{expected}>. Actual: <{(String)actual}>.");
