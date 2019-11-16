@@ -56,8 +56,6 @@ namespace Stringier.Patterns.Bindings {
 		/// <returns>A new <paramref name="pattern"/> which will capture its result into <paramref name="capture"/>.</returns>
 		public static Pattern Capturer(Pattern pattern, out Capture capture) => pattern.Capture(out capture);
 
-		//public static Pattern Checker(String Name, Func<Char, Boolean> Check) => new Pattern(new CharChecker(Name, Check));
-
 		/// <summary>
 		/// Concatenates the patterns so that <paramref name="left"/> comes before <paramref name="right"/>
 		/// </summary>

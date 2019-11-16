@@ -198,15 +198,6 @@ namespace Stringier.Patterns {
 
 		#endregion
 
-		//#region Jumper
-
-		//public Pattern Target(out Target Target) {
-		//	Target = new Target(this);
-		//	return this;
-		//}
-
-		//#endregion
-
 		#region Negator
 
 		/// <summary>
