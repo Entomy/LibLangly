@@ -8,13 +8,7 @@ using Console = Consolator.Console;
 
 namespace Benchmarks {
 	public static class Program {
-		internal static KeyChoiceSet MenuChoices;
-		internal static KeyChoiceSet ExtensionsChoices;
-		internal static KeyChoiceSet PatternsChoices;
-
-		public static void Main() {
-			Theme.DefaultDark.Apply();
-			MenuChoices = new KeyChoiceSet(" Enter Choice: ",
+		internal readonly static KeyChoiceSet MenuChoices = new KeyChoiceSet(" Enter Choice: ",
 				new KeyChoice(ConsoleKey.D1, "Extensions", () => {
 					Console.WriteChoices(ExtensionsChoices);
 					Console.ReadChoice(ExtensionsChoices);
@@ -24,7 +18,8 @@ namespace Benchmarks {
 					Console.ReadChoice(PatternsChoices);
 				}),
 				new BackKeyChoice(ConsoleKey.Q, "Quit", () => Environment.Exit(0)));
-			ExtensionsChoices = new KeyChoiceSet(" Enter Choice: ",
+
+		internal readonly static KeyChoiceSet ExtensionsChoices = new KeyChoiceSet(" Enter Choice: ",
 				new KeyChoice(ConsoleKey.D1, "Chop", () => BenchmarkRunner.Run<ChopBenchmarks>()),
 				new KeyChoice(ConsoleKey.D2, "Clean", () => BenchmarkRunner.Run<CleanBenchmarks>()),
 				new KeyChoice(ConsoleKey.D3, "Contains", () => {
@@ -40,9 +35,14 @@ namespace Benchmarks {
 				new KeyChoice(ConsoleKey.D9, "Repeat", () => BenchmarkRunner.Run<RepeatBenchmarks>()),
 				new KeyChoice(ConsoleKey.A, "Split", () => BenchmarkRunner.Run<SplitBenchmarks>()),
 				new BackKeyChoice(ConsoleKey.B, "Back", () => { }));
-			PatternsChoices = new KeyChoiceSet(" Enter Choice: ",
+
+		internal readonly static KeyChoiceSet PatternsChoices = new KeyChoiceSet(" Enter Choice: ",
 				new KeyChoice(ConsoleKey.D1, "Literal", () => BenchmarkRunner.Run<LiteralBenchmarks>()),
-				new KeyChoice(ConsoleKey.D2, "Concatenator", () => BenchmarkRunner.Run<ConcatenatorBenchmarks>()));
+				new KeyChoice(ConsoleKey.D2, "Alternator", () => BenchmarkRunner.Run<AlternatorBenchmarks>()),
+				new KeyChoice(ConsoleKey.D3, "Concatenator", () => BenchmarkRunner.Run<ConcatenatorBenchmarks>()));
+
+		public static void Main() {
+			Theme.DefaultDark.Apply();
 
 			while (true) {
 				Console.WriteChoices(MenuChoices);
