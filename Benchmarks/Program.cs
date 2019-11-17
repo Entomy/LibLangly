@@ -41,7 +41,8 @@ namespace Benchmarks {
 				new KeyChoice(ConsoleKey.A, "Split", () => BenchmarkRunner.Run<SplitBenchmarks>()),
 				new BackKeyChoice(ConsoleKey.B, "Back", () => { }));
 			PatternsChoices = new KeyChoiceSet(" Enter Choice: ",
-				new KeyChoice(ConsoleKey.D1, "Literal", () => BenchmarkRunner.Run<LiteralBenchmarks>()));
+				new KeyChoice(ConsoleKey.D1, "Literal", () => BenchmarkRunner.Run<LiteralBenchmarks>()),
+				new KeyChoice(ConsoleKey.D2, "Concatenator", () => BenchmarkRunner.Run<ConcatenatorBenchmarks>()));
 
 			while (true) {
 				Console.WriteChoices(MenuChoices);
