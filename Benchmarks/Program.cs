@@ -39,7 +39,9 @@ namespace Benchmarks {
 		internal readonly static KeyChoiceSet PatternsChoices = new KeyChoiceSet(" Enter Choice: ",
 				new KeyChoice(ConsoleKey.D1, "Literal", () => BenchmarkRunner.Run<LiteralBenchmarks>()),
 				new KeyChoice(ConsoleKey.D2, "Alternator", () => BenchmarkRunner.Run<AlternatorBenchmarks>()),
-				new KeyChoice(ConsoleKey.D3, "Concatenator", () => BenchmarkRunner.Run<ConcatenatorBenchmarks>()));
+				new KeyChoice(ConsoleKey.D3, "Concatenator", () => BenchmarkRunner.Run<ConcatenatorBenchmarks>()),
+				new KeyChoice(ConsoleKey.D4, "Optor", () => BenchmarkRunner.Run<OptorBenchmarks>()),
+				new BackKeyChoice(ConsoleKey.B, "Back", () => { }));
 
 		public static void Main() {
 			Theme.DefaultDark.Apply();
