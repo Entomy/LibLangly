@@ -27,7 +27,7 @@ namespace Stringier.Patterns {
 		/// </summary>
 		/// <param name="other">The <see cref="String"/> to compare to this instance.</param>
 		/// <returns><c>true</c> if the value of the <paramref name="other"/> parameter is the same as this capture; otherwise, <c>false</c>.</returns>
-		public Boolean Equals(String other) => other is null ? false : Value.Equals(other, StringComparison.Ordinal);
+		public Boolean Equals(String other) => !(other is null) && Value.Equals(other, StringComparison.Ordinal);
 
 		/// <summary>
 		/// Determines whether this <see cref="Capture"/> and a specified <see cref="String"/> object have the same value. A parameter specifies the culture, case, and sort rules used in the comparison.
@@ -35,7 +35,7 @@ namespace Stringier.Patterns {
 		/// <param name="other">The <see cref="String"/> to compare to this instance.</param>
 		/// <param name="comparisonType">One of the enumeration values that specifies how the text will be compared.</param>
 		/// <returns><c>true</c> if the value of the <paramref name="other"/> parameter is the same as this capture; otherwise, <c>false</c>.</returns>
-		public Boolean Equals(String other, StringComparison comparisonType) => other is null ? false : Value.Equals(other, comparisonType);
+		public Boolean Equals(String other, StringComparison comparisonType) => !(other is null) && Value.Equals(other, comparisonType);
 
 		/// <summary>
 		/// Converts the value of this instance to a <see cref="String"/>.

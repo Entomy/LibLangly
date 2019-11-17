@@ -54,6 +54,47 @@ namespace Stringier.Patterns.Nodes {
 		}
 
 		/// <summary>
+		/// Determines whether this instance and a specified object have the same value.
+		/// </summary>
+		/// <param name="node">The <see cref="Node"/> to compare with the current <see cref="Node"/>.</param>
+		/// <returns><c>true</c> if the specified <see cref="Node"/> is equal to the current <see cref="Node"/>; otherwise, <c>false</c>.</
+		public override Boolean Equals(Node node) {
+			switch (node) {
+			case ChainAlternator other:
+				return Equals(other);
+			default:
+				return false;
+			}
+		}
+
+		/// <summary>
+		/// Determines whether this instance and a specified object have the same value.
+		/// </summary>
+		/// <param name="other">The <see cref="Concatenator"/> to compare with the current <see cref="Node"/>.</param>
+		/// <returns><c>true</c> if the specified <see cref="Node"/> is equal to the current <see cref="Node"/>; otherwise, <c>false</c>.</
+		public Boolean Equals(ChainAlternator other) => Nodes.Equals(other.Nodes);
+
+		/// <summary>
+		/// Returns the hash code for this instance.
+		/// </summary>
+		/// <returns>A 32-bit signed integer hash code.</
+		public override Int32 GetHashCode() => Nodes.GetHashCode();
+
+		/// <summary>
+		/// Returns a <see cref="String"/> that represents the current <see cref="Node"/>.
+		/// </summary>
+		/// <returns>A <see cref="String"/> that represents the current <see cref="Node"/>.</returns>
+		public override String ToString() {
+			StringBuilder Builder = new StringBuilder("┃");
+			foreach (Node Node in Nodes) {
+				_ = Builder.Append($"{Node}│");
+			}
+			_ = Builder.Remove(Builder.Length - 1, 1);
+			_ = Builder.Append("┃");
+			return Builder.ToString();
+		}
+
+		/// <summary>
 		/// Checks the first character in the <paramref name="source"/> against the header of this node.
 		/// </summary>
 		/// <remarks>
@@ -63,7 +104,8 @@ namespace Stringier.Patterns.Nodes {
 		/// <returns><c>true</c> if this <see cref="Pattern"/> may be present, <c>false</c> if definately not.</returns
 		internal override Boolean CheckHeader(ref Source source) {
 			foreach (Node Node in Nodes) {
-				if (Node.CheckHeader(ref source)) { return true; }
+				if (Node.CheckHeader(ref source)) {
+					return true;
 			}
 			return false;
 		}
@@ -105,47 +147,6 @@ namespace Stringier.Patterns.Nodes {
 			}
 			source.Position += ShortestPattern;
 			result.Length += ShortestPattern;
-		}
-
-		/// <summary>
-		/// Determines whether this instance and a specified object have the same value.
-		/// </summary>
-		/// <param name="node">The <see cref="Node"/> to compare with the current <see cref="Node"/>.</param>
-		/// <returns><c>true</c> if the specified <see cref="Node"/> is equal to the current <see cref="Node"/>; otherwise, <c>false</c>.</
-		public override Boolean Equals(Node node) {
-			switch (node) {
-			case ChainAlternator other:
-				return Equals(other);
-			default:
-				return false;
-			}
-		}
-
-		/// <summary>
-		/// Determines whether this instance and a specified object have the same value.
-		/// </summary>
-		/// <param name="other">The <see cref="Concatenator"/> to compare with the current <see cref="Node"/>.</param>
-		/// <returns><c>true</c> if the specified <see cref="Node"/> is equal to the current <see cref="Node"/>; otherwise, <c>false</c>.</
-		public Boolean Equals(ChainAlternator other) => Nodes.Equals(other.Nodes);
-
-		/// <summary>
-		/// Returns the hash code for this instance.
-		/// </summary>
-		/// <returns>A 32-bit signed integer hash code.</
-		public override Int32 GetHashCode() => Nodes.GetHashCode();
-
-		/// <summary>
-		/// Returns a <see cref="String"/> that represents the current <see cref="Node"/>.
-		/// </summary>
-		/// <returns>A <see cref="String"/> that represents the current <see cref="Node"/>.</returns>
-		public override String ToString() {
-			StringBuilder Builder = new StringBuilder("┃");
-			foreach (Node Node in Nodes) {
-				_ = Builder.Append($"{Node}│");
-			}
-			_ = Builder.Remove(Builder.Length - 1, 1);
-			_ = Builder.Append("┃");
-			return Builder.ToString();
 		}
 
 		#region Alternate

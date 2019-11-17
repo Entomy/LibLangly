@@ -44,7 +44,7 @@ namespace Stringier.Patterns {
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the consumed string.</returns>
 		public static Result Consume(this Char pattern, String source, StringComparison comparisonType) {
 			if (source is null) {
-				throw new ArgumentNullException(nameof(Source));
+				throw new ArgumentNullException(nameof(source));
 			}
 			Source src = new Source(source);
 			return pattern.Consume(ref src, comparisonType);

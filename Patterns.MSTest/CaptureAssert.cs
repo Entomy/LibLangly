@@ -12,6 +12,9 @@ namespace Microsoft.VisualStudio.TestTools.UnitTesting {
 		/// <param name="expected">The <see cref="String"/> of expected text.</param>
 		/// <param name="actual">The <see cref="Capture"/> object.</param>
 		public static void Captures(String expected, Capture actual) {
+			if (expected is null || actual is null) {
+				throw new ArgumentNullException(expected is null ? nameof(expected) : nameof(actual));
+			}
 			if (!actual.Equals(expected)) {
 				throw new AssertFailedException($"CaptureAssert.Captures failed. Expected: <{expected}>. Actual: <{actual}>.");
 			}
@@ -26,6 +29,9 @@ namespace Microsoft.VisualStudio.TestTools.UnitTesting {
 		/// <param name="expected">The <see cref="String"/> of expected text.</param>
 		/// <param name="actual">The <see cref="Capture"/> object.</param>
 		public static void Captures(String expected, ref Capture actual) {
+			if (expected is null || actual is null) {
+				throw new ArgumentNullException(expected is null ? nameof(expected) : nameof(actual));
+			}
 			if (!actual.Equals(expected)) {
 				throw new AssertFailedException($"CaptureAssert.Captures failed. Expected: <{expected}>. Actual: <{actual}>.");
 			}
