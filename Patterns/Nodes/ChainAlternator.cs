@@ -106,6 +106,7 @@ namespace Stringier.Patterns.Nodes {
 			foreach (Node Node in Nodes) {
 				if (Node.CheckHeader(ref source)) {
 					return true;
+				}
 			}
 			return false;
 		}
