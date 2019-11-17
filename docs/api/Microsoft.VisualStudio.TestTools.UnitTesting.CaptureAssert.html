@@ -84,10 +84,16 @@
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
       <span class="xref">System.Object.Equals(System.Object)</span>
     </div>
     <div>
       <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
     </div>
     <div>
       <span class="xref">System.Object.GetHashCode()</span>
@@ -98,36 +104,25 @@
     <div>
       <span class="xref">System.Object.MemberwiseClone()</span>
     </div>
-    <div>
-      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ToString()</span>
-    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Microsoft.VisualStudio.TestTools.UnitTesting.html">Microsoft.VisualStudio.TestTools.UnitTesting</a></h6>
-  <h6><strong>Assembly</strong>: Stringier.Patterns.Testing.dll</h6>
+  <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
   <h5 id="Microsoft_VisualStudio_TestTools_UnitTesting_CaptureAssert_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static class CaptureAssert</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Microsoft_VisualStudio_TestTools_UnitTesting_CaptureAssert_Captures_System_String_Capture_.md&amp;value=---%0Auid%3A%20Microsoft.VisualStudio.TestTools.UnitTesting.CaptureAssert.Captures(System.String%2CCapture)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Stringier.Patterns.Testing/CaptureAssert.cs/#L14">View Source</a>
-  </span>
+  
+  
   <a id="Microsoft_VisualStudio_TestTools_UnitTesting_CaptureAssert_Captures_" data-uid="Microsoft.VisualStudio.TestTools.UnitTesting.CaptureAssert.Captures*"></a>
-  <h4 id="Microsoft_VisualStudio_TestTools_UnitTesting_CaptureAssert_Captures_System_String_Capture_" data-uid="Microsoft.VisualStudio.TestTools.UnitTesting.CaptureAssert.Captures(System.String,Capture)">Captures(String, Capture)</h4>
-  <div class="markdown level1 summary"><p>Tests whether the specified <code data-dev-comment-type="paramref" class="paramref">Actual</code> capture is what was <code data-dev-comment-type="paramref" class="paramref">Expected</code>.</p>
+  <h4 id="Microsoft_VisualStudio_TestTools_UnitTesting_CaptureAssert_Captures_String_Capture_" data-uid="Microsoft.VisualStudio.TestTools.UnitTesting.CaptureAssert.Captures(String,Capture)">Captures(String, Capture)</h4>
+  <div class="markdown level1 summary"><p>Tests whether the specified <code data-dev-comment-type="paramref" class="paramref">actual</code> capture is what was <code data-dev-comment-type="paramref" class="paramref">expected</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void Captures(string Expected, Capture Actual)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void Captures(String expected, Capture actual)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -140,19 +135,57 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">Expected</span></td>
-        <td><p>The <span class="xref">System.String</span> of expected text.</p>
+        <td><span class="xref">String</span></td>
+        <td><span class="parametername">expected</span></td>
+        <td><p>The <see cref="!:String"></see> of expected text.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">Capture</span></td>
-        <td><span class="parametername">Actual</span></td>
+        <td><span class="parametername">actual</span></td>
         <td><p>The <see cref="!:Capture"></see> object.</p>
 </td>
       </tr>
     </tbody>
   </table>
+  
+  
+  <a id="Microsoft_VisualStudio_TestTools_UnitTesting_CaptureAssert_Captures_" data-uid="Microsoft.VisualStudio.TestTools.UnitTesting.CaptureAssert.Captures*"></a>
+  <h4 id="Microsoft_VisualStudio_TestTools_UnitTesting_CaptureAssert_Captures_String_Capture__" data-uid="Microsoft.VisualStudio.TestTools.UnitTesting.CaptureAssert.Captures(String,Capture@)">Captures(String, ref Capture)</h4>
+  <div class="markdown level1 summary"><p>Tests whether the specified <code data-dev-comment-type="paramref" class="paramref">actual</code> capture is what was <code data-dev-comment-type="paramref" class="paramref">expected</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Captures(String expected, ref Capture actual)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td><span class="parametername">expected</span></td>
+        <td><p>The <see cref="!:String"></see> of expected text.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Capture</span></td>
+        <td><span class="parametername">actual</span></td>
+        <td><p>The <see cref="!:Capture"></see> object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Microsoft_VisualStudio_TestTools_UnitTesting_CaptureAssert_Captures_String_Capture___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This variation exists primarily to offer cleaner syntax to languages (like F#) where Capture is being kept at as a ref cell, or similar.</p>
+</div>
 </article>
           </div>
           
@@ -160,12 +193,6 @@
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
-                  <li>
-                    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Microsoft_VisualStudio_TestTools_UnitTesting_CaptureAssert.md&amp;value=---%0Auid%3A%20Microsoft.VisualStudio.TestTools.UnitTesting.CaptureAssert%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/Entomy/Stringier/blob/master/Stringier.Patterns.Testing/CaptureAssert.cs/#L8" class="contribution-link">View Source</a>
-                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">

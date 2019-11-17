@@ -1,0 +1,61 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+    <GenerateProgramFile>false</GenerateProgramFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Patterns\ExtensionTests.fs" />
+    <Compile Include="Patterns\SourceStateTests.fs" />
+    <Compile Include="Patterns\LiteralTests.fs" />
+    <Compile Include="Patterns\AlternatorTests.fs" />
+    <Compile Include="Patterns\CaptureTests.fs" />
+    <Compile Include="Patterns\CheckerTests.fs" />
+    <Compile Include="Patterns\ConcatenatorTests.fs" />
+    <Compile Include="Patterns\OptorTests.fs" />
+    <Compile Include="Patterns\RangerTests.fs" />
+    <Compile Include="Patterns\RegexAdapterTests.fs" />
+    <Compile Include="Patterns\RepeaterTests.fs" />
+    <Compile Include="Patterns\SpannerTests.fs" />
+    <Compile Include="Patterns\CompoundPatternTests.fs" />
+    <Compile Include="Patterns\RealWorldTests.fs" />
+    <Compile Include="Patterns\StressTests.fs" />
+    <Compile Include="Extensions\ChopTests.fs" />
+    <Compile Include="Extensions\CleanTests.fs" />
+    <Compile Include="Extensions\ContainsTests.fs" />
+    <Compile Include="Extensions\EnsureTests.fs" />
+    <Compile Include="Extensions\EqualsTests.fs" />
+    <Compile Include="Extensions\JoinTests.fs" />
+    <Compile Include="Extensions\LinesTests.fs" />
+    <Compile Include="Extensions\OccurrencesTests.fs" />
+    <Compile Include="Extensions\PadTests.fs" />
+    <Compile Include="Extensions\RepeatTests.fs" />
+    <Compile Include="Extensions\SplitTests.fs" />
+    <Compile Include="Extensions\WordsTests.fs" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.4.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="2.0.0" />
+    <PackageReference Include="MSTest.TestFramework" Version="2.0.0" />
+    <PackageReference Include="coverlet.collector" Version="1.1.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj" />
+    <ProjectReference Include="..\Extensions.FSharp\Extensions.FSharp.fsproj" />
+    <ProjectReference Include="..\Extensions\Extensions.csproj" />
+    <ProjectReference Include="..\Gibberish\Gibberish.csproj" />
+    <ProjectReference Include="..\Patterns.FSharp\Patterns.FSharp.fsproj" />
+    <ProjectReference Include="..\Patterns.MSTest\Patterns.MSTest.csproj" />
+    <ProjectReference Include="..\Patterns\Patterns.csproj" />
+  </ItemGroup>
+
+</Project>

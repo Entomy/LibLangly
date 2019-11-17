@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+		<LangVersion>8.0</LangVersion>
+		<Nullable>enable</Nullable>
+    <AssemblyName>Stringier.Extensions</AssemblyName>
+    <RootNamespace>Stringier</RootNamespace>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Authors>Patrick Kelly</Authors>
+    <Product>Stringier</Product>
+    <Description>Just some simple extensions to make Strings better... stringier</Description>
+    <Copyright>2019</Copyright>
+		<PackageProjectUrl>https://github.com/Entomy/Stringier</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/Entomy/Stringier</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageLicenseUrl></PackageLicenseUrl>
+		<Version>1.18.0</Version>
+		<PackageTags>string, regex, string manipulation</PackageTags>
+		<RootNamespace>System</RootNamespace>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<PackageIcon>Logo.png</PackageIcon>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="System.Memory" Version="4.5.3" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="..\LICENSE">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+		<None Include="..\Logo.png" Pack="true" Visible="true" PackagePath="\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Core\Core.csproj" />
+	</ItemGroup>
+
+</Project>

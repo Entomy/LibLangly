@@ -1,0 +1,2632 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Pattern
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Pattern
+   ">
+    <meta name="generator" content="docfx 2.45.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Stringier.Patterns.Pattern">
+  
+  
+  <h1 id="Stringier_Patterns_Pattern" data-uid="Stringier.Patterns.Pattern" class="text-break">Class Pattern
+  </h1>
+  <div class="markdown level0 summary"><p>Represents a textual pattern</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">Pattern</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">IEquatable</span>&lt;<span class="xref">String</span>&gt;</div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Stringier.Patterns.html">Stringier.Patterns</a></h6>
+  <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
+  <h5 id="Stringier_Patterns_Pattern_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class Pattern : IEquatable&lt;Pattern&gt;, IEquatable&lt;String&gt;</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  
+  
+  <h4 id="Stringier_Patterns_Pattern_ClosePunctuation" data-uid="Stringier.Patterns.Pattern.ClosePunctuation">ClosePunctuation</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Pattern ClosePunctuation</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Stringier_Patterns_Pattern_ConnectorPunctutation" data-uid="Stringier.Patterns.Pattern.ConnectorPunctutation">ConnectorPunctutation</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Pattern ConnectorPunctutation</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Stringier_Patterns_Pattern_Control" data-uid="Stringier.Patterns.Pattern.Control">Control</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Pattern Control</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Stringier_Patterns_Pattern_CurrencySymbol" data-uid="Stringier.Patterns.Pattern.CurrencySymbol">CurrencySymbol</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Pattern CurrencySymbol</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Stringier_Patterns_Pattern_DashPunctutation" data-uid="Stringier.Patterns.Pattern.DashPunctutation">DashPunctutation</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Pattern DashPunctutation</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Stringier_Patterns_Pattern_DecimalDigitNumber" data-uid="Stringier.Patterns.Pattern.DecimalDigitNumber">DecimalDigitNumber</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Pattern DecimalDigitNumber</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Stringier_Patterns_Pattern_EnclosingMark" data-uid="Stringier.Patterns.Pattern.EnclosingMark">EnclosingMark</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Pattern EnclosingMark</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Stringier_Patterns_Pattern_FinalQuotePunctuation" data-uid="Stringier.Patterns.Pattern.FinalQuotePunctuation">FinalQuotePunctuation</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Pattern FinalQuotePunctuation</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Stringier_Patterns_Pattern_Format" data-uid="Stringier.Patterns.Pattern.Format">Format</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Pattern Format</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Stringier_Patterns_Pattern_InitialQuotePunctuation" data-uid="Stringier.Patterns.Pattern.InitialQuotePunctuation">InitialQuotePunctuation</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Pattern InitialQuotePunctuation</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Stringier_Patterns_Pattern_Letter" data-uid="Stringier.Patterns.Pattern.Letter">Letter</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Pattern Letter</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Stringier_Patterns_Pattern_LetterNumber" data-uid="Stringier.Patterns.Pattern.LetterNumber">LetterNumber</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Pattern LetterNumber</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Stringier_Patterns_Pattern_LineSeparator" data-uid="Stringier.Patterns.Pattern.LineSeparator">LineSeparator</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Pattern LineSeparator</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Stringier_Patterns_Pattern_LowercaseLetter" data-uid="Stringier.Patterns.Pattern.LowercaseLetter">LowercaseLetter</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Pattern LowercaseLetter</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Stringier_Patterns_Pattern_MathSymbol" data-uid="Stringier.Patterns.Pattern.MathSymbol">MathSymbol</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Pattern MathSymbol</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Stringier_Patterns_Pattern_ModifierLetter" data-uid="Stringier.Patterns.Pattern.ModifierLetter">ModifierLetter</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Pattern ModifierLetter</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Stringier_Patterns_Pattern_ModifierSymbol" data-uid="Stringier.Patterns.Pattern.ModifierSymbol">ModifierSymbol</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Pattern ModifierSymbol</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Stringier_Patterns_Pattern_NonSpacingMark" data-uid="Stringier.Patterns.Pattern.NonSpacingMark">NonSpacingMark</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Pattern NonSpacingMark</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Stringier_Patterns_Pattern_OpenPunctuation" data-uid="Stringier.Patterns.Pattern.OpenPunctuation">OpenPunctuation</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Pattern OpenPunctuation</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Stringier_Patterns_Pattern_OtherLetter" data-uid="Stringier.Patterns.Pattern.OtherLetter">OtherLetter</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Pattern OtherLetter</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Stringier_Patterns_Pattern_OtherNotAssigned" data-uid="Stringier.Patterns.Pattern.OtherNotAssigned">OtherNotAssigned</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Pattern OtherNotAssigned</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Stringier_Patterns_Pattern_OtherNumber" data-uid="Stringier.Patterns.Pattern.OtherNumber">OtherNumber</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Pattern OtherNumber</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Stringier_Patterns_Pattern_OtherPunctuation" data-uid="Stringier.Patterns.Pattern.OtherPunctuation">OtherPunctuation</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Pattern OtherPunctuation</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Stringier_Patterns_Pattern_OtherSymbol" data-uid="Stringier.Patterns.Pattern.OtherSymbol">OtherSymbol</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Pattern OtherSymbol</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Stringier_Patterns_Pattern_ParagraphSeparator" data-uid="Stringier.Patterns.Pattern.ParagraphSeparator">ParagraphSeparator</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Pattern ParagraphSeparator</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Stringier_Patterns_Pattern_PrivateUse" data-uid="Stringier.Patterns.Pattern.PrivateUse">PrivateUse</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Pattern PrivateUse</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Stringier_Patterns_Pattern_SpaceSeparator" data-uid="Stringier.Patterns.Pattern.SpaceSeparator">SpaceSeparator</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Pattern SpaceSeparator</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Stringier_Patterns_Pattern_SpacingCombiningMark" data-uid="Stringier.Patterns.Pattern.SpacingCombiningMark">SpacingCombiningMark</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Pattern SpacingCombiningMark</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Stringier_Patterns_Pattern_Surrogate" data-uid="Stringier.Patterns.Pattern.Surrogate">Surrogate</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Pattern Surrogate</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Stringier_Patterns_Pattern_TitlecaseLetter" data-uid="Stringier.Patterns.Pattern.TitlecaseLetter">TitlecaseLetter</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Pattern TitlecaseLetter</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Stringier_Patterns_Pattern_UppercaseLetter" data-uid="Stringier.Patterns.Pattern.UppercaseLetter">UppercaseLetter</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Pattern UppercaseLetter</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="Stringier_Patterns_Pattern_Capture_" data-uid="Stringier.Patterns.Pattern.Capture*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Capture_Stringier_Patterns_Capture__" data-uid="Stringier.Patterns.Pattern.Capture(Stringier.Patterns.Capture@)">Capture(out Capture)</h4>
+  <div class="markdown level1 summary"><p>Declares this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> should be captured into <code data-dev-comment-type="paramref" class="paramref">capture</code> for later reference.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Pattern Capture(out Capture capture)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Capture.html">Capture</a></td>
+        <td><span class="parametername">capture</span></td>
+        <td><p>A <a class="xref" href="Stringier.Patterns.Capture.html">Capture</a> object to store into.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <code data-dev-comment-type="paramref" class="paramref">Pattern</code> which will capture its result into <code data-dev-comment-type="paramref" class="paramref">capture</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_Pattern_Check_" data-uid="Stringier.Patterns.Pattern.Check*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Check_String_Func_Char_Boolean__" data-uid="Stringier.Patterns.Pattern.Check(String,Func{Char,Boolean})">Check(String, Func&lt;Char, Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Use the <code data-dev-comment-type="paramref" class="paramref">check</code> to represent a single character.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern Check(String name, Func&lt;Char, Boolean&gt; check)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Name to display this pattern as.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">Char</span>, <span class="xref">Boolean</span>&gt;</td>
+        <td><span class="parametername">check</span></td>
+        <td><p>A <see cref="!:Func&lt;T, TResult>"></see> to validate the character.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_Pattern_Check_" data-uid="Stringier.Patterns.Pattern.Check*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Check_String_Func_Char_Boolean__Boolean_Func_Char_Boolean__Boolean_Func_Char_Boolean__Boolean_" data-uid="Stringier.Patterns.Pattern.Check(String,Func{Char,Boolean},Boolean,Func{Char,Boolean},Boolean,Func{Char,Boolean},Boolean)">Check(String, Func&lt;Char, Boolean&gt;, Boolean, Func&lt;Char, Boolean&gt;, Boolean, Func&lt;Char, Boolean&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Use the specified <code data-dev-comment-type="paramref" class="paramref">headCheck</code>, <code data-dev-comment-type="paramref" class="paramref">bodyCheck</code>, and <code data-dev-comment-type="paramref" class="paramref">tailCheck</code> to represent a variable length string, along with whether each check is required for a valid string. The head and tail are only present once, with the body being repeatable.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern Check(String name, Func&lt;Char, Boolean&gt; headCheck, Boolean headRequired, Func&lt;Char, Boolean&gt; bodyCheck, Boolean bodyRequired, Func&lt;Char, Boolean&gt; tailCheck, Boolean tailRequired)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Name to display this pattern as.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">Char</span>, <span class="xref">Boolean</span>&gt;</td>
+        <td><span class="parametername">headCheck</span></td>
+        <td><p>A <see cref="!:Func&lt;T, TResult>"></see> to validate the head.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><span class="parametername">headRequired</span></td>
+        <td><p>Whether the <code data-dev-comment-type="paramref" class="paramref">headCheck</code> is required.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">Char</span>, <span class="xref">Boolean</span>&gt;</td>
+        <td><span class="parametername">bodyCheck</span></td>
+        <td><p>A <see cref="!:Func&lt;T, TResult>"></see> to validate the body, which may repeat.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><span class="parametername">bodyRequired</span></td>
+        <td><p>Whether the <code data-dev-comment-type="paramref" class="paramref">bodyCheck</code> is required.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">Char</span>, <span class="xref">Boolean</span>&gt;</td>
+        <td><span class="parametername">tailCheck</span></td>
+        <td><p>A <see cref="!:Func&lt;T, TResult>"></see> to validate the tail.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><span class="parametername">tailRequired</span></td>
+        <td><p>Whether the <code data-dev-comment-type="paramref" class="paramref">tailRequired</code> is required.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_Pattern_Check_" data-uid="Stringier.Patterns.Pattern.Check*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Check_String_Func_Char_Boolean__Func_Char_Boolean__Func_Char_Boolean__" data-uid="Stringier.Patterns.Pattern.Check(String,Func{Char,Boolean},Func{Char,Boolean},Func{Char,Boolean})">Check(String, Func&lt;Char, Boolean&gt;, Func&lt;Char, Boolean&gt;, Func&lt;Char, Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Use the specified <code data-dev-comment-type="paramref" class="paramref">headCheck</code>, <code data-dev-comment-type="paramref" class="paramref">bodyCheck</code>, and <code data-dev-comment-type="paramref" class="paramref">tailCheck</code> to represent a variable length string. The head and tail are only present once, with the body being repeatable.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern Check(String name, Func&lt;Char, Boolean&gt; headCheck, Func&lt;Char, Boolean&gt; bodyCheck, Func&lt;Char, Boolean&gt; tailCheck)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Name to display this pattern as.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">Char</span>, <span class="xref">Boolean</span>&gt;</td>
+        <td><span class="parametername">headCheck</span></td>
+        <td><p>A <see cref="!:Func&lt;T, TResult>"></see> to validate the head.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">Char</span>, <span class="xref">Boolean</span>&gt;</td>
+        <td><span class="parametername">bodyCheck</span></td>
+        <td><p>A <see cref="!:Func&lt;T, TResult>"></see> to validate the body, which may repeat.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">Char</span>, <span class="xref">Boolean</span>&gt;</td>
+        <td><span class="parametername">tailCheck</span></td>
+        <td><p>A <see cref="!:Func&lt;T, TResult>"></see> to validate the tail.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_Pattern_Check_" data-uid="Stringier.Patterns.Pattern.Check*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Check_String_Stringier_Patterns_Bias_Func_Char_Boolean__Func_Char_Boolean__Func_Char_Boolean__" data-uid="Stringier.Patterns.Pattern.Check(String,Stringier.Patterns.Bias,Func{Char,Boolean},Func{Char,Boolean},Func{Char,Boolean})">Check(String, Bias, Func&lt;Char, Boolean&gt;, Func&lt;Char, Boolean&gt;, Func&lt;Char, Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Use the specified <code data-dev-comment-type="paramref" class="paramref">headCheck</code>, <code data-dev-comment-type="paramref" class="paramref">bodyCheck</code>, and <code data-dev-comment-type="paramref" class="paramref">tailCheck</code> to represent the valid form of a word, along with the <code data-dev-comment-type="paramref" class="paramref">bias</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern Check(String name, Bias bias, Func&lt;Char, Boolean&gt; headCheck, Func&lt;Char, Boolean&gt; bodyCheck, Func&lt;Char, Boolean&gt; tailCheck)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Name to display this pattern as.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Bias.html">Bias</a></td>
+        <td><span class="parametername">bias</span></td>
+        <td><p>Endian bias of the word. Head bias requires the head if only one letter is present. Tail bias requires the tail if only one letter is present.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">Char</span>, <span class="xref">Boolean</span>&gt;</td>
+        <td><span class="parametername">headCheck</span></td>
+        <td><p>A <see cref="!:Func&lt;T, TResult>"></see> to validate the head.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">Char</span>, <span class="xref">Boolean</span>&gt;</td>
+        <td><span class="parametername">bodyCheck</span></td>
+        <td><p>A <see cref="!:Func&lt;T, TResult>"></see> to validate the body, which may repeat.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">Char</span>, <span class="xref">Boolean</span>&gt;</td>
+        <td><span class="parametername">tailCheck</span></td>
+        <td><p>A <see cref="!:Func&lt;T, TResult>"></see> to validate the tail.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_Pattern_Consume_" data-uid="Stringier.Patterns.Pattern.Consume*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Consume_String_" data-uid="Stringier.Patterns.Pattern.Consume(String)">Consume(String)</h4>
+  <div class="markdown level1 summary"><p>Attempt to consume the <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> from the <code data-dev-comment-type="paramref" class="paramref">Source</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Result Consume(String Source)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td><span class="parametername">Source</span></td>
+        <td><p>The <see cref="!:String"></see> to consume</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Result.html">Result</a></td>
+        <td><p>A <a class="xref" href="Stringier.Patterns.Result.html">Result</a> containing whether a match occured and the captured <see cref="!:String"></see></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_Pattern_Consume_" data-uid="Stringier.Patterns.Pattern.Consume*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Consume_Stringier_Patterns_Result_" data-uid="Stringier.Patterns.Pattern.Consume(Stringier.Patterns.Result)">Consume(Result)</h4>
+  <div class="markdown level1 summary"><p>Attempt to consume the <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> from the <code data-dev-comment-type="paramref" class="paramref">Source</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Result Consume(Result Source)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Result.html">Result</a></td>
+        <td><span class="parametername">Source</span></td>
+        <td><p>The <a class="xref" href="Stringier.Patterns.Result.html">Result</a> to consume</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Result.html">Result</a></td>
+        <td><p>A <a class="xref" href="Stringier.Patterns.Result.html">Result</a> containing whether a match occured and the captured <see cref="!:String"></see></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_Pattern_Consume_" data-uid="Stringier.Patterns.Pattern.Consume*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Consume_Stringier_Patterns_Source__" data-uid="Stringier.Patterns.Pattern.Consume(Stringier.Patterns.Source@)">Consume(ref Source)</h4>
+  <div class="markdown level1 summary"><p>Attempt to consume the <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> from the <code data-dev-comment-type="paramref" class="paramref">Source</code>, adjusting the position in the <code data-dev-comment-type="paramref" class="paramref">Source</code> as appropriate</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Result Consume(ref Source Source)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Source.html">Source</a></td>
+        <td><span class="parametername">Source</span></td>
+        <td><p>The <a class="xref" href="Stringier.Patterns.Source.html">Source</a> to consume</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Result.html">Result</a></td>
+        <td><p>A <a class="xref" href="Stringier.Patterns.Result.html">Result</a> containing whether a match occured and the captured <see cref="!:String"></see></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_Pattern_Equals_" data-uid="Stringier.Patterns.Pattern.Equals*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Equals_ReadOnlySpan_Char__" data-uid="Stringier.Patterns.Pattern.Equals(ReadOnlySpan{Char})">Equals(ReadOnlySpan&lt;Char&gt;)</h4>
+  <div class="markdown level1 summary"><p>Determines whether the specified <see cref="!:ReadOnlySpan&lt;T>"></see> of <see cref="!:Char"></see> can be represented by this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Boolean Equals(ReadOnlySpan&lt;Char&gt; other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ReadOnlySpan</span>&lt;<span class="xref">Char</span>&gt;</td>
+        <td><span class="parametername">other</span></td>
+        <td><p>The <see cref="!:ReadOnlySpan&lt;T>"></see> of <see cref="!:Char"></see> to check against this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><p><code>true</code> if representable; otherwise, <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_Pattern_Equals_" data-uid="Stringier.Patterns.Pattern.Equals*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Equals_String_" data-uid="Stringier.Patterns.Pattern.Equals(String)">Equals(String)</h4>
+  <div class="markdown level1 summary"><p>Determines whether the specified <see cref="!:String"></see> can be represented by this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Boolean Equals(String other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>The <see cref="!:String"></see> to check against this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><p><code>true</code> if representable; otherwise, <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_Pattern_Equals_" data-uid="Stringier.Patterns.Pattern.Equals*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Equals_Stringier_Patterns_Pattern_" data-uid="Stringier.Patterns.Pattern.Equals(Stringier.Patterns.Pattern)">Equals(Pattern)</h4>
+  <div class="markdown level1 summary"><p>Determines whether this instance and a specified object have the same value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Boolean Equals(Pattern other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>The <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> to compare with the current <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><p><code>true</code> if the specified <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> is equal to the current <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a>; otherwise, <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_Pattern_Equals_" data-uid="Stringier.Patterns.Pattern.Equals*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Equals_System_Nullable_Object__" data-uid="Stringier.Patterns.Pattern.Equals(System.Nullable{Object})">Equals(Nullable&lt;Object&gt;)</h4>
+  <div class="markdown level1 summary"><p>Determines whether the specified object is equal to the current object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Boolean Equals(Object? obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">Object</span>&gt;</td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>The object to compare with the current <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><p><code>true</code> if the specified object is equal to the current object; otherwise, <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_Pattern_GetHashCode_" data-uid="Stringier.Patterns.Pattern.GetHashCode*"></a>
+  <h4 id="Stringier_Patterns_Pattern_GetHashCode" data-uid="Stringier.Patterns.Pattern.GetHashCode">GetHashCode()</h4>
+  <div class="markdown level1 summary"><p>Returns the hash code for this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Int32 GetHashCode()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Int32</span></td>
+        <td><p>A 32-bit signed integer hash code.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_Pattern_NestedRange_" data-uid="Stringier.Patterns.Pattern.NestedRange*"></a>
+  <h4 id="Stringier_Patterns_Pattern_NestedRange_Stringier_Patterns_Pattern_Stringier_Patterns_Pattern_" data-uid="Stringier.Patterns.Pattern.NestedRange(Stringier.Patterns.Pattern,Stringier.Patterns.Pattern)">NestedRange(Pattern, Pattern)</h4>
+  <div class="markdown level1 summary"><p>Create a pattern representing the range <code data-dev-comment-type="paramref" class="paramref">from</code> until <code data-dev-comment-type="paramref" class="paramref">to</code>, that allows nesting of this pattern inside of itself.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern NestedRange(Pattern from, Pattern to)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">from</span></td>
+        <td><p>Begining <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">to</span></td>
+        <td><p>Ending <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Stringier_Patterns_Pattern_NestedRange_Stringier_Patterns_Pattern_Stringier_Patterns_Pattern__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The easiest way to explain this is that is shows up a lot in programming, with things like if-then-else statements which can contain other if-then-else statements.</p>
+</div>
+  
+  
+  <a id="Stringier_Patterns_Pattern_Range_" data-uid="Stringier.Patterns.Pattern.Range*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Range_Stringier_Patterns_Pattern_Stringier_Patterns_Pattern_" data-uid="Stringier.Patterns.Pattern.Range(Stringier.Patterns.Pattern,Stringier.Patterns.Pattern)">Range(Pattern, Pattern)</h4>
+  <div class="markdown level1 summary"><p>Create a pattern representing the range <code data-dev-comment-type="paramref" class="paramref">from</code> until <code data-dev-comment-type="paramref" class="paramref">to</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern Range(Pattern from, Pattern to)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">from</span></td>
+        <td><p>Begining <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">to</span></td>
+        <td><p>Ending <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_Pattern_Range_" data-uid="Stringier.Patterns.Pattern.Range*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Range_Stringier_Patterns_Pattern_Stringier_Patterns_Pattern_Stringier_Patterns_Pattern_" data-uid="Stringier.Patterns.Pattern.Range(Stringier.Patterns.Pattern,Stringier.Patterns.Pattern,Stringier.Patterns.Pattern)">Range(Pattern, Pattern, Pattern)</h4>
+  <div class="markdown level1 summary"><p>Create a pattern representing the range <code data-dev-comment-type="paramref" class="paramref">from</code> until <code data-dev-comment-type="paramref" class="paramref">to</code>, allowing an <code data-dev-comment-type="paramref" class="paramref">escape</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern Range(Pattern from, Pattern to, Pattern escape)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">from</span></td>
+        <td><p>Begining <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">to</span></td>
+        <td><p>Ending <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">escape</span></td>
+        <td><p>Escape <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a>./</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_Pattern_ToString_" data-uid="Stringier.Patterns.Pattern.ToString*"></a>
+  <h4 id="Stringier_Patterns_Pattern_ToString" data-uid="Stringier.Patterns.Pattern.ToString">ToString()</h4>
+  <div class="markdown level1 summary"><p>Returns a <see cref="!:String"></see> that represents the current <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override String ToString()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td><p>A <see cref="!:String"></see> that represents the current <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="operators">Operators
+  </h3>
+  
+  
+  <a id="Stringier_Patterns_Pattern_op_BitwiseAnd_" data-uid="Stringier.Patterns.Pattern.op_BitwiseAnd*"></a>
+  <h4 id="Stringier_Patterns_Pattern_op_BitwiseAnd_Char_Stringier_Patterns_Pattern_" data-uid="Stringier.Patterns.Pattern.op_BitwiseAnd(Char,Stringier.Patterns.Pattern)">BitwiseAnd(Char, Pattern)</h4>
+  <div class="markdown level1 summary"><p>Concatenates the patterns so that <code data-dev-comment-type="paramref" class="paramref">left</code> comes before <code data-dev-comment-type="paramref" class="paramref">right</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern operator &amp;(Char left, Pattern right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Char</span></td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The preceeding <see cref="!:Char"></see></p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The succeeding <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> concatenating <code data-dev-comment-type="paramref" class="paramref">left</code> and <code data-dev-comment-type="paramref" class="paramref">right</code></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_Pattern_op_BitwiseAnd_" data-uid="Stringier.Patterns.Pattern.op_BitwiseAnd*"></a>
+  <h4 id="Stringier_Patterns_Pattern_op_BitwiseAnd_String_Stringier_Patterns_Pattern_" data-uid="Stringier.Patterns.Pattern.op_BitwiseAnd(String,Stringier.Patterns.Pattern)">BitwiseAnd(String, Pattern)</h4>
+  <div class="markdown level1 summary"><p>Concatenates the patterns so that <code data-dev-comment-type="paramref" class="paramref">left</code> comes before <code data-dev-comment-type="paramref" class="paramref">right</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern operator &amp;(String left, Pattern right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The preceeding <see cref="!:String"></see></p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The succeeding <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> concatenating <code data-dev-comment-type="paramref" class="paramref">left</code> and <code data-dev-comment-type="paramref" class="paramref">right</code></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_Pattern_op_BitwiseAnd_" data-uid="Stringier.Patterns.Pattern.op_BitwiseAnd*"></a>
+  <h4 id="Stringier_Patterns_Pattern_op_BitwiseAnd_Stringier_Patterns_Pattern_Char_" data-uid="Stringier.Patterns.Pattern.op_BitwiseAnd(Stringier.Patterns.Pattern,Char)">BitwiseAnd(Pattern, Char)</h4>
+  <div class="markdown level1 summary"><p>Concatenates the patterns so that <code data-dev-comment-type="paramref" class="paramref">left</code> comes before <code data-dev-comment-type="paramref" class="paramref">right</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern operator &amp;(Pattern left, Char right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The preceeding <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Char</span></td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The succeeding <see cref="!:Char"></see></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> concatenating <code data-dev-comment-type="paramref" class="paramref">left</code> and <code data-dev-comment-type="paramref" class="paramref">right</code></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_Pattern_op_BitwiseAnd_" data-uid="Stringier.Patterns.Pattern.op_BitwiseAnd*"></a>
+  <h4 id="Stringier_Patterns_Pattern_op_BitwiseAnd_Stringier_Patterns_Pattern_String_" data-uid="Stringier.Patterns.Pattern.op_BitwiseAnd(Stringier.Patterns.Pattern,String)">BitwiseAnd(Pattern, String)</h4>
+  <div class="markdown level1 summary"><p>Concatenates the patterns so that <code data-dev-comment-type="paramref" class="paramref">left</code> comes before <code data-dev-comment-type="paramref" class="paramref">right</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern operator &amp;(Pattern left, String right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The preceeding <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The succeeding <see cref="!:String"></see></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> concatenating <code data-dev-comment-type="paramref" class="paramref">left</code> and <code data-dev-comment-type="paramref" class="paramref">right</code></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_Pattern_op_BitwiseAnd_" data-uid="Stringier.Patterns.Pattern.op_BitwiseAnd*"></a>
+  <h4 id="Stringier_Patterns_Pattern_op_BitwiseAnd_Stringier_Patterns_Pattern_Stringier_Patterns_Pattern_" data-uid="Stringier.Patterns.Pattern.op_BitwiseAnd(Stringier.Patterns.Pattern,Stringier.Patterns.Pattern)">BitwiseAnd(Pattern, Pattern)</h4>
+  <div class="markdown level1 summary"><p>Concatenates the patterns so that <code data-dev-comment-type="paramref" class="paramref">left</code> comes before <code data-dev-comment-type="paramref" class="paramref">right</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern operator &amp;(Pattern left, Pattern right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The preceeding <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The succeeding <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> concatenating <code data-dev-comment-type="paramref" class="paramref">left</code> and <code data-dev-comment-type="paramref" class="paramref">right</code></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_Pattern_op_BitwiseOr_" data-uid="Stringier.Patterns.Pattern.op_BitwiseOr*"></a>
+  <h4 id="Stringier_Patterns_Pattern_op_BitwiseOr_Char_Stringier_Patterns_Pattern_" data-uid="Stringier.Patterns.Pattern.op_BitwiseOr(Char,Stringier.Patterns.Pattern)">BitwiseOr(Char, Pattern)</h4>
+  <div class="markdown level1 summary"><p>Declares <code data-dev-comment-type="paramref" class="paramref">right</code> to be an alternate of <code data-dev-comment-type="paramref" class="paramref">left</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern operator |(Char left, Pattern right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Char</span></td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The <see cref="!:Char"></see> to check first</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> to check if <code data-dev-comment-type="paramref" class="paramref">left</code> does not match</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> alternating <code data-dev-comment-type="paramref" class="paramref">left</code> and <code data-dev-comment-type="paramref" class="paramref">right</code></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_Pattern_op_BitwiseOr_" data-uid="Stringier.Patterns.Pattern.op_BitwiseOr*"></a>
+  <h4 id="Stringier_Patterns_Pattern_op_BitwiseOr_String_Stringier_Patterns_Pattern_" data-uid="Stringier.Patterns.Pattern.op_BitwiseOr(String,Stringier.Patterns.Pattern)">BitwiseOr(String, Pattern)</h4>
+  <div class="markdown level1 summary"><p>Declares <code data-dev-comment-type="paramref" class="paramref">right</code> to be an alternate of <code data-dev-comment-type="paramref" class="paramref">left</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern operator |(String left, Pattern right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The <see cref="!:String"></see> to check first</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> to check if <code data-dev-comment-type="paramref" class="paramref">left</code> does not match</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> alternating <code data-dev-comment-type="paramref" class="paramref">left</code> and <code data-dev-comment-type="paramref" class="paramref">right</code></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_Pattern_op_BitwiseOr_" data-uid="Stringier.Patterns.Pattern.op_BitwiseOr*"></a>
+  <h4 id="Stringier_Patterns_Pattern_op_BitwiseOr_Stringier_Patterns_Pattern_Char_" data-uid="Stringier.Patterns.Pattern.op_BitwiseOr(Stringier.Patterns.Pattern,Char)">BitwiseOr(Pattern, Char)</h4>
+  <div class="markdown level1 summary"><p>Declares <code data-dev-comment-type="paramref" class="paramref">right</code> to be an alternate of <code data-dev-comment-type="paramref" class="paramref">left</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern operator |(Pattern left, Char right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> to check first</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Char</span></td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The <see cref="!:Char"></see> to check if <code data-dev-comment-type="paramref" class="paramref">left</code> does not match</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> alternating <code data-dev-comment-type="paramref" class="paramref">left</code> and <code data-dev-comment-type="paramref" class="paramref">right</code></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_Pattern_op_BitwiseOr_" data-uid="Stringier.Patterns.Pattern.op_BitwiseOr*"></a>
+  <h4 id="Stringier_Patterns_Pattern_op_BitwiseOr_Stringier_Patterns_Pattern_String_" data-uid="Stringier.Patterns.Pattern.op_BitwiseOr(Stringier.Patterns.Pattern,String)">BitwiseOr(Pattern, String)</h4>
+  <div class="markdown level1 summary"><p>Declares <code data-dev-comment-type="paramref" class="paramref">right</code> to be an alternate of <code data-dev-comment-type="paramref" class="paramref">left</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern operator |(Pattern left, String right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> to check first</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The <see cref="!:String"></see> to check if <code data-dev-comment-type="paramref" class="paramref">left</code> does not match</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> alternating <code data-dev-comment-type="paramref" class="paramref">left</code> and <code data-dev-comment-type="paramref" class="paramref">right</code></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_Pattern_op_BitwiseOr_" data-uid="Stringier.Patterns.Pattern.op_BitwiseOr*"></a>
+  <h4 id="Stringier_Patterns_Pattern_op_BitwiseOr_Stringier_Patterns_Pattern_Stringier_Patterns_Pattern_" data-uid="Stringier.Patterns.Pattern.op_BitwiseOr(Stringier.Patterns.Pattern,Stringier.Patterns.Pattern)">BitwiseOr(Pattern, Pattern)</h4>
+  <div class="markdown level1 summary"><p>Declares <code data-dev-comment-type="paramref" class="paramref">right</code> to be an alternate of <code data-dev-comment-type="paramref" class="paramref">left</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern operator |(Pattern left, Pattern right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> to check first</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> to check if <code data-dev-comment-type="paramref" class="paramref">left</code> does not match</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> alternating <code data-dev-comment-type="paramref" class="paramref">left</code> and <code data-dev-comment-type="paramref" class="paramref">right</code></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_Pattern_op_Equality_" data-uid="Stringier.Patterns.Pattern.op_Equality*"></a>
+  <h4 id="Stringier_Patterns_Pattern_op_Equality_Stringier_Patterns_Pattern_Stringier_Patterns_Pattern_" data-uid="Stringier.Patterns.Pattern.op_Equality(Stringier.Patterns.Pattern,Stringier.Patterns.Pattern)">Equality(Pattern, Pattern)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Boolean operator ==(Pattern left, Pattern right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">left</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">right</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_Pattern_op_Implicit_" data-uid="Stringier.Patterns.Pattern.op_Implicit*"></a>
+  <h4 id="Stringier_Patterns_Pattern_op_Implicit_Char__Stringier_Patterns_Pattern" data-uid="Stringier.Patterns.Pattern.op_Implicit(Char)~Stringier.Patterns.Pattern">Implicit(Char to Pattern)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Pattern(Char Char)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Char</span></td>
+        <td><span class="parametername">Char</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_Pattern_op_Implicit_" data-uid="Stringier.Patterns.Pattern.op_Implicit*"></a>
+  <h4 id="Stringier_Patterns_Pattern_op_Implicit_String__Stringier_Patterns_Pattern" data-uid="Stringier.Patterns.Pattern.op_Implicit(String)~Stringier.Patterns.Pattern">Implicit(String to Pattern)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Pattern(String Pattern)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td><span class="parametername">Pattern</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_Pattern_op_Implicit_" data-uid="Stringier.Patterns.Pattern.op_Implicit*"></a>
+  <h4 id="Stringier_Patterns_Pattern_op_Implicit_Stringier_Patterns_Capture__Stringier_Patterns_Pattern" data-uid="Stringier.Patterns.Pattern.op_Implicit(Stringier.Patterns.Capture)~Stringier.Patterns.Pattern">Implicit(Capture to Pattern)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Pattern(Capture Capture)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Capture.html">Capture</a></td>
+        <td><span class="parametername">Capture</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_Pattern_op_Inequality_" data-uid="Stringier.Patterns.Pattern.op_Inequality*"></a>
+  <h4 id="Stringier_Patterns_Pattern_op_Inequality_Stringier_Patterns_Pattern_Stringier_Patterns_Pattern_" data-uid="Stringier.Patterns.Pattern.op_Inequality(Stringier.Patterns.Pattern,Stringier.Patterns.Pattern)">Inequality(Pattern, Pattern)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Boolean operator !=(Pattern Left, Pattern Right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">Left</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">Right</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_Pattern_op_LogicalNot_" data-uid="Stringier.Patterns.Pattern.op_LogicalNot*"></a>
+  <h4 id="Stringier_Patterns_Pattern_op_LogicalNot_Stringier_Patterns_Pattern_" data-uid="Stringier.Patterns.Pattern.op_LogicalNot(Stringier.Patterns.Pattern)">LogicalNot(Pattern)</h4>
+  <div class="markdown level1 summary"><p>Marks the <code data-dev-comment-type="paramref" class="paramref">pattern</code> as negated.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern operator !(Pattern pattern)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">pattern</span></td>
+        <td><p>The <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> to negate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> which has been negated.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_Pattern_op_Multiply_" data-uid="Stringier.Patterns.Pattern.op_Multiply*"></a>
+  <h4 id="Stringier_Patterns_Pattern_op_Multiply_Stringier_Patterns_Pattern_Int32_" data-uid="Stringier.Patterns.Pattern.op_Multiply(Stringier.Patterns.Pattern,Int32)">Multiply(Pattern, Int32)</h4>
+  <div class="markdown level1 summary"><p>Marks the <code data-dev-comment-type="paramref" class="paramref">Pattern</code> as repeating <code data-dev-comment-type="paramref" class="paramref">count</code> times</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern operator *(Pattern pattern, Int32 count)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">pattern</span></td>
+        <td><p>The <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> to repeat.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Int32</span></td>
+        <td><span class="parametername">count</span></td>
+        <td><p>The amount of times to repeat.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> repeated <code data-dev-comment-type="paramref" class="paramref">count</code> times.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_Pattern_op_UnaryNegation_" data-uid="Stringier.Patterns.Pattern.op_UnaryNegation*"></a>
+  <h4 id="Stringier_Patterns_Pattern_op_UnaryNegation_Stringier_Patterns_Pattern_" data-uid="Stringier.Patterns.Pattern.op_UnaryNegation(Stringier.Patterns.Pattern)">UnaryNegation(Pattern)</h4>
+  <div class="markdown level1 summary"><p>Marks the <code data-dev-comment-type="paramref" class="paramref">pattern</code> as optional.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern operator -(Pattern pattern)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">pattern</span></td>
+        <td><p>The optional <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> which is optional.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_Pattern_op_UnaryPlus_" data-uid="Stringier.Patterns.Pattern.op_UnaryPlus*"></a>
+  <h4 id="Stringier_Patterns_Pattern_op_UnaryPlus_Stringier_Patterns_Pattern_" data-uid="Stringier.Patterns.Pattern.op_UnaryPlus(Stringier.Patterns.Pattern)">UnaryPlus(Pattern)</h4>
+  <div class="markdown level1 summary"><p>Marks the <code data-dev-comment-type="paramref" class="paramref">Pattern</code> as spanning.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern operator +(Pattern pattern)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">pattern</span></td>
+        <td><p>The spanning <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> which spans.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">IEquatable&lt;&gt;</span>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
