@@ -108,11 +108,41 @@ namespace Stringier.Patterns.Bindings {
 		/// </summary>
 		/// <param name="from">Begining <see cref="Pattern"/>.</param>
 		/// <param name="to">Ending <see cref="Pattern"/>.</param>
-		public static Pattern Ranger(Pattern from, Pattern to) => new Pattern(new Ranger(from.Head, to.Head));
+		public static Pattern Ranger(Pattern from, Pattern to) {
+			if (from is null || to is null) {
+				throw new ArgumentNullException(from is null ? nameof(from) : nameof(to));
+			}
+			return new Pattern(new Ranger(from.Head, to.Head));
+		}
 
-		public static Pattern Ranger(Pattern From, Pattern To, Pattern Escape) => new Pattern(new EscapedRanger(From.Head, To.Head, Escape.Head));
+		/// <summary>
+		/// Create a pattern representing the range <paramref name="from"/> until <paramref name="to"/>, with the <paramref name="escape"/> pattern.
+		/// </summary>
+		/// <param name="from">Begining <see cref="Pattern"/>.</param>
+		/// <param name="to">Ending <see cref="Pattern"/>.</param>
+		/// <param name="escape">Escape <see cref="Pattern"/>.</param>
+		public static Pattern Ranger(Pattern from, Pattern to, Pattern escape) {
+			if (from is null) {
+				throw new ArgumentNullException(nameof(from));
+			} else if (to is null) {
+				throw new ArgumentNullException(nameof(to));
+			} else if (escape is null) {
+				throw new ArgumentNullException(nameof(escape));
+			}
+			return new Pattern(new EscapedRanger(from.Head, to.Head, escape.Head));
+		}
 
-		public static Pattern NestedRanger(Pattern From, Pattern To) => new Pattern(new NestedRanger(From.Head, To.Head));
+		/// <summary>
+		/// Create a pattern representing the range <paramref name="from"/> until <paramref name="to"/>, and supports nesting.
+		/// </summary>
+		/// <param name="from">Begining <see cref="Pattern"/>.</param>
+		/// <param name="to">Ending <see cref="Pattern"/>.</param>
+		public static Pattern NestedRanger(Pattern from, Pattern to) {
+			if (from is null || to is null) {
+				throw new ArgumentNullException(from is null ? nameof(from) : nameof(to));
+			}
+			return new Pattern(new NestedRanger(from.Head, to.Head));
+		}
 
 		/// <summary>
 		/// Marks the <paramref name="pattern"/> as repeating <paramref name="count"/> times.

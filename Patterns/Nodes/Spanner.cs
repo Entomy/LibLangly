@@ -67,7 +67,9 @@ namespace Stringier.Patterns.Nodes {
 		internal override void Neglect(ref Source source, ref Result result) {
 			//We need to confirm the pattern exists at least once
 			Node.Neglect(ref source, ref result);
-			if (!result) { return; }
+			if (!result) {
+				return;
+			}
 			//Now continue to consume as much as possible
 			while (result) {
 				Node.Neglect(ref source, ref result);

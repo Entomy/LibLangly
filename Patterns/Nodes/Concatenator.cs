@@ -42,7 +42,9 @@ namespace Stringier.Patterns.Nodes {
 		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</param
 		internal override void Consume(ref Source source, ref Result result) {
 			Left.Consume(ref source, ref result);
-			if (!result) { return; }
+			if (!result) {
+				return;
+			}
 			Right.Consume(ref source, ref result);
 		}
 
@@ -53,7 +55,9 @@ namespace Stringier.Patterns.Nodes {
 		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</param
 		internal override void Neglect(ref Source source, ref Result result) {
 			Left.Neglect(ref source, ref result);
-			if (!result) { return; }
+			if (!result) {
+				return;
+			}
 			Right.Neglect(ref source, ref result);
 		}
 

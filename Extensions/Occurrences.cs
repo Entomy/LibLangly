@@ -28,8 +28,8 @@ namespace System {
 		/// <param name="charsToCount">Chars to count occurences of.</param>
 		/// <returns>The ammount of occurences found.</returns>
 		public static Int32 Occurrences(this String @string, params Char[] charsToCount) {
-			if (@string is null) {
-				throw new ArgumentNullException(nameof(@string));
+			if (@string is null || charsToCount is null) {
+				throw new ArgumentNullException(@string is null ? nameof(@string) : nameof(charsToCount));
 			}
 			Int32 c = 0;
 			foreach (Char Char in charsToCount) {

@@ -9,7 +9,9 @@ namespace System {
 		/// <param name="count">The amount of times to repeat the <paramref name="char"/>.</param>
 		/// <returns>A <see cref="String"/> containing the repeated <paramref name="char"/>.</returns>
 		public static String Repeat(this Char @char, Int32 count) {
-			if (count <= 0) { throw new ArgumentOutOfRangeException(nameof(count), "Count must be a positive integer"); }
+			if (count <= 0) {
+				throw new ArgumentOutOfRangeException(nameof(count), "Count must be a positive integer");
+			}
 			return new String(@char, count);
 		}
 

@@ -26,7 +26,9 @@ namespace System {
 				throw new ArgumentNullException(nameof(strings));
 			}
 			foreach (String String in strings) {
-				if (String.Contains(value)) { return true; }
+				if (String.Contains(value)) {
+					return true;
+				}
 			}
 			return false;
 		}

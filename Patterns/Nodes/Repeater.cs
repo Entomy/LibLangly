@@ -23,7 +23,9 @@ namespace Stringier.Patterns.Nodes {
 		/// <exception cref="ArgumentOutOfRangeException"><paramref name="count"/> must be a positive integer.</exception>
 		internal Repeater(Node node, Int32 count) {
 			Node = node;
-			if (count < 1) { throw new ArgumentOutOfRangeException(nameof(count), "Count must be positive"); }
+			if (count < 1) {
+				throw new ArgumentOutOfRangeException(nameof(count), "Count must be positive");
+			}
 			Count = count;
 		}
 
@@ -45,7 +47,9 @@ namespace Stringier.Patterns.Nodes {
 		internal override void Consume(ref Source source, ref Result result) {
 			for (Int32 i = 0; i < Count; i++) {
 				Node.Consume(ref source, ref result);
-				if (!result) { return; }
+				if (!result) {
+					return;
+				}
 			}
 		}
 
@@ -57,7 +61,9 @@ namespace Stringier.Patterns.Nodes {
 		internal override void Neglect(ref Source source, ref Result result) {
 			for (Int32 i = 0; i < Count; i++) {
 				Node.Neglect(ref source, ref result);
-				if (!result) { return; }
+				if (!result) {
+					return;
+				}
 			}
 		}
 

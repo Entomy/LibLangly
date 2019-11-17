@@ -117,7 +117,9 @@ namespace Stringier.Patterns.Nodes {
 				return false;
 			}
 			for (Int32 i = 0; i < Count; i++) {
-				if (!Check(other[i])) { return false; }
+				if (!Check(other[i])) {
+					return false;
+				}
 			}
 			return true;
 		}
@@ -132,7 +134,9 @@ namespace Stringier.Patterns.Nodes {
 				return false;
 			}
 			for (Int32 i = 0; i < Count; i++) {
-				if (!Check(other[i])) { return false; }
+				if (!Check(other[i])) {
+					return false;
+				}
 			}
 			return true;
 		}

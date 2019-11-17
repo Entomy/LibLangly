@@ -76,7 +76,7 @@ namespace Stringier.Patterns.Nodes {
 		/// </summary>
 		/// <param name="other">The <see cref="String"/> to check against this <see cref="Node"/>.</param>
 		/// <returns><c>true</c> if representable; otherwise, <c>false</c>.</returns>
-		public override Boolean Equals(String other) => other is null ? false : String.Equals(other, ComparisonType);
+		public override Boolean Equals(String other) => !(other is null) && String.Equals(other, ComparisonType);
 
 		/// <summary>
 		/// Determines whether this instance and a specified object have the same value.

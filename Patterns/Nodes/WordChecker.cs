@@ -88,7 +88,7 @@ namespace Stringier.Patterns.Nodes {
 		/// </remarks>
 		/// <param name="source">The <see cref="Source"/> to check against.</param>
 		/// <returns><c>true</c> if this <see cref="Pattern"/> may be present, <c>false</c> if definately not.</
-		internal override Boolean CheckHeader(ref Source source) => source.EOF ? false : HeadCheck(source.Peek());
+		internal override Boolean CheckHeader(ref Source source) => !source.EOF && HeadCheck(source.Peek());
 
 		/// <summary>
 		/// Call the Consume parser of this <see cref="Node"/> on the <paramref name="source"/> with the <paramref name="result"/>.
@@ -237,7 +237,7 @@ namespace Stringier.Patterns.Nodes {
 			} else {
 				//The tail wasn't found so we need to do some trickery
 				//If we found the body but haven't found the tail, backtrack in case the last character was a valid tail
-				if (FoundBody & !BacktrackedForTail) {
+				if (FoundBody && !BacktrackedForTail) {
 					Source.Position--;
 					Result.Length--;
 					BacktrackedForTail = true;

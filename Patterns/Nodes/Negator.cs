@@ -112,13 +112,8 @@ namespace Stringier.Patterns.Nodes {
 				//Normally we would store the source position, but since we create the source in this method, the original position is always 0
 				//Call the underlying neglect
 				Node.Consume(ref Source, ref Result);
-				if (Result) {
-					//If this was successful, check if it consumed the entire source
-					return Source.Length != 0;
-				} else {
-					//Otherwise it's definately not a match
-					return false;
-				}
+				//If this was successful, check if it consumed the entire source, otherwise it's definately not a match
+				return Result && Source.Length != 0;
 			}
 		}
 

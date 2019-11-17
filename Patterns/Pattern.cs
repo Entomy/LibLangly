@@ -9,7 +9,7 @@ namespace Stringier.Patterns {
 		/// <summary>
 		/// The <see cref="Node"/> at the head of this <see cref="Pattern"/>; the entry point of the graph.
 		/// </summary>
-		internal Node Head;
+		internal readonly Node Head;
 
 		/// <summary>
 		/// Initialize a new <see cref="Pattern"/> with the given head <see cref="Node"/>.
@@ -55,7 +55,7 @@ namespace Stringier.Patterns {
 			return Result;
 		}
 
-		public static Boolean operator ==(Pattern Left, Pattern Right) => Left.Equals(Right);
+		public static Boolean operator ==(Pattern left, Pattern right) => left.Equals(right);
 
 		public static Boolean operator !=(Pattern Left, Pattern Right) => !Left.Equals(Right);
 
@@ -64,14 +64,14 @@ namespace Stringier.Patterns {
 		/// </summary>
 		/// <param name="obj">The object to compare with the current <see cref="Pattern"/>.</param>
 		/// <returns><c>true</c> if the specified object is equal to the current object; otherwise, <c>false</c>.</returns>
-		public override Boolean Equals(Object? obj) => Head.Equals(obj);
+		public override Boolean Equals(Object? obj) => !(obj is null) && Head.Equals(obj);
 
 		/// <summary>
 		/// Determines whether this instance and a specified object have the same value.
 		/// </summary>
 		/// <param name="other">The <see cref="Pattern"/> to compare with the current <see cref="Pattern"/>.</param>
 		/// <returns><c>true</c> if the specified <see cref="Pattern"/> is equal to the current <see cref="Pattern"/>; otherwise, <c>false</c>.</returns>
-		public Boolean Equals(Pattern other) => Head.Equals(other.Head);
+		public Boolean Equals(Pattern other) => !(other is null) && Head.Equals(other.Head);
 
 		/// <summary>
 		/// Determines whether the specified <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> can be represented by this <see cref="Pattern"/>.
@@ -85,7 +85,7 @@ namespace Stringier.Patterns {
 		/// </summary>
 		/// <param name="other">The <see cref="String"/> to check against this <see cref="Pattern"/>.</param>
 		/// <returns><c>true</c> if representable; otherwise, <c>false</c>.</returns>
-		public Boolean Equals(String other) => other is null ? false : Head.Equals(other);
+		public Boolean Equals(String other) => !(other is null) && Head.Equals(other);
 
 		/// <summary>
 		/// Returns the hash code for this <see cref="Pattern"/>.

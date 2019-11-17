@@ -32,7 +32,9 @@ namespace Stringier.Patterns.Errors {
 		}
 
 		public Boolean Equals(Error other) {
-			if (Type != other.Type || Data != other.Data) { return false; }
+			if (Type != other.Type || Data != other.Data) {
+				return false;
+			}
 			switch (Data) {
 			case ErrorData.None:
 				return true;

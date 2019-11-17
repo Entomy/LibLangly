@@ -30,7 +30,9 @@ namespace Stringier.Patterns.Nodes {
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
 		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</
 		internal override void Consume(ref Source source, ref Result result) {
-			if (!source.EOF) { result.Error.Set(ErrorType.ConsumeFailed, this); }
+			if (!source.EOF) {
+				result.Error.Set(ErrorType.ConsumeFailed, this);
+			}
 		}
 
 		/// <summary>
@@ -39,7 +41,9 @@ namespace Stringier.Patterns.Nodes {
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
 		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.
 		internal override void Neglect(ref Source source, ref Result result) {
-			if (source.EOF) { result.Error.Set(ErrorType.NeglectFailed, this); }
+			if (source.EOF) {
+				result.Error.Set(ErrorType.NeglectFailed, this);
+			}
 		}
 
 		/// <summary>
