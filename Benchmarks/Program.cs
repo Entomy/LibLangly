@@ -41,7 +41,8 @@ namespace Benchmarks {
 				new KeyChoice(ConsoleKey.D2, "Alternator", () => BenchmarkRunner.Run<AlternatorBenchmarks>()),
 				new KeyChoice(ConsoleKey.D3, "Concatenator", () => BenchmarkRunner.Run<ConcatenatorBenchmarks>()),
 				new KeyChoice(ConsoleKey.D4, "Optor", () => BenchmarkRunner.Run<OptorBenchmarks>()),
-				new KeyChoice(ConsoleKey.D5, "Spanner", () => BenchmarkRunner.Run<SpannerBenchmarks>()),
+				new KeyChoice(ConsoleKey.D5, "Repeater", () => BenchmarkRunner.Run<RepeaterBenchmarks>()),
+				new KeyChoice(ConsoleKey.D6, "Spanner", () => BenchmarkRunner.Run<SpannerBenchmarks>()),
 				new BackKeyChoice(ConsoleKey.B, "Back", () => { }));
 
 		public static void Main() {
