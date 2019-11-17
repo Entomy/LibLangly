@@ -15,7 +15,7 @@ namespace Benchmarks.Patterns {
 	[MemoryDiagnoser]
 	public class SpannerBenchmarks {
 
-		readonly Regex msregex = new Regex("^(Hi!)+");
+		readonly Regex msregex = new Regex("^(?:Hi!)+");
 
 		readonly Parser<Char, String> pidgin = String("Hi!").AtLeastOnceString();
 
