@@ -106,7 +106,6 @@ namespace Stringier.Patterns.Nodes {
 			case Bias.Tail:
 				ConsumeTailBiased(ref source, ref result);
 				break;
-			case Bias.Head:
 			default:
 				ConsumeHeadBiased(ref source, ref result);
 				break;

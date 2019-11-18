@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Text.RegularExpressions;
 using Stringier.Patterns.Errors;
 
@@ -6,6 +7,7 @@ namespace Stringier.Patterns.Nodes {
 	/// <summary>
 	/// Adapts <see cref="System.Text.RegularExpressions.Regex"/> to work with <see cref="Pattern"/>.
 	/// </summary>
+	[SuppressMessage("Minor Bug", "S1206:\"Equals(Object)\" and \"GetHashCode()\" should be overridden in pairs", Justification = "It already is overriden, Sonar just doesn't understand this pattern.")]
 	internal sealed class RegexAdapter : Node, IEquatable<RegexAdapter> {
 		/// <summary>
 		/// The actual <see cref="System.Text.RegularExpressions.Regex"/>.

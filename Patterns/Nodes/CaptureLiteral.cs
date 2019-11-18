@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Stringier.Patterns.Nodes {
 	/// <summary>
@@ -7,6 +8,7 @@ namespace Stringier.Patterns.Nodes {
 	/// <remarks>
 	/// This exists to get around visibility rules. <see cref="Nodes.Node"/> is <see langword="internal"/> and as a result can't have a public child. <see cref="Patterns.Capture"/> needs to be public because downstream needs to allocate and use captures.
 	/// </remarks>
+	[SuppressMessage("Minor Bug", "S1206:\"Equals(Object)\" and \"GetHashCode()\" should be overridden in pairs", Justification = "It already is overriden, Sonar just doesn't understand this pattern.")]
 	internal sealed class CaptureLiteral : Literal, IEquatable<CaptureLiteral> {
 		/// <summary>
 		/// The actual <see cref="Patterns.Capture"/> object.

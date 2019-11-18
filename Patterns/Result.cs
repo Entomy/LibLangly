@@ -86,7 +86,7 @@ namespace Stringier.Patterns {
 		/// </summary>
 		/// <param name="other">The <see cref="String"/> to compare to</param>
 		/// <returns><c>true</c> if equal; otherwise, <c>false</c>.</returns>
-		public Boolean Equals(String other) => other is null ? false : Source.Substring(Start, Length).Equals(other, StringComparison.CurrentCulture);
+		public Boolean Equals(String other) => !(other is null) && Source.Substring(Start, Length).Equals(other, StringComparison.CurrentCulture);
 
 		/// <summary>
 		/// Determines whether this <see cref="Result"/> and the <paramref name="other"/> <see cref="ReadOnlySpan<Char>"/> are equal.

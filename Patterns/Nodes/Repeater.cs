@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Stringier.Patterns.Nodes {
 	/// <summary>
 	/// Represents a <see cref="Nodes.Node"/> whos content repeats a given number of times.
 	/// </summary>
+	[SuppressMessage("Minor Bug", "S1206:\"Equals(Object)\" and \"GetHashCode()\" should be overridden in pairs", Justification = "It already is overriden, Sonar just doesn't understand this pattern.")]
 	internal sealed class Repeater : Node, IEquatable<Repeater> {
 		/// <summary>
 		/// The amount of times to be parsed.

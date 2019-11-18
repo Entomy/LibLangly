@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Stringier.Patterns.Nodes {
 	/// <summary>
@@ -7,6 +8,7 @@ namespace Stringier.Patterns.Nodes {
 	/// <remarks>
 	/// This is syntactic sugar around the Neglect parser, which parses anything that does not match the pattern, with some special semantics for certain patterns. It is basically saying "anything that isn't this, that is the same length".
 	/// </remarks>
+	[SuppressMessage("Minor Bug", "S1206:\"Equals(Object)\" and \"GetHashCode()\" should be overridden in pairs", Justification = "It already is overriden, Sonar just doesn't understand this pattern.")]
 	internal sealed class Negator : Node, IEquatable<Negator> {
 		/// <summary>
 		/// The <see cref="Nodes.Node"/> to be parsed.

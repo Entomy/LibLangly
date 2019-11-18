@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using Stringier.Patterns.Errors;
 
 namespace Stringier.Patterns.Nodes {
 	/// <summary>
 	/// Represents a <see cref="Ranger"/>, a "range" of text between two <see cref="Node"/>.
 	/// </summary>
+	[SuppressMessage("Minor Bug", "S1206:\"Equals(Object)\" and \"GetHashCode()\" should be overridden in pairs", Justification = "It already is overriden, Sonar just doesn't understand this pattern.")]
 	internal class Ranger : Node, IEquatable<Ranger> {
 		/// <summary>
 		/// The <see cref="Node"/> to start from.

@@ -26,7 +26,7 @@ namespace Benchmarks.Extensions {
 		[Params('a', 'g', 'i')]
 		public Char Char { get; set; }
 
-		public String[] Array = new String[] { "ab", "cd", "ef", "gh" };
+		private readonly String[] Array = new String[] { "ab", "cd", "ef", "gh" };
 
 		[Benchmark]
 		public Boolean Contains() => Array.Contains(Char);
@@ -40,7 +40,7 @@ namespace Benchmarks.Extensions {
 		[Params("cd", "de")]
 		public String String { get; set; }
 
-		public String[] Array = new String[] { "ab", "cd", "ef", "gh" };
+		private readonly String[] Array = new String[] { "ab", "cd", "ef", "gh" };
 
 		[Benchmark]
 		public Boolean Contains() => Array.Contains(String);

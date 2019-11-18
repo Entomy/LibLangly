@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Stringier.Patterns.Nodes {
 	/// <summary>
 	/// Represents the concatenation of two <see cref="Node"/>. That is, one <see cref="Node"/> directly after another.
 	/// </summary>
+	[SuppressMessage("Minor Bug", "S1206:\"Equals(Object)\" and \"GetHashCode()\" should be overridden in pairs", Justification = "It already is overriden, Sonar just doesn't understand this pattern.")]
 	internal sealed class Concatenator : Node, IEquatable<Concatenator> {
 		/// <summary>
 		/// The lefthand <see cref="Node"/>; the first.

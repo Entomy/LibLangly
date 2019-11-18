@@ -1,5 +1,4 @@
 ﻿using System;
-using Stringier.Patterns.Nodes;
 
 namespace Stringier.Patterns {
 	/// <summary>
