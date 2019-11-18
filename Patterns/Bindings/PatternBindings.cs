@@ -150,13 +150,23 @@ namespace Stringier.Patterns.Bindings {
 		/// <param name="pattern">The <see cref="Pattern"/> to repeat.</param>
 		/// <param name="count">The amount of times to repeat.</param>
 		/// <returns>A new <see cref="Pattern"/> repeated <paramref name="count"/> times.</returns>
-		public static Pattern Repeater(Pattern pattern, Int32 count) => new Pattern(pattern.Head.Repeat(count));
+		public static Pattern Repeater(Pattern pattern, Int32 count) {
+			if (pattern is null) {
+				throw new ArgumentNullException(nameof(pattern));
+			}
+			return new Pattern(pattern.Head.Repeat(count));
+		}
 
 		/// <summary>
 		/// Marks the <paramref name="pattern"/> as spanning.
 		/// </summary>
 		/// <param name="pattern">The spanning <see cref="Pattern"/>.</param>
 		/// <returns>A new <see cref="Pattern"/> which is spanning.</returns>
-		public static Pattern Spanner(Pattern pattern) => new Pattern(pattern.Head.Span());
+		public static Pattern Spanner(Pattern pattern) {
+			if (pattern is null) {
+				throw new ArgumentNullException(nameof(pattern));
+			}
+			return new Pattern(pattern.Head.Span());
+		}
 	}
 }
