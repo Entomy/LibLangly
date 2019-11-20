@@ -1,4 +1,4 @@
-﻿# Stringier.Patterns Declarations
+﻿# Patterns Declarations
 
 **Stringier.Patterns** primarily works through a declarative programming approach, as such, it's very important to understand the different ways to declare patterns and how they work.
 
@@ -25,11 +25,11 @@ let patternName = p"Text to match"
 ~~~~
 **or**
 ~~~~csharp
-Pattern patternName = ("Text to match", StringComparison.Ordinal);
+Pattern patternName = "Text to match".With(StringComparison.Ordinal);
 //Matches the entire peice of text using ordinal case-sensitive rules
 ~~~~
 ~~~~fsharp
-let patternName = p ("Text to match", StringComparison.Ordinal);
+let patternName = "Text to match"/=StringComparison.Ordinal;
 ~~~~
 
 As F# does not support implicit conversions, `p` exists as a function to do this conversion. The name comes from the convention used with [`FParsec`](http://www.quanttec.com/fparsec/). Note that you should only need to do this for literals, as pattern operators were made sufficiently generic to automagically convert `Char` and `String`.
@@ -70,7 +70,7 @@ Pattern patternName = (Pattern)"First Literal" | "Second Literal"
 let patternName = "First Literal" || "Second Literal"
 ~~~~
 
-*Note*: The order of these is dependent on the parser and specific behavior should not be assumed
+*Note*: The order of these is dependent on the parser and specific behavior should not be assumed. 
 
 ### Concatenate
 
@@ -80,28 +80,28 @@ Concatenates the two patterns, checking them in order. This is identical in conc
 Pattern patternName = firstPattern & secondPattern;
 ~~~~
 ~~~~fsharp
-let patternName = firstPattern && secondPattern
+let patternName = firstPattern >> secondPattern
 ~~~~
 ***or***
 ~~~~csharp
 Pattern patternName = firstPattern & "Literal";
 ~~~~
 ~~~~fsharp
-let patternName = firstPattern && "Literal"
+let patternName = firstPattern >> "Literal"
 ~~~~
 ***or***
 ~~~~csharp
 Pattern patternName = "Literal" & secondPattern;
 ~~~~
 ~~~~fsharp
-let patternName = "Literal" && secondPattern
+let patternName = "Literal" >> secondPattern
 ~~~~
 ***or***
 ~~~~csharp
 Pattern patternName = (Pattern)"First Literal" & "Second Literal"
 ~~~~
 ~~~~fsharp
-let patternName = "First Literal" && "Second Literal"
+let patternName = "First Literal" >> "Second Literal"
 ~~~~
 
 ### Range
@@ -111,7 +111,7 @@ let patternName = "First Literal" && "Second Literal"
 Matches everything from `From` to `To`.
 
 ~~~~csharp
-Pattern patternName = (From: fromPattern, To: toPattern);
+Pattern patternName = Pattern.Range(fromPattern, toPattern);
 ~~~~
 ~~~~fsharp
 let patternName = range fromPattern toPattern
@@ -122,7 +122,7 @@ let patternName = range fromPattern toPattern
 Matches everything from `From` to `To`, but allows an `Escape` sequence.
 
 ~~~~csharp
-Pattern patternName = (From: fromPattern, To: toPattern, Escape: escapePattern);
+Pattern patternName = Pattern.Range(fromPattern, toPattern, escapePattern);
 ~~~~
 ~~~~fsharp
 let patternName = erange fromPattern toPattern escapePattern
@@ -133,13 +133,11 @@ let patternName = erange fromPattern toPattern escapePattern
 Matches everything from `From` to `To`, but allows nesting of the pattern.
 
 ~~~~csharp
-Pattern patternName = (From: fromPattern, To: toPattern, Nested: true);
+Pattern patternName = Pattern.NestedRange(fromPattern, toPattern);
 ~~~~
 ~~~~fsharp
 let patternName = nrange fromPattern toPattern
 ~~~~
-
-*Note*: if `Nested: false` instead, a `Basic Range` is constructed as if `Nested:` was never declared.
 
 ## Modifiers
 
@@ -153,14 +151,14 @@ Modifies the pattern in a way that it will match anything _not_ the pattern. Tha
 Pattern patternName = !otherPattern;
 ~~~~
 ~~~~fsharp
-let patternName = -otherPattern
+let patternName = negate otherPattern
 ~~~~
 ***or***
 ~~~~csharp
 Pattern patternName = !(Pattern)"Literal";
 ~~~~
 ~~~~fsharp
-let patternName = -"Literal"
+let patternName = negate "Literal"
 ~~~~
 
 ### Option
@@ -171,14 +169,14 @@ Modifies the pattern in a way that allows it to be present or absent and still m
 Pattern patternName = -otherPattern;
 ~~~~
 ~~~~fsharp
-let patternName = ~~otherPattern
+let patternName = option otherPattern
 ~~~~
 ***or***
 ~~~~csharp
 Pattern patternName = -(Pattern)"Literal";
 ~~~~
 ~~~~fsharp
-let patternName = ~~"Literal"
+let patternName = option "Literal"
 ~~~~
 
 ### Repeat
@@ -207,12 +205,12 @@ Modifies the pattern in a way that lets it repeat until it no longer can, "spann
 Pattern patternName = +otherPattern;
 ~~~~
 ~~~~fsharp
-let patternName = +otherPattern
+let patternName = span otherPattern
 ~~~~
 ***or***
 ~~~~csharp
 Pattern patternName = +(Pattern)"Literal";
 ~~~~
 ~~~~fsharp
-let patternName = +"Literal"
+let patternName = span "Literal"
 ~~~~

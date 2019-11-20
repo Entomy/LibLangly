@@ -1,4 +1,18 @@
-﻿# Stringier.Patterns Advanced Concepts
+﻿# Patterns Advanced Concepts
+
+## Captures
+
+Captures are a system of ``Capturer`` and ``Capture`` that are used to implement backreferences or other concepts.
+
+~~~~csharp
+Pattern patternName = otherPattern.Capture(out Capture capture) & ".";
+~~~~
+~~~~fsharp
+let mutable capture = ref null
+let patternName = (otherPattern => capture) >> "."
+~~~~
+
+Regardless of the language, the mechanism remains the same. The pattern is still matched as if the capture and capturing parts were not there. During parsing the `capture` variable is "filled in" with whatever matched at that point. Because of this, make sure that a parse occurs before using a `Capture` outside of a pattern, so that it's actually holding captured text. Inside of patterns, there's a special mechanism to lazily resolve the capture, so you can use a `Capture` as a backreference inside of the same pattern as it was captured in.
 
 ## Checkers
 
@@ -14,14 +28,14 @@ Checks a `Char` with the specified function.
 Pattern patternName = Pattern.Check(nameof(patternName), (Char) => { return Boolean; });
 ~~~~
 ~~~~fsharp
-let patternName = check "patternName" (fun (char) -> bool)
+let patternName = Pattern.Check("patternName", (fun (char) -> bool));
 ~~~~
 
-`nameof()` can be any string, but this is recommended. In languages like F# which lack `nameof`, you must use a variable or string literal.
+`nameof()` can be any string, but this is recommended. In languages like F# which lack `nameof`, you must use a variable or string literal (this is being added to F# soon).
 
 The function lambda must take a `Char` as a parameter and return a `Boolean`, but otherwise you are free to declare whatever logic desired.
 
-In F#, either the standard lambas `Func<Char, Boolean>` or F# lambas `(char -> bool)` are viable.
+In F#, either the standard lambdas `Func<Char, Boolean>` or F# lambdas `(char -> bool)` are viable.
 
 A large amount of predefined patterns are actually implemented this way.
 
@@ -88,35 +102,21 @@ let endOfSource = Source.End;
 
 Checks that the parser is currently at the end of the source, setting a `ConsumeParserError` if not. This is essentially a highly specialized lookahead.
 
+## Adapters
 
-## Self Optimization
+Sometimes this approach isn't the most optimal, or is just easier to express in another approach. We take the cooperative approach to dealing with this, believing we're all made better, and you have a more productive solution, this way.
 
-**Stringier.Patterns** holds a unique and rare feature: it is self optimizing. This means that you do not need to be intimately aware of what the fastest way to do something is; generally speaking the pattern will become, at construction time (that is, when what you declared is initialized), the most optimal equivalent declaration. This is not an exhaustive description of these optimizations, but merely seeks to explain the approach taken.
+### RegexAdapter
 
-Typically, patterns are declared with operators that combine or modify them. These operators call methods which are dispatching. These all have "reasonable default" behaviors defined, but are overridden in certain cases to provide specific optimizations.
+Regex, with some concessions, can be made to work with Patterns, essentially deferring that part of the pattern to the Regex engine, but still otherwise working with this system.
 
-Consider the case of a combinator of literals such as `"Hello" & ' ' & "there"`. Normally this would be implemented as the following:
-
+~~~~csharp
+Pattern regexPattern = new Regex("^hello").AsPattern();
 ~~~~
-Concatenator
-├─Concatenator
-│ ├─"Hello"
-│ └─' '
-└─"there"
+~~~~fsharp
+let regexPattern = Regex("^hello").AsPattern()
 ~~~~
 
-Notice however, the lefthand and righthand components are actually literals. All literals are either `Char` or `String` which means instead of pattern concatenation, we can use string concatenation. Any time a concatenation of two literals is called, instead of constructing a concatenator, we can construct a `StringLiteral` which contains the lefthand and righthand components after string concatenation. This gives us the following:
+One important concession is that the Regex pattern must be anchored to the start of the line (`^`). This will be validated for you, and will raise an exception during initialization if this is not the case.
 
-~~~~
-Concatenator
-├─"Hello "
-└─"there"
-~~~~
-
-And suddenly we have the same situation, which can further be reduced into the following:
-
-~~~~
-"Hello there"
-~~~~
-
-This has the obvious advantage of reducing memory usage, as the tree has been reduced down to a single node. There is also the not so obvious advantage in that matching a literal is slightly faster than matching a concatenator.
+The Regex `Match` is not returned, instead, being adapted into `Source` and `Result`. Everything inside of the Regex still works exactly as expected, including more advanced things like capturing groups and back references. These are not compatable with **Stringier's** `Capturer` or `Capture` however. The approach only defers execution to the `Regex` engine, and then modifies `Source` and `Result` according to the `Match`.

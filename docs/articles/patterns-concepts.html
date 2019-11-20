@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Stringier.Patterns Concepts </title>
+    <title>Patterns Concepts </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Stringier.Patterns Concepts ">
+    <meta name="title" content="Patterns Concepts ">
     <meta name="generator" content="docfx 2.45.1.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -67,38 +67,42 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="stringierpatterns-concepts">Stringier.Patterns Concepts</h1>
+<h1 id="patterns-concepts">Patterns Concepts</h1>
 
-<p><strong>Stringier.Patterns</strong> is a parsing engine with a radically different approach from what you're probably familiar with. It was primarily designed with reusability of patterns in mind, and general usability second. That being said, it happens to be extremely fast and lightweight, without being theory heavy.</p>
+<p><strong>Stringier's</strong> <em><strong>Patterns</strong></em> is a parsing engine with a radically different approach from what you're probably familiar with. It was primarily designed with reusability of patterns in mind, and general usability second. That being said, it happens to be extremely fast and lightweight, without being theory heavy.</p>
 <p>It's also a cross language library, and will work on at least <a href="https://en.wikipedia.org/wiki/C_Sharp_%28programming_language%29">C#</a>, <a href="https://en.wikipedia.org/wiki/Visual_Basic_.NET">VisualBasic</a> and <a href="https://en.wikipedia.org/wiki/F_Sharp_(programming_language)">F#</a>.</p>
 <h2 id="pattern">Pattern</h2>
 <p>Patterns form the base of this system. Similar to how patterns work in <strong>Regex</strong> they represent what the parser will attempt to parse. However that's basically the end of the similarities.</p>
 <p><code>Pattern</code> is a first class type. <code>Regex</code> lives inside of <a href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a>. This has a major implication: You work with <code>Pattern</code> with whatever <a href="https://dotnet.microsoft.com/">.NET</a> language you feel like. You assign them to proper variables, and can combine them. No <a href="https://www.urbandictionary.com/define.php?term=copypasta">copypasta</a>.</p>
-<p><code>Pattern</code> was designed for complex grammars. <code>Regex</code> was designed for <a href="https://en.wikipedia.org/wiki/Regular_language">regular languages</a>, one of the simpliest forms of language. This makes <code>Patter</code> far more capable in what it can parse. In fact, the features of <strong>Stringier.Patterns</strong> was designed around needing to parse complex languages like programming languages.</p>
+<p><code>Pattern</code> was designed for complex grammars. <code>Regex</code> was designed for <a href="https://en.wikipedia.org/wiki/Regular_language">regular languages</a>, one of the simpliest forms of language. This makes <code>Pattern</code> far more capable in what it can parse. In fact, the features of <strong>Patterns</strong> was designed around needing to parse complex languages like programming languages.</p>
 <h3 id="literal">Literal</h3>
 <p>Literals in the context of <code>Pattern</code> are just like literals in your programming language. In fact, they are even the same thing.</p>
 <pre><code class="lang-csharp">Pattern Example = &quot;Hello&quot;;
 </code></pre>
+<p>or</p>
+<pre><code class="lang-fsharp">let example = p&quot;Hello&quot;;
+</code></pre>
 <p>We now have a pattern, named <code>Example</code>, which is literally <code>hello</code>. On its own, this isn't very useful, but it does make for an efficient building block.</p>
 <p>Whenever possible, an implicit conversion from <code>Char</code> or <code>String</code> to <code>Pattern</code> will occur. The exact rules about this will depend on your programming language. You may need to occasionally cast to <code>Pattern</code>, especially at the start of combinators of literals.</p>
-<p>It's worth noting as an implementation detail, unlike <a href="https://en.wikipedia.org/wiki/Parser_combinator">Parser Combinators</a> like <a href="https://wiki.haskell.org/Parsec">parsec</a> or <a href="http://bennu-js.com/">Bennu</a> the base component is not a <code>Char</code>, but rather, any literal. There are literals defined for <code>Char</code> and <code>String</code>, as well as some advanced concepts that will be covered in later articles.</p>
+<p>It's worth noting as an implementation detail, unlike <a href="https://en.wikipedia.org/wiki/Parser_combinator">Parser Combinators</a> like <a href="https://wiki.haskell.org/Parsec">parsec</a> or <a href="http://bennu-js.com/">Bennu</a> the base component is not a <code>Char</code>, but rather, any literal. There are literals defined for <code>Char</code> and <code>String</code>, as well as some advanced concepts that will be covered in later articles. This is extremely important for performance reasons, even though it's not obvious why. In the spirit of fairness, there are rare <a href="https://en.wikipedia.org/wiki/Parser_combinator">Parser Combinators</a> that do token based parsing (basically built up from <code>String</code>), such as <a href="https://github.com/datalust/superpower">Superpower</a>.</p>
 <h3 id="modifier">Modifier</h3>
-<p>Modifiers <em>modify</em> patterns. This includes concepts like making a pattern optional, or negating a pattern. Modifiers are most often declared with prefix operators, although there are exceptions.</p>
-<p>Method calls exist in the event a programming language does not support operator overloading. Their use is generally discouraged because it hampers readability.</p>
+<p>Modifiers <em>modify</em> patterns. This includes concepts like making a pattern optional, or negating a pattern.</p>
 <h3 id="combinator">Combinator</h3>
 <p>Combinators <em>combine</em> patterns. This includes concepts like concatenation or alternates. Combinators are most often declared with binary operators, although there are exceptions.</p>
-<p>A special class of combinators is that of the <code>Range</code>, which is declared as a <a href="https://docs.microsoft.com/en-us/dotnet/api/system.tuple"><code>Tuple</code></a> instead. This serves two main purposes. One is that most languages do not have a satisfactory operator to use to represent the concept. Two is that certain <code>Range</code> types have third parameters and lack any possible operator.</p>
-<p>Method calls exist in the event a programming language does not support operator overloading. Their use is generally discouraged because it hampers readability.</p>
 <h2 id="source">Source</h2>
 <p><code>Source</code> is a buffer that keeps track of the position during and after parsing operations. Importantly, it always reverts back to the starting position if a parse fails. This position is not manipulatable from code outside of the library, so there is no (easy) ability to tamper. (Abuse through reflection is technically always possible). New parsing operations always occur at the current position, so you don't need to manage anything. <code>Source</code> objects can be construction both from <code>Stream</code> and <code>String</code>.</p>
+<h2 id="result">Result</h2>
+<p><code>Result</code> holds the result state of <em>most</em> parser operations, with <code>Equals</code> being the major exception. It contains both the matched text, and a success/failure state. The exact implementation of these is subject to change, but this type will always be castable to <code>String</code> and <code>Boolean</code>, and if allowed, will implicitly convert to those types.</p>
 <h2 id="parsers">Parsers</h2>
-<p>Very unique to <strong>Stringier.Patterns</strong> is multiple parsing models.</p>
+<p>Very unique to <strong>Patterns</strong> is multiple parsing models. Because my own needs are well met from a very particular set of parsers, I'm not focused on implementing as many as possible. However care was taken to keep the patterns purely descriptive, so that theoretically any parsing approach could be implemented.</p>
 <h3 id="equals">Equals</h3>
 <p>This parser checks that the <code>Pattern</code> exactly matches the input <code>String</code>, and returns a <code>Boolean</code>. because it is an exact match, no position needs to be kept track of, so this type only accepts <code>String</code>. While this may seem limiting, the intent behind this parser is field validation in forms, such as validating an email address is of the correct format.</p>
 <h3 id="consume">Consume</h3>
 <p>This parser tries to match the <code>Pattern</code> starting at the very beginning of the <code>Source</code> (or where it last left off), and returns a <code>Result</code>. It is naively like prefixing a <code>^</code> anchor to every <code>Regex</code>. This is generally the parser you want to use, as it parses from left to right in as obvious of a way as possible.</p>
-<h2 id="result">Result</h2>
-<p><code>Result</code> holds the result state of <em>most</em> parser operations, with <code>Equals</code> being the major exception. It contains both the matched text, and a success/failure state. The exact implementation of these is subject to change, but this type will always be castable to <code>String</code> and <code>Boolean</code>, and if allowed, will implicitly convert to those types.</p>
+<p>For the non-technically minded, this works as close to how you would normally read as possible, reading in your normal word order, and considering alternates in order.</p>
+<p>For the technically minded, this seems to be closest to a PEG parser, although it wasn't designed with any particular grammar in mind, so this may not be 100% accurate. <code>Consume</code> definately considers the order important, however.</p>
+<h3 id="others">Others</h3>
+<p>There are other parsers planned, and I will do my best to maintain this documentation with new descriptions of them.</p>
 </article>
           </div>
           
