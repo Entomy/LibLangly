@@ -2,6 +2,7 @@
 using System.Text.RegularExpressions;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Jobs;
+using PCRE;
 using Pidgin;
 using static Pidgin.Parser;
 using static Pidgin.Parser<char>;
@@ -17,6 +18,8 @@ namespace Benchmarks.Patterns {
 
 		readonly Regex msregex = new Regex("^(?:Hi!)+");
 
+		readonly PcreRegex pcreregex = new PcreRegex("^(?:Hi!)+");
+
 		readonly Parser<Char, String> pidgin = String("Hi!").AtLeastOnceString();
 
 		readonly Pattern stringier = +(Pattern)"Hi!";
@@ -26,6 +29,9 @@ namespace Benchmarks.Patterns {
 
 		[Benchmark]
 		public Match MSRegex() => msregex.Match(Source);
+
+		[Benchmark]
+		public PcreMatch PcreRegex() => pcreregex.Match(Source);
 
 		[Benchmark]
 		public Result<Char, String> Pidgin() => pidgin.Parse(Source);

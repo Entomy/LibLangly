@@ -2,6 +2,7 @@
 using System.Text.RegularExpressions;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Jobs;
+using PCRE;
 using Pidgin;
 using static Pidgin.Parser;
 using static Pidgin.Parser<char>;
@@ -18,6 +19,9 @@ namespace Benchmarks.Patterns {
 		// This isn't exactly a token negation, but is as close as you're gonna get from Regex
 		readonly Regex msregex = new Regex("^[^H][^e][^l][^l][^o]");
 
+		// This isn't exactly a token negation, but is as close as you're gonna get from Regex
+		readonly PcreRegex pcreregex = new PcreRegex("^[^H][^e][^l][^l][^o]");
+
 		readonly Parser<Char, Unit> pidgin = Not(String("Hello"));
 
 		readonly Pattern stringier = !(Pattern)"Hello";
@@ -27,6 +31,9 @@ namespace Benchmarks.Patterns {
 
 		[Benchmark]
 		public Match MSRegex() => msregex.Match(Source);
+
+		[Benchmark]
+		public PcreMatch PcreRegex() => pcreregex.Match(Source);
 
 		[Benchmark]
 		public Result<Char, Unit> Pidgin() => pidgin.Parse(Source);

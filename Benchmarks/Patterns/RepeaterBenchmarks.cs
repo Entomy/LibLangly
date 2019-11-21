@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Jobs;
+using PCRE;
 using Pidgin;
 using static Pidgin.Parser;
 using static Pidgin.Parser<char>;
@@ -18,6 +19,8 @@ namespace Benchmarks.Patterns {
 
 		readonly Regex msregex = new Regex("^(?:Hi!){5}");
 
+		readonly PcreRegex pcreregex = new PcreRegex("^(?:Hi!){5}");
+
 		readonly Parser<Char, IEnumerable<String>> pidgin = String("Hi!").Repeat(5);
 
 		readonly Pattern stringier = (Pattern)"Hi!" * 4;
@@ -27,6 +30,9 @@ namespace Benchmarks.Patterns {
 
 		[Benchmark]
 		public Match MSRegex() => msregex.Match(Source);
+
+		[Benchmark]
+		public PcreMatch PcreRegex() => pcreregex.Match(Source);
 
 		[Benchmark]
 		public Result<Char, IEnumerable<String>> Pidgin() => pidgin.Parse(Source);

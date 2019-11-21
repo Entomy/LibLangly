@@ -2,6 +2,7 @@
 using System.Text.RegularExpressions;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Jobs;
+using PCRE;
 using Pidgin;
 using static Pidgin.Parser;
 using static Pidgin.Parser<char>;
@@ -16,6 +17,8 @@ namespace Benchmarks.Patterns {
 	public class ConcatenatorBenchmarks {
 		readonly Regex msregex = new Regex("^Hello World");
 
+		readonly PcreRegex pcreregex = new PcreRegex("^Hello World");
+
 		readonly Parser<Char, String> pidgin = Map((first, second, third) => first + second + third, String("Hello"), Char(' '), String("Hello"));
 
 		readonly Pattern stringier = (Pattern)"Hello" & ' ' & "World";
@@ -25,6 +28,9 @@ namespace Benchmarks.Patterns {
 
 		[Benchmark]
 		public Match MSRegex() => msregex.Match(Source);
+
+		[Benchmark]
+		public PcreMatch PcreRegex() => pcreregex.Match(Source);
 
 		[Benchmark]
 		public Result<Char, String> Pidgin() => pidgin.Parse(Source);
