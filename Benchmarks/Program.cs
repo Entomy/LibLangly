@@ -45,6 +45,7 @@ namespace Benchmarks {
 				new KeyChoice(ConsoleKey.D6, "Ranger", () => BenchmarkRunner.Run<RangerBenchmarks>()),
 				new KeyChoice(ConsoleKey.D7, "Repeater", () => BenchmarkRunner.Run<RepeaterBenchmarks>()),
 				new KeyChoice(ConsoleKey.D8, "Spanner", () => BenchmarkRunner.Run<SpannerBenchmarks>()),
+				new KeyChoice(ConsoleKey.D9, "LineComment", () => BenchmarkRunner.Run<LineCommentBenchmarks>()),
 				new BackKeyChoice(ConsoleKey.B, "Back", () => { }));
 
 		public static void Main() {
