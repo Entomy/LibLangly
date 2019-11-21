@@ -18,7 +18,7 @@ type RealWorldTests() =
 
     [<TestMethod>]
     member _.``comment`` () =
-        let pattern = "--" >> span(negate Pattern.LineTerminator)
+        let pattern = Pattern.LineComment("--")
         let mutable result = Result()
 
         result <- pattern.Consume("--This is a comment\n")
@@ -74,7 +74,7 @@ type RealWorldTests() =
 
     [<TestMethod>]
     member _.``string literal`` () =
-        let pattern = erange "\"" "\"" "\\\""
+        let pattern = Pattern.StringLiteral("\"", "\\\"")
         ResultAssert.Captures("\"hello\\\"world\"", pattern.Consume("\"hello\\\"world\""))
 
     [<TestMethod>]
