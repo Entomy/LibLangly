@@ -46,8 +46,9 @@ namespace Benchmarks {
 				new KeyChoice(ConsoleKey.D7, "Repeater", () => BenchmarkRunner.Run<RepeaterBenchmarks>()),
 				new KeyChoice(ConsoleKey.D8, "Spanner", () => BenchmarkRunner.Run<SpannerBenchmarks>()),
 				new KeyChoice(ConsoleKey.D9, "Identifier", () => BenchmarkRunner.Run<IdentifierBenchmarks>()),
-				new KeyChoice(ConsoleKey.A, "LineComment", () => BenchmarkRunner.Run<LineCommentBenchmarks>()),
-				new BackKeyChoice(ConsoleKey.B, "Back", () => { }));
+				new KeyChoice(ConsoleKey.A, "IPv4 Address", () => BenchmarkRunner.Run<IPv4AddressBenchmarks>()),
+				new BackKeyChoice(ConsoleKey.B, "Back", () => { }),
+				new KeyChoice(ConsoleKey.C, "LineComment", () => BenchmarkRunner.Run<LineCommentBenchmarks>()));
 
 		public static void Main() {
 			Theme.DefaultDark.Apply();
