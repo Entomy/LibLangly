@@ -10,8 +10,9 @@ module LiteralExtensions =
         static member Literal(value:string) = PatternBindings.Literal(value)
         static member Literal(value:char) = PatternBindings.Literal(value)
         static member Literal(value:Capture ref) = PatternBindings.Literal(!value)
-        static member With(pattern:String, comparisonType:StringComparison) = pattern.With(comparisonType)
-        static member With(pattern:Char, comparisonType:StringComparison) = pattern.With(comparisonType)
+        static member With(pattern:String, comparisonType:Compare) = pattern.With(comparisonType)
+        static member With(pattern:Char, comparisonType:Compare) = pattern.With(comparisonType)
+        static member With(pattern:Capture ref, comparisonType:Compare) = (!pattern).With(comparisonType)
 
     let inline private literal< ^t, ^a, ^b when (^t or ^a) : (static member Literal : ^a -> ^b)> value = ((^t or ^a) : (static member Literal : ^a -> ^b)(value))
 

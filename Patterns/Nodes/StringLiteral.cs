@@ -19,14 +19,14 @@ namespace Stringier.Patterns.Nodes {
 		/// Initialize a new <see cref="StringLiteral"/> with the given <paramref name="string"/>.
 		/// </summary>
 		/// <param name="string">The <see cref="System.String"/> to parse.</param>
-		internal StringLiteral(String @string) : base(StringComparison.Ordinal) => String = @string;
+		internal StringLiteral(String @string) : base(Compare.CaseSensitive) => String = @string;
 
 		/// <summary>
 		/// Intialize a new <see cref="StringLiteral"/> with the given <paramref name="string"/>.
 		/// </summary>
 		/// <param name="string">The <see cref="System.String"/> to parse.</param>
-		/// <param name="comparisonType">The <see cref="StringComparison"/> to use when parsing.</param>
-		internal StringLiteral(String @string, StringComparison comparisonType) : base(comparisonType) => String = @string;
+		/// <param name="comparisonType">The <see cref="Compare"/> to use when parsing.</param>
+		internal StringLiteral(String @string, Compare comparisonType) : base(comparisonType) => String = @string;
 
 		/// <summary>
 		/// Checks the first character in the <paramref name="source"/> against the header of this node.
@@ -85,7 +85,7 @@ namespace Stringier.Patterns.Nodes {
 		/// </summary>
 		/// <param name="other">The <see cref="StringLiteral"/> to compare with the current <see cref="Node"/>.</param>
 		/// <returns><c>true</c> if the specified <see cref="Node"/> is equal to the current <see cref="Node"/>; otherwise, <c>false</c>.</returns>
-		public Boolean Equals(StringLiteral other) => ComparisonType.Equals(other.ComparisonType) && String.Equals(other.String, ComparisonType);
+		public Boolean Equals(StringLiteral other) => ComparisonType.Equals(other.ComparisonType) && this.String.Equals(other.String, ComparisonType);
 
 		/// <summary>
 		/// Returns the hash code for this instance.

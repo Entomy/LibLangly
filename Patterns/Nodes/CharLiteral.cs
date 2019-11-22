@@ -19,14 +19,14 @@ namespace Stringier.Patterns.Nodes {
 		/// Initialize a new <see cref="CharLiteral"/> with the given <paramref name="char"/>.
 		/// </summary>
 		/// <param name="char">The <see cref="System.Char"/> to parse.</param>
-		internal CharLiteral(Char @char) : base(StringComparison.Ordinal) => Char = @char;
+		internal CharLiteral(Char @char) : base(Compare.CaseSensitive) => Char = @char;
 
 		/// <summary>
 		/// Initialize a new <see cref="CharLiteral"/> with the given <paramref name="char"/>.
 		/// </summary>
 		/// <param name="char">The <see cref="System.Char"/> to parse.</param>
-		/// <param name="comparisonType">The <see cref="StringComparison"/> to use when parsing.</param>
-		internal CharLiteral(Char @char, StringComparison comparisonType) : base(comparisonType) => Char = @char;
+		/// <param name="comparisonType">The <see cref="Compare"/> to use when parsing.</param>
+		internal CharLiteral(Char @char, Compare comparisonType) : base(comparisonType) => Char = @char;
 
 		/// <summary>
 		/// Checks the first character in the <paramref name="source"/> against the header of this node.

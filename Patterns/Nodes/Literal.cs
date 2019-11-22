@@ -1,24 +1,22 @@
-﻿using System;
-
-namespace Stringier.Patterns.Nodes {
+﻿namespace Stringier.Patterns.Nodes {
 	/// <summary>
 	/// Represents any possible literal, a <see cref="Pattern"/> <see cref="Node"/> representing exactly itself.
 	/// </summary>
 	internal abstract class Literal : Node {
 		/// <summary>
-		/// The <see cref="StringComparison"/> to use when parsing.
+		/// The <see cref="Compare"/> to use when parsing.
 		/// </summary>
-		internal readonly StringComparison ComparisonType = StringComparison.Ordinal;
+		internal readonly Compare ComparisonType;
 
 		/// <summary>
-		/// Initialize a new <see cref="Literal"/> with the default <see cref="StringComparison"/>.
+		/// Initialize a new <see cref="Literal"/> with the default <see cref="Compare"/> (<see cref="Compare.CaseSensitive"/>).
 		/// </summary>
-		protected Literal() => ComparisonType = StringComparison.Ordinal;
+		protected Literal() => ComparisonType = Compare.CaseSensitive;
 
 		/// <summary>
 		/// Intialize a new <see cref="Literal"/> with the given <paramref name="comparisonType"/>.
 		/// </summary>
-		/// <param name="comparisonType">The <see cref="StringComparison"/> to use when parsing.</param>
-		protected Literal(StringComparison comparisonType) => ComparisonType = comparisonType;
+		/// <param name="comparisonType">The <see cref="Compare"/> to use when parsing.</param>
+		protected Literal(Compare comparisonType) => ComparisonType = comparisonType;
 	}
 }

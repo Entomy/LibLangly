@@ -166,13 +166,13 @@
   
   
   <a id="Stringier_Patterns_CharExtensions_Consume_" data-uid="Stringier.Patterns.CharExtensions.Consume*"></a>
-  <h4 id="Stringier_Patterns_CharExtensions_Consume_Char_String_StringComparison_" data-uid="Stringier.Patterns.CharExtensions.Consume(Char,String,StringComparison)">Consume(Char, String, StringComparison)</h4>
+  <h4 id="Stringier_Patterns_CharExtensions_Consume_Char_String_Stringier_Patterns_Compare_" data-uid="Stringier.Patterns.CharExtensions.Consume(Char,String,Stringier.Patterns.Compare)">Consume(Char, String, Compare)</h4>
   <div class="markdown level1 summary"><p>Attempt to consume the <code data-dev-comment-type="paramref" class="paramref">Pattern</code> from the <code data-dev-comment-type="paramref" class="paramref">Source</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Result Consume(this Char pattern, String source, StringComparison comparisonType)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Result Consume(this Char pattern, String source, Compare comparisonType)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -197,9 +197,9 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">StringComparison</span></td>
+        <td><a class="xref" href="Stringier.Patterns.Compare.html">Compare</a></td>
         <td><span class="parametername">comparisonType</span></td>
-        <td><p>The <see cref="!:StringComparison"></see> to use for pattern matching.</p>
+        <td><p>Whether the comparison is sensitive to casing.</p>
 </td>
       </tr>
     </tbody>
@@ -274,13 +274,13 @@
   
   
   <a id="Stringier_Patterns_CharExtensions_Consume_" data-uid="Stringier.Patterns.CharExtensions.Consume*"></a>
-  <h4 id="Stringier_Patterns_CharExtensions_Consume_Char_Stringier_Patterns_Source__StringComparison_" data-uid="Stringier.Patterns.CharExtensions.Consume(Char,Stringier.Patterns.Source@,StringComparison)">Consume(Char, ref Source, StringComparison)</h4>
+  <h4 id="Stringier_Patterns_CharExtensions_Consume_Char_Stringier_Patterns_Source__Stringier_Patterns_Compare_" data-uid="Stringier.Patterns.CharExtensions.Consume(Char,Stringier.Patterns.Source@,Stringier.Patterns.Compare)">Consume(Char, ref Source, Compare)</h4>
   <div class="markdown level1 summary"><p>Attempt to consume the <code data-dev-comment-type="paramref" class="paramref">pattern</code> from the <code data-dev-comment-type="paramref" class="paramref">source</code>, adjusting the position in the <code data-dev-comment-type="paramref" class="paramref">source</code> as appropriate.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Result Consume(this Char pattern, ref Source source, StringComparison comparisonType)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Result Consume(this Char pattern, ref Source source, Compare comparisonType)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -305,9 +305,9 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">StringComparison</span></td>
+        <td><a class="xref" href="Stringier.Patterns.Compare.html">Compare</a></td>
         <td><span class="parametername">comparisonType</span></td>
-        <td><p>The <see cref="!:StringComparison"></see> to use for pattern matching.</p>
+        <td><p>Whether the comparison is sensitive to casing.</p>
 </td>
       </tr>
     </tbody>
@@ -331,13 +331,13 @@
   
   
   <a id="Stringier_Patterns_CharExtensions_With_" data-uid="Stringier.Patterns.CharExtensions.With*"></a>
-  <h4 id="Stringier_Patterns_CharExtensions_With_Char_StringComparison_" data-uid="Stringier.Patterns.CharExtensions.With(Char,StringComparison)">With(Char, StringComparison)</h4>
+  <h4 id="Stringier_Patterns_CharExtensions_With_Char_Stringier_Patterns_Compare_" data-uid="Stringier.Patterns.CharExtensions.With(Char,Stringier.Patterns.Compare)">With(Char, Compare)</h4>
   <div class="markdown level1 summary"><p>Compare this <code data-dev-comment-type="paramref" class="paramref">pattern</code> with the given <code data-dev-comment-type="paramref" class="paramref">comparisonType</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Pattern With(this Char pattern, StringComparison comparisonType)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Pattern With(this Char pattern, Compare comparisonType)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -356,9 +356,9 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">StringComparison</span></td>
+        <td><a class="xref" href="Stringier.Patterns.Compare.html">Compare</a></td>
         <td><span class="parametername">comparisonType</span></td>
-        <td><p>The <see cref="!:StringComparison"></see> to compare with.</p>
+        <td><p>Whether the comparison is sensitive to casing.</p>
 </td>
       </tr>
     </tbody>

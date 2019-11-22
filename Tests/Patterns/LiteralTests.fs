@@ -55,7 +55,7 @@ type LiteralTests() =
 
     [<TestMethod>]
     member _.``consume case-insensitive`` () =
-        let pattern = "Hello"/=StringComparison.OrdinalIgnoreCase >> ' ' >> "World"/=StringComparison.OrdinalIgnoreCase
+        let pattern = "Hello"/=Compare.CaseInsensitive >> ' ' >> "World"/=Compare.CaseInsensitive
         
         ResultAssert.Captures("HELLO WORLD", pattern.Consume("HELLO WORLD"))
         ResultAssert.Captures("hello world", pattern.Consume("hello world"))

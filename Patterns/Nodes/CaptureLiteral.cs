@@ -19,14 +19,14 @@ namespace Stringier.Patterns.Nodes {
 		/// Initialize a new <see cref="CaptureLiteral"/> with the given <paramref name="capture"/>.
 		/// </summary>
 		/// <param name="capture">The <see cref="Patterns.Capture"/> to parse.</param>
-		internal CaptureLiteral(Capture capture) : base(StringComparison.Ordinal) => CapStore = capture;
+		internal CaptureLiteral(Capture capture) : base(Compare.CaseSensitive) => CapStore = capture;
 
 		/// <summary>
 		/// Initialize a new <see cref="CaptureLiteral"/> with the given <paramref name="capture"/>.
 		/// </summary>
 		/// <param name="capture">The <see cref="Patterns.Capture"/> to parse.</param>
-		/// <param name="comparisonType">The <see cref="StringComparison"/> to use when parsing.</param>
-		internal CaptureLiteral(Capture capture, StringComparison comparisonType) : base(comparisonType) => CapStore = capture;
+		/// <param name="comparisonType">The <see cref="Compare"/> to use when parsing.</param>
+		internal CaptureLiteral(Capture capture, Compare comparisonType) : base(comparisonType) => CapStore = capture;
 
 		/// <summary>
 		/// Checks the first character in the <paramref name="source"/> against the header of this node.

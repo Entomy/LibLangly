@@ -11,16 +11,16 @@ namespace Stringier.Patterns {
 		/// This is primarily used to check whether a pattern may exist at the current position.
 		/// </remarks>
 		/// <param name="source">The <see cref="Source"/> to check against</param>
-		/// <returns><c>true</c> if this <paramref name="pattern"/> may be present, <c>false</c> if definately not.</returns>
+		/// <returns><c>Compare.CaseSensitive</c> if this <paramref name="pattern"/> may be present, <c>false</c> if definately not.</returns>
 		internal static Boolean CheckHeader(this Char pattern, ref Source source) => !source.EOF && pattern.Equals(source.Peek());
 
 		/// <summary>
 		/// Compare this <paramref name="pattern"/> with the given <paramref name="comparisonType"/>.
 		/// </summary>
 		/// <param name="pattern">The <see cref="Char"/> pattern.</param>
-		/// <param name="comparisonType">The <see cref="StringComparison"/> to compare with.</param>
+		/// <param name="comparisonType">Whether the comparison is sensitive to casing.</param>
 		/// <returns>A new <see cref="Pattern"/> representing the <paramref name="pattern"/> compared with <paramref name="comparisonType"/>.</returns>
-		public static Pattern With(this Char pattern, StringComparison comparisonType) => new Pattern(new CharLiteral(pattern, comparisonType));
+		public static Pattern With(this Char pattern, Compare comparisonType) => new Pattern(new CharLiteral(pattern, comparisonType));
 
 		/// <summary>
 		/// Attempt to consume the <paramref name="pattern"/> from the <paramref name="source"/>.
@@ -32,7 +32,7 @@ namespace Stringier.Patterns {
 			if (source is null) {
 				throw new ArgumentNullException(nameof(source));
 			}
-			return pattern.Consume(source, StringComparison.Ordinal);
+			return pattern.Consume(source, Compare.CaseSensitive);
 		}
 
 		/// <summary>
@@ -40,9 +40,9 @@ namespace Stringier.Patterns {
 		/// </summary>
 		/// <param name="pattern">The <see cref="Char"/> to match.</param>
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
-		/// <param name="comparisonType">The <see cref="StringComparison"/> to use for pattern matching.</param>
+		/// <param name="comparisonType">Whether the comparison is sensitive to casing.</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the consumed string.</returns>
-		public static Result Consume(this Char pattern, String source, StringComparison comparisonType) {
+		public static Result Consume(this Char pattern, String source, Compare comparisonType) {
 			if (source is null) {
 				throw new ArgumentNullException(nameof(source));
 			}
@@ -56,16 +56,16 @@ namespace Stringier.Patterns {
 		/// <param name="pattern">The <see cref="Char"/> to match.</param>
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the consumed string.</returns>
-		public static Result Consume(this Char pattern, ref Source source) => pattern.Consume(ref source, StringComparison.Ordinal);
+		public static Result Consume(this Char pattern, ref Source source) => pattern.Consume(ref source, Compare.CaseSensitive);
 
 		/// <summary>
 		/// Attempt to consume the <paramref name="pattern"/> from the <paramref name="source"/>, adjusting the position in the <paramref name="source"/> as appropriate.
 		/// </summary>
 		/// <param name="pattern">The <see cref="Char"/> to match.</param>
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
-		/// <param name="comparisonType">The <see cref="StringComparison"/> to use for pattern matching.</param>
+		/// <param name="comparisonType">Whether the comparison is sensitive to casing.</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the consumed string.</returns>
-		public static Result Consume(this Char pattern, ref Source source, StringComparison comparisonType) {
+		public static Result Consume(this Char pattern, ref Source source, Compare comparisonType) {
 			Result Result = new Result(ref source);
 			pattern.Consume(ref source, ref Result, comparisonType);
 			return Result;
@@ -77,7 +77,7 @@ namespace Stringier.Patterns {
 		/// <param name="pattern">The <see cref="Char"/> pattern.</param>
 		/// <param name="source">The <see cref="Source"/> to consume from.</param>
 		/// <param name="result">The <see cref="Result"/> to store the result into.</param>
-		internal static void Consume(this Char pattern, ref Source source, ref Result result) => pattern.Consume(ref source, ref result, StringComparison.Ordinal);
+		internal static void Consume(this Char pattern, ref Source source, ref Result result) => pattern.Consume(ref source, ref result, Compare.CaseSensitive);
 
 		/// <summary>
 		/// Attempt to consume the <paramref name="pattern" />, adjusting the <paramref name="source"/> and <paramref name="result"/> as appropriate.
@@ -85,8 +85,8 @@ namespace Stringier.Patterns {
 		/// <param name="pattern">The <see cref="Char"/> pattern.</param>
 		/// <param name="source">The <see cref="Source"/> to consume from.</param>
 		/// <param name="result">The <see cref="Result"/> to store the result into.</param>
-		/// <param name="comparisonType">The <see cref="StringComparison"/> to use when comparing.</param>
-		internal static void Consume(this Char pattern, ref Source source, ref Result result, StringComparison comparisonType) {
+		/// <param name="comparisonType">Whether the comparison is sensitive to casing.</param>
+		internal static void Consume(this Char pattern, ref Source source, ref Result result, Compare comparisonType) {
 			if (source.Length == 0) {
 				result.Error.Set(ErrorType.EndOfSource, pattern);
 			} else {
@@ -101,12 +101,22 @@ namespace Stringier.Patterns {
 		}
 
 		/// <summary>
-		/// Attempt to neglect the <paramref name="pattern" />, adjusting the <paramref name="source"/> and <paramref name="result"/> as appropriate.
+		/// Determines whether this instance and the specified <see cref="Char"/> have the same value.
 		/// </summary>
-		/// <param name="pattern">The <see cref="Char"/> pattern.</param>
-		/// <param name="source">The <see cref="Source"/> to neglect from.</param>
-		/// <param name="result">The <see cref="Result"/> to store the result into.</param>
-		internal static void Neglect(this Char pattern, ref Source source, ref Result result) => pattern.Neglect(ref source, ref result, StringComparison.Ordinal);
+		/// <param name="char">This <see cref="Char"/> instance.</param>
+		/// <param name="other">The <see cref="Char"/> to compare to this instance.</param>
+		/// <param name="comparisonType">Whether the comparison is sensitive to casing.</param>
+		/// <returns><c>Compare.CaseSensitive</c> if the value of the <paramref name="other"/> parameter is the same as this char; otherwise, <c>false</c>.</returns>
+		internal static Boolean Equals(this Char @char, Char other, Compare comparisonType) {
+			switch (comparisonType) {
+			case Compare.CaseSensitive:
+				return @char.Equals(other, StringComparison.Ordinal);
+			case Compare.CaseInsensitive:
+				return @char.Equals(other, StringComparison.OrdinalIgnoreCase);
+			default:
+				throw new ArgumentException($"{comparisonType} not handled", nameof(comparisonType));
+			}
+		}
 
 		/// <summary>
 		/// Attempt to neglect the <paramref name="pattern" />, adjusting the <paramref name="source"/> and <paramref name="result"/> as appropriate.
@@ -114,8 +124,16 @@ namespace Stringier.Patterns {
 		/// <param name="pattern">The <see cref="Char"/> pattern.</param>
 		/// <param name="source">The <see cref="Source"/> to neglect from.</param>
 		/// <param name="result">The <see cref="Result"/> to store the result into.</param>
-		/// <param name="comparisonType">The <see cref="StringComparison"/> to use when comparing.</param>
-		internal static void Neglect(this Char pattern, ref Source source, ref Result result, StringComparison comparisonType) {
+		internal static void Neglect(this Char pattern, ref Source source, ref Result result) => pattern.Neglect(ref source, ref result, Compare.CaseSensitive);
+
+		/// <summary>
+		/// Attempt to neglect the <paramref name="pattern" />, adjusting the <paramref name="source"/> and <paramref name="result"/> as appropriate.
+		/// </summary>
+		/// <param name="pattern">The <see cref="Char"/> pattern.</param>
+		/// <param name="source">The <see cref="Source"/> to neglect from.</param>
+		/// <param name="result">The <see cref="Result"/> to store the result into.</param>
+		/// <param name="comparisonType">Whether the comparison is sensitive to casing.</param>
+		internal static void Neglect(this Char pattern, ref Source source, ref Result result, Compare comparisonType) {
 			if (source.Length == 0) {
 				result.Error.Set(ErrorType.EndOfSource, pattern);
 			} else {
