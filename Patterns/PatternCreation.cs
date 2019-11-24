@@ -27,6 +27,8 @@ namespace Stringier.Patterns {
 		public static Pattern operator |(Pattern left, Pattern right) {
 			if (left is null || right is null) {
 				throw new ArgumentNullException(left is null ? nameof(left) : nameof(right));
+			} else if (left.Head is null || right.Head is null) {
+				throw new PatternUndefinedException();
 			}
 			return new Pattern(left.Head.Alternate(right.Head));
 		}
@@ -40,6 +42,8 @@ namespace Stringier.Patterns {
 		public static Pattern operator |(Pattern left, Char right) {
 			if (left is null) {
 				throw new ArgumentNullException(nameof(left));
+			} else if (left.Head is null) {
+				throw new PatternUndefinedException();
 			}
 			return new Pattern(left.Head.Alternate(new CharLiteral(right)));
 		}
@@ -53,6 +57,8 @@ namespace Stringier.Patterns {
 		public static Pattern operator |(Char left, Pattern right) {
 			if (right is null) {
 				throw new ArgumentNullException(nameof(right));
+			} else if (right.Head is null) {
+				throw new PatternUndefinedException();
 			}
 			return new Pattern(new CharLiteral(left).Alternate(right.Head));
 		}
@@ -66,6 +72,8 @@ namespace Stringier.Patterns {
 		public static Pattern operator |(Pattern left, String right) {
 			if (left is null || right is null) {
 				throw new ArgumentNullException(left is null ? nameof(left) : nameof(right));
+			} else if (left.Head is null) {
+				throw new PatternUndefinedException();
 			}
 			return new Pattern(left.Head.Alternate(new StringLiteral(right)));
 		}
@@ -79,6 +87,8 @@ namespace Stringier.Patterns {
 		public static Pattern operator |(String left, Pattern right) {
 			if (left is null || right is null) {
 				throw new ArgumentNullException(left is null ? nameof(left) : nameof(right));
+			} else if (right.Head is null) {
+				throw new PatternUndefinedException();
 			}
 			return new Pattern(new StringLiteral(left).Alternate(right.Head));
 		}
@@ -99,7 +109,12 @@ namespace Stringier.Patterns {
 		/// </summary>
 		/// <param name="capture">A <see cref="Patterns.Capture"/> object to store into.</param>
 		/// <returns>A new <paramref name="Pattern"/> which will capture its result into <paramref name="capture"/>.</returns>
-		public Pattern Capture(out Capture capture) => new Pattern(Head.Capture(out capture));
+		public Pattern Capture(out Capture capture) {
+			if (Head is null) {
+				throw new PatternUndefinedException();
+			}
+			return new Pattern(Head.Capture(out capture));
+		}
 
 		#endregion
 
@@ -201,6 +216,8 @@ namespace Stringier.Patterns {
 		public static Pattern operator &(Pattern left, Pattern right) {
 			if (left is null || right is null) {
 				throw new ArgumentNullException(left is null ? nameof(left) : nameof(right));
+			} else if (left.Head is null || right.Head is null) {
+				throw new PatternUndefinedException();
 			}
 			return new Pattern(left.Head.Concatenate(right.Head));
 		}
@@ -214,6 +231,8 @@ namespace Stringier.Patterns {
 		public static Pattern operator &(Pattern left, Char right) {
 			if (left is null) {
 				throw new ArgumentNullException(nameof(left));
+			} else if (left.Head is null) {
+				throw new PatternUndefinedException();
 			}
 			return new Pattern(left.Head.Concatenate(new CharLiteral(right)));
 		}
@@ -227,6 +246,8 @@ namespace Stringier.Patterns {
 		public static Pattern operator &(Char left, Pattern right) {
 			if (right is null) {
 				throw new ArgumentNullException(nameof(right));
+			} else if (right.Head is null) {
+				throw new PatternUndefinedException();
 			}
 			return new Pattern(new CharLiteral(left).Concatenate(right.Head));
 		}
@@ -240,6 +261,8 @@ namespace Stringier.Patterns {
 		public static Pattern operator &(Pattern left, String right) {
 			if (left is null || right is null) {
 				throw new ArgumentNullException(left is null ? nameof(left) : nameof(right));
+			} else if (left.Head is null) {
+				throw new PatternUndefinedException();
 			}
 			return new Pattern(left.Head.Concatenate(new StringLiteral(right)));
 		}
@@ -253,6 +276,8 @@ namespace Stringier.Patterns {
 		public static Pattern operator &(String left, Pattern right) {
 			if (left is null || right is null) {
 				throw new ArgumentNullException(left is null ? nameof(left) : nameof(right));
+			} else if (right.Head is null) {
+				throw new PatternUndefinedException();
 			}
 			return new Pattern(new StringLiteral(left).Concatenate(right.Head));
 		}
@@ -266,7 +291,14 @@ namespace Stringier.Patterns {
 		/// </summary>
 		/// <param name="pattern">The <see cref="Pattern"/> to negate.</param>
 		/// <returns>A new <see cref="Pattern"/> which has been negated.</returns>
-		public static Pattern operator !(Pattern pattern) => new Pattern(pattern.Head.Negate());
+		public static Pattern operator !(Pattern pattern) {
+			if (pattern is null) {
+				throw new ArgumentNullException(nameof(pattern));
+			} else if (pattern.Head is null) {
+				throw new PatternUndefinedException();
+			}
+			return new Pattern(pattern.Head.Negate());
+		}
 
 		#endregion
 
@@ -277,7 +309,14 @@ namespace Stringier.Patterns {
 		/// </summary>
 		/// <param name="pattern">The optional <see cref="Pattern"/>.</param>
 		/// <returns>A new <see cref="Pattern"/> which is optional.</returns>
-		public static Pattern operator -(Pattern pattern) => new Pattern(pattern.Head.Optional());
+		public static Pattern operator -(Pattern pattern) {
+			if (pattern is null) {
+				throw new ArgumentNullException(nameof(pattern));
+			} else if (pattern.Head is null) {
+				throw new PatternUndefinedException();
+			}
+			return new Pattern(pattern.Head.Optional());
+		}
 
 		#endregion
 
@@ -288,7 +327,14 @@ namespace Stringier.Patterns {
 		/// </summary>
 		/// <param name="from">Begining <see cref="Pattern"/>.</param>
 		/// <param name="to">Ending <see cref="Pattern"/>.</param>
-		public static Pattern Range(Pattern from, Pattern to) => new Pattern(new Ranger(from.Head, to.Head));
+		public static Pattern Range(Pattern from, Pattern to) {
+			if (from is null || to is null) {
+				throw new ArgumentNullException(from is null ? nameof(from) : nameof(to));
+			} else if (from.Head is null || to.Head is null) {
+				throw new PatternUndefinedException();
+			}
+			return new Pattern(new Ranger(from.Head, to.Head));
+		}
 
 		/// <summary>
 		/// Create a pattern representing the range <paramref name="from"/> until <paramref name="to"/>, allowing an <paramref name="escape"/>.
@@ -296,7 +342,18 @@ namespace Stringier.Patterns {
 		/// <param name="from">Begining <see cref="Pattern"/>.</param>
 		/// <param name="to">Ending <see cref="Pattern"/>.</param>
 		/// <param name="escape">Escape <see cref="Pattern"/>./</param>
-		public static Pattern Range(Pattern from, Pattern to, Pattern escape) => new Pattern(new EscapedRanger(from.Head, to.Head, escape.Head));
+		public static Pattern Range(Pattern from, Pattern to, Pattern escape) {
+			if (from is null) {
+				throw new ArgumentNullException(nameof(from));
+			} else if (to is null) {
+				throw new ArgumentNullException(nameof(to));
+			} else if (escape is null) {
+				throw new ArgumentNullException(nameof(escape));
+			} else if (from.Head is null || to.Head is null || escape.Head is null) {
+				throw new PatternUndefinedException();
+			}
+			return new Pattern(new EscapedRanger(from.Head, to.Head, escape.Head));
+		}
 
 		/// <summary>
 		/// Create a pattern representing the range <paramref name="from"/> until <paramref name="to"/>, that allows nesting of this pattern inside of itself.
@@ -306,7 +363,14 @@ namespace Stringier.Patterns {
 		/// </remarks>
 		/// <param name="from">Begining <see cref="Pattern"/>.</param>
 		/// <param name="to">Ending <see cref="Pattern"/>.</param>
-		public static Pattern NestedRange(Pattern from, Pattern to) => new Pattern(new NestedRanger(from.Head, to.Head));
+		public static Pattern NestedRange(Pattern from, Pattern to) {
+			if (from is null || to is null) {
+				throw new ArgumentNullException(from is null ? nameof(from) : nameof(to));
+			} else if (from.Head is null || to.Head is null) {
+				throw new PatternUndefinedException();
+			}
+			return new Pattern(new NestedRanger(from.Head, to.Head));
+		}
 
 		#endregion
 
@@ -318,7 +382,14 @@ namespace Stringier.Patterns {
 		/// <param name="pattern">The <see cref="Pattern"/> to repeat.</param>
 		/// <param name="count">The amount of times to repeat.</param>
 		/// <returns>A new <see cref="Pattern"/> repeated <paramref name="count"/> times.</returns>
-		public static Pattern operator *(Pattern pattern, Int32 count) => new Pattern(pattern.Head.Repeat(count));
+		public static Pattern operator *(Pattern pattern, Int32 count) {
+			if (pattern is null) {
+				throw new ArgumentNullException(nameof(pattern));
+			} else if (pattern.Head is null) {
+				throw new PatternUndefinedException();
+			}
+			return new Pattern(pattern.Head.Repeat(count));
+		}
 
 		#endregion
 
@@ -329,7 +400,14 @@ namespace Stringier.Patterns {
 		/// </summary>
 		/// <param name="pattern">The spanning <see cref="Pattern"/>.</param>
 		/// <returns>A new <see cref="Pattern"/> which spans.</returns>
-		public static Pattern operator +(Pattern pattern) => new Pattern(pattern.Head.Span());
+		public static Pattern operator +(Pattern pattern) {
+			if (pattern is null) {
+				throw new ArgumentNullException(nameof(pattern));
+			} else if (pattern.Head is null) {
+				throw new PatternUndefinedException();
+			}
+			return new Pattern(pattern.Head.Span());
+		}
 
 		#endregion
 	}

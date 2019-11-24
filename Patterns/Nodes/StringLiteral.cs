@@ -57,7 +57,7 @@ namespace Stringier.Patterns.Nodes {
 		/// </summary>
 		/// <param name="node">The <see cref="Node"/> to compare with the current <see cref="Node"/>.</param>
 		/// <returns><c>true</c> if the specified <see cref="Node"/> is equal to the current <see cref="Node"/>; otherwise, <c>false</c>.</returns>
-		public override Boolean Equals(Node node) {
+		public override Boolean Equals(Node? node) {
 			switch (node) {
 			case StringLiteral other:
 				return Equals(other);

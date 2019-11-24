@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using Stringier.Patterns.Nodes;
 
 namespace Stringier.Patterns {
@@ -9,7 +10,15 @@ namespace Stringier.Patterns {
 		/// <summary>
 		/// The <see cref="Node"/> at the head of this <see cref="Pattern"/>; the entry point of the graph.
 		/// </summary>
-		internal readonly Node Head;
+		internal Node? Head;
+
+		/// <summary>
+		/// Initialize a new <see cref="Pattern"/> object, but without a defined pattern.
+		/// </summary>
+		/// <remarks>
+		/// This is intended for target/jump purposes, and shouldn't be used otherwise. Just define the pattern immediately.
+		/// </remarks>
+		public Pattern() { }
 
 		/// <summary>
 		/// Initialize a new <see cref="Pattern"/> with the given head <see cref="Node"/>.
@@ -46,6 +55,9 @@ namespace Stringier.Patterns {
 		/// <param name="Source">The <see cref="Source"/> to consume</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/></returns>
 		public Result Consume(ref Source Source) {
+			if (Head is null) {
+				throw new PatternUndefinedException("Pattern has not been defined yet.");
+			}
 			Result Result = new Result(ref Source);
 			Int32 OriginalPosition = Source.Position;
 			Head.Consume(ref Source, ref Result);
@@ -55,43 +67,77 @@ namespace Stringier.Patterns {
 			return Result;
 		}
 
-		public static Boolean operator ==(Pattern left, Pattern right) => left.Equals(right);
+		public static Boolean operator ==(Pattern left, Pattern right) {
+			if (left is null && right is null) {
+				return true;
+			} else if (left is null || right is null) {
+				return false;
+			} else {
+				return left.Equals(right);
+			}
+		}
 
-		public static Boolean operator !=(Pattern Left, Pattern Right) => !Left.Equals(Right);
+		public static Boolean operator !=(Pattern left, Pattern right) {
+			if (left is null && right is null) {
+				return false;
+			} else if (left is null || right is null) {
+				return true;
+			} else {
+				return !left.Equals(right);
+			}
+		}
 
 		/// <summary>
 		/// Determines whether the specified object is equal to the current object.
 		/// </summary>
 		/// <param name="obj">The object to compare with the current <see cref="Pattern"/>.</param>
 		/// <returns><c>true</c> if the specified object is equal to the current object; otherwise, <c>false</c>.</returns>
-		public override Boolean Equals(Object? obj) => !(obj is null) && Head.Equals(obj);
+		public override Boolean Equals(Object? obj) {
+			switch (obj) {
+			case Pattern other:
+				return Equals(other);
+			case String other:
+				return Equals(other);
+			default:
+				return false;
+			}
+		}
 
 		/// <summary>
 		/// Determines whether this instance and a specified object have the same value.
 		/// </summary>
 		/// <param name="other">The <see cref="Pattern"/> to compare with the current <see cref="Pattern"/>.</param>
 		/// <returns><c>true</c> if the specified <see cref="Pattern"/> is equal to the current <see cref="Pattern"/>; otherwise, <c>false</c>.</returns>
-		public Boolean Equals(Pattern other) => !(other is null) && Head.Equals(other.Head);
+		public Boolean Equals(Pattern other) => Head?.Equals(other?.Head) ?? false;
 
 		/// <summary>
 		/// Determines whether the specified <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> can be represented by this <see cref="Pattern"/>.
 		/// </summary>
 		/// <param name="other">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to check against this <see cref="Pattern"/>.</param>
 		/// <returns><c>true</c> if representable; otherwise, <c>false</c>.</returns>
-		public Boolean Equals(ReadOnlySpan<Char> other) => Head.Equals(other);
+		public Boolean Equals(ReadOnlySpan<Char> other) => Head?.Equals(other) ?? false;
 
 		/// <summary>
 		/// Determines whether the specified <see cref="String"/> can be represented by this <see cref="Pattern"/>.
 		/// </summary>
 		/// <param name="other">The <see cref="String"/> to check against this <see cref="Pattern"/>.</param>
 		/// <returns><c>true</c> if representable; otherwise, <c>false</c>.</returns>
-		public Boolean Equals(String other) => !(other is null) && Head.Equals(other);
+		public Boolean Equals(String other) {
+			if (Head is null && other is null) {
+				return true;
+			} else if (Head is null || other is null) {
+				return false;
+			} else {
+				return Head.Equals(other);
+			}
+		}
 
 		/// <summary>
 		/// Returns the hash code for this <see cref="Pattern"/>.
 		/// </summary>
 		/// <returns>A 32-bit signed integer hash code.</returns>
-		public override Int32 GetHashCode() => Head.GetHashCode();
+		[SuppressMessage("Major Bug", "S3249:Classes directly extending \"object\" should not call \"base\" in \"GetHashCode\" or \"Equals\"", Justification = "This is actually the behavior we want. I don't know why you'd ever put Patterns in a collection, but this is the best way to appropriately deal with that without hampering performance in what this is intended for.")]
+		public override Int32 GetHashCode() => base.GetHashCode();
 
 		/// <summary>
 		/// Returns a <see cref="String"/> that represents the current <see cref="Pattern"/>.

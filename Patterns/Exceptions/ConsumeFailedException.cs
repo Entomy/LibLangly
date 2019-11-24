@@ -6,13 +6,13 @@ namespace Stringier.Patterns {
 	/// Thrown when a Consume failed to match
 	/// </summary>
 	[Serializable]
-	public class ConsumeFailedException : ParserException {
+	public sealed class ConsumeFailedException : ParserException {
 		public ConsumeFailedException() { }
 
 		public ConsumeFailedException(String message) : base(message) { }
 
 		public ConsumeFailedException(String message, Exception inner) : base(message, inner) { }
 
-		protected ConsumeFailedException(SerializationInfo info, StreamingContext context) : base(info, context) { }
+		private ConsumeFailedException(SerializationInfo info, StreamingContext context) : base(info, context) { }
 	}
 }
