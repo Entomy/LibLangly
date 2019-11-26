@@ -9,8 +9,8 @@ type RealWorldTests() =
     
     [<TestMethod>]
     member _.``backtracking`` () =
-        let end1 = "end" >> span ' ' >> "first"
-        let end2 = "end" >> span ' ' >> "second"
+        let end1 = "end" >> many ' ' >> "first"
+        let end2 = "end" >> many ' ' >> "second"
         let mutable source = Source("end second")
         //f backtracking doesn't occur, parsing end2 will fail, because "end" and the space will have been consumed
         ResultAssert.Fails(end1.Consume(&source))
@@ -61,7 +61,7 @@ type RealWorldTests() =
         ResultAssert.Captures("Name", result)
 
         let mutable capture = ref null
-        let statement = "statement" >> span Pattern.Separator >> (identifier => capture)
+        let statement = "statement" >> many Pattern.Separator >> (identifier => capture)
         result <- statement.Consume("statement Name")
         ResultAssert.Captures("statement Name", result)
         CaptureAssert.Captures("Name", capture)
@@ -79,10 +79,10 @@ type RealWorldTests() =
 
     [<TestMethod>]
     member _.``web address`` () =
-        let protocol = "http" >> option 's' >> "://"
-        let host = span(Pattern.Letter || Pattern.Number || '-') >> '.' >> (Pattern.Letter * 3 >> Pattern.EndOfSource || span(Pattern.Letter || Pattern.Number || '-') >> '.' >> Pattern.Letter * 3)
-        let location = span('/' >> span(Pattern.Letter || Pattern.Number || '-' || '_'))
-        let address = option protocol >> host >> option location
+        let protocol = "http" >> maybe 's' >> "://"
+        let host = many(Pattern.Letter || Pattern.Number || '-') >> '.' >> (Pattern.Letter * 3 >> Pattern.EndOfSource || many(Pattern.Letter || Pattern.Number || '-') >> '.' >> Pattern.Letter * 3)
+        let location = many('/' >> many(Pattern.Letter || Pattern.Number || '-' || '_'))
+        let address = maybe protocol >> host >> maybe location
 
         ResultAssert.Captures("http://", protocol.Consume("http://"))
         ResultAssert.Captures("https://", protocol.Consume("https://"))

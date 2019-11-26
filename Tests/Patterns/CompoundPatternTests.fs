@@ -14,7 +14,7 @@ type CompoundPatternTests() =
 
     [<TestMethod>]
     member _.``alternate spanner`` () =
-        let pattern = span (Pattern.SpaceSeparator || "\t")
+        let pattern = many (Pattern.SpaceSeparator || "\t")
         ResultAssert.Captures("  \t ", pattern.Consume("  \t "))
 
     [<TestMethod>]
@@ -25,4 +25,4 @@ type CompoundPatternTests() =
 
     [<TestMethod>]
     member _.``spaning optor`` () =
-        Assert.ThrowsException<PatternConstructionException>(fun () -> span(option ' ') |> ignore) |> ignore
+        Assert.ThrowsException<PatternConstructionException>(fun () -> many(maybe ' ') |> ignore) |> ignore

@@ -1,4 +1,5 @@
 ﻿using System;
+using Stringier.Patterns.Nodes;
 
 namespace Stringier.Patterns {
 	/// <summary>
@@ -22,6 +23,12 @@ namespace Stringier.Patterns {
 		public Capture() => Value = "";
 
 		/// <summary>
+		/// Get this <see cref="Capture"/> as a <see cref="Pattern"/>.
+		/// </summary>
+		/// <returns>A <see cref="Pattern"/> representing literally this <see cref="Capture"/>.</returns>
+		public Pattern AsPattern() => new Pattern(new CaptureLiteral(this));
+
+		/// <summary>
 		/// Determines whether this <see cref="Capture"/> and a specified <see cref="String"/> object have the same value. Comparison is ordinal.
 		/// </summary>
 		/// <param name="other">The <see cref="String"/> to compare to this instance.</param>
@@ -37,9 +44,113 @@ namespace Stringier.Patterns {
 		public Boolean Equals(String other, StringComparison comparisonType) => !(other is null) && Value.Equals(other, comparisonType);
 
 		/// <summary>
+		/// Declares <paramref name="other"/> to be an alternate of this <see cref="Capture"/>.
+		/// </summary>
+		/// <param name="other">The <see cref="Pattern"/> to check if this <see cref="Capture"/> does not match</param>
+		/// <returns>A new <see cref="Pattern"/> alternating this <see cref="Capture"/> and <paramref name="other"/></returns>
+		public Pattern Or(Pattern other) {
+			if (other is null) {
+				throw new ArgumentNullException(nameof(other));
+			} else if (other.Head is null) {
+				throw new PatternUndefinedException();
+			}
+			return new Pattern(new CaptureLiteral(this).Alternate(other.Head));
+		}
+
+		/// <summary>
+		/// Declares <paramref name="other"/> to be an alternate of this <see cref="Capture"/>.
+		/// </summary>
+		/// <param name="other">The <see cref="String"/> to check if this <see cref="Capture"/> does not match</param>
+		/// <returns>A new <see cref="Pattern"/> alternating this <see cref="Capture"/> and <paramref name="other"/></returns>
+		public Pattern Or(String other) {
+			if (other is null) {
+				throw new ArgumentNullException(nameof(other));
+			}
+			return new Pattern(new CaptureLiteral(this).Alternate(other));
+		}
+
+		/// <summary>
+		/// Declares <paramref name="other"/> to be an alternate of this <see cref="Capture"/>.
+		/// </summary>
+		/// <param name="other">The <see cref="Char"/> to check if this <see cref="Capture"/> does not match</param>
+		/// <returns>A new <see cref="Pattern"/> alternating this <see cref="Capture"/> and <paramref name="other"/></returns>
+		public Pattern Or(Char other) => new Pattern(new CaptureLiteral(this).Alternate(other));
+
+		/// <summary>
+		/// Declares <paramref name="other"/> to be an alternate of this <see cref="Capture"/>.
+		/// </summary>
+		/// <param name="other">The <see cref="Capture"/> to check if this <see cref="Capture"/> does not match</param>
+		/// <returns>A new <see cref="Pattern"/> alternating this <see cref="Capture"/> and <paramref name="other"/></returns>
+		public Pattern Or(Capture other) {
+			if (other is null) {
+				throw new ArgumentNullException(nameof(other));
+			}
+			return new Pattern(new CaptureLiteral(this).Alternate(new CaptureLiteral(other)));
+		}
+
+		/// <summary>
+		/// Marks this <see cref="Capture"/> as repeating <paramref name="count"/> times.
+		/// </summary>
+		/// <param name="count">The amount of times to repeat.</param>
+		/// <returns>A new <see cref="Pattern"/> repeated <paramref name="count"/> times.</returns>
+		public Pattern Repeat(Int32 count) => new Pattern(new CaptureLiteral(this).Repeat(count));
+
+		/// <summary>
+		/// Concatenates the patterns so that this <see cref="Pattern"/> comes before <paramref name="other"/>
+		/// </summary>
+		/// <param name="other">The succeeding <see cref="Pattern"/></param>
+		/// <returns>A new <see cref="Pattern"/> concatenating this <see cref="Pattern"/> and <paramref name="other"/></returns>
+		public Pattern Then(Pattern other) {
+			if (other is null) {
+				throw new ArgumentNullException(nameof(other));
+			} else if (other.Head is null) {
+				throw new PatternUndefinedException();
+			}
+			return new Pattern(new CaptureLiteral(this).Concatenate(other.Head));
+		}
+
+		/// <summary>
+		/// Concatenates the patterns so that this <see cref="Pattern"/> comes before <paramref name="other"/>
+		/// </summary>
+		/// <param name="other">The succeeding <see cref="String"/></param>
+		/// <returns>A new <see cref="Pattern"/> concatenating this <see cref="Pattern"/> and <paramref name="other"/></returns>
+		public Pattern Then(String other) {
+			if (other is null) {
+				throw new ArgumentNullException(nameof(other));
+			}
+			return new Pattern(new CaptureLiteral(this).Concatenate(other));
+		}
+
+		/// <summary>
+		/// Concatenates the patterns so that this <see cref="Pattern"/> comes before <paramref name="other"/>
+		/// </summary>
+		/// <param name="other">The succeeding <see cref="Char"/></param>
+		/// <returns>A new <see cref="Pattern"/> concatenating this <see cref="Pattern"/> and <paramref name="other"/></returns>
+		public Pattern Then(Char other) => new Pattern(new CaptureLiteral(this).Concatenate(other));
+
+		/// <summary>
+		/// Concatenates the patterns so that this <see cref="Pattern"/> comes before <paramref name="other"/>
+		/// </summary>
+		/// <param name="other">The succeeding <see cref="Pattern"/></param>
+		/// <returns>A new <see cref="Pattern"/> concatenating this <see cref="Pattern"/> and <paramref name="other"/></returns>
+		public Pattern Then(Capture other) {
+			if (other is null) {
+				throw new ArgumentNullException(nameof(other));
+			}
+			return new Pattern(new CaptureLiteral(this).Concatenate(new CaptureLiteral(other)));
+		}
+
+		/// <summary>
 		/// Converts the value of this instance to a <see cref="String"/>.
 		/// </summary>
 		/// <returns>Returns the captured <see cref="String"/></returns>
 		public override String ToString() => $"{Value}";
+
+		/// <summary>
+		/// Compare this <see cref="Capture"/> with the given <paramref name="comparisonType"/>.
+		/// </summary>
+		/// <param name="comparisonType">Whether the comparison is sensitive to casing.</param>
+		/// <returns>A new <see cref="Pattern"/> representing the <paramref name="capture"/> compared with <paramref name="comparisonType"/>.</returns>
+		public Pattern With(Compare comparisonType) => new Pattern(new CaptureLiteral(this, comparisonType));
 	}
 }

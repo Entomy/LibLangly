@@ -19,7 +19,7 @@ namespace Stringier.Patterns.Nodes {
 		/// Initialize a new <see cref="CharLiteral"/> with the given <paramref name="char"/>.
 		/// </summary>
 		/// <param name="char">The <see cref="System.Char"/> to parse.</param>
-		internal CharLiteral(Char @char) : base(Compare.CaseSensitive) => Char = @char;
+		internal CharLiteral(Char @char) : base(Compare.NoPreference) => Char = @char;
 
 		/// <summary>
 		/// Initialize a new <see cref="CharLiteral"/> with the given <paramref name="char"/>.
@@ -110,13 +110,13 @@ namespace Stringier.Patterns.Nodes {
 			switch (right) {
 			case StringLiteral @string:
 				if (ComparisonType.Equals(@string.ComparisonType)) {
-					return new StringLiteral(Char + @string.String);
+					return new StringLiteral(Char + @string.String, ComparisonType);
 				} else {
 					goto default;
 				}
 			case CharLiteral @char:
 				if (ComparisonType.Equals(@char.ComparisonType)) {
-					return new StringLiteral(Char.ToString() + @char.Char.ToString());
+					return new StringLiteral(Char.ToString() + @char.Char.ToString(), ComparisonType);
 				} else {
 					goto default;
 				}
@@ -126,18 +126,35 @@ namespace Stringier.Patterns.Nodes {
 		}
 
 		/// <summary>
-		/// Concatenates the nodes so that this <see cref="Node"/> comes before the <paramref name="right"/> <see cref="String"/>.
-		/// </summary>
-		/// <param name="right">The succeeding <see cref="String"/>.</param>
-		/// <returns>A new <see cref="Node"/> concatenating this <see cref="Node"/> and <paramref name="right"/>.</returns
-		internal override Node Concatenate(String right) => new StringLiteral(Char + right);
-
-		/// <summary>
 		/// Concatenates the nodes so that this <see cref="Node"/> comes before the <paramref name="right"/> <see cref="Char"/>.
 		/// </summary>
 		/// <param name="right">The succeeding <see cref="Char"/>.</param>
 		/// <returns>A new <see cref="Node"/> concatenating this <see cref="Node"/> and <paramref name="right"/>.</returns>
-		internal override Node Concatenate(Char right) => new StringLiteral(Char.ToString() + right);
+		internal override Node Concatenate(Char right) {
+			switch (ComparisonType) {
+			case Compare.NoPreference:
+				return new StringLiteral(Char.ToString() + right.ToString());
+			default:
+				return new Concatenator(this, new CharLiteral(right));
+			}
+		}
+
+		/// <summary>
+		/// Concatenates the nodes so that this <see cref="Node"/> comes before the <paramref name="right"/> <see cref="String"/>.
+		/// </summary>
+		/// <param name="right">The succeeding <see cref="String"/>.</param>
+		/// <returns>A new <see cref="Node"/> concatenating this <see cref="Node"/> and <paramref name="right"/>.</returns
+		internal override Node Concatenate(String right) {
+			if (right is null) {
+				throw new ArgumentNullException(nameof(right));
+			}
+			switch (ComparisonType) {
+			case Compare.NoPreference:
+				return new StringLiteral(Char + right);
+			default:
+				return new Concatenator(this, new StringLiteral(right));
+			}
+		}
 
 		#endregion
 
@@ -148,7 +165,7 @@ namespace Stringier.Patterns.Nodes {
 		/// </summary>
 		/// <param name="count">The amount of times to repeat.</param>
 		/// <returns>A new <see cref="Node"/> repeated <paramref name="count"/> times.</returns>
-		internal override Node Repeat(Int32 count) => new StringLiteral(Char.Repeat(count));
+		internal override Node Repeat(Int32 count) => new StringLiteral(StringierExtensions.Repeat(Char, count), ComparisonType);
 
 		#endregion
 	}

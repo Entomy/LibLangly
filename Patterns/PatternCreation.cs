@@ -19,6 +19,60 @@ namespace Stringier.Patterns {
 		#region Alternator
 
 		/// <summary>
+		/// Declares <paramref name="other"/> to be an alternate of this <see cref="Pattern"/>.
+		/// </summary>
+		/// <param name="other">The <see cref="Pattern"/> to check if this <see cref="Pattern"/> does not match</param>
+		/// <returns>A new <see cref="Pattern"/> alternating this <see cref="Pattern"/> and <paramref name="other"/></returns>
+		public Pattern Or(Pattern other) {
+			if (other is null) {
+				throw new ArgumentNullException(nameof(other));
+			} else if (Head is null || other.Head is null) {
+				throw new PatternUndefinedException();
+			}
+			return new Pattern(Head.Alternate(other.Head));
+		}
+
+		/// <summary>
+		/// Declares <paramref name="other"/> to be an alternate of this <see cref="Pattern"/>.
+		/// </summary>
+		/// <param name="other">The <see cref="String"/> to check if this <see cref="Pattern"/> does not match</param>
+		/// <returns>A new <see cref="Pattern"/> alternating this <see cref="Pattern"/> and <paramref name="other"/></returns>
+		public Pattern Or(String other) {
+			if (other is null) {
+				throw new ArgumentNullException(nameof(other));
+			} else if (Head is null) {
+				throw new PatternUndefinedException();
+			}
+			return new Pattern(Head.Alternate(other));
+		}
+
+		/// <summary>
+		/// Declares <paramref name="other"/> to be an alternate of this <see cref="Pattern"/>.
+		/// </summary>
+		/// <param name="other">The <see cref="Char"/> to check if this <see cref="Pattern"/> does not match</param>
+		/// <returns>A new <see cref="Pattern"/> alternating this <see cref="Pattern"/> and <paramref name="other"/></returns>
+		public Pattern Or(Char other) {
+			if (Head is null) {
+				throw new PatternUndefinedException();
+			}
+			return new Pattern(Head.Alternate(other));
+		}
+
+		/// <summary>
+		/// Declares <paramref name="other"/> to be an alternate of this <see cref="Pattern"/>.
+		/// </summary>
+		/// <param name="other">The <see cref="Capture"/> to check if this <see cref="Pattern"/> does not match</param>
+		/// <returns>A new <see cref="Pattern"/> alternating this <see cref="Pattern"/> and <paramref name="other"/></returns>
+		public Pattern Or(Capture other) {
+			if (other is null) {
+				throw new ArgumentNullException(nameof(other));
+			} else if (Head is null) {
+				throw new PatternUndefinedException();
+			}
+			return new Pattern(Head.Alternate(new CaptureLiteral(other)));
+		}
+
+		/// <summary>
 		/// Declares <paramref name="right"/> to be an alternate of <paramref name="left"/>
 		/// </summary>
 		/// <param name="left">The <see cref="Pattern"/> to check first</param>
@@ -27,10 +81,8 @@ namespace Stringier.Patterns {
 		public static Pattern operator |(Pattern left, Pattern right) {
 			if (left is null || right is null) {
 				throw new ArgumentNullException(left is null ? nameof(left) : nameof(right));
-			} else if (left.Head is null || right.Head is null) {
-				throw new PatternUndefinedException();
 			}
-			return new Pattern(left.Head.Alternate(right.Head));
+			return left.Or(right);
 		}
 
 		/// <summary>
@@ -42,10 +94,8 @@ namespace Stringier.Patterns {
 		public static Pattern operator |(Pattern left, Char right) {
 			if (left is null) {
 				throw new ArgumentNullException(nameof(left));
-			} else if (left.Head is null) {
-				throw new PatternUndefinedException();
 			}
-			return new Pattern(left.Head.Alternate(new CharLiteral(right)));
+			return left.Or(right);
 		}
 
 		/// <summary>
@@ -57,10 +107,8 @@ namespace Stringier.Patterns {
 		public static Pattern operator |(Char left, Pattern right) {
 			if (right is null) {
 				throw new ArgumentNullException(nameof(right));
-			} else if (right.Head is null) {
-				throw new PatternUndefinedException();
 			}
-			return new Pattern(new CharLiteral(left).Alternate(right.Head));
+			return left.Or(right);
 		}
 
 		/// <summary>
@@ -72,10 +120,8 @@ namespace Stringier.Patterns {
 		public static Pattern operator |(Pattern left, String right) {
 			if (left is null || right is null) {
 				throw new ArgumentNullException(left is null ? nameof(left) : nameof(right));
-			} else if (left.Head is null) {
-				throw new PatternUndefinedException();
 			}
-			return new Pattern(left.Head.Alternate(new StringLiteral(right)));
+			return left.Or(right);
 		}
 
 		/// <summary>
@@ -87,11 +133,36 @@ namespace Stringier.Patterns {
 		public static Pattern operator |(String left, Pattern right) {
 			if (left is null || right is null) {
 				throw new ArgumentNullException(left is null ? nameof(left) : nameof(right));
-			} else if (right.Head is null) {
-				throw new PatternUndefinedException();
 			}
-			return new Pattern(new StringLiteral(left).Alternate(right.Head));
+			return left.Or(right);
 		}
+
+		/// <summary>
+		/// Declares <paramref name="right"/> to be an alternate of <paramref name="left"/>
+		/// </summary>
+		/// <param name="left">The <see cref="Pattern"/> to check first</param>
+		/// <param name="right">The <see cref="Patterns.Capture"/> to check if <paramref name="left"/> does not match</param>
+		/// <returns>A new <see cref="Pattern"/> alternating <paramref name="left"/> and <paramref name="right"/></returns>
+		public static Pattern operator |(Pattern left, Capture right) {
+			if (left is null || right is null) {
+				throw new ArgumentNullException(left is null ? nameof(left) : nameof(right));
+			}
+			return left.Or(right);
+		}
+
+		/// <summary>
+		/// Declares <paramref name="right"/> to be an alternate of <paramref name="left"/>
+		/// </summary>
+		/// <param name="left">The <see cref="Patterns.Capture"/> to check first</param>
+		/// <param name="right">The <see cref="Pattern"/> to check if <paramref name="left"/> does not match</param>
+		/// <returns>A new <see cref="Pattern"/> alternating <paramref name="left"/> and <paramref name="right"/></returns>
+		public static Pattern operator |(Capture left, Pattern right) {
+			if (left is null || right is null) {
+				throw new ArgumentNullException(left is null ? nameof(left) : nameof(right));
+			}
+			return left.Or(right);
+		}
+
 
 		#endregion
 
@@ -208,6 +279,60 @@ namespace Stringier.Patterns {
 		#region Concatenator
 
 		/// <summary>
+		/// Concatenates the patterns so that this <see cref="Pattern"/> comes before <paramref name="other"/>
+		/// </summary>
+		/// <param name="other">The succeeding <see cref="Pattern"/></param>
+		/// <returns>A new <see cref="Pattern"/> concatenating this <see cref="Pattern"/> and <paramref name="other"/></returns>
+		public Pattern Then(Pattern other) {
+			if (other is null) {
+				throw new ArgumentNullException(nameof(other));
+			} else if (Head is null || other.Head is null) {
+				throw new PatternUndefinedException();
+			}
+			return new Pattern(Head.Concatenate(other.Head));
+		}
+
+		/// <summary>
+		/// Concatenates the patterns so that this <see cref="Pattern"/> comes before <paramref name="other"/>
+		/// </summary>
+		/// <param name="other">The succeeding <see cref="String"/></param>
+		/// <returns>A new <see cref="Pattern"/> concatenating this <see cref="Pattern"/> and <paramref name="other"/></returns>
+		public Pattern Then(String other) {
+			if (other is null) {
+				throw new ArgumentNullException(nameof(other));
+			} else if (Head is null) {
+				throw new PatternUndefinedException();
+			}
+			return new Pattern(Head.Concatenate(other));
+		}
+
+		/// <summary>
+		/// Concatenates the patterns so that this <see cref="Pattern"/> comes before <paramref name="other"/>
+		/// </summary>
+		/// <param name="other">The succeeding <see cref="Char"/></param>
+		/// <returns>A new <see cref="Pattern"/> concatenating this <see cref="Pattern"/> and <paramref name="other"/></returns>
+		public Pattern Then(Char other) {
+			if (Head is null) {
+				throw new PatternUndefinedException();
+			}
+			return new Pattern(Head.Concatenate(other));
+		}
+
+		/// <summary>
+		/// Concatenates the patterns so that this <see cref="Pattern"/> comes before <paramref name="other"/>
+		/// </summary>
+		/// <param name="other">The succeeding <see cref="Pattern"/></param>
+		/// <returns>A new <see cref="Pattern"/> concatenating this <see cref="Pattern"/> and <paramref name="other"/></returns>
+		public Pattern Then(Capture other) {
+			if (other is null) {
+				throw new ArgumentNullException(nameof(other));
+			} else if (Head is null) {
+				throw new PatternUndefinedException();
+			}
+			return new Pattern(Head.Concatenate(new CaptureLiteral(other)));
+		}
+
+		/// <summary>
 		/// Concatenates the patterns so that <paramref name="left"/> comes before <paramref name="right"/>
 		/// </summary>
 		/// <param name="left">The preceeding <see cref="Pattern"/></param>
@@ -216,10 +341,8 @@ namespace Stringier.Patterns {
 		public static Pattern operator &(Pattern left, Pattern right) {
 			if (left is null || right is null) {
 				throw new ArgumentNullException(left is null ? nameof(left) : nameof(right));
-			} else if (left.Head is null || right.Head is null) {
-				throw new PatternUndefinedException();
 			}
-			return new Pattern(left.Head.Concatenate(right.Head));
+			return left.Then(right);
 		}
 
 		/// <summary>
@@ -231,10 +354,8 @@ namespace Stringier.Patterns {
 		public static Pattern operator &(Pattern left, Char right) {
 			if (left is null) {
 				throw new ArgumentNullException(nameof(left));
-			} else if (left.Head is null) {
-				throw new PatternUndefinedException();
 			}
-			return new Pattern(left.Head.Concatenate(new CharLiteral(right)));
+			return left.Then(right);
 		}
 
 		/// <summary>
@@ -246,10 +367,8 @@ namespace Stringier.Patterns {
 		public static Pattern operator &(Char left, Pattern right) {
 			if (right is null) {
 				throw new ArgumentNullException(nameof(right));
-			} else if (right.Head is null) {
-				throw new PatternUndefinedException();
 			}
-			return new Pattern(new CharLiteral(left).Concatenate(right.Head));
+			return left.Then(right);
 		}
 
 		/// <summary>
@@ -261,10 +380,8 @@ namespace Stringier.Patterns {
 		public static Pattern operator &(Pattern left, String right) {
 			if (left is null || right is null) {
 				throw new ArgumentNullException(left is null ? nameof(left) : nameof(right));
-			} else if (left.Head is null) {
-				throw new PatternUndefinedException();
 			}
-			return new Pattern(left.Head.Concatenate(new StringLiteral(right)));
+			return left.Then(right);
 		}
 
 		/// <summary>
@@ -276,10 +393,34 @@ namespace Stringier.Patterns {
 		public static Pattern operator &(String left, Pattern right) {
 			if (left is null || right is null) {
 				throw new ArgumentNullException(left is null ? nameof(left) : nameof(right));
-			} else if (right.Head is null) {
-				throw new PatternUndefinedException();
 			}
-			return new Pattern(new StringLiteral(left).Concatenate(right.Head));
+			return left.Then(right);
+		}
+
+		/// <summary>
+		/// Concatenates the patterns so that <paramref name="left"/> comes before <paramref name="right"/>
+		/// </summary>
+		/// <param name="left">The preceeding <see cref="Pattern"/></param>
+		/// <param name="right">The succeeding <see cref="Capture"/></param>
+		/// <returns>A new <see cref="Pattern"/> concatenating <paramref name="left"/> and <paramref name="right"/></returns>
+		public static Pattern operator &(Pattern left, Capture right) {
+			if (left is null || right is null) {
+				throw new ArgumentNullException(left is null ? nameof(left) : nameof(right));
+			}
+			return left.Then(right);
+		}
+
+		/// <summary>
+		/// Concatenates the patterns so that <paramref name="left"/> comes before <paramref name="right"/>
+		/// </summary>
+		/// <param name="left">The preceeding <see cref="Capture"/></param>
+		/// <param name="right">The succeeding <see cref="Pattern"/></param>
+		/// <returns>A new <see cref="Pattern"/> concatenating <paramref name="left"/> and <paramref name="right"/></returns>
+		public static Pattern operator &(Capture left, Pattern right) {
+			if (left is null || right is null) {
+				throw new ArgumentNullException(left is null ? nameof(left) : nameof(right));
+			}
+			return left.Then(right);
 		}
 
 		#endregion
@@ -291,7 +432,7 @@ namespace Stringier.Patterns {
 		/// </summary>
 		/// <param name="pattern">The <see cref="Pattern"/> to negate.</param>
 		/// <returns>A new <see cref="Pattern"/> which has been negated.</returns>
-		public static Pattern operator !(Pattern pattern) {
+		public static Pattern Not(Pattern pattern) {
 			if (pattern is null) {
 				throw new ArgumentNullException(nameof(pattern));
 			} else if (pattern.Head is null) {
@@ -300,9 +441,97 @@ namespace Stringier.Patterns {
 			return new Pattern(pattern.Head.Negate());
 		}
 
+		/// <summary>
+		/// Marks the <paramref name="pattern"/> as negated.
+		/// </summary>
+		/// <param name="pattern">The <see cref="Pattern"/> to negate.</param>
+		/// <returns>A new <see cref="Pattern"/> which has been negated.</returns>
+		public static Pattern Not(String pattern) {
+			if (pattern is null) {
+				throw new ArgumentNullException(nameof(pattern));
+			}
+			return new Pattern(new StringLiteral(pattern).Negate());
+		}
+
+		/// <summary>
+		/// Marks the <paramref name="pattern"/> as negated.
+		/// </summary>
+		/// <param name="pattern">The <see cref="Pattern"/> to negate.</param>
+		/// <returns>A new <see cref="Pattern"/> which has been negated.</returns>
+		public static Pattern Not(Char pattern) => new Pattern(new CharLiteral(pattern).Negate());
+
+		/// <summary>
+		/// Marks the <paramref name="pattern"/> as negated.
+		/// </summary>
+		/// <param name="pattern">The <see cref="Pattern"/> to negate.</param>
+		/// <returns>A new <see cref="Pattern"/> which has been negated.</returns>
+		public static Pattern Not(Capture pattern) {
+			if (pattern is null) {
+				throw new ArgumentNullException(nameof(pattern));
+			}
+			return new Pattern(new CaptureLiteral(pattern));
+		}
+
+		/// <summary>
+		/// Marks the <paramref name="pattern"/> as negated.
+		/// </summary>
+		/// <param name="pattern">The <see cref="Pattern"/> to negate.</param>
+		/// <returns>A new <see cref="Pattern"/> which has been negated.</returns>
+		public static Pattern operator !(Pattern pattern) {
+			if (pattern is null) {
+				throw new ArgumentNullException(nameof(pattern));
+			}
+			return Not(pattern);
+		}
+
 		#endregion
 
 		#region Optor
+
+		/// <summary>
+		/// Marks the <paramref name="pattern"/> as optional.
+		/// </summary>
+		/// <param name="pattern">The optional <see cref="Pattern"/>.</param>
+		/// <returns>A new <see cref="Pattern"/> which is optional.</returns>
+		public static Pattern Maybe(Pattern pattern) {
+			if (pattern is null) {
+				throw new ArgumentNullException(nameof(pattern));
+			} else if (pattern.Head is null) {
+				throw new PatternUndefinedException();
+			}
+			return new Pattern(pattern.Head.Optional());
+		}
+
+		/// <summary>
+		/// Marks the <paramref name="pattern"/> as optional.
+		/// </summary>
+		/// <param name="pattern">The optional <see cref="Pattern"/>.</param>
+		/// <returns>A new <see cref="Pattern"/> which is optional.</returns>
+		public static Pattern Maybe(String pattern) {
+			if (pattern is null) {
+				throw new ArgumentNullException(nameof(pattern));
+			}
+			return new Pattern(new StringLiteral(pattern).Optional());
+		}
+
+		/// <summary>
+		/// Marks the <paramref name="pattern"/> as optional.
+		/// </summary>
+		/// <param name="pattern">The optional <see cref="Pattern"/>.</param>
+		/// <returns>A new <see cref="Pattern"/> which is optional.</returns>
+		public static Pattern Maybe(Char pattern) => new Pattern(new CharLiteral(pattern).Optional());
+
+		/// <summary>
+		/// Marks the <paramref name="pattern"/> as optional.
+		/// </summary>
+		/// <param name="pattern">The optional <see cref="Pattern"/>.</param>
+		/// <returns>A new <see cref="Pattern"/> which is optional.</returns>
+		public static Pattern Maybe(Capture pattern) {
+			if (pattern is null) {
+				throw new ArgumentNullException(nameof(pattern));
+			}
+			return new Pattern(new CaptureLiteral(pattern).Optional());
+		}
 
 		/// <summary>
 		/// Marks the <paramref name="pattern"/> as optional.
@@ -315,7 +544,7 @@ namespace Stringier.Patterns {
 			} else if (pattern.Head is null) {
 				throw new PatternUndefinedException();
 			}
-			return new Pattern(pattern.Head.Optional());
+			return Maybe(pattern);
 		}
 
 		#endregion
@@ -377,6 +606,18 @@ namespace Stringier.Patterns {
 		#region Repeater
 
 		/// <summary>
+		/// Marks this <see cref="Pattern"/> as repeating <paramref name="count"/> times.
+		/// </summary>
+		/// <param name="count">The amount of times to repeat.</param>
+		/// <returns>A new <see cref="Pattern"/> repeated <paramref name="count"/> times.</returns>
+		public Pattern Repeat(Int32 count) {
+			if (Head is null) {
+				throw new PatternUndefinedException();
+			}
+			return new Pattern(Head.Repeat(count));
+		}
+
+		/// <summary>
 		/// Marks the <paramref name="Pattern"/> as repeating <paramref name="count"/> times
 		/// </summary>
 		/// <param name="pattern">The <see cref="Pattern"/> to repeat.</param>
@@ -388,12 +629,57 @@ namespace Stringier.Patterns {
 			} else if (pattern.Head is null) {
 				throw new PatternUndefinedException();
 			}
-			return new Pattern(pattern.Head.Repeat(count));
+			return pattern.Repeat(count);
 		}
 
 		#endregion
 
 		#region Spanner
+
+		/// <summary>
+		/// Marks the <paramref name="pattern"/> as spanning.
+		/// </summary>
+		/// <param name="pattern">The spanning <see cref="Pattern"/>.</param>
+		/// <returns>A new <see cref="Pattern"/> which is spanning.</returns>
+		public static Pattern Many(Pattern pattern) {
+			if (pattern is null) {
+				throw new ArgumentNullException(nameof(pattern));
+			} else if (pattern.Head is null) {
+				throw new PatternUndefinedException();
+			}
+			return new Pattern(pattern.Head.Span());
+		}
+
+		/// <summary>
+		/// Marks the <paramref name="pattern"/> as spanning.
+		/// </summary>
+		/// <param name="pattern">The spanning <see cref="String"/>.</param>
+		/// <returns>A new <see cref="Pattern"/> which is spanning.</returns>
+		public static Pattern Many(String pattern) {
+			if (pattern is null) {
+				throw new ArgumentNullException(nameof(pattern));
+			}
+			return new Pattern(new StringLiteral(pattern).Span());
+		}
+
+		/// <summary>
+		/// Marks the <paramref name="pattern"/> as spanning.
+		/// </summary>
+		/// <param name="pattern">The spanning <see cref="Char"/>.</param>
+		/// <returns>A new <see cref="Pattern"/> which is spanning.</returns>
+		public static Pattern Many(Char pattern) => new Pattern(new CharLiteral(pattern).Span());
+
+		/// <summary>
+		/// Marks the <paramref name="pattern"/> as spanning.
+		/// </summary>
+		/// <param name="pattern">The spanning <see cref="Capture"/>.</param>
+		/// <returns>A new <see cref="Pattern"/> which is spanning.</returns>
+		public static Pattern Many(Capture pattern) {
+			if (pattern is null) {
+				throw new ArgumentNullException(nameof(pattern));
+			}
+			return new Pattern(new CaptureLiteral(pattern).Span());
+		}
 
 		/// <summary>
 		/// Marks the <paramref name="Pattern"/> as spanning.
@@ -406,7 +692,7 @@ namespace Stringier.Patterns {
 			} else if (pattern.Head is null) {
 				throw new PatternUndefinedException();
 			}
-			return new Pattern(pattern.Head.Span());
+			return Many(pattern);
 		}
 
 		#endregion

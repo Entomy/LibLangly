@@ -1,15 +1,14 @@
 ﻿namespace Stringier.Patterns
 
 open System
-open Stringier.Patterns.Bindings
 
 [<AutoOpen>]
 module LiteralExtensions =
     
     type Binder =
-        static member Literal(value:string) = PatternBindings.Literal(value)
-        static member Literal(value:char) = PatternBindings.Literal(value)
-        static member Literal(value:Capture ref) = PatternBindings.Literal(!value)
+        static member Literal(value:string) = value.AsPattern()
+        static member Literal(value:char) = value.AsPattern()
+        static member Literal(value:Capture ref) = (!value).AsPattern()
         static member With(pattern:String, comparisonType:Compare) = pattern.With(comparisonType)
         static member With(pattern:Char, comparisonType:Compare) = pattern.With(comparisonType)
         static member With(pattern:Capture ref, comparisonType:Compare) = (!pattern).With(comparisonType)

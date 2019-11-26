@@ -1,29 +1,28 @@
 ﻿namespace Stringier.Patterns
 
 open System
-open Stringier.Patterns.Bindings
 
-#nowarn "86" // Shuts up about overloading ||. We are overloading it not overriding it, so it's fine.
+#nowarn "86" // Shuts up about using ||. We are overloading it not overriding it, so it's fine.
 
 [<AutoOpen>]
 module AlternatorExtensions =
 
     type Binding =
-        static member Alternate(left:Pattern, right:Pattern) = PatternBindings.Alternator(left, right)
-        static member Alternate(left:String, right:Pattern) = PatternBindings.Alternator(p left, right)
-        static member Alternate(left:Pattern, right:String) = PatternBindings.Alternator(left, p right)
-        static member Alternate(left:Char, right:Pattern) = PatternBindings.Alternator(p left, right)
-        static member Alternate(left:Pattern, right:Char) = PatternBindings.Alternator(left, p right)
-        static member Alternate(left:String, right:String) = PatternBindings.Alternator(p left, p right)
-        static member Alternate(left:String, right:Char) = PatternBindings.Alternator(p left, p right)
-        static member Alternate(left:Char, right:String) = PatternBindings.Alternator(p left, p right)
-        static member Alternate(left:Char, right:Char) = PatternBindings.Alternator(p left, p right)
-        static member Alternate(left:Pattern, right:Capture ref) = PatternBindings.Alternator(left, p right)
-        static member Alternate(left:Capture ref, right:Pattern) = PatternBindings.Alternator(p left, right)
-        static member Alternate(left:String, right:Capture ref) = PatternBindings.Alternator(p left, p right)
-        static member Alternate(left:Capture ref, right:String) = PatternBindings.Alternator(p left, p right)
-        static member Alternate(left:Char, right:Capture ref) = PatternBindings.Alternator(p left, p right)
-        static member Alternate(left:Capture ref, right:Char) = PatternBindings.Alternator(p left, p right)
+        static member Alternate(left:Pattern, right:Pattern) = left.Or(right)
+        static member Alternate(left:String, right:Pattern) = left.Or(right)
+        static member Alternate(left:Pattern, right:String) = left.Or(right)
+        static member Alternate(left:Char, right:Pattern) = left.Or(right)
+        static member Alternate(left:Pattern, right:Char) = left.Or(right)
+        static member Alternate(left:String, right:String) = left.Or(right)
+        static member Alternate(left:String, right:Char) = left.Or(right)
+        static member Alternate(left:Char, right:String) = left.Or(right)
+        static member Alternate(left:Char, right:Char) = left.Or(right)
+        static member Alternate(left:Pattern, right:Capture ref) = left.Or(!right)
+        static member Alternate(left:Capture ref, right:Pattern) = (!left).Or(right)
+        static member Alternate(left:String, right:Capture ref) = left.Or(!right)
+        static member Alternate(left:Capture ref, right:String) = (!left).Or(right)
+        static member Alternate(left:Char, right:Capture ref) = left.Or(!right)
+        static member Alternate(left:Capture ref, right:Char) = (!left).Or(right)
         // This makes the operator still do boolean or
         static member Alternate(left, right) = left || right
 

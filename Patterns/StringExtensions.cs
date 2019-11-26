@@ -5,22 +5,16 @@ using Stringier.Patterns.Nodes;
 namespace Stringier.Patterns {
 	public static class StringExtensions {
 		/// <summary>
-		/// Checks the first character in the <paramref name="source"/> against the first character of this <see cref="String"/>.
+		/// Get the <paramref name="string"/> as a <see cref="Pattern"/>.
 		/// </summary>
-		/// <remarks>
-		/// This is primarily used to check whether a pattern may exist at the current position.
-		/// </remarks>
-		/// <param name="source">The <see cref="Source"/> to check against</param>
-		/// <returns><c>Compare.CaseSensitive</c> if this <paramref name="pattern"/> may be present, <c>false</c> if definately not.</returns>
-		internal static Boolean CheckHeader(this String pattern, ref Source source) => pattern[0].CheckHeader(ref source);
-
-		/// <summary>
-		/// Compare this <paramref name="pattern"/> with the given <paramref name="comparisonType"/>.
-		/// </summary>
-		/// <param name="pattern">The <see cref="String"/> pattern.</param>
-		/// <param name="comparisonType">Whether the comparison is sensitive to casing.</param>
-		/// <returns>A new <see cref="Pattern"/> representing the <paramref name="pattern"/> compared with <paramref name="comparisonType"/>.</returns>
-		public static Pattern With(this String pattern, Compare comparisonType) => new Pattern(new StringLiteral(pattern, comparisonType));
+		/// <param name="string">The <see cref="String"/> literal.</param>
+		/// <returns>A <see cref="Pattern"/> representing literally the <paramref name="string"/>.</returns>
+		public static Pattern AsPattern(this String @string) {
+			if (@string is null) {
+				throw new ArgumentNullException(nameof(@string));
+			}
+			return new Pattern(new StringLiteral(@string));
+		}
 
 		/// <summary>
 		/// Attempt to consume the <paramref name="pattern"/> from the <paramref name="source"/>
@@ -84,6 +78,126 @@ namespace Stringier.Patterns {
 		}
 
 		/// <summary>
+		/// Declares <paramref name="other"/> to be an alternate of this <see cref="String"/>.
+		/// </summary>
+		/// <param name="other">The <see cref="Pattern"/> to check if this <see cref="String"/> does not match</param>
+		/// <returns>A new <see cref="Pattern"/> alternating this <see cref="String"/> and <paramref name="other"/></returns>
+		public static Pattern Or(this String @string, Pattern other) {
+			if (@string is null || other is null) {
+				throw new ArgumentNullException(@string is null ? nameof(@string) : nameof(other));
+			} else if (other.Head is null) {
+				throw new PatternUndefinedException();
+			}
+			return new Pattern(new StringLiteral(@string).Alternate(other.Head));
+		}
+
+		/// <summary>
+		/// Declares <paramref name="other"/> to be an alternate of this <see cref="String"/>.
+		/// </summary>
+		/// <param name="other">The <see cref="String"/> to check if this <see cref="String"/> does not match</param>
+		/// <returns>A new <see cref="Pattern"/> alternating this <see cref="String"/> and <paramref name="other"/></returns>
+		public static Pattern Or(this String @string, String other) {
+			if (@string is null || other is null) {
+				throw new ArgumentNullException(@string is null ? nameof(@string) : nameof(other));
+			}
+			return new Pattern(new StringLiteral(@string).Alternate(other));
+		}
+
+		/// <summary>
+		/// Declares <paramref name="other"/> to be an alternate of this <see cref="String"/>.
+		/// </summary>
+		/// <param name="other">The <see cref="Char"/> to check if this <see cref="String"/> does not match</param>
+		/// <returns>A new <see cref="Pattern"/> alternating this <see cref="String"/> and <paramref name="other"/></returns>
+		public static Pattern Or(this String @string, Char other) {
+			if (@string is null) {
+				throw new ArgumentNullException(nameof(@string));
+			}
+			return new Pattern(new StringLiteral(@string).Alternate(other));
+		}
+
+		/// <summary>
+		/// Declares <paramref name="other"/> to be an alternate of this <see cref="String"/>.
+		/// </summary>
+		/// <param name="other">The <see cref="Capture"/> to check if this <see cref="String"/> does not match</param>
+		/// <returns>A new <see cref="Pattern"/> alternating this <see cref="String"/> and <paramref name="other"/></returns>
+		public static Pattern Or(this String @string, Capture other) {
+			if (@string is null || other is null) {
+				throw new ArgumentNullException(@string is null ? nameof(@string) : nameof(other));
+			}
+			return new Pattern(new StringLiteral(@string).Alternate(new CaptureLiteral(other)));
+		}
+
+		/// <summary>
+		/// Marks this <see cref="String"/> as repeating <paramref name="count"/> times.
+		/// </summary>
+		/// <param name="count">The amount of times to repeat.</param>
+		/// <returns>A new <see cref="Pattern"/> repeated <paramref name="count"/> times.</returns>
+		public static Pattern Repeat(this String @string, Int32 count) => new Pattern(new StringLiteral(StringierExtensions.Repeat(@string, count)));
+
+		/// <summary>
+		/// Concatenates the patterns so that this <see cref="Pattern"/> comes before <paramref name="other"/>
+		/// </summary>
+		/// <param name="other">The succeeding <see cref="Pattern"/></param>
+		/// <returns>A new <see cref="Pattern"/> concatenating this <see cref="Pattern"/> and <paramref name="other"/></returns>
+		public static Pattern Then(this String @string, Pattern other) {
+			if (other is null) {
+				throw new ArgumentNullException(nameof(other));
+			} else if (other.Head is null) {
+				throw new PatternUndefinedException();
+			}
+			return new Pattern(new StringLiteral(@string).Concatenate(other.Head));
+		}
+
+		/// <summary>
+		/// Concatenates the patterns so that this <see cref="Pattern"/> comes before <paramref name="other"/>
+		/// </summary>
+		/// <param name="other">The succeeding <see cref="String"/></param>
+		/// <returns>A new <see cref="Pattern"/> concatenating this <see cref="Pattern"/> and <paramref name="other"/></returns>
+		public static Pattern Then(this String @string, String other) {
+			if (other is null) {
+				throw new ArgumentNullException(nameof(other));
+			}
+			return new Pattern(new StringLiteral(@string).Concatenate(other));
+		}
+
+		/// <summary>
+		/// Concatenates the patterns so that this <see cref="Pattern"/> comes before <paramref name="other"/>
+		/// </summary>
+		/// <param name="other">The succeeding <see cref="Char"/></param>
+		/// <returns>A new <see cref="Pattern"/> concatenating this <see cref="Pattern"/> and <paramref name="other"/></returns>
+		public static Pattern Then(this String @string, Char other) => new Pattern(new StringLiteral(@string).Concatenate(other));
+
+		/// <summary>
+		/// Concatenates the patterns so that this <see cref="Pattern"/> comes before <paramref name="other"/>
+		/// </summary>
+		/// <param name="other">The succeeding <see cref="Pattern"/></param>
+		/// <returns>A new <see cref="Pattern"/> concatenating this <see cref="Pattern"/> and <paramref name="other"/></returns>
+		public static Pattern Then(this String @string, Capture other) {
+			if (other is null) {
+				throw new ArgumentNullException(nameof(other));
+			}
+			return new Pattern(new StringLiteral(@string).Concatenate(new CaptureLiteral(other)));
+		}
+
+		/// <summary>
+		/// Compare this <paramref name="pattern"/> with the given <paramref name="comparisonType"/>.
+		/// </summary>
+		/// <param name="pattern">The <see cref="String"/> pattern.</param>
+		/// <param name="comparisonType">Whether the comparison is sensitive to casing.</param>
+		/// <returns>A new <see cref="Pattern"/> representing the <paramref name="pattern"/> compared with <paramref name="comparisonType"/>.</returns>
+		public static Pattern With(this String pattern, Compare comparisonType) => new Pattern(new StringLiteral(pattern, comparisonType));
+
+		/// <summary>
+		/// Checks the first character in the <paramref name="source"/> against the first character of this <see cref="String"/>.
+		/// </summary>
+		/// <remarks>
+		/// This is primarily used to check whether a pattern may exist at the current position.
+		/// </remarks>
+		/// <param name="source">The <see cref="Source"/> to check against</param>
+		/// <returns><c>Compare.CaseSensitive</c> if this <paramref name="pattern"/> may be present, <c>false</c> if definately not.</returns>
+		internal static Boolean CheckHeader(this String pattern, ref Source source) => pattern[0].CheckHeader(ref source);
+
+		/// <summary>
 		/// Attempt to consume the <paramref name="pattern" />, adjusting the <paramref name="source"/> and <paramref name="result"/> as appropriate.
 		/// </summary>
 		/// <param name="pattern">The <see cref="Char"/> pattern.</param>
@@ -122,6 +236,7 @@ namespace Stringier.Patterns {
 		/// <returns><c>Compare.CaseSensitive</c> if the value of the <paramref name="other"/> parameter is the same as this string; otherwise, <c>false</c>.</returns>
 		internal static Boolean Equals(this String @string, String other, Compare comparisonType) {
 			switch (comparisonType) {
+			case Compare.NoPreference:
 			case Compare.CaseSensitive:
 				return @string.Equals(other, StringComparison.Ordinal);
 			case Compare.CaseInsensitive:
@@ -140,6 +255,7 @@ namespace Stringier.Patterns {
 		/// <returns><c>Compare.CaseSensitive</c> if the value of the <paramref name="other"/> parameter is the same as this string; otherwise, <c>false</c>.</returns>
 		internal static Boolean Equals(this String @string, ReadOnlySpan<Char> other, Compare comparisonType) {
 			switch (comparisonType) {
+			case Compare.NoPreference:
 			case Compare.CaseSensitive:
 				return @string.Equals(other, StringComparison.Ordinal);
 			case Compare.CaseInsensitive:
@@ -158,6 +274,7 @@ namespace Stringier.Patterns {
 		/// <returns><c>Compare.CaseSensitive</c> if the value of the <paramref name="other"/> parameter is the same as this string; otherwise, <c>false</c>.</returns>
 		internal static Boolean Equals(this ReadOnlySpan<Char> span, String other, Compare comparisonType) {
 			switch (comparisonType) {
+			case Compare.NoPreference:
 			case Compare.CaseSensitive:
 				return span.Equals(other, StringComparison.Ordinal);
 			case Compare.CaseInsensitive:
@@ -176,6 +293,7 @@ namespace Stringier.Patterns {
 		/// <returns><c>Compare.CaseSensitive</c> if the value of the <paramref name="other"/> parameter is the same as this string; otherwise, <c>false</c>.</returns>
 		internal static Boolean Equals(this ReadOnlySpan<Char> span, ReadOnlySpan<Char> other, Compare comparisonType) {
 			switch (comparisonType) {
+			case Compare.NoPreference:
 			case Compare.CaseSensitive:
 				return span.Equals(other, StringComparison.Ordinal);
 			case Compare.CaseInsensitive:

@@ -40,7 +40,7 @@ type ConcatenatorTests() =
 
     [<TestMethod>]
     member _.``neglect`` () =
-        let pattern = negate ("Hello" >> '!')
+        let pattern = not ("Hello" >> '!')
         ResultAssert.Fails(pattern.Consume("Hello"))
         ResultAssert.Fails(pattern.Consume("Hello!"))
         ResultAssert.Captures("Hello.", pattern.Consume("Hello."))

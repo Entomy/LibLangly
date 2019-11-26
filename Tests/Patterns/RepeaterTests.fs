@@ -25,7 +25,7 @@ type RepeaterTests() =
 
     [<TestMethod>]
     member _.``neglect`` () =
-        let pattern = negate ("Hi!" * 2)
+        let pattern = not ("Hi!" * 2)
         ResultAssert.Fails(pattern.Consume("Hi!Hi!"))
         ResultAssert.Captures("Oh!Oh!", pattern.Consume("Oh!Oh!"))
         ResultAssert.Captures("Oh!Hi!", pattern.Consume("Oh!Hi!"))

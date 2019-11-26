@@ -56,7 +56,7 @@ namespace Stringier.Patterns {
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/></returns>
 		public Result Consume(ref Source Source) {
 			if (Head is null) {
-				throw new PatternUndefinedException("Pattern has not been defined yet.");
+				throw new PatternUndefinedException();
 			}
 			Result Result = new Result(ref Source);
 			Int32 OriginalPosition = Source.Position;

@@ -114,6 +114,51 @@
   </h3>
   
   
+  <a id="Stringier_Patterns_StringExtensions_AsPattern_" data-uid="Stringier.Patterns.StringExtensions.AsPattern*"></a>
+  <h4 id="Stringier_Patterns_StringExtensions_AsPattern_String_" data-uid="Stringier.Patterns.StringExtensions.AsPattern(String)">AsPattern(String)</h4>
+  <div class="markdown level1 summary"><p>Get the <code data-dev-comment-type="paramref" class="paramref">string</code> as a <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern AsPattern(this String string)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td><span class="parametername">string</span></td>
+        <td><p>The <see cref="!:String"></see> literal.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> representing literally the <code data-dev-comment-type="paramref" class="paramref">string</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
   <a id="Stringier_Patterns_StringExtensions_Consume_" data-uid="Stringier.Patterns.StringExtensions.Consume*"></a>
   <h4 id="Stringier_Patterns_StringExtensions_Consume_String_ReadOnlySpan_Char__" data-uid="Stringier.Patterns.StringExtensions.Consume(String,ReadOnlySpan{Char})">Consume(String, ReadOnlySpan&lt;Char&gt;)</h4>
   <div class="markdown level1 summary"></div>
@@ -423,6 +468,456 @@
       <tr>
         <td><a class="xref" href="Stringier.Patterns.Result.html">Result</a></td>
         <td><p>A <a class="xref" href="Stringier.Patterns.Result.html">Result</a> containing whether a match occured and the consumed string</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_StringExtensions_Or_" data-uid="Stringier.Patterns.StringExtensions.Or*"></a>
+  <h4 id="Stringier_Patterns_StringExtensions_Or_String_Char_" data-uid="Stringier.Patterns.StringExtensions.Or(String,Char)">Or(String, Char)</h4>
+  <div class="markdown level1 summary"><p>Declares <code data-dev-comment-type="paramref" class="paramref">other</code> to be an alternate of this <see cref="!:String"></see>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern Or(this String string, Char other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td><span class="parametername">string</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Char</span></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>The <see cref="!:Char"></see> to check if this <see cref="!:String"></see> does not match</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> alternating this <see cref="!:String"></see> and <code data-dev-comment-type="paramref" class="paramref">other</code></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_StringExtensions_Or_" data-uid="Stringier.Patterns.StringExtensions.Or*"></a>
+  <h4 id="Stringier_Patterns_StringExtensions_Or_String_String_" data-uid="Stringier.Patterns.StringExtensions.Or(String,String)">Or(String, String)</h4>
+  <div class="markdown level1 summary"><p>Declares <code data-dev-comment-type="paramref" class="paramref">other</code> to be an alternate of this <see cref="!:String"></see>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern Or(this String string, String other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td><span class="parametername">string</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>The <see cref="!:String"></see> to check if this <see cref="!:String"></see> does not match</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> alternating this <see cref="!:String"></see> and <code data-dev-comment-type="paramref" class="paramref">other</code></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_StringExtensions_Or_" data-uid="Stringier.Patterns.StringExtensions.Or*"></a>
+  <h4 id="Stringier_Patterns_StringExtensions_Or_String_Stringier_Patterns_Capture_" data-uid="Stringier.Patterns.StringExtensions.Or(String,Stringier.Patterns.Capture)">Or(String, Capture)</h4>
+  <div class="markdown level1 summary"><p>Declares <code data-dev-comment-type="paramref" class="paramref">other</code> to be an alternate of this <see cref="!:String"></see>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern Or(this String string, Capture other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td><span class="parametername">string</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Capture.html">Capture</a></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>The <a class="xref" href="Stringier.Patterns.Capture.html">Capture</a> to check if this <see cref="!:String"></see> does not match</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> alternating this <see cref="!:String"></see> and <code data-dev-comment-type="paramref" class="paramref">other</code></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_StringExtensions_Or_" data-uid="Stringier.Patterns.StringExtensions.Or*"></a>
+  <h4 id="Stringier_Patterns_StringExtensions_Or_String_Stringier_Patterns_Pattern_" data-uid="Stringier.Patterns.StringExtensions.Or(String,Stringier.Patterns.Pattern)">Or(String, Pattern)</h4>
+  <div class="markdown level1 summary"><p>Declares <code data-dev-comment-type="paramref" class="paramref">other</code> to be an alternate of this <see cref="!:String"></see>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern Or(this String string, Pattern other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td><span class="parametername">string</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>The <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> to check if this <see cref="!:String"></see> does not match</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> alternating this <see cref="!:String"></see> and <code data-dev-comment-type="paramref" class="paramref">other</code></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_StringExtensions_Repeat_" data-uid="Stringier.Patterns.StringExtensions.Repeat*"></a>
+  <h4 id="Stringier_Patterns_StringExtensions_Repeat_String_Int32_" data-uid="Stringier.Patterns.StringExtensions.Repeat(String,Int32)">Repeat(String, Int32)</h4>
+  <div class="markdown level1 summary"><p>Marks this <see cref="!:String"></see> as repeating <code data-dev-comment-type="paramref" class="paramref">count</code> times.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern Repeat(this String string, Int32 count)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td><span class="parametername">string</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Int32</span></td>
+        <td><span class="parametername">count</span></td>
+        <td><p>The amount of times to repeat.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> repeated <code data-dev-comment-type="paramref" class="paramref">count</code> times.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_StringExtensions_Then_" data-uid="Stringier.Patterns.StringExtensions.Then*"></a>
+  <h4 id="Stringier_Patterns_StringExtensions_Then_String_Char_" data-uid="Stringier.Patterns.StringExtensions.Then(String,Char)">Then(String, Char)</h4>
+  <div class="markdown level1 summary"><p>Concatenates the patterns so that this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> comes before <code data-dev-comment-type="paramref" class="paramref">other</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern Then(this String string, Char other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td><span class="parametername">string</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Char</span></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>The succeeding <see cref="!:Char"></see></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> concatenating this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> and <code data-dev-comment-type="paramref" class="paramref">other</code></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_StringExtensions_Then_" data-uid="Stringier.Patterns.StringExtensions.Then*"></a>
+  <h4 id="Stringier_Patterns_StringExtensions_Then_String_String_" data-uid="Stringier.Patterns.StringExtensions.Then(String,String)">Then(String, String)</h4>
+  <div class="markdown level1 summary"><p>Concatenates the patterns so that this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> comes before <code data-dev-comment-type="paramref" class="paramref">other</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern Then(this String string, String other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td><span class="parametername">string</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>The succeeding <see cref="!:String"></see></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> concatenating this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> and <code data-dev-comment-type="paramref" class="paramref">other</code></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_StringExtensions_Then_" data-uid="Stringier.Patterns.StringExtensions.Then*"></a>
+  <h4 id="Stringier_Patterns_StringExtensions_Then_String_Stringier_Patterns_Capture_" data-uid="Stringier.Patterns.StringExtensions.Then(String,Stringier.Patterns.Capture)">Then(String, Capture)</h4>
+  <div class="markdown level1 summary"><p>Concatenates the patterns so that this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> comes before <code data-dev-comment-type="paramref" class="paramref">other</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern Then(this String string, Capture other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td><span class="parametername">string</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Capture.html">Capture</a></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>The succeeding <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> concatenating this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> and <code data-dev-comment-type="paramref" class="paramref">other</code></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_Patterns_StringExtensions_Then_" data-uid="Stringier.Patterns.StringExtensions.Then*"></a>
+  <h4 id="Stringier_Patterns_StringExtensions_Then_String_Stringier_Patterns_Pattern_" data-uid="Stringier.Patterns.StringExtensions.Then(String,Stringier.Patterns.Pattern)">Then(String, Pattern)</h4>
+  <div class="markdown level1 summary"><p>Concatenates the patterns so that this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> comes before <code data-dev-comment-type="paramref" class="paramref">other</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern Then(this String string, Pattern other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td><span class="parametername">string</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>The succeeding <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> concatenating this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> and <code data-dev-comment-type="paramref" class="paramref">other</code></p>
 </td>
       </tr>
     </tbody>

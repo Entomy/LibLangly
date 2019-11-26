@@ -15,54 +15,43 @@ type LiteralTests() =
 
     [<TestMethod>]
     member _.``consume string`` () =
-        let hello = p "Hello"
-
-        let mutable result = Result()
+        let hello = p"Hello"
         
-        result <- hello.Consume("Hello World!")
-        ResultAssert.Captures("Hello", result)
+        ResultAssert.Captures("Hello", hello.Consume("Hello World!"))
 
-        result <- hello.Consume("Hell")
-        ResultAssert.Fails(result)
+        ResultAssert.Fails(hello.Consume("Hell"))
 
-        result <- hello.Consume("Bacon")
-        ResultAssert.Fails(result)
+        ResultAssert.Fails(hello.Consume("Bacon"))
 
     [<TestMethod>]
     member _.``consume source`` () =
-        let hello = p "Hello"
+        let hello = p"Hello"
         let space = p ' '
-        let world = p "World"
-
-        let mutable result = Result()
+        let world = p"World"
 
         let mutable source = Source("Hello World")
 
-        result <- hello.Consume(&source)
-        ResultAssert.Captures("Hello", result)
+        ResultAssert.Captures("Hello", hello.Consume(&source))
 
-        result <- space.Consume(&source)
-        ResultAssert.Captures(" ", result)
+        ResultAssert.Captures(" ", space.Consume(&source))
 
-        result <- world.Consume(&source)
-        ResultAssert.Captures("World", result)
+        ResultAssert.Captures("World", world.Consume(&source))
 
         source <- Source("Hello World")
         let helloWorld = hello >> space >> world
 
-        result <- helloWorld.Consume(&source)
-        ResultAssert.Captures("Hello World", result)
+        ResultAssert.Captures("Hello World", helloWorld.Consume(&source))
 
     [<TestMethod>]
     member _.``consume case-insensitive`` () =
-        let pattern = "Hello"/=Compare.CaseInsensitive >> ' ' >> "World"/=Compare.CaseInsensitive
+        let pattern = "Hello"/=Compare.CaseInsensitive >> ' '/=Compare.CaseInsensitive >> "World"/=Compare.CaseInsensitive
         
         ResultAssert.Captures("HELLO WORLD", pattern.Consume("HELLO WORLD"))
         ResultAssert.Captures("hello world", pattern.Consume("hello world"))
 
     [<TestMethod>]
     member _.``neglect string`` () =
-        let pattern = negate "Hello"
+        let pattern = not "Hello"
         ResultAssert.Fails(pattern.Consume("Hello"))
         ResultAssert.Fails(pattern.Consume("Hello!"))
         ResultAssert.Fails(pattern.Consume("Hello."))

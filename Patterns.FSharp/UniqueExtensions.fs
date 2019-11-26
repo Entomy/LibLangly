@@ -3,4 +3,4 @@
 [<AutoOpen>]
 module UniqueExtensions =
 
-    let inline kleene pattern = option(span(pattern))
+    let inline kleene pattern = maybe(many(pattern))

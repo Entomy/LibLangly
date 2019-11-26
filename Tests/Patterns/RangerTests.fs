@@ -20,7 +20,7 @@ type RangerTests() =
 
     [<TestMethod>]
     member _.``range neglect`` () =
-        let pattern () = negate(range "Hello" ';') |> ignore
+        let pattern () = not(range "Hello" ';') |> ignore
         Assert.ThrowsException<PatternConstructionException>(Action pattern) |> ignore
 
     [<TestMethod>]

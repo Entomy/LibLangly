@@ -1,16 +1,15 @@
 ﻿namespace Stringier.Patterns
 
 open System
-open Stringier.Patterns.Bindings
 
 [<AutoOpen>]
 module RepeaterExtensions =
 
     type Binder =
-        static member Repeat(pattern:Pattern, count:Int32) = PatternBindings.Repeater(pattern, count)
-        static member Repeat(pattern:String, count:Int32) = PatternBindings.Repeater(p pattern, count)
-        static member Repeat(pattern:Char, count:Int32) = PatternBindings.Repeater(p pattern, count)
-        static member Repeat(pattern:Capture ref, count:Int32) = PatternBindings.Repeater(p pattern, count)
+        static member Repeat(pattern:Pattern, count:Int32) = pattern.Repeat(count)
+        static member Repeat(pattern:String, count:Int32) = pattern.Repeat(count)
+        static member Repeat(pattern:Char, count:Int32) = pattern.Repeat(count)
+        static member Repeat(pattern:Capture ref, count:Int32) = (!pattern).Repeat(count)
         // These makes the operator still do multiplication
         // Unfortunantly type resolution doesn't work, so there's a lot of overloads
         static member Repeat(left:uint8, right:uint8) = left * right

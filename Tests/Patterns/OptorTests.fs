@@ -9,7 +9,7 @@ type OptorTests() =
 
     [<TestMethod>]
     member _.``consume`` () =
-        let pattern = option "Hello"
+        let pattern = maybe "Hello"
         let mutable result = Result()
 
         result <- pattern.Consume("Hello world!")
@@ -20,6 +20,6 @@ type OptorTests() =
 
     [<TestMethod>]
     member _.``neglect`` () =
-        let pattern = negate (option "Hello")
+        let pattern = not (maybe "Hello")
         ResultAssert.Captures("", pattern.Consume("Hello"))
         ResultAssert.Captures("World", pattern.Consume("World"))

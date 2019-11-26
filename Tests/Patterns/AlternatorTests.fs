@@ -52,7 +52,7 @@ type AlternatorTests() =
 
     [<TestMethod>]
     member _.``neglect`` () =
-        let pattern = negate ("Hello" || "Goodbye")
+        let pattern = not ("Hello" || "Goodbye")
         ResultAssert.Fails(pattern.Consume("Hello"))
         ResultAssert.Fails(pattern.Consume("Goodbye"))
         ResultAssert.Captures("World", pattern.Consume("Worldeater"))

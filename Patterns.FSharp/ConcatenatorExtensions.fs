@@ -1,27 +1,26 @@
 ﻿namespace Stringier.Patterns
 
 open System
-open Stringier.Patterns.Bindings
 
 [<AutoOpen>]
 module ConcatenatorExtensions =
 
     type Binding =
-        static member Concatenate(left:Pattern, right:Pattern) = PatternBindings.Concatenator(left, right)
-        static member Concatenate(left:String, right:Pattern) = PatternBindings.Concatenator(p left, right)
-        static member Concatenate(left:Pattern, right:String) = PatternBindings.Concatenator(left, p right)
-        static member Concatenate(left:Char, right:Pattern) = PatternBindings.Concatenator(p left, right)
-        static member Concatenate(left:Pattern, right:Char) = PatternBindings.Concatenator(left, p right)
-        static member Concatenate(left:String, right:String) = PatternBindings.Concatenator(p left, p right)
-        static member Concatenate(left:String, right:Char) = PatternBindings.Concatenator(p left, p right)
-        static member Concatenate(left:Char, right:String) = PatternBindings.Concatenator(p left, p right)
-        static member Concatenate(left:Char, right:Char) = PatternBindings.Concatenator(p left, p right)
-        static member Concatenate(left:Pattern, right:Capture ref) = PatternBindings.Concatenator(left, p right)
-        static member Concatenate(left:Capture ref, right:Pattern) = PatternBindings.Concatenator(p left, right)
-        static member Concatenate(left:String, right:Capture ref) = PatternBindings.Concatenator(p left, p right)
-        static member Concatenate(left:Capture ref, right:String) = PatternBindings.Concatenator(p left, p right)
-        static member Concatenate(left:Char, right:Capture ref) = PatternBindings.Concatenator(p left, p right)
-        static member Concatenate(left:Capture ref, right:Char) = PatternBindings.Concatenator(p left, p right)
+        static member Concatenate(left:Pattern, right:Pattern) = left.Then(right)
+        static member Concatenate(left:String, right:Pattern) = left.Then(right)
+        static member Concatenate(left:Pattern, right:String) = left.Then(right)
+        static member Concatenate(left:Char, right:Pattern) = left.Then(right)
+        static member Concatenate(left:Pattern, right:Char) = left.Then(right)
+        static member Concatenate(left:String, right:String) = left.Then(right)
+        static member Concatenate(left:String, right:Char) = left.Then(right)
+        static member Concatenate(left:Char, right:String) = left.Then(right)
+        static member Concatenate(left:Char, right:Char) = left.Then(right)
+        static member Concatenate(left:Pattern, right:Capture ref) = left.Then(!right)
+        static member Concatenate(left:Capture ref, right:Pattern) = (!left).Then(right)
+        static member Concatenate(left:String, right:Capture ref) = left.Then(!right)
+        static member Concatenate(left:Capture ref, right:String) = (!left).Then(right)
+        static member Concatenate(left:Char, right:Capture ref) = left.Then(!right)
+        static member Concatenate(left:Capture ref, right:Char) = (!left).Then(right)
         // This makes >> still do foreward composition
         static member Concatenate(left, right) = left >> right
 

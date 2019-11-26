@@ -11,7 +11,7 @@ namespace Stringier.Patterns {
 		/// <remarks>
 		/// This is intended to specify "I don't care", or default behavior, for <see cref="Source"/>.
 		/// </remarks>
-		None = 0x0000_0000,
+		NoPreference = 0x0000_0000,
 
 		/// <summary>
 		/// Comparisons should be done with regards to letter casing.
