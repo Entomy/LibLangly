@@ -4,7 +4,7 @@ namespace Stringier.Patterns.Nodes {
 	/// <summary>
 	/// Represents any possible checker, a <see cref="Pattern"/> <see cref="Node"/> which uses a generic function to describe the pattern, instead of literals.
 	/// </summary>
-	internal abstract class Checker : Node {
+	internal abstract class Checker : Primative {
 		/// <summary>
 		/// The name of the <see cref="Checker"/>; the <see cref="String"/> to display when this <see cref="Node"/> is written as text.
 		/// </summary>

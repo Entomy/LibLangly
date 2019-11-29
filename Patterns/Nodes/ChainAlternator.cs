@@ -10,7 +10,7 @@ namespace Stringier.Patterns.Nodes {
 	/// This is an optimization around cases of alternating alternators; there's much less indirection and other issues when flattening that portion of the graph. It also causes better syntax when written to a string.
 	/// </remarks>
 	[SuppressMessage("Minor Bug", "S1206:\"Equals(Object)\" and \"GetHashCode()\" should be overridden in pairs", Justification = "It already is overriden, Sonar just doesn't understand this pattern.")]
-	internal sealed class ChainAlternator : Node, IEquatable<ChainAlternator> {
+	internal sealed class ChainAlternator : Combinator, IEquatable<ChainAlternator> {
 		/// <summary>
 		/// The possible <see cref="Node"/> matches.
 		/// </summary>

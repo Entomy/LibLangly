@@ -7,7 +7,7 @@ namespace Stringier.Patterns.Nodes {
 	/// Represents a <see cref="Ranger"/>, a "range" of text between two <see cref="Node"/>.
 	/// </summary>
 	[SuppressMessage("Minor Bug", "S1206:\"Equals(Object)\" and \"GetHashCode()\" should be overridden in pairs", Justification = "It already is overriden, Sonar just doesn't understand this pattern.")]
-	internal class Ranger : Node, IEquatable<Ranger> {
+	internal class Ranger : Combinator, IEquatable<Ranger> {
 		/// <summary>
 		/// The <see cref="Node"/> to start from.
 		/// </summary>

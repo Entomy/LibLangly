@@ -2,7 +2,7 @@
 	/// <summary>
 	/// Represents any possible literal, a <see cref="Pattern"/> <see cref="Node"/> representing exactly itself.
 	/// </summary>
-	internal abstract class Literal : Node {
+	internal abstract class Literal : Primative {
 		/// <summary>
 		/// The <see cref="Compare"/> to use when parsing.
 		/// </summary>

@@ -6,7 +6,7 @@ namespace Stringier.Patterns.Nodes {
 	/// Represents a capturer <see cref="Nodes.Node"/>. That is, a <see cref="Nodes.Node"/> which captures its match into a <see cref="Patterns.Capture"/>.
 	/// </summary>
 	[SuppressMessage("Minor Bug", "S1206:\"Equals(Object)\" and \"GetHashCode()\" should be overridden in pairs", Justification = "It already is overriden, Sonar just doesn't understand this pattern.")]
-	internal sealed class Capturer : Node, IEquatable<Capturer> {
+	internal sealed class Capturer : Modifier, IEquatable<Capturer> {
 		/// <summary>
 		/// The <see cref="Nodes.Node"/> to be parsed and captured.
 		/// </summary>
