@@ -48,7 +48,8 @@ namespace Benchmarks {
 				new KeyChoice(ConsoleKey.D9, "Identifier", () => BenchmarkRunner.Run<IdentifierBenchmarks>()),
 				new KeyChoice(ConsoleKey.A, "IPv4 Address", () => BenchmarkRunner.Run<IPv4AddressBenchmarks>()),
 				new BackKeyChoice(ConsoleKey.B, "Back", () => { }),
-				new KeyChoice(ConsoleKey.C, "LineComment", () => BenchmarkRunner.Run<LineCommentBenchmarks>()));
+				new KeyChoice(ConsoleKey.C, "LineComment", () => BenchmarkRunner.Run<LineCommentBenchmarks>()),
+				new KeyChoice(ConsoleKey.D, "Phone Number", () => BenchmarkRunner.Run<PhoneNumberBenchmarks>()));
 
 		public static void Main() {
 			Theme.DefaultDark.Apply();
