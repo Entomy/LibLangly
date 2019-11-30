@@ -108,29 +108,8 @@
   <h6><strong>Assembly</strong>: Stringier.Patterns.dll</h6>
   <h5 id="Stringier_Patterns_Pattern_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class Pattern : IEquatable&lt;Pattern&gt;, IEquatable&lt;string&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public class Pattern : IEquatable&lt;Pattern&gt;, IEquatable&lt;string&gt;</code></pre>
   </div>
-  <h3 id="constructors">Constructors
-  </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern__ctor.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/Pattern.cs/#L21">View Source</a>
-  </span>
-  <a id="Stringier_Patterns_Pattern__ctor_" data-uid="Stringier.Patterns.Pattern.#ctor*"></a>
-  <h4 id="Stringier_Patterns_Pattern__ctor" data-uid="Stringier.Patterns.Pattern.#ctor">Pattern()</h4>
-  <div class="markdown level1 summary"><p>Initialize a new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> object, but without a defined pattern.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Pattern()</code></pre>
-  </div>
-  <h5 id="Stringier_Patterns_Pattern__ctor_remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>This is intended for target/jump purposes, and shouldn't be used otherwise. Just define the pattern immediately.</p>
-</div>
   <h3 id="fields">Fields
   </h3>
   <span class="small pull-right mobile-hide">
@@ -1048,7 +1027,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Pattern Capture(out Capture capture)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual Pattern Capture(out Capture capture)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1369,7 +1348,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Consume_Stringier_Patterns_Result_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Consume(Stringier.Patterns.Result)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/Pattern.cs/#L34">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/Pattern.cs/#L31">View Source</a>
   </span>
   <a id="Stringier_Patterns_Pattern_Consume_" data-uid="Stringier.Patterns.Pattern.Consume*"></a>
   <h4 id="Stringier_Patterns_Pattern_Consume_Stringier_Patterns_Result_" data-uid="Stringier.Patterns.Pattern.Consume(Stringier.Patterns.Result)">Consume(Result)</h4>
@@ -1419,7 +1398,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Consume_Stringier_Patterns_Source__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Consume(Stringier.Patterns.Source%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/Pattern.cs/#L57">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/Pattern.cs/#L54">View Source</a>
   </span>
   <a id="Stringier_Patterns_Pattern_Consume_" data-uid="Stringier.Patterns.Pattern.Consume*"></a>
   <h4 id="Stringier_Patterns_Pattern_Consume_Stringier_Patterns_Source__" data-uid="Stringier.Patterns.Pattern.Consume(Stringier.Patterns.Source@)">Consume(ref Source)</h4>
@@ -1469,7 +1448,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Consume_System_String_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Consume(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/Pattern.cs/#L44">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/Pattern.cs/#L41">View Source</a>
   </span>
   <a id="Stringier_Patterns_Pattern_Consume_" data-uid="Stringier.Patterns.Pattern.Consume*"></a>
   <h4 id="Stringier_Patterns_Pattern_Consume_System_String_" data-uid="Stringier.Patterns.Pattern.Consume(System.String)">Consume(String)</h4>
@@ -1519,7 +1498,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Equals_Stringier_Patterns_Pattern_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Equals(Stringier.Patterns.Pattern)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/Pattern.cs/#L111">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/Pattern.cs/#L116">View Source</a>
   </span>
   <a id="Stringier_Patterns_Pattern_Equals_" data-uid="Stringier.Patterns.Pattern.Equals*"></a>
   <h4 id="Stringier_Patterns_Pattern_Equals_Stringier_Patterns_Pattern_" data-uid="Stringier.Patterns.Pattern.Equals(Stringier.Patterns.Pattern)">Equals(Pattern)</h4>
@@ -1569,7 +1548,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Equals_System_Nullable_System_Object__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Equals(System.Nullable%7BSystem.Object%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/Pattern.cs/#L95">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/Pattern.cs/#L100">View Source</a>
   </span>
   <a id="Stringier_Patterns_Pattern_Equals_" data-uid="Stringier.Patterns.Pattern.Equals*"></a>
   <h4 id="Stringier_Patterns_Pattern_Equals_System_Nullable_System_Object__" data-uid="Stringier.Patterns.Pattern.Equals(System.Nullable{System.Object})">Equals(Nullable&lt;Object&gt;)</h4>
@@ -1619,7 +1598,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Equals_System_ReadOnlySpan_System_Char__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Equals(System.ReadOnlySpan%7BSystem.Char%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/Pattern.cs/#L118">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/Pattern.cs/#L123">View Source</a>
   </span>
   <a id="Stringier_Patterns_Pattern_Equals_" data-uid="Stringier.Patterns.Pattern.Equals*"></a>
   <h4 id="Stringier_Patterns_Pattern_Equals_System_ReadOnlySpan_System_Char__" data-uid="Stringier.Patterns.Pattern.Equals(System.ReadOnlySpan{System.Char})">Equals(ReadOnlySpan&lt;Char&gt;)</h4>
@@ -1669,7 +1648,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Equals_System_String_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Equals(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/Pattern.cs/#L125">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/Pattern.cs/#L130">View Source</a>
   </span>
   <a id="Stringier_Patterns_Pattern_Equals_" data-uid="Stringier.Patterns.Pattern.Equals*"></a>
   <h4 id="Stringier_Patterns_Pattern_Equals_System_String_" data-uid="Stringier.Patterns.Pattern.Equals(System.String)">Equals(String)</h4>
@@ -1719,7 +1698,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_GetHashCode.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.GetHashCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/Pattern.cs/#L139">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/Pattern.cs/#L146">View Source</a>
   </span>
   <a id="Stringier_Patterns_Pattern_GetHashCode_" data-uid="Stringier.Patterns.Pattern.GetHashCode*"></a>
   <h4 id="Stringier_Patterns_Pattern_GetHashCode" data-uid="Stringier.Patterns.Pattern.GetHashCode">GetHashCode()</h4>
@@ -2200,6 +2179,36 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Mutable.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Mutable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/Pattern.cs/#L140">View Source</a>
+  </span>
+  <a id="Stringier_Patterns_Pattern_Mutable_" data-uid="Stringier.Patterns.Pattern.Mutable*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Mutable" data-uid="Stringier.Patterns.Pattern.Mutable">Mutable()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern Mutable()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_NestedRange_Stringier_Patterns_Pattern_Stringier_Patterns_Pattern_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.NestedRange(Stringier.Patterns.Pattern%2CStringier.Patterns.Pattern)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -2470,7 +2479,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Pattern Or(Capture other)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual Pattern Or(Capture other)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2520,7 +2529,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Pattern Or(Pattern other)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual Pattern Or(Pattern other)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2570,7 +2579,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Pattern Or(char other)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual Pattern Or(char other)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2620,7 +2629,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Pattern Or(string other)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual Pattern Or(string other)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2824,6 +2833,25 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Seal.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Seal%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/Pattern.cs/#L73">View Source</a>
+  </span>
+  <a id="Stringier_Patterns_Pattern_Seal_" data-uid="Stringier.Patterns.Pattern.Seal*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Seal" data-uid="Stringier.Patterns.Pattern.Seal">Seal()</h4>
+  <div class="markdown level1 summary"><p>Seals the pattern to prevent further modification. Only does something for mutable patterns.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Seal()</code></pre>
+  </div>
+  <h5 id="Stringier_Patterns_Pattern_Seal_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This essentially converts a mutable pattern back into a pattern, so any further combination works like normal, rather than mutating in-place.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_StringLiteral_System_String_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.StringLiteral(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -2942,7 +2970,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Pattern Then(Capture other)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual Pattern Then(Capture other)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2992,7 +3020,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Pattern Then(Pattern other)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual Pattern Then(Pattern other)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3042,7 +3070,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Pattern Then(char other)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual Pattern Then(char other)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3092,7 +3120,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Pattern Then(string other)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual Pattern Then(string other)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3133,7 +3161,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_ToString.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/Pattern.cs/#L146">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/Pattern.cs/#L153">View Source</a>
   </span>
   <a id="Stringier_Patterns_Pattern_ToString_" data-uid="Stringier.Patterns.Pattern.ToString*"></a>
   <h4 id="Stringier_Patterns_Pattern_ToString" data-uid="Stringier.Patterns.Pattern.ToString">ToString()</h4>
@@ -3953,7 +3981,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_op_Equality_Stringier_Patterns_Pattern_Stringier_Patterns_Pattern_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.op_Equality(Stringier.Patterns.Pattern%2CStringier.Patterns.Pattern)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/Pattern.cs/#L70">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/Pattern.cs/#L75">View Source</a>
   </span>
   <a id="Stringier_Patterns_Pattern_op_Equality_" data-uid="Stringier.Patterns.Pattern.op_Equality*"></a>
   <h4 id="Stringier_Patterns_Pattern_op_Equality_Stringier_Patterns_Pattern_Stringier_Patterns_Pattern_" data-uid="Stringier.Patterns.Pattern.op_Equality(Stringier.Patterns.Pattern,Stringier.Patterns.Pattern)">Equality(Pattern, Pattern)</h4>
@@ -4146,7 +4174,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_op_Inequality_Stringier_Patterns_Pattern_Stringier_Patterns_Pattern_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.op_Inequality(Stringier.Patterns.Pattern%2CStringier.Patterns.Pattern)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/Pattern.cs/#L80">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/Pattern.cs/#L85">View Source</a>
   </span>
   <a id="Stringier_Patterns_Pattern_op_Inequality_" data-uid="Stringier.Patterns.Pattern.op_Inequality*"></a>
   <h4 id="Stringier_Patterns_Pattern_op_Inequality_Stringier_Patterns_Pattern_Stringier_Patterns_Pattern_" data-uid="Stringier.Patterns.Pattern.op_Inequality(Stringier.Patterns.Pattern,Stringier.Patterns.Pattern)">Inequality(Pattern, Pattern)</h4>

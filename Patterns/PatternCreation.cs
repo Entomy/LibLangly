@@ -2,7 +2,7 @@
 using Stringier.Patterns.Nodes;
 
 namespace Stringier.Patterns {
-	public sealed partial class Pattern {
+	public partial class Pattern {
 		#region Literals
 
 		public static implicit operator Pattern(Char @char) => new Pattern(new CharLiteral(@char));
@@ -23,7 +23,7 @@ namespace Stringier.Patterns {
 		/// </summary>
 		/// <param name="other">The <see cref="Pattern"/> to check if this <see cref="Pattern"/> does not match</param>
 		/// <returns>A new <see cref="Pattern"/> alternating this <see cref="Pattern"/> and <paramref name="other"/></returns>
-		public Pattern Or(Pattern other) {
+		public virtual Pattern Or(Pattern other) {
 			if (other is null) {
 				throw new ArgumentNullException(nameof(other));
 			} else if (Head is null || other.Head is null) {
@@ -37,7 +37,7 @@ namespace Stringier.Patterns {
 		/// </summary>
 		/// <param name="other">The <see cref="String"/> to check if this <see cref="Pattern"/> does not match</param>
 		/// <returns>A new <see cref="Pattern"/> alternating this <see cref="Pattern"/> and <paramref name="other"/></returns>
-		public Pattern Or(String other) {
+		public virtual Pattern Or(String other) {
 			if (other is null) {
 				throw new ArgumentNullException(nameof(other));
 			} else if (Head is null) {
@@ -51,7 +51,7 @@ namespace Stringier.Patterns {
 		/// </summary>
 		/// <param name="other">The <see cref="Char"/> to check if this <see cref="Pattern"/> does not match</param>
 		/// <returns>A new <see cref="Pattern"/> alternating this <see cref="Pattern"/> and <paramref name="other"/></returns>
-		public Pattern Or(Char other) {
+		public virtual Pattern Or(Char other) {
 			if (Head is null) {
 				throw new PatternUndefinedException();
 			}
@@ -63,7 +63,7 @@ namespace Stringier.Patterns {
 		/// </summary>
 		/// <param name="other">The <see cref="Capture"/> to check if this <see cref="Pattern"/> does not match</param>
 		/// <returns>A new <see cref="Pattern"/> alternating this <see cref="Pattern"/> and <paramref name="other"/></returns>
-		public Pattern Or(Capture other) {
+		public virtual Pattern Or(Capture other) {
 			if (other is null) {
 				throw new ArgumentNullException(nameof(other));
 			} else if (Head is null) {
@@ -180,7 +180,7 @@ namespace Stringier.Patterns {
 		/// </summary>
 		/// <param name="capture">A <see cref="Patterns.Capture"/> object to store into.</param>
 		/// <returns>A new <paramref name="Pattern"/> which will capture its result into <paramref name="capture"/>.</returns>
-		public Pattern Capture(out Capture capture) {
+		public virtual Pattern Capture(out Capture capture) {
 			if (Head is null) {
 				throw new PatternUndefinedException();
 			}
@@ -283,7 +283,7 @@ namespace Stringier.Patterns {
 		/// </summary>
 		/// <param name="other">The succeeding <see cref="Pattern"/></param>
 		/// <returns>A new <see cref="Pattern"/> concatenating this <see cref="Pattern"/> and <paramref name="other"/></returns>
-		public Pattern Then(Pattern other) {
+		public virtual Pattern Then(Pattern other) {
 			if (other is null) {
 				throw new ArgumentNullException(nameof(other));
 			} else if (Head is null || other.Head is null) {
@@ -297,7 +297,7 @@ namespace Stringier.Patterns {
 		/// </summary>
 		/// <param name="other">The succeeding <see cref="String"/></param>
 		/// <returns>A new <see cref="Pattern"/> concatenating this <see cref="Pattern"/> and <paramref name="other"/></returns>
-		public Pattern Then(String other) {
+		public virtual Pattern Then(String other) {
 			if (other is null) {
 				throw new ArgumentNullException(nameof(other));
 			} else if (Head is null) {
@@ -311,7 +311,7 @@ namespace Stringier.Patterns {
 		/// </summary>
 		/// <param name="other">The succeeding <see cref="Char"/></param>
 		/// <returns>A new <see cref="Pattern"/> concatenating this <see cref="Pattern"/> and <paramref name="other"/></returns>
-		public Pattern Then(Char other) {
+		public virtual Pattern Then(Char other) {
 			if (Head is null) {
 				throw new PatternUndefinedException();
 			}
@@ -323,7 +323,7 @@ namespace Stringier.Patterns {
 		/// </summary>
 		/// <param name="other">The succeeding <see cref="Pattern"/></param>
 		/// <returns>A new <see cref="Pattern"/> concatenating this <see cref="Pattern"/> and <paramref name="other"/></returns>
-		public Pattern Then(Capture other) {
+		public virtual Pattern Then(Capture other) {
 			if (other is null) {
 				throw new ArgumentNullException(nameof(other));
 			} else if (Head is null) {
@@ -428,6 +428,20 @@ namespace Stringier.Patterns {
 		#region Negator
 
 		/// <summary>
+		/// Marks this <see cref="Pattern"/> as negated.
+		/// </summary>
+		/// <returns>A new <see cref="Pattern"/> which is negated.</returns>
+		/// <remarks>
+		/// This exists to set up dispatching to the appropriate <see cref="Pattern"/> type. Dispatching happens to be faster than switching on a typeclass.
+		/// </remarks>
+		internal virtual Pattern Negate() {
+			if (Head is null) {
+				throw new PatternUndefinedException();
+			}
+			return new Pattern(Head.Negate());
+		}
+
+		/// <summary>
 		/// Marks the <paramref name="pattern"/> as negated.
 		/// </summary>
 		/// <param name="pattern">The <see cref="Pattern"/> to negate.</param>
@@ -438,7 +452,7 @@ namespace Stringier.Patterns {
 			} else if (pattern.Head is null) {
 				throw new PatternUndefinedException();
 			}
-			return new Pattern(pattern.Head.Negate());
+			return pattern.Negate();
 		}
 
 		/// <summary>
@@ -489,6 +503,20 @@ namespace Stringier.Patterns {
 		#region Optor
 
 		/// <summary>
+		/// Marks this <see cref="Pattern"/> as optional.
+		/// </summary>
+		/// <returns>A new <see cref="Pattern"/> which is optional.</returns>
+		/// <remarks>
+		/// This exists to set up dispatching to the appropriate <see cref="Pattern"/> type. Dispatching happens to be faster than switching on a typeclass.
+		/// </remarks>
+		internal virtual Pattern Optional() {
+			if (Head is null) {
+				throw new PatternUndefinedException();
+			}
+			return new Pattern(Head.Optional());
+		}
+
+		/// <summary>
 		/// Marks the <paramref name="pattern"/> as optional.
 		/// </summary>
 		/// <param name="pattern">The optional <see cref="Pattern"/>.</param>
@@ -499,7 +527,7 @@ namespace Stringier.Patterns {
 			} else if (pattern.Head is null) {
 				throw new PatternUndefinedException();
 			}
-			return new Pattern(pattern.Head.Optional());
+			return pattern.Optional();
 		}
 
 		/// <summary>
@@ -610,7 +638,7 @@ namespace Stringier.Patterns {
 		/// </summary>
 		/// <param name="count">The amount of times to repeat.</param>
 		/// <returns>A new <see cref="Pattern"/> repeated <paramref name="count"/> times.</returns>
-		public Pattern Repeat(Int32 count) {
+		public virtual Pattern Repeat(Int32 count) {
 			if (Head is null) {
 				throw new PatternUndefinedException();
 			}
@@ -635,6 +663,20 @@ namespace Stringier.Patterns {
 		#endregion
 
 		#region Spanner
+
+		/// <summary>
+		/// Marks this <see cref="Pattern"/> as spanning.
+		/// </summary>
+		/// <returns>A new <see cref="Pattern"/> which is spanning.</returns>
+		/// <remarks>
+		/// This exists to set up dispatching to the appropriate <see cref="Pattern"/> type. Dispatching happens to be faster than switching on a typeclass.
+		/// </remarks
+		internal virtual Pattern Span() {
+			if (Head is null) {
+				throw new PatternUndefinedException();
+			}
+			return new Pattern(Head.Span());
+		}
 
 		/// <summary>
 		/// Marks the <paramref name="pattern"/> as spanning.

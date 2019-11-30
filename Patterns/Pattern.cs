@@ -6,25 +6,22 @@ namespace Stringier.Patterns {
 	/// <summary>
 	/// Represents a textual pattern
 	/// </summary>
-	public sealed partial class Pattern : IEquatable<Pattern>, IEquatable<String> {
+	public partial class Pattern : IEquatable<Pattern>, IEquatable<String> {
 		/// <summary>
 		/// The <see cref="Node"/> at the head of this <see cref="Pattern"/>; the entry point of the graph.
 		/// </summary>
 		internal Node? Head;
 
 		/// <summary>
-		/// Initialize a new <see cref="Pattern"/> object, but without a defined pattern.
+		/// Initialize a new <see cref="Pattern"/>.
 		/// </summary>
-		/// <remarks>
-		/// This is intended for target/jump purposes, and shouldn't be used otherwise. Just define the pattern immediately.
-		/// </remarks>
-		public Pattern() { }
+		internal Pattern() { }
 
 		/// <summary>
 		/// Initialize a new <see cref="Pattern"/> with the given head <see cref="Node"/>.
 		/// </summary>
-		/// <param name="Head">The head <see cref="Node"/> of this <see cref="Pattern"/>; the entry point of the graph.</param>
-		internal Pattern(Node Head) => this.Head = Head;
+		/// <param name="head">The head <see cref="Node"/> of this <see cref="Pattern"/>; the entry point of the graph.</param>
+		internal Pattern(Node head) => Head = head;
 
 		/// <summary>
 		/// Attempt to consume the <see cref="Pattern"/> from the <paramref name="Source"/>
@@ -66,6 +63,14 @@ namespace Stringier.Patterns {
 			}
 			return Result;
 		}
+
+		/// <summary>
+		/// Seals the pattern to prevent further modification. Only does something for mutable patterns.
+		/// </summary>
+		/// <remarks>
+		/// This essentially converts a mutable pattern back into a pattern, so any further combination works like normal, rather than mutating in-place.
+		/// </remarks>
+		public virtual void Seal() { }
 
 		public static Boolean operator ==(Pattern left, Pattern right) {
 			if (left is null && right is null) {
@@ -132,6 +137,8 @@ namespace Stringier.Patterns {
 			}
 		}
 
+		public static Pattern Mutable() => new MutablePattern();
+
 		/// <summary>
 		/// Returns the hash code for this <see cref="Pattern"/>.
 		/// </summary>
@@ -143,6 +150,6 @@ namespace Stringier.Patterns {
 		/// Returns a <see cref="String"/> that represents the current <see cref="Pattern"/>.
 		/// </summary>
 		/// <returns>A <see cref="String"/> that represents the current <see cref="Pattern"/>.</returns>
-		public override String ToString() => Head.ToString();
+		public override String ToString() => Head?.ToString() ?? "";
 	}
 }

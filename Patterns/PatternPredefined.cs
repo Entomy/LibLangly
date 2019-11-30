@@ -3,7 +3,7 @@ using System.Globalization;
 using Stringier.Patterns.Nodes;
 
 namespace Stringier.Patterns {
-	public sealed partial class Pattern {
+	public partial class Pattern {
 		#region Unicode Category Patterns
 
 		public static readonly Pattern ClosePunctuation = new Pattern(new CharChecker("[Pe]", (Char) => Char.GetUnicodeCategory() == UnicodeCategory.ClosePunctuation));
