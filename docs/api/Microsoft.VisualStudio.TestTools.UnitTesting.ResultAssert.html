@@ -73,7 +73,7 @@
   
   <h1 id="Microsoft_VisualStudio_TestTools_UnitTesting_ResultAssert" data-uid="Microsoft.VisualStudio.TestTools.UnitTesting.ResultAssert" class="text-break">Class ResultAssert
   </h1>
-  <div class="markdown level0 summary"><p>A collection of helper classes to test various conditions associated with <see cref="!:Result"></see> within unit tests. If the condition being tested is not met, an exception is thrown.</p>
+  <div class="markdown level0 summary"><p>A collection of helper classes to test various conditions associated with <a class="xref" href="Stringier.Patterns.Result.html">Result</a> within unit tests. If the condition being tested is not met, an exception is thrown.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -84,16 +84,10 @@
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <span class="xref">System.Object.ToString()</span>
-    </div>
-    <div>
       <span class="xref">System.Object.Equals(System.Object)</span>
     </div>
     <div>
       <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
     </div>
     <div>
       <span class="xref">System.Object.GetHashCode()</span>
@@ -104,25 +98,36 @@
     <div>
       <span class="xref">System.Object.MemberwiseClone()</span>
     </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Microsoft.VisualStudio.TestTools.UnitTesting.html">Microsoft.VisualStudio.TestTools.UnitTesting</a></h6>
-  <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
+  <h6><strong>Assembly</strong>: Patterns.MSTest.dll</h6>
   <h5 id="Microsoft_VisualStudio_TestTools_UnitTesting_ResultAssert_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static class ResultAssert</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Microsoft_VisualStudio_TestTools_UnitTesting_ResultAssert_Captures_System_String_Stringier_Patterns_Result_.md&amp;value=---%0Auid%3A%20Microsoft.VisualStudio.TestTools.UnitTesting.ResultAssert.Captures(System.String%2CStringier.Patterns.Result)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns.MSTest/ResultAssert.cs/#L25">View Source</a>
+  </span>
   <a id="Microsoft_VisualStudio_TestTools_UnitTesting_ResultAssert_Captures_" data-uid="Microsoft.VisualStudio.TestTools.UnitTesting.ResultAssert.Captures*"></a>
-  <h4 id="Microsoft_VisualStudio_TestTools_UnitTesting_ResultAssert_Captures_String_Result_" data-uid="Microsoft.VisualStudio.TestTools.UnitTesting.ResultAssert.Captures(String,Result)">Captures(String, Result)</h4>
+  <h4 id="Microsoft_VisualStudio_TestTools_UnitTesting_ResultAssert_Captures_System_String_Stringier_Patterns_Result_" data-uid="Microsoft.VisualStudio.TestTools.UnitTesting.ResultAssert.Captures(System.String,Stringier.Patterns.Result)">Captures(String, Result)</h4>
   <div class="markdown level1 summary"><p>Tests whether the specied <see cref="!:Actual"></see> result is what was <code data-dev-comment-type="paramref" class="paramref">expected</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void Captures(String expected, Result actual)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void Captures(string expected, Result actual)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -135,24 +140,29 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">String</span></td>
+        <td><span class="xref">System.String</span></td>
         <td><span class="parametername">expected</span></td>
-        <td><p>The <see cref="!:String"></see> of expected text.</p>
+        <td><p>The <span class="xref">System.String</span> of expected text.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">Result</span></td>
+        <td><a class="xref" href="Stringier.Patterns.Result.html">Result</a></td>
         <td><span class="parametername">actual</span></td>
-        <td><p>The parser <see cref="!:Result"></see>.</p>
+        <td><p>The parser <a class="xref" href="Stringier.Patterns.Result.html">Result</a>.</p>
 </td>
       </tr>
     </tbody>
   </table>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Microsoft_VisualStudio_TestTools_UnitTesting_ResultAssert_Fails_Stringier_Patterns_Result_.md&amp;value=---%0Auid%3A%20Microsoft.VisualStudio.TestTools.UnitTesting.ResultAssert.Fails(Stringier.Patterns.Result)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns.MSTest/ResultAssert.cs/#L14">View Source</a>
+  </span>
   <a id="Microsoft_VisualStudio_TestTools_UnitTesting_ResultAssert_Fails_" data-uid="Microsoft.VisualStudio.TestTools.UnitTesting.ResultAssert.Fails*"></a>
-  <h4 id="Microsoft_VisualStudio_TestTools_UnitTesting_ResultAssert_Fails_Result_" data-uid="Microsoft.VisualStudio.TestTools.UnitTesting.ResultAssert.Fails(Result)">Fails(Result)</h4>
-  <div class="markdown level1 summary"><p>Tests whether the parser <see cref="!:Result"></see> failed.</p>
+  <h4 id="Microsoft_VisualStudio_TestTools_UnitTesting_ResultAssert_Fails_Stringier_Patterns_Result_" data-uid="Microsoft.VisualStudio.TestTools.UnitTesting.ResultAssert.Fails(Stringier.Patterns.Result)">Fails(Result)</h4>
+  <div class="markdown level1 summary"><p>Tests whether the parser <a class="xref" href="Stringier.Patterns.Result.html">Result</a> failed.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -170,18 +180,23 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Result</span></td>
+        <td><a class="xref" href="Stringier.Patterns.Result.html">Result</a></td>
         <td><span class="parametername">actual</span></td>
-        <td><p>The parser <see cref="!:Result"></see>.</p>
+        <td><p>The parser <a class="xref" href="Stringier.Patterns.Result.html">Result</a>.</p>
 </td>
       </tr>
     </tbody>
   </table>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Microsoft_VisualStudio_TestTools_UnitTesting_ResultAssert_Succeeds_Stringier_Patterns_Result_.md&amp;value=---%0Auid%3A%20Microsoft.VisualStudio.TestTools.UnitTesting.ResultAssert.Succeeds(Stringier.Patterns.Result)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns.MSTest/ResultAssert.cs/#L39">View Source</a>
+  </span>
   <a id="Microsoft_VisualStudio_TestTools_UnitTesting_ResultAssert_Succeeds_" data-uid="Microsoft.VisualStudio.TestTools.UnitTesting.ResultAssert.Succeeds*"></a>
-  <h4 id="Microsoft_VisualStudio_TestTools_UnitTesting_ResultAssert_Succeeds_Result_" data-uid="Microsoft.VisualStudio.TestTools.UnitTesting.ResultAssert.Succeeds(Result)">Succeeds(Result)</h4>
-  <div class="markdown level1 summary"><p>Tests whether the parser <see cref="!:Result"></see> succeeded.</p>
+  <h4 id="Microsoft_VisualStudio_TestTools_UnitTesting_ResultAssert_Succeeds_Stringier_Patterns_Result_" data-uid="Microsoft.VisualStudio.TestTools.UnitTesting.ResultAssert.Succeeds(Stringier.Patterns.Result)">Succeeds(Result)</h4>
+  <div class="markdown level1 summary"><p>Tests whether the parser <a class="xref" href="Stringier.Patterns.Result.html">Result</a> succeeded.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -199,9 +214,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Result</span></td>
+        <td><a class="xref" href="Stringier.Patterns.Result.html">Result</a></td>
         <td><span class="parametername">actual</span></td>
-        <td><p>The parser <see cref="!:Result"></see>.</p>
+        <td><p>The parser <a class="xref" href="Stringier.Patterns.Result.html">Result</a>.</p>
 </td>
       </tr>
     </tbody>
@@ -213,6 +228,12 @@
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Microsoft_VisualStudio_TestTools_UnitTesting_ResultAssert.md&amp;value=---%0Auid%3A%20Microsoft.VisualStudio.TestTools.UnitTesting.ResultAssert%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns.MSTest/ResultAssert.cs/#L8" class="contribution-link">View Source</a>
+                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">

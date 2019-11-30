@@ -1,7 +1,7 @@
 ﻿namespace Stringier.Patterns.Nodes {
 	/// <summary>
-	/// Represents any possible primative, the simplest components of a  <see cref="Pattern"/> <see cref="Node"/>.
+	/// Represents any possible primative, the simplest components of a <see cref="Pattern"/>.
 	/// </summary>
-	internal abstract class Primative : Node {
+	internal abstract class Primative : Pattern {
 	}
 }

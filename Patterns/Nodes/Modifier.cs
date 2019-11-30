@@ -4,8 +4,8 @@ using System.Text;
 
 namespace Stringier.Patterns.Nodes {
 	/// <summary>
-	/// Represents a modifier, a <see cref="Pattern"/> <see cref="Node"/> which modifies other <see cref="Node"/>s.
+	/// Represents a modifier, a <see cref="Pattern"/> which modifies other <see cref="Pattern"/>s.
 	/// </summary>
-	internal abstract class Modifier : Node {
+	internal abstract class Modifier : Pattern {
 	}
 }

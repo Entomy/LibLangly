@@ -1,6 +1,6 @@
 ﻿namespace Stringier.Patterns.Nodes {
 	/// <summary>
-	/// Represents any possible literal, a <see cref="Pattern"/> <see cref="Node"/> representing exactly itself.
+	/// Represents any possible literal, a <see cref="Pattern"/> representing exactly itself.
 	/// </summary>
 	internal abstract class Literal : Primative {
 		/// <summary>

@@ -1,7 +1,7 @@
 ﻿using System;
 
 namespace Stringier.Patterns {
-	public sealed partial class Pattern {
+	public abstract partial class Pattern {
 		/// <summary>
 		/// Creates a pattern representing a line comment introduced by the <paramref name="delimiter"/>.
 		/// </summary>
