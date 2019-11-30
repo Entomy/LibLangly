@@ -4,7 +4,7 @@ namespace Stringier.Patterns {
 	/// <summary>
 	/// The comparison mode to use when parsing.
 	/// </summary>
-	public enum Compare : UInt32 {
+	public enum Compare : Int32 {
 		/// <summary>
 		/// No comparison preference (default behavior is <see cref="CaseSensitive"/>).
 		/// </summary>
@@ -16,11 +16,11 @@ namespace Stringier.Patterns {
 		/// <summary>
 		/// Comparisons should be done with regards to letter casing.
 		/// </summary>
-		CaseSensitive = 0xAAAA_AAAA,
+		CaseSensitive = 0x2AAA_AAAA,
 
 		/// <summary>
 		/// Comparisons should be done without regards to letter casing.
 		/// </summary>
-		CaseInsensitive = 0xFFFF_FFFF,
+		CaseInsensitive = 0x7FFF_FFFF,
 	}
 }
