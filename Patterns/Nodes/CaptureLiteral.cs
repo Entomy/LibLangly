@@ -6,7 +6,7 @@ namespace Stringier.Patterns.Nodes {
 	/// Represents a capture literal pattern, a pattern matching this exact capture.
 	/// </summary>
 	/// <remarks>
-	/// This exists to get around visibility rules. <see cref="Nodes.Node"/> is <see langword="internal"/> and as a result can't have a public child. <see cref="Patterns.Capture"/> needs to be public because downstream needs to allocate and use captures.
+	/// This exists to get around visibility rules. <see cref="Patterns.Pattern"/> is <see langword="internal"/> and as a result can't have a public child. <see cref="Patterns.Capture"/> needs to be public because downstream needs to allocate and use captures.
 	/// </remarks>
 	[SuppressMessage("Minor Bug", "S1206:\"Equals(Object)\" and \"GetHashCode()\" should be overridden in pairs", Justification = "It already is overriden, Sonar just doesn't understand this pattern.")]
 	internal sealed class CaptureLiteral : Literal, IEquatable<CaptureLiteral> {
@@ -39,52 +39,52 @@ namespace Stringier.Patterns.Nodes {
 		internal override Boolean CheckHeader(ref Source source) => CapStore.Value.CheckHeader(ref source);
 
 		/// <summary>
-		/// Call the Consume parser of this <see cref="Node"/> on the <paramref name="source"/> with the <paramref name="result"/>.
+		/// Call the Consume parser of this <see cref="Pattern"/> on the <paramref name="source"/> with the <paramref name="result"/>.
 		/// </summary>
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
-		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</
+		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</param>
 		internal override void Consume(ref Source source, ref Result result) => CapStore.Value.Consume(ref source, ref result, ComparisonType);
 
 		/// <summary>
-		/// Call the Neglect parser of this <see cref="Node"/> on the <paramref name="source"/> with the <paramref name="result"/>.
+		/// Call the Neglect parser of this <see cref="Pattern"/> on the <paramref name="source"/> with the <paramref name="result"/>.
 		/// </summary>
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
-		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</
+		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</param>
 		internal override void Neglect(ref Source source, ref Result result) => CapStore.Value.Neglect(ref source, ref result, ComparisonType);
 
 		/// <summary>
 		/// Determines whether this instance and a specified object have the same value.
 		/// </summary>
-		/// <param name="node">The <see cref="Node"/> to compare with the current <see cref="Node"/>.</param>
-		/// <returns><c>true</c> if the specified <see cref="Node"/> is equal to the current <see cref="Node"/>; otherwise, <c>false</c>.</returns
-		public override Boolean Equals(Node? node) {
-			switch (node) {
-			case CaptureLiteral other:
-				return Equals(other);
+		/// <param name="other">The <see cref="Pattern"/> to compare with the current <see cref="Pattern"/>.</param>
+		/// <returns><c>true</c> if the specified <see cref="Pattern"/> is equal to the current <see cref="Pattern"/>; otherwise, <c>false</c>.</returns>
+		public override Boolean Equals(Pattern? other) {
+			switch (other) {
+			case CaptureLiteral capture:
+				return Equals(capture);
 			default:
 				return false;
 			}
 		}
 
 		/// <summary>
-		/// Determines whether the specified <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> can be represented by this <see cref="Node"/>.
+		/// Determines whether the specified <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> can be represented by this <see cref="Pattern"/>.
 		/// </summary>
-		/// <param name="other">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to check against this <see cref="Node"/>.</param>.
-		/// <returns><c>true</c> if representable; otherwise, <c>false</c>.</returns
+		/// <param name="other">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to check against this <see cref="Pattern"/>.</param>.
+		/// <returns><c>true</c> if representable; otherwise, <c>false</c>.</returns>
 		public override Boolean Equals(ReadOnlySpan<Char> other) => CapStore.Value.Equals(other, ComparisonType);
 
 		/// <summary>
-		/// Determines whether the specified <see cref="String"/> can be represented by this <see cref="Node"/>.
+		/// Determines whether the specified <see cref="String"/> can be represented by this <see cref="Pattern"/>.
 		/// </summary>
-		/// <param name="other">The <see cref="String"/> to check against this <see cref="Node"/>.</param>
-		/// <returns><c>true</c> if representable; otherwise, <c>false</c>.</returns
+		/// <param name="other">The <see cref="String"/> to check against this <see cref="Pattern"/>.</param>
+		/// <returns><c>true</c> if representable; otherwise, <c>false</c>.</returns>
 		public override Boolean Equals(String other) => CapStore.Value.Equals(other, ComparisonType);
 
 		/// <summary>
 		/// Determines whether this instance and a specified object have the same value.
 		/// </summary>
-		/// <param name="other">The <see cref="CaptureLiteral"/> to compare with the current <see cref="Node"/>.</param>
-		/// <returns><c>true</c> if the specified <see cref="Node"/> is equal to the current <see cref="Node"/>; otherwise, <c>false</c>.</returns>
+		/// <param name="other">The <see cref="CaptureLiteral"/> to compare with the current <see cref="Pattern"/>.</param>
+		/// <returns><c>true</c> if the specified <see cref="Pattern"/> is equal to the current <see cref="Pattern"/>; otherwise, <c>false</c>.</returns>
 		public Boolean Equals(CaptureLiteral other) => CapStore.Value.Equals(other.CapStore.Value, ComparisonType);
 
 		/// <summary>

@@ -4,26 +4,26 @@ using Stringier.Patterns.Errors;
 
 namespace Stringier.Patterns.Nodes {
 	/// <summary>
-	/// Represents a <see cref="Ranger"/>, a "range" of text between two <see cref="Node"/>.
+	/// Represents a <see cref="Ranger"/>, a "range" of text between two <see cref="Pattern"/>.
 	/// </summary>
 	[SuppressMessage("Minor Bug", "S1206:\"Equals(Object)\" and \"GetHashCode()\" should be overridden in pairs", Justification = "It already is overriden, Sonar just doesn't understand this pattern.")]
 	internal class Ranger : Combinator, IEquatable<Ranger> {
 		/// <summary>
-		/// The <see cref="Node"/> to start from.
+		/// The <see cref="Pattern"/> to start from.
 		/// </summary>
-		internal protected readonly Node From;
+		internal protected readonly Pattern From;
 
 		/// <summary>
-		/// The <see cref="Node"/> to read to.
+		/// The <see cref="Pattern"/> to read to.
 		/// </summary>
-		internal protected readonly Node To;
+		internal protected readonly Pattern To;
 
 		/// <summary>
 		/// Initialize a new <see cref="Ranger"/> with the given <paramref name="from"/> and <paramref name="to"/> nodes.
 		/// </summary>
-		/// <param name="from">The <see cref="Node"/> to start from.</param>
-		/// <param name="to">The <see cref="Node"/> to read to.</param>
-		internal protected Ranger(Node from, Node to) {
+		/// <param name="from">The <see cref="Pattern"/> to start from.</param>
+		/// <param name="to">The <see cref="Pattern"/> to read to.</param>
+		internal protected Ranger(Pattern from, Pattern to) {
 			From = from;
 			To = to;
 		}
@@ -39,7 +39,7 @@ namespace Stringier.Patterns.Nodes {
 		internal override Boolean CheckHeader(ref Source source) => From.CheckHeader(ref source);
 
 		/// <summary>
-		/// Call the Consume parser of this <see cref="Node"/> on the <paramref name="source"/> with the <paramref name="result"/>.
+		/// Call the Consume parser of this <see cref="Pattern"/> on the <paramref name="source"/> with the <paramref name="result"/>.
 		/// </summary>
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
 		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</param
@@ -64,7 +64,7 @@ namespace Stringier.Patterns.Nodes {
 		}
 
 		/// <summary>
-		/// Call the Neglect parser of this <see cref="Node"/> on the <paramref name="source"/> with the <paramref name="result"/>.
+		/// Call the Neglect parser of this <see cref="Pattern"/> on the <paramref name="source"/> with the <paramref name="result"/>.
 		/// </summary>
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
 		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</param
@@ -73,9 +73,9 @@ namespace Stringier.Patterns.Nodes {
 		/// <summary>
 		/// Determines whether this instance and a specified object have the same value.
 		/// </summary>
-		/// <param name="node">The <see cref="Node"/> to compare with the current <see cref="Node"/>.</param>
-		/// <returns><c>true</c> if the specified <see cref="Node"/> is equal to the current <see cref="Node"/>; otherwise, <c>false</c>.</returns>
-		public override Boolean Equals(Node? node) {
+		/// <param name="node">The <see cref="Pattern"/> to compare with the current <see cref="Pattern"/>.</param>
+		/// <returns><c>true</c> if the specified <see cref="Pattern"/> is equal to the current <see cref="Pattern"/>; otherwise, <c>false</c>.</returns>
+		public override Boolean Equals(Pattern? node) {
 			switch (node) {
 			case Ranger other:
 				return Equals(other);
@@ -87,8 +87,8 @@ namespace Stringier.Patterns.Nodes {
 		/// <summary>
 		/// Determines whether this instance and a specified object have the same value.
 		/// </summary>
-		/// <param name="other">The <see cref="Ranger"/> to compare with the current <see cref="Node"/>.</param>
-		/// <returns><c>true</c> if the specified <see cref="Node"/> is equal to the current <see cref="Node"/>; otherwise, <c>false</c>.</
+		/// <param name="other">The <see cref="Ranger"/> to compare with the current <see cref="Pattern"/>.</param>
+		/// <returns><c>true</c> if the specified <see cref="Pattern"/> is equal to the current <see cref="Pattern"/>; otherwise, <c>false</c>.</
 		public Boolean Equals(Ranger other) => From.Equals(other.From) && To.Equals(other.To);
 
 		/// <summary>
@@ -98,18 +98,18 @@ namespace Stringier.Patterns.Nodes {
 		public override Int32 GetHashCode() => From.GetHashCode() ^ To.GetHashCode();
 
 		/// <summary>
-		/// Returns a <see cref="String"/> that represents the current <see cref="Node"/>.
+		/// Returns a <see cref="String"/> that represents the current <see cref="Pattern"/>.
 		/// </summary>
-		/// <returns>A <see cref="String"/> that represents the current <see cref="Node"/>.</returns
+		/// <returns>A <see cref="String"/> that represents the current <see cref="Pattern"/>.</returns
 		public override String ToString() => $"from=({From}) to=({To})";
 
 		#region Negator
 
 		/// <summary>
-		/// Negates this <see cref="Node"/>.
+		/// Negates this <see cref="Pattern"/>.
 		/// </summary>
-		/// <returns>A new <see cref="Node"/> which has been negated.</returns>
-		internal override Node Negate() => throw new PatternConstructionException("Ranges can not be negated, as there is no valid concept to describe this behavior");
+		/// <returns>A new <see cref="Pattern"/> which has been negated.</returns>
+		internal override Pattern Negate() => throw new PatternConstructionException("Ranges can not be negated, as there is no valid concept to describe this behavior");
 
 		#endregion
 	}

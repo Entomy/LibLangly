@@ -6,9 +6,20 @@ namespace Stringier.Patterns {
 	/// Represents a textual pattern; this pattern mutates during construction.
 	/// </summary>
 	/// <remarks>
-	/// This is a specialization for use in extremely performance sensitive scenarios and for use with the jumper/target system. Because a target is created from a <see cref="Pattern"/> and points to it, the reference must not change, yet the underlying pattern must change. That means the object must mutate, which is generally undesired and avoided.
+	/// This is a specialization for use with the jumper/target system. Because a target is created from a <see cref="Pattern"/> and points to it, the reference must not change, yet the underlying pattern must change. That means the object must mutate, which is generally undesired and avoided.
 	/// </remarks>
 	internal sealed class MutablePattern : Pattern {
+		/// <summary>
+		/// The <see cref="Pattern"/> at the head of this <see cref="Pattern"/>; the entry point of the graph.
+		/// </summary>
+		internal Pattern? Head;
+
+		/// <summary>
+		/// Whether the pattern is readonly or not.
+		/// </summary>
+		/// <remarks>
+		/// A <see cref="MutablePattern"/> when readonly is treated exactly like a normal <see cref="Pattern"/> and is no longer mutable.
+		/// </remarks>
 		private Boolean ReadOnly = false;
 
 		/// <summary>
@@ -17,12 +28,65 @@ namespace Stringier.Patterns {
 		internal MutablePattern() { }
 
 		/// <summary>
+		/// Determines whether this instance and a specified object have the same value.
+		/// </summary>
+		/// <param name="other">The <see cref="Pattern"/> to compare with the current <see cref="Pattern"/>.</param>
+		/// <returns><c>true</c> if the specified <see cref="Pattern"/> is equal to the current <see cref="Pattern"/>; otherwise, <c>false</c>.</returns>
+		public override Boolean Equals(Pattern? other) => Head?.Equals(other) ?? false;
+
+		/// <summary>
+		/// Returns the hash code for this <see cref="Pattern"/>.
+		/// </summary>
+		/// <returns>A 32-bit signed integer hash code.</returns>
+		public override Int32 GetHashCode() => Head?.GetHashCode() ?? 0;
+
+		/// <summary>
 		/// Seals the pattern to prevent further modification. Only does something for mutable patterns.
 		/// </summary>
 		/// <remarks>
 		/// This essentially converts a mutable pattern back into a pattern, so any further combination works like normal, rather than mutating in-place.
 		/// </remarks>
 		public override void Seal() => ReadOnly = true;
+
+		/// <summary>
+		/// Returns a <see cref="String"/> that represents the current <see cref="Pattern"/>.
+		/// </summary>
+		/// <returns>A <see cref="String"/> that represents the current <see cref="Pattern"/>.</returns>
+		public override String ToString() => Head?.ToString() ?? "";
+
+		/// <summary>
+		/// Checks the first character in the <paramref name="source"/> against the header of this node.
+		/// </summary>
+		/// <remarks>
+		/// This is primarily used to check whether a pattern may exist at the current position.
+		/// </remarks>
+		/// <param name="source">The <see cref="Source"/> to check against.</param>
+		/// <returns><c>true</c> if this <see cref="Pattern"/> may be present, <c>false</c> if definately not.</returns>
+		internal override Boolean CheckHeader(ref Source source) => Head?.CheckHeader(ref source) ?? false;
+
+		/// <summary>
+		/// Call the Consume parser of this <see cref="Pattern"/> on the <paramref name="source"/> with the <paramref name="result"/>.
+		/// </summary>
+		/// <param name="source">The <see cref="Source"/> to consume.</param>
+		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</param>
+		internal override void Consume(ref Source source, ref Result result) {
+			if (Head is null) {
+				throw new PatternUndefinedException();
+			}
+			Head.Consume(ref source, ref result);
+		}
+
+		/// <summary>
+		/// Call the Neglect parser of this <see cref="Pattern"/> on the <paramref name="source"/> with the <paramref name="result"/>.
+		/// </summary>
+		/// <param name="source">The <see cref="Source"/> to consume.</param>
+		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</param>
+		internal override void Neglect(ref Source source, ref Result result) {
+			if (Head is null) {
+				throw new PatternUndefinedException();
+			}
+			Head.Neglect(ref source, ref result);
+		}
 
 		#region Alternator
 
@@ -37,10 +101,10 @@ namespace Stringier.Patterns {
 			}
 			if (other is null) {
 				throw new ArgumentNullException(nameof(other));
-			} else if (Head is null || other.Head is null) {
+			} else if (Head is null) {
 				throw new PatternUndefinedException();
 			}
-			Head = Head.Alternate(other.Head);
+			Head = Head.Alternate(other);
 			return this;
 		}
 
@@ -131,10 +195,8 @@ namespace Stringier.Patterns {
 			}
 			if (other is null) {
 				throw new ArgumentNullException(nameof(other));
-			} else if (other.Head is null) {
-				throw new PatternUndefinedException();
 			}
-			Head = Head is null ? other.Head : Head.Concatenate(other.Head);
+			Head = Head is null ? other : Head.Concatenate(other);
 			return this;
 		}
 

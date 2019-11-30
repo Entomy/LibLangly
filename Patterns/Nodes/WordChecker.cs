@@ -50,12 +50,12 @@ namespace Stringier.Patterns.Nodes {
 		/// <summary>
 		/// Determines whether this instance and a specified object have the same value.
 		/// </summary>
-		/// <param name="node">The <see cref="Node"/> to compare with the current <see cref="Node"/>.</param>
-		/// <returns><c>true</c> if the specified <see cref="Node"/> is equal to the current <see cref="Node"/>; otherwise, <c>false</c
-		public override Boolean Equals(Node? node) {
+		/// <param name="node">The <see cref="Pattern"/> to compare with the current <see cref="Pattern"/>.</param>
+		/// <returns><c>true</c> if the specified <see cref="Pattern"/> is equal to the current <see cref="Pattern"/>; otherwise, <c>false</c>.</returns>	
+		public override Boolean Equals(Pattern? node) {
 			switch (node) {
-			case StringChecker other:
-				return Equals(other);
+			case StringChecker checker:
+				return Equals(checker);
 			default:
 				return false;
 			}
@@ -64,20 +64,20 @@ namespace Stringier.Patterns.Nodes {
 		/// <summary>
 		/// Determines whether this instance and a specified object have the same value.
 		/// </summary>
-		/// <param name="other">The <see cref="AlternateCharChecker"/> to compare with the current <see cref="Node"/>.</param>
-		/// <returns><c>true</c> if the specified <see cref="Node"/> is equal to the current <see cref="Node"/>; otherwise, <c>false</c
+		/// <param name="other">The <see cref="AlternateCharChecker"/> to compare with the current <see cref="Pattern"/>.</param>
+		/// <returns><c>true</c> if the specified <see cref="Pattern"/> is equal to the current <see cref="Pattern"/>; otherwise, <c>false</c>.</returns>	
 		public Boolean Equals(WordChecker other) => Bias.Equals(other.Bias) && HeadCheck.Equals(other.HeadCheck) && BodyCheck.Equals(other.BodyCheck) && TailCheck.Equals(other.TailCheck);
 
 		/// <summary>
 		/// Returns the hash code for this instance.
 		/// </summary>
-		/// <returns>A 32-bit signed integer hash code.</
+		/// <returns>A 32-bit signed integer hash code.</returns>
 		public override Int32 GetHashCode() => Bias.GetHashCode() ^ HeadCheck.GetHashCode() ^ BodyCheck.GetHashCode() ^ TailCheck.GetHashCode();
 
 		/// <summary>
 		/// Returns a string that represents the current object.
 		/// </summary>
-		/// <returns>A string that represents the current object.</
+		/// <returns>A string that represents the current object.</returns>
 		public override String ToString() => $"┋{Name}┋";
 
 		/// <summary>
@@ -87,14 +87,14 @@ namespace Stringier.Patterns.Nodes {
 		/// This is primarily used to check whether a pattern may exist at the current position.
 		/// </remarks>
 		/// <param name="source">The <see cref="Source"/> to check against.</param>
-		/// <returns><c>true</c> if this <see cref="Pattern"/> may be present, <c>false</c> if definately not.</
+		/// <returns><c>true</c> if this <see cref="Pattern"/> may be present, <c>false</c> if definately not.</returns>
 		internal override Boolean CheckHeader(ref Source source) => !source.EOF && HeadCheck(source.Peek());
 
 		/// <summary>
-		/// Call the Consume parser of this <see cref="Node"/> on the <paramref name="source"/> with the <paramref name="result"/>.
+		/// Call the Consume parser of this <see cref="Pattern"/> on the <paramref name="source"/> with the <paramref name="result"/>.
 		/// </summary>
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
-		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</
+		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</param>
 		internal override void Consume(ref Source source, ref Result result) {
 			//If we reached the end of the source we have an error
 			if (source.EOF) {
@@ -250,10 +250,10 @@ namespace Stringier.Patterns.Nodes {
 		}
 
 		/// <summary>
-		/// Call the Neglect parser of this <see cref="Node"/> on the <paramref name="source"/> with the <paramref name="result"/>.
+		/// Call the Neglect parser of this <see cref="Pattern"/> on the <paramref name="source"/> with the <paramref name="result"/>.
 		/// </summary>
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
-		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</
+		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</param>
 		internal override void Neglect(ref Source source, ref Result result) => throw new NotImplementedException();
 	}
 }
