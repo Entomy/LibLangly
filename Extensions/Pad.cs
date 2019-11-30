@@ -1,4 +1,6 @@
-﻿namespace System {
+﻿using System;
+
+namespace Stringier {
 	public static partial class StringierExtensions {
 		/// <summary>
 		/// Returns a new string that center-aligns the characters in this instance by padding them with spaces on both sides, for a specified total length.

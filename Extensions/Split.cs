@@ -1,4 +1,6 @@
-﻿namespace System {
+﻿using System;
+
+namespace Stringier {
 	public static partial class StringierExtensions {
 		/// <summary>
 		/// Splits a string into substrings based on the strings in an array.

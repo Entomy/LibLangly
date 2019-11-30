@@ -7,6 +7,7 @@ using Pidgin;
 using static Pidgin.Parser;
 using static Pidgin.Parser<char>;
 using Stringier.Patterns;
+using static Stringier.Patterns.Pattern;
 
 namespace Benchmarks.Patterns {
 	[SimpleJob(RuntimeMoniker.Net48)]
@@ -21,7 +22,7 @@ namespace Benchmarks.Patterns {
 
 		readonly Parser<Char, String> pidgin = Map((start, end) => start + end, String("--"), Not(OneOf(String("\u000D\u000A"), String("\u000A\u000D"))));
 
-		readonly Pattern stringier = "--" & +!Pattern.LineTerminator;
+		readonly Pattern stringier = "--".Then(Many(Not(LineTerminator)));
 
 		[Params("--Comment\u2028")] //NEL is chosen instead of other line terminators because it's very unlikely that any system actually handles it, despite it literally being for this exact purpose.
 		public String Source { get; set; }

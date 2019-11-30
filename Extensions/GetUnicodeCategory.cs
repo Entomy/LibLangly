@@ -1,6 +1,7 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Globalization;
 
-namespace System {
+namespace Stringier {
 	public static partial class StringierExtensions {
 		/// <summary>
 		/// Categorizes a specified Unicode character into a group identified by one of the <see cref="UnicodeCategory"/> values.

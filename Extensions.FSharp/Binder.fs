@@ -1,7 +1,5 @@
 ﻿namespace Stringier
 
-open System
-
 module Bindings =
     type Binder =
         static member Contains(source:string, value:char) = source.Contains(value)

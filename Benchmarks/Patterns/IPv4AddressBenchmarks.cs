@@ -29,7 +29,7 @@ namespace Benchmarks.Patterns {
 			(Char) => '0' <= Char && Char <= '2', false,
 			(Char) => '0' <= Char && Char <= '9', false,
 			(Char) => '0' <= Char && Char <= '9', true);
-		readonly Pattern stringier = stringierDigit & "." & stringierDigit & "." & stringierDigit & "." & stringierDigit;
+		readonly Pattern stringier = stringierDigit.Then(".").Then(stringierDigit).Then(".").Then(stringierDigit).Then(".").Then(stringierDigit);
 
 		[Params("192.168.1.1")]
 		public String Source { get; set; }

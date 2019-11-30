@@ -1,6 +1,7 @@
-﻿using System.Text.RegularExpressions;
+﻿using System;
+using System.Text.RegularExpressions;
 
-namespace System {
+namespace Stringier {
 	public static partial class StringierExtensions {
 		/// <summary>
 		/// Ensures the <paramref name="string"/> ends with the <paramref name="required"/> string, adding it if necessary.

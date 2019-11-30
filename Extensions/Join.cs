@@ -1,7 +1,8 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
 using System.Collections.Generic;
 
-namespace System {
+namespace Stringier {
 	public static partial class StringierExtensions {
 		/// <summary>
 		/// Joins the <paramref name="chars"/> into a string.

@@ -1,4 +1,6 @@
-﻿namespace System {
+﻿using System;
+
+namespace Stringier {
 	public static partial class StringierExtensions {
 		/// <summary>
 		/// Indicates whether the specified character has a surrogate code unit.

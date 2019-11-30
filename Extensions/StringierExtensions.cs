@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 [assembly:CLSCompliant(true)]
 [assembly:ComVisible(false)]
 
-namespace System {
+namespace Stringier {
 	public static partial class StringierExtensions {
 	}
 }

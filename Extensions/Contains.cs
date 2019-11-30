@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
-namespace System {
+namespace Stringier {
 	public static partial class StringierExtensions {
 		/// <summary>
 		/// Returns a value indicating whether a specified char occurs within this string.

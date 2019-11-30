@@ -1,4 +1,6 @@
-﻿namespace System {
+﻿using System;
+
+namespace Stringier {
 	public static partial class StringierExtensions {
 		/// <summary>
 		/// Separate the <paramref name="string"/> into its words.

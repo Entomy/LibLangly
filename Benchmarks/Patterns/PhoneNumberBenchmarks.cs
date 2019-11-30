@@ -7,6 +7,7 @@ using Pidgin;
 using static Pidgin.Parser;
 using static Pidgin.Parser<char>;
 using Stringier.Patterns;
+using static Stringier.Patterns.Pattern;
 
 namespace Benchmarks.Patterns {
 	[SimpleJob(RuntimeMoniker.Net48)]
@@ -21,7 +22,7 @@ namespace Benchmarks.Patterns {
 
 		readonly Parser<Char, String> pidgin = Digit.RepeatString(3).Then(Char('-')).Then(Digit.RepeatString(3)).Then(Char('-')).Then(Digit.RepeatString(4));
 
-		readonly Pattern stringier = (Pattern.DecimalDigitNumber * 3) & '-' & (Pattern.DecimalDigitNumber * 3) & '-' & (Pattern.DecimalDigitNumber * 4);
+		readonly Pattern stringier = DecimalDigitNumber.Repeat(3).Then('-').Then(DecimalDigitNumber.Repeat(3)).Then('-').Then(DecimalDigitNumber.Repeat(4));
 
 		[Params("555-555-5555")]
 		public String Source { get; set; }

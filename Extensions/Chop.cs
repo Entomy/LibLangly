@@ -1,4 +1,6 @@
-﻿namespace System {
+﻿using System;
+
+namespace Stringier {
 	public static partial class StringierExtensions {
 		/// <summary>
 		/// Chop the <paramref name="string"/> into chunks of <paramref name="size"/>

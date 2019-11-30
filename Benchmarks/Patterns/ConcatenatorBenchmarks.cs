@@ -21,7 +21,7 @@ namespace Benchmarks.Patterns {
 
 		readonly Parser<Char, String> pidgin = Map((first, second, third) => first + second + third, String("Hello"), Char(' '), String("Hello"));
 
-		readonly Pattern stringier = (Pattern)"Hello" & ' ' & "World";
+		readonly Pattern stringier = "Hello".Then(' ').Then("World");
 
 		[Params("Hello World", "Hello", "Failure")]
 		public String Source { get; set; }

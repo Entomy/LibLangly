@@ -1,6 +1,7 @@
 ﻿namespace Tests.Patterns
 
 open System
+open Stringier
 open Stringier.Patterns
 open Microsoft.VisualStudio.TestTools.UnitTesting
 

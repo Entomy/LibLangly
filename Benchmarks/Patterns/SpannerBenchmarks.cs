@@ -7,6 +7,7 @@ using Pidgin;
 using static Pidgin.Parser;
 using static Pidgin.Parser<char>;
 using Stringier.Patterns;
+using static Stringier.Patterns.Pattern;
 
 namespace Benchmarks.Patterns {
 	[SimpleJob(RuntimeMoniker.Net48)]
@@ -22,7 +23,7 @@ namespace Benchmarks.Patterns {
 
 		readonly Parser<Char, String> pidgin = String("Hi!").AtLeastOnceString();
 
-		readonly Pattern stringier = +(Pattern)"Hi!";
+		readonly Pattern stringier = Many("Hi!");
 
 		[Params("Hi!", "HiHi!", "Hi!Hi!Hi!", "Okay?")]
 		public String Source { get; set; }

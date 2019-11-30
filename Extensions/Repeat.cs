@@ -1,6 +1,7 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
 
-namespace System {
+namespace Stringier {
 	public static partial class StringierExtensions {
 		/// <summary>
 		/// Repeat the <paramref name="char"/> <paramref name="count"/> times.

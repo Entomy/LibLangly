@@ -1,6 +1,7 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Globalization;
 
-namespace System {
+namespace Stringier {
 	public static partial class StringierExtensions {
 		/// <summary>
 		/// Determines whether this <see cref="Char"/> and a specified <see cref="Char"/> object have the same value. A parameter specifies the culture, case, and sort rules used in the comparison.

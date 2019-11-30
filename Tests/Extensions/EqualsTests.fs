@@ -1,7 +1,7 @@
 ﻿namespace Tests.Extensions
 
 open System
-open Stringier.Extensions
+open Stringier
 open Microsoft.VisualStudio.TestTools.UnitTesting
 
 [<TestClass>]

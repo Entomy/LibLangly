@@ -1,7 +1,5 @@
 ﻿namespace Stringier
 
-open System
-open System.Collections.Generic
 open Bindings
 
 [<AutoOpen>]

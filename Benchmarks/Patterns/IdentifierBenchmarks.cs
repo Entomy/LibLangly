@@ -6,6 +6,7 @@ using PCRE;
 using Pidgin;
 using static Pidgin.Parser;
 using static Pidgin.Parser<char>;
+using Stringier;
 using Stringier.Patterns;
 
 namespace Benchmarks.Patterns {

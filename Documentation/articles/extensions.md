@@ -2,10 +2,10 @@
 
 ## Including
 
-This package merely extends `Char`, `Char[]`, `IEnumerable<Char>`, `String`, `String[]`, and `IEnumerable<String>`, so it exists with `System`. You can use it through:
+This package merely extends `Char`, `Char[]`, `IEnumerable<Char>`, `String`, `String[]`, and `IEnumerable<String>`. You can use it through:
 
 ~~~~csharp
-using System;
+using Stringier;
 ~~~~
 
 ## Usage

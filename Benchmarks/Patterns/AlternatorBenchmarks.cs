@@ -22,7 +22,7 @@ namespace Benchmarks.Patterns {
 
 		readonly Parser<Char, String> pidgin = String("Hello").Or(String("Goodbye"));
 
-		readonly Pattern stringier = (Pattern)"Hello" | "Goodbye";
+		readonly Pattern stringier = "Hello".Or("Goodbye");
 
 		[Params("Hello", "Goodbye", "Failure")]
 		public String Source { get; set; }

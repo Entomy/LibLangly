@@ -1,6 +1,7 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Globalization;
 
-namespace System {
+namespace Stringier {
 	public static partial class StringierExtensions {
 		/// <summary>
 		/// Converts the value of a Unicode character to its lowercase equivalent.

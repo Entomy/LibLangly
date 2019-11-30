@@ -2,6 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Jobs;
+using Stringier;
 
 namespace Benchmarks.Extensions {
 	[SimpleJob(RuntimeMoniker.Net48)]

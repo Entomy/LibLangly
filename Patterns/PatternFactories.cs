@@ -7,7 +7,7 @@ namespace Stringier.Patterns {
 		/// </summary>
 		/// <param name="delimiter">The token delimiting the start of a line comment.</param>
 		/// <returns>A pattern representing a line comment.</returns>
-		public static Pattern LineComment(String delimiter) => delimiter & +!LineTerminator;
+		public static Pattern LineComment(String delimiter) => delimiter.Then(Many(Not(LineTerminator)));
 
 		/// <summary>
 		/// Creates a pattern representing a string literal contained by the <paramref name="delimiter"/>.

@@ -1,4 +1,6 @@
-﻿namespace System {
+﻿using System;
+
+namespace Stringier {
 	public static partial class StringierExtensions {
 		/// <summary>
 		/// Indicates whether this <paramref name="high"/> and the specified <paramref name="low"/> <see cref="Char"/> form a surrogate pair.
