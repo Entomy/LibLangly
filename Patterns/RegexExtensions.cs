@@ -18,7 +18,7 @@ namespace Stringier.Patterns {
 			if (Pattern[0] != '^') {
 				throw new PatternConstructionException("Regex me be anchored to the begining");
 			}
-			return new RegexAdapter(regex);
+			return new Pattern(new RegexAdapter(regex));
 		}
 	}
 }

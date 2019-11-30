@@ -9,7 +9,7 @@ namespace Stringier.Patterns {
 		/// </summary>
 		/// <param name="char">The <see cref="Char"/> literal.</param>
 		/// <returns>A <see cref="Pattern"/> representing literally the <paramref name="char"/>.</returns>
-		public static Pattern AsPattern(this Char @char) => new CharLiteral(@char);
+		public static Pattern AsPattern(this Char @char) => new Pattern(new CharLiteral(@char));
 
 		/// <summary>
 		/// Attempt to consume the <paramref name="pattern"/> from the <paramref name="source"/>.
@@ -25,7 +25,7 @@ namespace Stringier.Patterns {
 		}
 
 		/// <summary>
-		/// Attempt to consume the <paramref name="pattern"/> from the <paramref name="source"/>.
+		/// Attempt to consume the <paramref name="Pattern"/> from the <paramref name="Source"/>.
 		/// </summary>
 		/// <param name="pattern">The <see cref="Char"/> to match.</param>
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
@@ -68,8 +68,10 @@ namespace Stringier.Patterns {
 		public static Pattern Or(this Char @char, Pattern other) {
 			if (other is null) {
 				throw new ArgumentNullException(nameof(other));
+			} else if (other.Head is null) {
+				throw new PatternUndefinedException();
 			}
-			return new CharLiteral(@char).Alternate(other);
+			return new Pattern(new CharLiteral(@char).Alternate(other.Head));
 		}
 
 		/// <summary>
@@ -81,7 +83,7 @@ namespace Stringier.Patterns {
 			if (other is null) {
 				throw new ArgumentNullException(nameof(other));
 			}
-			return new CharLiteral(@char).Alternate(other);
+			return new Pattern(new CharLiteral(@char).Alternate(other));
 		}
 
 		/// <summary>
@@ -89,7 +91,7 @@ namespace Stringier.Patterns {
 		/// </summary>
 		/// <param name="other">The <see cref="Char"/> to check if this <see cref="Char"/> does not match</param>
 		/// <returns>A new <see cref="Pattern"/> alternating this <see cref="Char"/> and <paramref name="other"/></returns>
-		public static Pattern Or(this Char @char, Char other) => new CharLiteral(@char).Alternate(other);
+		public static Pattern Or(this Char @char, Char other) => new Pattern(new CharLiteral(@char).Alternate(other));
 
 		/// <summary>
 		/// Declares <paramref name="other"/> to be an alternate of this <see cref="Char"/>.
@@ -100,7 +102,7 @@ namespace Stringier.Patterns {
 			if (other is null) {
 				throw new ArgumentNullException(nameof(other));
 			}
-			return new CharLiteral(@char).Alternate(new CaptureLiteral(other));
+			return new Pattern(new CharLiteral(@char).Alternate(new CaptureLiteral(other)));
 		}
 
 		/// <summary>
@@ -108,7 +110,7 @@ namespace Stringier.Patterns {
 		/// </summary>
 		/// <param name="count">The amount of times to repeat.</param>
 		/// <returns>A new <see cref="Pattern"/> repeated <paramref name="count"/> times.</returns>
-		public static Pattern Repeat(this Char @char, Int32 count) => new StringLiteral(StringierExtensions.Repeat(@char, count));
+		public static Pattern Repeat(this Char @char, Int32 count) => new Pattern(new StringLiteral(StringierExtensions.Repeat(@char, count)));
 
 		/// <summary>
 		/// Concatenates the patterns so that this <see cref="Char"/> comes before <paramref name="other"/>
@@ -118,8 +120,10 @@ namespace Stringier.Patterns {
 		public static Pattern Then(this Char @char, Pattern other) {
 			if (other is null) {
 				throw new ArgumentNullException(nameof(other));
+			} else if (other.Head is null) {
+				throw new PatternUndefinedException();
 			}
-			return new CharLiteral(@char).Concatenate(other);
+			return new Pattern(new CharLiteral(@char).Concatenate(other.Head));
 		}
 
 		/// <summary>
@@ -131,7 +135,7 @@ namespace Stringier.Patterns {
 			if (other is null) {
 				throw new ArgumentNullException(nameof(other));
 			}
-			return new CharLiteral(@char).Concatenate(other);
+			return new Pattern(new CharLiteral(@char).Concatenate(other));
 		}
 
 		/// <summary>
@@ -139,7 +143,7 @@ namespace Stringier.Patterns {
 		/// </summary>
 		/// <param name="other">The succeeding <see cref="Char"/></param>
 		/// <returns>A new <see cref="Pattern"/> concatenating this <see cref="Char"/> and <paramref name="other"/></returns>
-		public static Pattern Then(this Char @char, Char other) => new CharLiteral(@char).Concatenate(other);
+		public static Pattern Then(this Char @char, Char other) => new Pattern(new CharLiteral(@char).Concatenate(other));
 
 		/// <summary>
 		/// Concatenates the patterns so that this <see cref="Char"/> comes before <paramref name="other"/>
@@ -150,7 +154,7 @@ namespace Stringier.Patterns {
 			if (other is null) {
 				throw new ArgumentNullException(nameof(other));
 			}
-			return new CharLiteral(@char).Concatenate(new CaptureLiteral(other));
+			return new Pattern(new CharLiteral(@char).Concatenate(new CaptureLiteral(other)));
 		}
 
 		/// <summary>
@@ -159,7 +163,7 @@ namespace Stringier.Patterns {
 		/// <param name="pattern">The <see cref="Char"/> pattern.</param>
 		/// <param name="comparisonType">Whether the comparison is sensitive to casing.</param>
 		/// <returns>A new <see cref="Pattern"/> representing the <paramref name="pattern"/> compared with <paramref name="comparisonType"/>.</returns>
-		public static Pattern With(this Char pattern, Compare comparisonType) => new CharLiteral(pattern, comparisonType);
+		public static Pattern With(this Char pattern, Compare comparisonType) => new Pattern(new CharLiteral(pattern, comparisonType));
 
 		/// <summary>
 		/// Checks the first character in the <paramref name="source"/> against this character.
