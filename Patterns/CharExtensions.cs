@@ -25,7 +25,7 @@ namespace Stringier.Patterns {
 		}
 
 		/// <summary>
-		/// Attempt to consume the <paramref name="Pattern"/> from the <paramref name="Source"/>.
+		/// Attempt to consume the <paramref name="pattern"/> from the <paramref name="source"/>.
 		/// </summary>
 		/// <param name="pattern">The <see cref="Char"/> to match.</param>
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
@@ -144,7 +144,7 @@ namespace Stringier.Patterns {
 		/// <summary>
 		/// Concatenates the patterns so that this <see cref="Char"/> comes before <paramref name="other"/>
 		/// </summary>
-		/// <param name="other">The succeeding <see cref="Pattern"/></param>
+		/// <param name="other">The succeeding <see cref="Capture"/></param>
 		/// <returns>A new <see cref="Pattern"/> concatenating this <see cref="Char"/> and <paramref name="other"/></returns>
 		public static Pattern Then(this Char @char, Capture other) {
 			if (other is null) {

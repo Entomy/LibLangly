@@ -69,7 +69,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Stringier.Patterns.CharExtensions.html",
-          "hash": "04LYxfk60pFutlcTTP3F3A=="
+          "hash": "aHkt7D+q/BlQ3iJDPgVvzA=="
         }
       },
       "is_incremental": true,
@@ -81,7 +81,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Stringier.Patterns.Compare.html",
-          "hash": "soyiDEvwKDzbeGdsVhbMWQ=="
+          "hash": "cG7Fs5ANwI0AUB07oq97tg=="
         }
       },
       "is_incremental": true,
@@ -141,7 +141,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Stringier.Patterns.Pattern.html",
-          "hash": "m9P26u8FJwA5h22NnTZHUg=="
+          "hash": "N7XHhdlR5R2AYits3MsgOg=="
         }
       },
       "is_incremental": true,
@@ -249,7 +249,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Stringier.Patterns.StringExtensions.html",
-          "hash": "2aenNtjdQCZL9aueLLzz+Q=="
+          "hash": "oYmu2h767TrmIOZhEypXRw=="
         }
       },
       "is_incremental": true,
@@ -433,11 +433,12 @@
         "skipped_file_count": 0
       },
       "processors": {
-        "ConceptualDocumentProcessor": {
-          "can_incremental": true,
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
-          "total_file_count": 8,
-          "skipped_file_count": 8
+          "total_file_count": 0,
+          "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
@@ -445,12 +446,11 @@
           "total_file_count": 24,
           "skipped_file_count": 24
         },
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
+          "total_file_count": 8,
+          "skipped_file_count": 8
         }
       }
     },

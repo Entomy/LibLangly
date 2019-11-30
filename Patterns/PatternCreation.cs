@@ -83,7 +83,7 @@ namespace Stringier.Patterns {
 		/// <summary>
 		/// Declares <paramref name="other"/> to be an alternate of this <see cref="Pattern"/>.
 		/// </summary>
-		/// <param name="other">The <see cref="Capture"/> to check if this <see cref="Pattern"/> does not match</param>
+		/// <param name="other">The <see cref="Patterns.Capture"/> to check if this <see cref="Pattern"/> does not match</param>
 		/// <returns>A new <see cref="Pattern"/> alternating this <see cref="Pattern"/> and <paramref name="other"/></returns>
 		public virtual Pattern Or(Capture other) {
 			if (other is null) {
@@ -304,7 +304,7 @@ namespace Stringier.Patterns {
 		/// <summary>
 		/// Marks the <paramref name="pattern"/> as negated.
 		/// </summary>
-		/// <param name="pattern">The <see cref="Pattern"/> to negate.</param>
+		/// <param name="pattern">The <see cref="String"/> to negate.</param>
 		/// <returns>A new <see cref="Pattern"/> which has been negated.</returns>
 		public static Pattern Not(String pattern) {
 			if (pattern is null) {
@@ -316,14 +316,14 @@ namespace Stringier.Patterns {
 		/// <summary>
 		/// Marks the <paramref name="pattern"/> as negated.
 		/// </summary>
-		/// <param name="pattern">The <see cref="Pattern"/> to negate.</param>
+		/// <param name="pattern">The <see cref="Char"/> to negate.</param>
 		/// <returns>A new <see cref="Pattern"/> which has been negated.</returns>
 		public static Pattern Not(Char pattern) => new CharLiteral(pattern).Negate();
 
 		/// <summary>
 		/// Marks the <paramref name="pattern"/> as negated.
 		/// </summary>
-		/// <param name="pattern">The <see cref="Pattern"/> to negate.</param>
+		/// <param name="pattern">The <see cref="Patterns.Capture"/> to negate.</param>
 		/// <returns>A new <see cref="Pattern"/> which has been negated.</returns>
 		public static Pattern Not(Capture pattern) {
 			if (pattern is null) {

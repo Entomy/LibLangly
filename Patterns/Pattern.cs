@@ -17,7 +17,6 @@ namespace Stringier.Patterns {
 		/// This essentially converts a mutable pattern back into a pattern, so any further combination works like normal, rather than mutating in-place.
 		/// </remarks>
 		public virtual void Seal() { }
-
 		public static Boolean operator ==(Pattern left, Pattern right) {
 			if (left is null && right is null) {
 				return true;
