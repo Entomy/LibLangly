@@ -1,29 +1,30 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
+using Stringier.Patterns.Nodes;
 
 namespace Stringier.Patterns {
 	/// <summary>
 	/// Represents a textual pattern
 	/// </summary>
-	public abstract partial class Pattern : IEquatable<Pattern>, IEquatable<String> {
-		public static Boolean operator !=(Pattern left, Pattern right) {
-			if (left is null && right is null) {
-				return false;
-			} else if (left is null || right is null) {
-				return true;
-			} else {
-				return !left.Equals(right);
-			}
-		}
+	public sealed partial class Pattern : IEquatable<Pattern>, IEquatable<String> {
+		/// <summary>
+		/// The <see cref="Node"/> at the head of this <see cref="Pattern"/>; the entry point of the graph.
+		/// </summary>
+		internal Node? Head;
 
-		public static Boolean operator ==(Pattern left, Pattern right) {
-			if (left is null && right is null) {
-				return true;
-			} else if (left is null || right is null) {
-				return false;
-			} else {
-				return left.Equals(right);
-			}
-		}
+		/// <summary>
+		/// Initialize a new <see cref="Pattern"/> object, but without a defined pattern.
+		/// </summary>
+		/// <remarks>
+		/// This is intended for target/jump purposes, and shouldn't be used otherwise. Just define the pattern immediately.
+		/// </remarks>
+		public Pattern() { }
+
+		/// <summary>
+		/// Initialize a new <see cref="Pattern"/> with the given head <see cref="Node"/>.
+		/// </summary>
+		/// <param name="Head">The head <see cref="Node"/> of this <see cref="Pattern"/>; the entry point of the graph.</param>
+		internal Pattern(Node Head) => this.Head = Head;
 
 		/// <summary>
 		/// Attempt to consume the <see cref="Pattern"/> from the <paramref name="Source"/>
@@ -54,13 +55,36 @@ namespace Stringier.Patterns {
 		/// <param name="Source">The <see cref="Source"/> to consume</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/></returns>
 		public Result Consume(ref Source Source) {
+			if (Head is null) {
+				throw new PatternUndefinedException();
+			}
 			Result Result = new Result(ref Source);
 			Int32 OriginalPosition = Source.Position;
-			Consume(ref Source, ref Result);
+			Head.Consume(ref Source, ref Result);
 			if (!Result) {
 				Source.Position = OriginalPosition;
 			}
 			return Result;
+		}
+
+		public static Boolean operator ==(Pattern left, Pattern right) {
+			if (left is null && right is null) {
+				return true;
+			} else if (left is null || right is null) {
+				return false;
+			} else {
+				return left.Equals(right);
+			}
+		}
+
+		public static Boolean operator !=(Pattern left, Pattern right) {
+			if (left is null && right is null) {
+				return false;
+			} else if (left is null || right is null) {
+				return true;
+			} else {
+				return !left.Equals(right);
+			}
 		}
 
 		/// <summary>
@@ -84,69 +108,41 @@ namespace Stringier.Patterns {
 		/// </summary>
 		/// <param name="other">The <see cref="Pattern"/> to compare with the current <see cref="Pattern"/>.</param>
 		/// <returns><c>true</c> if the specified <see cref="Pattern"/> is equal to the current <see cref="Pattern"/>; otherwise, <c>false</c>.</returns>
-		public abstract Boolean Equals(Pattern other);
+		public Boolean Equals(Pattern other) => Head?.Equals(other?.Head) ?? false;
 
 		/// <summary>
 		/// Determines whether the specified <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> can be represented by this <see cref="Pattern"/>.
 		/// </summary>
 		/// <param name="other">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to check against this <see cref="Pattern"/>.</param>
 		/// <returns><c>true</c> if representable; otherwise, <c>false</c>.</returns>
-		public virtual Boolean Equals(ReadOnlySpan<Char> other) {
-			Source Source = new Source(other);
-			Result Result = new Result(ref Source);
-			Consume(ref Source, ref Result);
-			return Result && Source.Length == 0;
-		}
+		public Boolean Equals(ReadOnlySpan<Char> other) => Head?.Equals(other) ?? false;
 
 		/// <summary>
 		/// Determines whether the specified <see cref="String"/> can be represented by this <see cref="Pattern"/>.
 		/// </summary>
 		/// <param name="other">The <see cref="String"/> to check against this <see cref="Pattern"/>.</param>
 		/// <returns><c>true</c> if representable; otherwise, <c>false</c>.</returns>
-		public virtual Boolean Equals(String other) {
-			if (other is null) {
+		public Boolean Equals(String other) {
+			if (Head is null && other is null) {
+				return true;
+			} else if (Head is null || other is null) {
 				return false;
+			} else {
+				return Head.Equals(other);
 			}
-			Source Source = new Source(other);
-			Result Result = new Result(ref Source);
-			Consume(ref Source, ref Result);
-			return Result && Source.Length == 0;
 		}
 
 		/// <summary>
 		/// Returns the hash code for this <see cref="Pattern"/>.
 		/// </summary>
 		/// <returns>A 32-bit signed integer hash code.</returns>
-		public abstract override Int32 GetHashCode();
+		[SuppressMessage("Major Bug", "S3249:Classes directly extending \"object\" should not call \"base\" in \"GetHashCode\" or \"Equals\"", Justification = "This is actually the behavior we want. I don't know why you'd ever put Patterns in a collection, but this is the best way to appropriately deal with that without hampering performance in what this is intended for.")]
+		public override Int32 GetHashCode() => base.GetHashCode();
 
 		/// <summary>
 		/// Returns a <see cref="String"/> that represents the current <see cref="Pattern"/>.
 		/// </summary>
 		/// <returns>A <see cref="String"/> that represents the current <see cref="Pattern"/>.</returns>
-		public abstract override String ToString();
-
-		/// <summary>
-		/// Checks the first character in the <paramref name="source"/> against the header of this node.
-		/// </summary>
-		/// <remarks>
-		/// This is primarily used to check whether a pattern may exist at the current position.
-		/// </remarks>
-		/// <param name="source">The <see cref="Source"/> to check against.</param>
-		/// <returns><c>true</c> if this <see cref="Pattern"/> may be present, <c>false</c> if definately not.</returns>
-		internal abstract Boolean CheckHeader(ref Source source);
-
-		/// <summary>
-		/// Call the Consume parser of this <see cref="Pattern"/> on the <paramref name="source"/> with the <paramref name="result"/>.
-		/// </summary>
-		/// <param name="source">The <see cref="Source"/> to consume.</param>
-		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</param>
-		internal abstract void Consume(ref Source source, ref Result result);
-
-		/// <summary>
-		/// Call the Neglect parser of this <see cref="Pattern"/> on the <paramref name="source"/> with the <paramref name="result"/>.
-		/// </summary>
-		/// <param name="source">The <see cref="Source"/> to consume.</param>
-		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</param>
-		internal abstract void Neglect(ref Source source, ref Result result);
+		public override String ToString() => Head.ToString();
 	}
 }

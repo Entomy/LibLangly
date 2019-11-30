@@ -60,11 +60,11 @@ namespace Stringier.Patterns.Nodes {
 		/// </summary>
 		/// <param name="name">The name to refer to this as</param>
 		/// <param name="headCheck">A <see cref="Func{T, TResult}"/> taking a <see cref="Char"/> and returning a <see cref="Boolean"/></param>
-		/// <param name="headRequired">Whether the <paramref name="headCheck"/> is required.</param>
+		/// <param name="headRequired"
 		/// <param name="bodyCheck">A <see cref="Func{T, TResult}"/> taking a <see cref="Char"/> and returning a <see cref="Boolean"/></param>
-		/// <param name="bodyRequired">Whether the <paramref name="bodyCheck"/> is required.</param>
+		/// <param name="bodyRequired"
 		/// <param name="tailCheck">A <see cref="Func{T, TResult}"/> taking a <see cref="Char"/> and returning a <see cref="Boolean"/></param>
-		/// <param name="tailRequired">Whether the <paramref name="tailCheck"/> is required.</param>
+		/// <param name="tailRequired"
 		internal StringChecker(String name, Func<Char, Boolean> headCheck, Boolean headRequired, Func<Char, Boolean> bodyCheck, Boolean bodyRequired, Func<Char, Boolean> tailCheck, Boolean tailRequired) : this(name, headCheck, bodyCheck, tailCheck) {
 			if (!headRequired && !bodyRequired && !tailRequired) { throw new PatternConstructionException("At least one component must be required"); }
 			HeadRequired = headRequired;
@@ -79,14 +79,14 @@ namespace Stringier.Patterns.Nodes {
 		/// This is primarily used to check whether a pattern may exist at the current position.
 		/// </remarks>
 		/// <param name="source">The <see cref="Source"/> to check against.</param>
-		/// <returns><c>true</c> if this <see cref="Pattern"/> may be present, <c>false</c> if definately not.</returns>
+		/// <returns><c>true</c> if this <see cref="Pattern"/> may be present, <c>false</c> if definately not.</
 		internal override Boolean CheckHeader(ref Source source) => !source.EOF && HeadCheck(source.Peek());
 
 		/// <summary>
-		/// Call the Consume parser of this <see cref="Pattern"/> on the <paramref name="source"/> with the <paramref name="result"/>.
+		/// Call the Consume parser of this <see cref="Node"/> on the <paramref name="source"/> with the <paramref name="result"/>.
 		/// </summary>
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
-		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</param>
+		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</
 		internal override void Consume(ref Source source, ref Result result) {
 			//The constructors should catch this situation first, but it should still be checked here in case someone forgot
 			if (!HeadRequired && !BodyRequired && !TailRequired) { throw new PatternConstructionException("At least one component must be required"); }
@@ -233,21 +233,21 @@ namespace Stringier.Patterns.Nodes {
 		}
 
 		/// <summary>
-		/// Call the Neglect parser of this <see cref="Pattern"/> on the <paramref name="source"/> with the <paramref name="result"/>.
+		/// Call the Neglect parser of this <see cref="Node"/> on the <paramref name="source"/> with the <paramref name="result"/>.
 		/// </summary>
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
-		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</param>
+		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</
 		internal override void Neglect(ref Source source, ref Result result) => throw new NotImplementedException();
 
 		/// <summary>
 		/// Determines whether this instance and a specified object have the same value.
 		/// </summary>
-		/// <param name="other">The <see cref="Pattern"/> to compare with the current <see cref="Pattern"/>.</param>
-		/// <returns><c>true</c> if the specified <see cref="Pattern"/> is equal to the current <see cref="Pattern"/>; otherwise, <c>false</c>.
-		public override Boolean Equals(Pattern other) {
-			switch (other) {
-			case StringChecker checker:
-				return Equals(checker);
+		/// <param name="node">The <see cref="Node"/> to compare with the current <see cref="Node"/>.</param>
+		/// <returns><c>true</c> if the specified <see cref="Node"/> is equal to the current <see cref="Node"/>; otherwise, <c>false</c>.
+		public override Boolean Equals(Node? node) {
+			switch (node) {
+			case StringChecker other:
+				return Equals(other);
 			default:
 				return false;
 			}
@@ -256,8 +256,8 @@ namespace Stringier.Patterns.Nodes {
 		/// <summary>
 		/// Determines whether this instance and a specified object have the same value.
 		/// </summary>
-		/// <param name="other">The <see cref="AlternateCharChecker"/> to compare with the current <see cref="Pattern"/>.</param>
-		/// <returns><c>true</c> if the specified <see cref="Pattern"/> is equal to the current <see cref="Pattern"/>; otherwise, <c>false</c>.
+		/// <param name="other">The <see cref="AlternateCharChecker"/> to compare with the current <see cref="Node"/>.</param>
+		/// <returns><c>true</c> if the specified <see cref="Node"/> is equal to the current <see cref="Node"/>; otherwise, <c>false</c>.
 		public Boolean Equals(StringChecker other) => HeadCheck.Equals(other.HeadCheck) && BodyCheck.Equals(other.BodyCheck) && TailCheck.Equals(other.TailCheck);
 
 		/// <summary>

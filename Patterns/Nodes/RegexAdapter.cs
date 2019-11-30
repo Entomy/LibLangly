@@ -8,7 +8,7 @@ namespace Stringier.Patterns.Nodes {
 	/// Adapts <see cref="System.Text.RegularExpressions.Regex"/> to work with <see cref="Pattern"/>.
 	/// </summary>
 	[SuppressMessage("Minor Bug", "S1206:\"Equals(Object)\" and \"GetHashCode()\" should be overridden in pairs", Justification = "It already is overriden, Sonar just doesn't understand this pattern.")]
-	internal sealed class RegexAdapter : Pattern, IEquatable<RegexAdapter> {
+	internal sealed class RegexAdapter : Node, IEquatable<RegexAdapter> {
 		/// <summary>
 		/// The actual <see cref="System.Text.RegularExpressions.Regex"/>.
 		/// </summary>
@@ -31,7 +31,7 @@ namespace Stringier.Patterns.Nodes {
 		internal override Boolean CheckHeader(ref Source source) => true; //This is true because it represents "the pattern may possibly be here", and we have no way of extracting the header from a Regex, so just don't use this optimization.
 
 		/// <summary>
-		/// Call the Consume parser of this <see cref="Pattern"/> on the <paramref name="source"/> with the <paramref name="result"/>.
+		/// Call the Consume parser of this <see cref="Node"/> on the <paramref name="source"/> with the <paramref name="result"/>.
 		/// </summary>
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
 		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</param>
@@ -46,7 +46,7 @@ namespace Stringier.Patterns.Nodes {
 		}
 
 		/// <summary>
-		/// Call the Neglect parser of this <see cref="Pattern"/> on the <paramref name="source"/> with the <paramref name="result"/>.
+		/// Call the Neglect parser of this <see cref="Node"/> on the <paramref name="source"/> with the <paramref name="result"/>.
 		/// </summary>
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
 		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</param>
@@ -55,12 +55,12 @@ namespace Stringier.Patterns.Nodes {
 		/// <summary>
 		/// Determines whether this instance and a specified object have the same value.
 		/// </summary>
-		/// <param name="other">The <see cref="Pattern"/> to compare with the current <see cref="Pattern"/>.</param>
-		/// <returns><c>true</c> if the specified <see cref="Pattern"/> is equal to the current <see cref="Pattern"/>; otherwise, <c>false</c>.</returns
-		public override Boolean Equals(Pattern other) {
-			switch (other) {
-			case RegexAdapter adapter:
-				return Equals(adapter);
+		/// <param name="node">The <see cref="Node"/> to compare with the current <see cref="Node"/>.</param>
+		/// <returns><c>true</c> if the specified <see cref="Node"/> is equal to the current <see cref="Node"/>; otherwise, <c>false</c>.</returns
+		public override Boolean Equals(Node? node) {
+			switch (node) {
+			case RegexAdapter other:
+				return Equals(other);
 			default:
 				return false;
 			}
@@ -69,8 +69,8 @@ namespace Stringier.Patterns.Nodes {
 		/// <summary>
 		/// Determines whether this instance and a specified object have the same value.
 		/// </summary>
-		/// <param name="other">The <see cref="RegexAdapter"/> to compare with the current <see cref="Pattern"/>.</param>
-		/// <returns><c>true</c> if the specified <see cref="Pattern"/> is equal to the current <see cref="Pattern"/>; otherwise, <c>false</c>.</returns
+		/// <param name="other">The <see cref="RegexAdapter"/> to compare with the current <see cref="Node"/>.</param>
+		/// <returns><c>true</c> if the specified <see cref="Node"/> is equal to the current <see cref="Node"/>; otherwise, <c>false</c>.</returns
 		public Boolean Equals(RegexAdapter other) => Regex.Equals(other.Regex);
 
 		/// <summary>
@@ -80,18 +80,18 @@ namespace Stringier.Patterns.Nodes {
 		public override Int32 GetHashCode() => Regex.GetHashCode();
 
 		/// <summary>
-		/// Returns a <see cref="String"/> that represents the current <see cref="Pattern"/>.
+		/// Returns a <see cref="String"/> that represents the current <see cref="Node"/>.
 		/// </summary>
-		/// <returns>A <see cref="String"/> that represents the current <see cref="Pattern"/>.</returns
+		/// <returns>A <see cref="String"/> that represents the current <see cref="Node"/>.</returns
 		public override String ToString() => $"╱{Regex}╱";
 
 		#region Negator
 
 		/// <summary>
-		/// Negates this <see cref="Pattern"/>.
+		/// Negates this <see cref="Node"/>.
 		/// </summary>
-		/// <returns>A new <see cref="Pattern"/> which has been negated.</returns>
-		internal override Pattern Negate() => throw new PatternConstructionException("Regex can not be negated");
+		/// <returns>A new <see cref="Node"/> which has been negated.</returns>
+		internal override Node Negate() => throw new PatternConstructionException("Regex can not be negated");
 
 		#endregion
 	}
