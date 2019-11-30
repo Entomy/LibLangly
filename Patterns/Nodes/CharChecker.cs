@@ -12,7 +12,7 @@ namespace Stringier.Patterns.Nodes {
 		/// <summary>
 		/// A <see cref="Func{T, TResult}"/> taking a <see cref="Char"/> and returning a <see cref="Boolean"/>.
 		/// </summary>
-		internal readonly Func<Char, Boolean> Check;
+		internal readonly new Func<Char, Boolean> Check;
 
 		/// <summary>
 		/// Construct a new <see cref="CharChecker"/> from the specified <paramref name="check"/>
@@ -32,7 +32,7 @@ namespace Stringier.Patterns.Nodes {
 		internal override Boolean CheckHeader(ref Source source) => !source.EOF && Check(source.Peek());
 
 		/// <summary>
-		/// Call the Consume parser of this <see cref="Node"/> on the <paramref name="source"/> with the <paramref name="result"/>.
+		/// Call the Consume parser of this <see cref="Pattern"/> on the <paramref name="source"/> with the <paramref name="result"/>.
 		/// </summary>
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
 		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</param
@@ -51,7 +51,7 @@ namespace Stringier.Patterns.Nodes {
 		}
 
 		/// <summary>
-		/// Call the Neglect parser of this <see cref="Node"/> on the <paramref name="source"/> with the <paramref name="result"/>.
+		/// Call the Neglect parser of this <see cref="Pattern"/> on the <paramref name="source"/> with the <paramref name="result"/>.
 		/// </summary>
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
 		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</param
@@ -72,36 +72,36 @@ namespace Stringier.Patterns.Nodes {
 		/// <summary>
 		/// Determines whether this instance and a specified object have the same value.
 		/// </summary>
-		/// <param name="node">The <see cref="Node"/> to compare with the current <see cref="Node"/>.</param>
-		/// <returns><c>true</c> if the specified <see cref="Node"/> is equal to the current <see cref="Node"/>; otherwise, <c>false</c>.</returns
-		public override Boolean Equals(Node? node) {
-			switch (node) {
-			case CharChecker other:
-				return Equals(other);
+		/// <param name="other">The <see cref="Pattern"/> to compare with the current <see cref="Pattern"/>.</param>
+		/// <returns><c>true</c> if the specified <see cref="Pattern"/> is equal to the current <see cref="Pattern"/>; otherwise, <c>false</c>.</returns
+		public override Boolean Equals(Pattern other) {
+			switch (other) {
+			case CharChecker checker:
+				return Equals(checker);
 			default:
 				return false;
 			}
 		}
 
 		/// <summary>
-		/// Determines whether the specified <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> can be represented by this <see cref="Node"/>.
+		/// Determines whether the specified <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> can be represented by this <see cref="Pattern"/>.
 		/// </summary>
-		/// <param name="other">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to check against this <see cref="Node"/>.</param>.
+		/// <param name="other">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to check against this <see cref="Pattern"/>.</param>.
 		/// <returns><c>true</c> if representable; otherwise, <c>false</c>.</returns>
 		public override Boolean Equals(ReadOnlySpan<Char> other) => other.Length == 1 && Check(other[0]);
 
 		/// <summary>
-		/// Determines whether the specified <see cref="String"/> can be represented by this <see cref="Node"/>.
+		/// Determines whether the specified <see cref="String"/> can be represented by this <see cref="Pattern"/>.
 		/// </summary>
-		/// <param name="other">The <see cref="String"/> to check against this <see cref="Node"/>.</param>
+		/// <param name="other">The <see cref="String"/> to check against this <see cref="Pattern"/>.</param>
 		/// <returns><c>true</c> if representable; otherwise, <c>false</c>.</returns
 		public override Boolean Equals(String other) => other.Length == 1 && Check(other[0]);
 
 		/// <summary>
 		/// Determines whether this instance and a specified object have the same value.
 		/// </summary>
-		/// <param name="other">The <see cref="CharChecker"/> to compare with the current <see cref="Node"/>.</param>
-		/// <returns><c>true</c> if the specified <see cref="Node"/> is equal to the current <see cref="Node"/>; otherwise, <c>false</c>.</returns
+		/// <param name="other">The <see cref="CharChecker"/> to compare with the current <see cref="Pattern"/>.</param>
+		/// <returns><c>true</c> if the specified <see cref="Pattern"/> is equal to the current <see cref="Pattern"/>; otherwise, <c>false</c>.</returns
 		public Boolean Equals(CharChecker other) => Check.Equals(other.Check);
 
 		/// <summary>
@@ -119,14 +119,14 @@ namespace Stringier.Patterns.Nodes {
 		#region Alternator
 
 		/// <summary>
-		/// Declares <paramref name="right"/> to be an alternate of this <see cref="Node"/>.
+		/// Declares <paramref name="right"/> to be an alternate of this <see cref="Pattern"/>.
 		/// </summary>
-		/// <param name="right">The <see cref="Node"/> to check if this <see cref="Node"/> does not match.</param>
-		/// <returns>A new <see cref="Node"/> alternating this <see cref="Node"/> and <paramref name="right"/>.</returns>
-		internal override Node Alternate(Node right) {
+		/// <param name="right">The <see cref="Pattern"/> to check if this <see cref="Pattern"/> does not match.</param>
+		/// <returns>A new <see cref="Pattern"/> alternating this <see cref="Pattern"/> and <paramref name="right"/>.</returns>
+		internal override Pattern Alternate(Pattern right) {
 			switch (right) {
-			case CharChecker cc:
-				return new AlternateCharChecker(Name, Check, cc.Check);
+			case CharChecker checker:
+				return new AlternateCharChecker(Name, Check, checker.Check);
 			default:
 				return base.Alternate(right);
 			}
@@ -137,11 +137,11 @@ namespace Stringier.Patterns.Nodes {
 		#region Repeater
 
 		/// <summary>
-		/// Repeats this <see cref="Node"/> <paramref name="count"/> times.
+		/// Repeats this <see cref="Pattern"/> <paramref name="count"/> times.
 		/// </summary>
 		/// <param name="count">The amount of times to repeat.</param>
-		/// <returns>A new <see cref="Node"/> repeated <paramref name="count"/> times.</returns
-		internal override Node Repeat(Int32 count) => new RepeatCharChecker(Name, Check, count);
+		/// <returns>A new <see cref="Pattern"/> repeated <paramref name="count"/> times.</returns
+		public override Pattern Repeat(Int32 count) => new RepeatCharChecker(Name, Check, count);
 
 		#endregion
 	}

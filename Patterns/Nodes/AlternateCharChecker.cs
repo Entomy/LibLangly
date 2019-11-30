@@ -43,7 +43,7 @@ namespace Stringier.Patterns.Nodes {
 		internal override Boolean CheckHeader(ref Source source) => (!source.EOF && Left(source.Peek())) || Right(source.Peek());
 
 		/// <summary>
-		/// Call the Consume parser of this <see cref="Node"/> on the <paramref name="source"/> with the <paramref name="result"/>.
+		/// Call the Consume parser of this <see cref="Pattern"/> on the <paramref name="source"/> with the <paramref name="result"/>.
 		/// </summary>
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
 		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</param
@@ -62,7 +62,7 @@ namespace Stringier.Patterns.Nodes {
 		}
 
 		/// <summary>
-		/// Call the Neglect parser of this <see cref="Node"/> on the <paramref name="source"/> with the <paramref name="result"/>.
+		/// Call the Neglect parser of this <see cref="Pattern"/> on the <paramref name="source"/> with the <paramref name="result"/>.
 		/// </summary>
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
 		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</
@@ -83,36 +83,36 @@ namespace Stringier.Patterns.Nodes {
 		/// <summary>
 		/// Determines whether this instance and a specified object have the same value.
 		/// </summary>
-		/// <param name="node">The <see cref="Node"/> to compare with the current <see cref="Node"/>.</param>
-		/// <returns><c>true</c> if the specified <see cref="Node"/> is equal to the current <see cref="Node"/>; otherwise, <c>false</c>.</
-		public override Boolean Equals(Node? node) {
-			switch (node) {
-			case AlternateCharChecker other:
-				return Equals(other);
+		/// <param name="other">The <see cref="Pattern"/> to compare with the current <see cref="Pattern"/>.</param>
+		/// <returns><c>true</c> if the specified <see cref="Pattern"/> is equal to the current <see cref="Pattern"/>; otherwise, <c>false</c>.</
+		public override Boolean Equals(Pattern other) {
+			switch (other) {
+			case AlternateCharChecker checker:
+				return Equals(checker);
 			default:
 				return false;
 			}
 		}
 
 		/// <summary>
-		/// Determines whether the specified <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> can be represented by this <see cref="Node"/>.
+		/// Determines whether the specified <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> can be represented by this <see cref="Pattern"/>.
 		/// </summary>
-		/// <param name="other">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to check against this <see cref="Node"/>.</param>.
+		/// <param name="other">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to check against this <see cref="Pattern"/>.</param>.
 		/// <returns><c>true</c> if representable; otherwise, <c>false</c>.</returns>
 		public override Boolean Equals(ReadOnlySpan<Char> other) => other.Length == 1 && (Left(other[0]) || Right(other[0]));
 
 		/// <summary>
-		/// Determines whether the specified <see cref="String"/> can be represented by this <see cref="Node"/>.
+		/// Determines whether the specified <see cref="String"/> can be represented by this <see cref="Pattern"/>.
 		/// </summary>
-		/// <param name="other">The <see cref="String"/> to check against this <see cref="Node"/>.</param>
+		/// <param name="other">The <see cref="String"/> to check against this <see cref="Pattern"/>.</param>
 		/// <returns><c>true</c> if representable; otherwise, <c>false</c>.</returns
 		public override Boolean Equals(String other) => other.Length == 1 && (Left(other[0]) || Right(other[0]));
 
 		/// <summary>
 		/// Determines whether this instance and a specified object have the same value.
 		/// </summary>
-		/// <param name="other">The <see cref="AlternateCharChecker"/> to compare with the current <see cref="Node"/>.</param>
-		/// <returns><c>true</c> if the specified <see cref="Node"/> is equal to the current <see cref="Node"/>; otherwise, <c>false</c>.</
+		/// <param name="other">The <see cref="AlternateCharChecker"/> to compare with the current <see cref="Pattern"/>.</param>
+		/// <returns><c>true</c> if the specified <see cref="Pattern"/> is equal to the current <see cref="Pattern"/>; otherwise, <c>false</c>.</
 		public Boolean Equals(AlternateCharChecker other) => Left.Equals(other.Left) && Right.Equals(other.Right);
 
 		/// <summary>
