@@ -11,7 +11,7 @@ namespace Stringier.Patterns.Nodes {
 	/// The general approach to how this works is that the "head" is only present zero or one times, the "body" is present zero or many times, and the "tail" is only present zero or one times. Various boolean flags control this behavior.
 	/// </remarks>
 	[SuppressMessage("Minor Bug", "S1206:\"Equals(Object)\" and \"GetHashCode()\" should be overridden in pairs", Justification = "It is overriden, Sonar is just too stupid to figure out this pattern")]
-	internal sealed class StringChecker : Checker, IEquatable<StringChecker> {
+	internal sealed class StringChecker : Checker {
 		/// <summary>
 		/// A <see cref="Func{T, TResult}"/> taking a <see cref="Char"/> and returning a <see cref="Boolean"/>.
 		/// </summary>

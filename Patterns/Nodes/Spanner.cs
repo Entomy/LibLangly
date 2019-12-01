@@ -6,7 +6,7 @@ namespace Stringier.Patterns.Nodes {
 	/// Represents a <see cref="Patterns.Pattern"/> who's content can span. That is, as long as it is present once, can repeat multiple times past that point.
 	/// </summary>
 	[SuppressMessage("Minor Bug", "S1206:\"Equals(Object)\" and \"GetHashCode()\" should be overridden in pairs", Justification = "It already is overriden, Sonar just doesn't understand this pattern.")]
-	internal sealed class Spanner : Modifier, IEquatable<Spanner> {
+	internal sealed class Spanner : Modifier {
 		/// <summary>
 		/// The <see cref="Patterns.Pattern"/> to be parsed.
 		/// </summary>

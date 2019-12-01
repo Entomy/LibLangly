@@ -5,7 +5,7 @@ namespace Stringier.Patterns.Nodes {
 	/// <summary>
 	/// Represents a <see cref="Ranger"/> which supports nesting of the range.
 	/// </summary>
-	internal sealed class NestedRanger : Ranger, IEquatable<NestedRanger> {
+	internal sealed class NestedRanger : Ranger {
 		/// <summary>
 		/// The current nesting level.
 		/// </summary>

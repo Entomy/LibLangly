@@ -9,7 +9,7 @@ namespace Stringier.Patterns.Nodes {
 	/// This exists to box <see cref="System.String"/> into something that we can treat as a part of a pattern.
 	/// </remarks>
 	[SuppressMessage("Minor Bug", "S1206:\"Equals(Object)\" and \"GetHashCode()\" should be overridden in pairs", Justification = "It already is overriden, Sonar just doesn't understand this pattern.")]
-	internal sealed class StringLiteral : Literal, IEquatable<StringLiteral> {
+	internal sealed class StringLiteral : Literal {
 		/// <summary>
 		/// The actual <see cref="System.String"/> being matched.
 		/// </summary>

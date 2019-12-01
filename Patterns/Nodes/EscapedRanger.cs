@@ -10,7 +10,7 @@ namespace Stringier.Patterns.Nodes {
 	/// The escape sequence is intended to allow the <see cref="Ranger.To"/> node to exist inside of the range, it should be considered exactly like a string quote escape inside of a string.
 	/// </remarks>
 	[SuppressMessage("Minor Bug", "S1206:\"Equals(Object)\" and \"GetHashCode()\" should be overridden in pairs", Justification = "It already is overriden, Sonar just doesn't understand this pattern.")]
-	internal sealed class EscapedRanger : Ranger, IEquatable<EscapedRanger> {
+	internal sealed class EscapedRanger : Ranger {
 		/// <summary>
 		/// The <see cref="Pattern"/> representing the escape sequence.
 		/// </summary>

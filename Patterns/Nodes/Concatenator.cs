@@ -6,7 +6,7 @@ namespace Stringier.Patterns.Nodes {
 	/// Represents the concatenation of two <see cref="Pattern"/>. That is, one <see cref="Pattern"/> directly after another.
 	/// </summary>
 	[SuppressMessage("Minor Bug", "S1206:\"Equals(Object)\" and \"GetHashCode()\" should be overridden in pairs", Justification = "It already is overriden, Sonar just doesn't understand this pattern.")]
-	internal sealed class Concatenator : Combinator, IEquatable<Concatenator> {
+	internal sealed class Concatenator : Combinator {
 		/// <summary>
 		/// The lefthand <see cref="Pattern"/>; the first.
 		/// </summary>

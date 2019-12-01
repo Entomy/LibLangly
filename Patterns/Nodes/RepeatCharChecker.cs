@@ -10,7 +10,7 @@ namespace Stringier.Patterns.Nodes {
 	/// This is an optimization, and doesn't do anything that normal repeater wouldn't be able to do.
 	/// </remarks>
 	[SuppressMessage("Minor Bug", "S1206:\"Equals(Object)\" and \"GetHashCode()\" should be overridden in pairs", Justification = "It is overriden, Sonar is just too stupid to figure out this pattern")]
-	internal sealed class RepeatCharChecker : Checker, IEquatable<RepeatCharChecker> {
+	internal sealed class RepeatCharChecker : Checker {
 		/// <summary>
 		/// A <see cref="Func{T, TResult}"/> taking a <see cref="Char"/> and returning a <see cref="Boolean"/>.
 		/// </summary>

@@ -6,7 +6,7 @@ namespace Stringier.Patterns.Nodes {
 	/// Represents a <see cref="Patterns.Pattern"/> whos content is optional.
 	/// </summary>
 	[SuppressMessage("Minor Bug", "S1206:\"Equals(Object)\" and \"GetHashCode()\" should be overridden in pairs", Justification = "It already is overriden, Sonar just doesn't understand this pattern.")]
-	internal sealed class Optor : Modifier, IEquatable<Optor> {
+	internal sealed class Optor : Modifier {
 		/// <summary>
 		/// The <see cref="Patterns.Pattern"/> to be parsed.
 		/// </summary>

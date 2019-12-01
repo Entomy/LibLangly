@@ -9,7 +9,7 @@ namespace Stringier.Patterns.Nodes {
 	/// This is syntactic sugar around the Neglect parser, which parses anything that does not match the pattern, with some special semantics for certain patterns. It is basically saying "anything that isn't this, that is the same length".
 	/// </remarks>
 	[SuppressMessage("Minor Bug", "S1206:\"Equals(Object)\" and \"GetHashCode()\" should be overridden in pairs", Justification = "It already is overriden, Sonar just doesn't understand this pattern.")]
-	internal sealed class Negator : Modifier, IEquatable<Negator> {
+	internal sealed class Negator : Modifier {
 		/// <summary>
 		/// The <see cref="Patterns.Pattern"/> to be parsed.
 		/// </summary>

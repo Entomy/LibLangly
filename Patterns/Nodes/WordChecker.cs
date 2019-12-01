@@ -10,7 +10,7 @@ namespace Stringier.Patterns.Nodes {
 	/// This can be thought of as a specialization of <see cref="StringChecker"/>, in that they both match arrays of characters, but the way they match is fundamentally different.
 	/// </remarks>
 	[SuppressMessage("Minor Bug", "S1206:\"Equals(Object)\" and \"GetHashCode()\" should be overridden in pairs", Justification = "It is overriden, Sonar is just too stupid to figure out this pattern")]
-	internal sealed class WordChecker : Checker, IEquatable<WordChecker> {
+	internal sealed class WordChecker : Checker {
 		/// <summary>
 		/// A <see cref="Func{T, TResult}"/> taking a <see cref="Char"/> and returning a <see cref="Boolean"/>.
 		/// </summary>

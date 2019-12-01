@@ -7,7 +7,7 @@ namespace Stringier.Patterns.Nodes {
 	/// Represents a check for the end of the <see cref="Source"/>.
 	/// </summary>
 	[SuppressMessage("Minor Bug", "S1206:\"Equals(Object)\" and \"GetHashCode()\" should be overridden in pairs", Justification = "It is overriden, Sonar is just too stupid to figure out this pattern")]
-	internal sealed class EndChecker : Checker, IEquatable<EndChecker> {
+	internal sealed class EndChecker : Checker {
 
 		/// <summary>
 		/// Initializes a new <see cref="EndChecker"/>.

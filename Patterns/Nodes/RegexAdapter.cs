@@ -8,7 +8,7 @@ namespace Stringier.Patterns.Nodes {
 	/// Adapts <see cref="System.Text.RegularExpressions.Regex"/> to work with <see cref="Pattern"/>.
 	/// </summary>
 	[SuppressMessage("Minor Bug", "S1206:\"Equals(Object)\" and \"GetHashCode()\" should be overridden in pairs", Justification = "It already is overriden, Sonar just doesn't understand this pattern.")]
-	internal sealed class RegexAdapter : Pattern, IEquatable<RegexAdapter> {
+	internal sealed class RegexAdapter : Pattern {
 		/// <summary>
 		/// The actual <see cref="System.Text.RegularExpressions.Regex"/>.
 		/// </summary>
