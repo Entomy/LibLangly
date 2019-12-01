@@ -24,7 +24,3 @@ Thanks to [GitHub Pages](https://pages.github.com/), documentation is available 
 
 
 **Patterns** extends **Stringier** with further support for pattern declaration and parsing of those patterns. If you're doing a lot of text parsing or text processing, this is probably of interest to you.
-
-## [Patterns.MSTest](https://github.com/Entomy/Stringier/tree/master/Patterns.MSTest) [![Nuget](https://img.shields.io/nuget/dt/Stringier.Patterns.Testing?label=Stringier.Patterns.Testing&logo=nuget)](https://www.nuget.org/packages/Stringier.Patterns.Testing/)
-
-**Patterns.MSTest** extends [MSTest](https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-mstest) with special asserters used for testing correct behavior of **Patterns**. This has been packaged to help others with testing and debugging their patterns. As for why [MSTest](https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-mstest), see [this document](https://github.com/Entomy/Stringier/blob/master/Patterns.MSTest/README.md).
