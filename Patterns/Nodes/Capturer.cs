@@ -6,7 +6,7 @@ namespace Stringier.Patterns.Nodes {
 	/// Represents a capturer <see cref="Patterns.Pattern"/>. That is, a <see cref="Patterns.Pattern"/> which captures its match into a <see cref="Patterns.Capture"/>.
 	/// </summary>
 	[SuppressMessage("Minor Bug", "S1206:\"Equals(Object)\" and \"GetHashCode()\" should be overridden in pairs", Justification = "It already is overriden, Sonar just doesn't understand this pattern.")]
-	internal sealed class Capturer : Modifier, IEquatable<Capturer> {
+	internal sealed class Capturer : Modifier {
 		/// <summary>
 		/// The <see cref="Patterns.Pattern"/> to be parsed and captured.
 		/// </summary>
@@ -58,52 +58,5 @@ namespace Stringier.Patterns.Nodes {
 			Pattern.Neglect(ref source, ref result);
 			CapStore.Value = source.Substring(originalPosition, source.Position - originalPosition).ToString();
 		}
-
-		/// <summary>
-		/// Determines whether this instance and a specified object have the same value.
-		/// </summary>
-		/// <param name="other">The <see cref="Patterns.Pattern"/> to compare with the current <see cref="Patterns.Pattern"/>.</param>
-		/// <returns><c>true</c> if the specified <see cref="Patterns.Pattern"/> is equal to the current <see cref="Patterns.Pattern"/>; otherwise, <c>false</c>.</returns>
-		public override Boolean Equals(Pattern? other) {
-			switch (other) {
-			case Capturer capturer:
-				return Equals(capturer);
-			default:
-				return false;
-			}
-		}
-
-		/// <summary>
-		/// Determines whether the specified <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> can be represented by this <see cref="Patterns.Pattern"/>.
-		/// </summary>
-		/// <param name="other">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to check against this <see cref="Patterns.Pattern"/>.</param>.
-		/// <returns><c>true</c> if representable; otherwise, <c>false</c>.</returns>
-		public override Boolean Equals(ReadOnlySpan<Char> other) {
-			CapStore.Value = other.ToString();
-			return Pattern.Equals(other);
-		}
-
-		/// <summary>
-		/// Determines whether the specified <see cref="String"/> can be represented by this <see cref="Patterns.Pattern"/>.
-		/// </summary>
-		/// <param name="other">The <see cref="String"/> to check against this <see cref="Patterns.Pattern"/>.</param>
-		/// <returns><c>true</c> if representable; otherwise, <c>false</c>.</returns>
-		public override Boolean Equals(String other) {
-			CapStore.Value = other;
-			return Pattern.Equals(other);
-		}
-
-		/// <summary>
-		/// Determines whether this instance and a specified object have the same value.
-		/// </summary>
-		/// <param name="other">The <see cref="Concatenator"/> to compare with the current <see cref="Patterns.Pattern"/>.</param>
-		/// <returns><c>true</c> if the specified <see cref="Patterns.Pattern"/> is equal to the current <see cref="Patterns.Pattern"/>; otherwise, <c>false</c>.</returns>
-		public Boolean Equals(Capturer other) => Pattern.Equals(other);
-
-		/// <summary>
-		/// Returns the hash code for this instance.
-		/// </summary>
-		/// <returns>A 32-bit signed integer hash code.</returns>
-		public override Int32 GetHashCode() => Pattern.GetHashCode();
 	}
 }

@@ -48,33 +48,6 @@ namespace Stringier.Patterns.Nodes {
 		}
 
 		/// <summary>
-		/// Determines whether this instance and a specified object have the same value.
-		/// </summary>
-		/// <param name="node">The <see cref="Pattern"/> to compare with the current <see cref="Pattern"/>.</param>
-		/// <returns><c>true</c> if the specified <see cref="Pattern"/> is equal to the current <see cref="Pattern"/>; otherwise, <c>false</c>.</returns>	
-		public override Boolean Equals(Pattern? node) {
-			switch (node) {
-			case StringChecker checker:
-				return Equals(checker);
-			default:
-				return false;
-			}
-		}
-
-		/// <summary>
-		/// Determines whether this instance and a specified object have the same value.
-		/// </summary>
-		/// <param name="other">The <see cref="AlternateCharChecker"/> to compare with the current <see cref="Pattern"/>.</param>
-		/// <returns><c>true</c> if the specified <see cref="Pattern"/> is equal to the current <see cref="Pattern"/>; otherwise, <c>false</c>.</returns>	
-		public Boolean Equals(WordChecker other) => Bias.Equals(other.Bias) && HeadCheck.Equals(other.HeadCheck) && BodyCheck.Equals(other.BodyCheck) && TailCheck.Equals(other.TailCheck);
-
-		/// <summary>
-		/// Returns the hash code for this instance.
-		/// </summary>
-		/// <returns>A 32-bit signed integer hash code.</returns>
-		public override Int32 GetHashCode() => Bias.GetHashCode() ^ HeadCheck.GetHashCode() ^ BodyCheck.GetHashCode() ^ TailCheck.GetHashCode();
-
-		/// <summary>
 		/// Checks the first character in the <paramref name="source"/> against the header of this node.
 		/// </summary>
 		/// <remarks>

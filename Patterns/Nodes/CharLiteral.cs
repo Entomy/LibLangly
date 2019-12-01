@@ -9,7 +9,7 @@ namespace Stringier.Patterns.Nodes {
 	/// This exists to box <see cref="System.Char"/> into something that we can treat as a part of a pattern.
 	/// </remarks>
 	[SuppressMessage("Minor Bug", "S1206:\"Equals(Object)\" and \"GetHashCode()\" should be overridden in pairs", Justification = "It already is overriden, Sonar just doesn't understand this pattern.")]
-	internal sealed class CharLiteral : Literal, IEquatable<CharLiteral> {
+	internal sealed class CharLiteral : Literal {
 		/// <summary>
 		/// The actual <see cref="System.Char"/> being matched.
 		/// </summary>
@@ -51,47 +51,6 @@ namespace Stringier.Patterns.Nodes {
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
 		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</param>
 		internal override void Neglect(ref Source source, ref Result result) => Char.Neglect(ref source, ref result, ComparisonType);
-
-		/// <summary>
-		/// Determines whether this instance and a specified object have the same value.
-		/// </summary>
-		/// <param name="other">The <see cref="Pattern"/> to compare with the current <see cref="Pattern"/>.</param>
-		/// <returns><c>true</c> if the specified <see cref="Pattern"/> is equal to the current <see cref="Pattern"/>; otherwise, <c>false</c>.</returns>
-		public override Boolean Equals(Pattern? other) {
-			switch (other) {
-			case CharLiteral @char:
-				return Equals(@char);
-			default:
-				return false;
-			}
-		}
-
-		/// <summary>
-		/// Determines whether the specified <see cref="ReadOnlySpan{T}"/> of <see cref="System.Char"/> can be represented by this <see cref="Pattern"/>.
-		/// </summary>
-		/// <param name="other">The <see cref="ReadOnlySpan{T}"/> of <see cref="System.Char"/> to check against this <see cref="Pattern"/>.</param>.
-		/// <returns><c>true</c> if representable; otherwise, <c>false</c>.</returns>
-		public override Boolean Equals(ReadOnlySpan<Char> other) => Char.ToString().Equals(other, ComparisonType);
-
-		/// <summary>
-		/// Determines whether the specified <see cref="String"/> can be represented by this <see cref="Pattern"/>.
-		/// </summary>
-		/// <param name="other">The <see cref="String"/> to check against this <see cref="Pattern"/>.</param>
-		/// <returns><c>true</c> if representable; otherwise, <c>false</c>.</returns>
-		public override Boolean Equals(String other) => Char.ToString().Equals(other, ComparisonType);
-
-		/// <summary>
-		/// Determines whether this instance and a specified object have the same value.
-		/// </summary>
-		/// <param name="other">The <see cref="CharLiteral"/> to compare with the current <see cref="Pattern"/>.</param>
-		/// <returns><c>true</c> if the specified <see cref="Pattern"/> is equal to the current <see cref="Pattern"/>; otherwise, <c>false</c>.</returns>
-		public Boolean Equals(CharLiteral other) => ComparisonType.Equals(other.ComparisonType) && this.Char.Equals(other.Char, ComparisonType);
-
-		/// <summary>
-		/// Returns the hash code for this instance.
-		/// </summary>
-		/// <returns>A 32-bit signed integer hash code.</returns>
-		public override Int32 GetHashCode() => Char.GetHashCode();
 
 		#region Concatenator
 

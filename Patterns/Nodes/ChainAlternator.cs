@@ -10,7 +10,7 @@ namespace Stringier.Patterns.Nodes {
 	/// This is an optimization around cases of alternating alternators; there's much less indirection and other issues when flattening that portion of the graph. It also causes better syntax when written to a string.
 	/// </remarks>
 	[SuppressMessage("Minor Bug", "S1206:\"Equals(Object)\" and \"GetHashCode()\" should be overridden in pairs", Justification = "It already is overriden, Sonar just doesn't understand this pattern.")]
-	internal sealed class ChainAlternator : Combinator, IEquatable<ChainAlternator> {
+	internal sealed class ChainAlternator : Combinator {
 		/// <summary>
 		/// The possible <see cref="Pattern"/> matches.
 		/// </summary>
@@ -54,33 +54,6 @@ namespace Stringier.Patterns.Nodes {
 			firstPatterns.CopyTo(Patterns, 0);
 			lastPatterns.CopyTo(Patterns, firstPatterns.Length);
 		}
-
-		/// <summary>
-		/// Determines whether this instance and a specified object have the same value.
-		/// </summary>
-		/// <param name="pattern">The <see cref="Pattern"/> to compare with the current <see cref="Pattern"/>.</param>
-		/// <returns><c>true</c> if the specified <see cref="Pattern"/> is equal to the current <see cref="Pattern"/>; otherwise, <c>false</c>.</
-		public override Boolean Equals(Pattern? pattern) {
-			switch (pattern) {
-			case ChainAlternator alternator:
-				return Equals(alternator);
-			default:
-				return false;
-			}
-		}
-
-		/// <summary>
-		/// Determines whether this instance and a specified object have the same value.
-		/// </summary>
-		/// <param name="other">The <see cref="Concatenator"/> to compare with the current <see cref="Pattern"/>.</param>
-		/// <returns><c>true</c> if the specified <see cref="Pattern"/> is equal to the current <see cref="Pattern"/>; otherwise, <c>false</c>.</returns>
-		public Boolean Equals(ChainAlternator other) => Patterns.Equals(other.Patterns);
-
-		/// <summary>
-		/// Returns the hash code for this instance.
-		/// </summary>
-		/// <returns>A 32-bit signed integer hash code.</returns>
-		public override Int32 GetHashCode() => Patterns.GetHashCode();
 
 		/// <summary>
 		/// Checks the first character in the <paramref name="source"/> against the header of this node.

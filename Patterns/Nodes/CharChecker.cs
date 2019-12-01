@@ -8,7 +8,7 @@ namespace Stringier.Patterns.Nodes {
 	/// </summary>
 	/// </remarks>
 	[SuppressMessage("Minor Bug", "S1206:\"Equals(Object)\" and \"GetHashCode()\" should be overridden in pairs", Justification = "It is overriden, Sonar is just too stupid to figure out this pattern")]
-	internal sealed class CharChecker : Checker, IEquatable<CharChecker> {
+	internal sealed class CharChecker : Checker {
 		/// <summary>
 		/// A <see cref="Func{T, TResult}"/> taking a <see cref="Char"/> and returning a <see cref="Boolean"/>.
 		/// </summary>
@@ -68,47 +68,6 @@ namespace Stringier.Patterns.Nodes {
 				}
 			}
 		}
-
-		/// <summary>
-		/// Determines whether this instance and a specified object have the same value.
-		/// </summary>
-		/// <param name="other">The <see cref="Pattern"/> to compare with the current <see cref="Pattern"/>.</param>
-		/// <returns><c>true</c> if the specified <see cref="Pattern"/> is equal to the current <see cref="Pattern"/>; otherwise, <c>false</c>.</returns>
-		public override Boolean Equals(Pattern? other) {
-			switch (other) {
-			case CharChecker checker:
-				return Equals(checker);
-			default:
-				return false;
-			}
-		}
-
-		/// <summary>
-		/// Determines whether the specified <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> can be represented by this <see cref="Pattern"/>.
-		/// </summary>
-		/// <param name="other">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to check against this <see cref="Pattern"/>.</param>.
-		/// <returns><c>true</c> if representable; otherwise, <c>false</c>.</returns>
-		public override Boolean Equals(ReadOnlySpan<Char> other) => other.Length == 1 && Check(other[0]);
-
-		/// <summary>
-		/// Determines whether the specified <see cref="String"/> can be represented by this <see cref="Pattern"/>.
-		/// </summary>
-		/// <param name="other">The <see cref="String"/> to check against this <see cref="Pattern"/>.</param>
-		/// <returns><c>true</c> if representable; otherwise, <c>false</c>.</returns
-		public override Boolean Equals(String other) => other.Length == 1 && Check(other[0]);
-
-		/// <summary>
-		/// Determines whether this instance and a specified object have the same value.
-		/// </summary>
-		/// <param name="other">The <see cref="CharChecker"/> to compare with the current <see cref="Pattern"/>.</param>
-		/// <returns><c>true</c> if the specified <see cref="Pattern"/> is equal to the current <see cref="Pattern"/>; otherwise, <c>false</c>.</returns
-		public Boolean Equals(CharChecker other) => Check.Equals(other.Check);
-
-		/// <summary>
-		/// Returns the hash code for this instance.
-		/// </summary>
-		/// <returns>A 32-bit signed integer hash code.</returns>
-		public override Int32 GetHashCode() => Check.GetHashCode();
 
 		#region Alternator
 

@@ -48,47 +48,6 @@ namespace Stringier.Patterns.Nodes {
 			result.Error.Clear(); //If a pattern is optional, it doesn't matter if it's there or not, so we never actually have an error
 		}
 
-		/// <summary>
-		/// Determines whether this instance and a specified object have the same value.
-		/// </summary>
-		/// <param name="pattern">The <see cref="Patterns.Pattern"/> to compare with the current <see cref="Patterns.Pattern"/>.</param>
-		/// <returns><c>true</c> if the specified <see cref="Patterns.Pattern"/> is equal to the current <see cref="Patterns.Pattern"/>; otherwise, <c>false</c>.</returns>
-		public override Boolean Equals(Pattern? pattern) {
-			switch (pattern) {
-			case Optor optor:
-				return Equals(optor);
-			default:
-				return false;
-			}
-		}
-
-		/// <summary>
-		/// Determines whether the specified <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> can be represented by this <see cref="Patterns.Pattern"/>.
-		/// </summary>
-		/// <param name="other">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to check against this <see cref="Patterns.Pattern"/>.</param>.
-		/// <returns><c>true</c> if representable; otherwise, <c>false</c>.</returns>
-		public override Boolean Equals(ReadOnlySpan<Char> other) => true; //If a pattern is optional, it doesn't matter if it's there or not
-
-		/// <summary>
-		/// Determines whether the specified <see cref="String"/> can be represented by this <see cref="Patterns.Pattern"/>.
-		/// </summary>
-		/// <param name="other">The <see cref="String"/> to check against this <see cref="Patterns.Pattern"/>.</param>
-		/// <returns><c>true</c> if representable; otherwise, <c>false</c>.</returns>
-		public override Boolean Equals(String other) => true; //If a pattern is optional, it doesn't matter if it's there or not
-
-		/// <summary>
-		/// Determines whether this instance and a specified object have the same value.
-		/// </summary>
-		/// <param name="other">The <see cref="Optor"/> to compare with the current <see cref="Patterns.Pattern"/>.</param>
-		/// <returns><c>true</c> if the specified <see cref="Patterns.Pattern"/> is equal to the current <see cref="Patterns.Pattern"/>; otherwise, <c>false</c>.</returns>
-		public Boolean Equals(Optor other) => Pattern.Equals(other.Pattern);
-
-		/// <summary>
-		/// Returns the hash code for this instance.
-		/// </summary>
-		/// <returns>A 32-bit signed integer hash code.</returns>
-		public override Int32 GetHashCode() => ~Pattern.GetHashCode();
-
 		#region Spanner
 
 		internal override Pattern Span() => throw new PatternConstructionException("Options can not span, as it creates an infinite loop. You probably want to make a span optional instead.");

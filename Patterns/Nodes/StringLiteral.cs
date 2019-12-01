@@ -52,47 +52,6 @@ namespace Stringier.Patterns.Nodes {
 		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="System.String"/>.</param>
 		internal override void Neglect(ref Source source, ref Result result) => String.Neglect(ref source, ref result, ComparisonType);
 
-		/// <summary>
-		/// Determines whether this instance and a specified object have the same value.
-		/// </summary>
-		/// <param name="other">The <see cref="Pattern"/> to compare with the current <see cref="Pattern"/>.</param>
-		/// <returns><c>true</c> if the specified <see cref="Pattern"/> is equal to the current <see cref="Pattern"/>; otherwise, <c>false</c>.</returns>
-		public override Boolean Equals(Pattern? other) {
-			switch (other) {
-			case StringLiteral @string:
-				return Equals(@string);
-			default:
-				return false;
-			}
-		}
-
-		/// <summary>
-		/// Determines whether the specified <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> can be represented by this <see cref="Pattern"/>.
-		/// </summary>
-		/// <param name="other">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to check against this <see cref="Pattern"/>.</param>.
-		/// <returns><c>true</c> if representable; otherwise, <c>false</c>.</returns>
-		public override Boolean Equals(ReadOnlySpan<Char> other) => String.Equals(other, ComparisonType);
-
-		/// <summary>
-		/// Determines whether the specified <see cref="System.String"/> can be represented by this <see cref="Pattern"/>.
-		/// </summary>
-		/// <param name="other">The <see cref="System.String"/> to check against this <see cref="Pattern"/>.</param>
-		/// <returns><c>true</c> if representable; otherwise, <c>false</c>.</returns>
-		public override Boolean Equals(String other) => !(other is null) && String.Equals(other, ComparisonType);
-
-		/// <summary>
-		/// Determines whether this instance and a specified object have the same value.
-		/// </summary>
-		/// <param name="other">The <see cref="StringLiteral"/> to compare with the current <see cref="Pattern"/>.</param>
-		/// <returns><c>true</c> if the specified <see cref="Pattern"/> is equal to the current <see cref="Pattern"/>; otherwise, <c>false</c>.</returns>
-		public Boolean Equals(StringLiteral other) => ComparisonType.Equals(other.ComparisonType) && this.String.Equals(other.String, ComparisonType);
-
-		/// <summary>
-		/// Returns the hash code for this instance.
-		/// </summary>
-		/// <returns>A 32-bit signed integer hash code.</returns>
-		public override Int32 GetHashCode() => String.GetHashCode();
-
 		#region Concatenator
 
 		/// <summary>

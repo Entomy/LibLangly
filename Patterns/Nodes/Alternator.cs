@@ -7,7 +7,7 @@ namespace Stringier.Patterns.Nodes {
 	/// Represents the alternation of two <see cref="Pattern"/>. That is, one <see cref="Pattern"/> or the other.
 	/// </summary>
 	[SuppressMessage("Minor Bug", "S1206:\"Equals(Object)\" and \"GetHashCode()\" should be overridden in pairs", Justification = "It already is overriden, Sonar just doesn't understand this pattern.")]
-	internal sealed class Alternator : Combinator, IEquatable<Alternator> {
+	internal sealed class Alternator : Combinator {
 		/// <summary>
 		/// The lefthand <see cref="Pattern"/>; the first.
 		/// </summary>
@@ -70,33 +70,6 @@ namespace Stringier.Patterns.Nodes {
 				Left.Neglect(ref source, ref result);
 			}
 		}
-
-		/// <summary>
-		/// Determines whether this instance and a specified object have the same value.
-		/// </summary>
-		/// <param name="other">The <see cref="Pattern"/> to compare with the current <see cref="Pattern"/>.</param>
-		/// <returns><c>true</c> if the specified <see cref="Pattern"/> is equal to the current <see cref="Pattern"/>; otherwise, <c>false</c>.</returns
-		public override Boolean Equals(Pattern? other) {
-			switch (other) {
-			case Alternator alternator:
-				return Equals(alternator);
-			default:
-				return false;
-			}
-		}
-
-		/// <summary>
-		/// Determines whether this instance and a specified object have the same value.
-		/// </summary>
-		/// <param name="other">The <see cref="Concatenator"/> to compare with the current <see cref="Pattern"/>.</param>
-		/// <returns><c>true</c> if the specified <see cref="Pattern"/> is equal to the current <see cref="Pattern"/>; otherwise, <c>false</c>.</returns
-		public Boolean Equals(Alternator other) => Left.Equals(other.Left) && Right.Equals(other.Right);
-
-		/// <summary>
-		/// Returns the hash code for this instance.
-		/// </summary>
-		/// <returns>A 32-bit signed integer hash code.</returns
-		public override Int32 GetHashCode() => Left.GetHashCode() | Right.GetHashCode();
 
 		#region Alternator
 

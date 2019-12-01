@@ -55,32 +55,5 @@ namespace Stringier.Patterns.Nodes {
 				result.Error.Set(ErrorType.EndOfSource, To);
 			}
 		}
-
-		/// <summary>
-		/// Determines whether this instance and a specified object have the same value.
-		/// </summary>
-		/// <param name="node">The <see cref="Pattern"/> to compare with the current <see cref="Pattern"/>.</param>
-		/// <returns><c>true</c> if the specified <see cref="Pattern"/> is equal to the current <see cref="Pattern"/>; otherwise, <c>false</c>.</returns
-		public override Boolean Equals(Pattern? node) {
-			switch (node) {
-			case EscapedRanger other:
-				return Equals(other);
-			default:
-				return false;
-			}
-		}
-
-		/// <summary>
-		/// Determines whether this instance and a specified object have the same value.
-		/// </summary>
-		/// <param name="other">The <see cref="EscapedRanger"/> to compare with the current <see cref="Pattern"/>.</param>
-		/// <returns><c>true</c> if the specified <see cref="Pattern"/> is equal to the current <see cref="Pattern"/>; otherwise, <c>false</c>.
-		public Boolean Equals(EscapedRanger other) => From.Equals(other.From) && To.Equals(other.To) && Escape.Equals(other.Escape);
-
-		/// <summary>
-		/// Returns the hash code for this <see cref="Pattern"/>.
-		/// </summary>
-		/// <returns>A 32-bit signed integer hash code.</returns
-		public override Int32 GetHashCode() => base.GetHashCode() ^ Escape.GetHashCode();
 	}
 }
