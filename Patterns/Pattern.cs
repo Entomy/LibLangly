@@ -8,7 +8,7 @@ namespace Stringier.Patterns {
 		/// <summary>
 		/// Initialize a new <see cref="Pattern"/>.
 		/// </summary>
-		internal Pattern() { }
+		protected Pattern() { }
 
 		/// <summary>
 		/// Seals the pattern to prevent further modification. Only does something for mutable patterns.

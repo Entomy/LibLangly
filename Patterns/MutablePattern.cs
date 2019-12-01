@@ -136,9 +136,10 @@ namespace Stringier.Patterns {
 				throw new ArgumentNullException(nameof(other));
 			} else if (Head is null) {
 				throw new PatternUndefinedException();
+			} else {
+				Head = Head.Alternate(new CaptureLiteral(other));
+				return this;
 			}
-			Head = Head.Alternate(new CaptureLiteral(other));
-			return this;
 		}
 
 		#endregion

@@ -400,8 +400,9 @@ namespace Stringier.Patterns {
 		public static Pattern Range(Pattern from, Pattern to) {
 			if (from is null || to is null) {
 				throw new ArgumentNullException(from is null ? nameof(from) : nameof(to));
+			} else {
+				return new Ranger(from, to);
 			}
-			return new Ranger(from, to);
 		}
 
 		/// <summary>
@@ -417,8 +418,9 @@ namespace Stringier.Patterns {
 				throw new ArgumentNullException(nameof(to));
 			} else if (escape is null) {
 				throw new ArgumentNullException(nameof(escape));
+			} else {
+				return new EscapedRanger(from, to, escape);
 			}
-			return new EscapedRanger(from, to, escape);
 		}
 
 		/// <summary>
@@ -432,8 +434,9 @@ namespace Stringier.Patterns {
 		public static Pattern NestedRange(Pattern from, Pattern to) {
 			if (from is null || to is null) {
 				throw new ArgumentNullException(from is null ? nameof(from) : nameof(to));
+			} else {
+				return new NestedRanger(from, to);
 			}
-			return new NestedRanger(from, to);
 		}
 
 		#endregion

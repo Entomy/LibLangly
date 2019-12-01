@@ -154,6 +154,8 @@ namespace Stringier.Patterns.Nodes {
 				//The head wasn't found, so we have an error
 				result.Error.Set(ErrorType.ConsumeFailed, this);
 				return;
+			} else {
+				//Just continue on. There's nothing unique we need to do here.
 			}
 			//So regardless of whether the head or body was found, advance like normal. If the body was found, we've already marked that.
 			source.Position++;
