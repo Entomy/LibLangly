@@ -13,14 +13,13 @@ Everyone works with text. Let's make it better.
 
 Thanks to [GitHub Pages](https://pages.github.com/), documentation is available [here](https://entomy.github.io/Stringier/)
 
-# Subprojects:
+# Subprojects: [![Nuget](https://img.shields.io/nuget/dt/Stringier?label=Meta%20Package&logo=nuget)](https://www.nuget.org/packages/Stringier/)
 
-## [Extensions](https://github.com/Entomy/Stringier/tree/master/Extensions) [![Nuget](https://img.shields.io/nuget/dt/Stringier.svg?label=Stringier&logo=Nuget)](https://www.nuget.org/packages/Stringier/)
-
+## [Extensions](https://github.com/Entomy/Stringier/tree/master/Extensions) [![Nuget](https://img.shields.io/nuget/dt/Stringier.Extensions.svg?label=Extensions&logo=Nuget)](https://www.nuget.org/packages/Stringier.Extensions/) [![Nuget](https://img.shields.io/nuget/dt/Stringier.Extensions.FSharp?label=F%23%20&logo=nuget)](https://www.nuget.org/packages/Stringier.Extensions.FSharp/)
 
 **Stringier** was born out of my typical use case of C#: working with text. While I generally really like the language, it could be better. Some of this is syntax related. Some of this is missing features. This project exists to remedy that.
 
-## [Patterns](https://github.com/Entomy/Stringier/tree/master/Patterns) [![Nuget](https://img.shields.io/nuget/dt/Stringier.Patterns.svg?label=Stringier.Patterns&logo=nuget)](https://www.nuget.org/packages/Stringier.Patterns/) [![Nuget](https://img.shields.io/nuget/dt/Stringier.Patterns.FSharp?label=F%23%20Extension&logo=nuget)](https://www.nuget.org/packages/Stringier.Patterns.FSharp/)
+## [Patterns](https://github.com/Entomy/Stringier/tree/master/Patterns) [![Nuget](https://img.shields.io/nuget/dt/Stringier.Patterns.svg?label=Patterns&logo=nuget)](https://www.nuget.org/packages/Stringier.Patterns/) [![Nuget](https://img.shields.io/nuget/dt/Stringier.Patterns.FSharp?label=F%23%20&logo=nuget)](https://www.nuget.org/packages/Stringier.Patterns.FSharp/)
 
 
 **Patterns** extends **Stringier** with further support for pattern declaration and parsing of those patterns. If you're doing a lot of text parsing or text processing, this is probably of interest to you.
