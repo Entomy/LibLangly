@@ -17,19 +17,18 @@ type CaptureTests() =
     member _.``consume`` () =
         let mutable capture = ref null
         let mutable pattern = ('a' || 'b' || 'c') => capture
-        let mutable result = Result()
            
-        result <- pattern.Consume("a")
-        ResultAssert.Captures("a", result)
+        ResultAssert.Captures("a", pattern.Consume("a"))
         CaptureAssert.Captures("a", capture)
 
         pattern <- ('a' || 'b' || 'c') => capture >> '!'
 
-        result <- pattern.Consume("a")
-        ResultAssert.Fails(result)
+        ResultAssert.Fails(pattern.Consume("a"))
 
-        result <- pattern.Consume("a!")
-        ResultAssert.Captures("a!", result)
+        ResultAssert.Captures("a!", pattern.Consume("a!"))
         CaptureAssert.Captures("a", capture)
 
         pattern <- ('a' || 'b' || 'c') => capture >> ',' >> capture
+
+        ResultAssert.Captures("b,b", pattern.Consume("b,b"))
+        ResultAssert.Fails(pattern.Consume("b,a"))

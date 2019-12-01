@@ -15,33 +15,18 @@ type AlternatorTests() =
     [<TestMethod>]
     member _.``consume`` () =
         let pattern = "Hello" || "Goodbye"
-        let mutable result = Result()
 
-        result <- pattern.Consume("Hello")
-        ResultAssert.Captures("Hello", result)
-
-        result <- pattern.Consume("Goodbye")
-        ResultAssert.Captures("Goodbye", result)
-
-        result <- pattern.Consume("!")
-        ResultAssert.Fails(result)
-
-        result <- pattern.Consume("How are you?")
-        ResultAssert.Fails(result)
+        ResultAssert.Captures("Hello", pattern.Consume("Hello"))
+        ResultAssert.Captures("Goodbye", pattern.Consume("Goodbye"))
+        ResultAssert.Fails(pattern.Consume("!"))
+        ResultAssert.Fails(pattern.Consume("How are you?"))
 
         let chainPattern = "Hello" || "Hi" || "Howdy"
 
-        result <- chainPattern.Consume("Hello")
-        ResultAssert.Captures("Hello", result)
-
-        result <- chainPattern.Consume("Hi")
-        ResultAssert.Captures("Hi", result)
-
-        result <- chainPattern.Consume("Howdy")
-        ResultAssert.Captures("Howdy", result)
-
-        result <- chainPattern.Consume("Goodbye")
-        ResultAssert.Fails(result)
+        ResultAssert.Captures("Hello", chainPattern.Consume("Hello"))
+        ResultAssert.Captures("Hi", chainPattern.Consume("Hi"))
+        ResultAssert.Captures("Howdy", chainPattern.Consume("Howdy"))
+        ResultAssert.Fails(chainPattern.Consume("Goodbye"))
 
     [<TestMethod>]
     member _.``boolean-or still works`` () =

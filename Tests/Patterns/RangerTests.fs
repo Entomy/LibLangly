@@ -10,13 +10,9 @@ type RangerTests() =
     [<TestMethod>]
     member _.``range consume`` () =
         let pattern = range "Hello" ';'
-        let mutable result = Result()
 
-        result <- pattern.Consume("Hello;")
-        ResultAssert.Captures("Hello;", result)
-
-        result <- pattern.Consume("Hello World;")
-        ResultAssert.Captures("Hello World;", result)
+        ResultAssert.Captures("Hello;", pattern.Consume("Hello;"))
+        ResultAssert.Captures("Hello World;", pattern.Consume("Hello World;"))
 
     [<TestMethod>]
     member _.``range neglect`` () =
@@ -26,27 +22,15 @@ type RangerTests() =
     [<TestMethod>]
     member _.``erange consume``() =
         let pattern = erange "\"" "\"" "\\\""
-        let mutable result = Result()
 
-        result <- pattern.Consume("\"\"")
-        ResultAssert.Captures("\"\"", result)
-
-        result <- pattern.Consume("\"H\"")
-        ResultAssert.Captures("\"H\"", result)
-
-        result <- pattern.Consume("\"Hello\"")
-        ResultAssert.Captures("\"Hello\"", result)
-
-        result <- pattern.Consume("\"Hello\\\"Goodbye\"")
-        ResultAssert.Captures("\"Hello\\\"Goodbye\"", result)
+        ResultAssert.Captures("\"\"", pattern.Consume("\"\""))
+        ResultAssert.Captures("\"H\"", pattern.Consume("\"H\""))
+        ResultAssert.Captures("\"Hello\"", pattern.Consume("\"Hello\""))
+        ResultAssert.Captures("\"Hello\\\"Goodbye\"", pattern.Consume("\"Hello\\\"Goodbye\""))
 
     [<TestMethod>]
     member _.``nrange consume`` () =
         let pattern = nrange "if" "end if"
-        let mutable result = Result()
 
-        result <- pattern.Consume("if\nif\nend if\nbacon\nend if\nfoobar")
-        ResultAssert.Captures("if\nif\nend if\nbacon\nend if", result)
-
-        result <- pattern.Consume("if\nif\nend if\nbacon\nfoobar")
-        ResultAssert.Fails(result)
+        ResultAssert.Captures("if\nif\nend if\nbacon\nend if", pattern.Consume("if\nif\nend if\nbacon\nend if\nfoobar"))
+        ResultAssert.Fails(pattern.Consume("if\nif\nend if\nbacon\nfoobar"))

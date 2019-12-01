@@ -17,19 +17,10 @@ type ConcatenatorTests() =
         let helloWorld = "Hello" >> ' ' >> "world"
         let goodbyeWorld = "Goodbye" >> ' ' >> "world"
 
-        let mutable result = Result()
-
-        result <- helloWorld.Consume("Hello world")
-        ResultAssert.Captures("Hello world", result)
-
-        result <- goodbyeWorld.Consume("Goodbye world")
-        ResultAssert.Captures("Goodbye world", result)
-
-        result <- helloWorld.Consume("Hello everyone")
-        ResultAssert.Fails(result)
-
-        result <- goodbyeWorld.Consume("Hello world")
-        ResultAssert.Fails(result)
+        ResultAssert.Captures("Hello world", helloWorld.Consume("Hello world"))
+        ResultAssert.Captures("Goodbye world", goodbyeWorld.Consume("Goodbye world"))
+        ResultAssert.Fails(helloWorld.Consume("Hello everyone"))
+        ResultAssert.Fails(goodbyeWorld.Consume("Hello world"))
 
     [<TestMethod>]
     member _.``forward composition still works`` () =

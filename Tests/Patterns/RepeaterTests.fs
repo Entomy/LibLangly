@@ -10,13 +10,9 @@ type RepeaterTests() =
     [<TestMethod>]
     member _.``consume`` () =
         let pattern = "Hi! " * 2
-        let mutable result = Result()
 
-        result <- pattern.Consume("Hi! Hi! Hi!")
-        ResultAssert.Captures("Hi! Hi! ", result)
-
-        result <- pattern.Consume("Bye! Hi! ")
-        ResultAssert.Fails(result)
+        ResultAssert.Captures("Hi! Hi! ", pattern.Consume("Hi! Hi! Hi!"))
+        ResultAssert.Fails(pattern.Consume("Bye! Hi! "))
 
     [<TestMethod>]
     member _.``multiplication still works`` () =

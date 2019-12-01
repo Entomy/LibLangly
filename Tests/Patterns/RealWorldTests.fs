@@ -20,13 +20,9 @@ type RealWorldTests() =
     [<TestMethod>]
     member _.``comment`` () =
         let pattern = Pattern.LineComment("--")
-        let mutable result = Result()
 
-        result <- pattern.Consume("--This is a comment\n")
-        ResultAssert.Captures("--This is a comment", result)
-
-        result <- pattern.Consume("--This is a comment\nExample_Function();")
-        ResultAssert.Captures("--This is a comment", result)
+        ResultAssert.Captures("--This is a comment", pattern.Consume("--This is a comment\n"))
+        ResultAssert.Captures("--This is a comment", pattern.Consume("--This is a comment\nExample_Function();"))
 
     [<TestMethod>]
     member _.``identifier`` () =
@@ -58,13 +54,11 @@ type RealWorldTests() =
                                       (fun (char:char) -> char.IsLetter() || char = '_'),
                                       (fun (char:char) -> char.IsLetterOrDigit() || char = '_'),
                                       (fun (char:char) -> char.IsLetterOrDigit()))
-        let mutable result = identifier.Consume("Name")
-        ResultAssert.Captures("Name", result)
+        ResultAssert.Captures("Name", identifier.Consume("Name"))
 
         let mutable capture = ref null
         let statement = "statement" >> many Pattern.Separator >> (identifier => capture)
-        result <- statement.Consume("statement Name")
-        ResultAssert.Captures("statement Name", result)
+        ResultAssert.Captures("statement Name", statement.Consume("statement Name"))
         CaptureAssert.Captures("Name", capture)
 
     [<TestMethod>]

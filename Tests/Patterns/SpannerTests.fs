@@ -10,16 +10,10 @@ type SpannerTests() =
     [<TestMethod>]
     member _.``consume`` () =
         let pattern = many ' '
-        let mutable result = Result()
 
-        result <- pattern.Consume(" Hi!")
-        ResultAssert.Captures(" ", result)
-
-        result <- pattern.Consume("    Hi!")
-        ResultAssert.Captures("    ", result)
-
-        result <- pattern.Consume("Hi!  ")
-        ResultAssert.Fails(result)
+        ResultAssert.Captures(" ", pattern.Consume(" Hi!"))
+        ResultAssert.Captures("    ", pattern.Consume("    Hi!"))
+        ResultAssert.Fails(pattern.Consume("Hi!  "))
 
     [<TestMethod>]
     member _.``neglect`` () =
