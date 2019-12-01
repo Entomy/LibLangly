@@ -2,3 +2,5 @@ This has grown into a fairly large project with many different areas one can con
 
  * [Pattern Types](https://github.com/Entomy/Stringier/wiki/Contributing-Pattern-Types)
  * [String Extensions](https://github.com/Entomy/Stringier/wiki/Contributing-String-Extensions)
+
+Regardless of the kind of contributions you want to make, all contributions should be done through a [Pull Request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests) and must pass all CI pipeline checks made against it, as well as a review from a core contributor.
