@@ -89,12 +89,6 @@ namespace Stringier.Patterns.Nodes {
 		/// <returns>A 32-bit signed integer hash code.</returns>
 		public override Int32 GetHashCode() => ~Pattern.GetHashCode();
 
-		/// <summary>
-		/// Returns a <see cref="String"/> that represents the current <see cref="Patterns.Pattern"/>.
-		/// </summary>
-		/// <returns>A <see cref="String"/> that represents the current <see cref="Patterns.Pattern"/>.</returns>
-		public override String ToString() => $"-╣{Pattern}║";
-
 		#region Spanner
 
 		internal override Pattern Span() => throw new PatternConstructionException("Options can not span, as it creates an infinite loop. You probably want to make a span optional instead.");

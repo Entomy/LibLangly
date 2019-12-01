@@ -49,12 +49,6 @@ namespace Stringier.Patterns {
 		public override void Seal() => ReadOnly = true;
 
 		/// <summary>
-		/// Returns a <see cref="String"/> that represents the current <see cref="Pattern"/>.
-		/// </summary>
-		/// <returns>A <see cref="String"/> that represents the current <see cref="Pattern"/>.</returns>
-		public override String ToString() => Head?.ToString() ?? "";
-
-		/// <summary>
 		/// Checks the first character in the <paramref name="source"/> against the header of this node.
 		/// </summary>
 		/// <remarks>

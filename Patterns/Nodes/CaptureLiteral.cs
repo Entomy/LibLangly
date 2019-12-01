@@ -92,11 +92,5 @@ namespace Stringier.Patterns.Nodes {
 		/// </summary>
 		/// <returns>A 32-bit signed integer hash code.</returns>
 		public override Int32 GetHashCode() => CapStore.GetHashCode();
-
-		/// <summary>
-		/// Returns a string that represents the current object.
-		/// </summary>
-		/// <returns>A string that represents the current object.</returns>
-		public override String ToString() => $"{CapStore}";
 	}
 }

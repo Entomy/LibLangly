@@ -75,12 +75,6 @@ namespace Stringier.Patterns.Nodes {
 		public override Int32 GetHashCode() => Bias.GetHashCode() ^ HeadCheck.GetHashCode() ^ BodyCheck.GetHashCode() ^ TailCheck.GetHashCode();
 
 		/// <summary>
-		/// Returns a string that represents the current object.
-		/// </summary>
-		/// <returns>A string that represents the current object.</returns>
-		public override String ToString() => $"┋{Name}┋";
-
-		/// <summary>
 		/// Checks the first character in the <paramref name="source"/> against the header of this node.
 		/// </summary>
 		/// <remarks>

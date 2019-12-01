@@ -82,11 +82,5 @@ namespace Stringier.Patterns.Nodes {
 		/// </summary>
 		/// <returns>A 32-bit signed integer hash code.</returns
 		public override Int32 GetHashCode() => base.GetHashCode() ^ Escape.GetHashCode();
-
-		/// <summary>
-		/// Returns a <see cref="String"/> that represents the current <see cref="Pattern"/>.
-		/// </summary>
-		/// <returns>A <see cref="String"/> that represents the current <see cref="Pattern"/>.</
-		public override String ToString() => $"from=({From}) to=({To}) escape=({Escape})";
 	}
 }

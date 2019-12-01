@@ -98,12 +98,6 @@ namespace Stringier.Patterns.Nodes {
 		/// <returns>A 32-bit signed integer hash code.</returns
 		public override Int32 GetHashCode() => Left.GetHashCode() | Right.GetHashCode();
 
-		/// <summary>
-		/// Returns a <see cref="String"/> that represents the current <see cref="Pattern"/>.
-		/// </summary>
-		/// <returns>A <see cref="String"/> that represents the current <see cref="Pattern"/>.</returns>
-		public override String ToString() => $"┃{Left}│{Right}┃";
-
 		#region Alternator
 
 		/// <summary>

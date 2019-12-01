@@ -83,20 +83,6 @@ namespace Stringier.Patterns.Nodes {
 		public override Int32 GetHashCode() => Patterns.GetHashCode();
 
 		/// <summary>
-		/// Returns a <see cref="String"/> that represents the current <see cref="Pattern"/>.
-		/// </summary>
-		/// <returns>A <see cref="String"/> that represents the current <see cref="Pattern"/>.</returns>
-		public override String ToString() {
-			StringBuilder Builder = new StringBuilder("┃");
-			foreach (Pattern Pattern in Patterns) {
-				_ = Builder.Append($"{Pattern}│");
-			}
-			_ = Builder.Remove(Builder.Length - 1, 1);
-			_ = Builder.Append("┃");
-			return Builder.ToString();
-		}
-
-		/// <summary>
 		/// Checks the first character in the <paramref name="source"/> against the header of this node.
 		/// </summary>
 		/// <remarks>
