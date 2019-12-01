@@ -1,8 +1,22 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0</TargetFrameworks>
-  </PropertyGroup>
+		<TargetFrameworks>netstandard2.0</TargetFrameworks>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+		<Authors>Patrick Kelly</Authors>
+		<Description>Provides F# support for Stringier.Extensions</Description>
+		<Copyright>2019</Copyright>
+		<PackageProjectUrl>https://github.com/Entomy/Stringier</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/Entomy/Stringier</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageTags>fsharp, string, string manipulation, manipulation, string functions, functions, string edit, string edits, edit, edits</PackageTags>
+		<Version>2.0</Version>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<PackageIcon>Logo.png</PackageIcon>
+		<PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
+	</PropertyGroup>
 
   <ItemGroup>
     <Compile Include="Binder.fs" />
@@ -12,5 +26,9 @@
   <ItemGroup>
     <ProjectReference Include="..\Extensions\Extensions.csproj" />
   </ItemGroup>
+
+	<ItemGroup>
+		<None Include="..\Logo.png" Pack="true" Visible="true" PackagePath="\" />
+	</ItemGroup>
 
 </Project>

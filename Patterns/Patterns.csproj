@@ -6,7 +6,21 @@
 		<Nullable>enable</Nullable>
     <RootNamespace>Stringier.Patterns</RootNamespace>
     <AssemblyName>Stringier.Patterns</AssemblyName>
-  </PropertyGroup>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Authors>Patrick Kelly</Authors>
+    <Copyright>2019</Copyright>
+    <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/Entomy/Stringier</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/Entomy/Stringier</PackageProjectUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>string, pattern, patterns, pattern matching, parser, parsers, parser combinator, combinator</PackageTags>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<PackageIcon>Logo.png</PackageIcon>
+		<Version>2.0.0</Version>
+		<Description>Provides support for pattern matching based parsing.</Description>
+	</PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="System.Memory" Version="4.5.3" />
@@ -16,5 +30,9 @@
     <ProjectReference Include="..\Core\Core.csproj" />
     <ProjectReference Include="..\Extensions\Extensions.csproj" />
   </ItemGroup>
+
+	<ItemGroup>
+		<None Include="..\Logo.png" Pack="true" Visible="true" PackagePath="\" />
+	</ItemGroup>
 
 </Project>

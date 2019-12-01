@@ -2,8 +2,21 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <RootNamespace>Microsoft.VisualStudio.TestTools.UnitTesting</RootNamespace>
-  </PropertyGroup>
+		<LangVersion>8.0</LangVersion>
+		<Nullable>enable</Nullable>
+		<RootNamespace>Microsoft.VisualStudio.TestTools.UnitTesting</RootNamespace>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+		<Authors>Patrick Kelly</Authors>
+		<Copyright>2019</Copyright>
+		<PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
+		<RepositoryUrl>https://github.com/Entomy/Stringier</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/Entomy/Stringier</PackageProjectUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageTags>stringier, mstest, test, testing, unit test, unit tests, unit testing</PackageTags>
+		<Version>2.0.0</Version>
+		<Description>Provides extensions to mstest for unit testing Patterns</Description>
+	</PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="MSTest.TestFramework" Version="2.0.0" />
@@ -12,5 +25,9 @@
   <ItemGroup>
     <ProjectReference Include="..\Patterns\Patterns.csproj" />
   </ItemGroup>
+
+	<ItemGroup>
+		<None Include="..\Logo.png" Pack="true" Visible="true" PackagePath="\" />
+	</ItemGroup>
 
 </Project>
