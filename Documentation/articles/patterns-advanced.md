@@ -2,10 +2,10 @@
 
 ## Captures
 
-Captures are a system of ``Capturer`` and ``Capture`` that are used to implement backreferences or other concepts.
+Captures are a system of ``Capturer``, ``Capture``, and ``CaptureLiteral`` that are used to implement backreferences or other concepts.
 
 ~~~~csharp
-Pattern patternName = otherPattern.Capture(out Capture capture) & ".";
+Pattern patternName = otherPattern.Capture(out Capture capture).Then(".");
 ~~~~
 ~~~~fsharp
 let mutable capture = ref null
@@ -14,9 +14,13 @@ let patternName = (otherPattern => capture) >> "."
 
 Regardless of the language, the mechanism remains the same. The pattern is still matched as if the capture and capturing parts were not there. During parsing the `capture` variable is "filled in" with whatever matched at that point. Because of this, make sure that a parse occurs before using a `Capture` outside of a pattern, so that it's actually holding captured text. Inside of patterns, there's a special mechanism to lazily resolve the capture, so you can use a `Capture` as a backreference inside of the same pattern as it was captured in.
 
+A common use case I've found is combining Captures with `Pattern.Range()` and similar, for languages with an indentifier at both the begining and ending of a block. You can capture the identifier at the begining, and reference it at the end, ensuring an exact match. The lazy resolution that occurs ensures this works even though it's the same pattern.
+
 ## Checkers
 
 Checkers are a special pattern type which are not meant for normal use. Unlike the typical case where the pattern describes what to match, a checker is a function which is ran against a candidate when determining a match. This is substantially faster and should be viewed as hand writing parts of the resulting parser.
+
+Many of the predefined patterns are implemented in whole or in part through these, because of their performance.
 
 These were formerlly exposed through implicit/explicit conversions of a single delegate into the pattern, then from a tuple of the name and delegate into the pattern. As more checkers were added, it became clear expanding this approach was not viable. The entire approach now is exposed through a static method `Pattern.Check()`, which is well documented about its behavior.
 
@@ -108,7 +112,7 @@ Sometimes this approach isn't the most optimal, or is just easier to express in 
 
 ### RegexAdapter
 
-Regex, with some concessions, can be made to work with Patterns, essentially deferring that part of the pattern to the Regex engine, but still otherwise working with this system.
+Regex, with some concessions, can be made to work with Patterns, essentially deferring that part of the pattern to Microsoft's Regex engine, but still otherwise working with this system.
 
 ~~~~csharp
 Pattern regexPattern = new Regex("^hello").AsPattern();
@@ -120,3 +124,7 @@ let regexPattern = Regex("^hello").AsPattern()
 One important concession is that the Regex pattern must be anchored to the start of the line (`^`). This will be validated for you, and will raise an exception during initialization if this is not the case.
 
 The Regex `Match` is not returned, instead, being adapted into `Source` and `Result`. Everything inside of the Regex still works exactly as expected, including more advanced things like capturing groups and back references. These are not compatable with **Stringier's** `Capturer` or `Capture` however. The approach only defers execution to the `Regex` engine, and then modifies `Source` and `Result` according to the `Match`.
+
+## MutablePattern
+
+I'm deliberately not documenting how to use this type because it's incredibly dangerous. The basic idea is the pattern is modified in place, rather than each operation returning a new pattern. This is how recursion is acheived, but it can easily be done wrong. I've got a project in the works that utilizes this engine/project to provide a DSL for grammars/parsing. At the point where you would need the features this type provides, you'd be better served (and have a much better time) using that language.

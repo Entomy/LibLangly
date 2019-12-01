@@ -70,13 +70,12 @@
 <h1 id="patterns-declarations">Patterns Declarations</h1>
 
 <p><strong>Stringier.Patterns</strong> primarily works through a declarative programming approach, as such, it's very important to understand the different ways to declare patterns and how they work.</p>
-<p>This article also serves to demonstrate a distinct advantage over <a href="https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex"><code>Regex</code></a>.</p>
 <h2 id="literal-declaration">Literal Declaration</h2>
 <p>Literals are just the exact value, converted into a <code>Pattern</code>. All literals perform exact matches, and are the base component of all <code>Pattern</code>.</p>
 <pre><code class="lang-csharp">Pattern patternName = 'c';
 //Matches the specified character
 </code></pre>
-<pre><code class="lang-fsharp">let patternName = p'c'
+<pre><code class="lang-fsharp">let patternName = p 'c'
 </code></pre>
 <p><strong>or</strong></p>
 <pre><code class="lang-csharp">Pattern patternName = &quot;Text to match&quot;;
@@ -88,51 +87,51 @@
 <pre><code class="lang-csharp">Pattern patternName = &quot;Text to match&quot;.With(StringComparison.Ordinal);
 //Matches the entire peice of text using ordinal case-sensitive rules
 </code></pre>
-<pre><code class="lang-fsharp">let patternName = &quot;Text to match&quot;/=StringComparison.Ordinal;
+<pre><code class="lang-fsharp">let patternName = &quot;Text to match&quot;/=StringComparison.Ordinal; //This operator is weird looking. It was chosen just because of its precedence and nothing more
 </code></pre>
 <p>As F# does not support implicit conversions, <code>p</code> exists as a function to do this conversion. The name comes from the convention used with <a href="http://www.quanttec.com/fparsec/"><code>FParsec</code></a>. Note that you should only need to do this for literals, as pattern operators were made sufficiently generic to automagically convert <code>Char</code> and <code>String</code>.</p>
 <h2 id="combinators">Combinators</h2>
 <p>Combinators take two (or more) different patterns and combine them into a single pattern.</p>
 <h3 id="alternate">Alternate</h3>
 <p>Alternates allow either pattern to match. If one fails, the other will be attempted.</p>
-<pre><code class="lang-csharp">Pattern patternName = firstPattern | secondPattern;
+<pre><code class="lang-csharp">Pattern patternName = firstPattern.Or(secondPattern);
 </code></pre>
 <pre><code class="lang-fsharp">let patternName = firstPattern || secondPattern
 </code></pre>
 <p><em><strong>or</strong></em></p>
-<pre><code class="lang-csharp">Pattern patternName = firstPattern | &quot;Literal&quot;;
+<pre><code class="lang-csharp">Pattern patternName = firstPattern.Or(&quot;Literal&quot;);
 </code></pre>
 <pre><code class="lang-fsharp">let patternName = firstPattern || &quot;Literal&quot;
 </code></pre>
 <p><em><strong>or</strong></em></p>
-<pre><code class="lang-csharp">Pattern patternName = &quot;Literal&quot; | secondPattern;
+<pre><code class="lang-csharp">Pattern patternName = &quot;Literal&quot;.Or(secondPattern);
 </code></pre>
 <pre><code class="lang-fsharp">let patternName = &quot;Literal&quot; || secondPattern
 </code></pre>
 <p><em><strong>or</strong></em></p>
-<pre><code class="lang-csharp">Pattern patternName = (Pattern)&quot;First Literal&quot; | &quot;Second Literal&quot;
+<pre><code class="lang-csharp">Pattern patternName = &quot;First Literal&quot;.Or(&quot;Second Literal&quot;);
 </code></pre>
 <pre><code class="lang-fsharp">let patternName = &quot;First Literal&quot; || &quot;Second Literal&quot;
 </code></pre>
-<p><em>Note</em>: The order of these is dependent on the parser and specific behavior should not be assumed.</p>
+<p><em>Note</em>: The order of these is dependent on the parser. Generally speaking they will be checked in order, with the first match indicated success.</p>
 <h3 id="concatenate">Concatenate</h3>
 <p>Concatenates the two patterns, checking them in order. This is identical in concept to string concatenation, and if concatenating literals, will function entirely the same way.</p>
-<pre><code class="lang-csharp">Pattern patternName = firstPattern &amp; secondPattern;
+<pre><code class="lang-csharp">Pattern patternName = firstPattern.Then(secondPattern);
 </code></pre>
 <pre><code class="lang-fsharp">let patternName = firstPattern &gt;&gt; secondPattern
 </code></pre>
 <p><em><strong>or</strong></em></p>
-<pre><code class="lang-csharp">Pattern patternName = firstPattern &amp; &quot;Literal&quot;;
+<pre><code class="lang-csharp">Pattern patternName = firstPattern.Then(&quot;Literal&quot;);
 </code></pre>
 <pre><code class="lang-fsharp">let patternName = firstPattern &gt;&gt; &quot;Literal&quot;
 </code></pre>
 <p><em><strong>or</strong></em></p>
-<pre><code class="lang-csharp">Pattern patternName = &quot;Literal&quot; &amp; secondPattern;
+<pre><code class="lang-csharp">Pattern patternName = &quot;Literal&quot;.Then(secondPattern);
 </code></pre>
 <pre><code class="lang-fsharp">let patternName = &quot;Literal&quot; &gt;&gt; secondPattern
 </code></pre>
 <p><em><strong>or</strong></em></p>
-<pre><code class="lang-csharp">Pattern patternName = (Pattern)&quot;First Literal&quot; &amp; &quot;Second Literal&quot;
+<pre><code class="lang-csharp">Pattern patternName = &quot;First Literal&quot;.Then(&quot;Second Literal&quot;);
 </code></pre>
 <pre><code class="lang-fsharp">let patternName = &quot;First Literal&quot; &gt;&gt; &quot;Second Literal&quot;
 </code></pre>
@@ -159,45 +158,45 @@
 <p>Modifiers alter the semantics of pattern</p>
 <h3 id="negate">Negate</h3>
 <p>Modifies the pattern in a way that it will match anything <em>not</em> the pattern. That is, it will match the same length of the pattern, but only if it would not be a match normally.</p>
-<pre><code class="lang-csharp">Pattern patternName = !otherPattern;
+<pre><code class="lang-csharp">Pattern patternName = Not(otherPattern);
 </code></pre>
 <pre><code class="lang-fsharp">let patternName = negate otherPattern
 </code></pre>
 <p><em><strong>or</strong></em></p>
-<pre><code class="lang-csharp">Pattern patternName = !(Pattern)&quot;Literal&quot;;
+<pre><code class="lang-csharp">Pattern patternName = Not(&quot;Literal&quot;);
 </code></pre>
 <pre><code class="lang-fsharp">let patternName = negate &quot;Literal&quot;
 </code></pre>
 <h3 id="option">Option</h3>
-<p>Modifies the pattern in a way that allows it to be present or absent and still match. This is accomplished by marking the result successful regardless of whether it really is or not.</p>
-<pre><code class="lang-csharp">Pattern patternName = -otherPattern;
+<p>Modifies the pattern in a way that allows it to be present or absent and still be considered a successful match.</p>
+<pre><code class="lang-csharp">Pattern patternName = Maybe(otherPattern);
 </code></pre>
 <pre><code class="lang-fsharp">let patternName = option otherPattern
 </code></pre>
 <p><em><strong>or</strong></em></p>
-<pre><code class="lang-csharp">Pattern patternName = -(Pattern)&quot;Literal&quot;;
+<pre><code class="lang-csharp">Pattern patternName = Maybe(&quot;Literal&quot;);
 </code></pre>
 <pre><code class="lang-fsharp">let patternName = option &quot;Literal&quot;
 </code></pre>
 <h3 id="repeat">Repeat</h3>
 <p>Modifies the pattern in a way that repeats it a specified amount.</p>
-<pre><code class="lang-csharp">Pattern patternName = otherPattern * 3;
+<pre><code class="lang-csharp">Pattern patternName = otherPattern.Repeat(3);
 </code></pre>
 <pre><code class="lang-fsharp">let patternName = otherPattern * 3
 </code></pre>
 <p><em><strong>or</strong></em></p>
-<pre><code class="lang-csharp">Pattern patternName = (Pattern)&quot;Literal&quot; * 3;
+<pre><code class="lang-csharp">Pattern patternName = &quot;Literal&quot;.Repeat(3);
 </code></pre>
 <pre><code class="lang-fsharp">let patternName = &quot;Literal&quot; * 3
 </code></pre>
 <h3 id="span">Span</h3>
 <p>Modifies the pattern in a way that lets it repeat until it no longer can, &quot;spanning&quot; a section of text.</p>
-<pre><code class="lang-csharp">Pattern patternName = +otherPattern;
+<pre><code class="lang-csharp">Pattern patternName = Many(otherPattern);
 </code></pre>
 <pre><code class="lang-fsharp">let patternName = span otherPattern
 </code></pre>
 <p><em><strong>or</strong></em></p>
-<pre><code class="lang-csharp">Pattern patternName = +(Pattern)&quot;Literal&quot;;
+<pre><code class="lang-csharp">Pattern patternName = Many(&quot;Literal&quot;);
 </code></pre>
 <pre><code class="lang-fsharp">let patternName = span &quot;Literal&quot;
 </code></pre>

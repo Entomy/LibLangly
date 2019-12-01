@@ -2,8 +2,6 @@
 
 **Stringier.Patterns** primarily works through a declarative programming approach, as such, it's very important to understand the different ways to declare patterns and how they work.
 
-This article also serves to demonstrate a distinct advantage over [`Regex`](https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex).
-
 ## Literal Declaration
 
 Literals are just the exact value, converted into a `Pattern`. All literals perform exact matches, and are the base component of all `Pattern`.
@@ -13,7 +11,7 @@ Pattern patternName = 'c';
 //Matches the specified character
 ~~~~
 ~~~~fsharp
-let patternName = p'c'
+let patternName = p 'c'
 ~~~~
 **or**
 ~~~~csharp
@@ -29,7 +27,7 @@ Pattern patternName = "Text to match".With(StringComparison.Ordinal);
 //Matches the entire peice of text using ordinal case-sensitive rules
 ~~~~
 ~~~~fsharp
-let patternName = "Text to match"/=StringComparison.Ordinal;
+let patternName = "Text to match"/=StringComparison.Ordinal; //This operator is weird looking. It was chosen just because of its precedence and nothing more
 ~~~~
 
 As F# does not support implicit conversions, `p` exists as a function to do this conversion. The name comes from the convention used with [`FParsec`](http://www.quanttec.com/fparsec/). Note that you should only need to do this for literals, as pattern operators were made sufficiently generic to automagically convert `Char` and `String`.
@@ -43,62 +41,62 @@ Combinators take two (or more) different patterns and combine them into a single
 Alternates allow either pattern to match. If one fails, the other will be attempted.
 
 ~~~~csharp
-Pattern patternName = firstPattern | secondPattern;
+Pattern patternName = firstPattern.Or(secondPattern);
 ~~~~
 ~~~~fsharp
 let patternName = firstPattern || secondPattern
 ~~~~
 ***or***
 ~~~~csharp
-Pattern patternName = firstPattern | "Literal";
+Pattern patternName = firstPattern.Or("Literal");
 ~~~~
 ~~~~fsharp
 let patternName = firstPattern || "Literal"
 ~~~~
 ***or***
 ~~~~csharp
-Pattern patternName = "Literal" | secondPattern;
+Pattern patternName = "Literal".Or(secondPattern);
 ~~~~
 ~~~~fsharp
 let patternName = "Literal" || secondPattern
 ~~~~
 ***or***
 ~~~~csharp
-Pattern patternName = (Pattern)"First Literal" | "Second Literal"
+Pattern patternName = "First Literal".Or("Second Literal");
 ~~~~
 ~~~~fsharp
 let patternName = "First Literal" || "Second Literal"
 ~~~~
 
-*Note*: The order of these is dependent on the parser and specific behavior should not be assumed. 
+*Note*: The order of these is dependent on the parser. Generally speaking they will be checked in order, with the first match indicated success.
 
 ### Concatenate
 
 Concatenates the two patterns, checking them in order. This is identical in concept to string concatenation, and if concatenating literals, will function entirely the same way.
 
 ~~~~csharp
-Pattern patternName = firstPattern & secondPattern;
+Pattern patternName = firstPattern.Then(secondPattern);
 ~~~~
 ~~~~fsharp
 let patternName = firstPattern >> secondPattern
 ~~~~
 ***or***
 ~~~~csharp
-Pattern patternName = firstPattern & "Literal";
+Pattern patternName = firstPattern.Then("Literal");
 ~~~~
 ~~~~fsharp
 let patternName = firstPattern >> "Literal"
 ~~~~
 ***or***
 ~~~~csharp
-Pattern patternName = "Literal" & secondPattern;
+Pattern patternName = "Literal".Then(secondPattern);
 ~~~~
 ~~~~fsharp
 let patternName = "Literal" >> secondPattern
 ~~~~
 ***or***
 ~~~~csharp
-Pattern patternName = (Pattern)"First Literal" & "Second Literal"
+Pattern patternName = "First Literal".Then("Second Literal");
 ~~~~
 ~~~~fsharp
 let patternName = "First Literal" >> "Second Literal"
@@ -148,14 +146,14 @@ Modifiers alter the semantics of pattern
 Modifies the pattern in a way that it will match anything _not_ the pattern. That is, it will match the same length of the pattern, but only if it would not be a match normally.
 
 ~~~~csharp
-Pattern patternName = !otherPattern;
+Pattern patternName = Not(otherPattern);
 ~~~~
 ~~~~fsharp
 let patternName = negate otherPattern
 ~~~~
 ***or***
 ~~~~csharp
-Pattern patternName = !(Pattern)"Literal";
+Pattern patternName = Not("Literal");
 ~~~~
 ~~~~fsharp
 let patternName = negate "Literal"
@@ -163,17 +161,17 @@ let patternName = negate "Literal"
 
 ### Option
 
-Modifies the pattern in a way that allows it to be present or absent and still match. This is accomplished by marking the result successful regardless of whether it really is or not.
+Modifies the pattern in a way that allows it to be present or absent and still be considered a successful match.
 
 ~~~~csharp
-Pattern patternName = -otherPattern;
+Pattern patternName = Maybe(otherPattern);
 ~~~~
 ~~~~fsharp
 let patternName = option otherPattern
 ~~~~
 ***or***
 ~~~~csharp
-Pattern patternName = -(Pattern)"Literal";
+Pattern patternName = Maybe("Literal");
 ~~~~
 ~~~~fsharp
 let patternName = option "Literal"
@@ -184,14 +182,14 @@ let patternName = option "Literal"
 Modifies the pattern in a way that repeats it a specified amount.
 
 ~~~~csharp
-Pattern patternName = otherPattern * 3;
+Pattern patternName = otherPattern.Repeat(3);
 ~~~~
 ~~~~fsharp
 let patternName = otherPattern * 3
 ~~~~
 ***or***
 ~~~~csharp
-Pattern patternName = (Pattern)"Literal" * 3;
+Pattern patternName = "Literal".Repeat(3);
 ~~~~
 ~~~~fsharp
 let patternName = "Literal" * 3
@@ -202,14 +200,14 @@ let patternName = "Literal" * 3
 Modifies the pattern in a way that lets it repeat until it no longer can, "spanning" a section of text.
 
 ~~~~csharp
-Pattern patternName = +otherPattern;
+Pattern patternName = Many(otherPattern);
 ~~~~
 ~~~~fsharp
 let patternName = span otherPattern
 ~~~~
 ***or***
 ~~~~csharp
-Pattern patternName = +(Pattern)"Literal";
+Pattern patternName = Many("Literal");
 ~~~~
 ~~~~fsharp
 let patternName = span "Literal"
