@@ -1,5 +1,6 @@
 ﻿using System;
 using Stringier.Patterns.Errors;
+using Stringier.Patterns.Debugging;
 
 namespace Stringier.Patterns.Nodes {
 	/// <summary>
@@ -23,8 +24,9 @@ namespace Stringier.Patterns.Nodes {
 		/// </summary>
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
 		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</param>
-		internal override void Consume(ref Source source, ref Result result) {
-			From.Consume(ref source, ref result);
+		/// <param name="trace">The <see cref="ITrace"/> to record steps in.</param>
+		internal override void Consume(ref Source source, ref Result result, ITrace? trace) {
+			From.Consume(ref source, ref result, trace);
 			if (result) {
 				Level++;
 			}
@@ -35,13 +37,13 @@ namespace Stringier.Patterns.Nodes {
 				source.Position++;
 				result.Length++;
 				if (From.CheckHeader(ref source)) {
-					From.Consume(ref source, ref result);
+					From.Consume(ref source, ref result, trace);
 					if (result) {
 						Level++;
 					}
 				}
 				if (To.CheckHeader(ref source)) {
-					To.Consume(ref source, ref result);
+					To.Consume(ref source, ref result, trace);
 					if (result) {
 						Level--;
 					}

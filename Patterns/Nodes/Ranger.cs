@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using Stringier.Patterns.Debugging;
 using Stringier.Patterns.Errors;
 
 namespace Stringier.Patterns.Nodes {
@@ -43,19 +44,20 @@ namespace Stringier.Patterns.Nodes {
 		/// </summary>
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
 		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</param
-		internal override void Consume(ref Source source, ref Result result) {
-			From.Consume(ref source, ref result);
+		/// <param name="trace">The <see cref="ITrace"/> to record steps in.</param>
+		internal override void Consume(ref Source source, ref Result result, ITrace? trace) {
+			From.Consume(ref source, ref result, trace);
 			if (!result) {
 				result.Error.Set(ErrorType.ConsumeFailed, From);
 				return;
 			}
-			To.Consume(ref source, ref result);
+			To.Consume(ref source, ref result, trace);
 			while (!result) {
 				if (source.EOF) { break; }
 				source.Position++;
 				result.Length++;
 				if (To.CheckHeader(ref source)) {
-					To.Consume(ref source, ref result);
+					To.Consume(ref source, ref result, trace);
 				}
 			}
 			if (!result) {
@@ -68,7 +70,8 @@ namespace Stringier.Patterns.Nodes {
 		/// </summary>
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
 		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</param
-		internal override void Neglect(ref Source source, ref Result result) => throw new NotSupportedException();
+		/// <param name="trace">The <see cref="ITrace"/> to record steps in.</param>
+		internal override void Neglect(ref Source source, ref Result result, ITrace? trace) => throw new NotSupportedException();
 
 		#region Negator
 

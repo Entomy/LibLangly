@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using Stringier.Patterns.Debugging;
 using Stringier.Patterns.Errors;
 
 namespace Stringier.Patterns.Nodes {
@@ -43,12 +44,13 @@ namespace Stringier.Patterns.Nodes {
 		/// </summary>
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
 		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</
-		internal override void Consume(ref Source source, ref Result result) {
+		/// <param name="trace">The <see cref="ITrace"/> to record steps in.</param>
+		internal override void Consume(ref Source source, ref Result result, ITrace? trace) {
 			Left.Consume(ref source, ref result);
 			if (!result) {
 				Error Error = result.Error; //Store the error
 				result.Error.Clear();
-				Right.Consume(ref source, ref result);
+				Right.Consume(ref source, ref result, trace);
 				if (!result) {
 					result.Error = Error; //Resassign the first error, since both failed, but we want to be clear of that
 				}
@@ -60,10 +62,11 @@ namespace Stringier.Patterns.Nodes {
 		/// </summary>
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
 		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</
-		internal override void Neglect(ref Source source, ref Result result) {
+		/// <param name="trace">The <see cref="ITrace"/> to record steps in.</param>
+		internal override void Neglect(ref Source source, ref Result result, ITrace? trace) {
 			Int32 OriginalPosition = source.Position;
 			Int32 OriginalLength = result.Length;
-			Right.Neglect(ref source, ref result);
+			Right.Neglect(ref source, ref result, trace);
 			if (result) {
 				source.Position = OriginalPosition;
 				result.Length = OriginalLength;

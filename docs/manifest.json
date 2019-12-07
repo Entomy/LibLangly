@@ -69,7 +69,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Stringier.Patterns.CharExtensions.html",
-          "hash": "aHkt7D+q/BlQ3iJDPgVvzA=="
+          "hash": "uc9jsZtgbFYwkbYv9gYTHQ=="
         }
       },
       "is_incremental": false,
@@ -94,6 +94,45 @@
         ".html": {
           "relative_path": "api/Stringier.Patterns.ConsumeFailedException.html",
           "hash": "68ooGyHAOUkwhqP0FlhbpA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "DuplicateUids"
+      ],
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stringier.Patterns.Debugging.ITrace.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stringier.Patterns.Debugging.ITrace.html",
+          "hash": "U2WW1hNbWAXeweFkfs+ocg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stringier.Patterns.Debugging.Tracer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stringier.Patterns.Debugging.Tracer.html",
+          "hash": "M529jxjtamKAI71ow9NCzg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stringier.Patterns.Debugging.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stringier.Patterns.Debugging.html",
+          "hash": "NIqHO17Oa1Q6QkQ5+Hjkrg=="
         }
       },
       "is_incremental": false,
@@ -141,7 +180,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Stringier.Patterns.Pattern.html",
-          "hash": "RamHZJaVBlSkEs3d3wtL4g=="
+          "hash": "xSi4gefG06ZcZ/ruKqbhBg=="
         }
       },
       "is_incremental": false,
@@ -249,7 +288,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Stringier.Patterns.StringExtensions.html",
-          "hash": "oYmu2h767TrmIOZhEypXRw=="
+          "hash": "p1CBeZ8qw27YWeLcNyAEtQ=="
         }
       },
       "is_incremental": false,
@@ -309,7 +348,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "axWar4MiAWdowIODfZh5GA=="
+          "hash": "4FFccZ75dTZfTjkZSHgBLA=="
         }
       },
       "is_incremental": false,
@@ -435,13 +474,6 @@
         "full_build_reason_code": "ForceRebuild"
       },
       "processors": {
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
-        },
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
@@ -451,7 +483,14 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 24,
+          "total_file_count": 27,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
           "skipped_file_count": 0
         }
       }

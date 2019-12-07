@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using Stringier.Patterns.Debugging;
 
 namespace Stringier.Patterns.Nodes {
 	/// <summary>
@@ -42,12 +43,13 @@ namespace Stringier.Patterns.Nodes {
 		/// </summary>
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
 		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</param
-		internal override void Consume(ref Source source, ref Result result) {
-			Left.Consume(ref source, ref result);
+		/// <param name="trace">The <see cref="ITrace"/> to record steps in.</param>
+		internal override void Consume(ref Source source, ref Result result, ITrace? trace) {
+			Left.Consume(ref source, ref result, trace);
 			if (!result) {
 				return;
 			}
-			Right.Consume(ref source, ref result);
+			Right.Consume(ref source, ref result, trace);
 		}
 
 		/// <summary>
@@ -55,12 +57,13 @@ namespace Stringier.Patterns.Nodes {
 		/// </summary>
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
 		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</param
-		internal override void Neglect(ref Source source, ref Result result) {
-			Left.Neglect(ref source, ref result);
+		/// <param name="trace">The <see cref="ITrace"/> to record steps in.</param>
+		internal override void Neglect(ref Source source, ref Result result, ITrace? trace) {
+			Left.Neglect(ref source, ref result, trace);
 			if (!result) {
 				return;
 			}
-			Right.Neglect(ref source, ref result);
+			Right.Neglect(ref source, ref result, trace);
 		}
 	}
 }

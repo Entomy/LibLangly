@@ -1371,12 +1371,12 @@
   </span>
   <a id="Stringier_Patterns_Pattern_Consume_" data-uid="Stringier.Patterns.Pattern.Consume*"></a>
   <h4 id="Stringier_Patterns_Pattern_Consume_Stringier_Patterns_Result_" data-uid="Stringier.Patterns.Pattern.Consume(Stringier.Patterns.Result)">Consume(Result)</h4>
-  <div class="markdown level1 summary"><p>Attempt to consume the <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> from the <code data-dev-comment-type="paramref" class="paramref">Source</code></p>
+  <div class="markdown level1 summary"><p>Attempt to consume the <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> from the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Result Consume(Result Source)</code></pre>
+    <pre><code class="lang-csharp hljs">public Result Consume(Result source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1390,8 +1390,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Stringier.Patterns.Result.html">Result</a></td>
-        <td><span class="parametername">Source</span></td>
-        <td><p>The <a class="xref" href="Stringier.Patterns.Result.html">Result</a> to consume</p>
+        <td><span class="parametername">source</span></td>
+        <td><p>The <a class="xref" href="Stringier.Patterns.Result.html">Result</a> to consume.</p>
 </td>
       </tr>
     </tbody>
@@ -1407,7 +1407,63 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Stringier.Patterns.Result.html">Result</a></td>
-        <td><p>A <a class="xref" href="Stringier.Patterns.Result.html">Result</a> containing whether a match occured and the captured <span class="xref">System.String</span></p>
+        <td><p>A <a class="xref" href="Stringier.Patterns.Result.html">Result</a> containing whether a match occured and the captured <span class="xref">System.String</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Consume_Stringier_Patterns_Result_System_Nullable_Stringier_Patterns_Debugging_ITrace__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Consume(Stringier.Patterns.Result%2CSystem.Nullable%7BStringier.Patterns.Debugging.ITrace%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternParsing.cs/#L19">View Source</a>
+  </span>
+  <a id="Stringier_Patterns_Pattern_Consume_" data-uid="Stringier.Patterns.Pattern.Consume*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Consume_Stringier_Patterns_Result_System_Nullable_Stringier_Patterns_Debugging_ITrace__" data-uid="Stringier.Patterns.Pattern.Consume(Stringier.Patterns.Result,System.Nullable{Stringier.Patterns.Debugging.ITrace})">Consume(Result, Nullable&lt;ITrace&gt;)</h4>
+  <div class="markdown level1 summary"><p>Attempt to consume the <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> from the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Result Consume(Result source, ITrace? trace)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Result.html">Result</a></td>
+        <td><span class="parametername">source</span></td>
+        <td><p>The <a class="xref" href="Stringier.Patterns.Result.html">Result</a> to consume.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<a class="xref" href="Stringier.Patterns.Debugging.ITrace.html">ITrace</a>&gt;</td>
+        <td><span class="parametername">trace</span></td>
+        <td><p>The <a class="xref" href="Stringier.Patterns.Debugging.ITrace.html">ITrace</a> to record steps in.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Result.html">Result</a></td>
+        <td><p>A <a class="xref" href="Stringier.Patterns.Result.html">Result</a> containing whether a match occured and the captured <span class="xref">System.String</span>.</p>
 </td>
       </tr>
     </tbody>
@@ -1417,16 +1473,16 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Consume_Stringier_Patterns_Source__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Consume(Stringier.Patterns.Source%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternParsing.cs/#L34">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternParsing.cs/#L50">View Source</a>
   </span>
   <a id="Stringier_Patterns_Pattern_Consume_" data-uid="Stringier.Patterns.Pattern.Consume*"></a>
   <h4 id="Stringier_Patterns_Pattern_Consume_Stringier_Patterns_Source__" data-uid="Stringier.Patterns.Pattern.Consume(Stringier.Patterns.Source@)">Consume(ref Source)</h4>
-  <div class="markdown level1 summary"><p>Attempt to consume the <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> from the <code data-dev-comment-type="paramref" class="paramref">Source</code>, adjusting the position in the <code data-dev-comment-type="paramref" class="paramref">Source</code> as appropriate</p>
+  <div class="markdown level1 summary"><p>Attempt to consume the <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> from the <code data-dev-comment-type="paramref" class="paramref">source</code>, adjusting the position in the <code data-dev-comment-type="paramref" class="paramref">source</code> as appropriate.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Result Consume(ref Source Source)</code></pre>
+    <pre><code class="lang-csharp hljs">public Result Consume(ref Source source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1440,7 +1496,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Stringier.Patterns.Source.html">Source</a></td>
-        <td><span class="parametername">Source</span></td>
+        <td><span class="parametername">source</span></td>
         <td><p>The <a class="xref" href="Stringier.Patterns.Source.html">Source</a> to consume</p>
 </td>
       </tr>
@@ -1457,26 +1513,26 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Stringier.Patterns.Result.html">Result</a></td>
-        <td><p>A <a class="xref" href="Stringier.Patterns.Result.html">Result</a> containing whether a match occured and the captured <span class="xref">System.String</span></p>
+        <td><p>A <a class="xref" href="Stringier.Patterns.Result.html">Result</a> containing whether a match occured and the captured <span class="xref">System.String</span>.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Consume_System_String_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Consume(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Consume_Stringier_Patterns_Source__System_Nullable_Stringier_Patterns_Debugging_ITrace__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Consume(Stringier.Patterns.Source%40%2CSystem.Nullable%7BStringier.Patterns.Debugging.ITrace%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternParsing.cs/#L21">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternParsing.cs/#L58">View Source</a>
   </span>
   <a id="Stringier_Patterns_Pattern_Consume_" data-uid="Stringier.Patterns.Pattern.Consume*"></a>
-  <h4 id="Stringier_Patterns_Pattern_Consume_System_String_" data-uid="Stringier.Patterns.Pattern.Consume(System.String)">Consume(String)</h4>
-  <div class="markdown level1 summary"><p>Attempt to consume the <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> from the <code data-dev-comment-type="paramref" class="paramref">Source</code></p>
+  <h4 id="Stringier_Patterns_Pattern_Consume_Stringier_Patterns_Source__System_Nullable_Stringier_Patterns_Debugging_ITrace__" data-uid="Stringier.Patterns.Pattern.Consume(Stringier.Patterns.Source@,System.Nullable{Stringier.Patterns.Debugging.ITrace})">Consume(ref Source, Nullable&lt;ITrace&gt;)</h4>
+  <div class="markdown level1 summary"><p>Attempt to consume the <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> from the <code data-dev-comment-type="paramref" class="paramref">source</code>, adjusting the position in the <code data-dev-comment-type="paramref" class="paramref">source</code> as appropriate.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Result Consume(string Source)</code></pre>
+    <pre><code class="lang-csharp hljs">public Result Consume(ref Source source, ITrace? trace)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1489,9 +1545,15 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">Source</span></td>
-        <td><p>The <span class="xref">System.String</span> to consume</p>
+        <td><a class="xref" href="Stringier.Patterns.Source.html">Source</a></td>
+        <td><span class="parametername">source</span></td>
+        <td><p>The <a class="xref" href="Stringier.Patterns.Source.html">Source</a> to consume</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<a class="xref" href="Stringier.Patterns.Debugging.ITrace.html">ITrace</a>&gt;</td>
+        <td><span class="parametername">trace</span></td>
+        <td><p>The <a class="xref" href="Stringier.Patterns.Debugging.ITrace.html">ITrace</a> to record steps in.</p>
 </td>
       </tr>
     </tbody>
@@ -1507,7 +1569,113 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Stringier.Patterns.Result.html">Result</a></td>
-        <td><p>A <a class="xref" href="Stringier.Patterns.Result.html">Result</a> containing whether a match occured and the captured <span class="xref">System.String</span></p>
+        <td><p>A <a class="xref" href="Stringier.Patterns.Result.html">Result</a> containing whether a match occured and the captured <span class="xref">System.String</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Consume_System_String_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Consume(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternParsing.cs/#L29">View Source</a>
+  </span>
+  <a id="Stringier_Patterns_Pattern_Consume_" data-uid="Stringier.Patterns.Pattern.Consume*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Consume_System_String_" data-uid="Stringier.Patterns.Pattern.Consume(System.String)">Consume(String)</h4>
+  <div class="markdown level1 summary"><p>Attempt to consume the <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> from the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Result Consume(string source)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">source</span></td>
+        <td><p>The <span class="xref">System.String</span> to consume.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Result.html">Result</a></td>
+        <td><p>A <a class="xref" href="Stringier.Patterns.Result.html">Result</a> containing whether a match occured and the captured <span class="xref">System.String</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Consume_System_String_System_Nullable_Stringier_Patterns_Debugging_ITrace__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Consume(System.String%2CSystem.Nullable%7BStringier.Patterns.Debugging.ITrace%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternParsing.cs/#L37">View Source</a>
+  </span>
+  <a id="Stringier_Patterns_Pattern_Consume_" data-uid="Stringier.Patterns.Pattern.Consume*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Consume_System_String_System_Nullable_Stringier_Patterns_Debugging_ITrace__" data-uid="Stringier.Patterns.Pattern.Consume(System.String,System.Nullable{Stringier.Patterns.Debugging.ITrace})">Consume(String, Nullable&lt;ITrace&gt;)</h4>
+  <div class="markdown level1 summary"><p>Attempt to consume the <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> from the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Result Consume(string source, ITrace? trace)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">source</span></td>
+        <td><p>The <span class="xref">System.String</span> to consume.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<a class="xref" href="Stringier.Patterns.Debugging.ITrace.html">ITrace</a>&gt;</td>
+        <td><span class="parametername">trace</span></td>
+        <td><p>The <a class="xref" href="Stringier.Patterns.Debugging.ITrace.html">ITrace</a> to record steps in.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Result.html">Result</a></td>
+        <td><p>A <a class="xref" href="Stringier.Patterns.Result.html">Result</a> containing whether a match occured and the captured <span class="xref">System.String</span>.</p>
 </td>
       </tr>
     </tbody>

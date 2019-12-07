@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
-using System.Text;
+using Stringier.Patterns.Debugging;
 
 namespace Stringier.Patterns.Nodes {
 	/// <summary>
@@ -77,9 +77,10 @@ namespace Stringier.Patterns.Nodes {
 		/// </summary>
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
 		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.
-		internal override void Consume(ref Source source, ref Result result) {
+		/// <param name="trace">The <see cref="ITrace"/> to record steps in.</param>
+		internal override void Consume(ref Source source, ref Result result, ITrace? trace) {
 			foreach (Pattern Pattern in Patterns) {
-				Pattern.Consume(ref source, ref result);
+				Pattern.Consume(ref source, ref result, trace);
 				if (result) {
 					return;
 				}
@@ -91,12 +92,13 @@ namespace Stringier.Patterns.Nodes {
 		/// </summary>
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
 		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</param>
-		internal override void Neglect(ref Source source, ref Result result) {
+		/// <param name="trace">The <see cref="ITrace"/> to record steps in.</param>
+		internal override void Neglect(ref Source source, ref Result result, ITrace? trace) {
 			Int32 OriginalPosition = source.Position;
 			Int32 OriginalLength = result.Length;
 			Int32 ShortestPattern = Int32.MaxValue;
 			for (Int32 i = Patterns.Length - 1; i >= 0; i--) {
-				Patterns[i].Neglect(ref source, ref result);
+				Patterns[i].Neglect(ref source, ref result, trace);
 				if (result.Length < ShortestPattern) {
 					ShortestPattern = result.Length - OriginalLength;
 				}

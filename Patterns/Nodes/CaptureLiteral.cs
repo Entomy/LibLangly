@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using Stringier.Patterns.Debugging;
 
 namespace Stringier.Patterns.Nodes {
 	/// <summary>
@@ -43,13 +44,15 @@ namespace Stringier.Patterns.Nodes {
 		/// </summary>
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
 		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</param>
-		internal override void Consume(ref Source source, ref Result result) => CapStore.Value.Consume(ref source, ref result, ComparisonType);
+		/// <param name="trace">The <see cref="ITrace"/> to record steps in.</param>
+		internal override void Consume(ref Source source, ref Result result, ITrace? trace) => CapStore.Value.Consume(ref source, ref result, ComparisonType, trace);
 
 		/// <summary>
 		/// Call the Neglect parser of this <see cref="Pattern"/> on the <paramref name="source"/> with the <paramref name="result"/>.
 		/// </summary>
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
 		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</param>
-		internal override void Neglect(ref Source source, ref Result result) => CapStore.Value.Neglect(ref source, ref result, ComparisonType);
+		/// <param name="trace">The <see cref="ITrace"/> to record steps in.</param>
+		internal override void Neglect(ref Source source, ref Result result, ITrace? trace) => CapStore.Value.Neglect(ref source, ref result, ComparisonType, trace);
 	}
 }

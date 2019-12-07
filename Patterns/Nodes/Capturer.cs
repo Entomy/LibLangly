@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using Stringier.Patterns.Debugging;
 
 namespace Stringier.Patterns.Nodes {
 	/// <summary>
@@ -42,9 +43,10 @@ namespace Stringier.Patterns.Nodes {
 		/// </summary>
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
 		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</param>
-		internal override void Consume(ref Source source, ref Result result) {
+		/// <param name="trace">The <see cref="ITrace"/> to record steps in.</param>
+		internal override void Consume(ref Source source, ref Result result, ITrace? trace) {
 			Int32 originalPosition = source.Position;
-			Pattern.Consume(ref source, ref result);
+			Pattern.Consume(ref source, ref result, trace);
 			CapStore.Value = source.Substring(originalPosition, source.Position - originalPosition).ToString();
 		}
 
@@ -53,9 +55,10 @@ namespace Stringier.Patterns.Nodes {
 		/// </summary>
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
 		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</param>
-		internal override void Neglect(ref Source source, ref Result result) {
+		/// <param name="trace">The <see cref="ITrace"/> to record steps in.</param>
+		internal override void Neglect(ref Source source, ref Result result, ITrace? trace) {
 			Int32 originalPosition = source.Position;
-			Pattern.Neglect(ref source, ref result);
+			Pattern.Neglect(ref source, ref result, trace);
 			CapStore.Value = source.Substring(originalPosition, source.Position - originalPosition).ToString();
 		}
 	}
