@@ -95,7 +95,7 @@
     <pre><code class="lang-csharp hljs">public struct Source</code></pre>
   </div>
   <h5 id="Stringier_Patterns_Source_remarks"><strong>Remarks</strong></h5>
-  <div class="markdown level0 remarks"><p>This is a text buffer with an included implicit cursor. This cursor (<span class="xref">Stringier.Patterns.Source.Position</span>) is not exposed to the downstream programmer, but is available for direct manipulation by patterns and parsers within this assembly.</p>
+  <div class="markdown level0 remarks"><p>This is a text buffer with an included implicit cursor. This cursor (<a class="xref" href="Stringier.Patterns.Source.html#Stringier_Patterns_Source_Position">Position</a>) is not exposed to the downstream programmer, but is available for direct manipulation by patterns and parsers within this assembly.</p>
 </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -333,6 +333,40 @@
       </tr>
     </tbody>
   </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Source_Position.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Source.Position%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/Source.cs/#L99">View Source</a>
+  </span>
+  <a id="Stringier_Patterns_Source_Position_" data-uid="Stringier.Patterns.Source.Position*"></a>
+  <h4 id="Stringier_Patterns_Source_Position" data-uid="Stringier.Patterns.Source.Position">Position</h4>
+  <div class="markdown level1 summary"><p>The position within the source buffer</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Position { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Stringier_Patterns_Source_Position_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This is mutable for internal manipulation, such as advancing on a match or resetting the index after a failed consume.</p>
+</div>
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">

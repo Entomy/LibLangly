@@ -76,11 +76,17 @@
   <div class="markdown level0 summary"><p>Represents a graph trace, a collection of the steps taken through a <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> graph.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Collections.Generic.IEnumerable&lt;Stringier.Patterns.Debugging.IStep&gt;.GetEnumerator()</span>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Stringier.Patterns.Debugging.html">Stringier.Patterns.Debugging</a></h6>
   <h6><strong>Assembly</strong>: Stringier.Patterns.dll</h6>
   <h5 id="Stringier_Patterns_Debugging_ITrace_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface ITrace</code></pre>
+    <pre><code class="lang-csharp hljs">public interface ITrace : IEnumerable&lt;IStep&gt;, IEnumerable</code></pre>
   </div>
 </article>
           </div>
