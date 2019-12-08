@@ -16,9 +16,9 @@ namespace Benchmarks.Patterns {
 	[SimpleJob(RuntimeMoniker.Mono)]
 	[MemoryDiagnoser]
 	public class PhoneNumberBenchmarks {
-		readonly Regex msregex = new Regex(@"\d{3}-\d{3}-\d{4}");
+		readonly Regex msregex = new Regex(@"^[0-9]{3}-[0-9]{3}-[0-9]{4}");
 
-		readonly PcreRegex pcreregex = new PcreRegex(@"\d{3}-\d{3}-\d{4}");
+		readonly PcreRegex pcreregex = new PcreRegex(@"^[0-9]{3}-[0-9]{3}-[0-9]{4}");
 
 		readonly Parser<Char, String> pidgin = Digit.RepeatString(3).Then(Char('-')).Then(Digit.RepeatString(3)).Then(Char('-')).Then(Digit.RepeatString(4));
 

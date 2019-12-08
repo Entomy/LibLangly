@@ -15,9 +15,9 @@ namespace Benchmarks.Patterns {
 	[SimpleJob(RuntimeMoniker.Mono)]
 	[MemoryDiagnoser]
 	public class StringLiteralBenchmarks {
-		readonly Regex msregex = new Regex("\"(?:\\.|[^\"])*\"");
+		readonly Regex msregex = new Regex("^\"(?:\\.|[^\"])*\"");
 
-		readonly PcreRegex pcreregex = new PcreRegex("\"(?:\\.|[^\"])*\"");
+		readonly PcreRegex pcreregex = new PcreRegex("^\"(?:\\.|[^\"])*\"");
 
 		readonly Parser<Char, String> pidgin = Char('\"').OfType<String>().Then(String("\\\"").Or(Not(Char('\"')).OfType<String>())).Then(Char('\"').OfType<String>());
 

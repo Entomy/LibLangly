@@ -15,9 +15,9 @@ namespace Benchmarks.Patterns {
 	[SimpleJob(RuntimeMoniker.Mono)]
 	[MemoryDiagnoser]
 	public class IPv4AddressBenchmarks {
-		readonly Regex msregex = new Regex(@"[012]?\d{1,2}.[012]?\d{1,2}.[012]?\d{1,2}.[012]?\d{1,2}");
+		readonly Regex msregex = new Regex(@"^[012]?[0-9]{1,2}.[012]?[0-9]{1,2}.[012]?[0-9]{1,2}.[012]?[0-9]{1,2}");
 
-		readonly PcreRegex pcreregex = new PcreRegex(@"[012]?\d{1,2}.[012]?\d{1,2}.[012]?\d{1,2}.[012]?\d{1,2}");
+		readonly PcreRegex pcreregex = new PcreRegex(@"^[012]?[0-9]{1,2}.[012]?[0-9]{1,2}.[012]?[0-9]{1,2}.[012]?[0-9]{1,2}");
 
 		readonly static Parser<Char, String> pidginDigit = 
 			Try(OneOf('0', '1', '2'))

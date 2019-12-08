@@ -23,7 +23,7 @@ namespace Benchmarks.Patterns {
 
 		readonly Parser<Char, IEnumerable<String>> pidgin = String("Hi!").Repeat(5);
 
-		readonly Pattern stringier = "Hi!".Repeat(4);
+		readonly Pattern stringier = "Hi!".Repeat(5);
 
 		[Params("Hi!", "Hi!Hi!Hi!Hi!Hi!")]
 		public String Source { get; set; }

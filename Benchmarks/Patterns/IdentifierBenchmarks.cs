@@ -16,9 +16,9 @@ namespace Benchmarks.Patterns {
 	[SimpleJob(RuntimeMoniker.Mono)]
 	[MemoryDiagnoser]
 	public class IdentifierBenchmarks {
-		readonly Regex msregex = new Regex("\\w(?:\\w|_)+", RegexOptions.IgnoreCase);
+		readonly Regex msregex = new Regex("^\\w(?:\\w|_)+", RegexOptions.IgnoreCase);
 
-		readonly PcreRegex pcreregex = new PcreRegex("\\w(?:\\w|_)+", PcreOptions.IgnoreCase);
+		readonly PcreRegex pcreregex = new PcreRegex("^\\w(?:\\w|_)+", PcreOptions.IgnoreCase);
 
 		readonly Parser<Char, String> pidgin =
 			Letter
