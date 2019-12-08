@@ -94,9 +94,9 @@ namespace Stringier.Patterns {
 		/// The position within the source buffer
 		/// </summary>
 		/// <remarks>
-		/// This is for internal manipulation, such as resetting the index after a failed consume
+		/// This is mutable for internal manipulation, such as advancing on a match or resetting the index after a failed consume.
 		/// </remarks>
-		internal Int32 Position { get; set; }
+		public Int32 Position { get; internal set; }
 
 		public static Boolean operator !=(Source left, Source right) => !left.Equals(right);
 
