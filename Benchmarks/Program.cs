@@ -46,11 +46,12 @@ namespace Benchmarks {
 				new KeyChoice(ConsoleKey.D7, "Repeater", () => BenchmarkRunner.Run<RepeaterBenchmarks>()),
 				new KeyChoice(ConsoleKey.D8, "Spanner", () => BenchmarkRunner.Run<SpannerBenchmarks>()),
 				new KeyChoice(ConsoleKey.D9, "Identifier", () => BenchmarkRunner.Run<IdentifierBenchmarks>()),
-				new KeyChoice(ConsoleKey.A, "IPv4 Address", () => BenchmarkRunner.Run<IPv4AddressBenchmarks>()),
+				new KeyChoice(ConsoleKey.A, "Checker", () => BenchmarkRunner.Run<CheckerBenchmarks>()),
 				new BackKeyChoice(ConsoleKey.B, "Back", () => { }),
-				new KeyChoice(ConsoleKey.C, "LineComment", () => BenchmarkRunner.Run<LineCommentBenchmarks>()),
-				new KeyChoice(ConsoleKey.D, "Phone Number", () => BenchmarkRunner.Run<PhoneNumberBenchmarks>()),
-				new KeyChoice(ConsoleKey.E, "String Literal", () => BenchmarkRunner.Run<StringLiteralBenchmarks>()));
+				new KeyChoice(ConsoleKey.C, "IPv4 Address", () => BenchmarkRunner.Run<IPv4AddressBenchmarks>()),
+				new KeyChoice(ConsoleKey.D, "LineComment", () => BenchmarkRunner.Run<LineCommentBenchmarks>()),
+				new KeyChoice(ConsoleKey.E, "Phone Number", () => BenchmarkRunner.Run<PhoneNumberBenchmarks>()),
+				new KeyChoice(ConsoleKey.F, "String Literal", () => BenchmarkRunner.Run<StringLiteralBenchmarks>()));
 
 		public static void Main() {
 			Theme.DefaultDark.Apply();

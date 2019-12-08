@@ -6,6 +6,7 @@ open Bindings
 module Extensions =
     /// <summary>
     /// Chop the <paramref name="source"/> into chunks of <paramref name="size"/>
+    /// </summary>
     let chop(size:int32)(source:string):string[] = source.Chop(size)
 
     /// <summary>
@@ -66,7 +67,7 @@ module Extensions =
     /// <summary>
     /// Repeat the text, count times.
     /// </summary>
-    let inline repeat(count:int32)(text:'a):'c = _repeat<Binder, 'a, int32, 'c> count text
+    let inline repeat(count:int32)(text:^a):^c = _repeat<Binder, ^a, int32, ^c> count text
 
     /// <summary>
     /// Splits a string into substrings based on the separator(s).
