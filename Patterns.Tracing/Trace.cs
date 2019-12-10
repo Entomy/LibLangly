@@ -25,9 +25,13 @@ namespace Stringier.Patterns.Debugging {
 		/// </summary>
 		/// <param name="text"></param>
 		/// <param name="position"></param>
-		/// <param name="nodeType"></param>
-		/// <param name="errorType"></param>
-		public void Collect(String text, Int32 position, Pattern nodeType, ErrorType errorType) => Steps.Add(new Step(text, position, nodeType, errorType));
+		public void Collect(String text, Int32 position) => Steps.Add(new Step(text, position));
+
+		/// <summary>
+		/// Collect the parameters as a trace step.
+		/// </summary>
+		/// <param name="errorType"
+		public void Collect(ErrorType errorType) => Steps.Add(new Step(errorType));
 
 		IEnumerator<IStep> IEnumerable<IStep>.GetEnumerator() => ((IEnumerable<IStep>)Steps).GetEnumerator();
 

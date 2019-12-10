@@ -233,14 +233,17 @@ namespace Stringier.Patterns {
 		internal static void Consume(this String pattern, ref Source source, ref Result result, Compare comparisonType, ITrace? trace) {
 			if (pattern.Length > source.Length) {
 				result.Error.Set(ErrorType.EndOfSource, pattern);
+				if (trace is Object) { trace.Collect(result.Error); }
 			} else {
 				ReadOnlySpan<Char> Peek = source.Peek(pattern.Length);
 				if (pattern.Equals(Peek, comparisonType)) {
+					if (trace is Object) { trace.Collect(Peek, source.Position); }
 					source.Position += Peek.Length;
 					result.Length += Peek.Length;
 					result.Error.Clear();
 				} else {
 					result.Error.Set(ErrorType.ConsumeFailed, pattern);
+					if (trace is Object) { trace.Collect(result.Error); }
 				}
 			}
 		}
@@ -340,14 +343,17 @@ namespace Stringier.Patterns {
 		internal static void Neglect(this String pattern, ref Source source, ref Result result, Compare comparisonType, ITrace? trace) {
 			if (pattern.Length > source.Length) {
 				result.Error.Set(ErrorType.EndOfSource, pattern);
+				if (trace is Object) { trace.Collect(result.Error); }
 			} else {
 				ReadOnlySpan<Char> Peek = source.Peek(pattern.Length);
 				if (!pattern.Equals(Peek, comparisonType)) {
+					if (trace is Object) { trace.Collect(Peek, source.Length); }
 					source.Position += Peek.Length;
 					result.Length += Peek.Length;
 					result.Error.Clear();
 				} else {
 					result.Error.Set(ErrorType.NeglectFailed, pattern);
+					if (trace is Object) { trace.Collect(result.Error); }
 				}
 			}
 		}

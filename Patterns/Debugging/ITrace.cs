@@ -19,8 +19,12 @@ namespace Stringier.Patterns.Debugging {
 		/// </summary>
 		/// <param name="text"></param>
 		/// <param name="position"></param>
-		/// <param name="nodeType"></param>
-		/// <param name="errorType"></param>
-		public void Collect(String text, Int32 position, Pattern nodeType, ErrorType errorType);
+		public void Collect(String text, Int32 position);
+
+		/// <summary>
+		/// Collect the parameters as a trace step.
+		/// </summary>
+		/// <param name="error"></param>
+		public void Collect(ErrorType error);
 	}
 }
