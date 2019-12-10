@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+		<AssemblyName>Stringier.Metrics</AssemblyName>
+		<RootNamespace>Stringier</RootNamespace>
+		<AssemblyName>Stringier.Metrics</AssemblyName>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+		<Authors>Patrick Kelly</Authors>
+		<Product>Stringier</Product>
+		<Description>Extensions Stringier with string metric calculations.</Description>
+		<Copyright>2019</Copyright>
+		<PackageProjectUrl>https://github.com/Entomy/Stringier</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/Entomy/Stringier</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageLicenseUrl></PackageLicenseUrl>
+		<Version>2.0</Version>
+		<PackageTags>string, string functions, string edit, string edits, string metrics, edit distance</PackageTags>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<PackageIcon>Logo.png</PackageIcon>
+		<PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
+	</PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Metrics.fs" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<None Include="..\Logo.png" Pack="true" Visible="true" PackagePath="\" />
+	</ItemGroup>
+
+</Project>
