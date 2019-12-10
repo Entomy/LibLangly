@@ -7,7 +7,7 @@ namespace Stringier.Patterns {
 	/// Represents a textual pattern; this pattern mutates during construction.
 	/// </summary>
 	/// <remarks>
-	/// This is a specialization for use with the jumper/target system. Because a target is created from a <see cref="Pattern"/> and points to it, the reference must not change, yet the underlying pattern must change. That means the object must mutate, which is generally undesired and avoided.
+	/// This is a specialization for use with recursion systems. Because a target is created from a <see cref="Pattern"/> and points to it, the reference must not change, yet the underlying pattern must change. That means the object must mutate, which is generally undesired and avoided.
 	/// </remarks>
 	internal sealed class MutablePattern : Pattern {
 		/// <summary>
