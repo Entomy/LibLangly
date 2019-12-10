@@ -21,6 +21,6 @@ namespace Stringier.Patterns.Debugging {
 		/// <param name="position"></param>
 		/// <param name="nodeType"></param>
 		/// <param name="errorType"></param>
-		public void Collect(String text, Int32 position, Type nodeType, ErrorType errorType);
+		public void Collect(String text, Int32 position, Pattern nodeType, ErrorType errorType);
 	}
 }
