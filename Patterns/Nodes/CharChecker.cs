@@ -41,13 +41,17 @@ namespace Stringier.Patterns.Nodes {
 		internal override void Consume(ref Source source, ref Result result, ITrace? trace) {
 			if (source.Length == 0) {
 				result.Error.Set(ErrorType.EndOfSource, this);
+				trace?.Collect(result.Error);
 			} else {
-				if (Check(source.Peek())) {
+				Char Peek = source.Peek();
+				if (Check(Peek)) {
+					trace?.Collect(Peek, source.Position);
 					source.Position++;
 					result.Length++;
 					result.Error.Clear();
 				} else {
 					result.Error.Set(ErrorType.ConsumeFailed, this);
+					trace?.Collect(result.Error);
 				}
 			}
 		}
@@ -61,13 +65,17 @@ namespace Stringier.Patterns.Nodes {
 		internal override void Neglect(ref Source source, ref Result result, ITrace? trace) {
 			if (source.Length == 0) {
 				result.Error.Set(ErrorType.EndOfSource, this);
+				trace?.Collect(result.Error);
 			} else {
-				if (!Check(source.Peek())) {
+				Char Peek = source.Peek();
+				if (!Check(Peek)) {
+					trace?.Collect(Peek, source.Position);
 					source.Position++;
 					result.Length++;
 					result.Error.Clear();
 				} else {
 					result.Error.Set(ErrorType.NeglectFailed, this);
+					trace?.Collect(result.Error);
 				}
 			}
 		}

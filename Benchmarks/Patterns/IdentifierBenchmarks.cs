@@ -16,9 +16,13 @@ namespace Benchmarks.Patterns {
 	[SimpleJob(RuntimeMoniker.Mono)]
 	[MemoryDiagnoser]
 	public class IdentifierBenchmarks {
-		readonly Regex msregex = new Regex("^\\w(?:\\w|_)+", RegexOptions.IgnoreCase);
+		readonly Regex msregex = new Regex("^\\w(?:\\w|_)+");
 
-		readonly PcreRegex pcreregex = new PcreRegex("^\\w(?:\\w|_)+", PcreOptions.IgnoreCase);
+		readonly Regex msregexCompiled = new Regex("^\\w(?:\\w|_)+", RegexOptions.Compiled);
+
+		readonly PcreRegex pcreregex = new PcreRegex("^\\w(?:\\w|_)+");
+
+		readonly PcreRegex pcreregexCompiled = new PcreRegex("^\\w(?:\\w|_)+", PcreOptions.Compiled);
 
 		readonly Parser<Char, String> pidgin =
 			Letter
@@ -37,7 +41,13 @@ namespace Benchmarks.Patterns {
 		public Match MSRegex() => msregex.Match(Source);
 
 		[Benchmark]
+		public Match MSRegexCompiled() => msregexCompiled.Match(Source);
+
+		[Benchmark]
 		public PcreMatch PcreRegex() => pcreregex.Match(Source);
+
+		[Benchmark]
+		public PcreMatch PcreRegexCompiled() => pcreregexCompiled.Match(Source);
 
 		[Benchmark]
 		public Result<Char, String> Pidgin() => pidgin.Parse(Source);

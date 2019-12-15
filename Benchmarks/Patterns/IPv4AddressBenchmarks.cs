@@ -17,7 +17,11 @@ namespace Benchmarks.Patterns {
 	public class IPv4AddressBenchmarks {
 		readonly Regex msregex = new Regex(@"^[012]?[0-9]{1,2}.[012]?[0-9]{1,2}.[012]?[0-9]{1,2}.[012]?[0-9]{1,2}");
 
+		readonly Regex msregexCompiled = new Regex(@"^[012]?[0-9]{1,2}.[012]?[0-9]{1,2}.[012]?[0-9]{1,2}.[012]?[0-9]{1,2}", RegexOptions.Compiled);
+
 		readonly PcreRegex pcreregex = new PcreRegex(@"^[012]?[0-9]{1,2}.[012]?[0-9]{1,2}.[012]?[0-9]{1,2}.[012]?[0-9]{1,2}");
+
+		readonly PcreRegex pcreregexCompiled = new PcreRegex(@"^[012]?[0-9]{1,2}.[012]?[0-9]{1,2}.[012]?[0-9]{1,2}.[012]?[0-9]{1,2}", PcreOptions.Compiled);
 
 		readonly static Parser<Char, String> pidginDigit = 
 			Try(OneOf('0', '1', '2'))

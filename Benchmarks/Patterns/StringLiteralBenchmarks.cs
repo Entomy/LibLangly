@@ -17,7 +17,11 @@ namespace Benchmarks.Patterns {
 	public class StringLiteralBenchmarks {
 		readonly Regex msregex = new Regex("^\"(?:\\.|[^\"])*\"");
 
+		readonly Regex msregexCompiled = new Regex("^\"(?:\\.|[^\"])*\"", RegexOptions.Compiled);
+
 		readonly PcreRegex pcreregex = new PcreRegex("^\"(?:\\.|[^\"])*\"");
+
+		readonly PcreRegex pcreregexCompiled = new PcreRegex("^\"(?:\\.|[^\"])*\"", PcreOptions.Compiled);
 
 		readonly Parser<Char, String> pidgin = Char('\"').OfType<String>().Then(String("\\\"").Or(Not(Char('\"')).OfType<String>())).Then(Char('\"').OfType<String>());
 
@@ -30,7 +34,13 @@ namespace Benchmarks.Patterns {
 		public Match MSRegex() => msregex.Match(Source);
 
 		[Benchmark]
+		public Match MSRegexCompiled() => msregexCompiled.Match(Source);
+
+		[Benchmark]
 		public PcreMatch PcreRegex() => pcreregex.Match(Source);
+
+		[Benchmark]
+		public PcreMatch PcreRegexCompiled() => pcreregexCompiled.Match(Source);
 
 		[Benchmark]
 		public Result<Char, String> Pidgin() => pidgin.Parse(Source);

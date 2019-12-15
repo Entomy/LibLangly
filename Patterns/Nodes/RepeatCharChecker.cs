@@ -53,17 +53,23 @@ namespace Stringier.Patterns.Nodes {
 		internal override void Consume(ref Source source, ref Result result, ITrace? trace) {
 			if (source.EOF) {
 				result.Error.Set(ErrorType.EndOfSource, this);
+				trace?.Collect(result.Error);
 			} else {
 				for (Int32 i = 0; i < Count; i++) {
 					if (source.EOF) {
 						result.Error.Set(ErrorType.ConsumeFailed, this);
+						trace?.Collect(result.Error);
+						break;
 					}
-					if (Check(source.Peek())) {
+					Char Char;
+					if (Check(Char = source.Peek())) {
+						trace?.Collect(Char, source.Position);
 						source.Position++;
 						result.Length++;
 						result.Error.Clear();
 					} else {
 						result.Error.Set(ErrorType.ConsumeFailed, this);
+						trace?.Collect(result.Error);
 						break;
 					}
 				}
@@ -79,17 +85,23 @@ namespace Stringier.Patterns.Nodes {
 		internal override void Neglect(ref Source source, ref Result result, ITrace? trace) {
 			if (source.EOF) {
 				result.Error.Set(ErrorType.EndOfSource, this);
+				trace?.Collect(result.Error);
 			} else {
 				for (Int32 i = 0; i < Count; i++) {
 					if (source.EOF) {
 						result.Error.Set(ErrorType.NeglectFailed, this);
+						trace?.Collect(result.Error);
+						break;
 					}
-					if (!Check(source.Peek())) {
+					Char Char;
+					if (!Check(Char = source.Peek())) {
+						trace?.Collect(Char, source.Position);
 						source.Position++;
 						result.Length++;
 						result.Error.Clear();
 					} else {
 						result.Error.Set(ErrorType.NeglectFailed, this);
+						trace?.Collect(result.Error);
 						break;
 					}
 				}

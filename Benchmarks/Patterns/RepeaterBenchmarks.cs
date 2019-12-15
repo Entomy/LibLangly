@@ -19,7 +19,11 @@ namespace Benchmarks.Patterns {
 
 		readonly Regex msregex = new Regex("^(?:Hi!){5}");
 
+		readonly Regex msregexCompiled = new Regex("^(?:Hi!){5}", RegexOptions.Compiled);
+
 		readonly PcreRegex pcreregex = new PcreRegex("^(?:Hi!){5}");
+
+		readonly PcreRegex pcreregexCompiled = new PcreRegex("^(?:Hi!){5}", PcreOptions.Compiled);
 
 		readonly Parser<Char, IEnumerable<String>> pidgin = String("Hi!").Repeat(5);
 
@@ -32,7 +36,13 @@ namespace Benchmarks.Patterns {
 		public Match MSRegex() => msregex.Match(Source);
 
 		[Benchmark]
+		public Match MSRegexCompiled() => msregexCompiled.Match(Source);
+
+		[Benchmark]
 		public PcreMatch PcreRegex() => pcreregex.Match(Source);
+
+		[Benchmark]
+		public PcreMatch PcreRegexCompiled() => pcreregexCompiled.Match(Source);
 
 		[Benchmark]
 		public Result<Char, IEnumerable<String>> Pidgin() => pidgin.Parse(Source);

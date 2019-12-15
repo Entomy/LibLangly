@@ -23,7 +23,13 @@ namespace Benchmarks.Patterns {
 		readonly Regex msregex = new Regex("^[^H][^e][^l][^l][^o]");
 
 		// This isn't exactly a token negation, but is as close as you're gonna get from Regex
+		readonly Regex msregexCompiled = new Regex("^[^H][^e][^l][^l][^o]", RegexOptions.Compiled);
+
+		// This isn't exactly a token negation, but is as close as you're gonna get from Regex
 		readonly PcreRegex pcreregex = new PcreRegex("^[^H][^e][^l][^l][^o]");
+
+		// This isn't exactly a token negation, but is as close as you're gonna get from Regex
+		readonly PcreRegex pcreregexCompiled = new PcreRegex("^[^H][^e][^l][^l][^o]", PcreOptions.Compiled);
 
 		readonly Parser<Char, Unit> pidgin = Not(String("Hello"));
 

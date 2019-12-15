@@ -18,7 +18,11 @@ namespace Benchmarks.Patterns {
 	public class PhoneNumberBenchmarks {
 		readonly Regex msregex = new Regex(@"^[0-9]{3}-[0-9]{3}-[0-9]{4}");
 
+		readonly Regex msregexCompiled = new Regex(@"^[0-9]{3}-[0-9]{3}-[0-9]{4}", RegexOptions.Compiled);
+
 		readonly PcreRegex pcreregex = new PcreRegex(@"^[0-9]{3}-[0-9]{3}-[0-9]{4}");
+
+		readonly PcreRegex pcreregexCompiled = new PcreRegex(@"^[0-9]{3}-[0-9]{3}-[0-9]{4}", PcreOptions.Compiled);
 
 		readonly Parser<Char, String> pidgin = Digit.RepeatString(3).Then(Char('-')).Then(Digit.RepeatString(3)).Then(Char('-')).Then(Digit.RepeatString(4));
 
@@ -31,7 +35,13 @@ namespace Benchmarks.Patterns {
 		public Match MSRegex() => msregex.Match(Source);
 
 		[Benchmark]
+		public Match MSRegexCompiled() => msregexCompiled.Match(Source);
+
+		[Benchmark]
 		public PcreMatch PcreRegex() => pcreregex.Match(Source);
+
+		[Benchmark]
+		public PcreMatch PcreRegexCompiled() => pcreregexCompiled.Match(Source);
 
 		[Benchmark]
 		public Result<Char, String> Pidgin() => pidgin.Parse(Source);

@@ -17,7 +17,11 @@ namespace Benchmarks.Patterns {
 	public class LiteralBenchmarks {
 		readonly Regex msregex = new Regex("^Hello");
 
+		readonly Regex msregexCompiled = new Regex("^Hello", RegexOptions.Compiled);
+
 		readonly PcreRegex pcreregex = new PcreRegex("^Hello");
+
+		readonly PcreRegex pcreregexCompiled = new PcreRegex("^Hello", PcreOptions.Compiled);
 
 		readonly Parser<Char, String> pidgin = String("Hello");
 
@@ -30,7 +34,13 @@ namespace Benchmarks.Patterns {
 		public Match MSRegex() => msregex.Match(Source);
 
 		[Benchmark]
+		public Match MSRegexCompiled() => msregexCompiled.Match(Source);
+
+		[Benchmark]
 		public PcreMatch PcreRegex() => pcreregex.Match(Source);
+
+		[Benchmark]
+		public PcreMatch PcreRegexCompiled() => pcreregexCompiled.Match(Source);
 
 		[Benchmark]
 		public Result<Char, String> Pidgin() => pidgin.Parse(Source);

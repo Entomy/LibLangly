@@ -228,13 +228,17 @@ namespace Stringier.Patterns {
 		internal static void Consume(this Char pattern, ref Source source, ref Result result, Compare comparisonType, ITrace? trace) {
 			if (source.Length == 0) {
 				result.Error.Set(ErrorType.EndOfSource, pattern);
+				trace?.Collect(result.Error);
 			} else {
-				if (pattern.Equals(source.Peek(), comparisonType)) {
+				Char Peek = source.Peek();
+				if (pattern.Equals(Peek, comparisonType)) {
+					trace?.Collect(Peek, source.Position);
 					source.Position++;
 					result.Length++;
 					result.Error.Clear();
 				} else {
 					result.Error.Set(ErrorType.ConsumeFailed, pattern);
+					trace?.Collect(result.Error);
 				}
 			}
 		}
@@ -277,13 +281,17 @@ namespace Stringier.Patterns {
 		internal static void Neglect(this Char pattern, ref Source source, ref Result result, Compare comparisonType, ITrace? trace) {
 			if (source.Length == 0) {
 				result.Error.Set(ErrorType.EndOfSource, pattern);
+				trace?.Collect(result.Error);
 			} else {
-				if (!pattern.Equals(source.Peek(), comparisonType)) {
+				Char Peek = source.Peek();
+				if (!pattern.Equals(Peek, comparisonType)) {
+					trace?.Collect(Peek, source.Position);
 					source.Position++;
 					result.Length++;
 					result.Error.Clear();
 				} else {
 					result.Error.Set(ErrorType.NeglectFailed, pattern);
+					trace?.Collect(result.Error);
 				}
 			}
 		}

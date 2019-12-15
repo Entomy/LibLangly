@@ -18,7 +18,11 @@ namespace Benchmarks.Patterns {
 
 		readonly Regex msregex = new Regex("^(?:Hello|Goodbye)");
 
+		readonly Regex msregexCompiled = new Regex("^(?:Hello|Goodbye)", RegexOptions.Compiled);
+
 		readonly PcreRegex pcreregex = new PcreRegex("^(?:Hello|Goodbye)");
+
+		readonly PcreRegex pcreregexCompiled = new PcreRegex("^(?:Hello|Goodbye)", PcreOptions.Compiled);
 
 		readonly Parser<Char, String> pidgin = String("Hello").Or(String("Goodbye"));
 
@@ -31,7 +35,13 @@ namespace Benchmarks.Patterns {
 		public Match MSRegex() => msregex.Match(Source);
 
 		[Benchmark]
+		public Match MSRegexCompiled() => msregexCompiled.Match(Source);
+
+		[Benchmark]
 		public PcreMatch PcreRegex() => pcreregex.Match(Source);
+
+		[Benchmark]
+		public PcreMatch PcreRegexCompiled() => pcreregexCompiled.Match(Source);
 
 		[Benchmark]
 		public Result<Char, String> Pidgin() => pidgin.Parse(Source);

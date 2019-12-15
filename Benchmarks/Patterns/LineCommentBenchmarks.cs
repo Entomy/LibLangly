@@ -16,9 +16,13 @@ namespace Benchmarks.Patterns {
 	[SimpleJob(RuntimeMoniker.Mono)]
 	[MemoryDiagnoser]
 	public class LineCommentBenchmarks {
-		readonly Regex msregex = new Regex("^--(?:[^\u000D][^\u000A]|[^\u000A][^\u000D]|[^\u000A]|[^\u000B]|[^\u000C]|[^\u000D]|[^\u0085]|[^\u2028]|[^\u2029])+", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+		readonly Regex msregex = new Regex("^--(?:[^\u000D][^\u000A]|[^\u000A][^\u000D]|[^\u000A]|[^\u000B]|[^\u000C]|[^\u000D]|[^\u0085]|[^\u2028]|[^\u2029])+", RegexOptions.Singleline);
 
-		readonly PcreRegex pcreregex = new PcreRegex("^--(?:[^\u000D][^\u000A]|[^\u000A][^\u000D]|[^\u000A]|[^\u000B]|[^\u000C]|[^\u000D]|[^\u0085]|[^\u2028]|[^\u2029])+", PcreOptions.IgnoreCase);
+		readonly Regex msregexCompiled = new Regex("^--(?:[^\u000D][^\u000A]|[^\u000A][^\u000D]|[^\u000A]|[^\u000B]|[^\u000C]|[^\u000D]|[^\u0085]|[^\u2028]|[^\u2029])+", RegexOptions.Singleline | RegexOptions.Compiled);
+
+		readonly PcreRegex pcreregex = new PcreRegex("^--(?:[^\u000D][^\u000A]|[^\u000A][^\u000D]|[^\u000A]|[^\u000B]|[^\u000C]|[^\u000D]|[^\u0085]|[^\u2028]|[^\u2029])+", PcreOptions.Singleline);
+
+		readonly PcreRegex pcreregexCompiled = new PcreRegex("^--(?:[^\u000D][^\u000A]|[^\u000A][^\u000D]|[^\u000A]|[^\u000B]|[^\u000C]|[^\u000D]|[^\u0085]|[^\u2028]|[^\u2029])+", PcreOptions.Singleline | PcreOptions.Compiled);
 
 		readonly Parser<Char, String> pidgin = Map((start, end) => start + end, String("--"), Not(OneOf(String("\u000D\u000A"), String("\u000A\u000D"), String("\u000A"), String("\u000B"), String("\u000C"), String("\u000D"), String("\u0085"), String("\u2028"), String("\u2029"))));
 
@@ -31,7 +35,13 @@ namespace Benchmarks.Patterns {
 		public Match MSRegex() => msregex.Match(Source);
 
 		[Benchmark]
+		public Match MSRegexCompiled() => msregexCompiled.Match(Source);
+
+		[Benchmark]
 		public PcreMatch PcreRegex() => pcreregex.Match(Source);
+
+		[Benchmark]
+		public PcreMatch PcreRegexCompiled() => pcreregexCompiled.Match(Source);
 
 		[Benchmark]
 		public Result<Char, String> Pidgin() => pidgin.Parse(Source);

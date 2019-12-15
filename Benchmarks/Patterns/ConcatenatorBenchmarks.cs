@@ -17,7 +17,11 @@ namespace Benchmarks.Patterns {
 	public class ConcatenatorBenchmarks {
 		readonly Regex msregex = new Regex("^Hello World");
 
+		readonly Regex msregexCompiled = new Regex("^Hello World", RegexOptions.Compiled);
+
 		readonly PcreRegex pcreregex = new PcreRegex("^Hello World");
+
+		readonly PcreRegex pcreregexCompiled = new PcreRegex("^Hello World", PcreOptions.Compiled);
 
 		readonly Parser<Char, String> pidgin = Map((first, second, third) => first + second + third, String("Hello"), Char(' '), String("Hello"));
 
@@ -30,7 +34,14 @@ namespace Benchmarks.Patterns {
 		public Match MSRegex() => msregex.Match(Source);
 
 		[Benchmark]
+		public Match MSRegexCompiled() => msregexCompiled.Match(Source);
+
+		[Benchmark]
 		public PcreMatch PcreRegex() => pcreregex.Match(Source);
+
+		[Benchmark]
+		public PcreMatch PcreRegexCompiled() => pcreregexCompiled.Match(Source);
+
 
 		[Benchmark]
 		public Result<Char, String> Pidgin() => pidgin.Parse(Source);
