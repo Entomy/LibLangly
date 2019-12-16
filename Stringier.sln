@@ -38,7 +38,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stringier", "Stringier\Stri
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Patterns.Tracing", "Patterns.Tracing\Patterns.Tracing.csproj", "{CADA6B63-4657-4DA9-9C48-1AA4A4699E85}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Metrics", "Metrics\Metrics.fsproj", "{664086AB-B0EC-4720-BB6A-738114EFF080}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Metrics", "Metrics\Metrics.fsproj", "{664086AB-B0EC-4720-BB6A-738114EFF080}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{B5DD7B0B-664D-4374-A25B-F0F28C8DD4AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ptndbg", "ptndbg\ptndbg.csproj", "{67BE0AEB-C285-4B24-B366-A1564F0ED3E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -152,9 +156,20 @@ Global
 		{664086AB-B0EC-4720-BB6A-738114EFF080}.Release|Any CPU.Build.0 = Release|Any CPU
 		{664086AB-B0EC-4720-BB6A-738114EFF080}.Release-LowTrust|Any CPU.ActiveCfg = Release|Any CPU
 		{664086AB-B0EC-4720-BB6A-738114EFF080}.Release-LowTrust|Any CPU.Build.0 = Release|Any CPU
+		{67BE0AEB-C285-4B24-B366-A1564F0ED3E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67BE0AEB-C285-4B24-B366-A1564F0ED3E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67BE0AEB-C285-4B24-B366-A1564F0ED3E4}.Debug-LowTrust|Any CPU.ActiveCfg = Debug|Any CPU
+		{67BE0AEB-C285-4B24-B366-A1564F0ED3E4}.Debug-LowTrust|Any CPU.Build.0 = Debug|Any CPU
+		{67BE0AEB-C285-4B24-B366-A1564F0ED3E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67BE0AEB-C285-4B24-B366-A1564F0ED3E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67BE0AEB-C285-4B24-B366-A1564F0ED3E4}.Release-LowTrust|Any CPU.ActiveCfg = Release|Any CPU
+		{67BE0AEB-C285-4B24-B366-A1564F0ED3E4}.Release-LowTrust|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{67BE0AEB-C285-4B24-B366-A1564F0ED3E4} = {B5DD7B0B-664D-4374-A25B-F0F28C8DD4AC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3484C800-F891-49EF-B38A-24FC23F46AE3}
