@@ -24,7 +24,7 @@ let patternName = p"Text to match"
 **or**
 ~~~~csharp
 Pattern patternName = "Text to match".With(StringComparison.Ordinal);
-//Matches the entire peice of text using ordinal case-sensitive rules
+//Matches the entire piece of text using ordinal case-sensitive rules
 ~~~~
 ~~~~fsharp
 let patternName = "Text to match"/=StringComparison.Ordinal; //This operator is weird looking. It was chosen just because of its precedence and nothing more
