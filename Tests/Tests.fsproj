@@ -8,7 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Metrics\EditDistance.fs" />
+    <Compile Include="Collections\StringBuilderTests.fs" />
+    <Compile Include="Metrics\EditDistanceTests.fs" />
     <Compile Include="Patterns\ExtensionTests.fs" />
     <Compile Include="Patterns\SourceStateTests.fs" />
     <Compile Include="Patterns\LiteralTests.fs" />
@@ -53,6 +54,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Collections\Collections.csproj" />
     <ProjectReference Include="..\Core\Core.csproj" />
     <ProjectReference Include="..\Extensions.FSharp\Extensions.FSharp.fsproj" />
     <ProjectReference Include="..\Extensions\Extensions.csproj" />

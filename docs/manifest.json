@@ -41,6 +41,30 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Stringier.Collections.StringBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stringier.Collections.StringBuilder.html",
+          "hash": "IXyL+vez60IzR/4X1ypsBw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stringier.Collections.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stringier.Collections.html",
+          "hash": "5ennx3YlUwowWUlnX1WRKA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Stringier.Patterns.Bias.yml",
       "output": {
         ".html": {
@@ -124,6 +148,18 @@
       "version": ""
     },
     {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Stringier.Patterns.Debugging.Trace.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Stringier.Patterns.Debugging.Trace.html",
+          "hash": "RMk4q3pXsY7wduDcSpIIvw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "log_codes": [
         "DuplicateUids"
       ],
@@ -144,7 +180,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Stringier.Patterns.Debugging.html",
-          "hash": "28USD9HtYz00S+WuwVHKQg=="
+          "hash": "xbuTo/3POtPP0pIdOTqK1A=="
         }
       },
       "is_incremental": false,
@@ -384,7 +420,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "Hdlmv2A6YVEWYNKXoYZBng=="
+          "hash": "x/7AE+cpxDQTMZp6En1ZDw=="
         }
       },
       "is_incremental": false,
@@ -399,7 +435,7 @@
           "hash": "P1KhEdCnueBqWZhcz2Bl6w=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -411,7 +447,7 @@
           "hash": "6n7SL2hG+vYuC59CWGjzfg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -423,7 +459,7 @@
           "hash": "Ae/V9e/kK/45yb8CR7sIVg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -432,10 +468,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/patterns-declarations.html",
-          "hash": "6MlO7ts2eOUv48K0WyqouA=="
+          "hash": "VwfSYly7296MrrtgPIM+2w=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -447,7 +483,7 @@
           "hash": "4hGZI8vRJQ1i1IsH8JGJ2g=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -459,7 +495,7 @@
           "hash": "stk0kAH0WwUSNcOKKFGjJA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -483,7 +519,7 @@
           "hash": "/NS6DegAohDdURtOZKqqdQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -502,12 +538,10 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": false,
-        "details": "Disable incremental build by force rebuild option.",
+        "can_incremental": true,
         "incrementalPhase": "build",
         "total_file_count": 0,
-        "skipped_file_count": 0,
-        "full_build_reason_code": "ForceRebuild"
+        "skipped_file_count": 0
       },
       "processors": {
         "TocDocumentProcessor": {
@@ -517,24 +551,24 @@
           "total_file_count": 0,
           "skipped_file_count": 0
         },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": false,
-          "incrementalPhase": "build",
-          "total_file_count": 30,
-          "skipped_file_count": 0
-        },
         "ConceptualDocumentProcessor": {
-          "can_incremental": false,
+          "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 8,
-          "skipped_file_count": 0
+          "skipped_file_count": 8
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 33,
+          "skipped_file_count": 24
         }
       }
     },
     {
       "status": {
-        "can_incremental": false,
-        "details": "Cannot support incremental post processing, the reason is: it's disabled.",
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
         "incrementalPhase": "postProcessing",
         "total_file_count": 0,
         "skipped_file_count": 0
