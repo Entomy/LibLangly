@@ -1,0 +1,240 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class CaptureAssert
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class CaptureAssert
+   ">
+    <meta name="generator" content="docfx 2.45.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="NUnit.CaptureAssert">
+  
+  
+  <h1 id="NUnit_CaptureAssert" data-uid="NUnit.CaptureAssert" class="text-break">Class CaptureAssert
+  </h1>
+  <div class="markdown level0 summary"><p>A collection of helper classes to test various conditions associated with <a class="xref" href="Stringier.Patterns.Capture.html">Capture</a> within unit tests. If the condition being tested is not met, an exception is thrown.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">CaptureAssert</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="NUnit.html">NUnit</a></h6>
+  <h6><strong>Assembly</strong>: Patterns.NUnit.dll</h6>
+  <h5 id="NUnit_CaptureAssert_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class CaptureAssert</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=NUnit_CaptureAssert_Captures_System_String_Stringier_Patterns_Capture_.md&amp;value=---%0Auid%3A%20NUnit.CaptureAssert.Captures(System.String%2CStringier.Patterns.Capture)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns.NUnit/CaptureAssert.cs/#L15">View Source</a>
+  </span>
+  <a id="NUnit_CaptureAssert_Captures_" data-uid="NUnit.CaptureAssert.Captures*"></a>
+  <h4 id="NUnit_CaptureAssert_Captures_System_String_Stringier_Patterns_Capture_" data-uid="NUnit.CaptureAssert.Captures(System.String,Stringier.Patterns.Capture)">Captures(String, Capture)</h4>
+  <div class="markdown level1 summary"><p>Tests whether the specified <code data-dev-comment-type="paramref" class="paramref">actual</code> capture is what was <code data-dev-comment-type="paramref" class="paramref">expected</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Captures(string expected, Capture actual)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">expected</span></td>
+        <td><p>The <span class="xref">System.String</span> of expected text.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Capture.html">Capture</a></td>
+        <td><span class="parametername">actual</span></td>
+        <td><p>The <a class="xref" href="Stringier.Patterns.Capture.html">Capture</a> object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=NUnit_CaptureAssert_Captures_System_String_Stringier_Patterns_Capture__.md&amp;value=---%0Auid%3A%20NUnit.CaptureAssert.Captures(System.String%2CStringier.Patterns.Capture%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns.NUnit/CaptureAssert.cs/#L32">View Source</a>
+  </span>
+  <a id="NUnit_CaptureAssert_Captures_" data-uid="NUnit.CaptureAssert.Captures*"></a>
+  <h4 id="NUnit_CaptureAssert_Captures_System_String_Stringier_Patterns_Capture__" data-uid="NUnit.CaptureAssert.Captures(System.String,Stringier.Patterns.Capture@)">Captures(String, ref Capture)</h4>
+  <div class="markdown level1 summary"><p>Tests whether the specified <code data-dev-comment-type="paramref" class="paramref">actual</code> capture is what was <code data-dev-comment-type="paramref" class="paramref">expected</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Captures(string expected, ref Capture actual)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">expected</span></td>
+        <td><p>The <span class="xref">System.String</span> of expected text.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Capture.html">Capture</a></td>
+        <td><span class="parametername">actual</span></td>
+        <td><p>The <a class="xref" href="Stringier.Patterns.Capture.html">Capture</a> object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="NUnit_CaptureAssert_Captures_System_String_Stringier_Patterns_Capture___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This variation exists primarily to offer cleaner syntax to languages (like F#) where Capture is being kept at as a ref cell, or similar.</p>
+</div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=NUnit_CaptureAssert.md&amp;value=---%0Auid%3A%20NUnit.CaptureAssert%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns.NUnit/CaptureAssert.cs/#L9" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

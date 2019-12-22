@@ -13,7 +13,7 @@ namespace Microsoft.VisualStudio.TestTools.UnitTesting {
 		/// <param name="actual">The parser <see cref="Result"/>.</param>
 		public static void Fails(Result actual) {
 			if (actual) {
-				throw new AssertFailedException();
+				throw new AssertFailedException($"ResultAssert.Fails failed. Parser succeeded when expected to fail");
 			}
 		}
 
