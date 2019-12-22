@@ -15,6 +15,31 @@ Thanks to [GitHub Pages](https://pages.github.com/), documentation is available 
 
 Contributor documentation is provided [here](https://github.com/Entomy/Stringier/blob/master/CONTRIBUTING.md) and in the [wiki](https://github.com/Entomy/Stringier/wiki).
 
+# Syntax Showdown:
+
+This is just in good fun. There's a lot more to consider than just syntax.
+
+## Regex
+
+~~~~ csharp
+Regex phoneNum = new Regex("^[0-9]{3}-[0-9]{3}-[0-9]{4}");
+~~~~
+
+## Pidgin
+
+~~~~ csharp
+Parser<char, string> phoneNum = Digit.RepeatString(3).Then(Char('-')).Then(Digit.RepeatString(3)).Then(Char('-')).Then(Digit.RepeatString(4));
+~~~~
+
+## Stringier
+
+~~~~ csharp
+Pattern phoneNum = DecimalDigitNumber.Repeat(3).Then('-').Then(.DecimalDigitNumber.Repeat(3)).Then('-').Then(DecimalDigitNumber.Repeat(4));
+~~~~
+~~~~ fsharp
+let phoneNum = DecimalDigitNumber * 3 >> DecimalDigitNumber * 3 >> DecimalDigitNumber * 4
+~~~~
+
 # Subprojects: [![Nuget](https://img.shields.io/nuget/dt/Stringier?label=Meta%20Package&logo=nuget)](https://www.nuget.org/packages/Stringier/)
 
 ## [Extensions](https://github.com/Entomy/Stringier/tree/master/Extensions) [![Nuget](https://img.shields.io/nuget/dt/Stringier.Extensions.svg?label=Extensions&logo=Nuget)](https://www.nuget.org/packages/Stringier.Extensions/) [![Nuget](https://img.shields.io/nuget/dt/Stringier.Extensions.FSharp?label=F%23%20&logo=nuget)](https://www.nuget.org/packages/Stringier.Extensions.FSharp/)
