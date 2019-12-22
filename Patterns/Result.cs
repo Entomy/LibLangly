@@ -52,9 +52,19 @@ namespace Stringier.Patterns {
 
 		public static implicit operator Boolean(Result result) => result.Success;
 
+		public static implicit operator ReadOnlySpan<Char>(Result result) => result.AsSpan();
+
 		public static implicit operator String(Result result) => result.ToString();
 
-		public static implicit operator ReadOnlySpan<Char>(Result result) => result.AsSpan();
+		public static Boolean operator !=(Result left, Result right) => !left.Equals(right);
+
+		public static Boolean operator ==(Result left, Result right) => left.Equals(right);
+
+		/// <summary>
+		/// Returns a span that represents the current object.
+		/// </summary>
+		/// <returns>A span that represents the current object.</returns>
+		public ReadOnlySpan<Char> AsSpan() => Source.Substring(Start, Length);
 
 		/// <summary>
 		/// Determines whether the specified object is equal to the current object.
@@ -69,11 +79,6 @@ namespace Stringier.Patterns {
 				return false;
 			}
 		}
-
-		public static Boolean operator ==(Result left, Result right) => left.Equals(right);
-
-		public static Boolean operator !=(Result left, Result right) => !left.Equals(right);
-
 		/// <summary>
 		/// Determines whether this <see cref="Result"/> and the <paramref name="other"/> <see cref="Result"/> are equal.
 		/// </summary>
@@ -111,11 +116,5 @@ namespace Stringier.Patterns {
 		/// </summary>
 		/// <returns>A string that represents the current object.</returns>
 		public override String ToString() => Source.Substring(Start, Length).ToString();
-
-		/// <summary>
-		/// Returns a span that represents the current object.
-		/// </summary>
-		/// <returns>A span that represents the current object.</returns>
-		public ReadOnlySpan<Char> AsSpan() => Source.Substring(Start, Length);
 	}
 }

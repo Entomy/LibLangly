@@ -36,7 +36,7 @@ namespace Stringier.Patterns {
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</returns>
 		public Result Consume(String source, ITrace? trace) {
 			if (source is null) {
-				throw new ArgumentNullException(nameof(Source));
+				throw new ArgumentNullException(nameof(source));
 			}
 			Source src = new Source(source);
 			return Consume(ref src, trace);

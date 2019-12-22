@@ -4,7 +4,7 @@ namespace Stringier.Patterns {
 	/// <summary>
 	/// The comparison mode to use when parsing.
 	/// </summary>
-	public enum Compare : Int32 {
+	public enum Compare {
 		/// <summary>
 		/// No comparison preference (default behavior is <see cref="CaseSensitive"/>).
 		/// </summary>

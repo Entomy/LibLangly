@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Runtime.InteropServices;
 using Stringier.Patterns.Errors;
 
 namespace Stringier.Patterns.Debugging {

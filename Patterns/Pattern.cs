@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Stringier.Patterns {
+﻿namespace Stringier.Patterns {
 	/// <summary>
 	/// Represents a textual pattern
 	/// </summary>
