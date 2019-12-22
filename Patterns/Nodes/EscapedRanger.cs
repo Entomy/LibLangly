@@ -1,5 +1,4 @@
-﻿using System;
-using System.Diagnostics.CodeAnalysis;
+﻿using System.Diagnostics.CodeAnalysis;
 using Stringier.Patterns.Debugging;
 using Stringier.Patterns.Errors;
 
