@@ -92,6 +92,19 @@ namespace Stringier.Patterns {
 			return Alternate(new CaptureLiteral(other));
 		}
 
+		/// <summary>
+		/// Declares the <paramref name="patterns"/> to be alternates of each other; one of them will match.
+		/// </summary>
+		/// <param name="patterns">The set of <see cref="Pattern"/>.</param>
+		/// <returns>A new <see cref="Pattern"/> alternating all of the <paramref name="patterns"/>.</returns>
+		public static Pattern OneOf(params Pattern[] patterns) {
+			Pattern result = patterns[0];
+			for (Int32 i = 1; i < patterns.Length; i++) {
+				result = result.Or(patterns[i]);
+			}
+			return result;
+		}
+
 		#endregion
 
 		#region Capturer

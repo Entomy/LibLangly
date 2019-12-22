@@ -29,3 +29,5 @@ module AlternatorExtensions =
     let inline private alternate< ^t, ^a, ^b, ^c when (^t or ^a) : (static member Alternate : ^a * ^b -> ^c)> left right = ((^t or ^a) : (static member Alternate : ^a * ^b -> ^c)(left, right))
 
     let inline ( || ) left right = alternate<Binding, _, _, _> left right
+
+    let inline oneOf (patterns:Pattern[]) = Pattern.OneOf(patterns);

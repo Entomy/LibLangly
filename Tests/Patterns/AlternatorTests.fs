@@ -28,6 +28,14 @@ type AlternatorTests() =
         ResultAssert.Captures("Howdy", chainPattern.Consume("Howdy"))
         ResultAssert.Fails(chainPattern.Consume("Goodbye"))
 
+        let oneOfPattern = oneOf [|p"Hello";p"Hi";p"Howdy"|]
+
+        ResultAssert.Captures("Hello", oneOfPattern.Consume("Hello"))
+        ResultAssert.Captures("Hi", oneOfPattern.Consume("Hi"))
+        ResultAssert.Captures("Howdy", oneOfPattern.Consume("Howdy"))
+        ResultAssert.Fails(chainPattern.Consume("Goodbye"))
+
+
     [<TestMethod>]
     member _.``boolean-or still works`` () =
         Assert.IsTrue(true || true)
