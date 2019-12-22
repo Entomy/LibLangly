@@ -31,6 +31,12 @@ Regex phoneNum = new Regex("^[0-9]{3}-[0-9]{3}-[0-9]{4}");
 Parser<char, string> phoneNum = Digit.RepeatString(3).Then(Char('-')).Then(Digit.RepeatString(3)).Then(Char('-')).Then(Digit.RepeatString(4));
 ~~~~
 
+## FParsec
+
+~~~~ fsharp
+let phoneNum = attempt (digit .>>. digit .>>. digit .>>. pchar '-' .>>. digit .>>. digit .>>. digit .>>. pchar '-' .>>. digit .>>. digit .>>. digit .>>. digit)
+~~~~
+
 ## Stringier
 
 ~~~~ csharp
