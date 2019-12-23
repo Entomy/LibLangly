@@ -35,6 +35,16 @@ module Extensions =
     let ensureEnds(required:string)(source:string) = source.EnsureEndsWith(required)
 
     /// <summary>
+    /// Determines whether two specified text objects have roughly the same value.
+    /// </summary>
+    let inline fuzzyEqual(other)(source):bool = _fuzzyEqual<Binder, _, _> other source
+
+    /// <summary>
+    /// Determines whether two specified text objects have roughly the same value.
+    /// </summary>
+    let inline fuzzyEqual2(other)(maxEdits)(source):bool = _fuzzyEqual2<Binder, _, _> other maxEdits source
+
+    /// <summary>
     /// Joins the sequence into a string.
     /// </summary>
     let inline join(sequence) = _join<Binder, _, _> sequence

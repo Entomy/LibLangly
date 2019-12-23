@@ -1,11 +1,21 @@
 ﻿namespace Stringier
 
+open System
+
 module Bindings =
     type Binder =
         static member Contains(source:string, value:char) = source.Contains(value)
         static member Contains(source:string, value:string) = source.Contains(value)
         static member Contains(source:seq<string>, value:char) = source.Contains(value)
         static member Contains(source:seq<string>, value:string) = source.Contains(value)
+        static member FuzzyEquals(source:string, other:string) = source.FuzzyEquals(other)
+        static member FuzzyEquals(source:string, other:ReadOnlySpan<Char>) = source.FuzzyEquals(other)
+        static member FuzzyEquals(source:ReadOnlySpan<Char>, other:string) = source.FuzzyEquals(other)
+        static member FuzzyEquals(source:ReadOnlySpan<Char>, other:ReadOnlySpan<Char>) = source.FuzzyEquals(other)
+        static member FuzzyEquals2(source:string, other:string, maxEdits:int32) = source.FuzzyEquals(other, maxEdits)
+        static member FuzzyEquals2(source:string, other:ReadOnlySpan<Char>, maxEdits:int32) = source.FuzzyEquals(other, maxEdits)
+        static member FuzzyEquals2(source:ReadOnlySpan<Char>, other:string, maxEdits:int32) = source.FuzzyEquals(other, maxEdits)
+        static member FuzzyEquals2(source:ReadOnlySpan<Char>, other:ReadOnlySpan<Char>, maxEdits:int32) = source.FuzzyEquals(other, maxEdits)
         static member Join(sequence:char[]) = sequence.Join()
         static member Join(sequence:seq<char>) = sequence.Join()
         static member Join(sequence:seq<string>) = sequence.Join()
@@ -24,6 +34,10 @@ module Bindings =
         static member Split(source:string, separators:string[]) = source.Split(separators)
 
     let inline _contains< ^t, ^a, ^b, ^c when (^t or ^a) : (static member Contains : ^a * ^b -> ^c)> value source = ((^t or ^a) : (static member Contains : ^a * ^b -> ^c)(source, value))
+
+    let inline _fuzzyEqual< ^t, ^a, ^b when (^t or ^a) : (static member FuzzyEquals : ^a * ^b -> bool)> other source = ((^t or ^a) : (static member FuzzyEquals : ^a * ^b -> bool)(source, other))
+
+    let inline _fuzzyEqual2< ^t, ^a, ^b when (^t or ^a) : (static member FuzzyEquals : ^a * ^b * int32 -> bool)> other maxEdits source = ((^t or ^a) : (static member FuzzyEquals : ^a * ^b * int32 -> bool)(source, other, maxEdits))
 
     let inline _join< ^t, ^a, ^b when (^t or ^a) : (static member Join : ^a -> ^b)> sequence = ((^t or ^a) : (static member Join : ^a -> ^b)(sequence))
 
