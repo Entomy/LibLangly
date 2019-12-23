@@ -291,6 +291,25 @@ namespace Stringier.Patterns {
 
 		#endregion
 
+		#region Fuzzer
+
+		/// <summary>
+		/// Marks this <see cref="String"/> as fuzzy.
+		/// </summary>
+		/// <param name="string">The <see cref="String"/> to fuzzy match.</param>
+		/// <returns>A new <see cref="Pattern"/> which will fuzzy match the <paramref name="string"/>.</returns>
+		public static Pattern Fuzzy(String @string) => new Fuzzer(@string);
+
+		/// <summary>
+		/// Marks this <see cref="String"/> as fuzzy.
+		/// </summary>
+		/// <param name="string">The <see cref="String"/> to fuzzy match.</param>
+		/// <param name="maxEdits">The maximum allowed edits to still be considered a match.</param>
+		/// <returns>A new <see cref="Pattern"/> which will fuzzy match the <paramref name="string"/>.</returns>
+		public static Pattern Fuzzy(String @string, Int32 maxEdits) => new Fuzzer(@string, maxEdits);
+
+		#endregion
+
 		#region Negator
 
 		/// <summary>

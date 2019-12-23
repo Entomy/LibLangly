@@ -51,18 +51,19 @@ namespace Benchmarks {
 			new KeyChoice(ConsoleKey.D1, "Literal", () => BenchmarkRunner.Run<LiteralBenchmarks>()),
 			new KeyChoice(ConsoleKey.D2, "Alternator", () => BenchmarkRunner.Run<AlternatorBenchmarks>()),
 			new KeyChoice(ConsoleKey.D3, "Concatenator", () => BenchmarkRunner.Run<ConcatenatorBenchmarks>()),
-			new KeyChoice(ConsoleKey.D4, "Negator", () => BenchmarkRunner.Run<NegatorComparison>()),
-			new KeyChoice(ConsoleKey.D5, "Optor", () => BenchmarkRunner.Run<OptorBenchmarks>()),
-			new KeyChoice(ConsoleKey.D6, "Ranger", () => BenchmarkRunner.Run<RangerBenchmarks>()),
-			new KeyChoice(ConsoleKey.D7, "Repeater", () => BenchmarkRunner.Run<RepeaterBenchmarks>()),
-			new KeyChoice(ConsoleKey.D8, "Spanner", () => BenchmarkRunner.Run<SpannerBenchmarks>()),
-			new KeyChoice(ConsoleKey.D9, "Identifier", () => BenchmarkRunner.Run<IdentifierBenchmarks>()),
-			new KeyChoice(ConsoleKey.A, "Checker", () => BenchmarkRunner.Run<CheckerBenchmarks>()),
+			new KeyChoice(ConsoleKey.D4, "Fuzzer", () => BenchmarkRunner.Run<FuzzerBenchmarks>()),
+			new KeyChoice(ConsoleKey.D5, "Negator", () => BenchmarkRunner.Run<NegatorComparison>()),
+			new KeyChoice(ConsoleKey.D6, "Optor", () => BenchmarkRunner.Run<OptorBenchmarks>()),
+			new KeyChoice(ConsoleKey.D7, "Ranger", () => BenchmarkRunner.Run<RangerBenchmarks>()),
+			new KeyChoice(ConsoleKey.D8, "Repeater", () => BenchmarkRunner.Run<RepeaterBenchmarks>()),
+			new KeyChoice(ConsoleKey.D9, "Spanner", () => BenchmarkRunner.Run<SpannerBenchmarks>()),
+			new KeyChoice(ConsoleKey.A, "Identifier", () => BenchmarkRunner.Run<IdentifierBenchmarks>()),
 			new BackKeyChoice(ConsoleKey.B, "Back", () => { }),
-			new KeyChoice(ConsoleKey.C, "IPv4 Address", () => BenchmarkRunner.Run<IPv4AddressBenchmarks>()),
-			new KeyChoice(ConsoleKey.D, "LineComment", () => BenchmarkRunner.Run<LineCommentBenchmarks>()),
-			new KeyChoice(ConsoleKey.E, "Phone Number", () => BenchmarkRunner.Run<PhoneNumberBenchmarks>()),
-			new KeyChoice(ConsoleKey.F, "String Literal", () => BenchmarkRunner.Run<StringLiteralBenchmarks>()));
+			new KeyChoice(ConsoleKey.C, "Checker", () => BenchmarkRunner.Run<CheckerBenchmarks>()),
+			new KeyChoice(ConsoleKey.D, "IPv4 Address", () => BenchmarkRunner.Run<IPv4AddressBenchmarks>()),
+			new KeyChoice(ConsoleKey.E, "LineComment", () => BenchmarkRunner.Run<LineCommentBenchmarks>()),
+			new KeyChoice(ConsoleKey.F, "Phone Number", () => BenchmarkRunner.Run<PhoneNumberBenchmarks>()),
+			new KeyChoice(ConsoleKey.G, "String Literal", () => BenchmarkRunner.Run<StringLiteralBenchmarks>()));
 
 		public static void Main() {
 			Theme.DefaultDark.Apply();

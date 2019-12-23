@@ -791,6 +791,462 @@
   </table>
   
   
+  <a id="Stringier_StringierExtensions_FuzzyEquals_" data-uid="Stringier.StringierExtensions.FuzzyEquals*"></a>
+  <h4 id="Stringier_StringierExtensions_FuzzyEquals_ReadOnlySpan_System_Char__ReadOnlySpan_System_Char__" data-uid="Stringier.StringierExtensions.FuzzyEquals(ReadOnlySpan{System.Char},ReadOnlySpan{System.Char})">FuzzyEquals(ReadOnlySpan&lt;Char&gt;, ReadOnlySpan&lt;Char&gt;)</h4>
+  <div class="markdown level1 summary"><p>Determines whether two specified <see cref="!:ReadOnlySpan&lt;T>"></see> objects have roughly the same value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool FuzzyEquals(this ReadOnlySpan&lt;char&gt; span, ReadOnlySpan&lt;char&gt; other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ReadOnlySpan</span>&lt;<span class="xref">System.Char</span>&gt;</td>
+        <td><span class="parametername">span</span></td>
+        <td><p>The first span to compare.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">ReadOnlySpan</span>&lt;<span class="xref">System.Char</span>&gt;</td>
+        <td><span class="parametername">other</span></td>
+        <td><p>The second span to compare.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><span class="xref">true</span> if the value of <code data-dev-comment-type="paramref" class="paramref">span</code> is roughly the same as the value of <code data-dev-comment-type="paramref" class="paramref">other</code>; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Stringier_StringierExtensions_FuzzyEquals_ReadOnlySpan_System_Char__ReadOnlySpan_System_Char___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This determines whether the two <see cref="!:ReadOnlySpan&lt;T>"></see> objects are similar enough that any differences are likely due to a typo or regional variation.</p>
+</div>
+  
+  
+  <a id="Stringier_StringierExtensions_FuzzyEquals_" data-uid="Stringier.StringierExtensions.FuzzyEquals*"></a>
+  <h4 id="Stringier_StringierExtensions_FuzzyEquals_ReadOnlySpan_System_Char__ReadOnlySpan_System_Char__System_Int32_" data-uid="Stringier.StringierExtensions.FuzzyEquals(ReadOnlySpan{System.Char},ReadOnlySpan{System.Char},System.Int32)">FuzzyEquals(ReadOnlySpan&lt;Char&gt;, ReadOnlySpan&lt;Char&gt;, Int32)</h4>
+  <div class="markdown level1 summary"><p>Determines whether two specified <see cref="!:ReadOnlySpan&lt;T>"></see> objects have roughly the same value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool FuzzyEquals(this ReadOnlySpan&lt;char&gt; span, ReadOnlySpan&lt;char&gt; other, int maxEdits)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ReadOnlySpan</span>&lt;<span class="xref">System.Char</span>&gt;</td>
+        <td><span class="parametername">span</span></td>
+        <td><p>The first span to compare.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">ReadOnlySpan</span>&lt;<span class="xref">System.Char</span>&gt;</td>
+        <td><span class="parametername">other</span></td>
+        <td><p>The second span to compare.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">maxEdits</span></td>
+        <td><p>The maximum amount of edits between the two objects allowed before being considered unequal.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><span class="xref">true</span> if the value of <code data-dev-comment-type="paramref" class="paramref">span</code> is roughly the same as the value of <code data-dev-comment-type="paramref" class="paramref">other</code>; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Stringier_StringierExtensions_FuzzyEquals_ReadOnlySpan_System_Char__ReadOnlySpan_System_Char__System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This determines whether the two <see cref="!:ReadOnlySpan&lt;T>"></see> objects are similar enough that any differences are likely due to a typo or regional variation.</p>
+</div>
+  
+  
+  <a id="Stringier_StringierExtensions_FuzzyEquals_" data-uid="Stringier.StringierExtensions.FuzzyEquals*"></a>
+  <h4 id="Stringier_StringierExtensions_FuzzyEquals_ReadOnlySpan_System_Char__System_String_" data-uid="Stringier.StringierExtensions.FuzzyEquals(ReadOnlySpan{System.Char},System.String)">FuzzyEquals(ReadOnlySpan&lt;Char&gt;, String)</h4>
+  <div class="markdown level1 summary"><p>Determines whether the specified <see cref="!:ReadOnlySpan&lt;T>"></see> and <span class="xref">System.String</span> objects have roughly the same value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool FuzzyEquals(this ReadOnlySpan&lt;char&gt; span, string other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ReadOnlySpan</span>&lt;<span class="xref">System.Char</span>&gt;</td>
+        <td><span class="parametername">span</span></td>
+        <td><p>The span to compare.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>The string to compare.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><span class="xref">true</span> if the value of <code data-dev-comment-type="paramref" class="paramref">span</code> is roughly the same as the value of <code data-dev-comment-type="paramref" class="paramref">other</code>; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Stringier_StringierExtensions_FuzzyEquals_ReadOnlySpan_System_Char__System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This determines whether the specified <see cref="!:ReadOnlySpan&lt;T>"></see> and <span class="xref">System.String</span> objects are similar enough that any differences are likely due to a typo or regional variation.</p>
+</div>
+  
+  
+  <a id="Stringier_StringierExtensions_FuzzyEquals_" data-uid="Stringier.StringierExtensions.FuzzyEquals*"></a>
+  <h4 id="Stringier_StringierExtensions_FuzzyEquals_ReadOnlySpan_System_Char__System_String_System_Int32_" data-uid="Stringier.StringierExtensions.FuzzyEquals(ReadOnlySpan{System.Char},System.String,System.Int32)">FuzzyEquals(ReadOnlySpan&lt;Char&gt;, String, Int32)</h4>
+  <div class="markdown level1 summary"><p>Determines whether the specified <see cref="!:ReadOnlySpan&lt;T>"></see> and <span class="xref">System.String</span> objects have roughly the same value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool FuzzyEquals(this ReadOnlySpan&lt;char&gt; span, string other, int maxEdits)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ReadOnlySpan</span>&lt;<span class="xref">System.Char</span>&gt;</td>
+        <td><span class="parametername">span</span></td>
+        <td><p>The span to compare.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>The string to compare.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">maxEdits</span></td>
+        <td><p>The maximum amount of edits between the two objects allowed before being considered unequal.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><span class="xref">true</span> if the value of <code data-dev-comment-type="paramref" class="paramref">span</code> is roughly the same as the value of <code data-dev-comment-type="paramref" class="paramref">other</code>; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Stringier_StringierExtensions_FuzzyEquals_ReadOnlySpan_System_Char__System_String_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This determines whether the specified <see cref="!:ReadOnlySpan&lt;T>"></see> and <span class="xref">System.String</span> objects are similar enough that any differences are likely due to a typo or regional variation.</p>
+</div>
+  
+  
+  <a id="Stringier_StringierExtensions_FuzzyEquals_" data-uid="Stringier.StringierExtensions.FuzzyEquals*"></a>
+  <h4 id="Stringier_StringierExtensions_FuzzyEquals_System_String_ReadOnlySpan_System_Char__" data-uid="Stringier.StringierExtensions.FuzzyEquals(System.String,ReadOnlySpan{System.Char})">FuzzyEquals(String, ReadOnlySpan&lt;Char&gt;)</h4>
+  <div class="markdown level1 summary"><p>Determines whether the specified <span class="xref">System.String</span> and <see cref="!:ReadOnlySpan&lt;T>"></see> objects have roughly the same value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool FuzzyEquals(this string string, ReadOnlySpan&lt;char&gt; other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">string</span></td>
+        <td><p>The string to compare.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">ReadOnlySpan</span>&lt;<span class="xref">System.Char</span>&gt;</td>
+        <td><span class="parametername">other</span></td>
+        <td><p>The span to compare.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><span class="xref">true</span> if the value of <code data-dev-comment-type="paramref" class="paramref">string</code> is roughly the same as the value of <code data-dev-comment-type="paramref" class="paramref">other</code>; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Stringier_StringierExtensions_FuzzyEquals_System_String_ReadOnlySpan_System_Char___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This determines whether the specified <span class="xref">System.String</span> and <see cref="!:ReadOnlySpan&lt;T>"></see> objects are similar enough that any differences are likely due to a typo or regional variation.</p>
+</div>
+  
+  
+  <a id="Stringier_StringierExtensions_FuzzyEquals_" data-uid="Stringier.StringierExtensions.FuzzyEquals*"></a>
+  <h4 id="Stringier_StringierExtensions_FuzzyEquals_System_String_ReadOnlySpan_System_Char__System_Int32_" data-uid="Stringier.StringierExtensions.FuzzyEquals(System.String,ReadOnlySpan{System.Char},System.Int32)">FuzzyEquals(String, ReadOnlySpan&lt;Char&gt;, Int32)</h4>
+  <div class="markdown level1 summary"><p>Determines whether the specified <span class="xref">System.String</span> and <see cref="!:ReadOnlySpan&lt;T>"></see> objects have roughly the same value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool FuzzyEquals(this string string, ReadOnlySpan&lt;char&gt; other, int maxEdits)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">string</span></td>
+        <td><p>The string to compare.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">ReadOnlySpan</span>&lt;<span class="xref">System.Char</span>&gt;</td>
+        <td><span class="parametername">other</span></td>
+        <td><p>The span to compare.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">maxEdits</span></td>
+        <td><p>The maximum amount of edits between the two objects allowed before being considered unequal.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><span class="xref">true</span> if the value of <code data-dev-comment-type="paramref" class="paramref">string</code> is roughly the same as the value of <code data-dev-comment-type="paramref" class="paramref">other</code>; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Stringier_StringierExtensions_FuzzyEquals_System_String_ReadOnlySpan_System_Char__System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This determines whether the specified <span class="xref">System.String</span> and <see cref="!:ReadOnlySpan&lt;T>"></see> objects are similar enough that any differences are likely due to a typo or regional variation.</p>
+</div>
+  
+  
+  <a id="Stringier_StringierExtensions_FuzzyEquals_" data-uid="Stringier.StringierExtensions.FuzzyEquals*"></a>
+  <h4 id="Stringier_StringierExtensions_FuzzyEquals_System_String_System_String_" data-uid="Stringier.StringierExtensions.FuzzyEquals(System.String,System.String)">FuzzyEquals(String, String)</h4>
+  <div class="markdown level1 summary"><p>Determines whether two specified <span class="xref">System.String</span> objects have roughly the same value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool FuzzyEquals(this string string, string other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">string</span></td>
+        <td><p>The first string to compare.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>The second string to compare.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><span class="xref">true</span> if the value of <code data-dev-comment-type="paramref" class="paramref">string</code> is roughly the same as the value of <code data-dev-comment-type="paramref" class="paramref">other</code>; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Stringier_StringierExtensions_FuzzyEquals_System_String_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This determines whether the two <span class="xref">System.String</span> objects are similar enough that any differences are likely due to a typo or regional variation.</p>
+</div>
+  
+  
+  <a id="Stringier_StringierExtensions_FuzzyEquals_" data-uid="Stringier.StringierExtensions.FuzzyEquals*"></a>
+  <h4 id="Stringier_StringierExtensions_FuzzyEquals_System_String_System_String_System_Int32_" data-uid="Stringier.StringierExtensions.FuzzyEquals(System.String,System.String,System.Int32)">FuzzyEquals(String, String, Int32)</h4>
+  <div class="markdown level1 summary"><p>Determines whether two specified <span class="xref">System.String</span> objects have roughly the same value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool FuzzyEquals(this string string, string other, int maxEdits)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">string</span></td>
+        <td><p>The first string to compare.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>The second string to compare.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">maxEdits</span></td>
+        <td><p>The maximum amount of edits between the two objects allowed before being considered unequal.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><span class="xref">true</span> if the value of <code data-dev-comment-type="paramref" class="paramref">string</code> is roughly the same as the value of <code data-dev-comment-type="paramref" class="paramref">other</code>; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Stringier_StringierExtensions_FuzzyEquals_System_String_System_String_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This determines whether the two <span class="xref">System.String</span> objects are similar enough that any differences are likely due to a typo or regional variation.</p>
+</div>
+  
+  
   <a id="Stringier_StringierExtensions_GetUnicodeCategory_" data-uid="Stringier.StringierExtensions.GetUnicodeCategory*"></a>
   <h4 id="Stringier_StringierExtensions_GetUnicodeCategory_System_Char_" data-uid="Stringier.StringierExtensions.GetUnicodeCategory(System.Char)">GetUnicodeCategory(Char)</h4>
   <div class="markdown level1 summary"><p>Categorizes a specified Unicode character into a group identified by one of the <see cref="!:UnicodeCategory"></see> values.</p>
