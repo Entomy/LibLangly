@@ -2,34 +2,35 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>Stringier.Metrics</AssemblyName>
     <RootNamespace>Stringier</RootNamespace>
+    <AssemblyName>Stringier.Core.FSharp</AssemblyName>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <Authors>Patrick Kelly</Authors>
-    <Description>Provides string metrics</Description>
+    <Description>Core library holding all code common to all Stringier subprojects</Description>
     <Copyright>2019</Copyright>
     <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/Entomy/Stringier</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Entomy/Stringier</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageTags>string, metric, metrics, string metric, string metrics, edit distance</PackageTags>
+    <PackageTags />
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<PackageIcon>Logo.png</PackageIcon>
 		<Version>2.1.0</Version>
-	</PropertyGroup>
+		<Product>Stringier</Product>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="EditDistance.fs" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj" />
   </ItemGroup>
-
+	
 	<ItemGroup>
 		<None Include="..\Logo.png" Pack="true" Visible="true" PackagePath="\" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <PackageReference Include="System.Memory" Version="4.5.3" />
 	</ItemGroup>
 
 </Project>
