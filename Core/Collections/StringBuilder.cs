@@ -153,6 +153,7 @@ namespace Stringier.Collections {
 		/// <para>Enlarging the value of this instance would exceed <see cref="MaxCapacity"/>.</para>
 		/// </exception>
 		/// <exception cref="NullReferenceException"><paramref name="value"/> is a null pointer.</exception>
+		[CLSCompliant(false)]
 		public unsafe StringBuilder Append(Char* value, Int32 valueCount) {
 			if (value is null) {
 				throw new NullReferenceException(); //This should be NullArgumentException. I'm not sure why MS used this instead.
@@ -229,6 +230,7 @@ namespace Stringier.Collections {
 		/// <param name="value">The value to append.</param>
 		/// <returns>A reference to this instance after the append operation has completed.</returns>
 		/// <exception cref="ArgumentOutOfRangeException">Enlarging the value of this instance would exceed <see cref="MaxCapacity"/>.</exception>
+		[CLSCompliant(false)]
 		public StringBuilder Append(UInt16 value) => Append(value.ToString());
 
 		/// <summary>
@@ -237,6 +239,7 @@ namespace Stringier.Collections {
 		/// <param name="value">The value to append.</param>
 		/// <returns>A reference to this instance after the append operation has completed.</returns>
 		/// <exception cref="ArgumentOutOfRangeException">Enlarging the value of this instance would exceed <see cref="MaxCapacity"/>.</exception>
+		[CLSCompliant(false)]
 		public StringBuilder Append(UInt32 value) => Append(value.ToString());
 
 		/// <summary>
@@ -245,6 +248,7 @@ namespace Stringier.Collections {
 		/// <param name="value">The value to append.</param>
 		/// <returns>A reference to this instance after the append operation has completed.</returns>
 		/// <exception cref="ArgumentOutOfRangeException">Enlarging the value of this instance would exceed <see cref="MaxCapacity"/>.</exception>
+		[CLSCompliant(false)]
 		public StringBuilder Append(UInt64 value) => Append(value.ToString());
 
 		/// <summary>
@@ -253,6 +257,7 @@ namespace Stringier.Collections {
 		/// <param name="value">The value to append.</param>
 		/// <returns>A reference to this instance after the append operation has completed.</returns>
 		/// <exception cref="ArgumentOutOfRangeException">Enlarging the value of this instance would exceed <see cref="MaxCapacity"/>.</exception>
+		[CLSCompliant(false)]
 		public StringBuilder Append(SByte value) => Append(value.ToString());
 
 		/// <summary>
