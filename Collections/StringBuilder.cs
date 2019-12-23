@@ -142,6 +142,28 @@ namespace Stringier.Collections {
 		public StringBuilder Append(Char[] value) => Append(new String(value));
 
 		/// <summary>
+		/// Appens an array of Unicode characters starting at a specified address to this instance.
+		/// </summary>
+		/// <param name="value">A pointer to an array of characters.</param>
+		/// <param name="valueCount">The number of characters in the array.</param>
+		/// <returns>A reference to this instance after the append operation has completed.</returns>
+		/// <exception cref="ArgumentOutOfRangeException">
+		/// <para><paramref name="valueCount"/> is less than zero.</para>
+		/// -or-
+		/// <para>Enlarging the value of this instance would exceed <see cref="MaxCapacity"/>.</para>
+		/// </exception>
+		/// <exception cref="NullReferenceException"><paramref name="value"/> is a null pointer.</exception>
+		public unsafe StringBuilder Append(Char* value, Int32 valueCount) {
+			if (value is null) {
+				throw new NullReferenceException(); //This should be NullArgumentException. I'm not sure why MS used this instead.
+			} else if (valueCount < 0) {
+				throw new ArgumentOutOfRangeException(nameof(valueCount));
+			} else {
+				return Append(new String(value, 0, valueCount));
+			}
+		}
+
+		/// <summary>
 		/// Appends a copy of the specified string to this instance.
 		/// </summary>
 		/// <param name="value">The string to append.</param>
@@ -159,6 +181,30 @@ namespace Stringier.Collections {
 			}
 			length += value.Length;
 			return this;
+		}
+
+		/// <summary>
+		/// Appends a copy of a specified substring to this instance.
+		/// </summary>
+		/// <param name="value">The string that contains the substring to append.</param>
+		/// <param name="startIndex">The starting position of the substring within <paramref name="value"/>.</param>
+		/// <param name="count">The number of characters in <paramref name="value"/> to append.</param>
+		/// <returns>A reference to this instance after the append operation has completed.</returns>
+		/// <exception cref="ArgumentNullException"><paramref name="value"/> is <see langword="null"/>, and <paramref name="startIndex"/> and <paramref name="count"/> are not zero.</exception>
+		/// <exception cref="ArgumentOutOfRangeException">
+		/// <para><paramref name="count"/> less than zero.</para>
+		/// -or-
+		/// <para><paramref name="startIndex"/> less than zero.</para>
+		/// -or-
+		/// <para><paramref name="startIndex"/> + <paramref name="count"/> is greater than the length of <paramref name="value"/>.</para>
+		/// </exception>
+		[Obsolete("Use Substring() or a range slice on the string instead.")]
+		public StringBuilder Append(String value, Int32 startIndex, Int32 count) {
+			if (value is null) {
+				throw new ArgumentNullException(nameof(value));
+			} else {
+				return Append(value.Substring(startIndex, count));
+			}
 		}
 
 		/// <summary>
