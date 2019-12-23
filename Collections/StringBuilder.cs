@@ -15,6 +15,59 @@ namespace Stringier.Collections {
 		private Chunk? Tail;
 
 		/// <summary>
+		/// Initializes a new instance of the <see cref="StringBuilder"/> class.
+		/// </summary>
+		/// <remarks>
+		/// The string value of this instance is set to <see cref="String.Empty"/>. There is no capacity concept for this replacement.
+		/// </remarks>
+		public StringBuilder() { }
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="StringBuilder"/> class.
+		/// </summary>
+		[Obsolete("Remove the capcity, as this type is fully dynamically sized")]
+		public StringBuilder(Int32 capacity) : this() { }
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="StringBuilder"/> class using the specified string.
+		/// </summary>
+		/// <param name="value">The string used to initialized the value of the instance. If <paramref name="value"/> is <see langword="null"/>, the new <see cref="StringBuilder"/> will contain the empty string (that is, it contains <see cref="String.Empty"/>).</param>
+		/// <remarks>
+		/// If <paramref name="value"/> is <see langword="null"/>, the new <see cref="StringBuilder"/> will contain the empty string (that is, it contains <see cref="String.Empty"/>).
+		/// </remarks>
+		public StringBuilder(String value) : this() {
+			if (!String.IsNullOrEmpty(value)) {
+				_ = Append(value);
+			}
+		}
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="StringBuilder"/> class that starts with a specified capacity and can grow to a specified maximum.
+		/// </summary>
+		/// <param name="capacity">The suggested starting size of the <see cref="StringBuilder"/>.</param>
+		/// <param name="maxCapacity">The maximum number of characters the current string can contain.</param>
+		[Obsolete("Remove the capcity, as this type is fully dynamically sized")]
+		public StringBuilder(Int32 capacity, Int32 maxCapacity) : this() { }
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="StringBuilder"/> using the specified string and capacity.
+		/// </summary>
+		/// <param name="value">The string used to initialize the value of the instance. If <paramref name="value"/> is <see langword="null"/>, the new <see cref="StringBuilder"/> will contain the empty string (that is, it contains <see cref="String.Empty"/>).</param>
+		/// <param name="capacity">The suggested starting size of the <see cref="StringBuilder"/>.</param>
+		[Obsolete("Remove the capcity, as this type is fully dynamically sized")]
+		public StringBuilder(String value, Int32 capacity) : this(value) { }
+
+		/// <summary>
+		/// Initializes a new isntance of the <see cref="StringBuilder"/> class from the specified substring and capacity.
+		/// </summary>
+		/// <param name="value">The string that contains the substring used to initialize the value of this instance. If <paramref name="value"/> is <see langword="null"/>, the new <see cref="StringBuilder"/> will contain the empty string (that is, it contains <see cref="String.Empty"/>).</param>
+		/// <param name="startIndex">The position within <paramref name="value"/> where the substring begins.</param>
+		/// <param name="length">The number of characters in the substring.</param>
+		/// <param name="capacity">The suggested starting size of the <see cref="StringBuilder"/>.</param>
+		[Obsolete("Use Substring() or a range slice on the string instead. Remove the capcity, as this type is fully dynamically sized.")]
+		public StringBuilder(String value, Int32 startIndex, Int32 length, Int32 capacity) : this(value.Substring(startIndex, length)) { }
+
+		/// <summary>
 		/// Gets or sets the maximum number of characters that can be contained in the memory allocated by the current instance.
 		/// </summary>
 		/// <value>The maximum number of characters that can be contained in the memory allocated by the current instance. Its value is always <see cref="MaxCapacity"/>.</value>
