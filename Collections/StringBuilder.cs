@@ -106,17 +106,19 @@ namespace Stringier.Collections {
 			get {
 				Chunk? N = Head;
 				Int32 i = 0;
+				Int32 l = 0;
 				while (N is Object) {
 					i += N.Length;
-					if (index > i) {
+					if (index >= i) {
+						l += N.Length;
 						N = N.Next;
 					} else {
-						return N[index - i];
+						return N[index - l];
 					}
 				}
 				throw new IndexOutOfRangeException();
 			}
-			set { }
+			set => throw new NotImplementedException();
 		}
 
 		/// <summary>

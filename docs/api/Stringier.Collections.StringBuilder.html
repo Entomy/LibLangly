@@ -111,6 +111,233 @@
   <h5 id="Stringier_Collections_StringBuilder_remarks"><strong>Remarks</strong></h5>
   <div class="markdown level0 remarks"><p>This is a small-size optimization that is only likely to be useful inside of quick functions. Instead of being a dynamically resizing array, it is a partially unrolled linked-list of variable chunk size. As it turns out, this performs better for most operations below certain append counts and under certain sizes. This is API compatable but not an intended general replacement for <span class="xref">System.Text.StringBuilder</span>.</p>
 </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Collections_StringBuilder__ctor.md&amp;value=---%0Auid%3A%20Stringier.Collections.StringBuilder.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L23">View Source</a>
+  </span>
+  <a id="Stringier_Collections_StringBuilder__ctor_" data-uid="Stringier.Collections.StringBuilder.#ctor*"></a>
+  <h4 id="Stringier_Collections_StringBuilder__ctor" data-uid="Stringier.Collections.StringBuilder.#ctor">StringBuilder()</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Stringier.Collections.StringBuilder.html">StringBuilder</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public StringBuilder()</code></pre>
+  </div>
+  <h5 id="Stringier_Collections_StringBuilder__ctor_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The string value of this instance is set to <span class="xref">System.String.Empty</span>. There is no capacity concept for this replacement.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Collections_StringBuilder__ctor_System_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Collections.StringBuilder.%23ctor(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L28">View Source</a>
+  </span>
+  <a id="Stringier_Collections_StringBuilder__ctor_" data-uid="Stringier.Collections.StringBuilder.#ctor*"></a>
+  <h4 id="Stringier_Collections_StringBuilder__ctor_System_Int32_" data-uid="Stringier.Collections.StringBuilder.#ctor(System.Int32)">StringBuilder(Int32)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Stringier.Collections.StringBuilder.html">StringBuilder</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Remove the capcity, as this type is fully dynamically sized&quot;)]
+public StringBuilder(int capacity)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">capacity</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Collections_StringBuilder__ctor_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Collections.StringBuilder.%23ctor(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L49">View Source</a>
+  </span>
+  <a id="Stringier_Collections_StringBuilder__ctor_" data-uid="Stringier.Collections.StringBuilder.#ctor*"></a>
+  <h4 id="Stringier_Collections_StringBuilder__ctor_System_Int32_System_Int32_" data-uid="Stringier.Collections.StringBuilder.#ctor(System.Int32,System.Int32)">StringBuilder(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Stringier.Collections.StringBuilder.html">StringBuilder</a> class that starts with a specified capacity and can grow to a specified maximum.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Remove the capcity, as this type is fully dynamically sized&quot;)]
+public StringBuilder(int capacity, int maxCapacity)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">capacity</span></td>
+        <td><p>The suggested starting size of the <a class="xref" href="Stringier.Collections.StringBuilder.html">StringBuilder</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">maxCapacity</span></td>
+        <td><p>The maximum number of characters the current string can contain.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Collections_StringBuilder__ctor_System_String_.md&amp;value=---%0Auid%3A%20Stringier.Collections.StringBuilder.%23ctor(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L38">View Source</a>
+  </span>
+  <a id="Stringier_Collections_StringBuilder__ctor_" data-uid="Stringier.Collections.StringBuilder.#ctor*"></a>
+  <h4 id="Stringier_Collections_StringBuilder__ctor_System_String_" data-uid="Stringier.Collections.StringBuilder.#ctor(System.String)">StringBuilder(String)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Stringier.Collections.StringBuilder.html">StringBuilder</a> class using the specified string.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public StringBuilder(string value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The string used to initialized the value of the instance. If <code data-dev-comment-type="paramref" class="paramref">value</code> is <span class="xref">null</span>, the new <a class="xref" href="Stringier.Collections.StringBuilder.html">StringBuilder</a> will contain the empty string (that is, it contains <span class="xref">System.String.Empty</span>).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Stringier_Collections_StringBuilder__ctor_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If <code data-dev-comment-type="paramref" class="paramref">value</code> is <span class="xref">null</span>, the new <a class="xref" href="Stringier.Collections.StringBuilder.html">StringBuilder</a> will contain the empty string (that is, it contains <span class="xref">System.String.Empty</span>).</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Collections_StringBuilder__ctor_System_String_System_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Collections.StringBuilder.%23ctor(System.String%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L57">View Source</a>
+  </span>
+  <a id="Stringier_Collections_StringBuilder__ctor_" data-uid="Stringier.Collections.StringBuilder.#ctor*"></a>
+  <h4 id="Stringier_Collections_StringBuilder__ctor_System_String_System_Int32_" data-uid="Stringier.Collections.StringBuilder.#ctor(System.String,System.Int32)">StringBuilder(String, Int32)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Stringier.Collections.StringBuilder.html">StringBuilder</a> using the specified string and capacity.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Remove the capcity, as this type is fully dynamically sized&quot;)]
+public StringBuilder(string value, int capacity)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The string used to initialize the value of the instance. If <code data-dev-comment-type="paramref" class="paramref">value</code> is <span class="xref">null</span>, the new <a class="xref" href="Stringier.Collections.StringBuilder.html">StringBuilder</a> will contain the empty string (that is, it contains <span class="xref">System.String.Empty</span>).</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">capacity</span></td>
+        <td><p>The suggested starting size of the <a class="xref" href="Stringier.Collections.StringBuilder.html">StringBuilder</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Collections_StringBuilder__ctor_System_String_System_Int32_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Collections.StringBuilder.%23ctor(System.String%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L67">View Source</a>
+  </span>
+  <a id="Stringier_Collections_StringBuilder__ctor_" data-uid="Stringier.Collections.StringBuilder.#ctor*"></a>
+  <h4 id="Stringier_Collections_StringBuilder__ctor_System_String_System_Int32_System_Int32_System_Int32_" data-uid="Stringier.Collections.StringBuilder.#ctor(System.String,System.Int32,System.Int32,System.Int32)">StringBuilder(String, Int32, Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new isntance of the <a class="xref" href="Stringier.Collections.StringBuilder.html">StringBuilder</a> class from the specified substring and capacity.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Use Substring() or a range slice on the string instead. Remove the capcity, as this type is fully dynamically sized.&quot;)]
+public StringBuilder(string value, int startIndex, int length, int capacity)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The string that contains the substring used to initialize the value of this instance. If <code data-dev-comment-type="paramref" class="paramref">value</code> is <span class="xref">null</span>, the new <a class="xref" href="Stringier.Collections.StringBuilder.html">StringBuilder</a> will contain the empty string (that is, it contains <span class="xref">System.String.Empty</span>).</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">startIndex</span></td>
+        <td><p>The position within <code data-dev-comment-type="paramref" class="paramref">value</code> where the substring begins.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">length</span></td>
+        <td><p>The number of characters in the substring.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">capacity</span></td>
+        <td><p>The suggested starting size of the <a class="xref" href="Stringier.Collections.StringBuilder.html">StringBuilder</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="properties">Properties
   </h3>
   <span class="small pull-right mobile-hide">
@@ -118,7 +345,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Collections_StringBuilder_Capacity.md&amp;value=---%0Auid%3A%20Stringier.Collections.StringBuilder.Capacity%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L22">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L75">View Source</a>
   </span>
   <a id="Stringier_Collections_StringBuilder_Capacity_" data-uid="Stringier.Collections.StringBuilder.Capacity*"></a>
   <h4 id="Stringier_Collections_StringBuilder_Capacity" data-uid="Stringier.Collections.StringBuilder.Capacity">Capacity</h4>
@@ -129,13 +356,9 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public int Capacity
 {
-
     get;
-
     [Obsolete(&quot;This type is fully dynamically sized, so setting a capacity is pointless&quot;)]
-
     set;
-
 }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
@@ -162,7 +385,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Collections_StringBuilder_Item_System_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Collections.StringBuilder.Item(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L52">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L105">View Source</a>
   </span>
   <a id="Stringier_Collections_StringBuilder_Item_" data-uid="Stringier.Collections.StringBuilder.Item*"></a>
   <h4 id="Stringier_Collections_StringBuilder_Item_System_Int32_" data-uid="Stringier.Collections.StringBuilder.Item(System.Int32)">Item[Int32]</h4>
@@ -233,7 +456,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Collections_StringBuilder_Length.md&amp;value=---%0Auid%3A%20Stringier.Collections.StringBuilder.Length%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L33">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L86">View Source</a>
   </span>
   <a id="Stringier_Collections_StringBuilder_Length_" data-uid="Stringier.Collections.StringBuilder.Length*"></a>
   <h4 id="Stringier_Collections_StringBuilder_Length" data-uid="Stringier.Collections.StringBuilder.Length">Length</h4>
@@ -244,13 +467,9 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public int Length
 {
-
     get;
-
     [Obsolete(&quot;This type is fully dynamically sized, so setting a length is pointless&quot;)]
-
     set;
-
 }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
@@ -277,7 +496,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Collections_StringBuilder_MaxCapacity.md&amp;value=---%0Auid%3A%20Stringier.Collections.StringBuilder.MaxCapacity%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L43">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L96">View Source</a>
   </span>
   <a id="Stringier_Collections_StringBuilder_MaxCapacity_" data-uid="Stringier.Collections.StringBuilder.MaxCapacity*"></a>
   <h4 id="Stringier_Collections_StringBuilder_MaxCapacity" data-uid="Stringier.Collections.StringBuilder.MaxCapacity">MaxCapacity</h4>
@@ -311,7 +530,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Collections_StringBuilder_Append_System_Boolean_.md&amp;value=---%0Auid%3A%20Stringier.Collections.StringBuilder.Append(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L207">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L260">View Source</a>
   </span>
   <a id="Stringier_Collections_StringBuilder_Append_" data-uid="Stringier.Collections.StringBuilder.Append*"></a>
   <h4 id="Stringier_Collections_StringBuilder_Append_System_Boolean_" data-uid="Stringier.Collections.StringBuilder.Append(System.Boolean)">Append(Boolean)</h4>
@@ -377,7 +596,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Collections_StringBuilder_Append_System_Byte_.md&amp;value=---%0Auid%3A%20Stringier.Collections.StringBuilder.Append(System.Byte)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L119">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L172">View Source</a>
   </span>
   <a id="Stringier_Collections_StringBuilder_Append_" data-uid="Stringier.Collections.StringBuilder.Append*"></a>
   <h4 id="Stringier_Collections_StringBuilder_Append_System_Byte_" data-uid="Stringier.Collections.StringBuilder.Append(System.Byte)">Append(Byte)</h4>
@@ -443,7 +662,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Collections_StringBuilder_Append_System_Char_.md&amp;value=---%0Auid%3A%20Stringier.Collections.StringBuilder.Append(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L75">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L128">View Source</a>
   </span>
   <a id="Stringier_Collections_StringBuilder_Append_" data-uid="Stringier.Collections.StringBuilder.Append*"></a>
   <h4 id="Stringier_Collections_StringBuilder_Append_System_Char_" data-uid="Stringier.Collections.StringBuilder.Append(System.Char)">Append(Char)</h4>
@@ -509,7 +728,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Collections_StringBuilder_Append_System_Char___.md&amp;value=---%0Auid%3A%20Stringier.Collections.StringBuilder.Append(System.Char%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L83">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L136">View Source</a>
   </span>
   <a id="Stringier_Collections_StringBuilder_Append_" data-uid="Stringier.Collections.StringBuilder.Append*"></a>
   <h4 id="Stringier_Collections_StringBuilder_Append_System_Char___" data-uid="Stringier.Collections.StringBuilder.Append(System.Char[])">Append(Char[])</h4>
@@ -575,7 +794,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Collections_StringBuilder_Append_System_Decimal_.md&amp;value=---%0Auid%3A%20Stringier.Collections.StringBuilder.Append(System.Decimal)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L199">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L252">View Source</a>
   </span>
   <a id="Stringier_Collections_StringBuilder_Append_" data-uid="Stringier.Collections.StringBuilder.Append*"></a>
   <h4 id="Stringier_Collections_StringBuilder_Append_System_Decimal_" data-uid="Stringier.Collections.StringBuilder.Append(System.Decimal)">Append(Decimal)</h4>
@@ -641,7 +860,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Collections_StringBuilder_Append_System_Double_.md&amp;value=---%0Auid%3A%20Stringier.Collections.StringBuilder.Append(System.Double)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L191">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L244">View Source</a>
   </span>
   <a id="Stringier_Collections_StringBuilder_Append_" data-uid="Stringier.Collections.StringBuilder.Append*"></a>
   <h4 id="Stringier_Collections_StringBuilder_Append_System_Double_" data-uid="Stringier.Collections.StringBuilder.Append(System.Double)">Append(Double)</h4>
@@ -707,7 +926,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Collections_StringBuilder_Append_System_Int16_.md&amp;value=---%0Auid%3A%20Stringier.Collections.StringBuilder.Append(System.Int16)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L159">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L212">View Source</a>
   </span>
   <a id="Stringier_Collections_StringBuilder_Append_" data-uid="Stringier.Collections.StringBuilder.Append*"></a>
   <h4 id="Stringier_Collections_StringBuilder_Append_System_Int16_" data-uid="Stringier.Collections.StringBuilder.Append(System.Int16)">Append(Int16)</h4>
@@ -773,7 +992,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Collections_StringBuilder_Append_System_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Collections.StringBuilder.Append(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L167">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L220">View Source</a>
   </span>
   <a id="Stringier_Collections_StringBuilder_Append_" data-uid="Stringier.Collections.StringBuilder.Append*"></a>
   <h4 id="Stringier_Collections_StringBuilder_Append_System_Int32_" data-uid="Stringier.Collections.StringBuilder.Append(System.Int32)">Append(Int32)</h4>
@@ -839,7 +1058,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Collections_StringBuilder_Append_System_Int64_.md&amp;value=---%0Auid%3A%20Stringier.Collections.StringBuilder.Append(System.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L175">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L228">View Source</a>
   </span>
   <a id="Stringier_Collections_StringBuilder_Append_" data-uid="Stringier.Collections.StringBuilder.Append*"></a>
   <h4 id="Stringier_Collections_StringBuilder_Append_System_Int64_" data-uid="Stringier.Collections.StringBuilder.Append(System.Int64)">Append(Int64)</h4>
@@ -905,7 +1124,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Collections_StringBuilder_Append_System_Object_.md&amp;value=---%0Auid%3A%20Stringier.Collections.StringBuilder.Append(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L111">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L164">View Source</a>
   </span>
   <a id="Stringier_Collections_StringBuilder_Append_" data-uid="Stringier.Collections.StringBuilder.Append*"></a>
   <h4 id="Stringier_Collections_StringBuilder_Append_System_Object_" data-uid="Stringier.Collections.StringBuilder.Append(System.Object)">Append(Object)</h4>
@@ -971,7 +1190,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Collections_StringBuilder_Append_System_SByte_.md&amp;value=---%0Auid%3A%20Stringier.Collections.StringBuilder.Append(System.SByte)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L151">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L204">View Source</a>
   </span>
   <a id="Stringier_Collections_StringBuilder_Append_" data-uid="Stringier.Collections.StringBuilder.Append*"></a>
   <h4 id="Stringier_Collections_StringBuilder_Append_System_SByte_" data-uid="Stringier.Collections.StringBuilder.Append(System.SByte)">Append(SByte)</h4>
@@ -1037,7 +1256,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Collections_StringBuilder_Append_System_Single_.md&amp;value=---%0Auid%3A%20Stringier.Collections.StringBuilder.Append(System.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L183">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L236">View Source</a>
   </span>
   <a id="Stringier_Collections_StringBuilder_Append_" data-uid="Stringier.Collections.StringBuilder.Append*"></a>
   <h4 id="Stringier_Collections_StringBuilder_Append_System_Single_" data-uid="Stringier.Collections.StringBuilder.Append(System.Single)">Append(Single)</h4>
@@ -1103,7 +1322,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Collections_StringBuilder_Append_System_String_.md&amp;value=---%0Auid%3A%20Stringier.Collections.StringBuilder.Append(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L91">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L144">View Source</a>
   </span>
   <a id="Stringier_Collections_StringBuilder_Append_" data-uid="Stringier.Collections.StringBuilder.Append*"></a>
   <h4 id="Stringier_Collections_StringBuilder_Append_System_String_" data-uid="Stringier.Collections.StringBuilder.Append(System.String)">Append(String)</h4>
@@ -1169,7 +1388,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Collections_StringBuilder_Append_System_UInt16_.md&amp;value=---%0Auid%3A%20Stringier.Collections.StringBuilder.Append(System.UInt16)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L127">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L180">View Source</a>
   </span>
   <a id="Stringier_Collections_StringBuilder_Append_" data-uid="Stringier.Collections.StringBuilder.Append*"></a>
   <h4 id="Stringier_Collections_StringBuilder_Append_System_UInt16_" data-uid="Stringier.Collections.StringBuilder.Append(System.UInt16)">Append(UInt16)</h4>
@@ -1235,7 +1454,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Collections_StringBuilder_Append_System_UInt32_.md&amp;value=---%0Auid%3A%20Stringier.Collections.StringBuilder.Append(System.UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L135">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L188">View Source</a>
   </span>
   <a id="Stringier_Collections_StringBuilder_Append_" data-uid="Stringier.Collections.StringBuilder.Append*"></a>
   <h4 id="Stringier_Collections_StringBuilder_Append_System_UInt32_" data-uid="Stringier.Collections.StringBuilder.Append(System.UInt32)">Append(UInt32)</h4>
@@ -1301,7 +1520,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Collections_StringBuilder_Append_System_UInt64_.md&amp;value=---%0Auid%3A%20Stringier.Collections.StringBuilder.Append(System.UInt64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L143">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L196">View Source</a>
   </span>
   <a id="Stringier_Collections_StringBuilder_Append_" data-uid="Stringier.Collections.StringBuilder.Append*"></a>
   <h4 id="Stringier_Collections_StringBuilder_Append_System_UInt64_" data-uid="Stringier.Collections.StringBuilder.Append(System.UInt64)">Append(UInt64)</h4>
@@ -1367,7 +1586,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Collections_StringBuilder_Clear.md&amp;value=---%0Auid%3A%20Stringier.Collections.StringBuilder.Clear%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L213">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L266">View Source</a>
   </span>
   <a id="Stringier_Collections_StringBuilder_Clear_" data-uid="Stringier.Collections.StringBuilder.Clear*"></a>
   <h4 id="Stringier_Collections_StringBuilder_Clear" data-uid="Stringier.Collections.StringBuilder.Clear">Clear()</h4>
@@ -1399,7 +1618,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Collections_StringBuilder_EnsureCapacity_System_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Collections.StringBuilder.EnsureCapacity(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L226">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L279">View Source</a>
   </span>
   <a id="Stringier_Collections_StringBuilder_EnsureCapacity_" data-uid="Stringier.Collections.StringBuilder.EnsureCapacity*"></a>
   <h4 id="Stringier_Collections_StringBuilder_EnsureCapacity_System_Int32_" data-uid="Stringier.Collections.StringBuilder.EnsureCapacity(System.Int32)">EnsureCapacity(Int32)</h4>
@@ -1447,7 +1666,7 @@ public int EnsureCapacity(int capacity)</code></pre>
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Collections_StringBuilder_ToString.md&amp;value=---%0Auid%3A%20Stringier.Collections.StringBuilder.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L233">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Collections/StringBuilder.cs/#L286">View Source</a>
   </span>
   <a id="Stringier_Collections_StringBuilder_ToString_" data-uid="Stringier.Collections.StringBuilder.ToString*"></a>
   <h4 id="Stringier_Collections_StringBuilder_ToString" data-uid="Stringier.Collections.StringBuilder.ToString">ToString()</h4>

@@ -20,3 +20,13 @@ type StringBuilderTests() =
         builder.Append("hello") |> ignore
         builder.Append(" ").Append("world") |> ignore
         Assert.AreEqual("hello world", builder.ToString())
+
+    [<TestMethod>]
+    member _.``indexer`` () =
+        let builder = StringBuilder()
+        builder.Append("hello").Append(" ").Append("world") |> ignore
+        Assert.AreEqual('h', builder.[0])
+        Assert.AreEqual('o', builder.[4])
+        Assert.AreEqual(' ', builder.[5])
+        Assert.AreEqual('w', builder.[6])
+        Assert.AreEqual('d', builder.[10])
