@@ -1,7 +1,7 @@
 ﻿namespace Tests.Metrics
 
 open System
-open Stringier.Metrics
+open Stringier
 open Microsoft.VisualStudio.TestTools.UnitTesting
 
 [<TestClass>]
