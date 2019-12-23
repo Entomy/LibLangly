@@ -53,5 +53,18 @@ namespace Stringier.Patterns.Nodes {
 		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</param>
 		/// <param name="trace">The <see cref="ITrace"/> to record steps in.</param>
 		internal override void Neglect(ref Source source, ref Result result, ITrace? trace) => Pattern.Consume(ref source, ref result, trace);
+
+		#region Negator
+
+		/// <summary>
+		/// Marks this <see cref="Patterns.Pattern"/> as negated.
+		/// </summary>
+		/// <returns>A new <see cref="Patterns.Pattern"/> which is negated.</returns>
+		/// <remarks>
+		/// This exists to set up dispatching to the appropriate <see cref="Patterns.Pattern"/> type. Dispatching happens to be faster than switching on a typeclass.
+		/// </remarks>
+		internal override Pattern Negate() => Pattern;
+
+		#endregion
 	}
 }

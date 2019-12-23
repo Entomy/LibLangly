@@ -18,6 +18,11 @@ type CompoundPatternTests() =
         ResultAssert.Captures("  \t ", pattern.Consume("  \t "))
 
     [<TestMethod>]
+    member _.``double negation`` () =
+        let pattern = not (not "Hello")
+        ResultAssert.Captures("Hello", pattern.Consume("Hello"))
+
+    [<TestMethod>]
     member _.``optional spanner`` () =
         let pattern = kleene ' '
         ResultAssert.Captures("  ", pattern.Consume("  Hello"))
