@@ -23,6 +23,12 @@ type CompoundPatternTests() =
         ResultAssert.Captures("Hello", pattern.Consume("Hello"))
 
     [<TestMethod>]
+    member _.``double optor`` () =
+        let pattern = maybe (maybe "Hello")
+        ResultAssert.Captures("Hello", pattern.Consume("Hello"))
+        ResultAssert.Captures("", pattern.Consume("World"))
+
+    [<TestMethod>]
     member _.``double spanner`` () =
         let pattern = many (many "hi")
         ResultAssert.Captures("hi", pattern.Consume("hi"))

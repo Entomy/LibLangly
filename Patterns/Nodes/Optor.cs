@@ -51,6 +51,19 @@ namespace Stringier.Patterns.Nodes {
 			result.Error.Clear(); //If a pattern is optional, it doesn't matter if it's there or not, so we never actually have an error
 		}
 
+		#region Optor
+
+		/// <summary>
+		/// Marks this <see cref="Patterns.Pattern"/> as optional.
+		/// </summary>
+		/// <returns>A new <see cref="Patterns.Pattern"/> which is optional.</returns>
+		/// <remarks>
+		/// This exists to set up dispatching to the appropriate <see cref="Patterns.Pattern"/> type. Dispatching happens to be faster than switching on a typeclass.
+		/// </remarks>
+		internal override Pattern Optional() => this;
+
+		#endregion
+
 		#region Spanner
 
 		internal override Pattern Span() => throw new PatternConstructionException("Options can not span, as it creates an infinite loop. You probably want to make a span optional instead.");
