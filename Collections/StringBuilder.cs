@@ -104,6 +104,9 @@ namespace Stringier.Collections {
 		/// <exception cref="IndexOutOfRangeException"><paramref name="index"/> is outside the bounds of this instance while getting a character.</exception>
 		public Char this[Int32 index] {
 			get {
+				if (index >= Length || index < 0) {
+					goto Error;
+				}
 				Chunk? N = Head;
 				Int32 i = 0;
 				Int32 l = 0;
@@ -116,6 +119,7 @@ namespace Stringier.Collections {
 						return N[index - l];
 					}
 				}
+				Error:
 				throw new IndexOutOfRangeException();
 			}
 			set => throw new NotImplementedException();

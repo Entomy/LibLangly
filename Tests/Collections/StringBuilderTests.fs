@@ -30,3 +30,4 @@ type StringBuilderTests() =
         Assert.AreEqual(' ', builder.[5])
         Assert.AreEqual('w', builder.[6])
         Assert.AreEqual('d', builder.[10])
+        Assert.ThrowsException<IndexOutOfRangeException>(fun () -> builder.[11] |> ignore) |> ignore
