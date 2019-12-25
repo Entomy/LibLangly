@@ -141,6 +141,19 @@ let patternName = nrange fromPattern toPattern
 
 Modifiers alter the semantics of pattern
 
+### Fuzzy
+
+Modifies the pattern to allow for fuzzy parsing. The general idea is that if spellcheck would recognize it, this would recognize it.
+
+~~~~csharp
+Pattern patternName = Fuzzy("Literal");
+~~~~
+~~~~fsharp
+let patternName = fuzzy "Literal"
+~~~~
+
+There are some limitations in order to make this work. For example, making a single `Char` fuzzy just can't be made to work, as it would either enable everything to match, or would be so restricted as to only allow the specific `Char` to match, in which case it shouldn't be modified at all. Furthermore, when working with `String`, the possible matches have to be exactly the same length. Edits such as an additional `Char` in a `String` aren't supported.
+
 ### Negate
 
 Modifies the pattern in a way that it will match anything _not_ the pattern. That is, it will match the same length of the pattern, but only if it would not be a match normally.
@@ -149,14 +162,14 @@ Modifies the pattern in a way that it will match anything _not_ the pattern. Tha
 Pattern patternName = Not(otherPattern);
 ~~~~
 ~~~~fsharp
-let patternName = negate otherPattern
+let patternName = not otherPattern
 ~~~~
 ***or***
 ~~~~csharp
 Pattern patternName = Not("Literal");
 ~~~~
 ~~~~fsharp
-let patternName = negate "Literal"
+let patternName = not "Literal"
 ~~~~
 
 ### Option
@@ -167,14 +180,14 @@ Modifies the pattern in a way that allows it to be present or absent and still b
 Pattern patternName = Maybe(otherPattern);
 ~~~~
 ~~~~fsharp
-let patternName = option otherPattern
+let patternName = maybe otherPattern
 ~~~~
 ***or***
 ~~~~csharp
 Pattern patternName = Maybe("Literal");
 ~~~~
 ~~~~fsharp
-let patternName = option "Literal"
+let patternName = maybe "Literal"
 ~~~~
 
 ### Repeat
@@ -203,12 +216,12 @@ Modifies the pattern in a way that lets it repeat until it no longer can, "spann
 Pattern patternName = Many(otherPattern);
 ~~~~
 ~~~~fsharp
-let patternName = span otherPattern
+let patternName = many otherPattern
 ~~~~
 ***or***
 ~~~~csharp
 Pattern patternName = Many("Literal");
 ~~~~
 ~~~~fsharp
-let patternName = span "Literal"
+let patternName = many "Literal"
 ~~~~

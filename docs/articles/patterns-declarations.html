@@ -156,27 +156,34 @@
 </code></pre>
 <h2 id="modifiers">Modifiers</h2>
 <p>Modifiers alter the semantics of pattern</p>
+<h3 id="fuzzy">Fuzzy</h3>
+<p>Modifies the pattern to allow for fuzzy parsing. The general idea is that if spellcheck would recognize it, this would recognize it.</p>
+<pre><code class="lang-csharp">Pattern patternName = Fuzzy(&quot;Literal&quot;);
+</code></pre>
+<pre><code class="lang-fsharp">let patternName = fuzzy &quot;Literal&quot;
+</code></pre>
+<p>There are some limitations in order to make this work. For example, making a single <code>Char</code> fuzzy just can't be made to work, as it would either enable everything to match, or would be so restricted as to only allow the specific <code>Char</code> to match, in which case it shouldn't be modified at all. Furthermore, when working with <code>String</code>, the possible matches have to be exactly the same length. Edits such as an additional <code>Char</code> in a <code>String</code> aren't supported.</p>
 <h3 id="negate">Negate</h3>
 <p>Modifies the pattern in a way that it will match anything <em>not</em> the pattern. That is, it will match the same length of the pattern, but only if it would not be a match normally.</p>
 <pre><code class="lang-csharp">Pattern patternName = Not(otherPattern);
 </code></pre>
-<pre><code class="lang-fsharp">let patternName = negate otherPattern
+<pre><code class="lang-fsharp">let patternName = not otherPattern
 </code></pre>
 <p><em><strong>or</strong></em></p>
 <pre><code class="lang-csharp">Pattern patternName = Not(&quot;Literal&quot;);
 </code></pre>
-<pre><code class="lang-fsharp">let patternName = negate &quot;Literal&quot;
+<pre><code class="lang-fsharp">let patternName = not &quot;Literal&quot;
 </code></pre>
 <h3 id="option">Option</h3>
 <p>Modifies the pattern in a way that allows it to be present or absent and still be considered a successful match.</p>
 <pre><code class="lang-csharp">Pattern patternName = Maybe(otherPattern);
 </code></pre>
-<pre><code class="lang-fsharp">let patternName = option otherPattern
+<pre><code class="lang-fsharp">let patternName = maybe otherPattern
 </code></pre>
 <p><em><strong>or</strong></em></p>
 <pre><code class="lang-csharp">Pattern patternName = Maybe(&quot;Literal&quot;);
 </code></pre>
-<pre><code class="lang-fsharp">let patternName = option &quot;Literal&quot;
+<pre><code class="lang-fsharp">let patternName = maybe &quot;Literal&quot;
 </code></pre>
 <h3 id="repeat">Repeat</h3>
 <p>Modifies the pattern in a way that repeats it a specified amount.</p>
@@ -193,12 +200,12 @@
 <p>Modifies the pattern in a way that lets it repeat until it no longer can, &quot;spanning&quot; a section of text.</p>
 <pre><code class="lang-csharp">Pattern patternName = Many(otherPattern);
 </code></pre>
-<pre><code class="lang-fsharp">let patternName = span otherPattern
+<pre><code class="lang-fsharp">let patternName = many otherPattern
 </code></pre>
 <p><em><strong>or</strong></em></p>
 <pre><code class="lang-csharp">Pattern patternName = Many(&quot;Literal&quot;);
 </code></pre>
-<pre><code class="lang-fsharp">let patternName = span &quot;Literal&quot;
+<pre><code class="lang-fsharp">let patternName = many &quot;Literal&quot;
 </code></pre>
 </article>
           </div>
