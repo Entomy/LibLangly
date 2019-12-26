@@ -4,8 +4,7 @@ using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Jobs;
 using PCRE;
 using Pidgin;
-using static Pidgin.Parser;
-using static Pidgin.Parser<char>;
+using Sprache;
 using Stringier;
 using Stringier.Patterns;
 
@@ -24,10 +23,9 @@ namespace Benchmarks.Patterns {
 
 		readonly PcreRegex pcreregexCompiled = new PcreRegex("^\\w(?:\\w|_)+", PcreOptions.Compiled);
 
-		readonly Parser<Char, String> pidgin =
-			Letter
-			.Then(Letter.Or(Char('_')).ManyString())
-			.Then(Try(Letter.Or(Char('_'))).OfType<String>());
+		readonly Parser<Char, String> pidgin = Parser.Letter.Then(Parser.Letter.Or(Parser.Char('_')).ManyString());
+
+		readonly Sprache.Parser<String> sprache = Parse.Letter.Then(_ => Parse.Letter.Or(Parse.Char('_')).Many().Text());
 
 		readonly Pattern stringier = Pattern.Check(nameof(stringier),
 			(Char) => Char.IsLetter(), true,
@@ -53,6 +51,9 @@ namespace Benchmarks.Patterns {
 		public Result<Char, String> Pidgin() => pidgin.Parse(Source);
 
 		[Benchmark]
-		public Result Stringier() => stringier.Consume(Source);
+		public String Sprache() => sprache.Parse(Source);
+
+		[Benchmark]
+		public Stringier.Patterns.Result Stringier() => stringier.Consume(Source);
 	}
 }

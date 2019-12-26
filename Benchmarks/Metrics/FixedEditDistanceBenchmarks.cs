@@ -9,7 +9,6 @@ namespace Benchmarks.Metrics {
 	[SimpleJob(RuntimeMoniker.CoreRt30)]
 	[SimpleJob(RuntimeMoniker.Mono)]
 	public class FixedEditDistanceBenchmarks {
-
 		[Params("ram")]
 		public String Source { get; set; }
 

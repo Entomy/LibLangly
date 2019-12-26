@@ -4,8 +4,7 @@ using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Jobs;
 using PCRE;
 using Pidgin;
-using static Pidgin.Parser;
-using static Pidgin.Parser<char>;
+using Sprache;
 using Stringier.Patterns;
 using static Stringier.Patterns.Pattern;
 
@@ -31,7 +30,10 @@ namespace Benchmarks.Patterns {
 		// This isn't exactly a token negation, but is as close as you're gonna get from Regex
 		readonly PcreRegex pcreregexCompiled = new PcreRegex("^[^H][^e][^l][^l][^o]", PcreOptions.Compiled);
 
-		readonly Parser<Char, Unit> pidgin = Not(String("Hello"));
+		readonly Parser<Char, Unit> pidgin = Parser.Not(Parser.String("Hello"));
+
+		// This isn't exactly a token negation, as it behaves more closely to a negative lookahead in Regex.
+		readonly Sprache.Parser<Object> sprache = Parse.String("Hello").Not();
 
 		readonly Pattern stringier = Not("Hello");
 
@@ -48,6 +50,9 @@ namespace Benchmarks.Patterns {
 		public Result<Char, Unit> Pidgin() => pidgin.Parse(Source);
 
 		[Benchmark]
-		public Result Stringier() => stringier.Consume(Source);
+		public Object Sprache() => sprache.Parse(Source);
+
+		[Benchmark]
+		public Stringier.Patterns.Result Stringier() => stringier.Consume(Source);
 	}
 }

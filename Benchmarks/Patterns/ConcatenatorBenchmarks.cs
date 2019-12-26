@@ -4,8 +4,7 @@ using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Jobs;
 using PCRE;
 using Pidgin;
-using static Pidgin.Parser;
-using static Pidgin.Parser<char>;
+using Sprache;
 using Stringier.Patterns;
 
 namespace Benchmarks.Patterns {
@@ -23,7 +22,9 @@ namespace Benchmarks.Patterns {
 
 		readonly PcreRegex pcreregexCompiled = new PcreRegex("^Hello World", PcreOptions.Compiled);
 
-		readonly Parser<Char, String> pidgin = Map((first, second, third) => first + second + third, String("Hello"), Char(' '), String("Hello"));
+		readonly Parser<Char, String> pidgin = Parser.String("Hello").Then(Parser.Char(' ')).Then(Parser.String("World"));
+
+		readonly Sprache.Parser<String> sprache = Parse.String("Hello").Then(_ => Parse.Char(' ')).Then(_ => Parse.String("World")).Text();
 
 		readonly Pattern stringier = "Hello".Then(' ').Then("World");
 
@@ -42,11 +43,13 @@ namespace Benchmarks.Patterns {
 		[Benchmark]
 		public PcreMatch PcreRegexCompiled() => pcreregexCompiled.Match(Source);
 
+		[Benchmark]
+		public String Sprache() => sprache.Parse(Source);
 
 		[Benchmark]
 		public Result<Char, String> Pidgin() => pidgin.Parse(Source);
 
 		[Benchmark]
-		public Result Stringier() => stringier.Consume(Source);
+		public Stringier.Patterns.Result Stringier() => stringier.Consume(Source);
 	}
 }
