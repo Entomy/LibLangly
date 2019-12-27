@@ -82,6 +82,19 @@ namespace Stringier.Patterns.Nodes {
 			result.Error.Clear(); //As long as the first pattern matched, this consume is successful; we just stop on the eventual fail
 		}
 
+		#region Optor
+
+		/// <summary>
+		/// Marks this <see cref="Patterns.Pattern"/> as optional.
+		/// </summary>
+		/// <returns>A new <see cref="Patterns.Pattern"/> which is optional.</returns>
+		/// <remarks>
+		/// This exists to set up dispatching to the appropriate <see cref="Patterns.Pattern"/> type. Dispatching happens to be faster than switching on a typeclass.
+		/// </remarks>
+		internal override Pattern Optional() => new KleenesClosure(Pattern);
+
+		#endregion
+
 		#region Spanner
 
 		/// <summary>

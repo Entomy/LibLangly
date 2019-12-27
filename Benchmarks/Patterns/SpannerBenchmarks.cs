@@ -16,7 +16,6 @@ namespace Benchmarks.Patterns {
 	[SimpleJob(RuntimeMoniker.Mono)]
 	[MemoryDiagnoser]
 	public class SpannerBenchmarks {
-
 		readonly Regex msregex = new Regex("^(?:Hi!)+");
 
 		readonly Regex msregexCompiled = new Regex("^(?:Hi!)+", RegexOptions.Compiled);
@@ -27,7 +26,7 @@ namespace Benchmarks.Patterns {
 
 		readonly Parser<Char, String> pidgin = Parser.String("Hi!").AtLeastOnceString();
 
-		readonly Sprache.Parser<IEnumerable<String>> sprache = Parse.String("Hi!").Text().Many();
+		readonly Sprache.Parser<IEnumerable<String>> sprache = Parse.String("Hi!").Text().AtLeastOnce();
 
 		readonly Pattern stringier = Many("Hi!");
 
