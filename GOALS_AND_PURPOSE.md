@@ -37,3 +37,7 @@ The API should "feel right" within the context of the language being used. This 
 ## Performance
 
 Performance should be good. Being the highest performing parser is not the end goal, but performance should be competitive with existing solutions, and ideally be in the top quarter of performers. Understanding performance is very important, and extensive benchmarks should be kept, and publicly accessible, to ensure performance is reasonable.
+
+## Collaborative not Competitive
+
+Multiple options are good; no single approach can do everything well. Everybody is better served when we work together, not against each other. This way, disparate approaches still exist and still focus on and excel at what they do well, while not bringing each other down. Utilizing each other should be possible, and it should be transparent when and why a "competitor" does something better. Downstream decisions should not be an "either-or" decision, but rather a "primarily X with some Y" decision.
