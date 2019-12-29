@@ -24,7 +24,7 @@ namespace Stringier.Patterns.Debugging {
 		/// <summary>
 		/// Collect the parameters as a trace step.
 		/// </summary>
-		/// <param name="error"></param>
-		public void Collect(ErrorType error);
+		/// <param name="errorType"></param>
+		public void Collect(ErrorType errorType);
 	}
 }

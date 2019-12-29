@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Stringier.Collections {
 	/// <summary>
@@ -75,18 +76,20 @@ namespace Stringier.Collections {
 		public Int32 Capacity {
 			get => MaxCapacity;
 			[Obsolete("This type is fully dynamically sized, so setting a capacity is pointless")]
-			set { }
+			set => _ = value;
 		}
+
 
 		/// <summary>
 		/// Gets or sets the length of the current <see cref="StringBuilder"/> object.
 		/// </summary>
 		/// <value>The length of this instance.</value>
 		/// <remarks>The setter for this property does nothing and only exists for API Compatability.</remarks>
+		[SuppressMessage("Critical Bug", "S4275:Getters and setters should access the expected fields", Justification = "This has to remain API compatible with Microsoft's, despite implementation differences.")]
 		public Int32 Length {
 			get => length;
 			[Obsolete("This type is fully dynamically sized, so setting a length is pointless")]
-			set { }
+			set => _ = value;
 		}
 
 		/// <summary>
@@ -95,6 +98,7 @@ namespace Stringier.Collections {
 		/// <value>The maximum number of characters this instance can hold.</value>
 		public Int32 MaxCapacity => Int32.MaxValue;
 
+
 		/// <summary>
 		/// Gets or sets the character at the specified character position in this instance.
 		/// </summary>
@@ -102,6 +106,8 @@ namespace Stringier.Collections {
 		/// <returns>The Unicode character at position <paramref name="index"/>.</returns>
 		/// <exception cref="ArgumentOutOfRangeException"><paramref name="index"/> is outside the bounds of this instance while setting a character.</exception>
 		/// <exception cref="IndexOutOfRangeException"><paramref name="index"/> is outside the bounds of this instance while getting a character.</exception>
+		[SuppressMessage("Major Code Smell", "S112:General exceptions should never be thrown", Justification = "This is literally an indexer, and the exception is thrown when the index is out of range. CWE-397 is about an exception being too general/vague, not about specific exceptions being thrown. Sonar doesn't understand this.")]
+		[SuppressMessage("Major Code Smell", "S907:\"goto\" statement should not be used", Justification = "And what, throw the exception from two separate places? If a message is included, which is probably will be, that's now a code duplication issue, and there's a whole rabbit hole that is just much easier to address this way.")]
 		public Char this[Int32 index] {
 			get {
 				if (index >= Length || index < 0) {
@@ -119,7 +125,7 @@ namespace Stringier.Collections {
 						return N[index - l];
 					}
 				}
-				Error:
+			Error:
 				throw new IndexOutOfRangeException();
 			}
 			set => throw new NotImplementedException();
@@ -154,6 +160,7 @@ namespace Stringier.Collections {
 		/// </exception>
 		/// <exception cref="NullReferenceException"><paramref name="value"/> is a null pointer.</exception>
 		[CLSCompliant(false)]
+		[SuppressMessage("Major Code Smell", "S112:General exceptions should never be thrown", Justification = "Microsoft threw NullReferenceException here. Idk why. This API has to remain API compatible, so the same exception gets thrown.")]
 		public unsafe StringBuilder Append(Char* value, Int32 valueCount) {
 			if (value is null) {
 				throw new NullReferenceException(); //This should be NullArgumentException. I'm not sure why MS used this instead.

@@ -32,7 +32,7 @@ namespace Stringier.Patterns {
 			}
 			Buffer = String.AsSpan();
 			Position = 0;
-			HashCode = RNG.Next();
+			HashCode = Rng.Next();
 		}
 
 		/// <summary>
@@ -47,7 +47,7 @@ namespace Stringier.Patterns {
 				Buffer = Reader.ReadToEnd().AsSpan();
 			}
 			Position = 0;
-			HashCode = RNG.Next();
+			HashCode = Rng.Next();
 		}
 
 		/// <summary>
@@ -57,7 +57,7 @@ namespace Stringier.Patterns {
 		public Source(Span<Char> Span) {
 			Buffer = Span;
 			Position = 0;
-			HashCode = RNG.Next();
+			HashCode = Rng.Next();
 		}
 
 		/// <summary>
@@ -67,7 +67,7 @@ namespace Stringier.Patterns {
 		public Source(ReadOnlySpan<Char> Span) {
 			Buffer = Span;
 			Position = 0;
-			HashCode = RNG.Next();
+			HashCode = Rng.Next();
 		}
 
 		/// <summary>
@@ -77,7 +77,7 @@ namespace Stringier.Patterns {
 		public Source(Result Result) {
 			Buffer = Result.AsSpan();
 			Position = 0;
-			HashCode = RNG.Next();
+			HashCode = Rng.Next();
 		}
 
 		/// <summary>

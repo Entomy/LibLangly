@@ -1,5 +1,6 @@
-﻿using Stringier.Patterns;
-using System;
+﻿using System;
+using System.Diagnostics.CodeAnalysis;
+using Stringier.Patterns;
 using static Stringier.Patterns.Pattern;
 using Console = Consolator.Console;
 
@@ -19,13 +20,14 @@ namespace ptndbg {
 
 		private enum Modifier { None, Many, Maybe, Not }
 
+		[SuppressMessage("Minor Code Smell", "S3626:Jump statements should not be redundant", Justification = "This is a complex method which makes use of goto's. The 'redundant' gotos actually improve readability, as weird as that sounds, in the context of this method.")]
 		public static Pattern GetPattern() {
 			//The the pattern expression text
 			Source patternText = new Source(Console.ReadLine(" Pattern: ", ConsoleColor.Yellow, ConsoleColor.White));
 			//Initialize a mutable pattern, since we'll be building it up as the expression is parsed
 			Pattern pattern = Mutable();
 			//Initialize another mutable pattern, which will be used as an intermediary for modifying before combining
-			Pattern intermediate = Mutable();
+			Pattern intermediate;
 			//These will be used throughout parsing
 			Result result;
 			Combinator combinator;

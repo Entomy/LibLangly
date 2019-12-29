@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Jobs;
 using PCRE;
 using Pidgin;
 using static Pidgin.Parser;
-using static Pidgin.Parser<char>;
 using Stringier.Patterns;
 
 namespace Benchmarks.Patterns {

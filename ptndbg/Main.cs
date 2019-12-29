@@ -1,7 +1,4 @@
-﻿using System;
-using System.Diagnostics.CodeAnalysis;
-using System.Text;
-using Consolator.UI;
+﻿using System.Diagnostics.CodeAnalysis;
 using Consolator.UI.Theming;
 using Console = Consolator.Console;
 using Stringier.Patterns;

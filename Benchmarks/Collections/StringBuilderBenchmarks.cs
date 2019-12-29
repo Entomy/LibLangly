@@ -14,14 +14,10 @@ namespace Benchmarks.Collections {
 		public Int32 Count { get; set; }
 
 		[Benchmark]
-		public void MSBuilderConstruct() {
-			StringBuilder msbuilder = new StringBuilder();
-		}
+		public void MSBuilderConstruct() => new StringBuilder();
 
 		[Benchmark]
-		public void StringierConstruct() {
-			Stringier.Collections.StringBuilder stringbuilder = new Stringier.Collections.StringBuilder();
-		}
+		public void StringierConstruct() => new Stringier.Collections.StringBuilder();
 
 		[Benchmark]
 		public void MSBuilderAppend() {

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Stringier.Patterns {
+﻿namespace Stringier.Patterns {
 	/// <summary>
 	/// The comparison mode to use when parsing.
 	/// </summary>

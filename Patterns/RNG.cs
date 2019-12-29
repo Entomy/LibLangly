@@ -7,7 +7,7 @@ namespace Stringier.Patterns {
 	/// <remarks>
 	/// This is used to generate hash codes (that won't be used anyways) for types that have equality defined, basically to shut up the compiler and analyzers about what would be an anti-pattern that can't possibly exist because ref structs cant be put in situations where hash codes would be used.
 	/// </remarks>
-	internal static class RNG {
+	internal static class Rng {
 		/// <summary>
 		/// The actual <see cref="Random"/> instance.
 		/// </summary>

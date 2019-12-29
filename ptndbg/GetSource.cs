@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Text;
-using Consolator.UI;
-using Consolator.UI.Theming;
 using Console = Consolator.Console;
 using Stringier.Patterns;
 

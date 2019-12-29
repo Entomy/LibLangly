@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Text.RegularExpressions;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Jobs;
@@ -14,14 +15,15 @@ namespace Benchmarks.Patterns {
 	[SimpleJob(RuntimeMoniker.CoreRt30)]
 	[SimpleJob(RuntimeMoniker.Mono)]
 	[MemoryDiagnoser]
+	[SuppressMessage("Minor Code Smell", "S101:Types should be named in PascalCase", Justification = "Oh ffs Sonar, IPv4 is a very well known tech thing.")]
 	public class IPv4AddressBenchmarks {
-		readonly Regex msregex = new Regex(@"^[012]?[0-9]{1,2}.[012]?[0-9]{1,2}.[012]?[0-9]{1,2}.[012]?[0-9]{1,2}");
+		readonly Regex msregex = new Regex("^[012]?[0-9]{1,2}.[012]?[0-9]{1,2}.[012]?[0-9]{1,2}.[012]?[0-9]{1,2}");
 
-		readonly Regex msregexCompiled = new Regex(@"^[012]?[0-9]{1,2}.[012]?[0-9]{1,2}.[012]?[0-9]{1,2}.[012]?[0-9]{1,2}", RegexOptions.Compiled);
+		readonly Regex msregexCompiled = new Regex("^[012]?[0-9]{1,2}.[012]?[0-9]{1,2}.[012]?[0-9]{1,2}.[012]?[0-9]{1,2}", RegexOptions.Compiled);
 
-		readonly PcreRegex pcreregex = new PcreRegex(@"^[012]?[0-9]{1,2}.[012]?[0-9]{1,2}.[012]?[0-9]{1,2}.[012]?[0-9]{1,2}");
+		readonly PcreRegex pcreregex = new PcreRegex("^[012]?[0-9]{1,2}.[012]?[0-9]{1,2}.[012]?[0-9]{1,2}.[012]?[0-9]{1,2}");
 
-		readonly PcreRegex pcreregexCompiled = new PcreRegex(@"^[012]?[0-9]{1,2}.[012]?[0-9]{1,2}.[012]?[0-9]{1,2}.[012]?[0-9]{1,2}", PcreOptions.Compiled);
+		readonly PcreRegex pcreregexCompiled = new PcreRegex("^[012]?[0-9]{1,2}.[012]?[0-9]{1,2}.[012]?[0-9]{1,2}.[012]?[0-9]{1,2}", PcreOptions.Compiled);
 
 		readonly static Parser<Char, String> pidginDigit = 
 			Try(OneOf('0', '1', '2'))
@@ -42,7 +44,13 @@ namespace Benchmarks.Patterns {
 		public Match MSRegex() => msregex.Match(Source);
 
 		[Benchmark]
+		public Match MSRegexCompiled() => msregexCompiled.Match(Source);
+
+		[Benchmark]
 		public PcreMatch PcreRegex() => pcreregex.Match(Source);
+
+		[Benchmark]
+		public PcreMatch PcreRegexCompiled() => pcreregexCompiled.Match(Source);
 
 		[Benchmark]
 		public Result<Char, String> Pidgin() => pidgin.Parse(Source);

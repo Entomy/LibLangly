@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics.CodeAnalysis;
 using Stringier.Patterns.Debugging;
 using Stringier.Patterns.Errors;
 
@@ -100,6 +99,7 @@ namespace Stringier.Patterns.Nodes {
 			result.Length++;
 		}
 
+
 		/// <summary>
 		/// Call the Neglect parser of this <see cref="Node"/> on the <paramref name="source"/> with the <paramref name="result"/>.
 		/// </summary>
@@ -112,8 +112,7 @@ namespace Stringier.Patterns.Nodes {
 				result.Error.Set(ErrorType.EndOfSource, this);
 				return;
 			}
-			Char @char;
-			switch (@char = source.Peek()) {
+			switch (source.Peek()) {
 			case '\u000A':
 			case '\u000B':
 			case '\u000C':
@@ -125,7 +124,7 @@ namespace Stringier.Patterns.Nodes {
 				trace?.Collect(result.Error);
 				break;
 			default:
-				trace?.Collect(@char, source.Position);
+				trace?.Collect(source.Peek(), source.Position);
 				source.Position++;
 				result.Length++;
 				break;

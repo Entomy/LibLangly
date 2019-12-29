@@ -29,16 +29,16 @@ namespace Stringier.Patterns {
 			this.Position = Position;
 		}
 
+		public static Boolean operator ==(SourceState left, SourceState right) => left.Equals(right);
+
+		public static Boolean operator !=(SourceState left, SourceState right) => !left.Equals(right);
+
 		/// <summary>
 		/// Determines whether the specified object is equal to the current object.
 		/// </summary>
 		/// <param name="obj">The object to compare with the current object.</param>
 		/// <returns>Always <c>false</c>, as ref struct's don't inherit from <see cref="Object"/>.</returns>
 		public override Boolean Equals(Object obj) => false;
-
-		public static Boolean operator ==(SourceState left, SourceState right) => left.Equals(right);
-
-		public static Boolean operator !=(SourceState left, SourceState right) => !left.Equals(right);
 
 		/// <summary>
 		/// Determines whether this <see cref="SourceState"/> and the <paramref name="other"/> <see cref="SourceState"/> are equal.
