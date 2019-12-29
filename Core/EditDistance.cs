@@ -86,8 +86,8 @@ namespace Stringier {
 				return n;
 			} else {
 				Int32[,] d = new Int32[n + 1, m + 1];
-				for (Int32 i = 0; i <= n; d[i, 0] = i++) { }
-				for (Int32 j = 0; j <= m; d[0, j] = j++) { }
+				for (Int32 i = 0; i <= n; d[i, 0] = i++) { /* Prework */ }
+				for (Int32 j = 0; j <= m; d[0, j] = j++) { /* Prework */ }
 
 				Int32 c;
 				for (Int32 i = 1; i <= n; i++) {

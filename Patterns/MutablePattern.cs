@@ -87,9 +87,10 @@ namespace Stringier.Patterns {
 				throw new ArgumentNullException(nameof(other));
 			} else if (Head is null) {
 				throw new PatternUndefinedException();
+			} else {
+				Head = Head.Alternate(other);
+				return this;
 			}
-			Head = Head.Alternate(other);
-			return this;
 		}
 
 		/// <summary>

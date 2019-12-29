@@ -54,8 +54,7 @@ namespace Stringier.Patterns.Nodes {
 				result.Error.Set(ErrorType.EndOfSource, this);
 				trace?.Collect(result.Error);
 			} else {
-				Char Char;
-				if (Left(Char = source.Peek()) || Right(Char = source.Peek())) {
+				if (Left(source.Peek()) || Right(source.Peek())) {
 					trace?.Collect(result.Error);
 					source.Position++;
 					result.Length++;
@@ -78,8 +77,7 @@ namespace Stringier.Patterns.Nodes {
 				result.Error.Set(ErrorType.EndOfSource, this);
 				trace?.Collect(result.Error);
 			} else {
-				Char Char;
-				if (!Left(Char = source.Peek()) && !Right(Char = source.Peek())) {
+				if (!Left(source.Peek()) && !Right(source.Peek())) {
 					trace?.Collect(result.Error);
 					source.Position++;
 					result.Length++;

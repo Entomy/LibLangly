@@ -145,16 +145,13 @@ namespace Stringier.Patterns {
 		#region Additional Patterns
 
 		/// <summary>
-		/// Matches any possible character
+		/// Matches any possible character.
 		/// </summary>
 		public static readonly Pattern Any = new CharChecker("*", (_) => true);
 
 		/// <summary>
 		/// Not a UNICODE group, but instead, the various line terminators Operating Systems recognize.
 		/// </summary>
-		/// <remarks>
-		/// The CR+LF used by Windows, DOS, OS2, PalmOS, and others is checked first, because otherwise only the single CR would be matched. Similarly, because RISC OS uses LF+CR this check occurs directly after CR+LF, before any single characters.
-		/// </remarks>
 		public static readonly Pattern LineTerminator = new LineEndChecker();
 
 		/// <summary>
