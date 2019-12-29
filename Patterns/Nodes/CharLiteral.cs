@@ -55,6 +55,24 @@ namespace Stringier.Patterns.Nodes {
 		/// <param name="trace">The <see cref="ITrace"/> to record steps in.</param>
 		internal override void Neglect(ref Source source, ref Result result, ITrace? trace) => Char.Neglect(ref source, ref result, ComparisonType, trace);
 
+		#region Alternator
+
+		/// <summary>
+		/// Declares <paramref name="right"/> to be an alternate of this <see cref="Pattern"/>.
+		/// </summary>
+		/// <param name="right">The <see cref="Pattern"/> to check if this <see cref="Pattern"/> does not match.</param>
+		/// <returns>A new <see cref="Pattern"/> alternating this <see cref="Pattern"/> and <paramref name="right"/>.</returns>
+		internal override Pattern Alternate(Pattern right) {
+			switch (right) {
+			case ChainAlternator chain:
+				return new ChainAlternator(this, chain.Patterns);
+			default:
+				return base.Alternate(right);
+			}
+		}
+
+		#endregion
+
 		#region Concatenator
 
 		/// <summary>

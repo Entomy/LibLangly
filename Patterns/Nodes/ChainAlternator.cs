@@ -106,14 +106,14 @@ namespace Stringier.Patterns.Nodes {
 					source.Position = OriginalPosition;
 					result.Length = OriginalLength;
 				} else {
-					return;
+					break;
 				}
 			}
 			source.Position += ShortestPattern;
 			result.Length += ShortestPattern;
 		}
 
-		#region Alternate
+		#region Alternator
 
 		/// <summary>
 		/// Declares <paramref name="right"/> to be an alternate of this <see cref="Pattern"/>.

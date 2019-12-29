@@ -155,12 +155,12 @@ namespace Stringier.Patterns {
 		/// <remarks>
 		/// The CR+LF used by Windows, DOS, OS2, PalmOS, and others is checked first, because otherwise only the single CR would be matched. Similarly, because RISC OS uses LF+CR this check occurs directly after CR+LF, before any single characters.
 		/// </remarks>
-		public static readonly Pattern LineTerminator = "\u000D\u000A".Or("\u000A\u000D").Or("\u000A").Or("\u000B").Or("\u000C").Or("\u000D").Or("\u0085").Or("\u2028").Or("\u2029");
+		public static readonly Pattern LineTerminator = new LineEndChecker();
 
 		/// <summary>
 		/// Check for the end of the <see cref="Source"/>
 		/// </summary>
-		public static readonly Pattern EndOfSource = new EndChecker();
+		public static readonly Pattern EndOfSource = new SourceEndChecker();
 
 		#endregion
 	}

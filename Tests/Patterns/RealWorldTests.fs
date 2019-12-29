@@ -68,6 +68,13 @@ type RealWorldTests() =
         ResultAssert.Captures("555-555-5555", result)
 
     [<TestMethod>]
+    member _.``read until end of line`` () =
+        let pattern = many (not (';' || Pattern.LineTerminator))
+        let result = pattern.Consume("hello")
+        ResultAssert.Succeeds(result)
+        ResultAssert.Captures("hello", result)
+
+    [<TestMethod>]
     member _.``string literal`` () =
         let pattern = Pattern.StringLiteral("\"", "\\\"")
         ResultAssert.Captures("\"hello\\\"world\"", pattern.Consume("\"hello\\\"world\""))
