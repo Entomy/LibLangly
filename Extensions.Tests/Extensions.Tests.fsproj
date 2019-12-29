@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+    <GenerateProgramFile>false</GenerateProgramFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="ChopTests.fs" />
+    <Compile Include="CleanTests.fs" />
+    <Compile Include="ContainsTests.fs" />
+    <Compile Include="EnsureTests.fs" />
+    <Compile Include="EqualsTests.fs" />
+    <Compile Include="FuzzyEqualsTests.fs" />
+    <Compile Include="JoinTests.fs" />
+    <Compile Include="LinesTests.fs" />
+    <Compile Include="OccurrencesTests.fs" />
+    <Compile Include="PadTests.fs" />
+    <Compile Include="RepeatTests.fs" />
+    <Compile Include="SplitTests.fs" />
+    <Compile Include="WordTests.fs" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="2.0.0" />
+    <PackageReference Include="MSTest.TestFramework" Version="2.0.0" />
+    <PackageReference Include="coverlet.collector" Version="1.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Core.FSharp\Core.FSharp.fsproj" />
+    <ProjectReference Include="..\Extensions.FSharp\Extensions.FSharp.fsproj" />
+  </ItemGroup>
+
+</Project>
