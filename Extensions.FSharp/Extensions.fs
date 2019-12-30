@@ -85,6 +85,11 @@ module Extensions =
     let inline split(separator)(source) = _split<Binder, _, _, _> separator source
 
     /// <summary>
+    /// Squeezes the string, collapsing all adjacent identical characters to single characters.
+    /// </summary>
+    let squeeze(string:string) = string.Squeeze()
+
+    /// <summary>
     /// Separate the string into its words.
     /// </summary>
     let words(source:string) = source.Words()
