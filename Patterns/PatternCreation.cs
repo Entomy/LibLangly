@@ -98,12 +98,50 @@ namespace Stringier.Patterns {
 		/// <param name="patterns">The set of <see cref="Pattern"/>.</param>
 		/// <returns>A new <see cref="Pattern"/> alternating all of the <paramref name="patterns"/>.</returns>
 		public static Pattern OneOf(params Pattern[] patterns) {
+			if (patterns.Length < 2) {
+				throw new ArgumentException("Must have at least two patterns", nameof(patterns));
+			}
 			Pattern result = patterns[0];
 			for (Int32 i = 1; i < patterns.Length; i++) {
 				result = result.Or(patterns[i]);
 			}
 			return result;
 		}
+
+		/// <summary>
+		/// Declares the <paramref name="patterns"/> to be alternates of each other; one of them will match.
+		/// </summary>
+		/// <param name="comparisonType">The <see cref="Compare"/> to use for all <paramref name="patterns"/>.</param>
+		/// <param name="patterns">The set of <see cref="String"/>.</param>
+		/// <returns>A new <see cref="Pattern"/> alternating all of the <paramref name="patterns"/>.</returns>
+		public static Pattern OneOf(Compare comparisonType, params String[] patterns) {
+			if (patterns.Length < 2) {
+				throw new ArgumentException("Must have at least two patterns", nameof(patterns));
+			}
+			Pattern result = patterns[0].With(comparisonType).Or(patterns[1].With(comparisonType));
+			for (Int32 i = 2; i < patterns.Length; i++) {
+				result = result.Or(patterns[i].With(comparisonType));
+			}
+			return result;
+		}
+
+		/// <summary>
+		/// Declares the <paramref name="patterns"/> to be alternates of each other; one of them will match.
+		/// </summary>
+		/// <param name="comparisonType">The <see cref="Compare"/> to use for all <paramref name="patterns"/>.</param>
+		/// <param name="patterns">The set of <see cref="Char"/>.</param>
+		/// <returns>A new <see cref="Pattern"/> alternating all of the <paramref name="patterns"/>.</returns>
+		public static Pattern OneOf(Compare comparisonType, params Char[] patterns) {
+			if (patterns.Length < 2) {
+				throw new ArgumentException("Must have at least two patterns", nameof(patterns));
+			}
+			Pattern result = patterns[0].With(comparisonType).Or(patterns[1].With(comparisonType));
+			for (Int32 i = 2; i < patterns.Length; i++) {
+				result = result.Or(patterns[i].With(comparisonType));
+			}
+			return result;
+		}
+
 
 		#endregion
 
