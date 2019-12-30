@@ -2,13 +2,13 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Pidgin;
 using Sprache;
+using static Benchmarks.Patterns.OptorBenchmarks;
 
 namespace Benchmarks {
 	[TestClass]
 	public class OptorTests {
 		[TestMethod]
 		public void Pidgin() {
-			Parser<Char, String> pidgin = Parser.Try(Parser.String("Hello"));
 			Result<Char, String> result;
 
 			result = pidgin.Parse("Hello");
@@ -21,7 +21,6 @@ namespace Benchmarks {
 
 		[TestMethod]
 		public void Sprache() {
-			Sprache.Parser<IOption<String>> sprache = Parse.Optional(Parse.String("Hello").Text());
 			IOption<String> result;
 
 			result = sprache.Parse("Hello");

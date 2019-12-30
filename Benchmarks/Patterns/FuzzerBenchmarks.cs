@@ -11,9 +11,9 @@ namespace Benchmarks.Patterns {
 	[SimpleJob(RuntimeMoniker.Mono)]
 	[MemoryDiagnoser]
 	public class FuzzerBenchmarks {
-		readonly Pattern literal = "bob";
+		public static readonly Pattern literal = "bob";
 
-		readonly Pattern fuzzer = Fuzzy("bob");
+		public static readonly Pattern fuzzer = Fuzzy("bob");
 
 		[Params("bob", "mob", "mom")]
 		public String Source { get; set; }

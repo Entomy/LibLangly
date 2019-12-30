@@ -16,17 +16,17 @@ namespace Benchmarks.Patterns {
 	[SimpleJob(RuntimeMoniker.Mono)]
 	[MemoryDiagnoser]
 	public class PhoneNumberBenchmarks {
-		readonly Regex msregex = new Regex(@"^[0-9]{3}-[0-9]{3}-[0-9]{4}");
+		public static readonly Regex msregex = new Regex(@"^[0-9]{3}-[0-9]{3}-[0-9]{4}");
 
-		readonly Regex msregexCompiled = new Regex(@"^[0-9]{3}-[0-9]{3}-[0-9]{4}", RegexOptions.Compiled);
+		public static readonly Regex msregexCompiled = new Regex(@"^[0-9]{3}-[0-9]{3}-[0-9]{4}", RegexOptions.Compiled);
 
-		readonly PcreRegex pcreregex = new PcreRegex(@"^[0-9]{3}-[0-9]{3}-[0-9]{4}");
+		public static readonly PcreRegex pcreregex = new PcreRegex(@"^[0-9]{3}-[0-9]{3}-[0-9]{4}");
 
-		readonly PcreRegex pcreregexCompiled = new PcreRegex(@"^[0-9]{3}-[0-9]{3}-[0-9]{4}", PcreOptions.Compiled);
+		public static readonly PcreRegex pcreregexCompiled = new PcreRegex(@"^[0-9]{3}-[0-9]{3}-[0-9]{4}", PcreOptions.Compiled);
 
-		readonly Parser<Char, String> pidgin = Digit.RepeatString(3).Then(Char('-')).Then(Digit.RepeatString(3)).Then(Char('-')).Then(Digit.RepeatString(4));
+		public static readonly Parser<Char, String> pidgin = Digit.RepeatString(3).Then(Char('-')).Then(Digit.RepeatString(3)).Then(Char('-')).Then(Digit.RepeatString(4));
 
-		readonly Pattern stringier = DecimalDigitNumber.Repeat(3).Then('-').Then(DecimalDigitNumber.Repeat(3)).Then('-').Then(DecimalDigitNumber.Repeat(4));
+		public static readonly Pattern stringier = DecimalDigitNumber.Repeat(3).Then('-').Then(DecimalDigitNumber.Repeat(3)).Then('-').Then(DecimalDigitNumber.Repeat(4));
 
 		[Params("555-555-5555")]
 		public String Source { get; set; }

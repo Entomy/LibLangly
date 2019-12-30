@@ -16,19 +16,19 @@ namespace Benchmarks.Patterns {
 	[SimpleJob(RuntimeMoniker.Mono)]
 	[MemoryDiagnoser]
 	public class SpannerBenchmarks {
-		readonly Regex msregex = new Regex("^(?:Hi!)+");
+		public static readonly Regex msregex = new Regex("^(?:Hi!)+");
 
-		readonly Regex msregexCompiled = new Regex("^(?:Hi!)+", RegexOptions.Compiled);
+		public static readonly Regex msregexCompiled = new Regex("^(?:Hi!)+", RegexOptions.Compiled);
 
-		readonly PcreRegex pcreregex = new PcreRegex("^(?:Hi!)+");
+		public static readonly PcreRegex pcreregex = new PcreRegex("^(?:Hi!)+");
 
-		readonly PcreRegex pcreregexCompiled = new PcreRegex("^(?:Hi!)+", PcreOptions.Compiled);
+		public static readonly PcreRegex pcreregexCompiled = new PcreRegex("^(?:Hi!)+", PcreOptions.Compiled);
 
-		readonly Parser<Char, String> pidgin = Parser.String("Hi!").AtLeastOnceString();
+		public static readonly Parser<Char, String> pidgin = Parser.String("Hi!").AtLeastOnceString();
 
-		readonly Sprache.Parser<IEnumerable<String>> sprache = Parse.String("Hi!").Text().AtLeastOnce();
+		public static readonly Sprache.Parser<IEnumerable<String>> sprache = Parse.String("Hi!").Text().AtLeastOnce();
 
-		readonly Pattern stringier = Many("Hi!");
+		public static readonly Pattern stringier = Many("Hi!");
 
 		[Params("Hi!", "HiHi!", "Hi!Hi!Hi!", "Okay?")]
 		public String Source { get; set; }

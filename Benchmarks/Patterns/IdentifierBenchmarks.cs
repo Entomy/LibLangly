@@ -15,19 +15,19 @@ namespace Benchmarks.Patterns {
 	[SimpleJob(RuntimeMoniker.Mono)]
 	[MemoryDiagnoser]
 	public class IdentifierBenchmarks {
-		readonly Regex msregex = new Regex("^\\w(?:\\w|_)+");
+		public static readonly Regex msregex = new Regex("^\\w(?:\\w|_)+");
 
-		readonly Regex msregexCompiled = new Regex("^\\w(?:\\w|_)+", RegexOptions.Compiled);
+		public static readonly Regex msregexCompiled = new Regex("^\\w(?:\\w|_)+", RegexOptions.Compiled);
 
-		readonly PcreRegex pcreregex = new PcreRegex("^\\w(?:\\w|_)+");
+		public static readonly PcreRegex pcreregex = new PcreRegex("^\\w(?:\\w|_)+");
 
-		readonly PcreRegex pcreregexCompiled = new PcreRegex("^\\w(?:\\w|_)+", PcreOptions.Compiled);
+		public static readonly PcreRegex pcreregexCompiled = new PcreRegex("^\\w(?:\\w|_)+", PcreOptions.Compiled);
 
-		readonly Parser<Char, String> pidgin = Parser.Letter.Then(Parser.Letter.Or(Parser.Char('_')).ManyString());
+		public static readonly Parser<Char, String> pidgin = Parser.Letter.Then(Parser.Letter.Or(Parser.Char('_')).ManyString());
 
-		readonly Sprache.Parser<String> sprache = Parse.Letter.Then(_ => Parse.Letter.Or(Parse.Char('_')).Many().Text());
+		public static readonly Sprache.Parser<String> sprache = Parse.Letter.Then(_ => Parse.Letter.Or(Parse.Char('_')).Many().Text());
 
-		readonly Pattern stringier = Pattern.Check(nameof(stringier),
+		public static readonly Pattern stringier = Pattern.Check(nameof(stringier),
 			(Char) => Char.IsLetter(), true,
 			(Char) => Char.IsLetter() || Char == '_', true,
 			(Char) => Char.IsLetter() || Char == '_', false);

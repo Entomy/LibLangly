@@ -11,9 +11,9 @@ namespace Benchmarks.Patterns {
 	[SimpleJob(RuntimeMoniker.Mono)]
 	[MemoryDiagnoser]
 	public class CheckerBenchmarks {
-		readonly Pattern alternator = '0'.Or('1').Or('2').Or('3').Or('4').Or('5').Or('6').Or('7').Or('8').Or('9');
+		public static readonly Pattern alternator = '0'.Or('1').Or('2').Or('3').Or('4').Or('5').Or('6').Or('7').Or('8').Or('9');
 
-		readonly Pattern checker = Check("Number", (Char) => 0x30 <= Char && Char <= 0x39);
+		public static readonly Pattern checker = Check("Number", (Char) => 0x30 <= Char && Char <= 0x39);
 
 		[Params("0", "1", "a")]
 		public String Source { get; set; }

@@ -14,19 +14,19 @@ namespace Benchmarks.Patterns {
 	[SimpleJob(RuntimeMoniker.Mono)]
 	[MemoryDiagnoser]
 	public class ConcatenatorBenchmarks {
-		readonly Regex msregex = new Regex("^Hello World");
+		public static readonly Regex msregex = new Regex("^Hello World");
 
-		readonly Regex msregexCompiled = new Regex("^Hello World", RegexOptions.Compiled);
+		public static readonly Regex msregexCompiled = new Regex("^Hello World", RegexOptions.Compiled);
 
-		readonly PcreRegex pcreregex = new PcreRegex("^Hello World");
+		public static readonly PcreRegex pcreregex = new PcreRegex("^Hello World");
 
-		readonly PcreRegex pcreregexCompiled = new PcreRegex("^Hello World", PcreOptions.Compiled);
+		public static readonly PcreRegex pcreregexCompiled = new PcreRegex("^Hello World", PcreOptions.Compiled);
 
-		readonly Parser<Char, String> pidgin = Parser.String("Hello").Then(Parser.Char(' ')).Then(Parser.String("World"));
+		public static readonly Parser<Char, String> pidgin = Parser.String("Hello").Then(Parser.Char(' ')).Then(Parser.String("World"));
 
-		readonly Sprache.Parser<String> sprache = Parse.String("Hello").Then(_ => Parse.Char(' ')).Then(_ => Parse.String("World")).Text();
+		public static readonly Sprache.Parser<String> sprache = Parse.String("Hello").Then(_ => Parse.Char(' ')).Then(_ => Parse.String("World")).Text();
 
-		readonly Pattern stringier = "Hello".Then(' ').Then("World");
+		public static readonly Pattern stringier = "Hello".Then(' ').Then("World");
 
 		[Params("Hello World", "Hello", "Failure")]
 		public String Source { get; set; }

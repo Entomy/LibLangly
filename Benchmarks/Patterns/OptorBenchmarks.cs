@@ -15,19 +15,19 @@ namespace Benchmarks.Patterns {
 	[SimpleJob(RuntimeMoniker.Mono)]
 	[MemoryDiagnoser]
 	public class OptorBenchmarks {
-		readonly Regex msregex = new Regex("^(?:Hello)?");
+		public static readonly Regex msregex = new Regex("^(?:Hello)?");
 
-		readonly Regex msregexCompiled = new Regex("^(?:Hello)?", RegexOptions.Compiled);
+		public static readonly Regex msregexCompiled = new Regex("^(?:Hello)?", RegexOptions.Compiled);
 
-		readonly PcreRegex pcreregex = new PcreRegex("^(?:Hello)?");
+		public static readonly PcreRegex pcreregex = new PcreRegex("^(?:Hello)?");
 
-		readonly PcreRegex pcreregexCompiled = new PcreRegex("^(?:Hello)?", PcreOptions.Compiled);
+		public static readonly PcreRegex pcreregexCompiled = new PcreRegex("^(?:Hello)?", PcreOptions.Compiled);
 
-		readonly Parser<Char, String> pidgin = Parser.Try(Parser.String("Hello"));
+		public static readonly Parser<Char, String> pidgin = Parser.Try(Parser.String("Hello"));
 
-		readonly Sprache.Parser<IOption<String>> sprache = Parse.Optional(Parse.String("Hello").Text());
+		public static readonly Sprache.Parser<IOption<String>> sprache = Parse.Optional(Parse.String("Hello").Text());
 
-		readonly Pattern stringier = Maybe("Hello");
+		public static readonly Pattern stringier = Maybe("Hello");
 
 		[Params("Hello", "World")]
 		public String Source { get; set; }

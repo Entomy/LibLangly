@@ -2,13 +2,13 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Pidgin;
 using Sprache;
+using static Benchmarks.Patterns.LiteralBenchmarks;
 
 namespace Benchmarks {
 	[TestClass]
 	public class LiteralTests {
 		[TestMethod]
 		public void Pidgin() {
-			Parser<Char, String> pidgin = Parser.String("Hello");
 			Result<Char, String> result;
 
 			result = pidgin.Parse("Hello");
@@ -27,7 +27,6 @@ namespace Benchmarks {
 
 		[TestMethod]
 		public void Sprache() {
-			Sprache.Parser<String> sprache = Parse.String("Hello").Text();
 			IResult<String> result;
 
 			result = sprache.TryParse("Hello");

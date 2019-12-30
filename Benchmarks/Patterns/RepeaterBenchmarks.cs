@@ -16,19 +16,19 @@ namespace Benchmarks.Patterns {
 	[MemoryDiagnoser]
 	public class RepeaterBenchmarks {
 
-		readonly Regex msregex = new Regex("^(?:Hi!){5}");
+		public static readonly Regex msregex = new Regex("^(?:Hi!){5}");
 
-		readonly Regex msregexCompiled = new Regex("^(?:Hi!){5}", RegexOptions.Compiled);
+		public static readonly Regex msregexCompiled = new Regex("^(?:Hi!){5}", RegexOptions.Compiled);
 
-		readonly PcreRegex pcreregex = new PcreRegex("^(?:Hi!){5}");
+		public static readonly PcreRegex pcreregex = new PcreRegex("^(?:Hi!){5}");
 
-		readonly PcreRegex pcreregexCompiled = new PcreRegex("^(?:Hi!){5}", PcreOptions.Compiled);
+		public static readonly PcreRegex pcreregexCompiled = new PcreRegex("^(?:Hi!){5}", PcreOptions.Compiled);
 
-		readonly Parser<Char, IEnumerable<String>> pidgin = Parser.String("Hi!").Repeat(5);
+		public static readonly Parser<Char, IEnumerable<String>> pidgin = Parser.String("Hi!").Repeat(5);
 
-		readonly Sprache.Parser<IEnumerable<String>> sprache = Parse.String("Hi!").Text().Repeat(5);
+		public static readonly Sprache.Parser<IEnumerable<String>> sprache = Parse.String("Hi!").Text().Repeat(5);
 
-		readonly Pattern stringier = "Hi!".Repeat(5);
+		public static readonly Pattern stringier = "Hi!".Repeat(5);
 
 		[Params("Hi!", "Hi!Hi!Hi!Hi!Hi!")]
 		public String Source { get; set; }
