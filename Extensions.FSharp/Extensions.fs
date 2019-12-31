@@ -43,7 +43,7 @@ module Extensions =
     /// Determines whether two specified text objects have roughly the same value.
     /// </summary>
     let inline fuzzyEqual2(other)(maxEdits)(source):bool = _fuzzyEqual2<Binder, _, _> other maxEdits source
-
+    
     /// <summary>
     /// Joins the sequence into a string.
     /// </summary>
@@ -73,6 +73,11 @@ module Extensions =
     /// Returns a new string that center-aligns the characters in this instance by padding them with spaces on both sides, for a specified total length.
     /// </summary>
     let pad2(totalWidth)(padding)(string:string) = string.Pad(totalWidth, padding)
+
+    /// <summary>
+    /// Checks if the source text is a palindrome.
+    /// </summary>
+    let inline palindrome(source:^a) = _isPalindrome<Binder, ^a> source
 
     /// <summary>
     /// Repeat the text, count times.
