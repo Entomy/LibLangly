@@ -21,21 +21,22 @@ namespace Stringier {
 		/// </summary>
 		/// <param name="span"><see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to clean</param>
 		/// <returns>Cleaned up string</returns>
-		public static String Clean(this ReadOnlySpan<Char> span) { 
-			StringBuilder Result = new StringBuilder();
+		public static String Clean(this ReadOnlySpan<Char> span) {
+			Char[] result = new Char[span.Length];
+			Int32 r = 0;
 			Boolean AtSpace = false;
 			foreach (Char C in span) {
 				if (Char.GetUnicodeCategory(C) == UnicodeCategory.SpaceSeparator) {
 					if (!AtSpace) {
 						AtSpace = true;
-						_ = Result.Append(' ');
+						result[r++] = ' ';
 					}
 				} else {
 					AtSpace = false;
-					_ = Result.Append(C);
+					result[r++] = C;
 				}
 			}
-			return Result.ToString().Trim();
+			return new String(result, 0, r).Trim();
 		}
 
 		/// <summary>
@@ -58,20 +59,21 @@ namespace Stringier {
 		/// <param name="char">The character to clean</param>
 		/// <returns>Cleaned up string</returns>
 		public static String Clean(this ReadOnlySpan<Char> span, Char @char) {
-			StringBuilder Result = new StringBuilder();
+			Char[] result = new Char[span.Length];
+			Int32 r = 0;
 			Boolean AtChar = false;
 			foreach (Char C in span) {
 				if (C == @char) {
 					if (!AtChar) {
 						AtChar = true;
-						_ = Result.Append(@char);
+						result[r++] = @char;
 					}
 				} else {
 					AtChar = false;
-					_ = Result.Append(C);
+					result[r++] = C;
 				}
 			}
-			return Result.ToString().Trim();
+			return new String(result, 0, r).Trim();
 		}
 	}
 }
