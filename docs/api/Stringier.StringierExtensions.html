@@ -217,6 +217,102 @@
   
   
   <a id="Stringier_StringierExtensions_Clean_" data-uid="Stringier.StringierExtensions.Clean*"></a>
+  <h4 id="Stringier_StringierExtensions_Clean_ReadOnlySpan_System_Char__" data-uid="Stringier.StringierExtensions.Clean(ReadOnlySpan{System.Char})">Clean(ReadOnlySpan&lt;Char&gt;)</h4>
+  <div class="markdown level1 summary"><p>Trim and replace multiple spaces with a single space</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string Clean(this ReadOnlySpan&lt;char&gt; span)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ReadOnlySpan</span>&lt;<span class="xref">System.Char</span>&gt;</td>
+        <td><span class="parametername">span</span></td>
+        <td><p><see cref="!:ReadOnlySpan&lt;T>"></see> of <span class="xref">System.Char</span> to clean</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>Cleaned up string</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_StringierExtensions_Clean_" data-uid="Stringier.StringierExtensions.Clean*"></a>
+  <h4 id="Stringier_StringierExtensions_Clean_ReadOnlySpan_System_Char__System_Char_" data-uid="Stringier.StringierExtensions.Clean(ReadOnlySpan{System.Char},System.Char)">Clean(ReadOnlySpan&lt;Char&gt;, Char)</h4>
+  <div class="markdown level1 summary"><p>Trim and replace multiple <code data-dev-comment-type="paramref" class="paramref">char</code> with a single <code data-dev-comment-type="paramref" class="paramref">char</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string Clean(this ReadOnlySpan&lt;char&gt; span, char char)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ReadOnlySpan</span>&lt;<span class="xref">System.Char</span>&gt;</td>
+        <td><span class="parametername">span</span></td>
+        <td><p><see cref="!:ReadOnlySpan&lt;T>"></see> of <span class="xref">System.Char</span> to clean</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">char</span></td>
+        <td><p>The character to clean</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>Cleaned up string</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_StringierExtensions_Clean_" data-uid="Stringier.StringierExtensions.Clean*"></a>
   <h4 id="Stringier_StringierExtensions_Clean_System_String_" data-uid="Stringier.StringierExtensions.Clean(System.String)">Clean(String)</h4>
   <div class="markdown level1 summary"><p>Trim and replace multiple spaces with a single space</p>
 </div>
@@ -263,12 +359,12 @@
   
   <a id="Stringier_StringierExtensions_Clean_" data-uid="Stringier.StringierExtensions.Clean*"></a>
   <h4 id="Stringier_StringierExtensions_Clean_System_String_System_Char_" data-uid="Stringier.StringierExtensions.Clean(System.String,System.Char)">Clean(String, Char)</h4>
-  <div class="markdown level1 summary"><p>Trim and replace multiple <code data-dev-comment-type="paramref" class="paramref">Char</code> with a single <code data-dev-comment-type="paramref" class="paramref">Char</code></p>
+  <div class="markdown level1 summary"><p>Trim and replace multiple <code data-dev-comment-type="paramref" class="paramref">char</code> with a single <code data-dev-comment-type="paramref" class="paramref">char</code></p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string Clean(this string String, char Char)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string Clean(this string string, char char)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -282,14 +378,15 @@
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">String</span></td>
+        <td><span class="parametername">string</span></td>
         <td><p>String to clean</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Char</span></td>
-        <td><span class="parametername">Char</span></td>
-        <td></td>
+        <td><span class="parametername">char</span></td>
+        <td><p>The character to clean</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -2212,7 +2309,8 @@
   
   <a id="Stringier_StringierExtensions_Join_" data-uid="Stringier.StringierExtensions.Join*"></a>
   <h4 id="Stringier_StringierExtensions_Join_IEnumerable_System_String__" data-uid="Stringier.StringierExtensions.Join(IEnumerable{System.String})">Join(IEnumerable&lt;String&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Joins the <code data-dev-comment-type="paramref" class="paramref">strings</code> into a string.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -2231,7 +2329,8 @@
       <tr>
         <td><span class="xref">IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
         <td><span class="parametername">strings</span></td>
-        <td></td>
+        <td><p>The <see cref="!:IEnumerable&lt;T>"></see> of <span class="xref">System.String</span> to join.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -2246,7 +2345,8 @@
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td></td>
+        <td><p>The joined <span class="xref">System.String</span>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -2952,6 +3052,57 @@
       <tr>
         <td><span class="xref">System.Int64</span></td>
         <td><p>A 64-bit signed integer equivalent to the number contained in <code data-dev-comment-type="paramref" class="paramref">char</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_StringierExtensions_Repeat_" data-uid="Stringier.StringierExtensions.Repeat*"></a>
+  <h4 id="Stringier_StringierExtensions_Repeat_ReadOnlySpan_System_Char__System_Int32_" data-uid="Stringier.StringierExtensions.Repeat(ReadOnlySpan{System.Char},System.Int32)">Repeat(ReadOnlySpan&lt;Char&gt;, Int32)</h4>
+  <div class="markdown level1 summary"><p>Repeat the <code data-dev-comment-type="paramref" class="paramref">span</code> <code data-dev-comment-type="paramref" class="paramref">count</code> times.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string Repeat(this ReadOnlySpan&lt;char&gt; span, int count)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ReadOnlySpan</span>&lt;<span class="xref">System.Char</span>&gt;</td>
+        <td><span class="parametername">span</span></td>
+        <td><p>The <see cref="!:ReadOnlySpan&lt;T>"></see> of <span class="xref">System.Char</span> to repeat.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">count</span></td>
+        <td><p>The amount of times to repeat the <code data-dev-comment-type="paramref" class="paramref">span</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>A <span class="xref">System.String</span> containing the repeated <code data-dev-comment-type="paramref" class="paramref">span</code>.</p>
 </td>
       </tr>
     </tbody>

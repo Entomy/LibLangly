@@ -381,10 +381,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Stringier.StringierExtensions.html",
-          "hash": "HZ2bsdkAGJRXlQ2tcp8nNQ=="
+          "hash": "jkLXe7Xu2xojen5eWH/zCw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -396,7 +396,7 @@
           "hash": "nef1VeuXf3CGaYnOyW+TKA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -541,6 +541,13 @@
         "skipped_file_count": 0
       },
       "processors": {
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
         "ConceptualDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
@@ -551,14 +558,7 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 33,
-          "skipped_file_count": 32
-        },
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
+          "skipped_file_count": 33
         }
       }
     },
