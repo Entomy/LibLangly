@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Jobs;
 using Stringier;
@@ -14,6 +13,9 @@ namespace Benchmarks.Extensions {
 		public String String { get; set; }
 
 		[Benchmark]
-		public Boolean IsPalindrome() => String.IsPalindrome();
+		public Boolean String_IsPalindrome() => String.IsPalindrome();
+
+		[Benchmark]
+		public Boolean Span_IsPalindrome() => String.AsSpan().IsPalindrome();
 	}
 }
