@@ -49,7 +49,6 @@ namespace Stringier {
 			return Result.Join();
 		}
 
-
 		/// <summary>
 		/// Joins the <paramref name="chars"/> with <paramref name="separator"/> into a string.
 		/// </summary>
@@ -68,6 +67,11 @@ namespace Stringier {
 			return Result.ToString().TrimEnd(separator);
 		}
 
+		/// <summary>
+		/// Joins the <paramref name="strings"/> into a string.
+		/// </summary>
+		/// <param name="strings">The <see cref="IEnumerable{T}"/> of <see cref="String"/> to join.</param>
+		/// <returns>The joined <see cref="String"/>.</returns>
 		public static String Join(this IEnumerable<String> strings) {
 			if (strings is null) {
 				throw new ArgumentNullException(nameof(strings));
