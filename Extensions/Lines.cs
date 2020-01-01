@@ -14,5 +14,12 @@ namespace Stringier {
 			}
 			return @string.Split(Path.DirectorySeparatorChar);
 		}
+
+		/// <summary>
+		/// Separate the <paramref name="span"/> into its lines.
+		/// </summary>
+		/// <param name="span">Span to separate.</param>
+		/// <returns>Array of lines within the <paramref name="span"/>.</returns>
+		public static String[] Lines(this ReadOnlySpan<Char> span) => span.Split(Path.DirectorySeparatorChar);
 	}
 }
