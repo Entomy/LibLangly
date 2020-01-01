@@ -13,9 +13,6 @@ namespace Benchmarks.Extensions {
 		public String String { get; set; }
 
 		[Benchmark]
-		public Boolean String_IsPalindrome() => String.IsPalindrome();
-
-		[Benchmark]
-		public Boolean Span_IsPalindrome() => String.AsSpan().IsPalindrome();
+		public Boolean IsPalindrome() => String.IsPalindrome();
 	}
 }
