@@ -22,9 +22,13 @@ namespace Benchmarks.Patterns {
 
 		public static readonly PcreRegex pcreregexCompiled = new PcreRegex("^Hello World", PcreOptions.Compiled);
 
-		public static readonly Parser<Char, String> pidgin = Parser.String("Hello").Then(Parser.Char(' ')).Then(Parser.String("World"));
+		public static readonly Parser<Char, String> pidgin = Parser.Map((first, second, third) => first + second + third, Parser.String("Hello"), Parser.Char(' '), Parser.String("World"));
 
-		public static readonly Sprache.Parser<String> sprache = Parse.String("Hello").Then(_ => Parse.Char(' ')).Then(_ => Parse.String("World")).Text();
+		public static readonly Sprache.Parser<String> sprache =
+			from first in Parse.String("Hello").Text()
+			from second in Parse.Char(' ')
+			from third in Parse.String("World").Text()
+			select first + second + third;
 
 		public static readonly Pattern stringier = "Hello".Then(' ').Then("World");
 
