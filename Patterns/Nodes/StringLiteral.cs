@@ -45,9 +45,7 @@ namespace Stringier.Patterns.Nodes {
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
 		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="System.String"/>.</param>
 		/// <param name="trace">The <see cref="ITrace"/> to record steps in.</param>
-		internal override void Consume(ref Source source, ref Result result, ITrace? trace) {
-			String.Consume(ref source, ref result, ComparisonType, trace);
-		}
+		internal override void Consume(ref Source source, ref Result result, ITrace? trace) => String.Consume(ref source, ref result, ComparisonType, trace);
 
 		/// <summary>
 		/// Call the Neglect parser of this <see cref="Pattern"/> on the <paramref name="source"/> with the <paramref name="result"/>.

@@ -2567,6 +2567,51 @@
   
   
   <a id="Stringier_StringierExtensions_Lines_" data-uid="Stringier.StringierExtensions.Lines*"></a>
+  <h4 id="Stringier_StringierExtensions_Lines_ReadOnlySpan_System_Char__" data-uid="Stringier.StringierExtensions.Lines(ReadOnlySpan{System.Char})">Lines(ReadOnlySpan&lt;Char&gt;)</h4>
+  <div class="markdown level1 summary"><p>Separate the <code data-dev-comment-type="paramref" class="paramref">span</code> into its lines.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string[] Lines(this ReadOnlySpan&lt;char&gt; span)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ReadOnlySpan</span>&lt;<span class="xref">System.Char</span>&gt;</td>
+        <td><span class="parametername">span</span></td>
+        <td><p>Span to separate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><p>Array of lines within the <code data-dev-comment-type="paramref" class="paramref">span</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_StringierExtensions_Lines_" data-uid="Stringier.StringierExtensions.Lines*"></a>
   <h4 id="Stringier_StringierExtensions_Lines_System_String_" data-uid="Stringier.StringierExtensions.Lines(System.String)">Lines(String)</h4>
   <div class="markdown level1 summary"><p>Separate the <code data-dev-comment-type="paramref" class="paramref">string</code> into its lines.</p>
 </div>
@@ -3205,6 +3250,108 @@
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><p>A <span class="xref">System.String</span> containing the repeated <code data-dev-comment-type="paramref" class="paramref">string</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_StringierExtensions_Split_" data-uid="Stringier.StringierExtensions.Split*"></a>
+  <h4 id="Stringier_StringierExtensions_Split_ReadOnlySpan_System_Char__System_Char___" data-uid="Stringier.StringierExtensions.Split(ReadOnlySpan{System.Char},System.Char[])">Split(ReadOnlySpan&lt;Char&gt;, Char[])</h4>
+  <div class="markdown level1 summary"><p>Splits a span into substrings that are based on the characters in the separator array.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string[] Split(this ReadOnlySpan&lt;char&gt; span, params char[] separator)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ReadOnlySpan</span>&lt;<span class="xref">System.Char</span>&gt;</td>
+        <td><span class="parametername">span</span></td>
+        <td><p>The span to split.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Char</span>[]</td>
+        <td><span class="parametername">separator</span></td>
+        <td><p>A character array that delimits the substrings in this string, an empty array that contains no delimiters, or <span class="xref">null</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><p>An array whose elements contain the substrings from this instance that are delimited by one or more characters in <code data-dev-comment-type="paramref" class="paramref">separator</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_StringierExtensions_Split_" data-uid="Stringier.StringierExtensions.Split*"></a>
+  <h4 id="Stringier_StringierExtensions_Split_ReadOnlySpan_System_Char__System_String___" data-uid="Stringier.StringierExtensions.Split(ReadOnlySpan{System.Char},System.String[])">Split(ReadOnlySpan&lt;Char&gt;, String[])</h4>
+  <div class="markdown level1 summary"><p>Splits a string into substrings based on the strings in an array.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string[] Split(this ReadOnlySpan&lt;char&gt; span, params string[] separator)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ReadOnlySpan</span>&lt;<span class="xref">System.Char</span>&gt;</td>
+        <td><span class="parametername">span</span></td>
+        <td><p>The span to split.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><span class="parametername">separator</span></td>
+        <td><p>A string array that delimits the substrings in this string, an empty array that contains no delimiters, or null.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><p>A string array that delimits the substrings in this string, an empty array that contains no delimiters, or null.</p>
 </td>
       </tr>
     </tbody>

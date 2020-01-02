@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 using Stringier.Patterns.Debugging;
 using Stringier.Patterns.Errors;
 using Stringier.Patterns.Nodes;
@@ -255,6 +256,7 @@ namespace Stringier.Patterns {
 		/// <param name="other">The <see cref="String"/> to compare to this instance.</param>
 		/// <param name="comparisonType">Whether the comparison is sensitive to casing.</param>
 		/// <returns><c>Compare.CaseSensitive</c> if the value of the <paramref name="other"/> parameter is the same as this string; otherwise, <c>false</c>.</returns>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static Boolean Equals(this String @string, String other, Compare comparisonType) {
 			switch (comparisonType) {
 			case Compare.NoPreference:
@@ -274,6 +276,7 @@ namespace Stringier.Patterns {
 		/// <param name="other">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to compare to this instance.</param>
 		/// <param name="comparisonType">Whether the comparison is sensitive to casing.</param>
 		/// <returns><c>Compare.CaseSensitive</c> if the value of the <paramref name="other"/> parameter is the same as this string; otherwise, <c>false</c>.</returns>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static Boolean Equals(this String @string, ReadOnlySpan<Char> other, Compare comparisonType) {
 			switch (comparisonType) {
 			case Compare.NoPreference:
@@ -293,6 +296,7 @@ namespace Stringier.Patterns {
 		/// <param name="other">The <see cref="String"/> to compare to this instance.</param>
 		/// <param name="comparisonType">Whether the comparison is sensitive to casing.</param>
 		/// <returns><c>Compare.CaseSensitive</c> if the value of the <paramref name="other"/> parameter is the same as this string; otherwise, <c>false</c>.</returns>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static Boolean Equals(this ReadOnlySpan<Char> span, String other, Compare comparisonType) {
 			switch (comparisonType) {
 			case Compare.NoPreference:
@@ -312,6 +316,7 @@ namespace Stringier.Patterns {
 		/// <param name="other">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to compare to this instance.</param>
 		/// <param name="comparisonType">Whether the comparison is sensitive to casing.</param>
 		/// <returns><c>Compare.CaseSensitive</c> if the value of the <paramref name="other"/> parameter is the same as this string; otherwise, <c>false</c>.</returns>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static Boolean Equals(this ReadOnlySpan<Char> span, ReadOnlySpan<Char> other, Compare comparisonType) {
 			switch (comparisonType) {
 			case Compare.NoPreference:
