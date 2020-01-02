@@ -213,6 +213,7 @@ namespace Stringier.Patterns {
 		/// </remarks>
 		/// <param name="source">The <see cref="Source"/> to check against</param>
 		/// <returns><c>Compare.CaseSensitive</c> if this <paramref name="pattern"/> may be present, <c>false</c> if definately not.</returns>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static Boolean CheckHeader(this String pattern, ref Source source) => pattern[0].CheckHeader(ref source);
 
 		/// <summary>
@@ -221,6 +222,7 @@ namespace Stringier.Patterns {
 		/// <param name="pattern">The <see cref="Char"/> pattern.</param>
 		/// <param name="source">The <see cref="Source"/> to consume from.</param>
 		/// <param name="result">The <see cref="Result"/> to store the result into.</param>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void Consume(this String pattern, ref Source source, ref Result result) => pattern.Consume(ref source, ref result, Compare.CaseSensitive, null);
 
 		/// <summary>
@@ -231,6 +233,7 @@ namespace Stringier.Patterns {
 		/// <param name="result">The <see cref="Result"/> to store the result into.</param>
 		/// <param name="comparisonType">Whether the comparison is sensitive to casing.</param>
 		/// <param name="trace">The <see cref="ITrace"/> to record steps in.</param>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void Consume(this String pattern, ref Source source, ref Result result, Compare comparisonType, ITrace? trace) {
 			if (pattern.Length > source.Length) {
 				result.Error.Set(ErrorType.EndOfSource, pattern);
@@ -334,7 +337,8 @@ namespace Stringier.Patterns {
 		/// </summary>
 		/// <param name="pattern">The <see cref="Char"/> pattern.</param>
 		/// <param name="source">The <see cref="Source"/> to neglect from.</param>
-		/// <param name="result">The <see cref="Result"/> to store the result into.</param
+		/// <param name="result">The <see cref="Result"/> to store the result into.</param>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void Neglect(this String pattern, ref Source source, ref Result result) => pattern.Neglect(ref source, ref result, Compare.CaseSensitive, null);
 
 		/// <summary>
@@ -345,6 +349,7 @@ namespace Stringier.Patterns {
 		/// <param name="result">The <see cref="Result"/> to store the result into.</param>
 		/// <param name="comparisonType">Whether the comparison is sensitive to casing.</param>
 		/// <param name="trace">The <see cref="ITrace"/> to record steps in.</param>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void Neglect(this String pattern, ref Source source, ref Result result, Compare comparisonType, ITrace? trace) {
 			if (pattern.Length > source.Length) {
 				result.Error.Set(ErrorType.EndOfSource, pattern);
