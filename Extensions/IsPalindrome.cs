@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using System.Text;
 
 namespace Stringier {
 	public static partial class StringierExtensions {
@@ -18,13 +17,14 @@ namespace Stringier {
 		/// <returns><see langword="true"/> if <paramref name="span"/> is a palindrome; otherwise, <see langword="false"/>.</returns>
 		public static Boolean IsPalindrome(this ReadOnlySpan<Char> span) {
 			// First we need to build the string without any punctuation or whitespace or any other unrelated-to-reading characters
-			StringBuilder builder = new StringBuilder(span.Length);
+			Char[] builder = new Char[span.Length];
+			Int32 b = 0;
 			foreach (Char s in span) {
 				if (!(s.IsControl() || s.IsPunctuation() || s.IsSeparator() || s.IsSymbol() || s.IsWhiteSpace())) {
-					_ = builder.Append(s);
+					builder[b++] = s;
 				}
 			}
-			String prepped = builder.ToString();
+			String prepped = new String(builder, 0, b);
 			String reversed = prepped.Reverse().Join();
 			// Now actually check it's a palindrome
 			return String.Equals(prepped, reversed, StringComparison.CurrentCultureIgnoreCase);
