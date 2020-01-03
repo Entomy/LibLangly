@@ -1,5 +1,4 @@
 ﻿using System;
-using Benchmarks.Collections;
 using Benchmarks.Extensions;
 using Benchmarks.Metrics;
 using Benchmarks.Patterns;
@@ -23,7 +22,6 @@ namespace Benchmarks {
 					Console.WriteChoices(PatternsChoices);
 					Console.ReadChoice(PatternsChoices);
 				}),
-				new KeyChoice(ConsoleKey.D4, "StringBuilder", () => BenchmarkRunner.Run<StringBuilderBenchmarks>()),
 				new BackKeyChoice(ConsoleKey.Q, "Quit", () => Environment.Exit(0)));
 
 		internal readonly static KeyChoiceSet ExtensionsChoices = new KeyChoiceSet(" Enter Choice: ",
