@@ -52,7 +52,7 @@ namespace Benchmarks {
 			new KeyChoice(ConsoleKey.D3, "Concatenator", () => BenchmarkRunner.Run<ConcatenatorBenchmarks>()),
 			new KeyChoice(ConsoleKey.D4, "Kleene's Closure", () => BenchmarkRunner.Run<KleeneClosureBenchmarks>()),
 			new KeyChoice(ConsoleKey.D5, "Fuzzer", () => BenchmarkRunner.Run<FuzzerBenchmarks>()),
-			new KeyChoice(ConsoleKey.D6, "Negator", () => BenchmarkRunner.Run<NegatorComparison>()),
+			new KeyChoice(ConsoleKey.D6, "Negator", () => BenchmarkRunner.Run<NegatorBenchmarks>()),
 			new KeyChoice(ConsoleKey.D7, "Optor", () => BenchmarkRunner.Run<OptorBenchmarks>()),
 			new KeyChoice(ConsoleKey.D8, "Ranger", () => BenchmarkRunner.Run<RangerBenchmarks>()),
 			new KeyChoice(ConsoleKey.D9, "Repeater", () => BenchmarkRunner.Run<RepeaterBenchmarks>()),

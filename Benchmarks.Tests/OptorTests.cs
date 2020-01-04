@@ -21,15 +21,16 @@ namespace Benchmarks {
 
 		[TestMethod]
 		public void Sprache() {
-			IOption<String> result;
+			IResult<IOption<String>> result;
 
-			result = sprache.Parse("Hello");
-			Assert.IsTrue(result.IsDefined);
-			Assert.AreEqual("Hello", result.Get());
+			result = sprache.TryParse("Hello");
+			Assert.IsTrue(result.WasSuccessful);
+			Assert.IsTrue(result.Value.IsDefined);
+			Assert.AreEqual("Hello", result.Value.Get());
 
-			result = sprache.Parse("World");
-			Assert.IsFalse(result.IsDefined);
-			Assert.AreEqual("Failed", result.GetOrElse("Failed"));
+			result = sprache.TryParse("World");
+			Assert.IsTrue(result.WasSuccessful);
+			Assert.IsFalse(result.Value.IsDefined);
 		}
 	}
 }
