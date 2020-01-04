@@ -43,7 +43,7 @@ namespace Stringier.Patterns.Nodes {
 		/// <param name="trace">The <see cref="ITrace"/> to record steps in.</param>
 		internal override void Consume(ref Source source, ref Result result, ITrace? trace) {
 			if (source.EOF) {
-				trace?.Collect(ErrorType.EndOfSource);
+				trace?.Collect(ErrorType.EndOfSource, source.Position);
 				result.Error.Set(ErrorType.EndOfSource, this);
 				return;
 			}
@@ -91,7 +91,7 @@ namespace Stringier.Patterns.Nodes {
 				break;
 			default:
 				result.Error.Set(ErrorType.ConsumeFailed, this);
-				trace?.Collect(result.Error);
+				trace?.Collect(result.Error, source.Position);
 				return;
 			}
 		Done:
@@ -108,7 +108,7 @@ namespace Stringier.Patterns.Nodes {
 		/// <param name="trace">The <see cref="ITrace"/> to record steps in.</param>
 		internal override void Neglect(ref Source source, ref Result result, ITrace? trace) {
 			if (source.EOF) {
-				trace?.Collect(ErrorType.EndOfSource);
+				trace?.Collect(ErrorType.EndOfSource, source.Position);
 				result.Error.Set(ErrorType.EndOfSource, this);
 				return;
 			}
@@ -121,7 +121,7 @@ namespace Stringier.Patterns.Nodes {
 			case '\u2028':
 			case '\u2029':
 				result.Error.Set(ErrorType.NeglectFailed, this);
-				trace?.Collect(result.Error);
+				trace?.Collect(result.Error, source.Position);
 				break;
 			default:
 				trace?.Collect(source.Peek(), source.Position);

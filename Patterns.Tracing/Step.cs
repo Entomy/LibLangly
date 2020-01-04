@@ -15,8 +15,18 @@ namespace Stringier.Patterns.Debugging {
 			Position = position;
 		}
 
-		internal Step(ErrorType errorType) {
+		internal Step(ErrorType errorType, Int32 position) {
 			ErrorType = errorType;
+			Position = position;
+		}
+
+		public override String ToString() {
+			switch (ErrorType) {
+			case ErrorType.None:
+				return $"{Text}";
+			default:
+				return $"ERROR: {ErrorType}";
+			}
 		}
 	}
 }

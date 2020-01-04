@@ -18,8 +18,6 @@ namespace ptndbg {
 
 		private enum Combinator { Or, Repeat, Then }
 
-		private enum Modifier { None, Many, Maybe, Not }
-
 		[SuppressMessage("Minor Code Smell", "S3626:Jump statements should not be redundant", Justification = "This is a complex method which makes use of goto's. The 'redundant' gotos actually improve readability, as weird as that sounds, in the context of this method.")]
 		public static Pattern GetPattern() {
 			//The the pattern expression text

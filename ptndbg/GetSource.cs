@@ -6,7 +6,7 @@ using Stringier.Patterns;
 namespace ptndbg {
 	public static partial class Program {
 		public static Source GetSource() {
-			Console.WriteLine("Enter <EOF> when done", ConsoleColor.DarkBlue);
+			Console.WriteLine("Enter <EOF> on a new line when done", ConsoleColor.Blue);
 			StringBuilder sourceText = new StringBuilder();
 		GetLine:
 			String line = Console.ReadLine(" Source: ", ConsoleColor.Yellow, ConsoleColor.White);

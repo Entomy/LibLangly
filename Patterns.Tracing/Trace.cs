@@ -31,7 +31,7 @@ namespace Stringier.Patterns.Debugging {
 		/// Collect the parameters as a trace step.
 		/// </summary>
 		/// <param name="errorType"
-		public void Collect(ErrorType errorType) => Steps.Add(new Step(errorType));
+		public void Collect(ErrorType errorType, Int32 position) => Steps.Add(new Step(errorType, position));
 
 		IEnumerator<IStep> IEnumerable<IStep>.GetEnumerator() => ((IEnumerable<IStep>)Steps).GetEnumerator();
 

@@ -53,12 +53,12 @@ namespace Stringier.Patterns.Nodes {
 		internal override void Consume(ref Source source, ref Result result, ITrace? trace) {
 			if (source.EOF) {
 				result.Error.Set(ErrorType.EndOfSource, this);
-				trace?.Collect(result.Error);
+				trace?.Collect(result.Error, source.Position);
 			} else {
 				for (Int32 i = 0; i < Count; i++) {
 					if (source.EOF) {
 						result.Error.Set(ErrorType.ConsumeFailed, this);
-						trace?.Collect(result.Error);
+						trace?.Collect(result.Error, source.Position);
 						break;
 					}
 					Char Char;
@@ -69,7 +69,7 @@ namespace Stringier.Patterns.Nodes {
 						result.Error.Clear();
 					} else {
 						result.Error.Set(ErrorType.ConsumeFailed, this);
-						trace?.Collect(result.Error);
+						trace?.Collect(result.Error, source.Position);
 						break;
 					}
 				}
@@ -85,12 +85,12 @@ namespace Stringier.Patterns.Nodes {
 		internal override void Neglect(ref Source source, ref Result result, ITrace? trace) {
 			if (source.EOF) {
 				result.Error.Set(ErrorType.EndOfSource, this);
-				trace?.Collect(result.Error);
+				trace?.Collect(result.Error, source.Position);
 			} else {
 				for (Int32 i = 0; i < Count; i++) {
 					if (source.EOF) {
 						result.Error.Set(ErrorType.NeglectFailed, this);
-						trace?.Collect(result.Error);
+						trace?.Collect(result.Error, source.Position);
 						break;
 					}
 					Char Char;
@@ -101,7 +101,7 @@ namespace Stringier.Patterns.Nodes {
 						result.Error.Clear();
 					} else {
 						result.Error.Set(ErrorType.NeglectFailed, this);
-						trace?.Collect(result.Error);
+						trace?.Collect(result.Error, source.Position);
 						break;
 					}
 				}

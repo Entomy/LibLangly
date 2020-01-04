@@ -24,6 +24,6 @@ namespace Stringier.Patterns.Debugging {
 		/// Collect the parameters as a trace step.
 		/// </summary>
 		/// <param name="error">The error to collect data from.</param>
-		internal static void Collect(this ITrace trace, Error error) => trace.Collect(error.Type);
+		internal static void Collect(this ITrace trace, Error error, Int32 position) => trace.Collect(error.Type, position);
 	}
 }
