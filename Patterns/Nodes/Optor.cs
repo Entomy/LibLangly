@@ -37,7 +37,7 @@ namespace Stringier.Patterns.Nodes {
 		/// <param name="trace">The <see cref="ITrace"/> to record steps in.</param>
 		internal override void Consume(ref Source source, ref Result result, ITrace? trace) {
 			Pattern.Consume(ref source, ref result, trace);
-			result.Error.Clear(); //If a pattern is optional, it doesn't matter if it's there or not, so we never actually have an error
+			result.Error = Error.None; //If a pattern is optional, it doesn't matter if it's there or not, so we never actually have an error
 		}
 
 		/// <summary>
@@ -48,7 +48,7 @@ namespace Stringier.Patterns.Nodes {
 		/// <param name="trace">The <see cref="ITrace"/> to record steps in.</param>
 		internal override void Neglect(ref Source source, ref Result result, ITrace? trace) {
 			Pattern.Neglect(ref source, ref result, trace);
-			result.Error.Clear(); //If a pattern is optional, it doesn't matter if it's there or not, so we never actually have an error
+			result.Error = Error.None; //If a pattern is optional, it doesn't matter if it's there or not, so we never actually have an error
 		}
 
 		#region Optor

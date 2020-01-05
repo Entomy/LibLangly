@@ -60,7 +60,7 @@ namespace Stringier.Patterns.Nodes {
 					result.Length = OriginalLength;
 				}
 			}
-			result.Error.Clear(); //As long as the first pattern matched, this consume is successful; we just stop on the eventual fail
+			result.Error = Error.None; //As long as the first pattern matched, this consume is successful; we just stop on the eventual fail
 		}
 
 		/// <summary>
@@ -79,7 +79,7 @@ namespace Stringier.Patterns.Nodes {
 			while (result) {
 				Pattern.Neglect(ref source, ref result, trace);
 			}
-			result.Error.Clear(); //As long as the first pattern matched, this consume is successful; we just stop on the eventual fail
+			result.Error = Error.None; //As long as the first pattern matched, this consume is successful; we just stop on the eventual fail
 		}
 
 		#region Optor

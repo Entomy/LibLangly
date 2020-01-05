@@ -1,6 +1,5 @@
 ﻿using System;
 using Stringier.Patterns.Debugging;
-using Stringier.Patterns.Errors;
 
 namespace Stringier.Patterns.Nodes {
 	/// <summary>
@@ -43,8 +42,8 @@ namespace Stringier.Patterns.Nodes {
 		/// <param name="trace">The <see cref="ITrace"/> to record steps in.</param>
 		internal override void Consume(ref Source source, ref Result result, ITrace? trace) {
 			if (source.EOF) {
-				trace?.Collect(ErrorType.EndOfSource, source.Position);
-				result.Error.Set(ErrorType.EndOfSource, this);
+				trace?.Collect(Error.EndOfSource, source.Position);
+				result.Error = Error.EndOfSource;
 				return;
 			}
 			switch (source.Peek()) {
@@ -90,7 +89,7 @@ namespace Stringier.Patterns.Nodes {
 				trace?.Collect('\u2029', source.Position);
 				break;
 			default:
-				result.Error.Set(ErrorType.ConsumeFailed, this);
+				result.Error = Error.ConsumeFailed;
 				trace?.Collect(result.Error, source.Position);
 				return;
 			}
@@ -108,8 +107,8 @@ namespace Stringier.Patterns.Nodes {
 		/// <param name="trace">The <see cref="ITrace"/> to record steps in.</param>
 		internal override void Neglect(ref Source source, ref Result result, ITrace? trace) {
 			if (source.EOF) {
-				trace?.Collect(ErrorType.EndOfSource, source.Position);
-				result.Error.Set(ErrorType.EndOfSource, this);
+				result.Error = Error.EndOfSource;
+				trace?.Collect(result.Error, source.Position);
 				return;
 			}
 			switch (source.Peek()) {
@@ -120,7 +119,7 @@ namespace Stringier.Patterns.Nodes {
 			case '\u0085':
 			case '\u2028':
 			case '\u2029':
-				result.Error.Set(ErrorType.NeglectFailed, this);
+				result.Error = Error.NeglectFailed;
 				trace?.Collect(result.Error, source.Position);
 				break;
 			default:

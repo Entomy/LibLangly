@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using Stringier.Patterns.Debugging;
-using Stringier.Patterns.Errors;
 using static Stringier.Metrics;
 
 namespace Stringier.Patterns.Nodes {
@@ -51,7 +50,7 @@ namespace Stringier.Patterns.Nodes {
 		/// <param name="trace">The <see cref="ITrace"/> to record steps in.</param>
 		internal override void Consume(ref Source source, ref Result result, ITrace? trace) {
 			if (source.EOF) {
-				result.Error.Set(ErrorType.EndOfSource, this);
+				result.Error = Error.EndOfSource;
 				trace?.Collect(result.Error, source.Position);
 			}
 			ReadOnlySpan<Char> Peek = source.Peek(String.Length);
@@ -59,9 +58,9 @@ namespace Stringier.Patterns.Nodes {
 				trace?.Collect(Peek, source.Position);
 				source.Position += String.Length;
 				result.Length += String.Length;
-				result.Error.Clear();
+				result.Error = Error.None;
 			} else {
-				result.Error.Set(ErrorType.ConsumeFailed, this);
+				result.Error = Error.ConsumeFailed;
 				trace?.Collect(result.Error, source.Position);
 			}
 		}
@@ -74,7 +73,7 @@ namespace Stringier.Patterns.Nodes {
 		/// <param name="trace">The <see cref="ITrace"/> to record steps in.</param>
 		internal override void Neglect(ref Source source, ref Result result, ITrace? trace) {
 			if (source.EOF) {
-				result.Error.Set(ErrorType.EndOfSource, this);
+				result.Error = Error.EndOfSource;
 				trace?.Collect(result.Error, source.Position);
 			}
 			ReadOnlySpan<Char> Peek = source.Peek(String.Length);
@@ -82,9 +81,9 @@ namespace Stringier.Patterns.Nodes {
 				trace?.Collect(Peek, source.Position);
 				source.Position += String.Length;
 				result.Length += String.Length;
-				result.Error.Clear();
+				result.Error = Error.None;
 			} else {
-				result.Error.Set(ErrorType.NeglectFailed, this);
+				result.Error = Error.NeglectFailed;
 				trace?.Collect(result.Error, source.Position);
 			}
 		}

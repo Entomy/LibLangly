@@ -1,5 +1,5 @@
 ﻿using System;
-using Stringier.Patterns.Errors;
+using Stringier.Patterns.Debugging;
 
 namespace Stringier.Patterns {
 	/// <summary>
@@ -16,7 +16,7 @@ namespace Stringier.Patterns {
 		internal readonly Int32 Start;
 
 		/// <summary>
-		/// Whether any <see cref="Error"/> occured during parsing; <see cref="ErrorType.None"/> is successful.
+		/// Whether any <see cref="Debugging.Error"/> occured during parsing; <see cref="Error.None"/> is successful.
 		/// </summary>
 		internal Error Error;
 
@@ -30,7 +30,7 @@ namespace Stringier.Patterns {
 		/// </summary>
 		/// <param name="source">The <see cref="Patterns.Source"/> this <see cref="Result"/> is coming from.</param>
 		internal Result(ref Source source) {
-			Error = new Error();
+			Error = Error.None;
 			Source = source;
 			Start = source.Position;
 			Length = 0;
@@ -48,7 +48,7 @@ namespace Stringier.Patterns {
 		/// Whether the parsing was successful.
 		/// </summary>
 		/// <returns><c>true</c> if successful; otherwise, <c>false</c></returns>
-		public Boolean Success => Error.Type == ErrorType.None;
+		public Boolean Success => Error == Error.None;
 
 		public static implicit operator Boolean(Result result) => result.Success;
 
@@ -107,7 +107,7 @@ namespace Stringier.Patterns {
 		public override Int32 GetHashCode() => Source.GetHashCode() ^ Start.GetHashCode();
 
 		/// <summary>
-		/// Throw a <see cref="ParserException"/> based on the error that occured, if any
+		/// Throw a <see cref="ParserException"/> based on the error that occured, if any.
 		/// </summary>
 		public void ThrowException() => Error.Throw();
 

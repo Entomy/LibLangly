@@ -2,7 +2,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Text.RegularExpressions;
 using Stringier.Patterns.Debugging;
-using Stringier.Patterns.Errors;
 
 namespace Stringier.Patterns.Nodes {
 	/// <summary>
@@ -43,7 +42,7 @@ namespace Stringier.Patterns.Nodes {
 				source.Position += Match.Length;
 				result.Length += Match.Length;
 			} else {
-				result.Error.Set(ErrorType.ConsumeFailed, this);
+				result.Error = Error.ConsumeFailed;
 			}
 		}
 

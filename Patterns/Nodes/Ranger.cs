@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using Stringier.Patterns.Debugging;
-using Stringier.Patterns.Errors;
 
 namespace Stringier.Patterns.Nodes {
 	/// <summary>
@@ -48,7 +47,7 @@ namespace Stringier.Patterns.Nodes {
 		internal override void Consume(ref Source source, ref Result result, ITrace? trace) {
 			From.Consume(ref source, ref result, trace);
 			if (!result) {
-				result.Error.Set(ErrorType.ConsumeFailed, From);
+				result.Error = Error.ConsumeFailed;
 				return;
 			}
 			To.Consume(ref source, ref result, trace);
@@ -61,7 +60,7 @@ namespace Stringier.Patterns.Nodes {
 				}
 			}
 			if (!result) {
-				result.Error.Set(ErrorType.EndOfSource, To);
+				result.Error = Error.EndOfSource;
 			}
 		}
 

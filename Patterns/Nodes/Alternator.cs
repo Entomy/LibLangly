@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using Stringier.Patterns.Debugging;
-using Stringier.Patterns.Errors;
 
 namespace Stringier.Patterns.Nodes {
 	/// <summary>
@@ -49,7 +48,7 @@ namespace Stringier.Patterns.Nodes {
 			Left.Consume(ref source, ref result);
 			if (!result) {
 				Error Error = result.Error; //Store the error
-				result.Error.Clear();
+				result.Error = Error.None;
 				Right.Consume(ref source, ref result, trace);
 				if (!result) {
 					result.Error = Error; //Resassign the first error, since both failed, but we want to be clear of that

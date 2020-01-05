@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using Stringier.Patterns.Debugging;
-using Stringier.Patterns.Errors;
 
 namespace Stringier.Patterns.Nodes {
 	/// <summary>
@@ -51,16 +50,16 @@ namespace Stringier.Patterns.Nodes {
 		/// <param name="trace">The <see cref="ITrace"/> to record steps in.</param>
 		internal override void Consume(ref Source source, ref Result result, ITrace? trace) {
 			if (source.EOF) {
-				result.Error.Set(ErrorType.EndOfSource, this);
+				result.Error = Error.EndOfSource;
 				trace?.Collect(result.Error, source.Position);
 			} else {
 				if (Left(source.Peek()) || Right(source.Peek())) {
 					trace?.Collect(result.Error, source.Position);
 					source.Position++;
 					result.Length++;
-					result.Error.Clear();
+					result.Error = Error.None;
 				} else {
-					result.Error.Set(ErrorType.ConsumeFailed, this);
+					result.Error = Error.ConsumeFailed;
 					trace?.Collect(result.Error, source.Position);
 				}
 			}
@@ -74,16 +73,16 @@ namespace Stringier.Patterns.Nodes {
 		/// <param name="trace">The <see cref="ITrace"/> to record steps in.</param>
 		internal override void Neglect(ref Source source, ref Result result, ITrace? trace) {
 			if (source.EOF) {
-				result.Error.Set(ErrorType.EndOfSource, this);
+				result.Error = Error.EndOfSource;
 				trace?.Collect(result.Error, source.Position);
 			} else {
 				if (!Left(source.Peek()) && !Right(source.Peek())) {
 					trace?.Collect(result.Error, source.Position);
 					source.Position++;
 					result.Length++;
-					result.Error.Clear();
+					result.Error = Error.None;
 				} else {
-					result.Error.Set(ErrorType.NeglectFailed, this);
+					result.Error = Error.NeglectFailed;
 					trace?.Collect(result.Error, source.Position);
 				}
 			}

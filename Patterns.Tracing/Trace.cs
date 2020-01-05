@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using Stringier.Patterns.Errors;
 
 namespace Stringier.Patterns.Debugging {
 	/// <summary>
@@ -31,7 +30,7 @@ namespace Stringier.Patterns.Debugging {
 		/// Collect the parameters as a trace step.
 		/// </summary>
 		/// <param name="errorType"
-		public void Collect(ErrorType errorType, Int32 position) => Steps.Add(new Step(errorType, position));
+		public void Collect(Error error, Int32 position) => Steps.Add(new Step(error, position));
 
 		IEnumerator<IStep> IEnumerable<IStep>.GetEnumerator() => ((IEnumerable<IStep>)Steps).GetEnumerator();
 

@@ -52,7 +52,7 @@ namespace Stringier.Patterns.Nodes {
 					result.Length = OriginalLength;
 				}
 			}
-			result.Error.Clear(); //If a pattern is optional, it doesn't matter if it's there or not, so we never actually have an error
+			result.Error = Error.None; //If a pattern is optional, it doesn't matter if it's there or not, so we never actually have an error
 		}
 
 		/// <summary>
@@ -66,7 +66,7 @@ namespace Stringier.Patterns.Nodes {
 			while (result) {
 				Pattern.Neglect(ref source, ref result, trace);
 			}
-			result.Error.Clear(); //As long as the first pattern matched, this consume is successful; we just stop on the eventual fail
+			result.Error = Error.None; //As long as the first pattern matched, this consume is successful; we just stop on the eventual fail
 		}
 	}
 }
