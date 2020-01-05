@@ -1,5 +1,4 @@
 ﻿using System;
-using Stringier.Patterns.Errors;
 using Stringier.Patterns.Debugging;
 
 namespace Stringier.Patterns.Nodes {
@@ -50,7 +49,7 @@ namespace Stringier.Patterns.Nodes {
 				}
 			}
 			if (Level != 0) {
-				result.Error.Set(ErrorType.ConsumeFailed, this);
+				result.Error = Error.ConsumeFailed;
 			}
 		}
 	}

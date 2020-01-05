@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using Stringier.Patterns.Debugging;
-using Stringier.Patterns.Errors;
 
 namespace Stringier.Patterns.Nodes {
 	/// <summary>
@@ -67,7 +66,7 @@ namespace Stringier.Patterns.Nodes {
 		internal override void Consume(ref Source source, ref Result result, ITrace? trace) {
 			//If we reached the end of the source we have an error
 			if (source.EOF) {
-				result.Error.Set(ErrorType.EndOfSource, this);
+				result.Error = Error.EndOfSource;
 				return;
 			}
 			//Now do the appropriate parse
@@ -92,7 +91,7 @@ namespace Stringier.Patterns.Nodes {
 				FoundBias = true;
 			} else {
 				//The head wasn't found so set the error
-				Result.Error.Set(ErrorType.ConsumeFailed, this);
+				Result.Error = Error.ConsumeFailed;
 				return;
 			}
 			//Now deal with the entire body
@@ -137,7 +136,7 @@ namespace Stringier.Patterns.Nodes {
 							Result.Length++;
 						} else {
 							//If it's not, set the error
-							Result.Error.Set(ErrorType.ConsumeFailed, this);
+							Result.Error = Error.ConsumeFailed;
 						}
 					}
 					return;
@@ -145,7 +144,7 @@ namespace Stringier.Patterns.Nodes {
 					//If it's not, have we found the bias?
 					if (!FoundBias) {
 						//We haven't so set the error
-						Result.Error.Set(ErrorType.ConsumeFailed, this);
+						Result.Error = Error.ConsumeFailed;
 					}
 					return;
 				}
@@ -168,7 +167,7 @@ namespace Stringier.Patterns.Nodes {
 					return;
 				} else {
 					//If it's not, set the error
-					Result.Error.Set(ErrorType.ConsumeFailed, this);
+					Result.Error = Error.ConsumeFailed;
 					return;
 				}
 			}
@@ -212,7 +211,7 @@ namespace Stringier.Patterns.Nodes {
 					goto TailCheck;
 				} else {
 					//The tail wasn't found so set the error
-					Result.Error.Set(ErrorType.ConsumeFailed, this);
+					Result.Error = Error.ConsumeFailed;
 					return;
 				}
 			}

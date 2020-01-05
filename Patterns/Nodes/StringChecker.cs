@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using Stringier.Patterns.Debugging;
-using Stringier.Patterns.Errors;
 
 namespace Stringier.Patterns.Nodes {
 	/// <summary>
@@ -120,7 +119,7 @@ namespace Stringier.Patterns.Nodes {
 			if ((HeadRequired && BodyRequired && TailRequired && result.Length < 3) //If all three are required, the length must be at least 3
 			|| (!(HeadRequired ^ BodyRequired ^ TailRequired) && result.Length < 2) //If two are required, the length must be at least 2
 			|| (HeadRequired ^ BodyRequired ^ TailRequired && result.Length < 1)) { //If only one is required, the length must be at least 1
-				result.Error.Set(ErrorType.ConsumeFailed, this);
+				result.Error = Error.ConsumeFailed;
 			}
 		}
 
@@ -129,7 +128,7 @@ namespace Stringier.Patterns.Nodes {
 			foundBody = false;
 			//If we reached the end of the source we have an error
 			if (source.EOF) {
-				result.Error.Set(ErrorType.EndOfSource, this);
+				result.Error = Error.EndOfSource;
 				return;
 			}
 			//Check for the head
@@ -139,7 +138,7 @@ namespace Stringier.Patterns.Nodes {
 				result.Length++;
 			} else {
 				//If it's not, we have an error
-				result.Error.Set(ErrorType.ConsumeFailed, this);
+				result.Error = Error.ConsumeFailed;
 				return;
 			}
 		}
@@ -149,7 +148,7 @@ namespace Stringier.Patterns.Nodes {
 			foundBody = false;
 			//If we reached the end of the source we have an error
 			if (source.EOF) {
-				result.Error.Set(ErrorType.EndOfSource, this);
+				result.Error = Error.EndOfSource;
 				return;
 			}
 			//The head isn't required, so we're going to check for the body first
@@ -158,7 +157,7 @@ namespace Stringier.Patterns.Nodes {
 				foundBody = true;
 			} else if (!HeadCheck(source.Peek())) {
 				//The head wasn't found, so we have an error
-				result.Error.Set(ErrorType.ConsumeFailed, this);
+				result.Error = Error.ConsumeFailed;
 				return;
 			} else {
 				//Just continue on. There's nothing unique we need to do here.
@@ -203,7 +202,7 @@ namespace Stringier.Patterns.Nodes {
 		private void ConsumeRequiredTail(ref Source source, ref Result result, in Boolean foundBody) {
 			//If we reached the end of the source we have an error
 			if (source.EOF) {
-				result.Error.Set(ErrorType.EndOfSource, this);
+				result.Error = Error.EndOfSource;
 				return;
 			}
 			//Check for the tail
@@ -211,7 +210,7 @@ namespace Stringier.Patterns.Nodes {
 				//Have we found the body earlier?
 				if (!foundBody) {
 					//If not, set the error
-					result.Error.Set(ErrorType.ConsumeFailed, this);
+					result.Error = Error.ConsumeFailed;
 					return;
 				}
 				//We found the tail, so advance
@@ -219,20 +218,20 @@ namespace Stringier.Patterns.Nodes {
 				result.Length++;
 			} else {
 				//No tail was found, so set the error
-				result.Error.Set(ErrorType.ConsumeFailed, this);
+				result.Error = Error.ConsumeFailed;
 			}
 		}
 
 		private void ConsumeOptionalTail(ref Source source, ref Result result, in Boolean foundBody) {
 			//If we reached the end of the source we have an error
 			if (source.EOF) {
-				result.Error.Set(ErrorType.EndOfSource, this);
+				result.Error = Error.EndOfSource;
 				return;
 			}
 			//Have we found the body earlier?
 			if (!foundBody) {
 				//If not, set the error
-				result.Error.Set(ErrorType.ConsumeFailed, this);
+				result.Error = Error.ConsumeFailed;
 				return;
 			}
 			// We never actually check for the tail, because it doesn't matter. When checking the body, it progressed as far as it could, and either is right in front of the tail, or reached the end of source and backtracked. Both situations have us right before the "tail", which is either actually the tail, or the last part of the body which needs to be reconsumed. So optimize out the check and just advance

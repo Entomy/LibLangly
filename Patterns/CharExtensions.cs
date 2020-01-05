@@ -1,6 +1,5 @@
 ﻿using System;
 using Stringier.Patterns.Debugging;
-using Stringier.Patterns.Errors;
 using Stringier.Patterns.Nodes;
 
 namespace Stringier.Patterns {
@@ -227,7 +226,7 @@ namespace Stringier.Patterns {
 		/// <param name="trace">The <see cref="ITrace"/> to record steps in.</param>
 		internal static void Consume(this Char pattern, ref Source source, ref Result result, Compare comparisonType, ITrace? trace) {
 			if (source.Length == 0) {
-				result.Error.Set(ErrorType.EndOfSource, pattern);
+				result.Error = Error.EndOfSource;
 				trace?.Collect(result.Error, source.Position);
 			} else {
 				Char Peek = source.Peek();
@@ -235,9 +234,9 @@ namespace Stringier.Patterns {
 					trace?.Collect(Peek, source.Position);
 					source.Position++;
 					result.Length++;
-					result.Error.Clear();
+					result.Error = Error.None;
 				} else {
-					result.Error.Set(ErrorType.ConsumeFailed, pattern);
+					result.Error = Error.ConsumeFailed;
 					trace?.Collect(result.Error, source.Position);
 				}
 			}
@@ -280,7 +279,7 @@ namespace Stringier.Patterns {
 		/// <param name="trace">The <see cref="ITrace"/> to record steps in.</param>
 		internal static void Neglect(this Char pattern, ref Source source, ref Result result, Compare comparisonType, ITrace? trace) {
 			if (source.Length == 0) {
-				result.Error.Set(ErrorType.EndOfSource, pattern);
+				result.Error = Error.EndOfSource;
 				trace?.Collect(result.Error, source.Position);
 			} else {
 				Char Peek = source.Peek();
@@ -288,9 +287,9 @@ namespace Stringier.Patterns {
 					trace?.Collect(Peek, source.Position);
 					source.Position++;
 					result.Length++;
-					result.Error.Clear();
+					result.Error = Error.None;
 				} else {
-					result.Error.Set(ErrorType.NeglectFailed, pattern);
+					result.Error = Error.NeglectFailed;
 					trace?.Collect(result.Error, source.Position);
 				}
 			}

@@ -1,12 +1,11 @@
 ﻿using System;
-using Stringier.Patterns.Errors;
 
 namespace Stringier.Patterns.Debugging {
 	/// <summary>
 	/// Represents a <see cref="Trace"/> step; a snapshot of execution.
 	/// </summary>
 	internal class Step : IStep {
-		public ErrorType ErrorType { get; }
+		public Error Error { get; }
 		public String Text { get; }
 		public Int32 Position { get; }
 
@@ -15,17 +14,17 @@ namespace Stringier.Patterns.Debugging {
 			Position = position;
 		}
 
-		internal Step(ErrorType errorType, Int32 position) {
-			ErrorType = errorType;
+		internal Step(Error error, Int32 position) {
+			Error = error;
 			Position = position;
 		}
 
 		public override String ToString() {
-			switch (ErrorType) {
-			case ErrorType.None:
+			switch (Error) {
+			case Error.None:
 				return $"{Text}";
 			default:
-				return $"ERROR: {ErrorType}";
+				return $"ERROR: {Error}";
 			}
 		}
 	}

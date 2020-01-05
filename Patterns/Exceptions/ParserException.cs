@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.Serialization;
+using Stringier;
 
 namespace Stringier.Patterns {
 	/// <summary>

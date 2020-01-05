@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using Stringier.Patterns.Errors;
 
 namespace Stringier.Patterns.Debugging {
 	/// <summary>
@@ -24,7 +23,7 @@ namespace Stringier.Patterns.Debugging {
 		/// <summary>
 		/// Collect the parameters as a trace step.
 		/// </summary>
-		/// <param name="errorType"></param>
-		public void Collect(ErrorType errorType, Int32 position);
+		/// <param name="error"></param>
+		public void Collect(Error error, Int32 position);
 	}
 }

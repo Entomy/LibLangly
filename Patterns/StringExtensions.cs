@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
 using Stringier.Patterns.Debugging;
-using Stringier.Patterns.Errors;
 using Stringier.Patterns.Nodes;
 
 namespace Stringier.Patterns {
@@ -236,7 +235,7 @@ namespace Stringier.Patterns {
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void Consume(this String pattern, ref Source source, ref Result result, Compare comparisonType, ITrace? trace) {
 			if (pattern.Length > source.Length) {
-				result.Error.Set(ErrorType.EndOfSource, pattern);
+				result.Error = Error.EndOfSource;
 				trace?.Collect(result.Error, source.Position);
 			} else {
 				ReadOnlySpan<Char> Peek = source.Peek(pattern.Length);
@@ -244,9 +243,9 @@ namespace Stringier.Patterns {
 					trace?.Collect(Peek, source.Position);
 					source.Position += Peek.Length;
 					result.Length += Peek.Length;
-					result.Error.Clear();
+					result.Error = Error.None;
 				} else {
-					result.Error.Set(ErrorType.ConsumeFailed, pattern);
+					result.Error = Error.ConsumeFailed;
 					trace?.Collect(result.Error, source.Position);
 				}
 			}
@@ -352,7 +351,7 @@ namespace Stringier.Patterns {
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void Neglect(this String pattern, ref Source source, ref Result result, Compare comparisonType, ITrace? trace) {
 			if (pattern.Length > source.Length) {
-				result.Error.Set(ErrorType.EndOfSource, pattern);
+				result.Error = Error.EndOfSource;
 				trace?.Collect(result.Error, source.Position);
 			} else {
 				ReadOnlySpan<Char> Peek = source.Peek(pattern.Length);
@@ -360,9 +359,9 @@ namespace Stringier.Patterns {
 					trace?.Collect(Peek, source.Length);
 					source.Position += Peek.Length;
 					result.Length += Peek.Length;
-					result.Error.Clear();
+					result.Error = Error.None;
 				} else {
-					result.Error.Set(ErrorType.NeglectFailed, pattern);
+					result.Error = Error.NeglectFailed;
 					trace?.Collect(result.Error, source.Position);
 				}
 			}

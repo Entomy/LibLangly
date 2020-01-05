@@ -582,25 +582,55 @@ references:
   commentId: N:Stringier.Patterns.Debugging
   fullName: Stringier.Patterns.Debugging
   nameWithType: Stringier.Patterns.Debugging
+- uid: Stringier.Patterns.Debugging.Error
+  name: Error
+  href: api/Stringier.Patterns.Debugging.Error.html
+  commentId: T:Stringier.Patterns.Debugging.Error
+  fullName: Stringier.Patterns.Debugging.Error
+  nameWithType: Error
+- uid: Stringier.Patterns.Debugging.Error.ConsumeFailed
+  name: ConsumeFailed
+  href: api/Stringier.Patterns.Debugging.Error.html#Stringier_Patterns_Debugging_Error_ConsumeFailed
+  commentId: F:Stringier.Patterns.Debugging.Error.ConsumeFailed
+  fullName: Stringier.Patterns.Debugging.Error.ConsumeFailed
+  nameWithType: Error.ConsumeFailed
+- uid: Stringier.Patterns.Debugging.Error.EndOfSource
+  name: EndOfSource
+  href: api/Stringier.Patterns.Debugging.Error.html#Stringier_Patterns_Debugging_Error_EndOfSource
+  commentId: F:Stringier.Patterns.Debugging.Error.EndOfSource
+  fullName: Stringier.Patterns.Debugging.Error.EndOfSource
+  nameWithType: Error.EndOfSource
+- uid: Stringier.Patterns.Debugging.Error.NeglectFailed
+  name: NeglectFailed
+  href: api/Stringier.Patterns.Debugging.Error.html#Stringier_Patterns_Debugging_Error_NeglectFailed
+  commentId: F:Stringier.Patterns.Debugging.Error.NeglectFailed
+  fullName: Stringier.Patterns.Debugging.Error.NeglectFailed
+  nameWithType: Error.NeglectFailed
+- uid: Stringier.Patterns.Debugging.Error.None
+  name: None
+  href: api/Stringier.Patterns.Debugging.Error.html#Stringier_Patterns_Debugging_Error_None
+  commentId: F:Stringier.Patterns.Debugging.Error.None
+  fullName: Stringier.Patterns.Debugging.Error.None
+  nameWithType: Error.None
 - uid: Stringier.Patterns.Debugging.IStep
   name: IStep
   href: api/Stringier.Patterns.Debugging.IStep.html
   commentId: T:Stringier.Patterns.Debugging.IStep
   fullName: Stringier.Patterns.Debugging.IStep
   nameWithType: IStep
-- uid: Stringier.Patterns.Debugging.IStep.ErrorType
-  name: ErrorType
-  href: api/Stringier.Patterns.Debugging.IStep.html#Stringier_Patterns_Debugging_IStep_ErrorType
-  commentId: P:Stringier.Patterns.Debugging.IStep.ErrorType
-  fullName: Stringier.Patterns.Debugging.IStep.ErrorType
-  nameWithType: IStep.ErrorType
-- uid: Stringier.Patterns.Debugging.IStep.ErrorType*
-  name: ErrorType
-  href: api/Stringier.Patterns.Debugging.IStep.html#Stringier_Patterns_Debugging_IStep_ErrorType_
-  commentId: Overload:Stringier.Patterns.Debugging.IStep.ErrorType
+- uid: Stringier.Patterns.Debugging.IStep.Error
+  name: Error
+  href: api/Stringier.Patterns.Debugging.IStep.html#Stringier_Patterns_Debugging_IStep_Error
+  commentId: P:Stringier.Patterns.Debugging.IStep.Error
+  fullName: Stringier.Patterns.Debugging.IStep.Error
+  nameWithType: IStep.Error
+- uid: Stringier.Patterns.Debugging.IStep.Error*
+  name: Error
+  href: api/Stringier.Patterns.Debugging.IStep.html#Stringier_Patterns_Debugging_IStep_Error_
+  commentId: Overload:Stringier.Patterns.Debugging.IStep.Error
   isSpec: "True"
-  fullName: Stringier.Patterns.Debugging.IStep.ErrorType
-  nameWithType: IStep.ErrorType
+  fullName: Stringier.Patterns.Debugging.IStep.Error
+  nameWithType: IStep.Error
 - uid: Stringier.Patterns.Debugging.IStep.Position
   name: Position
   href: api/Stringier.Patterns.Debugging.IStep.html#Stringier_Patterns_Debugging_IStep_Position
@@ -633,12 +663,12 @@ references:
   commentId: T:Stringier.Patterns.Debugging.ITrace
   fullName: Stringier.Patterns.Debugging.ITrace
   nameWithType: ITrace
-- uid: Stringier.Patterns.Debugging.ITrace.Collect(Stringier.Patterns.Errors.ErrorType)
-  name: Collect(ErrorType)
-  href: api/Stringier.Patterns.Debugging.ITrace.html#Stringier_Patterns_Debugging_ITrace_Collect_Stringier_Patterns_Errors_ErrorType_
-  commentId: M:Stringier.Patterns.Debugging.ITrace.Collect(Stringier.Patterns.Errors.ErrorType)
-  fullName: Stringier.Patterns.Debugging.ITrace.Collect(Stringier.Patterns.Errors.ErrorType)
-  nameWithType: ITrace.Collect(ErrorType)
+- uid: Stringier.Patterns.Debugging.ITrace.Collect(Stringier.Patterns.Debugging.Error,System.Int32)
+  name: Collect(Error, Int32)
+  href: api/Stringier.Patterns.Debugging.ITrace.html#Stringier_Patterns_Debugging_ITrace_Collect_Stringier_Patterns_Debugging_Error_System_Int32_
+  commentId: M:Stringier.Patterns.Debugging.ITrace.Collect(Stringier.Patterns.Debugging.Error,System.Int32)
+  fullName: Stringier.Patterns.Debugging.ITrace.Collect(Stringier.Patterns.Debugging.Error, System.Int32)
+  nameWithType: ITrace.Collect(Error, Int32)
 - uid: Stringier.Patterns.Debugging.ITrace.Collect(System.String,System.Int32)
   name: Collect(String, Int32)
   href: api/Stringier.Patterns.Debugging.ITrace.html#Stringier_Patterns_Debugging_ITrace_Collect_System_String_System_Int32_
@@ -674,12 +704,12 @@ references:
   commentId: T:Stringier.Patterns.Debugging.Trace
   fullName: Stringier.Patterns.Debugging.Trace
   nameWithType: Trace
-- uid: Stringier.Patterns.Debugging.Trace.Collect(Stringier.Patterns.Errors.ErrorType)
-  name: Collect(ErrorType)
-  href: api/Stringier.Patterns.Debugging.Trace.html#Stringier_Patterns_Debugging_Trace_Collect_Stringier_Patterns_Errors_ErrorType_
-  commentId: M:Stringier.Patterns.Debugging.Trace.Collect(Stringier.Patterns.Errors.ErrorType)
-  fullName: Stringier.Patterns.Debugging.Trace.Collect(Stringier.Patterns.Errors.ErrorType)
-  nameWithType: Trace.Collect(ErrorType)
+- uid: Stringier.Patterns.Debugging.Trace.Collect(Stringier.Patterns.Debugging.Error,System.Int32)
+  name: Collect(Error, Int32)
+  href: api/Stringier.Patterns.Debugging.Trace.html#Stringier_Patterns_Debugging_Trace_Collect_Stringier_Patterns_Debugging_Error_System_Int32_
+  commentId: M:Stringier.Patterns.Debugging.Trace.Collect(Stringier.Patterns.Debugging.Error,System.Int32)
+  fullName: Stringier.Patterns.Debugging.Trace.Collect(Stringier.Patterns.Debugging.Error, System.Int32)
+  nameWithType: Trace.Collect(Error, Int32)
 - uid: Stringier.Patterns.Debugging.Trace.Collect(System.String,System.Int32)
   name: Collect(String, Int32)
   href: api/Stringier.Patterns.Debugging.Trace.html#Stringier_Patterns_Debugging_Trace_Collect_System_String_System_Int32_
@@ -774,42 +804,6 @@ references:
   isSpec: "True"
   fullName: Stringier.Patterns.EndOfSourceException.EndOfSourceException
   nameWithType: EndOfSourceException.EndOfSourceException
-- uid: Stringier.Patterns.Errors
-  name: Stringier.Patterns.Errors
-  href: api/Stringier.Patterns.Errors.html
-  commentId: N:Stringier.Patterns.Errors
-  fullName: Stringier.Patterns.Errors
-  nameWithType: Stringier.Patterns.Errors
-- uid: Stringier.Patterns.Errors.ErrorType
-  name: ErrorType
-  href: api/Stringier.Patterns.Errors.ErrorType.html
-  commentId: T:Stringier.Patterns.Errors.ErrorType
-  fullName: Stringier.Patterns.Errors.ErrorType
-  nameWithType: ErrorType
-- uid: Stringier.Patterns.Errors.ErrorType.ConsumeFailed
-  name: ConsumeFailed
-  href: api/Stringier.Patterns.Errors.ErrorType.html#Stringier_Patterns_Errors_ErrorType_ConsumeFailed
-  commentId: F:Stringier.Patterns.Errors.ErrorType.ConsumeFailed
-  fullName: Stringier.Patterns.Errors.ErrorType.ConsumeFailed
-  nameWithType: ErrorType.ConsumeFailed
-- uid: Stringier.Patterns.Errors.ErrorType.EndOfSource
-  name: EndOfSource
-  href: api/Stringier.Patterns.Errors.ErrorType.html#Stringier_Patterns_Errors_ErrorType_EndOfSource
-  commentId: F:Stringier.Patterns.Errors.ErrorType.EndOfSource
-  fullName: Stringier.Patterns.Errors.ErrorType.EndOfSource
-  nameWithType: ErrorType.EndOfSource
-- uid: Stringier.Patterns.Errors.ErrorType.NeglectFailed
-  name: NeglectFailed
-  href: api/Stringier.Patterns.Errors.ErrorType.html#Stringier_Patterns_Errors_ErrorType_NeglectFailed
-  commentId: F:Stringier.Patterns.Errors.ErrorType.NeglectFailed
-  fullName: Stringier.Patterns.Errors.ErrorType.NeglectFailed
-  nameWithType: ErrorType.NeglectFailed
-- uid: Stringier.Patterns.Errors.ErrorType.None
-  name: None
-  href: api/Stringier.Patterns.Errors.ErrorType.html#Stringier_Patterns_Errors_ErrorType_None
-  commentId: F:Stringier.Patterns.Errors.ErrorType.None
-  fullName: Stringier.Patterns.Errors.ErrorType.None
-  nameWithType: ErrorType.None
 - uid: Stringier.Patterns.NeglectFailedException
   name: NeglectFailedException
   href: api/Stringier.Patterns.NeglectFailedException.html

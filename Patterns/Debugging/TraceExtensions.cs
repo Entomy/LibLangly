@@ -1,5 +1,4 @@
 ﻿using System;
-using Stringier.Patterns.Errors;
 
 namespace Stringier.Patterns.Debugging {
 	/// <summary>
@@ -19,11 +18,5 @@ namespace Stringier.Patterns.Debugging {
 		/// <param name="text">A <see cref="ReadOnlySpan{T}"/> of the text to collect.</param>
 		/// <param name="position">The position in the <see cref="Source"/> to collect.</param>
 		internal static void Collect(this ITrace trace, ReadOnlySpan<Char> text, Int32 position) => trace.Collect(text.ToString(), position);
-
-		/// <summary>
-		/// Collect the parameters as a trace step.
-		/// </summary>
-		/// <param name="error">The error to collect data from.</param>
-		internal static void Collect(this ITrace trace, Error error, Int32 position) => trace.Collect(error.Type, position);
 	}
 }

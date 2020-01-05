@@ -1,6 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using Stringier.Patterns.Debugging;
-using Stringier.Patterns.Errors;
 
 namespace Stringier.Patterns.Nodes {
 	/// <summary>
@@ -33,7 +32,7 @@ namespace Stringier.Patterns.Nodes {
 		internal override void Consume(ref Source source, ref Result result, ITrace? trace) {
 			From.Consume(ref source, ref result, trace);
 			if (!result) {
-				result.Error.Set(ErrorType.ConsumeFailed, From);
+				result.Error = Error.ConsumeFailed;
 				return;
 			}
 			To.Consume(ref source, ref result, trace);
@@ -46,14 +45,14 @@ namespace Stringier.Patterns.Nodes {
 				//Check for the escape before checking for the end of the range
 				if (Escape.CheckHeader(ref source)) {
 					Escape.Consume(ref source, ref result, trace);
-					result.Error.Set(ErrorType.ConsumeFailed, To); //We need an error to continue the loop, and this is the current error
+					result.Error = Error.ConsumeFailed; //We need an error to continue the loop, and this is the current error
 				}
 				if (To.CheckHeader(ref source)) {
 					To.Consume(ref source, ref result, trace);
 				}
 			}
 			if (!result) {
-				result.Error.Set(ErrorType.EndOfSource, To);
+				result.Error = Error.EndOfSource;
 			}
 		}
 	}
