@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace Stringier {
 	public static partial class StringierExtensions {
@@ -17,8 +18,8 @@ namespace Stringier {
 		/// <param name="separator">A string array that delimits the substrings in this string, an empty array that contains no delimiters, or null.</param>
 		/// <returns>A string array that delimits the substrings in this string, an empty array that contains no delimiters, or null.</returns>
 		public static String[] Split(this String @string, params String[] separator) {
-			if (@string is null || separator is null) {
-				throw new ArgumentNullException(@string is null ? nameof(@string) : nameof(separator));
+			if (@string is null) {
+				throw new ArgumentNullException(nameof(@string));
 			}
 			return @string.Split(separator, StringSplitOptions.None);
 		}
