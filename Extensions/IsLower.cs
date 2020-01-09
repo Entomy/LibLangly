@@ -10,7 +10,7 @@ namespace Stringier {
 		/// <returns><see langword="true"/> if <paramref name="char"/> is a lowercase letter; otherwise, <see langword="false"/>.</returns>
 		public static Boolean IsLower(this Char @char) => Char.IsLower(@char);
 
-#if NETCOREAPP3_1
+#if NETCOREAPP3_0 || NETCOREAPP3_1
 		/// <summary>
 		/// Indicates whether the specified Unicode character is categorized as a lowercase letter.
 		/// </summary>

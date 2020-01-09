@@ -10,7 +10,7 @@ namespace Stringier {
 		/// <returns><see langword="true"/> if <paramref name="char"/> is an uppercase letter; otherwise, <see langword="false"/>.</returns>
 		public static Boolean IsUpper(this Char @char) => Char.IsUpper(@char);
 
-#if NETCOREAPP3_1
+#if NETCOREAPP3_0 || NETCOREAPP3_1
 		/// <summary>
 		/// Indicates whether the specified Unicode character is categorized as an uppercase letter.
 		/// </summary>

@@ -10,7 +10,7 @@ namespace Stringier {
 		/// <returns><see langword="true"/> if <paramref name="char"/> is a number; otherwise, <see langword="false"/>.</returns>
 		public static Boolean IsNumber(this Char @char) => Char.IsNumber(@char);
 
-#if NETCOREAPP3_1
+#if NETCOREAPP3_0 || NETCOREAPP3_1
 		/// <summary>
 		/// Indicates whether a Unicode character is categorized as a number.
 		/// </summary>

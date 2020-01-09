@@ -11,7 +11,7 @@ namespace Stringier {
 		/// <returns>A <see cref="UnicodeCategory"/> value that identifies the group that contains <paramref name="char"/>.</returns>
 		public static UnicodeCategory GetUnicodeCategory(this Char @char) => Char.GetUnicodeCategory(@char);
 
-#if NETCOREAPP3_1
+#if NETCOREAPP3_0 || NETCOREAPP3_1
 		/// <summary>
 		/// Categorizes a specified Unicode character into a group identified by one of the <see cref="UnicodeCategory"/> values.
 		/// </summary>

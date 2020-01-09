@@ -11,7 +11,7 @@ namespace Stringier {
 		/// <returns>The uppercase equivalent of <paramref name="char"/>, or the unchanged value of <paramref name="char"/> if <paramref name="char"/> is already uppercase, has no uppercase equivalent, or is not alphabetic.</returns>
 		public static Char ToUpper(this Char @char) => Char.ToUpper(@char);
 
-#if NETCOREAPP3_1
+#if NETCOREAPP3_0 || NETCOREAPP3_1
 		/// <summary>
 		/// Converts the value of a Unicode character to its uppercase equivalent.
 		/// </summary>
@@ -33,7 +33,7 @@ namespace Stringier {
 			return Char.ToUpper(@char, culture);
 		}
 
-#if NETCOREAPP3_1
+#if NETCOREAPP3_0 || NETCOREAPP3_1
 		/// <summary>
 		/// Converts the value of a specified Unicode character to its uppercase equivalent using specified culture-specific formatting information.
 		/// </summary>
@@ -55,7 +55,7 @@ namespace Stringier {
 		/// <returns>The uppercase equivalent of the <paramref name="char"/> parameter, or the unchanged value of <paramref name="char"/>, if <paramref name="char"/> is already uppercase or not alphabetic.</returns>
 		public static Char ToUpperInvariant(this Char @char) => Char.ToUpperInvariant(@char);
 
-#if NETCOREAPP3_1
+#if NETCOREAPP3_0 || NETCOREAPP3_1
 		/// <summary>
 		/// Converts the value of a Unicode character to its uppercase equivalent using the casing rules of the invariant culture.
 		/// </summary>

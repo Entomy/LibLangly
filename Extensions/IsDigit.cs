@@ -10,7 +10,7 @@ namespace Stringier {
 		/// <returns><see langword="true"/> if <paramref name="char"/> is a control character; otherwise, <see langword="false"/>.</returns>
 		public static Boolean IsDigit(this Char @char) => Char.IsDigit(@char);
 
-#if NETCOREAPP3_1
+#if NETCOREAPP3_0 || NETCOREAPP3_1
 		/// <summary>
 		/// Indicates whether the specified Unicode character is categorized as a decimal digit.
 		/// </summary>

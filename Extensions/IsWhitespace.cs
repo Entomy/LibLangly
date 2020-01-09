@@ -10,7 +10,7 @@ namespace Stringier {
 		/// <returns><see langword="true"/> if <paramref name="char"/> is white space; otherwise, <see langword="false"/>.</returns>
 		public static Boolean IsWhiteSpace(this Char @char) => Char.IsWhiteSpace(@char);
 
-#if NETCOREAPP3_1
+#if NETCOREAPP3_0 || NETCOREAPP3_1
 		/// <summary>
 		/// Indicates whether the specified Unicode character is categorized as white space.
 		/// </summary>
