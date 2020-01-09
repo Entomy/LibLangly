@@ -2,10 +2,13 @@
 
 ## Including
 
-This package merely extends `Char`, `Char[]`, `IEnumerable<Char>`, `String`, `String[]`, and `IEnumerable<String>`. You can use it through:
+This package merely extends `Char`, `Char[]`, `IEnumerable<Char>`, `Rune`, `Rune[]`, `IEnumerable<Rune>`, `String`, `String[]`, and `IEnumerable<String>`. You can use it through:
 
 ~~~~csharp
 using Stringier;
+~~~~
+~~~~fsharp
+open Stringier
 ~~~~
 
 ## Usage
