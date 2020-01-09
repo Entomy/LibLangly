@@ -43,3 +43,13 @@ type StreamExtensionsTests() =
         Assert.AreEqual(Rune('Ж'), stream.ReadRune())
         Assert.AreEqual(Rune('€'), stream.ReadRune())
         Assert.AreEqual(Rune(0x1D11E), stream.ReadRune())
+
+    [<TestMethod>]
+    member _.``read rune - file`` () =
+        use stream = new FileStream("Test.txt", FileMode.Open)
+        stream.Read(3) // Windows created the file with the UTF-8 BOM, so this just skips that
+        Assert.AreEqual(Rune('h'), stream.ReadRune())
+        Assert.AreEqual(Rune('e'), stream.ReadRune())
+        Assert.AreEqual(Rune('l'), stream.ReadRune())
+        Assert.AreEqual(Rune('l'), stream.ReadRune())
+        Assert.AreEqual(Rune('o'), stream.ReadRune())
