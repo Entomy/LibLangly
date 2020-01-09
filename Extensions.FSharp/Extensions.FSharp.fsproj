@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-		<TargetFrameworks>netstandard2.0</TargetFrameworks>
+		<TargetFrameworks>netstandard2.0;netcoreapp3.0</TargetFrameworks>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
 		<Authors>Patrick Kelly</Authors>
@@ -21,6 +21,7 @@
 	</PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Aliases.fs" />
     <Compile Include="Binder.fs" />
     <Compile Include="Extensions.fs" />
   </ItemGroup>
