@@ -30,4 +30,6 @@ module AlternatorExtensions =
 
     let inline ( || ) left right = alternate<Binding, _, _, _> left right
 
-    let inline oneOf (patterns:Pattern[]) = Pattern.OneOf(patterns);
+    let inline oneOf (patterns:Pattern[]) = Pattern.OneOf(patterns)
+
+    let inline oneOfEnum<'e when 'e :> Enum> = Pattern.OneOf<'e>()

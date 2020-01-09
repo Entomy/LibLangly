@@ -142,6 +142,20 @@ namespace Stringier.Patterns {
 			return result;
 		}
 
+		/// <summary>
+		/// Declares the names of <typeparamref name="E"/> to be alternates of each other; one of them will match.
+		/// </summary>
+		/// <typeparam name="E">The <see cref="Enum"/> providing names.</typeparam>
+		/// <returns>A new <see cref="Pattern"/> alternating all the names of <typeparamref name="E"/>.</returns>
+		public static Pattern OneOf<E>() where E : Enum => OneOf<E>(Compare.NoPreference);
+
+		/// <summary>
+		/// Declares the names of <typeparamref name="E"/> to be alternates of each other; one of them will match.
+		/// </summary>
+		/// <param name="comparisonType">The <see cref="Compare"/> to use for all <paramref name="patterns"/>.</param>
+		/// <typeparam name="E">The <see cref="Enum"/> providing names.</typeparam>
+		/// <returns>A new <see cref="Pattern"/> alternating all the names of <typeparamref name="E"/>.</returns>
+		public static Pattern OneOf<E>(Compare comparisonType) where E : Enum => OneOf(comparisonType, Enum.GetNames(typeof(E)));
 
 		#endregion
 

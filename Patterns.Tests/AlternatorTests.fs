@@ -4,6 +4,10 @@ open System
 open Stringier.Patterns
 open Microsoft.VisualStudio.TestTools.UnitTesting
 
+type enum = First = 1
+          | Second = 2
+          | Third = 3
+
 [<TestClass>]
 type AlternatorTests() =
 
@@ -35,6 +39,12 @@ type AlternatorTests() =
         ResultAssert.Captures("Howdy", oneOfPattern.Consume("Howdy"))
         ResultAssert.Fails(chainPattern.Consume("Goodbye"))
 
+        let oneOfEnum = oneOfEnum<enum>
+
+        ResultAssert.Captures("First", oneOfEnum.Consume("First"))
+        ResultAssert.Captures("Second", oneOfEnum.Consume("Second"))
+        ResultAssert.Captures("Third", oneOfEnum.Consume("Third"))
+        ResultAssert.Fails(oneOfEnum.Consume("Fourth"))
 
     [<TestMethod>]
     member _.``boolean-or still works`` () =
