@@ -6,9 +6,9 @@ namespace Stringier.Patterns.Debugging {
 	/// </summary>
 	public interface IStep {
 		public Error Error { get; }
-		
+
 		public Int32 Position { get; }
-		
+
 		public String Text { get; }
 	}
 }

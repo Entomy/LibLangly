@@ -22,6 +22,10 @@ namespace Benchmarks {
 					Console.WriteChoices(PatternsChoices);
 					Console.ReadChoice(PatternsChoices);
 				}),
+				new KeyChoice(ConsoleKey.D4, "Streams", () => {
+					Console.WriteChoices(StreamsChoices);
+					Console.ReadChoice(StreamsChoices);
+				}),
 				new BackKeyChoice(ConsoleKey.Q, "Quit", () => Environment.Exit(0)));
 
 		internal readonly static KeyChoiceSet ExtensionsChoices = new KeyChoiceSet(" Enter Choice: ",
@@ -64,6 +68,10 @@ namespace Benchmarks {
 			new KeyChoice(ConsoleKey.F, "LineComment", () => BenchmarkRunner.Run<LineCommentBenchmarks>()),
 			new KeyChoice(ConsoleKey.G, "Phone Number", () => BenchmarkRunner.Run<PhoneNumberBenchmarks>()),
 			new KeyChoice(ConsoleKey.H, "String Literal", () => BenchmarkRunner.Run<StringLiteralBenchmarks>()));
+
+		internal readonly static KeyChoiceSet StreamsChoices = new KeyChoiceSet(" Enter Choice: ",
+			new KeyChoice(ConsoleKey.D1, "StringStream", () => BenchmarkRunner.Run<StringStreamBenchmarks>()),
+			new BackKeyChoice(ConsoleKey.B, "Back", () => { }));
 
 		public static void Main() {
 			Theme.DefaultDark.Apply();

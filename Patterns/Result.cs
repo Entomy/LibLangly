@@ -3,7 +3,7 @@ using Stringier.Patterns.Debugging;
 
 namespace Stringier.Patterns {
 	/// <summary>
-	/// Represents the result value of parsing operations.
+	/// Represents the result value of parsing operations on a <see cref="Patterns.Source"/>.
 	/// </summary>
 	/// <remarks>
 	/// <para>In very simple terms, there are two main components. The first is a Boolean representing success of the operation. The second is the captured string during the operation. This type can be used as if it is either individual type.</para>
@@ -21,7 +21,7 @@ namespace Stringier.Patterns {
 		internal Error Error;
 
 		/// <summary>
-		/// The <see cref="Source"/> this <see cref="Result"/> is from.
+		/// The <see cref="Patterns.Source"/> this <see cref="Result"/> is from.
 		/// </summary>
 		private readonly Source Source;
 
@@ -47,7 +47,7 @@ namespace Stringier.Patterns {
 		/// <summary>
 		/// Whether the parsing was successful.
 		/// </summary>
-		/// <returns><c>true</c> if successful; otherwise, <c>false</c></returns>
+		/// <returns><see langword="true"/> if successful; otherwise <see langword="false"/>.</returns>
 		public Boolean Success => Error == Error.None;
 
 		public static implicit operator Boolean(Result result) => result.Success;
@@ -70,7 +70,7 @@ namespace Stringier.Patterns {
 		/// Determines whether the specified object is equal to the current object.
 		/// </summary>
 		/// <param name="obj">The object to compare with the current object.</param>
-		/// <returns><c>true</c> if the specified object is equal to the current object; otherwise, <c>false</c>.</returns>
+		/// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
 		public override Boolean Equals(Object obj) {
 			switch (obj) {
 			case String other:
@@ -79,25 +79,26 @@ namespace Stringier.Patterns {
 				return false;
 			}
 		}
+
 		/// <summary>
 		/// Determines whether this <see cref="Result"/> and the <paramref name="other"/> <see cref="Result"/> are equal.
 		/// </summary>
 		/// <param name="other">The <see cref="Result"/> to compare to</param>
-		/// <returns><c>true</c> if equal; otherwise, <c>false</c>.</returns>
+		/// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
 		public Boolean Equals(Result other) => Source.Equals(other.Source) && Start.Equals(other.Start) && Length.Equals(other.Length) && Error.Equals(other.Error);
 
 		/// <summary>
 		/// Determines whether this <see cref="Result"/> and the <paramref name="other"/> <see cref="String"/> are equal.
 		/// </summary>
 		/// <param name="other">The <see cref="String"/> to compare to</param>
-		/// <returns><c>true</c> if equal; otherwise, <c>false</c>.</returns>
+		/// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
 		public Boolean Equals(String other) => !(other is null) && Source.Substring(Start, Length).Equals(other, StringComparison.CurrentCulture);
 
 		/// <summary>
-		/// Determines whether this <see cref="Result"/> and the <paramref name="other"/> <see cref="ReadOnlySpan<Char>"/> are equal.
+		/// Determines whether this <see cref="Result"/> and the <paramref name="other"/> <see cref="ReadOnlySpan{T}"/> are equal.
 		/// </summary>
-		/// <param name="other">The <see cref="ReadOnlySpan<Char>"/> to compare to</param>
-		/// <returns><c>true</c> if equal; otherwise, <c>false</c>.</returns>
+		/// <param name="other">The <see cref="ReadOnlySpan{T}"/> to compare to</param>
+		/// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
 		public Boolean Equals(ReadOnlySpan<Char> other) => Source.Substring(Start, Length).Equals(other, StringComparison.CurrentCulture);
 
 		/// <summary>

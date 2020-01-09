@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;netcoreapp3.0</TargetFrameworks>
+    <RootNamespace>Stringier.Streams</RootNamespace>
+    <AssemblyName>Stringier.Streams</AssemblyName>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+		<Authors>Patrick Kelly</Authors>
+		<Description>Stringier streams... streamier? More streams. Better streams.</Description>
+		<Copyright>2019</Copyright>
+		<PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
+		<PackageProjectUrl>https://github.com/Entomy/Stringier</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/Entomy/Stringier</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageTags>stream, streams</PackageTags>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<PackageIcon>Logo.png</PackageIcon>
+		<Version>2.1.0</Version>
+		<Product>Stringier</Product>
+		<LangVersion>8.0</LangVersion>
+		<Nullable>enable</Nullable>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	</PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj" />
+  </ItemGroup>
+	
+	<ItemGroup>
+		<None Include="..\Logo.png" Pack="true" Visible="true" PackagePath="\" />
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <PackageReference Include="IndexRange" Version="1.0.0" />
+	</ItemGroup>
+
+</Project>
