@@ -21,6 +21,13 @@ namespace Stringier {
 				return Array.Empty<Char>();
 			}
 		}
+
+		/// <summary>
+		/// Gets the <see cref="Char"/> representation of this codepoint.
+		/// </summary>
+		/// <param name="codepoint">A <see cref="Rune"/> cast to a <see cref="Int32"/>.</param>
+		/// <returns>An <see cref="Array"/> of zero to two <see cref="Char"/> representing this <paramref name="codepoint"/>. <see cref="Array.Empty{T}"/> signifies an invalid conversion.</returns>
+		public static Char[] AsChars(this Int32 codepoint) => new Rune(codepoint).AsChars();
 #endif
 	}
 }
