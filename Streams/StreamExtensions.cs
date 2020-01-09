@@ -156,5 +156,12 @@ namespace Stringier.Streams {
 			return runes[0..c];
 		}
 #endif
+
+		/// <summary>
+		/// Writes a sequence of bytes to the <paramref name="stream"/> and advances the current position within this <paramref name="stream"/> by the number of bytes written.
+		/// </summary>
+		/// <param name="stream">The <see cref="Stream"/> to write to.</param>
+		/// <param name="bytes">An array of bytes. This method copies the entirety of the bytes to the <paramref name="stream"/>.</param>
+		public static void Write(this Stream stream, Byte[] bytes) => stream.Write(bytes, 0, bytes.Length);
 	}
 }
