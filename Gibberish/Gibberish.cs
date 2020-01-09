@@ -22,7 +22,7 @@ namespace Stringier {
 			Char[] pool = new[] { ' ', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
 			StringBuilder builder = new StringBuilder();
 			for (Int32 i = 0; i < Int32.MaxValue / reductionFactor; i++) {
-				_ = bad && i == (Int32.MaxValue / reductionFactor) - 2 ? builder.Append("/") : builder.Append(pool[random.Next() % pool.Length]);
+				_ = bad && i == (Int32.MaxValue / reductionFactor) - 2 ? builder.Append('/') : builder.Append(pool[random.Next() % pool.Length]);
 			}
 			return builder.ToString();
 		}

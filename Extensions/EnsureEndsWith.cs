@@ -13,7 +13,7 @@ namespace Stringier {
 			if (@string is null || required is null) {
 				throw new ArgumentNullException(@string is null ? nameof(@string) : nameof(required));
 			}
-			return new Regex(required + "$", RegexOptions.None).IsMatch(@string) ? @string : @string + required;
+			return @string.Substring(@string.Length - required.Length, required.Length).Equals(required, StringComparison.CurrentCulture) ? @string : @string + required;
 		}
 	}
 }

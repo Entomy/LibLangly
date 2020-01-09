@@ -7,3 +7,4 @@
 
 [assembly: SuppressMessage("Design", "MA0048:File name must match type name", Justification = "When certain classes grow beyond a certain size, it's beneficial to split them up. This is why partial classes exist.")]
 [assembly: SuppressMessage("Security", "MA0023:Add RegexOptions.ExplicitCapture", Justification = "There's no capturing even happening. Why do you think there is here?")]
+[assembly: SuppressMessage("Usage", "MA0011:IFormatProvider is missing", Justification = "In many cases these are mappings, and when they aren't, the default behavior is appropriate. If passing a formatter was appropriate, the method would have a formatter parameter as well.")]
