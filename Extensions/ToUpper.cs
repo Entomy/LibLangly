@@ -20,6 +20,7 @@ namespace Stringier {
 		public static Rune ToUpper(this Rune rune) => Rune.ToUpper(rune, CultureInfo.CurrentCulture);
 #endif
 
+#if !NETSTANDARD1_6
 		/// <summary>
 		/// Converts the value of a specified Unicode character to its uppercase equivalent using specified culture-specific formatting information.
 		/// </summary>
@@ -32,6 +33,7 @@ namespace Stringier {
 			}
 			return Char.ToUpper(@char, culture);
 		}
+#endif
 
 #if NETCOREAPP3_0 || NETCOREAPP3_1
 		/// <summary>

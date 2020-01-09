@@ -9,7 +9,13 @@ namespace Stringier {
 		/// </summary>
 		/// <param name="char">The Unicode character to categorize.</param>
 		/// <returns>A <see cref="UnicodeCategory"/> value that identifies the group that contains <paramref name="char"/>.</returns>
-		public static UnicodeCategory GetUnicodeCategory(this Char @char) => Char.GetUnicodeCategory(@char);
+		public static UnicodeCategory GetUnicodeCategory(this Char @char) {
+#if NETSTANDARD1_6
+			return CharUnicodeInfo.GetUnicodeCategory(@char);
+#else
+			return Char.GetUnicodeCategory(@char);
+#endif
+		}
 
 #if NETCOREAPP3_0 || NETCOREAPP3_1
 		/// <summary>

@@ -26,7 +26,7 @@ namespace Stringier {
 			Int32 r = 0;
 			Boolean AtSpace = false;
 			foreach (Char C in span) {
-				if (Char.GetUnicodeCategory(C) == UnicodeCategory.SpaceSeparator) {
+				if (C.GetUnicodeCategory() == UnicodeCategory.SpaceSeparator) {
 					if (!AtSpace) {
 						AtSpace = true;
 						result[r++] = ' ';
