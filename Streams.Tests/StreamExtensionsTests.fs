@@ -63,5 +63,5 @@ type StreamExtensionsTests() =
     [<TestMethod>]
     member _.``read runes - file`` () =
         use stream = new FileStream("Test.txt", FileMode.Open)
-        stream.Read(3) // Windows created the file with the UTF-8 BOM, so this just skips that
+        stream.Read(3) |> ignore // Windows created the file with the UTF-8 BOM, so this just skips that
         CollectionAssert.AreEqual([|Rune('h'); Rune('e'); Rune('l'); Rune('l'); Rune('o')|], stream.ReadRunes(5))

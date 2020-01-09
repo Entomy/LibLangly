@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Globalization;
-using System.Text;
 
 namespace Stringier {
 	public static partial class StringierExtensions {
