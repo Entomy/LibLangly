@@ -23,7 +23,8 @@ namespace Stringier.Streams {
 		/// </summary>
 		/// <returns>The codepoint as a <see cref="Array"/> of zero to two <see cref="Char"/></returns>
 		/// <remarks>
-		/// This method assumes UTF-8 encoding.
+		/// <para>This method assumes UTF-8 encoding.</para>
+		/// <para>This method requires a bit of explaination as there's a great deal of misunderstandings. <see cref="Char"/> is a 16-bit integer, yet UNICODE requires at least 21 bits of storage. This is an archaic decision from back in the days of UCS-2. Changing things to update with the times wouldn't be feasible. Because of this, .NET strings sometimes require 2 characters to represent a single codepoint. That means, while in most cases, this operation will return a single character in an array, there are cases where the codepoint exceeds 16-bits and has to be encoded. For that reason, if you're on a new enough runtime, you want to use <see cref="ReadRune(Stream)"/>, which does this same operation but with a type capable of representing the codepoint as a single value.</para>
 		/// </remarks>
 		public static Char[] ReadCodepoint(this Stream stream) {
 			Byte[] sequence = new Byte[4] { 0x00, 0x00, 0x00, 0x00 };
@@ -82,14 +83,11 @@ namespace Stringier.Streams {
 			// Now decode the sequence
 			Decoder decoder = Encoding.UTF8.GetDecoder();
 			Char[] chars = new Char[2];
-			Int32 c = decoder.GetChars(sequence, 0, bytes, chars, 0);
-			switch (c) {
+			switch (decoder.GetChars(sequence, 0, bytes, chars, 0)) {
 			case 1:
 				return new[] { chars[0] };
 			case 2:
 				return chars;
-			default:
-				break;
 			}
 		Error:
 			return Array.Empty<Char>();
