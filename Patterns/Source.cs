@@ -80,6 +80,8 @@ namespace Stringier.Patterns {
 			HashCode = Rng.Next();
 		}
 
+		public ref readonly Char this[Int32 index] => ref Buffer[index];
+
 		/// <summary>
 		/// Whether currently at the end of the source
 		/// </summary>

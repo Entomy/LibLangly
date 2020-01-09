@@ -36,6 +36,8 @@ namespace Stringier.Patterns {
 			Length = 0;
 		}
 
+		public ref readonly Char this[Int32 index] => ref Source[Start + index];
+
 		/// <summary>
 		/// The length of the captured text.
 		/// </summary>
