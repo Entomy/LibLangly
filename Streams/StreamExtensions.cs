@@ -19,13 +19,13 @@ namespace Stringier.Streams {
 		}
 
 		/// <summary>
-		/// Reads a codepoint from the stream and advances the position within the stream by one character, or returns -1 if at the end of the stream, or -2 if an invalid sequence.
+		/// Reads a codepoint from the stream and advances the position within the stream by one codepoint. <see cref="Array.Empty{T}"/> signifies an invalid sequence or inability to read from the stream.
 		/// </summary>
-		/// <returns>The codepoint as a <see cref="Int32"/>, -1 if at the end of the stream, or -2 if an invalid sequence.</returns>
+		/// <returns>The codepoint as a <see cref="Array"/> of zero to two <see cref="Char"/></returns>
 		/// <remarks>
 		/// This method assumes UTF-8 encoding.
 		/// </remarks>
-		public static Int32 ReadCodepoint(this Stream stream) {
+		public static Char[] ReadCodepoint(this Stream stream) {
 			Byte[] sequence = new Byte[4] { 0x00, 0x00, 0x00, 0x00 };
 			Int32 bytes = 1;
 			// The first byte in the sequence encodes the length of the sequence, so determine that, then read in the rest of the sequence.
@@ -40,7 +40,7 @@ namespace Stringier.Streams {
 				if ((@byte = stream.ReadByte()) >= 0) {
 					sequence[1] = (Byte)@byte;
 				} else {
-					return -1;
+					goto Error;
 				}
 				break;
 			case var b when (b - 0xE0) * (0xEF - b) >= 0:
@@ -49,12 +49,12 @@ namespace Stringier.Streams {
 				if ((@byte = stream.ReadByte()) >= 0) {
 					sequence[1] = (Byte)@byte;
 				} else {
-					return -1;
+					goto Error;
 				}
 				if ((@byte = stream.ReadByte()) >= 0) {
 					sequence[2] = (Byte)@byte;
 				} else {
-					return -1;
+					goto Error;
 				}
 				break;
 			case var b when (b - 0xF0) * (0xF4 - b) >= 0:
@@ -63,37 +63,57 @@ namespace Stringier.Streams {
 				if ((@byte = stream.ReadByte()) >= 0) {
 					sequence[1] = (Byte)@byte;
 				} else {
-					return -1;
+					goto Error;
 				}
 				if ((@byte = stream.ReadByte()) >= 0) {
 					sequence[2] = (Byte)@byte;
 				} else {
-					return -1;
+					goto Error;
 				}
 				if ((@byte = stream.ReadByte()) >= 0) {
 					sequence[3] = (Byte)@byte;
 				} else {
-					return -1;
+					goto Error;
 				}
 				break;
-			case -1:
-				return -1;
 			default:
-				return -2;
+				goto Error;
 			}
 			// Now decode the sequence
 			Decoder decoder = Encoding.UTF8.GetDecoder();
-			Char[] chars = new Char[3];
+			Char[] chars = new Char[2];
 			Int32 c = decoder.GetChars(sequence, 0, bytes, chars, 0);
-			if (c > 0) {
-				Int32 result = 0;
-				for (Int32 i = 0; i < chars.Length; i++) {
-					result += chars[i];
-				}
-				return result;
-			} else {
-				return -2;
+			switch (c) {
+			case 1:
+				return new[] { chars[0] };
+			case 2:
+				return chars;
+			default:
+				break;
+			}
+		Error:
+			return Array.Empty<Char>();
+		}
+
+#if NETCOREAPP3_0 || NETCOREAPP3_1
+		/// <summary>
+		/// Reads a <see cref="Rune"/> from the stream and advances the position within the stream by one rune;
+		/// </summary>
+		/// <returns>The next <see cref="Rune"/> in the stream.</returns>
+		/// <remarks>
+		/// This method assumes UTF-8 encoding.
+		/// </remarks>
+		public static Rune ReadRune(this Stream stream) {
+			Span<Char> chars = stream.ReadCodepoint();
+			switch (chars.Length) {
+			case 1:
+				return new Rune(chars[0]);
+			case 2:
+				return new Rune(chars[0], chars[1]);
+			default:
+				return new Rune();
 			}
 		}
+#endif
 	}
 }

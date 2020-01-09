@@ -2,6 +2,7 @@
 
 open System
 open System.IO
+open System.Text
 open Stringier.Streams
 open Microsoft.VisualStudio.TestTools.UnitTesting
 
@@ -35,10 +36,10 @@ type StreamExtensionsTests() =
         CollectionAssert.AreEqual([|0x68uy;0x65uy;0x6Cuy;0x6Cuy;0x6Fuy|], stream.Read(5))
 
     [<TestMethod>]
-    member _.``read char - string`` () =
+    member _.``read rune - string`` () =
         use stream = new StringStream("AöЖ€𝄞")
-        Assert.AreEqual('A', char(stream.ReadChar()))
-        Assert.AreEqual('ö', char(stream.ReadChar()))
-        Assert.AreEqual('Ж', char(stream.ReadChar()))
-        Assert.AreEqual('€', char(stream.ReadChar()))
-        Assert.AreEqual("𝄞", string(char(stream.ReadChar())))
+        Assert.AreEqual(Rune('A'), stream.ReadRune())
+        Assert.AreEqual(Rune('ö'), stream.ReadRune())
+        Assert.AreEqual(Rune('Ж'), stream.ReadRune())
+        Assert.AreEqual(Rune('€'), stream.ReadRune())
+        Assert.AreEqual(Rune(0x1D11E), stream.ReadRune())

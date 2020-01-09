@@ -73,9 +73,21 @@
   
   <h1 id="Stringier_Patterns_StreamResult" data-uid="Stringier.Patterns.StreamResult" class="text-break">Struct StreamResult
   </h1>
-  <div class="markdown level0 summary"><p>Represents the result value of parsing operations on a <see cref="!:System.IO.Stream"></see>.</p>
+  <div class="markdown level0 summary"><p>Represents the result value of parsing operations on a <span class="xref">System.IO.Stream</span>.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Stringier.Patterns.html">Stringier.Patterns</a></h6>
   <h6><strong>Assembly</strong>: Stringier.Patterns.dll</h6>
   <h5 id="Stringier_Patterns_StreamResult_syntax">Syntax</h5>
@@ -98,7 +110,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Int32 Length { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public int Length { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -110,7 +122,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Int32</span></td>
+        <td><span class="xref">System.Int32</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -129,7 +141,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Boolean Success { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public bool Success { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -141,7 +153,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Boolean</span></td>
+        <td><span class="xref">System.Boolean</span></td>
         <td><p><span class="xref">true</span> if successful; otherwise <span class="xref">false</span>.</p>
 </td>
       </tr>
@@ -163,7 +175,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ReadOnlySpan&lt;Char&gt; AsSpan()</code></pre>
+    <pre><code class="lang-csharp hljs">public ReadOnlySpan&lt;char&gt; AsSpan()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -175,158 +187,8 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ReadOnlySpan</span>&lt;<span class="xref">Char</span>&gt;</td>
+        <td><span class="xref">System.ReadOnlySpan</span>&lt;<span class="xref">System.Char</span>&gt;</td>
         <td><p>A span that represents the current object.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/Streams/apiSpec/new?filename=Stringier_Patterns_StreamResult_Equals_Object_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.StreamResult.Equals(Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/Streams/Patterns/StreamResult.cs/#L82">View Source</a>
-  </span>
-  <a id="Stringier_Patterns_StreamResult_Equals_" data-uid="Stringier.Patterns.StreamResult.Equals*"></a>
-  <h4 id="Stringier_Patterns_StreamResult_Equals_Object_" data-uid="Stringier.Patterns.StreamResult.Equals(Object)">Equals(Object)</h4>
-  <div class="markdown level1 summary"><p>Determines whether the specified object is equal to the current object.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override Boolean Equals(Object obj)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Object</span></td>
-        <td><span class="parametername">obj</span></td>
-        <td><p>The object to compare with the current object.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Boolean</span></td>
-        <td><p><span class="xref">true</span> if the specified object is equal to the current object; otherwise, <span class="xref">false</span>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/Streams/apiSpec/new?filename=Stringier_Patterns_StreamResult_Equals_ReadOnlySpan_Char__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.StreamResult.Equals(ReadOnlySpan%7BChar%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/Streams/Patterns/StreamResult.cs/#L110">View Source</a>
-  </span>
-  <a id="Stringier_Patterns_StreamResult_Equals_" data-uid="Stringier.Patterns.StreamResult.Equals*"></a>
-  <h4 id="Stringier_Patterns_StreamResult_Equals_ReadOnlySpan_Char__" data-uid="Stringier.Patterns.StreamResult.Equals(ReadOnlySpan{Char})">Equals(ReadOnlySpan&lt;Char&gt;)</h4>
-  <div class="markdown level1 summary"><p>Determines whether this <a class="xref" href="Stringier.Patterns.StreamResult.html">StreamResult</a> and the <code data-dev-comment-type="paramref" class="paramref">other</code> <see cref="!:ReadOnlySpan&lt;T>"></see> are equal.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Boolean Equals(ReadOnlySpan&lt;Char&gt; other)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">ReadOnlySpan</span>&lt;<span class="xref">Char</span>&gt;</td>
-        <td><span class="parametername">other</span></td>
-        <td><p>The <see cref="!:ReadOnlySpan&lt;T>"></see> to compare to</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Boolean</span></td>
-        <td><p><span class="xref">true</span> if the specified object is equal to the current object; otherwise, <span class="xref">false</span>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/Streams/apiSpec/new?filename=Stringier_Patterns_StreamResult_Equals_String_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.StreamResult.Equals(String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/Streams/Patterns/StreamResult.cs/#L103">View Source</a>
-  </span>
-  <a id="Stringier_Patterns_StreamResult_Equals_" data-uid="Stringier.Patterns.StreamResult.Equals*"></a>
-  <h4 id="Stringier_Patterns_StreamResult_Equals_String_" data-uid="Stringier.Patterns.StreamResult.Equals(String)">Equals(String)</h4>
-  <div class="markdown level1 summary"><p>Determines whether this <a class="xref" href="Stringier.Patterns.StreamResult.html">StreamResult</a> and the <code data-dev-comment-type="paramref" class="paramref">other</code> <see cref="!:String"></see> are equal.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Boolean Equals(String other)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">String</span></td>
-        <td><span class="parametername">other</span></td>
-        <td><p>The <see cref="!:String"></see> to compare to</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Boolean</span></td>
-        <td><p><span class="xref">true</span> if the specified object is equal to the current object; otherwise, <span class="xref">false</span>.</p>
 </td>
       </tr>
     </tbody>
@@ -345,7 +207,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Boolean Equals(StreamResult other)</code></pre>
+    <pre><code class="lang-csharp hljs">public bool Equals(StreamResult other)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -375,7 +237,159 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Boolean</span></td>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><span class="xref">true</span> if the specified object is equal to the current object; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/Streams/apiSpec/new?filename=Stringier_Patterns_StreamResult_Equals_System_Object_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.StreamResult.Equals(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/Streams/Patterns/StreamResult.cs/#L82">View Source</a>
+  </span>
+  <a id="Stringier_Patterns_StreamResult_Equals_" data-uid="Stringier.Patterns.StreamResult.Equals*"></a>
+  <h4 id="Stringier_Patterns_StreamResult_Equals_System_Object_" data-uid="Stringier.Patterns.StreamResult.Equals(System.Object)">Equals(Object)</h4>
+  <div class="markdown level1 summary"><p>Determines whether the specified object is equal to the current object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>The object to compare with the current object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><span class="xref">true</span> if the specified object is equal to the current object; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.ValueType.Equals(System.Object)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/Streams/apiSpec/new?filename=Stringier_Patterns_StreamResult_Equals_System_ReadOnlySpan_System_Char__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.StreamResult.Equals(System.ReadOnlySpan%7BSystem.Char%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/Streams/Patterns/StreamResult.cs/#L110">View Source</a>
+  </span>
+  <a id="Stringier_Patterns_StreamResult_Equals_" data-uid="Stringier.Patterns.StreamResult.Equals*"></a>
+  <h4 id="Stringier_Patterns_StreamResult_Equals_System_ReadOnlySpan_System_Char__" data-uid="Stringier.Patterns.StreamResult.Equals(System.ReadOnlySpan{System.Char})">Equals(ReadOnlySpan&lt;Char&gt;)</h4>
+  <div class="markdown level1 summary"><p>Determines whether this <a class="xref" href="Stringier.Patterns.StreamResult.html">StreamResult</a> and the <code data-dev-comment-type="paramref" class="paramref">other</code> <span class="xref">System.ReadOnlySpan&lt;T&gt;</span> are equal.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(ReadOnlySpan&lt;char&gt; other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ReadOnlySpan</span>&lt;<span class="xref">System.Char</span>&gt;</td>
+        <td><span class="parametername">other</span></td>
+        <td><p>The <span class="xref">System.ReadOnlySpan&lt;T&gt;</span> to compare to</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><span class="xref">true</span> if the specified object is equal to the current object; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/Streams/apiSpec/new?filename=Stringier_Patterns_StreamResult_Equals_System_String_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.StreamResult.Equals(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/Streams/Patterns/StreamResult.cs/#L103">View Source</a>
+  </span>
+  <a id="Stringier_Patterns_StreamResult_Equals_" data-uid="Stringier.Patterns.StreamResult.Equals*"></a>
+  <h4 id="Stringier_Patterns_StreamResult_Equals_System_String_" data-uid="Stringier.Patterns.StreamResult.Equals(System.String)">Equals(String)</h4>
+  <div class="markdown level1 summary"><p>Determines whether this <a class="xref" href="Stringier.Patterns.StreamResult.html">StreamResult</a> and the <code data-dev-comment-type="paramref" class="paramref">other</code> <span class="xref">System.String</span> are equal.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(string other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>The <span class="xref">System.String</span> to compare to</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
         <td><p><span class="xref">true</span> if the specified object is equal to the current object; otherwise, <span class="xref">false</span>.</p>
 </td>
       </tr>
@@ -395,7 +409,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override Int32 GetHashCode()</code></pre>
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -407,12 +421,14 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Int32</span></td>
+        <td><span class="xref">System.Int32</span></td>
         <td><p>A 32-bit signed integer hash code.</p>
 </td>
       </tr>
     </tbody>
   </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.ValueType.GetHashCode()</span></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/Stringier/new/Streams/apiSpec/new?filename=Stringier_Patterns_StreamResult_ThrowException.md&amp;value=---%0Auid%3A%20Stringier.Patterns.StreamResult.ThrowException%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -443,7 +459,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override String ToString()</code></pre>
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -455,12 +471,14 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">String</span></td>
+        <td><span class="xref">System.String</span></td>
         <td><p>A string that represents the current object.</p>
 </td>
       </tr>
     </tbody>
   </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.ValueType.ToString()</span></div>
   <h3 id="operators">Operators
   </h3>
   <span class="small pull-right mobile-hide">
@@ -476,7 +494,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Boolean operator ==(StreamResult left, StreamResult right)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool operator ==(StreamResult left, StreamResult right)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -510,25 +528,25 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Boolean</span></td>
+        <td><span class="xref">System.Boolean</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/Streams/apiSpec/new?filename=Stringier_Patterns_StreamResult_op_Implicit_Stringier_Patterns_StreamResult__Boolean.md&amp;value=---%0Auid%3A%20Stringier.Patterns.StreamResult.op_Implicit(Stringier.Patterns.StreamResult)~Boolean%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/Stringier/new/Streams/apiSpec/new?filename=Stringier_Patterns_StreamResult_op_Implicit_Stringier_Patterns_StreamResult__System_Boolean.md&amp;value=---%0Auid%3A%20Stringier.Patterns.StreamResult.op_Implicit(Stringier.Patterns.StreamResult)~System.Boolean%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/Stringier/blob/Streams/Patterns/StreamResult.cs/#L61">View Source</a>
   </span>
   <a id="Stringier_Patterns_StreamResult_op_Implicit_" data-uid="Stringier.Patterns.StreamResult.op_Implicit*"></a>
-  <h4 id="Stringier_Patterns_StreamResult_op_Implicit_Stringier_Patterns_StreamResult__Boolean" data-uid="Stringier.Patterns.StreamResult.op_Implicit(Stringier.Patterns.StreamResult)~Boolean">Implicit(StreamResult to Boolean)</h4>
+  <h4 id="Stringier_Patterns_StreamResult_op_Implicit_Stringier_Patterns_StreamResult__System_Boolean" data-uid="Stringier.Patterns.StreamResult.op_Implicit(Stringier.Patterns.StreamResult)~System.Boolean">Implicit(StreamResult to Boolean)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static implicit operator Boolean(StreamResult result)</code></pre>
+    <pre><code class="lang-csharp hljs">public static implicit operator bool (StreamResult result)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -557,25 +575,25 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Boolean</span></td>
+        <td><span class="xref">System.Boolean</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/Streams/apiSpec/new?filename=Stringier_Patterns_StreamResult_op_Implicit_Stringier_Patterns_StreamResult__ReadOnlySpan_Char_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.StreamResult.op_Implicit(Stringier.Patterns.StreamResult)~ReadOnlySpan%7BChar%7D%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/Stringier/new/Streams/apiSpec/new?filename=Stringier_Patterns_StreamResult_op_Implicit_Stringier_Patterns_StreamResult__System_ReadOnlySpan_System_Char_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.StreamResult.op_Implicit(Stringier.Patterns.StreamResult)~System.ReadOnlySpan%7BSystem.Char%7D%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/Stringier/blob/Streams/Patterns/StreamResult.cs/#L63">View Source</a>
   </span>
   <a id="Stringier_Patterns_StreamResult_op_Implicit_" data-uid="Stringier.Patterns.StreamResult.op_Implicit*"></a>
-  <h4 id="Stringier_Patterns_StreamResult_op_Implicit_Stringier_Patterns_StreamResult__ReadOnlySpan_Char_" data-uid="Stringier.Patterns.StreamResult.op_Implicit(Stringier.Patterns.StreamResult)~ReadOnlySpan{Char}">Implicit(StreamResult to ReadOnlySpan&lt;Char&gt;)</h4>
+  <h4 id="Stringier_Patterns_StreamResult_op_Implicit_Stringier_Patterns_StreamResult__System_ReadOnlySpan_System_Char_" data-uid="Stringier.Patterns.StreamResult.op_Implicit(Stringier.Patterns.StreamResult)~System.ReadOnlySpan{System.Char}">Implicit(StreamResult to ReadOnlySpan&lt;Char&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static implicit operator ReadOnlySpan&lt;Char&gt;(StreamResult result)</code></pre>
+    <pre><code class="lang-csharp hljs">public static implicit operator ReadOnlySpan&lt;char&gt;(StreamResult result)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -604,25 +622,25 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ReadOnlySpan</span>&lt;<span class="xref">Char</span>&gt;</td>
+        <td><span class="xref">System.ReadOnlySpan</span>&lt;<span class="xref">System.Char</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/Streams/apiSpec/new?filename=Stringier_Patterns_StreamResult_op_Implicit_Stringier_Patterns_StreamResult__String.md&amp;value=---%0Auid%3A%20Stringier.Patterns.StreamResult.op_Implicit(Stringier.Patterns.StreamResult)~String%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/Stringier/new/Streams/apiSpec/new?filename=Stringier_Patterns_StreamResult_op_Implicit_Stringier_Patterns_StreamResult__System_String.md&amp;value=---%0Auid%3A%20Stringier.Patterns.StreamResult.op_Implicit(Stringier.Patterns.StreamResult)~System.String%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/Stringier/blob/Streams/Patterns/StreamResult.cs/#L65">View Source</a>
   </span>
   <a id="Stringier_Patterns_StreamResult_op_Implicit_" data-uid="Stringier.Patterns.StreamResult.op_Implicit*"></a>
-  <h4 id="Stringier_Patterns_StreamResult_op_Implicit_Stringier_Patterns_StreamResult__String" data-uid="Stringier.Patterns.StreamResult.op_Implicit(Stringier.Patterns.StreamResult)~String">Implicit(StreamResult to String)</h4>
+  <h4 id="Stringier_Patterns_StreamResult_op_Implicit_Stringier_Patterns_StreamResult__System_String" data-uid="Stringier.Patterns.StreamResult.op_Implicit(Stringier.Patterns.StreamResult)~System.String">Implicit(StreamResult to String)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static implicit operator String(StreamResult result)</code></pre>
+    <pre><code class="lang-csharp hljs">public static implicit operator string (StreamResult result)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -651,7 +669,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">String</span></td>
+        <td><span class="xref">System.String</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -669,7 +687,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Boolean operator !=(StreamResult left, StreamResult right)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool operator !=(StreamResult left, StreamResult right)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -703,7 +721,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Boolean</span></td>
+        <td><span class="xref">System.Boolean</span></td>
         <td></td>
       </tr>
     </tbody>
