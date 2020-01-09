@@ -7,7 +7,7 @@ namespace Stringier.Streams {
 		/// <summary>
 		/// Reads the next, maximum of, <paramref name="count"/> characters from the input stream and advances the byte position by the amount read.
 		/// </summary>
-		/// <param name="stream"></param>
+		/// <param name="stream">The <see cref="Stream"/> to read from.</param>
 		/// <param name="count">The maximum of the characters to read.</param>
 		/// <returns>An <see cref="Array"/> of <see cref="Byte"/> containing the read characters.</returns>
 		public static Byte[] Read(this Stream stream, Int32 count) {
@@ -21,6 +21,7 @@ namespace Stringier.Streams {
 		/// <summary>
 		/// Reads a codepoint from the stream and advances the position within the stream by one codepoint. <see cref="Array.Empty{T}"/> signifies an invalid sequence or inability to read from the stream.
 		/// </summary>
+		/// <param name="stream">The <see cref="Stream"/> to read from.</param>
 		/// <returns>The codepoint as a <see cref="Array"/> of zero to two <see cref="Char"/></returns>
 		/// <remarks>
 		/// <para>This method assumes UTF-8 encoding.</para>
@@ -95,8 +96,9 @@ namespace Stringier.Streams {
 
 #if NETCOREAPP3_0 || NETCOREAPP3_1
 		/// <summary>
-		/// Reads a <see cref="Rune"/> from the stream and advances the position within the stream by one rune;
+		/// Reads a <see cref="Rune"/> from the stream and advances the position within the stream by one rune.
 		/// </summary>
+		/// <param name="stream">The <see cref="Stream"/> to read from.</param>
 		/// <returns>The next <see cref="Rune"/> in the stream.</returns>
 		/// <remarks>
 		/// This method assumes UTF-8 encoding.
@@ -111,6 +113,47 @@ namespace Stringier.Streams {
 			default:
 				return new Rune();
 			}
+		}
+
+		/// <summary>
+		/// Attempts to read a <see cref="Rune"/> from the stream and advances the position within the stream by one rune if succesful.
+		/// </summary>
+		/// <param name="stream">The <see cref="Stream"/> to read from.</param>
+		/// <param name="rune">The next <see cref="Rune"/> in the stream.</param>
+		/// <returns>Whether a <see cref="Rune"/> could be read into <paramref name="rune"/> successfully.</returns>
+		/// <remarks>
+		/// This method assumes UTF-8 encoding.
+		/// </remarks>
+		public static Boolean TryReadRune(this Stream stream, out Rune rune) {
+			Span<Char> chars = stream.ReadCodepoint();
+			switch (chars.Length) {
+			case 1:
+				rune = new Rune(chars[0]);
+				return true;
+			case 2:
+				rune = new Rune(chars[0], chars[1]);
+				return true;
+			default:
+				rune = new Rune();
+				return false;
+			}
+		}
+
+		/// <summary>
+		/// Reads the next, maximum of, <paramref name="count"/> runes from the input stream and advances the rune position by the amount read.
+		/// </summary>
+		/// <param name="stream">The <see cref="Stream"/> to read from.</param>
+		/// <param name="count">The maximum of the characters to read.</param>
+		/// <returns>An <see cref="Array"/> of <see cref="Rune"/> containing the read rune.</returns>
+		public static Rune[] ReadRunes(this Stream stream, Int32 count) {
+			Rune[] runes = new Rune[count];
+			Int32 c = 0;
+			for (Int32 i = 0; i < count; i++) {
+				if (stream.TryReadRune(out Rune rune)) {
+					runes[c++] = rune;
+				}
+			}
+			return runes[0..c];
 		}
 #endif
 	}
