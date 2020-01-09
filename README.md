@@ -5,7 +5,7 @@
 
 Stringier is a collection of projects to make working with text better.
 
-Extension methods? ✔️ High performance parsing? ✔️ Easy to use? ✔️
+Extension methods? ✔️ High performance parsing? ✔️ Support for modern conventions and APIs? ✔️ Easy to use? ✔️ Well documented? ✔️
 
 Everyone works with text. Let's make it better.
 
@@ -15,7 +15,7 @@ Thanks to [GitHub Pages](https://pages.github.com/), documentation is available 
 
 Contributor documentation is provided [here](https://github.com/Entomy/Stringier/blob/master/CONTRIBUTING.md) and in the [wiki](https://github.com/Entomy/Stringier/wiki).
 
-The goals and purpose of this project is provided [here](https://github.com/Entomy/Stringier/blob/master/GOALS_AND_PURPOSE.md);
+The goals and purpose of this project is provided [here](https://github.com/Entomy/Stringier/blob/master/GOALS_AND_PURPOSE.md)
 
 # Subprojects: [![Nuget](https://img.shields.io/nuget/dt/Stringier?label=Meta%20Package&logo=nuget)](https://www.nuget.org/packages/Stringier/)
 
@@ -27,6 +27,9 @@ The goals and purpose of this project is provided [here](https://github.com/Ento
 
 **Patterns** extends **Stringier** with further support for pattern declaration and parsing of those patterns. If you're doing a lot of text parsing or text processing, this is probably of interest to you.
 
+## [Streams](https://github.com/Entomy/Stringier/tree/master/Streams)
+
+**Streams** provides extensions to [`Stream`](https://docs.microsoft.com/en-us/dotnet/api/system.io.stream) to make it easier to work with text streams. This includes both new `Stream` types, and extension methods for all streams.
 
 # Syntax Showdown:
 
