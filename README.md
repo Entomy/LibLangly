@@ -27,7 +27,7 @@ The goals and purpose of this project is provided [here](https://github.com/Ento
 
 **Patterns** extends **Stringier** with further support for pattern declaration and parsing of those patterns. If you're doing a lot of text parsing or text processing, this is probably of interest to you.
 
-## [Streams](https://github.com/Entomy/Stringier/tree/master/Streams)
+## [Streams](https://github.com/Entomy/Stringier/tree/master/Streams) [![Nuget](https://img.shields.io/nuget/dt/Stringier.Streams?label=Streams&logo=nuget)](https://www.nuget.org/packages/Stringier.Streams/) [![Nuget](https://img.shields.io/nuget/dt/Stringier.Streams.FSharp?label=F%23&logo=nuget)](https://www.nuget.org/packages/Stringier.Streams.FSharp/)
 
 **Streams** provides extensions to [`Stream`](https://docs.microsoft.com/en-us/dotnet/api/system.io.stream) to make it easier to work with text streams. This includes both new `Stream` types, and extension methods for all streams.
 
