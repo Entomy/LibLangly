@@ -14,6 +14,26 @@ namespace Stringier.Patterns {
 			return new StringLiteral(pattern);
 		}
 
+		[CLSCompliant(false)]
+		public static implicit operator Pattern(SByte value) => value.AsPattern();
+
+		public static implicit operator Pattern(Byte value) => value.AsPattern();
+
+		[CLSCompliant(false)]
+		public static implicit operator Pattern(UInt16 value) => value.AsPattern();
+
+		public static implicit operator Pattern(Int16 value) => value.AsPattern();
+
+		[CLSCompliant(false)]
+		public static implicit operator Pattern(UInt32 value) => value.AsPattern();
+
+		public static implicit operator Pattern(Int32 value) => value.AsPattern();
+
+		[CLSCompliant(false)]
+		public static implicit operator Pattern(UInt64 value) => value.AsPattern();
+
+		public static implicit operator Pattern(Int64 value) => value.AsPattern();
+
 		#endregion
 
 		#region Alternator

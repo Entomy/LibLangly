@@ -70,8 +70,10 @@
 <h1 id="extensions">Extensions</h1>
 
 <h2 id="including">Including</h2>
-<p>This package merely extends <code>Char</code>, <code>Char[]</code>, <code>IEnumerable&lt;Char&gt;</code>, <code>String</code>, <code>String[]</code>, and <code>IEnumerable&lt;String&gt;</code>. You can use it through:</p>
+<p>This package merely extends <code>Char</code>, <code>Char[]</code>, <code>IEnumerable&lt;Char&gt;</code>, <code>Rune</code>, <code>Rune[]</code>, <code>IEnumerable&lt;Rune&gt;</code>, <code>String</code>, <code>String[]</code>, and <code>IEnumerable&lt;String&gt;</code>. You can use it through:</p>
 <pre><code class="lang-csharp">using Stringier;
+</code></pre>
+<pre><code class="lang-fsharp">open Stringier
 </code></pre>
 <h2 id="usage">Usage</h2>
 <p>Everything within this library is extension methods, so you will automatically see them through IntelliSense when using applicable types. That being said, all extensions exist within the module: <code>StringierExtensions</code> and can be browsed that way. All methods <del>are</del> <em>should be</em> well documented. If they are not either consider adding documentation in a pull request, or filing an issue.</p>
