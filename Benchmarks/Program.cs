@@ -1,6 +1,6 @@
 ﻿using System;
 using Benchmarks.Extensions;
-using Benchmarks.Metrics;
+using Benchmarks.Algorithms;
 using Benchmarks.Patterns;
 using BenchmarkDotNet.Running;
 using Consolator.UI;
@@ -10,13 +10,13 @@ using Console = Consolator.Console;
 namespace Benchmarks {
 	public static class Program {
 		internal readonly static KeyChoiceSet MenuChoices = new KeyChoiceSet(" Enter Choice: ",
-				new KeyChoice(ConsoleKey.D1, "Extensions", () => {
+				new KeyChoice(ConsoleKey.D1, "Algorithsm", () => {
+					Console.WriteChoices(AlgorithmsChoices);
+					Console.ReadChoice(AlgorithmsChoices);
+				}),
+				new KeyChoice(ConsoleKey.D2, "Extensions", () => {
 					Console.WriteChoices(ExtensionsChoices);
 					Console.ReadChoice(ExtensionsChoices);
-				}),
-				new KeyChoice(ConsoleKey.D2, "Metrics", () => {
-					Console.WriteChoices(MetricsChoices);
-					Console.ReadChoice(MetricsChoices);
 				}),
 				new KeyChoice(ConsoleKey.D3, "Patterns", () => {
 					Console.WriteChoices(PatternsChoices);
@@ -27,6 +27,10 @@ namespace Benchmarks {
 					Console.ReadChoice(StreamsChoices);
 				}),
 				new BackKeyChoice(ConsoleKey.Q, "Quit", () => Environment.Exit(0)));
+
+		internal readonly static KeyChoiceSet AlgorithmsChoices = new KeyChoiceSet(" Enter Choice: ",
+			new KeyChoice(ConsoleKey.D1, "Edit Distance (Same Length)", () => BenchmarkRunner.Run<FixedEditDistanceBenchmarks>()),
+			new BackKeyChoice(ConsoleKey.B, "Back", () => { }));
 
 		internal readonly static KeyChoiceSet ExtensionsChoices = new KeyChoiceSet(" Enter Choice: ",
 			new KeyChoice(ConsoleKey.D1, "Chop", () => BenchmarkRunner.Run<ChopBenchmarks>()),
@@ -45,10 +49,6 @@ namespace Benchmarks {
 			new KeyChoice(ConsoleKey.A, "Split", () => BenchmarkRunner.Run<SplitBenchmarks>()),
 			new BackKeyChoice(ConsoleKey.B, "Back", () => { }),
 			new KeyChoice(ConsoleKey.C, "Repeat", () => BenchmarkRunner.Run<RepeatBenchmarks>()));
-
-		internal readonly static KeyChoiceSet MetricsChoices = new KeyChoiceSet(" Enter Choice: ",
-			new KeyChoice(ConsoleKey.D1, "Edit Distance (Same Length)", () => BenchmarkRunner.Run<FixedEditDistanceBenchmarks>()),
-			new BackKeyChoice(ConsoleKey.B, "Back", () => { }));
 
 		internal readonly static KeyChoiceSet PatternsChoices = new KeyChoiceSet(" Enter Choice: ",
 			new KeyChoice(ConsoleKey.D1, "Literal", () => BenchmarkRunner.Run<LiteralBenchmarks>()),
