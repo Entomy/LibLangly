@@ -30,6 +30,7 @@ namespace Benchmarks {
 
 		internal readonly static KeyChoiceSet AlgorithmsChoices = new KeyChoiceSet(" Enter Choice: ",
 			new KeyChoice(ConsoleKey.D1, "Edit Distance (Same Length)", () => BenchmarkRunner.Run<FixedEditDistanceBenchmarks>()),
+			new KeyChoice(ConsoleKey.D2, "String Search", () => BenchmarkRunner.Run<SearchBenchmarks>()),
 			new BackKeyChoice(ConsoleKey.B, "Back", () => { }));
 
 		internal readonly static KeyChoiceSet ExtensionsChoices = new KeyChoiceSet(" Enter Choice: ",

@@ -17,5 +17,8 @@ namespace Benchmarks.Algorithms {
 
 		[Benchmark(Baseline = true)]
 		public void BruteForce() => Search.BruteForce(Source, Pattern);
+
+		[Benchmark]
+		public void RabinKarp() => Search.RabinKarp(Source, Pattern);
 	}
 }

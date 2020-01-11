@@ -10,3 +10,8 @@ type SearchTests() =
     member _.``Brute Force`` () =
         Assert.AreEqual(3, Search.BruteForce("helloworld", "low"))
         Assert.AreEqual(-1, Search.BruteForce("helloworld", "bacon"))
+
+    [<TestMethod>]
+    member _.``Rabin-Karp`` () =
+        Assert.AreEqual(3, Search.RabinKarp("helloworld", "low"))
+        Assert.AreEqual(-1, Search.RabinKarp("helloworld", "bacon"))
