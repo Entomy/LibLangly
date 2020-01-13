@@ -34,18 +34,16 @@ In absolutely no way should "the right thing" be taken as "fixing mistakes". Any
 
 The API should "feel right" within the context of the language being used. This means a [`CLSCompliant`](https://docs.microsoft.com/en-us/dotnet/api/system.clscompliantattribute) core with language specific bindings when necessary to provide that feeling. Programmers should not have to suddenly and radically change programming paradigms just to use a library; this is jarring and discouraging. However, by relying on a [`CLSCompliant`](https://docs.microsoft.com/en-us/dotnet/api/system.clscompliantattribute) core, the same approach can be used across all languages if necessary, keeping the learning curve lower. Neither approach is forced, and this is actually very easy to maintain.
 
+## Correct
+
+Algorithms should be correct. While this might seem obvious, there are plenty of cases of optimizing certain cases and causing the resulting algorithm to be fast but incorrect. As an example, look at the amount of Palindrome checkers which mistakenly reverse a string and compare. While this is fast and efficient, it also only works for a subset of Palindromes. Even worse, there's a faster way that checks for the same subset. The appropriate implementation for this project is the algorithm which correctly identifies all Palindromes.
+
+Make it work right, then make it fast.
+
 ## Performance
 
 Performance should be good. Being the highest performing parser is not the end goal, but performance should be competitive with existing solutions, and ideally be in the top quarter of performers. Understanding performance is very important, and extensive benchmarks should be kept, and publicly accessible, to ensure performance is reasonable.
 
 ## Collaborative not Competitive
 
-Multiple options are good; no single approach can do everything well. Everybody is better served when we work together, not against each other. This way, disparate approaches still exist and still focus on and excel at what they do well, while not bringing each other down. Utilizing each other should be possible, and it should be transparent when and why a "competitor" does something better. Downstream decisions should not be an "either-or" decision, but rather a "primarily X with some Y" decision.
-
-## Dogfooding
-
-Stringier should be used for the development of more complex text processing and language analysis tools. More importantly however is that it should be something people _want_ to use for this purpose. Dogfooding, or using one's own products, has several benefits. For starters, it ensures the developers confront the actual usability of their own product. Numerous usability concerns have been turned into API improvements over the development of this product. Furthermore, it ensures more opportunities for finding bugs, especially by people likely to understand them. This has also contributed towards numerous fixes. But most importantly, is it ensures that developers understand the software from a user's point of view, which helps with manual writing, user feedback, tutorials, etc.
-
-Dogfooding isn't without criticisms however, and those criticisms are warranted and should be addressed. In no instance should software built on top of Stringier be dependent on non-public releases. This was historically a problem at Microsoft and others, where upgrades were done from beta to beta, rather than official releases that consumers used. This also avoids the potential problem of discouraging developers with buggy in-development features. A developer using Stringier in downstream software is still downstream.
-
-Importantly, dogfooding should never be forced or pushed onto developers. No solution is perfect and an alternative approach may better suit their problem domain. But also, any criticisms or concerns are still valid and should be addressed, not suppressed.
+Multiple options are good; no single approach can do everything well. Everybody is better served when we work together, not against each other. This way, disparate approaches still exist and still focus on and excel at what they do well, while not bringing each other down. U
