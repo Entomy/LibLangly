@@ -19,6 +19,9 @@ namespace Benchmarks.Algorithms {
 		public void BruteForce() => Search.BruteForce(Source, Pattern);
 
 		[Benchmark]
+		public void Horspool() => Search.Horspool(Source, Pattern);
+
+		[Benchmark]
 		public void RabinKarp() => Search.RabinKarp(Source, Pattern);
 	}
 }
