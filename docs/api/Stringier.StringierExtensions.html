@@ -939,6 +939,644 @@
   </table>
   
   
+  <a id="Stringier_StringierExtensions_Format_" data-uid="Stringier.StringierExtensions.Format*"></a>
+  <h4 id="Stringier_StringierExtensions_Format_System_String_System_IFormatProvider_System_Object_" data-uid="Stringier.StringierExtensions.Format(System.String,System.IFormatProvider,System.Object)">Format(String, IFormatProvider, Object)</h4>
+  <div class="markdown level1 summary"><p>Replaces one or more format items in the <code data-dev-comment-type="paramref" class="paramref">string</code> with the string representation of a specified object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string Format(this string string, IFormatProvider provider, object arg0)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">string</span></td>
+        <td><p>A composite format string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IFormatProvider</span></td>
+        <td><span class="parametername">provider</span></td>
+        <td><p>An object that supplies culture-specific formatting information.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">arg0</span></td>
+        <td><p>The object to format.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>A copy of <code data-dev-comment-type="paramref" class="paramref">string</code> in which any format items are replaced by the string representation of <code data-dev-comment-type="paramref" class="paramref">arg0</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">string</code> is <span class="xref">null</span>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.FormatException</span></td>
+        <td><p>The format item in <code data-dev-comment-type="paramref" class="paramref">string</code> is invalid.</p>
+-or-
+<p>The index of a format item is not zero.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_StringierExtensions_Format_" data-uid="Stringier.StringierExtensions.Format*"></a>
+  <h4 id="Stringier_StringierExtensions_Format_System_String_System_IFormatProvider_System_Object_System_Object_" data-uid="Stringier.StringierExtensions.Format(System.String,System.IFormatProvider,System.Object,System.Object)">Format(String, IFormatProvider, Object, Object)</h4>
+  <div class="markdown level1 summary"><p>Replaces the format items in the <code data-dev-comment-type="paramref" class="paramref">string</code> with the string representation of the two specified objects.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string Format(this string string, IFormatProvider provider, object arg0, object arg1)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">string</span></td>
+        <td><p>A composite format string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IFormatProvider</span></td>
+        <td><span class="parametername">provider</span></td>
+        <td><p>An object that supplies culture-specific formatting information.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">arg0</span></td>
+        <td><p>The first object to format.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">arg1</span></td>
+        <td><p>The second object to format.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>A copy of <code data-dev-comment-type="paramref" class="paramref">string</code> in which format items are replaced by the string representations of <code data-dev-comment-type="paramref" class="paramref">arg0</code> and <code data-dev-comment-type="paramref" class="paramref">arg1</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">string</code> is <span class="xref">null</span>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.FormatException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">string</code> is invalid.</p>
+-or-
+<p>The index of a format item is not zero or one.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_StringierExtensions_Format_" data-uid="Stringier.StringierExtensions.Format*"></a>
+  <h4 id="Stringier_StringierExtensions_Format_System_String_System_IFormatProvider_System_Object_System_Object_System_Object_" data-uid="Stringier.StringierExtensions.Format(System.String,System.IFormatProvider,System.Object,System.Object,System.Object)">Format(String, IFormatProvider, Object, Object, Object)</h4>
+  <div class="markdown level1 summary"><p>Replaces the format items in the <code data-dev-comment-type="paramref" class="paramref">string</code> with the string representation of three specified objects.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string Format(this string string, IFormatProvider provider, object arg0, object arg1, object arg2)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">string</span></td>
+        <td><p>A composite format string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IFormatProvider</span></td>
+        <td><span class="parametername">provider</span></td>
+        <td><p>An object that supplies culture-specific formatting information.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">arg0</span></td>
+        <td><p>The first object to format.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">arg1</span></td>
+        <td><p>The second object to format.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">arg2</span></td>
+        <td><p>The third object to format.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>A copy of <code data-dev-comment-type="paramref" class="paramref">string</code> in which the format items have been replaced by the string representations of <code data-dev-comment-type="paramref" class="paramref">arg0</code>, <code data-dev-comment-type="paramref" class="paramref">arg1</code>, and <code data-dev-comment-type="paramref" class="paramref">arg2</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">string</code> is <span class="xref">null</span>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.FormatException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">string</code> is invalid.</p>
+-or-
+<p>The index of a format item is less than zero, or greater than two.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_StringierExtensions_Format_" data-uid="Stringier.StringierExtensions.Format*"></a>
+  <h4 id="Stringier_StringierExtensions_Format_System_String_System_IFormatProvider_System_Object___" data-uid="Stringier.StringierExtensions.Format(System.String,System.IFormatProvider,System.Object[])">Format(String, IFormatProvider, Object[])</h4>
+  <div class="markdown level1 summary"><p>Replaces the format item in the <code data-dev-comment-type="paramref" class="paramref">string</code> with the string representation of a corresponding object in a specified array.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string Format(this string string, IFormatProvider provider, params object[] args)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">string</span></td>
+        <td><p>A composite format string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IFormatProvider</span></td>
+        <td><span class="parametername">provider</span></td>
+        <td><p>An object that supplies culture-specific formatting information.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span>[]</td>
+        <td><span class="parametername">args</span></td>
+        <td><p>An object array that contains zero or more objects to format.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>A copy of <code data-dev-comment-type="paramref" class="paramref">string</code> in which the format items have been replaced by the string representation of the corresponding objects in <code data-dev-comment-type="paramref" class="paramref">args</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">string</code> or <code data-dev-comment-type="paramref" class="paramref">args</code> is <span class="xref">null</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_StringierExtensions_Format_" data-uid="Stringier.StringierExtensions.Format*"></a>
+  <h4 id="Stringier_StringierExtensions_Format_System_String_System_Object_" data-uid="Stringier.StringierExtensions.Format(System.String,System.Object)">Format(String, Object)</h4>
+  <div class="markdown level1 summary"><p>Replaces one or more format items in the <code data-dev-comment-type="paramref" class="paramref">string</code> with the string representation of a specified object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string Format(this string string, object arg0)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">string</span></td>
+        <td><p>A composite format string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">arg0</span></td>
+        <td><p>The object to format.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>A copy of <code data-dev-comment-type="paramref" class="paramref">string</code> in which any format items are replaced by the string representation of <code data-dev-comment-type="paramref" class="paramref">arg0</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">string</code> is <span class="xref">null</span>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.FormatException</span></td>
+        <td><p>The format item in <code data-dev-comment-type="paramref" class="paramref">string</code> is invalid.</p>
+-or-
+<p>The index of a format item is not zero.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_StringierExtensions_Format_" data-uid="Stringier.StringierExtensions.Format*"></a>
+  <h4 id="Stringier_StringierExtensions_Format_System_String_System_Object_System_Object_" data-uid="Stringier.StringierExtensions.Format(System.String,System.Object,System.Object)">Format(String, Object, Object)</h4>
+  <div class="markdown level1 summary"><p>Replaces the format items in the <code data-dev-comment-type="paramref" class="paramref">string</code> with the string representation of the two specified objects.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string Format(this string string, object arg0, object arg1)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">string</span></td>
+        <td><p>A composite format string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">arg0</span></td>
+        <td><p>The first object to format.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">arg1</span></td>
+        <td><p>The second object to format.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>A copy of <code data-dev-comment-type="paramref" class="paramref">string</code> in which format items are replaced by the string representations of <code data-dev-comment-type="paramref" class="paramref">arg0</code> and <code data-dev-comment-type="paramref" class="paramref">arg1</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">string</code> is <span class="xref">null</span>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.FormatException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">string</code> is invalid.</p>
+-or-
+<p>The index of a format item is not zero or one.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_StringierExtensions_Format_" data-uid="Stringier.StringierExtensions.Format*"></a>
+  <h4 id="Stringier_StringierExtensions_Format_System_String_System_Object_System_Object_System_Object_" data-uid="Stringier.StringierExtensions.Format(System.String,System.Object,System.Object,System.Object)">Format(String, Object, Object, Object)</h4>
+  <div class="markdown level1 summary"><p>Replaces the format items in the <code data-dev-comment-type="paramref" class="paramref">string</code> with the string representation of three specified objects.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string Format(this string string, object arg0, object arg1, object arg2)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">string</span></td>
+        <td><p>A composite format string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">arg0</span></td>
+        <td><p>The first object to format.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">arg1</span></td>
+        <td><p>The second object to format.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">arg2</span></td>
+        <td><p>The third object to format.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>A copy of <code data-dev-comment-type="paramref" class="paramref">string</code> in which the format items have been replaced by the string representations of <code data-dev-comment-type="paramref" class="paramref">arg0</code>, <code data-dev-comment-type="paramref" class="paramref">arg1</code>, and <code data-dev-comment-type="paramref" class="paramref">arg2</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">string</code> is <span class="xref">null</span>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.FormatException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">string</code> is invalid.</p>
+-or-
+<p>The index of a format item is less than zero, or greater than two.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_StringierExtensions_Format_" data-uid="Stringier.StringierExtensions.Format*"></a>
+  <h4 id="Stringier_StringierExtensions_Format_System_String_System_Object___" data-uid="Stringier.StringierExtensions.Format(System.String,System.Object[])">Format(String, Object[])</h4>
+  <div class="markdown level1 summary"><p>Replaces the format item in the <code data-dev-comment-type="paramref" class="paramref">string</code> with the string representation of a corresponding object in a specified array.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string Format(this string string, params object[] args)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">string</span></td>
+        <td><p>A composite format string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span>[]</td>
+        <td><span class="parametername">args</span></td>
+        <td><p>An object array that contains zero or more objects to format.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>A copy of <code data-dev-comment-type="paramref" class="paramref">string</code> in which the format items have been replaced by the string representation of the corresponding objects in <code data-dev-comment-type="paramref" class="paramref">args</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">string</code> or <code data-dev-comment-type="paramref" class="paramref">args</code> is <span class="xref">null</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
   <a id="Stringier_StringierExtensions_FuzzyEquals_" data-uid="Stringier.StringierExtensions.FuzzyEquals*"></a>
   <h4 id="Stringier_StringierExtensions_FuzzyEquals_ReadOnlySpan_System_Char__ReadOnlySpan_System_Char__" data-uid="Stringier.StringierExtensions.FuzzyEquals(ReadOnlySpan{System.Char},ReadOnlySpan{System.Char})">FuzzyEquals(ReadOnlySpan&lt;Char&gt;, ReadOnlySpan&lt;Char&gt;)</h4>
   <div class="markdown level1 summary"><p>Determines whether two specified <see cref="!:ReadOnlySpan&lt;T>"></see> objects have roughly the same value.</p>
