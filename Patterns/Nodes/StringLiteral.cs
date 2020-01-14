@@ -30,6 +30,19 @@ namespace Stringier.Patterns.Nodes {
 		internal StringLiteral(String @string, Compare comparisonType) : base(comparisonType) => String = @string;
 
 		/// <summary>
+		/// Initialize a new <see cref="StringLiteral"/> with the given <paramref name="string"/>.
+		/// </summary>
+		/// <param name="span">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to parse.</param>
+		internal StringLiteral(ReadOnlySpan<Char> span) : base(Compare.NoPreference) => String = span.ToString();
+
+		/// <summary>
+		/// Intialize a new <see cref="StringLiteral"/> with the given <paramref name="string"/>.
+		/// </summary>
+		/// <param name="span">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to parse.</param>
+		/// <param name="comparisonType">The <see cref="Compare"/> to use when parsing.</param>
+		internal StringLiteral(ReadOnlySpan<Char> span, Compare comparisonType) : base(comparisonType) => String = span.ToString();
+
+		/// <summary>
 		/// Checks the first character in the <paramref name="source"/> against the header of this node.
 		/// </summary>
 		/// <remarks>

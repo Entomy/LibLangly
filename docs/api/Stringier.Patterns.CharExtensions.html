@@ -663,7 +663,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_CharExtensions_Or_System_Char_Stringier_Patterns_Capture_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.CharExtensions.Or(System.Char%2CStringier.Patterns.Capture)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/CharExtensions.cs/#L137">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/CharExtensions.cs/#L144">View Source</a>
   </span>
   <a id="Stringier_Patterns_CharExtensions_Or_" data-uid="Stringier.Patterns.CharExtensions.Or*"></a>
   <h4 id="Stringier_Patterns_CharExtensions_Or_System_Char_Stringier_Patterns_Capture_" data-uid="Stringier.Patterns.CharExtensions.Or(System.Char,Stringier.Patterns.Capture)">Or(Char, Capture)</h4>
@@ -773,7 +773,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_CharExtensions_Or_System_Char_System_Char_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.CharExtensions.Or(System.Char%2CSystem.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/CharExtensions.cs/#L130">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/CharExtensions.cs/#L137">View Source</a>
   </span>
   <a id="Stringier_Patterns_CharExtensions_Or_" data-uid="Stringier.Patterns.CharExtensions.Or*"></a>
   <h4 id="Stringier_Patterns_CharExtensions_Or_System_Char_System_Char_" data-uid="Stringier.Patterns.CharExtensions.Or(System.Char,System.Char)">Or(Char, Char)</h4>
@@ -803,6 +803,61 @@
         <td><span class="xref">System.Char</span></td>
         <td><span class="parametername">other</span></td>
         <td><p>The <span class="xref">System.Char</span> to check if this <span class="xref">System.Char</span> does not match</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> alternating this <span class="xref">System.Char</span> and <code data-dev-comment-type="paramref" class="paramref">other</code></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_CharExtensions_Or_System_Char_System_ReadOnlySpan_System_Char__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.CharExtensions.Or(System.Char%2CSystem.ReadOnlySpan%7BSystem.Char%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/CharExtensions.cs/#L130">View Source</a>
+  </span>
+  <a id="Stringier_Patterns_CharExtensions_Or_" data-uid="Stringier.Patterns.CharExtensions.Or*"></a>
+  <h4 id="Stringier_Patterns_CharExtensions_Or_System_Char_System_ReadOnlySpan_System_Char__" data-uid="Stringier.Patterns.CharExtensions.Or(System.Char,System.ReadOnlySpan{System.Char})">Or(Char, ReadOnlySpan&lt;Char&gt;)</h4>
+  <div class="markdown level1 summary"><p>Declares <code data-dev-comment-type="paramref" class="paramref">other</code> to be an alternate of this <span class="xref">System.Char</span>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern Or(this char char, ReadOnlySpan&lt;char&gt; other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">char</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.ReadOnlySpan</span>&lt;<span class="xref">System.Char</span>&gt;</td>
+        <td><span class="parametername">other</span></td>
+        <td><p>The <span class="xref">System.ReadOnlySpan&lt;T&gt;</span> of <span class="xref">System.Char</span> to check if this <span class="xref">System.Char</span> does not match</p>
 </td>
       </tr>
     </tbody>
@@ -883,7 +938,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_CharExtensions_Repeat_System_Char_System_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.CharExtensions.Repeat(System.Char%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/CharExtensions.cs/#L149">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/CharExtensions.cs/#L156">View Source</a>
   </span>
   <a id="Stringier_Patterns_CharExtensions_Repeat_" data-uid="Stringier.Patterns.CharExtensions.Repeat*"></a>
   <h4 id="Stringier_Patterns_CharExtensions_Repeat_System_Char_System_Int32_" data-uid="Stringier.Patterns.CharExtensions.Repeat(System.Char,System.Int32)">Repeat(Char, Int32)</h4>
@@ -938,7 +993,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_CharExtensions_Then_System_Char_Stringier_Patterns_Capture_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.CharExtensions.Then(System.Char%2CStringier.Patterns.Capture)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/CharExtensions.cs/#L187">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/CharExtensions.cs/#L201">View Source</a>
   </span>
   <a id="Stringier_Patterns_CharExtensions_Then_" data-uid="Stringier.Patterns.CharExtensions.Then*"></a>
   <h4 id="Stringier_Patterns_CharExtensions_Then_System_Char_Stringier_Patterns_Capture_" data-uid="Stringier.Patterns.CharExtensions.Then(System.Char,Stringier.Patterns.Capture)">Then(Char, Capture)</h4>
@@ -993,7 +1048,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_CharExtensions_Then_System_Char_Stringier_Patterns_Pattern_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.CharExtensions.Then(System.Char%2CStringier.Patterns.Pattern)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/CharExtensions.cs/#L156">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/CharExtensions.cs/#L163">View Source</a>
   </span>
   <a id="Stringier_Patterns_CharExtensions_Then_" data-uid="Stringier.Patterns.CharExtensions.Then*"></a>
   <h4 id="Stringier_Patterns_CharExtensions_Then_System_Char_Stringier_Patterns_Pattern_" data-uid="Stringier.Patterns.CharExtensions.Then(System.Char,Stringier.Patterns.Pattern)">Then(Char, Pattern)</h4>
@@ -1048,7 +1103,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_CharExtensions_Then_System_Char_System_Char_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.CharExtensions.Then(System.Char%2CSystem.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/CharExtensions.cs/#L180">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/CharExtensions.cs/#L194">View Source</a>
   </span>
   <a id="Stringier_Patterns_CharExtensions_Then_" data-uid="Stringier.Patterns.CharExtensions.Then*"></a>
   <h4 id="Stringier_Patterns_CharExtensions_Then_System_Char_System_Char_" data-uid="Stringier.Patterns.CharExtensions.Then(System.Char,System.Char)">Then(Char, Char)</h4>
@@ -1100,10 +1155,65 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_CharExtensions_Then_System_Char_System_ReadOnlySpan_System_Char__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.CharExtensions.Then(System.Char%2CSystem.ReadOnlySpan%7BSystem.Char%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/CharExtensions.cs/#L187">View Source</a>
+  </span>
+  <a id="Stringier_Patterns_CharExtensions_Then_" data-uid="Stringier.Patterns.CharExtensions.Then*"></a>
+  <h4 id="Stringier_Patterns_CharExtensions_Then_System_Char_System_ReadOnlySpan_System_Char__" data-uid="Stringier.Patterns.CharExtensions.Then(System.Char,System.ReadOnlySpan{System.Char})">Then(Char, ReadOnlySpan&lt;Char&gt;)</h4>
+  <div class="markdown level1 summary"><p>Concatenates the patterns so that this <span class="xref">System.Char</span> comes before <code data-dev-comment-type="paramref" class="paramref">other</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern Then(this char char, ReadOnlySpan&lt;char&gt; other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">char</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.ReadOnlySpan</span>&lt;<span class="xref">System.Char</span>&gt;</td>
+        <td><span class="parametername">other</span></td>
+        <td><p>The succeeding <span class="xref">System.ReadOnlySpan&lt;T&gt;</span> of <span class="xref">System.Char</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> concatenating this <span class="xref">System.Char</span> and <code data-dev-comment-type="paramref" class="paramref">other</code></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_CharExtensions_Then_System_Char_System_String_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.CharExtensions.Then(System.Char%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/CharExtensions.cs/#L168">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/CharExtensions.cs/#L175">View Source</a>
   </span>
   <a id="Stringier_Patterns_CharExtensions_Then_" data-uid="Stringier.Patterns.CharExtensions.Then*"></a>
   <h4 id="Stringier_Patterns_CharExtensions_Then_System_Char_System_String_" data-uid="Stringier.Patterns.CharExtensions.Then(System.Char,System.String)">Then(Char, String)</h4>
@@ -1158,7 +1268,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_CharExtensions_With_System_Char_Stringier_Patterns_Compare_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.CharExtensions.With(System.Char%2CStringier.Patterns.Compare)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/CharExtensions.cs/#L200">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/CharExtensions.cs/#L214">View Source</a>
   </span>
   <a id="Stringier_Patterns_CharExtensions_With_" data-uid="Stringier.Patterns.CharExtensions.With*"></a>
   <h4 id="Stringier_Patterns_CharExtensions_With_System_Char_Stringier_Patterns_Compare_" data-uid="Stringier.Patterns.CharExtensions.With(System.Char,Stringier.Patterns.Compare)">With(Char, Compare)</h4>

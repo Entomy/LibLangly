@@ -7,12 +7,14 @@ namespace Stringier.Patterns {
 
 		public static implicit operator Pattern(Char @char) => new CharLiteral(@char);
 
-		public static implicit operator Pattern(String pattern) {
-			if (pattern is null) {
-				throw new ArgumentNullException(nameof(pattern));
+		public static implicit operator Pattern(String @string) {
+			if (@string is null) {
+				throw new ArgumentNullException(nameof(@string));
 			}
-			return new StringLiteral(pattern);
+			return new StringLiteral(@string);
 		}
+
+		public static implicit operator Pattern(ReadOnlySpan<Char> span) => new StringLiteral(span);
 
 		#endregion
 
@@ -50,6 +52,13 @@ namespace Stringier.Patterns {
 		}
 
 		/// <summary>
+		/// Declares <paramref name="right"/> to be an alternate of this <see cref="Pattern"/>.
+		/// </summary>
+		/// <param name="right">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to check if this <see cref="Pattern"/> does not match.</param>
+		/// <returns>A new <see cref="Pattern"/> alternating this <see cref="Pattern"/> and <paramref name="right"/>.</returns
+		internal virtual Pattern Alternate(ReadOnlySpan<Char> right) => new Alternator(this, new StringLiteral(right));
+
+		/// <summary>
 		/// Declares <paramref name="other"/> to be an alternate of this <see cref="Pattern"/>.
 		/// </summary>
 		/// <param name="other">The <see cref="Pattern"/> to check if this <see cref="Pattern"/> does not match</param>
@@ -72,6 +81,13 @@ namespace Stringier.Patterns {
 			}
 			return Alternate(other);
 		}
+
+		/// <summary>
+		/// Declares <paramref name="other"/> to be an alternate of this <see cref="Pattern"/>.
+		/// </summary>
+		/// <param name="other">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to check if this <see cref="Pattern"/> does not match</param>
+		/// <returns>A new <see cref="Pattern"/> alternating this <see cref="Pattern"/> and <paramref name="other"/></returns>
+		public virtual Pattern Or(ReadOnlySpan<Char> other) => Alternate(other);
 
 		/// <summary>
 		/// Declares <paramref name="other"/> to be an alternate of this <see cref="Pattern"/>.
@@ -336,6 +352,14 @@ namespace Stringier.Patterns {
 			}
 			return new Concatenator(this, new StringLiteral(right));
 		}
+
+		/// <summary>
+		/// Concatenates the nodes so that this <see cref="Pattern"/> comes before the <paramref name="right"/> <see cref="String"/>.
+		/// </summary>
+		/// <param name="right">The succeeding <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/>.</param>
+		/// <returns>A new <see cref="Pattern"/> concatenating this <see cref="Pattern"/> and <paramref name="right"/>.</returns
+		internal virtual Pattern Concatenate(ReadOnlySpan<Char> right) => new Concatenator(this, new StringLiteral(right));
+
 		/// <summary>
 		/// Concatenates the patterns so that this <see cref="Pattern"/> comes before <paramref name="other"/>
 		/// </summary>
@@ -359,6 +383,13 @@ namespace Stringier.Patterns {
 			}
 			return Concatenate(other);
 		}
+
+		/// <summary>
+		/// Concatenates the patterns so that this <see cref="Pattern"/> comes before <paramref name="other"/>
+		/// </summary>
+		/// <param name="other">The succeeding <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/></param>
+		/// <returns>A new <see cref="Pattern"/> concatenating this <see cref="Pattern"/> and <paramref name="other"/></returns>
+		public virtual Pattern Then(ReadOnlySpan<Char> other) => Concatenate(other);
 
 		/// <summary>
 		/// Concatenates the patterns so that this <see cref="Pattern"/> comes before <paramref name="other"/>
@@ -438,6 +469,13 @@ namespace Stringier.Patterns {
 		/// <summary>
 		/// Marks the <paramref name="pattern"/> as negated.
 		/// </summary>
+		/// <param name="pattern">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to negate.</param>
+		/// <returns>A new <see cref="Pattern"/> which has been negated.</returns>
+		public static Pattern Not(ReadOnlySpan<Char> pattern) => new StringLiteral(pattern).Negate();
+
+		/// <summary>
+		/// Marks the <paramref name="pattern"/> as negated.
+		/// </summary>
 		/// <param name="pattern">The <see cref="Char"/> to negate.</param>
 		/// <returns>A new <see cref="Pattern"/> which has been negated.</returns>
 		public static Pattern Not(Char pattern) => new CharLiteral(pattern).Negate();
@@ -490,6 +528,13 @@ namespace Stringier.Patterns {
 			}
 			return new StringLiteral(pattern).Optional();
 		}
+
+		/// <summary>
+		/// Marks the <paramref name="pattern"/> as optional.
+		/// </summary>
+		/// <param name="pattern">The optional <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/>.</param>
+		/// <returns>A new <see cref="Pattern"/> which is optional.</returns>
+		public static Pattern Maybe(ReadOnlySpan<Char> pattern) => new StringLiteral(pattern).Optional();
 
 		/// <summary>
 		/// Marks the <paramref name="pattern"/> as optional.
@@ -608,6 +653,13 @@ namespace Stringier.Patterns {
 			}
 			return new StringLiteral(pattern).Span();
 		}
+
+		/// <summary>
+		/// Marks the <paramref name="pattern"/> as spanning.
+		/// </summary>
+		/// <param name="pattern">The spanning <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/>.</param>
+		/// <returns>A new <see cref="Pattern"/> which is spanning.</returns>
+		public static Pattern Many(ReadOnlySpan<Char> pattern) => new StringLiteral(pattern).Span();
 
 		/// <summary>
 		/// Marks the <paramref name="pattern"/> as spanning.

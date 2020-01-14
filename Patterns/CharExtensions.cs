@@ -125,6 +125,13 @@ namespace Stringier.Patterns {
 		/// <summary>
 		/// Declares <paramref name="other"/> to be an alternate of this <see cref="Char"/>.
 		/// </summary>
+		/// <param name="other">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to check if this <see cref="Char"/> does not match</param>
+		/// <returns>A new <see cref="Pattern"/> alternating this <see cref="Char"/> and <paramref name="other"/></returns>
+		public static Pattern Or(this Char @char, ReadOnlySpan<Char> other) => new CharLiteral(@char).Alternate(other);
+
+		/// <summary>
+		/// Declares <paramref name="other"/> to be an alternate of this <see cref="Char"/>.
+		/// </summary>
 		/// <param name="other">The <see cref="Char"/> to check if this <see cref="Char"/> does not match</param>
 		/// <returns>A new <see cref="Pattern"/> alternating this <see cref="Char"/> and <paramref name="other"/></returns>
 		public static Pattern Or(this Char @char, Char other) => new CharLiteral(@char).Alternate(other);
@@ -171,6 +178,13 @@ namespace Stringier.Patterns {
 			}
 			return new CharLiteral(@char).Concatenate(other);
 		}
+
+		/// <summary>
+		/// Concatenates the patterns so that this <see cref="Char"/> comes before <paramref name="other"/>
+		/// </summary>
+		/// <param name="other">The succeeding <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/>.</param>
+		/// <returns>A new <see cref="Pattern"/> concatenating this <see cref="Char"/> and <paramref name="other"/></returns>
+		public static Pattern Then(this Char @char, ReadOnlySpan<Char> other) => new CharLiteral(@char).Concatenate(other);
 
 		/// <summary>
 		/// Concatenates the patterns so that this <see cref="Char"/> comes before <paramref name="other"/>

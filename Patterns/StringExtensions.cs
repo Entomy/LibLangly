@@ -41,7 +41,7 @@ namespace Stringier.Patterns {
 		/// Attempt to consume the <paramref name="pattern"/> from the <paramref name="source"/>
 		/// </summary>
 		/// <param name="pattern">The <see cref="String"/> to match</param>
-		/// <param name="source">The <see cref="ReadOnlySpan<Char>"/> to consume</param>
+		/// <param name="source">The <see cref="ReadOnlySpan{T}"/> to consume</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the consumed string</returns>
 		public static Result Consume(this String pattern, ReadOnlySpan<Char> source) => pattern.Consume(source, Compare.CaseSensitive);
 
@@ -49,7 +49,7 @@ namespace Stringier.Patterns {
 		/// Attempt to consume the <paramref name="pattern"/> from the <paramref name="source"/>
 		/// </summary>
 		/// <param name="pattern">The <see cref="String"/> to match</param>
-		/// <param name="source">The <see cref="ReadOnlySpan<Char>"/> to consume</param>
+		/// <param name="source">The <see cref="ReadOnlySpan{T}"/> to consume</param>
 		/// <param name="comparisonType">Whether the comparison is sensitive to casing.</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the consumed string</returns>
 		public static Result Consume(this String pattern, ReadOnlySpan<Char> source, Compare comparisonType) {
@@ -96,7 +96,6 @@ namespace Stringier.Patterns {
 			pattern.Consume(ref source, ref Result, comparisonType, trace);
 			return Result;
 		}
-
 
 		/// <summary>
 		/// Declares <paramref name="other"/> to be an alternate of this <see cref="String"/>.
@@ -218,7 +217,7 @@ namespace Stringier.Patterns {
 		/// <summary>
 		/// Attempt to consume the <paramref name="pattern" />, adjusting the <paramref name="source"/> and <paramref name="result"/> as appropriate.
 		/// </summary>
-		/// <param name="pattern">The <see cref="Char"/> pattern.</param>
+		/// <param name="pattern">The <see cref="String"/> pattern.</param>
 		/// <param name="source">The <see cref="Source"/> to consume from.</param>
 		/// <param name="result">The <see cref="Result"/> to store the result into.</param>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -227,7 +226,7 @@ namespace Stringier.Patterns {
 		/// <summary>
 		/// Attempt to consume the <paramref name="pattern" />, adjusting the <paramref name="source"/> and <paramref name="result"/> as appropriate.
 		/// </summary>
-		/// <param name="pattern">The <see cref="Char"/> pattern.</param>
+		/// <param name="pattern">The <see cref="String"/> pattern.</param>
 		/// <param name="source">The <see cref="Source"/> to consume from.</param>
 		/// <param name="result">The <see cref="Result"/> to store the result into.</param>
 		/// <param name="comparisonType">Whether the comparison is sensitive to casing.</param>
@@ -334,7 +333,7 @@ namespace Stringier.Patterns {
 		/// <summary>
 		/// Attempt to neglect the <paramref name="pattern" />, adjusting the <paramref name="source"/> and <paramref name="result"/> as appropriate.
 		/// </summary>
-		/// <param name="pattern">The <see cref="Char"/> pattern.</param>
+		/// <param name="pattern">The <see cref="String"/> pattern.</param>
 		/// <param name="source">The <see cref="Source"/> to neglect from.</param>
 		/// <param name="result">The <see cref="Result"/> to store the result into.</param>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -343,7 +342,7 @@ namespace Stringier.Patterns {
 		/// <summary>
 		/// Attempt to neglect the <paramref name="pattern" />, adjusting the <paramref name="source"/> and <paramref name="result"/> as appropriate.
 		/// </summary>
-		/// <param name="pattern">The <see cref="Char"/> pattern.</param>
+		/// <param name="pattern">The <see cref="String"/> pattern.</param>
 		/// <param name="source">The <see cref="Source"/> to neglect from.</param>
 		/// <param name="result">The <see cref="Result"/> to store the result into.</param>
 		/// <param name="comparisonType">Whether the comparison is sensitive to casing.</param>
