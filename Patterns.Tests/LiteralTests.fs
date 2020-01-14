@@ -23,12 +23,6 @@ type LiteralTests() =
 
         ResultAssert.Fails(hello.Consume("Bacon"))
 
-        let seven = p 7
-
-        ResultAssert.Captures("7", seven.Consume("7"))
-
-        ResultAssert.Fails(seven.Consume("5"))
-
     [<TestMethod>]
     member _.``consume source`` () =
         let hello = p"Hello"
