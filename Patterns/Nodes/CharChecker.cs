@@ -15,11 +15,10 @@ namespace Stringier.Patterns.Nodes {
 		internal readonly new Func<Char, Boolean> Check;
 
 		/// <summary>
-		/// Construct a new <see cref="CharChecker"/> from the specified <paramref name="check"/>
+		/// Construct a new <see cref="CharChecker"/> from the specified <paramref name="check"/>.
 		/// </summary>
-		/// <param name="name">The name to refer to this as</param>
-		/// <param name="check">A <see cref="Func{T, TResult}"/> taking a <see cref="Char"/> and returning a <see cref="Boolean"/></param>
-		internal CharChecker(String name, Func<Char, Boolean> check) : base(name) => Check = check;
+		/// <param name="check">A <see cref="Func{T, TResult}"/> taking a <see cref="Char"/> and returning a <see cref="Boolean"/>.</param>
+		internal CharChecker(Func<Char, Boolean> check) => Check = check;
 
 		/// <summary>
 		/// Checks the first character in the <paramref name="source"/> against the header of this node.
@@ -89,7 +88,7 @@ namespace Stringier.Patterns.Nodes {
 		internal override Pattern Alternate(Pattern right) {
 			switch (right) {
 			case CharChecker checker:
-				return new AlternateCharChecker(Name, Check, checker.Check);
+				return new AlternateCharChecker(Check, checker.Check);
 			default:
 				return base.Alternate(right);
 			}
@@ -104,7 +103,7 @@ namespace Stringier.Patterns.Nodes {
 		/// </summary>
 		/// <param name="count">The amount of times to repeat.</param>
 		/// <returns>A new <see cref="Pattern"/> repeated <paramref name="count"/> times.</returns
-		public override Pattern Repeat(Int32 count) => new RepeatCharChecker(Name, Check, count);
+		public override Pattern Repeat(Int32 count) => new RepeatCharChecker(Check, count);
 
 		#endregion
 	}

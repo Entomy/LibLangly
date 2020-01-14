@@ -12,7 +12,7 @@ namespace Stringier.Patterns.Nodes {
 		/// <summary>
 		/// Initializes a new <see cref="SourceEndChecker"/>.
 		/// </summary>
-		internal SourceEndChecker() : base("␃") { }
+		internal SourceEndChecker() { }
 
 		/// <summary>
 		/// Checks the first character in the <paramref name="source"/> against the header of this node.

@@ -22,13 +22,12 @@ namespace Stringier.Patterns.Nodes {
 		internal readonly Int32 Count;
 
 		/// <summary>
-		/// Initialize a new <see cref="RepeatCharChecker"/> from the specified <paramref name="name"/>, <paramref name="check"/>, and <paramref name="count"/>.
+		/// Initialize a new <see cref="RepeatCharChecker"/> from the specified <paramref name="check"/> and <paramref name="count"/>.
 		/// </summary>
-		/// <param name="name">The name to refer to this as</param>
 		/// <param name="check">A <see cref="Func{T, TResult}"/> taking a <see cref="Char"/> and returning a <see cref="Boolean"/>.
 		/// </param>
 		/// <param name="count">The amount of times to repeat.</param>
-		internal RepeatCharChecker(String name, Func<Char, Boolean> check, Int32 count) : base(name) {
+		internal RepeatCharChecker(Func<Char, Boolean> check, Int32 count) {
 			Check = check;
 			Count = count;
 		}

@@ -43,29 +43,28 @@ namespace Stringier.Patterns.Nodes {
 		internal readonly Boolean TailRequired = true;
 
 		/// <summary>
-		/// Initialize a new <see cref="StringChecker"/> with the specified <paramref name="name"/>, <paramref name="headCheck"/>, <paramref name="bodyCheck"/>, and <paramref name="tailCheck"/>. All checks are required.
+		/// Initialize a new <see cref="StringChecker"/> with the specified <paramref name="headCheck"/>, <paramref name="bodyCheck"/>, and <paramref name="tailCheck"/>. All checks are required.
 		/// </summary>
 		/// <param name="name">The name to refer to this as</param>
 		/// <param name="headCheck">A <see cref="Func{T, TResult}"/> taking a <see cref="Char"/> and returning a <see cref="Boolean"/></param>
 		/// <param name="bodyCheck">A <see cref="Func{T, TResult}"/> taking a <see cref="Char"/> and returning a <see cref="Boolean"/></param>
 		/// <param name="tailCheck">A <see cref="Func{T, TResult}"/> taking a <see cref="Char"/> and returning a <see cref="Boolean"/></param>
-		internal StringChecker(String name, Func<Char, Boolean> headCheck, Func<Char, Boolean> bodyCheck, Func<Char, Boolean> tailCheck) : base(name) {
+		internal StringChecker(Func<Char, Boolean> headCheck, Func<Char, Boolean> bodyCheck, Func<Char, Boolean> tailCheck) {
 			HeadCheck = headCheck;
 			BodyCheck = bodyCheck;
 			TailCheck = tailCheck;
 		}
 
 		/// <summary>
-		/// Initialize a new <see cref="StringChecker"/> with the specified <paramref name="name"/>, <paramref name="headCheck"/>, <paramref name="bodyCheck"/>, and <paramref name="tailCheck"/>. Whether checks are required are explit through <paramref name="headRequired"/>, <paramref name="bodyRequired"/>, and <paramref name="tailRequired"/>; at least one must be <c>true</c>.
-		/// </summary>
-		/// <param name="name">The name to refer to this as</param>
+		/// Initialize a new <see cref="StringChecker"/> with the specified <paramref name="headCheck"/>, <paramref name="bodyCheck"/>, and <paramref name="tailCheck"/>. Whether checks are required are explit through <paramref name="headRequired"/>, <paramref name="bodyRequired"/>, and <paramref name="tailRequired"/>; at least one must be <c>true</c>.
+		/// </summary
 		/// <param name="headCheck">A <see cref="Func{T, TResult}"/> taking a <see cref="Char"/> and returning a <see cref="Boolean"/></param>
 		/// <param name="headRequired"
 		/// <param name="bodyCheck">A <see cref="Func{T, TResult}"/> taking a <see cref="Char"/> and returning a <see cref="Boolean"/></param>
 		/// <param name="bodyRequired"
 		/// <param name="tailCheck">A <see cref="Func{T, TResult}"/> taking a <see cref="Char"/> and returning a <see cref="Boolean"/></param>
 		/// <param name="tailRequired"
-		internal StringChecker(String name, Func<Char, Boolean> headCheck, Boolean headRequired, Func<Char, Boolean> bodyCheck, Boolean bodyRequired, Func<Char, Boolean> tailCheck, Boolean tailRequired) : this(name, headCheck, bodyCheck, tailCheck) {
+		internal StringChecker(Func<Char, Boolean> headCheck, Boolean headRequired, Func<Char, Boolean> bodyCheck, Boolean bodyRequired, Func<Char, Boolean> tailCheck, Boolean tailRequired) : this(headCheck, bodyCheck, tailCheck) {
 			if (!headRequired && !bodyRequired && !tailRequired) { throw new PatternConstructionException("At least one component must be required"); }
 			HeadRequired = headRequired;
 			BodyRequired = bodyRequired;

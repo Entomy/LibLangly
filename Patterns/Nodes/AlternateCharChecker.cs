@@ -24,10 +24,9 @@ namespace Stringier.Patterns.Nodes {
 		/// <summary>
 		/// Initialize a new <see cref="AlternateCharChecker"/> from the specified <paramref name="left"/> check and <paramref name="right"/> check.
 		/// </summary>
-		/// <param name="name">The name to refer to this as</param>
 		/// <param name="left">A <see cref="Func{T, TResult}"/> taking a <see cref="Char"/> and returning a <see cref="Boolean"/>.</param>
 		/// <param name="right">A <see cref="Func{T, TResult}"/> taking a <see cref="Char"/> and returning a <see cref="Boolean"/>.</param>
-		internal AlternateCharChecker(String name, Func<Char, Boolean> left, Func<Char, Boolean> right) : base(name) {
+		internal AlternateCharChecker(Func<Char, Boolean> left, Func<Char, Boolean> right) {
 			Left = left;
 			Right = right;
 		}

@@ -33,14 +33,13 @@ namespace Stringier.Patterns.Nodes {
 		private readonly Bias Bias;
 
 		/// <summary>
-		/// Initialize a new <see cref="WordChecker"/> with the specified <paramref name="name"/>, <paramref name="bias"/>, <paramref name="headCheck"/>, <paramref name="bodyCheck"/>, and <paramref name="tailCheck"/>.
+		/// Initialize a new <see cref="WordChecker"/> with the specified <paramref name="bias"/>, <paramref name="headCheck"/>, <paramref name="bodyCheck"/>, and <paramref name="tailCheck"/>.
 		/// </summary>
-		/// <param name="name">The name to refer to this as</param>
 		/// <param name="bias">Whether the word is head or tail biased.</param>
 		/// <param name="headCheck">A <see cref="Func{T, TResult}"/> taking a <see cref="Char"/> and returning a <see cref="Boolean"/></param>
 		/// <param name="bodyCheck">A <see cref="Func{T, TResult}"/> taking a <see cref="Char"/> and returning a <see cref="Boolean"/></param>
 		/// <param name="tailCheck">A <see cref="Func{T, TResult}"/> taking a <see cref="Char"/> and returning a <see cref="Boolean"/></param>
-		internal WordChecker(String name, Bias bias, Func<Char, Boolean> headCheck, Func<Char, Boolean> bodyCheck, Func<Char, Boolean> tailCheck) : base(name) {
+		internal WordChecker(Bias bias, Func<Char, Boolean> headCheck, Func<Char, Boolean> bodyCheck, Func<Char, Boolean> tailCheck) {
 			Bias = bias;
 			HeadCheck = headCheck;
 			BodyCheck = bodyCheck;
