@@ -149,14 +149,18 @@ namespace Stringier.Patterns {
 		public static readonly Pattern Any = new CharChecker((_) => true);
 
 		/// <summary>
+		/// Check for the end of the <see cref="Source"/>
+		/// </summary>
+		public static readonly Pattern EndOfSource = new SourceEndChecker();
+
+		/// <summary>
 		/// Not a UNICODE group, but instead, the various line terminators Operating Systems recognize.
 		/// </summary>
 		public static readonly Pattern LineTerminator = new LineEndChecker();
 
-		/// <summary>
-		/// Check for the end of the <see cref="Source"/>
-		/// </summary>
-		public static readonly Pattern EndOfSource = new SourceEndChecker();
+		public static readonly Pattern Subscript = new CharChecker((Char) => Char.IsSubscript());
+
+		public static readonly Pattern Superscript = new CharChecker((Char) => Char.IsSuperscript());
 
 		#endregion
 	}
