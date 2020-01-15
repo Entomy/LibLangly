@@ -19,6 +19,73 @@ namespace Stringier.Patterns.Parser {
 		/// </summary>
 		private Expression() { }
 
+		#region Evaluate
+
+		/// <summary>
+		/// Evaluate the <see cref="Expression"/>, creating the <see cref="Pattern"/> it represents.
+		/// </summary>
+		/// <returns>The <see cref="Pattern"/> represented by this <see cref="Expression"/>.</returns>
+		public Pattern Evaluate() {
+			//The pattern will have to be mutated as the expression is interpreted.
+			Pattern pattern = Mutable();
+			Int32 t = 0;
+			//The first token has to be handled specially.
+			EvaluateStartingLiteral(ref t, pattern);
+			//Now iterate through the tokens, interpreting them.
+
+			//Once that's done, seal the pattern from further mutations, and return it.
+			pattern.Seal();
+			return pattern;
+		}
+
+		private void EvaluateModifiers(ref Int32 t, Pattern pattern) {
+		Next:
+			if (t == Tokens.Count) {
+				return;
+			}
+			switch (Tokens[t++]) {
+			case KleenesClosure kleene:
+				_ = Maybe(Many(pattern));
+				goto Next;
+			case Many many:
+				_ = Many(pattern);
+				goto Next;
+			case Maybe maybe:
+				_ = Maybe(pattern);
+				goto Next;
+			case Not not:
+				_ = Not(pattern);
+				goto Next;
+			default:
+				t--;
+				break;
+			}
+		}
+
+		private void EvaluateStartingLiteral(ref Int32 t, Pattern pattern) {
+			Pattern intermediate = Mutable();
+			if (t == Tokens.Count) {
+				goto Invalid;
+			}
+			switch (Tokens[t++]) {
+			case Literal literal:
+				_ = intermediate.Then(literal.ToString());
+				break;
+			default:
+				goto Invalid;
+			}
+			EvaluateModifiers(ref t, intermediate);
+			intermediate.Seal();
+			_ = pattern.Then(intermediate);
+			return;
+		Invalid:
+			throw new ExpressionEvaluationException("Expression must begin with a literal");
+		}
+
+		#endregion
+
+		#region Parse
+
 		/// <summary>
 		/// Parse an <see cref="Expression"/> from the <paramref name="source"/>.
 		/// </summary>
@@ -28,6 +95,7 @@ namespace Stringier.Patterns.Parser {
 			Expression expression = new Expression();
 			SkipWhitespace(ref source);
 			ParseStartingLiteral(ref source, expression);
+			ParseModifiers(ref source, expression);
 			return expression;
 		}
 
@@ -42,25 +110,13 @@ namespace Stringier.Patterns.Parser {
 		}
 
 		/// <summary>
-		/// Evaluate the <see cref="Expression"/>, creating the <see cref="Pattern"/> it represents.
+		/// Parse an <see cref="Expression"/> from the <paramref name="span"/>.
 		/// </summary>
-		/// <returns>The <see cref="Pattern"/> represented by this <see cref="Expression"/>.</returns>
-		public Pattern Evaluate() {
-			//The pattern will have to be mutated as the expression is interpreted.
-			Pattern pattern = Mutable();
-			//The first token has to be handled specially.
-			switch (Tokens[0]) {
-			case Literal literal:
-				_ = pattern.Then(literal.ToString());
-				break;
-			default:
-				throw new ExpressionEvaluationException("Expression must begin with a literal");
-			}
-			//Now iterate through the tokens, interpreting them.
-			
-			//Once that's done, seal the pattern from further mutations, and return it.
-			pattern.Seal();
-			return pattern;
+		/// <param name="span">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to parse.</param>
+		/// <returns>An <see cref="Expression"/> representing as much of the <paramref name="span"/> as possible.</returns>
+		public static Expression Parse(ReadOnlySpan<Char> span) {
+			Source source = new Source(span);
+			return Parse(ref source);
 		}
 
 		private static void ParseStartingLiteral(ref Source source, Expression expression) {
@@ -72,6 +128,16 @@ namespace Stringier.Patterns.Parser {
 			}
 		}
 
+		private static void ParseModifiers(ref Source source, Expression expression) {
+			Token? token = Modifier.Consume(ref source);
+			while (token is Object) {
+				expression.Tokens.Add(token);
+				token = Modifier.Consume(ref source);
+			}
+		} 
+
 		private static void SkipWhitespace(ref Source source) => SpaceSeparator.Consume(ref source);
+
+		#endregion
 	}
 }

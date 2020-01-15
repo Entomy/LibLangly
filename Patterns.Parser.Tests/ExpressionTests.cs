@@ -13,5 +13,22 @@ namespace Patterns.Parser.Tests {
 			Pattern pattern = expression.Evaluate();
 			ResultAssert.Captures("hello", pattern.Consume("hello"));
 		}
+
+		[TestMethod]
+		public void SingleLiteralWithSingleModifier() {
+			Expression expression = Expression.Parse("\"hi!\"+");
+			Pattern pattern = expression.Evaluate();
+			ResultAssert.Captures("hi!", pattern.Consume("hi!"));
+			ResultAssert.Captures("hi!hi!", pattern.Consume("hi!hi!"));
+		}
+
+		[TestMethod]
+		public void SingleLiteralWithMultipleModifiers() {
+			Expression expression = Expression.Parse("\"hi!\"-+");
+			Pattern pattern = expression.Evaluate();
+			ResultAssert.Captures("no?", pattern.Consume("no?"));
+			ResultAssert.Captures("no?no!", pattern.Consume("no?no!"));
+			ResultAssert.Captures("oh!", pattern.Consume("oh!hi!"));
+		}
 	}
 }
