@@ -119,6 +119,14 @@ namespace Stringier.Patterns.Parser {
 			return Parse(ref source);
 		}
 
+		private static void ParseModifiers(ref Source source, Expression expression) {
+			Token? token = Modifier.Consume(ref source);
+			while (token is Object) {
+				expression.Tokens.Add(token);
+				token = Modifier.Consume(ref source);
+			}
+		}
+
 		private static void ParseStartingLiteral(ref Source source, Expression expression) {
 			Token? token = Literal.Consume(ref source);
 			if (token is null) {
@@ -128,16 +136,68 @@ namespace Stringier.Patterns.Parser {
 			}
 		}
 
-		private static void ParseModifiers(ref Source source, Expression expression) {
-			Token? token = Modifier.Consume(ref source);
-			while (token is Object) {
-				expression.Tokens.Add(token);
-				token = Modifier.Consume(ref source);
+		#endregion
+
+		#region TryParse
+
+		/// <summary>
+		/// Attempt to parse an <see cref="Expression"/> from the <paramref name="source"/>.
+		/// </summary>
+		/// <param name="source">The <see cref="Source"/> to parse.</param>
+		/// <param name="expression">An <see cref="Expression"/> representing as much of the <paramref name="source"/> as possible.</param>
+		/// <returns><see langword="true"/> if parsing was successful; otherwise, <see langword="false"/>.</returns>
+		public static Boolean TryParse(ref Source source, out Expression expression) {
+			expression = new Expression();
+			Boolean success = true;
+			SkipWhitespace(ref source);
+			if (success = TryParseStartingLiteral(ref source, expression)) {
+				ParseModifiers(ref source, expression);
+			} else {
+				goto Done;
 			}
-		} 
+		Done:
+			return success;
+		}
+
+		/// <summary>
+		/// Parse an <see cref="Expression"/> from the <paramref name="string"/>.
+		/// </summary>
+		/// <param name="string">The <see cref="String"/> to parse.</param>
+		/// <param name="expression">An <see cref="Expression"/> representing as much of the <paramref name="string"/> as possible.</param>
+		/// <returns><see langword="true"/> if parsing was successful; otherwise, <see langword="false"/>.</returns>
+		public static Boolean Parse(String @string, out Expression expression) {
+			Source source = new Source(@string);
+			return TryParse(ref source, out expression);
+		}
+
+		/// <summary>
+		/// Parse an <see cref="Expression"/> from the <paramref name="span"/>.
+		/// </summary>
+		/// <param name="span">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to parse.</param>
+		/// <param name="expression">An <see cref="Expression"/> representing as much of the <paramref name="span"/> as possible.</param>
+		/// <returns><see langword="true"/> if parsing was successful; otherwise, <see langword="false"/>.</returns>
+		public static Boolean Parse(ReadOnlySpan<Char> span, out Expression expression) {
+			Source source = new Source(span);
+			return TryParse(ref source, out expression);
+		}
+
+		private static Boolean TryParseStartingLiteral(ref Source source, Expression expression) {
+			Token? token = Literal.Consume(ref source);
+			if (token is null) {
+				return false;
+			} else {
+				expression.Tokens.Add(token);
+				return true;
+			}
+		}
+
+		#endregion
+
+		#region Skip
 
 		private static void SkipWhitespace(ref Source source) => SpaceSeparator.Consume(ref source);
 
 		#endregion
+
 	}
 }
