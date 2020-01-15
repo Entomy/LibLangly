@@ -6,7 +6,7 @@ namespace Stringier.Patterns.Parser {
 	/// <summary>
 	/// Represents a not modifier; the negation of the pattern
 	/// </summary>
-	public sealed class Not : Modifier {
+	internal sealed class Not : Modifier {
 		/// <summary>
 		/// The <see cref="Patterns.Pattern"/> which represents this type.
 		/// </summary>
@@ -22,7 +22,7 @@ namespace Stringier.Patterns.Parser {
 		/// </summary>
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
 		/// <returns>A new <see cref="Not"/> instance if parsing succeeded; otherwise <see langword="null"/>.</returns>
-		public static Not? Consume(ref Source source) {
+		new internal static Not? Consume(ref Source source) {
 			Result result = Pattern.Consume(ref source);
 			return result ? Singleton.Instance : null;
 		}

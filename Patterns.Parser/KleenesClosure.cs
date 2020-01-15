@@ -6,23 +6,23 @@ namespace Stringier.Patterns.Parser {
 	/// <summary>
 	/// Represents a Kleene's Closure modifier; the existance of one or more of the pattern
 	/// </summary>
-	public sealed class KleeneClosure : Modifier {
+	internal sealed class KleenesClosure : Modifier {
 		/// <summary>
 		/// The <see cref="Patterns.Pattern"/> which represents this type.
 		/// </summary>
-		new public static readonly Pattern Pattern = '*';
+		new internal static readonly Pattern Pattern = '*';
 
 		/// <summary>
-		/// Initialize a new <see cref="KleeneClosure"/>.
+		/// Initialize a new <see cref="KleenesClosure"/>.
 		/// </summary>
-		internal KleeneClosure() : base("*") { }
+		internal KleenesClosure() : base("*") { }
 
 		/// <summary>
-		/// Attempt to consume a <see cref="KleeneClosure"/> from the <paramref name="source"/>.
+		/// Attempt to consume a <see cref="KleenesClosure"/> from the <paramref name="source"/>.
 		/// </summary>
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
-		/// <returns>A new <see cref="KleeneClosure"/> instance if parsing succeeded; otherwise <see langword="null"/>.</returns>
-		public static KleeneClosure? Consume(ref Source source) {
+		/// <returns>A new <see cref="KleenesClosure"/> instance if parsing succeeded; otherwise <see langword="null"/>.</returns>
+		new internal static KleenesClosure? Consume(ref Source source) {
 			Result result = Pattern.Consume(ref source);
 			return result ? Singleton.Instance : null;
 		}
@@ -30,7 +30,7 @@ namespace Stringier.Patterns.Parser {
 		private static class Singleton {
 			static Singleton() { }
 
-			internal static readonly KleeneClosure Instance = new KleeneClosure();
+			internal static readonly KleenesClosure Instance = new KleenesClosure();
 		}
 	}
 }

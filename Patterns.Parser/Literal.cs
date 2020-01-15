@@ -6,7 +6,7 @@ namespace Stringier.Patterns.Parser {
 	/// <summary>
 	/// Represents a pattern literal; an exact match to make.
 	/// </summary>
-	public sealed class Literal : Token {
+	internal sealed class Literal : Token {
 		/// <summary>
 		/// The <see cref="Patterns.Pattern"/> which represents this type.
 		/// </summary>
@@ -23,7 +23,7 @@ namespace Stringier.Patterns.Parser {
 		/// </summary>
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
 		/// <returns>A new <see cref="Literal"/> instance if parsing succeeded; otherwise <see langword="null"/>.</returns>
-		public static Literal? Consume(ref Source source) {
+		new internal static Literal? Consume(ref Source source) {
 			Result result = Pattern.Consume(ref source);
 			return result ? new Literal(result.AsSpan().Slice(1, result.Length - 2).ToString()) : null;
 		}

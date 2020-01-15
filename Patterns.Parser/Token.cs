@@ -6,7 +6,7 @@ namespace Stringier.Patterns.Parser {
 	/// <summary>
 	/// Represents any possible token; a lexical element.
 	/// </summary>
-	public abstract class Token {
+	internal abstract class Token {
 		/// <summary>
 		/// The <see cref="Patterns.Pattern"/> which represents this type.
 		/// </summary>
@@ -28,7 +28,7 @@ namespace Stringier.Patterns.Parser {
 		/// </summary>
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
 		/// <returns>A new <see cref="Token"/> instance if parsing succeeded; otherwise <see langword="null"/>.</returns>
-		public static Token? Consume(ref Source source) {
+		new internal static Token? Consume(ref Source source) {
 			Token? result = null;
 			result ??= Combinator.Consume(ref source);
 			result ??= Modifier.Consume(ref source);

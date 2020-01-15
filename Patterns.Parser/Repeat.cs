@@ -6,7 +6,7 @@ namespace Stringier.Patterns.Parser {
 	/// <summary>
 	/// Represents a repeat combinator; the repetition of the lefthand pattern
 	/// </summary>
-	public sealed class Repeat : Combinator {
+	internal sealed class Repeat : Combinator {
 		/// <summary>
 		/// The <see cref="Patterns.Pattern"/> which represents this type.
 		/// </summary>
@@ -22,7 +22,7 @@ namespace Stringier.Patterns.Parser {
 		/// </summary>
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
 		/// <returns>A new <see cref="Repeat"/> instance if parsing succeeded; otherwise <see langword="null"/>.</returns>
-		public static Repeat? Consume(ref Source source) {
+		new internal static Repeat? Consume(ref Source source) {
 			Result result = Pattern.Consume(ref source);
 			return result ? Singleton.Instance : null;
 		}

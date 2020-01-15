@@ -6,7 +6,7 @@ namespace Stringier.Patterns.Parser {
 	/// <summary>
 	/// Represents a then combinator; the concatenation of two patterns.
 	/// </summary>
-	public sealed class Then : Combinator {
+	internal sealed class Then : Combinator {
 		/// <summary>
 		/// The <see cref="Patterns.Pattern"/> which represents this type.
 		/// </summary>
@@ -22,7 +22,7 @@ namespace Stringier.Patterns.Parser {
 		/// </summary>
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
 		/// <returns>A new <see cref="Then"/> instance if parsing succeeded; otherwise <see langword="null"/>.</returns>
-		public static Then? Consume(ref Source source) {
+		new internal static Then? Consume(ref Source source) {
 			Result result = Pattern.Consume(ref source);
 			return result ? Singleton.Instance : null;
 		}

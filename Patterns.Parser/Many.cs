@@ -6,7 +6,7 @@ namespace Stringier.Patterns.Parser {
 	/// <summary>
 	/// Represents a many modifier; the spanning of the pattern
 	/// </summary>
-	public sealed class Many : Modifier {
+	internal sealed class Many : Modifier {
 		/// <summary>
 		/// The <see cref="Patterns.Pattern"/> which represents this type.
 		/// </summary>
@@ -22,7 +22,7 @@ namespace Stringier.Patterns.Parser {
 		/// </summary>
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
 		/// <returns>A new <see cref="Many"/> instance if parsing succeeded; otherwise <see langword="null"/>.</returns>
-		public static Many? Consume(ref Source source) {
+		new internal static Many? Consume(ref Source source) {
 			Result result = Pattern.Consume(ref source);
 			return result ? Singleton.Instance : null;
 		}
