@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Stringier.Patterns;
 using static Stringier.Patterns.Pattern;
 
@@ -38,6 +39,28 @@ namespace Stringier.Patterns.Parser {
 		public static Expression Parse(String @string) {
 			Source source = new Source(@string);
 			return Parse(ref source);
+		}
+
+		/// <summary>
+		/// Evaluate the <see cref="Expression"/>, creating the <see cref="Pattern"/> it represents.
+		/// </summary>
+		/// <returns>The <see cref="Pattern"/> represented by this <see cref="Expression"/>.</returns>
+		public Pattern Evaluate() {
+			//The pattern will have to be mutated as the expression is interpreted.
+			Pattern pattern = Mutable();
+			//The first token has to be handled specially.
+			switch (Tokens[0]) {
+			case Literal literal:
+				_ = pattern.Then(literal.ToString());
+				break;
+			default:
+				throw new ExpressionEvaluationException("Expression must begin with a literal");
+			}
+			//Now iterate through the tokens, interpreting them.
+			
+			//Once that's done, seal the pattern from further mutations, and return it.
+			pattern.Seal();
+			return pattern;
 		}
 
 		private static void ParseStartingLiteral(ref Source source, Expression expression) {
