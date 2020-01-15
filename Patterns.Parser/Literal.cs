@@ -27,5 +27,11 @@ namespace Stringier.Patterns.Parser {
 			Result result = Pattern.Consume(ref source);
 			return result ? new Literal(result.AsSpan().Slice(1, result.Length - 2).ToString()) : null;
 		}
+
+		/// <summary>
+		/// Converts this token to its equivalent string representation.
+		/// </summary>
+		/// <returns>The string representation of this instance.</returns>
+		public override String ToString() => $"\"{Text}\"";
 	}
 }

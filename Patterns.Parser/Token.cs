@@ -15,7 +15,7 @@ namespace Stringier.Patterns.Parser {
 		/// <summary>
 		/// The literal text of the token; how it was parsed.
 		/// </summary>
-		protected readonly String Text;
+		protected internal readonly String Text;
 
 		/// <summary>
 		/// Initialize a new <see cref="Token"/> with the given <paramref name="text"/>.
@@ -41,6 +41,6 @@ namespace Stringier.Patterns.Parser {
 		/// Converts this token to its equivalent string representation.
 		/// </summary>
 		/// <returns>The string representation of this instance.</returns>
-		public sealed override String ToString() => Text;
+		public override String ToString() => Text;
 	}
 }

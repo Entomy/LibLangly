@@ -32,10 +32,60 @@ namespace Stringier.Patterns.Parser {
 			//The first token has to be handled specially.
 			EvaluateStartingLiteral(ref t, pattern);
 			//Now iterate through the tokens, interpreting them.
-
+			while (EvaluateCombinator(ref t)) {
+				EvaluateLiteral(ref t, pattern);
+			}
 			//Once that's done, seal the pattern from further mutations, and return it.
 			pattern.Seal();
 			return pattern;
+		}
+
+		private Boolean EvaluateCombinator(ref Int32 t) {
+			if (t == Tokens.Count) {
+				return false;
+			}
+			switch (Tokens[t++]) {
+			case Combinator combinator:
+				return true;
+			default:
+				throw new ExpressionEvaluationException("Expected a combinator");
+			}
+		}
+
+		private void EvaluateLiteral(ref Int32 t, Pattern pattern) {
+			if (t == Tokens.Count) {
+				goto Invalid;
+			}
+			switch (Tokens[t++]) {
+			case Literal literal:
+				Pattern intermediate = Mutable();
+				switch (Tokens[t - 2]) {
+				case Then then:
+					_ = intermediate.Then(literal.Text);
+					break;
+				case Or or:
+					_ = intermediate.Or(literal.Text);
+					break;
+				default:
+					throw new ExpressionEvaluationException("Found a literal after a non combinator");
+				}
+				EvaluateModifiers(ref t, intermediate);
+				intermediate.Seal();
+				_ = pattern.Then(intermediate);
+				return;
+			case Number number:
+				switch (Tokens[t - 2]) {
+				case Repeat repeat:
+					_ = pattern.Repeat(number.Value);
+					return;
+				default:
+					throw new ExpressionEvaluationException("Found a number after a non repeater");
+				}
+			default:
+				goto Invalid;
+			}
+		Invalid:
+			throw new ExpressionEvaluationException("Expected a literal");
 		}
 
 		private void EvaluateModifiers(ref Int32 t, Pattern pattern) {
@@ -69,7 +119,7 @@ namespace Stringier.Patterns.Parser {
 			}
 			switch (Tokens[t++]) {
 			case Literal literal:
-				_ = intermediate.Then(literal.ToString());
+				_ = intermediate.Then(literal.Text);
 				break;
 			default:
 				goto Invalid;
@@ -93,9 +143,16 @@ namespace Stringier.Patterns.Parser {
 		/// <returns>An <see cref="Expression"/> representing as much of the <paramref name="source"/> as possible.</returns>
 		public static Expression Parse(ref Source source) {
 			Expression expression = new Expression();
-			SkipWhitespace(ref source);
 			ParseStartingLiteral(ref source, expression);
 			ParseModifiers(ref source, expression);
+			if (TryParseCombinator(ref source, expression)) {
+				ParseModifiers(ref source, expression);
+			} else {
+				goto Done;
+			}
+			ParseLiteral(ref source, expression);
+			ParseModifiers(ref source, expression);
+		Done:
 			return expression;
 		}
 
@@ -119,6 +176,12 @@ namespace Stringier.Patterns.Parser {
 			return Parse(ref source);
 		}
 
+		private static void ParseLiteral(ref Source source, Expression expression) {
+			if (!TryParseLiteral(ref source, expression)) {
+				throw new ExpressionParseException("Expected a literal");
+			}
+		}
+
 		private static void ParseModifiers(ref Source source, Expression expression) {
 			Token? token = Modifier.Consume(ref source);
 			while (token is Object) {
@@ -128,11 +191,8 @@ namespace Stringier.Patterns.Parser {
 		}
 
 		private static void ParseStartingLiteral(ref Source source, Expression expression) {
-			Token? token = Literal.Consume(ref source);
-			if (token is null) {
+			if (!TryParseStartingLiteral(ref source, expression)) {
 				throw new ExpressionParseException("Expression must begin with a literal");
-			} else {
-				expression.Tokens.Add(token);
 			}
 		}
 
@@ -149,8 +209,17 @@ namespace Stringier.Patterns.Parser {
 		public static Boolean TryParse(ref Source source, out Expression expression) {
 			expression = new Expression();
 			Boolean success = true;
-			SkipWhitespace(ref source);
 			if (success = TryParseStartingLiteral(ref source, expression)) {
+				ParseModifiers(ref source, expression);
+			} else {
+				goto Done;
+			}
+			if (TryParseCombinator(ref source, expression)) {
+				ParseModifiers(ref source, expression);
+			} else {
+				return false;
+			}
+			if (success = TryParseLiteral(ref source, expression)) {
 				ParseModifiers(ref source, expression);
 			} else {
 				goto Done;
@@ -181,7 +250,31 @@ namespace Stringier.Patterns.Parser {
 			return TryParse(ref source, out expression);
 		}
 
+		private static Boolean TryParseCombinator(ref Source source, Expression expression) {
+			SkipWhitespace(ref source);
+			Token? token = Combinator.Consume(ref source);
+			if (token is null) {
+				return false;
+			} else {
+				expression.Tokens.Add(token);
+				return true;
+			}
+		}
+
+		private static Boolean TryParseLiteral(ref Source source, Expression expression) {
+			SkipWhitespace(ref source);
+			Token? token = Literal.Consume(ref source);
+			token ??= Number.Consume(ref source);
+			if (token is null) {
+				return false;
+			} else {
+				expression.Tokens.Add(token);
+				return true;
+			}
+		}
+
 		private static Boolean TryParseStartingLiteral(ref Source source, Expression expression) {
+			SkipWhitespace(ref source);
 			Token? token = Literal.Consume(ref source);
 			if (token is null) {
 				return false;
@@ -198,6 +291,5 @@ namespace Stringier.Patterns.Parser {
 		private static void SkipWhitespace(ref Source source) => SpaceSeparator.Consume(ref source);
 
 		#endregion
-
 	}
 }

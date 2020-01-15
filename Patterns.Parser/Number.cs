@@ -13,10 +13,15 @@ namespace Stringier.Patterns.Parser {
 		new public static readonly Pattern Pattern = Many(DecimalDigitNumber);
 
 		/// <summary>
+		/// The integer value of this number.
+		/// </summary>
+		internal readonly Int32 Value;
+
+		/// <summary>
 		/// Initialize a new <see cref="Number"/> with the given <paramref name="text"/>.
 		/// </summary>
 		/// <param name="text">The literal text of the token; how it was parsed.</param>
-		private Number(String text) : base(text) { }
+		private Number(String text) : base(text) => Value = Int32.Parse(text);
 
 		/// <summary>
 		/// Attempt to consume a <see cref="Number"/> from the <paramref name="source"/>.

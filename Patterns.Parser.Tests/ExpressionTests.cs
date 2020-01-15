@@ -30,5 +30,35 @@ namespace Patterns.Parser.Tests {
 			ResultAssert.Captures("no?no!", pattern.Consume("no?no!"));
 			ResultAssert.Captures("oh!", pattern.Consume("oh!hi!"));
 		}
+
+		[TestMethod]
+		public void SingleLiteral_Then_SingleLiteral() {
+			Expression expression = Expression.Parse("\"he\" then \"llo\"");
+			Pattern pattern = expression.Evaluate();
+			ResultAssert.Captures("hello", pattern.Consume("hello"));
+		}
+
+		[TestMethod]
+		public void SingleLiteralWithSingleModifer_Then_SingleLiteral() {
+			Expression expression = Expression.Parse("\"de\"? then \"couple\"");
+			Pattern pattern = expression.Evaluate();
+			ResultAssert.Captures("decouple", pattern.Consume("decouple"));
+			ResultAssert.Captures("couple", pattern.Consume("couple"));
+		}
+
+		[TestMethod]
+		public void SingleLiteral_Then_SingleLiteralWithSingleModifier() {
+			Expression expression = Expression.Parse("\"accept\" then \"able\"?");
+			Pattern pattern = expression.Evaluate();
+			ResultAssert.Captures("accept", pattern.Consume("accept"));
+			ResultAssert.Captures("acceptable", pattern.Consume("acceptable"));
+		}
+
+		[TestMethod]
+		public void SingleLiteral_Repeat_3() {
+			Expression expression = Expression.Parse("\".\"x3");
+			Pattern pattern = expression.Evaluate();
+			ResultAssert.Captures("...", pattern.Consume("....."));
+		}
 	}
 }
