@@ -148,6 +148,8 @@ namespace Stringier.Patterns {
 		/// </summary>
 		public static readonly Pattern Any = new CharChecker((_) => true);
 
+		public static readonly Pattern BoxDrawing = new CharChecker((Char) => Char.IsBoxDrawing());
+
 		public static readonly Pattern CombiningMark = new CharChecker((Char) => Char.IsCombiningMark());
 
 		/// <summary>
