@@ -98,7 +98,7 @@ namespace Stringier.Streams {
 		/// <exception cref="ArgumentException">One or more of the arguments is invalid.</exception>
 		/// <exception cref="ObjectDisposedException">Methods were called after the stream was closed.</exception>
 		/// <exception cref="NotSupportedException">The current <typeparamref name="S"/> implementation does not support the read operation.</exception>
-		public override IAsyncResult BeginRead(Byte[] buffer, Int32 offset, Int32 count, AsyncCallback callback, Object state) => BaseStream.BeginRead(buffer, offset, count, callback, state);
+		public override IAsyncResult BeginRead(Byte[] buffer, Int32 offset, Int32 count, AsyncCallback callback, Object? state) => BaseStream.BeginRead(buffer, offset, count, callback, state);
 
 		/// <summary>
 		/// Begins an asynchronous write operation. (Consider using <see cref="WriteAsync(byte[], int, int, CancellationToken)"/> instead.)
@@ -113,7 +113,7 @@ namespace Stringier.Streams {
 		/// <exception cref="ArgumentException">One or more of the arguments is invalid.</exception>
 		/// <exception cref="ObjectDisposedException">Methods were called after the stream was closed.</exception>
 		/// <exception cref="NotSupportedException">The current <typeparamref name="S"/> implementation does not support the write operation.</exception>
-		public override IAsyncResult BeginWrite(Byte[] buffer, Int32 offset, Int32 count, AsyncCallback callback, Object state) => BaseStream.BeginWrite(buffer, offset, count, callback, state);
+		public override IAsyncResult BeginWrite(Byte[] buffer, Int32 offset, Int32 count, AsyncCallback callback, Object? state) => BaseStream.BeginWrite(buffer, offset, count, callback, state);
 
 		/// <summary>
 		/// Closes the current stream and releases any resources (such as sockets and file handles) associated with the current stream. Instead of calling this method, ensure that the stream is properly disposed.
@@ -167,7 +167,7 @@ namespace Stringier.Streams {
 		/// </summary>
 		/// <param name="obj">The object to compare with the current object.</param>
 		/// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
-		public override Boolean Equals(Object obj) => BaseStream.Equals(obj);
+		public override Boolean Equals(Object? obj) => BaseStream.Equals(obj);
 
 		/// <summary>
 		/// When overridden in a derived class, clears all buffers for this stream and causes any buffered data to be written to the underlying device.

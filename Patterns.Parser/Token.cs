@@ -28,7 +28,7 @@ namespace Stringier.Patterns.Parser {
 		/// </summary>
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
 		/// <returns>A new <see cref="Token"/> instance if parsing succeeded; otherwise <see langword="null"/>.</returns>
-		new internal static Token? Consume(ref Source source) {
+		internal static Token? Consume(ref Source source) {
 			Token? result = null;
 			result ??= Combinator.Consume(ref source);
 			result ??= Modifier.Consume(ref source);
