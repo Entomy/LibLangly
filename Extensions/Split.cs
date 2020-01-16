@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text;
 
 namespace Stringier {
 	public static partial class StringierExtensions {

@@ -57,6 +57,8 @@ namespace Stringier.Patterns.Nodes {
 					source.Position++;
 					result.Length++;
 					goto Done;
+				default:
+					break;
 				}
 				trace?.Collect('\u000A', source.Position);
 				break;
@@ -76,6 +78,8 @@ namespace Stringier.Patterns.Nodes {
 					source.Position++;
 					result.Length++;
 					goto Done;
+				default:
+					break;
 				}
 				trace?.Collect('\u000D', source.Position);
 				break;

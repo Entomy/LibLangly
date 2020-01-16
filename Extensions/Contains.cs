@@ -22,7 +22,7 @@ namespace Stringier {
 			return false;
 		}
 
-#if NETCOREAPP3_0 || NETCOREAPP3_1
+#if !NETSTANDARD1_6 && !NETSTANDARD2_0
 		/// <summary>
 		/// Returns a value indicating whether a specified rune occurs within this string.
 		/// </summary>
@@ -60,7 +60,7 @@ namespace Stringier {
 			return false;
 		}
 
-#if NETCOREAPP3_0 || NETCOREAPP3_1
+#if !NETSTANDARD1_6 && !NETSTANDARD2_0
 		/// <summary>
 		/// Returns a value indicating whether a specified char occurs within any of the strings.
 		/// </summary>

@@ -1,6 +1,4 @@
-﻿using System;
-using Stringier.Patterns;
-using static Stringier.Patterns.Pattern;
+﻿using static Stringier.Patterns.Pattern;
 
 namespace Stringier.Patterns.Parser {
 	/// <summary>
@@ -22,6 +20,7 @@ namespace Stringier.Patterns.Parser {
 		/// </summary>
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
 		/// <returns>A new <see cref="KleenesClosure"/> instance if parsing succeeded; otherwise <see langword="null"/>.</returns>
+		/// <exception cref="PatternUndefinedException">The pattern was attempted to be used before actually being defined.</exception>
 		new internal static KleenesClosure? Consume(ref Source source) {
 			Result result = Pattern.Consume(ref source);
 			return result ? Singleton.Instance : null;

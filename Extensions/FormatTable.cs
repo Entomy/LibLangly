@@ -157,6 +157,7 @@ namespace Stringier {
 		/// </summary>
 		/// <returns>The string representation of this table.</returns>
 		/// <remarks>This string can be directly written to the console or file without further processing.</remarks>
+		/// <exception cref="InvalidOperationException">An alignment was present that hasn't been handled in this method.</exception>
 		public override String ToString() {
 			StringBuilder builder = new StringBuilder();
 			foreach (String[] record in Records) {
@@ -177,6 +178,8 @@ namespace Stringier {
 					case Alignment.Center:
 						_ = builder.Append(record[i].Pad(Widths[i]));
 						break;
+					default:
+						throw new InvalidOperationException($"Alignment of {Alignments[i]} wasn't handled.");
 					}
 					if (i < Widths.Length - 1) {
 						_ = builder.Append(ColumnDelimiter);
