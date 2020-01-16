@@ -2,6 +2,12 @@
 
 [<AutoOpen>]
 module EditDistance =
-    let hamming(source:string)(other:string) = Metrics.HammingDistance(source, other);
+    /// <summary>
+    /// Calculates the Hamming edit-distance between source and other
+    /// </summary>
+    let hamming(source:string)(other:string):int32 = Metrics.HammingDistance(source, other);
 
-    let levenshtein(source:string)(other:string) = Metrics.LevenshteinDistance(source, other);
+    /// <summary>
+    /// Calculates the Levenshtein edit-distance between source and other
+    /// </summary>
+    let levenshtein(source:string)(other:string):int32 = Metrics.LevenshteinDistance(source, other);

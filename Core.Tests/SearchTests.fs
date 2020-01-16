@@ -13,10 +13,10 @@ type SearchTests() =
 
     [<TestMethod>]
     member _.``Rabin-Karp`` () =
-        Assert.AreEqual(3, Search.RabinKarp("helloworld", "low"))
-        Assert.AreEqual(-1, Search.RabinKarp("helloworld", "bacon"))
+        Assert.AreEqual(3, rabinKarp "helloworld" "low")
+        Assert.AreEqual(-1, rabinKarp "helloworld" "bacon")
 
     [<TestMethod>]
     member _.``Boyer-Moore-Horspool`` () =
-        Assert.AreEqual(3, Search.Horspool("helloworld", "low"))
-        Assert.AreEqual(-1, Search.Horspool("helloworld", "bacon"))
+        Assert.AreEqual(3, horspool "helloworld" "low")
+        Assert.AreEqual(-1, horspool "helloworld" "bacon")
