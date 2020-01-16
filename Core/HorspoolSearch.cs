@@ -5,16 +5,54 @@ namespace Stringier {
 		/// <summary>
 		/// Performs the Boyer-Moore-Horspool string-search, finding the starting index of the <paramref name="pattern"/> if found in <paramref name="source"/>.
 		/// </summary>
-		/// <param name="source"></param>
-		/// <param name="pattern"></param>
-		/// <returns></returns>
+		/// <param name="source">The <see cref="String"/> to search in.</param>
+		/// <param name="pattern">The <see cref="String"/> to search for.</param>
+		/// <returns>The index at which <paramref name="pattern"/> was found to start; -1 if not found.</returns>
 		public static Int32 Horspool(String source, String pattern) => Horspool(source, pattern, out HorspoolTable _);
 
-		public static Int32 Horspool(String source, HorspoolTable table) {
+		/// <summary>
+		/// Performs the Boyer-Moore-Horspool string-search, finding the starting index of the <paramref name="pattern"/> if found in <paramref name="source"/>.
+		/// </summary>
+		/// <param name="source">The <see cref="String"/> to search in.</param>
+		/// <param name="pattern">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to search for.</param>
+		/// <returns>The index at which <paramref name="pattern"/> was found to start; -1 if not found.</returns>
+		public static Int32 Horspool(String source, ReadOnlySpan<Char> pattern) => Horspool(source, pattern, out HorspoolTable _);
+
+		/// <summary>
+		/// Performs the Boyer-Moore-Horspool string-search, finding the starting index of the <paramref name="pattern"/> if found in <paramref name="source"/>.
+		/// </summary>
+		/// <param name="source">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to search in.</param>
+		/// <param name="pattern">The <see cref="String"/> to search for.</param>
+		/// <returns>The index at which <paramref name="pattern"/> was found to start; -1 if not found.</returns>
+		public static Int32 Horspool(ReadOnlySpan<Char> source, String pattern) => Horspool(source, pattern, out HorspoolTable _);
+
+		/// <summary>
+		/// Performs the Boyer-Moore-Horspool string-search, finding the starting index of the <paramref name="pattern"/> if found in <paramref name="source"/>.
+		/// </summary>
+		/// <param name="source">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to search in.</param>
+		/// <param name="pattern">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to search for.</param>
+		/// <returns>The index at which <paramref name="pattern"/> was found to start; -1 if not found.</returns>
+		public static Int32 Horspool(ReadOnlySpan<Char> source, ReadOnlySpan<Char> pattern) => Horspool(source, pattern, out HorspoolTable _);
+
+		/// <summary>
+		/// Performs the Boyer-Moore-Horspool string-search, finding the starting index of the <paramref name="pattern"/> if found in <paramref name="source"/>.
+		/// </summary>
+		/// <param name="source">The <see cref="String"/> to search in.</param>
+		/// <param name="table">The <see cref="HorspoolTable"/> of the pattern to search for.</param>
+		/// <returns>The index at which the pattern was found to start; -1 if not found.</returns>
+		public static Int32 Horspool(String source, HorspoolTable table) => Horspool(source.AsSpan(), table);
+
+		/// <summary>
+		/// Performs the Boyer-Moore-Horspool string-search, finding the starting index of the <paramref name="pattern"/> if found in <paramref name="source"/>.
+		/// </summary>
+		/// <param name="source">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to search in.</param>
+		/// <param name="table">The <see cref="HorspoolTable"/> of the pattern to search for.</param>
+		/// <returns>The index at which the pattern was found to start; -1 if not found.</returns>
+		public static Int32 Horspool(ReadOnlySpan<Char> source, HorspoolTable table) {
 			ReadOnlySpan<Char> candidate;
 			Int32 skip = 0;
 			while (source.Length - skip >= table.Length) {
-				candidate = source.AsSpan().Slice(skip, table.Length);
+				candidate = source.Slice(skip, table.Length);
 				if (candidate == table) {
 					return skip;
 				}
@@ -23,7 +61,41 @@ namespace Stringier {
 			return -1;
 		}
 
-		public static Int32 Horspool(String source, String pattern, out HorspoolTable table) {
+		/// <summary>
+		/// Performs the Boyer-Moore-Horspool string-search, finding the starting index of the <paramref name="pattern"/> if found in <paramref name="source"/>.
+		/// </summary>
+		/// <param name="source">The <see cref="String"/> to search in.</param>
+		/// <param name="pattern">The <see cref="String"/> to search for.</param>
+		/// <param name="table">The <see cref="HorspoolTable"/> for <paramref name="pattern"/>.</param>
+		/// <returns>The index at which <paramref name="pattern"/> was found to start; -1 if not found.</returns>
+		public static Int32 Horspool(String source, String pattern, out HorspoolTable table) => Horspool(source.AsSpan(), pattern.AsSpan(), out table);
+
+		/// <summary>
+		/// Performs the Boyer-Moore-Horspool string-search, finding the starting index of the <paramref name="pattern"/> if found in <paramref name="source"/>.
+		/// </summary>
+		/// <param name="source">The <see cref="String"/> to search in.</param>
+		/// <param name="pattern">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to search for.</param>
+		/// <param name="table">The <see cref="HorspoolTable"/> for <paramref name="pattern"/>.</param>
+		/// <returns>The index at which <paramref name="pattern"/> was found to start; -1 if not found.</returns>
+		public static Int32 Horspool(String source, ReadOnlySpan<Char> pattern, out HorspoolTable table) => Horspool(source.AsSpan(), pattern, out table);
+
+		/// <summary>
+		/// Performs the Boyer-Moore-Horspool string-search, finding the starting index of the <paramref name="pattern"/> if found in <paramref name="source"/>.
+		/// </summary>
+		/// <param name="source">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to search in.</param>
+		/// <param name="pattern">The <see cref="String"/> to search for.</param>
+		/// <param name="table">The <see cref="HorspoolTable"/> for <paramref name="pattern"/>.</param>
+		/// <returns>The index at which <paramref name="pattern"/> was found to start; -1 if not found.</returns>
+		public static Int32 Horspool(ReadOnlySpan<Char> source, String pattern, out HorspoolTable table) => Horspool(source, pattern.AsSpan(), out table);
+
+		/// <summary>
+		/// Performs the Boyer-Moore-Horspool string-search, finding the starting index of the <paramref name="pattern"/> if found in <paramref name="source"/>.
+		/// </summary>
+		/// <param name="source">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to search in.</param>
+		/// <param name="pattern">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to search for.</param>
+		/// <param name="table">The <see cref="HorspoolTable"/> for <paramref name="pattern"/>.</param>
+		/// <returns>The index at which <paramref name="pattern"/> was found to start; -1 if not found.</returns>
+		public static Int32 Horspool(ReadOnlySpan<Char> source, ReadOnlySpan<Char> pattern, out HorspoolTable table) {
 			table = new HorspoolTable(pattern);
 			return Horspool(source, table);
 		}
