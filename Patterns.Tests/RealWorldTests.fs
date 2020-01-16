@@ -26,20 +26,18 @@ type RealWorldTests() =
 
     [<TestMethod>]
     member _.``identifier`` () =
-        let pattern = Pattern.Check("pattern",
-                                   (fun (char:char) -> char.IsLetter()), true,
-                                   (fun (char:char) -> char.IsLetter() || char = '_'), true,
-                                   (fun (char:char) -> char.IsLetter() || char = '_'), false)
+        let pattern = Pattern.Check((fun (char:char) -> char.IsLetter()), true,
+                                    (fun (char:char) -> char.IsLetter() || char = '_'), true,
+                                    (fun (char:char) -> char.IsLetter() || char = '_'), false)
         ResultAssert.Captures("hello", pattern.Consume("hello"))
         ResultAssert.Captures("example_name", pattern.Consume("example_name"))
         ResultAssert.Fails(pattern.Consume("_fail"))
 
     [<TestMethod>]
     member _.``IPv4 address`` () =
-        let digit = Pattern.Check("digit",
-                                 (fun (char:char) -> '0' <= char && char <= '2'), false,
-                                 (fun (char:char) -> '0' <= char && char <= '9'), false,
-                                 (fun (char:char) -> '0' <= char && char <= '9'), true)
+        let digit = Pattern.Check((fun (char:char) -> '0' <= char && char <= '2'), false,
+                                  (fun (char:char) -> '0' <= char && char <= '9'), false,
+                                  (fun (char:char) -> '0' <= char && char <= '9'), true)
         let address = digit >> '.' >> digit >> '.' >> digit >> '.' >> digit
 
         ResultAssert.Captures("1", digit.Consume("1"))
@@ -50,7 +48,7 @@ type RealWorldTests() =
 
     [<TestMethod>]
     member _.``named statement`` () =
-        let identifier = Pattern.Check("identifier", Bias.Head,
+        let identifier = Pattern.Check(Bias.Head,
                                       (fun (char:char) -> char.IsLetter() || char = '_'),
                                       (fun (char:char) -> char.IsLetterOrDigit() || char = '_'),
                                       (fun (char:char) -> char.IsLetterOrDigit()))

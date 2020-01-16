@@ -11,10 +11,9 @@ type CheckerTests() =
     [<TestMethod>]
     member _.``StringChecker consume`` () =
         //! This is a sophisticated, therefore fragile, pattern type. It needs to be exhaustively tested against a very large battery. Do not remove these no matter how redundant they may seem, for they are not.
-        let mutable pattern = Pattern.Check("pattern",
-                                           (fun (char:char) -> char.IsLetter() || char = '_'), true,
-                                           (fun (char:char) -> char.IsLetterOrDigit() || char = '-' || char = '_'), true,
-                                           (fun (char:char) -> char.IsLetterOrDigit()), true)
+        let mutable pattern = Pattern.Check((fun (char:char) -> char.IsLetter() || char = '_'), true,
+                                            (fun (char:char) -> char.IsLetterOrDigit() || char = '-' || char = '_'), true,
+                                            (fun (char:char) -> char.IsLetterOrDigit()), true)
         ResultAssert.Fails(pattern.Consume("a"))
         ResultAssert.Fails(pattern.Consume("a "))
         ResultAssert.Fails(pattern.Consume("aa"))
@@ -68,10 +67,9 @@ type CheckerTests() =
         ResultAssert.Captures("a___e", pattern.Consume("a___e"))
         ResultAssert.Captures("a___e", pattern.Consume("a___e "))
 
-        pattern <- Pattern.Check("pattern",
-                                (fun (char:char) -> char.IsLetter() || char = '_'), false,
-                                (fun (char:char) -> char.IsLetterOrDigit() || char = '_' || char = '-'), true,
-                                (fun (char:char) -> char.IsLetterOrDigit()), true)
+        pattern <- Pattern.Check((fun (char:char) -> char.IsLetter() || char = '_'), false,
+                                 (fun (char:char) -> char.IsLetterOrDigit() || char = '_' || char = '-'), true,
+                                 (fun (char:char) -> char.IsLetterOrDigit()), true)
         ResultAssert.Fails(pattern.Consume("a"))
         ResultAssert.Fails(pattern.Consume("a "))
         ResultAssert.Captures("aa", pattern.Consume("aa"))
@@ -125,10 +123,9 @@ type CheckerTests() =
         ResultAssert.Captures("a___e", pattern.Consume("a___e"))
         ResultAssert.Captures("a___e", pattern.Consume("a___e "))
         
-        pattern <- Pattern.Check("pattern",
-            (fun (char:char) -> char.IsLetter() || char = '_'), true,
-            (fun (char:char) -> char.IsLetterOrDigit() || char = '_' || char = '-'), false,
-            (fun (char:char) -> char.IsLetterOrDigit()), true)
+        pattern <- Pattern.Check((fun (char:char) -> char.IsLetter() || char = '_'), true,
+                                 (fun (char:char) -> char.IsLetterOrDigit() || char = '_' || char = '-'), false,
+                                 (fun (char:char) -> char.IsLetterOrDigit()), true)
         ResultAssert.Fails(pattern.Consume("a"))
         ResultAssert.Fails(pattern.Consume("a "))
         ResultAssert.Captures("aa", pattern.Consume("aa"))
@@ -182,10 +179,9 @@ type CheckerTests() =
         ResultAssert.Captures("a___e", pattern.Consume("a___e"))
         ResultAssert.Captures("a___e", pattern.Consume("a___e "))
         
-        pattern <- Pattern.Check("pattern",
-            (fun (char:char) -> char.IsLetter() || char = '_'), true,
-            (fun (char:char) -> char.IsLetterOrDigit() || char = '_' || char = '-'), true,
-            (fun (char:char) -> char.IsLetterOrDigit()), false)
+        pattern <- Pattern.Check((fun (char:char) -> char.IsLetter() || char = '_'), true,
+                                 (fun (char:char) -> char.IsLetterOrDigit() || char = '_' || char = '-'), true,
+                                 (fun (char:char) -> char.IsLetterOrDigit()), false)
         ResultAssert.Fails(pattern.Consume("a"))
         ResultAssert.Fails(pattern.Consume("a "))
         ResultAssert.Captures("aa", pattern.Consume("aa"))
@@ -239,10 +235,9 @@ type CheckerTests() =
         ResultAssert.Captures("a___e", pattern.Consume("a___e"))
         ResultAssert.Captures("a___e", pattern.Consume("a___e "))
         
-        pattern <- Pattern.Check("pattern",
-            (fun (char:char) -> char.IsLetter() || char = '_'), false,
-            (fun (char:char) -> char.IsLetterOrDigit() || char = '_' || char = '-'), false,
-            (fun (char:char) -> char.IsLetterOrDigit()), true)
+        pattern <- Pattern.Check((fun (char:char) -> char.IsLetter() || char = '_'), false,
+                                 (fun (char:char) -> char.IsLetterOrDigit() || char = '_' || char = '-'), false,
+                                 (fun (char:char) -> char.IsLetterOrDigit()), true)
         ResultAssert.Captures("a", pattern.Consume("a"))
         ResultAssert.Captures("a", pattern.Consume("a "))
         ResultAssert.Captures("1", pattern.Consume("1"))
@@ -298,10 +293,9 @@ type CheckerTests() =
         ResultAssert.Captures("a___e", pattern.Consume("a___e"))
         ResultAssert.Captures("a___e", pattern.Consume("a___e "))
         
-        pattern <- Pattern.Check("pattern",
-            (fun (char:char) -> char.IsLetter() || char = '_'), false,
-            (fun (char:char) -> char.IsLetterOrDigit() || char = '_' || char = '-'), true,
-            (fun (char:char) -> char.IsLetterOrDigit()), false)
+        pattern <- Pattern.Check((fun (char:char) -> char.IsLetter() || char = '_'), false,
+                                 (fun (char:char) -> char.IsLetterOrDigit() || char = '_' || char = '-'), true,
+                                 (fun (char:char) -> char.IsLetterOrDigit()), false)
         ResultAssert.Captures("a", pattern.Consume("a"))
         ResultAssert.Captures("a", pattern.Consume("a "))
         ResultAssert.Captures("1", pattern.Consume("1"))
@@ -357,10 +351,9 @@ type CheckerTests() =
         ResultAssert.Captures("a___e", pattern.Consume("a___e"))
         ResultAssert.Captures("a___e", pattern.Consume("a___e "))
         
-        pattern <- Pattern.Check("pattern",
-            (fun (char:char) -> char.IsLetter() || char = '_'), true,
-            (fun (char:char) -> char.IsLetterOrDigit() || char = '_' || char = '-'), false,
-            (fun (char:char) -> char.IsLetterOrDigit()), false)
+        pattern <- Pattern.Check((fun (char:char) -> char.IsLetter() || char = '_'), true,
+                                 (fun (char:char) -> char.IsLetterOrDigit() || char = '_' || char = '-'), false,
+                                 (fun (char:char) -> char.IsLetterOrDigit()), false)
         ResultAssert.Captures("a", pattern.Consume("a"))
         ResultAssert.Captures("a", pattern.Consume("a "))
         ResultAssert.Fails(pattern.Consume("1"))
@@ -416,17 +409,16 @@ type CheckerTests() =
         ResultAssert.Captures("a___e", pattern.Consume("a___e"))
         ResultAssert.Captures("a___e", pattern.Consume("a___e "))
         
-        Assert.ThrowsException<PatternConstructionException>(Action (fun () -> Pattern.Check("pattern",
-                                                                                (fun (char:char) -> char.IsLetter() || char = '_'), false,
-                                                                                (fun (char:char) -> char.IsLetterOrDigit() || char = '_' || char = '-'), false,
-                                                                                (fun (char:char) -> char.IsLetterOrDigit()), false) |> ignore)) |> ignore
+        Assert.ThrowsException<PatternConstructionException>(Action (fun () -> Pattern.Check((fun (char:char) -> char.IsLetter() || char = '_'), false,
+                                                                                             (fun (char:char) -> char.IsLetterOrDigit() || char = '_' || char = '-'), false,
+                                                                                             (fun (char:char) -> char.IsLetterOrDigit()), false) |> ignore)) |> ignore
         
     [<TestMethod>]
     member _.``WordChecker consume`` () =
-        let mutable pattern = Pattern.Check("pattern", Bias.Head,
-                                          (fun (char:char) -> char = '_'),
-                                          (fun (char:char) -> char.IsLetter()),
-                                          (fun (char:char) -> char.IsLetterOrDigit()))
+        let mutable pattern = Pattern.Check(Bias.Head,
+                                           (fun (char:char) -> char = '_'),
+                                           (fun (char:char) -> char.IsLetter()),
+                                           (fun (char:char) -> char.IsLetterOrDigit()))
         ResultAssert.Captures("_", pattern.Consume("_"))
         ResultAssert.Captures("_", pattern.Consume("_ "))
         ResultAssert.Fails(pattern.Consume("b"))
@@ -444,7 +436,7 @@ type CheckerTests() =
         ResultAssert.Captures("_example", pattern.Consume("_example_"))
         ResultAssert.Captures("_example", pattern.Consume("_example_ "))
         
-        pattern <- Pattern.Check("pattern", Bias.Tail,
+        pattern <- Pattern.Check(Bias.Tail,
                                 (fun (char:char) -> char = '_'),
                                 (fun (char:char) -> char.IsLetter()),
                                 (fun (char:char) -> char.IsLetterOrDigit()))

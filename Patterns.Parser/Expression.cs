@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using Stringier.Patterns;
 using static Stringier.Patterns.Pattern;
 
 namespace Stringier.Patterns.Parser {
 	/// <summary>
 	/// Represents a <see cref="Pattern"/> expression.
 	/// </summary>
+	/// <remarks>
+	/// <para>This provides both facilities to parse a source text into an <see cref="Expression"/> through <see cref="Parse(ref Source)"/> and <see cref="TryParse(ref Source, out Expression)"/>, along with their respective overloads, as well as an interpreter of that parsed expression, through <see cref="Evaluate"/>. Essentially, through this type, there is a fully implemented DSL.</para>
+	/// <para>This type is intended to be used to provide a generic and universal DSL for <see cref="Stringier"/>'s <see cref="Pattern"/> type. The <see cref="Expression"/> syntax, parser, and interpreter are fully enclosed within <see cref="Parser"/> and fully exposed through this type. By providing a default library for this, both first-party and third-party tooling can utilize the same system, and therefore behave identically.</para>
+	/// </remarks>
 	public sealed class Expression {
 		/// <summary>
 		/// The <see cref="Token"/>s that make up this <see cref="Expression"/>.
