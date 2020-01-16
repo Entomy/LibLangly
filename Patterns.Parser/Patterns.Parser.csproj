@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -9,7 +9,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <Authors>Patrick Kelly</Authors>
-    <Version>2.2.0</Version>
+    <Version>0.1.0</Version>
     <Copyright>2019</Copyright>
     <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/Entomy/Stringier</PackageProjectUrl>
@@ -18,7 +18,9 @@
     <RepositoryUrl>https://github.com/Entomy/Stringier</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <Description>Implements a parser for Stringier's Patterns. This is meant for internal use, as it only parses a generalized format of Stringier's Pattern expressions.</Description>
-  </PropertyGroup>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+	</PropertyGroup>
 
   <ItemGroup>
     <None Include="..\Logo.png">
