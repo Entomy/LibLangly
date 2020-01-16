@@ -11,7 +11,7 @@ type StressTests() =
     [<TestMethod>]
     member _.``gibberish`` () =
         let mutable source = Source(Gibberish.Generate(128))
-        let letter = Pattern.Check("letter", (fun (char) -> 'a' <= char && char <= 'z'))
+        let letter = Pattern.Check((fun (char) -> 'a' <= char && char <= 'z'))
         let word = many letter
         let space = many ' '
         let gibberish:Pattern = (many (word || space)) >> Pattern.EndOfSource

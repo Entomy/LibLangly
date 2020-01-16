@@ -7,6 +7,6 @@ namespace Stringier.Patterns.Parser {
 		public ExpressionParseException() { }
 		public ExpressionParseException(String message) : base(message) { }
 		public ExpressionParseException(String message, Exception inner) : base(message, inner) { }
-		protected ExpressionParseException(SerializationInfo info, StreamingContext context) : base(info, context) { }
+		private ExpressionParseException(SerializationInfo info, StreamingContext context) : base(info, context) { }
 	}
 }

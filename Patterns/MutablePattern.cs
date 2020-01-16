@@ -46,12 +46,14 @@ namespace Stringier.Patterns {
 		/// <returns><c>true</c> if this <see cref="Pattern"/> may be present, <c>false</c> if definately not.</returns>
 		internal override Boolean CheckHeader(ref Source source) => Head?.CheckHeader(ref source) ?? false;
 
+
 		/// <summary>
 		/// Call the Consume parser of this <see cref="Pattern"/> on the <paramref name="source"/> with the <paramref name="result"/>.
 		/// </summary>
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
 		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</param>
 		/// <param name="trace">The <see cref="ITrace"/> to record steps in.</param>
+		/// <exception cref="PatternUndefinedException">The pattern was attempted to be used before actually being defined.</exception>
 		internal override void Consume(ref Source source, ref Result result, ITrace? trace) {
 			if (Head is null) {
 				throw new PatternUndefinedException();
@@ -65,6 +67,7 @@ namespace Stringier.Patterns {
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
 		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</param>
 		/// <param name="trace">The <see cref="ITrace"/> to record steps in.</param>
+		/// <exception cref="PatternUndefinedException">The pattern was attempted to be used before actually being defined.</exception>
 		internal override void Neglect(ref Source source, ref Result result, ITrace? trace) {
 			if (Head is null) {
 				throw new PatternUndefinedException();

@@ -8,6 +8,7 @@ namespace Stringier.Patterns {
 		/// </summary>
 		/// <param name="source">The <see cref="Result"/> to consume.</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</returns>
+		/// <exception cref="PatternUndefinedException">The pattern was attempted to be used before actually being defined.</exception>
 		public Result Consume(Result source) => Consume(source, null);
 
 		/// <summary>
@@ -16,6 +17,7 @@ namespace Stringier.Patterns {
 		/// <param name="source">The <see cref="Result"/> to consume.</param>
 		/// <param name="trace">The <see cref="ITrace"/> to record steps in.</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</returns>
+		/// <exception cref="PatternUndefinedException">The pattern was attempted to be used before actually being defined.</exception>
 		public Result Consume(Result source, ITrace? trace) {
 			Source src = new Source(source);
 			return Consume(ref src, trace);
@@ -26,6 +28,7 @@ namespace Stringier.Patterns {
 		/// </summary>
 		/// <param name="source">The <see cref="String"/> to consume.</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</returns>
+		/// <exception cref="PatternUndefinedException">The pattern was attempted to be used before actually being defined.</exception>
 		public Result Consume(String source) => Consume(source, null);
 
 		/// <summary>
@@ -34,6 +37,7 @@ namespace Stringier.Patterns {
 		/// <param name="source">The <see cref="String"/> to consume.</param>
 		/// <param name="trace">The <see cref="ITrace"/> to record steps in.</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</returns>
+		/// <exception cref="PatternUndefinedException">The pattern was attempted to be used before actually being defined.</exception>
 		public Result Consume(String source, ITrace? trace) {
 			if (source is null) {
 				throw new ArgumentNullException(nameof(source));
@@ -47,6 +51,7 @@ namespace Stringier.Patterns {
 		/// </summary>
 		/// <param name="source">The <see cref="Source"/> to consume</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</returns>
+		/// <exception cref="PatternUndefinedException">The pattern was attempted to be used before actually being defined.</exception>
 		public Result Consume(ref Source source) => Consume(ref source, null);
 
 		/// <summary>
@@ -55,6 +60,7 @@ namespace Stringier.Patterns {
 		/// <param name="source">The <see cref="Source"/> to consume</param>
 		/// <param name="trace">The <see cref="ITrace"/> to record steps in.</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</returns>
+		/// <exception cref="PatternUndefinedException">The pattern was attempted to be used before actually being defined.</exception>
 		public Result Consume(ref Source source, ITrace? trace) {
 			Result result = new Result(ref source);
 			Int32 OriginalPosition = source.Position;
@@ -80,6 +86,7 @@ namespace Stringier.Patterns {
 		/// </summary>
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
 		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</param>
+		/// <exception cref="PatternUndefinedException">The pattern was attempted to be used before actually being defined.</exception>
 		internal void Consume(ref Source source, ref Result result) => Consume(ref source, ref result, null);
 
 		/// <summary>
@@ -88,6 +95,7 @@ namespace Stringier.Patterns {
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
 		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</param>
 		/// <param name="trace">The <see cref="ITrace"/> to record steps in.</param>
+		/// <exception cref="PatternUndefinedException">The pattern was attempted to be used before actually being defined.</exception>
 		internal abstract void Consume(ref Source source, ref Result result, ITrace? trace);
 
 		/// <summary>
@@ -95,6 +103,7 @@ namespace Stringier.Patterns {
 		/// </summary>
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
 		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</param>
+		/// <exception cref="PatternUndefinedException">The pattern was attempted to be used before actually being defined.</exception>
 		internal void Neglect(ref Source source, ref Result result) => Neglect(ref source, ref result, null);
 
 		/// <summary>
@@ -103,6 +112,7 @@ namespace Stringier.Patterns {
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
 		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</param>
 		/// <param name="trace">The <see cref="ITrace"/> to record steps in.</param>
+		/// <exception cref="PatternUndefinedException">The pattern was attempted to be used before actually being defined.</exception>
 		internal abstract void Neglect(ref Source source, ref Result result, ITrace? trace);
 	}
 }

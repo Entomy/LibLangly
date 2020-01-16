@@ -114,6 +114,96 @@
   </h3>
   
   
+  <a id="Stringier_StringierExtensions_AsChars_" data-uid="Stringier.StringierExtensions.AsChars*"></a>
+  <h4 id="Stringier_StringierExtensions_AsChars_Int32_" data-uid="Stringier.StringierExtensions.AsChars(Int32)">AsChars(Int32)</h4>
+  <div class="markdown level1 summary"><p>Gets the <see cref="!:Char"></see> representation of this codepoint.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Char[] AsChars(this Int32 codepoint)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Int32</span></td>
+        <td><span class="parametername">codepoint</span></td>
+        <td><p>A <see cref="!:Rune"></see> cast to a <see cref="!:Int32"></see>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Char</span>[]</td>
+        <td><p>An <see cref="!:Array"></see> of zero to two <see cref="!:Char"></see> representing this <code data-dev-comment-type="paramref" class="paramref">codepoint</code>. <see cref="!:Array.Empty&lt;T>"></see> signifies an invalid conversion.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_StringierExtensions_AsChars_" data-uid="Stringier.StringierExtensions.AsChars*"></a>
+  <h4 id="Stringier_StringierExtensions_AsChars_Rune_" data-uid="Stringier.StringierExtensions.AsChars(Rune)">AsChars(Rune)</h4>
+  <div class="markdown level1 summary"><p>Get the <see cref="!:Char"></see> representation of this <see cref="!:Rune"></see>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Char[] AsChars(this Rune rune)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Rune</span></td>
+        <td><span class="parametername">rune</span></td>
+        <td><p>The <see cref="!:Rune"></see> to convert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Char</span>[]</td>
+        <td><p>An <see cref="!:Array"></see> of zero to two <see cref="!:Char"></see> representing this <code data-dev-comment-type="paramref" class="paramref">rune</code>. <see cref="!:Array.Empty&lt;T>"></see> signifies an invalid conversion.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
   <a id="Stringier_StringierExtensions_Chop_" data-uid="Stringier.StringierExtensions.Chop*"></a>
   <h4 id="Stringier_StringierExtensions_Chop_ReadOnlySpan_Char__Int32_" data-uid="Stringier.StringierExtensions.Chop(ReadOnlySpan{Char},Int32)">Chop(ReadOnlySpan&lt;Char&gt;, Int32)</h4>
   <div class="markdown level1 summary"><p>Chop the <code data-dev-comment-type="paramref" class="paramref">span</code> into chunks of <code data-dev-comment-type="paramref" class="paramref">size</code></p>

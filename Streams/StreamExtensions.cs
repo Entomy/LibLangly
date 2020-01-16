@@ -10,6 +10,8 @@ namespace Stringier.Streams {
 		/// <param name="stream">The <see cref="Stream"/> to read from.</param>
 		/// <param name="count">The maximum of the characters to read.</param>
 		/// <returns>An <see cref="Array"/> of <see cref="Byte"/> containing the read characters.</returns>
+		/// <exception cref="IOException">An I/O error occurs.</exception>
+		/// <exception cref="ObjectDisposedException">Methods were called after the stream was closed.</exception>
 		public static Byte[] Read(this Stream stream, Int32 count) {
 			Byte[] buf = new Byte[count];
 			Int32 c = stream.Read(buf, 0, count);
@@ -27,6 +29,7 @@ namespace Stringier.Streams {
 		/// <para>This method assumes UTF-8 encoding.</para>
 		/// <para>This method requires a bit of explaination as there's a great deal of misunderstandings. <see cref="Char"/> is a 16-bit integer, yet UNICODE requires at least 21 bits of storage. This is an archaic decision from back in the days of UCS-2. Changing things to update with the times wouldn't be feasible. Because of this, .NET strings sometimes require 2 characters to represent a single codepoint. That means, while in most cases, this operation will return a single character in an array, there are cases where the codepoint exceeds 16-bits and has to be encoded. For that reason, if you're on a new enough runtime, you want to use <see cref="ReadRune(Stream)"/>, which does this same operation but with a type capable of representing the codepoint as a single value.</para>
 		/// </remarks>
+		/// <exception cref="ObjectDisposedException">Methods were called after the stream was closed.</exception>
 		public static Char[] ReadCodepoint(this Stream stream) {
 			Byte[] sequence = new Byte[4] { 0x00, 0x00, 0x00, 0x00 };
 			Int32 bytes = 1;
@@ -103,6 +106,7 @@ namespace Stringier.Streams {
 		/// <remarks>
 		/// This method assumes UTF-8 encoding.
 		/// </remarks>
+		/// <exception cref="ObjectDisposedException">Methods were called after the stream was closed.</exception>
 		public static Rune ReadRune(this Stream stream) {
 			Span<Char> chars = stream.ReadCodepoint();
 			switch (chars.Length) {
@@ -124,6 +128,7 @@ namespace Stringier.Streams {
 		/// <remarks>
 		/// This method assumes UTF-8 encoding.
 		/// </remarks>
+		/// <exception cref="ObjectDisposedException">Methods were called after the stream was closed.</exception>
 		public static Boolean TryReadRune(this Stream stream, out Rune rune) {
 			Span<Char> chars = stream.ReadCodepoint();
 			switch (chars.Length) {
@@ -145,6 +150,7 @@ namespace Stringier.Streams {
 		/// <param name="stream">The <see cref="Stream"/> to read from.</param>
 		/// <param name="count">The maximum of the characters to read.</param>
 		/// <returns>An <see cref="Array"/> of <see cref="Rune"/> containing the read rune.</returns>
+		/// <exception cref="ObjectDisposedException">Methods were called after the stream was closed.</exception>
 		public static Rune[] ReadRunes(this Stream stream, Int32 count) {
 			Rune[] runes = new Rune[count];
 			Int32 c = 0;

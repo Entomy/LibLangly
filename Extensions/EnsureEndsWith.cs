@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text.RegularExpressions;
 
 namespace Stringier {
 	public static partial class StringierExtensions {

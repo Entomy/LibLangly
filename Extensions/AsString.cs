@@ -3,7 +3,7 @@ using System.Text;
 
 namespace Stringier {
 	public static partial class StringierExtensions {
-#if NETCOREAPP3_0 || NETCOREAPP3_1
+#if !NETSTANDARD1_6 && !NETSTANDARD2_0
 		/// <summary>
 		/// Gets the <see cref="String"/> representation of these <paramref name="runes"/>.
 		/// </summary>
