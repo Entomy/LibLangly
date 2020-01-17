@@ -45,7 +45,6 @@ namespace Stringier.Patterns.Nodes {
 		/// <summary>
 		/// Initialize a new <see cref="StringChecker"/> with the specified <paramref name="headCheck"/>, <paramref name="bodyCheck"/>, and <paramref name="tailCheck"/>. All checks are required.
 		/// </summary>
-		/// <param name="name">The name to refer to this as</param>
 		/// <param name="headCheck">A <see cref="Func{T, TResult}"/> taking a <see cref="Char"/> and returning a <see cref="Boolean"/></param>
 		/// <param name="bodyCheck">A <see cref="Func{T, TResult}"/> taking a <see cref="Char"/> and returning a <see cref="Boolean"/></param>
 		/// <param name="tailCheck">A <see cref="Func{T, TResult}"/> taking a <see cref="Char"/> and returning a <see cref="Boolean"/></param>
@@ -65,7 +64,9 @@ namespace Stringier.Patterns.Nodes {
 		/// <param name="tailCheck">A <see cref="Func{T, TResult}"/> taking a <see cref="Char"/> and returning a <see cref="Boolean"/></param>
 		/// <param name="tailRequired"
 		internal StringChecker(Func<Char, Boolean> headCheck, Boolean headRequired, Func<Char, Boolean> bodyCheck, Boolean bodyRequired, Func<Char, Boolean> tailCheck, Boolean tailRequired) : this(headCheck, bodyCheck, tailCheck) {
-			if (!headRequired && !bodyRequired && !tailRequired) { throw new PatternConstructionException("At least one component must be required"); }
+			if (!headRequired && !bodyRequired && !tailRequired) {
+				throw new PatternConstructionException("At least one component must be required");
+			}
 			HeadRequired = headRequired;
 			BodyRequired = bodyRequired;
 			TailRequired = tailRequired;
@@ -89,7 +90,9 @@ namespace Stringier.Patterns.Nodes {
 		/// <param name="trace">The <see cref="ITrace"/> to record steps in.</param>
 		internal override void Consume(ref Source source, ref Result result, ITrace? trace) {
 			//The constructors should catch this situation first, but it should still be checked here in case someone forgot
-			if (!HeadRequired && !BodyRequired && !TailRequired) { throw new PatternConstructionException("At least one component must be required"); }
+			if (!HeadRequired && !BodyRequired && !TailRequired) {
+				throw new PatternConstructionException("At least one component must be required");
+			}
 			//To make this easier to reason about, the implementation has been split, and this function actually just calls the requested one
 			//This actually causes a small amount of optimization, beleive it or not. In a unified approach, two of these checks would have to occur inside of the body loop, and multiple times within the same iteration, which means they are repeated several times instead of just once here. This also prevents possible branch misprediction problems.
 			Boolean FoundBody;

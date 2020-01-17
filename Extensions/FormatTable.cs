@@ -62,10 +62,13 @@ namespace Stringier {
 		/// <param name="columns">The amount of columns in the table.</param>
 		/// <param name="alignments">An <see cref="Array"/> of <see cref="Alignment"/> corresponding to each column.</param>
 		public FormatTable(Int32 columns, params Alignment[] alignments) : this(columns) {
-			if (alignments.Length != Alignments.Length) {
+			if (alignments is null) {
+				throw new ArgumentNullException(nameof(alignments));
+			} else if (alignments.Length != Alignments.Length) {
 				throw new ArgumentException("Alignments count must be the same as the column count. Alignments are per-column.", nameof(alignments));
+			} else {
+				Alignments = alignments;
 			}
-			Alignments = alignments;
 		}
 
 		/// <summary>
