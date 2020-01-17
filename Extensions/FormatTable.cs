@@ -140,19 +140,22 @@ namespace Stringier {
 		/// <param name="args">An object array that contains zero or more objects to format.</param>
 		/// <remarks>Unlike with <see cref="String.Format(String, Object)"/> or <see cref="StringierExtensions.Format(String, Object)"/> and variants, arguments here may be <see langword="null"/>. When <see langword="null"/>, they will be placed into the table as <see cref="String.Empty"/>.</remarks>
 		public void Format(params Object?[] args) {
-			if (Widths.Length != args.Length) {
+			if (args is null) {
+				throw new ArgumentNullException(nameof(args));
+			} else if (Widths.Length != args.Length) {
 				throw new FormatException($"Table width is {Widths.Length}; all records must be that wide");
-			}
-			String[] format = new String[args.Length];
-			String s;
-			for (Int32 i = 0; i < args.Length; i++) {
-				s = args[i]?.ToString() ?? String.Empty;
-				if (s.Length > Widths[i]) {
-					Widths[i] = s.Length;
+			} else {
+				String[] format = new String[args.Length];
+				String s;
+				for (Int32 i = 0; i < args.Length; i++) {
+					s = args[i]?.ToString() ?? String.Empty;
+					if (s.Length > Widths[i]) {
+						Widths[i] = s.Length;
+					}
+					format[i] = s;
 				}
-				format[i] = s;
+				Records.Add(format);
 			}
-			Records.Add(format);
 		}
 
 		/// <summary>
@@ -166,12 +169,6 @@ namespace Stringier {
 			foreach (String[] record in Records) {
 				for (Int32 i = 0; i < Widths.Length; i++) {
 					switch (Alignments[i]) {
-					case Alignment.Default:
-						if (CultureInfo.CurrentCulture.TextInfo.IsRightToLeft) {
-							goto case Alignment.Right;
-						} else {
-							goto case Alignment.Left;
-						}
 					case Alignment.Left:
 						_ = builder.Append(record[i].PadRight(Widths[i]));
 						break;
@@ -181,8 +178,13 @@ namespace Stringier {
 					case Alignment.Center:
 						_ = builder.Append(record[i].Pad(Widths[i]));
 						break;
+					case Alignment.Default:
 					default:
-						throw new InvalidOperationException($"Alignment of {Alignments[i]} wasn't handled.");
+						if (CultureInfo.CurrentCulture.TextInfo.IsRightToLeft) {
+							goto case Alignment.Right;
+						} else {
+							goto case Alignment.Left;
+						}
 					}
 					if (i < Widths.Length - 1) {
 						_ = builder.Append(ColumnDelimiter);

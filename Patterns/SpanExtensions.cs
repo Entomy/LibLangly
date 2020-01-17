@@ -18,7 +18,12 @@ namespace Stringier.Patterns {
 		/// <param name="pattern">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to match</param>
 		/// <param name="source">The <see cref="String"/> to consume</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the consumed string</returns>
-		public static Result Consume(this ReadOnlySpan<Char> pattern, String source) => pattern.Consume(source, Compare.CaseSensitive);
+		public static Result Consume(this ReadOnlySpan<Char> pattern, String source) {
+			if (source is null) {
+				throw new ArgumentNullException(nameof(source));
+			}
+			return pattern.Consume(source, Compare.CaseSensitive);
+		}
 
 		/// <summary>
 		/// Attempt to consume the <paramref name="pattern"/> from the <paramref name="source"/>
@@ -28,6 +33,9 @@ namespace Stringier.Patterns {
 		/// <param name="comparisonType">Whether the comparison is sensitive to casing.</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the consumed string</returns>
 		public static Result Consume(this ReadOnlySpan<Char> pattern, String source, Compare comparisonType) {
+			if (source is null) {
+				throw new ArgumentNullException(nameof(source));
+			}
 			Source src = new Source(source);
 			return pattern.Consume(ref src, comparisonType);
 		}
