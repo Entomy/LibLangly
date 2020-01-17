@@ -92,6 +92,8 @@ namespace Stringier.Streams {
 				return new[] { chars[0] };
 			case 2:
 				return chars;
+			default:
+				goto Error;
 			}
 		Error:
 			return Array.Empty<Char>();
