@@ -1,11 +1,8 @@
 ﻿using System;
-#if !NETSTANDARD1_6
 using System.Globalization;
-#endif
 
 namespace Stringier {
 	public static partial class StringierExtensions {
-#if !NETSTANDARD1_6
 		/// <summary>
 		/// Determines whether this <see cref="Char"/> and a specified <see cref="Char"/> object have the same value. A parameter specifies the culture, case, and sort rules used in the comparison.
 		/// </summary>
@@ -27,7 +24,6 @@ namespace Stringier {
 				return @char.Equals(other);
 			}
 		}
-#endif
 
 		/// <summary>
 		/// Determines whether this instance and the specified <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> object have the same value.

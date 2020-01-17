@@ -1,8 +1,6 @@
 ﻿using System;
-#if !NETSTANDARD1_6
 using System.Globalization;
-#endif
-#if !NETSTANDARD1_6 && !NETSTANDARD2_0
+#if !NETSTANDARD2_0
 using System.Text;
 #endif
 
@@ -15,7 +13,7 @@ namespace Stringier {
 		/// <returns>The lowercase equivalent of <paramref name="char"/>, or the unchanged value of <paramref name="char"/> if <paramref name="char"/> is already lowercase, has no lowercase equivalent, or is not alphabetic.</returns>
 		public static Char ToLower(this Char @char) => Char.ToLower(@char);
 
-#if !NETSTANDARD1_6 && !NETSTANDARD2_0
+#if !NETSTANDARD2_0
 		/// <summary>
 		/// Converts the value of a Unicode character to its lowercase equivalent.
 		/// </summary>
@@ -24,7 +22,6 @@ namespace Stringier {
 		public static Rune ToLower(this Rune rune) => Rune.ToLower(rune, CultureInfo.CurrentCulture);
 #endif
 
-#if !NETSTANDARD1_6
 		/// <summary>
 		/// Converts the value of a specified Unicode character to its lowercase equivalent using specified culture-specific formatting information.
 		/// </summary>
@@ -37,9 +34,8 @@ namespace Stringier {
 			}
 			return Char.ToLower(@char, culture);
 		}
-#endif
 
-#if !NETSTANDARD1_6 && !NETSTANDARD2_0
+#if !NETSTANDARD2_0
 		/// <summary>
 		/// Converts the value of a specified Unicode character to its lowercase equivalent using specified culture-specific formatting information.
 		/// </summary>
@@ -61,7 +57,7 @@ namespace Stringier {
 		/// <returns>The lowercase equivalent of the <paramref name="char"/> parameter, or the unchanged value of <paramref name="char"/>, if <paramref name="char"/> is already lowercase or not alphabetic.</returns>
 		public static Char ToLowerInvariant(this Char @char) => Char.ToLowerInvariant(@char);
 
-#if !NETSTANDARD1_6 && !NETSTANDARD2_0
+#if !NETSTANDARD2_0
 		/// <summary>
 		/// Converts the value of a Unicode character to its lowercase equivalent using the casing rules of the invariant culture.
 		/// </summary>

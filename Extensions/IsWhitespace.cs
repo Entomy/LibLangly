@@ -1,5 +1,5 @@
 ﻿using System;
-#if !NETSTANDARD1_6 && !NETSTANDARD2_0
+#if !NETSTANDARD2_0
 using System.Text;
 #endif
 
@@ -12,7 +12,7 @@ namespace Stringier {
 		/// <returns><see langword="true"/> if <paramref name="char"/> is white space; otherwise, <see langword="false"/>.</returns>
 		public static Boolean IsWhiteSpace(this Char @char) => Char.IsWhiteSpace(@char);
 
-#if !NETSTANDARD1_6 && !NETSTANDARD2_0
+#if !NETSTANDARD2_0
 		/// <summary>
 		/// Indicates whether the specified Unicode character is categorized as white space.
 		/// </summary>
