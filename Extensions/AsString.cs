@@ -1,9 +1,9 @@
-﻿using System;
+﻿#if !NETSTANDARD1_6 && !NETSTANDARD2_0
+using System;
 using System.Text;
 
 namespace Stringier {
 	public static partial class StringierExtensions {
-#if !NETSTANDARD1_6 && !NETSTANDARD2_0
 		/// <summary>
 		/// Gets the <see cref="String"/> representation of these <paramref name="runes"/>.
 		/// </summary>
@@ -27,6 +27,6 @@ namespace Stringier {
 			}
 			return new String(chars, 0, c);
 		}
-#endif
 	}
 }
+#endif

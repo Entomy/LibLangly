@@ -204,6 +204,96 @@
   </table>
   
   
+  <a id="Stringier_StringierExtensions_AsString_" data-uid="Stringier.StringierExtensions.AsString*"></a>
+  <h4 id="Stringier_StringierExtensions_AsString_ReadOnlySpan_Rune__" data-uid="Stringier.StringierExtensions.AsString(ReadOnlySpan{Rune})">AsString(ReadOnlySpan&lt;Rune&gt;)</h4>
+  <div class="markdown level1 summary"><p>Gets the <see cref="!:String"></see> representation of these <code data-dev-comment-type="paramref" class="paramref">runes</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static String AsString(this ReadOnlySpan&lt;Rune&gt; runes)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ReadOnlySpan</span>&lt;<span class="xref">Rune</span>&gt;</td>
+        <td><span class="parametername">runes</span></td>
+        <td><p>The <see cref="!:ReadOnlySpan&lt;T>"></see> of <see cref="!:Rune"></see> to convert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td><p>A <see cref="!:String"></see> composed of the <code data-dev-comment-type="paramref" class="paramref">runes</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_StringierExtensions_AsString_" data-uid="Stringier.StringierExtensions.AsString*"></a>
+  <h4 id="Stringier_StringierExtensions_AsString_Rune___" data-uid="Stringier.StringierExtensions.AsString(Rune[])">AsString(Rune[])</h4>
+  <div class="markdown level1 summary"><p>Gets the <see cref="!:String"></see> representation of these <code data-dev-comment-type="paramref" class="paramref">runes</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static String AsString(this Rune[] runes)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Rune</span>[]</td>
+        <td><span class="parametername">runes</span></td>
+        <td><p>The <see cref="!:Array"></see> of <see cref="!:Rune"></see> to convert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td><p>A <see cref="!:String"></see> composed of the <code data-dev-comment-type="paramref" class="paramref">runes</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
   <a id="Stringier_StringierExtensions_Chop_" data-uid="Stringier.StringierExtensions.Chop*"></a>
   <h4 id="Stringier_StringierExtensions_Chop_ReadOnlySpan_Char__Int32_" data-uid="Stringier.StringierExtensions.Chop(ReadOnlySpan{Char},Int32)">Chop(ReadOnlySpan&lt;Char&gt;, Int32)</h4>
   <div class="markdown level1 summary"><p>Chop the <code data-dev-comment-type="paramref" class="paramref">span</code> into chunks of <code data-dev-comment-type="paramref" class="paramref">size</code></p>
@@ -550,6 +640,57 @@
   
   
   <a id="Stringier_StringierExtensions_Contains_" data-uid="Stringier.StringierExtensions.Contains*"></a>
+  <h4 id="Stringier_StringierExtensions_Contains_IEnumerable_String__Rune_" data-uid="Stringier.StringierExtensions.Contains(IEnumerable{String},Rune)">Contains(IEnumerable&lt;String&gt;, Rune)</h4>
+  <div class="markdown level1 summary"><p>Returns a value indicating whether a specified char occurs within any of the strings.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Boolean Contains(this IEnumerable&lt;String&gt; strings, Rune value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">String</span>&gt;</td>
+        <td><span class="parametername">strings</span></td>
+        <td><p>The enumeration of strings to check.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Rune</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The rune to seek.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><p><span class="xref">true</span> if the value parameter occurs within any of the strings; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_StringierExtensions_Contains_" data-uid="Stringier.StringierExtensions.Contains*"></a>
   <h4 id="Stringier_StringierExtensions_Contains_IEnumerable_String__String_" data-uid="Stringier.StringierExtensions.Contains(IEnumerable{String},String)">Contains(IEnumerable&lt;String&gt;, String)</h4>
   <div class="markdown level1 summary"><p>Returns a value indicating whether a specified string occurs within any of the strings.</p>
 </div>
@@ -629,6 +770,57 @@
         <td><span class="xref">Char</span></td>
         <td><span class="parametername">value</span></td>
         <td><p>The char to seek.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><p><span class="xref">true</span> if the value parameter occurs within this string; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_StringierExtensions_Contains_" data-uid="Stringier.StringierExtensions.Contains*"></a>
+  <h4 id="Stringier_StringierExtensions_Contains_String_Rune_" data-uid="Stringier.StringierExtensions.Contains(String,Rune)">Contains(String, Rune)</h4>
+  <div class="markdown level1 summary"><p>Returns a value indicating whether a specified rune occurs within this string.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Boolean Contains(this String string, Rune value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td><span class="parametername">string</span></td>
+        <td><p>The string to check.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Rune</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The rune to seek.</p>
 </td>
       </tr>
     </tbody>
@@ -1998,6 +2190,51 @@
   </table>
   
   
+  <a id="Stringier_StringierExtensions_GetUnicodeCategory_" data-uid="Stringier.StringierExtensions.GetUnicodeCategory*"></a>
+  <h4 id="Stringier_StringierExtensions_GetUnicodeCategory_Rune_" data-uid="Stringier.StringierExtensions.GetUnicodeCategory(Rune)">GetUnicodeCategory(Rune)</h4>
+  <div class="markdown level1 summary"><p>Categorizes a specified Unicode character into a group identified by one of the <see cref="!:UnicodeCategory"></see> values.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static UnicodeCategory GetUnicodeCategory(this Rune rune)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Rune</span></td>
+        <td><span class="parametername">rune</span></td>
+        <td><p>The Unicode character to categorize.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnicodeCategory</span></td>
+        <td><p>A <see cref="!:UnicodeCategory"></see> value that identifies the group that contains <code data-dev-comment-type="paramref" class="paramref">rune</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
   <a id="Stringier_StringierExtensions_Info_" data-uid="Stringier.StringierExtensions.Info*"></a>
   <h4 id="Stringier_StringierExtensions_Info_String_" data-uid="Stringier.StringierExtensions.Info(String)">Info(String)</h4>
   <div class="markdown level1 summary"><p>Gets the <see cref="!:StringInfo"></see> object for this <code data-dev-comment-type="paramref" class="paramref">string</code>.</p>
@@ -2088,6 +2325,51 @@
   </table>
   
   
+  <a id="Stringier_StringierExtensions_IsBoxDrawing_" data-uid="Stringier.StringierExtensions.IsBoxDrawing*"></a>
+  <h4 id="Stringier_StringierExtensions_IsBoxDrawing_Rune_" data-uid="Stringier.StringierExtensions.IsBoxDrawing(Rune)">IsBoxDrawing(Rune)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the specified Unicode character is categorized as a box drawing character.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Boolean IsBoxDrawing(this Rune rune)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Rune</span></td>
+        <td><span class="parametername">rune</span></td>
+        <td><p>The Unicode character to evaluate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">rune</code> is a box drawing character; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
   <a id="Stringier_StringierExtensions_IsCombiningMark_" data-uid="Stringier.StringierExtensions.IsCombiningMark*"></a>
   <h4 id="Stringier_StringierExtensions_IsCombiningMark_Char_" data-uid="Stringier.StringierExtensions.IsCombiningMark(Char)">IsCombiningMark(Char)</h4>
   <div class="markdown level1 summary"><p>Indicates whether the specified Unicode character is categorized as a combining mark.</p>
@@ -2127,6 +2409,51 @@
       <tr>
         <td><span class="xref">Boolean</span></td>
         <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">char</code> is a combining mark; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_StringierExtensions_IsCombiningMark_" data-uid="Stringier.StringierExtensions.IsCombiningMark*"></a>
+  <h4 id="Stringier_StringierExtensions_IsCombiningMark_Rune_" data-uid="Stringier.StringierExtensions.IsCombiningMark(Rune)">IsCombiningMark(Rune)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the specified Unicode character is categorized as a combining mark.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Boolean IsCombiningMark(this Rune rune)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Rune</span></td>
+        <td><span class="parametername">rune</span></td>
+        <td><p>The Unicode character to evaluate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">rune</code> is a combining mark; otherwise, <span class="xref">false</span>.</p>
 </td>
       </tr>
     </tbody>
@@ -2178,6 +2505,51 @@
   </table>
   
   
+  <a id="Stringier_StringierExtensions_IsControl_" data-uid="Stringier.StringierExtensions.IsControl*"></a>
+  <h4 id="Stringier_StringierExtensions_IsControl_Rune_" data-uid="Stringier.StringierExtensions.IsControl(Rune)">IsControl(Rune)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the specified Unicode character is categorized as a control character.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Boolean IsControl(this Rune rune)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Rune</span></td>
+        <td><span class="parametername">rune</span></td>
+        <td><p>The Unicode character to evaluate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">rune</code> is a control character; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
   <a id="Stringier_StringierExtensions_IsDigit_" data-uid="Stringier.StringierExtensions.IsDigit*"></a>
   <h4 id="Stringier_StringierExtensions_IsDigit_Char_" data-uid="Stringier.StringierExtensions.IsDigit(Char)">IsDigit(Char)</h4>
   <div class="markdown level1 summary"><p>Indicates whether the specified Unicode character is categorized as a decimal digit.</p>
@@ -2217,6 +2589,51 @@
       <tr>
         <td><span class="xref">Boolean</span></td>
         <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">char</code> is a control character; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_StringierExtensions_IsDigit_" data-uid="Stringier.StringierExtensions.IsDigit*"></a>
+  <h4 id="Stringier_StringierExtensions_IsDigit_Rune_" data-uid="Stringier.StringierExtensions.IsDigit(Rune)">IsDigit(Rune)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the specified Unicode character is categorized as a decimal digit.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Boolean IsDigit(this Rune rune)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Rune</span></td>
+        <td><span class="parametername">rune</span></td>
+        <td><p>The Unicode character to evaluate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">rune</code> is a control character; otherwise, <span class="xref">false</span>.</p>
 </td>
       </tr>
     </tbody>
@@ -2313,6 +2730,51 @@
   </table>
   
   
+  <a id="Stringier_StringierExtensions_IsLetter_" data-uid="Stringier.StringierExtensions.IsLetter*"></a>
+  <h4 id="Stringier_StringierExtensions_IsLetter_Rune_" data-uid="Stringier.StringierExtensions.IsLetter(Rune)">IsLetter(Rune)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether a Unicode character is categorized as a Unicode letter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Boolean IsLetter(this Rune rune)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Rune</span></td>
+        <td><span class="parametername">rune</span></td>
+        <td><p>The Unicode character to evaluate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">rune</code> is a letter; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
   <a id="Stringier_StringierExtensions_IsLetterOrDigit_" data-uid="Stringier.StringierExtensions.IsLetterOrDigit*"></a>
   <h4 id="Stringier_StringierExtensions_IsLetterOrDigit_Char_" data-uid="Stringier.StringierExtensions.IsLetterOrDigit(Char)">IsLetterOrDigit(Char)</h4>
   <div class="markdown level1 summary"><p>Indicates whether a Unicode character is categorized as a letter or a decimal digit.</p>
@@ -2358,6 +2820,51 @@
   </table>
   
   
+  <a id="Stringier_StringierExtensions_IsLetterOrDigit_" data-uid="Stringier.StringierExtensions.IsLetterOrDigit*"></a>
+  <h4 id="Stringier_StringierExtensions_IsLetterOrDigit_Rune_" data-uid="Stringier.StringierExtensions.IsLetterOrDigit(Rune)">IsLetterOrDigit(Rune)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether a Unicode character is categorized as a letter or a decimal digit.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Boolean IsLetterOrDigit(this Rune rune)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Rune</span></td>
+        <td><span class="parametername">rune</span></td>
+        <td><p>The Unicode character to evaluate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">rune</code> is a letter or a decimal digit; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
   <a id="Stringier_StringierExtensions_IsLower_" data-uid="Stringier.StringierExtensions.IsLower*"></a>
   <h4 id="Stringier_StringierExtensions_IsLower_Char_" data-uid="Stringier.StringierExtensions.IsLower(Char)">IsLower(Char)</h4>
   <div class="markdown level1 summary"><p>Indicates whether the specified Unicode character is categorized as a lowercase letter.</p>
@@ -2397,6 +2904,51 @@
       <tr>
         <td><span class="xref">Boolean</span></td>
         <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">char</code> is a lowercase letter; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_StringierExtensions_IsLower_" data-uid="Stringier.StringierExtensions.IsLower*"></a>
+  <h4 id="Stringier_StringierExtensions_IsLower_Rune_" data-uid="Stringier.StringierExtensions.IsLower(Rune)">IsLower(Rune)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the specified Unicode character is categorized as a lowercase letter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Boolean IsLower(this Rune rune)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Rune</span></td>
+        <td><span class="parametername">rune</span></td>
+        <td><p>The Unicode character to evaluate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">rune</code> is a lowercase letter; otherwise, <span class="xref">false</span>.</p>
 </td>
       </tr>
     </tbody>
@@ -2487,6 +3039,51 @@
       <tr>
         <td><span class="xref">Boolean</span></td>
         <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">char</code> is a number; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_StringierExtensions_IsNumber_" data-uid="Stringier.StringierExtensions.IsNumber*"></a>
+  <h4 id="Stringier_StringierExtensions_IsNumber_Rune_" data-uid="Stringier.StringierExtensions.IsNumber(Rune)">IsNumber(Rune)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether a Unicode character is categorized as a number.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Boolean IsNumber(this Rune rune)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Rune</span></td>
+        <td><span class="parametername">rune</span></td>
+        <td><p>The Unicode character to evaluate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">rune</code> is a number; otherwise, <span class="xref">false</span>.</p>
 </td>
       </tr>
     </tbody>
@@ -2628,6 +3225,51 @@
   </table>
   
   
+  <a id="Stringier_StringierExtensions_IsPunctuation_" data-uid="Stringier.StringierExtensions.IsPunctuation*"></a>
+  <h4 id="Stringier_StringierExtensions_IsPunctuation_Rune_" data-uid="Stringier.StringierExtensions.IsPunctuation(Rune)">IsPunctuation(Rune)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the specified Unicode character is categorized as a punctuation mark.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Boolean IsPunctuation(this Rune rune)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Rune</span></td>
+        <td><span class="parametername">rune</span></td>
+        <td><p>The Unicode character to evaluate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">rune</code> is a punctuation mark; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
   <a id="Stringier_StringierExtensions_IsSeparator_" data-uid="Stringier.StringierExtensions.IsSeparator*"></a>
   <h4 id="Stringier_StringierExtensions_IsSeparator_Char_" data-uid="Stringier.StringierExtensions.IsSeparator(Char)">IsSeparator(Char)</h4>
   <div class="markdown level1 summary"><p>Indicates whether a Unicode character is categorized as a separator character.</p>
@@ -2667,6 +3309,51 @@
       <tr>
         <td><span class="xref">Boolean</span></td>
         <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">char</code> is a separator character; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_StringierExtensions_IsSeparator_" data-uid="Stringier.StringierExtensions.IsSeparator*"></a>
+  <h4 id="Stringier_StringierExtensions_IsSeparator_Rune_" data-uid="Stringier.StringierExtensions.IsSeparator(Rune)">IsSeparator(Rune)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether a Unicode character is categorized as a separator character.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Boolean IsSeparator(this Rune rune)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Rune</span></td>
+        <td><span class="parametername">rune</span></td>
+        <td><p>The Unicode character to evaluate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">rune</code> is a separator character; otherwise, <span class="xref">false</span>.</p>
 </td>
       </tr>
     </tbody>
@@ -2988,6 +3675,51 @@
       <tr>
         <td><span class="xref">Boolean</span></td>
         <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">char</code> is white space; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_StringierExtensions_IsWhiteSpace_" data-uid="Stringier.StringierExtensions.IsWhiteSpace*"></a>
+  <h4 id="Stringier_StringierExtensions_IsWhiteSpace_Rune_" data-uid="Stringier.StringierExtensions.IsWhiteSpace(Rune)">IsWhiteSpace(Rune)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the specified Unicode character is categorized as white space.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Boolean IsWhiteSpace(this Rune rune)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Rune</span></td>
+        <td><span class="parametername">rune</span></td>
+        <td><p>The Unicode character to evaluate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">rune</code> is white space; otherwise, <span class="xref">false</span>.</p>
 </td>
       </tr>
     </tbody>
@@ -4378,6 +5110,102 @@
   </table>
   
   
+  <a id="Stringier_StringierExtensions_ToLower_" data-uid="Stringier.StringierExtensions.ToLower*"></a>
+  <h4 id="Stringier_StringierExtensions_ToLower_Rune_" data-uid="Stringier.StringierExtensions.ToLower(Rune)">ToLower(Rune)</h4>
+  <div class="markdown level1 summary"><p>Converts the value of a Unicode character to its lowercase equivalent.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Rune ToLower(this Rune rune)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Rune</span></td>
+        <td><span class="parametername">rune</span></td>
+        <td><p>The Unicode character to convert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Rune</span></td>
+        <td><p>The lowercase equivalent of <code data-dev-comment-type="paramref" class="paramref">rune</code>, or the unchanged value of <code data-dev-comment-type="paramref" class="paramref">rune</code> if <code data-dev-comment-type="paramref" class="paramref">rune</code> is already lowercase, has no lowercase equivalent, or is not alphabetic.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_StringierExtensions_ToLower_" data-uid="Stringier.StringierExtensions.ToLower*"></a>
+  <h4 id="Stringier_StringierExtensions_ToLower_Rune_CultureInfo_" data-uid="Stringier.StringierExtensions.ToLower(Rune,CultureInfo)">ToLower(Rune, CultureInfo)</h4>
+  <div class="markdown level1 summary"><p>Converts the value of a specified Unicode character to its lowercase equivalent using specified culture-specific formatting information.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Rune ToLower(this Rune rune, CultureInfo culture)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Rune</span></td>
+        <td><span class="parametername">rune</span></td>
+        <td><p>The Unicode character to convert.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CultureInfo</span></td>
+        <td><span class="parametername">culture</span></td>
+        <td><p>An object that supplies culture-specific casing rules.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Rune</span></td>
+        <td><p>The lowercase equivalent of <code data-dev-comment-type="paramref" class="paramref">rune</code>, modified according to <code data-dev-comment-type="paramref" class="paramref">culture</code>, or the unchanged value of <code data-dev-comment-type="paramref" class="paramref">rune</code>, if <code data-dev-comment-type="paramref" class="paramref">rune</code> is already lowercase or not alphabetic.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
   <a id="Stringier_StringierExtensions_ToLowerInvariant_" data-uid="Stringier.StringierExtensions.ToLowerInvariant*"></a>
   <h4 id="Stringier_StringierExtensions_ToLowerInvariant_Char_" data-uid="Stringier.StringierExtensions.ToLowerInvariant(Char)">ToLowerInvariant(Char)</h4>
   <div class="markdown level1 summary"><p>Converts the value of a Unicode character to its lowercase equivalent using the casing rules of the invariant culture.</p>
@@ -4417,6 +5245,51 @@
       <tr>
         <td><span class="xref">Char</span></td>
         <td><p>The lowercase equivalent of the <code data-dev-comment-type="paramref" class="paramref">char</code> parameter, or the unchanged value of <code data-dev-comment-type="paramref" class="paramref">char</code>, if <code data-dev-comment-type="paramref" class="paramref">char</code> is already lowercase or not alphabetic.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_StringierExtensions_ToLowerInvariant_" data-uid="Stringier.StringierExtensions.ToLowerInvariant*"></a>
+  <h4 id="Stringier_StringierExtensions_ToLowerInvariant_Rune_" data-uid="Stringier.StringierExtensions.ToLowerInvariant(Rune)">ToLowerInvariant(Rune)</h4>
+  <div class="markdown level1 summary"><p>Converts the value of a Unicode character to its lowercase equivalent using the casing rules of the invariant culture.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Rune ToLowerInvariant(this Rune rune)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Rune</span></td>
+        <td><span class="parametername">rune</span></td>
+        <td><p>The Unicode character to convert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Rune</span></td>
+        <td><p>The lowercase equivalent of the <code data-dev-comment-type="paramref" class="paramref">rune</code> parameter, or the unchanged value of <code data-dev-comment-type="paramref" class="paramref">rune</code>, if <code data-dev-comment-type="paramref" class="paramref">rune</code> is already lowercase or not alphabetic.</p>
 </td>
       </tr>
     </tbody>
@@ -4717,6 +5590,102 @@
   </table>
   
   
+  <a id="Stringier_StringierExtensions_ToUpper_" data-uid="Stringier.StringierExtensions.ToUpper*"></a>
+  <h4 id="Stringier_StringierExtensions_ToUpper_Rune_" data-uid="Stringier.StringierExtensions.ToUpper(Rune)">ToUpper(Rune)</h4>
+  <div class="markdown level1 summary"><p>Converts the value of a Unicode character to its uppercase equivalent.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Rune ToUpper(this Rune rune)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Rune</span></td>
+        <td><span class="parametername">rune</span></td>
+        <td><p>The Unicode character to convert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Rune</span></td>
+        <td><p>The uppercase equivalent of <code data-dev-comment-type="paramref" class="paramref">rune</code>, or the unchanged value of <code data-dev-comment-type="paramref" class="paramref">rune</code> if <code data-dev-comment-type="paramref" class="paramref">rune</code> is already uppercase, has no uppercase equivalent, or is not alphabetic.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_StringierExtensions_ToUpper_" data-uid="Stringier.StringierExtensions.ToUpper*"></a>
+  <h4 id="Stringier_StringierExtensions_ToUpper_Rune_CultureInfo_" data-uid="Stringier.StringierExtensions.ToUpper(Rune,CultureInfo)">ToUpper(Rune, CultureInfo)</h4>
+  <div class="markdown level1 summary"><p>Converts the value of a specified Unicode character to its uppercase equivalent using specified culture-specific formatting information.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Rune ToUpper(this Rune rune, CultureInfo culture)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Rune</span></td>
+        <td><span class="parametername">rune</span></td>
+        <td><p>The Unicode character to convert.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CultureInfo</span></td>
+        <td><span class="parametername">culture</span></td>
+        <td><p>An object that supplies culture-specific casing rules.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Rune</span></td>
+        <td><p>The uppercase equivalent of <code data-dev-comment-type="paramref" class="paramref">rune</code>, modified according to <code data-dev-comment-type="paramref" class="paramref">culture</code>, or the unchanged value of <code data-dev-comment-type="paramref" class="paramref">rune</code> if <code data-dev-comment-type="paramref" class="paramref">rune</code> is already uppercase, has no uppercase equivalent, or is not alphabetic.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
   <a id="Stringier_StringierExtensions_ToUpperInvariant_" data-uid="Stringier.StringierExtensions.ToUpperInvariant*"></a>
   <h4 id="Stringier_StringierExtensions_ToUpperInvariant_Char_" data-uid="Stringier.StringierExtensions.ToUpperInvariant(Char)">ToUpperInvariant(Char)</h4>
   <div class="markdown level1 summary"><p>Converts the value of a Unicode character to its uppercase equivalent using the casing rules of the invariant culture.</p>
@@ -4756,6 +5725,51 @@
       <tr>
         <td><span class="xref">Char</span></td>
         <td><p>The uppercase equivalent of the <code data-dev-comment-type="paramref" class="paramref">char</code> parameter, or the unchanged value of <code data-dev-comment-type="paramref" class="paramref">char</code>, if <code data-dev-comment-type="paramref" class="paramref">char</code> is already uppercase or not alphabetic.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Stringier_StringierExtensions_ToUpperInvariant_" data-uid="Stringier.StringierExtensions.ToUpperInvariant*"></a>
+  <h4 id="Stringier_StringierExtensions_ToUpperInvariant_Rune_" data-uid="Stringier.StringierExtensions.ToUpperInvariant(Rune)">ToUpperInvariant(Rune)</h4>
+  <div class="markdown level1 summary"><p>Converts the value of a Unicode character to its uppercase equivalent using the casing rules of the invariant culture.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Rune ToUpperInvariant(this Rune rune)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Rune</span></td>
+        <td><span class="parametername">rune</span></td>
+        <td><p>The Unicode character to convert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Rune</span></td>
+        <td><p>The uppercase equivalent of the <code data-dev-comment-type="paramref" class="paramref">rune</code> parameter, or the unchanged value of <code data-dev-comment-type="paramref" class="paramref">rune</code>, if <code data-dev-comment-type="paramref" class="paramref">rune</code> is already uppercase or not alphabetic.</p>
 </td>
       </tr>
     </tbody>

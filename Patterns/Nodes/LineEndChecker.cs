@@ -58,6 +58,7 @@ namespace Stringier.Patterns.Nodes {
 					result.Length++;
 					goto Done;
 				default:
+					// The line terminator is just 0x000A
 					break;
 				}
 				trace?.Collect('\u000A', source.Position);
@@ -79,6 +80,7 @@ namespace Stringier.Patterns.Nodes {
 					result.Length++;
 					goto Done;
 				default:
+					// The line terminator is just 0x000D
 					break;
 				}
 				trace?.Collect('\u000D', source.Position);

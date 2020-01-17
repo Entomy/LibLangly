@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Globalization;
+#if !NETSTANDARD1_6 && !NETSTANDARD2_0
 using System.Text;
+#endif
 
 namespace Stringier {
 	public static partial class StringierExtensions {
@@ -17,7 +19,7 @@ namespace Stringier {
 #endif
 		}
 
-#if NETCOREAPP3_0 || NETCOREAPP3_1
+#if !NETSTANDARD1_6 && !NETSTANDARD2_0
 		/// <summary>
 		/// Categorizes a specified Unicode character into a group identified by one of the <see cref="UnicodeCategory"/> values.
 		/// </summary>

@@ -38,6 +38,9 @@ namespace Stringier {
 		/// </summary>
 		/// <param name="pattern">The pattern to create a table for.</param>
 		public HorspoolTable(String pattern) {
+			if (pattern is null) {
+				throw new ArgumentNullException(nameof(pattern));
+			}
 			Jumps = new Dictionary<Char, Int32>();
 			for (Int32 i = 0; i < pattern.Length; i++) {
 				Jumps[pattern[i]] = pattern.Length - i - 1;
@@ -51,28 +54,28 @@ namespace Stringier {
 		/// <param name="pattern">The pattern to create a table for.</param>
 		public HorspoolTable(ReadOnlySpan<Char> pattern) : this(pattern.ToString()) { }
 
-		public static Boolean operator ==(HorspoolTable left, String right) => left.Equals(right);
+		public static Boolean operator ==(HorspoolTable left, String right) => !(left is null || right is null) && left.Equals(right);
 
-		public static Boolean operator ==(String left, HorspoolTable right) => right.Equals(left);
+		public static Boolean operator ==(String left, HorspoolTable right) => !(left is null || right is null) && right.Equals(left);
 
-		public static Boolean operator ==(HorspoolTable left, ReadOnlySpan<Char> right) => left.Equals(right);
+		public static Boolean operator ==(HorspoolTable left, ReadOnlySpan<Char> right) => !(left is null) && left.Equals(right);
 
-		public static Boolean operator ==(ReadOnlySpan<Char> left, HorspoolTable right) => right.Equals(left);
+		public static Boolean operator ==(ReadOnlySpan<Char> left, HorspoolTable right) => !(right is null) && right.Equals(left);
 
-		public static Boolean operator !=(HorspoolTable left, String right) => !left.Equals(right);
+		public static Boolean operator !=(HorspoolTable left, String right) => !(left is null || right is null) && !left.Equals(right);
 
-		public static Boolean operator !=(String left, HorspoolTable right) => !left.Equals(right);
+		public static Boolean operator !=(String left, HorspoolTable right) => !(left is null || right is null) && !left.Equals(right);
 
-		public static Boolean operator !=(HorspoolTable left, ReadOnlySpan<Char> right) => !left.Equals(right);
+		public static Boolean operator !=(HorspoolTable left, ReadOnlySpan<Char> right) => !(left is null) && !left.Equals(right);
 
-		public static Boolean operator !=(ReadOnlySpan<Char> left, HorspoolTable right) => !right.Equals(left);
+		public static Boolean operator !=(ReadOnlySpan<Char> left, HorspoolTable right) => !(right is null) && !right.Equals(left);
 
 		/// <summary>
 		/// Determines whether the specified object is equal to the current object.
 		/// </summary>
 		/// <param name="obj">The object to compare with the current object.</param>
 		/// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
-		public sealed override Boolean Equals(Object obj) {
+		public sealed override Boolean Equals(Object? obj) {
 			switch (obj) {
 			case String @string:
 				return Equals(@string);

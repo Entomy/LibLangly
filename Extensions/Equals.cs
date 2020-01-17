@@ -1,5 +1,7 @@
 ﻿using System;
+#if !NETSTANDARD1_6
 using System.Globalization;
+#endif
 
 namespace Stringier {
 	public static partial class StringierExtensions {

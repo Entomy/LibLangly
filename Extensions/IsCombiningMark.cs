@@ -1,5 +1,7 @@
 ﻿using System;
+#if !NETSTANDARD1_6 && !NETSTANDARD2_0
 using System.Text;
+#endif
 
 namespace Stringier {
 	public static partial class StringierExtensions {
@@ -15,7 +17,7 @@ namespace Stringier {
 			|| 0x20D0 <= @char && @char <= 0x20f0
 			|| 0xFE20 <= @char && @char <= 0xFE2F;
 
-#if NETCOREAPP3_0 || NETCOREAPP3_1
+#if !NETSTANDARD1_6 && !NETSTANDARD2_0
 		/// <summary>
 		/// Indicates whether the specified Unicode character is categorized as a combining mark.
 		/// </summary>

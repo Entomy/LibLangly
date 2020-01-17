@@ -52,7 +52,9 @@ namespace Stringier.Patterns.Nodes {
 			}
 			To.Consume(ref source, ref result, trace);
 			while (!result) {
-				if (source.EOF) { break; }
+				if (source.EOF) {
+					break; 
+				}
 				source.Position++;
 				result.Length++;
 				if (To.CheckHeader(ref source)) {
