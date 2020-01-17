@@ -8,7 +8,12 @@ namespace Stringier {
 		/// <param name="source">The source <see cref="String"/>.</param>
 		/// <param name="other">The other <see cref="String"/>.</param>
 		/// <returns>The number of edits to get from <paramref name="source"/> to <paramref name="other"/>.</returns>
-		public static Int32 LevenshteinDistance(String source, String other) => ReferenceEquals(source, other) ? 0 : LevenshteinDistance(source.AsSpan(), other.AsSpan());
+		public static Int32 LevenshteinDistance(String source, String other) {
+			if (source is null || other is null) {
+				throw new ArgumentNullException(source is null ? nameof(source) : nameof(other));
+			}
+			return ReferenceEquals(source, other) ? 0 : LevenshteinDistance(source.AsSpan(), other.AsSpan());
+		}
 
 		/// <summary>
 		/// Calculates the Levenshtein edit-distance between the <paramref name="source"/> <see cref="String"/> and <paramref name="other"/> <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/>.
@@ -16,7 +21,12 @@ namespace Stringier {
 		/// <param name="source">The source <see cref="String"/>.</param>
 		/// <param name="other">The other <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/>.</param>
 		/// <returns>The number of edits to get from <paramref name="source"/> to <paramref name="other"/>.</returns>
-		public static Int32 LevenshteinDistance(String source, ReadOnlySpan<Char> other) => LevenshteinDistance(source.AsSpan(), other);
+		public static Int32 LevenshteinDistance(String source, ReadOnlySpan<Char> other) {
+			if (source is null) {
+				throw new ArgumentNullException(nameof(source));
+			}
+			return LevenshteinDistance(source.AsSpan(), other);
+		}
 
 		/// <summary>
 		/// Calculates the Levenshtein edit-distance between the <paramref name="source"/> <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> and <paramref name="other"/> <see cref="String"/>.
@@ -24,7 +34,12 @@ namespace Stringier {
 		/// <param name="source">The source <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/>.</param>
 		/// <param name="other">The other <see cref="String"/>.</param>
 		/// <returns>The number of edits to get from <paramref name="source"/> to <paramref name="other"/>.</returns>
-		public static Int32 LevenshteinDistance(ReadOnlySpan<Char> source, String other) => LevenshteinDistance(source, other.AsSpan());
+		public static Int32 LevenshteinDistance(ReadOnlySpan<Char> source, String other) {
+			if (other is null) {
+				throw new ArgumentNullException(nameof(other));
+			}
+			return LevenshteinDistance(source, other.AsSpan());
+		}
 
 		/// <summary>
 		/// Calculates the Levenshtein edit-distance between the <paramref name="source"/> <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> and <paramref name="other"/> <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/>.

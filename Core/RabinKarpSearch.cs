@@ -8,7 +8,12 @@ namespace Stringier {
 		/// <param name="source">The <see cref="String"/> to search in.</param>
 		/// <param name="pattern">The <see cref="String"/> to search for.</param>
 		/// <returns>The index at which <paramref name="pattern"/> was found to start; -1 if not found.</returns>
-		public static Int32 RabinKarp(String source, String pattern) => RabinKarp(source.AsSpan(), pattern.AsSpan());
+		public static Int32 RabinKarp(String source, String pattern) {
+			if (source is null || pattern is null) {
+				throw new ArgumentNullException(source is null ? nameof(source) : nameof(pattern));
+			}
+			return RabinKarp(source.AsSpan(), pattern.AsSpan());
+		}
 
 		/// <summary>
 		/// Performs a Rabin-Karp string-search, finding the starting index of the <paramref name="pattern"/> if found in <paramref name="source"/>.
@@ -16,7 +21,12 @@ namespace Stringier {
 		/// <param name="source">The <see cref="String"/> to search in.</param>
 		/// <param name="pattern">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to search for.</param>
 		/// <returns>The index at which <paramref name="pattern"/> was found to start; -1 if not found.</returns>
-		public static Int32 RabinKarp(String source, ReadOnlySpan<Char> pattern) => RabinKarp(source.AsSpan(), pattern);
+		public static Int32 RabinKarp(String source, ReadOnlySpan<Char> pattern) {
+			if (source is null) {
+				throw new ArgumentNullException(nameof(source));
+			}
+			return RabinKarp(source.AsSpan(), pattern);
+		}
 
 		/// <summary>
 		/// Performs a Rabin-Karp string-search, finding the starting index of the <paramref name="pattern"/> if found in <paramref name="source"/>.
@@ -24,7 +34,12 @@ namespace Stringier {
 		/// <param name="source">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to search in.</param>
 		/// <param name="pattern">The <see cref="String"/> to search for.</param>
 		/// <returns>The index at which <paramref name="pattern"/> was found to start; -1 if not found.</returns>
-		public static Int32 RabinKarp(ReadOnlySpan<Char> source, String pattern) => RabinKarp(source, pattern.AsSpan());
+		public static Int32 RabinKarp(ReadOnlySpan<Char> source, String pattern) {
+			if (pattern is null) {
+				throw new ArgumentNullException(nameof(pattern));
+			}
+			return RabinKarp(source, pattern.AsSpan());
+		}
 
 		/// <summary>
 		/// Performs a Rabin-Karp string-search, finding the starting index of the <paramref name="pattern"/> if found in <paramref name="source"/>.

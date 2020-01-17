@@ -8,7 +8,12 @@ namespace Stringier {
 		/// <param name="source">The source <see cref="String"/>.</param>
 		/// <param name="other">The other <see cref="String"/>.</param>
 		/// <returns>The number of edits to get from <paramref name="source"/> to <paramref name="other"/>.</returns>
-		public static Int32 HammingDistance(String source, String other) => ReferenceEquals(source, other) ? 0 : HammingDistance(source.AsSpan(), other.AsSpan());
+		public static Int32 HammingDistance(String source, String other) {
+			if (source is null || other is null) {
+				throw new ArgumentNullException(source is null ? nameof(source) : nameof(other));
+			}
+			return ReferenceEquals(source, other) ? 0 : HammingDistance(source.AsSpan(), other.AsSpan());
+		}
 
 		/// <summary>
 		/// Calculates the Hamming edit-distance between the <paramref name="source"/> <see cref="String"/> and <paramref name="other"/> <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/>.
@@ -16,7 +21,12 @@ namespace Stringier {
 		/// <param name="source">The source <see cref="String"/>.</param>
 		/// <param name="other">The other <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/>.</param>
 		/// <returns>The number of edits to get from <paramref name="source"/> to <paramref name="other"/>.</returns>
-		public static Int32 HammingDistance(String source, ReadOnlySpan<Char> other) => HammingDistance(source.AsSpan(), other);
+		public static Int32 HammingDistance(String source, ReadOnlySpan<Char> other) {
+			if (source is null) {
+				throw new ArgumentNullException(nameof(source));
+			}
+			return HammingDistance(source.AsSpan(), other);
+		}
 
 		/// <summary>
 		/// Calculates the Hamming edit-distance between the <paramref name="source"/> <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> and <paramref name="other"/> <see cref="String"/>.
@@ -24,7 +34,12 @@ namespace Stringier {
 		/// <param name="source">The source <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/>.</param>
 		/// <param name="other">The other <see cref="String"/>.</param>
 		/// <returns>The number of edits to get from <paramref name="source"/> to <paramref name="other"/>.</returns>
-		public static Int32 HammingDistance(ReadOnlySpan<Char> source, String other) => HammingDistance(source, other.AsSpan());
+		public static Int32 HammingDistance(ReadOnlySpan<Char> source, String other) {
+			if (other is null) {
+				throw new ArgumentNullException(nameof(other));
+			}
+			return HammingDistance(source, other.AsSpan());
+		}
 
 		/// <summary>
 		/// Calculates the Hamming edit-distance between the <paramref name="source"/> <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> and <paramref name="other"/> <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/>.

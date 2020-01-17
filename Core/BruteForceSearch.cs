@@ -8,7 +8,12 @@ namespace Stringier {
 		/// <param name="source">The <see cref="String"/> to search in.</param>
 		/// <param name="pattern">The <see cref="String"/> to search for.</param>
 		/// <returns>The index at which <paramref name="pattern"/> was found to start; -1 if not found.</returns>
-		public static Int32 BruteForce(String source, String pattern) => BruteForce(source.AsSpan(), pattern.AsSpan());
+		public static Int32 BruteForce(String source, String pattern) {
+			if (source is null || pattern is null) {
+				throw new ArgumentNullException(source is null ? nameof(source) : nameof(pattern));
+			}
+			return BruteForce(source.AsSpan(), pattern.AsSpan());
+		}
 
 		/// <summary>
 		/// Performs a naive brute force string-search, finding the starting index of the <paramref name="pattern"/> if found in <paramref name="source"/>.
@@ -16,7 +21,12 @@ namespace Stringier {
 		/// <param name="source">The <see cref="String"/> to search in.</param>
 		/// <param name="pattern">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to search for.</param>
 		/// <returns>The index at which <paramref name="pattern"/> was found to start; -1 if not found.</returns>
-		public static Int32 BruteForce(String source, ReadOnlySpan<Char> pattern) => BruteForce(source.AsSpan(), pattern);
+		public static Int32 BruteForce(String source, ReadOnlySpan<Char> pattern) {
+			if (source is null) {
+				throw new ArgumentNullException(nameof(source));
+			}
+			return BruteForce(source.AsSpan(), pattern);
+		}
 
 		/// <summary>
 		/// Performs a naive brute force string-search, finding the starting index of the <paramref name="pattern"/> if found in <paramref name="source"/>.
@@ -24,7 +34,12 @@ namespace Stringier {
 		/// <param name="source">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to search in.</param>
 		/// <param name="pattern">The <see cref="String"/> to search for.</param>
 		/// <returns>The index at which <paramref name="pattern"/> was found to start; -1 if not found.</returns>
-		public static Int32 BruteForce(ReadOnlySpan<Char> source, String pattern) => BruteForce(source, pattern.AsSpan());
+		public static Int32 BruteForce(ReadOnlySpan<Char> source, String pattern) {
+			if (pattern is null) { 
+				throw new ArgumentNullException(nameof(pattern));
+			}
+			return BruteForce(source, pattern.AsSpan());
+		}
 
 		/// <summary>
 		/// Performs a naive brute force string-search, finding the starting index of the <paramref name="pattern"/> if found in <paramref name="source"/>.
