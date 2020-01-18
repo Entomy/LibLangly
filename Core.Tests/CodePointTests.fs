@@ -13,8 +13,8 @@ type CodePointTests() =
         let 肀 = CodePoint(0x8080)
         let largestValid = CodePoint(0x10FFFF)
         //Due to a design decision for F#, CodePoint can not be passed to ignore, meaning one of its properties needs to be called to use it in this context. The exception is thrown during construction regardless, so the property is never called. Even if it was, the required functionality is still being tested.
-        Assert.ThrowsException<ArgumentOutOfRangeException>((fun () -> CodePoint(-0x01).IsASCII |> ignore)) |> ignore
-        Assert.ThrowsException<ArgumentOutOfRangeException>((fun () -> CodePoint(0x110000).IsASCII |> ignore)) |> ignore
+        Assert.ThrowsException<ArgumentOutOfRangeException>((fun () -> CodePoint(-0x01).IsAscii |> ignore)) |> ignore
+        Assert.ThrowsException<ArgumentOutOfRangeException>((fun () -> CodePoint(0x110000).IsAscii |> ignore)) |> ignore
 
     [<TestMethod>]
     member _.``constructor uint32`` () =
@@ -23,7 +23,7 @@ type CodePointTests() =
         let 肀 = CodePoint(0x8080u)
         let largestValid = CodePoint(0x10FFFFu)
         //Due to a design decision for F#, CodePoint can not be passed to ignore, meaning one of its properties needs to be called to use it in this context. The exception is thrown during construction regardless, so the property is never called. Even if it was, the required functionality is still being tested.
-        Assert.ThrowsException<ArgumentOutOfRangeException>((fun () -> CodePoint(0x110000u).IsASCII |> ignore)) |> ignore
+        Assert.ThrowsException<ArgumentOutOfRangeException>((fun () -> CodePoint(0x110000u).IsAscii |> ignore)) |> ignore
 
     [<TestMethod>]
     member _.``constructor char`` () =
