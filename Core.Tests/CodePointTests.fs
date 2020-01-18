@@ -64,3 +64,19 @@ type CodePointTests() =
     [<DataRow("U+8080", 0x8080u)>]
     [<DataRow("U+010281", 0x010281u)>]
     member _.``ToString()`` (exp:string, value:uint32) = Assert.AreEqual(exp, CodePoint(value).ToString())
+
+    [<DataTestMethod>]
+    [<DataRow(false, 0xD7FFu)>]
+    [<DataRow(true, 0xD800u)>]
+    [<DataRow(true, 0xD801u)>]
+    [<DataRow(true, 0xDBFFu)>]
+    [<DataRow(false, 0xDC00u)>]
+    member _.``is high surrogate`` (exp:bool, value:uint32) = Assert.AreEqual(exp, CodePoint(value).IsHighSurrogate)
+
+    [<DataTestMethod>]
+    [<DataRow(false, 0xDBFFu)>]
+    [<DataRow(true, 0xDC00u)>]
+    [<DataRow(true, 0xDC01u)>]
+    [<DataRow(true, 0xDFFFu)>]
+    [<DataRow(false, 0xE000u)>]
+    member _.``is low surrogate`` (exp:bool, value:uint32) = Assert.AreEqual(exp, CodePoint(value).IsLowSurrogate)

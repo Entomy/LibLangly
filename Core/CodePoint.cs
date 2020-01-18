@@ -2,10 +2,10 @@
 using System.Runtime.InteropServices;
 
 namespace Stringier {
-	[StructLayout(LayoutKind.Auto)]
 	/// <summary>
 	/// Represents a UNICODE Code Point.
 	/// </summary>
+	[StructLayout(LayoutKind.Auto)]
 	public readonly ref struct CodePoint {
 		/// <summary>
 		/// The actual value of this code point.
@@ -138,6 +138,60 @@ namespace Stringier {
 		public static Boolean operator ==(CodePoint left, Char right) => left.Equals(right);
 
 		public static Boolean operator ==(Char left, CodePoint right) => right.Equals(left);
+
+		[CLSCompliant(false)]
+		public static UInt32 operator +(CodePoint left, UInt32 right) => left.Value + right;
+
+		[CLSCompliant(false)]
+		public static UInt32 operator +(UInt32 left, CodePoint right) => left + right.Value;
+
+		[CLSCompliant(false)]
+		public static UInt32 operator -(CodePoint left, UInt32 right) => left.Value - right;
+
+		[CLSCompliant(false)]
+		public static UInt32 operator -(UInt32 left, CodePoint right) => left - right.Value;
+
+		[CLSCompliant(false)]
+		public static UInt32 operator *(CodePoint left, UInt32 right) => left.Value * right;
+
+		[CLSCompliant(false)]
+		public static UInt32 operator *(UInt32 left, CodePoint right) => left * right.Value;
+
+		[CLSCompliant(false)]
+		public static UInt32 operator /(CodePoint left, UInt32 right) => left.Value / right;
+
+		[CLSCompliant(false)]
+		public static UInt32 operator /(UInt32 left, CodePoint right) => left / right.Value;
+
+		[CLSCompliant(false)]
+		public static UInt32 operator %(CodePoint left, UInt32 right) => left.Value % right;
+
+		[CLSCompliant(false)]
+		public static UInt32 operator %(UInt32 left, CodePoint right) => left % right.Value;
+
+		[CLSCompliant(false)]
+		public static UInt32 operator &(CodePoint left, UInt32 right) => left.Value & right;
+
+		[CLSCompliant(false)]
+		public static UInt32 operator &(UInt32 left, CodePoint right) => left & right.Value;
+
+		[CLSCompliant(false)]
+		public static UInt32 operator |(CodePoint left, UInt32 right) => left.Value | right;
+
+		[CLSCompliant(false)]
+		public static UInt32 operator |(UInt32 left, CodePoint right) => left | right.Value;
+
+		[CLSCompliant(false)]
+		public static UInt32 operator ^(CodePoint left, UInt32 right) => left.Value ^ right;
+
+		[CLSCompliant(false)]
+		public static UInt32 operator ^(UInt32 left, CodePoint right) => left ^ right.Value;
+
+		[CLSCompliant(false)]
+		public static UInt32 operator <<(CodePoint left, Int32 right) => left.Value << right;
+
+		[CLSCompliant(false)]
+		public static UInt32 operator >>(CodePoint left, Int32 right) => left.Value >> right;
 
 		/// <summary>
 		/// Returns a value that indicates whether this instance is equal to a specified object.
