@@ -47,12 +47,12 @@ namespace Stringier {
 		/// <summary>
 		/// Gets whether this <see cref="CodePoint"/> is an ASCII character.
 		/// </summary>
-		public Boolean IsASCII => Value <= 0x7F;
+		public Boolean IsAscii => Value <= 0x7F;
 
 		/// <summary>
 		/// Gets whether this <see cref="CodePoint"/> is in the Basic Multilingual Plane.
 		/// </summary>
-		public Boolean IsBMP => Value <= 0xFFFF;
+		public Boolean IsBmp => Value <= 0xFFFF;
 
 		/// <summary>
 		/// Gets whether this <see cref="CodePoint"/> is a UTF-16 high surrogate code point.
