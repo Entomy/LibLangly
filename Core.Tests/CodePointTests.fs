@@ -80,3 +80,23 @@ type CodePointTests() =
     [<DataRow(true, 0xDFFFu)>]
     [<DataRow(false, 0xE000u)>]
     member _.``is low surrogate`` (exp:bool, value:uint32) = Assert.AreEqual(exp, CodePoint(value).IsLowSurrogate)
+
+    [<DataTestMethod>]
+    [<DataRow(true, 0x41)>]
+    [<DataRow(true, 0xDE)>]
+    [<DataRow(true, 0xF6)>]
+    [<DataRow(true, 0x39E)>]
+    [<DataRow(true, 0x2125)>]
+    [<DataRow(true, 0x2383)>]
+    [<DataRow(true, 0x1D11E)>] // 𝄞 which can't be represented with a single char
+    member _.``is code point`` (value:Int32) = CodePoint(value) //The constructor does the check, and will throw if not true
+
+    [<DataTestMethod>]
+    [<DataRow(true, 0x41)>]
+    [<DataRow(true, 0xDE)>]
+    [<DataRow(true, 0xF6)>]
+    [<DataRow(true, 0x39E)>]
+    [<DataRow(true, 0x2125)>]
+    [<DataRow(true, 0x2383)>]
+    [<DataRow(true, 0x1D11E)>] // 𝄞 which can't be represented with a single char
+    member _.``is scalar value`` (exp:bool, value:Int32) = Assert.AreEqual(exp, CodePoint(value).IsScalarValue)

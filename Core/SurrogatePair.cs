@@ -10,12 +10,12 @@ namespace Stringier {
 		/// <summary>
 		/// The high surrogate
 		/// </summary>
-		private readonly CodePoint High;
+		internal readonly CodePoint High;
 
 		/// <summary>
 		/// The low surrogate
 		/// </summary>
-		private readonly CodePoint Low;
+		internal readonly CodePoint Low;
 
 		/// <summary>
 		/// Initializes a new <see cref="SurrogatePair"/> from the <paramref name="high"/> and <paramref name="low"/> <see cref="CodePoint"/>s.
@@ -42,8 +42,9 @@ namespace Stringier {
 		/// <exception cref="ArgumentOutOfRangeException"><paramref name="codePoint"/> was not in the Supplimentary Multilingual Plane.</exception>
 		public SurrogatePair(CodePoint codePoint) {
 			if (codePoint.Plane == 1) {
-				High = new CodePoint(((codePoint + 0xD7C0) << 10) >> 10);
-				Low = new CodePoint((codePoint & 0x03FF) + 0xCD00);
+				Unsafe.Utf16Encode(codePoint.Value, out Char high, out Char low);
+				High = new CodePoint(high);
+				Low = new CodePoint(low);
 			} else {
 				throw new ArgumentOutOfRangeException(nameof(codePoint), "Code Point was not in the Supplimentary Multilingual Plane.");
 			}
@@ -52,6 +53,6 @@ namespace Stringier {
 		/// <summary>
 		/// Gets the <see cref="CodePoint"/> this <see cref="SurrogatePair"/> represents.
 		/// </summary>
-		public CodePoint CodePoint => new CodePoint((High << 10) + Low - ((0xD800 << 10) + 0xDC00 - (1 << 16)));
+		public CodePoint CodePoint => new CodePoint(Unsafe.Utf16Decode(High.Value, Low.Value));
 	}
 }

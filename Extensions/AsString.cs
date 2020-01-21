@@ -1,5 +1,4 @@
-﻿#if !NETSTANDARD2_0
-using System;
+﻿using System;
 using System.Text;
 
 namespace Stringier {
@@ -29,4 +28,3 @@ namespace Stringier {
 		}
 	}
 }
-#endif
