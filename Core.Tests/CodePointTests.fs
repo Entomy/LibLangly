@@ -96,6 +96,7 @@ type CodePointTests() =
     [<DataRow(true, 0xDE)>]
     [<DataRow(true, 0xF6)>]
     [<DataRow(true, 0x39E)>]
+    [<DataRow(true, 0xFFFD)>]
     [<DataRow(true, 0x2125)>]
     [<DataRow(true, 0x2383)>]
     [<DataRow(true, 0x1D11E)>] // 𝄞 which can't be represented with a single char

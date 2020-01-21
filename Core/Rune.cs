@@ -2,7 +2,9 @@
 //! This (public) API must match the official one exactly. As such, copyright belongs to the .NET Foundation. The internals can be implemented using existing API's in Core.
 
 #if NETSTANDARD2_0
+using System.Buffers;
 using System.Diagnostics;
+using System.Globalization;
 using Stringier;
 
 namespace System.Text {
@@ -86,6 +88,47 @@ namespace System.Text {
 
 		// Displayed as "'<char>' (U+XXXX)"; e.g., "'e' (U+0065)"
 		private String DebuggerDisplay => FormattableString.Invariant($"U+{value:X4} '{(IsValid(value) ? ToString() : "\uFFFD")}'");
+
+		/// <summary>
+		/// Returns true if and only if this scalar value is ASCII ([ U+0000..U+007F ])
+		/// and therefore representable by a single UTF-8 code unit.
+		/// </summary>
+		public Boolean IsAscii => Unsafe.IsAscii(value);
+
+		/// <summary>
+		/// Returns true if and only if this scalar value is within the BMP ([ U+0000..U+FFFF ])
+		/// and therefore representable by a single UTF-16 code unit.
+		/// </summary>
+		public Boolean IsBmp => Unsafe.IsBmp(value);
+
+		/// <summary>
+		/// Returns the Unicode plane (0 to 16, inclusive) which contains this scalar.
+		/// </summary>
+		public Int32 Plane => (Int32)Unsafe.Plane(value);
+
+		/// <summary>
+		/// A <see cref="Rune"/> instance that represents the Unicode replacement character U+FFFD.
+		/// </summary>
+		public static Rune ReplacementChar { get; } = new Rune(0xFFFD);
+
+		/// <summary>
+		/// Returns the length in code units (<see cref="char"/>) of the
+		/// UTF-16 sequence required to represent this scalar value.
+		/// </summary>
+		/// <remarks>
+		/// The return value will be 1 or 2.
+		/// </remarks>
+		public Int32 Utf16SequenceLength => (Int32)Unsafe.Utf16SequenceLength(value);
+
+		/// <summary>
+		/// Returns the length in code units of the
+		/// UTF-8 sequence required to represent this scalar value.
+		/// </summary>
+		/// <remarks>
+		/// The return value will be 1 through 4, inclusive.
+		/// </remarks>
+		public Int32 Utf8SequenceLength => (Int32)Unsafe.Utf8SequenceLength(value);
+
 
 		/// <summary>
 		/// Returns the Unicode scalar value as an integer.
