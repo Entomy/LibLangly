@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Defender;
 
 namespace Stringier {
 	public static partial class StringierExtensions {
@@ -10,9 +11,7 @@ namespace Stringier {
 		/// <param name="charToCount">Char to count occurences of.</param>
 		/// <returns>The ammount of occurences found.</returns>
 		public static Int32 Occurrences(this String @string, Char charToCount) {
-			if (@string is null) {
-				throw new ArgumentNullException(nameof(@string));
-			}
+			Guard.NotNull(@string, nameof(@string));
 			Int32 c = 0;
 			foreach (Char C in @string) {
 				if (C == charToCount) {
@@ -29,9 +28,8 @@ namespace Stringier {
 		/// <param name="charsToCount">Chars to count occurences of.</param>
 		/// <returns>The ammount of occurences found.</returns>
 		public static Int32 Occurrences(this String @string, params Char[] charsToCount) {
-			if (@string is null || charsToCount is null) {
-				throw new ArgumentNullException(@string is null ? nameof(@string) : nameof(charsToCount));
-			}
+			Guard.NotNull(@string, nameof(@string));
+			Guard.NotNull(charsToCount, nameof(charsToCount));
 			Int32 c = 0;
 			foreach (Char Char in charsToCount) {
 				foreach (Char C in @string) {
@@ -50,9 +48,7 @@ namespace Stringier {
 		/// <param name="charToCount">Char to count occurences of.</param>
 		/// <returns>The ammount of occurences found.</returns>
 		public static Int32 Occurrences(this IEnumerable<String> strings, Char charToCount) {
-			if (strings is null) {
-				throw new ArgumentNullException(nameof(strings));
-			}
+			Guard.NotNull(strings, nameof(strings));
 			Int32 c = 0;
 			foreach (String String in strings) {
 				c += String.Occurrences(charToCount);
@@ -67,9 +63,8 @@ namespace Stringier {
 		/// <param name="charsToCount">Chars to count occurences of.</param>
 		/// <returns>The ammount of occurences found.</returns>
 		public static Int32 Occurrences(this IEnumerable<String> strings, params Char[] charsToCount) {
-			if (strings is null || charsToCount is null) {
-				throw new ArgumentNullException(strings is null ? nameof(strings) : nameof(charsToCount));
-			}
+			Guard.NotNull(strings, nameof(strings));
+			Guard.NotNull(charsToCount, nameof(charsToCount));
 			Int32 c = 0;
 			foreach (String String in strings) {
 				c += String.Occurrences(charsToCount);

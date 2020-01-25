@@ -1,4 +1,5 @@
 ﻿using System;
+using Defender;
 
 namespace Stringier {
 	public static partial class StringierExtensions {
@@ -8,9 +9,7 @@ namespace Stringier {
 		/// <param name="string">The <see cref="String"/> to squeeze.</param>
 		/// <returns>The squeezed <see cref="String"/>.</returns>
 		public static String Squeeze(this String @string) {
-			if (@string is null) {
-				throw new ArgumentNullException(nameof(@string));
-			}
+			Guard.NotNull(@string, nameof(@string));
 			return @string.AsSpan().Squeeze();
 		}
 

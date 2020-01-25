@@ -180,7 +180,7 @@ namespace Stringier {
 		/// </summary>
 		/// <param name="obj">The object to compare to.</param>
 		/// <returns><see langword="true"/> if equal to the value of this instance; otherwise, <see langword="false"/>.</returns>
-		public override Boolean Equals(Object obj) {
+		public override Boolean Equals(Object? obj) {
 			switch (obj) {
 			case Int32 value:
 				return Equals(value);

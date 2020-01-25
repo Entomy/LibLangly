@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using Defender;
 
 namespace Stringier {
 	public static partial class StringierExtensions {
@@ -8,6 +9,9 @@ namespace Stringier {
 		/// </summary>
 		/// <param name="string">The source <see cref="String"/>.</param>
 		/// <returns>A <see cref="StringInfo"/> object.</returns>
-		public static StringInfo Info(this String @string) => new StringInfo(@string);
+		public static StringInfo Info(this String @string) {
+			Guard.NotNull(@string, nameof(@string));
+			return new StringInfo(@string);
+		}
 	}
 }

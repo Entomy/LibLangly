@@ -1,5 +1,6 @@
 ﻿using System;
 using Stringier.Patterns.Nodes;
+using Defender;
 
 namespace Stringier.Patterns {
 	public abstract partial class Pattern {
@@ -8,9 +9,7 @@ namespace Stringier.Patterns {
 		public static implicit operator Pattern(Char @char) => new CharLiteral(@char);
 
 		public static implicit operator Pattern(String @string) {
-			if (@string is null) {
-				throw new ArgumentNullException(nameof(@string));
-			}
+			Guard.NotNull(@string, nameof(@string));
 			return new StringLiteral(@string);
 		}
 
@@ -26,9 +25,7 @@ namespace Stringier.Patterns {
 		/// <param name="right">The <see cref="Pattern"/> to check if this <see cref="Pattern"/> does not match.</param>
 		/// <returns>A new <see cref="Pattern"/> alternating this <see cref="Pattern"/> and <paramref name="right"/>.</returns>
 		internal virtual Pattern Alternate(Pattern right) {
-			if (right is null) {
-				throw new ArgumentNullException(nameof(right));
-			}
+			Guard.NotNull(right, nameof(right));
 			return new Alternator(this, right);
 		}
 
@@ -45,9 +42,7 @@ namespace Stringier.Patterns {
 		/// <param name="right">The <see cref="String"/> to check if this <see cref="Pattern"/> does not match.</param>
 		/// <returns>A new <see cref="Pattern"/> alternating this <see cref="Pattern"/> and <paramref name="right"/>.</returns
 		internal virtual Pattern Alternate(String right) {
-			if (right is null) {
-				throw new ArgumentNullException(nameof(right));
-			}
+			Guard.NotNull(right, nameof(right));
 			return new Alternator(this, new StringLiteral(right));
 		}
 
@@ -64,9 +59,7 @@ namespace Stringier.Patterns {
 		/// <param name="other">The <see cref="Pattern"/> to check if this <see cref="Pattern"/> does not match</param>
 		/// <returns>A new <see cref="Pattern"/> alternating this <see cref="Pattern"/> and <paramref name="other"/></returns>
 		public virtual Pattern Or(Pattern other) {
-			if (other is null) {
-				throw new ArgumentNullException(nameof(other));
-			}
+			Guard.NotNull(other, nameof(other));
 			return Alternate(other);
 		}
 
@@ -76,9 +69,7 @@ namespace Stringier.Patterns {
 		/// <param name="other">The <see cref="String"/> to check if this <see cref="Pattern"/> does not match</param>
 		/// <returns>A new <see cref="Pattern"/> alternating this <see cref="Pattern"/> and <paramref name="other"/></returns>
 		public virtual Pattern Or(String other) {
-			if (other is null) {
-				throw new ArgumentNullException(nameof(other));
-			}
+			Guard.NotNull(other, nameof(other));
 			return Alternate(other);
 		}
 
@@ -102,9 +93,7 @@ namespace Stringier.Patterns {
 		/// <param name="other">The <see cref="Patterns.Capture"/> to check if this <see cref="Pattern"/> does not match</param>
 		/// <returns>A new <see cref="Pattern"/> alternating this <see cref="Pattern"/> and <paramref name="other"/></returns>
 		public virtual Pattern Or(Capture other) {
-			if (other is null) {
-				throw new ArgumentNullException(nameof(other));
-			}
+			Guard.NotNull(other, nameof(other));
 			return Alternate(new CaptureLiteral(other));
 		}
 
@@ -114,9 +103,8 @@ namespace Stringier.Patterns {
 		/// <param name="patterns">The set of <see cref="Pattern"/>.</param>
 		/// <returns>A new <see cref="Pattern"/> alternating all of the <paramref name="patterns"/>.</returns>
 		public static Pattern OneOf(params Pattern[] patterns) {
-			if (patterns is null) {
-				throw new ArgumentNullException(nameof(patterns));
-			} else if (patterns.Length < 2) {
+			Guard.NotNull(patterns, nameof(patterns));
+			if (patterns.Length < 2) {
 				throw new ArgumentException("Must have at least two patterns", nameof(patterns));
 			} else {
 				Pattern result = patterns[0];
@@ -134,9 +122,8 @@ namespace Stringier.Patterns {
 		/// <param name="patterns">The set of <see cref="String"/>.</param>
 		/// <returns>A new <see cref="Pattern"/> alternating all of the <paramref name="patterns"/>.</returns>
 		public static Pattern OneOf(Compare comparisonType, params String[] patterns) {
-			if (patterns is null) {
-				throw new ArgumentNullException(nameof(patterns));
-			} else if (patterns.Length < 2) {
+			Guard.NotNull(patterns, nameof(patterns));
+			if (patterns.Length < 2) {
 				throw new ArgumentException("Must have at least two patterns", nameof(patterns));
 			} else {
 				Pattern result = patterns[0].With(comparisonType).Or(patterns[1].With(comparisonType));
@@ -154,9 +141,8 @@ namespace Stringier.Patterns {
 		/// <param name="patterns">The set of <see cref="Char"/>.</param>
 		/// <returns>A new <see cref="Pattern"/> alternating all of the <paramref name="patterns"/>.</returns>
 		public static Pattern OneOf(Compare comparisonType, params Char[] patterns) {
-			if (patterns is null) {
-				throw new ArgumentNullException(nameof(patterns));
-			} else if (patterns.Length < 2) {
+			Guard.NotNull(patterns, nameof(patterns));
+			if (patterns.Length < 2) {
 				throw new ArgumentException("Must have at least two patterns", nameof(patterns));
 			} else {
 				Pattern result = patterns[0].With(comparisonType).Or(patterns[1].With(comparisonType));
@@ -187,9 +173,7 @@ namespace Stringier.Patterns {
 		#region Capturer
 
 		public static implicit operator Pattern(Capture capture) {
-			if (capture is null) {
-				throw new ArgumentNullException(nameof(capture));
-			}
+			Guard.NotNull(capture, nameof(capture));
 			return new CaptureLiteral(capture);
 		}
 
@@ -212,9 +196,7 @@ namespace Stringier.Patterns {
 		/// <param name="check">A <see cref="Func{T, TResult}"/> to validate the character.</param>
 		/// <returns></returns>
 		public static Pattern Check(Func<Char, Boolean> check) {
-			if (check is null) {
-				throw new ArgumentNullException(nameof(check));
-			}
+			Guard.NotNull(check, nameof(check));
 			return new CharChecker(check);
 		}
 
@@ -236,15 +218,10 @@ namespace Stringier.Patterns {
 		/// <param name="tailCheck">A <see cref="Func{T, TResult}"/> to validate the tail.</param>
 		/// <returns></returns>
 		public static Pattern Check(Func<Char, Boolean> headCheck, Func<Char, Boolean> bodyCheck, Func<Char, Boolean> tailCheck) {
-			if (headCheck is null) {
-				throw new ArgumentNullException(nameof(headCheck));
-			} else if (bodyCheck is null) {
-				throw new ArgumentNullException(nameof(bodyCheck));
-			} else if (tailCheck is null) {
-				throw new ArgumentNullException(nameof(tailCheck));
-			} else {
-				return new StringChecker(headCheck, bodyCheck, tailCheck);
-			}
+			Guard.NotNull(headCheck, nameof(headCheck));
+			Guard.NotNull(bodyCheck, nameof(bodyCheck));
+			Guard.NotNull(tailCheck, nameof(tailCheck));
+			return new StringChecker(headCheck, bodyCheck, tailCheck);
 		}
 
 		/// <summary>
@@ -269,15 +246,10 @@ namespace Stringier.Patterns {
 		/// <param name="tailRequired">Whether the <paramref name="tailRequired"/> is required.</param>
 		/// <returns></returns>
 		public static Pattern Check(Func<Char, Boolean> headCheck, Boolean headRequired, Func<Char, Boolean> bodyCheck, Boolean bodyRequired, Func<Char, Boolean> tailCheck, Boolean tailRequired) {
-			if (headCheck is null) {
-				throw new ArgumentNullException(nameof(headCheck));
-			} else if (bodyCheck is null) {
-				throw new ArgumentNullException(nameof(bodyCheck));
-			} else if (tailCheck is null) {
-				throw new ArgumentNullException(nameof(tailCheck));
-			} else {
-				return new StringChecker(headCheck, headRequired, bodyCheck, bodyRequired, tailCheck, tailRequired);
-			}
+			Guard.NotNull(headCheck, nameof(headCheck));
+			Guard.NotNull(bodyCheck, nameof(bodyCheck));
+			Guard.NotNull(tailCheck, nameof(tailCheck));
+			return new StringChecker(headCheck, headRequired, bodyCheck, bodyRequired, tailCheck, tailRequired);
 		}
 
 		/// <summary>
@@ -304,15 +276,10 @@ namespace Stringier.Patterns {
 		/// <param name="tailCheck">A <see cref="Func{T, TResult}"/> to validate the tail.</param>
 		/// <returns></returns>
 		public static Pattern Check(Bias bias, Func<Char, Boolean> headCheck, Func<Char, Boolean> bodyCheck, Func<Char, Boolean> tailCheck) {
-			if (headCheck is null) {
-				throw new ArgumentNullException(nameof(headCheck));
-			} else if (bodyCheck is null) {
-				throw new ArgumentNullException(nameof(bodyCheck));
-			} else if (tailCheck is null) {
-				throw new ArgumentNullException(nameof(tailCheck));
-			} else {
-				return new WordChecker(bias, headCheck, bodyCheck, tailCheck);
-			}
+			Guard.NotNull(headCheck, nameof(headCheck));
+			Guard.NotNull(bodyCheck, nameof(bodyCheck));
+			Guard.NotNull(tailCheck, nameof(tailCheck));
+			return new WordChecker(bias, headCheck, bodyCheck, tailCheck);
 		}
 
 		/// <summary>
@@ -337,9 +304,7 @@ namespace Stringier.Patterns {
 		/// <param name="right">The succeeding <see cref="Pattern"/>.</param>
 		/// <returns>A new <see cref="Pattern"/> concatenating this <see cref="Pattern"/> and <paramref name="right"/>.</returns>
 		internal virtual Pattern Concatenate(Pattern right) {
-			if (right is null) {
-				throw new ArgumentNullException(nameof(right));
-			}
+			Guard.NotNull(right, nameof(right));
 			return new Concatenator(this, right);
 		}
 
@@ -356,9 +321,7 @@ namespace Stringier.Patterns {
 		/// <param name="right">The succeeding <see cref="String"/>.</param>
 		/// <returns>A new <see cref="Pattern"/> concatenating this <see cref="Pattern"/> and <paramref name="right"/>.</returns
 		internal virtual Pattern Concatenate(String right) {
-			if (right is null) {
-				throw new ArgumentNullException(nameof(right));
-			}
+			Guard.NotNull(right, nameof(right));
 			return new Concatenator(this, new StringLiteral(right));
 		}
 
@@ -375,9 +338,7 @@ namespace Stringier.Patterns {
 		/// <param name="other">The succeeding <see cref="Pattern"/></param>
 		/// <returns>A new <see cref="Pattern"/> concatenating this <see cref="Pattern"/> and <paramref name="other"/></returns>
 		public virtual Pattern Then(Pattern other) {
-			if (other is null) {
-				throw new ArgumentNullException(nameof(other));
-			}
+			Guard.NotNull(other, nameof(other));
 			return Concatenate(other);
 		}
 
@@ -387,9 +348,7 @@ namespace Stringier.Patterns {
 		/// <param name="other">The succeeding <see cref="String"/></param>
 		/// <returns>A new <see cref="Pattern"/> concatenating this <see cref="Pattern"/> and <paramref name="other"/></returns>
 		public virtual Pattern Then(String other) {
-			if (other is null) {
-				throw new ArgumentNullException(nameof(other));
-			}
+			Guard.NotNull(other, nameof(other));
 			return Concatenate(other);
 		}
 
@@ -413,9 +372,7 @@ namespace Stringier.Patterns {
 		/// <param name="other">The succeeding <see cref="Pattern"/></param>
 		/// <returns>A new <see cref="Pattern"/> concatenating this <see cref="Pattern"/> and <paramref name="other"/></returns>
 		public virtual Pattern Then(Capture other) {
-			if (other is null) {
-				throw new ArgumentNullException(nameof(other));
-			}
+			Guard.NotNull(other, nameof(other));
 			return Concatenate(new CaptureLiteral(other));
 		}
 
@@ -428,7 +385,10 @@ namespace Stringier.Patterns {
 		/// </summary>
 		/// <param name="string">The <see cref="String"/> to fuzzy match.</param>
 		/// <returns>A new <see cref="Pattern"/> which will fuzzy match the <paramref name="string"/>.</returns>
-		public static Pattern Fuzzy(String @string) => new Fuzzer(@string);
+		public static Pattern Fuzzy(String @string) {
+			Guard.NotNull(@string, nameof(@string));
+			return new Fuzzer(@string);
+		}
 
 		/// <summary>
 		/// Marks this <see cref="String"/> as fuzzy.
@@ -436,7 +396,10 @@ namespace Stringier.Patterns {
 		/// <param name="string">The <see cref="String"/> to fuzzy match.</param>
 		/// <param name="maxEdits">The maximum allowed edits to still be considered a match.</param>
 		/// <returns>A new <see cref="Pattern"/> which will fuzzy match the <paramref name="string"/>.</returns>
-		public static Pattern Fuzzy(String @string, Int32 maxEdits) => new Fuzzer(@string, maxEdits);
+		public static Pattern Fuzzy(String @string, Int32 maxEdits) {
+			Guard.NotNull(@string, nameof(@string));
+			return new Fuzzer(@string, maxEdits);
+		}
 
 		#endregion
 
@@ -457,9 +420,7 @@ namespace Stringier.Patterns {
 		/// <param name="pattern">The <see cref="Pattern"/> to negate.</param>
 		/// <returns>A new <see cref="Pattern"/> which has been negated.</returns>
 		public static Pattern Not(Pattern pattern) {
-			if (pattern is null) {
-				throw new ArgumentNullException(nameof(pattern));
-			}
+			Guard.NotNull(pattern, nameof(pattern));
 			return pattern.Negate();
 		}
 
@@ -469,9 +430,7 @@ namespace Stringier.Patterns {
 		/// <param name="pattern">The <see cref="String"/> to negate.</param>
 		/// <returns>A new <see cref="Pattern"/> which has been negated.</returns>
 		public static Pattern Not(String pattern) {
-			if (pattern is null) {
-				throw new ArgumentNullException(nameof(pattern));
-			}
+			Guard.NotNull(pattern, nameof(pattern));
 			return new StringLiteral(pattern).Negate();
 		}
 
@@ -495,9 +454,7 @@ namespace Stringier.Patterns {
 		/// <param name="pattern">The <see cref="Patterns.Capture"/> to negate.</param>
 		/// <returns>A new <see cref="Pattern"/> which has been negated.</returns>
 		public static Pattern Not(Capture pattern) {
-			if (pattern is null) {
-				throw new ArgumentNullException(nameof(pattern));
-			}
+			Guard.NotNull(pattern, nameof(pattern));
 			return new CaptureLiteral(pattern).Negate();
 		}
 
@@ -520,9 +477,7 @@ namespace Stringier.Patterns {
 		/// <param name="pattern">The optional <see cref="Pattern"/>.</param>
 		/// <returns>A new <see cref="Pattern"/> which is optional.</returns>
 		public static Pattern Maybe(Pattern pattern) {
-			if (pattern is null) {
-				throw new ArgumentNullException(nameof(pattern));
-			}
+			Guard.NotNull(pattern, nameof(pattern));
 			return pattern.Optional();
 		}
 
@@ -532,9 +487,7 @@ namespace Stringier.Patterns {
 		/// <param name="pattern">The optional <see cref="Pattern"/>.</param>
 		/// <returns>A new <see cref="Pattern"/> which is optional.</returns>
 		public static Pattern Maybe(String pattern) {
-			if (pattern is null) {
-				throw new ArgumentNullException(nameof(pattern));
-			}
+			Guard.NotNull(pattern, nameof(pattern));
 			return new StringLiteral(pattern).Optional();
 		}
 
@@ -558,9 +511,7 @@ namespace Stringier.Patterns {
 		/// <param name="pattern">The optional <see cref="Pattern"/>.</param>
 		/// <returns>A new <see cref="Pattern"/> which is optional.</returns>
 		public static Pattern Maybe(Capture pattern) {
-			if (pattern is null) {
-				throw new ArgumentNullException(nameof(pattern));
-			}
+			Guard.NotNull(pattern, nameof(pattern));
 			return new CaptureLiteral(pattern).Optional();
 		}
 
@@ -574,11 +525,9 @@ namespace Stringier.Patterns {
 		/// <param name="from">Begining <see cref="Pattern"/>.</param>
 		/// <param name="to">Ending <see cref="Pattern"/>.</param>
 		public static Pattern Range(Pattern from, Pattern to) {
-			if (from is null || to is null) {
-				throw new ArgumentNullException(from is null ? nameof(from) : nameof(to));
-			} else {
-				return new Ranger(from, to);
-			}
+			Guard.NotNull(from, nameof(from));
+			Guard.NotNull(to, nameof(to));
+			return new Ranger(from, to);
 		}
 
 		/// <summary>
@@ -588,15 +537,10 @@ namespace Stringier.Patterns {
 		/// <param name="to">Ending <see cref="Pattern"/>.</param>
 		/// <param name="escape">Escape <see cref="Pattern"/>./</param>
 		public static Pattern Range(Pattern from, Pattern to, Pattern escape) {
-			if (from is null) {
-				throw new ArgumentNullException(nameof(from));
-			} else if (to is null) {
-				throw new ArgumentNullException(nameof(to));
-			} else if (escape is null) {
-				throw new ArgumentNullException(nameof(escape));
-			} else {
-				return new EscapedRanger(from, to, escape);
-			}
+			Guard.NotNull(from, nameof(from));
+			Guard.NotNull(to, nameof(to));
+			Guard.NotNull(escape, nameof(escape));
+			return new EscapedRanger(from, to, escape);
 		}
 
 		/// <summary>
@@ -608,11 +552,9 @@ namespace Stringier.Patterns {
 		/// <param name="from">Begining <see cref="Pattern"/>.</param>
 		/// <param name="to">Ending <see cref="Pattern"/>.</param>
 		public static Pattern NestedRange(Pattern from, Pattern to) {
-			if (from is null || to is null) {
-				throw new ArgumentNullException(from is null ? nameof(from) : nameof(to));
-			} else {
-				return new NestedRanger(from, to);
-			}
+			Guard.NotNull(from, nameof(from));
+			Guard.NotNull(to, nameof(to));
+			return new NestedRanger(from, to);
 		}
 
 		#endregion
@@ -645,9 +587,7 @@ namespace Stringier.Patterns {
 		/// <param name="pattern">The spanning <see cref="Pattern"/>.</param>
 		/// <returns>A new <see cref="Pattern"/> which is spanning.</returns>
 		public static Pattern Many(Pattern pattern) {
-			if (pattern is null) {
-				throw new ArgumentNullException(nameof(pattern));
-			}
+			Guard.NotNull(pattern, nameof(pattern));
 			return pattern.Span();
 		}
 
@@ -657,9 +597,7 @@ namespace Stringier.Patterns {
 		/// <param name="pattern">The spanning <see cref="String"/>.</param>
 		/// <returns>A new <see cref="Pattern"/> which is spanning.</returns>
 		public static Pattern Many(String pattern) {
-			if (pattern is null) {
-				throw new ArgumentNullException(nameof(pattern));
-			}
+			Guard.NotNull(pattern, nameof(pattern));
 			return new StringLiteral(pattern).Span();
 		}
 
@@ -683,9 +621,7 @@ namespace Stringier.Patterns {
 		/// <param name="pattern">The spanning <see cref="Capture"/>.</param>
 		/// <returns>A new <see cref="Pattern"/> which is spanning.</returns>
 		public static Pattern Many(Capture pattern) {
-			if (pattern is null) {
-				throw new ArgumentNullException(nameof(pattern));
-			}
+			Guard.NotNull(pattern, nameof(pattern));
 			return new CaptureLiteral(pattern).Span();
 		}
 

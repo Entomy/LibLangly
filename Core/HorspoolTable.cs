@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using Defender;
 
 namespace Stringier {
 	/// <summary>
@@ -38,9 +39,7 @@ namespace Stringier {
 		/// </summary>
 		/// <param name="pattern">The pattern to create a table for.</param>
 		public HorspoolTable(String pattern) {
-			if (pattern is null) {
-				throw new ArgumentNullException(nameof(pattern));
-			}
+			Guard.NotNull(pattern, nameof(pattern));
 			Jumps = new Dictionary<Char, Int32>();
 			for (Int32 i = 0; i < pattern.Length; i++) {
 				Jumps[pattern[i]] = pattern.Length - i - 1;

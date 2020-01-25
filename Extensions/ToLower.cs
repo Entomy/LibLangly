@@ -3,6 +3,7 @@ using System.Globalization;
 #if !NETSTANDARD2_0
 using System.Text;
 #endif
+using Defender;
 
 namespace Stringier {
 	public static partial class StringierExtensions {
@@ -29,9 +30,7 @@ namespace Stringier {
 		/// <param name="culture">An object that supplies culture-specific casing rules.</param>
 		/// <returns>The lowercase equivalent of <paramref name="char"/>, modified according to <paramref name="culture"/>, or the unchanged value of <paramref name="char"/>, if <paramref name="char"/> is already lowercase or not alphabetic.</returns>
 		public static Char ToLower(this Char @char, CultureInfo culture) {
-			if (culture is null) {
-				throw new ArgumentNullException(nameof(culture));
-			}
+			Guard.NotNull(culture, nameof(culture));
 			return Char.ToLower(@char, culture);
 		}
 
@@ -43,9 +42,7 @@ namespace Stringier {
 		/// <param name="culture">An object that supplies culture-specific casing rules.</param>
 		/// <returns>The lowercase equivalent of <paramref name="rune"/>, modified according to <paramref name="culture"/>, or the unchanged value of <paramref name="rune"/>, if <paramref name="rune"/> is already lowercase or not alphabetic.</returns>
 		public static Rune ToLower(this Rune rune, CultureInfo culture) {
-			if (culture is null) {
-				throw new ArgumentNullException(nameof(culture));
-			}
+			Guard.NotNull(culture, nameof(culture));
 			return Rune.ToLower(rune, culture);
 		}
 #endif

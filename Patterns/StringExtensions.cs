@@ -2,6 +2,7 @@
 using System.Runtime.CompilerServices;
 using Stringier.Patterns.Debugging;
 using Stringier.Patterns.Nodes;
+using Defender;
 
 namespace Stringier.Patterns {
 	public static class StringExtensions {
@@ -11,9 +12,7 @@ namespace Stringier.Patterns {
 		/// <param name="string">The <see cref="String"/> literal.</param>
 		/// <returns>A <see cref="Pattern"/> representing literally the <paramref name="string"/>.</returns>
 		public static Pattern AsPattern(this String @string) {
-			if (@string is null) {
-				throw new ArgumentNullException(nameof(@string));
-			}
+			Guard.NotNull(@string, nameof(@string));
 			return new StringLiteral(@string);
 		}
 
@@ -24,9 +23,8 @@ namespace Stringier.Patterns {
 		/// <param name="source">The <see cref="String"/> to consume</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the consumed string</returns>
 		public static Result Consume(this String pattern, String source) {
-			if (pattern is null || source is null) {
-				throw new ArgumentNullException(pattern is null ? nameof(pattern) : nameof(source));
-			}
+			Guard.NotNull(pattern, nameof(pattern));
+			Guard.NotNull(source, nameof(source));
 			return pattern.Consume(source, Compare.CaseSensitive);
 		}
 
@@ -38,9 +36,8 @@ namespace Stringier.Patterns {
 		/// <param name="comparisonType">Whether the comparison is sensitive to casing.</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the consumed string</returns>
 		public static Result Consume(this String pattern, String source, Compare comparisonType) {
-			if (pattern is null || source is null) {
-				throw new ArgumentNullException(pattern is null ? nameof(pattern) : nameof(source));
-			}
+			Guard.NotNull(pattern, nameof(pattern));
+			Guard.NotNull(source, nameof(source));
 			Source src = new Source(source);
 			return pattern.Consume(ref src, comparisonType);
 		}
@@ -52,9 +49,7 @@ namespace Stringier.Patterns {
 		/// <param name="source">The <see cref="ReadOnlySpan{T}"/> to consume</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the consumed string</returns>
 		public static Result Consume(this String pattern, ReadOnlySpan<Char> source) {
-			if (pattern is null) {
-				throw new ArgumentNullException(nameof(pattern));
-			}
+			Guard.NotNull(pattern, nameof(pattern));
 			return pattern.Consume(source, Compare.CaseSensitive);
 		}
 
@@ -66,9 +61,7 @@ namespace Stringier.Patterns {
 		/// <param name="comparisonType">Whether the comparison is sensitive to casing.</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the consumed string</returns>
 		public static Result Consume(this String pattern, ReadOnlySpan<Char> source, Compare comparisonType) {
-			if (pattern is null) {
-				throw new ArgumentNullException(nameof(pattern));
-			}
+			Guard.NotNull(pattern, nameof(pattern));
 			Source src = new Source(source);
 			return pattern.Consume(ref src, comparisonType);
 		}
@@ -80,9 +73,7 @@ namespace Stringier.Patterns {
 		/// <param name="source">The <see cref="Source"/> to consume</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the consumed string</returns>
 		public static Result Consume(this String pattern, ref Source source) {
-			if (pattern is null) {
-				throw new ArgumentNullException(nameof(pattern));
-			}
+			Guard.NotNull(pattern, nameof(pattern));
 			return pattern.Consume(ref source, Compare.CaseSensitive, trace: null);
 		}
 
@@ -94,9 +85,7 @@ namespace Stringier.Patterns {
 		/// <param name="trace">The <see cref="ITrace"/> to record steps in.</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the consumed string</returns>
 		public static Result Consume(this String pattern, ref Source source, ITrace? trace) {
-			if (pattern is null) {
-				throw new ArgumentNullException(nameof(pattern));
-			}
+			Guard.NotNull(pattern, nameof(pattern));
 			return pattern.Consume(ref source, Compare.CaseSensitive, trace);
 		}
 
@@ -108,9 +97,7 @@ namespace Stringier.Patterns {
 		/// <param name="comparisonType">Whether the comparison is sensitive to casing.</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the consumed string</returns>
 		public static Result Consume(this String pattern, ref Source source, Compare comparisonType) {
-			if (pattern is null) {
-				throw new ArgumentNullException(nameof(pattern));
-			}
+			Guard.NotNull(pattern, nameof(pattern));
 			return Consume(pattern, ref source, comparisonType, null);
 		}
 
@@ -123,9 +110,7 @@ namespace Stringier.Patterns {
 		/// <param name="trace">The <see cref="ITrace"/> to record steps in.</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the consumed string</returns>
 		public static Result Consume(this String pattern, ref Source source, Compare comparisonType, ITrace? trace) {
-			if (pattern is null) {
-				throw new ArgumentNullException(nameof(pattern));
-			}
+			Guard.NotNull(pattern, nameof(pattern));
 			Result Result = new Result(ref source);
 			pattern.Consume(ref source, ref Result, comparisonType, trace);
 			return Result;
@@ -137,9 +122,8 @@ namespace Stringier.Patterns {
 		/// <param name="other">The <see cref="Pattern"/> to check if this <see cref="String"/> does not match</param>
 		/// <returns>A new <see cref="Pattern"/> alternating this <see cref="String"/> and <paramref name="other"/></returns>
 		public static Pattern Or(this String @string, Pattern other) {
-			if (@string is null || other is null) {
-				throw new ArgumentNullException(@string is null ? nameof(@string) : nameof(other));
-			}
+			Guard.NotNull(@string, nameof(@string));
+			Guard.NotNull(other, nameof(other));
 			return new StringLiteral(@string).Alternate(other);
 		}
 
@@ -149,9 +133,8 @@ namespace Stringier.Patterns {
 		/// <param name="other">The <see cref="String"/> to check if this <see cref="String"/> does not match</param>
 		/// <returns>A new <see cref="Pattern"/> alternating this <see cref="String"/> and <paramref name="other"/></returns>
 		public static Pattern Or(this String @string, String other) {
-			if (@string is null || other is null) {
-				throw new ArgumentNullException(@string is null ? nameof(@string) : nameof(other));
-			}
+			Guard.NotNull(@string, nameof(@string));
+			Guard.NotNull(other, nameof(other));
 			return new StringLiteral(@string).Alternate(other);
 		}
 
@@ -161,9 +144,7 @@ namespace Stringier.Patterns {
 		/// <param name="other">The <see cref="Char"/> to check if this <see cref="String"/> does not match</param>
 		/// <returns>A new <see cref="Pattern"/> alternating this <see cref="String"/> and <paramref name="other"/></returns>
 		public static Pattern Or(this String @string, Char other) {
-			if (@string is null) {
-				throw new ArgumentNullException(nameof(@string));
-			}
+			Guard.NotNull(@string, nameof(@string));
 			return new StringLiteral(@string).Alternate(other);
 		}
 
@@ -173,9 +154,8 @@ namespace Stringier.Patterns {
 		/// <param name="other">The <see cref="Capture"/> to check if this <see cref="String"/> does not match</param>
 		/// <returns>A new <see cref="Pattern"/> alternating this <see cref="String"/> and <paramref name="other"/></returns>
 		public static Pattern Or(this String @string, Capture other) {
-			if (@string is null || other is null) {
-				throw new ArgumentNullException(@string is null ? nameof(@string) : nameof(other));
-			}
+			Guard.NotNull(@string, nameof(@string));
+			Guard.NotNull(other, nameof(other));
 			return new StringLiteral(@string).Alternate(new CaptureLiteral(other));
 		}
 
@@ -184,7 +164,10 @@ namespace Stringier.Patterns {
 		/// </summary>
 		/// <param name="count">The amount of times to repeat.</param>
 		/// <returns>A new <see cref="Pattern"/> repeated <paramref name="count"/> times.</returns>
-		public static Pattern Repeat(this String @string, Int32 count) => new StringLiteral(StringierExtensions.Repeat(@string, count));
+		public static Pattern Repeat(this String @string, Int32 count) {
+			Guard.NotNull(@string, nameof(@string));
+			return new StringLiteral(StringierExtensions.Repeat(@string, count));
+		}
 
 		/// <summary>
 		/// Concatenates the patterns so that this <see cref="Pattern"/> comes before <paramref name="other"/>
@@ -192,9 +175,8 @@ namespace Stringier.Patterns {
 		/// <param name="other">The succeeding <see cref="Pattern"/></param>
 		/// <returns>A new <see cref="Pattern"/> concatenating this <see cref="Pattern"/> and <paramref name="other"/></returns>
 		public static Pattern Then(this String @string, Pattern other) {
-			if (other is null) {
-				throw new ArgumentNullException(nameof(other));
-			}
+			Guard.NotNull(@string, nameof(@string));
+			Guard.NotNull(other, nameof(other));
 			return new StringLiteral(@string).Concatenate(other);
 		}
 
@@ -204,9 +186,8 @@ namespace Stringier.Patterns {
 		/// <param name="other">The succeeding <see cref="String"/></param>
 		/// <returns>A new <see cref="Pattern"/> concatenating this <see cref="Pattern"/> and <paramref name="other"/></returns>
 		public static Pattern Then(this String @string, String other) {
-			if (other is null) {
-				throw new ArgumentNullException(nameof(other));
-			}
+			Guard.NotNull(@string, nameof(@string));
+			Guard.NotNull(other, nameof(other));
 			return new StringLiteral(@string).Concatenate(other);
 		}
 
@@ -215,7 +196,10 @@ namespace Stringier.Patterns {
 		/// </summary>
 		/// <param name="other">The succeeding <see cref="Char"/></param>
 		/// <returns>A new <see cref="Pattern"/> concatenating this <see cref="Pattern"/> and <paramref name="other"/></returns>
-		public static Pattern Then(this String @string, Char other) => new StringLiteral(@string).Concatenate(other);
+		public static Pattern Then(this String @string, Char other) {
+			Guard.NotNull(@string, nameof(@string));
+			return new StringLiteral(@string).Concatenate(other);
+		}
 
 		/// <summary>
 		/// Concatenates the patterns so that this <see cref="Pattern"/> comes before <paramref name="other"/>
@@ -223,9 +207,8 @@ namespace Stringier.Patterns {
 		/// <param name="other">The succeeding <see cref="Pattern"/></param>
 		/// <returns>A new <see cref="Pattern"/> concatenating this <see cref="Pattern"/> and <paramref name="other"/></returns>
 		public static Pattern Then(this String @string, Capture other) {
-			if (other is null) {
-				throw new ArgumentNullException(nameof(other));
-			}
+			Guard.NotNull(@string, nameof(@string));
+			Guard.NotNull(other, nameof(other));
 			return new StringLiteral(@string).Concatenate(new CaptureLiteral(other));
 		}
 
@@ -235,7 +218,10 @@ namespace Stringier.Patterns {
 		/// <param name="pattern">The <see cref="String"/> pattern.</param>
 		/// <param name="comparisonType">Whether the comparison is sensitive to casing.</param>
 		/// <returns>A new <see cref="Pattern"/> representing the <paramref name="pattern"/> compared with <paramref name="comparisonType"/>.</returns>
-		public static Pattern With(this String pattern, Compare comparisonType) => new StringLiteral(pattern, comparisonType);
+		public static Pattern With(this String pattern, Compare comparisonType) {
+			Guard.NotNull(pattern, nameof(pattern));
+			return new StringLiteral(pattern, comparisonType);
+		}
 
 		/// <summary>
 		/// Checks the first character in the <paramref name="source"/> against the first character of this <see cref="String"/>.
@@ -247,9 +233,7 @@ namespace Stringier.Patterns {
 		/// <returns><c>Compare.CaseSensitive</c> if this <paramref name="pattern"/> may be present, <c>false</c> if definately not.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static Boolean CheckHeader(this String pattern, ref Source source) {
-			if (pattern is null) {
-				throw new ArgumentNullException(nameof(pattern));
-			}
+			Guard.NotNull(pattern, nameof(pattern));
 			return pattern[0].CheckHeader(ref source);
 		}
 
@@ -261,9 +245,7 @@ namespace Stringier.Patterns {
 		/// <param name="result">The <see cref="Result"/> to store the result into.</param>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void Consume(this String pattern, ref Source source, ref Result result) {
-			if (pattern is null) {
-				throw new ArgumentNullException(nameof(pattern));
-			}
+			Guard.NotNull(pattern, nameof(pattern));
 			pattern.Consume(ref source, ref result, Compare.CaseSensitive, trace: null);
 		}
 
@@ -277,9 +259,8 @@ namespace Stringier.Patterns {
 		/// <param name="trace">The <see cref="ITrace"/> to record steps in.</param>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void Consume(this String pattern, ref Source source, ref Result result, Compare comparisonType, ITrace? trace) {
-			if (pattern is null) {
-				throw new ArgumentNullException(nameof(pattern));
-			} else if (pattern.Length > source.Length) {
+			Guard.NotNull(pattern, nameof(pattern));
+			if (pattern.Length > source.Length) {
 				result.Error = Error.EndOfSource;
 				trace?.Collect(result.Error, source.Position);
 			} else {
@@ -305,9 +286,8 @@ namespace Stringier.Patterns {
 		/// <returns><c>Compare.CaseSensitive</c> if the value of the <paramref name="other"/> parameter is the same as this string; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static Boolean Equals(this String @string, String other, Compare comparisonType) {
-			if (@string is null || other is null) {
-				throw new ArgumentNullException(@string is null ? nameof(@string) : nameof(other));
-			}
+			Guard.NotNull(@string, nameof(@string));
+			Guard.NotNull(other, nameof(other));
 			switch (comparisonType) {
 			case Compare.NoPreference:
 			case Compare.CaseSensitive:
@@ -328,9 +308,7 @@ namespace Stringier.Patterns {
 		/// <returns><c>Compare.CaseSensitive</c> if the value of the <paramref name="other"/> parameter is the same as this string; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static Boolean Equals(this String @string, ReadOnlySpan<Char> other, Compare comparisonType) {
-			if (@string is null) {
-				throw new ArgumentNullException(nameof(@string));
-			}
+			Guard.NotNull(@string, nameof(@string));
 			switch (comparisonType) {
 			case Compare.NoPreference:
 			case Compare.CaseSensitive:
@@ -351,9 +329,7 @@ namespace Stringier.Patterns {
 		/// <returns><c>Compare.CaseSensitive</c> if the value of the <paramref name="other"/> parameter is the same as this string; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static Boolean Equals(this ReadOnlySpan<Char> span, String other, Compare comparisonType) {
-			if (other is null) {
-				throw new ArgumentNullException(nameof(other));
-			}
+			Guard.NotNull(other, nameof(other));
 			switch (comparisonType) {
 			case Compare.NoPreference:
 			case Compare.CaseSensitive:
@@ -393,9 +369,7 @@ namespace Stringier.Patterns {
 		/// <param name="result">The <see cref="Result"/> to store the result into.</param>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void Neglect(this String pattern, ref Source source, ref Result result) {
-			if (pattern is null) {
-				throw new ArgumentNullException(nameof(pattern));
-			}
+			Guard.NotNull(pattern, nameof(pattern));
 			pattern.Neglect(ref source, ref result, Compare.CaseSensitive, null);
 		}
 
@@ -409,9 +383,8 @@ namespace Stringier.Patterns {
 		/// <param name="trace">The <see cref="ITrace"/> to record steps in.</param>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void Neglect(this String pattern, ref Source source, ref Result result, Compare comparisonType, ITrace? trace) {
-			if (pattern is null) {
-				throw new ArgumentNullException(nameof(pattern));
-			} else if (pattern.Length > source.Length) {
+			Guard.NotNull(pattern, nameof(pattern));
+			if (pattern.Length > source.Length) {
 				result.Error = Error.EndOfSource;
 				trace?.Collect(result.Error, source.Position);
 			} else {

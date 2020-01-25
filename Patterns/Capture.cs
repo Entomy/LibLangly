@@ -1,5 +1,6 @@
 ﻿using System;
 using Stringier.Patterns.Nodes;
+using Defender;
 
 namespace Stringier.Patterns {
 	/// <summary>
@@ -49,9 +50,7 @@ namespace Stringier.Patterns {
 		/// <param name="other">The <see cref="Pattern"/> to check if this <see cref="Capture"/> does not match</param>
 		/// <returns>A new <see cref="Pattern"/> alternating this <see cref="Capture"/> and <paramref name="other"/></returns>
 		public Pattern Or(Pattern other) {
-			if (other is null) {
-				throw new ArgumentNullException(nameof(other));
-			}
+			Guard.NotNull(other, nameof(other));
 			return new CaptureLiteral(this).Alternate(other);
 		}
 
@@ -61,9 +60,7 @@ namespace Stringier.Patterns {
 		/// <param name="other">The <see cref="String"/> to check if this <see cref="Capture"/> does not match</param>
 		/// <returns>A new <see cref="Pattern"/> alternating this <see cref="Capture"/> and <paramref name="other"/></returns>
 		public Pattern Or(String other) {
-			if (other is null) {
-				throw new ArgumentNullException(nameof(other));
-			}
+			Guard.NotNull(other, nameof(other));
 			return new CaptureLiteral(this).Alternate(other);
 		}
 
@@ -80,9 +77,7 @@ namespace Stringier.Patterns {
 		/// <param name="other">The <see cref="Capture"/> to check if this <see cref="Capture"/> does not match</param>
 		/// <returns>A new <see cref="Pattern"/> alternating this <see cref="Capture"/> and <paramref name="other"/></returns>
 		public Pattern Or(Capture other) {
-			if (other is null) {
-				throw new ArgumentNullException(nameof(other));
-			}
+			Guard.NotNull(other, nameof(other));
 			return new CaptureLiteral(this).Alternate(new CaptureLiteral(other));
 		}
 
@@ -99,9 +94,7 @@ namespace Stringier.Patterns {
 		/// <param name="other">The succeeding <see cref="Pattern"/></param>
 		/// <returns>A new <see cref="Pattern"/> concatenating this <see cref="Pattern"/> and <paramref name="other"/></returns>
 		public Pattern Then(Pattern other) {
-			if (other is null) {
-				throw new ArgumentNullException(nameof(other));
-			}
+			Guard.NotNull(other, nameof(other));
 			return new CaptureLiteral(this).Concatenate(other);
 		}
 
@@ -111,9 +104,7 @@ namespace Stringier.Patterns {
 		/// <param name="other">The succeeding <see cref="String"/></param>
 		/// <returns>A new <see cref="Pattern"/> concatenating this <see cref="Pattern"/> and <paramref name="other"/></returns>
 		public Pattern Then(String other) {
-			if (other is null) {
-				throw new ArgumentNullException(nameof(other));
-			}
+			Guard.NotNull(other, nameof(other));
 			return new CaptureLiteral(this).Concatenate(other);
 		}
 
@@ -130,9 +121,7 @@ namespace Stringier.Patterns {
 		/// <param name="other">The succeeding <see cref="Pattern"/></param>
 		/// <returns>A new <see cref="Pattern"/> concatenating this <see cref="Pattern"/> and <paramref name="other"/></returns>
 		public Pattern Then(Capture other) {
-			if (other is null) {
-				throw new ArgumentNullException(nameof(other));
-			}
+			Guard.NotNull(other, nameof(other));
 			return new CaptureLiteral(this).Concatenate(new CaptureLiteral(other));
 		}
 
