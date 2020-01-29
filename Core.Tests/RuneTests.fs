@@ -44,3 +44,12 @@ type RuneTests() =
         Assert.AreEqual(testData.IsAscii, rune.IsAscii)
         Assert.AreEqual(testData.IsBmp, rune.IsBmp)
         Assert.AreEqual(testData.Plane, rune.Plane)
+
+    [<DataTestMethod>]
+    [<DataRow('\uD800')>]
+    [<DataRow('\uDBFF')>]
+    [<DataRow('\uDC00')>]
+    [<DataRow('\uDFFF')>]
+    member _.``Ctor_Cast_Char_Invalid_Throws`` (ch:char) =
+        Assert.ThrowsException<ArgumentOutOfRangeException>(fun () -> Rune(ch) |> ignore) |> ignore
+        Assert.ThrowsException<ArgumentOutOfRangeException>(fun () -> Rune.op_Explicit(ch) |> ignore) |> ignore

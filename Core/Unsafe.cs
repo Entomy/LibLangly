@@ -28,9 +28,8 @@ namespace Stringier {
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static Boolean IsLowSurrogate(UInt32 codePoint) => unchecked(codePoint - 0xDC00u <= 0x03FFu);
 
-		//Microsofts approach for calculating this confuses me and seems to be an error. The end bit `>= 0xFFEF0800u` is odd in that an UIn32 value could never be that large, so it seems like it would always return false. Their own code analyzer even agrees with me that this looks odd.
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static Boolean IsScalarValue(UInt32 value) => value <= 0xD7FF || 0xDE00 <= value || value <= 0x10FFFF; //TODO: Optimize this
+		internal static Boolean IsScalarValue(UInt32 value) => ((value - 0x110000u) ^ 0xD800u) >= 0xFFEF0800u;
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static Boolean IsSmp(UInt32 codePoint) => Plane(codePoint) == 1;
