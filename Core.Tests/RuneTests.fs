@@ -112,3 +112,14 @@ type RuneTests() =
     [<DataRow(0x01F3A8, '\uD83C', '\uDFA8')>]
     member _.``Ctor_SurrogatePair_Valid`` (exp:int, high:char, low:char) =
         Assert.AreEqual(exp, Rune(high, low).Value)
+
+    [<DataTestMethod>]
+    [<DataRow('\uD800', '\uD800')>]
+    [<DataRow('\uDFFF', '\uDFFF')>]
+    [<DataRow('\uDF00', '\uDB00')>]
+    [<DataRow('\uD900', '\u1234')>]
+    [<DataRow('\uD900', '\uE000')>]
+    [<DataRow('\u1234', '\uDE00')>]
+    [<DataRow('\uDC00', '\uDE00')>]
+    member _.``Ctor_SurrogatePair_Invalid`` (high:char, low:char) =
+        Assert.ThrowsException<ArgumentOutOfRangeException>(fun () -> Rune(high, low) |> ignore) |> ignore
