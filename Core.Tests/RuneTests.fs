@@ -82,3 +82,16 @@ type RuneTests() =
     member _.``Ctor_Cast_Int32_Invalid_Throws`` (value:int32) =
         Assert.ThrowsException<ArgumentOutOfRangeException>(fun () -> Rune(value) |> ignore) |> ignore
         Assert.ThrowsException<ArgumentOutOfRangeException>(fun () -> Rune.op_Explicit(value) |> ignore) |> ignore
+
+    [<DataTestMethod>]
+    [<DynamicData("GeneralTestData_BmpCodePoints_NoSurrogates", DynamicDataSourceType.Method)>]
+    [<DynamicData("GeneralTestData_SupplementaryCodePoints_ValidOnly", DynamicDataSourceType.Method)>]
+    member _.``Ctor_Cast_UInt32_Valid`` (testData:GeneralTestData) =
+        let rune = Rune(uint32 testData.ScalarValue)
+        let runeFromCast = Rune.op_Explicit(uint32 testData.ScalarValue)
+
+        Assert.AreEqual(rune, runeFromCast)
+        Assert.AreEqual(testData.ScalarValue, rune.Value)
+        Assert.AreEqual(testData.IsAscii, rune.IsAscii)
+        Assert.AreEqual(testData.IsBmp, rune.IsBmp)
+        Assert.AreEqual(testData.Plane, rune.Plane)
