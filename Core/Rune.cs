@@ -29,12 +29,7 @@ namespace System.Text {
 		/// If <paramref name="ch"/> represents a UTF-16 surrogate code point
 		/// U+D800..U+DFFF, inclusive.
 		/// </exception>
-		public Rune(Char ch) {
-			if (Unsafe.IsSurrogate(ch)) {
-				throw new ArgumentOutOfRangeException(nameof(ch), "The char is not a valid UNICODE Scalar Value.");
-			}
-			value = ch;
-		}
+		public Rune(Char ch) : this((UInt32)ch) { }
 
 		/// <summary>
 		/// Creates a <see cref="Rune"/> from the provided UTF-16 surrogate pair.
