@@ -123,3 +123,21 @@ type RuneTests() =
     [<DataRow('\uDC00', '\uDE00')>]
     member _.``Ctor_SurrogatePair_Invalid`` (high:char, low:char) =
         Assert.ThrowsException<ArgumentOutOfRangeException>(fun () -> Rune(high, low) |> ignore) |> ignore
+
+    [<DataTestMethod>]
+    [<DataRow(-1, 'A', 'a')>]
+    [<DataRow(0, 'A', 'A')>]
+    [<DataRow(1, 'a', 'A')>]
+    [<DataRow(0, 0x10000, 0x10000)>]
+    [<DataRow(-1, '\uFFFD', 0x10000)>]
+    [<DataRow(1, 0x10FFFF, 0x10000)>]
+    member _.``CompareTo_And_ComparisonOperators`` (exp:int, first:int, second:int) =
+        let a = Rune(first)
+        let b = Rune(second)
+
+        Assert.AreEqual(exp, Math.Sign(a.CompareTo(b)))
+        //These had to be changed from the official ones. Due to what I beleive is an oversight, F# comparison operators can't work with Rune, because of the missing IComparable interface.
+        Assert.AreEqual(exp, a.CompareTo(b))
+        Assert.AreEqual(exp, a.CompareTo(b))
+        Assert.AreEqual(exp, a.CompareTo(b))
+        Assert.AreEqual(exp, a.CompareTo(b))
