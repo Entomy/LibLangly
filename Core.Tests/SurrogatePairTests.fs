@@ -6,14 +6,17 @@ open Microsoft.VisualStudio.TestTools.UnitTesting
 
 [<TestClass>]
 type SurrogatePairTests() =
-    [<TestMethod>]
-    member _.``constructor high-low`` () =
-        SurrogatePair(CodePoint(0xD800u), CodePoint(0xDC00u))
+    [<DataTestMethod>]
+    [<DataRow(0xD800u, 0xDC00u)>]
+    [<DataRow(0xDBFFu, 0xDFFFu)>]
+    member _.``constructor high-low`` (high:uint32, low:uint32) =
+        SurrogatePair(CodePoint(high), CodePoint(low))
         ()
 
-    [<TestMethod>]
-    member _.``constructor SMP`` () =
-        SurrogatePair(CodePoint(0x10330u))
+    [<DataTestMethod>]
+    [<DataRow(0x10330u)>]
+    member _.``constructor SMP`` (value:uint32) =
+        SurrogatePair(CodePoint(value))
         ()
 
     [<DataTestMethod>]
