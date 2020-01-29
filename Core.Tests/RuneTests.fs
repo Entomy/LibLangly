@@ -105,3 +105,10 @@ type RuneTests() =
     member _.``Ctor_Cast_UInt32_Invalid_Throws`` (value:uint32) =
         Assert.ThrowsException<ArgumentOutOfRangeException>(fun () -> Rune(value) |> ignore) |> ignore
         Assert.ThrowsException<ArgumentOutOfRangeException>(fun () -> Rune.op_Explicit(value) |> ignore) |> ignore
+
+    [<DataTestMethod>]
+    [<DataRow(0x010000, '\uD800', '\uDC00')>]
+    [<DataRow(0x10FFFF, '\uDBFF', '\uDFFF')>]
+    [<DataRow(0x01F3A8, '\uD83C', '\uDFA8')>]
+    member _.``Ctor_SurrogatePair_Valid`` (exp:int, high:char, low:char) =
+        Assert.AreEqual(exp, Rune(high, low).Value)
