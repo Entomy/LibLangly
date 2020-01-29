@@ -71,3 +71,14 @@ type RuneTests() =
         Assert.AreEqual(testData.IsAscii, rune.IsAscii)
         Assert.AreEqual(testData.IsBmp, rune.IsBmp)
         Assert.AreEqual(testData.Plane, rune.Plane)
+
+    [<DataTestMethod>]
+    [<DataRow(0xD800)>]
+    [<DataRow(0xDBFF)>]
+    [<DataRow(0xDC00)>]
+    [<DataRow(0xDFFF)>]
+    [<DataRow(-0x01)>]
+    [<DataRow(0x110000)>]
+    member _.``Ctor_Cast_Int32_Invalid_Throws`` (value:int32) =
+        Assert.ThrowsException<ArgumentOutOfRangeException>(fun () -> Rune(value) |> ignore) |> ignore
+        Assert.ThrowsException<ArgumentOutOfRangeException>(fun () -> Rune.op_Explicit(value) |> ignore) |> ignore
