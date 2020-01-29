@@ -213,6 +213,18 @@ namespace System.Text {
 		}
 
 		/// <summary>
+		/// Returns a <see cref="String"/> representation of this <see cref="Rune"/> instance.
+		/// </summary>
+		public override String ToString() {
+			if (IsBmp) {
+				return $"{(Char)value}";
+			} else {
+				Unsafe.Utf16Encode(value, out Char high, out Char low);
+				return $"{high}{low}";
+			}
+		}
+
+		/// <summary>
 		/// Encodes this <see cref="Rune"/> to a UTF-16 destination buffer.
 		/// </summary>
 		/// <param name="destination">The buffer to which to write this value as UTF-16.</param>

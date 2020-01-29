@@ -15,6 +15,7 @@ type GeneralTestData(scalarValue, isAscii, isBmp, plane, utf16Sequence, utf8Sequ
     member _.Plane:int32 = plane
     member _.Utf16Sequence:char[] = utf16Sequence
     member _.Utf8Sequence:byte[] = utf8Sequence
+    member this.__DebugDisplay:string = "U+" + this.ScalarValue.ToString("X4");
 
 [<TestClass>]
 type RuneTests() =
@@ -22,7 +23,7 @@ type RuneTests() =
         for i in 0u..0xD800u do yield Rune(i)
         for i in 0xE000u..0x10FFFFu do yield Rune(i) }
         
-    static member GeneralTestData_BmpCodePoints_NoSurrogate():seq<Object[]> = seq {
+    static member GeneralTestData_BmpCodePoints_NoSurrogates():seq<Object[]> = seq {
         yield [| GeneralTestData(0x00, true, true, 0, [| '\u0000' |], [| 0x00uy |]) |]
         yield [| GeneralTestData(0x7F, true, true, 0, [| '\u007F' |], [| 0x7Fuy |]) |]
         yield [| GeneralTestData(0x80, false, true, 0, [| '\u0080' |], [| 0xC2uy; 0x80uy |]) |]
@@ -33,8 +34,12 @@ type RuneTests() =
         yield [| GeneralTestData(0xFFFD, false, true, 0, [| '\uFFFD' |], [| 0xEFuy; 0xBFuy; 0xBDuy |]) |]
         yield [| GeneralTestData(0xFFFF, false, true, 0, [| '\uFFFF' |], [| 0xEFuy; 0xBFuy; 0xBFuy |]) |] }
 
+    static member GeneralTestData_SupplementaryCodePoints_ValidOnly():seq<Object[]> = seq {
+        yield [| GeneralTestData(0x10000, false, false, 1, [| '\uD800'; '\uDC00' |], [| 0xF0uy; 0x90uy; 0x80uy; 0x80uy |]) |]
+        yield [| GeneralTestData(0x10FFFF, false, false, 16, [| '\uDBFF'; '\uDFFF' |], [| 0xF4uy; 0x8Fuy; 0xBFuy; 0xBFuy |]) |] }
+
     [<DataTestMethod>]
-    [<DynamicData("GeneralTestData_BmpCodePoints_NoSurrogate", DynamicDataSourceType.Method)>]
+    [<DynamicData("GeneralTestData_BmpCodePoints_NoSurrogates", DynamicDataSourceType.Method)>]
     member _.``Ctor_Cast_Char_Valid`` (testData:GeneralTestData) =
         let rune = Rune(testData.ScalarValue)
         let runeFromCast = Rune.op_Explicit(char testData.ScalarValue)
@@ -53,3 +58,16 @@ type RuneTests() =
     member _.``Ctor_Cast_Char_Invalid_Throws`` (ch:char) =
         Assert.ThrowsException<ArgumentOutOfRangeException>(fun () -> Rune(ch) |> ignore) |> ignore
         Assert.ThrowsException<ArgumentOutOfRangeException>(fun () -> Rune.op_Explicit(ch) |> ignore) |> ignore
+
+    [<DataTestMethod>]
+    [<DynamicData("GeneralTestData_BmpCodePoints_NoSurrogates", DynamicDataSourceType.Method)>]
+    [<DynamicData("GeneralTestData_SupplementaryCodePoints_ValidOnly", DynamicDataSourceType.Method)>]
+    member _.``Ctor_Cast_Int32_Valid`` (testData:GeneralTestData) =
+        let rune = Rune(int testData.ScalarValue)
+        let runeFromCast = Rune.op_Explicit(int testData.ScalarValue)
+
+        Assert.AreEqual(rune, runeFromCast)
+        Assert.AreEqual(testData.ScalarValue, rune.Value)
+        Assert.AreEqual(testData.IsAscii, rune.IsAscii)
+        Assert.AreEqual(testData.IsBmp, rune.IsBmp)
+        Assert.AreEqual(testData.Plane, rune.Plane)
