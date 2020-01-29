@@ -157,6 +157,52 @@ namespace System.Text {
 		public static Boolean IsValid(UInt32 value) => Unsafe.IsScalarValue(value);
 
 		/// <summary>
+		/// Decodes the <see cref="Rune"/> at the beginning of the provided UTF-16 source buffer.
+		/// </summary>
+		/// <returns>
+		/// <para>
+		/// If the source buffer begins with a valid UTF-16 encoded scalar value, returns <see cref="OperationStatus.Done"/>,
+		/// and outs via <paramref name="result"/> the decoded <see cref="Rune"/> and via <paramref name="charsConsumed"/> the
+		/// number of <see langword="char"/>s used in the input buffer to encode the <see cref="Rune"/>.
+		/// </para>
+		/// <para>
+		/// If the source buffer is empty or contains only a standalone UTF-16 high surrogate character, returns <see cref="OperationStatus.NeedMoreData"/>,
+		/// and outs via <paramref name="result"/> <see cref="ReplacementChar"/> and via <paramref name="charsConsumed"/> the length of the input buffer.
+		/// </para>
+		/// <para>
+		/// If the source buffer begins with an ill-formed UTF-16 encoded scalar value, returns <see cref="OperationStatus.InvalidData"/>,
+		/// and outs via <paramref name="result"/> <see cref="ReplacementChar"/> and via <paramref name="charsConsumed"/> the number of
+		/// <see langword="char"/>s used in the input buffer to encode the ill-formed sequence.
+		/// </para>
+		/// </returns>
+		/// <remarks>
+		/// The general calling convention is to call this method in a loop, slicing the <paramref name="source"/> buffer by
+		/// <paramref name="charsConsumed"/> elements on each iteration of the loop. On each iteration of the loop <paramref name="result"/>
+		/// will contain the real scalar value if successfully decoded, or it will contain <see cref="ReplacementChar"/> if
+		/// the data could not be successfully decoded. This pattern provides convenient automatic U+FFFD substitution of
+		/// invalid sequences while iterating through the loop.
+		/// </remarks>
+		public static OperationStatus DecodeFromUtf16(ReadOnlySpan<char> source, out Rune result, out Int32 charsConsumed) {
+			if (source.IsEmpty) {
+				charsConsumed = 1;
+				result = ReplacementChar;
+				return OperationStatus.NeedMoreData;
+			}
+			if (Unsafe.IsBmp(source[0])) {
+				charsConsumed = 1;
+				result = new Rune(source[0]);
+			} else if (Unsafe.IsHighSurrogate(source[0]) && Unsafe.IsLowSurrogate(source[1])) {
+				charsConsumed = 2;
+				result = new Rune(Unsafe.Utf16Decode(source[0], source[1]));
+			} else {
+				charsConsumed = 1;
+				result = ReplacementChar;
+				return OperationStatus.InvalidData;
+			}
+			return OperationStatus.Done;
+		}
+
+		/// <summary>
 		/// Encodes this <see cref="Rune"/> to a UTF-16 destination buffer.
 		/// </summary>
 		/// <param name="destination">The buffer to which to write this value as UTF-16.</param>
