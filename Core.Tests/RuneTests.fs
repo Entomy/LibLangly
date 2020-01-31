@@ -213,6 +213,17 @@ type RuneTests() =
     [<DataRow([| 0xC1y; 0xBFy |], OperationStatus.InvalidData, 0xFFFD, 1)>]
     [<DataRow([| 0xE0y; 0x9Fy |], OperationStatus.InvalidData, 0xFFFD, 1)>]
     [<DataRow([| 0xE0y; 0xA0y |], OperationStatus.NeedMoreData, 0xFFFD, 2)>]
+    [<DataRow([| 0xEDy; 0x9Fy |], OperationStatus.NeedMoreData, 0xFFFD, 2)>]
+    [<DataRow([| 0xEDy; 0xBFy |], OperationStatus.InvalidData, 0xFFFD, 1)>]
+    [<DataRow([| 0xEEy; 0x80y |], OperationStatus.NeedMoreData, 0xFFFD, 2)>]
+    [<DataRow([| 0xF0y; 0x8Fy |], OperationStatus.InvalidData, 0xFFFD, 1)>]
+    [<DataRow([| 0xF0y; 0x90y |], OperationStatus.NeedMoreData, 0xFFFD, 2)>]
+    [<DataRow([| 0xF4y; 0x90y |], OperationStatus.InvalidData, 0xFFFD, 1)>]
+    [<DataRow([| 0xE2y; 0x88y; 0xB4y |], OperationStatus.Done, 0x2234, 3)>]
+    [<DataRow([| 0xE2y; 0x88y; 0xC0y |], OperationStatus.InvalidData, 0xFFFD, 2)>]
+    [<DataRow([| 0xF0y; 0x9Fy; 0x98y |], OperationStatus.NeedMoreData, 0xFFFD, 3)>]
+    [<DataRow([| 0xF0y; 0x9Fy; 0x98y; 0x20y |], OperationStatus.InvalidData, 0xFFFD, 3)>]
+    [<DataRow([| 0xF0y; 0x9Fy; 0x98y; 0xB2y |], OperationStatus.Done, 0x1F632, 4)>]
     member _.``DecodeFromUtf8`` (data:byte[], expOpStat:OperationStatus, expRune:int, expByteCons:int) =
         let mutable rune = Rune(0x00)
         let mutable cons = 0
