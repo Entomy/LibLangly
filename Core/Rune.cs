@@ -177,24 +177,53 @@ namespace System.Text {
 		/// the data could not be successfully decoded. This pattern provides convenient automatic U+FFFD substitution of
 		/// invalid sequences while iterating through the loop.
 		/// </remarks>
-		public static OperationStatus DecodeFromUtf16(ReadOnlySpan<char> source, out Rune result, out Int32 charsConsumed) {
-			if (source.IsEmpty) {
-				charsConsumed = 1;
-				result = ReplacementChar;
-				return OperationStatus.NeedMoreData;
+		public static OperationStatus DecodeFromUtf16(ReadOnlySpan<Char> source, out Rune result, out Int32 charsConsumed) {
+			if (!source.IsEmpty) {
+				// First, check for the common case of a BMP scalar value.
+				// If this is correct, return immediately.
+
+				char firstChar = source[0];
+				if (TryCreate(firstChar, out result)) {
+					charsConsumed = 1;
+					return OperationStatus.Done;
+				}
+
+				// First thing we saw was a UTF-16 surrogate code point.
+				// Let's optimistically assume for now it's a high surrogate and hope
+				// that combining it with the next char yields useful results.
+
+				if (1 < (uint)source.Length) {
+					char secondChar = source[1];
+					if (TryCreate(firstChar, secondChar, out result)) {
+						// Success! Formed a supplementary scalar value.
+						charsConsumed = 2;
+						return OperationStatus.Done;
+					} else {
+						// Either the first character was a low surrogate, or the second
+						// character was not a low surrogate. This is an error.
+						goto InvalidData;
+					}
+				} else if (!char.IsHighSurrogate(firstChar)) {
+					// Quick check to make sure we're not going to report NeedMoreData for
+					// a single-element buffer where the data is a standalone low surrogate
+					// character. Since no additional data will ever make this valid, we'll
+					// report an error immediately.
+					goto InvalidData;
+				}
 			}
-			if (Unsafe.IsBmp(source[0])) {
-				charsConsumed = 1;
-				result = new Rune(source[0]);
-			} else if (Unsafe.IsHighSurrogate(source[0]) && Unsafe.IsLowSurrogate(source[1])) {
-				charsConsumed = 2;
-				result = new Rune(Unsafe.Utf16Decode(source[0], source[1]));
-			} else {
-				charsConsumed = 1;
-				result = ReplacementChar;
-				return OperationStatus.InvalidData;
-			}
-			return OperationStatus.Done;
+
+			// If we got to this point, the input buffer was empty, or the buffer
+			// was a single element in length and that element was a high surrogate char.
+
+			charsConsumed = source.Length;
+			result = ReplacementChar;
+			return OperationStatus.NeedMoreData;
+
+		InvalidData:
+
+			charsConsumed = 1; // maximal invalid subsequence for UTF-16 is always a single code unit in length
+			result = ReplacementChar;
+			return OperationStatus.InvalidData;
 		}
 
 		/// <summary>
@@ -221,6 +250,65 @@ namespace System.Text {
 			} else {
 				Unsafe.Utf16Encode(value, out Char high, out Char low);
 				return $"{high}{low}";
+			}
+		}
+
+		/// <summary>
+		/// Attempts to create a <see cref="Rune"/> from the provided input value.
+		/// </summary>
+		public static Boolean TryCreate(Char ch, out Rune result) {
+			UInt32 extendedValue = ch;
+			if (!Unsafe.IsSurrogate(extendedValue)) {
+				result = new Rune(extendedValue);
+				return true;
+			} else {
+				result = default;
+				return false;
+			}
+		}
+
+		/// <summary>
+		/// Attempts to create a <see cref="Rune"/> from the provided UTF-16 surrogate pair.
+		/// Returns <see langword="false"/> if the input values don't represent a well-formed UTF-16surrogate pair.
+		/// </summary>
+		public static Boolean TryCreate(Char highSurrogate, Char lowSurrogate, out Rune result) {
+			// First, extend both to 32 bits, then calculate the offset of
+			// each candidate surrogate char from the start of its range.
+
+			UInt32 highSurrogateOffset = highSurrogate - 0xD800u;
+			UInt32 lowSurrogateOffset = lowSurrogate - 0xDC00u;
+
+			// This is a single comparison which allows us to check both for validity at once since
+			// both the high surrogate range and the low surrogate range are the same length.
+			// If the comparison fails, we call to a helper method to throw the correct exception message.
+
+			if ((highSurrogateOffset | lowSurrogateOffset) <= 0x3FFu) {
+				// The 0x40u << 10 below is to account for uuuuu = wwww + 1 in the surrogate encoding.
+				result = new Rune((highSurrogateOffset << 10) + (lowSurrogate - 0xDC00u) + (0x40u << 10));
+				return true;
+			} else {
+				// Didn't have a high surrogate followed by a low surrogate.
+				result = default;
+				return false;
+			}
+		}
+
+		/// <summary>
+		/// Attempts to create a <see cref="Rune"/> from the provided input value.
+		/// </summary>
+		public static Boolean TryCreate(Int32 value, out Rune result) => TryCreate((UInt32)value, out result);
+
+		/// <summary>
+		/// Attempts to create a <see cref="Rune"/> from the provided input value.
+		/// </summary>
+		[CLSCompliant(false)]
+		public static Boolean TryCreate(UInt32 value, out Rune result) {
+			if (Unsafe.IsScalarValue(value)) {
+				result = new Rune(value);
+				return true;
+			} else {
+				result = default;
+				return false;
 			}
 		}
 
