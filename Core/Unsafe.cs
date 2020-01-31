@@ -71,5 +71,8 @@ namespace Stringier {
 			}
 			return scalarValue;
 		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static Boolean Within(this UInt32 value, UInt32 lower, UInt32 upper) => (value - lower) <= (upper - lower);
 	}
 }

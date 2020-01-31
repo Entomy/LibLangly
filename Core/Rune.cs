@@ -346,6 +346,181 @@ namespace System.Text {
 			return charsWritten;
 		}
 
+		/// <summary>
+		/// Decodes the <see cref="Rune"/> at the beginning of the provided UTF-8 source buffer.
+		/// </summary>
+		/// <returns>
+		/// <para>
+		/// If the source buffer begins with a valid UTF-8 encoded scalar value, returns <see cref="OperationStatus.Done"/>,
+		/// and outs via <paramref name="result"/> the decoded <see cref="Rune"/> and via <paramref name="bytesConsumed"/> the
+		/// number of <see langword="byte"/>s used in the input buffer to encode the <see cref="Rune"/>.
+		/// </para>
+		/// <para>
+		/// If the source buffer is empty or contains only a standalone UTF-8 high surrogate character, returns <see cref="OperationStatus.NeedMoreData"/>,
+		/// and outs via <paramref name="result"/> <see cref="ReplacementChar"/> and via <paramref name="bytesConsumed"/> the length of the input buffer.
+		/// </para>
+		/// <para>
+		/// If the source buffer begins with an ill-formed UTF-8 encoded scalar value, returns <see cref="OperationStatus.InvalidData"/>,
+		/// and outs via <paramref name="result"/> <see cref="ReplacementChar"/> and via <paramref name="bytesConsumed"/> the number of
+		/// <see langword="char"/>s used in the input buffer to encode the ill-formed sequence.
+		/// </para>
+		/// </returns>
+		/// <remarks>
+		/// The general calling convention is to call this method in a loop, slicing the <paramref name="source"/> buffer by
+		/// <paramref name="bytesConsumed"/> elements on each iteration of the loop. On each iteration of the loop <paramref name="result"/>
+		/// will contain the real scalar value if successfully decoded, or it will contain <see cref="ReplacementChar"/> if
+		/// the data could not be successfully decoded. This pattern provides convenient automatic U+FFFD substitution of
+		/// invalid sequences while iterating through the loop.
+		/// </remarks>
+		public static OperationStatus DecodeFromUtf8(ReadOnlySpan<Byte> source, out Rune result, out Int32 bytesConsumed) {
+			// This method follows the Unicode Standard's recommendation for detecting
+			// the maximal subpart of an ill-formed subsequence. See The Unicode Standard,
+			// Ch. 3.9 for more details. In summary, when reporting an invalid subsequence,
+			// it tries to consume as many code units as possible as long as those code
+			// units constitute the beginning of a longer well-formed subsequence per Table 3-7.
+
+			Int32 index = 0;
+
+			// Try reading input[0].
+
+			if ((UInt32)index >= (UInt32)source.Length) {
+				goto NeedsMoreData;
+			}
+
+			UInt32 tempValue = source[index];
+			if (!Unsafe.IsAscii(tempValue)) {
+				goto NotAscii;
+			}
+
+		Finish:
+
+			bytesConsumed = index + 1;
+			Debug.Assert(1 <= bytesConsumed && bytesConsumed <= 4); // Valid subsequences are always length [1..4]
+			result = new Rune(tempValue);
+			return OperationStatus.Done;
+
+		NotAscii:
+
+			// Per Table 3-7, the beginning of a multibyte sequence must be a code unit in
+			// the range [C2..F4]. If it's outside of that range, it's either a standalone
+			// continuation byte, or it's an overlong two-byte sequence, or it's an out-of-range
+			// four-byte sequence.
+
+			if (!tempValue.Within(0xC2, 0xF4)) {
+				goto FirstByteInvalid;
+			}
+
+			tempValue = (tempValue - 0xC2) << 6;
+
+			// Try reading input[1].
+
+			index++;
+			if ((UInt32)index >= (UInt32)source.Length) {
+				goto NeedsMoreData;
+			}
+
+			// Continuation bytes are of the form [10xxxxxx], which means that their two's
+			// complement representation is in the range [-65..-128]. This allows us to
+			// perform a single comparison to see if a byte is a continuation byte.
+
+			Int32 thisByteSignExtended = (SByte)source[index];
+			if (thisByteSignExtended >= -64) {
+				goto Invalid;
+			}
+
+			tempValue += (UInt32)thisByteSignExtended;
+			tempValue += 0x80; // remove the continuation byte marker
+			tempValue += (0xC2 - 0xC0) << 6; // remove the leading byte marker
+
+			if (tempValue < 0x0800) {
+				Debug.Assert(tempValue.Within(0x0080, 0x07FF));
+				goto Finish; // this is a valid 2-byte sequence
+			}
+
+			// This appears to be a 3- or 4-byte sequence. Since per Table 3-7 we now have
+			// enough information (from just two code units) to detect overlong or surrogate
+			// sequences, we need to perform these checks now.
+
+			if (!tempValue.Within(((0xE0 - 0xC0) << 6) + (0xA0 - 0x80), ((0xF4 - 0xC0) << 6) + (0x8F - 0x80))) {
+				// The first two bytes were not in the range [[E0 A0]..[F4 8F]].
+				// This is an overlong 3-byte sequence or an out-of-range 4-byte sequence.
+				goto Invalid;
+			}
+
+			if (tempValue.Within(((0xED - 0xC0) << 6) + (0xA0 - 0x80), ((0xED - 0xC0) << 6) + (0xBF - 0x80))) {
+				// This is a UTF-16 surrogate code point, which is invalid in UTF-8.
+				goto Invalid;
+			}
+
+			if (tempValue.Within(((0xF0 - 0xC0) << 6) + (0x80 - 0x80), ((0xF0 - 0xC0) << 6) + (0x8F - 0x80))) {
+				// This is an overlong 4-byte sequence.
+				goto Invalid;
+			}
+
+			// The first two bytes were just fine. We don't need to perform any other checks
+			// on the remaining bytes other than to see that they're valid continuation bytes.
+
+			// Try reading input[2].
+
+			index++;
+			if ((UInt32)index >= (UInt32)source.Length) {
+				goto NeedsMoreData;
+			}
+
+			thisByteSignExtended = (SByte)source[index];
+			if (thisByteSignExtended >= -64) {
+				goto Invalid; // this byte is not a UTF-8 continuation byte
+			}
+
+			tempValue <<= 6;
+			tempValue += (UInt32)thisByteSignExtended;
+			tempValue += 0x80; // remove the continuation byte marker
+			tempValue -= (0xE0 - 0xC0) << 12; // remove the leading byte marker
+
+			if (tempValue <= 0xFFFF) {
+				Debug.Assert(tempValue.Within(0x0800, 0xFFFF));
+				goto Finish; // this is a valid 3-byte sequence
+			}
+
+			// Try reading input[3].
+
+			index++;
+			if ((UInt32)index >= (UInt32)source.Length) {
+				goto NeedsMoreData;
+			}
+
+			thisByteSignExtended = (SByte)source[index];
+			if (thisByteSignExtended >= -64) {
+				goto Invalid; // this byte is not a UTF-8 continuation byte
+			}
+
+			tempValue <<= 6;
+			tempValue += (UInt32)thisByteSignExtended;
+			tempValue += 0x80; // remove the continuation byte marker
+			tempValue -= (0xF0 - 0xE0) << 18; // remove the leading byte marker
+
+			Debug.Assert(Unsafe.IsSmp(tempValue));
+			goto Finish; // this is a valid 4-byte sequence
+
+		FirstByteInvalid:
+
+			index = 1; // Invalid subsequences are always at least length 1.
+
+		Invalid:
+
+			Debug.Assert(1 <= index && index <= 3); // Invalid subsequences are always length 1..3
+			bytesConsumed = index;
+			result = ReplacementChar;
+			return OperationStatus.InvalidData;
+
+		NeedsMoreData:
+
+			Debug.Assert(0 <= index && index <= 3); // Incomplete subsequences are always length 0..3
+			bytesConsumed = index;
+			result = ReplacementChar;
+			return OperationStatus.NeedMoreData;
+		}
+
 		public override Boolean Equals(Object? obj) => (obj is Rune other) && Equals(other);
 
 		public Boolean Equals(Rune other) => this == other;

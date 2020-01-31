@@ -189,3 +189,33 @@ type RuneTests() =
         Assert.AreEqual(expOpStat, Rune.DecodeLastFromUtf16(ReadOnlySpan<Char>(data), &rune, &cons))
         Assert.AreEqual(expRune, rune.Value)
         Assert.AreEqual(expCharCons, cons)
+
+    [<TestMethod>]
+    member _.``DecodeFromUtf8 - empty`` () =
+        let mutable rune = Rune(0x00)
+        let mutable cons = 0
+        Assert.AreEqual(OperationStatus.NeedMoreData, Rune.DecodeFromUtf8(ReadOnlySpan<Byte>(Array.zeroCreate<Byte> 0), &rune, &cons))
+        Assert.AreEqual(0xFFFD, rune.Value)
+        Assert.AreEqual(0, cons)
+
+    [<DataTestMethod>]
+    [<DataRow([| 0x30y |], OperationStatus.Done, 0x30, 1)>]
+    [<DataRow([| 0x30y; 0x40y; 0x50y |], OperationStatus.Done, 0x30, 1)>]
+    [<DataRow([| 0x80y |], OperationStatus.InvalidData, 0xFFFD, 1)>]
+    [<DataRow([| 0x80y; 0x80y; 0x80y |], OperationStatus.InvalidData, 0xFFFD, 1)>]
+    [<DataRow([| 0xC1y |], OperationStatus.InvalidData, 0xFFFD, 1)>]
+    [<DataRow([| 0xF5y |], OperationStatus.InvalidData, 0xFFFD, 1)>]
+    [<DataRow([| 0xC2y |], OperationStatus.NeedMoreData, 0xFFFD, 1)>]
+    [<DataRow([| 0xEDy |], OperationStatus.NeedMoreData, 0xFFFD, 1)>]
+    [<DataRow([| 0xF4y |], OperationStatus.NeedMoreData, 0xFFFD, 1)>]
+    [<DataRow([| 0xC2y; 0xC2y |], OperationStatus.InvalidData, 0xFFFD, 1)>]
+    [<DataRow([| 0xC3y; 0x90y |], OperationStatus.Done, 0xD0, 2)>]
+    [<DataRow([| 0xC1y; 0xBFy |], OperationStatus.InvalidData, 0xFFFD, 1)>]
+    [<DataRow([| 0xE0y; 0x9Fy |], OperationStatus.InvalidData, 0xFFFD, 1)>]
+    [<DataRow([| 0xE0y; 0xA0y |], OperationStatus.NeedMoreData, 0xFFFD, 2)>]
+    member _.``DecodeFromUtf8`` (data:byte[], expOpStat:OperationStatus, expRune:int, expByteCons:int) =
+        let mutable rune = Rune(0x00)
+        let mutable cons = 0
+        Assert.AreEqual(expOpStat, Rune.DecodeFromUtf8(ReadOnlySpan<Byte>(data), &rune, &cons))
+        Assert.AreEqual(expRune, rune.Value)
+        Assert.AreEqual(expByteCons, cons)
