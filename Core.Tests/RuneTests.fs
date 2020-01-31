@@ -275,3 +275,10 @@ type RuneTests() =
         Assert.AreEqual(exp, a.Equals(b :> obj))
         Assert.AreEqual(exp, (a = b))
         Assert.AreNotEqual(exp, a <> b)
+
+    [<DataTestMethod>]
+    [<DataRow(0)>]
+    [<DataRow('a')>]
+    [<DataRow('\uFFFD')>]
+    [<DataRow(0x10FFFF)>]
+    member _.``GetHashCode`` (value:int) = Assert.AreEqual(value, Rune(value).GetHashCode())
