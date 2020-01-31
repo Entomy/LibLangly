@@ -167,3 +167,25 @@ type RuneTests() =
         Assert.AreEqual(expOpStat, Rune.DecodeFromUtf16(ReadOnlySpan<Char>(data), &rune, &cons))
         Assert.AreEqual(expRune, rune.Value)
         Assert.AreEqual(expCharCons, cons)
+
+    //This has to exist so that an empty array can be checked against. Due to a limitation of F#, an empty array of a specific type can't be put into an attribute expecting a constant expression.
+    [<TestMethod>]
+    member _.``DecodeLastFromUtf16 - empty`` () =
+        let mutable rune = Rune(0x00)
+        let mutable cons = 0
+        Assert.AreEqual(OperationStatus.NeedMoreData, Rune.DecodeLastFromUtf16(ReadOnlySpan<Char>(Array.zeroCreate<Char> 0), &rune, &cons))
+        Assert.AreEqual(0xFFFD, rune.Value)
+        Assert.AreEqual(0, cons)
+
+    [<DataTestMethod>]
+    [<DataRow([| '\u1234'; '\u5678' |], OperationStatus.Done, 0x5678, 1)>]
+    [<DataRow([| '\uDC00'; '\uD800' |], OperationStatus.NeedMoreData, 0xFFFD, 1)>]
+    [<DataRow([| '\uD83D'; '\uDE32' |], OperationStatus.Done, 0x1F632, 2)>]
+    [<DataRow([| '\u1234'; '\uDC00' |], OperationStatus.InvalidData, 0xFFFD, 1)>]
+    [<DataRow([| '\uDC00' |], OperationStatus.InvalidData, 0xFFFD, 1)>]
+    member _.``DecodeLastFromUtf16`` (data:char[], expOpStat:OperationStatus, expRune:int, expCharCons:int) =
+        let mutable rune = Rune(0x00)
+        let mutable cons = 0
+        Assert.AreEqual(expOpStat, Rune.DecodeLastFromUtf16(ReadOnlySpan<Char>(data), &rune, &cons))
+        Assert.AreEqual(expRune, rune.Value)
+        Assert.AreEqual(expCharCons, cons)
