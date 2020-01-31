@@ -282,3 +282,35 @@ type RuneTests() =
     [<DataRow('\uFFFD')>]
     [<DataRow(0x10FFFF)>]
     member _.``GetHashCode`` (value:int) = Assert.AreEqual(value, Rune(value).GetHashCode())
+
+    [<DataTestMethod>]
+    [<DataRow('a', "a", 0)>]
+    [<DataRow('b', "ab", 1)>]
+    [<DataRow('y', "x\U0001F46Ey", 3)>]
+    [<DataRow(0x1F46E, "x\U0001F46Ey", 1)>]
+    member _.``GetRuneAt_TryGetRuneAt_Utf16_Success`` (exp:int, input:string, index:int) =
+        Assert.AreEqual(exp, Rune.GetRuneAt(input, index).Value)
+
+        let mutable rune = Rune(0x00)
+        Assert.IsTrue(Rune.TryGetRuneAt(input, index, &rune))
+        Assert.AreEqual(exp, rune.Value)
+
+    [<DataTestMethod>]
+    [<DataRow([| 'x'; '\uD83D'; '\uDC6E'; 'y' |], 2)>]
+    [<DataRow([| 'x'; '\uD800'; 'y' |], 1)>]
+    [<DataRow([| 'x'; '\uDFFF'; '\uDFFF' |], 1)>]
+    [<DataRow([| 'x'; '\uD800' |], 1)>]
+    member _.``GetRuneAt_TryGetRuneAt_Utf16_InvalidData`` (input:char[], index:int) =
+        let inpt = String(input)
+
+        Assert.ThrowsException<ArgumentException>(fun () -> Rune.GetRuneAt(inpt, index) |> ignore) |> ignore
+
+        let mutable rune = Rune(0x00)
+        Assert.IsFalse(Rune.TryGetRuneAt(inpt, index, &rune))
+        Assert.AreEqual(0, rune.Value)
+
+    [<TestMethod>]
+    member _.``GetRuneAt_TryGetRuneAt_Utf16_BadArgs`` () =
+        Assert.ThrowsException<ArgumentNullException>(fun () -> Rune.GetRuneAt(null, 0) |> ignore) |> ignore
+        Assert.ThrowsException<ArgumentOutOfRangeException>(fun () -> Rune.GetRuneAt("hello", -1) |> ignore) |> ignore
+        Assert.ThrowsException<ArgumentOutOfRangeException>(fun () -> Rune.GetRuneAt(String.Empty, 0) |> ignore) |> ignore

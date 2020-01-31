@@ -529,6 +529,23 @@ namespace System.Text {
 		public static explicit operator Rune(Int32 value) => new Rune(value);
 
 		/// <summary>
+		/// Gets the <see cref="Rune"/> which begins at index <paramref name="index"/> in
+		/// string <paramref name="input"/>.
+		/// </summary>
+		/// <remarks>
+		/// Throws if <paramref name="input"/> is null, if <paramref name="index"/> is out of range, or
+		/// if <paramref name="index"/> does not reference the start of a valid scalar value within <paramref name="input"/>.
+		/// </remarks>
+		public static Rune GetRuneAt(String input, Int32 index) {
+			Int32 runeValue = ReadRuneFromString(input, index);
+			if (runeValue < 0) {
+				throw new ArgumentException("Cannot extract scalar value", nameof(index));
+			}
+
+			return new Rune((uint)runeValue);
+		}
+
+		/// <summary>
 		/// Returns <see langword="true"/> iff <paramref name="value"/> is a valid Unicode scalar
 		/// value, i.e., is in [ U+0000..U+D7FF ], inclusive; or [ U+E000..U+10FFFF ], inclusive.
 		/// </summary>
@@ -627,6 +644,22 @@ namespace System.Text {
 			}
 			return charsWritten;
 		}
+
+		/// <summary>
+		/// Encodes this <see cref="Rune"/> to a UTF-8 destination buffer.
+		/// </summary>
+		/// <param name="destination">The buffer to which to write this value as UTF-8.</param>
+		/// <returns>The number of <see cref="Byte"/>s written to <paramref name="destination"/>.</returns>
+		/// <exception cref="ArgumentException">
+		/// If <paramref name="destination"/> is not large enough to hold the output.
+		/// </exception>
+		public Int32 EncodeToUtf8(Span<Byte> destination) {
+			if (!TryEncodeToUtf8(destination, out Int32 bytesWritten)) {
+				throw new ArgumentException("Destination too short", nameof(destination));
+			}
+			return bytesWritten;
+		}
+
 		public override Boolean Equals(Object? obj) => (obj is Rune other) && Equals(other);
 
 		public Boolean Equals(Rune other) => this == other;
@@ -676,6 +709,126 @@ namespace System.Text {
 
 			charsWritten = default;
 			return false;
+		}
+
+		/// <summary>
+		/// Encodes this <see cref="Rune"/> to a destination buffer as UTF-8 bytes.
+		/// </summary>
+		/// <param name="destination">The buffer to which to write this value as UTF-8.</param>
+		/// <param name="bytesWritten">
+		/// The number of <see cref="Byte"/>s written to <paramref name="destination"/>,
+		/// or 0 if the destination buffer is not large enough to contain the output.</param>
+		/// <returns>True if the value was written to the buffer; otherwise, false.</returns>
+		/// <remarks>
+		/// The <see cref="Utf8SequenceLength"/> property can be queried ahead of time to determine
+		/// the required size of the <paramref name="destination"/> buffer.
+		/// </remarks>
+		public Boolean TryEncodeToUtf8(Span<Byte> destination, out Int32 bytesWritten) {
+			// The bit patterns below come from the Unicode Standard, Table 3-6.
+
+			if (destination.Length >= 1) {
+				if (IsAscii) {
+					destination[0] = (Byte)value;
+					bytesWritten = 1;
+					return true;
+				}
+
+				if (destination.Length >= 2) {
+					if (value <= 0x7FFu) {
+						// Scalar 00000yyy yyxxxxxx -> bytes [ 110yyyyy 10xxxxxx ]
+						destination[0] = (Byte)((value + (0b110u << 11)) >> 6);
+						destination[1] = (Byte)((value & 0x3Fu) + 0x80u);
+						bytesWritten = 2;
+						return true;
+					}
+
+					if (destination.Length >= 3) {
+						if (value <= 0xFFFFu) {
+							// Scalar zzzzyyyy yyxxxxxx -> bytes [ 1110zzzz 10yyyyyy 10xxxxxx ]
+							destination[0] = (Byte)((value + (0b1110 << 16)) >> 12);
+							destination[1] = (Byte)(((value & (0x3Fu << 6)) >> 6) + 0x80u);
+							destination[2] = (Byte)((value & 0x3Fu) + 0x80u);
+							bytesWritten = 3;
+							return true;
+						}
+
+						if (destination.Length >= 4) {
+							// Scalar 000uuuuu zzzzyyyy yyxxxxxx -> bytes [ 11110uuu 10uuzzzz 10yyyyyy 10xxxxxx ]
+							destination[0] = (Byte)((value + (0b11110 << 21)) >> 18);
+							destination[1] = (Byte)(((value & (0x3Fu << 12)) >> 12) + 0x80u);
+							destination[2] = (Byte)(((value & (0x3Fu << 6)) >> 6) + 0x80u);
+							destination[3] = (Byte)((value & 0x3Fu) + 0x80u);
+							bytesWritten = 4;
+							return true;
+						}
+					}
+				}
+			}
+
+			// Destination buffer not large enough
+
+			bytesWritten = default;
+			return false;
+		}
+
+		/// <summary>
+		/// Attempts to get the <see cref="Rune"/> which begins at index <paramref name="index"/> in
+		/// string <paramref name="input"/>.
+		/// </summary>
+		/// <returns><see langword="true"/> if a scalar value was successfully extracted from the specified index,
+		/// <see langword="false"/> if a value could not be extracted due to invalid data.</returns>
+		/// <remarks>
+		/// Throws only if <paramref name="input"/> is null or <paramref name="index"/> is out of range.
+		/// </remarks>
+		public static Boolean TryGetRuneAt(String input, Int32 index, out Rune value) {
+			Int32 runeValue = ReadRuneFromString(input, index);
+			if (runeValue >= 0) {
+				value = new Rune((UInt32)runeValue);
+				return true;
+			} else {
+				value = default;
+				return false;
+			}
+		}
+
+		private static Int32 ReadRuneFromString(String input, Int32 index) {
+			if (input is null) {
+				throw new ArgumentNullException(nameof(input));
+			}
+
+			if ((UInt32)index >= (UInt32)input!.Length) {
+				throw new ArgumentOutOfRangeException(nameof(index));
+			}
+
+			// Optimistically assume input is within BMP.
+
+			UInt32 returnValue = input[index];
+			if (Unsafe.IsSurrogate(returnValue)) {
+				if (!Unsafe.IsHighSurrogate(returnValue)) {
+					return -1;
+				}
+
+				// Treat 'returnValue' as the high surrogate.
+				//
+				// If this becomes a hot code path, we can skip the below bounds check by reading
+				// off the end of the string using unsafe code. Since strings are null-terminated,
+				// we're guaranteed not to read a valid low surrogate, so we'll fail correctly if
+				// the string terminates unexpectedly.
+
+				index++;
+				if ((UInt32)index >= (UInt32)input.Length) {
+					return -1; // not an argument exception - just a "bad data" failure
+				}
+
+				UInt32 potentialLowSurrogate = input[index];
+				if (!Unsafe.IsLowSurrogate(potentialLowSurrogate)) {
+					return -1;
+				}
+
+				returnValue = Unsafe.Utf16Decode(returnValue, potentialLowSurrogate);
+			}
+
+			return (Int32)returnValue;
 		}
 	}
 }
