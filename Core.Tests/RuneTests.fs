@@ -258,3 +258,20 @@ type RuneTests() =
         Assert.AreEqual(expOpStat, Rune.DecodeLastFromUtf8(ReadOnlySpan<Byte>(data), &rune, &cons))
         Assert.AreEqual(expRune, rune.Value)
         Assert.AreEqual(expByteCons, cons)
+
+    [<DataTestMethod>]
+    [<DataRow(true, 0, 0)>]
+    [<DataRow(true, 0x10FFFF, 0x10FFFF)>]
+    [<DataRow(true, 0xFFFD, 0xFFFD)>]
+    [<DataRow(false, 0xFFFD, 0xFFFF)>]
+    [<DataRow(true, 'a', 'a')>]
+    [<DataRow(false, 'a', 'A')>]
+    [<DataRow(false, 'a', 'b')>]
+    member _.``Equals_OperatorEqual_OperatorNotEqual`` (exp:bool, first:int32, second:int32) =
+        let a = Rune(first)
+        let b = Rune(second)
+        Assert.AreEqual(exp, Object.Equals(a, b))
+        Assert.AreEqual(exp, a.Equals(b))
+        Assert.AreEqual(exp, a.Equals(b :> obj))
+        Assert.AreEqual(exp, (a = b))
+        Assert.AreNotEqual(exp, a <> b)
