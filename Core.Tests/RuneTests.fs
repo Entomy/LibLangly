@@ -603,3 +603,7 @@ type RuneTests() =
     [<DataTestMethod>]
     [<DynamicData("UnicodeInfoTestData_Latin1AndSelectOthers", DynamicDataSourceType.Method)>]
     member _.``GetNumericValue`` (data:UnicodeInfoTestData) = Assert.AreEqual(data.NumericValue, Rune.GetNumericValue(data.ScalarValue))
+
+    [<DataTestMethod>]
+    [<DynamicData("UnicodeInfoTestData_Latin1AndSelectOthers", DynamicDataSourceType.Method)>]
+    member _.``GetUnicodeCategory`` (data:UnicodeInfoTestData) = Assert.AreEqual(data.UnicodeCategory, Rune.GetUnicodeCategory(data.ScalarValue))

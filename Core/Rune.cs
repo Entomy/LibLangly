@@ -832,6 +832,8 @@ namespace System.Text {
 		}
 
 		public static Double GetNumericValue(Rune value) => CharUnicodeInfo.GetNumericValue(value.ToString(), 0);
+
+		public static UnicodeCategory GetUnicodeCategory(Rune value) => CharUnicodeInfo.GetUnicodeCategory(value.ToString(), 0);
 	}
 }
 #endif
