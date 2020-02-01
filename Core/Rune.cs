@@ -830,6 +830,16 @@ namespace System.Text {
 
 			return (Int32)returnValue;
 		}
+
+		public static Double GetNumericValue(Rune value) {
+			if (value.IsAscii) {
+				UInt32 baseNum = value.value - '0';
+				return (baseNum <= 9) ? (Double)baseNum : -1;
+			} else {
+				// not an ASCII char; fall back to globalization table
+				return CharUnicodeInfo.GetDigitValue((Char)value.Value);
+			}
+		}
 	}
 }
 #endif

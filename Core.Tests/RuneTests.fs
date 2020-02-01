@@ -3,6 +3,7 @@
 open System
 open System.Buffers
 open System.Collections.Generic
+open System.Globalization
 open System.Text
 open Stringier
 open Microsoft.VisualStudio.TestTools.UnitTesting
@@ -17,6 +18,23 @@ type GeneralTestData(scalarValue, isAscii, isBmp, plane, utf16Sequence, utf8Sequ
     member _.Utf16Sequence:char[] = utf16Sequence
     member _.Utf8Sequence:byte[] = utf8Sequence
     member this.__DebugDisplay:string = "U+" + this.ScalarValue.ToString("X4");
+
+type UnicodeInfoTestData(scalarValue, unicodeCategory, numericValue, isControl, isDigit, isLetter, isLetterOrDigit, isLower, isNumber, isPunctuation, isSeparator, isSymbol, isUpper, isWhiteSpace) =
+    member _.ScalarValue:Rune = scalarValue
+    member _.UnicodeCategory:UnicodeCategory = unicodeCategory
+    member _.NumericValue:float = numericValue
+    member _.IsControl:bool = isControl
+    member _.IsDigit:bool = isDigit
+    member _.IsLetter:bool = isLetter
+    member _.IsLetterOrDigit:bool = isLetterOrDigit
+    member _.IsLower:bool = isLower
+    member _.IsNumber:bool = isNumber
+    member _.IsPunctuation:bool = isPunctuation
+    member _.IsSeparator:bool = isSeparator
+    member _.IsSymbol:bool = isSymbol
+    member _.IsUpper:bool = isUpper
+    member _.IsWhiteSpace:bool = isWhiteSpace
+    member this.__DebugDisplay:string = "U+" + this.ScalarValue.Value.ToString("X4")
 
 [<TestClass>]
 type RuneTests() =
@@ -38,6 +56,137 @@ type RuneTests() =
     static member GeneralTestData_SupplementaryCodePoints_ValidOnly():seq<Object[]> = seq {
         yield [| GeneralTestData(0x10000, false, false, 1, [| '\uD800'; '\uDC00' |], [| 0xF0uy; 0x90uy; 0x80uy; 0x80uy |]) |]
         yield [| GeneralTestData(0x10FFFF, false, false, 16, [| '\uDBFF'; '\uDFFF' |], [| 0xF4uy; 0x8Fuy; 0xBFuy; 0xBFuy |]) |] }
+
+    static member UnicodeInfoTestData_Latin1AndSelectOthers():seq<Object[]> = seq {
+        yield [| UnicodeInfoTestData(Rune(0x00), UnicodeCategory.Control, -1.0, true, false, false, false, false, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x01), UnicodeCategory.Control, -1.0, true, false, false, false, false, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x02), UnicodeCategory.Control, -1.0, true, false, false, false, false, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x03), UnicodeCategory.Control, -1.0, true, false, false, false, false, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x04), UnicodeCategory.Control, -1.0, true, false, false, false, false, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x05), UnicodeCategory.Control, -1.0, true, false, false, false, false, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x06), UnicodeCategory.Control, -1.0, true, false, false, false, false, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x07), UnicodeCategory.Control, -1.0, true, false, false, false, false, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x08), UnicodeCategory.Control, -1.0, true, false, false, false, false, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x09), UnicodeCategory.Control, -1.0, true, false, false, false, false, false, false, false, false, false, true) |]
+        yield [| UnicodeInfoTestData(Rune(0x0A), UnicodeCategory.Control, -1.0, true, false, false, false, false, false, false, false, false, false, true) |]
+        yield [| UnicodeInfoTestData(Rune(0x0B), UnicodeCategory.Control, -1.0, true, false, false, false, false, false, false, false, false, false, true) |]
+        yield [| UnicodeInfoTestData(Rune(0x0C), UnicodeCategory.Control, -1.0, true, false, false, false, false, false, false, false, false, false,  true) |]
+        yield [| UnicodeInfoTestData(Rune(0x0D), UnicodeCategory.Control, -1.0, true, false, false, false, false, false, false, false, false, false, true) |]
+        yield [| UnicodeInfoTestData(Rune(0x0E), UnicodeCategory.Control, -1.0, true, false, false, false, false, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x0F), UnicodeCategory.Control, -1.0, true, false, false, false, false, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x10), UnicodeCategory.Control, -1.0, true, false, false, false, false, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x11), UnicodeCategory.Control, -1.0, true, false, false, false, false, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x12), UnicodeCategory.Control, -1.0, true, false, false, false, false, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x13), UnicodeCategory.Control, -1.0, true, false, false, false, false, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x14), UnicodeCategory.Control, -1.0, true, false, false, false, false, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x15), UnicodeCategory.Control, -1.0, true, false, false, false, false, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x16), UnicodeCategory.Control, -1.0, true, false, false, false, false, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x17), UnicodeCategory.Control, -1.0, true, false, false, false, false, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x18), UnicodeCategory.Control, -1.0, true, false, false, false, false, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x19), UnicodeCategory.Control, -1.0, true, false, false, false, false, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x1A), UnicodeCategory.Control, -1.0, true, false, false, false, false, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x1B), UnicodeCategory.Control, -1.0, true, false, false, false, false, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x1C), UnicodeCategory.Control, -1.0, true, false, false, false, false, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x1D), UnicodeCategory.Control, -1.0, true, false, false, false, false, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x1E), UnicodeCategory.Control, -1.0, true, false, false, false, false, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x1F), UnicodeCategory.Control, -1.0, true, false, false, false, false, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x20), UnicodeCategory.SpaceSeparator, -1.0, false, false, false, false, false, false, false, true, false, false, true) |]
+        yield [| UnicodeInfoTestData(Rune(0x21), UnicodeCategory.OtherPunctuation, -1.0, false, false, false, false, false, false, true, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x22), UnicodeCategory.OtherPunctuation, -1.0, false, false, false, false, false, false, true, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x23), UnicodeCategory.OtherPunctuation, -1.0, false, false, false, false, false, false, true, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x24), UnicodeCategory.CurrencySymbol, -1.0, false, false, false, false, false, false, false, false, true, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x25), UnicodeCategory.OtherPunctuation, -1.0, false, false, false, false, false, false, true, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x26), UnicodeCategory.OtherPunctuation, -1.0, false, false, false, false, false, false, true, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x27), UnicodeCategory.OtherPunctuation, -1.0, false, false, false, false, false, false, true, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x28), UnicodeCategory.OpenPunctuation, -1.0, false, false, false, false, false, false, true, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x29), UnicodeCategory.ClosePunctuation, -1.0, false, false, false, false, false, false, true, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x2A), UnicodeCategory.OtherPunctuation, -1.0, false, false, false, false, false, false, true, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x2B), UnicodeCategory.MathSymbol, -1.0, false, false, false, false, false, false, false, false, true, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x2C), UnicodeCategory.OtherPunctuation, -1.0, false, false, false, false, false, false, true, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x2D), UnicodeCategory.DashPunctuation, -1.0, false, false, false, false, false, false, true, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x2E), UnicodeCategory.OtherPunctuation, -1.0, false, false, false, false, false, false, true, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x2F), UnicodeCategory.OtherPunctuation, -1.0, false, false, false, false, false, false, true, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x30), UnicodeCategory.DecimalDigitNumber, 0.0, false, true, false, true, false, true, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x31), UnicodeCategory.DecimalDigitNumber, 1.0, false, true, false, true, false, true, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x32), UnicodeCategory.DecimalDigitNumber, 2.0, false, true, false, true, false, true, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x33), UnicodeCategory.DecimalDigitNumber, 3.0, false, true, false, true, false, true, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x34), UnicodeCategory.DecimalDigitNumber, 4.0, false, true, false, true, false, true, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x35), UnicodeCategory.DecimalDigitNumber, 5.0, false, true, false, true, false, true, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x36), UnicodeCategory.DecimalDigitNumber, 6.0, false, true, false, true, false, true, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x37), UnicodeCategory.DecimalDigitNumber, 7.0, false, true, false, true, false, true, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x38), UnicodeCategory.DecimalDigitNumber, 8.0, false, true, false, true, false, true, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x39), UnicodeCategory.DecimalDigitNumber, 9.0, false, true, false, true, false, true, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x3A), UnicodeCategory.OtherPunctuation, -1.0, false, false, false, false, false, false, true, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x3B), UnicodeCategory.OtherPunctuation, -1.0, false, false, false, false, false, false, true, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x3C), UnicodeCategory.MathSymbol, -1.0, false, false, false, false, false, false, false, false, true, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x3D), UnicodeCategory.MathSymbol, -1.0, false, false, false, false, false, false, false, false, true, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x3E), UnicodeCategory.MathSymbol, -1.0, false, false, false, false, false, false, false, false, true, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x3F), UnicodeCategory.OtherPunctuation, -1.0, false, false, false, false, false, false, true, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x40), UnicodeCategory.OtherPunctuation, -1.0, false, false, false, false, false, false, true, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x41), UnicodeCategory.UppercaseLetter, -1.0, false, false, true, true, false, false, false, false, false, true, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x42), UnicodeCategory.UppercaseLetter, -1.0, false, false, true, true, false, false, false, false, false, true, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x43), UnicodeCategory.UppercaseLetter, -1.0, false, false, true, true, false, false, false, false, false, true, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x44), UnicodeCategory.UppercaseLetter, -1.0, false, false, true, true, false, false, false, false, false, true, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x45), UnicodeCategory.UppercaseLetter, -1.0, false, false, true, true, false, false, false, false, false, true, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x46), UnicodeCategory.UppercaseLetter, -1.0, false, false, true, true, false, false, false, false, false, true, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x47), UnicodeCategory.UppercaseLetter, -1.0, false, false, true, true, false, false, false, false, false, true, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x48), UnicodeCategory.UppercaseLetter, -1.0, false, false, true, true, false, false, false, false, false, true, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x49), UnicodeCategory.UppercaseLetter, -1.0, false, false, true, true, false, false, false, false, false, true, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x4A), UnicodeCategory.UppercaseLetter, -1.0, false, false, true, true, false, false, false, false, false, true, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x4B), UnicodeCategory.UppercaseLetter, -1.0, false, false, true, true, false, false, false, false, false, true, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x4C), UnicodeCategory.UppercaseLetter, -1.0, false, false, true, true, false, false, false, false, false, true, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x4D), UnicodeCategory.UppercaseLetter, -1.0, false, false, true, true, false, false, false, false, false, true, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x4E), UnicodeCategory.UppercaseLetter, -1.0, false, false, true, true, false, false, false, false, false, true, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x4F), UnicodeCategory.UppercaseLetter, -1.0, false, false, true, true, false, false, false, false, false, true, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x50), UnicodeCategory.UppercaseLetter, -1.0, false, false, true, true, false, false, false, false, false, true, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x51), UnicodeCategory.UppercaseLetter, -1.0, false, false, true, true, false, false, false, false, false, true, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x52), UnicodeCategory.UppercaseLetter, -1.0, false, false, true, true, false, false, false, false, false, true, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x53), UnicodeCategory.UppercaseLetter, -1.0, false, false, true, true, false, false, false, false, false, true, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x54), UnicodeCategory.UppercaseLetter, -1.0, false, false, true, true, false, false, false, false, false, true, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x55), UnicodeCategory.UppercaseLetter, -1.0, false, false, true, true, false, false, false, false, false, true, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x56), UnicodeCategory.UppercaseLetter, -1.0, false, false, true, true, false, false, false, false, false, true, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x57), UnicodeCategory.UppercaseLetter, -1.0, false, false, true, true, false, false, false, false, false, true, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x58), UnicodeCategory.UppercaseLetter, -1.0, false, false, true, true, false, false, false, false, false, true, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x59), UnicodeCategory.UppercaseLetter, -1.0, false, false, true, true, false, false, false, false, false, true, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x5A), UnicodeCategory.UppercaseLetter, -1.0, false, false, true, true, false, false, false, false, false, true, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x5B), UnicodeCategory.OpenPunctuation, -1.0, false, false, false, false, false, false, true, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x5C), UnicodeCategory.OtherPunctuation, -1.0, false, false, false, false, false, false, true, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x5D), UnicodeCategory.ClosePunctuation, -1.0, false, false, false, false, false, false, true, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x5E), UnicodeCategory.ModifierSymbol, -1.0, false, false, false, false, false, false, false, false, true, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x5F), UnicodeCategory.ConnectorPunctuation, -1.0, false, false, false, false, false, false, true, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x60), UnicodeCategory.ModifierSymbol, -1.0, false, false, false, false, false, false, false, false, true, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x61), UnicodeCategory.LowercaseLetter, -1.0, false, false, true, true, true, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x62), UnicodeCategory.LowercaseLetter, -1.0, false, false, true, true, true, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x63), UnicodeCategory.LowercaseLetter, -1.0, false, false, true, true, true, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x64), UnicodeCategory.LowercaseLetter, -1.0, false, false, true, true, true, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x65), UnicodeCategory.LowercaseLetter, -1.0, false, false, true, true, true, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x66), UnicodeCategory.LowercaseLetter, -1.0, false, false, true, true, true, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x67), UnicodeCategory.LowercaseLetter, -1.0, false, false, true, true, true, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x68), UnicodeCategory.LowercaseLetter, -1.0, false, false, true, true, true, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x69), UnicodeCategory.LowercaseLetter, -1.0, false, false, true, true, true, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x6A), UnicodeCategory.LowercaseLetter, -1.0, false, false, true, true, true, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x6B), UnicodeCategory.LowercaseLetter, -1.0, false, false, true, true, true, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x6C), UnicodeCategory.LowercaseLetter, -1.0, false, false, true, true, true, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x6D), UnicodeCategory.LowercaseLetter, -1.0, false, false, true, true, true, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x6E), UnicodeCategory.LowercaseLetter, -1.0, false, false, true, true, true, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x6F), UnicodeCategory.LowercaseLetter, -1.0, false, false, true, true, true, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x70), UnicodeCategory.LowercaseLetter, -1.0, false, false, true, true, true, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x71), UnicodeCategory.LowercaseLetter, -1.0, false, false, true, true, true, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x72), UnicodeCategory.LowercaseLetter, -1.0, false, false, true, true, true, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x73), UnicodeCategory.LowercaseLetter, -1.0, false, false, true, true, true, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x74), UnicodeCategory.LowercaseLetter, -1.0, false, false, true, true, true, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x75), UnicodeCategory.LowercaseLetter, -1.0, false, false, true, true, true, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x76), UnicodeCategory.LowercaseLetter, -1.0, false, false, true, true, true, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x77), UnicodeCategory.LowercaseLetter, -1.0, false, false, true, true, true, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x78), UnicodeCategory.LowercaseLetter, -1.0, false, false, true, true, true, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x79), UnicodeCategory.LowercaseLetter, -1.0, false, false, true, true, true, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x7A), UnicodeCategory.LowercaseLetter, -1.0, false, false, true, true, true, false, false, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x7B), UnicodeCategory.OpenPunctuation, -1.0, false, false, false, false, false, false, true, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x7C), UnicodeCategory.MathSymbol, -1.0, false, false, false, false, false, false, false, false, true, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x7D), UnicodeCategory.ClosePunctuation, -1.0, false, false, false, false, false, false, true, false, false, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x7E), UnicodeCategory.MathSymbol, -1.0, false, false, false, false, false, false, false, false, true, false, false) |]
+        yield [| UnicodeInfoTestData(Rune(0x7F), UnicodeCategory.Control, -1.0, true, false, false, false, false, false, false, false, false, false, false) |]
+        }
 
     [<DataTestMethod>]
     [<DynamicData("GeneralTestData_BmpCodePoints_NoSurrogates", DynamicDataSourceType.Method)>]
@@ -314,3 +463,7 @@ type RuneTests() =
         Assert.ThrowsException<ArgumentNullException>(fun () -> Rune.GetRuneAt(null, 0) |> ignore) |> ignore
         Assert.ThrowsException<ArgumentOutOfRangeException>(fun () -> Rune.GetRuneAt("hello", -1) |> ignore) |> ignore
         Assert.ThrowsException<ArgumentOutOfRangeException>(fun () -> Rune.GetRuneAt(String.Empty, 0) |> ignore) |> ignore
+
+    [<DataTestMethod>]
+    [<DynamicData("UnicodeInfoTestData_Latin1AndSelectOthers", DynamicDataSourceType.Method)>]
+    member _.``GetNumericValue`` (data:UnicodeInfoTestData) = Assert.AreEqual(data.NumericValue, Rune.GetNumericValue(data.ScalarValue))
