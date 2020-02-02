@@ -39,7 +39,7 @@ type UnicodeInfoTestData(scalarValue, unicodeCategory, numericValue, isControl, 
 [<TestClass>]
 type RuneTests() =
     static member AllRunes():seq<Rune> = seq {
-        for i in 0u..0xD800u do yield Rune(i)
+        for i in 0u..0xD7FFu do yield Rune(i)
         for i in 0xE000u..0x10FFFFu do yield Rune(i) }
         
     static member GeneralTestData_BmpCodePoints_NoSurrogates():seq<Object[]> = seq {
@@ -607,3 +607,14 @@ type RuneTests() =
     [<DataTestMethod>]
     [<DynamicData("UnicodeInfoTestData_Latin1AndSelectOthers", DynamicDataSourceType.Method)>]
     member _.``GetUnicodeCategory`` (data:UnicodeInfoTestData) = Assert.AreEqual(data.UnicodeCategory, Rune.GetUnicodeCategory(data.ScalarValue))
+
+    [<TestMethod>]
+    member _.``GetUnicodeCategory_AllInputs`` () =
+        // This tests calls Rune.GetUnicodeCategory for every possible input, ensuring that
+        // the runtime agrees with the data in the core Unicode files.
+        for rune in RuneTests.AllRunes() do
+            if UnicodeData.GetUnicodeCategory(uint32 rune.Value) <> Rune.GetUnicodeCategory(rune) then
+                // We'll build up the exception message ourselves so the dev knows what code point failed.
+                raise(AssertFailedException("Rune.GetUnicodeCategory(U+" + rune.Value.ToString("X4") + ") returned wrong category: " + Rune.GetUnicodeCategory(rune).ToString() + ", but should have been: " + UnicodeData.GetUnicodeCategory(uint32 rune.Value).ToString() + "."))
+            else
+                ()

@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+	  <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<Content Include="..\THIRD_PARTY_NOTICES" PackagePath="\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="IndexRange" Version="1.0.0" />
+	  <PackageReference Include="MSTest.TestFramework" Version="2.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="CaseFolding-12.1.0.txt">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	  <None Update="PropList-12.1.0.txt">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	  <None Update="UnicodeData.11.0.txt">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>
+
+</Project>
