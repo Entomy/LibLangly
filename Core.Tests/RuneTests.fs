@@ -618,3 +618,43 @@ type RuneTests() =
                 raise(AssertFailedException("Rune.GetUnicodeCategory(U+" + rune.Value.ToString("X4") + ") returned wrong category: " + Rune.GetUnicodeCategory(rune).ToString() + ", but should have been: " + UnicodeData.GetUnicodeCategory(uint32 rune.Value).ToString() + "."))
             else
                 ()
+
+    [<DataTestMethod>]
+    [<DynamicData("UnicodeInfoTestData_Latin1AndSelectOthers", DynamicDataSourceType.Method)>]
+    member _.``IsControl`` (data:UnicodeInfoTestData) = Assert.AreEqual(data.IsControl, Rune.IsControl(data.ScalarValue))
+
+    [<DataTestMethod>]
+    [<DynamicData("UnicodeInfoTestData_Latin1AndSelectOthers", DynamicDataSourceType.Method)>]
+    member _.``IsDigit`` (data:UnicodeInfoTestData) = Assert.AreEqual(data.IsDigit, Rune.IsDigit(data.ScalarValue))
+
+    [<DataTestMethod>]
+    [<DynamicData("UnicodeInfoTestData_Latin1AndSelectOthers", DynamicDataSourceType.Method)>]
+    member _.``IsLetter`` (data:UnicodeInfoTestData) = Assert.AreEqual(data.IsLetter, Rune.IsLetter(data.ScalarValue))
+
+    [<DataTestMethod>]
+    [<DynamicData("UnicodeInfoTestData_Latin1AndSelectOthers", DynamicDataSourceType.Method)>]
+    member _.``IsLetterOrDigit`` (data:UnicodeInfoTestData) = Assert.AreEqual(data.IsLetterOrDigit, Rune.IsLetterOrDigit(data.ScalarValue))
+
+    [<DataTestMethod>]
+    [<DynamicData("UnicodeInfoTestData_Latin1AndSelectOthers", DynamicDataSourceType.Method)>]
+    member _.``IsLower`` (data:UnicodeInfoTestData) = Assert.AreEqual(data.IsLower, Rune.IsLower(data.ScalarValue))
+
+    [<DataTestMethod>]
+    [<DynamicData("UnicodeInfoTestData_Latin1AndSelectOthers", DynamicDataSourceType.Method)>]
+    member _.``IsNumber``(data:UnicodeInfoTestData) = Assert.AreEqual(data.IsNumber, Rune.IsNumber(data.ScalarValue))
+
+    [<DataTestMethod>]
+    [<DynamicData("UnicodeInfoTestData_Latin1AndSelectOthers", DynamicDataSourceType.Method)>]
+    member _.``IsPunctuation`` (data:UnicodeInfoTestData) = Assert.AreEqual(data.IsPunctuation, Rune.IsPunctuation(data.ScalarValue))
+
+    [<DataTestMethod>]
+    [<DynamicData("UnicodeInfoTestData_Latin1AndSelectOthers", DynamicDataSourceType.Method)>]
+    member _.``IsSeparator`` (data:UnicodeInfoTestData) = Assert.AreEqual(data.IsSeparator, Rune.IsSeparator(data.ScalarValue))
+
+    [<DataTestMethod>]
+    [<DynamicData("UnicodeInfoTestData_Latin1AndSelectOthers", DynamicDataSourceType.Method)>]
+    member _.``IsSymbol`` (data:UnicodeInfoTestData) = Assert.AreEqual(data.IsSymbol, Rune.IsSymbol(data.ScalarValue))
+
+    [<DataTestMethod>]
+    [<DynamicData("UnicodeInfoTestData_Latin1AndSelectOthers", DynamicDataSourceType.Method)>]
+    member _.``IsUpper`` (data:UnicodeInfoTestData) = Assert.AreEqual(data.IsUpper, Rune.IsUpper(data.ScalarValue))
