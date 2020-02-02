@@ -10,32 +10,6 @@ open Microsoft.VisualStudio.TestTools.UnitTesting
 
 //! This file uses testing code/approaches also used by the .NET Core runtime. Copyright belongs to the .NET Core Foundation.
 
-type GeneralTestData(scalarValue, isAscii, isBmp, plane, utf16Sequence, utf8Sequence) =
-    member _.ScalarValue:int32 = scalarValue
-    member _.IsAscii:bool = isAscii
-    member _.IsBmp:bool = isBmp
-    member _.Plane:int32 = plane
-    member _.Utf16Sequence:char[] = utf16Sequence
-    member _.Utf8Sequence:byte[] = utf8Sequence
-    member this.__DebugDisplay:string = "U+" + this.ScalarValue.ToString("X4");
-
-type UnicodeInfoTestData(scalarValue, unicodeCategory, numericValue, isControl, isDigit, isLetter, isLetterOrDigit, isLower, isNumber, isPunctuation, isSeparator, isSymbol, isUpper, isWhiteSpace) =
-    member _.ScalarValue:Rune = scalarValue
-    member _.UnicodeCategory:UnicodeCategory = unicodeCategory
-    member _.NumericValue:float = numericValue
-    member _.IsControl:bool = isControl
-    member _.IsDigit:bool = isDigit
-    member _.IsLetter:bool = isLetter
-    member _.IsLetterOrDigit:bool = isLetterOrDigit
-    member _.IsLower:bool = isLower
-    member _.IsNumber:bool = isNumber
-    member _.IsPunctuation:bool = isPunctuation
-    member _.IsSeparator:bool = isSeparator
-    member _.IsSymbol:bool = isSymbol
-    member _.IsUpper:bool = isUpper
-    member _.IsWhiteSpace:bool = isWhiteSpace
-    member this.__DebugDisplay:string = "U+" + this.ScalarValue.Value.ToString("X4")
-
 [<TestClass>]
 type RuneTests() =
     static member AllRunes():seq<Rune> = seq {

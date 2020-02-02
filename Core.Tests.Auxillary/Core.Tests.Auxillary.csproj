@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
 	  <LangVersion>8.0</LangVersion>
+	  <RootNamespace>Tests</RootNamespace>
   </PropertyGroup>
 
 	<ItemGroup>
@@ -12,6 +13,10 @@
 	<ItemGroup>
 	  <PackageReference Include="IndexRange" Version="1.0.0" />
 	  <PackageReference Include="MSTest.TestFramework" Version="2.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Core\Core.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
