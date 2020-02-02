@@ -5,6 +5,7 @@
 using System.Buffers;
 using System.Diagnostics;
 using System.Globalization;
+using Defender;
 using Stringier;
 
 namespace System.Text {
@@ -876,6 +877,14 @@ namespace System.Text {
 		public static Boolean IsUpper(Rune value) => GetUnicodeCategory(value) == UnicodeCategory.UppercaseLetter;
 
 		public static Boolean IsWhiteSpace(Rune value) => value.value == 0x85u || IsSeparator(value);
+
+		public static Rune ToLower(Rune value, CultureInfo culture) => GetRuneAt(value.ToString().ToLower(culture), 0);
+
+		public static Rune ToLowerInvariant(Rune value) => GetRuneAt(value.ToString().ToLowerInvariant(), 0);
+
+		public static Rune ToUpper(Rune value, CultureInfo culture) => GetRuneAt(value.ToString().ToUpper(culture), 0);
+
+		public static Rune ToUpperInvariant(Rune value) => GetRuneAt(value.ToString().ToUpperInvariant(), 0);
 	}
 }
 #endif

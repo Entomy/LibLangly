@@ -325,6 +325,48 @@ type RuneTests() =
         yield [| UnicodeInfoTestData(Rune(0x10177), UnicodeCategory.OtherNumber,        2.0 / 3.0, false, false, false, false, false, true, false, false, false, false, false) |] }
 
     [<DataTestMethod>]
+    [<DataRow('0', '0', '0', "en-US")>]
+    [<DataRow('a', 'A', 'a', "en-US")>]
+    [<DataRow('i', 'I', 'i', "en-US")>]
+    [<DataRow('i', '\u0130', 'i', "tr-TR")>]
+    [<DataRow('z', 'Z', 'z', "en-US")>]
+    [<DataRow('A', 'A', 'a', "en-US")>]
+    [<DataRow('I', 'I', 'i', "en-US")>]
+    [<DataRow('I', 'I', '\u0131', "tr-TR")>]
+    [<DataRow('Z', 'Z', 'z', "en-US")>]
+    [<DataRow('\u00DF', '\u00DF', '\u00DF', "de-DE")>] // U+00DF LATIN SMALL LETTER SHARP S -- n.b. ToUpper doesn't create the majuscule form
+    [<DataRow('\u0130', '\u0130', 'i', "tr-TR")>] // U+0130 LATIN CAPITAL LETTER I WITH DOT ABOVE
+    [<DataRow('\u0131', 'I', '\u0131', "tr-TR")>] // U+0131 LATIN SMALL LETTER DOTLESS I
+    [<DataRow('\u1E9E', '\u1E9E', '\u00DF', "de-DE")>] // U+1E9E LATIN CAPITAL LETTER SHARP S
+    [<DataRow(0x10400, 0x10400, 0x10428, "en-US")>] // U+10400 DESERET CAPITAL LETTER LONG I
+    [<DataRow(0x10428, 0x10400, 0x10428, "en-US")>] // U+10428 DESERET SMALL LETTER LONG I
+    member _.``Casing_CultureAware`` (original:int, upper:int, lower:int, culture:string) =
+        let rune = Rune(original)
+        let cultureInfo = CultureInfo.GetCultureInfo(culture)
+        Assert.AreEqual(Rune(upper), Rune.ToUpper(rune, cultureInfo))
+        Assert.AreEqual(Rune(lower), Rune.ToLower(rune, cultureInfo))
+
+    // Invariant ToUpper / ToLower doesn't modify Turkish I or majuscule Eszett
+    [<DataTestMethod>] // the localization tables used by our test data only exist on Win8+
+    [<DataRow('0', '0', '0')>]
+    [<DataRow('a', 'A', 'a')>]
+    [<DataRow('i', 'I', 'i')>]
+    [<DataRow('z', 'Z', 'z')>]
+    [<DataRow('A', 'A', 'a')>]
+    [<DataRow('I', 'I', 'i')>]
+    [<DataRow('Z', 'Z', 'z')>]
+    [<DataRow('\u00DF', '\u00DF', '\u00DF')>] // U+00DF LATIN SMALL LETTER SHARP S
+    [<DataRow('\u0130', '\u0130', '\u0130')>] // U+0130 LATIN CAPITAL LETTER I WITH DOT ABOVE
+    [<DataRow('\u0131', '\u0131', '\u0131')>] // U+0131 LATIN SMALL LETTER DOTLESS I
+    [<DataRow('\u1E9E', '\u1E9E', '\u1E9E')>] // U+1E9E LATIN CAPITAL LETTER SHARP S
+    [<DataRow(0x10400, 0x10400, 0x10428)>] // U+10400 DESERET CAPITAL LETTER LONG I
+    [<DataRow(0x10428, 0x10400, 0x10428)>] // U+10428 DESERET SMALL LETTER LONG I
+    member _.``Casing_Invariant``(original:int, upper:int, lower:int) = 
+        let rune = Rune(original)
+        Assert.AreEqual(Rune(upper), Rune.ToUpperInvariant(rune))
+        Assert.AreEqual(Rune(lower), Rune.ToLowerInvariant(rune))
+
+    [<DataTestMethod>]
     [<DynamicData("GeneralTestData_BmpCodePoints_NoSurrogates", DynamicDataSourceType.Method)>]
     member _.``Ctor_Cast_Char_Valid`` (testData:GeneralTestData) =
         let rune = Rune(testData.ScalarValue)
