@@ -750,3 +750,63 @@ type RuneTests() =
 
     [<TestMethod>]
     member _.``ReplacementChar`` () = Assert.AreEqual(0xFFFD, Rune.ReplacementChar.Value)
+
+    [<DataTestMethod>]
+    [<DynamicData("GeneralTestData_BmpCodePoints_NoSurrogates", DynamicDataSourceType.Method)>]
+    member _.``TryCreate_Char_Valid`` (data:GeneralTestData) =
+        let mutable result = Rune(0x00)
+        Assert.IsTrue(Rune.TryCreate(char data.ScalarValue, &result))
+        Assert.AreEqual(data.ScalarValue, result.Value)
+
+    [<DataTestMethod>]
+    [<DynamicData("BmpCodePoints_SurrogatesOnly", DynamicDataSourceType.Method)>]
+    member _.``TryCreate_Char_Invalid`` (value:int) =
+        let mutable result = Rune(0x00)
+        Assert.IsFalse(Rune.TryCreate(char value, &result))
+        Assert.AreEqual(0, result.Value)
+
+    [<DataTestMethod>]
+    [<DynamicData("SurrogatePairTestData_ValidOnly", DynamicDataSourceType.Method)>]
+    member _.``TryCreate_SurrogateChars_Valid`` (exp:int, high:char, low:char) =
+        let mutable result = Rune(0x00)
+        Assert.IsTrue(Rune.TryCreate(high, low, &result))
+        Assert.AreEqual(exp, result.Value)
+
+    [<DataTestMethod>]
+    [<DynamicData("SurrogatePairTestData_InvalidOnly", DynamicDataSourceType.Method)>]
+    member _.``TryCreate_SurrogateChars_Invalid`` (high:char, low:char) =
+        let mutable result = Rune(0x00)
+        Assert.IsFalse(Rune.TryCreate(high, low, &result))
+        Assert.AreEqual(exp, result.Value)
+
+    [<DataTestMethod>]
+    [<DynamicData("GeneralTestData_BmpCodePoints_NoSurrogates", DynamicDataSourceType.Method)>]
+    [<DynamicData("GeneralTestData_SupplementaryCodePoints_ValidOnly", DynamicDataSourceType.Method)>]
+    member _.``TryCreate_Int32_Valid`` (data:GeneralTestData) =
+        let mutable result = Rune(0x00)
+        Assert.IsTrue(Rune.TryCreate(data.ScalarValue, &result))
+        Assert.AreEqual(data.ScalarValue, result.Value)
+
+    [<DataTestMethod>]
+    [<DynamicData("BmpCodePoints_SurrogatesOnly", DynamicDataSourceType.Method)>]
+    [<DynamicData("SupplementaryCodePoints_InvalidOnly", DynamicDataSourceType.Method)>]
+    member _.``TryCreate_Int32_Invalid`` (value:int) =
+        let mutable result = Rune(0x00)
+        Assert.IsFalse(Rune.TryCreate(value, &result))
+        Assert.AreEqual(0, result.Value)
+
+    [<DataTestMethod>]
+    [<DynamicData("GeneralTestData_BmpCodePoints_NoSurrogates", DynamicDataSourceType.Method)>]
+    [<DynamicData("GeneralTestData_SupplementaryCodePoints_ValidOnly", DynamicDataSourceType.Method)>]
+    member _.``TryCreate_UInt32_Valid`` (data:GeneralTestData) =
+        let mutable result = Rune(0x00)
+        Assert.IsTrue(Rune.TryCreate(uint32 data.ScalarValue, &result))
+        Assert.AreEqual(data.ScalarValue, result.Value)
+
+    [<DataTestMethod>]
+    [<DynamicData("BmpCodePoints_SurrogatesOnly", DynamicDataSourceType.Method)>]
+    [<DynamicData("SupplementaryCodePoints_InvalidOnly", DynamicDataSourceType.Method)>]
+    member _.``TryCreate_UInt32_Invalid`` (value:int) =
+        let mutable result = Rune(0x00)
+        Assert.IsFalse(Rune.TryCreate(uint32 value, &result))
+        Assert.AreEqual(0, result.Value)
