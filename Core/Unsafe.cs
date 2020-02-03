@@ -35,7 +35,7 @@ namespace Stringier {
 		internal static Boolean IsSmp(UInt32 codePoint) => Plane(codePoint) == 1;
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static Boolean IsSurrogate(UInt32 codePoint) => unchecked((codePoint - 0xD800u) <= 0x07FFFu);
+		internal static Boolean IsSurrogate(UInt32 codePoint) => codePoint.Within(0xD800u, 0xDFFFu);
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static UInt32 Plane(UInt32 codePoint) => unchecked(codePoint >> 16);
