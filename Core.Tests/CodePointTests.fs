@@ -6,9 +6,7 @@ open Microsoft.VisualStudio.TestTools.UnitTesting
 
 [<TestClass>]
 type CodePointTests() =
-    static member AllCodePoints():seq<obj[]> = seq {
-        for i in 0..0xD7FF do yield [| i |]
-        for i in 0xE000..0x10FFFF do yield [| i |] }
+    static member AllCodePoints():seq<obj[]> = seq { for i in 0..0xD7FF..0x10FFFF do yield [| i |] }
 
     [<TestMethod>]
     member _.``constructor int32 - valid`` () =
