@@ -6,20 +6,14 @@ open Microsoft.VisualStudio.TestTools.UnitTesting
 
 [<TestClass>]
 type CodePointTests() =
-    [<DataTestMethod>]
-    [<DataRow(0x00)>]
-    [<DataRow(0x41)>]
-    [<DataRow(0x7F)>]
-    [<DataRow(0x80)>]
-    [<DataRow(0x07FF)>]
-    [<DataRow(0x8080)>]
-    [<DataRow(0xD7FF)>]
-    [<DataRow(0xE000)>]
-    [<DataRow(0xFFFD)>]
-    [<DataRow(0xFFFF)>]
-    [<DataRow(0x10FFFF)>]
-    member _.``constructor int32 - valid`` (codepoint:int32) =
-        CodePoint(codepoint)
+    static member AllCodePoints():seq<obj[]> = seq {
+        for i in 0..0xD7FF do yield [| i |]
+        for i in 0xE000..0x10FFFF do yield [| i |] }
+
+    [<TestMethod>]
+    member _.``constructor int32 - valid`` () =
+        for row in CodePointTests.AllCodePoints() do
+            CodePoint(Convert.ToInt32 row.[0])
         ()
 
     [<DataTestMethod>]
@@ -29,20 +23,10 @@ type CodePointTests() =
         //Due to a design decision for F#, CodePoint can not be passed to ignore, meaning one of its properties needs to be called to use it in this context. The exception is thrown during construction regardless, so the property is never called. Even if it was, the required functionality is still being tested.
         Assert.ThrowsException<ArgumentOutOfRangeException>((fun () -> CodePoint(codepoint).IsAscii |> ignore)) |> ignore
 
-    [<DataTestMethod>]
-    [<DataRow(0x00u)>]
-    [<DataRow(0x41u)>]
-    [<DataRow(0x7Fu)>]
-    [<DataRow(0x80u)>]
-    [<DataRow(0x07FFu)>]
-    [<DataRow(0x8080u)>]
-    [<DataRow(0xD7FFu)>]
-    [<DataRow(0xE000u)>]
-    [<DataRow(0xFFFDu)>]
-    [<DataRow(0xFFFFu)>]
-    [<DataRow(0x10FFFFu)>]
-    member _.``constructor uint32 - valid`` (codepoint:uint32) =
-        CodePoint(codepoint)
+    [<TestMethod>]
+    member _.``constructor uint32 - valid`` () =
+        for row in CodePointTests.AllCodePoints() do
+            CodePoint(Convert.ToUInt32 row.[0])
         ()
 
     [<DataTestMethod>]
