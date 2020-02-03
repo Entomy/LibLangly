@@ -766,18 +766,26 @@ type RuneTests() =
         Assert.AreEqual(0, result.Value)
 
     [<DataTestMethod>]
-    [<DynamicData("SurrogatePairTestData_ValidOnly", DynamicDataSourceType.Method)>]
+    [<DataRow(0x010000, '\uD800', '\uDC00')>]
+    [<DataRow(0x10FFFF, '\uDBFF', '\uDFFF')>]
+    [<DataRow(0x01F3A8, '\uD83C', '\uDFA8')>]
     member _.``TryCreate_SurrogateChars_Valid`` (exp:int, high:char, low:char) =
         let mutable result = Rune(0x00)
         Assert.IsTrue(Rune.TryCreate(high, low, &result))
         Assert.AreEqual(exp, result.Value)
 
     [<DataTestMethod>]
-    [<DynamicData("SurrogatePairTestData_InvalidOnly", DynamicDataSourceType.Method)>]
+    [<DataRow('\uD800', '\uD800')>]
+    [<DataRow('\uDFFF', '\uDFFF')>]
+    [<DataRow('\uDE00', '\uDB00')>]
+    [<DataRow('\uD900', '\u1234')>]
+    [<DataRow('\uD900', '\uE000')>]
+    [<DataRow('\u1234', '\uDE00')>]
+    [<DataRow('\uDC00', '\uDE00')>]
     member _.``TryCreate_SurrogateChars_Invalid`` (high:char, low:char) =
         let mutable result = Rune(0x00)
         Assert.IsFalse(Rune.TryCreate(high, low, &result))
-        Assert.AreEqual(exp, result.Value)
+        Assert.AreEqual(0, result.Value)
 
     [<DataTestMethod>]
     [<DynamicData("GeneralTestData_BmpCodePoints_NoSurrogates", DynamicDataSourceType.Method)>]
