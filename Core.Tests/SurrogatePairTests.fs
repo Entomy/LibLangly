@@ -7,10 +7,12 @@ open Microsoft.VisualStudio.TestTools.UnitTesting
 [<TestClass>]
 type SurrogatePairTests() =
     [<DataTestMethod>]
-    [<DataRow(0xD800u, 0xDC00u)>]
-    [<DataRow(0xDBFFu, 0xDFFFu)>]
-    member _.``constructor high-low - valid`` (high:uint32, low:uint32) = 
-        SurrogatePair(CodePoint(high), CodePoint(low))
+    [<DataRow(0x010000, '\uD800', '\uDC00')>]
+    [<DataRow(0x01D11E, '\uD834', '\uDD1E')>]
+    [<DataRow(0x01F3A8, '\uD83C', '\uDFA8')>]
+    [<DataRow(0x10FFFF, '\uDBFF', '\uDFFF')>]
+    member _.``constructor high-low - valid`` (exp:int, high:char, low:char) = 
+        Assert.AreEqual(exp, SurrogatePair(CodePoint(high), CodePoint(low)).CodePoint.Value)
         ()
 
     [<DataTestMethod>]
@@ -25,14 +27,14 @@ type SurrogatePairTests() =
         Assert.ThrowsException<ArgumentOutOfRangeException>((fun () -> SurrogatePair(CodePoint(high), CodePoint(low)).CodePoint.IsAscii |> ignore)) |> ignore
 
     [<DataTestMethod>]
-    [<DataRow(0x10330u)>]
-    member _.``constructor SMP - valid`` (value:uint32) =
-        SurrogatePair(CodePoint(value))
+    [<DataRow(0x10330, 0x10330u)>]
+    member _.``constructor SMP - valid`` (exp:int32, value:uint32) =
+        Assert.AreEqual(exp, SurrogatePair(CodePoint(value)).CodePoint.Value)
         ()
 
     [<DataTestMethod>]
-    [<DataRow(0x010000u, 0xD800u, 0xDC00u)>]
-    [<DataRow(0x01D11Eu, 0xD834u, 0xDD1Eu)>]
-    [<DataRow(0x01F3A8u, 0xD83Cu, 0xDFA8u)>]
-    [<DataRow(0x10FFFFu, 0xDBFFu, 0xDFFFu)>]
-    member _.``to codepoint`` (exp:uint32, high:uint32, low:uint32) = Assert.IsTrue(CodePoint(exp).Equals(SurrogatePair(CodePoint(high), CodePoint(low)).CodePoint))
+    [<DataRow(0x41u)>]
+    [<DataRow(0xD800u)>]
+    [<DataRow(0xDC00u)>]
+    member _.``constructor SMP - invalid`` (value:uint32) =
+        Assert.ThrowsException<ArgumentOutOfRangeException>((fun () -> SurrogatePair(CodePoint(value)).CodePoint.IsAscii |> ignore)) |> ignore
