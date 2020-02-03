@@ -16,7 +16,32 @@ type RuneTests() =
         for i in 0u..0xD7FFu do yield Rune(i)
         for i in 0xE000u..0x10FFFFu do yield Rune(i) }
         
-    static member GeneralTestData_BmpCodePoints_NoSurrogates():seq<Object[]> = seq {
+    static member BmpCodePoints_SurrogatesOnly():seq<obj[]> = seq {
+        yield [| '\uD800' |]
+        yield [| '\uDBFF' |]
+        yield [| '\uDC00' |]
+        yield [| '\uDFFF' |] }
+
+    static member SupplementaryCodePoints_InvalidOnly():seq<obj[]> = seq {
+        yield [| -1 |]
+        yield [| 0x110000 |]
+        yield [| Int32.MaxValue |] }
+
+    static member SurrogatePairTestData_InvalidOnly():seq<obj[]> = seq {
+        yield [| '\uD800'; '\uD800' |]
+        yield [| '\uDFFF'; '\uDFFF' |]
+        yield [| '\uDE00'; '\uDB00' |]
+        yield [| '\uD900'; '\u1234' |]
+        yield [| '\uD900'; '\uE000' |]
+        yield [| '\u1234'; '\uDE00' |]
+        yield [| '\uDC00'; '\uDE00' |] }
+
+    static member SurrogatePairTestData_ValidOnly():seq<obj[]> = seq {
+        yield [| '\uD800'; '\uDC00'; 0x010000 |]
+        yield [| '\uDBFF'; '\uDFFF'; 0x10FFFF |]
+        yield [| '\uD83C'; '\uDFA8'; 0x01F3A8 |] }
+
+    static member GeneralTestData_BmpCodePoints_NoSurrogates():seq<obj[]> = seq {
         yield [| GeneralTestData(0x00, true, true, 0, [| '\u0000' |], [| 0x00uy |]) |]
         yield [| GeneralTestData(0x7F, true, true, 0, [| '\u007F' |], [| 0x7Fuy |]) |]
         yield [| GeneralTestData(0x80, false, true, 0, [| '\u0080' |], [| 0xC2uy; 0x80uy |]) |]
@@ -27,11 +52,22 @@ type RuneTests() =
         yield [| GeneralTestData(0xFFFD, false, true, 0, [| '\uFFFD' |], [| 0xEFuy; 0xBFuy; 0xBDuy |]) |]
         yield [| GeneralTestData(0xFFFF, false, true, 0, [| '\uFFFF' |], [| 0xEFuy; 0xBFuy; 0xBFuy |]) |] }
 
-    static member GeneralTestData_SupplementaryCodePoints_ValidOnly():seq<Object[]> = seq {
+    static member GeneralTestData_SupplementaryCodePoints_ValidOnly():seq<obj[]> = seq {
         yield [| GeneralTestData(0x10000, false, false, 1, [| '\uD800'; '\uDC00' |], [| 0xF0uy; 0x90uy; 0x80uy; 0x80uy |]) |]
         yield [| GeneralTestData(0x10FFFF, false, false, 16, [| '\uDBFF'; '\uDFFF' |], [| 0xF4uy; 0x8Fuy; 0xBFuy; 0xBFuy |]) |] }
 
-    static member UnicodeInfoTestData_Latin1AndSelectOthers():seq<Object[]> = seq {
+    static member IsValidTestData():seq<obj[]> = seq {
+        for obj in RuneTests.GeneralTestData_BmpCodePoints_NoSurrogates() do
+            yield [| true; (obj.[0] :?> GeneralTestData).ScalarValue |]
+        for obj in RuneTests.GeneralTestData_SupplementaryCodePoints_ValidOnly() do
+            yield [| true; (obj.[0] :?> GeneralTestData).ScalarValue |]
+        for obj in RuneTests.BmpCodePoints_SurrogatesOnly() do
+            yield [| false; Convert.ToInt32(obj.[0], CultureInfo.InvariantCulture) |]
+        for obj in RuneTests.SupplementaryCodePoints_InvalidOnly() do
+            yield [| false; Convert.ToInt32(obj.[0], CultureInfo.InvariantCulture) |]
+        }
+
+    static member UnicodeInfoTestData_Latin1AndSelectOthers():seq<obj[]> = seq {
         yield [| UnicodeInfoTestData(Rune(0x00),    UnicodeCategory.Control,                 -1.0, true, false, false, false, false, false, false, false, false, false, false) |]
         yield [| UnicodeInfoTestData(Rune(0x01),    UnicodeCategory.Control,                 -1.0, true, false, false, false, false, false, false, false, false, false, false) |]
         yield [| UnicodeInfoTestData(Rune(0x02),    UnicodeCategory.Control,                 -1.0, true, false, false, false, false, false, false, false, false, false, false) |]
@@ -674,3 +710,9 @@ type RuneTests() =
     [<DataTestMethod>]
     [<DynamicData("UnicodeInfoTestData_Latin1AndSelectOthers", DynamicDataSourceType.Method)>]
     member _.``IsUpper`` (data:UnicodeInfoTestData) = Assert.AreEqual(data.IsUpper, Rune.IsUpper(data.ScalarValue))
+
+    [<DataTestMethod>]
+    [<DynamicData("IsValidTestData", DynamicDataSourceType.Method)>]
+    member _.``IsValid`` (exp:bool, value:int) =
+        Assert.AreEqual(exp, Rune.IsValid(value))
+        Assert.AreEqual(exp, Rune.IsValid(uint32 value))
