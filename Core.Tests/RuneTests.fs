@@ -7,6 +7,7 @@ open System.Globalization
 open System.Text
 open Stringier
 open Microsoft.VisualStudio.TestTools.UnitTesting
+open OperatorFixes
 
 //! This file uses testing code/approaches also used by the .NET Core runtime. Copyright belongs to the .NET Core Foundation.
 
@@ -724,3 +725,25 @@ type RuneTests() =
     [<TestMethod>]
     member _.``IsWhiteSpace_AllInputs`` () =
         for rune in RuneTests.AllRunes() do Assert.AreEqual(UnicodeData.IsWhiteSpace(uint32 rune.Value), Rune.IsWhiteSpace(rune))
+
+    [<DataTestMethod>]
+    [<DataRow(0u, 0u)>]
+    [<DataRow(0x80u, 0x80u)>]
+    [<DataRow(0x80u, 0x100u)>]
+    [<DataRow(0x100u, 0x80u)>]
+    member _.``Operators_And_CompareTo``(left:uint32, right:uint32) =
+        let l = Rune(left)
+        let r = Rune(right)
+
+        Assert.AreEqual((left = right), (l = r))
+        Assert.AreEqual((left <> right), (l <> r))
+        Assert.AreEqual((left < right), (l < r))
+        Assert.AreEqual((left <= right), (l <= r))
+        Assert.AreEqual((left > right), (l > r))
+        Assert.AreEqual((left >= right), (l >= r))
+        Assert.AreEqual(left.CompareTo(right), l.CompareTo(r))
+        //These additionally validate the mitigation in OperatorFixes doesn't cause any obvious harm. The operators for the expected case was using the OperatorFixes overrides as well, so they have to be isolated here.
+        Assert.AreEqual(left.CompareTo(right) = -1, left < right)
+        Assert.AreEqual(left.CompareTo(right) = -1 || left.CompareTo(right) = 0, left <= right)
+        Assert.AreEqual(left.CompareTo(right) = 1, left > right)
+        Assert.AreEqual(left.CompareTo(right) = 1 || left.CompareTo(right) = 0, left >= right)
