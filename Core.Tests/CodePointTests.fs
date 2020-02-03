@@ -18,7 +18,9 @@ type CodePointTests() =
     [<DataRow(0xFFFD)>]
     [<DataRow(0xFFFF)>]
     [<DataRow(0x10FFFF)>]
-    member _.``constructor int32 - valid`` (codepoint:int32) = CodePoint(codepoint)
+    member _.``constructor int32 - valid`` (codepoint:int32) =
+        CodePoint(codepoint)
+        ()
 
     [<DataTestMethod>]
     [<DataRow(-0x01)>]
@@ -39,7 +41,9 @@ type CodePointTests() =
     [<DataRow(0xFFFDu)>]
     [<DataRow(0xFFFFu)>]
     [<DataRow(0x10FFFFu)>]
-    member _.``constructor uint32 - valid`` (codepoint:uint32) = CodePoint(codepoint)
+    member _.``constructor uint32 - valid`` (codepoint:uint32) =
+        CodePoint(codepoint)
+        ()
 
     [<DataTestMethod>]
     [<DataRow(0x110000u)>]
