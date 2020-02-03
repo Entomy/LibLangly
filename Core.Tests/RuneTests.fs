@@ -810,3 +810,9 @@ type RuneTests() =
         let mutable result = Rune(0x00)
         Assert.IsFalse(Rune.TryCreate(uint32 value, &result))
         Assert.AreEqual(0, result.Value)
+
+    [<DataTestMethod>]
+    [<DynamicData("GeneralTestData_BmpCodePoints_NoSurrogates", DynamicDataSourceType.Method)>]
+    [<DynamicData("GeneralTestData_SupplementaryCodePoints_ValidOnly", DynamicDataSourceType.Method)>]
+    member _.``ToString`` (data:GeneralTestData) =
+        Assert.AreEqual(String(data.Utf16Sequence), Rune(data.ScalarValue).ToString())
