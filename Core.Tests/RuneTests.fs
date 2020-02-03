@@ -731,7 +731,7 @@ type RuneTests() =
     [<DataRow(0x80u, 0x80u)>]
     [<DataRow(0x80u, 0x100u)>]
     [<DataRow(0x100u, 0x80u)>]
-    member _.``Operators_And_CompareTo``(left:uint32, right:uint32) =
+    member _.``Operators_And_CompareTo`` (left:uint32, right:uint32) =
         let l = Rune(left)
         let r = Rune(right)
 
@@ -747,3 +747,6 @@ type RuneTests() =
         Assert.AreEqual(left.CompareTo(right) = -1 || left.CompareTo(right) = 0, left <= right)
         Assert.AreEqual(left.CompareTo(right) = 1, left > right)
         Assert.AreEqual(left.CompareTo(right) = 1 || left.CompareTo(right) = 0, left >= right)
+
+    [<TestMethod>]
+    member _.``ReplacementChar`` () = Assert.AreEqual(0xFFFD, Rune.ReplacementChar.Value)
