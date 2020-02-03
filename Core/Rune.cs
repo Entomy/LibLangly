@@ -876,7 +876,7 @@ namespace System.Text {
 
 		public static Boolean IsUpper(Rune value) => GetUnicodeCategory(value) == UnicodeCategory.UppercaseLetter;
 
-		public static Boolean IsWhiteSpace(Rune value) => value.value == 0x85u || IsSeparator(value);
+		public static Boolean IsWhiteSpace(Rune value) => value.IsBmp && Char.IsWhiteSpace((Char)value.value); //BMP codepoints are always representable by a single Char, so this is safe.
 
 		public static Rune ToLower(Rune value, CultureInfo culture) => GetRuneAt(value.ToString().ToLower(culture), 0);
 

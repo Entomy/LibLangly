@@ -716,3 +716,11 @@ type RuneTests() =
     member _.``IsValid`` (exp:bool, value:int) =
         Assert.AreEqual(exp, Rune.IsValid(value))
         Assert.AreEqual(exp, Rune.IsValid(uint32 value))
+
+    [<DataTestMethod>]
+    [<DynamicData("UnicodeInfoTestData_Latin1AndSelectOthers", DynamicDataSourceType.Method)>]
+    member _.``IsWhiteSpace`` (data:UnicodeInfoTestData) = Assert.AreEqual(data.IsWhiteSpace, Rune.IsWhiteSpace(data.ScalarValue))
+
+    [<TestMethod>]
+    member _.``IsWhiteSpace_AllInputs`` () =
+        for rune in RuneTests.AllRunes() do Assert.AreEqual(UnicodeData.IsWhiteSpace(uint32 rune.Value), Rune.IsWhiteSpace(rune))
