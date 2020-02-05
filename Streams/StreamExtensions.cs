@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Text;
+using Defender;
 
 namespace Stringier.Streams {
 	public static class StreamExtensions {
@@ -13,6 +14,7 @@ namespace Stringier.Streams {
 		/// <exception cref="IOException">An I/O error occurs.</exception>
 		/// <exception cref="ObjectDisposedException">Methods were called after the stream was closed.</exception>
 		public static Byte[] Read(this Stream stream, Int32 count) {
+			Guard.NotNull(stream, nameof(stream));
 			Byte[] buf = new Byte[count];
 			Int32 c = stream.Read(buf, 0, count);
 			Byte[] res = new Byte[c];
@@ -31,6 +33,7 @@ namespace Stringier.Streams {
 		/// </remarks>
 		/// <exception cref="ObjectDisposedException">Methods were called after the stream was closed.</exception>
 		public static Char[] ReadCodepoint(this Stream stream) {
+			Guard.NotNull(stream, nameof(stream));
 			Byte[] sequence = new Byte[4] { 0x00, 0x00, 0x00, 0x00 };
 			Int32 bytes = 1;
 			// The first byte in the sequence encodes the length of the sequence, so determine that, then read in the rest of the sequence.
@@ -110,6 +113,7 @@ namespace Stringier.Streams {
 		/// </remarks>
 		/// <exception cref="ObjectDisposedException">Methods were called after the stream was closed.</exception>
 		public static Rune ReadRune(this Stream stream) {
+			Guard.NotNull(stream, nameof(stream));
 			Span<Char> chars = stream.ReadCodepoint();
 			switch (chars.Length) {
 			case 1:
@@ -132,6 +136,7 @@ namespace Stringier.Streams {
 		/// </remarks>
 		/// <exception cref="ObjectDisposedException">Methods were called after the stream was closed.</exception>
 		public static Boolean TryReadRune(this Stream stream, out Rune rune) {
+			Guard.NotNull(stream, nameof(stream));
 			Span<Char> chars = stream.ReadCodepoint();
 			switch (chars.Length) {
 			case 1:
@@ -154,6 +159,7 @@ namespace Stringier.Streams {
 		/// <returns>An <see cref="Array"/> of <see cref="Rune"/> containing the read rune.</returns>
 		/// <exception cref="ObjectDisposedException">Methods were called after the stream was closed.</exception>
 		public static Rune[] ReadRunes(this Stream stream, Int32 count) {
+			Guard.NotNull(stream, nameof(stream));
 			Rune[] runes = new Rune[count];
 			Int32 c = 0;
 			for (Int32 i = 0; i < count; i++) {
@@ -170,6 +176,9 @@ namespace Stringier.Streams {
 		/// </summary>
 		/// <param name="stream">The <see cref="Stream"/> to write to.</param>
 		/// <param name="bytes">An array of bytes. This method copies the entirety of the bytes to the <paramref name="stream"/>.</param>
-		public static void Write(this Stream stream, Byte[] bytes) => stream.Write(bytes, 0, bytes.Length);
+		public static void Write(this Stream stream, Byte[] bytes) {
+			Guard.NotNull(stream, nameof(stream));
+			stream.Write(bytes, 0, bytes.Length);
+		}
 	}
 }

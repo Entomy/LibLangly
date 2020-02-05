@@ -1,4 +1,5 @@
 ﻿using System;
+using Defender;
 
 namespace Stringier {
 	public static partial class Metrics {
@@ -9,9 +10,8 @@ namespace Stringier {
 		/// <param name="other">The other <see cref="String"/>.</param>
 		/// <returns>The number of edits to get from <paramref name="source"/> to <paramref name="other"/>.</returns>
 		public static Int32 HammingDistance(String source, String other) {
-			if (source is null || other is null) {
-				throw new ArgumentNullException(source is null ? nameof(source) : nameof(other));
-			}
+			Guard.NotNull(source, nameof(source));
+			Guard.NotNull(other, nameof(other));
 			return ReferenceEquals(source, other) ? 0 : HammingDistance(source.AsSpan(), other.AsSpan());
 		}
 
@@ -22,9 +22,7 @@ namespace Stringier {
 		/// <param name="other">The other <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/>.</param>
 		/// <returns>The number of edits to get from <paramref name="source"/> to <paramref name="other"/>.</returns>
 		public static Int32 HammingDistance(String source, ReadOnlySpan<Char> other) {
-			if (source is null) {
-				throw new ArgumentNullException(nameof(source));
-			}
+			Guard.NotNull(source, nameof(source));
 			return HammingDistance(source.AsSpan(), other);
 		}
 
@@ -35,9 +33,7 @@ namespace Stringier {
 		/// <param name="other">The other <see cref="String"/>.</param>
 		/// <returns>The number of edits to get from <paramref name="source"/> to <paramref name="other"/>.</returns>
 		public static Int32 HammingDistance(ReadOnlySpan<Char> source, String other) {
-			if (other is null) {
-				throw new ArgumentNullException(nameof(other));
-			}
+			Guard.NotNull(other, nameof(other));
 			return HammingDistance(source, other.AsSpan());
 		}
 
@@ -49,17 +45,14 @@ namespace Stringier {
 		/// <returns>The number of edits to get from <paramref name="source"/> to <paramref name="other"/>.</returns>
 		/// <exception cref="InvalidOperationException">Parameters must be equal length.</exception>
 		public static Int32 HammingDistance(ReadOnlySpan<Char> source, ReadOnlySpan<Char> other) {
-			if (source.Length != other.Length) {
-				throw new InvalidOperationException("Must be equal length");
-			} else {
-				Int32 d = 0;
-				for (Int32 i = 0; i < source.Length; i++) {
-					if (source[i] != other[i]) {
-						d++;
-					}
+			Guard.Equal(source.Length, nameof(source), other.Length, nameof(other));
+			Int32 d = 0;
+			for (Int32 i = 0; i < source.Length; i++) {
+				if (source[i] != other[i]) {
+					d++;
 				}
-				return d;
 			}
+			return d;
 		}
 	}
 }

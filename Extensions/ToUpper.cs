@@ -1,10 +1,9 @@
 ﻿using System;
-#if !NETSTANDARD1_6
 using System.Globalization;
-#endif
-#if !NETSTANDARD1_6 && !NETSTANDARD2_0
+#if !NETSTANDARD2_0
 using System.Text;
 #endif
+using Defender;
 
 namespace Stringier {
 	public static partial class StringierExtensions {
@@ -15,7 +14,7 @@ namespace Stringier {
 		/// <returns>The uppercase equivalent of <paramref name="char"/>, or the unchanged value of <paramref name="char"/> if <paramref name="char"/> is already uppercase, has no uppercase equivalent, or is not alphabetic.</returns>
 		public static Char ToUpper(this Char @char) => Char.ToUpper(@char);
 
-#if !NETSTANDARD1_6 && !NETSTANDARD2_0
+#if !NETSTANDARD2_0
 		/// <summary>
 		/// Converts the value of a Unicode character to its uppercase equivalent.
 		/// </summary>
@@ -24,7 +23,6 @@ namespace Stringier {
 		public static Rune ToUpper(this Rune rune) => Rune.ToUpper(rune, CultureInfo.CurrentCulture);
 #endif
 
-#if !NETSTANDARD1_6
 		/// <summary>
 		/// Converts the value of a specified Unicode character to its uppercase equivalent using specified culture-specific formatting information.
 		/// </summary>
@@ -32,14 +30,11 @@ namespace Stringier {
 		/// <param name="culture">An object that supplies culture-specific casing rules.</param>
 		/// <returns>The uppercase equivalent of <paramref name="char"/>, modified according to <paramref name="culture"/>, or the unchanged value of <paramref name="char"/> if <paramref name="char"/> is already uppercase, has no uppercase equivalent, or is not alphabetic.</returns>
 		public static Char ToUpper(this Char @char, CultureInfo culture) {
-			if (culture is null) {
-				throw new ArgumentNullException(nameof(culture));
-			}
+			Guard.NotNull(culture, nameof(culture));
 			return Char.ToUpper(@char, culture);
 		}
-#endif
 
-#if !NETSTANDARD1_6 && !NETSTANDARD2_0
+#if !NETSTANDARD2_0
 		/// <summary>
 		/// Converts the value of a specified Unicode character to its uppercase equivalent using specified culture-specific formatting information.
 		/// </summary>
@@ -47,9 +42,7 @@ namespace Stringier {
 		/// <param name="culture">An object that supplies culture-specific casing rules.</param>
 		/// <returns>The uppercase equivalent of <paramref name="rune"/>, modified according to <paramref name="culture"/>, or the unchanged value of <paramref name="rune"/> if <paramref name="rune"/> is already uppercase, has no uppercase equivalent, or is not alphabetic.</returns>
 		public static Rune ToUpper(this Rune rune, CultureInfo culture) {
-			if (culture is null) {
-				throw new ArgumentNullException(nameof(culture));
-			}
+			Guard.NotNull(culture, nameof(culture));
 			return Rune.ToUpper(rune, culture);
 		}
 #endif
@@ -61,7 +54,7 @@ namespace Stringier {
 		/// <returns>The uppercase equivalent of the <paramref name="char"/> parameter, or the unchanged value of <paramref name="char"/>, if <paramref name="char"/> is already uppercase or not alphabetic.</returns>
 		public static Char ToUpperInvariant(this Char @char) => Char.ToUpperInvariant(@char);
 
-#if !NETSTANDARD1_6 && !NETSTANDARD2_0
+#if !NETSTANDARD2_0
 		/// <summary>
 		/// Converts the value of a Unicode character to its uppercase equivalent using the casing rules of the invariant culture.
 		/// </summary>

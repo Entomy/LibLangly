@@ -1,5 +1,5 @@
 ﻿using System;
-#if !NETSTANDARD1_6 && !NETSTANDARD2_0
+#if !NETSTANDARD2_0
 using System.Text;
 #endif
 
@@ -12,7 +12,7 @@ namespace Stringier {
 		/// <returns><see langword="true"/> if <paramref name="char"/> is a letter or a decimal digit; otherwise, <see langword="false"/>.</returns>
 		public static Boolean IsLetterOrDigit(this Char @char) => Char.IsLetterOrDigit(@char);
 
-#if !NETSTANDARD1_6 && !NETSTANDARD2_0
+#if !NETSTANDARD2_0
 		/// <summary>
 		/// Indicates whether a Unicode character is categorized as a letter or a decimal digit.
 		/// </summary>

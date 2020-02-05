@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using Defender;
 
 namespace Stringier.Patterns {
 	/// <summary>
@@ -23,27 +24,23 @@ namespace Stringier.Patterns {
 		private readonly Int32 HashCode;
 
 		/// <summary>
-		/// Construct a new <see cref="Source"/> from the specified <paramref name="String"/>
+		/// Construct a new <see cref="Source"/> from the specified <paramref name="string"/>
 		/// </summary>
-		/// <param name="String">A <see cref="String"/> to use as a source</param>
-		public Source(String String) {
-			if (String is null) {
-				throw new ArgumentNullException(nameof(String));
-			}
-			Buffer = String.AsSpan();
+		/// <param name="string">A <see cref="String"/> to use as a source</param>
+		public Source(String @string) {
+			Guard.NotNull(@string, nameof(@string));
+			Buffer = @string.AsSpan();
 			Position = 0;
 			HashCode = Rng.Next();
 		}
 
 		/// <summary>
-		/// Construct a new <see cref="Source"/> from the specified <paramref name="Stream"/>
+		/// Construct a new <see cref="Source"/> from the specified <paramref name="stream"/>
 		/// </summary>
-		/// <param name="Stream">A <see cref="Stream"/> to use as a source</param>
-		public Source(Stream Stream) {
-			if (Stream is null) {
-				throw new ArgumentNullException(nameof(Stream));
-			}
-			using (StreamReader Reader = new StreamReader(Stream)) {
+		/// <param name="stream">A <see cref="Stream"/> to use as a source</param>
+		public Source(Stream stream) {
+			Guard.NotNull(stream, nameof(stream));
+			using (StreamReader Reader = new StreamReader(stream)) {
 				Buffer = Reader.ReadToEnd().AsSpan();
 			}
 			Position = 0;
@@ -51,31 +48,31 @@ namespace Stringier.Patterns {
 		}
 
 		/// <summary>
-		/// Construct a new <see cref="Source"/> from the specified <paramref name="Span"/>
+		/// Construct a new <see cref="Source"/> from the specified <paramref name="span"/>
 		/// </summary>
-		/// <param name="Span">A <see cref="Span{T}"/> to use as a source</param>
-		public Source(Span<Char> Span) {
-			Buffer = Span;
+		/// <param name="span">A <see cref="Span{T}"/> to use as a source</param>
+		public Source(Span<Char> span) {
+			Buffer = span;
 			Position = 0;
 			HashCode = Rng.Next();
 		}
 
 		/// <summary>
-		/// Construct a new <see cref="Source"/> from the specified <paramref name="Span"/>
+		/// Construct a new <see cref="Source"/> from the specified <paramref name="span"/>
 		/// </summary>
-		/// <param name="Span">A <see cref="ReadOnlySpan{T}"/> to use as a source</param>
-		public Source(ReadOnlySpan<Char> Span) {
-			Buffer = Span;
+		/// <param name="span">A <see cref="ReadOnlySpan{T}"/> to use as a source</param>
+		public Source(ReadOnlySpan<Char> span) {
+			Buffer = span;
 			Position = 0;
 			HashCode = Rng.Next();
 		}
 
 		/// <summary>
-		/// Construct a new <see cref="Source"/>, using the <paramref name="Result"/>
+		/// Construct a new <see cref="Source"/>, using the <paramref name="result"/>
 		/// </summary>
-		/// <param name="Result">A <see cref="Result"/> to use as the source</param>
-		public Source(Result Result) {
-			Buffer = Result.AsSpan();
+		/// <param name="result">A <see cref="Result"/> to use as the source</param>
+		public Source(Result result) {
+			Buffer = result.AsSpan();
 			Position = 0;
 			HashCode = Rng.Next();
 		}
@@ -109,7 +106,7 @@ namespace Stringier.Patterns {
 		/// </summary>
 		/// <param name="obj">The object to compare with the current object.</param>
 		/// <returns>Always <c>false</c>, as ref struct's don't inherit from <see cref="Object"/>.</returns>
-		public override Boolean Equals(Object obj) => false;
+		public override Boolean Equals(Object? obj) => false;
 
 		/// <summary>
 		/// Determines whether this <see cref="Source"/> and the <paramref name="other"/> <see cref="Source"/> are equal.

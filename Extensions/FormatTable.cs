@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
+using Defender;
 
 namespace Stringier {
 	/// <summary>
@@ -62,9 +63,8 @@ namespace Stringier {
 		/// <param name="columns">The amount of columns in the table.</param>
 		/// <param name="alignments">An <see cref="Array"/> of <see cref="Alignment"/> corresponding to each column.</param>
 		public FormatTable(Int32 columns, params Alignment[] alignments) : this(columns) {
-			if (alignments is null) {
-				throw new ArgumentNullException(nameof(alignments));
-			} else if (alignments.Length != Alignments.Length) {
+			Guard.NotNull(alignments, nameof(alignments));
+			if (alignments.Length != Alignments.Length) {
 				throw new ArgumentException("Alignments count must be the same as the column count. Alignments are per-column.", nameof(alignments));
 			} else {
 				Alignments = alignments;
@@ -140,9 +140,8 @@ namespace Stringier {
 		/// <param name="args">An object array that contains zero or more objects to format.</param>
 		/// <remarks>Unlike with <see cref="String.Format(String, Object)"/> or <see cref="StringierExtensions.Format(String, Object)"/> and variants, arguments here may be <see langword="null"/>. When <see langword="null"/>, they will be placed into the table as <see cref="String.Empty"/>.</remarks>
 		public void Format(params Object?[] args) {
-			if (args is null) {
-				throw new ArgumentNullException(nameof(args));
-			} else if (Widths.Length != args.Length) {
+			Guard.NotNull(args, nameof(args));
+			if (Widths.Length != args.Length) {
 				throw new FormatException($"Table width is {Widths.Length}; all records must be that wide");
 			} else {
 				String[] format = new String[args.Length];

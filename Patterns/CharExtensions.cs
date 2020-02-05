@@ -1,6 +1,7 @@
 ﻿using System;
 using Stringier.Patterns.Debugging;
 using Stringier.Patterns.Nodes;
+using Defender;
 
 namespace Stringier.Patterns {
 	public static class CharExtensions {
@@ -17,7 +18,10 @@ namespace Stringier.Patterns {
 		/// <param name="pattern">The <see cref="Char"/> to match.</param>
 		/// <param name="source">The <see cref="String"/> to consume.</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the consumed string.</returns>
-		public static Result Consume(this Char pattern, String source) => Consume(pattern, source, null);
+		public static Result Consume(this Char pattern, String source) {
+			Guard.NotNull(source, nameof(source));
+			return Consume(pattern, source, null);
+		}
 
 		/// <summary>
 		/// Attempt to consume the <paramref name="pattern"/> from the <paramref name="source"/>.
@@ -27,9 +31,7 @@ namespace Stringier.Patterns {
 		/// <param name="trace">The <see cref="ITrace"/> to record steps in.</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the consumed string.</returns>
 		public static Result Consume(this Char pattern, String source, ITrace? trace) {
-			if (source is null) {
-				throw new ArgumentNullException(nameof(source));
-			}
+			Guard.NotNull(source, nameof(source));
 			return pattern.Consume(source, Compare.CaseSensitive, trace);
 		}
 
@@ -40,7 +42,10 @@ namespace Stringier.Patterns {
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
 		/// <param name="comparisonType">Whether the comparison is sensitive to casing.</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the consumed string.</returns>
-		public static Result Consume(this Char pattern, String source, Compare comparisonType) => Consume(pattern, source, comparisonType, null);
+		public static Result Consume(this Char pattern, String source, Compare comparisonType) {
+			Guard.NotNull(source, nameof(source));
+			return Consume(pattern, source, comparisonType, null);
+		}
 
 		/// <summary>
 		/// Attempt to consume the <paramref name="pattern"/> from the <paramref name="source"/>.
@@ -51,9 +56,7 @@ namespace Stringier.Patterns {
 		/// <param name="trace">The <see cref="ITrace"/> to record steps in.</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the consumed string.</returns>
 		public static Result Consume(this Char pattern, String source, Compare comparisonType, ITrace? trace) {
-			if (source is null) {
-				throw new ArgumentNullException(nameof(source));
-			}
+			Guard.NotNull(source, nameof(source));
 			Source src = new Source(source);
 			return pattern.Consume(ref src, comparisonType, trace);
 		}
@@ -104,9 +107,7 @@ namespace Stringier.Patterns {
 		/// <param name="other">The <see cref="Pattern"/> to check if this <see cref="Char"/> does not match</param>
 		/// <returns>A new <see cref="Pattern"/> alternating this <see cref="Char"/> and <paramref name="other"/></returns>
 		public static Pattern Or(this Char @char, Pattern other) {
-			if (other is null) {
-				throw new ArgumentNullException(nameof(other));
-			}
+			Guard.NotNull(other, nameof(other));
 			return new CharLiteral(@char).Alternate(other);
 		}
 
@@ -116,9 +117,7 @@ namespace Stringier.Patterns {
 		/// <param name="other">The <see cref="String"/> to check if this <see cref="Char"/> does not match</param>
 		/// <returns>A new <see cref="Pattern"/> alternating this <see cref="Char"/> and <paramref name="other"/></returns>
 		public static Pattern Or(this Char @char, String other) {
-			if (other is null) {
-				throw new ArgumentNullException(nameof(other));
-			}
+			Guard.NotNull(other, nameof(other));
 			return new CharLiteral(@char).Alternate(other);
 		}
 
@@ -142,9 +141,7 @@ namespace Stringier.Patterns {
 		/// <param name="other">The <see cref="Capture"/> to check if this <see cref="Char"/> does not match</param>
 		/// <returns>A new <see cref="Pattern"/> alternating this <see cref="Char"/> and <paramref name="other"/></returns>
 		public static Pattern Or(this Char @char, Capture other) {
-			if (other is null) {
-				throw new ArgumentNullException(nameof(other));
-			}
+			Guard.NotNull(other, nameof(other));
 			return new CharLiteral(@char).Alternate(new CaptureLiteral(other));
 		}
 
@@ -161,9 +158,7 @@ namespace Stringier.Patterns {
 		/// <param name="other">The succeeding <see cref="Pattern"/></param>
 		/// <returns>A new <see cref="Pattern"/> concatenating this <see cref="Char"/> and <paramref name="other"/></returns>
 		public static Pattern Then(this Char @char, Pattern other) {
-			if (other is null) {
-				throw new ArgumentNullException(nameof(other));
-			}
+			Guard.NotNull(other, nameof(other));
 			return new CharLiteral(@char).Concatenate(other);
 		}
 
@@ -173,9 +168,7 @@ namespace Stringier.Patterns {
 		/// <param name="other">The succeeding <see cref="String"/></param>
 		/// <returns>A new <see cref="Pattern"/> concatenating this <see cref="Char"/> and <paramref name="other"/></returns>
 		public static Pattern Then(this Char @char, String other) {
-			if (other is null) {
-				throw new ArgumentNullException(nameof(other));
-			}
+			Guard.NotNull(other, nameof(other));
 			return new CharLiteral(@char).Concatenate(other);
 		}
 
@@ -199,9 +192,7 @@ namespace Stringier.Patterns {
 		/// <param name="other">The succeeding <see cref="Capture"/></param>
 		/// <returns>A new <see cref="Pattern"/> concatenating this <see cref="Char"/> and <paramref name="other"/></returns>
 		public static Pattern Then(this Char @char, Capture other) {
-			if (other is null) {
-				throw new ArgumentNullException(nameof(other));
-			}
+			Guard.NotNull(other, nameof(other));
 			return new CharLiteral(@char).Concatenate(new CaptureLiteral(other));
 		}
 

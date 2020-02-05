@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 using Stringier.Patterns.Nodes;
+using Defender;
 
 namespace Stringier.Patterns {
 	public static class RegexExtensions {
@@ -14,6 +15,7 @@ namespace Stringier.Patterns {
 		/// <param name="regex">The <see cref="Regex"/> to convert.</param>
 		/// <returns>A <see cref="Pattern"/> which represents the closest approximation of the given <paramref name="regex"/>.</returns>
 		public static Pattern AsPattern(this Regex regex) {
+			Guard.NotNull(regex, nameof(regex));
 			String Pattern = regex.ToString();
 			if (Pattern[0] != '^') {
 				throw new PatternConstructionException("Regex me be anchored to the begining");

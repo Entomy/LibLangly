@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using Defender;
 
 namespace Stringier {
 	public static partial class StringierExtensions {
@@ -71,9 +72,8 @@ namespace Stringier {
 		/// <param name="provider">An object that supplies culture-specific information about the format of <paramref name="string"/>.</param>
 		/// <returns>A 64-bit signed integer equivalent to the number specified in <paramref name="string"/>.</returns>
 		public static Int64 ParseInt64(this String @string, NumberStyles style, IFormatProvider provider) {
-			if (@string is null) {
-				throw new ArgumentNullException(nameof(@string));
-			}
+			Guard.NotNull(@string, nameof(@string));
+			Guard.NotNull(provider, nameof(provider));
 			return Int64.Parse(@string, style, provider);
 		}
 
@@ -84,9 +84,7 @@ namespace Stringier {
 		/// <param name="style">A bitwise combination of the enumeration values that indicates the style elements that can be present in <paramref name="string"/>. A typical value to specify is <see cref="NumberStyles.Integer"/>.</param>
 		/// <returns>A 64-bit signed integer equivalent to the number specified in <paramref name="string"/>.</returns>
 		public static Int64 ParseInt64(this String @string, NumberStyles style) {
-			if (@string is null) {
-				throw new ArgumentNullException(nameof(@string));
-			}
+			Guard.NotNull(@string, nameof(@string));
 			return Int64.Parse(@string, style);
 		}
 
@@ -96,9 +94,7 @@ namespace Stringier {
 		/// <param name="string">A string containing a number to convert.</param>
 		/// <returns>A 64-bit signed integer equivalent to the number contained in <paramref name="string"/>.</returns>
 		public static Int64 ParseInt64(this String @string) {
-			if (@string is null) {
-				throw new ArgumentNullException(nameof(@string));
-			}
+			Guard.NotNull(@string, nameof(@string));
 			return Int64.Parse(@string);
 		}
 
@@ -109,9 +105,8 @@ namespace Stringier {
 		/// <param name="provider">An object that supplies culture-specific formatting information about <paramref name="string"/>.</param>
 		/// <returns>A 64-bit signed integer equivalent to the number specified in <paramref name="string"/>.</returns>
 		public static Int64 ParseInt64(this String @string, IFormatProvider provider) {
-			if (@string is null) {
-				throw new ArgumentNullException(nameof(@string));
-			}
+			Guard.NotNull(@string, nameof(@string));
+			Guard.NotNull(provider, nameof(provider));
 			return Int64.Parse(@string, provider);
 		}
 	}

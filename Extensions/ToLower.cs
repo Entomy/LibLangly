@@ -1,10 +1,9 @@
 ﻿using System;
-#if !NETSTANDARD1_6
 using System.Globalization;
-#endif
-#if !NETSTANDARD1_6 && !NETSTANDARD2_0
+#if !NETSTANDARD2_0
 using System.Text;
 #endif
+using Defender;
 
 namespace Stringier {
 	public static partial class StringierExtensions {
@@ -15,7 +14,7 @@ namespace Stringier {
 		/// <returns>The lowercase equivalent of <paramref name="char"/>, or the unchanged value of <paramref name="char"/> if <paramref name="char"/> is already lowercase, has no lowercase equivalent, or is not alphabetic.</returns>
 		public static Char ToLower(this Char @char) => Char.ToLower(@char);
 
-#if !NETSTANDARD1_6 && !NETSTANDARD2_0
+#if !NETSTANDARD2_0
 		/// <summary>
 		/// Converts the value of a Unicode character to its lowercase equivalent.
 		/// </summary>
@@ -24,7 +23,6 @@ namespace Stringier {
 		public static Rune ToLower(this Rune rune) => Rune.ToLower(rune, CultureInfo.CurrentCulture);
 #endif
 
-#if !NETSTANDARD1_6
 		/// <summary>
 		/// Converts the value of a specified Unicode character to its lowercase equivalent using specified culture-specific formatting information.
 		/// </summary>
@@ -32,14 +30,11 @@ namespace Stringier {
 		/// <param name="culture">An object that supplies culture-specific casing rules.</param>
 		/// <returns>The lowercase equivalent of <paramref name="char"/>, modified according to <paramref name="culture"/>, or the unchanged value of <paramref name="char"/>, if <paramref name="char"/> is already lowercase or not alphabetic.</returns>
 		public static Char ToLower(this Char @char, CultureInfo culture) {
-			if (culture is null) {
-				throw new ArgumentNullException(nameof(culture));
-			}
+			Guard.NotNull(culture, nameof(culture));
 			return Char.ToLower(@char, culture);
 		}
-#endif
 
-#if !NETSTANDARD1_6 && !NETSTANDARD2_0
+#if !NETSTANDARD2_0
 		/// <summary>
 		/// Converts the value of a specified Unicode character to its lowercase equivalent using specified culture-specific formatting information.
 		/// </summary>
@@ -47,9 +42,7 @@ namespace Stringier {
 		/// <param name="culture">An object that supplies culture-specific casing rules.</param>
 		/// <returns>The lowercase equivalent of <paramref name="rune"/>, modified according to <paramref name="culture"/>, or the unchanged value of <paramref name="rune"/>, if <paramref name="rune"/> is already lowercase or not alphabetic.</returns>
 		public static Rune ToLower(this Rune rune, CultureInfo culture) {
-			if (culture is null) {
-				throw new ArgumentNullException(nameof(culture));
-			}
+			Guard.NotNull(culture, nameof(culture));
 			return Rune.ToLower(rune, culture);
 		}
 #endif
@@ -61,7 +54,7 @@ namespace Stringier {
 		/// <returns>The lowercase equivalent of the <paramref name="char"/> parameter, or the unchanged value of <paramref name="char"/>, if <paramref name="char"/> is already lowercase or not alphabetic.</returns>
 		public static Char ToLowerInvariant(this Char @char) => Char.ToLowerInvariant(@char);
 
-#if !NETSTANDARD1_6 && !NETSTANDARD2_0
+#if !NETSTANDARD2_0
 		/// <summary>
 		/// Converts the value of a Unicode character to its lowercase equivalent using the casing rules of the invariant culture.
 		/// </summary>

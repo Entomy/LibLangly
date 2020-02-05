@@ -1,4 +1,5 @@
 ﻿using System;
+using Defender;
 
 namespace Stringier {
 	public static partial class StringierExtensions {
@@ -8,9 +9,7 @@ namespace Stringier {
 		/// <param name="string">String to separate.</param>
 		/// <returns>Array of words within the <paramref name="string"/>.</returns>
 		public static String[] Words(this String @string) {
-			if (@string is null) {
-				throw new ArgumentNullException(nameof(@string));
-			}
+			Guard.NotNull(@string, nameof(@string));
 			return @string.Clean().Split(' ');
 		}
 	}

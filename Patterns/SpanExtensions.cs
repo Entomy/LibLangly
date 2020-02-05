@@ -2,6 +2,7 @@
 using System.Runtime.CompilerServices;
 using Stringier.Patterns.Debugging;
 using Stringier.Patterns.Nodes;
+using Defender;
 
 namespace Stringier.Patterns {
 	public static class SpanExtensions {
@@ -19,9 +20,7 @@ namespace Stringier.Patterns {
 		/// <param name="source">The <see cref="String"/> to consume</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the consumed string</returns>
 		public static Result Consume(this ReadOnlySpan<Char> pattern, String source) {
-			if (source is null) {
-				throw new ArgumentNullException(nameof(source));
-			}
+			Guard.NotNull(source, nameof(source));
 			return pattern.Consume(source, Compare.CaseSensitive);
 		}
 
@@ -33,9 +32,7 @@ namespace Stringier.Patterns {
 		/// <param name="comparisonType">Whether the comparison is sensitive to casing.</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the consumed string</returns>
 		public static Result Consume(this ReadOnlySpan<Char> pattern, String source, Compare comparisonType) {
-			if (source is null) {
-				throw new ArgumentNullException(nameof(source));
-			}
+			Guard.NotNull(source, nameof(source));
 			Source src = new Source(source);
 			return pattern.Consume(ref src, comparisonType);
 		}

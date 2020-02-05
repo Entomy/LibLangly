@@ -1,6 +1,7 @@
 ﻿using System;
 using Stringier.Patterns.Debugging;
 using Stringier.Patterns.Nodes;
+using Defender;
 
 namespace Stringier.Patterns {
 	/// <summary>
@@ -86,9 +87,8 @@ namespace Stringier.Patterns {
 			if (ReadOnly) {
 				return base.Or(other);
 			}
-			if (other is null) {
-				throw new ArgumentNullException(nameof(other));
-			} else if (Head is null) {
+			Guard.NotNull(other, nameof(other));
+			if (Head is null) {
 				throw new PatternUndefinedException();
 			} else {
 				Head = Head.Alternate(other);
@@ -105,9 +105,8 @@ namespace Stringier.Patterns {
 			if (ReadOnly) {
 				return base.Or(other);
 			}
-			if (other is null) {
-				throw new ArgumentNullException(nameof(other));
-			} else if (Head is null) {
+			Guard.NotNull(other, nameof(other));
+			if (Head is null) {
 				throw new PatternUndefinedException();
 			} else {
 				Head = Head.Alternate(other);
@@ -140,9 +139,8 @@ namespace Stringier.Patterns {
 			if (ReadOnly) {
 				return base.Or(other);
 			}
-			if (other is null) {
-				throw new ArgumentNullException(nameof(other));
-			} else if (Head is null) {
+			Guard.NotNull(other, nameof(other));
+			if (Head is null) {
 				throw new PatternUndefinedException();
 			} else {
 				Head = Head.Alternate(new CaptureLiteral(other));
@@ -183,9 +181,7 @@ namespace Stringier.Patterns {
 			if (ReadOnly) {
 				return base.Then(other);
 			}
-			if (other is null) {
-				throw new ArgumentNullException(nameof(other));
-			}
+			Guard.NotNull(other, nameof(other));
 			Head = Head is null ? other : Head.Concatenate(other);
 			return this;
 		}
@@ -199,9 +195,7 @@ namespace Stringier.Patterns {
 			if (ReadOnly) {
 				return base.Then(other);
 			}
-			if (other is null) {
-				throw new ArgumentNullException(nameof(other));
-			}
+			Guard.NotNull(other, nameof(other));
 			Head = Head is null ? new StringLiteral(other) : Head.Concatenate(other);
 			return this;
 		}
@@ -228,9 +222,7 @@ namespace Stringier.Patterns {
 			if (ReadOnly) {
 				return base.Then(other);
 			}
-			if (other is null) {
-				throw new ArgumentNullException(nameof(other));
-			}
+			Guard.NotNull(other, nameof(other));
 			Head = Head is null ? new CaptureLiteral(other) : Head.Concatenate(new CaptureLiteral(other));
 			return this;
 		}

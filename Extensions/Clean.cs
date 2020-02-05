@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using Defender;
 
 namespace Stringier {
 	public static partial class StringierExtensions {
@@ -9,9 +10,7 @@ namespace Stringier {
 		/// <param name="string">String to clean</param>
 		/// <returns>Cleaned up string</returns>
 		public static String Clean(this String @string) {
-			if (@string is null) {
-				throw new ArgumentNullException(nameof(@string));
-			}
+			Guard.NotNull(@string, nameof(@string));
 			return @string.AsSpan().Clean();
 		}
 
@@ -45,9 +44,7 @@ namespace Stringier {
 		/// <param name="char">The character to clean</param>
 		/// <returns>Cleaned up string</returns>
 		public static String Clean(this String @string, Char @char) {
-			if (@string is null) {
-				throw new ArgumentNullException(nameof(@string));
-			}
+			Guard.NotNull(@string, nameof(@string));
 			return @string.AsSpan().Clean(@char);
 		}
 

@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard1.6;netstandard2.0</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;netcoreapp3.0</TargetFrameworks>
     <RootNamespace>Stringier</RootNamespace>
     <AssemblyName>Stringier.Core</AssemblyName>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -26,9 +26,11 @@
 
 	<ItemGroup>
 		<None Include="..\Logo.png" Pack="true" Visible="true" PackagePath="\" />
+		<Content Include="..\THIRD_PARTY_NOTICES" PackagePath="\" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <PackageReference Include="Defender" Version="0.2.0" />
 	  <PackageReference Include="System.Memory" Version="4.5.3" />
 	</ItemGroup>
 	
