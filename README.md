@@ -30,34 +30,3 @@ The goals and purpose of this project is provided [here](https://github.com/Ento
 ## [Streams](https://github.com/Entomy/Stringier/tree/master/Streams) [![Nuget](https://img.shields.io/nuget/dt/Stringier.Streams?label=Streams&logo=nuget)](https://www.nuget.org/packages/Stringier.Streams/) [![Nuget](https://img.shields.io/nuget/dt/Stringier.Streams.FSharp?label=F%23&logo=nuget)](https://www.nuget.org/packages/Stringier.Streams.FSharp/)
 
 **Streams** provides extensions to [`Stream`](https://docs.microsoft.com/en-us/dotnet/api/system.io.stream) to make it easier to work with text streams. This includes both new `Stream` types, and extension methods for all streams.
-
-# Syntax Showdown:
-
-This is just in good fun. There's a lot more to consider than just syntax.
-
-## Regex
-
-~~~~ csharp
-Regex phoneNum = new Regex("^[0-9]{3}-[0-9]{3}-[0-9]{4}");
-~~~~
-
-## Pidgin
-
-~~~~ csharp
-Parser<char, string> phoneNum = Digit.RepeatString(3).Then(Char('-')).Then(Digit.RepeatString(3)).Then(Char('-')).Then(Digit.RepeatString(4));
-~~~~
-
-## FParsec
-
-~~~~ fsharp
-let phoneNum = attempt (digit .>>. digit .>>. digit .>>. pchar '-' .>>. digit .>>. digit .>>. digit .>>. pchar '-' .>>. digit .>>. digit .>>. digit .>>. digit)
-~~~~
-
-## Stringier
-
-~~~~ csharp
-Pattern phoneNum = DecimalDigitNumber.Repeat(3).Then('-').Then(.DecimalDigitNumber.Repeat(3)).Then('-').Then(DecimalDigitNumber.Repeat(4));
-~~~~
-~~~~ fsharp
-let phoneNum = DecimalDigitNumber * 3 >> DecimalDigitNumber * 3 >> DecimalDigitNumber * 4
-~~~~
