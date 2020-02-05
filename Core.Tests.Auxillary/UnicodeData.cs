@@ -18,7 +18,12 @@ namespace Tests {
      */
 
 	public static class UnicodeData {
-		private const String UnicodeDataFilename = "UnicodeData.11.0.txt";
+		private const String UnicodeDataFilename =
+#if NETSTANDARD2_0
+			"UnicodeData.8.0.txt";
+#else
+			"UnicodeData.11.0.txt";
+#endif
 		private const String CaseFoldingFilename = "CaseFolding-12.1.0.txt";
 		private const String PropListFilename = "PropList-12.1.0.txt";
 
