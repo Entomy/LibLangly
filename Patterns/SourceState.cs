@@ -1,7 +1,6 @@
 ﻿using System;
 
 namespace Stringier.Patterns {
-
 	/// <summary>
 	/// The saved state of a <see cref="Source"/>.
 	/// </summary>
@@ -38,7 +37,7 @@ namespace Stringier.Patterns {
 		/// </summary>
 		/// <param name="obj">The object to compare with the current object.</param>
 		/// <returns>Always <c>false</c>, as ref struct's don't inherit from <see cref="Object"/>.</returns>
-		public override Boolean Equals(Object obj) => false;
+		public override Boolean Equals(Object? obj) => false;
 
 		/// <summary>
 		/// Determines whether this <see cref="SourceState"/> and the <paramref name="other"/> <see cref="SourceState"/> are equal.

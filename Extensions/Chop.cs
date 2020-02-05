@@ -1,4 +1,5 @@
 ﻿using System;
+using Defender;
 
 namespace Stringier {
 	public static partial class StringierExtensions {
@@ -9,9 +10,7 @@ namespace Stringier {
 		/// <param name="size">Size of chunks to chop into</param>
 		/// <returns>Array of chunks</returns>
 		public static String[] Chop(this String @string, Int32 size) {
-			if (@string is null) {
-				throw new ArgumentNullException(nameof(@string));
-			}
+			Guard.NotNull(@string, nameof(@string));
 			return Chop(@string.AsSpan(), size);
 		}
 

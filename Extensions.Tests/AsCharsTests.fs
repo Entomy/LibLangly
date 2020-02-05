@@ -16,5 +16,4 @@ type AsCharsTests() =
     [<DataRow([|'⎃'|], 0x2383)>]
     [<DataRow([|'\uD834'; '\uDD1E'|], 0x1D11E)>] // 𝄞 which can't be represented with a single char
     member _.``rune AsChars`` (exp:char[], value:Int32) =
-        let rune = Rune(value)
-        CollectionAssert.AreEqual(exp, rune.AsChars())
+        CollectionAssert.AreEqual(exp, Rune(value).AsChars())

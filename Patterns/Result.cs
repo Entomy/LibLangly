@@ -73,7 +73,7 @@ namespace Stringier.Patterns {
 		/// </summary>
 		/// <param name="obj">The object to compare with the current object.</param>
 		/// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
-		public override Boolean Equals(Object obj) {
+		public override Boolean Equals(Object? obj) {
 			switch (obj) {
 			case String other:
 				return Equals(other);

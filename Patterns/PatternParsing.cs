@@ -1,5 +1,6 @@
 ﻿using System;
 using Stringier.Patterns.Debugging;
+using Defender;
 
 namespace Stringier.Patterns {
 	public abstract partial class Pattern {
@@ -29,7 +30,10 @@ namespace Stringier.Patterns {
 		/// <param name="source">The <see cref="String"/> to consume.</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</returns>
 		/// <exception cref="PatternUndefinedException">The pattern was attempted to be used before actually being defined.</exception>
-		public Result Consume(String source) => Consume(source, null);
+		public Result Consume(String source) {
+			Guard.NotNull(source, nameof(source));
+			return Consume(source, null);
+		}
 
 		/// <summary>
 		/// Attempt to consume the <see cref="Pattern"/> from the <paramref name="source"/>.
@@ -39,9 +43,7 @@ namespace Stringier.Patterns {
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</returns>
 		/// <exception cref="PatternUndefinedException">The pattern was attempted to be used before actually being defined.</exception>
 		public Result Consume(String source, ITrace? trace) {
-			if (source is null) {
-				throw new ArgumentNullException(nameof(source));
-			}
+			Guard.NotNull(source, nameof(source));
 			Source src = new Source(source);
 			return Consume(ref src, trace);
 		}

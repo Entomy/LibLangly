@@ -1,4 +1,5 @@
 ﻿using System;
+using Defender;
 
 namespace Stringier {
 	public static partial class Search {
@@ -9,9 +10,8 @@ namespace Stringier {
 		/// <param name="pattern">The <see cref="String"/> to search for.</param>
 		/// <returns>The index at which <paramref name="pattern"/> was found to start; -1 if not found.</returns>
 		public static Int32 Horspool(String source, String pattern) {
-			if (source is null || pattern is null) {
-				throw new ArgumentNullException(source is null ? nameof(source) : nameof(pattern));
-			}
+			Guard.NotNull(source, nameof(source));
+			Guard.NotNull(pattern, nameof(pattern));
 			return Horspool(source, pattern, out HorspoolTable _);
 		}
 
@@ -22,9 +22,7 @@ namespace Stringier {
 		/// <param name="pattern">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to search for.</param>
 		/// <returns>The index at which <paramref name="pattern"/> was found to start; -1 if not found.</returns>
 		public static Int32 Horspool(String source, ReadOnlySpan<Char> pattern) {
-			if (source is null) {
-				throw new ArgumentNullException(nameof(source));
-			}
+			Guard.NotNull(source, nameof(source));
 			return Horspool(source, pattern, out HorspoolTable _);
 		}
 
@@ -35,9 +33,7 @@ namespace Stringier {
 		/// <param name="pattern">The <see cref="String"/> to search for.</param>
 		/// <returns>The index at which <paramref name="pattern"/> was found to start; -1 if not found.</returns>
 		public static Int32 Horspool(ReadOnlySpan<Char> source, String pattern) {
-			if (pattern is null) {
-				throw new ArgumentNullException(nameof(pattern));
-			}
+			Guard.NotNull(pattern, nameof(pattern));
 			return Horspool(source, pattern, out HorspoolTable _);
 		}
 
@@ -56,9 +52,8 @@ namespace Stringier {
 		/// <param name="table">The <see cref="HorspoolTable"/> of the pattern to search for.</param>
 		/// <returns>The index at which the pattern was found to start; -1 if not found.</returns>
 		public static Int32 Horspool(String source, HorspoolTable table) {
-			if (source is null || table is null) {
-				throw new ArgumentNullException(source is null ? nameof(source) : nameof(table));
-			}
+			Guard.NotNull(source, nameof(source));
+			Guard.NotNull(table, nameof(table));
 			return Horspool(source.AsSpan(), table);
 		}
 
@@ -69,9 +64,7 @@ namespace Stringier {
 		/// <param name="table">The <see cref="HorspoolTable"/> of the pattern to search for.</param>
 		/// <returns>The index at which the pattern was found to start; -1 if not found.</returns>
 		public static Int32 Horspool(ReadOnlySpan<Char> source, HorspoolTable table) {
-			if (table is null) {
-				throw new ArgumentNullException(nameof(table));
-			}
+			Guard.NotNull(table, nameof(table));
 			ReadOnlySpan<Char> candidate;
 			Int32 skip = 0;
 			while (source.Length - skip >= table.Length) {
@@ -92,9 +85,8 @@ namespace Stringier {
 		/// <param name="table">The <see cref="HorspoolTable"/> for <paramref name="pattern"/>.</param>
 		/// <returns>The index at which <paramref name="pattern"/> was found to start; -1 if not found.</returns>
 		public static Int32 Horspool(String source, String pattern, out HorspoolTable table) {
-			if (source is null || pattern is null) {
-				throw new ArgumentNullException(source is null ? nameof(source) : nameof(pattern));
-			}
+			Guard.NotNull(source, nameof(source));
+			Guard.NotNull(pattern, nameof(pattern));
 			return Horspool(source.AsSpan(), pattern.AsSpan(), out table);
 		}
 
@@ -106,9 +98,7 @@ namespace Stringier {
 		/// <param name="table">The <see cref="HorspoolTable"/> for <paramref name="pattern"/>.</param>
 		/// <returns>The index at which <paramref name="pattern"/> was found to start; -1 if not found.</returns>
 		public static Int32 Horspool(String source, ReadOnlySpan<Char> pattern, out HorspoolTable table) {
-			if (source is null) {
-				throw new ArgumentNullException(nameof(source));
-			}
+			Guard.NotNull(source, nameof(source));
 			return Horspool(source.AsSpan(), pattern, out table);
 		}
 
@@ -120,9 +110,7 @@ namespace Stringier {
 		/// <param name="table">The <see cref="HorspoolTable"/> for <paramref name="pattern"/>.</param>
 		/// <returns>The index at which <paramref name="pattern"/> was found to start; -1 if not found.</returns>
 		public static Int32 Horspool(ReadOnlySpan<Char> source, String pattern, out HorspoolTable table) {
-			if (pattern is null) {
-				throw new ArgumentNullException(nameof(pattern));
-			}
+			Guard.NotNull(pattern, nameof(pattern));
 			return Horspool(source, pattern.AsSpan(), out table);
 		}
 

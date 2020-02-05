@@ -1,4 +1,5 @@
 ﻿using System;
+using Defender;
 
 namespace Stringier {
 	public static partial class StringierExtensions {
@@ -22,9 +23,7 @@ namespace Stringier {
 		/// <param name="count">The amount of times to repeat the <paramref name="string"/>.</param>
 		/// <returns>A <see cref="String"/> containing the repeated <paramref name="string"/>.</returns>
 		public static String Repeat(this String @string, Int32 count) {
-			if (@string is null) {
-				throw new ArgumentNullException(nameof(@string));
-			}
+			Guard.NotNull(@string, nameof(@string));
 			Char[] result = new Char[@string.Length * count];
 			Int32 r = 0;
 			for (Int32 i = 0; i < count; i++) {

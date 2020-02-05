@@ -2,6 +2,7 @@
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
+using Defender;
 
 namespace Stringier.Streams {
 	/// <summary>
@@ -131,7 +132,10 @@ namespace Stringier.Streams {
 		/// <exception cref="ArgumentOutOfRangeException"><paramref name="bufferSize"/> is negative or zero.</exception>
 		/// <exception cref="ObjectDisposedException">Either the current stream or the destination stream is disposed.</exception>
 		/// <exception cref="NotSupportedException">The current stream does not support reading, or the destination stream does not support writing.</exception>
-		public override Task CopyToAsync(Stream destination, Int32 bufferSize, CancellationToken cancellationToken) => BaseStream.CopyToAsync(destination, bufferSize, cancellationToken);
+		public override Task CopyToAsync(Stream destination, Int32 bufferSize, CancellationToken cancellationToken) {
+			Guard.NotNull(destination, nameof(destination));
+			return BaseStream.CopyToAsync(destination, bufferSize, cancellationToken);
+		}
 
 		/// <summary>
 		/// Waits for the pending asynchronous read to complete. (Consider using <see cref="ReadAsync(byte[], int, int, CancellationToken)"/> instead.)
@@ -146,7 +150,10 @@ namespace Stringier.Streams {
 		/// </exception>
 		/// <exception cref="InvalidOperationException"><paramref name="asyncResult"/> did not originate from a <see cref="BeginRead(byte[], int, int, AsyncCallback, object)"/> method on the current stream.</exception>
 		/// <exception cref="IOException">The stream is closed or an internal error has occurred.</exception>
-		public override Int32 EndRead(IAsyncResult asyncResult) => BaseStream.EndRead(asyncResult);
+		public override Int32 EndRead(IAsyncResult asyncResult) {
+			Guard.NotNull(asyncResult, nameof(asyncResult));
+			return BaseStream.EndRead(asyncResult);
+		}
 
 		/// <summary>
 		/// Ends an asyncrhonous write operation. (Consider using <see cref="WriteAsync(byte[], int, int, CancellationToken)"/> instead.)
@@ -160,7 +167,10 @@ namespace Stringier.Streams {
 		/// </exception>
 		/// <exception cref="InvalidOperationException"><paramref name="asyncResult"/> did not originate from a <see cref="BeginWrite(byte[], int, int, AsyncCallback, object)"/> method on the current stream.</exception>
 		/// <exception cref="IOException">The stream is closed or an internal error has occurred.</exception>
-		public override void EndWrite(IAsyncResult asyncResult) => BaseStream.EndWrite(asyncResult);
+		public override void EndWrite(IAsyncResult asyncResult) {
+			Guard.NotNull(asyncResult, nameof(asyncResult));
+			BaseStream.EndWrite(asyncResult);
+		}
 
 		/// <summary>
 		/// Determines whether the specified object is equal to the current object.
