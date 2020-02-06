@@ -11,33 +11,31 @@ type CodePointTests() =
     [<TestMethod>]
     member _.``constructor int32 - valid`` () =
         for row in CodePointTests.AllCodePoints() do
-            CodePoint(Convert.ToInt32 row.[0])
+            CodePoint(Convert.ToInt32 row.[0]) |> ignore
         ()
 
     [<DataTestMethod>]
     [<DataRow(-0x01)>]
     [<DataRow(0x110000)>]
     member _.``constructor int32 - invalid`` (codepoint:int32) =
-        //Due to a design decision for F#, CodePoint can not be passed to ignore, meaning one of its properties needs to be called to use it in this context. The exception is thrown during construction regardless, so the property is never called. Even if it was, the required functionality is still being tested.
-        Assert.ThrowsException<ArgumentOutOfRangeException>((fun () -> CodePoint(codepoint).IsAscii |> ignore)) |> ignore
+        Assert.ThrowsException<ArgumentOutOfRangeException>((fun () -> CodePoint(codepoint) |> ignore)) |> ignore
 
     [<TestMethod>]
     member _.``constructor uint32 - valid`` () =
         for row in CodePointTests.AllCodePoints() do
-            CodePoint(Convert.ToUInt32 row.[0])
+            CodePoint(Convert.ToUInt32 row.[0]) |> ignore
         ()
 
     [<DataTestMethod>]
     [<DataRow(0x110000u)>]
     member _.``constructor uint32 - invalid`` (codepoint:uint32) =
-        //Due to a design decision for F#, CodePoint can not be passed to ignore, meaning one of its properties needs to be called to use it in this context. The exception is thrown during construction regardless, so the property is never called. Even if it was, the required functionality is still being tested.
-        Assert.ThrowsException<ArgumentOutOfRangeException>((fun () -> CodePoint(codepoint).IsAscii |> ignore)) |> ignore
+        Assert.ThrowsException<ArgumentOutOfRangeException>((fun () -> CodePoint(codepoint) |> ignore)) |> ignore
 
     [<DataTestMethod>]
     [<DataRow('\u0000')>]
     [<DataRow('A')>]
     [<DataRow('肀')>]
-    member _.``constructor char`` (char:char) = CodePoint(char)
+    member _.``constructor char`` (char:char) = CodePoint(char) |> ignore
 
     [<DataTestMethod>]
     [<DataRow(1, 0x00u)>]
@@ -89,14 +87,14 @@ type CodePointTests() =
     member _.``is low surrogate`` (exp:bool, value:uint32) = Assert.AreEqual(exp, CodePoint(value).IsLowSurrogate)
 
     [<DataTestMethod>]
-    [<DataRow(true, 0x41)>]
-    [<DataRow(true, 0xDE)>]
-    [<DataRow(true, 0xF6)>]
-    [<DataRow(true, 0x39E)>]
-    [<DataRow(true, 0x2125)>]
-    [<DataRow(true, 0x2383)>]
-    [<DataRow(true, 0x1D11E)>] // 𝄞 which can't be represented with a single char
-    member _.``is code point`` (value:Int32) = CodePoint(value) //The constructor does the check, and will throw if not true
+    [<DataRow(0x41)>]
+    [<DataRow(0xDE)>]
+    [<DataRow(0xF6)>]
+    [<DataRow(0x39E)>]
+    [<DataRow(0x2125)>]
+    [<DataRow(0x2383)>]
+    [<DataRow(0x1D11E)>] // 𝄞 which can't be represented with a single char
+    member _.``is code point`` (value:Int32) = CodePoint(value) |> ignore //The constructor does the check, and will throw if not true
 
     [<DataTestMethod>]
     [<DataRow(true, 0x41)>]

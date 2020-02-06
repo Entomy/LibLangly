@@ -6,7 +6,7 @@ namespace Stringier {
 	/// Represents a UTF-16 Surrogate Pair.
 	/// </summary>
 	[StructLayout(LayoutKind.Auto)]
-	public readonly ref struct SurrogatePair {
+	public readonly struct SurrogatePair {
 		/// <summary>
 		/// The high surrogate
 		/// </summary>

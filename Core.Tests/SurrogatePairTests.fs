@@ -24,7 +24,7 @@ type SurrogatePairTests() =
     [<DataRow(0x1234u, 0xDE00u)>]
     [<DataRow(0xDC00u, 0xDE00u)>]
     member _.``constructor high-low - invalid`` (high:uint32, low:uint32) =
-        Assert.ThrowsException<ArgumentOutOfRangeException>((fun () -> SurrogatePair(CodePoint(high), CodePoint(low)).CodePoint.IsAscii |> ignore)) |> ignore
+        Assert.ThrowsException<ArgumentOutOfRangeException>((fun () -> SurrogatePair(CodePoint(high), CodePoint(low)) |> ignore)) |> ignore
 
     [<DataTestMethod>]
     [<DataRow(0x10330, 0x10330u)>]
@@ -37,4 +37,4 @@ type SurrogatePairTests() =
     [<DataRow(0xD800u)>]
     [<DataRow(0xDC00u)>]
     member _.``constructor SMP - invalid`` (value:uint32) =
-        Assert.ThrowsException<ArgumentOutOfRangeException>((fun () -> SurrogatePair(CodePoint(value)).CodePoint.IsAscii |> ignore)) |> ignore
+        Assert.ThrowsException<ArgumentOutOfRangeException>((fun () -> SurrogatePair(CodePoint(value)) |> ignore)) |> ignore
