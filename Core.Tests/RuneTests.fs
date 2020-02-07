@@ -358,7 +358,7 @@ type RuneTests() =
         Assert.AreEqual(Rune(lower), Rune.ToLower(rune, cultureInfo))
 
     // Invariant ToUpper / ToLower doesn't modify Turkish I or majuscule Eszett
-    [<DataTestMethod>] // the localization tables used by our test data only exist on Win8+
+    [<DataTestMethod>]
     [<DataRow('0', '0', '0')>]
     [<DataRow('a', 'A', 'a')>]
     [<DataRow('i', 'I', 'i')>]

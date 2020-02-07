@@ -1,34 +1,26 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFrameworks>netcoreapp2.0;netcoreapp3.1</TargetFrameworks>
-    <IsPackable>false</IsPackable>
     <GenerateProgramFile>false</GenerateProgramFile>
   </PropertyGroup>
-
+  <ItemGroup>
+    <ProjectReference Include="..\Core.FSharp\Core.FSharp.fsproj" />
+    <ProjectReference Include="..\Core.Tests.Auxillary\Core.Tests.Auxillary.csproj" />
+  </ItemGroup>
   <ItemGroup>
     <Compile Include="CodePointTests.fs" />
     <Compile Include="EditDistanceTests.fs" />
     <Compile Include="SurrogatePairTests.fs" />
     <Compile Include="SearchTests.fs" />
     <Compile Include="RuneTests.fs" />
+    <Compile Include="GlyphTests.fs" />
     <Compile Include="Program.fs" />
+    <Content Include="../THIRD_PARTY_NOTICES" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0" />
     <PackageReference Include="MSTest.TestAdapter" Version="2.0.0" />
     <PackageReference Include="MSTest.TestFramework" Version="2.0.0" />
     <PackageReference Include="coverlet.collector" Version="1.0.1" />
   </ItemGroup>
-
-	<ItemGroup>
-		<Content Include="..\THIRD_PARTY_NOTICES" PackagePath="\" />
-	</ItemGroup>
-
-	<ItemGroup>
-    <ProjectReference Include="..\Core.FSharp\Core.FSharp.fsproj" />
-    <ProjectReference Include="..\Core.Tests.Auxillary\Core.Tests.Auxillary.csproj" />
-  </ItemGroup>
-
 </Project>
