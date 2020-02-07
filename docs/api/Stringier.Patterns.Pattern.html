@@ -81,35 +81,11 @@
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">Pattern</span></div>
   </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetHashCode()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetType()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.MemberwiseClone()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ToString()</span>
-    </div>
-  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Stringier.Patterns.html">Stringier.Patterns</a></h6>
   <h6><strong>Assembly</strong>: Stringier.Patterns.dll</h6>
   <h5 id="Stringier_Patterns_Pattern_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class Pattern</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class Pattern : object</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -1084,86 +1060,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Check_Stringier_Patterns_Bias_System_Func_System_Char_System_Boolean__System_Func_System_Char_System_Boolean__System_Func_System_Char_System_Boolean__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Check(Stringier.Patterns.Bias%2CSystem.Func%7BSystem.Char%2CSystem.Boolean%7D%2CSystem.Func%7BSystem.Char%2CSystem.Boolean%7D%2CSystem.Func%7BSystem.Char%2CSystem.Boolean%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L278">View Source</a>
-  </span>
-  <a id="Stringier_Patterns_Pattern_Check_" data-uid="Stringier.Patterns.Pattern.Check*"></a>
-  <h4 id="Stringier_Patterns_Pattern_Check_Stringier_Patterns_Bias_System_Func_System_Char_System_Boolean__System_Func_System_Char_System_Boolean__System_Func_System_Char_System_Boolean__" data-uid="Stringier.Patterns.Pattern.Check(Stringier.Patterns.Bias,System.Func{System.Char,System.Boolean},System.Func{System.Char,System.Boolean},System.Func{System.Char,System.Boolean})">Check(Bias, Func&lt;Char, Boolean&gt;, Func&lt;Char, Boolean&gt;, Func&lt;Char, Boolean&gt;)</h4>
-  <div class="markdown level1 summary"><p>Use the specified <code data-dev-comment-type="paramref" class="paramref">headCheck</code>, <code data-dev-comment-type="paramref" class="paramref">bodyCheck</code>, and <code data-dev-comment-type="paramref" class="paramref">tailCheck</code> to represent the valid form of a word, along with the <code data-dev-comment-type="paramref" class="paramref">bias</code>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Pattern Check(Bias bias, Func&lt;char, bool&gt; headCheck, Func&lt;char, bool&gt; bodyCheck, Func&lt;char, bool&gt; tailCheck)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Stringier.Patterns.Bias.html">Bias</a></td>
-        <td><span class="parametername">bias</span></td>
-        <td><p>Endian bias of the word. Head bias requires the head if only one letter is present. Tail bias requires the tail if only one letter is present.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Func</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.Boolean</span>&gt;</td>
-        <td><span class="parametername">headCheck</span></td>
-        <td><p>A <span class="xref">System.Func&lt;T, TResult&gt;</span> to validate the head.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Func</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.Boolean</span>&gt;</td>
-        <td><span class="parametername">bodyCheck</span></td>
-        <td><p>A <span class="xref">System.Func&lt;T, TResult&gt;</span> to validate the body, which may repeat.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Func</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.Boolean</span>&gt;</td>
-        <td><span class="parametername">tailCheck</span></td>
-        <td><p>A <span class="xref">System.Func&lt;T, TResult&gt;</span> to validate the tail.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Check_System_Func_System_Char_System_Boolean__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Check(System.Func%7BSystem.Char%2CSystem.Boolean%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Check_Func_Char_Boolean__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Check(Func%7BChar%2CBoolean%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L198">View Source</a>
   </span>
   <a id="Stringier_Patterns_Pattern_Check_" data-uid="Stringier.Patterns.Pattern.Check*"></a>
-  <h4 id="Stringier_Patterns_Pattern_Check_System_Func_System_Char_System_Boolean__" data-uid="Stringier.Patterns.Pattern.Check(System.Func{System.Char,System.Boolean})">Check(Func&lt;Char, Boolean&gt;)</h4>
+  <h4 id="Stringier_Patterns_Pattern_Check_Func_Char_Boolean__" data-uid="Stringier.Patterns.Pattern.Check(Func{Char,Boolean})">Check(Func&lt;Char, Boolean&gt;)</h4>
   <div class="markdown level1 summary"><p>Use the <code data-dev-comment-type="paramref" class="paramref">check</code> to represent a single character.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Pattern Check(Func&lt;char, bool&gt; check)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Pattern Check(Func&lt;Char, Boolean&gt; check)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1176,9 +1085,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Func</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="xref">Func</span>&lt;<span class="xref">Char</span>, <span class="xref">Boolean</span>&gt;</td>
         <td><span class="parametername">check</span></td>
-        <td><p>A <span class="xref">System.Func&lt;T, TResult&gt;</span> to validate the character.</p>
+        <td><p>A <see cref="!:Func&lt;T, TResult>"></see> to validate the character.</p>
 </td>
       </tr>
     </tbody>
@@ -1200,19 +1109,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Check_System_Func_System_Char_System_Boolean__System_Boolean_System_Func_System_Char_System_Boolean__System_Boolean_System_Func_System_Char_System_Boolean__System_Boolean_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Check(System.Func%7BSystem.Char%2CSystem.Boolean%7D%2CSystem.Boolean%2CSystem.Func%7BSystem.Char%2CSystem.Boolean%7D%2CSystem.Boolean%2CSystem.Func%7BSystem.Char%2CSystem.Boolean%7D%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Check_Func_Char_Boolean__Boolean_Func_Char_Boolean__Boolean_Func_Char_Boolean__Boolean_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Check(Func%7BChar%2CBoolean%7D%2CBoolean%2CFunc%7BChar%2CBoolean%7D%2CBoolean%2CFunc%7BChar%2CBoolean%7D%2CBoolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L248">View Source</a>
   </span>
   <a id="Stringier_Patterns_Pattern_Check_" data-uid="Stringier.Patterns.Pattern.Check*"></a>
-  <h4 id="Stringier_Patterns_Pattern_Check_System_Func_System_Char_System_Boolean__System_Boolean_System_Func_System_Char_System_Boolean__System_Boolean_System_Func_System_Char_System_Boolean__System_Boolean_" data-uid="Stringier.Patterns.Pattern.Check(System.Func{System.Char,System.Boolean},System.Boolean,System.Func{System.Char,System.Boolean},System.Boolean,System.Func{System.Char,System.Boolean},System.Boolean)">Check(Func&lt;Char, Boolean&gt;, Boolean, Func&lt;Char, Boolean&gt;, Boolean, Func&lt;Char, Boolean&gt;, Boolean)</h4>
+  <h4 id="Stringier_Patterns_Pattern_Check_Func_Char_Boolean__Boolean_Func_Char_Boolean__Boolean_Func_Char_Boolean__Boolean_" data-uid="Stringier.Patterns.Pattern.Check(Func{Char,Boolean},Boolean,Func{Char,Boolean},Boolean,Func{Char,Boolean},Boolean)">Check(Func&lt;Char, Boolean&gt;, Boolean, Func&lt;Char, Boolean&gt;, Boolean, Func&lt;Char, Boolean&gt;, Boolean)</h4>
   <div class="markdown level1 summary"><p>Use the specified <code data-dev-comment-type="paramref" class="paramref">headCheck</code>, <code data-dev-comment-type="paramref" class="paramref">bodyCheck</code>, and <code data-dev-comment-type="paramref" class="paramref">tailCheck</code> to represent a variable length string, along with whether each check is required for a valid string. The head and tail are only present once, with the body being repeatable.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Pattern Check(Func&lt;char, bool&gt; headCheck, bool headRequired, Func&lt;char, bool&gt; bodyCheck, bool bodyRequired, Func&lt;char, bool&gt; tailCheck, bool tailRequired)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Pattern Check(Func&lt;Char, Boolean&gt; headCheck, Boolean headRequired, Func&lt;Char, Boolean&gt; bodyCheck, Boolean bodyRequired, Func&lt;Char, Boolean&gt; tailCheck, Boolean tailRequired)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1225,37 +1134,37 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Func</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="xref">Func</span>&lt;<span class="xref">Char</span>, <span class="xref">Boolean</span>&gt;</td>
         <td><span class="parametername">headCheck</span></td>
-        <td><p>A <span class="xref">System.Func&lt;T, TResult&gt;</span> to validate the head.</p>
+        <td><p>A <see cref="!:Func&lt;T, TResult>"></see> to validate the head.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="xref">Boolean</span></td>
         <td><span class="parametername">headRequired</span></td>
         <td><p>Whether the <code data-dev-comment-type="paramref" class="paramref">headCheck</code> is required.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Func</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="xref">Func</span>&lt;<span class="xref">Char</span>, <span class="xref">Boolean</span>&gt;</td>
         <td><span class="parametername">bodyCheck</span></td>
-        <td><p>A <span class="xref">System.Func&lt;T, TResult&gt;</span> to validate the body, which may repeat.</p>
+        <td><p>A <see cref="!:Func&lt;T, TResult>"></see> to validate the body, which may repeat.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="xref">Boolean</span></td>
         <td><span class="parametername">bodyRequired</span></td>
         <td><p>Whether the <code data-dev-comment-type="paramref" class="paramref">bodyCheck</code> is required.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Func</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="xref">Func</span>&lt;<span class="xref">Char</span>, <span class="xref">Boolean</span>&gt;</td>
         <td><span class="parametername">tailCheck</span></td>
-        <td><p>A <span class="xref">System.Func&lt;T, TResult&gt;</span> to validate the tail.</p>
+        <td><p>A <see cref="!:Func&lt;T, TResult>"></see> to validate the tail.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="xref">Boolean</span></td>
         <td><span class="parametername">tailRequired</span></td>
         <td><p>Whether the <code data-dev-comment-type="paramref" class="paramref">tailRequired</code> is required.</p>
 </td>
@@ -1279,19 +1188,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Check_System_Func_System_Char_System_Boolean__System_Func_System_Char_System_Boolean__System_Func_System_Char_System_Boolean__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Check(System.Func%7BSystem.Char%2CSystem.Boolean%7D%2CSystem.Func%7BSystem.Char%2CSystem.Boolean%7D%2CSystem.Func%7BSystem.Char%2CSystem.Boolean%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Check_Func_Char_Boolean__Func_Char_Boolean__Func_Char_Boolean__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Check(Func%7BChar%2CBoolean%7D%2CFunc%7BChar%2CBoolean%7D%2CFunc%7BChar%2CBoolean%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L220">View Source</a>
   </span>
   <a id="Stringier_Patterns_Pattern_Check_" data-uid="Stringier.Patterns.Pattern.Check*"></a>
-  <h4 id="Stringier_Patterns_Pattern_Check_System_Func_System_Char_System_Boolean__System_Func_System_Char_System_Boolean__System_Func_System_Char_System_Boolean__" data-uid="Stringier.Patterns.Pattern.Check(System.Func{System.Char,System.Boolean},System.Func{System.Char,System.Boolean},System.Func{System.Char,System.Boolean})">Check(Func&lt;Char, Boolean&gt;, Func&lt;Char, Boolean&gt;, Func&lt;Char, Boolean&gt;)</h4>
+  <h4 id="Stringier_Patterns_Pattern_Check_Func_Char_Boolean__Func_Char_Boolean__Func_Char_Boolean__" data-uid="Stringier.Patterns.Pattern.Check(Func{Char,Boolean},Func{Char,Boolean},Func{Char,Boolean})">Check(Func&lt;Char, Boolean&gt;, Func&lt;Char, Boolean&gt;, Func&lt;Char, Boolean&gt;)</h4>
   <div class="markdown level1 summary"><p>Use the specified <code data-dev-comment-type="paramref" class="paramref">headCheck</code>, <code data-dev-comment-type="paramref" class="paramref">bodyCheck</code>, and <code data-dev-comment-type="paramref" class="paramref">tailCheck</code> to represent a variable length string. The head and tail are only present once, with the body being repeatable.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Pattern Check(Func&lt;char, bool&gt; headCheck, Func&lt;char, bool&gt; bodyCheck, Func&lt;char, bool&gt; tailCheck)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Pattern Check(Func&lt;Char, Boolean&gt; headCheck, Func&lt;Char, Boolean&gt; bodyCheck, Func&lt;Char, Boolean&gt; tailCheck)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1304,21 +1213,21 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Func</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="xref">Func</span>&lt;<span class="xref">Char</span>, <span class="xref">Boolean</span>&gt;</td>
         <td><span class="parametername">headCheck</span></td>
-        <td><p>A <span class="xref">System.Func&lt;T, TResult&gt;</span> to validate the head.</p>
+        <td><p>A <see cref="!:Func&lt;T, TResult>"></see> to validate the head.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Func</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="xref">Func</span>&lt;<span class="xref">Char</span>, <span class="xref">Boolean</span>&gt;</td>
         <td><span class="parametername">bodyCheck</span></td>
-        <td><p>A <span class="xref">System.Func&lt;T, TResult&gt;</span> to validate the body, which may repeat.</p>
+        <td><p>A <see cref="!:Func&lt;T, TResult>"></see> to validate the body, which may repeat.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Func</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="xref">Func</span>&lt;<span class="xref">Char</span>, <span class="xref">Boolean</span>&gt;</td>
         <td><span class="parametername">tailCheck</span></td>
-        <td><p>A <span class="xref">System.Func&lt;T, TResult&gt;</span> to validate the tail.</p>
+        <td><p>A <see cref="!:Func&lt;T, TResult>"></see> to validate the tail.</p>
 </td>
       </tr>
     </tbody>
@@ -1340,20 +1249,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Check_System_String_Stringier_Patterns_Bias_System_Func_System_Char_System_Boolean__System_Func_System_Char_System_Boolean__System_Func_System_Char_System_Boolean__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Check(System.String%2CStringier.Patterns.Bias%2CSystem.Func%7BSystem.Char%2CSystem.Boolean%7D%2CSystem.Func%7BSystem.Char%2CSystem.Boolean%7D%2CSystem.Func%7BSystem.Char%2CSystem.Boolean%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Check_String_Func_Char_Boolean__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Check(String%2CFunc%7BChar%2CBoolean%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L294">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L209">View Source</a>
   </span>
   <a id="Stringier_Patterns_Pattern_Check_" data-uid="Stringier.Patterns.Pattern.Check*"></a>
-  <h4 id="Stringier_Patterns_Pattern_Check_System_String_Stringier_Patterns_Bias_System_Func_System_Char_System_Boolean__System_Func_System_Char_System_Boolean__System_Func_System_Char_System_Boolean__" data-uid="Stringier.Patterns.Pattern.Check(System.String,Stringier.Patterns.Bias,System.Func{System.Char,System.Boolean},System.Func{System.Char,System.Boolean},System.Func{System.Char,System.Boolean})">Check(String, Bias, Func&lt;Char, Boolean&gt;, Func&lt;Char, Boolean&gt;, Func&lt;Char, Boolean&gt;)</h4>
-  <div class="markdown level1 summary"><p>Use the specified <code data-dev-comment-type="paramref" class="paramref">headCheck</code>, <code data-dev-comment-type="paramref" class="paramref">bodyCheck</code>, and <code data-dev-comment-type="paramref" class="paramref">tailCheck</code> to represent the valid form of a word, along with the <code data-dev-comment-type="paramref" class="paramref">bias</code>.</p>
+  <h4 id="Stringier_Patterns_Pattern_Check_String_Func_Char_Boolean__" data-uid="Stringier.Patterns.Pattern.Check(String,Func{Char,Boolean})">Check(String, Func&lt;Char, Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Use the <code data-dev-comment-type="paramref" class="paramref">check</code> to represent a single character.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Remove the name parameter as it's not longer used&quot;)]
-public static Pattern Check(string name, Bias bias, Func&lt;char, bool&gt; headCheck, Func&lt;char, bool&gt; bodyCheck, Func&lt;char, bool&gt; tailCheck)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Pattern Check(String name, Func&lt;Char, Boolean&gt; check)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1366,7 +1274,214 @@ public static Pattern Check(string name, Bias bias, Func&lt;char, bool&gt; headC
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.String</span></td>
+        <td><span class="xref">String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Name to display this pattern as.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">Char</span>, <span class="xref">Boolean</span>&gt;</td>
+        <td><span class="parametername">check</span></td>
+        <td><p>A <see cref="!:Func&lt;T, TResult>"></see> to validate the character.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Check_String_Func_Char_Boolean__Boolean_Func_Char_Boolean__Boolean_Func_Char_Boolean__Boolean_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Check(String%2CFunc%7BChar%2CBoolean%7D%2CBoolean%2CFunc%7BChar%2CBoolean%7D%2CBoolean%2CFunc%7BChar%2CBoolean%7D%2CBoolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L266">View Source</a>
+  </span>
+  <a id="Stringier_Patterns_Pattern_Check_" data-uid="Stringier.Patterns.Pattern.Check*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Check_String_Func_Char_Boolean__Boolean_Func_Char_Boolean__Boolean_Func_Char_Boolean__Boolean_" data-uid="Stringier.Patterns.Pattern.Check(String,Func{Char,Boolean},Boolean,Func{Char,Boolean},Boolean,Func{Char,Boolean},Boolean)">Check(String, Func&lt;Char, Boolean&gt;, Boolean, Func&lt;Char, Boolean&gt;, Boolean, Func&lt;Char, Boolean&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Use the specified <code data-dev-comment-type="paramref" class="paramref">headCheck</code>, <code data-dev-comment-type="paramref" class="paramref">bodyCheck</code>, and <code data-dev-comment-type="paramref" class="paramref">tailCheck</code> to represent a variable length string, along with whether each check is required for a valid string. The head and tail are only present once, with the body being repeatable.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern Check(String name, Func&lt;Char, Boolean&gt; headCheck, Boolean headRequired, Func&lt;Char, Boolean&gt; bodyCheck, Boolean bodyRequired, Func&lt;Char, Boolean&gt; tailCheck, Boolean tailRequired)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Name to display this pattern as.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">Char</span>, <span class="xref">Boolean</span>&gt;</td>
+        <td><span class="parametername">headCheck</span></td>
+        <td><p>A <see cref="!:Func&lt;T, TResult>"></see> to validate the head.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><span class="parametername">headRequired</span></td>
+        <td><p>Whether the <code data-dev-comment-type="paramref" class="paramref">headCheck</code> is required.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">Char</span>, <span class="xref">Boolean</span>&gt;</td>
+        <td><span class="parametername">bodyCheck</span></td>
+        <td><p>A <see cref="!:Func&lt;T, TResult>"></see> to validate the body, which may repeat.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><span class="parametername">bodyRequired</span></td>
+        <td><p>Whether the <code data-dev-comment-type="paramref" class="paramref">bodyCheck</code> is required.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">Char</span>, <span class="xref">Boolean</span>&gt;</td>
+        <td><span class="parametername">tailCheck</span></td>
+        <td><p>A <see cref="!:Func&lt;T, TResult>"></see> to validate the tail.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><span class="parametername">tailRequired</span></td>
+        <td><p>Whether the <code data-dev-comment-type="paramref" class="paramref">tailRequired</code> is required.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Check_String_Func_Char_Boolean__Func_Char_Boolean__Func_Char_Boolean__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Check(String%2CFunc%7BChar%2CBoolean%7D%2CFunc%7BChar%2CBoolean%7D%2CFunc%7BChar%2CBoolean%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L235">View Source</a>
+  </span>
+  <a id="Stringier_Patterns_Pattern_Check_" data-uid="Stringier.Patterns.Pattern.Check*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Check_String_Func_Char_Boolean__Func_Char_Boolean__Func_Char_Boolean__" data-uid="Stringier.Patterns.Pattern.Check(String,Func{Char,Boolean},Func{Char,Boolean},Func{Char,Boolean})">Check(String, Func&lt;Char, Boolean&gt;, Func&lt;Char, Boolean&gt;, Func&lt;Char, Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Use the specified <code data-dev-comment-type="paramref" class="paramref">headCheck</code>, <code data-dev-comment-type="paramref" class="paramref">bodyCheck</code>, and <code data-dev-comment-type="paramref" class="paramref">tailCheck</code> to represent a variable length string. The head and tail are only present once, with the body being repeatable.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern Check(String name, Func&lt;Char, Boolean&gt; headCheck, Func&lt;Char, Boolean&gt; bodyCheck, Func&lt;Char, Boolean&gt; tailCheck)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Name to display this pattern as.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">Char</span>, <span class="xref">Boolean</span>&gt;</td>
+        <td><span class="parametername">headCheck</span></td>
+        <td><p>A <see cref="!:Func&lt;T, TResult>"></see> to validate the head.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">Char</span>, <span class="xref">Boolean</span>&gt;</td>
+        <td><span class="parametername">bodyCheck</span></td>
+        <td><p>A <see cref="!:Func&lt;T, TResult>"></see> to validate the body, which may repeat.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">Char</span>, <span class="xref">Boolean</span>&gt;</td>
+        <td><span class="parametername">tailCheck</span></td>
+        <td><p>A <see cref="!:Func&lt;T, TResult>"></see> to validate the tail.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Check_String_Stringier_Patterns_Bias_Func_Char_Boolean__Func_Char_Boolean__Func_Char_Boolean__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Check(String%2CStringier.Patterns.Bias%2CFunc%7BChar%2CBoolean%7D%2CFunc%7BChar%2CBoolean%7D%2CFunc%7BChar%2CBoolean%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L294">View Source</a>
+  </span>
+  <a id="Stringier_Patterns_Pattern_Check_" data-uid="Stringier.Patterns.Pattern.Check*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Check_String_Stringier_Patterns_Bias_Func_Char_Boolean__Func_Char_Boolean__Func_Char_Boolean__" data-uid="Stringier.Patterns.Pattern.Check(String,Stringier.Patterns.Bias,Func{Char,Boolean},Func{Char,Boolean},Func{Char,Boolean})">Check(String, Bias, Func&lt;Char, Boolean&gt;, Func&lt;Char, Boolean&gt;, Func&lt;Char, Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Use the specified <code data-dev-comment-type="paramref" class="paramref">headCheck</code>, <code data-dev-comment-type="paramref" class="paramref">bodyCheck</code>, and <code data-dev-comment-type="paramref" class="paramref">tailCheck</code> to represent the valid form of a word, along with the <code data-dev-comment-type="paramref" class="paramref">bias</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern Check(String name, Bias bias, Func&lt;Char, Boolean&gt; headCheck, Func&lt;Char, Boolean&gt; bodyCheck, Func&lt;Char, Boolean&gt; tailCheck)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">String</span></td>
         <td><span class="parametername">name</span></td>
         <td><p>Name to display this pattern as.</p>
 </td>
@@ -1378,21 +1493,21 @@ public static Pattern Check(string name, Bias bias, Func&lt;char, bool&gt; headC
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Func</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="xref">Func</span>&lt;<span class="xref">Char</span>, <span class="xref">Boolean</span>&gt;</td>
         <td><span class="parametername">headCheck</span></td>
-        <td><p>A <span class="xref">System.Func&lt;T, TResult&gt;</span> to validate the head.</p>
+        <td><p>A <see cref="!:Func&lt;T, TResult>"></see> to validate the head.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Func</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="xref">Func</span>&lt;<span class="xref">Char</span>, <span class="xref">Boolean</span>&gt;</td>
         <td><span class="parametername">bodyCheck</span></td>
-        <td><p>A <span class="xref">System.Func&lt;T, TResult&gt;</span> to validate the body, which may repeat.</p>
+        <td><p>A <see cref="!:Func&lt;T, TResult>"></see> to validate the body, which may repeat.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Func</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="xref">Func</span>&lt;<span class="xref">Char</span>, <span class="xref">Boolean</span>&gt;</td>
         <td><span class="parametername">tailCheck</span></td>
-        <td><p>A <span class="xref">System.Func&lt;T, TResult&gt;</span> to validate the tail.</p>
+        <td><p>A <see cref="!:Func&lt;T, TResult>"></see> to validate the tail.</p>
 </td>
       </tr>
     </tbody>
@@ -1414,20 +1529,19 @@ public static Pattern Check(string name, Bias bias, Func&lt;char, bool&gt; headC
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Check_System_String_System_Func_System_Char_System_Boolean__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Check(System.String%2CSystem.Func%7BSystem.Char%2CSystem.Boolean%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Check_Stringier_Patterns_Bias_Func_Char_Boolean__Func_Char_Boolean__Func_Char_Boolean__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Check(Stringier.Patterns.Bias%2CFunc%7BChar%2CBoolean%7D%2CFunc%7BChar%2CBoolean%7D%2CFunc%7BChar%2CBoolean%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L209">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L278">View Source</a>
   </span>
   <a id="Stringier_Patterns_Pattern_Check_" data-uid="Stringier.Patterns.Pattern.Check*"></a>
-  <h4 id="Stringier_Patterns_Pattern_Check_System_String_System_Func_System_Char_System_Boolean__" data-uid="Stringier.Patterns.Pattern.Check(System.String,System.Func{System.Char,System.Boolean})">Check(String, Func&lt;Char, Boolean&gt;)</h4>
-  <div class="markdown level1 summary"><p>Use the <code data-dev-comment-type="paramref" class="paramref">check</code> to represent a single character.</p>
+  <h4 id="Stringier_Patterns_Pattern_Check_Stringier_Patterns_Bias_Func_Char_Boolean__Func_Char_Boolean__Func_Char_Boolean__" data-uid="Stringier.Patterns.Pattern.Check(Stringier.Patterns.Bias,Func{Char,Boolean},Func{Char,Boolean},Func{Char,Boolean})">Check(Bias, Func&lt;Char, Boolean&gt;, Func&lt;Char, Boolean&gt;, Func&lt;Char, Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Use the specified <code data-dev-comment-type="paramref" class="paramref">headCheck</code>, <code data-dev-comment-type="paramref" class="paramref">bodyCheck</code>, and <code data-dev-comment-type="paramref" class="paramref">tailCheck</code> to represent the valid form of a word, along with the <code data-dev-comment-type="paramref" class="paramref">bias</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Remove the name parameter as it's no longer used.&quot;)]
-public static Pattern Check(string name, Func&lt;char, bool&gt; check)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Pattern Check(Bias bias, Func&lt;Char, Boolean&gt; headCheck, Func&lt;Char, Boolean&gt; bodyCheck, Func&lt;Char, Boolean&gt; tailCheck)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1440,15 +1554,27 @@ public static Pattern Check(string name, Func&lt;char, bool&gt; check)</code></p
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">name</span></td>
-        <td><p>Name to display this pattern as.</p>
+        <td><a class="xref" href="Stringier.Patterns.Bias.html">Bias</a></td>
+        <td><span class="parametername">bias</span></td>
+        <td><p>Endian bias of the word. Head bias requires the head if only one letter is present. Tail bias requires the tail if only one letter is present.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Func</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.Boolean</span>&gt;</td>
-        <td><span class="parametername">check</span></td>
-        <td><p>A <span class="xref">System.Func&lt;T, TResult&gt;</span> to validate the character.</p>
+        <td><span class="xref">Func</span>&lt;<span class="xref">Char</span>, <span class="xref">Boolean</span>&gt;</td>
+        <td><span class="parametername">headCheck</span></td>
+        <td><p>A <see cref="!:Func&lt;T, TResult>"></see> to validate the head.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">Char</span>, <span class="xref">Boolean</span>&gt;</td>
+        <td><span class="parametername">bodyCheck</span></td>
+        <td><p>A <see cref="!:Func&lt;T, TResult>"></see> to validate the body, which may repeat.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">Char</span>, <span class="xref">Boolean</span>&gt;</td>
+        <td><span class="parametername">tailCheck</span></td>
+        <td><p>A <see cref="!:Func&lt;T, TResult>"></see> to validate the tail.</p>
 </td>
       </tr>
     </tbody>
@@ -1470,20 +1596,19 @@ public static Pattern Check(string name, Func&lt;char, bool&gt; check)</code></p
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Check_System_String_System_Func_System_Char_System_Boolean__System_Boolean_System_Func_System_Char_System_Boolean__System_Boolean_System_Func_System_Char_System_Boolean__System_Boolean_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Check(System.String%2CSystem.Func%7BSystem.Char%2CSystem.Boolean%7D%2CSystem.Boolean%2CSystem.Func%7BSystem.Char%2CSystem.Boolean%7D%2CSystem.Boolean%2CSystem.Func%7BSystem.Char%2CSystem.Boolean%7D%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Consume_String_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Consume(String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L266">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternParsing.cs/#L33">View Source</a>
   </span>
-  <a id="Stringier_Patterns_Pattern_Check_" data-uid="Stringier.Patterns.Pattern.Check*"></a>
-  <h4 id="Stringier_Patterns_Pattern_Check_System_String_System_Func_System_Char_System_Boolean__System_Boolean_System_Func_System_Char_System_Boolean__System_Boolean_System_Func_System_Char_System_Boolean__System_Boolean_" data-uid="Stringier.Patterns.Pattern.Check(System.String,System.Func{System.Char,System.Boolean},System.Boolean,System.Func{System.Char,System.Boolean},System.Boolean,System.Func{System.Char,System.Boolean},System.Boolean)">Check(String, Func&lt;Char, Boolean&gt;, Boolean, Func&lt;Char, Boolean&gt;, Boolean, Func&lt;Char, Boolean&gt;, Boolean)</h4>
-  <div class="markdown level1 summary"><p>Use the specified <code data-dev-comment-type="paramref" class="paramref">headCheck</code>, <code data-dev-comment-type="paramref" class="paramref">bodyCheck</code>, and <code data-dev-comment-type="paramref" class="paramref">tailCheck</code> to represent a variable length string, along with whether each check is required for a valid string. The head and tail are only present once, with the body being repeatable.</p>
+  <a id="Stringier_Patterns_Pattern_Consume_" data-uid="Stringier.Patterns.Pattern.Consume*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Consume_String_" data-uid="Stringier.Patterns.Pattern.Consume(String)">Consume(String)</h4>
+  <div class="markdown level1 summary"><p>Attempt to consume the <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> from the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Remove the name parameter as it's no longer used.&quot;)]
-public static Pattern Check(string name, Func&lt;char, bool&gt; headCheck, bool headRequired, Func&lt;char, bool&gt; bodyCheck, bool bodyRequired, Func&lt;char, bool&gt; tailCheck, bool tailRequired)</code></pre>
+    <pre><code class="lang-csharp hljs">public Result Consume(String source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1496,45 +1621,9 @@ public static Pattern Check(string name, Func&lt;char, bool&gt; headCheck, bool 
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">name</span></td>
-        <td><p>Name to display this pattern as.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Func</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.Boolean</span>&gt;</td>
-        <td><span class="parametername">headCheck</span></td>
-        <td><p>A <span class="xref">System.Func&lt;T, TResult&gt;</span> to validate the head.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td><span class="parametername">headRequired</span></td>
-        <td><p>Whether the <code data-dev-comment-type="paramref" class="paramref">headCheck</code> is required.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Func</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.Boolean</span>&gt;</td>
-        <td><span class="parametername">bodyCheck</span></td>
-        <td><p>A <span class="xref">System.Func&lt;T, TResult&gt;</span> to validate the body, which may repeat.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td><span class="parametername">bodyRequired</span></td>
-        <td><p>Whether the <code data-dev-comment-type="paramref" class="paramref">bodyCheck</code> is required.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Func</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.Boolean</span>&gt;</td>
-        <td><span class="parametername">tailCheck</span></td>
-        <td><p>A <span class="xref">System.Func&lt;T, TResult&gt;</span> to validate the tail.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td><span class="parametername">tailRequired</span></td>
-        <td><p>Whether the <code data-dev-comment-type="paramref" class="paramref">tailRequired</code> is required.</p>
+        <td><span class="xref">String</span></td>
+        <td><span class="parametername">source</span></td>
+        <td><p>The <see cref="!:String"></see> to consume.</p>
 </td>
       </tr>
     </tbody>
@@ -1549,27 +1638,43 @@ public static Pattern Check(string name, Func&lt;char, bool&gt; headCheck, bool 
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
-        <td></td>
+        <td><a class="xref" href="Stringier.Patterns.Result.html">Result</a></td>
+        <td><p>A <a class="xref" href="Stringier.Patterns.Result.html">Result</a> containing whether a match occured and the captured <see cref="!:String"></see>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.PatternUndefinedException.html">PatternUndefinedException</a></td>
+        <td><p>The pattern was attempted to be used before actually being defined.</p>
+</td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Check_System_String_System_Func_System_Char_System_Boolean__System_Func_System_Char_System_Boolean__System_Func_System_Char_System_Boolean__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Check(System.String%2CSystem.Func%7BSystem.Char%2CSystem.Boolean%7D%2CSystem.Func%7BSystem.Char%2CSystem.Boolean%7D%2CSystem.Func%7BSystem.Char%2CSystem.Boolean%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Consume_String_System_Nullable_Stringier_Patterns_Debugging_ITrace__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Consume(String%2CSystem.Nullable%7BStringier.Patterns.Debugging.ITrace%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L235">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternParsing.cs/#L45">View Source</a>
   </span>
-  <a id="Stringier_Patterns_Pattern_Check_" data-uid="Stringier.Patterns.Pattern.Check*"></a>
-  <h4 id="Stringier_Patterns_Pattern_Check_System_String_System_Func_System_Char_System_Boolean__System_Func_System_Char_System_Boolean__System_Func_System_Char_System_Boolean__" data-uid="Stringier.Patterns.Pattern.Check(System.String,System.Func{System.Char,System.Boolean},System.Func{System.Char,System.Boolean},System.Func{System.Char,System.Boolean})">Check(String, Func&lt;Char, Boolean&gt;, Func&lt;Char, Boolean&gt;, Func&lt;Char, Boolean&gt;)</h4>
-  <div class="markdown level1 summary"><p>Use the specified <code data-dev-comment-type="paramref" class="paramref">headCheck</code>, <code data-dev-comment-type="paramref" class="paramref">bodyCheck</code>, and <code data-dev-comment-type="paramref" class="paramref">tailCheck</code> to represent a variable length string. The head and tail are only present once, with the body being repeatable.</p>
+  <a id="Stringier_Patterns_Pattern_Consume_" data-uid="Stringier.Patterns.Pattern.Consume*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Consume_String_System_Nullable_Stringier_Patterns_Debugging_ITrace__" data-uid="Stringier.Patterns.Pattern.Consume(String,System.Nullable{Stringier.Patterns.Debugging.ITrace})">Consume(String, Nullable&lt;ITrace&gt;)</h4>
+  <div class="markdown level1 summary"><p>Attempt to consume the <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> from the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Remove the name parameter as it's no longer used.&quot;)]
-public static Pattern Check(string name, Func&lt;char, bool&gt; headCheck, Func&lt;char, bool&gt; bodyCheck, Func&lt;char, bool&gt; tailCheck)</code></pre>
+    <pre><code class="lang-csharp hljs">public Result Consume(String source, ITrace? trace)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1582,27 +1687,15 @@ public static Pattern Check(string name, Func&lt;char, bool&gt; headCheck, Func&
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">name</span></td>
-        <td><p>Name to display this pattern as.</p>
+        <td><span class="xref">String</span></td>
+        <td><span class="parametername">source</span></td>
+        <td><p>The <see cref="!:String"></see> to consume.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Func</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.Boolean</span>&gt;</td>
-        <td><span class="parametername">headCheck</span></td>
-        <td><p>A <span class="xref">System.Func&lt;T, TResult&gt;</span> to validate the head.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Func</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.Boolean</span>&gt;</td>
-        <td><span class="parametername">bodyCheck</span></td>
-        <td><p>A <span class="xref">System.Func&lt;T, TResult&gt;</span> to validate the body, which may repeat.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Func</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.Boolean</span>&gt;</td>
-        <td><span class="parametername">tailCheck</span></td>
-        <td><p>A <span class="xref">System.Func&lt;T, TResult&gt;</span> to validate the tail.</p>
+        <td><span class="xref">System.Nullable</span>&lt;<a class="xref" href="Stringier.Patterns.Debugging.ITrace.html">ITrace</a>&gt;</td>
+        <td><span class="parametername">trace</span></td>
+        <td><p>The <a class="xref" href="Stringier.Patterns.Debugging.ITrace.html">ITrace</a> to record steps in.</p>
 </td>
       </tr>
     </tbody>
@@ -1617,8 +1710,25 @@ public static Pattern Check(string name, Func&lt;char, bool&gt; headCheck, Func&
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
-        <td></td>
+        <td><a class="xref" href="Stringier.Patterns.Result.html">Result</a></td>
+        <td><p>A <a class="xref" href="Stringier.Patterns.Result.html">Result</a> containing whether a match occured and the captured <see cref="!:String"></see>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.PatternUndefinedException.html">PatternUndefinedException</a></td>
+        <td><p>The pattern was attempted to be used before actually being defined.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1667,7 +1777,7 @@ public static Pattern Check(string name, Func&lt;char, bool&gt; headCheck, Func&
     <tbody>
       <tr>
         <td><a class="xref" href="Stringier.Patterns.Result.html">Result</a></td>
-        <td><p>A <a class="xref" href="Stringier.Patterns.Result.html">Result</a> containing whether a match occured and the captured <span class="xref">System.String</span>.</p>
+        <td><p>A <a class="xref" href="Stringier.Patterns.Result.html">Result</a> containing whether a match occured and the captured <see cref="!:String"></see>.</p>
 </td>
       </tr>
     </tbody>
@@ -1739,7 +1849,7 @@ public static Pattern Check(string name, Func&lt;char, bool&gt; headCheck, Func&
     <tbody>
       <tr>
         <td><a class="xref" href="Stringier.Patterns.Result.html">Result</a></td>
-        <td><p>A <a class="xref" href="Stringier.Patterns.Result.html">Result</a> containing whether a match occured and the captured <span class="xref">System.String</span>.</p>
+        <td><p>A <a class="xref" href="Stringier.Patterns.Result.html">Result</a> containing whether a match occured and the captured <see cref="!:String"></see>.</p>
 </td>
       </tr>
     </tbody>
@@ -1805,7 +1915,7 @@ public static Pattern Check(string name, Func&lt;char, bool&gt; headCheck, Func&
     <tbody>
       <tr>
         <td><a class="xref" href="Stringier.Patterns.Result.html">Result</a></td>
-        <td><p>A <a class="xref" href="Stringier.Patterns.Result.html">Result</a> containing whether a match occured and the captured <span class="xref">System.String</span>.</p>
+        <td><p>A <a class="xref" href="Stringier.Patterns.Result.html">Result</a> containing whether a match occured and the captured <see cref="!:String"></see>.</p>
 </td>
       </tr>
     </tbody>
@@ -1877,7 +1987,7 @@ public static Pattern Check(string name, Func&lt;char, bool&gt; headCheck, Func&
     <tbody>
       <tr>
         <td><a class="xref" href="Stringier.Patterns.Result.html">Result</a></td>
-        <td><p>A <a class="xref" href="Stringier.Patterns.Result.html">Result</a> containing whether a match occured and the captured <span class="xref">System.String</span>.</p>
+        <td><p>A <a class="xref" href="Stringier.Patterns.Result.html">Result</a> containing whether a match occured and the captured <see cref="!:String"></see>.</p>
 </td>
       </tr>
     </tbody>
@@ -1900,157 +2010,19 @@ public static Pattern Check(string name, Func&lt;char, bool&gt; headCheck, Func&
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Consume_System_String_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Consume(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternParsing.cs/#L33">View Source</a>
-  </span>
-  <a id="Stringier_Patterns_Pattern_Consume_" data-uid="Stringier.Patterns.Pattern.Consume*"></a>
-  <h4 id="Stringier_Patterns_Pattern_Consume_System_String_" data-uid="Stringier.Patterns.Pattern.Consume(System.String)">Consume(String)</h4>
-  <div class="markdown level1 summary"><p>Attempt to consume the <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> from the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Result Consume(string source)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">source</span></td>
-        <td><p>The <span class="xref">System.String</span> to consume.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Stringier.Patterns.Result.html">Result</a></td>
-        <td><p>A <a class="xref" href="Stringier.Patterns.Result.html">Result</a> containing whether a match occured and the captured <span class="xref">System.String</span>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Stringier.Patterns.PatternUndefinedException.html">PatternUndefinedException</a></td>
-        <td><p>The pattern was attempted to be used before actually being defined.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Consume_System_String_System_Nullable_Stringier_Patterns_Debugging_ITrace__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Consume(System.String%2CSystem.Nullable%7BStringier.Patterns.Debugging.ITrace%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternParsing.cs/#L45">View Source</a>
-  </span>
-  <a id="Stringier_Patterns_Pattern_Consume_" data-uid="Stringier.Patterns.Pattern.Consume*"></a>
-  <h4 id="Stringier_Patterns_Pattern_Consume_System_String_System_Nullable_Stringier_Patterns_Debugging_ITrace__" data-uid="Stringier.Patterns.Pattern.Consume(System.String,System.Nullable{Stringier.Patterns.Debugging.ITrace})">Consume(String, Nullable&lt;ITrace&gt;)</h4>
-  <div class="markdown level1 summary"><p>Attempt to consume the <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> from the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Result Consume(string source, ITrace? trace)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">source</span></td>
-        <td><p>The <span class="xref">System.String</span> to consume.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<a class="xref" href="Stringier.Patterns.Debugging.ITrace.html">ITrace</a>&gt;</td>
-        <td><span class="parametername">trace</span></td>
-        <td><p>The <a class="xref" href="Stringier.Patterns.Debugging.ITrace.html">ITrace</a> to record steps in.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Stringier.Patterns.Result.html">Result</a></td>
-        <td><p>A <a class="xref" href="Stringier.Patterns.Result.html">Result</a> containing whether a match occured and the captured <span class="xref">System.String</span>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Stringier.Patterns.PatternUndefinedException.html">PatternUndefinedException</a></td>
-        <td><p>The pattern was attempted to be used before actually being defined.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Fuzzy_System_String_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Fuzzy(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Fuzzy_String_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Fuzzy(String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L388">View Source</a>
   </span>
   <a id="Stringier_Patterns_Pattern_Fuzzy_" data-uid="Stringier.Patterns.Pattern.Fuzzy*"></a>
-  <h4 id="Stringier_Patterns_Pattern_Fuzzy_System_String_" data-uid="Stringier.Patterns.Pattern.Fuzzy(System.String)">Fuzzy(String)</h4>
-  <div class="markdown level1 summary"><p>Marks this <span class="xref">System.String</span> as fuzzy.</p>
+  <h4 id="Stringier_Patterns_Pattern_Fuzzy_String_" data-uid="Stringier.Patterns.Pattern.Fuzzy(String)">Fuzzy(String)</h4>
+  <div class="markdown level1 summary"><p>Marks this <see cref="!:String"></see> as fuzzy.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Pattern Fuzzy(string string)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Pattern Fuzzy(String string)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2063,9 +2035,9 @@ public static Pattern Check(string name, Func&lt;char, bool&gt; headCheck, Func&
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.String</span></td>
+        <td><span class="xref">String</span></td>
         <td><span class="parametername">string</span></td>
-        <td><p>The <span class="xref">System.String</span> to fuzzy match.</p>
+        <td><p>The <see cref="!:String"></see> to fuzzy match.</p>
 </td>
       </tr>
     </tbody>
@@ -2088,19 +2060,19 @@ public static Pattern Check(string name, Func&lt;char, bool&gt; headCheck, Func&
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Fuzzy_System_String_System_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Fuzzy(System.String%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Fuzzy_String_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Fuzzy(String%2CInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L399">View Source</a>
   </span>
   <a id="Stringier_Patterns_Pattern_Fuzzy_" data-uid="Stringier.Patterns.Pattern.Fuzzy*"></a>
-  <h4 id="Stringier_Patterns_Pattern_Fuzzy_System_String_System_Int32_" data-uid="Stringier.Patterns.Pattern.Fuzzy(System.String,System.Int32)">Fuzzy(String, Int32)</h4>
-  <div class="markdown level1 summary"><p>Marks this <span class="xref">System.String</span> as fuzzy.</p>
+  <h4 id="Stringier_Patterns_Pattern_Fuzzy_String_Int32_" data-uid="Stringier.Patterns.Pattern.Fuzzy(String,Int32)">Fuzzy(String, Int32)</h4>
+  <div class="markdown level1 summary"><p>Marks this <see cref="!:String"></see> as fuzzy.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Pattern Fuzzy(string string, int maxEdits)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Pattern Fuzzy(String string, Int32 maxEdits)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2113,13 +2085,13 @@ public static Pattern Check(string name, Func&lt;char, bool&gt; headCheck, Func&
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.String</span></td>
+        <td><span class="xref">String</span></td>
         <td><span class="parametername">string</span></td>
-        <td><p>The <span class="xref">System.String</span> to fuzzy match.</p>
+        <td><p>The <see cref="!:String"></see> to fuzzy match.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Int32</span></td>
+        <td><span class="xref">Int32</span></td>
         <td><span class="parametername">maxEdits</span></td>
         <td><p>The maximum allowed edits to still be considered a match.</p>
 </td>
@@ -2144,19 +2116,19 @@ public static Pattern Check(string name, Func&lt;char, bool&gt; headCheck, Func&
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_LineComment_System_String_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.LineComment(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_LineComment_String_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.LineComment(String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternFactories.cs/#L11">View Source</a>
   </span>
   <a id="Stringier_Patterns_Pattern_LineComment_" data-uid="Stringier.Patterns.Pattern.LineComment*"></a>
-  <h4 id="Stringier_Patterns_Pattern_LineComment_System_String_" data-uid="Stringier.Patterns.Pattern.LineComment(System.String)">LineComment(String)</h4>
+  <h4 id="Stringier_Patterns_Pattern_LineComment_String_" data-uid="Stringier.Patterns.Pattern.LineComment(String)">LineComment(String)</h4>
   <div class="markdown level1 summary"><p>Creates a pattern representing a line comment introduced by the <code data-dev-comment-type="paramref" class="paramref">delimiter</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Pattern LineComment(string delimiter)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Pattern LineComment(String delimiter)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2169,7 +2141,7 @@ public static Pattern Check(string name, Func&lt;char, bool&gt; headCheck, Func&
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.String</span></td>
+        <td><span class="xref">String</span></td>
         <td><span class="parametername">delimiter</span></td>
         <td><p>The token delimiting the start of a line comment.</p>
 </td>
@@ -2188,6 +2160,156 @@ public static Pattern Check(string name, Func&lt;char, bool&gt; headCheck, Func&
       <tr>
         <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
         <td><p>A pattern representing a line comment.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Many_Char_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Many(Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L616">View Source</a>
+  </span>
+  <a id="Stringier_Patterns_Pattern_Many_" data-uid="Stringier.Patterns.Pattern.Many*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Many_Char_" data-uid="Stringier.Patterns.Pattern.Many(Char)">Many(Char)</h4>
+  <div class="markdown level1 summary"><p>Marks the <code data-dev-comment-type="paramref" class="paramref">pattern</code> as spanning.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern Many(Char pattern)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Char</span></td>
+        <td><span class="parametername">pattern</span></td>
+        <td><p>The spanning <see cref="!:Char"></see>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> which is spanning.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Many_ReadOnlySpan_Char__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Many(ReadOnlySpan%7BChar%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L609">View Source</a>
+  </span>
+  <a id="Stringier_Patterns_Pattern_Many_" data-uid="Stringier.Patterns.Pattern.Many*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Many_ReadOnlySpan_Char__" data-uid="Stringier.Patterns.Pattern.Many(ReadOnlySpan{Char})">Many(ReadOnlySpan&lt;Char&gt;)</h4>
+  <div class="markdown level1 summary"><p>Marks the <code data-dev-comment-type="paramref" class="paramref">pattern</code> as spanning.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern Many(ReadOnlySpan&lt;Char&gt; pattern)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ReadOnlySpan</span>&lt;<span class="xref">Char</span>&gt;</td>
+        <td><span class="parametername">pattern</span></td>
+        <td><p>The spanning <see cref="!:ReadOnlySpan&lt;T>"></see> of <see cref="!:Char"></see>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> which is spanning.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Many_String_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Many(String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L599">View Source</a>
+  </span>
+  <a id="Stringier_Patterns_Pattern_Many_" data-uid="Stringier.Patterns.Pattern.Many*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Many_String_" data-uid="Stringier.Patterns.Pattern.Many(String)">Many(String)</h4>
+  <div class="markdown level1 summary"><p>Marks the <code data-dev-comment-type="paramref" class="paramref">pattern</code> as spanning.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern Many(String pattern)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td><span class="parametername">pattern</span></td>
+        <td><p>The spanning <see cref="!:String"></see>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> which is spanning.</p>
 </td>
       </tr>
     </tbody>
@@ -2294,19 +2416,19 @@ public static Pattern Check(string name, Func&lt;char, bool&gt; headCheck, Func&
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Many_System_Char_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Many(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Maybe_Char_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Maybe(Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L616">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L506">View Source</a>
   </span>
-  <a id="Stringier_Patterns_Pattern_Many_" data-uid="Stringier.Patterns.Pattern.Many*"></a>
-  <h4 id="Stringier_Patterns_Pattern_Many_System_Char_" data-uid="Stringier.Patterns.Pattern.Many(System.Char)">Many(Char)</h4>
-  <div class="markdown level1 summary"><p>Marks the <code data-dev-comment-type="paramref" class="paramref">pattern</code> as spanning.</p>
+  <a id="Stringier_Patterns_Pattern_Maybe_" data-uid="Stringier.Patterns.Pattern.Maybe*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Maybe_Char_" data-uid="Stringier.Patterns.Pattern.Maybe(Char)">Maybe(Char)</h4>
+  <div class="markdown level1 summary"><p>Marks the <code data-dev-comment-type="paramref" class="paramref">pattern</code> as optional.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Pattern Many(char pattern)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Pattern Maybe(Char pattern)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2319,9 +2441,9 @@ public static Pattern Check(string name, Func&lt;char, bool&gt; headCheck, Func&
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Char</span></td>
+        <td><span class="xref">Char</span></td>
         <td><span class="parametername">pattern</span></td>
-        <td><p>The spanning <span class="xref">System.Char</span>.</p>
+        <td><p>The optional <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a>.</p>
 </td>
       </tr>
     </tbody>
@@ -2337,26 +2459,26 @@ public static Pattern Check(string name, Func&lt;char, bool&gt; headCheck, Func&
     <tbody>
       <tr>
         <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
-        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> which is spanning.</p>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> which is optional.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Many_System_ReadOnlySpan_System_Char__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Many(System.ReadOnlySpan%7BSystem.Char%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Maybe_ReadOnlySpan_Char__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Maybe(ReadOnlySpan%7BChar%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L609">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L499">View Source</a>
   </span>
-  <a id="Stringier_Patterns_Pattern_Many_" data-uid="Stringier.Patterns.Pattern.Many*"></a>
-  <h4 id="Stringier_Patterns_Pattern_Many_System_ReadOnlySpan_System_Char__" data-uid="Stringier.Patterns.Pattern.Many(System.ReadOnlySpan{System.Char})">Many(ReadOnlySpan&lt;Char&gt;)</h4>
-  <div class="markdown level1 summary"><p>Marks the <code data-dev-comment-type="paramref" class="paramref">pattern</code> as spanning.</p>
+  <a id="Stringier_Patterns_Pattern_Maybe_" data-uid="Stringier.Patterns.Pattern.Maybe*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Maybe_ReadOnlySpan_Char__" data-uid="Stringier.Patterns.Pattern.Maybe(ReadOnlySpan{Char})">Maybe(ReadOnlySpan&lt;Char&gt;)</h4>
+  <div class="markdown level1 summary"><p>Marks the <code data-dev-comment-type="paramref" class="paramref">pattern</code> as optional.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Pattern Many(ReadOnlySpan&lt;char&gt; pattern)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Pattern Maybe(ReadOnlySpan&lt;Char&gt; pattern)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2369,9 +2491,9 @@ public static Pattern Check(string name, Func&lt;char, bool&gt; headCheck, Func&
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.ReadOnlySpan</span>&lt;<span class="xref">System.Char</span>&gt;</td>
+        <td><span class="xref">ReadOnlySpan</span>&lt;<span class="xref">Char</span>&gt;</td>
         <td><span class="parametername">pattern</span></td>
-        <td><p>The spanning <span class="xref">System.ReadOnlySpan&lt;T&gt;</span> of <span class="xref">System.Char</span>.</p>
+        <td><p>The optional <see cref="!:ReadOnlySpan&lt;T>"></see> of <see cref="!:Char"></see>.</p>
 </td>
       </tr>
     </tbody>
@@ -2387,26 +2509,26 @@ public static Pattern Check(string name, Func&lt;char, bool&gt; headCheck, Func&
     <tbody>
       <tr>
         <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
-        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> which is spanning.</p>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> which is optional.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Many_System_String_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Many(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Maybe_String_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Maybe(String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L599">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L489">View Source</a>
   </span>
-  <a id="Stringier_Patterns_Pattern_Many_" data-uid="Stringier.Patterns.Pattern.Many*"></a>
-  <h4 id="Stringier_Patterns_Pattern_Many_System_String_" data-uid="Stringier.Patterns.Pattern.Many(System.String)">Many(String)</h4>
-  <div class="markdown level1 summary"><p>Marks the <code data-dev-comment-type="paramref" class="paramref">pattern</code> as spanning.</p>
+  <a id="Stringier_Patterns_Pattern_Maybe_" data-uid="Stringier.Patterns.Pattern.Maybe*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Maybe_String_" data-uid="Stringier.Patterns.Pattern.Maybe(String)">Maybe(String)</h4>
+  <div class="markdown level1 summary"><p>Marks the <code data-dev-comment-type="paramref" class="paramref">pattern</code> as optional.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Pattern Many(string pattern)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Pattern Maybe(String pattern)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2419,9 +2541,9 @@ public static Pattern Check(string name, Func&lt;char, bool&gt; headCheck, Func&
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.String</span></td>
+        <td><span class="xref">String</span></td>
         <td><span class="parametername">pattern</span></td>
-        <td><p>The spanning <span class="xref">System.String</span>.</p>
+        <td><p>The optional <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a>.</p>
 </td>
       </tr>
     </tbody>
@@ -2437,7 +2559,7 @@ public static Pattern Check(string name, Func&lt;char, bool&gt; headCheck, Func&
     <tbody>
       <tr>
         <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
-        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> which is spanning.</p>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> which is optional.</p>
 </td>
       </tr>
     </tbody>
@@ -2520,156 +2642,6 @@ public static Pattern Check(string name, Func&lt;char, bool&gt; headCheck, Func&
     <tbody>
       <tr>
         <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
-        <td><span class="parametername">pattern</span></td>
-        <td><p>The optional <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
-        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> which is optional.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Maybe_System_Char_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Maybe(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L506">View Source</a>
-  </span>
-  <a id="Stringier_Patterns_Pattern_Maybe_" data-uid="Stringier.Patterns.Pattern.Maybe*"></a>
-  <h4 id="Stringier_Patterns_Pattern_Maybe_System_Char_" data-uid="Stringier.Patterns.Pattern.Maybe(System.Char)">Maybe(Char)</h4>
-  <div class="markdown level1 summary"><p>Marks the <code data-dev-comment-type="paramref" class="paramref">pattern</code> as optional.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Pattern Maybe(char pattern)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Char</span></td>
-        <td><span class="parametername">pattern</span></td>
-        <td><p>The optional <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
-        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> which is optional.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Maybe_System_ReadOnlySpan_System_Char__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Maybe(System.ReadOnlySpan%7BSystem.Char%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L499">View Source</a>
-  </span>
-  <a id="Stringier_Patterns_Pattern_Maybe_" data-uid="Stringier.Patterns.Pattern.Maybe*"></a>
-  <h4 id="Stringier_Patterns_Pattern_Maybe_System_ReadOnlySpan_System_Char__" data-uid="Stringier.Patterns.Pattern.Maybe(System.ReadOnlySpan{System.Char})">Maybe(ReadOnlySpan&lt;Char&gt;)</h4>
-  <div class="markdown level1 summary"><p>Marks the <code data-dev-comment-type="paramref" class="paramref">pattern</code> as optional.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Pattern Maybe(ReadOnlySpan&lt;char&gt; pattern)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.ReadOnlySpan</span>&lt;<span class="xref">System.Char</span>&gt;</td>
-        <td><span class="parametername">pattern</span></td>
-        <td><p>The optional <span class="xref">System.ReadOnlySpan&lt;T&gt;</span> of <span class="xref">System.Char</span>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
-        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> which is optional.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Maybe_System_String_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Maybe(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L489">View Source</a>
-  </span>
-  <a id="Stringier_Patterns_Pattern_Maybe_" data-uid="Stringier.Patterns.Pattern.Maybe*"></a>
-  <h4 id="Stringier_Patterns_Pattern_Maybe_System_String_" data-uid="Stringier.Patterns.Pattern.Maybe(System.String)">Maybe(String)</h4>
-  <div class="markdown level1 summary"><p>Marks the <code data-dev-comment-type="paramref" class="paramref">pattern</code> as optional.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Pattern Maybe(string pattern)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
         <td><span class="parametername">pattern</span></td>
         <td><p>The optional <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a>.</p>
 </td>
@@ -2787,6 +2759,156 @@ public static Pattern Check(string name, Func&lt;char, bool&gt; headCheck, Func&
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Not_Char_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Not(Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L449">View Source</a>
+  </span>
+  <a id="Stringier_Patterns_Pattern_Not_" data-uid="Stringier.Patterns.Pattern.Not*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Not_Char_" data-uid="Stringier.Patterns.Pattern.Not(Char)">Not(Char)</h4>
+  <div class="markdown level1 summary"><p>Marks the <code data-dev-comment-type="paramref" class="paramref">pattern</code> as negated.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern Not(Char pattern)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Char</span></td>
+        <td><span class="parametername">pattern</span></td>
+        <td><p>The <see cref="!:Char"></see> to negate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> which has been negated.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Not_ReadOnlySpan_Char__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Not(ReadOnlySpan%7BChar%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L442">View Source</a>
+  </span>
+  <a id="Stringier_Patterns_Pattern_Not_" data-uid="Stringier.Patterns.Pattern.Not*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Not_ReadOnlySpan_Char__" data-uid="Stringier.Patterns.Pattern.Not(ReadOnlySpan{Char})">Not(ReadOnlySpan&lt;Char&gt;)</h4>
+  <div class="markdown level1 summary"><p>Marks the <code data-dev-comment-type="paramref" class="paramref">pattern</code> as negated.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern Not(ReadOnlySpan&lt;Char&gt; pattern)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ReadOnlySpan</span>&lt;<span class="xref">Char</span>&gt;</td>
+        <td><span class="parametername">pattern</span></td>
+        <td><p>The <see cref="!:ReadOnlySpan&lt;T>"></see> of <see cref="!:Char"></see> to negate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> which has been negated.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Not_String_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Not(String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L432">View Source</a>
+  </span>
+  <a id="Stringier_Patterns_Pattern_Not_" data-uid="Stringier.Patterns.Pattern.Not*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Not_String_" data-uid="Stringier.Patterns.Pattern.Not(String)">Not(String)</h4>
+  <div class="markdown level1 summary"><p>Marks the <code data-dev-comment-type="paramref" class="paramref">pattern</code> as negated.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern Not(String pattern)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td><span class="parametername">pattern</span></td>
+        <td><p>The <see cref="!:String"></see> to negate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> which has been negated.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Not_Stringier_Patterns_Capture_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Not(Stringier.Patterns.Capture)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -2887,169 +3009,19 @@ public static Pattern Check(string name, Func&lt;char, bool&gt; headCheck, Func&
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Not_System_Char_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Not(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L449">View Source</a>
-  </span>
-  <a id="Stringier_Patterns_Pattern_Not_" data-uid="Stringier.Patterns.Pattern.Not*"></a>
-  <h4 id="Stringier_Patterns_Pattern_Not_System_Char_" data-uid="Stringier.Patterns.Pattern.Not(System.Char)">Not(Char)</h4>
-  <div class="markdown level1 summary"><p>Marks the <code data-dev-comment-type="paramref" class="paramref">pattern</code> as negated.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Pattern Not(char pattern)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Char</span></td>
-        <td><span class="parametername">pattern</span></td>
-        <td><p>The <span class="xref">System.Char</span> to negate.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
-        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> which has been negated.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Not_System_ReadOnlySpan_System_Char__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Not(System.ReadOnlySpan%7BSystem.Char%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L442">View Source</a>
-  </span>
-  <a id="Stringier_Patterns_Pattern_Not_" data-uid="Stringier.Patterns.Pattern.Not*"></a>
-  <h4 id="Stringier_Patterns_Pattern_Not_System_ReadOnlySpan_System_Char__" data-uid="Stringier.Patterns.Pattern.Not(System.ReadOnlySpan{System.Char})">Not(ReadOnlySpan&lt;Char&gt;)</h4>
-  <div class="markdown level1 summary"><p>Marks the <code data-dev-comment-type="paramref" class="paramref">pattern</code> as negated.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Pattern Not(ReadOnlySpan&lt;char&gt; pattern)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.ReadOnlySpan</span>&lt;<span class="xref">System.Char</span>&gt;</td>
-        <td><span class="parametername">pattern</span></td>
-        <td><p>The <span class="xref">System.ReadOnlySpan&lt;T&gt;</span> of <span class="xref">System.Char</span> to negate.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
-        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> which has been negated.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Not_System_String_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Not(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L432">View Source</a>
-  </span>
-  <a id="Stringier_Patterns_Pattern_Not_" data-uid="Stringier.Patterns.Pattern.Not*"></a>
-  <h4 id="Stringier_Patterns_Pattern_Not_System_String_" data-uid="Stringier.Patterns.Pattern.Not(System.String)">Not(String)</h4>
-  <div class="markdown level1 summary"><p>Marks the <code data-dev-comment-type="paramref" class="paramref">pattern</code> as negated.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Pattern Not(string pattern)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">pattern</span></td>
-        <td><p>The <span class="xref">System.String</span> to negate.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
-        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> which has been negated.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_OneOf_Stringier_Patterns_Compare_System_Char___.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.OneOf(Stringier.Patterns.Compare%2CSystem.Char%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_OneOf_Stringier_Patterns_Compare_Char___.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.OneOf(Stringier.Patterns.Compare%2CChar%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L143">View Source</a>
   </span>
   <a id="Stringier_Patterns_Pattern_OneOf_" data-uid="Stringier.Patterns.Pattern.OneOf*"></a>
-  <h4 id="Stringier_Patterns_Pattern_OneOf_Stringier_Patterns_Compare_System_Char___" data-uid="Stringier.Patterns.Pattern.OneOf(Stringier.Patterns.Compare,System.Char[])">OneOf(Compare, Char[])</h4>
+  <h4 id="Stringier_Patterns_Pattern_OneOf_Stringier_Patterns_Compare_Char___" data-uid="Stringier.Patterns.Pattern.OneOf(Stringier.Patterns.Compare,Char[])">OneOf(Compare, Char[])</h4>
   <div class="markdown level1 summary"><p>Declares the <code data-dev-comment-type="paramref" class="paramref">patterns</code> to be alternates of each other; one of them will match.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Pattern OneOf(Compare comparisonType, params char[] patterns)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Pattern OneOf(Compare comparisonType, params Char[] patterns)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3068,9 +3040,9 @@ public static Pattern Check(string name, Func&lt;char, bool&gt; headCheck, Func&
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Char</span>[]</td>
+        <td><span class="xref">Char</span>[]</td>
         <td><span class="parametername">patterns</span></td>
-        <td><p>The set of <span class="xref">System.Char</span>.</p>
+        <td><p>The set of <see cref="!:Char"></see>.</p>
 </td>
       </tr>
     </tbody>
@@ -3093,19 +3065,19 @@ public static Pattern Check(string name, Func&lt;char, bool&gt; headCheck, Func&
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_OneOf_Stringier_Patterns_Compare_System_String___.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.OneOf(Stringier.Patterns.Compare%2CSystem.String%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_OneOf_Stringier_Patterns_Compare_String___.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.OneOf(Stringier.Patterns.Compare%2CString%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L124">View Source</a>
   </span>
   <a id="Stringier_Patterns_Pattern_OneOf_" data-uid="Stringier.Patterns.Pattern.OneOf*"></a>
-  <h4 id="Stringier_Patterns_Pattern_OneOf_Stringier_Patterns_Compare_System_String___" data-uid="Stringier.Patterns.Pattern.OneOf(Stringier.Patterns.Compare,System.String[])">OneOf(Compare, String[])</h4>
+  <h4 id="Stringier_Patterns_Pattern_OneOf_Stringier_Patterns_Compare_String___" data-uid="Stringier.Patterns.Pattern.OneOf(Stringier.Patterns.Compare,String[])">OneOf(Compare, String[])</h4>
   <div class="markdown level1 summary"><p>Declares the <code data-dev-comment-type="paramref" class="paramref">patterns</code> to be alternates of each other; one of them will match.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Pattern OneOf(Compare comparisonType, params string[] patterns)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Pattern OneOf(Compare comparisonType, params String[] patterns)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3124,9 +3096,9 @@ public static Pattern Check(string name, Func&lt;char, bool&gt; headCheck, Func&
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.String</span>[]</td>
+        <td><span class="xref">String</span>[]</td>
         <td><span class="parametername">patterns</span></td>
-        <td><p>The set of <span class="xref">System.String</span>.</p>
+        <td><p>The set of <see cref="!:String"></see>.</p>
 </td>
       </tr>
     </tbody>
@@ -3241,7 +3213,7 @@ public static Pattern Check(string name, Func&lt;char, bool&gt; headCheck, Func&
     <tbody>
       <tr>
         <td><span class="parametername">E</span></td>
-        <td><p>The <span class="xref">System.Enum</span> providing names.</p>
+        <td><p>The <see cref="!:Enum"></see> providing names.</p>
 </td>
       </tr>
     </tbody>
@@ -3308,7 +3280,157 @@ public static Pattern Check(string name, Func&lt;char, bool&gt; headCheck, Func&
     <tbody>
       <tr>
         <td><span class="parametername">E</span></td>
-        <td><p>The <span class="xref">System.Enum</span> providing names.</p>
+        <td><p>The <see cref="!:Enum"></see> providing names.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Or_Char_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Or(Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L88">View Source</a>
+  </span>
+  <a id="Stringier_Patterns_Pattern_Or_" data-uid="Stringier.Patterns.Pattern.Or*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Or_Char_" data-uid="Stringier.Patterns.Pattern.Or(Char)">Or(Char)</h4>
+  <div class="markdown level1 summary"><p>Declares <code data-dev-comment-type="paramref" class="paramref">other</code> to be an alternate of this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Pattern Or(Char other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Char</span></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>The <see cref="!:Char"></see> to check if this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> does not match</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> alternating this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> and <code data-dev-comment-type="paramref" class="paramref">other</code></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Or_ReadOnlySpan_Char__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Or(ReadOnlySpan%7BChar%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L81">View Source</a>
+  </span>
+  <a id="Stringier_Patterns_Pattern_Or_" data-uid="Stringier.Patterns.Pattern.Or*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Or_ReadOnlySpan_Char__" data-uid="Stringier.Patterns.Pattern.Or(ReadOnlySpan{Char})">Or(ReadOnlySpan&lt;Char&gt;)</h4>
+  <div class="markdown level1 summary"><p>Declares <code data-dev-comment-type="paramref" class="paramref">other</code> to be an alternate of this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Pattern Or(ReadOnlySpan&lt;Char&gt; other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ReadOnlySpan</span>&lt;<span class="xref">Char</span>&gt;</td>
+        <td><span class="parametername">other</span></td>
+        <td><p>The <see cref="!:ReadOnlySpan&lt;T>"></see> of <see cref="!:Char"></see> to check if this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> does not match</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> alternating this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> and <code data-dev-comment-type="paramref" class="paramref">other</code></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Or_String_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Or(String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L71">View Source</a>
+  </span>
+  <a id="Stringier_Patterns_Pattern_Or_" data-uid="Stringier.Patterns.Pattern.Or*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Or_String_" data-uid="Stringier.Patterns.Pattern.Or(String)">Or(String)</h4>
+  <div class="markdown level1 summary"><p>Declares <code data-dev-comment-type="paramref" class="paramref">other</code> to be an alternate of this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Pattern Or(String other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>The <see cref="!:String"></see> to check if this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> does not match</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> alternating this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> and <code data-dev-comment-type="paramref" class="paramref">other</code></p>
 </td>
       </tr>
     </tbody>
@@ -3393,156 +3515,6 @@ public static Pattern Check(string name, Func&lt;char, bool&gt; headCheck, Func&
         <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
         <td><span class="parametername">other</span></td>
         <td><p>The <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> to check if this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> does not match</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
-        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> alternating this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> and <code data-dev-comment-type="paramref" class="paramref">other</code></p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Or_System_Char_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Or(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L88">View Source</a>
-  </span>
-  <a id="Stringier_Patterns_Pattern_Or_" data-uid="Stringier.Patterns.Pattern.Or*"></a>
-  <h4 id="Stringier_Patterns_Pattern_Or_System_Char_" data-uid="Stringier.Patterns.Pattern.Or(System.Char)">Or(Char)</h4>
-  <div class="markdown level1 summary"><p>Declares <code data-dev-comment-type="paramref" class="paramref">other</code> to be an alternate of this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual Pattern Or(char other)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Char</span></td>
-        <td><span class="parametername">other</span></td>
-        <td><p>The <span class="xref">System.Char</span> to check if this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> does not match</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
-        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> alternating this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> and <code data-dev-comment-type="paramref" class="paramref">other</code></p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Or_System_ReadOnlySpan_System_Char__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Or(System.ReadOnlySpan%7BSystem.Char%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L81">View Source</a>
-  </span>
-  <a id="Stringier_Patterns_Pattern_Or_" data-uid="Stringier.Patterns.Pattern.Or*"></a>
-  <h4 id="Stringier_Patterns_Pattern_Or_System_ReadOnlySpan_System_Char__" data-uid="Stringier.Patterns.Pattern.Or(System.ReadOnlySpan{System.Char})">Or(ReadOnlySpan&lt;Char&gt;)</h4>
-  <div class="markdown level1 summary"><p>Declares <code data-dev-comment-type="paramref" class="paramref">other</code> to be an alternate of this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual Pattern Or(ReadOnlySpan&lt;char&gt; other)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.ReadOnlySpan</span>&lt;<span class="xref">System.Char</span>&gt;</td>
-        <td><span class="parametername">other</span></td>
-        <td><p>The <span class="xref">System.ReadOnlySpan&lt;T&gt;</span> of <span class="xref">System.Char</span> to check if this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> does not match</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
-        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> alternating this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> and <code data-dev-comment-type="paramref" class="paramref">other</code></p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Or_System_String_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Or(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L71">View Source</a>
-  </span>
-  <a id="Stringier_Patterns_Pattern_Or_" data-uid="Stringier.Patterns.Pattern.Or*"></a>
-  <h4 id="Stringier_Patterns_Pattern_Or_System_String_" data-uid="Stringier.Patterns.Pattern.Or(System.String)">Or(String)</h4>
-  <div class="markdown level1 summary"><p>Declares <code data-dev-comment-type="paramref" class="paramref">other</code> to be an alternate of this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual Pattern Or(string other)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">other</span></td>
-        <td><p>The <span class="xref">System.String</span> to check if this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> does not match</p>
 </td>
       </tr>
     </tbody>
@@ -3681,19 +3653,19 @@ public static Pattern Check(string name, Func&lt;char, bool&gt; headCheck, Func&
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Repeat_System_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Repeat(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Repeat_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Repeat(Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L569">View Source</a>
   </span>
   <a id="Stringier_Patterns_Pattern_Repeat_" data-uid="Stringier.Patterns.Pattern.Repeat*"></a>
-  <h4 id="Stringier_Patterns_Pattern_Repeat_System_Int32_" data-uid="Stringier.Patterns.Pattern.Repeat(System.Int32)">Repeat(Int32)</h4>
+  <h4 id="Stringier_Patterns_Pattern_Repeat_Int32_" data-uid="Stringier.Patterns.Pattern.Repeat(Int32)">Repeat(Int32)</h4>
   <div class="markdown level1 summary"><p>Marks this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> as repeating <code data-dev-comment-type="paramref" class="paramref">count</code> times.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual Pattern Repeat(int count)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual Pattern Repeat(Int32 count)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3706,7 +3678,7 @@ public static Pattern Check(string name, Func&lt;char, bool&gt; headCheck, Func&
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Int32</span></td>
+        <td><span class="xref">Int32</span></td>
         <td><span class="parametername">count</span></td>
         <td><p>The amount of times to repeat.</p>
 </td>
@@ -3750,19 +3722,19 @@ public static Pattern Check(string name, Func&lt;char, bool&gt; headCheck, Func&
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_StringLiteral_System_String_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.StringLiteral(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_StringLiteral_String_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.StringLiteral(String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternFactories.cs/#L25">View Source</a>
   </span>
   <a id="Stringier_Patterns_Pattern_StringLiteral_" data-uid="Stringier.Patterns.Pattern.StringLiteral*"></a>
-  <h4 id="Stringier_Patterns_Pattern_StringLiteral_System_String_" data-uid="Stringier.Patterns.Pattern.StringLiteral(System.String)">StringLiteral(String)</h4>
+  <h4 id="Stringier_Patterns_Pattern_StringLiteral_String_" data-uid="Stringier.Patterns.Pattern.StringLiteral(String)">StringLiteral(String)</h4>
   <div class="markdown level1 summary"><p>Creates a pattern representing a string literal contained by the <code data-dev-comment-type="paramref" class="paramref">delimiter</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Pattern StringLiteral(string delimiter)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Pattern StringLiteral(String delimiter)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3775,7 +3747,7 @@ public static Pattern Check(string name, Func&lt;char, bool&gt; headCheck, Func&
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.String</span></td>
+        <td><span class="xref">String</span></td>
         <td><span class="parametername">delimiter</span></td>
         <td><p>The token delimiting the start and end of the literal.</p>
 </td>
@@ -3800,19 +3772,19 @@ public static Pattern Check(string name, Func&lt;char, bool&gt; headCheck, Func&
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_StringLiteral_System_String_System_String_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.StringLiteral(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_StringLiteral_String_String_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.StringLiteral(String%2CString)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternFactories.cs/#L40">View Source</a>
   </span>
   <a id="Stringier_Patterns_Pattern_StringLiteral_" data-uid="Stringier.Patterns.Pattern.StringLiteral*"></a>
-  <h4 id="Stringier_Patterns_Pattern_StringLiteral_System_String_System_String_" data-uid="Stringier.Patterns.Pattern.StringLiteral(System.String,System.String)">StringLiteral(String, String)</h4>
+  <h4 id="Stringier_Patterns_Pattern_StringLiteral_String_String_" data-uid="Stringier.Patterns.Pattern.StringLiteral(String,String)">StringLiteral(String, String)</h4>
   <div class="markdown level1 summary"><p>Creates a pattern representing a string literal contained by the <code data-dev-comment-type="paramref" class="paramref">delimiter</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Pattern StringLiteral(string delimiter, string escape)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Pattern StringLiteral(String delimiter, String escape)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3825,13 +3797,13 @@ public static Pattern Check(string name, Func&lt;char, bool&gt; headCheck, Func&
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.String</span></td>
+        <td><span class="xref">String</span></td>
         <td><span class="parametername">delimiter</span></td>
         <td><p>The token delimiting the start and end of the literal.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.String</span></td>
+        <td><span class="xref">String</span></td>
         <td><span class="parametername">escape</span></td>
         <td><p>The token escaping the <code data-dev-comment-type="paramref" class="paramref">delimiter</code>.</p>
 </td>
@@ -3850,6 +3822,156 @@ public static Pattern Check(string name, Func&lt;char, bool&gt; headCheck, Func&
       <tr>
         <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
         <td><p>A pattern representing a string literal.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Then_Char_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Then(Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L367">View Source</a>
+  </span>
+  <a id="Stringier_Patterns_Pattern_Then_" data-uid="Stringier.Patterns.Pattern.Then*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Then_Char_" data-uid="Stringier.Patterns.Pattern.Then(Char)">Then(Char)</h4>
+  <div class="markdown level1 summary"><p>Concatenates the patterns so that this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> comes before <code data-dev-comment-type="paramref" class="paramref">other</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Pattern Then(Char other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Char</span></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>The succeeding <see cref="!:Char"></see></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> concatenating this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> and <code data-dev-comment-type="paramref" class="paramref">other</code></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Then_ReadOnlySpan_Char__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Then(ReadOnlySpan%7BChar%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L360">View Source</a>
+  </span>
+  <a id="Stringier_Patterns_Pattern_Then_" data-uid="Stringier.Patterns.Pattern.Then*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Then_ReadOnlySpan_Char__" data-uid="Stringier.Patterns.Pattern.Then(ReadOnlySpan{Char})">Then(ReadOnlySpan&lt;Char&gt;)</h4>
+  <div class="markdown level1 summary"><p>Concatenates the patterns so that this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> comes before <code data-dev-comment-type="paramref" class="paramref">other</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Pattern Then(ReadOnlySpan&lt;Char&gt; other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ReadOnlySpan</span>&lt;<span class="xref">Char</span>&gt;</td>
+        <td><span class="parametername">other</span></td>
+        <td><p>The succeeding <see cref="!:ReadOnlySpan&lt;T>"></see> of <see cref="!:Char"></see></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> concatenating this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> and <code data-dev-comment-type="paramref" class="paramref">other</code></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Then_String_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Then(String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L350">View Source</a>
+  </span>
+  <a id="Stringier_Patterns_Pattern_Then_" data-uid="Stringier.Patterns.Pattern.Then*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Then_String_" data-uid="Stringier.Patterns.Pattern.Then(String)">Then(String)</h4>
+  <div class="markdown level1 summary"><p>Concatenates the patterns so that this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> comes before <code data-dev-comment-type="paramref" class="paramref">other</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Pattern Then(String other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>The succeeding <see cref="!:String"></see></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> concatenating this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> and <code data-dev-comment-type="paramref" class="paramref">other</code></p>
 </td>
       </tr>
     </tbody>
@@ -3954,158 +4076,149 @@ public static Pattern Check(string name, Func&lt;char, bool&gt; headCheck, Func&
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Then_System_Char_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Then(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L367">View Source</a>
-  </span>
-  <a id="Stringier_Patterns_Pattern_Then_" data-uid="Stringier.Patterns.Pattern.Then*"></a>
-  <h4 id="Stringier_Patterns_Pattern_Then_System_Char_" data-uid="Stringier.Patterns.Pattern.Then(System.Char)">Then(Char)</h4>
-  <div class="markdown level1 summary"><p>Concatenates the patterns so that this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> comes before <code data-dev-comment-type="paramref" class="paramref">other</code></p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual Pattern Then(char other)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Char</span></td>
-        <td><span class="parametername">other</span></td>
-        <td><p>The succeeding <span class="xref">System.Char</span></p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
-        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> concatenating this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> and <code data-dev-comment-type="paramref" class="paramref">other</code></p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Then_System_ReadOnlySpan_System_Char__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Then(System.ReadOnlySpan%7BSystem.Char%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L360">View Source</a>
-  </span>
-  <a id="Stringier_Patterns_Pattern_Then_" data-uid="Stringier.Patterns.Pattern.Then*"></a>
-  <h4 id="Stringier_Patterns_Pattern_Then_System_ReadOnlySpan_System_Char__" data-uid="Stringier.Patterns.Pattern.Then(System.ReadOnlySpan{System.Char})">Then(ReadOnlySpan&lt;Char&gt;)</h4>
-  <div class="markdown level1 summary"><p>Concatenates the patterns so that this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> comes before <code data-dev-comment-type="paramref" class="paramref">other</code></p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual Pattern Then(ReadOnlySpan&lt;char&gt; other)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.ReadOnlySpan</span>&lt;<span class="xref">System.Char</span>&gt;</td>
-        <td><span class="parametername">other</span></td>
-        <td><p>The succeeding <span class="xref">System.ReadOnlySpan&lt;T&gt;</span> of <span class="xref">System.Char</span></p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
-        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> concatenating this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> and <code data-dev-comment-type="paramref" class="paramref">other</code></p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Then_System_String_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Then(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L350">View Source</a>
-  </span>
-  <a id="Stringier_Patterns_Pattern_Then_" data-uid="Stringier.Patterns.Pattern.Then*"></a>
-  <h4 id="Stringier_Patterns_Pattern_Then_System_String_" data-uid="Stringier.Patterns.Pattern.Then(System.String)">Then(String)</h4>
-  <div class="markdown level1 summary"><p>Concatenates the patterns so that this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> comes before <code data-dev-comment-type="paramref" class="paramref">other</code></p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual Pattern Then(string other)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">other</span></td>
-        <td><p>The succeeding <span class="xref">System.String</span></p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
-        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> concatenating this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> and <code data-dev-comment-type="paramref" class="paramref">other</code></p>
-</td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="operators">Operators
   </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_op_Implicit_Char__Stringier_Patterns_Pattern.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.op_Implicit(Char)~Stringier.Patterns.Pattern%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L9">View Source</a>
+  </span>
+  <a id="Stringier_Patterns_Pattern_op_Implicit_" data-uid="Stringier.Patterns.Pattern.op_Implicit*"></a>
+  <h4 id="Stringier_Patterns_Pattern_op_Implicit_Char__Stringier_Patterns_Pattern" data-uid="Stringier.Patterns.Pattern.op_Implicit(Char)~Stringier.Patterns.Pattern">Implicit(Char to Pattern)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Pattern(Char char)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Char</span></td>
+        <td><span class="parametername">char</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_op_Implicit_ReadOnlySpan_Char___Stringier_Patterns_Pattern.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.op_Implicit(ReadOnlySpan%7BChar%7D)~Stringier.Patterns.Pattern%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L16">View Source</a>
+  </span>
+  <a id="Stringier_Patterns_Pattern_op_Implicit_" data-uid="Stringier.Patterns.Pattern.op_Implicit*"></a>
+  <h4 id="Stringier_Patterns_Pattern_op_Implicit_ReadOnlySpan_Char___Stringier_Patterns_Pattern" data-uid="Stringier.Patterns.Pattern.op_Implicit(ReadOnlySpan{Char})~Stringier.Patterns.Pattern">Implicit(ReadOnlySpan&lt;Char&gt; to Pattern)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Pattern(ReadOnlySpan&lt;Char&gt; span)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ReadOnlySpan</span>&lt;<span class="xref">Char</span>&gt;</td>
+        <td><span class="parametername">span</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_op_Implicit_String__Stringier_Patterns_Pattern.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.op_Implicit(String)~Stringier.Patterns.Pattern%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L11">View Source</a>
+  </span>
+  <a id="Stringier_Patterns_Pattern_op_Implicit_" data-uid="Stringier.Patterns.Pattern.op_Implicit*"></a>
+  <h4 id="Stringier_Patterns_Pattern_op_Implicit_String__Stringier_Patterns_Pattern" data-uid="Stringier.Patterns.Pattern.op_Implicit(String)~Stringier.Patterns.Pattern">Implicit(String to Pattern)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Pattern(String string)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td><span class="parametername">string</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_op_Implicit_Stringier_Patterns_Capture__Stringier_Patterns_Pattern.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.op_Implicit(Stringier.Patterns.Capture)~Stringier.Patterns.Pattern%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -4134,147 +4247,6 @@ public static Pattern Check(string name, Func&lt;char, bool&gt; headCheck, Func&
       <tr>
         <td><a class="xref" href="Stringier.Patterns.Capture.html">Capture</a></td>
         <td><span class="parametername">capture</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_op_Implicit_System_Char__Stringier_Patterns_Pattern.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.op_Implicit(System.Char)~Stringier.Patterns.Pattern%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L9">View Source</a>
-  </span>
-  <a id="Stringier_Patterns_Pattern_op_Implicit_" data-uid="Stringier.Patterns.Pattern.op_Implicit*"></a>
-  <h4 id="Stringier_Patterns_Pattern_op_Implicit_System_Char__Stringier_Patterns_Pattern" data-uid="Stringier.Patterns.Pattern.op_Implicit(System.Char)~Stringier.Patterns.Pattern">Implicit(Char to Pattern)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static implicit operator Pattern(char char)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Char</span></td>
-        <td><span class="parametername">char</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_op_Implicit_System_ReadOnlySpan_System_Char___Stringier_Patterns_Pattern.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.op_Implicit(System.ReadOnlySpan%7BSystem.Char%7D)~Stringier.Patterns.Pattern%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L16">View Source</a>
-  </span>
-  <a id="Stringier_Patterns_Pattern_op_Implicit_" data-uid="Stringier.Patterns.Pattern.op_Implicit*"></a>
-  <h4 id="Stringier_Patterns_Pattern_op_Implicit_System_ReadOnlySpan_System_Char___Stringier_Patterns_Pattern" data-uid="Stringier.Patterns.Pattern.op_Implicit(System.ReadOnlySpan{System.Char})~Stringier.Patterns.Pattern">Implicit(ReadOnlySpan&lt;Char&gt; to Pattern)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static implicit operator Pattern(ReadOnlySpan&lt;char&gt; span)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.ReadOnlySpan</span>&lt;<span class="xref">System.Char</span>&gt;</td>
-        <td><span class="parametername">span</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_op_Implicit_System_String__Stringier_Patterns_Pattern.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.op_Implicit(System.String)~Stringier.Patterns.Pattern%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/PatternCreation.cs/#L11">View Source</a>
-  </span>
-  <a id="Stringier_Patterns_Pattern_op_Implicit_" data-uid="Stringier.Patterns.Pattern.op_Implicit*"></a>
-  <h4 id="Stringier_Patterns_Pattern_op_Implicit_System_String__Stringier_Patterns_Pattern" data-uid="Stringier.Patterns.Pattern.op_Implicit(System.String)~Stringier.Patterns.Pattern">Implicit(String to Pattern)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static implicit operator Pattern(string string)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">string</span></td>
         <td></td>
       </tr>
     </tbody>
