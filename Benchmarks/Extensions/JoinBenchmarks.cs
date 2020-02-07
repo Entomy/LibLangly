@@ -4,9 +4,6 @@ using BenchmarkDotNet.Jobs;
 using Stringier;
 
 namespace Benchmarks.Extensions {
-#if NETFRAMEWORK
-	[SimpleJob(RuntimeMoniker.Net48)]
-#endif
 	[SimpleJob(RuntimeMoniker.NetCoreApp30)]
 	[SimpleJob(RuntimeMoniker.CoreRt30)]
 	[SimpleJob(RuntimeMoniker.Mono)]

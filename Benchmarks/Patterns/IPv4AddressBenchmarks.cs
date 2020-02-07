@@ -10,9 +10,6 @@ using static Pidgin.Parser<char>;
 using Stringier.Patterns;
 
 namespace Benchmarks.Patterns {
-#if NETFRAMEWORK
-	[SimpleJob(RuntimeMoniker.Net48)]
-#endif
 	[SimpleJob(RuntimeMoniker.NetCoreApp30)]
 	[SimpleJob(RuntimeMoniker.CoreRt30)]
 	[SimpleJob(RuntimeMoniker.Mono)]
@@ -33,7 +30,7 @@ namespace Benchmarks.Patterns {
 			.Then(Digit.OfType<String>());
 		public static readonly Parser<Char, String> pidgin = pidginDigit.Then(Char('.')).Then(pidginDigit).Then(Char('.')).Then(pidginDigit).Then(Char('.')).Then(pidginDigit);
 
-		public static readonly Pattern stringierDigit = Pattern.Check(nameof(stringierDigit),
+		public static readonly Pattern stringierDigit = Pattern.Check(
 			(Char) => '0' <= Char && Char <= '2', false,
 			(Char) => '0' <= Char && Char <= '9', false,
 			(Char) => '0' <= Char && Char <= '9', true);

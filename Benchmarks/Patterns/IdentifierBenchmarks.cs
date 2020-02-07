@@ -9,9 +9,6 @@ using Stringier;
 using Stringier.Patterns;
 
 namespace Benchmarks.Patterns {
-#if NETFRAMEWORK
-	[SimpleJob(RuntimeMoniker.Net48)]
-#endif
 	[SimpleJob(RuntimeMoniker.NetCoreApp30)]
 	[SimpleJob(RuntimeMoniker.CoreRt30)]
 	[SimpleJob(RuntimeMoniker.Mono)]
@@ -29,7 +26,7 @@ namespace Benchmarks.Patterns {
 
 		public static readonly Sprache.Parser<String> sprache = Parse.Letter.Then(_ => Parse.Letter.Or(Parse.Char('_')).Many().Text());
 
-		public static readonly Pattern stringier = Pattern.Check(nameof(stringier),
+		public static readonly Pattern stringier = Pattern.Check(
 			(Char) => Char.IsLetter(), true,
 			(Char) => Char.IsLetter() || Char == '_', true,
 			(Char) => Char.IsLetter() || Char == '_', false);
