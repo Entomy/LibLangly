@@ -9,7 +9,9 @@ using Stringier.Patterns;
 using static Stringier.Patterns.Pattern;
 
 namespace Benchmarks.Patterns {
+#if NETFRAMEWORK
 	[SimpleJob(RuntimeMoniker.Net48)]
+#endif
 	[SimpleJob(RuntimeMoniker.NetCoreApp30)]
 	[SimpleJob(RuntimeMoniker.CoreRt30)]
 	[SimpleJob(RuntimeMoniker.Mono)]

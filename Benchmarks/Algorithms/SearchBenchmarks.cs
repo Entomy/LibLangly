@@ -4,10 +4,13 @@ using BenchmarkDotNet.Jobs;
 using Stringier;
 
 namespace Benchmarks.Algorithms {
+#if NETFRAMEWORK
 	[SimpleJob(RuntimeMoniker.Net48)]
+#endif
 	[SimpleJob(RuntimeMoniker.NetCoreApp30)]
 	[SimpleJob(RuntimeMoniker.CoreRt30)]
 	[SimpleJob(RuntimeMoniker.Mono)]
+	[MemoryDiagnoser]
 	public class SearchBenchmarks {
 		[Params("hello", "hello world", "The quick brown fox jumps over the lazy dog")]
 		public String Source { get; set; }
