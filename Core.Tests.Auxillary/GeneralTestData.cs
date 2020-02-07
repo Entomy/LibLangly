@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Tests {
+namespace Core {
 	public class GeneralTestData {
 		public String __DebugDisplay => $"U+{ScalarValue:X4}";
 

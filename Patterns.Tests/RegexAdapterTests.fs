@@ -1,4 +1,4 @@
-﻿namespace Tests.Patterns
+﻿namespace Patterns
 
 open System
 open System.Text.RegularExpressions

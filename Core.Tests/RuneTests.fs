@@ -1,4 +1,4 @@
-﻿namespace Tests
+﻿namespace Core
 
 open System
 open System.Buffers

@@ -1,4 +1,4 @@
-﻿namespace Tests.Streams
+﻿namespace Streams
 
 open System
 open Stringier.Streams

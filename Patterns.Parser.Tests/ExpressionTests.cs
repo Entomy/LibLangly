@@ -3,7 +3,7 @@ using System;
 using Stringier.Patterns;
 using Stringier.Patterns.Parser;
 
-namespace Patterns.Parser.Tests {
+namespace Patterns.Parser {
 	[TestClass]
 	public class ExpressionTests {
 		[TestMethod]

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
 
-namespace Tests {
+namespace Core {
 	public class UnicodeInfoTestData {
 		// named such so that it appears at the beginning of the console output for any failing unit test
 		public String __DebugDisplay => $"U+{ScalarValue.Value:X4}";

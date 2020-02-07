@@ -11,7 +11,7 @@ using System.IO;
 using System.Text.RegularExpressions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Tests {
+namespace Core {
 	/*
      * This file contains helpers for parsing the Unicode data files, which we can then use to test
      * our Framework's implementations of various character & text processing routines.

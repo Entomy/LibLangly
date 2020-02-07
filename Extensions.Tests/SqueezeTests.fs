@@ -1,4 +1,4 @@
-﻿namespace Tests.Extensions
+﻿namespace Extensions
 
 open System
 open Stringier.Extensions

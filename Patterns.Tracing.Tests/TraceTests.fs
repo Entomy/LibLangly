@@ -1,4 +1,4 @@
-﻿namespace Tests.Patterns.Tracing
+﻿namespace Patterns.Tracing
 
 open System
 open Stringier.Patterns
