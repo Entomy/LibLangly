@@ -11,7 +11,7 @@ namespace Stringier {
 		/// This intends to implement UAX#29 (https://unicode.org/reports/tr29/).
 		/// </remarks>
 		internal static readonly Table InvariantTable = new Table(
-			#region Latin-1 Extended
+			#region Latin-1 Supplement
 			new Equivalence("\u00C0", "\u0041\u0300"), // À
 			new Equivalence("\u00C1", "\u0041\u0301"), // Á
 			new Equivalence("\u00C2", "\u0041\u0302"), // Â
