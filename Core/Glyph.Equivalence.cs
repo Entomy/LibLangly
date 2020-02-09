@@ -1,12 +1,13 @@
 using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace Stringier {
     public readonly partial struct Glyph {
         /// <summary>
         /// Represents the equivalence in <see cref="Glyph"/> sequences.
         /// </summary>
-        internal class Equivalence : IEquatable<Char>, IEquatable<Glyph>, IEquatable<String> {
+        internal class Equivalence : IEquatable<Char>, IEquatable<Glyph>, IEquatable<Rune>, IEquatable<String> {
             /// <summary>
             /// The sequences which represent the <see cref="Glyph"/>.
             /// </summary>
@@ -30,6 +31,17 @@ namespace Stringier {
 			public Boolean Equals(Glyph other) {
 				foreach (String sequence in Sequences) {
 					if (String.Equals(sequence, other.Sequence, StringComparison.Ordinal)) {
+						return true;
+					}
+				}
+				return false;
+			}
+
+			public Boolean Equals(Rune other) {
+				Span<Char> buffer = new Char[2];
+				Int32 charsCount = other.EncodeToUtf16(buffer);
+				foreach (String sequence in Sequences) {
+					if (sequence.Length <= 2 && sequence.AsSpan().Slice(0, charsCount).Equals(buffer.Slice(0, charsCount), StringComparison.Ordinal)) {
 						return true;
 					}
 				}

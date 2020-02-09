@@ -1,10 +1,11 @@
 using System;
+using System.Text;
 
 namespace Stringier {
     /// <summary>
     /// Represents a glyph; a UNICODE Grapheme Cluster.
     /// </summary>
-    public readonly partial struct Glyph : IEquatable<Char>, IEquatable<Glyph> {
+    public readonly partial struct Glyph : IEquatable<Char>, IEquatable<Glyph>, IEquatable<Rune> {
         /// <summary>
         /// The sequence representing this <see cref="Glyph"/> as it was found or declared.
         /// </summary>
@@ -38,6 +39,8 @@ namespace Stringier {
 				return Equals(@char);
 			case Glyph glyph:
 				return Equals(glyph);
+			case Rune rune:
+				return Equals(rune);
 			default:
 				return false;
 			}
@@ -56,6 +59,23 @@ namespace Stringier {
 		/// <param name="other">The <see cref="Glyph"/> to compare to this instance.</param>
 		/// <returns><see langword="true"/> if the value of <paramref name="other"/> is the same as this instance; otherwise, <see langword="false">.</returns>
 		public Boolean Equals(Glyph other) => InvariantEquivalence?.Equals(other) ?? String.Equals(Sequence, other.Sequence, StringComparison.Ordinal);
+
+		/// <summary>
+		/// Determines whether this instance and another specified <see cref="Rune"/> object have the same value.
+		/// </summary>
+		/// <param name="other">The <see cref="Rune"/> to compare to this instance.</param>
+		/// <returns><see langword="true"/> if the value of <paramref name="other"/> is the same as this instance; otherwise, <see langword="false">.</returns>
+		public Boolean Equals(Rune other) {
+			if (InvariantEquivalence is Object) {
+				return InvariantEquivalence.Equals(other);
+			} else if (Sequence.Length <= 2) {
+				Span<Char> buffer = new Char[2];
+				Int32 charsCount = other.EncodeToUtf16(buffer);
+				return Sequence.AsSpan().Slice(0, charsCount).Equals(buffer, StringComparison.Ordinal);
+			} else {
+				return false;
+			}
+		}
 
 		/// <summary>
 		/// Returns the hash code for this glyph.
