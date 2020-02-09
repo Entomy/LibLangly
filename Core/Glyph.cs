@@ -42,10 +42,10 @@ namespace Stringier {
 		}
 
 		/// <summary>
-		/// Determines whether this instance and another specified String object have the same value.
+		/// Determines whether this instance and another specified <see cref="Glyph"/> object have the same value.
 		/// </summary>
-		/// <param name="other"></param>
-		/// <returns></returns>
+		/// <param name="other">The <see cref="Glyph"/> to compare to this instance.</param>
+		/// <returns><see langword="true"/> if the value of <paramref name="other"/> is the same as this instance; otherwise, <see langword="false">.</returns>
 		public Boolean Equals(Glyph other) => InvariantEquivalence?.Equals(other) ?? String.Equals(Sequence, other.Sequence, StringComparison.Ordinal);
 
 		/// <summary>
