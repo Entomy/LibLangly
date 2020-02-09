@@ -4,7 +4,7 @@ namespace Stringier {
     /// <summary>
     /// Represents a glyph; a UNICODE Grapheme Cluster.
     /// </summary>
-    public readonly partial struct Glyph : IEquatable<Glyph> {
+    public readonly partial struct Glyph : IEquatable<Char>, IEquatable<Glyph> {
         /// <summary>
         /// The sequence representing this <see cref="Glyph"/> as it was found or declared.
         /// </summary>
@@ -34,12 +34,21 @@ namespace Stringier {
 		/// <returns><see langword="true"/> if the value of <paramref name="obj"/> is the same as this instance; otherwise, <see langword="false">. If <paramref name="obj"/> is <see langword="null"/>, the method returns <see langword="false">.</returns>
 		public override Boolean Equals(Object? obj) {
 			switch (obj) {
+			case Char @char:
+				return Equals(@char);
 			case Glyph glyph:
 				return Equals(glyph);
 			default:
 				return false;
 			}
 		}
+
+		/// <summary>
+		/// Determines whether this instance and another specified <see cref="Char"/> object have the same value.
+		/// </summary>
+		/// <param name="other">The <see cref="Char"/> to compare to this instance.</param>
+		/// <returns><see langword="true"/> if the value of <paramref name="other"/> is the same as this instance; otherwise, <see langword="false">.</returns>
+		public Boolean Equals(Char other) => InvariantEquivalence?.Equals(other) ?? (Sequence.Length == 1 && Equals(Sequence[0], other));
 
 		/// <summary>
 		/// Determines whether this instance and another specified <see cref="Glyph"/> object have the same value.
