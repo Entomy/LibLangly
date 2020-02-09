@@ -76,29 +76,35 @@
   <div class="markdown level0 summary"><p>Represents a graph trace, a collection of the steps taken through a <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> graph.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Collections.Generic.IEnumerable&lt;Stringier.Patterns.Debugging.IStep&gt;.GetEnumerator()</span>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Stringier.Patterns.Debugging.html">Stringier.Patterns.Debugging</a></h6>
   <h6><strong>Assembly</strong>: Stringier.Patterns.dll</h6>
   <h5 id="Stringier_Patterns_Debugging_ITrace_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface ITrace : IEnumerable&lt;IStep&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public interface ITrace : IEnumerable&lt;IStep&gt;, IEnumerable</code></pre>
   </div>
   <h3 id="properties">Properties
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Debugging_ITrace_Item_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Debugging.ITrace.Item(Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Debugging_ITrace_Item_System_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Debugging.ITrace.Item(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/Debugging/ITrace.cs/#L14">View Source</a>
   </span>
   <a id="Stringier_Patterns_Debugging_ITrace_Item_" data-uid="Stringier.Patterns.Debugging.ITrace.Item*"></a>
-  <h4 id="Stringier_Patterns_Debugging_ITrace_Item_Int32_" data-uid="Stringier.Patterns.Debugging.ITrace.Item(Int32)">Item[Int32]</h4>
+  <h4 id="Stringier_Patterns_Debugging_ITrace_Item_System_Int32_" data-uid="Stringier.Patterns.Debugging.ITrace.Item(System.Int32)">Item[Int32]</h4>
   <div class="markdown level1 summary"><p>Gets the <a class="xref" href="Stringier.Patterns.Debugging.IStep.html">IStep</a> at the declared index <code data-dev-comment-type="paramref" class="paramref">i</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">IStep this[Int32 i] { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">IStep this[int i] { get; }</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -111,7 +117,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Int32</span></td>
+        <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">i</span></td>
         <td><p>The index of the <a class="xref" href="Stringier.Patterns.Debugging.IStep.html">IStep</a> to get.</p>
 </td>
@@ -138,57 +144,19 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Debugging_ITrace_Collect_String_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Debugging.ITrace.Collect(String%2CInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/Debugging/ITrace.cs/#L21">View Source</a>
-  </span>
-  <a id="Stringier_Patterns_Debugging_ITrace_Collect_" data-uid="Stringier.Patterns.Debugging.ITrace.Collect*"></a>
-  <h4 id="Stringier_Patterns_Debugging_ITrace_Collect_String_Int32_" data-uid="Stringier.Patterns.Debugging.ITrace.Collect(String,Int32)">Collect(String, Int32)</h4>
-  <div class="markdown level1 summary"><p>Collect the parameters as a trace step.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void Collect(String text, Int32 position)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">String</span></td>
-        <td><span class="parametername">text</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">Int32</span></td>
-        <td><span class="parametername">position</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Debugging_ITrace_Collect_Stringier_Patterns_Debugging_Error_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Debugging.ITrace.Collect(Stringier.Patterns.Debugging.Error%2CInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Debugging_ITrace_Collect_Stringier_Patterns_Debugging_Error_System_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Debugging.ITrace.Collect(Stringier.Patterns.Debugging.Error%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/Debugging/ITrace.cs/#L27">View Source</a>
   </span>
   <a id="Stringier_Patterns_Debugging_ITrace_Collect_" data-uid="Stringier.Patterns.Debugging.ITrace.Collect*"></a>
-  <h4 id="Stringier_Patterns_Debugging_ITrace_Collect_Stringier_Patterns_Debugging_Error_Int32_" data-uid="Stringier.Patterns.Debugging.ITrace.Collect(Stringier.Patterns.Debugging.Error,Int32)">Collect(Error, Int32)</h4>
+  <h4 id="Stringier_Patterns_Debugging_ITrace_Collect_Stringier_Patterns_Debugging_Error_System_Int32_" data-uid="Stringier.Patterns.Debugging.ITrace.Collect(Stringier.Patterns.Debugging.Error,System.Int32)">Collect(Error, Int32)</h4>
   <div class="markdown level1 summary"><p>Collect the parameters as a trace step.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void Collect(Error error, Int32 position)</code></pre>
+    <pre><code class="lang-csharp hljs">void Collect(Error error, int position)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -206,7 +174,45 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">Int32</span></td>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">position</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Debugging_ITrace_Collect_System_String_System_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Debugging.ITrace.Collect(System.String%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/Debugging/ITrace.cs/#L21">View Source</a>
+  </span>
+  <a id="Stringier_Patterns_Debugging_ITrace_Collect_" data-uid="Stringier.Patterns.Debugging.ITrace.Collect*"></a>
+  <h4 id="Stringier_Patterns_Debugging_ITrace_Collect_System_String_System_Int32_" data-uid="Stringier.Patterns.Debugging.ITrace.Collect(System.String,System.Int32)">Collect(String, Int32)</h4>
+  <div class="markdown level1 summary"><p>Collect the parameters as a trace step.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Collect(string text, int position)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">text</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">position</span></td>
         <td></td>
       </tr>

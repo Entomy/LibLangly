@@ -81,11 +81,36 @@
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">Capture</span></div>
   </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.IEquatable</span>&lt;<span class="xref">System.String</span>&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Stringier.Patterns.html">Stringier.Patterns</a></h6>
   <h6><strong>Assembly</strong>: Stringier.Patterns.dll</h6>
   <h5 id="Stringier_Patterns_Capture_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class Capture : IEquatable&lt;String&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class Capture : IEquatable&lt;string&gt;</code></pre>
   </div>
   <h5 id="Stringier_Patterns_Capture_remarks"><strong>Remarks</strong></h5>
   <div class="markdown level0 remarks"><p>This is used primarily in the implementation of backreferences (which are like in <a href="https://www.regular-expressions.info/backref.html">Regex</a>).</p>
@@ -144,19 +169,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Capture_Equals_String_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Capture.Equals(String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Capture_Equals_System_String_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Capture.Equals(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/Capture.cs/#L37">View Source</a>
   </span>
   <a id="Stringier_Patterns_Capture_Equals_" data-uid="Stringier.Patterns.Capture.Equals*"></a>
-  <h4 id="Stringier_Patterns_Capture_Equals_String_" data-uid="Stringier.Patterns.Capture.Equals(String)">Equals(String)</h4>
-  <div class="markdown level1 summary"><p>Determines whether this <a class="xref" href="Stringier.Patterns.Capture.html">Capture</a> and a specified <see cref="!:String"></see> object have the same value. Comparison is ordinal.</p>
+  <h4 id="Stringier_Patterns_Capture_Equals_System_String_" data-uid="Stringier.Patterns.Capture.Equals(System.String)">Equals(String)</h4>
+  <div class="markdown level1 summary"><p>Determines whether this <a class="xref" href="Stringier.Patterns.Capture.html">Capture</a> and a specified <span class="xref">System.String</span> object have the same value. Comparison is ordinal.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Boolean Equals(String other)</code></pre>
+    <pre><code class="lang-csharp hljs">public bool Equals(string other)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -169,9 +194,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">String</span></td>
+        <td><span class="xref">System.String</span></td>
         <td><span class="parametername">other</span></td>
-        <td><p>The <see cref="!:String"></see> to compare to this instance.</p>
+        <td><p>The <span class="xref">System.String</span> to compare to this instance.</p>
 </td>
       </tr>
     </tbody>
@@ -186,7 +211,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Boolean</span></td>
+        <td><span class="xref">System.Boolean</span></td>
         <td><p><code>true</code> if the value of the <code data-dev-comment-type="paramref" class="paramref">other</code> parameter is the same as this capture; otherwise, <code>false</code>.</p>
 </td>
       </tr>
@@ -194,19 +219,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Capture_Equals_String_StringComparison_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Capture.Equals(String%2CStringComparison)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Capture_Equals_System_String_System_StringComparison_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Capture.Equals(System.String%2CSystem.StringComparison)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/Capture.cs/#L45">View Source</a>
   </span>
   <a id="Stringier_Patterns_Capture_Equals_" data-uid="Stringier.Patterns.Capture.Equals*"></a>
-  <h4 id="Stringier_Patterns_Capture_Equals_String_StringComparison_" data-uid="Stringier.Patterns.Capture.Equals(String,StringComparison)">Equals(String, StringComparison)</h4>
-  <div class="markdown level1 summary"><p>Determines whether this <a class="xref" href="Stringier.Patterns.Capture.html">Capture</a> and a specified <see cref="!:String"></see> object have the same value. A parameter specifies the culture, case, and sort rules used in the comparison.</p>
+  <h4 id="Stringier_Patterns_Capture_Equals_System_String_System_StringComparison_" data-uid="Stringier.Patterns.Capture.Equals(System.String,System.StringComparison)">Equals(String, StringComparison)</h4>
+  <div class="markdown level1 summary"><p>Determines whether this <a class="xref" href="Stringier.Patterns.Capture.html">Capture</a> and a specified <span class="xref">System.String</span> object have the same value. A parameter specifies the culture, case, and sort rules used in the comparison.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Boolean Equals(String other, StringComparison comparisonType)</code></pre>
+    <pre><code class="lang-csharp hljs">public bool Equals(string other, StringComparison comparisonType)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -219,13 +244,13 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">String</span></td>
+        <td><span class="xref">System.String</span></td>
         <td><span class="parametername">other</span></td>
-        <td><p>The <see cref="!:String"></see> to compare to this instance.</p>
+        <td><p>The <span class="xref">System.String</span> to compare to this instance.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">StringComparison</span></td>
+        <td><span class="xref">System.StringComparison</span></td>
         <td><span class="parametername">comparisonType</span></td>
         <td><p>One of the enumeration values that specifies how the text will be compared.</p>
 </td>
@@ -242,108 +267,8 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Boolean</span></td>
+        <td><span class="xref">System.Boolean</span></td>
         <td><p><code>true</code> if the value of the <code data-dev-comment-type="paramref" class="paramref">other</code> parameter is the same as this capture; otherwise, <code>false</code>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Capture_Or_Char_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Capture.Or(Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/Capture.cs/#L72">View Source</a>
-  </span>
-  <a id="Stringier_Patterns_Capture_Or_" data-uid="Stringier.Patterns.Capture.Or*"></a>
-  <h4 id="Stringier_Patterns_Capture_Or_Char_" data-uid="Stringier.Patterns.Capture.Or(Char)">Or(Char)</h4>
-  <div class="markdown level1 summary"><p>Declares <code data-dev-comment-type="paramref" class="paramref">other</code> to be an alternate of this <a class="xref" href="Stringier.Patterns.Capture.html">Capture</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Pattern Or(Char other)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Char</span></td>
-        <td><span class="parametername">other</span></td>
-        <td><p>The <see cref="!:Char"></see> to check if this <a class="xref" href="Stringier.Patterns.Capture.html">Capture</a> does not match</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
-        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> alternating this <a class="xref" href="Stringier.Patterns.Capture.html">Capture</a> and <code data-dev-comment-type="paramref" class="paramref">other</code></p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Capture_Or_String_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Capture.Or(String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/Capture.cs/#L62">View Source</a>
-  </span>
-  <a id="Stringier_Patterns_Capture_Or_" data-uid="Stringier.Patterns.Capture.Or*"></a>
-  <h4 id="Stringier_Patterns_Capture_Or_String_" data-uid="Stringier.Patterns.Capture.Or(String)">Or(String)</h4>
-  <div class="markdown level1 summary"><p>Declares <code data-dev-comment-type="paramref" class="paramref">other</code> to be an alternate of this <a class="xref" href="Stringier.Patterns.Capture.html">Capture</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Pattern Or(String other)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">String</span></td>
-        <td><span class="parametername">other</span></td>
-        <td><p>The <see cref="!:String"></see> to check if this <a class="xref" href="Stringier.Patterns.Capture.html">Capture</a> does not match</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
-        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> alternating this <a class="xref" href="Stringier.Patterns.Capture.html">Capture</a> and <code data-dev-comment-type="paramref" class="paramref">other</code></p>
 </td>
       </tr>
     </tbody>
@@ -450,19 +375,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Capture_Repeat_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Capture.Repeat(Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Capture_Or_System_Char_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Capture.Or(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/Capture.cs/#L89">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/Capture.cs/#L72">View Source</a>
   </span>
-  <a id="Stringier_Patterns_Capture_Repeat_" data-uid="Stringier.Patterns.Capture.Repeat*"></a>
-  <h4 id="Stringier_Patterns_Capture_Repeat_Int32_" data-uid="Stringier.Patterns.Capture.Repeat(Int32)">Repeat(Int32)</h4>
-  <div class="markdown level1 summary"><p>Marks this <a class="xref" href="Stringier.Patterns.Capture.html">Capture</a> as repeating <code data-dev-comment-type="paramref" class="paramref">count</code> times.</p>
+  <a id="Stringier_Patterns_Capture_Or_" data-uid="Stringier.Patterns.Capture.Or*"></a>
+  <h4 id="Stringier_Patterns_Capture_Or_System_Char_" data-uid="Stringier.Patterns.Capture.Or(System.Char)">Or(Char)</h4>
+  <div class="markdown level1 summary"><p>Declares <code data-dev-comment-type="paramref" class="paramref">other</code> to be an alternate of this <a class="xref" href="Stringier.Patterns.Capture.html">Capture</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Pattern Repeat(Int32 count)</code></pre>
+    <pre><code class="lang-csharp hljs">public Pattern Or(char other)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -475,7 +400,107 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Int32</span></td>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>The <span class="xref">System.Char</span> to check if this <a class="xref" href="Stringier.Patterns.Capture.html">Capture</a> does not match</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> alternating this <a class="xref" href="Stringier.Patterns.Capture.html">Capture</a> and <code data-dev-comment-type="paramref" class="paramref">other</code></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Capture_Or_System_String_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Capture.Or(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/Capture.cs/#L62">View Source</a>
+  </span>
+  <a id="Stringier_Patterns_Capture_Or_" data-uid="Stringier.Patterns.Capture.Or*"></a>
+  <h4 id="Stringier_Patterns_Capture_Or_System_String_" data-uid="Stringier.Patterns.Capture.Or(System.String)">Or(String)</h4>
+  <div class="markdown level1 summary"><p>Declares <code data-dev-comment-type="paramref" class="paramref">other</code> to be an alternate of this <a class="xref" href="Stringier.Patterns.Capture.html">Capture</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Pattern Or(string other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>The <span class="xref">System.String</span> to check if this <a class="xref" href="Stringier.Patterns.Capture.html">Capture</a> does not match</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> alternating this <a class="xref" href="Stringier.Patterns.Capture.html">Capture</a> and <code data-dev-comment-type="paramref" class="paramref">other</code></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Capture_Repeat_System_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Capture.Repeat(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/Capture.cs/#L89">View Source</a>
+  </span>
+  <a id="Stringier_Patterns_Capture_Repeat_" data-uid="Stringier.Patterns.Capture.Repeat*"></a>
+  <h4 id="Stringier_Patterns_Capture_Repeat_System_Int32_" data-uid="Stringier.Patterns.Capture.Repeat(System.Int32)">Repeat(Int32)</h4>
+  <div class="markdown level1 summary"><p>Marks this <a class="xref" href="Stringier.Patterns.Capture.html">Capture</a> as repeating <code data-dev-comment-type="paramref" class="paramref">count</code> times.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Pattern Repeat(int count)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">count</span></td>
         <td><p>The amount of times to repeat.</p>
 </td>
@@ -494,106 +519,6 @@
       <tr>
         <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
         <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> repeated <code data-dev-comment-type="paramref" class="paramref">count</code> times.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Capture_Then_Char_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Capture.Then(Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/Capture.cs/#L116">View Source</a>
-  </span>
-  <a id="Stringier_Patterns_Capture_Then_" data-uid="Stringier.Patterns.Capture.Then*"></a>
-  <h4 id="Stringier_Patterns_Capture_Then_Char_" data-uid="Stringier.Patterns.Capture.Then(Char)">Then(Char)</h4>
-  <div class="markdown level1 summary"><p>Concatenates the patterns so that this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> comes before <code data-dev-comment-type="paramref" class="paramref">other</code></p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Pattern Then(Char other)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Char</span></td>
-        <td><span class="parametername">other</span></td>
-        <td><p>The succeeding <see cref="!:Char"></see></p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
-        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> concatenating this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> and <code data-dev-comment-type="paramref" class="paramref">other</code></p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Capture_Then_String_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Capture.Then(String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/Capture.cs/#L106">View Source</a>
-  </span>
-  <a id="Stringier_Patterns_Capture_Then_" data-uid="Stringier.Patterns.Capture.Then*"></a>
-  <h4 id="Stringier_Patterns_Capture_Then_String_" data-uid="Stringier.Patterns.Capture.Then(String)">Then(String)</h4>
-  <div class="markdown level1 summary"><p>Concatenates the patterns so that this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> comes before <code data-dev-comment-type="paramref" class="paramref">other</code></p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Pattern Then(String other)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">String</span></td>
-        <td><span class="parametername">other</span></td>
-        <td><p>The succeeding <see cref="!:String"></see></p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
-        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> concatenating this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> and <code data-dev-comment-type="paramref" class="paramref">other</code></p>
 </td>
       </tr>
     </tbody>
@@ -700,6 +625,106 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Capture_Then_System_Char_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Capture.Then(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/Capture.cs/#L116">View Source</a>
+  </span>
+  <a id="Stringier_Patterns_Capture_Then_" data-uid="Stringier.Patterns.Capture.Then*"></a>
+  <h4 id="Stringier_Patterns_Capture_Then_System_Char_" data-uid="Stringier.Patterns.Capture.Then(System.Char)">Then(Char)</h4>
+  <div class="markdown level1 summary"><p>Concatenates the patterns so that this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> comes before <code data-dev-comment-type="paramref" class="paramref">other</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Pattern Then(char other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>The succeeding <span class="xref">System.Char</span></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> concatenating this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> and <code data-dev-comment-type="paramref" class="paramref">other</code></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Capture_Then_System_String_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Capture.Then(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Patterns/Capture.cs/#L106">View Source</a>
+  </span>
+  <a id="Stringier_Patterns_Capture_Then_" data-uid="Stringier.Patterns.Capture.Then*"></a>
+  <h4 id="Stringier_Patterns_Capture_Then_System_String_" data-uid="Stringier.Patterns.Capture.Then(System.String)">Then(String)</h4>
+  <div class="markdown level1 summary"><p>Concatenates the patterns so that this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> comes before <code data-dev-comment-type="paramref" class="paramref">other</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Pattern Then(string other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>The succeeding <span class="xref">System.String</span></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> concatenating this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> and <code data-dev-comment-type="paramref" class="paramref">other</code></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Capture_ToString.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Capture.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -707,12 +732,12 @@
   </span>
   <a id="Stringier_Patterns_Capture_ToString_" data-uid="Stringier.Patterns.Capture.ToString*"></a>
   <h4 id="Stringier_Patterns_Capture_ToString" data-uid="Stringier.Patterns.Capture.ToString">ToString()</h4>
-  <div class="markdown level1 summary"><p>Converts the value of this instance to a <see cref="!:String"></see>.</p>
+  <div class="markdown level1 summary"><p>Converts the value of this instance to a <span class="xref">System.String</span>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override String ToString()</code></pre>
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -724,12 +749,14 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">String</span></td>
-        <td><p>Returns the captured <see cref="!:String"></see></p>
+        <td><span class="xref">System.String</span></td>
+        <td><p>Returns the captured <span class="xref">System.String</span></p>
 </td>
       </tr>
     </tbody>
   </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Object.ToString()</span></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_Patterns_Capture_With_Stringier_Patterns_Compare_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Capture.With(Stringier.Patterns.Compare)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -780,6 +807,10 @@
       </tr>
     </tbody>
   </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.IEquatable&lt;T&gt;</span>
+  </div>
 </article>
           </div>
           
