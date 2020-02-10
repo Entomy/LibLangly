@@ -230,7 +230,7 @@ namespace Stringier.Patterns {
 		/// This is primarily used to check whether a pattern may exist at the current position.
 		/// </remarks>
 		/// <param name="source">The <see cref="Source"/> to check against</param>
-		/// <returns><c>Compare.CaseSensitive</c> if this <paramref name="pattern"/> may be present, <c>false</c> if definately not.</returns>
+		/// <returns><see langword="true"/> if this <paramref name="pattern"/> may be present, <see langword="false"/> if definately not.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static Boolean CheckHeader(this String pattern, ref Source source) {
 			Guard.NotNull(pattern, nameof(pattern));
@@ -283,7 +283,7 @@ namespace Stringier.Patterns {
 		/// <param name="string">This <see cref="String"/> instance.</param>
 		/// <param name="other">The <see cref="String"/> to compare to this instance.</param>
 		/// <param name="comparisonType">Whether the comparison is sensitive to casing.</param>
-		/// <returns><c>Compare.CaseSensitive</c> if the value of the <paramref name="other"/> parameter is the same as this string; otherwise, <c>false</c>.</returns>
+		/// <returns><see langword="true"/> if the value of the <paramref name="other"/> parameter is the same as this string; otherwise, <see langword="false"/>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static Boolean Equals(this String @string, String other, Compare comparisonType) {
 			Guard.NotNull(@string, nameof(@string));
@@ -305,7 +305,7 @@ namespace Stringier.Patterns {
 		/// <param name="string">This <see cref="String"/> instance.</param>
 		/// <param name="other">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to compare to this instance.</param>
 		/// <param name="comparisonType">Whether the comparison is sensitive to casing.</param>
-		/// <returns><c>Compare.CaseSensitive</c> if the value of the <paramref name="other"/> parameter is the same as this string; otherwise, <c>false</c>.</returns>
+		/// <returns><see langword="true"/> if the value of the <paramref name="other"/> parameter is the same as this string; otherwise, <see langword="false"/>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static Boolean Equals(this String @string, ReadOnlySpan<Char> other, Compare comparisonType) {
 			Guard.NotNull(@string, nameof(@string));
@@ -326,7 +326,7 @@ namespace Stringier.Patterns {
 		/// <param name="span">This <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> instance.</param>
 		/// <param name="other">The <see cref="String"/> to compare to this instance.</param>
 		/// <param name="comparisonType">Whether the comparison is sensitive to casing.</param>
-		/// <returns><c>Compare.CaseSensitive</c> if the value of the <paramref name="other"/> parameter is the same as this string; otherwise, <c>false</c>.</returns>
+		/// <returns><see langword="true"/> if the value of the <paramref name="other"/> parameter is the same as this string; otherwise, <see langword="false"/>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static Boolean Equals(this ReadOnlySpan<Char> span, String other, Compare comparisonType) {
 			Guard.NotNull(other, nameof(other));
@@ -347,7 +347,7 @@ namespace Stringier.Patterns {
 		/// <param name="span">This <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> instance.</param>
 		/// <param name="other">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to compare to this instance.</param>
 		/// <param name="comparisonType">Whether the comparison is sensitive to casing.</param>
-		/// <returns><c>Compare.CaseSensitive</c> if the value of the <paramref name="other"/> parameter is the same as this string; otherwise, <c>false</c>.</returns>
+		/// <returns><see langword="true"/> if the value of the <paramref name="other"/> parameter is the same as this string; otherwise, <see langword="false"/>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static Boolean Equals(this ReadOnlySpan<Char> span, ReadOnlySpan<Char> other, Compare comparisonType) {
 			switch (comparisonType) {

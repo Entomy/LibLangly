@@ -4,6 +4,9 @@ using System.Text;
 using Defender;
 
 namespace Stringier.Streams {
+	/// <summary>
+	/// Provides extensions to all types of <see cref="Stream"/>.
+	/// </summary>
 	public static class StreamExtensions {
 		/// <summary>
 		/// Reads the next, maximum of, <paramref name="count"/> characters from the input stream and advances the byte position by the amount read.

@@ -46,7 +46,7 @@ namespace Stringier {
 		public static Int32 Horspool(ReadOnlySpan<Char> source, ReadOnlySpan<Char> pattern) => Horspool(source, pattern, out HorspoolTable _);
 
 		/// <summary>
-		/// Performs the Boyer-Moore-Horspool string-search, finding the starting index of the <paramref name="pattern"/> if found in <paramref name="source"/>.
+		/// Performs the Boyer-Moore-Horspool string-search, finding the starting index of the <paramref name="table"/> pattern if found in <paramref name="source"/>.
 		/// </summary>
 		/// <param name="source">The <see cref="String"/> to search in.</param>
 		/// <param name="table">The <see cref="HorspoolTable"/> of the pattern to search for.</param>
@@ -58,7 +58,7 @@ namespace Stringier {
 		}
 
 		/// <summary>
-		/// Performs the Boyer-Moore-Horspool string-search, finding the starting index of the <paramref name="pattern"/> if found in <paramref name="source"/>.
+		/// Performs the Boyer-Moore-Horspool string-search, finding the starting index of the <paramref name="table"/> pattern if found in <paramref name="source"/>.
 		/// </summary>
 		/// <param name="source">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to search in.</param>
 		/// <param name="table">The <see cref="HorspoolTable"/> of the pattern to search for.</param>

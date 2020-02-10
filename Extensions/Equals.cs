@@ -12,7 +12,7 @@ namespace Stringier {
 		/// <param name="char">The <see cref="Char"/> instance.</param>
 		/// <param name="other">The <see cref="Char"/> to compare to this instance.</param>
 		/// <param name="comparisonType">One of the enumeration values that specifies how the chars will be compared.</param>
-		/// <returns><c>true</c> if the value of the <paramref name="other"/> parameter is the same as this char; otherwise, <c>false</c>.</returns>
+		/// <returns><see langword="true"/> if the value of the <paramref name="other"/> parameter is the same as this char; otherwise, <see langword="false"/>.</returns>
 		public static Boolean Equals(this Char @char, Char other, StringComparison comparisonType) {
 			switch (comparisonType) {
 			case StringComparison.OrdinalIgnoreCase:
@@ -30,7 +30,7 @@ namespace Stringier {
 		/// </summary>
 		/// <param name="string">The <see cref="String"/> instance.</param>
 		/// <param name="span">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to compare to this instance.</param>
-		/// <returns><c>true</c> if the value of the <paramref name="other"/> parameter is the same as this string; otherwise, <c>false</c>.</returns>
+		/// <returns><see langword="true"/> if the value of the <paramref name="span"/> parameter is the same as this string; otherwise, <see langword="false"/>.</returns>
 		public static Boolean Equals(this String @string, ReadOnlySpan<Char> span) => @string?.Equals(span, StringComparison.CurrentCulture) ?? false;
 
 		/// <summary>
@@ -39,7 +39,7 @@ namespace Stringier {
 		/// <param name="string">The <see cref="String"/> instance.</param>
 		/// <param name="span">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to compare to this instance.</param>
 		/// <param name="comparisonType">One of the enumeration values that specifies how the strings will be compared.</param>
-		/// <returns><c>true</c> if the value of the <paramref name="other"/> parameter is the same as this string; otherwise, <c>false</c>.</returns>
+		/// <returns><see langword="true"/> if the value of the <paramref name="span"/> parameter is the same as this string; otherwise, <see langword="false"/>.</returns>
 		public static Boolean Equals(this String @string, ReadOnlySpan<Char> span, StringComparison comparisonType) => @string?.AsSpan().Equals(span, comparisonType) ?? false;
 
 		/// <summary>
@@ -47,7 +47,7 @@ namespace Stringier {
 		/// </summary>
 		/// <param name="span">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> instance.</param>
 		/// <param name="string">The <see cref="String"/> to compare to this instance.</param>
-		/// <returns><c>true</c> if the value of the <paramref name="other"/> parameter is the same as this span; otherwise, <c>false</c>.</returns>
+		/// <returns><see langword="true"/> if the value of the <paramref name="span"/> parameter is the same as this span; otherwise, <see langword="false"/>.</returns>
 		public static Boolean Equals(this ReadOnlySpan<Char> span, String @string) => !(@string is null) && span.Equals(@string, StringComparison.CurrentCulture);
 
 		/// <summary>
@@ -56,7 +56,7 @@ namespace Stringier {
 		/// <param name="span">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> instance.</param>
 		/// <param name="string">The <see cref="String"/> to compare to this instance.</param>
 		/// <param name="comparisonType">One of the enumeration values that specifies how the strings will be compared.</param>
-		/// <returns><c>true</c> if the value of the <paramref name="other"/> parameter is the same as this span; otherwise, <c>false</c>.</returns>
+		/// <returns><see langword="true"/> if the value of the <paramref name="span"/> parameter is the same as this span; otherwise, <see langword="false"/>.</returns>
 		public static Boolean Equals(this ReadOnlySpan<Char> span, String @string, StringComparison comparisonType) => !(@string is null) && span.Equals(@string.AsSpan(), comparisonType);
 	}
 }
