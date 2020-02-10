@@ -73,7 +73,8 @@
   
   <h1 id="Stringier_StringierExtensions" data-uid="Stringier.StringierExtensions" class="text-break">Class StringierExtensions
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Provides various extension methods to <span class="xref">System.Char</span>, <span class="xref">System.String</span>, <span class="xref">System.Span&lt;T&gt;</span> of <span class="xref">System.Char</span>, and various collections, providing a better overall text processing experience.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -673,7 +674,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_StringierExtensions_Contains_System_Collections_Generic_IEnumerable_System_String__System_Char_.md&amp;value=---%0Auid%3A%20Stringier.StringierExtensions.Contains(System.Collections.Generic.IEnumerable%7BSystem.String%7D%2CSystem.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/Contains.cs/#L50">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/Contains.cs/#L46">View Source</a>
   </span>
   <a id="Stringier_StringierExtensions_Contains_" data-uid="Stringier.StringierExtensions.Contains*"></a>
   <h4 id="Stringier_StringierExtensions_Contains_System_Collections_Generic_IEnumerable_System_String__System_Char_" data-uid="Stringier.StringierExtensions.Contains(System.Collections.Generic.IEnumerable{System.String},System.Char)">Contains(IEnumerable&lt;String&gt;, Char)</h4>
@@ -729,7 +730,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_StringierExtensions_Contains_System_Collections_Generic_IEnumerable_System_String__System_String_.md&amp;value=---%0Auid%3A%20Stringier.StringierExtensions.Contains(System.Collections.Generic.IEnumerable%7BSystem.String%7D%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/Contains.cs/#L84">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/Contains.cs/#L78">View Source</a>
   </span>
   <a id="Stringier_StringierExtensions_Contains_" data-uid="Stringier.StringierExtensions.Contains*"></a>
   <h4 id="Stringier_StringierExtensions_Contains_System_Collections_Generic_IEnumerable_System_String__System_String_" data-uid="Stringier.StringierExtensions.Contains(System.Collections.Generic.IEnumerable{System.String},System.String)">Contains(IEnumerable&lt;String&gt;, String)</h4>
@@ -782,10 +783,66 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_StringierExtensions_Contains_System_Collections_Generic_IEnumerable_System_String__System_Text_Rune_.md&amp;value=---%0Auid%3A%20Stringier.StringierExtensions.Contains(System.Collections.Generic.IEnumerable%7BSystem.String%7D%2CSystem.Text.Rune)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/Contains.cs/#L62">View Source</a>
+  </span>
+  <a id="Stringier_StringierExtensions_Contains_" data-uid="Stringier.StringierExtensions.Contains*"></a>
+  <h4 id="Stringier_StringierExtensions_Contains_System_Collections_Generic_IEnumerable_System_String__System_Text_Rune_" data-uid="Stringier.StringierExtensions.Contains(System.Collections.Generic.IEnumerable{System.String},System.Text.Rune)">Contains(IEnumerable&lt;String&gt;, Rune)</h4>
+  <div class="markdown level1 summary"><p>Returns a value indicating whether a specified char occurs within any of the strings.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool Contains(this IEnumerable&lt;string&gt; strings, Rune value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">strings</span></td>
+        <td><p>The enumeration of strings to check.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Text.Rune</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The rune to seek.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><span class="xref">true</span> if the value parameter occurs within any of the strings; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_StringierExtensions_Contains_System_String_System_Char_.md&amp;value=---%0Auid%3A%20Stringier.StringierExtensions.Contains(System.String%2CSystem.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/Contains.cs/#L16">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/Contains.cs/#L14">View Source</a>
   </span>
   <a id="Stringier_StringierExtensions_Contains_" data-uid="Stringier.StringierExtensions.Contains*"></a>
   <h4 id="Stringier_StringierExtensions_Contains_System_String_System_Char_" data-uid="Stringier.StringierExtensions.Contains(System.String,System.Char)">Contains(String, Char)</h4>
@@ -816,6 +873,62 @@
         <td><span class="xref">System.Char</span></td>
         <td><span class="parametername">value</span></td>
         <td><p>The char to seek.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><span class="xref">true</span> if the value parameter occurs within this string; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_StringierExtensions_Contains_System_String_System_Text_Rune_.md&amp;value=---%0Auid%3A%20Stringier.StringierExtensions.Contains(System.String%2CSystem.Text.Rune)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/Contains.cs/#L30">View Source</a>
+  </span>
+  <a id="Stringier_StringierExtensions_Contains_" data-uid="Stringier.StringierExtensions.Contains*"></a>
+  <h4 id="Stringier_StringierExtensions_Contains_System_String_System_Text_Rune_" data-uid="Stringier.StringierExtensions.Contains(System.String,System.Text.Rune)">Contains(String, Rune)</h4>
+  <div class="markdown level1 summary"><p>Returns a value indicating whether a specified rune occurs within this string.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool Contains(this string string, Rune value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">string</span></td>
+        <td><p>The string to check.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Text.Rune</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The rune to seek.</p>
 </td>
       </tr>
     </tbody>
@@ -1005,7 +1118,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td><p><code>true</code> if the value of the <code data-dev-comment-type="paramref" class="paramref">other</code> parameter is the same as this char; otherwise, <code>false</code>.</p>
+        <td><p><span class="xref">true</span> if the value of the <code data-dev-comment-type="paramref" class="paramref">other</code> parameter is the same as this char; otherwise, <span class="xref">false</span>.</p>
 </td>
       </tr>
     </tbody>
@@ -1064,7 +1177,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td><p><code>true</code> if the value of the <code data-dev-comment-type="paramref" class="paramref">other</code> parameter is the same as this span; otherwise, <code>false</code>.</p>
+        <td><p><span class="xref">true</span> if the value of the <code data-dev-comment-type="paramref" class="paramref">span</code> parameter is the same as this span; otherwise, <span class="xref">false</span>.</p>
 </td>
       </tr>
     </tbody>
@@ -1126,7 +1239,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td><p><code>true</code> if the value of the <code data-dev-comment-type="paramref" class="paramref">other</code> parameter is the same as this span; otherwise, <code>false</code>.</p>
+        <td><p><span class="xref">true</span> if the value of the <code data-dev-comment-type="paramref" class="paramref">span</code> parameter is the same as this span; otherwise, <span class="xref">false</span>.</p>
 </td>
       </tr>
     </tbody>
@@ -1182,7 +1295,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td><p><code>true</code> if the value of the <code data-dev-comment-type="paramref" class="paramref">other</code> parameter is the same as this string; otherwise, <code>false</code>.</p>
+        <td><p><span class="xref">true</span> if the value of the <code data-dev-comment-type="paramref" class="paramref">span</code> parameter is the same as this string; otherwise, <span class="xref">false</span>.</p>
 </td>
       </tr>
     </tbody>
@@ -1244,7 +1357,7 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td><p><code>true</code> if the value of the <code data-dev-comment-type="paramref" class="paramref">other</code> parameter is the same as this string; otherwise, <code>false</code>.</p>
+        <td><p><span class="xref">true</span> if the value of the <code data-dev-comment-type="paramref" class="paramref">span</code> parameter is the same as this string; otherwise, <span class="xref">false</span>.</p>
 </td>
       </tr>
     </tbody>
@@ -2428,7 +2541,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_StringierExtensions_GetUnicodeCategory_System_Char_.md&amp;value=---%0Auid%3A%20Stringier.StringierExtensions.GetUnicodeCategory(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/GetUnicodeCategory.cs/#L14">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/GetUnicodeCategory.cs/#L12">View Source</a>
   </span>
   <a id="Stringier_StringierExtensions_GetUnicodeCategory_" data-uid="Stringier.StringierExtensions.GetUnicodeCategory*"></a>
   <h4 id="Stringier_StringierExtensions_GetUnicodeCategory_System_Char_" data-uid="Stringier.StringierExtensions.GetUnicodeCategory(System.Char)">GetUnicodeCategory(Char)</h4>
@@ -2469,6 +2582,56 @@
       <tr>
         <td><span class="xref">System.Globalization.UnicodeCategory</span></td>
         <td><p>A <span class="xref">System.Globalization.UnicodeCategory</span> value that identifies the group that contains <code data-dev-comment-type="paramref" class="paramref">char</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_StringierExtensions_GetUnicodeCategory_System_Text_Rune_.md&amp;value=---%0Auid%3A%20Stringier.StringierExtensions.GetUnicodeCategory(System.Text.Rune)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/GetUnicodeCategory.cs/#L19">View Source</a>
+  </span>
+  <a id="Stringier_StringierExtensions_GetUnicodeCategory_" data-uid="Stringier.StringierExtensions.GetUnicodeCategory*"></a>
+  <h4 id="Stringier_StringierExtensions_GetUnicodeCategory_System_Text_Rune_" data-uid="Stringier.StringierExtensions.GetUnicodeCategory(System.Text.Rune)">GetUnicodeCategory(Rune)</h4>
+  <div class="markdown level1 summary"><p>Categorizes a specified Unicode character into a group identified by one of the <span class="xref">System.Globalization.UnicodeCategory</span> values.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static UnicodeCategory GetUnicodeCategory(this Rune rune)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Rune</span></td>
+        <td><span class="parametername">rune</span></td>
+        <td><p>The Unicode character to categorize.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Globalization.UnicodeCategory</span></td>
+        <td><p>A <span class="xref">System.Globalization.UnicodeCategory</span> value that identifies the group that contains <code data-dev-comment-type="paramref" class="paramref">rune</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -2528,7 +2691,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_StringierExtensions_IsBoxDrawing_System_Char_.md&amp;value=---%0Auid%3A%20Stringier.StringierExtensions.IsBoxDrawing(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/IsBoxDrawing.cs/#L13">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/IsBoxDrawing.cs/#L11">View Source</a>
   </span>
   <a id="Stringier_StringierExtensions_IsBoxDrawing_" data-uid="Stringier.StringierExtensions.IsBoxDrawing*"></a>
   <h4 id="Stringier_StringierExtensions_IsBoxDrawing_System_Char_" data-uid="Stringier.StringierExtensions.IsBoxDrawing(System.Char)">IsBoxDrawing(Char)</h4>
@@ -2575,10 +2738,60 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_StringierExtensions_IsBoxDrawing_System_Text_Rune_.md&amp;value=---%0Auid%3A%20Stringier.StringierExtensions.IsBoxDrawing(System.Text.Rune)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/IsBoxDrawing.cs/#L18">View Source</a>
+  </span>
+  <a id="Stringier_StringierExtensions_IsBoxDrawing_" data-uid="Stringier.StringierExtensions.IsBoxDrawing*"></a>
+  <h4 id="Stringier_StringierExtensions_IsBoxDrawing_System_Text_Rune_" data-uid="Stringier.StringierExtensions.IsBoxDrawing(System.Text.Rune)">IsBoxDrawing(Rune)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the specified Unicode character is categorized as a box drawing character.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsBoxDrawing(this Rune rune)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Rune</span></td>
+        <td><span class="parametername">rune</span></td>
+        <td><p>The Unicode character to evaluate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">rune</code> is a box drawing character; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_StringierExtensions_IsCombiningMark_System_Char_.md&amp;value=---%0Auid%3A%20Stringier.StringierExtensions.IsCombiningMark(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/IsCombiningMark.cs/#L13">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/IsCombiningMark.cs/#L11">View Source</a>
   </span>
   <a id="Stringier_StringierExtensions_IsCombiningMark_" data-uid="Stringier.StringierExtensions.IsCombiningMark*"></a>
   <h4 id="Stringier_StringierExtensions_IsCombiningMark_System_Char_" data-uid="Stringier.StringierExtensions.IsCombiningMark(System.Char)">IsCombiningMark(Char)</h4>
@@ -2625,10 +2838,60 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_StringierExtensions_IsCombiningMark_System_Text_Rune_.md&amp;value=---%0Auid%3A%20Stringier.StringierExtensions.IsCombiningMark(System.Text.Rune)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/IsCombiningMark.cs/#L23">View Source</a>
+  </span>
+  <a id="Stringier_StringierExtensions_IsCombiningMark_" data-uid="Stringier.StringierExtensions.IsCombiningMark*"></a>
+  <h4 id="Stringier_StringierExtensions_IsCombiningMark_System_Text_Rune_" data-uid="Stringier.StringierExtensions.IsCombiningMark(System.Text.Rune)">IsCombiningMark(Rune)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the specified Unicode character is categorized as a combining mark.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsCombiningMark(this Rune rune)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Rune</span></td>
+        <td><span class="parametername">rune</span></td>
+        <td><p>The Unicode character to evaluate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">rune</code> is a combining mark; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_StringierExtensions_IsControl_System_Char_.md&amp;value=---%0Auid%3A%20Stringier.StringierExtensions.IsControl(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/IsControl.cs/#L13">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/IsControl.cs/#L11">View Source</a>
   </span>
   <a id="Stringier_StringierExtensions_IsControl_" data-uid="Stringier.StringierExtensions.IsControl*"></a>
   <h4 id="Stringier_StringierExtensions_IsControl_System_Char_" data-uid="Stringier.StringierExtensions.IsControl(System.Char)">IsControl(Char)</h4>
@@ -2675,10 +2938,60 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_StringierExtensions_IsControl_System_Text_Rune_.md&amp;value=---%0Auid%3A%20Stringier.StringierExtensions.IsControl(System.Text.Rune)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/IsControl.cs/#L18">View Source</a>
+  </span>
+  <a id="Stringier_StringierExtensions_IsControl_" data-uid="Stringier.StringierExtensions.IsControl*"></a>
+  <h4 id="Stringier_StringierExtensions_IsControl_System_Text_Rune_" data-uid="Stringier.StringierExtensions.IsControl(System.Text.Rune)">IsControl(Rune)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the specified Unicode character is categorized as a control character.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsControl(this Rune rune)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Rune</span></td>
+        <td><span class="parametername">rune</span></td>
+        <td><p>The Unicode character to evaluate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">rune</code> is a control character; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_StringierExtensions_IsDigit_System_Char_.md&amp;value=---%0Auid%3A%20Stringier.StringierExtensions.IsDigit(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/IsDigit.cs/#L13">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/IsDigit.cs/#L11">View Source</a>
   </span>
   <a id="Stringier_StringierExtensions_IsDigit_" data-uid="Stringier.StringierExtensions.IsDigit*"></a>
   <h4 id="Stringier_StringierExtensions_IsDigit_System_Char_" data-uid="Stringier.StringierExtensions.IsDigit(System.Char)">IsDigit(Char)</h4>
@@ -2719,6 +3032,56 @@
       <tr>
         <td><span class="xref">System.Boolean</span></td>
         <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">char</code> is a control character; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_StringierExtensions_IsDigit_System_Text_Rune_.md&amp;value=---%0Auid%3A%20Stringier.StringierExtensions.IsDigit(System.Text.Rune)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/IsDigit.cs/#L18">View Source</a>
+  </span>
+  <a id="Stringier_StringierExtensions_IsDigit_" data-uid="Stringier.StringierExtensions.IsDigit*"></a>
+  <h4 id="Stringier_StringierExtensions_IsDigit_System_Text_Rune_" data-uid="Stringier.StringierExtensions.IsDigit(System.Text.Rune)">IsDigit(Rune)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the specified Unicode character is categorized as a decimal digit.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsDigit(this Rune rune)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Rune</span></td>
+        <td><span class="parametername">rune</span></td>
+        <td><p>The Unicode character to evaluate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">rune</code> is a control character; otherwise, <span class="xref">false</span>.</p>
 </td>
       </tr>
     </tbody>
@@ -2778,7 +3141,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_StringierExtensions_IsLetter_System_Char_.md&amp;value=---%0Auid%3A%20Stringier.StringierExtensions.IsLetter(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/IsLetter.cs/#L13">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/IsLetter.cs/#L11">View Source</a>
   </span>
   <a id="Stringier_StringierExtensions_IsLetter_" data-uid="Stringier.StringierExtensions.IsLetter*"></a>
   <h4 id="Stringier_StringierExtensions_IsLetter_System_Char_" data-uid="Stringier.StringierExtensions.IsLetter(System.Char)">IsLetter(Char)</h4>
@@ -2825,10 +3188,60 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_StringierExtensions_IsLetter_System_Text_Rune_.md&amp;value=---%0Auid%3A%20Stringier.StringierExtensions.IsLetter(System.Text.Rune)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/IsLetter.cs/#L18">View Source</a>
+  </span>
+  <a id="Stringier_StringierExtensions_IsLetter_" data-uid="Stringier.StringierExtensions.IsLetter*"></a>
+  <h4 id="Stringier_StringierExtensions_IsLetter_System_Text_Rune_" data-uid="Stringier.StringierExtensions.IsLetter(System.Text.Rune)">IsLetter(Rune)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether a Unicode character is categorized as a Unicode letter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsLetter(this Rune rune)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Rune</span></td>
+        <td><span class="parametername">rune</span></td>
+        <td><p>The Unicode character to evaluate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">rune</code> is a letter; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_StringierExtensions_IsLetterOrDigit_System_Char_.md&amp;value=---%0Auid%3A%20Stringier.StringierExtensions.IsLetterOrDigit(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/IsLetterOrDigit.cs/#L13">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/IsLetterOrDigit.cs/#L11">View Source</a>
   </span>
   <a id="Stringier_StringierExtensions_IsLetterOrDigit_" data-uid="Stringier.StringierExtensions.IsLetterOrDigit*"></a>
   <h4 id="Stringier_StringierExtensions_IsLetterOrDigit_System_Char_" data-uid="Stringier.StringierExtensions.IsLetterOrDigit(System.Char)">IsLetterOrDigit(Char)</h4>
@@ -2875,10 +3288,60 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_StringierExtensions_IsLetterOrDigit_System_Text_Rune_.md&amp;value=---%0Auid%3A%20Stringier.StringierExtensions.IsLetterOrDigit(System.Text.Rune)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/IsLetterOrDigit.cs/#L18">View Source</a>
+  </span>
+  <a id="Stringier_StringierExtensions_IsLetterOrDigit_" data-uid="Stringier.StringierExtensions.IsLetterOrDigit*"></a>
+  <h4 id="Stringier_StringierExtensions_IsLetterOrDigit_System_Text_Rune_" data-uid="Stringier.StringierExtensions.IsLetterOrDigit(System.Text.Rune)">IsLetterOrDigit(Rune)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether a Unicode character is categorized as a letter or a decimal digit.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsLetterOrDigit(this Rune rune)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Rune</span></td>
+        <td><span class="parametername">rune</span></td>
+        <td><p>The Unicode character to evaluate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">rune</code> is a letter or a decimal digit; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_StringierExtensions_IsLower_System_Char_.md&amp;value=---%0Auid%3A%20Stringier.StringierExtensions.IsLower(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/IsLower.cs/#L13">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/IsLower.cs/#L11">View Source</a>
   </span>
   <a id="Stringier_StringierExtensions_IsLower_" data-uid="Stringier.StringierExtensions.IsLower*"></a>
   <h4 id="Stringier_StringierExtensions_IsLower_System_Char_" data-uid="Stringier.StringierExtensions.IsLower(System.Char)">IsLower(Char)</h4>
@@ -2919,6 +3382,56 @@
       <tr>
         <td><span class="xref">System.Boolean</span></td>
         <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">char</code> is a lowercase letter; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_StringierExtensions_IsLower_System_Text_Rune_.md&amp;value=---%0Auid%3A%20Stringier.StringierExtensions.IsLower(System.Text.Rune)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/IsLower.cs/#L18">View Source</a>
+  </span>
+  <a id="Stringier_StringierExtensions_IsLower_" data-uid="Stringier.StringierExtensions.IsLower*"></a>
+  <h4 id="Stringier_StringierExtensions_IsLower_System_Text_Rune_" data-uid="Stringier.StringierExtensions.IsLower(System.Text.Rune)">IsLower(Rune)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the specified Unicode character is categorized as a lowercase letter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsLower(this Rune rune)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Rune</span></td>
+        <td><span class="parametername">rune</span></td>
+        <td><p>The Unicode character to evaluate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">rune</code> is a lowercase letter; otherwise, <span class="xref">false</span>.</p>
 </td>
       </tr>
     </tbody>
@@ -2978,7 +3491,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_StringierExtensions_IsNumber_System_Char_.md&amp;value=---%0Auid%3A%20Stringier.StringierExtensions.IsNumber(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/IsNumber.cs/#L13">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/IsNumber.cs/#L11">View Source</a>
   </span>
   <a id="Stringier_StringierExtensions_IsNumber_" data-uid="Stringier.StringierExtensions.IsNumber*"></a>
   <h4 id="Stringier_StringierExtensions_IsNumber_System_Char_" data-uid="Stringier.StringierExtensions.IsNumber(System.Char)">IsNumber(Char)</h4>
@@ -3019,6 +3532,56 @@
       <tr>
         <td><span class="xref">System.Boolean</span></td>
         <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">char</code> is a number; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_StringierExtensions_IsNumber_System_Text_Rune_.md&amp;value=---%0Auid%3A%20Stringier.StringierExtensions.IsNumber(System.Text.Rune)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/IsNumber.cs/#L18">View Source</a>
+  </span>
+  <a id="Stringier_StringierExtensions_IsNumber_" data-uid="Stringier.StringierExtensions.IsNumber*"></a>
+  <h4 id="Stringier_StringierExtensions_IsNumber_System_Text_Rune_" data-uid="Stringier.StringierExtensions.IsNumber(System.Text.Rune)">IsNumber(Rune)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether a Unicode character is categorized as a number.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsNumber(this Rune rune)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Rune</span></td>
+        <td><span class="parametername">rune</span></td>
+        <td><p>The Unicode character to evaluate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">rune</code> is a number; otherwise, <span class="xref">false</span>.</p>
 </td>
       </tr>
     </tbody>
@@ -3128,7 +3691,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_StringierExtensions_IsPunctuation_System_Char_.md&amp;value=---%0Auid%3A%20Stringier.StringierExtensions.IsPunctuation(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/IsPunctuation.cs/#L13">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/IsPunctuation.cs/#L11">View Source</a>
   </span>
   <a id="Stringier_StringierExtensions_IsPunctuation_" data-uid="Stringier.StringierExtensions.IsPunctuation*"></a>
   <h4 id="Stringier_StringierExtensions_IsPunctuation_System_Char_" data-uid="Stringier.StringierExtensions.IsPunctuation(System.Char)">IsPunctuation(Char)</h4>
@@ -3175,10 +3738,60 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_StringierExtensions_IsPunctuation_System_Text_Rune_.md&amp;value=---%0Auid%3A%20Stringier.StringierExtensions.IsPunctuation(System.Text.Rune)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/IsPunctuation.cs/#L18">View Source</a>
+  </span>
+  <a id="Stringier_StringierExtensions_IsPunctuation_" data-uid="Stringier.StringierExtensions.IsPunctuation*"></a>
+  <h4 id="Stringier_StringierExtensions_IsPunctuation_System_Text_Rune_" data-uid="Stringier.StringierExtensions.IsPunctuation(System.Text.Rune)">IsPunctuation(Rune)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the specified Unicode character is categorized as a punctuation mark.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsPunctuation(this Rune rune)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Rune</span></td>
+        <td><span class="parametername">rune</span></td>
+        <td><p>The Unicode character to evaluate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">rune</code> is a punctuation mark; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_StringierExtensions_IsSeparator_System_Char_.md&amp;value=---%0Auid%3A%20Stringier.StringierExtensions.IsSeparator(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/IsSeparator.cs/#L13">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/IsSeparator.cs/#L11">View Source</a>
   </span>
   <a id="Stringier_StringierExtensions_IsSeparator_" data-uid="Stringier.StringierExtensions.IsSeparator*"></a>
   <h4 id="Stringier_StringierExtensions_IsSeparator_System_Char_" data-uid="Stringier.StringierExtensions.IsSeparator(System.Char)">IsSeparator(Char)</h4>
@@ -3219,6 +3832,56 @@
       <tr>
         <td><span class="xref">System.Boolean</span></td>
         <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">char</code> is a separator character; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_StringierExtensions_IsSeparator_System_Text_Rune_.md&amp;value=---%0Auid%3A%20Stringier.StringierExtensions.IsSeparator(System.Text.Rune)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/IsSeparator.cs/#L18">View Source</a>
+  </span>
+  <a id="Stringier_StringierExtensions_IsSeparator_" data-uid="Stringier.StringierExtensions.IsSeparator*"></a>
+  <h4 id="Stringier_StringierExtensions_IsSeparator_System_Text_Rune_" data-uid="Stringier.StringierExtensions.IsSeparator(System.Text.Rune)">IsSeparator(Rune)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether a Unicode character is categorized as a separator character.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsSeparator(this Rune rune)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Rune</span></td>
+        <td><span class="parametername">rune</span></td>
+        <td><p>The Unicode character to evaluate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">rune</code> is a separator character; otherwise, <span class="xref">false</span>.</p>
 </td>
       </tr>
     </tbody>
@@ -3434,7 +4097,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_StringierExtensions_IsSymbol_System_Char_.md&amp;value=---%0Auid%3A%20Stringier.StringierExtensions.IsSymbol(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/IsSymbol.cs/#L13">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/IsSymbol.cs/#L11">View Source</a>
   </span>
   <a id="Stringier_StringierExtensions_IsSymbol_" data-uid="Stringier.StringierExtensions.IsSymbol*"></a>
   <h4 id="Stringier_StringierExtensions_IsSymbol_System_Char_" data-uid="Stringier.StringierExtensions.IsSymbol(System.Char)">IsSymbol(Char)</h4>
@@ -3481,10 +4144,60 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_StringierExtensions_IsSymbol_System_Text_Rune_.md&amp;value=---%0Auid%3A%20Stringier.StringierExtensions.IsSymbol(System.Text.Rune)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/IsSymbol.cs/#L18">View Source</a>
+  </span>
+  <a id="Stringier_StringierExtensions_IsSymbol_" data-uid="Stringier.StringierExtensions.IsSymbol*"></a>
+  <h4 id="Stringier_StringierExtensions_IsSymbol_System_Text_Rune_" data-uid="Stringier.StringierExtensions.IsSymbol(System.Text.Rune)">IsSymbol(Rune)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the specified Unicode character is categorized as a symbol character.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsSymbol(this Rune rune)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Rune</span></td>
+        <td><span class="parametername">rune</span></td>
+        <td><p>The Unicode character to evaluate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">rune</code> is a symbol character; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_StringierExtensions_IsUpper_System_Char_.md&amp;value=---%0Auid%3A%20Stringier.StringierExtensions.IsUpper(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/IsUpper.cs/#L13">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/IsUpper.cs/#L11">View Source</a>
   </span>
   <a id="Stringier_StringierExtensions_IsUpper_" data-uid="Stringier.StringierExtensions.IsUpper*"></a>
   <h4 id="Stringier_StringierExtensions_IsUpper_System_Char_" data-uid="Stringier.StringierExtensions.IsUpper(System.Char)">IsUpper(Char)</h4>
@@ -3531,10 +4244,60 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_StringierExtensions_IsUpper_System_Text_Rune_.md&amp;value=---%0Auid%3A%20Stringier.StringierExtensions.IsUpper(System.Text.Rune)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/IsUpper.cs/#L18">View Source</a>
+  </span>
+  <a id="Stringier_StringierExtensions_IsUpper_" data-uid="Stringier.StringierExtensions.IsUpper*"></a>
+  <h4 id="Stringier_StringierExtensions_IsUpper_System_Text_Rune_" data-uid="Stringier.StringierExtensions.IsUpper(System.Text.Rune)">IsUpper(Rune)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the specified Unicode character is categorized as an uppercase letter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsUpper(this Rune rune)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Rune</span></td>
+        <td><span class="parametername">rune</span></td>
+        <td><p>The Unicode character to evaluate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">rune</code> is an uppercase letter; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_StringierExtensions_IsWhiteSpace_System_Char_.md&amp;value=---%0Auid%3A%20Stringier.StringierExtensions.IsWhiteSpace(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/IsWhitespace.cs/#L13">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/IsWhitespace.cs/#L11">View Source</a>
   </span>
   <a id="Stringier_StringierExtensions_IsWhiteSpace_" data-uid="Stringier.StringierExtensions.IsWhiteSpace*"></a>
   <h4 id="Stringier_StringierExtensions_IsWhiteSpace_System_Char_" data-uid="Stringier.StringierExtensions.IsWhiteSpace(System.Char)">IsWhiteSpace(Char)</h4>
@@ -3575,6 +4338,56 @@
       <tr>
         <td><span class="xref">System.Boolean</span></td>
         <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">char</code> is white space; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_StringierExtensions_IsWhiteSpace_System_Text_Rune_.md&amp;value=---%0Auid%3A%20Stringier.StringierExtensions.IsWhiteSpace(System.Text.Rune)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/IsWhitespace.cs/#L18">View Source</a>
+  </span>
+  <a id="Stringier_StringierExtensions_IsWhiteSpace_" data-uid="Stringier.StringierExtensions.IsWhiteSpace*"></a>
+  <h4 id="Stringier_StringierExtensions_IsWhiteSpace_System_Text_Rune_" data-uid="Stringier.StringierExtensions.IsWhiteSpace(System.Text.Rune)">IsWhiteSpace(Rune)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the specified Unicode character is categorized as white space.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsWhiteSpace(this Rune rune)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Rune</span></td>
+        <td><span class="parametername">rune</span></td>
+        <td><p>The Unicode character to evaluate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">rune</code> is white space; otherwise, <span class="xref">false</span>.</p>
 </td>
       </tr>
     </tbody>
@@ -5842,7 +6655,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_StringierExtensions_ToLower_System_Char_.md&amp;value=---%0Auid%3A%20Stringier.StringierExtensions.ToLower(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/ToLower.cs/#L15">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/ToLower.cs/#L13">View Source</a>
   </span>
   <a id="Stringier_StringierExtensions_ToLower_" data-uid="Stringier.StringierExtensions.ToLower*"></a>
   <h4 id="Stringier_StringierExtensions_ToLower_System_Char_" data-uid="Stringier.StringierExtensions.ToLower(System.Char)">ToLower(Char)</h4>
@@ -5892,7 +6705,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_StringierExtensions_ToLower_System_Char_System_Globalization_CultureInfo_.md&amp;value=---%0Auid%3A%20Stringier.StringierExtensions.ToLower(System.Char%2CSystem.Globalization.CultureInfo)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/ToLower.cs/#L32">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/ToLower.cs/#L28">View Source</a>
   </span>
   <a id="Stringier_StringierExtensions_ToLower_" data-uid="Stringier.StringierExtensions.ToLower*"></a>
   <h4 id="Stringier_StringierExtensions_ToLower_System_Char_System_Globalization_CultureInfo_" data-uid="Stringier.StringierExtensions.ToLower(System.Char,System.Globalization.CultureInfo)">ToLower(Char, CultureInfo)</h4>
@@ -5945,10 +6758,116 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_StringierExtensions_ToLower_System_Text_Rune_.md&amp;value=---%0Auid%3A%20Stringier.StringierExtensions.ToLower(System.Text.Rune)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/ToLower.cs/#L20">View Source</a>
+  </span>
+  <a id="Stringier_StringierExtensions_ToLower_" data-uid="Stringier.StringierExtensions.ToLower*"></a>
+  <h4 id="Stringier_StringierExtensions_ToLower_System_Text_Rune_" data-uid="Stringier.StringierExtensions.ToLower(System.Text.Rune)">ToLower(Rune)</h4>
+  <div class="markdown level1 summary"><p>Converts the value of a Unicode character to its lowercase equivalent.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Rune ToLower(this Rune rune)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Rune</span></td>
+        <td><span class="parametername">rune</span></td>
+        <td><p>The Unicode character to convert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Rune</span></td>
+        <td><p>The lowercase equivalent of <code data-dev-comment-type="paramref" class="paramref">rune</code>, or the unchanged value of <code data-dev-comment-type="paramref" class="paramref">rune</code> if <code data-dev-comment-type="paramref" class="paramref">rune</code> is already lowercase, has no lowercase equivalent, or is not alphabetic.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_StringierExtensions_ToLower_System_Text_Rune_System_Globalization_CultureInfo_.md&amp;value=---%0Auid%3A%20Stringier.StringierExtensions.ToLower(System.Text.Rune%2CSystem.Globalization.CultureInfo)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/ToLower.cs/#L39">View Source</a>
+  </span>
+  <a id="Stringier_StringierExtensions_ToLower_" data-uid="Stringier.StringierExtensions.ToLower*"></a>
+  <h4 id="Stringier_StringierExtensions_ToLower_System_Text_Rune_System_Globalization_CultureInfo_" data-uid="Stringier.StringierExtensions.ToLower(System.Text.Rune,System.Globalization.CultureInfo)">ToLower(Rune, CultureInfo)</h4>
+  <div class="markdown level1 summary"><p>Converts the value of a specified Unicode character to its lowercase equivalent using specified culture-specific formatting information.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Rune ToLower(this Rune rune, CultureInfo culture)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Rune</span></td>
+        <td><span class="parametername">rune</span></td>
+        <td><p>The Unicode character to convert.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Globalization.CultureInfo</span></td>
+        <td><span class="parametername">culture</span></td>
+        <td><p>An object that supplies culture-specific casing rules.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Rune</span></td>
+        <td><p>The lowercase equivalent of <code data-dev-comment-type="paramref" class="paramref">rune</code>, modified according to <code data-dev-comment-type="paramref" class="paramref">culture</code>, or the unchanged value of <code data-dev-comment-type="paramref" class="paramref">rune</code>, if <code data-dev-comment-type="paramref" class="paramref">rune</code> is already lowercase or not alphabetic.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_StringierExtensions_ToLowerInvariant_System_Char_.md&amp;value=---%0Auid%3A%20Stringier.StringierExtensions.ToLowerInvariant(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/ToLower.cs/#L55">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/ToLower.cs/#L49">View Source</a>
   </span>
   <a id="Stringier_StringierExtensions_ToLowerInvariant_" data-uid="Stringier.StringierExtensions.ToLowerInvariant*"></a>
   <h4 id="Stringier_StringierExtensions_ToLowerInvariant_System_Char_" data-uid="Stringier.StringierExtensions.ToLowerInvariant(System.Char)">ToLowerInvariant(Char)</h4>
@@ -5995,6 +6914,56 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_StringierExtensions_ToLowerInvariant_System_Text_Rune_.md&amp;value=---%0Auid%3A%20Stringier.StringierExtensions.ToLowerInvariant(System.Text.Rune)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/ToLower.cs/#L56">View Source</a>
+  </span>
+  <a id="Stringier_StringierExtensions_ToLowerInvariant_" data-uid="Stringier.StringierExtensions.ToLowerInvariant*"></a>
+  <h4 id="Stringier_StringierExtensions_ToLowerInvariant_System_Text_Rune_" data-uid="Stringier.StringierExtensions.ToLowerInvariant(System.Text.Rune)">ToLowerInvariant(Rune)</h4>
+  <div class="markdown level1 summary"><p>Converts the value of a Unicode character to its lowercase equivalent using the casing rules of the invariant culture.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Rune ToLowerInvariant(this Rune rune)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Rune</span></td>
+        <td><span class="parametername">rune</span></td>
+        <td><p>The Unicode character to convert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Rune</span></td>
+        <td><p>The lowercase equivalent of the <code data-dev-comment-type="paramref" class="paramref">rune</code> parameter, or the unchanged value of <code data-dev-comment-type="paramref" class="paramref">rune</code>, if <code data-dev-comment-type="paramref" class="paramref">rune</code> is already lowercase or not alphabetic.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_StringierExtensions_ToStrings__1___0___.md&amp;value=---%0Auid%3A%20Stringier.StringierExtensions.ToStrings%60%601(%60%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -6008,6 +6977,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static string[] ToStrings&lt;T&gt;(this T[] array)
+
     where T : struct</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6075,6 +7045,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static string[] ToStrings&lt;T&gt;(this T[] array, string nullReplacement)
+
     where T : class</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6148,6 +7119,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static string[] ToStrings&lt;T&gt;(this T? [] array, string nullReplacement)
+
     where T : struct</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6211,7 +7183,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_StringierExtensions_ToUpper_System_Char_.md&amp;value=---%0Auid%3A%20Stringier.StringierExtensions.ToUpper(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/ToUpper.cs/#L15">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/ToUpper.cs/#L13">View Source</a>
   </span>
   <a id="Stringier_StringierExtensions_ToUpper_" data-uid="Stringier.StringierExtensions.ToUpper*"></a>
   <h4 id="Stringier_StringierExtensions_ToUpper_System_Char_" data-uid="Stringier.StringierExtensions.ToUpper(System.Char)">ToUpper(Char)</h4>
@@ -6261,7 +7233,7 @@
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_StringierExtensions_ToUpper_System_Char_System_Globalization_CultureInfo_.md&amp;value=---%0Auid%3A%20Stringier.StringierExtensions.ToUpper(System.Char%2CSystem.Globalization.CultureInfo)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/ToUpper.cs/#L32">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/ToUpper.cs/#L28">View Source</a>
   </span>
   <a id="Stringier_StringierExtensions_ToUpper_" data-uid="Stringier.StringierExtensions.ToUpper*"></a>
   <h4 id="Stringier_StringierExtensions_ToUpper_System_Char_System_Globalization_CultureInfo_" data-uid="Stringier.StringierExtensions.ToUpper(System.Char,System.Globalization.CultureInfo)">ToUpper(Char, CultureInfo)</h4>
@@ -6314,10 +7286,116 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_StringierExtensions_ToUpper_System_Text_Rune_.md&amp;value=---%0Auid%3A%20Stringier.StringierExtensions.ToUpper(System.Text.Rune)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/ToUpper.cs/#L20">View Source</a>
+  </span>
+  <a id="Stringier_StringierExtensions_ToUpper_" data-uid="Stringier.StringierExtensions.ToUpper*"></a>
+  <h4 id="Stringier_StringierExtensions_ToUpper_System_Text_Rune_" data-uid="Stringier.StringierExtensions.ToUpper(System.Text.Rune)">ToUpper(Rune)</h4>
+  <div class="markdown level1 summary"><p>Converts the value of a Unicode character to its uppercase equivalent.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Rune ToUpper(this Rune rune)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Rune</span></td>
+        <td><span class="parametername">rune</span></td>
+        <td><p>The Unicode character to convert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Rune</span></td>
+        <td><p>The uppercase equivalent of <code data-dev-comment-type="paramref" class="paramref">rune</code>, or the unchanged value of <code data-dev-comment-type="paramref" class="paramref">rune</code> if <code data-dev-comment-type="paramref" class="paramref">rune</code> is already uppercase, has no uppercase equivalent, or is not alphabetic.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_StringierExtensions_ToUpper_System_Text_Rune_System_Globalization_CultureInfo_.md&amp;value=---%0Auid%3A%20Stringier.StringierExtensions.ToUpper(System.Text.Rune%2CSystem.Globalization.CultureInfo)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/ToUpper.cs/#L39">View Source</a>
+  </span>
+  <a id="Stringier_StringierExtensions_ToUpper_" data-uid="Stringier.StringierExtensions.ToUpper*"></a>
+  <h4 id="Stringier_StringierExtensions_ToUpper_System_Text_Rune_System_Globalization_CultureInfo_" data-uid="Stringier.StringierExtensions.ToUpper(System.Text.Rune,System.Globalization.CultureInfo)">ToUpper(Rune, CultureInfo)</h4>
+  <div class="markdown level1 summary"><p>Converts the value of a specified Unicode character to its uppercase equivalent using specified culture-specific formatting information.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Rune ToUpper(this Rune rune, CultureInfo culture)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Rune</span></td>
+        <td><span class="parametername">rune</span></td>
+        <td><p>The Unicode character to convert.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Globalization.CultureInfo</span></td>
+        <td><span class="parametername">culture</span></td>
+        <td><p>An object that supplies culture-specific casing rules.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Rune</span></td>
+        <td><p>The uppercase equivalent of <code data-dev-comment-type="paramref" class="paramref">rune</code>, modified according to <code data-dev-comment-type="paramref" class="paramref">culture</code>, or the unchanged value of <code data-dev-comment-type="paramref" class="paramref">rune</code> if <code data-dev-comment-type="paramref" class="paramref">rune</code> is already uppercase, has no uppercase equivalent, or is not alphabetic.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_StringierExtensions_ToUpperInvariant_System_Char_.md&amp;value=---%0Auid%3A%20Stringier.StringierExtensions.ToUpperInvariant(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/ToUpper.cs/#L55">View Source</a>
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/ToUpper.cs/#L49">View Source</a>
   </span>
   <a id="Stringier_StringierExtensions_ToUpperInvariant_" data-uid="Stringier.StringierExtensions.ToUpperInvariant*"></a>
   <h4 id="Stringier_StringierExtensions_ToUpperInvariant_System_Char_" data-uid="Stringier.StringierExtensions.ToUpperInvariant(System.Char)">ToUpperInvariant(Char)</h4>
@@ -6358,6 +7436,56 @@
       <tr>
         <td><span class="xref">System.Char</span></td>
         <td><p>The uppercase equivalent of the <code data-dev-comment-type="paramref" class="paramref">char</code> parameter, or the unchanged value of <code data-dev-comment-type="paramref" class="paramref">char</code>, if <code data-dev-comment-type="paramref" class="paramref">char</code> is already uppercase or not alphabetic.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_StringierExtensions_ToUpperInvariant_System_Text_Rune_.md&amp;value=---%0Auid%3A%20Stringier.StringierExtensions.ToUpperInvariant(System.Text.Rune)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/ToUpper.cs/#L56">View Source</a>
+  </span>
+  <a id="Stringier_StringierExtensions_ToUpperInvariant_" data-uid="Stringier.StringierExtensions.ToUpperInvariant*"></a>
+  <h4 id="Stringier_StringierExtensions_ToUpperInvariant_System_Text_Rune_" data-uid="Stringier.StringierExtensions.ToUpperInvariant(System.Text.Rune)">ToUpperInvariant(Rune)</h4>
+  <div class="markdown level1 summary"><p>Converts the value of a Unicode character to its uppercase equivalent using the casing rules of the invariant culture.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Rune ToUpperInvariant(this Rune rune)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Rune</span></td>
+        <td><span class="parametername">rune</span></td>
+        <td><p>The Unicode character to convert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Rune</span></td>
+        <td><p>The uppercase equivalent of the <code data-dev-comment-type="paramref" class="paramref">rune</code> parameter, or the unchanged value of <code data-dev-comment-type="paramref" class="paramref">rune</code>, if <code data-dev-comment-type="paramref" class="paramref">rune</code> is already uppercase or not alphabetic.</p>
 </td>
       </tr>
     </tbody>
