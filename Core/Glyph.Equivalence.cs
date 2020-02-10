@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Defender;
 
 namespace Stringier {
     public readonly partial struct Glyph {
@@ -13,11 +14,15 @@ namespace Stringier {
             /// </summary>
             private readonly HashSet<String> Sequences;
 
-            /// <summary>
-            /// Initialize a new <see cref="Equivalence"/> from the given <paramref name="sequences"/>.
-            /// </summary>
-            /// <param name="sequences">The sequences which represent the <see cref="Glyph"/>.</param>
-            internal Equivalence(params String[] sequences) => Sequences = new HashSet<String>(sequences);
+			/// <summary>
+			/// Initialize a new <see cref="Equivalence"/> from the given <paramref name="sequences"/>.
+			/// </summary>
+			/// <param name="sequences">The sequences which represent the <see cref="Glyph"/>.</param>
+			internal Equivalence(params String[] sequences) {
+				Guard.NotNull(sequences, nameof(sequences));
+				Guard.GreaterThanOrEqualTo(sequences, nameof(sequences), 1);
+				Sequences = new HashSet<String>(sequences);
+			}
 
 			public Boolean Equals(Char other) {
 				foreach (String sequence in Sequences) {

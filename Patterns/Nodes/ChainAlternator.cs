@@ -150,7 +150,7 @@ namespace Stringier.Patterns.Nodes {
 		/// <summary>
 		/// Makes this <see cref="Pattern"/> spanning.
 		/// </summary>
-		/// <returns>A new <see cref="Pattern"/> which spans.</returns
+		/// <returns>A new <see cref="Pattern"/> which spans.</returns>
 		internal override Pattern Span() {
 			foreach (Pattern Pattern in Patterns) {
 				if (Pattern is Optor) {
