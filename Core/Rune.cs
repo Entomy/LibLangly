@@ -559,6 +559,37 @@ namespace System.Text {
 		[CLSCompliant(false)]
 		public static Boolean IsValid(UInt32 value) => Unsafe.IsScalarValue(value);
 
+		// returns a negative number on failure
+		internal static int ReadFirstRuneFromUtf16Buffer(ReadOnlySpan<char> input) {
+			if (input.IsEmpty) {
+				return -1;
+			}
+
+			// Optimistically assume input is within BMP.
+
+			uint returnValue = input[0];
+			if (Unsafe.IsSurrogate(returnValue)) {
+				if (!Unsafe.IsHighSurrogate(returnValue)) {
+					return -1;
+				}
+
+				// Treat 'returnValue' as the high surrogate.
+
+				if (1 >= (uint)input.Length) {
+					return -1; // not an argument exception - just a "bad data" failure
+				}
+
+				uint potentialLowSurrogate = input[1];
+				if (!Unsafe.IsLowSurrogate(potentialLowSurrogate)) {
+					return -1;
+				}
+
+				returnValue = Unsafe.Utf16Decode(returnValue, potentialLowSurrogate);
+			}
+
+			return (int)returnValue;
+		}
+
 		public static Boolean operator !=(Rune left, Rune right) => left.value != right.value;
 
 		public static Boolean operator <(Rune left, Rune right) => left.value < right.value;

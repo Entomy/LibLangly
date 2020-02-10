@@ -11,4 +11,6 @@ using System.Text;
 
 #if !NETSTANDARD2_0
 [assembly: TypeForwardedTo(typeof(Rune))]
+[assembly: TypeForwardedTo(typeof(SpanRuneEnumerator))]
+[assembly: TypeForwardedTo(typeof(StringRuneEnumerator))]
 #endif
