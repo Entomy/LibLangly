@@ -301,7 +301,7 @@ namespace Stringier.Patterns {
 		/// <returns>A new <see cref="Pattern"/> which is spanning.</returns>
 		/// <remarks>
 		/// This exists to set up dispatching to the appropriate <see cref="Pattern"/> type. Dispatching happens to be faster than switching on a typeclass.
-		/// </remarks
+		/// </remarks>
 		internal sealed override Pattern Span() {
 			if (ReadOnly) {
 				return base.Span();

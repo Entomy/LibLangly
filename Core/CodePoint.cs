@@ -216,7 +216,7 @@ namespace Stringier {
 		/// Returns a value that indicates whether this instance is equal to a specified object.
 		/// </summary>
 		/// <param name="other">The object to compare to.</param>
-		/// <returns><see langword="true"/> if equal to the value of this instance; otherwise, <see langword="false"/>.</returns
+		/// <returns><see langword="true"/> if equal to the value of this instance; otherwise, <see langword="false"/>.</returns>
 		[CLSCompliant(false)]
 		public Boolean Equals(UInt32 other) => value == other;
 
@@ -224,7 +224,7 @@ namespace Stringier {
 		/// Returns a value that indicates whether this instance is equal to a specified object.
 		/// </summary>
 		/// <param name="other">The object to compare to.</param>
-		/// <returns><see langword="true"/> if equal to the value of this instance; otherwise, <see langword="false"/>.</returns
+		/// <returns><see langword="true"/> if equal to the value of this instance; otherwise, <see langword="false"/>.</returns>
 		public Boolean Equals(Char other) => value == other;
 
 		/// <summary>

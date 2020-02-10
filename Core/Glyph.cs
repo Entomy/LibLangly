@@ -32,7 +32,7 @@ namespace Stringier {
 		/// Determines whether this instance and a specified object have the same value.
 		/// </summary>
 		/// <param name="obj">The object to compare to this instance.</param>
-		/// <returns><see langword="true"/> if the value of <paramref name="obj"/> is the same as this instance; otherwise, <see langword="false">. If <paramref name="obj"/> is <see langword="null"/>, the method returns <see langword="false">.</returns>
+		/// <returns><see langword="true"/> if the value of <paramref name="obj"/> is the same as this instance; otherwise, <see langword="false"/>. If <paramref name="obj"/> is <see langword="null"/>, the method returns <see langword="false"/>.</returns>
 		public override Boolean Equals(Object? obj) {
 			switch (obj) {
 			case Char @char:
@@ -50,21 +50,21 @@ namespace Stringier {
 		/// Determines whether this instance and another specified <see cref="Char"/> object have the same value.
 		/// </summary>
 		/// <param name="other">The <see cref="Char"/> to compare to this instance.</param>
-		/// <returns><see langword="true"/> if the value of <paramref name="other"/> is the same as this instance; otherwise, <see langword="false">.</returns>
+		/// <returns><see langword="true"/> if the value of <paramref name="other"/> is the same as this instance; otherwise, <see langword="false"/>.</returns>
 		public Boolean Equals(Char other) => InvariantEquivalence?.Equals(other) ?? (Sequence.Length == 1 && Equals(Sequence[0], other));
 
 		/// <summary>
 		/// Determines whether this instance and another specified <see cref="Glyph"/> object have the same value.
 		/// </summary>
 		/// <param name="other">The <see cref="Glyph"/> to compare to this instance.</param>
-		/// <returns><see langword="true"/> if the value of <paramref name="other"/> is the same as this instance; otherwise, <see langword="false">.</returns>
+		/// <returns><see langword="true"/> if the value of <paramref name="other"/> is the same as this instance; otherwise, <see langword="false"/>.</returns>
 		public Boolean Equals(Glyph other) => InvariantEquivalence?.Equals(other) ?? String.Equals(Sequence, other.Sequence, StringComparison.Ordinal);
 
 		/// <summary>
 		/// Determines whether this instance and another specified <see cref="Rune"/> object have the same value.
 		/// </summary>
 		/// <param name="other">The <see cref="Rune"/> to compare to this instance.</param>
-		/// <returns><see langword="true"/> if the value of <paramref name="other"/> is the same as this instance; otherwise, <see langword="false">.</returns>
+		/// <returns><see langword="true"/> if the value of <paramref name="other"/> is the same as this instance; otherwise, <see langword="false"/>.</returns>
 		public Boolean Equals(Rune other) {
 			if (InvariantEquivalence is Object) {
 				return InvariantEquivalence.Equals(other);

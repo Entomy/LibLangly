@@ -38,14 +38,14 @@ namespace Stringier.Patterns.Nodes {
 		/// This is primarily used to check whether a pattern may exist at the current position.
 		/// </remarks>
 		/// <param name="source">The <see cref="Source"/> to check against.</param>
-		/// <returns><c>true</c> if this <see cref="Pattern"/> may be present, <c>false</c> if definately not.</returns
+		/// <returns><c>true</c> if this <see cref="Pattern"/> may be present, <c>false</c> if definately not.</returns>
 		internal override Boolean CheckHeader(ref Source source) => (!source.EOF && Left(source.Peek())) || Right(source.Peek());
 
 		/// <summary>
 		/// Call the Consume parser of this <see cref="Pattern"/> on the <paramref name="source"/> with the <paramref name="result"/>.
 		/// </summary>
 		/// <param name="source">The <see cref="Source"/> to consume.</param>
-		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</param
+		/// <param name="result">A <see cref="Result"/> containing whether a match occured and the captured <see cref="String"/>.</param>
 		/// <param name="trace">The <see cref="ITrace"/> to record steps in.</param>
 		internal override void Consume(ref Source source, ref Result result, ITrace? trace) {
 			if (source.EOF) {

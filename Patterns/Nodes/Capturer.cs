@@ -35,7 +35,7 @@ namespace Stringier.Patterns.Nodes {
 		/// This is primarily used to check whether a pattern may exist at the current position.
 		/// </remarks>
 		/// <param name="source">The <see cref="Source"/> to check against.</param>
-		/// <returns><c>true</c> if this <see cref="Patterns.Pattern"/> may be present, <c>false</c> if definately not.</returns
+		/// <returns><see langword="true"/> if this <see cref="Patterns.Pattern"/> may be present, <see langword="false"/> if definately not.</returns>
 		internal override Boolean CheckHeader(ref Source source) => Pattern.CheckHeader(ref source);
 
 		/// <summary>

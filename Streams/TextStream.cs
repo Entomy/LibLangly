@@ -196,13 +196,13 @@ namespace Stringier.Streams {
 		/// <summary>
 		/// Serves as the default hash function.
 		/// </summary>
-		/// <returnsA hash code for the current object.></returns>
+		/// <returns>A hash code for the current object.</returns>
 		public override Int32 GetHashCode() => BaseStream.GetHashCode();
 
 		/// <summary>
 		/// Obtains a lifetime service object to control the lifetime policy for this instance.
 		/// </summary>
-		/// <returns>An object of type <see cref="ILease"/> used to control the lifetime policy for this instance. This is the current lifetime service object for this instance if one exists; otherwise, a new lifetime service object initialized to the value of the <see cref="LeaseManagerPollTime"/> property.</returns>
+		/// <returns>An object of type ILease used to control the lifetime policy for this instance. This is the current lifetime service object for this instance if one exists; otherwise, a new lifetime service object initialized to the value of the LeaseManagerPollTime property.</returns>
 		public override Object InitializeLifetimeService() => BaseStream.InitializeLifetimeService();
 
 		/// <summary>
@@ -264,7 +264,7 @@ namespace Stringier.Streams {
 		/// <param name="buffer">An array of bytes. This method copies <paramref name="count"/> bytes from <paramref name="buffer"/> to the current stream.</param>
 		/// <param name="offset">The zero-based byte offset in <paramref name="buffer"/> at which to begin copying bytes to the current stream.</param>
 		/// <param name="count">The number of bytes to be written to the current stream.</param>
-		/// <exception cref="ArgumentException">The sum of <paramref name="offset"/> and <paramref name="count"/> is greater than the buffer length.</ exception>
+		/// <exception cref="ArgumentException">The sum of <paramref name="offset"/> and <paramref name="count"/> is greater than the buffer length.</exception>
 		/// <exception cref="ArgumentNullException"><paramref name="buffer"/> is <see langword="null"/>.</exception>
 		/// <exception cref="ArgumentOutOfRangeException"><paramref name="offset"/> or <paramref name="count"/> is negative.</exception>
 		/// <exception cref="IOException">An I/O error occurred, such as the specified file cannot be found.</exception>

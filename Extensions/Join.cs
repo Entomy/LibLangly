@@ -8,7 +8,7 @@ namespace Stringier {
 		/// <summary>
 		/// Joins the <paramref name="chars"/> into a string.
 		/// </summary>
-		/// <param name="chars">The <see cref="Char[]"/> to join.</param>
+		/// <param name="chars">The <see cref="Array"/> of <see cref="Char"/> to join.</param>
 		/// <returns>The joined <see cref="String"/>.</returns>
 		public static String Join(this Char[] chars) {
 			if (chars is null) {
@@ -34,7 +34,7 @@ namespace Stringier {
 		/// <summary>
 		/// Joins the <paramref name="chars"/> with <paramref name="separator"/> into a string.
 		/// </summary>
-		/// <param name="chars">The <see cref="Char[]"/> to join.</param>
+		/// <param name="chars">The <see cref="Array"/> of <see cref="Char"/> to join.</param>
 		/// <param name="separator">The <see cref="Char"/> to interleave.</param>
 		/// <returns>The joined <see cref="String"/>.</returns>
 		public static String Join(this Char[] chars, Char separator) {
