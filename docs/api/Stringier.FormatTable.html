@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class FormatTable
    ">
-    <meta name="generator" content="docfx 2.45.1.0">
+    <meta name="generator" content="docfx 2.48.1.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -90,9 +90,6 @@
       <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
     </div>
     <div>
-      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
-    </div>
-    <div>
       <span class="xref">System.Object.GetHashCode()</span>
     </div>
     <div>
@@ -101,9 +98,12 @@
     <div>
       <span class="xref">System.Object.MemberwiseClone()</span>
     </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Stringier.html">Stringier</a></h6>
-  <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
+  <h6><strong>Assembly</strong>: Stringier.Extensions.dll</h6>
   <h5 id="Stringier_FormatTable_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public sealed class FormatTable</code></pre>
@@ -113,16 +113,21 @@
 </div>
   <h3 id="constructors">Constructors
   </h3>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_FormatTable__ctor_System_Int32_.md&amp;value=---%0Auid%3A%20Stringier.FormatTable.%23ctor(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/FormatTable.cs/#L43">View Source</a>
+  </span>
   <a id="Stringier_FormatTable__ctor_" data-uid="Stringier.FormatTable.#ctor*"></a>
-  <h4 id="Stringier_FormatTable__ctor_Int32_" data-uid="Stringier.FormatTable.#ctor(Int32)">FormatTable(Int32)</h4>
+  <h4 id="Stringier_FormatTable__ctor_System_Int32_" data-uid="Stringier.FormatTable.#ctor(System.Int32)">FormatTable(Int32)</h4>
   <div class="markdown level1 summary"><p>Initialize a new <a class="xref" href="Stringier.FormatTable.html">FormatTable</a> with the specified <code data-dev-comment-type="paramref" class="paramref">columns</code> count.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public FormatTable(Int32 columns)</code></pre>
+    <pre><code class="lang-csharp hljs">public FormatTable(int columns)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -135,23 +140,28 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Int32</span></td>
+        <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">columns</span></td>
         <td><p>The amount of columns in the table.</p>
 </td>
       </tr>
     </tbody>
   </table>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_FormatTable__ctor_System_Int32_Stringier_Alignment_.md&amp;value=---%0Auid%3A%20Stringier.FormatTable.%23ctor(System.Int32%2CStringier.Alignment)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/FormatTable.cs/#L54">View Source</a>
+  </span>
   <a id="Stringier_FormatTable__ctor_" data-uid="Stringier.FormatTable.#ctor*"></a>
-  <h4 id="Stringier_FormatTable__ctor_Int32_Stringier_Alignment_" data-uid="Stringier.FormatTable.#ctor(Int32,Stringier.Alignment)">FormatTable(Int32, Alignment)</h4>
+  <h4 id="Stringier_FormatTable__ctor_System_Int32_Stringier_Alignment_" data-uid="Stringier.FormatTable.#ctor(System.Int32,Stringier.Alignment)">FormatTable(Int32, Alignment)</h4>
   <div class="markdown level1 summary"><p>Initialize a new <a class="xref" href="Stringier.FormatTable.html">FormatTable</a> with the specified <code data-dev-comment-type="paramref" class="paramref">columns</code> count and <code data-dev-comment-type="paramref" class="paramref">alignment</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public FormatTable(Int32 columns, Alignment alignment)</code></pre>
+    <pre><code class="lang-csharp hljs">public FormatTable(int columns, Alignment alignment)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -164,7 +174,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Int32</span></td>
+        <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">columns</span></td>
         <td><p>The amount of columns in the table.</p>
 </td>
@@ -177,16 +187,21 @@
       </tr>
     </tbody>
   </table>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_FormatTable__ctor_System_Int32_Stringier_Alignment___.md&amp;value=---%0Auid%3A%20Stringier.FormatTable.%23ctor(System.Int32%2CStringier.Alignment%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/FormatTable.cs/#L65">View Source</a>
+  </span>
   <a id="Stringier_FormatTable__ctor_" data-uid="Stringier.FormatTable.#ctor*"></a>
-  <h4 id="Stringier_FormatTable__ctor_Int32_Stringier_Alignment___" data-uid="Stringier.FormatTable.#ctor(Int32,Stringier.Alignment[])">FormatTable(Int32, Alignment[])</h4>
+  <h4 id="Stringier_FormatTable__ctor_System_Int32_Stringier_Alignment___" data-uid="Stringier.FormatTable.#ctor(System.Int32,Stringier.Alignment[])">FormatTable(Int32, Alignment[])</h4>
   <div class="markdown level1 summary"><p>Initialize a new <a class="xref" href="Stringier.FormatTable.html">FormatTable</a> with the specified <code data-dev-comment-type="paramref" class="paramref">columns</code> count and <code data-dev-comment-type="paramref" class="paramref">alignments</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public FormatTable(Int32 columns, params Alignment[] alignments)</code></pre>
+    <pre><code class="lang-csharp hljs">public FormatTable(int columns, params Alignment[] alignments)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -199,7 +214,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Int32</span></td>
+        <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">columns</span></td>
         <td><p>The amount of columns in the table.</p>
 </td>
@@ -207,23 +222,28 @@
       <tr>
         <td><a class="xref" href="Stringier.Alignment.html">Alignment</a>[]</td>
         <td><span class="parametername">alignments</span></td>
-        <td><p>An <see cref="!:Array"></see> of <a class="xref" href="Stringier.Alignment.html">Alignment</a> corresponding to each column.</p>
+        <td><p>An <span class="xref">System.Array</span> of <a class="xref" href="Stringier.Alignment.html">Alignment</a> corresponding to each column.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <h3 id="methods">Methods
   </h3>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_FormatTable_Format_System_Object_.md&amp;value=---%0Auid%3A%20Stringier.FormatTable.Format(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/FormatTable.cs/#L79">View Source</a>
+  </span>
   <a id="Stringier_FormatTable_Format_" data-uid="Stringier.FormatTable.Format*"></a>
-  <h4 id="Stringier_FormatTable_Format_System_Nullable_Object__" data-uid="Stringier.FormatTable.Format(System.Nullable{Object})">Format(Nullable&lt;Object&gt;)</h4>
+  <h4 id="Stringier_FormatTable_Format_System_Object_" data-uid="Stringier.FormatTable.Format(System.Object)">Format(Object)</h4>
   <div class="markdown level1 summary"><p>Places the format items in a new record of the <a class="xref" href="Stringier.FormatTable.html">FormatTable</a> with the string representation of a specified object.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Format(Object? arg0)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Format(object arg0)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -236,26 +256,31 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">Object</span>&gt;</td>
+        <td><span class="xref">System.Object</span></td>
         <td><span class="parametername">arg0</span></td>
         <td><p>The object to format.</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <h5 id="Stringier_FormatTable_Format_System_Nullable_Object___remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>Unlike with <see cref="!:String.Format(String, Object)"></see> or <a class="xref" href="Stringier.StringierExtensions.html#Stringier_StringierExtensions_Format_String_Object_">Format(String, Object)</a> and variants, arguments here may be <span class="xref">null</span>. When <span class="xref">null</span>, they will be placed into the table as <see cref="!:String.Empty"></see>.</p>
+  <h5 id="Stringier_FormatTable_Format_System_Object__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Unlike with <span class="xref">System.String.Format(System.String,System.Object)</span> or <a class="xref" href="Stringier.StringierExtensions.html#Stringier_StringierExtensions_Format_System_String_System_Object_">Format(String, Object)</a> and variants, arguments here may be <span class="xref">null</span>. When <span class="xref">null</span>, they will be placed into the table as <span class="xref">System.String.Empty</span>.</p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_FormatTable_Format_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20Stringier.FormatTable.Format(System.Object%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/FormatTable.cs/#L96">View Source</a>
+  </span>
   <a id="Stringier_FormatTable_Format_" data-uid="Stringier.FormatTable.Format*"></a>
-  <h4 id="Stringier_FormatTable_Format_System_Nullable_Object__System_Nullable_Object__" data-uid="Stringier.FormatTable.Format(System.Nullable{Object},System.Nullable{Object})">Format(Nullable&lt;Object&gt;, Nullable&lt;Object&gt;)</h4>
+  <h4 id="Stringier_FormatTable_Format_System_Object_System_Object_" data-uid="Stringier.FormatTable.Format(System.Object,System.Object)">Format(Object, Object)</h4>
   <div class="markdown level1 summary"><p>Places the format items in a new record of the <a class="xref" href="Stringier.FormatTable.html">FormatTable</a> with the string representation of a specified object.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Format(Object? arg0, Object? arg1)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Format(object arg0, object arg1)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -268,32 +293,37 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">Object</span>&gt;</td>
+        <td><span class="xref">System.Object</span></td>
         <td><span class="parametername">arg0</span></td>
         <td><p>The first object to format.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">Object</span>&gt;</td>
+        <td><span class="xref">System.Object</span></td>
         <td><span class="parametername">arg1</span></td>
         <td><p>The second object to format.</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <h5 id="Stringier_FormatTable_Format_System_Nullable_Object__System_Nullable_Object___remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>Unlike with <see cref="!:String.Format(String, Object)"></see> or <a class="xref" href="Stringier.StringierExtensions.html#Stringier_StringierExtensions_Format_String_Object_">Format(String, Object)</a> and variants, arguments here may be <span class="xref">null</span>. When <span class="xref">null</span>, they will be placed into the table as <see cref="!:String.Empty"></see>.</p>
+  <h5 id="Stringier_FormatTable_Format_System_Object_System_Object__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Unlike with <span class="xref">System.String.Format(System.String,System.Object)</span> or <a class="xref" href="Stringier.StringierExtensions.html#Stringier_StringierExtensions_Format_System_String_System_Object_">Format(String, Object)</a> and variants, arguments here may be <span class="xref">null</span>. When <span class="xref">null</span>, they will be placed into the table as <span class="xref">System.String.Empty</span>.</p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_FormatTable_Format_System_Object_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20Stringier.FormatTable.Format(System.Object%2CSystem.Object%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/FormatTable.cs/#L118">View Source</a>
+  </span>
   <a id="Stringier_FormatTable_Format_" data-uid="Stringier.FormatTable.Format*"></a>
-  <h4 id="Stringier_FormatTable_Format_System_Nullable_Object__System_Nullable_Object__System_Nullable_Object__" data-uid="Stringier.FormatTable.Format(System.Nullable{Object},System.Nullable{Object},System.Nullable{Object})">Format(Nullable&lt;Object&gt;, Nullable&lt;Object&gt;, Nullable&lt;Object&gt;)</h4>
+  <h4 id="Stringier_FormatTable_Format_System_Object_System_Object_System_Object_" data-uid="Stringier.FormatTable.Format(System.Object,System.Object,System.Object)">Format(Object, Object, Object)</h4>
   <div class="markdown level1 summary"><p>Places the format items in a new record of the <a class="xref" href="Stringier.FormatTable.html">FormatTable</a> with the string representation of a specified object.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Format(Object? arg0, Object? arg1, Object? arg2)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Format(object arg0, object arg1, object arg2)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -306,38 +336,43 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">Object</span>&gt;</td>
+        <td><span class="xref">System.Object</span></td>
         <td><span class="parametername">arg0</span></td>
         <td><p>The first object to format.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">Object</span>&gt;</td>
+        <td><span class="xref">System.Object</span></td>
         <td><span class="parametername">arg1</span></td>
         <td><p>The second object to format.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">Object</span>&gt;</td>
+        <td><span class="xref">System.Object</span></td>
         <td><span class="parametername">arg2</span></td>
         <td><p>The third object to format.</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <h5 id="Stringier_FormatTable_Format_System_Nullable_Object__System_Nullable_Object__System_Nullable_Object___remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>Unlike with <see cref="!:String.Format(String, Object)"></see> or <a class="xref" href="Stringier.StringierExtensions.html#Stringier_StringierExtensions_Format_String_Object_">Format(String, Object)</a> and variants, arguments here may be <span class="xref">null</span>. When <span class="xref">null</span>, they will be placed into the table as <see cref="!:String.Empty"></see>.</p>
+  <h5 id="Stringier_FormatTable_Format_System_Object_System_Object_System_Object__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Unlike with <span class="xref">System.String.Format(System.String,System.Object)</span> or <a class="xref" href="Stringier.StringierExtensions.html#Stringier_StringierExtensions_Format_System_String_System_Object_">Format(String, Object)</a> and variants, arguments here may be <span class="xref">null</span>. When <span class="xref">null</span>, they will be placed into the table as <span class="xref">System.String.Empty</span>.</p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_FormatTable_Format_System_Object___.md&amp;value=---%0Auid%3A%20Stringier.FormatTable.Format(System.Object%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/FormatTable.cs/#L142">View Source</a>
+  </span>
   <a id="Stringier_FormatTable_Format_" data-uid="Stringier.FormatTable.Format*"></a>
-  <h4 id="Stringier_FormatTable_Format_System_Nullable_Object____" data-uid="Stringier.FormatTable.Format(System.Nullable{Object}[])">Format(Nullable&lt;Object&gt;[])</h4>
+  <h4 id="Stringier_FormatTable_Format_System_Object___" data-uid="Stringier.FormatTable.Format(System.Object[])">Format(Object[])</h4>
   <div class="markdown level1 summary"><p>Places the format items in a new record of the <a class="xref" href="Stringier.FormatTable.html">FormatTable</a> with the string representation of a corresponding object in a specified array.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Format(params Object? [] args)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Format(params object[] args)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -350,18 +385,23 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">Object</span>&gt;[]</td>
+        <td><span class="xref">System.Object</span>[]</td>
         <td><span class="parametername">args</span></td>
         <td><p>An object array that contains zero or more objects to format.</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <h5 id="Stringier_FormatTable_Format_System_Nullable_Object_____remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>Unlike with <see cref="!:String.Format(String, Object)"></see> or <a class="xref" href="Stringier.StringierExtensions.html#Stringier_StringierExtensions_Format_String_Object_">Format(String, Object)</a> and variants, arguments here may be <span class="xref">null</span>. When <span class="xref">null</span>, they will be placed into the table as <see cref="!:String.Empty"></see>.</p>
+  <h5 id="Stringier_FormatTable_Format_System_Object____remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Unlike with <span class="xref">System.String.Format(System.String,System.Object)</span> or <a class="xref" href="Stringier.StringierExtensions.html#Stringier_StringierExtensions_Format_System_String_System_Object_">Format(String, Object)</a> and variants, arguments here may be <span class="xref">null</span>. When <span class="xref">null</span>, they will be placed into the table as <span class="xref">System.String.Empty</span>.</p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_FormatTable_ToString.md&amp;value=---%0Auid%3A%20Stringier.FormatTable.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/FormatTable.cs/#L166">View Source</a>
+  </span>
   <a id="Stringier_FormatTable_ToString_" data-uid="Stringier.FormatTable.ToString*"></a>
   <h4 id="Stringier_FormatTable_ToString" data-uid="Stringier.FormatTable.ToString">ToString()</h4>
   <div class="markdown level1 summary"><p>Converts the table to its equivalent string representation.</p>
@@ -369,7 +409,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override String ToString()</code></pre>
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -381,7 +421,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">String</span></td>
+        <td><span class="xref">System.String</span></td>
         <td><p>The string representation of this table.</p>
 </td>
       </tr>
@@ -392,6 +432,22 @@
   <h5 id="Stringier_FormatTable_ToString_remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>This string can be directly written to the console or file without further processing.</p>
 </div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.InvalidOperationException</span></td>
+        <td><p>An alignment was present that hasn't been handled in this method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
 </article>
           </div>
           
@@ -399,6 +455,12 @@
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Entomy/Stringier/new/master/apiSpec/new?filename=Stringier_FormatTable.md&amp;value=---%0Auid%3A%20Stringier.FormatTable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Entomy/Stringier/blob/master/Extensions/FormatTable.cs/#L14" class="contribution-link">View Source</a>
+                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
