@@ -156,7 +156,7 @@ namespace Stringier.Patterns {
 		/// Declares this <see cref="Pattern"/> should be captured into <paramref name="capture"/> for later reference.
 		/// </summary>
 		/// <param name="capture">A <see cref="Patterns.Capture"/> object to store into.</param>
-		/// <returns>A new <paramref name="Pattern"/> which will capture its result into <paramref name="capture"/>.</returns>
+		/// <returns>A new <see cref="Pattern"/> which will capture its result into <paramref name="capture"/>.</returns>
 		public sealed override Pattern Capture(out Capture capture) {
 			if (ReadOnly) {
 				return base.Capture(out capture);

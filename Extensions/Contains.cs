@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-#if !NETSTANDARD2_0
 using System.Text;
-#endif
 using Defender;
 
 namespace Stringier {
@@ -23,7 +21,6 @@ namespace Stringier {
 			return false;
 		}
 
-#if !NETSTANDARD2_0
 		/// <summary>
 		/// Returns a value indicating whether a specified rune occurs within this string.
 		/// </summary>
@@ -39,7 +36,6 @@ namespace Stringier {
 			}
 			return false;
 		}
-#endif
 
 		/// <summary>
 		/// Returns a value indicating whether a specified char occurs within any of the strings.
@@ -57,7 +53,6 @@ namespace Stringier {
 			return false;
 		}
 
-#if !NETSTANDARD2_0
 		/// <summary>
 		/// Returns a value indicating whether a specified char occurs within any of the strings.
 		/// </summary>
@@ -73,7 +68,6 @@ namespace Stringier {
 			}
 			return false;
 		}
-#endif
 
 		/// <summary>
 		/// Returns a value indicating whether a specified string occurs within any of the strings.

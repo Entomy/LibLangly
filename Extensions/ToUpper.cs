@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Globalization;
-#if !NETSTANDARD2_0
 using System.Text;
-#endif
 using Defender;
 
 namespace Stringier {
@@ -14,14 +12,12 @@ namespace Stringier {
 		/// <returns>The uppercase equivalent of <paramref name="char"/>, or the unchanged value of <paramref name="char"/> if <paramref name="char"/> is already uppercase, has no uppercase equivalent, or is not alphabetic.</returns>
 		public static Char ToUpper(this Char @char) => Char.ToUpper(@char);
 
-#if !NETSTANDARD2_0
 		/// <summary>
 		/// Converts the value of a Unicode character to its uppercase equivalent.
 		/// </summary>
 		/// <param name="rune">The Unicode character to convert.</param>
 		/// <returns>The uppercase equivalent of <paramref name="rune"/>, or the unchanged value of <paramref name="rune"/> if <paramref name="rune"/> is already uppercase, has no uppercase equivalent, or is not alphabetic.</returns>
 		public static Rune ToUpper(this Rune rune) => Rune.ToUpper(rune, CultureInfo.CurrentCulture);
-#endif
 
 		/// <summary>
 		/// Converts the value of a specified Unicode character to its uppercase equivalent using specified culture-specific formatting information.
@@ -34,7 +30,6 @@ namespace Stringier {
 			return Char.ToUpper(@char, culture);
 		}
 
-#if !NETSTANDARD2_0
 		/// <summary>
 		/// Converts the value of a specified Unicode character to its uppercase equivalent using specified culture-specific formatting information.
 		/// </summary>
@@ -45,7 +40,6 @@ namespace Stringier {
 			Guard.NotNull(culture, nameof(culture));
 			return Rune.ToUpper(rune, culture);
 		}
-#endif
 
 		/// <summary>
 		/// Converts the value of a Unicode character to its uppercase equivalent using the casing rules of the invariant culture.
@@ -54,13 +48,11 @@ namespace Stringier {
 		/// <returns>The uppercase equivalent of the <paramref name="char"/> parameter, or the unchanged value of <paramref name="char"/>, if <paramref name="char"/> is already uppercase or not alphabetic.</returns>
 		public static Char ToUpperInvariant(this Char @char) => Char.ToUpperInvariant(@char);
 
-#if !NETSTANDARD2_0
 		/// <summary>
 		/// Converts the value of a Unicode character to its uppercase equivalent using the casing rules of the invariant culture.
 		/// </summary>
 		/// <param name="rune">The Unicode character to convert.</param>
 		/// <returns>The uppercase equivalent of the <paramref name="rune"/> parameter, or the unchanged value of <paramref name="rune"/>, if <paramref name="rune"/> is already uppercase or not alphabetic.</returns>
 		public static Rune ToUpperInvariant(this Rune rune) => Rune.ToUpperInvariant(rune);
-#endif
 	}
 }

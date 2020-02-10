@@ -163,7 +163,7 @@ namespace Stringier.Patterns {
 		/// <summary>
 		/// Declares the names of <typeparamref name="E"/> to be alternates of each other; one of them will match.
 		/// </summary>
-		/// <param name="comparisonType">The <see cref="Compare"/> to use for all <paramref name="patterns"/>.</param>
+		/// <param name="comparisonType">The <see cref="Compare"/> to use for all <typeparamref name="E"/>.</param>
 		/// <typeparam name="E">The <see cref="Enum"/> providing names.</typeparam>
 		/// <returns>A new <see cref="Pattern"/> alternating all the names of <typeparamref name="E"/>.</returns>
 		public static Pattern OneOf<E>(Compare comparisonType) where E : Enum => OneOf(comparisonType, Enum.GetNames(typeof(E)));
