@@ -3,12 +3,7 @@
 //! This has to be handled specially. The methods provided here are provided in extension methods in a static class that already exists or directly in the class they dispatch from. As such, providing them is not as simple as it would normally be.
 
 #if NETSTANDARD2_0
-using System.Buffers;
-using System.Diagnostics;
-using System.Globalization;
 using System.Text;
-using Defender;
-using Stringier;
 
 namespace System {
 	/// <summary>

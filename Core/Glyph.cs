@@ -7,7 +7,7 @@ namespace Stringier {
 	/// <summary>
 	/// Represents a glyph; a UNICODE Grapheme Cluster.
 	/// </summary>
-	public readonly partial struct Glyph : IEquatable<Char>, IEquatable<Glyph>, IEquatable<Rune> {
+	public readonly partial struct Glyph : IComparable, IComparable<Char>, IComparable<Glyph>, IComparable<Rune>, IEquatable<Char>, IEquatable<Glyph>, IEquatable<Rune> {
 		/// <summary>
 		/// The <see cref="Equivalence"/> instance describing invariant equivalence rules.
 		/// </summary>
@@ -22,11 +22,14 @@ namespace Stringier {
 		private readonly String Sequence;
 
 		/// <summary>
-		/// Initializes a new <see cref="Glyph"/> from the given <paramref name="sequence"/>.
+		/// Initializes a new <see cref="Glyph"/> from the given <paramref name="char"/>.
 		/// </summary>
-		/// <param name="sequence">The sequence representing this <see cref="Glyph"/> as it was declared.</param>
-		public Glyph(Char sequence) {
-			Sequence = sequence.ToString();
+		/// <param name="char">The <see cref="Char"/> representing this <see cref="Glyph"/> as it was declared.</param>
+		public Glyph(Char @char) {
+			if (IsCombiningMark(@char)) {
+				throw new ArgumentOutOfRangeException(nameof(@char), "Character must not be a combining or enclosing mark");
+			}
+			Sequence = @char.ToString();
 			InvariantEquivalence = InvariantTable[Sequence];
 		}
 
@@ -35,6 +38,10 @@ namespace Stringier {
 		/// </summary>
 		/// <param name="sequence">The sequence representing this <see cref="Glyph"/> as it was declared.</param>
 		public Glyph(params Char[] sequence) {
+			Guard.NotEmpty(sequence, nameof(sequence));
+			if (IsCombiningMark(sequence[0])) {
+				throw new ArgumentOutOfRangeException(nameof(sequence), "First character must not be a combining or enclosing mark");
+			}
 			Sequence = new String(sequence);
 			InvariantEquivalence = InvariantTable[Sequence];
 		}
@@ -46,6 +53,9 @@ namespace Stringier {
 		public Glyph(String sequence) {
 			Guard.NotNull(sequence, nameof(sequence));
 			Guard.NotEmpty(sequence, nameof(sequence));
+			if (IsCombiningMark(sequence[0])) {
+				throw new ArgumentOutOfRangeException(nameof(sequence), "First character must not be a combining or enclosing mark");
+			}
 			Sequence = sequence;
 			InvariantEquivalence = InvariantTable[Sequence];
 		}
@@ -72,7 +82,7 @@ namespace Stringier {
 		/// <param name="input">The input <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/>.</param>
 		/// <param name="index">The index within the <paramref name="input"/> to get the <see cref="Glyph"/>.</param>
 		/// <param name="charsConsumed">The number of <see cref="Char"/> consumed as part of the <see cref="Glyph"/>.</param>
-		public static Glyph GetGlyphAt(ReadOnlySpan<Char> input, Int32 index, out Int32 charsConsumed) { 
+		public static Glyph GetGlyphAt(ReadOnlySpan<Char> input, Int32 index, out Int32 charsConsumed) {
 			Guard.NotEmpty(input, nameof(input));
 			Guard.GreaterThanOrEqualTo(index, nameof(index), 0);
 			StringBuilder builder = new StringBuilder(); // The use of zalgo text means it's probably unsafe to use a fixed sized buffer. It would need to be huge to accomodate zalgo, which would hurt performance for normal uses. But if a smaller, more suitable, buffer was used for normal purposes, zalgo would crash anything using Glyph, enabling a potential DoS attack.
@@ -142,6 +152,46 @@ namespace Stringier {
 		public static Glyph ToUpperInvariant(Glyph glyph) => new Glyph(glyph.Sequence.ToUpperInvariant());
 
 		/// <summary>
+		/// Compares the current instance with another object of the same type and returns an integer that indicates whether the current instance precedes, follows, or occurs in the same position in the sort order as the other object.
+		/// </summary>
+		/// <param name="other">An object to compare with this instance.</param>
+		/// <returns>A value that indicates the relative order of the objects being compared.</returns>
+		public Int32 CompareTo(Char other) => Sequence.CompareTo(other.ToString());
+
+		/// <summary>
+		/// Compares the current instance with another object of the same type and returns an integer that indicates whether the current instance precedes, follows, or occurs in the same position in the sort order as the other object.
+		/// </summary>
+		/// <param name="other">An object to compare with this instance.</param>
+		/// <returns>A value that indicates the relative order of the objects being compared.</returns>
+		public Int32 CompareTo(Glyph other) => Sequence.CompareTo(other.Sequence);
+
+		/// <summary>
+		/// Compares the current instance with another object of the same type and returns an integer that indicates whether the current instance precedes, follows, or occurs in the same position in the sort order as the other object.
+		/// </summary>
+		/// <param name="other">An object to compare with this instance.</param>
+		/// <returns>A value that indicates the relative order of the objects being compared.</returns>
+		public Int32 CompareTo(Rune other) => Sequence.CompareTo(other.ToString());
+
+		/// <summary>
+		/// Compares the current instance with another object of the same type and returns an integer that indicates whether the current instance precedes, follows, or occurs in the same position in the sort order as the other object.
+		/// </summary>
+		/// <param name="obj">An object to compare with this instance.</param>
+		/// <returns>A value that indicates the relative order of the objects being compared.</returns>
+		/// <exception cref="ArgumentException"><paramref name="obj"/> is not the same type as this instance.</exception>
+		public Int32 CompareTo(Object obj) {
+			switch (obj) {
+			case Char @char:
+				return CompareTo(@char);
+			case Glyph glyph:
+				return CompareTo(glyph);
+			case Rune rune:
+				return CompareTo(rune);
+			default:
+				throw new ArgumentException("Object is not the same type as this instance.", nameof(obj));
+			}
+		}
+
+		/// <summary>
 		/// Determines whether this instance and a specified object have the same value.
 		/// </summary>
 		/// <param name="obj">The object to compare to this instance.</param>
@@ -208,8 +258,7 @@ namespace Stringier {
 		/// <param name="char">The <see cref="Char"/> to test.</param>
 		/// <returns></returns>
 		private static Boolean IsCombiningMark(Char @char) {
-			UnicodeCategory category = Char.GetUnicodeCategory(@char);
-			switch (category) {
+			switch (Char.GetUnicodeCategory(@char)) {
 			case UnicodeCategory.NonSpacingMark:
 			case UnicodeCategory.SpacingCombiningMark:
 			case UnicodeCategory.EnclosingMark:
