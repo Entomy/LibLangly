@@ -156,21 +156,21 @@ namespace Stringier {
 		/// </summary>
 		/// <param name="other">An object to compare with this instance.</param>
 		/// <returns>A value that indicates the relative order of the objects being compared.</returns>
-		public Int32 CompareTo(Char other) => Sequence.CompareTo(other.ToString());
+		public Int32 CompareTo(Char other) => String.Compare(Sequence, other.ToString(), StringComparison.CurrentCulture);
 
 		/// <summary>
 		/// Compares the current instance with another object of the same type and returns an integer that indicates whether the current instance precedes, follows, or occurs in the same position in the sort order as the other object.
 		/// </summary>
 		/// <param name="other">An object to compare with this instance.</param>
 		/// <returns>A value that indicates the relative order of the objects being compared.</returns>
-		public Int32 CompareTo(Glyph other) => Sequence.CompareTo(other.Sequence);
+		public Int32 CompareTo(Glyph other) => String.Compare(Sequence, other.Sequence, StringComparison.CurrentCulture);
 
 		/// <summary>
 		/// Compares the current instance with another object of the same type and returns an integer that indicates whether the current instance precedes, follows, or occurs in the same position in the sort order as the other object.
 		/// </summary>
 		/// <param name="other">An object to compare with this instance.</param>
 		/// <returns>A value that indicates the relative order of the objects being compared.</returns>
-		public Int32 CompareTo(Rune other) => Sequence.CompareTo(other.ToString());
+		public Int32 CompareTo(Rune other) => String.Compare(Sequence, other.ToString(), StringComparison.CurrentCulture);
 
 		/// <summary>
 		/// Compares the current instance with another object of the same type and returns an integer that indicates whether the current instance precedes, follows, or occurs in the same position in the sort order as the other object.

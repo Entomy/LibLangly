@@ -475,11 +475,10 @@ type RuneTests() =
         let b = Rune(second)
 
         Assert.AreEqual(exp, Math.Sign(a.CompareTo(b)))
-        //These had to be changed from the official ones. Due to what I beleive is an oversight, F# comparison operators can't work with Rune, because of the missing IComparable interface.
-        Assert.AreEqual(exp, a.CompareTo(b))
-        Assert.AreEqual(exp, a.CompareTo(b))
-        Assert.AreEqual(exp, a.CompareTo(b))
-        Assert.AreEqual(exp, a.CompareTo(b))
+        Assert.AreEqual(exp < 0, a < b)
+        Assert.AreEqual(exp <= 0, a <= b)
+        Assert.AreEqual(exp > 0, a > b)
+        Assert.AreEqual(exp >= 0, a >= b)
 
     //This has to exist so that an empty array can be checked against. Due to a limitation of F#, an empty array of a specific type can't be put into an attribute expecting a constant expression.
     [<TestMethod>]
