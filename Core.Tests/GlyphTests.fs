@@ -1,6 +1,7 @@
 namespace Core
 
 open System
+open System.Globalization
 open System.Text
 open Stringier
 open Microsoft.VisualStudio.TestTools.UnitTesting
@@ -182,3 +183,57 @@ type GlyphTests() =
     member _.``equals - rune`` (ch:char, sequence:string) =
         let rune = Rune(ch)
         Assert.AreEqual(Glyph(sequence), rune)
+
+    [<DataTestMethod>]
+    [<DataRow("\u00E0", "\u00E0")>] // à <=< à
+    [<DataRow("\u00E0", "\u00C0")>] // à <=< À
+    [<DataRow("\u0061\u0300", "\u00C0")>] // à <=< À
+    [<DataRow("\u00E0", "\u0041\u0300")>] // à <=< À
+    [<DataRow("\u0061\u0300", "\u0041\u0300")>] // à <=< À
+    [<DataRow("\u0069", "\u0049")>] // i <=< I
+    member _.``ToLower - Invariant`` (exp:string, sequence:string) = Assert.AreEqual(Glyph(exp), Glyph.ToLowerInvariant(Glyph(sequence)))
+
+    [<DataTestMethod>]
+    [<DataRow("\u00E0", "\u00E0")>] // à <=< à
+    [<DataRow("\u00E0", "\u00C0")>] // à <=< À
+    [<DataRow("\u0061\u0300", "\u00C0")>] // à <=< À
+    [<DataRow("\u00E0", "\u0041\u0300")>] // à <=< À
+    [<DataRow("\u0061\u0300", "\u0041\u0300")>] // à <=< À
+    [<DataRow("\u0131", "\u0049")>] // ı <=< I
+    member _.``ToLower - az-AZ`` (exp:string, sequence:string) = Assert.AreEqual(Glyph(exp), Glyph.ToLower(Glyph(sequence), CultureInfo("az-AZ")))
+
+    [<DataTestMethod>]
+    [<DataRow("\u00E0", "\u00E0")>] // à <=< à
+    [<DataRow("\u00E0", "\u00C0")>] // à <=< À
+    [<DataRow("\u0061\u0300", "\u00C0")>] // à <=< À
+    [<DataRow("\u00E0", "\u0041\u0300")>] // à <=< À
+    [<DataRow("\u0061\u0300", "\u0041\u0300")>] // à <=< À
+    [<DataRow("\u0131", "\u0049")>] // ı <=< I
+    member _.``ToLower - tr-TR`` (exp:string, sequence:string) = Assert.AreEqual(Glyph(exp), Glyph.ToLower(Glyph(sequence), CultureInfo("tr-TR")))
+
+    [<DataTestMethod>]
+    [<DataRow("\u00C0", "\u00C0")>] // À <=< À
+    [<DataRow("\u00C0", "\u00E0")>] // À <=< à
+    [<DataRow("\u00C0", "\u0061\u0300")>] // À <=< à
+    [<DataRow("\u0041\u0300", "\u00E0")>] // À <=< à
+    [<DataRow("\u0041\u0300", "\u0061\u0300")>] // À <=< à
+    [<DataRow("\u0049", "\u0069")>] // I <=< i
+    member _.``ToUpper - Invariant`` (exp:string, sequence:string) = Assert.AreEqual(Glyph(exp), Glyph.ToUpperInvariant(Glyph(sequence)))
+
+    [<DataTestMethod>]
+    [<DataRow("\u00C0", "\u00C0")>] // À <=< À
+    [<DataRow("\u00C0", "\u00E0")>] // À <=< à
+    [<DataRow("\u00C0", "\u0061\u0300")>] // À <=< à
+    [<DataRow("\u0041\u0300", "\u00E0")>] // À <=< à
+    [<DataRow("\u0041\u0300", "\u0061\u0300")>] // À <=< à
+    [<DataRow("\u0130", "\u0069")>] // İ <=< i
+    member _.``ToUpper - az-AZ`` (exp:string, sequence:string) = Assert.AreEqual(Glyph(exp), Glyph.ToUpper(Glyph(sequence), CultureInfo("az-AZ")))
+
+    [<DataTestMethod>]
+    [<DataRow("\u00C0", "\u00C0")>] // À <=< À
+    [<DataRow("\u00C0", "\u00E0")>] // À <=< à
+    [<DataRow("\u00C0", "\u0061\u0300")>] // À <=< à
+    [<DataRow("\u0041\u0300", "\u00E0")>] // À <=< à
+    [<DataRow("\u0041\u0300", "\u0061\u0300")>] // À <=< à
+    [<DataRow("\u0130", "\u0069")>] // İ <=< i
+    member _.``ToUpper - tr-TR`` (exp:string, sequence:string) = Assert.AreEqual(Glyph(exp), Glyph.ToUpper(Glyph(sequence), CultureInfo("tr-TR")))

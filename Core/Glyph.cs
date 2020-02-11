@@ -1,16 +1,12 @@
 using System;
+using System.Globalization;
 using System.Text;
 
 namespace Stringier {
-    /// <summary>
-    /// Represents a glyph; a UNICODE Grapheme Cluster.
-    /// </summary>
-    public readonly partial struct Glyph : IEquatable<Char>, IEquatable<Glyph>, IEquatable<Rune> {
-        /// <summary>
-        /// The sequence representing this <see cref="Glyph"/> as it was found or declared.
-        /// </summary>
-        private readonly String Sequence;
-
+	/// <summary>
+	/// Represents a glyph; a UNICODE Grapheme Cluster.
+	/// </summary>
+	public readonly partial struct Glyph : IEquatable<Char>, IEquatable<Glyph>, IEquatable<Rune> {
 		/// <summary>
 		/// The <see cref="Equivalence"/> instance describing invariant equivalence rules.
 		/// </summary>
@@ -19,14 +15,63 @@ namespace Stringier {
 		/// </remarks>
 		private readonly Equivalence? InvariantEquivalence;
 
-        /// <summary>
-        /// Initializes a new <see cref="Glyph"/> from the given <paramref name="sequence"/>.
-        /// </summary>
-        /// <param name="sequence">The sequence representing this <see cref="Glyph"/> as it was declared.</param>
-        public Glyph(String sequence) {
+		/// <summary>
+		/// The sequence representing this <see cref="Glyph"/> as it was found or declared.
+		/// </summary>
+		private readonly String Sequence;
+
+		/// <summary>
+		/// Initializes a new <see cref="Glyph"/> from the given <paramref name="sequence"/>.
+		/// </summary>
+		/// <param name="sequence">The sequence representing this <see cref="Glyph"/> as it was declared.</param>
+		public Glyph(String sequence) {
 			Sequence = sequence;
 			InvariantEquivalence = InvariantTable[sequence];
 		}
+
+		/// <summary>
+		/// Converts the <paramref name="glyph"/> to its lowercase equivalent.
+		/// </summary>
+		/// <param name="glyph">The <see cref="Glyph"/> to convert.</param>
+		/// <returns>The lowercase equivalent of <paramref name="glyph"/>, or the unchanged value of <paramref name="glyph"/> if <paramref name="glyph"/> is already lowercase, has no lowercase equivalent, or is not alphabetic.</returns>
+		public static Glyph ToLower(Glyph glyph) => new Glyph(glyph.Sequence.ToLower());
+
+		/// <summary>
+		/// Converts the <paramref name="glyph"/> to its lowercase equivalent using specified culture-specific formatting information.
+		/// </summary>
+		/// <param name="glyph">The <see cref="Glyph"/> to convert.</param>
+		/// <param name="culture">An object that supplies culture-specific casing rules.</param>
+		/// <returns>The lowercase equivalent of <paramref name="glyph"/>, modified according to <paramref name="culture"/>, or the unchanged value of <paramref name="glyph"/> if <paramref name="glyph"/> is already lowercase, has no lowercase equivalent, or is not alphabetic.</returns>
+		public static Glyph ToLower(Glyph glyph, CultureInfo culture) => new Glyph(glyph.Sequence.ToLower(culture));
+
+		/// <summary>
+		/// Converts the <paramref name="glyph"/> to its lowercase equivalent using the casing rules of the invariant culture.
+		/// </summary>
+		/// <param name="glyph">The <see cref="Glyph"/> to convert.</param>
+		/// <returns>The lowercase equivalent of <paramref name="glyph"/>, or the unchanged value of <paramref name="glyph"/> if <paramref name="glyph"/> is already lowercase, has no lowercase equivalent, or is not alphabetic.</returns>
+		public static Glyph ToLowerInvariant(Glyph glyph) => new Glyph(glyph.Sequence.ToLowerInvariant());
+
+		/// <summary>
+		/// Converts the <paramref name="glyph"/> to its uppercase equivalent.
+		/// </summary>
+		/// <param name="glyph">The <see cref="Glyph"/> to convert.</param>
+		/// <returns>The uppercase equivalent of <paramref name="glyph"/>, or the unchanged value of <paramref name="glyph"/> if <paramref name="glyph"/> is already uppercase, has no uppercase equivalent, or is not alphabetic.</returns>
+		public static Glyph ToUpper(Glyph glyph) => new Glyph(glyph.Sequence.ToUpper());
+
+		/// <summary>
+		/// Converts the <paramref name="glyph"/> to its uppercase equivalent using specified culture-specific formatting information.
+		/// </summary>
+		/// <param name="glyph">The <see cref="Glyph"/> to convert.</param>
+		/// <param name="culture">An object that supplies culture-specific casing rules.</param>
+		/// <returns>The uppercase equivalent of <paramref name="glyph"/>, modified according to <paramref name="culture"/>, or the unchanged value of <paramref name="glyph"/> if <paramref name="glyph"/> is already uppercase, has no uppercase equivalent, or is not alphabetic.</returns>
+		public static Glyph ToUpper(Glyph glyph, CultureInfo culture) => new Glyph(glyph.Sequence.ToUpper(culture));
+
+		/// <summary>
+		/// Converts the <paramref name="glyph"/> to its uppercase equivalent using the casing rules of the invariant culture.
+		/// </summary>
+		/// <param name="glyph">The <see cref="Glyph"/> to convert.</param>
+		/// <returns>The uppercase equivalent of <paramref name="glyph"/>, or the unchanged value of <paramref name="glyph"/> if <paramref name="glyph"/> is already uppercase, has no uppercase equivalent, or is not alphabetic.</returns>
+		public static Glyph ToUpperInvariant(Glyph glyph) => new Glyph(glyph.Sequence.ToUpperInvariant());
 
 		/// <summary>
 		/// Determines whether this instance and a specified object have the same value.
@@ -83,10 +128,10 @@ namespace Stringier {
 		/// <returns>A 32-bit signed integer hash code.</returns>
 		public override Int32 GetHashCode() => InvariantEquivalence?.GetHashCode() ?? Sequence.GetHashCode();
 
-        /// <summary>
-        /// Returns a string that represents the current object.
-        /// </summary>
-        /// <returns>A string that represents the current object</returns>
-        public override String ToString() => Sequence;
-    }
+		/// <summary>
+		/// Returns a string that represents the current object.
+		/// </summary>
+		/// <returns>A string that represents the current object</returns>
+		public override String ToString() => Sequence;
+	}
 }
