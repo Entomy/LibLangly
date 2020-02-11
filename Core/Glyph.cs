@@ -1,6 +1,7 @@
 using System;
 using System.Globalization;
 using System.Text;
+using Defender;
 
 namespace Stringier {
 	/// <summary>
@@ -25,6 +26,8 @@ namespace Stringier {
 		/// </summary>
 		/// <param name="sequence">The sequence representing this <see cref="Glyph"/> as it was declared.</param>
 		public Glyph(String sequence) {
+			Guard.NotNull(sequence, nameof(sequence));
+			Guard.NotEmpty(sequence, nameof(sequence));
 			Sequence = sequence;
 			InvariantEquivalence = InvariantTable[sequence];
 		}
@@ -42,7 +45,10 @@ namespace Stringier {
 		/// <param name="glyph">The <see cref="Glyph"/> to convert.</param>
 		/// <param name="culture">An object that supplies culture-specific casing rules.</param>
 		/// <returns>The lowercase equivalent of <paramref name="glyph"/>, modified according to <paramref name="culture"/>, or the unchanged value of <paramref name="glyph"/> if <paramref name="glyph"/> is already lowercase, has no lowercase equivalent, or is not alphabetic.</returns>
-		public static Glyph ToLower(Glyph glyph, CultureInfo culture) => new Glyph(glyph.Sequence.ToLower(culture));
+		public static Glyph ToLower(Glyph glyph, CultureInfo culture) {
+			Guard.NotNull(culture, nameof(culture));
+			return new Glyph(glyph.Sequence.ToLower(culture));
+		}
 
 		/// <summary>
 		/// Converts the <paramref name="glyph"/> to its lowercase equivalent using the casing rules of the invariant culture.
@@ -64,7 +70,10 @@ namespace Stringier {
 		/// <param name="glyph">The <see cref="Glyph"/> to convert.</param>
 		/// <param name="culture">An object that supplies culture-specific casing rules.</param>
 		/// <returns>The uppercase equivalent of <paramref name="glyph"/>, modified according to <paramref name="culture"/>, or the unchanged value of <paramref name="glyph"/> if <paramref name="glyph"/> is already uppercase, has no uppercase equivalent, or is not alphabetic.</returns>
-		public static Glyph ToUpper(Glyph glyph, CultureInfo culture) => new Glyph(glyph.Sequence.ToUpper(culture));
+		public static Glyph ToUpper(Glyph glyph, CultureInfo culture) {
+			Guard.NotNull(culture, nameof(culture));
+			return new Glyph(glyph.Sequence.ToUpper(culture));
+		}
 
 		/// <summary>
 		/// Converts the <paramref name="glyph"/> to its uppercase equivalent using the casing rules of the invariant culture.
