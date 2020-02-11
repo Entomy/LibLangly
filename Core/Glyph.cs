@@ -33,6 +33,11 @@ namespace Stringier {
 		}
 
 		/// <summary>
+		/// Returns the length in code units (<see cref="Char"/>) of the UTF-16 sequence required to represent this grapheme.
+		/// </summary>
+		public Int32 Utf16SequenceLength => Sequence.Length;
+
+		/// <summary>
 		/// Converts the <paramref name="glyph"/> to its lowercase equivalent.
 		/// </summary>
 		/// <param name="glyph">The <see cref="Glyph"/> to convert.</param>
