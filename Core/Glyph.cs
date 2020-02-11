@@ -25,11 +25,29 @@ namespace Stringier {
 		/// Initializes a new <see cref="Glyph"/> from the given <paramref name="sequence"/>.
 		/// </summary>
 		/// <param name="sequence">The sequence representing this <see cref="Glyph"/> as it was declared.</param>
+		public Glyph(Char sequence) {
+			Sequence = sequence.ToString();
+			InvariantEquivalence = InvariantTable[Sequence];
+		}
+
+		/// <summary>
+		/// Initializes a new <see cref="Glyph"/> from the given <paramref name="sequence"/>.
+		/// </summary>
+		/// <param name="sequence">The sequence representing this <see cref="Glyph"/> as it was declared.</param>
+		public Glyph(params Char[] sequence) {
+			Sequence = new String(sequence);
+			InvariantEquivalence = InvariantTable[Sequence];
+		}
+
+		/// <summary>
+		/// Initializes a new <see cref="Glyph"/> from the given <paramref name="sequence"/>.
+		/// </summary>
+		/// <param name="sequence">The sequence representing this <see cref="Glyph"/> as it was declared.</param>
 		public Glyph(String sequence) {
 			Guard.NotNull(sequence, nameof(sequence));
 			Guard.NotEmpty(sequence, nameof(sequence));
 			Sequence = sequence;
-			InvariantEquivalence = InvariantTable[sequence];
+			InvariantEquivalence = InvariantTable[Sequence];
 		}
 
 		/// <summary>
