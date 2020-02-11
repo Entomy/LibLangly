@@ -23,6 +23,20 @@ type GlyphTests() =
             i <- i + 1
 
     [<DataTestMethod>]
+    [<DataRow([|'a'|], "\u0061")>]
+    [<DataRow([|'a';'ë'|], "\u0061\u00EB")>]
+    [<DataRow([|'a';'ë'|], "\u0061\u0065\u0304")>]
+    [<DataRow([|'a';'ç';'ë'|], "\u0061\u00E7\u00EB")>]
+    [<DataRow([|'a';'ç';'ë'|], "\u0061\u00E7\u0065\u0304")>]
+    [<DataRow([|'a';'ç';'ë'|], "\u0061\u0063\u0327\u00EB")>]
+    [<DataRow([|'a';'ç';'ë'|], "\u0061\u0063\u0327\u0065\u0304")>]
+    member _.``enumerator - span`` (exp:char[], src:string) =
+        let mutable i = 0
+        for glyph in src.AsSpan().EnumerateGlyphs() do
+            Assert.AreEqual(Glyph(exp.[i]), glyph)
+            i <- i + 1
+
+    [<DataTestMethod>]
     [<DataRow("\u00C0", "\u0041\u0300")>] // À
     [<DataRow("\u00C1", "\u0041\u0301")>] // Á
     [<DataRow("\u00C2", "\u0041\u0302")>] // Â

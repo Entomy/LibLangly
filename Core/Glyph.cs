@@ -63,6 +63,16 @@ namespace Stringier {
 		/// <param name="charsConsumed">The number of <see cref="Char"/> consumed as part of the <see cref="Glyph"/>.</param>
 		public static Glyph GetGlyphAt(String input, Int32 index, out Int32 charsConsumed) {
 			Guard.NotNull(input, nameof(input));
+			return GetGlyphAt(input.AsSpan(), index, out charsConsumed);
+		}
+
+		/// <summary>
+		/// Gets the <see cref="Rune"/> which begins at index <paramref name="index"/> in string <paramref name="input"/>.
+		/// </summary>
+		/// <param name="input">The input <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/>.</param>
+		/// <param name="index">The index within the <paramref name="input"/> to get the <see cref="Glyph"/>.</param>
+		/// <param name="charsConsumed">The number of <see cref="Char"/> consumed as part of the <see cref="Glyph"/>.</param>
+		public static Glyph GetGlyphAt(ReadOnlySpan<Char> input, Int32 index, out Int32 charsConsumed) { 
 			Guard.NotEmpty(input, nameof(input));
 			Guard.GreaterThanOrEqualTo(index, nameof(index), 0);
 			StringBuilder builder = new StringBuilder(); // The use of zalgo text means it's probably unsafe to use a fixed sized buffer. It would need to be huge to accomodate zalgo, which would hurt performance for normal uses. But if a smaller, more suitable, buffer was used for normal purposes, zalgo would crash anything using Glyph, enabling a potential DoS attack.
