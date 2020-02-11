@@ -191,6 +191,10 @@ type GlyphTests() =
     [<DataRow("b", 1, "\u00E1b", 1)>]
     [<DataRow("á", 2, "\u0061\u0301b", 0)>]
     [<DataRow("b", 1, "\u0061\u0301b", 2)>]
+    [<DataRow("a", 1, "a\u00E7", 0)>]
+    [<DataRow("ç", 1, "a\u00E7", 1)>]
+    [<DataRow("a", 1, "a\u0063\u0327", 0)>]
+    [<DataRow("ç", 2, "a\u0063\u0327", 1)>]
     member _.``get glyph at`` (seq:string, exp:int, input:string, index:int) =
         let mutable cons:int = 0
         Assert.AreEqual(Glyph(seq), Glyph.GetGlyphAt(input, index, &cons))
