@@ -185,6 +185,18 @@ type GlyphTests() =
         Assert.AreEqual(Glyph(sequence), rune)
 
     [<DataTestMethod>]
+    [<DataRow("a", 1, "ab", 0)>]
+    [<DataRow("b", 1, "ab", 1)>]
+    [<DataRow("á", 1, "\u00E1b", 0)>]
+    [<DataRow("b", 1, "\u00E1b", 1)>]
+    [<DataRow("á", 2, "\u0061\u0301b", 0)>]
+    [<DataRow("b", 1, "\u0061\u0301b", 2)>]
+    member _.``get glyph at`` (seq:string, exp:int, input:string, index:int) =
+        let mutable cons:int = 0
+        Assert.AreEqual(Glyph(seq), Glyph.GetGlyphAt(input, index, &cons))
+        Assert.AreEqual(exp, cons)
+
+    [<DataTestMethod>]
     [<DataRow("\u00E0", "\u00E0")>] // à <=< à
     [<DataRow("\u00E0", "\u00C0")>] // à <=< À
     [<DataRow("\u0061\u0300", "\u00C0")>] // à <=< À

@@ -56,6 +56,32 @@ namespace Stringier {
 		public Int32 Utf16SequenceLength => Sequence.Length;
 
 		/// <summary>
+		/// Gets the <see cref="Rune"/> which begins at index <paramref name="index"/> in string <paramref name="input"/>.
+		/// </summary>
+		/// <param name="input">The input <see cref="String"/>.</param>
+		/// <param name="index">The index within the <paramref name="input"/> to get the <see cref="Glyph"/>.</param>
+		/// <param name="charsConsumed">The number of <see cref="Char"/> consumed as part of the <see cref="Glyph"/>.</param>
+		public static Glyph GetGlyphAt(String input, Int32 index, out Int32 charsConsumed) {
+			Guard.NotNull(input, nameof(input));
+			Guard.NotEmpty(input, nameof(input));
+			Guard.GreaterThanOrEqualTo(index, nameof(index), 0);
+			StringBuilder builder = new StringBuilder(); // The use of zalgo text means it's probably unsafe to use a fixed sized buffer. It would need to be huge to accomodate zalgo, which would hurt performance for normal uses. But if a smaller, more suitable, buffer was used for normal purposes, zalgo would crash anything using Glyph, enabling a potential DoS attack.
+			//? It might be possible to handle this as an exceptional case. Use a smaller buffer normally and if the buffer is overrun use a zalgo tolerant handler. Zalgo is an edge case and not normal text, so lower performance for that is acceptable.
+			charsConsumed = 0;
+			if (!IsCombiningMark(input[index])) {
+				_ = builder.Append(input[index]);
+				charsConsumed++;
+			} else {
+				throw new ArgumentException("Found a combining mark at this position; This is inside of an existing grapheme.", nameof(index));
+			}
+			while (++index < input.Length && IsCombiningMark(input[index])) {
+				_ = builder.Append(input[index]);
+				charsConsumed++;
+			}
+			return new Glyph(builder.ToString());
+		}
+
+		/// <summary>
 		/// Converts the <paramref name="glyph"/> to its lowercase equivalent.
 		/// </summary>
 		/// <param name="glyph">The <see cref="Glyph"/> to convert.</param>
@@ -165,5 +191,22 @@ namespace Stringier {
 		/// </summary>
 		/// <returns>A string that represents the current object</returns>
 		public override String ToString() => Sequence;
+
+		/// <summary>
+		/// Tests whether the <paramref name="char"/> is a combining or enclosing mark.
+		/// </summary>
+		/// <param name="char">The <see cref="Char"/> to test.</param>
+		/// <returns></returns>
+		private static Boolean IsCombiningMark(Char @char) {
+			UnicodeCategory category = Char.GetUnicodeCategory(@char);
+			switch (category) {
+			case UnicodeCategory.NonSpacingMark:
+			case UnicodeCategory.SpacingCombiningMark:
+			case UnicodeCategory.EnclosingMark:
+				return true;
+			default:
+				return false;
+			}
+		}
 	}
 }
