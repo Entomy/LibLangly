@@ -32,16 +32,6 @@ type GlyphTests() =
         Assert.AreEqual(exp >= 0, a >= b)
 
     [<DataTestMethod>]
-    [<DataRow(0, "\u00E0", 0xE0)>]
-    [<DataRow(0, "\u0061\u0300", 0xE0)>]
-    [<DataRow(1, "\u00C0", 0xE0)>]
-    [<DataRow(1, "\u0041\u0300", 0xE0)>]
-    [<DataRow(-1, "\u00E0", 0xC0)>]
-    [<DataRow(-1, "\u0061\u0300", 0xC0)>]
-    member _.``compare - rune`` (exp:int, first:string, second:int32) =
-        Assert.AreEqual(exp, Glyph(first).CompareTo(Rune(second)))
-
-    [<DataTestMethod>]
     [<DataRow([|'a'|], "\u0061")>]
     [<DataRow([|'a';'ë'|], "\u0061\u00EB")>]
     [<DataRow([|'a';'ë'|], "\u0061\u0065\u0304")>]

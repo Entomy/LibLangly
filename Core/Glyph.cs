@@ -7,7 +7,7 @@ namespace Stringier {
 	/// <summary>
 	/// Represents a glyph; a UNICODE Grapheme Cluster.
 	/// </summary>
-	public readonly partial struct Glyph : IComparable, IComparable<Char>, IComparable<Glyph>, IComparable<Rune>, IEquatable<Char>, IEquatable<Glyph>, IEquatable<Rune> {
+	public readonly partial struct Glyph : IComparable, IComparable<Glyph>, IEquatable<Char>, IEquatable<Glyph>, IEquatable<Rune> {
 		/// <summary>
 		/// The <see cref="Equivalence"/> instance describing invariant equivalence rules.
 		/// </summary>
@@ -156,21 +156,7 @@ namespace Stringier {
 		/// </summary>
 		/// <param name="other">An object to compare with this instance.</param>
 		/// <returns>A value that indicates the relative order of the objects being compared.</returns>
-		public Int32 CompareTo(Char other) => String.Compare(Sequence, other.ToString(), StringComparison.CurrentCulture);
-
-		/// <summary>
-		/// Compares the current instance with another object of the same type and returns an integer that indicates whether the current instance precedes, follows, or occurs in the same position in the sort order as the other object.
-		/// </summary>
-		/// <param name="other">An object to compare with this instance.</param>
-		/// <returns>A value that indicates the relative order of the objects being compared.</returns>
 		public Int32 CompareTo(Glyph other) => String.Compare(Sequence, other.Sequence, StringComparison.CurrentCulture);
-
-		/// <summary>
-		/// Compares the current instance with another object of the same type and returns an integer that indicates whether the current instance precedes, follows, or occurs in the same position in the sort order as the other object.
-		/// </summary>
-		/// <param name="other">An object to compare with this instance.</param>
-		/// <returns>A value that indicates the relative order of the objects being compared.</returns>
-		public Int32 CompareTo(Rune other) => String.Compare(Sequence, other.ToString(), StringComparison.CurrentCulture);
 
 		/// <summary>
 		/// Compares the current instance with another object of the same type and returns an integer that indicates whether the current instance precedes, follows, or occurs in the same position in the sort order as the other object.
@@ -180,12 +166,8 @@ namespace Stringier {
 		/// <exception cref="ArgumentException"><paramref name="obj"/> is not the same type as this instance.</exception>
 		public Int32 CompareTo(Object obj) {
 			switch (obj) {
-			case Char @char:
-				return CompareTo(@char);
 			case Glyph glyph:
 				return CompareTo(glyph);
-			case Rune rune:
-				return CompareTo(rune);
 			default:
 				throw new ArgumentException("Object is not the same type as this instance.", nameof(obj));
 			}
