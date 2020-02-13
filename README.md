@@ -19,6 +19,10 @@ The goals and purpose of this project is provided [here](https://github.com/Ento
 
 # Subprojects: [![Nuget](https://img.shields.io/nuget/dt/Stringier?label=Meta%20Package&logo=nuget)](https://www.nuget.org/packages/Stringier/)
 
+## [Core](https://github.com/Entomy/Stringier/tree/master/Core) [![Nuget](https://img.shields.io/nuget/dt/Stringier.Core?label=Core&logo=nuget)](https://www.nuget.org/packages/Stringier.Core/) [![Nuget](https://img.shields.io/nuget/dt/Stringier.Core.FSharp?label=F%23&logo=nuget)](https://www.nuget.org/packages/Stringier.Core.FSharp/)
+
+**Core** holds implementations central to the entire broad project. As things grew, it became a requirement to consolodate certain parts of the codebase. You probably don't want to use this directly, as you'll get a much better experience using the subprojects that build upon this.
+
 ## [Extensions](https://github.com/Entomy/Stringier/tree/master/Extensions) [![Nuget](https://img.shields.io/nuget/dt/Stringier.Extensions.svg?label=Extensions&logo=Nuget)](https://www.nuget.org/packages/Stringier.Extensions/) [![Nuget](https://img.shields.io/nuget/dt/Stringier.Extensions.FSharp?label=F%23%20&logo=nuget)](https://www.nuget.org/packages/Stringier.Extensions.FSharp/)
 
 **Stringier** was born out of my typical use case of C#: working with text. While I generally really like the language, it could be better. Some of this is syntax related. Some of this is missing features. This project exists to remedy that.
