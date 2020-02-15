@@ -102,6 +102,84 @@ namespace Stringier {
 			return new Glyph(builder.ToString());
 		}
 
+
+		/// <summary>
+		/// Indicates whether the specified grapheme is based on a control character.
+		/// </summary>
+		/// <param name="glyph">The grapheme to evaluate.</param>
+		/// <returns><see langword="false"/>, as control characters aren't graphemes.</returns>
+		public static Boolean IsControl(Glyph glyph) => glyph.Utf16SequenceLength != 0 && Char.IsControl(glyph.Sequence[0]);
+
+		/// <summary>
+		/// Indicates whether the specified grapheme is based on a decimal digit.
+		/// </summary>
+		/// <param name="glyph">The grapheme to evaluate.</param>
+		/// <returns><see langword="true"/> if <paramref name="glyph"/> is a decimal digit; otherwise, <see langword="false"/>.</returns>
+		public static Boolean IsDigit(Glyph glyph) => glyph.Utf16SequenceLength != 0 && Char.IsDigit(glyph.Sequence[0]);
+
+		/// <summary>
+		/// Indicates whether the specified grapheme is based on a letter.
+		/// </summary>
+		/// <param name="glyph">The grapheme to evaluate.</param>
+		/// <returns><see langword="true"/> if <paramref name="glyph"/> is a letter; otherwise, <see langword="false"/>.</returns>
+		public static Boolean IsLetter(Glyph glyph) => glyph.Utf16SequenceLength != 0 && Char.IsLetter(glyph.Sequence[0]);
+
+		/// <summary>
+		/// Indicates whether the specified grapheme is based on a letter or decimal digit.
+		/// </summary>
+		/// <param name="glyph">The grapheme to evaluate.</param>
+		/// <returns><see langword="true"/> if <paramref name="glyph"/> is a letter or decimal digit; otherwise, <see langword="false"/>.</returns>
+		public static Boolean IsLetterOrDigit(Glyph glyph) => glyph.Utf16SequenceLength != 0 && Char.IsLetterOrDigit(glyph.Sequence[0]);
+
+		/// <summary>
+		/// Indicates whether the specified grapheme is based on a lowercase letter.
+		/// </summary>
+		/// <param name="glyph">The grapheme to evaluate.</param>
+		/// <returns><see langword="true"/> if <paramref name="glyph"/> is a lowercase letter; otherwise, <see langword="false"/>.</returns>
+		public static Boolean IsLower(Glyph glyph) => glyph.Utf16SequenceLength != 0 && Char.IsLower(glyph.Sequence[0]);
+
+		/// <summary>
+		/// Indicates whether the specified grapheme is based on a number.
+		/// </summary>
+		/// <param name="glyph">The grapheme to evaluate.</param>
+		/// <returns><see langword="true"/> if <paramref name="glyph"/> is a number; otherwise, <see langword="false"/>.</returns>
+		public static Boolean IsNumber(Glyph glyph) => glyph.Utf16SequenceLength != 0 && Char.IsNumber(glyph.Sequence[0]);
+
+		/// <summary>
+		/// Indicates whether the specified grapheme is based on a punctuation mark.
+		/// </summary>
+		/// <param name="glyph">The grapheme to evaluate.</param>
+		/// <returns><see langword="true"/> if <paramref name="glyph"/> is a punctuation mark; otherwise, <see langword="false"/>.</returns>
+		public static Boolean IsPunctuation(Glyph glyph) => glyph.Utf16SequenceLength != 0 && Char.IsPunctuation(glyph.Sequence[0]);
+
+		/// <summary>
+		/// Indicates whether the specified grapheme is based on a separator.
+		/// </summary>
+		/// <param name="glyph">The grapheme to evaluate.</param>
+		/// <returns><see langword="true"/> if <paramref name="glyph"/> is a separator; otherwise, <see langword="false"/>.</returns>
+		public static Boolean IsSeparator(Glyph glyph) => glyph.Utf16SequenceLength != 0 && Char.IsSeparator(glyph.Sequence[0]);
+
+		/// <summary>
+		/// Indicates whether the specified grapheme is based on a symbol.
+		/// </summary>
+		/// <param name="glyph">The grapheme to evaluate.</param>
+		/// <returns><see langword="true"/> if <paramref name="glyph"/> is a symbol; otherwise, <see langword="false"/>.</returns>
+		public static Boolean IsSymbol(Glyph glyph) => glyph.Utf16SequenceLength != 0 && Char.IsSymbol(glyph.Sequence[0]);
+
+		/// <summary>
+		/// Indicates whether the specified grapheme is based on an uppercase letter.
+		/// </summary>
+		/// <param name="glyph">The grapheme to evaluate.</param>
+		/// <returns><see langword="true"/> if <paramref name="glyph"/> is an uppercase letter; otherwise, <see langword="false"/>.</returns>
+		public static Boolean IsUpper(Glyph glyph) => glyph.Utf16SequenceLength != 0 && Char.IsUpper(glyph.Sequence[0]);
+
+		/// <summary>
+		/// Indicates whether the specified grapheme is based on whitespace.
+		/// </summary>
+		/// <param name="glyph">The grapheme to evaluate.</param>
+		/// <returns><see langword="true"/> if <paramref name="glyph"/> is whitespace; otherwise, <see langword="false"/>.</returns>
+		public static Boolean IsWhiteSpace(Glyph glyph) => glyph.Utf16SequenceLength != 0 && Char.IsWhiteSpace(glyph.Sequence[0]);
+
 		/// <summary>
 		/// Split the <paramref name="source"/> into its graphemes.
 		/// </summary>
