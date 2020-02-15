@@ -236,6 +236,15 @@ type GlyphTests() =
         Assert.AreEqual(Glyph(sequence), rune)
 
     [<DataTestMethod>]
+    [<DataRow("", "")>]
+    [<DataRow("\u0061", "\u0061")>]
+    [<DataRow("\u0061\u0061", "\u0061\u0061")>]
+    [<DataRow("\u0061\u0301\u0061", "\u0061\u0061\u0301")>]
+    [<DataRow("\u0065\u0301\u0066\u0061\u0063", "\u0063\u0061\u0066\u0065\u0301")>]
+    member _.``reverse - string`` (exp:string, src:string) =
+        Assert.AreEqual(exp, src.Reverse())
+
+    [<DataTestMethod>]
     [<DataRow("a", 1, "\u0061\u0062", 0)>]
     [<DataRow("b", 1, "\u0061\u0062", 1)>]
     [<DataRow("á", 1, "\u00E1\u0062", 0)>]
