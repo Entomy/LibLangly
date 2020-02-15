@@ -26,5 +26,6 @@ namespace Stringier {
 		/// <param name="span">The <see cref="Span{T}"/> of <see cref="Char"/> to enumerate.</param>
 		/// <returns>An enumerator for the <see cref="Glyph"/> of the <paramref name="span"/>.</returns>
 		public static SpanGlyphEnumerator EnumerateGlyphs(this Span<Char> span) => new SpanGlyphEnumerator(span);
+
 	}
 }

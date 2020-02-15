@@ -1,5 +1,6 @@
 using System;
 using System.Globalization;
+using System.Linq;
 using System.Text;
 using Defender;
 
@@ -102,6 +103,13 @@ namespace Stringier {
 		}
 
 		/// <summary>
+		/// Split the <paramref name="source"/> into its graphemes.
+		/// </summary>
+		/// <param name="source">The <see cref="String"/> to split.</param>
+		/// <returns>An <see cref="Array"/> of <see cref="Glyph"/>.</returns>
+		public static Glyph[] Split(String source) => source.EnumerateGlyphs().ToArray();
+
+		/// <summary>
 		/// Converts the <paramref name="glyph"/> to its lowercase equivalent.
 		/// </summary>
 		/// <param name="glyph">The <see cref="Glyph"/> to convert.</param>
@@ -125,6 +133,19 @@ namespace Stringier {
 		/// <param name="glyph">The <see cref="Glyph"/> to convert.</param>
 		/// <returns>The lowercase equivalent of <paramref name="glyph"/>, or the unchanged value of <paramref name="glyph"/> if <paramref name="glyph"/> is already lowercase, has no lowercase equivalent, or is not alphabetic.</returns>
 		public static Glyph ToLowerInvariant(Glyph glyph) => new Glyph(glyph.Sequence.ToLowerInvariant());
+
+		/// <summary>
+		/// Returns a string of the <paramref name="glyphs"/>.
+		/// </summary>
+		/// <param name="glyphs">The graphemes of the <see	cref="String"/>.</param>
+		/// <returns>A <see cref="String"/> of the <paramref name="glyphs"/>.</returns>
+		public static String ToString(Glyph[] glyphs) {
+			StringBuilder builder = new StringBuilder();
+			foreach (Glyph glyph in glyphs) {
+				_ = builder.Append(glyph);
+			}
+			return builder.ToString();
+		}
 
 		/// <summary>
 		/// Converts the <paramref name="glyph"/> to its uppercase equivalent.

@@ -252,6 +252,13 @@ type GlyphTests() =
         Assert.AreEqual(exp, cons)
 
     [<DataTestMethod>]
+    [<DataRow("")>]
+    [<DataRow("a")>]
+    [<DataRow("aa")>]
+    [<DataRow("aà")>]
+    member _.``split`` (src:string) = Assert.AreEqual(src, Glyph.ToString(Glyph.Split(src)))
+
+    [<DataTestMethod>]
     [<DataRow("\u00E0", "\u00E0")>] // à <=< à
     [<DataRow("\u00E0", "\u00C0")>] // à <=< À
     [<DataRow("\u0061\u0300", "\u00C0")>] // à <=< À
