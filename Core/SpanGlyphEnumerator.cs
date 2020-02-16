@@ -26,5 +26,16 @@ namespace Stringier {
 			nextIndex += charsConsumed;
 			return charsConsumed > 0;
 		}
+
+		internal Glyph[] ToArray() {
+			Glyph[] buff = new Glyph[buffer.Length];
+			Int32 b = 0;
+			while (MoveNext()) {
+				buff[b++] = Current;
+			}
+			Glyph[] result = new Glyph[b];
+			Array.Copy(buff, 0, result, 0, b);
+			return result;
+		}
 	}
 }

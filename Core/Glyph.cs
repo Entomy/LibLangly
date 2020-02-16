@@ -188,6 +188,20 @@ namespace Stringier {
 		public static Glyph[] Split(String source) => source.EnumerateGlyphs().ToArray();
 
 		/// <summary>
+		/// Split the <paramref name="source"/> into its graphemes.
+		/// </summary>
+		/// <param name="source">The <see cref="Span{T}"/> of <see cref="Char"/> to split.</param>
+		/// <returns>An <see cref="Array"/> of <see cref="Glyph"/>.</returns>
+		public static Glyph[] Split(Span<Char> source) => source.EnumerateGlyphs().ToArray();
+
+		/// <summary>
+		/// Split the <paramref name="source"/> into its graphemes.
+		/// </summary>
+		/// <param name="source">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to split.</param>
+		/// <returns>An <see cref="Array"/> of <see cref="Glyph"/>.</returns>
+		public static Glyph[] Split(ReadOnlySpan<Char> source) => source.EnumerateGlyphs().ToArray();
+
+		/// <summary>
 		/// Converts the <paramref name="glyph"/> to its lowercase equivalent.
 		/// </summary>
 		/// <param name="glyph">The <see cref="Glyph"/> to convert.</param>
