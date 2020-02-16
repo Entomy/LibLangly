@@ -9,14 +9,17 @@ namespace Benchmarks.Algorithms {
 	[SimpleJob(RuntimeMoniker.Mono)]
 	[MemoryDiagnoser]
 	public class FixedEditDistanceBenchmarks {
-		[Params("ram")]
+		[Params("ram", "rám")]
 		public String Source { get; set; }
 
 		[Params("ram", "rom", "rob", "bob")]
 		public String Other { get; set; }
 
 		[Benchmark]
-		public Int32 Hamming() => HammingDistance(Source, Other);
+		public Int32 Hamming_GraphemeWise() => HammingDistance(Source, Other);
+
+		[Benchmark]
+		public Int32 Hamming_CharacterWise() => HammingDistance(Source.AsSpan(), Other.AsSpan());
 
 		[Benchmark]
 		public Int32 Levenshtein() => LevenshteinDistance(Source, Other);

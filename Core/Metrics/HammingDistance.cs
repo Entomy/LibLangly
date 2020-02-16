@@ -3,8 +3,10 @@ using Defender;
 
 namespace Stringier {
 	public static partial class Metrics {
+		#region Grapheme-Wise
+
 		/// <summary>
-		/// Calculates the Hamming edit-distance between the <paramref name="source"/> <see cref="String"/> and <paramref name="other"/> <see cref="String"/>.
+		/// Calculates the Hamming edit-distance, grapheme-wise, between the <paramref name="source"/> and <paramref name="other"/>.
 		/// </summary>
 		/// <param name="source">The source <see cref="String"/>.</param>
 		/// <param name="other">The other <see cref="String"/>.</param>
@@ -12,47 +14,139 @@ namespace Stringier {
 		public static Int32 HammingDistance(String source, String other) {
 			Guard.NotNull(source, nameof(source));
 			Guard.NotNull(other, nameof(other));
-			return ReferenceEquals(source, other) ? 0 : HammingDistance(source.AsSpan(), other.AsSpan());
+			if (ReferenceEquals(source, other)) {
+				return 0;
+			}
+			Glyph[] src = Glyph.Split(source);
+			Glyph[] oth = Glyph.Split(other);
+			Guard.Equal(src.Length, nameof(source), oth.Length, nameof(other));
+			return HammingDistance(src, oth);
 		}
 
 		/// <summary>
-		/// Calculates the Hamming edit-distance between the <paramref name="source"/> <see cref="String"/> and <paramref name="other"/> <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/>.
+		/// Calculates the Hamming edit-distance, grapheme-wise, between the <paramref name="source"/> and <paramref name="other"/>.
 		/// </summary>
 		/// <param name="source">The source <see cref="String"/>.</param>
 		/// <param name="other">The other <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/>.</param>
 		/// <returns>The number of edits to get from <paramref name="source"/> to <paramref name="other"/>.</returns>
 		public static Int32 HammingDistance(String source, ReadOnlySpan<Char> other) {
 			Guard.NotNull(source, nameof(source));
-			return HammingDistance(source.AsSpan(), other);
+			Glyph[] src = Glyph.Split(source);
+			Glyph[] oth = Glyph.Split(other);
+			Guard.Equal(src.Length, nameof(source), oth.Length, nameof(other));
+			return HammingDistance(src, oth);
 		}
 
 		/// <summary>
-		/// Calculates the Hamming edit-distance between the <paramref name="source"/> <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> and <paramref name="other"/> <see cref="String"/>.
+		/// Calculates the Hamming edit-distance, grapheme-wise, between the <paramref name="source"/> and <paramref name="other"/>.
 		/// </summary>
 		/// <param name="source">The source <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/>.</param>
 		/// <param name="other">The other <see cref="String"/>.</param>
 		/// <returns>The number of edits to get from <paramref name="source"/> to <paramref name="other"/>.</returns>
 		public static Int32 HammingDistance(ReadOnlySpan<Char> source, String other) {
 			Guard.NotNull(other, nameof(other));
-			return HammingDistance(source, other.AsSpan());
+			Glyph[] src = Glyph.Split(source);
+			Glyph[] oth = Glyph.Split(other);
+			Guard.Equal(src.Length, nameof(source), oth.Length, nameof(other));
+			return HammingDistance(src, oth);
+		}
+
+		#endregion
+
+		#region Character-Wise
+
+		/// <summary>
+		/// Calculates the Hamming edit-distance, character-wise, between the <paramref name="source"/> and <paramref name="other"/>>.
+		/// </summary>
+		/// <param name="source">The source <see cref="Array"/> of <see cref="Char"/>.</param>
+		/// <param name="other">The other <see cref="Array"/> of <see cref="Char"/>.</param>
+		/// <returns>The number of edits to get from <paramref name="source"/> to <paramref name="other"/>.</returns>
+		public static Int32 HammingDistance(Char[] source, Char[] other) {
+			Guard.NotNull(source, nameof(source));
+			Guard.NotNull(other, nameof(other));
+			Guard.Equal(source.Length, nameof(source), other.Length, nameof(other));
+			return ReferenceEquals(source, other) ? 0 : HammingDistance<Char>(source, other);
 		}
 
 		/// <summary>
-		/// Calculates the Hamming edit-distance between the <paramref name="source"/> <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> and <paramref name="other"/> <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/>.
+		/// Calculates the Hamming edit-distance, character-wise, between the <paramref name="source"/> and <paramref name="other"/>.
+		/// </summary>
+		/// <param name="source">The source <see cref="Array"/> of <see cref="Char"/>.</param>
+		/// <param name="other">The other <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/>.</param>
+		/// <returns>The number of edits to get from <paramref name="source"/> to <paramref name="other"/>.</returns>
+		public static Int32 HammingDistance(Char[] source, ReadOnlySpan<Char> other) {
+			Guard.NotNull(source, nameof(source));
+			Guard.Equal(source.Length, nameof(source), other.Length, nameof(other));
+			return HammingDistance<Char>(source, other);
+		}
+
+		/// <summary>
+		/// Calculates the Hamming edit-distance, character-wise, between the <paramref name="source"/> and <paramref name="other"/>.
+		/// </summary>
+		/// <param name="source">The source <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/>.</param>
+		/// <param name="other">The other <see cref="Array"/> of <see cref="Char"/>.</param>
+		/// <returns>The number of edits to get from <paramref name="source"/> to <paramref name="other"/>.</returns>
+		public static Int32 HammingDistance(ReadOnlySpan<Char> source, Char[] other) {
+			Guard.NotNull(other, nameof(other));
+			Guard.Equal(source.Length, nameof(source), other.Length, nameof(other));
+			return HammingDistance<Char>(source, other);
+		}
+
+		/// <summary>
+		/// Calculates the Hamming edit-distance, character-wise, between the <paramref name="source"/> and <paramref name="other"/>.
 		/// </summary>
 		/// <param name="source">The source <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/>.</param>
 		/// <param name="other">The other <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/>.</param>
 		/// <returns>The number of edits to get from <paramref name="source"/> to <paramref name="other"/>.</returns>
-		/// <exception cref="InvalidOperationException">Parameters must be equal length.</exception>
 		public static Int32 HammingDistance(ReadOnlySpan<Char> source, ReadOnlySpan<Char> other) {
 			Guard.Equal(source.Length, nameof(source), other.Length, nameof(other));
+			return HammingDistance<Char>(source, other);
+		}
+
+		#endregion
+
+		#region Generics
+
+		private static Int32 HammingDistance<T>(T[] source, T[] other) where T : struct, IEquatable<T> {
 			Int32 d = 0;
 			for (Int32 i = 0; i < source.Length; i++) {
-				if (source[i] != other[i]) {
+				if (!source[i].Equals(other[i])) {
 					d++;
 				}
 			}
 			return d;
 		}
+
+		private static Int32 HammingDistance<T>(T[] source, ReadOnlySpan<T> other) where T : struct, IEquatable<T> {
+			Int32 d = 0;
+			for (Int32 i = 0; i < source.Length; i++) {
+				if (!source[i].Equals(other[i])) {
+					d++;
+				}
+			}
+			return d;
+		}
+
+		private static Int32 HammingDistance<T>(ReadOnlySpan<T> source, T[] other) where T : struct, IEquatable<T> {
+			Int32 d = 0;
+			for (Int32 i = 0; i < source.Length; i++) {
+				if (!source[i].Equals(other[i])) {
+					d++;
+				}
+			}
+			return d;
+		}
+
+		private static Int32 HammingDistance<T>(ReadOnlySpan<T> source, ReadOnlySpan<T> other) where T : struct, IEquatable<T> {
+			Int32 d = 0;
+			for (Int32 i = 0; i < source.Length; i++) {
+				if (!source[i].Equals(other[i])) {
+					d++;
+				}
+			}
+			return d;
+		}
+
+		#endregion
 	}
 }
