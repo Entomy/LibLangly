@@ -17,6 +17,7 @@ namespace Stringier {
 		/// <param name="bad">Whether to insert a bad character into the string.</param>
 		/// <returns>A string of gibberish.</returns>
 		[SuppressMessage("Usage", "SecurityIntelliSenseCS:MS Security rules violation", Justification = "This is just a text generator for tests and benchmarks, it doesn't need to be cryptographically secure")]
+		[SuppressMessage("Security", "SCS0005:Weak random generator", Justification = "This is just a text generator for tests and benchmarks, it doesn't need to be cryptographically secure")]
 		public static String Generate(Int32 reductionFactor, Boolean bad = false) {
 			Random random = new Random();
 			Char[] pool = new[] { ' ', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };

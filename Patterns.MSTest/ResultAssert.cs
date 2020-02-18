@@ -18,7 +18,7 @@ namespace Microsoft.VisualStudio.TestTools.UnitTesting {
 		}
 
 		/// <summary>
-		/// Tests whether the specied <see cref="Actual"/> result is what was <paramref name="expected"/>.
+		/// Tests whether the specied <paramref name="actual"/> result is what was <paramref name="expected"/>.
 		/// </summary>
 		/// <param name="expected">The <see cref="String"/> of expected text.</param>
 		/// <param name="actual">The parser <see cref="Result"/>.</param>

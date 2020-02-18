@@ -49,7 +49,7 @@ namespace Stringier.Patterns {
 		/// Attempt to consume the <paramref name="pattern"/> from the <paramref name="source"/>
 		/// </summary>
 		/// <param name="pattern">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to match</param>
-		/// <param name="source">The <see cref="ReadOnlySpan{T}>"/> of <see cref="Char"/> to consume</param>
+		/// <param name="source">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to consume</param>
 		/// <param name="comparisonType">Whether the comparison is sensitive to casing.</param>
 		/// <returns>A <see cref="Result"/> containing whether a match occured and the consumed string</returns>
 		public static Result Consume(this ReadOnlySpan<Char> pattern, ReadOnlySpan<Char> source, Compare comparisonType) {

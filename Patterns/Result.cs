@@ -60,7 +60,15 @@ namespace Stringier.Patterns {
 
 		public static Boolean operator !=(Result left, Result right) => !left.Equals(right);
 
+		public static Boolean operator !=(Result left, String right) => !left.Equals(right);
+
+		public static Boolean operator !=(String left, Result right) => !right.Equals(left);
+
 		public static Boolean operator ==(Result left, Result right) => left.Equals(right);
+
+		public static Boolean operator ==(Result left, String right) => left.Equals(right);
+
+		public static Boolean operator ==(String left, Result right) => right.Equals(left);
 
 		/// <summary>
 		/// Returns a span that represents the current object.

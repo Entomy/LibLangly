@@ -339,7 +339,7 @@ namespace Stringier {
 		/// Returns the hash code for this glyph.
 		/// </summary>
 		/// <returns>A 32-bit signed integer hash code.</returns>
-		public override Int32 GetHashCode() => InvariantEquivalence?.GetHashCode() ?? Sequence.GetHashCode();
+		public override Int32 GetHashCode() => InvariantEquivalence?.GetHashCode() ?? StringComparer.Ordinal.GetHashCode(Sequence);
 
 		/// <summary>
 		/// Returns a string that represents the current object.
