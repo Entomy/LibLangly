@@ -20,7 +20,7 @@ namespace Stringier {
 			Glyph[] src = Glyph.Split(source);
 			Glyph[] oth = Glyph.Split(other);
 			Guard.Equal(src.Length, nameof(source), oth.Length, nameof(other));
-			return HammingDistance(src, oth);
+			return HammingDistance<Glyph>(src, oth);
 		}
 
 		/// <summary>
@@ -34,7 +34,7 @@ namespace Stringier {
 			Glyph[] src = Glyph.Split(source);
 			Glyph[] oth = Glyph.Split(other);
 			Guard.Equal(src.Length, nameof(source), oth.Length, nameof(other));
-			return HammingDistance(src, oth);
+			return HammingDistance<Glyph>(src, oth);
 		}
 
 		/// <summary>
@@ -48,7 +48,7 @@ namespace Stringier {
 			Glyph[] src = Glyph.Split(source);
 			Glyph[] oth = Glyph.Split(other);
 			Guard.Equal(src.Length, nameof(source), oth.Length, nameof(other));
-			return HammingDistance(src, oth);
+			return HammingDistance<Glyph>(src, oth);
 		}
 
 		#endregion
@@ -105,9 +105,7 @@ namespace Stringier {
 
 		#endregion
 
-		#region Generics
-
-		private static Int32 HammingDistance<T>(T[] source, T[] other) where T : struct, IEquatable<T> {
+		private static Int32 HammingDistance<T>(ReadOnlySpan<T> source, ReadOnlySpan<T> other) where T : IEquatable<T> {
 			Int32 d = 0;
 			for (Int32 i = 0; i < source.Length; i++) {
 				if (!source[i].Equals(other[i])) {
@@ -116,37 +114,5 @@ namespace Stringier {
 			}
 			return d;
 		}
-
-		private static Int32 HammingDistance<T>(T[] source, ReadOnlySpan<T> other) where T : struct, IEquatable<T> {
-			Int32 d = 0;
-			for (Int32 i = 0; i < source.Length; i++) {
-				if (!source[i].Equals(other[i])) {
-					d++;
-				}
-			}
-			return d;
-		}
-
-		private static Int32 HammingDistance<T>(ReadOnlySpan<T> source, T[] other) where T : struct, IEquatable<T> {
-			Int32 d = 0;
-			for (Int32 i = 0; i < source.Length; i++) {
-				if (!source[i].Equals(other[i])) {
-					d++;
-				}
-			}
-			return d;
-		}
-
-		private static Int32 HammingDistance<T>(ReadOnlySpan<T> source, ReadOnlySpan<T> other) where T : struct, IEquatable<T> {
-			Int32 d = 0;
-			for (Int32 i = 0; i < source.Length; i++) {
-				if (!source[i].Equals(other[i])) {
-					d++;
-				}
-			}
-			return d;
-		}
-
-		#endregion
 	}
 }
