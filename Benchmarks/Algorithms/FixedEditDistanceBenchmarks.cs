@@ -22,6 +22,9 @@ namespace Benchmarks.Algorithms {
 		public Int32 Hamming_CharacterWise() => HammingDistance(Source.AsSpan(), Other.AsSpan());
 
 		[Benchmark]
-		public Int32 Levenshtein() => LevenshteinDistance(Source, Other);
+		public Int32 Levenshtein_GraphemeWise() => LevenshteinDistance(Source, Other);
+
+		[Benchmark]
+		public Int32 Levenshtein_CharacterWise() => LevenshteinDistance(Source.AsSpan(), Other.AsSpan());
 	}
 }
