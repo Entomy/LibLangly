@@ -86,22 +86,14 @@ namespace Stringier {
 		public static Glyph GetGlyphAt(ReadOnlySpan<Char> input, Int32 index, out Int32 charsConsumed) {
 			Guard.NotEmpty(input, nameof(input));
 			Guard.GreaterThanOrEqualTo(index, nameof(index), 0);
-			StringBuilder builder = new StringBuilder(); // The use of zalgo text means it's probably unsafe to use a fixed sized buffer. It would need to be huge to accomodate zalgo, which would hurt performance for normal uses. But if a smaller, more suitable, buffer was used for normal purposes, zalgo would crash anything using Glyph, enabling a potential DoS attack.
-			//? It might be possible to handle this as an exceptional case. Use a smaller buffer normally and if the buffer is overrun use a zalgo tolerant handler. Zalgo is an edge case and not normal text, so lower performance for that is acceptable.
-			charsConsumed = 0;
-			if (!IsCombiningMark(input[index])) {
-				_ = builder.Append(input[index]);
-				charsConsumed++;
+			// Check for zalgo text by looking ahead beyond the buffer size
+			if (index + 4 < input.Length && IsCombiningMark(input[index + 4])) {
+				// There is zalgo, so handle that appropriately
+				return GetGlyphAt_Zalgo(input, index, out charsConsumed);
 			} else {
-				throw new ArgumentException("Found a combining mark at this position; This is inside of an existing grapheme.", nameof(index));
+				return GetGlyphAt_Normal(input, index, out charsConsumed);
 			}
-			while (++index < input.Length && IsCombiningMark(input[index])) {
-				_ = builder.Append(input[index]);
-				charsConsumed++;
-			}
-			return new Glyph(builder.ToString());
 		}
-
 
 		/// <summary>
 		/// Indicates whether the specified grapheme is based on a control character.
@@ -346,6 +338,57 @@ namespace Stringier {
 		/// </summary>
 		/// <returns>A string that represents the current object</returns>
 		public override String ToString() => Sequence;
+
+		/// <summary>
+		/// Gets the <see cref="Rune"/> which begins at index <paramref name="index"/> in string <paramref name="input"/>.
+		/// </summary>
+		/// <param name="input">The input <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/>.</param>
+		/// <param name="index">The index within the <paramref name="input"/> to get the <see cref="Glyph"/>.</param>
+		/// <param name="charsConsumed">The number of <see cref="Char"/> consumed as part of the <see cref="Glyph"/>.</param>
+		/// <remarks>
+		/// This variant is optimized for normal text.
+		/// </remarks>
+		private static Glyph GetGlyphAt_Normal(ReadOnlySpan<Char> input, Int32 index, out Int32 charsConsumed) {
+			Char[] buffer = new Char[4];
+			charsConsumed = 0;
+			if (!IsCombiningMark(input[index])) {
+				buffer[charsConsumed++] = input[index];
+			} else {
+				throw new ArgumentException("Found a combining mark at this position; This is inside of an existing grapheme.", nameof(index));
+			}
+			// It's normal text, so do the normal thing.
+			while (++index < input.Length && IsCombiningMark(input[index])) {
+				buffer[charsConsumed++] = input[index];
+			}
+			Char[] result = new Char[charsConsumed];
+			Array.Copy(buffer, 0, result, 0, charsConsumed);
+			return new Glyph(result);
+		}
+
+		/// <summary>
+		/// Gets the <see cref="Rune"/> which begins at index <paramref name="index"/> in string <paramref name="input"/>.
+		/// </summary>
+		/// <param name="input">The input <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/>.</param>
+		/// <param name="index">The index within the <paramref name="input"/> to get the <see cref="Glyph"/>.</param>
+		/// <param name="charsConsumed">The number of <see cref="Char"/> consumed as part of the <see cref="Glyph"/>.</param>
+		/// <remarks>
+		/// This variant tollerates zalgo text, but is far slower.
+		/// </remarks>
+		private static Glyph GetGlyphAt_Zalgo(ReadOnlySpan<Char> input, Int32 index, out Int32 charsConsumed) {
+			StringBuilder builder = new StringBuilder();
+			charsConsumed = 0;
+			if (!IsCombiningMark(input[index])) {
+				_ = builder.Append(input[index]);
+				charsConsumed++;
+			} else {
+				throw new ArgumentException("Found a combining mark at this position; This is inside of an existing grapheme.", nameof(index));
+			}
+			while (++index < input.Length && IsCombiningMark(input[index])) {
+				_ = builder.Append(input[index]);
+				charsConsumed++;
+			}
+			return new Glyph(builder.ToString());
+		}
 
 		/// <summary>
 		/// Tests whether the <paramref name="char"/> is a combining or enclosing mark.
