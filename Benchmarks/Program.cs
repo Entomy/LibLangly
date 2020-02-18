@@ -1,7 +1,8 @@
 ﻿using System;
+using Benchmarks.Core;
 using Benchmarks.Extensions;
-using Benchmarks.Algorithms;
 using Benchmarks.Patterns;
+using Benchmarks.Streams;
 using BenchmarkDotNet.Running;
 using Consolator.UI;
 using Consolator.UI.Theming;
@@ -10,7 +11,7 @@ using Console = Consolator.Console;
 namespace Benchmarks {
 	public static class Program {
 		internal readonly static KeyChoiceSet MenuChoices = new KeyChoiceSet(" Enter Choice: ",
-				new KeyChoice(ConsoleKey.D1, "Algorithms", () => {
+				new KeyChoice(ConsoleKey.D1, "Core", () => {
 					Console.WriteChoices(AlgorithmsChoices);
 					Console.ReadChoice(AlgorithmsChoices);
 				}),
@@ -30,7 +31,13 @@ namespace Benchmarks {
 
 		internal readonly static KeyChoiceSet AlgorithmsChoices = new KeyChoiceSet(" Enter Choice: ",
 			new KeyChoice(ConsoleKey.D1, "Edit Distance (Same Length)", () => BenchmarkRunner.Run<FixedEditDistanceBenchmarks>()),
-			new KeyChoice(ConsoleKey.D2, "String Search", () => BenchmarkRunner.Run<SearchBenchmarks>()),
+			new KeyChoice(ConsoleKey.D2, "Glyph", () => {
+				_ = BenchmarkRunner.Run<GlyphConstructorBenchmarks>();
+				_ = BenchmarkRunner.Run<GlyphEqualsBenchmarks>();
+				_ = BenchmarkRunner.Run<GlyphGetGlyphAtBenchmarks>();
+				_ = BenchmarkRunner.Run<GlyphSplitBenchmarks>();
+			}),
+			new KeyChoice(ConsoleKey.D3, "String Search", () => BenchmarkRunner.Run<SearchBenchmarks>()),
 			new BackKeyChoice(ConsoleKey.B, "Back", () => { }));
 
 		internal readonly static KeyChoiceSet ExtensionsChoices = new KeyChoiceSet(" Enter Choice: ",
