@@ -95,7 +95,7 @@ namespace Stringier.Patterns {
 		/// </summary>
 		/// <param name="other">The <see cref="Result"/> to compare to</param>
 		/// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
-		public Boolean Equals(Result other) => Source.Equals(other.Source) && Start.Equals(other.Start) && Length.Equals(other.Length) && Error.Equals(other.Error);
+		public Boolean Equals(Result other) => Source.Equals(other.Source) && Start.Equals(other.Start) && Length.Equals(other.Length) && ((Int32)Error == (Int32)other.Error);
 
 		/// <summary>
 		/// Determines whether this <see cref="Result"/> and the <paramref name="other"/> <see cref="String"/> are equal.
