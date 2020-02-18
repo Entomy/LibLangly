@@ -9,7 +9,7 @@ namespace Benchmarks.Algorithms {
 	[SimpleJob(RuntimeMoniker.Mono)]
 	[MemoryDiagnoser]
 	public class FixedEditDistanceBenchmarks {
-		[Params("ram", "rám")]
+		[Params("ram", "rám")]
 		public String Source { get; set; }
 
 		[Params("ram", "rom", "rob", "bob")]
