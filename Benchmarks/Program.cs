@@ -10,7 +10,7 @@ using Console = Consolator.Console;
 namespace Benchmarks {
 	public static class Program {
 		internal readonly static KeyChoiceSet MenuChoices = new KeyChoiceSet(" Enter Choice: ",
-				new KeyChoice(ConsoleKey.D1, "Algorithsm", () => {
+				new KeyChoice(ConsoleKey.D1, "Algorithms", () => {
 					Console.WriteChoices(AlgorithmsChoices);
 					Console.ReadChoice(AlgorithmsChoices);
 				}),
