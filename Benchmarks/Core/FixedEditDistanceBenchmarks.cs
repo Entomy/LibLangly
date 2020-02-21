@@ -16,15 +16,15 @@ namespace Benchmarks.Core {
 		public String Other { get; set; }
 
 		[Benchmark]
-		public Int32 Hamming_GraphemeWise() => HammingDistance(Source, Other);
+		public Int32 Hamming_GraphemeWise() => HammingDistance(Source.Normalize(), Other.Normalize());
 
 		[Benchmark]
-		public Int32 Hamming_CharacterWise() => HammingDistance(Source.AsSpan(), Other.AsSpan());
+		public Int32 Hamming_CharacterWise() => HammingDistance(Source.Normalize().AsSpan(), Other.Normalize().AsSpan());
 
 		[Benchmark]
-		public Int32 Levenshtein_GraphemeWise() => LevenshteinDistance(Source, Other);
+		public Int32 Levenshtein_GraphemeWise() => LevenshteinDistance(Source.Normalize(), Other.Normalize());
 
 		[Benchmark]
-		public Int32 Levenshtein_CharacterWise() => LevenshteinDistance(Source.AsSpan(), Other.AsSpan());
+		public Int32 Levenshtein_CharacterWise() => LevenshteinDistance(Source.Normalize().AsSpan(), Other.Normalize().AsSpan());
 	}
 }

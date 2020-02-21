@@ -10,14 +10,6 @@ namespace Stringier {
 	/// </summary>
 	public readonly partial struct Glyph : IComparable, IComparable<Glyph>, IEquatable<Char>, IEquatable<Glyph>, IEquatable<Rune> {
 		/// <summary>
-		/// The <see cref="Equivalence"/> instance describing invariant equivalence rules.
-		/// </summary>
-		/// <remarks>
-		/// This is preloaded, not lazy loaded, because the semantics of <see cref="Glyph"/> are entirely built around this, so it will be used.
-		/// </remarks>
-		private readonly Equivalence? InvariantEquivalence;
-
-		/// <summary>
 		/// The sequence representing this <see cref="Glyph"/> as it was found or declared.
 		/// </summary>
 		private readonly String Sequence;
@@ -30,8 +22,7 @@ namespace Stringier {
 			if (IsCombiningMark(@char)) {
 				throw new ArgumentOutOfRangeException(nameof(@char), "Character must not be a combining or enclosing mark");
 			}
-			Sequence = @char.ToString();
-			InvariantEquivalence = InvariantTable[Sequence];
+			Sequence = @char.ToString().Normalize();
 		}
 
 		/// <summary>
@@ -43,8 +34,7 @@ namespace Stringier {
 			if (IsCombiningMark(sequence[0])) {
 				throw new ArgumentOutOfRangeException(nameof(sequence), "First character must not be a combining or enclosing mark");
 			}
-			Sequence = new String(sequence);
-			InvariantEquivalence = InvariantTable[Sequence];
+			Sequence = new String(sequence).Normalize();
 		}
 
 		/// <summary>
@@ -57,8 +47,7 @@ namespace Stringier {
 			if (IsCombiningMark(sequence[0])) {
 				throw new ArgumentOutOfRangeException(nameof(sequence), "First character must not be a combining or enclosing mark");
 			}
-			Sequence = sequence;
-			InvariantEquivalence = InvariantTable[Sequence];
+			Sequence = sequence.Normalize();
 		}
 
 		/// <summary>
@@ -301,14 +290,14 @@ namespace Stringier {
 		/// </summary>
 		/// <param name="other">The <see cref="Char"/> to compare to this instance.</param>
 		/// <returns><see langword="true"/> if the value of <paramref name="other"/> is the same as this instance; otherwise, <see langword="false"/>.</returns>
-		public Boolean Equals(Char other) => InvariantEquivalence?.Equals(other) ?? (Sequence.Length == 1 && Equals(Sequence[0], other));
+		public Boolean Equals(Char other) => Sequence.Length == 1 && Sequence[0].Equals(other);
 
 		/// <summary>
 		/// Determines whether this instance and another specified <see cref="Glyph"/> object have the same value.
 		/// </summary>
 		/// <param name="other">The <see cref="Glyph"/> to compare to this instance.</param>
 		/// <returns><see langword="true"/> if the value of <paramref name="other"/> is the same as this instance; otherwise, <see langword="false"/>.</returns>
-		public Boolean Equals(Glyph other) => InvariantEquivalence?.Equals(other) ?? String.Equals(Sequence, other.Sequence, StringComparison.Ordinal);
+		public Boolean Equals(Glyph other) => String.Equals(Sequence, other.Sequence, StringComparison.Ordinal);
 
 		/// <summary>
 		/// Determines whether this instance and another specified <see cref="Rune"/> object have the same value.
@@ -316,9 +305,7 @@ namespace Stringier {
 		/// <param name="other">The <see cref="Rune"/> to compare to this instance.</param>
 		/// <returns><see langword="true"/> if the value of <paramref name="other"/> is the same as this instance; otherwise, <see langword="false"/>.</returns>
 		public Boolean Equals(Rune other) {
-			if (InvariantEquivalence is Object) {
-				return InvariantEquivalence.Equals(other);
-			} else if (Sequence.Length <= 2) {
+			if (Sequence.Length <= 2) {
 				Span<Char> buffer = new Char[2];
 				Int32 charsCount = other.EncodeToUtf16(buffer);
 				return Sequence.AsSpan().Slice(0, charsCount).Equals(buffer, StringComparison.Ordinal);
@@ -331,7 +318,7 @@ namespace Stringier {
 		/// Returns the hash code for this glyph.
 		/// </summary>
 		/// <returns>A 32-bit signed integer hash code.</returns>
-		public override Int32 GetHashCode() => InvariantEquivalence?.GetHashCode() ?? StringComparer.Ordinal.GetHashCode(Sequence);
+		public override Int32 GetHashCode() => StringComparer.Ordinal.GetHashCode(Sequence);
 
 		/// <summary>
 		/// Returns a string that represents the current object.
