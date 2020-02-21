@@ -241,8 +241,7 @@ type GlyphTests() =
     [<DataRow("\u0061\u0061", "\u0061\u0061")>]
     [<DataRow("\u0061\u0301\u0061", "\u0061\u0061\u0301")>]
     [<DataRow("\u0065\u0301\u0066\u0061\u0063", "\u0063\u0061\u0066\u0065\u0301")>]
-    member _.``reverse - string`` (exp:string, src:string) =
-        Assert.AreEqual(exp.Normalize(), src.Reverse())
+    member _.``reverse - string`` (exp:string, src:string) = Assert.AreEqual(exp, src.Reverse())
 
     [<DataTestMethod>]
     [<DataRow("a", 1, "\u0061\u0062", 0)>]
@@ -265,16 +264,14 @@ type GlyphTests() =
     [<DataRow("\u0061")>]
     [<DataRow("\u0061\u0061")>]
     [<DataRow("\u0061\u0061\u0301")>]
-    member _.``split - string`` (src:string) =
-        Assert.AreEqual(src.Normalize(), Glyph.ToString(Glyph.Split(src)))
+    member _.``split - string`` (src:string) = Assert.AreEqual(src, Glyph.ToString(Glyph.Split(src)))
 
     [<DataTestMethod>]
     [<DataRow("")>]
     [<DataRow("\u0061")>]
     [<DataRow("\u0061\u0061")>]
     [<DataRow("\u0061\u0061\u0301")>]
-    member _.``split - span`` (src:string) =
-        Assert.AreEqual(src.Normalize(), Glyph.ToString(Glyph.Split(src.AsSpan())))
+    member _.``split - span`` (src:string) = Assert.AreEqual(src, Glyph.ToString(Glyph.Split(src.AsSpan())))
 
     [<DataTestMethod>]
     [<DataRow("\u00E0", "\u00E0")>] // à <=< à
