@@ -10,12 +10,12 @@ namespace Stringier {
 	/// </summary>
 	public readonly partial struct Glyph : IComparable, IComparable<Glyph>, IEquatable<Char>, IEquatable<Glyph>, IEquatable<Rune> {
 		/// <summary>
-		/// The <see cref="Equivalence"/> instance describing invariant equivalence rules.
+		/// The <see cref="Array"/> of <see cref="String"/> describing invariant equivalence rules.
 		/// </summary>
 		/// <remarks>
 		/// This is preloaded, not lazy loaded, because the semantics of <see cref="Glyph"/> are entirely built around this, so it will be used.
 		/// </remarks>
-		private readonly Equivalence? InvariantEquivalence;
+		private readonly String[]? InvariantEquivalence;
 
 		/// <summary>
 		/// The sequence representing this <see cref="Glyph"/> as it was found or declared.
@@ -301,14 +301,36 @@ namespace Stringier {
 		/// </summary>
 		/// <param name="other">The <see cref="Char"/> to compare to this instance.</param>
 		/// <returns><see langword="true"/> if the value of <paramref name="other"/> is the same as this instance; otherwise, <see langword="false"/>.</returns>
-		public Boolean Equals(Char other) => InvariantEquivalence?.Equals(other) ?? (Sequence.Length == 1 && Equals(Sequence[0], other));
+		public Boolean Equals(Char other) {
+			if (InvariantEquivalence is null) {
+				return Sequence.Length == 1 && Sequence[0].Equals(other);
+			} else {
+				foreach (String sequence in InvariantEquivalence) {
+					if (sequence.Length == 1 && sequence[0].Equals(other)) {
+						return true;
+					}
+				}
+				return false;
+			}
+		}
 
 		/// <summary>
 		/// Determines whether this instance and another specified <see cref="Glyph"/> object have the same value.
 		/// </summary>
 		/// <param name="other">The <see cref="Glyph"/> to compare to this instance.</param>
 		/// <returns><see langword="true"/> if the value of <paramref name="other"/> is the same as this instance; otherwise, <see langword="false"/>.</returns>
-		public Boolean Equals(Glyph other) => InvariantEquivalence?.Equals(other) ?? String.Equals(Sequence, other.Sequence, StringComparison.Ordinal);
+		public Boolean Equals(Glyph other) {
+			if (InvariantEquivalence is null) {
+				return String.Equals(Sequence, other.Sequence, StringComparison.Ordinal);
+			} else {
+				foreach (String sequence in InvariantEquivalence) {
+					if (String.Equals(sequence, other.Sequence, StringComparison.Ordinal)) {
+						return true;
+					}
+				}
+				return false;
+			}
+		}
 
 		/// <summary>
 		/// Determines whether this instance and another specified <see cref="Rune"/> object have the same value.
@@ -317,12 +339,37 @@ namespace Stringier {
 		/// <returns><see langword="true"/> if the value of <paramref name="other"/> is the same as this instance; otherwise, <see langword="false"/>.</returns>
 		public Boolean Equals(Rune other) {
 			if (InvariantEquivalence is Object) {
-				return InvariantEquivalence.Equals(other);
+				Span<Char> buffer = new Char[2];
+				Int32 charsCount = other.EncodeToUtf16(buffer);
+				foreach (String sequence in InvariantEquivalence) {
+					if (sequence.Length <= 2 && sequence.AsSpan().Slice(0, charsCount).Equals(buffer.Slice(0, charsCount), StringComparison.Ordinal)) {
+						return true;
+					}
+				}
+				return false;
 			} else if (Sequence.Length <= 2) {
 				Span<Char> buffer = new Char[2];
 				Int32 charsCount = other.EncodeToUtf16(buffer);
 				return Sequence.AsSpan().Slice(0, charsCount).Equals(buffer, StringComparison.Ordinal);
 			} else {
+				return false;
+			}
+		}
+
+		/// <summary>
+		/// Determines whether this instance and another specified <see cref="String"/> object have the same value.
+		/// </summary>
+		/// <param name="other">The <see cref="String"/> to compare to this instance.</param>
+		/// <returns><see langword="true"/> if the value of <paramref name="other"/> is the same as this instance; otherwise, <see langword="false"/>.</returns>
+		public Boolean Equals(String other) {
+			if (InvariantEquivalence is null) {
+				return String.Equals(Sequence, other, StringComparison.Ordinal);
+			} else {
+				foreach (String sequence in InvariantEquivalence) {
+					if (String.Equals(sequence, other, StringComparison.Ordinal)) {
+						return true;
+					}
+				}
 				return false;
 			}
 		}
