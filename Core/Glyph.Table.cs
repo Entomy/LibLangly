@@ -10,33 +10,23 @@ namespace Stringier {
             /// <summary>
             /// The set of <see cref="Equivalence"/> in this table.
             /// </summary>
-            private readonly HashSet<Equivalence> Equivalences;
+            private readonly Dictionary<String, Equivalence> Equivalences;
 
-            /// <summary>
-            /// Initialize a new <see cref="Table"/> from the given <paramref name="equivalences"/>.
-            /// </summary>
-            /// <param name="equivalences">The set of <see cref="Equivalence"/> in this table.</param>
-            internal Table(params Equivalence[] equivalences) => Equivalences = new HashSet<Equivalence>(equivalences);
-
-			internal Equivalence? this[Glyph glyph] {
-				get {
-					foreach (Equivalence equivalence in Equivalences) {
-						if (equivalence.Equals(glyph)) {
-							return equivalence;
-						}
-					}
-					return null;
+			/// <summary>
+			/// Initialize a new <see cref="Table"/> from the given <paramref name="equivalences"/>.
+			/// </summary>
+			/// <param name="equivalences">The set of <see cref="Equivalence"/> in this table.</param>
+			internal Table(params KeyValuePair<String, Equivalence>[] equivalences) {
+				Equivalences = new Dictionary<String, Equivalence>();
+				foreach (KeyValuePair<String, Equivalence> equivalence in equivalences) {
+					Equivalences.Add(equivalence.Key, equivalence.Value);
 				}
 			}
 
 			internal Equivalence? this[String sequence] {
 				get {
-					foreach (Equivalence equivalence in Equivalences) {
-						if (equivalence.Equals(sequence)) {
-							return equivalence;
-						}
-					}
-					return null;
+					_ = Equivalences.TryGetValue(sequence, out Equivalence equivalence);
+					return equivalence;
 				}
 			}
         }

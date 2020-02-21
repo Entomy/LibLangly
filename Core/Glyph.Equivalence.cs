@@ -35,7 +35,7 @@ namespace Stringier {
 
 			public Boolean Equals(Glyph other) {
 				foreach (String sequence in Sequences) {
-					if (String.Equals(sequence, other.Sequence, StringComparison.Ordinal)) {
+					if (String.Equals(sequence, other.Sequence, StringComparison.InvariantCulture)) {
 						return true;
 					}
 				}
@@ -46,7 +46,7 @@ namespace Stringier {
 				Span<Char> buffer = new Char[2];
 				Int32 charsCount = other.EncodeToUtf16(buffer);
 				foreach (String sequence in Sequences) {
-					if (sequence.Length <= 2 && sequence.AsSpan().Slice(0, charsCount).Equals(buffer.Slice(0, charsCount), StringComparison.Ordinal)) {
+					if (sequence.Length <= 2 && sequence.AsSpan().Slice(0, charsCount).Equals(buffer.Slice(0, charsCount), StringComparison.InvariantCulture)) {
 						return true;
 					}
 				}
@@ -55,7 +55,7 @@ namespace Stringier {
 
 			public Boolean Equals(String other) {
 				foreach (String sequence in Sequences) {
-					if (String.Equals(sequence, other, StringComparison.Ordinal)) {
+					if (String.Equals(sequence, other, StringComparison.InvariantCulture)) {
 						return true;
 					}
 				}
