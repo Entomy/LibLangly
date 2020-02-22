@@ -317,7 +317,7 @@ namespace Stringier {
 			if (InvariantEquivalence == default) {
 				return Sequence.Length == 1 && Sequence[0].Equals(other);
 			} else {
-				return !IsCombiningMark(other) && InvariantEquivalence.Equals(InvariantTable[other.ToString()]);
+				return InvariantEquivalence.Equals(InvariantTable[other.ToString()]);
 			}
 		}
 
@@ -343,7 +343,7 @@ namespace Stringier {
 			if (InvariantEquivalence == default) {
 				return String.Equals(Sequence, other.ToString(), StringComparison.Ordinal);
 			} else {
-				return !IsCombiningMark(other) && InvariantEquivalence.Equals(InvariantTable[other.ToString()]);
+				return InvariantEquivalence.Equals(InvariantTable[other.ToString()]);
 			}
 		}
 
