@@ -10,22 +10,22 @@ namespace Stringier {
             /// <summary>
             /// The set of equivalencies in this table.
             /// </summary>
-            private readonly Dictionary<String, Object> Equivalences;
+            private readonly Dictionary<String, Char> Equivalences;
 
 			/// <summary>
 			/// Initialize a new <see cref="Table"/> from the given <paramref name="equivalences"/>.
 			/// </summary>
 			/// <param name="equivalences">The set of equivalencies in this table.</param>
-			internal Table(params KeyValuePair<String, Object>[] equivalences) {
-				Equivalences = new Dictionary<String, Object>();
-				foreach (KeyValuePair<String, Object> equivalence in equivalences) {
+			internal Table(params KeyValuePair<String, Char>[] equivalences) {
+				Equivalences = new Dictionary<String, Char>();
+				foreach (KeyValuePair<String, Char> equivalence in equivalences) {
 					Equivalences.Add(equivalence.Key, equivalence.Value);
 				}
 			}
 
-			internal Object? this[String sequence] {
+			internal Char this[String sequence] {
 				get {
-					_ = Equivalences.TryGetValue(sequence, out Object equivalence);
+					_ = Equivalences.TryGetValue(sequence, out Char equivalence);
 					return equivalence;
 				}
 			}

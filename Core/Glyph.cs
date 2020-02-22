@@ -15,7 +15,7 @@ namespace Stringier {
 		/// <remarks>
 		/// This is preloaded, not lazy loaded, because the semantics of <see cref="Glyph"/> are entirely built around this, so it will be used.
 		/// </remarks>
-		private readonly Object? InvariantEquivalence;
+		private readonly Char InvariantEquivalence;
 
 		/// <summary>
 		/// The sequence representing this <see cref="Glyph"/> as it was found or declared.
@@ -314,10 +314,10 @@ namespace Stringier {
 		/// <param name="other">The <see cref="Char"/> to compare to this instance.</param>
 		/// <returns><see langword="true"/> if the value of <paramref name="other"/> is the same as this instance; otherwise, <see langword="false"/>.</returns>
 		public Boolean Equals(Char other) {
-			if (InvariantEquivalence is null) {
+			if (InvariantEquivalence == default) {
 				return Sequence.Length == 1 && Sequence[0].Equals(other);
 			} else {
-				return !IsCombiningMark(other) && ReferenceEquals(InvariantEquivalence, new Glyph(other).InvariantEquivalence);
+				return !IsCombiningMark(other) && InvariantEquivalence.Equals(InvariantTable[other.ToString()]);
 			}
 		}
 
@@ -327,10 +327,10 @@ namespace Stringier {
 		/// <param name="other">The <see cref="Glyph"/> to compare to this instance.</param>
 		/// <returns><see langword="true"/> if the value of <paramref name="other"/> is the same as this instance; otherwise, <see langword="false"/>.</returns>
 		public Boolean Equals(Glyph other) {
-			if (InvariantEquivalence is null) {
+			if (InvariantEquivalence == default) {
 				return String.Equals(Sequence, other.Sequence, StringComparison.Ordinal);
 			} else {
-				return ReferenceEquals(InvariantEquivalence, other.InvariantEquivalence);
+				return InvariantEquivalence.Equals(other.InvariantEquivalence);
 			}
 		}
 
@@ -340,10 +340,10 @@ namespace Stringier {
 		/// <param name="other">The <see cref="Rune"/> to compare to this instance.</param>
 		/// <returns><see langword="true"/> if the value of <paramref name="other"/> is the same as this instance; otherwise, <see langword="false"/>.</returns>
 		public Boolean Equals(Rune other) {
-			if (InvariantEquivalence is null) {
+			if (InvariantEquivalence == default) {
 				return String.Equals(Sequence, other.ToString(), StringComparison.Ordinal);
 			} else {
-				return !IsCombiningMark(other) && ReferenceEquals(InvariantEquivalence, new Glyph(other).InvariantEquivalence);
+				return !IsCombiningMark(other) && InvariantEquivalence.Equals(InvariantTable[other.ToString()]);
 			}
 		}
 
@@ -351,7 +351,7 @@ namespace Stringier {
 		/// Returns the hash code for this glyph.
 		/// </summary>
 		/// <returns>A 32-bit signed integer hash code.</returns>
-		public override Int32 GetHashCode() => InvariantEquivalence?.GetHashCode() ?? StringComparer.Ordinal.GetHashCode(Sequence);
+		public override Int32 GetHashCode() => InvariantEquivalence == default ? InvariantEquivalence.GetHashCode() : StringComparer.Ordinal.GetHashCode(Sequence);
 
 		/// <summary>
 		/// Returns a string that represents the current object.
