@@ -114,7 +114,7 @@ type GlyphTests() =
     [<DataRow("\u00FC", "\u0075\u0308")>] // ü
     [<DataRow("\u00FD", "\u0079\u0301")>] // ý
     [<DataRow("\u00FE", "\u0079\u0308")>] // ÿ
-    member _.``equals - sequence`` (first:string, second:string) =
+    member _.``equals - glyph`` (first:string, second:string) =
         Assert.AreEqual(Glyph(first), Glyph(second))
         Assert.AreEqual(Glyph(second), Glyph(first))
 

@@ -15,7 +15,7 @@ namespace Stringier {
 		/// <remarks>
 		/// This is preloaded, not lazy loaded, because the semantics of <see cref="Glyph"/> are entirely built around this, so it will be used.
 		/// </remarks>
-		private readonly String[]? InvariantEquivalence;
+		private readonly Object? InvariantEquivalence;
 
 		/// <summary>
 		/// The sequence representing this <see cref="Glyph"/> as it was found or declared.
@@ -44,6 +44,18 @@ namespace Stringier {
 				throw new ArgumentOutOfRangeException(nameof(sequence), "First character must not be a combining or enclosing mark");
 			}
 			Sequence = new String(sequence);
+			InvariantEquivalence = InvariantTable[Sequence];
+		}
+
+		/// <summary>
+		/// Initializes a new <see cref="Glyph"/> from the given <paramref name="rune"/>.
+		/// </summary>
+		/// <param name="rune">The <see cref="Rune"/> representing this <see cref="Glyph"/> as it was declared.</param>
+		public Glyph(Rune rune) {
+			if (IsCombiningMark(rune)) {
+				throw new ArgumentOutOfRangeException(nameof(rune), "Character must not be a combining or enclosing mark");
+			}
+			Sequence = rune.ToString();
 			InvariantEquivalence = InvariantTable[Sequence];
 		}
 
@@ -305,12 +317,7 @@ namespace Stringier {
 			if (InvariantEquivalence is null) {
 				return Sequence.Length == 1 && Sequence[0].Equals(other);
 			} else {
-				foreach (String sequence in InvariantEquivalence) {
-					if (sequence.Length == 1 && sequence[0].Equals(other)) {
-						return true;
-					}
-				}
-				return false;
+				return !IsCombiningMark(other) && ReferenceEquals(InvariantEquivalence, new Glyph(other).InvariantEquivalence);
 			}
 		}
 
@@ -323,12 +330,7 @@ namespace Stringier {
 			if (InvariantEquivalence is null) {
 				return String.Equals(Sequence, other.Sequence, StringComparison.Ordinal);
 			} else {
-				foreach (String sequence in InvariantEquivalence) {
-					if (String.Equals(sequence, other.Sequence, StringComparison.Ordinal)) {
-						return true;
-					}
-				}
-				return false;
+				return ReferenceEquals(InvariantEquivalence, other.InvariantEquivalence);
 			}
 		}
 
@@ -338,39 +340,10 @@ namespace Stringier {
 		/// <param name="other">The <see cref="Rune"/> to compare to this instance.</param>
 		/// <returns><see langword="true"/> if the value of <paramref name="other"/> is the same as this instance; otherwise, <see langword="false"/>.</returns>
 		public Boolean Equals(Rune other) {
-			if (InvariantEquivalence is Object) {
-				Span<Char> buffer = new Char[2];
-				Int32 charsCount = other.EncodeToUtf16(buffer);
-				foreach (String sequence in InvariantEquivalence) {
-					if (sequence.Length <= 2 && sequence.AsSpan().Slice(0, charsCount).Equals(buffer.Slice(0, charsCount), StringComparison.Ordinal)) {
-						return true;
-					}
-				}
-				return false;
-			} else if (Sequence.Length <= 2) {
-				Span<Char> buffer = new Char[2];
-				Int32 charsCount = other.EncodeToUtf16(buffer);
-				return Sequence.AsSpan().Slice(0, charsCount).Equals(buffer, StringComparison.Ordinal);
-			} else {
-				return false;
-			}
-		}
-
-		/// <summary>
-		/// Determines whether this instance and another specified <see cref="String"/> object have the same value.
-		/// </summary>
-		/// <param name="other">The <see cref="String"/> to compare to this instance.</param>
-		/// <returns><see langword="true"/> if the value of <paramref name="other"/> is the same as this instance; otherwise, <see langword="false"/>.</returns>
-		public Boolean Equals(String other) {
 			if (InvariantEquivalence is null) {
-				return String.Equals(Sequence, other, StringComparison.Ordinal);
+				return String.Equals(Sequence, other.ToString(), StringComparison.Ordinal);
 			} else {
-				foreach (String sequence in InvariantEquivalence) {
-					if (String.Equals(sequence, other, StringComparison.Ordinal)) {
-						return true;
-					}
-				}
-				return false;
+				return !IsCombiningMark(other) && ReferenceEquals(InvariantEquivalence, new Glyph(other).InvariantEquivalence);
 			}
 		}
 
@@ -444,6 +417,22 @@ namespace Stringier {
 		/// <returns></returns>
 		private static Boolean IsCombiningMark(Char @char) {
 			switch (Char.GetUnicodeCategory(@char)) {
+			case UnicodeCategory.NonSpacingMark:
+			case UnicodeCategory.SpacingCombiningMark:
+			case UnicodeCategory.EnclosingMark:
+				return true;
+			default:
+				return false;
+			}
+		}
+
+		/// <summary>
+		/// Tests whether the <paramref name="rune"/> is a combining or enclosing mark.
+		/// </summary>
+		/// <param name="rune">The <see cref="Rune"/> to test.</param>
+		/// <returns></returns>
+		private static Boolean IsCombiningMark(Rune rune) {
+			switch (Rune.GetUnicodeCategory(rune)) {
 			case UnicodeCategory.NonSpacingMark:
 			case UnicodeCategory.SpacingCombiningMark:
 			case UnicodeCategory.EnclosingMark:
