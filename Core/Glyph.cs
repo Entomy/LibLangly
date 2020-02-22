@@ -103,6 +103,7 @@ namespace Stringier {
 				// There is zalgo, so handle that appropriately
 				return GetGlyphAt_Zalgo(input, index, out charsConsumed);
 			} else {
+				// It's normal text, so do the normal thing
 				return GetGlyphAt_Normal(input, index, out charsConsumed);
 			}
 		}
@@ -368,21 +369,18 @@ namespace Stringier {
 		/// <remarks>
 		/// This variant is optimized for normal text.
 		/// </remarks>
-		private static Glyph GetGlyphAt_Normal(ReadOnlySpan<Char> input, Int32 index, out Int32 charsConsumed) {
-			Char[] buffer = new Char[4];
+		private static unsafe Glyph GetGlyphAt_Normal(ReadOnlySpan<Char> input, Int32 index, out Int32 charsConsumed) {
+			Char* buffer = stackalloc Char[4];
 			charsConsumed = 0;
 			if (!IsCombiningMark(input[index])) {
 				buffer[charsConsumed++] = input[index];
 			} else {
 				throw new ArgumentException("Found a combining mark at this position; This is inside of an existing grapheme.", nameof(index));
 			}
-			// It's normal text, so do the normal thing.
 			while (++index < input.Length && IsCombiningMark(input[index])) {
 				buffer[charsConsumed++] = input[index];
 			}
-			Char[] result = new Char[charsConsumed];
-			Array.Copy(buffer, 0, result, 0, charsConsumed);
-			return new Glyph(result);
+			return new Glyph(new String(buffer, 0, charsConsumed));
 		}
 
 		/// <summary>
