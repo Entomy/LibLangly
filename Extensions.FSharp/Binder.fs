@@ -16,10 +16,6 @@ module Bindings =
         static member FuzzyEquals2(source:string, other:ReadOnlySpan<Char>, maxEdits:int32) = source.FuzzyEquals(other, maxEdits)
         static member FuzzyEquals2(source:ReadOnlySpan<Char>, other:string, maxEdits:int32) = source.FuzzyEquals(other, maxEdits)
         static member FuzzyEquals2(source:ReadOnlySpan<Char>, other:ReadOnlySpan<Char>, maxEdits:int32) = source.FuzzyEquals(other, maxEdits)
-        static member IsPalindrome(source:string) = source.IsPalindrome()
-        static member IsPalindrome(source:char[]) = source.IsPalindrome()
-        static member IsPalindrome(source:Span<Char>) = source.IsPalindrome()
-        static member IsPalindrome(source:ReadOnlySpan<Char>) = source.IsPalindrome()
         static member Join(sequence:char[]) = sequence.Join()
         static member Join(sequence:seq<char>) = sequence.Join()
         static member Join(sequence:seq<string>) = sequence.Join()
@@ -42,8 +38,6 @@ module Bindings =
     let inline _fuzzyEqual< ^t, ^a, ^b when (^t or ^a) : (static member FuzzyEquals : ^a * ^b -> bool)> other source = ((^t or ^a) : (static member FuzzyEquals : ^a * ^b -> bool)(source, other))
 
     let inline _fuzzyEqual2< ^t, ^a, ^b when (^t or ^a) : (static member FuzzyEquals : ^a * ^b * int32 -> bool)> other maxEdits source = ((^t or ^a) : (static member FuzzyEquals : ^a * ^b * int32 -> bool)(source, other, maxEdits))
-
-    let inline _isPalindrome< ^t, ^a when (^t or ^a) : (static member IsPalindrome : ^a -> bool)> source = ((^t or ^a) : (static member IsPalindrome : ^a -> bool)(source))
 
     let inline _join< ^t, ^a, ^b when (^t or ^a) : (static member Join : ^a -> ^b)> sequence = ((^t or ^a) : (static member Join : ^a -> ^b)(sequence))
 

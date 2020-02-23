@@ -43,14 +43,13 @@ namespace Benchmarks {
 				_ = BenchmarkRunner.Run<ContainsStringIEnumerableBenchmarks>();
 			}),
 			new KeyChoice(ConsoleKey.D4, "Ensure", () => BenchmarkRunner.Run<EnsureBenchmarks>()),
-			new KeyChoice(ConsoleKey.D5, "IsPalindrome", () => BenchmarkRunner.Run<IsPalindromeBenchmarks>()),
-			new KeyChoice(ConsoleKey.D6, "Join", () => BenchmarkRunner.Run<JoinBenchmarks>()),
-			new KeyChoice(ConsoleKey.D7, "Lines", () => BenchmarkRunner.Run<LinesBenchmarks>()),
-			new KeyChoice(ConsoleKey.D8, "Occurrences", () => BenchmarkRunner.Run<OccurrencesBenchmarks>()),
-			new KeyChoice(ConsoleKey.D9, "Pad", () => BenchmarkRunner.Run<PadBenchmarks>()),
-			new KeyChoice(ConsoleKey.A, "Split", () => BenchmarkRunner.Run<SplitBenchmarks>()),
-			new BackKeyChoice(ConsoleKey.B, "Back", () => { }),
-			new KeyChoice(ConsoleKey.C, "Repeat", () => BenchmarkRunner.Run<RepeatBenchmarks>()));
+			new KeyChoice(ConsoleKey.D5, "Join", () => BenchmarkRunner.Run<JoinBenchmarks>()),
+			new KeyChoice(ConsoleKey.D6, "Lines", () => BenchmarkRunner.Run<LinesBenchmarks>()),
+			new KeyChoice(ConsoleKey.D7, "Occurrences", () => BenchmarkRunner.Run<OccurrencesBenchmarks>()),
+			new KeyChoice(ConsoleKey.D8, "Pad", () => BenchmarkRunner.Run<PadBenchmarks>()),
+			new KeyChoice(ConsoleKey.D9, "Split", () => BenchmarkRunner.Run<SplitBenchmarks>()),
+			new KeyChoice(ConsoleKey.A, "Repeat", () => BenchmarkRunner.Run<RepeatBenchmarks>()),
+			new BackKeyChoice(ConsoleKey.B, "Back", () => { }));
 
 		internal readonly static KeyChoiceSet PatternsChoices = new KeyChoiceSet(" Enter Choice: ",
 			new KeyChoice(ConsoleKey.D1, "Literal", () => BenchmarkRunner.Run<LiteralBenchmarks>()),

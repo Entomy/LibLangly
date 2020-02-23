@@ -75,11 +75,6 @@ module Extensions =
     let pad2(totalWidth)(padding)(string:string) = string.Pad(totalWidth, padding)
 
     /// <summary>
-    /// Checks if the source text is a palindrome.
-    /// </summary>
-    let inline palindrome(source:^a) = _isPalindrome<Binder, ^a> source
-
-    /// <summary>
     /// Repeat the text, count times.
     /// </summary>
     let inline repeat(count:int32)(text:^a):^c = _repeat<Binder, ^a, int32, ^c> count text

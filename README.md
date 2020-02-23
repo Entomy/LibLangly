@@ -27,6 +27,10 @@ The goals and purpose of this project is provided [here](https://github.com/Ento
 
 **Stringier** was born out of my typical use case of C#: working with text. While I generally really like the language, it could be better. Some of this is syntax related. Some of this is missing features. This project exists to remedy that.
 
+## [Literary](https://github.com/Entomy/Stringier-Literary)
+
+**Literary** extends **Stringier** with literary specific functions. This is useful for things like creative or constrained writing.
+
 ## [Patterns](https://github.com/Entomy/Stringier/tree/master/Patterns) [![Nuget](https://img.shields.io/nuget/dt/Stringier.Patterns.svg?label=Patterns&logo=nuget)](https://www.nuget.org/packages/Stringier.Patterns/) [![Nuget](https://img.shields.io/nuget/dt/Stringier.Patterns.FSharp?label=F%23%20&logo=nuget)](https://www.nuget.org/packages/Stringier.Patterns.FSharp/) [![Nuget](https://img.shields.io/nuget/dt/Stringier.Patterns.MSTest?label=MSTest&logo=nuget)](https://www.nuget.org/packages/Stringier.Patterns.MSTest/) [![Nuget](https://img.shields.io/nuget/dt/Stringier.Patterns.MSTest?label=NUnit&logo=nuget)](https://www.nuget.org/packages/Stringier.Patterns.NUnit/)
 
 **Patterns** extends **Stringier** with further support for pattern declaration and parsing of those patterns. If you're doing a lot of text parsing or text processing, this is probably of interest to you.
