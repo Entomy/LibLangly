@@ -449,66 +449,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Stringier.Streams.StreamExtensions.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Stringier.Streams.StreamExtensions.html",
-          "hash": "kjpsYAdGpD5435Vh274QdQ=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Stringier.Streams.StringStream.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Stringier.Streams.StringStream.html",
-          "hash": "OpdpsE/HytLRbMs3H+xRrQ=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Stringier.Streams.TextReaderExtensions.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Stringier.Streams.TextReaderExtensions.html",
-          "hash": "kEyshyQWuegRWdZwJa8D+g=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Stringier.Streams.TextStream-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Stringier.Streams.TextStream-1.html",
-          "hash": "iRCNuc328hr0RXJkbD4lGQ=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Stringier.Streams.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Stringier.Streams.html",
-          "hash": "5Gc7GgfKT24d9sX+6R05xw=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Stringier.StringierExtensions.yml",
       "output": {
         ".html": {
@@ -549,7 +489,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "s4NbT5i7nPFc7F762def2w=="
+          "hash": "vpdfWj/IBAqID/VfHJtJsA=="
         }
       },
       "is_incremental": false,
@@ -673,6 +613,13 @@
         "skipped_file_count": 0
       },
       "processors": {
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
         "ConceptualDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
@@ -682,15 +629,8 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 44,
-          "skipped_file_count": 44
-        },
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
+          "total_file_count": 39,
+          "skipped_file_count": 39
         }
       }
     },
