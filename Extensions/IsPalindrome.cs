@@ -8,12 +8,7 @@ namespace Stringier {
 		/// </summary>
 		/// <param name="string">The <see cref="String"/> to check.</param>
 		/// <returns><see langword="true"/> if <paramref name="string"/> is a palindrome; otherwise, <see langword="false"/>.</returns>
-		public static Boolean IsPalindrome(this String @string) {
-			Guard.NotNull(@string, nameof(@string));
-			String prepped = PalindromeStrip(@string);
-			String reversed = prepped.Reverse();
-			return String.Equals(prepped, reversed, StringComparison.CurrentCultureIgnoreCase);
-		}
+		public static Boolean IsPalindrome(this String @string) => !(@string is null) && @string.AsSpan().IsPalindrome();
 
 		/// <summary>
 		/// Checks if the <paramref name="chars"/> is a palindrome, character-wise.
@@ -34,7 +29,7 @@ namespace Stringier {
 			reversed.Reverse();
 			// Now actually check it's a palindrome
 			for (Int32 i = 0; i < prepped.Length; i++) {
-				if (prepped[i] != reversed[i]) {
+				if (!prepped[i].Equals(reversed[i], StringComparison.OrdinalIgnoreCase)) {
 					return false;
 				}
 			}
@@ -53,23 +48,11 @@ namespace Stringier {
 			reversed.Reverse();
 			// Now actually check it's a palindrome
 			for (Int32 i = 0; i < prepped.Length; i++) {
-				if (prepped[i] != reversed[i]) {
+				if (!prepped[i].Equals(reversed[i], StringComparison.OrdinalIgnoreCase)) {
 					return false;
 				}
 			}
 			return true;
-		}
-
-		private static String PalindromeStrip(String @string) {
-			// First we need to build the string without any punctuation or whitespace or any other unrelated-to-reading characters
-			Char[] builder = new Char[@string.Length];
-			Int32 b = 0;
-			foreach (Char s in @string) {
-				if (!(s.IsControl() || s.IsPunctuation() || s.IsSeparator() || s.IsSymbol() || s.IsWhiteSpace())) {
-					builder[b++] = s;
-				}
-			}
-			return new String(builder, 0, b);
 		}
 
 		private static ReadOnlySpan<Char> PalindromeStrip(ReadOnlySpan<Char> span) {

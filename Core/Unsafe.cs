@@ -10,6 +10,16 @@ namespace Stringier {
 	/// <para>These also slightly optimize many cases, as type information isn't necessary so the creation of a struct or ref struct never needs to happen.</para>
 	/// </remarks>
 	internal static class Unsafe {
+		internal static Int32 HammingDistance<T>(ReadOnlySpan<T> source, ReadOnlySpan<T> other) where T : IEquatable<T> {
+			Int32 d = 0;
+			for (Int32 i = 0; i < source.Length; i++) {
+				if (!source[i].Equals(other[i])) {
+					d++;
+				}
+			}
+			return d;
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static Boolean IsAscii(UInt32 codePoint) => codePoint <= 0x7Fu;
 
@@ -36,6 +46,34 @@ namespace Stringier {
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static Boolean IsSurrogate(UInt32 codePoint) => codePoint.Within(0xD800u, 0xDFFFu);
+
+		internal static Int32 LevenshteinDistance<T>(ReadOnlySpan<T> source, ReadOnlySpan<T> other) where T : IEquatable<T> {
+			Int32 n = source.Length;
+			Int32 m = other.Length;
+
+			if (n == 0) {
+				return m;
+			} else if (m == 0) {
+				return n;
+			} else {
+				Int32[,] d = new Int32[n + 1, m + 1];
+				for (Int32 i = 0; i <= n; d[i, 0] = i++) { /* Prework */ }
+				for (Int32 j = 0; j <= m; d[0, j] = j++) { /* Prework */ }
+
+				Int32 c;
+				for (Int32 i = 1; i <= n; i++) {
+					for (Int32 j = 1; j <= m; j++) {
+						c = other[j - 1].Equals(source[i - 1]) ? 0 : 1;
+						d[i, j] = Math.Min(
+							Math.Min(
+								d[i - 1, j] + 1,
+								d[i, j - 1] + 1),
+							d[i - 1, j - 1] + c);
+					}
+				}
+				return d[n, m];
+			}
+		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static UInt32 Plane(UInt32 codePoint) => unchecked(codePoint >> 16);

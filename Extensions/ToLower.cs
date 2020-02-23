@@ -20,13 +20,6 @@ namespace Stringier {
 		public static Rune ToLower(this Rune rune) => Rune.ToLower(rune, CultureInfo.CurrentCulture);
 
 		/// <summary>
-		/// Converts this <see cref="Glyph"/> to its lowercase equivalent.
-		/// </summary>
-		/// <param name="glyph">The grapheme to convert.</param>
-		/// <returns>The lowercase equivalent of <paramref name="glyph"/>, or the unchanged value of <paramref name="glyph"/> if <paramref name="glyph"/> is already lowercase, has no lowercase equivalent, or is not alphabetic.</returns>
-		public static Glyph ToLower(this Glyph glyph) => Glyph.ToLower(glyph);
-
-		/// <summary>
 		/// Converts this <see cref="Char"/> to its lowercase equivalent using specified culture-specific formatting information.
 		/// </summary>
 		/// <param name="char">The Unicode character to convert.</param>
@@ -49,17 +42,6 @@ namespace Stringier {
 		}
 
 		/// <summary>
-		/// Converts this <see cref="Glyph"/> to its lowercase equivalent using specified culture-specific formatting information.
-		/// </summary>
-		/// <param name="glyph">The grapheme to convert.</param>
-		/// <param name="culture">An object that supplies culture-specific casing rules.</param>
-		/// <returns>The lowercase equivalent of <paramref name="glyph"/>, modified according to <paramref name="culture"/>, or the unchanged value of <paramref name="glyph"/>, if <paramref name="glyph"/> is already lowercase or not alphabetic.</returns>
-		public static Glyph ToLower(this Glyph glyph, CultureInfo culture) {
-			Guard.NotNull(culture, nameof(culture));
-			return Glyph.ToLower(glyph, culture);
-		}
-
-		/// <summary>
 		/// Converts this <see cref="Char"/> to its lowercase equivalent using the casing rules of the invariant culture.
 		/// </summary>
 		/// <param name="char">The Unicode character to convert.</param>
@@ -72,12 +54,5 @@ namespace Stringier {
 		/// <param name="rune">The Unicode character to convert.</param>
 		/// <returns>The lowercase equivalent of the <paramref name="rune"/> parameter, or the unchanged value of <paramref name="rune"/>, if <paramref name="rune"/> is already lowercase or not alphabetic.</returns>
 		public static Rune ToLowerInvariant(this Rune rune) => Rune.ToLowerInvariant(rune);
-
-		/// <summary>
-		/// Converts this <see cref="Glyph"/> to its lowercase equivalent using the casing rules of the invariant culture.
-		/// </summary>
-		/// <param name="glyph">The grapheme to convert.</param>
-		/// <returns>The lowercase equivalent of the <paramref name="glyph"/> parameter, or the unchanged value of <paramref name="glyph"/>, if <paramref name="glyph"/> is already lowercase or not alphabetic.</returns>
-		public static Glyph ToLowerInvariant(this Glyph glyph) => Glyph.ToLowerInvariant(glyph);
 	}
 }

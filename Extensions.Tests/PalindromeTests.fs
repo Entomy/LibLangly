@@ -17,7 +17,6 @@ type PalindromeTests() =
     [<DataRow("Able was I ere I saw Elba")>]
     [<DataRow("A man, a plan, a canal, Panama!")>]
     [<DataRow("Do, O God, no evil deed! Live on! Do good!")>]
-    [<DataRow("Café Éfac")>] // This uses combining marks
     member _.``palindrome - string`` (src:string) = Assert.IsTrue(palindrome src)
 
     [<DataTestMethod>]
