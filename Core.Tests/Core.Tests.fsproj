@@ -8,12 +8,34 @@
     <ProjectReference Include="..\Core.Tests.Auxillary\Core.Tests.Auxillary.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CodePointTests.fs" />
-    <Compile Include="EditDistanceTests.fs" />
-    <Compile Include="SurrogatePairTests.fs" />
-    <Compile Include="SearchTests.fs" />
-    <Compile Include="RuneTests.fs" />
-    <Compile Include="RuneEnumeratorTests.fs" />
+		<Compile Include="CodePointTests.fs" />
+		<Compile Include="EditDistanceTests.fs" />
+		<Compile Include="SurrogatePairTests.fs" />
+		<Compile Include="SearchTests.fs" />
+		<Compile Include="RuneTests.fs" />
+		<Compile Include="RuneEnumeratorTests.fs" />
+		<Compile Include="AsCharsTests.fs" />
+    <Compile Include="AsStringTests.fs" />
+    <Compile Include="ChopTests.fs" />
+    <Compile Include="CleanTests.fs" />
+    <Compile Include="ContainsTests.fs" />
+    <Compile Include="EnsureTests.fs" />
+    <Compile Include="EqualsTests.fs" />
+    <Compile Include="FormatTableTests.fs" />
+    <Compile Include="FormatTests.fs" />
+    <Compile Include="FuzzyEqualsTests.fs" />
+    <Compile Include="IsCombiningMark.fs" />
+    <Compile Include="IsSubscript.fs" />
+    <Compile Include="IsSuperscript.fs" />
+    <Compile Include="JoinTests.fs" />
+    <Compile Include="LinesTests.fs" />
+    <Compile Include="OccurrencesTests.fs" />
+    <Compile Include="PadTests.fs" />
+    <Compile Include="RepeatTests.fs" />
+    <Compile Include="SplitTests.fs" />
+    <Compile Include="SqueezeTests.fs" />
+    <Compile Include="ToStringsTests.fs" />
+    <Compile Include="WordTests.fs" />
     <Compile Include="Program.fs" />
     <Content Include="../THIRD_PARTY_NOTICES" />
   </ItemGroup>

@@ -1,28 +1,29 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;netcoreapp3.0</TargetFrameworks>
-    <RootNamespace>Stringier</RootNamespace>
-    <AssemblyName>Stringier.Core</AssemblyName>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	<PropertyGroup>
+		<TargetFrameworks>netstandard2.0;netcoreapp3.0</TargetFrameworks>
+		<LangVersion>8.0</LangVersion>
+		<Nullable>enable</Nullable>
+		<AssemblyName>Stringier.Core</AssemblyName>
+		<RootNamespace>Stringier</RootNamespace>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Authors>Patrick Kelly</Authors>
-    <Description>Core library holding all code common to all Stringier subprojects</Description>
-    <Copyright>2019</Copyright>
-    <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/Entomy/Stringier</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/Entomy/Stringier</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
-    <PackageTags />
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+		<Authors>Patrick Kelly</Authors>
+		<Product>Stringier</Product>
+		<Description>Just some simple extensions to make Strings better... stringier</Description>
+		<Copyright>2019</Copyright>
+		<PackageProjectUrl>https://github.com/Entomy/Stringier</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/Entomy/Stringier</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageLicenseUrl></PackageLicenseUrl>
+		<Version>2.3.0</Version>
+		<PackageTags>string, string manipulation, manipulation, string functions, functions, string edit, string edits, edit, edits, rune, runes, unicode</PackageTags>
+		<RootNamespace>Stringier</RootNamespace>
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<PackageIcon>Logo.png</PackageIcon>
-		<Version>2.3.0</Version>
-		<Product>Stringier</Product>
-		<LangVersion>8.0</LangVersion>
-		<Nullable>enable</Nullable>
-		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
 	</PropertyGroup>
 
 	<ItemGroup>

@@ -1,6 +1,4 @@
 ﻿using System;
-using Benchmarks.Core;
-using Benchmarks.Extensions;
 using BenchmarkDotNet.Running;
 using Consolator.UI;
 using Consolator.UI.Theming;
@@ -9,60 +7,24 @@ using Console = Consolator.Console;
 namespace Benchmarks {
 	public static class Program {
 		internal readonly static KeyChoiceSet MenuChoices = new KeyChoiceSet(" Enter Choice: ",
-				new KeyChoice(ConsoleKey.D1, "Core", () => {
-					Console.WriteChoices(AlgorithmsChoices);
-					Console.ReadChoice(AlgorithmsChoices);
-				}),
-				new KeyChoice(ConsoleKey.D2, "Extensions", () => {
-					Console.WriteChoices(ExtensionsChoices);
-					Console.ReadChoice(ExtensionsChoices);
-				}),
-				new KeyChoice(ConsoleKey.D3, "Patterns", () => {
-					Console.WriteChoices(PatternsChoices);
-					Console.ReadChoice(PatternsChoices);
-				}),
-				new BackKeyChoice(ConsoleKey.Q, "Quit", () => Environment.Exit(0)));
-
-		internal readonly static KeyChoiceSet AlgorithmsChoices = new KeyChoiceSet(" Enter Choice: ",
 			new KeyChoice(ConsoleKey.D1, "Edit Distance (Same Length)", () => BenchmarkRunner.Run<FixedEditDistanceBenchmarks>()),
 			new KeyChoice(ConsoleKey.D2, "String Search", () => BenchmarkRunner.Run<SearchBenchmarks>()),
-			new BackKeyChoice(ConsoleKey.B, "Back", () => { }));
-
-		internal readonly static KeyChoiceSet ExtensionsChoices = new KeyChoiceSet(" Enter Choice: ",
-			new KeyChoice(ConsoleKey.D1, "Chop", () => BenchmarkRunner.Run<ChopBenchmarks>()),
-			new KeyChoice(ConsoleKey.D2, "Clean", () => BenchmarkRunner.Run<CleanBenchmarks>()),
-			new KeyChoice(ConsoleKey.D3, "Contains", () => {
+			new KeyChoice(ConsoleKey.D3, "Chop", () => BenchmarkRunner.Run<ChopBenchmarks>()),
+			new KeyChoice(ConsoleKey.D4, "Clean", () => BenchmarkRunner.Run<CleanBenchmarks>()),
+			new KeyChoice(ConsoleKey.D5, "Contains", () => {
 				_ = BenchmarkRunner.Run<ContainsCharStringBenchmarks>();
 				_ = BenchmarkRunner.Run<ContainsCharIEnumerableBenchmarks>();
 				_ = BenchmarkRunner.Run<ContainsStringIEnumerableBenchmarks>();
 			}),
-			new KeyChoice(ConsoleKey.D4, "Ensure", () => BenchmarkRunner.Run<EnsureBenchmarks>()),
-			new KeyChoice(ConsoleKey.D5, "Join", () => BenchmarkRunner.Run<JoinBenchmarks>()),
-			new KeyChoice(ConsoleKey.D6, "Lines", () => BenchmarkRunner.Run<LinesBenchmarks>()),
-			new KeyChoice(ConsoleKey.D7, "Occurrences", () => BenchmarkRunner.Run<OccurrencesBenchmarks>()),
-			new KeyChoice(ConsoleKey.D8, "Pad", () => BenchmarkRunner.Run<PadBenchmarks>()),
-			new KeyChoice(ConsoleKey.D9, "Split", () => BenchmarkRunner.Run<SplitBenchmarks>()),
-			new KeyChoice(ConsoleKey.A, "Repeat", () => BenchmarkRunner.Run<RepeatBenchmarks>()),
-			new BackKeyChoice(ConsoleKey.B, "Back", () => { }));
+			new KeyChoice(ConsoleKey.D6, "Ensure", () => BenchmarkRunner.Run<EnsureBenchmarks>()),
+			new KeyChoice(ConsoleKey.D7, "Join", () => BenchmarkRunner.Run<JoinBenchmarks>()),
+			new KeyChoice(ConsoleKey.D8, "Lines", () => BenchmarkRunner.Run<LinesBenchmarks>()),
+			new KeyChoice(ConsoleKey.D9, "Occurrences", () => BenchmarkRunner.Run<OccurrencesBenchmarks>()),
+			new KeyChoice(ConsoleKey.A, "Pad", () => BenchmarkRunner.Run<PadBenchmarks>()),
+			new KeyChoice(ConsoleKey.B, "Split", () => BenchmarkRunner.Run<SplitBenchmarks>()),
+			new KeyChoice(ConsoleKey.C, "Repeat", () => BenchmarkRunner.Run<RepeatBenchmarks>()),
+			new BackKeyChoice(ConsoleKey.Q, "Quit", () => Environment.Exit(0)));
 
-		internal readonly static KeyChoiceSet PatternsChoices = new KeyChoiceSet(" Enter Choice: ",
-			new KeyChoice(ConsoleKey.D1, "Literal", () => BenchmarkRunner.Run<LiteralBenchmarks>()),
-			new KeyChoice(ConsoleKey.D2, "Alternator", () => BenchmarkRunner.Run<AlternatorBenchmarks>()),
-			new KeyChoice(ConsoleKey.D3, "Concatenator", () => BenchmarkRunner.Run<ConcatenatorBenchmarks>()),
-			new KeyChoice(ConsoleKey.D4, "Kleene's Closure", () => BenchmarkRunner.Run<KleeneClosureBenchmarks>()),
-			new KeyChoice(ConsoleKey.D5, "Fuzzer", () => BenchmarkRunner.Run<FuzzerBenchmarks>()),
-			new KeyChoice(ConsoleKey.D6, "Negator", () => BenchmarkRunner.Run<NegatorBenchmarks>()),
-			new KeyChoice(ConsoleKey.D7, "Optor", () => BenchmarkRunner.Run<OptorBenchmarks>()),
-			new KeyChoice(ConsoleKey.D8, "Ranger", () => BenchmarkRunner.Run<RangerBenchmarks>()),
-			new KeyChoice(ConsoleKey.D9, "Repeater", () => BenchmarkRunner.Run<RepeaterBenchmarks>()),
-			new KeyChoice(ConsoleKey.A, "Spanner", () => BenchmarkRunner.Run<SpannerBenchmarks>()),
-			new BackKeyChoice(ConsoleKey.B, "Back", () => { }),
-			new KeyChoice(ConsoleKey.C, "Identifier", () => BenchmarkRunner.Run<IdentifierBenchmarks>()),
-			new KeyChoice(ConsoleKey.D, "Checker", () => BenchmarkRunner.Run<CheckerBenchmarks>()),
-			new KeyChoice(ConsoleKey.E, "IPv4 Address", () => BenchmarkRunner.Run<IPv4AddressBenchmarks>()),
-			new KeyChoice(ConsoleKey.F, "LineComment", () => BenchmarkRunner.Run<LineCommentBenchmarks>()),
-			new KeyChoice(ConsoleKey.G, "Phone Number", () => BenchmarkRunner.Run<PhoneNumberBenchmarks>()),
-			new KeyChoice(ConsoleKey.H, "String Literal", () => BenchmarkRunner.Run<StringLiteralBenchmarks>()));
 
 		public static void Main() {
 			Theme.DefaultDark.Apply();
