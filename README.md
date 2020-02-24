@@ -14,6 +14,6 @@ Everyone works with text. Let's make it better.
 
 # Documentation:
 
-Thanks to [GitHub Pages](https://pages.github.com/), documentation is available [here](https://entomy.github.io/Stringier/)
+Thanks to [GitHub Pages](https://pages.github.com/), documentation is available [here](https://Stringier.github.io/docs/)
 
 The goals and purpose of this project is provided [here](https://gist.github.com/Entomy/b36c5dd74e38d97d630abf26543734e2)
