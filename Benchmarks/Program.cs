@@ -1,7 +1,6 @@
 ﻿using System;
 using Benchmarks.Core;
 using Benchmarks.Extensions;
-using Benchmarks.Patterns;
 using BenchmarkDotNet.Running;
 using Consolator.UI;
 using Consolator.UI.Theming;
