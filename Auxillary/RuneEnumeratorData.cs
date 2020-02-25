@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Core {
+namespace Tests {
 	public class RuneEnumeratorData {
 		public Char[] Chars;
 		public Int32[] Expected;
