@@ -30,8 +30,8 @@ module Bindings =
         static member Repeat(text:string, count:int32) = text.Repeat(count)
         static member Split(source:string, separator:char) = source.Split(separator)
         static member Split(source:string, separators:char[]) = source.Split(separators)
-        static member Split(source:string, separator:string) = source.Split(separator)
-        static member Split(source:string, separators:string[]) = source.Split(separators)
+        static member Split(source:string, separator:string) = source.Split([| separator |], StringSplitOptions.None)
+        static member Split(source:string, separators:string[]) = source.Split(separators, StringSplitOptions.None)
 
     let inline _contains< ^t, ^a, ^b, ^c when (^t or ^a) : (static member Contains : ^a * ^b -> ^c)> value source = ((^t or ^a) : (static member Contains : ^a * ^b -> ^c)(source, value))
 
