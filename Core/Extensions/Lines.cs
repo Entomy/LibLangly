@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 using Defender;
 
 namespace Stringier {
@@ -11,7 +10,7 @@ namespace Stringier {
 		/// <returns>Array of lines within the <paramref name="string"/>.</returns>
 		public static String[] Lines(this String @string) {
 			Guard.NotNull(@string, nameof(@string));
-			return @string.Split(Path.DirectorySeparatorChar);
+			return @string.Split('\n');
 		}
 
 		/// <summary>
@@ -19,6 +18,6 @@ namespace Stringier {
 		/// </summary>
 		/// <param name="span">Span to separate.</param>
 		/// <returns>Array of lines within the <paramref name="span"/>.</returns>
-		public static String[] Lines(this ReadOnlySpan<Char> span) => span.Split(Path.DirectorySeparatorChar);
+		public static String[] Lines(this ReadOnlySpan<Char> span) => span.Split('\n');
 	}
 }
