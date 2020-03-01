@@ -7,17 +7,21 @@ using System.IO;
 
 namespace Tests {
 	internal static class Resources {
-		public const string CaseFolding = "CaseFolding.txt";
-		public const string DerivedBidiClass = "DerivedBidiClass.txt";
-		public const string DerivedName = "DerivedName.txt";
-		public const string EmojiData = "emoji-data.txt";
-		public const string GraphemeBreakProperty = "GraphemeBreakProperty.txt";
-		public const string PropList = "PropList.txt";
-		public const string UnicodeData = "UnicodeData.txt";
+		public const string CaseFolding = "CaseFolding-12.1.0.txt";
+		public const string DerivedBidiClass = "DerivedBidiClass-12.1.0.txt";
+		public const string DerivedName = "DerivedName-12.1.0.txt";
+		public const string EmojiData = "emoji-data-12.0.txt";
+		public const string GraphemeBreakProperty = "GraphemeBreakProperty-12.1.0.txt";
+		public const string PropList = "PropList-12.1.0.txt";
+		public const string UnicodeData =
+#if NETCOREAPP2_1
+			"UnicodeData-8.0.txt";
+#elif NETCOREAPP3_1
+			"UnicodeData-11.0.txt";
+#else
+			"UnicodeData-12.0.txt";
+#endif
 
-		public static Stream OpenResource(string resourceName) {
-			return typeof(Resources).Assembly.GetManifestResourceStream(resourceName)
-				?? throw new ArgumentException(message: $"Resource {resourceName} not found.", paramName: nameof(resourceName));
-		}
+		public static Stream OpenResource(string resourceName) => new FileStream(resourceName, FileMode.Open);
 	}
 }
