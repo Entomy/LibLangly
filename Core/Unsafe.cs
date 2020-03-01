@@ -231,8 +231,7 @@ namespace Stringier {
 		/// <param name="lower">The lower bound, inclusive.</param>
 		/// <param name="upper">The upper bound, inclusive.</param>
 		/// <returns><see langword="true"/> if <paramref name="value"/> is within the range; otherwise, <see langword="false"/>.</returns>
-		[CLSCompliant(false)]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static Boolean Within(this UInt32 value, UInt32 lower, UInt32 upper) => (value - lower) <= (upper - lower);
+		internal static Boolean Within(this UInt32 value, UInt32 lower, UInt32 upper) => (value - lower) <= (upper - lower);
 	}
 }
