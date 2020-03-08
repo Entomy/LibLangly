@@ -21,10 +21,10 @@ namespace Benchmarks {
 			new KeyChoice(ConsoleKey.D8, "Lines", () => BenchmarkRunner.Run<LinesBenchmarks>()),
 			new KeyChoice(ConsoleKey.D9, "Occurrences", () => BenchmarkRunner.Run<OccurrencesBenchmarks>()),
 			new KeyChoice(ConsoleKey.A, "Pad", () => BenchmarkRunner.Run<PadBenchmarks>()),
-			new KeyChoice(ConsoleKey.B, "Split", () => BenchmarkRunner.Run<SplitBenchmarks>()),
-			new KeyChoice(ConsoleKey.C, "Repeat", () => BenchmarkRunner.Run<RepeatBenchmarks>()),
+			new KeyChoice(ConsoleKey.B, "Repeat", () => BenchmarkRunner.Run<RepeatBenchmarks>()),
+			new KeyChoice(ConsoleKey.C, "Replace", () => BenchmarkRunner.Run<ReplaceBenchmarks>()),
+			new KeyChoice(ConsoleKey.D, "Split", () => BenchmarkRunner.Run<SplitBenchmarks>()),
 			new BackKeyChoice(ConsoleKey.Q, "Quit", () => Environment.Exit(0)));
-
 
 		public static void Main() {
 			Theme.DefaultDark.Apply();
