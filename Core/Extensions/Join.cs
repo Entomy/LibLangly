@@ -82,11 +82,17 @@ namespace Stringier {
 		public static String Join(this IEnumerable<Char> chars, Char separator) {
 			Guard.NotNull(chars, nameof(chars));
 			StringBuilder result = new StringBuilder();
-			foreach (Char @char in chars) {
-				_ = result.Append(@char);
-				_ = result.Append(separator);
+			IEnumerator<Char> enumerator = chars.GetEnumerator();
+			if (enumerator.MoveNext()) {
+				_ = result.Append(enumerator.Current);
+			} else {
+				return String.Empty;
 			}
-			return result.ToString().TrimEnd(separator);
+			while (enumerator.MoveNext()) {
+				_ = result.Append(separator);
+				_ = result.Append(enumerator.Current);
+			}
+			return result.ToString();
 		}
 
 		/// <summary>
@@ -98,11 +104,17 @@ namespace Stringier {
 		public static String Join(this IEnumerable<Char> chars, Rune separator) {
 			Guard.NotNull(chars, nameof(chars));
 			StringBuilder result = new StringBuilder();
-			foreach (Char @char in chars) {
-				_ = result.Append(@char);
-				_ = result.Append(separator);
+			IEnumerator<Char> enumerator = chars.GetEnumerator();
+			if (enumerator.MoveNext()) {
+				_ = result.Append(enumerator.Current);
+			} else {
+				return String.Empty;
 			}
-			return result.ToString().TrimEnd(separator);
+			while (enumerator.MoveNext()) {
+				_ = result.Append(separator);
+				_ = result.Append(enumerator.Current);
+			}
+			return result.ToString();
 		}
 
 		/// <summary>
@@ -114,11 +126,17 @@ namespace Stringier {
 		public static String Join(this IEnumerable<String> strings, Char separator) {
 			Guard.NotNull(strings, nameof(strings));
 			StringBuilder result = new StringBuilder();
-			foreach (String @string in strings) {
-				_ = result.Append(@string);
-				_ = result.Append(separator);
+			IEnumerator<String> enumerator = strings.GetEnumerator();
+			if (enumerator.MoveNext()) {
+				_ = result.Append(enumerator.Current);
+			} else {
+				return String.Empty;
 			}
-			return result.ToString().TrimEnd(separator);
+			while (enumerator.MoveNext()) {
+				_ = result.Append(separator);
+				_ = result.Append(enumerator.Current);
+			}
+			return result.ToString();
 		}
 
 		/// <summary>
@@ -130,11 +148,17 @@ namespace Stringier {
 		public static String Join(this IEnumerable<String> strings, Rune separator) {
 			Guard.NotNull(strings, nameof(strings));
 			StringBuilder result = new StringBuilder();
-			foreach (String @string in strings) {
-				_ = result.Append(@string);
-				_ = result.Append(separator);
+			IEnumerator<String> enumerator = strings.GetEnumerator();
+			if (enumerator.MoveNext()) {
+				_ = result.Append(enumerator.Current);
+			} else {
+				return String.Empty;
 			}
-			return result.ToString().TrimEnd(separator);
+			while (enumerator.MoveNext()) {
+				_ = result.Append(separator);
+				_ = result.Append(enumerator.Current);
+			}
+			return result.ToString();
 		}
 
 		/// <summary>
@@ -147,11 +171,17 @@ namespace Stringier {
 		public static String Join<T>(this IEnumerable<T> items, Char separator) {
 			Guard.NotNull(items, nameof(items));
 			StringBuilder result = new StringBuilder();
-			foreach (T item in items) {
-				_ = result.Append(item);
-				_ = result.Append(separator);
+			IEnumerator<T> enumerator = items.GetEnumerator();
+			if (enumerator.MoveNext()) {
+				_ = result.Append(enumerator.Current);
+			} else {
+				return String.Empty;
 			}
-			return result.ToString().TrimEnd(separator);
+			while (enumerator.MoveNext()) {
+				_ = result.Append(separator);
+				_ = result.Append(enumerator.Current);
+			}
+			return result.ToString();
 		}
 
 		/// <summary>
@@ -164,9 +194,15 @@ namespace Stringier {
 		public static String Join<T>(this IEnumerable<T> items, Rune separator) {
 			Guard.NotNull(items, nameof(items));
 			StringBuilder result = new StringBuilder();
-			foreach (T item in items) {
-				_ = result.Append(item);
+			IEnumerator<T> enumerator = items.GetEnumerator();
+			if (enumerator.MoveNext()) {
+				_ = result.Append(enumerator.Current);
+			} else {
+				return String.Empty;
+			}
+			while (enumerator.MoveNext()) {
 				_ = result.Append(separator);
+				_ = result.Append(enumerator.Current);
 			}
 			return result.ToString().TrimEnd(separator);
 		}

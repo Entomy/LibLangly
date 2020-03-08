@@ -18,9 +18,9 @@ namespace Stringier {
 				return source.TrimEnd();
 			}
 			Rune[] runes = source.EnumerateRunes().ToArray();
-			Int32 r = runes.Length;
+			Int32 r = runes.Length - 1;
 			foreach (Rune trim in trimRunes) {
-				if (runes[--r] != trim) {
+				if (runes[r--] != trim) {
 					break;
 				}
 			}
