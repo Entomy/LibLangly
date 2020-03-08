@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using Defender;
 
 namespace Stringier {
@@ -10,10 +11,23 @@ namespace Stringier {
 		/// <param name="count">The amount of times to repeat the <paramref name="char"/>.</param>
 		/// <returns>A <see cref="String"/> containing the repeated <paramref name="char"/>.</returns>
 		public static String Repeat(this Char @char, Int32 count) {
-			if (count <= 0) {
-				throw new ArgumentOutOfRangeException(nameof(count), "Count must be a positive integer");
-			}
+			Guard.GreaterThanOrEqualTo(count, nameof(count), 0);
 			return new String(@char, count);
+		}
+
+		/// <summary>
+		/// Repeat the <paramref name="rune"/> <paramref name="count"/> times.
+		/// </summary>
+		/// <param name="rune">The <see cref="Rune"/> to repeat.</param>
+		/// <param name="count">The amount of times to repeat the <paramref name="rune"/>.</param>
+		/// <returns>A <see cref="String"/> containing the repeated <paramref name="rune"/>.</returns>
+		public static String Repeat(this Rune rune, Int32 count) {
+			Guard.GreaterThanOrEqualTo(count, nameof(count), 0);
+			Rune[] runes = new Rune[count];
+			for (int i = 0; i < count; i++) {
+				runes[i] = rune;
+			}
+			return runes.AsString();
 		}
 
 		/// <summary>
