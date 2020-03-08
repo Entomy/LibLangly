@@ -7,3 +7,4 @@ using System.Diagnostics.CodeAnalysis;
 
 [assembly: SuppressMessage("Style", "IDE0058:Expression value is never used", Justification = "It's fine, it's throwaways for testing")]
 [assembly: SuppressMessage("Performance", "HAA0603:Delegate allocation from a method group", Justification = "It's test code, we're not worried about performance")]
+[assembly: SuppressMessage("Performance", "HAA0101:Array allocation for params parameter", Justification = "It's test code, we're not worried about performance")]
