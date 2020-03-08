@@ -17,6 +17,13 @@ namespace Stringier {
 		/// <summary>
 		/// Gets the <see cref="String"/> representation of these <paramref name="runes"/>.
 		/// </summary>
+		/// <param name="runes">The <see cref="Span{T}"/> of <see cref="Rune"/> to convert.</param>
+		/// <returns>A <see cref="String"/> composed of the <paramref name="runes"/>.</returns>
+		public static String AsString(this Span<Rune> runes) => ((ReadOnlySpan<Rune>)runes).AsString();
+
+		/// <summary>
+		/// Gets the <see cref="String"/> representation of these <paramref name="runes"/>.
+		/// </summary>
 		/// <param name="runes">The <see cref="ReadOnlySpan{T}"/> of <see cref="Rune"/> to convert.</param>
 		/// <returns>A <see cref="String"/> composed of the <paramref name="runes"/>.</returns>
 		public static String AsString(this ReadOnlySpan<Rune> runes) {
