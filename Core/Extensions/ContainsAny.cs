@@ -44,6 +44,23 @@ namespace Stringier {
 		}
 
 		/// <summary>
+		/// Returns a value indicating whether any specified string occurs within this string.
+		/// </summary>
+		/// <param name="string">The string to check.</param>
+		/// <param name="values">The runes to seek.</param>
+		/// <returns><see langword="true"/> if any of the <paramref name="values"/> parameter occurs within this string; otherwise, <see langword="false"/>.</returns>
+		public static Boolean ContainsAny(this String @string, params String[] values) {
+			Guard.NotNull(@string, nameof(@string));
+			Guard.NotNull(values, nameof(values));
+			foreach (String value in values) {
+				if (@string.Contains(value)) {
+					return true;
+				}
+			}
+			return false;
+		}
+
+		/// <summary>
 		/// Returns a value indicating whether any specified char occurs within any of the strings.
 		/// </summary>
 		/// <param name="strings">The string to check.</param>

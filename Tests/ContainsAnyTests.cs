@@ -14,10 +14,7 @@ namespace Tests {
 		[Theory]
 		[InlineData("hello world", new[] { "hello", "goodbye" }, true)]
 		[InlineData("goodnight everyone", new[] { "hello", "goodbye" }, false)]
-		public void String_ContainsAny_String(String source, String[] values, Boolean expected) {
-			Boolean result = source.ContainsAny(values);
-			Claim.That(result).Equals(expected);
-		}
+		public void String_ContainsAny_String(String source, String[] values, Boolean expected) => Claim.That(source.ContainsAny(values)).Equals(expected);
 
 		[Theory]
 		[InlineData(new[] { "ab", "cd", "ef", "gh" }, new[] { 'g', 'i' }, true)]
