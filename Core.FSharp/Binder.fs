@@ -1,6 +1,7 @@
 ﻿namespace Stringier
 
 open System
+open System.Text
 
 module Bindings =
     type Binder =
@@ -27,6 +28,7 @@ module Bindings =
         static member Occurrences(source:seq<string>, value:char) = source.Occurrences(value)
         static member Occurrences(source:seq<string>, values:char[]) = source.Occurrences(values)
         static member Repeat(text:char, count:int32) = text.Repeat(count)
+        static member Repeat(text:Rune, count:int32) = text.Repeat(count)
         static member Repeat(text:string, count:int32) = text.Repeat(count)
         static member Split(source:string, separator:char) = source.Split(separator)
         static member Split(source:string, separators:char[]) = source.Split(separators)
