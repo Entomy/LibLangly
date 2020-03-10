@@ -8,7 +8,7 @@ namespace Stringier {
 		/// </summary>
 		/// <param name="string">String to separate.</param>
 		/// <returns>Array of words within the <paramref name="string"/>.</returns>
-		public static String[] Words(this String @string) {
+		public static String[] Words([ValidatedNotNull] this String @string) {
 			Guard.NotNull(@string, nameof(@string));
 			return @string.Clean().Split(' ');
 		}

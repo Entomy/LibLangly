@@ -6,7 +6,7 @@ namespace Stringier {
 	/// Represents a UNICODE Code Point.
 	/// </summary>
 	[StructLayout(LayoutKind.Auto)]
-	public readonly struct CodePoint {
+	public readonly struct CodePoint : IEquatable<CodePoint>, IEquatable<Char>, IEquatable<Int32>, IEquatable<UInt32> {
 		/// <summary>
 		/// The actual value of this code point.
 		/// </summary>
