@@ -10,7 +10,7 @@ namespace Stringier {
 		/// <param name="string">String to count occurences within.</param>
 		/// <param name="charToCount">Char to count occurences of.</param>
 		/// <returns>The ammount of occurences found.</returns>
-		public static Int32 Occurrences([ValidatedNotNull] this String @string, Char charToCount) {
+		public static Int32 Occurrences(this String @string, Char charToCount) {
 			Guard.NotNull(@string, nameof(@string));
 			Int32 c = 0;
 			foreach (Char C in @string) {
@@ -27,7 +27,7 @@ namespace Stringier {
 		/// <param name="string">String to count occurences within.</param>
 		/// <param name="charsToCount">Chars to count occurences of.</param>
 		/// <returns>The ammount of occurences found.</returns>
-		public static Int32 Occurrences([ValidatedNotNull] this String @string, [ValidatedNotNull] params Char[] charsToCount) {
+		public static Int32 Occurrences(this String @string, params Char[] charsToCount) {
 			Guard.NotNull(@string, nameof(@string));
 			Guard.NotNull(charsToCount, nameof(charsToCount));
 			Int32 c = 0;
@@ -47,7 +47,7 @@ namespace Stringier {
 		/// <param name="strings">Enumeration of String to count occurences within./</param>
 		/// <param name="charToCount">Char to count occurences of.</param>
 		/// <returns>The ammount of occurences found.</returns>
-		public static Int32 Occurrences([ValidatedNotNull] this IEnumerable<String> strings, Char charToCount) {
+		public static Int32 Occurrences(this IEnumerable<String> strings, Char charToCount) {
 			Guard.NotNull(strings, nameof(strings));
 			Int32 c = 0;
 			foreach (String String in strings) {
@@ -62,7 +62,7 @@ namespace Stringier {
 		/// <param name="strings">Enumeration of String to count occurences within.</param>
 		/// <param name="charsToCount">Chars to count occurences of.</param>
 		/// <returns>The ammount of occurences found.</returns>
-		public static Int32 Occurrences([ValidatedNotNull] this IEnumerable<String> strings, [ValidatedNotNull] params Char[] charsToCount) {
+		public static Int32 Occurrences(this IEnumerable<String> strings, params Char[] charsToCount) {
 			Guard.NotNull(strings, nameof(strings));
 			Guard.NotNull(charsToCount, nameof(charsToCount));
 			Int32 c = 0;
