@@ -159,11 +159,21 @@ namespace Stringier {
 		/// <summary>
 		/// Is the <paramref name="value"/> with the range (<paramref name="lower"/>..<paramref name="upper"/>).
 		/// </summary>
+		/// <param name="value">The <see cref="Byte"/> value to test.</param>
+		/// <param name="lower">The lower bound, inclusive.</param>
+		/// <param name="upper">The upper bound, inclusive.</param>
+		/// <returns><see langword="true"/> if <paramref name="value"/> is within the range; otherwise, <see langword="false"/>.</returns>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static Boolean Within(this Byte value, Byte lower, Byte upper) => lower <= value && value <= upper;
+
+		/// <summary>
+		/// Is the <paramref name="value"/> with the range (<paramref name="lower"/>..<paramref name="upper"/>).
+		/// </summary>
 		/// <param name="value">The <see cref="UInt32"/> value to test.</param>
 		/// <param name="lower">The lower bound, inclusive.</param>
 		/// <param name="upper">The upper bound, inclusive.</param>
 		/// <returns><see langword="true"/> if <paramref name="value"/> is within the range; otherwise, <see langword="false"/>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static Boolean Within(this UInt32 value, UInt32 lower, UInt32 upper) => (value - lower) <= (upper - lower);
+		internal static Boolean Within(this UInt32 value, UInt32 lower, UInt32 upper) => lower <= value && value <= upper;
 	}
 }
