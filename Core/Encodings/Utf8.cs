@@ -159,13 +159,15 @@ namespace Stringier.Encodings {
 		/// <param name="byte">The first byte in the sequence.</param>
 		/// <returns>The length of the sequence, or 0 if <paramref name="byte"/> is not the first byte, or is an invalid byte.</returns>
 		public static Int32 SequenceLength(Byte @byte) {
-			if (@byte.Within(0x00, 0x7F)) {
+			if (@byte <= 0x7F) {
 				return 1;
-			} else if (@byte.Within(0xC2, 0xDF)) {
+			} else if (@byte <= 0xC1) {
+				return 0;
+			} else if (@byte <= 0xDF) {
 				return 2;
-			} else if (@byte.Within(0xE0, 0xEF)) {
+			} else if (@byte <= 0xEF) {
 				return 3;
-			} else if (@byte.Within(0xF0, 0xF4)) {
+			} else if (@byte <= 0xF4) {
 				return 4;
 			} else {
 				return 0;
