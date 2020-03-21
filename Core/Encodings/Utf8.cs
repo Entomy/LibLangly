@@ -105,18 +105,45 @@ namespace Stringier.Encodings {
 		/// </summary>
 		/// <param name="bytes">The <see cref="Array"/> of <see cref="Byte"/> to decode.</param>
 		/// <returns>The decoded <see cref="Rune"/>s.</returns>
-		/// <remarks>
-		/// This method uses two approaches for decoding. When below a certain length, decoding will be done using a stack allocated buffer, which saves on allocations, thereby increasing performance and scalability. This can blow up the stack however, so above a certain length, it uses the heap instead. Currently the discriminating length is 10,000, which means a maximum usage of 80kb. Considering the smallest stack frame for .NET is 256kb, this should leave plenty of space. If necessary, use <see cref="Decode(Boolean, Byte[])"/> with <see langword="true"/> to force usage of the heap.
-		/// </remarks>
-		public static Rune[] Decode(params Byte[] bytes) => bytes.Length < 10_000 ? Decode_Stack(bytes) : Decode_Heap(bytes);
+		public static Rune[] Decode(params Byte[] bytes) {
+			Int32 b = 0;
+			Int32 y = 0;
+			Rune[] buffer = new Rune[bytes.Length];
+			while (y < bytes.Length) {
+				switch (SequenceLength(bytes[y])) {
+				case 1:
+					buffer[b++] = Decode(bytes[y++]);
+					break;
+				case 2:
+					buffer[b++] = Decode(bytes[y++], bytes[y++]);
+					break;
+				case 3:
+					buffer[b++] = Decode(bytes[y++], bytes[y++], bytes[y++]);
+					break;
+				case 4:
+					buffer[b++] = Decode(bytes[y++], bytes[y++], bytes[y++], bytes[y++]);
+					break;
+				default:
+					buffer[b++] = Rune.ReplacementChar;
+					y++;
+					break;
+				}
+			}
+			Rune[] result = new Rune[b];
+			Array.Copy(buffer, 0, result, 0, b);
+			return result;
+		}
 
 		/// <summary>
 		/// Decode the UTF-8 sequence into an <see cref="Array"/> of <see cref="Rune"/>.
 		/// </summary>
-		/// <param name="forceHeap"><see langword="true"/> to force usage of the heap instead of the stack.</param>
+		/// <param name="useStack"><see langword="true"/> to force usage of the stack instead of the heap.</param>
 		/// <param name="bytes">The <see cref="Array"/> of <see cref="Byte"/> to decode.</param>
 		/// <returns>The decoded <see cref="Rune"/>s.</returns>
-		public static Rune[] Decode(Boolean forceHeap, params Byte[] bytes) => forceHeap ? Decode_Heap(bytes) : Decode(bytes);
+		/// <remarks>
+		/// This allows calling a very optimized variant of the algorithm. This can blow up the stack however, which is an unhandleable exception.
+		/// </remarks>
+		public static Rune[] Decode(Boolean useStack, params Byte[] bytes) => useStack ? Decode_Stack(bytes) : Decode(bytes);
 
 		/// <summary>
 		/// Is the <paramref name="byte"/> the first byte of a UTF-8 sequence?
@@ -172,35 +199,6 @@ namespace Stringier.Encodings {
 			} else {
 				return 0;
 			}
-		}
-
-		private static Rune[] Decode_Heap(params Byte[] bytes) {
-			Int32 b = 0;
-			Int32 y = 0;
-			Rune[] buffer = new Rune[bytes.Length];
-			while (y < bytes.Length) {
-				switch (SequenceLength(bytes[y])) {
-				case 1:
-					buffer[b++] = Decode(bytes[y++]);
-					break;
-				case 2:
-					buffer[b++] = Decode(bytes[y++], bytes[y++]);
-					break;
-				case 3:
-					buffer[b++] = Decode(bytes[y++], bytes[y++], bytes[y++]);
-					break;
-				case 4:
-					buffer[b++] = Decode(bytes[y++], bytes[y++], bytes[y++], bytes[y++]);
-					break;
-				default:
-					buffer[b++] = Rune.ReplacementChar;
-					y++;
-					break;
-				}
-			}
-			Rune[] result = new Rune[b];
-			Array.Copy(buffer, 0, result, 0, b);
-			return result;
 		}
 
 		private static unsafe Rune[] Decode_Stack(params Byte[] bytes) {
