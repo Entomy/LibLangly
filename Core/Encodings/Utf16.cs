@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace Stringier.Encodings {
 	/// <summary>
@@ -9,6 +10,126 @@ namespace Stringier.Encodings {
 	/// </remarks>
 	[CLSCompliant(false)]
 	public static class Utf16 {
+		/// <summary>
+		/// Decode the UTF-16 sequence into a <see cref="Rune"/>.
+		/// </summary>
+		/// <param name="unit">The <see cref="UInt16"/> code unit.</param>
+		/// <returns>The decoded <see cref="Rune"/>.</returns>
+		public static Rune Decode(UInt16 unit) => unit < 0xDC00 ? new Rune(unit) : Rune.ReplacementChar;
+
+		/// <summary>
+		/// Decode the UTF-16 sequence into a <see cref="Rune"/>.
+		/// </summary>
+		/// <param name="unit">The <see cref="Char"/> code unit.</param>
+		/// <returns>The decoded <see cref="Rune"/>.</returns>
+		public static Rune Decode(Char unit) => unit < 0xDC00 ? new Rune(unit) : Rune.ReplacementChar;
+
+		/// <summary>
+		/// Decode the UTF-16 sequence into a <see cref="Rune"/>.
+		/// </summary>
+		/// <param name="highSurrogate">The <see cref="UInt16"/> high surrogate.</param>
+		/// <param name="lowSurrogate">The <see cref="UInt16"/> low surrogate.</param>
+		/// <returns>The decoded <see cref="Rune"/>.</returns>
+		public static Rune Decode(UInt16 highSurrogate, UInt16 lowSurrogate) =>
+			Unsafe.IsHighSurrogate(highSurrogate) && Unsafe.IsLowSurrogate(lowSurrogate)
+				? new Rune(Unsafe.Utf16Decode(highSurrogate, lowSurrogate))
+				: Rune.ReplacementChar;
+
+		/// <summary>
+		/// Decode the UTF-16 sequence into a <see cref="Rune"/>.
+		/// </summary>
+		/// <param name="highSurrogate">The <see cref="Char"/> high surrogate.</param>
+		/// <param name="lowSurrogate">The <see cref="Char"/> low surrogate.</param>
+		/// <returns>The decoded <see cref="Rune"/>.</returns>
+		public static Rune Decode(Char highSurrogate, Char lowSurrogate) =>
+			Unsafe.IsHighSurrogate(highSurrogate) && Unsafe.IsLowSurrogate(lowSurrogate)
+				? new Rune(Unsafe.Utf16Decode(highSurrogate, lowSurrogate))
+				: Rune.ReplacementChar;
+
+		/// <summary>
+		/// Decode the UTF-16 sequence into an <see cref="Array"/> of <see cref="Rune"/>.
+		/// </summary>
+		/// <param name="units">The <see cref="Array"/> of <see cref="UInt16"/> to decode.</param>
+		/// <returns>The decoded <see cref="Rune"/>s.</returns>
+		public static Rune[] Decode(params UInt16[] units) {
+			Int32 b = 0;
+			Int32 u = 0;
+			Rune[] buffer = new Rune[units.Length];
+			while (u < units.Length) {
+				switch (SequenceLength(units[u])) {
+				case 1:
+					buffer[b++] = Decode(units[u++]);
+					break;
+				case 2:
+					buffer[b++] = Decode(units[u++], units[u++]);
+					break;
+				default:
+					buffer[b++] = Rune.ReplacementChar;
+					u++;
+					break;
+				}
+			}
+			Rune[] result = new Rune[b];
+			Array.Copy(buffer, 0, result, 0, b);
+			return result;
+		}
+
+		/// <summary>
+		/// Decode the UTF-16 sequence into an <see cref="Array"/> of <see cref="Rune"/>.
+		/// </summary>
+		/// <param name="units">The <see cref="Array"/> of <see cref="Char"/> to decode.</param>
+		/// <returns>The decoded <see cref="Rune"/>s.</returns>
+		public static Rune[] Decode(params Char[] units) {
+			Int32 b = 0;
+			Int32 u = 0;
+			Rune[] buffer = new Rune[units.Length];
+			while (u < units.Length) {
+				switch (SequenceLength(units[u])) {
+				case 1:
+					buffer[b++] = Decode(units[u++]);
+					break;
+				case 2:
+					buffer[b++] = Decode(units[u++], units[u++]);
+					break;
+				default:
+					buffer[b++] = Rune.ReplacementChar;
+					u++;
+					break;
+				}
+			}
+			Rune[] result = new Rune[b];
+			Array.Copy(buffer, 0, result, 0, b);
+			return result;
+		}
+
+		/// <summary>
+		/// Decode the UTF-16 sequence into an <see cref="Array"/> of <see cref="Rune"/>.
+		/// </summary>
+		/// <param name="units">The <see cref="String"/> to decode.</param>
+		/// <returns>The decoded <see cref="Rune"/>s.</returns>
+		public static Rune[] Decode(String units) {
+			Int32 b = 0;
+			Int32 u = 0;
+			Rune[] buffer = new Rune[units.Length];
+			while (u < units.Length) {
+				switch (SequenceLength(units[u])) {
+				case 1:
+					buffer[b++] = Decode(units[u++]);
+					break;
+				case 2:
+					buffer[b++] = Decode(units[u++], units[u++]);
+					break;
+				default:
+					buffer[b++] = Rune.ReplacementChar;
+					u++;
+					break;
+				}
+			}
+			Rune[] result = new Rune[b];
+			Array.Copy(buffer, 0, result, 0, b);
+			return result;
+		}
+
 		/// <summary>
 		/// Is the <paramref name="unit"/> the first unit of a UTF-16 sequence?
 		/// </summary>
