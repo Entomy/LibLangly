@@ -31,7 +31,7 @@ namespace Stringier.Encodings {
 		/// <param name="lowSurrogate">The <see cref="UInt16"/> low surrogate.</param>
 		/// <returns>The decoded <see cref="Rune"/>.</returns>
 		public static Rune Decode(UInt16 highSurrogate, UInt16 lowSurrogate) =>
-			Unsafe.IsHighSurrogate(highSurrogate) && Unsafe.IsLowSurrogate(lowSurrogate)
+			IsHighSurrogate(highSurrogate) && IsLowSurrogate(lowSurrogate)
 				? new Rune(Unsafe.Utf16Decode(highSurrogate, lowSurrogate))
 				: Rune.ReplacementChar;
 
@@ -42,7 +42,7 @@ namespace Stringier.Encodings {
 		/// <param name="lowSurrogate">The <see cref="Char"/> low surrogate.</param>
 		/// <returns>The decoded <see cref="Rune"/>.</returns>
 		public static Rune Decode(Char highSurrogate, Char lowSurrogate) =>
-			Unsafe.IsHighSurrogate(highSurrogate) && Unsafe.IsLowSurrogate(lowSurrogate)
+			IsHighSurrogate(highSurrogate) && IsLowSurrogate(lowSurrogate)
 				? new Rune(Unsafe.Utf16Decode(highSurrogate, lowSurrogate))
 				: Rune.ReplacementChar;
 
@@ -136,6 +136,27 @@ namespace Stringier.Encodings {
 		/// <param name="unit">The <see cref="UInt16"/> to check.</param>
 		/// <returns><see langword="true"/> if the first unit of a UTF-16 sequence; otherwise, <see langword="false"/>.</returns>
 		public static Boolean IsFirstUnit(UInt16 unit) => unit.Within(0x0000, 0xDBFF) || unit.Within(0xE000, 0xFFFF);
+
+		/// <summary>
+		/// Is the <paramref name="codePoint"/> a high surrogate?
+		/// </summary>
+		/// <param name="codePoint">The <see cref="UInt32"/> interpreted as a codepoint.</param>
+		/// <returns><see langword="true"/> if high surrogate; otherwise, <see langword="false"/>.</returns>
+		public static Boolean IsHighSurrogate(UInt32 codePoint) => unchecked(codePoint - 0xD800u <= 0x03FFu);
+
+		/// <summary>
+		/// Is the <paramref name="codePoint"/> a low surrogate?
+		/// </summary>
+		/// <param name="codePoint">The <see cref="UInt32"/> interpreted as a codepoint.</param>
+		/// <returns><see langword="true"/> if low surrogate; otherwise, <see langword="false"/>.</returns>
+		public static Boolean IsLowSurrogate(UInt32 codePoint) => unchecked(codePoint - 0xDC00u <= 0x03FFu);
+
+		/// <summary>
+		/// Is the <paramref name="codePoint"/> a surrogate value?
+		/// </summary>
+		/// <param name="codePoint">The <see cref="UInt32"/> interpreted as a codepoint.</param>
+		/// <returns><see langword="true"/> if a surrogate value; otherwise, <see langword="false"/>.</returns>
+		public static Boolean IsSurrogate(UInt32 codePoint) => codePoint.Within(0xD800u, 0xDFFFu);
 
 		/// <summary>
 		/// Get the valid range the next unit after <paramref name="unit"/> can be within.

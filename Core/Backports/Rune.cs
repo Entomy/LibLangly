@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Globalization;
 using Defender;
 using Stringier;
+using Stringier.Encodings;
 
 namespace System.Text {
 	/// <summary>
@@ -568,8 +569,8 @@ namespace System.Text {
 			// Optimistically assume input is within BMP.
 
 			uint returnValue = input[0];
-			if (Unsafe.IsSurrogate(returnValue)) {
-				if (!Unsafe.IsHighSurrogate(returnValue)) {
+			if (Utf16.IsSurrogate(returnValue)) {
+				if (!Utf16.IsHighSurrogate(returnValue)) {
 					return -1;
 				}
 
@@ -580,7 +581,7 @@ namespace System.Text {
 				}
 
 				uint potentialLowSurrogate = input[1];
-				if (!Unsafe.IsLowSurrogate(potentialLowSurrogate)) {
+				if (!Utf16.IsLowSurrogate(potentialLowSurrogate)) {
 					return -1;
 				}
 
@@ -606,7 +607,7 @@ namespace System.Text {
 		/// </summary>
 		public static Boolean TryCreate(Char ch, out Rune result) {
 			UInt32 extendedValue = ch;
-			if (!Unsafe.IsSurrogate(extendedValue)) {
+			if (!Utf16.IsSurrogate(extendedValue)) {
 				result = new Rune(extendedValue);
 				return true;
 			} else {
@@ -835,8 +836,8 @@ namespace System.Text {
 			// Optimistically assume input is within BMP.
 
 			UInt32 returnValue = input[index];
-			if (Unsafe.IsSurrogate(returnValue)) {
-				if (!Unsafe.IsHighSurrogate(returnValue)) {
+			if (Utf16.IsSurrogate(returnValue)) {
+				if (!Utf16.IsHighSurrogate(returnValue)) {
 					return -1;
 				}
 
@@ -853,7 +854,7 @@ namespace System.Text {
 				}
 
 				UInt32 potentialLowSurrogate = input[index];
-				if (!Unsafe.IsLowSurrogate(potentialLowSurrogate)) {
+				if (!Utf16.IsLowSurrogate(potentialLowSurrogate)) {
 					return -1;
 				}
 

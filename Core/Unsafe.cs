@@ -43,22 +43,6 @@ namespace Stringier {
 		internal static Boolean IsCodePoint(UInt32 value) => value <= 0x10FFFFu;
 
 		/// <summary>
-		/// Is the <paramref name="codePoint"/> a high surrogate?
-		/// </summary>
-		/// <param name="codePoint">The <see cref="UInt32"/> interpreted as a codepoint.</param>
-		/// <returns><see langword="true"/> if high surrogate; otherwise, <see langword="false"/>.</returns>
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static Boolean IsHighSurrogate(UInt32 codePoint) => unchecked(codePoint - 0xD800u <= 0x03FFu);
-
-		/// <summary>
-		/// Is the <paramref name="codePoint"/> a low surrogate?
-		/// </summary>
-		/// <param name="codePoint">The <see cref="UInt32"/> interpreted as a codepoint.</param>
-		/// <returns><see langword="true"/> if low surrogate; otherwise, <see langword="false"/>.</returns>
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static Boolean IsLowSurrogate(UInt32 codePoint) => unchecked(codePoint - 0xDC00u <= 0x03FFu);
-
-		/// <summary>
 		/// Is the <paramref name="codePoint"/> a UNICODE Scalar Value?
 		/// </summary>
 		/// <param name="codePoint">The <see cref="UInt32"/> interpreted as a codepoint.</param>
@@ -73,14 +57,6 @@ namespace Stringier {
 		/// <returns><see langword="true"/> if in the Supplimentary Multilingual Plane; otherwise, <see langword="false"/>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static Boolean IsSmp(UInt32 codePoint) => Plane(codePoint) == 1;
-
-		/// <summary>
-		/// Is the <paramref name="codePoint"/> a surrogate value?
-		/// </summary>
-		/// <param name="codePoint">The <see cref="UInt32"/> interpreted as a codepoint.</param>
-		/// <returns><see langword="true"/> if a surrogate value; otherwise, <see langword="false"/>.</returns>
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static Boolean IsSurrogate(UInt32 codePoint) => codePoint.Within(0xD800u, 0xDFFFu);
 
 		/// <summary>
 		/// Which UNICODE Plane does the <paramref name="codePoint"/> belong to?

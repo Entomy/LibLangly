@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using Stringier.Encodings;
 
 namespace Stringier {
 	/// <summary>
@@ -57,12 +58,12 @@ namespace Stringier {
 		/// <summary>
 		/// Gets whether this <see cref="CodePoint"/> is a UTF-16 high surrogate code point.
 		/// </summary>
-		public Boolean IsHighSurrogate => Unsafe.IsHighSurrogate(value);
+		public Boolean IsHighSurrogate => Utf16.IsHighSurrogate(value);
 
 		/// <summary>
 		/// Gets whether this <see cref="CodePoint"/> is a UTF-16 low surrogate code point.
 		/// </summary>
-		public Boolean IsLowSurrogate => Unsafe.IsLowSurrogate(value);
+		public Boolean IsLowSurrogate => Utf16.IsLowSurrogate(value);
 
 		/// <summary>
 		/// Gets whether this <see cref="CodePoint"/> is a valid UNICODE Scalar Value.
@@ -72,7 +73,7 @@ namespace Stringier {
 		/// <summary>
 		/// Gets whether this <see cref="CodePoint"/> is a UTF-16 surrogate code point.
 		/// </summary>
-		public Boolean IsSurrogate => Unsafe.IsSurrogate(value);
+		public Boolean IsSurrogate => Utf16.IsSurrogate(value);
 
 		/// <summary>
 		/// Gets the UNICODE plane (0~16) which contains this code point.
