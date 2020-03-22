@@ -131,6 +131,28 @@ namespace Stringier.Encodings {
 		}
 
 		/// <summary>
+		/// Encodes the <see cref="Rune"/> into a UTF-16 sequence.
+		/// </summary>
+		/// <param name="rune">The <see cref="Rune"/> to encode.</param>
+		/// <returns>The UTF-16 sequence as an <see cref="Array"/> of <see cref="Char"/>; <see langword="null"/> if <paramref name="rune"/> could not be encoded.</returns>
+		/// <remarks>
+		/// Assuming both myself and Microsoft don't have any bugs in our code, this should always succeed, because <see cref="Rune"/> uses validating constructors.
+		/// </remarks>
+		public static Char[]? Encode(Rune rune) {
+			Char[]? result = null;
+			switch (rune.Utf16SequenceLength) {
+			case 1:
+				result = new Char[1] { (Char)rune.Value };
+				break;
+			case 2:
+				result = new Char[2];
+				Unsafe.Utf16Encode((UInt32)rune.Value, out result[0], out result[1]);
+				break;
+			}
+			return result;
+		}
+
+		/// <summary>
 		/// Is the <paramref name="unit"/> the first unit of a UTF-16 sequence?
 		/// </summary>
 		/// <param name="unit">The <see cref="UInt16"/> to check.</param>
