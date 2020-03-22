@@ -146,6 +146,42 @@ namespace Stringier.Encodings {
 		public static Rune[] Decode(Boolean useStack, params Byte[] bytes) => useStack ? Decode_Stack(bytes) : Decode(bytes);
 
 		/// <summary>
+		/// Encodes the <see cref="Rune"/> into a UTF-8 sequence.
+		/// </summary>
+		/// <param name="rune">The <see cref="Rune"/> to encode.</param>
+		/// <returns>The UTF-8 sequence as an <see cref="Array"/> of <see cref="Byte"/>; <see langword="null"/> if <paramref name="rune"/> could not be encoded.</returns>
+		/// <remarks>
+		/// Assuming both myself and Microsoft don't have any bugs in our code, this should always succeed, because <see cref="Rune"/> uses validating constructors.
+		/// </remarks>
+		public static Byte[]? Encode(Rune rune) {
+			Byte[]? result = null;
+			switch (rune.Utf8SequenceLength) {
+			case 1:
+				result = new Byte[1] { (Byte)rune.Value };
+				break;
+			case 2:
+				result = new Byte[2];
+				result[0] = (Byte)(rune.Value >> 6 | 0b1100_0000);
+				result[1] = (Byte)(rune.Value & 0b0011_1111 | 0b1000_0000);
+				break;
+			case 3:
+				result = new Byte[3];
+				result[0] = (Byte)(rune.Value >> 12 | 0b1110_0000);
+				result[1] = (Byte)(rune.Value >> 6 & 0b0011_1111 | 0b1000_0000);
+				result[2] = (Byte)(rune.Value & 0b0011_1111 | 0b1000_0000);
+				break;
+			case 4:
+				result = new Byte[4];
+				result[0] = (Byte)(rune.Value >> 18 | 0b1111_0000);
+				result[1] = (Byte)(rune.Value >> 12 & 0b0011_1111 | 0b1000_0000);
+				result[2] = (Byte)(rune.Value >> 6 & 0b0011_1111 | 0b1000_0000);
+				result[3] = (Byte)(rune.Value & 0b0011_1111 | 0b1000_0000);
+				break;
+			}
+			return result;
+		}
+
+		/// <summary>
 		/// Is the <paramref name="byte"/> the first byte of a UTF-8 sequence?
 		/// </summary>
 		/// <param name="byte">The <see cref="Byte"/> to check.</param>

@@ -47,6 +47,15 @@ namespace Tests {
 		}
 
 		[Theory]
+		[InlineData(0x000041, new Byte[] { 0x41 })]
+		[InlineData(0x0000C6, new Byte[] { 0xC3, 0x86 })]
+		[InlineData(0x000B87, new Byte[] { 0xE0, 0xAE, 0x87 })]
+		[InlineData(0x00A728, new Byte[] { 0xEA, 0x9C, 0xA8 })]
+		[InlineData(0x010331, new Byte[] { 0xF0, 0x90, 0x8C, 0xB1 })]
+		[InlineData(0x01F0A1, new Byte[] { 0xF0, 0x9F, 0x82, 0xA1 })]
+		public void Encode(UInt32 scalarValue, Byte[] expected) => Claim.That(Utf8.Encode(new Rune(scalarValue))).SequenceEquals(expected);
+
+		[Theory]
 		[InlineData(0x00, true)]
 		[InlineData(0x01, true)]
 		[InlineData(0x7E, true)]
