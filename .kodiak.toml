@@ -1,1 +1,16 @@
 version = 1
+
+[merge]
+automerge_label = "automerge"
+require_automerge_label = true
+method = "merge"
+notify_on_conflict = true
+optimistic_updates = true
+prioritize_ready_to_merge = true
+
+[update]
+always = true
+require_automerge_label = false
+
+[approve]
+auto_approve_usernames = ["dependabot-preview"]
