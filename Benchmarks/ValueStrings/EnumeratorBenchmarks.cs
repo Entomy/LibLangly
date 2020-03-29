@@ -14,9 +14,12 @@ namespace Benchmarks.ValueStrings {
 
 		public String StrSrc { get; set; }
 
+		public ValueString ValSrc { get; set; }
+
 		[GlobalSetup]
 		public void GlobalSetup() {
 			StrSrc = new String(Source);
+			ValSrc = new ValueString(Source);
 		}
 
 		[Benchmark]
@@ -28,7 +31,7 @@ namespace Benchmarks.ValueStrings {
 
 		[Benchmark]
 		public void ValueString() {
-			foreach (Char @char in Source) {
+			foreach (Char @char in ValSrc) {
 				//
 			}
 		}

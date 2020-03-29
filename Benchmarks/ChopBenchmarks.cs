@@ -7,6 +7,7 @@ namespace Benchmarks {
 	[SimpleJob(RuntimeMoniker.NetCoreApp31)]
 	[SimpleJob(RuntimeMoniker.CoreRt31)]
 	[SimpleJob(RuntimeMoniker.Mono)]
+	[MemoryDiagnoser]
 	public class ChopBenchmarks {
 		[Params("hello world")]
 		public String String { get; set; }
@@ -15,6 +16,6 @@ namespace Benchmarks {
 		public Int32 Size { get; set; }
 
 		[Benchmark]
-		public String[] Chop() => String.Chop(Size);
+		public void Chop() => String.Chop(Size);
 	}
 }

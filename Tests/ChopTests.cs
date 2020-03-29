@@ -18,7 +18,7 @@ namespace Tests {
 		[InlineData("hello world", 10, new[] { "hello worl", "d" })]
 		[InlineData("hello world", 11, new[] { "hello world" })]
 		[InlineData("hello world", 12, new[] { "hello world" })]
-		public void Chop(String text, Int32 size, String[] expected) => Assert.Equal(expected, text.Chop(size));
+		public void Chop(String text, Int32 size, String[] expected) => Assert.Equal<Object>(expected, text.Chop(size));
 
 		[Fact]
 		public void Chop_Invalid() => Claim.That(StringierExtensions.Chop, "hello world", 0).Throws<ArgumentOutOfRangeException>();

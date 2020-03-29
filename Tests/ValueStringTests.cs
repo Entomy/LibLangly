@@ -39,5 +39,13 @@ namespace Tests {
 		[InlineData(new Char[] { }, "")]
 		[InlineData(new Char[] { 'h', 'e', 'l', 'l', 'o' }, "hello")]
 		public void Equals_String(Char[] chars, String expected) => Claim.That(new ValueString(chars)).Equals(expected);
+
+		[Theory]
+		[InlineData(new Char[] { 'H', 'E', 'L', 'L', 'O' }, new Char[] { 'h', 'e', 'l', 'l', 'o' })]
+		public void ToLower(Char[] chars, Char[] expected) => Claim.That(new ValueString(chars).ToLower()).Equals(new ValueString(expected));
+
+		[Theory]
+		[InlineData(new Char[] { 'h', 'e', 'l', 'l', 'o' }, new Char[] { 'H', 'E', 'L', 'L', 'O' })]
+		public void ToUpper(Char[] chars, Char[] expected) => Claim.That(new ValueString(chars).ToUpper()).Equals(new ValueString(expected));
 	}
 }

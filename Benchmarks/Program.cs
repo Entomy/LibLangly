@@ -36,6 +36,7 @@ namespace Benchmarks {
 			new KeyChoice(ConsoleKey.D1, "Constructor", () => BenchmarkRunner.Run<ValueStrings.ConstructorBenchmarks>()),
 			new KeyChoice(ConsoleKey.D2, "Enumerator", () => BenchmarkRunner.Run<ValueStrings.EnumeratorBenchmarks>()),
 			new KeyChoice(ConsoleKey.D3, "Equals", () => BenchmarkRunner.Run<ValueStrings.EqualsBenchmarks>()),
+			new KeyChoice(ConsoleKey.D4, "ToUpper", () => BenchmarkRunner.Run<ValueStrings.ToUpperBenchmarks>()),
 			new BackKeyChoice(ConsoleKey.B, "Back", () => { }));
 
 		public static void Main() {

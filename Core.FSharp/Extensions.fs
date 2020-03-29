@@ -1,5 +1,6 @@
 ﻿namespace Stringier
 
+open System.Collections.Generic
 open Bindings
 
 [<AutoOpen>]
@@ -7,7 +8,7 @@ module Extensions =
     /// <summary>
     /// Chop the <paramref name="source"/> into chunks of <paramref name="size"/>
     /// </summary>
-    let chop(size:int32)(source:string):string[] = source.Chop(size)
+    let chop(size:int32)(source:string):IReadOnlyCollection<ValueString> = source.Chop(size)
 
     /// <summary>
     /// Trim and replace multiple spaces with a single space
