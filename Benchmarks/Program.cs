@@ -26,7 +26,17 @@ namespace Benchmarks {
 			new KeyChoice(ConsoleKey.D, "Split", () => BenchmarkRunner.Run<SplitBenchmarks>()),
 			new KeyChoice(ConsoleKey.E, "UTF-8", () => BenchmarkRunner.Run<Utf8Benchmarks>()),
 			new KeyChoice(ConsoleKey.F, "UTF-16", () => BenchmarkRunner.Run<Utf16Benchmarks>()),
+			new KeyChoice(ConsoleKey.V, "ValueString", () => {
+				Console.WriteChoices(ValueStringChoices);
+				Console.ReadChoice(ValueStringChoices);
+			}),
 			new BackKeyChoice(ConsoleKey.Q, "Quit", () => Environment.Exit(0)));
+
+		internal readonly static KeyChoiceSet ValueStringChoices = new KeyChoiceSet(" Enter Choice: ",
+			new KeyChoice(ConsoleKey.D1, "Constructor", () => BenchmarkRunner.Run<ValueStrings.ConstructorBenchmarks>()),
+			new KeyChoice(ConsoleKey.D2, "Enumerator", () => BenchmarkRunner.Run<ValueStrings.EnumeratorBenchmarks>()),
+			new KeyChoice(ConsoleKey.D3, "Equals", () => BenchmarkRunner.Run<ValueStrings.EqualsBenchmarks>()),
+			new BackKeyChoice(ConsoleKey.B, "Back", () => { }));
 
 		public static void Main() {
 			Theme.DefaultDark.Apply();
