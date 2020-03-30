@@ -21,6 +21,6 @@ namespace Tests {
 		public void Chop(String text, Int32 size, String[] expected) => Assert.Equal(expected, text.Chop(size));
 
 		[Fact]
-		public void Chop_Invalid() => Claim.That(StringierExtensions.Chop, "hello world", 0).Throws<ArgumentOutOfRangeException>();
+		public void Chop_Invalid() => Claim.That(() => "hello world".Chop(0)).Throws<ArgumentOutOfRangeException>();
 	}
 }
