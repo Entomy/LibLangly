@@ -5,6 +5,8 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/cc24ef7ba5c94a6c88e15ace93c20634)](https://www.codacy.com/gh/Stringier/Core?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Stringier/Core&amp;utm_campaign=Badge_Grade)
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=Stringier/Core)](https://dependabot.com)
 
+[![Beerpay](https://img.shields.io/beerpay/Entomy/Stringier)](https://beerpay.io/Entomy/Stringier)
+
 Stringier is a collection of projects to make working with text better. This is the base of all of that: a collection of types and extensions to make it easier to find and use what you need.
 
 **Core** holds implementations central to the entire broad project. As things grew, it became a requirement to consolodate certain parts of the codebase. You probably don't want to use this directly, as you'll get a much better experience using the subprojects that build upon this.
