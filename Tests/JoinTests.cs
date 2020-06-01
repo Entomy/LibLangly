@@ -1,22 +1,21 @@
 ﻿using System;
 using System.Text;
 using Stringier;
-using Defender;
 using Xunit;
 
 namespace Tests {
-	public class JoinTests : Trial {
+	public class JoinTests {
 		[Theory]
 		[InlineData(new[] { 'a', 'b', 'c', 'd' }, "abcd")]
-		public void Join_CharArray(Char[] source, String expected) => Claim.That(source.Join()).Equals(expected);
+		public void Join_CharArray(Char[] source, String expected) => Assert.Equal(expected, source.Join());
 
 		[Theory]
 		[InlineData(new[] { "This", "Winds", "Up", "Camel", "Case" }, "ThisWindsUpCamelCase")]
-		public void Join_StringArray(String[] source, String expected) => Claim.That(source.Join()).Equals(expected);
+		public void Join_StringArray(String[] source, String expected) => Assert.Equal(expected, source.Join());
 
 		[Theory]
 		[InlineData(new[] { 'a', 'b', 'c', 'd' }, '-', "a-b-c-d")]
-		public void Join_CharArray_WithChar(Char[] source, Char joinChar, String expected) => Claim.That(source.Join(joinChar)).Equals(expected);
+		public void Join_CharArray_WithChar(Char[] source, Char joinChar, String expected) => Assert.Equal(expected, source.Join(joinChar));
 
 		[Theory]
 		[InlineData(new[] { 'a', 'b', 'c', 'd' }, '-', "a-b-c-d")]
@@ -24,12 +23,12 @@ namespace Tests {
 		public void Join_CharArray_WithRune(Char[] source, Int32 joinSV, String expected) {
 			Rune rune = new Rune(joinSV);
 			String joined = source.Join(rune);
-			Claim.That(joined).Equals(expected);
+			Assert.Equal(expected, joined);
 		}
 
 		[Theory]
 		[InlineData(new[] { "This", "Winds", "Up", "Kebab", "Case" }, '-',  "This-Winds-Up-Kebab-Case")]
-		public void Join_StringArray_WithChar(String[] source, Char joinChar, String expected) => Claim.That(source.Join(joinChar)).Equals(expected);
+		public void Join_StringArray_WithChar(String[] source, Char joinChar, String expected) => Assert.Equal(expected, source.Join(joinChar));
 
 		[Theory]
 		[InlineData(new[] { "This", "Winds", "Up", "Kebab", "Case" }, '-', "This-Winds-Up-Kebab-Case")]
@@ -37,7 +36,7 @@ namespace Tests {
 		public void Join_StringArray_WithRune(String[] source, Int32 joinSV, String expected) {
 			Rune rune = new Rune(joinSV);
 			String joined = source.Join(rune);
-			Claim.That(joined).Equals(expected);
+			Assert.Equal(expected, joined);
 		}
 	}
 }

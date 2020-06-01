@@ -4,10 +4,10 @@ using Defender;
 using Xunit;
 
 namespace Tests {
-	public class WordsTests : Trial {
+	public class WordsTests {
 		[Theory]
 		[InlineData("", new[] { "" })]
 		[InlineData("Hello world", new[] { "Hello", "world" })]
-		public void Words(String source, String[] expected) => Claim.That(source.Words()).SequenceEquals(expected);
+		public void Words(String source, String[] expected) => Assert.Equal(expected, source.Words());
 	}
 }

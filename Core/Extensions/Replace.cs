@@ -43,7 +43,7 @@ namespace Stringier {
 		public static unsafe String Replace(this String @string, params (Char seek, Char replace)[] map) {
 			Guard.NotNull(@string, nameof(@string));
 			Guard.NotNull(map, nameof(map));
-			Guard.GreaterThan(map, nameof(map), 0);
+			Guard.LargerThan(map, nameof(map), 0);
 			Char* buffer = stackalloc Char[@string.Length];
 			Int32 b = 0;
 			foreach (Char c in @string) {

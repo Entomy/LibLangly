@@ -1,10 +1,9 @@
 ﻿using System;
 using Stringier;
-using Defender;
 using Xunit;
 
 namespace Tests {
-	public class ChopTests : Trial {
+	public class ChopTests {
 		[Theory]
 		[InlineData("hello world", 1, new[] { "h", "e", "l", "l", "o", " ", "w", "o", "r", "l", "d" })]
 		[InlineData("hello world", 2, new[] { "he", "ll", "o ", "wo", "rl", "d" })]
@@ -21,6 +20,6 @@ namespace Tests {
 		public void Chop(String text, Int32 size, String[] expected) => Assert.Equal(expected, text.Chop(size));
 
 		[Fact]
-		public void Chop_Invalid() => Claim.That(() => "hello world".Chop(0)).Throws<ArgumentOutOfRangeException>();
+		public void Chop_Invalid() => Assert.Throws<ArgumentOutOfRangeException>(() => "hello world".Chop(0));
 	}
 }

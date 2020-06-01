@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Text;
 using Stringier;
-using Defender;
 using Xunit;
 
 namespace Tests {
-	public class AsCharsTests : Trial {
+	public class AsCharsTests {
 		[Theory]
 		[InlineData(0x41, new[] { 'A' })]
 		[InlineData(0xDE, new[] { 'Þ' })]
@@ -14,6 +13,6 @@ namespace Tests {
 		[InlineData(0x2125, new[] { '℥' })]
 		[InlineData(0x2383, new[] { '⎃' })]
 		[InlineData(0x1D11E, new[] { '\uD834', '\uDD1E' })] // 𝄞 which can't be represented with a single char
-		public void Rune_AsChars(Int32 value, Char[] expected) => Claim.That(new Rune(value).AsChars()).SequenceEquals(expected);
+		public void Rune_AsChars(Int32 value, Char[] expected) => Assert.Equal(expected, new Rune(value).AsChars());
 	}
 }

@@ -1,10 +1,9 @@
 ﻿using System;
 using Stringier.Encodings;
 using Xunit;
-using Defender;
 
 namespace Tests {
-	public class Utf16Tests : Trial {
+	public class Utf16Tests {
 		[Theory]
 		[InlineData(0x0000, true)]
 		[InlineData(0xD7FF, true)]
@@ -19,7 +18,7 @@ namespace Tests {
 		[InlineData(0xE000, true)]
 		[InlineData(0xE001, true)]
 		[InlineData(0xFFFF, true)]
-		public void IsFirstUnit(UInt16 unit, Boolean expected) => Claim.That(Utf16.IsFirstUnit(unit)).Equals(expected);
+		public void IsFirstUnit(UInt16 unit, Boolean expected) => Assert.Equal(expected, Utf16.IsFirstUnit(unit));
 
 		[Theory]
 		[InlineData(0x0000, 0x0000, 0xFFFF)]
@@ -55,6 +54,6 @@ namespace Tests {
 		[InlineData(0xE000, 1)]
 		[InlineData(0xE001, 1)]
 		[InlineData(0xFFFF, 1)]
-		public void SequenceLength(UInt16 unit, Int32 expected) => Claim.That(Utf16.SequenceLength(unit)).Equals(expected);
+		public void SequenceLength(UInt16 unit, Int32 expected) => Assert.Equal(expected, Utf16.SequenceLength(unit));
 	}
 }

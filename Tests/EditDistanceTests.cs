@@ -1,17 +1,16 @@
 ﻿using System;
 using Stringier;
 using static Stringier.Metrics;
-using Defender;
 using Xunit;
 
 namespace Tests {
-	public class EditDistanceTests : Trial {
+	public class EditDistanceTests {
 		[Theory]
 		[InlineData("ram", "ram", 0)]
 		[InlineData("ram", "rom", 1)]
 		[InlineData("ram", "rob", 2)]
 		[InlineData("ram", "rma", 2)]
-		public void Hamming(String source, String other, Int32 expected) => Claim.That(HammingDistance(source, other)).Equals(expected);
+		public void Hamming(String source, String other, Int32 expected) => Assert.Equal(expected, HammingDistance(source, other));
 
 		[Theory]
 		[InlineData("ram", "rom", 1)]
@@ -20,6 +19,6 @@ namespace Tests {
 		[InlineData("ram", "rob", 2)]
 		[InlineData("ram", "random", 3)]
 		[InlineData("flaw", "lawn", 2)]
-		public void Levenshtein(String source, String other, Int32 expected) => Claim.That(LevenshteinDistance(source, other)).Equals(expected);
+		public void Levenshtein(String source, String other, Int32 expected) => Assert.Equal(expected, LevenshteinDistance(source, other));
 	}
 }

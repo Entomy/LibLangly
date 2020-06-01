@@ -2,33 +2,32 @@
 using System.Text;
 using Stringier.Encodings;
 using Xunit;
-using Defender;
 
 namespace Tests {
-	public class Utf8Tests : Trial {
+	public class Utf8Tests {
 		[Theory]
 		[InlineData(0x00, 0x000000)]
 		[InlineData(0x41, 0x000041)]
 		[InlineData(0x7F, 0x00007F)]
 		[InlineData(0x80, 0x00FFFD)]
 		[InlineData(0xFF, 0x00FFFD)]
-		public void Decode_1(Byte first, Int32 expected) => Claim.That(Utf8.Decode(first).Value).Equals(expected);
+		public void Decode_1(Byte first, Int32 expected) => Assert.Equal(expected, Utf8.Decode(first).Value);
 
 		[Theory]
 		[InlineData(0xC3, 0x86, 0x0000C6)]
 		[InlineData(0xCE, 0xB2, 0x0003B2)]
-		public void Decode_2(Byte first, Byte second, Int32 expected) => Claim.That(Utf8.Decode(first, second).Value).Equals(expected);
+		public void Decode_2(Byte first, Byte second, Int32 expected) => Assert.Equal(expected, Utf8.Decode(first, second).Value);
 
 		[Theory]
 		[InlineData(0xE0, 0xAE, 0x87, 0x000B87)]
 		[InlineData(0xE1, 0x82, 0xA7, 0x0010A7)]
 		[InlineData(0xEA, 0x9C, 0xA8, 0x00A728)]
-		public void Decode_3(Byte first, Byte second, Byte third, Int32 expected) => Claim.That(Utf8.Decode(first, second, third).Value).Equals(expected);
+		public void Decode_3(Byte first, Byte second, Byte third, Int32 expected) => Assert.Equal(expected, Utf8.Decode(first, second, third).Value);
 
 		[Theory]
 		[InlineData(0xF0, 0x90, 0x8C, 0xB1, 0x010331)]
 		[InlineData(0xF0, 0x9F, 0x82, 0xA1, 0x01F0A1)]
-		public void Decode_4(Byte first, Byte second, Byte third, Byte fourth, Int32 expected) => Claim.That(Utf8.Decode(first, second, third, fourth).Value).Equals(expected);
+		public void Decode_4(Byte first, Byte second, Byte third, Byte fourth, Int32 expected) => Assert.Equal(expected, Utf8.Decode(first, second, third, fourth).Value);
 
 		[Theory]
 		[InlineData(new Byte[] { }, new Int32[] { })]
@@ -43,7 +42,7 @@ namespace Tests {
 			for (Int32 i = 0; i < text.Length; i++) {
 				text[i] = new Rune(expected[i]);
 			}
-			Claim.That(Utf8.Decode(bytes)).SequenceEquals(text);
+			Assert.Equal(text, Utf8.Decode(bytes));
 		}
 
 		[Theory]
@@ -53,7 +52,7 @@ namespace Tests {
 		[InlineData(0x00A728, new Byte[] { 0xEA, 0x9C, 0xA8 })]
 		[InlineData(0x010331, new Byte[] { 0xF0, 0x90, 0x8C, 0xB1 })]
 		[InlineData(0x01F0A1, new Byte[] { 0xF0, 0x9F, 0x82, 0xA1 })]
-		public void Encode(UInt32 scalarValue, Byte[] expected) => Claim.That(Utf8.Encode(new Rune(scalarValue))).SequenceEquals(expected);
+		public void Encode(UInt32 scalarValue, Byte[] expected) => Assert.Equal(expected, Utf8.Encode(new Rune(scalarValue)));
 
 		[Theory]
 		[InlineData(0x00, true)]
@@ -69,7 +68,7 @@ namespace Tests {
 		[InlineData(0xF5, false)]
 		[InlineData(0xF6, false)]
 		[InlineData(0xFF, false)]
-		public void IsFirstByte(Byte @byte, Boolean expected) => Claim.That(Utf8.IsFirstByte(@byte)).Equals(expected);
+		public void IsFirstByte(Byte @byte, Boolean expected) => Assert.Equal(expected, Utf8.IsFirstByte(@byte));
 
 		[Theory]
 		[InlineData(0x7F, 0x80, 0xBF)]
@@ -109,6 +108,6 @@ namespace Tests {
 		[InlineData(0xF5, 0)]
 		[InlineData(0xF6, 0)]
 		[InlineData(0xFF, 0)]
-		public void SequenceLength(Byte @byte, Int32 expected) => Claim.That(Utf8.SequenceLength(@byte)).Equals(expected);
+		public void SequenceLength(Byte @byte, Int32 expected) => Assert.Equal(expected, Utf8.SequenceLength(@byte));
 	}
 }

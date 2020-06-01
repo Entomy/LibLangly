@@ -1,14 +1,13 @@
 ﻿using System;
 using Stringier;
-using Defender;
 using Xunit;
 
 namespace Tests {
-	public class FuzzyEqualsTests : Trial {
+	public class FuzzyEqualsTests {
 		[Theory]
 		[InlineData("bob", "bob", true)]
 		[InlineData("bob", "mob", true)]
 		[InlineData("bob", "mom", false)]
-		public void FuzzyEquals(String source, String other, Boolean expected) => Claim.That(source.FuzzyEquals(other)).Equals(expected);
+		public void FuzzyEquals(String source, String other, Boolean expected) => Assert.Equal(expected, source.FuzzyEquals(other));
 	}
 }
