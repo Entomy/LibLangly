@@ -9,7 +9,12 @@ namespace Tests {
 		public void Replace_CharCharMap() {
 			Assert.Equal("jello", "hello".Replace(('h', 'j')));
 			Assert.Equal("bacon", "world".Replace(('w', 'b'), ('o', 'a'), ('r', 'c'), ('l', 'o'), ('d', 'n')));
-			Assert.Throws<ArgumentSizeException>(() => "hello".Replace());
+		}
+
+		[Fact]
+		public void Replace_StringStringMap() {
+			Assert.Equal("wee!", "hello".Replace(("h", "w"), ("l", "e"), ("eo", "!")));
+			Assert.Equal("thot", "hello".Replace(("he", "a"), ("l", "th"), ("ath", ""), ("o", "ot")));
 		}
 	}
 }
