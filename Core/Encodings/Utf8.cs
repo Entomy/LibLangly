@@ -177,6 +177,8 @@ namespace Stringier.Encodings {
 				result[2] = (Byte)(rune.Value >> 6 & 0b0011_1111 | 0b1000_0000);
 				result[3] = (Byte)(rune.Value & 0b0011_1111 | 0b1000_0000);
 				break;
+			default:
+				throw new InvalidOperationException($"Somehow, {nameof(Encode)} thinks the encoded length should be different from anything possible. This means there may be a bug in {nameof(Rune.Utf8SequenceLength)}.");
 			}
 			return result;
 		}
