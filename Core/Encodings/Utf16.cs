@@ -148,6 +148,8 @@ namespace Stringier.Encodings {
 				result = new Char[2];
 				Unsafe.Utf16Encode((UInt32)rune.Value, out result[0], out result[1]);
 				break;
+			default:
+				throw new InvalidOperationException($"Somehow, {nameof(Encode)} thinks the encoded length should be different from anything possible. This means there may be a bug in {nameof(Rune.Utf16SequenceLength)}.");
 			}
 			return result;
 		}
