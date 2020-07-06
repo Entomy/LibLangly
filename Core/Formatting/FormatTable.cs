@@ -189,7 +189,7 @@ namespace Stringier {
 						_ = builder.Append(ColumnDelimiter);
 					}
 				}
-				_ = builder.Append('\n');
+				_ = builder.AppendLine();
 			}
 			return builder.ToString();
 		}
