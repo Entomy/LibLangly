@@ -157,7 +157,7 @@ namespace Stringier.Encodings {
 			Byte[]? result = null;
 			switch (rune.Utf8SequenceLength) {
 			case 1:
-				result = new Byte[1] { (Byte)rune.Value };
+				result = new Byte[] { (Byte)rune.Value };
 				break;
 			case 2:
 				result = new Byte[2];
