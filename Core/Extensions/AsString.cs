@@ -5,6 +5,16 @@ using Defender;
 namespace Stringier {
 	public static partial class StringierExtensions {
 		/// <summary>
+		/// Gets the <see cref="String"/> representation of these <paramref name="chars"/>.
+		/// </summary>
+		/// <param name="chars">The <see cref="Array"/> of <see cref="Char"/> to convert.</param>
+		/// <returns>A <see cref="String"/> composed of the <paramref name="chars"/>.</returns>
+		public static String AsString(this Char[] chars) {
+			Guard.NotNull(chars, nameof(chars));
+			return new String(chars);
+		}
+
+		/// <summary>
 		/// Gets the <see cref="String"/> representation of these <paramref name="runes"/>.
 		/// </summary>
 		/// <param name="runes">The <see cref="Array"/> of <see cref="Rune"/> to convert.</param>
@@ -15,11 +25,32 @@ namespace Stringier {
 		}
 
 		/// <summary>
+		/// Gets the <see cref="String"/> representation of these <paramref name="chars"/>.
+		/// </summary>
+		/// <param name="chars">The <see cref="Span{T}"/> of <see cref="Rune"/> to convert.</param>
+		/// <returns>A <see cref="String"/> composed of the <paramref name="chars"/>.</returns>
+		public static String AsString(this Span<Char> chars) => ((ReadOnlySpan<Char>)chars).AsString();
+
+		/// <summary>
 		/// Gets the <see cref="String"/> representation of these <paramref name="runes"/>.
 		/// </summary>
 		/// <param name="runes">The <see cref="Span{T}"/> of <see cref="Rune"/> to convert.</param>
 		/// <returns>A <see cref="String"/> composed of the <paramref name="runes"/>.</returns>
 		public static String AsString(this Span<Rune> runes) => ((ReadOnlySpan<Rune>)runes).AsString();
+
+		/// <summary>
+		/// Gets the <see cref="String"/> representation of these <paramref name="chars"/>.
+		/// </summary>
+		/// <param name="chars">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> to convert.</param>
+		/// <returns>A <see cref="String"/> composed of the <paramref name="chars"/>.</returns>
+		public static String AsString(this ReadOnlySpan<Char> chars) {
+			Char[] chrs = new Char[chars.Length];
+			Int32 c = 0;
+			foreach (Char chr in chrs) {
+				chrs[c++] = chr;
+			}
+			return new String(chrs);
+		}
 
 		/// <summary>
 		/// Gets the <see cref="String"/> representation of these <paramref name="runes"/>.
