@@ -46,7 +46,7 @@ namespace Stringier {
 		public static String AsString(this ReadOnlySpan<Char> chars) {
 			Char[] chrs = new Char[chars.Length];
 			Int32 c = 0;
-			foreach (Char chr in chrs) {
+			foreach (Char chr in chars) {
 				chrs[c++] = chr;
 			}
 			return new String(chrs);

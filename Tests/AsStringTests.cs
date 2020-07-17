@@ -7,7 +7,10 @@ namespace Tests {
 	public class AsStringTests {
 		[Theory]
 		[InlineData(new[] { 'h', 'e', 'l', 'l', 'o' }, "hello")]
-		public void AsString_Chars(Char[] chars, String expected) => Assert.Equal(expected, chars.AsString());
+		public void AsString_Chars(Char[] chars, String expected) {
+			Assert.Equal(expected, chars.AsString());
+			Assert.Equal(expected, chars.AsSpan().AsString());
+		}
 
 		[Theory]
 		[InlineData(new[] { 0x68, 0x65, 0x6C, 0x6C, 0x6F }, "hello")]
@@ -19,6 +22,7 @@ namespace Tests {
 				runes[i] = new Rune(scalarValues[i]);
 			}
 			Assert.Equal(expected, runes.AsString());
+			Assert.Equal(expected, runes.AsSpan().AsString());
 		}
 	}
 }
