@@ -17,8 +17,10 @@ namespace Stringier {
 		public static Boolean Equals(this Char @char, Char other, StringComparison comparisonType) {
 			switch (comparisonType) {
 			case StringComparison.OrdinalIgnoreCase:
+#if !NETSTANDARD1_3
 			case StringComparison.InvariantCultureIgnoreCase:
 				return @char.ToUpperInvariant().Equals(other.ToUpperInvariant());
+#endif
 			case StringComparison.CurrentCultureIgnoreCase:
 				return @char.ToUpper(CultureInfo.CurrentCulture).Equals(other.ToUpper(CultureInfo.CurrentCulture));
 			default:
@@ -62,8 +64,10 @@ namespace Stringier {
 		public static Boolean Equals(this Rune rune, Rune other, StringComparison comparisonType) {
 			switch (comparisonType) {
 			case StringComparison.OrdinalIgnoreCase:
+#if !NETSTANDARD1_3
 			case StringComparison.InvariantCultureIgnoreCase:
 				return rune.ToUpperInvariant().Equals(other.ToUpperInvariant());
+#endif
 			case StringComparison.CurrentCultureIgnoreCase:
 				return rune.ToUpper(CultureInfo.CurrentCulture).Equals(other.ToUpper(CultureInfo.CurrentCulture));
 			default:

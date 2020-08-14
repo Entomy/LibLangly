@@ -12,7 +12,7 @@ namespace Benchmarks {
 	[SimpleJob(RuntimeMoniker.Mono)]
 	[MemoryDiagnoser]
 	public class Utf8Benchmarks {
-		private static readonly Decoder decoder = Encoding.UTF8.GetDecoder();
+		private static readonly Decoder decoder = System.Text.Encoding.UTF8.GetDecoder();
 
 		[Params(1024, 512, 256, 128, 64, 32)]
 		public Int32 ReductionFactor { get; set; }

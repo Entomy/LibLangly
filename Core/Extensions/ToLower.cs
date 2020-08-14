@@ -29,7 +29,7 @@ namespace Stringier {
 		/// <returns>The lowercase equivalent of <paramref name="char"/>, modified according to <paramref name="culture"/>, or the unchanged value of <paramref name="char"/>, if <paramref name="char"/> is already lowercase or not alphabetic.</returns>
 		public static Char ToLower(this Char @char, CultureInfo culture) {
 			Guard.NotNull(culture, nameof(culture));
-			return Char.ToLower(@char, culture);
+			return culture.TextInfo.ToLower(@char);
 		}
 
 		/// <summary>

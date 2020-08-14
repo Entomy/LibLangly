@@ -72,7 +72,7 @@ namespace Stringier {
 		/// <returns>The uppercase equivalent of <paramref name="char"/>, modified according to <paramref name="culture"/>, or the unchanged value of <paramref name="char"/> if <paramref name="char"/> is already uppercase, has no uppercase equivalent, or is not alphabetic.</returns>
 		public static Char ToUpper(this Char @char, CultureInfo culture) {
 			Guard.NotNull(culture, nameof(culture));
-			return Char.ToUpper(@char, culture);
+			return culture.TextInfo.ToUpper(@char);
 		}
 
 		/// <summary>
