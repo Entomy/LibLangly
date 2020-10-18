@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+		<LangVersion>preview</LangVersion>
+		<Description>Defensive code should be easy, and it shouldn't weigh your code down.</Description>
+		<PackageTags>defensive, defensive programming</PackageTags>
+		<AssemblyName>Defender</AssemblyName>
+		<RootNamespace>Defender</RootNamespace>
+		<PackageIcon>Logo.png</PackageIcon>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<None Include="Logo.png" Pack="true" Visible="true" PackagePath="\" />
+		<PackageReference Include="FastEnum" Version="1.5.3" />
+	</ItemGroup>
+
+</Project>
