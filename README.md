@@ -13,4 +13,6 @@
 
 ## Logician [![Nuget](https://img.shields.io/nuget/dt/Logician?logo=Nuget)](https://www.nuget.org/packages/Logician/)
 
+Provides polyvalent (higher order) logics for more sophisticated decision problems.
+
 ## Stringier [![Nuget](https://img.shields.io/nuget/dt/Stringier?logo=Nuget)](https://www.nuget.org/packages/Stringier/)
