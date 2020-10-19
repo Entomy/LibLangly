@@ -29,3 +29,8 @@ jobs:
         output: lcov.info
         outputFormat: lcov
         testProject: 'Tests/Tests.vbproj'
+    - name: Coveralls
+      uses: coverallsapp/github-action@v1.1.1
+      with:
+        github-token: ${{ secrets.COVERALLS }}
+        path-to-lcov: ${{ steps.Coverlet.outputs.coverageFile }}
