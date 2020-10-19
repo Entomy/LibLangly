@@ -8,12 +8,24 @@
 
 ## Collectathon [![Nuget](https://img.shields.io/nuget/dt/Collectathon?logo=Nuget)](https://www.nuget.org/packages/Collectathon/1.0.0-beta.8)
 
+A reimagining of collections libraries. Utilizes a traits API, and a very high degree of code sharing. Doubles as both implementations of various data structures, and a framework for the creation of additional data structures. Unlike System.Collections* or C5, Collectathon actually tackles complex data structures, because you shouldn't have to.
+
 ## Consolator [![Nuget](https://img.shields.io/nuget/dt/Consolator?logo=Nuget)](https://www.nuget.org/packages/Consolator/)
 
+A replacement Console API with superior usability.
+
 ## Defender [![Nuget](https://img.shields.io/nuget/dt/Defender?logo=Nuget)](https://www.nuget.org/packages/Defender/)
+
+Defensive code should be easy, and it shouldn't weigh your code down.
 
 ## Logician [![Nuget](https://img.shields.io/nuget/dt/Logician?logo=Nuget)](https://www.nuget.org/packages/Logician/)
 
 Provides polyvalent (higher order) logics for more sophisticated decision problems.
 
+## Philosoft [![Nuget](https://img.shields.io/nuget/dt/Philosoft?logo=Nuget)](https://www.nuget.org/packages/Philosoft/)
+
+Think about your code differently. Love your code.
+
 ## Stringier [![Nuget](https://img.shields.io/nuget/dt/Stringier?logo=Nuget)](https://www.nuget.org/packages/Stringier/)
+
+Makes strings better... stringier.
