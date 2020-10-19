@@ -23,3 +23,9 @@ jobs:
       run: dotnet build --configuration Release --no-restore
     - name: Test
       run: dotnet test --no-restore --verbosity normal
+    - name: Coverlet
+      uses: b3b00/coverlet-action@1.0.91
+      with:
+        output: lcov.info
+        outputFormat: lcov
+        testProject: 'Tests/Tests.vbproj'
