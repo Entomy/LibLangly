@@ -1,5 +1,6 @@
 # LibLangly
 
+[![Discord](https://img.shields.io/discord/767866895457714186?label=Chat&logo=discord&logoColor=white)](https://discord.com/channels/767866895457714186)
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Entomy/LibLangly/.NET%20Core?label=Build&logo=Github)](https://github.com/Entomy/LibLangly/actions?query=workflow%3A%22.NET+Core%22)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/d84f62c513064441a2d6213c58406d8d)](https://www.codacy.com/gh/Entomy/LibLangly/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Entomy/LibLangly&amp;utm_campaign=Badge_Grade)
 [![GitHub](https://img.shields.io/github/license/Entomy/LibLangly)](https://github.com/Entomy/LibLangly/blob/master/LICENSE)
