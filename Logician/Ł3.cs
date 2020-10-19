@@ -39,7 +39,6 @@ namespace Logician {
 		}
 
 		public static implicit operator Ł3(Boolean value) => new Ł3(value);
-
 		/// <summary>
 		/// Logical negation
 		/// </summary>
