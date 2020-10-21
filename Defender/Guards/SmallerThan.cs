@@ -17,7 +17,7 @@ namespace Defender {
 		/// 	<exception cref="ArgumentLargerThanException">Thrown if the guard clause fails because the size was larger than the bound.</exception>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static void SmallerThan<T>(T[] array, String name, Int64 upper) {
-			if (array.Length >= upper) {
+			if (!(array is null) && array.Length >= upper) {
 				if (array.Length == upper) {
 					throw ArgumentIsSizeException.With(array, name, upper);
 				} else {
@@ -117,7 +117,7 @@ namespace Defender {
 		/// 	<exception cref="ArgumentLargerThanException">Thrown if the guard clause fails because the size was larger than the bound.</exception>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static void SmallerThan<TCollection>(TCollection collection, String name, Int64 upper) where TCollection : ICollection {
-			if (collection.Count >= upper) {
+			if (!(collection is null) && collection.Count >= upper) {
 				if (collection.Count == upper) {
 					throw ArgumentIsSizeException.With(collection, name, upper);
 				} else {
@@ -138,7 +138,7 @@ namespace Defender {
 		/// 	<exception cref="ArgumentLargerThanException">Thrown if the guard clause fails because the size was larger than the bound.</exception>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static void SmallerThan<T, TCollection>(TCollection collection, String name, Int64 upper) where TCollection : ICollection<T> {
-			if (collection.Count >= upper) {
+			if (!(collection is null) && collection.Count >= upper) {
 				if (collection.Count == upper) {
 					throw ArgumentIsSizeException.With(collection, name, upper);
 				} else {
