@@ -25,10 +25,10 @@ namespace Defender.Exceptions {
 		/// <summary>
 		/// Initializes a <see cref="ArgumentNotTypeException"/> with the provided values.
 		/// </summary>
-		/// <typeparam name="TValue">The type of the argument.</typeparam>
 		/// <typeparam name="TType">The type the argument must be.</typeparam>
+		/// <param name="value">The argument value.</param>
 		/// <param name="name">The argument name.</param>
 		/// <returns>An <see cref="ArgumentNotTypeException"/> instance.</returns>
-		public static ArgumentNotTypeException With<TValue, TType>(String name) => new ArgumentNotTypeException(typeof(TValue).Name, name, $"Argument not of type '{typeof(TType).Name}'.");
+		public static ArgumentNotTypeException With<TType>(Object value, String name) => new ArgumentNotTypeException(value?.GetType().Name, name, $"Argument not of type '{typeof(TType).Name}'.");
 	}
 }

@@ -11,6 +11,6 @@ namespace Defender {
 		/// <param name="value">The <typeparamref name="T"/> value.</param>
 		/// <returns><see langword="true"/> if a valid value; otherwise, <see langword="false"/>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static Boolean Valid<T>(T value) where T : struct, Enum => !FastEnum.IsDefined(value);
+		public static Boolean Valid<T>(T value) where T : struct, Enum => FastEnum.IsDefined(value);
 	}
 }
