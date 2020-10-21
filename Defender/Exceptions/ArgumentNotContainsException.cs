@@ -1,60 +1,36 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
 using System.Runtime.Serialization;
-#endif
 
-namespace Defender {
+namespace Defender.Exceptions {
 	/// <summary>
 	/// Thrown when a collection doesn't contain an item, but should.
 	/// </summary>
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
 	[Serializable]
-#endif
 	public class ArgumentNotContainsException : ArgumentException {
 		/// <summary>
-		/// Initialize a new <see cref="ArgumentNotContainsException"/>.
+		/// Initialize a new <see cref="ArgumentContainsException"/>.
 		/// </summary>
 		/// <param name="value">The value of the argument responsible.</param>
 		/// <param name="name">The name of the argument responsible.</param>
-		/// <param name="required">The required member of the collection.</param>
-		public ArgumentNotContainsException(Array value, String name, Object required) : base(value, name, $"Array must contain '{required}'.") { }
+		/// <param name="message">The message that describes the error.</param>
+		protected ArgumentNotContainsException(Object value, String name, String message) : base(value, name, message) { }
 
 		/// <summary>
-		/// Initialize a new <see cref="ArgumentNotContainsException"/>.
+		/// Deserialization constructor.
 		/// </summary>
-		/// <param name="value">The value of the argument responsible.</param>
-		/// <param name="name">The name of the argument responsible.</param>
-		/// <param name="required">The required member of the collection.</param>
-		public ArgumentNotContainsException(IEnumerable value, String name, Object required) : base(value, name, $"Enumerable must contain '{required}'.") { }
+		/// <param name="info"></param>
+		/// <param name="context"></param>
+		protected ArgumentNotContainsException(SerializationInfo info, StreamingContext context) : base(info, context) { }
 
 		/// <summary>
-		/// Initialize a new <see cref="ArgumentNotContainsException"/>.
+		/// Initializes a <see cref="ArgumentNotContainsException"/> with the provided values.
 		/// </summary>
-		/// <param name="value">The value of the argument responsible.</param>
-		/// <param name="name">The name of the argument responsible.</param>
-		/// <param name="required">The required member of the collection.</param>
-		public ArgumentNotContainsException(IEnumerable<Object> value, String name, Object required) : base(value, name, $"Enumerable must contain '{required}'.") { }
-
-		/// <summary>
-		/// Initialize a new <see cref="ArgumentNotContainsException"/>.
-		/// </summary>
-		/// <param name="value">The value of the argument responsible.</param>
-		/// <param name="name">The name of the argument responsible.</param>
-		/// <param name="required">The required member of the collection.</param>
-		public ArgumentNotContainsException(ICollection value, String name, Object required) : base(value, name, $"Collection must contain '{required}'.") { }
-
-		/// <summary>
-		/// Initialize a new <see cref="ArgumentNotContainsException"/>.
-		/// </summary>
-		/// <param name="value">The value of the argument responsible.</param>
-		/// <param name="name">The name of the argument responsible.</param>
-		/// <param name="required">The required member of the collection.</param>
-		public ArgumentNotContainsException(ICollection<Object> value, String name, Object required) : base(value, name, $"Collection must contain '{required}'.") { }
-
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
-		private ArgumentNotContainsException(SerializationInfo info, StreamingContext context) : base(info, context) { }
-#endif
+		/// <typeparam name="TValue">The type of the <paramref name="value"/>.</typeparam>
+		/// <typeparam name="TRequired">The type of the <paramref name="required"/>.</typeparam>
+		/// <param name="value">The argument value.</param>
+		/// <param name="name">The argument name.</param>
+		/// <param name="required">The value to require in the argument.</param>
+		/// <returns>An <see cref="ArgumentNotContainsException"/> instance.</returns>
+		public static ArgumentNotContainsException With<TValue, TRequired>(TValue value, String name, TRequired required) => new ArgumentNotContainsException(value, name, $"{typeof(TValue).Name} must contain '{required}'.");
 	}
 }

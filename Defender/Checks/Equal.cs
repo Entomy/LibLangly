@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 
 namespace Defender {
 	public static partial class Check {
@@ -12,6 +13,7 @@ namespace Defender {
 		/// <remarks>
 		/// This exists to help with equality situations where for some reason <see cref="IEquatable{T}"/> isn't defined and <see cref="Object.Equals(Object)"/> or <see cref="Object.Equals(Object, Object)"/> hasn't been overridden, but <see cref="IComparable{T}"/> has been implemented.
 		/// </remarks>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static Boolean Equal<T>(T value, T other) where T : IComparable<T> => value.CompareTo(other) == 0;
 	}
 }

@@ -1,26 +1,36 @@
 ﻿using System;
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
 using System.Runtime.Serialization;
-#endif
 
-namespace Defender {
+namespace Defender.Exceptions {
 	/// <summary>
 	/// Thrown when a value is lesser than a bound, but shouldn't be.
 	/// </summary>
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
 	[Serializable]
-#endif
 	public class ArgumentLesserThanException : ArgumentException {
 		/// <summary>
-		/// Initialize a new <see cref="ArgumentLesserThanException"/>.
+		/// Initialize a new <see cref="ArgumentLesserThanException"/>
 		/// </summary>
 		/// <param name="value">The value of the argument responsible.</param>
 		/// <param name="name">The name of the argument responsible.</param>
-		/// <param name="bound">The bound.</param>
-		public ArgumentLesserThanException(Object value, String name, Object bound) : base(value, name, $"Value '{value}' must be greater than the lower bound '{bound}'.") { }
+		/// <param name="message">The message that describes the error.</param>
+		protected ArgumentLesserThanException(Object value, String name, String message) : base(value, name, message) { }
 
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
+		/// <summary>
+		/// Deserialization constructor.
+		/// </summary>
+		/// <param name="info"></param>
+		/// <param name="context"></param>
 		protected ArgumentLesserThanException(SerializationInfo info, StreamingContext context) : base(info, context) { }
-#endif
+
+		/// <summary>
+		/// Initializes a <see cref="ArgumentLesserThanException"/> with the provided values.
+		/// </summary>
+		/// <typeparam name="TValue">The type of the <paramref name="value"/>.</typeparam>
+		/// <typeparam name="TBound">The type of the <paramref name="bound"/>.</typeparam>
+		/// <param name="value">The argument value.</param>
+		/// <param name="name">The argument name.</param>
+		/// <param name="bound">The lower bound.</param>
+		/// <returns>An <see cref="ArgumentLesserThanException"/> instance.</returns>
+		public static ArgumentLesserThanException With<TValue, TBound>(TValue value, String name, TBound bound) => new ArgumentLesserThanException(value, name, $"Value must be greater than or equal to the lower bound '{bound}'.");
 	}
 }

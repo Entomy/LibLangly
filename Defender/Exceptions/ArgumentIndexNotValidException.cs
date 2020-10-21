@@ -1,102 +1,115 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
 using System.Runtime.Serialization;
-#endif
 
-namespace Defender {
+namespace Defender.Exceptions {
 	/// <summary>
 	/// Thrown when an index is not of a valid value.
 	/// </summary>
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
 	[Serializable]
-#endif
 	public class ArgumentIndexNotValidException : ArgumentNotValidException {
 		/// <summary>
 		/// Initialize a new <see cref="ArgumentIndexNotValidException"/>.
 		/// </summary>
 		/// <param name="value">The value of the argument responsible.</param>
 		/// <param name="name">The name of the argument responsible.</param>
-		/// <param name="collection">The collection being indexed.</param>
-		public ArgumentIndexNotValidException(Int32 value, String name, String collection) : base(value, name, $"Index must be at least 0, and less than the length of the string '{collection.Length}'.") { }
-
-		/// <summary>
-		/// Initialize a new <see cref="ArgumentIndexNotValidException"/>.
-		/// </summary>
-		/// <param name="value">The value of the argument responsible.</param>
-		/// <param name="name">The name of the argument responsible.</param>
-		/// <param name="collection">The collection being indexed.</param>
-		public ArgumentIndexNotValidException(Int32 value, String name, Array collection) : base(value, name, $"Index must be at least 0, and less than the length of the array '{collection.Length}'.") { }
-
-		/// <summary>
-		/// Initialize a new <see cref="ArgumentIndexNotValidException"/>.
-		/// </summary>
-		/// <param name="value">The value of the argument responsible.</param>
-		/// <param name="name">The name of the argument responsible.</param>
-		/// <param name="collection">The collection being indexed.</param>
-		public ArgumentIndexNotValidException(Int32 value, String name, ICollection collection) : base(value, name, $"Index must be at least 0, and less than the length of the collection '{collection.Count}'.") { }
-
-
-		/// <inheritdoc/>
+		/// <param name="message">The message that describes the error.</param>
 		protected ArgumentIndexNotValidException(Object value, String name, String message) : base(value, name, message) { }
 
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
+		/// <summary>
+		/// Deserialization constructor.
+		/// </summary>
+		/// <param name="info"></param>
+		/// <param name="context"></param>
 		protected ArgumentIndexNotValidException(SerializationInfo info, StreamingContext context) : base(info, context) { }
-#endif
-	}
-
-	/// <summary>
-	/// Thrown when an index is not of a valid value.
-	/// </summary>
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
-	[Serializable]
-#endif
-	public sealed class ArgumentIndexNotValidException<T> : ArgumentIndexNotValidException {
-		/// <summary>
-		/// Initialize a new <see cref="ArgumentIndexNotValidException"/>.
-		/// </summary>
-		/// <param name="value">The value of the argument responsible.</param>
-		/// <param name="name">The name of the argument responsible.</param>
-		/// <param name="collection">The collection being indexed.</param>
-		public ArgumentIndexNotValidException(Int32 value, String name, ICollection<T> collection) : base(value, name, $"Index must be at least 0, and less than the length of the collection '{collection.Count}'.") { }
-
-#if !NETSTANDARD1_0
-		/// <summary>
-		/// Initialize a new <see cref="ArgumentIndexNotValidException"/>.
-		/// </summary>
-		/// <param name="value">The value of the argument responsible.</param>
-		/// <param name="name">The name of the argument responsible.</param>
-		/// <param name="collection">The collection being indexed.</param>
-		public ArgumentIndexNotValidException(Int32 value, String name, Span<T> collection) : base(value, name, $"Index must be at least 0, and less than the length of the span '{collection.Length}'.") { }
 
 		/// <summary>
-		/// Initialize a new <see cref="ArgumentIndexNotValidException"/>.
+		/// Initializes a <see cref="ArgumentIndexNotValidException"/> with the provided values.
 		/// </summary>
-		/// <param name="value">The value of the argument responsible.</param>
-		/// <param name="name">The name of the argument responsible.</param>
+		/// <typeparam name="TValue">The type of the <paramref name="value"/>.</typeparam>
+		/// <param name="value">The index value.</param>
+		/// <param name="name">The index name.</param>
 		/// <param name="collection">The collection being indexed.</param>
-		public ArgumentIndexNotValidException(Int32 value, String name, ReadOnlySpan<T> collection) : base(value, name, $"Index must be at least 0, and less than the length of the span '{collection.Length}'.") { }
+		/// <returns>An <see cref="ArgumentIndexNotValidException"/> instance.</returns>
+		public static ArgumentIndexNotValidException With<TValue>(TValue value, String name, String collection) => new ArgumentIndexNotValidException(value, name, $"Index must be at least 0 and less than the length of the {typeof(String).Name} '{collection.Length}");
 
 		/// <summary>
-		/// Initialize a new <see cref="ArgumentIndexNotValidException"/>.
+		/// Initializes a <see cref="ArgumentIndexNotValidException"/> with the provided values.
 		/// </summary>
-		/// <param name="value">The value of the argument responsible.</param>
-		/// <param name="name">The name of the argument responsible.</param>
+		/// <typeparam name="TValue">The type of the <paramref name="value"/>.</typeparam>
+		/// <typeparam name="T">The type of elements in the <paramref name="collection"/>.</typeparam>
+		/// <param name="value">The index value.</param>
+		/// <param name="name">The index name.</param>
 		/// <param name="collection">The collection being indexed.</param>
-		public ArgumentIndexNotValidException(Int32 value, String name, Memory<T> collection) : base(value, name, $"Index must be at least 0, and less than the length of the memory '{collection.Length}'.") { }
+		/// <returns>An <see cref="ArgumentIndexNotValidException"/> instance.</returns>
+		public static ArgumentIndexNotValidException With<TValue, T>(TValue value, String name, T[] collection) => new ArgumentIndexNotValidException(value, name, $"Index must be at least 0 and less than the length of the {typeof(T[]).Name} '{collection.Length}");
 
 		/// <summary>
-		/// Initialize a new <see cref="ArgumentIndexNotValidException"/>.
+		/// Initializes a <see cref="ArgumentIndexNotValidException"/> with the provided values.
 		/// </summary>
-		/// <param name="value">The value of the argument responsible.</param>
-		/// <param name="name">The name of the argument responsible.</param>
+		/// <typeparam name="TValue">The type of the <paramref name="value"/>.</typeparam>
+		/// <typeparam name="T">The type of elements in the <paramref name="collection"/>.</typeparam>
+		/// <param name="value">The index value.</param>
+		/// <param name="name">The index name.</param>
 		/// <param name="collection">The collection being indexed.</param>
-		public ArgumentIndexNotValidException(Int32 value, String name, ReadOnlyMemory<T> collection) : base(value, name, $"Index must be at least 0, and less than the length of the memory '{collection.Length}'.") { }
-#endif
+		/// <returns>An <see cref="ArgumentIndexNotValidException"/> instance.</returns>
+		public static ArgumentIndexNotValidException With<TValue, T>(TValue value, String name, Span<T> collection) => new ArgumentIndexNotValidException(value, name, $"Index must be at least 0 and less than the length of the {typeof(Span<T>).Name} '{collection.Length}");
 
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
-		private ArgumentIndexNotValidException(SerializationInfo info, StreamingContext context) : base(info, context) { }
-#endif
+		/// <summary>
+		/// Initializes a <see cref="ArgumentIndexNotValidException"/> with the provided values.
+		/// </summary>
+		/// <typeparam name="TValue">The type of the <paramref name="value"/>.</typeparam>
+		/// <typeparam name="T">The type of elements in the <paramref name="collection"/>.</typeparam>
+		/// <param name="value">The index value.</param>
+		/// <param name="name">The index name.</param>
+		/// <param name="collection">The collection being indexed.</param>
+		/// <returns>An <see cref="ArgumentIndexNotValidException"/> instance.</returns>
+		public static ArgumentIndexNotValidException With<TValue, T>(TValue value, String name, ReadOnlySpan<T> collection) => new ArgumentIndexNotValidException(value, name, $"Index must be at least 0 and less than the length of the {typeof(ReadOnlySpan<T>).Name} '{collection.Length}");
+
+		/// <summary>
+		/// Initializes a <see cref="ArgumentIndexNotValidException"/> with the provided values.
+		/// </summary>
+		/// <typeparam name="TValue">The type of the <paramref name="value"/>.</typeparam>
+		/// <typeparam name="T">The type of elements in the <paramref name="collection"/>.</typeparam>
+		/// <param name="value">The index value.</param>
+		/// <param name="name">The index name.</param>
+		/// <param name="collection">The collection being indexed.</param>
+		/// <returns>An <see cref="ArgumentIndexNotValidException"/> instance.</returns>
+		public static ArgumentIndexNotValidException With<TValue, T>(TValue value, String name, Memory<T> collection) => new ArgumentIndexNotValidException(value, name, $"Index must be at least 0 and less than the length of the {typeof(Memory<T>).Name} '{collection.Length}");
+
+		/// <summary>
+		/// Initializes a <see cref="ArgumentIndexNotValidException"/> with the provided values.
+		/// </summary>
+		/// <typeparam name="TValue">The type of the <paramref name="value"/>.</typeparam>
+		/// <typeparam name="T">The type of elements in the <paramref name="collection"/>.</typeparam>
+		/// <param name="value">The index value.</param>
+		/// <param name="name">The index name.</param>
+		/// <param name="collection">The collection being indexed.</param>
+		/// <returns>An <see cref="ArgumentIndexNotValidException"/> instance.</returns>
+		public static ArgumentIndexNotValidException With<TValue, T>(TValue value, String name, ReadOnlyMemory<T> collection) => new ArgumentIndexNotValidException(value, name, $"Index must be at least 0 and less than the length of the {typeof(ReadOnlyMemory<T>).Name} '{collection.Length}");
+
+		/// <summary>
+		/// Initializes a <see cref="ArgumentIndexNotValidException"/> with the provided values.
+		/// </summary>
+		/// <typeparam name="TValue">The type of the <paramref name="value"/>.</typeparam>
+		/// <typeparam name="TCollection">The type of the <paramref name="collection"/>.</typeparam>
+		/// <param name="value">The index value.</param>
+		/// <param name="name">The index name.</param>
+		/// <param name="collection">The collection being indexed.</param>
+		/// <returns>An <see cref="ArgumentIndexNotValidException"/> instance.</returns>
+		public static ArgumentIndexNotValidException With<TValue, TCollection>(TValue value, String name, TCollection collection) where TCollection : ICollection => new ArgumentIndexNotValidException(value, name, $"Index must be at least 0 and less than the length of the {typeof(TValue).Name} '{collection.Count}");
+
+		/// <summary>
+		/// Initializes a <see cref="ArgumentIndexNotValidException"/> with the provided values.
+		/// </summary>
+		/// <typeparam name="TValue">The type of the <paramref name="value"/>.</typeparam>
+		/// <typeparam name="T">The type of elements in the <paramref name="collection"/>.</typeparam>
+		/// <typeparam name="TCollection">The type of the <paramref name="collection"/>.</typeparam>
+		/// <param name="value">The index value.</param>
+		/// <param name="name">The index name.</param>
+		/// <param name="collection">The collection being indexed.</param>
+		/// <returns>An <see cref="ArgumentIndexNotValidException"/> instance.</returns>
+		public static ArgumentIndexNotValidException With<TValue, T, TCollection>(TValue value, String name, TCollection collection) where TCollection : ICollection<T> => new ArgumentIndexNotValidException(value, name, $"Index must be at least 0 and less than the length of the {typeof(TValue).Name} '{collection.Count}");
 	}
 }

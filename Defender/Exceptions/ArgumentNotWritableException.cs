@@ -1,26 +1,34 @@
 ﻿using System;
 using System.IO;
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
 using System.Runtime.Serialization;
-#endif
 
-namespace Defender {
+namespace Defender.Exceptions {
 	/// <summary>
 	/// Thrown when a stream is not writable, but should be.
 	/// </summary>
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
 	[Serializable]
-#endif
 	public class ArgumentNotWritableException : ArgumentException {
 		/// <summary>
-		/// Initialize a new <see cref="ArgumentNotReadableException"/>.
+		/// Initialize a new <see cref="ArgumentNotWritableException"/>.
 		/// </summary>
 		/// <param name="value">The value of the argument responsible.</param>
 		/// <param name="name">The name of the argument responsible.</param>
-		public ArgumentNotWritableException(Stream value, String name) : base(value, name, $"Stream must be writable.") { }
+		/// <param name="message">The message that describes the error.</param>
+		protected ArgumentNotWritableException(Object value, String name, String message) : base(value, name, message) { }
 
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
+		/// <summary>
+		/// Deserialization constructor.
+		/// </summary>
+		/// <param name="info"></param>
+		/// <param name="context"></param>
 		protected ArgumentNotWritableException(SerializationInfo info, StreamingContext context) : base(info, context) { }
-#endif
+
+		/// <summary>
+		/// Initializes a <see cref="ArgumentNotWritableException"/> with the provided values.
+		/// </summary>
+		/// <param name="value">The argument value.</param>
+		/// <param name="name">The argument name.</param>
+		/// <returns>An <see cref="ArgumentNotWritableException"/> instance.</returns>
+		public static ArgumentNotWritableException With(Stream value, String name) => new ArgumentNotWritableException(value, name, "Stream must be writable.");
 	}
 }

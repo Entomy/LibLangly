@@ -1,94 +1,54 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
 using System.Runtime.Serialization;
-#endif
 
-namespace Defender {
+namespace Defender.Exceptions {
 	/// <summary>
 	/// Thrown when a collection should be empty, but isn't.
 	/// </summary>
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
 	[Serializable]
-#endif
-	public class ArgumentNotEmptyException : ArgumentException {
+	public class ArgumentNotEmptyException : ArgumentIsNotSizeException {
 		/// <summary>
 		/// Initialize a new <see cref="ArgumentNotEmptyException"/>.
 		/// </summary>
 		/// <param name="value">The value of the argument responsible.</param>
 		/// <param name="name">The name of the argument responsible.</param>
-		public ArgumentNotEmptyException(String value, String name) : base(value, name, $"String must be empty.") { }
-
-		/// <summary>
-		/// Initialize a new <see cref="ArgumentNotEmptyException"/>.
-		/// </summary>
-		/// <param name="value">The value of the argument responsible.</param>
-		/// <param name="name">The name of the argument responsible.</param>
-		public ArgumentNotEmptyException(Array value, String name) : base(value, name, $"Array must be empty.") { }
-
-		/// <summary>
-		/// Initialize a new <see cref="ArgumentNotEmptyException"/>.
-		/// </summary>
-		/// <param name="value">The value of the argument responsible.</param>
-		/// <param name="name">The name of the argument responsible.</param>
-		public ArgumentNotEmptyException(ICollection value, String name) : base(value, name, $"Collection must be empty.") { }
-
-		/// <inheritdoc/>
+		/// <param name="message">The message that describes the error.</param>
 		protected ArgumentNotEmptyException(Object value, String name, String message) : base(value, name, message) { }
 
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
+		/// <summary>
+		/// Deserialization constructor.
+		/// </summary>
+		/// <param name="info"></param>
+		/// <param name="context"></param>
 		protected ArgumentNotEmptyException(SerializationInfo info, StreamingContext context) : base(info, context) { }
-#endif
-	}
-
-	/// <summary>
-	/// Thrown when a collection should be empty, but isn't.
-	/// </summary>
-	/// <typeparam name="T">The type held within the collection.</typeparam>
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
-	[Serializable]
-#endif
-	public sealed class ArgumentNotEmptyException<T> : ArgumentNotEmptyException {
-		/// <summary>
-		/// Initialize a new <see cref="ArgumentNotEmptyException"/>.
-		/// </summary>
-		/// <param name="value">The value of the argument responsible.</param>
-		/// <param name="name">The name of the argument responsible.</param>
-		public ArgumentNotEmptyException(ICollection<T> value, String name) : base(value, name, $"Collection must be empty.") { }
-
-#if !NETSTANDARD1_0
-		/// <summary>
-		/// Initialize a new <see cref="ArgumentNotEmptyException"/>.
-		/// </summary>
-		/// <param name="value">The value of the argument responsible.</param>
-		/// <param name="name">The name of the argument responsible.</param>
-		public ArgumentNotEmptyException(Span<T> value, String name) : base(value.ToArray(), name, $"Span must be empty.") { }
 
 		/// <summary>
-		/// Initialize a new <see cref="ArgumentNotEmptyException"/>.
+		/// Initializes a <see cref="ArgumentNotEmptyException"/> with the provided values.
 		/// </summary>
-		/// <param name="value">The value of the argument responsible.</param>
-		/// <param name="name">The name of the argument responsible.</param>
-		public ArgumentNotEmptyException(ReadOnlySpan<T> value, String name) : base(value.ToArray(), name, $"Span must be empty.") { }
+		/// <typeparam name="TValue">The type of the <paramref name="value"/>.</typeparam>
+		/// <param name="value">The argument value.</param>
+		/// <param name="name">The argument name.</param>
+		/// <returns>An <see cref="ArgumentNotEmptyException"/> instance.</returns>
+		public static ArgumentNotEmptyException With<TValue>(TValue value, String name) => new ArgumentNotEmptyException(value, name, $"{typeof(TValue).Name} must be empty.");
 
 		/// <summary>
-		/// Initialize a new <see cref="ArgumentNotEmptyException"/>.
+		/// Initializes a <see cref="ArgumentNotEmptyException"/> with the provided values.
 		/// </summary>
-		/// <param name="value">The value of the argument responsible.</param>
-		/// <param name="name">The name of the argument responsible.</param>
-		public ArgumentNotEmptyException(Memory<T> value, String name) : base(value, name, $"Memory must be empty.") { }
+		/// <typeparam name="T">The type of element in the span.</typeparam>
+		/// <param name="value">The argument value.</param>
+		/// <param name="name">The argument name.</param>
+		/// <returns>An <see cref="ArgumentNotEmptyException"/> instance.</returns>
+		public static ArgumentNotEmptyException With<T>(Span<T> value, String name) => new ArgumentNotEmptyException(value.ToArray(), name, $"{typeof(Span<T>).Name} must be empty.");
 
 		/// <summary>
-		/// Initialize a new <see cref="ArgumentNotEmptyException"/>.
+		/// Initializes a <see cref="ArgumentNotEmptyException"/> with the provided values.
 		/// </summary>
-		/// <param name="value">The value of the argument responsible.</param>
-		/// <param name="name">The name of the argument responsible.</param>
-		public ArgumentNotEmptyException(ReadOnlyMemory<T> value, String name) : base(value, name, $"Memory must be empty.") { }
-#endif
-
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
-		private ArgumentNotEmptyException(SerializationInfo info, StreamingContext context) : base(info, context) { }
-#endif
+		/// <typeparam name="T">The type of element in the span.</typeparam>
+		/// <param name="value">The argument value.</param>
+		/// <param name="name">The argument name.</param>
+		/// <returns>An <see cref="ArgumentNotEmptyException"/> instance.</returns>
+		public static ArgumentNotEmptyException With<T>(ReadOnlySpan<T> value, String name) => new ArgumentNotEmptyException(value.ToArray(), name, $"{typeof(ReadOnlySpan<T>).Name} must be empty.");
 	}
 }

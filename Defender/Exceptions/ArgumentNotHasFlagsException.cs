@@ -1,27 +1,36 @@
 ﻿using System;
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
 using System.Runtime.Serialization;
-#endif
 
-namespace Defender {
+namespace Defender.Exceptions {
 	/// <summary>
 	/// Thrown when a flags enum is required to have certain flags set, but doesn't.
 	/// </summary>
-	/// <typeparam name="E">An <see cref="Enum"/> type.</typeparam>
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
 	[Serializable]
-#endif
-	public class ArgumentNotHasFlagsException<E> : ArgumentNotValidException where E : struct, Enum {
+	public class ArgumentNotHasFlagsException : ArgumentNotValidException {
 		/// <summary>
-		/// Initialize a new <see cref="ArgumentNotHasFlagsException{E}"/>.
+		/// Initialize a new <see cref="ArgumentNotHasFlagsException"/>.
 		/// </summary>
 		/// <param name="value">The value of the argument responsible.</param>
 		/// <param name="name">The name of the argument responsible.</param>
-		/// <param name="flags">The required flags.</param>
-		public ArgumentNotHasFlagsException(E value, String name, E flags) : base(value, name, $"Enum must contain the flags '{flags}'.") { }
+		/// <param name="message">The message that describes the error.</param>
+		protected ArgumentNotHasFlagsException(Object value, String name, String message) : base(value, name, message) { }
 
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
+		/// <summary>
+		/// Deserialization constructor.
+		/// </summary>
+		/// <param name="info"></param>
+		/// <param name="context"></param>
 		protected ArgumentNotHasFlagsException(SerializationInfo info, StreamingContext context) : base(info, context) { }
-#endif
+
+		/// <summary>
+		/// Initializes a <see cref="ArgumentNotHasFlagsException"/> with the provided values.
+		/// </summary>
+		/// <typeparam name="TEnum">The type of the <paramref name="value"/>.</typeparam>
+		/// <param name="value">The argument value.</param>
+		/// <param name="name">The argument name.</param>
+		/// <param name="flags">The required flags.</param>
+		/// <returns>An <see cref="ArgumentNotHasFlagsException"/> instance.</returns>
+		public static ArgumentNotHasFlagsException With<TEnum>(TEnum value, String name, TEnum flags) where TEnum : struct, Enum => new ArgumentNotHasFlagsException(value, name, $"{typeof(TEnum).Name} must contain the flags '{flags}'.");
+
 	}
 }

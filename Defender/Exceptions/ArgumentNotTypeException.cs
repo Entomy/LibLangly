@@ -1,26 +1,34 @@
 ﻿using System;
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
 using System.Runtime.Serialization;
-#endif
 
-namespace Defender {
+namespace Defender.Exceptions {
 	/// <summary>
 	/// The exception that is thrown when an object is passed to a method that expects a specific type, but is not of that type.
 	/// </summary>
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
 	[Serializable]
-#endif
 	public class ArgumentNotTypeException : ArgumentException {
 		/// <summary>
 		/// Initialize a new <see cref="ArgumentNotTypeException"/>.
 		/// </summary>
 		/// <param name="value">The value of the argument responsible.</param>
 		/// <param name="name">The name of the argument responsible.</param>
-		/// <param name="type">The type the argument was supposed to be.</param>
-		public ArgumentNotTypeException(Object value, String name, Type type) : base(value, name, $"Argument not of type '{type}'.") { }
+		/// <param name="message">The message that describes the error.</param>
+		protected ArgumentNotTypeException(Object value, String name, String message) : base(value, name, message) { }
 
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
+		/// <summary>
+		/// Deserialization constructor.
+		/// </summary>
+		/// <param name="info"></param>
+		/// <param name="context"></param>
 		protected ArgumentNotTypeException(SerializationInfo info, StreamingContext context) : base(info, context) { }
-#endif
+
+		/// <summary>
+		/// Initializes a <see cref="ArgumentNotTypeException"/> with the provided values.
+		/// </summary>
+		/// <typeparam name="TValue">The type of the argument.</typeparam>
+		/// <typeparam name="TType">The type the argument must be.</typeparam>
+		/// <param name="name">The argument name.</param>
+		/// <returns>An <see cref="ArgumentNotTypeException"/> instance.</returns>
+		public static ArgumentNotTypeException With<TValue, TType>(String name) => new ArgumentNotTypeException(typeof(TValue).Name, name, $"Argument not of type '{typeof(TType).Name}'.");
 	}
 }

@@ -1,93 +1,80 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
 using System.Runtime.Serialization;
-#endif
 
-namespace Defender {
+namespace Defender.Exceptions {
 	/// <summary>
 	/// Thrown when a collection is not a particular size, but should be.
 	/// </summary>
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
 	[Serializable]
-#endif
 	public class ArgumentIsNotSizeException : ArgumentNotEqualException {
 		/// <summary>
-		/// Intialize a new <see cref="ArgumentIsNotSizeException"/>.
+		/// Initializes a new <see cref="ArgumentIsNotSizeException"/>.
 		/// </summary>
 		/// <param name="value">The value of the argument responsible.</param>
 		/// <param name="name">The name of the argument responsible.</param>
-		/// <param name="required">The required value.</param>
-		public ArgumentIsNotSizeException(Array value, String name, Object required) : base(value, name, $"Array must be of size '{required}'.") { }
-
-		/// <summary>
-		/// Intialize a new <see cref="ArgumentIsNotSizeException"/>.
-		/// </summary>
-		/// <param name="value">The value of the argument responsible.</param>
-		/// <param name="name">The name of the argument responsible.</param>
-		/// <param name="required">The required value.</param>
-		public ArgumentIsNotSizeException(ICollection value, String name, Object required) : base(value, name, $"Collection must be of size '{required}'.") { }
-
-		/// <inheritdoc/>
+		/// <param name="message">The message that describes the error.</param>
 		protected ArgumentIsNotSizeException(Object value, String name, String message) : base(value, name, message) { }
 
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
+		/// <summary>
+		/// Deserialization constructor.
+		/// </summary>
+		/// <param name="info"></param>
+		/// <param name="context"></param>
 		protected ArgumentIsNotSizeException(SerializationInfo info, StreamingContext context) : base(info, context) { }
-#endif
-	}
-
-	/// <summary>
-	/// Thrown when a collection is not a particular size, but should be.
-	/// </summary>
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
-	[Serializable]
-#endif
-	public sealed class ArgumentIsNotSizeException<T> : ArgumentIsNotSizeException {
-		/// <summary>
-		/// Intialize a new <see cref="ArgumentIsNotSizeException"/>.
-		/// </summary>
-		/// <param name="value">The value of the argument responsible.</param>
-		/// <param name="name">The name of the argument responsible.</param>
-		/// <param name="required">The required value.</param>
-		public ArgumentIsNotSizeException(ICollection<T> value, String name, Object required) : base(value, name, $"Collection must be of size '{required}'.") { }
-
-#if !NETSTANDARD1_0
-		/// <summary>
-		/// Intialize a new <see cref="ArgumentIsNotSizeException"/>.
-		/// </summary>
-		/// <param name="value">The value of the argument responsible.</param>
-		/// <param name="name">The name of the argument responsible.</param>
-		/// <param name="required">The required value.</param>
-		public ArgumentIsNotSizeException(Span<T> value, String name, Object required) : base(value.ToArray(), name, message: $"Span must be of size '{required}'.") { }
 
 		/// <summary>
-		/// Intialize a new <see cref="ArgumentIsNotSizeException"/>.
+		/// Initializes a <see cref="ArgumentIsNotSizeException"/> with the provided values.
 		/// </summary>
-		/// <param name="value">The value of the argument responsible.</param>
-		/// <param name="name">The name of the argument responsible.</param>
-		/// <param name="required">The required value.</param>
-		public ArgumentIsNotSizeException(ReadOnlySpan<T> value, String name, Object required) : base(value.ToArray(), name, message: $"Span must be of size '{required}'.") { }
+		/// <typeparam name="TValue">The type of the <paramref name="value"/>.</typeparam>
+		/// <typeparam name="TRequired">The type of the <paramref name="required"/>.</typeparam>
+		/// <param name="value">The argument value.</param>
+		/// <param name="name">The argument name.</param>
+		/// <param name="required">The required size..</param>
+		/// <returns>An <see cref="ArgumentIsNotSizeException"/> instance.</returns>
+		public static ArgumentIsNotSizeException With<TValue, TRequired>(TValue value, String name, TRequired required) => new ArgumentIsNotSizeException(value, name, $"{typeof(TValue).Name} must be of size '{required}'.");
 
 		/// <summary>
-		/// Intialize a new <see cref="ArgumentIsNotSizeException"/>.
+		/// Initializes a <see cref="ArgumentIsNotSizeException"/> with the provided values.
 		/// </summary>
-		/// <param name="value">The value of the argument responsible.</param>
-		/// <param name="name">The name of the argument responsible.</param>
-		/// <param name="required">The required value.</param>
-		public ArgumentIsNotSizeException(Memory<T> value, String name, Object required) : base(value, name, $"Memory must be of size '{required}'.") { }
+		/// <typeparam name="T">The type of the element in the span.</typeparam>
+		/// <typeparam name="TRequired">The type of the <paramref name="required"/>.</typeparam>
+		/// <param name="value">The argument value.</param>
+		/// <param name="name">The argument name.</param>
+		/// <param name="required">The required size..</param>
+		/// <returns>An <see cref="ArgumentIsNotSizeException"/> instance.</returns>
+		public static ArgumentIsNotSizeException With<T, TRequired>(Span<T> value, String name, TRequired required) => new ArgumentIsNotSizeException(value.ToArray(), name, $"{typeof(Span<T>).Name} must be of size '{required}'.");
 
 		/// <summary>
-		/// Intialize a new <see cref="ArgumentIsNotSizeException"/>.
+		/// Initializes a <see cref="ArgumentIsNotSizeException"/> with the provided values.
 		/// </summary>
-		/// <param name="value">The value of the argument responsible.</param>
-		/// <param name="name">The name of the argument responsible.</param>
-		/// <param name="required">The required value.</param>
-		public ArgumentIsNotSizeException(ReadOnlyMemory<T> value, String name, Object required) : base(value, name, $"Memory must be of size '{required}'.") { }
-#endif
+		/// <typeparam name="T">The type of the element in the span.</typeparam>
+		/// <typeparam name="TRequired">The type of the <paramref name="required"/>.</typeparam>
+		/// <param name="value">The argument value.</param>
+		/// <param name="name">The argument name.</param>
+		/// <param name="required">The required size..</param>
+		/// <returns>An <see cref="ArgumentIsNotSizeException"/> instance.</returns>
+		public static ArgumentIsNotSizeException With<T, TRequired>(ReadOnlySpan<T> value, String name, TRequired required) => new ArgumentIsNotSizeException(value.ToArray(), name, $"{typeof(ReadOnlySpan<T>).Name} must be of size '{required}'.");
 
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
-		private ArgumentIsNotSizeException(SerializationInfo info, StreamingContext context) : base(info, context) { }
-#endif
+		/// <summary>
+		/// Initializes a <see cref="ArgumentIsNotSizeException"/> with the provided values.
+		/// </summary>
+		/// <typeparam name="T">The type of the element in the span.</typeparam>
+		/// <typeparam name="TRequired">The type of the <paramref name="required"/>.</typeparam>
+		/// <param name="value">The argument value.</param>
+		/// <param name="name">The argument name.</param>
+		/// <param name="required">The required size..</param>
+		/// <returns>An <see cref="ArgumentIsNotSizeException"/> instance.</returns>
+		public static ArgumentIsNotSizeException With<T, TRequired>(Memory<T> value, String name, TRequired required) => new ArgumentIsNotSizeException(value.ToArray(), name, $"{typeof(Memory<T>).Name} must be of size '{required}'.");
+
+		/// <summary>
+		/// Initializes a <see cref="ArgumentIsNotSizeException"/> with the provided values.
+		/// </summary>
+		/// <typeparam name="T">The type of the element in the span.</typeparam>
+		/// <typeparam name="TRequired">The type of the <paramref name="required"/>.</typeparam>
+		/// <param name="value">The argument value.</param>
+		/// <param name="name">The argument name.</param>
+		/// <param name="required">The required size..</param>
+		/// <returns>An <see cref="ArgumentIsNotSizeException"/> instance.</returns>
+		public static ArgumentIsNotSizeException With<T, TRequired>(ReadOnlyMemory<T> value, String name, TRequired required) => new ArgumentIsNotSizeException(value.ToArray(), name, $"{typeof(ReadOnlyMemory<T>).Name} must be of size '{required}'.");
 	}
 }

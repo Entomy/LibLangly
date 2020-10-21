@@ -1,26 +1,34 @@
 ﻿using System;
 using System.IO;
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
 using System.Runtime.Serialization;
-#endif
 
-namespace Defender {
+namespace Defender.Exceptions {
 	/// <summary>
 	/// Thrown when a stream is not readable, but should be.
 	/// </summary>
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
 	[Serializable]
-#endif
 	public class ArgumentNotReadableException : ArgumentException {
 		/// <summary>
 		/// Initialize a new <see cref="ArgumentNotReadableException"/>.
 		/// </summary>
 		/// <param name="value">The value of the argument responsible.</param>
 		/// <param name="name">The name of the argument responsible.</param>
-		public ArgumentNotReadableException(Stream value, String name) : base(value, name, $"Stream must be readable.") { }
+		/// <param name="message">The message that describes the error.</param>
+		protected ArgumentNotReadableException(Object value, String name, String message) : base(value, name, message) { }
 
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
+		/// <summary>
+		/// Deserialization constructor.
+		/// </summary>
+		/// <param name="info"></param>
+		/// <param name="context"></param>
 		protected ArgumentNotReadableException(SerializationInfo info, StreamingContext context) : base(info, context) { }
-#endif
+
+		/// <summary>
+		/// Initializes a <see cref="ArgumentNotReadableException"/> with the provided values.
+		/// </summary>
+		/// <param name="value">The argument value.</param>
+		/// <param name="name">The argument name.</param>
+		/// <returns>An <see cref="ArgumentNotReadableException"/> instance.</returns>
+		public static ArgumentNotReadableException With(Stream value, String name) => new ArgumentNotReadableException(value, name, "Stream must be readable.");
 	}
 }

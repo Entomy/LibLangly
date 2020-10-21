@@ -1,47 +1,34 @@
 ﻿using System;
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
 using System.Runtime.Serialization;
-#endif
 
-namespace Defender {
+namespace Defender.Exceptions {
 	/// <summary>
 	/// Thrown when an object is in an invalid state.
 	/// </summary>
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
 	[Serializable]
-#endif
 	public class ArgumentNotValidException : ArgumentException {
 		/// <summary>
-		/// Initialize a new <see cref="ArgumentContainsException"/>.
+		/// Initialize a new <see cref="ArgumentException"/>.
 		/// </summary>
 		/// <param name="value">The value of the argument responsible.</param>
 		/// <param name="name">The name of the argument responsible.</param>
-		public ArgumentNotValidException(Object value, String name) : base(value, name, $"Object must be in a valid state.") { }
-
-		/// <inheritdoc/>
+		/// <param name="message">The message that describes the error.</param>
 		protected ArgumentNotValidException(Object value, String name, String message) : base(value, name, message) { }
 
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
-		protected ArgumentNotValidException(SerializationInfo info, StreamingContext context) : base(info, context) { }
-#endif
-	}
-
-	/// <summary>
-	/// Thrown when an enumeration value is undefined.
-	/// </summary>
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
-	[Serializable]
-#endif
-	public sealed class ArgumentNotValidException<E> : ArgumentNotValidException where E : struct, Enum {
 		/// <summary>
-		/// Initialize a new <see cref="ArgumentContainsException"/>.
+		/// Deserialization constructor.
 		/// </summary>
-		/// <param name="value">The value of the argument responsible.</param>
-		/// <param name="name">The name of the argument responsible.</param>
-		public ArgumentNotValidException(E value, String name) : base(value, name, $"Value must be a defined '{typeof(E)}' value.") { }
-
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
+		/// <param name="info"></param>
+		/// <param name="context"></param>
 		protected ArgumentNotValidException(SerializationInfo info, StreamingContext context) : base(info, context) { }
-#endif
+
+		/// <summary>
+		/// Initializes a <see cref="ArgumentNotValidException"/> with the provided values.
+		/// </summary>
+		/// <typeparam name="TEnum">The type of the <paramref name="value"/>.</typeparam>
+		/// <param name="value">The argument value.</param>
+		/// <param name="name">The argument name.</param>
+		/// <returns>An <see cref="ArgumentNotValidException"/> instance.</returns>
+		public static ArgumentNotValidException With<TEnum>(TEnum value, String name) where TEnum : struct, Enum => new ArgumentNotValidException(value, name, $"{typeof(TEnum).Name} must be a defined value.");
 	}
 }

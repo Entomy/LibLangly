@@ -1,0 +1,5 @@
+# Philosoft
+
+**Philosoft** provides a rich [trait-oriented](https://dev.to/entomy/real-traits-in-c-4fpk) set of interfaces together with extension methods for them to enable [null-tolerance](https://dev.to/entomy/avoiding-nulls-with-extension-methods-3mkc). The idea is to help encourage robust and resilient code bases while keeping a common framework for talking about disparate types.
+
+So how do you use it? When implementing a new type, pass all the traits into the interface implementation list just like you normally would with any interface, and while you don't explicitly have to, when implementing the required methods you _should_ implement them explicitly. In doing so, the [null-tolerant](https://dev.to/entomy/avoiding-nulls-with-extension-methods-3mkc) extension methods will be used, allowing null objects to be gracefully handled while still calling the implementations you provided.

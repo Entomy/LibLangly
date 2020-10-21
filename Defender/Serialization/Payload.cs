@@ -157,9 +157,7 @@ namespace Defender.Serialization {
 
 		/// <inheritdoc/>
 		void IResizable.Resize(nint capacity) {
-			if (capacity < Length) {
-				throw new ArgumentLesserThanException(capacity, nameof(capacity), Length);
-			}
+			Guard.GreaterThan(Length, nameof(Length), capacity);
 			Byte[] newData = new Byte[capacity];
 			Data.AsSpan().CopyTo(newData.AsSpan());
 			Data = newData;

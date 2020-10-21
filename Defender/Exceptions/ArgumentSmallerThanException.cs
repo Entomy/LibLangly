@@ -1,94 +1,58 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
 using System.Runtime.Serialization;
-#endif
 
-namespace Defender {
+namespace Defender.Exceptions {
 	/// <summary>
 	/// Thrown when a collection is smaller than a bound, but shouldn't be.
 	/// </summary>
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
 	[Serializable]
-#endif
 	public class ArgumentSmallerThanException : ArgumentLesserThanException {
 		/// <summary>
-		/// Initialize a new <see cref="ArgumentSmallerThanException"/>.
+		/// Initialize a new <see cref="ArgumentSmallerThanException"/>
 		/// </summary>
 		/// <param name="value">The value of the argument responsible.</param>
 		/// <param name="name">The name of the argument responsible.</param>
-		/// <param name="bound">The bound.</param>
-		public ArgumentSmallerThanException(Array value, String name, Object bound) : base(value, name, $"Array must be larger than the lower bound '{bound}'.") { }
-
-		/// <summary>
-		/// Initialize a new <see cref="ArgumentSmallerThanException"/>.
-		/// </summary>
-		/// <param name="value">The value of the argument responsible.</param>
-		/// <param name="name">The name of the argument responsible.</param>
-		/// <param name="bound">The bound.</param>
-		public ArgumentSmallerThanException(ICollection value, String name, Object bound) : base(value, name, $"Collection must be larger than the lower bound '{bound}'.") { }
-
-		/// <inheritdoc/>
+		/// <param name="message">The message that describes the error.</param>
 		protected ArgumentSmallerThanException(Object value, String name, String message) : base(value, name, message) { }
 
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
+		/// <summary>
+		/// Deserialization constructor.
+		/// </summary>
+		/// <param name="info"></param>
+		/// <param name="context"></param>
 		protected ArgumentSmallerThanException(SerializationInfo info, StreamingContext context) : base(info, context) { }
-#endif
-	}
-
-	/// <summary>
-	/// Thrown when a collection is smaller than a bound, but shouldn't be.
-	/// </summary>
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
-	[Serializable]
-#endif
-	public sealed class ArgumentSmallerThanException<T> : ArgumentSmallerThanException {
-		/// <summary>
-		/// Initialize a new <see cref="ArgumentSmallerThanException"/>.
-		/// </summary>
-		/// <param name="value">The value of the argument responsible.</param>
-		/// <param name="name">The name of the argument responsible.</param>
-		/// <param name="bound">The bound.</param>
-		public ArgumentSmallerThanException(ICollection<T> value, String name, Object bound) : base(value, name, $"Collection must be larger than the lower bound '{bound}'.") { }
-
-#if !NETSTANDARD1_0
-		/// <summary>
-		/// Initialize a new <see cref="ArgumentSmallerThanException"/>.
-		/// </summary>
-		/// <param name="value">The value of the argument responsible.</param>
-		/// <param name="name">The name of the argument responsible.</param>
-		/// <param name="bound">The bound.</param>
-		public ArgumentSmallerThanException(Span<T> value, String name, Object bound) : base(value.ToArray(), name, message: $"Span must be larger than the lower bound '{bound}'.") { }
 
 		/// <summary>
-		/// Initialize a new <see cref="ArgumentSmallerThanException"/>.
+		/// Initializes a <see cref="ArgumentSmallerThanException"/> with the provided values.
 		/// </summary>
-		/// <param name="value">The value of the argument responsible.</param>
-		/// <param name="name">The name of the argument responsible.</param>
-		/// <param name="bound">The bound.</param>
-		public ArgumentSmallerThanException(ReadOnlySpan<T> value, String name, Object bound) : base(value.ToArray(), name, message: $"Span must be larger than the lower bound '{bound}'.") { }
+		/// <typeparam name="TValue">The type of the <paramref name="value"/>.</typeparam>
+		/// <typeparam name="TBound">The type of the <paramref name="bound"/>.</typeparam>
+		/// <param name="value">The argument value.</param>
+		/// <param name="name">The argument name.</param>
+		/// <param name="bound">The upper bound.</param>
+		/// <returns>An <see cref="ArgumentSmallerThanException"/> instance.</returns>
+		new public static ArgumentSmallerThanException With<TValue, TBound>(TValue value, String name, TBound bound) => new ArgumentSmallerThanException(value, name, $"{typeof(TValue).Name} must not be larger than '{bound}'.");
 
 		/// <summary>
-		/// Initialize a new <see cref="ArgumentSmallerThanException"/>.
+		/// Initializes a <see cref="ArgumentSmallerThanException"/> with the provided values.
 		/// </summary>
-		/// <param name="value">The value of the argument responsible.</param>
-		/// <param name="name">The name of the argument responsible.</param>
-		/// <param name="bound">The bound.</param>
-		public ArgumentSmallerThanException(Memory<T> value, String name, Object bound) : base(value, name, $"Memory must be larger than the lower bound '{bound}'.") { }
+		/// <typeparam name="T">The type of the elements in the span.</typeparam>
+		/// <typeparam name="TBound">The type of the <paramref name="bound"/>.</typeparam>
+		/// <param name="value">The argument value.</param>
+		/// <param name="name">The argument name.</param>
+		/// <param name="bound">The upper bound.</param>
+		/// <returns>An <see cref="ArgumentSmallerThanException"/> instance.</returns>
+		public static ArgumentSmallerThanException With<T, TBound>(Span<T> value, String name, TBound bound) => new ArgumentSmallerThanException(value.ToArray(), name, $"{typeof(Span<T>).Name} must not be larger than '{bound}'.");
 
 		/// <summary>
-		/// Initialize a new <see cref="ArgumentSmallerThanException"/>.
+		/// Initializes a <see cref="ArgumentSmallerThanException"/> with the provided values.
 		/// </summary>
-		/// <param name="value">The value of the argument responsible.</param>
-		/// <param name="name">The name of the argument responsible.</param>
-		/// <param name="bound">The bound.</param>
-		public ArgumentSmallerThanException(ReadOnlyMemory<T> value, String name, Object bound) : base(value, name, $"Memory must be larger than the lower bound '{bound}'.") { }
-
-#endif
-
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
-		private ArgumentSmallerThanException(SerializationInfo info, StreamingContext context) : base(info, context) { }
-#endif
+		/// <typeparam name="T">The type of the elements in the span.</typeparam>
+		/// <typeparam name="TBound">The type of the <paramref name="bound"/>.</typeparam>
+		/// <param name="value">The argument value.</param>
+		/// <param name="name">The argument name.</param>
+		/// <param name="bound">The upper bound.</param>
+		/// <returns>An <see cref="ArgumentSmallerThanException"/> instance.</returns>
+		public static ArgumentSmallerThanException With<T, TBound>(ReadOnlySpan<T> value, String name, TBound bound) => new ArgumentSmallerThanException(value.ToArray(), name, $"{typeof(ReadOnlySpan<T>).Name} must not be larger than '{bound}'.");
 	}
 }

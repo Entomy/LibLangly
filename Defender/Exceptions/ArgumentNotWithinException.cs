@@ -1,52 +1,36 @@
 ﻿using System;
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
 using System.Runtime.Serialization;
-#endif
 
-namespace Defender {
+namespace Defender.Exceptions {
 	/// <summary>
 	/// Thrown when a valid should be within a range, but isn't.
 	/// </summary>
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
 	[Serializable]
-#endif
-	public abstract class ArgumentNotWithinException : ArgumentException {
-		/// <inheritdoc/>
+	public class ArgumentNotWithinException : ArgumentException {
+		/// <summary>
+		/// Initialize a new <see cref="ArgumentNotWithinException"/>.
+		/// </summary>
+		/// <param name="value">The value of the argument responsible.</param>
+		/// <param name="name">The name of the argument responsible.</param>
+		/// <param name="message">The message that describes the error.</param>
 		protected ArgumentNotWithinException(Object value, String name, String message) : base(value, name, message) { }
 
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
-		protected ArgumentNotWithinException(SerializationInfo info, StreamingContext context) : base(info, context) { }
-#endif
-	}
-
-	/// <summary>
-	/// Thrown when a valid should be within a range, but isn't.
-	/// </summary>
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
-	[Serializable]
-#endif
-	public class ArgumentNotWithinException<T> : ArgumentNotWithinException {
 		/// <summary>
-		/// Initialize a new <see cref="ArgumentNotWithinException{T}"/>.
+		/// Deserialization constructor.
 		/// </summary>
-		/// <param name="value">The value of the argument responsible.</param>
-		/// <param name="name">The name of the argument responsible.</param>
+		/// <param name="info"></param>
+		/// <param name="context"></param>
+		protected ArgumentNotWithinException(SerializationInfo info, StreamingContext context) : base(info, context) { }
+
+		/// <summary>
+		/// Initializes a <see cref="ArgumentNotWithinException"/> with the provided values.
+		/// </summary>
+		/// <typeparam name="TValue">The type of the <paramref name="value"/>.</typeparam>
+		/// <param name="value">The argument value.</param>
+		/// <param name="name">The argument name.</param>
 		/// <param name="lower">The lower bound.</param>
 		/// <param name="upper">The upper bound.</param>
-		public ArgumentNotWithinException(T value, String name, T lower, T upper) : base(value, name, $"Value '{value}' must be within {lower}..{upper}, inclusive.") { }
-
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1 && !NETSTANDARD2_0
-		/// <summary>
-		/// Initialize a new <see cref="ArgumentNotWithinException{T}"/>.
-		/// </summary>
-		/// <param name="value">The value of the argument responsible.</param>
-		/// <param name="name">The name of the argument responsible.</param>
-		/// <param name="range">The range.</param>
-		public ArgumentNotWithinException(T value, String name, Range range) : base(value, name, $"Value '{value}' must be within {range}, inclusive.") { }
-#endif
-
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
-		protected ArgumentNotWithinException(SerializationInfo info, StreamingContext context) : base(info, context) { }
-#endif
+		/// <returns>An <see cref="ArgumentNotWithinException"/> instance.</returns>
+		public static ArgumentNotWithinException With<TValue>(TValue value, String name, TValue lower, TValue upper) => new ArgumentNotWithinException(value, name, $"Value must be within {lower}..{upper}, inclusive.");
 	}
 }

@@ -1,26 +1,36 @@
 ﻿using System;
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
 using System.Runtime.Serialization;
-#endif
 
-namespace Defender {
+namespace Defender.Exceptions {
 	/// <summary>
 	/// Thrown when two objects are equal, but should not be.
 	/// </summary>
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
 	[Serializable]
-#endif
 	public class ArgumentEqualException : ArgumentException {
 		/// <summary>
-		/// Intialize a new <see cref="ArgumentEqualException"/>.
+		/// Initialize a new <see cref="ArgumentEqualException"/>.
 		/// </summary>
 		/// <param name="value">The value of the argument responsible.</param>
 		/// <param name="name">The name of the argument responsible.</param>
-		/// <param name="excluded">The excluded value.</param>
-		public ArgumentEqualException(Object value, String name, Object excluded) : base(value, name, $"Value '{value}' must not equal '{excluded}'.") { }
+		/// <param name="message">The message that describes the error.</param>
+		protected ArgumentEqualException(Object value, String name, String message) : base(value, name, message) { }
 
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
+		/// <summary>
+		/// Deserialization constructor.
+		/// </summary>
+		/// <param name="info"></param>
+		/// <param name="context"></param>
 		protected ArgumentEqualException(SerializationInfo info, StreamingContext context) : base(info, context) { }
-#endif
+
+		/// <summary>
+		/// Initializes a <see cref="ArgumentEqualException"/> with the provided values.
+		/// </summary>
+		/// <typeparam name="TValue">The type of the <paramref name="value"/>.</typeparam>
+		/// <typeparam name="TExcluded">The type of the <paramref name="excluded"/>.</typeparam>
+		/// <param name="value">The argument value.</param>
+		/// <param name="name">The argument name.</param>
+		/// <param name="excluded">The value the argument must not equal.</param>
+		/// <returns>An <see cref="ArgumentEqualException"/> instance.</returns>
+		public static ArgumentEqualException With<TValue, TExcluded>(TValue value, String name, TExcluded excluded) => new ArgumentEqualException(value, name, $"Value must not equal '{excluded}'.");
 	}
 }

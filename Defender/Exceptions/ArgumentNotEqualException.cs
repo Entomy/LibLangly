@@ -1,26 +1,36 @@
 ﻿using System;
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
 using System.Runtime.Serialization;
-#endif
 
-namespace Defender {
+namespace Defender.Exceptions {
 	/// <summary>
 	/// Thrown when two objects are unequal, but should be.
 	/// </summary>
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
 	[Serializable]
-#endif
 	public class ArgumentNotEqualException : ArgumentException {
 		/// <summary>
 		/// Initialize a new <see cref="ArgumentNotEqualException"/>.
 		/// </summary>
 		/// <param name="value">The value of the argument responsible.</param>
 		/// <param name="name">The name of the argument responsible.</param>
-		/// <param name="expected">The expected value.</param>
-		public ArgumentNotEqualException(Object value, String name, Object expected) : base(value, name, $"Value '{value}' must equal '{expected}'.") { }
+		/// <param name="message">The message that describes the error.</param>
+		protected ArgumentNotEqualException(Object value, String name, String message) : base(value, name, message) { }
 
-#if !NETSTANDARD1_0 && !NETSTANDARD1_1
+		/// <summary>
+		/// Deserialization constructor.
+		/// </summary>
+		/// <param name="info"></param>
+		/// <param name="context"></param>
 		protected ArgumentNotEqualException(SerializationInfo info, StreamingContext context) : base(info, context) { }
-#endif
+
+		/// <summary>
+		/// Initializes a <see cref="ArgumentNotEqualException"/> with the provided values.
+		/// </summary>
+		/// <typeparam name="TValue">The type of the <paramref name="value"/>.</typeparam>
+		/// <typeparam name="TRequired">The type of the <paramref name="required"/>.</typeparam>
+		/// <param name="value">The argument value.</param>
+		/// <param name="name">The argument name.</param>
+		/// <param name="required">The value the argument must not equal.</param>
+		/// <returns>An <see cref="ArgumentNotEqualException"/> instance.</returns>
+		public static ArgumentNotEqualException With<TValue, TRequired>(TValue value, String name, TRequired required) => new ArgumentNotEqualException(value, name, $"Value must equal '{required}'.");
 	}
 }
