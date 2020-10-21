@@ -80,9 +80,10 @@
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
     <div class="level1"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.exception">Exception</a></div>
-    <div class="level2"><a class="xref" href="Defender.Exceptions.ArgumentException.html">ArgumentException</a></div>
-    <div class="level3"><span class="xref">ArgumentLesserThanException</span></div>
-      <div class="level4"><a class="xref" href="Defender.Exceptions.ArgumentSmallerThanException.html">ArgumentSmallerThanException</a></div>
+    <div class="level2"><a class="xref" href="Defender.Exceptions.LanglyException.html">LanglyException</a></div>
+    <div class="level3"><a class="xref" href="Defender.Exceptions.ArgumentException.html">ArgumentException</a></div>
+    <div class="level4"><a class="xref" href="Defender.Exceptions.ArgumentValueException.html">ArgumentValueException</a></div>
+    <div class="level5"><span class="xref">ArgumentLesserThanException</span></div>
   </div>
   <div classs="implements">
     <h5>Implements</h5>
@@ -156,7 +157,7 @@
   <h5 id="Defender_Exceptions_ArgumentLesserThanException_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Serializable]
-public class ArgumentLesserThanException : ArgumentException, ISerializable</code></pre>
+public class ArgumentLesserThanException : ArgumentValueException, ISerializable</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>

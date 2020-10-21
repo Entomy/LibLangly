@@ -6,7 +6,7 @@ namespace Defender.Exceptions {
 	/// Thrown when a value is lesser than a bound, but shouldn't be.
 	/// </summary>
 	[Serializable]
-	public class ArgumentLesserThanException : ArgumentException {
+	public class ArgumentLesserThanException : ArgumentValueException {
 		/// <summary>
 		/// Initialize a new <see cref="ArgumentLesserThanException"/>
 		/// </summary>

@@ -6,7 +6,7 @@ namespace Defender.Exceptions {
 	/// Thrown when a valid should be within a range, but isn't.
 	/// </summary>
 	[Serializable]
-	public class ArgumentNotWithinException : ArgumentException {
+	public class ArgumentNotWithinException : ArgumentValueException {
 		/// <summary>
 		/// Initialize a new <see cref="ArgumentNotWithinException"/>.
 		/// </summary>

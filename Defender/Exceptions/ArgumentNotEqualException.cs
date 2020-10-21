@@ -6,7 +6,7 @@ namespace Defender.Exceptions {
 	/// Thrown when two objects are unequal, but should be.
 	/// </summary>
 	[Serializable]
-	public class ArgumentNotEqualException : ArgumentException {
+	public class ArgumentNotEqualException : ArgumentValueException {
 		/// <summary>
 		/// Initialize a new <see cref="ArgumentNotEqualException"/>.
 		/// </summary>

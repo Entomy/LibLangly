@@ -6,7 +6,7 @@ namespace Defender.Exceptions {
 	/// Thrown when an object is null, but shouldn't be.
 	/// </summary>
 	[Serializable]
-	public class ArgumentNullException : ArgumentException {
+	public class ArgumentNullException : ArgumentValueException {
 		/// <summary>
 		/// Initialize a new <see cref="ArgumentNullException"/>.
 		/// </summary>

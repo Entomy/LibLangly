@@ -6,7 +6,7 @@ namespace Defender.Exceptions {
 	/// Thrown when a collection is larger than a bound, but shouldn't be.
 	/// </summary>
 	[Serializable]
-	public class ArgumentLargerThanException : ArgumentGreaterThanException {
+	public class ArgumentLargerThanException : ArgumentSizeException {
 		/// <summary>
 		/// Initialize a new <see cref="ArgumentLargerThanException"/>.
 		/// </summary>

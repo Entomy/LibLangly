@@ -6,7 +6,7 @@ namespace Defender.Exceptions {
 	/// Thrown when one of the arguments provided to a method is not valid.
 	/// </summary>
 	[Serializable]
-	public abstract class ArgumentException : Exception {
+	public abstract class ArgumentException : LanglyException {
 		/// <summary>
 		/// Initialize a new <see cref="ArgumentException"/>.
 		/// </summary>
@@ -19,7 +19,7 @@ namespace Defender.Exceptions {
 		}
 
 		/// <summary>
-		/// Deserialize a <see cref="ArgumentException"/>.
+		/// Deserialization constructor.
 		/// </summary>
 		/// <param name="info"></param>
 		/// <param name="context"></param>

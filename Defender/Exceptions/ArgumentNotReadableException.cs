@@ -7,7 +7,7 @@ namespace Defender.Exceptions {
 	/// Thrown when a stream is not readable, but should be.
 	/// </summary>
 	[Serializable]
-	public class ArgumentNotReadableException : ArgumentException {
+	public class ArgumentNotReadableException : ArgumentModeException {
 		/// <summary>
 		/// Initialize a new <see cref="ArgumentNotReadableException"/>.
 		/// </summary>

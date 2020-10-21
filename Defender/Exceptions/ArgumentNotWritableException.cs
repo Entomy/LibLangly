@@ -7,7 +7,7 @@ namespace Defender.Exceptions {
 	/// Thrown when a stream is not writable, but should be.
 	/// </summary>
 	[Serializable]
-	public class ArgumentNotWritableException : ArgumentException {
+	public class ArgumentNotWritableException : ArgumentModeException {
 		/// <summary>
 		/// Initialize a new <see cref="ArgumentNotWritableException"/>.
 		/// </summary>

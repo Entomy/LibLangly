@@ -6,7 +6,7 @@ namespace Defender.Exceptions {
 	/// Thrown when an object is in an invalid state.
 	/// </summary>
 	[Serializable]
-	public class ArgumentNotValidException : ArgumentException {
+	public class ArgumentNotValidException : ArgumentValueException {
 		/// <summary>
 		/// Initialize a new <see cref="ArgumentException"/>.
 		/// </summary>

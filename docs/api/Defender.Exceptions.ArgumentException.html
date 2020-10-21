@@ -80,22 +80,15 @@
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
     <div class="level1"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.exception">Exception</a></div>
-    <div class="level2"><span class="xref">ArgumentException</span></div>
-      <div class="level3"><a class="xref" href="Defender.Exceptions.ArgumentContainsException.html">ArgumentContainsException</a></div>
-      <div class="level3"><a class="xref" href="Defender.Exceptions.ArgumentEqualException.html">ArgumentEqualException</a></div>
-      <div class="level3"><a class="xref" href="Defender.Exceptions.ArgumentGreaterThanException.html">ArgumentGreaterThanException</a></div>
-      <div class="level3"><a class="xref" href="Defender.Exceptions.ArgumentLesserThanException.html">ArgumentLesserThanException</a></div>
-      <div class="level3"><a class="xref" href="Defender.Exceptions.ArgumentNotContainsException.html">ArgumentNotContainsException</a></div>
-      <div class="level3"><a class="xref" href="Defender.Exceptions.ArgumentNotEqualException.html">ArgumentNotEqualException</a></div>
-      <div class="level3"><a class="xref" href="Defender.Exceptions.ArgumentNotNullException.html">ArgumentNotNullException</a></div>
-      <div class="level3"><a class="xref" href="Defender.Exceptions.ArgumentNotReadableException.html">ArgumentNotReadableException</a></div>
-      <div class="level3"><a class="xref" href="Defender.Exceptions.ArgumentNotSeekableException.html">ArgumentNotSeekableException</a></div>
-      <div class="level3"><a class="xref" href="Defender.Exceptions.ArgumentNotTypeException.html">ArgumentNotTypeException</a></div>
-      <div class="level3"><a class="xref" href="Defender.Exceptions.ArgumentNotValidException.html">ArgumentNotValidException</a></div>
-      <div class="level3"><a class="xref" href="Defender.Exceptions.ArgumentNotWithinException.html">ArgumentNotWithinException</a></div>
-      <div class="level3"><a class="xref" href="Defender.Exceptions.ArgumentNotWritableException.html">ArgumentNotWritableException</a></div>
-      <div class="level3"><a class="xref" href="Defender.Exceptions.ArgumentNullException.html">ArgumentNullException</a></div>
-      <div class="level3"><a class="xref" href="Defender.Exceptions.ArgumentUnhandledException.html">ArgumentUnhandledException</a></div>
+    <div class="level2"><a class="xref" href="Defender.Exceptions.LanglyException.html">LanglyException</a></div>
+    <div class="level3"><span class="xref">ArgumentException</span></div>
+      <div class="level4"><a class="xref" href="Defender.Exceptions.ArgumentContainsException.html">ArgumentContainsException</a></div>
+      <div class="level4"><a class="xref" href="Defender.Exceptions.ArgumentModeException.html">ArgumentModeException</a></div>
+      <div class="level4"><a class="xref" href="Defender.Exceptions.ArgumentNotContainsException.html">ArgumentNotContainsException</a></div>
+      <div class="level4"><a class="xref" href="Defender.Exceptions.ArgumentNotTypeException.html">ArgumentNotTypeException</a></div>
+      <div class="level4"><a class="xref" href="Defender.Exceptions.ArgumentSizeException.html">ArgumentSizeException</a></div>
+      <div class="level4"><a class="xref" href="Defender.Exceptions.ArgumentUnhandledException.html">ArgumentUnhandledException</a></div>
+      <div class="level4"><a class="xref" href="Defender.Exceptions.ArgumentValueException.html">ArgumentValueException</a></div>
   </div>
   <div classs="implements">
     <h5>Implements</h5>
@@ -163,7 +156,7 @@
   <h5 id="Defender_Exceptions_ArgumentException_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Serializable]
-public abstract class ArgumentException : Exception, ISerializable</code></pre>
+public abstract class ArgumentException : LanglyException, ISerializable</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -222,7 +215,7 @@ public abstract class ArgumentException : Exception, ISerializable</code></pre>
   </span>
   <a id="Defender_Exceptions_ArgumentException__ctor_" data-uid="Defender.Exceptions.ArgumentException.#ctor*"></a>
   <h4 id="Defender_Exceptions_ArgumentException__ctor_System_Runtime_Serialization_SerializationInfo_System_Runtime_Serialization_StreamingContext_" data-uid="Defender.Exceptions.ArgumentException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">ArgumentException(SerializationInfo, StreamingContext)</h4>
-  <div class="markdown level1 summary"><p>Deserialize a <a class="xref" href="Defender.Exceptions.ArgumentException.html">ArgumentException</a>.</p>
+  <div class="markdown level1 summary"><p>Deserialization constructor.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>

@@ -6,7 +6,7 @@ namespace Defender.Exceptions {
 	/// Thrown when a collection is not a particular size, but should be.
 	/// </summary>
 	[Serializable]
-	public class ArgumentIsNotSizeException : ArgumentNotEqualException {
+	public class ArgumentIsNotSizeException : ArgumentSizeException {
 		/// <summary>
 		/// Initializes a new <see cref="ArgumentIsNotSizeException"/>.
 		/// </summary>

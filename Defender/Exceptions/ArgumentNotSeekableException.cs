@@ -7,7 +7,7 @@ namespace Defender.Exceptions {
 	/// Thrown when a stream is not seekable, but should be.
 	/// </summary>
 	[Serializable]
-	public class ArgumentNotSeekableException : ArgumentException {
+	public class ArgumentNotSeekableException : ArgumentModeException {
 		/// <summary>
 		/// Initialize a new <see cref="ArgumentNotSeekableException"/>.
 		/// </summary>
