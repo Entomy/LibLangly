@@ -7,6 +7,15 @@
 		<AssemblyName>Consolator</AssemblyName>
 		<RootNamespace>Consolator</RootNamespace>
 		<PackageIcon>Logo.png</PackageIcon>
+		<Configurations>Debug;Release;Debug-Windows;Release-Windows</Configurations>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Windows|AnyCPU' or '$(Configuration)|$(Platform)'=='Debug-Windows|AnyCPU'">
+		<DefineConstants>TRACE;WINDOWS</DefineConstants>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Unix|AnyCPU' or '$(Configuration)|$(Platform)'=='Debug-Unix|AnyCPU'">
+		<DefineConstants>TRACE;UNIX</DefineConstants>
 	</PropertyGroup>
 
 	<ItemGroup>
