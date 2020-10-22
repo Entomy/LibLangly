@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Stringier.Patterns </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Stringier.Patterns ">
+    <meta name="generator" content="docfx 2.56.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="stringierpatterns">Stringier.Patterns</h1>
+
+<p>Patterns, probably introduced with <a href="https://en.wikipedia.org/wiki/SNOBOL">SNOBOL</a>, and also seen with <a href="https://en.wikipedia.org/wiki/SPITBOL">SPITBOL</a> and <a href="https://unicon.sourceforge.io/">UNICON</a><a href="https://www.cs.nmsu.edu/%7Esgaikaiw/Thesis.pdf">[paper]</a>, are considerably more powerful than <a href="https://en.wikipedia.org/wiki/Regular_expression">Regular Expressions</a>. So what do you do when you need to parse something more complicated than a Regex? Hacky <a href="https://en.wikipedia.org/wiki/Regular_expression">Regex</a> extensions aren't great, and still lack what some advanced alternatives can offer. <a href="https://en.wikipedia.org/wiki/Parser_combinator">Parser Combinators</a>? The performance of these isn't what it's proponents let on (check the benchmarks in this project's repo for proof, since they don't provide it). Pattern Matching and <a href="https://en.wikipedia.org/wiki/Parser_combinator">Parser Combinators</a> share a huge amount of theory, however. You could consider them alternative interpretations of the same concept. That being said, you'll notice a few small differences, but the advantages apply to both. There are some divergences from <a href="https://en.wikipedia.org/wiki/SNOBOL">SNOBOL</a>-style patterns, made where appropriate based on a number of conditions. This project should be seen as inspired by <a href="https://en.wikipedia.org/wiki/SNOBOL">SNOBOL</a>, <a href="https://en.wikipedia.org/wiki/Regular_expression">Regex</a>, and <a href="https://en.wikipedia.org/wiki/Parser_combinator">Parser Combinators</a>, without extremely strict adherence to any particular style. The declarative power of this approach goes as far as to even support recursive grammars.</p>
+<p>Throughout these articles, examples will be provided in both <a href="https://en.wikipedia.org/wiki/C_Sharp_%28programming_language%29">C#</a> and <a href="https://en.wikipedia.org/wiki/F_Sharp_(programming_language)">F#</a>. If you're a <a href="https://en.wikipedia.org/wiki/Visual_Basic_.NET">VisualBasic</a> user the <a href="https://en.wikipedia.org/wiki/C_Sharp_%28programming_language%29">C#</a> examples will still apply to you. In fact the <a href="https://en.wikipedia.org/wiki/C_Sharp_%28programming_language%29">C#</a> examples are all based on CLS Compliant API's, and should, after minor translation, work everywhere. Specialized language bindings are something of interested though, and these bindings for F# are a first class part of this project.</p>
+<h2 id="including">Including</h2>
+<pre><code class="lang-csharp">using Stringier.Patterns;
+using static Stringier.Patterns.Pattern;
+</code></pre>
+<pre><code class="lang-fsharp">open Stringier.Patterns
+</code></pre>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Documentation/articles/stringier-patterns.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,3 @@
+# Consolator
+
+**Consolator** is a reimagining of how the [`Console`](https://docs.microsoft.com/en-us/dotnet/api/system.console) should work. Despite numerous advances in graphics technology, console apps have become quite trendy. This is a welcome trend, as not only are console apps more efficient and generally more accessible, but it's also forced us to relook at console app design through a more modern lens.
