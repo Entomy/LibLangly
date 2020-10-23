@@ -70,14 +70,65 @@
 <h1 id="stringierglyph">Stringier.Glyph</h1>
 
 <h2 id="including">Including</h2>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q_vb" data-tab="vb" tabindex="-1">VB</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_fs" role="tab" aria-controls="tabpanel_CeZOj-G++Q_fs" data-tab="fs" tabindex="-1">F#</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q_cs" role="tabpanel" data-tab="cs">
+
 <pre><code class="lang-csharp">using Stringier;
 </code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-vbnet">Imports Stringier
+</code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q_fs" role="tabpanel" data-tab="fs" aria-hidden="true" hidden="hidden">
+
 <pre><code class="lang-fsharp">open Stringier
 </code></pre>
+</section>
+</div>
 <h2 id="usage">Usage</h2>
 <p>This package is centered around one major type <code>Glyph</code> whos purpose is to represent glyphs, that is, the visuals of a &quot;character&quot;, not how the computer represents them. This greatly simplifies cases where there's numerous representations for what is visually identical. Consider the following:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q-1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-1_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-1_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-1_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-1_vb" data-tab="vb" tabindex="-1">VB</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-1_fs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-1_fs" data-tab="fs" tabindex="-1">F#</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q-1_cs" role="tabpanel" data-tab="cs">
+
 <pre><code class="lang-csharp">&quot;cafe&quot;[3] == 'é'
 </code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q-1_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-vbnet">&quot;cafe&quot;(3) = &quot;é&quot;c
+</code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q-1_fs" role="tabpanel" data-tab="fs" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-fsharp">&quot;cafe&quot;.[3] = 'é'
+</code></pre>
+</section>
+</div>
+
 <p>This should obviously return true, right? Try it. It won't. The problem is, the glyph we are testing is U+0065, U+0301, while the glyph we are testing against is U+00E9. Because indexing a string works on UTF-16 code units, not glyphs, the comparison is actually:</p>
 <pre><code class="lang-csharp">0x0065 == 0x00E9
 </code></pre>
