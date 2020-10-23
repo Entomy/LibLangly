@@ -77,11 +77,37 @@
 <p><code>Pattern</code> was designed for complex grammars. <code>Regex</code> was designed for <a href="https://en.wikipedia.org/wiki/Regular_language">regular languages</a>, one of the simpliest forms of language. This makes <code>Pattern</code> far more capable in what it can parse. In fact, the features of <strong>Patterns</strong> was designed around needing to parse complex languages like programming languages. As of <a href="https://github.com/Entomy/Stringier/commit/ad8fb5719d8e6c4a8843f2dc47385daba6270854">this commit</a> <code>Pattern</code> has provably supported right-recursion and mutual-recursion. And since parsers are separate from the pattern representation, a left-recursive supporting parser would be able to support left-recursion as well, but this hasn't been implemented yet.</p>
 <h3 id="literal">Literal</h3>
 <p>Literals in the context of <code>Pattern</code> are just like literals in your programming language. In fact, they are even the same thing.</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q_vb" data-tab="vb" tabindex="-1">VB</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q_vb" data-tab="vb" tabindex="-1">F#</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q_cs" role="tabpanel" data-tab="cs">
+
 <pre><code class="lang-csharp">Pattern ImplicitExample = &quot;Hello&quot;;
 Pattern ExplicitExample = &quot;Hello&quot;.AsPattern();
 </code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-vbnet">Dim ImplicitExample As Pattern = &quot;Hello&quot;
+Dim ExplicitExample As Pattern = &quot;Hello&quot;.AsPattern()
+</code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
 <pre><code class="lang-fsharp">let example = p&quot;Hello&quot;;
 </code></pre>
+</section>
+</div>
+
 <p>We now have a pattern, named <code>Example</code>, which is literally <code>Hello</code>. On its own, this isn't very useful, but it does make for an efficient building block.</p>
 <p>Whenever possible, an implicit conversion from <code>Char</code> or <code>String</code> to <code>Pattern</code> will occur. The exact rules about this will depend on your programming language. You may need to occasionally cast to <code>Pattern</code>, especially at the start of combinators of literals.</p>
 <p>It's worth noting as an implementation detail, unlike <a href="https://en.wikipedia.org/wiki/Parser_combinator">Parser Combinators</a> like <a href="https://wiki.haskell.org/Parsec">parsec</a> or <a href="http://bennu-js.com/">Bennu</a> the base component is not a <code>Char</code>, but rather, any literal. There are literals defined for <code>Char</code> and <code>String</code>, as well as some advanced concepts that will be covered in later articles. This is extremely important for performance reasons, even though it's not obvious why. In the spirit of fairness, there are rare <a href="https://en.wikipedia.org/wiki/Parser_combinator">Parser Combinators</a> that do token based parsing (basically built up from <code>String</code>), such as <a href="https://github.com/datalust/superpower">Superpower</a>.</p>

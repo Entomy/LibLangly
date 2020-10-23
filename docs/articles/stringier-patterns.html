@@ -72,11 +72,36 @@
 <p>Patterns, probably introduced with <a href="https://en.wikipedia.org/wiki/SNOBOL">SNOBOL</a>, and also seen with <a href="https://en.wikipedia.org/wiki/SPITBOL">SPITBOL</a> and <a href="https://unicon.sourceforge.io/">UNICON</a><a href="https://www.cs.nmsu.edu/%7Esgaikaiw/Thesis.pdf">[paper]</a>, are considerably more powerful than <a href="https://en.wikipedia.org/wiki/Regular_expression">Regular Expressions</a>. So what do you do when you need to parse something more complicated than a Regex? Hacky <a href="https://en.wikipedia.org/wiki/Regular_expression">Regex</a> extensions aren't great, and still lack what some advanced alternatives can offer. <a href="https://en.wikipedia.org/wiki/Parser_combinator">Parser Combinators</a>? The performance of these isn't what it's proponents let on (check the benchmarks in this project's repo for proof, since they don't provide it). Pattern Matching and <a href="https://en.wikipedia.org/wiki/Parser_combinator">Parser Combinators</a> share a huge amount of theory, however. You could consider them alternative interpretations of the same concept. That being said, you'll notice a few small differences, but the advantages apply to both. There are some divergences from <a href="https://en.wikipedia.org/wiki/SNOBOL">SNOBOL</a>-style patterns, made where appropriate based on a number of conditions. This project should be seen as inspired by <a href="https://en.wikipedia.org/wiki/SNOBOL">SNOBOL</a>, <a href="https://en.wikipedia.org/wiki/Regular_expression">Regex</a>, and <a href="https://en.wikipedia.org/wiki/Parser_combinator">Parser Combinators</a>, without extremely strict adherence to any particular style. The declarative power of this approach goes as far as to even support recursive grammars.</p>
 <p>Throughout these articles, examples will be provided in both <a href="https://en.wikipedia.org/wiki/C_Sharp_%28programming_language%29">C#</a> and <a href="https://en.wikipedia.org/wiki/F_Sharp_(programming_language)">F#</a>. If you're a <a href="https://en.wikipedia.org/wiki/Visual_Basic_.NET">VisualBasic</a> user the <a href="https://en.wikipedia.org/wiki/C_Sharp_%28programming_language%29">C#</a> examples will still apply to you. In fact the <a href="https://en.wikipedia.org/wiki/C_Sharp_%28programming_language%29">C#</a> examples are all based on CLS Compliant API's, and should, after minor translation, work everywhere. Specialized language bindings are something of interested though, and these bindings for F# are a first class part of this project.</p>
 <h2 id="including">Including</h2>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q_cs" data-tab="cs" tabindex="-1">VB</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_fs" role="tab" aria-controls="tabpanel_CeZOj-G++Q_fs" data-tab="fs" tabindex="-1">F#</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q_cs" role="tabpanel" data-tab="cs">
+
 <pre><code class="lang-csharp">using Stringier.Patterns;
 using static Stringier.Patterns.Pattern;
 </code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q_cs" role="tabpanel" data-tab="cs" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-vbnet">Imports Stringier.Patterns
+Imports Stringier.Patterns.Pattern
+</code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q_fs" role="tabpanel" data-tab="fs" aria-hidden="true" hidden="hidden">
+
 <pre><code class="lang-fsharp">open Stringier.Patterns
 </code></pre>
+</section>
+</div>
 </article>
           </div>
           

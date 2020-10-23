@@ -6,10 +6,24 @@ Throughout these articles, examples will be provided in both [C#](https://en.wik
 
 ## Including
 
+# [C#](#tab/cs)
+
 ~~~~csharp
 using Stringier.Patterns;
 using static Stringier.Patterns.Pattern;
 ~~~~
+
+# [VB](#tab/cs)
+
+~~~~vbnet
+Imports Stringier.Patterns
+Imports Stringier.Patterns.Pattern
+~~~~
+
+# [F#](#tab/fs)
+
 ~~~~fsharp
 open Stringier.Patterns
 ~~~~
+
+***

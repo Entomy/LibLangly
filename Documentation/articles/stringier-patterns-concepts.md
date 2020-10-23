@@ -16,13 +16,27 @@ Patterns form the base of this system. Similar to how patterns work in **Regex**
 
 Literals in the context of `Pattern` are just like literals in your programming language. In fact, they are even the same thing.
 
+# [C#](#tab/cs)
+
 ~~~~csharp
 Pattern ImplicitExample = "Hello";
 Pattern ExplicitExample = "Hello".AsPattern();
 ~~~~
+
+# [VB](#tab/vb)
+
+~~~~vbnet
+Dim ImplicitExample As Pattern = "Hello"
+Dim ExplicitExample As Pattern = "Hello".AsPattern()
+~~~~
+
+# [F#](#tab/vb)
+
 ~~~~fsharp
 let example = p"Hello";
 ~~~~
+
+***
 
 We now have a pattern, named `Example`, which is literally `Hello`. On its own, this isn't very useful, but it does make for an efficient building block.
 
