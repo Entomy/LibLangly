@@ -74,6 +74,8 @@ Pattern patternName = firstPattern.Then(secondPattern); //Fluent syntax
 Pattern pattern = firstPattern & secondPattern; //Expression syntax
 ~~~~
 
+# [VB](#tab/vb)
+
 ~~~~vbnet
 Dim PatternName As Pattern = FirstPattern.Then(SecondPattern) 'Fluent syntax
 Dim PatternName As Pattern = FirstPattern And SecondPattern 'Expression syntax
