@@ -40,4 +40,40 @@ namespace Philosoft {
 		/// </summary>
 		void Shrink() => Resize((nint)(Capacity / φ));
 	}
+
+	public static partial class Extensions {
+		/// <summary>
+		/// Grows the collection by a computed factor.
+		/// </summary>
+		/// <param name="collection">This collection.</param>
+		public static void Grow(this IResizable collection) {
+			if (collection is null) {
+				return;
+			}
+			collection.Grow();
+		}
+
+		/// <summary>
+		/// Resize the collection to the specified <paramref name="capacity"/>.
+		/// </summary>
+		/// <param name="collection">This collection.</param>
+		/// <param name="capacity">The new capacity of the collection.</param>
+		public static void Resize(this IResizable collection, nint capacity) {
+			if (collection is null) {
+				return;
+			}
+			collection.Resize(capacity);
+		}
+
+		/// <summary>
+		/// Shrinks the collection by a computed factor.
+		/// </summary>
+		/// <param name="collection">This collection.</param>
+		public static void Shrink(this IResizable collection) {
+			if (collection is null) {
+				return;
+			}
+			collection.Shrink();
+		}
+	}
 }

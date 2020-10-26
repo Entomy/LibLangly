@@ -49,4 +49,23 @@
 			}
 		}
 	}
+
+	public static partial class Extensions {
+		/// <summary>
+		/// Adds the elements into the collection.
+		/// </summary>
+		/// <param name="collection">This collection.</param>
+		/// <param name="elements">The elements to add to the collection.</param>
+		/// <typeparam name="TElement">The type of elements in the collection.</typeparam>
+		/// <typeparam name="TEnumerator">The type of the enumerator for this collection.</typeparam>
+		/// <remarks>
+		/// The behavior of this operation is collection dependent, and no particular location in the collection should be assumed.
+		/// </remarks>
+		public static void Add<TElement, TEnumerator>(this IAddable<TElement> collection, IEnumerable<TElement, TEnumerator> elements) where TEnumerator : IEnumerator<TElement> {
+			if (collection is null) {
+				return;
+			}
+			collection.Add(elements);
+		}
+	}
 }

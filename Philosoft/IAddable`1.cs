@@ -47,4 +47,38 @@
 			}
 		}
 	}
+
+	public static partial class Extensions {
+		/// <summary>
+		/// Adds an element into the collection.
+		/// </summary>
+		/// <param name="collection">This collection.</param>
+		/// <param name="element">The element to add to the collection.</param>
+		/// <typeparam name="TElement">The type of elements in the collection.</typeparam>
+		/// <remarks>
+		/// The behavior of this operation is collection dependent, and no particular location in the collection should be assumed.
+		/// </remarks>
+		public static void Add<TElement>(this IAddable<TElement> collection, TElement element) {
+			if (collection is null) {
+				return;
+			}
+			collection.Add(element);
+		}
+
+		/// <summary>
+		/// Adds the elements into the collection.
+		/// </summary>
+		/// <param name="collection">This collection.</param>
+		/// <param name="elements">The elements to add to the collection.</param>
+		/// <typeparam name="TElement">The type of elements in the collection.</typeparam>
+		/// <remarks>
+		/// The behavior of this operation is collection dependent, and no particular location in the collection should be assumed.
+		/// </remarks>
+		public static void Add<TElement>(this IAddable<TElement> collection, params TElement[] elements) {
+			if (collection is null) {
+				return;
+			}
+			collection.Add(elements);
+		}
+	}
 }

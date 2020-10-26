@@ -53,4 +53,19 @@ namespace Philosoft {
 		[SuppressMessage("Performance", "HAA0601:Value type to reference type conversion causing boxing allocation", Justification = "Well aware, and can't do anything about it. But that's why this interface and the new Clone() exist.")]
 		Object ICloneable.Clone() => Clone();
 	}
+
+	public static partial class Extensions {
+		/// <summary>
+		/// Creates a new object that is a copy of the current instance.
+		/// </summary>
+		/// <param name="collection">This collection.</param>
+		/// <typeparam name="TSelf">The type of this collection; itself.</typeparam>
+		/// <returns>A new object that is a copy of this instance.</returns>
+		/// <remarks>
+		/// <para>The resulting clone must be of the same type as, or compatible with, the original instance.</para>
+		/// <para>An implementation of <see cref="Clone"/> can perform either a deep copy or a shallow copy. In a deep copy, all objects are duplicated; in a shallow copy, only the top-level objects are duplicated and the lower levels contain references. Because callers of <see cref="Clone"/> cannot depend on the method performing a predictable cloning operation, we recommend that <see cref="ICloneable{TSelf}"/> not be implemented in public APIs.</para>
+		/// <para>See <see cref="Object.MemberwiseClone"/> for more information on cloning, deep versus shallow copies, and examples.</para>
+		/// </remarks>
+		public static TSelf Clone<TSelf>(this ICloneable<TSelf> collection) => collection is null ? default : collection.Clone();
+	}
 }
