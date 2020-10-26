@@ -52,20 +52,56 @@
 
 	public static partial class Extensions {
 		/// <summary>
-		/// Adds the elements into the collection.
+		/// Adds an element into the collection.
 		/// </summary>
 		/// <param name="collection">This collection.</param>
-		/// <param name="elements">The elements to add to the collection.</param>
-		/// <typeparam name="TElement">The type of elements in the collection.</typeparam>
-		/// <typeparam name="TEnumerator">The type of the enumerator for this collection.</typeparam>
+		/// <param name="index">The index of the <paramref name="element"/>.</param>
+		/// <param name="element">The element to add to the collection.</param>
+		/// <typeparam name="TIndex">The type of the <paramref name="index"/>.</typeparam>
+		/// <typeparam name="TElement">The type of the <paramref name="element"/>.</typeparam>
 		/// <remarks>
-		/// The behavior of this operation is collection dependent, and no particular location in the collection should be assumed.
+		/// The behavior of this operation is collection dependant, and no particular location in the collection should be assumed.
 		/// </remarks>
-		public static void Add<TElement, TEnumerator>(this IAddable<TElement> collection, IEnumerable<TElement, TEnumerator> elements) where TEnumerator : IEnumerator<TElement> {
+		public static void Add<TIndex, TElement>(this IAddable<TIndex, TElement> collection, TIndex index, TElement element) {
 			if (collection is null) {
 				return;
 			}
-			collection.Add(elements);
+			collection.Add(index, element);
+		}
+
+		/// <summary>
+		/// Adds the elements into the collection.
+		/// </summary>
+		/// <param name="collection">This collection.</param>
+		/// <param name="members">The index-element pairs to add to the collection.</param>
+		/// <typeparam name="TIndex">The type of the index.</typeparam>
+		/// <typeparam name="TElement">The type of the element.</typeparam>
+		/// <remarks>
+		/// The behavior of this operation is collection dependant, and no particular location in the collection should be assumed.
+		/// </remarks>
+		public static void Add<TIndex, TElement>(this IAddable<TIndex, TElement> collection, params (TIndex, TElement)[] members) {
+			if (collection is null) {
+				return;
+			}
+			collection.Add(members);
+		}
+
+		/// <summary>
+		/// Adds the elements into the collection.
+		/// </summary>
+		/// <param name="collection">This collection.</param>
+		/// <param name="members">The index-element pairs to add to the collection.</param>
+		/// <typeparam name="TIndex">The type of the index.</typeparam>
+		/// <typeparam name="TElement">The type of the element.</typeparam>
+		/// <typeparam name="TEnumerator">The type of the enumerator for the <paramref name="members"/>.</typeparam>
+		/// <remarks>
+		/// The behavior of this operation is collection dependant, and no particular location in the collection should be assumed.
+		/// </remarks>
+		public static void Add<TIndex, TElement, TEnumerator>(this IAddable<TIndex, TElement> collection, IEnumerable<(TIndex, TElement), TEnumerator> members) where TEnumerator : IEnumerator<(TIndex, TElement)> {
+			if (collection is null) {
+				return;
+			}
+			collection.Add(members);
 		}
 	}
 }

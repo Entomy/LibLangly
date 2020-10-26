@@ -30,9 +30,9 @@ namespace Philosoft {
 		/// <summary>
 		/// Returns a new collection in which instances that match the specified predicate are replaced with the <paramref name="newElement"/>.
 		/// </summary>
-		/// <param name="match">The <see cref="Func{T, TResult}"/> delegate that defines the conditions of the element to replace.</param>
+		/// <param name="match">The <see cref="Predicate{T}"/> delegate that defines the conditions of the element to replace.</param>
 		/// <param name="newElement">The element to be replaced with.</param>
-		void Replace(Func<TOld, Boolean> match, TNew newElement);
+		void Replace(Predicate<TOld> match, TNew newElement);
 	}
 
 	public static partial class Extensions {
@@ -69,11 +69,11 @@ namespace Philosoft {
 		/// Returns a new collection in which instances that match the specified predicate are replaced with the <paramref name="newElement"/>.
 		/// </summary>
 		/// <param name="collection">This collection.</param>
-		/// <param name="match">The <see cref="Func{T, TResult}"/> delegate that defines the conditions of the element to replace.</param>
+		/// <param name="match">The <see cref="Predicate{T}"/> delegate that defines the conditions of the element to replace.</param>
 		/// <param name="newElement">The element to be replaced with.</param>
 		/// <typeparam name="TOld">The type of the elements in the collection.</typeparam>
 		/// <typeparam name="TNew">The type of the elements to replace with.</typeparam>
-		public static void Replace<TOld, TNew>(this IReplaceable<TOld, TNew> collection, Func<TOld, Boolean> match, TNew newElement) {
+		public static void Replace<TOld, TNew>(this IReplaceable<TOld, TNew> collection, Predicate<TOld> match, TNew newElement) {
 			if (collection is null) {
 				return;
 			}
