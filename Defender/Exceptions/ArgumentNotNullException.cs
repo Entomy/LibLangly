@@ -40,6 +40,7 @@ namespace Defender.Exceptions {
 		/// <remarks>
 		/// Because of restrictions with pointers in .NET languages, this method can not put the actual value of <paramref name="value"/> into the error message. It will, instead, always report <see langword="null"/>.
 		/// </remarks>
+		[CLSCompliant(false)]
 		public static unsafe ArgumentNotNullException With(void* value, String name) => new ArgumentNotNullException(null, name, $"{typeof(void*).Name} must be null.");
 	}
 }

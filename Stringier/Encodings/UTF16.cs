@@ -327,6 +327,7 @@ namespace Stringier.Encodings {
 			}
 		}
 
+
 		/// <summary>
 		/// What is the length of the UTF-16 sequence, assuming <paramref name="char"/> is the first unit in the sequence?
 		/// </summary>

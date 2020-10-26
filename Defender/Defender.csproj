@@ -9,6 +9,10 @@
 		<PackageIcon>Logo.png</PackageIcon>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Include="..\GlobalSuppressions.cs" Link="GlobalSuppressions.cs" />
+  </ItemGroup>
+
 	<ItemGroup>
 		<None Include="Logo.png" Pack="true" Visible="true" PackagePath="\" />
 		<PackageReference Include="FastEnum" Version="1.5.3" />

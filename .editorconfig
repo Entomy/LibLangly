@@ -11,7 +11,7 @@ indent_style = tab
 
 # New line preferences
 end_of_line = crlf
-insert_final_newline = false
+insert_final_newline = true
 
 #### .NET Coding Conventions ####
 
@@ -194,6 +194,18 @@ dotnet_naming_style.begins_with_i.required_suffix =
 dotnet_naming_style.begins_with_i.word_separator = 
 dotnet_naming_style.begins_with_i.capitalization = pascal_case
 
+# VB files
+[*.vb]
+
+#### Core EditorConfig Options ####
+
+# Indentation and spacing
+indent_style = tab
+
+# New line preferences
+end_of_line = crlf
+insert_final_newline = true
+
 # F# files
 [*.fs]
 
@@ -204,4 +216,4 @@ indent_style = space
 
 # New line preferences
 end_of_line = crlf
-insert_final_newline = false
+insert_final_newline = true
