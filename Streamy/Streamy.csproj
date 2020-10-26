@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+		<LangVersion>preview</LangVersion>
+		<Description>The streams of your dreams... streamy.</Description>
+		<PackageTags>stream, streams, serialize, deserialize, serialization</PackageTags>
+		<AssemblyName>Streamy</AssemblyName>
+		<RootNamespace>Streamy</RootNamespace>
+		<PackageIcon>Logo.png</PackageIcon>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="Logo.png" Pack="true" Visible="true" PackagePath="\" />
+	</ItemGroup>
+	
+  <ItemGroup>
+    <Compile Include="..\GlobalSuppressions.cs" Link="GlobalSuppressions.cs" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Defender\Defender.csproj" />
+    <ProjectReference Include="..\Logician\Logician.csproj" />
+    <ProjectReference Include="..\Philosoft\Philosoft.csproj" />
+  </ItemGroup>
+
+</Project>

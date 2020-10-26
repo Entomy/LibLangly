@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph GraphDirection="TopToBottom" Layout="Sugiyama" ZoomLevel="-1" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="Collectathon" Bounds="187.528333333333,111.92,86.9433333333334,25.96" ErrorMessage="Node 'Collectathon' has a hub value of 83." Hub="83" />
+    <Node Id="Consolator" Bounds="266.171666666667,167.88,77.6566666666666,25.96" />
+    <Node Id="Defender" Bounds="110.485,55.96,69.03,25.96" ErrorMessage="Node 'Defender' has a hub value of 83." Hub="83" />
+    <Node Id="Logician" Bounds="242,55.96,64,25.96" ErrorMessage="Unreferenced node detected:Logician (Logician)" IsUnreferenced="True" />
+    <Node Id="Philosoft" Bounds="111.85,0,66.3,25.96" ErrorMessage="Node 'Philosoft' has a hub value of 83." Hub="83" IsUnreferenced="True" Label="Philosoft" />
+    <Node Id="Streamy" Bounds="31.6233333333333,111.92,62.7533333333333,25.96" />
+    <Node Id="Stringier" Bounds="92.8266666666667,167.88,64.3466666666667,25.96" />
+  </Nodes>
+  <Links>
+    <Link Source="Collectathon" Target="Consolator" Bounds="248.164398193359,137.880004882813,32.49267578125,24.5714721679688" />
+    <Link Source="Collectathon" Target="Stringier" Bounds="157.545822143555,137.880004882813,48.8673248291016,25.7982482910156" />
+    <Link Source="Defender" Target="Collectathon" Bounds="164.947814941406,81.9199981689453,38.5607757568359,25.0914077758789" />
+    <Link Source="Defender" Target="Consolator" Bounds="147.783416748047,81.9199981689453,111.252075195313,83.5683746337891" />
+    <Link Source="Defender" Target="Streamy" Bounds="89.4539108276367,81.9199981689453,36.5260772705078,24.9268188476563" />
+    <Link Source="Defender" Target="Stringier" Bounds="125,81.9199981689453,15.3609771728516,76.9600067138672" />
+    <Link Source="Logician" Target="Collectathon" Bounds="246.457611083984,81.9199981689453,17.5684814453125,22.8635406494141" />
+    <Link Source="Logician" Target="Consolator" Bounds="281.190490722656,81.9199981689453,23.8095092773438,76.9600067138672" />
+    <Link Source="Philosoft" Target="Collectathon" Bounds="160.308792114258,25.9599990844727,63.0232391357422,77.4850082397461" />
+    <Link Source="Philosoft" Target="Consolator" Bounds="178.149993896484,20.5786037445068,158.850006103516,139.488580703735" />
+    <Link Source="Philosoft" Target="Defender" Bounds="145,25.9599990844727,0,21" />
+    <Link Source="Philosoft" Target="Streamy" Bounds="69.1853485107422,25.9599990844727,60.505859375,77.306755065918" />
+    <Link Source="Philosoft" Target="Stringier" Bounds="1,25.3836822509766,112.082015991211,138.845504760742" />
+    <Link Source="Streamy" Target="Stringier" Bounds="77.380989074707,137.880004882813,26.5569534301758,23.9697875976563" />
+  </Links>
+  <Properties>
+    <Property Id="Bounds" DataType="System.Windows.Rect" />
+    <Property Id="ErrorMessage" Label="Error" Description="Error" DataType="System.String" />
+    <Property Id="Expression" DataType="System.String" />
+    <Property Id="GraphDirection" DataType="Microsoft.VisualStudio.Diagrams.Layout.LayoutOrientation" />
+    <Property Id="GroupLabel" DataType="System.String" />
+    <Property Id="Hub" Label="Hub" Description="Node is in the top 10% of highly connected nodes" DataType="System.Int32" />
+    <Property Id="IsEnabled" DataType="System.Boolean" />
+    <Property Id="IsUnreferenced" Label="Unreferenced" Description="Node has no links pointing to it from other nodes in the graph" DataType="System.Boolean" />
+    <Property Id="Label" Label="Label" Description="Displayable label of an Annotatable object" DataType="System.String" />
+    <Property Id="Layout" DataType="System.String" />
+    <Property Id="TargetType" DataType="System.Type" />
+    <Property Id="ToolTip" DataType="System.String" />
+    <Property Id="Value" DataType="System.String" />
+    <Property Id="ValueLabel" DataType="System.String" />
+    <Property Id="ZoomLevel" DataType="System.String" />
+  </Properties>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="Unreferenced" ToolTip="Node has no links pointing to it from other nodes in the graph" ValueLabel="True">
+      <Condition Expression="IsUnreferenced" />
+      <Setter Property="Background" Value="Purple" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Hub" ToolTip="Node is in the top 10% of highly connected nodes" ValueLabel="Hub">
+      <Condition Expression="HasValue(&quot;Hub&quot;)" />
+      <Setter Property="Background" Value="#FFFBA8A9" />
+    </Style>
+    <Style TargetType="Group" GroupLabel="Hub" ToolTip="Node is in the top 10% of highly connected nodes" ValueLabel="Hub Container">
+      <Condition Expression="IsHubContainer" />
+      <Setter Property="Stroke" Value="#FFFBA8A9" />
+      <Setter Property="StrokeThickness" Value="6" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Circular References" ToolTip="Node is part of a strongly coupled component" ValueLabel="Nodes">
+      <Condition Expression="IsStronglyConnected" />
+      <Setter Property="Stroke" Value="#D02030" />
+      <Setter Property="StrokeThickness" Value="2" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Circular References" ToolTip="Node is part of a strongly coupled component" ValueLabel="Links">
+      <Condition Expression="IsCircularLink" />
+      <Setter Property="Stroke" Value="#D02030" />
+      <Setter Property="StrokeThickness" Value="2" />
+    </Style>
+  </Styles>
+</DirectedGraph>
