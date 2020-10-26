@@ -129,15 +129,27 @@ namespace Stringier.Encodings {
 			while (y < bytes.Length) {
 				switch (SequenceLength(bytes[y])) {
 				case 1:
+					if (y + 1 > bytes.Length) {
+						goto default;
+					}
 					buffer[b++] = Decode(bytes[y++]);
 					break;
 				case 2:
+					if (y + 2 > bytes.Length) {
+						goto default;
+					}
 					buffer[b++] = Decode(bytes[y++], bytes[y++]);
 					break;
 				case 3:
+					if (y + 3 > bytes.Length) {
+						goto default;
+					}
 					buffer[b++] = Decode(bytes[y++], bytes[y++], bytes[y++]);
 					break;
 				case 4:
+					if (y + 4 > bytes.Length) {
+						goto default;
+					}
 					buffer[b++] = Decode(bytes[y++], bytes[y++], bytes[y++], bytes[y++]);
 					break;
 				default:
