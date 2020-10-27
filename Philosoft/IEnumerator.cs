@@ -21,5 +21,8 @@ namespace Philosoft {
 		/// Resets the enumerator to its initial position.
 		/// </summary>
 		void Reset();
+
+		/// <inheritdoc/>
+		IEnumerator<TElement> IEnumerable<TElement, IEnumerator<TElement>>.GetEnumerator() => this;
 	}
 }

@@ -10,8 +10,7 @@ namespace Defender.Exceptions {
 		/// <summary>
 		/// Initializes a new <see cref="CollectionEmptyException"/>.
 		/// </summary>
-		/// <param name="message">The message that describes the error.</param>
-		protected CollectionEmptyException(String message) : base(message) { }
+		protected CollectionEmptyException() : base(0, "The collection was empty an an operation was attempted that required contents.") { }
 
 		/// <summary>
 		/// Deserialization constructor.
@@ -19,5 +18,11 @@ namespace Defender.Exceptions {
 		/// <param name="info"></param>
 		/// <param name="context"></param>
 		protected CollectionEmptyException(SerializationInfo info, StreamingContext context) : base(info, context) { }
+
+		/// <summary>
+		/// Initializes a new <see cref="CollectionEmptyException"/> with the provided values.
+		/// </summary>
+		/// <returns>A <see cref="CollectionEmptyException"/> instance.</returns>
+		public static CollectionEmptyException With() => new CollectionEmptyException();
 	}
 }

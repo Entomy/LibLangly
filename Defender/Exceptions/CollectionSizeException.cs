@@ -10,15 +10,9 @@ namespace Defender.Exceptions {
 		/// <summary>
 		/// Initialize a new <see cref="CollectionSizeException"/>.
 		/// </summary>
+		/// <param name="size">The size of the collection.</param>
 		/// <param name="message">The message that describes the error.</param>
-		protected CollectionSizeException(String message) : base(message) { }
-
-		/// <summary>
-		/// Initialize a new <see cref="CollectionSizeException"/>.
-		/// </summary>
-		/// <param name="message">The message that describes the error.</param>
-		/// <param name="inner">The inner exception.</param>
-		protected CollectionSizeException(String message, Exception inner) : base(message, inner) { }
+		protected CollectionSizeException(Int64 size, String message) : base($"{message}\nSize: {size}") { }
 
 		/// <summary>
 		/// Deserialization constructor.
@@ -26,5 +20,10 @@ namespace Defender.Exceptions {
 		/// <param name="info"></param>
 		/// <param name="context"></param>
 		protected CollectionSizeException(SerializationInfo info, StreamingContext context) : base(info, context) { }
+
+		/// <summary>
+		/// The size of the collection.
+		/// </summary>
+		public Int64 Size { get; }
 	}
 }
