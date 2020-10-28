@@ -1,5 +1,4 @@
 ﻿Imports Collectathon.Arrays
-Imports Defender
 Imports Philosoft
 Imports Xunit
 

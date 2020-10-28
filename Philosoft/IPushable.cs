@@ -37,4 +37,46 @@
 			}
 		}
 	}
+
+	public static partial class Extensions {
+		/// <summary>
+		/// Inserts an element at the top of the collection.
+		/// </summary>
+		/// <param name="collection">This collection.</param>
+		/// <param name="element">The element to push onto the collection.</param>
+		/// <typeparam name="TElement">The type of the elements in the collection.</typeparam>
+		public static void Push<TElement>(this IPushable<TElement> collection, TElement element) {
+			if (collection is null) {
+				return;
+			}
+			collection.Push(element);
+		}
+
+		/// <summary>
+		/// Inserts the elements at the top of the collection.
+		/// </summary>
+		/// <param name="collection">This collection.</param>
+		/// <param name="elements">The element to push onto the collection.</param>
+		/// <typeparam name="TElement">The type of the elements in the collection.</typeparam>
+		public static void Push<TElement>(this IPushable<TElement> collection, params TElement[] elements) {
+			if (collection is null) {
+				return;
+			}
+			collection.Push(elements);
+		}
+
+		/// <summary>
+		/// Inserts the elements at the top of the collection.
+		/// </summary>
+		/// <param name="collection">This collection.</param>
+		/// <param name="elements">The element to push onto the collection.</param>
+		/// <typeparam name="TElement">The type of the elements in the collection.</typeparam>
+		/// <typeparam name="TEnumerator">The type of the enumerator for the <paramref name="elements"/>.</typeparam>
+		public static void Push<TElement, TEnumerator>(this IPushable<TElement> collection, IEnumerable<TElement, TEnumerator> elements) where TEnumerator : IEnumerator<TElement> {
+			if (collection is null) {
+				return;
+			}
+			collection.Push(elements);
+		}
+	}
 }

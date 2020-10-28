@@ -112,7 +112,7 @@ namespace Collectathon.Arrays {
 				return false;
 			}
 			for (Int32 i = 0; i < Length; i++) {
-				if (this[i]?.Equals(element) ?? false) {
+				if (Elements.Span[i]?.Equals(element) ?? false) {
 					return true;
 				}
 			}
@@ -134,8 +134,8 @@ namespace Collectathon.Arrays {
 			if (other is null || Length != other.Length) {
 				return false;
 			}
-			for (nint i = 0; i < Length; i++) {
-				if (!Equals(this[i], other[i])) {
+			for (Int32 i = 0; i < Length; i++) {
+				if (!Equals(Elements.Span[i], other[i])) {
 					return false;
 				}
 			}
@@ -147,8 +147,8 @@ namespace Collectathon.Arrays {
 			if (other is null || Length != other.Length) {
 				return false;
 			}
-			for (nint i = 0; i < Length; i++) {
-				if (!Equals(this[i], other[i])) {
+			for (Int32 i = 0; i < Length; i++) {
+				if (!Equals(Elements.Span[i], other[i])) {
 					return false;
 				}
 			}
@@ -161,8 +161,8 @@ namespace Collectathon.Arrays {
 		/// <inheritdoc/>
 		void IReplaceable<TElement, TElement>.Replace(TElement oldElement, TElement newElement) {
 			for (Int32 i = 0; i < Length; i++) {
-				if (this[i].Equals(oldElement)) {
-					this[i] = newElement;
+				if (Elements.Span[i].Equals(oldElement)) {
+					Elements.Span[i] = newElement;
 				}
 			}
 		}
@@ -173,7 +173,7 @@ namespace Collectathon.Arrays {
 				return;
 			}
 			for (Int32 i = 0; i < Length; i++) {
-				if (match(this[i])) {
+				if (match(Elements.Span[i])) {
 					this[i] = newElement;
 				}
 			}

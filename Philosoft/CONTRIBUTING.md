@@ -6,6 +6,8 @@ When defining new traits, some care should be taken to ensure that only traits t
 
 Most traits, but not all, provide functionality that can handle the caller being `null`. Because instance methods inherently can not do this, in these cases extension methods should be provided, where appropriate handling of `null` is done, followed by a call to the instance method. The intended implementation pattern for downstream is then to explicitly implement these features, so the null-tollerant extensions are used. These extension methods are added to `Extensions`, a `partial` class. Rather atypically, these extension methods should be added in the same file as the trait, with `Extensions` existing below the interface. This is to assist with conceptual grouping, as otherwise a concept would span multiple files and need convoluted boundary systems. This is a rare case where multiple types in the same file is justifiable, because of the design pattern in play.
 
+In the case where a trait provides functionality that is not null-tollerant of the caller, an extension method should still be provided, which performs similary to the null-tollerant style with the obvious implication of throwing `NullReferenceException`.
+
 In some cases, a trait can be identified but can't be provided, such as traits on existing types we don't own. In these cases, extension methods can still be provided for them, and are provided in similar fashion to how the trait-based methods are implemented, with the key difference of actually needing a full implementation rather than delegating to the instance method. This is especially common with `Array`, `Memory`, and `Span` types.
 
 These extension methods are what language bindings actually bind to, so they _must_ be provided.

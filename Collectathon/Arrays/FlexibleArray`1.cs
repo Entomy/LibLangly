@@ -71,7 +71,7 @@ namespace Collectathon.Arrays {
 				return;
 			}
 			Elements.Slice((Int32)index).ShiftRight();
-			this[index] = element;
+			Elements.Span[(Int32)index] = element;
 			Length++;
 		}
 
@@ -83,7 +83,7 @@ namespace Collectathon.Arrays {
 			if (Length == 0) {
 				throw CollectionEmptyException.With();
 			}
-			return this[--Length];
+			return Elements.Span[(Int32)(--Length)];
 		}
 
 		/// <inheritdoc/>
