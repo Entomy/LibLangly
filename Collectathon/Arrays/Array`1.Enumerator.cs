@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ComponentModel;
+using System.Runtime.InteropServices;
 using Philosoft;
 
 namespace Collectathon.Arrays {
@@ -7,9 +9,10 @@ namespace Collectathon.Arrays {
 		public sealed override Enumerator GetEnumerator() => new Enumerator(Elements, Length);
 
 		/// <summary>
-		/// Provides forward enumeration over <see cref="Array{TElement, TSelf}"/>.
+		/// Provides enumeration over <see cref="Array{TElement, TSelf}"/>.
 		/// </summary>
-		public struct Enumerator : IEnumerator<TElement> {
+		[StructLayout(LayoutKind.Auto)]
+		public struct Enumerator : IEnumerator<TElement>, IEquatable<Enumerator> {
 			private readonly Memory<TElement> Elements;
 
 			private readonly nint Length;
@@ -32,6 +35,27 @@ namespace Collectathon.Arrays {
 
 			/// <inheritdoc/>
 			public TElement Current => Elements.Span[(Int32)i];
+
+			public static Boolean operator !=(Enumerator left, Enumerator right) => !left.Equals(right);
+
+			public static Boolean operator ==(Enumerator left, Enumerator right) => left.Equals(right);
+
+			/// <inheritdoc/>
+			public override Boolean Equals(Object obj) {
+				switch (obj) {
+				case Enumerator enumerator:
+					return Equals(enumerator);
+				default:
+					return false;
+				}
+			}
+
+			/// <inheritdoc/>
+			public Boolean Equals(Enumerator other) => Elements.Equals(other.Elements) && Length.Equals(other.Length);
+
+			/// <inheritdoc/>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public override Int32 GetHashCode() => base.GetHashCode();
 
 			/// <inheritdoc/>
 			public Boolean MoveNext() => ++i < Length;

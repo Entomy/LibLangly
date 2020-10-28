@@ -42,8 +42,6 @@ namespace Collectathon.Arrays {
 
 		/// <inheritdoc/>
 		void IClearable.Clear() {
-			Members = null;
-			GC.Collect();
 			Members = Memory<Association<TIndex, TElement>>.Empty;
 			Length = 0;
 		}

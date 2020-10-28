@@ -9,7 +9,19 @@ namespace Consolator {
 	/// At absolute minimum, this supports the traditional 16 colors of the console. However, it is an enum-struct and not a standard enum to allow for more complex color schemes to be possible.
 	/// </remarks>
 	[StructLayout(LayoutKind.Auto)]
-	public readonly struct Color {
+	public readonly struct Color : IEquatable<Color> {
+
+		/// <summary>
+		/// The console color code.
+		/// </summary>
+		private readonly Int32 Code;
+
+		/// <summary>
+		/// Initializes a new <see cref="Color"/> value.
+		/// </summary>
+		/// <param name="code">The console color code.</param>
+		private Color(Int32 code) => Code = code;
+
 		public static Color Black { get; } = new Color(0);
 
 		public static Color Blue { get; } = new Color(9);
@@ -42,15 +54,24 @@ namespace Consolator {
 
 		public static Color Yellow { get; } = new Color(14);
 
-		/// <summary>
-		/// The console color code.
-		/// </summary>
-		private readonly Int32 Code;
+		public static Boolean operator !=(Color left, Color right) => !left.Equals(right);
 
-		/// <summary>
-		/// Initializes a new <see cref="Color"/> value.
-		/// </summary>
-		/// <param name="code">The console color code.</param>
-		private Color(Int32 code) => Code = code;
+		public static Boolean operator ==(Color left, Color right) => left.Equals(right);
+
+		/// <inheritdoc/>
+		public override Boolean Equals(Object obj) {
+			switch (obj) {
+			case Color color:
+				return Equals(color);
+			default:
+				return false;
+			}
+		}
+
+		/// <inheritdoc/>
+		public Boolean Equals(Color other) => Code.Equals(other.Code);
+
+		/// <inheritdoc/>
+		public override Int32 GetHashCode() => Code;
 	}
 }

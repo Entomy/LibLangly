@@ -42,8 +42,6 @@ namespace Collectathon.Arrays {
 
 		/// <inheritdoc/>
 		protected virtual void Clear() {
-			Elements = null;
-			GC.Collect();
 			Elements = Memory<TElement>.Empty;
 			Length = 0;
 		}
