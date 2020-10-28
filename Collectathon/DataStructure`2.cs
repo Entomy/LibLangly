@@ -78,13 +78,13 @@ namespace Collectathon {
 		}
 
 		/// <inheritdoc/>
-		public abstract Boolean Equals(DataStructure<TIndex, TElement, TSelf, TEnumerator>? other);
+		public abstract Boolean Equals(DataStructure<TIndex, TElement, TSelf, TEnumerator> other);
 
 		/// <inheritdoc/>
-		public abstract Boolean Equals(Association<TIndex, TElement>[]? other);
+		public abstract Boolean Equals(Association<TIndex, TElement>[] other);
 
 		/// <inheritdoc/>
-		public Boolean Equals(System.Collections.Generic.IEnumerable<Association<TIndex, TElement>>? other) {
+		public Boolean Equals(System.Collections.Generic.IEnumerable<Association<TIndex, TElement>> other) {
 			// We're calling this off an instance, so if the other is null
 			if (other is null) {
 				// They aren't equal
@@ -92,7 +92,7 @@ namespace Collectathon {
 			}
 			// Get enumerators for each
 			TEnumerator ths = GetEnumerator();
-			System.Collections.Generic.IEnumerator<Association<TIndex, TElement>> oth = other.GetEnumerator();
+			using System.Collections.Generic.IEnumerator<Association<TIndex, TElement>> oth = other.GetEnumerator();
 			// Now iterate through both
 			while (ths.MoveNext() && oth.MoveNext()) {
 				// If the current elements are not equal to each other

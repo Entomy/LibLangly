@@ -76,7 +76,7 @@ namespace Collectathon {
 		}
 
 		/// <inheritdoc/>
-		public abstract Boolean Equals(DataStructure<TElement, TSelf, TEnumerator>? other);
+		public abstract Boolean Equals(DataStructure<TElement, TSelf, TEnumerator> other);
 
 		/// <inheritdoc/>
 		public virtual Boolean Equals(TElement[] other) {
@@ -115,7 +115,7 @@ namespace Collectathon {
 			}
 			// Get enumerators for each
 			TEnumerator ths = GetEnumerator();
-			System.Collections.Generic.IEnumerator<TElement> oth = other.GetEnumerator();
+			using System.Collections.Generic.IEnumerator<TElement> oth = other.GetEnumerator();
 			// Now iterate through both
 			while (ths.MoveNext() && oth.MoveNext()) {
 				// If the current elements are not equal to each other

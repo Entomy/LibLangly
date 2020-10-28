@@ -5,7 +5,7 @@ namespace Philosoft {
 	/// Indicates the collection can be enumerated over.
 	/// </summary>
 	/// <typeparam name="TElement">The type of the elements to enumerate.</typeparam>
-	public interface IEnumerator<TElement> : IEnumerable<TElement, IEnumerator<TElement>> {
+	public interface IEnumerator<TElement> : System.Collections.Generic.IEnumerator<TElement>, IEnumerable<TElement, IEnumerator<TElement>> {
 		/// <summary>
 		/// Gets the element at the current position.
 		/// </summary>
@@ -24,5 +24,11 @@ namespace Philosoft {
 
 		/// <inheritdoc/>
 		IEnumerator<TElement> IEnumerable<TElement, IEnumerator<TElement>>.GetEnumerator() => this;
+
+		/// <inheritdoc/>
+		Object System.Collections.IEnumerator.Current => Current;
+
+		/// <inheritdoc/>
+		void System.IDisposable.Dispose() => GC.SuppressFinalize(this);
 	}
 }

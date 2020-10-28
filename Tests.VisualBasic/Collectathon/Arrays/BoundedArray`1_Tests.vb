@@ -52,7 +52,7 @@ Namespace Collectathon.Arrays
 		End Sub
 
 		<Fact>
-		Public Sub Remove_Delegate_Odds()
+		Public Sub Remove_Delegate()
 			Dim BA As BoundedArray(Of Int32) = New BoundedArray(Of Int32)(9) From {1, 2, 3, 4, 5, 6, 7, 8, 9}
 			BA.Remove(Function(x) x Mod 2 <> 0)
 			Assert.Equal(New Int32() {2, 4, 6, 8}, BA)

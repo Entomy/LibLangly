@@ -27,6 +27,11 @@ Namespace Collectathon.Arrays
 		<InlineData(New Int32() {1, 2, 3, 4, 5})>
 		Public Sub Enumerator(Array As Int32())
 			Dim FA As FixedArray(Of Int32) = Array
+			Dim A = 0
+			For Each Item As Int32 In FA
+				Assert.Equal(Array(A), Item)
+				A += 1
+			Next
 		End Sub
 
 		<Theory>
