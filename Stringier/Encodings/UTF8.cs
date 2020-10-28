@@ -188,28 +188,36 @@ namespace Stringier.Encodings {
 		/// Assuming both myself and Microsoft don't have any bugs in our code, this should always succeed, because <see cref="Rune"/> uses validating constructors.
 		/// </remarks>
 		public static void Encode(Rune rune, out Byte first, out Byte second, out Byte third, out Byte fourth) {
-			first = 0x0;
-			second = 0x0;
-			third = 0x0;
-			fourth = 0x0;
 			switch (rune.Utf8SequenceLength) {
 			case 1:
 				first = (Byte)rune.Value;
+				second = 0;
+				third = 0;
+				fourth = 0;
 				break;
 			case 2:
 				first = (Byte)(rune.Value >> 6 | 0b1100_0000);
 				second = (Byte)(rune.Value & 0b0011_1111 | 0b1000_0000);
+				third = 0;
+				fourth = 0;
 				break;
 			case 3:
 				first = (Byte)(rune.Value >> 12 | 0b1110_0000);
 				second = (Byte)(rune.Value >> 6 & 0b0011_1111 | 0b1000_0000);
 				third = (Byte)(rune.Value & 0b0011_1111 | 0b1000_0000);
+				fourth = 0;
 				break;
 			case 4:
 				first = (Byte)(rune.Value >> 18 | 0b1111_0000);
 				second = (Byte)(rune.Value >> 12 & 0b0011_1111 | 0b1000_0000);
 				third = (Byte)(rune.Value >> 6 & 0b0011_1111 | 0b1000_0000);
 				fourth = (Byte)(rune.Value & 0b0011_1111 | 0b1000_0000);
+				break;
+			default:
+				first = 0xEF;
+				second = 0xBF;
+				third = 0xBD;
+				fourth = 0;
 				break;
 			}
 		}

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Text;
 using Defender;
+using Defender.Exceptions;
 
 namespace Stringier.Encodings {
 	/// <summary>
@@ -159,14 +160,17 @@ namespace Stringier.Encodings {
 		/// Assuming both myself and Microsoft don't have any bugs in our code, this should always succeed, because <see cref="Rune"/> uses validating constructors. However there are cases where, inside of the .NET runtime, Rune is created without validation, so, it's possible in theory.
 		/// </remarks>
 		public static void Encode(Rune rune, out Char high, out Char low) {
-			high = '\uFFFD';
-			low = '\0';
 			switch (rune.Utf16SequenceLength) {
 			case 1:
 				high = unchecked((Char)rune.Value);
+				low = '\0';
 				break;
 			case 2:
 				Unsafe.Utf16Encode(unchecked((UInt16)rune.Value), out high, out low);
+				break;
+			default:
+				high = '\uFFFD';
+				low = '\uFFFD';
 				break;
 			}
 		}
