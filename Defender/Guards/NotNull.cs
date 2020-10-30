@@ -13,8 +13,8 @@ namespace Defender {
 		/// <exception cref="ArgumentNotNullException">Thrown if the guard clause fails.</exception>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static void NotNull<T>(T value, String name) {
-			if (value is null) {
-				throw Defender.Exceptions.ArgumentNullException.With(value, name);
+			if (Check.Null(value)) {
+				throw Exceptions.ArgumentNullException.With(value, name);
 			}
 		}
 
@@ -27,8 +27,8 @@ namespace Defender {
 		[CLSCompliant(false)]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static unsafe void NotNull(void* value, String name) {
-			if (value is null) {
-				throw Defender.Exceptions.ArgumentNullException.With(value, name);
+			if (Check.Null(value)) {
+				throw Exceptions.ArgumentNullException.With(value, name);
 			}
 		}
 	}

@@ -2,6 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using Collectathon.Filters;
 using Defender.Exceptions;
+using Philosoft;
 
 namespace Collectathon.Arrays {
 	/// <summary>
@@ -60,7 +61,7 @@ namespace Collectathon.Arrays {
 		}
 
 		/// <inheritdoc/>
-		protected override BoundedArray<TElement> Clone() => new BoundedArray<TElement>(Elements, Length, Filterer.Clone());
+		protected override BoundedArray<TElement> Clone() => new BoundedArray<TElement>(Elements.Clone(), Length, Filterer.Clone());
 
 		/// <inheritdoc/>
 		protected override void Insert(nint index, TElement element) {

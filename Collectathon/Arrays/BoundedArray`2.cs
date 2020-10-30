@@ -1,6 +1,7 @@
 ﻿using Defender.Exceptions;
 using Collectathon.Filters;
 using System;
+using Philosoft;
 
 namespace Collectathon.Arrays {
 	/// <summary>
@@ -41,6 +42,6 @@ namespace Collectathon.Arrays {
 		}
 
 		/// <inheritdoc/>
-		protected override BoundedArray<TIndex, TElement> Clone() => new BoundedArray<TIndex, TElement>(Members, Length, Filterer.Clone());
+		protected override BoundedArray<TIndex, TElement> Clone() => new BoundedArray<TIndex, TElement>(Members.Clone(), Length, Filterer.Clone());
 	}
 }

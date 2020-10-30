@@ -57,7 +57,7 @@ namespace Collectathon.Arrays {
 		}
 
 		/// <inheritdoc/>
-		protected override DynamicArray<TElement> Clone() => new DynamicArray<TElement>(Elements, Length, Filterer.Clone());
+		protected override DynamicArray<TElement> Clone() => new DynamicArray<TElement>(Elements.Clone(), Length, Filterer.Clone());
 
 		/// <inheritdoc/>
 		protected override void Insert(nint index, TElement element) {

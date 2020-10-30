@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using Collectathon.Filters;
+using Philosoft;
 
 namespace Collectathon.Arrays {
 	/// <summary>
@@ -51,7 +52,7 @@ namespace Collectathon.Arrays {
 		public static implicit operator FixedArray<TElement>(Memory<TElement> memory) => new FixedArray<TElement>(memory, memory.Length, NullFilter<TElement>.Instance);
 
 		/// <inheritdoc/>
-		protected override FixedArray<TElement> Clone() => new FixedArray<TElement>(Elements, Length, Filterer.Clone());
+		protected override FixedArray<TElement> Clone() => new FixedArray<TElement>(Elements.Clone(), Length, Filterer.Clone());
 
 		private static class Singleton {
 			static Singleton() { }

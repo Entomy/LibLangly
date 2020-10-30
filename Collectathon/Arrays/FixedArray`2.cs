@@ -1,5 +1,6 @@
 ﻿using System;
 using Collectathon.Filters;
+using Philosoft;
 
 namespace Collectathon.Arrays {
 	/// <summary>
@@ -32,6 +33,6 @@ namespace Collectathon.Arrays {
 		private FixedArray(Memory<Association<TIndex, TElement>> members, nint length, Filter<TElement> filterer) : base(members, length, filterer) { }
 
 		/// <inheritdoc/>
-		protected override FixedArray<TIndex, TElement> Clone() => new FixedArray<TIndex, TElement>(Members, Length, Filterer.Clone());
+		protected override FixedArray<TIndex, TElement> Clone() => new FixedArray<TIndex, TElement>(Members.Clone(), Length, Filterer.Clone());
 	}
 }

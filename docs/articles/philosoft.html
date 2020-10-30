@@ -69,8 +69,15 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="philosoft">Philosoft</h1>
 
-<p><strong>Philosoft</strong> provides a rich <a href="https://dev.to/entomy/real-traits-in-c-4fpk">trait-oriented</a> set of interfaces together with extension methods for them to enable <a href="https://dev.to/entomy/avoiding-nulls-with-extension-methods-3mkc">null-tolerance</a>. The idea is to help encourage robust and resilient code bases while keeping a common framework for talking about disparate types.</p>
+<p><strong>Philosoft</strong> provides a rich <a href="https://dev.to/entomy/real-traits-in-c-4fpk">trait-oriented</a> set of interfaces together with extension methods for them to enable <a href="https://dev.to/entomy/avoiding-nulls-with-extension-methods-3mkc">null-tolerance</a>. The idea is to help encourage robust and resilient code bases while keeping a common framework for talking about disparate types. Furthermore, You only need to implement a few key methods and get tons of additional functionality <em>for free</em>.</p>
 <p>So how do you use it? When implementing a new type, pass all the traits into the interface implementation list just like you normally would with any interface, and while you don't explicitly have to, when implementing the required methods you <em>should</em> implement them explicitly. In doing so, the <a href="https://dev.to/entomy/avoiding-nulls-with-extension-methods-3mkc">null-tolerant</a> extension methods will be used, allowing null objects to be gracefully handled while still calling the implementations you provided.</p>
+<blockquote>
+<p>But explicit methods aren't available to derived types...</p>
+</blockquote>
+<blockquote>
+<p>But explicit methods aren't callable off the instance and have to use interfaces for all interactions</p>
+</blockquote>
+<p>There's more counterarguments, I'm sure. <strong>Philosoft</strong> was designed around this. In fact, the design around this is how you get &quot;free&quot; implementations of various functionality. You *<strong>really</strong> should implement all the interface functionality explicitly. Extension methods don't just add in <a href="https://dev.to/entomy/avoiding-nulls-with-extension-methods-3mkc">null-tolerance</a>, they also provide a way of calling any default-implementation an interface might have, off the <em>instance</em>. You really do get all that additional functionality without having to change how you go about using the types you write.</p>
 </article>
           </div>
           

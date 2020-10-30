@@ -41,7 +41,7 @@ namespace Collectathon.Arrays {
 		}
 
 		/// <inheritdoc/>
-		protected override DynamicArray<TIndex, TElement> Clone() => new DynamicArray<TIndex, TElement>(Members, Length, Filterer.Clone());
+		protected override DynamicArray<TIndex, TElement> Clone() => new DynamicArray<TIndex, TElement>(Members.Clone(), Length, Filterer.Clone());
 
 		/// <inheritdoc/>
 		void IResizable.Resize(nint capacity) {

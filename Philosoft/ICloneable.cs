@@ -63,9 +63,33 @@ namespace Philosoft {
 		/// <returns>A new object that is a copy of this instance.</returns>
 		/// <remarks>
 		/// <para>The resulting clone must be of the same type as, or compatible with, the original instance.</para>
-		/// <para>An implementation of <see cref="Clone"/> can perform either a deep copy or a shallow copy. In a deep copy, all objects are duplicated; in a shallow copy, only the top-level objects are duplicated and the lower levels contain references. Because callers of <see cref="Clone"/> cannot depend on the method performing a predictable cloning operation, we recommend that <see cref="ICloneable{TSelf}"/> not be implemented in public APIs.</para>
+		/// <para>An implementation of <see cref="ICloneable{TSelf}.Clone"/> can perform either a deep copy or a shallow copy. In a deep copy, all objects are duplicated; in a shallow copy, only the top-level objects are duplicated and the lower levels contain references. Because callers of <see cref="ICloneable{TSelf}.Clone"/> cannot depend on the method performing a predictable cloning operation, we recommend that <see cref="ICloneable{TSelf}"/> not be implemented in public APIs.</para>
 		/// <para>See <see cref="Object.MemberwiseClone"/> for more information on cloning, deep versus shallow copies, and examples.</para>
 		/// </remarks>
 		public static TSelf Clone<TSelf>(this ICloneable<TSelf> collection) => collection is null ? default : collection.Clone();
+
+		/// <summary>
+		/// Creates a new memory region that is a copy of the current memory.
+		/// </summary>
+		/// <typeparam name="T">The type of elements in the memory region.</typeparam>
+		/// <param name="memory">This memory region.</param>
+		/// <returns>A new memory region that is a copy of the current memory.</returns>
+		public static Memory<T> Clone<T>(this Memory<T> memory) {
+			Memory<T> clone = new T[memory.Length];
+			memory.CopyTo(clone);
+			return clone;
+		}
+
+		/// <summary>
+		/// Creates a new memory region that is a copy of the current memory.
+		/// </summary>
+		/// <typeparam name="T">The type of elements in the memory region.</typeparam>
+		/// <param name="memory">This memory region.</param>
+		/// <returns>A new memory region that is a copy of the current memory.</returns>
+		public static ReadOnlyMemory<T> Clone<T>(this ReadOnlyMemory<T> memory) {
+			Memory<T> clone = new T[memory.Length];
+			memory.CopyTo(clone);
+			return clone;
+		}
 	}
 }
