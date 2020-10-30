@@ -1,8 +1,8 @@
 ﻿using System;
+using Collectathon;
 using Collectathon.Views;
-using Philosoft;
 
-namespace Collectathon {
+namespace Philosoft {
 	/// <summary>
 	/// Indicates the type associates values of two other types.
 	/// </summary>

@@ -80,6 +80,26 @@ namespace Collectathon.Arrays {
 		}
 
 		[Theory]
+		[InlineData(new[] { 1, 2, 3, 4, 5 })]
+		public void Reverse(Int32[] array) {
+			FixedArray<Int32> fa = array;
+			Int32 a = array.Length;
+			//Manual reversal
+			var fe = fa.GetEnumerator();
+			fe.ResetEnding();
+			while (fe.MovePrevious()) {
+				Assert.Equal(array[--a], fe.Current);
+			}
+			Assert.Equal(0, a);
+			//a = array.Length;
+			////For Each reversal 
+			//foreach (Int32 item in fa.Reverse) {
+			//	Assert.Equal(array[--a], item);
+			//}
+			//Assert.Equal(0, a);
+		}
+
+		[Theory]
 		[InlineData(new[] { 1, 2, 3, 4, 5 }, new[] { 2, 3, 4, 5, 0 })]
 		public void ShiftLeft(Int32[] array, Int32[] expected) {
 			FixedArray<Int32> fa = array;

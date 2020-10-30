@@ -1,18 +1,22 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
+using Collectathon.Views;
 using Philosoft;
 
 namespace Collectathon.Arrays {
-	public partial class Array<TElement, TSelf> : IEnumerable<TElement, Array<TElement, TSelf>.Enumerator> {
+	public partial class Array<TElement, TSelf> : IReversibleEnumerable<TElement, Array<TElement, TSelf>, Array<TElement, TSelf>.Enumerator> {
 		/// <inheritdoc/>
 		public sealed override Enumerator GetEnumerator() => new Enumerator(Elements, Length);
+
+		/// <inheritdoc/>
+		public ReverseView<TElement, Array<TElement, TSelf>, Enumerator> Reverse => new ReverseView<TElement, Array<TElement, TSelf>, Enumerator>(this);
 
 		/// <summary>
 		/// Provides enumeration over <see cref="Array{TElement, TSelf}"/>.
 		/// </summary>
 		[StructLayout(LayoutKind.Auto)]
-		public struct Enumerator : IEnumerator<TElement>, IEquatable<Enumerator> {
+		public struct Enumerator : IReversibleEnumerator<TElement>, IEquatable<Enumerator> {
 			private readonly Memory<TElement> Elements;
 
 			private readonly nint Length;
@@ -61,7 +65,13 @@ namespace Collectathon.Arrays {
 			public Boolean MoveNext() => ++i < Length;
 
 			/// <inheritdoc/>
-			public void Reset() => i = -1;
+			public Boolean MovePrevious() => i-- > 0;
+
+			/// <inheritdoc/>
+			public void ResetBeginning() => i = -1;
+
+			/// <inheritdoc/>
+			public void ResetEnding() => i = Length;
 		}
 	}
 }

@@ -29,6 +29,9 @@ namespace Philosoft {
 		Object System.Collections.IEnumerator.Current => Current;
 
 		/// <inheritdoc/>
+		void System.Collections.IEnumerator.Reset() => Reset();
+
+		/// <inheritdoc/>
 		void System.IDisposable.Dispose() => GC.SuppressFinalize(this);
 	}
 }
