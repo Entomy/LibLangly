@@ -16,6 +16,7 @@ namespace Collectathon.Arrays {
 			private Int32 i;
 
 			private readonly nint Length;
+
 			private readonly Memory<Association<TIndex, TElement>> Members;
 
 			/// <summary>
