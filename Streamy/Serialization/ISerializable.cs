@@ -1,4 +1,4 @@
-﻿namespace Defender.Serialization {
+﻿namespace Streamy.Serialization {
 	/// <summary>
 	/// Indicates the type is serializable.
 	/// </summary>

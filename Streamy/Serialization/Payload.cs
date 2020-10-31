@@ -1,7 +1,8 @@
-﻿using Philosoft;
+﻿using Defender;
+using Philosoft;
 using System;
 
-namespace Defender.Serialization {
+namespace Streamy.Serialization {
 	/// <summary>
 	/// Represents a serialization payload; the serialized data.
 	/// </summary>
