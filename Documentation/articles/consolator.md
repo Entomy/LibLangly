@@ -35,7 +35,7 @@ For additional features you'll need to include the `Consolator` namespace, not j
 Console.WriteLine("Hello from Consolator!");
 ~~~~
 
-# [VB](#tab/cs)
+# [VB](#tab/vb)
 
 ~~~~vbnet
 Console.WriteLine("Hello from Consolator!")

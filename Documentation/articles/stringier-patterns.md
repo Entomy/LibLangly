@@ -13,7 +13,7 @@ using Stringier.Patterns;
 using static Stringier.Patterns.Pattern;
 ~~~~
 
-# [VB](#tab/cs)
+# [VB](#tab/vb)
 
 ~~~~vbnet
 Imports Stringier.Patterns

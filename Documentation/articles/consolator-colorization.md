@@ -8,7 +8,7 @@ Look, it's not the 1970's anymore. Color terminals have been around for a long t
 Console.WriteLine("Hello from Consolator!", Color.Blue, Color.RGB(255, 255, 255));
 ~~~~
 
-# [VB](#tab/cs)
+# [VB](#tab/vb)
 
 ~~~~vbnet
 Console.WriteLine("Hello from Consolator!", Color.Blue, Color.RGB(255, 255, 255))
