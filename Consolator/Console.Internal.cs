@@ -51,16 +51,6 @@ namespace Consolator {
 			/// Writes the text to the standard output stream.
 			/// </summary>
 			/// <param name="text">The text to write.</param>
-			public static unsafe void Write([NotNull] String text) {
-				fixed (void* buffer = text) {
-					_ = WriteConsole(StdOut, buffer, text.Length, out _, IntPtr.Zero);
-				}
-			}
-
-			/// <summary>
-			/// Writes the text to the standard output stream.
-			/// </summary>
-			/// <param name="text">The text to write.</param>
 			public static unsafe void Write(ReadOnlySpan<Char> text) {
 				fixed (void* buffer = text) {
 					_ = WriteConsole(StdOut, buffer, text.Length, out _, IntPtr.Zero);
@@ -82,15 +72,6 @@ namespace Consolator {
 				fixed (void* buffer = "\r\n") {
 					WriteConsole(StdOut, buffer, 2, out _, IntPtr.Zero);
 				}
-			}
-
-			/// <summary>
-			/// Writes the text and a line terminator to the standard output stream.
-			/// </summary>
-			/// <param name="text">The text to write.</param>
-			public static void WriteLine([NotNull] String text) {
-				Write(text);
-				WriteLine();
 			}
 
 			/// <summary>

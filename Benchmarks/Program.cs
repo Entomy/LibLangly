@@ -13,7 +13,7 @@ namespace Benchmarks {
 			Console.WriteLine("नमस्कार", Color.Cyan);
 			Console.WriteLine("שלום", Color.Blue);
 			Console.WriteLine("こんにちは", Color.Magenta);
-			Console.WriteLine("From not the .NET Runtime", Color.Black, Color.White);
+			Console.WriteLine("From not the .NET Runtime", Color.RGB(0, 0, 0), Color.RGB(255, 255, 255));
 		}
 	}
 }
