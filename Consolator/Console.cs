@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using Philosoft;
 using PInvoke;
@@ -54,12 +55,29 @@ namespace Consolator {
 #endif
 
 		/// <summary>
+		/// Gets the alternate screen buffer, and actives it.
+		/// </summary>
+		public static ScreenBuffer Buffer {
+			get {
+				Internal.Write("\x1B[?1049h");
+				return ScreenBuffer.Instance;
+			}
+		}
+
+		/// <summary>
 		/// Gets or sets the console window title.
 		/// </summary>
 		[SuppressMessage("Design", "CA1044:Properties should not be write only", Justification = "There's no corresponding get-title sequence we can use.")]
 		[SuppressMessage("Major Code Smell", "S2376:Write-only properties should not be used", Justification = "There's no corresponding get-title sequence we can use.")]
 		public static String Title {
-			set => Internal.WriteLine($"\x1B]2;{value}\b");
+			set {
+				if (value is not null) {
+					Internal.WriteLine($"\x1B]2;{value}\b");
+				} else {
+					using Process process = Process.GetCurrentProcess();
+					Internal.WriteLine($"\x1B]2;{process.ProcessName}\b");
+				}
+			}
 		}
 
 		#region Read()
@@ -588,16 +606,18 @@ namespace Consolator {
 
 		#region WriteError()
 		/// <summary>
-		/// Writes the text to the standard error stream.
-		/// </summary>
-		/// <param name="text">The text to write.</param>
-		public static void WriteError(String text) => throw new NotImplementedException();
-
-		/// <summary>
 		/// Writes the exception message to the standard error stream.
 		/// </summary>
 		/// <param name="exception">The exception providing the message to write.</param>
-		public static void WriteError(Exception exception) => throw new NotImplementedException();
+		public static void WriteError(Exception exception) {
+			if (exception is null) {
+				return;
+			}
+			Internal.SetForeground(Color.Red);
+			Internal.Write(" Error: ");
+			Foreground.Color = Foreground.Current;
+			Internal.WriteLine(exception.Message);
+		}
 		#endregion
 	}
 }
