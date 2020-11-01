@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Consolator </title>
+    <title>Consolator Colorization </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Consolator ">
+    <meta name="title" content="Consolator Colorization ">
     <meta name="generator" content="docfx 2.56.4.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -67,12 +67,9 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="consolator">Consolator</h1>
+<h1 id="consolator-colorization">Consolator Colorization</h1>
 
-<p><strong>Consolator</strong> is a reimagining of how the <a href="https://docs.microsoft.com/en-us/dotnet/api/system.console"><code>Console</code></a> should work. Despite numerous advances in graphics technology, console apps have become quite trendy. This is a welcome trend, as not only are console apps more efficient and generally more accessible, but it's also forced us to relook at console app design through a more modern lens.</p>
-<p>[!WARNING]
-&lt;Consolator completely bypasses <a href="https://docs.microsoft.com/en-us/dotnet/api/system.console"><code>System.Console</code></a> and uses its own internals. Of particular note is using virtual terminal escape sequences across all platforms. This is inline with the <a href="https://docs.microsoft.com/en-us/windows/console/ecosystem-roadmap">Windows Console and Terminal roadmap</a> but will mean older platforms aren't supported.&gt;</p>
-<p>Generally speaking, <strong>Consolator</strong> looks like the same <a href="https://docs.microsoft.com/en-us/dotnet/api/system.console"><code>System.Console</code></a> you're used to, and in many cases drop-in replacement is possible. Include it like so:</p>
+<p>Look, it's not the 1970's anymore. Color terminals have been around for a long time and colorizing your console app should be easy. This is especially critical as console apps have made quite the resurgence in recent years. <strong>Consolator</strong> makes this easy.</p>
 <div class="tabGroup" id="tabgroup_CeZOj-G++Q">
 <ul role="tablist">
 <li role="presentation">
@@ -87,12 +84,12 @@
 </ul>
 <section id="tabpanel_CeZOj-G++Q_cs" role="tabpanel" data-tab="cs">
 
-<pre><code class="lang-csharp">using Console = Consolator.Console;
+<pre><code class="lang-csharp">Console.WriteLine(&quot;Hello from Consolator!&quot;, Color.Blue, Color.RGB(255, 255, 255));
 </code></pre>
 </section>
 <section id="tabpanel_CeZOj-G++Q_cs" role="tabpanel" data-tab="cs" aria-hidden="true" hidden="hidden">
 
-<pre><code class="lang-vbnet">Imports Console = Consolator.Console
+<pre><code class="lang-vbnet">Console.WriteLine(&quot;Hello from Consolator!&quot;, Color.Blue, Color.RGB(255, 255, 255))
 </code></pre>
 </section>
 <section id="tabpanel_CeZOj-G++Q_fs" role="tabpanel" data-tab="fs" aria-hidden="true" hidden="hidden">
@@ -102,35 +99,10 @@
 </section>
 </div>
 
-<p>For additional features you'll need to include the <code>Consolator</code> namespace, not just the <code>Console</code> alias.</p>
-<div class="tabGroup" id="tabgroup_CeZOj-G++Q-1">
-<ul role="tablist">
-<li role="presentation">
-<a href="#tabpanel_CeZOj-G++Q-1_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-1_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
-</li>
-<li role="presentation">
-<a href="#tabpanel_CeZOj-G++Q-1_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-1_cs" data-tab="cs" tabindex="-1">VB</a>
-</li>
-<li role="presentation">
-<a href="#tabpanel_CeZOj-G++Q-1_fs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-1_fs" data-tab="fs" tabindex="-1">F#</a>
-</li>
-</ul>
-<section id="tabpanel_CeZOj-G++Q-1_cs" role="tabpanel" data-tab="cs">
-
-<pre><code class="lang-csharp">Console.WriteLine(&quot;Hello from Consolator!&quot;);
-</code></pre>
-</section>
-<section id="tabpanel_CeZOj-G++Q-1_cs" role="tabpanel" data-tab="cs" aria-hidden="true" hidden="hidden">
-
-<pre><code class="lang-vbnet">Console.WriteLine(&quot;Hello from Consolator!&quot;)
-</code></pre>
-</section>
-<section id="tabpanel_CeZOj-G++Q-1_fs" role="tabpanel" data-tab="fs" aria-hidden="true" hidden="hidden">
-
-<pre><code class="lang-fsharp">// Not implemented yet
-</code></pre>
-</section>
-</div>
+<p>Yup. Seriously, it's that easy.</p>
+<p>You can also apply the color as a state through the <code>Foreground.Color</code> and <code>Background.Color</code> properties. This allows you to omit repeatedly passing the same colors into the functions over and over again. The two systems even work together, where if you set a color as a state, and pass colors to a function, the text written in that function will be colored as stated, and will return back to the state color. Clearing the state is as simple as passing <code>null</code> to the property.</p>
+<h2 id="color">Color</h2>
+<p>So what is supported as far as color goes? Technically the only thing publicly visible is <code>Color</code> but that's an abstract class, so clearly there's some internal details. <code>Color</code> provides everything you need to hide these details. When you used a named color, like <code>Color.Black</code>, you actually get back a <code>SimpleColor</code> which acts as the basic 8-color system all color terminals support. This is the closest analogue to .NET's <code>ConsoleColor</code> enumeration. However, you can also construct colors through various factories like <code>Color.RGB(Byte, Byte, Byte)</code>. When one of these colors is used, it instead passes the 24-bit RGB escape sequence to the terminal, and, if supported, will display 24-bit color. You don't need to do anything different to make all this work.</p>
 </article>
           </div>
           
@@ -139,7 +111,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/master/Documentation/articles/consolator.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Documentation/articles/consolator-colorization.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

@@ -52,9 +52,13 @@ namespace Consolator {
 			/// </summary>
 			/// <param name="text">The text to write.</param>
 			public static unsafe void Write(ReadOnlySpan<Char> text) {
+#if WINDOWS
 				fixed (void* buffer = text) {
 					_ = WriteConsole(StdOut, buffer, text.Length, out _, IntPtr.Zero);
 				}
+#else
+				throw new PlatformNotSupportedException();
+#endif
 			}
 
 			/// <summary>
@@ -63,15 +67,25 @@ namespace Consolator {
 			/// <param name="text">The characters of the text to write.</param>
 			/// <param name="length">The length of the <paramref name="text"/>.</param>
 			[CLSCompliant(false)]
-			public static unsafe void Write([NotNull] Char* text, Int32 length) => WriteConsole(StdOut, text, length, out _, IntPtr.Zero);
+			public static unsafe void Write([NotNull] Char* text, Int32 length) {
+#if WINDOWS
+				WriteConsole(StdOut, text, length, out _, IntPtr.Zero);
+#else
+				throw new PlatformNotSupportedException();
+#endif
+			}
 
 			/// <summary>
 			/// Writes a line terminator to the standard output stream.
 			/// </summary>
 			public static unsafe void WriteLine() {
+#if WINDOWS
 				fixed (void* buffer = "\r\n") {
 					WriteConsole(StdOut, buffer, 2, out _, IntPtr.Zero);
 				}
+#else
+				throw new PlatformNotSupportedException();
+#endif
 			}
 
 			/// <summary>
