@@ -52,15 +52,13 @@ namespace Consolator {
 			null;
 #endif
 
-
-
 		/// <summary>
 		/// Gets or sets the console window title.
 		/// </summary>
 		[SuppressMessage("Design", "CA1044:Properties should not be write only", Justification = "There's no corresponding get-title sequence we can use.")]
 		[SuppressMessage("Major Code Smell", "S2376:Write-only properties should not be used", Justification = "There's no corresponding get-title sequence we can use.")]
 		public static String Title {
-			set => Internal.WriteLine($"\x1b]2;{value}\b");
+			set => Internal.WriteLine($"\x1B]2;{value}\b");
 		}
 
 		#region Read()
@@ -115,6 +113,24 @@ namespace Consolator {
 		/// </summary>
 		/// <param name="text">The text to write.</param>
 		public static void Write(ReadOnlySpan<Char> text) => Internal.Write(text);
+
+		/// <summary>
+		/// Writes the text to the standard output stream.
+		/// </summary>
+		/// <param name="text">The text to write.</param>
+		/// <param name="foreground">The foreground color to use; <see langword="null"/> to use current.</param>
+		/// <param name="background">The background color to use; <see langword="null"/> to use current.</param>
+		public static void Write(ReadOnlySpan<Char> text, [MaybeNull] Color foreground = null, [MaybeNull] Color background = null) {
+			if (foreground is not null) {
+				Internal.SetForeground(foreground);
+			}
+			if (background is not null) {
+				Internal.SetBackground(background);
+			}
+			Internal.Write(text);
+			Foreground.Color = Foreground.Current;
+			Background.Color = Background.Current;
+		}
 
 		/// <summary>
 		/// Writes the text to the standard output stream.
@@ -202,6 +218,24 @@ namespace Consolator {
 		/// </summary>
 		/// <param name="text">The text to write.</param>
 		public static void WriteLine(ReadOnlySpan<Char> text) => Internal.WriteLine(text);
+
+		/// <summary>
+		/// Writes the text and a line terminator to the standard output stream.
+		/// </summary>
+		/// <param name="text">The text to write.</param>
+		/// <param name="foreground">The foreground color to use; <see langword="null"/> to use current.</param>
+		/// <param name="background">The background color to use; <see langword="null"/> to use current.</param>
+		public static void WriteLine(ReadOnlySpan<Char> text, [MaybeNull] Color foreground = null, [MaybeNull] Color background = null) {
+			if (foreground is not null) {
+				Internal.SetForeground(foreground);
+			}
+			if (background is not null) {
+				Internal.SetBackground(background);
+			}
+			Internal.WriteLine(text);
+			Foreground.Color = Foreground.Current;
+			Background.Color = Background.Current;
+		}
 
 		/// <summary>
 		/// Writes the text and a line terminator to the standard output stream.

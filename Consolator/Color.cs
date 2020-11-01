@@ -1,62 +1,38 @@
 ﻿using System;
-using System.Runtime.InteropServices;
 
 namespace Consolator {
 	/// <summary>
-	/// Specifies the possible colors for the console.
+	/// Specifies the color for the console.
 	/// </summary>
-	/// <remarks>
-	/// At absolute minimum, this supports the traditional 16 colors of the console. However, it is an enum-struct and not a standard enum to allow for more complex color schemes to be possible.
-	/// </remarks>
-	[StructLayout(LayoutKind.Auto)]
-	public readonly struct Color : IEquatable<Color> {
+	public abstract class Color : IEquatable<Color> {
+		public static Color Black { get; } = new SimpleColor(0);
 
-		/// <summary>
-		/// The console color code.
-		/// </summary>
-		private readonly Int32 Code;
+		public static Color Blue { get; } = new SimpleColor(4);
 
-		/// <summary>
-		/// Initializes a new <see cref="Color"/> value.
-		/// </summary>
-		/// <param name="code">The console color code.</param>
-		private Color(Int32 code) => Code = code;
+		public static Color Cyan { get; } = new SimpleColor(6);
 
-		public static Color Black { get; } = new Color(0);
+		public static Color Green { get; } = new SimpleColor(2);
 
-		public static Color Blue { get; } = new Color(9);
+		public static Color Magenta { get; } = new SimpleColor(5);
 
-		public static Color Cyan { get; } = new Color(11);
+		public static Color Red { get; } = new SimpleColor(1);
 
-		public static Color DarkBlue { get; } = new Color(1);
+		public static Color White { get; } = new SimpleColor(7);
 
-		public static Color DarkCyan { get; } = new Color(3);
-
-		public static Color DarkGray { get; } = new Color(8);
-
-		public static Color DarkGreen { get; } = new Color(2);
-
-		public static Color DarkMagenta { get; } = new Color(5);
-
-		public static Color DarkRed { get; } = new Color(4);
-
-		public static Color DarkYellow { get; } = new Color(6);
-
-		public static Color Gray { get; } = new Color(7);
-
-		public static Color Green { get; } = new Color(10);
-
-		public static Color Magenta { get; } = new Color(13);
-
-		public static Color Red { get; } = new Color(12);
-
-		public static Color White { get; } = new Color(15);
-
-		public static Color Yellow { get; } = new Color(14);
+		public static Color Yellow { get; } = new SimpleColor(3);
 
 		public static Boolean operator !=(Color left, Color right) => !left.Equals(right);
 
 		public static Boolean operator ==(Color left, Color right) => left.Equals(right);
+
+		/// <summary>
+		/// Creates a <see cref="Color"/> from the given components.
+		/// </summary>
+		/// <param name="red">Red value.</param>
+		/// <param name="green">Green value.</param>
+		/// <param name="blue">Blue value.</param>
+		/// <returns>A <see cref="Color"/> for use with the <see cref="Console"/>.</returns>
+		public static Color RGB(Byte red, Byte green, Byte blue) => new ComplexColor(red, green, blue);
 
 		/// <inheritdoc/>
 		public override Boolean Equals(Object obj) {
@@ -69,9 +45,6 @@ namespace Consolator {
 		}
 
 		/// <inheritdoc/>
-		public Boolean Equals(Color other) => Code.Equals(other.Code);
-
-		/// <inheritdoc/>
-		public override Int32 GetHashCode() => Code;
+		public abstract Boolean Equals(Color other);
 	}
 }

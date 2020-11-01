@@ -12,6 +12,42 @@ namespace Consolator {
 		/// </remarks>
 		internal static class Internal {
 			/// <summary>
+			/// Sets the background color to the <paramref name="value"/>.
+			/// </summary>
+			/// <param name="value">The <see cref="Color"/> to set.</param>
+			internal static void SetBackground([MaybeNull] Color value) {
+				switch (value) {
+				case SimpleColor color:
+					Write($"\x1B[{40 + color.Code}m");
+					break;
+				case ComplexColor color:
+					Write($"\x1B[48;2;{color.Red};{color.Green};{color.Blue}m");
+					break;
+				default:
+					Write("\x1B[49m");
+					break;
+				}
+			}
+
+			/// <summary>
+			/// Sets the foreground color to the <paramref name="value"/>.
+			/// </summary>
+			/// <param name="value">The <see cref="Color"/> to set.</param>
+			internal static void SetForeground([MaybeNull] Color value) {
+				switch (value) {
+				case SimpleColor color:
+					Write($"\x1B[{30 + color.Code}m");
+					break;
+				case ComplexColor color:
+					Write($"\x1B[38;2;{color.Red};{color.Green};{color.Blue}m");
+					break;
+				default:
+					Write("\x1B[39m");
+					break;
+				}
+			}
+
+			/// <summary>
 			/// Writes the text to the standard output stream.
 			/// </summary>
 			/// <param name="text">The text to write.</param>
