@@ -1,0 +1,1468 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class LinkedList&lt;TElement, TSelf, TNode&gt;
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class LinkedList&lt;TElement, TSelf, TNode&gt;
+   ">
+    <meta name="generator" content="docfx 2.56.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Collectathon.Lists.LinkedList`3">
+  
+  
+  <h1 id="Collectathon_Lists_LinkedList_3" data-uid="Collectathon.Lists.LinkedList`3" class="text-break">Class LinkedList&lt;TElement, TSelf, TNode&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>Represents any linked list.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><a class="xref" href="Collectathon.DataStructure-3.html">DataStructure</a>&lt;TElement, TSelf, <a class="xref" href="Collectathon.Lists.LinkedList-3.Enumerator.html">LinkedList.Enumerator</a>&lt;&gt;&gt;</div>
+    <div class="level2"><span class="xref">LinkedList&lt;TElement, TSelf, TNode&gt;</span></div>
+      <div class="level3"><a class="xref" href="Collectathon.Lists.DoublyLinkedList-1.html">DoublyLinkedList&lt;TElement&gt;</a></div>
+      <div class="level3"><a class="xref" href="Collectathon.Lists.SinglyLinkedList-1.html">SinglyLinkedList&lt;TElement&gt;</a></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Philosoft.ICloneable-1.html">ICloneable</a>&lt;TSelf&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.icloneable">ICloneable</a></div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Collectathon.DataStructure-3.html">DataStructure</a>&lt;TElement, TSelf, <a class="xref" href="Collectathon.Lists.LinkedList-3.Enumerator.html">LinkedList.Enumerator</a>&lt;&gt;&gt;&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;TElement[]&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TElement&gt;&gt;</div>
+    <div><a class="xref" href="Philosoft.IAddable-1.html">IAddable</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="Philosoft.IClearable.html">IClearable</a></div>
+    <div><a class="xref" href="Philosoft.IContainable-1.html">IContainable</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="Philosoft.IDequeueable-1.html">IDequeueable</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="Philosoft.IEnqueueable-1.html">IEnqueueable</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Collectathon.Lists.LinkedList-3.html">LinkedList</a>&lt;TElement, TSelf, TNode&gt;&gt;</div>
+    <div><a class="xref" href="Philosoft.IIndexable-1.html">IIndexable</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="Philosoft.IIndexable-2.html">IIndexable</a>&lt;<span class="xref">nint</span>, TElement&gt;</div>
+    <div><a class="xref" href="Philosoft.IReadOnlyIndexable-2.html">IReadOnlyIndexable</a>&lt;<span class="xref">nint</span>, TElement&gt;</div>
+    <div><a class="xref" href="Philosoft.IReadOnlyIndexable-1.html">IReadOnlyIndexable</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="Philosoft.IReadOnlyIndexable-2.html">IReadOnlyIndexable</a>&lt;<span class="xref">nint</span>, TElement&gt;</div>
+    <div><a class="xref" href="Philosoft.ICountable.html">ICountable</a></div>
+    <div><a class="xref" href="Philosoft.IInsertable-1.html">IInsertable</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="Philosoft.IInsertable-2.html">IInsertable</a>&lt;<span class="xref">nint</span>, TElement&gt;</div>
+    <div><a class="xref" href="Philosoft.IPeekable-1.html">IPeekable</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="Philosoft.IPoppable-1.html">IPoppable</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="Philosoft.IPushable-1.html">IPushable</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="Philosoft.IRemovable-1.html">IRemovable</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="Philosoft.IReplaceable-1.html">IReplaceable</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="Philosoft.IReplaceable-2.html">IReplaceable</a>&lt;TElement, TElement&gt;</div>
+    <div><a class="xref" href="Philosoft.IEnumerable-2.html">IEnumerable</a>&lt;TElement, <a class="xref" href="Collectathon.Lists.LinkedList-3.Enumerator.html">LinkedList.Enumerator</a>&lt;&gt;&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Collectathon.DataStructure-3.html#Collectathon_DataStructure_3_Filterer">DataStructure&lt;TElement, TSelf, LinkedList&lt;TElement, TSelf, TNode&gt;.Enumerator&gt;.Filterer</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.DataStructure-3.html#Collectathon_DataStructure_3_System_ICloneable_Clone">DataStructure&lt;TElement, TSelf, LinkedList&lt;TElement, TSelf, TNode&gt;.Enumerator&gt;.ICloneable.Clone()</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.DataStructure-3.html#Collectathon_DataStructure_3_Philosoft_ICloneable_TSelf__Clone">DataStructure&lt;TElement, TSelf, LinkedList&lt;TElement, TSelf, TNode&gt;.Enumerator&gt;.ICloneable&lt;TSelf&gt;.Clone()</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.DataStructure-3.html#Collectathon_DataStructure_3_Equals_System_Object_">DataStructure&lt;TElement, TSelf, LinkedList&lt;TElement, TSelf, TNode&gt;.Enumerator&gt;.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.DataStructure-3.html#Collectathon_DataStructure_3_Equals_Collectathon_DataStructure__0__1__2__">DataStructure&lt;TElement, TSelf, LinkedList&lt;TElement, TSelf, TNode&gt;.Enumerator&gt;.Equals(DataStructure&lt;TElement, TSelf, LinkedList.Enumerator&lt;&gt;&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.DataStructure-3.html#Collectathon_DataStructure_3_Equals__0___">DataStructure&lt;TElement, TSelf, LinkedList&lt;TElement, TSelf, TNode&gt;.Enumerator&gt;.Equals(TElement[])</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.DataStructure-3.html#Collectathon_DataStructure_3_Equals_System_Collections_Generic_IEnumerable__0__">DataStructure&lt;TElement, TSelf, LinkedList&lt;TElement, TSelf, TNode&gt;.Enumerator&gt;.Equals(IEnumerable&lt;TElement&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.DataStructure-3.html#Collectathon_DataStructure_3_Equals__1_Philosoft_IEnumerable__0___0__">DataStructure&lt;TElement, TSelf, LinkedList&lt;TElement, TSelf, TNode&gt;.Enumerator&gt;.Equals&lt;TOtherEnumerator&gt;(IEnumerable&lt;TElement, TOtherEnumerator&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.DataStructure-3.html#Collectathon_DataStructure_3_GetEnumerator">DataStructure&lt;TElement, TSelf, LinkedList&lt;TElement, TSelf, TNode&gt;.Enumerator&gt;.GetEnumerator()</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.DataStructure-3.html#Collectathon_DataStructure_3_GetHashCode">DataStructure&lt;TElement, TSelf, LinkedList&lt;TElement, TSelf, TNode&gt;.Enumerator&gt;.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.DataStructure-3.html#Collectathon_DataStructure_3_Clone">DataStructure&lt;TElement, TSelf, LinkedList&lt;TElement, TSelf, TNode&gt;.Enumerator&gt;.Clone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_">Object.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_System_Object_">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#System_Object_GetHashCode">Object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#System_Object_GetType">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#System_Object_MemberwiseClone">Object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#System_Object_ReferenceEquals_System_Object_System_Object_">Object.ReferenceEquals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString">Object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Collectathon.Lists.html">Collectathon.Lists</a></h6>
+  <h6><strong>Assembly</strong>: Collectathon.dll</h6>
+  <h5 id="Collectathon_Lists_LinkedList_3_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class LinkedList&lt;TElement, TSelf, TNode&gt; : DataStructure&lt;TElement, TSelf, LinkedList&lt;TElement, TSelf, TNode&gt;.Enumerator&gt;, ICloneable&lt;TSelf&gt;, ICloneable, IEquatable&lt;DataStructure&lt;TElement, TSelf, LinkedList&lt;TElement, TSelf, TNode&gt;.Enumerator&gt;&gt;, IEquatable&lt;TElement[]&gt;, IEquatable&lt;IEnumerable&lt;TElement&gt;&gt;, IAddable&lt;TElement&gt;, IClearable, IContainable&lt;TElement&gt;, IDequeueable&lt;TElement&gt;, IEnqueueable&lt;TElement&gt;, IEquatable&lt;LinkedList&lt;TElement, TSelf, TNode&gt;&gt;, IIndexable&lt;TElement&gt;, IIndexable&lt;nint, TElement&gt;, IReadOnlyIndexable&lt;nint, TElement&gt;, IReadOnlyIndexable&lt;TElement&gt;, IReadOnlyIndexable&lt;nint, TElement&gt;, ICountable, IInsertable&lt;TElement&gt;, IInsertable&lt;nint, TElement&gt;, IPeekable&lt;TElement&gt;, IPoppable&lt;TElement&gt;, IPushable&lt;TElement&gt;, IRemovable&lt;TElement&gt;, IReplaceable&lt;TElement&gt;, IReplaceable&lt;TElement, TElement&gt;, IEnumerable&lt;TElement, LinkedList&lt;TElement, TSelf, TNode&gt;.Enumerator&gt;, IEnumerable&lt;TElement&gt;, IEnumerable where TSelf : LinkedList&lt;TElement, TSelf, TNode&gt; where TNode : LinkedNode&lt;TElement, TNode&gt;</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of elements in the collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TSelf</span></td>
+        <td><p>THe implementing type; itself.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TNode</span></td>
+        <td><p>The type of the nodes that make up this list.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Collectathon_Lists_LinkedList_3_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>This is intended as a reusable base to make implementing custom lists easier. It can not be used on its own, as it's <span class="xref">abstract</span>. Rather, you derive this type, and also derive a <a class="xref" href="Collectathon.Lists.LinkedNode-2.html">LinkedNode&lt;TElement, TSelf&gt;</a>, and pass your derived node into <code data-dev-comment-type="typeparamref" class="typeparamref">TNode</code>. This will create most of your list for you, with all links being of <code data-dev-comment-type="typeparamref" class="typeparamref">TNode</code>, not some base type that you have to upcast.</p>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_LinkedList_3__ctor_Collectathon_Filter_.md&amp;value=---%0Auid%3A%20Collectathon.Lists.LinkedList%603.%23ctor(Collectathon.Filter)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Lists/LinkedList`1.cs/#L31">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_LinkedList_3__ctor_" data-uid="Collectathon.Lists.LinkedList`3.#ctor*"></a>
+  <h4 id="Collectathon_Lists_LinkedList_3__ctor_Collectathon_Filter_" data-uid="Collectathon.Lists.LinkedList`3.#ctor(Collectathon.Filter)">LinkedList(Filter)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Collectathon.Lists.LinkedList-3.html">LinkedList&lt;TElement, TSelf, TNode&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected LinkedList(Filter filter)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Collectathon.Filter.html">Filter</a></td>
+        <td><span class="parametername">filter</span></td>
+        <td><p>The type of filter to use.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_LinkedList_3__ctor_Collectathon_Filters_Filter__0__.md&amp;value=---%0Auid%3A%20Collectathon.Lists.LinkedList%603.%23ctor(Collectathon.Filters.Filter%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Lists/LinkedList`1.cs/#L37">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_LinkedList_3__ctor_" data-uid="Collectathon.Lists.LinkedList`3.#ctor*"></a>
+  <h4 id="Collectathon_Lists_LinkedList_3__ctor_Collectathon_Filters_Filter__0__" data-uid="Collectathon.Lists.LinkedList`3.#ctor(Collectathon.Filters.Filter{`0})">LinkedList(Filter&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Copy constructor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected LinkedList(Filter&lt;TElement&gt; filterer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Collectathon.Filters.Filter-1.html">Filter</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">filterer</span></td>
+        <td><p>The <a class="xref" href="Collectathon.Filters.Filter-1.html">Filter&lt;TElement&gt;</a> responsible for this data structure.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_LinkedList_3_Head.md&amp;value=---%0Auid%3A%20Collectathon.Lists.LinkedList%603.Head%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Lists/LinkedList`1.cs/#L20">View Source</a>
+  </span>
+  <h4 id="Collectathon_Lists_LinkedList_3_Head" data-uid="Collectathon.Lists.LinkedList`3.Head">Head</h4>
+  <div class="markdown level1 summary"><p>The node at the head of the list.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected TNode Head</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TNode</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_LinkedList_3_Tail.md&amp;value=---%0Auid%3A%20Collectathon.Lists.LinkedList%603.Tail%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Lists/LinkedList`1.cs/#L25">View Source</a>
+  </span>
+  <h4 id="Collectathon_Lists_LinkedList_3_Tail" data-uid="Collectathon.Lists.LinkedList`3.Tail">Tail</h4>
+  <div class="markdown level1 summary"><p>The node at the tail of the list.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected TNode Tail</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TNode</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_LinkedList_3_Count.md&amp;value=---%0Auid%3A%20Collectathon.Lists.LinkedList%603.Count%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Lists/LinkedList`1.cs/#L40">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_LinkedList_3_Count_" data-uid="Collectathon.Lists.LinkedList`3.Count*"></a>
+  <h4 id="Collectathon_Lists_LinkedList_3_Count" data-uid="Collectathon.Lists.LinkedList`3.Count">Count</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public nint Count { get; protected set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_LinkedList_3_Item_nint_.md&amp;value=---%0Auid%3A%20Collectathon.Lists.LinkedList%603.Item(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Lists/LinkedList`1.cs/#L43">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_LinkedList_3_Item_" data-uid="Collectathon.Lists.LinkedList`3.Item*"></a>
+  <h4 id="Collectathon_Lists_LinkedList_3_Item_nint_" data-uid="Collectathon.Lists.LinkedList`3.Item(nint)">Item[nint]</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TElement this[nint index] { get; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">index</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_LinkedList_3_Add__0_.md&amp;value=---%0Auid%3A%20Collectathon.Lists.LinkedList%603.Add(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Lists/LinkedList`1.cs/#L201">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_LinkedList_3_Add_" data-uid="Collectathon.Lists.LinkedList`3.Add*"></a>
+  <h4 id="Collectathon_Lists_LinkedList_3_Add__0_" data-uid="Collectathon.Lists.LinkedList`3.Add(`0)">Add(TElement)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract void Add(TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_LinkedList_3_Contains__0_.md&amp;value=---%0Auid%3A%20Collectathon.Lists.LinkedList%603.Contains(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Lists/LinkedList`1.cs/#L204">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_LinkedList_3_Contains_" data-uid="Collectathon.Lists.LinkedList`3.Contains*"></a>
+  <h4 id="Collectathon_Lists_LinkedList_3_Contains__0_" data-uid="Collectathon.Lists.LinkedList`3.Contains(`0)">Contains(TElement)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual bool Contains(TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_LinkedList_3_Equals__0___.md&amp;value=---%0Auid%3A%20Collectathon.Lists.LinkedList%603.Equals(%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Lists/LinkedList`1.cs/#L122">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_LinkedList_3_Equals_" data-uid="Collectathon.Lists.LinkedList`3.Equals*"></a>
+  <h4 id="Collectathon_Lists_LinkedList_3_Equals__0___" data-uid="Collectathon.Lists.LinkedList`3.Equals(`0[])">Equals(TElement[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override sealed bool Equals(TElement[] other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TElement[]</td>
+        <td><span class="parametername">other</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Collectathon.DataStructure&lt;TElement, TSelf, Collectathon.Lists.LinkedList&lt;TElement, TSelf, TNode&gt;.Enumerator&gt;.Equals(TElement[])</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_LinkedList_3_Equals_Collectathon_DataStructure__0__1_Collectathon_Lists_LinkedList__0__1__2__Enumerator__.md&amp;value=---%0Auid%3A%20Collectathon.Lists.LinkedList%603.Equals(Collectathon.DataStructure%7B%600%2C%601%2CCollectathon.Lists.LinkedList%7B%600%2C%601%2C%602%7D.Enumerator%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Lists/LinkedList`1.cs/#L84">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_LinkedList_3_Equals_" data-uid="Collectathon.Lists.LinkedList`3.Equals*"></a>
+  <h4 id="Collectathon_Lists_LinkedList_3_Equals_Collectathon_DataStructure__0__1_Collectathon_Lists_LinkedList__0__1__2__Enumerator__" data-uid="Collectathon.Lists.LinkedList`3.Equals(Collectathon.DataStructure{`0,`1,Collectathon.Lists.LinkedList{`0,`1,`2}.Enumerator})">Equals(DataStructure&lt;TElement, TSelf, LinkedList&lt;TElement, TSelf, TNode&gt;.Enumerator&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override sealed bool Equals(DataStructure&lt;TElement, TSelf, LinkedList&lt;TElement, TSelf, TNode&gt;.Enumerator&gt; other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Collectathon.DataStructure-3.html">DataStructure</a>&lt;TElement, TSelf, <a class="xref" href="Collectathon.Lists.LinkedList-3.Enumerator.html">LinkedList.Enumerator</a>&lt;&gt;&gt;</td>
+        <td><span class="parametername">other</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Collectathon.DataStructure&lt;TElement, TSelf, Collectathon.Lists.LinkedList&lt;TElement, TSelf, TNode&gt;.Enumerator&gt;.Equals(Collectathon.DataStructure&lt;TElement, TSelf, Collectathon.Lists.LinkedList.Enumerator&lt;&gt;&gt;)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_LinkedList_3_Equals_Collectathon_Lists_LinkedList__0__1__2__.md&amp;value=---%0Auid%3A%20Collectathon.Lists.LinkedList%603.Equals(Collectathon.Lists.LinkedList%7B%600%2C%601%2C%602%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Lists/LinkedList`1.cs/#L94">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_LinkedList_3_Equals_" data-uid="Collectathon.Lists.LinkedList`3.Equals*"></a>
+  <h4 id="Collectathon_Lists_LinkedList_3_Equals_Collectathon_Lists_LinkedList__0__1__2__" data-uid="Collectathon.Lists.LinkedList`3.Equals(Collectathon.Lists.LinkedList{`0,`1,`2})">Equals(LinkedList&lt;TElement, TSelf, TNode&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(LinkedList&lt;TElement, TSelf, TNode&gt; other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Collectathon.Lists.LinkedList-3.html">LinkedList</a>&lt;TElement, TSelf, TNode&gt;</td>
+        <td><span class="parametername">other</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_LinkedList_3_GetEnumerator.md&amp;value=---%0Auid%3A%20Collectathon.Lists.LinkedList%603.GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Lists/LinkedList`1.Enumerator.cs/#L7">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_LinkedList_3_GetEnumerator_" data-uid="Collectathon.Lists.LinkedList`3.GetEnumerator*"></a>
+  <h4 id="Collectathon_Lists_LinkedList_3_GetEnumerator" data-uid="Collectathon.Lists.LinkedList`3.GetEnumerator">GetEnumerator()</h4>
+  <div class="markdown level1 summary"><p>Returns an enumerator that iterates through the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override sealed LinkedList&lt;TElement, TSelf, TNode&gt;.Enumerator GetEnumerator()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Collectathon.Lists.LinkedList-3.Enumerator.html">LinkedList.Enumerator</a>&lt;&gt;</td>
+        <td><p>An enumerator that can be used to iterate through the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Collectathon.DataStructure&lt;TElement, TSelf, Collectathon.Lists.LinkedList&lt;TElement, TSelf, TNode&gt;.Enumerator&gt;.GetEnumerator()</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_LinkedList_3_Insert_nint__0_.md&amp;value=---%0Auid%3A%20Collectathon.Lists.LinkedList%603.Insert(nint%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Lists/LinkedList`1.cs/#L219">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_LinkedList_3_Insert_" data-uid="Collectathon.Lists.LinkedList`3.Insert*"></a>
+  <h4 id="Collectathon_Lists_LinkedList_3_Insert_nint__0_" data-uid="Collectathon.Lists.LinkedList`3.Insert(nint,`0)">Insert(nint, TElement)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract void Insert(nint index, TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">index</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_LinkedList_3_Peek.md&amp;value=---%0Auid%3A%20Collectathon.Lists.LinkedList%603.Peek%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Lists/LinkedList`1.cs/#L153">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_LinkedList_3_Peek_" data-uid="Collectathon.Lists.LinkedList`3.Peek*"></a>
+  <h4 id="Collectathon_Lists_LinkedList_3_Peek" data-uid="Collectathon.Lists.LinkedList`3.Peek">Peek()</h4>
+  <div class="markdown level1 summary"><p>Returns the element at the beginning of the collection without removing it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TElement Peek()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><p>The element from the beginning of the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_LinkedList_3_Pop.md&amp;value=---%0Auid%3A%20Collectathon.Lists.LinkedList%603.Pop%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Lists/LinkedList`1.cs/#L222">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_LinkedList_3_Pop_" data-uid="Collectathon.Lists.LinkedList`3.Pop*"></a>
+  <h4 id="Collectathon_Lists_LinkedList_3_Pop" data-uid="Collectathon.Lists.LinkedList`3.Pop">Pop()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract TElement Pop()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_LinkedList_3_Push__0_.md&amp;value=---%0Auid%3A%20Collectathon.Lists.LinkedList%603.Push(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Lists/LinkedList`1.cs/#L225">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_LinkedList_3_Push_" data-uid="Collectathon.Lists.LinkedList`3.Push*"></a>
+  <h4 id="Collectathon_Lists_LinkedList_3_Push__0_" data-uid="Collectathon.Lists.LinkedList`3.Push(`0)">Push(TElement)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract void Push(TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_LinkedList_3_Remove__0_.md&amp;value=---%0Auid%3A%20Collectathon.Lists.LinkedList%603.Remove(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Lists/LinkedList`1.cs/#L228">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_LinkedList_3_Remove_" data-uid="Collectathon.Lists.LinkedList`3.Remove*"></a>
+  <h4 id="Collectathon_Lists_LinkedList_3_Remove__0_" data-uid="Collectathon.Lists.LinkedList`3.Remove(`0)">Remove(TElement)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract void Remove(TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_LinkedList_3_Remove_System_Predicate__0__.md&amp;value=---%0Auid%3A%20Collectathon.Lists.LinkedList%603.Remove(System.Predicate%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Lists/LinkedList`1.cs/#L231">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_LinkedList_3_Remove_" data-uid="Collectathon.Lists.LinkedList`3.Remove*"></a>
+  <h4 id="Collectathon_Lists_LinkedList_3_Remove_System_Predicate__0__" data-uid="Collectathon.Lists.LinkedList`3.Remove(System.Predicate{`0})">Remove(Predicate&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract void Remove(Predicate&lt;TElement&gt; match)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.predicate-1">Predicate</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">match</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_LinkedList_3_Philosoft_IAddable_TElement__Add__0_.md&amp;value=---%0Auid%3A%20Collectathon.Lists.LinkedList%603.Philosoft%23IAddable%7BTElement%7D%23Add(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Lists/LinkedList`1.cs/#L198">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_LinkedList_3_Philosoft_IAddable_TElement__Add_" data-uid="Collectathon.Lists.LinkedList`3.Philosoft#IAddable{TElement}#Add*"></a>
+  <h4 id="Collectathon_Lists_LinkedList_3_Philosoft_IAddable_TElement__Add__0_" data-uid="Collectathon.Lists.LinkedList`3.Philosoft#IAddable{TElement}#Add(`0)">IAddable&lt;TElement&gt;.Add(TElement)</h4>
+  <div class="markdown level1 summary"><p>Adds an element into the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IAddable&lt;TElement&gt;.Add(TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element to add to the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Collectathon_Lists_LinkedList_3_Philosoft_IAddable_TElement__Add__0__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The behavior of this operation is collection dependent, and no particular location in the collection should be assumed.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_LinkedList_3_Philosoft_IClearable_Clear.md&amp;value=---%0Auid%3A%20Collectathon.Lists.LinkedList%603.Philosoft%23IClearable%23Clear%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Lists/LinkedList`1.cs/#L61">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_LinkedList_3_Philosoft_IClearable_Clear_" data-uid="Collectathon.Lists.LinkedList`3.Philosoft#IClearable#Clear*"></a>
+  <h4 id="Collectathon_Lists_LinkedList_3_Philosoft_IClearable_Clear" data-uid="Collectathon.Lists.LinkedList`3.Philosoft#IClearable#Clear">IClearable.Clear()</h4>
+  <div class="markdown level1 summary"><p>Clears all items from the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IClearable.Clear()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_LinkedList_3_Philosoft_IContainable_TElement__Contains__0_.md&amp;value=---%0Auid%3A%20Collectathon.Lists.LinkedList%603.Philosoft%23IContainable%7BTElement%7D%23Contains(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Lists/LinkedList`1.cs/#L75">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_LinkedList_3_Philosoft_IContainable_TElement__Contains_" data-uid="Collectathon.Lists.LinkedList`3.Philosoft#IContainable{TElement}#Contains*"></a>
+  <h4 id="Collectathon_Lists_LinkedList_3_Philosoft_IContainable_TElement__Contains__0_" data-uid="Collectathon.Lists.LinkedList`3.Philosoft#IContainable{TElement}#Contains(`0)">IContainable&lt;TElement&gt;.Contains(TElement)</h4>
+  <div class="markdown level1 summary"><p>Determines whether this collection contains a specific <code data-dev-comment-type="paramref" class="paramref">element</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IContainable&lt;TElement&gt;.Contains(TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The object to locate in the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">element</code> is found in the collection; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_LinkedList_3_Philosoft_IDequeueable_TElement__Dequeue.md&amp;value=---%0Auid%3A%20Collectathon.Lists.LinkedList%603.Philosoft%23IDequeueable%7BTElement%7D%23Dequeue%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Lists/LinkedList`1.cs/#L78">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_LinkedList_3_Philosoft_IDequeueable_TElement__Dequeue_" data-uid="Collectathon.Lists.LinkedList`3.Philosoft#IDequeueable{TElement}#Dequeue*"></a>
+  <h4 id="Collectathon_Lists_LinkedList_3_Philosoft_IDequeueable_TElement__Dequeue" data-uid="Collectathon.Lists.LinkedList`3.Philosoft#IDequeueable{TElement}#Dequeue">IDequeueable&lt;TElement&gt;.Dequeue()</h4>
+  <div class="markdown level1 summary"><p>Removes and returns the element from the beginning of the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TElement IDequeueable&lt;TElement&gt;.Dequeue()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><p>The element that is removed from the beginning of the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_LinkedList_3_Philosoft_IEnqueueable_TElement__Enqueue__0_.md&amp;value=---%0Auid%3A%20Collectathon.Lists.LinkedList%603.Philosoft%23IEnqueueable%7BTElement%7D%23Enqueue(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Lists/LinkedList`1.cs/#L81">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_LinkedList_3_Philosoft_IEnqueueable_TElement__Enqueue_" data-uid="Collectathon.Lists.LinkedList`3.Philosoft#IEnqueueable{TElement}#Enqueue*"></a>
+  <h4 id="Collectathon_Lists_LinkedList_3_Philosoft_IEnqueueable_TElement__Enqueue__0_" data-uid="Collectathon.Lists.LinkedList`3.Philosoft#IEnqueueable{TElement}#Enqueue(`0)">IEnqueueable&lt;TElement&gt;.Enqueue(TElement)</h4>
+  <div class="markdown level1 summary"><p>Adds an element to the end of the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IEnqueueable&lt;TElement&gt;.Enqueue(TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element to add to the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_LinkedList_3_Philosoft_IInsertable_nint_TElement__Insert_nint__0_.md&amp;value=---%0Auid%3A%20Collectathon.Lists.LinkedList%603.Philosoft%23IInsertable%7Bnint%2CTElement%7D%23Insert(nint%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Lists/LinkedList`1.cs/#L150">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_LinkedList_3_Philosoft_IInsertable_nint_TElement__Insert_" data-uid="Collectathon.Lists.LinkedList`3.Philosoft#IInsertable{nint,TElement}#Insert*"></a>
+  <h4 id="Collectathon_Lists_LinkedList_3_Philosoft_IInsertable_nint_TElement__Insert_nint__0_" data-uid="Collectathon.Lists.LinkedList`3.Philosoft#IInsertable{nint,TElement}#Insert(nint,`0)">IInsertable&lt;nint, TElement&gt;.Insert(nint, TElement)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IInsertable&lt;nint, TElement&gt;.Insert(nint index, TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">index</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_LinkedList_3_Philosoft_IPoppable_TElement__Pop.md&amp;value=---%0Auid%3A%20Collectathon.Lists.LinkedList%603.Philosoft%23IPoppable%7BTElement%7D%23Pop%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Lists/LinkedList`1.cs/#L161">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_LinkedList_3_Philosoft_IPoppable_TElement__Pop_" data-uid="Collectathon.Lists.LinkedList`3.Philosoft#IPoppable{TElement}#Pop*"></a>
+  <h4 id="Collectathon_Lists_LinkedList_3_Philosoft_IPoppable_TElement__Pop" data-uid="Collectathon.Lists.LinkedList`3.Philosoft#IPoppable{TElement}#Pop">IPoppable&lt;TElement&gt;.Pop()</h4>
+  <div class="markdown level1 summary"><p>Removes and returns the element at from top of the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TElement IPoppable&lt;TElement&gt;.Pop()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><p>The element removed from the top of the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_LinkedList_3_Philosoft_IPushable_TElement__Push__0_.md&amp;value=---%0Auid%3A%20Collectathon.Lists.LinkedList%603.Philosoft%23IPushable%7BTElement%7D%23Push(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Lists/LinkedList`1.cs/#L164">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_LinkedList_3_Philosoft_IPushable_TElement__Push_" data-uid="Collectathon.Lists.LinkedList`3.Philosoft#IPushable{TElement}#Push*"></a>
+  <h4 id="Collectathon_Lists_LinkedList_3_Philosoft_IPushable_TElement__Push__0_" data-uid="Collectathon.Lists.LinkedList`3.Philosoft#IPushable{TElement}#Push(`0)">IPushable&lt;TElement&gt;.Push(TElement)</h4>
+  <div class="markdown level1 summary"><p>Inserts an element at the top of the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IPushable&lt;TElement&gt;.Push(TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element to push onto the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_LinkedList_3_Philosoft_IReadOnlyIndexable_nint_TElement__Item_nint_.md&amp;value=---%0Auid%3A%20Collectathon.Lists.LinkedList%603.Philosoft%23IReadOnlyIndexable%7Bnint%2CTElement%7D%23Item(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Lists/LinkedList`1.cs/#L58">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_LinkedList_3_Philosoft_IReadOnlyIndexable_nint_TElement__Item_" data-uid="Collectathon.Lists.LinkedList`3.Philosoft#IReadOnlyIndexable{nint,TElement}#Item*"></a>
+  <h4 id="Collectathon_Lists_LinkedList_3_Philosoft_IReadOnlyIndexable_nint_TElement__Item_nint_" data-uid="Collectathon.Lists.LinkedList`3.Philosoft#IReadOnlyIndexable{nint,TElement}#Item(nint)">IReadOnlyIndexable&lt;nint, TElement&gt;.Item[nint]</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TElement IReadOnlyIndexable&lt;nint, TElement&gt;.this[nint index] { get; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">index</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_LinkedList_3_Philosoft_IRemovable_TElement__Remove__0_.md&amp;value=---%0Auid%3A%20Collectathon.Lists.LinkedList%603.Philosoft%23IRemovable%7BTElement%7D%23Remove(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Lists/LinkedList`1.cs/#L167">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_LinkedList_3_Philosoft_IRemovable_TElement__Remove_" data-uid="Collectathon.Lists.LinkedList`3.Philosoft#IRemovable{TElement}#Remove*"></a>
+  <h4 id="Collectathon_Lists_LinkedList_3_Philosoft_IRemovable_TElement__Remove__0_" data-uid="Collectathon.Lists.LinkedList`3.Philosoft#IRemovable{TElement}#Remove(`0)">IRemovable&lt;TElement&gt;.Remove(TElement)</h4>
+  <div class="markdown level1 summary"><p>Removes all instances of the <code data-dev-comment-type="paramref" class="paramref">element</code> from the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IRemovable&lt;TElement&gt;.Remove(TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element to remove from the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_LinkedList_3_Philosoft_IRemovable_TElement__Remove_System_Predicate__0__.md&amp;value=---%0Auid%3A%20Collectathon.Lists.LinkedList%603.Philosoft%23IRemovable%7BTElement%7D%23Remove(System.Predicate%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Lists/LinkedList`1.cs/#L170">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_LinkedList_3_Philosoft_IRemovable_TElement__Remove_" data-uid="Collectathon.Lists.LinkedList`3.Philosoft#IRemovable{TElement}#Remove*"></a>
+  <h4 id="Collectathon_Lists_LinkedList_3_Philosoft_IRemovable_TElement__Remove_System_Predicate__0__" data-uid="Collectathon.Lists.LinkedList`3.Philosoft#IRemovable{TElement}#Remove(System.Predicate{`0})">IRemovable&lt;TElement&gt;.Remove(Predicate&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Removes all instances that match the specified predicate from the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IRemovable&lt;TElement&gt;.Remove(Predicate&lt;TElement&gt; match)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.predicate-1">Predicate</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">match</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.predicate-1">Predicate&lt;T&gt;</a> delegate that defines the conditions of the element to remove.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_LinkedList_3_Philosoft_IReplaceable_TElement_TElement__Replace__0__0_.md&amp;value=---%0Auid%3A%20Collectathon.Lists.LinkedList%603.Philosoft%23IReplaceable%7BTElement%2CTElement%7D%23Replace(%600%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Lists/LinkedList`1.cs/#L173">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_LinkedList_3_Philosoft_IReplaceable_TElement_TElement__Replace_" data-uid="Collectathon.Lists.LinkedList`3.Philosoft#IReplaceable{TElement,TElement}#Replace*"></a>
+  <h4 id="Collectathon_Lists_LinkedList_3_Philosoft_IReplaceable_TElement_TElement__Replace__0__0_" data-uid="Collectathon.Lists.LinkedList`3.Philosoft#IReplaceable{TElement,TElement}#Replace(`0,`0)">IReplaceable&lt;TElement, TElement&gt;.Replace(TElement, TElement)</h4>
+  <div class="markdown level1 summary"><p>Returns a new collection in which all occurrences of the <code data-dev-comment-type="paramref" class="paramref">oldElement</code> are replaced with the <code data-dev-comment-type="paramref" class="paramref">newElement</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IReplaceable&lt;TElement, TElement&gt;.Replace(TElement oldElement, TElement newElement)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">oldElement</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">newElement</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_LinkedList_3_Philosoft_IReplaceable_TElement_TElement__Replace_System_Predicate__0___0_.md&amp;value=---%0Auid%3A%20Collectathon.Lists.LinkedList%603.Philosoft%23IReplaceable%7BTElement%2CTElement%7D%23Replace(System.Predicate%7B%600%7D%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Lists/LinkedList`1.cs/#L184">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_LinkedList_3_Philosoft_IReplaceable_TElement_TElement__Replace_" data-uid="Collectathon.Lists.LinkedList`3.Philosoft#IReplaceable{TElement,TElement}#Replace*"></a>
+  <h4 id="Collectathon_Lists_LinkedList_3_Philosoft_IReplaceable_TElement_TElement__Replace_System_Predicate__0___0_" data-uid="Collectathon.Lists.LinkedList`3.Philosoft#IReplaceable{TElement,TElement}#Replace(System.Predicate{`0},`0)">IReplaceable&lt;TElement, TElement&gt;.Replace(Predicate&lt;TElement&gt;, TElement)</h4>
+  <div class="markdown level1 summary"><p>Returns a new collection in which instances that match the specified predicate are replaced with the <code data-dev-comment-type="paramref" class="paramref">newElement</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IReplaceable&lt;TElement, TElement&gt;.Replace(Predicate&lt;TElement&gt; match, TElement newElement)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.predicate-1">Predicate</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">match</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">newElement</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Philosoft.ICloneable-1.html">ICloneable&lt;TSelf&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.icloneable">System.ICloneable</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">System.IEquatable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">System.IEquatable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">System.IEquatable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.IAddable-1.html">IAddable&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.IClearable.html">IClearable</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.IContainable-1.html">IContainable&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.IDequeueable-1.html">IDequeueable&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.IEnqueueable-1.html">IEnqueueable&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">System.IEquatable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.IIndexable-1.html">IIndexable&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.IIndexable-2.html">IIndexable&lt;TIndex, TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.IReadOnlyIndexable-2.html">IReadOnlyIndexable&lt;TIndex, TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.IReadOnlyIndexable-1.html">IReadOnlyIndexable&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.IReadOnlyIndexable-2.html">IReadOnlyIndexable&lt;TIndex, TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.ICountable.html">ICountable</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.IInsertable-1.html">IInsertable&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.IInsertable-2.html">IInsertable&lt;TIndex, TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.IPeekable-1.html">IPeekable&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.IPoppable-1.html">IPoppable&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.IPushable-1.html">IPushable&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.IRemovable-1.html">IRemovable&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.IReplaceable-1.html">IReplaceable&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.IReplaceable-2.html">IReplaceable&lt;TOld, TNew&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.IEnumerable-2.html">IEnumerable&lt;TElement, TEnumerator&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">System.Collections.Generic.IEnumerable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">System.Collections.IEnumerable</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_LinkedList_3.md&amp;value=---%0Auid%3A%20Collectathon.Lists.LinkedList%603%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Lists/LinkedList`1.Enumerator.cs/#L5" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

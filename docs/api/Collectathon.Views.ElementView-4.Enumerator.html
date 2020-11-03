@@ -78,7 +78,12 @@
   <div classs="implements">
     <h5>Implements</h5>
     <div><a class="xref" href="Philosoft.IEnumerator-1.html">IEnumerator</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1">IEnumerator</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
     <div><a class="xref" href="Philosoft.IEnumerable-2.html">IEnumerable</a>&lt;TElement, <a class="xref" href="Philosoft.IEnumerator-1.html">IEnumerator</a>&lt;TElement&gt;&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -105,7 +110,7 @@
   <h6><strong>Assembly</strong>: Collectathon.dll</h6>
   <h5 id="Collectathon_Views_ElementView_4_Enumerator_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public struct Enumerator : IEnumerator&lt;TElement&gt;, IEnumerable&lt;TElement, IEnumerator&lt;TElement&gt;&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public struct Enumerator : IEnumerator&lt;TElement&gt;, IEnumerator&lt;TElement&gt;, IEnumerator, IDisposable, IEnumerable&lt;TElement, IEnumerator&lt;TElement&gt;&gt;, IEnumerable&lt;TElement&gt;, IEnumerable</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -114,7 +119,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Views_ElementView_4_Enumerator__ctor__2_.md&amp;value=---%0Auid%3A%20Collectathon.Views.ElementView%604.Enumerator.%23ctor(%602)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Views/ElementView.cs/#L33">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Views/ElementView.cs/#L55">View Source</a>
   </span>
   <a id="Collectathon_Views_ElementView_4_Enumerator__ctor_" data-uid="Collectathon.Views.ElementView`4.Enumerator.#ctor*"></a>
   <h4 id="Collectathon_Views_ElementView_4_Enumerator__ctor__2_" data-uid="Collectathon.Views.ElementView`4.Enumerator.#ctor(`2)">Enumerator(TCollection)</h4>
@@ -148,7 +153,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Views_ElementView_4_Enumerator_Current.md&amp;value=---%0Auid%3A%20Collectathon.Views.ElementView%604.Enumerator.Current%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Views/ElementView.cs/#L36">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Views/ElementView.cs/#L58">View Source</a>
   </span>
   <a id="Collectathon_Views_ElementView_4_Enumerator_Current_" data-uid="Collectathon.Views.ElementView`4.Enumerator.Current*"></a>
   <h4 id="Collectathon_Views_ElementView_4_Enumerator_Current" data-uid="Collectathon.Views.ElementView`4.Enumerator.Current">Current</h4>
@@ -181,7 +186,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Views_ElementView_4_Enumerator_GetEnumerator.md&amp;value=---%0Auid%3A%20Collectathon.Views.ElementView%604.Enumerator.GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Views/ElementView.cs/#L39">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Views/ElementView.cs/#L61">View Source</a>
   </span>
   <a id="Collectathon_Views_ElementView_4_Enumerator_GetEnumerator_" data-uid="Collectathon.Views.ElementView`4.Enumerator.GetEnumerator*"></a>
   <h4 id="Collectathon_Views_ElementView_4_Enumerator_GetEnumerator" data-uid="Collectathon.Views.ElementView`4.Enumerator.GetEnumerator">GetEnumerator()</h4>
@@ -213,7 +218,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Views_ElementView_4_Enumerator_MoveNext.md&amp;value=---%0Auid%3A%20Collectathon.Views.ElementView%604.Enumerator.MoveNext%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Views/ElementView.cs/#L42">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Views/ElementView.cs/#L64">View Source</a>
   </span>
   <a id="Collectathon_Views_ElementView_4_Enumerator_MoveNext_" data-uid="Collectathon.Views.ElementView`4.Enumerator.MoveNext*"></a>
   <h4 id="Collectathon_Views_ElementView_4_Enumerator_MoveNext" data-uid="Collectathon.Views.ElementView`4.Enumerator.MoveNext">MoveNext()</h4>
@@ -245,7 +250,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Views_ElementView_4_Enumerator_Reset.md&amp;value=---%0Auid%3A%20Collectathon.Views.ElementView%604.Enumerator.Reset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Views/ElementView.cs/#L45">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Views/ElementView.cs/#L67">View Source</a>
   </span>
   <a id="Collectathon_Views_ElementView_4_Enumerator_Reset_" data-uid="Collectathon.Views.ElementView`4.Enumerator.Reset*"></a>
   <h4 id="Collectathon_Views_ElementView_4_Enumerator_Reset" data-uid="Collectathon.Views.ElementView`4.Enumerator.Reset">Reset()</h4>
@@ -261,7 +266,22 @@
       <a class="xref" href="Philosoft.IEnumerator-1.html">IEnumerator&lt;TElement&gt;</a>
   </div>
   <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1">System.Collections.Generic.IEnumerator&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerator">System.Collections.IEnumerator</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable">System.IDisposable</a>
+  </div>
+  <div>
       <a class="xref" href="Philosoft.IEnumerable-2.html">IEnumerable&lt;TElement, TEnumerator&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">System.Collections.Generic.IEnumerable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">System.Collections.IEnumerable</a>
   </div>
 </article>
           </div>
@@ -274,7 +294,7 @@
                     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Views_ElementView_4_Enumerator.md&amp;value=---%0Auid%3A%20Collectathon.Views.ElementView%604.Enumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Views/ElementView.cs/#L30" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Views/ElementView.cs/#L52" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

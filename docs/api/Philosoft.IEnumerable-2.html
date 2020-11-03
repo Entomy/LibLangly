@@ -80,8 +80,7 @@
   <h6><strong>Assembly</strong>: Philosoft.dll</h6>
   <h5 id="Philosoft_IEnumerable_2_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IEnumerable&lt;out TElement, TEnumerator&gt;
-    where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IEnumerable&lt;TElement, TEnumerator&gt; : IEnumerable&lt;TElement&gt;, IEnumerable where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -111,10 +110,70 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_IEnumerable_2_Fold_System_Func__0__0__0___0_.md&amp;value=---%0Auid%3A%20Philosoft.IEnumerable%602.Fold(System.Func%7B%600%2C%600%2C%600%7D%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IEnumerable.cs/#L35">View Source</a>
+  </span>
+  <a id="Philosoft_IEnumerable_2_Fold_" data-uid="Philosoft.IEnumerable`2.Fold*"></a>
+  <h4 id="Philosoft_IEnumerable_2_Fold_System_Func__0__0__0___0_" data-uid="Philosoft.IEnumerable`2.Fold(System.Func{`0,`0,`0},`0)">Fold(Func&lt;TElement, TElement, TElement&gt;, TElement)</h4>
+  <div class="markdown level1 summary"><p>Folds the collection into a single element as described by the <code data-dev-comment-type="paramref" class="paramref">func</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">virtual TElement Fold(Func&lt;TElement, TElement, TElement&gt; func, TElement identity)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.func-3">Func</a>&lt;TElement, TElement, TElement&gt;</td>
+        <td><span class="parametername">func</span></td>
+        <td><p>The function describing the folding operation. This is a magma.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">identity</span></td>
+        <td><p>The identity value for <code data-dev-comment-type="paramref" class="paramref">func</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><p>A single element after folding the entire collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Philosoft_IEnumerable_2_Fold_System_Func__0__0__0___0__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p><code data-dev-comment-type="paramref" class="paramref">func</code> is a magma, so associativity like left-fold and right-fold are completely irrelevant.</p>
+<p><code data-dev-comment-type="paramref" class="paramref">identity</code> is required as a start point for the fold. It needs to be the identity of the <code data-dev-comment-type="paramref" class="paramref">func</code> to function properly. For example, the identity of addition is <code>0</code>, and the identity of multiplication is <code>1</code>. Without an appropriate identity, the results will be wrong.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_IEnumerable_2_GetEnumerator.md&amp;value=---%0Auid%3A%20Philosoft.IEnumerable%602.GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IEnumerable.cs/#L15">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IEnumerable.cs/#L17">View Source</a>
   </span>
   <a id="Philosoft_IEnumerable_2_GetEnumerator_" data-uid="Philosoft.IEnumerable`2.GetEnumerator*"></a>
   <h4 id="Philosoft_IEnumerable_2_GetEnumerator" data-uid="Philosoft.IEnumerable`2.GetEnumerator">GetEnumerator()</h4>
@@ -141,6 +200,178 @@
       </tr>
     </tbody>
   </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_IEnumerable_2_Occurrences__0_.md&amp;value=---%0Auid%3A%20Philosoft.IEnumerable%602.Occurrences(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IEnumerable.cs/#L52">View Source</a>
+  </span>
+  <a id="Philosoft_IEnumerable_2_Occurrences_" data-uid="Philosoft.IEnumerable`2.Occurrences*"></a>
+  <h4 id="Philosoft_IEnumerable_2_Occurrences__0_" data-uid="Philosoft.IEnumerable`2.Occurrences(`0)">Occurrences(TElement)</h4>
+  <div class="markdown level1 summary"><p>Count all occurrences of <code data-dev-comment-type="paramref" class="paramref">element</code> in the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">virtual nint Occurrences(TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element to count.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><p>The amount of occurrences found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_IEnumerable_2_Occurrences_System_Predicate__0__.md&amp;value=---%0Auid%3A%20Philosoft.IEnumerable%602.Occurrences(System.Predicate%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IEnumerable.cs/#L67">View Source</a>
+  </span>
+  <a id="Philosoft_IEnumerable_2_Occurrences_" data-uid="Philosoft.IEnumerable`2.Occurrences*"></a>
+  <h4 id="Philosoft_IEnumerable_2_Occurrences_System_Predicate__0__" data-uid="Philosoft.IEnumerable`2.Occurrences(System.Predicate{`0})">Occurrences(Predicate&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Count all occurrences of elements that match the provided predicate in the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">virtual nint Occurrences(Predicate&lt;TElement&gt; match)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.predicate-1">Predicate</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">match</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.predicate-1">Predicate&lt;T&gt;</a> describing a match of the elements to count.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><p>The amount of occurrences found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_IEnumerable_2_System_Collections_Generic_IEnumerable_TElement__GetEnumerator.md&amp;value=---%0Auid%3A%20Philosoft.IEnumerable%602.System%23Collections%23Generic%23IEnumerable%7BTElement%7D%23GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IEnumerable.cs/#L20">View Source</a>
+  </span>
+  <a id="Philosoft_IEnumerable_2_System_Collections_Generic_IEnumerable_TElement__GetEnumerator_" data-uid="Philosoft.IEnumerable`2.System#Collections#Generic#IEnumerable{TElement}#GetEnumerator*"></a>
+  <h4 id="Philosoft_IEnumerable_2_System_Collections_Generic_IEnumerable_TElement__GetEnumerator" data-uid="Philosoft.IEnumerable`2.System#Collections#Generic#IEnumerable{TElement}#GetEnumerator">IEnumerable&lt;TElement&gt;.GetEnumerator()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerator&lt;TElement&gt; IEnumerable&lt;TElement&gt;.GetEnumerator()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1">IEnumerator</a>&lt;TElement&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_IEnumerable_2_System_Collections_IEnumerable_GetEnumerator.md&amp;value=---%0Auid%3A%20Philosoft.IEnumerable%602.System%23Collections%23IEnumerable%23GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IEnumerable.cs/#L23">View Source</a>
+  </span>
+  <a id="Philosoft_IEnumerable_2_System_Collections_IEnumerable_GetEnumerator_" data-uid="Philosoft.IEnumerable`2.System#Collections#IEnumerable#GetEnumerator*"></a>
+  <h4 id="Philosoft_IEnumerable_2_System_Collections_IEnumerable_GetEnumerator" data-uid="Philosoft.IEnumerable`2.System#Collections#IEnumerable#GetEnumerator">IEnumerable.GetEnumerator()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerator IEnumerable.GetEnumerator()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Philosoft.Extensions.html#Philosoft_Extensions_Fold__2_Philosoft_IEnumerable___0___1__System_Func___0___0___0____0_">Extensions.Fold&lt;TElement, TEnumerator&gt;(IEnumerable&lt;TElement, TEnumerator&gt;, Func&lt;TElement, TElement, TElement&gt;, TElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.Extensions.html#Philosoft_Extensions_Occurrences__2_Philosoft_IEnumerable___0___1____0_">Extensions.Occurrences&lt;TElement, TEnumerator&gt;(IEnumerable&lt;TElement, TEnumerator&gt;, TElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.Extensions.html#Philosoft_Extensions_Occurrences__2_Philosoft_IEnumerable___0___1__System_Predicate___0__">Extensions.Occurrences&lt;TElement, TEnumerator&gt;(IEnumerable&lt;TElement, TEnumerator&gt;, Predicate&lt;TElement&gt;)</a>
+  </div>
 </article>
           </div>
           
@@ -152,7 +383,7 @@
                     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_IEnumerable_2.md&amp;value=---%0Auid%3A%20Philosoft.IEnumerable%602%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IEnumerable.cs/#L10" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IEnumerable.cs/#L12" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

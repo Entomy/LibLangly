@@ -15,7 +15,7 @@
 			public static Color Color {
 				get => Current;
 				set {
-					Internal.SetForeground(value);
+					Internals.StateManager.SetForeground(value);
 					Current = value;
 				}
 			}

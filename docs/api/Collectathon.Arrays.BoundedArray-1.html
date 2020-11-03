@@ -1,0 +1,763 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class BoundedArray&lt;TElement&gt;
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class BoundedArray&lt;TElement&gt;
+   ">
+    <meta name="generator" content="docfx 2.56.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Collectathon.Arrays.BoundedArray`1">
+  
+  
+  <h1 id="Collectathon_Arrays_BoundedArray_1" data-uid="Collectathon.Arrays.BoundedArray`1" class="text-break">Class BoundedArray&lt;TElement&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>Represents a bounded array, a type of flexible array who's size can not grow above its capacity, but can freely resize below that capacity.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><a class="xref" href="Collectathon.DataStructure-3.html">DataStructure</a>&lt;TElement, <a class="xref" href="Collectathon.Arrays.BoundedArray-1.html">BoundedArray</a>&lt;TElement&gt;, <a class="xref" href="Collectathon.Arrays.Array-2.Enumerator.html">Array.Enumerator</a>&lt;&gt;&gt;</div>
+    <div class="level2"><a class="xref" href="Collectathon.Arrays.Array-2.html">Array</a>&lt;TElement, <a class="xref" href="Collectathon.Arrays.BoundedArray-1.html">BoundedArray</a>&lt;TElement&gt;&gt;</div>
+    <div class="level3"><a class="xref" href="Collectathon.Arrays.FlexibleArray-2.html">FlexibleArray</a>&lt;TElement, <a class="xref" href="Collectathon.Arrays.BoundedArray-1.html">BoundedArray</a>&lt;TElement&gt;&gt;</div>
+    <div class="level4"><span class="xref">BoundedArray&lt;TElement&gt;</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Philosoft.ICloneable-1.html">ICloneable</a>&lt;<a class="xref" href="Collectathon.Arrays.BoundedArray-1.html">BoundedArray</a>&lt;TElement&gt;&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.icloneable">ICloneable</a></div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Collectathon.DataStructure-3.html">DataStructure</a>&lt;TElement, <a class="xref" href="Collectathon.Arrays.BoundedArray-1.html">BoundedArray</a>&lt;TElement&gt;, <a class="xref" href="Collectathon.Arrays.Array-2.Enumerator.html">Array.Enumerator</a>&lt;&gt;&gt;&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;TElement[]&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TElement&gt;&gt;</div>
+    <div><a class="xref" href="Philosoft.IContainable-1.html">IContainable</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Collectathon.Arrays.Array-2.html">Array</a>&lt;TElement, <a class="xref" href="Collectathon.Arrays.BoundedArray-1.html">BoundedArray</a>&lt;TElement&gt;&gt;&gt;</div>
+    <div><a class="xref" href="Philosoft.IIndexable-1.html">IIndexable</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="Philosoft.IIndexable-2.html">IIndexable</a>&lt;<span class="xref">nint</span>, TElement&gt;</div>
+    <div><a class="xref" href="Philosoft.IReadOnlyIndexable-2.html">IReadOnlyIndexable</a>&lt;<span class="xref">nint</span>, TElement&gt;</div>
+    <div><a class="xref" href="Philosoft.IReadOnlyIndexable-1.html">IReadOnlyIndexable</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="Philosoft.IReadOnlyIndexable-2.html">IReadOnlyIndexable</a>&lt;<span class="xref">nint</span>, TElement&gt;</div>
+    <div><a class="xref" href="Philosoft.IPeekable-1.html">IPeekable</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="Philosoft.IReplaceable-1.html">IReplaceable</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="Philosoft.IReplaceable-2.html">IReplaceable</a>&lt;TElement, TElement&gt;</div>
+    <div><a class="xref" href="Philosoft.IShiftable.html">IShiftable</a></div>
+    <div><a class="xref" href="Philosoft.ISliceable-1.html">ISliceable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;TElement&gt;&gt;</div>
+    <div><a class="xref" href="Philosoft.IReadOnlySliceable-1.html">IReadOnlySliceable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;TElement&gt;&gt;</div>
+    <div><a class="xref" href="Philosoft.ICountable.html">ICountable</a></div>
+    <div><a class="xref" href="Philosoft.IReversibleEnumerable-3.html">IReversibleEnumerable</a>&lt;TElement, <a class="xref" href="Collectathon.Arrays.Array-2.html">Array</a>&lt;TElement, <a class="xref" href="Collectathon.Arrays.BoundedArray-1.html">BoundedArray</a>&lt;TElement&gt;&gt;, <a class="xref" href="Collectathon.Arrays.Array-2.Enumerator.html">Array.Enumerator</a>&lt;&gt;&gt;</div>
+    <div><a class="xref" href="Philosoft.IEnumerable-2.html">IEnumerable</a>&lt;TElement, <a class="xref" href="Collectathon.Arrays.Array-2.Enumerator.html">Array.Enumerator</a>&lt;&gt;&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
+    <div><a class="xref" href="Philosoft.IAddable-1.html">IAddable</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="Philosoft.IClearable.html">IClearable</a></div>
+    <div><a class="xref" href="Philosoft.IDequeueable-1.html">IDequeueable</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="Philosoft.IEnqueueable-1.html">IEnqueueable</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="Philosoft.IInsertable-1.html">IInsertable</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="Philosoft.IInsertable-2.html">IInsertable</a>&lt;<span class="xref">nint</span>, TElement&gt;</div>
+    <div><a class="xref" href="Philosoft.IPoppable-1.html">IPoppable</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="Philosoft.IPushable-1.html">IPushable</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="Philosoft.IRemovable-1.html">IRemovable</a>&lt;TElement&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Collectathon.Arrays.FlexibleArray-2.html#Collectathon_Arrays_FlexibleArray_2_Add__0_">FlexibleArray&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.Add(TElement)</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Arrays.FlexibleArray-2.html#Collectathon_Arrays_FlexibleArray_2_Philosoft_IAddable_TElement__Add__0_">FlexibleArray&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.IAddable&lt;TElement&gt;.Add(TElement)</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Arrays.FlexibleArray-2.html#Collectathon_Arrays_FlexibleArray_2_Clear">FlexibleArray&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.Clear()</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Arrays.FlexibleArray-2.html#Collectathon_Arrays_FlexibleArray_2_Philosoft_IClearable_Clear">FlexibleArray&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.IClearable.Clear()</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Arrays.FlexibleArray-2.html#Collectathon_Arrays_FlexibleArray_2_Philosoft_IDequeueable_TElement__Dequeue">FlexibleArray&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.IDequeueable&lt;TElement&gt;.Dequeue()</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Arrays.FlexibleArray-2.html#Collectathon_Arrays_FlexibleArray_2_Philosoft_IEnqueueable_TElement__Enqueue__0_">FlexibleArray&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.IEnqueueable&lt;TElement&gt;.Enqueue(TElement)</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Arrays.FlexibleArray-2.html#Collectathon_Arrays_FlexibleArray_2_Insert_nint__0_">FlexibleArray&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.Insert(nint, TElement)</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Arrays.FlexibleArray-2.html#Collectathon_Arrays_FlexibleArray_2_Philosoft_IInsertable_nint_TElement__Insert_nint__0_">FlexibleArray&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.IInsertable&lt;nint, TElement&gt;.Insert(nint, TElement)</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Arrays.FlexibleArray-2.html#Collectathon_Arrays_FlexibleArray_2_Philosoft_IPoppable_TElement__Pop">FlexibleArray&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.IPoppable&lt;TElement&gt;.Pop()</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Arrays.FlexibleArray-2.html#Collectathon_Arrays_FlexibleArray_2_Philosoft_IPushable_TElement__Push__0_">FlexibleArray&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.IPushable&lt;TElement&gt;.Push(TElement)</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Arrays.FlexibleArray-2.html#Collectathon_Arrays_FlexibleArray_2_Philosoft_IRemovable_TElement__Remove__0_">FlexibleArray&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.IRemovable&lt;TElement&gt;.Remove(TElement)</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Arrays.FlexibleArray-2.html#Collectathon_Arrays_FlexibleArray_2_Philosoft_IRemovable_TElement__Remove_System_Predicate__0__">FlexibleArray&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.IRemovable&lt;TElement&gt;.Remove(Predicate&lt;TElement&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Arrays.Array-2.html#Collectathon_Arrays_Array_2_Elements">Array&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.Elements</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Arrays.Array-2.html#Collectathon_Arrays_Array_2_Capacity">Array&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.Capacity</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Arrays.Array-2.html#Collectathon_Arrays_Array_2_Length">Array&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.Length</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Arrays.Array-2.html#Collectathon_Arrays_Array_2_Item_nint_">Array&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.Item[nint]</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Arrays.Array-2.html#Collectathon_Arrays_Array_2_Philosoft_IReadOnlyIndexable_nint_TElement__Item_nint_">Array&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.IReadOnlyIndexable&lt;nint, TElement&gt;.Item[nint]</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Arrays.Array-2.html#Collectathon_Arrays_Array_2_Item_System_Range_">Array&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.Item[Range]</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Arrays.Array-2.html#Collectathon_Arrays_Array_2_Philosoft_IReadOnlySliceable_System_ReadOnlyMemory_TElement___Item_System_Range_">Array&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.IReadOnlySliceable&lt;ReadOnlyMemory&lt;TElement&gt;&gt;.Item[Range]</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Arrays.Array-2.html#Collectathon_Arrays_Array_2_Philosoft_IContainable_TElement__Contains__0_">Array&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.IContainable&lt;TElement&gt;.Contains(TElement)</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Arrays.Array-2.html#Collectathon_Arrays_Array_2_Equals_Collectathon_DataStructure__0__1_Collectathon_Arrays_Array__0__1__Enumerator__">Array&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.Equals(DataStructure&lt;TElement, BoundedArray&lt;TElement&gt;, Array.Enumerator&lt;&gt;&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Arrays.Array-2.html#Collectathon_Arrays_Array_2_Equals_Collectathon_Arrays_Array__0__1__">Array&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.Equals(Array&lt;TElement, BoundedArray&lt;TElement&gt;&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Arrays.Array-2.html#Collectathon_Arrays_Array_2_Equals__0___">Array&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.Equals(TElement[])</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Arrays.Array-2.html#Collectathon_Arrays_Array_2_Peek">Array&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.Peek()</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Arrays.Array-2.html#Collectathon_Arrays_Array_2_Philosoft_IReplaceable_TElement_TElement__Replace__0__0_">Array&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.IReplaceable&lt;TElement, TElement&gt;.Replace(TElement, TElement)</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Arrays.Array-2.html#Collectathon_Arrays_Array_2_Philosoft_IReplaceable_TElement_TElement__Replace_System_Predicate__0___0_">Array&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.IReplaceable&lt;TElement, TElement&gt;.Replace(Predicate&lt;TElement&gt;, TElement)</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Arrays.Array-2.html#Collectathon_Arrays_Array_2_Philosoft_IShiftable_ShiftLeft">Array&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.IShiftable.ShiftLeft()</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Arrays.Array-2.html#Collectathon_Arrays_Array_2_Philosoft_IShiftable_ShiftRight">Array&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.IShiftable.ShiftRight()</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Arrays.Array-2.html#Collectathon_Arrays_Array_2_Slice">Array&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.Slice()</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Arrays.Array-2.html#Collectathon_Arrays_Array_2_Slice_nint_">Array&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.Slice(nint)</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Arrays.Array-2.html#Collectathon_Arrays_Array_2_Slice_nint_nint_">Array&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.Slice(nint, nint)</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Arrays.Array-2.html#Collectathon_Arrays_Array_2_Philosoft_IReadOnlySliceable_System_ReadOnlyMemory_TElement___Slice">Array&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.IReadOnlySliceable&lt;ReadOnlyMemory&lt;TElement&gt;&gt;.Slice()</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Arrays.Array-2.html#Collectathon_Arrays_Array_2_GetEnumerator">Array&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.GetEnumerator()</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Arrays.Array-2.html#Collectathon_Arrays_Array_2_Reverse">Array&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.Reverse</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.DataStructure-3.html#Collectathon_DataStructure_3_Filterer">DataStructure&lt;TElement, BoundedArray&lt;TElement&gt;, Array&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.Enumerator&gt;.Filterer</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.DataStructure-3.html#Collectathon_DataStructure_3_System_ICloneable_Clone">DataStructure&lt;TElement, BoundedArray&lt;TElement&gt;, Array&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.Enumerator&gt;.ICloneable.Clone()</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.DataStructure-3.html#Collectathon_DataStructure_3_Philosoft_ICloneable_TSelf__Clone">DataStructure&lt;TElement, BoundedArray&lt;TElement&gt;, Array&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.Enumerator&gt;.ICloneable&lt;BoundedArray&lt;TElement&gt;&gt;.Clone()</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.DataStructure-3.html#Collectathon_DataStructure_3_Equals_System_Object_">DataStructure&lt;TElement, BoundedArray&lt;TElement&gt;, Array&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.Enumerator&gt;.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.DataStructure-3.html#Collectathon_DataStructure_3_Equals_Collectathon_DataStructure__0__1__2__">DataStructure&lt;TElement, BoundedArray&lt;TElement&gt;, Array&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.Enumerator&gt;.Equals(DataStructure&lt;TElement, BoundedArray&lt;TElement&gt;, Array.Enumerator&lt;&gt;&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.DataStructure-3.html#Collectathon_DataStructure_3_Equals__0___">DataStructure&lt;TElement, BoundedArray&lt;TElement&gt;, Array&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.Enumerator&gt;.Equals(TElement[])</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.DataStructure-3.html#Collectathon_DataStructure_3_Equals_System_Collections_Generic_IEnumerable__0__">DataStructure&lt;TElement, BoundedArray&lt;TElement&gt;, Array&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.Enumerator&gt;.Equals(IEnumerable&lt;TElement&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.DataStructure-3.html#Collectathon_DataStructure_3_Equals__1_Philosoft_IEnumerable__0___0__">DataStructure&lt;TElement, BoundedArray&lt;TElement&gt;, Array&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.Enumerator&gt;.Equals&lt;TOtherEnumerator&gt;(IEnumerable&lt;TElement, TOtherEnumerator&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.DataStructure-3.html#Collectathon_DataStructure_3_GetEnumerator">DataStructure&lt;TElement, BoundedArray&lt;TElement&gt;, Array&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.Enumerator&gt;.GetEnumerator()</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.DataStructure-3.html#Collectathon_DataStructure_3_GetHashCode">DataStructure&lt;TElement, BoundedArray&lt;TElement&gt;, Array&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.Enumerator&gt;.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.DataStructure-3.html#Collectathon_DataStructure_3_Clone">DataStructure&lt;TElement, BoundedArray&lt;TElement&gt;, Array&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.Enumerator&gt;.Clone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_">Object.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_System_Object_">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#System_Object_GetHashCode">Object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#System_Object_GetType">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#System_Object_MemberwiseClone">Object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#System_Object_ReferenceEquals_System_Object_System_Object_">Object.ReferenceEquals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString">Object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Collectathon.Arrays.html">Collectathon.Arrays</a></h6>
+  <h6><strong>Assembly</strong>: Collectathon.dll</h6>
+  <h5 id="Collectathon_Arrays_BoundedArray_1_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Serializable]
+public sealed class BoundedArray&lt;TElement&gt; : FlexibleArray&lt;TElement, BoundedArray&lt;TElement&gt;&gt;, ICloneable&lt;BoundedArray&lt;TElement&gt;&gt;, ICloneable, IEquatable&lt;DataStructure&lt;TElement, BoundedArray&lt;TElement&gt;, Array&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.Enumerator&gt;&gt;, IEquatable&lt;TElement[]&gt;, IEquatable&lt;IEnumerable&lt;TElement&gt;&gt;, IContainable&lt;TElement&gt;, IEquatable&lt;Array&lt;TElement, BoundedArray&lt;TElement&gt;&gt;&gt;, IIndexable&lt;TElement&gt;, IIndexable&lt;nint, TElement&gt;, IReadOnlyIndexable&lt;nint, TElement&gt;, IReadOnlyIndexable&lt;TElement&gt;, IReadOnlyIndexable&lt;nint, TElement&gt;, IPeekable&lt;TElement&gt;, IReplaceable&lt;TElement&gt;, IReplaceable&lt;TElement, TElement&gt;, IShiftable, ISliceable&lt;Memory&lt;TElement&gt;&gt;, IReadOnlySliceable&lt;ReadOnlyMemory&lt;TElement&gt;&gt;, ICountable, IReversibleEnumerable&lt;TElement, Array&lt;TElement, BoundedArray&lt;TElement&gt;&gt;, Array&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.Enumerator&gt;, IEnumerable&lt;TElement, Array&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.Enumerator&gt;, IEnumerable&lt;TElement&gt;, IEnumerable, IAddable&lt;TElement&gt;, IClearable, IDequeueable&lt;TElement&gt;, IEnqueueable&lt;TElement&gt;, IInsertable&lt;TElement&gt;, IInsertable&lt;nint, TElement&gt;, IPoppable&lt;TElement&gt;, IPushable&lt;TElement&gt;, IRemovable&lt;TElement&gt;</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of elements in the array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1__ctor_nint_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.%23ctor(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Arrays/BoundedArray`1.cs/#L24">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_BoundedArray_1__ctor_" data-uid="Collectathon.Arrays.BoundedArray`1.#ctor*"></a>
+  <h4 id="Collectathon_Arrays_BoundedArray_1__ctor_nint_" data-uid="Collectathon.Arrays.BoundedArray`1.#ctor(nint)">BoundedArray(nint)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Collectathon.Arrays.BoundedArray-1.html">BoundedArray&lt;TElement&gt;</a> with the given <code data-dev-comment-type="paramref" class="paramref">capacity</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BoundedArray(nint capacity)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">capacity</span></td>
+        <td><p>The maximum capacity.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1__ctor_nint_Collectathon_Filter_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.%23ctor(nint%2CCollectathon.Filter)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Arrays/BoundedArray`1.cs/#L31">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_BoundedArray_1__ctor_" data-uid="Collectathon.Arrays.BoundedArray`1.#ctor*"></a>
+  <h4 id="Collectathon_Arrays_BoundedArray_1__ctor_nint_Collectathon_Filter_" data-uid="Collectathon.Arrays.BoundedArray`1.#ctor(nint,Collectathon.Filter)">BoundedArray(nint, Filter)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Collectathon.Arrays.BoundedArray-1.html">BoundedArray&lt;TElement&gt;</a> with the given <code data-dev-comment-type="paramref" class="paramref">capacity</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BoundedArray(nint capacity, Filter filter)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">capacity</span></td>
+        <td><p>The maximum capacity.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Collectathon.Filter.html">Filter</a></td>
+        <td><span class="parametername">filter</span></td>
+        <td><p>The type of filter to use.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Empty.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Empty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Arrays/BoundedArray`1.cs/#L18">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_BoundedArray_1_Empty_" data-uid="Collectathon.Arrays.BoundedArray`1.Empty*"></a>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_Empty" data-uid="Collectathon.Arrays.BoundedArray`1.Empty">Empty</h4>
+  <div class="markdown level1 summary"><p>An empty <a class="xref" href="Collectathon.Arrays.BoundedArray-1.html">BoundedArray&lt;TElement&gt;</a> singleton.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static BoundedArray&lt;TElement&gt; Empty { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Collectathon.Arrays.BoundedArray-1.html">BoundedArray</a>&lt;TElement&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Add__0_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Add(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Arrays/BoundedArray`1.cs/#L56">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_BoundedArray_1_Add_" data-uid="Collectathon.Arrays.BoundedArray`1.Add*"></a>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_Add__0_" data-uid="Collectathon.Arrays.BoundedArray`1.Add(`0)">Add(TElement)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Add(TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Collectathon.Arrays.FlexibleArray&lt;TElement, Collectathon.Arrays.BoundedArray&lt;TElement&gt;&gt;.Add(TElement)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Clone.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Clone%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Arrays/BoundedArray`1.cs/#L64">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_BoundedArray_1_Clone_" data-uid="Collectathon.Arrays.BoundedArray`1.Clone*"></a>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_Clone" data-uid="Collectathon.Arrays.BoundedArray`1.Clone">Clone()</h4>
+  <div class="markdown level1 summary"><p>Creates a new object that is a copy of the current instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override BoundedArray&lt;TElement&gt; Clone()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Collectathon.Arrays.BoundedArray-1.html">BoundedArray</a>&lt;TElement&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Collectathon.DataStructure&lt;TElement, Collectathon.Arrays.BoundedArray&lt;TElement&gt;, Collectathon.Arrays.Array&lt;TElement, Collectathon.Arrays.BoundedArray&lt;TElement&gt;&gt;.Enumerator&gt;.Clone()</span></div>
+  <h5 id="Collectathon_Arrays_BoundedArray_1_Clone_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This is the actual implementation of <a class="xref" href="Philosoft.ICloneable-1.html#Philosoft_ICloneable_1_Clone">Clone()</a></p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_Insert_nint__0_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.Insert(nint%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Arrays/BoundedArray`1.cs/#L67">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_BoundedArray_1_Insert_" data-uid="Collectathon.Arrays.BoundedArray`1.Insert*"></a>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_Insert_nint__0_" data-uid="Collectathon.Arrays.BoundedArray`1.Insert(nint,`0)">Insert(nint, TElement)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Insert(nint index, TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">index</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Collectathon.Arrays.FlexibleArray&lt;TElement, Collectathon.Arrays.BoundedArray&lt;TElement&gt;&gt;.Insert(nint, TElement)</span></div>
+  <h3 id="operators">Operators
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_op_Implicit__0____Collectathon_Arrays_BoundedArray__0_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.op_Implicit(%600%5B%5D)~Collectathon.Arrays.BoundedArray%7B%600%7D%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Arrays/BoundedArray`1.cs/#L45">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_BoundedArray_1_op_Implicit_" data-uid="Collectathon.Arrays.BoundedArray`1.op_Implicit*"></a>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_op_Implicit__0____Collectathon_Arrays_BoundedArray__0_" data-uid="Collectathon.Arrays.BoundedArray`1.op_Implicit(`0[])~Collectathon.Arrays.BoundedArray{`0}">Implicit(TElement[] to BoundedArray&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Converts the <code data-dev-comment-type="paramref" class="paramref">array</code> to a <a class="xref" href="Collectathon.Arrays.BoundedArray-1.html">BoundedArray&lt;TElement&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator BoundedArray&lt;TElement&gt;(TElement[] array)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TElement[]</td>
+        <td><span class="parametername">array</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.array">Array</a> to convert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Collectathon.Arrays.BoundedArray-1.html">BoundedArray</a>&lt;TElement&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1_op_Implicit_System_Memory__0___Collectathon_Arrays_BoundedArray__0_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601.op_Implicit(System.Memory%7B%600%7D)~Collectathon.Arrays.BoundedArray%7B%600%7D%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Arrays/BoundedArray`1.cs/#L52">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_BoundedArray_1_op_Implicit_" data-uid="Collectathon.Arrays.BoundedArray`1.op_Implicit*"></a>
+  <h4 id="Collectathon_Arrays_BoundedArray_1_op_Implicit_System_Memory__0___Collectathon_Arrays_BoundedArray__0_" data-uid="Collectathon.Arrays.BoundedArray`1.op_Implicit(System.Memory{`0})~Collectathon.Arrays.BoundedArray{`0}">Implicit(Memory&lt;TElement&gt; to BoundedArray&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Converts the <code data-dev-comment-type="paramref" class="paramref">memory</code> to a <a class="xref" href="Collectathon.Arrays.BoundedArray-1.html">BoundedArray&lt;TElement&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator BoundedArray&lt;TElement&gt;(Memory&lt;TElement&gt; memory)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">memory</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory&lt;T&gt;</a> to convert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Collectathon.Arrays.BoundedArray-1.html">BoundedArray</a>&lt;TElement&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Philosoft.ICloneable-1.html">ICloneable&lt;TSelf&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.icloneable">System.ICloneable</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">System.IEquatable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">System.IEquatable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">System.IEquatable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.IContainable-1.html">IContainable&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">System.IEquatable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.IIndexable-1.html">IIndexable&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.IIndexable-2.html">IIndexable&lt;TIndex, TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.IReadOnlyIndexable-2.html">IReadOnlyIndexable&lt;TIndex, TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.IReadOnlyIndexable-1.html">IReadOnlyIndexable&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.IReadOnlyIndexable-2.html">IReadOnlyIndexable&lt;TIndex, TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.IPeekable-1.html">IPeekable&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.IReplaceable-1.html">IReplaceable&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.IReplaceable-2.html">IReplaceable&lt;TOld, TNew&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.IShiftable.html">IShiftable</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.ISliceable-1.html">ISliceable&lt;TSlice&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.IReadOnlySliceable-1.html">IReadOnlySliceable&lt;TSlice&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.ICountable.html">ICountable</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.IReversibleEnumerable-3.html">IReversibleEnumerable&lt;TMember, TSelf, TEnumerator&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.IEnumerable-2.html">IEnumerable&lt;TElement, TEnumerator&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">System.Collections.Generic.IEnumerable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">System.Collections.IEnumerable</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.IAddable-1.html">IAddable&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.IClearable.html">IClearable</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.IDequeueable-1.html">IDequeueable&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.IEnqueueable-1.html">IEnqueueable&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.IInsertable-1.html">IInsertable&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.IInsertable-2.html">IInsertable&lt;TIndex, TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.IPoppable-1.html">IPoppable&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.IPushable-1.html">IPushable&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.IRemovable-1.html">IRemovable&lt;TElement&gt;</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_1.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Arrays/BoundedArray`1.cs/#L13" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,5 +1,4 @@
 ﻿using Defender.Patterns;
-using System;
 
 namespace Consolator {
 	/// <summary>
@@ -26,6 +25,6 @@ namespace Consolator {
 		}
 
 		/// <inheritdoc/>
-		protected override void DisposeUnmanaged() => Console.Internal.Write("\x1B[?1049l");
+		protected override void DisposeUnmanaged() => Console.Internals.Writer.Write("\x1B[?1049l");
 	}
 }

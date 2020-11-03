@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Interface IReverseEnumerator&lt;TElement&gt;
+    <title>Interface IAssociator&lt;TIndex, TElement, TSelf, TEnumerator&gt;
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Interface IReverseEnumerator&lt;TElement&gt;
+    <meta name="title" content="Interface IAssociator&lt;TIndex, TElement, TSelf, TEnumerator&gt;
    ">
     <meta name="generator" content="docfx 2.56.4.0">
     
@@ -68,25 +68,20 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Philosoft.IReverseEnumerator`1">
+            <article class="content wrap" id="_content" data-uid="Philosoft.IAssociator`4">
   
   
-  <h1 id="Philosoft_IReverseEnumerator_1" data-uid="Philosoft.IReverseEnumerator`1" class="text-break">Interface IReverseEnumerator&lt;TElement&gt;
+  <h1 id="Philosoft_IAssociator_4" data-uid="Philosoft.IAssociator`4" class="text-break">Interface IAssociator&lt;TIndex, TElement, TSelf, TEnumerator&gt;
   </h1>
-  <div class="markdown level0 summary"><p>Incidates the collection can be enumerated over in reverse.</p>
+  <div class="markdown level0 summary"><p>Indicates the type associates values of two other types.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
-    <div>
-      <a class="xref" href="Philosoft.IReverseEnumerable-2.html#Philosoft_IReverseEnumerable_2_GetReverseEnumerator">IReverseEnumerable&lt;TElement, IReverseEnumerator&lt;TElement&gt;&gt;.GetReverseEnumerator()</a>
-    </div>
-  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Philosoft.html">Philosoft</a></h6>
-  <h6><strong>Assembly</strong>: Philosoft.dll</h6>
-  <h5 id="Philosoft_IReverseEnumerator_1_syntax">Syntax</h5>
+  <h6><strong>Assembly</strong>: Collectathon.dll</h6>
+  <h5 id="Philosoft_IAssociator_4_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IReverseEnumerator&lt;TElement&gt; : IReverseEnumerable&lt;TElement, IReverseEnumerator&lt;TElement&gt;&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IAssociator&lt;TIndex, TElement, TSelf, TEnumerator&gt;
+    where TIndex : IEquatable&lt;TIndex&gt; where TSelf : IAssociator&lt;TIndex, TElement, TSelf, TEnumerator&gt;, IEnumerable&lt;Association&lt;TIndex, TElement&gt;, TEnumerator&gt; where TEnumerator : IEnumerator&lt;Association&lt;TIndex, TElement&gt;&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -98,8 +93,23 @@
     </thead>
     <tbody>
       <tr>
+        <td><span class="parametername">TIndex</span></td>
+        <td><p>The type of the index.</p>
+</td>
+      </tr>
+      <tr>
         <td><span class="parametername">TElement</span></td>
-        <td><p>The type of the elements to enumerate.</p>
+        <td><p>The type of the element.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TSelf</span></td>
+        <td><p>The implementing type; itself.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TEnumerator</span></td>
+        <td><p>The type of the enumerator of this collection.</p>
 </td>
       </tr>
     </tbody>
@@ -108,19 +118,19 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_IReverseEnumerator_1_Current.md&amp;value=---%0Auid%3A%20Philosoft.IReverseEnumerator%601.Current%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_IAssociator_4_Elements.md&amp;value=---%0Auid%3A%20Philosoft.IAssociator%604.Elements%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IReverseEnumerator.cs/#L12">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Traits/IAssociator.cs/#L22">View Source</a>
   </span>
-  <a id="Philosoft_IReverseEnumerator_1_Current_" data-uid="Philosoft.IReverseEnumerator`1.Current*"></a>
-  <h4 id="Philosoft_IReverseEnumerator_1_Current" data-uid="Philosoft.IReverseEnumerator`1.Current">Current</h4>
-  <div class="markdown level1 summary"><p>Gets the element at the current position.</p>
+  <a id="Philosoft_IAssociator_4_Elements_" data-uid="Philosoft.IAssociator`4.Elements*"></a>
+  <h4 id="Philosoft_IAssociator_4_Elements" data-uid="Philosoft.IAssociator`4.Elements">Elements</h4>
+  <div class="markdown level1 summary"><p>Gets a view of the elements of this collection.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">TElement Current { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">ElementView&lt;TIndex, TElement, TSelf, TEnumerator&gt; Elements { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -132,30 +142,28 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">TElement</span></td>
+        <td><a class="xref" href="Collectathon.Views.ElementView-4.html">ElementView</a>&lt;TIndex, TElement, TSelf, TEnumerator&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h3 id="methods">Methods
-  </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_IReverseEnumerator_1_MoveNext.md&amp;value=---%0Auid%3A%20Philosoft.IReverseEnumerator%601.MoveNext%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_IAssociator_4_Indicies.md&amp;value=---%0Auid%3A%20Philosoft.IAssociator%604.Indicies%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IReverseEnumerator.cs/#L18">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Traits/IAssociator.cs/#L17">View Source</a>
   </span>
-  <a id="Philosoft_IReverseEnumerator_1_MoveNext_" data-uid="Philosoft.IReverseEnumerator`1.MoveNext*"></a>
-  <h4 id="Philosoft_IReverseEnumerator_1_MoveNext" data-uid="Philosoft.IReverseEnumerator`1.MoveNext">MoveNext()</h4>
-  <div class="markdown level1 summary"><p>Advances the enumerator to the previous item of the collection.</p>
+  <a id="Philosoft_IAssociator_4_Indicies_" data-uid="Philosoft.IAssociator`4.Indicies*"></a>
+  <h4 id="Philosoft_IAssociator_4_Indicies" data-uid="Philosoft.IAssociator`4.Indicies">Indicies</h4>
+  <div class="markdown level1 summary"><p>Gets a view of the indicies of this collection.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool MoveNext()</code></pre>
+    <pre><code class="lang-csharp hljs">IndexView&lt;TIndex, TElement, TSelf, TEnumerator&gt; Indicies { get; }</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
+  <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -165,28 +173,11 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p><span class="xref">true</span> if the enumerator successfully advanced to the next item; <span class="xref">false</span> if the begining of the collection has been passed.</p>
-</td>
+        <td><a class="xref" href="Collectathon.Views.IndexView-4.html">IndexView</a>&lt;TIndex, TElement, TSelf, TEnumerator&gt;</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_IReverseEnumerator_1_Reset.md&amp;value=---%0Auid%3A%20Philosoft.IReverseEnumerator%601.Reset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IReverseEnumerator.cs/#L23">View Source</a>
-  </span>
-  <a id="Philosoft_IReverseEnumerator_1_Reset_" data-uid="Philosoft.IReverseEnumerator`1.Reset*"></a>
-  <h4 id="Philosoft_IReverseEnumerator_1_Reset" data-uid="Philosoft.IReverseEnumerator`1.Reset">Reset()</h4>
-  <div class="markdown level1 summary"><p>Resets the enumerator to its initial position.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void Reset()</code></pre>
-  </div>
 </article>
           </div>
           
@@ -195,10 +186,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_IReverseEnumerator_1.md&amp;value=---%0Auid%3A%20Philosoft.IReverseEnumerator%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_IAssociator_4.md&amp;value=---%0Auid%3A%20Philosoft.IAssociator%604%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IReverseEnumerator.cs/#L8" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Traits/IAssociator.cs/#L13" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

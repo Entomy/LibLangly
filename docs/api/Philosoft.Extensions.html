@@ -118,7 +118,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Add__1_Philosoft_IAddable___0____0_.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Add%60%601(Philosoft.IAddable%7B%60%600%7D%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/Extensions.cs/#L19">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IAddable`1.cs/#L103">View Source</a>
   </span>
   <a id="Philosoft_Extensions_Add_" data-uid="Philosoft.Extensions.Add*"></a>
   <h4 id="Philosoft_Extensions_Add__1_Philosoft_IAddable___0____0_" data-uid="Philosoft.Extensions.Add``1(Philosoft.IAddable{``0},``0)">Add&lt;TElement&gt;(IAddable&lt;TElement&gt;, TElement)</h4>
@@ -177,7 +177,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Add__1_Philosoft_IAddable___0____0___.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Add%60%601(Philosoft.IAddable%7B%60%600%7D%2C%60%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/Extensions.cs/#L35">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IAddable`1.cs/#L119">View Source</a>
   </span>
   <a id="Philosoft_Extensions_Add_" data-uid="Philosoft.Extensions.Add*"></a>
   <h4 id="Philosoft_Extensions_Add__1_Philosoft_IAddable___0____0___" data-uid="Philosoft.Extensions.Add``1(Philosoft.IAddable{``0},``0[])">Add&lt;TElement&gt;(IAddable&lt;TElement&gt;, TElement[])</h4>
@@ -233,10 +233,380 @@
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Add__1_Philosoft_IAddable___0__System_Memory___0__.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Add%60%601(Philosoft.IAddable%7B%60%600%7D%2CSystem.Memory%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IAddable`1.cs/#L135">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_Add_" data-uid="Philosoft.Extensions.Add*"></a>
+  <h4 id="Philosoft_Extensions_Add__1_Philosoft_IAddable___0__System_Memory___0__" data-uid="Philosoft.Extensions.Add``1(Philosoft.IAddable{``0},System.Memory{``0})">Add&lt;TElement&gt;(IAddable&lt;TElement&gt;, Memory&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Adds the elements into the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Add&lt;TElement&gt;(this IAddable&lt;TElement&gt; collection, Memory&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Philosoft.IAddable-1.html">IAddable</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to add to the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of elements in the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Philosoft_Extensions_Add__1_Philosoft_IAddable___0__System_Memory___0___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The behavior of this operation is collection dependent, and no particular location in the collection should be assumed.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Add__1_Philosoft_IAddable___0__System_ReadOnlyMemory___0__.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Add%60%601(Philosoft.IAddable%7B%60%600%7D%2CSystem.ReadOnlyMemory%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IAddable`1.cs/#L151">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_Add_" data-uid="Philosoft.Extensions.Add*"></a>
+  <h4 id="Philosoft_Extensions_Add__1_Philosoft_IAddable___0__System_ReadOnlyMemory___0__" data-uid="Philosoft.Extensions.Add``1(Philosoft.IAddable{``0},System.ReadOnlyMemory{``0})">Add&lt;TElement&gt;(IAddable&lt;TElement&gt;, ReadOnlyMemory&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Adds the elements into the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Add&lt;TElement&gt;(this IAddable&lt;TElement&gt; collection, ReadOnlyMemory&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Philosoft.IAddable-1.html">IAddable</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to add to the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of elements in the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Philosoft_Extensions_Add__1_Philosoft_IAddable___0__System_ReadOnlyMemory___0___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The behavior of this operation is collection dependent, and no particular location in the collection should be assumed.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Add__1_Philosoft_IAddable___0__System_ReadOnlySpan___0__.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Add%60%601(Philosoft.IAddable%7B%60%600%7D%2CSystem.ReadOnlySpan%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IAddable`1.cs/#L183">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_Add_" data-uid="Philosoft.Extensions.Add*"></a>
+  <h4 id="Philosoft_Extensions_Add__1_Philosoft_IAddable___0__System_ReadOnlySpan___0__" data-uid="Philosoft.Extensions.Add``1(Philosoft.IAddable{``0},System.ReadOnlySpan{``0})">Add&lt;TElement&gt;(IAddable&lt;TElement&gt;, ReadOnlySpan&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Adds the elements into the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Add&lt;TElement&gt;(this IAddable&lt;TElement&gt; collection, ReadOnlySpan&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Philosoft.IAddable-1.html">IAddable</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to add to the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of elements in the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Philosoft_Extensions_Add__1_Philosoft_IAddable___0__System_ReadOnlySpan___0___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The behavior of this operation is collection dependent, and no particular location in the collection should be assumed.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Add__1_Philosoft_IAddable___0__System_Span___0__.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Add%60%601(Philosoft.IAddable%7B%60%600%7D%2CSystem.Span%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IAddable`1.cs/#L167">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_Add_" data-uid="Philosoft.Extensions.Add*"></a>
+  <h4 id="Philosoft_Extensions_Add__1_Philosoft_IAddable___0__System_Span___0__" data-uid="Philosoft.Extensions.Add``1(Philosoft.IAddable{``0},System.Span{``0})">Add&lt;TElement&gt;(IAddable&lt;TElement&gt;, Span&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Adds the elements into the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Add&lt;TElement&gt;(this IAddable&lt;TElement&gt; collection, Span&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Philosoft.IAddable-1.html">IAddable</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to add to the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of elements in the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Philosoft_Extensions_Add__1_Philosoft_IAddable___0__System_Span___0___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The behavior of this operation is collection dependent, and no particular location in the collection should be assumed.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Add__2_Philosoft_IAddable___0___1____0___1_.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Add%60%602(Philosoft.IAddable%7B%60%600%2C%60%601%7D%2C%60%600%2C%60%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IAddable`2.cs/#L65">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_Add_" data-uid="Philosoft.Extensions.Add*"></a>
+  <h4 id="Philosoft_Extensions_Add__2_Philosoft_IAddable___0___1____0___1_" data-uid="Philosoft.Extensions.Add``2(Philosoft.IAddable{``0,``1},``0,``1)">Add&lt;TIndex, TElement&gt;(IAddable&lt;TIndex, TElement&gt;, TIndex, TElement)</h4>
+  <div class="markdown level1 summary"><p>Adds an element into the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Add&lt;TIndex, TElement&gt;(this IAddable&lt;TIndex, TElement&gt; collection, TIndex index, TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Philosoft.IAddable-2.html">IAddable</a>&lt;TIndex, TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TIndex</span></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>The index of the <code data-dev-comment-type="paramref" class="paramref">element</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element to add to the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TIndex</span></td>
+        <td><p>The type of the <code data-dev-comment-type="paramref" class="paramref">index</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of the <code data-dev-comment-type="paramref" class="paramref">element</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Philosoft_Extensions_Add__2_Philosoft_IAddable___0___1____0___1__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The behavior of this operation is collection dependant, and no particular location in the collection should be assumed.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Add__2_Philosoft_IAddable___0___1__System_ValueTuple___0___1____.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Add%60%602(Philosoft.IAddable%7B%60%600%2C%60%601%7D%2CSystem.ValueTuple%7B%60%600%2C%60%601%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IAddable`2.cs/#L82">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_Add_" data-uid="Philosoft.Extensions.Add*"></a>
+  <h4 id="Philosoft_Extensions_Add__2_Philosoft_IAddable___0___1__System_ValueTuple___0___1____" data-uid="Philosoft.Extensions.Add``2(Philosoft.IAddable{``0,``1},System.ValueTuple{``0,``1}[])">Add&lt;TIndex, TElement&gt;(IAddable&lt;TIndex, TElement&gt;, (TIndex, TElement)[])</h4>
+  <div class="markdown level1 summary"><p>Adds the elements into the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Add&lt;TIndex, TElement&gt;(this IAddable&lt;TIndex, TElement&gt; collection, params (TIndex, TElement)[] members)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Philosoft.IAddable-2.html">IAddable</a>&lt;TIndex, TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">ValueTuple</a>&lt;TIndex, TElement&gt;[]</td>
+        <td><span class="parametername">members</span></td>
+        <td><p>The index-element pairs to add to the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TIndex</span></td>
+        <td><p>The type of the index.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of the element.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Philosoft_Extensions_Add__2_Philosoft_IAddable___0___1__System_ValueTuple___0___1_____remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The behavior of this operation is collection dependant, and no particular location in the collection should be assumed.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Add__2_Philosoft_IAddable___0__Philosoft_IEnumerable___0___1__.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Add%60%602(Philosoft.IAddable%7B%60%600%7D%2CPhilosoft.IEnumerable%7B%60%600%2C%60%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/Extensions.cs/#L52">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IAddable`1.cs/#L200">View Source</a>
   </span>
   <a id="Philosoft_Extensions_Add_" data-uid="Philosoft.Extensions.Add*"></a>
   <h4 id="Philosoft_Extensions_Add__2_Philosoft_IAddable___0__Philosoft_IEnumerable___0___1__" data-uid="Philosoft.Extensions.Add``2(Philosoft.IAddable{``0},Philosoft.IEnumerable{``0,``1})">Add&lt;TElement, TEnumerator&gt;(IAddable&lt;TElement&gt;, IEnumerable&lt;TElement, TEnumerator&gt;)</h4>
@@ -298,10 +668,80 @@
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Add__3_Philosoft_IAddable___0___1__Philosoft_IEnumerable_System_ValueTuple___0___1____2__.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Add%60%603(Philosoft.IAddable%7B%60%600%2C%60%601%7D%2CPhilosoft.IEnumerable%7BSystem.ValueTuple%7B%60%600%2C%60%601%7D%2C%60%602%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IAddable`2.cs/#L100">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_Add_" data-uid="Philosoft.Extensions.Add*"></a>
+  <h4 id="Philosoft_Extensions_Add__3_Philosoft_IAddable___0___1__Philosoft_IEnumerable_System_ValueTuple___0___1____2__" data-uid="Philosoft.Extensions.Add``3(Philosoft.IAddable{``0,``1},Philosoft.IEnumerable{System.ValueTuple{``0,``1},``2})">Add&lt;TIndex, TElement, TEnumerator&gt;(IAddable&lt;TIndex, TElement&gt;, IEnumerable&lt;(TIndex, TElement), TEnumerator&gt;)</h4>
+  <div class="markdown level1 summary"><p>Adds the elements into the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Add&lt;TIndex, TElement, TEnumerator&gt;(this IAddable&lt;TIndex, TElement&gt; collection, IEnumerable&lt;(TIndex, TElement), TEnumerator&gt; members)
+    where TEnumerator : IEnumerator&lt;(TIndex, TElement)&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Philosoft.IAddable-2.html">IAddable</a>&lt;TIndex, TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Philosoft.IEnumerable-2.html">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">ValueTuple</a>&lt;TIndex, TElement&gt;, TEnumerator&gt;</td>
+        <td><span class="parametername">members</span></td>
+        <td><p>The index-element pairs to add to the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TIndex</span></td>
+        <td><p>The type of the index.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of the element.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TEnumerator</span></td>
+        <td><p>The type of the enumerator for the <code data-dev-comment-type="paramref" class="paramref">members</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Philosoft_Extensions_Add__3_Philosoft_IAddable___0___1__Philosoft_IEnumerable_System_ValueTuple___0___1____2___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The behavior of this operation is collection dependant, and no particular location in the collection should be assumed.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Clear_Philosoft_IClearable_.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Clear(Philosoft.IClearable)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/Extensions.cs/#L63">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IClearable.cs/#L17">View Source</a>
   </span>
   <a id="Philosoft_Extensions_Clear_" data-uid="Philosoft.Extensions.Clear*"></a>
   <h4 id="Philosoft_Extensions_Clear_Philosoft_IClearable_" data-uid="Philosoft.Extensions.Clear(Philosoft.IClearable)">Clear(IClearable)</h4>
@@ -335,7 +775,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Clone__1_Philosoft_ICloneable___0__.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Clone%60%601(Philosoft.ICloneable%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/Extensions.cs/#L81">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/ICloneable.cs/#L69">View Source</a>
   </span>
   <a id="Philosoft_Extensions_Clone_" data-uid="Philosoft.Extensions.Clone*"></a>
   <h4 id="Philosoft_Extensions_Clone__1_Philosoft_ICloneable___0__" data-uid="Philosoft.Extensions.Clone``1(Philosoft.ICloneable{``0})">Clone&lt;TSelf&gt;(ICloneable&lt;TSelf&gt;)</h4>
@@ -398,15 +838,147 @@
   </table>
   <h5 id="Philosoft_Extensions_Clone__1_Philosoft_ICloneable___0___remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>The resulting clone must be of the same type as, or compatible with, the original instance.</p>
-<p>An implementation of <a class="xref" href="Philosoft.Extensions.html#Philosoft_Extensions_Clone__1_Philosoft_ICloneable___0__">Clone&lt;TSelf&gt;(ICloneable&lt;TSelf&gt;)</a> can perform either a deep copy or a shallow copy. In a deep copy, all objects are duplicated; in a shallow copy, only the top-level objects are duplicated and the lower levels contain references. Because callers of <a class="xref" href="Philosoft.Extensions.html#Philosoft_Extensions_Clone__1_Philosoft_ICloneable___0__">Clone&lt;TSelf&gt;(ICloneable&lt;TSelf&gt;)</a> cannot depend on the method performing a predictable cloning operation, we recommend that <a class="xref" href="Philosoft.ICloneable-1.html">ICloneable&lt;TSelf&gt;</a> not be implemented in public APIs.</p>
+<p>An implementation of <a class="xref" href="Philosoft.ICloneable-1.html#Philosoft_ICloneable_1_Clone">Clone()</a> can perform either a deep copy or a shallow copy. In a deep copy, all objects are duplicated; in a shallow copy, only the top-level objects are duplicated and the lower levels contain references. Because callers of <a class="xref" href="Philosoft.ICloneable-1.html#Philosoft_ICloneable_1_Clone">Clone()</a> cannot depend on the method performing a predictable cloning operation, we recommend that <a class="xref" href="Philosoft.ICloneable-1.html">ICloneable&lt;TSelf&gt;</a> not be implemented in public APIs.</p>
 <p>See <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#System_Object_MemberwiseClone">MemberwiseClone()</a> for more information on cloning, deep versus shallow copies, and examples.</p>
 </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Clone__1_System_Memory___0__.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Clone%60%601(System.Memory%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/ICloneable.cs/#L77">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_Clone_" data-uid="Philosoft.Extensions.Clone*"></a>
+  <h4 id="Philosoft_Extensions_Clone__1_System_Memory___0__" data-uid="Philosoft.Extensions.Clone``1(System.Memory{``0})">Clone&lt;T&gt;(Memory&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Creates a new memory region that is a copy of the current memory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Memory&lt;T&gt; Clone&lt;T&gt;(this Memory&lt;T&gt; memory)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;T&gt;</td>
+        <td><span class="parametername">memory</span></td>
+        <td><p>This memory region.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;T&gt;</td>
+        <td><p>A new memory region that is a copy of the current memory.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The type of elements in the memory region.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Clone__1_System_ReadOnlyMemory___0__.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Clone%60%601(System.ReadOnlyMemory%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/ICloneable.cs/#L89">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_Clone_" data-uid="Philosoft.Extensions.Clone*"></a>
+  <h4 id="Philosoft_Extensions_Clone__1_System_ReadOnlyMemory___0__" data-uid="Philosoft.Extensions.Clone``1(System.ReadOnlyMemory{``0})">Clone&lt;T&gt;(ReadOnlyMemory&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Creates a new memory region that is a copy of the current memory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ReadOnlyMemory&lt;T&gt; Clone&lt;T&gt;(this ReadOnlyMemory&lt;T&gt; memory)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;T&gt;</td>
+        <td><span class="parametername">memory</span></td>
+        <td><p>This memory region.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;T&gt;</td>
+        <td><p>A new memory region that is a copy of the current memory.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The type of elements in the memory region.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Contains__1_Philosoft_IContainable___0____0_.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Contains%60%601(Philosoft.IContainable%7B%60%600%7D%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/Extensions.cs/#L90">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IContainable.cs/#L24">View Source</a>
   </span>
   <a id="Philosoft_Extensions_Contains_" data-uid="Philosoft.Extensions.Contains*"></a>
   <h4 id="Philosoft_Extensions_Contains__1_Philosoft_IContainable___0____0_" data-uid="Philosoft.Extensions.Contains``1(Philosoft.IContainable{``0},``0)">Contains&lt;TElement&gt;(IContainable&lt;TElement&gt;, TElement)</h4>
@@ -475,10 +1047,704 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Count_Philosoft_ICountable_.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Count(Philosoft.ICountable)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/ICountable.cs/#L21">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_Count_" data-uid="Philosoft.Extensions.Count*"></a>
+  <h4 id="Philosoft_Extensions_Count_Philosoft_ICountable_" data-uid="Philosoft.Extensions.Count(Philosoft.ICountable)">Count(ICountable)</h4>
+  <div class="markdown level1 summary"><p>Gets the number of elements contained in the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static nint Count(this ICountable collection)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Philosoft.ICountable.html">ICountable</a></td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><p>The number of elements contained in the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Dequeue__1_Philosoft_IDequeueable___0__.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Dequeue%60%601(Philosoft.IDequeueable%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IDequeueable.cs/#L36">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_Dequeue_" data-uid="Philosoft.Extensions.Dequeue*"></a>
+  <h4 id="Philosoft_Extensions_Dequeue__1_Philosoft_IDequeueable___0__" data-uid="Philosoft.Extensions.Dequeue``1(Philosoft.IDequeueable{``0})">Dequeue&lt;TElement&gt;(IDequeueable&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Removes and returns the element from the beginning of the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static TElement Dequeue&lt;TElement&gt;(this IDequeueable&lt;TElement&gt; collection)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Philosoft.IDequeueable-1.html">IDequeueable</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><p>The element that is removed from the beginning of the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of elements in the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullreferenceexception">NullReferenceException</a></td>
+        <td><p>Thrown if <code data-dev-comment-type="paramref" class="paramref">collection</code> is <span class="xref">null</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Dequeue__1_Philosoft_IDequeueable___0__nint_.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Dequeue%60%601(Philosoft.IDequeueable%7B%60%600%7D%2Cnint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IDequeueable.cs/#L53">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_Dequeue_" data-uid="Philosoft.Extensions.Dequeue*"></a>
+  <h4 id="Philosoft_Extensions_Dequeue__1_Philosoft_IDequeueable___0__nint_" data-uid="Philosoft.Extensions.Dequeue``1(Philosoft.IDequeueable{``0},nint)">Dequeue&lt;TElement&gt;(IDequeueable&lt;TElement&gt;, nint)</h4>
+  <div class="markdown level1 summary"><p>Removes and returns the elements from the beginning of the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;TElement&gt; Dequeue&lt;TElement&gt;(this IDequeueable&lt;TElement&gt; collection, nint amount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Philosoft.IDequeueable-1.html">IDequeueable</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td><p>The amount of elements to dequeue.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TElement&gt;</td>
+        <td><p>An <a class="xref" href="Philosoft.IEnumerable-2.html">IEnumerable&lt;TElement, TEnumerator&gt;</a> of the elements.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of elements in the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullreferenceexception">NullReferenceException</a></td>
+        <td><p>Thrown if <code data-dev-comment-type="paramref" class="paramref">collection</code> is <span class="xref">null</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Enqueue__1_Philosoft_IEnqueueable___0____0_.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Enqueue%60%601(Philosoft.IEnqueueable%7B%60%600%7D%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IEnqueueable.cs/#L48">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_Enqueue_" data-uid="Philosoft.Extensions.Enqueue*"></a>
+  <h4 id="Philosoft_Extensions_Enqueue__1_Philosoft_IEnqueueable___0____0_" data-uid="Philosoft.Extensions.Enqueue``1(Philosoft.IEnqueueable{``0},``0)">Enqueue&lt;TElement&gt;(IEnqueueable&lt;TElement&gt;, TElement)</h4>
+  <div class="markdown level1 summary"><p>Adds an element to the end of the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Enqueue&lt;TElement&gt;(this IEnqueueable&lt;TElement&gt; collection, TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Philosoft.IEnqueueable-1.html">IEnqueueable</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element to add to the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of elements in the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Enqueue__1_Philosoft_IEnqueueable___0____0___.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Enqueue%60%601(Philosoft.IEnqueueable%7B%60%600%7D%2C%60%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IEnqueueable.cs/#L61">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_Enqueue_" data-uid="Philosoft.Extensions.Enqueue*"></a>
+  <h4 id="Philosoft_Extensions_Enqueue__1_Philosoft_IEnqueueable___0____0___" data-uid="Philosoft.Extensions.Enqueue``1(Philosoft.IEnqueueable{``0},``0[])">Enqueue&lt;TElement&gt;(IEnqueueable&lt;TElement&gt;, TElement[])</h4>
+  <div class="markdown level1 summary"><p>Adds the elements to the end of the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Enqueue&lt;TElement&gt;(this IEnqueueable&lt;TElement&gt; collection, params TElement[] elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Philosoft.IEnqueueable-1.html">IEnqueueable</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td>TElement[]</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to add to the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of elements in the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Enqueue__2_Philosoft_IEnqueueable___0__Philosoft_IEnumerable___0___1__.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Enqueue%60%602(Philosoft.IEnqueueable%7B%60%600%7D%2CPhilosoft.IEnumerable%7B%60%600%2C%60%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IEnqueueable.cs/#L75">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_Enqueue_" data-uid="Philosoft.Extensions.Enqueue*"></a>
+  <h4 id="Philosoft_Extensions_Enqueue__2_Philosoft_IEnqueueable___0__Philosoft_IEnumerable___0___1__" data-uid="Philosoft.Extensions.Enqueue``2(Philosoft.IEnqueueable{``0},Philosoft.IEnumerable{``0,``1})">Enqueue&lt;TElement, TEnumerator&gt;(IEnqueueable&lt;TElement&gt;, IEnumerable&lt;TElement, TEnumerator&gt;)</h4>
+  <div class="markdown level1 summary"><p>Adds the elements to the end of the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Enqueue&lt;TElement, TEnumerator&gt;(this IEnqueueable&lt;TElement&gt; collection, IEnumerable&lt;TElement, TEnumerator&gt; elements)
+    where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Philosoft.IEnqueueable-1.html">IEnqueueable</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Philosoft.IEnumerable-2.html">IEnumerable</a>&lt;TElement, TEnumerator&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to add to the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of elements in the collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TEnumerator</span></td>
+        <td><p>The type of the enumerator for the <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Equals__1___0___0_.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Equals%60%601(%60%600%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IEquatable.cs/#L7">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_Equals_" data-uid="Philosoft.Extensions.Equals*"></a>
+  <h4 id="Philosoft_Extensions_Equals__1___0___0_" data-uid="Philosoft.Extensions.Equals``1(``0,``0)">Equals&lt;T&gt;(T, T)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool Equals&lt;T&gt;(T objA, T objB)
+    where T : IEquatable&lt;T&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">objA</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">objB</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Equals__2___0___1_.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Equals%60%602(%60%600%2C%60%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IEquatable.cs/#L17">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_Equals_" data-uid="Philosoft.Extensions.Equals*"></a>
+  <h4 id="Philosoft_Extensions_Equals__2___0___1_" data-uid="Philosoft.Extensions.Equals``2(``0,``1)">Equals&lt;TA, TB&gt;(TA, TB)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool Equals&lt;TA, TB&gt;(TA objA, TB objB)
+    where TA : IEquatable&lt;TB&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TA</span></td>
+        <td><span class="parametername">objA</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TB</span></td>
+        <td><span class="parametername">objB</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TA</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TB</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Equals__2___1___0_.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Equals%60%602(%60%601%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IEquatable.cs/#L27">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_Equals_" data-uid="Philosoft.Extensions.Equals*"></a>
+  <h4 id="Philosoft_Extensions_Equals__2___1___0_" data-uid="Philosoft.Extensions.Equals``2(``1,``0)">Equals&lt;TA, TB&gt;(TB, TA)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool Equals&lt;TA, TB&gt;(TB objB, TA objA)
+    where TB : IEquatable&lt;TA&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TB</span></td>
+        <td><span class="parametername">objB</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TA</span></td>
+        <td><span class="parametername">objA</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TA</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TB</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Fold__2_Philosoft_IEnumerable___0___1__System_Func___0___0___0____0_.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Fold%60%602(Philosoft.IEnumerable%7B%60%600%2C%60%601%7D%2CSystem.Func%7B%60%600%2C%60%600%2C%60%600%7D%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IEnumerable.cs/#L100">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_Fold_" data-uid="Philosoft.Extensions.Fold*"></a>
+  <h4 id="Philosoft_Extensions_Fold__2_Philosoft_IEnumerable___0___1__System_Func___0___0___0____0_" data-uid="Philosoft.Extensions.Fold``2(Philosoft.IEnumerable{``0,``1},System.Func{``0,``0,``0},``0)">Fold&lt;TElement, TEnumerator&gt;(IEnumerable&lt;TElement, TEnumerator&gt;, Func&lt;TElement, TElement, TElement&gt;, TElement)</h4>
+  <div class="markdown level1 summary"><p>Folds the collection into a single element as described by the <code data-dev-comment-type="paramref" class="paramref">func</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static TElement Fold&lt;TElement, TEnumerator&gt;(this IEnumerable&lt;TElement, TEnumerator&gt; collection, Func&lt;TElement, TElement, TElement&gt; func, TElement identity)
+    where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Philosoft.IEnumerable-2.html">IEnumerable</a>&lt;TElement, TEnumerator&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.func-3">Func</a>&lt;TElement, TElement, TElement&gt;</td>
+        <td><span class="parametername">func</span></td>
+        <td><p>The function describing the folding operation. This is a magma.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">identity</span></td>
+        <td><p>The identity value for <code data-dev-comment-type="paramref" class="paramref">func</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><p>A single element after folding the entire <code data-dev-comment-type="paramref" class="paramref">collection</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of elements in the collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TEnumerator</span></td>
+        <td><p>The enumerator for the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Philosoft_Extensions_Fold__2_Philosoft_IEnumerable___0___1__System_Func___0___0___0____0__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p><code data-dev-comment-type="paramref" class="paramref">func</code> is a magma, so associativity like left-fold and right-fold are completely irrelevant.</p>
+<p><code data-dev-comment-type="paramref" class="paramref">identity</code> is required as a start point for the fold. It needs to be the identity of the <code data-dev-comment-type="paramref" class="paramref">func</code> to function properly. For example, the identity of addition is <code>0</code>, and the identity of multiplication is <code>1</code>. Without an appropriate identity, the results will be wrong.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Grow_Philosoft_IResizable_.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Grow(Philosoft.IResizable)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/Extensions.cs/#L96">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IResizable.cs/#L49">View Source</a>
   </span>
   <a id="Philosoft_Extensions_Grow_" data-uid="Philosoft.Extensions.Grow*"></a>
   <h4 id="Philosoft_Extensions_Grow_Philosoft_IResizable_" data-uid="Philosoft.Extensions.Grow(Philosoft.IResizable)">Grow(IResizable)</h4>
@@ -509,10 +1775,936 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_IndexOf__1_Philosoft_IReadOnlyIndexable___0____0_.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.IndexOf%60%601(Philosoft.IReadOnlyIndexable%7B%60%600%7D%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IReadOnlyIndexable`1.cs/#L40">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_IndexOf_" data-uid="Philosoft.Extensions.IndexOf*"></a>
+  <h4 id="Philosoft_Extensions_IndexOf__1_Philosoft_IReadOnlyIndexable___0____0_" data-uid="Philosoft.Extensions.IndexOf``1(Philosoft.IReadOnlyIndexable{``0},``0)">IndexOf&lt;TElement&gt;(IReadOnlyIndexable&lt;TElement&gt;, TElement)</h4>
+  <div class="markdown level1 summary"><p>Searches for the specified <code data-dev-comment-type="paramref" class="paramref">item</code> and returns the index of its first occurrence.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static nint IndexOf&lt;TElement&gt;(this IReadOnlyIndexable&lt;TElement&gt; collection, TElement item)
+    where TElement : IEquatable&lt;TElement&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Philosoft.IReadOnlyIndexable-1.html">IReadOnlyIndexable</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The collection to search.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">item</span></td>
+        <td><p>The item to locate in the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><p>The index of the first occurrence of <code data-dev-comment-type="paramref" class="paramref">item</code> in <code data-dev-comment-type="paramref" class="paramref">collection</code>, if found; otherwise, <code>-1</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of the elements of the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_IndexOf__1_Philosoft_IReadOnlyIndexable___0__System_Object_.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.IndexOf%60%601(Philosoft.IReadOnlyIndexable%7B%60%600%7D%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IReadOnlyIndexable`1.cs/#L21">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_IndexOf_" data-uid="Philosoft.Extensions.IndexOf*"></a>
+  <h4 id="Philosoft_Extensions_IndexOf__1_Philosoft_IReadOnlyIndexable___0__System_Object_" data-uid="Philosoft.Extensions.IndexOf``1(Philosoft.IReadOnlyIndexable{``0},System.Object)">IndexOf&lt;TElement&gt;(IReadOnlyIndexable&lt;TElement&gt;, Object)</h4>
+  <div class="markdown level1 summary"><p>Searches for the specified <code data-dev-comment-type="paramref" class="paramref">item</code> and returns the index of its first occurrence.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static nint IndexOf&lt;TElement&gt;(this IReadOnlyIndexable&lt;TElement&gt; collection, object item)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Philosoft.IReadOnlyIndexable-1.html">IReadOnlyIndexable</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The collection to search.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">item</span></td>
+        <td><p>The item to locate in the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><p>The index of the first occurrence of <code data-dev-comment-type="paramref" class="paramref">item</code> in <code data-dev-comment-type="paramref" class="paramref">collection</code>, if found; otherwise, <code>-1</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of the elements of the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_IndexOf__1_Philosoft_IReadOnlyIndexable___0__System_Predicate___0__.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.IndexOf%60%601(Philosoft.IReadOnlyIndexable%7B%60%600%7D%2CSystem.Predicate%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IReadOnlyIndexable`1.cs/#L59">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_IndexOf_" data-uid="Philosoft.Extensions.IndexOf*"></a>
+  <h4 id="Philosoft_Extensions_IndexOf__1_Philosoft_IReadOnlyIndexable___0__System_Predicate___0__" data-uid="Philosoft.Extensions.IndexOf``1(Philosoft.IReadOnlyIndexable{``0},System.Predicate{``0})">IndexOf&lt;TElement&gt;(IReadOnlyIndexable&lt;TElement&gt;, Predicate&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Searches for an element that matches the conditions defined by the specified predicate, and returns the zero-based index of the first occurrence in the entire collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static nint IndexOf&lt;TElement&gt;(this IReadOnlyIndexable&lt;TElement&gt; collection, Predicate&lt;TElement&gt; match)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Philosoft.IReadOnlyIndexable-1.html">IReadOnlyIndexable</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.predicate-1">Predicate</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">match</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.predicate-1">Predicate&lt;T&gt;</a> delegate the defines the conditions of the element to search for.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><p>The zero-based index of the first occurrence of an element that matches the conditions defined by <code data-dev-comment-type="paramref" class="paramref">match</code>, if found; otherwise, <code>-1</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of the elements in the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Insert__2_Philosoft_IInsertable___0___1____0___1_.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Insert%60%602(Philosoft.IInsertable%7B%60%600%2C%60%601%7D%2C%60%600%2C%60%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IInsertable`2.cs/#L25">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_Insert_" data-uid="Philosoft.Extensions.Insert*"></a>
+  <h4 id="Philosoft_Extensions_Insert__2_Philosoft_IInsertable___0___1____0___1_" data-uid="Philosoft.Extensions.Insert``2(Philosoft.IInsertable{``0,``1},``0,``1)">Insert&lt;TIndex, TElement&gt;(IInsertable&lt;TIndex, TElement&gt;, TIndex, TElement)</h4>
+  <div class="markdown level1 summary"><p>Insert an element into the collection at the specified index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Insert&lt;TIndex, TElement&gt;(this IInsertable&lt;TIndex, TElement&gt; collection, TIndex index, TElement element)
+    where TIndex : IEquatable&lt;TIndex&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Philosoft.IInsertable-2.html">IInsertable</a>&lt;TIndex, TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TIndex</span></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>The index at which <code data-dev-comment-type="paramref" class="paramref">element</code> should be inserted.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The object to insert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TIndex</span></td>
+        <td><p>The type of the <code data-dev-comment-type="paramref" class="paramref">index</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of the <code data-dev-comment-type="paramref" class="paramref">element</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Map__1_Philosoft_IIndexable___0__System_Func___0___0__.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Map%60%601(Philosoft.IIndexable%7B%60%600%7D%2CSystem.Func%7B%60%600%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IIndexable`1.cs/#L38">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_Map_" data-uid="Philosoft.Extensions.Map*"></a>
+  <h4 id="Philosoft_Extensions_Map__1_Philosoft_IIndexable___0__System_Func___0___0__" data-uid="Philosoft.Extensions.Map``1(Philosoft.IIndexable{``0},System.Func{``0,``0})">Map&lt;TElement&gt;(IIndexable&lt;TElement&gt;, Func&lt;TElement, TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Applies the <code data-dev-comment-type="paramref" class="paramref">func</code> to each element of the <code data-dev-comment-type="paramref" class="paramref">collection</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Map&lt;TElement&gt;(this IIndexable&lt;TElement&gt; collection, Func&lt;TElement, TElement&gt; func)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Philosoft.IIndexable-1.html">IIndexable</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;TElement, TElement&gt;</td>
+        <td><span class="parametername">func</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.func-2">Func&lt;T,TResult&gt;</a> to apply to each element.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of elements in the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Philosoft_Extensions_Map__1_Philosoft_IIndexable___0__System_Func___0___0___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This is a mutating operation. It mutates <code data-dev-comment-type="paramref" class="paramref">collection</code> rather than constructing a new collection for the result. This is done for two reasons. First is that we can't generalize <a class="xref" href="Philosoft.Extensions.html#Philosoft_Extensions_Map__1_Philosoft_IIndexable___0__System_Func___0___0__">Map&lt;TElement&gt;(IIndexable&lt;TElement&gt;, Func&lt;TElement, TElement&gt;)</a> like this while also allowing arbitrary collections to be constructed. Second is performance, as mutating in-place is substantially more efficient. <a class="xref" href="Philosoft.html">Philosoft</a> is not a pure functional programming library, it just takes inspiration in the form of more practical application of many functional principals.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Occurrences__2_Philosoft_IEnumerable___0___1____0_.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Occurrences%60%602(Philosoft.IEnumerable%7B%60%600%2C%60%601%7D%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IEnumerable.cs/#L115">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_Occurrences_" data-uid="Philosoft.Extensions.Occurrences*"></a>
+  <h4 id="Philosoft_Extensions_Occurrences__2_Philosoft_IEnumerable___0___1____0_" data-uid="Philosoft.Extensions.Occurrences``2(Philosoft.IEnumerable{``0,``1},``0)">Occurrences&lt;TElement, TEnumerator&gt;(IEnumerable&lt;TElement, TEnumerator&gt;, TElement)</h4>
+  <div class="markdown level1 summary"><p>Count all occurrences of <code data-dev-comment-type="paramref" class="paramref">element</code> in the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static nint Occurrences&lt;TElement, TEnumerator&gt;(this IEnumerable&lt;TElement, TEnumerator&gt; collection, TElement element)
+    where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Philosoft.IEnumerable-2.html">IEnumerable</a>&lt;TElement, TEnumerator&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element to count.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><p>The amount of occurrences found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of elements in the collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TEnumerator</span></td>
+        <td><p>The type of the enumerator of the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Occurrences__2_Philosoft_IEnumerable___0___1__System_Predicate___0__.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Occurrences%60%602(Philosoft.IEnumerable%7B%60%600%2C%60%601%7D%2CSystem.Predicate%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IEnumerable.cs/#L130">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_Occurrences_" data-uid="Philosoft.Extensions.Occurrences*"></a>
+  <h4 id="Philosoft_Extensions_Occurrences__2_Philosoft_IEnumerable___0___1__System_Predicate___0__" data-uid="Philosoft.Extensions.Occurrences``2(Philosoft.IEnumerable{``0,``1},System.Predicate{``0})">Occurrences&lt;TElement, TEnumerator&gt;(IEnumerable&lt;TElement, TEnumerator&gt;, Predicate&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Count all occurrences of elements that match the provided predicate in the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static nint Occurrences&lt;TElement, TEnumerator&gt;(this IEnumerable&lt;TElement, TEnumerator&gt; collection, Predicate&lt;TElement&gt; match)
+    where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Philosoft.IEnumerable-2.html">IEnumerable</a>&lt;TElement, TEnumerator&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.predicate-1">Predicate</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">match</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.predicate-1">Predicate&lt;T&gt;</a> describing a match of the elements to count.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><p>The amount of occurrences found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of elements in the collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TEnumerator</span></td>
+        <td><p>The type of the enumerator of the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Peek__1_Philosoft_IPeekable___0__.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Peek%60%601(Philosoft.IPeekable%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IPeekable.cs/#L26">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_Peek_" data-uid="Philosoft.Extensions.Peek*"></a>
+  <h4 id="Philosoft_Extensions_Peek__1_Philosoft_IPeekable___0__" data-uid="Philosoft.Extensions.Peek``1(Philosoft.IPeekable{``0})">Peek&lt;TElement&gt;(IPeekable&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Returns the element at the beginning of the collection without removing it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static TElement Peek&lt;TElement&gt;(this IPeekable&lt;TElement&gt; collection)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Philosoft.IPeekable-1.html">IPeekable</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><p>The element from the beginning of the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of the elements in the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullreferenceexception">NullReferenceException</a></td>
+        <td><p>Thrown if <code data-dev-comment-type="paramref" class="paramref">collection</code> is <span class="xref">null</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Pop__1_Philosoft_IPoppable___0__.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Pop%60%601(Philosoft.IPoppable%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IPoppable.cs/#L36">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_Pop_" data-uid="Philosoft.Extensions.Pop*"></a>
+  <h4 id="Philosoft_Extensions_Pop__1_Philosoft_IPoppable___0__" data-uid="Philosoft.Extensions.Pop``1(Philosoft.IPoppable{``0})">Pop&lt;TElement&gt;(IPoppable&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Removes and returns the element at from top of the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static TElement Pop&lt;TElement&gt;(this IPoppable&lt;TElement&gt; collection)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Philosoft.IPoppable-1.html">IPoppable</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><p>The element removed from the top of the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of the elements in the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullreferenceexception">NullReferenceException</a></td>
+        <td><p>Thrown if <code data-dev-comment-type="paramref" class="paramref">collection</code> is <span class="xref">null</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Pop__1_Philosoft_IPoppable___0__nint_.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Pop%60%601(Philosoft.IPoppable%7B%60%600%7D%2Cnint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IPoppable.cs/#L53">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_Pop_" data-uid="Philosoft.Extensions.Pop*"></a>
+  <h4 id="Philosoft_Extensions_Pop__1_Philosoft_IPoppable___0__nint_" data-uid="Philosoft.Extensions.Pop``1(Philosoft.IPoppable{``0},nint)">Pop&lt;TElement&gt;(IPoppable&lt;TElement&gt;, nint)</h4>
+  <div class="markdown level1 summary"><p>Removes and returns the elements at the top of the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;TElement&gt; Pop&lt;TElement&gt;(this IPoppable&lt;TElement&gt; collection, nint amount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Philosoft.IPoppable-1.html">IPoppable</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td><p>The amount of elements to pop.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TElement&gt;</td>
+        <td><p>An <a class="xref" href="Philosoft.IEnumerable-2.html">IEnumerable&lt;TElement, TEnumerator&gt;</a> of the elements.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of the elements in the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullreferenceexception">NullReferenceException</a></td>
+        <td><p>Thrown if <code data-dev-comment-type="paramref" class="paramref">collection</code> is <span class="xref">null</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Push__1_Philosoft_IPushable___0____0_.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Push%60%601(Philosoft.IPushable%7B%60%600%7D%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IPushable.cs/#L48">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_Push_" data-uid="Philosoft.Extensions.Push*"></a>
+  <h4 id="Philosoft_Extensions_Push__1_Philosoft_IPushable___0____0_" data-uid="Philosoft.Extensions.Push``1(Philosoft.IPushable{``0},``0)">Push&lt;TElement&gt;(IPushable&lt;TElement&gt;, TElement)</h4>
+  <div class="markdown level1 summary"><p>Inserts an element at the top of the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Push&lt;TElement&gt;(this IPushable&lt;TElement&gt; collection, TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Philosoft.IPushable-1.html">IPushable</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element to push onto the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of the elements in the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Push__1_Philosoft_IPushable___0____0___.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Push%60%601(Philosoft.IPushable%7B%60%600%7D%2C%60%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IPushable.cs/#L61">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_Push_" data-uid="Philosoft.Extensions.Push*"></a>
+  <h4 id="Philosoft_Extensions_Push__1_Philosoft_IPushable___0____0___" data-uid="Philosoft.Extensions.Push``1(Philosoft.IPushable{``0},``0[])">Push&lt;TElement&gt;(IPushable&lt;TElement&gt;, TElement[])</h4>
+  <div class="markdown level1 summary"><p>Inserts the elements at the top of the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Push&lt;TElement&gt;(this IPushable&lt;TElement&gt; collection, params TElement[] elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Philosoft.IPushable-1.html">IPushable</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td>TElement[]</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The element to push onto the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of the elements in the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Push__2_Philosoft_IPushable___0__Philosoft_IEnumerable___0___1__.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Push%60%602(Philosoft.IPushable%7B%60%600%7D%2CPhilosoft.IEnumerable%7B%60%600%2C%60%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IPushable.cs/#L75">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_Push_" data-uid="Philosoft.Extensions.Push*"></a>
+  <h4 id="Philosoft_Extensions_Push__2_Philosoft_IPushable___0__Philosoft_IEnumerable___0___1__" data-uid="Philosoft.Extensions.Push``2(Philosoft.IPushable{``0},Philosoft.IEnumerable{``0,``1})">Push&lt;TElement, TEnumerator&gt;(IPushable&lt;TElement&gt;, IEnumerable&lt;TElement, TEnumerator&gt;)</h4>
+  <div class="markdown level1 summary"><p>Inserts the elements at the top of the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Push&lt;TElement, TEnumerator&gt;(this IPushable&lt;TElement&gt; collection, IEnumerable&lt;TElement, TEnumerator&gt; elements)
+    where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Philosoft.IPushable-1.html">IPushable</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Philosoft.IEnumerable-2.html">IEnumerable</a>&lt;TElement, TEnumerator&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The element to push onto the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of the elements in the collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TEnumerator</span></td>
+        <td><p>The type of the enumerator for the <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Remove__1_Philosoft_IRemovable___0____0_.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Remove%60%601(Philosoft.IRemovable%7B%60%600%7D%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/Extensions.cs/#L109">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IRemovable`1.cs/#L56">View Source</a>
   </span>
   <a id="Philosoft_Extensions_Remove_" data-uid="Philosoft.Extensions.Remove*"></a>
   <h4 id="Philosoft_Extensions_Remove__1_Philosoft_IRemovable___0____0_" data-uid="Philosoft.Extensions.Remove``1(Philosoft.IRemovable{``0},``0)">Remove&lt;TElement&gt;(IRemovable&lt;TElement&gt;, TElement)</h4>
@@ -568,7 +2760,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Remove__1_Philosoft_IRemovable___0____0___.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Remove%60%601(Philosoft.IRemovable%7B%60%600%7D%2C%60%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/Extensions.cs/#L122">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IRemovable`1.cs/#L69">View Source</a>
   </span>
   <a id="Philosoft_Extensions_Remove_" data-uid="Philosoft.Extensions.Remove*"></a>
   <h4 id="Philosoft_Extensions_Remove__1_Philosoft_IRemovable___0____0___" data-uid="Philosoft.Extensions.Remove``1(Philosoft.IRemovable{``0},``0[])">Remove&lt;TElement&gt;(IRemovable&lt;TElement&gt;, TElement[])</h4>
@@ -624,7 +2816,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Remove__1_Philosoft_IRemovable___0__System_Predicate___0__.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Remove%60%601(Philosoft.IRemovable%7B%60%600%7D%2CSystem.Predicate%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/Extensions.cs/#L149">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IRemovable`1.cs/#L96">View Source</a>
   </span>
   <a id="Philosoft_Extensions_Remove_" data-uid="Philosoft.Extensions.Remove*"></a>
   <h4 id="Philosoft_Extensions_Remove__1_Philosoft_IRemovable___0__System_Predicate___0__" data-uid="Philosoft.Extensions.Remove``1(Philosoft.IRemovable{``0},System.Predicate{``0})">Remove&lt;TElement&gt;(IRemovable&lt;TElement&gt;, Predicate&lt;TElement&gt;)</h4>
@@ -680,7 +2872,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Remove__2_Philosoft_IRemovable___0__Philosoft_IEnumerable___0___1__.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Remove%60%602(Philosoft.IRemovable%7B%60%600%7D%2CPhilosoft.IEnumerable%7B%60%600%2C%60%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/Extensions.cs/#L136">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IRemovable`1.cs/#L83">View Source</a>
   </span>
   <a id="Philosoft_Extensions_Remove_" data-uid="Philosoft.Extensions.Remove*"></a>
   <h4 id="Philosoft_Extensions_Remove__2_Philosoft_IRemovable___0__Philosoft_IEnumerable___0___1__" data-uid="Philosoft.Extensions.Remove``2(Philosoft.IRemovable{``0},Philosoft.IEnumerable{``0,``1})">Remove&lt;TElement, TEnumerator&gt;(IRemovable&lt;TElement&gt;, IEnumerable&lt;TElement, TEnumerator&gt;)</h4>
@@ -742,7 +2934,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_RemoveAt__2_Philosoft_IRemovable___0___1____0_.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.RemoveAt%60%602(Philosoft.IRemovable%7B%60%600%2C%60%601%7D%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/Extensions.cs/#L163">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IRemovable`2.cs/#L36">View Source</a>
   </span>
   <a id="Philosoft_Extensions_RemoveAt_" data-uid="Philosoft.Extensions.RemoveAt*"></a>
   <h4 id="Philosoft_Extensions_RemoveAt__2_Philosoft_IRemovable___0___1____0_" data-uid="Philosoft.Extensions.RemoveAt``2(Philosoft.IRemovable{``0,``1},``0)">RemoveAt&lt;TIndex, TElement&gt;(IRemovable&lt;TIndex, TElement&gt;, TIndex)</h4>
@@ -803,7 +2995,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_RemoveAt__2_Philosoft_IRemovable___0___1____0___.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.RemoveAt%60%602(Philosoft.IRemovable%7B%60%600%2C%60%601%7D%2C%60%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/Extensions.cs/#L177">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IRemovable`2.cs/#L50">View Source</a>
   </span>
   <a id="Philosoft_Extensions_RemoveAt_" data-uid="Philosoft.Extensions.RemoveAt*"></a>
   <h4 id="Philosoft_Extensions_RemoveAt__2_Philosoft_IRemovable___0___1____0___" data-uid="Philosoft.Extensions.RemoveAt``2(Philosoft.IRemovable{``0,``1},``0[])">RemoveAt&lt;TIndex, TElement&gt;(IRemovable&lt;TIndex, TElement&gt;, TIndex[])</h4>
@@ -864,7 +3056,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Replace__2_Philosoft_IReplaceable___0___1____0___1_.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Replace%60%602(Philosoft.IReplaceable%7B%60%600%2C%60%601%7D%2C%60%600%2C%60%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/Extensions.cs/#L192">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IReplaceable`2.cs/#L47">View Source</a>
   </span>
   <a id="Philosoft_Extensions_Replace_" data-uid="Philosoft.Extensions.Replace*"></a>
   <h4 id="Philosoft_Extensions_Replace__2_Philosoft_IReplaceable___0___1____0___1_" data-uid="Philosoft.Extensions.Replace``2(Philosoft.IReplaceable{``0,``1},``0,``1)">Replace&lt;TOld, TNew&gt;(IReplaceable&lt;TOld, TNew&gt;, TOld, TNew)</h4>
@@ -928,19 +3120,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Replace__2_Philosoft_IReplaceable___0___1__System_Func___0_System_Boolean____1_.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Replace%60%602(Philosoft.IReplaceable%7B%60%600%2C%60%601%7D%2CSystem.Func%7B%60%600%2CSystem.Boolean%7D%2C%60%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Replace__2_Philosoft_IReplaceable___0___1__System_Predicate___0____1_.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Replace%60%602(Philosoft.IReplaceable%7B%60%600%2C%60%601%7D%2CSystem.Predicate%7B%60%600%7D%2C%60%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/Extensions.cs/#L221">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IReplaceable`2.cs/#L76">View Source</a>
   </span>
   <a id="Philosoft_Extensions_Replace_" data-uid="Philosoft.Extensions.Replace*"></a>
-  <h4 id="Philosoft_Extensions_Replace__2_Philosoft_IReplaceable___0___1__System_Func___0_System_Boolean____1_" data-uid="Philosoft.Extensions.Replace``2(Philosoft.IReplaceable{``0,``1},System.Func{``0,System.Boolean},``1)">Replace&lt;TOld, TNew&gt;(IReplaceable&lt;TOld, TNew&gt;, Func&lt;TOld, Boolean&gt;, TNew)</h4>
+  <h4 id="Philosoft_Extensions_Replace__2_Philosoft_IReplaceable___0___1__System_Predicate___0____1_" data-uid="Philosoft.Extensions.Replace``2(Philosoft.IReplaceable{``0,``1},System.Predicate{``0},``1)">Replace&lt;TOld, TNew&gt;(IReplaceable&lt;TOld, TNew&gt;, Predicate&lt;TOld&gt;, TNew)</h4>
   <div class="markdown level1 summary"><p>Returns a new collection in which instances that match the specified predicate are replaced with the <code data-dev-comment-type="paramref" class="paramref">newElement</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void Replace&lt;TOld, TNew&gt;(this IReplaceable&lt;TOld, TNew&gt; collection, Func&lt;TOld, bool&gt; match, TNew newElement)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void Replace&lt;TOld, TNew&gt;(this IReplaceable&lt;TOld, TNew&gt; collection, Predicate&lt;TOld&gt; match, TNew newElement)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -959,9 +3151,9 @@
 </td>
       </tr>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;TOld, <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a>&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.predicate-1">Predicate</a>&lt;TOld&gt;</td>
         <td><span class="parametername">match</span></td>
-        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.func-2">Func&lt;T,TResult&gt;</a> delegate that defines the conditions of the element to replace.</p>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.predicate-1">Predicate&lt;T&gt;</a> delegate that defines the conditions of the element to replace.</p>
 </td>
       </tr>
       <tr>
@@ -998,7 +3190,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Replace__2_Philosoft_IReplaceable___0___1__System_ValueTuple___0___1____.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Replace%60%602(Philosoft.IReplaceable%7B%60%600%2C%60%601%7D%2CSystem.ValueTuple%7B%60%600%2C%60%601%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/Extensions.cs/#L206">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IReplaceable`2.cs/#L61">View Source</a>
   </span>
   <a id="Philosoft_Extensions_Replace_" data-uid="Philosoft.Extensions.Replace*"></a>
   <h4 id="Philosoft_Extensions_Replace__2_Philosoft_IReplaceable___0___1__System_ValueTuple___0___1____" data-uid="Philosoft.Extensions.Replace``2(Philosoft.IReplaceable{``0,``1},System.ValueTuple{``0,``1}[])">Replace&lt;TOld, TNew&gt;(IReplaceable&lt;TOld, TNew&gt;, (TOld, TNew)[])</h4>
@@ -1059,7 +3251,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Resize_Philosoft_IResizable_nint_.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Resize(Philosoft.IResizable%2Cnint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/Extensions.cs/#L233">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IResizable.cs/#L61">View Source</a>
   </span>
   <a id="Philosoft_Extensions_Resize_" data-uid="Philosoft.Extensions.Resize*"></a>
   <h4 id="Philosoft_Extensions_Resize_Philosoft_IResizable_nint_" data-uid="Philosoft.Extensions.Resize(Philosoft.IResizable,nint)">Resize(IResizable, nint)</h4>
@@ -1096,10 +3288,794 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_ShiftLeft_Philosoft_IShiftable_.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.ShiftLeft(Philosoft.IShiftable)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IShiftable.cs/#L36">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_ShiftLeft_" data-uid="Philosoft.Extensions.ShiftLeft*"></a>
+  <h4 id="Philosoft_Extensions_ShiftLeft_Philosoft_IShiftable_" data-uid="Philosoft.Extensions.ShiftLeft(Philosoft.IShiftable)">ShiftLeft(IShiftable)</h4>
+  <div class="markdown level1 summary"><p>Shifts the <code data-dev-comment-type="paramref" class="paramref">collection</code> left one position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ShiftLeft(this IShiftable collection)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Philosoft.IShiftable.html">IShiftable</a></td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_ShiftLeft_Philosoft_IShiftable_nint_.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.ShiftLeft(Philosoft.IShiftable%2Cnint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IShiftable.cs/#L82">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_ShiftLeft_" data-uid="Philosoft.Extensions.ShiftLeft*"></a>
+  <h4 id="Philosoft_Extensions_ShiftLeft_Philosoft_IShiftable_nint_" data-uid="Philosoft.Extensions.ShiftLeft(Philosoft.IShiftable,nint)">ShiftLeft(IShiftable, nint)</h4>
+  <div class="markdown level1 summary"><p>Shifts the <code data-dev-comment-type="paramref" class="paramref">collection</code> left by <code data-dev-comment-type="paramref" class="paramref">amount</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ShiftLeft(this IShiftable collection, nint amount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Philosoft.IShiftable.html">IShiftable</a></td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td><p>The amount of positions to shift.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_ShiftLeft__1___0___.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.ShiftLeft%60%601(%60%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IShiftable.cs/#L48">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_ShiftLeft_" data-uid="Philosoft.Extensions.ShiftLeft*"></a>
+  <h4 id="Philosoft_Extensions_ShiftLeft__1___0___" data-uid="Philosoft.Extensions.ShiftLeft``1(``0[])">ShiftLeft&lt;T&gt;(T[])</h4>
+  <div class="markdown level1 summary"><p>Shifts the <code data-dev-comment-type="paramref" class="paramref">array</code> left one position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ShiftLeft&lt;T&gt;(this T[] array)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>T[]</td>
+        <td><span class="parametername">array</span></td>
+        <td><p>This array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The type of the elements in the array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_ShiftLeft__1___0___nint_.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.ShiftLeft%60%601(%60%600%5B%5D%2Cnint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IShiftable.cs/#L95">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_ShiftLeft_" data-uid="Philosoft.Extensions.ShiftLeft*"></a>
+  <h4 id="Philosoft_Extensions_ShiftLeft__1___0___nint_" data-uid="Philosoft.Extensions.ShiftLeft``1(``0[],nint)">ShiftLeft&lt;T&gt;(T[], nint)</h4>
+  <div class="markdown level1 summary"><p>Shifts the <code data-dev-comment-type="paramref" class="paramref">array</code> left by <code data-dev-comment-type="paramref" class="paramref">amount</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ShiftLeft&lt;T&gt;(this T[] array, nint amount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>T[]</td>
+        <td><span class="parametername">array</span></td>
+        <td><p>This array.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td><p>The amount of positions to shift.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The type of the elements in the array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_ShiftLeft__1_System_Memory___0__.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.ShiftLeft%60%601(System.Memory%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IShiftable.cs/#L63">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_ShiftLeft_" data-uid="Philosoft.Extensions.ShiftLeft*"></a>
+  <h4 id="Philosoft_Extensions_ShiftLeft__1_System_Memory___0__" data-uid="Philosoft.Extensions.ShiftLeft``1(System.Memory{``0})">ShiftLeft&lt;T&gt;(Memory&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Shifts the <code data-dev-comment-type="paramref" class="paramref">memory</code> left on position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ShiftLeft&lt;T&gt;(this Memory&lt;T&gt; memory)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;T&gt;</td>
+        <td><span class="parametername">memory</span></td>
+        <td><p>This memory.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The type of the elements in the memory.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_ShiftLeft__1_System_Memory___0__nint_.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.ShiftLeft%60%601(System.Memory%7B%60%600%7D%2Cnint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IShiftable.cs/#L114">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_ShiftLeft_" data-uid="Philosoft.Extensions.ShiftLeft*"></a>
+  <h4 id="Philosoft_Extensions_ShiftLeft__1_System_Memory___0__nint_" data-uid="Philosoft.Extensions.ShiftLeft``1(System.Memory{``0},nint)">ShiftLeft&lt;T&gt;(Memory&lt;T&gt;, nint)</h4>
+  <div class="markdown level1 summary"><p>Shifts the <code data-dev-comment-type="paramref" class="paramref">memory</code> left by <code data-dev-comment-type="paramref" class="paramref">amount</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ShiftLeft&lt;T&gt;(this Memory&lt;T&gt; memory, nint amount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;T&gt;</td>
+        <td><span class="parametername">memory</span></td>
+        <td><p>This memory.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td><p>The amount of positions to shift.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The type of the elements in the memory.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_ShiftLeft__1_System_Span___0__.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.ShiftLeft%60%601(System.Span%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IShiftable.cs/#L70">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_ShiftLeft_" data-uid="Philosoft.Extensions.ShiftLeft*"></a>
+  <h4 id="Philosoft_Extensions_ShiftLeft__1_System_Span___0__" data-uid="Philosoft.Extensions.ShiftLeft``1(System.Span{``0})">ShiftLeft&lt;T&gt;(Span&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Shifts the <code data-dev-comment-type="paramref" class="paramref">span</code> left on position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ShiftLeft&lt;T&gt;(this Span&lt;T&gt; span)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;T&gt;</td>
+        <td><span class="parametername">span</span></td>
+        <td><p>This span.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The type of the elements in the span.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_ShiftLeft__1_System_Span___0__nint_.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.ShiftLeft%60%601(System.Span%7B%60%600%7D%2Cnint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IShiftable.cs/#L122">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_ShiftLeft_" data-uid="Philosoft.Extensions.ShiftLeft*"></a>
+  <h4 id="Philosoft_Extensions_ShiftLeft__1_System_Span___0__nint_" data-uid="Philosoft.Extensions.ShiftLeft``1(System.Span{``0},nint)">ShiftLeft&lt;T&gt;(Span&lt;T&gt;, nint)</h4>
+  <div class="markdown level1 summary"><p>Shifts the <code data-dev-comment-type="paramref" class="paramref">span</code> left by <code data-dev-comment-type="paramref" class="paramref">amount</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ShiftLeft&lt;T&gt;(this Span&lt;T&gt; span, nint amount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;T&gt;</td>
+        <td><span class="parametername">span</span></td>
+        <td><p>This span.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td><p>The amount of positions to shift.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The type of the elements in the span.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_ShiftRight_Philosoft_IShiftable_.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.ShiftRight(Philosoft.IShiftable)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IShiftable.cs/#L136">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_ShiftRight_" data-uid="Philosoft.Extensions.ShiftRight*"></a>
+  <h4 id="Philosoft_Extensions_ShiftRight_Philosoft_IShiftable_" data-uid="Philosoft.Extensions.ShiftRight(Philosoft.IShiftable)">ShiftRight(IShiftable)</h4>
+  <div class="markdown level1 summary"><p>Shifts the <code data-dev-comment-type="paramref" class="paramref">collection</code> right one position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ShiftRight(this IShiftable collection)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Philosoft.IShiftable.html">IShiftable</a></td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_ShiftRight_Philosoft_IShiftable_nint_.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.ShiftRight(Philosoft.IShiftable%2Cnint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IShiftable.cs/#L182">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_ShiftRight_" data-uid="Philosoft.Extensions.ShiftRight*"></a>
+  <h4 id="Philosoft_Extensions_ShiftRight_Philosoft_IShiftable_nint_" data-uid="Philosoft.Extensions.ShiftRight(Philosoft.IShiftable,nint)">ShiftRight(IShiftable, nint)</h4>
+  <div class="markdown level1 summary"><p>Shifts the <code data-dev-comment-type="paramref" class="paramref">collection</code> right by <code data-dev-comment-type="paramref" class="paramref">amount</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ShiftRight(this IShiftable collection, nint amount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Philosoft.IShiftable.html">IShiftable</a></td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td><p>The amount of positions to shift.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_ShiftRight__1___0___.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.ShiftRight%60%601(%60%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IShiftable.cs/#L148">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_ShiftRight_" data-uid="Philosoft.Extensions.ShiftRight*"></a>
+  <h4 id="Philosoft_Extensions_ShiftRight__1___0___" data-uid="Philosoft.Extensions.ShiftRight``1(``0[])">ShiftRight&lt;T&gt;(T[])</h4>
+  <div class="markdown level1 summary"><p>Shifts the <code data-dev-comment-type="paramref" class="paramref">array</code> right one position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ShiftRight&lt;T&gt;(this T[] array)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>T[]</td>
+        <td><span class="parametername">array</span></td>
+        <td><p>This array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The type of the elements in the array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_ShiftRight__1___0___nint_.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.ShiftRight%60%601(%60%600%5B%5D%2Cnint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IShiftable.cs/#L195">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_ShiftRight_" data-uid="Philosoft.Extensions.ShiftRight*"></a>
+  <h4 id="Philosoft_Extensions_ShiftRight__1___0___nint_" data-uid="Philosoft.Extensions.ShiftRight``1(``0[],nint)">ShiftRight&lt;T&gt;(T[], nint)</h4>
+  <div class="markdown level1 summary"><p>Shifts the <code data-dev-comment-type="paramref" class="paramref">array</code> right by <code data-dev-comment-type="paramref" class="paramref">amount</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ShiftRight&lt;T&gt;(this T[] array, nint amount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>T[]</td>
+        <td><span class="parametername">array</span></td>
+        <td><p>This array.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td><p>The amount of positions to shift.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The type of the elements in the array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_ShiftRight__1_System_Memory___0__.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.ShiftRight%60%601(System.Memory%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IShiftable.cs/#L163">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_ShiftRight_" data-uid="Philosoft.Extensions.ShiftRight*"></a>
+  <h4 id="Philosoft_Extensions_ShiftRight__1_System_Memory___0__" data-uid="Philosoft.Extensions.ShiftRight``1(System.Memory{``0})">ShiftRight&lt;T&gt;(Memory&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Shifts the <code data-dev-comment-type="paramref" class="paramref">memory</code> right one position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ShiftRight&lt;T&gt;(this Memory&lt;T&gt; memory)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;T&gt;</td>
+        <td><span class="parametername">memory</span></td>
+        <td><p>This meory.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The type of the elements in the memory.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_ShiftRight__1_System_Memory___0__nint_.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.ShiftRight%60%601(System.Memory%7B%60%600%7D%2Cnint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IShiftable.cs/#L214">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_ShiftRight_" data-uid="Philosoft.Extensions.ShiftRight*"></a>
+  <h4 id="Philosoft_Extensions_ShiftRight__1_System_Memory___0__nint_" data-uid="Philosoft.Extensions.ShiftRight``1(System.Memory{``0},nint)">ShiftRight&lt;T&gt;(Memory&lt;T&gt;, nint)</h4>
+  <div class="markdown level1 summary"><p>Shifts the <code data-dev-comment-type="paramref" class="paramref">memory</code> right by <code data-dev-comment-type="paramref" class="paramref">amount</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ShiftRight&lt;T&gt;(this Memory&lt;T&gt; memory, nint amount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;T&gt;</td>
+        <td><span class="parametername">memory</span></td>
+        <td><p>This memory.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td><p>The amount of positions to shift.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The type of the elements in the memory.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_ShiftRight__1_System_Span___0__.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.ShiftRight%60%601(System.Span%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IShiftable.cs/#L170">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_ShiftRight_" data-uid="Philosoft.Extensions.ShiftRight*"></a>
+  <h4 id="Philosoft_Extensions_ShiftRight__1_System_Span___0__" data-uid="Philosoft.Extensions.ShiftRight``1(System.Span{``0})">ShiftRight&lt;T&gt;(Span&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Shifts the <code data-dev-comment-type="paramref" class="paramref">span</code> right one position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ShiftRight&lt;T&gt;(this Span&lt;T&gt; span)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;T&gt;</td>
+        <td><span class="parametername">span</span></td>
+        <td><p>This span.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The type of the elements in the span.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_ShiftRight__1_System_Span___0__nint_.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.ShiftRight%60%601(System.Span%7B%60%600%7D%2Cnint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IShiftable.cs/#L222">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_ShiftRight_" data-uid="Philosoft.Extensions.ShiftRight*"></a>
+  <h4 id="Philosoft_Extensions_ShiftRight__1_System_Span___0__nint_" data-uid="Philosoft.Extensions.ShiftRight``1(System.Span{``0},nint)">ShiftRight&lt;T&gt;(Span&lt;T&gt;, nint)</h4>
+  <div class="markdown level1 summary"><p>Shifts the <code data-dev-comment-type="paramref" class="paramref">span</code> right by <code data-dev-comment-type="paramref" class="paramref">amount</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ShiftRight&lt;T&gt;(this Span&lt;T&gt; span, nint amount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;T&gt;</td>
+        <td><span class="parametername">span</span></td>
+        <td><p>This span.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td><p>The amount of positions to shift.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The type of the elements in the span.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Shrink_Philosoft_IResizable_.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Shrink(Philosoft.IResizable)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/Extensions.cs/#L244">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IResizable.cs/#L72">View Source</a>
   </span>
   <a id="Philosoft_Extensions_Shrink_" data-uid="Philosoft.Extensions.Shrink*"></a>
   <h4 id="Philosoft_Extensions_Shrink_Philosoft_IResizable_" data-uid="Philosoft.Extensions.Shrink(Philosoft.IResizable)">Shrink(IResizable)</h4>
@@ -1133,7 +4109,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Slice__1_Philosoft_IReadOnlySliceable___0__.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Slice%60%601(Philosoft.IReadOnlySliceable%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/Extensions.cs/#L284">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/ISliceable.cs/#L72">View Source</a>
   </span>
   <a id="Philosoft_Extensions_Slice_" data-uid="Philosoft.Extensions.Slice*"></a>
   <h4 id="Philosoft_Extensions_Slice__1_Philosoft_IReadOnlySliceable___0__" data-uid="Philosoft.Extensions.Slice``1(Philosoft.IReadOnlySliceable{``0})">Slice&lt;TSlice&gt;(IReadOnlySliceable&lt;TSlice&gt;)</h4>
@@ -1199,7 +4175,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Slice__1_Philosoft_IReadOnlySliceable___0__nint_.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Slice%60%601(Philosoft.IReadOnlySliceable%7B%60%600%7D%2Cnint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/Extensions.cs/#L293">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/ISliceable.cs/#L81">View Source</a>
   </span>
   <a id="Philosoft_Extensions_Slice_" data-uid="Philosoft.Extensions.Slice*"></a>
   <h4 id="Philosoft_Extensions_Slice__1_Philosoft_IReadOnlySliceable___0__nint_" data-uid="Philosoft.Extensions.Slice``1(Philosoft.IReadOnlySliceable{``0},nint)">Slice&lt;TSlice&gt;(IReadOnlySliceable&lt;TSlice&gt;, nint)</h4>
@@ -1271,7 +4247,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Slice__1_Philosoft_IReadOnlySliceable___0__nint_nint_.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Slice%60%601(Philosoft.IReadOnlySliceable%7B%60%600%7D%2Cnint%2Cnint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/Extensions.cs/#L303">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/ISliceable.cs/#L91">View Source</a>
   </span>
   <a id="Philosoft_Extensions_Slice_" data-uid="Philosoft.Extensions.Slice*"></a>
   <h4 id="Philosoft_Extensions_Slice__1_Philosoft_IReadOnlySliceable___0__nint_nint_" data-uid="Philosoft.Extensions.Slice``1(Philosoft.IReadOnlySliceable{``0},nint,nint)">Slice&lt;TSlice&gt;(IReadOnlySliceable&lt;TSlice&gt;, nint, nint)</h4>
@@ -1349,7 +4325,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Slice__1_Philosoft_ISliceable___0__.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Slice%60%601(Philosoft.ISliceable%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/Extensions.cs/#L257">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/ISliceable.cs/#L45">View Source</a>
   </span>
   <a id="Philosoft_Extensions_Slice_" data-uid="Philosoft.Extensions.Slice*"></a>
   <h4 id="Philosoft_Extensions_Slice__1_Philosoft_ISliceable___0__" data-uid="Philosoft.Extensions.Slice``1(Philosoft.ISliceable{``0})">Slice&lt;TSlice&gt;(ISliceable&lt;TSlice&gt;)</h4>
@@ -1415,7 +4391,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Slice__1_Philosoft_ISliceable___0__nint_.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Slice%60%601(Philosoft.ISliceable%7B%60%600%7D%2Cnint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/Extensions.cs/#L266">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/ISliceable.cs/#L54">View Source</a>
   </span>
   <a id="Philosoft_Extensions_Slice_" data-uid="Philosoft.Extensions.Slice*"></a>
   <h4 id="Philosoft_Extensions_Slice__1_Philosoft_ISliceable___0__nint_" data-uid="Philosoft.Extensions.Slice``1(Philosoft.ISliceable{``0},nint)">Slice&lt;TSlice&gt;(ISliceable&lt;TSlice&gt;, nint)</h4>
@@ -1487,7 +4463,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Slice__1_Philosoft_ISliceable___0__nint_nint_.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Slice%60%601(Philosoft.ISliceable%7B%60%600%7D%2Cnint%2Cnint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/Extensions.cs/#L276">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/ISliceable.cs/#L64">View Source</a>
   </span>
   <a id="Philosoft_Extensions_Slice_" data-uid="Philosoft.Extensions.Slice*"></a>
   <h4 id="Philosoft_Extensions_Slice__1_Philosoft_ISliceable___0__nint_nint_" data-uid="Philosoft.Extensions.Slice``1(Philosoft.ISliceable{``0},nint,nint)">Slice&lt;TSlice&gt;(ISliceable&lt;TSlice&gt;, nint, nint)</h4>
@@ -1571,7 +4547,7 @@
                     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions.md&amp;value=---%0Auid%3A%20Philosoft.Extensions%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/Extensions.cs/#L8" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/ISliceable.cs/#L38" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

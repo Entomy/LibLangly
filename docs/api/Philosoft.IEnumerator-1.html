@@ -79,14 +79,35 @@
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable.dispose#System_IDisposable_Dispose">IDisposable.Dispose()</a>
+    </div>
+    <div>
       <a class="xref" href="Philosoft.IEnumerable-2.html#Philosoft_IEnumerable_2_GetEnumerator">IEnumerable&lt;TElement, IEnumerator&lt;TElement&gt;&gt;.GetEnumerator()</a>
+    </div>
+    <div>
+      <a class="xref" href="Philosoft.IEnumerable-2.html#Philosoft_IEnumerable_2_System_Collections_Generic_IEnumerable_TElement__GetEnumerator">IEnumerable&lt;TElement, IEnumerator&lt;TElement&gt;&gt;.IEnumerable&lt;TElement&gt;.GetEnumerator()</a>
+    </div>
+    <div>
+      <a class="xref" href="Philosoft.IEnumerable-2.html#Philosoft_IEnumerable_2_System_Collections_IEnumerable_GetEnumerator">IEnumerable&lt;TElement, IEnumerator&lt;TElement&gt;&gt;.IEnumerable.GetEnumerator()</a>
+    </div>
+    <div>
+      <a class="xref" href="Philosoft.IEnumerable-2.html#Philosoft_IEnumerable_2_Fold_System_Func__0__0__0___0_">IEnumerable&lt;TElement, IEnumerator&lt;TElement&gt;&gt;.Fold(Func&lt;TElement, TElement, TElement&gt;, TElement)</a>
+    </div>
+    <div>
+      <a class="xref" href="Philosoft.IEnumerable-2.html#Philosoft_IEnumerable_2_Occurrences__0_">IEnumerable&lt;TElement, IEnumerator&lt;TElement&gt;&gt;.Occurrences(TElement)</a>
+    </div>
+    <div>
+      <a class="xref" href="Philosoft.IEnumerable-2.html#Philosoft_IEnumerable_2_Occurrences_System_Predicate__0__">IEnumerable&lt;TElement, IEnumerator&lt;TElement&gt;&gt;.Occurrences(Predicate&lt;TElement&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1.getenumerator#System_Collections_Generic_IEnumerable_1_GetEnumerator">IEnumerable&lt;TElement&gt;.GetEnumerator()</a>
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Philosoft.html">Philosoft</a></h6>
   <h6><strong>Assembly</strong>: Philosoft.dll</h6>
   <h5 id="Philosoft_IEnumerator_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IEnumerator&lt;TElement&gt; : IEnumerable&lt;TElement, IEnumerator&lt;TElement&gt;&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IEnumerator&lt;TElement&gt; : IEnumerator&lt;TElement&gt;, IEnumerator, IDisposable, IEnumerable&lt;TElement, IEnumerator&lt;TElement&gt;&gt;, IEnumerable&lt;TElement&gt;, IEnumerable</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -186,6 +207,110 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">void Reset()</code></pre>
+  </div>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_IEnumerator_1_Philosoft_IEnumerable_TElement_Philosoft_IEnumerator_TElement___GetEnumerator.md&amp;value=---%0Auid%3A%20Philosoft.IEnumerator%601.Philosoft%23IEnumerable%7BTElement%2CPhilosoft%23IEnumerator%7BTElement%7D%7D%23GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IEnumerator.cs/#L26">View Source</a>
+  </span>
+  <a id="Philosoft_IEnumerator_1_Philosoft_IEnumerable_TElement_Philosoft_IEnumerator_TElement___GetEnumerator_" data-uid="Philosoft.IEnumerator`1.Philosoft#IEnumerable{TElement,Philosoft#IEnumerator{TElement}}#GetEnumerator*"></a>
+  <h4 id="Philosoft_IEnumerator_1_Philosoft_IEnumerable_TElement_Philosoft_IEnumerator_TElement___GetEnumerator" data-uid="Philosoft.IEnumerator`1.Philosoft#IEnumerable{TElement,Philosoft#IEnumerator{TElement}}#GetEnumerator">IEnumerable&lt;TElement, IEnumerator&lt;TElement&gt;&gt;.GetEnumerator()</h4>
+  <div class="markdown level1 summary"><p>Returns an enumerator that iterates through the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerator&lt;TElement&gt; IEnumerable&lt;TElement, IEnumerator&lt;TElement&gt;&gt;.GetEnumerator()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Philosoft.IEnumerator-1.html">IEnumerator</a>&lt;TElement&gt;</td>
+        <td><p>An enumerator that can be used to iterate through the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_IEnumerator_1_System_Collections_IEnumerator_Current.md&amp;value=---%0Auid%3A%20Philosoft.IEnumerator%601.System%23Collections%23IEnumerator%23Current%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IEnumerator.cs/#L29">View Source</a>
+  </span>
+  <a id="Philosoft_IEnumerator_1_System_Collections_IEnumerator_Current_" data-uid="Philosoft.IEnumerator`1.System#Collections#IEnumerator#Current*"></a>
+  <h4 id="Philosoft_IEnumerator_1_System_Collections_IEnumerator_Current" data-uid="Philosoft.IEnumerator`1.System#Collections#IEnumerator#Current">IEnumerator.Current</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">object IEnumerator.Current { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_IEnumerator_1_System_Collections_IEnumerator_Reset.md&amp;value=---%0Auid%3A%20Philosoft.IEnumerator%601.System%23Collections%23IEnumerator%23Reset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IEnumerator.cs/#L32">View Source</a>
+  </span>
+  <a id="Philosoft_IEnumerator_1_System_Collections_IEnumerator_Reset_" data-uid="Philosoft.IEnumerator`1.System#Collections#IEnumerator#Reset*"></a>
+  <h4 id="Philosoft_IEnumerator_1_System_Collections_IEnumerator_Reset" data-uid="Philosoft.IEnumerator`1.System#Collections#IEnumerator#Reset">IEnumerator.Reset()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IEnumerator.Reset()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_IEnumerator_1_System_IDisposable_Dispose.md&amp;value=---%0Auid%3A%20Philosoft.IEnumerator%601.System%23IDisposable%23Dispose%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IEnumerator.cs/#L35">View Source</a>
+  </span>
+  <a id="Philosoft_IEnumerator_1_System_IDisposable_Dispose_" data-uid="Philosoft.IEnumerator`1.System#IDisposable#Dispose*"></a>
+  <h4 id="Philosoft_IEnumerator_1_System_IDisposable_Dispose" data-uid="Philosoft.IEnumerator`1.System#IDisposable#Dispose">IDisposable.Dispose()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IDisposable.Dispose()</code></pre>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Philosoft.Extensions.html#Philosoft_Extensions_Fold__2_Philosoft_IEnumerable___0___1__System_Func___0___0___0____0_">Extensions.Fold&lt;TElement, TEnumerator&gt;(IEnumerable&lt;TElement, TEnumerator&gt;, Func&lt;TElement, TElement, TElement&gt;, TElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.Extensions.html#Philosoft_Extensions_Occurrences__2_Philosoft_IEnumerable___0___1____0_">Extensions.Occurrences&lt;TElement, TEnumerator&gt;(IEnumerable&lt;TElement, TEnumerator&gt;, TElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.Extensions.html#Philosoft_Extensions_Occurrences__2_Philosoft_IEnumerable___0___1__System_Predicate___0__">Extensions.Occurrences&lt;TElement, TEnumerator&gt;(IEnumerable&lt;TElement, TEnumerator&gt;, Predicate&lt;TElement&gt;)</a>
   </div>
 </article>
           </div>

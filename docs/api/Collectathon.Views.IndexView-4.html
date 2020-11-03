@@ -80,12 +80,12 @@
     <h5>Implements</h5>
     <div><a class="xref" href="Philosoft.IContainable-1.html">IContainable</a>&lt;TIndex&gt;</div>
     <div><a class="xref" href="Philosoft.IEnumerable-2.html">IEnumerable</a>&lt;TIndex, <a class="xref" href="Collectathon.Views.IndexView-4.Enumerator.html">IndexView.Enumerator</a>&lt;&gt;&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TIndex&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Collectathon.Views.IndexView-4.html">IndexView</a>&lt;TIndex, TElement, TCollection, TEnumerator&gt;&gt;</div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetype.equals#System_ValueType_Equals_System_Object_">ValueType.Equals(Object)</a>
-    </div>
     <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetype.gethashcode#System_ValueType_GetHashCode">ValueType.GetHashCode()</a>
     </div>
@@ -106,7 +106,7 @@
   <h6><strong>Assembly</strong>: Collectathon.dll</h6>
   <h5 id="Collectathon_Views_IndexView_4_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public struct IndexView&lt;TIndex, TElement, TCollection, TEnumerator&gt; : IContainable&lt;TIndex&gt;, IEnumerable&lt;TIndex, IndexView&lt;TIndex, TElement, TCollection, TEnumerator&gt;.Enumerator&gt; where TIndex : IEquatable&lt;TIndex&gt; where TCollection : IAssociator&lt;TIndex, TElement, TCollection, TEnumerator&gt;, IEnumerable&lt;Association&lt;TIndex, TElement&gt;, TEnumerator&gt; where TEnumerator : IEnumerator&lt;Association&lt;TIndex, TElement&gt;&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public struct IndexView&lt;TIndex, TElement, TCollection, TEnumerator&gt; : IContainable&lt;TIndex&gt;, IEnumerable&lt;TIndex, IndexView&lt;TIndex, TElement, TCollection, TEnumerator&gt;.Enumerator&gt;, IEnumerable&lt;TIndex&gt;, IEnumerable, IEquatable&lt;IndexView&lt;TIndex, TElement, TCollection, TEnumerator&gt;&gt; where TIndex : IEquatable&lt;TIndex&gt; where TCollection : IAssociator&lt;TIndex, TElement, TCollection, TEnumerator&gt;, IEnumerable&lt;Association&lt;TIndex, TElement&gt;, TEnumerator&gt; where TEnumerator : IEnumerator&lt;Association&lt;TIndex, TElement&gt;&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -143,10 +143,106 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Views_IndexView_4_Equals_Collectathon_Views_IndexView__0__1__2__3__.md&amp;value=---%0Auid%3A%20Collectathon.Views.IndexView%604.Equals(Collectathon.Views.IndexView%7B%600%2C%601%2C%602%2C%603%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Views/IndexView.cs/#L43">View Source</a>
+  </span>
+  <a id="Collectathon_Views_IndexView_4_Equals_" data-uid="Collectathon.Views.IndexView`4.Equals*"></a>
+  <h4 id="Collectathon_Views_IndexView_4_Equals_Collectathon_Views_IndexView__0__1__2__3__" data-uid="Collectathon.Views.IndexView`4.Equals(Collectathon.Views.IndexView{`0,`1,`2,`3})">Equals(IndexView&lt;TIndex, TElement, TCollection, TEnumerator&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(IndexView&lt;TIndex, TElement, TCollection, TEnumerator&gt; other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Collectathon.Views.IndexView-4.html">IndexView</a>&lt;TIndex, TElement, TCollection, TEnumerator&gt;</td>
+        <td><span class="parametername">other</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Views_IndexView_4_Equals_System_Object_.md&amp;value=---%0Auid%3A%20Collectathon.Views.IndexView%604.Equals(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Views/IndexView.cs/#L33">View Source</a>
+  </span>
+  <a id="Collectathon_Views_IndexView_4_Equals_" data-uid="Collectathon.Views.IndexView`4.Equals*"></a>
+  <h4 id="Collectathon_Views_IndexView_4_Equals_System_Object_" data-uid="Collectathon.Views.IndexView`4.Equals(System.Object)">Equals(Object)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetype.equals#System_ValueType_Equals_System_Object_">ValueType.Equals(Object)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Views_IndexView_4_GetEnumerator.md&amp;value=---%0Auid%3A%20Collectathon.Views.IndexView%604.GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Views/IndexView.cs/#L28">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Views/IndexView.cs/#L46">View Source</a>
   </span>
   <a id="Collectathon_Views_IndexView_4_GetEnumerator_" data-uid="Collectathon.Views.IndexView`4.GetEnumerator*"></a>
   <h4 id="Collectathon_Views_IndexView_4_GetEnumerator" data-uid="Collectathon.Views.IndexView`4.GetEnumerator">GetEnumerator()</h4>
@@ -173,6 +269,112 @@
       </tr>
     </tbody>
   </table>
+  <h3 id="operators">Operators
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Views_IndexView_4_op_Equality_Collectathon_Views_IndexView__0__1__2__3__Collectathon_Views_IndexView__0__1__2__3__.md&amp;value=---%0Auid%3A%20Collectathon.Views.IndexView%604.op_Equality(Collectathon.Views.IndexView%7B%600%2C%601%2C%602%2C%603%7D%2CCollectathon.Views.IndexView%7B%600%2C%601%2C%602%2C%603%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Views/IndexView.cs/#L20">View Source</a>
+  </span>
+  <a id="Collectathon_Views_IndexView_4_op_Equality_" data-uid="Collectathon.Views.IndexView`4.op_Equality*"></a>
+  <h4 id="Collectathon_Views_IndexView_4_op_Equality_Collectathon_Views_IndexView__0__1__2__3__Collectathon_Views_IndexView__0__1__2__3__" data-uid="Collectathon.Views.IndexView`4.op_Equality(Collectathon.Views.IndexView{`0,`1,`2,`3},Collectathon.Views.IndexView{`0,`1,`2,`3})">Equality(IndexView&lt;TIndex, TElement, TCollection, TEnumerator&gt;, IndexView&lt;TIndex, TElement, TCollection, TEnumerator&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator ==(IndexView&lt;TIndex, TElement, TCollection, TEnumerator&gt; left, IndexView&lt;TIndex, TElement, TCollection, TEnumerator&gt; right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Collectathon.Views.IndexView-4.html">IndexView</a>&lt;TIndex, TElement, TCollection, TEnumerator&gt;</td>
+        <td><span class="parametername">left</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Collectathon.Views.IndexView-4.html">IndexView</a>&lt;TIndex, TElement, TCollection, TEnumerator&gt;</td>
+        <td><span class="parametername">right</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Views_IndexView_4_op_Inequality_Collectathon_Views_IndexView__0__1__2__3__Collectathon_Views_IndexView__0__1__2__3__.md&amp;value=---%0Auid%3A%20Collectathon.Views.IndexView%604.op_Inequality(Collectathon.Views.IndexView%7B%600%2C%601%2C%602%2C%603%7D%2CCollectathon.Views.IndexView%7B%600%2C%601%2C%602%2C%603%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Views/IndexView.cs/#L18">View Source</a>
+  </span>
+  <a id="Collectathon_Views_IndexView_4_op_Inequality_" data-uid="Collectathon.Views.IndexView`4.op_Inequality*"></a>
+  <h4 id="Collectathon_Views_IndexView_4_op_Inequality_Collectathon_Views_IndexView__0__1__2__3__Collectathon_Views_IndexView__0__1__2__3__" data-uid="Collectathon.Views.IndexView`4.op_Inequality(Collectathon.Views.IndexView{`0,`1,`2,`3},Collectathon.Views.IndexView{`0,`1,`2,`3})">Inequality(IndexView&lt;TIndex, TElement, TCollection, TEnumerator&gt;, IndexView&lt;TIndex, TElement, TCollection, TEnumerator&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator !=(IndexView&lt;TIndex, TElement, TCollection, TEnumerator&gt; left, IndexView&lt;TIndex, TElement, TCollection, TEnumerator&gt; right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Collectathon.Views.IndexView-4.html">IndexView</a>&lt;TIndex, TElement, TCollection, TEnumerator&gt;</td>
+        <td><span class="parametername">left</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Collectathon.Views.IndexView-4.html">IndexView</a>&lt;TIndex, TElement, TCollection, TEnumerator&gt;</td>
+        <td><span class="parametername">right</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="eii">Explicit Interface Implementations
   </h3>
   <span class="small pull-right mobile-hide">
@@ -180,7 +382,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Views_IndexView_4_Philosoft_IContainable_TIndex__Contains__0_.md&amp;value=---%0Auid%3A%20Collectathon.Views.IndexView%604.Philosoft%23IContainable%7BTIndex%7D%23Contains(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Views/IndexView.cs/#L18">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Views/IndexView.cs/#L23">View Source</a>
   </span>
   <a id="Collectathon_Views_IndexView_4_Philosoft_IContainable_TIndex__Contains_" data-uid="Collectathon.Views.IndexView`4.Philosoft#IContainable{TIndex}#Contains*"></a>
   <h4 id="Collectathon_Views_IndexView_4_Philosoft_IContainable_TIndex__Contains__0_" data-uid="Collectathon.Views.IndexView`4.Philosoft#IContainable{TIndex}#Contains(`0)">IContainable&lt;TIndex&gt;.Contains(TIndex)</h4>
@@ -231,6 +433,15 @@
   <div>
       <a class="xref" href="Philosoft.IEnumerable-2.html">IEnumerable&lt;TElement, TEnumerator&gt;</a>
   </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">System.Collections.Generic.IEnumerable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">System.Collections.IEnumerable</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">System.IEquatable&lt;T&gt;</a>
+  </div>
 </article>
           </div>
           
@@ -242,7 +453,7 @@
                     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Views_IndexView_4.md&amp;value=---%0Auid%3A%20Collectathon.Views.IndexView%604%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Views/IndexView.cs/#L12" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/Views/IndexView.cs/#L13" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

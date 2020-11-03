@@ -110,6 +110,58 @@
       </tr>
     </tbody>
   </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_IIndexable_1_Map_System_Func__0__0__.md&amp;value=---%0Auid%3A%20Philosoft.IIndexable%601.Map(System.Func%7B%600%2C%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IIndexable`1.cs/#L18">View Source</a>
+  </span>
+  <a id="Philosoft_IIndexable_1_Map_" data-uid="Philosoft.IIndexable`1.Map*"></a>
+  <h4 id="Philosoft_IIndexable_1_Map_System_Func__0__0__" data-uid="Philosoft.IIndexable`1.Map(System.Func{`0,`0})">Map(Func&lt;TElement, TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Applies the <code data-dev-comment-type="paramref" class="paramref">func</code> to each element of this collection</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">virtual void Map(Func&lt;TElement, TElement&gt; func)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;TElement, TElement&gt;</td>
+        <td><span class="parametername">func</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.func-2">Func&lt;T,TResult&gt;</a> to apply to each element.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Philosoft_IIndexable_1_Map_System_Func__0__0___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This is a mutating operation. It mutates this collection rather than constructing a new collection for the result. This is done for two reasons. First is that we can't generalize <a class="xref" href="Philosoft.IIndexable-1.html#Philosoft_IIndexable_1_Map_System_Func__0__0__">Map(Func&lt;TElement, TElement&gt;)</a> like this while also allowing arbitrary collections to be constructed. Second is performance, as mutating in-place is substantially more efficient. <a class="xref" href="Philosoft.html">Philosoft</a> is not a pure functional programming library, it just takes inspiration in the form of more practical application of many functional principals.</p>
+</div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Philosoft.Extensions.html#Philosoft_Extensions_Count_Philosoft_ICountable_">Extensions.Count(ICountable)</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.Extensions.html#Philosoft_Extensions_Map__1_Philosoft_IIndexable___0__System_Func___0___0__">Extensions.Map&lt;TElement&gt;(IIndexable&lt;TElement&gt;, Func&lt;TElement, TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.Extensions.html#Philosoft_Extensions_IndexOf__1_Philosoft_IReadOnlyIndexable___0__System_Object_">Extensions.IndexOf&lt;TElement&gt;(IReadOnlyIndexable&lt;TElement&gt;, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.Extensions.html#Philosoft_Extensions_IndexOf__1_Philosoft_IReadOnlyIndexable___0__System_Predicate___0__">Extensions.IndexOf&lt;TElement&gt;(IReadOnlyIndexable&lt;TElement&gt;, Predicate&lt;TElement&gt;)</a>
+  </div>
 </article>
           </div>
           
