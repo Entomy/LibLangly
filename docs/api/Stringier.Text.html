@@ -639,6 +639,2515 @@ public static void Add&lt;TElement&gt;(this IAddableText&lt;TElement&gt; collect
   <h5 id="Stringier_Text_Add__1_Philosoft_IAddableText___0__System_Text_Rune___0__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>The behavior of this operation is collection dependant, and no particular location in the collection should be assumed.</p>
 </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Text_EnumerateGlyphs_System_Char___.md&amp;value=---%0Auid%3A%20Stringier.Text.EnumerateGlyphs(System.Char%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Functions/Text/EnumerateGlyphs.cs/#L18">View Source</a>
+  </span>
+  <a id="Stringier_Text_EnumerateGlyphs_" data-uid="Stringier.Text.EnumerateGlyphs*"></a>
+  <h4 id="Stringier_Text_EnumerateGlyphs_System_Char___" data-uid="Stringier.Text.EnumerateGlyphs(System.Char[])">EnumerateGlyphs(Char[])</h4>
+  <div class="markdown level1 summary"><p>Returns an enumeration of <a class="xref" href="Stringier.Glyph.html">Glyph</a> from this array.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static StringGlyphEnumerator EnumerateGlyphs(this char[] array)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>[]</td>
+        <td><span class="parametername">array</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.array">Array</a> of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a> to enumerate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.StringGlyphEnumerator.html">StringGlyphEnumerator</a></td>
+        <td><p>An enumerator for the <a class="xref" href="Stringier.Glyph.html">Glyph</a> of the <code data-dev-comment-type="paramref" class="paramref">array</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Text_EnumerateGlyphs_System_Collections_Generic_IEnumerable_System_Char__.md&amp;value=---%0Auid%3A%20Stringier.Text.EnumerateGlyphs(System.Collections.Generic.IEnumerable%7BSystem.Char%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Functions/Text/EnumerateGlyphs.cs/#L53">View Source</a>
+  </span>
+  <a id="Stringier_Text_EnumerateGlyphs_" data-uid="Stringier.Text.EnumerateGlyphs*"></a>
+  <h4 id="Stringier_Text_EnumerateGlyphs_System_Collections_Generic_IEnumerable_System_Char__" data-uid="Stringier.Text.EnumerateGlyphs(System.Collections.Generic.IEnumerable{System.Char})">EnumerateGlyphs(IEnumerable&lt;Char&gt;)</h4>
+  <div class="markdown level1 summary"><p>Returns an enumerator of <a class="xref" href="Stringier.Glyph.html">Glyph</a> from this sequence.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static SeqGlyphEnumerator EnumerateGlyphs(this IEnumerable&lt;char&gt; seq)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">seq</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable&lt;T&gt;</a> of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a> to enumerate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.SeqGlyphEnumerator.html">SeqGlyphEnumerator</a></td>
+        <td><p>An enumerator for the <a class="xref" href="Stringier.Glyph.html">Glyph</a> of the <code data-dev-comment-type="paramref" class="paramref">seq</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Text_EnumerateGlyphs_System_Memory_System_Char__.md&amp;value=---%0Auid%3A%20Stringier.Text.EnumerateGlyphs(System.Memory%7BSystem.Char%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Functions/Text/EnumerateGlyphs.cs/#L32">View Source</a>
+  </span>
+  <a id="Stringier_Text_EnumerateGlyphs_" data-uid="Stringier.Text.EnumerateGlyphs*"></a>
+  <h4 id="Stringier_Text_EnumerateGlyphs_System_Memory_System_Char__" data-uid="Stringier.Text.EnumerateGlyphs(System.Memory{System.Char})">EnumerateGlyphs(Memory&lt;Char&gt;)</h4>
+  <div class="markdown level1 summary"><p>Returns an enumerator of <a class="xref" href="Stringier.Glyph.html">Glyph</a> from this memory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static StringGlyphEnumerator EnumerateGlyphs(this Memory&lt;char&gt; memory)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">memory</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory&lt;T&gt;</a> of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a> to enumerate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.StringGlyphEnumerator.html">StringGlyphEnumerator</a></td>
+        <td><p>An enumerator for the <a class="xref" href="Stringier.Glyph.html">Glyph</a> of the <code data-dev-comment-type="paramref" class="paramref">memory</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Text_EnumerateGlyphs_System_ReadOnlyMemory_System_Char__.md&amp;value=---%0Auid%3A%20Stringier.Text.EnumerateGlyphs(System.ReadOnlyMemory%7BSystem.Char%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Functions/Text/EnumerateGlyphs.cs/#L25">View Source</a>
+  </span>
+  <a id="Stringier_Text_EnumerateGlyphs_" data-uid="Stringier.Text.EnumerateGlyphs*"></a>
+  <h4 id="Stringier_Text_EnumerateGlyphs_System_ReadOnlyMemory_System_Char__" data-uid="Stringier.Text.EnumerateGlyphs(System.ReadOnlyMemory{System.Char})">EnumerateGlyphs(ReadOnlyMemory&lt;Char&gt;)</h4>
+  <div class="markdown level1 summary"><p>Returns an enumerator of <a class="xref" href="Stringier.Glyph.html">Glyph</a> from this memory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static StringGlyphEnumerator EnumerateGlyphs(this ReadOnlyMemory&lt;char&gt; memory)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">memory</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory&lt;T&gt;</a> of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a> to enumerate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.StringGlyphEnumerator.html">StringGlyphEnumerator</a></td>
+        <td><p>An enumerator for the <a class="xref" href="Stringier.Glyph.html">Glyph</a> of the <code data-dev-comment-type="paramref" class="paramref">memory</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Text_EnumerateGlyphs_System_ReadOnlySpan_System_Char__.md&amp;value=---%0Auid%3A%20Stringier.Text.EnumerateGlyphs(System.ReadOnlySpan%7BSystem.Char%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Functions/Text/EnumerateGlyphs.cs/#L39">View Source</a>
+  </span>
+  <a id="Stringier_Text_EnumerateGlyphs_" data-uid="Stringier.Text.EnumerateGlyphs*"></a>
+  <h4 id="Stringier_Text_EnumerateGlyphs_System_ReadOnlySpan_System_Char__" data-uid="Stringier.Text.EnumerateGlyphs(System.ReadOnlySpan{System.Char})">EnumerateGlyphs(ReadOnlySpan&lt;Char&gt;)</h4>
+  <div class="markdown level1 summary"><p>Returns an enumeration of <a class="xref" href="Stringier.Glyph.html">Glyph</a> from this span.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static SpanGlyphEnumerator EnumerateGlyphs(this ReadOnlySpan&lt;char&gt; span)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">span</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan&lt;T&gt;</a> of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a> to enumerate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.SpanGlyphEnumerator.html">SpanGlyphEnumerator</a></td>
+        <td><p>An enumerator for the <a class="xref" href="Stringier.Glyph.html">Glyph</a> of the <code data-dev-comment-type="paramref" class="paramref">span</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Text_EnumerateGlyphs_System_Span_System_Char__.md&amp;value=---%0Auid%3A%20Stringier.Text.EnumerateGlyphs(System.Span%7BSystem.Char%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Functions/Text/EnumerateGlyphs.cs/#L46">View Source</a>
+  </span>
+  <a id="Stringier_Text_EnumerateGlyphs_" data-uid="Stringier.Text.EnumerateGlyphs*"></a>
+  <h4 id="Stringier_Text_EnumerateGlyphs_System_Span_System_Char__" data-uid="Stringier.Text.EnumerateGlyphs(System.Span{System.Char})">EnumerateGlyphs(Span&lt;Char&gt;)</h4>
+  <div class="markdown level1 summary"><p>Returns an enumeration of <a class="xref" href="Stringier.Glyph.html">Glyph</a> from this span.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static SpanGlyphEnumerator EnumerateGlyphs(this Span&lt;char&gt; span)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">span</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span&lt;T&gt;</a> of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a> to enumerate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.SpanGlyphEnumerator.html">SpanGlyphEnumerator</a></td>
+        <td><p>An enumerator for the <a class="xref" href="Stringier.Glyph.html">Glyph</a> of the <code data-dev-comment-type="paramref" class="paramref">span</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Text_EnumerateGlyphs_System_String_.md&amp;value=---%0Auid%3A%20Stringier.Text.EnumerateGlyphs(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Functions/Text/EnumerateGlyphs.cs/#L11">View Source</a>
+  </span>
+  <a id="Stringier_Text_EnumerateGlyphs_" data-uid="Stringier.Text.EnumerateGlyphs*"></a>
+  <h4 id="Stringier_Text_EnumerateGlyphs_System_String_" data-uid="Stringier.Text.EnumerateGlyphs(System.String)">EnumerateGlyphs(String)</h4>
+  <div class="markdown level1 summary"><p>Returns an enumeration of <a class="xref" href="Stringier.Glyph.html">Glyph</a> from this string.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static StringGlyphEnumerator EnumerateGlyphs(this string string)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">string</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a> to enumerate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.StringGlyphEnumerator.html">StringGlyphEnumerator</a></td>
+        <td><p>An enumerator for the <a class="xref" href="Stringier.Glyph.html">Glyph</a> of the <code data-dev-comment-type="paramref" class="paramref">string</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Text_EnumerateRunes_System_Char___.md&amp;value=---%0Auid%3A%20Stringier.Text.EnumerateRunes(System.Char%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Functions/Text/EnumerateRunes.cs/#L25">View Source</a>
+  </span>
+  <a id="Stringier_Text_EnumerateRunes_" data-uid="Stringier.Text.EnumerateRunes*"></a>
+  <h4 id="Stringier_Text_EnumerateRunes_System_Char___" data-uid="Stringier.Text.EnumerateRunes(System.Char[])">EnumerateRunes(Char[])</h4>
+  <div class="markdown level1 summary"><p>Returns an enumeration of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a> from this array.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static SpanRuneEnumerator EnumerateRunes(this char[] array)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>[]</td>
+        <td><span class="parametername">array</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.spanruneenumerator">SpanRuneEnumerator</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Stringier_Text_EnumerateRunes_System_Char____remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Invalid sequences will be represented in the enumeration by <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune.replacementchar#System_Text_Rune_ReplacementChar">ReplacementChar</a>.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Text_EnumerateRunes_System_Collections_Generic_IEnumerable_System_Char__.md&amp;value=---%0Auid%3A%20Stringier.Text.EnumerateRunes(System.Collections.Generic.IEnumerable%7BSystem.Char%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Functions/Text/EnumerateRunes.cs/#L65">View Source</a>
+  </span>
+  <a id="Stringier_Text_EnumerateRunes_" data-uid="Stringier.Text.EnumerateRunes*"></a>
+  <h4 id="Stringier_Text_EnumerateRunes_System_Collections_Generic_IEnumerable_System_Char__" data-uid="Stringier.Text.EnumerateRunes(System.Collections.Generic.IEnumerable{System.Char})">EnumerateRunes(IEnumerable&lt;Char&gt;)</h4>
+  <div class="markdown level1 summary"><p>Returns an enumeration of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a> from the provided sequence.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static SeqRuneEnumerator EnumerateRunes(this IEnumerable&lt;char&gt; enumerable)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">enumerable</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.SeqRuneEnumerator.html">SeqRuneEnumerator</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Stringier_Text_EnumerateRunes_System_Collections_Generic_IEnumerable_System_Char___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Invalid sequences will be represented in the enumeration by <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune.replacementchar#System_Text_Rune_ReplacementChar">ReplacementChar</a>.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Text_EnumerateRunes_System_ReadOnlySpan_System_Char__.md&amp;value=---%0Auid%3A%20Stringier.Text.EnumerateRunes(System.ReadOnlySpan%7BSystem.Char%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Functions/Text/EnumerateRunes.cs/#L38">View Source</a>
+  </span>
+  <a id="Stringier_Text_EnumerateRunes_" data-uid="Stringier.Text.EnumerateRunes*"></a>
+  <h4 id="Stringier_Text_EnumerateRunes_System_ReadOnlySpan_System_Char__" data-uid="Stringier.Text.EnumerateRunes(System.ReadOnlySpan{System.Char})">EnumerateRunes(ReadOnlySpan&lt;Char&gt;)</h4>
+  <div class="markdown level1 summary"><p>Returns an enumeration of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a> from the provided span.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static SpanRuneEnumerator EnumerateRunes(this ReadOnlySpan&lt;char&gt; span)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">span</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.spanruneenumerator">SpanRuneEnumerator</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Stringier_Text_EnumerateRunes_System_ReadOnlySpan_System_Char___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Invalid sequences will be represented in the enumeration by <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune.replacementchar#System_Text_Rune_ReplacementChar">ReplacementChar</a>.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Text_EnumerateRunes_System_Span_System_Char__.md&amp;value=---%0Auid%3A%20Stringier.Text.EnumerateRunes(System.Span%7BSystem.Char%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Functions/Text/EnumerateRunes.cs/#L52">View Source</a>
+  </span>
+  <a id="Stringier_Text_EnumerateRunes_" data-uid="Stringier.Text.EnumerateRunes*"></a>
+  <h4 id="Stringier_Text_EnumerateRunes_System_Span_System_Char__" data-uid="Stringier.Text.EnumerateRunes(System.Span{System.Char})">EnumerateRunes(Span&lt;Char&gt;)</h4>
+  <div class="markdown level1 summary"><p>Returns an enumeration of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a> from the provided span.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static SpanRuneEnumerator EnumerateRunes(this Span&lt;char&gt; span)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">span</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.spanruneenumerator">SpanRuneEnumerator</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Stringier_Text_EnumerateRunes_System_Span_System_Char___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Invalid sequences will be represented in the enumeration by <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune.replacementchar#System_Text_Rune_ReplacementChar">ReplacementChar</a>.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Text_EnumerateRunes_System_String_.md&amp;value=---%0Auid%3A%20Stringier.Text.EnumerateRunes(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Functions/Text/EnumerateRunes.cs/#L12">View Source</a>
+  </span>
+  <a id="Stringier_Text_EnumerateRunes_" data-uid="Stringier.Text.EnumerateRunes*"></a>
+  <h4 id="Stringier_Text_EnumerateRunes_System_String_" data-uid="Stringier.Text.EnumerateRunes(System.String)">EnumerateRunes(String)</h4>
+  <div class="markdown level1 summary"><p>Returns an enumeration of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a> from this string.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static StringRuneEnumerator EnumerateRunes(this string string)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">string</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.stringruneenumerator">StringRuneEnumerator</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Stringier_Text_EnumerateRunes_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Invalid sequences will be represented in the enumeration by <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune.replacementchar#System_Text_Rune_ReplacementChar">ReplacementChar</a>.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Text_GetGlyphAt_System_Char___System_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Text.GetGlyphAt(System.Char%5B%5D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Functions/Text/GetGlyphAt.cs/#L21">View Source</a>
+  </span>
+  <a id="Stringier_Text_GetGlyphAt_" data-uid="Stringier.Text.GetGlyphAt*"></a>
+  <h4 id="Stringier_Text_GetGlyphAt_System_Char___System_Int32_" data-uid="Stringier.Text.GetGlyphAt(System.Char[],System.Int32)">GetGlyphAt(Char[], Int32)</h4>
+  <div class="markdown level1 summary"><p>Gets the <a class="xref" href="Stringier.Glyph.html">Glyph</a> which begins at index <code data-dev-comment-type="paramref" class="paramref">index</code> in string <code data-dev-comment-type="paramref" class="paramref">input</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Glyph GetGlyphAt(this char[] input, int index)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>[]</td>
+        <td><span class="parametername">input</span></td>
+        <td><p>The input <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.array">Array</a> of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>The index within the <code data-dev-comment-type="paramref" class="paramref">input</code> to get the <a class="xref" href="Stringier.Glyph.html">Glyph</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Glyph.html">Glyph</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Text_GetGlyphAt_System_Char___System_Int32_System_Int32__.md&amp;value=---%0Auid%3A%20Stringier.Text.GetGlyphAt(System.Char%5B%5D%2CSystem.Int32%2CSystem.Int32%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Functions/Text/GetGlyphAt.cs/#L57">View Source</a>
+  </span>
+  <a id="Stringier_Text_GetGlyphAt_" data-uid="Stringier.Text.GetGlyphAt*"></a>
+  <h4 id="Stringier_Text_GetGlyphAt_System_Char___System_Int32_System_Int32__" data-uid="Stringier.Text.GetGlyphAt(System.Char[],System.Int32,System.Int32@)">GetGlyphAt(Char[], Int32, out Int32)</h4>
+  <div class="markdown level1 summary"><p>Gets the <a class="xref" href="Stringier.Glyph.html">Glyph</a> which begins at index <code data-dev-comment-type="paramref" class="paramref">index</code> in string <code data-dev-comment-type="paramref" class="paramref">input</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Glyph GetGlyphAt(this char[] input, int index, out int newIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>[]</td>
+        <td><span class="parametername">input</span></td>
+        <td><p>The input <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.array">Array</a> of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>The index within the <code data-dev-comment-type="paramref" class="paramref">input</code> to get the <a class="xref" href="Stringier.Glyph.html">Glyph</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">newIndex</span></td>
+        <td><p>The within the <code data-dev-comment-type="paramref" class="paramref">input</code> after retrieving the entire <a class="xref" href="Stringier.Glyph.html">Glyph</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Glyph.html">Glyph</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Text_GetGlyphAt_System_ReadOnlySpan_System_Char__System_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Text.GetGlyphAt(System.ReadOnlySpan%7BSystem.Char%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Functions/Text/GetGlyphAt.cs/#L38">View Source</a>
+  </span>
+  <a id="Stringier_Text_GetGlyphAt_" data-uid="Stringier.Text.GetGlyphAt*"></a>
+  <h4 id="Stringier_Text_GetGlyphAt_System_ReadOnlySpan_System_Char__System_Int32_" data-uid="Stringier.Text.GetGlyphAt(System.ReadOnlySpan{System.Char},System.Int32)">GetGlyphAt(ReadOnlySpan&lt;Char&gt;, Int32)</h4>
+  <div class="markdown level1 summary"><p>Gets the <a class="xref" href="Stringier.Glyph.html">Glyph</a> which begins at index <code data-dev-comment-type="paramref" class="paramref">index</code> in string <code data-dev-comment-type="paramref" class="paramref">input</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Glyph GetGlyphAt(this ReadOnlySpan&lt;char&gt; input, int index)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">input</span></td>
+        <td><p>The input <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan&lt;T&gt;</a> of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>The index within the <code data-dev-comment-type="paramref" class="paramref">input</code> to get the <a class="xref" href="Stringier.Glyph.html">Glyph</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Glyph.html">Glyph</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Text_GetGlyphAt_System_ReadOnlySpan_System_Char__System_Int32_System_Int32__.md&amp;value=---%0Auid%3A%20Stringier.Text.GetGlyphAt(System.ReadOnlySpan%7BSystem.Char%7D%2CSystem.Int32%2CSystem.Int32%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Functions/Text/GetGlyphAt.cs/#L76">View Source</a>
+  </span>
+  <a id="Stringier_Text_GetGlyphAt_" data-uid="Stringier.Text.GetGlyphAt*"></a>
+  <h4 id="Stringier_Text_GetGlyphAt_System_ReadOnlySpan_System_Char__System_Int32_System_Int32__" data-uid="Stringier.Text.GetGlyphAt(System.ReadOnlySpan{System.Char},System.Int32,System.Int32@)">GetGlyphAt(ReadOnlySpan&lt;Char&gt;, Int32, out Int32)</h4>
+  <div class="markdown level1 summary"><p>Gets the <a class="xref" href="Stringier.Glyph.html">Glyph</a> which begins at index <code data-dev-comment-type="paramref" class="paramref">index</code> in string <code data-dev-comment-type="paramref" class="paramref">input</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Glyph GetGlyphAt(this ReadOnlySpan&lt;char&gt; input, int index, out int newIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">input</span></td>
+        <td><p>The input <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan&lt;T&gt;</a> of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>The index within the <code data-dev-comment-type="paramref" class="paramref">input</code> to get the <a class="xref" href="Stringier.Glyph.html">Glyph</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">newIndex</span></td>
+        <td><p>The within the <code data-dev-comment-type="paramref" class="paramref">input</code> after retrieving the entire <a class="xref" href="Stringier.Glyph.html">Glyph</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Glyph.html">Glyph</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Text_GetGlyphAt_System_Span_System_Char__System_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Text.GetGlyphAt(System.Span%7BSystem.Char%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Functions/Text/GetGlyphAt.cs/#L31">View Source</a>
+  </span>
+  <a id="Stringier_Text_GetGlyphAt_" data-uid="Stringier.Text.GetGlyphAt*"></a>
+  <h4 id="Stringier_Text_GetGlyphAt_System_Span_System_Char__System_Int32_" data-uid="Stringier.Text.GetGlyphAt(System.Span{System.Char},System.Int32)">GetGlyphAt(Span&lt;Char&gt;, Int32)</h4>
+  <div class="markdown level1 summary"><p>Gets the <a class="xref" href="Stringier.Glyph.html">Glyph</a> which begins at index <code data-dev-comment-type="paramref" class="paramref">index</code> in string <code data-dev-comment-type="paramref" class="paramref">input</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Glyph GetGlyphAt(this Span&lt;char&gt; input, int index)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">input</span></td>
+        <td><p>The input <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span&lt;T&gt;</a> of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>The index within the <code data-dev-comment-type="paramref" class="paramref">input</code> to get the <a class="xref" href="Stringier.Glyph.html">Glyph</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Glyph.html">Glyph</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Text_GetGlyphAt_System_Span_System_Char__System_Int32_System_Int32__.md&amp;value=---%0Auid%3A%20Stringier.Text.GetGlyphAt(System.Span%7BSystem.Char%7D%2CSystem.Int32%2CSystem.Int32%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Functions/Text/GetGlyphAt.cs/#L68">View Source</a>
+  </span>
+  <a id="Stringier_Text_GetGlyphAt_" data-uid="Stringier.Text.GetGlyphAt*"></a>
+  <h4 id="Stringier_Text_GetGlyphAt_System_Span_System_Char__System_Int32_System_Int32__" data-uid="Stringier.Text.GetGlyphAt(System.Span{System.Char},System.Int32,System.Int32@)">GetGlyphAt(Span&lt;Char&gt;, Int32, out Int32)</h4>
+  <div class="markdown level1 summary"><p>Gets the <a class="xref" href="Stringier.Glyph.html">Glyph</a> which begins at index <code data-dev-comment-type="paramref" class="paramref">index</code> in string <code data-dev-comment-type="paramref" class="paramref">input</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Glyph GetGlyphAt(this Span&lt;char&gt; input, int index, out int newIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">input</span></td>
+        <td><p>The input <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span&lt;T&gt;</a> of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>The index within the <code data-dev-comment-type="paramref" class="paramref">input</code> to get the <a class="xref" href="Stringier.Glyph.html">Glyph</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">newIndex</span></td>
+        <td><p>The within the <code data-dev-comment-type="paramref" class="paramref">input</code> after retrieving the entire <a class="xref" href="Stringier.Glyph.html">Glyph</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Glyph.html">Glyph</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Text_GetGlyphAt_System_String_System_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Text.GetGlyphAt(System.String%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Functions/Text/GetGlyphAt.cs/#L11">View Source</a>
+  </span>
+  <a id="Stringier_Text_GetGlyphAt_" data-uid="Stringier.Text.GetGlyphAt*"></a>
+  <h4 id="Stringier_Text_GetGlyphAt_System_String_System_Int32_" data-uid="Stringier.Text.GetGlyphAt(System.String,System.Int32)">GetGlyphAt(String, Int32)</h4>
+  <div class="markdown level1 summary"><p>Gets the <a class="xref" href="Stringier.Glyph.html">Glyph</a> which begins at index <code data-dev-comment-type="paramref" class="paramref">index</code> in string <code data-dev-comment-type="paramref" class="paramref">input</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Glyph GetGlyphAt(this string input, int index)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">input</span></td>
+        <td><p>The input <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>The index within the <code data-dev-comment-type="paramref" class="paramref">input</code> to get the <a class="xref" href="Stringier.Glyph.html">Glyph</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Glyph.html">Glyph</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Text_GetGlyphAt_System_String_System_Int32_System_Int32__.md&amp;value=---%0Auid%3A%20Stringier.Text.GetGlyphAt(System.String%2CSystem.Int32%2CSystem.Int32%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Functions/Text/GetGlyphAt.cs/#L46">View Source</a>
+  </span>
+  <a id="Stringier_Text_GetGlyphAt_" data-uid="Stringier.Text.GetGlyphAt*"></a>
+  <h4 id="Stringier_Text_GetGlyphAt_System_String_System_Int32_System_Int32__" data-uid="Stringier.Text.GetGlyphAt(System.String,System.Int32,System.Int32@)">GetGlyphAt(String, Int32, out Int32)</h4>
+  <div class="markdown level1 summary"><p>Gets the <a class="xref" href="Stringier.Glyph.html">Glyph</a> which begins at index <code data-dev-comment-type="paramref" class="paramref">index</code> in string <code data-dev-comment-type="paramref" class="paramref">input</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Glyph GetGlyphAt(this string input, int index, out int newIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">input</span></td>
+        <td><p>The input <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>The index within the <code data-dev-comment-type="paramref" class="paramref">input</code> to get the <a class="xref" href="Stringier.Glyph.html">Glyph</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">newIndex</span></td>
+        <td><p>The within the <code data-dev-comment-type="paramref" class="paramref">input</code> after retrieving the entire <a class="xref" href="Stringier.Glyph.html">Glyph</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Glyph.html">Glyph</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Text_GetRuneAt_System_Char___System_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Text.GetRuneAt(System.Char%5B%5D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Functions/Text/GetRuneAt.cs/#L24">View Source</a>
+  </span>
+  <a id="Stringier_Text_GetRuneAt_" data-uid="Stringier.Text.GetRuneAt*"></a>
+  <h4 id="Stringier_Text_GetRuneAt_System_Char___System_Int32_" data-uid="Stringier.Text.GetRuneAt(System.Char[],System.Int32)">GetRuneAt(Char[], Int32)</h4>
+  <div class="markdown level1 summary"><p>Gets the <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a> which begins at index <code data-dev-comment-type="paramref" class="paramref">index</code> in string <code data-dev-comment-type="paramref" class="paramref">input</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Rune GetRuneAt(this char[] input, int index)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>[]</td>
+        <td><span class="parametername">input</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">index</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Stringier_Text_GetRuneAt_System_Char___System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Throws if <code data-dev-comment-type="paramref" class="paramref">input</code> is null, if <code data-dev-comment-type="paramref" class="paramref">index</code> is out of range, or if <code data-dev-comment-type="paramref" class="paramref">index</code> does not reference the start of a valid scalar value within <code data-dev-comment-type="paramref" class="paramref">input</code>.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Text_GetRuneAt_System_Char___System_Int32_System_Int32__.md&amp;value=---%0Auid%3A%20Stringier.Text.GetRuneAt(System.Char%5B%5D%2CSystem.Int32%2CSystem.Int32%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Functions/Text/GetRuneAt.cs/#L62">View Source</a>
+  </span>
+  <a id="Stringier_Text_GetRuneAt_" data-uid="Stringier.Text.GetRuneAt*"></a>
+  <h4 id="Stringier_Text_GetRuneAt_System_Char___System_Int32_System_Int32__" data-uid="Stringier.Text.GetRuneAt(System.Char[],System.Int32,System.Int32@)">GetRuneAt(Char[], Int32, out Int32)</h4>
+  <div class="markdown level1 summary"><p>Gets the <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a> which begins at index <code data-dev-comment-type="paramref" class="paramref">index</code> in string <code data-dev-comment-type="paramref" class="paramref">input</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Rune GetRuneAt(this char[] input, int index, out int newIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>[]</td>
+        <td><span class="parametername">input</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">index</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">newIndex</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Stringier_Text_GetRuneAt_System_Char___System_Int32_System_Int32___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Throws if <code data-dev-comment-type="paramref" class="paramref">input</code> is null, if <code data-dev-comment-type="paramref" class="paramref">index</code> is out of range, or if <code data-dev-comment-type="paramref" class="paramref">index</code> does not reference the start of a valid scalar value within <code data-dev-comment-type="paramref" class="paramref">input</code>.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Text_GetRuneAt_System_ReadOnlySpan_System_Char__System_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Text.GetRuneAt(System.ReadOnlySpan%7BSystem.Char%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Functions/Text/GetRuneAt.cs/#L43">View Source</a>
+  </span>
+  <a id="Stringier_Text_GetRuneAt_" data-uid="Stringier.Text.GetRuneAt*"></a>
+  <h4 id="Stringier_Text_GetRuneAt_System_ReadOnlySpan_System_Char__System_Int32_" data-uid="Stringier.Text.GetRuneAt(System.ReadOnlySpan{System.Char},System.Int32)">GetRuneAt(ReadOnlySpan&lt;Char&gt;, Int32)</h4>
+  <div class="markdown level1 summary"><p>Gets the <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a> which begins at index <code data-dev-comment-type="paramref" class="paramref">index</code> in string <code data-dev-comment-type="paramref" class="paramref">input</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Rune GetRuneAt(this ReadOnlySpan&lt;char&gt; input, int index)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">input</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">index</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Stringier_Text_GetRuneAt_System_ReadOnlySpan_System_Char__System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Throws if <code data-dev-comment-type="paramref" class="paramref">index</code> is out of range, or if <code data-dev-comment-type="paramref" class="paramref">index</code> does not reference the start of a valid scalar value within <code data-dev-comment-type="paramref" class="paramref">input</code>.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Text_GetRuneAt_System_ReadOnlySpan_System_Char__System_Int32_System_Int32__.md&amp;value=---%0Auid%3A%20Stringier.Text.GetRuneAt(System.ReadOnlySpan%7BSystem.Char%7D%2CSystem.Int32%2CSystem.Int32%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Functions/Text/GetRuneAt.cs/#L81">View Source</a>
+  </span>
+  <a id="Stringier_Text_GetRuneAt_" data-uid="Stringier.Text.GetRuneAt*"></a>
+  <h4 id="Stringier_Text_GetRuneAt_System_ReadOnlySpan_System_Char__System_Int32_System_Int32__" data-uid="Stringier.Text.GetRuneAt(System.ReadOnlySpan{System.Char},System.Int32,System.Int32@)">GetRuneAt(ReadOnlySpan&lt;Char&gt;, Int32, out Int32)</h4>
+  <div class="markdown level1 summary"><p>Gets the <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a> which begins at index <code data-dev-comment-type="paramref" class="paramref">index</code> in string <code data-dev-comment-type="paramref" class="paramref">input</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Rune GetRuneAt(this ReadOnlySpan&lt;char&gt; input, int index, out int newIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">input</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">index</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">newIndex</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Stringier_Text_GetRuneAt_System_ReadOnlySpan_System_Char__System_Int32_System_Int32___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Throws if <code data-dev-comment-type="paramref" class="paramref">index</code> is out of range, or if <code data-dev-comment-type="paramref" class="paramref">index</code> does not reference the start of a valid scalar value within <code data-dev-comment-type="paramref" class="paramref">input</code>.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Text_GetRuneAt_System_Span_System_Char__System_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Text.GetRuneAt(System.Span%7BSystem.Char%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Functions/Text/GetRuneAt.cs/#L35">View Source</a>
+  </span>
+  <a id="Stringier_Text_GetRuneAt_" data-uid="Stringier.Text.GetRuneAt*"></a>
+  <h4 id="Stringier_Text_GetRuneAt_System_Span_System_Char__System_Int32_" data-uid="Stringier.Text.GetRuneAt(System.Span{System.Char},System.Int32)">GetRuneAt(Span&lt;Char&gt;, Int32)</h4>
+  <div class="markdown level1 summary"><p>Gets the <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a> which begins at index <code data-dev-comment-type="paramref" class="paramref">index</code> in string <code data-dev-comment-type="paramref" class="paramref">input</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Rune GetRuneAt(this Span&lt;char&gt; input, int index)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">input</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">index</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Stringier_Text_GetRuneAt_System_Span_System_Char__System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Throws if <code data-dev-comment-type="paramref" class="paramref">index</code> is out of range, or if <code data-dev-comment-type="paramref" class="paramref">index</code> does not reference the start of a valid scalar value within <code data-dev-comment-type="paramref" class="paramref">input</code>.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Text_GetRuneAt_System_Span_System_Char__System_Int32_System_Int32__.md&amp;value=---%0Auid%3A%20Stringier.Text.GetRuneAt(System.Span%7BSystem.Char%7D%2CSystem.Int32%2CSystem.Int32%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Functions/Text/GetRuneAt.cs/#L73">View Source</a>
+  </span>
+  <a id="Stringier_Text_GetRuneAt_" data-uid="Stringier.Text.GetRuneAt*"></a>
+  <h4 id="Stringier_Text_GetRuneAt_System_Span_System_Char__System_Int32_System_Int32__" data-uid="Stringier.Text.GetRuneAt(System.Span{System.Char},System.Int32,System.Int32@)">GetRuneAt(Span&lt;Char&gt;, Int32, out Int32)</h4>
+  <div class="markdown level1 summary"><p>Gets the <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a> which begins at index <code data-dev-comment-type="paramref" class="paramref">index</code> in string <code data-dev-comment-type="paramref" class="paramref">input</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Rune GetRuneAt(this Span&lt;char&gt; input, int index, out int newIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">input</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">index</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">newIndex</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Stringier_Text_GetRuneAt_System_Span_System_Char__System_Int32_System_Int32___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Throws if <code data-dev-comment-type="paramref" class="paramref">index</code> is out of range, or if <code data-dev-comment-type="paramref" class="paramref">index</code> does not reference the start of a valid scalar value within <code data-dev-comment-type="paramref" class="paramref">input</code>.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Text_GetRuneAt_System_String_System_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Text.GetRuneAt(System.String%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Functions/Text/GetRuneAt.cs/#L13">View Source</a>
+  </span>
+  <a id="Stringier_Text_GetRuneAt_" data-uid="Stringier.Text.GetRuneAt*"></a>
+  <h4 id="Stringier_Text_GetRuneAt_System_String_System_Int32_" data-uid="Stringier.Text.GetRuneAt(System.String,System.Int32)">GetRuneAt(String, Int32)</h4>
+  <div class="markdown level1 summary"><p>Gets the <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a> which begins at index <code data-dev-comment-type="paramref" class="paramref">index</code> in string <code data-dev-comment-type="paramref" class="paramref">input</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Rune GetRuneAt(this string input, int index)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">input</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">index</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Stringier_Text_GetRuneAt_System_String_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Throws if <code data-dev-comment-type="paramref" class="paramref">input</code> is null, if <code data-dev-comment-type="paramref" class="paramref">index</code> is out of range, or if <code data-dev-comment-type="paramref" class="paramref">index</code> does not reference the start of a valid scalar value within <code data-dev-comment-type="paramref" class="paramref">input</code>.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Text_GetRuneAt_System_String_System_Int32_System_Int32__.md&amp;value=---%0Auid%3A%20Stringier.Text.GetRuneAt(System.String%2CSystem.Int32%2CSystem.Int32%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Functions/Text/GetRuneAt.cs/#L51">View Source</a>
+  </span>
+  <a id="Stringier_Text_GetRuneAt_" data-uid="Stringier.Text.GetRuneAt*"></a>
+  <h4 id="Stringier_Text_GetRuneAt_System_String_System_Int32_System_Int32__" data-uid="Stringier.Text.GetRuneAt(System.String,System.Int32,System.Int32@)">GetRuneAt(String, Int32, out Int32)</h4>
+  <div class="markdown level1 summary"><p>Gets the <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a> which begins at index <code data-dev-comment-type="paramref" class="paramref">index</code> in string <code data-dev-comment-type="paramref" class="paramref">input</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Rune GetRuneAt(this string input, int index, out int newIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">input</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">index</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">newIndex</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Stringier_Text_GetRuneAt_System_String_System_Int32_System_Int32___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Throws if <code data-dev-comment-type="paramref" class="paramref">input</code> is null, if <code data-dev-comment-type="paramref" class="paramref">index</code> is out of range, or if <code data-dev-comment-type="paramref" class="paramref">index</code> does not reference the start of a valid scalar value within <code data-dev-comment-type="paramref" class="paramref">input</code>.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Text_ToLower_Stringier_Glyph_.md&amp;value=---%0Auid%3A%20Stringier.Text.ToLower(Stringier.Glyph)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Functions/Text/ToLower.cs/#L27">View Source</a>
+  </span>
+  <a id="Stringier_Text_ToLower_" data-uid="Stringier.Text.ToLower*"></a>
+  <h4 id="Stringier_Text_ToLower_Stringier_Glyph_" data-uid="Stringier.Text.ToLower(Stringier.Glyph)">ToLower(Glyph)</h4>
+  <div class="markdown level1 summary"><p>Converts the value of a UNICODE grapheme cluster to its lowercase equivalent, invariant of orthography.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Glyph ToLower(this Glyph glyph)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Glyph.html">Glyph</a></td>
+        <td><span class="parametername">glyph</span></td>
+        <td><p>The UNICODE grapheme cluster to convert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Glyph.html">Glyph</a></td>
+        <td><p>The lowercase equivalent of <code data-dev-comment-type="paramref" class="paramref">glyph</code>, or the unchanged value of <code data-dev-comment-type="paramref" class="paramref">glyph</code> if <code data-dev-comment-type="paramref" class="paramref">glyph</code> is already lowercase, has no lowercase equivalent, or is not alphabetic.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Text_ToLower_Stringier_Glyph_Stringier_Linguistics_Orthography_.md&amp;value=---%0Auid%3A%20Stringier.Text.ToLower(Stringier.Glyph%2CStringier.Linguistics.Orthography)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Functions/Text/ToLower.cs/#L62">View Source</a>
+  </span>
+  <a id="Stringier_Text_ToLower_" data-uid="Stringier.Text.ToLower*"></a>
+  <h4 id="Stringier_Text_ToLower_Stringier_Glyph_Stringier_Linguistics_Orthography_" data-uid="Stringier.Text.ToLower(Stringier.Glyph,Stringier.Linguistics.Orthography)">ToLower(Glyph, Orthography)</h4>
+  <div class="markdown level1 summary"><p>Converts the value of a UNICODE grapheme cluster to its lowercase equivalent, using the casing rules of the specified orthography.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Glyph ToLower(this Glyph glyph, Orthography orthography)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Glyph.html">Glyph</a></td>
+        <td><span class="parametername">glyph</span></td>
+        <td><p>The UNICODE grapheme cluster to convert.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Stringier.Linguistics.Orthography.html">Orthography</a></td>
+        <td><span class="parametername">orthography</span></td>
+        <td><p>The <a class="xref" href="Stringier.Linguistics.Orthography.html">Orthography</a> instance describing the rules of the orthography.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Glyph.html">Glyph</a></td>
+        <td><p>The lowercase equivalent of <code data-dev-comment-type="paramref" class="paramref">glyph</code>, or the unchanged value of <code data-dev-comment-type="paramref" class="paramref">glyph</code> if <code data-dev-comment-type="paramref" class="paramref">glyph</code> is already lowercase, has no lowercase equivalent, or is not alphabetic.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Stringier_Text_ToLower_Stringier_Glyph_Stringier_Linguistics_Orthography__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If <code data-dev-comment-type="paramref" class="paramref">orthography</code> is <span class="xref">null</span>, then the invariant should be used.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Text_ToLower_System_Char_.md&amp;value=---%0Auid%3A%20Stringier.Text.ToLower(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Functions/Text/ToLower.cs/#L13">View Source</a>
+  </span>
+  <a id="Stringier_Text_ToLower_" data-uid="Stringier.Text.ToLower*"></a>
+  <h4 id="Stringier_Text_ToLower_System_Char_" data-uid="Stringier.Text.ToLower(System.Char)">ToLower(Char)</h4>
+  <div class="markdown level1 summary"><p>Converts the value of a UTF-16 code unit to its lowercase form, invariant of orthography.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static char ToLower(this char char)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a></td>
+        <td><span class="parametername">char</span></td>
+        <td><p>The UTF-16 code unit to convert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a></td>
+        <td><p>The lowercase equivalent of <code data-dev-comment-type="paramref" class="paramref">char</code>, or the unchanged value of <code data-dev-comment-type="paramref" class="paramref">char</code> if <code data-dev-comment-type="paramref" class="paramref">char</code> is already lowercase, has no lowercase equivalent, or is not alphabetic.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Text_ToLower_System_Char_Stringier_Linguistics_Orthography_.md&amp;value=---%0Auid%3A%20Stringier.Text.ToLower(System.Char%2CStringier.Linguistics.Orthography)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Functions/Text/ToLower.cs/#L40">View Source</a>
+  </span>
+  <a id="Stringier_Text_ToLower_" data-uid="Stringier.Text.ToLower*"></a>
+  <h4 id="Stringier_Text_ToLower_System_Char_Stringier_Linguistics_Orthography_" data-uid="Stringier.Text.ToLower(System.Char,Stringier.Linguistics.Orthography)">ToLower(Char, Orthography)</h4>
+  <div class="markdown level1 summary"><p>Converts the value of a UTF-16 code unit to its lowercase equivalent, using the casing rules of the specified orthography.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static char ToLower(this char char, Orthography orthography)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a></td>
+        <td><span class="parametername">char</span></td>
+        <td><p>The UTF-16 code unit to convert.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Stringier.Linguistics.Orthography.html">Orthography</a></td>
+        <td><span class="parametername">orthography</span></td>
+        <td><p>The <a class="xref" href="Stringier.Linguistics.Orthography.html">Orthography</a> instance describing the rules of the orthography.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a></td>
+        <td><p>The lowercase equivalent of <code data-dev-comment-type="paramref" class="paramref">char</code>, or the unchanged value of <code data-dev-comment-type="paramref" class="paramref">char</code> if <code data-dev-comment-type="paramref" class="paramref">char</code> is already lowercase, has no lowercase equivalent, or is not alphabetic.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Stringier_Text_ToLower_System_Char_Stringier_Linguistics_Orthography__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If <code data-dev-comment-type="paramref" class="paramref">orthography</code> is <span class="xref">null</span>, then the invariant should be used.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Text_ToLower_System_Text_Rune_.md&amp;value=---%0Auid%3A%20Stringier.Text.ToLower(System.Text.Rune)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Functions/Text/ToLower.cs/#L20">View Source</a>
+  </span>
+  <a id="Stringier_Text_ToLower_" data-uid="Stringier.Text.ToLower*"></a>
+  <h4 id="Stringier_Text_ToLower_System_Text_Rune_" data-uid="Stringier.Text.ToLower(System.Text.Rune)">ToLower(Rune)</h4>
+  <div class="markdown level1 summary"><p>Converts the value of a UNICODE character to its lowercase equivalent, invariant of orthography.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Rune ToLower(this Rune rune)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a></td>
+        <td><span class="parametername">rune</span></td>
+        <td><p>The UNICODE character to convert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a></td>
+        <td><p>The lowercase equivalent of <code data-dev-comment-type="paramref" class="paramref">rune</code>, or the unchanged value of <code data-dev-comment-type="paramref" class="paramref">rune</code> if <code data-dev-comment-type="paramref" class="paramref">rune</code> is already lowercase, has no lowercase equivalent, or is not alphabetic.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Text_ToLower_System_Text_Rune_Stringier_Linguistics_Orthography_.md&amp;value=---%0Auid%3A%20Stringier.Text.ToLower(System.Text.Rune%2CStringier.Linguistics.Orthography)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Functions/Text/ToLower.cs/#L51">View Source</a>
+  </span>
+  <a id="Stringier_Text_ToLower_" data-uid="Stringier.Text.ToLower*"></a>
+  <h4 id="Stringier_Text_ToLower_System_Text_Rune_Stringier_Linguistics_Orthography_" data-uid="Stringier.Text.ToLower(System.Text.Rune,Stringier.Linguistics.Orthography)">ToLower(Rune, Orthography)</h4>
+  <div class="markdown level1 summary"><p>Converts the value of a UNICODE character to its lowercase equivalent, using the casing rules of the specified orthography.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Rune ToLower(this Rune rune, Orthography orthography)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a></td>
+        <td><span class="parametername">rune</span></td>
+        <td><p>The UNICODE character to convert.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Stringier.Linguistics.Orthography.html">Orthography</a></td>
+        <td><span class="parametername">orthography</span></td>
+        <td><p>The <a class="xref" href="Stringier.Linguistics.Orthography.html">Orthography</a> instance describing the rules of the orthography.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a></td>
+        <td><p>The lowercase equivalent of <code data-dev-comment-type="paramref" class="paramref">rune</code>, or the unchanged value of <code data-dev-comment-type="paramref" class="paramref">rune</code> if <code data-dev-comment-type="paramref" class="paramref">rune</code> is already lowercase, has no lowercase equivalent, or is not alphabetic.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Stringier_Text_ToLower_System_Text_Rune_Stringier_Linguistics_Orthography__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If <code data-dev-comment-type="paramref" class="paramref">orthography</code> is <span class="xref">null</span>, then the invariant should be used.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Text_ToTitle_Stringier_Glyph_.md&amp;value=---%0Auid%3A%20Stringier.Text.ToTitle(Stringier.Glyph)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Functions/Text/ToTitle.cs/#L27">View Source</a>
+  </span>
+  <a id="Stringier_Text_ToTitle_" data-uid="Stringier.Text.ToTitle*"></a>
+  <h4 id="Stringier_Text_ToTitle_Stringier_Glyph_" data-uid="Stringier.Text.ToTitle(Stringier.Glyph)">ToTitle(Glyph)</h4>
+  <div class="markdown level1 summary"><p>Converts the value of a UNICODE grapheme cluster to its titlecase equivalent, invariant of orthography.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Glyph ToTitle(this Glyph glyph)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Glyph.html">Glyph</a></td>
+        <td><span class="parametername">glyph</span></td>
+        <td><p>The UNICODE grapheme cluster to convert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Glyph.html">Glyph</a></td>
+        <td><p>The titlecase equivalent of <code data-dev-comment-type="paramref" class="paramref">glyph</code>, or the unchanged value of <code data-dev-comment-type="paramref" class="paramref">glyph</code> if <code data-dev-comment-type="paramref" class="paramref">glyph</code> is already titlecase, has no titlecase equivalent, or is not alphabetic.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Text_ToTitle_Stringier_Glyph_Stringier_Linguistics_Orthography_.md&amp;value=---%0Auid%3A%20Stringier.Text.ToTitle(Stringier.Glyph%2CStringier.Linguistics.Orthography)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Functions/Text/ToTitle.cs/#L62">View Source</a>
+  </span>
+  <a id="Stringier_Text_ToTitle_" data-uid="Stringier.Text.ToTitle*"></a>
+  <h4 id="Stringier_Text_ToTitle_Stringier_Glyph_Stringier_Linguistics_Orthography_" data-uid="Stringier.Text.ToTitle(Stringier.Glyph,Stringier.Linguistics.Orthography)">ToTitle(Glyph, Orthography)</h4>
+  <div class="markdown level1 summary"><p>Converts the value of a UNICODE grapheme cluster to its titlecase equivalent, using the casing rules of the specified orthography.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Glyph ToTitle(this Glyph glyph, Orthography orthography)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Glyph.html">Glyph</a></td>
+        <td><span class="parametername">glyph</span></td>
+        <td><p>The UNICODE grapheme cluster to convert.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Stringier.Linguistics.Orthography.html">Orthography</a></td>
+        <td><span class="parametername">orthography</span></td>
+        <td><p>The <a class="xref" href="Stringier.Linguistics.Orthography.html">Orthography</a> instance describing the rules of the orthography.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Glyph.html">Glyph</a></td>
+        <td><p>The titlecase equivalent of <code data-dev-comment-type="paramref" class="paramref">glyph</code>, or the unchanged value of <code data-dev-comment-type="paramref" class="paramref">glyph</code> if <code data-dev-comment-type="paramref" class="paramref">glyph</code> is already titlecase, has no titlecase equivalent, or is not alphabetic.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Stringier_Text_ToTitle_Stringier_Glyph_Stringier_Linguistics_Orthography__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If <code data-dev-comment-type="paramref" class="paramref">orthography</code> is <span class="xref">null</span>, then the invariant should be used.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Text_ToTitle_System_Char_.md&amp;value=---%0Auid%3A%20Stringier.Text.ToTitle(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Functions/Text/ToTitle.cs/#L13">View Source</a>
+  </span>
+  <a id="Stringier_Text_ToTitle_" data-uid="Stringier.Text.ToTitle*"></a>
+  <h4 id="Stringier_Text_ToTitle_System_Char_" data-uid="Stringier.Text.ToTitle(System.Char)">ToTitle(Char)</h4>
+  <div class="markdown level1 summary"><p>Converts the value of a UTF-16 code unit to its titlecase form, invariant of orthography.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static char ToTitle(this char char)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a></td>
+        <td><span class="parametername">char</span></td>
+        <td><p>The UTF-16 code unit to convert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a></td>
+        <td><p>The titlecase equivalent of <code data-dev-comment-type="paramref" class="paramref">char</code>, or the unchanged value of <code data-dev-comment-type="paramref" class="paramref">char</code> if <code data-dev-comment-type="paramref" class="paramref">char</code> is already titlecase, has no titlecase equivalent, or is not alphabetic.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Text_ToTitle_System_Char_Stringier_Linguistics_Orthography_.md&amp;value=---%0Auid%3A%20Stringier.Text.ToTitle(System.Char%2CStringier.Linguistics.Orthography)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Functions/Text/ToTitle.cs/#L40">View Source</a>
+  </span>
+  <a id="Stringier_Text_ToTitle_" data-uid="Stringier.Text.ToTitle*"></a>
+  <h4 id="Stringier_Text_ToTitle_System_Char_Stringier_Linguistics_Orthography_" data-uid="Stringier.Text.ToTitle(System.Char,Stringier.Linguistics.Orthography)">ToTitle(Char, Orthography)</h4>
+  <div class="markdown level1 summary"><p>Converts the value of a UTF-16 code unit to its titlecase equivalent, using the casing rules of the specified orthography.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static char ToTitle(this char char, Orthography orthography)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a></td>
+        <td><span class="parametername">char</span></td>
+        <td><p>The UTF-16 code unit to convert.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Stringier.Linguistics.Orthography.html">Orthography</a></td>
+        <td><span class="parametername">orthography</span></td>
+        <td><p>The <a class="xref" href="Stringier.Linguistics.Orthography.html">Orthography</a> instance describing the rules of the orthography.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a></td>
+        <td><p>The titlecase equivalent of <code data-dev-comment-type="paramref" class="paramref">char</code>, or the unchanged value of <code data-dev-comment-type="paramref" class="paramref">char</code> if <code data-dev-comment-type="paramref" class="paramref">char</code> is already titlecase, has no titlecase equivalent, or is not alphabetic.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Stringier_Text_ToTitle_System_Char_Stringier_Linguistics_Orthography__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If <code data-dev-comment-type="paramref" class="paramref">orthography</code> is <span class="xref">null</span>, then the invariant should be used.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Text_ToTitle_System_Text_Rune_.md&amp;value=---%0Auid%3A%20Stringier.Text.ToTitle(System.Text.Rune)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Functions/Text/ToTitle.cs/#L20">View Source</a>
+  </span>
+  <a id="Stringier_Text_ToTitle_" data-uid="Stringier.Text.ToTitle*"></a>
+  <h4 id="Stringier_Text_ToTitle_System_Text_Rune_" data-uid="Stringier.Text.ToTitle(System.Text.Rune)">ToTitle(Rune)</h4>
+  <div class="markdown level1 summary"><p>Converts the value of a UNICODE character to its titlecase equivalent, invariant of orthography.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Rune ToTitle(this Rune rune)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a></td>
+        <td><span class="parametername">rune</span></td>
+        <td><p>The UNICODE character to convert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a></td>
+        <td><p>The titlecase equivalent of <code data-dev-comment-type="paramref" class="paramref">rune</code>, or the unchanged value of <code data-dev-comment-type="paramref" class="paramref">rune</code> if <code data-dev-comment-type="paramref" class="paramref">rune</code> is already titlecase, has no titlecase equivalent, or is not alphabetic.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Text_ToTitle_System_Text_Rune_Stringier_Linguistics_Orthography_.md&amp;value=---%0Auid%3A%20Stringier.Text.ToTitle(System.Text.Rune%2CStringier.Linguistics.Orthography)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Functions/Text/ToTitle.cs/#L51">View Source</a>
+  </span>
+  <a id="Stringier_Text_ToTitle_" data-uid="Stringier.Text.ToTitle*"></a>
+  <h4 id="Stringier_Text_ToTitle_System_Text_Rune_Stringier_Linguistics_Orthography_" data-uid="Stringier.Text.ToTitle(System.Text.Rune,Stringier.Linguistics.Orthography)">ToTitle(Rune, Orthography)</h4>
+  <div class="markdown level1 summary"><p>Converts the value of a UNICODE character to its titlecase equivalent, using the casing rules of the specified orthography.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Rune ToTitle(this Rune rune, Orthography orthography)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a></td>
+        <td><span class="parametername">rune</span></td>
+        <td><p>The UNICODE character to convert.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Stringier.Linguistics.Orthography.html">Orthography</a></td>
+        <td><span class="parametername">orthography</span></td>
+        <td><p>The <a class="xref" href="Stringier.Linguistics.Orthography.html">Orthography</a> instance describing the rules of the orthography.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a></td>
+        <td><p>The titlecase equivalent of <code data-dev-comment-type="paramref" class="paramref">rune</code>, or the unchanged value of <code data-dev-comment-type="paramref" class="paramref">rune</code> if <code data-dev-comment-type="paramref" class="paramref">rune</code> is already titlecase, has no titlecase equivalent, or is not alphabetic.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Stringier_Text_ToTitle_System_Text_Rune_Stringier_Linguistics_Orthography__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If <code data-dev-comment-type="paramref" class="paramref">orthography</code> is <span class="xref">null</span>, then the invariant should be used.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Text_ToUpper_Stringier_Glyph_.md&amp;value=---%0Auid%3A%20Stringier.Text.ToUpper(Stringier.Glyph)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Functions/Text/ToUpper.cs/#L27">View Source</a>
+  </span>
+  <a id="Stringier_Text_ToUpper_" data-uid="Stringier.Text.ToUpper*"></a>
+  <h4 id="Stringier_Text_ToUpper_Stringier_Glyph_" data-uid="Stringier.Text.ToUpper(Stringier.Glyph)">ToUpper(Glyph)</h4>
+  <div class="markdown level1 summary"><p>Converts the value of a UNICODE grapheme cluster to its uppercase equivalent, invariant of orthography.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Glyph ToUpper(this Glyph glyph)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Glyph.html">Glyph</a></td>
+        <td><span class="parametername">glyph</span></td>
+        <td><p>The UNICODE grapheme cluster to convert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Glyph.html">Glyph</a></td>
+        <td><p>The uppercase equivalent of <code data-dev-comment-type="paramref" class="paramref">glyph</code>, or the unchanged value of <code data-dev-comment-type="paramref" class="paramref">glyph</code> if <code data-dev-comment-type="paramref" class="paramref">glyph</code> is already uppercase, has no uppercase equivalent, or is not alphabetic.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Text_ToUpper_Stringier_Glyph_Stringier_Linguistics_Orthography_.md&amp;value=---%0Auid%3A%20Stringier.Text.ToUpper(Stringier.Glyph%2CStringier.Linguistics.Orthography)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Functions/Text/ToUpper.cs/#L53">View Source</a>
+  </span>
+  <a id="Stringier_Text_ToUpper_" data-uid="Stringier.Text.ToUpper*"></a>
+  <h4 id="Stringier_Text_ToUpper_Stringier_Glyph_Stringier_Linguistics_Orthography_" data-uid="Stringier.Text.ToUpper(Stringier.Glyph,Stringier.Linguistics.Orthography)">ToUpper(Glyph, Orthography)</h4>
+  <div class="markdown level1 summary"><p>Converts the value of a UNICODE grapheme cluster to its uppercase equivalent, using the casing rules of the specified orthography.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Glyph ToUpper(this Glyph glyph, Orthography orthography)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Glyph.html">Glyph</a></td>
+        <td><span class="parametername">glyph</span></td>
+        <td><p>The UNICODE grapheme cluster to convert.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Stringier.Linguistics.Orthography.html">Orthography</a></td>
+        <td><span class="parametername">orthography</span></td>
+        <td><p>The <a class="xref" href="Stringier.Linguistics.Orthography.html">Orthography</a> instance describing the rules of the orthography.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Glyph.html">Glyph</a></td>
+        <td><p>The uppercase equivalent of <code data-dev-comment-type="paramref" class="paramref">glyph</code>, or the unchanged value of <code data-dev-comment-type="paramref" class="paramref">glyph</code> if <code data-dev-comment-type="paramref" class="paramref">glyph</code> is already uppercase, has no uppercase equivalent, or is not alphabetic.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Text_ToUpper_System_Char_.md&amp;value=---%0Auid%3A%20Stringier.Text.ToUpper(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Functions/Text/ToUpper.cs/#L13">View Source</a>
+  </span>
+  <a id="Stringier_Text_ToUpper_" data-uid="Stringier.Text.ToUpper*"></a>
+  <h4 id="Stringier_Text_ToUpper_System_Char_" data-uid="Stringier.Text.ToUpper(System.Char)">ToUpper(Char)</h4>
+  <div class="markdown level1 summary"><p>Converts the value of a UTF-16 code unit to its uppercase equivalent, invariant of orthography.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static char ToUpper(this char char)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a></td>
+        <td><span class="parametername">char</span></td>
+        <td><p>The UTF-16 code unit to convert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a></td>
+        <td><p>The uppercase equivalent of <code data-dev-comment-type="paramref" class="paramref">char</code>, or the unchanged value of <code data-dev-comment-type="paramref" class="paramref">char</code> if <code data-dev-comment-type="paramref" class="paramref">char</code> is already uppercase, has no uppercase equivalent, or is not alphabetic.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Text_ToUpper_System_Char_Stringier_Linguistics_Orthography_.md&amp;value=---%0Auid%3A%20Stringier.Text.ToUpper(System.Char%2CStringier.Linguistics.Orthography)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Functions/Text/ToUpper.cs/#L37">View Source</a>
+  </span>
+  <a id="Stringier_Text_ToUpper_" data-uid="Stringier.Text.ToUpper*"></a>
+  <h4 id="Stringier_Text_ToUpper_System_Char_Stringier_Linguistics_Orthography_" data-uid="Stringier.Text.ToUpper(System.Char,Stringier.Linguistics.Orthography)">ToUpper(Char, Orthography)</h4>
+  <div class="markdown level1 summary"><p>Converts the value of a UTF-16 code unit to its uppercase equivalent, using the casing rules of the specified orthography.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static char ToUpper(this char char, Orthography orthography)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a></td>
+        <td><span class="parametername">char</span></td>
+        <td><p>The UTF-16 code unit to convert.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Stringier.Linguistics.Orthography.html">Orthography</a></td>
+        <td><span class="parametername">orthography</span></td>
+        <td><p>The <a class="xref" href="Stringier.Linguistics.Orthography.html">Orthography</a> instance describing the rules of the orthography.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a></td>
+        <td><p>The uppercase equivalent of <code data-dev-comment-type="paramref" class="paramref">char</code>, or the unchanged value of <code data-dev-comment-type="paramref" class="paramref">char</code> if <code data-dev-comment-type="paramref" class="paramref">char</code> is already uppercase, has no uppercase equivalent, or is not alphabetic.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Text_ToUpper_System_Text_Rune_.md&amp;value=---%0Auid%3A%20Stringier.Text.ToUpper(System.Text.Rune)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Functions/Text/ToUpper.cs/#L20">View Source</a>
+  </span>
+  <a id="Stringier_Text_ToUpper_" data-uid="Stringier.Text.ToUpper*"></a>
+  <h4 id="Stringier_Text_ToUpper_System_Text_Rune_" data-uid="Stringier.Text.ToUpper(System.Text.Rune)">ToUpper(Rune)</h4>
+  <div class="markdown level1 summary"><p>Converts the value of a UNICODE character to its uppercase equivalent, invariant of orthography.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Rune ToUpper(this Rune rune)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a></td>
+        <td><span class="parametername">rune</span></td>
+        <td><p>The UNICODE character to convert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a></td>
+        <td><p>The uppercase equivalent of <code data-dev-comment-type="paramref" class="paramref">rune</code>, or the unchanged value of <code data-dev-comment-type="paramref" class="paramref">rune</code> if <code data-dev-comment-type="paramref" class="paramref">rune</code> is already uppercase, has no uppercase equivalent, or is not alphabetic.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Text_ToUpper_System_Text_Rune_Stringier_Linguistics_Orthography_.md&amp;value=---%0Auid%3A%20Stringier.Text.ToUpper(System.Text.Rune%2CStringier.Linguistics.Orthography)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Functions/Text/ToUpper.cs/#L45">View Source</a>
+  </span>
+  <a id="Stringier_Text_ToUpper_" data-uid="Stringier.Text.ToUpper*"></a>
+  <h4 id="Stringier_Text_ToUpper_System_Text_Rune_Stringier_Linguistics_Orthography_" data-uid="Stringier.Text.ToUpper(System.Text.Rune,Stringier.Linguistics.Orthography)">ToUpper(Rune, Orthography)</h4>
+  <div class="markdown level1 summary"><p>Converts the value of a UNICODE character to its uppercase equivalent, using the casing rules of the specified orthography.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Rune ToUpper(this Rune rune, Orthography orthography)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a></td>
+        <td><span class="parametername">rune</span></td>
+        <td><p>The UNICODE character to convert.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Stringier.Linguistics.Orthography.html">Orthography</a></td>
+        <td><span class="parametername">orthography</span></td>
+        <td><p>The <a class="xref" href="Stringier.Linguistics.Orthography.html">Orthography</a> instance describing the rules of the orthography.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a></td>
+        <td><p>The uppercase equivalent of <code data-dev-comment-type="paramref" class="paramref">rune</code>, or the unchanged value of <code data-dev-comment-type="paramref" class="paramref">rune</code> if <code data-dev-comment-type="paramref" class="paramref">rune</code> is already uppercase, has no uppercase equivalent, or is not alphabetic.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
 </article>
           </div>
           
@@ -650,7 +3159,7 @@ public static void Add&lt;TElement&gt;(this IAddableText&lt;TElement&gt; collect
                     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Text.md&amp;value=---%0Auid%3A%20Stringier.Text%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Functions/Text/Text.cs/#L2" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Functions/Text/ToUpper.cs/#L6" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

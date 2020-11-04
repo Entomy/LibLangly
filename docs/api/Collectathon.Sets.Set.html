@@ -128,6 +128,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Set&lt;TElement&gt; Empty&lt;TElement&gt;()
+
     where TElement : IEquatable&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
@@ -175,6 +176,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Set&lt;TElement&gt; From&lt;TElement&gt;(params TElement[] collection)
+
     where TElement : IEquatable&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -242,6 +244,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Set&lt;TElement&gt; From&lt;TElement&gt;(Predicate&lt;TElement&gt; predicate)
+
     where TElement : IEquatable&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -312,6 +315,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Set&lt;TElement&gt; From&lt;TElement, TCollection&gt;(TCollection collection)
+
     where TElement : IEquatable&lt;TElement&gt; where TCollection : IContainable&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -497,6 +501,7 @@ public static Set&lt;uint&gt; Range(uint lower, uint upper)</code></pre>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Set&lt;TElement&gt; Range&lt;TElement&gt;(TElement lower, TElement upper)
+
     where TElement : IComparable&lt;TElement&gt;, IEquatable&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -569,6 +574,7 @@ public static Set&lt;uint&gt; Range(uint lower, uint upper)</code></pre>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Set&lt;TElement&gt; Universe&lt;TElement&gt;()
+
     where TElement : IEquatable&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
