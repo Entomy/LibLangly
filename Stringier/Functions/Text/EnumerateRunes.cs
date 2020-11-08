@@ -35,6 +35,32 @@ namespace Stringier {
 		/// <remarks>
 		/// Invalid sequences will be represented in the enumeration by <see cref="Rune.ReplacementChar"/>.
 		/// </remarks>
+		public static SpanRuneEnumerator EnumerateRunes(this ReadOnlyMemory<Char> memory) =>
+#if NETSTANDARD1_3
+			new SpanRuneEnumerator(span);
+#else
+			MemoryExtensions.EnumerateRunes(memory.Span);
+#endif
+
+		/// <summary>
+		/// Returns an enumeration of <see cref="Rune"/> from the provided span.
+		/// </summary>
+		/// <remarks>
+		/// Invalid sequences will be represented in the enumeration by <see cref="Rune.ReplacementChar"/>.
+		/// </remarks>
+		public static SpanRuneEnumerator EnumerateRunes(this Memory<Char> memory) =>
+#if NETSTANDARD1_3
+			new SpanRuneEnumerator(span);
+#else
+			MemoryExtensions.EnumerateRunes(memory.Span);
+#endif
+
+		/// <summary>
+		/// Returns an enumeration of <see cref="Rune"/> from the provided span.
+		/// </summary>
+		/// <remarks>
+		/// Invalid sequences will be represented in the enumeration by <see cref="Rune.ReplacementChar"/>.
+		/// </remarks>
 		public static SpanRuneEnumerator EnumerateRunes(this ReadOnlySpan<Char> span) =>
 #if NETSTANDARD1_3
 			new SpanRuneEnumerator(span);
@@ -55,13 +81,5 @@ namespace Stringier {
 #else
 			MemoryExtensions.EnumerateRunes(span);
 #endif
-
-		/// <summary>
-		/// Returns an enumeration of <see cref="Rune"/> from the provided sequence.
-		/// </summary>
-		/// <remarks>
-		/// Invalid sequences will be represented in the enumeration by <see cref="Rune.ReplacementChar"/>.
-		/// </remarks>
-		public static SeqRuneEnumerator EnumerateRunes(this System.Collections.Generic.IEnumerable<Char> enumerable) => new SeqRuneEnumerator(enumerable);
 	}
 }

@@ -2,7 +2,7 @@
 using Collectathon.Tables;
 using Xunit;
 
-namespace Stringier {
+namespace Stringier.Functions {
 	public class SearchTests {
 		[Theory]
 		[InlineData("helloworld", "low", 3)]

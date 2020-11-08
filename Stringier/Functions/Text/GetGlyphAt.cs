@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using Defender;
 
 namespace Stringier {
@@ -8,7 +9,7 @@ namespace Stringier {
 		/// </summary>
 		/// <param name="input">The input <see cref="String"/>.</param>
 		/// <param name="index">The index within the <paramref name="input"/> to get the <see cref="Glyph"/>.</param>
-		public static Glyph GetGlyphAt(this String input, Int32 index) {
+		public static Glyph GetGlyphAt([DisallowNull] this String input, Int32 index) {
 			Guard.NotNull(input, nameof(input));
 			return GetGlyphAt(input.AsSpan(), index);
 		}
@@ -18,10 +19,25 @@ namespace Stringier {
 		/// </summary>
 		/// <param name="input">The input <see cref="Array"/> of <see cref="Char"/>.</param>
 		/// <param name="index">The index within the <paramref name="input"/> to get the <see cref="Glyph"/>.</param>
-		public static Glyph GetGlyphAt(this Char[] input, Int32 index) {
+		public static Glyph GetGlyphAt([DisallowNull] this Char[] input, Int32 index) {
 			Guard.NotNull(input, nameof(input));
 			return GetGlyphAt(input.AsSpan(), index);
 		}
+
+
+		/// <summary>
+		/// Gets the <see cref="Glyph"/> which begins at index <paramref name="index"/> in string <paramref name="input"/>.
+		/// </summary>
+		/// <param name="input">The input <see cref="Memory{T}"/> of <see cref="Char"/>.</param>
+		/// <param name="index">The index within the <paramref name="input"/> to get the <see cref="Glyph"/>.</param>
+		public static Glyph GetGlyphAt(this Memory<Char> input, Int32 index) => GetGlyphAt(input.Span, index);
+
+		/// <summary>
+		/// Gets the <see cref="Glyph"/> which begins at index <paramref name="index"/> in string <paramref name="input"/>.
+		/// </summary>
+		/// <param name="input">The input <see cref="Span{T}"/> of <see cref="Char"/>.</param>
+		/// <param name="index">The index within the <paramref name="input"/> to get the <see cref="Glyph"/>.</param>
+		public static Glyph GetGlyphAt(this ReadOnlyMemory<Char> input, Int32 index) => GetGlyphAt(input.Span, index);
 
 		/// <summary>
 		/// Gets the <see cref="Glyph"/> which begins at index <paramref name="index"/> in string <paramref name="input"/>.
@@ -43,7 +59,7 @@ namespace Stringier {
 		/// <param name="input">The input <see cref="String"/>.</param>
 		/// <param name="index">The index within the <paramref name="input"/> to get the <see cref="Glyph"/>.</param>
 		/// <param name="newIndex">The within the <paramref name="input"/> after retrieving the entire <see cref="Glyph"/>.</param>
-		public static Glyph GetGlyphAt(this String input, Int32 index, out Int32 newIndex) {
+		public static Glyph GetGlyphAt([DisallowNull] this String input, Int32 index, out Int32 newIndex) {
 			Guard.NotNull(input, nameof(input));
 			return GetGlyphAt(input.AsSpan(), index, out newIndex);
 		}
@@ -54,10 +70,26 @@ namespace Stringier {
 		/// <param name="input">The input <see cref="Array"/> of <see cref="Char"/>.</param>
 		/// <param name="index">The index within the <paramref name="input"/> to get the <see cref="Glyph"/>.</param>
 		/// <param name="newIndex">The within the <paramref name="input"/> after retrieving the entire <see cref="Glyph"/>.</param>
-		public static Glyph GetGlyphAt(this Char[] input, Int32 index, out Int32 newIndex) {
+		public static Glyph GetGlyphAt([DisallowNull] this Char[] input, Int32 index, out Int32 newIndex) {
 			Guard.NotNull(input, nameof(input));
 			return GetGlyphAt(input.AsSpan(), index, out newIndex);
 		}
+
+		/// <summary>
+		/// Gets the <see cref="Glyph"/> which begins at index <paramref name="index"/> in string <paramref name="input"/>.
+		/// </summary>
+		/// <param name="input">The input <see cref="Memory{T}"/> of <see cref="Char"/>.</param>
+		/// <param name="index">The index within the <paramref name="input"/> to get the <see cref="Glyph"/>.</param>
+		/// <param name="newIndex">The within the <paramref name="input"/> after retrieving the entire <see cref="Glyph"/>.</param>
+		public static Glyph GetGlyphAt(this Memory<Char> input, Int32 index, out Int32 newIndex) => GetGlyphAt(input.Span, index, out newIndex);
+
+		/// <summary>
+		/// Gets the <see cref="Glyph"/> which begins at index <paramref name="index"/> in string <paramref name="input"/>.
+		/// </summary>
+		/// <param name="input">The input <see cref="ReadOnlyMemory{T}"/> of <see cref="Char"/>.</param>
+		/// <param name="index">The index within the <paramref name="input"/> to get the <see cref="Glyph"/>.</param>
+		/// <param name="newIndex">The within the <paramref name="input"/> after retrieving the entire <see cref="Glyph"/>.</param>
+		public static Glyph GetGlyphAt(this ReadOnlyMemory<Char> input, Int32 index, out Int32 newIndex) => GetGlyphAt(input.Span, index, out newIndex);
 
 		/// <summary>
 		/// Gets the <see cref="Glyph"/> which begins at index <paramref name="index"/> in string <paramref name="input"/>.

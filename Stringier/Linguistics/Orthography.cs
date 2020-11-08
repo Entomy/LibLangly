@@ -128,6 +128,7 @@ namespace Stringier.Linguistics {
 
 		/// <inheritdoc/>
 		protected sealed override Boolean Contains(Glyph element) => Characters.Contains(element) || Numbers.Contains(element);
+
 		/// <summary>
 		/// Provides a counter for glyphs of an orthography.
 		/// </summary>
@@ -172,9 +173,6 @@ namespace Stringier.Linguistics {
 
 			/// <inheritdoc/>
 			public abstract void Add(ReadOnlyMemory<Char> element);
-
-			/// <inheritdoc/>
-			public abstract void Add(IEnumerable<Char> element);
 		}
 
 		internal protected abstract class Part : Set<Glyph>, IContainable<Char>, IContainable<Rune>, IContainable<Glyph> {

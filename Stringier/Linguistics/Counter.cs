@@ -94,12 +94,5 @@ namespace Stringier.Linguistics {
 
 		/// <inheritdoc/>
 		public override void Add(ReadOnlyMemory<Char> element) => Add(element.Span);
-
-		/// <inheritdoc/>
-		public override void Add(IEnumerable<Char> element) {
-			foreach (Glyph glyph in element.EnumerateGlyphs()) {
-				Add(glyph);
-			}
-		}
 	}
 }

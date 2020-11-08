@@ -11,7 +11,7 @@ namespace Stringier.Categories {
 	/// The category of a UNICODE Character.
 	/// </summary>
 	/// <para>While this has analogues to <see cref="UnicodeCategory"/>, there are a number of issues with how Microsoft approached that. First and foremost, there's no convenient way to group categories, even though UAX#44-5.7.1 does exactly this. This grouping of categories is important from a usability standpoint, for example, removing all symbols from a given text, or identifying any punctuation. Furthermore, <see cref="UnicodeCategory"/> strays from the names that the UNICODE Consortium gave, which is confusing, such as <see cref="UnicodeCategory.OtherNotAssigned"/> versus <see cref="Unassigned"/>.</para>
-	/// <para>This should be viewed as a legacy concept. It's nowhere near detailed and granular enough for classification purposes, and a superior design will come about later.</para>
+	/// <para>This has been designed with respect to Set Theory and Set Algebra, so far more complicated situations than <see cref="UnicodeCategory"/> can provide are possible through this.</para>
 	/// </remarks>
 	/// <seealso href="http://www.unicode.org/reports/tr44/#General_Category_Values"/>
 	/// <seealso href="https://www.unicode.org/notes/tn36/"/>

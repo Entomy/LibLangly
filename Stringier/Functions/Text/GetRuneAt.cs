@@ -32,6 +32,22 @@ namespace Stringier {
 		/// <remarks>
 		/// Throws if <paramref name="index"/> is out of range, or if <paramref name="index"/> does not reference the start of a valid scalar value within <paramref name="input"/>.
 		/// </remarks>
+		public static Rune GetRuneAt(this Memory<Char> input, Int32 index) => GetRuneAt(input.Span, index);
+
+		/// <summary>
+		/// Gets the <see cref="Rune"/> which begins at index <paramref name="index"/> in string <paramref name="input"/>.
+		/// </summary>
+		/// <remarks>
+		/// Throws if <paramref name="index"/> is out of range, or if <paramref name="index"/> does not reference the start of a valid scalar value within <paramref name="input"/>.
+		/// </remarks>
+		public static Rune GetRuneAt(this ReadOnlyMemory<Char> input, Int32 index) => GetRuneAt(input.Span, index, out _);
+
+		/// <summary>
+		/// Gets the <see cref="Rune"/> which begins at index <paramref name="index"/> in string <paramref name="input"/>.
+		/// </summary>
+		/// <remarks>
+		/// Throws if <paramref name="index"/> is out of range, or if <paramref name="index"/> does not reference the start of a valid scalar value within <paramref name="input"/>.
+		/// </remarks>
 		public static Rune GetRuneAt(this Span<Char> input, Int32 index) => GetRuneAt((ReadOnlySpan<Char>)input, index);
 
 		/// <summary>
@@ -70,6 +86,22 @@ namespace Stringier {
 		/// <remarks>
 		/// Throws if <paramref name="index"/> is out of range, or if <paramref name="index"/> does not reference the start of a valid scalar value within <paramref name="input"/>.
 		/// </remarks>
+		public static Rune GetRuneAt(this Memory<Char> input, Int32 index, out Int32 newIndex) => GetRuneAt(input.Span, index, out newIndex);
+
+		/// <summary>
+		/// Gets the <see cref="Rune"/> which begins at index <paramref name="index"/> in string <paramref name="input"/>.
+		/// </summary>
+		/// <remarks>
+		/// Throws if <paramref name="index"/> is out of range, or if <paramref name="index"/> does not reference the start of a valid scalar value within <paramref name="input"/>.
+		/// </remarks>
+		public static Rune GetRuneAt(this ReadOnlyMemory<Char> input, Int32 index, out Int32 newIndex) => GetRuneAt(input.Span, index, out newIndex);
+
+			/// <summary>
+			/// Gets the <see cref="Rune"/> which begins at index <paramref name="index"/> in string <paramref name="input"/>.
+			/// </summary>
+			/// <remarks>
+			/// Throws if <paramref name="index"/> is out of range, or if <paramref name="index"/> does not reference the start of a valid scalar value within <paramref name="input"/>.
+			/// </remarks>
 		public static Rune GetRuneAt(this Span<Char> input, Int32 index, out Int32 newIndex) => GetRuneAt((ReadOnlySpan<Char>)input, index, out newIndex);
 
 		/// <summary>

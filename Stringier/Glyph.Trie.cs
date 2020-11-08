@@ -49,21 +49,6 @@ namespace Stringier {
 				}
 			}
 
-			public Boolean Parse(IEnumerator<Char> sequence, out Glyph glyph) {
-				if (!sequence.MoveNext()) {
-					glyph = new Glyph(Code);
-					return true;
-				}
-				if (UTF16.IsHighSurrogate(sequence.Current)) {
-					return HighSurrogate.Parse(sequence, out glyph);
-				}
-				if (!Continuations.TryGetValue(sequence.Current, out Trie next)) {
-					glyph = new Glyph(Code);
-					return false;
-				}
-				return next.ParseContinuations(sequence, out glyph);
-			}
-
 			private UInt32 ParseContinuations(ReadOnlySpan<Char> sequence, ref Int32 pos) {
 				if (pos == sequence.Length) {
 					return Code;
@@ -74,18 +59,6 @@ namespace Stringier {
 					pos++;
 					return next.Parse(sequence, ref pos);
 				}
-			}
-
-			private Boolean ParseContinuations(IEnumerator<Char> sequence, out Glyph glyph) {
-				if (!sequence.MoveNext()) {
-					glyph = new Glyph(Code);
-					return true;
-				}
-				if (!Continuations.TryGetValue(sequence.Current, out Trie next)) {
-					glyph = new Glyph(Code);
-					return false;
-				}
-				return next.ParseContinuations(sequence, out glyph);
 			}
 
 			public Boolean TryGetValue(String sequence, ref Int32 pos, out UInt32 code) => TryGetValue(sequence.AsSpan(), ref pos, out code);
@@ -117,15 +90,6 @@ namespace Stringier {
 					}
 				}
 
-				public static Boolean Parse(IEnumerator<Char> sequence, out Glyph glyph) {
-					UInt32 code = sequence.Current;
-					if (UTF16.IsHighSurrogate(sequence.Current) && sequence.MoveNext()) {
-						return LowSurrogate.Parse(sequence, code, out glyph);
-					}
-					glyph = new Glyph(0xFFFD);
-					return false;
-				}
-
 				public static Boolean TryGetValue(ReadOnlySpan<Char> sequence, ref Int32 pos, out UInt32 code) {
 					if (UTF16.IsHighSurrogate(sequence[pos])) {
 						pos++;
@@ -143,15 +107,6 @@ namespace Stringier {
 						return Unsafe.Utf16Decode(sequence[pos - 1], sequence[pos++]);
 					}
 					return 0xFFFD;
-				}
-
-				public static Boolean Parse(IEnumerator<Char> sequence, UInt32 high, out Glyph glyph) {
-					if (UTF16.IsLowSurrogate(sequence.Current)) {
-						glyph = new Glyph(Unsafe.Utf16Decode(high, sequence.Current));
-						return true;
-					}
-					glyph = new Glyph(0xFFFD);
-					return false;
 				}
 
 				public static Boolean TryGetValue(ReadOnlySpan<Char> sequence, ref Int32 pos, out UInt32 code) {
