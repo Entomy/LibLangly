@@ -1,0 +1,1262 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class TextStream
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class TextStream
+   ">
+    <meta name="generator" content="docfx 2.56.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Streamy.TextStream">
+  
+  
+  <h1 id="Streamy_TextStream" data-uid="Streamy.TextStream" class="text-break">Class TextStream
+  </h1>
+  <div class="markdown level0 summary"><p>Provides a view of a sequence of UNICODE Characters.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><a class="xref" href="Defender.Patterns.Controlled.html">Controlled</a></div>
+    <div class="level2"><a class="xref" href="Streamy.Stream.html">Stream</a></div>
+    <div class="level3"><span class="xref">TextStream</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iasyncdisposable">IAsyncDisposable</a></div>
+    <div><a class="xref" href="Philosoft.IPeekable-2.html">IPeekable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>, <a class="xref" href="Streamy.Errors.html">Errors</a>&gt;</div>
+    <div><a class="xref" href="Philosoft.IReadable-2.html">IReadable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>, <a class="xref" href="Streamy.Errors.html">Errors</a>&gt;</div>
+    <div><a class="xref" href="Philosoft.ISeekable-2.html">ISeekable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>, <a class="xref" href="Streamy.Errors.html">Errors</a>&gt;</div>
+    <div><a class="xref" href="Philosoft.IWritable-2.html">IWritable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>, <a class="xref" href="Streamy.Errors.html">Errors</a>&gt;</div>
+    <div><a class="xref" href="Philosoft.IPeekable-2.html">IPeekable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a>, <a class="xref" href="Streamy.Errors.html">Errors</a>&gt;</div>
+    <div><a class="xref" href="Philosoft.IReadable-2.html">IReadable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a>, <a class="xref" href="Streamy.Errors.html">Errors</a>&gt;</div>
+    <div><a class="xref" href="Philosoft.ISeekable-2.html">ISeekable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a>, <a class="xref" href="Streamy.Errors.html">Errors</a>&gt;</div>
+    <div><a class="xref" href="Philosoft.IWritable-2.html">IWritable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a>, <a class="xref" href="Streamy.Errors.html">Errors</a>&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Streamy.Stream.html#Streamy_Stream_Base">Stream.Base</a>
+    </div>
+    <div>
+      <a class="xref" href="Streamy.Stream.html#Streamy_Stream_ReadBuffer">Stream.ReadBuffer</a>
+    </div>
+    <div>
+      <a class="xref" href="Streamy.Stream.html#Streamy_Stream_WriteBuffer">Stream.WriteBuffer</a>
+    </div>
+    <div>
+      <a class="xref" href="Streamy.Stream.html#Streamy_Stream_Readable">Stream.Readable</a>
+    </div>
+    <div>
+      <a class="xref" href="Streamy.Stream.html#Streamy_Stream_Seekable">Stream.Seekable</a>
+    </div>
+    <div>
+      <a class="xref" href="Streamy.Stream.html#Streamy_Stream_Writable">Stream.Writable</a>
+    </div>
+    <div>
+      <a class="xref" href="Streamy.Stream.html#Streamy_Stream_Philosoft_IPeekable_System_Byte_Streamy_Errors__Peek_System_Byte__">Stream.IPeekable&lt;Byte, Errors&gt;.Peek(Byte)</a>
+    </div>
+    <div>
+      <a class="xref" href="Streamy.Stream.html#Streamy_Stream_Philosoft_IReadable_System_Byte_Streamy_Errors__Read_System_Byte__">Stream.IReadable&lt;Byte, Errors&gt;.Read(Byte)</a>
+    </div>
+    <div>
+      <a class="xref" href="Streamy.Stream.html#Streamy_Stream_ToString">Stream.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="Streamy.Stream.html#Streamy_Stream_Philosoft_IPeekable_System_Byte_Streamy_Errors__TryPeek_System_Byte__Streamy_Errors__">Stream.IPeekable&lt;Byte, Errors&gt;.TryPeek(Byte, Errors)</a>
+    </div>
+    <div>
+      <a class="xref" href="Streamy.Stream.html#Streamy_Stream_Philosoft_IReadable_System_Byte_Streamy_Errors__TryRead_System_Byte__Streamy_Errors__">Stream.IReadable&lt;Byte, Errors&gt;.TryRead(Byte, Errors)</a>
+    </div>
+    <div>
+      <a class="xref" href="Streamy.Stream.html#Streamy_Stream_Philosoft_IWritable_System_Byte_Streamy_Errors__TryWrite_System_Byte_Streamy_Errors__">Stream.IWritable&lt;Byte, Errors&gt;.TryWrite(Byte, Errors)</a>
+    </div>
+    <div>
+      <a class="xref" href="Streamy.Stream.html#Streamy_Stream_Philosoft_IWritable_System_Byte_Streamy_Errors__Write_System_Byte_">Stream.IWritable&lt;Byte, Errors&gt;.Write(Byte)</a>
+    </div>
+    <div>
+      <a class="xref" href="Streamy.Stream.html#Streamy_Stream_DisposeManaged">Stream.DisposeManaged()</a>
+    </div>
+    <div>
+      <a class="xref" href="Defender.Patterns.Controlled.html#Defender_Patterns_Controlled_Disposed">Controlled.Disposed</a>
+    </div>
+    <div>
+      <a class="xref" href="Defender.Patterns.Controlled.html#Defender_Patterns_Controlled_Dispose">Controlled.Dispose()</a>
+    </div>
+    <div>
+      <a class="xref" href="Defender.Patterns.Controlled.html#Defender_Patterns_Controlled_DisposeAsync">Controlled.DisposeAsync()</a>
+    </div>
+    <div>
+      <a class="xref" href="Defender.Patterns.Controlled.html#Defender_Patterns_Controlled_DisposeUnmanaged">Controlled.DisposeUnmanaged()</a>
+    </div>
+    <div>
+      <a class="xref" href="Defender.Patterns.Controlled.html#Defender_Patterns_Controlled_NullLargeFields">Controlled.NullLargeFields()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_">Object.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_System_Object_">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#System_Object_GetHashCode">Object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#System_Object_GetType">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#System_Object_MemberwiseClone">Object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#System_Object_ReferenceEquals_System_Object_System_Object_">Object.ReferenceEquals(Object, Object)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Streamy.html">Streamy</a></h6>
+  <h6><strong>Assembly</strong>: Stringier.dll</h6>
+  <h5 id="Streamy_TextStream_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class TextStream : Stream, IDisposable, IAsyncDisposable, IPeekable&lt;byte, Errors&gt;, IReadable&lt;byte, Errors&gt;, ISeekable&lt;byte, Errors&gt;, IWritable&lt;byte, Errors&gt;, IPeekable&lt;Rune, Errors&gt;, IReadable&lt;Rune, Errors&gt;, ISeekable&lt;Rune, Errors&gt;, IWritable&lt;Rune, Errors&gt;</code></pre>
+  </div>
+  <h5 id="Streamy_TextStream_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>This streams <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a> instead of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a> to avoid the misunderstandings and complexities working with UTF-16 Code Units causes. <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a> represents a higher level that is closer to what people intend to work with.</p>
+<p>This fundamentally operates differently from <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.io.stream">Stream</a>. While it is designed fairly similar in API, the way it operates, even at that level, differs greatly. There&apos;s four major components that make up the text stream:</p>
+<p>This <a class="xref" href="Streamy.TextStream.html">TextStream</a> type provides orchestration logic around the other components, tying everything together. Through those, it provides the higher level, text-centric, API.</p>
+<p>The actual datastream is provided by <a class="xref" href="Streamy.Bases.StreamBase.html">StreamBase</a>, which implements the basic streaming API for the daatastream.</p>
+<p>Buffers are provided by <a class="xref" href="Streamy.Buffers.IReadBuffer.html">IReadBuffer</a> and <a class="xref" href="Streamy.Buffers.IWriteBuffer.html">IWriteBuffer</a>, which buffer the basic streaming from <a class="xref" href="Streamy.Bases.StreamBase.html">StreamBase</a>, enabling features like <see cref="!:Peek()"></see> and limited <a class="xref" href="Streamy.Stream.html#Streamy_Stream_Seekable">Seekable</a> behavior even when the underlying stream is not capable.</p>
+<p>Encoding is handled by <a class="xref" href="Stringier.Encodings.Encoder.html">Encoder</a> helpers. These handle the translation between encodings through a consistent API.</p>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_TextStream__ctor_Streamy_Bases_StreamBase_Streamy_Buffers_IReadBuffer_Streamy_Buffers_IWriteBuffer_Streamy_Errors__.md&amp;value=---%0Auid%3A%20Streamy.TextStream.%23ctor(Streamy.Bases.StreamBase%2CStreamy.Buffers.IReadBuffer%2CStreamy.Buffers.IWriteBuffer%2CStreamy.Errors%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Streams/TextStream.cs/#L122">View Source</a>
+  </span>
+  <a id="Streamy_TextStream__ctor_" data-uid="Streamy.TextStream.#ctor*"></a>
+  <h4 id="Streamy_TextStream__ctor_Streamy_Bases_StreamBase_Streamy_Buffers_IReadBuffer_Streamy_Buffers_IWriteBuffer_Streamy_Errors__" data-uid="Streamy.TextStream.#ctor(Streamy.Bases.StreamBase,Streamy.Buffers.IReadBuffer,Streamy.Buffers.IWriteBuffer,Streamy.Errors@)">TextStream(StreamBase, IReadBuffer, IWriteBuffer, out Errors)</h4>
+  <div class="markdown level1 summary"><p>Initialize a new instance of the <a class="xref" href="Streamy.TextStream.html">TextStream</a> class. Reads BOM.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected TextStream(StreamBase streamBase, IReadBuffer readBuffer, IWriteBuffer writeBuffer, out Errors error)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Streamy.Bases.StreamBase.html">StreamBase</a></td>
+        <td><span class="parametername">streamBase</span></td>
+        <td><p>The base datastream.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Streamy.Buffers.IReadBuffer.html">IReadBuffer</a></td>
+        <td><span class="parametername">readBuffer</span></td>
+        <td><p>The <see cref="!:IBuffer"></see> used for reads.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Streamy.Buffers.IWriteBuffer.html">IWriteBuffer</a></td>
+        <td><span class="parametername">writeBuffer</span></td>
+        <td><p>The <see cref="!:IBuffer"></see> used for writes.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Streamy.Errors.html">Errors</a></td>
+        <td><span class="parametername">error</span></td>
+        <td><p>The <a class="xref" href="Streamy.Errors.html">Errors</a> that occured while detecting encoding, if any.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Streamy_TextStream__ctor_Streamy_Bases_StreamBase_Streamy_Buffers_IReadBuffer_Streamy_Buffers_IWriteBuffer_Streamy_Errors___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This constructor attempts to detect the encoding of the stream by reading the BOM from the stream. Because this operation can fail, <code data-dev-comment-type="paramref" class="paramref">error</code> is passed out for indicating what went wrong. The encoding will always default to UTF-8 in the event no BOM was present, or something kept the BOM from being read.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_TextStream__ctor_Streamy_Bases_StreamBase_Streamy_Errors__.md&amp;value=---%0Auid%3A%20Streamy.TextStream.%23ctor(Streamy.Bases.StreamBase%2CStreamy.Errors%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Streams/TextStream.cs/#L110">View Source</a>
+  </span>
+  <a id="Streamy_TextStream__ctor_" data-uid="Streamy.TextStream.#ctor*"></a>
+  <h4 id="Streamy_TextStream__ctor_Streamy_Bases_StreamBase_Streamy_Errors__" data-uid="Streamy.TextStream.#ctor(Streamy.Bases.StreamBase,Streamy.Errors@)">TextStream(StreamBase, out Errors)</h4>
+  <div class="markdown level1 summary"><p>Initialize a new instance of the <a class="xref" href="Streamy.TextStream.html">TextStream</a> class. Reads BOM.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected TextStream(StreamBase streamBase, out Errors error)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Streamy.Bases.StreamBase.html">StreamBase</a></td>
+        <td><span class="parametername">streamBase</span></td>
+        <td><p>The base datastream.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Streamy.Errors.html">Errors</a></td>
+        <td><span class="parametername">error</span></td>
+        <td><p>The <a class="xref" href="Streamy.Errors.html">Errors</a> that occured while detecting encoding, if any.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Streamy_TextStream__ctor_Streamy_Bases_StreamBase_Streamy_Errors___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This constructor attempts to detect the encoding of the stream by reading the BOM from the stream. Because this operation can fail, <code data-dev-comment-type="paramref" class="paramref">error</code> is passed out for indicating what went wrong. The encoding will always default to UTF-8 in the event no BOM was present, or something kept the BOM from being read.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_TextStream__ctor_Streamy_Bases_StreamBase_Stringier_Encodings_Encoder_Streamy_Buffers_IReadBuffer_Streamy_Buffers_IWriteBuffer_.md&amp;value=---%0Auid%3A%20Streamy.TextStream.%23ctor(Streamy.Bases.StreamBase%2CStringier.Encodings.Encoder%2CStreamy.Buffers.IReadBuffer%2CStreamy.Buffers.IWriteBuffer)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Streams/TextStream.cs/#L185">View Source</a>
+  </span>
+  <a id="Streamy_TextStream__ctor_" data-uid="Streamy.TextStream.#ctor*"></a>
+  <h4 id="Streamy_TextStream__ctor_Streamy_Bases_StreamBase_Stringier_Encodings_Encoder_Streamy_Buffers_IReadBuffer_Streamy_Buffers_IWriteBuffer_" data-uid="Streamy.TextStream.#ctor(Streamy.Bases.StreamBase,Stringier.Encodings.Encoder,Streamy.Buffers.IReadBuffer,Streamy.Buffers.IWriteBuffer)">TextStream(StreamBase, Encoder, IReadBuffer, IWriteBuffer)</h4>
+  <div class="markdown level1 summary"><p>Initialize a new instance of the <a class="xref" href="Streamy.TextStream.html">TextStream</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected TextStream(StreamBase streamBase, Encoder encoder, IReadBuffer readBuffer, IWriteBuffer writeBuffer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Streamy.Bases.StreamBase.html">StreamBase</a></td>
+        <td><span class="parametername">streamBase</span></td>
+        <td><p>The base datastream.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Stringier.Encodings.Encoder.html">Encoder</a></td>
+        <td><span class="parametername">encoder</span></td>
+        <td><p>The encoding helper.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Streamy.Buffers.IReadBuffer.html">IReadBuffer</a></td>
+        <td><span class="parametername">readBuffer</span></td>
+        <td><p>The <see cref="!:IBuffer"></see> used for reads.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Streamy.Buffers.IWriteBuffer.html">IWriteBuffer</a></td>
+        <td><span class="parametername">writeBuffer</span></td>
+        <td><p>The <see cref="!:IBuffer"></see> used for writes.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_TextStream__ctor_Streamy_Bases_StreamBase_Stringier_Encodings_Encoding_.md&amp;value=---%0Auid%3A%20Streamy.TextStream.%23ctor(Streamy.Bases.StreamBase%2CStringier.Encodings.Encoding)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Streams/TextStream.cs/#L155">View Source</a>
+  </span>
+  <a id="Streamy_TextStream__ctor_" data-uid="Streamy.TextStream.#ctor*"></a>
+  <h4 id="Streamy_TextStream__ctor_Streamy_Bases_StreamBase_Stringier_Encodings_Encoding_" data-uid="Streamy.TextStream.#ctor(Streamy.Bases.StreamBase,Stringier.Encodings.Encoding)">TextStream(StreamBase, Encoding)</h4>
+  <div class="markdown level1 summary"><p>Initialize a new instance of the <a class="xref" href="Streamy.TextStream.html">TextStream</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected TextStream(StreamBase streamBase, Encoding encoding)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Streamy.Bases.StreamBase.html">StreamBase</a></td>
+        <td><span class="parametername">streamBase</span></td>
+        <td><p>The base datastream.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Stringier.Encodings.Encoding.html">Encoding</a></td>
+        <td><span class="parametername">encoding</span></td>
+        <td><p>The <a class="xref" href="Streamy.TextStream.html#Streamy_TextStream_Encoding">Encoding</a> of the datastream.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_TextStream__ctor_Streamy_Bases_StreamBase_Stringier_Encodings_Encoding_Streamy_Buffers_IReadBuffer_Streamy_Buffers_IWriteBuffer_.md&amp;value=---%0Auid%3A%20Streamy.TextStream.%23ctor(Streamy.Bases.StreamBase%2CStringier.Encodings.Encoding%2CStreamy.Buffers.IReadBuffer%2CStreamy.Buffers.IWriteBuffer)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Streams/TextStream.cs/#L164">View Source</a>
+  </span>
+  <a id="Streamy_TextStream__ctor_" data-uid="Streamy.TextStream.#ctor*"></a>
+  <h4 id="Streamy_TextStream__ctor_Streamy_Bases_StreamBase_Stringier_Encodings_Encoding_Streamy_Buffers_IReadBuffer_Streamy_Buffers_IWriteBuffer_" data-uid="Streamy.TextStream.#ctor(Streamy.Bases.StreamBase,Stringier.Encodings.Encoding,Streamy.Buffers.IReadBuffer,Streamy.Buffers.IWriteBuffer)">TextStream(StreamBase, Encoding, IReadBuffer, IWriteBuffer)</h4>
+  <div class="markdown level1 summary"><p>Initialize a new instance of the <a class="xref" href="Streamy.TextStream.html">TextStream</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected TextStream(StreamBase streamBase, Encoding encoding, IReadBuffer readBuffer, IWriteBuffer writeBuffer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Streamy.Bases.StreamBase.html">StreamBase</a></td>
+        <td><span class="parametername">streamBase</span></td>
+        <td><p>The base datastream.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Stringier.Encodings.Encoding.html">Encoding</a></td>
+        <td><span class="parametername">encoding</span></td>
+        <td><p>The <a class="xref" href="Streamy.TextStream.html#Streamy_TextStream_Encoding">Encoding</a> of the datastream.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Streamy.Buffers.IReadBuffer.html">IReadBuffer</a></td>
+        <td><span class="parametername">readBuffer</span></td>
+        <td><p>The buffer used for reads.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Streamy.Buffers.IWriteBuffer.html">IWriteBuffer</a></td>
+        <td><span class="parametername">writeBuffer</span></td>
+        <td><p>The buffer used for writes.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_TextStream__ctor_Streamy_Standard_.md&amp;value=---%0Auid%3A%20Streamy.TextStream.%23ctor(Streamy.Standard)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Streams/TextStream.cs/#L60">View Source</a>
+  </span>
+  <a id="Streamy_TextStream__ctor_" data-uid="Streamy.TextStream.#ctor*"></a>
+  <h4 id="Streamy_TextStream__ctor_Streamy_Standard_" data-uid="Streamy.TextStream.#ctor(Streamy.Standard)">TextStream(Standard)</h4>
+  <div class="markdown level1 summary"><p>Initialize a new instance of the <a class="xref" href="Streamy.TextStream.html">TextStream</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TextStream(Standard standard)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Streamy.Standard.html">Standard</a></td>
+        <td><span class="parametername">standard</span></td>
+        <td><p>The <a class="xref" href="Streamy.Standard.html">Standard</a> stream.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_TextStream__ctor_System_Byte___.md&amp;value=---%0Auid%3A%20Streamy.TextStream.%23ctor(System.Byte%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Streams/TextStream.cs/#L36">View Source</a>
+  </span>
+  <a id="Streamy_TextStream__ctor_" data-uid="Streamy.TextStream.#ctor*"></a>
+  <h4 id="Streamy_TextStream__ctor_System_Byte___" data-uid="Streamy.TextStream.#ctor(System.Byte[])">TextStream(Byte[])</h4>
+  <div class="markdown level1 summary"><p>Initialize a new instance of the <a class="xref" href="Streamy.TextStream.html">TextStream</a> class. Reads BOM.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TextStream(byte[] buffer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>[]</td>
+        <td><span class="parametername">buffer</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.array">Array</a> of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a> to stream.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Streamy_TextStream__ctor_System_Byte____remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This constructor attempts to detect the encoding of the stream by reading the BOM from the stream. This operation can fail, but this constructor does not report why; use <a class="xref" href="Streamy.TextStream.html#Streamy_TextStream__ctor_System_Byte___Streamy_Errors__">TextStream(Byte[], out Errors)</a> if that information is desired. The encoding will always default to UTF-8 in the event no BOM was present, or something kept the BOM from being read.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_TextStream__ctor_System_Byte___Streamy_Errors__.md&amp;value=---%0Auid%3A%20Streamy.TextStream.%23ctor(System.Byte%5B%5D%2CStreamy.Errors%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Streams/TextStream.cs/#L46">View Source</a>
+  </span>
+  <a id="Streamy_TextStream__ctor_" data-uid="Streamy.TextStream.#ctor*"></a>
+  <h4 id="Streamy_TextStream__ctor_System_Byte___Streamy_Errors__" data-uid="Streamy.TextStream.#ctor(System.Byte[],Streamy.Errors@)">TextStream(Byte[], out Errors)</h4>
+  <div class="markdown level1 summary"><p>Initialize a new instance of the <a class="xref" href="Streamy.TextStream.html">TextStream</a> class. Reads BOM.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TextStream(byte[] buffer, out Errors error)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>[]</td>
+        <td><span class="parametername">buffer</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.array">Array</a> of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a> to stream.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Streamy.Errors.html">Errors</a></td>
+        <td><span class="parametername">error</span></td>
+        <td><p>The <a class="xref" href="Streamy.Errors.html">Errors</a> that occured while detecting encoding, if any.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Streamy_TextStream__ctor_System_Byte___Streamy_Errors___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This constructor attempts to detect the encoding of the stream by reading the BOM from the stream. Because this operation can fail, <code data-dev-comment-type="paramref" class="paramref">error</code> is passed out for indicating what went wrong. The encoding will always default to UTF-8 in the event no BOM was present, or something kept the BOM from being read.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_TextStream__ctor_System_Byte___Stringier_Encodings_Encoding_.md&amp;value=---%0Auid%3A%20Streamy.TextStream.%23ctor(System.Byte%5B%5D%2CStringier.Encodings.Encoding)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Streams/TextStream.cs/#L54">View Source</a>
+  </span>
+  <a id="Streamy_TextStream__ctor_" data-uid="Streamy.TextStream.#ctor*"></a>
+  <h4 id="Streamy_TextStream__ctor_System_Byte___Stringier_Encodings_Encoding_" data-uid="Streamy.TextStream.#ctor(System.Byte[],Stringier.Encodings.Encoding)">TextStream(Byte[], Encoding)</h4>
+  <div class="markdown level1 summary"><p>Initialize a new instance of the <a class="xref" href="Streamy.TextStream.html">TextStream</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TextStream(byte[] buffer, Encoding encoding)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>[]</td>
+        <td><span class="parametername">buffer</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.array">Array</a> of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a> to stream.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Stringier.Encodings.Encoding.html">Encoding</a></td>
+        <td><span class="parametername">encoding</span></td>
+        <td><p>The <a class="xref" href="Streamy.TextStream.html#Streamy_TextStream_Encoding">Encoding</a> of the datastream.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_TextStream__ctor_System_String_System_IO_FileMode_.md&amp;value=---%0Auid%3A%20Streamy.TextStream.%23ctor(System.String%2CSystem.IO.FileMode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Streams/TextStream.cs/#L77">View Source</a>
+  </span>
+  <a id="Streamy_TextStream__ctor_" data-uid="Streamy.TextStream.#ctor*"></a>
+  <h4 id="Streamy_TextStream__ctor_System_String_System_IO_FileMode_" data-uid="Streamy.TextStream.#ctor(System.String,System.IO.FileMode)">TextStream(String, FileMode)</h4>
+  <div class="markdown level1 summary"><p>Initialize a new instance of the <a class="xref" href="Streamy.TextStream.html">TextStream</a> class. Reads BOM.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected TextStream(string path, FileMode mode)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The path to the file.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.io.filemode">FileMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.io.filemode">FileMode</a> for opening the file.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Streamy_TextStream__ctor_System_String_System_IO_FileMode__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This constructor presumes streaming a file, and looks for a file at <code data-dev-comment-type="paramref" class="paramref">path</code> to stream. It is <span class="xref">langword_csharp_protected</span> as it is intended to be used as part of a constructor chain from a derived class.</p>
+<p>This constructor attempts to detect the encoding of the stream by reading the BOM from the stream. This operation can fail, but this constructor does not report why; use <a class="xref" href="Streamy.TextStream.html#Streamy_TextStream__ctor_System_String_System_IO_FileMode_Streamy_Errors__">TextStream(String, FileMode, out Errors)</a> if that information is desired. The encoding will always default to UTF-8 in the event no BOM was present, or something kept the BOM from being read.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_TextStream__ctor_System_String_System_IO_FileMode_Streamy_Errors__.md&amp;value=---%0Auid%3A%20Streamy.TextStream.%23ctor(System.String%2CSystem.IO.FileMode%2CStreamy.Errors%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Streams/TextStream.cs/#L89">View Source</a>
+  </span>
+  <a id="Streamy_TextStream__ctor_" data-uid="Streamy.TextStream.#ctor*"></a>
+  <h4 id="Streamy_TextStream__ctor_System_String_System_IO_FileMode_Streamy_Errors__" data-uid="Streamy.TextStream.#ctor(System.String,System.IO.FileMode,Streamy.Errors@)">TextStream(String, FileMode, out Errors)</h4>
+  <div class="markdown level1 summary"><p>Initialize a new instance of the <a class="xref" href="Streamy.TextStream.html">TextStream</a> class. Reads BOM.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected TextStream(string path, FileMode mode, out Errors error)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The path to the file.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.io.filemode">FileMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.io.filemode">FileMode</a> for opening the file.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Streamy.Errors.html">Errors</a></td>
+        <td><span class="parametername">error</span></td>
+        <td><p>The <a class="xref" href="Streamy.Errors.html">Errors</a> that occured while detecting encoding, if any.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Streamy_TextStream__ctor_System_String_System_IO_FileMode_Streamy_Errors___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This constructor presumes streaming a file, and looks for a file at <code data-dev-comment-type="paramref" class="paramref">path</code> to stream. It is <span class="xref">langword_csharp_protected</span> as it is intended to be used as part of a constructor chain from a derived class.</p>
+<p>This constructor attempts to detect the encoding of the stream by reading the BOM from the stream. Because this operation can fail, <code data-dev-comment-type="paramref" class="paramref">error</code> is passed out for indicating what went wrong. The encoding will always default to UTF-8 in the event no BOM was present, or something kept the BOM from being read.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_TextStream__ctor_System_String_System_IO_FileMode_Stringier_Encodings_Encoding_.md&amp;value=---%0Auid%3A%20Streamy.TextStream.%23ctor(System.String%2CSystem.IO.FileMode%2CStringier.Encodings.Encoding)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Streams/TextStream.cs/#L100">View Source</a>
+  </span>
+  <a id="Streamy_TextStream__ctor_" data-uid="Streamy.TextStream.#ctor*"></a>
+  <h4 id="Streamy_TextStream__ctor_System_String_System_IO_FileMode_Stringier_Encodings_Encoding_" data-uid="Streamy.TextStream.#ctor(System.String,System.IO.FileMode,Stringier.Encodings.Encoding)">TextStream(String, FileMode, Encoding)</h4>
+  <div class="markdown level1 summary"><p>Initialize a new instance of the <a class="xref" href="Streamy.TextStream.html">TextStream</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected TextStream(string path, FileMode mode, Encoding encoding)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The path to the file.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.io.filemode">FileMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.io.filemode">FileMode</a> for opening the file.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Stringier.Encodings.Encoding.html">Encoding</a></td>
+        <td><span class="parametername">encoding</span></td>
+        <td><p>The <a class="xref" href="Streamy.TextStream.html#Streamy_TextStream_Encoding">Encoding</a> of the datastream.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Streamy_TextStream__ctor_System_String_System_IO_FileMode_Stringier_Encodings_Encoding__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This constructor presumes streaming a file, and looks for a file at <code data-dev-comment-type="paramref" class="paramref">path</code> to stream. It is <span class="xref">langword_csharp_protected</span> as it is intended to be used as part of a constructor chain from a derived class.</p>
+</div>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_TextStream_Encoder.md&amp;value=---%0Auid%3A%20Streamy.TextStream.Encoder%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Streams/TextStream.cs/#L27">View Source</a>
+  </span>
+  <h4 id="Streamy_TextStream_Encoder" data-uid="Streamy.TextStream.Encoder">Encoder</h4>
+  <div class="markdown level1 summary"><p>The encoding helper.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly Encoder Encoder</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Encodings.Encoder.html">Encoder</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_TextStream_Encoding.md&amp;value=---%0Auid%3A%20Streamy.TextStream.Encoding%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Streams/TextStream.cs/#L196">View Source</a>
+  </span>
+  <a id="Streamy_TextStream_Encoding_" data-uid="Streamy.TextStream.Encoding*"></a>
+  <h4 id="Streamy_TextStream_Encoding" data-uid="Streamy.TextStream.Encoding">Encoding</h4>
+  <div class="markdown level1 summary"><p>The <a class="xref" href="Stringier.Encodings.Encoding.html">Encoding</a> of this stream.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Encoding Encoding { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Encodings.Encoding.html">Encoding</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_TextStream_Position.md&amp;value=---%0Auid%3A%20Streamy.TextStream.Position%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Streams/TextStream.cs/#L201">View Source</a>
+  </span>
+  <a id="Streamy_TextStream_Position_" data-uid="Streamy.TextStream.Position*"></a>
+  <h4 id="Streamy_TextStream_Position" data-uid="Streamy.TextStream.Position">Position</h4>
+  <div class="markdown level1 summary"><p>The position within the stream, counted by rune offset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override nint Position { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Streamy.Stream.html#Streamy_Stream_Position">Stream.Position</a></div>
+  <h3 id="operators">Operators
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_TextStream_op_Implicit_System_Byte____Streamy_TextStream.md&amp;value=---%0Auid%3A%20Streamy.TextStream.op_Implicit(System.Byte%5B%5D)~Streamy.TextStream%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Streams/TextStream.cs/#L211">View Source</a>
+  </span>
+  <a id="Streamy_TextStream_op_Implicit_" data-uid="Streamy.TextStream.op_Implicit*"></a>
+  <h4 id="Streamy_TextStream_op_Implicit_System_Byte____Streamy_TextStream" data-uid="Streamy.TextStream.op_Implicit(System.Byte[])~Streamy.TextStream">Implicit(Byte[] to TextStream)</h4>
+  <div class="markdown level1 summary"><p>Stream this <code data-dev-comment-type="paramref" class="paramref">buffer</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator TextStream(byte[] buffer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>[]</td>
+        <td><span class="parametername">buffer</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.array">Array</a> of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a> to stream.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Streamy.TextStream.html">TextStream</a></td>
+        <td><p>This <code data-dev-comment-type="paramref" class="paramref">buffer</code> as a datastream.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Streamy_TextStream_op_Implicit_System_Byte____Streamy_TextStream_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This constructor attempts to detect the encoding of the stream by reading the BOM from the stream. This operation can fail, but this constructor does not report why; use <a class="xref" href="Streamy.TextStream.html#Streamy_TextStream__ctor_System_Byte___Streamy_Errors__">TextStream(Byte[], out Errors)</a> if that information is desired. The encoding will always default to UTF-8 in the event no BOM was present, or something kept the BOM from being read.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_TextStream_op_Implicit_System_String__Streamy_TextStream.md&amp;value=---%0Auid%3A%20Streamy.TextStream.op_Implicit(System.String)~Streamy.TextStream%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Streams/TextStream.cs/#L218">View Source</a>
+  </span>
+  <a id="Streamy_TextStream_op_Implicit_" data-uid="Streamy.TextStream.op_Implicit*"></a>
+  <h4 id="Streamy_TextStream_op_Implicit_System_String__Streamy_TextStream" data-uid="Streamy.TextStream.op_Implicit(System.String)~Streamy.TextStream">Implicit(String to TextStream)</h4>
+  <div class="markdown level1 summary"><p>Stream this <code data-dev-comment-type="paramref" class="paramref">string</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator TextStream(string string)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">string</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a> to stream.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Streamy.TextStream.html">TextStream</a></td>
+        <td><p>The <code data-dev-comment-type="paramref" class="paramref">string</code> as a datastream.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_TextStream_Philosoft_IPeekable_System_Text_Rune_Streamy_Errors__Peek_System_Text_Rune__.md&amp;value=---%0Auid%3A%20Streamy.TextStream.Philosoft%23IPeekable%7BSystem%23Text%23Rune%2CStreamy%23Errors%7D%23Peek(System.Text.Rune%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Streams/TextStream.cs/#L221">View Source</a>
+  </span>
+  <a id="Streamy_TextStream_Philosoft_IPeekable_System_Text_Rune_Streamy_Errors__Peek_" data-uid="Streamy.TextStream.Philosoft#IPeekable{System#Text#Rune,Streamy#Errors}#Peek*"></a>
+  <h4 id="Streamy_TextStream_Philosoft_IPeekable_System_Text_Rune_Streamy_Errors__Peek_System_Text_Rune__" data-uid="Streamy.TextStream.Philosoft#IPeekable{System#Text#Rune,Streamy#Errors}#Peek(System.Text.Rune@)">IPeekable&lt;Rune, Errors&gt;.Peek(out Rune)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IPeekable&lt;Rune, Errors&gt;.Peek(out Rune element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_TextStream_Philosoft_IPeekable_System_Text_Rune_Streamy_Errors__TryPeek_System_Text_Rune__Streamy_Errors__.md&amp;value=---%0Auid%3A%20Streamy.TextStream.Philosoft%23IPeekable%7BSystem%23Text%23Rune%2CStreamy%23Errors%7D%23TryPeek(System.Text.Rune%40%2CStreamy.Errors%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Streams/TextStream.cs/#L230">View Source</a>
+  </span>
+  <a id="Streamy_TextStream_Philosoft_IPeekable_System_Text_Rune_Streamy_Errors__TryPeek_" data-uid="Streamy.TextStream.Philosoft#IPeekable{System#Text#Rune,Streamy#Errors}#TryPeek*"></a>
+  <h4 id="Streamy_TextStream_Philosoft_IPeekable_System_Text_Rune_Streamy_Errors__TryPeek_System_Text_Rune__Streamy_Errors__" data-uid="Streamy.TextStream.Philosoft#IPeekable{System#Text#Rune,Streamy#Errors}#TryPeek(System.Text.Rune@,Streamy.Errors@)">IPeekable&lt;Rune, Errors&gt;.TryPeek(out Rune, out Errors)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IPeekable&lt;Rune, Errors&gt;.TryPeek(out Rune element, out Errors error)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Streamy.Errors.html">Errors</a></td>
+        <td><span class="parametername">error</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_TextStream_Philosoft_IReadable_System_Text_Rune_Streamy_Errors__Read_System_Text_Rune__.md&amp;value=---%0Auid%3A%20Streamy.TextStream.Philosoft%23IReadable%7BSystem%23Text%23Rune%2CStreamy%23Errors%7D%23Read(System.Text.Rune%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Streams/TextStream.cs/#L224">View Source</a>
+  </span>
+  <a id="Streamy_TextStream_Philosoft_IReadable_System_Text_Rune_Streamy_Errors__Read_" data-uid="Streamy.TextStream.Philosoft#IReadable{System#Text#Rune,Streamy#Errors}#Read*"></a>
+  <h4 id="Streamy_TextStream_Philosoft_IReadable_System_Text_Rune_Streamy_Errors__Read_System_Text_Rune__" data-uid="Streamy.TextStream.Philosoft#IReadable{System#Text#Rune,Streamy#Errors}#Read(System.Text.Rune@)">IReadable&lt;Rune, Errors&gt;.Read(out Rune)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IReadable&lt;Rune, Errors&gt;.Read(out Rune element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_TextStream_Philosoft_IReadable_System_Text_Rune_Streamy_Errors__TryRead_System_Text_Rune__Streamy_Errors__.md&amp;value=---%0Auid%3A%20Streamy.TextStream.Philosoft%23IReadable%7BSystem%23Text%23Rune%2CStreamy%23Errors%7D%23TryRead(System.Text.Rune%40%2CStreamy.Errors%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Streams/TextStream.cs/#L233">View Source</a>
+  </span>
+  <a id="Streamy_TextStream_Philosoft_IReadable_System_Text_Rune_Streamy_Errors__TryRead_" data-uid="Streamy.TextStream.Philosoft#IReadable{System#Text#Rune,Streamy#Errors}#TryRead*"></a>
+  <h4 id="Streamy_TextStream_Philosoft_IReadable_System_Text_Rune_Streamy_Errors__TryRead_System_Text_Rune__Streamy_Errors__" data-uid="Streamy.TextStream.Philosoft#IReadable{System#Text#Rune,Streamy#Errors}#TryRead(System.Text.Rune@,Streamy.Errors@)">IReadable&lt;Rune, Errors&gt;.TryRead(out Rune, out Errors)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IReadable&lt;Rune, Errors&gt;.TryRead(out Rune element, out Errors error)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Streamy.Errors.html">Errors</a></td>
+        <td><span class="parametername">error</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_TextStream_Philosoft_IWritable_System_Text_Rune_Streamy_Errors__TryWrite_System_Text_Rune_Streamy_Errors__.md&amp;value=---%0Auid%3A%20Streamy.TextStream.Philosoft%23IWritable%7BSystem%23Text%23Rune%2CStreamy%23Errors%7D%23TryWrite(System.Text.Rune%2CStreamy.Errors%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Streams/TextStream.cs/#L239">View Source</a>
+  </span>
+  <a id="Streamy_TextStream_Philosoft_IWritable_System_Text_Rune_Streamy_Errors__TryWrite_" data-uid="Streamy.TextStream.Philosoft#IWritable{System#Text#Rune,Streamy#Errors}#TryWrite*"></a>
+  <h4 id="Streamy_TextStream_Philosoft_IWritable_System_Text_Rune_Streamy_Errors__TryWrite_System_Text_Rune_Streamy_Errors__" data-uid="Streamy.TextStream.Philosoft#IWritable{System#Text#Rune,Streamy#Errors}#TryWrite(System.Text.Rune,Streamy.Errors@)">IWritable&lt;Rune, Errors&gt;.TryWrite(Rune, out Errors)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IWritable&lt;Rune, Errors&gt;.TryWrite(Rune element, out Errors error)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Streamy.Errors.html">Errors</a></td>
+        <td><span class="parametername">error</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_TextStream_Philosoft_IWritable_System_Text_Rune_Streamy_Errors__Write_System_Text_Rune_.md&amp;value=---%0Auid%3A%20Streamy.TextStream.Philosoft%23IWritable%7BSystem%23Text%23Rune%2CStreamy%23Errors%7D%23Write(System.Text.Rune)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Streams/TextStream.cs/#L242">View Source</a>
+  </span>
+  <a id="Streamy_TextStream_Philosoft_IWritable_System_Text_Rune_Streamy_Errors__Write_" data-uid="Streamy.TextStream.Philosoft#IWritable{System#Text#Rune,Streamy#Errors}#Write*"></a>
+  <h4 id="Streamy_TextStream_Philosoft_IWritable_System_Text_Rune_Streamy_Errors__Write_System_Text_Rune_" data-uid="Streamy.TextStream.Philosoft#IWritable{System#Text#Rune,Streamy#Errors}#Write(System.Text.Rune)">IWritable&lt;Rune, Errors&gt;.Write(Rune)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IWritable&lt;Rune, Errors&gt;.Write(Rune element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable">System.IDisposable</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iasyncdisposable">System.IAsyncDisposable</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.IPeekable-2.html">IPeekable&lt;TElement, TError&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.IReadable-2.html">IReadable&lt;TElement, TError&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.ISeekable-2.html">ISeekable&lt;TElement, TError&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.IWritable-2.html">IWritable&lt;TElement, TError&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.IPeekable-2.html">IPeekable&lt;TElement, TError&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.IReadable-2.html">IReadable&lt;TElement, TError&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.ISeekable-2.html">ISeekable&lt;TElement, TError&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Philosoft.IWritable-2.html">IWritable&lt;TElement, TError&gt;</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_TextStream.md&amp;value=---%0Auid%3A%20Streamy.TextStream%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Streams/TextStream.cs/#L23" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class DynamicArray&lt;TElement&gt;
    ">
-    <meta name="generator" content="docfx 2.56.4.0">
+    <meta name="generator" content="docfx 2.56.5.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -95,7 +95,6 @@
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Collectathon.Arrays.Array-2.html">Array</a>&lt;TElement, <a class="xref" href="Collectathon.Arrays.DynamicArray-1.html">DynamicArray</a>&lt;TElement&gt;&gt;&gt;</div>
     <div><a class="xref" href="Philosoft.IIndexable-1.html">IIndexable</a>&lt;TElement&gt;</div>
     <div><a class="xref" href="Philosoft.IIndexable-2.html">IIndexable</a>&lt;<span class="xref">nint</span>, TElement&gt;</div>
-    <div><a class="xref" href="Philosoft.IReadOnlyIndexable-2.html">IReadOnlyIndexable</a>&lt;<span class="xref">nint</span>, TElement&gt;</div>
     <div><a class="xref" href="Philosoft.IReadOnlyIndexable-1.html">IReadOnlyIndexable</a>&lt;TElement&gt;</div>
     <div><a class="xref" href="Philosoft.IReadOnlyIndexable-2.html">IReadOnlyIndexable</a>&lt;<span class="xref">nint</span>, TElement&gt;</div>
     <div><a class="xref" href="Philosoft.IPeekable-1.html">IPeekable</a>&lt;TElement&gt;</div>
@@ -284,7 +283,7 @@
   <h5 id="Collectathon_Arrays_DynamicArray_1_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Serializable]
-public sealed class DynamicArray&lt;TElement&gt; : FlexibleArray&lt;TElement, DynamicArray&lt;TElement&gt;&gt;, ICloneable&lt;DynamicArray&lt;TElement&gt;&gt;, ICloneable, IEquatable&lt;DataStructure&lt;TElement, DynamicArray&lt;TElement&gt;, Array&lt;TElement, DynamicArray&lt;TElement&gt;&gt;.Enumerator&gt;&gt;, IEquatable&lt;TElement[]&gt;, IEquatable&lt;IEnumerable&lt;TElement&gt;&gt;, IContainable&lt;TElement&gt;, IEquatable&lt;Array&lt;TElement, DynamicArray&lt;TElement&gt;&gt;&gt;, IIndexable&lt;TElement&gt;, IIndexable&lt;nint, TElement&gt;, IReadOnlyIndexable&lt;nint, TElement&gt;, IReadOnlyIndexable&lt;TElement&gt;, IReadOnlyIndexable&lt;nint, TElement&gt;, IPeekable&lt;TElement&gt;, IReplaceable&lt;TElement&gt;, IReplaceable&lt;TElement, TElement&gt;, IShiftable, ISliceable&lt;Memory&lt;TElement&gt;&gt;, IReadOnlySliceable&lt;ReadOnlyMemory&lt;TElement&gt;&gt;, ICountable, IReversibleEnumerable&lt;TElement, Array&lt;TElement, DynamicArray&lt;TElement&gt;&gt;, Array&lt;TElement, DynamicArray&lt;TElement&gt;&gt;.Enumerator&gt;, IEnumerable&lt;TElement, Array&lt;TElement, DynamicArray&lt;TElement&gt;&gt;.Enumerator&gt;, IEnumerable&lt;TElement&gt;, IEnumerable, IAddable&lt;TElement&gt;, IClearable, IDequeueable&lt;TElement&gt;, IEnqueueable&lt;TElement&gt;, IInsertable&lt;TElement&gt;, IInsertable&lt;nint, TElement&gt;, IPoppable&lt;TElement&gt;, IPushable&lt;TElement&gt;, IRemovable&lt;TElement&gt;, IResizable</code></pre>
+public sealed class DynamicArray&lt;TElement&gt; : FlexibleArray&lt;TElement, DynamicArray&lt;TElement&gt;&gt;, ICloneable&lt;DynamicArray&lt;TElement&gt;&gt;, ICloneable, IEquatable&lt;DataStructure&lt;TElement, DynamicArray&lt;TElement&gt;, Array&lt;TElement, DynamicArray&lt;TElement&gt;&gt;.Enumerator&gt;&gt;, IEquatable&lt;TElement[]&gt;, IEquatable&lt;IEnumerable&lt;TElement&gt;&gt;, IContainable&lt;TElement&gt;, IEquatable&lt;Array&lt;TElement, DynamicArray&lt;TElement&gt;&gt;&gt;, IIndexable&lt;TElement&gt;, IIndexable&lt;nint, TElement&gt;, IReadOnlyIndexable&lt;TElement&gt;, IReadOnlyIndexable&lt;nint, TElement&gt;, IPeekable&lt;TElement&gt;, IReplaceable&lt;TElement&gt;, IReplaceable&lt;TElement, TElement&gt;, IShiftable, ISliceable&lt;Memory&lt;TElement&gt;&gt;, IReadOnlySliceable&lt;ReadOnlyMemory&lt;TElement&gt;&gt;, ICountable, IReversibleEnumerable&lt;TElement, Array&lt;TElement, DynamicArray&lt;TElement&gt;&gt;, Array&lt;TElement, DynamicArray&lt;TElement&gt;&gt;.Enumerator&gt;, IEnumerable&lt;TElement, Array&lt;TElement, DynamicArray&lt;TElement&gt;&gt;.Enumerator&gt;, IEnumerable&lt;TElement&gt;, IEnumerable, IAddable&lt;TElement&gt;, IClearable, IDequeueable&lt;TElement&gt;, IEnqueueable&lt;TElement&gt;, IInsertable&lt;TElement&gt;, IInsertable&lt;nint, TElement&gt;, IPoppable&lt;TElement&gt;, IPushable&lt;TElement&gt;, IRemovable&lt;TElement&gt;, IResizable</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -612,9 +611,6 @@ public sealed class DynamicArray&lt;TElement&gt; : FlexibleArray&lt;TElement, Dy
   </div>
   <div>
       <a class="xref" href="Philosoft.IIndexable-2.html">IIndexable&lt;TIndex, TElement&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="Philosoft.IReadOnlyIndexable-2.html">IReadOnlyIndexable&lt;TIndex, TElement&gt;</a>
   </div>
   <div>
       <a class="xref" href="Philosoft.IReadOnlyIndexable-1.html">IReadOnlyIndexable&lt;TElement&gt;</a>

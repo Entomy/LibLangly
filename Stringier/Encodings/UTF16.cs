@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Text;
 using Defender;
-using Defender.Exceptions;
 
 namespace Stringier.Encodings {
 	/// <summary>

@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class Extensions
    ">
-    <meta name="generator" content="docfx 2.56.4.0">
+    <meta name="generator" content="docfx 2.56.5.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -2289,7 +2289,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Peek__1_Philosoft_IPeekable___0__.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Peek%60%601(Philosoft.IPeekable%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IPeekable.cs/#L26">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IPeekable`1.cs/#L26">View Source</a>
   </span>
   <a id="Philosoft_Extensions_Peek_" data-uid="Philosoft.Extensions.Peek*"></a>
   <h4 id="Philosoft_Extensions_Peek__1_Philosoft_IPeekable___0__" data-uid="Philosoft.Extensions.Peek``1(Philosoft.IPeekable{``0})">Peek&lt;TElement&gt;(IPeekable&lt;TElement&gt;)</h4>
@@ -2366,6 +2366,70 @@
       </tr>
     </tbody>
   </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Peek__2_Philosoft_IWritable___0___1____0__.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Peek%60%602(Philosoft.IWritable%7B%60%600%2C%60%601%7D%2C%60%600%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IPeekable`2.cs/#L49">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_Peek_" data-uid="Philosoft.Extensions.Peek*"></a>
+  <h4 id="Philosoft_Extensions_Peek__2_Philosoft_IWritable___0___1____0__" data-uid="Philosoft.Extensions.Peek``2(Philosoft.IWritable{``0,``1},``0@)">Peek&lt;TElement, TError&gt;(IWritable&lt;TElement, TError&gt;, out TElement)</h4>
+  <div class="markdown level1 summary"><p>Returns the element at the beginning of the collection without removing it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Peek&lt;TElement, TError&gt;(this IWritable&lt;TElement, TError&gt; collection, out TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Philosoft.IWritable-2.html">IWritable</a>&lt;TElement, TError&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The collection to peek from.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element that was peeked.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of the element to peek.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TError</span></td>
+        <td><p>The type of the error object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Philosoft_Extensions_Peek__2_Philosoft_IWritable___0___1____0___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This assumes the peek will never fail, which is an assumption that generally doesn't hold up. It is strongly recommended to use <a class="xref" href="Philosoft.Extensions.html#Philosoft_Extensions_TryPeek__2_Philosoft_IWritable___0___1____0__">TryPeek&lt;TElement, TError&gt;(IWritable&lt;TElement, TError&gt;, out TElement)</a> or <a class="xref" href="Philosoft.Extensions.html#Philosoft_Extensions_TryPeek__2_Philosoft_IWritable___0___1____0____1__">TryPeek&lt;TElement, TError&gt;(IWritable&lt;TElement, TError&gt;, out TElement, out TError)</a> instead.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Pop__1_Philosoft_IPoppable___0__.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Pop%60%601(Philosoft.IPoppable%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -2711,6 +2775,70 @@
       </tr>
     </tbody>
   </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Read__2_Philosoft_IWritable___0___1____0__.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Read%60%602(Philosoft.IWritable%7B%60%600%2C%60%601%7D%2C%60%600%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IReadable.cs/#L57">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_Read_" data-uid="Philosoft.Extensions.Read*"></a>
+  <h4 id="Philosoft_Extensions_Read__2_Philosoft_IWritable___0___1____0__" data-uid="Philosoft.Extensions.Read``2(Philosoft.IWritable{``0,``1},``0@)">Read&lt;TElement, TError&gt;(IWritable&lt;TElement, TError&gt;, out TElement)</h4>
+  <div class="markdown level1 summary"><p>Reads a <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> from the <code data-dev-comment-type="paramref" class="paramref">collection</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Read&lt;TElement, TError&gt;(this IWritable&lt;TElement, TError&gt; collection, out TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Philosoft.IWritable-2.html">IWritable</a>&lt;TElement, TError&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The collection to read from.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element that was read.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of the element to read.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TError</span></td>
+        <td><p>The type of the error object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Philosoft_Extensions_Read__2_Philosoft_IWritable___0___1____0___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This assumes the read will never fail, which is an assumption that generally doesn't hold up. It is strongly recommended to use <a class="xref" href="Philosoft.Extensions.html#Philosoft_Extensions_TryRead__2_Philosoft_IWritable___0___1____0__">TryRead&lt;TElement, TError&gt;(IWritable&lt;TElement, TError&gt;, out TElement)</a> or <a class="xref" href="Philosoft.Extensions.html#Philosoft_Extensions_TryRead__2_Philosoft_IWritable___0___1____0____1__">TryRead&lt;TElement, TError&gt;(IWritable&lt;TElement, TError&gt;, out TElement, out TError)</a> instead.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Remove__1_Philosoft_IRemovable___0____0_.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Remove%60%601(Philosoft.IRemovable%7B%60%600%7D%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -3295,6 +3423,67 @@
         <td><span class="xref">nint</span></td>
         <td><span class="parametername">capacity</span></td>
         <td><p>The new capacity of the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Seek__2_Philosoft_ISeekable___0___1__nint_.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Seek%60%602(Philosoft.ISeekable%7B%60%600%2C%60%601%7D%2Cnint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/ISeekable.cs/#L59">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_Seek_" data-uid="Philosoft.Extensions.Seek*"></a>
+  <h4 id="Philosoft_Extensions_Seek__2_Philosoft_ISeekable___0___1__nint_" data-uid="Philosoft.Extensions.Seek``2(Philosoft.ISeekable{``0,``1},nint)">Seek&lt;TElement, TError&gt;(ISeekable&lt;TElement, TError&gt;, nint)</h4>
+  <div class="markdown level1 summary"><p>Seeks to the <code data-dev-comment-type="paramref" class="paramref">offset</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Seek&lt;TElement, TError&gt;(this ISeekable&lt;TElement, TError&gt; collection, nint offset)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Philosoft.ISeekable-2.html">ISeekable</a>&lt;TElement, TError&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The collection to seek.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">offset</span></td>
+        <td><p>The offset of <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> from the current position to seek to.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of the element to seek.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TError</span></td>
+        <td><p>The type of the error object.</p>
 </td>
       </tr>
     </tbody>
@@ -4549,6 +4738,718 @@
       </tr>
     </tbody>
   </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_TryPeek__2_Philosoft_IWritable___0___1____0__.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.TryPeek%60%602(Philosoft.IWritable%7B%60%600%2C%60%601%7D%2C%60%600%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IPeekable`2.cs/#L65">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_TryPeek_" data-uid="Philosoft.Extensions.TryPeek*"></a>
+  <h4 id="Philosoft_Extensions_TryPeek__2_Philosoft_IWritable___0___1____0__" data-uid="Philosoft.Extensions.TryPeek``2(Philosoft.IWritable{``0,``1},``0@)">TryPeek&lt;TElement, TError&gt;(IWritable&lt;TElement, TError&gt;, out TElement)</h4>
+  <div class="markdown level1 summary"><p>Attempts to peek a byte from the <code data-dev-comment-type="paramref" class="paramref">collection</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool TryPeek&lt;TElement, TError&gt;(this IWritable&lt;TElement, TError&gt; collection, out TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Philosoft.IWritable-2.html">IWritable</a>&lt;TElement, TError&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The collection to peek from.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element that was peeked.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the peek was successful; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of the element to peek.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TError</span></td>
+        <td><p>The type of the error object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_TryPeek__2_Philosoft_IWritable___0___1____0____1__.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.TryPeek%60%602(Philosoft.IWritable%7B%60%600%2C%60%601%7D%2C%60%600%40%2C%60%601%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IPeekable`2.cs/#L76">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_TryPeek_" data-uid="Philosoft.Extensions.TryPeek*"></a>
+  <h4 id="Philosoft_Extensions_TryPeek__2_Philosoft_IWritable___0___1____0____1__" data-uid="Philosoft.Extensions.TryPeek``2(Philosoft.IWritable{``0,``1},``0@,``1@)">TryPeek&lt;TElement, TError&gt;(IWritable&lt;TElement, TError&gt;, out TElement, out TError)</h4>
+  <div class="markdown level1 summary"><p>Attempts to peek a byte from the <code data-dev-comment-type="paramref" class="paramref">collection</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool TryPeek&lt;TElement, TError&gt;(this IWritable&lt;TElement, TError&gt; collection, out TElement element, out TError error)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Philosoft.IWritable-2.html">IWritable</a>&lt;TElement, TError&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The collection to peek from.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element that was peeked.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TError</span></td>
+        <td><span class="parametername">error</span></td>
+        <td><p>The <code data-dev-comment-type="typeparamref" class="typeparamref">TError</code> that occurred, if any.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the peek was successful; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of the element to peek.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TError</span></td>
+        <td><p>The type of the error object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_TryRead__2_Philosoft_IWritable___0___1____0__.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.TryRead%60%602(Philosoft.IWritable%7B%60%600%2C%60%601%7D%2C%60%600%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IReadable.cs/#L73">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_TryRead_" data-uid="Philosoft.Extensions.TryRead*"></a>
+  <h4 id="Philosoft_Extensions_TryRead__2_Philosoft_IWritable___0___1____0__" data-uid="Philosoft.Extensions.TryRead``2(Philosoft.IWritable{``0,``1},``0@)">TryRead&lt;TElement, TError&gt;(IWritable&lt;TElement, TError&gt;, out TElement)</h4>
+  <div class="markdown level1 summary"><p>Attempts to read a <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> from the <code data-dev-comment-type="paramref" class="paramref">collection</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool TryRead&lt;TElement, TError&gt;(this IWritable&lt;TElement, TError&gt; collection, out TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Philosoft.IWritable-2.html">IWritable</a>&lt;TElement, TError&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The collection to read from.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element that was read.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the read was successful; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of the element to read.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TError</span></td>
+        <td><p>The type of the error object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_TryRead__2_Philosoft_IWritable___0___1____0____1__.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.TryRead%60%602(Philosoft.IWritable%7B%60%600%2C%60%601%7D%2C%60%600%40%2C%60%601%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IReadable.cs/#L84">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_TryRead_" data-uid="Philosoft.Extensions.TryRead*"></a>
+  <h4 id="Philosoft_Extensions_TryRead__2_Philosoft_IWritable___0___1____0____1__" data-uid="Philosoft.Extensions.TryRead``2(Philosoft.IWritable{``0,``1},``0@,``1@)">TryRead&lt;TElement, TError&gt;(IWritable&lt;TElement, TError&gt;, out TElement, out TError)</h4>
+  <div class="markdown level1 summary"><p>Attempts to read a <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> from the <code data-dev-comment-type="paramref" class="paramref">collection</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool TryRead&lt;TElement, TError&gt;(this IWritable&lt;TElement, TError&gt; collection, out TElement element, out TError error)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Philosoft.IWritable-2.html">IWritable</a>&lt;TElement, TError&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The collection to read from.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element that was read.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TError</span></td>
+        <td><span class="parametername">error</span></td>
+        <td><p>The <code data-dev-comment-type="typeparamref" class="typeparamref">TError</code> that occurred, if any.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the read was successful; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of the element to read.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TError</span></td>
+        <td><p>The type of the error object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_TrySeek__2_Philosoft_ISeekable___0___1__nint_.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.TrySeek%60%602(Philosoft.ISeekable%7B%60%600%2C%60%601%7D%2Cnint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/ISeekable.cs/#L70">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_TrySeek_" data-uid="Philosoft.Extensions.TrySeek*"></a>
+  <h4 id="Philosoft_Extensions_TrySeek__2_Philosoft_ISeekable___0___1__nint_" data-uid="Philosoft.Extensions.TrySeek``2(Philosoft.ISeekable{``0,``1},nint)">TrySeek&lt;TElement, TError&gt;(ISeekable&lt;TElement, TError&gt;, nint)</h4>
+  <div class="markdown level1 summary"><p>Attempts to seek to the <code data-dev-comment-type="paramref" class="paramref">offset</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool TrySeek&lt;TElement, TError&gt;(this ISeekable&lt;TElement, TError&gt; collection, nint offset)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Philosoft.ISeekable-2.html">ISeekable</a>&lt;TElement, TError&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The collection to seek.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">offset</span></td>
+        <td><p>The offset of <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> from the current position to seek to.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the seek was successful; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of the element to seek.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TError</span></td>
+        <td><p>The type of the error object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Philosoft_Extensions_TrySeek__2_Philosoft_ISeekable___0___1__nint__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Philosoft.Extensions.html#Philosoft_Extensions_TrySeek__2_Philosoft_ISeekable___0___1__nint___1__">TrySeek&lt;TElement, TError&gt;(ISeekable&lt;TElement, TError&gt;, nint, out TError)</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_TrySeek__2_Philosoft_ISeekable___0___1__nint___1__.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.TrySeek%60%602(Philosoft.ISeekable%7B%60%600%2C%60%601%7D%2Cnint%2C%60%601%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/ISeekable.cs/#L82">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_TrySeek_" data-uid="Philosoft.Extensions.TrySeek*"></a>
+  <h4 id="Philosoft_Extensions_TrySeek__2_Philosoft_ISeekable___0___1__nint___1__" data-uid="Philosoft.Extensions.TrySeek``2(Philosoft.ISeekable{``0,``1},nint,``1@)">TrySeek&lt;TElement, TError&gt;(ISeekable&lt;TElement, TError&gt;, nint, out TError)</h4>
+  <div class="markdown level1 summary"><p>Attempts to seek to the <code data-dev-comment-type="paramref" class="paramref">offset</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool TrySeek&lt;TElement, TError&gt;(this ISeekable&lt;TElement, TError&gt; collection, nint offset, out TError error)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Philosoft.ISeekable-2.html">ISeekable</a>&lt;TElement, TError&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The collection to seek.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">offset</span></td>
+        <td><p>The offset of <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> from the current position to seek to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TError</span></td>
+        <td><span class="parametername">error</span></td>
+        <td><p>The <code data-dev-comment-type="typeparamref" class="typeparamref">TError</code> that occurred, if any.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the seek was successful; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of the element to seek.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TError</span></td>
+        <td><p>The type of the error object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Philosoft_Extensions_TrySeek__2_Philosoft_ISeekable___0___1__nint___1___seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Philosoft.Extensions.html#Philosoft_Extensions_TrySeek__2_Philosoft_ISeekable___0___1__nint_">TrySeek&lt;TElement, TError&gt;(ISeekable&lt;TElement, TError&gt;, nint)</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_TryWrite__2_Philosoft_IWritable___0___1____0_.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.TryWrite%60%602(Philosoft.IWritable%7B%60%600%2C%60%601%7D%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IWritable.cs/#L72">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_TryWrite_" data-uid="Philosoft.Extensions.TryWrite*"></a>
+  <h4 id="Philosoft_Extensions_TryWrite__2_Philosoft_IWritable___0___1____0_" data-uid="Philosoft.Extensions.TryWrite``2(Philosoft.IWritable{``0,``1},``0)">TryWrite&lt;TElement, TError&gt;(IWritable&lt;TElement, TError&gt;, TElement)</h4>
+  <div class="markdown level1 summary"><p>Attempts to write a <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> to the <code data-dev-comment-type="paramref" class="paramref">collection</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool TryWrite&lt;TElement, TError&gt;(this IWritable&lt;TElement, TError&gt; collection, TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Philosoft.IWritable-2.html">IWritable</a>&lt;TElement, TError&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The collection to write to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> to write.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the write was successful; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of the element to write.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TError</span></td>
+        <td><p>The type of the error object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_TryWrite__2_Philosoft_IWritable___0___1____0___1__.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.TryWrite%60%602(Philosoft.IWritable%7B%60%600%2C%60%601%7D%2C%60%600%2C%60%601%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IWritable.cs/#L83">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_TryWrite_" data-uid="Philosoft.Extensions.TryWrite*"></a>
+  <h4 id="Philosoft_Extensions_TryWrite__2_Philosoft_IWritable___0___1____0___1__" data-uid="Philosoft.Extensions.TryWrite``2(Philosoft.IWritable{``0,``1},``0,``1@)">TryWrite&lt;TElement, TError&gt;(IWritable&lt;TElement, TError&gt;, TElement, out TError)</h4>
+  <div class="markdown level1 summary"><p>Attempts to write a <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> to the <code data-dev-comment-type="paramref" class="paramref">collection</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool TryWrite&lt;TElement, TError&gt;(this IWritable&lt;TElement, TError&gt; collection, TElement element, out TError error)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Philosoft.IWritable-2.html">IWritable</a>&lt;TElement, TError&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The collection to write to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> to write.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TError</span></td>
+        <td><span class="parametername">error</span></td>
+        <td><p>The <code data-dev-comment-type="typeparamref" class="typeparamref">TError</code> that occurred, if any.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the write was successful; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of the element to write.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TError</span></td>
+        <td><p>The type of the error object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions_Write__2_Philosoft_IWritable___0___1____0_.md&amp;value=---%0Auid%3A%20Philosoft.Extensions.Write%60%602(Philosoft.IWritable%7B%60%600%2C%60%601%7D%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IWritable.cs/#L57">View Source</a>
+  </span>
+  <a id="Philosoft_Extensions_Write_" data-uid="Philosoft.Extensions.Write*"></a>
+  <h4 id="Philosoft_Extensions_Write__2_Philosoft_IWritable___0___1____0_" data-uid="Philosoft.Extensions.Write``2(Philosoft.IWritable{``0,``1},``0)">Write&lt;TElement, TError&gt;(IWritable&lt;TElement, TError&gt;, TElement)</h4>
+  <div class="markdown level1 summary"><p>Writes a <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> to the <code data-dev-comment-type="paramref" class="paramref">collection</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Write&lt;TElement, TError&gt;(this IWritable&lt;TElement, TError&gt; collection, TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Philosoft.IWritable-2.html">IWritable</a>&lt;TElement, TError&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The collection to write to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element to write.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of the element to write.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TError</span></td>
+        <td><p>The type of the error object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Philosoft_Extensions_Write__2_Philosoft_IWritable___0___1____0__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This assumes the write will never fail, which is an assumption that generally doesn't hold up. It is strongly recommended to use <a class="xref" href="Philosoft.Extensions.html#Philosoft_Extensions_TryWrite__2_Philosoft_IWritable___0___1____0_">TryWrite&lt;TElement, TError&gt;(IWritable&lt;TElement, TError&gt;, TElement)</a> or <a class="xref" href="Philosoft.Extensions.html#Philosoft_Extensions_TryWrite__2_Philosoft_IWritable___0___1____0___1__">TryWrite&lt;TElement, TError&gt;(IWritable&lt;TElement, TError&gt;, TElement, out TError)</a> instead.</p>
+</div>
 </article>
           </div>
           
@@ -4560,7 +5461,7 @@
                     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Philosoft_Extensions.md&amp;value=---%0Auid%3A%20Philosoft.Extensions%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/ISliceable.cs/#L38" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IWritable.cs/#L46" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

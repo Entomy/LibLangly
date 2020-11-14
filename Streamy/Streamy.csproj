@@ -7,12 +7,21 @@
 		<AssemblyName>Streamy</AssemblyName>
 		<RootNamespace>Streamy</RootNamespace>
 		<PackageIcon>Logo.png</PackageIcon>
+		<Configurations>Debug;Release;Debug-Windows;Release-Windows</Configurations>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<None Include="Logo.png" Pack="true" Visible="true" PackagePath="\" />
 	</ItemGroup>
-	
+
+		<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Windows|AnyCPU' or '$(Configuration)|$(Platform)'=='Debug-Windows|AnyCPU'">
+		<DefineConstants>TRACE;WINDOWS</DefineConstants>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Unix|AnyCPU' or '$(Configuration)|$(Platform)'=='Debug-Unix|AnyCPU'">
+		<DefineConstants>TRACE;UNIX</DefineConstants>
+	</PropertyGroup>
+
   <ItemGroup>
     <Compile Include="..\GlobalSuppressions.cs" Link="GlobalSuppressions.cs" />
   </ItemGroup>

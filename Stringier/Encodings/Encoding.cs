@@ -6,7 +6,7 @@
 		/// <summary>
 		/// Unknown encoding.
 		/// </summary>
-		Unknown,
+		Unknown = 0,
 
 		/// <summary>
 		/// UTF-8.
