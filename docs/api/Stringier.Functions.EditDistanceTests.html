@@ -80,68 +80,28 @@
     <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
     <div class="level1"><span class="xref">EditDistanceTests</span></div>
   </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_">Object.Equals(Object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_System_Object_">Object.Equals(Object, Object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#System_Object_GetHashCode">Object.GetHashCode()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#System_Object_GetType">Object.GetType()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#System_Object_MemberwiseClone">Object.MemberwiseClone()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#System_Object_ReferenceEquals_System_Object_System_Object_">Object.ReferenceEquals(Object, Object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString">Object.ToString()</a>
-    </div>
-  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Stringier.Functions.html">Stringier.Functions</a></h6>
   <h6><strong>Assembly</strong>: Tests.dll</h6>
   <h5 id="Stringier_Functions_EditDistanceTests_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class EditDistanceTests</code></pre>
+    <pre><code class="lang-csharp hljs">public class EditDistanceTests : object</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Functions_EditDistanceTests_Hamming_System_String_System_String_System_Int32_Stringier_Level_.md&amp;value=---%0Auid%3A%20Stringier.Functions.EditDistanceTests.Hamming(System.String%2CSystem.String%2CSystem.Int32%2CStringier.Level)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Functions_EditDistanceTests_Hamming_String_String_Int32_Stringier_Level_.md&amp;value=---%0Auid%3A%20Stringier.Functions.EditDistanceTests.Hamming(String%2CString%2CInt32%2CStringier.Level)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Tests/Stringier/Functions/EditDistanceTests.cs/#L6">View Source</a>
   </span>
   <a id="Stringier_Functions_EditDistanceTests_Hamming_" data-uid="Stringier.Functions.EditDistanceTests.Hamming*"></a>
-  <h4 id="Stringier_Functions_EditDistanceTests_Hamming_System_String_System_String_System_Int32_Stringier_Level_" data-uid="Stringier.Functions.EditDistanceTests.Hamming(System.String,System.String,System.Int32,Stringier.Level)">Hamming(String, String, Int32, Level)</h4>
+  <h4 id="Stringier_Functions_EditDistanceTests_Hamming_String_String_Int32_Stringier_Level_" data-uid="Stringier.Functions.EditDistanceTests.Hamming(String,String,Int32,Stringier.Level)">Hamming(String, String, Int32, Level)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{&quot;ram&quot;, &quot;ram&quot;, 0, Level.Char})]
-[InlineData(new object[]{&quot;ram&quot;, &quot;rom&quot;, 1, Level.Char})]
-[InlineData(new object[]{&quot;ram&quot;, &quot;rob&quot;, 2, Level.Char})]
-[InlineData(new object[]{&quot;ram&quot;, &quot;rma&quot;, 2, Level.Char})]
-[InlineData(new object[]{&quot;ram&quot;, &quot;ram&quot;, 0, Level.Rune})]
-[InlineData(new object[]{&quot;ram&quot;, &quot;rom&quot;, 1, Level.Rune})]
-[InlineData(new object[]{&quot;ram&quot;, &quot;rob&quot;, 2, Level.Rune})]
-[InlineData(new object[]{&quot;ram&quot;, &quot;rma&quot;, 2, Level.Rune})]
-[InlineData(new object[]{&quot;g&quot;, &quot;&#119070;&quot;, 1, Level.Rune})]
-[InlineData(new object[]{&quot;ram&quot;, &quot;ram&quot;, 0, Level.Glyph})]
-[InlineData(new object[]{&quot;ram&quot;, &quot;rom&quot;, 1, Level.Glyph})]
-[InlineData(new object[]{&quot;ram&quot;, &quot;rob&quot;, 2, Level.Glyph})]
-[InlineData(new object[]{&quot;ram&quot;, &quot;rma&quot;, 2, Level.Glyph})]
-[InlineData(new object[]{&quot;g&quot;, &quot;&#119070;&quot;, 1, Level.Glyph})]
-[InlineData(new object[]{&quot;caf&#233;&quot;, &quot;cafe&#769;&quot;, 0, Level.Glyph})]
-public void Hamming(string source, string other, int expected, Level level)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Hamming(String source, String other, Int32 expected, Level level)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -154,17 +114,17 @@ public void Hamming(string source, string other, int expected, Level level)</cod
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="xref">String</span></td>
         <td><span class="parametername">source</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="xref">String</span></td>
         <td><span class="parametername">other</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="xref">Int32</span></td>
         <td><span class="parametername">expected</span></td>
         <td></td>
       </tr>
@@ -177,25 +137,18 @@ public void Hamming(string source, string other, int expected, Level level)</cod
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Functions_EditDistanceTests_Levenshtein_System_String_System_String_System_Int32_Stringier_Level_.md&amp;value=---%0Auid%3A%20Stringier.Functions.EditDistanceTests.Levenshtein(System.String%2CSystem.String%2CSystem.Int32%2CStringier.Level)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Functions_EditDistanceTests_Levenshtein_String_String_Int32_Stringier_Level_.md&amp;value=---%0Auid%3A%20Stringier.Functions.EditDistanceTests.Levenshtein(String%2CString%2CInt32%2CStringier.Level)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Tests/Stringier/Functions/EditDistanceTests.cs/#L24">View Source</a>
   </span>
   <a id="Stringier_Functions_EditDistanceTests_Levenshtein_" data-uid="Stringier.Functions.EditDistanceTests.Levenshtein*"></a>
-  <h4 id="Stringier_Functions_EditDistanceTests_Levenshtein_System_String_System_String_System_Int32_Stringier_Level_" data-uid="Stringier.Functions.EditDistanceTests.Levenshtein(System.String,System.String,System.Int32,Stringier.Level)">Levenshtein(String, String, Int32, Level)</h4>
+  <h4 id="Stringier_Functions_EditDistanceTests_Levenshtein_String_String_Int32_Stringier_Level_" data-uid="Stringier.Functions.EditDistanceTests.Levenshtein(String,String,Int32,Stringier.Level)">Levenshtein(String, String, Int32, Level)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{&quot;ram&quot;, &quot;rom&quot;, 1, Level.Char})]
-[InlineData(new object[]{&quot;ram&quot;, &quot;ra&#769;m&quot;, 1, Level.Char})]
-[InlineData(new object[]{&quot;r&#225;m&quot;, &quot;ra&#769;m&quot;, 2, Level.Char})]
-[InlineData(new object[]{&quot;ram&quot;, &quot;rob&quot;, 2, Level.Char})]
-[InlineData(new object[]{&quot;ram&quot;, &quot;random&quot;, 3, Level.Char})]
-[InlineData(new object[]{&quot;flaw&quot;, &quot;lawn&quot;, 2, Level.Char})]
-public void Levenshtein(string source, string other, int expected, Level level)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Levenshtein(String source, String other, Int32 expected, Level level)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -208,17 +161,17 @@ public void Levenshtein(string source, string other, int expected, Level level)<
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="xref">String</span></td>
         <td><span class="parametername">source</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="xref">String</span></td>
         <td><span class="parametername">other</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="xref">Int32</span></td>
         <td><span class="parametername">expected</span></td>
         <td></td>
       </tr>
