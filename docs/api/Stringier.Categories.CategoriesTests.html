@@ -80,28 +80,57 @@
     <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
     <div class="level1"><span class="xref">CategoriesTests</span></div>
   </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_">Object.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_System_Object_">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#System_Object_GetHashCode">Object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#System_Object_GetType">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#System_Object_MemberwiseClone">Object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#System_Object_ReferenceEquals_System_Object_System_Object_">Object.ReferenceEquals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString">Object.ToString()</a>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Stringier.Categories.html">Stringier.Categories</a></h6>
   <h6><strong>Assembly</strong>: Tests.dll</h6>
   <h5 id="Stringier_Categories_CategoriesTests_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class CategoriesTests : object</code></pre>
+    <pre><code class="lang-csharp hljs">public class CategoriesTests</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Categories_CategoriesTests_BoxDrawing_Char_Boolean_.md&amp;value=---%0Auid%3A%20Stringier.Categories.CategoriesTests.BoxDrawing(Char%2CBoolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Categories_CategoriesTests_BoxDrawing_System_Char_System_Boolean_.md&amp;value=---%0Auid%3A%20Stringier.Categories.CategoriesTests.BoxDrawing(System.Char%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Tests/Stringier/Categories/CategoriesTests.cs/#L7">View Source</a>
   </span>
   <a id="Stringier_Categories_CategoriesTests_BoxDrawing_" data-uid="Stringier.Categories.CategoriesTests.BoxDrawing*"></a>
-  <h4 id="Stringier_Categories_CategoriesTests_BoxDrawing_Char_Boolean_" data-uid="Stringier.Categories.CategoriesTests.BoxDrawing(Char,Boolean)">BoxDrawing(Char, Boolean)</h4>
+  <h4 id="Stringier_Categories_CategoriesTests_BoxDrawing_System_Char_System_Boolean_" data-uid="Stringier.Categories.CategoriesTests.BoxDrawing(System.Char,System.Boolean)">BoxDrawing(Char, Boolean)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void BoxDrawing(Char value, Boolean expected)</code></pre>
+    <pre><code class="lang-csharp hljs">[Theory]
+[InlineData(new object[]{'&#9471;', false})]
+[InlineData(new object[]{'&#9472;', true})]
+[InlineData(new object[]{'&#9599;', true})]
+[InlineData(new object[]{'&#9600;', false})]
+public void BoxDrawing(char value, bool expected)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -114,12 +143,12 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Char</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a></td>
         <td><span class="parametername">value</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">Boolean</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td><span class="parametername">expected</span></td>
         <td></td>
       </tr>
@@ -127,18 +156,22 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Categories_CategoriesTests_Control_Char_Boolean_.md&amp;value=---%0Auid%3A%20Stringier.Categories.CategoriesTests.Control(Char%2CBoolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Categories_CategoriesTests_Control_System_Char_System_Boolean_.md&amp;value=---%0Auid%3A%20Stringier.Categories.CategoriesTests.Control(System.Char%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Tests/Stringier/Categories/CategoriesTests.cs/#L14">View Source</a>
   </span>
   <a id="Stringier_Categories_CategoriesTests_Control_" data-uid="Stringier.Categories.CategoriesTests.Control*"></a>
-  <h4 id="Stringier_Categories_CategoriesTests_Control_Char_Boolean_" data-uid="Stringier.Categories.CategoriesTests.Control(Char,Boolean)">Control(Char, Boolean)</h4>
+  <h4 id="Stringier_Categories_CategoriesTests_Control_System_Char_System_Boolean_" data-uid="Stringier.Categories.CategoriesTests.Control(System.Char,System.Boolean)">Control(Char, Boolean)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Control(Char value, Boolean expected)</code></pre>
+    <pre><code class="lang-csharp hljs">[Theory]
+[InlineData(new object[]{'\0', true})]
+[InlineData(new object[]{'\u001f', true})]
+[InlineData(new object[]{' ', false})]
+public void Control(char value, bool expected)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -151,12 +184,12 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Char</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a></td>
         <td><span class="parametername">value</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">Boolean</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td><span class="parametername">expected</span></td>
         <td></td>
       </tr>
@@ -175,7 +208,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Difference()</code></pre>
+    <pre><code class="lang-csharp hljs">[Fact]
+public void Difference()</code></pre>
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
@@ -190,22 +224,26 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Disjunction()</code></pre>
+    <pre><code class="lang-csharp hljs">[Fact]
+public void Disjunction()</code></pre>
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Categories_CategoriesTests_Format_Char_Boolean_.md&amp;value=---%0Auid%3A%20Stringier.Categories.CategoriesTests.Format(Char%2CBoolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Categories_CategoriesTests_Format_System_Char_System_Boolean_.md&amp;value=---%0Auid%3A%20Stringier.Categories.CategoriesTests.Format(System.Char%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Tests/Stringier/Categories/CategoriesTests.cs/#L20">View Source</a>
   </span>
   <a id="Stringier_Categories_CategoriesTests_Format_" data-uid="Stringier.Categories.CategoriesTests.Format*"></a>
-  <h4 id="Stringier_Categories_CategoriesTests_Format_Char_Boolean_" data-uid="Stringier.Categories.CategoriesTests.Format(Char,Boolean)">Format(Char, Boolean)</h4>
+  <h4 id="Stringier_Categories_CategoriesTests_Format_System_Char_System_Boolean_" data-uid="Stringier.Categories.CategoriesTests.Format(System.Char,System.Boolean)">Format(Char, Boolean)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Format(Char value, Boolean expected)</code></pre>
+    <pre><code class="lang-csharp hljs">[Theory]
+[InlineData(new object[]{'&#173;', true})]
+[InlineData(new object[]{'&#1536;', true})]
+public void Format(char value, bool expected)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -218,12 +256,12 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Char</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a></td>
         <td><span class="parametername">value</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">Boolean</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td><span class="parametername">expected</span></td>
         <td></td>
       </tr>
@@ -242,7 +280,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Intersection()</code></pre>
+    <pre><code class="lang-csharp hljs">[Fact]
+public void Intersection()</code></pre>
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
@@ -257,22 +296,28 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Union()</code></pre>
+    <pre><code class="lang-csharp hljs">[Fact]
+public void Union()</code></pre>
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Categories_CategoriesTests_WhiteSpace_Char_Boolean_.md&amp;value=---%0Auid%3A%20Stringier.Categories.CategoriesTests.WhiteSpace(Char%2CBoolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Categories_CategoriesTests_WhiteSpace_System_Char_System_Boolean_.md&amp;value=---%0Auid%3A%20Stringier.Categories.CategoriesTests.WhiteSpace(System.Char%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Tests/Stringier/Categories/CategoriesTests.cs/#L25">View Source</a>
   </span>
   <a id="Stringier_Categories_CategoriesTests_WhiteSpace_" data-uid="Stringier.Categories.CategoriesTests.WhiteSpace*"></a>
-  <h4 id="Stringier_Categories_CategoriesTests_WhiteSpace_Char_Boolean_" data-uid="Stringier.Categories.CategoriesTests.WhiteSpace(Char,Boolean)">WhiteSpace(Char, Boolean)</h4>
+  <h4 id="Stringier_Categories_CategoriesTests_WhiteSpace_System_Char_System_Boolean_" data-uid="Stringier.Categories.CategoriesTests.WhiteSpace(System.Char,System.Boolean)">WhiteSpace(Char, Boolean)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void WhiteSpace(Char value, Boolean expected)</code></pre>
+    <pre><code class="lang-csharp hljs">[Theory]
+[InlineData(new object[]{'\t', true})]
+[InlineData(new object[]{' ', true})]
+[InlineData(new object[]{'&#160;', true})]
+[InlineData(new object[]{'\u2029', true})]
+public void WhiteSpace(char value, bool expected)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -285,12 +330,12 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Char</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a></td>
         <td><span class="parametername">value</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">Boolean</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td><span class="parametername">expected</span></td>
         <td></td>
       </tr>

@@ -23,7 +23,7 @@ namespace Consolator {
 		}
 
 		/// <summary>
-		/// Gets or sets the console window title.
+		/// Sets the console window title.
 		/// </summary>
 		[SuppressMessage("Design", "CA1044:Properties should not be write only", Justification = "There's no corresponding get-title sequence we can use.")]
 		[SuppressMessage("Major Code Smell", "S2376:Write-only properties should not be used", Justification = "There's no corresponding get-title sequence we can use.")]

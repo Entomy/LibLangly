@@ -90,5 +90,17 @@ namespace Philosoft {
 			return collection.TryRead(out element, out error);
 		}
 
+		public static partial class Friendly {
+			[return: MaybeNull]
+			public static TElement Read<TElement, TError>([AllowNull] IReadable<TElement, TError> collection) {
+				collection.Read(out TElement element);
+				return element;
+			}
+
+			public static Tuple<Boolean, TError, TElement> TryRead<TElement, TError>([AllowNull] IReadable<TElement, TError> collection) {
+				Boolean result = collection.TryRead(out TElement element, out TError error);
+				return new Tuple<Boolean, TError, TElement>(result, error, element);
+			}
+		}
 	}
 }

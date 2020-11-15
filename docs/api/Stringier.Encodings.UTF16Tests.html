@@ -80,28 +80,58 @@
     <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
     <div class="level1"><span class="xref">UTF16Tests</span></div>
   </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_">Object.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_System_Object_">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#System_Object_GetHashCode">Object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#System_Object_GetType">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#System_Object_MemberwiseClone">Object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#System_Object_ReferenceEquals_System_Object_System_Object_">Object.ReferenceEquals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString">Object.ToString()</a>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Stringier.Encodings.html">Stringier.Encodings</a></h6>
   <h6><strong>Assembly</strong>: Tests.dll</h6>
   <h5 id="Stringier_Encodings_UTF16Tests_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class UTF16Tests : object</code></pre>
+    <pre><code class="lang-csharp hljs">public class UTF16Tests</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Encodings_UTF16Tests_Decode_1_UInt16_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Encodings.UTF16Tests.Decode_1(UInt16%2CInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Encodings_UTF16Tests_Decode_1_System_UInt16_System_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Encodings.UTF16Tests.Decode_1(System.UInt16%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Tests/Stringier/Encodings/UTF16Tests.cs/#L9">View Source</a>
   </span>
   <a id="Stringier_Encodings_UTF16Tests_Decode_1_" data-uid="Stringier.Encodings.UTF16Tests.Decode_1*"></a>
-  <h4 id="Stringier_Encodings_UTF16Tests_Decode_1_UInt16_Int32_" data-uid="Stringier.Encodings.UTF16Tests.Decode_1(UInt16,Int32)">Decode_1(UInt16, Int32)</h4>
+  <h4 id="Stringier_Encodings_UTF16Tests_Decode_1_System_UInt16_System_Int32_" data-uid="Stringier.Encodings.UTF16Tests.Decode_1(System.UInt16,System.Int32)">Decode_1(UInt16, Int32)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Decode_1(UInt16 first, Int32 expected)</code></pre>
+    <pre><code class="lang-csharp hljs">[Theory]
+[InlineData(new object[]{0, 0})]
+[InlineData(new object[]{65, 65})]
+[InlineData(new object[]{127, 127})]
+[InlineData(new object[]{128, 128})]
+[InlineData(new object[]{255, 255})]
+public void Decode_1(ushort first, int expected)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -114,12 +144,12 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">UInt16</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint16">UInt16</a></td>
         <td><span class="parametername">first</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">Int32</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
         <td><span class="parametername">expected</span></td>
         <td></td>
       </tr>
@@ -127,18 +157,21 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Encodings_UTF16Tests_Decode_2_UInt16_UInt16_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Encodings.UTF16Tests.Decode_2(UInt16%2CUInt16%2CInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Encodings_UTF16Tests_Decode_2_System_UInt16_System_UInt16_System_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Encodings.UTF16Tests.Decode_2(System.UInt16%2CSystem.UInt16%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Tests/Stringier/Encodings/UTF16Tests.cs/#L17">View Source</a>
   </span>
   <a id="Stringier_Encodings_UTF16Tests_Decode_2_" data-uid="Stringier.Encodings.UTF16Tests.Decode_2*"></a>
-  <h4 id="Stringier_Encodings_UTF16Tests_Decode_2_UInt16_UInt16_Int32_" data-uid="Stringier.Encodings.UTF16Tests.Decode_2(UInt16,UInt16,Int32)">Decode_2(UInt16, UInt16, Int32)</h4>
+  <h4 id="Stringier_Encodings_UTF16Tests_Decode_2_System_UInt16_System_UInt16_System_Int32_" data-uid="Stringier.Encodings.UTF16Tests.Decode_2(System.UInt16,System.UInt16,System.Int32)">Decode_2(UInt16, UInt16, Int32)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Decode_2(UInt16 first, UInt16 second, Int32 expected)</code></pre>
+    <pre><code class="lang-csharp hljs">[Theory]
+[InlineData(new object[]{55348, 56606, 119070})]
+[InlineData(new object[]{55348, 56637, 119101})]
+public void Decode_2(ushort first, ushort second, int expected)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -151,17 +184,17 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">UInt16</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint16">UInt16</a></td>
         <td><span class="parametername">first</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">UInt16</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint16">UInt16</a></td>
         <td><span class="parametername">second</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">Int32</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
         <td><span class="parametername">expected</span></td>
         <td></td>
       </tr>
@@ -169,18 +202,25 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Encodings_UTF16Tests_Decode_Gibberish_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Encodings.UTF16Tests.Decode_Gibberish(Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Encodings_UTF16Tests_Decode_Gibberish_System_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Encodings.UTF16Tests.Decode_Gibberish(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Tests/Stringier/Encodings/UTF16Tests.cs/#L22">View Source</a>
   </span>
   <a id="Stringier_Encodings_UTF16Tests_Decode_Gibberish_" data-uid="Stringier.Encodings.UTF16Tests.Decode_Gibberish*"></a>
-  <h4 id="Stringier_Encodings_UTF16Tests_Decode_Gibberish_Int32_" data-uid="Stringier.Encodings.UTF16Tests.Decode_Gibberish(Int32)">Decode_Gibberish(Int32)</h4>
+  <h4 id="Stringier_Encodings_UTF16Tests_Decode_Gibberish_System_Int32_" data-uid="Stringier.Encodings.UTF16Tests.Decode_Gibberish(System.Int32)">Decode_Gibberish(Int32)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Decode_Gibberish(Int32 size)</code></pre>
+    <pre><code class="lang-csharp hljs">[Theory]
+[InlineData(new object[]{128})]
+[InlineData(new object[]{256})]
+[InlineData(new object[]{512})]
+[InlineData(new object[]{1024})]
+[InlineData(new object[]{2048})]
+[InlineData(new object[]{4096})]
+public void Decode_Gibberish(int size)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -193,7 +233,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Int32</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
         <td><span class="parametername">size</span></td>
         <td></td>
       </tr>
@@ -201,18 +241,21 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Encodings_UTF16Tests_Encode_UInt32_Char___.md&amp;value=---%0Auid%3A%20Stringier.Encodings.UTF16Tests.Encode(UInt32%2CChar%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Encodings_UTF16Tests_Encode_System_UInt32_System_Char___.md&amp;value=---%0Auid%3A%20Stringier.Encodings.UTF16Tests.Encode(System.UInt32%2CSystem.Char%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Tests/Stringier/Encodings/UTF16Tests.cs/#L32">View Source</a>
   </span>
   <a id="Stringier_Encodings_UTF16Tests_Encode_" data-uid="Stringier.Encodings.UTF16Tests.Encode*"></a>
-  <h4 id="Stringier_Encodings_UTF16Tests_Encode_UInt32_Char___" data-uid="Stringier.Encodings.UTF16Tests.Encode(UInt32,Char[])">Encode(UInt32, Char[])</h4>
+  <h4 id="Stringier_Encodings_UTF16Tests_Encode_System_UInt32_System_Char___" data-uid="Stringier.Encodings.UTF16Tests.Encode(System.UInt32,System.Char[])">Encode(UInt32, Char[])</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Encode(UInt32 scalarValue, Char[] expected)</code></pre>
+    <pre><code class="lang-csharp hljs">[Theory]
+[InlineData(new object[]{119070, new char[]{'\uD834', '\uDD1E'}})]
+[InlineData(new object[]{119101, new char[]{'\uD834', '\uDD3D'}})]
+public void Encode(uint scalarValue, char[] expected)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -225,12 +268,12 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">UInt32</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a></td>
         <td><span class="parametername">scalarValue</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">Char</span>[]</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>[]</td>
         <td><span class="parametername">expected</span></td>
         <td></td>
       </tr>
@@ -238,18 +281,25 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Encodings_UTF16Tests_Encode_Gibberish_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Encodings.UTF16Tests.Encode_Gibberish(Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Encodings_UTF16Tests_Encode_Gibberish_System_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Encodings.UTF16Tests.Encode_Gibberish(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Tests/Stringier/Encodings/UTF16Tests.cs/#L39">View Source</a>
   </span>
   <a id="Stringier_Encodings_UTF16Tests_Encode_Gibberish_" data-uid="Stringier.Encodings.UTF16Tests.Encode_Gibberish*"></a>
-  <h4 id="Stringier_Encodings_UTF16Tests_Encode_Gibberish_Int32_" data-uid="Stringier.Encodings.UTF16Tests.Encode_Gibberish(Int32)">Encode_Gibberish(Int32)</h4>
+  <h4 id="Stringier_Encodings_UTF16Tests_Encode_Gibberish_System_Int32_" data-uid="Stringier.Encodings.UTF16Tests.Encode_Gibberish(System.Int32)">Encode_Gibberish(Int32)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Encode_Gibberish(Int32 size)</code></pre>
+    <pre><code class="lang-csharp hljs">[Theory]
+[InlineData(new object[]{128})]
+[InlineData(new object[]{256})]
+[InlineData(new object[]{512})]
+[InlineData(new object[]{1024})]
+[InlineData(new object[]{2048})]
+[InlineData(new object[]{4096})]
+public void Encode_Gibberish(int size)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -262,7 +312,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Int32</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
         <td><span class="parametername">size</span></td>
         <td></td>
       </tr>
@@ -270,18 +320,32 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Encodings_UTF16Tests_IsFirstUnit_UInt16_Boolean_.md&amp;value=---%0Auid%3A%20Stringier.Encodings.UTF16Tests.IsFirstUnit(UInt16%2CBoolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Encodings_UTF16Tests_IsFirstUnit_System_UInt16_System_Boolean_.md&amp;value=---%0Auid%3A%20Stringier.Encodings.UTF16Tests.IsFirstUnit(System.UInt16%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Tests/Stringier/Encodings/UTF16Tests.cs/#L49">View Source</a>
   </span>
   <a id="Stringier_Encodings_UTF16Tests_IsFirstUnit_" data-uid="Stringier.Encodings.UTF16Tests.IsFirstUnit*"></a>
-  <h4 id="Stringier_Encodings_UTF16Tests_IsFirstUnit_UInt16_Boolean_" data-uid="Stringier.Encodings.UTF16Tests.IsFirstUnit(UInt16,Boolean)">IsFirstUnit(UInt16, Boolean)</h4>
+  <h4 id="Stringier_Encodings_UTF16Tests_IsFirstUnit_System_UInt16_System_Boolean_" data-uid="Stringier.Encodings.UTF16Tests.IsFirstUnit(System.UInt16,System.Boolean)">IsFirstUnit(UInt16, Boolean)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void IsFirstUnit(UInt16 unit, Boolean expected)</code></pre>
+    <pre><code class="lang-csharp hljs">[Theory]
+[InlineData(new object[]{0, true})]
+[InlineData(new object[]{55295, true})]
+[InlineData(new object[]{55296, true})]
+[InlineData(new object[]{55297, true})]
+[InlineData(new object[]{56318, true})]
+[InlineData(new object[]{56319, true})]
+[InlineData(new object[]{56320, false})]
+[InlineData(new object[]{56321, false})]
+[InlineData(new object[]{57342, false})]
+[InlineData(new object[]{57343, false})]
+[InlineData(new object[]{57344, true})]
+[InlineData(new object[]{57345, true})]
+[InlineData(new object[]{65535, true})]
+public void IsFirstUnit(ushort unit, bool expected)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -294,12 +358,12 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">UInt16</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint16">UInt16</a></td>
         <td><span class="parametername">unit</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">Boolean</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td><span class="parametername">expected</span></td>
         <td></td>
       </tr>
@@ -307,18 +371,32 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Encodings_UTF16Tests_NextUnitRange_UInt16_UInt16_UInt16_.md&amp;value=---%0Auid%3A%20Stringier.Encodings.UTF16Tests.NextUnitRange(UInt16%2CUInt16%2CUInt16)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Encodings_UTF16Tests_NextUnitRange_System_UInt16_System_UInt16_System_UInt16_.md&amp;value=---%0Auid%3A%20Stringier.Encodings.UTF16Tests.NextUnitRange(System.UInt16%2CSystem.UInt16%2CSystem.UInt16)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Tests/Stringier/Encodings/UTF16Tests.cs/#L65">View Source</a>
   </span>
   <a id="Stringier_Encodings_UTF16Tests_NextUnitRange_" data-uid="Stringier.Encodings.UTF16Tests.NextUnitRange*"></a>
-  <h4 id="Stringier_Encodings_UTF16Tests_NextUnitRange_UInt16_UInt16_UInt16_" data-uid="Stringier.Encodings.UTF16Tests.NextUnitRange(UInt16,UInt16,UInt16)">NextUnitRange(UInt16, UInt16, UInt16)</h4>
+  <h4 id="Stringier_Encodings_UTF16Tests_NextUnitRange_System_UInt16_System_UInt16_System_UInt16_" data-uid="Stringier.Encodings.UTF16Tests.NextUnitRange(System.UInt16,System.UInt16,System.UInt16)">NextUnitRange(UInt16, UInt16, UInt16)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void NextUnitRange(UInt16 unit, UInt16 lowerExp, UInt16 upperExp)</code></pre>
+    <pre><code class="lang-csharp hljs">[Theory]
+[InlineData(new object[]{0, 0, 65535})]
+[InlineData(new object[]{55295, 0, 65535})]
+[InlineData(new object[]{55296, 56320, 57343})]
+[InlineData(new object[]{55297, 56320, 57343})]
+[InlineData(new object[]{56318, 56320, 57343})]
+[InlineData(new object[]{56319, 56320, 57343})]
+[InlineData(new object[]{56320, 0, 65535})]
+[InlineData(new object[]{56321, 0, 65535})]
+[InlineData(new object[]{57342, 0, 65535})]
+[InlineData(new object[]{57343, 0, 65535})]
+[InlineData(new object[]{57344, 0, 65535})]
+[InlineData(new object[]{57345, 0, 65535})]
+[InlineData(new object[]{65535, 0, 65535})]
+public void NextUnitRange(ushort unit, ushort lowerExp, ushort upperExp)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -331,17 +409,17 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">UInt16</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint16">UInt16</a></td>
         <td><span class="parametername">unit</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">UInt16</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint16">UInt16</a></td>
         <td><span class="parametername">lowerExp</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">UInt16</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint16">UInt16</a></td>
         <td><span class="parametername">upperExp</span></td>
         <td></td>
       </tr>
@@ -349,18 +427,32 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Encodings_UTF16Tests_SequenceLength_UInt16_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Encodings.UTF16Tests.SequenceLength(UInt16%2CInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Encodings_UTF16Tests_SequenceLength_System_UInt16_System_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Encodings.UTF16Tests.SequenceLength(System.UInt16%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Tests/Stringier/Encodings/UTF16Tests.cs/#L85">View Source</a>
   </span>
   <a id="Stringier_Encodings_UTF16Tests_SequenceLength_" data-uid="Stringier.Encodings.UTF16Tests.SequenceLength*"></a>
-  <h4 id="Stringier_Encodings_UTF16Tests_SequenceLength_UInt16_Int32_" data-uid="Stringier.Encodings.UTF16Tests.SequenceLength(UInt16,Int32)">SequenceLength(UInt16, Int32)</h4>
+  <h4 id="Stringier_Encodings_UTF16Tests_SequenceLength_System_UInt16_System_Int32_" data-uid="Stringier.Encodings.UTF16Tests.SequenceLength(System.UInt16,System.Int32)">SequenceLength(UInt16, Int32)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void SequenceLength(UInt16 unit, Int32 expected)</code></pre>
+    <pre><code class="lang-csharp hljs">[Theory]
+[InlineData(new object[]{0, 1})]
+[InlineData(new object[]{55295, 1})]
+[InlineData(new object[]{55296, 2})]
+[InlineData(new object[]{55297, 2})]
+[InlineData(new object[]{56318, 2})]
+[InlineData(new object[]{56319, 2})]
+[InlineData(new object[]{56320, 0})]
+[InlineData(new object[]{56321, 0})]
+[InlineData(new object[]{57342, 0})]
+[InlineData(new object[]{57343, 0})]
+[InlineData(new object[]{57344, 1})]
+[InlineData(new object[]{57345, 1})]
+[InlineData(new object[]{65535, 1})]
+public void SequenceLength(ushort unit, int expected)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -373,12 +465,12 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">UInt16</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint16">UInt16</a></td>
         <td><span class="parametername">unit</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">Int32</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
         <td><span class="parametername">expected</span></td>
         <td></td>
       </tr>

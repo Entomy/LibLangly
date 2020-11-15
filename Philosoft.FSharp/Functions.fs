@@ -76,6 +76,24 @@ module Functions =
     let inline fold (func) (identity) (collection) = Fold<Extensions, _, _, _> (collection) (Func<_, _, _>(func)) (identity)
 
     /// <summary>
+    /// Grows the collection by a computed factor.
+    /// </summary>
+    /// <param name="collection">This collection.</param>
+    let inline grow (collection) =
+        Grow<Extensions, _> collection
+        collection
+
+    /// <summary>
+    /// Insert an element into the collection at the specified index.
+    /// </summary>
+    /// <param name="collection">This collection.</param>
+    /// <param name="index">The index at which <paramref name="element"/> should be inserted.</param>
+    /// <param name="element">The object to insert.</param>
+    let inline insert (index) (element) (collection) =
+        Insert<Extensions, _, _, _> (collection) (index) (element)
+        collection
+
+    /// <summary>
     /// Applies the <paramref name="func"/> to each element of the <paramref name="collection"/>.
     /// </summary>
     /// <param name="collection">This collection.</param>
@@ -112,6 +130,19 @@ module Functions =
         collection
 
     /// <summary>
+    /// Attempts to read an element from the <paramref name="collection"/>.
+    /// </summary>
+    /// <param name="collection">The collection to read from.</param>
+    /// <returns>A Choice whos first case is the read element and whos second case is the error that occurred.</returns>
+    let inline read (collection) = 
+        match TryRead<Extensions.Friendly, _, _, _> collection with
+        | (success, error, element) ->
+            if success then
+                Choice1Of2 element
+            else
+                Choice2Of2 error
+
+    /// <summary>
     /// Removes all instances of the <paramref name="elements"/> from the collection.
     /// </summary>
     /// <param name="collection">This collection.</param>
@@ -119,3 +150,48 @@ module Functions =
     let inline remove (elements) (collection) =
         Remove<Extensions, _, _> collection elements
         collection
+
+    /// <summary>
+    /// Resize the collection to the specified <paramref name="capacity"/>.
+    /// </summary>
+    /// <param name="collection">This collection.</param>
+    /// <param name="capacity">The new capacity of the collection.</param>
+    let inline resize (capacity) (collection) =
+        Resize<Extensions, _, _> collection capacity
+        collection
+
+    /// <summary>
+    /// Shrinks the collection by a computed factor.
+    /// </summary>
+    /// <param name="collection">This collection.</param>
+    let inline shrink (collection) =
+        Shrink<Extensions, _> collection
+        collection
+
+    /// <summary>
+    /// Attempts to write the <paramref name="elements"/> to the <paramref name="collection"/>.
+    /// </summary>
+    /// <param name="collection">The collection to write to.</param>
+    /// <param name="elements">The elements to write.</param>
+    /// <returns>An Option where None indicates success and Some holds the error that occurred.</returns>
+    let inline write (elements) (collection) =
+        match TryWrite<Extensions.Friendly, _, _, _> collection elements with
+        | (success, error) ->
+            if success then
+                Option.None
+            else
+                Option.Some error
+
+    // These wrap behavior into the way F# expects
+
+    type Memory<'t> with
+        member this.GetEnumerator() = this.Span.GetEnumerator()
+
+    type ReadOnlyMemory<'t> with
+        member this.GetEnumerator() = this.Span.GetEnumerator()
+
+    type IReadOnlySliceable<'t> with
+        member this.GetSlice(start, finish) =
+            let start = defaultArg start 0n
+            let finish = defaultArg finish this.Count
+            Extensions.Slice(this, start, finish - start)

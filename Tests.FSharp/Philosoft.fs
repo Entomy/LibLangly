@@ -24,7 +24,7 @@ module FSharp =
         let array = DynamicArray<Int32>(8n)
                     |> add [| 1; 2; 3; 4; 5 |]
         Assert.Equal(5n, array.Length);
-        clear array
+        clear array |> ignore
         Assert.Equal(0n, array.Length);
 
     [<Fact>]
@@ -53,6 +53,21 @@ module FSharp =
         Assert.Equal(15, sum)
 
     [<Fact>]
+    let ``Insert`` () =
+        let array = DynamicArray<Int32>(8n)
+                    |> add [| 1; 2; 3; 4; 5 |]
+                    |> insert 0n 0
+                    |> insert 2n 0
+                    |> insert 4n 0
+        Assert.Equal(0, array.[0n]);
+        Assert.Equal(1, array.[1n]);
+        Assert.Equal(0, array.[2n]);
+        Assert.Equal(2, array.[3n]);
+        Assert.Equal(0, array.[4n]);
+        Assert.Equal(3, array.[5n]);
+        Assert.Equal(4, array.[6n]);
+
+    [<Fact>]
     let ``Map`` () =
         let array = DynamicArray<Int32>(8n)
                     |> add [| 1; 2; 3; 4; 5 |]
@@ -65,6 +80,17 @@ module FSharp =
                     |> add [| 1; 2; 3; 4; 5 |]
         Assert.Equal(0n, array |> occurrences 0)
         Assert.Equal(1n, array |> occurrences 1)
+
+    [<Fact>]
+    let ``Range`` () =
+        let array = DynamicArray<Int32>(8n)
+                    |> add [| 1; 2; 3; 4; 5 |]
+        let slice = array.[2n..4n]
+        let mutable i = 2n
+        for item in slice do
+            Assert.Equal(array.[i], item)
+            i <- i + 1n
+        Assert.Equal(4n, i)
 
     [<Fact>]
     let ``Remove`` () =

@@ -88,5 +88,11 @@ namespace Philosoft {
 			return collection.TryWrite(element, out error);
 		}
 
+		public static partial class Friendly {
+			public static Tuple<Boolean, TError> TryWrite<TElement, TError>([AllowNull] IWritable<TElement, TError> collection, TElement element) {
+				Boolean result = collection.TryWrite(element, out TError error);
+				return new Tuple<Boolean, TError>(result, error);
+			}
+		}
 	}
 }
