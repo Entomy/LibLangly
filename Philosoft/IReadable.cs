@@ -52,9 +52,9 @@ namespace Philosoft {
 		/// <param name="collection">The collection to read from.</param>
 		/// <param name="element">The element that was read.</param>
 		/// <remarks>
-		/// This assumes the read will never fail, which is an assumption that generally doesn't hold up. It is strongly recommended to use <see cref="TryRead{TElement, TError}(IWritable{TElement, TError}, out TElement)"/> or <see cref="TryRead{TElement, TError}(IWritable{TElement, TError}, out TElement, out TError)"/> instead.
+		/// This assumes the read will never fail, which is an assumption that generally doesn't hold up. It is strongly recommended to use <see cref="TryRead{TElement, TError}(IReadable{TElement, TError}, out TElement)"/> or <see cref="TryRead{TElement, TError}(IReadable{TElement, TError}, out TElement, out TError)"/> instead.
 		/// </remarks>
-		public static void Read<TElement, TError>([AllowNull] this IWritable<TElement, TError> collection, [MaybeNull] out TElement element) {
+		public static void Read<TElement, TError>([AllowNull] this IReadable<TElement, TError> collection, [MaybeNull] out TElement element) {
 			if (collection is null) {
 				element = default;
 				return;
@@ -70,7 +70,7 @@ namespace Philosoft {
 		/// <param name="collection">The collection to read from.</param>
 		/// <param name="element">The element that was read.</param>
 		/// <returns><see langword="true"/> if the read was successful; otherwise, <see langword="false"/>.</returns>
-		public static Boolean TryRead<TElement, TError>([AllowNull] this IWritable<TElement, TError> collection, [MaybeNullWhen(false), NotNullWhen(true)] out TElement element) => TryRead(collection, out element, out _);
+		public static Boolean TryRead<TElement, TError>([AllowNull] this IReadable<TElement, TError> collection, [MaybeNullWhen(false), NotNullWhen(true)] out TElement element) => TryRead(collection, out element, out _);
 
 		/// <summary>
 		/// Attempts to read a <typeparamref name="TElement"/> from the <paramref name="collection"/>.
@@ -81,7 +81,7 @@ namespace Philosoft {
 		/// <param name="element">The element that was read.</param>
 		/// <param name="error">The <typeparamref name="TError"/> that occurred, if any.</param>
 		/// <returns><see langword="true"/> if the read was successful; otherwise, <see langword="false"/>.</returns>
-		public static Boolean TryRead<TElement, TError>([AllowNull] this IWritable<TElement, TError> collection, [MaybeNullWhen(false), NotNullWhen(true)] out TElement element, [MaybeNullWhen(true), NotNullWhen(false)] out TError error) {
+		public static Boolean TryRead<TElement, TError>([AllowNull] this IReadable<TElement, TError> collection, [MaybeNullWhen(false), NotNullWhen(true)] out TElement element, [MaybeNullWhen(true), NotNullWhen(false)] out TError error) {
 			if (collection is null) {
 				element = default;
 				error = default;
