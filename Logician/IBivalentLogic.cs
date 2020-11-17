@@ -2,11 +2,11 @@
 
 namespace Logician {
 	/// <summary>
-	/// Indicates the type is a logical type with at least three parts.
+	/// Indicates the type is a logical type with at least two parts.
 	/// </summary>
 	public interface IBivalentLogic<T> : IEquatable<T> where T : struct, IBivalentLogic<T> {
 		/// <summary>
-		/// Negation; not.
+		/// Logical negation; not.
 		/// </summary>
 		T Not();
 

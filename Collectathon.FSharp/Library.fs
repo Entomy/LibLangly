@@ -1,5 +1,18 @@
-﻿namespace Collectathon.FSharp
+﻿namespace Collectathon.Arrays
 
-module Say =
-    let hello name =
-        printfn "Hello %s" name
+[<AutoOpen>]
+module Library =
+    /// <summary>
+    /// Casts the array to a <see cref="FixedArray{T}"/>.
+    /// </summary>
+    let fix<'a> (array:'a array) = FixedArray<'a>.op_Implicit(array)
+
+    /// <summary>
+    /// Casts the array to a <see cref="BoundedArray{T}"/>.
+    /// </summary>
+    let bnd<'a> (array:'a array) = BoundedArray<'a>.op_Implicit(array)
+
+    /// <summary>
+    /// Casts the array to a <see cref="DynamicArray{T}"/>.
+    /// </summary>
+    let dyn<'a> (array:'a array) = DynamicArray<'a>.op_Implicit(array)

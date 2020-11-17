@@ -1,5 +1,5 @@
-﻿namespace Defender.FSharp
+﻿namespace Defender
 
-module Say =
-    let hello name =
-        printfn "Hello %s" name
+[<AutoOpen>]
+module Library =
+    ()

@@ -39,8 +39,9 @@ namespace Logician {
 		}
 
 		public static implicit operator Ł3(Boolean value) => new Ł3(value);
+
 		/// <summary>
-		/// Logical negation
+		/// Logical negation; not
 		/// </summary>
 		public static Ł3 operator !(Ł3 value) => value.Not();
 
@@ -138,13 +139,14 @@ namespace Logician {
 		}
 
 		/// <inheritdoc/>
-		public Ł3 Equivalent(Ł3 other) => !(this ^ other);
+		public Ł3 Equivalent(Ł3 other) => new Ł3((Val)(1 - Math.Abs((Int32)Value - (Int32)other.Value)));
 
 		/// <inheritdoc/>
 		public Ł3 Equivalent(Boolean other) => Equivalent((Ł3)other);
 
 		/// <inheritdoc/>
 		public override Int32 GetHashCode() => Value.GetHashCode();
+
 		/// <inheritdoc/>
 		public Ł3 Implies(Ł3 value) => new Ł3((Val)Math.Min(1, 1 - (Int32)Value + (Int32)value.Value));
 
