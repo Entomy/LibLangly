@@ -5,7 +5,11 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
+	<ItemGroup>
+		<Compile Include="..\..\GlobalSuppressions.cs" Link="GlobalSuppressions.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
     <PackageReference Include="UnicodeInformation" Version="2.5.0" />
   </ItemGroup>
 
