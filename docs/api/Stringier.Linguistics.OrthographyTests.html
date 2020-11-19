@@ -114,21 +114,25 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Linguistics_OrthographyTests_Casing_EnglishDeseret_System_Int32_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Linguistics.OrthographyTests.Casing_EnglishDeseret(System.Int32%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Linguistics_OrthographyTests_Casing_AzerbaijaniLatin_System_Int32_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Linguistics.OrthographyTests.Casing_AzerbaijaniLatin(System.Int32%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests/Stringier/Linguistics/OrthographyTests.cs/#L18">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests/Stringier/Linguistics/OrthographyTests.cs/#L10">View Source</a>
   </span>
-  <a id="Stringier_Linguistics_OrthographyTests_Casing_EnglishDeseret_" data-uid="Stringier.Linguistics.OrthographyTests.Casing_EnglishDeseret*"></a>
-  <h4 id="Stringier_Linguistics_OrthographyTests_Casing_EnglishDeseret_System_Int32_System_Int32_System_Int32_" data-uid="Stringier.Linguistics.OrthographyTests.Casing_EnglishDeseret(System.Int32,System.Int32,System.Int32)">Casing_EnglishDeseret(Int32, Int32, Int32)</h4>
+  <a id="Stringier_Linguistics_OrthographyTests_Casing_AzerbaijaniLatin_" data-uid="Stringier.Linguistics.OrthographyTests.Casing_AzerbaijaniLatin*"></a>
+  <h4 id="Stringier_Linguistics_OrthographyTests_Casing_AzerbaijaniLatin_System_Int32_System_Int32_System_Int32_" data-uid="Stringier.Linguistics.OrthographyTests.Casing_AzerbaijaniLatin(System.Int32,System.Int32,System.Int32)">Casing_AzerbaijaniLatin(Int32, Int32, Int32)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{66600, 66560, 66600})]
-[InlineData(new object[]{66560, 66560, 66600})]
-public void Casing_EnglishDeseret(int value, int uppercase, int lowercase)</code></pre>
+[InlineData(new object[]{'a', 'A', 'a'})]
+[InlineData(new object[]{'A', 'A', 'a'})]
+[InlineData(new object[]{'i', '&#304;', 'i'})]
+[InlineData(new object[]{'&#304;', '&#304;', 'i'})]
+[InlineData(new object[]{'&#305;', 'I', '&#305;'})]
+[InlineData(new object[]{'I', 'I', '&#305;'})]
+public void Casing_AzerbaijaniLatin(int value, int uppercase, int lowercase)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -162,7 +166,7 @@ public void Casing_EnglishDeseret(int value, int uppercase, int lowercase)</code
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Linguistics_OrthographyTests_Casing_EnglishLatin_System_Char_System_Char_System_Char_.md&amp;value=---%0Auid%3A%20Stringier.Linguistics.OrthographyTests.Casing_EnglishLatin(System.Char%2CSystem.Char%2CSystem.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests/Stringier/Linguistics/OrthographyTests.cs/#L10">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests/Stringier/Linguistics/OrthographyTests.cs/#L25">View Source</a>
   </span>
   <a id="Stringier_Linguistics_OrthographyTests_Casing_EnglishLatin_" data-uid="Stringier.Linguistics.OrthographyTests.Casing_EnglishLatin*"></a>
   <h4 id="Stringier_Linguistics_OrthographyTests_Casing_EnglishLatin_System_Char_System_Char_System_Char_" data-uid="Stringier.Linguistics.OrthographyTests.Casing_EnglishLatin(System.Char,System.Char,System.Char)">Casing_EnglishLatin(Char, Char, Char)</h4>
@@ -173,6 +177,8 @@ public void Casing_EnglishDeseret(int value, int uppercase, int lowercase)</code
     <pre><code class="lang-csharp hljs">[Theory]
 [InlineData(new object[]{'a', 'A', 'a'})]
 [InlineData(new object[]{'A', 'A', 'a'})]
+[InlineData(new object[]{'i', 'I', 'i'})]
+[InlineData(new object[]{'I', 'I', 'i'})]
 public void Casing_EnglishLatin(char value, char uppercase, char lowercase)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -204,10 +210,59 @@ public void Casing_EnglishLatin(char value, char uppercase, char lowercase)</cod
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Linguistics_OrthographyTests_Casing_TurkishLatin_System_Int32_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Linguistics.OrthographyTests.Casing_TurkishLatin(System.Int32%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests/Stringier/Linguistics/OrthographyTests.cs/#L35">View Source</a>
+  </span>
+  <a id="Stringier_Linguistics_OrthographyTests_Casing_TurkishLatin_" data-uid="Stringier.Linguistics.OrthographyTests.Casing_TurkishLatin*"></a>
+  <h4 id="Stringier_Linguistics_OrthographyTests_Casing_TurkishLatin_System_Int32_System_Int32_System_Int32_" data-uid="Stringier.Linguistics.OrthographyTests.Casing_TurkishLatin(System.Int32,System.Int32,System.Int32)">Casing_TurkishLatin(Int32, Int32, Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Theory]
+[InlineData(new object[]{'a', 'A', 'a'})]
+[InlineData(new object[]{'A', 'A', 'a'})]
+[InlineData(new object[]{'i', '&#304;', 'i'})]
+[InlineData(new object[]{'&#304;', '&#304;', 'i'})]
+[InlineData(new object[]{'&#305;', 'I', '&#305;'})]
+[InlineData(new object[]{'I', 'I', '&#305;'})]
+public void Casing_TurkishLatin(int value, int uppercase, int lowercase)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">uppercase</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">lowercase</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Linguistics_OrthographyTests_Contains_EnglishLatin_System_Char_System_Boolean_.md&amp;value=---%0Auid%3A%20Stringier.Linguistics.OrthographyTests.Contains_EnglishLatin(System.Char%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests/Stringier/Linguistics/OrthographyTests.cs/#L29">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests/Stringier/Linguistics/OrthographyTests.cs/#L50">View Source</a>
   </span>
   <a id="Stringier_Linguistics_OrthographyTests_Contains_EnglishLatin_" data-uid="Stringier.Linguistics.OrthographyTests.Contains_EnglishLatin*"></a>
   <h4 id="Stringier_Linguistics_OrthographyTests_Contains_EnglishLatin_System_Char_System_Boolean_" data-uid="Stringier.Linguistics.OrthographyTests.Contains_EnglishLatin(System.Char,System.Boolean)">Contains_EnglishLatin(Char, Boolean)</h4>

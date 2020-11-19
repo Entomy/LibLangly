@@ -14,7 +14,7 @@ namespace Stringier.Linguistics {
 		/// <summary>
 		/// The English language.
 		/// </summary>
-		public static readonly Language English = new Language(living: true, constructed: false, (Script.Latin, Orthography.English_Latin), (Script.Shavian, Orthography.English_Shavian), (Script.Deseret, Orthography.English_Deseret));
+		public static readonly Language English = new Language(living: true, constructed: false, (Script.Latin, Orthography.English_Latin));
 
 		/// <summary>
 		/// The Turkish language.

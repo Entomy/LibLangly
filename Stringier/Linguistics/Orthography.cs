@@ -3,7 +3,6 @@ using Philosoft;
 using Defender;
 using Stringier.Categories;
 using System;
-using System.Collections.Generic;
 using System.Text;
 
 namespace Stringier.Linguistics {
@@ -16,20 +15,20 @@ namespace Stringier.Linguistics {
 		/// </summary>
 		internal static readonly Orthography Azeribaijani_Latin = new CasedOrthography(Part.Numbers_Latin, new ComplexPart(32, (x) => Check.Within(x, 0x41, 0x56) || Check.Within(x, 0x58, 0x5A) || Check.Within(x, 0x61, 0x76) || Check.Within(x, 0x78, 0x7A) || x == 'Ç' || x == 'ç' || x == 'Ə' || x == 'ə' || x == 'Ğ' || x == 'ğ' || x == 'ı' || x == 'İ' || x == 'Ö' || x == 'ö' || x == 'Ş' || x == 'ş' || x == 'Ü' || x == 'ü'), new Map('a', 'A'), new Map('b', 'B'), new Map('c', 'C'), new Map('ç', 'Ç'), new Map('d', 'D'), new Map('e', 'E'), new Map('ə', 'Ə'), new Map('f', 'F'), new Map('g', 'G'), new Map('ğ', 'Ğ'), new Map('h', 'H'), new Map('x', 'X'), new Map('ı', 'I'), new Map('i', 'İ'), new Map('j', 'J'), new Map('k', 'K'), new Map('q', 'Q'), new Map('l', 'L'), new Map('m', 'M'), new Map('n', 'N'), new Map('o', 'O'), new Map('ö', 'Ö'), new Map('p', 'P'), new Map('r', 'R'), new Map('s', 'S'), new Map('ş', 'Ş'), new Map('t', 'T'), new Map('u', 'U'), new Map('ü', 'Ü'), new Map('v', 'V'), new Map('y', 'Y'), new Map('z', 'Z'));
 
-		/// <summary>
-		/// English alphabet (Deseret script).
-		/// </summary>
-		internal static readonly Orthography English_Deseret = new CasedOrthography(Part.Numbers_Latin, new SimplePart(0x010400, 0x01044F), new Map(0x010428, 0x010400), new Map(0x010429, 0x010401), new Map(0x01042A, 0x010402), new Map(0x01042B, 0x010403), new Map(0x01042C, 0x010404), new Map(0x01042D, 0x010405), new Map(0x01042E, 0x010406), new Map(0x01042F, 0x010407), new Map(0x010430, 0x010408), new Map(0x010431, 0x010409), new Map(0x010432, 0x01040A), new Map(0x010433, 0x01040B), new Map(0x010434, 0x01040C), new Map(0x010435, 0x01040D), new Map(0x010436, 0x01040E), new Map(0x010437, 0x01040F), new Map(0x010438, 0x010410), new Map(0x010439, 0x010411), new Map(0x01043A, 0x010412), new Map(0x01043B, 0x010413), new Map(0x01043C, 0x010414), new Map(0x01043D, 0x010415), new Map(0x01043E, 0x010416), new Map(0x01043F, 0x010417), new Map(0x010440, 0x010418), new Map(0x010441, 0x010419), new Map(0x010442, 0x01041A), new Map(0x010443, 0x01041B), new Map(0x010444, 0x01041C), new Map(0x010445, 0x01041D), new Map(0x010446, 0x01041E), new Map(0x010447, 0x01041F), new Map(0x010448, 0x010420), new Map(0x010449, 0x010421), new Map(0x01044A, 0x010422), new Map(0x01044B, 0x010423), new Map(0x01044C, 0x010424), new Map(0x01044D, 0x010425), new Map(0x01044E, 0x010426), new Map(0x01044F, 0x010427));
+		///// <summary>
+		///// English alphabet (Deseret script).
+		///// </summary>
+		//internal static readonly Orthography English_Deseret = new CasedOrthography(Part.Numbers_Latin, new SimplePart(0x010400, 0x01044F), new Map(0x010428, 0x010400), new Map(0x010429, 0x010401), new Map(0x01042A, 0x010402), new Map(0x01042B, 0x010403), new Map(0x01042C, 0x010404), new Map(0x01042D, 0x010405), new Map(0x01042E, 0x010406), new Map(0x01042F, 0x010407), new Map(0x010430, 0x010408), new Map(0x010431, 0x010409), new Map(0x010432, 0x01040A), new Map(0x010433, 0x01040B), new Map(0x010434, 0x01040C), new Map(0x010435, 0x01040D), new Map(0x010436, 0x01040E), new Map(0x010437, 0x01040F), new Map(0x010438, 0x010410), new Map(0x010439, 0x010411), new Map(0x01043A, 0x010412), new Map(0x01043B, 0x010413), new Map(0x01043C, 0x010414), new Map(0x01043D, 0x010415), new Map(0x01043E, 0x010416), new Map(0x01043F, 0x010417), new Map(0x010440, 0x010418), new Map(0x010441, 0x010419), new Map(0x010442, 0x01041A), new Map(0x010443, 0x01041B), new Map(0x010444, 0x01041C), new Map(0x010445, 0x01041D), new Map(0x010446, 0x01041E), new Map(0x010447, 0x01041F), new Map(0x010448, 0x010420), new Map(0x010449, 0x010421), new Map(0x01044A, 0x010422), new Map(0x01044B, 0x010423), new Map(0x01044C, 0x010424), new Map(0x01044D, 0x010425), new Map(0x01044E, 0x010426), new Map(0x01044F, 0x010427));
 
 		/// <summary>
 		/// English alphabet (Latin script).
 		/// </summary>
 		internal static readonly Orthography English_Latin = new CasedOrthography(Part.Numbers_Latin, Part.Basic_Latin, new Map('a', 'A'), new Map('b', 'B'), new Map('c', 'C'), new Map('d', 'D'), new Map('e', 'E'), new Map('f', 'F'), new Map('g', 'G'), new Map('h', 'H'), new Map('i', 'I'), new Map('j', 'J'), new Map('k', 'K'), new Map('l', 'L'), new Map('m', 'M'), new Map('n', 'N'), new Map('o', 'O'), new Map('p', 'P'), new Map('q', 'Q'), new Map('r', 'R'), new Map('s', 'S'), new Map('t', 'T'), new Map('u', 'U'), new Map('v', 'V'), new Map('w', 'W'), new Map('x', 'X'), new Map('y', 'Y'), new Map('z', 'Z'));
 
-		/// <summary>
-		/// English alphabet (Shavian script).
-		/// </summary>
-		internal static readonly Orthography English_Shavian = new UncasedOrthography(Part.Numbers_Latin, new SimplePart(0x010450, 0x01047F), 0x010450, 0x010451, 0x010452, 0x010453, 0x010454, 0x010455, 0x010456, 0x010457, 0x010458, 0x010459, 0x01045A, 0x01045B, 0x01045C, 0x01045D, 0x01045E, 0x01045F, 0x010460, 0x010461, 0x010462, 0x010463, 0x010464, 0x010465, 0x010466, 0x010467, 0x010468, 0x010469, 0x01046A, 0x01046B, 0x01046C, 0x01046D, 0x01046E, 0x01046F, 0x010470, 0x010471, 0x010472, 0x010473, 0x010474, 0x010475, 0x010476, 0x010477, 0x010478, 0x010479, 0x01047A, 0x01047B, 0x01047C, 0x01047D, 0x01047E, 0x01047F);
+		///// <summary>
+		///// English alphabet (Shavian script).
+		///// </summary>
+		//internal static readonly Orthography English_Shavian = new UncasedOrthography(Part.Numbers_Latin, new SimplePart(0x010450, 0x01047F), 0x010450, 0x010451, 0x010452, 0x010453, 0x010454, 0x010455, 0x010456, 0x010457, 0x010458, 0x010459, 0x01045A, 0x01045B, 0x01045C, 0x01045D, 0x01045E, 0x01045F, 0x010460, 0x010461, 0x010462, 0x010463, 0x010464, 0x010465, 0x010466, 0x010467, 0x010468, 0x010469, 0x01046A, 0x01046B, 0x01046C, 0x01046D, 0x01046E, 0x01046F, 0x010470, 0x010471, 0x010472, 0x010473, 0x010474, 0x010475, 0x010476, 0x010477, 0x010478, 0x010479, 0x01047A, 0x01047B, 0x01047C, 0x01047D, 0x01047E, 0x01047F);
 
 		/// <summary>
 		/// Turkish alphabet (Latin script).
