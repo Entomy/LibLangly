@@ -117,7 +117,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_MemoryTests_Constructor_System_Byte___System_Boolean_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Streamy.MemoryTests.Constructor(System.Byte%5B%5D%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests/Streamy/MemoryTests.cs/#L7">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests/Streamy/MemoryTests.cs/#L8">View Source</a>
   </span>
   <a id="Streamy_MemoryTests_Constructor_" data-uid="Streamy.MemoryTests.Constructor*"></a>
   <h4 id="Streamy_MemoryTests_Constructor_System_Byte___System_Boolean_System_Boolean_System_Boolean_" data-uid="Streamy.MemoryTests.Constructor(System.Byte[],System.Boolean,System.Boolean,System.Boolean)">Constructor(Byte[], Boolean, Boolean, Boolean)</h4>
@@ -168,7 +168,7 @@ public void Constructor(byte[] buffer, bool readable, bool seekable, bool writab
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_MemoryTests_EncodingDetection_System_Byte___Stringier_Encodings_Encoding_.md&amp;value=---%0Auid%3A%20Streamy.MemoryTests.EncodingDetection(System.Byte%5B%5D%2CStringier.Encodings.Encoding)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests/Streamy/MemoryTests.cs/#L19">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests/Streamy/MemoryTests.cs/#L20">View Source</a>
   </span>
   <a id="Streamy_MemoryTests_EncodingDetection_" data-uid="Streamy.MemoryTests.EncodingDetection*"></a>
   <h4 id="Streamy_MemoryTests_EncodingDetection_System_Byte___Stringier_Encodings_Encoding_" data-uid="Streamy.MemoryTests.EncodingDetection(System.Byte[],Stringier.Encodings.Encoding)">EncodingDetection(Byte[], Encoding)</h4>
@@ -209,10 +209,81 @@ public void EncodingDetection(byte[] buffer, Encoding encoding)</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_MemoryTests_Peek_Byte_System_Byte___.md&amp;value=---%0Auid%3A%20Streamy.MemoryTests.Peek_Byte(System.Byte%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests/Streamy/MemoryTests.cs/#L44">View Source</a>
+  </span>
+  <a id="Streamy_MemoryTests_Peek_Byte_" data-uid="Streamy.MemoryTests.Peek_Byte*"></a>
+  <h4 id="Streamy_MemoryTests_Peek_Byte_System_Byte___" data-uid="Streamy.MemoryTests.Peek_Byte(System.Byte[])">Peek_Byte(Byte[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Theory]
+[InlineData(new object[]{new byte[]{(byte)1, (byte)2, (byte)3, (byte)4, (byte)5}})]
+[InlineData(new object[]{new byte[]{(byte)255, (byte)254, (byte)253, (byte)252}})]
+public void Peek_Byte(byte[] buffer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>[]</td>
+        <td><span class="parametername">buffer</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_MemoryTests_Peek_Int16_System_Byte___.md&amp;value=---%0Auid%3A%20Streamy.MemoryTests.Peek_Int16(System.Byte%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests/Streamy/MemoryTests.cs/#L59">View Source</a>
+  </span>
+  <a id="Streamy_MemoryTests_Peek_Int16_" data-uid="Streamy.MemoryTests.Peek_Int16*"></a>
+  <h4 id="Streamy_MemoryTests_Peek_Int16_System_Byte___" data-uid="Streamy.MemoryTests.Peek_Int16(System.Byte[])">Peek_Int16(Byte[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Theory]
+[InlineData(new object[]{new byte[]{}})]
+[InlineData(new object[]{new byte[]{(byte)1, (byte)2, (byte)3, (byte)4}})]
+[InlineData(new object[]{new byte[]{(byte)255, (byte)254, (byte)253, (byte)252}})]
+public void Peek_Int16(byte[] buffer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>[]</td>
+        <td><span class="parametername">buffer</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_MemoryTests_Read_Byte_System_Byte___.md&amp;value=---%0Auid%3A%20Streamy.MemoryTests.Read_Byte(System.Byte%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests/Streamy/MemoryTests.cs/#L43">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests/Streamy/MemoryTests.cs/#L76">View Source</a>
   </span>
   <a id="Streamy_MemoryTests_Read_Byte_" data-uid="Streamy.MemoryTests.Read_Byte*"></a>
   <h4 id="Streamy_MemoryTests_Read_Byte_System_Byte___" data-uid="Streamy.MemoryTests.Read_Byte(System.Byte[])">Read_Byte(Byte[])</h4>
@@ -223,7 +294,44 @@ public void EncodingDetection(byte[] buffer, Encoding encoding)</code></pre>
     <pre><code class="lang-csharp hljs">[Theory]
 [InlineData(new object[]{new byte[]{}})]
 [InlineData(new object[]{new byte[]{(byte)1, (byte)2, (byte)3, (byte)4, (byte)5}})]
+[InlineData(new object[]{new byte[]{(byte)255, (byte)254, (byte)253, (byte)252}})]
 public void Read_Byte(byte[] buffer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>[]</td>
+        <td><span class="parametername">buffer</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_MemoryTests_Read_Int16_System_Byte___.md&amp;value=---%0Auid%3A%20Streamy.MemoryTests.Read_Int16(System.Byte%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests/Streamy/MemoryTests.cs/#L89">View Source</a>
+  </span>
+  <a id="Streamy_MemoryTests_Read_Int16_" data-uid="Streamy.MemoryTests.Read_Int16*"></a>
+  <h4 id="Streamy_MemoryTests_Read_Int16_System_Byte___" data-uid="Streamy.MemoryTests.Read_Int16(System.Byte[])">Read_Int16(Byte[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Theory]
+[InlineData(new object[]{new byte[]{}})]
+[InlineData(new object[]{new byte[]{(byte)1, (byte)2, (byte)3, (byte)4}})]
+[InlineData(new object[]{new byte[]{(byte)255, (byte)254, (byte)253, (byte)252}})]
+public void Read_Int16(byte[] buffer)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -247,7 +355,7 @@ public void Read_Byte(byte[] buffer)</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_MemoryTests_Read_Rune_System_Byte___Stringier_Encodings_Encoding_.md&amp;value=---%0Auid%3A%20Streamy.MemoryTests.Read_Rune(System.Byte%5B%5D%2CStringier.Encodings.Encoding)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests/Streamy/MemoryTests.cs/#L55">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests/Streamy/MemoryTests.cs/#L103">View Source</a>
   </span>
   <a id="Streamy_MemoryTests_Read_Rune_" data-uid="Streamy.MemoryTests.Read_Rune*"></a>
   <h4 id="Streamy_MemoryTests_Read_Rune_System_Byte___Stringier_Encodings_Encoding_" data-uid="Streamy.MemoryTests.Read_Rune(System.Byte[],Stringier.Encodings.Encoding)">Read_Rune(Byte[], Encoding)</h4>
@@ -287,10 +395,82 @@ public void Read_Rune(byte[] buffer, Encoding encoding)</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_MemoryTests_TryPeek_Byte_System_Byte___.md&amp;value=---%0Auid%3A%20Streamy.MemoryTests.TryPeek_Byte(System.Byte%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests/Streamy/MemoryTests.cs/#L124">View Source</a>
+  </span>
+  <a id="Streamy_MemoryTests_TryPeek_Byte_" data-uid="Streamy.MemoryTests.TryPeek_Byte*"></a>
+  <h4 id="Streamy_MemoryTests_TryPeek_Byte_System_Byte___" data-uid="Streamy.MemoryTests.TryPeek_Byte(System.Byte[])">TryPeek_Byte(Byte[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Theory]
+[InlineData(new object[]{new byte[]{}})]
+[InlineData(new object[]{new byte[]{(byte)1, (byte)2, (byte)3, (byte)4, (byte)5}})]
+[InlineData(new object[]{new byte[]{(byte)255, (byte)254, (byte)253, (byte)252}})]
+public void TryPeek_Byte(byte[] buffer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>[]</td>
+        <td><span class="parametername">buffer</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_MemoryTests_TryPeek_Int16_System_Byte___.md&amp;value=---%0Auid%3A%20Streamy.MemoryTests.TryPeek_Int16(System.Byte%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests/Streamy/MemoryTests.cs/#L143">View Source</a>
+  </span>
+  <a id="Streamy_MemoryTests_TryPeek_Int16_" data-uid="Streamy.MemoryTests.TryPeek_Int16*"></a>
+  <h4 id="Streamy_MemoryTests_TryPeek_Int16_System_Byte___" data-uid="Streamy.MemoryTests.TryPeek_Int16(System.Byte[])">TryPeek_Int16(Byte[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Theory]
+[InlineData(new object[]{new byte[]{}})]
+[InlineData(new object[]{new byte[]{(byte)1, (byte)2, (byte)3, (byte)4}})]
+[InlineData(new object[]{new byte[]{(byte)255, (byte)254, (byte)253, (byte)252}})]
+public void TryPeek_Int16(byte[] buffer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>[]</td>
+        <td><span class="parametername">buffer</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_MemoryTests_TryRead_Byte_System_Byte___.md&amp;value=---%0Auid%3A%20Streamy.MemoryTests.TryRead_Byte(System.Byte%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests/Streamy/MemoryTests.cs/#L76">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests/Streamy/MemoryTests.cs/#L162">View Source</a>
   </span>
   <a id="Streamy_MemoryTests_TryRead_Byte_" data-uid="Streamy.MemoryTests.TryRead_Byte*"></a>
   <h4 id="Streamy_MemoryTests_TryRead_Byte_System_Byte___" data-uid="Streamy.MemoryTests.TryRead_Byte(System.Byte[])">TryRead_Byte(Byte[])</h4>
@@ -301,7 +481,44 @@ public void Read_Rune(byte[] buffer, Encoding encoding)</code></pre>
     <pre><code class="lang-csharp hljs">[Theory]
 [InlineData(new object[]{new byte[]{}})]
 [InlineData(new object[]{new byte[]{(byte)1, (byte)2, (byte)3, (byte)4, (byte)5}})]
+[InlineData(new object[]{new byte[]{(byte)255, (byte)254, (byte)253, (byte)252}})]
 public void TryRead_Byte(byte[] buffer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>[]</td>
+        <td><span class="parametername">buffer</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_MemoryTests_TryRead_Int16_System_Byte___.md&amp;value=---%0Auid%3A%20Streamy.MemoryTests.TryRead_Int16(System.Byte%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests/Streamy/MemoryTests.cs/#L176">View Source</a>
+  </span>
+  <a id="Streamy_MemoryTests_TryRead_Int16_" data-uid="Streamy.MemoryTests.TryRead_Int16*"></a>
+  <h4 id="Streamy_MemoryTests_TryRead_Int16_System_Byte___" data-uid="Streamy.MemoryTests.TryRead_Int16(System.Byte[])">TryRead_Int16(Byte[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Theory]
+[InlineData(new object[]{new byte[]{}})]
+[InlineData(new object[]{new byte[]{(byte)1, (byte)2, (byte)3, (byte)4}})]
+[InlineData(new object[]{new byte[]{(byte)255, (byte)254, (byte)253, (byte)252}})]
+public void TryRead_Int16(byte[] buffer)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -325,7 +542,7 @@ public void TryRead_Byte(byte[] buffer)</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_MemoryTests_TryWrite_Byte_System_Byte___.md&amp;value=---%0Auid%3A%20Streamy.MemoryTests.TryWrite_Byte(System.Byte%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests/Streamy/MemoryTests.cs/#L89">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests/Streamy/MemoryTests.cs/#L191">View Source</a>
   </span>
   <a id="Streamy_MemoryTests_TryWrite_Byte_" data-uid="Streamy.MemoryTests.TryWrite_Byte*"></a>
   <h4 id="Streamy_MemoryTests_TryWrite_Byte_System_Byte___" data-uid="Streamy.MemoryTests.TryWrite_Byte(System.Byte[])">TryWrite_Byte(Byte[])</h4>
@@ -336,7 +553,44 @@ public void TryRead_Byte(byte[] buffer)</code></pre>
     <pre><code class="lang-csharp hljs">[Theory]
 [InlineData(new object[]{new byte[]{}})]
 [InlineData(new object[]{new byte[]{(byte)1, (byte)2, (byte)3, (byte)4, (byte)5}})]
+[InlineData(new object[]{new byte[]{(byte)255, (byte)254, (byte)253, (byte)252}})]
 public void TryWrite_Byte(byte[] expected)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>[]</td>
+        <td><span class="parametername">expected</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_MemoryTests_TryWrite_Int16_System_Byte___.md&amp;value=---%0Auid%3A%20Streamy.MemoryTests.TryWrite_Int16(System.Byte%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests/Streamy/MemoryTests.cs/#L207">View Source</a>
+  </span>
+  <a id="Streamy_MemoryTests_TryWrite_Int16_" data-uid="Streamy.MemoryTests.TryWrite_Int16*"></a>
+  <h4 id="Streamy_MemoryTests_TryWrite_Int16_System_Byte___" data-uid="Streamy.MemoryTests.TryWrite_Int16(System.Byte[])">TryWrite_Int16(Byte[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Theory]
+[InlineData(new object[]{new byte[]{}})]
+[InlineData(new object[]{new byte[]{(byte)1, (byte)2, (byte)3, (byte)4}})]
+[InlineData(new object[]{new byte[]{(byte)255, (byte)254, (byte)253, (byte)252}})]
+public void TryWrite_Int16(byte[] expected)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -360,7 +614,7 @@ public void TryWrite_Byte(byte[] expected)</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_MemoryTests_Write_Byte_System_Byte___.md&amp;value=---%0Auid%3A%20Streamy.MemoryTests.Write_Byte(System.Byte%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests/Streamy/MemoryTests.cs/#L103">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests/Streamy/MemoryTests.cs/#L224">View Source</a>
   </span>
   <a id="Streamy_MemoryTests_Write_Byte_" data-uid="Streamy.MemoryTests.Write_Byte*"></a>
   <h4 id="Streamy_MemoryTests_Write_Byte_System_Byte___" data-uid="Streamy.MemoryTests.Write_Byte(System.Byte[])">Write_Byte(Byte[])</h4>
@@ -371,7 +625,44 @@ public void TryWrite_Byte(byte[] expected)</code></pre>
     <pre><code class="lang-csharp hljs">[Theory]
 [InlineData(new object[]{new byte[]{}})]
 [InlineData(new object[]{new byte[]{(byte)1, (byte)2, (byte)3, (byte)4, (byte)5}})]
+[InlineData(new object[]{new byte[]{(byte)255, (byte)254, (byte)253, (byte)252}})]
 public void Write_Byte(byte[] expected)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>[]</td>
+        <td><span class="parametername">expected</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_MemoryTests_Write_Int16_System_Byte___.md&amp;value=---%0Auid%3A%20Streamy.MemoryTests.Write_Int16(System.Byte%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests/Streamy/MemoryTests.cs/#L239">View Source</a>
+  </span>
+  <a id="Streamy_MemoryTests_Write_Int16_" data-uid="Streamy.MemoryTests.Write_Int16*"></a>
+  <h4 id="Streamy_MemoryTests_Write_Int16_System_Byte___" data-uid="Streamy.MemoryTests.Write_Int16(System.Byte[])">Write_Int16(Byte[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Theory]
+[InlineData(new object[]{new byte[]{}})]
+[InlineData(new object[]{new byte[]{(byte)1, (byte)2, (byte)3, (byte)4}})]
+[InlineData(new object[]{new byte[]{(byte)255, (byte)254, (byte)253, (byte)252}})]
+public void Write_Int16(byte[] expected)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -401,7 +692,7 @@ public void Write_Byte(byte[] expected)</code></pre>
                     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_MemoryTests.md&amp;value=---%0Auid%3A%20Streamy.MemoryTests%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests/Streamy/MemoryTests.cs/#L6" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests/Streamy/MemoryTests.cs/#L7" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

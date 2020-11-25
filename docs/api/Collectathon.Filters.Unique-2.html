@@ -156,7 +156,8 @@
   </span>
   <a id="Collectathon_Filters_Unique_2_Type_" data-uid="Collectathon.Filters.Unique`2.Type*"></a>
   <h4 id="Collectathon_Filters_Unique_2_Type" data-uid="Collectathon.Filters.Unique`2.Type">Type</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the type of this filter.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -190,7 +191,8 @@
   </span>
   <a id="Collectathon_Filters_Unique_2_Clone_" data-uid="Collectathon.Filters.Unique`2.Clone*"></a>
   <h4 id="Collectathon_Filters_Unique_2_Clone" data-uid="Collectathon.Filters.Unique`2.Clone">Clone()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Creates a new object that is a copy of the current instance.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -207,12 +209,18 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Collectathon.Filters.Filter-1.html">Filter</a>&lt;TElement&gt;</td>
-        <td></td>
+        <td><p>A new object that is a copy of this instance.</p>
+</td>
       </tr>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
   <div><span class="xref">Collectathon.Filters.Filter&lt;TElement&gt;.Clone()</span></div>
+  <h5 id="Collectathon_Filters_Unique_2_Clone_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The resulting clone must be of the same type as, or compatible with, the original instance.</p>
+<p>An implementation of <a class="xref" href="Philosoft.ICloneable-1.html#Philosoft_ICloneable_1_Clone">Clone()</a> can perform either a deep copy or a shallow copy. In a deep copy, all objects are duplicated; in a shallow copy, only the top-level objects are duplicated and the lower levels contain references. Because callers of <a class="xref" href="Philosoft.ICloneable-1.html#Philosoft_ICloneable_1_Clone">Clone()</a> cannot depend on the method performing a predictable cloning operation, we recommend that <a class="xref" href="Philosoft.ICloneable-1.html">ICloneable&lt;TSelf&gt;</a> not be implemented in public APIs.</p>
+<p>See <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#System_Object_MemberwiseClone">MemberwiseClone()</a> for more information on cloning, deep versus shallow copies, and examples.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Filters_Unique_2_Contains__0_.md&amp;value=---%0Auid%3A%20Collectathon.Filters.Unique%602.Contains(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -222,7 +230,8 @@
   </span>
   <a id="Collectathon_Filters_Unique_2_Contains_" data-uid="Collectathon.Filters.Unique`2.Contains*"></a>
   <h4 id="Collectathon_Filters_Unique_2_Contains__0_" data-uid="Collectathon.Filters.Unique`2.Contains(`0)">Contains(TElement)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Determines whether the filtered collection contains a specific <code data-dev-comment-type="paramref" class="paramref">element</code>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -241,7 +250,8 @@
       <tr>
         <td><span class="xref">TElement</span></td>
         <td><span class="parametername">element</span></td>
-        <td></td>
+        <td><p>The object to locate in the collection.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -256,7 +266,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Logician.%C5%813.html">Ł3</a></td>
-        <td></td>
+        <td><p><a class="xref" href="Logician.%C5%813.html#Logician__3_True">True</a> if <code data-dev-comment-type="paramref" class="paramref">element</code> is found in the collection; <a class="xref" href="Logician.%C5%813.html#Logician__3_False">False</a> if <code data-dev-comment-type="paramref" class="paramref">element</code> is known to not be in the collection; otherwise, <a class="xref" href="Logician.%C5%813.html#Logician__3_Unknown">Unknown</a>.</p>
+</td>
       </tr>
     </tbody>
   </table>
