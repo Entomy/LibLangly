@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Interface IWriteBuffer
+    <title>Interface IStep
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Interface IWriteBuffer
+    <meta name="title" content="Interface IStep
    ">
     <meta name="generator" content="docfx 2.56.5.0">
     
@@ -68,52 +68,37 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Streamy.Buffers.IWriteBuffer">
+            <article class="content wrap" id="_content" data-uid="Stringier.Patterns.Debugging.IStep">
   
   
-  <h1 id="Streamy_Buffers_IWriteBuffer" data-uid="Streamy.Buffers.IWriteBuffer" class="text-break">Interface IWriteBuffer
+  <h1 id="Stringier_Patterns_Debugging_IStep" data-uid="Stringier.Patterns.Debugging.IStep" class="text-break">Interface IStep
   </h1>
-  <div class="markdown level0 summary"><p>Indicates the type can be used as a write buffer for a <a class="xref" href="Streamy.Stream.html">Stream</a>.</p>
+  <div class="markdown level0 summary"><p>Represents a <a class="xref" href="Stringier.Patterns.Debugging.ITrace.html">ITrace</a> step; a snapshot of execution.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
-    <div>
-      <a class="xref" href="Philosoft.IWritable-2.html#Philosoft_IWritable_2_Writable">IWritable&lt;Byte, Errors&gt;.Writable</a>
-    </div>
-    <div>
-      <a class="xref" href="Philosoft.IWritable-2.html#Philosoft_IWritable_2_Write__0_">IWritable&lt;Byte, Errors&gt;.Write(Byte)</a>
-    </div>
-    <div>
-      <a class="xref" href="Philosoft.IWritable-2.html#Philosoft_IWritable_2_TryWrite__0_">IWritable&lt;Byte, Errors&gt;.TryWrite(Byte)</a>
-    </div>
-    <div>
-      <a class="xref" href="Philosoft.IWritable-2.html#Philosoft_IWritable_2_TryWrite__0__1__">IWritable&lt;Byte, Errors&gt;.TryWrite(Byte, Errors)</a>
-    </div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="Streamy.Buffers.html">Streamy.Buffers</a></h6>
-  <h6><strong>Assembly</strong>: Streamy.dll</h6>
-  <h5 id="Streamy_Buffers_IWriteBuffer_syntax">Syntax</h5>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Stringier.Patterns.Debugging.html">Stringier.Patterns.Debugging</a></h6>
+  <h6><strong>Assembly</strong>: Stringier.dll</h6>
+  <h5 id="Stringier_Patterns_Debugging_IStep_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IWriteBuffer : IWritable&lt;byte, Errors&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IStep</code></pre>
   </div>
   <h3 id="properties">Properties
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Buffers_IWriteBuffer_Capacity.md&amp;value=---%0Auid%3A%20Streamy.Buffers.IWriteBuffer.Capacity%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Debugging_IStep_Error.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Debugging.IStep.Error%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Buffers/IWriteBuffer.cs/#L13">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Patterns/Debugging/IStep.cs/#L11">View Source</a>
   </span>
-  <a id="Streamy_Buffers_IWriteBuffer_Capacity_" data-uid="Streamy.Buffers.IWriteBuffer.Capacity*"></a>
-  <h4 id="Streamy_Buffers_IWriteBuffer_Capacity" data-uid="Streamy.Buffers.IWriteBuffer.Capacity">Capacity</h4>
-  <div class="markdown level1 summary"><p>The capacity of this buffer.</p>
+  <a id="Stringier_Patterns_Debugging_IStep_Error_" data-uid="Stringier.Patterns.Debugging.IStep.Error*"></a>
+  <h4 id="Stringier_Patterns_Debugging_IStep_Error" data-uid="Stringier.Patterns.Debugging.IStep.Error">Error</h4>
+  <div class="markdown level1 summary"><p>The <a class="xref" href="Stringier.Patterns.Debugging.Error.html">Error</a> of this step.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">nint Capacity { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">Error Error { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -125,26 +110,26 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">nint</span></td>
+        <td><a class="xref" href="Stringier.Patterns.Debugging.Error.html">Error</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Buffers_IWriteBuffer_Stream.md&amp;value=---%0Auid%3A%20Streamy.Buffers.IWriteBuffer.Stream%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Debugging_IStep_Position.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Debugging.IStep.Position%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Buffers/IWriteBuffer.cs/#L18">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Patterns/Debugging/IStep.cs/#L16">View Source</a>
   </span>
-  <a id="Streamy_Buffers_IWriteBuffer_Stream_" data-uid="Streamy.Buffers.IWriteBuffer.Stream*"></a>
-  <h4 id="Streamy_Buffers_IWriteBuffer_Stream" data-uid="Streamy.Buffers.IWriteBuffer.Stream">Stream</h4>
-  <div class="markdown level1 summary"><p>The datastream being buffered.</p>
+  <a id="Stringier_Patterns_Debugging_IStep_Position_" data-uid="Stringier.Patterns.Debugging.IStep.Position*"></a>
+  <h4 id="Stringier_Patterns_Debugging_IStep_Position" data-uid="Stringier.Patterns.Debugging.IStep.Position">Position</h4>
+  <div class="markdown level1 summary"><p>The position within the source where this step began.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">StreamBase Stream { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">int Position { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -156,7 +141,38 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Streamy.Bases.StreamBase.html">StreamBase</a></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Debugging_IStep_Text.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Debugging.IStep.Text%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Patterns/Debugging/IStep.cs/#L21">View Source</a>
+  </span>
+  <a id="Stringier_Patterns_Debugging_IStep_Text_" data-uid="Stringier.Patterns.Debugging.IStep.Text*"></a>
+  <h4 id="Stringier_Patterns_Debugging_IStep_Text" data-uid="Stringier.Patterns.Debugging.IStep.Text">Text</h4>
+  <div class="markdown level1 summary"><p>The text consumed as part of this step, if any.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string Text { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -169,10 +185,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Buffers_IWriteBuffer.md&amp;value=---%0Auid%3A%20Streamy.Buffers.IWriteBuffer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Debugging_IStep.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Debugging.IStep%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Buffers/IWriteBuffer.cs/#L9" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Patterns/Debugging/IStep.cs/#L7" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

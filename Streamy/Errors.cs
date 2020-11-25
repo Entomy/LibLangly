@@ -50,5 +50,10 @@ namespace Streamy {
 		/// An operation was attempted that loaded the buffer more than its capacity.
 		/// </summary>
 		OverloadedBuffer = 1 << 7,
+
+		/// <summary>
+		/// An execution path reached part of the code that should never happen. This is always an internal error and should be reported as a bug.
+		/// </summary>
+		Internal = 1 << 8,
 	}
 }

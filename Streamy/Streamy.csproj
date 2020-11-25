@@ -13,7 +13,7 @@
 		<None Include="Logo.png" Pack="true" Visible="true" PackagePath="\" />
 	</ItemGroup>
 
-		<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Windows|AnyCPU' or '$(Configuration)|$(Platform)'=='Debug-Windows|AnyCPU'">
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Windows|AnyCPU' or '$(Configuration)|$(Platform)'=='Debug-Windows|AnyCPU'">
 		<DefineConstants>TRACE;WINDOWS</DefineConstants>
 	</PropertyGroup>
 

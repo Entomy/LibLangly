@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using Streamy.Bases;
 
@@ -9,7 +10,7 @@ namespace Streamy.Buffers {
 	/// <remarks>
 	/// This is a <see cref="IReadBuffer"/> which does extremely minimal buffering, and is used in situations where buffering should generally not happen, but has to at certain times like determining the BOM or lack thereof, or peeking.
 	/// </remarks>
-	internal sealed class MinimalBuffer : IReadBuffer, IEquatable<MinimalBuffer>, IEquatable<Byte[]> {
+	internal sealed class MinimalBuffer : IReadBuffer {
 		/// <summary>
 		/// The actual <see cref="Byte"/> buffer.
 		/// </summary>
@@ -43,23 +44,20 @@ namespace Streamy.Buffers {
 		public Boolean Writable { get; }
 
 		/// <inheritdoc/>
-		public Byte this[nint index] => Buffer[index];
-
-		/// <inheritdoc/>
-		public override Boolean Equals(Object obj) {
+		public override Boolean Equals([AllowNull] Object obj) {
 			switch (obj) {
 			case Byte[] array:
 				return Equals(array);
-			case MinimalBuffer buffer:
-				return Equals(buffer);
+			case IReadOnlyList<Byte> list:
+				return Equals(list);
 			default:
 				return false;
 			}
 		}
 
 		/// <inheritdoc/>
-		public Boolean Equals(Byte[] other) {
-			if (Length < other.Length) {
+		public Boolean Equals([AllowNull] Byte[] other) {
+			if (other is null || Length < other.Length) {
 				return false;
 			}
 			for (Int32 i = 0; i < other.Length; i++) {
@@ -71,13 +69,54 @@ namespace Streamy.Buffers {
 		}
 
 		/// <inheritdoc/>
-		public Boolean Equals(MinimalBuffer other) => Equals(other.Buffer);
+		public Boolean Equals([AllowNull] IReadOnlyList<Byte> other) {
+			if (other is null || Length < other.Count) {
+				return false;
+			}
+			using IEnumerator<Byte> oth = other.GetEnumerator();
+			for (Int32 i = 0; i < other.Count; i++) {
+				if (!oth.MoveNext() || Buffer[i] != oth.Current) {
+					return false;
+				}
+			}
+			if (oth.MoveNext()) {
+				return false;
+			}
+			return true;
+		}
 
 		/// <inheritdoc/>
 		public override Int32 GetHashCode() => Buffer.GetHashCode();
 
 		/// <inheritdoc/>
-		public void Peek([MaybeNull] out Byte element) => throw new NotImplementedException();
+		public void Peek(out Byte element) {
+			((IReadBuffer)this).EnsureLoaded(1);
+			element = Buffer[0];
+		}
+
+		/// <inheritdoc/>
+		public void Peek(out Byte first, out Byte second) {
+			((IReadBuffer)this).EnsureLoaded(2);
+			first = Buffer[0];
+			second = Buffer[1];
+		}
+
+		/// <inheritdoc/>
+		public void Peek(out Byte first, out Byte second, out Byte third) {
+			((IReadBuffer)this).EnsureLoaded(3);
+			first = Buffer[0];
+			second = Buffer[1];
+			third = Buffer[2];
+		}
+
+		/// <inheritdoc/>
+		public void Peek(out Byte first, out Byte second, out Byte third, out Byte fourth) {
+			((IReadBuffer)this).EnsureLoaded(4);
+			first = Buffer[0];
+			second = Buffer[1];
+			third = Buffer[2];
+			fourth = Buffer[3];
+		}
 
 		/// <inheritdoc/>
 		public void Read(out Byte element) {
@@ -143,6 +182,48 @@ namespace Streamy.Buffers {
 		}
 
 		/// <inheritdoc/>
+		public Boolean TryPeek(out Byte first, out Byte second, out Errors error) {
+			if (!((IReadBuffer)this).TryEnsureLoaded(2, out error)) {
+				first = default;
+				second = default;
+				return false;
+			}
+			first = Buffer[0];
+			second = Buffer[1];
+			return true;
+		}
+
+		/// <inheritdoc/>
+		public Boolean TryPeek(out Byte first, out Byte second, out Byte third, out Errors error) {
+			if (!((IReadBuffer)this).TryEnsureLoaded(2, out error)) {
+				first = default;
+				second = default;
+				third = default;
+				return false;
+			}
+			first = Buffer[0];
+			second = Buffer[1];
+			third = Buffer[2];
+			return true;
+		}
+
+		/// <inheritdoc/>
+		public Boolean TryPeek(out Byte first, out Byte second, out Byte third, out Byte fourth, out Errors error) {
+			if (!((IReadBuffer)this).TryEnsureLoaded(2, out error)) {
+				first = default;
+				second = default;
+				third = default;
+				fourth = default;
+				return false;
+			}
+			first = Buffer[0];
+			second = Buffer[1];
+			third = Buffer[2];
+			fourth = Buffer[3];
+			return true;
+		}
+
+		/// <inheritdoc/>
 		public Boolean TryRead(out Byte element, out Errors error) {
 			if (Length == 0) {
 				// If there is nothing in the buffer, bypass the buffer and read directly from the datastream.
@@ -157,7 +238,7 @@ namespace Streamy.Buffers {
 		}
 
 		/// <inheritdoc/>
-		public Boolean TrySeek(nint offset, [MaybeNullWhen(true), NotNullWhen(false)] out Errors error) => throw new NotImplementedException();
+		public Boolean TrySeek(nint offset, out Errors error) => throw new NotImplementedException();
 
 		/// <inheritdoc/>
 		public Boolean TryStore(Byte value, out Errors error) {

@@ -5,6 +5,8 @@ open System
 
 [<AutoOpen>]
 module Operators =
+    //TODO: Find a different way to do these. It's a neat prototype, but these are function composition operators.
+
     /// <summary>
     /// Stream injection
     /// </summary>
