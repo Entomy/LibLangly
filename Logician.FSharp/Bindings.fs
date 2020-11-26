@@ -1,4 +1,4 @@
-﻿namespace Logician
+﻿namespace Langly
 
 module internal Bindings =
     let inline Not< ^t, ^a when (^t or ^a) : (static member Not : ^a -> ^a)> value = ((^t or ^a) : (static member Not : ^a -> ^a)(value))

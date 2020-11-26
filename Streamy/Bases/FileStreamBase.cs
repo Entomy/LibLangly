@@ -1,6 +1,6 @@
 ﻿using System;
 using System.IO;
-using Logician;
+using Langly;
 #if WINDOWS
 using System.ComponentModel;
 #endif

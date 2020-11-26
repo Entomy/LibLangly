@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Logician {
+namespace Langly {
 	/// <summary>
 	/// Provides extension methods for the types in <see cref="Logician"/>.
 	/// </summary>

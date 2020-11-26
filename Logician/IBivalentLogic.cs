@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Logician {
+namespace Langly {
 	/// <summary>
 	/// Indicates the type is a logical type with at least two parts.
 	/// </summary>

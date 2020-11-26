@@ -1,4 +1,4 @@
-﻿using Logician;
+﻿using Langly;
 
 namespace Collectathon.Filters {
 	/// <summary>

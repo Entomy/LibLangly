@@ -1,6 +1,5 @@
 ﻿namespace Langly
 
-open Logician
 open Xunit
 
 module Logician =

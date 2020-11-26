@@ -1,6 +1,5 @@
 ﻿using System;
 using Langly;
-using Logician;
 
 namespace Collectathon.Filters {
 	/// <summary>

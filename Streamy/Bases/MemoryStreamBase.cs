@@ -1,5 +1,5 @@
 ﻿using System;
-using Logician;
+using Langly;
 
 namespace Streamy.Bases {
 	/// <summary>

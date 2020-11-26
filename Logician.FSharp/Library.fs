@@ -1,4 +1,4 @@
-﻿namespace Logician
+﻿namespace Langly
 
 open Bindings
 open System

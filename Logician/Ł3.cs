@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Logician {
+namespace Langly {
 	/// <summary>
 	/// Łukasiewicz trivalent non-paradoxical logic value.
 	/// </summary>
