@@ -60,7 +60,7 @@ Double d = 0.0;
 stream.Write(d);
 ~~~~
 
-# [VB](#tab/cs)
+# [VB](#tab/vb)
 
 ~~~~vbnet
 Dim b As Byte = 0
@@ -97,7 +97,7 @@ stream.Read(out Int32 i);
 stream.Read(out Double d);
 ~~~~
 
-# [VB](#tab/cs)
+# [VB](#tab/vb)
 
 ~~~~vbnet
 Dim b As Byte
