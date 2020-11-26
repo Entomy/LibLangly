@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace Philosoft {
+namespace Langly {
 	/// <summary>
 	/// Indicates the type can have elements added to it by textual index.
 	/// </summary>

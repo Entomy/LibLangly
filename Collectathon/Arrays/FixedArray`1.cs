@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using Collectathon.Filters;
-using Philosoft;
+using Langly;
 
 namespace Collectathon.Arrays {
 	/// <summary>

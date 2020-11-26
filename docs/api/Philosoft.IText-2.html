@@ -109,27 +109,6 @@
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.icomparable-1.compareto#System_IComparable_1_CompareTo__0_">IComparable&lt;ReadOnlyMemory&lt;Char&gt;&gt;.CompareTo(ReadOnlyMemory&lt;Char&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="Philosoft.IEnumerable-2.html#Philosoft_IEnumerable_2_GetEnumerator">IEnumerable&lt;Char, TEnumerator&gt;.GetEnumerator()</a>
-    </div>
-    <div>
-      <a class="xref" href="Philosoft.IEnumerable-2.html#Philosoft_IEnumerable_2_System_Collections_Generic_IEnumerable_TElement__GetEnumerator">IEnumerable&lt;Char, TEnumerator&gt;.IEnumerable&lt;Char&gt;.GetEnumerator()</a>
-    </div>
-    <div>
-      <a class="xref" href="Philosoft.IEnumerable-2.html#Philosoft_IEnumerable_2_System_Collections_IEnumerable_GetEnumerator">IEnumerable&lt;Char, TEnumerator&gt;.IEnumerable.GetEnumerator()</a>
-    </div>
-    <div>
-      <a class="xref" href="Philosoft.IEnumerable-2.html#Philosoft_IEnumerable_2_Fold_System_Func__0__0__0___0_">IEnumerable&lt;Char, TEnumerator&gt;.Fold(Func&lt;Char, Char, Char&gt;, Char)</a>
-    </div>
-    <div>
-      <a class="xref" href="Philosoft.IEnumerable-2.html#Philosoft_IEnumerable_2_Occurrences__0_">IEnumerable&lt;Char, TEnumerator&gt;.Occurrences(Char)</a>
-    </div>
-    <div>
-      <a class="xref" href="Philosoft.IEnumerable-2.html#Philosoft_IEnumerable_2_Occurrences_System_Predicate__0__">IEnumerable&lt;Char, TEnumerator&gt;.Occurrences(Predicate&lt;Char&gt;)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1.getenumerator#System_Collections_Generic_IEnumerable_1_GetEnumerator">IEnumerable&lt;Char&gt;.GetEnumerator()</a>
-    </div>
-    <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1.equals#System_IEquatable_1_Equals__0_">IEquatable&lt;String&gt;.Equals(String)</a>
     </div>
     <div>
@@ -143,7 +122,7 @@
   <h6><strong>Assembly</strong>: Stringier.dll</h6>
   <h5 id="Philosoft_IText_2_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IText&lt;out TSelf, TEnumerator&gt; : ICased&lt;TSelf&gt;, IComparable, IComparable&lt;string&gt;, IComparable&lt;char[]&gt;, IComparable&lt;ReadOnlyMemory&lt;char&gt;&gt;, IEnumerable&lt;char, TEnumerator&gt;, IEnumerable&lt;char&gt;, IEnumerable, IEquatable&lt;string&gt;, IEquatable&lt;char[]&gt;, IEquatable&lt;ReadOnlyMemory&lt;char&gt;&gt; where TSelf : IText&lt;TSelf, TEnumerator&gt; where TEnumerator : IEnumerator&lt;char&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IText&lt;out TSelf, TEnumerator&gt; : ICased&lt;TSelf&gt;, IComparable, IComparable&lt;string&gt;, IComparable&lt;char[]&gt;, IComparable&lt;ReadOnlyMemory&lt;char&gt;&gt;, IEnumerable&lt;char, TEnumerator&gt;, IEquatable&lt;string&gt;, IEquatable&lt;char[]&gt;, IEquatable&lt;ReadOnlyMemory&lt;char&gt;&gt; where TSelf : IText&lt;TSelf, TEnumerator&gt; where TEnumerator : IEnumerator&lt;char&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">

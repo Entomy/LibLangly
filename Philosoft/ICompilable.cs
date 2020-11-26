@@ -1,4 +1,4 @@
-﻿namespace Philosoft {
+﻿namespace Langly {
 	/// <summary>
 	/// Indicates the type is compilable to another form.
 	/// </summary>

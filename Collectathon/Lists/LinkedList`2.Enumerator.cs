@@ -1,5 +1,5 @@
 ﻿using System;
-using Philosoft;
+using Langly;
 
 namespace Collectathon.Lists {
 	public partial class LinkedList<TIndex, TElement, TSelf, TNode> : IEnumerable<Association<TIndex, TElement>, LinkedList<TIndex, TElement, TSelf, TNode>.Enumerator> {

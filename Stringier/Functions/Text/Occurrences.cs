@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using Stringier.Categories;
-using Philosoft;
+using Langly;
 
 namespace Stringier {
 	public static partial class Text {

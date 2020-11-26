@@ -1,10 +1,10 @@
-namespace Philosoft
+namespace Langly
 
 open Collectathon.Arrays
 open System
 open Xunit
 
-module FSharp =
+module Philosoft =
     [<Fact>]
     let ``Add`` () =
         let array = DynamicArray<Int32>(8n)

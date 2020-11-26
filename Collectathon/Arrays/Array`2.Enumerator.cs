@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
-using Philosoft;
+using Langly;
 
 namespace Collectathon.Arrays {
 	public partial class Array<TIndex, TElement, TSelf> : IEnumerable<Association<TIndex, TElement>, Array<TIndex, TElement, TSelf>.Enumerator> {

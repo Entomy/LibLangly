@@ -1,6 +1,6 @@
 ﻿using System;
 using Collectathon.Arrays;
-using Philosoft;
+using Langly;
 
 namespace Collectathon.Trees.Multiway {
 	/// <summary>

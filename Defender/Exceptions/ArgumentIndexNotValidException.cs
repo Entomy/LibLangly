@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
-using Philosoft;
+using Langly;
 
 namespace Defender.Exceptions {
 	/// <summary>

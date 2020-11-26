@@ -1,6 +1,6 @@
-﻿namespace Philosoft {
+﻿namespace Langly {
 	/// <summary>
-	/// Provides extension methods for the traits in <see cref="Philosoft"/>.
+	/// Provides extension methods for the traits in LibLangly.
 	/// </summary>
 	public static partial class Extensions {
 		/// <summary>

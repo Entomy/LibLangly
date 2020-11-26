@@ -2,7 +2,7 @@
 using Collectathon;
 using Collectathon.Views;
 
-namespace Philosoft {
+namespace Langly {
 	/// <summary>
 	/// Indicates the type associates values of two other types.
 	/// </summary>

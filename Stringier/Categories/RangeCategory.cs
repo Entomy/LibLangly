@@ -1,6 +1,6 @@
 ﻿using System;
 using Collectathon.Sets;
-using Philosoft;
+using Langly;
 
 namespace Stringier.Categories {
 	/// <summary>

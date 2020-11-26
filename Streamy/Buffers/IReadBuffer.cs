@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Philosoft;
+using Langly;
 using Streamy.Bases;
 
 namespace Streamy.Buffers {

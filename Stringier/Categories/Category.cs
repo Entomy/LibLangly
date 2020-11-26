@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Text;
 using System.Unicode;
 using Collectathon.Sets;
-using Philosoft;
+using Langly;
 using Defender;
 
 namespace Stringier.Categories {

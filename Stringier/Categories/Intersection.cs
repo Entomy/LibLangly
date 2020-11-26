@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Text;
-using Philosoft;
+using Langly;
 
 namespace Stringier.Categories {
 	/// <summary>

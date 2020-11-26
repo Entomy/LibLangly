@@ -1,5 +1,4 @@
-﻿using Philosoft;
-using static Philosoft.Extensions;
+﻿using Langly;
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.ComponentModel;

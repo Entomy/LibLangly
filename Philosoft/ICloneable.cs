@@ -2,7 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 
 #if NETSTANDARD1_3
-namespace Philosoft {
+namespace System {
 	/// <summary>
 	/// Supports cloning, which creates a new instance of a class with the same value as an existing instance.
 	/// </summary>
@@ -28,7 +28,7 @@ using System.Runtime.CompilerServices;
 [assembly: TypeForwardedTo(typeof(ICloneable))]
 #endif
 
-namespace Philosoft {
+namespace Langly {
 	/// <summary>
 	/// Supports cloning, which creates a new instance of a class with the same value as an existing instance.
 	/// </summary>

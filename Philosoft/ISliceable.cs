@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Philosoft {
+namespace Langly {
 	/// <summary>
 	/// Indicates the collection is slicable, read and write.
 	/// </summary>

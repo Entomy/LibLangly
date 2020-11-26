@@ -1,6 +1,6 @@
 ﻿using Collectathon.Views;
 
-namespace Philosoft {
+namespace Langly {
 	/// <summary>
 	/// Indicates the type is an enumerator, which supports a simple iteration over a collection of a specified type, forward or reverse.
 	/// </summary>

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Philosoft {
+namespace Langly {
 	/// <summary>
 	/// Indicates the collection can have elements dequeued.
 	/// </summary>

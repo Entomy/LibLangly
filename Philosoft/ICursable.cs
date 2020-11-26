@@ -1,4 +1,4 @@
-﻿namespace Philosoft {
+﻿namespace Langly {
 	/// <summary>
 	/// Indicates the type can be moved through with a cursor.
 	/// </summary>

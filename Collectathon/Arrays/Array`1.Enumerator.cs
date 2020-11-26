@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Runtime.InteropServices;
 using Collectathon.Views;
-using Philosoft;
+using Langly;
 
 namespace Collectathon.Arrays {
 	public partial class Array<TElement, TSelf> : IReversibleEnumerable<TElement, Array<TElement, TSelf>, Array<TElement, TSelf>.Enumerator> {

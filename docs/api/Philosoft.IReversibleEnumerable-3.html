@@ -76,35 +76,11 @@
   <div class="markdown level0 summary"><p>Indicates the type is an enumerator, which supports a simple iteration over a collection of a specified type, forward or reverse.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
-    <div>
-      <a class="xref" href="Philosoft.IEnumerable-2.html#Philosoft_IEnumerable_2_GetEnumerator">IEnumerable&lt;TMember, TEnumerator&gt;.GetEnumerator()</a>
-    </div>
-    <div>
-      <a class="xref" href="Philosoft.IEnumerable-2.html#Philosoft_IEnumerable_2_System_Collections_Generic_IEnumerable_TElement__GetEnumerator">IEnumerable&lt;TMember, TEnumerator&gt;.IEnumerable&lt;TMember&gt;.GetEnumerator()</a>
-    </div>
-    <div>
-      <a class="xref" href="Philosoft.IEnumerable-2.html#Philosoft_IEnumerable_2_System_Collections_IEnumerable_GetEnumerator">IEnumerable&lt;TMember, TEnumerator&gt;.IEnumerable.GetEnumerator()</a>
-    </div>
-    <div>
-      <a class="xref" href="Philosoft.IEnumerable-2.html#Philosoft_IEnumerable_2_Fold_System_Func__0__0__0___0_">IEnumerable&lt;TMember, TEnumerator&gt;.Fold(Func&lt;TMember, TMember, TMember&gt;, TMember)</a>
-    </div>
-    <div>
-      <a class="xref" href="Philosoft.IEnumerable-2.html#Philosoft_IEnumerable_2_Occurrences__0_">IEnumerable&lt;TMember, TEnumerator&gt;.Occurrences(TMember)</a>
-    </div>
-    <div>
-      <a class="xref" href="Philosoft.IEnumerable-2.html#Philosoft_IEnumerable_2_Occurrences_System_Predicate__0__">IEnumerable&lt;TMember, TEnumerator&gt;.Occurrences(Predicate&lt;TMember&gt;)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1.getenumerator#System_Collections_Generic_IEnumerable_1_GetEnumerator">IEnumerable&lt;TMember&gt;.GetEnumerator()</a>
-    </div>
-  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Philosoft.html">Philosoft</a></h6>
   <h6><strong>Assembly</strong>: Collectathon.dll</h6>
   <h5 id="Philosoft_IReversibleEnumerable_3_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IReversibleEnumerable&lt;TMember, TSelf, TEnumerator&gt; : IEnumerable&lt;TMember, TEnumerator&gt;, IEnumerable&lt;TMember&gt;, IEnumerable where TSelf : IReversibleEnumerable&lt;TMember, TSelf, TEnumerator&gt; where TEnumerator : IReversibleEnumerator&lt;TMember&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IReversibleEnumerable&lt;TMember, TSelf, TEnumerator&gt; : IEnumerable&lt;TMember, TEnumerator&gt; where TSelf : IReversibleEnumerable&lt;TMember, TSelf, TEnumerator&gt; where TEnumerator : IReversibleEnumerator&lt;TMember&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">

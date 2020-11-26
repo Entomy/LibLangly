@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 using Xunit;
-using Philosoft;
+using Langly;
 using static Stringier.Linguistics.Language;
 using static Stringier.Linguistics.Script;
 

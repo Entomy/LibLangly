@@ -1,7 +1,6 @@
-﻿namespace Consolator
+﻿namespace Langly
 
 open System
-open Philosoft
 
 type private Con = Consolator.Console
 

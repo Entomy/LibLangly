@@ -2,7 +2,7 @@
 using System.Text;
 using Stringier;
 
-namespace Philosoft {
+namespace Langly {
 	/// <summary>
 	/// Indicates the type is a text element.
 	/// </summary>

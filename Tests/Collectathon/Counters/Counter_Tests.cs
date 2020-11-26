@@ -1,6 +1,6 @@
 ﻿using System;
 using Collectathon.DataStructures.Counters;
-using Philosoft;
+using Langly;
 using Xunit;
 
 namespace Collectathon {

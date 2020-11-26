@@ -1,6 +1,6 @@
 ﻿using System;
 using Xunit;
-using Philosoft;
+using Langly;
 
 namespace Stringier.Categories {
 	public class CategoriesTests {

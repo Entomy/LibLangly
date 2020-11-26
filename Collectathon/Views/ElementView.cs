@@ -1,6 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
-using Philosoft;
+using Langly;
 
 namespace Collectathon.Views {
 	/// <summary>

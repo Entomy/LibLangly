@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Philosoft {
+namespace Langly {
 	/// <summary>
 	/// Indicates the type is text.
 	/// </summary>

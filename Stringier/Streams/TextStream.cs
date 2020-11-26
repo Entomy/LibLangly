@@ -4,7 +4,7 @@ using Streamy.Bases;
 using Streamy.Buffers;
 using Stringier;
 using Stringier.Encodings;
-using Philosoft;
+using Langly;
 using Rune = System.Text.Rune;
 
 namespace Streamy {

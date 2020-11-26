@@ -1,6 +1,6 @@
 ﻿using Stringier.Linguistics;
 
-namespace Philosoft {
+namespace Langly {
 	/// <summary>
 	/// Indicates the type has casing.
 	/// </summary>

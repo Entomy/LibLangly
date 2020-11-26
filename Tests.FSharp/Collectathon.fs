@@ -1,10 +1,10 @@
-﻿namespace Collectathon
+﻿namespace Langly
 
 open Collectathon.Arrays
 open System
 open Xunit
 
-module FSharp =
+module Collectathon =
     [<Fact>]
     let ``FixedArray`` () =
         let array = fix[|1;2;3;4;5|]

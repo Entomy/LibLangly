@@ -1,7 +1,7 @@
 ﻿using System;
 using Xunit;
 using Xunit.Sdk;
-using Philosoft;
+using Langly;
 
 namespace Collectathon.Lists {
 	public class SinglyLinkedList2_Tests {

@@ -3,7 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 using Defender.Patterns;
 using Streamy.Bases;
 using Streamy.Buffers;
-using Philosoft;
+using Langly;
 
 namespace Streamy {
 	/// <summary>

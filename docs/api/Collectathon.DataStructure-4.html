@@ -85,9 +85,9 @@
   </div>
   <div classs="implements">
     <h5>Implements</h5>
-    <div><a class="xref" href="Philosoft.ICloneable-1.html">ICloneable</a>&lt;TSelf&gt;</div>
+    <div><a class="xref" href="Langly.ICloneable-1.html">ICloneable</a>&lt;TSelf&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.icloneable">ICloneable</a></div>
-    <div><a class="xref" href="Philosoft.IEnumerable-2.html">IEnumerable</a>&lt;<a class="xref" href="Collectathon.Association-2.html">Association</a>&lt;TIndex, TElement&gt;, TEnumerator&gt;</div>
+    <div><a class="xref" href="Langly.IEnumerable-2.html">IEnumerable</a>&lt;<a class="xref" href="Collectathon.Association-2.html">Association</a>&lt;TIndex, TElement&gt;, TEnumerator&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="Collectathon.Association-2.html">Association</a>&lt;TIndex, TElement&gt;&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Collectathon.DataStructure-4.html">DataStructure</a>&lt;TIndex, TElement, TSelf, TEnumerator&gt;&gt;</div>
@@ -289,7 +289,7 @@ protected readonly Filter&lt;TElement&gt; Filterer</code></pre>
     </tbody>
   </table>
   <h5 id="Collectathon_DataStructure_4_Clone_remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>This is the actual implementation of <a class="xref" href="Philosoft.ICloneable-1.html#Philosoft_ICloneable_1_Clone">Clone()</a></p>
+  <div class="markdown level1 remarks"><p>This is the actual implementation of <a class="xref" href="Langly.ICloneable-1.html#Langly_ICloneable_1_Clone">Clone()</a></p>
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
@@ -483,18 +483,19 @@ protected readonly Filter&lt;TElement&gt; Filterer</code></pre>
   <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_">Object.Equals(Object)</a></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_DataStructure_4_Equals__1_Philosoft_IEnumerable__1___0__.md&amp;value=---%0Auid%3A%20Collectathon.DataStructure%604.Equals%60%601(Philosoft.IEnumerable%7B%601%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_DataStructure_4_Equals__1_Langly_IEnumerable__1___0__.md&amp;value=---%0Auid%3A%20Collectathon.DataStructure%604.Equals%60%601(Langly.IEnumerable%7B%601%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/DataStructure`2.cs/#L114">View Source</a>
   </span>
   <a id="Collectathon_DataStructure_4_Equals_" data-uid="Collectathon.DataStructure`4.Equals*"></a>
-  <h4 id="Collectathon_DataStructure_4_Equals__1_Philosoft_IEnumerable__1___0__" data-uid="Collectathon.DataStructure`4.Equals``1(Philosoft.IEnumerable{`1,``0})">Equals&lt;TOtherEnumerator&gt;(IEnumerable&lt;TElement, TOtherEnumerator&gt;)</h4>
+  <h4 id="Collectathon_DataStructure_4_Equals__1_Langly_IEnumerable__1___0__" data-uid="Collectathon.DataStructure`4.Equals``1(Langly.IEnumerable{`1,``0})">Equals&lt;TOtherEnumerator&gt;(IEnumerable&lt;TElement, TOtherEnumerator&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool Equals&lt;TOtherEnumerator&gt;(IEnumerable&lt;TElement, TOtherEnumerator&gt; other)
+
     where TOtherEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -508,7 +509,7 @@ protected readonly Filter&lt;TElement&gt; Filterer</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Philosoft.IEnumerable-2.html">IEnumerable</a>&lt;TElement, TOtherEnumerator&gt;</td>
+        <td><a class="xref" href="Langly.IEnumerable-2.html">IEnumerable</a>&lt;TElement, TOtherEnumerator&gt;</td>
         <td><span class="parametername">other</span></td>
         <td></td>
       </tr>
@@ -553,8 +554,7 @@ protected readonly Filter&lt;TElement&gt; Filterer</code></pre>
   </span>
   <a id="Collectathon_DataStructure_4_GetEnumerator_" data-uid="Collectathon.DataStructure`4.GetEnumerator*"></a>
   <h4 id="Collectathon_DataStructure_4_GetEnumerator" data-uid="Collectathon.DataStructure`4.GetEnumerator">GetEnumerator()</h4>
-  <div class="markdown level1 summary"><p>Returns an enumerator that iterates through the collection.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -571,8 +571,7 @@ protected readonly Filter&lt;TElement&gt; Filterer</code></pre>
     <tbody>
       <tr>
         <td><span class="xref">TEnumerator</span></td>
-        <td><p>An enumerator that can be used to iterate through the collection.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -1134,15 +1133,14 @@ protected readonly Filter&lt;TElement&gt; Filterer</code></pre>
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_DataStructure_4_Philosoft_ICloneable_TSelf__Clone.md&amp;value=---%0Auid%3A%20Collectathon.DataStructure%604.Philosoft%23ICloneable%7BTSelf%7D%23Clone%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_DataStructure_4_Langly_ICloneable_TSelf__Clone.md&amp;value=---%0Auid%3A%20Collectathon.DataStructure%604.Langly%23ICloneable%7BTSelf%7D%23Clone%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/DataStructure`2.cs/#L64">View Source</a>
   </span>
-  <a id="Collectathon_DataStructure_4_Philosoft_ICloneable_TSelf__Clone_" data-uid="Collectathon.DataStructure`4.Philosoft#ICloneable{TSelf}#Clone*"></a>
-  <h4 id="Collectathon_DataStructure_4_Philosoft_ICloneable_TSelf__Clone" data-uid="Collectathon.DataStructure`4.Philosoft#ICloneable{TSelf}#Clone">ICloneable&lt;TSelf&gt;.Clone()</h4>
-  <div class="markdown level1 summary"><p>Creates a new object that is a copy of the current instance.</p>
-</div>
+  <a id="Collectathon_DataStructure_4_Langly_ICloneable_TSelf__Clone_" data-uid="Collectathon.DataStructure`4.Langly#ICloneable{TSelf}#Clone*"></a>
+  <h4 id="Collectathon_DataStructure_4_Langly_ICloneable_TSelf__Clone" data-uid="Collectathon.DataStructure`4.Langly#ICloneable{TSelf}#Clone">ICloneable&lt;TSelf&gt;.Clone()</h4>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1159,16 +1157,10 @@ protected readonly Filter&lt;TElement&gt; Filterer</code></pre>
     <tbody>
       <tr>
         <td><span class="xref">TSelf</span></td>
-        <td><p>A new object that is a copy of this instance.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="Collectathon_DataStructure_4_Philosoft_ICloneable_TSelf__Clone_remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>The resulting clone must be of the same type as, or compatible with, the original instance.</p>
-<p>An implementation of <a class="xref" href="Philosoft.ICloneable-1.html#Philosoft_ICloneable_1_Clone">Clone()</a> can perform either a deep copy or a shallow copy. In a deep copy, all objects are duplicated; in a shallow copy, only the top-level objects are duplicated and the lower levels contain references. Because callers of <a class="xref" href="Philosoft.ICloneable-1.html#Philosoft_ICloneable_1_Clone">Clone()</a> cannot depend on the method performing a predictable cloning operation, we recommend that <a class="xref" href="Philosoft.ICloneable-1.html">ICloneable&lt;TSelf&gt;</a> not be implemented in public APIs.</p>
-<p>See <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#System_Object_MemberwiseClone">MemberwiseClone()</a> for more information on cloning, deep versus shallow copies, and examples.</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_DataStructure_4_System_ICloneable_Clone.md&amp;value=---%0Auid%3A%20Collectathon.DataStructure%604.System%23ICloneable%23Clone%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -1201,13 +1193,13 @@ protected readonly Filter&lt;TElement&gt; Filterer</code></pre>
   </table>
   <h3 id="implements">Implements</h3>
   <div>
-      <a class="xref" href="Philosoft.ICloneable-1.html">ICloneable&lt;TSelf&gt;</a>
+      <a class="xref" href="Langly.ICloneable-1.html">ICloneable&lt;TSelf&gt;</a>
   </div>
   <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.icloneable">System.ICloneable</a>
   </div>
   <div>
-      <a class="xref" href="Philosoft.IEnumerable-2.html">IEnumerable&lt;TElement, TEnumerator&gt;</a>
+      <a class="xref" href="Langly.IEnumerable-2.html">IEnumerable&lt;TElement, TEnumerator&gt;</a>
   </div>
   <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">System.Collections.Generic.IEnumerable&lt;T&gt;</a>

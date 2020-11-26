@@ -1,7 +1,7 @@
 ﻿using System;
 using Defender.Patterns;
 using Logician;
-using Philosoft;
+using Langly;
 
 namespace Streamy.Bases {
 	/// <summary>

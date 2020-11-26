@@ -1,4 +1,4 @@
-﻿namespace Philosoft
+﻿namespace Langly
 
 module internal Bindings =
     let inline Add< ^t, ^a, ^b when (^t or ^a) : (static member Add : ^a * ^b -> unit)> collection elements = ((^t or ^a) : (static member Add : ^a * ^b -> unit)(collection, elements))

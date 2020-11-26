@@ -2,7 +2,7 @@
 using System;
 using System.Text;
 using System.Unicode;
-using Philosoft;
+using Langly;
 
 namespace Stringier.Categories {
 	/// <summary>

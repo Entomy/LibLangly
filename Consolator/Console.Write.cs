@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
-using Philosoft;
+using Langly;
 
 namespace Consolator {
 	public static partial class Console {

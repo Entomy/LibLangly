@@ -1,4 +1,4 @@
-﻿namespace Philosoft {
+﻿namespace Langly {
 	/// <summary>
 	/// Indicates the collection can have elements replaced with other elements.
 	/// </summary>

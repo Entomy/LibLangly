@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Philosoft {
+namespace Langly {
 	/// <summary>
 	/// Indicates the value type can be efficiently converted to a <see cref="String"/>.
 	/// </summary>

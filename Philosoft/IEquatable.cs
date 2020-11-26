@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Philosoft {
+namespace Langly {
 	//Note: There's no reason to provide our own IEquatable<T> interface, but there's still useful additions that can be provided.
 
 	public static partial class Extensions {

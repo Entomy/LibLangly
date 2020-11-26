@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Philosoft {
+namespace Langly {
 	/// <summary>
 	/// Indicates the collection can have elements removed from it.
 	/// </summary>

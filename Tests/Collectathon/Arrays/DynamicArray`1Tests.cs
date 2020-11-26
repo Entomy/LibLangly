@@ -1,7 +1,7 @@
 using System;
 using Xunit;
 using Xunit.Sdk;
-using Philosoft;
+using Langly;
 
 namespace Collectathon.Arrays {
 	public class DynamicArray1_Tests {

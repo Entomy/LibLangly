@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
-using Philosoft;
+using Langly;
 using Collectathon.Filters;
 
 namespace Collectathon {
