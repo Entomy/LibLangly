@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace Defender.Exceptions {
+namespace Langly {
 	/// <summary>
 	/// Thrown when a flags enum is required to have certain flags set, but doesn't.
 	/// </summary>

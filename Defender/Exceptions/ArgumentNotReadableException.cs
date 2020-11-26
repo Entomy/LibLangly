@@ -2,7 +2,7 @@
 using System.IO;
 using System.Runtime.Serialization;
 
-namespace Defender.Exceptions {
+namespace Langly {
 	/// <summary>
 	/// Thrown when a stream is not readable, but should be.
 	/// </summary>

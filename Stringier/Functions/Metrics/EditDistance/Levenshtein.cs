@@ -1,5 +1,5 @@
 ﻿using System;
-using Defender;
+using Langly;
 
 namespace Stringier {
 	public static partial class EditDistance {

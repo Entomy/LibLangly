@@ -1,7 +1,6 @@
 ﻿using System;
-using Defender.Exceptions;
-using Def = Defender.Exceptions;
 using Xunit;
+using Langly;
 
 namespace Defender {
 	public class GuardTests {
@@ -124,7 +123,7 @@ namespace Defender {
 			if (succeeds) {
 				Guard.NotNull(value, nameof(value));
 			} else {
-				Assert.Throws<Def.ArgumentNullException>(() => Guard.NotNull(value, nameof(value)));
+				Assert.Throws<Langly.ArgumentNullException>(() => Guard.NotNull(value, nameof(value)));
 			}
 		}
 

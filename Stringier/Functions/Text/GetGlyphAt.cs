@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
-using Defender;
+using Langly;
 
 namespace Stringier {
 	public static partial class Text {

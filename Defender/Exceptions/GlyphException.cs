@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace Defender.Exceptions {
+namespace Langly {
 	/// <summary>
 	/// Thrown when a glyph or an operation on a glyph is not valid.
 	/// </summary>

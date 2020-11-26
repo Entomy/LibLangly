@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace Defender.Exceptions {
+namespace Langly {
 	/// <summary>
 	/// Thrown when a collection or an operation on a collection is not valid.
 	/// </summary>

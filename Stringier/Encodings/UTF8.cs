@@ -1,7 +1,7 @@
-﻿using Defender;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Langly;
 
 namespace Stringier.Encodings {
 	/// <summary>

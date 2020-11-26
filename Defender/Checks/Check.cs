@@ -1,4 +1,4 @@
-﻿namespace Defender {
+﻿namespace Langly {
 	/// <summary>
 	/// A collection of various check functions.
 	/// </summary>

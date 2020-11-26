@@ -1,5 +1,5 @@
-﻿using Defender;
-using System;
+﻿using System;
+using Langly;
 
 namespace Stringier {
 	public static partial class Search {

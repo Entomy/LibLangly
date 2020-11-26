@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
-using Defender.Exceptions;
 
-namespace Defender {
+namespace Langly {
 	public static partial class Guard {
 		/// <summary>
 		/// Guard against the argument being <see langword="null"/>.
@@ -14,7 +13,7 @@ namespace Defender {
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static void NotNull<T>(T value, String name) {
 			if (Check.Null(value)) {
-				throw Exceptions.ArgumentNullException.With(value, name);
+				throw ArgumentNullException.With(value, name);
 			}
 		}
 
@@ -28,7 +27,7 @@ namespace Defender {
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static unsafe void NotNull(void* value, String name) {
 			if (Check.Null(value)) {
-				throw Exceptions.ArgumentNullException.With(value, name);
+				throw ArgumentNullException.With(value, name);
 			}
 		}
 	}

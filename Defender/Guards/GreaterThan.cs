@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
-using Defender.Exceptions;
 
-namespace Defender {
+namespace Langly {
 	public static partial class Guard {
 		/// <summary>
 		/// 	Guard against the argument being lesser than or equal to <paramref name="lower"/> bound.

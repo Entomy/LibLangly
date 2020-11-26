@@ -1,9 +1,8 @@
 ﻿using System;
 using System.IO;
 using System.Runtime.CompilerServices;
-using Defender.Exceptions;
 
-namespace Defender {
+namespace Langly {
 	public static partial class Guard {
 		/// <summary>
 		/// Guard against the stream being unwritable.

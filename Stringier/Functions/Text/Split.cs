@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using Collectathon.Tables;
 using Langly;
-using Defender;
 using Stringier.Categories;
 
 namespace Stringier {

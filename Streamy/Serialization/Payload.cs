@@ -1,5 +1,4 @@
-﻿using Defender;
-using Langly;
+﻿using Langly;
 using System;
 
 namespace Streamy.Serialization {

@@ -1,6 +1,5 @@
 ﻿using Collectathon.Sets;
 using Langly;
-using Defender;
 using Stringier.Categories;
 using System;
 using System.Text;

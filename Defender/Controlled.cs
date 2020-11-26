@@ -2,7 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 
-namespace Defender.Patterns {
+namespace Langly {
 	/// <summary>
 	/// Implements a very resiliant <see cref="IDisposable"/> base that's easy and safe to extend.
 	/// </summary>

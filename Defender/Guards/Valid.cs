@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
-using Defender.Exceptions;
 
-namespace Defender {
+namespace Langly {
 	public static partial class Guard {
 		/// <summary>
 		/// Guards against the argument being an invalid (undeclared) enumeration value.

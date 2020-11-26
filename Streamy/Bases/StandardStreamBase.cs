@@ -79,6 +79,6 @@ namespace Streamy.Bases {
 #endif
 		}
 
-		private static Exception InvalidStandard(Standard standard) => new ArgumentException($"Standard '{standard}' was not handled");
+		private static Exception InvalidStandard(Standard standard) => new System.ArgumentException($"Standard '{standard}' was not handled");
 	}
 }

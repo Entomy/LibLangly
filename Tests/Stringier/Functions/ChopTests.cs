@@ -24,6 +24,6 @@ namespace Stringier.Functions {
 		}
 
 		[Fact]
-		public void Chop_Invalid() => Assert.ThrowsAny<Defender.Exceptions.ArgumentException>(() => Text.Chop("hello world", 0));
+		public void Chop_Invalid() => Assert.ThrowsAny<Langly.ArgumentException>(() => Text.Chop("hello world", 0));
 	}
 }

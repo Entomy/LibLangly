@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace Defender.Exceptions {
+namespace Langly {
 	/// <summary>
 	/// The exception that is thrown when an object is passed to a method that expects a specific type, but is not of that type.
 	/// </summary>

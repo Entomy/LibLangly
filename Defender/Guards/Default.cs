@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
-using Defender.Exceptions;
 using FastEnumUtility;
 
-namespace Defender {
+namespace Langly {
 	public static partial class Guard {
 		/// <summary>
 		/// Guards the <see langword="default"/> clause of a <see langword="switch"/> statement.

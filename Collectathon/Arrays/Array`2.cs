@@ -2,9 +2,7 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 using Collectathon.Views;
-using Defender;
 using Collectathon.Filters;
-using Defender.Exceptions;
 
 namespace Collectathon.Arrays {
 	/// <summary>

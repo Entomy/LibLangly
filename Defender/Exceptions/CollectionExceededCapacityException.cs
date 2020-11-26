@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace Defender.Exceptions {
+namespace Langly {
 	/// <summary>
 	/// Thrown when a collection is at maximum capacity and an operation was attempted that would add more to the collection.
 	/// </summary>

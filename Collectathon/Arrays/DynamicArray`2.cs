@@ -1,7 +1,6 @@
 ﻿using System;
 using Langly;
 using Collectathon.Filters;
-using Defender;
 
 namespace Collectathon.Arrays {
 	/// <summary>

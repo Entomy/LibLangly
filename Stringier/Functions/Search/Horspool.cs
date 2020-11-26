@@ -1,6 +1,6 @@
 ﻿using System;
-using Defender;
 using Collectathon.Tables;
+using Langly;
 
 namespace Stringier {
 	public static partial class Search {

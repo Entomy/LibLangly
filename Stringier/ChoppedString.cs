@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
-using Defender;
+using Langly;
 
 namespace Stringier {
 	/// <summary>

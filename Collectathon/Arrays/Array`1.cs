@@ -2,7 +2,6 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 using Collectathon.Filters;
-using Defender;
 
 namespace Collectathon.Arrays {
 	/// <summary>

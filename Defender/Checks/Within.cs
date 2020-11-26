@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
 
-namespace Defender {
+namespace Langly {
 	public static partial class Check {
 		/// <summary>
 		/// Checks if the <paramref name="value"/> is within the range, <paramref name="lower"/>..<paramref name="upper"/>, inclusive.

@@ -1,4 +1,4 @@
-﻿using Defender.Patterns;
+﻿using Langly;
 
 namespace Consolator {
 	/// <summary>

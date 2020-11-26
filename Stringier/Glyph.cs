@@ -1,6 +1,4 @@
-﻿using Defender;
-using Defender.Exceptions;
-using Langly;
+﻿using Langly;
 using Stringier.Linguistics;
 using System;
 using System.Text;

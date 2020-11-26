@@ -1,5 +1,4 @@
 ﻿using System;
-using Defender.Patterns;
 using Langly;
 
 namespace Streamy.Bases {

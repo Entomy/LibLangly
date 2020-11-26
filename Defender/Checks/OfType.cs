@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
 
-namespace Defender {
+namespace Langly {
 	public static partial class Check {
 		/// <summary>
 		/// Checks if the <paramref name="value"/> is of type <typeparamref name="T"/>.

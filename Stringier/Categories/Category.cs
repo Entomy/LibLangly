@@ -4,7 +4,6 @@ using System.Text;
 using System.Unicode;
 using Collectathon.Sets;
 using Langly;
-using Defender;
 
 namespace Stringier.Categories {
 	/// <summary>

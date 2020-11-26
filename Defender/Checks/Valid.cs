@@ -2,7 +2,7 @@
 using System.Runtime.CompilerServices;
 using FastEnumUtility;
 
-namespace Defender {
+namespace Langly {
 	public static partial class Check {
 		/// <summary>
 		/// Checks if the <paramref name="value"/> is a valid (declared) enumeration value.

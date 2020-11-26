@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Text;
-using Defender;
+using Langly;
 
 namespace Stringier {
 	public static partial class Text {
