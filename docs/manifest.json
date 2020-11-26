@@ -3052,15 +3052,12 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "invalid-tab-group"
-      ],
       "type": "Conceptual",
       "source_relative_path": "articles/consolator.md",
       "output": {
         ".html": {
           "relative_path": "articles/consolator.html",
-          "hash": "a512s0XNtV12mT9U4+8D6Q=="
+          "hash": "SYWm+dCoi6gDIff/gyv+CQ=="
         }
       },
       "is_incremental": false,
@@ -3116,11 +3113,38 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "articles/streamy-serialization.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/streamy-serialization.html",
+          "hash": "N3H+NjaL/ovH7uM8DCX8tA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "invalid-tab-group"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "articles/streamy-streams.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/streamy-streams.html",
+          "hash": "k/Rk/lctfeL1nd20Ghc/tQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "articles/streamy.md",
       "output": {
         ".html": {
           "relative_path": "articles/streamy.html",
-          "hash": "6HlUGkxHtRWZnYNysIrn4Q=="
+          "hash": "Ji7imltqdaHdNvqvBFUzeg=="
         }
       },
       "is_incremental": false,
@@ -3234,7 +3258,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/toc.html",
-          "hash": "G/8A35bs1DjooLNQZTUyQg=="
+          "hash": "ypmXhC97zXp9YLcphc2e2Q=="
         }
       },
       "is_incremental": false,
@@ -3269,17 +3293,17 @@
     {
       "status": {
         "can_incremental": false,
-        "details": "Cannot build incrementally because last build info is missing.",
+        "details": "Disable incremental build by force rebuild option.",
         "incrementalPhase": "build",
         "total_file_count": 0,
         "skipped_file_count": 0,
-        "full_build_reason_code": "NoAvailableBuildCache"
+        "full_build_reason_code": "ForceRebuild"
       },
       "processors": {
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 18,
+          "total_file_count": 20,
           "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {
@@ -3300,7 +3324,7 @@
     {
       "status": {
         "can_incremental": false,
-        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
+        "details": "Cannot support incremental post processing, the reason is: it's disabled.",
         "incrementalPhase": "postProcessing",
         "total_file_count": 0,
         "skipped_file_count": 0
