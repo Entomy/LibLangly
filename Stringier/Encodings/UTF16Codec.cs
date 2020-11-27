@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Text;
-using Streamy;
-using Streamy.Buffers;
 using Langly;
+using Langly.Streams;
+using Langly.Streams.Buffers;
 
 namespace Stringier.Encodings {
 	internal abstract class UTF16Codec : Codec, IPeekable<Char, Errors>, IWritable<Char, Errors> {

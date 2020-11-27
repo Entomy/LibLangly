@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
-using Streamy.Bases;
-using Streamy.Buffers;
-using Stringier;
 using Stringier.Encodings;
 using Langly;
+using Langly.Streams;
+using Langly.Streams.Bases;
+using Langly.Streams.Buffers;
 using Rune = System.Text.Rune;
 
 namespace Streamy {

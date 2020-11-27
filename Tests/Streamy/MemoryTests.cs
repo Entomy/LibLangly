@@ -1,4 +1,5 @@
 ﻿using System;
+using Langly.Streams;
 using Xunit;
 using Stringier.Encodings;
 using Rune = System.Text.Rune;

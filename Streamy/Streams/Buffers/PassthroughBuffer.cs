@@ -1,8 +1,8 @@
 ﻿using System;
-using Streamy.Bases;
 using System.Diagnostics.CodeAnalysis;
+using Langly.Streams.Bases;
 
-namespace Streamy.Buffers {
+namespace Langly.Streams.Buffers {
 	/// <summary>
 	/// Provides a passthrough buffer for <see cref="Stream"/>.
 	/// </summary>

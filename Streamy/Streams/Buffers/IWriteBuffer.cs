@@ -1,10 +1,9 @@
 ﻿using System;
-using Langly;
-using Streamy.Bases;
+using Langly.Streams.Bases;
 
-namespace Streamy.Buffers {
+namespace Langly.Streams.Buffers {
 	/// <summary>
-	/// Indicates the type can be used as a write buffer for a <see cref="Streamy.Stream"/>.
+	/// Indicates the type can be used as a write buffer for a <see cref="Streams.Stream"/>.
 	/// </summary>
 	public interface IWriteBuffer : IWritable<Byte, Errors> {
 		/// <summary>

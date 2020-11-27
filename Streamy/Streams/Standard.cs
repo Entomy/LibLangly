@@ -1,4 +1,4 @@
-﻿namespace Streamy {
+﻿namespace Langly.Streams {
 	/// <summary>
 	/// Represents the kind of standard stream.
 	/// </summary>

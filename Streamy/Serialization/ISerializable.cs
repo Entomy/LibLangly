@@ -1,4 +1,4 @@
-﻿namespace Streamy.Serialization {
+﻿namespace Langly.Serialization {
 	/// <summary>
 	/// Indicates the type is serializable.
 	/// </summary>

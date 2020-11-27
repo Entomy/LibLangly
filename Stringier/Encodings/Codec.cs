@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Text;
 using Langly;
-using Streamy;
-using Streamy.Buffers;
+using Langly.Streams;
+using Langly.Streams.Buffers;
 
 namespace Stringier.Encodings {
 	/// <summary>

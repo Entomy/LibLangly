@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using Langly;
-using Streamy.Bases;
+using Langly.Streams.Bases;
 
-namespace Streamy.Buffers {
+namespace Langly.Streams.Buffers {
 	/// <summary>
-	/// Indicates the type can be used as a read buffer for a <see cref="Streamy.Stream"/>.
+	/// Indicates the type can be used as a read buffer for a <see cref="Streams.Stream"/>.
 	/// </summary>
 	public interface IReadBuffer : ILengthy, IPeekable<Byte, Errors>, ISeekable<Byte, Errors>, IShiftable, IEquatable<Byte[]>, IEquatable<IReadOnlyList<Byte>> {
 		/// <summary>

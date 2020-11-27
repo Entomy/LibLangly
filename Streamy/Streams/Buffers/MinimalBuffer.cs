@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using Streamy.Bases;
+using Langly.Streams.Bases;
 
-namespace Streamy.Buffers {
+namespace Langly.Streams.Buffers {
 	/// <summary>
 	/// Provides a minimal buffer for <see cref="Stream"/>.
 	/// </summary>
@@ -73,7 +73,7 @@ namespace Streamy.Buffers {
 			if (other is null || Length < other.Count) {
 				return false;
 			}
-			using IEnumerator<Byte> oth = other.GetEnumerator();
+			using System.Collections.Generic.IEnumerator<Byte> oth = other.GetEnumerator();
 			for (Int32 i = 0; i < other.Count; i++) {
 				if (!oth.MoveNext() || Buffer[i] != oth.Current) {
 					return false;

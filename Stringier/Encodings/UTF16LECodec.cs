@@ -1,6 +1,6 @@
 ﻿using System;
-using Streamy;
-using Streamy.Buffers;
+using Langly.Streams;
+using Langly.Streams.Buffers;
 
 namespace Stringier.Encodings {
 	internal sealed class UTF16LECodec : UTF16Codec {

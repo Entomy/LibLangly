@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Streamy {
+namespace Langly.Streams {
 	/// <summary>
 	/// The access mode of a <see cref="Stream"/>.
 	/// </summary>

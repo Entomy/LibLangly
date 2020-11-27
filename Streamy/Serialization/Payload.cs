@@ -1,7 +1,6 @@
-﻿using Langly;
-using System;
+﻿using System;
 
-namespace Streamy.Serialization {
+namespace Langly.Serialization {
 	/// <summary>
 	/// Represents a serialization payload; the serialized data.
 	/// </summary>

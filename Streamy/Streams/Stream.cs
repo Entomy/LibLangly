@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
-using Streamy.Bases;
-using Streamy.Buffers;
-using Langly;
+using Langly.Streams.Bases;
+using Langly.Streams.Buffers;
 
-namespace Streamy {
+namespace Langly.Streams {
 	/// <summary>
 	/// Provides a view of a sequence of <see cref="Byte"/>.
 	/// </summary>

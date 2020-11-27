@@ -1,0 +1,1750 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interface IReadBuffer
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interface IReadBuffer
+   ">
+    <meta name="generator" content="docfx 2.56.5.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Langly.Streams.Buffers.IReadBuffer">
+  
+  
+  <h1 id="Langly_Streams_Buffers_IReadBuffer" data-uid="Langly.Streams.Buffers.IReadBuffer" class="text-break">Interface IReadBuffer
+  </h1>
+  <div class="markdown level0 summary"><p>Indicates the type can be used as a read buffer for a <a class="xref" href="Langly.Streams.Stream.html">Stream</a>.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Langly.ILengthy.html#Langly_ILengthy_Length">ILengthy.Length</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.ILengthy.html#Langly_ILengthy_Langly_ICountable_Count">ILengthy.ICountable.Count</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.ICountable.html#Langly_ICountable_Count">ICountable.Count</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.IPeekable-2.html#Langly_IPeekable_2_Peek__0__">IPeekable&lt;Byte, Errors&gt;.Peek(Byte)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.IPeekable-2.html#Langly_IPeekable_2_TryPeek__0__">IPeekable&lt;Byte, Errors&gt;.TryPeek(Byte)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.IPeekable-2.html#Langly_IPeekable_2_TryPeek__0___1__">IPeekable&lt;Byte, Errors&gt;.TryPeek(Byte, Errors)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.IReadable-2.html#Langly_IReadable_2_Readable">IReadable&lt;Byte, Errors&gt;.Readable</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.IReadable-2.html#Langly_IReadable_2_Read__0__">IReadable&lt;Byte, Errors&gt;.Read(Byte)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.IReadable-2.html#Langly_IReadable_2_TryRead__0__">IReadable&lt;Byte, Errors&gt;.TryRead(Byte)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.IReadable-2.html#Langly_IReadable_2_TryRead__0___1__">IReadable&lt;Byte, Errors&gt;.TryRead(Byte, Errors)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.ISeekable-2.html#Langly_ISeekable_2_Seekable">ISeekable&lt;Byte, Errors&gt;.Seekable</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.ISeekable-2.html#Langly_ISeekable_2_Position">ISeekable&lt;Byte, Errors&gt;.Position</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.ISeekable-2.html#Langly_ISeekable_2_Seek_nint_">ISeekable&lt;Byte, Errors&gt;.Seek(nint)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.ISeekable-2.html#Langly_ISeekable_2_TrySeek_nint_">ISeekable&lt;Byte, Errors&gt;.TrySeek(nint)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.ISeekable-2.html#Langly_ISeekable_2_TrySeek_nint__1__">ISeekable&lt;Byte, Errors&gt;.TrySeek(nint, Errors)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.IShiftable.html#Langly_IShiftable_ShiftLeft">IShiftable.ShiftLeft()</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.IShiftable.html#Langly_IShiftable_ShiftLeft_nint_">IShiftable.ShiftLeft(nint)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.IShiftable.html#Langly_IShiftable_ShiftRight">IShiftable.ShiftRight()</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.IShiftable.html#Langly_IShiftable_ShiftRight_nint_">IShiftable.ShiftRight(nint)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1.equals#System_IEquatable_1_Equals__0_">IEquatable&lt;Byte[]&gt;.Equals(Byte[])</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1.equals#System_IEquatable_1_Equals__0_">IEquatable&lt;IReadOnlyList&lt;Byte&gt;&gt;.Equals(IReadOnlyList&lt;Byte&gt;)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Langly.Streams.Buffers.html">Langly.Streams.Buffers</a></h6>
+  <h6><strong>Assembly</strong>: Streamy.dll</h6>
+  <h5 id="Langly_Streams_Buffers_IReadBuffer_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IReadBuffer : ILengthy, ICountable, IPeekable&lt;byte, Errors&gt;, IReadable&lt;byte, Errors&gt;, ISeekable&lt;byte, Errors&gt;, IShiftable, IEquatable&lt;byte[]&gt;, IEquatable&lt;IReadOnlyList&lt;byte&gt;&gt;</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Buffers_IReadBuffer_Capacity.md&amp;value=---%0Auid%3A%20Langly.Streams.Buffers.IReadBuffer.Capacity%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Buffers/IReadBuffer.cs/#L13">View Source</a>
+  </span>
+  <a id="Langly_Streams_Buffers_IReadBuffer_Capacity_" data-uid="Langly.Streams.Buffers.IReadBuffer.Capacity*"></a>
+  <h4 id="Langly_Streams_Buffers_IReadBuffer_Capacity" data-uid="Langly.Streams.Buffers.IReadBuffer.Capacity">Capacity</h4>
+  <div class="markdown level1 summary"><p>The capacity of this buffer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">nint Capacity { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Buffers_IReadBuffer_Stream.md&amp;value=---%0Auid%3A%20Langly.Streams.Buffers.IReadBuffer.Stream%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Buffers/IReadBuffer.cs/#L18">View Source</a>
+  </span>
+  <a id="Langly_Streams_Buffers_IReadBuffer_Stream_" data-uid="Langly.Streams.Buffers.IReadBuffer.Stream*"></a>
+  <h4 id="Langly_Streams_Buffers_IReadBuffer_Stream" data-uid="Langly.Streams.Buffers.IReadBuffer.Stream">Stream</h4>
+  <div class="markdown level1 summary"><p>The datastream being buffered.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">StreamBase Stream { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.Streams.Bases.StreamBase.html">StreamBase</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Buffers_IReadBuffer_EnsureLoaded_nint_.md&amp;value=---%0Auid%3A%20Langly.Streams.Buffers.IReadBuffer.EnsureLoaded(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Buffers/IReadBuffer.cs/#L24">View Source</a>
+  </span>
+  <a id="Langly_Streams_Buffers_IReadBuffer_EnsureLoaded_" data-uid="Langly.Streams.Buffers.IReadBuffer.EnsureLoaded*"></a>
+  <h4 id="Langly_Streams_Buffers_IReadBuffer_EnsureLoaded_nint_" data-uid="Langly.Streams.Buffers.IReadBuffer.EnsureLoaded(nint)">EnsureLoaded(nint)</h4>
+  <div class="markdown level1 summary"><p>Ensures <code data-dev-comment-type="paramref" class="paramref">amount</code> bytes are loaded into the buffer, loading more only if necessary.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">virtual void EnsureLoaded(nint amount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td><p>The amount of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a> to have loaded.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Buffers_IReadBuffer_Load.md&amp;value=---%0Auid%3A%20Langly.Streams.Buffers.IReadBuffer.Load%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Buffers/IReadBuffer.cs/#L33">View Source</a>
+  </span>
+  <a id="Langly_Streams_Buffers_IReadBuffer_Load_" data-uid="Langly.Streams.Buffers.IReadBuffer.Load*"></a>
+  <h4 id="Langly_Streams_Buffers_IReadBuffer_Load" data-uid="Langly.Streams.Buffers.IReadBuffer.Load">Load()</h4>
+  <div class="markdown level1 summary"><p>Loads a byte into the buffer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">virtual void Load()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Buffers_IReadBuffer_Peek_System_Byte__System_Byte__.md&amp;value=---%0Auid%3A%20Langly.Streams.Buffers.IReadBuffer.Peek(System.Byte%40%2CSystem.Byte%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Buffers/IReadBuffer.cs/#L43">View Source</a>
+  </span>
+  <a id="Langly_Streams_Buffers_IReadBuffer_Peek_" data-uid="Langly.Streams.Buffers.IReadBuffer.Peek*"></a>
+  <h4 id="Langly_Streams_Buffers_IReadBuffer_Peek_System_Byte__System_Byte__" data-uid="Langly.Streams.Buffers.IReadBuffer.Peek(System.Byte@,System.Byte@)">Peek(out Byte, out Byte)</h4>
+  <div class="markdown level1 summary"><p>Peeks two bytes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Peek(out byte first, out byte second)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">first</span></td>
+        <td><p>The first byte that was peeked.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">second</span></td>
+        <td><p>The second byte that was peeked.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Buffers_IReadBuffer_Peek_System_Byte__System_Byte__System_Byte__.md&amp;value=---%0Auid%3A%20Langly.Streams.Buffers.IReadBuffer.Peek(System.Byte%40%2CSystem.Byte%40%2CSystem.Byte%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Buffers/IReadBuffer.cs/#L51">View Source</a>
+  </span>
+  <a id="Langly_Streams_Buffers_IReadBuffer_Peek_" data-uid="Langly.Streams.Buffers.IReadBuffer.Peek*"></a>
+  <h4 id="Langly_Streams_Buffers_IReadBuffer_Peek_System_Byte__System_Byte__System_Byte__" data-uid="Langly.Streams.Buffers.IReadBuffer.Peek(System.Byte@,System.Byte@,System.Byte@)">Peek(out Byte, out Byte, out Byte)</h4>
+  <div class="markdown level1 summary"><p>Peeks three bytes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Peek(out byte first, out byte second, out byte third)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">first</span></td>
+        <td><p>The first byte that was peeked.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">second</span></td>
+        <td><p>The second byte that was peeked.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">third</span></td>
+        <td><p>The third byte that was peeked.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Buffers_IReadBuffer_Peek_System_Byte__System_Byte__System_Byte__System_Byte__.md&amp;value=---%0Auid%3A%20Langly.Streams.Buffers.IReadBuffer.Peek(System.Byte%40%2CSystem.Byte%40%2CSystem.Byte%40%2CSystem.Byte%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Buffers/IReadBuffer.cs/#L60">View Source</a>
+  </span>
+  <a id="Langly_Streams_Buffers_IReadBuffer_Peek_" data-uid="Langly.Streams.Buffers.IReadBuffer.Peek*"></a>
+  <h4 id="Langly_Streams_Buffers_IReadBuffer_Peek_System_Byte__System_Byte__System_Byte__System_Byte__" data-uid="Langly.Streams.Buffers.IReadBuffer.Peek(System.Byte@,System.Byte@,System.Byte@,System.Byte@)">Peek(out Byte, out Byte, out Byte, out Byte)</h4>
+  <div class="markdown level1 summary"><p>Peeks four bytes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Peek(out byte first, out byte second, out byte third, out byte fourth)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">first</span></td>
+        <td><p>The first byte that was peeked.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">second</span></td>
+        <td><p>The second byte that was peeked.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">third</span></td>
+        <td><p>The third byte that was peeked.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">fourth</span></td>
+        <td><p>The fourth byte that was peeked.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Buffers_IReadBuffer_Read_System_Byte__System_Byte__.md&amp;value=---%0Auid%3A%20Langly.Streams.Buffers.IReadBuffer.Read(System.Byte%40%2CSystem.Byte%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Buffers/IReadBuffer.cs/#L70">View Source</a>
+  </span>
+  <a id="Langly_Streams_Buffers_IReadBuffer_Read_" data-uid="Langly.Streams.Buffers.IReadBuffer.Read*"></a>
+  <h4 id="Langly_Streams_Buffers_IReadBuffer_Read_System_Byte__System_Byte__" data-uid="Langly.Streams.Buffers.IReadBuffer.Read(System.Byte@,System.Byte@)">Read(out Byte, out Byte)</h4>
+  <div class="markdown level1 summary"><p>Reads two bytes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">virtual void Read(out byte first, out byte second)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">first</span></td>
+        <td><p>The first byte that was read.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">second</span></td>
+        <td><p>The second byte that was read.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_Streams_Buffers_IReadBuffer_Read_System_Byte__System_Byte___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This assumes the read will never fail, which is an assumption that generally doesn't hold up. It is strongly recommended to use <a class="xref" href="Langly.Streams.Buffers.IReadBuffer.html#Langly_Streams_Buffers_IReadBuffer_TryRead_System_Byte__System_Byte__">TryRead(out Byte, out Byte)</a> or <a class="xref" href="Langly.Streams.Buffers.IReadBuffer.html#Langly_Streams_Buffers_IReadBuffer_TryRead_System_Byte__System_Byte__Langly_Streams_Errors__">TryRead(out Byte, out Byte, out Errors)</a> instead.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Buffers_IReadBuffer_Read_System_Byte__System_Byte__System_Byte__.md&amp;value=---%0Auid%3A%20Langly.Streams.Buffers.IReadBuffer.Read(System.Byte%40%2CSystem.Byte%40%2CSystem.Byte%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Buffers/IReadBuffer.cs/#L84">View Source</a>
+  </span>
+  <a id="Langly_Streams_Buffers_IReadBuffer_Read_" data-uid="Langly.Streams.Buffers.IReadBuffer.Read*"></a>
+  <h4 id="Langly_Streams_Buffers_IReadBuffer_Read_System_Byte__System_Byte__System_Byte__" data-uid="Langly.Streams.Buffers.IReadBuffer.Read(System.Byte@,System.Byte@,System.Byte@)">Read(out Byte, out Byte, out Byte)</h4>
+  <div class="markdown level1 summary"><p>Reads three bytes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">virtual void Read(out byte first, out byte second, out byte third)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">first</span></td>
+        <td><p>The first byte that was read.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">second</span></td>
+        <td><p>The second byte that was read.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">third</span></td>
+        <td><p>The third byte that was read.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_Streams_Buffers_IReadBuffer_Read_System_Byte__System_Byte__System_Byte___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This assumes the read will never fail, which is an assumption that generally doesn't hold up. It is strongly recommended to use <a class="xref" href="Langly.Streams.Buffers.IReadBuffer.html#Langly_Streams_Buffers_IReadBuffer_TryRead_System_Byte__System_Byte__">TryRead(out Byte, out Byte)</a> or <a class="xref" href="Langly.Streams.Buffers.IReadBuffer.html#Langly_Streams_Buffers_IReadBuffer_TryRead_System_Byte__System_Byte__Langly_Streams_Errors__">TryRead(out Byte, out Byte, out Errors)</a> instead.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Buffers_IReadBuffer_Read_System_Byte__System_Byte__System_Byte__System_Byte__.md&amp;value=---%0Auid%3A%20Langly.Streams.Buffers.IReadBuffer.Read(System.Byte%40%2CSystem.Byte%40%2CSystem.Byte%40%2CSystem.Byte%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Buffers/IReadBuffer.cs/#L99">View Source</a>
+  </span>
+  <a id="Langly_Streams_Buffers_IReadBuffer_Read_" data-uid="Langly.Streams.Buffers.IReadBuffer.Read*"></a>
+  <h4 id="Langly_Streams_Buffers_IReadBuffer_Read_System_Byte__System_Byte__System_Byte__System_Byte__" data-uid="Langly.Streams.Buffers.IReadBuffer.Read(System.Byte@,System.Byte@,System.Byte@,System.Byte@)">Read(out Byte, out Byte, out Byte, out Byte)</h4>
+  <div class="markdown level1 summary"><p>Reads four bytes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">virtual void Read(out byte first, out byte second, out byte third, out byte fourth)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">first</span></td>
+        <td><p>The first byte that was read.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">second</span></td>
+        <td><p>The second byte that was read.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">third</span></td>
+        <td><p>The third byte that was read.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">fourth</span></td>
+        <td><p>The fourth byte that was read.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_Streams_Buffers_IReadBuffer_Read_System_Byte__System_Byte__System_Byte__System_Byte___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This assumes the read will never fail, which is an assumption that generally doesn't hold up. It is strongly recommended to use <a class="xref" href="Langly.Streams.Buffers.IReadBuffer.html#Langly_Streams_Buffers_IReadBuffer_TryRead_System_Byte__System_Byte__">TryRead(out Byte, out Byte)</a> or <a class="xref" href="Langly.Streams.Buffers.IReadBuffer.html#Langly_Streams_Buffers_IReadBuffer_TryRead_System_Byte__System_Byte__Langly_Streams_Errors__">TryRead(out Byte, out Byte, out Errors)</a> instead.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Buffers_IReadBuffer_Store_System_Byte_.md&amp;value=---%0Auid%3A%20Langly.Streams.Buffers.IReadBuffer.Store(System.Byte)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Buffers/IReadBuffer.cs/#L108">View Source</a>
+  </span>
+  <a id="Langly_Streams_Buffers_IReadBuffer_Store_" data-uid="Langly.Streams.Buffers.IReadBuffer.Store*"></a>
+  <h4 id="Langly_Streams_Buffers_IReadBuffer_Store_System_Byte_" data-uid="Langly.Streams.Buffers.IReadBuffer.Store(System.Byte)">Store(Byte)</h4>
+  <div class="markdown level1 summary"><p>Stores the <code data-dev-comment-type="paramref" class="paramref">value</code> into this buffer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Store(byte value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a> to store.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Buffers_IReadBuffer_TryEnsureLoaded_nint_.md&amp;value=---%0Auid%3A%20Langly.Streams.Buffers.IReadBuffer.TryEnsureLoaded(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Buffers/IReadBuffer.cs/#L115">View Source</a>
+  </span>
+  <a id="Langly_Streams_Buffers_IReadBuffer_TryEnsureLoaded_" data-uid="Langly.Streams.Buffers.IReadBuffer.TryEnsureLoaded*"></a>
+  <h4 id="Langly_Streams_Buffers_IReadBuffer_TryEnsureLoaded_nint_" data-uid="Langly.Streams.Buffers.IReadBuffer.TryEnsureLoaded(nint)">TryEnsureLoaded(nint)</h4>
+  <div class="markdown level1 summary"><p>Attempts to ensure <code data-dev-comment-type="paramref" class="paramref">amount</code> bytes are loaded into the buffer, loading more only if necessary.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">virtual bool TryEnsureLoaded(nint amount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td><p>The amount of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a> to have loaded.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the load was successful; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Buffers_IReadBuffer_TryEnsureLoaded_nint_Langly_Streams_Errors__.md&amp;value=---%0Auid%3A%20Langly.Streams.Buffers.IReadBuffer.TryEnsureLoaded(nint%2CLangly.Streams.Errors%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Buffers/IReadBuffer.cs/#L123">View Source</a>
+  </span>
+  <a id="Langly_Streams_Buffers_IReadBuffer_TryEnsureLoaded_" data-uid="Langly.Streams.Buffers.IReadBuffer.TryEnsureLoaded*"></a>
+  <h4 id="Langly_Streams_Buffers_IReadBuffer_TryEnsureLoaded_nint_Langly_Streams_Errors__" data-uid="Langly.Streams.Buffers.IReadBuffer.TryEnsureLoaded(nint,Langly.Streams.Errors@)">TryEnsureLoaded(nint, out Errors)</h4>
+  <div class="markdown level1 summary"><p>Attempts to ensure <code data-dev-comment-type="paramref" class="paramref">amount</code> bytes are loaded into the buffer, loading more only if necessary.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">virtual bool TryEnsureLoaded(nint amount, out Errors error)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td><p>The amount of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a> to have loaded.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.Streams.Errors.html">Errors</a></td>
+        <td><span class="parametername">error</span></td>
+        <td><p>The <a class="xref" href="Langly.Streams.Errors.html">Errors</a> that occurred, if any.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the load was successful; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Buffers_IReadBuffer_TryLoad.md&amp;value=---%0Auid%3A%20Langly.Streams.Buffers.IReadBuffer.TryLoad%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Buffers/IReadBuffer.cs/#L137">View Source</a>
+  </span>
+  <a id="Langly_Streams_Buffers_IReadBuffer_TryLoad_" data-uid="Langly.Streams.Buffers.IReadBuffer.TryLoad*"></a>
+  <h4 id="Langly_Streams_Buffers_IReadBuffer_TryLoad" data-uid="Langly.Streams.Buffers.IReadBuffer.TryLoad">TryLoad()</h4>
+  <div class="markdown level1 summary"><p>Attempts to load a byte into the buffer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">virtual bool TryLoad()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the load was successful; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Buffers_IReadBuffer_TryLoad_Langly_Streams_Errors__.md&amp;value=---%0Auid%3A%20Langly.Streams.Buffers.IReadBuffer.TryLoad(Langly.Streams.Errors%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Buffers/IReadBuffer.cs/#L144">View Source</a>
+  </span>
+  <a id="Langly_Streams_Buffers_IReadBuffer_TryLoad_" data-uid="Langly.Streams.Buffers.IReadBuffer.TryLoad*"></a>
+  <h4 id="Langly_Streams_Buffers_IReadBuffer_TryLoad_Langly_Streams_Errors__" data-uid="Langly.Streams.Buffers.IReadBuffer.TryLoad(Langly.Streams.Errors@)">TryLoad(out Errors)</h4>
+  <div class="markdown level1 summary"><p>Attempts to load a byte into the buffer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">virtual bool TryLoad(out Errors error)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.Streams.Errors.html">Errors</a></td>
+        <td><span class="parametername">error</span></td>
+        <td><p>The <a class="xref" href="Langly.Streams.Errors.html">Errors</a> that occurred, if any.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the load was successful; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Buffers_IReadBuffer_TryPeek_System_Byte__System_Byte__.md&amp;value=---%0Auid%3A%20Langly.Streams.Buffers.IReadBuffer.TryPeek(System.Byte%40%2CSystem.Byte%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Buffers/IReadBuffer.cs/#L163">View Source</a>
+  </span>
+  <a id="Langly_Streams_Buffers_IReadBuffer_TryPeek_" data-uid="Langly.Streams.Buffers.IReadBuffer.TryPeek*"></a>
+  <h4 id="Langly_Streams_Buffers_IReadBuffer_TryPeek_System_Byte__System_Byte__" data-uid="Langly.Streams.Buffers.IReadBuffer.TryPeek(System.Byte@,System.Byte@)">TryPeek(out Byte, out Byte)</h4>
+  <div class="markdown level1 summary"><p>Attempts to peek two bytes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">virtual bool TryPeek(out byte first, out byte second)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">first</span></td>
+        <td><p>The first byte that was peeked.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">second</span></td>
+        <td><p>The second byte that was peeked.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the peek was successful; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_Streams_Buffers_IReadBuffer_TryPeek_System_Byte__System_Byte___seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Langly.Streams.Buffers.IReadBuffer.html#Langly_Streams_Buffers_IReadBuffer_TryPeek_System_Byte__System_Byte__Langly_Streams_Errors__">TryPeek(out Byte, out Byte, out Errors)</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Buffers_IReadBuffer_TryPeek_System_Byte__System_Byte__Langly_Streams_Errors__.md&amp;value=---%0Auid%3A%20Langly.Streams.Buffers.IReadBuffer.TryPeek(System.Byte%40%2CSystem.Byte%40%2CLangly.Streams.Errors%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Buffers/IReadBuffer.cs/#L173">View Source</a>
+  </span>
+  <a id="Langly_Streams_Buffers_IReadBuffer_TryPeek_" data-uid="Langly.Streams.Buffers.IReadBuffer.TryPeek*"></a>
+  <h4 id="Langly_Streams_Buffers_IReadBuffer_TryPeek_System_Byte__System_Byte__Langly_Streams_Errors__" data-uid="Langly.Streams.Buffers.IReadBuffer.TryPeek(System.Byte@,System.Byte@,Langly.Streams.Errors@)">TryPeek(out Byte, out Byte, out Errors)</h4>
+  <div class="markdown level1 summary"><p>Attempts to peek two bytes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool TryPeek(out byte first, out byte second, out Errors error)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">first</span></td>
+        <td><p>The first byte that was peeked.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">second</span></td>
+        <td><p>The second byte that was peeked.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.Streams.Errors.html">Errors</a></td>
+        <td><span class="parametername">error</span></td>
+        <td><p>The <a class="xref" href="Langly.Streams.Errors.html">Errors</a> that occurred, if any.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the peek was successful; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_Streams_Buffers_IReadBuffer_TryPeek_System_Byte__System_Byte__Langly_Streams_Errors___seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Langly.Streams.Buffers.IReadBuffer.html#Langly_Streams_Buffers_IReadBuffer_TryPeek_System_Byte__System_Byte__">TryPeek(out Byte, out Byte)</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Buffers_IReadBuffer_TryPeek_System_Byte__System_Byte__System_Byte__.md&amp;value=---%0Auid%3A%20Langly.Streams.Buffers.IReadBuffer.TryPeek(System.Byte%40%2CSystem.Byte%40%2CSystem.Byte%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Buffers/IReadBuffer.cs/#L183">View Source</a>
+  </span>
+  <a id="Langly_Streams_Buffers_IReadBuffer_TryPeek_" data-uid="Langly.Streams.Buffers.IReadBuffer.TryPeek*"></a>
+  <h4 id="Langly_Streams_Buffers_IReadBuffer_TryPeek_System_Byte__System_Byte__System_Byte__" data-uid="Langly.Streams.Buffers.IReadBuffer.TryPeek(System.Byte@,System.Byte@,System.Byte@)">TryPeek(out Byte, out Byte, out Byte)</h4>
+  <div class="markdown level1 summary"><p>Attempts to peek three bytes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">virtual bool TryPeek(out byte first, out byte second, out byte third)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">first</span></td>
+        <td><p>The first byte that was peeked.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">second</span></td>
+        <td><p>The second byte that was peeked.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">third</span></td>
+        <td><p>The third byte that was peeked.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the peek was successful; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_Streams_Buffers_IReadBuffer_TryPeek_System_Byte__System_Byte__System_Byte___seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Langly.Streams.Buffers.IReadBuffer.html#Langly_Streams_Buffers_IReadBuffer_TryPeek_System_Byte__System_Byte__System_Byte__Langly_Streams_Errors__">TryPeek(out Byte, out Byte, out Byte, out Errors)</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Buffers_IReadBuffer_TryPeek_System_Byte__System_Byte__System_Byte__Langly_Streams_Errors__.md&amp;value=---%0Auid%3A%20Langly.Streams.Buffers.IReadBuffer.TryPeek(System.Byte%40%2CSystem.Byte%40%2CSystem.Byte%40%2CLangly.Streams.Errors%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Buffers/IReadBuffer.cs/#L194">View Source</a>
+  </span>
+  <a id="Langly_Streams_Buffers_IReadBuffer_TryPeek_" data-uid="Langly.Streams.Buffers.IReadBuffer.TryPeek*"></a>
+  <h4 id="Langly_Streams_Buffers_IReadBuffer_TryPeek_System_Byte__System_Byte__System_Byte__Langly_Streams_Errors__" data-uid="Langly.Streams.Buffers.IReadBuffer.TryPeek(System.Byte@,System.Byte@,System.Byte@,Langly.Streams.Errors@)">TryPeek(out Byte, out Byte, out Byte, out Errors)</h4>
+  <div class="markdown level1 summary"><p>Attempts to peek three bytes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool TryPeek(out byte first, out byte second, out byte third, out Errors error)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">first</span></td>
+        <td><p>The first byte that was peeked.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">second</span></td>
+        <td><p>The second byte that was peeked.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">third</span></td>
+        <td><p>The third byte that was peeked.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.Streams.Errors.html">Errors</a></td>
+        <td><span class="parametername">error</span></td>
+        <td><p>The <a class="xref" href="Langly.Streams.Errors.html">Errors</a> that occurred, if any.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the peek was successful; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_Streams_Buffers_IReadBuffer_TryPeek_System_Byte__System_Byte__System_Byte__Langly_Streams_Errors___seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Langly.Streams.Buffers.IReadBuffer.html#Langly_Streams_Buffers_IReadBuffer_TryPeek_System_Byte__System_Byte__System_Byte__">TryPeek(out Byte, out Byte, out Byte)</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Buffers_IReadBuffer_TryPeek_System_Byte__System_Byte__System_Byte__System_Byte__.md&amp;value=---%0Auid%3A%20Langly.Streams.Buffers.IReadBuffer.TryPeek(System.Byte%40%2CSystem.Byte%40%2CSystem.Byte%40%2CSystem.Byte%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Buffers/IReadBuffer.cs/#L205">View Source</a>
+  </span>
+  <a id="Langly_Streams_Buffers_IReadBuffer_TryPeek_" data-uid="Langly.Streams.Buffers.IReadBuffer.TryPeek*"></a>
+  <h4 id="Langly_Streams_Buffers_IReadBuffer_TryPeek_System_Byte__System_Byte__System_Byte__System_Byte__" data-uid="Langly.Streams.Buffers.IReadBuffer.TryPeek(System.Byte@,System.Byte@,System.Byte@,System.Byte@)">TryPeek(out Byte, out Byte, out Byte, out Byte)</h4>
+  <div class="markdown level1 summary"><p>Attempts to peek four bytes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">virtual bool TryPeek(out byte first, out byte second, out byte third, out byte fourth)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">first</span></td>
+        <td><p>The first byte that was peeked.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">second</span></td>
+        <td><p>The second byte that was peeked.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">third</span></td>
+        <td><p>The third byte that was peeked.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">fourth</span></td>
+        <td><p>The fourth byte that was peeked.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the peek was successful; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_Streams_Buffers_IReadBuffer_TryPeek_System_Byte__System_Byte__System_Byte__System_Byte___seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Langly.Streams.Buffers.IReadBuffer.html#Langly_Streams_Buffers_IReadBuffer_TryPeek_System_Byte__System_Byte__System_Byte__System_Byte__Langly_Streams_Errors__">TryPeek(out Byte, out Byte, out Byte, out Byte, out Errors)</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Buffers_IReadBuffer_TryPeek_System_Byte__System_Byte__System_Byte__System_Byte__Langly_Streams_Errors__.md&amp;value=---%0Auid%3A%20Langly.Streams.Buffers.IReadBuffer.TryPeek(System.Byte%40%2CSystem.Byte%40%2CSystem.Byte%40%2CSystem.Byte%40%2CLangly.Streams.Errors%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Buffers/IReadBuffer.cs/#L217">View Source</a>
+  </span>
+  <a id="Langly_Streams_Buffers_IReadBuffer_TryPeek_" data-uid="Langly.Streams.Buffers.IReadBuffer.TryPeek*"></a>
+  <h4 id="Langly_Streams_Buffers_IReadBuffer_TryPeek_System_Byte__System_Byte__System_Byte__System_Byte__Langly_Streams_Errors__" data-uid="Langly.Streams.Buffers.IReadBuffer.TryPeek(System.Byte@,System.Byte@,System.Byte@,System.Byte@,Langly.Streams.Errors@)">TryPeek(out Byte, out Byte, out Byte, out Byte, out Errors)</h4>
+  <div class="markdown level1 summary"><p>Attempts to peek four bytes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool TryPeek(out byte first, out byte second, out byte third, out byte fourth, out Errors error)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">first</span></td>
+        <td><p>The first byte that was peeked.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">second</span></td>
+        <td><p>The second byte that was peeked.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">third</span></td>
+        <td><p>The third byte that was peeked.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">fourth</span></td>
+        <td><p>The fourth byte that was peeked.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.Streams.Errors.html">Errors</a></td>
+        <td><span class="parametername">error</span></td>
+        <td><p>The <a class="xref" href="Langly.Streams.Errors.html">Errors</a> that occurred, if any.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the peek was successful; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_Streams_Buffers_IReadBuffer_TryPeek_System_Byte__System_Byte__System_Byte__System_Byte__Langly_Streams_Errors___seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Langly.Streams.Buffers.IReadBuffer.html#Langly_Streams_Buffers_IReadBuffer_TryPeek_System_Byte__System_Byte__System_Byte__System_Byte__">TryPeek(out Byte, out Byte, out Byte, out Byte)</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Buffers_IReadBuffer_TryRead_System_Byte__System_Byte__.md&amp;value=---%0Auid%3A%20Langly.Streams.Buffers.IReadBuffer.TryRead(System.Byte%40%2CSystem.Byte%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Buffers/IReadBuffer.cs/#L226">View Source</a>
+  </span>
+  <a id="Langly_Streams_Buffers_IReadBuffer_TryRead_" data-uid="Langly.Streams.Buffers.IReadBuffer.TryRead*"></a>
+  <h4 id="Langly_Streams_Buffers_IReadBuffer_TryRead_System_Byte__System_Byte__" data-uid="Langly.Streams.Buffers.IReadBuffer.TryRead(System.Byte@,System.Byte@)">TryRead(out Byte, out Byte)</h4>
+  <div class="markdown level1 summary"><p>Attempts to read two bytes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">virtual bool TryRead(out byte first, out byte second)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">first</span></td>
+        <td><p>The first byte that was read.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">second</span></td>
+        <td><p>The second byte that was read.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the read was successful; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_Streams_Buffers_IReadBuffer_TryRead_System_Byte__System_Byte___seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Langly.Streams.Buffers.IReadBuffer.html#Langly_Streams_Buffers_IReadBuffer_TryRead_System_Byte__System_Byte__Langly_Streams_Errors__">TryRead(out Byte, out Byte, out Errors)</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Buffers_IReadBuffer_TryRead_System_Byte__System_Byte__Langly_Streams_Errors__.md&amp;value=---%0Auid%3A%20Langly.Streams.Buffers.IReadBuffer.TryRead(System.Byte%40%2CSystem.Byte%40%2CLangly.Streams.Errors%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Buffers/IReadBuffer.cs/#L239">View Source</a>
+  </span>
+  <a id="Langly_Streams_Buffers_IReadBuffer_TryRead_" data-uid="Langly.Streams.Buffers.IReadBuffer.TryRead*"></a>
+  <h4 id="Langly_Streams_Buffers_IReadBuffer_TryRead_System_Byte__System_Byte__Langly_Streams_Errors__" data-uid="Langly.Streams.Buffers.IReadBuffer.TryRead(System.Byte@,System.Byte@,Langly.Streams.Errors@)">TryRead(out Byte, out Byte, out Errors)</h4>
+  <div class="markdown level1 summary"><p>Attempts to read two bytes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">virtual bool TryRead(out byte first, out byte second, out Errors error)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">first</span></td>
+        <td><p>The first byte that was read.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">second</span></td>
+        <td><p>The second byte that was read.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.Streams.Errors.html">Errors</a></td>
+        <td><span class="parametername">error</span></td>
+        <td><p>The <a class="xref" href="Langly.Streams.Errors.html">Errors</a> that occurred, if any.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the read was successful; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_Streams_Buffers_IReadBuffer_TryRead_System_Byte__System_Byte__Langly_Streams_Errors___seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Langly.Streams.Buffers.IReadBuffer.html#Langly_Streams_Buffers_IReadBuffer_TryRead_System_Byte__System_Byte__">TryRead(out Byte, out Byte)</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Buffers_IReadBuffer_TryRead_System_Byte__System_Byte__System_Byte__.md&amp;value=---%0Auid%3A%20Langly.Streams.Buffers.IReadBuffer.TryRead(System.Byte%40%2CSystem.Byte%40%2CSystem.Byte%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Buffers/IReadBuffer.cs/#L252">View Source</a>
+  </span>
+  <a id="Langly_Streams_Buffers_IReadBuffer_TryRead_" data-uid="Langly.Streams.Buffers.IReadBuffer.TryRead*"></a>
+  <h4 id="Langly_Streams_Buffers_IReadBuffer_TryRead_System_Byte__System_Byte__System_Byte__" data-uid="Langly.Streams.Buffers.IReadBuffer.TryRead(System.Byte@,System.Byte@,System.Byte@)">TryRead(out Byte, out Byte, out Byte)</h4>
+  <div class="markdown level1 summary"><p>Attempts to read three bytes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">virtual bool TryRead(out byte first, out byte second, out byte third)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">first</span></td>
+        <td><p>The first byte that was read.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">second</span></td>
+        <td><p>The second byte that was read.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">third</span></td>
+        <td><p>The third byte that was read.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the read was successful; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_Streams_Buffers_IReadBuffer_TryRead_System_Byte__System_Byte__System_Byte___seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Langly.Streams.Buffers.IReadBuffer.html#Langly_Streams_Buffers_IReadBuffer_TryRead_System_Byte__System_Byte__System_Byte__Langly_Streams_Errors__">TryRead(out Byte, out Byte, out Byte, out Errors)</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Buffers_IReadBuffer_TryRead_System_Byte__System_Byte__System_Byte__Langly_Streams_Errors__.md&amp;value=---%0Auid%3A%20Langly.Streams.Buffers.IReadBuffer.TryRead(System.Byte%40%2CSystem.Byte%40%2CSystem.Byte%40%2CLangly.Streams.Errors%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Buffers/IReadBuffer.cs/#L266">View Source</a>
+  </span>
+  <a id="Langly_Streams_Buffers_IReadBuffer_TryRead_" data-uid="Langly.Streams.Buffers.IReadBuffer.TryRead*"></a>
+  <h4 id="Langly_Streams_Buffers_IReadBuffer_TryRead_System_Byte__System_Byte__System_Byte__Langly_Streams_Errors__" data-uid="Langly.Streams.Buffers.IReadBuffer.TryRead(System.Byte@,System.Byte@,System.Byte@,Langly.Streams.Errors@)">TryRead(out Byte, out Byte, out Byte, out Errors)</h4>
+  <div class="markdown level1 summary"><p>Attempts to read three bytes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">virtual bool TryRead(out byte first, out byte second, out byte third, out Errors error)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">first</span></td>
+        <td><p>The first byte that was read.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">second</span></td>
+        <td><p>The second byte that was read.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">third</span></td>
+        <td><p>The third byte that was read.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.Streams.Errors.html">Errors</a></td>
+        <td><span class="parametername">error</span></td>
+        <td><p>The <a class="xref" href="Langly.Streams.Errors.html">Errors</a> that occurred, if any.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the read was successful; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_Streams_Buffers_IReadBuffer_TryRead_System_Byte__System_Byte__System_Byte__Langly_Streams_Errors___seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Langly.Streams.Buffers.IReadBuffer.html#Langly_Streams_Buffers_IReadBuffer_TryRead_System_Byte__System_Byte__System_Byte__">TryRead(out Byte, out Byte, out Byte)</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Buffers_IReadBuffer_TryRead_System_Byte__System_Byte__System_Byte__System_Byte__.md&amp;value=---%0Auid%3A%20Langly.Streams.Buffers.IReadBuffer.TryRead(System.Byte%40%2CSystem.Byte%40%2CSystem.Byte%40%2CSystem.Byte%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Buffers/IReadBuffer.cs/#L280">View Source</a>
+  </span>
+  <a id="Langly_Streams_Buffers_IReadBuffer_TryRead_" data-uid="Langly.Streams.Buffers.IReadBuffer.TryRead*"></a>
+  <h4 id="Langly_Streams_Buffers_IReadBuffer_TryRead_System_Byte__System_Byte__System_Byte__System_Byte__" data-uid="Langly.Streams.Buffers.IReadBuffer.TryRead(System.Byte@,System.Byte@,System.Byte@,System.Byte@)">TryRead(out Byte, out Byte, out Byte, out Byte)</h4>
+  <div class="markdown level1 summary"><p>Attempts to read four bytes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">virtual bool TryRead(out byte first, out byte second, out byte third, out byte fourth)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">first</span></td>
+        <td><p>The first byte that was read.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">second</span></td>
+        <td><p>The second byte that was read.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">third</span></td>
+        <td><p>The third byte that was read.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">fourth</span></td>
+        <td><p>The fourth byte that was read.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the read was successful; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_Streams_Buffers_IReadBuffer_TryRead_System_Byte__System_Byte__System_Byte__System_Byte___seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Langly.Streams.Buffers.IReadBuffer.html#Langly_Streams_Buffers_IReadBuffer_TryRead_System_Byte__System_Byte__System_Byte__System_Byte__Langly_Streams_Errors__">TryRead(out Byte, out Byte, out Byte, out Byte, out Errors)</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Buffers_IReadBuffer_TryRead_System_Byte__System_Byte__System_Byte__System_Byte__Langly_Streams_Errors__.md&amp;value=---%0Auid%3A%20Langly.Streams.Buffers.IReadBuffer.TryRead(System.Byte%40%2CSystem.Byte%40%2CSystem.Byte%40%2CSystem.Byte%40%2CLangly.Streams.Errors%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Buffers/IReadBuffer.cs/#L295">View Source</a>
+  </span>
+  <a id="Langly_Streams_Buffers_IReadBuffer_TryRead_" data-uid="Langly.Streams.Buffers.IReadBuffer.TryRead*"></a>
+  <h4 id="Langly_Streams_Buffers_IReadBuffer_TryRead_System_Byte__System_Byte__System_Byte__System_Byte__Langly_Streams_Errors__" data-uid="Langly.Streams.Buffers.IReadBuffer.TryRead(System.Byte@,System.Byte@,System.Byte@,System.Byte@,Langly.Streams.Errors@)">TryRead(out Byte, out Byte, out Byte, out Byte, out Errors)</h4>
+  <div class="markdown level1 summary"><p>Attempts to read two bytes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">virtual bool TryRead(out byte first, out byte second, out byte third, out byte fourth, out Errors error)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">first</span></td>
+        <td><p>The first byte that was read.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">second</span></td>
+        <td><p>The second byte that was read.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">third</span></td>
+        <td><p>The third byte that was read.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">fourth</span></td>
+        <td><p>The fourth byte that was read.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.Streams.Errors.html">Errors</a></td>
+        <td><span class="parametername">error</span></td>
+        <td><p>The <a class="xref" href="Langly.Streams.Errors.html">Errors</a> that occurred, if any.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the read was successful; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_Streams_Buffers_IReadBuffer_TryRead_System_Byte__System_Byte__System_Byte__System_Byte__Langly_Streams_Errors___seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Langly.Streams.Buffers.IReadBuffer.html#Langly_Streams_Buffers_IReadBuffer_TryRead_System_Byte__System_Byte__System_Byte__System_Byte__">TryRead(out Byte, out Byte, out Byte, out Byte)</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Buffers_IReadBuffer_TryStore_System_Byte_.md&amp;value=---%0Auid%3A%20Langly.Streams.Buffers.IReadBuffer.TryStore(System.Byte)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Buffers/IReadBuffer.cs/#L305">View Source</a>
+  </span>
+  <a id="Langly_Streams_Buffers_IReadBuffer_TryStore_" data-uid="Langly.Streams.Buffers.IReadBuffer.TryStore*"></a>
+  <h4 id="Langly_Streams_Buffers_IReadBuffer_TryStore_System_Byte_" data-uid="Langly.Streams.Buffers.IReadBuffer.TryStore(System.Byte)">TryStore(Byte)</h4>
+  <div class="markdown level1 summary"><p>Attempts to store the <code data-dev-comment-type="paramref" class="paramref">value</code> into this buffer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">virtual bool TryStore(byte value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a> to store.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the store was successful; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Buffers_IReadBuffer_TryStore_System_Byte_Langly_Streams_Errors__.md&amp;value=---%0Auid%3A%20Langly.Streams.Buffers.IReadBuffer.TryStore(System.Byte%2CLangly.Streams.Errors%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Buffers/IReadBuffer.cs/#L313">View Source</a>
+  </span>
+  <a id="Langly_Streams_Buffers_IReadBuffer_TryStore_" data-uid="Langly.Streams.Buffers.IReadBuffer.TryStore*"></a>
+  <h4 id="Langly_Streams_Buffers_IReadBuffer_TryStore_System_Byte_Langly_Streams_Errors__" data-uid="Langly.Streams.Buffers.IReadBuffer.TryStore(System.Byte,Langly.Streams.Errors@)">TryStore(Byte, out Errors)</h4>
+  <div class="markdown level1 summary"><p>Attempts to store the <code data-dev-comment-type="paramref" class="paramref">value</code> into this buffer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool TryStore(byte value, out Errors error)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a> to store.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.Streams.Errors.html">Errors</a></td>
+        <td><span class="parametername">error</span></td>
+        <td><p>The <a class="xref" href="Langly.Streams.Errors.html">Errors</a> that occurred, if any.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the store was successful; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Buffers_IReadBuffer.md&amp;value=---%0Auid%3A%20Langly.Streams.Buffers.IReadBuffer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Buffers/IReadBuffer.cs/#L9" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

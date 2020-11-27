@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Streamy.Serialization {
+namespace Langly.Serialization {
 	/// <summary>
 	/// Registry for serialization and deserialization metadata.
 	/// </summary>

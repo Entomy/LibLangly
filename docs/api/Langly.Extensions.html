@@ -616,6 +616,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Add&lt;TElement, TEnumerator&gt;(this IAddable&lt;TElement&gt; collection, IEnumerable&lt;TElement, TEnumerator&gt; elements)
+
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -681,6 +682,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Add&lt;TIndex, TElement, TEnumerator&gt;(this IAddable&lt;TIndex, TElement&gt; collection, IEnumerable&lt;(TIndex, TElement), TEnumerator&gt; members)
+
     where TEnumerator : IEnumerator&lt;(TIndex, TElement)&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1392,6 +1394,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Enqueue&lt;TElement, TEnumerator&gt;(this IEnqueueable&lt;TElement&gt; collection, IEnumerable&lt;TElement, TEnumerator&gt; elements)
+
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1453,6 +1456,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static bool Equals&lt;T&gt;(T objA, T objB)
+
     where T : IEquatable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1521,6 +1525,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static bool Equals&lt;TA, TB&gt;(TA objA, TB objB)
+
     where TA : IEquatable&lt;TB&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1593,6 +1598,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static bool Equals&lt;TA, TB&gt;(TB objB, TA objA)
+
     where TB : IEquatable&lt;TA&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1666,6 +1672,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TElement Fold&lt;TElement, TEnumerator&gt;(this IEnumerable&lt;TElement, TEnumerator&gt; collection, Func&lt;TElement, TElement, TElement&gt; func, TElement identity)
+
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1788,6 +1795,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static nint IndexOf&lt;TElement&gt;(this IReadOnlyIndexable&lt;TElement&gt; collection, TElement item)
+
     where TElement : IEquatable&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2005,6 +2013,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Insert&lt;TIndex, TElement&gt;(this IInsertable&lt;TIndex, TElement&gt; collection, TIndex index, TElement element)
+
     where TIndex : IEquatable&lt;TIndex&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2132,6 +2141,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static nint Occurrences&lt;TElement, TEnumerator&gt;(this IEnumerable&lt;TElement, TEnumerator&gt; collection, TElement element)
+
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2210,6 +2220,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static nint Occurrences&lt;TElement, TEnumerator&gt;(this IEnumerable&lt;TElement, TEnumerator&gt; collection, Predicate&lt;TElement&gt; match)
+
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2716,6 +2727,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Push&lt;TElement, TEnumerator&gt;(this IPushable&lt;TElement&gt; collection, IEnumerable&lt;TElement, TEnumerator&gt; elements)
+
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3010,6 +3022,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Remove&lt;TElement, TEnumerator&gt;(this IRemovable&lt;TElement&gt; collection, IEnumerable&lt;TElement, TEnumerator&gt; elements)
+
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>

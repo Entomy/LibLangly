@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Streamy {
+namespace Langly.Streams {
 	/// <summary>
 	/// Specifies the errors that occured.
 	/// </summary>

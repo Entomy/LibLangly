@@ -1,4 +1,4 @@
-﻿using Streamy.Buffers;
+﻿using Langly.Streams.Buffers;
 
 namespace Stringier.Encodings {
 	internal abstract class UTF32Codec : Codec {

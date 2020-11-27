@@ -1,0 +1,1917 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Stream
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Stream
+   ">
+    <meta name="generator" content="docfx 2.56.5.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Langly.Streams.Stream">
+  
+  
+  <h1 id="Langly_Streams_Stream" data-uid="Langly.Streams.Stream" class="text-break">Class Stream
+  </h1>
+  <div class="markdown level0 summary"><p>Provides a view of a sequence of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><a class="xref" href="Langly.Controlled.html">Controlled</a></div>
+    <div class="level2"><span class="xref">Stream</span></div>
+      <div class="level3"><a class="xref" href="Streamy.TextStream.html">TextStream</a></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iasyncdisposable">IAsyncDisposable</a></div>
+    <div><a class="xref" href="Langly.IPeekable-2.html">IPeekable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>, <a class="xref" href="Langly.Streams.Errors.html">Errors</a>&gt;</div>
+    <div><a class="xref" href="Langly.IReadable-2.html">IReadable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>, <a class="xref" href="Langly.Streams.Errors.html">Errors</a>&gt;</div>
+    <div><a class="xref" href="Langly.IPeekable-2.html">IPeekable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.sbyte">SByte</a>, <a class="xref" href="Langly.Streams.Errors.html">Errors</a>&gt;</div>
+    <div><a class="xref" href="Langly.IReadable-2.html">IReadable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.sbyte">SByte</a>, <a class="xref" href="Langly.Streams.Errors.html">Errors</a>&gt;</div>
+    <div><a class="xref" href="Langly.IPeekable-2.html">IPeekable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int16">Int16</a>, <a class="xref" href="Langly.Streams.Errors.html">Errors</a>&gt;</div>
+    <div><a class="xref" href="Langly.IReadable-2.html">IReadable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int16">Int16</a>, <a class="xref" href="Langly.Streams.Errors.html">Errors</a>&gt;</div>
+    <div><a class="xref" href="Langly.IPeekable-2.html">IPeekable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint16">UInt16</a>, <a class="xref" href="Langly.Streams.Errors.html">Errors</a>&gt;</div>
+    <div><a class="xref" href="Langly.IReadable-2.html">IReadable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint16">UInt16</a>, <a class="xref" href="Langly.Streams.Errors.html">Errors</a>&gt;</div>
+    <div><a class="xref" href="Langly.ISeekable-2.html">ISeekable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>, <a class="xref" href="Langly.Streams.Errors.html">Errors</a>&gt;</div>
+    <div><a class="xref" href="Langly.IWritable-2.html">IWritable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>, <a class="xref" href="Langly.Streams.Errors.html">Errors</a>&gt;</div>
+    <div><a class="xref" href="Langly.IWritable-2.html">IWritable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.sbyte">SByte</a>, <a class="xref" href="Langly.Streams.Errors.html">Errors</a>&gt;</div>
+    <div><a class="xref" href="Langly.IWritable-2.html">IWritable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int16">Int16</a>, <a class="xref" href="Langly.Streams.Errors.html">Errors</a>&gt;</div>
+    <div><a class="xref" href="Langly.IWritable-2.html">IWritable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint16">UInt16</a>, <a class="xref" href="Langly.Streams.Errors.html">Errors</a>&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Langly.Controlled.html#Langly_Controlled_Disposed">Controlled.Disposed</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.Controlled.html#Langly_Controlled_Dispose">Controlled.Dispose()</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.Controlled.html#Langly_Controlled_DisposeAsync">Controlled.DisposeAsync()</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.Controlled.html#Langly_Controlled_DisposeUnmanaged">Controlled.DisposeUnmanaged()</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.Controlled.html#Langly_Controlled_NullLargeFields">Controlled.NullLargeFields()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_">Object.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_System_Object_">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#System_Object_GetHashCode">Object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#System_Object_GetType">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#System_Object_MemberwiseClone">Object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#System_Object_ReferenceEquals_System_Object_System_Object_">Object.ReferenceEquals(Object, Object)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Langly.Streams.html">Langly.Streams</a></h6>
+  <h6><strong>Assembly</strong>: Streamy.dll</h6>
+  <h5 id="Langly_Streams_Stream_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Stream : Controlled, IDisposable, IAsyncDisposable, IPeekable&lt;byte, Errors&gt;, IReadable&lt;byte, Errors&gt;, IPeekable&lt;sbyte, Errors&gt;, IReadable&lt;sbyte, Errors&gt;, IPeekable&lt;short, Errors&gt;, IReadable&lt;short, Errors&gt;, IPeekable&lt;ushort, Errors&gt;, IReadable&lt;ushort, Errors&gt;, ISeekable&lt;byte, Errors&gt;, IWritable&lt;byte, Errors&gt;, IWritable&lt;sbyte, Errors&gt;, IWritable&lt;short, Errors&gt;, IWritable&lt;ushort, Errors&gt;</code></pre>
+  </div>
+  <h5 id="Langly_Streams_Stream_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>This fundamentally operates differently from <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.io.stream">Stream</a>. While it is designed fairly similar in API, the way it operates, even at that level, differs greatly. There&apos;s three major components that make up the byte stream:</p>
+<p>This <a class="xref" href="Langly.Streams.Stream.html">Stream</a> type provides orchestration logic around the other components, tying everything together. Through those, it provides a low level, byte-centric, API.</p>
+<p>The actual datastream is provided by <a class="xref" href="Langly.Streams.Bases.StreamBase.html">StreamBase</a>, which implements the basic streaming API for the daatastream. Supporting additional stream types can be done by extended <a class="xref" href="Langly.Streams.Bases.StreamBase.html">StreamBase</a>, which greatly simplifies adding new datastreams.</p>
+<p>Buffers are provided by <a class="xref" href="Langly.Streams.Buffers.IReadBuffer.html">IReadBuffer</a> and <a class="xref" href="Langly.Streams.Buffers.IWriteBuffer.html">IWriteBuffer</a>, which buffer the basic streaming from <a class="xref" href="Langly.Streams.Bases.StreamBase.html">StreamBase</a>, enabling features like <a class="xref" href="Langly.IPeekable-2.html#Langly_IPeekable_2_Peek__0__">Peek(out TElement)</a> and limited <a class="xref" href="Langly.ISeekable-2.html">ISeekable&lt;TElement, TError&gt;</a> behavior even when the underlying stream is not capable.</p>
+<p>Additional orchestration can be added by deriving from this type. However, most applications will not need to do this. Instead, the intended mechanism for supporting additional types is through extension methods.</p>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Stream__ctor_Langly_Streams_Bases_StreamBase_Langly_Streams_Buffers_IReadBuffer_Langly_Streams_Buffers_IWriteBuffer_.md&amp;value=---%0Auid%3A%20Langly.Streams.Stream.%23ctor(Langly.Streams.Bases.StreamBase%2CLangly.Streams.Buffers.IReadBuffer%2CLangly.Streams.Buffers.IWriteBuffer)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Stream.cs/#L73">View Source</a>
+  </span>
+  <a id="Langly_Streams_Stream__ctor_" data-uid="Langly.Streams.Stream.#ctor*"></a>
+  <h4 id="Langly_Streams_Stream__ctor_Langly_Streams_Bases_StreamBase_Langly_Streams_Buffers_IReadBuffer_Langly_Streams_Buffers_IWriteBuffer_" data-uid="Langly.Streams.Stream.#ctor(Langly.Streams.Bases.StreamBase,Langly.Streams.Buffers.IReadBuffer,Langly.Streams.Buffers.IWriteBuffer)">Stream(StreamBase, IReadBuffer, IWriteBuffer)</h4>
+  <div class="markdown level1 summary"><p>Initialize a new instance of the <a class="xref" href="Langly.Streams.Stream.html">Stream</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Stream(StreamBase streamBase, IReadBuffer readBuffer, IWriteBuffer writeBuffer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.Streams.Bases.StreamBase.html">StreamBase</a></td>
+        <td><span class="parametername">streamBase</span></td>
+        <td><p>The base datastream.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.Streams.Buffers.IReadBuffer.html">IReadBuffer</a></td>
+        <td><span class="parametername">readBuffer</span></td>
+        <td><p>The buffer used for reads.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.Streams.Buffers.IWriteBuffer.html">IWriteBuffer</a></td>
+        <td><span class="parametername">writeBuffer</span></td>
+        <td><p>The buffer used for writes.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Stream__ctor_Langly_Streams_Standard_.md&amp;value=---%0Auid%3A%20Langly.Streams.Stream.%23ctor(Langly.Streams.Standard)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Stream.cs/#L96">View Source</a>
+  </span>
+  <a id="Langly_Streams_Stream__ctor_" data-uid="Langly.Streams.Stream.#ctor*"></a>
+  <h4 id="Langly_Streams_Stream__ctor_Langly_Streams_Standard_" data-uid="Langly.Streams.Stream.#ctor(Langly.Streams.Standard)">Stream(Standard)</h4>
+  <div class="markdown level1 summary"><p>Initialize a new instance of the <a class="xref" href="Langly.Streams.Stream.html">Stream</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Stream(Standard stream)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.Streams.Standard.html">Standard</a></td>
+        <td><span class="parametername">stream</span></td>
+        <td><p>The <a class="xref" href="Langly.Streams.Standard.html">Standard</a> stream designator.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Stream__ctor_System_Byte___.md&amp;value=---%0Auid%3A%20Langly.Streams.Stream.%23ctor(System.Byte%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Stream.cs/#L41">View Source</a>
+  </span>
+  <a id="Langly_Streams_Stream__ctor_" data-uid="Langly.Streams.Stream.#ctor*"></a>
+  <h4 id="Langly_Streams_Stream__ctor_System_Byte___" data-uid="Langly.Streams.Stream.#ctor(System.Byte[])">Stream(Byte[])</h4>
+  <div class="markdown level1 summary"><p>Initialize a new instance of the <a class="xref" href="Langly.Streams.Stream.html">Stream</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Stream(byte[] buffer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>[]</td>
+        <td><span class="parametername">buffer</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.array">Array</a> of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a> to stream.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Stream__ctor_System_Byte___Langly_Streams_Buffers_IReadBuffer_Langly_Streams_Buffers_IWriteBuffer_.md&amp;value=---%0Auid%3A%20Langly.Streams.Stream.%23ctor(System.Byte%5B%5D%2CLangly.Streams.Buffers.IReadBuffer%2CLangly.Streams.Buffers.IWriteBuffer)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Stream.cs/#L54">View Source</a>
+  </span>
+  <a id="Langly_Streams_Stream__ctor_" data-uid="Langly.Streams.Stream.#ctor*"></a>
+  <h4 id="Langly_Streams_Stream__ctor_System_Byte___Langly_Streams_Buffers_IReadBuffer_Langly_Streams_Buffers_IWriteBuffer_" data-uid="Langly.Streams.Stream.#ctor(System.Byte[],Langly.Streams.Buffers.IReadBuffer,Langly.Streams.Buffers.IWriteBuffer)">Stream(Byte[], IReadBuffer, IWriteBuffer)</h4>
+  <div class="markdown level1 summary"><p>Initialize a new instance of the <a class="xref" href="Langly.Streams.Stream.html">Stream</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Stream(byte[] buffer, IReadBuffer readBuffer, IWriteBuffer writeBuffer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>[]</td>
+        <td><span class="parametername">buffer</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.array">Array</a> of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a> to stream.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.Streams.Buffers.IReadBuffer.html">IReadBuffer</a></td>
+        <td><span class="parametername">readBuffer</span></td>
+        <td><p>The buffer used for reads.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.Streams.Buffers.IWriteBuffer.html">IWriteBuffer</a></td>
+        <td><span class="parametername">writeBuffer</span></td>
+        <td><p>The buffer used for writes.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Stream__ctor_System_String_.md&amp;value=---%0Auid%3A%20Langly.Streams.Stream.%23ctor(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Stream.cs/#L60">View Source</a>
+  </span>
+  <a id="Langly_Streams_Stream__ctor_" data-uid="Langly.Streams.Stream.#ctor*"></a>
+  <h4 id="Langly_Streams_Stream__ctor_System_String_" data-uid="Langly.Streams.Stream.#ctor(System.String)">Stream(String)</h4>
+  <div class="markdown level1 summary"><p>Initialize a new instance of the <a class="xref" href="Langly.Streams.Stream.html">Stream</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Stream(string string)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">string</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a> to stream.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Stream__ctor_System_String_System_IO_FileMode_Langly_Streams_Buffers_IReadBuffer_Langly_Streams_Buffers_IWriteBuffer_.md&amp;value=---%0Auid%3A%20Langly.Streams.Stream.%23ctor(System.String%2CSystem.IO.FileMode%2CLangly.Streams.Buffers.IReadBuffer%2CLangly.Streams.Buffers.IWriteBuffer)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Stream.cs/#L90">View Source</a>
+  </span>
+  <a id="Langly_Streams_Stream__ctor_" data-uid="Langly.Streams.Stream.#ctor*"></a>
+  <h4 id="Langly_Streams_Stream__ctor_System_String_System_IO_FileMode_Langly_Streams_Buffers_IReadBuffer_Langly_Streams_Buffers_IWriteBuffer_" data-uid="Langly.Streams.Stream.#ctor(System.String,System.IO.FileMode,Langly.Streams.Buffers.IReadBuffer,Langly.Streams.Buffers.IWriteBuffer)">Stream(String, FileMode, IReadBuffer, IWriteBuffer)</h4>
+  <div class="markdown level1 summary"><p>Initialize a new instance of the <a class="xref" href="Langly.Streams.Stream.html">Stream</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Stream(string path, FileMode mode, IReadBuffer readBuffer, IWriteBuffer writeBuffer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The path to the file.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.io.filemode">FileMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.io.filemode">FileMode</a> for opening the file.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.Streams.Buffers.IReadBuffer.html">IReadBuffer</a></td>
+        <td><span class="parametername">readBuffer</span></td>
+        <td><p>The buffer used for reads.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.Streams.Buffers.IWriteBuffer.html">IWriteBuffer</a></td>
+        <td><span class="parametername">writeBuffer</span></td>
+        <td><p>The buffer used for writes.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_Streams_Stream__ctor_System_String_System_IO_FileMode_Langly_Streams_Buffers_IReadBuffer_Langly_Streams_Buffers_IWriteBuffer__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This constructor presumes streaming a file, and looks for a file at <code data-dev-comment-type="paramref" class="paramref">path</code> to stream. It is <span class="xref">langword_csharp_protected</span> as it is intended to be used as part of a constructor chain from a derived class.</p>
+</div>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Stream_Base.md&amp;value=---%0Auid%3A%20Langly.Streams.Stream.Base%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Stream.cs/#L25">View Source</a>
+  </span>
+  <h4 id="Langly_Streams_Stream_Base" data-uid="Langly.Streams.Stream.Base">Base</h4>
+  <div class="markdown level1 summary"><p>The base of the <a class="xref" href="Langly.Streams.Stream.html">Stream</a>, the actual datastream.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly StreamBase Base</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.Streams.Bases.StreamBase.html">StreamBase</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Stream_ReadBuffer.md&amp;value=---%0Auid%3A%20Langly.Streams.Stream.ReadBuffer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Stream.cs/#L30">View Source</a>
+  </span>
+  <h4 id="Langly_Streams_Stream_ReadBuffer" data-uid="Langly.Streams.Stream.ReadBuffer">ReadBuffer</h4>
+  <div class="markdown level1 summary"><p>The buffer used for reads.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly IReadBuffer ReadBuffer</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.Streams.Buffers.IReadBuffer.html">IReadBuffer</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Stream_WriteBuffer.md&amp;value=---%0Auid%3A%20Langly.Streams.Stream.WriteBuffer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Stream.cs/#L35">View Source</a>
+  </span>
+  <h4 id="Langly_Streams_Stream_WriteBuffer" data-uid="Langly.Streams.Stream.WriteBuffer">WriteBuffer</h4>
+  <div class="markdown level1 summary"><p>The buffer used for writes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly IWriteBuffer WriteBuffer</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.Streams.Buffers.IWriteBuffer.html">IWriteBuffer</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Stream_Position.md&amp;value=---%0Auid%3A%20Langly.Streams.Stream.Position%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Stream.cs/#L109">View Source</a>
+  </span>
+  <a id="Langly_Streams_Stream_Position_" data-uid="Langly.Streams.Stream.Position*"></a>
+  <h4 id="Langly_Streams_Stream_Position" data-uid="Langly.Streams.Stream.Position">Position</h4>
+  <div class="markdown level1 summary"><p>The position within the stream, counted by byte offset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual nint Position { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_Streams_Stream_Position_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This is <span class="xref">virtual</span> so that extenders may change how indexing appears, such as a text stream being counted by some text element.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Stream_Readable.md&amp;value=---%0Auid%3A%20Langly.Streams.Stream.Readable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Stream.cs/#L112">View Source</a>
+  </span>
+  <a id="Langly_Streams_Stream_Readable_" data-uid="Langly.Streams.Stream.Readable*"></a>
+  <h4 id="Langly_Streams_Stream_Readable" data-uid="Langly.Streams.Stream.Readable">Readable</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Readable { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Stream_Seekable.md&amp;value=---%0Auid%3A%20Langly.Streams.Stream.Seekable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Stream.cs/#L115">View Source</a>
+  </span>
+  <a id="Langly_Streams_Stream_Seekable_" data-uid="Langly.Streams.Stream.Seekable*"></a>
+  <h4 id="Langly_Streams_Stream_Seekable" data-uid="Langly.Streams.Stream.Seekable">Seekable</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Seekable { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Stream_Writable.md&amp;value=---%0Auid%3A%20Langly.Streams.Stream.Writable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Stream.cs/#L118">View Source</a>
+  </span>
+  <a id="Langly_Streams_Stream_Writable_" data-uid="Langly.Streams.Stream.Writable*"></a>
+  <h4 id="Langly_Streams_Stream_Writable" data-uid="Langly.Streams.Stream.Writable">Writable</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Writable { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Stream_DisposeManaged.md&amp;value=---%0Auid%3A%20Langly.Streams.Stream.DisposeManaged%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Stream.cs/#L298">View Source</a>
+  </span>
+  <a id="Langly_Streams_Stream_DisposeManaged_" data-uid="Langly.Streams.Stream.DisposeManaged*"></a>
+  <h4 id="Langly_Streams_Stream_DisposeManaged" data-uid="Langly.Streams.Stream.DisposeManaged">DisposeManaged()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void DisposeManaged()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Langly.Controlled.html#Langly_Controlled_DisposeManaged">Controlled.DisposeManaged()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Stream_Peek_System_Byte__.md&amp;value=---%0Auid%3A%20Langly.Streams.Stream.Peek(System.Byte%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Stream.cs/#L129">View Source</a>
+  </span>
+  <a id="Langly_Streams_Stream_Peek_" data-uid="Langly.Streams.Stream.Peek*"></a>
+  <h4 id="Langly_Streams_Stream_Peek_System_Byte__" data-uid="Langly.Streams.Stream.Peek(System.Byte@)">Peek(out Byte)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Peek(out byte element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Stream_Peek_System_Int16__.md&amp;value=---%0Auid%3A%20Langly.Streams.Stream.Peek(System.Int16%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Stream.cs/#L139">View Source</a>
+  </span>
+  <a id="Langly_Streams_Stream_Peek_" data-uid="Langly.Streams.Stream.Peek*"></a>
+  <h4 id="Langly_Streams_Stream_Peek_System_Int16__" data-uid="Langly.Streams.Stream.Peek(System.Int16@)">Peek(out Int16)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Peek(out short element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int16">Int16</a></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Stream_Peek_System_SByte__.md&amp;value=---%0Auid%3A%20Langly.Streams.Stream.Peek(System.SByte%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Stream.cs/#L132">View Source</a>
+  </span>
+  <a id="Langly_Streams_Stream_Peek_" data-uid="Langly.Streams.Stream.Peek*"></a>
+  <h4 id="Langly_Streams_Stream_Peek_System_SByte__" data-uid="Langly.Streams.Stream.Peek(System.SByte@)">Peek(out SByte)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public void Peek(out sbyte element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.sbyte">SByte</a></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Stream_Peek_System_UInt16__.md&amp;value=---%0Auid%3A%20Langly.Streams.Stream.Peek(System.UInt16%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Stream.cs/#L146">View Source</a>
+  </span>
+  <a id="Langly_Streams_Stream_Peek_" data-uid="Langly.Streams.Stream.Peek*"></a>
+  <h4 id="Langly_Streams_Stream_Peek_System_UInt16__" data-uid="Langly.Streams.Stream.Peek(System.UInt16@)">Peek(out UInt16)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public void Peek(out ushort element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint16">UInt16</a></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Stream_Read_System_Byte__.md&amp;value=---%0Auid%3A%20Langly.Streams.Stream.Read(System.Byte%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Stream.cs/#L154">View Source</a>
+  </span>
+  <a id="Langly_Streams_Stream_Read_" data-uid="Langly.Streams.Stream.Read*"></a>
+  <h4 id="Langly_Streams_Stream_Read_System_Byte__" data-uid="Langly.Streams.Stream.Read(System.Byte@)">Read(out Byte)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Read(out byte element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Stream_Read_System_Int16__.md&amp;value=---%0Auid%3A%20Langly.Streams.Stream.Read(System.Int16%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Stream.cs/#L164">View Source</a>
+  </span>
+  <a id="Langly_Streams_Stream_Read_" data-uid="Langly.Streams.Stream.Read*"></a>
+  <h4 id="Langly_Streams_Stream_Read_System_Int16__" data-uid="Langly.Streams.Stream.Read(System.Int16@)">Read(out Int16)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Read(out short element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int16">Int16</a></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Stream_Read_System_SByte__.md&amp;value=---%0Auid%3A%20Langly.Streams.Stream.Read(System.SByte%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Stream.cs/#L157">View Source</a>
+  </span>
+  <a id="Langly_Streams_Stream_Read_" data-uid="Langly.Streams.Stream.Read*"></a>
+  <h4 id="Langly_Streams_Stream_Read_System_SByte__" data-uid="Langly.Streams.Stream.Read(System.SByte@)">Read(out SByte)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public void Read(out sbyte element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.sbyte">SByte</a></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Stream_Read_System_UInt16__.md&amp;value=---%0Auid%3A%20Langly.Streams.Stream.Read(System.UInt16%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Stream.cs/#L171">View Source</a>
+  </span>
+  <a id="Langly_Streams_Stream_Read_" data-uid="Langly.Streams.Stream.Read*"></a>
+  <h4 id="Langly_Streams_Stream_Read_System_UInt16__" data-uid="Langly.Streams.Stream.Read(System.UInt16@)">Read(out UInt16)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public void Read(out ushort element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint16">UInt16</a></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Stream_Seek_nint_.md&amp;value=---%0Auid%3A%20Langly.Streams.Stream.Seek(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Stream.cs/#L179">View Source</a>
+  </span>
+  <a id="Langly_Streams_Stream_Seek_" data-uid="Langly.Streams.Stream.Seek*"></a>
+  <h4 id="Langly_Streams_Stream_Seek_nint_" data-uid="Langly.Streams.Stream.Seek(nint)">Seek(nint)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Seek(nint offset)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">offset</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Stream_ToString.md&amp;value=---%0Auid%3A%20Langly.Streams.Stream.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Stream.cs/#L182">View Source</a>
+  </span>
+  <a id="Langly_Streams_Stream_ToString_" data-uid="Langly.Streams.Stream.ToString*"></a>
+  <h4 id="Langly_Streams_Stream_ToString" data-uid="Langly.Streams.Stream.ToString">ToString()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override sealed string ToString()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString">Object.ToString()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Stream_TryPeek_System_Byte__Langly_Streams_Errors__.md&amp;value=---%0Auid%3A%20Langly.Streams.Stream.TryPeek(System.Byte%40%2CLangly.Streams.Errors%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Stream.cs/#L185">View Source</a>
+  </span>
+  <a id="Langly_Streams_Stream_TryPeek_" data-uid="Langly.Streams.Stream.TryPeek*"></a>
+  <h4 id="Langly_Streams_Stream_TryPeek_System_Byte__Langly_Streams_Errors__" data-uid="Langly.Streams.Stream.TryPeek(System.Byte@,Langly.Streams.Errors@)">TryPeek(out Byte, out Errors)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryPeek(out byte element, out Errors error)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.Streams.Errors.html">Errors</a></td>
+        <td><span class="parametername">error</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Stream_TryPeek_System_Int16__Langly_Streams_Errors__.md&amp;value=---%0Auid%3A%20Langly.Streams.Stream.TryPeek(System.Int16%40%2CLangly.Streams.Errors%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Stream.cs/#L196">View Source</a>
+  </span>
+  <a id="Langly_Streams_Stream_TryPeek_" data-uid="Langly.Streams.Stream.TryPeek*"></a>
+  <h4 id="Langly_Streams_Stream_TryPeek_System_Int16__Langly_Streams_Errors__" data-uid="Langly.Streams.Stream.TryPeek(System.Int16@,Langly.Streams.Errors@)">TryPeek(out Int16, out Errors)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryPeek(out short element, out Errors error)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int16">Int16</a></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.Streams.Errors.html">Errors</a></td>
+        <td><span class="parametername">error</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Stream_TryPeek_System_SByte__Langly_Streams_Errors__.md&amp;value=---%0Auid%3A%20Langly.Streams.Stream.TryPeek(System.SByte%40%2CLangly.Streams.Errors%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Stream.cs/#L188">View Source</a>
+  </span>
+  <a id="Langly_Streams_Stream_TryPeek_" data-uid="Langly.Streams.Stream.TryPeek*"></a>
+  <h4 id="Langly_Streams_Stream_TryPeek_System_SByte__Langly_Streams_Errors__" data-uid="Langly.Streams.Stream.TryPeek(System.SByte@,Langly.Streams.Errors@)">TryPeek(out SByte, out Errors)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public bool TryPeek(out sbyte element, out Errors error)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.sbyte">SByte</a></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.Streams.Errors.html">Errors</a></td>
+        <td><span class="parametername">error</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Stream_TryPeek_System_UInt16__Langly_Streams_Errors__.md&amp;value=---%0Auid%3A%20Langly.Streams.Stream.TryPeek(System.UInt16%40%2CLangly.Streams.Errors%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Stream.cs/#L208">View Source</a>
+  </span>
+  <a id="Langly_Streams_Stream_TryPeek_" data-uid="Langly.Streams.Stream.TryPeek*"></a>
+  <h4 id="Langly_Streams_Stream_TryPeek_System_UInt16__Langly_Streams_Errors__" data-uid="Langly.Streams.Stream.TryPeek(System.UInt16@,Langly.Streams.Errors@)">TryPeek(out UInt16, out Errors)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public bool TryPeek(out ushort element, out Errors error)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint16">UInt16</a></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.Streams.Errors.html">Errors</a></td>
+        <td><span class="parametername">error</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Stream_TryRead_System_Byte__Langly_Streams_Errors__.md&amp;value=---%0Auid%3A%20Langly.Streams.Stream.TryRead(System.Byte%40%2CLangly.Streams.Errors%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Stream.cs/#L221">View Source</a>
+  </span>
+  <a id="Langly_Streams_Stream_TryRead_" data-uid="Langly.Streams.Stream.TryRead*"></a>
+  <h4 id="Langly_Streams_Stream_TryRead_System_Byte__Langly_Streams_Errors__" data-uid="Langly.Streams.Stream.TryRead(System.Byte@,Langly.Streams.Errors@)">TryRead(out Byte, out Errors)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryRead(out byte element, out Errors error)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.Streams.Errors.html">Errors</a></td>
+        <td><span class="parametername">error</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Stream_TryRead_System_Int16__Langly_Streams_Errors__.md&amp;value=---%0Auid%3A%20Langly.Streams.Stream.TryRead(System.Int16%40%2CLangly.Streams.Errors%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Stream.cs/#L232">View Source</a>
+  </span>
+  <a id="Langly_Streams_Stream_TryRead_" data-uid="Langly.Streams.Stream.TryRead*"></a>
+  <h4 id="Langly_Streams_Stream_TryRead_System_Int16__Langly_Streams_Errors__" data-uid="Langly.Streams.Stream.TryRead(System.Int16@,Langly.Streams.Errors@)">TryRead(out Int16, out Errors)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryRead(out short element, out Errors error)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int16">Int16</a></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.Streams.Errors.html">Errors</a></td>
+        <td><span class="parametername">error</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Stream_TryRead_System_SByte__Langly_Streams_Errors__.md&amp;value=---%0Auid%3A%20Langly.Streams.Stream.TryRead(System.SByte%40%2CLangly.Streams.Errors%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Stream.cs/#L224">View Source</a>
+  </span>
+  <a id="Langly_Streams_Stream_TryRead_" data-uid="Langly.Streams.Stream.TryRead*"></a>
+  <h4 id="Langly_Streams_Stream_TryRead_System_SByte__Langly_Streams_Errors__" data-uid="Langly.Streams.Stream.TryRead(System.SByte@,Langly.Streams.Errors@)">TryRead(out SByte, out Errors)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public bool TryRead(out sbyte element, out Errors error)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.sbyte">SByte</a></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.Streams.Errors.html">Errors</a></td>
+        <td><span class="parametername">error</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Stream_TryRead_System_UInt16__Langly_Streams_Errors__.md&amp;value=---%0Auid%3A%20Langly.Streams.Stream.TryRead(System.UInt16%40%2CLangly.Streams.Errors%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Stream.cs/#L244">View Source</a>
+  </span>
+  <a id="Langly_Streams_Stream_TryRead_" data-uid="Langly.Streams.Stream.TryRead*"></a>
+  <h4 id="Langly_Streams_Stream_TryRead_System_UInt16__Langly_Streams_Errors__" data-uid="Langly.Streams.Stream.TryRead(System.UInt16@,Langly.Streams.Errors@)">TryRead(out UInt16, out Errors)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public bool TryRead(out ushort element, out Errors error)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint16">UInt16</a></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.Streams.Errors.html">Errors</a></td>
+        <td><span class="parametername">error</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Stream_TrySeek_nint_Langly_Streams_Errors__.md&amp;value=---%0Auid%3A%20Langly.Streams.Stream.TrySeek(nint%2CLangly.Streams.Errors%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Stream.cs/#L257">View Source</a>
+  </span>
+  <a id="Langly_Streams_Stream_TrySeek_" data-uid="Langly.Streams.Stream.TrySeek*"></a>
+  <h4 id="Langly_Streams_Stream_TrySeek_nint_Langly_Streams_Errors__" data-uid="Langly.Streams.Stream.TrySeek(nint,Langly.Streams.Errors@)">TrySeek(nint, out Errors)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool TrySeek(nint offset, out Errors error)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">offset</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.Streams.Errors.html">Errors</a></td>
+        <td><span class="parametername">error</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Stream_TryWrite_System_Byte_Langly_Streams_Errors__.md&amp;value=---%0Auid%3A%20Langly.Streams.Stream.TryWrite(System.Byte%2CLangly.Streams.Errors%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Stream.cs/#L260">View Source</a>
+  </span>
+  <a id="Langly_Streams_Stream_TryWrite_" data-uid="Langly.Streams.Stream.TryWrite*"></a>
+  <h4 id="Langly_Streams_Stream_TryWrite_System_Byte_Langly_Streams_Errors__" data-uid="Langly.Streams.Stream.TryWrite(System.Byte,Langly.Streams.Errors@)">TryWrite(Byte, out Errors)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryWrite(byte element, out Errors error)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.Streams.Errors.html">Errors</a></td>
+        <td><span class="parametername">error</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Stream_TryWrite_System_Int16_Langly_Streams_Errors__.md&amp;value=---%0Auid%3A%20Langly.Streams.Stream.TryWrite(System.Int16%2CLangly.Streams.Errors%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Stream.cs/#L267">View Source</a>
+  </span>
+  <a id="Langly_Streams_Stream_TryWrite_" data-uid="Langly.Streams.Stream.TryWrite*"></a>
+  <h4 id="Langly_Streams_Stream_TryWrite_System_Int16_Langly_Streams_Errors__" data-uid="Langly.Streams.Stream.TryWrite(System.Int16,Langly.Streams.Errors@)">TryWrite(Int16, out Errors)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryWrite(short element, out Errors error)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int16">Int16</a></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.Streams.Errors.html">Errors</a></td>
+        <td><span class="parametername">error</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Stream_TryWrite_System_SByte_Langly_Streams_Errors__.md&amp;value=---%0Auid%3A%20Langly.Streams.Stream.TryWrite(System.SByte%2CLangly.Streams.Errors%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Stream.cs/#L263">View Source</a>
+  </span>
+  <a id="Langly_Streams_Stream_TryWrite_" data-uid="Langly.Streams.Stream.TryWrite*"></a>
+  <h4 id="Langly_Streams_Stream_TryWrite_System_SByte_Langly_Streams_Errors__" data-uid="Langly.Streams.Stream.TryWrite(System.SByte,Langly.Streams.Errors@)">TryWrite(SByte, out Errors)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public bool TryWrite(sbyte element, out Errors error)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.sbyte">SByte</a></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.Streams.Errors.html">Errors</a></td>
+        <td><span class="parametername">error</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Stream_TryWrite_System_UInt16_Langly_Streams_Errors__.md&amp;value=---%0Auid%3A%20Langly.Streams.Stream.TryWrite(System.UInt16%2CLangly.Streams.Errors%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Stream.cs/#L272">View Source</a>
+  </span>
+  <a id="Langly_Streams_Stream_TryWrite_" data-uid="Langly.Streams.Stream.TryWrite*"></a>
+  <h4 id="Langly_Streams_Stream_TryWrite_System_UInt16_Langly_Streams_Errors__" data-uid="Langly.Streams.Stream.TryWrite(System.UInt16,Langly.Streams.Errors@)">TryWrite(UInt16, out Errors)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public bool TryWrite(ushort element, out Errors error)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint16">UInt16</a></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.Streams.Errors.html">Errors</a></td>
+        <td><span class="parametername">error</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Stream_Write_System_Byte_.md&amp;value=---%0Auid%3A%20Langly.Streams.Stream.Write(System.Byte)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Stream.cs/#L278">View Source</a>
+  </span>
+  <a id="Langly_Streams_Stream_Write_" data-uid="Langly.Streams.Stream.Write*"></a>
+  <h4 id="Langly_Streams_Stream_Write_System_Byte_" data-uid="Langly.Streams.Stream.Write(System.Byte)">Write(Byte)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Write(byte element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Stream_Write_System_Int16_.md&amp;value=---%0Auid%3A%20Langly.Streams.Stream.Write(System.Int16)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Stream.cs/#L285">View Source</a>
+  </span>
+  <a id="Langly_Streams_Stream_Write_" data-uid="Langly.Streams.Stream.Write*"></a>
+  <h4 id="Langly_Streams_Stream_Write_System_Int16_" data-uid="Langly.Streams.Stream.Write(System.Int16)">Write(Int16)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Write(short element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int16">Int16</a></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Stream_Write_System_SByte_.md&amp;value=---%0Auid%3A%20Langly.Streams.Stream.Write(System.SByte)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Stream.cs/#L281">View Source</a>
+  </span>
+  <a id="Langly_Streams_Stream_Write_" data-uid="Langly.Streams.Stream.Write*"></a>
+  <h4 id="Langly_Streams_Stream_Write_System_SByte_" data-uid="Langly.Streams.Stream.Write(System.SByte)">Write(SByte)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public void Write(sbyte element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.sbyte">SByte</a></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Stream_Write_System_UInt16_.md&amp;value=---%0Auid%3A%20Langly.Streams.Stream.Write(System.UInt16)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Stream.cs/#L291">View Source</a>
+  </span>
+  <a id="Langly_Streams_Stream_Write_" data-uid="Langly.Streams.Stream.Write*"></a>
+  <h4 id="Langly_Streams_Stream_Write_System_UInt16_" data-uid="Langly.Streams.Stream.Write(System.UInt16)">Write(UInt16)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public void Write(ushort element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint16">UInt16</a></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="operators">Operators
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Stream_op_Implicit_System_Byte____Langly_Streams_Stream.md&amp;value=---%0Auid%3A%20Langly.Streams.Stream.op_Implicit(System.Byte%5B%5D)~Langly.Streams.Stream%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Stream.cs/#L125">View Source</a>
+  </span>
+  <a id="Langly_Streams_Stream_op_Implicit_" data-uid="Langly.Streams.Stream.op_Implicit*"></a>
+  <h4 id="Langly_Streams_Stream_op_Implicit_System_Byte____Langly_Streams_Stream" data-uid="Langly.Streams.Stream.op_Implicit(System.Byte[])~Langly.Streams.Stream">Implicit(Byte[] to Stream)</h4>
+  <div class="markdown level1 summary"><p>Stream this <code data-dev-comment-type="paramref" class="paramref">buffer</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Stream(byte[] buffer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>[]</td>
+        <td><span class="parametername">buffer</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.array">Array</a> of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a> to stream.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.Streams.Stream.html">Stream</a></td>
+        <td><p>This <code data-dev-comment-type="paramref" class="paramref">buffer</code> as a datastream.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable">System.IDisposable</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iasyncdisposable">System.IAsyncDisposable</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IPeekable-2.html">IPeekable&lt;TElement, TError&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IReadable-2.html">IReadable&lt;TElement, TError&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IPeekable-2.html">IPeekable&lt;TElement, TError&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IReadable-2.html">IReadable&lt;TElement, TError&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IPeekable-2.html">IPeekable&lt;TElement, TError&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IReadable-2.html">IReadable&lt;TElement, TError&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IPeekable-2.html">IPeekable&lt;TElement, TError&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IReadable-2.html">IReadable&lt;TElement, TError&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.ISeekable-2.html">ISeekable&lt;TElement, TError&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IWritable-2.html">IWritable&lt;TElement, TError&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IWritable-2.html">IWritable&lt;TElement, TError&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IWritable-2.html">IWritable&lt;TElement, TError&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IWritable-2.html">IWritable&lt;TElement, TError&gt;</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Stream.md&amp;value=---%0Auid%3A%20Langly.Streams.Stream%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy/Streams/Stream.cs/#L17" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

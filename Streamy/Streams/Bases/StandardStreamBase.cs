@@ -1,8 +1,7 @@
 ﻿using System;
 using System.IO;
-using Langly;
 
-namespace Streamy.Bases {
+namespace Langly.Streams.Bases {
 	/// <summary>
 	/// Represents the base of a <see cref="Stream"/> who's backing is the standard input and standard ouput.
 	/// </summary>

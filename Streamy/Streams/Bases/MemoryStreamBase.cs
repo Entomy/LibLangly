@@ -1,7 +1,6 @@
 ﻿using System;
-using Langly;
 
-namespace Streamy.Bases {
+namespace Langly.Streams.Bases {
 	/// <summary>
 	/// Represents the base of a <see cref="Stream"/> whos backing data is stored in memory.
 	/// </summary>

@@ -1,7 +1,7 @@
 ﻿#if UNIX
 using System;
 
-namespace Streamy.Bases {
+namespace Langly.Streams.Bases {
 	internal partial class FileStreamBase {
 
 	}

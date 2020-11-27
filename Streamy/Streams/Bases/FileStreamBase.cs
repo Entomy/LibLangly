@@ -1,11 +1,10 @@
 ﻿using System;
 using System.IO;
-using Langly;
 #if WINDOWS
 using System.ComponentModel;
 #endif
 
-namespace Streamy.Bases {
+namespace Langly.Streams.Bases {
 	/// <summary>
 	/// Represents the base of a <see cref="Stream"/> whos backing data is stored on disk.
 	/// </summary>

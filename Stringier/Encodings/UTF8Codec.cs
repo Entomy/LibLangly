@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
-using Streamy.Buffers;
-using Streamy;
+using Langly.Streams;
+using Langly.Streams.Buffers;
 
 namespace Stringier.Encodings {
 	internal sealed class UTF8Codec : Codec {
