@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
-using Consolator;
-using Console = Consolator.Console;
+using Langly;
+using Console = Langly.Console;
 
 namespace Benchmarks {
 	public static class Program {

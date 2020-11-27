@@ -2,7 +2,7 @@
 
 open System
 
-type private Con = Consolator.Console
+type private Con = Langly.Console
 
 type Console private () =
     static let instance = Console()

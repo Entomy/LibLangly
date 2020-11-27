@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace Consolator.Internals {
+namespace Langly.Internals {
 	public interface IConsoleStateManager {
 		/// <summary>
 		/// Sets the background color to the <paramref name="value"/>.

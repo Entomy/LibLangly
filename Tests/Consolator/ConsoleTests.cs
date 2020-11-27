@@ -1,10 +1,9 @@
 ﻿using System;
-using Consolator;
-using Consolator.Internals;
+using Langly.Internals;
 using Xunit;
-using Console = Consolator.Console;
+using Console = Langly.Console;
 
-namespace Consolator {
+namespace Langly {
 	public class ConsoleTests {
 		TestConsole tester = new TestConsole();
 

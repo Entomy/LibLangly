@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace Consolator.Internals {
+namespace Langly.Internals {
 	/// <summary>
 	/// Provides testable <see cref="Console"/> behavior.
 	/// </summary>

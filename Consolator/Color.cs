@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Consolator {
+namespace Langly {
 	/// <summary>
 	/// Specifies the color for the console.
 	/// </summary>

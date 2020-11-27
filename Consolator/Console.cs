@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Consolator {
+namespace Langly {
 	/// <summary>
 	/// Represents the standard input, output, and error streams.
 	/// </summary>

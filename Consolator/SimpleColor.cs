@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Consolator {
+namespace Langly {
 	internal sealed class SimpleColor : Color, IEquatable<SimpleColor> {
 		/// <summary>
 		/// The console color code.

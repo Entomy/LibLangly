@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace Consolator.Internals {
+namespace Langly.Internals {
 	/// <summary>
 	/// Stubs out all state manager behavior.
 	/// </summary>

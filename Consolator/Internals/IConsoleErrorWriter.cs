@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Consolator.Internals {
+namespace Langly.Internals {
 	/// <summary>
 	/// Indicates the type provides error-write behavior for the <see cref="Console"/>.
 	/// </summary>

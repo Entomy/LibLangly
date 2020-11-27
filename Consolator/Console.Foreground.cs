@@ -1,4 +1,4 @@
-﻿namespace Consolator {
+﻿namespace Langly {
 	public static partial class Console {
 		/// <summary>
 		/// Represents the foreground of the <see cref="Console"/>.

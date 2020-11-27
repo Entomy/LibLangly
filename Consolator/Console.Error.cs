@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Consolator {
+namespace Langly {
 	public static partial class Console {
 		#region WriteError()
 		/// <summary>

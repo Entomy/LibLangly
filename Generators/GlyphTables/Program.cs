@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
-using Consolator;
-using Console = Consolator.Console;
+using Langly;
+using Console = Langly.Console;
 
 namespace Generators {
 	public static partial class GlyphTables {

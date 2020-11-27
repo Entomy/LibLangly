@@ -2,7 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using Langly;
 
-namespace Consolator {
+namespace Langly {
 	public static partial class Console {
 		#region Write()
 		/// <summary>

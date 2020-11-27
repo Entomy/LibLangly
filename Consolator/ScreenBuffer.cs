@@ -1,6 +1,6 @@
 ﻿using Langly;
 
-namespace Consolator {
+namespace Langly {
 	/// <summary>
 	/// Represents the alternate screen buffer of the <see cref="Console"/>.
 	/// </summary>

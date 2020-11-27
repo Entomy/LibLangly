@@ -1,7 +1,6 @@
-﻿using System;
-using System.Diagnostics.CodeAnalysis;
+﻿using System.Diagnostics.CodeAnalysis;
 
-namespace Consolator.Internals {
+namespace Langly.Internals {
 	/// <summary>
 	/// Provides the standard VT Escape Sequence state manager.
 	/// </summary>

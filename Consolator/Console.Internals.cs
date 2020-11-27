@@ -1,8 +1,8 @@
 ﻿using System;
 using System.ComponentModel;
-using Consolator.Internals;
+using Langly.Internals;
 
-namespace Consolator {
+namespace Langly {
 	public static partial class Console {
 		/// <summary>
 		/// The internal components of the <see cref="Console"/>.

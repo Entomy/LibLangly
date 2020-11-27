@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
-using System.IO;
 using static PInvoke.Kernel32;
 
-namespace Consolator.Internals {
+namespace Langly.Internals {
 	/// <summary>
 	/// Provides the standard <see cref="Console"/> behavior.
 	/// </summary>

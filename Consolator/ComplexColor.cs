@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Consolator {
+namespace Langly {
 	internal sealed class ComplexColor : Color, IEquatable<ComplexColor> {
 		internal readonly Byte Red;
 		internal readonly Byte Green;
