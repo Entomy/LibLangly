@@ -266,7 +266,8 @@
   </span>
   <a id="Langly_Codec_Readable_" data-uid="Langly.Codec.Readable*"></a>
   <h4 id="Langly_Codec_Readable" data-uid="Langly.Codec.Readable">Readable</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Can this be read from?</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -287,6 +288,9 @@
       </tr>
     </tbody>
   </table>
+  <h5 id="Langly_Codec_Readable_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This is a state indicator. Of course an <a class="xref" href="Langly.IReadable-2.html">IReadable&lt;TElement, TError&gt;</a> can be read from, but that doesn't mean it can always be read from. Rather, this being <span class="xref">true</span> indicates the type can currently be read from.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Codec_Writable.md&amp;value=---%0Auid%3A%20Langly.Codec.Writable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -296,7 +300,8 @@
   </span>
   <a id="Langly_Codec_Writable_" data-uid="Langly.Codec.Writable*"></a>
   <h4 id="Langly_Codec_Writable" data-uid="Langly.Codec.Writable">Writable</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Can this be written to?</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -317,6 +322,9 @@
       </tr>
     </tbody>
   </table>
+  <h5 id="Langly_Codec_Writable_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This is a state indicator. Of course an <a class="xref" href="Langly.IWritable-2.html">IWritable&lt;TElement, TError&gt;</a> can be written to, but that doesn't mean it can always be written to. Rather, this being <span class="xref">true</span> indicates the type can currently be written to.</p>
+</div>
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
@@ -328,7 +336,8 @@
   </span>
   <a id="Langly_Codec_Peek_" data-uid="Langly.Codec.Peek*"></a>
   <h4 id="Langly_Codec_Peek_System_Text_Rune__" data-uid="Langly.Codec.Peek(System.Text.Rune@)">Peek(out Rune)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns the element at the beginning of the collection without removing it.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -351,6 +360,9 @@
       </tr>
     </tbody>
   </table>
+  <h5 id="Langly_Codec_Peek_System_Text_Rune___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This assumes the peek will never fail, which is an assumption that generally doesn't hold up. It is strongly recommended to use <a class="xref" href="Langly.IPeekable-2.html#Langly_IPeekable_2_TryPeek__0__">TryPeek(out TElement)</a> or <a class="xref" href="Langly.IPeekable-2.html#Langly_IPeekable_2_TryPeek__0___1__">TryPeek(out TElement, out TError)</a> instead.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Codec_Read_System_Text_Rune__.md&amp;value=---%0Auid%3A%20Langly.Codec.Read(System.Text.Rune%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -360,7 +372,8 @@
   </span>
   <a id="Langly_Codec_Read_" data-uid="Langly.Codec.Read*"></a>
   <h4 id="Langly_Codec_Read_System_Text_Rune__" data-uid="Langly.Codec.Read(System.Text.Rune@)">Read(out Rune)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Reads a <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -383,6 +396,9 @@
       </tr>
     </tbody>
   </table>
+  <h5 id="Langly_Codec_Read_System_Text_Rune___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This assumes the read will never fail, which is an assumption that generally doesn't hold up. It is strongly recommended to use <a class="xref" href="Langly.IReadable-2.html#Langly_IReadable_2_TryRead__0__">TryRead(out TElement)</a> or <a class="xref" href="Langly.IReadable-2.html#Langly_IReadable_2_TryRead__0___1__">TryRead(out TElement, out TError)</a> instead.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Codec_TryPeek_System_Text_Rune__Langly_Streams_Errors__.md&amp;value=---%0Auid%3A%20Langly.Codec.TryPeek(System.Text.Rune%40%2CLangly.Streams.Errors%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -392,7 +408,8 @@
   </span>
   <a id="Langly_Codec_TryPeek_" data-uid="Langly.Codec.TryPeek*"></a>
   <h4 id="Langly_Codec_TryPeek_System_Text_Rune__Langly_Streams_Errors__" data-uid="Langly.Codec.TryPeek(System.Text.Rune@,Langly.Streams.Errors@)">TryPeek(out Rune, out Errors)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns the element at the beginning of the collection without removing it.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -431,10 +448,15 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
+        <td><p><span class="xref">true</span> if the peek was successful; otherwise, <span class="xref">false</span>.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Langly_Codec_TryPeek_System_Text_Rune__Langly_Streams_Errors___seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Langly.IPeekable-2.html#Langly_IPeekable_2_TryPeek__0__">TryPeek</a>(TElement)</div>
+  </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Codec_TryRead_System_Text_Rune__Langly_Streams_Errors__.md&amp;value=---%0Auid%3A%20Langly.Codec.TryRead(System.Text.Rune%40%2CLangly.Streams.Errors%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -444,7 +466,8 @@
   </span>
   <a id="Langly_Codec_TryRead_" data-uid="Langly.Codec.TryRead*"></a>
   <h4 id="Langly_Codec_TryRead_System_Text_Rune__Langly_Streams_Errors__" data-uid="Langly.Codec.TryRead(System.Text.Rune@,Langly.Streams.Errors@)">TryRead(out Rune, out Errors)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Attempts to read a <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -483,10 +506,15 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
+        <td><p><span class="xref">true</span> if the read was successful; otherwise, <span class="xref">false</span>.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Langly_Codec_TryRead_System_Text_Rune__Langly_Streams_Errors___seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Langly.IReadable-2.html#Langly_IReadable_2_TryRead__0__">TryRead</a>(TElement)</div>
+  </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Codec_TryWrite_System_Text_Rune_Langly_Streams_Errors__.md&amp;value=---%0Auid%3A%20Langly.Codec.TryWrite(System.Text.Rune%2CLangly.Streams.Errors%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -496,7 +524,8 @@
   </span>
   <a id="Langly_Codec_TryWrite_" data-uid="Langly.Codec.TryWrite*"></a>
   <h4 id="Langly_Codec_TryWrite_System_Text_Rune_Langly_Streams_Errors__" data-uid="Langly.Codec.TryWrite(System.Text.Rune,Langly.Streams.Errors@)">TryWrite(Rune, out Errors)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Attempts to write a <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -535,10 +564,15 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
+        <td><p><span class="xref">true</span> if the write was successful; otherwise, <span class="xref">false</span>.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Langly_Codec_TryWrite_System_Text_Rune_Langly_Streams_Errors___seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Langly.IWritable-2.html#Langly_IWritable_2_TryWrite__0_">TryWrite</a>(TElement)</div>
+  </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Codec_Write_System_Text_Rune_.md&amp;value=---%0Auid%3A%20Langly.Codec.Write(System.Text.Rune)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -548,7 +582,8 @@
   </span>
   <a id="Langly_Codec_Write_" data-uid="Langly.Codec.Write*"></a>
   <h4 id="Langly_Codec_Write_System_Text_Rune_" data-uid="Langly.Codec.Write(System.Text.Rune)">Write(Rune)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Writes a <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -571,6 +606,9 @@
       </tr>
     </tbody>
   </table>
+  <h5 id="Langly_Codec_Write_System_Text_Rune__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This assumes the write will never fail, which is an assumption that generally doesn't hold up. It is strongly recommended to use <a class="xref" href="Langly.IWritable-2.html#Langly_IWritable_2_TryWrite__0_">TryWrite(TElement)</a> or <a class="xref" href="Langly.IWritable-2.html#Langly_IWritable_2_TryWrite__0__1__">TryWrite(TElement, out TError)</a> instead.</p>
+</div>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="Langly.IPeekable-2.html">IPeekable&lt;TElement, TError&gt;</a>

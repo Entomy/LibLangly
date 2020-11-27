@@ -1,5 +1,4 @@
-﻿namespace Streamy.FSharp
+﻿namespace Langly
 
-module Say =
-    let hello name =
-        printfn "Hello %s" name
+module Logician =
+    ()

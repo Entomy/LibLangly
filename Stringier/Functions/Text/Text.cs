@@ -1,4 +1,4 @@
-﻿namespace Stringier {
+﻿namespace Langly {
 	public static partial class Text {
 	}
 }
