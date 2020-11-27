@@ -2,8 +2,8 @@
 using System.Globalization;
 using System.Text;
 using System.Unicode;
-using Collectathon.Sets;
 using Langly;
+using Langly.DataStructures.Sets;
 
 namespace Stringier.Categories {
 	/// <summary>

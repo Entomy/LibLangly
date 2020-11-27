@@ -1,9 +1,8 @@
 ﻿using System;
 using Xunit;
 using Xunit.Sdk;
-using Langly;
 
-namespace Collectathon.Arrays {
+namespace Langly.DataStructures.Arrays {
 	public class BoundedArray2_Tests {
 		[Theory]
 		[InlineData(new[] { 'a', 'b', 'c', 'd', 'e' }, new[] { "Alfa", "Bravo", "Charlie", "Delta", "Echo" })]

@@ -80,7 +80,7 @@ namespace Langly.Streams.Bases {
 #endif
 				break;
 			default:
-				throw new ArgumentException($"FileMode '{mode} wasn't handled.", nameof(mode));
+				throw new System.ArgumentException($"FileMode '{mode} wasn't handled.", nameof(mode));
 			}
 #if WINDOWS
 			if (GetFileSize(Handle, out Int64 size)) {

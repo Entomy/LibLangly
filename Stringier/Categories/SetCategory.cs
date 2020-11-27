@@ -1,6 +1,6 @@
 ﻿using System;
-using Collectathon.Sets;
 using Langly;
+using Langly.DataStructures.Sets;
 
 namespace Stringier.Categories {
 	/// <summary>

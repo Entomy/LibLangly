@@ -1,10 +1,8 @@
 ﻿using System;
-using System.IO;
 using Xunit;
 using Xunit.Sdk;
-using Langly;
 
-namespace Collectathon.Lists {
+namespace Langly.DataStructures.Lists {
 	public class SinglyLinkedList1_Tests {
 		[Theory]
 		[InlineData(new[] { 1, 2, 3, 4, 5 })]

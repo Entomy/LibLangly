@@ -1,7 +1,7 @@
 namespace Langly
 
-open Collectathon.Arrays
 open System
+open Langly.DataStructures.Arrays
 open Xunit
 
 module Philosoft =

@@ -1,8 +1,7 @@
 ﻿using System;
-using Langly;
 using Xunit;
 
-namespace Collectathon.Arrays {
+namespace Langly.DataStructures.Arrays {
 	public class FixedArray1_Tests {
 		[Theory]
 		[InlineData(new[] { 1, 2, 3, 4, 5 })]

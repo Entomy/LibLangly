@@ -1,7 +1,7 @@
-﻿namespace Collectathon.Arrays
+﻿namespace Langly.DataStructures.Arrays
 
 [<AutoOpen>]
-module Library =
+module Collectathon =
     /// <summary>
     /// Casts the array to a <see cref="FixedArray{T}"/>.
     /// </summary>

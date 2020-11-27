@@ -1,8 +1,8 @@
-﻿using Collectathon.Sets;
-using System;
+﻿using System;
 using System.Text;
 using System.Unicode;
 using Langly;
+using Langly.DataStructures.Sets;
 
 namespace Stringier.Categories {
 	/// <summary>

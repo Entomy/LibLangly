@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Collectathon {
+namespace Langly.DataStructures {
 	public static class Extensions {
 		/// <summary>
 		/// Zips the two arrays together, forming a single array.
@@ -18,9 +18,9 @@ namespace Collectathon {
 			if (left is null && right is null) {
 				return null;
 			} else if (left is null || right is null) {
-				throw new ArgumentNullException(left is null ? nameof(left) : nameof(right), "One of the parameters was null");
+				throw new System.ArgumentNullException(left is null ? nameof(left) : nameof(right), "One of the parameters was null");
 			} else if (left.Length != right.Length) {
-				throw new ArgumentException("The arrays are not the same length");
+				throw new System.ArgumentException("The arrays are not the same length");
 			} else {
 				(TLeft, TRight)[] result = new (TLeft, TRight)[left.Length];
 				for (Int32 i = 0; i < result.Length; i++) {
