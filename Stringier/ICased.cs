@@ -1,4 +1,4 @@
-﻿using Stringier.Linguistics;
+﻿using Langly.Linguistics;
 
 namespace Langly {
 	/// <summary>

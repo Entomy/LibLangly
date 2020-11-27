@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace Stringier {
+namespace Langly {
 	public static partial class Text {
 		/// <summary>
 		/// Returns an enumeration of <see cref="Rune"/> from this string.

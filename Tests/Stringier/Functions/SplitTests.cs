@@ -1,8 +1,7 @@
 ﻿using System;
-using Stringier;
 using Xunit;
 
-namespace Stringier.Functions {
+namespace Langly {
 	public class SplitTests {
 		[Theory]
 		[InlineData("comma,separated,values", ',', new[] { "comma", "separated", "values" })]

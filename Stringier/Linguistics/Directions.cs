@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Stringier.Linguistics {
+namespace Langly.Linguistics {
 	/// <summary>
 	/// The directions a <see cref="Script"/> is written.
 	/// </summary>

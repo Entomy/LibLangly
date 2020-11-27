@@ -1,9 +1,8 @@
-﻿using Stringier.Encodings;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Stringier {
+namespace Langly {
 	public partial struct Glyph {
 		internal sealed class Trie : IEnumerable<Trie> {
 			private readonly UInt32 Code;
@@ -30,7 +29,7 @@ namespace Stringier {
 			IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 
 			/// <inheritdoc/>
-			public IEnumerator<Trie> GetEnumerator() => Continuations.Values.GetEnumerator();
+			public System.Collections.Generic.IEnumerator<Trie> GetEnumerator() => Continuations.Values.GetEnumerator();
 
 			public UInt32 Parse(ReadOnlyMemory<Char> sequence, ref Int32 pos) => Parse(sequence.Span, ref pos);
 

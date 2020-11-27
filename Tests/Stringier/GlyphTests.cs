@@ -1,9 +1,9 @@
 ﻿using System;
 using Xunit;
-using static Stringier.Linguistics.Language;
-using static Stringier.Linguistics.Script;
+using static Langly.Linguistics.Language;
+using static Langly.Linguistics.Script;
 
-namespace Stringier {
+namespace Langly {
 	public class GlyphTests {
 		[Theory]
 		[InlineData("\u00E0", "\u00E0", 0)]

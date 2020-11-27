@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Stringier.Encodings {
+namespace Langly {
 	/// <summary>
 	/// Helper functions for working with UTF-32 data.
 	/// </summary>

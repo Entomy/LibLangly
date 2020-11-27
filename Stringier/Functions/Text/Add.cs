@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
-using System.Text;
-using Langly;
+using Rune = System.Text.Rune;
 
-namespace Stringier {
+namespace Langly {
 	public static partial class Text {
 		/// <summary>
 		/// Adds an element into the collection.

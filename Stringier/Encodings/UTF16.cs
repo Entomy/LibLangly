@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Text;
-using Langly;
 
-namespace Stringier.Encodings {
+namespace Langly {
 	/// <summary>
 	/// Helper functions for working with UTF-16 data.
 	/// </summary>

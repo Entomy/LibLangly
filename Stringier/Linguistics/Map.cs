@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace Stringier.Linguistics {
+namespace Langly.Linguistics {
 	[StructLayout(LayoutKind.Auto)]
 	internal readonly struct Map : IEquatable<Map>, IEquatable<Char>, IEquatable<Rune>, IEquatable<Glyph> {
 		public readonly Glyph Lower;

@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
-using Langly;
 
-namespace Stringier {
+namespace Langly {
 	public static partial class Text {
 		#region FuzzyEquals(Text, String)
 		/// <summary>

@@ -1,5 +1,5 @@
-﻿namespace Stringier.FSharp
+﻿namespace Langly
 
-module Say =
+module Stringier =
     let hello name =
         printfn "Hello %s" name

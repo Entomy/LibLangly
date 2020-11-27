@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Text;
-using Langly;
 
-namespace Stringier.Categories {
+namespace Langly {
 	/// <summary>
 	/// Represents the union of two <see cref="Category"/>.
 	/// </summary>

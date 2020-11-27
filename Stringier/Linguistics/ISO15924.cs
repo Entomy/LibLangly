@@ -1,4 +1,4 @@
-﻿namespace Stringier.Linguistics {
+﻿namespace Langly.Linguistics {
 	/// <summary>
 	/// ISO-15924 script representation code.
 	/// </summary>

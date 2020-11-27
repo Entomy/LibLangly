@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace Stringier.Linguistics {
+namespace Langly.Linguistics {
 	internal class SimplePart : Orthography.Part {
 		protected internal readonly UInt32 First;
 

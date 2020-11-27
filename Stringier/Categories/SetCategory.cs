@@ -1,8 +1,7 @@
 ﻿using System;
-using Langly;
 using Langly.DataStructures.Sets;
 
-namespace Stringier.Categories {
+namespace Langly {
 	/// <summary>
 	/// A helper class for creation of categories which are based on algorithmic existance.
 	/// </summary>

@@ -1,4 +1,4 @@
-﻿namespace Stringier {
+﻿namespace Langly {
 	/// <summary>
 	/// Provides batch operations.
 	/// </summary>

@@ -1,8 +1,7 @@
 ﻿using System;
-using Stringier;
 using Xunit;
 
-namespace Stringier.Functions {
+namespace Langly {
 	public static class GetRuneAtTests {
 		[Theory]
 		[InlineData("a", 0, (int)'a')]

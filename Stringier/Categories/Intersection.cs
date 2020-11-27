@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Text;
-using Langly;
 
-namespace Stringier.Categories {
+namespace Langly {
 	/// <summary>
 	/// Represents the intersection between two <see cref="Category"/>.
 	/// </summary>

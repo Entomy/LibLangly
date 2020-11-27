@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
-namespace Stringier.Linguistics {
+namespace Langly.Linguistics {
 	/// <summary>
 	/// Provides a counter for glyphs of an orthography.
 	/// </summary>

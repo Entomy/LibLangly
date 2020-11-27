@@ -1,8 +1,8 @@
 ﻿using System;
-using Collectathon.Tables;
 using Xunit;
+using Langly.DataStructures.Tables;
 
-namespace Stringier.Functions {
+namespace Langly {
 	public class SearchTests {
 		[Theory]
 		[InlineData("helloworld", "low", 3)]

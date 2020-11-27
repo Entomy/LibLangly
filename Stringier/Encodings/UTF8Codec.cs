@@ -3,7 +3,7 @@ using System.Text;
 using Langly.Streams;
 using Langly.Streams.Buffers;
 
-namespace Stringier.Encodings {
+namespace Langly {
 	internal sealed class UTF8Codec : Codec {
 		/// <summary>
 		/// Initialize a new <see cref="Codec"/>.

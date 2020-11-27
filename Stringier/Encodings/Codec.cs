@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Text;
-using Langly;
 using Langly.Streams;
 using Langly.Streams.Buffers;
 
-namespace Stringier.Encodings {
+namespace Langly {
 	/// <summary>
 	/// Represents an encoding/decoding helper for <see cref="TextStream"/>.
 	/// </summary>

@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Stringier {
+namespace Langly {
 	internal sealed class Table : IEnumerable<Record> {
 		private Record[] records = new Record[32];
 
@@ -30,7 +30,7 @@ namespace Stringier {
 		}
 
 		/// <inheritdoc/>
-		IEnumerator<Record> IEnumerable<Record>.GetEnumerator() => (IEnumerator<Record>)records.GetEnumerator();
+		System.Collections.Generic.IEnumerator<Record> System.Collections.Generic.IEnumerable<Record>.GetEnumerator() => (IEnumerator<Record>)records.GetEnumerator();
 
 		/// <inheritdoc/>
 		IEnumerator IEnumerable.GetEnumerator() => records.GetEnumerator();

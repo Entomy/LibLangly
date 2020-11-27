@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using Collectathon.Tables;
 using Langly;
-using Stringier.Categories;
+using Langly.DataStructures.Tables;
 
-namespace Stringier {
+namespace Langly {
 	public static partial class Text {
 		#region Split(Text)
 		/// <summary>

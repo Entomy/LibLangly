@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Stringier {
+namespace Langly {
 	public static partial class Text {
 		/// <summary>
 		/// Returns an enumeration of <see cref="Glyph"/> from this string.

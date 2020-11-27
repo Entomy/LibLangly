@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
-using Stringier.Categories;
-using Langly;
 
-namespace Stringier {
+namespace Langly {
 	public static partial class Text {
 		#region Occurrences(Text, Char)
 		/// <summary>

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace Stringier.Linguistics {
+namespace Langly.Linguistics {
 	/// <summary>
 	/// Represents an <see cref="Orthography"/> with casing.
 	/// </summary>

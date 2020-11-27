@@ -1,7 +1,6 @@
 ﻿using System;
-using Langly;
 
-namespace Stringier {
+namespace Langly {
 	public static partial class EditDistance {
 		#region Levenshtein(Text, String, Level)
 		/// <summary>

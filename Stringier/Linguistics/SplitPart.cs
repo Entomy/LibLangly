@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace Stringier.Linguistics {
+namespace Langly.Linguistics {
 	internal class SplitPart : SimplePart {
 		private readonly UInt32 Second;
 

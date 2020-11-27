@@ -2,10 +2,9 @@
 using System.Globalization;
 using System.Text;
 using System.Unicode;
-using Langly;
 using Langly.DataStructures.Sets;
 
-namespace Stringier.Categories {
+namespace Langly {
 	/// <summary>
 	/// The category of a UNICODE Character.
 	/// </summary>

@@ -1,7 +1,8 @@
 ﻿//!! This file was generated, do not edit it by hand!
 using System;
 using System.Collections.Generic;
-namespace Stringier {
+
+namespace Langly {
 	public partial struct Glyph {
 		internal static readonly Table Info = new Table() {
 			{ "\u0000", 0x0000, 0x0000, 0x0000, 1, 1 }, // 0000

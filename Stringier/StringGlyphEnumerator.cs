@@ -2,7 +2,7 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace Stringier {
+namespace Langly {
 	[StructLayout(LayoutKind.Auto)]
 	public struct StringGlyphEnumerator : IEnumerator<Glyph> {
 		private readonly ReadOnlyMemory<Char> @string;

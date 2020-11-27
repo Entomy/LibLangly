@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace Stringier.Linguistics {
+namespace Langly.Linguistics {
 	internal sealed class ComplexPart : Orthography.Part {
 		private readonly Func<UInt32, Boolean> Func;
 

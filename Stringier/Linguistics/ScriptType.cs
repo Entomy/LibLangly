@@ -1,4 +1,4 @@
-﻿namespace Stringier.Linguistics {
+﻿namespace Langly.Linguistics {
 	/// <summary>
 	/// The type of the script, the system of the writing.
 	/// </summary>

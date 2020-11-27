@@ -1,7 +1,6 @@
 ﻿using System;
-using Langly;
 
-namespace Stringier {
+namespace Langly {
 	public static partial class Search {
 		#region BruteForce(Text, String)
 		/// <summary>

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Stringier.Linguistics {
+namespace Langly.Linguistics {
 	/// <summary>
 	/// Represents a script, a system of writing used as part of an <see cref="UncasedOrthography"/>.
 	/// </summary>

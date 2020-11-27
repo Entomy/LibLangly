@@ -1,8 +1,7 @@
 ﻿using System;
-using Stringier;
 using Xunit;
 
-namespace Stringier.Functions {
+namespace Langly {
 	public class OccurrencesTests {
 		[Theory]
 		[InlineData("hello", 'o', 1)]

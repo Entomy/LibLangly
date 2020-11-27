@@ -1,7 +1,7 @@
 ﻿using System;
 using Xunit;
 
-namespace Stringier.Functions {
+namespace Langly {
 	public class EditDistanceTests {
 		[Theory]
 		[InlineData("ram", "ram", 0, Level.Char)]

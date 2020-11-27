@@ -20,7 +20,8 @@ namespace Generators {
 			file.WriteLine(@"//!! This file was generated, do not edit it by hand!
 using System;
 using System.Collections.Generic;
-namespace Stringier {
+
+namespace Langly {
 	public partial struct Glyph {
 		internal static readonly Trie Equivalencies = new Trie() {
 			// A few entries have to manually be put in front, to get around elaboration order issues. This is simpler than tweaking the code to handle out-of-order additions.

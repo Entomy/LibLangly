@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Text;
 using System.Unicode;
 
-namespace Stringier.Categories {
+namespace Langly {
 	/// <summary>
 	/// A helper class for creation of categories based on <see cref="System.Globalization.UnicodeCategory"/>.
 	/// </summary>

@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace Stringier {
+namespace Langly {
 	/// <summary>
 	/// Letter case comparison mode.
 	/// </summary>

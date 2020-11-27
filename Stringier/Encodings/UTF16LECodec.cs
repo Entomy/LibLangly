@@ -2,7 +2,7 @@
 using Langly.Streams;
 using Langly.Streams.Buffers;
 
-namespace Stringier.Encodings {
+namespace Langly {
 	internal sealed class UTF16LECodec : UTF16Codec {
 		internal UTF16LECodec(IReadBuffer readBuffer, IWriteBuffer writeBuffer) : base(readBuffer, writeBuffer) { }
 

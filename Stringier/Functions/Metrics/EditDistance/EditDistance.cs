@@ -1,4 +1,4 @@
-﻿namespace Stringier {
+﻿namespace Langly {
 	/// <summary>
 	/// Provides functions for calculating edit-distance.
 	/// </summary>

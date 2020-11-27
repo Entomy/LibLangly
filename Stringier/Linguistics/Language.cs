@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Stringier.Linguistics {
+namespace Langly.Linguistics {
 	/// <summary>
 	/// Represents a spoken or written language.
 	/// </summary>

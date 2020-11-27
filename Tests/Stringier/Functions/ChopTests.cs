@@ -1,7 +1,7 @@
 ﻿using System;
 using Xunit;
 
-namespace Stringier.Functions {
+namespace Langly {
 	public class ChopTests {
 		[Theory]
 		[InlineData("hello world", 1, new[] { "h", "e", "l", "l", "o", " ", "w", "o", "r", "l", "d" })]

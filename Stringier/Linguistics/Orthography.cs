@@ -1,10 +1,8 @@
-﻿using Stringier.Categories;
-using System;
+﻿using System;
 using System.Text;
-using Langly;
 using Langly.DataStructures.Sets;
 
-namespace Stringier.Linguistics {
+namespace Langly.Linguistics {
 	/// <summary>
 	/// Represents an orthography, the overall collection of rules and systems that make up writing.
 	/// </summary>

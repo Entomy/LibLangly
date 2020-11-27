@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Stringier {
+namespace Langly {
 	public static partial class Text {
 		/// <summary>
 		/// Chop the <paramref name="text"/> into chunks of <paramref name="size"/>.

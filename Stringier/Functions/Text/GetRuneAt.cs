@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Text;
-using Langly;
 
-namespace Stringier {
+namespace Langly {
 	public static partial class Text {
 		/// <summary>
 		/// Gets the <see cref="Rune"/> which begins at index <paramref name="index"/> in string <paramref name="input"/>.

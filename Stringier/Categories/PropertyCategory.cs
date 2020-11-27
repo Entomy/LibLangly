@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Text;
 using System.Unicode;
-using Langly;
-using Langly.DataStructures.Sets;
 
-namespace Stringier.Categories {
+namespace Langly {
 	/// <summary>
 	/// A helper class for creation of categories based on <see cref="ContributoryProperties"/>.
 	/// </summary>

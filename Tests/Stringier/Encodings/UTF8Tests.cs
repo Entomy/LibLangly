@@ -4,7 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Text;
 using Xunit;
 
-namespace Stringier.Encodings {
+namespace Langly {
 	public class UTF8Tests {
 		[Theory]
 		[InlineData(0x0, 0x0)]

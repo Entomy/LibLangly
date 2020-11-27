@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Text;
-using Langly;
 
-namespace Stringier {
+namespace Langly {
 	public static partial class EditDistance {
 		#region Hamming(Text, String, Level)
 		/// <summary>

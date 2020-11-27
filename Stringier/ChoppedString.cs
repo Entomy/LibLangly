@@ -2,9 +2,8 @@
 using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
-using Langly;
 
-namespace Stringier {
+namespace Langly {
 	/// <summary>
 	/// Represents text that's been chopped into chunks.
 	/// </summary>

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Stringier {
+namespace Langly {
 	public partial struct ChoppedString {
 		/// <inheritdoc/>
 		public Enumerator GetEnumerator() => new Enumerator(this, Count);

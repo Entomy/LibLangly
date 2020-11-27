@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Collectathon.Tables {
+namespace Langly.DataStructures.Tables {
 	/// <summary>
 	/// Provides the bad-character table used in the Boyer-Moore-Horspool string-search algorithm.
 	/// </summary>

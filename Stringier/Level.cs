@@ -1,4 +1,4 @@
-﻿namespace Stringier {
+﻿namespace Langly {
 	/// <summary>
 	/// The level to use for operations supporting multiple levels.
 	/// </summary>

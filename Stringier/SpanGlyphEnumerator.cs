@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace Stringier {
+namespace Langly {
 	[StructLayout(LayoutKind.Auto)]
 	public ref struct SpanGlyphEnumerator {
 		private readonly ReadOnlySpan<Char> buffer;

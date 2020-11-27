@@ -2,7 +2,7 @@
 using System.Text;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Stringier {
+namespace Langly {
 	public static partial class Batch {
 		/// <summary>
 		/// Converts each of the elements of the array to a <see cref="Glyph"/>.

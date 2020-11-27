@@ -1,8 +1,7 @@
 ﻿using System;
-using Collectathon.Tables;
-using Langly;
+using Langly.DataStructures.Tables;
 
-namespace Stringier {
+namespace Langly {
 	public static partial class Search {
 		#region Horspool(Text, Table)
 		/// <summary>

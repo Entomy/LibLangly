@@ -3,7 +3,7 @@ using System.Text;
 using Langly.Streams;
 using Langly.Streams.Buffers;
 
-namespace Stringier.Encodings {
+namespace Langly {
 	internal sealed class UTF32BECodec : UTF32Codec {
 		internal UTF32BECodec(IReadBuffer readBuffer, IWriteBuffer writeBuffer) : base(readBuffer, writeBuffer) { }
 

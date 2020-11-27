@@ -21,7 +21,8 @@ namespace Generators {
 			file.WriteLine(@"//!! This file was generated, do not edit it by hand!
 using System;
 using System.Collections.Generic;
-namespace Stringier {
+
+namespace Langly {
 	public partial struct Glyph {
 		internal static readonly Table Info = new Table() {");
 			// Grapheme part

@@ -1,4 +1,4 @@
-﻿namespace Stringier.Encodings {
+﻿namespace Langly {
 	/// <summary>
 	/// Represents the encoding of text.
 	/// </summary>

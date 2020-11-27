@@ -1,8 +1,8 @@
-﻿using Stringier.Linguistics;
-using System;
+﻿using System;
 using System.Text;
+using Langly.Linguistics;
 
-namespace Stringier {
+namespace Langly {
 	public static partial class Text {
 		#region ToTitle(Element)
 		/// <summary>

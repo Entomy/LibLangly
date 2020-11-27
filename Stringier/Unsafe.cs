@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
 
-namespace Stringier {
+namespace Langly {
 	/// <summary>
 	/// Unsafe variants of algorithms.
 	/// </summary>

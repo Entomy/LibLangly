@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Stringier {
+namespace Langly {
 	internal readonly struct Record {
 		public readonly UInt32 Lowercase;
 

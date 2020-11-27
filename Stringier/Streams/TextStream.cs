@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
-using Stringier.Encodings;
-using Langly;
-using Langly.Streams;
 using Langly.Streams.Bases;
 using Langly.Streams.Buffers;
 using Rune = System.Text.Rune;
 
-namespace Streamy {
+namespace Langly.Streams {
 	/// <summary>
 	/// Provides a view of a sequence of UNICODE Characters.
 	/// </summary>
@@ -17,7 +14,7 @@ namespace Streamy {
 	/// <para>This <see cref="TextStream"/> type provides orchestration logic around the other components, tying everything together. Through those, it provides the higher level, text-centric, API.</para>
 	/// <para>The actual datastream is provided by <see cref="StreamBase"/>, which implements the basic streaming API for the daatastream. Supporting additional stream types can be done by extended <see cref="StreamBase"/>, which greatly simplifies adding new datastreams.</para>
 	/// <para>Buffers are provided by <see cref="IReadBuffer"/> and <see cref="IWriteBuffer"/>, which buffer the basic streaming from <see cref="StreamBase"/>, enabling features like <see cref="IPeekable{TElement, TError}.Peek(out TElement)"/> and limited <see cref="ISeekable{TElement, TError}"/> behavior even when the underlying stream is not capable.</para>
-	/// <para>Encoding is handled by <see cref="Stringier.Encodings.Codec"/> helpers. These handle the translation between encodings through a consistent API.</para>
+	/// <para>Encoding is handled by <see cref="Langly.Codec"/> helpers. These handle the translation between encodings through a consistent API.</para>
 	/// <para>Additional orchestration can be added by deriving from this type. However, most applications will not need to do this. Instead, the intended mechanism for supporting additional types is through extension methods.</para>
 	/// </remarks>
 	public class TextStream : Stream, IPeekable<Rune, Errors>, ISeekable<Rune, Errors>, IWritable<Rune, Errors> {

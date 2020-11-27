@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Langly;
 
-namespace Stringier.Encodings {
+namespace Langly {
 	/// <summary>
 	/// Helper functions for working with UTF-8 data.
 	/// </summary>

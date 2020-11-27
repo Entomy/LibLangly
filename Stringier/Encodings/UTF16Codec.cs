@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Text;
-using Langly;
 using Langly.Streams;
 using Langly.Streams.Buffers;
 
-namespace Stringier.Encodings {
+namespace Langly {
 	internal abstract class UTF16Codec : Codec, IPeekable<Char, Errors>, IWritable<Char, Errors> {
 		protected UTF16Codec(IReadBuffer readBuffer, IWriteBuffer writeBuffer) : base(readBuffer, writeBuffer) { }
 

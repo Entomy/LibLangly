@@ -1,11 +1,9 @@
-﻿using Langly;
-using Stringier.Linguistics;
-using System;
+﻿using System;
 using System.Text;
 using System.Diagnostics.CodeAnalysis;
-using Stringier.Encodings;
+using Langly.Linguistics;
 
-namespace Stringier {
+namespace Langly {
 	/// <summary>
 	/// Represents a UNICODE grapheme cluster.
 	/// </summary>

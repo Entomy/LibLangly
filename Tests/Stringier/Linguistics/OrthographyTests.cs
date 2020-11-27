@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Text;
 using Xunit;
-using Langly;
-using static Stringier.Linguistics.Language;
-using static Stringier.Linguistics.Script;
+using static Langly.Linguistics.Language;
+using static Langly.Linguistics.Script;
 
-namespace Stringier.Linguistics {
+namespace Langly.Linguistics {
 	public class OrthographyTests {
 		[Theory]
 		[InlineData('a', 'A', 'a')]
