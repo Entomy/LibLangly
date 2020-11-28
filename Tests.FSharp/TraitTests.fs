@@ -4,7 +4,7 @@ open System
 open Langly.DataStructures.Arrays
 open Xunit
 
-module Philosoft =
+module TraitTests =
     [<Fact>]
     let ``Add`` () =
         let array = DynamicArray<Int32>(8n)

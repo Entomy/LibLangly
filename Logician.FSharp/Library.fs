@@ -4,7 +4,7 @@ open Bindings
 open System
 
 [<AutoOpen>]
-module Library =
+module Functions =
     /// <summary>
     /// Logical negation; not.
     /// </summary>

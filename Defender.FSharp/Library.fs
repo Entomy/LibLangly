@@ -1,5 +1,5 @@
 ﻿namespace Defender
 
 [<AutoOpen>]
-module Library =
+module Functions =
     ()

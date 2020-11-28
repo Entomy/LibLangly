@@ -1,9 +1,8 @@
-﻿namespace Langly
+﻿namespace Langly.DataStructures.Arrays
 
-open Langly.DataStructures.Arrays
 open Xunit
 
-module Collectathon =
+module ArrayTests =
     [<Fact>]
     let ``FixedArray`` () =
         let array = fix[|1;2;3;4;5|]

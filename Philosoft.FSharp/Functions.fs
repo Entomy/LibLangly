@@ -4,7 +4,7 @@ open Bindings
 open System
 
 [<AutoOpen>]
-module Philosoft =
+module Functions =
     /// <summary>
     /// Adds the elements into the collection.
     /// </summary>

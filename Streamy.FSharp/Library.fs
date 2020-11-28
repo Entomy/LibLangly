@@ -1,4 +1,5 @@
 ﻿namespace Langly
 
-module Logician =
+[<AutoOpen>]
+module Functions =
     ()

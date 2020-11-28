@@ -1,5 +1,5 @@
 ﻿namespace Langly
 
 [<AutoOpen>]
-module Console =
+module Functions =
     ()
