@@ -1,4 +1,4 @@
-﻿namespace Defender
+﻿namespace Langly
 
 [<AutoOpen>]
 module Functions =

@@ -3,6 +3,8 @@
 open Bindings
 open System
 
+#nowarn "0086" // These operators have been carefully defined to still work with Boolean, and tests are done to ensure this is the case.
+
 [<AutoOpen>]
 module Functions =
     /// <summary>

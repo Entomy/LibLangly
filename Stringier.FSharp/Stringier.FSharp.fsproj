@@ -4,10 +4,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Library.fs" />
+    <Compile Include="Langly.fs" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Collectathon.FSharp\Collectathon.FSharp.fsproj" />
+    <ProjectReference Include="..\Defender.FSharp\Defender.FSharp.fsproj" />
+    <ProjectReference Include="..\Philosoft.FSharp\Philosoft.FSharp.fsproj" />
+    <ProjectReference Include="..\Streamy.FSharp\Streamy.FSharp.fsproj" />
     <ProjectReference Include="..\Stringier\Stringier.csproj" />
   </ItemGroup>
 
