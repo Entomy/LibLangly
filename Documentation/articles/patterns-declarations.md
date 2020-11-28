@@ -1,6 +1,6 @@
-# Stringier.Patterns Declarations
+# Patterns Declarations
 
-**Stringier.Patterns** primarily works through a declarative programming approach, as such, it's very important to understand the different ways to declare patterns and how they work.
+**LibLangly's** ***Patterns*** primarily works through a declarative programming approach, as such, it's very important to understand the different ways to declare patterns and how they work.
 
 ## Literal Declaration
 

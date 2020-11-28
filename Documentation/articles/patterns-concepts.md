@@ -1,6 +1,6 @@
-# Stringier.Patterns Concepts
+# Patterns Concepts
 
-**Stringier's** ***Patterns*** is a parsing engine with a radically different approach from what you're probably familiar with. It was primarily designed with reusability of patterns in mind, and general usability second. That being said, it happens to be extremely fast and lightweight, without being theory heavy.
+**LibLangly's** ***Patterns*** is a parsing engine with a radically different approach from what you're probably familiar with. It was primarily designed with reusability of patterns in mind, and general usability second. That being said, it happens to be extremely fast and lightweight, without being theory heavy.
 
 It's also a CLS Compliant, cross language library, and will work on at least [C#](https://en.wikipedia.org/wiki/C_Sharp_%28programming_language%29), [VisualBasic](https://en.wikipedia.org/wiki/Visual_Basic_.NET), and [F#](https://en.wikipedia.org/wiki/F_Sharp_(programming_language)).
 
@@ -30,7 +30,7 @@ Dim ImplicitExample As Pattern = "Hello"
 Dim ExplicitExample As Pattern = "Hello".AsPattern()
 ~~~~
 
-# [F#](#tab/vb)
+# [F#](#tab/fs)
 
 ~~~~fsharp
 let example = p"Hello";

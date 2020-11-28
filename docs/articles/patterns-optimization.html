@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Consolator Colorization </title>
+    <title>Patterns Optimization </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Consolator Colorization ">
+    <meta name="title" content="Patterns Optimization ">
     <meta name="generator" content="docfx 2.56.5.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -67,42 +67,29 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="consolator-colorization">Consolator Colorization</h1>
+<h1 id="patterns-optimization">Patterns Optimization</h1>
 
-<p>Look, it's not the 1970's anymore. Color terminals have been around for a long time and colorizing your console app should be easy. This is especially critical as console apps have made quite the resurgence in recent years. <strong>Consolator</strong> makes this easy.</p>
-<div class="tabGroup" id="tabgroup_CeZOj-G++Q">
-<ul role="tablist">
-<li role="presentation">
-<a href="#tabpanel_CeZOj-G++Q_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
-</li>
-<li role="presentation">
-<a href="#tabpanel_CeZOj-G++Q_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q_vb" data-tab="vb" tabindex="-1">VB</a>
-</li>
-<li role="presentation">
-<a href="#tabpanel_CeZOj-G++Q_fs" role="tab" aria-controls="tabpanel_CeZOj-G++Q_fs" data-tab="fs" tabindex="-1">F#</a>
-</li>
-</ul>
-<section id="tabpanel_CeZOj-G++Q_cs" role="tabpanel" data-tab="cs">
-
-<pre><code class="lang-csharp">Console.WriteLine(&quot;Hello from Consolator!&quot;, Color.Blue, Color.RGB(255, 255, 255));
+<p>There's no need to take optimization of patterns into consideration. The approach taken avoids the need to meticulous optimization required for <a href="https://en.wikipedia.org/wiki/Parser_combinator">Parser Combinators</a> (see: <a href="http://www.quanttec.com/fparsec/users-guide/performance-optimizations.html">fparsec</a>, others tend to sneak these hints in throughout the documentation).</p>
+<h2 id="self-optimization">Self Optimization</h2>
+<p><strong>LibLangly's</strong> <em><strong>Patterns</strong></em> holds a unique and rare feature: it is self optimizing. This means that you do not need to be intimately aware of what the fastest way to do something is; generally speaking the pattern will become, at construction time (that is, when what you declared is initialized), the most optimal equivalent declaration. This is not an exhaustive description of these optimizations, but merely seeks to explain the approach taken. The only reason why this approach is possible, is that you are describing what to parse, not how to parse. So equivalent descriptions can be freely swapped out.</p>
+<p>Typically, patterns are declared with operators that combine or modify them. These operators call methods which are dispatching, so it just happens without any additional performance overhead. These all have &quot;reasonable default&quot; behaviors defined, but are overridden in certain cases to provide specific optimizations.</p>
+<p>You know how compilers optimize code by changing what you wrote to an equivalent but faster representation? This does that.</p>
+<p>Consider the case of a combinator of literals such as <code>&quot;Hello&quot;.Then(' ').Then(&quot;there&quot;)</code>. Normally this would be implemented as the following:</p>
+<pre><code>Concatenator
+├─Concatenator
+│ ├─&quot;Hello&quot;
+│ └─' '
+└─&quot;there&quot;
 </code></pre>
-</section>
-<section id="tabpanel_CeZOj-G++Q_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
-
-<pre><code class="lang-vbnet">Console.WriteLine(&quot;Hello from Consolator!&quot;, Color.Blue, Color.RGB(255, 255, 255))
+<p>Notice however, the lefthand and righthand components are actually literals. All literals are either <code>Char</code> or <code>String</code> which means instead of pattern concatenation, we can use string concatenation. Any time a concatenation of two literals is called, instead of constructing a concatenator, we can construct a <code>StringLiteral</code> which contains the lefthand and righthand components after string concatenation. This gives us the following:</p>
+<pre><code>Concatenator
+├─&quot;Hello &quot;
+└─&quot;there&quot;
 </code></pre>
-</section>
-<section id="tabpanel_CeZOj-G++Q_fs" role="tabpanel" data-tab="fs" aria-hidden="true" hidden="hidden">
-
-<pre><code class="lang-fsharp">// Not implemented yet
+<p>And suddenly we have the same situation, which can further be reduced into the following:</p>
+<pre><code>&quot;Hello there&quot;
 </code></pre>
-</section>
-</div>
-
-<p>Yup. Seriously, it's that easy.</p>
-<p>You can also apply the color as a state through the <code>Foreground.Color</code> and <code>Background.Color</code> properties. This allows you to omit repeatedly passing the same colors into the functions over and over again. The two systems even work together, where if you set a color as a state, and pass colors to a function, the text written in that function will be colored as stated, and will return back to the state color. Clearing the state is as simple as passing <code>null</code> to the property.</p>
-<h2 id="color">Color</h2>
-<p>So what is supported as far as color goes? Technically the only thing publicly visible is <code>Color</code> but that's an abstract class, so clearly there's some internal details. <code>Color</code> provides everything you need to hide these details. When you used a named color, like <code>Color.Black</code>, you actually get back a <code>SimpleColor</code> which acts as the basic 8-color system all color terminals support. This is the closest analogue to .NET's <code>ConsoleColor</code> enumeration. However, you can also construct colors through various factories like <code>Color.RGB(Byte, Byte, Byte)</code>. When one of these colors is used, it instead passes the 24-bit RGB escape sequence to the terminal, and, if supported, will display 24-bit color. You don't need to do anything different to make all this work.</p>
+<p>This has the obvious advantage of reducing memory usage, as the tree has been reduced down to a single node. There is also the not so obvious advantage in that matching a literal is slightly faster than matching a concatenator. This works whether the components are literals defined in-line, or coming from pre-existing patterns.</p>
 </article>
           </div>
           
@@ -111,7 +98,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/master/Documentation/articles/consolator-colorization.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Documentation/articles/patterns-optimization.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

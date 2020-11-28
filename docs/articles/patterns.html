@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Consolator </title>
+    <title>Patterns </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Consolator ">
+    <meta name="title" content="Patterns ">
     <meta name="generator" content="docfx 2.56.5.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -67,14 +67,10 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="consolator">Consolator</h1>
+<h1 id="patterns">Patterns</h1>
 
-<p><strong>Consolator</strong> is a reimagining of how the <a href="https://docs.microsoft.com/en-us/dotnet/api/system.console"><code>Console</code></a> should work. Despite numerous advances in graphics technology, console apps have become quite trendy. This is a welcome trend, as not only are console apps more efficient and generally more accessible, but it's also forced us to relook at console app design through a more modern lens.</p>
-<div class="WARNING">
-<h5>Warning</h5>
-<p>Consolator completely bypasses <a href="https://docs.microsoft.com/en-us/dotnet/api/system.console"><code>System.Console</code></a> and uses its own internals. Of particular note is using virtual terminal escape sequences across all platforms. This is inline with the <a href="https://docs.microsoft.com/en-us/windows/console/ecosystem-roadmap">Windows Console and Terminal roadmap</a> but will mean older platforms aren't supported.</p>
-</div>
-<p>Generally speaking, <strong>Consolator</strong> looks like the same <a href="https://docs.microsoft.com/en-us/dotnet/api/system.console"><code>System.Console</code></a> you're used to, and in many cases drop-in replacement is possible. Include it like so:</p>
+<p>Patterns, probably introduced with <a href="https://en.wikipedia.org/wiki/SNOBOL">SNOBOL</a>, and also seen with <a href="https://en.wikipedia.org/wiki/SPITBOL">SPITBOL</a> and <a href="https://unicon.sourceforge.io/">UNICON</a><a href="https://www.cs.nmsu.edu/%7Esgaikaiw/Thesis.pdf">[paper]</a>, are considerably more powerful than <a href="https://en.wikipedia.org/wiki/Regular_expression">Regular Expressions</a>. So what do you do when you need to parse something more complicated than a Regex? Hacky <a href="https://en.wikipedia.org/wiki/Regular_expression">Regex</a> extensions aren't great, and still lack what some advanced alternatives can offer. <a href="https://en.wikipedia.org/wiki/Parser_combinator">Parser Combinators</a>? The performance of these isn't what it's proponents let on (check the benchmarks in this project's repo for proof, since they don't provide it). Pattern Matching and <a href="https://en.wikipedia.org/wiki/Parser_combinator">Parser Combinators</a> share a huge amount of theory, however. You could consider them alternative interpretations of the same concept. That being said, you'll notice a few small differences, but the advantages apply to both. There are some divergences from <a href="https://en.wikipedia.org/wiki/SNOBOL">SNOBOL</a>-style patterns, made where appropriate based on a number of conditions. This project should be seen as inspired by <a href="https://en.wikipedia.org/wiki/SNOBOL">SNOBOL</a>, <a href="https://en.wikipedia.org/wiki/Regular_expression">Regex</a>, and <a href="https://en.wikipedia.org/wiki/Parser_combinator">Parser Combinators</a>, without extremely strict adherence to any particular style. The declarative power of this approach goes as far as to even support recursive grammars.</p>
+<h2 id="including">Including</h2>
 <div class="tabGroup" id="tabgroup_CeZOj-G++Q">
 <ul role="tablist">
 <li role="presentation">
@@ -89,47 +85,19 @@
 </ul>
 <section id="tabpanel_CeZOj-G++Q_cs" role="tabpanel" data-tab="cs">
 
-<pre><code class="lang-csharp">using Console = Consolator.Console;
+<pre><code class="lang-csharp">using Langly.Patterns;
+using static Langly.Patterns.Pattern; // If you want fluent syntax
 </code></pre>
 </section>
 <section id="tabpanel_CeZOj-G++Q_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
 
-<pre><code class="lang-vbnet">Imports Console = Consolator.Console
+<pre><code class="lang-vbnet">Imports Langly.Patterns
+Imports Langly.Patterns.Pattern 'If you want fluent syntax
 </code></pre>
 </section>
 <section id="tabpanel_CeZOj-G++Q_fs" role="tabpanel" data-tab="fs" aria-hidden="true" hidden="hidden">
 
-<pre><code class="lang-fsharp">// Not implemented yet
-</code></pre>
-</section>
-</div>
-
-<p>For additional features you'll need to include the <code>Consolator</code> namespace, not just the <code>Console</code> alias.</p>
-<div class="tabGroup" id="tabgroup_CeZOj-G++Q-1">
-<ul role="tablist">
-<li role="presentation">
-<a href="#tabpanel_CeZOj-G++Q-1_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-1_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
-</li>
-<li role="presentation">
-<a href="#tabpanel_CeZOj-G++Q-1_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-1_vb" data-tab="vb" tabindex="-1">VB</a>
-</li>
-<li role="presentation">
-<a href="#tabpanel_CeZOj-G++Q-1_fs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-1_fs" data-tab="fs" tabindex="-1">F#</a>
-</li>
-</ul>
-<section id="tabpanel_CeZOj-G++Q-1_cs" role="tabpanel" data-tab="cs">
-
-<pre><code class="lang-csharp">Console.WriteLine(&quot;Hello from Consolator!&quot;);
-</code></pre>
-</section>
-<section id="tabpanel_CeZOj-G++Q-1_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
-
-<pre><code class="lang-vbnet">Console.WriteLine(&quot;Hello from Consolator!&quot;)
-</code></pre>
-</section>
-<section id="tabpanel_CeZOj-G++Q-1_fs" role="tabpanel" data-tab="fs" aria-hidden="true" hidden="hidden">
-
-<pre><code class="lang-fsharp">// Not implemented yet
+<pre><code class="lang-fsharp">open Langly.Patterns
 </code></pre>
 </section>
 </div>
@@ -141,7 +109,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/master/Documentation/articles/consolator.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Documentation/articles/patterns.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

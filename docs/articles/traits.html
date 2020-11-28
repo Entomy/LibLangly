@@ -5,11 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Namespace Stringier
-   </title>
+    <title>Traits </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Namespace Stringier
-   ">
+    <meta name="title" content="Traits ">
     <meta name="generator" content="docfx 2.56.5.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -68,17 +66,18 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Stringier">
-  
-  <h1 id="Stringier" data-uid="Stringier" class="text-break">Namespace Stringier
-  </h1>
-  <div class="markdown level0 summary"></div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="markdown level0 remarks"></div>
-    <h3 id="classes">Classes
-  </h3>
-      <h4><a class="xref" href="Stringier.Text.html">Text</a></h4>
-      <section></section>
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="traits">Traits</h1>
+
+<p><strong>LibLangly</strong> provides a rich <a href="https://dev.to/entomy/real-traits-in-c-4fpk">trait-oriented</a> set of interfaces together with extension methods for them to enable <a href="https://dev.to/entomy/avoiding-nulls-with-extension-methods-3mkc">null-tolerance</a>. The idea is to help encourage robust and resilient code bases while keeping a common framework for talking about disparate types. Furthermore, You only need to implement a few key methods and get tons of additional functionality <em>for free</em>.</p>
+<p>So how do you use it? When implementing a new type, pass all the traits into the interface implementation list just like you normally would with any interface, and while you don't explicitly have to, when implementing the required methods you <em>should</em> implement them explicitly. In doing so, the <a href="https://dev.to/entomy/avoiding-nulls-with-extension-methods-3mkc">null-tolerant</a> extension methods will be used, allowing null objects to be gracefully handled while still calling the implementations you provided.</p>
+<blockquote>
+<p>But explicit methods aren't available to derived types...</p>
+</blockquote>
+<blockquote>
+<p>But explicit methods aren't callable off the instance and have to use interfaces for all interactions</p>
+</blockquote>
+<p>There's more counterarguments, I'm sure. <strong>LibLangly</strong> was designed around this. In fact, the design around this is how you get &quot;free&quot; implementations of various functionality. You <em><strong>really</strong></em> should implement all the interface functionality explicitly. Extension methods don't just add in <a href="https://dev.to/entomy/avoiding-nulls-with-extension-methods-3mkc">null-tolerance</a>, they also provide a way of calling any default-implementation an interface might have, off the <em>instance</em>. You really do get all that additional functionality without having to change how you go about using the types you write.</p>
 </article>
           </div>
           
@@ -86,6 +85,9 @@
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Documentation/articles/traits.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
