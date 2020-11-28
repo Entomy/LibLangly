@@ -286,7 +286,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Guard_Contains__1___0_System_String_System_Object_.md&amp;value=---%0Auid%3A%20Langly.Guard.Contains%60%601(%60%600%2CSystem.String%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Defender/Guards/Contains.cs/#L39">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Defender/Guards/Contains.cs/#L38">View Source</a>
   </span>
   <a id="Langly_Guard_Contains_" data-uid="Langly.Guard.Contains*"></a>
   <h4 id="Langly_Guard_Contains__1___0_System_String_System_Object_" data-uid="Langly.Guard.Contains``1(``0,System.String,System.Object)">Contains&lt;TCollection&gt;(TCollection, String, Object)</h4>
@@ -296,7 +296,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Contains&lt;TCollection&gt;(TCollection collection, string name, object value)
-
     where TCollection : ICollection</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -376,7 +375,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Contains&lt;T&gt;(T[] collection, string name, T value)
-
     where T : IEquatable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -446,7 +444,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Guard_Contains__2___1_System_String___0_.md&amp;value=---%0Auid%3A%20Langly.Guard.Contains%60%602(%60%601%2CSystem.String%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Defender/Guards/Contains.cs/#L63">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Defender/Guards/Contains.cs/#L61">View Source</a>
   </span>
   <a id="Langly_Guard_Contains_" data-uid="Langly.Guard.Contains*"></a>
   <h4 id="Langly_Guard_Contains__2___1_System_String___0_" data-uid="Langly.Guard.Contains``2(``1,System.String,``0)">Contains&lt;T, TCollection&gt;(TCollection, String, T)</h4>
@@ -456,8 +454,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Contains&lt;T, TCollection&gt;(TCollection collection, string name, T value)
-
-    where T : IEquatable&lt;T&gt; where TCollection : ICollection&lt;T&gt;</code></pre>
+    where T : IEquatable&lt;T&gt; where TCollection : IReadOnlyCollection&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -541,7 +538,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Exception Default&lt;TEnum&gt;(TEnum value, string name)
-
     where TEnum : struct, Enum</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -675,7 +671,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Empty&lt;TCollection&gt;(TCollection collection, string name)
-
     where TCollection : ICollection</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1109,7 +1104,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Empty&lt;T, TCollection&gt;(TCollection collection, string name)
-
     where TCollection : ICollection&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1312,7 +1306,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Equal&lt;TValue, TOther&gt;(TValue value, string name, TOther other)
-
     where TValue : IEquatable&lt;TOther&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1464,7 +1457,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void GreaterThan&lt;T&gt;(T value, string name, T lower)
-
     where T : IComparable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1611,7 +1603,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void GreaterThanOrEqual&lt;T&gt;(T value, string name, T lower)
-
     where T : IComparable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1691,7 +1682,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void HasFlag&lt;TEnum&gt;(TEnum value, string name, TEnum flags)
-
     where TEnum : struct, Enum</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2345,7 +2335,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void LargerThan&lt;TCollection&gt;(TCollection collection, string name, long lower)
-
     where TCollection : ICollection</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2845,7 +2834,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void LargerThan&lt;T, TCollection&gt;(TCollection collection, string name, long lower)
-
     where TCollection : ICollection&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2935,7 +2923,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void LargerThanOrEqual&lt;TCollection&gt;(TCollection collection, string name, long lower)
-
     where TCollection : ICollection</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3405,7 +3392,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void LargerThanOrEqual&lt;T, TCollection&gt;(TCollection collection, string name, long lower)
-
     where TCollection : ICollection&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3557,7 +3543,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void LesserThan&lt;T&gt;(T value, string name, T upper)
-
     where T : IComparable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3704,7 +3689,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void LesserThanOrEqual&lt;T&gt;(T value, string name, T upper)
-
     where T : IComparable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3784,7 +3768,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void NotContains&lt;TCollection&gt;(TCollection collection, string name, object value)
-
     where TCollection : ICollection</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3864,7 +3847,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void NotContains&lt;T&gt;(T[] collection, string name, T value)
-
     where T : IEquatable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3944,7 +3926,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void NotContains&lt;T, TCollection&gt;(TCollection collection, string name, T value)
-
     where T : IEquatable&lt;T&gt; where TCollection : ICollection&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4085,7 +4066,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void NotEmpty&lt;TCollection&gt;(TCollection collection, string name)
-
     where TCollection : ICollection</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4519,7 +4499,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void NotEmpty&lt;T, TCollection&gt;(TCollection collection, string name)
-
     where TCollection : ICollection&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4722,7 +4701,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void NotEqual&lt;TValue, TOther&gt;(TValue value, string name, TOther other)
-
     where TValue : IEquatable&lt;TOther&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5268,7 +5246,6 @@ public static void Pointer(void *pointer, string pointerName, int length, string
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Size&lt;TCollection&gt;(TCollection collection, string name, long size)
-
     where TCollection : ICollection</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5738,7 +5715,6 @@ public static void Pointer(void *pointer, string pointerName, int length, string
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Size&lt;T, TCollection&gt;(TCollection collection, string name, long size)
-
     where TCollection : ICollection&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5823,7 +5799,6 @@ public static void Pointer(void *pointer, string pointerName, int length, string
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void SmallerThan&lt;TCollection&gt;(TCollection collection, string name, long upper)
-
     where TCollection : ICollection</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6323,7 +6298,6 @@ public static void Pointer(void *pointer, string pointerName, int length, string
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void SmallerThan&lt;T, TCollection&gt;(TCollection collection, string name, long upper)
-
     where TCollection : ICollection&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6413,7 +6387,6 @@ public static void Pointer(void *pointer, string pointerName, int length, string
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void SmallerThanOrEqual&lt;TCollection&gt;(TCollection collection, string name, long upper)
-
     where TCollection : ICollection</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6883,7 +6856,6 @@ public static void Pointer(void *pointer, string pointerName, int length, string
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void SmallerThanOrEqual&lt;T, TCollection&gt;(TCollection collection, string name, long upper)
-
     where TCollection : ICollection&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6968,7 +6940,6 @@ public static void Pointer(void *pointer, string pointerName, int length, string
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Valid&lt;TEnum&gt;(TEnum value, string name)
-
     where TEnum : struct, Enum</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -7930,7 +7901,6 @@ public static void Within(nuint value, string name, nuint lower, nuint upper)</c
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Within&lt;T&gt;(T value, string name, T lower, T upper)
-
     where T : IComparable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>

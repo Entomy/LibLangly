@@ -106,12 +106,12 @@ namespace Langly {
 		/// Guard against the collection having elements.
 		/// </summary>
 		/// <typeparam name="T">The type of the elements in the collection.</typeparam>
-		/// <typeparam name="TCollection">The type of the collection; must be <see cref="ICollection{T}"/>.</typeparam>
+		/// <typeparam name="TCollection">The type of the collection; must be <see cref="IReadOnlyCollection{T}"/>.</typeparam>
 		/// <param name="collection">The collection.</param>
 		/// <param name="name">The name of the argument.</param>
 		/// <exception cref="ArgumentNotEmptyException">Thrown if the guard clause fails.</exception>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static void Empty<T, TCollection>(TCollection collection, String name) where TCollection : ICollection<T> {
+		public static void Empty<T, TCollection>(TCollection collection, String name) where TCollection : IReadOnlyCollection<T> {
 			if (!(collection is null) && collection.Count != 0) {
 				throw ArgumentNotEmptyException.With(collection, name);
 			}

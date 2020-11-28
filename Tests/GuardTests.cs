@@ -4,6 +4,121 @@ using Xunit;
 namespace Langly {
 	public class GuardTests {
 		[Theory]
+		[InlineData(null, '\0', false)]
+		[InlineData(new Char[] { 'a', 'b', 'c' }, 'a', true)]
+		[InlineData(new Char[] { 'a', 'b', 'c' }, 'c', true)]
+		[InlineData(new Char[] { 'a', 'b', 'c' }, 'd', false)]
+		public void Contains_Array_Char(Char[] collection, Char value, Boolean succeeds) {
+			if (succeeds) {
+				Guard.Contains(collection, nameof(collection), value);
+			} else {
+				Assert.Throws<ArgumentNotContainsException>(() => Guard.Contains(collection, nameof(collection), value));
+			}
+		}
+
+		[Theory]
+		[InlineData(null, '\0', false)]
+		[InlineData(new Char[] { 'a', 'b', 'c' }, 'a', true)]
+		[InlineData(new Char[] { 'a', 'b', 'c' }, 'c', true)]
+		[InlineData(new Char[] { 'a', 'b', 'c' }, 'd', false)]
+		public void Contains_WeakList_Char(Char[] values, Char value, Boolean succeeds) {
+			System.Collections.IList collection = values is null ? null : new System.Collections.ArrayList(values);
+			if (succeeds) {
+				Guard.Contains(collection, nameof(collection), value);
+			} else {
+				Assert.Throws<ArgumentNotContainsException>(() => Guard.Contains(collection, nameof(collection), value));
+			}
+		}
+
+		[Theory]
+		[InlineData(null, '\0', false)]
+		[InlineData(new Char[] { 'a', 'b', 'c' }, 'a', true)]
+		[InlineData(new Char[] { 'a', 'b', 'c' }, 'c', true)]
+		[InlineData(new Char[] { 'a', 'b', 'c' }, 'd', false)]
+		public void Contains_GenericList_Char(Char[] values, Char value, Boolean succeeds) {
+			System.Collections.Generic.IReadOnlyList<Char> collection = values is null ? null : new System.Collections.Generic.List<Char>(values);
+			if (succeeds) {
+				Guard.Contains(collection, nameof(collection), value);
+			} else {
+				Assert.Throws<ArgumentNotContainsException>(() => Guard.Contains(collection, nameof(collection), value));
+			}
+		}
+
+		[Theory]
+		[InlineData(ConsoleColor.Black, true)] //Valid colors ignore the boolean
+		[InlineData(ConsoleColor.Red, true)]
+		[InlineData((ConsoleColor)20, false)]
+		public void Default(ConsoleColor color, Boolean unhandled) {
+			switch (color) {
+			case ConsoleColor.Black:
+			case ConsoleColor.Blue:
+			case ConsoleColor.Cyan:
+			case ConsoleColor.Gray:
+			case ConsoleColor.Green:
+			case ConsoleColor.Magenta:
+			case ConsoleColor.White:
+				return;
+			default:
+				if (unhandled) {
+					Assert.IsType<ArgumentUnhandledException>(Guard.Default(color, nameof(color)));
+				} else {
+					Assert.IsType<ArgumentNotValidException>(Guard.Default(color, nameof(color)));
+				}
+				break;
+			}
+		}
+
+		[Theory]
+		[InlineData(null, true)]
+		[InlineData("", true)]
+		[InlineData("hello", false)]
+		public void Empty_String(String collection, Boolean succeeds) {
+			if (succeeds) {
+				Guard.Empty(collection, nameof(collection));
+			} else {
+				Assert.Throws<ArgumentNotEmptyException>(() => Guard.Empty(collection, nameof(collection)));
+			}
+		}
+
+		[Theory]
+		[InlineData(null, true)]
+		[InlineData(new Int32[] { }, true)]
+		[InlineData(new Int32[] { 1, 2, 3 }, false)]
+		public void Empty_Array(Int32[] collection, Boolean succeeds) {
+			if (succeeds) {
+				Guard.Empty(collection, nameof(collection));
+			} else {
+				Assert.Throws<ArgumentNotEmptyException>(() => Guard.Empty(collection, nameof(collection)));
+			}
+		}
+
+		[Theory]
+		[InlineData(null, true)]
+		[InlineData(new Int32[] { }, true)]
+		[InlineData(new Int32[] { 1, 2, 3 }, false)]
+		public void Empty_WeakList(Int32[] values, Boolean succeeds) {
+			System.Collections.IList collection = values is null ? null : new System.Collections.ArrayList(values);
+			if (succeeds) {
+				Guard.Empty(collection, nameof(collection));
+			} else {
+				Assert.Throws<ArgumentNotEmptyException>(() => Guard.Empty(collection, nameof(collection)));
+			}
+		}
+
+		[Theory]
+		[InlineData(null, true)]
+		[InlineData(new Int32[] { }, true)]
+		[InlineData(new Int32[] { 1, 2, 3 }, false)]
+		public void Empty_GenericList(Int32[] values, Boolean succeeds) {
+			System.Collections.Generic.IReadOnlyList<Int32> collection = values is null ? null : new System.Collections.Generic.List<Int32>(values);
+			if (succeeds) {
+				Guard.Empty<Int32, System.Collections.Generic.IReadOnlyList<Int32>>(collection, nameof(collection));
+			} else {
+				Assert.Throws<ArgumentNotEmptyException>(() => Guard.Empty<Int32, System.Collections.Generic.IReadOnlyList<Int32>>(collection, nameof(collection)));
+			}
+		}
+
+		[Theory]
 		[InlineData('a', 'a', true)]
 		[InlineData('a', 'b', false)]
 		[InlineData('b', 'a', false)]
