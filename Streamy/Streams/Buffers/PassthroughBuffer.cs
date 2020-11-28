@@ -23,7 +23,7 @@ namespace Langly.Streams.Buffers {
 		public StreamBase Stream { get; }
 
 		/// <inheritdoc/>
-		public Boolean Writable => true;
+		public Boolean Writable => false;
 
 		/// <inheritdoc/>
 		public override Boolean Equals([AllowNull] Object obj) {

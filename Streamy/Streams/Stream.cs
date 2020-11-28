@@ -109,13 +109,13 @@ namespace Langly.Streams {
 		public virtual nint Position { get; set; }
 
 		/// <inheritdoc/>
-		public Boolean Readable => Base.Readable;
+		public Boolean Readable => Base.Readable || ReadBuffer.Readable;
 
 		/// <inheritdoc/>
-		public Boolean Seekable => Base.Seekable;
+		public Boolean Seekable => Base.Seekable || ReadBuffer.Seekable;
 
 		/// <inheritdoc/>
-		public Boolean Writable => Base.Writable;
+		public Boolean Writable => Base.Writable || WriteBuffer.Writable;
 
 		/// <summary>
 		/// Stream this <paramref name="buffer"/>.

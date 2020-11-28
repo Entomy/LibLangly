@@ -14,7 +14,7 @@ namespace Langly.Streams.Buffers {
 		/// <summary>
 		/// The actual <see cref="Byte"/> buffer.
 		/// </summary>
-		private readonly Byte[] Buffer = new Byte[4];
+		private readonly Byte[] Buffer = new Byte[8];
 
 		/// <summary>
 		/// Initializes a new <see cref="MinimalBuffer"/> for the specified <paramref name="stream"/>.
@@ -23,7 +23,7 @@ namespace Langly.Streams.Buffers {
 		internal MinimalBuffer(StreamBase stream) => Stream = stream;
 
 		/// <inheritdoc/>
-		public nint Capacity => 4;
+		public nint Capacity => Buffer.Length;
 
 		/// <inheritdoc/>
 		public nint Length { get; set; }
@@ -79,10 +79,7 @@ namespace Langly.Streams.Buffers {
 					return false;
 				}
 			}
-			if (oth.MoveNext()) {
-				return false;
-			}
-			return true;
+			return !oth.MoveNext();
 		}
 
 		/// <inheritdoc/>
@@ -138,7 +135,11 @@ namespace Langly.Streams.Buffers {
 			Buffer[0] = Buffer[1];
 			Buffer[1] = Buffer[2];
 			Buffer[2] = Buffer[3];
-			Buffer[3] = default;
+			Buffer[3] = Buffer[4];
+			Buffer[4] = Buffer[5];
+			Buffer[5] = Buffer[6];
+			Buffer[6] = Buffer[7];
+			Buffer[7] = default;
 			Length--;
 		}
 
@@ -151,6 +152,10 @@ namespace Langly.Streams.Buffers {
 
 		/// <inheritdoc/>
 		public void ShiftRight() {
+			Buffer[7] = Buffer[6];
+			Buffer[6] = Buffer[5];
+			Buffer[5] = Buffer[4];
+			Buffer[4] = Buffer[3];
 			Buffer[3] = Buffer[2];
 			Buffer[2] = Buffer[1];
 			Buffer[1] = Buffer[0];
@@ -169,7 +174,7 @@ namespace Langly.Streams.Buffers {
 		public void Store(Byte value) => Buffer[Length++] = value;
 
 		/// <inheritdoc/>
-		public override String ToString() => $"{Buffer[0]}, {Buffer[1]}, {Buffer[2]}, {Buffer[3]}";
+		public override String ToString() => $"{Buffer[0]:X}, {Buffer[1]:X}, {Buffer[2]:X}, {Buffer[3]:X}, {Buffer[4]:X}, {Buffer[5]:X}, {Buffer[6]:X}, {Buffer[7]:X}";
 
 		/// <inheritdoc/>
 		public Boolean TryPeek(out Byte element, out Errors error) {
@@ -195,7 +200,7 @@ namespace Langly.Streams.Buffers {
 
 		/// <inheritdoc/>
 		public Boolean TryPeek(out Byte first, out Byte second, out Byte third, out Errors error) {
-			if (!((IReadBuffer)this).TryEnsureLoaded(2, out error)) {
+			if (!((IReadBuffer)this).TryEnsureLoaded(3, out error)) {
 				first = default;
 				second = default;
 				third = default;
@@ -209,7 +214,7 @@ namespace Langly.Streams.Buffers {
 
 		/// <inheritdoc/>
 		public Boolean TryPeek(out Byte first, out Byte second, out Byte third, out Byte fourth, out Errors error) {
-			if (!((IReadBuffer)this).TryEnsureLoaded(2, out error)) {
+			if (!((IReadBuffer)this).TryEnsureLoaded(4, out error)) {
 				first = default;
 				second = default;
 				third = default;
