@@ -13,5 +13,8 @@ Nevertheless, there are common expectations:
 5. Document your code. This does not necessarily have to include articles, but must have documentation comments on at least the public members. Sufficiently complex functionality will require additional documentation regardless of its accessibility modifiers. 
 6. Write any necessary benchmarks for new features.
 7. Write any necessary tests for new features; all tests must pass.
-8. Take the pull request out of draft status and have it reviewed.
-9. Comply with relevant feedback.
+8. Build the project in `Release-*` mode.
+9. Take the pull request out of draft status and have it reviewed.
+10. Comply with relevant feedback.
+
+*Note*: Because **LibLangly** is partially a _runtime_ library there are native system bindings used quite often throughout. Despite this being a .NET project, it should conceptually be treated like it were native code. As such, there are `Debug-*` and `Release-*` configurations which include the target platform. When doing your work, pick the same target platform that you are developing on. The "standard" `Debug` and `Release` configurations should ***not*** be used! They are meant for Nuget packaging where a default library is required for development purposes, and have everything stubbed out with `NotImplementedException`.
