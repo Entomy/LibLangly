@@ -231,8 +231,7 @@
   </span>
   <a id="Langly_Streams_Bases_StreamBase_Readable_" data-uid="Langly.Streams.Bases.StreamBase.Readable*"></a>
   <h4 id="Langly_Streams_Bases_StreamBase_Readable" data-uid="Langly.Streams.Bases.StreamBase.Readable">Readable</h4>
-  <div class="markdown level1 summary"><p>Can this be read from?</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -253,9 +252,6 @@
       </tr>
     </tbody>
   </table>
-  <h5 id="Langly_Streams_Bases_StreamBase_Readable_remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>This is a state indicator. Of course an <a class="xref" href="Langly.IReadable-2.html">IReadable&lt;TElement, TError&gt;</a> can be read from, but that doesn't mean it can always be read from. Rather, this being <span class="xref">true</span> indicates the type can currently be read from.</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Bases_StreamBase_Seekable.md&amp;value=---%0Auid%3A%20Langly.Streams.Bases.StreamBase.Seekable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -265,8 +261,7 @@
   </span>
   <a id="Langly_Streams_Bases_StreamBase_Seekable_" data-uid="Langly.Streams.Bases.StreamBase.Seekable*"></a>
   <h4 id="Langly_Streams_Bases_StreamBase_Seekable" data-uid="Langly.Streams.Bases.StreamBase.Seekable">Seekable</h4>
-  <div class="markdown level1 summary"><p>Can this be seeked?</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -287,9 +282,6 @@
       </tr>
     </tbody>
   </table>
-  <h5 id="Langly_Streams_Bases_StreamBase_Seekable_remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>This is a state indicator. Of course an <a class="xref" href="Langly.ISeekable-2.html">ISeekable&lt;TElement, TError&gt;</a> can be seeked, but that doesn't mean it can always be seeked. Rather, this being <span class="xref">true</span> indicates the type can currently be seeked.</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Bases_StreamBase_Writable.md&amp;value=---%0Auid%3A%20Langly.Streams.Bases.StreamBase.Writable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -299,8 +291,7 @@
   </span>
   <a id="Langly_Streams_Bases_StreamBase_Writable_" data-uid="Langly.Streams.Bases.StreamBase.Writable*"></a>
   <h4 id="Langly_Streams_Bases_StreamBase_Writable" data-uid="Langly.Streams.Bases.StreamBase.Writable">Writable</h4>
-  <div class="markdown level1 summary"><p>Can this be written to?</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -321,9 +312,6 @@
       </tr>
     </tbody>
   </table>
-  <h5 id="Langly_Streams_Bases_StreamBase_Writable_remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>This is a state indicator. Of course an <a class="xref" href="Langly.IWritable-2.html">IWritable&lt;TElement, TError&gt;</a> can be written to, but that doesn't mean it can always be written to. Rather, this being <span class="xref">true</span> indicates the type can currently be written to.</p>
-</div>
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
@@ -335,8 +323,7 @@
   </span>
   <a id="Langly_Streams_Bases_StreamBase_Read_" data-uid="Langly.Streams.Bases.StreamBase.Read*"></a>
   <h4 id="Langly_Streams_Bases_StreamBase_Read_System_Byte__" data-uid="Langly.Streams.Bases.StreamBase.Read(System.Byte@)">Read(out Byte)</h4>
-  <div class="markdown level1 summary"><p>Reads a <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code>.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -359,9 +346,6 @@
       </tr>
     </tbody>
   </table>
-  <h5 id="Langly_Streams_Bases_StreamBase_Read_System_Byte___remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>This assumes the read will never fail, which is an assumption that generally doesn't hold up. It is strongly recommended to use <a class="xref" href="Langly.IReadable-2.html#Langly_IReadable_2_TryRead__0__">TryRead(out TElement)</a> or <a class="xref" href="Langly.IReadable-2.html#Langly_IReadable_2_TryRead__0___1__">TryRead(out TElement, out TError)</a> instead.</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Bases_StreamBase_Seek_nint_.md&amp;value=---%0Auid%3A%20Langly.Streams.Bases.StreamBase.Seek(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -435,8 +419,7 @@
   </span>
   <a id="Langly_Streams_Bases_StreamBase_TryRead_" data-uid="Langly.Streams.Bases.StreamBase.TryRead*"></a>
   <h4 id="Langly_Streams_Bases_StreamBase_TryRead_System_Byte__Langly_Streams_Errors__" data-uid="Langly.Streams.Bases.StreamBase.TryRead(System.Byte@,Langly.Streams.Errors@)">TryRead(out Byte, out Errors)</h4>
-  <div class="markdown level1 summary"><p>Attempts to read a <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code>.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -475,15 +458,10 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p><span class="xref">true</span> if the read was successful; otherwise, <span class="xref">false</span>.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="Langly_Streams_Bases_StreamBase_TryRead_System_Byte__Langly_Streams_Errors___seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Langly.IReadable-2.html#Langly_IReadable_2_TryRead__0__">TryRead</a>(TElement)</div>
-  </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Bases_StreamBase_TryRead_System_Span_System_Byte__Langly_Streams_Errors__.md&amp;value=---%0Auid%3A%20Langly.Streams.Bases.StreamBase.TryRead(System.Span%7BSystem.Byte%7D%2CLangly.Streams.Errors%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -597,8 +575,7 @@
   </span>
   <a id="Langly_Streams_Bases_StreamBase_TryWrite_" data-uid="Langly.Streams.Bases.StreamBase.TryWrite*"></a>
   <h4 id="Langly_Streams_Bases_StreamBase_TryWrite_System_Byte_Langly_Streams_Errors__" data-uid="Langly.Streams.Bases.StreamBase.TryWrite(System.Byte,Langly.Streams.Errors@)">TryWrite(Byte, out Errors)</h4>
-  <div class="markdown level1 summary"><p>Attempts to write a <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code>.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -637,15 +614,10 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p><span class="xref">true</span> if the write was successful; otherwise, <span class="xref">false</span>.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="Langly_Streams_Bases_StreamBase_TryWrite_System_Byte_Langly_Streams_Errors___seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Langly.IWritable-2.html#Langly_IWritable_2_TryWrite__0_">TryWrite</a>(TElement)</div>
-  </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Streams_Bases_StreamBase_TryWrite_System_ReadOnlySpan_System_Byte__Langly_Streams_Errors__.md&amp;value=---%0Auid%3A%20Langly.Streams.Bases.StreamBase.TryWrite(System.ReadOnlySpan%7BSystem.Byte%7D%2CLangly.Streams.Errors%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -707,8 +679,7 @@
   </span>
   <a id="Langly_Streams_Bases_StreamBase_Write_" data-uid="Langly.Streams.Bases.StreamBase.Write*"></a>
   <h4 id="Langly_Streams_Bases_StreamBase_Write_System_Byte_" data-uid="Langly.Streams.Bases.StreamBase.Write(System.Byte)">Write(Byte)</h4>
-  <div class="markdown level1 summary"><p>Writes a <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code>.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -731,9 +702,6 @@
       </tr>
     </tbody>
   </table>
-  <h5 id="Langly_Streams_Bases_StreamBase_Write_System_Byte__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>This assumes the write will never fail, which is an assumption that generally doesn't hold up. It is strongly recommended to use <a class="xref" href="Langly.IWritable-2.html#Langly_IWritable_2_TryWrite__0_">TryWrite(TElement)</a> or <a class="xref" href="Langly.IWritable-2.html#Langly_IWritable_2_TryWrite__0__1__">TryWrite(TElement, out TError)</a> instead.</p>
-</div>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable">System.IDisposable</a>
