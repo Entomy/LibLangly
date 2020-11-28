@@ -2,7 +2,6 @@
 
 [![Discord](https://img.shields.io/discord/767866895457714186?label=Chat&logo=discord&logoColor=white)](https://discord.com/channels/767866895457714186)
 [![Build Status](https://dev.azure.com/p-kell/Langly/_apis/build/status/Entomy.LibLangly?branchName=master)](https://dev.azure.com/p-kell/Langly/_build/latest?definitionId=36&branchName=master)
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Entomy/LibLangly/.NET%20Core?label=GitHub%20Workflow&logo=Github)](https://github.com/Entomy/LibLangly/actions?query=workflow%3A%22.NET+Core%22)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/d84f62c513064441a2d6213c58406d8d)](https://www.codacy.com/gh/Entomy/LibLangly/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Entomy/LibLangly&amp;utm_campaign=Badge_Grade)
 [![CLA assistant](https://cla-assistant.io/readme/badge/Entomy/LibLangly)](https://cla-assistant.io/Entomy/LibLangly)
 [![GitHub](https://img.shields.io/github/license/Entomy/LibLangly)](https://github.com/Entomy/LibLangly/blob/master/LICENSE)
