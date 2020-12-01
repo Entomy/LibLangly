@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
 namespace Langly {
@@ -109,56 +110,54 @@ namespace Langly {
 		/// <summary>
 		/// Decode the UTF-8 sequence into a sequence of <see cref="Rune"/>.
 		/// </summary>
-		/// <param name="bytes">The <see cref="Array"/> of <see cref="Byte"/> to decode.</param>
+		/// <param name="bytes">The bytes to decode.</param>
 		/// <returns>The decoded <see cref="Rune"/>s.</returns>
-		public static ReadOnlySpan<Rune> Decode(params Byte[] bytes) {
-			Guard.NotNull(bytes, nameof(bytes));
-			return Decode(bytes.AsSpan());
-		}
+		public static ReadOnlySpan<Rune> Decode([AllowNull] params Byte[] bytes) => bytes is not null ? Decode(bytes.AsSpan()) : ReadOnlySpan<Rune>.Empty;
 
 		/// <summary>
 		/// Decode the UTF-8 sequence into a sequence of <see cref="Rune"/>.
 		/// </summary>
-		/// <param name="bytes">The <see cref="Array"/> of <see cref="Byte"/> to decode.</param>
+		/// <param name="bytes">The bytes to decode.</param>
+		/// <returns>The decoded <see cref="Rune"/>s.</returns>
+		public static ReadOnlySpan<Rune> Decode(Memory<Byte> bytes) => Decode(bytes.Span);
+
+		/// <summary>
+		/// Decode the UTF-8 sequence into a sequence of <see cref="Rune"/>.
+		/// </summary>
+		/// <param name="bytes">The bytes to decode.</param>
+		/// <returns>The decoded <see cref="Rune"/>s.</returns>
+		public static ReadOnlySpan<Rune> Decode(ReadOnlyMemory<Byte> bytes) => Decode(bytes.Span);
+
+		/// <summary>
+		/// Decode the UTF-8 sequence into a sequence of <see cref="Rune"/>.
+		/// </summary>
+		/// <param name="bytes">The bytes to decode.</param>
+		/// <returns>The decoded <see cref="Rune"/>s.</returns>
+		public static ReadOnlySpan<Rune> Decode(Span<Byte> bytes) => Decode((ReadOnlySpan<Byte>)bytes);
+
+		/// <summary>
+		/// Decode the UTF-8 sequence into a sequence of <see cref="Rune"/>.
+		/// </summary>
+		/// <param name="bytes">The bytes to decode.</param>
 		/// <returns>The decoded <see cref="Rune"/>s.</returns>
 		public static ReadOnlySpan<Rune> Decode(ReadOnlySpan<Byte> bytes) {
 			Int32 b = 0;
 			Int32 y = 0;
 			Span<Rune> buffer = new Rune[bytes.Length];
 			while (y < bytes.Length) {
-				switch (SequenceLength(bytes[y])) {
-				case 1:
-					if (y + 1 > bytes.Length) {
-						goto default;
-					}
-					buffer[b++] = Decode(bytes[y++]);
-					break;
-				case 2:
-					if (y + 2 > bytes.Length) {
-						goto default;
-					}
-					buffer[b++] = Decode(bytes[y++], bytes[y++]);
-					break;
-				case 3:
-					if (y + 3 > bytes.Length) {
-						goto default;
-					}
-					buffer[b++] = Decode(bytes[y++], bytes[y++], bytes[y++]);
-					break;
-				case 4:
-					if (y + 4 > bytes.Length) {
-						goto default;
-					}
-					buffer[b++] = Decode(bytes[y++], bytes[y++], bytes[y++], bytes[y++]);
-					break;
-				default:
-					buffer[b++] = Rune.ReplacementChar;
-					y++;
-					break;
-				}
+				buffer[b++] = Decode(bytes, ref y);
 			}
 			return buffer.Slice(0, b);
 		}
+
+		/// <summary>
+		/// Decode the UTF-8 sequence into a sequence of <see cref="Rune"/>.
+		/// </summary>
+		/// <param name="bytes">The bytes to decode.</param>
+		/// <param name="length">The length of the <paramref name="bytes"/>.</param>
+		/// <returns>The decoded <see cref="Rune"/>s.</returns>
+		[CLSCompliant(false)]
+		public static unsafe ReadOnlySpan<Rune> Decode([AllowNull] Byte* bytes, Int32 length) => bytes is not null ? Decode(new ReadOnlySpan<Byte>(bytes, length)) : ReadOnlySpan<Rune>.Empty;
 
 		/// <summary>
 		/// Encodes the <see cref="Rune"/> into a UTF-8 sequence.
@@ -229,10 +228,37 @@ namespace Langly {
 		/// <remarks>
 		/// Assuming both myself and Microsoft don't have any bugs in our code, this should always succeed, because <see cref="Rune"/> uses validating constructors. However there are cases where, inside of the .NET runtime, Rune is created without validation, so, it's possible in theory.
 		/// </remarks>
-		public static ReadOnlySpan<Byte> Encode(Rune[] runes) {
-			Guard.NotNull(runes, nameof(runes));
-			return Encode(runes.AsSpan());
-		}
+		public static ReadOnlySpan<Byte> Encode([AllowNull] Rune[] runes) => runes is not null ? Encode(runes.AsSpan()) : ReadOnlySpan<Byte>.Empty;
+
+		/// <summary>
+		/// Encodes the <paramref name="runes"/> into a UTF-8 sequence.
+		/// </summary>
+		/// <param name="runes">The sequence of <see cref="Rune"/> to encode.</param>
+		/// <returns>The UTF-8 sequence as an <see cref="ReadOnlySpan{T}"/> of <see cref="Byte"/>.</returns>
+		/// <remarks>
+		/// Assuming both myself and Microsoft don't have any bugs in our code, this should always succeed, because <see cref="Rune"/> uses validating constructors. However there are cases where, inside of the .NET runtime, Rune is created without validation, so, it's possible in theory.
+		/// </remarks>
+		public static ReadOnlySpan<Byte> Encode(Memory<Rune> runes) => Encode(runes.Span);
+
+		/// <summary>
+		/// Encodes the <paramref name="runes"/> into a UTF-8 sequence.
+		/// </summary>
+		/// <param name="runes">The sequence of <see cref="Rune"/> to encode.</param>
+		/// <returns>The UTF-8 sequence as an <see cref="ReadOnlySpan{T}"/> of <see cref="Byte"/>.</returns>
+		/// <remarks>
+		/// Assuming both myself and Microsoft don't have any bugs in our code, this should always succeed, because <see cref="Rune"/> uses validating constructors. However there are cases where, inside of the .NET runtime, Rune is created without validation, so, it's possible in theory.
+		/// </remarks>
+		public static ReadOnlySpan<Byte> Encode(ReadOnlyMemory<Rune> runes) => Encode(runes.Span);
+
+		/// <summary>
+		/// Encodes the <paramref name="runes"/> into a UTF-8 sequence.
+		/// </summary>
+		/// <param name="runes">The sequence of <see cref="Rune"/> to encode.</param>
+		/// <returns>The UTF-8 sequence as an <see cref="ReadOnlySpan{T}"/> of <see cref="Byte"/>.</returns>
+		/// <remarks>
+		/// Assuming both myself and Microsoft don't have any bugs in our code, this should always succeed, because <see cref="Rune"/> uses validating constructors. However there are cases where, inside of the .NET runtime, Rune is created without validation, so, it's possible in theory.
+		/// </remarks>
+		public static ReadOnlySpan<Byte> Encode(Span<Rune> runes) => Encode((ReadOnlySpan<Rune>)runes);
 
 		/// <summary>
 		/// Encodes the <paramref name="runes"/> into a UTF-8 sequence.
@@ -261,10 +287,7 @@ namespace Langly {
 		/// Assuming both myself and Microsoft don't have any bugs in our code, this should always succeed, because <see cref="Rune"/> uses validating constructors. However there are cases where, inside of the .NET runtime, Rune is created without validation, so, it's possible in theory.
 		/// </remarks>
 		[CLSCompliant(false)]
-		public static unsafe ReadOnlySpan<Byte> Encode(Rune* runes, Int32 length) {
-			Guard.NotNull(runes, nameof(runes));
-			return Encode(new ReadOnlySpan<Rune>(runes, length));
-		}
+		public static unsafe ReadOnlySpan<Byte> Encode([AllowNull] Rune* runes, Int32 length) => runes is not null ? Encode(new ReadOnlySpan<Rune>(runes, length)) : ReadOnlySpan<Byte>.Empty;
 
 		/// <summary>
 		/// Is the <paramref name="byte"/> the first byte of a UTF-8 sequence?
@@ -322,26 +345,56 @@ namespace Langly {
 			}
 		}
 
-		private static void Encode(Rune rune, Span<Byte> result, ref Int32 length) {
+		internal static Rune Decode(ReadOnlySpan<Byte> buffer, ref Int32 index) {
+			switch (SequenceLength(buffer[index])) {
+			case 1:
+				if (index >= buffer.Length) {
+					goto default;
+				}
+				return Decode(buffer[index++]);
+			case 2:
+				if (index + 1 >= buffer.Length) {
+					goto default;
+				}
+				return Decode(buffer[index++], buffer[index++]);
+			case 3:
+				if (index + 2 >= buffer.Length) {
+					goto default;
+				}
+				return Decode(buffer[index++], buffer[index++], buffer[index++]);
+			case 4:
+				if (index + 3 >= buffer.Length) {
+					goto default;
+				}
+				return Decode(buffer[index++], buffer[index++], buffer[index++], buffer[index++]);
+			default:
+				index++;
+				return Rune.ReplacementChar;
+			}
+		}
+
+		internal static void Encode(Rune rune, Span<Byte> result, ref Int32 index) {
 			switch (rune.Utf8SequenceLength) {
 			case 1:
-				result[length++] = (Byte)rune.Value;
+				result[index++] = (Byte)rune.Value;
 				break;
 			case 2:
-				result[length++] = (Byte)(rune.Value >> 6 | 0b1100_0000);
-				result[length++] = (Byte)(rune.Value & 0b0011_1111 | 0b1000_0000);
+				result[index++] = (Byte)(rune.Value >> 6 | 0b1100_0000);
+				result[index++] = (Byte)(rune.Value & 0b0011_1111 | 0b1000_0000);
 				break;
 			case 3:
-				result[length++] = (Byte)(rune.Value >> 12 | 0b1110_0000);
-				result[length++] = (Byte)(rune.Value >> 6 & 0b0011_1111 | 0b1000_0000);
-				result[length++] = (Byte)(rune.Value & 0b0011_1111 | 0b1000_0000);
+				result[index++] = (Byte)(rune.Value >> 12 | 0b1110_0000);
+				result[index++] = (Byte)(rune.Value >> 6 & 0b0011_1111 | 0b1000_0000);
+				result[index++] = (Byte)(rune.Value & 0b0011_1111 | 0b1000_0000);
 				break;
 			case 4:
-				result[length++] = (Byte)(rune.Value >> 18 | 0b1111_0000);
-				result[length++] = (Byte)(rune.Value >> 12 & 0b0011_1111 | 0b1000_0000);
-				result[length++] = (Byte)(rune.Value >> 6 & 0b0011_1111 | 0b1000_0000);
-				result[length++] = (Byte)(rune.Value & 0b0011_1111 | 0b1000_0000);
+				result[index++] = (Byte)(rune.Value >> 18 | 0b1111_0000);
+				result[index++] = (Byte)(rune.Value >> 12 & 0b0011_1111 | 0b1000_0000);
+				result[index++] = (Byte)(rune.Value >> 6 & 0b0011_1111 | 0b1000_0000);
+				result[index++] = (Byte)(rune.Value & 0b0011_1111 | 0b1000_0000);
 				break;
+			default:
+				throw new InvalidOperationException("A rune was somehow created that is invalid; this is a bug in the runtime.");
 			}
 		}
 	}
