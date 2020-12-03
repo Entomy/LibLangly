@@ -79,12 +79,6 @@
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="Langly.IBivalentLogic-1.html#Langly_IBivalentLogic_1_Not">IBivalentLogic&lt;T&gt;.Not()</a>
-    </div>
-    <div>
-      <a class="xref" href="Langly.IBivalentLogic-1.html#Langly_IBivalentLogic_1_And__0_">IBivalentLogic&lt;T&gt;.And(T)</a>
-    </div>
-    <div>
       <a class="xref" href="Langly.IBivalentLogic-1.html#Langly_IBivalentLogic_1_And_System_Boolean_">IBivalentLogic&lt;T&gt;.And(Boolean)</a>
     </div>
     <div>
@@ -94,9 +88,6 @@
       <a class="xref" href="Langly.IBivalentLogic-1.html#Langly_IBivalentLogic_1_NAnd_System_Boolean_">IBivalentLogic&lt;T&gt;.NAnd(Boolean)</a>
     </div>
     <div>
-      <a class="xref" href="Langly.IBivalentLogic-1.html#Langly_IBivalentLogic_1_Or__0_">IBivalentLogic&lt;T&gt;.Or(T)</a>
-    </div>
-    <div>
       <a class="xref" href="Langly.IBivalentLogic-1.html#Langly_IBivalentLogic_1_Or_System_Boolean_">IBivalentLogic&lt;T&gt;.Or(Boolean)</a>
     </div>
     <div>
@@ -104,9 +95,6 @@
     </div>
     <div>
       <a class="xref" href="Langly.IBivalentLogic-1.html#Langly_IBivalentLogic_1_NOr_System_Boolean_">IBivalentLogic&lt;T&gt;.NOr(Boolean)</a>
-    </div>
-    <div>
-      <a class="xref" href="Langly.IBivalentLogic-1.html#Langly_IBivalentLogic_1_XOr__0_">IBivalentLogic&lt;T&gt;.XOr(T)</a>
     </div>
     <div>
       <a class="xref" href="Langly.IBivalentLogic-1.html#Langly_IBivalentLogic_1_XOr_System_Boolean_">IBivalentLogic&lt;T&gt;.XOr(Boolean)</a>
@@ -130,14 +118,23 @@
       <a class="xref" href="Langly.IBivalentLogic-1.html#Langly_IBivalentLogic_1_Equivalent_System_Boolean_">IBivalentLogic&lt;T&gt;.Equivalent(Boolean)</a>
     </div>
     <div>
+      <a class="xref" href="Langly.IConjoinable-1.html#Langly_IConjoinable_1_And__0_">IConjoinable&lt;T&gt;.And(T)</a>
+    </div>
+    <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1.equals#System_IEquatable_1_Equals__0_">IEquatable&lt;T&gt;.Equals(T)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.IIncludable-1.html#Langly_IIncludable_1_Or__0_">IIncludable&lt;T&gt;.Or(T)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.INegatable-1.html#Langly_INegatable_1_Not">INegatable&lt;T&gt;.Not()</a>
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Langly.html">Langly</a></h6>
   <h6><strong>Assembly</strong>: Logician.dll</h6>
   <h5 id="Langly_ITrivalentLogic_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface ITrivalentLogic&lt;T&gt; : IBivalentLogic&lt;T&gt;, IEquatable&lt;T&gt; where T : struct, ITrivalentLogic&lt;T&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public interface ITrivalentLogic&lt;T&gt; : IBivalentLogic&lt;T&gt;, IConjoinable&lt;T&gt;, IEquatable&lt;T&gt;, IIncludable&lt;T&gt;, INegatable&lt;T&gt; where T : struct, ITrivalentLogic&lt;T&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">

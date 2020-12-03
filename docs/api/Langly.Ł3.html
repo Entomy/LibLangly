@@ -80,7 +80,10 @@
     <h5>Implements</h5>
     <div><a class="xref" href="Langly.ITrivalentLogic-1.html">ITrivalentLogic</a>&lt;<a class="xref" href="Langly.%C5%813.html">Ł3</a>&gt;</div>
     <div><a class="xref" href="Langly.IBivalentLogic-1.html">IBivalentLogic</a>&lt;<a class="xref" href="Langly.%C5%813.html">Ł3</a>&gt;</div>
+    <div><a class="xref" href="Langly.IConjoinable-1.html">IConjoinable</a>&lt;<a class="xref" href="Langly.%C5%813.html">Ł3</a>&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Langly.%C5%813.html">Ł3</a>&gt;</div>
+    <div><a class="xref" href="Langly.IIncludable-1.html">IIncludable</a>&lt;<a class="xref" href="Langly.%C5%813.html">Ł3</a>&gt;</div>
+    <div><a class="xref" href="Langly.INegatable-1.html">INegatable</a>&lt;<a class="xref" href="Langly.%C5%813.html">Ł3</a>&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a>&gt;</div>
   </div>
   <div class="inheritedMembers">
@@ -99,7 +102,7 @@
   <h6><strong>Assembly</strong>: Logician.dll</h6>
   <h5 id="Langly__3_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public struct &#321;3 : ITrivalentLogic&lt;&#321;3&gt;, IBivalentLogic&lt;&#321;3&gt;, IEquatable&lt;&#321;3&gt;, IEquatable&lt;bool&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public struct &#321;3 : ITrivalentLogic&lt;&#321;3&gt;, IBivalentLogic&lt;&#321;3&gt;, IConjoinable&lt;&#321;3&gt;, IEquatable&lt;&#321;3&gt;, IIncludable&lt;&#321;3&gt;, INegatable&lt;&#321;3&gt;, IEquatable&lt;bool&gt;</code></pre>
   </div>
   <h5 id="Langly__3_remarks"><strong>Remarks</strong></h5>
   <div class="markdown level0 remarks"><p>Łukasiewicz logic is useful in situations where you know somethings state has to be <span class="xref">true</span> or <span class="xref">false</span>, but it's possible to not know its state. That is, there are no paradoxes, only unknowns.</p>
@@ -2172,53 +2175,62 @@
       <a class="xref" href="Langly.IBivalentLogic-1.html">IBivalentLogic&lt;T&gt;</a>
   </div>
   <div>
+      <a class="xref" href="Langly.IConjoinable-1.html">IConjoinable&lt;TSelf&gt;</a>
+  </div>
+  <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">System.IEquatable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IIncludable-1.html">IIncludable&lt;TSelf&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.INegatable-1.html">INegatable&lt;TSelf&gt;</a>
   </div>
   <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">System.IEquatable&lt;T&gt;</a>
   </div>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
-      <span class="xref">Langly.Extensions.Not(Langly.Ł3)</span>
+      <a class="xref" href="Langly.LogicExtensions.html#Langly_LogicExtensions_Not_Langly__3_">LogicExtensions.Not(Ł3)</a>
   </div>
   <div>
-      <span class="xref">Langly.Extensions.And(Langly.Ł3, Langly.Ł3)</span>
+      <a class="xref" href="Langly.LogicExtensions.html#Langly_LogicExtensions_And_Langly__3_Langly__3_">LogicExtensions.And(Ł3, Ł3)</a>
   </div>
   <div>
-      <span class="xref">Langly.Extensions.And(Langly.Ł3, System.Boolean)</span>
+      <a class="xref" href="Langly.LogicExtensions.html#Langly_LogicExtensions_And_Langly__3_System_Boolean_">LogicExtensions.And(Ł3, Boolean)</a>
   </div>
   <div>
-      <span class="xref">Langly.Extensions.Or(Langly.Ł3, Langly.Ł3)</span>
+      <a class="xref" href="Langly.LogicExtensions.html#Langly_LogicExtensions_Or_Langly__3_Langly__3_">LogicExtensions.Or(Ł3, Ł3)</a>
   </div>
   <div>
-      <span class="xref">Langly.Extensions.Or(Langly.Ł3, System.Boolean)</span>
+      <a class="xref" href="Langly.LogicExtensions.html#Langly_LogicExtensions_Or_Langly__3_System_Boolean_">LogicExtensions.Or(Ł3, Boolean)</a>
   </div>
   <div>
-      <span class="xref">Langly.Extensions.XOr(Langly.Ł3, Langly.Ł3)</span>
+      <a class="xref" href="Langly.LogicExtensions.html#Langly_LogicExtensions_XOr_Langly__3_Langly__3_">LogicExtensions.XOr(Ł3, Ł3)</a>
   </div>
   <div>
-      <span class="xref">Langly.Extensions.XOr(Langly.Ł3, System.Boolean)</span>
+      <a class="xref" href="Langly.LogicExtensions.html#Langly_LogicExtensions_XOr_Langly__3_System_Boolean_">LogicExtensions.XOr(Ł3, Boolean)</a>
   </div>
   <div>
-      <span class="xref">Langly.Extensions.Implies(Langly.Ł3, Langly.Ł3)</span>
+      <a class="xref" href="Langly.LogicExtensions.html#Langly_LogicExtensions_Implies_Langly__3_Langly__3_">LogicExtensions.Implies(Ł3, Ł3)</a>
   </div>
   <div>
-      <span class="xref">Langly.Extensions.Implies(Langly.Ł3, System.Boolean)</span>
+      <a class="xref" href="Langly.LogicExtensions.html#Langly_LogicExtensions_Implies_Langly__3_System_Boolean_">LogicExtensions.Implies(Ł3, Boolean)</a>
   </div>
   <div>
-      <span class="xref">Langly.Extensions.Equivalent(Langly.Ł3, Langly.Ł3)</span>
+      <a class="xref" href="Langly.LogicExtensions.html#Langly_LogicExtensions_Equivalent_Langly__3_Langly__3_">LogicExtensions.Equivalent(Ł3, Ł3)</a>
   </div>
   <div>
-      <span class="xref">Langly.Extensions.Equivalent(Langly.Ł3, System.Boolean)</span>
+      <a class="xref" href="Langly.LogicExtensions.html#Langly_LogicExtensions_Equivalent_Langly__3_System_Boolean_">LogicExtensions.Equivalent(Ł3, Boolean)</a>
   </div>
   <div>
-      <span class="xref">Langly.Extensions.Contingent(Langly.Ł3)</span>
+      <a class="xref" href="Langly.LogicExtensions.html#Langly_LogicExtensions_Contingent_Langly__3_">LogicExtensions.Contingent(Ł3)</a>
   </div>
   <div>
-      <span class="xref">Langly.Extensions.Necessary(Langly.Ł3)</span>
+      <a class="xref" href="Langly.LogicExtensions.html#Langly_LogicExtensions_Necessary_Langly__3_">LogicExtensions.Necessary(Ł3)</a>
   </div>
   <div>
-      <span class="xref">Langly.Extensions.Possible(Langly.Ł3)</span>
+      <a class="xref" href="Langly.LogicExtensions.html#Langly_LogicExtensions_Possible_Langly__3_">LogicExtensions.Possible(Ł3)</a>
   </div>
 </article>
           </div>

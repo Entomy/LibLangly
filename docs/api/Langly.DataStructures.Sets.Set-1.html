@@ -85,7 +85,12 @@
   </div>
   <div classs="implements">
     <h5>Implements</h5>
+    <div><a class="xref" href="Langly.IConjoinable-1.html">IConjoinable</a>&lt;<a class="xref" href="Langly.DataStructures.Sets.Set-1.html">Set</a>&lt;TElement&gt;&gt;</div>
     <div><a class="xref" href="Langly.IContainable-1.html">IContainable</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="Langly.IExcludable-1.html">IExcludable</a>&lt;<a class="xref" href="Langly.DataStructures.Sets.Set-1.html">Set</a>&lt;TElement&gt;&gt;</div>
+    <div><a class="xref" href="Langly.IIncludable-1.html">IIncludable</a>&lt;<a class="xref" href="Langly.DataStructures.Sets.Set-1.html">Set</a>&lt;TElement&gt;&gt;</div>
+    <div><a class="xref" href="Langly.INegatable-1.html">INegatable</a>&lt;<a class="xref" href="Langly.DataStructures.Sets.Set-1.html">Set</a>&lt;TElement&gt;&gt;</div>
+    <div><a class="xref" href="Langly.ISubtractable-1.html">ISubtractable</a>&lt;<a class="xref" href="Langly.DataStructures.Sets.Set-1.html">Set</a>&lt;TElement&gt;&gt;</div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -115,7 +120,7 @@
   <h6><strong>Assembly</strong>: Collectathon.dll</h6>
   <h5 id="Langly_DataStructures_Sets_Set_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class Set&lt;TElement&gt; : IContainable&lt;TElement&gt; where TElement : IEquatable&lt;TElement&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class Set&lt;TElement&gt; : IConjoinable&lt;Set&lt;TElement&gt;&gt;, IContainable&lt;TElement&gt;, IExcludable&lt;Set&lt;TElement&gt;&gt;, IIncludable&lt;Set&lt;TElement&gt;&gt;, INegatable&lt;Set&lt;TElement&gt;&gt;, ISubtractable&lt;Set&lt;TElement&gt;&gt; where TElement : IEquatable&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -208,7 +213,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Sets_Set_1_Complement.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Sets.Set%601.Complement%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/DataStructures/Sets/Set.cs/#L141">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/DataStructures/Sets/Set.cs/#L156">View Source</a>
   </span>
   <a id="Langly_DataStructures_Sets_Set_1_Complement_" data-uid="Langly.DataStructures.Sets.Set`1.Complement*"></a>
   <h4 id="Langly_DataStructures_Sets_Set_1_Complement" data-uid="Langly.DataStructures.Sets.Set`1.Complement">Complement()</h4>
@@ -240,7 +245,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Sets_Set_1_Contains__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Sets.Set%601.Contains(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/DataStructures/Sets/Set.cs/#L171">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/DataStructures/Sets/Set.cs/#L186">View Source</a>
   </span>
   <a id="Langly_DataStructures_Sets_Set_1_Contains_" data-uid="Langly.DataStructures.Sets.Set`1.Contains*"></a>
   <h4 id="Langly_DataStructures_Sets_Set_1_Contains__0_" data-uid="Langly.DataStructures.Sets.Set`1.Contains(`0)">Contains(TElement)</h4>
@@ -287,7 +292,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Sets_Set_1_Difference_Langly_DataStructures_Sets_Set__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Sets.Set%601.Difference(Langly.DataStructures.Sets.Set%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/DataStructures/Sets/Set.cs/#L148">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/DataStructures/Sets/Set.cs/#L163">View Source</a>
   </span>
   <a id="Langly_DataStructures_Sets_Set_1_Difference_" data-uid="Langly.DataStructures.Sets.Set`1.Difference*"></a>
   <h4 id="Langly_DataStructures_Sets_Set_1_Difference_Langly_DataStructures_Sets_Set__0__" data-uid="Langly.DataStructures.Sets.Set`1.Difference(Langly.DataStructures.Sets.Set{`0})">Difference(Set&lt;TElement&gt;)</h4>
@@ -337,7 +342,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Sets_Set_1_Disjunction_Langly_DataStructures_Sets_Set__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Sets.Set%601.Disjunction(Langly.DataStructures.Sets.Set%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/DataStructures/Sets/Set.cs/#L155">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/DataStructures/Sets/Set.cs/#L170">View Source</a>
   </span>
   <a id="Langly_DataStructures_Sets_Set_1_Disjunction_" data-uid="Langly.DataStructures.Sets.Set`1.Disjunction*"></a>
   <h4 id="Langly_DataStructures_Sets_Set_1_Disjunction_Langly_DataStructures_Sets_Set__0__" data-uid="Langly.DataStructures.Sets.Set`1.Disjunction(Langly.DataStructures.Sets.Set{`0})">Disjunction(Set&lt;TElement&gt;)</h4>
@@ -387,7 +392,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Sets_Set_1_Intersection_Langly_DataStructures_Sets_Set__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Sets.Set%601.Intersection(Langly.DataStructures.Sets.Set%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/DataStructures/Sets/Set.cs/#L162">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/DataStructures/Sets/Set.cs/#L177">View Source</a>
   </span>
   <a id="Langly_DataStructures_Sets_Set_1_Intersection_" data-uid="Langly.DataStructures.Sets.Set`1.Intersection*"></a>
   <h4 id="Langly_DataStructures_Sets_Set_1_Intersection_Langly_DataStructures_Sets_Set__0__" data-uid="Langly.DataStructures.Sets.Set`1.Intersection(Langly.DataStructures.Sets.Set{`0})">Intersection(Set&lt;TElement&gt;)</h4>
@@ -437,7 +442,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Sets_Set_1_Union_Langly_DataStructures_Sets_Set__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Sets.Set%601.Union(Langly.DataStructures.Sets.Set%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/DataStructures/Sets/Set.cs/#L169">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/DataStructures/Sets/Set.cs/#L184">View Source</a>
   </span>
   <a id="Langly_DataStructures_Sets_Set_1_Union_" data-uid="Langly.DataStructures.Sets.Set`1.Union*"></a>
   <h4 id="Langly_DataStructures_Sets_Set_1_Union_Langly_DataStructures_Sets_Set__0__" data-uid="Langly.DataStructures.Sets.Set`1.Union(Langly.DataStructures.Sets.Set{`0})">Union(Set&lt;TElement&gt;)</h4>
@@ -762,15 +767,61 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Sets_Set_1_Langly_IContainable_TElement__Contains__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Sets.Set%601.Langly%23IContainable%7BTElement%7D%23Contains(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Sets_Set_1_Langly_IConjoinable_Langly_DataStructures_Sets_Set_TElement___And_Langly_DataStructures_Sets_Set__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Sets.Set%601.Langly%23IConjoinable%7BLangly%23DataStructures%23Sets%23Set%7BTElement%7D%7D%23And(Langly.DataStructures.Sets.Set%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/DataStructures/Sets/Set.cs/#L135">View Source</a>
   </span>
+  <a id="Langly_DataStructures_Sets_Set_1_Langly_IConjoinable_Langly_DataStructures_Sets_Set_TElement___And_" data-uid="Langly.DataStructures.Sets.Set`1.Langly#IConjoinable{Langly#DataStructures#Sets#Set{TElement}}#And*"></a>
+  <h4 id="Langly_DataStructures_Sets_Set_1_Langly_IConjoinable_Langly_DataStructures_Sets_Set_TElement___And_Langly_DataStructures_Sets_Set__0__" data-uid="Langly.DataStructures.Sets.Set`1.Langly#IConjoinable{Langly#DataStructures#Sets#Set{TElement}}#And(Langly.DataStructures.Sets.Set{`0})">IConjoinable&lt;Set&lt;TElement&gt;&gt;.And(Set&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Set&lt;TElement&gt; IConjoinable&lt;Set&lt;TElement&gt;&gt;.And(Set&lt;TElement&gt; other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Sets.Set-1.html">Set</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">other</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Sets.Set-1.html">Set</a>&lt;TElement&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Sets_Set_1_Langly_IContainable_TElement__Contains__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Sets.Set%601.Langly%23IContainable%7BTElement%7D%23Contains(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/DataStructures/Sets/Set.cs/#L138">View Source</a>
+  </span>
   <a id="Langly_DataStructures_Sets_Set_1_Langly_IContainable_TElement__Contains_" data-uid="Langly.DataStructures.Sets.Set`1.Langly#IContainable{TElement}#Contains*"></a>
   <h4 id="Langly_DataStructures_Sets_Set_1_Langly_IContainable_TElement__Contains__0_" data-uid="Langly.DataStructures.Sets.Set`1.Langly#IContainable{TElement}#Contains(`0)">IContainable&lt;TElement&gt;.Contains(TElement)</h4>
-  <div class="markdown level1 summary"><p>Determines whether this collection contains a specific <code data-dev-comment-type="paramref" class="paramref">element</code>.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -789,8 +840,7 @@
       <tr>
         <td><span class="xref">TElement</span></td>
         <td><span class="parametername">element</span></td>
-        <td><p>The object to locate in the collection.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -805,14 +855,199 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">element</code> is found in the collection; otherwise, <span class="xref">false</span>.</p>
-</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Sets_Set_1_Langly_IExcludable_Langly_DataStructures_Sets_Set_TElement___XOr_Langly_DataStructures_Sets_Set__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Sets.Set%601.Langly%23IExcludable%7BLangly%23DataStructures%23Sets%23Set%7BTElement%7D%7D%23XOr(Langly.DataStructures.Sets.Set%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/DataStructures/Sets/Set.cs/#L150">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Sets_Set_1_Langly_IExcludable_Langly_DataStructures_Sets_Set_TElement___XOr_" data-uid="Langly.DataStructures.Sets.Set`1.Langly#IExcludable{Langly#DataStructures#Sets#Set{TElement}}#XOr*"></a>
+  <h4 id="Langly_DataStructures_Sets_Set_1_Langly_IExcludable_Langly_DataStructures_Sets_Set_TElement___XOr_Langly_DataStructures_Sets_Set__0__" data-uid="Langly.DataStructures.Sets.Set`1.Langly#IExcludable{Langly#DataStructures#Sets#Set{TElement}}#XOr(Langly.DataStructures.Sets.Set{`0})">IExcludable&lt;Set&lt;TElement&gt;&gt;.XOr(Set&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Set&lt;TElement&gt; IExcludable&lt;Set&lt;TElement&gt;&gt;.XOr(Set&lt;TElement&gt; other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Sets.Set-1.html">Set</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">other</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Sets.Set-1.html">Set</a>&lt;TElement&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Sets_Set_1_Langly_IIncludable_Langly_DataStructures_Sets_Set_TElement___Or_Langly_DataStructures_Sets_Set__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Sets.Set%601.Langly%23IIncludable%7BLangly%23DataStructures%23Sets%23Set%7BTElement%7D%7D%23Or(Langly.DataStructures.Sets.Set%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/DataStructures/Sets/Set.cs/#L144">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Sets_Set_1_Langly_IIncludable_Langly_DataStructures_Sets_Set_TElement___Or_" data-uid="Langly.DataStructures.Sets.Set`1.Langly#IIncludable{Langly#DataStructures#Sets#Set{TElement}}#Or*"></a>
+  <h4 id="Langly_DataStructures_Sets_Set_1_Langly_IIncludable_Langly_DataStructures_Sets_Set_TElement___Or_Langly_DataStructures_Sets_Set__0__" data-uid="Langly.DataStructures.Sets.Set`1.Langly#IIncludable{Langly#DataStructures#Sets#Set{TElement}}#Or(Langly.DataStructures.Sets.Set{`0})">IIncludable&lt;Set&lt;TElement&gt;&gt;.Or(Set&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Set&lt;TElement&gt; IIncludable&lt;Set&lt;TElement&gt;&gt;.Or(Set&lt;TElement&gt; other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Sets.Set-1.html">Set</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">other</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Sets.Set-1.html">Set</a>&lt;TElement&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Sets_Set_1_Langly_INegatable_Langly_DataStructures_Sets_Set_TElement___Not.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Sets.Set%601.Langly%23INegatable%7BLangly%23DataStructures%23Sets%23Set%7BTElement%7D%7D%23Not%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/DataStructures/Sets/Set.cs/#L141">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Sets_Set_1_Langly_INegatable_Langly_DataStructures_Sets_Set_TElement___Not_" data-uid="Langly.DataStructures.Sets.Set`1.Langly#INegatable{Langly#DataStructures#Sets#Set{TElement}}#Not*"></a>
+  <h4 id="Langly_DataStructures_Sets_Set_1_Langly_INegatable_Langly_DataStructures_Sets_Set_TElement___Not" data-uid="Langly.DataStructures.Sets.Set`1.Langly#INegatable{Langly#DataStructures#Sets#Set{TElement}}#Not">INegatable&lt;Set&lt;TElement&gt;&gt;.Not()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Set&lt;TElement&gt; INegatable&lt;Set&lt;TElement&gt;&gt;.Not()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Sets.Set-1.html">Set</a>&lt;TElement&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Sets_Set_1_Langly_ISubtractable_Langly_DataStructures_Sets_Set_TElement___Subtract_Langly_DataStructures_Sets_Set__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Sets.Set%601.Langly%23ISubtractable%7BLangly%23DataStructures%23Sets%23Set%7BTElement%7D%7D%23Subtract(Langly.DataStructures.Sets.Set%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/DataStructures/Sets/Set.cs/#L147">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Sets_Set_1_Langly_ISubtractable_Langly_DataStructures_Sets_Set_TElement___Subtract_" data-uid="Langly.DataStructures.Sets.Set`1.Langly#ISubtractable{Langly#DataStructures#Sets#Set{TElement}}#Subtract*"></a>
+  <h4 id="Langly_DataStructures_Sets_Set_1_Langly_ISubtractable_Langly_DataStructures_Sets_Set_TElement___Subtract_Langly_DataStructures_Sets_Set__0__" data-uid="Langly.DataStructures.Sets.Set`1.Langly#ISubtractable{Langly#DataStructures#Sets#Set{TElement}}#Subtract(Langly.DataStructures.Sets.Set{`0})">ISubtractable&lt;Set&lt;TElement&gt;&gt;.Subtract(Set&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Set&lt;TElement&gt; ISubtractable&lt;Set&lt;TElement&gt;&gt;.Subtract(Set&lt;TElement&gt; other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Sets.Set-1.html">Set</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">other</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Sets.Set-1.html">Set</a>&lt;TElement&gt;</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
   <h3 id="implements">Implements</h3>
   <div>
+      <a class="xref" href="Langly.IConjoinable-1.html">IConjoinable&lt;TSelf&gt;</a>
+  </div>
+  <div>
       <a class="xref" href="Langly.IContainable-1.html">IContainable&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IExcludable-1.html">IExcludable&lt;TSelf&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IIncludable-1.html">IIncludable&lt;TSelf&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.INegatable-1.html">INegatable&lt;TSelf&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.ISubtractable-1.html">ISubtractable&lt;TSelf&gt;</a>
   </div>
 </article>
           </div>

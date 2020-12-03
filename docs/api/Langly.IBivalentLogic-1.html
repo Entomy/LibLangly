@@ -79,14 +79,23 @@
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
+      <a class="xref" href="Langly.IConjoinable-1.html#Langly_IConjoinable_1_And__0_">IConjoinable&lt;T&gt;.And(T)</a>
+    </div>
+    <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1.equals#System_IEquatable_1_Equals__0_">IEquatable&lt;T&gt;.Equals(T)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.IIncludable-1.html#Langly_IIncludable_1_Or__0_">IIncludable&lt;T&gt;.Or(T)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.INegatable-1.html#Langly_INegatable_1_Not">INegatable&lt;T&gt;.Not()</a>
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Langly.html">Langly</a></h6>
   <h6><strong>Assembly</strong>: Logician.dll</h6>
   <h5 id="Langly_IBivalentLogic_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IBivalentLogic&lt;T&gt; : IEquatable&lt;T&gt; where T : struct, IBivalentLogic&lt;T&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IBivalentLogic&lt;T&gt; : IConjoinable&lt;T&gt;, IEquatable&lt;T&gt;, IIncludable&lt;T&gt;, INegatable&lt;T&gt; where T : struct, IBivalentLogic&lt;T&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -107,58 +116,10 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IBivalentLogic_1_And__0_.md&amp;value=---%0Auid%3A%20Langly.IBivalentLogic%601.And(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Logician/IBivalentLogic.cs/#L16">View Source</a>
-  </span>
-  <a id="Langly_IBivalentLogic_1_And_" data-uid="Langly.IBivalentLogic`1.And*"></a>
-  <h4 id="Langly_IBivalentLogic_1_And__0_" data-uid="Langly.IBivalentLogic`1.And(`0)">And(T)</h4>
-  <div class="markdown level1 summary"><p>Logical conjunction; and.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">T And(T other)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">T</span></td>
-        <td><span class="parametername">other</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">T</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IBivalentLogic_1_And_System_Boolean_.md&amp;value=---%0Auid%3A%20Langly.IBivalentLogic%601.And(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Logician/IBivalentLogic.cs/#L21">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Logician/IBivalentLogic.cs/#L11">View Source</a>
   </span>
   <a id="Langly_IBivalentLogic_1_And_" data-uid="Langly.IBivalentLogic`1.And*"></a>
   <h4 id="Langly_IBivalentLogic_1_And_System_Boolean_" data-uid="Langly.IBivalentLogic`1.And(System.Boolean)">And(Boolean)</h4>
@@ -206,7 +167,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IBivalentLogic_1_Equivalent__0_.md&amp;value=---%0Auid%3A%20Langly.IBivalentLogic%601.Equivalent(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Logician/IBivalentLogic.cs/#L86">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Logician/IBivalentLogic.cs/#L66">View Source</a>
   </span>
   <a id="Langly_IBivalentLogic_1_Equivalent_" data-uid="Langly.IBivalentLogic`1.Equivalent*"></a>
   <h4 id="Langly_IBivalentLogic_1_Equivalent__0_" data-uid="Langly.IBivalentLogic`1.Equivalent(`0)">Equivalent(T)</h4>
@@ -254,7 +215,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IBivalentLogic_1_Equivalent_System_Boolean_.md&amp;value=---%0Auid%3A%20Langly.IBivalentLogic%601.Equivalent(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Logician/IBivalentLogic.cs/#L91">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Logician/IBivalentLogic.cs/#L71">View Source</a>
   </span>
   <a id="Langly_IBivalentLogic_1_Equivalent_" data-uid="Langly.IBivalentLogic`1.Equivalent*"></a>
   <h4 id="Langly_IBivalentLogic_1_Equivalent_System_Boolean_" data-uid="Langly.IBivalentLogic`1.Equivalent(System.Boolean)">Equivalent(Boolean)</h4>
@@ -302,7 +263,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IBivalentLogic_1_Implies__0_.md&amp;value=---%0Auid%3A%20Langly.IBivalentLogic%601.Implies(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Logician/IBivalentLogic.cs/#L76">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Logician/IBivalentLogic.cs/#L56">View Source</a>
   </span>
   <a id="Langly_IBivalentLogic_1_Implies_" data-uid="Langly.IBivalentLogic`1.Implies*"></a>
   <h4 id="Langly_IBivalentLogic_1_Implies__0_" data-uid="Langly.IBivalentLogic`1.Implies(`0)">Implies(T)</h4>
@@ -350,7 +311,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IBivalentLogic_1_Implies_System_Boolean_.md&amp;value=---%0Auid%3A%20Langly.IBivalentLogic%601.Implies(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Logician/IBivalentLogic.cs/#L81">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Logician/IBivalentLogic.cs/#L61">View Source</a>
   </span>
   <a id="Langly_IBivalentLogic_1_Implies_" data-uid="Langly.IBivalentLogic`1.Implies*"></a>
   <h4 id="Langly_IBivalentLogic_1_Implies_System_Boolean_" data-uid="Langly.IBivalentLogic`1.Implies(System.Boolean)">Implies(Boolean)</h4>
@@ -398,7 +359,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IBivalentLogic_1_NAnd__0_.md&amp;value=---%0Auid%3A%20Langly.IBivalentLogic%601.NAnd(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Logician/IBivalentLogic.cs/#L26">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Logician/IBivalentLogic.cs/#L16">View Source</a>
   </span>
   <a id="Langly_IBivalentLogic_1_NAnd_" data-uid="Langly.IBivalentLogic`1.NAnd*"></a>
   <h4 id="Langly_IBivalentLogic_1_NAnd__0_" data-uid="Langly.IBivalentLogic`1.NAnd(`0)">NAnd(T)</h4>
@@ -446,7 +407,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IBivalentLogic_1_NAnd_System_Boolean_.md&amp;value=---%0Auid%3A%20Langly.IBivalentLogic%601.NAnd(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Logician/IBivalentLogic.cs/#L31">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Logician/IBivalentLogic.cs/#L21">View Source</a>
   </span>
   <a id="Langly_IBivalentLogic_1_NAnd_" data-uid="Langly.IBivalentLogic`1.NAnd*"></a>
   <h4 id="Langly_IBivalentLogic_1_NAnd_System_Boolean_" data-uid="Langly.IBivalentLogic`1.NAnd(System.Boolean)">NAnd(Boolean)</h4>
@@ -494,7 +455,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IBivalentLogic_1_NOr__0_.md&amp;value=---%0Auid%3A%20Langly.IBivalentLogic%601.NOr(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Logician/IBivalentLogic.cs/#L46">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Logician/IBivalentLogic.cs/#L31">View Source</a>
   </span>
   <a id="Langly_IBivalentLogic_1_NOr_" data-uid="Langly.IBivalentLogic`1.NOr*"></a>
   <h4 id="Langly_IBivalentLogic_1_NOr__0_" data-uid="Langly.IBivalentLogic`1.NOr(`0)">NOr(T)</h4>
@@ -542,7 +503,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IBivalentLogic_1_NOr_System_Boolean_.md&amp;value=---%0Auid%3A%20Langly.IBivalentLogic%601.NOr(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Logician/IBivalentLogic.cs/#L51">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Logician/IBivalentLogic.cs/#L36">View Source</a>
   </span>
   <a id="Langly_IBivalentLogic_1_NOr_" data-uid="Langly.IBivalentLogic`1.NOr*"></a>
   <h4 id="Langly_IBivalentLogic_1_NOr_System_Boolean_" data-uid="Langly.IBivalentLogic`1.NOr(System.Boolean)">NOr(Boolean)</h4>
@@ -587,89 +548,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IBivalentLogic_1_Not.md&amp;value=---%0Auid%3A%20Langly.IBivalentLogic%601.Not%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Logician/IBivalentLogic.cs/#L11">View Source</a>
-  </span>
-  <a id="Langly_IBivalentLogic_1_Not_" data-uid="Langly.IBivalentLogic`1.Not*"></a>
-  <h4 id="Langly_IBivalentLogic_1_Not" data-uid="Langly.IBivalentLogic`1.Not">Not()</h4>
-  <div class="markdown level1 summary"><p>Logical negation; not.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">T Not()</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">T</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IBivalentLogic_1_Or__0_.md&amp;value=---%0Auid%3A%20Langly.IBivalentLogic%601.Or(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Logician/IBivalentLogic.cs/#L36">View Source</a>
-  </span>
-  <a id="Langly_IBivalentLogic_1_Or_" data-uid="Langly.IBivalentLogic`1.Or*"></a>
-  <h4 id="Langly_IBivalentLogic_1_Or__0_" data-uid="Langly.IBivalentLogic`1.Or(`0)">Or(T)</h4>
-  <div class="markdown level1 summary"><p>Logical inclusion; or.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">T Or(T other)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">T</span></td>
-        <td><span class="parametername">other</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">T</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IBivalentLogic_1_Or_System_Boolean_.md&amp;value=---%0Auid%3A%20Langly.IBivalentLogic%601.Or(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Logician/IBivalentLogic.cs/#L41">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Logician/IBivalentLogic.cs/#L26">View Source</a>
   </span>
   <a id="Langly_IBivalentLogic_1_Or_" data-uid="Langly.IBivalentLogic`1.Or*"></a>
   <h4 id="Langly_IBivalentLogic_1_Or_System_Boolean_" data-uid="Langly.IBivalentLogic`1.Or(System.Boolean)">Or(Boolean)</h4>
@@ -717,7 +599,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IBivalentLogic_1_XNOr__0_.md&amp;value=---%0Auid%3A%20Langly.IBivalentLogic%601.XNOr(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Logician/IBivalentLogic.cs/#L66">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Logician/IBivalentLogic.cs/#L46">View Source</a>
   </span>
   <a id="Langly_IBivalentLogic_1_XNOr_" data-uid="Langly.IBivalentLogic`1.XNOr*"></a>
   <h4 id="Langly_IBivalentLogic_1_XNOr__0_" data-uid="Langly.IBivalentLogic`1.XNOr(`0)">XNOr(T)</h4>
@@ -765,7 +647,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IBivalentLogic_1_XNOr_System_Boolean_.md&amp;value=---%0Auid%3A%20Langly.IBivalentLogic%601.XNOr(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Logician/IBivalentLogic.cs/#L71">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Logician/IBivalentLogic.cs/#L51">View Source</a>
   </span>
   <a id="Langly_IBivalentLogic_1_XNOr_" data-uid="Langly.IBivalentLogic`1.XNOr*"></a>
   <h4 id="Langly_IBivalentLogic_1_XNOr_System_Boolean_" data-uid="Langly.IBivalentLogic`1.XNOr(System.Boolean)">XNOr(Boolean)</h4>
@@ -810,58 +692,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IBivalentLogic_1_XOr__0_.md&amp;value=---%0Auid%3A%20Langly.IBivalentLogic%601.XOr(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Logician/IBivalentLogic.cs/#L56">View Source</a>
-  </span>
-  <a id="Langly_IBivalentLogic_1_XOr_" data-uid="Langly.IBivalentLogic`1.XOr*"></a>
-  <h4 id="Langly_IBivalentLogic_1_XOr__0_" data-uid="Langly.IBivalentLogic`1.XOr(`0)">XOr(T)</h4>
-  <div class="markdown level1 summary"><p>Logical exclusion; either-or.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">T XOr(T other)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">T</span></td>
-        <td><span class="parametername">other</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">T</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IBivalentLogic_1_XOr_System_Boolean_.md&amp;value=---%0Auid%3A%20Langly.IBivalentLogic%601.XOr(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Logician/IBivalentLogic.cs/#L61">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Logician/IBivalentLogic.cs/#L41">View Source</a>
   </span>
   <a id="Langly_IBivalentLogic_1_XOr_" data-uid="Langly.IBivalentLogic`1.XOr*"></a>
   <h4 id="Langly_IBivalentLogic_1_XOr_System_Boolean_" data-uid="Langly.IBivalentLogic`1.XOr(System.Boolean)">XOr(Boolean)</h4>

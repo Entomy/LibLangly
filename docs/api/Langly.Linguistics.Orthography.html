@@ -85,6 +85,11 @@
   </div>
   <div classs="implements">
     <h5>Implements</h5>
+    <div><a class="xref" href="Langly.IConjoinable-1.html">IConjoinable</a>&lt;<a class="xref" href="Langly.DataStructures.Sets.Set-1.html">Set</a>&lt;<a class="xref" href="Langly.Glyph.html">Glyph</a>&gt;&gt;</div>
+    <div><a class="xref" href="Langly.IExcludable-1.html">IExcludable</a>&lt;<a class="xref" href="Langly.DataStructures.Sets.Set-1.html">Set</a>&lt;<a class="xref" href="Langly.Glyph.html">Glyph</a>&gt;&gt;</div>
+    <div><a class="xref" href="Langly.IIncludable-1.html">IIncludable</a>&lt;<a class="xref" href="Langly.DataStructures.Sets.Set-1.html">Set</a>&lt;<a class="xref" href="Langly.Glyph.html">Glyph</a>&gt;&gt;</div>
+    <div><a class="xref" href="Langly.INegatable-1.html">INegatable</a>&lt;<a class="xref" href="Langly.DataStructures.Sets.Set-1.html">Set</a>&lt;<a class="xref" href="Langly.Glyph.html">Glyph</a>&gt;&gt;</div>
+    <div><a class="xref" href="Langly.ISubtractable-1.html">ISubtractable</a>&lt;<a class="xref" href="Langly.DataStructures.Sets.Set-1.html">Set</a>&lt;<a class="xref" href="Langly.Glyph.html">Glyph</a>&gt;&gt;</div>
     <div><a class="xref" href="Langly.IContainable-1.html">IContainable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</div>
     <div><a class="xref" href="Langly.IContainable-1.html">IContainable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a>&gt;</div>
     <div><a class="xref" href="Langly.IContainable-1.html">IContainable</a>&lt;<a class="xref" href="Langly.Glyph.html">Glyph</a>&gt;</div>
@@ -248,7 +253,22 @@
       <a class="xref" href="Langly.DataStructures.Sets.Set-1.html#Langly_DataStructures_Sets_Set_1_Universe">Set&lt;Glyph&gt;.Universe</a>
     </div>
     <div>
+      <a class="xref" href="Langly.DataStructures.Sets.Set-1.html#Langly_DataStructures_Sets_Set_1_Langly_IConjoinable_Langly_DataStructures_Sets_Set_TElement___And_Langly_DataStructures_Sets_Set__0__">Set&lt;Glyph&gt;.IConjoinable&lt;Set&lt;Glyph&gt;&gt;.And(Set&lt;Glyph&gt;)</a>
+    </div>
+    <div>
       <a class="xref" href="Langly.DataStructures.Sets.Set-1.html#Langly_DataStructures_Sets_Set_1_Langly_IContainable_TElement__Contains__0_">Set&lt;Glyph&gt;.IContainable&lt;Glyph&gt;.Contains(Glyph)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.DataStructures.Sets.Set-1.html#Langly_DataStructures_Sets_Set_1_Langly_INegatable_Langly_DataStructures_Sets_Set_TElement___Not">Set&lt;Glyph&gt;.INegatable&lt;Set&lt;Glyph&gt;&gt;.Not()</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.DataStructures.Sets.Set-1.html#Langly_DataStructures_Sets_Set_1_Langly_IIncludable_Langly_DataStructures_Sets_Set_TElement___Or_Langly_DataStructures_Sets_Set__0__">Set&lt;Glyph&gt;.IIncludable&lt;Set&lt;Glyph&gt;&gt;.Or(Set&lt;Glyph&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.DataStructures.Sets.Set-1.html#Langly_DataStructures_Sets_Set_1_Langly_ISubtractable_Langly_DataStructures_Sets_Set_TElement___Subtract_Langly_DataStructures_Sets_Set__0__">Set&lt;Glyph&gt;.ISubtractable&lt;Set&lt;Glyph&gt;&gt;.Subtract(Set&lt;Glyph&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.DataStructures.Sets.Set-1.html#Langly_DataStructures_Sets_Set_1_Langly_IExcludable_Langly_DataStructures_Sets_Set_TElement___XOr_Langly_DataStructures_Sets_Set__0__">Set&lt;Glyph&gt;.IExcludable&lt;Set&lt;Glyph&gt;&gt;.XOr(Set&lt;Glyph&gt;)</a>
     </div>
     <div>
       <a class="xref" href="Langly.DataStructures.Sets.Set-1.html#Langly_DataStructures_Sets_Set_1_Difference_Langly_DataStructures_Sets_Set__0__">Set&lt;Glyph&gt;.Difference(Set&lt;Glyph&gt;)</a>
@@ -288,7 +308,7 @@
   <h6><strong>Assembly</strong>: Stringier.dll</h6>
   <h5 id="Langly_Linguistics_Orthography_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class Orthography : Category, IContainable&lt;char&gt;, IContainable&lt;Rune&gt;, IContainable&lt;Glyph&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class Orthography : Category, IConjoinable&lt;Set&lt;Glyph&gt;&gt;, IExcludable&lt;Set&lt;Glyph&gt;&gt;, IIncludable&lt;Set&lt;Glyph&gt;&gt;, INegatable&lt;Set&lt;Glyph&gt;&gt;, ISubtractable&lt;Set&lt;Glyph&gt;&gt;, IContainable&lt;char&gt;, IContainable&lt;Rune&gt;, IContainable&lt;Glyph&gt;</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -402,8 +422,7 @@
   </span>
   <a id="Langly_Linguistics_Orthography_Contains_" data-uid="Langly.Linguistics.Orthography.Contains*"></a>
   <h4 id="Langly_Linguistics_Orthography_Contains_Langly_Glyph_" data-uid="Langly.Linguistics.Orthography.Contains(Langly.Glyph)">Contains(Glyph)</h4>
-  <div class="markdown level1 summary"><p>Determines whether a UNICODE grapheme cluster is categorized within this <a class="xref" href="Langly.Category.html">Category</a>.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -422,8 +441,7 @@
       <tr>
         <td><a class="xref" href="Langly.Glyph.html">Glyph</a></td>
         <td><span class="parametername">element</span></td>
-        <td><p>The UNICODE grapheme cluster.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -438,8 +456,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">value</code> is in this <a class="xref" href="Langly.Category.html">Category</a>; otherwise, <span class="xref">false</span>.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -454,8 +471,7 @@
   </span>
   <a id="Langly_Linguistics_Orthography_Contains_" data-uid="Langly.Linguistics.Orthography.Contains*"></a>
   <h4 id="Langly_Linguistics_Orthography_Contains_System_Char_" data-uid="Langly.Linguistics.Orthography.Contains(System.Char)">Contains(Char)</h4>
-  <div class="markdown level1 summary"><p>Determines whether a UTF-16 code unit. is categorized within this <a class="xref" href="Langly.Category.html">Category</a>.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -474,8 +490,7 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a></td>
         <td><span class="parametername">element</span></td>
-        <td><p>The UTF-16 code unit</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -490,8 +505,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">element</code> is in this <a class="xref" href="Langly.Category.html">Category</a>; otherwise, <span class="xref">false</span>.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -506,8 +520,7 @@
   </span>
   <a id="Langly_Linguistics_Orthography_Contains_" data-uid="Langly.Linguistics.Orthography.Contains*"></a>
   <h4 id="Langly_Linguistics_Orthography_Contains_System_Text_Rune_" data-uid="Langly.Linguistics.Orthography.Contains(System.Text.Rune)">Contains(Rune)</h4>
-  <div class="markdown level1 summary"><p>Determines whether a UNICODE character is categorized within this <a class="xref" href="Langly.Category.html">Category</a>.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -526,8 +539,7 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a></td>
         <td><span class="parametername">element</span></td>
-        <td><p>The UNICODE character.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -542,8 +554,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">element</code> is in this <a class="xref" href="Langly.Category.html">Category</a>; otherwise, <span class="xref">false</span>.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -1032,6 +1043,21 @@
     </tbody>
   </table>
   <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Langly.IConjoinable-1.html">IConjoinable&lt;TSelf&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IExcludable-1.html">IExcludable&lt;TSelf&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IIncludable-1.html">IIncludable&lt;TSelf&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.INegatable-1.html">INegatable&lt;TSelf&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.ISubtractable-1.html">ISubtractable&lt;TSelf&gt;</a>
+  </div>
   <div>
       <a class="xref" href="Langly.IContainable-1.html">IContainable&lt;TElement&gt;</a>
   </div>

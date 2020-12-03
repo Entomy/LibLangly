@@ -17,6 +17,8 @@ module internal Bindings =
 
     let inline Difference< ^t, ^a, ^b, ^c when (^t or ^a) : (static member Subtract : ^a * ^b -> ^c)> first second = ((^t or ^a) : (static member Subtract : ^a * ^b -> ^c)(first, second))
 
+    let inline Divide< ^t, ^a, ^b, ^c when (^t or ^a) : (static member Divide : ^a * ^b -> ^c)> first second = ((^t or ^a) : (static member Divide : ^a * ^b -> ^c)(first, second))
+
     let inline Enqueue< ^t, ^a, ^b when (^t or ^a) : (static member Enqueue : ^a * ^b -> unit)> collection elements = ((^t or ^a) : (static member Enqueue : ^a * ^b -> unit)(collection, elements))
 
     let inline Equivalent< ^t, ^a, ^b, ^c when (^t or ^a) : (static member Equivalent : ^a * ^b -> ^c)> first second = ((^t or ^a) : (static member Equivalent : ^a * ^b -> ^c)(first, second))
@@ -34,6 +36,8 @@ module internal Bindings =
     let inline Insert< ^t, ^a, ^b, ^c when (^t or ^a) : (static member Insert : ^a * ^b * ^c -> unit)> collection index element = ((^t or ^a) : (static member Insert : ^a * ^b * ^c -> unit)(collection, index, element))
 
     let inline Map< ^t, ^a, ^b when (^t or ^a) : (static member Map : ^a * ^b -> unit)> collection func = ((^t or ^a) : (static member Map : ^a * ^b -> unit)(collection, func))
+
+    let inline Multiply< ^t, ^a, ^b, ^c when (^t or ^a) : (static member Multiply : ^a * ^b -> ^c)> first second = ((^t or ^a) : (static member Multiply : ^a * ^b -> ^c)(first, second))
 
     let inline Necessary< ^t, ^a when (^t or ^a) : (static member Necessary : ^a -> bool)> value = ((^t or ^a) : (static member Necessary : ^a -> bool)(value))
 
@@ -54,6 +58,8 @@ module internal Bindings =
     let inline Resize< ^t, ^a when (^t or ^a) : (static member Resize : ^a * nativeint -> unit)> collection capacity = ((^t or ^a) : (static member Resize : ^a * nativeint -> unit)(collection, capacity))
 
     let inline Shrink< ^t, ^a when (^t or ^a) : (static member Shrink : ^a -> unit)> collection = ((^t or ^a) : (static member Shrink : ^a -> unit)(collection))
+
+    let inline Sum< ^t, ^a, ^b, ^c when (^t or ^a) : (static member Add : ^a * ^b -> ^c)> first second = ((^t or ^a) : (static member Add : ^a * ^b -> ^c)(first, second))
 
     let inline TryRead< ^t, ^a, ^b, ^c when (^t or ^a) : (static member TryRead : ^a -> bool * ^b * ^c)> collection = ((^t or ^a) : (static member TryRead : ^a -> bool * ^b * ^c)(collection))
 

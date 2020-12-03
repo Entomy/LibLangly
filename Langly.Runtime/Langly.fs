@@ -50,10 +50,25 @@ module Functions =
         |> Not<TraitExtensions, LogicExtensions, _>
 
     /// <summary>
+    /// Addition; summation
+    /// </summary>
+    let inline (+) (left) (right) = Sum<TraitExtensions, _, _, _> left right
+
+    /// <summary>
     /// Subtraction; difference
     /// </summary>
     let inline (-) (left) (right) = Difference<TraitExtensions, _, _, _> left right
         
+    /// <summary>
+    /// Multiplication; scaling; times
+    /// </summary>
+    let inline (*) (left) (right) = Multiply<TraitExtensions, _, _, _> left right
+
+    /// <summary>
+    /// Divide
+    /// </summary>
+    let inline (/) (left) (right) = Divide<TraitExtensions, _, _, _> left right
+
     /// <summary>
     /// Adds the elements into the collection.
     /// </summary>

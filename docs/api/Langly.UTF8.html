@@ -121,7 +121,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_UTF8_BOM.md&amp;value=---%0Auid%3A%20Langly.UTF8.BOM%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Encodings/UTF8.cs/#L16">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Encodings/UTF8.cs/#L17">View Source</a>
   </span>
   <a id="Langly_UTF8_BOM_" data-uid="Langly.UTF8.BOM*"></a>
   <h4 id="Langly_UTF8_BOM" data-uid="Langly.UTF8.BOM">BOM</h4>
@@ -154,7 +154,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_UTF8_Decode_System_Byte_.md&amp;value=---%0Auid%3A%20Langly.UTF8.Decode(System.Byte)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Encodings/UTF8.cs/#L23">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Encodings/UTF8.cs/#L24">View Source</a>
   </span>
   <a id="Langly_UTF8_Decode_" data-uid="Langly.UTF8.Decode*"></a>
   <h4 id="Langly_UTF8_Decode_System_Byte_" data-uid="Langly.UTF8.Decode(System.Byte)">Decode(Byte)</h4>
@@ -201,10 +201,67 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_UTF8_Decode_System_Byte__System_Int32_.md&amp;value=---%0Auid%3A%20Langly.UTF8.Decode(System.Byte*%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Encodings/UTF8.cs/#L159">View Source</a>
+  </span>
+  <a id="Langly_UTF8_Decode_" data-uid="Langly.UTF8.Decode*"></a>
+  <h4 id="Langly_UTF8_Decode_System_Byte__System_Int32_" data-uid="Langly.UTF8.Decode(System.Byte*,System.Int32)">Decode(Byte*, Int32)</h4>
+  <div class="markdown level1 summary"><p>Decode the UTF-8 sequence into a sequence of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public static ReadOnlySpan&lt;Rune&gt; Decode(byte *bytes, int length)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>*</td>
+        <td><span class="parametername">bytes</span></td>
+        <td><p>The bytes to decode.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">length</span></td>
+        <td><p>The length of the <code data-dev-comment-type="paramref" class="paramref">bytes</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a>&gt;</td>
+        <td><p>The decoded <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a>s.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_UTF8_Decode_System_Byte_System_Byte_.md&amp;value=---%0Auid%3A%20Langly.UTF8.Decode(System.Byte%2CSystem.Byte)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Encodings/UTF8.cs/#L31">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Encodings/UTF8.cs/#L32">View Source</a>
   </span>
   <a id="Langly_UTF8_Decode_" data-uid="Langly.UTF8.Decode*"></a>
   <h4 id="Langly_UTF8_Decode_System_Byte_System_Byte_" data-uid="Langly.UTF8.Decode(System.Byte,System.Byte)">Decode(Byte, Byte)</h4>
@@ -260,7 +317,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_UTF8_Decode_System_Byte_System_Byte_System_Byte_.md&amp;value=---%0Auid%3A%20Langly.UTF8.Decode(System.Byte%2CSystem.Byte%2CSystem.Byte)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Encodings/UTF8.cs/#L54">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Encodings/UTF8.cs/#L55">View Source</a>
   </span>
   <a id="Langly_UTF8_Decode_" data-uid="Langly.UTF8.Decode*"></a>
   <h4 id="Langly_UTF8_Decode_System_Byte_System_Byte_System_Byte_" data-uid="Langly.UTF8.Decode(System.Byte,System.Byte,System.Byte)">Decode(Byte, Byte, Byte)</h4>
@@ -322,7 +379,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_UTF8_Decode_System_Byte_System_Byte_System_Byte_System_Byte_.md&amp;value=---%0Auid%3A%20Langly.UTF8.Decode(System.Byte%2CSystem.Byte%2CSystem.Byte%2CSystem.Byte)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Encodings/UTF8.cs/#L83">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Encodings/UTF8.cs/#L84">View Source</a>
   </span>
   <a id="Langly_UTF8_Decode_" data-uid="Langly.UTF8.Decode*"></a>
   <h4 id="Langly_UTF8_Decode_System_Byte_System_Byte_System_Byte_System_Byte_" data-uid="Langly.UTF8.Decode(System.Byte,System.Byte,System.Byte,System.Byte)">Decode(Byte, Byte, Byte, Byte)</h4>
@@ -390,7 +447,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_UTF8_Decode_System_Byte___.md&amp;value=---%0Auid%3A%20Langly.UTF8.Decode(System.Byte%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Encodings/UTF8.cs/#L114">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Encodings/UTF8.cs/#L115">View Source</a>
   </span>
   <a id="Langly_UTF8_Decode_" data-uid="Langly.UTF8.Decode*"></a>
   <h4 id="Langly_UTF8_Decode_System_Byte___" data-uid="Langly.UTF8.Decode(System.Byte[])">Decode(Byte[])</h4>
@@ -414,7 +471,107 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>[]</td>
         <td><span class="parametername">bytes</span></td>
-        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.array">Array</a> of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a> to decode.</p>
+        <td><p>The bytes to decode.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a>&gt;</td>
+        <td><p>The decoded <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a>s.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_UTF8_Decode_System_Memory_System_Byte__.md&amp;value=---%0Auid%3A%20Langly.UTF8.Decode(System.Memory%7BSystem.Byte%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Encodings/UTF8.cs/#L122">View Source</a>
+  </span>
+  <a id="Langly_UTF8_Decode_" data-uid="Langly.UTF8.Decode*"></a>
+  <h4 id="Langly_UTF8_Decode_System_Memory_System_Byte__" data-uid="Langly.UTF8.Decode(System.Memory{System.Byte})">Decode(Memory&lt;Byte&gt;)</h4>
+  <div class="markdown level1 summary"><p>Decode the UTF-8 sequence into a sequence of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ReadOnlySpan&lt;Rune&gt; Decode(Memory&lt;byte&gt; bytes)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>&gt;</td>
+        <td><span class="parametername">bytes</span></td>
+        <td><p>The bytes to decode.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a>&gt;</td>
+        <td><p>The decoded <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a>s.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_UTF8_Decode_System_ReadOnlyMemory_System_Byte__.md&amp;value=---%0Auid%3A%20Langly.UTF8.Decode(System.ReadOnlyMemory%7BSystem.Byte%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Encodings/UTF8.cs/#L129">View Source</a>
+  </span>
+  <a id="Langly_UTF8_Decode_" data-uid="Langly.UTF8.Decode*"></a>
+  <h4 id="Langly_UTF8_Decode_System_ReadOnlyMemory_System_Byte__" data-uid="Langly.UTF8.Decode(System.ReadOnlyMemory{System.Byte})">Decode(ReadOnlyMemory&lt;Byte&gt;)</h4>
+  <div class="markdown level1 summary"><p>Decode the UTF-8 sequence into a sequence of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ReadOnlySpan&lt;Rune&gt; Decode(ReadOnlyMemory&lt;byte&gt; bytes)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>&gt;</td>
+        <td><span class="parametername">bytes</span></td>
+        <td><p>The bytes to decode.</p>
 </td>
       </tr>
     </tbody>
@@ -440,7 +597,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_UTF8_Decode_System_ReadOnlySpan_System_Byte__.md&amp;value=---%0Auid%3A%20Langly.UTF8.Decode(System.ReadOnlySpan%7BSystem.Byte%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Encodings/UTF8.cs/#L124">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Encodings/UTF8.cs/#L143">View Source</a>
   </span>
   <a id="Langly_UTF8_Decode_" data-uid="Langly.UTF8.Decode*"></a>
   <h4 id="Langly_UTF8_Decode_System_ReadOnlySpan_System_Byte__" data-uid="Langly.UTF8.Decode(System.ReadOnlySpan{System.Byte})">Decode(ReadOnlySpan&lt;Byte&gt;)</h4>
@@ -464,7 +621,7 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>&gt;</td>
         <td><span class="parametername">bytes</span></td>
-        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.array">Array</a> of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a> to decode.</p>
+        <td><p>The bytes to decode.</p>
 </td>
       </tr>
     </tbody>
@@ -487,10 +644,166 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_UTF8_Decode_System_Span_System_Byte__.md&amp;value=---%0Auid%3A%20Langly.UTF8.Decode(System.Span%7BSystem.Byte%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Encodings/UTF8.cs/#L136">View Source</a>
+  </span>
+  <a id="Langly_UTF8_Decode_" data-uid="Langly.UTF8.Decode*"></a>
+  <h4 id="Langly_UTF8_Decode_System_Span_System_Byte__" data-uid="Langly.UTF8.Decode(System.Span{System.Byte})">Decode(Span&lt;Byte&gt;)</h4>
+  <div class="markdown level1 summary"><p>Decode the UTF-8 sequence into a sequence of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ReadOnlySpan&lt;Rune&gt; Decode(Span&lt;byte&gt; bytes)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>&gt;</td>
+        <td><span class="parametername">bytes</span></td>
+        <td><p>The bytes to decode.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a>&gt;</td>
+        <td><p>The decoded <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a>s.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_UTF8_Encode_System_Memory_System_Text_Rune__.md&amp;value=---%0Auid%3A%20Langly.UTF8.Encode(System.Memory%7BSystem.Text.Rune%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Encodings/UTF8.cs/#L241">View Source</a>
+  </span>
+  <a id="Langly_UTF8_Encode_" data-uid="Langly.UTF8.Encode*"></a>
+  <h4 id="Langly_UTF8_Encode_System_Memory_System_Text_Rune__" data-uid="Langly.UTF8.Encode(System.Memory{System.Text.Rune})">Encode(Memory&lt;Rune&gt;)</h4>
+  <div class="markdown level1 summary"><p>Encodes the <code data-dev-comment-type="paramref" class="paramref">runes</code> into a UTF-8 sequence.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ReadOnlySpan&lt;byte&gt; Encode(Memory&lt;Rune&gt; runes)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a>&gt;</td>
+        <td><span class="parametername">runes</span></td>
+        <td><p>The sequence of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a> to encode.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>&gt;</td>
+        <td><p>The UTF-8 sequence as an <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan&lt;T&gt;</a> of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_UTF8_Encode_System_Memory_System_Text_Rune___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Assuming both myself and Microsoft don't have any bugs in our code, this should always succeed, because <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a> uses validating constructors. However there are cases where, inside of the .NET runtime, Rune is created without validation, so, it's possible in theory.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_UTF8_Encode_System_ReadOnlyMemory_System_Text_Rune__.md&amp;value=---%0Auid%3A%20Langly.UTF8.Encode(System.ReadOnlyMemory%7BSystem.Text.Rune%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Encodings/UTF8.cs/#L251">View Source</a>
+  </span>
+  <a id="Langly_UTF8_Encode_" data-uid="Langly.UTF8.Encode*"></a>
+  <h4 id="Langly_UTF8_Encode_System_ReadOnlyMemory_System_Text_Rune__" data-uid="Langly.UTF8.Encode(System.ReadOnlyMemory{System.Text.Rune})">Encode(ReadOnlyMemory&lt;Rune&gt;)</h4>
+  <div class="markdown level1 summary"><p>Encodes the <code data-dev-comment-type="paramref" class="paramref">runes</code> into a UTF-8 sequence.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ReadOnlySpan&lt;byte&gt; Encode(ReadOnlyMemory&lt;Rune&gt; runes)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a>&gt;</td>
+        <td><span class="parametername">runes</span></td>
+        <td><p>The sequence of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a> to encode.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>&gt;</td>
+        <td><p>The UTF-8 sequence as an <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan&lt;T&gt;</a> of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_UTF8_Encode_System_ReadOnlyMemory_System_Text_Rune___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Assuming both myself and Microsoft don't have any bugs in our code, this should always succeed, because <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a> uses validating constructors. However there are cases where, inside of the .NET runtime, Rune is created without validation, so, it's possible in theory.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_UTF8_Encode_System_ReadOnlySpan_System_Text_Rune__.md&amp;value=---%0Auid%3A%20Langly.UTF8.Encode(System.ReadOnlySpan%7BSystem.Text.Rune%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Encodings/UTF8.cs/#L245">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Encodings/UTF8.cs/#L271">View Source</a>
   </span>
   <a id="Langly_UTF8_Encode_" data-uid="Langly.UTF8.Encode*"></a>
   <h4 id="Langly_UTF8_Encode_System_ReadOnlySpan_System_Text_Rune__" data-uid="Langly.UTF8.Encode(System.ReadOnlySpan{System.Text.Rune})">Encode(ReadOnlySpan&lt;Rune&gt;)</h4>
@@ -540,10 +853,63 @@
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_UTF8_Encode_System_Span_System_Text_Rune__.md&amp;value=---%0Auid%3A%20Langly.UTF8.Encode(System.Span%7BSystem.Text.Rune%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Encodings/UTF8.cs/#L261">View Source</a>
+  </span>
+  <a id="Langly_UTF8_Encode_" data-uid="Langly.UTF8.Encode*"></a>
+  <h4 id="Langly_UTF8_Encode_System_Span_System_Text_Rune__" data-uid="Langly.UTF8.Encode(System.Span{System.Text.Rune})">Encode(Span&lt;Rune&gt;)</h4>
+  <div class="markdown level1 summary"><p>Encodes the <code data-dev-comment-type="paramref" class="paramref">runes</code> into a UTF-8 sequence.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ReadOnlySpan&lt;byte&gt; Encode(Span&lt;Rune&gt; runes)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a>&gt;</td>
+        <td><span class="parametername">runes</span></td>
+        <td><p>The sequence of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a> to encode.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>&gt;</td>
+        <td><p>The UTF-8 sequence as an <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan&lt;T&gt;</a> of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_UTF8_Encode_System_Span_System_Text_Rune___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Assuming both myself and Microsoft don't have any bugs in our code, this should always succeed, because <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a> uses validating constructors. However there are cases where, inside of the .NET runtime, Rune is created without validation, so, it's possible in theory.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_UTF8_Encode_System_Text_Rune_.md&amp;value=---%0Auid%3A%20Langly.UTF8.Encode(System.Text.Rune)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Encodings/UTF8.cs/#L171">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Encodings/UTF8.cs/#L170">View Source</a>
   </span>
   <a id="Langly_UTF8_Encode_" data-uid="Langly.UTF8.Encode*"></a>
   <h4 id="Langly_UTF8_Encode_System_Text_Rune_" data-uid="Langly.UTF8.Encode(System.Text.Rune)">Encode(Rune)</h4>
@@ -596,7 +962,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_UTF8_Encode_System_Text_Rune__System_Int32_.md&amp;value=---%0Auid%3A%20Langly.UTF8.Encode(System.Text.Rune*%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Encodings/UTF8.cs/#L263">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Encodings/UTF8.cs/#L289">View Source</a>
   </span>
   <a id="Langly_UTF8_Encode_" data-uid="Langly.UTF8.Encode*"></a>
   <h4 id="Langly_UTF8_Encode_System_Text_Rune__System_Int32_" data-uid="Langly.UTF8.Encode(System.Text.Rune*,System.Int32)">Encode(Rune*, Int32)</h4>
@@ -656,7 +1022,7 @@ public static ReadOnlySpan&lt;byte&gt; Encode(Rune*runes, int length)</code></pr
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_UTF8_Encode_System_Text_Rune_System_Byte__System_Byte__System_Byte__System_Byte__.md&amp;value=---%0Auid%3A%20Langly.UTF8.Encode(System.Text.Rune%2CSystem.Byte%40%2CSystem.Byte%40%2CSystem.Byte%40%2CSystem.Byte%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Encodings/UTF8.cs/#L189">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Encodings/UTF8.cs/#L188">View Source</a>
   </span>
   <a id="Langly_UTF8_Encode_" data-uid="Langly.UTF8.Encode*"></a>
   <h4 id="Langly_UTF8_Encode_System_Text_Rune_System_Byte__System_Byte__System_Byte__System_Byte__" data-uid="Langly.UTF8.Encode(System.Text.Rune,System.Byte@,System.Byte@,System.Byte@,System.Byte@)">Encode(Rune, out Byte, out Byte, out Byte, out Byte)</h4>
@@ -717,7 +1083,7 @@ public static ReadOnlySpan&lt;byte&gt; Encode(Rune*runes, int length)</code></pr
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_UTF8_Encode_System_Text_Rune___.md&amp;value=---%0Auid%3A%20Langly.UTF8.Encode(System.Text.Rune%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Encodings/UTF8.cs/#L232">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Encodings/UTF8.cs/#L231">View Source</a>
   </span>
   <a id="Langly_UTF8_Encode_" data-uid="Langly.UTF8.Encode*"></a>
   <h4 id="Langly_UTF8_Encode_System_Text_Rune___" data-uid="Langly.UTF8.Encode(System.Text.Rune[])">Encode(Rune[])</h4>
@@ -770,7 +1136,7 @@ public static ReadOnlySpan&lt;byte&gt; Encode(Rune*runes, int length)</code></pr
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_UTF8_IsFirstByte_System_Byte_.md&amp;value=---%0Auid%3A%20Langly.UTF8.IsFirstByte(System.Byte)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Encodings/UTF8.cs/#L274">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Encodings/UTF8.cs/#L297">View Source</a>
   </span>
   <a id="Langly_UTF8_IsFirstByte_" data-uid="Langly.UTF8.IsFirstByte*"></a>
   <h4 id="Langly_UTF8_IsFirstByte_System_Byte_" data-uid="Langly.UTF8.IsFirstByte(System.Byte)">IsFirstByte(Byte)</h4>
@@ -820,7 +1186,7 @@ public static ReadOnlySpan&lt;byte&gt; Encode(Rune*runes, int length)</code></pr
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_UTF8_NextByteRange_System_Byte_System_Byte__System_Byte__.md&amp;value=---%0Auid%3A%20Langly.UTF8.NextByteRange(System.Byte%2CSystem.Byte%40%2CSystem.Byte%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Encodings/UTF8.cs/#L285">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Encodings/UTF8.cs/#L308">View Source</a>
   </span>
   <a id="Langly_UTF8_NextByteRange_" data-uid="Langly.UTF8.NextByteRange*"></a>
   <h4 id="Langly_UTF8_NextByteRange_System_Byte_System_Byte__System_Byte__" data-uid="Langly.UTF8.NextByteRange(System.Byte,System.Byte@,System.Byte@)">NextByteRange(Byte, out Byte, out Byte)</h4>
@@ -869,7 +1235,7 @@ public static ReadOnlySpan&lt;byte&gt; Encode(Rune*runes, int length)</code></pr
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_UTF8_SequenceLength_System_Byte_.md&amp;value=---%0Auid%3A%20Langly.UTF8.SequenceLength(System.Byte)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Encodings/UTF8.cs/#L309">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Encodings/UTF8.cs/#L332">View Source</a>
   </span>
   <a id="Langly_UTF8_SequenceLength_" data-uid="Langly.UTF8.SequenceLength*"></a>
   <h4 id="Langly_UTF8_SequenceLength_System_Byte_" data-uid="Langly.UTF8.SequenceLength(System.Byte)">SequenceLength(Byte)</h4>
@@ -925,7 +1291,7 @@ public static ReadOnlySpan&lt;byte&gt; Encode(Rune*runes, int length)</code></pr
                     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_UTF8.md&amp;value=---%0Auid%3A%20Langly.UTF8%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Encodings/UTF8.cs/#L12" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier/Encodings/UTF8.cs/#L13" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
