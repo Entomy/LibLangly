@@ -8,26 +8,26 @@
 
 **LibLangly** is the combination of a collection of my projects that were originally in separate repos but were conceptually part of the same thing. Each component forms part of the standard library and runtime library of another language called **Langly**. However, rather unusually, this runtime is available to other consumers, such as C# or F#. In fact, if you've been using any of these component libraries already, you were using another languages runtime and didn't even know it! As this project grew and became more fleshed out, it became apparent everything needed to be merged into a single monorepo, with better coordination.
 
-## Collectathon [![Nuget](https://img.shields.io/nuget/dt/Collectathon?logo=Nuget)](https://www.nuget.org/packages/Collectathon/) [![Nuget](https://img.shields.io/nuget/dt/Collectathon.FSharp?label=F%23&logo=nuget)](https://www.nuget.org/packages/Collectathon.FSharp/)
+## Collectathon [![Nuget](https://img.shields.io/nuget/dt/Collectathon?logo=Nuget)](https://www.nuget.org/packages/Collectathon/)
 
 A reimagining of collections libraries. Utilizes a traits API, and a very high degree of code sharing. Doubles as both implementations of various data structures, and a framework for the creation of additional data structures. Unlike System.Collections* or C5, Collectathon actually tackles complex data structures, because you shouldn't have to.
 
-## Consolator [![Nuget](https://img.shields.io/nuget/dt/Consolator?logo=Nuget)](https://www.nuget.org/packages/Consolator/) [![Nuget](https://img.shields.io/nuget/dt/Consolator.FSharp?label=F%23&logo=nuget)](https://www.nuget.org/packages/Consolator.FSharp/)
+## Consolator [![Nuget](https://img.shields.io/nuget/dt/Consolator?logo=Nuget)](https://www.nuget.org/packages/Consolator/)
 
 A replacement Console API with superior usability.
 
-## Defender [![Nuget](https://img.shields.io/nuget/dt/Defender?logo=Nuget)](https://www.nuget.org/packages/Defender/) [![Nuget](https://img.shields.io/nuget/dt/Defender.FSharp?label=F%23&logo=nuget)](https://www.nuget.org/packages/Defender.FSharp/)
+## Defender [![Nuget](https://img.shields.io/nuget/dt/Defender?logo=Nuget)](https://www.nuget.org/packages/Defender/)
 
 Defensive code should be easy, and it shouldn't weigh your code down.
 
-## Logician [![Nuget](https://img.shields.io/nuget/dt/Logician?logo=Nuget)](https://www.nuget.org/packages/Logician/) [![Nuget](https://img.shields.io/nuget/dt/Logician.FSharp?label=F%23&logo=nuget)](https://www.nuget.org/packages/Logician.FSharp/)
+## Logician [![Nuget](https://img.shields.io/nuget/dt/Logician?logo=Nuget)](https://www.nuget.org/packages/Logician/)
 
 Provides polyvalent (higher order) logics for more sophisticated decision problems.
 
-## Philosoft [![Nuget](https://img.shields.io/nuget/dt/Philosoft?logo=Nuget)](https://www.nuget.org/packages/Philosoft/) [![Nuget](https://img.shields.io/nuget/dt/Philosoft.FSharp?label=F%23&logo=nuget)](https://www.nuget.org/packages/Philosoft.FSharp/)
+## Philosoft [![Nuget](https://img.shields.io/nuget/dt/Philosoft?logo=Nuget)](https://www.nuget.org/packages/Philosoft/)
 
 Think about your code differently. Love your code.
 
-## Stringier [![Nuget](https://img.shields.io/nuget/dt/Stringier?logo=Nuget)](https://www.nuget.org/packages/Stringier/) [![Nuget](https://img.shields.io/nuget/dt/Stringier.FSharp?label=F%23&logo=nuget)](https://www.nuget.org/packages/Stringier.FSharp/)
+## Stringier [![Nuget](https://img.shields.io/nuget/dt/Stringier?logo=Nuget)](https://www.nuget.org/packages/Stringier/)
 
 Makes strings better... stringier.
