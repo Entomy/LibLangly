@@ -3,7 +3,7 @@
 namespace Langly {
 	//Note: There's no reason to provide our own IEquatable<T> interface, but there's still useful additions that can be provided.
 
-	public static partial class Extensions {
+	public static partial class TraitExtensions {
 		public static Boolean Equals<T>(T objA, T objB) where T : IEquatable<T> {
 			if (objA is null && objB is null) {
 				return true;

@@ -13,7 +13,7 @@ namespace Langly {
 		void Insert(TIndex index, TElement element);
 	}
 
-	public static partial class Extensions {
+	public static partial class TraitExtensions {
 		/// <summary>
 		/// Insert an element into the collection at the specified index.
 		/// </summary>

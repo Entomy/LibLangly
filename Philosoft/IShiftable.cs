@@ -28,7 +28,7 @@ namespace Langly {
 		void ShiftRight(nint amount);
 	}
 
-	public static partial class Extensions {
+	public static partial class TraitExtensions {
 		/// <summary>
 		/// Shifts the <paramref name="collection"/> left one position.
 		/// </summary>

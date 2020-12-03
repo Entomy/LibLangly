@@ -81,7 +81,7 @@ namespace Langly.DataStructures.Sets {
 	/// <para>Unlike <see cref="System.Collections.Generic.ISet{T}"/> this adheres to Set Theory and Set Algebra, so its behavior should not be surprising, and existing techniques and solutions can be easily translated.</para>
 	/// </remarks>
 	[SuppressMessage("Naming", "CA1716:Identifiers should not match keywords", Justification = "Except this is literally the set from set theory...")]
-	public abstract class Set<TElement> : IContainable<TElement> where TElement : IEquatable<TElement> {
+	public abstract class Set<TElement> : IConjoinable<Set<TElement>>, IContainable<TElement>, IExcludable<Set<TElement>>, IIncludable<Set<TElement>>, INegatable<Set<TElement>>, ISubtractable<Set<TElement>> where TElement : IEquatable<TElement> {
 		/// <summary>
 		/// Singleton instance for the empty set (Ø) of <typeparamref name="TElement"/>.
 		/// </summary>
@@ -132,7 +132,22 @@ namespace Langly.DataStructures.Sets {
 		public static Set<TElement> operator |(Set<TElement> first, Set<TElement> second) => first.Union(second);
 
 		/// <inheritdoc/>
+		Set<TElement> IConjoinable<Set<TElement>>.And(Set<TElement> other) => Intersection(other);
+
+		/// <inheritdoc/>
 		Boolean IContainable<TElement>.Contains(TElement element) => Contains(element);
+
+		/// <inheritdoc/>
+		Set<TElement> INegatable<Set<TElement>>.Not() => Complement();
+
+		/// <inheritdoc/>
+		Set<TElement> IIncludable<Set<TElement>>.Or(Set<TElement> other) => Union(other);
+
+		/// <inheritdoc/>
+		Set<TElement> ISubtractable<Set<TElement>>.Subtract(Set<TElement> other) => Difference(other);
+
+		/// <inheritdoc/>
+		Set<TElement> IExcludable<Set<TElement>>.XOr(Set<TElement> other) => Disjunction(other);
 
 		/// <summary>
 		/// Returns the complement of the this collection.

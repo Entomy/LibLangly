@@ -35,7 +35,7 @@ namespace Langly {
 		TSlice Slice(nint start, nint length);
 	}
 
-	public static partial class Extensions {
+	public static partial class TraitExtensions {
 		/// <summary>
 		/// Forms a slice out of the collection.
 		/// </summary>

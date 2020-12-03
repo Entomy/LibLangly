@@ -15,7 +15,7 @@ namespace Langly {
 		ref readonly TElement Peek();
 	}
 
-	public static partial class Extensions {
+	public static partial class TraitExtensions {
 		/// <summary>
 		/// Returns the element at the beginning of the collection without removing it.
 		/// </summary>

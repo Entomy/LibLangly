@@ -83,7 +83,7 @@ namespace Langly {
 		}
 	}
 
-	public static partial class Extensions {
+	public static partial class TraitExtensions {
 		/// <summary>
 		/// Folds the collection into a single element as described by the <paramref name="func"/>.
 		/// </summary>

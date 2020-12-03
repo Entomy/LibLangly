@@ -90,7 +90,7 @@ namespace Langly {
 		}
 	}
 
-	public static partial class Extensions {
+	public static partial class TraitExtensions {
 		/// <summary>
 		/// Adds an element into the collection.
 		/// </summary>

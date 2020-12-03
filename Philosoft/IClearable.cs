@@ -9,7 +9,7 @@
 		void Clear();
 	}
 
-	public static partial class Extensions {
+	public static partial class TraitExtensions {
 		/// <summary>
 		/// Clears all items from the collection.
 		/// </summary>

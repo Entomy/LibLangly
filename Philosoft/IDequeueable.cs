@@ -25,7 +25,7 @@ namespace Langly {
 		}
 	}
 
-	public static partial class Extensions {
+	public static partial class TraitExtensions {
 		/// <summary>
 		/// Removes and returns the element from the beginning of the collection.
 		/// </summary>

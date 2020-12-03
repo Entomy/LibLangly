@@ -25,7 +25,7 @@
 		}
 	}
 
-	public static partial class Extensions {
+	public static partial class TraitExtensions {
 		/// <summary>
 		/// Removes the entry at the specified <paramref name="index"/>.
 		/// </summary>

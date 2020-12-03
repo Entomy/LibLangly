@@ -10,6 +10,7 @@
   <ItemGroup>
     <Compile Include="ArrayTests.fs" />
     <Compile Include="LogicTests.fs" />
+    <Compile Include="SetTests.fs" />
     <Compile Include="TraitTests.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
@@ -32,14 +33,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Collectathon.FSharp\Collectathon.FSharp.fsproj" />
-    <ProjectReference Include="..\Consolator.FSharp\Consolator.FSharp.fsproj" />
-    <ProjectReference Include="..\Defender.FSharp\Defender.FSharp.fsproj" />
+    <ProjectReference Include="..\Benchmarks\Benchmarks.csproj" />
     <ProjectReference Include="..\Generators\Gibberish\Gibberish.vbproj" />
-    <ProjectReference Include="..\Logician.FSharp\Logician.FSharp.fsproj" />
-    <ProjectReference Include="..\Philosoft.FSharp\Philosoft.FSharp.fsproj" />
-    <ProjectReference Include="..\Streamy.FSharp\Streamy.FSharp.fsproj" />
-    <ProjectReference Include="..\Stringier.FSharp\Stringier.FSharp.fsproj" />
+    <ProjectReference Include="..\Langly.Runtime\Langly.Runtime.fsproj" />
   </ItemGroup>
 
   <ItemGroup>

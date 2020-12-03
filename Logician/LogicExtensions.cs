@@ -2,12 +2,12 @@
 
 namespace Langly {
 	/// <summary>
-	/// Provides extension methods for the types in <see cref="Logician"/>.
+	/// Provides extension methods for the logic types in LibLangly.
 	/// </summary>
 	/// <remarks>
 	/// These, really, are just for binding purposes and orthogonality. Because all logic types are structs, and in fact required to be by the interfaces, there's no need for the null-tolerant extension pattern to be used. As such, <see cref="Boolean"/> is the only type that gains anything here. It does put everything in one consistent place for binding purposes, however.
 	/// </remarks>
-	public static class Extensions {
+	public static class LogicExtensions {
 		#region Not
 		/// <summary>
 		/// Logical negation; not.

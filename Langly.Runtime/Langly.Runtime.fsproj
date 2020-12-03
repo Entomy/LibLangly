@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<Description>The entire Langly runtime library, including F# bindings.</Description>
+		<PackageTags>langly</PackageTags>
+		<AssemblyName>Langly.Runtime</AssemblyName>
+		<!--<OtherFlags>$(OtherFlags) compiling-fslib</OtherFlags>-->
+		<PackageIcon>Logo.png</PackageIcon>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="Logo.png" Pack="true" Visible="true" PackagePath="\" />
+		<Compile Include="Bindings.fs" />
+		<Compile Include="Langly.fs" />
+		<Compile Include="Langly.DataStructures.Arrays.fs" />
+		<Compile Include="Langly.DataStructures.Sets.fs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Collectathon\Collectathon.csproj" />
+	  <ProjectReference Include="..\Consolator\Consolator.csproj" />
+	  <ProjectReference Include="..\Defender\Defender.csproj" />
+	  <ProjectReference Include="..\Logician\Logician.csproj" />
+	  <ProjectReference Include="..\Philosoft\Philosoft.csproj" />
+	  <ProjectReference Include="..\Streamy\Streamy.csproj" />
+	  <ProjectReference Include="..\Stringier\Stringier.csproj" />
+	</ItemGroup>
+
+</Project>

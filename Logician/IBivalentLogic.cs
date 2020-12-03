@@ -4,17 +4,7 @@ namespace Langly {
 	/// <summary>
 	/// Indicates the type is a logical type with at least two parts.
 	/// </summary>
-	public interface IBivalentLogic<T> : IEquatable<T> where T : struct, IBivalentLogic<T> {
-		/// <summary>
-		/// Logical negation; not.
-		/// </summary>
-		T Not();
-
-		/// <summary>
-		/// Logical conjunction; and.
-		/// </summary>
-		T And(T other);
-
+	public interface IBivalentLogic<T> : IConjoinable<T>, IEquatable<T>, IIncludable<T>, INegatable<T> where T : struct, IBivalentLogic<T> {
 		/// <summary>
 		/// Logical conjunction; and.
 		/// </summary>
@@ -33,11 +23,6 @@ namespace Langly {
 		/// <summary>
 		/// Logical inclusion; or.
 		/// </summary>
-		T Or(T other);
-
-		/// <summary>
-		/// Logical inclusion; or.
-		/// </summary>
 		T Or(Boolean other);
 
 		/// <summary>
@@ -49,11 +34,6 @@ namespace Langly {
 		/// Negated logical inclusion; nor or.
 		/// </summary>
 		T NOr(Boolean other);
-
-		/// <summary>
-		/// Logical exclusion; either-or.
-		/// </summary>
-		T XOr(T other);
 
 		/// <summary>
 		/// Logical exclusion; either-or.

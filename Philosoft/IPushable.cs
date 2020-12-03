@@ -38,7 +38,7 @@
 		}
 	}
 
-	public static partial class Extensions {
+	public static partial class TraitExtensions {
 		/// <summary>
 		/// Inserts an element at the top of the collection.
 		/// </summary>

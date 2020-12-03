@@ -13,7 +13,7 @@ namespace Langly {
 		Boolean Contains(TElement element);
 	}
 
-	public static partial class Extensions {
+	public static partial class TraitExtensions {
 		/// <summary>
 		/// Determines whether this collection contains a specific <paramref name="element"/>.
 		/// </summary>

@@ -41,7 +41,7 @@ namespace Langly {
 		void Shrink() => Resize((nint)(Capacity / φ));
 	}
 
-	public static partial class Extensions {
+	public static partial class TraitExtensions {
 		/// <summary>
 		/// Grows the collection by a computed factor.
 		/// </summary>

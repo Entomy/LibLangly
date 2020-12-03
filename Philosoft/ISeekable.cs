@@ -48,7 +48,7 @@ namespace Langly {
 		Boolean TrySeek(nint offset, [MaybeNullWhen(true), NotNullWhen(false)] out TError error);
 	}
 
-	public static partial class Extensions {
+	public static partial class TraitExtensions {
 		/// <summary>
 		/// Seeks to the <paramref name="offset"/>.
 		/// </summary>

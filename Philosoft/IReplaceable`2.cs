@@ -35,7 +35,7 @@ namespace Langly {
 		void Replace(Predicate<TOld> match, TNew newElement);
 	}
 
-	public static partial class Extensions {
+	public static partial class TraitExtensions {
 		/// <summary>
 		/// Returns a new collection in which all occurrences of the <paramref name="oldElement"/> are replaced with the <paramref name="newElement"/>.
 		/// </summary>

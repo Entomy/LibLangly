@@ -46,7 +46,7 @@ namespace Langly {
 		void Remove(Predicate<TElement> match);
 	}
 
-	public static partial class Extensions {
+	public static partial class TraitExtensions {
 		/// <summary>
 		/// Removes all instances of the <paramref name="element"/> from the collection.
 		/// </summary>

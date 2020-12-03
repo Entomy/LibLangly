@@ -12,7 +12,7 @@ namespace Langly {
 		nint Count { get; }
 	}
 
-	public static partial class Extensions {
+	public static partial class TraitExtensions {
 		/// <summary>
 		/// Gets the number of elements contained in the collection.
 		/// </summary>

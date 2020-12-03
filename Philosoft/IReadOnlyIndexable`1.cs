@@ -10,7 +10,7 @@ namespace Langly {
 	public interface IReadOnlyIndexable<TElement> : IReadOnlyIndexable<nint, TElement> {
 	}
 
-	public static partial class Extensions {
+	public static partial class TraitExtensions {
 		/// <summary>
 		/// Searches for the specified <paramref name="item"/> and returns the index of its first occurrence.
 		/// </summary>

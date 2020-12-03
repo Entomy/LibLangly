@@ -43,7 +43,7 @@ namespace Langly {
 		public Boolean TryWrite(TElement element, [MaybeNullWhen(true), NotNullWhen(false)] out TError error);
 	}
 
-	public static partial class Extensions {
+	public static partial class TraitExtensions {
 		/// <summary>
 		/// Writes a <typeparamref name="TElement"/> to the <paramref name="collection"/>.
 		/// </summary>
@@ -86,13 +86,6 @@ namespace Langly {
 				return true;
 			}
 			return collection.TryWrite(element, out error);
-		}
-
-		public static partial class Friendly {
-			public static Tuple<Boolean, TError> TryWrite<TElement, TError>([AllowNull] IWritable<TElement, TError> collection, TElement element) {
-				Boolean result = collection.TryWrite(element, out TError error);
-				return new Tuple<Boolean, TError>(result, error);
-			}
 		}
 	}
 }

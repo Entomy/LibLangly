@@ -35,7 +35,7 @@ namespace Langly {
 		public Boolean TryPeek([MaybeNullWhen(false), NotNullWhen(true)] out TElement element, [MaybeNullWhen(true), NotNullWhen(false)] out TError error);
 	}
 
-	public static partial class Extensions {
+	public static partial class TraitExtensions {
 		/// <summary>
 		/// Returns the element at the beginning of the collection without removing it.
 		/// </summary>

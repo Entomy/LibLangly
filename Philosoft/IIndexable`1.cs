@@ -25,7 +25,7 @@ namespace Langly {
 		}
 	}
 
-	public static partial class Extensions {
+	public static partial class TraitExtensions {
 		/// <summary>
 		/// Applies the <paramref name="func"/> to each element of the <paramref name="collection"/>.
 		/// </summary>

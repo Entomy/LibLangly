@@ -24,10 +24,10 @@ module BooleanTests =
 
     [<Fact>]
     let ``XOr`` () =
-        Assert.Equal(false, true ^^ true)
-        Assert.Equal(true, true ^^ false)
-        Assert.Equal(true, false ^^ true)
-        Assert.Equal(false, false ^^ false)
+        Assert.Equal(false, true <> true)
+        Assert.Equal(true, true <> false)
+        Assert.Equal(true, false <> true)
+        Assert.Equal(false, false <> false)
 
     [<Fact>]
     let ``Implies`` () =
@@ -35,6 +35,20 @@ module BooleanTests =
         Assert.Equal(false, true --> false)
         Assert.Equal(true, false --> true)
         Assert.Equal(true, false --> false)
+
+    [<Fact>]
+    let ``Equality`` () =
+        Assert.Equal(true, true == true)
+        Assert.Equal(false, true == false)
+        Assert.Equal(false, false == true)
+        Assert.Equal(true, false == false)
+
+    [<Fact>]
+    let ``Inequality`` () =
+        Assert.Equal(false, true != true)
+        Assert.Equal(true, true != false)
+        Assert.Equal(true, false != true)
+        Assert.Equal(false, false != false)
 
     [<Fact>]
     let ``Equivalent`` () =
@@ -98,15 +112,15 @@ module ŁukasiewiczTests =
 
     [<Fact>]
     let ``XOr`` () =
-        Assert.Equal(Ł3.False, Ł3.True ^^ Ł3.True)
-        Assert.Equal(Ł3.Unknown, Ł3.True ^^ Ł3.Unknown)
-        Assert.Equal(Ł3.True, Ł3.True ^^ Ł3.False)
-        Assert.Equal(Ł3.Unknown, Ł3.Unknown ^^ Ł3.True)
-        Assert.Equal(Ł3.Unknown, Ł3.Unknown ^^ Ł3.Unknown)
-        Assert.Equal(Ł3.Unknown, Ł3.Unknown ^^ Ł3.False)
-        Assert.Equal(Ł3.False, Ł3.False ^^ Ł3.False)
-        Assert.Equal(Ł3.Unknown, Ł3.False ^^ Ł3.Unknown)
-        Assert.Equal(Ł3.True, Ł3.False ^^ Ł3.True)
+        Assert.Equal(Ł3.False, Ł3.True <> Ł3.True)
+        Assert.Equal(Ł3.Unknown, Ł3.True <> Ł3.Unknown)
+        Assert.Equal(Ł3.True, Ł3.True <> Ł3.False)
+        Assert.Equal(Ł3.Unknown, Ł3.Unknown <> Ł3.True)
+        Assert.Equal(Ł3.Unknown, Ł3.Unknown <> Ł3.Unknown)
+        Assert.Equal(Ł3.Unknown, Ł3.Unknown <> Ł3.False)
+        Assert.Equal(Ł3.False, Ł3.False <> Ł3.False)
+        Assert.Equal(Ł3.Unknown, Ł3.False <> Ł3.Unknown)
+        Assert.Equal(Ł3.True, Ł3.False <> Ł3.True)
 
     [<Fact>]
     let ``Implies`` () =
@@ -119,7 +133,7 @@ module ŁukasiewiczTests =
         Assert.Equal(Ł3.True, Ł3.False --> Ł3.True)
         Assert.Equal(Ł3.True, Ł3.False --> Ł3.Unknown)
         Assert.Equal(Ł3.True, Ł3.False --> Ł3.False)
-
+        
     [<Fact>]
     let ``Equivalent`` () =
         Assert.Equal(Ł3.True, Ł3.True === Ł3.True)
@@ -138,7 +152,7 @@ module ŁukasiewiczTests =
         Assert.Equal(Ł3.Unknown, Ł3.True !== Ł3.Unknown)
         Assert.Equal(Ł3.True, Ł3.True !== Ł3.False)
         Assert.Equal(Ł3.Unknown, Ł3.Unknown !== Ł3.True)
-        Assert.Equal(Ł3.Unknown, Ł3.Unknown !== Ł3.Unknown)
+        Assert.Equal(Ł3.False, Ł3.Unknown !== Ł3.Unknown)
         Assert.Equal(Ł3.Unknown, Ł3.Unknown !== Ł3.False)
         Assert.Equal(Ł3.True, Ł3.False !== Ł3.True)
         Assert.Equal(Ł3.Unknown, Ł3.False !== Ł3.Unknown)

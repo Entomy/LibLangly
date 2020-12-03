@@ -54,7 +54,7 @@ namespace Langly {
 		Object ICloneable.Clone() => Clone();
 	}
 
-	public static partial class Extensions {
+	public static partial class TraitExtensions {
 		/// <summary>
 		/// Creates a new object that is a copy of the current instance.
 		/// </summary>
