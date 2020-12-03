@@ -5,10 +5,9 @@ namespace Langly.DataStructures.Trees.Multiway {
 	/// <summary>
 	/// Represents the base node type of any multiway tree.
 	/// </summary>
-	/// <typeparam name="TIndex">The type of the indicies of the elements.</typeparam>
 	/// <typeparam name="TElement">The type contained in the node.</typeparam>
 	/// <typeparam name="TSelf">The implementing node type; itself.</typeparam>
-	public abstract class MultiwayNode<TIndex, TElement, TSelf> : TreeNode<TIndex, TElement, TSelf> where TIndex : IEquatable<TIndex> where TSelf : MultiwayNode<TIndex, TElement, TSelf> {
+	public abstract class MultiwayNode<TElement, TSelf> : TreeNode<TElement, TSelf> where TSelf : MultiwayNode<TElement, TSelf> {
 		/// <summary>
 		/// The parent node.
 		/// </summary>
@@ -20,10 +19,10 @@ namespace Langly.DataStructures.Trees.Multiway {
 		public readonly DynamicArray<TSelf> Children;
 
 		/// <inheritdoc/>
-		protected MultiwayNode(TIndex index, TElement element) : base(index, element) => Children = new DynamicArray<TSelf>(0);
+		protected MultiwayNode(TElement element) : base(element) => Children = new DynamicArray<TSelf>(0);
 
 		/// <inheritdoc/>
-		protected MultiwayNode(TIndex index, TElement element, params TSelf[] children) : base(index, element) => Children = children;
+		protected MultiwayNode(TElement element, params TSelf[] children) : base(element) => Children = children;
 
 		/// <inheritdoc/>
 		public override void Clear() => Children.Clear();

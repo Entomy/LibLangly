@@ -3,18 +3,17 @@ using Langly.DataStructures.Filters;
 
 namespace Langly.DataStructures.Arrays {
 	/// <summary>
-	/// Represents any associative array type which has a flexible size.
+	/// Represents any array type which has a flexible size.
 	/// </summary>
-	/// <typeparam name="TIndex">The type of indicies of the array.</typeparam>
 	/// <typeparam name="TElement">The type of elements in the array.</typeparam>
 	/// <typeparam name="TSelf">The implementing type; itself.</typeparam>
 	/// <remarks>
-	/// This is intended as a reusable base for implementing behaviors on top of <see cref="Array"/>s of rank 1 of <see cref="Tuple{T1, T2}"/>.
+	/// This is intended as a reusable base for implementing behaviors on top of <see cref="Array"/>s of rank 1.
 	/// </remarks>
 	[Serializable]
-	public abstract class FlexibleArray<TIndex, TElement, TSelf> : Array<TIndex, TElement, TSelf>, IAddable<TIndex, TElement>, IClearable, IRemovable<TIndex, TElement> where TIndex : IEquatable<TIndex> where TSelf : FlexibleArray<TIndex, TElement, TSelf> {
+	public abstract class FlexibleArray<TElement, TSelf> : Array<TElement, TSelf>, IAddable<TElement>, IClearable, IDequeueable<TElement>, IEnqueueable<TElement>, IInsertable<TElement>, IPoppable<TElement>, IPushable<TElement>, IRemovable<TElement> where TSelf : FlexibleArray<TElement, TSelf> {
 		/// <summary>
-		/// Initializes a new <see cref="FlexibleArray{TIndex, TElement}"/> with the given <paramref name="capacity"/>.
+		/// Initializes a new <see cref="FlexibleArray{TElement, TSelf}"/> with the given <paramref name="capacity"/>.
 		/// </summary>
 		/// <param name="capacity">The initial capacity.</param>
 		/// <param name="filter">The type of filter to use.</param>
@@ -23,33 +22,74 @@ namespace Langly.DataStructures.Arrays {
 		/// <summary>
 		/// Copy constructor.
 		/// </summary>
-		/// <param name="members">The set of members.</param>
-		/// <param name="length">The length of the array.</param>
-		/// <param name="filterer">The <see cref="Filter{TElement}"/> responsible for this data structure.</param>
-		protected FlexibleArray(Memory<Association<TIndex, TElement>> members, nint length, Filter<TElement> filterer) : base(members, length, filterer) { }
+		/// <param name="elements">The set of elements.</param>
+		/// <param name="length">The length of this array.</param>
+		/// <param name="filter">The type of filter to use.</param>
+		protected FlexibleArray(Memory<TElement> elements, nint length, Filter<TElement> filter) : base(elements, length, filter) { }
 
 		/// <inheritdoc/>
-		protected virtual void Add(TIndex index, TElement element) {
-			if (Indicies.Contains(index)) {
+		protected virtual void Add(TElement element) {
+			if (Filterer.FiltersAdds && Filterer.Contains(element).Necessary()) {
 				return;
 			}
-			Members.Span[(Int32)Length++] = new Association<TIndex, TElement>(index, element);
+			this[Length++] = element;
 		}
 
 		/// <inheritdoc/>
-		void IAddable<TIndex, TElement>.Add(TIndex index, TElement element) => Add(index, element);
+		void IAddable<TElement>.Add(TElement element) => Add(element);
 
 		/// <inheritdoc/>
-		void IClearable.Clear() {
-			Members = Memory<Association<TIndex, TElement>>.Empty;
+		protected virtual void Clear() {
+			Elements = Memory<TElement>.Empty;
 			Length = 0;
 		}
 
 		/// <inheritdoc/>
+		void IClearable.Clear() => Clear();
+
+		/// <inheritdoc/>
+		TElement IDequeueable<TElement>.Dequeue() {
+			if (Length == 0) {
+				throw CollectionEmptyException.With();
+			}
+			TElement result = this[0];
+			this.ShiftLeft();
+			Length--;
+			return result;
+		}
+
+		/// <inheritdoc/>
+		void IEnqueueable<TElement>.Enqueue(TElement element) => Add(element);
+
+		/// <inheritdoc/>
+		protected virtual void Insert(nint index, TElement element) {
+			if (Filterer.FiltersAdds && Filterer.Contains(element).Necessary()) {
+				return;
+			}
+			Elements.Slice((Int32)index).ShiftRight();
+			Elements.Span[(Int32)index] = element;
+			Length++;
+		}
+
+		/// <inheritdoc/>
+		void IInsertable<nint, TElement>.Insert(nint index, TElement element) => Insert(index, element);
+
+		/// <inheritdoc/>
+		TElement IPoppable<TElement>.Pop() {
+			if (Length == 0) {
+				throw CollectionEmptyException.With();
+			}
+			return Elements.Span[(Int32)(--Length)];
+		}
+
+		/// <inheritdoc/>
+		void IPushable<TElement>.Push(TElement element) => Add(element);
+
+		/// <inheritdoc/>
 		void IRemovable<TElement>.Remove(TElement element) {
 			for (Int32 i = 0; i < Length; i++) {
-				if (Members.Span[i].Element?.Equals(element) ?? false) {
-					Members.Slice(i).ShiftLeft();
+				if (this[i].Equals(element)) {
+					Elements.Slice(i).ShiftLeft();
 					Length--;
 					i--;
 				}
@@ -62,21 +102,10 @@ namespace Langly.DataStructures.Arrays {
 				return;
 			}
 			for (Int32 i = 0; i < Length; i++) {
-				if (match(Members.Span[i].Element)) {
-					Members.Slice(i).ShiftLeft();
+				if (match(this[i])) {
+					Elements.Slice(i).ShiftLeft();
 					Length--;
 					i--;
-				}
-			}
-		}
-
-		/// <inheritdoc/>
-		void IRemovable<TIndex, TElement>.RemoveAt(TIndex index) {
-			for (Int32 i = 0; i < Length; i++) {
-				if (Members.Span[i].Index?.Equals(index) ?? false) {
-					Members.Slice(i).ShiftLeft();
-					Length--;
-					return;
 				}
 			}
 		}

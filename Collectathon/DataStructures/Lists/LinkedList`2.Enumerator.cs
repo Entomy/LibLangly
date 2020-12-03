@@ -1,22 +1,22 @@
 ﻿using System;
 
 namespace Langly.DataStructures.Lists {
-	public partial class LinkedList<TIndex, TElement, TSelf, TNode> : IEnumerable<Association<TIndex, TElement>, LinkedList<TIndex, TElement, TSelf, TNode>.Enumerator> {
+	public partial class LinkedList<TElement, TSelf, TNode> : IEnumerable<TElement, LinkedList<TElement, TSelf, TNode>.Enumerator> {
 		/// <inheritdoc/>
 		public sealed override Enumerator GetEnumerator() => new Enumerator(this);
 
-		public struct Enumerator : IEnumerator<Association<TIndex, TElement>> {
-			private readonly LinkedList<TIndex, TElement, TSelf, TNode> Collection;
+		public struct Enumerator : IEnumerator<TElement> {
+			private readonly LinkedList<TElement, TSelf, TNode> Collection;
 
 			private TNode Node;
 
-			public Enumerator(LinkedList<TIndex, TElement, TSelf, TNode> collection) {
+			public Enumerator(LinkedList<TElement, TSelf, TNode> collection) {
 				Collection = collection;
 				Node = null;
 			}
 
 			/// <inheritdoc/>
-			public Association<TIndex, TElement> Current => Node!.Member;
+			public TElement Current => Node!.Element;
 
 			/// <inheritdoc/>
 			public Boolean MoveNext() {

@@ -4,56 +4,48 @@ using Langly.DataStructures.Filters;
 
 namespace Langly.DataStructures.Arrays {
 	/// <summary>
-	/// Represents any associative array type.
+	/// Represents any array type.
 	/// </summary>
-	/// <typeparam name="TIndex">The type of the indicies of the array.</typeparam>
-	/// <typeparam name="TElement">The type of the elements of the array.</typeparam>
+	/// <typeparam name="TElement">The type of elements in the array.</typeparam>
 	/// <typeparam name="TSelf">The implementing type; itself.</typeparam>
 	/// <remarks>
-	/// This is intended as a reusable base for implementing behaviors on top of <see cref="Array"/>s of rank 1 of <see cref="Tuple{T1, T2}"/>.
+	/// This is intended as a reusable base for implementing behaviors on top of <see cref="Array"/>s of rank 1.
 	/// </remarks>
-	[Serializable]
-	public abstract partial class Array<TIndex, TElement, TSelf> : DataStructure<TIndex, TElement, TSelf, Array<TIndex, TElement, TSelf>.Enumerator>, IAssociator<TIndex, TElement, Array<TIndex, TElement, TSelf>, Array<TIndex, TElement, TSelf>.Enumerator>, IEquatable<Array<TIndex, TElement, TSelf>>, IIndexable<TIndex, TElement>, IReplaceable<TElement> where TIndex : IEquatable<TIndex> where TSelf : Array<TIndex, TElement, TSelf> {
+	public abstract partial class Array<TElement, TSelf> : DataStructure<TElement, TSelf, Array<TElement, TSelf>.Enumerator>, IContainable<TElement>, IEquatable<Array<TElement, TSelf>>, IIndexable<TElement>, IPeekable<TElement>, IReplaceable<TElement>, IShiftable, ISliceable<Memory<TElement>>, IReadOnlySliceable<ReadOnlyMemory<TElement>> where TSelf : Array<TElement, TSelf> {
 		/// <summary>
-		/// The set of members.
+		/// The set of elements.
 		/// </summary>
-		protected Memory<Association<TIndex, TElement>> Members;
+		protected Memory<TElement> Elements;
 
 		/// <summary>
-		/// Initializes a new <see cref="Array{TIndex, TElement, TSelf}"/> with the given <paramref name="capacity"/>.
+		/// Initializes a new <see cref="Array{TElement, TSelf}"/> with the given <paramref name="capacity"/>.
 		/// </summary>
 		/// <param name="capacity">The initial capacity.</param>
 		/// <param name="filter">The type of filter to use.</param>
 		protected Array(nint capacity, Filter filter) : base(filter) {
 			Guard.GreaterThanOrEqual(capacity, nameof(capacity), 0);
-			Members = new Association<TIndex, TElement>[capacity];
+			Elements = new TElement[capacity];
 		}
 
 		/// <summary>
 		/// Copy constructor.
 		/// </summary>
-		/// <param name="members">The set of elements.</param>
-		/// <param name="length">The length of this array.</param>
+		/// <param name="elements">The set of elements.</param>
+		/// <param name="length">The length of the array.</param>
 		/// <param name="filterer">The <see cref="Filter{TElement}"/> responsible for this data structure.</param>
-		protected Array(Memory<Association<TIndex, TElement>> members, nint length, Filter<TElement> filterer) : base(filterer) {
-			Members = members;
+		protected Array(Memory<TElement> elements, nint length, Filter<TElement> filterer) : base(filterer) {
+			Elements = elements;
 			Length = length;
 		}
 
 		/// <summary>
 		/// The current capacity of the array; how many elements it can hold.
 		/// </summary>
-		public nint Capacity => Members.Length;
+		public nint Capacity => Elements.Length;
 
 		/// <inheritdoc/>
 		[SuppressMessage("Design", "CA1033:Interface methods should be callable by child types", Justification = "It is, it's called Length.")]
 		nint ICountable.Count => Length;
-
-		/// <inheritdoc/>
-		public ElementView<TIndex, TElement, Array<TIndex, TElement, TSelf>, Enumerator> Elements => new ElementView<TIndex, TElement, Array<TIndex, TElement, TSelf>, Enumerator>(this);
-
-		/// <inheritdoc/>
-		public IndexView<TIndex, TElement, Array<TIndex, TElement, TSelf>, Enumerator> Indicies => new IndexView<TIndex, TElement, Array<TIndex, TElement, TSelf>, Enumerator>(this);
 
 		/// <summary>
 		/// The total amount of elements in this array.
@@ -61,25 +53,74 @@ namespace Langly.DataStructures.Arrays {
 		public nint Length { get; protected set; }
 
 		/// <inheritdoc/>
-		[SuppressMessage("Design", "CA1065:Do not raise exceptions in unexpected locations", Justification = "Index-out-of-bounds is a valid and accepted exception.")]
-		public ref TElement this[TIndex index] {
+		public ref TElement this[nint index] {
 			get {
-				for (Int32 i = 0; i < Length; i++) {
-					if (index.Equals(Members.Span[i].Index)) {
-						return ref Members.Span[i].Element;
-					}
-				}
-				throw ArgumentIndexNotValidException.With(index, nameof(index), this);
+				Guard.Index(index, nameof(index), this);
+				return ref Elements.Span[(Int32)index];
 			}
 		}
 
 		/// <inheritdoc/>
-		ref readonly TElement IReadOnlyIndexable<TIndex, TElement>.this[TIndex index] => ref this[index];
+		ref readonly TElement IReadOnlyIndexable<nint, TElement>.this[nint index] => ref this[index];
 
 		/// <inheritdoc/>
-		public sealed override Boolean Equals(DataStructure<TIndex, TElement, TSelf, Enumerator> other) {
+		public Memory<TElement> this[Range range] {
+			get {
+				(Int32 offset, Int32 length) = range.GetOffsetAndLength((Int32)Length);
+				return Elements.Slice(offset, length);
+			}
+		}
+
+		/// <inheritdoc/>
+		ReadOnlyMemory<TElement> IReadOnlySliceable<ReadOnlyMemory<TElement>>.this[Range range] => this[range];
+
+		/// <summary>
+		/// Shifts the <paramref name="array"/> leftwards by <paramref name="amount"/>.
+		/// </summary>
+		/// <param name="array">The array to shift.</param>
+		/// <param name="amount">The amount of positions to shift.</param>
+		/// <returns>A new array with the shifted elements.</returns>
+		public static TSelf operator <<(Array<TElement, TSelf> array, Int32 amount) {
+			if (array is null) {
+				return null;
+			}
+			TSelf result = array.Clone();
+			result.ShiftLeft(amount);
+			return result;
+		}
+
+		/// <summary>
+		/// Shifts the <paramref name="array"/> rightwards by <paramref name="amount"/>.
+		/// </summary>
+		/// <param name="array">The array to shift.</param>
+		/// <param name="amount">The amount of positions to shift.</param>
+		/// <returns>A new array with the shifted elements.</returns>
+		public static TSelf operator >>(Array<TElement, TSelf> array, Int32 amount) {
+			if (array is null) {
+				return null;
+			}
+			TSelf result = array.Clone();
+			result.ShiftRight(amount);
+			return result;
+		}
+
+		/// <inheritdoc/>
+		Boolean IContainable<TElement>.Contains(TElement element) {
+			if (Filterer.FiltersContains && Filterer.Contains(element).Not().Possible()) {
+				return false;
+			}
+			for (Int32 i = 0; i < Length; i++) {
+				if (Elements.Span[i]?.Equals(element) ?? false) {
+					return true;
+				}
+			}
+			return false;
+		}
+
+		/// <inheritdoc/>
+		public sealed override Boolean Equals(DataStructure<TElement, TSelf, Enumerator> other) {
 			switch (other) {
-			case Array<TIndex, TElement, TSelf> array:
+			case Array<TElement, TSelf> array:
 				return Equals(array);
 			default:
 				return false;
@@ -87,14 +128,12 @@ namespace Langly.DataStructures.Arrays {
 		}
 
 		/// <inheritdoc/>
-		public Boolean Equals(Array<TIndex, TElement, TSelf> other) {
+		public Boolean Equals(Array<TElement, TSelf> other) {
 			if (other is null || Length != other.Length) {
 				return false;
 			}
-			Enumerator ths = GetEnumerator();
-			Enumerator oth = other.GetEnumerator();
-			while (ths.MoveNext() && oth.MoveNext()) {
-				if (!ths.Current.Equals(oth.Current)) {
+			for (Int32 i = 0; i < Length; i++) {
+				if (!Equals(Elements.Span[i], other[i])) {
 					return false;
 				}
 			}
@@ -102,23 +141,26 @@ namespace Langly.DataStructures.Arrays {
 		}
 
 		/// <inheritdoc/>
-		public sealed override Boolean Equals(Association<TIndex, TElement>[] other) {
+		public sealed override Boolean Equals(TElement[] other) {
 			if (other is null || Length != other.Length) {
 				return false;
 			}
 			for (Int32 i = 0; i < Length; i++) {
-				if (!Equals(Members.Span[i].Index, other[i].Index) || !Equals(Members.Span[i].Element, other[i].Element)) {
+				if (!Equals(Elements.Span[i], other[i])) {
 					return false;
 				}
 			}
 			return true;
 		}
+
+		/// <inheritdoc/>
+		public ref readonly TElement Peek() => ref this[Length - 1];
 
 		/// <inheritdoc/>
 		void IReplaceable<TElement, TElement>.Replace(TElement oldElement, TElement newElement) {
 			for (Int32 i = 0; i < Length; i++) {
-				if (Members.Span[i].Element?.Equals(oldElement) ?? false) {
-					Members.Span[i].Element = newElement;
+				if (Elements.Span[i].Equals(oldElement)) {
+					Elements.Span[i] = newElement;
 				}
 			}
 		}
@@ -129,10 +171,40 @@ namespace Langly.DataStructures.Arrays {
 				return;
 			}
 			for (Int32 i = 0; i < Length; i++) {
-				if (match(Members.Span[i].Element)) {
-					Members.Span[i].Element = newElement;
+				if (match(Elements.Span[i])) {
+					this[i] = newElement;
 				}
 			}
 		}
+
+		/// <inheritdoc/>
+		void IShiftable.ShiftLeft() => Elements.ShiftLeft();
+
+		/// <inheritdoc/>
+		void IShiftable.ShiftLeft(nint amount) => Elements.ShiftLeft(amount);
+
+		/// <inheritdoc/>
+		void IShiftable.ShiftRight() => Elements.ShiftRight();
+
+		/// <inheritdoc/>
+		void IShiftable.ShiftRight(nint amount) => Elements.ShiftRight(amount);
+
+		/// <inheritdoc/>
+		public Memory<TElement> Slice() => Elements;
+
+		/// <inheritdoc/>
+		public Memory<TElement> Slice(nint start) => Elements.Slice((Int32)start, (Int32)(Length - start));
+
+		/// <inheritdoc/>
+		public Memory<TElement> Slice(nint start, nint length) => Elements.Slice((Int32)start, (Int32)length);
+
+		/// <inheritdoc/>
+		ReadOnlyMemory<TElement> IReadOnlySliceable<ReadOnlyMemory<TElement>>.Slice() => Slice();
+
+		/// <inheritdoc/>
+		ReadOnlyMemory<TElement> IReadOnlySliceable<ReadOnlyMemory<TElement>>.Slice(nint start) => Slice(start);
+
+		/// <inheritdoc/>
+		ReadOnlyMemory<TElement> IReadOnlySliceable<ReadOnlyMemory<TElement>>.Slice(nint start, nint length) => Slice(start, length);
 	}
 }

@@ -2,14 +2,13 @@
 
 namespace Langly.DataStructures.Trees {
 	/// <summary>
-	/// Represents the base node type of any associative tree.
+	/// Represents the base node type of any tree.
 	/// </summary>
-	/// <typeparam name="TIndex">The type of the indicies of the elements.</typeparam>
 	/// <typeparam name="TElement">The type contained in the node.</typeparam>
 	/// <typeparam name="TSelf">The implementing node type; itself.</typeparam>
-	public abstract class TreeNode<TIndex, TElement, TSelf> : BaseNode<TIndex, TElement, TSelf>, IContainable<TElement>, IReplaceable<TElement> where TIndex : IEquatable<TIndex> where TSelf : TreeNode<TIndex, TElement, TSelf> {
+	public abstract class TreeNode<TElement, TSelf> : BaseNode<TElement, TSelf>, IContainable<TElement>, IReplaceable<TElement> where TSelf : TreeNode<TElement, TSelf> {
 		/// <inheritdoc/>
-		protected TreeNode(TIndex index, TElement element) : base(index, element) { }
+		protected TreeNode(TElement element) : base(element) { }
 
 		/// <inheritdoc/>
 		public abstract Boolean Contains(TElement element);

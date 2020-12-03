@@ -6,13 +6,13 @@ namespace Langly.DataStructures.Lists {
 	/// <summary>
 	/// Represents any linked list.
 	/// </summary>
-	/// <typeparam name="TIndex">The type of the indicies of the collection.</typeparam>
-	/// <typeparam name="TElement">The type of the elements in the collection.</typeparam>
+	/// <typeparam name="TElement">The type of elements in the collection.</typeparam>
+	/// <typeparam name="TSelf">THe implementing type; itself.</typeparam>
 	/// <typeparam name="TNode">The type of the nodes that make up this list.</typeparam>
 	/// <remarks>
-	/// This is intended as a reusable base to make implementing custom associative lists easier. It can not be used on its own, as it's <see langword="abstract"/>. Rather, you derive this type, and also derive a <see cref="LinkedNode{TIndex, TElement, TNode}"/>, and pass your derived node into <typeparamref name="TNode"/>. This will create most of your list for you, with all links being of <typeparamref name="TNode"/>, not some base type that you have to upcast.
+	/// This is intended as a reusable base to make implementing custom lists easier. It can not be used on its own, as it's <see langword="abstract"/>. Rather, you derive this type, and also derive a <see cref="LinkedNode{TElement, TSelf}"/>, and pass your derived node into <typeparamref name="TNode"/>. This will create most of your list for you, with all links being of <typeparamref name="TNode"/>, not some base type that you have to upcast.
 	/// </remarks>
-	public abstract partial class LinkedList<TIndex, TElement, TSelf, TNode> : DataStructure<TIndex, TElement, TSelf, LinkedList<TIndex, TElement, TSelf, TNode>.Enumerator>, IAddable<TIndex, TElement>, IAssociator<TIndex, TElement, LinkedList<TIndex, TElement, TSelf, TNode>, LinkedList<TIndex, TElement, TSelf, TNode>.Enumerator>, IClearable, IEquatable<LinkedList<TIndex, TElement, TSelf, TNode>>, IIndexable<TIndex, TElement>, IRemovable<TIndex, TElement>, IReplaceable<TElement> where TIndex : IEquatable<TIndex> where TSelf : LinkedList<TIndex, TElement, TSelf, TNode> where TNode : LinkedNode<TIndex, TElement, TNode> {
+	public abstract partial class LinkedList<TElement, TSelf, TNode> : DataStructure<TElement, TSelf, LinkedList<TElement, TSelf, TNode>.Enumerator>, IAddable<TElement>, IClearable, IContainable<TElement>, IDequeueable<TElement>, IEnqueueable<TElement>, IEquatable<LinkedList<TElement, TSelf, TNode>>, IIndexable<TElement>, IInsertable<TElement>, IPeekable<TElement>, IPoppable<TElement>, IPushable<TElement>, IRemovable<TElement>, IReplaceable<TElement> where TSelf : LinkedList<TElement, TSelf, TNode> where TNode : LinkedNode<TElement, TNode> {
 		/// <summary>
 		/// The node at the head of the list.
 		/// </summary>
@@ -39,17 +39,12 @@ namespace Langly.DataStructures.Lists {
 		public nint Count { get; protected set; }
 
 		/// <inheritdoc/>
-		public ElementView<TIndex, TElement, LinkedList<TIndex, TElement, TSelf, TNode>, Enumerator> Elements => new ElementView<TIndex, TElement, LinkedList<TIndex, TElement, TSelf, TNode>, Enumerator>(this);
-
-		/// <inheritdoc/>
-		public IndexView<TIndex, TElement, LinkedList<TIndex, TElement, TSelf, TNode>, Enumerator> Indicies => new IndexView<TIndex, TElement, LinkedList<TIndex, TElement, TSelf, TNode>, Enumerator>(this);
-
-		/// <inheritdoc/>
-		public ref TElement this[TIndex index] {
+		public ref TElement this[nint index] {
 			get {
 				TNode N = Head;
+				nint i = 0;
 				while (N is not null) {
-					if (index.Equals(N.Index)) {
+					if (i++ == index) {
 						return ref N.Element;
 					}
 					N = N.Next;
@@ -59,13 +54,10 @@ namespace Langly.DataStructures.Lists {
 		}
 
 		/// <inheritdoc/>
-		ref readonly TElement IReadOnlyIndexable<TIndex, TElement>.this[TIndex index] => ref this[index];
+		ref readonly TElement IReadOnlyIndexable<nint, TElement>.this[nint index] => ref this[index];
 
 		/// <inheritdoc/>
-		void IAddable<TIndex, TElement>.Add(TIndex index, TElement element) => Add(index, element);
-
-		/// <inheritdoc/>
-		public void Clear() {
+		void IClearable.Clear() {
 			TNode P = Head;
 			TNode N = Head?.Next;
 			while (P is not null) {
@@ -79,9 +71,18 @@ namespace Langly.DataStructures.Lists {
 		}
 
 		/// <inheritdoc/>
-		public sealed override Boolean Equals(DataStructure<TIndex, TElement, TSelf, Enumerator> other) {
+		Boolean IContainable<TElement>.Contains(TElement element) => Contains(element);
+
+		/// <inheritdoc/>
+		TElement IDequeueable<TElement>.Dequeue() => Pop();
+
+		/// <inheritdoc/>
+		void IEnqueueable<TElement>.Enqueue(TElement element) => Add(element);
+
+		/// <inheritdoc/>
+		public sealed override Boolean Equals(DataStructure<TElement, TSelf, Enumerator> other) {
 			switch (other) {
-			case LinkedList<TIndex, TElement, TSelf, TNode> list:
+			case LinkedList<TElement, TSelf, TNode> list:
 				return Equals(list);
 			default:
 				return false;
@@ -90,7 +91,7 @@ namespace Langly.DataStructures.Lists {
 
 		/// <inheritdoc/>
 		[SuppressMessage("Microsoft.Design", "UnhandledExceptions:Unhandled exception(s)", Justification = "We can't magically add these to an interface we don't own.")]
-		public Boolean Equals(LinkedList<TIndex, TElement, TSelf, TNode> other) {
+		public Boolean Equals(LinkedList<TElement, TSelf, TNode> other) {
 			// We're calling this off an instance, so if the other is null
 			if (other is null) {
 				// They aren't equal
@@ -117,7 +118,7 @@ namespace Langly.DataStructures.Lists {
 		}
 
 		/// <inheritdoc/>
-		public sealed override Boolean Equals(Association<TIndex, TElement>[] other) {
+		public sealed override Boolean Equals(TElement[] other) {
 			// We're calling this off an instance, so if the other is null
 			if (other is null) {
 				// They aren't equal
@@ -145,13 +146,27 @@ namespace Langly.DataStructures.Lists {
 		}
 
 		/// <inheritdoc/>
+		void IInsertable<nint, TElement>.Insert(nint index, TElement element) => Insert(index, element);
+
+		/// <inheritdoc/>
+		public ref readonly TElement Peek() {
+			if (Head is null) {
+				throw new InvalidOperationException("Collection is empty");
+			}
+			return ref Head.Element;
+		}
+
+		/// <inheritdoc/>
+		TElement IPoppable<TElement>.Pop() => Pop();
+
+		/// <inheritdoc/>
+		void IPushable<TElement>.Push(TElement element) => Push(element);
+
+		/// <inheritdoc/>
 		void IRemovable<TElement>.Remove(TElement element) => Remove(element);
 
 		/// <inheritdoc/>
 		void IRemovable<TElement>.Remove(Predicate<TElement> match) => Remove(match);
-
-		/// <inheritdoc/>
-		void IRemovable<TIndex, TElement>.RemoveAt(TIndex index) => RemoveAt(index);
 
 		/// <inheritdoc/>
 		void IReplaceable<TElement, TElement>.Replace(TElement oldElement, TElement newElement) {
@@ -179,15 +194,39 @@ namespace Langly.DataStructures.Lists {
 		}
 
 		/// <inheritdoc/>
-		protected abstract void Add(TIndex index, TElement element);
+		void IAddable<TElement>.Add(TElement element) => Add(element);
+
+		/// <inheritdoc/>
+		protected abstract void Add(TElement element);
+
+		/// <inheritdoc/>
+		protected virtual Boolean Contains(TElement element) {
+			if (Filterer.FiltersContains && Filterer.Contains(element).Not().Possible()) {
+				return false;
+			}
+			TNode N = Head;
+			while (N is not null) {
+				if (N.Element?.Equals(element) ?? false) {
+					return true;
+				}
+				N = N.Next;
+			}
+			return false;
+		}
+
+		/// <inheritdoc/>
+		protected abstract void Insert(nint index, TElement element);
+
+		/// <inheritdoc/>
+		protected abstract TElement Pop();
+
+		/// <inheritdoc/>
+		protected abstract void Push(TElement element); //TODO: We could implement this here if we could get information about the constructor, without reflection.
 
 		/// <inheritdoc/>
 		protected abstract void Remove(TElement element);
 
 		/// <inheritdoc/>
 		protected abstract void Remove(Predicate<TElement> match);
-
-		/// <inheritdoc/>
-		protected abstract void RemoveAt(TIndex index);
 	}
 }
