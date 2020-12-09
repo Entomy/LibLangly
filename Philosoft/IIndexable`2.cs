@@ -16,6 +16,6 @@ namespace Langly {
 		/// <returns>The element at the specified index.</returns>
 		/// <exception cref="ArgumentOutOfRangeException"><paramref name="index"/> is not a valid index in the <see cref="IIndexable{TIndex, TElement}"/>.</exception>
 		/// <exception cref="NotSupportedException">The property is set and the <see cref="IIndexable{TIndex, TElement}"/> is read-only.</exception>
-		new ref TElement this[TIndex index] { get; }
+		new TElement this[TIndex index] { get; set; }
 	}
 }
