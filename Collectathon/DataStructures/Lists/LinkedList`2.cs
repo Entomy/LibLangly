@@ -12,7 +12,7 @@ namespace Langly.DataStructures.Lists {
 	/// <remarks>
 	/// This is intended as a reusable base to make implementing custom lists easier. It can not be used on its own, as it's <see langword="abstract"/>. Rather, you derive this type, and also derive a <see cref="LinkedNode{TElement, TSelf}"/>, and pass your derived node into <typeparamref name="TNode"/>. This will create most of your list for you, with all links being of <typeparamref name="TNode"/>, not some base type that you have to upcast.
 	/// </remarks>
-	public abstract partial class LinkedList<TElement, TSelf, TNode> : DataStructure<TElement, TSelf, LinkedList<TElement, TSelf, TNode>.Enumerator>, IAddable<TElement>, IClearable, IContainable<TElement>, IDequeueable<TElement>, IEnqueueable<TElement>, IEquatable<LinkedList<TElement, TSelf, TNode>>, IIndexable<TElement>, IInsertable<TElement>, IPeekable<TElement>, IPoppable<TElement>, IPushable<TElement>, IRemovable<TElement>, IReplaceable<TElement> where TSelf : LinkedList<TElement, TSelf, TNode> where TNode : LinkedNode<TElement, TNode> {
+	public abstract partial class LinkedList<TElement, TSelf, TNode> : DataStructure<TElement, TSelf, LinkedList<TElement, TSelf, TNode>.Enumerator>, IAddable<TElement>, IClearable, IContainable<TElement>, IDequeueable<TElement>, IEnqueueable<TElement>, IEquatable<LinkedList<TElement, TSelf, TNode>>, IRefIndexable<TElement>, IInsertable<TElement>, IPeekable<TElement>, IPoppable<TElement>, IPushable<TElement>, IRemovable<TElement>, IReplaceable<TElement> where TSelf : LinkedList<TElement, TSelf, TNode> where TNode : LinkedNode<TElement, TNode> {
 		/// <summary>
 		/// The node at the head of the list.
 		/// </summary>
@@ -54,7 +54,7 @@ namespace Langly.DataStructures.Lists {
 		}
 
 		/// <inheritdoc/>
-		ref readonly TElement IReadOnlyIndexable<nint, TElement>.this[nint index] => ref this[index];
+		ref readonly TElement IReadOnlyRefIndexable<nint, TElement>.this[nint index] => ref this[index];
 
 		/// <inheritdoc/>
 		void IClearable.Clear() {

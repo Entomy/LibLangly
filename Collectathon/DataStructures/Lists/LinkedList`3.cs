@@ -12,7 +12,7 @@ namespace Langly.DataStructures.Lists {
 	/// <remarks>
 	/// This is intended as a reusable base to make implementing custom associative lists easier. It can not be used on its own, as it's <see langword="abstract"/>. Rather, you derive this type, and also derive a <see cref="LinkedNode{TIndex, TElement, TNode}"/>, and pass your derived node into <typeparamref name="TNode"/>. This will create most of your list for you, with all links being of <typeparamref name="TNode"/>, not some base type that you have to upcast.
 	/// </remarks>
-	public abstract partial class LinkedList<TIndex, TElement, TSelf, TNode> : DataStructure<TIndex, TElement, TSelf, LinkedList<TIndex, TElement, TSelf, TNode>.Enumerator>, IAddable<TIndex, TElement>, IAssociator<TIndex, TElement, LinkedList<TIndex, TElement, TSelf, TNode>, LinkedList<TIndex, TElement, TSelf, TNode>.Enumerator>, IClearable, IEquatable<LinkedList<TIndex, TElement, TSelf, TNode>>, IIndexable<TIndex, TElement>, IRemovable<TIndex, TElement>, IReplaceable<TElement> where TIndex : IEquatable<TIndex> where TSelf : LinkedList<TIndex, TElement, TSelf, TNode> where TNode : LinkedNode<TIndex, TElement, TNode> {
+	public abstract partial class LinkedList<TIndex, TElement, TSelf, TNode> : DataStructure<TIndex, TElement, TSelf, LinkedList<TIndex, TElement, TSelf, TNode>.Enumerator>, IAddable<TIndex, TElement>, IAssociator<TIndex, TElement, LinkedList<TIndex, TElement, TSelf, TNode>, LinkedList<TIndex, TElement, TSelf, TNode>.Enumerator>, IClearable, IEquatable<LinkedList<TIndex, TElement, TSelf, TNode>>, IRefIndexable<TIndex, TElement>, IRemovable<TIndex, TElement>, IReplaceable<TElement> where TIndex : IEquatable<TIndex> where TSelf : LinkedList<TIndex, TElement, TSelf, TNode> where TNode : LinkedNode<TIndex, TElement, TNode> {
 		/// <summary>
 		/// The node at the head of the list.
 		/// </summary>
@@ -59,7 +59,7 @@ namespace Langly.DataStructures.Lists {
 		}
 
 		/// <inheritdoc/>
-		ref readonly TElement IReadOnlyIndexable<TIndex, TElement>.this[TIndex index] => ref this[index];
+		ref readonly TElement IReadOnlyRefIndexable<TIndex, TElement>.this[TIndex index] => ref this[index];
 
 		/// <inheritdoc/>
 		void IAddable<TIndex, TElement>.Add(TIndex index, TElement element) => Add(index, element);

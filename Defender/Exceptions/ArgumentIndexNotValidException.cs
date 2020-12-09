@@ -131,6 +131,18 @@ namespace Langly {
 		/// <param name="name">The index name.</param>
 		/// <param name="collection">The collection being indexed.</param>
 		/// <returns>An <see cref="ArgumentIndexNotValidException"/> instance.</returns>
-		public static ArgumentIndexNotValidException With<TIndex, TElement>(TIndex value, String name, IIndexable<TIndex, TElement> collection) => new ArgumentIndexNotValidException(value, name, $"Index must be one of the indicies present in the collection.");
+		public static ArgumentIndexNotValidException With<TIndex, TElement>(TIndex value, String name, IReadOnlyIndexable<TIndex, TElement> collection) => new ArgumentIndexNotValidException(value, name, $"Index must be one of the indicies present in the collection.");
+
+		/// <summary>
+		/// Initializes a new <see cref="ArgumentIndexNotValidException"/>.
+		/// </summary>
+		/// <typeparam name="TIndex">The type of the indicies.</typeparam>
+		/// <typeparam name="TElement">The type of the elements.</typeparam>
+		/// <param name="value">The index value.</param>
+		/// <param name="name">The index name.</param>
+		/// <param name="collection">The collection being indexed.</param>
+		/// <returns>An <see cref="ArgumentIndexNotValidException"/> instance.</returns>
+		public static ArgumentIndexNotValidException With<TIndex, TElement>(TIndex value, String name, IReadOnlyRefIndexable<TIndex, TElement> collection) => new ArgumentIndexNotValidException(value, name, $"Index must be one of the indicies present in the collection.");
+
 	}
 }

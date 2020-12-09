@@ -13,7 +13,7 @@ namespace Langly.DataStructures.Arrays {
 	/// This is intended as a reusable base for implementing behaviors on top of <see cref="Array"/>s of rank 1 of <see cref="Tuple{T1, T2}"/>.
 	/// </remarks>
 	[Serializable]
-	public abstract partial class Array<TIndex, TElement, TSelf> : DataStructure<TIndex, TElement, TSelf, Array<TIndex, TElement, TSelf>.Enumerator>, IAssociator<TIndex, TElement, Array<TIndex, TElement, TSelf>, Array<TIndex, TElement, TSelf>.Enumerator>, IEquatable<Array<TIndex, TElement, TSelf>>, IIndexable<TIndex, TElement>, IReplaceable<TElement> where TIndex : IEquatable<TIndex> where TSelf : Array<TIndex, TElement, TSelf> {
+	public abstract partial class Array<TIndex, TElement, TSelf> : DataStructure<TIndex, TElement, TSelf, Array<TIndex, TElement, TSelf>.Enumerator>, IAssociator<TIndex, TElement, Array<TIndex, TElement, TSelf>, Array<TIndex, TElement, TSelf>.Enumerator>, IEquatable<Array<TIndex, TElement, TSelf>>, IRefIndexable<TIndex, TElement>, IReplaceable<TElement> where TIndex : IEquatable<TIndex> where TSelf : Array<TIndex, TElement, TSelf> {
 		/// <summary>
 		/// The set of members.
 		/// </summary>
@@ -74,7 +74,7 @@ namespace Langly.DataStructures.Arrays {
 		}
 
 		/// <inheritdoc/>
-		ref readonly TElement IReadOnlyIndexable<TIndex, TElement>.this[TIndex index] => ref this[index];
+		ref readonly TElement IReadOnlyRefIndexable<TIndex, TElement>.this[TIndex index] => ref this[index];
 
 		/// <inheritdoc/>
 		public sealed override Boolean Equals(DataStructure<TIndex, TElement, TSelf, Enumerator> other) {

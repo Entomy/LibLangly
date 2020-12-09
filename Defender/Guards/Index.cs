@@ -127,7 +127,21 @@ namespace Langly {
 		/// <param name="name">The index name.</param>
 		/// <param name="collection">The collection being indexed.</param>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static void Index<T>(nint value, String name, IIndexable<T> collection) {
+		public static void Index<T>(nint value, String name, IReadOnlyIndexable<T> collection) {
+			if ((nuint)value >= (nuint)collection.Count) {
+				throw ArgumentIndexNotValidException.With(value, name, collection);
+			}
+		}
+
+		/// <summary>
+		/// Guards against the index being invalid for the collection.
+		/// </summary>
+		/// <typeparam name="T">The type of the elements in the collection.</typeparam>
+		/// <param name="value">The index value.</param>
+		/// <param name="name">The index name.</param>
+		/// <param name="collection">The collection being indexed.</param>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static void Index<T>(nint value, String name, IReadOnlyRefIndexable<T> collection) {
 			if ((nuint)value >= (nuint)collection.Count) {
 				throw ArgumentIndexNotValidException.With(value, name, collection);
 			}

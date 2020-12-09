@@ -11,7 +11,7 @@ namespace Langly.DataStructures.Arrays {
 	/// <remarks>
 	/// This is intended as a reusable base for implementing behaviors on top of <see cref="Array"/>s of rank 1.
 	/// </remarks>
-	public abstract partial class Array<TElement, TSelf> : DataStructure<TElement, TSelf, Array<TElement, TSelf>.Enumerator>, IContainable<TElement>, IEquatable<Array<TElement, TSelf>>, IIndexable<TElement>, IPeekable<TElement>, IReplaceable<TElement>, IShiftable, ISliceable<Memory<TElement>>, IReadOnlySliceable<ReadOnlyMemory<TElement>> where TSelf : Array<TElement, TSelf> {
+	public abstract partial class Array<TElement, TSelf> : DataStructure<TElement, TSelf, Array<TElement, TSelf>.Enumerator>, IContainable<TElement>, IEquatable<Array<TElement, TSelf>>, IRefIndexable<TElement>, IPeekable<TElement>, IReplaceable<TElement>, IShiftable, ISliceable<Memory<TElement>>, IReadOnlySliceable<ReadOnlyMemory<TElement>> where TSelf : Array<TElement, TSelf> {
 		/// <summary>
 		/// The set of elements.
 		/// </summary>
@@ -61,7 +61,7 @@ namespace Langly.DataStructures.Arrays {
 		}
 
 		/// <inheritdoc/>
-		ref readonly TElement IReadOnlyIndexable<nint, TElement>.this[nint index] => ref this[index];
+		ref readonly TElement IReadOnlyRefIndexable<nint, TElement>.this[nint index] => ref this[index];
 
 		/// <inheritdoc/>
 		public Memory<TElement> this[Range range] {
