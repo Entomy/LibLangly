@@ -258,7 +258,7 @@ module Functions =
     /// <param name="elements">The elements to write.</param>
     /// <returns>An Option where None indicates success and Some holds the error that occurred.</returns>
     let inline write (elements) (collection) =
-        let (success, error) = TraitExtensions.TryWrite(collection, elements)
+        let (success, error) = TryWrite<TraitExtensions, _, _, _> collection elements
         if success then
             None
         else

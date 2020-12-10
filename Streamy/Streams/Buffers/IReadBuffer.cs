@@ -6,7 +6,7 @@ namespace Langly.Streams.Buffers {
 	/// <summary>
 	/// Indicates the type can be used as a read buffer for a <see cref="Streams.Stream"/>.
 	/// </summary>
-	public interface IReadBuffer : ILengthy, IPeekable<Byte, Errors>, ISeekable<Byte, Errors>, IShiftable, IEquatable<Byte[]>, IEquatable<IReadOnlyList<Byte>> {
+	public interface IReadBuffer : ILengthy, IPeekable<Byte, Errors>, IReadOnlyIndexable<Byte>, IReadOnlySliceable<ReadOnlyMemory<Byte>>, ISeekable<Byte, Errors>, IShiftable, IEquatable<Byte[]>, IEquatable<IReadOnlyList<Byte>> {
 		/// <summary>
 		/// The capacity of this buffer.
 		/// </summary>
@@ -223,10 +223,7 @@ namespace Langly.Streams.Buffers {
 		/// <param name="second">The second byte that was read.</param>
 		/// <returns><see langword="true"/> if the read was successful; otherwise, <see langword="false"/>.</returns>
 		/// <seealso cref="TryRead(out Byte, out Byte, out Errors)"/>
-		Boolean TryRead(out Byte first, out Byte second) {
-			second = 0;
-			return TryRead(out first) && TryRead(out second);
-		}
+		Boolean TryRead(out Byte first, out Byte second) => TryRead(out first, out second, error: out _);
 
 		/// <summary>
 		/// Attempts to read two bytes.
@@ -249,10 +246,7 @@ namespace Langly.Streams.Buffers {
 		/// <param name="third">The third byte that was read.</param>
 		/// <returns><see langword="true"/> if the read was successful; otherwise, <see langword="false"/>.</returns>
 		/// <seealso cref="TryRead(out Byte, out Byte, out Byte, out Errors)"/>
-		Boolean TryRead(out Byte first, out Byte second, out Byte third) {
-			third = 0;
-			return TryRead(out first, out second) && TryRead(out third);
-		}
+		Boolean TryRead(out Byte first, out Byte second, out Byte third) => TryRead(out first, out second, out third, error: out _);
 
 		/// <summary>
 		/// Attempts to read three bytes.
@@ -277,10 +271,7 @@ namespace Langly.Streams.Buffers {
 		/// <param name="fourth">The fourth byte that was read.</param>
 		/// <returns><see langword="true"/> if the read was successful; otherwise, <see langword="false"/>.</returns>
 		/// <seealso cref="TryRead(out Byte, out Byte, out Byte, out Byte, out Errors)"/>
-		Boolean TryRead(out Byte first, out Byte second, out Byte third, out Byte fourth) {
-			fourth = 0;
-			return TryRead(out first, out second, out third) && TryRead(out fourth);
-		}
+		Boolean TryRead(out Byte first, out Byte second, out Byte third, out Byte fourth) => TryRead(out first, out second, out third, out fourth, error: out _);
 
 		/// <summary>
 		/// Attempts to read two bytes.

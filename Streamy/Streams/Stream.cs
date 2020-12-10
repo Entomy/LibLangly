@@ -137,17 +137,15 @@ namespace Langly.Streams {
 
 		/// <inheritdoc/>
 		public void Peek(out Int16 element) {
-			ReadBuffer.Peek(out Byte first, out Byte second);
-			element = unchecked((Int16)(second << 8));
-			element |= unchecked((Int16)first);
+			ReadBuffer.EnsureLoaded(sizeof(Int16));
+			element = BitConverter.ToInt16(ReadBuffer.Slice(0, sizeof(Int16)).Span);
 		}
 
 		/// <inheritdoc/>
 		[CLSCompliant(false)]
 		public void Peek(out UInt16 element) {
-			ReadBuffer.Peek(out Byte first, out Byte second);
-			element = unchecked((UInt16)(second << 8));
-			element |= unchecked((UInt16)first);
+			ReadBuffer.EnsureLoaded(sizeof(UInt16));
+			element = BitConverter.ToUInt16(ReadBuffer.Slice(0, sizeof(UInt16)).Span);
 		}
 
 		/// <inheritdoc/>
@@ -161,18 +159,18 @@ namespace Langly.Streams {
 		}
 
 		/// <inheritdoc/>
-		public void Read(out Int16 element) {
-			ReadBuffer.Read(out Byte first, out Byte second);
-			element = unchecked((Int16)(second << 8));
-			element |= unchecked((Int16)first);
+		public unsafe void Read(out Int16 element) {
+			Span<Byte> buffer = stackalloc Byte[2];
+			ReadBuffer.Read(out buffer[0], out buffer[1]);
+			element = BitConverter.ToInt16(buffer);
 		}
 
 		/// <inheritdoc/>
 		[CLSCompliant(false)]
-		public void Read(out UInt16 element) {
-			ReadBuffer.Read(out Byte first, out Byte second);
-			element = unchecked((UInt16)(second << 8));
-			element |= unchecked((UInt16)first);
+		public unsafe void Read(out UInt16 element) {
+			Span<Byte> buffer = stackalloc Byte[2];
+			ReadBuffer.Read(out buffer[0], out buffer[1]);
+			element = BitConverter.ToUInt16(buffer);
 		}
 
 		/// <inheritdoc/>
@@ -194,9 +192,8 @@ namespace Langly.Streams {
 
 		/// <inheritdoc/>
 		public Boolean TryPeek(out Int16 element, out Errors error) {
-			if (ReadBuffer.TryPeek(out Byte first, out Byte second, out error)) {
-				element = unchecked((Int16)(second << 8));
-				element |= unchecked((Int16)first);
+			if (ReadBuffer.TryEnsureLoaded(sizeof(Int16), out error)) {
+				element = BitConverter.ToInt16(ReadBuffer.Slice(0, sizeof(Int16)).Span);
 				return true;
 			} else {
 				element = 0;
@@ -207,9 +204,8 @@ namespace Langly.Streams {
 		/// <inheritdoc/>
 		[CLSCompliant(false)]
 		public Boolean TryPeek(out UInt16 element, out Errors error) {
-			if (ReadBuffer.TryPeek(out Byte first, out Byte second, out error)) {
-				element = unchecked((UInt16)(second << 8));
-				element |= unchecked((UInt16)first);
+			if (ReadBuffer.TryEnsureLoaded(sizeof(UInt16), out error)) {
+				element = BitConverter.ToUInt16(ReadBuffer.Slice(0, sizeof(UInt16)).Span);
 				return true;
 			} else {
 				element = 0;
@@ -229,10 +225,10 @@ namespace Langly.Streams {
 		}
 
 		/// <inheritdoc/>
-		public Boolean TryRead(out Int16 element, out Errors error) {
-			if (ReadBuffer.TryRead(out Byte first, out Byte second, out error)) {
-				element = unchecked((Int16)(second << 8));
-				element |= unchecked((Int16)first);
+		public unsafe Boolean TryRead(out Int16 element, out Errors error) {
+			Span<Byte> buffer = stackalloc Byte[2];
+			if (ReadBuffer.TryRead(out buffer[0], out buffer[1], out error)) {
+				element = BitConverter.ToInt16(buffer);
 				return true;
 			} else {
 				element = 0;
@@ -242,10 +238,10 @@ namespace Langly.Streams {
 
 		/// <inheritdoc/>
 		[CLSCompliant(false)]
-		public Boolean TryRead(out UInt16 element, out Errors error) {
-			if (ReadBuffer.TryPeek(out Byte first, out Byte second, out error)) {
-				element = unchecked((UInt16)(second << 8));
-				element |= unchecked((UInt16)first);
+		public unsafe Boolean TryRead(out UInt16 element, out Errors error) {
+			Span<Byte> buffer = stackalloc Byte[2];
+			if (ReadBuffer.TryPeek(out buffer[0], out buffer[1], out error)) {
+				element = BitConverter.ToUInt16(buffer);
 				return true;
 			} else {
 				element = 0;
@@ -264,15 +260,11 @@ namespace Langly.Streams {
 		public Boolean TryWrite(SByte element, out Errors error) => TryWrite(unchecked((Byte)element), out error);
 
 		/// <inheritdoc/>
-		public Boolean TryWrite(Int16 element, out Errors error) =>
-			TryWrite(unchecked((Byte)element), out error)
-			&& TryWrite(unchecked((Byte)(element >> 8)), out error);
+		public Boolean TryWrite(Int16 element, out Errors error) => WriteBuffer.TryWrite(BitConverter.GetBytes(element), out error);
 
 		/// <inheritdoc/>
 		[CLSCompliant(false)]
-		public Boolean TryWrite(UInt16 element, out Errors error) =>
-			TryWrite(unchecked((Byte)element), out error)
-			&& TryWrite(unchecked((Byte)(element >> 8)), out error);
+		public Boolean TryWrite(UInt16 element, out Errors error) => WriteBuffer.TryWrite(BitConverter.GetBytes(element), out error);
 
 		/// <inheritdoc/>
 		public void Write(Byte element) => WriteBuffer.Write(element);
@@ -282,17 +274,11 @@ namespace Langly.Streams {
 		public void Write(SByte element) => Write(unchecked((Byte)element));
 
 		/// <inheritdoc/>
-		public void Write(Int16 element) {
-			Write(unchecked((Byte)element));
-			Write(unchecked((Byte)(element >> 8)));
-		}
+		public void Write(Int16 element) => WriteBuffer.Write(BitConverter.GetBytes(element));
 
 		/// <inheritdoc/>
 		[CLSCompliant(false)]
-		public void Write(UInt16 element) {
-			Write(unchecked((Byte)element));
-			Write(unchecked((Byte)(element >> 8)));
-		}
+		public void Write(UInt16 element) => WriteBuffer.Write(BitConverter.GetBytes(element));
 
 		/// <inheritdoc/>
 		protected override void DisposeManaged() => Base.Dispose();

@@ -44,6 +44,11 @@ namespace Langly.Streams.Buffers {
 		public Boolean Writable { get; }
 
 		/// <inheritdoc/>
+		public Byte this[nint index] => Buffer[index];
+
+		/// <inheritdoc/>
+		public ReadOnlyMemory<Byte> this[Range range] => Buffer[range];
+		/// <inheritdoc/>
 		public override Boolean Equals([AllowNull] Object obj) {
 			switch (obj) {
 			case Byte[] array:
@@ -169,6 +174,15 @@ namespace Langly.Streams.Buffers {
 				ShiftRight();
 			}
 		}
+
+		/// <inheritdoc/>
+		ReadOnlyMemory<Byte> IReadOnlySliceable<ReadOnlyMemory<Byte>>.Slice() => Buffer.AsMemory();
+
+		/// <inheritdoc/>
+		ReadOnlyMemory<Byte> IReadOnlySliceable<ReadOnlyMemory<Byte>>.Slice(nint start) => Buffer.AsMemory().Slice((Int32)start);
+
+		/// <inheritdoc/>
+		ReadOnlyMemory<Byte> IReadOnlySliceable<ReadOnlyMemory<Byte>>.Slice(nint start, nint length) => Buffer.AsMemory().Slice((Int32)start, (Int32)length);
 
 		/// <inheritdoc/>
 		public void Store(Byte value) => Buffer[Length++] = value;

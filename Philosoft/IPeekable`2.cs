@@ -13,7 +13,7 @@ namespace Langly {
 		/// </summary>
 		/// <param name="element">The <typeparamref name="TElement"/> value that was peeked.</param>
 		/// <remarks>
-		/// This assumes the peek will never fail, which is an assumption that generally doesn't hold up. It is strongly recommended to use <see cref="TryPeek(out TElement)"/> or <see cref="TryPeek(out TElement, out TError)"/> instead.
+		/// This assumes the peek will never fail, which is an assumption that generally doesn't hold up. It is strongly recommended to use <see cref="TryPeek(out TElement, out TError)"/> instead.
 		/// </remarks>
 		public void Peek([MaybeNull] out TElement element);
 
@@ -21,17 +21,8 @@ namespace Langly {
 		/// Returns the element at the beginning of the collection without removing it.
 		/// </summary>
 		/// <param name="element">The <typeparamref name="TElement"/> value that was peeked.</param>
-		/// <returns><see langword="true"/> if the peek was successful; otherwise, <see langword="false"/>.</returns>
-		/// <seealso cref="TryPeek(out TElement, out TError)"/>
-		public Boolean TryPeek([MaybeNullWhen(false), NotNullWhen(true)] out TElement element) => TryRead(out element, out _);
-
-		/// <summary>
-		/// Returns the element at the beginning of the collection without removing it.
-		/// </summary>
-		/// <param name="element">The <typeparamref name="TElement"/> value that was peeked.</param>
 		/// <param name="error">The <typeparamref name="TError"/> that occurred, if any.</param>
 		/// <returns><see langword="true"/> if the peek was successful; otherwise, <see langword="false"/>.</returns>
-		/// <seealso cref="TryPeek(out TElement)"/>
 		public Boolean TryPeek([MaybeNullWhen(false), NotNullWhen(true)] out TElement element, [MaybeNullWhen(true), NotNullWhen(false)] out TError error);
 	}
 

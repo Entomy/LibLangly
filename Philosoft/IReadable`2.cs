@@ -21,7 +21,7 @@ namespace Langly {
 		/// </summary>
 		/// <param name="element">The <typeparamref name="TElement"/> value that was read.</param>
 		/// <remarks>
-		/// This assumes the read will never fail, which is an assumption that generally doesn't hold up. It is strongly recommended to use <see cref="TryRead(out TElement)"/> or <see cref="TryRead(out TElement, out TError)"/> instead.
+		/// This assumes the read will never fail, which is an assumption that generally doesn't hold up. It is strongly recommended to use <see cref="TryRead(out TElement, out TError)"/> instead.
 		/// </remarks>
 		public void Read([MaybeNull] out TElement element);
 
@@ -29,17 +29,8 @@ namespace Langly {
 		/// Attempts to read a <typeparamref name="TElement"/>.
 		/// </summary>
 		/// <param name="element">The <typeparamref name="TElement"/> value that was read.</param>
-		/// <returns><see langword="true"/> if the read was successful; otherwise, <see langword="false"/>.</returns>
-		/// <seealso cref="TryRead(out TElement, out TError)"/>
-		public Boolean TryRead([MaybeNullWhen(false), NotNullWhen(true)] out TElement element) => TryRead(out element, out _);
-
-		/// <summary>
-		/// Attempts to read a <typeparamref name="TElement"/>.
-		/// </summary>
-		/// <param name="element">The <typeparamref name="TElement"/> value that was read.</param>
 		/// <param name="error">The <typeparamref name="TError"/> that occurred, if any.</param>
 		/// <returns><see langword="true"/> if the read was successful; otherwise, <see langword="false"/>.</returns>
-		/// <seealso cref="TryRead(out TElement)"/>
 		public Boolean TryRead([MaybeNullWhen(false), NotNullWhen(true)] out TElement element, [MaybeNullWhen(true), NotNullWhen(false)] out TError error);
 	}
 
