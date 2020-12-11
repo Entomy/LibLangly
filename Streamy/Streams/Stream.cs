@@ -15,9 +15,9 @@ namespace Langly.Streams {
 	/// <para>Additional orchestration can be added by deriving from this type. However, most applications will not need to do this. Instead, the intended mechanism for supporting additional types is through extension methods.</para>
 	/// </remarks>
 	public class Stream : Controlled,
-		IPeekable<Byte, Errors>, IPeekable<SByte, Errors>, IPeekable<Int16, Errors>, IPeekable<UInt16, Errors>, IPeekable<Int32, Errors>, IPeekable<UInt32, Errors>,
+		IPeekable<Byte, Errors>, IPeekable<SByte, Errors>, IPeekable<Int16, Errors>, IPeekable<UInt16, Errors>, IPeekable<Int32, Errors>, IPeekable<UInt32, Errors>, IPeekable<Int64, Errors>, IPeekable<UInt64, Errors>,
 		ISeekable<Byte, Errors>,
-		IWritable<Byte, Errors>, IWritable<SByte, Errors>, IWritable<Int16, Errors>, IWritable<UInt16, Errors>, IWritable<Int32, Errors>, IWritable<UInt32, Errors> {
+		IWritable<Byte, Errors>, IWritable<SByte, Errors>, IWritable<Int16, Errors>, IWritable<UInt16, Errors>, IWritable<Int32, Errors>, IWritable<UInt32, Errors>, IWritable<Int64, Errors>, IWritable<UInt64, Errors> {
 		/// <summary>
 		/// The base of the <see cref="Stream"/>, the actual datastream.
 		/// </summary>
@@ -161,6 +161,19 @@ namespace Langly.Streams {
 		}
 
 		/// <inheritdoc/>
+		public void Peek(out Int64 element) {
+			ReadBuffer.EnsureLoaded(sizeof(Int64));
+			element = BitConverter.ToInt64(ReadBuffer.Slice(0, sizeof(Int64)).Span);
+		}
+
+		/// <inheritdoc/>
+		[CLSCompliant(false)]
+		public void Peek(out UInt64 element) {
+			ReadBuffer.EnsureLoaded(sizeof(UInt64));
+			element = BitConverter.ToUInt64(ReadBuffer.Slice(0, sizeof(UInt64)).Span);
+		}
+
+		/// <inheritdoc/>
 		public void Read(out Byte element) => ReadBuffer.Read(out element);
 
 		/// <inheritdoc/>
@@ -197,6 +210,21 @@ namespace Langly.Streams {
 			Span<Byte> buffer = stackalloc Byte[sizeof(UInt32)];
 			ReadBuffer.Read(buffer);
 			element = BitConverter.ToUInt32(buffer);
+		}
+
+		/// <inheritdoc/>
+		public unsafe void Read(out Int64 element) {
+			Span<Byte> buffer = stackalloc Byte[sizeof(Int64)];
+			ReadBuffer.Read(buffer);
+			element = BitConverter.ToInt64(buffer);
+		}
+
+		/// <inheritdoc/>
+		[CLSCompliant(false)]
+		public unsafe void Read(out UInt64 element) {
+			Span<Byte> buffer = stackalloc Byte[sizeof(UInt64)];
+			ReadBuffer.Read(buffer);
+			element = BitConverter.ToUInt64(buffer);
 		}
 
 		/// <inheritdoc/>
@@ -263,6 +291,29 @@ namespace Langly.Streams {
 		}
 
 		/// <inheritdoc/>
+		public Boolean TryPeek(out Int64 element, out Errors error) {
+			if (ReadBuffer.TryEnsureLoaded(sizeof(Int64), out error)) {
+				element = BitConverter.ToInt64(ReadBuffer.Slice(0, sizeof(Int64)).Span);
+				return true;
+			} else {
+				element = 0;
+				return false;
+			}
+		}
+
+		/// <inheritdoc/>
+		[CLSCompliant(false)]
+		public Boolean TryPeek(out UInt64 element, out Errors error) {
+			if (ReadBuffer.TryEnsureLoaded(sizeof(UInt64), out error)) {
+				element = BitConverter.ToUInt64(ReadBuffer.Slice(0, sizeof(UInt64)).Span);
+				return true;
+			} else {
+				element = 0;
+				return false;
+			}
+		}
+
+		/// <inheritdoc/>
 		public Boolean TryRead(out Byte element, out Errors error) => ReadBuffer.TryRead(out element, out error);
 
 		/// <inheritdoc/>
@@ -289,7 +340,7 @@ namespace Langly.Streams {
 		[CLSCompliant(false)]
 		public unsafe Boolean TryRead(out UInt16 element, out Errors error) {
 			Span<Byte> buffer = stackalloc Byte[sizeof(UInt16)];
-			if (ReadBuffer.TryPeek(buffer, out error)) {
+			if (ReadBuffer.TryRead(buffer, out error)) {
 				element = BitConverter.ToUInt16(buffer);
 				return true;
 			} else {
@@ -301,7 +352,7 @@ namespace Langly.Streams {
 		/// <inheritdoc/>
 		public unsafe Boolean TryRead(out Int32 element, out Errors error) {
 			Span<Byte> buffer = stackalloc Byte[sizeof(Int32)];
-			if (ReadBuffer.TryPeek(buffer, out error)) {
+			if (ReadBuffer.TryRead(buffer, out error)) {
 				element = BitConverter.ToInt32(buffer);
 				return true;
 			} else {
@@ -311,10 +362,36 @@ namespace Langly.Streams {
 		}
 
 		/// <inheritdoc/>
+		[CLSCompliant(false)]
 		public unsafe Boolean TryRead(out UInt32 element, out Errors error) {
 			Span<Byte> buffer = stackalloc Byte[sizeof(UInt32)];
-			if (ReadBuffer.TryPeek(buffer, out error)) {
+			if (ReadBuffer.TryRead(buffer, out error)) {
 				element = BitConverter.ToUInt32(buffer);
+				return true;
+			} else {
+				element = 0;
+				return false;
+			}
+		}
+
+		/// <inheritdoc/>
+		public unsafe Boolean TryRead(out Int64 element, out Errors error) {
+			Span<Byte> buffer = stackalloc Byte[sizeof(Int64)];
+			if (ReadBuffer.TryRead(buffer, out error)) {
+				element = BitConverter.ToInt64(buffer);
+				return true;
+			} else {
+				element = 0;
+				return false;
+			}
+		}
+
+		/// <inheritdoc/>
+		[CLSCompliant(false)]
+		public unsafe Boolean TryRead(out UInt64 element, out Errors error) {
+			Span<Byte> buffer = stackalloc Byte[sizeof(UInt64)];
+			if (ReadBuffer.TryRead(buffer, out error)) {
+				element = BitConverter.ToUInt64(buffer);
 				return true;
 			} else {
 				element = 0;
@@ -347,6 +424,13 @@ namespace Langly.Streams {
 		public Boolean TryWrite(UInt32 element, out Errors error) => WriteBuffer.TryWrite(BitConverter.GetBytes(element), out error);
 
 		/// <inheritdoc/>
+		public Boolean TryWrite(Int64 element, out Errors error) => WriteBuffer.TryWrite(BitConverter.GetBytes(element), out error);
+
+		/// <inheritdoc/>
+		[CLSCompliant(false)]
+		public Boolean TryWrite(UInt64 element, out Errors error) => WriteBuffer.TryWrite(BitConverter.GetBytes(element), out error);
+
+		/// <inheritdoc/>
 		public void Write(Byte element) => WriteBuffer.Write(element);
 
 		/// <inheritdoc/>
@@ -366,6 +450,13 @@ namespace Langly.Streams {
 		/// <inheritdoc/>
 		[CLSCompliant(false)]
 		public void Write(UInt32 element) => WriteBuffer.Write(BitConverter.GetBytes(element));
+
+		/// <inheritdoc/>
+		public void Write(Int64 element) => WriteBuffer.Write(BitConverter.GetBytes(element));
+
+		/// <inheritdoc/>
+		[CLSCompliant(false)]
+		public void Write(UInt64 element) => WriteBuffer.Write(BitConverter.GetBytes(element));
 
 		/// <inheritdoc/>
 		protected override void DisposeManaged() => Base.Dispose();
