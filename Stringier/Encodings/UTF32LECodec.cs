@@ -13,34 +13,34 @@ namespace Langly {
 		/// <inheritdoc/>
 		public override void Peek(out Rune element) {
 			ReadBuffer.EnsureLoaded(4);
-			ReadBuffer.Peek(out Byte first, out Byte second, out Byte third, out Byte fourth);
 			Int32 value = 0;
-			value += fourth << 8;
-			value += third << 8;
-			value += second << 8;
-			value += first;
+			value += ReadBuffer[3] << 8;
+			value += ReadBuffer[2] << 8;
+			value += ReadBuffer[1] << 8;
+			value += ReadBuffer[0];
 			element = new Rune(value);
 		}
 
 		/// <inheritdoc/>
-		public override void Read(out Rune element) {
-			ReadBuffer.Read(out Byte first, out Byte second, out Byte third, out Byte fourth);
+		public override unsafe void Read(out Rune element) {
+			Span<Byte> buffer = stackalloc Byte[4];
+			ReadBuffer.Read(buffer);
 			Int32 value = 0;
-			value += fourth << 8;
-			value += third << 8;
-			value += second << 8;
-			value += first;
+			value += buffer[3] << 8;
+			value += buffer[2] << 8;
+			value += buffer[1] << 8;
+			value += buffer[0];
 			element = new Rune(value);
 		}
 
 		/// <inheritdoc/>
 		public override Boolean TryPeek(out Rune element, out Errors error) {
-			if (ReadBuffer.TryEnsureLoaded(4, out error) && ReadBuffer.TryRead(out Byte first, out Byte second, out Byte third, out Byte fourth, out error)) {
+			if (ReadBuffer.TryEnsureLoaded(4, out error)) {
 				Int32 value = 0;
-				value += fourth << 8;
-				value += third << 8;
-				value += second << 8;
-				value += first;
+				value += ReadBuffer[3] << 8;
+				value += ReadBuffer[2] << 8;
+				value += ReadBuffer[1] << 8;
+				value += ReadBuffer[0];
 				element = new Rune(value);
 				return true;
 			} else {
@@ -50,13 +50,14 @@ namespace Langly {
 		}
 
 		/// <inheritdoc/>
-		public override Boolean TryRead(out Rune element, out Errors error) {
-			if (ReadBuffer.TryRead(out Byte first, out Byte second, out Byte third, out Byte fourth, out error)) {
+		public override unsafe Boolean TryRead(out Rune element, out Errors error) {
+			Span<Byte> buffer = stackalloc Byte[4];
+			if (ReadBuffer.TryRead(buffer, out error)) {
 				Int32 value = 0;
-				value += fourth << 8;
-				value += third << 8;
-				value += second << 8;
-				value += first;
+				value += buffer[3] << 8;
+				value += buffer[2] << 8;
+				value += buffer[1] << 8;
+				value += buffer[0];
 				element = new Rune(value);
 				return true;
 			} else {

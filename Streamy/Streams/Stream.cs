@@ -161,7 +161,7 @@ namespace Langly.Streams {
 		/// <inheritdoc/>
 		public unsafe void Read(out Int16 element) {
 			Span<Byte> buffer = stackalloc Byte[2];
-			ReadBuffer.Read(out buffer[0], out buffer[1]);
+			ReadBuffer.Read(buffer);
 			element = BitConverter.ToInt16(buffer);
 		}
 
@@ -169,7 +169,7 @@ namespace Langly.Streams {
 		[CLSCompliant(false)]
 		public unsafe void Read(out UInt16 element) {
 			Span<Byte> buffer = stackalloc Byte[2];
-			ReadBuffer.Read(out buffer[0], out buffer[1]);
+			ReadBuffer.Read(buffer);
 			element = BitConverter.ToUInt16(buffer);
 		}
 
@@ -227,7 +227,7 @@ namespace Langly.Streams {
 		/// <inheritdoc/>
 		public unsafe Boolean TryRead(out Int16 element, out Errors error) {
 			Span<Byte> buffer = stackalloc Byte[2];
-			if (ReadBuffer.TryRead(out buffer[0], out buffer[1], out error)) {
+			if (ReadBuffer.TryRead(buffer, out error)) {
 				element = BitConverter.ToInt16(buffer);
 				return true;
 			} else {
@@ -240,7 +240,7 @@ namespace Langly.Streams {
 		[CLSCompliant(false)]
 		public unsafe Boolean TryRead(out UInt16 element, out Errors error) {
 			Span<Byte> buffer = stackalloc Byte[2];
-			if (ReadBuffer.TryPeek(out buffer[0], out buffer[1], out error)) {
+			if (ReadBuffer.TryPeek(buffer, out error)) {
 				element = BitConverter.ToUInt16(buffer);
 				return true;
 			} else {

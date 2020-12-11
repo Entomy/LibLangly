@@ -97,27 +97,9 @@ namespace Langly.Streams.Buffers {
 		}
 
 		/// <inheritdoc/>
-		public void Peek(out Byte first, out Byte second) {
-			((IReadBuffer)this).EnsureLoaded(2);
-			first = Buffer[0];
-			second = Buffer[1];
-		}
-
-		/// <inheritdoc/>
-		public void Peek(out Byte first, out Byte second, out Byte third) {
-			((IReadBuffer)this).EnsureLoaded(3);
-			first = Buffer[0];
-			second = Buffer[1];
-			third = Buffer[2];
-		}
-
-		/// <inheritdoc/>
-		public void Peek(out Byte first, out Byte second, out Byte third, out Byte fourth) {
-			((IReadBuffer)this).EnsureLoaded(4);
-			first = Buffer[0];
-			second = Buffer[1];
-			third = Buffer[2];
-			fourth = Buffer[3];
+		public void Peek(Span<Byte> elements) {
+			((IReadBuffer)this).EnsureLoaded(elements.Length);
+			Buffer.AsSpan().Slice(0, elements.Length).CopyTo(elements);
 		}
 
 		/// <inheritdoc/>
@@ -201,44 +183,11 @@ namespace Langly.Streams.Buffers {
 		}
 
 		/// <inheritdoc/>
-		public Boolean TryPeek(out Byte first, out Byte second, out Errors error) {
-			if (!((IReadBuffer)this).TryEnsureLoaded(2, out error)) {
-				first = default;
-				second = default;
+		public Boolean TryPeek(Span<Byte> elements, out Errors error) {
+			if (!((IReadBuffer)this).TryEnsureLoaded(elements.Length, out error)) {
 				return false;
 			}
-			first = Buffer[0];
-			second = Buffer[1];
-			return true;
-		}
-
-		/// <inheritdoc/>
-		public Boolean TryPeek(out Byte first, out Byte second, out Byte third, out Errors error) {
-			if (!((IReadBuffer)this).TryEnsureLoaded(3, out error)) {
-				first = default;
-				second = default;
-				third = default;
-				return false;
-			}
-			first = Buffer[0];
-			second = Buffer[1];
-			third = Buffer[2];
-			return true;
-		}
-
-		/// <inheritdoc/>
-		public Boolean TryPeek(out Byte first, out Byte second, out Byte third, out Byte fourth, out Errors error) {
-			if (!((IReadBuffer)this).TryEnsureLoaded(4, out error)) {
-				first = default;
-				second = default;
-				third = default;
-				fourth = default;
-				return false;
-			}
-			first = Buffer[0];
-			second = Buffer[1];
-			third = Buffer[2];
-			fourth = Buffer[3];
+			Buffer.AsSpan().Slice(0, elements.Length).CopyTo(elements);
 			return true;
 		}
 

@@ -12,23 +12,23 @@ namespace Langly {
 		/// <inheritdoc/>
 		public override void Peek(out Char element) {
 			ReadBuffer.EnsureLoaded(2);
-			ReadBuffer.Peek(out Byte first, out Byte second);
-			element = (Char)first;
-			element += (Char)(second << 8);
+			element = (Char)ReadBuffer[0];
+			element += (Char)(ReadBuffer[1] << 8);
 		}
 
 		/// <inheritdoc/>
-		public override void Read(out Char element) {
-			ReadBuffer.Read(out Byte first, out Byte second);
-			element = (Char)first;
-			element += (Char)(second << 8);
+		public override unsafe void Read(out Char element) {
+			Span<Byte> buffer = stackalloc Byte[2];
+			ReadBuffer.Read(buffer);
+			element = (Char)buffer[0];
+			element += (Char)(buffer[1] << 8);
 		}
 
 		/// <inheritdoc/>
 		public override Boolean TryPeek(out Char element, out Errors error) {
-			if (ReadBuffer.TryEnsureLoaded(2, out error) && ReadBuffer.TryPeek(out Byte first, out Byte second, out error)) {
-				element = (Char)first;
-				element += (Char)(second << 8);
+			if (ReadBuffer.TryEnsureLoaded(2, out error)) {
+				element = (Char)ReadBuffer[0];
+				element += (Char)(ReadBuffer[1] << 8);
 				return true;
 			} else {
 				element = default;
@@ -37,10 +37,11 @@ namespace Langly {
 		}
 
 		/// <inheritdoc/>
-		public override Boolean TryRead(out Char element, out Errors error) {
-			if (ReadBuffer.TryRead(out Byte first, out Byte second, out error)) {
-				element = (Char)first;
-				element += (Char)(second << 8);
+		public override unsafe Boolean TryRead(out Char element, out Errors error) {
+			Span<Byte> buffer = stackalloc Byte[2];
+			if (ReadBuffer.TryRead(buffer, out error)) {
+				element = (Char)buffer[0];
+				element += (Char)(buffer[1] << 8);
 				return true;
 			} else {
 				element = default;
@@ -62,20 +63,19 @@ namespace Langly {
 		/// <inheritdoc/>
 		protected override void Peek(out Char high, out Char low) {
 			ReadBuffer.EnsureLoaded(4);
-			ReadBuffer.Peek(out Byte first, out Byte second, out Byte third, out Byte fourth);
-			high = (Char)first;
-			high += (Char)(second << 8);
-			low = (Char)third;
-			low += (Char)(fourth << 8);
+			high = (Char)ReadBuffer[0];
+			high += (Char)(ReadBuffer[1] << 8);
+			low = (Char)ReadBuffer[2];
+			low += (Char)(ReadBuffer[3] << 8);
 		}
 
 		/// <inheritdoc/>
 		protected override Boolean TryPeek(out Char high, out Char low, out Errors error) {
-			if (ReadBuffer.TryEnsureLoaded(4, out error) && ReadBuffer.TryPeek(out Byte first, out Byte second, out Byte third, out Byte fourth, out error)) {
-				high = (Char)first;
-				high += (Char)(second << 8);
-				low = (Char)third;
-				low += (Char)(fourth << 8);
+			if (ReadBuffer.TryEnsureLoaded(4, out error)) {
+				high = (Char)ReadBuffer[0];
+				high += (Char)(ReadBuffer[1] << 8);
+				low = (Char)ReadBuffer[2];
+				low += (Char)(ReadBuffer[3] << 8);
 				return true;
 			} else {
 				high = default;

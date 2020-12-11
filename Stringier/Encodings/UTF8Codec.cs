@@ -17,30 +17,22 @@ namespace Langly {
 
 		/// <inheritdoc/>
 		public override void Peek(out Rune element) {
-			Byte first;
-			Byte second;
-			Byte third;
-			Byte fourth;
 			ReadBuffer.EnsureLoaded(1);
-			ReadBuffer.Peek(out first);
-			switch (UTF8.SequenceLength(first)) {
+			switch (UTF8.SequenceLength(ReadBuffer[0])) {
 			case 1:
-				element = UTF8.Decode(first);
+				element = UTF8.Decode(ReadBuffer[0]);
 				break;
 			case 2:
 				ReadBuffer.EnsureLoaded(2);
-				ReadBuffer.Peek(out _, out second);
-				element = UTF8.Decode(first, second);
+				element = UTF8.Decode(ReadBuffer[0], ReadBuffer[1]);
 				break;
 			case 3:
 				ReadBuffer.EnsureLoaded(3);
-				ReadBuffer.Peek(out _, out second, out third);
-				element = UTF8.Decode(first, second, third);
+				element = UTF8.Decode(ReadBuffer[0], ReadBuffer[1], ReadBuffer[2]);
 				break;
 			case 4:
 				ReadBuffer.EnsureLoaded(4);
-				ReadBuffer.Peek(out _, out second, out third, out fourth);
-				element = UTF8.Decode(first, second, third, fourth);
+				element = UTF8.Decode(ReadBuffer[0], ReadBuffer[1], ReadBuffer[2], ReadBuffer[3]);
 				break;
 			default:
 				element = Rune.ReplacementChar;
@@ -49,27 +41,24 @@ namespace Langly {
 		}
 
 		/// <inheritdoc/>
-		public override void Read(out Rune element) {
-			Byte first;
-			Byte second;
-			Byte third;
-			Byte fourth;
-			ReadBuffer.Read(out first);
-			switch (UTF8.SequenceLength(first)) {
+		public override unsafe void Read(out Rune element) {
+			Span<Byte> buffer = stackalloc Byte[4];
+			ReadBuffer.Read(out buffer[0]);
+			switch (UTF8.SequenceLength(buffer[0])) {
 			case 1:
-				element = UTF8.Decode(first);
+				element = UTF8.Decode(buffer[0]);
 				break;
 			case 2:
-				ReadBuffer.Read(out second);
-				element = UTF8.Decode(first, second);
+				ReadBuffer.Read(out buffer[1]);
+				element = UTF8.Decode(buffer[0], buffer[1]);
 				break;
 			case 3:
-				ReadBuffer.Read(out second, out third);
-				element = UTF8.Decode(first, second, third);
+				ReadBuffer.Read(buffer[1..2]);
+				element = UTF8.Decode(buffer[0], buffer[1], buffer[2]);
 				break;
 			case 4:
-				ReadBuffer.Read(out second, out third, out fourth);
-				element = UTF8.Decode(first, second, third, fourth);
+				ReadBuffer.Read(buffer[1..3]);
+				element = UTF8.Decode(buffer[0], buffer[1], buffer[2], buffer[3]);
 				break;
 			default:
 				element = Rune.ReplacementChar;
@@ -79,30 +68,26 @@ namespace Langly {
 
 		/// <inheritdoc/>
 		public override Boolean TryPeek(out Rune element, out Errors error) {
-			Byte first;
-			Byte second;
-			Byte third;
-			Byte fourth;
-			if (ReadBuffer.TryEnsureLoaded(1, out error) && ReadBuffer.TryRead(out first, out error)) {
-				switch (UTF8.SequenceLength(first)) {
+			if (ReadBuffer.TryEnsureLoaded(1, out error)) {
+				switch (UTF8.SequenceLength(ReadBuffer[0])) {
 				case 1:
-					element = UTF8.Decode(first);
+					element = UTF8.Decode(ReadBuffer[0]);
 					return true;
 				case 2:
-					if (ReadBuffer.TryEnsureLoaded(2, out error) && ReadBuffer.TryRead(out second, out error)) {
-						element = UTF8.Decode(first, second);
+					if (ReadBuffer.TryEnsureLoaded(2, out error)) {
+						element = UTF8.Decode(ReadBuffer[0], ReadBuffer[1]);
 						return true;
 					}
 					break;
 				case 3:
-					if (ReadBuffer.TryEnsureLoaded(3, out error) && ReadBuffer.TryRead(out second, out third, out error)) {
-						element = UTF8.Decode(first, second, third);
+					if (ReadBuffer.TryEnsureLoaded(3, out error)) {
+						element = UTF8.Decode(ReadBuffer[0], ReadBuffer[1], ReadBuffer[2]);
 						return true;
 					}
 					break;
 				case 4:
-					if (ReadBuffer.TryEnsureLoaded(4, out error) && ReadBuffer.TryRead(out second, out third, out fourth, out error)) {
-						element = UTF8.Decode(first, second, third, fourth);
+					if (ReadBuffer.TryEnsureLoaded(4, out error)) {
+						element = UTF8.Decode(ReadBuffer[0], ReadBuffer[1], ReadBuffer[2], ReadBuffer[3]);
 						return true;
 					}
 					break;
@@ -116,31 +101,28 @@ namespace Langly {
 		}
 
 		/// <inheritdoc/>
-		public override Boolean TryRead(out Rune element, out Errors error) {
-			Byte first;
-			Byte second;
-			Byte third;
-			Byte fourth;
-			if (ReadBuffer.TryRead(out first, out error)) {
-				switch (UTF8.SequenceLength(first)) {
+		public override unsafe Boolean TryRead(out Rune element, out Errors error) {
+			Span<Byte> buffer = stackalloc Byte[4];
+			if (ReadBuffer.TryRead(out buffer[0], out error)) {
+				switch (UTF8.SequenceLength(buffer[0])) {
 				case 1:
-					element = UTF8.Decode(first);
+					element = UTF8.Decode(buffer[0]);
 					return true;
 				case 2:
-					if (ReadBuffer.TryRead(out second, out error)) {
-						element = UTF8.Decode(first, second);
+					if (ReadBuffer.TryRead(out buffer[1], out error)) {
+						element = UTF8.Decode(buffer[0], buffer[1]);
 						return true;
 					}
 					break;
 				case 3:
-					if (ReadBuffer.TryRead(out second, out third, out error)) {
-						element = UTF8.Decode(first, second, third);
+					if (ReadBuffer.TryRead(buffer[1..2], out error)) {
+						element = UTF8.Decode(buffer[0], buffer[1], buffer[2]);
 						return true;
 					}
 					break;
 				case 4:
-					if (ReadBuffer.TryRead(out second, out third, out fourth, out error)) {
-						element = UTF8.Decode(first, second, third, fourth);
+					if (ReadBuffer.TryRead(buffer[1..3], out error)) {
+						element = UTF8.Decode(buffer[0], buffer[1], buffer[2], buffer[3]);
 						return true;
 					}
 					break;
