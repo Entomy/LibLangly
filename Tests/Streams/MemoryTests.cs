@@ -174,6 +174,40 @@ namespace Langly.Streams {
 
 		[Theory]
 		[InlineData(new Byte[] { })]
+		[InlineData(new Byte[] { 1, 2, 3, 4, 5, 6, 7, 8 })]
+		[InlineData(new Byte[] { 255, 254, 253, 252, 251, 250, 249, 248 })]
+		public void Peek_Single(Byte[] buffer) {
+			Stream stream = buffer;
+			Int32 i = 0;
+			while (i < buffer.Length) {
+				stream.Peek(out Single peek);
+				Assert.Equal(BitConverter.ToSingle(buffer.AsSpan().Slice(i, 4)), peek);
+				stream.Read(out Single read);
+				Assert.Equal(BitConverter.ToSingle(buffer.AsSpan().Slice(i, 4)), read);
+				Assert.Equal(peek, read);
+				i += 4;
+			}
+		}
+
+		[Theory]
+		[InlineData(new Byte[] { })]
+		[InlineData(new Byte[] { 1, 2, 3, 4, 5, 6, 7, 8 })]
+		[InlineData(new Byte[] { 255, 254, 253, 252, 251, 250, 249, 248 })]
+		public void Peek_Double(Byte[] buffer) {
+			Stream stream = buffer;
+			Int32 i = 0;
+			while (i < buffer.Length) {
+				stream.Peek(out Double peek);
+				Assert.Equal(BitConverter.ToDouble(buffer.AsSpan().Slice(i, 8)), peek);
+				stream.Read(out Double read);
+				Assert.Equal(BitConverter.ToDouble(buffer.AsSpan().Slice(i, 8)), read);
+				Assert.Equal(peek, read);
+				i += 8;
+			}
+		}
+
+		[Theory]
+		[InlineData(new Byte[] { })]
 		[InlineData(new Byte[] { 1, 2, 3, 4, 5 })]
 		[InlineData(new Byte[] { 255, 254, 253, 252 })]
 		public void Read_Byte(Byte[] buffer) {
@@ -278,6 +312,34 @@ namespace Langly.Streams {
 			while (i < buffer.Length) {
 				stream.Read(out UInt64 read);
 				Assert.Equal(BitConverter.ToUInt64(buffer.AsSpan().Slice(i, 8)), read);
+				i += 8;
+			}
+		}
+
+		[Theory]
+		[InlineData(new Byte[] { })]
+		[InlineData(new Byte[] { 1, 2, 3, 4, 5, 6, 7, 8 })]
+		[InlineData(new Byte[] { 255, 254, 253, 252, 251, 250, 249, 248 })]
+		public void Read_Single(Byte[] buffer) {
+			Stream stream = buffer;
+			Int32 i = 0;
+			while (i < buffer.Length) {
+				stream.Read(out Single read);
+				Assert.Equal(BitConverter.ToSingle(buffer.AsSpan().Slice(i, 4)), read);
+				i += 4;
+			}
+		}
+
+		[Theory]
+		[InlineData(new Byte[] { })]
+		[InlineData(new Byte[] { 1, 2, 3, 4, 5, 6, 7, 8 })]
+		[InlineData(new Byte[] { 255, 254, 253, 252, 251, 250, 249, 248 })]
+		public void Read_Double(Byte[] buffer) {
+			Stream stream = buffer;
+			Int32 i = 0;
+			while (i < buffer.Length) {
+				stream.Read(out Double read);
+				Assert.Equal(BitConverter.ToDouble(buffer.AsSpan().Slice(i, 8)), read);
 				i += 8;
 			}
 		}
@@ -463,6 +525,46 @@ namespace Langly.Streams {
 
 		[Theory]
 		[InlineData(new Byte[] { })]
+		[InlineData(new Byte[] { 1, 2, 3, 4, 5, 6, 7, 8 })]
+		[InlineData(new Byte[] { 255, 254, 253, 252, 251, 250, 249, 248 })]
+		public void TryPeek_Single(Byte[] buffer) {
+			Stream stream = buffer;
+			Int32 i = 0;
+			Errors error;
+			while (i < buffer.Length) {
+				Assert.True(stream.TryPeek(out Single peek, out error));
+				Assert.Equal(BitConverter.ToSingle(buffer.AsSpan().Slice(i, 4)), peek);
+				Assert.Equal(Errors.None, error);
+				Assert.True(stream.TryRead(out Single read, out error));
+				Assert.Equal(BitConverter.ToSingle(buffer.AsSpan().Slice(i, 4)), read);
+				Assert.Equal(Errors.None, error);
+				Assert.Equal(peek, read);
+				i += 4;
+			}
+		}
+
+		[Theory]
+		[InlineData(new Byte[] { })]
+		[InlineData(new Byte[] { 1, 2, 3, 4, 5, 6, 7, 8 })]
+		[InlineData(new Byte[] { 255, 254, 253, 252, 251, 250, 249, 248 })]
+		public void TryPeek_Double(Byte[] buffer) {
+			Stream stream = buffer;
+			Int32 i = 0;
+			Errors error;
+			while (i < buffer.Length) {
+				Assert.True(stream.TryPeek(out Double peek, out error));
+				Assert.Equal(BitConverter.ToDouble(buffer.AsSpan().Slice(i, 8)), peek);
+				Assert.Equal(Errors.None, error);
+				Assert.True(stream.TryRead(out Double read, out error));
+				Assert.Equal(BitConverter.ToDouble(buffer.AsSpan().Slice(i, 8)), read);
+				Assert.Equal(Errors.None, error);
+				Assert.Equal(peek, read);
+				i += 8;
+			}
+		}
+
+		[Theory]
+		[InlineData(new Byte[] { })]
 		[InlineData(new Byte[] { 1, 2, 3, 4, 5 })]
 		[InlineData(new Byte[] { 255, 254, 253, 252 })]
 		public void TryRead_Byte(Byte[] buffer) {
@@ -585,6 +687,38 @@ namespace Langly.Streams {
 
 		[Theory]
 		[InlineData(new Byte[] { })]
+		[InlineData(new Byte[] { 1, 2, 3, 4, 5, 6, 7, 8 })]
+		[InlineData(new Byte[] { 255, 254, 253, 252, 251, 250, 249, 248 })]
+		public void TryRead_Single(Byte[] buffer) {
+			Stream stream = buffer;
+			Int32 i = 0;
+			Errors error;
+			while (i < buffer.Length) {
+				Assert.True(stream.TryRead(out Single read, out error));
+				Assert.Equal(BitConverter.ToSingle(buffer.AsSpan().Slice(i, 4)), read);
+				Assert.Equal(Errors.None, error);
+				i += 4;
+			}
+		}
+
+		[Theory]
+		[InlineData(new Byte[] { })]
+		[InlineData(new Byte[] { 1, 2, 3, 4, 5, 6, 7, 8 })]
+		[InlineData(new Byte[] { 255, 254, 253, 252, 251, 250, 249, 248 })]
+		public void TryRead_Double(Byte[] buffer) {
+			Stream stream = buffer;
+			Int32 i = 0;
+			Errors error;
+			while (i < buffer.Length) {
+				Assert.True(stream.TryRead(out Double read, out error));
+				Assert.Equal(BitConverter.ToDouble(buffer.AsSpan().Slice(i, 8)), read);
+				Assert.Equal(Errors.None, error);
+				i += 8;
+			}
+		}
+
+		[Theory]
+		[InlineData(new Byte[] { })]
 		[InlineData(new Byte[] { 1, 2, 3, 4, 5 })]
 		[InlineData(new Byte[] { 255, 254, 253, 252 })]
 		public void TryWrite_Byte(Byte[] expected) {
@@ -652,6 +786,40 @@ namespace Langly.Streams {
 
 		[Theory]
 		[InlineData(new Byte[] { })]
+		[InlineData(new Byte[] { 1, 2, 3, 4 })]
+		[InlineData(new Byte[] { 255, 254, 253, 252 })]
+		public void TryWrite_Single(Byte[] expected) {
+			Byte[] buffer = new Byte[expected.Length];
+			Stream stream = buffer;
+			Int32 i = 0;
+			while (i < expected.Length) {
+				Assert.True(stream.TryWrite(BitConverter.ToSingle(expected.AsSpan().Slice(i, 4)), out Errors error));
+				Assert.Equal(BitConverter.ToSingle(expected.AsSpan().Slice(i, 4)), BitConverter.ToSingle(buffer.AsSpan().Slice(i, 4)));
+				Assert.Equal(Errors.None, error);
+				i += 4;
+			}
+			Assert.Equal(expected, buffer);
+		}
+
+		[Theory]
+		[InlineData(new Byte[] { })]
+		[InlineData(new Byte[] { 1, 2, 3, 4, 5, 6, 7, 8 })]
+		[InlineData(new Byte[] { 255, 254, 253, 252, 251, 250, 249, 248 })]
+		public void TryWrite_Double(Byte[] expected) {
+			Byte[] buffer = new Byte[expected.Length];
+			Stream stream = buffer;
+			Int32 i = 0;
+			while (i < expected.Length) {
+				Assert.True(stream.TryWrite(BitConverter.ToDouble(expected.AsSpan().Slice(i, 8)), out Errors error));
+				Assert.Equal(BitConverter.ToDouble(expected.AsSpan().Slice(i, 8)), BitConverter.ToDouble(buffer.AsSpan().Slice(i, 8)));
+				Assert.Equal(Errors.None, error);
+				i += 8;
+			}
+			Assert.Equal(expected, buffer);
+		}
+
+		[Theory]
+		[InlineData(new Byte[] { })]
 		[InlineData(new Byte[] { 1, 2, 3, 4, 5 })]
 		[InlineData(new Byte[] { 255, 254, 253, 252 })]
 		public void Write_Byte(Byte[] expected) {
@@ -708,6 +876,38 @@ namespace Langly.Streams {
 			while (i < expected.Length) {
 				stream.Write(BitConverter.ToInt64(expected.AsSpan().Slice(i, 8)));
 				Assert.Equal(BitConverter.ToInt64(expected.AsSpan().Slice(i, 8)), BitConverter.ToInt64(expected.AsSpan().Slice(i, 8)));
+				i += 8;
+			}
+			Assert.Equal(expected, buffer);
+		}
+
+		[Theory]
+		[InlineData(new Byte[] { })]
+		[InlineData(new Byte[] { 1, 2, 3, 4 })]
+		[InlineData(new Byte[] { 255, 254, 253, 252 })]
+		public void Write_Single(Byte[] expected) {
+			Byte[] buffer = new Byte[expected.Length];
+			Stream stream = buffer;
+			Int32 i = 0;
+			while (i < expected.Length) {
+				stream.Write(BitConverter.ToSingle(expected.AsSpan().Slice(i, 4)));
+				Assert.Equal(BitConverter.ToSingle(expected.AsSpan().Slice(i, 4)), BitConverter.ToSingle(expected.AsSpan().Slice(i, 4)));
+				i += 4;
+			}
+			Assert.Equal(expected, buffer);
+		}
+
+		[Theory]
+		[InlineData(new Byte[] { })]
+		[InlineData(new Byte[] { 1, 2, 3, 4, 5, 6, 7, 8 })]
+		[InlineData(new Byte[] { 255, 254, 253, 252, 251, 250, 249, 248 })]
+		public void Write_Double(Byte[] expected) {
+			Byte[] buffer = new Byte[expected.Length];
+			Stream stream = buffer;
+			Int32 i = 0;
+			while (i < expected.Length) {
+				stream.Write(BitConverter.ToDouble(expected.AsSpan().Slice(i, 8)));
+				Assert.Equal(BitConverter.ToDouble(expected.AsSpan().Slice(i, 8)), BitConverter.ToDouble(expected.AsSpan().Slice(i, 8)));
 				i += 8;
 			}
 			Assert.Equal(expected, buffer);

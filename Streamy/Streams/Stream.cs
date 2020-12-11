@@ -15,9 +15,9 @@ namespace Langly.Streams {
 	/// <para>Additional orchestration can be added by deriving from this type. However, most applications will not need to do this. Instead, the intended mechanism for supporting additional types is through extension methods.</para>
 	/// </remarks>
 	public class Stream : Controlled,
-		IPeekable<Byte, Errors>, IPeekable<SByte, Errors>, IPeekable<Int16, Errors>, IPeekable<UInt16, Errors>, IPeekable<Int32, Errors>, IPeekable<UInt32, Errors>, IPeekable<Int64, Errors>, IPeekable<UInt64, Errors>,
+		IPeekable<Byte, Errors>, IPeekable<SByte, Errors>, IPeekable<Int16, Errors>, IPeekable<UInt16, Errors>, IPeekable<Int32, Errors>, IPeekable<UInt32, Errors>, IPeekable<Int64, Errors>, IPeekable<UInt64, Errors>, IPeekable<Single, Errors>, IPeekable<Double, Errors>,
 		ISeekable<Byte, Errors>,
-		IWritable<Byte, Errors>, IWritable<SByte, Errors>, IWritable<Int16, Errors>, IWritable<UInt16, Errors>, IWritable<Int32, Errors>, IWritable<UInt32, Errors>, IWritable<Int64, Errors>, IWritable<UInt64, Errors> {
+		IWritable<Byte, Errors>, IWritable<SByte, Errors>, IWritable<Int16, Errors>, IWritable<UInt16, Errors>, IWritable<Int32, Errors>, IWritable<UInt32, Errors>, IWritable<Int64, Errors>, IWritable<UInt64, Errors>, IWritable<Single, Errors>, IWritable<Double, Errors> {
 		/// <summary>
 		/// The base of the <see cref="Stream"/>, the actual datastream.
 		/// </summary>
@@ -174,6 +174,18 @@ namespace Langly.Streams {
 		}
 
 		/// <inheritdoc/>
+		public void Peek(out Single element) {
+			ReadBuffer.EnsureLoaded(sizeof(Single));
+			element = BitConverter.ToSingle(ReadBuffer.Slice(0, sizeof(Single)).Span);
+		}
+
+		/// <inheritdoc/>
+		public void Peek(out Double element) {
+			ReadBuffer.EnsureLoaded(sizeof(Double));
+			element = BitConverter.ToDouble(ReadBuffer.Slice(0, sizeof(Double)).Span);
+		}
+
+		/// <inheritdoc/>
 		public void Read(out Byte element) => ReadBuffer.Read(out element);
 
 		/// <inheritdoc/>
@@ -228,6 +240,20 @@ namespace Langly.Streams {
 		}
 
 		/// <inheritdoc/>
+		public unsafe void Read(out Single element) {
+			Span<Byte> buffer = stackalloc Byte[sizeof(Single)];
+			ReadBuffer.Read(buffer);
+			element = BitConverter.ToSingle(buffer);
+		}
+
+		/// <inheritdoc/>
+		public unsafe void Read(out Double element) {
+			Span<Byte> buffer = stackalloc Byte[sizeof(Double)];
+			ReadBuffer.Read(buffer);
+			element = BitConverter.ToDouble(buffer);
+		}
+
+		/// <inheritdoc/>
 		public virtual void Seek(nint offset) => throw new NotImplementedException();
 
 		/// <inheritdoc/>
@@ -250,7 +276,7 @@ namespace Langly.Streams {
 				element = BitConverter.ToInt16(ReadBuffer.Slice(0, sizeof(Int16)).Span);
 				return true;
 			} else {
-				element = 0;
+				element = default;
 				return false;
 			}
 		}
@@ -262,7 +288,7 @@ namespace Langly.Streams {
 				element = BitConverter.ToUInt16(ReadBuffer.Slice(0, sizeof(UInt16)).Span);
 				return true;
 			} else {
-				element = 0;
+				element = default;
 				return false;
 			}
 		}
@@ -273,7 +299,7 @@ namespace Langly.Streams {
 				element = BitConverter.ToInt32(ReadBuffer.Slice(0, sizeof(Int32)).Span);
 				return true;
 			} else {
-				element = 0;
+				element = default;
 				return false;
 			}
 		}
@@ -285,7 +311,7 @@ namespace Langly.Streams {
 				element = BitConverter.ToUInt32(ReadBuffer.Slice(0, sizeof(UInt32)).Span);
 				return true;
 			} else {
-				element = 0;
+				element = default;
 				return false;
 			}
 		}
@@ -296,7 +322,7 @@ namespace Langly.Streams {
 				element = BitConverter.ToInt64(ReadBuffer.Slice(0, sizeof(Int64)).Span);
 				return true;
 			} else {
-				element = 0;
+				element = default;
 				return false;
 			}
 		}
@@ -308,7 +334,29 @@ namespace Langly.Streams {
 				element = BitConverter.ToUInt64(ReadBuffer.Slice(0, sizeof(UInt64)).Span);
 				return true;
 			} else {
-				element = 0;
+				element = default;
+				return false;
+			}
+		}
+
+		/// <inheritdoc/>
+		public Boolean TryPeek(out Single element, out Errors error) {
+			if (ReadBuffer.TryEnsureLoaded(sizeof(Single), out error)) {
+				element = BitConverter.ToSingle(ReadBuffer.Slice(0, sizeof(Single)).Span);
+				return true;
+			} else {
+				element = default;
+				return false;
+			}
+		}
+
+		/// <inheritdoc/>
+		public Boolean TryPeek(out Double element, out Errors error) {
+			if (ReadBuffer.TryEnsureLoaded(sizeof(Double), out error)) {
+				element = BitConverter.ToDouble(ReadBuffer.Slice(0, sizeof(Double)).Span);
+				return true;
+			} else {
+				element = default;
 				return false;
 			}
 		}
@@ -331,7 +379,7 @@ namespace Langly.Streams {
 				element = BitConverter.ToInt16(buffer);
 				return true;
 			} else {
-				element = 0;
+				element = default;
 				return false;
 			}
 		}
@@ -344,7 +392,7 @@ namespace Langly.Streams {
 				element = BitConverter.ToUInt16(buffer);
 				return true;
 			} else {
-				element = 0;
+				element = default;
 				return false;
 			}
 		}
@@ -356,7 +404,7 @@ namespace Langly.Streams {
 				element = BitConverter.ToInt32(buffer);
 				return true;
 			} else {
-				element = 0;
+				element = default;
 				return false;
 			}
 		}
@@ -369,7 +417,7 @@ namespace Langly.Streams {
 				element = BitConverter.ToUInt32(buffer);
 				return true;
 			} else {
-				element = 0;
+				element = default;
 				return false;
 			}
 		}
@@ -381,7 +429,7 @@ namespace Langly.Streams {
 				element = BitConverter.ToInt64(buffer);
 				return true;
 			} else {
-				element = 0;
+				element = default;
 				return false;
 			}
 		}
@@ -394,7 +442,31 @@ namespace Langly.Streams {
 				element = BitConverter.ToUInt64(buffer);
 				return true;
 			} else {
-				element = 0;
+				element = default;
+				return false;
+			}
+		}
+
+		/// <inheritdoc/>
+		public unsafe Boolean TryRead(out Single element, out Errors error) {
+			Span<Byte> buffer = stackalloc Byte[sizeof(Single)];
+			if (ReadBuffer.TryRead(buffer, out error)) {
+				element = BitConverter.ToSingle(buffer);
+				return true;
+			} else {
+				element = default;
+				return false;
+			}
+		}
+
+		/// <inheritdoc/>
+		public unsafe Boolean TryRead(out Double element, out Errors error) {
+			Span<Byte> buffer = stackalloc Byte[sizeof(Double)];
+			if (ReadBuffer.TryRead(buffer, out error)) {
+				element = BitConverter.ToDouble(buffer);
+				return true;
+			} else {
+				element = default;
 				return false;
 			}
 		}
@@ -431,6 +503,12 @@ namespace Langly.Streams {
 		public Boolean TryWrite(UInt64 element, out Errors error) => WriteBuffer.TryWrite(BitConverter.GetBytes(element), out error);
 
 		/// <inheritdoc/>
+		public Boolean TryWrite(Single element, out Errors error) => WriteBuffer.TryWrite(BitConverter.GetBytes(element), out error);
+
+		/// <inheritdoc/>
+		public Boolean TryWrite(Double element, out Errors error) => WriteBuffer.TryWrite(BitConverter.GetBytes(element), out error);
+
+		/// <inheritdoc/>
 		public void Write(Byte element) => WriteBuffer.Write(element);
 
 		/// <inheritdoc/>
@@ -457,6 +535,12 @@ namespace Langly.Streams {
 		/// <inheritdoc/>
 		[CLSCompliant(false)]
 		public void Write(UInt64 element) => WriteBuffer.Write(BitConverter.GetBytes(element));
+
+		/// <inheritdoc/>
+		public void Write(Single element) => WriteBuffer.Write(BitConverter.GetBytes(element));
+
+		/// <inheritdoc/>
+		public void Write(Double element) => WriteBuffer.Write(BitConverter.GetBytes(element));
 
 		/// <inheritdoc/>
 		protected override void DisposeManaged() => Base.Dispose();
