@@ -15,9 +15,9 @@ namespace Langly.Streams {
 	/// <para>Additional orchestration can be added by deriving from this type. However, most applications will not need to do this. Instead, the intended mechanism for supporting additional types is through extension methods.</para>
 	/// </remarks>
 	public class Stream : Controlled,
-		IPeekable<Byte, Errors>, IPeekable<SByte, Errors>, IPeekable<Int16, Errors>, IPeekable<UInt16, Errors>,
+		IPeekable<Byte, Errors>, IPeekable<SByte, Errors>, IPeekable<Int16, Errors>, IPeekable<UInt16, Errors>, IPeekable<Int32, Errors>, IPeekable<UInt32, Errors>,
 		ISeekable<Byte, Errors>,
-		IWritable<Byte, Errors>, IWritable<SByte, Errors>, IWritable<Int16, Errors>, IWritable<UInt16, Errors> {
+		IWritable<Byte, Errors>, IWritable<SByte, Errors>, IWritable<Int16, Errors>, IWritable<UInt16, Errors>, IWritable<Int32, Errors>, IWritable<UInt32, Errors> {
 		/// <summary>
 		/// The base of the <see cref="Stream"/>, the actual datastream.
 		/// </summary>
@@ -149,6 +149,18 @@ namespace Langly.Streams {
 		}
 
 		/// <inheritdoc/>
+		public void Peek(out Int32 element) {
+			ReadBuffer.EnsureLoaded(sizeof(Int32));
+			element = BitConverter.ToInt32(ReadBuffer.Slice(0, sizeof(Int32)).Span);
+		}
+
+		/// <inheritdoc/>
+		public void Peek(out UInt32 element) {
+			ReadBuffer.EnsureLoaded(sizeof(UInt32));
+			element = BitConverter.ToUInt32(ReadBuffer.Slice(0, sizeof(UInt32)).Span);
+		}
+
+		/// <inheritdoc/>
 		public void Read(out Byte element) => ReadBuffer.Read(out element);
 
 		/// <inheritdoc/>
@@ -160,7 +172,7 @@ namespace Langly.Streams {
 
 		/// <inheritdoc/>
 		public unsafe void Read(out Int16 element) {
-			Span<Byte> buffer = stackalloc Byte[2];
+			Span<Byte> buffer = stackalloc Byte[sizeof(Int16)];
 			ReadBuffer.Read(buffer);
 			element = BitConverter.ToInt16(buffer);
 		}
@@ -168,9 +180,23 @@ namespace Langly.Streams {
 		/// <inheritdoc/>
 		[CLSCompliant(false)]
 		public unsafe void Read(out UInt16 element) {
-			Span<Byte> buffer = stackalloc Byte[2];
+			Span<Byte> buffer = stackalloc Byte[sizeof(UInt16)];
 			ReadBuffer.Read(buffer);
 			element = BitConverter.ToUInt16(buffer);
+		}
+
+		/// <inheritdoc/>
+		public unsafe void Read(out Int32 element) {
+			Span<Byte> buffer = stackalloc Byte[sizeof(Int32)];
+			ReadBuffer.Read(buffer);
+			element = BitConverter.ToInt32(buffer);
+		}
+
+		/// <inheritdoc/>
+		public unsafe void Read(out UInt32 element) {
+			Span<Byte> buffer = stackalloc Byte[sizeof(UInt32)];
+			ReadBuffer.Read(buffer);
+			element = BitConverter.ToUInt32(buffer);
 		}
 
 		/// <inheritdoc/>
@@ -214,6 +240,29 @@ namespace Langly.Streams {
 		}
 
 		/// <inheritdoc/>
+		public Boolean TryPeek(out Int32 element, out Errors error) {
+			if (ReadBuffer.TryEnsureLoaded(sizeof(Int32), out error)) {
+				element = BitConverter.ToInt32(ReadBuffer.Slice(0, sizeof(Int32)).Span);
+				return true;
+			} else {
+				element = 0;
+				return false;
+			}
+		}
+
+		/// <inheritdoc/>
+		[CLSCompliant(false)]
+		public Boolean TryPeek(out UInt32 element, out Errors error) {
+			if (ReadBuffer.TryEnsureLoaded(sizeof(UInt32), out error)) {
+				element = BitConverter.ToUInt32(ReadBuffer.Slice(0, sizeof(UInt32)).Span);
+				return true;
+			} else {
+				element = 0;
+				return false;
+			}
+		}
+
+		/// <inheritdoc/>
 		public Boolean TryRead(out Byte element, out Errors error) => ReadBuffer.TryRead(out element, out error);
 
 		/// <inheritdoc/>
@@ -226,7 +275,7 @@ namespace Langly.Streams {
 
 		/// <inheritdoc/>
 		public unsafe Boolean TryRead(out Int16 element, out Errors error) {
-			Span<Byte> buffer = stackalloc Byte[2];
+			Span<Byte> buffer = stackalloc Byte[sizeof(Int16)];
 			if (ReadBuffer.TryRead(buffer, out error)) {
 				element = BitConverter.ToInt16(buffer);
 				return true;
@@ -239,9 +288,33 @@ namespace Langly.Streams {
 		/// <inheritdoc/>
 		[CLSCompliant(false)]
 		public unsafe Boolean TryRead(out UInt16 element, out Errors error) {
-			Span<Byte> buffer = stackalloc Byte[2];
+			Span<Byte> buffer = stackalloc Byte[sizeof(UInt16)];
 			if (ReadBuffer.TryPeek(buffer, out error)) {
 				element = BitConverter.ToUInt16(buffer);
+				return true;
+			} else {
+				element = 0;
+				return false;
+			}
+		}
+
+		/// <inheritdoc/>
+		public unsafe Boolean TryRead(out Int32 element, out Errors error) {
+			Span<Byte> buffer = stackalloc Byte[sizeof(Int32)];
+			if (ReadBuffer.TryPeek(buffer, out error)) {
+				element = BitConverter.ToInt32(buffer);
+				return true;
+			} else {
+				element = 0;
+				return false;
+			}
+		}
+
+		/// <inheritdoc/>
+		public unsafe Boolean TryRead(out UInt32 element, out Errors error) {
+			Span<Byte> buffer = stackalloc Byte[sizeof(UInt32)];
+			if (ReadBuffer.TryPeek(buffer, out error)) {
+				element = BitConverter.ToUInt32(buffer);
 				return true;
 			} else {
 				element = 0;
@@ -267,6 +340,13 @@ namespace Langly.Streams {
 		public Boolean TryWrite(UInt16 element, out Errors error) => WriteBuffer.TryWrite(BitConverter.GetBytes(element), out error);
 
 		/// <inheritdoc/>
+		public Boolean TryWrite(Int32 element, out Errors error) => WriteBuffer.TryWrite(BitConverter.GetBytes(element), out error);
+
+		/// <inheritdoc/>
+		[CLSCompliant(false)]
+		public Boolean TryWrite(UInt32 element, out Errors error) => WriteBuffer.TryWrite(BitConverter.GetBytes(element), out error);
+
+		/// <inheritdoc/>
 		public void Write(Byte element) => WriteBuffer.Write(element);
 
 		/// <inheritdoc/>
@@ -279,6 +359,13 @@ namespace Langly.Streams {
 		/// <inheritdoc/>
 		[CLSCompliant(false)]
 		public void Write(UInt16 element) => WriteBuffer.Write(BitConverter.GetBytes(element));
+
+		/// <inheritdoc/>
+		public void Write(Int32 element) => WriteBuffer.Write(BitConverter.GetBytes(element));
+
+		/// <inheritdoc/>
+		[CLSCompliant(false)]
+		public void Write(UInt32 element) => WriteBuffer.Write(BitConverter.GetBytes(element));
 
 		/// <inheritdoc/>
 		protected override void DisposeManaged() => Base.Dispose();

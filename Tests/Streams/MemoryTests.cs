@@ -74,14 +74,31 @@ namespace Langly.Streams {
 
 		[Theory]
 		[InlineData(new Byte[] { })]
+		[InlineData(new Byte[] { 1, 2, 3, 4 })]
+		[InlineData(new Byte[] { 255, 254, 253, 252 })]
+		public void Peek_Int32(Byte[] buffer) {
+			Stream stream = buffer;
+			Int32 i = 0;
+			while (i < buffer.Length) {
+				stream.Peek(out Int32 peek);
+				Assert.Equal(BitConverter.ToInt32(buffer.AsSpan()), peek);
+				stream.Read(out Int32 read);
+				Assert.Equal(BitConverter.ToInt32(buffer.AsSpan()), read);
+				Assert.Equal(peek, read);
+				i += 4;
+			}
+		}
+
+		[Theory]
+		[InlineData(new Byte[] { })]
 		[InlineData(new Byte[] { 1, 2, 3, 4, 5 })]
 		[InlineData(new Byte[] { 255, 254, 253, 252 })]
 		public void Read_Byte(Byte[] buffer) {
 			Stream stream = buffer;
 			Int32 i = 0;
 			foreach (Byte item in buffer) {
-				stream.Read(out Byte strby);
-				Assert.Equal(buffer[i++], strby);
+				stream.Read(out Byte read);
+				Assert.Equal(buffer[i++], read);
 			}
 		}
 
@@ -93,9 +110,23 @@ namespace Langly.Streams {
 			Stream stream = buffer;
 			Int32 i = 0;
 			while (i < buffer.Length) {
-				stream.Read(out Int16 strin);
-				Assert.Equal(BitConverter.ToInt16(buffer.AsSpan().Slice(i, 2)), strin);
+				stream.Read(out Int16 read);
+				Assert.Equal(BitConverter.ToInt16(buffer.AsSpan().Slice(i, 2)), read);
 				i += 2;
+			}
+		}
+
+		[Theory]
+		[InlineData(new Byte[] { })]
+		[InlineData(new Byte[] { 1, 2, 3, 4 })]
+		[InlineData(new Byte[] { 255, 254, 253, 252 })]
+		public void Read_Int32(Byte[] buffer) {
+			Stream stream = buffer;
+			Int32 i = 0;
+			while (i < buffer.Length) {
+				stream.Read(out Int32 read);
+				Assert.Equal(BitConverter.ToInt32(buffer.AsSpan().Slice(i, 4)), read);
+				i += 4;
 			}
 		}
 
@@ -154,7 +185,28 @@ namespace Langly.Streams {
 				Assert.True(stream.TryRead(out Int16 read, out error));
 				Assert.Equal(BitConverter.ToInt16(buffer.AsSpan().Slice(i, 2)), read);
 				Assert.Equal(Errors.None, error);
+				Assert.Equal(peek, read);
 				i += 2;
+			}
+		}
+
+		[Theory]
+		[InlineData(new Byte[] { })]
+		[InlineData(new Byte[] { 1, 2, 3, 4 })]
+		[InlineData(new Byte[] { 255, 254, 253, 252 })]
+		public void TryPeek_Int32(Byte[] buffer) {
+			Stream stream = buffer;
+			Int32 i = 0;
+			Errors error;
+			while (i < buffer.Length) {
+				Assert.True(stream.TryPeek(out Int32 peek, out error));
+				Assert.Equal(BitConverter.ToInt32(buffer.AsSpan().Slice(i, 4)), peek);
+				Assert.Equal(Errors.None, error);
+				Assert.True(stream.TryRead(out Int32 read, out error));
+				Assert.Equal(BitConverter.ToInt32(buffer.AsSpan().Slice(i, 4)), read);
+				Assert.Equal(Errors.None, error);
+				Assert.Equal(peek, read);
+				i += 4;
 			}
 		}
 
@@ -184,6 +236,22 @@ namespace Langly.Streams {
 				Assert.Equal(BitConverter.ToInt16(buffer.AsSpan().Slice(i, 2)), strin);
 				Assert.Equal(Errors.None, error);
 				i += 2;
+			}
+		}
+
+		[Theory]
+		[InlineData(new Byte[] { })]
+		[InlineData(new Byte[] { 1, 2, 3, 4 })]
+		[InlineData(new Byte[] { 255, 254, 253, 252 })]
+		public void TryRead_Int32(Byte[] buffer) {
+			Stream stream = buffer;
+			Int32 i = 0;
+			Errors error;
+			while (i < buffer.Length) {
+				Assert.True(stream.TryRead(out Int32 read, out error));
+				Assert.Equal(BitConverter.ToInt32(buffer.AsSpan().Slice(i, 4)), read);
+				Assert.Equal(Errors.None, error);
+				i += 4;
 			}
 		}
 
@@ -222,6 +290,23 @@ namespace Langly.Streams {
 
 		[Theory]
 		[InlineData(new Byte[] { })]
+		[InlineData(new Byte[] { 1, 2, 3, 4 })]
+		[InlineData(new Byte[] { 255, 254, 253, 252 })]
+		public void TryWrite_Int32(Byte[] expected) {
+			Byte[] buffer = new Byte[expected.Length];
+			Stream stream = buffer;
+			Int32 i = 0;
+			while (i < expected.Length) {
+				Assert.True(stream.TryWrite(BitConverter.ToInt32(expected.AsSpan().Slice(i, 4)), out Errors error));
+				Assert.Equal(BitConverter.ToInt32(expected.AsSpan().Slice(i, 4)), BitConverter.ToInt32(buffer.AsSpan().Slice(i, 4)));
+				Assert.Equal(Errors.None, error);
+				i += 4;
+			}
+			Assert.Equal(expected, buffer);
+		}
+
+		[Theory]
+		[InlineData(new Byte[] { })]
 		[InlineData(new Byte[] { 1, 2, 3, 4, 5 })]
 		[InlineData(new Byte[] { 255, 254, 253, 252 })]
 		public void Write_Byte(Byte[] expected) {
@@ -247,6 +332,22 @@ namespace Langly.Streams {
 				stream.Write(BitConverter.ToInt16(expected.AsSpan().Slice(i, 2)));
 				Assert.Equal(BitConverter.ToInt16(expected.AsSpan().Slice(i, 2)), BitConverter.ToInt16(expected.AsSpan().Slice(i, 2)));
 				i += 2;
+			}
+			Assert.Equal(expected, buffer);
+		}
+
+		[Theory]
+		[InlineData(new Byte[] { })]
+		[InlineData(new Byte[] { 1, 2, 3, 4 })]
+		[InlineData(new Byte[] { 255, 254, 253, 252 })]
+		public void Write_Int32(Byte[] expected) {
+			Byte[] buffer = new byte[expected.Length];
+			Stream stream = buffer;
+			Int32 i = 0;
+			while (i < expected.Length) {
+				stream.Write(BitConverter.ToInt32(expected.AsSpan().Slice(i, 4)));
+				Assert.Equal(BitConverter.ToInt32(expected.AsSpan().Slice(i, 4)), BitConverter.ToInt32(expected.AsSpan().Slice(i, 4)));
+				i += 4;
 			}
 			Assert.Equal(expected, buffer);
 		}
