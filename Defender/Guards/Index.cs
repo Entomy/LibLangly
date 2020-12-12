@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
-using Langly;
 
 namespace Langly {
 	public static partial class Guard {

@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface IPeekable&lt;TElement, TError&gt;
    ">
-    <meta name="generator" content="docfx 2.56.5.0">
+    <meta name="generator" content="docfx 2.56.6.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -85,9 +85,6 @@
       <a class="xref" href="Langly.IReadable-2.html#Langly_IReadable_2_Read__0__">IReadable&lt;TElement, TError&gt;.Read(TElement)</a>
     </div>
     <div>
-      <a class="xref" href="Langly.IReadable-2.html#Langly_IReadable_2_TryRead__0__">IReadable&lt;TElement, TError&gt;.TryRead(TElement)</a>
-    </div>
-    <div>
       <a class="xref" href="Langly.IReadable-2.html#Langly_IReadable_2_TryRead__0___1__">IReadable&lt;TElement, TError&gt;.TryRead(TElement, TError)</a>
     </div>
   </div>
@@ -155,68 +152,14 @@
     </tbody>
   </table>
   <h5 id="Langly_IPeekable_2_Peek__0___remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>This assumes the peek will never fail, which is an assumption that generally doesn't hold up. It is strongly recommended to use <a class="xref" href="Langly.IPeekable-2.html#Langly_IPeekable_2_TryPeek__0__">TryPeek(out TElement)</a> or <a class="xref" href="Langly.IPeekable-2.html#Langly_IPeekable_2_TryPeek__0___1__">TryPeek(out TElement, out TError)</a> instead.</p>
+  <div class="markdown level1 remarks"><p>This assumes the peek will never fail, which is an assumption that generally doesn't hold up. It is strongly recommended to use <a class="xref" href="Langly.IPeekable-2.html#Langly_IPeekable_2_TryPeek__0___1__">TryPeek(out TElement, out TError)</a> instead.</p>
 </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IPeekable_2_TryPeek__0__.md&amp;value=---%0Auid%3A%20Langly.IPeekable%602.TryPeek(%600%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IPeekable`2.cs/#L26">View Source</a>
-  </span>
-  <a id="Langly_IPeekable_2_TryPeek_" data-uid="Langly.IPeekable`2.TryPeek*"></a>
-  <h4 id="Langly_IPeekable_2_TryPeek__0__" data-uid="Langly.IPeekable`2.TryPeek(`0@)">TryPeek(out TElement)</h4>
-  <div class="markdown level1 summary"><p>Returns the element at the beginning of the collection without removing it.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">virtual bool TryPeek(out TElement element)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">TElement</span></td>
-        <td><span class="parametername">element</span></td>
-        <td><p>The <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> value that was peeked.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p><span class="xref">true</span> if the peek was successful; otherwise, <span class="xref">false</span>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Langly_IPeekable_2_TryPeek__0___seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Langly.IPeekable-2.html#Langly_IPeekable_2_TryPeek__0___1__">TryPeek(out TElement, out TError)</a></div>
-  </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IPeekable_2_TryPeek__0___1__.md&amp;value=---%0Auid%3A%20Langly.IPeekable%602.TryPeek(%600%40%2C%601%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IPeekable`2.cs/#L35">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IPeekable`2.cs/#L26">View Source</a>
   </span>
   <a id="Langly_IPeekable_2_TryPeek_" data-uid="Langly.IPeekable`2.TryPeek*"></a>
   <h4 id="Langly_IPeekable_2_TryPeek__0___1__" data-uid="Langly.IPeekable`2.TryPeek(`0@,`1@)">TryPeek(out TElement, out TError)</h4>
@@ -267,10 +210,6 @@
       </tr>
     </tbody>
   </table>
-  <h5 id="Langly_IPeekable_2_TryPeek__0___1___seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Langly.IPeekable-2.html#Langly_IPeekable_2_TryPeek__0__">TryPeek(out TElement)</a></div>
-  </div>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Peek__2_Langly_IPeekable___0___1____0__">TraitExtensions.Peek&lt;TElement, TError&gt;(IPeekable&lt;TElement, TError&gt;, out TElement)</a>

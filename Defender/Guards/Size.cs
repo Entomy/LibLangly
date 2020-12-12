@@ -110,5 +110,19 @@ namespace Langly {
 				throw ArgumentIsNotSizeException.With(collection, name, size);
 			}
 		}
+
+		/// <summary>
+		/// Guard against the <paramref name="collection"/> being of different size from <paramref name="size"/>.
+		/// </summary>
+		/// <param name="collection">The collection.</param>
+		/// <param name="name">The name of the argument.</param>
+		/// <param name="size">The required size.</param>
+		/// <exception cref="ArgumentIsNotSizeException">Thrown if the guard clause fails.</exception>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static void Size(ICountable collection, String name, nint size) {
+			if (collection is null || collection.Count != size) {
+				throw ArgumentIsNotSizeException.With(collection, name, size);
+			}
+		}
 	}
 }

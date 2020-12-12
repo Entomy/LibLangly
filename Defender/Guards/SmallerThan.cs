@@ -145,5 +145,24 @@ namespace Langly {
 				}
 			}
 		}
+
+		/// <summary>
+		/// Guard against the argument being larger than or equal to <paramref name="upper"/> bound.
+		/// </summary>
+		/// <param name="collection">The collection.</param>
+		/// <param name="name">The name of the argument.</param>
+		/// <param name="upper">The upper bound.</param>
+		/// 	<exception cref="ArgumentIsSizeException">Thrown if the guard clause fails because the size was equal to the bound.</exception>
+		/// 	<exception cref="ArgumentLargerThanException">Thrown if the guard clause fails because the size was larger than the bound.</exception>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static void SmallerThan(ICountable collection, String name, nint upper) {
+			if (!(collection is null) && collection.Count >= upper) {
+				if (collection.Count == upper) {
+					throw ArgumentIsSizeException.With(collection, name, upper);
+				} else {
+					throw ArgumentLargerThanException.With(collection, name, upper);
+				}
+			}
+		}
 	}
 }

@@ -30,5 +30,13 @@ namespace Langly {
 		/// <param name="name">The argument name.</param>
 		/// <returns>An <see cref="ArgumentNotSeekableException"/> instance.</returns>
 		public static ArgumentNotSeekableException With(Stream value, String name) => new ArgumentNotSeekableException(value, name, "Stream must be seekable.");
+
+		/// <summary>
+		/// Initializes a <see cref="ArgumentNotSeekableException"/> with the provided values.
+		/// </summary>
+		/// <param name="value">The argument value.</param>
+		/// <param name="name">The argument name.</param>
+		/// <returns>An <see cref="ArgumentNotSeekableException"/> instance.</returns>
+		public static ArgumentNotSeekableException With<TElement, TError>(ISeekable<TElement, TError> value, String name) => new ArgumentNotSeekableException(value, name, "Stream must be seekable.");
 	}
 }

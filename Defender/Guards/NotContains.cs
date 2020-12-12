@@ -65,5 +65,20 @@ namespace Langly {
 				}
 			}
 		}
+
+		/// <summary>
+		/// Guard against the collection containing a particular value.
+		/// </summary>
+		/// <typeparam name="T">The type of the elements in the collection.</typeparam>
+		/// <param name="collection">The collection.</param>
+		/// <param name="name">The name of the argument.</param>
+		/// <param name="value">The value to look for.</param>
+		/// <exception cref="ArgumentContainsException">Thrown if the guard clause fails.</exception>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static void NotContains<T>(IContainable<T> collection, String name, T value) {
+			if (collection?.Contains(value) ?? false) {
+				throw ArgumentContainsException.With(collection, name, value);
+			}
+		}
 	}
 }

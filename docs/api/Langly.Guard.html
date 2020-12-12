@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class Guard
    ">
-    <meta name="generator" content="docfx 2.56.5.0">
+    <meta name="generator" content="docfx 2.56.6.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -118,7 +118,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Guard_CanRead_System_IO_Stream_System_String_.md&amp;value=---%0Auid%3A%20Langly.Guard.CanRead(System.IO.Stream%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Defender/Guards/CanRead.cs/#L13">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Defender/Guards/CanRead.cs/#L12">View Source</a>
   </span>
   <a id="Langly_Guard_CanRead_" data-uid="Langly.Guard.CanRead*"></a>
   <h4 id="Langly_Guard_CanRead_System_IO_Stream_System_String_" data-uid="Langly.Guard.CanRead(System.IO.Stream,System.String)">CanRead(Stream, String)</h4>
@@ -149,6 +149,83 @@
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">name</span></td>
         <td><p>The name of the argument.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ArgumentNotReadableException.html">ArgumentNotReadableException</a></td>
+        <td><p>Thrown if the guard clause fails.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Guard_CanRead__2_Langly_IReadable___0___1__System_String_.md&amp;value=---%0Auid%3A%20Langly.Guard.CanRead%60%602(Langly.IReadable%7B%60%600%2C%60%601%7D%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Defender/Guards/CanRead.cs/#L27">View Source</a>
+  </span>
+  <a id="Langly_Guard_CanRead_" data-uid="Langly.Guard.CanRead*"></a>
+  <h4 id="Langly_Guard_CanRead__2_Langly_IReadable___0___1__System_String_" data-uid="Langly.Guard.CanRead``2(Langly.IReadable{``0,``1},System.String)">CanRead&lt;TElement, TError&gt;(IReadable&lt;TElement, TError&gt;, String)</h4>
+  <div class="markdown level1 summary"><p>Guard against the stream being unreadable.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void CanRead&lt;TElement, TError&gt;(IReadable&lt;TElement, TError&gt; stream, string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.IReadable-2.html">IReadable</a>&lt;TElement, TError&gt;</td>
+        <td><span class="parametername">stream</span></td>
+        <td><p>The <a class="xref" href="Langly.IReadable-2.html">IReadable&lt;TElement, TError&gt;</a> object.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The name of the argument.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of element being streamed.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TError</span></td>
+        <td><p>The type of the error object.</p>
 </td>
       </tr>
     </tbody>
@@ -227,6 +304,83 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Guard_CanSeek__2_Langly_ISeekable___0___1__System_String_.md&amp;value=---%0Auid%3A%20Langly.Guard.CanSeek%60%602(Langly.ISeekable%7B%60%600%2C%60%601%7D%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Defender/Guards/CanSeek.cs/#L28">View Source</a>
+  </span>
+  <a id="Langly_Guard_CanSeek_" data-uid="Langly.Guard.CanSeek*"></a>
+  <h4 id="Langly_Guard_CanSeek__2_Langly_ISeekable___0___1__System_String_" data-uid="Langly.Guard.CanSeek``2(Langly.ISeekable{``0,``1},System.String)">CanSeek&lt;TElement, TError&gt;(ISeekable&lt;TElement, TError&gt;, String)</h4>
+  <div class="markdown level1 summary"><p>Guard against the stream being unseekable.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void CanSeek&lt;TElement, TError&gt;(ISeekable&lt;TElement, TError&gt; stream, string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ISeekable-2.html">ISeekable</a>&lt;TElement, TError&gt;</td>
+        <td><span class="parametername">stream</span></td>
+        <td><p>The <a class="xref" href="Langly.IReadable-2.html">IReadable&lt;TElement, TError&gt;</a> object.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The name of the argument.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of element being streamed.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TError</span></td>
+        <td><p>The type of the error object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ArgumentNotSeekableException.html">ArgumentNotSeekableException</a></td>
+        <td><p>Thrown if the guard clause fails.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Guard_CanWrite_System_IO_Stream_System_String_.md&amp;value=---%0Auid%3A%20Langly.Guard.CanWrite(System.IO.Stream%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -283,6 +437,83 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Guard_CanWrite__2_Langly_IWritable___0___1__System_String_.md&amp;value=---%0Auid%3A%20Langly.Guard.CanWrite%60%602(Langly.IWritable%7B%60%600%2C%60%601%7D%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Defender/Guards/CanWrite.cs/#L28">View Source</a>
+  </span>
+  <a id="Langly_Guard_CanWrite_" data-uid="Langly.Guard.CanWrite*"></a>
+  <h4 id="Langly_Guard_CanWrite__2_Langly_IWritable___0___1__System_String_" data-uid="Langly.Guard.CanWrite``2(Langly.IWritable{``0,``1},System.String)">CanWrite&lt;TElement, TError&gt;(IWritable&lt;TElement, TError&gt;, String)</h4>
+  <div class="markdown level1 summary"><p>Guard against the stream being unwritable.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void CanWrite&lt;TElement, TError&gt;(IWritable&lt;TElement, TError&gt; stream, string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.IWritable-2.html">IWritable</a>&lt;TElement, TError&gt;</td>
+        <td><span class="parametername">stream</span></td>
+        <td><p>The <a class="xref" href="Langly.IReadable-2.html">IReadable&lt;TElement, TError&gt;</a> object.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The name of the argument.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of element being streamed.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TError</span></td>
+        <td><p>The type of the error object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ArgumentNotWritableException.html">ArgumentNotWritableException</a></td>
+        <td><p>Thrown if the guard clause fails.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Guard_Contains__1___0_System_String_System_Object_.md&amp;value=---%0Auid%3A%20Langly.Guard.Contains%60%601(%60%600%2CSystem.String%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -296,7 +527,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Contains&lt;TCollection&gt;(TCollection collection, string name, object value)
-
     where TCollection : ICollection</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -376,7 +606,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Contains&lt;T&gt;(T[] collection, string name, T value)
-
     where T : IEquatable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -443,6 +672,85 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Guard_Contains__1_Langly_IContainable___0__System_String___0_.md&amp;value=---%0Auid%3A%20Langly.Guard.Contains%60%601(Langly.IContainable%7B%60%600%7D%2CSystem.String%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Defender/Guards/Contains.cs/#L83">View Source</a>
+  </span>
+  <a id="Langly_Guard_Contains_" data-uid="Langly.Guard.Contains*"></a>
+  <h4 id="Langly_Guard_Contains__1_Langly_IContainable___0__System_String___0_" data-uid="Langly.Guard.Contains``1(Langly.IContainable{``0},System.String,``0)">Contains&lt;T&gt;(IContainable&lt;T&gt;, String, T)</h4>
+  <div class="markdown level1 summary"><p>Guard against the collection not containing a particular value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Contains&lt;T&gt;(IContainable&lt;T&gt; collection, string name, T value)
+    where T : IEquatable&lt;T&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.IContainable-1.html">IContainable</a>&lt;T&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The name of the argument.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value to look for.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The type of the elements in the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ArgumentNotContainsException.html">ArgumentNotContainsException</a></td>
+        <td><p>Thrown if the guard clause fails.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Guard_Contains__2___1_System_String___0_.md&amp;value=---%0Auid%3A%20Langly.Guard.Contains%60%602(%60%601%2CSystem.String%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -456,7 +764,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Contains&lt;T, TCollection&gt;(TCollection collection, string name, T value)
-
     where T : IEquatable&lt;T&gt; where TCollection : IReadOnlyCollection&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -541,7 +848,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Exception Default&lt;TEnum&gt;(TEnum value, string name)
-
     where TEnum : struct, Enum</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -604,6 +910,62 @@
   <div class="markdown level1 remarks"><p>If <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.flagsattribute">FlagsAttribute</a> is present, this guard is uneccessary and will even report false negatives.</p>
 <p>Unlike most of <a class="xref" href="Langly.Guard.html">Guard</a>, this returns an <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.exception">Exception</a> in order to create a syntax that the language analyzer will understand. Even if this method always threw, the analyzer isn&apos;t likely to see that, so by returning an exception that will be immediately thrown, it can see that the <span class="xref">langword_csharp_default</span> doesn&apos;t fall-through.</p>
 </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Guard_Empty_Langly_ICountable_System_String_.md&amp;value=---%0Auid%3A%20Langly.Guard.Empty(Langly.ICountable%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Defender/Guards/Empty.cs/#L126">View Source</a>
+  </span>
+  <a id="Langly_Guard_Empty_" data-uid="Langly.Guard.Empty*"></a>
+  <h4 id="Langly_Guard_Empty_Langly_ICountable_System_String_" data-uid="Langly.Guard.Empty(Langly.ICountable,System.String)">Empty(ICountable, String)</h4>
+  <div class="markdown level1 summary"><p>Guard against the collection having elements.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Empty(ICountable collection, string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ICountable.html">ICountable</a></td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The name of the argument.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ArgumentNotEmptyException.html">ArgumentNotEmptyException</a></td>
+        <td><p>Thrown if the guard clause fails.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Guard_Empty_System_String_System_String_.md&amp;value=---%0Auid%3A%20Langly.Guard.Empty(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -675,7 +1037,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Empty&lt;TCollection&gt;(TCollection collection, string name)
-
     where TCollection : ICollection</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1109,7 +1470,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Empty&lt;T, TCollection&gt;(TCollection collection, string name)
-
     where TCollection : IReadOnlyCollection&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1312,7 +1672,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Equal&lt;TValue, TOther&gt;(TValue value, string name, TOther other)
-
     where TValue : IEquatable&lt;TOther&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1464,7 +1823,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void GreaterThan&lt;T&gt;(T value, string name, T lower)
-
     where T : IComparable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1611,7 +1969,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void GreaterThanOrEqual&lt;T&gt;(T value, string name, T lower)
-
     where T : IComparable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1691,7 +2048,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void HasFlag&lt;TEnum&gt;(TEnum value, string name, TEnum flags)
-
     where TEnum : struct, Enum</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1761,7 +2117,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Guard_Index_System_Int32_System_String_System_Collections_ICollection_.md&amp;value=---%0Auid%3A%20Langly.Guard.Index(System.Int32%2CSystem.String%2CSystem.Collections.ICollection)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Defender/Guards/Index.cs/#L101">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Defender/Guards/Index.cs/#L100">View Source</a>
   </span>
   <a id="Langly_Guard_Index_" data-uid="Langly.Guard.Index*"></a>
   <h4 id="Langly_Guard_Index_System_Int32_System_String_System_Collections_ICollection_" data-uid="Langly.Guard.Index(System.Int32,System.String,System.Collections.ICollection)">Index(Int32, String, ICollection)</h4>
@@ -1807,7 +2163,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Guard_Index_System_Int32_System_String_System_String_.md&amp;value=---%0Auid%3A%20Langly.Guard.Index(System.Int32%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Defender/Guards/Index.cs/#L16">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Defender/Guards/Index.cs/#L15">View Source</a>
   </span>
   <a id="Langly_Guard_Index_" data-uid="Langly.Guard.Index*"></a>
   <h4 id="Langly_Guard_Index_System_Int32_System_String_System_String_" data-uid="Langly.Guard.Index(System.Int32,System.String,System.String)">Index(Int32, String, String)</h4>
@@ -1866,19 +2222,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Guard_Index__1_nint_System_String_Langly_IIndexable___0__.md&amp;value=---%0Auid%3A%20Langly.Guard.Index%60%601(nint%2CSystem.String%2CLangly.IIndexable%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Guard_Index__1_nint_System_String_Langly_IReadOnlyIndexable___0__.md&amp;value=---%0Auid%3A%20Langly.Guard.Index%60%601(nint%2CSystem.String%2CLangly.IReadOnlyIndexable%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Defender/Guards/Index.cs/#L129">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Defender/Guards/Index.cs/#L128">View Source</a>
   </span>
   <a id="Langly_Guard_Index_" data-uid="Langly.Guard.Index*"></a>
-  <h4 id="Langly_Guard_Index__1_nint_System_String_Langly_IIndexable___0__" data-uid="Langly.Guard.Index``1(nint,System.String,Langly.IIndexable{``0})">Index&lt;T&gt;(nint, String, IIndexable&lt;T&gt;)</h4>
+  <h4 id="Langly_Guard_Index__1_nint_System_String_Langly_IReadOnlyIndexable___0__" data-uid="Langly.Guard.Index``1(nint,System.String,Langly.IReadOnlyIndexable{``0})">Index&lt;T&gt;(nint, String, IReadOnlyIndexable&lt;T&gt;)</h4>
   <div class="markdown level1 summary"><p>Guards against the index being invalid for the collection.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void Index&lt;T&gt;(nint value, string name, IIndexable&lt;T&gt; collection)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void Index&lt;T&gt;(nint value, string name, IReadOnlyIndexable&lt;T&gt; collection)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1903,7 +2259,69 @@
 </td>
       </tr>
       <tr>
-        <td><a class="xref" href="Langly.IIndexable-1.html">IIndexable</a>&lt;T&gt;</td>
+        <td><a class="xref" href="Langly.IReadOnlyIndexable-1.html">IReadOnlyIndexable</a>&lt;T&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The collection being indexed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The type of the elements in the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Guard_Index__1_nint_System_String_Langly_IReadOnlyRefIndexable___0__.md&amp;value=---%0Auid%3A%20Langly.Guard.Index%60%601(nint%2CSystem.String%2CLangly.IReadOnlyRefIndexable%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Defender/Guards/Index.cs/#L142">View Source</a>
+  </span>
+  <a id="Langly_Guard_Index_" data-uid="Langly.Guard.Index*"></a>
+  <h4 id="Langly_Guard_Index__1_nint_System_String_Langly_IReadOnlyRefIndexable___0__" data-uid="Langly.Guard.Index``1(nint,System.String,Langly.IReadOnlyRefIndexable{``0})">Index&lt;T&gt;(nint, String, IReadOnlyRefIndexable&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Guards against the index being invalid for the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Index&lt;T&gt;(nint value, string name, IReadOnlyRefIndexable&lt;T&gt; collection)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The index value.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The index name.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.IReadOnlyRefIndexable-1.html">IReadOnlyRefIndexable</a>&lt;T&gt;</td>
         <td><span class="parametername">collection</span></td>
         <td><p>The collection being indexed.</p>
 </td>
@@ -1931,7 +2349,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Guard_Index__1_System_Int32_System_String___0___.md&amp;value=---%0Auid%3A%20Langly.Guard.Index%60%601(System.Int32%2CSystem.String%2C%60%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Defender/Guards/Index.cs/#L31">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Defender/Guards/Index.cs/#L30">View Source</a>
   </span>
   <a id="Langly_Guard_Index_" data-uid="Langly.Guard.Index*"></a>
   <h4 id="Langly_Guard_Index__1_System_Int32_System_String___0___" data-uid="Langly.Guard.Index``1(System.Int32,System.String,``0[])">Index&lt;T&gt;(Int32, String, T[])</h4>
@@ -2009,7 +2427,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Guard_Index__1_System_Int32_System_String_System_Collections_Generic_ICollection___0__.md&amp;value=---%0Auid%3A%20Langly.Guard.Index%60%601(System.Int32%2CSystem.String%2CSystem.Collections.Generic.ICollection%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Defender/Guards/Index.cs/#L115">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Defender/Guards/Index.cs/#L114">View Source</a>
   </span>
   <a id="Langly_Guard_Index_" data-uid="Langly.Guard.Index*"></a>
   <h4 id="Langly_Guard_Index__1_System_Int32_System_String_System_Collections_Generic_ICollection___0__" data-uid="Langly.Guard.Index``1(System.Int32,System.String,System.Collections.Generic.ICollection{``0})">Index&lt;T&gt;(Int32, String, ICollection&lt;T&gt;)</h4>
@@ -2071,7 +2489,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Guard_Index__1_System_Int32_System_String_System_Memory___0__.md&amp;value=---%0Auid%3A%20Langly.Guard.Index%60%601(System.Int32%2CSystem.String%2CSystem.Memory%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Defender/Guards/Index.cs/#L74">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Defender/Guards/Index.cs/#L73">View Source</a>
   </span>
   <a id="Langly_Guard_Index_" data-uid="Langly.Guard.Index*"></a>
   <h4 id="Langly_Guard_Index__1_System_Int32_System_String_System_Memory___0__" data-uid="Langly.Guard.Index``1(System.Int32,System.String,System.Memory{``0})">Index&lt;T&gt;(Int32, String, Memory&lt;T&gt;)</h4>
@@ -2133,7 +2551,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Guard_Index__1_System_Int32_System_String_System_ReadOnlyMemory___0__.md&amp;value=---%0Auid%3A%20Langly.Guard.Index%60%601(System.Int32%2CSystem.String%2CSystem.ReadOnlyMemory%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Defender/Guards/Index.cs/#L88">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Defender/Guards/Index.cs/#L87">View Source</a>
   </span>
   <a id="Langly_Guard_Index_" data-uid="Langly.Guard.Index*"></a>
   <h4 id="Langly_Guard_Index__1_System_Int32_System_String_System_ReadOnlyMemory___0__" data-uid="Langly.Guard.Index``1(System.Int32,System.String,System.ReadOnlyMemory{``0})">Index&lt;T&gt;(Int32, String, ReadOnlyMemory&lt;T&gt;)</h4>
@@ -2195,7 +2613,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Guard_Index__1_System_Int32_System_String_System_ReadOnlySpan___0__.md&amp;value=---%0Auid%3A%20Langly.Guard.Index%60%601(System.Int32%2CSystem.String%2CSystem.ReadOnlySpan%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Defender/Guards/Index.cs/#L60">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Defender/Guards/Index.cs/#L59">View Source</a>
   </span>
   <a id="Langly_Guard_Index_" data-uid="Langly.Guard.Index*"></a>
   <h4 id="Langly_Guard_Index__1_System_Int32_System_String_System_ReadOnlySpan___0__" data-uid="Langly.Guard.Index``1(System.Int32,System.String,System.ReadOnlySpan{``0})">Index&lt;T&gt;(Int32, String, ReadOnlySpan&lt;T&gt;)</h4>
@@ -2257,7 +2675,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Guard_Index__1_System_Int32_System_String_System_Span___0__.md&amp;value=---%0Auid%3A%20Langly.Guard.Index%60%601(System.Int32%2CSystem.String%2CSystem.Span%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Defender/Guards/Index.cs/#L46">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Defender/Guards/Index.cs/#L45">View Source</a>
   </span>
   <a id="Langly_Guard_Index_" data-uid="Langly.Guard.Index*"></a>
   <h4 id="Langly_Guard_Index__1_System_Int32_System_String_System_Span___0__" data-uid="Langly.Guard.Index``1(System.Int32,System.String,System.Span{``0})">Index&lt;T&gt;(Int32, String, Span&lt;T&gt;)</h4>
@@ -2332,6 +2750,73 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Guard_LargerThan_Langly_ICountable_System_String_nint_.md&amp;value=---%0Auid%3A%20Langly.Guard.LargerThan(Langly.ICountable%2CSystem.String%2Cnint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Defender/Guards/LargerThan.cs/#L157">View Source</a>
+  </span>
+  <a id="Langly_Guard_LargerThan_" data-uid="Langly.Guard.LargerThan*"></a>
+  <h4 id="Langly_Guard_LargerThan_Langly_ICountable_System_String_nint_" data-uid="Langly.Guard.LargerThan(Langly.ICountable,System.String,nint)">LargerThan(ICountable, String, nint)</h4>
+  <div class="markdown level1 summary"><p>Guard against the argument being smaller than or equal to <code data-dev-comment-type="paramref" class="paramref">lower</code> bound.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void LargerThan(ICountable collection, string name, nint lower)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ICountable.html">ICountable</a></td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The name of the argument.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">lower</span></td>
+        <td><p>The lower bound.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ArgumentIsSizeException.html">ArgumentIsSizeException</a></td>
+        <td><p>Thrown if the guard clause fails because the size was equal to the bound.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.ArgumentSmallerThanException.html">ArgumentSmallerThanException</a></td>
+        <td><p>Thrown if the guard clause fails because the size was smaller than the bound.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Guard_LargerThan__1___0_System_String_System_Int64_.md&amp;value=---%0Auid%3A%20Langly.Guard.LargerThan%60%601(%60%600%2CSystem.String%2CSystem.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -2345,7 +2830,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void LargerThan&lt;TCollection&gt;(TCollection collection, string name, long lower)
-
     where TCollection : ICollection</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2845,7 +3329,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void LargerThan&lt;T, TCollection&gt;(TCollection collection, string name, long lower)
-
     where TCollection : ICollection&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2922,6 +3405,68 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Guard_LargerThanOrEqual_Langly_ICountable_System_String_nint_.md&amp;value=---%0Auid%3A%20Langly.Guard.LargerThanOrEqual(Langly.ICountable%2CSystem.String%2Cnint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Defender/Guards/LargerThanOrEqual.cs/#L121">View Source</a>
+  </span>
+  <a id="Langly_Guard_LargerThanOrEqual_" data-uid="Langly.Guard.LargerThanOrEqual*"></a>
+  <h4 id="Langly_Guard_LargerThanOrEqual_Langly_ICountable_System_String_nint_" data-uid="Langly.Guard.LargerThanOrEqual(Langly.ICountable,System.String,nint)">LargerThanOrEqual(ICountable, String, nint)</h4>
+  <div class="markdown level1 summary"><p>Guard against the argument being smaller than or equal to <code data-dev-comment-type="paramref" class="paramref">lower</code> bound.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void LargerThanOrEqual(ICountable collection, string name, nint lower)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ICountable.html">ICountable</a></td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The name of the argument.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">lower</span></td>
+        <td><p>The lower bound.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ArgumentSmallerThanException.html">ArgumentSmallerThanException</a></td>
+        <td><p>Thrown if the guard clause fails because the size was smaller than the bound.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Guard_LargerThanOrEqual__1___0_System_String_System_Int64_.md&amp;value=---%0Auid%3A%20Langly.Guard.LargerThanOrEqual%60%601(%60%600%2CSystem.String%2CSystem.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -2935,7 +3480,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void LargerThanOrEqual&lt;TCollection&gt;(TCollection collection, string name, long lower)
-
     where TCollection : ICollection</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3405,7 +3949,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void LargerThanOrEqual&lt;T, TCollection&gt;(TCollection collection, string name, long lower)
-
     where TCollection : ICollection&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3557,7 +4100,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void LesserThan&lt;T&gt;(T value, string name, T upper)
-
     where T : IComparable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3704,7 +4246,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void LesserThanOrEqual&lt;T&gt;(T value, string name, T upper)
-
     where T : IComparable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3784,7 +4325,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void NotContains&lt;TCollection&gt;(TCollection collection, string name, object value)
-
     where TCollection : ICollection</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3864,7 +4404,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void NotContains&lt;T&gt;(T[] collection, string name, T value)
-
     where T : IEquatable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3931,6 +4470,84 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Guard_NotContains__1_Langly_IContainable___0__System_String___0_.md&amp;value=---%0Auid%3A%20Langly.Guard.NotContains%60%601(Langly.IContainable%7B%60%600%7D%2CSystem.String%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Defender/Guards/NotContains.cs/#L77">View Source</a>
+  </span>
+  <a id="Langly_Guard_NotContains_" data-uid="Langly.Guard.NotContains*"></a>
+  <h4 id="Langly_Guard_NotContains__1_Langly_IContainable___0__System_String___0_" data-uid="Langly.Guard.NotContains``1(Langly.IContainable{``0},System.String,``0)">NotContains&lt;T&gt;(IContainable&lt;T&gt;, String, T)</h4>
+  <div class="markdown level1 summary"><p>Guard against the collection containing a particular value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void NotContains&lt;T&gt;(IContainable&lt;T&gt; collection, string name, T value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.IContainable-1.html">IContainable</a>&lt;T&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The name of the argument.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value to look for.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The type of the elements in the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ArgumentContainsException.html">ArgumentContainsException</a></td>
+        <td><p>Thrown if the guard clause fails.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Guard_NotContains__2___1_System_String___0_.md&amp;value=---%0Auid%3A%20Langly.Guard.NotContains%60%602(%60%601%2CSystem.String%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -3944,7 +4561,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void NotContains&lt;T, TCollection&gt;(TCollection collection, string name, T value)
-
     where T : IEquatable&lt;T&gt; where TCollection : ICollection&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4009,6 +4625,62 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Langly.ArgumentContainsException.html">ArgumentContainsException</a></td>
+        <td><p>Thrown if the guard clause fails.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Guard_NotEmpty_Langly_ICountable_System_String_.md&amp;value=---%0Auid%3A%20Langly.Guard.NotEmpty(Langly.ICountable%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Defender/Guards/NotEmpty.cs/#L126">View Source</a>
+  </span>
+  <a id="Langly_Guard_NotEmpty_" data-uid="Langly.Guard.NotEmpty*"></a>
+  <h4 id="Langly_Guard_NotEmpty_Langly_ICountable_System_String_" data-uid="Langly.Guard.NotEmpty(Langly.ICountable,System.String)">NotEmpty(ICountable, String)</h4>
+  <div class="markdown level1 summary"><p>Guard against the collection being empty.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void NotEmpty(ICountable collection, string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ICountable.html">ICountable</a></td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The name of the argument.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ArgumentEmptyException.html">ArgumentEmptyException</a></td>
         <td><p>Thrown if the guard clause fails.</p>
 </td>
       </tr>
@@ -4085,7 +4757,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void NotEmpty&lt;TCollection&gt;(TCollection collection, string name)
-
     where TCollection : ICollection</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4519,7 +5190,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void NotEmpty&lt;T, TCollection&gt;(TCollection collection, string name)
-
     where TCollection : ICollection&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4722,7 +5392,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void NotEqual&lt;TValue, TOther&gt;(TValue value, string name, TOther other)
-
     where TValue : IEquatable&lt;TOther&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5255,6 +5924,68 @@ public static void Pointer(void *pointer, string pointerName, int length, string
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Guard_Size_Langly_ICountable_System_String_nint_.md&amp;value=---%0Auid%3A%20Langly.Guard.Size(Langly.ICountable%2CSystem.String%2Cnint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Defender/Guards/Size.cs/#L121">View Source</a>
+  </span>
+  <a id="Langly_Guard_Size_" data-uid="Langly.Guard.Size*"></a>
+  <h4 id="Langly_Guard_Size_Langly_ICountable_System_String_nint_" data-uid="Langly.Guard.Size(Langly.ICountable,System.String,nint)">Size(ICountable, String, nint)</h4>
+  <div class="markdown level1 summary"><p>Guard against the <code data-dev-comment-type="paramref" class="paramref">collection</code> being of different size from <code data-dev-comment-type="paramref" class="paramref">size</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Size(ICountable collection, string name, nint size)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ICountable.html">ICountable</a></td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The name of the argument.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">size</span></td>
+        <td><p>The required size.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ArgumentIsNotSizeException.html">ArgumentIsNotSizeException</a></td>
+        <td><p>Thrown if the guard clause fails.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Guard_Size__1___0_System_String_System_Int64_.md&amp;value=---%0Auid%3A%20Langly.Guard.Size%60%601(%60%600%2CSystem.String%2CSystem.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -5268,7 +5999,6 @@ public static void Pointer(void *pointer, string pointerName, int length, string
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Size&lt;TCollection&gt;(TCollection collection, string name, long size)
-
     where TCollection : ICollection</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5738,7 +6468,6 @@ public static void Pointer(void *pointer, string pointerName, int length, string
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Size&lt;T, TCollection&gt;(TCollection collection, string name, long size)
-
     where TCollection : ICollection&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5810,6 +6539,73 @@ public static void Pointer(void *pointer, string pointerName, int length, string
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Guard_SmallerThan_Langly_ICountable_System_String_nint_.md&amp;value=---%0Auid%3A%20Langly.Guard.SmallerThan(Langly.ICountable%2CSystem.String%2Cnint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Defender/Guards/SmallerThan.cs/#L157">View Source</a>
+  </span>
+  <a id="Langly_Guard_SmallerThan_" data-uid="Langly.Guard.SmallerThan*"></a>
+  <h4 id="Langly_Guard_SmallerThan_Langly_ICountable_System_String_nint_" data-uid="Langly.Guard.SmallerThan(Langly.ICountable,System.String,nint)">SmallerThan(ICountable, String, nint)</h4>
+  <div class="markdown level1 summary"><p>Guard against the argument being larger than or equal to <code data-dev-comment-type="paramref" class="paramref">upper</code> bound.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SmallerThan(ICountable collection, string name, nint upper)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ICountable.html">ICountable</a></td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The name of the argument.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">upper</span></td>
+        <td><p>The upper bound.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ArgumentIsSizeException.html">ArgumentIsSizeException</a></td>
+        <td><p>Thrown if the guard clause fails because the size was equal to the bound.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.ArgumentLargerThanException.html">ArgumentLargerThanException</a></td>
+        <td><p>Thrown if the guard clause fails because the size was larger than the bound.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Guard_SmallerThan__1___0_System_String_System_Int64_.md&amp;value=---%0Auid%3A%20Langly.Guard.SmallerThan%60%601(%60%600%2CSystem.String%2CSystem.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -5823,7 +6619,6 @@ public static void Pointer(void *pointer, string pointerName, int length, string
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void SmallerThan&lt;TCollection&gt;(TCollection collection, string name, long upper)
-
     where TCollection : ICollection</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6323,7 +7118,6 @@ public static void Pointer(void *pointer, string pointerName, int length, string
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void SmallerThan&lt;T, TCollection&gt;(TCollection collection, string name, long upper)
-
     where TCollection : ICollection&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6400,6 +7194,68 @@ public static void Pointer(void *pointer, string pointerName, int length, string
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Guard_SmallerThanOrEqual_Langly_ICountable_System_String_nint_.md&amp;value=---%0Auid%3A%20Langly.Guard.SmallerThanOrEqual(Langly.ICountable%2CSystem.String%2Cnint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Defender/Guards/SmallerThanOrEqual.cs/#L105">View Source</a>
+  </span>
+  <a id="Langly_Guard_SmallerThanOrEqual_" data-uid="Langly.Guard.SmallerThanOrEqual*"></a>
+  <h4 id="Langly_Guard_SmallerThanOrEqual_Langly_ICountable_System_String_nint_" data-uid="Langly.Guard.SmallerThanOrEqual(Langly.ICountable,System.String,nint)">SmallerThanOrEqual(ICountable, String, nint)</h4>
+  <div class="markdown level1 summary"><p>Guard against the argument being larger than <code data-dev-comment-type="paramref" class="paramref">upper</code> bound.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SmallerThanOrEqual(ICountable collection, string name, nint upper)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ICountable.html">ICountable</a></td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The name of the argument.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">upper</span></td>
+        <td><p>The upper bound.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ArgumentLargerThanException.html">ArgumentLargerThanException</a></td>
+        <td><p>Thrown if the guard clause fails.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Guard_SmallerThanOrEqual__1___0_System_String_System_Int64_.md&amp;value=---%0Auid%3A%20Langly.Guard.SmallerThanOrEqual%60%601(%60%600%2CSystem.String%2CSystem.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -6413,7 +7269,6 @@ public static void Pointer(void *pointer, string pointerName, int length, string
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void SmallerThanOrEqual&lt;TCollection&gt;(TCollection collection, string name, long upper)
-
     where TCollection : ICollection</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6870,91 +7725,6 @@ public static void Pointer(void *pointer, string pointerName, int length, string
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Guard_SmallerThanOrEqual__2___1_System_String_System_Int64_.md&amp;value=---%0Auid%3A%20Langly.Guard.SmallerThanOrEqual%60%602(%60%601%2CSystem.String%2CSystem.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Defender/Guards/SmallerThanOrEqual.cs/#L107">View Source</a>
-  </span>
-  <a id="Langly_Guard_SmallerThanOrEqual_" data-uid="Langly.Guard.SmallerThanOrEqual*"></a>
-  <h4 id="Langly_Guard_SmallerThanOrEqual__2___1_System_String_System_Int64_" data-uid="Langly.Guard.SmallerThanOrEqual``2(``1,System.String,System.Int64)">SmallerThanOrEqual&lt;T, TCollection&gt;(TCollection, String, Int64)</h4>
-  <div class="markdown level1 summary"><p>Guard against the argument being larger than <code data-dev-comment-type="paramref" class="paramref">upper</code> bound.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void SmallerThanOrEqual&lt;T, TCollection&gt;(TCollection collection, string name, long upper)
-
-    where TCollection : ICollection&lt;T&gt;</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">TCollection</span></td>
-        <td><span class="parametername">collection</span></td>
-        <td><p>The collection.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><span class="parametername">name</span></td>
-        <td><p>The name of the argument.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int64">Int64</a></td>
-        <td><span class="parametername">upper</span></td>
-        <td><p>The upper bound.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">T</span></td>
-        <td><p>The type of the elements of <code data-dev-comment-type="typeparamref" class="typeparamref">TCollection</code>.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="parametername">TCollection</span></td>
-        <td><p>The type of the argument; must be <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a> of <code data-dev-comment-type="typeparamref" class="typeparamref">T</code>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Langly.ArgumentLargerThanException.html">ArgumentLargerThanException</a></td>
-        <td><p>Thrown if the guard clause fails.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Guard_Valid__1___0_System_String_.md&amp;value=---%0Auid%3A%20Langly.Guard.Valid%60%601(%60%600%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -6968,7 +7738,6 @@ public static void Pointer(void *pointer, string pointerName, int length, string
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Valid&lt;TEnum&gt;(TEnum value, string name)
-
     where TEnum : struct, Enum</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -7930,7 +8699,6 @@ public static void Within(nuint value, string name, nuint lower, nuint upper)</c
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Within&lt;T&gt;(T value, string name, T lower, T upper)
-
     where T : IComparable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>

@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class DynamicArray&lt;TIndex, TElement&gt;
    ">
-    <meta name="generator" content="docfx 2.56.5.0">
+    <meta name="generator" content="docfx 2.56.6.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -93,8 +93,8 @@
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="Langly.DataStructures.Association-2.html">Association</a>&lt;TIndex, TElement&gt;&gt;&gt;</div>
     <div><a class="xref" href="Langly.IAssociator-4.html">IAssociator</a>&lt;TIndex, TElement, <a class="xref" href="Langly.DataStructures.Arrays.Array-3.html">Array</a>&lt;TIndex, TElement, <a class="xref" href="Langly.DataStructures.Arrays.DynamicArray-2.html">DynamicArray</a>&lt;TIndex, TElement&gt;&gt;, <a class="xref" href="Langly.DataStructures.Arrays.Array-3.Enumerator.html">Array.Enumerator</a>&lt;&gt;&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Langly.DataStructures.Arrays.Array-3.html">Array</a>&lt;TIndex, TElement, <a class="xref" href="Langly.DataStructures.Arrays.DynamicArray-2.html">DynamicArray</a>&lt;TIndex, TElement&gt;&gt;&gt;</div>
-    <div><a class="xref" href="Langly.IIndexable-2.html">IIndexable</a>&lt;TIndex, TElement&gt;</div>
-    <div><a class="xref" href="Langly.IReadOnlyIndexable-2.html">IReadOnlyIndexable</a>&lt;TIndex, TElement&gt;</div>
+    <div><a class="xref" href="Langly.IRefIndexable-2.html">IRefIndexable</a>&lt;TIndex, TElement&gt;</div>
+    <div><a class="xref" href="Langly.IReadOnlyRefIndexable-2.html">IReadOnlyRefIndexable</a>&lt;TIndex, TElement&gt;</div>
     <div><a class="xref" href="Langly.ICountable.html">ICountable</a></div>
     <div><a class="xref" href="Langly.IReplaceable-1.html">IReplaceable</a>&lt;TElement&gt;</div>
     <div><a class="xref" href="Langly.IReplaceable-2.html">IReplaceable</a>&lt;TElement, TElement&gt;</div>
@@ -146,7 +146,7 @@
       <a class="xref" href="Langly.DataStructures.Arrays.Array-3.html#Langly_DataStructures_Arrays_Array_3_Item__0_">Array&lt;TIndex, TElement, DynamicArray&lt;TIndex, TElement&gt;&gt;.Item[TIndex]</a>
     </div>
     <div>
-      <a class="xref" href="Langly.DataStructures.Arrays.Array-3.html#Langly_DataStructures_Arrays_Array_3_Langly_IReadOnlyIndexable_TIndex_TElement__Item__0_">Array&lt;TIndex, TElement, DynamicArray&lt;TIndex, TElement&gt;&gt;.IReadOnlyIndexable&lt;TIndex, TElement&gt;.Item[TIndex]</a>
+      <a class="xref" href="Langly.DataStructures.Arrays.Array-3.html#Langly_DataStructures_Arrays_Array_3_Langly_IReadOnlyRefIndexable_TIndex_TElement__Item__0_">Array&lt;TIndex, TElement, DynamicArray&lt;TIndex, TElement&gt;&gt;.IReadOnlyRefIndexable&lt;TIndex, TElement&gt;.Item[TIndex]</a>
     </div>
     <div>
       <a class="xref" href="Langly.DataStructures.Arrays.Array-3.html#Langly_DataStructures_Arrays_Array_3_Equals_Langly_DataStructures_DataStructure__0__1__2_Langly_DataStructures_Arrays_Array__0__1__2__Enumerator__">Array&lt;TIndex, TElement, DynamicArray&lt;TIndex, TElement&gt;&gt;.Equals(DataStructure&lt;TIndex, TElement, DynamicArray&lt;TIndex, TElement&gt;, Array.Enumerator&lt;&gt;&gt;)</a>
@@ -225,7 +225,7 @@
   <h6><strong>Assembly</strong>: Collectathon.dll</h6>
   <h5 id="Langly_DataStructures_Arrays_DynamicArray_2_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class DynamicArray&lt;TIndex, TElement&gt; : FlexibleArray&lt;TIndex, TElement, DynamicArray&lt;TIndex, TElement&gt;&gt;, ICloneable&lt;DynamicArray&lt;TIndex, TElement&gt;&gt;, ICloneable, IEquatable&lt;DataStructure&lt;TIndex, TElement, DynamicArray&lt;TIndex, TElement&gt;, Array&lt;TIndex, TElement, DynamicArray&lt;TIndex, TElement&gt;&gt;.Enumerator&gt;&gt;, IEquatable&lt;Association&lt;TIndex, TElement&gt;[]&gt;, IEquatable&lt;IEnumerable&lt;Association&lt;TIndex, TElement&gt;&gt;&gt;, IAssociator&lt;TIndex, TElement, Array&lt;TIndex, TElement, DynamicArray&lt;TIndex, TElement&gt;&gt;, Array&lt;TIndex, TElement, DynamicArray&lt;TIndex, TElement&gt;&gt;.Enumerator&gt;, IEquatable&lt;Array&lt;TIndex, TElement, DynamicArray&lt;TIndex, TElement&gt;&gt;&gt;, IIndexable&lt;TIndex, TElement&gt;, IReadOnlyIndexable&lt;TIndex, TElement&gt;, ICountable, IReplaceable&lt;TElement&gt;, IReplaceable&lt;TElement, TElement&gt;, IEnumerable&lt;Association&lt;TIndex, TElement&gt;, Array&lt;TIndex, TElement, DynamicArray&lt;TIndex, TElement&gt;&gt;.Enumerator&gt;, IEnumerable&lt;Association&lt;TIndex, TElement&gt;&gt;, IEnumerable, IAddable&lt;TIndex, TElement&gt;, IClearable, IRemovable&lt;TIndex, TElement&gt;, IRemovable&lt;TElement&gt;, IResizable where TIndex : IEquatable&lt;TIndex&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class DynamicArray&lt;TIndex, TElement&gt; : FlexibleArray&lt;TIndex, TElement, DynamicArray&lt;TIndex, TElement&gt;&gt;, ICloneable&lt;DynamicArray&lt;TIndex, TElement&gt;&gt;, ICloneable, IEquatable&lt;DataStructure&lt;TIndex, TElement, DynamicArray&lt;TIndex, TElement&gt;, Array&lt;TIndex, TElement, DynamicArray&lt;TIndex, TElement&gt;&gt;.Enumerator&gt;&gt;, IEquatable&lt;Association&lt;TIndex, TElement&gt;[]&gt;, IEquatable&lt;IEnumerable&lt;Association&lt;TIndex, TElement&gt;&gt;&gt;, IAssociator&lt;TIndex, TElement, Array&lt;TIndex, TElement, DynamicArray&lt;TIndex, TElement&gt;&gt;, Array&lt;TIndex, TElement, DynamicArray&lt;TIndex, TElement&gt;&gt;.Enumerator&gt;, IEquatable&lt;Array&lt;TIndex, TElement, DynamicArray&lt;TIndex, TElement&gt;&gt;&gt;, IRefIndexable&lt;TIndex, TElement&gt;, IReadOnlyRefIndexable&lt;TIndex, TElement&gt;, ICountable, IReplaceable&lt;TElement&gt;, IReplaceable&lt;TElement, TElement&gt;, IEnumerable&lt;Association&lt;TIndex, TElement&gt;, Array&lt;TIndex, TElement, DynamicArray&lt;TIndex, TElement&gt;&gt;.Enumerator&gt;, IEnumerable&lt;Association&lt;TIndex, TElement&gt;&gt;, IEnumerable, IAddable&lt;TIndex, TElement&gt;, IClearable, IRemovable&lt;TIndex, TElement&gt;, IRemovable&lt;TElement&gt;, IResizable where TIndex : IEquatable&lt;TIndex&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -374,7 +374,8 @@
   </span>
   <a id="Langly_DataStructures_Arrays_DynamicArray_2_Clone_" data-uid="Langly.DataStructures.Arrays.DynamicArray`2.Clone*"></a>
   <h4 id="Langly_DataStructures_Arrays_DynamicArray_2_Clone" data-uid="Langly.DataStructures.Arrays.DynamicArray`2.Clone">Clone()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Creates a new object that is a copy of the current instance.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -397,6 +398,9 @@
   </table>
   <h5 class="overrides">Overrides</h5>
   <div><span class="xref">Langly.DataStructures.DataStructure&lt;TIndex, TElement, Langly.DataStructures.Arrays.DynamicArray&lt;TIndex, TElement&gt;, Langly.DataStructures.Arrays.Array&lt;TIndex, TElement, Langly.DataStructures.Arrays.DynamicArray&lt;TIndex, TElement&gt;&gt;.Enumerator&gt;.Clone()</span></div>
+  <h5 id="Langly_DataStructures_Arrays_DynamicArray_2_Clone_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This is the actual implementation of <a class="xref" href="Langly.ICloneable-1.html#Langly_ICloneable_1_Clone">Clone()</a></p>
+</div>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="Langly.ICloneable-1.html">ICloneable&lt;TSelf&gt;</a>
@@ -420,10 +424,10 @@
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">System.IEquatable&lt;T&gt;</a>
   </div>
   <div>
-      <a class="xref" href="Langly.IIndexable-2.html">IIndexable&lt;TIndex, TElement&gt;</a>
+      <a class="xref" href="Langly.IRefIndexable-2.html">IRefIndexable&lt;TIndex, TElement&gt;</a>
   </div>
   <div>
-      <a class="xref" href="Langly.IReadOnlyIndexable-2.html">IReadOnlyIndexable&lt;TIndex, TElement&gt;</a>
+      <a class="xref" href="Langly.IReadOnlyRefIndexable-2.html">IReadOnlyRefIndexable&lt;TIndex, TElement&gt;</a>
   </div>
   <div>
       <a class="xref" href="Langly.ICountable.html">ICountable</a>

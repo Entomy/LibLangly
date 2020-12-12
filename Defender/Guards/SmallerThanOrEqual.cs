@@ -98,14 +98,12 @@ namespace Langly {
 		/// <summary>
 		/// Guard against the argument being larger than <paramref name="upper"/> bound.
 		/// </summary>
-		/// <typeparam name="TCollection">The type of the argument; must be <see cref="ICollection{T}"/> of <typeparamref name="T"/>.</typeparam>
-		/// <typeparam name="T">The type of the elements of <typeparamref name="TCollection"/>.</typeparam>
 		/// <param name="collection">The collection.</param>
 		/// <param name="name">The name of the argument.</param>
 		/// <param name="upper">The upper bound.</param>
 		/// <exception cref="ArgumentLargerThanException">Thrown if the guard clause fails.</exception>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static void SmallerThanOrEqual<T, TCollection>(TCollection collection, String name, Int64 upper) where TCollection : ICollection<T> {
+		public static void SmallerThanOrEqual(ICountable collection, String name, nint upper) {
 			if (collection.Count > upper) {
 				throw ArgumentLargerThanException.With(collection, name, upper);
 			}

@@ -30,5 +30,13 @@ namespace Langly {
 		/// <param name="name">The argument name.</param>
 		/// <returns>An <see cref="ArgumentNotReadableException"/> instance.</returns>
 		public static ArgumentNotReadableException With(Stream value, String name) => new ArgumentNotReadableException(value, name, "Stream must be readable.");
+
+		/// <summary>
+		/// Initializes a <see cref="ArgumentNotReadableException"/> with the provided values.
+		/// </summary>
+		/// <param name="value">The argument value.</param>
+		/// <param name="name">The argument name.</param>
+		/// <returns>An <see cref="ArgumentNotReadableException"/> instance.</returns>
+		public static ArgumentNotReadableException With<TElement, TError>(IReadable<TElement, TError> value, String name) => new ArgumentNotReadableException(value, name, "Stream must be readable.");
 	}
 }

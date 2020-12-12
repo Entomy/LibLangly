@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class SinglyLinkedList&lt;TIndex, TElement&gt;
    ">
-    <meta name="generator" content="docfx 2.56.5.0">
+    <meta name="generator" content="docfx 2.56.6.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -94,8 +94,8 @@
     <div><a class="xref" href="Langly.IAssociator-4.html">IAssociator</a>&lt;TIndex, TElement, <a class="xref" href="Langly.DataStructures.Lists.LinkedList-4.html">LinkedList</a>&lt;TIndex, TElement, <a class="xref" href="Langly.DataStructures.Lists.SinglyLinkedList-2.html">SinglyLinkedList</a>&lt;TIndex, TElement&gt;, <a class="xref" href="Langly.DataStructures.Lists.SinglyLinkedList-2.Node.html">SinglyLinkedList.Node</a>&lt;&gt;&gt;, <a class="xref" href="Langly.DataStructures.Lists.LinkedList-4.Enumerator.html">LinkedList.Enumerator</a>&lt;&gt;&gt;</div>
     <div><a class="xref" href="Langly.IClearable.html">IClearable</a></div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Langly.DataStructures.Lists.LinkedList-4.html">LinkedList</a>&lt;TIndex, TElement, <a class="xref" href="Langly.DataStructures.Lists.SinglyLinkedList-2.html">SinglyLinkedList</a>&lt;TIndex, TElement&gt;, <a class="xref" href="Langly.DataStructures.Lists.SinglyLinkedList-2.Node.html">SinglyLinkedList.Node</a>&lt;&gt;&gt;&gt;</div>
-    <div><a class="xref" href="Langly.IIndexable-2.html">IIndexable</a>&lt;TIndex, TElement&gt;</div>
-    <div><a class="xref" href="Langly.IReadOnlyIndexable-2.html">IReadOnlyIndexable</a>&lt;TIndex, TElement&gt;</div>
+    <div><a class="xref" href="Langly.IRefIndexable-2.html">IRefIndexable</a>&lt;TIndex, TElement&gt;</div>
+    <div><a class="xref" href="Langly.IReadOnlyRefIndexable-2.html">IReadOnlyRefIndexable</a>&lt;TIndex, TElement&gt;</div>
     <div><a class="xref" href="Langly.ICountable.html">ICountable</a></div>
     <div><a class="xref" href="Langly.IRemovable-2.html">IRemovable</a>&lt;TIndex, TElement&gt;</div>
     <div><a class="xref" href="Langly.IRemovable-1.html">IRemovable</a>&lt;TElement&gt;</div>
@@ -126,7 +126,7 @@
       <a class="xref" href="Langly.DataStructures.Lists.LinkedList-4.html#Langly_DataStructures_Lists_LinkedList_4_Item__0_">LinkedList&lt;TIndex, TElement, SinglyLinkedList&lt;TIndex, TElement&gt;, SinglyLinkedList&lt;TIndex, TElement&gt;.Node&gt;.Item[TIndex]</a>
     </div>
     <div>
-      <a class="xref" href="Langly.DataStructures.Lists.LinkedList-4.html#Langly_DataStructures_Lists_LinkedList_4_Langly_IReadOnlyIndexable_TIndex_TElement__Item__0_">LinkedList&lt;TIndex, TElement, SinglyLinkedList&lt;TIndex, TElement&gt;, SinglyLinkedList&lt;TIndex, TElement&gt;.Node&gt;.IReadOnlyIndexable&lt;TIndex, TElement&gt;.Item[TIndex]</a>
+      <a class="xref" href="Langly.DataStructures.Lists.LinkedList-4.html#Langly_DataStructures_Lists_LinkedList_4_Langly_IReadOnlyRefIndexable_TIndex_TElement__Item__0_">LinkedList&lt;TIndex, TElement, SinglyLinkedList&lt;TIndex, TElement&gt;, SinglyLinkedList&lt;TIndex, TElement&gt;.Node&gt;.IReadOnlyRefIndexable&lt;TIndex, TElement&gt;.Item[TIndex]</a>
     </div>
     <div>
       <a class="xref" href="Langly.DataStructures.Lists.LinkedList-4.html#Langly_DataStructures_Lists_LinkedList_4_Langly_IAddable_TIndex_TElement__Add__0__1_">LinkedList&lt;TIndex, TElement, SinglyLinkedList&lt;TIndex, TElement&gt;, SinglyLinkedList&lt;TIndex, TElement&gt;.Node&gt;.IAddable&lt;TIndex, TElement&gt;.Add(TIndex, TElement)</a>
@@ -233,7 +233,7 @@
   <h5 id="Langly_DataStructures_Lists_SinglyLinkedList_2_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Serializable]
-public sealed class SinglyLinkedList&lt;TIndex, TElement&gt; : LinkedList&lt;TIndex, TElement, SinglyLinkedList&lt;TIndex, TElement&gt;, SinglyLinkedList&lt;TIndex, TElement&gt;.Node&gt;, ICloneable&lt;SinglyLinkedList&lt;TIndex, TElement&gt;&gt;, ICloneable, IEquatable&lt;DataStructure&lt;TIndex, TElement, SinglyLinkedList&lt;TIndex, TElement&gt;, LinkedList&lt;TIndex, TElement, SinglyLinkedList&lt;TIndex, TElement&gt;, SinglyLinkedList&lt;TIndex, TElement&gt;.Node&gt;.Enumerator&gt;&gt;, IEquatable&lt;Association&lt;TIndex, TElement&gt;[]&gt;, IEquatable&lt;IEnumerable&lt;Association&lt;TIndex, TElement&gt;&gt;&gt;, IAddable&lt;TIndex, TElement&gt;, IAssociator&lt;TIndex, TElement, LinkedList&lt;TIndex, TElement, SinglyLinkedList&lt;TIndex, TElement&gt;, SinglyLinkedList&lt;TIndex, TElement&gt;.Node&gt;, LinkedList&lt;TIndex, TElement, SinglyLinkedList&lt;TIndex, TElement&gt;, SinglyLinkedList&lt;TIndex, TElement&gt;.Node&gt;.Enumerator&gt;, IClearable, IEquatable&lt;LinkedList&lt;TIndex, TElement, SinglyLinkedList&lt;TIndex, TElement&gt;, SinglyLinkedList&lt;TIndex, TElement&gt;.Node&gt;&gt;, IIndexable&lt;TIndex, TElement&gt;, IReadOnlyIndexable&lt;TIndex, TElement&gt;, ICountable, IRemovable&lt;TIndex, TElement&gt;, IRemovable&lt;TElement&gt;, IReplaceable&lt;TElement&gt;, IReplaceable&lt;TElement, TElement&gt;, IEnumerable&lt;Association&lt;TIndex, TElement&gt;, LinkedList&lt;TIndex, TElement, SinglyLinkedList&lt;TIndex, TElement&gt;, SinglyLinkedList&lt;TIndex, TElement&gt;.Node&gt;.Enumerator&gt;, IEnumerable&lt;Association&lt;TIndex, TElement&gt;&gt;, IEnumerable where TIndex : IEquatable&lt;TIndex&gt;</code></pre>
+public sealed class SinglyLinkedList&lt;TIndex, TElement&gt; : LinkedList&lt;TIndex, TElement, SinglyLinkedList&lt;TIndex, TElement&gt;, SinglyLinkedList&lt;TIndex, TElement&gt;.Node&gt;, ICloneable&lt;SinglyLinkedList&lt;TIndex, TElement&gt;&gt;, ICloneable, IEquatable&lt;DataStructure&lt;TIndex, TElement, SinglyLinkedList&lt;TIndex, TElement&gt;, LinkedList&lt;TIndex, TElement, SinglyLinkedList&lt;TIndex, TElement&gt;, SinglyLinkedList&lt;TIndex, TElement&gt;.Node&gt;.Enumerator&gt;&gt;, IEquatable&lt;Association&lt;TIndex, TElement&gt;[]&gt;, IEquatable&lt;IEnumerable&lt;Association&lt;TIndex, TElement&gt;&gt;&gt;, IAddable&lt;TIndex, TElement&gt;, IAssociator&lt;TIndex, TElement, LinkedList&lt;TIndex, TElement, SinglyLinkedList&lt;TIndex, TElement&gt;, SinglyLinkedList&lt;TIndex, TElement&gt;.Node&gt;, LinkedList&lt;TIndex, TElement, SinglyLinkedList&lt;TIndex, TElement&gt;, SinglyLinkedList&lt;TIndex, TElement&gt;.Node&gt;.Enumerator&gt;, IClearable, IEquatable&lt;LinkedList&lt;TIndex, TElement, SinglyLinkedList&lt;TIndex, TElement&gt;, SinglyLinkedList&lt;TIndex, TElement&gt;.Node&gt;&gt;, IRefIndexable&lt;TIndex, TElement&gt;, IReadOnlyRefIndexable&lt;TIndex, TElement&gt;, ICountable, IRemovable&lt;TIndex, TElement&gt;, IRemovable&lt;TElement&gt;, IReplaceable&lt;TElement&gt;, IReplaceable&lt;TElement, TElement&gt;, IEnumerable&lt;Association&lt;TIndex, TElement&gt;, LinkedList&lt;TIndex, TElement, SinglyLinkedList&lt;TIndex, TElement&gt;, SinglyLinkedList&lt;TIndex, TElement&gt;.Node&gt;.Enumerator&gt;, IEnumerable&lt;Association&lt;TIndex, TElement&gt;&gt;, IEnumerable where TIndex : IEquatable&lt;TIndex&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -361,7 +361,8 @@ public sealed class SinglyLinkedList&lt;TIndex, TElement&gt; : LinkedList&lt;TIn
   </span>
   <a id="Langly_DataStructures_Lists_SinglyLinkedList_2_Clone_" data-uid="Langly.DataStructures.Lists.SinglyLinkedList`2.Clone*"></a>
   <h4 id="Langly_DataStructures_Lists_SinglyLinkedList_2_Clone" data-uid="Langly.DataStructures.Lists.SinglyLinkedList`2.Clone">Clone()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Creates a new object that is a copy of the current instance.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -384,6 +385,9 @@ public sealed class SinglyLinkedList&lt;TIndex, TElement&gt; : LinkedList&lt;TIn
   </table>
   <h5 class="overrides">Overrides</h5>
   <div><span class="xref">Langly.DataStructures.DataStructure&lt;TIndex, TElement, Langly.DataStructures.Lists.SinglyLinkedList&lt;TIndex, TElement&gt;, Langly.DataStructures.Lists.LinkedList&lt;TIndex, TElement, Langly.DataStructures.Lists.SinglyLinkedList&lt;TIndex, TElement&gt;, Langly.DataStructures.Lists.SinglyLinkedList&lt;TIndex, TElement&gt;.Node&gt;.Enumerator&gt;.Clone()</span></div>
+  <h5 id="Langly_DataStructures_Lists_SinglyLinkedList_2_Clone_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This is the actual implementation of <a class="xref" href="Langly.ICloneable-1.html#Langly_ICloneable_1_Clone">Clone()</a></p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Lists_SinglyLinkedList_2_Remove__1_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Lists.SinglyLinkedList%602.Remove(%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -515,10 +519,10 @@ public sealed class SinglyLinkedList&lt;TIndex, TElement&gt; : LinkedList&lt;TIn
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">System.IEquatable&lt;T&gt;</a>
   </div>
   <div>
-      <a class="xref" href="Langly.IIndexable-2.html">IIndexable&lt;TIndex, TElement&gt;</a>
+      <a class="xref" href="Langly.IRefIndexable-2.html">IRefIndexable&lt;TIndex, TElement&gt;</a>
   </div>
   <div>
-      <a class="xref" href="Langly.IReadOnlyIndexable-2.html">IReadOnlyIndexable&lt;TIndex, TElement&gt;</a>
+      <a class="xref" href="Langly.IReadOnlyRefIndexable-2.html">IReadOnlyRefIndexable&lt;TIndex, TElement&gt;</a>
   </div>
   <div>
       <a class="xref" href="Langly.ICountable.html">ICountable</a>

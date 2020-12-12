@@ -30,5 +30,13 @@ namespace Langly {
 		/// <param name="name">The argument name.</param>
 		/// <returns>An <see cref="ArgumentNotWritableException"/> instance.</returns>
 		public static ArgumentNotWritableException With(Stream value, String name) => new ArgumentNotWritableException(value, name, "Stream must be writable.");
+
+		/// <summary>
+		/// Initializes a <see cref="ArgumentNotWritableException"/> with the provided values.
+		/// </summary>
+		/// <param name="value">The argument value.</param>
+		/// <param name="name">The argument name.</param>
+		/// <returns>An <see cref="ArgumentNotWritableException"/> instance.</returns>
+		public static ArgumentNotWritableException With<TElement, TError>(IWritable<TElement, TError> value, String name) => new ArgumentNotWritableException(value, name, "Stream must be writable.");
 	}
 }

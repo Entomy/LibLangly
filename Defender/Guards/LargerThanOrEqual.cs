@@ -110,5 +110,19 @@ namespace Langly {
 				throw ArgumentSmallerThanException.With(collection, name, lower);
 			}
 		}
+
+		/// <summary>
+		/// Guard against the argument being smaller than or equal to <paramref name="lower"/> bound.
+		/// </summary>
+		/// <param name="collection">The collection.</param>
+		/// <param name="name">The name of the argument.</param>
+		/// <param name="lower">The lower bound.</param>
+		/// 	<exception cref="ArgumentSmallerThanException">Thrown if the guard clause fails because the size was smaller than the bound.</exception>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static void LargerThanOrEqual(ICountable collection, String name, nint lower) {
+			if (collection is null || collection.Count < lower) {
+				throw ArgumentSmallerThanException.With(collection, name, lower);
+			}
+		}
 	}
 }

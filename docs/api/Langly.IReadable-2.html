@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface IReadable&lt;TElement, TError&gt;
    ">
-    <meta name="generator" content="docfx 2.56.5.0">
+    <meta name="generator" content="docfx 2.56.6.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -110,7 +110,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IReadable_2_Readable.md&amp;value=---%0Auid%3A%20Langly.IReadable%602.Readable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IReadable.cs/#L17">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IReadable`2.cs/#L17">View Source</a>
   </span>
   <a id="Langly_IReadable_2_Readable_" data-uid="Langly.IReadable`2.Readable*"></a>
   <h4 id="Langly_IReadable_2_Readable" data-uid="Langly.IReadable`2.Readable">Readable</h4>
@@ -146,7 +146,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IReadable_2_Read__0__.md&amp;value=---%0Auid%3A%20Langly.IReadable%602.Read(%600%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IReadable.cs/#L26">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IReadable`2.cs/#L26">View Source</a>
   </span>
   <a id="Langly_IReadable_2_Read_" data-uid="Langly.IReadable`2.Read*"></a>
   <h4 id="Langly_IReadable_2_Read__0__" data-uid="Langly.IReadable`2.Read(`0@)">Read(out TElement)</h4>
@@ -176,68 +176,14 @@
     </tbody>
   </table>
   <h5 id="Langly_IReadable_2_Read__0___remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>This assumes the read will never fail, which is an assumption that generally doesn't hold up. It is strongly recommended to use <a class="xref" href="Langly.IReadable-2.html#Langly_IReadable_2_TryRead__0__">TryRead(out TElement)</a> or <a class="xref" href="Langly.IReadable-2.html#Langly_IReadable_2_TryRead__0___1__">TryRead(out TElement, out TError)</a> instead.</p>
+  <div class="markdown level1 remarks"><p>This assumes the read will never fail, which is an assumption that generally doesn't hold up. It is strongly recommended to use <a class="xref" href="Langly.IReadable-2.html#Langly_IReadable_2_TryRead__0___1__">TryRead(out TElement, out TError)</a> instead.</p>
 </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IReadable_2_TryRead__0__.md&amp;value=---%0Auid%3A%20Langly.IReadable%602.TryRead(%600%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IReadable.cs/#L34">View Source</a>
-  </span>
-  <a id="Langly_IReadable_2_TryRead_" data-uid="Langly.IReadable`2.TryRead*"></a>
-  <h4 id="Langly_IReadable_2_TryRead__0__" data-uid="Langly.IReadable`2.TryRead(`0@)">TryRead(out TElement)</h4>
-  <div class="markdown level1 summary"><p>Attempts to read a <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">virtual bool TryRead(out TElement element)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">TElement</span></td>
-        <td><span class="parametername">element</span></td>
-        <td><p>The <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> value that was read.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p><span class="xref">true</span> if the read was successful; otherwise, <span class="xref">false</span>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Langly_IReadable_2_TryRead__0___seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Langly.IReadable-2.html#Langly_IReadable_2_TryRead__0___1__">TryRead(out TElement, out TError)</a></div>
-  </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IReadable_2_TryRead__0___1__.md&amp;value=---%0Auid%3A%20Langly.IReadable%602.TryRead(%600%40%2C%601%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IReadable.cs/#L43">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IReadable`2.cs/#L34">View Source</a>
   </span>
   <a id="Langly_IReadable_2_TryRead_" data-uid="Langly.IReadable`2.TryRead*"></a>
   <h4 id="Langly_IReadable_2_TryRead__0___1__" data-uid="Langly.IReadable`2.TryRead(`0@,`1@)">TryRead(out TElement, out TError)</h4>
@@ -288,10 +234,6 @@
       </tr>
     </tbody>
   </table>
-  <h5 id="Langly_IReadable_2_TryRead__0___1___seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Langly.IReadable-2.html#Langly_IReadable_2_TryRead__0__">TryRead(out TElement)</a></div>
-  </div>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Read__2_Langly_IReadable___0___1____0__">TraitExtensions.Read&lt;TElement, TError&gt;(IReadable&lt;TElement, TError&gt;, out TElement)</a>
@@ -313,7 +255,7 @@
                     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IReadable_2.md&amp;value=---%0Auid%3A%20Langly.IReadable%602%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IReadable.cs/#L10" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft/IReadable`2.cs/#L10" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

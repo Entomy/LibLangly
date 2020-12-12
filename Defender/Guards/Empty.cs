@@ -116,5 +116,18 @@ namespace Langly {
 				throw ArgumentNotEmptyException.With(collection, name);
 			}
 		}
+
+		/// <summary>
+		/// Guard against the collection having elements.
+		/// </summary>
+		/// <param name="collection">The collection.</param>
+		/// <param name="name">The name of the argument.</param>
+		/// <exception cref="ArgumentNotEmptyException">Thrown if the guard clause fails.</exception>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static void Empty(ICountable collection, String name) {
+			if (!(collection is null) && collection.Count != 0) {
+				throw ArgumentNotEmptyException.With(collection, name);
+			}
+		}
 	}
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using Xunit;
+using Langly.Streams;
 
 namespace Langly {
 	public class GuardTests {
