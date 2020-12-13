@@ -90,17 +90,6 @@ namespace Langly.Streams {
 		protected Stream(String path, System.IO.FileMode mode, IReadBuffer readBuffer, IWriteBuffer writeBuffer) : this(new FileStreamBase(path, mode), readBuffer, writeBuffer) { }
 
 		/// <summary>
-		/// Initialize a new instance of the <see cref="Stream"/> class.
-		/// </summary>
-		/// <param name="stream">The <see cref="Standard"/> stream designator.</param>
-		[SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP003:Dispose previous before re-assigning.", Justification = "This is a constructor and the field is not inline initialized, so there's nothing to dispose of.")]
-		protected Stream(Standard stream) {
-			Base = new StandardStreamBase(stream);
-			ReadBuffer = new MinimalBuffer(Base);
-			WriteBuffer = new PassthroughBuffer(Base);
-		}
-
-		/// <summary>
 		/// The position within the stream, counted by byte offset.
 		/// </summary>
 		/// <remarks>

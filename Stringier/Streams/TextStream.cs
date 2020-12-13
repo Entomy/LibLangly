@@ -53,17 +53,6 @@ namespace Langly.Streams {
 		public TextStream(String @string) : base(@string) => codec = new UTF16LECodec(ReadBuffer, WriteBuffer);
 
 		/// <summary>
-		/// Initialize a new instance of the <see cref="TextStream"/> class.
-		/// </summary>
-		/// <param name="standard">The <see cref="Standard"/> stream.</param>
-		public TextStream(Standard standard) : base(standard) =>
-#if WINDOWS
-			codec = new UTF16LECodec(ReadBuffer, WriteBuffer);
-#else
-			codec = new UTF8Codec(ReadBuffer, WriteBuffer);
-#endif
-
-		/// <summary>
 		/// Initialize a new instance of the <see cref="Stream"/> class.
 		/// </summary>
 		/// <param name="path">The path to the file.</param>
@@ -80,7 +69,7 @@ namespace Langly.Streams {
 		}
 
 		/// <summary>
-		/// The <see cref="Stringier.Encodings.Encoding"/> of this stream.
+		/// The <see cref="Langly.Encoding"/> of this stream.
 		/// </summary>
 		/// <remarks>
 		/// <para>If the current encoding is not known, this will be <see cref="Encoding.Unknown"/>. When this happens, if the encoding has to be determined, it will be done so automatically, and then changed to the determined encoding. This always defaults to <see cref="Encoding.UTF8"/> if another specific encoding was not specified at construction or as a BOM.</para>
@@ -126,6 +115,7 @@ namespace Langly.Streams {
 			}
 			set => codec = value;
 		}
+
 		/// <summary>
 		/// Stream this <paramref name="buffer"/>.
 		/// </summary>
