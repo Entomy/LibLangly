@@ -20,6 +20,21 @@ namespace Langly {
 		/// <summary>
 		/// Adds an element into the collection.
 		/// </summary>
+		/// <param name="elements">The elements to add to the collection.</param>
+		/// <remarks>
+		/// The behavior of this operation is collection dependant, and no particular location in the collection should be assumed.
+		/// </remarks>
+		void Add([AllowNull] params Char[] elements) {
+			if (elements is not null) {
+				foreach (Char element in elements) {
+					Add(element);
+				}
+			}
+		}
+
+		/// <summary>
+		/// Adds an element into the collection.
+		/// </summary>
 		/// <param name="element">The element to add to the collection.</param>
 		/// <remarks>
 		/// The behavior of this operation is collection dependant, and no particular location in the collection should be assumed.
@@ -49,15 +64,17 @@ namespace Langly {
 		}
 
 		/// <summary>
-		/// Adds an element into the collection.
+		/// Adds the elements into the collection.
 		/// </summary>
-		/// <param name="element">The element to add to the collection.</param>
+		/// <param name="elements">The elements to add to the collection.</param>
 		/// <remarks>
 		/// The behavior of this operation is collection dependant, and no particular location in the collection should be assumed.
 		/// </remarks>
-		void Add([AllowNull] params Char[] element) {
-			if (element is not null) {
-				Add(element.AsSpan());
+		void Add([AllowNull] params String[] elements) {
+			if (elements is not null) {
+				foreach (String element in elements) {
+					Add(element);
+				}
 			}
 		}
 

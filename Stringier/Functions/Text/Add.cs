@@ -24,6 +24,22 @@ namespace Langly {
 		/// Adds an element into the collection.
 		/// </summary>
 		/// <param name="collection">The collection.</param>
+		/// <param name="elements">The elements to add to the collection.</param>
+		/// <remarks>
+		/// The behavior of this operation is collection dependant, and no particular location in the collection should be assumed.
+		/// </remarks>
+		[CLSCompliant(false)]
+		public static void Add([AllowNull] this IAddableText collection, [AllowNull] params Char[] elements) {
+			if (collection is null) {
+				return;
+			}
+			collection.Add(elements);
+		}
+
+		/// <summary>
+		/// Adds an element into the collection.
+		/// </summary>
+		/// <param name="collection">The collection.</param>
 		/// <param name="element">The element to add to the collection.</param>
 		/// <remarks>
 		/// The behavior of this operation is collection dependant, and no particular location in the collection should be assumed.
@@ -61,7 +77,7 @@ namespace Langly {
 		/// The behavior of this operation is collection dependant, and no particular location in the collection should be assumed.
 		/// </remarks>
 		[CLSCompliant(false)]
-		public static void Add([AllowNull] this IAddableText collection, [AllowNull] params Char[] elements) {
+		public static void Add([AllowNull] this IAddableText collection, [AllowNull] params String[] elements) {
 			if (collection is null) {
 				return;
 			}

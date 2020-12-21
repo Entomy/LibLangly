@@ -12,11 +12,13 @@ namespace Langly {
 		/// <summary>
 		/// The first <see cref="Node"/> of the <see cref="Rope"/>.
 		/// </summary>
+		[AllowNull]
 		private Node Head;
 
 		/// <summary>
 		/// The last <see cref="Node"/> of the <see cref="Rope"/>.
 		/// </summary>
+		[AllowNull]
 		private Node Tail;
 
 		/// <summary>
@@ -79,7 +81,11 @@ namespace Langly {
 		}
 
 		/// <inheritdoc/>
-		void IAddableText.Add(System.Text.Rune element) => throw new NotImplementedException();
+		void IAddableText.Add([AllowNull] params Char[] elements) {
+			if (elements is not null) {
+				this.Add(elements.AsMemory());
+			}
+		}
 
 		/// <inheritdoc/>
 		void IAddableText.Add([AllowNull] String element) {
@@ -96,18 +102,65 @@ namespace Langly {
 		}
 
 		/// <inheritdoc/>
-		void IAddableText.Add(Memory<Char> element) => throw new NotImplementedException();
+		void IAddableText.Add(Memory<Char> element) {
+			Tail = new MemoryNode(element, next: null, previous: Tail);
+			if (Head is null) {
+				Head = Tail;
+			} else {
+				Tail.Previous.Next = Tail;
+			}
+			Length += element.Length;
+		}
 
 		/// <inheritdoc/>
-		void IAddableText.Add(ReadOnlyMemory<Char> element) => throw new NotImplementedException();
+		void IAddableText.Add(ReadOnlyMemory<Char> element) {
+			Tail = new MemoryNode(element, next: null, previous: Tail);
+			if (Head is null) {
+				Head = Tail;
+			} else {
+				Tail.Previous.Next = Tail;
+			}
+			Length += element.Length;
+		}
 
 		/// <inheritdoc/>
-		void IAddableText.Add(Span<Char> element) => throw new NotImplementedException();
+		void IAddableText.Add(Span<Char> element) {
+			Char[] buffer = new Char[element.Length];
+			element.CopyTo(buffer);
+			Tail = new MemoryNode(buffer, next: null, previous: Tail);
+			if (Head is null) {
+				Head = Tail;
+			} else {
+				Tail.Previous.Next = Tail;
+			}
+			Length += element.Length;
+		}
 
 		/// <inheritdoc/>
-		void IAddableText.Add(ReadOnlySpan<Char> element) => throw new NotImplementedException();
+		void IAddableText.Add(ReadOnlySpan<Char> element) {
+			Char[] buffer = new Char[element.Length];
+			element.CopyTo(buffer);
+			Tail = new MemoryNode(buffer, next: null, previous: Tail);
+			if (Head is null) {
+				Head = Tail;
+			} else {
+				Tail.Previous.Next = Tail;
+			}
+			Length += element.Length;
+		}
 
 		/// <inheritdoc/>
-		unsafe void IAddableText.Add(Char* element, Int32 length) => throw new NotImplementedException();
+		unsafe void IAddableText.Add([AllowNull] Char* element, Int32 length) {
+			if (element is null) {
+				return;
+			}
+			Tail = new PointerNode(element, length, next: null, previous: Tail);
+			if (Head is null) {
+				Head = Tail;
+			} else {
+				Tail.Previous.Next = Tail;
+			}
+			Length += length;
+		}
 	}
 }
