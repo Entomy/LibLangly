@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
 namespace Langly {
@@ -41,7 +42,24 @@ namespace Langly {
 		/// <remarks>
 		/// The behavior of this operation is collection dependant, and no particular location in the collection should be assumed.
 		/// </remarks>
-		void Add(String element) => Add(element.AsSpan());
+		void Add([AllowNull] String element) {
+			if (element is not null) {
+				Add(element.AsSpan());
+			}
+		}
+
+		/// <summary>
+		/// Adds an element into the collection.
+		/// </summary>
+		/// <param name="element">The element to add to the collection.</param>
+		/// <remarks>
+		/// The behavior of this operation is collection dependant, and no particular location in the collection should be assumed.
+		/// </remarks>
+		void Add([AllowNull] params Char[] element) {
+			if (element is not null) {
+				Add(element.AsSpan());
+			}
+		}
 
 		/// <summary>
 		/// Adds an element into the collection.
@@ -87,6 +105,10 @@ namespace Langly {
 		/// <remarks>
 		/// The behavior of this operation is collection dependant, and no particular location in the collection should be assumed.
 		/// </remarks>
-		unsafe void Add(Char* element, Int32 length) => Add(new ReadOnlySpan<Char>(element, length));
+		unsafe void Add([AllowNull] Char* element, Int32 length) {
+			if (element is not null) {
+				Add(new ReadOnlySpan<Char>(element, length));
+			}
+		}
 	}
 }

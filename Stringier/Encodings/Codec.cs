@@ -32,7 +32,7 @@ namespace Langly {
 		}
 
 		/// <summary>
-		/// The <see cref="Encodings.Encoding"/> corresponding to this <see cref="Codec"/>.
+		/// The <see cref="Langly.Encoding"/> corresponding to this <see cref="Codec"/>.
 		/// </summary>
 		public abstract Encoding Encoding { get; }
 
