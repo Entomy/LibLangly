@@ -54,6 +54,12 @@ namespace Langly {
 			Assert.True(first != second);
 			Assert.True(second != first);
 
+			Assert.Equal("hello", first);
+			Assert.True(first == "hello");
+			Assert.True("hello" == first);
+			Assert.False(first != "hello");
+			Assert.False("hello" != first);
+
 			second = new Rope("he");
 
 			Assert.NotEqual(second, first);
@@ -71,6 +77,12 @@ namespace Langly {
 			Assert.True(second == first);
 			Assert.False(first != second);
 			Assert.False(second != first);
+
+			Assert.Equal("hello", second);
+			Assert.True(second == "hello");
+			Assert.True("hello" == second);
+			Assert.False(second != "hello");
+			Assert.False("hello" != second);
 		}
 
 		[Fact]
