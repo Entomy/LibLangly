@@ -8,7 +8,7 @@ namespace Langly {
 	/// <remarks>
 	/// Unlike a <see cref="String"/>, this is a highly flexible and dynamic data structure, and operations upon it are done through structural transformations instead of more traditional algorithms. <see cref="Rope"/> tends to be far more efficient in non-trivial situations as a result.
 	/// </remarks>
-	public sealed partial class Rope : IAddableText, ILengthy, IIndexable<Char> {
+	public sealed partial class Rope : IAddableText, IEquatable<Rope>, IIndexable<Char>, ILengthy {
 		/// <summary>
 		/// The first <see cref="Node"/> of the <see cref="Rope"/>.
 		/// </summary>
@@ -68,6 +68,26 @@ namespace Langly {
 		}
 
 		public static implicit operator Rope([AllowNull] String text) => new Rope(text);
+
+		public static Boolean operator !=([AllowNull] Rope left, [AllowNull] Rope right) {
+			if (left is null && right is null) {
+				return false;
+			} else if (left is null || right is null) {
+				return true;
+			} else {
+				return !left.Equals(right);
+			}
+		}
+
+		public static Boolean operator ==([AllowNull] Rope left, [AllowNull] Rope right) {
+			if (left is null && right is null) {
+				return true;
+			} else if (left is null || right is null) {
+				return false;
+			} else {
+				return left.Equals(right);
+			}
+		}
 
 		/// <inheritdoc/>
 		void IAddableText.Add(Char element) {
@@ -161,6 +181,34 @@ namespace Langly {
 				Tail.Previous.Next = Tail;
 			}
 			Length += length;
+		}
+
+		/// <inheritdoc/>
+		public override Boolean Equals([AllowNull] Object obj) {
+			switch (obj) {
+			case Rope rope:
+				return Equals(rope);
+			default:
+				return false;
+			}
+		}
+
+		/// <inheritdoc/>
+		public Boolean Equals([AllowNull] Rope other) {
+			if (ReferenceEquals(this, other)) {
+				return true;
+			}
+			if (other is null || Length != other.Length) {
+				return false;
+			}
+			using Enumerator T = GetEnumerator();
+			using Enumerator O = other.GetEnumerator();
+			while (T.MoveNext() && O.MoveNext()) {
+				if (T.Current != O.Current) {
+					return false;
+				}
+			}
+			return true;
 		}
 
 		/// <inheritdoc/>

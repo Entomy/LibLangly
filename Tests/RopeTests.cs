@@ -34,6 +34,46 @@ namespace Langly {
 		}
 
 		[Fact]
+		public void Equality() {
+			Rope first = null;
+			Rope second = null;
+
+			Assert.Equal(second, first);
+			Assert.Equal(first, second);
+			Assert.True(first == second);
+			Assert.True(second == first);
+			Assert.False(first != second);
+			Assert.False(second != first);
+
+			first = new Rope("hello");
+
+			Assert.NotEqual(second, first);
+			Assert.NotEqual(first, second);
+			Assert.False(first == second);
+			Assert.False(second == first);
+			Assert.True(first != second);
+			Assert.True(second != first);
+
+			second = new Rope("he");
+
+			Assert.NotEqual(second, first);
+			Assert.NotEqual(first, second);
+			Assert.False(first == second);
+			Assert.False(second == first);
+			Assert.True(first != second);
+			Assert.True(second != first);
+
+			second.Add("llo");
+
+			Assert.Equal(second, first);
+			Assert.Equal(first, second);
+			Assert.True(first == second);
+			Assert.True(second == first);
+			Assert.False(first != second);
+			Assert.False(second != first);
+		}
+
+		[Fact]
 		public void Indexer() {
 			Rope rope = new Rope() { "a", "bb", "ccc" };
 			Assert.Equal('a', rope[0]);
