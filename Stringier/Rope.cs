@@ -162,5 +162,21 @@ namespace Langly {
 			}
 			Length += length;
 		}
+
+		/// <inheritdoc/>
+		public override String ToString() {
+			Char[] chars = new Char[Length];
+			nint c = 0;
+			Node N = Head;
+			nint n = 0;
+			while (c < Length) {
+				while (n < N.Length) {
+					chars[c++] = N[n++];
+				}
+				N = N.Next;
+				n = 0;
+			}
+			return new String(chars);
+		}
 	}
 }

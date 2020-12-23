@@ -41,5 +41,15 @@ namespace Langly {
 			Assert.Equal('b', rope[2]);
 			Assert.Equal('c', rope[3]);
 		}
+
+		[Fact]
+		override public String ToString() {
+			Rope rope = new Rope("hello");
+			Assert.Equal("hello", rope.ToString());
+			rope.Add(" ");
+			rope.Add("world");
+			Assert.Equal("hello world", rope.ToString());
+			return String.Empty;
+		}
 	}
 }
