@@ -757,6 +757,7 @@ public static ulong Add(ulong element, ulong other)</code></pre>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static T Add&lt;T&gt;(this T element, T other)
+
     where T : ISummable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1318,6 +1319,7 @@ public static ulong Add(ulong element, ulong other)</code></pre>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Add&lt;TElement, TEnumerator&gt;(this IAddable&lt;TElement&gt; collection, IEnumerable&lt;TElement, TEnumerator&gt; elements)
+
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1383,6 +1385,7 @@ public static ulong Add(ulong element, ulong other)</code></pre>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Add&lt;TIndex, TElement, TEnumerator&gt;(this IAddable&lt;TIndex, TElement&gt; collection, IEnumerable&lt;(TIndex, TElement), TEnumerator&gt; members)
+
     where TEnumerator : IEnumerator&lt;(TIndex, TElement)&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1453,6 +1456,7 @@ public static ulong Add(ulong element, ulong other)</code></pre>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static T And&lt;T&gt;(this T element, T other)
+
     where T : IConjoinable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2684,6 +2688,7 @@ public static double Divide(ulong element, ulong other)</code></pre>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static T Divide&lt;T&gt;(this T element, T other)
+
     where T : IDividable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2869,6 +2874,7 @@ public static double Divide(ulong element, ulong other)</code></pre>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Enqueue&lt;TElement, TEnumerator&gt;(this IEnqueueable&lt;TElement&gt; collection, IEnumerable&lt;TElement, TEnumerator&gt; elements)
+
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2930,6 +2936,7 @@ public static double Divide(ulong element, ulong other)</code></pre>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static bool Equals&lt;T&gt;(T objA, T objB)
+
     where T : IEquatable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2998,6 +3005,7 @@ public static double Divide(ulong element, ulong other)</code></pre>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static bool Equals&lt;TA, TB&gt;(TA objA, TB objB)
+
     where TA : IEquatable&lt;TB&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3070,6 +3078,7 @@ public static double Divide(ulong element, ulong other)</code></pre>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static bool Equals&lt;TA, TB&gt;(TB objB, TA objA)
+
     where TB : IEquatable&lt;TA&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3143,6 +3152,7 @@ public static double Divide(ulong element, ulong other)</code></pre>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TElement Fold&lt;TElement, TEnumerator&gt;(this IEnumerable&lt;TElement, TEnumerator&gt; collection, Func&lt;TElement, TElement, TElement&gt; func, TElement identity)
+
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3265,6 +3275,7 @@ public static double Divide(ulong element, ulong other)</code></pre>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static nint IndexOf&lt;TElement&gt;(this IReadOnlyIndexable&lt;TElement&gt; collection, TElement item)
+
     where TElement : IEquatable&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3482,6 +3493,7 @@ public static double Divide(ulong element, ulong other)</code></pre>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static nint IndexOf&lt;TElement&gt;(this IReadOnlyRefIndexable&lt;TElement&gt; collection, TElement item)
+
     where TElement : IEquatable&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3699,6 +3711,7 @@ public static double Divide(ulong element, ulong other)</code></pre>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Insert&lt;TIndex, TElement&gt;(this IInsertable&lt;TIndex, TElement&gt; collection, TIndex index, TElement element)
+
     where TIndex : IEquatable&lt;TIndex&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4514,6 +4527,7 @@ public static ulong Multiply(ulong element, ulong other)</code></pre>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static T Multiply&lt;T&gt;(this T element, T other)
+
     where T : IMultiplyable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4587,6 +4601,7 @@ public static ulong Multiply(ulong element, ulong other)</code></pre>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static T Not&lt;T&gt;(this T element)
+
     where T : INegatable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4654,6 +4669,7 @@ public static ulong Multiply(ulong element, ulong other)</code></pre>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static nint Occurrences&lt;TElement, TEnumerator&gt;(this IEnumerable&lt;TElement, TEnumerator&gt; collection, TElement element)
+
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4732,6 +4748,7 @@ public static ulong Multiply(ulong element, ulong other)</code></pre>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static nint Occurrences&lt;TElement, TEnumerator&gt;(this IEnumerable&lt;TElement, TEnumerator&gt; collection, Predicate&lt;TElement&gt; match)
+
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4810,6 +4827,7 @@ public static ulong Multiply(ulong element, ulong other)</code></pre>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static T Or&lt;T&gt;(this T element, T other)
+
     where T : IIncludable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5311,6 +5329,7 @@ public static ulong Multiply(ulong element, ulong other)</code></pre>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Push&lt;TElement, TEnumerator&gt;(this IPushable&lt;TElement&gt; collection, IEnumerable&lt;TElement, TEnumerator&gt; elements)
+
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5605,6 +5624,7 @@ public static ulong Multiply(ulong element, ulong other)</code></pre>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Remove&lt;TElement, TEnumerator&gt;(this IRemovable&lt;TElement&gt; collection, IEnumerable&lt;TElement, TEnumerator&gt; elements)
+
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -7748,6 +7768,7 @@ public static ulong Subtract(ulong element, ulong other)</code></pre>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static T Subtract&lt;T&gt;(this T element, T other)
+
     where T : ISubtractable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -9653,6 +9674,7 @@ public static ulong Subtract(ulong element, ulong other)</code></pre>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static T XOr&lt;T&gt;(this T element, T other)
+
     where T : IExcludable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>

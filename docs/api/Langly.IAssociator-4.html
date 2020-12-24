@@ -81,6 +81,7 @@
   <h5 id="Langly_IAssociator_4_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public interface IAssociator&lt;TIndex, TElement, TSelf, TEnumerator&gt;
+
     where TIndex : IEquatable&lt;TIndex&gt; where TSelf : IAssociator&lt;TIndex, TElement, TSelf, TEnumerator&gt;, IEnumerable&lt;Association&lt;TIndex, TElement&gt;, TEnumerator&gt; where TEnumerator : IEnumerator&lt;Association&lt;TIndex, TElement&gt;&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
