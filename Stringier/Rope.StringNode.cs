@@ -19,6 +19,18 @@ namespace Langly {
 
 			/// <inheritdoc/>
 			public override String ToString() => Text;
+
+			/// <inheritdoc/>
+			internal override void Insert(nint index, Char element, out Node head, out Node tail) => throw new NotImplementedException();
+
+			/// <inheritdoc/>
+			internal override void Insert(nint index, [DisallowNull] String element, out Node head, out Node tail) => throw new NotImplementedException();
+
+			/// <inheritdoc/>
+			internal override void Insert(nint index, ReadOnlyMemory<Char> element, out Node head, out Node tail) => throw new NotImplementedException();
+
+			/// <inheritdoc/>
+			internal override unsafe void Insert(nint index, [DisallowNull] Char* element, Int32 length, out Node head, out Node tail) => throw new NotImplementedException();
 		}
 	}
 }

@@ -11,7 +11,7 @@ namespace Langly.DataStructures.Arrays {
 	/// <remarks>
 	/// This is intended as a reusable base for implementing behaviors on top of <see cref="Array"/>s of rank 1.
 	/// </remarks>
-	public abstract partial class Array<TElement, TSelf> : DataStructure<TElement, TSelf, Array<TElement, TSelf>.Enumerator>, IContainable<TElement>, IEquatable<Array<TElement, TSelf>>, IRefIndexable<TElement>, IPeekable<TElement>, IReplaceable<TElement>, IShiftable, ISliceable<Memory<TElement>>, IReadOnlySliceable<ReadOnlyMemory<TElement>> where TSelf : Array<TElement, TSelf> {
+	public abstract partial class Array<TElement, TSelf> : DataStructure<TElement, TSelf, Array<TElement, TSelf>.Enumerator>, IContainable<TElement>, IEquatable<Array<TElement, TSelf>>, IRefIndexable<TElement>, IPeekable<TElement>, IReplaceable<TElement>, IShiftable, ISliceable<Memory<TElement>> where TSelf : Array<TElement, TSelf> {
 		/// <summary>
 		/// The set of elements.
 		/// </summary>
@@ -70,9 +70,6 @@ namespace Langly.DataStructures.Arrays {
 				return Elements.Slice(offset, length);
 			}
 		}
-
-		/// <inheritdoc/>
-		ReadOnlyMemory<TElement> IReadOnlySliceable<ReadOnlyMemory<TElement>>.this[Range range] => this[range];
 
 		/// <summary>
 		/// Shifts the <paramref name="array"/> leftwards by <paramref name="amount"/>.
@@ -197,14 +194,5 @@ namespace Langly.DataStructures.Arrays {
 
 		/// <inheritdoc/>
 		public Memory<TElement> Slice(nint start, nint length) => Elements.Slice((Int32)start, (Int32)length);
-
-		/// <inheritdoc/>
-		ReadOnlyMemory<TElement> IReadOnlySliceable<ReadOnlyMemory<TElement>>.Slice() => Slice();
-
-		/// <inheritdoc/>
-		ReadOnlyMemory<TElement> IReadOnlySliceable<ReadOnlyMemory<TElement>>.Slice(nint start) => Slice(start);
-
-		/// <inheritdoc/>
-		ReadOnlyMemory<TElement> IReadOnlySliceable<ReadOnlyMemory<TElement>>.Slice(nint start, nint length) => Slice(start, length);
 	}
 }

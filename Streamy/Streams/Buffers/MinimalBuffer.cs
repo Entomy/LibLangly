@@ -158,13 +158,13 @@ namespace Langly.Streams.Buffers {
 		}
 
 		/// <inheritdoc/>
-		ReadOnlyMemory<Byte> IReadOnlySliceable<ReadOnlyMemory<Byte>>.Slice() => Buffer.AsMemory();
+		ReadOnlyMemory<Byte> ISliceable<ReadOnlyMemory<Byte>>.Slice() => Buffer.AsMemory();
 
 		/// <inheritdoc/>
-		ReadOnlyMemory<Byte> IReadOnlySliceable<ReadOnlyMemory<Byte>>.Slice(nint start) => Buffer.AsMemory().Slice((Int32)start);
+		ReadOnlyMemory<Byte> ISliceable<ReadOnlyMemory<Byte>>.Slice(nint start) => Buffer.AsMemory().Slice((Int32)start);
 
 		/// <inheritdoc/>
-		ReadOnlyMemory<Byte> IReadOnlySliceable<ReadOnlyMemory<Byte>>.Slice(nint start, nint length) => Buffer.AsMemory().Slice((Int32)start, (Int32)length);
+		ReadOnlyMemory<Byte> ISliceable<ReadOnlyMemory<Byte>>.Slice(nint start, nint length) => Buffer.AsMemory().Slice((Int32)start, (Int32)length);
 
 		/// <inheritdoc/>
 		public void Store(Byte value) => Buffer[Length++] = value;

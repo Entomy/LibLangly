@@ -272,7 +272,7 @@ module Functions =
     type ReadOnlyMemory<'t> with
         member this.GetEnumerator() = this.Span.GetEnumerator()
 
-    type IReadOnlySliceable<'t> with
+    type ISliceable<'t> with
         member this.GetSlice(start, finish) =
             let start = defaultArg start 0n
             let finish = defaultArg finish this.Count

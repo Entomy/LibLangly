@@ -7,9 +7,9 @@ namespace Langly {
 		/// Represents any node of a <see cref="Rope"/>.
 		/// </summary>
 		protected abstract class Node : ILengthy, IReadOnlyIndexable<Char> {
-			public Node Next;
+			[AllowNull] public Node Next;
 
-			public Node Previous;
+			[AllowNull] public Node Previous;
 
 			/// <summary>
 			/// Initializes a new <see cref="Node"/>.
@@ -26,6 +26,14 @@ namespace Langly {
 
 			/// <inheritdoc/>
 			public abstract Char this[nint index] { get; }
+
+			internal abstract void Insert(nint index, Char element, out Node head, out Node tail);
+
+			internal abstract void Insert(nint index, [DisallowNull] String element, out Node head, out Node tail);
+
+			internal abstract void Insert(nint index, ReadOnlyMemory<Char> element, out Node head, out Node tail);
+
+			internal abstract unsafe void Insert(nint index, [DisallowNull] Char* element, Int32 length, out Node head, out Node tail);
 		}
 	}
 }

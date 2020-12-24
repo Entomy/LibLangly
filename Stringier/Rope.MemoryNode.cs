@@ -13,6 +13,18 @@ namespace Langly {
 
 			/// <inheritdoc/>
 			public override nint Length => Text.Length;
+
+			/// <inheritdoc/>
+			internal override void Insert(nint index, Char element, out Node head, out Node tail) => throw new NotImplementedException();
+
+			/// <inheritdoc/>
+			internal override void Insert(nint index, [AllowNull] String element, out Node head, out Node tail) => throw new NotImplementedException();
+
+			/// <inheritdoc/>
+			internal override void Insert(nint index, ReadOnlyMemory<Char> element, out Node head, out Node tail) => throw new NotImplementedException();
+
+			/// <inheritdoc/>
+			internal override unsafe void Insert(nint index, [AllowNull] Char* element, Int32 length, out Node head, out Node tail) => throw new NotImplementedException();
 		}
 	}
 }

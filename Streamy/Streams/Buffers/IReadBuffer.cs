@@ -6,7 +6,7 @@ namespace Langly.Streams.Buffers {
 	/// <summary>
 	/// Indicates the type can be used as a read buffer for a <see cref="Streams.Stream"/>.
 	/// </summary>
-	public interface IReadBuffer : ILengthy, IPeekable<Byte, Errors>, IReadOnlyIndexable<Byte>, IReadOnlySliceable<ReadOnlyMemory<Byte>>, ISeekable<Byte, Errors>, IShiftable, IEquatable<Byte[]>, IEquatable<IReadOnlyList<Byte>> {
+	public interface IReadBuffer : ILengthy, IPeekable<Byte, Errors>, IReadOnlyIndexable<Byte>, ISliceable<ReadOnlyMemory<Byte>>, ISeekable<Byte, Errors>, IShiftable, IEquatable<Byte[]>, IEquatable<IReadOnlyList<Byte>> {
 		/// <summary>
 		/// The capacity of this buffer.
 		/// </summary>
