@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Text;
 using Xunit;
+using Langly.Linguistics;
+using static Langly.Linguistics.Language;
+using static Langly.Linguistics.Script;
 
 namespace Langly {
 	public class RopeTests {
@@ -94,6 +97,28 @@ namespace Langly {
 			Assert.Equal('c', rope[3]);
 		}
 
+		[Theory]
+		[InlineData("hello", "hello")]
+		[InlineData("hello", "he", "ll", "o")]
+		[InlineData("hello", "HELLO")]
+		[InlineData("hello", "HE", "LL", "O")]
+		public void ToLower_Invariant(String expected, params String[] parts) {
+			Rope rope = new Rope() { parts };
+			Assert.Equal(expected, rope.ToLower());
+		}
+
+		[Theory]
+		[InlineData("giriş", "giriş")]
+		[InlineData("giriş", "g", "iri", "ş")]
+		[InlineData("giriş", "gi", "riş")]
+		[InlineData("giriş", "GİRİŞ")]
+		[InlineData("giriş", "G", "İRİ", "Ş")]
+		[InlineData("giriş", "Gİ", "RİŞ")]
+		public void ToLower_trTR(String expected, params String[] parts) {
+			Rope rope = new Rope() { parts };
+			Assert.Equal(expected, rope.ToLower(Turkish[Latin]));
+		}
+
 		[Fact]
 		override public String ToString() {
 			Rope rope = new Rope("hello");
@@ -102,6 +127,28 @@ namespace Langly {
 			rope.Add("world");
 			Assert.Equal("hello world", rope.ToString());
 			return String.Empty;
+		}
+
+		[Theory]
+		[InlineData("HELLO", "hello")]
+		[InlineData("HELLO", "he", "ll", "o")]
+		[InlineData("HELLO", "HELLO")]
+		[InlineData("HELLO", "HE", "LL", "O")]
+		public void ToUpper_Invariant(String expected, params String[] parts) {
+			Rope rope = new Rope() { parts };
+			Assert.Equal(expected, rope.ToUpper());
+		}
+
+		[Theory]
+		[InlineData("GİRİŞ", "giriş")]
+		[InlineData("GİRİŞ", "g", "iri", "ş")]
+		[InlineData("GİRİŞ", "gi", "riş")]
+		[InlineData("GİRİŞ", "GİRİŞ")]
+		[InlineData("GİRİŞ", "G", "İRİ", "Ş")]
+		[InlineData("GİRİŞ", "Gİ", "RİŞ")]
+		public void ToUpper_trTR(String expected, params String[] parts) {
+			Rope rope = new Rope() { parts };
+			Assert.Equal(expected, rope.ToUpper(Turkish[Latin]));
 		}
 	}
 }

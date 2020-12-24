@@ -1,4 +1,5 @@
 ﻿using Langly.Linguistics;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Langly {
 	/// <summary>
@@ -19,7 +20,7 @@ namespace Langly {
 		/// <remarks>
 		/// If <paramref name="orthography"/> is <see langword="null"/>, then the invariant should be used.
 		/// </remarks>
-		TSelf ToLower(Orthography orthography);
+		TSelf ToLower([AllowNull] Orthography orthography);
 
 		/// <summary>
 		/// Converts the text to its titlecase form, invariant of orthograhy.
@@ -35,7 +36,7 @@ namespace Langly {
 		/// <remarks>
 		/// If <paramref name="orthography"/> is <see langword="null"/>, then the invariant should be used.
 		/// </remarks>
-		TSelf ToTitle(Orthography orthography);
+		TSelf ToTitle([AllowNull] Orthography orthography);
 
 		/// <summary>
 		/// Converts the text to its uppercase form, invariant of orthograhy.
@@ -51,6 +52,6 @@ namespace Langly {
 		/// <remarks>
 		/// If <paramref name="orthography"/> is <see langword="null"/>, then the invariant should be used.
 		/// </remarks>
-		TSelf ToUpper(Orthography orthography);
+		TSelf ToUpper([AllowNull] Orthography orthography);
 	}
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using Langly.Linguistics;
 
 namespace Langly {
 	/// <summary>
@@ -8,7 +9,7 @@ namespace Langly {
 	/// <remarks>
 	/// Unlike a <see cref="String"/>, this is a highly flexible and dynamic data structure, and operations upon it are done through structural transformations instead of more traditional algorithms. <see cref="Rope"/> tends to be far more efficient in non-trivial situations as a result.
 	/// </remarks>
-	public sealed partial class Rope : IAddableText, IEquatable<Rope>, IEquatable<String>, IIndexable<Char>, ILengthy {
+	public sealed partial class Rope : IAddableText, ICased<Rope>, IEquatable<Rope>, IEquatable<String>, IIndexable<Char>, ILengthy {
 		/// <summary>
 		/// The first <see cref="Node"/> of the <see cref="Rope"/>.
 		/// </summary>
@@ -36,6 +37,21 @@ namespace Langly {
 		public Rope([AllowNull] String text) {
 			if (text is not null) {
 				Head = new StringNode(text, next: null, previous: null);
+				Tail = Head;
+				Length += text.Length;
+			} else {
+				Head = null;
+				Tail = null;
+			}
+		}
+
+		/// <summary>
+		/// Initializes a new <see cref="Rope"/>.
+		/// </summary>
+		/// <param name="text">The initial text of the rope.</param>
+		public Rope([AllowNull] params Char[] text) {
+			if (text is not null) {
+				Head = new MemoryNode(text, next: null, previous: null);
 				Tail = Head;
 				Length += text.Length;
 			} else {
@@ -275,6 +291,38 @@ namespace Langly {
 		public override Int32 GetHashCode() => base.GetHashCode();
 
 		/// <inheritdoc/>
+		Rope ICased<Rope>.ToLower() {
+			Char[] chars = new Char[Length];
+			nint c = 0;
+			Node N = Head;
+			nint n = 0;
+			while (c < Length) {
+				while (n < N.Length) {
+					chars[c++] = N[n++].ToLower();
+				}
+				N = N.Next;
+				n = 0;
+			}
+			return new Rope(chars);
+		}
+
+		/// <inheritdoc/>
+		Rope ICased<Rope>.ToLower([DisallowNull] Orthography orthography) {
+			Char[] chars = new Char[Length];
+			nint c = 0;
+			Node N = Head;
+			nint n = 0;
+			while (c < Length) {
+				while (n < N.Length) {
+					chars[c++] = N[n++].ToLower(orthography);
+				}
+				N = N.Next;
+				n = 0;
+			}
+			return new Rope(chars);
+		}
+
+		/// <inheritdoc/>
 		public override String ToString() {
 			Char[] chars = new Char[Length];
 			nint c = 0;
@@ -288,6 +336,69 @@ namespace Langly {
 				n = 0;
 			}
 			return new String(chars);
+		}
+		/// <inheritdoc/>
+		Rope ICased<Rope>.ToTitle() {
+			Char[] chars = new Char[Length];
+			nint c = 0;
+			Node N = Head;
+			nint n = 0;
+			while (c < Length) {
+				while (n < N.Length) {
+					chars[c++] = N[n++].ToTitle();
+				}
+				N = N.Next;
+				n = 0;
+			}
+			return new Rope(chars);
+		}
+
+		/// <inheritdoc/>
+		Rope ICased<Rope>.ToTitle([DisallowNull] Orthography orthography) {
+			Char[] chars = new Char[Length];
+			nint c = 0;
+			Node N = Head;
+			nint n = 0;
+			while (c < Length) {
+				while (n < N.Length) {
+					chars[c++] = N[n++].ToTitle(orthography);
+				}
+				N = N.Next;
+				n = 0;
+			}
+			return new Rope(chars);
+		}
+
+		/// <inheritdoc/>
+		Rope ICased<Rope>.ToUpper() {
+			Char[] chars = new Char[Length];
+			nint c = 0;
+			Node N = Head;
+			nint n = 0;
+			while (c < Length) {
+				while (n < N.Length) {
+					chars[c++] = N[n++].ToUpper();
+				}
+				N = N.Next;
+				n = 0;
+			}
+			return new Rope(chars);
+		}
+
+		/// <inheritdoc/>
+		Rope ICased<Rope>.ToUpper([DisallowNull] Orthography orthography) {
+			Char[] chars = new Char[Length];
+			nint c = 0;
+			Node N = Head;
+			nint n = 0;
+			while (c < Length) {
+				while (n < N.Length) {
+					chars[c++] = N[n++].ToUpper(orthography);
+				}
+				N = N.Next;
+				n = 0;
+			}
+			return new Rope(chars);
 		}
 	}
 }
