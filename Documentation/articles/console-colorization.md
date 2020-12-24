@@ -1,4 +1,4 @@
-﻿# Consolator Colorization
+﻿# Console Colorization
 
 Look, it's not the 1970's anymore. Color terminals have been around for a long time and colorizing your console app should be easy. This is especially critical as console apps have made quite the resurgence in recent years. **Consolator** makes this easy.
 

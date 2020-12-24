@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Console Colorization </title>
+    <title>Console Injection </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Console Colorization ">
+    <meta name="title" content="Console Injection ">
     <meta name="generator" content="docfx 2.56.6.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -67,42 +67,10 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="console-colorization">Console Colorization</h1>
+<h1 id="console-injection">Console Injection</h1>
 
-<p>Look, it's not the 1970's anymore. Color terminals have been around for a long time and colorizing your console app should be easy. This is especially critical as console apps have made quite the resurgence in recent years. <strong>Consolator</strong> makes this easy.</p>
-<div class="tabGroup" id="tabgroup_CeZOj-G++Q">
-<ul role="tablist">
-<li role="presentation">
-<a href="#tabpanel_CeZOj-G++Q_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
-</li>
-<li role="presentation">
-<a href="#tabpanel_CeZOj-G++Q_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q_vb" data-tab="vb" tabindex="-1">VB</a>
-</li>
-<li role="presentation">
-<a href="#tabpanel_CeZOj-G++Q_fs" role="tab" aria-controls="tabpanel_CeZOj-G++Q_fs" data-tab="fs" tabindex="-1">F#</a>
-</li>
-</ul>
-<section id="tabpanel_CeZOj-G++Q_cs" role="tabpanel" data-tab="cs">
-
-<pre><code class="lang-csharp">Console.WriteLine(&quot;Hello from Consolator!&quot;, Color.Blue, Color.RGB(255, 255, 255));
-</code></pre>
-</section>
-<section id="tabpanel_CeZOj-G++Q_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
-
-<pre><code class="lang-vbnet">Console.WriteLine(&quot;Hello from Consolator!&quot;, Color.Blue, Color.RGB(255, 255, 255))
-</code></pre>
-</section>
-<section id="tabpanel_CeZOj-G++Q_fs" role="tabpanel" data-tab="fs" aria-hidden="true" hidden="hidden">
-
-<pre><code class="lang-fsharp">// Not implemented yet
-</code></pre>
-</section>
-</div>
-
-<p>Yup. Seriously, it's that easy.</p>
-<p>You can also apply the color as a state through the <code>Foreground.Color</code> and <code>Background.Color</code> properties. This allows you to omit repeatedly passing the same colors into the functions over and over again. The two systems even work together, where if you set a color as a state, and pass colors to a function, the text written in that function will be colored as stated, and will return back to the state color. Clearing the state is as simple as passing <code>null</code> to the property.</p>
-<h2 id="color">Color</h2>
-<p>So what is supported as far as color goes? Technically the only thing publicly visible is <code>Color</code> but that's an abstract class, so clearly there's some internal details. <code>Color</code> provides everything you need to hide these details. When you used a named color, like <code>Color.Black</code>, you actually get back a <code>SimpleColor</code> which acts as the basic 8-color system all color terminals support. This is the closest analogue to .NET's <code>ConsoleColor</code> enumeration. However, you can also construct colors through various factories like <code>Color.RGB(Byte, Byte, Byte)</code>. When one of these colors is used, it instead passes the 24-bit RGB escape sequence to the terminal, and, if supported, will display 24-bit color. You don't need to do anything different to make all this work.</p>
+<p>There's a few things that always bugged me about console APIs. One of the biggest was the inability to debug. Why? Unlike other streams, a console stream is guaranteed to be entirely within the computer. Everything is <em>right there</em>. <a href="https://en.wikipedia.org/wiki/Dependency_injection">Dependency Injection</a> seemed like the right answer. But how? <a href="https://entomy.github.io/LibLangly/api/Langly.Console.html"><code>Console</code></a> is a static class, not an instance where components could be injected.</p>
+<p>Enter <a href="https://entomy.github.io/LibLangly/api/Langly.Console.Internals.html"><code>Console.Internals</code></a>, a nested static class which contains the components that make the <a href="https://entomy.github.io/LibLangly/api/Langly.Console.html"><code>Console</code></a> work. Under normal operations everything is set up with reasonable defaults and you can completely ignore this. In fact, it shouldn't show up in most cases as <a href="https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.editorbrowsableattribute"><code>EditorBrowsable</code></a> has been applied with <code>Advanced</code>. But it's there, and you can replace components. There's some useful stuff located in <a href="https://entomy.github.io/LibLangly/api/Langly.Internals.html"><code>Langly.Internals</code></a> for this purpose, like a debuggable console component that fully supports unit testing both reads and writes. Yes, you can unit test <em>synthesized human input</em>. The DI interfaces are located here as well, so if you wish to provide new functionality that isn't in this library, such is possible.</p>
 </article>
           </div>
           
@@ -111,7 +79,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/master/Documentation/articles/console-colorization.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Documentation/articles/console-injection.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

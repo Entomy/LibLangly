@@ -1,4 +1,4 @@
-## Streamy.Streams
+# Streams
 
 [.NET Streams](https://docs.microsoft.com/en-us/dotnet/api/system.io.stream) are tragically flawed in some not obvious ways. **Streamy** intends to fix these flaws by introducing a completely new Stream API with its own design. The public API isn't radically different, although there are some modernizations. Most of the redesign has to do with internals, especially striving for a much higher degree of modularity.
 

@@ -101,7 +101,6 @@
     <div><a class="xref" href="Langly.IReplaceable-2.html">IReplaceable</a>&lt;TElement, TElement&gt;</div>
     <div><a class="xref" href="Langly.IShiftable.html">IShiftable</a></div>
     <div><a class="xref" href="Langly.ISliceable-1.html">ISliceable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;TElement&gt;&gt;</div>
-    <div><a class="xref" href="Langly.IReadOnlySliceable-1.html">IReadOnlySliceable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;TElement&gt;&gt;</div>
     <div><a class="xref" href="Langly.ICountable.html">ICountable</a></div>
     <div><a class="xref" href="Langly.IReversibleEnumerable-3.html">IReversibleEnumerable</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.Arrays.Array-2.html">Array</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.Arrays.FixedArray-1.html">FixedArray</a>&lt;TElement&gt;&gt;, <a class="xref" href="Langly.DataStructures.Arrays.Array-2.Enumerator.html">Array.Enumerator</a>&lt;&gt;&gt;</div>
     <div><a class="xref" href="Langly.IEnumerable-2.html">IEnumerable</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.Arrays.Array-2.Enumerator.html">Array.Enumerator</a>&lt;&gt;&gt;</div>
@@ -127,9 +126,6 @@
     </div>
     <div>
       <a class="xref" href="Langly.DataStructures.Arrays.Array-2.html#Langly_DataStructures_Arrays_Array_2_Item_System_Range_">Array&lt;TElement, FixedArray&lt;TElement&gt;&gt;.Item[Range]</a>
-    </div>
-    <div>
-      <a class="xref" href="Langly.DataStructures.Arrays.Array-2.html#Langly_DataStructures_Arrays_Array_2_Langly_IReadOnlySliceable_System_ReadOnlyMemory_TElement___Item_System_Range_">Array&lt;TElement, FixedArray&lt;TElement&gt;&gt;.IReadOnlySliceable&lt;ReadOnlyMemory&lt;TElement&gt;&gt;.Item[Range]</a>
     </div>
     <div>
       <a class="xref" href="Langly.DataStructures.Arrays.Array-2.html#Langly_DataStructures_Arrays_Array_2_Langly_IContainable_TElement__Contains__0_">Array&lt;TElement, FixedArray&lt;TElement&gt;&gt;.IContainable&lt;TElement&gt;.Contains(TElement)</a>
@@ -166,9 +162,6 @@
     </div>
     <div>
       <a class="xref" href="Langly.DataStructures.Arrays.Array-2.html#Langly_DataStructures_Arrays_Array_2_Slice_nint_nint_">Array&lt;TElement, FixedArray&lt;TElement&gt;&gt;.Slice(nint, nint)</a>
-    </div>
-    <div>
-      <a class="xref" href="Langly.DataStructures.Arrays.Array-2.html#Langly_DataStructures_Arrays_Array_2_Langly_IReadOnlySliceable_System_ReadOnlyMemory_TElement___Slice">Array&lt;TElement, FixedArray&lt;TElement&gt;&gt;.IReadOnlySliceable&lt;ReadOnlyMemory&lt;TElement&gt;&gt;.Slice()</a>
     </div>
     <div>
       <a class="xref" href="Langly.DataStructures.Arrays.Array-2.html#Langly_DataStructures_Arrays_Array_2_GetEnumerator">Array&lt;TElement, FixedArray&lt;TElement&gt;&gt;.GetEnumerator()</a>
@@ -236,7 +229,7 @@
   <h5 id="Langly_DataStructures_Arrays_FixedArray_1_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Serializable]
-public sealed class FixedArray&lt;TElement&gt; : Array&lt;TElement, FixedArray&lt;TElement&gt;&gt;, ICloneable&lt;FixedArray&lt;TElement&gt;&gt;, ICloneable, IEquatable&lt;DataStructure&lt;TElement, FixedArray&lt;TElement&gt;, Array&lt;TElement, FixedArray&lt;TElement&gt;&gt;.Enumerator&gt;&gt;, IEquatable&lt;TElement[]&gt;, IEquatable&lt;IEnumerable&lt;TElement&gt;&gt;, IContainable&lt;TElement&gt;, IEquatable&lt;Array&lt;TElement, FixedArray&lt;TElement&gt;&gt;&gt;, IRefIndexable&lt;TElement&gt;, IRefIndexable&lt;nint, TElement&gt;, IReadOnlyRefIndexable&lt;TElement&gt;, IReadOnlyRefIndexable&lt;nint, TElement&gt;, IPeekable&lt;TElement&gt;, IReplaceable&lt;TElement&gt;, IReplaceable&lt;TElement, TElement&gt;, IShiftable, ISliceable&lt;Memory&lt;TElement&gt;&gt;, IReadOnlySliceable&lt;ReadOnlyMemory&lt;TElement&gt;&gt;, ICountable, IReversibleEnumerable&lt;TElement, Array&lt;TElement, FixedArray&lt;TElement&gt;&gt;, Array&lt;TElement, FixedArray&lt;TElement&gt;&gt;.Enumerator&gt;, IEnumerable&lt;TElement, Array&lt;TElement, FixedArray&lt;TElement&gt;&gt;.Enumerator&gt;, IEnumerable&lt;TElement&gt;, IEnumerable</code></pre>
+public sealed class FixedArray&lt;TElement&gt; : Array&lt;TElement, FixedArray&lt;TElement&gt;&gt;, ICloneable&lt;FixedArray&lt;TElement&gt;&gt;, ICloneable, IEquatable&lt;DataStructure&lt;TElement, FixedArray&lt;TElement&gt;, Array&lt;TElement, FixedArray&lt;TElement&gt;&gt;.Enumerator&gt;&gt;, IEquatable&lt;TElement[]&gt;, IEquatable&lt;IEnumerable&lt;TElement&gt;&gt;, IContainable&lt;TElement&gt;, IEquatable&lt;Array&lt;TElement, FixedArray&lt;TElement&gt;&gt;&gt;, IRefIndexable&lt;TElement&gt;, IRefIndexable&lt;nint, TElement&gt;, IReadOnlyRefIndexable&lt;TElement&gt;, IReadOnlyRefIndexable&lt;nint, TElement&gt;, IPeekable&lt;TElement&gt;, IReplaceable&lt;TElement&gt;, IReplaceable&lt;TElement, TElement&gt;, IShiftable, ISliceable&lt;Memory&lt;TElement&gt;&gt;, ICountable, IReversibleEnumerable&lt;TElement, Array&lt;TElement, FixedArray&lt;TElement&gt;&gt;, Array&lt;TElement, FixedArray&lt;TElement&gt;&gt;.Enumerator&gt;, IEnumerable&lt;TElement, Array&lt;TElement, FixedArray&lt;TElement&gt;&gt;.Enumerator&gt;, IEnumerable&lt;TElement&gt;, IEnumerable</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -374,7 +367,8 @@ public sealed class FixedArray&lt;TElement&gt; : Array&lt;TElement, FixedArray&l
   </span>
   <a id="Langly_DataStructures_Arrays_FixedArray_1_Clone_" data-uid="Langly.DataStructures.Arrays.FixedArray`1.Clone*"></a>
   <h4 id="Langly_DataStructures_Arrays_FixedArray_1_Clone" data-uid="Langly.DataStructures.Arrays.FixedArray`1.Clone">Clone()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Creates a new object that is a copy of the current instance.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -397,6 +391,9 @@ public sealed class FixedArray&lt;TElement&gt; : Array&lt;TElement, FixedArray&l
   </table>
   <h5 class="overrides">Overrides</h5>
   <div><span class="xref">Langly.DataStructures.DataStructure&lt;TElement, Langly.DataStructures.Arrays.FixedArray&lt;TElement&gt;, Langly.DataStructures.Arrays.Array&lt;TElement, Langly.DataStructures.Arrays.FixedArray&lt;TElement&gt;&gt;.Enumerator&gt;.Clone()</span></div>
+  <h5 id="Langly_DataStructures_Arrays_FixedArray_1_Clone_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This is the actual implementation of <a class="xref" href="Langly.ICloneable-1.html#Langly_ICloneable_1_Clone">Clone()</a></p>
+</div>
   <h3 id="operators">Operators
   </h3>
   <span class="small pull-right mobile-hide">
@@ -545,9 +542,6 @@ public sealed class FixedArray&lt;TElement&gt; : Array&lt;TElement, FixedArray&l
   </div>
   <div>
       <a class="xref" href="Langly.ISliceable-1.html">ISliceable&lt;TSlice&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="Langly.IReadOnlySliceable-1.html">IReadOnlySliceable&lt;TSlice&gt;</a>
   </div>
   <div>
       <a class="xref" href="Langly.ICountable.html">ICountable</a>
