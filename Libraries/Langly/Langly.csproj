@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-		<Description></Description>
-		<PackageTags></PackageTags>
+		<Description>The entire LibLangly runtime.</Description>
+		<PackageTags>langly</PackageTags>
 		<AssemblyName>Langly</AssemblyName>
   </PropertyGroup>
 
@@ -12,6 +12,7 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\Langly.Core\Langly.Core.csproj" />
+	  <ProjectReference Include="..\Langly.DataStructures\Langly.DataStructures.csproj" />
 	</ItemGroup>
 	
 </Project>

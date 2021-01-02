@@ -14,16 +14,24 @@ namespace Langly {
 		/// <summary>
 		/// Determines if the two object references are the same.
 		/// </summary>
-		/// <param name="left"></param>
-		/// <param name="right"></param>
+		/// <param name="first">The first object.</param>
+		/// <param name="second">The second object.</param>
+		/// <returns><see langword="true"/> if the two object references are the same; otherwise, <see langword="false"/>.</returns>
+		public static Boolean Equals([AllowNull] Object first, [AllowNull] Object second) => ReferenceEquals(first, second);
+
+		/// <summary>
+		/// Determines if the two object references are the same.
+		/// </summary>
+		/// <param name="left">The lefthand object.</param>
+		/// <param name="right">The righthand object.</param>
 		/// <returns><see langword="true"/> if the two object references aren't the same; otherwise, <see langword="false"/>.</returns>
 		public static Boolean operator !=([AllowNull] Object left, [AllowNull] Object right) => !ReferenceEquals(left, right);
 
 		/// <summary>
 		/// Determines if the two object references are the same.
 		/// </summary>
-		/// <param name="left"></param>
-		/// <param name="right"></param>
+		/// <param name="left">The lefthand object.</param>
+		/// <param name="right">The righthand object.</param>
 		/// <returns><see langword="true"/> if the two object references are the same; otherwise, <see langword="false"/>.</returns>
 		public static Boolean operator ==([AllowNull] Object left, [AllowNull] Object right) => ReferenceEquals(left, right);
 
