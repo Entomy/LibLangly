@@ -1,0 +1,884 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Struct Array&lt;TElement, TSelf&gt;.Slice
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Struct Array&lt;TElement, TSelf&gt;.Slice
+   ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Langly.DataStructures.Arrays.Array`2.Slice">
+  
+  
+  <h1 id="Langly_DataStructures_Arrays_Array_2_Slice" data-uid="Langly.DataStructures.Arrays.Array`2.Slice" class="text-break">Struct Array&lt;TElement, TSelf&gt;.Slice
+  </h1>
+  <div class="markdown level0 summary"><p>Provides slices of <a class="xref" href="Langly.DataStructures.Arrays.Array-2.html">Array&lt;TElement, TSelf&gt;</a>.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Langly.IEquals-1.html">IEquals</a>&lt;<a class="xref" href="Langly.DataStructures.Arrays.Array-2.Slice.html">Array.Slice</a>&lt;&gt;&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Langly.DataStructures.Arrays.Array-2.Slice.html">Array.Slice</a>&lt;&gt;&gt;</div>
+    <div><a class="xref" href="Langly.IEquals-1.html">IEquals</a>&lt;TSelf&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;TSelf&gt;</div>
+    <div><a class="xref" href="Langly.DataStructures.IIndexRef-1.html">IIndexRef</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="Langly.DataStructures.IIndexRef-2.html">IIndexRef</a>&lt;<span class="xref">nint</span>, TElement&gt;</div>
+    <div><a class="xref" href="Langly.DataStructures.IIndexRefReadOnly-1.html">IIndexRefReadOnly</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="Langly.DataStructures.IIndexRefReadOnly-2.html">IIndexRefReadOnly</a>&lt;<span class="xref">nint</span>, TElement&gt;</div>
+    <div><a class="xref" href="Langly.DataStructures.ISequenceBidi-2.html">ISequenceBidi</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.Arrays.Array-2.Enumerator.html">Array.Enumerator</a>&lt;&gt;&gt;</div>
+    <div><a class="xref" href="Langly.DataStructures.ISequence-2.html">ISequence</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.Arrays.Array-2.Enumerator.html">Array.Enumerator</a>&lt;&gt;&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
+    <div><a class="xref" href="Langly.DataStructures.ISlice-1.html">ISlice</a>&lt;<a class="xref" href="Langly.DataStructures.Arrays.Array-2.Slice.html">Array.Slice</a>&lt;&gt;&gt;</div>
+    <div><a class="xref" href="Langly.DataStructures.ICount.html">ICount</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetype.tostring#System_ValueType_ToString">ValueType.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_System_Object_">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#System_Object_GetType">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#System_Object_ReferenceEquals_System_Object_System_Object_">Object.ReferenceEquals(Object, Object)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Langly.DataStructures.Arrays.html">Langly.DataStructures.Arrays</a></h6>
+  <h6><strong>Assembly</strong>: Langly.DataStructures.Arrays.dll</h6>
+  <h5 id="Langly_DataStructures_Arrays_Array_2_Slice_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public struct Slice : IEquals&lt;Array&lt;TElement, TSelf&gt;.Slice&gt;, IEquatable&lt;Array&lt;TElement, TSelf&gt;.Slice&gt;, IEquals&lt;TSelf&gt;, IEquatable&lt;TSelf&gt;, IIndexRef&lt;TElement&gt;, IIndexRef&lt;nint, TElement&gt;, IIndexRefReadOnly&lt;TElement&gt;, IIndexRefReadOnly&lt;nint, TElement&gt;, ISequenceBidi&lt;TElement, Array&lt;TElement, TSelf&gt;.Enumerator&gt;, ISequence&lt;TElement, Array&lt;TElement, TSelf&gt;.Enumerator&gt;, IEnumerable&lt;TElement&gt;, IEnumerable, ISlice&lt;Array&lt;TElement, TSelf&gt;.Slice&gt;, ICount</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Arrays_Array_2_Slice_Count.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.Array%602.Slice.Count%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures.Arrays/DataStructures/Arrays/Array`2.Slice.cs/#L34">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Arrays_Array_2_Slice_Count_" data-uid="Langly.DataStructures.Arrays.Array`2.Slice.Count*"></a>
+  <h4 id="Langly_DataStructures_Arrays_Array_2_Slice_Count" data-uid="Langly.DataStructures.Arrays.Array`2.Slice.Count">Count</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public nint Count { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Arrays_Array_2_Slice_Item_nint_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.Array%602.Slice.Item(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures.Arrays/DataStructures/Arrays/Array`2.Slice.cs/#L37">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Arrays_Array_2_Slice_Item_" data-uid="Langly.DataStructures.Arrays.Array`2.Slice.Item*"></a>
+  <h4 id="Langly_DataStructures_Arrays_Array_2_Slice_Item_nint_" data-uid="Langly.DataStructures.Arrays.Array`2.Slice.Item(nint)">Item[nint]</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TElement this[nint index] { get; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">index</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Arrays_Array_2_Slice_Equals__1_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.Array%602.Slice.Equals(%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures.Arrays/DataStructures/Arrays/Array`2.Slice.cs/#L70">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Arrays_Array_2_Slice_Equals_" data-uid="Langly.DataStructures.Arrays.Array`2.Slice.Equals*"></a>
+  <h4 id="Langly_DataStructures_Arrays_Array_2_Slice_Equals__1_" data-uid="Langly.DataStructures.Arrays.Array`2.Slice.Equals(`1)">Equals(TSelf)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(TSelf other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TSelf</span></td>
+        <td><span class="parametername">other</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Arrays_Array_2_Slice_Equals_Langly_DataStructures_Arrays_Array__0__1__Slice_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.Array%602.Slice.Equals(Langly.DataStructures.Arrays.Array%7B%600%2C%601%7D.Slice)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures.Arrays/DataStructures/Arrays/Array`2.Slice.cs/#L67">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Arrays_Array_2_Slice_Equals_" data-uid="Langly.DataStructures.Arrays.Array`2.Slice.Equals*"></a>
+  <h4 id="Langly_DataStructures_Arrays_Array_2_Slice_Equals_Langly_DataStructures_Arrays_Array__0__1__Slice_" data-uid="Langly.DataStructures.Arrays.Array`2.Slice.Equals(Langly.DataStructures.Arrays.Array{`0,`1}.Slice)">Equals(Array&lt;TElement, TSelf&gt;.Slice)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(Array&lt;TElement, TSelf&gt;.Slice other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Arrays.Array-2.Slice.html">Array.Slice</a>&lt;&gt;</td>
+        <td><span class="parametername">other</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Arrays_Array_2_Slice_Equals_System_Object_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.Array%602.Slice.Equals(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures.Arrays/DataStructures/Arrays/Array`2.Slice.cs/#L55">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Arrays_Array_2_Slice_Equals_" data-uid="Langly.DataStructures.Arrays.Array`2.Slice.Equals*"></a>
+  <h4 id="Langly_DataStructures_Arrays_Array_2_Slice_Equals_System_Object_" data-uid="Langly.DataStructures.Arrays.Array`2.Slice.Equals(System.Object)">Equals(Object)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetype.equals#System_ValueType_Equals_System_Object_">ValueType.Equals(Object)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Arrays_Array_2_Slice_GetEnumerator.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.Array%602.Slice.GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures.Arrays/DataStructures/Arrays/Array`2.Slice.cs/#L83">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Arrays_Array_2_Slice_GetEnumerator_" data-uid="Langly.DataStructures.Arrays.Array`2.Slice.GetEnumerator*"></a>
+  <h4 id="Langly_DataStructures_Arrays_Array_2_Slice_GetEnumerator" data-uid="Langly.DataStructures.Arrays.Array`2.Slice.GetEnumerator">GetEnumerator()</h4>
+  <div class="markdown level1 summary"><p>Returns an enumerator that iterates through the sequence.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Array&lt;TElement, TSelf&gt;.Enumerator GetEnumerator()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Arrays.Array-2.Enumerator.html">Array.Enumerator</a>&lt;&gt;</td>
+        <td><p>An enumerator that can be used to iterate through the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Arrays_Array_2_Slice_GetHashCode.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.Array%602.Slice.GetHashCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures.Arrays/DataStructures/Arrays/Array`2.Slice.cs/#L73">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Arrays_Array_2_Slice_GetHashCode_" data-uid="Langly.DataStructures.Arrays.Array`2.Slice.GetHashCode*"></a>
+  <h4 id="Langly_DataStructures_Arrays_Array_2_Slice_GetHashCode" data-uid="Langly.DataStructures.Arrays.Array`2.Slice.GetHashCode">GetHashCode()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetype.gethashcode#System_ValueType_GetHashCode">ValueType.GetHashCode()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Arrays_Array_2_Slice_Reverse.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.Array%602.Slice.Reverse%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures.Arrays/DataStructures/Arrays/Array`2.Slice.cs/#L79">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Arrays_Array_2_Slice_Reverse_" data-uid="Langly.DataStructures.Arrays.Array`2.Slice.Reverse*"></a>
+  <h4 id="Langly_DataStructures_Arrays_Array_2_Slice_Reverse" data-uid="Langly.DataStructures.Arrays.Array`2.Slice.Reverse">Reverse()</h4>
+  <div class="markdown level1 summary"><p>Gets a view of the members of this collection in reverse order.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ReverseView&lt;TElement, ISequenceBidi&lt;TElement, Array&lt;TElement, TSelf&gt;.Enumerator&gt;, Array&lt;TElement, TSelf&gt;.Enumerator&gt; Reverse()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.ReverseView-3.html">ReverseView</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.ISequenceBidi-2.html">ISequenceBidi</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.Arrays.Array-2.Enumerator.html">Array.Enumerator</a>&lt;&gt;&gt;, <a class="xref" href="Langly.DataStructures.Arrays.Array-2.Enumerator.html">Array.Enumerator</a>&lt;&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="operators">Operators
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Arrays_Array_2_Slice_op_Equality__1_Langly_DataStructures_Arrays_Array__0__1__Slice_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.Array%602.Slice.op_Equality(%601%2CLangly.DataStructures.Arrays.Array%7B%600%2C%601%7D.Slice)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures.Arrays/DataStructures/Arrays/Array`2.Slice.cs/#L52">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Arrays_Array_2_Slice_op_Equality_" data-uid="Langly.DataStructures.Arrays.Array`2.Slice.op_Equality*"></a>
+  <h4 id="Langly_DataStructures_Arrays_Array_2_Slice_op_Equality__1_Langly_DataStructures_Arrays_Array__0__1__Slice_" data-uid="Langly.DataStructures.Arrays.Array`2.Slice.op_Equality(`1,Langly.DataStructures.Arrays.Array{`0,`1}.Slice)">Equality(TSelf, Array&lt;TElement, TSelf&gt;.Slice)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator ==(TSelf left, Array&lt;TElement, TSelf&gt;.Slice right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TSelf</span></td>
+        <td><span class="parametername">left</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Arrays.Array-2.Slice.html">Array.Slice</a>&lt;&gt;</td>
+        <td><span class="parametername">right</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Arrays_Array_2_Slice_op_Equality_Langly_DataStructures_Arrays_Array__0__1__Slice__1_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.Array%602.Slice.op_Equality(Langly.DataStructures.Arrays.Array%7B%600%2C%601%7D.Slice%2C%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures.Arrays/DataStructures/Arrays/Array`2.Slice.cs/#L50">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Arrays_Array_2_Slice_op_Equality_" data-uid="Langly.DataStructures.Arrays.Array`2.Slice.op_Equality*"></a>
+  <h4 id="Langly_DataStructures_Arrays_Array_2_Slice_op_Equality_Langly_DataStructures_Arrays_Array__0__1__Slice__1_" data-uid="Langly.DataStructures.Arrays.Array`2.Slice.op_Equality(Langly.DataStructures.Arrays.Array{`0,`1}.Slice,`1)">Equality(Array&lt;TElement, TSelf&gt;.Slice, TSelf)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator ==(Array&lt;TElement, TSelf&gt;.Slice left, TSelf right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Arrays.Array-2.Slice.html">Array.Slice</a>&lt;&gt;</td>
+        <td><span class="parametername">left</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TSelf</span></td>
+        <td><span class="parametername">right</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Arrays_Array_2_Slice_op_Equality_Langly_DataStructures_Arrays_Array__0__1__Slice_Langly_DataStructures_Arrays_Array__0__1__Slice_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.Array%602.Slice.op_Equality(Langly.DataStructures.Arrays.Array%7B%600%2C%601%7D.Slice%2CLangly.DataStructures.Arrays.Array%7B%600%2C%601%7D.Slice)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures.Arrays/DataStructures/Arrays/Array`2.Slice.cs/#L48">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Arrays_Array_2_Slice_op_Equality_" data-uid="Langly.DataStructures.Arrays.Array`2.Slice.op_Equality*"></a>
+  <h4 id="Langly_DataStructures_Arrays_Array_2_Slice_op_Equality_Langly_DataStructures_Arrays_Array__0__1__Slice_Langly_DataStructures_Arrays_Array__0__1__Slice_" data-uid="Langly.DataStructures.Arrays.Array`2.Slice.op_Equality(Langly.DataStructures.Arrays.Array{`0,`1}.Slice,Langly.DataStructures.Arrays.Array{`0,`1}.Slice)">Equality(Array&lt;TElement, TSelf&gt;.Slice, Array&lt;TElement, TSelf&gt;.Slice)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator ==(Array&lt;TElement, TSelf&gt;.Slice left, Array&lt;TElement, TSelf&gt;.Slice right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Arrays.Array-2.Slice.html">Array.Slice</a>&lt;&gt;</td>
+        <td><span class="parametername">left</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Arrays.Array-2.Slice.html">Array.Slice</a>&lt;&gt;</td>
+        <td><span class="parametername">right</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Arrays_Array_2_Slice_op_Inequality__1_Langly_DataStructures_Arrays_Array__0__1__Slice_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.Array%602.Slice.op_Inequality(%601%2CLangly.DataStructures.Arrays.Array%7B%600%2C%601%7D.Slice)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures.Arrays/DataStructures/Arrays/Array`2.Slice.cs/#L46">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Arrays_Array_2_Slice_op_Inequality_" data-uid="Langly.DataStructures.Arrays.Array`2.Slice.op_Inequality*"></a>
+  <h4 id="Langly_DataStructures_Arrays_Array_2_Slice_op_Inequality__1_Langly_DataStructures_Arrays_Array__0__1__Slice_" data-uid="Langly.DataStructures.Arrays.Array`2.Slice.op_Inequality(`1,Langly.DataStructures.Arrays.Array{`0,`1}.Slice)">Inequality(TSelf, Array&lt;TElement, TSelf&gt;.Slice)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator !=(TSelf left, Array&lt;TElement, TSelf&gt;.Slice right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TSelf</span></td>
+        <td><span class="parametername">left</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Arrays.Array-2.Slice.html">Array.Slice</a>&lt;&gt;</td>
+        <td><span class="parametername">right</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Arrays_Array_2_Slice_op_Inequality_Langly_DataStructures_Arrays_Array__0__1__Slice__1_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.Array%602.Slice.op_Inequality(Langly.DataStructures.Arrays.Array%7B%600%2C%601%7D.Slice%2C%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures.Arrays/DataStructures/Arrays/Array`2.Slice.cs/#L44">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Arrays_Array_2_Slice_op_Inequality_" data-uid="Langly.DataStructures.Arrays.Array`2.Slice.op_Inequality*"></a>
+  <h4 id="Langly_DataStructures_Arrays_Array_2_Slice_op_Inequality_Langly_DataStructures_Arrays_Array__0__1__Slice__1_" data-uid="Langly.DataStructures.Arrays.Array`2.Slice.op_Inequality(Langly.DataStructures.Arrays.Array{`0,`1}.Slice,`1)">Inequality(Array&lt;TElement, TSelf&gt;.Slice, TSelf)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator !=(Array&lt;TElement, TSelf&gt;.Slice left, TSelf right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Arrays.Array-2.Slice.html">Array.Slice</a>&lt;&gt;</td>
+        <td><span class="parametername">left</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TSelf</span></td>
+        <td><span class="parametername">right</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Arrays_Array_2_Slice_op_Inequality_Langly_DataStructures_Arrays_Array__0__1__Slice_Langly_DataStructures_Arrays_Array__0__1__Slice_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.Array%602.Slice.op_Inequality(Langly.DataStructures.Arrays.Array%7B%600%2C%601%7D.Slice%2CLangly.DataStructures.Arrays.Array%7B%600%2C%601%7D.Slice)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures.Arrays/DataStructures/Arrays/Array`2.Slice.cs/#L42">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Arrays_Array_2_Slice_op_Inequality_" data-uid="Langly.DataStructures.Arrays.Array`2.Slice.op_Inequality*"></a>
+  <h4 id="Langly_DataStructures_Arrays_Array_2_Slice_op_Inequality_Langly_DataStructures_Arrays_Array__0__1__Slice_Langly_DataStructures_Arrays_Array__0__1__Slice_" data-uid="Langly.DataStructures.Arrays.Array`2.Slice.op_Inequality(Langly.DataStructures.Arrays.Array{`0,`1}.Slice,Langly.DataStructures.Arrays.Array{`0,`1}.Slice)">Inequality(Array&lt;TElement, TSelf&gt;.Slice, Array&lt;TElement, TSelf&gt;.Slice)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator !=(Array&lt;TElement, TSelf&gt;.Slice left, Array&lt;TElement, TSelf&gt;.Slice right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Arrays.Array-2.Slice.html">Array.Slice</a>&lt;&gt;</td>
+        <td><span class="parametername">left</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Arrays.Array-2.Slice.html">Array.Slice</a>&lt;&gt;</td>
+        <td><span class="parametername">right</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Arrays_Array_2_Slice_Langly_DataStructures_IIndexRefReadOnly_nint_TElement__Item_nint_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.Array%602.Slice.Langly%23DataStructures%23IIndexRefReadOnly%7Bnint%2CTElement%7D%23Item(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures.Arrays/DataStructures/Arrays/Array`2.Slice.cs/#L40">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Arrays_Array_2_Slice_Langly_DataStructures_IIndexRefReadOnly_nint_TElement__Item_" data-uid="Langly.DataStructures.Arrays.Array`2.Slice.Langly#DataStructures#IIndexRefReadOnly{nint,TElement}#Item*"></a>
+  <h4 id="Langly_DataStructures_Arrays_Array_2_Slice_Langly_DataStructures_IIndexRefReadOnly_nint_TElement__Item_nint_" data-uid="Langly.DataStructures.Arrays.Array`2.Slice.Langly#DataStructures#IIndexRefReadOnly{nint,TElement}#Item(nint)">IIndexRefReadOnly&lt;nint, TElement&gt;.Item[nint]</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TElement IIndexRefReadOnly&lt;nint, TElement&gt;.this[nint index] { get; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">index</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Langly.IEquals-1.html">IEquals&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">System.IEquatable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IEquals-1.html">IEquals&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">System.IEquatable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.DataStructures.IIndexRef-1.html">IIndexRef&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.DataStructures.IIndexRef-2.html">IIndexRef&lt;TIndex, TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.DataStructures.IIndexRefReadOnly-1.html">IIndexRefReadOnly&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.DataStructures.IIndexRefReadOnly-2.html">IIndexRefReadOnly&lt;TIndex, TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.DataStructures.ISequenceBidi-2.html">ISequenceBidi&lt;TMember, TEnumerator&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.DataStructures.ISequence-2.html">ISequence&lt;TMember, TEnumerator&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">System.Collections.Generic.IEnumerable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">System.Collections.IEnumerable</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.DataStructures.ISlice-1.html">ISlice&lt;TSlice&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.DataStructures.ICount.html">ICount</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Arrays_Array_2_Slice.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.Array%602.Slice%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures.Arrays/DataStructures/Arrays/Array`2.Slice.cs/#L15" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

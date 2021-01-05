@@ -8,7 +8,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 		.gitignore = .gitignore
 		.kodiak.toml = .kodiak.toml
-		Architecture.dgml = Architecture.dgml
 		CODE_OF_CONDUCT.md = CODE_OF_CONDUCT.md
 		CONTRIBUTING.md = CONTRIBUTING.md
 		.github\dependabot.yaml = .github\dependabot.yaml
@@ -26,6 +25,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{3A1CF434-009B-414F-9F21-3F7FDEAA5B6B}"
 	ProjectSection(SolutionItems) = preProject
+		Libraries\Architecture.dgml = Libraries\Architecture.dgml
 		Libraries\Directory.Build.props = Libraries\Directory.Build.props
 		Libraries\GlobalSuppressions.cs = Libraries\GlobalSuppressions.cs
 	EndProjectSection
@@ -35,6 +35,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Langly.Core", "Libraries\Langly.Core\Langly.Core.csproj", "{6EB88C23-2C39-4FEF-8898-A52E73A94297}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Langly.DataStructures", "Libraries\Langly.DataStructures\Langly.DataStructures.csproj", "{41641C34-B7EE-4A5C-B790-68D4E69B21AF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Langly.DataStructures.Arrays", "Libraries\Langly.DataStructures.Arrays\Langly.DataStructures.Arrays.csproj", "{2BB48EA6-9F8C-4594-9112-BEEE8F9FFCD9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -196,6 +198,30 @@ Global
 		{41641C34-B7EE-4A5C-B790-68D4E69B21AF}.Release-Windows|x64.Build.0 = Release|Any CPU
 		{41641C34-B7EE-4A5C-B790-68D4E69B21AF}.Release-Windows|x86.ActiveCfg = Release|Any CPU
 		{41641C34-B7EE-4A5C-B790-68D4E69B21AF}.Release-Windows|x86.Build.0 = Release|Any CPU
+		{2BB48EA6-9F8C-4594-9112-BEEE8F9FFCD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BB48EA6-9F8C-4594-9112-BEEE8F9FFCD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BB48EA6-9F8C-4594-9112-BEEE8F9FFCD9}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{2BB48EA6-9F8C-4594-9112-BEEE8F9FFCD9}.Debug|x64.Build.0 = Debug|Any CPU
+		{2BB48EA6-9F8C-4594-9112-BEEE8F9FFCD9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2BB48EA6-9F8C-4594-9112-BEEE8F9FFCD9}.Debug|x86.Build.0 = Debug|Any CPU
+		{2BB48EA6-9F8C-4594-9112-BEEE8F9FFCD9}.Debug-Windows|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BB48EA6-9F8C-4594-9112-BEEE8F9FFCD9}.Debug-Windows|Any CPU.Build.0 = Debug|Any CPU
+		{2BB48EA6-9F8C-4594-9112-BEEE8F9FFCD9}.Debug-Windows|x64.ActiveCfg = Debug|Any CPU
+		{2BB48EA6-9F8C-4594-9112-BEEE8F9FFCD9}.Debug-Windows|x64.Build.0 = Debug|Any CPU
+		{2BB48EA6-9F8C-4594-9112-BEEE8F9FFCD9}.Debug-Windows|x86.ActiveCfg = Debug|Any CPU
+		{2BB48EA6-9F8C-4594-9112-BEEE8F9FFCD9}.Debug-Windows|x86.Build.0 = Debug|Any CPU
+		{2BB48EA6-9F8C-4594-9112-BEEE8F9FFCD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BB48EA6-9F8C-4594-9112-BEEE8F9FFCD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BB48EA6-9F8C-4594-9112-BEEE8F9FFCD9}.Release|x64.ActiveCfg = Release|Any CPU
+		{2BB48EA6-9F8C-4594-9112-BEEE8F9FFCD9}.Release|x64.Build.0 = Release|Any CPU
+		{2BB48EA6-9F8C-4594-9112-BEEE8F9FFCD9}.Release|x86.ActiveCfg = Release|Any CPU
+		{2BB48EA6-9F8C-4594-9112-BEEE8F9FFCD9}.Release|x86.Build.0 = Release|Any CPU
+		{2BB48EA6-9F8C-4594-9112-BEEE8F9FFCD9}.Release-Windows|Any CPU.ActiveCfg = Release|Any CPU
+		{2BB48EA6-9F8C-4594-9112-BEEE8F9FFCD9}.Release-Windows|Any CPU.Build.0 = Release|Any CPU
+		{2BB48EA6-9F8C-4594-9112-BEEE8F9FFCD9}.Release-Windows|x64.ActiveCfg = Release|Any CPU
+		{2BB48EA6-9F8C-4594-9112-BEEE8F9FFCD9}.Release-Windows|x64.Build.0 = Release|Any CPU
+		{2BB48EA6-9F8C-4594-9112-BEEE8F9FFCD9}.Release-Windows|x86.ActiveCfg = Release|Any CPU
+		{2BB48EA6-9F8C-4594-9112-BEEE8F9FFCD9}.Release-Windows|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -204,6 +230,7 @@ Global
 		{43682665-04A1-4BBC-A46E-575E142756F8} = {3A1CF434-009B-414F-9F21-3F7FDEAA5B6B}
 		{6EB88C23-2C39-4FEF-8898-A52E73A94297} = {3A1CF434-009B-414F-9F21-3F7FDEAA5B6B}
 		{41641C34-B7EE-4A5C-B790-68D4E69B21AF} = {3A1CF434-009B-414F-9F21-3F7FDEAA5B6B}
+		{2BB48EA6-9F8C-4594-9112-BEEE8F9FFCD9} = {3A1CF434-009B-414F-9F21-3F7FDEAA5B6B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BD2AFA89-4002-44D6-99E4-48E735D26B8C}

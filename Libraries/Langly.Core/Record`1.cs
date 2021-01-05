@@ -114,7 +114,7 @@ namespace Langly {
 		/// <param name="obj">The other object.</param>
 		/// <returns><see langword="true"/> if the two values are equal; otherwise, <see langword="false"/>.</returns>
 		[EditorBrowsable(EditorBrowsableState.Never)]
-		public override Boolean Equals([AllowNull] System.Object obj) {
+		public sealed override Boolean Equals([AllowNull] System.Object obj) {
 			switch (obj) {
 			case TSelf other:
 				return Equals(other);

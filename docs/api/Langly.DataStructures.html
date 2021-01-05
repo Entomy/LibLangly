@@ -80,13 +80,69 @@
       <h4><a class="xref" href="Langly.DataStructures.DataStructure-3.html">DataStructure&lt;TElement, TSelf, TEnumerator&gt;</a></h4>
       <section><p>Represents any possible data structure.</p>
 </section>
-      <h4><a class="xref" href="Langly.DataStructures.DataStructure-4.html">DataStructure&lt;TIndex, TElement, TSelf, TEnumerator&gt;</a></h4>
+      <h4><a class="xref" href="Langly.DataStructures.DataStructure-6.html">DataStructure&lt;TIndex, TElement, TSelf, TEnumerator, TIndexView, TElementView&gt;</a></h4>
       <section><p>Represents any possible associative data structure.</p>
+</section>
+      <h4><a class="xref" href="Langly.DataStructures.DataStructureExtensions.html">DataStructureExtensions</a></h4>
+      <section><p>Provides extensions for data structure traits.</p>
 </section>
     <h3 id="structs">Structs
   </h3>
       <h4><a class="xref" href="Langly.DataStructures.Association-2.html">Association&lt;TIndex, TElement&gt;</a></h4>
       <section><p>Associates the <code data-dev-comment-type="typeparamref" class="typeparamref">TIndex</code> and <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> objects.</p>
+</section>
+      <h4><a class="xref" href="Langly.DataStructures.ReverseView-3.html">ReverseView&lt;TElement, TCollection, TEnumerator&gt;</a></h4>
+      <section><p>Provides a view of the collection in reverse order.</p>
+</section>
+      <h4><a class="xref" href="Langly.DataStructures.ReverseView-3.Enumerator.html">ReverseView&lt;TElement, TCollection, TEnumerator&gt;.Enumerator</a></h4>
+      <section><p>Provides enumeration over <a class="xref" href="Langly.DataStructures.ReverseView-3.html">ReverseView&lt;TElement, TCollection, TEnumerator&gt;</a>.</p>
+</section>
+    <h3 id="interfaces">Interfaces
+  </h3>
+      <h4><a class="xref" href="Langly.DataStructures.IAssociative-2.html">IAssociative&lt;TIndexView, TElementView&gt;</a></h4>
+      <section><p>Indicates the type associates values of two other types.</p>
+</section>
+      <h4><a class="xref" href="Langly.DataStructures.IAssociativeView-2.html">IAssociativeView&lt;TMember, TEnumerator&gt;</a></h4>
+      <section><p>Indicates the type is a view of an associative collection.</p>
+</section>
+      <h4><a class="xref" href="Langly.DataStructures.ICapacity.html">ICapacity</a></h4>
+      <section><p>Indicates the type has a maximum capacity.</p>
+</section>
+      <h4><a class="xref" href="Langly.DataStructures.ICount.html">ICount</a></h4>
+      <section><p>Indicates the type is countable.</p>
+</section>
+      <h4><a class="xref" href="Langly.DataStructures.IEnumerator-1.html">IEnumerator&lt;TElement&gt;</a></h4>
+      <section><p>Indicates the type is an enumerator for sequences of <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code>.</p>
+</section>
+      <h4><a class="xref" href="Langly.DataStructures.IEnumeratorBidi-1.html">IEnumeratorBidi&lt;TElement&gt;</a></h4>
+      <section><p>Indicates the type is a bidirectional enumerator for sequences of <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code>.</p>
+</section>
+      <h4><a class="xref" href="Langly.DataStructures.IIndexRef-1.html">IIndexRef&lt;TElement&gt;</a></h4>
+      <section><p>Indicates the type is indexable by reference, read and write.</p>
+</section>
+      <h4><a class="xref" href="Langly.DataStructures.IIndexRef-2.html">IIndexRef&lt;TIndex, TElement&gt;</a></h4>
+      <section><p>Indicates the type is indexable by reference, read and write.</p>
+</section>
+      <h4><a class="xref" href="Langly.DataStructures.IIndexRefReadOnly-1.html">IIndexRefReadOnly&lt;TElement&gt;</a></h4>
+      <section><p>Indicates the type is indexable by reference, read only.</p>
+</section>
+      <h4><a class="xref" href="Langly.DataStructures.IIndexRefReadOnly-2.html">IIndexRefReadOnly&lt;TIndex, TElement&gt;</a></h4>
+      <section><p>Indicates the type is indexable by reference, read only.</p>
+</section>
+      <h4><a class="xref" href="Langly.DataStructures.IResizable.html">IResizable</a></h4>
+      <section><p>Indicates the type is resizable.</p>
+</section>
+      <h4><a class="xref" href="Langly.DataStructures.ISequence-2.html">ISequence&lt;TMember, TEnumerator&gt;</a></h4>
+      <section><p>Indicates the type is a sequence of <code data-dev-comment-type="typeparamref" class="typeparamref">TMember</code>.</p>
+</section>
+      <h4><a class="xref" href="Langly.DataStructures.ISequenceBidi-2.html">ISequenceBidi&lt;TMember, TEnumerator&gt;</a></h4>
+      <section><p>Indicates the type is a bidirectional sequence of <code data-dev-comment-type="typeparamref" class="typeparamref">TMember</code>.</p>
+</section>
+      <h4><a class="xref" href="Langly.DataStructures.IShift.html">IShift</a></h4>
+      <section><p>Indicates the type can be shifted in position.</p>
+</section>
+      <h4><a class="xref" href="Langly.DataStructures.ISlice-1.html">ISlice&lt;TSlice&gt;</a></h4>
+      <section><p>Indicates the collection is sliceable.</p>
 </section>
 </article>
           </div>

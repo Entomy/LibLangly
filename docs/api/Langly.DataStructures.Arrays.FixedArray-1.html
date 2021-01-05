@@ -1,0 +1,430 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class FixedArray&lt;TElement&gt;
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class FixedArray&lt;TElement&gt;
+   ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Langly.DataStructures.Arrays.FixedArray`1">
+  
+  
+  <h1 id="Langly_DataStructures_Arrays_FixedArray_1" data-uid="Langly.DataStructures.Arrays.FixedArray`1" class="text-break">Class FixedArray&lt;TElement&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>Represents a fixed array, a type of array whos size is always its initial capacity.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><a class="xref" href="Langly.Record-1.html">Record</a>&lt;<a class="xref" href="Langly.DataStructures.Arrays.FixedArray-1.html">FixedArray</a>&lt;TElement&gt;&gt;</div>
+    <div class="level2"><a class="xref" href="Langly.DataStructures.DataStructure-3.html">DataStructure</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.Arrays.FixedArray-1.html">FixedArray</a>&lt;TElement&gt;, <a class="xref" href="Langly.DataStructures.Arrays.Array-2.Enumerator.html">Array.Enumerator</a>&lt;&gt;&gt;</div>
+    <div class="level3"><a class="xref" href="Langly.DataStructures.Arrays.Array-2.html">Array</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.Arrays.FixedArray-1.html">FixedArray</a>&lt;TElement&gt;&gt;</div>
+    <div class="level4"><span class="xref">FixedArray&lt;TElement&gt;</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Langly.IEquals-1.html">IEquals</a>&lt;<a class="xref" href="Langly.DataStructures.Arrays.FixedArray-1.html">FixedArray</a>&lt;TElement&gt;&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Langly.DataStructures.Arrays.FixedArray-1.html">FixedArray</a>&lt;TElement&gt;&gt;</div>
+    <div><a class="xref" href="Langly.IEquals-1.html">IEquals</a>&lt;<a class="xref" href="Langly.IEquals-1.html">IEquals</a>&lt;<a class="xref" href="Langly.DataStructures.Arrays.FixedArray-1.html">FixedArray</a>&lt;TElement&gt;&gt;&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Langly.IEquals-1.html">IEquals</a>&lt;<a class="xref" href="Langly.DataStructures.Arrays.FixedArray-1.html">FixedArray</a>&lt;TElement&gt;&gt;&gt;</div>
+    <div><a class="xref" href="Langly.DataStructures.ICapacity.html">ICapacity</a></div>
+    <div><a class="xref" href="Langly.DataStructures.IIndexRef-1.html">IIndexRef</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="Langly.DataStructures.IIndexRef-2.html">IIndexRef</a>&lt;<span class="xref">nint</span>, TElement&gt;</div>
+    <div><a class="xref" href="Langly.DataStructures.IIndexRefReadOnly-1.html">IIndexRefReadOnly</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="Langly.DataStructures.IIndexRefReadOnly-2.html">IIndexRefReadOnly</a>&lt;<span class="xref">nint</span>, TElement&gt;</div>
+    <div><a class="xref" href="Langly.DataStructures.IShift.html">IShift</a></div>
+    <div><a class="xref" href="Langly.DataStructures.ISequenceBidi-2.html">ISequenceBidi</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.Arrays.Array-2.Enumerator.html">Array.Enumerator</a>&lt;&gt;&gt;</div>
+    <div><a class="xref" href="Langly.DataStructures.ISequence-2.html">ISequence</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.Arrays.Array-2.Enumerator.html">Array.Enumerator</a>&lt;&gt;&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
+    <div><a class="xref" href="Langly.DataStructures.ISlice-1.html">ISlice</a>&lt;<a class="xref" href="Langly.DataStructures.Arrays.Array-2.Slice.html">Array.Slice</a>&lt;&gt;&gt;</div>
+    <div><a class="xref" href="Langly.DataStructures.ICount.html">ICount</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Langly.DataStructures.Arrays.Array-2.html#Langly_DataStructures_Arrays_Array_2_Elements">Array&lt;TElement, FixedArray&lt;TElement&gt;&gt;.Elements</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.DataStructures.Arrays.Array-2.html#Langly_DataStructures_Arrays_Array_2_Capacity">Array&lt;TElement, FixedArray&lt;TElement&gt;&gt;.Capacity</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.DataStructures.Arrays.Array-2.html#Langly_DataStructures_Arrays_Array_2_Count">Array&lt;TElement, FixedArray&lt;TElement&gt;&gt;.Count</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.DataStructures.Arrays.Array-2.html#Langly_DataStructures_Arrays_Array_2_Item_nint_">Array&lt;TElement, FixedArray&lt;TElement&gt;&gt;.Item[nint]</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.DataStructures.Arrays.Array-2.html#Langly_DataStructures_Arrays_Array_2_Langly_DataStructures_IIndexRefReadOnly_nint_TElement__Item_nint_">Array&lt;TElement, FixedArray&lt;TElement&gt;&gt;.IIndexRefReadOnly&lt;nint, TElement&gt;.Item[nint]</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.DataStructures.Arrays.Array-2.html#Langly_DataStructures_Arrays_Array_2_GetEnumerator">Array&lt;TElement, FixedArray&lt;TElement&gt;&gt;.GetEnumerator()</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.DataStructures.Arrays.Array-2.html#Langly_DataStructures_Arrays_Array_2_Reverse">Array&lt;TElement, FixedArray&lt;TElement&gt;&gt;.Reverse()</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.DataStructures.DataStructure-3.html#Langly_DataStructures_DataStructure_3_Count">DataStructure&lt;TElement, FixedArray&lt;TElement&gt;, Array&lt;TElement, FixedArray&lt;TElement&gt;&gt;.Enumerator&gt;.Count</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.DataStructures.DataStructure-3.html#Langly_DataStructures_DataStructure_3_Equals__1_">DataStructure&lt;TElement, FixedArray&lt;TElement&gt;, Array&lt;TElement, FixedArray&lt;TElement&gt;&gt;.Enumerator&gt;.Equals(FixedArray&lt;TElement&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.DataStructures.DataStructure-3.html#Langly_DataStructures_DataStructure_3_Equals__1_Langly_DataStructures_ISequence__0___0__">DataStructure&lt;TElement, FixedArray&lt;TElement&gt;, Array&lt;TElement, FixedArray&lt;TElement&gt;&gt;.Enumerator&gt;.Equals&lt;TOtherEnumerator&gt;(ISequence&lt;TElement, TOtherEnumerator&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.DataStructures.DataStructure-3.html#Langly_DataStructures_DataStructure_3_Equals__1_Langly_DataStructures_ISequence_Langly_IEquals__0____0__">DataStructure&lt;TElement, FixedArray&lt;TElement&gt;, Array&lt;TElement, FixedArray&lt;TElement&gt;&gt;.Enumerator&gt;.Equals&lt;TOtherEnumerator&gt;(ISequence&lt;IEquals&lt;TElement&gt;, TOtherEnumerator&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.DataStructures.DataStructure-3.html#Langly_DataStructures_DataStructure_3_GetEnumerator">DataStructure&lt;TElement, FixedArray&lt;TElement&gt;, Array&lt;TElement, FixedArray&lt;TElement&gt;&gt;.Enumerator&gt;.GetEnumerator()</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.DataStructures.DataStructure-3.html#Langly_DataStructures_DataStructure_3_ToString">DataStructure&lt;TElement, FixedArray&lt;TElement&gt;, Array&lt;TElement, FixedArray&lt;TElement&gt;&gt;.Enumerator&gt;.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.DataStructures.DataStructure-3.html#Langly_DataStructures_DataStructure_3_StructurePrefix">DataStructure&lt;TElement, FixedArray&lt;TElement&gt;, Array&lt;TElement, FixedArray&lt;TElement&gt;&gt;.Enumerator&gt;.StructurePrefix()</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.Record-1.html#Langly_Record_1_Equals__0_">Record&lt;FixedArray&lt;TElement&gt;&gt;.Equals(FixedArray&lt;TElement&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.Record-1.html#Langly_Record_1_Equals_Langly_IEquals__0__">Record&lt;FixedArray&lt;TElement&gt;&gt;.Equals(IEquals&lt;FixedArray&lt;TElement&gt;&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.Record-1.html#Langly_Record_1_ToString">Record&lt;FixedArray&lt;TElement&gt;&gt;.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_">Object.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_System_Object_">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#System_Object_GetHashCode">Object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#System_Object_GetType">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#System_Object_MemberwiseClone">Object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#System_Object_ReferenceEquals_System_Object_System_Object_">Object.ReferenceEquals(Object, Object)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Langly.DataStructures.Arrays.html">Langly.DataStructures.Arrays</a></h6>
+  <h6><strong>Assembly</strong>: Langly.DataStructures.Arrays.dll</h6>
+  <h5 id="Langly_DataStructures_Arrays_FixedArray_1_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class FixedArray&lt;TElement&gt; : Array&lt;TElement, FixedArray&lt;TElement&gt;&gt;, IEquals&lt;FixedArray&lt;TElement&gt;&gt;, IEquatable&lt;FixedArray&lt;TElement&gt;&gt;, IEquals&lt;IEquals&lt;FixedArray&lt;TElement&gt;&gt;&gt;, IEquatable&lt;IEquals&lt;FixedArray&lt;TElement&gt;&gt;&gt;, ICapacity, IIndexRef&lt;TElement&gt;, IIndexRef&lt;nint, TElement&gt;, IIndexRefReadOnly&lt;TElement&gt;, IIndexRefReadOnly&lt;nint, TElement&gt;, IShift, ISequenceBidi&lt;TElement, Array&lt;TElement, FixedArray&lt;TElement&gt;&gt;.Enumerator&gt;, ISequence&lt;TElement, Array&lt;TElement, FixedArray&lt;TElement&gt;&gt;.Enumerator&gt;, IEnumerable&lt;TElement&gt;, IEnumerable, ISlice&lt;Array&lt;TElement, FixedArray&lt;TElement&gt;&gt;.Slice&gt;, ICount</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of the elements in the array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Arrays_FixedArray_1__ctor_nint_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.FixedArray%601.%23ctor(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures.Arrays/DataStructures/Arrays/FixedArray`1.cs/#L14">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Arrays_FixedArray_1__ctor_" data-uid="Langly.DataStructures.Arrays.FixedArray`1.#ctor*"></a>
+  <h4 id="Langly_DataStructures_Arrays_FixedArray_1__ctor_nint_" data-uid="Langly.DataStructures.Arrays.FixedArray`1.#ctor(nint)">FixedArray(nint)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Langly.DataStructures.Arrays.FixedArray-1.html">FixedArray&lt;TElement&gt;</a> with the given <code data-dev-comment-type="paramref" class="paramref">capacity</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FixedArray(nint capacity)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">capacity</span></td>
+        <td><p>The capacity of the array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Arrays_FixedArray_1__ctor_System_Memory__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.FixedArray%601.%23ctor(System.Memory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures.Arrays/DataStructures/Arrays/FixedArray`1.cs/#L20">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Arrays_FixedArray_1__ctor_" data-uid="Langly.DataStructures.Arrays.FixedArray`1.#ctor*"></a>
+  <h4 id="Langly_DataStructures_Arrays_FixedArray_1__ctor_System_Memory__0__" data-uid="Langly.DataStructures.Arrays.FixedArray`1.#ctor(System.Memory{`0})">FixedArray(Memory&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Langly.DataStructures.Arrays.FixedArray-1.html">FixedArray&lt;TElement&gt;</a> with the given <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FixedArray(Memory&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements of the array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Arrays_FixedArray_1_Empty.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.FixedArray%601.Empty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures.Arrays/DataStructures/Arrays/FixedArray`1.cs/#L25">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Arrays_FixedArray_1_Empty_" data-uid="Langly.DataStructures.Arrays.FixedArray`1.Empty*"></a>
+  <h4 id="Langly_DataStructures_Arrays_FixedArray_1_Empty" data-uid="Langly.DataStructures.Arrays.FixedArray`1.Empty">Empty</h4>
+  <div class="markdown level1 summary"><p>An empty <a class="xref" href="Langly.DataStructures.Arrays.FixedArray-1.html">FixedArray&lt;TElement&gt;</a> singleton.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static FixedArray&lt;TElement&gt; Empty { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Arrays.FixedArray-1.html">FixedArray</a>&lt;TElement&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Arrays_FixedArray_1_StructurePrefix.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.FixedArray%601.StructurePrefix%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures.Arrays/DataStructures/Arrays/FixedArray`1.cs/#L28">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Arrays_FixedArray_1_StructurePrefix_" data-uid="Langly.DataStructures.Arrays.FixedArray`1.StructurePrefix*"></a>
+  <h4 id="Langly_DataStructures_Arrays_FixedArray_1_StructurePrefix" data-uid="Langly.DataStructures.Arrays.FixedArray`1.StructurePrefix">StructurePrefix()</h4>
+  <div class="markdown level1 summary"><p>Provides the structure prefix (commonly, it's name) for <a class="xref" href="Langly.DataStructures.DataStructure-3.html#Langly_DataStructures_DataStructure_3_ToString">ToString()</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override string StructurePrefix()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><p>The structure prefix as a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Langly.DataStructures.DataStructure&lt;TElement, Langly.DataStructures.Arrays.FixedArray&lt;TElement&gt;, Langly.DataStructures.Arrays.Array&lt;TElement, Langly.DataStructures.Arrays.FixedArray&lt;TElement&gt;&gt;.Enumerator&gt;.StructurePrefix()</span></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Langly.IEquals-1.html">IEquals&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">System.IEquatable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IEquals-1.html">IEquals&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">System.IEquatable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.DataStructures.ICapacity.html">ICapacity</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.DataStructures.IIndexRef-1.html">IIndexRef&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.DataStructures.IIndexRef-2.html">IIndexRef&lt;TIndex, TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.DataStructures.IIndexRefReadOnly-1.html">IIndexRefReadOnly&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.DataStructures.IIndexRefReadOnly-2.html">IIndexRefReadOnly&lt;TIndex, TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.DataStructures.IShift.html">IShift</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.DataStructures.ISequenceBidi-2.html">ISequenceBidi&lt;TMember, TEnumerator&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.DataStructures.ISequence-2.html">ISequence&lt;TMember, TEnumerator&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">System.Collections.Generic.IEnumerable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">System.Collections.IEnumerable</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.DataStructures.ISlice-1.html">ISlice&lt;TSlice&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.DataStructures.ICount.html">ICount</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Arrays_FixedArray_1.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.FixedArray%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures.Arrays/DataStructures/Arrays/FixedArray`1.cs/#L9" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
