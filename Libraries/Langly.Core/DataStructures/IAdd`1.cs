@@ -27,9 +27,7 @@ namespace Langly.DataStructures {
 			if (elements is null) {
 				return;
 			}
-			foreach (TElement element in elements) {
-				Add(element);
-			}
+			Add(elements.AsMemory());
 		}
 
 		/// <summary>
@@ -39,7 +37,7 @@ namespace Langly.DataStructures {
 		/// <remarks>
 		/// The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.
 		/// </remarks>
-		void Add(Memory<TElement> elements) => Add(elements.Span);
+		void Add(Memory<TElement> elements) => Add((ReadOnlyMemory<TElement>)elements);
 
 		/// <summary>
 		/// Adds the elements to this object.

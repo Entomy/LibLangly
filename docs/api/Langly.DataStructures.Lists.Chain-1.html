@@ -73,7 +73,8 @@
   
   <h1 id="Langly_DataStructures_Lists_Chain_1" data-uid="Langly.DataStructures.Lists.Chain`1" class="text-break">Class Chain&lt;TElement&gt;
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Represents a Chain, a type of highly sophisticated List.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -89,6 +90,7 @@
     <div><a class="xref" href="Langly.IEquals-1.html">IEquals</a>&lt;<a class="xref" href="Langly.IEquals-1.html">IEquals</a>&lt;<a class="xref" href="Langly.DataStructures.Lists.Chain-1.html">Chain</a>&lt;TElement&gt;&gt;&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Langly.IEquals-1.html">IEquals</a>&lt;<a class="xref" href="Langly.DataStructures.Lists.Chain-1.html">Chain</a>&lt;TElement&gt;&gt;&gt;</div>
     <div><a class="xref" href="Langly.DataStructures.ICount.html">ICount</a></div>
+    <div><a class="xref" href="Langly.DataStructures.IAdd-1.html">IAdd</a>&lt;TElement&gt;</div>
     <div><a class="xref" href="Langly.DataStructures.ISequenceBidi-2.html">ISequenceBidi</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.Lists.Chain-1.Enumerator.html">Chain.Enumerator</a>&lt;&gt;&gt;</div>
     <div><a class="xref" href="Langly.DataStructures.ISequence-2.html">ISequence</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.Lists.Chain-1.Enumerator.html">Chain.Enumerator</a>&lt;&gt;&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TElement&gt;</div>
@@ -113,9 +115,6 @@
     </div>
     <div>
       <a class="xref" href="Langly.DataStructures.DataStructure-3.html#Langly_DataStructures_DataStructure_3_ToString">DataStructure&lt;TElement, Chain&lt;TElement&gt;, Chain&lt;TElement&gt;.Enumerator&gt;.ToString()</a>
-    </div>
-    <div>
-      <a class="xref" href="Langly.DataStructures.DataStructure-3.html#Langly_DataStructures_DataStructure_3_StructurePrefix">DataStructure&lt;TElement, Chain&lt;TElement&gt;, Chain&lt;TElement&gt;.Enumerator&gt;.StructurePrefix()</a>
     </div>
     <div>
       <a class="xref" href="Langly.Record-1.html#Langly_Record_1_Equals__0_">Record&lt;Chain&lt;TElement&gt;&gt;.Equals(Chain&lt;TElement&gt;)</a>
@@ -149,7 +148,7 @@
   <h6><strong>Assembly</strong>: Langly.Core.dll</h6>
   <h5 id="Langly_DataStructures_Lists_Chain_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class Chain&lt;TElement&gt; : DataStructure&lt;TElement, Chain&lt;TElement&gt;, Chain&lt;TElement&gt;.Enumerator&gt;, IEquals&lt;Chain&lt;TElement&gt;&gt;, IEquatable&lt;Chain&lt;TElement&gt;&gt;, IEquals&lt;IEquals&lt;Chain&lt;TElement&gt;&gt;&gt;, IEquatable&lt;IEquals&lt;Chain&lt;TElement&gt;&gt;&gt;, ICount, ISequenceBidi&lt;TElement, Chain&lt;TElement&gt;.Enumerator&gt;, ISequence&lt;TElement, Chain&lt;TElement&gt;.Enumerator&gt;, IEnumerable&lt;TElement&gt;, IEnumerable</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class Chain&lt;TElement&gt; : DataStructure&lt;TElement, Chain&lt;TElement&gt;, Chain&lt;TElement&gt;.Enumerator&gt;, IEquals&lt;Chain&lt;TElement&gt;&gt;, IEquatable&lt;Chain&lt;TElement&gt;&gt;, IEquals&lt;IEquals&lt;Chain&lt;TElement&gt;&gt;&gt;, IEquatable&lt;IEquals&lt;Chain&lt;TElement&gt;&gt;&gt;, ICount, IAdd&lt;TElement&gt;, ISequenceBidi&lt;TElement, Chain&lt;TElement&gt;.Enumerator&gt;, ISequence&lt;TElement, Chain&lt;TElement&gt;.Enumerator&gt;, IEnumerable&lt;TElement&gt;, IEnumerable</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -162,10 +161,32 @@
     <tbody>
       <tr>
         <td><span class="parametername">TElement</span></td>
-        <td></td>
+        <td><p>The type of the elements in the chain.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Langly_DataStructures_Lists_Chain_1_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>A chain is a hybrid list, employing various optimizations from partial-unrolling to skip-linkage, to reference slicing.</p>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Lists_Chain_1__ctor.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Lists.Chain%601.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Core/DataStructures/Lists/Chain`1.cs/#L29">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Lists_Chain_1__ctor_" data-uid="Langly.DataStructures.Lists.Chain`1.#ctor*"></a>
+  <h4 id="Langly_DataStructures_Lists_Chain_1__ctor" data-uid="Langly.DataStructures.Lists.Chain`1.#ctor">Chain()</h4>
+  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Langly.DataStructures.Lists.Chain-1.html">Chain&lt;TElement&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Chain()</code></pre>
+  </div>
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
@@ -238,16 +259,15 @@
     <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Lists_Chain_1_StructurePrefix.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Lists.Chain%601.StructurePrefix%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Core/DataStructures/Lists/Chain`1.cs/#L7">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Core/DataStructures/Lists/Chain`1.cs/#L70">View Source</a>
   </span>
   <a id="Langly_DataStructures_Lists_Chain_1_StructurePrefix_" data-uid="Langly.DataStructures.Lists.Chain`1.StructurePrefix*"></a>
   <h4 id="Langly_DataStructures_Lists_Chain_1_StructurePrefix" data-uid="Langly.DataStructures.Lists.Chain`1.StructurePrefix">StructurePrefix()</h4>
-  <div class="markdown level1 summary"><p>Provides the structure prefix (commonly, its name) for <a class="xref" href="Langly.DataStructures.DataStructure-3.html#Langly_DataStructures_DataStructure_3_ToString">ToString()</a>.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override String StructurePrefix()</code></pre>
+    <pre><code class="lang-csharp hljs">protected override string StructurePrefix()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -259,14 +279,87 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Langly.String.html">String</a></td>
-        <td><p>The structure prefix as a <a class="xref" href="Langly.String.html">String</a>.</p>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Lists_Chain_1_Langly_DataStructures_IAdd_TElement__Add__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Lists.Chain%601.Langly%23DataStructures%23IAdd%7BTElement%7D%23Add(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Core/DataStructures/Lists/Chain`1.cs/#L45">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Lists_Chain_1_Langly_DataStructures_IAdd_TElement__Add_" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#DataStructures#IAdd{TElement}#Add*"></a>
+  <h4 id="Langly_DataStructures_Lists_Chain_1_Langly_DataStructures_IAdd_TElement__Add__0_" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#DataStructures#IAdd{TElement}#Add(`0)">IAdd&lt;TElement&gt;.Add(TElement)</h4>
+  <div class="markdown level1 summary"><p>Adds an element to this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IAdd&lt;TElement&gt;.Add(TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element to add.</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">Langly.DataStructures.DataStructure&lt;TElement, Langly.DataStructures.Lists.Chain&lt;TElement&gt;, Langly.DataStructures.Lists.Chain&lt;TElement&gt;.Enumerator&gt;.StructurePrefix()</span></div>
+  <h5 id="Langly_DataStructures_Lists_Chain_1_Langly_DataStructures_IAdd_TElement__Add__0__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Lists_Chain_1_Langly_DataStructures_IAdd_TElement__Add_System_ReadOnlyMemory__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Lists.Chain%601.Langly%23DataStructures%23IAdd%7BTElement%7D%23Add(System.ReadOnlyMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Core/DataStructures/Lists/Chain`1.cs/#L59">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Lists_Chain_1_Langly_DataStructures_IAdd_TElement__Add_" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#DataStructures#IAdd{TElement}#Add*"></a>
+  <h4 id="Langly_DataStructures_Lists_Chain_1_Langly_DataStructures_IAdd_TElement__Add_System_ReadOnlyMemory__0__" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#DataStructures#IAdd{TElement}#Add(System.ReadOnlyMemory{`0})">IAdd&lt;TElement&gt;.Add(ReadOnlyMemory&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Adds the elements to this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IAdd&lt;TElement&gt;.Add(ReadOnlyMemory&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to add.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_DataStructures_Lists_Chain_1_Langly_DataStructures_IAdd_TElement__Add_System_ReadOnlyMemory__0___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.</p>
+</div>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="Langly.IEquals-1.html">IEquals&lt;TElement&gt;</a>
@@ -284,6 +377,9 @@
       <a class="xref" href="Langly.DataStructures.ICount.html">ICount</a>
   </div>
   <div>
+      <a class="xref" href="Langly.DataStructures.IAdd-1.html">IAdd&lt;TElement&gt;</a>
+  </div>
+  <div>
       <a class="xref" href="Langly.DataStructures.ISequenceBidi-2.html">ISequenceBidi&lt;TMember, TEnumerator&gt;</a>
   </div>
   <div>
@@ -296,6 +392,27 @@
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">System.Collections.IEnumerable</a>
   </div>
   <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Langly.DataStructures.DataStructureExtensions.html#Langly_DataStructures_DataStructureExtensions_Add__1_Langly_DataStructures_IAdd___0____0_">DataStructureExtensions.Add&lt;TElement&gt;(IAdd&lt;TElement&gt;, TElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.DataStructures.DataStructureExtensions.html#Langly_DataStructures_DataStructureExtensions_Add__1_Langly_DataStructures_IAdd___0____0___">DataStructureExtensions.Add&lt;TElement&gt;(IAdd&lt;TElement&gt;, TElement[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.DataStructures.DataStructureExtensions.html#Langly_DataStructures_DataStructureExtensions_Add__1_Langly_DataStructures_IAdd___0__System_Memory___0__">DataStructureExtensions.Add&lt;TElement&gt;(IAdd&lt;TElement&gt;, Memory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.DataStructures.DataStructureExtensions.html#Langly_DataStructures_DataStructureExtensions_Add__1_Langly_DataStructures_IAdd___0__System_ReadOnlyMemory___0__">DataStructureExtensions.Add&lt;TElement&gt;(IAdd&lt;TElement&gt;, ReadOnlyMemory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.DataStructures.DataStructureExtensions.html#Langly_DataStructures_DataStructureExtensions_Add__1_Langly_DataStructures_IAdd___0__System_Span___0__">DataStructureExtensions.Add&lt;TElement&gt;(IAdd&lt;TElement&gt;, Span&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.DataStructures.DataStructureExtensions.html#Langly_DataStructures_DataStructureExtensions_Add__1_Langly_DataStructures_IAdd___0__System_ReadOnlySpan___0__">DataStructureExtensions.Add&lt;TElement&gt;(IAdd&lt;TElement&gt;, ReadOnlySpan&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.DataStructures.DataStructureExtensions.html#Langly_DataStructures_DataStructureExtensions_Add__2_Langly_DataStructures_IAdd___0__Langly_DataStructures_ISequence___0___1__">DataStructureExtensions.Add&lt;TElement, TEnumerator&gt;(IAdd&lt;TElement&gt;, ISequence&lt;TElement, TEnumerator&gt;)</a>
+  </div>
   <div>
       <a class="xref" href="Langly.DataStructures.DataStructureExtensions.html#Langly_DataStructures_DataStructureExtensions_Fold__2_Langly_DataStructures_ISequence___0___1__System_Func___0___0___0____0_">DataStructureExtensions.Fold&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Func&lt;TElement, TElement, TElement&gt;, TElement)</a>
   </div>
@@ -319,7 +436,7 @@
                     <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Lists_Chain_1.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Lists.Chain%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Core/DataStructures/Lists/Chain`1.Enumerator.cs/#L7" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Core/DataStructures/Lists/Chain`1.Node.cs/#L5" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

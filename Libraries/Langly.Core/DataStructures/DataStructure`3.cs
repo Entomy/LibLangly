@@ -20,7 +20,7 @@ namespace Langly.DataStructures {
 		where TSelf : DataStructure<TElement, TSelf, TEnumerator>
 		where TEnumerator : IEnumerator<TElement> {
 		/// <inheritdoc/>
-		public nint Count { get; protected set; }
+		public virtual nint Count { get; protected set; }
 
 		/// <summary>
 		/// Determines if the two sequences aren't equal.
@@ -136,15 +136,8 @@ namespace Langly.DataStructures {
 					builder.Append(element).Append(',').Append(' ');
 				}
 			}
-			return $"{StructurePrefix()}[{builder}]";
+			return $"[{builder}]";
 		}
-
-		/// <summary>
-		/// Provides the structure prefix (commonly, its name) for <see cref="ToString()"/>.
-		/// </summary>
-		/// <returns>The structure prefix as a <see cref="String"/>.</returns>
-		[return: NotNull]
-		protected abstract String StructurePrefix();
 
 		/// <summary>
 		/// Returns a string that represents the current object, suitable for display in the debugger.
@@ -155,7 +148,7 @@ namespace Langly.DataStructures {
 			foreach (TElement element in this) {
 				_ = i < 5 && i++ < Count ? builder.Append(element).Append(',').Append(' ') : builder.Append(element);
 			}
-			return $"{StructurePrefix()}[{builder}]";
+			return $"[{builder}]";
 		}
 	}
 }
