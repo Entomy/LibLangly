@@ -11,13 +11,13 @@ namespace Langly.DataStructures.Arrays {
 		/// Initializes a new <see cref="FixedArray{TElement}"/> with the given <paramref name="capacity"/>.
 		/// </summary>
 		/// <param name="capacity">The capacity of the array.</param>
-		public FixedArray(nint capacity) : base(capacity) { }
+		public FixedArray(nint capacity) : base(capacity) => Count = capacity;
 
 		/// <summary>
 		/// Initializes a new <see cref="FixedArray{TElement}"/> with the given <paramref name="elements"/>.
 		/// </summary>
 		/// <param name="elements">The elements of the array.</param>
-		public FixedArray(Memory<TElement> elements) : base(elements) { }
+		public FixedArray(Memory<TElement> elements) : base(elements) => Count = elements.Length;
 
 		/// <summary>
 		/// An empty <see cref="FixedArray{TElement}"/> singleton.

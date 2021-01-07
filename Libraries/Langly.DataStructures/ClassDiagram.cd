@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Langly.DataStructures.DataStructure&lt;TElement, TSelf, TEnumerator&gt;" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="7.75" Y="0.5" Width="1.5" />
+    <Position X="12.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAgAAgAAAABAEgAAAAAQAAAAAAAAAAAAAAAAAAiA=</HashCode>
       <FileName>DataStructures\DataStructure`3.cs</FileName>
@@ -9,115 +9,93 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="Langly.DataStructures.DataStructureExtensions" Collapsed="true">
-    <Position X="7.75" Y="1.5" Width="1.5" />
+    <Position X="14" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAARADAAAAAAAAAAAAAAAAIAAAAAAAABAiGABAI=</HashCode>
+      <HashCode>AAIAAEAxADAAAAAAAAAAAAAAAAIAAAAAAAABAiHABAY=</HashCode>
       <FileName>DataStructures\DataStructureExtensions.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Langly.DataStructures.DataStructure&lt;TIndex, TElement, TSelf, TEnumerator, TIndexView, TElementView&gt;" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="9.5" Y="0.5" Width="1.5" />
+  <Struct Name="Langly.DataStructures.Views.ReverseView&lt;TElement, TCollection, TEnumerator&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
-      <FileName>DataStructures\DataStructure`6.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
-  </Class>
-  <Struct Name="Langly.DataStructures.Association&lt;TIndex, TElement&gt;" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="7.75" Y="2.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAEgAgAAAAAAAAAAIAAAAEAAAAAAAA=</HashCode>
-      <FileName>DataStructures\Association`2.cs</FileName>
+      <HashCode>AAAAAAAAAAAAQBAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataStructures\Views\ReverseView`3.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Struct>
-  <Struct Name="Langly.DataStructures.ReverseView&lt;TElement, TCollection, TEnumerator&gt;" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="9.5" Y="2.75" Width="1.5" />
+  <Struct Name="Langly.DataStructures.Views.SequenceView&lt;TElement, TCollection, TEnumerator&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAQBAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>DataStructures\ReverseView`3.cs</FileName>
+      <FileName>DataStructures\Views\SequenceView`3.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Struct>
   <Interface Name="Langly.DataStructures.IEnumeratorBidi&lt;TElement&gt;" Collapsed="true">
-    <Position X="0.75" Y="9.5" Width="1.5" />
+    <Position X="0.5" Y="9.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>FAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAACAAAAAA=</HashCode>
       <FileName>DataStructures\IEnumeratorBidi`1.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Langly.DataStructures.ISequenceBidi&lt;TMember, TEnumerator&gt;" Collapsed="true">
-    <Position X="3" Y="8" Width="1.5" />
+    <Position X="2.75" Y="8" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
       <FileName>DataStructures\ISequenceBidi`2.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Langly.DataStructures.ICapacity" Collapsed="true">
-    <Position X="0.5" Y="3.5" Width="1.5" />
+    <Position X="8.5" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>DataStructures\ICapacity.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Langly.DataStructures.ICount" Collapsed="true">
-    <Position X="3" Y="0.5" Width="1.5" />
+    <Position X="5.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>DataStructures\ICount.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Langly.DataStructures.IEnumerator&lt;TElement&gt;" Collapsed="true">
-    <Position X="0.75" Y="8" Width="1.5" />
+    <Position X="0.5" Y="8" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ACAAAAAAAAAAAAAAAACAAAAAAAAAQAACAAAAAACAAAA=</HashCode>
       <FileName>DataStructures\IEnumerator`1.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Langly.DataStructures.IResizable" Collapsed="true">
-    <Position X="0.5" Y="4.75" Width="1.5" />
+    <Position X="8.5" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAACABAAAAAAAQAAAAAAACAAAAAAAAAAAAAAEABAA=</HashCode>
       <FileName>DataStructures\IResizable.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Langly.DataStructures.ISequence&lt;TMember, TEnumerator&gt;" Collapsed="true">
-    <Position X="3" Y="6.5" Width="1.5" />
+    <Position X="1.75" Y="6.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ACAAAAAAAAAAABAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>ACAAAAAQAAAAABAAAAAAAAAAAEAAAAAAAAAAAgAAAAA=</HashCode>
       <FileName>DataStructures\ISequence`2.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Langly.DataStructures.IAssociative&lt;TIndexView, TElementView&gt;" Collapsed="true">
-    <Position X="7.75" Y="4" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
-      <FileName>DataStructures\IAssociative`2.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
-  <Interface Name="Langly.DataStructures.IAssociativeView&lt;TMember, TEnumerator&gt;" Collapsed="true">
-    <Position X="5.25" Y="8" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>DataStructures\IAssociativeView`2.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
   <Interface Name="Langly.DataStructures.IIndexRefReadOnly&lt;TElement&gt;" Collapsed="true">
-    <Position X="5.25" Y="3.25" Width="1.5" />
+    <Position X="9.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>DataStructures\IIndexRefReadOnly`1.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Langly.DataStructures.IIndexRefReadOnly&lt;TIndex, TElement&gt;" Collapsed="true">
-    <Position X="4" Y="1.75" Width="1.5" />
+    <Position X="8.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>DataStructures\IIndexRefReadOnly`2.cs</FileName>
+      <FileName>DataStructures\IIndexReadOnly`2.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Langly.DataStructures.IShift" Collapsed="true">
-    <Position X="9.5" Y="4" Width="1.5" />
+    <Position X="12.25" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
       <FileName>DataStructures\IShift.cs</FileName>
@@ -131,17 +109,73 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="Langly.DataStructures.IIndexRef&lt;TElement&gt;" Collapsed="true">
-    <Position X="4" Y="4.75" Width="1.5" />
+    <Position X="8.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>DataStructures\IIndexRef`1.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Langly.DataStructures.IIndexRef&lt;TIndex, TElement&gt;" Collapsed="true">
-    <Position X="3" Y="3.25" Width="1.5" />
+    <Position X="7.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>DataStructures\IIndexRef`2.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Langly.DataStructures.IAdd&lt;TElement&gt;" Collapsed="true">
+    <Position X="12.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataStructures\IAdd`1.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Langly.DataStructures.IClear" Collapsed="true">
+    <Position X="14" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>DataStructures\IClear.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Langly.DataStructures.IInsert&lt;TElement&gt;" Collapsed="true">
+    <Position X="5.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataStructures\IInsert`1.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Langly.DataStructures.IInsert&lt;TIndex, TElement&gt;" Collapsed="true">
+    <Position X="5.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataStructures\IInsert`2.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Langly.DataStructures.IIndex&lt;TElement&gt;" Collapsed="true">
+    <Position X="4.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataStructures\IIndex`1.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Langly.DataStructures.IIndex&lt;TIndex, TElement&gt;" Collapsed="true">
+    <Position X="3" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABACAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataStructures\IIndex`2.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Langly.DataStructures.IIndexReadOnly&lt;TElement&gt;" Collapsed="true">
+    <Position X="5.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataStructures\IIndexReadOnly`1.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Langly.DataStructures.IIndexReadOnly&lt;TIndex, TElement&gt;" Collapsed="true">
+    <Position X="4.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataStructures\IIndexRefReadOnly`2.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />

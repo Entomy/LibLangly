@@ -50,34 +50,19 @@ namespace Langly.DataStructures {
 		/// Grows the collection by a computed factor.
 		/// </summary>
 		/// <param name="collection">This collection.</param>
-		public static void Grow([AllowNull] this IResizable collection) {
-			if (collection is null) {
-				return;
-			}
-			collection.Grow();
-		}
+		public static void Grow([AllowNull] this IResizable collection) => collection?.Grow();
 
 		/// <summary>
 		/// Resize the collection to the specified <paramref name="capacity"/>.
 		/// </summary>
 		/// <param name="collection">This collection.</param>
 		/// <param name="capacity">The new capacity of the collection.</param>
-		public static void Resize([AllowNull] this IResizable collection, nint capacity) {
-			if (collection is null) {
-				return;
-			}
-			collection.Resize(capacity);
-		}
+		public static void Resize([AllowNull] this IResizable collection, nint capacity) => collection?.Resize(capacity);
 
 		/// <summary>
 		/// Shrinks the collection by a computed factor.
 		/// </summary>
 		/// <param name="collection">This collection.</param>
-		public static void Shrink([AllowNull] this IResizable collection) {
-			if (collection is null) {
-				return;
-			}
-			collection.Shrink();
-		}
+		public static void Shrink([AllowNull] this IResizable collection) => collection?.Shrink();
 	}
 }

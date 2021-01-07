@@ -12,6 +12,7 @@ using System.Diagnostics.CodeAnalysis;
 
 [assembly: SuppressMessage("Style", "CC0001:You should use 'var' whenever possible.", Justification = "No. Explicit is better than implicit.")]
 [assembly: SuppressMessage("Design", "CC0031:Check for null before calling a delegate", Justification = "This analyzer is broken. There are others which do the checks correctly.")]
+[assembly: SuppressMessage("Usage", "CC0057:Unused parameters", Justification = "This analyzer is broken. There are others which do the checks correctly.")]
 [assembly: SuppressMessage("Style", "CC0105:You should use 'var' whenever possible.", Justification = "No. Explicit is better than implicit.")]
 
 [assembly: SuppressMessage("Design", "MA0018:Do not declare static members on generic types", Justification = "This is clearly the path Microsoft is taking with more modern stuff, as especially evident with Memory<T> and Span<T>. It makes more sense to stay orthogonal to expectations. Not doing this will often require the creation of a second static class just for this purpose, which will cause confusion about which variant has which operations.")]

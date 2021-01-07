@@ -19,9 +19,8 @@ namespace Langly.DataStructures {
 		ISequence<TElement, TEnumerator>
 		where TSelf : DataStructure<TElement, TSelf, TEnumerator>
 		where TEnumerator : IEnumerator<TElement> {
-
 		/// <inheritdoc/>
-		public abstract nint Count { get; }
+		public nint Count { get; protected set; }
 
 		/// <summary>
 		/// Determines if the two sequences aren't equal.

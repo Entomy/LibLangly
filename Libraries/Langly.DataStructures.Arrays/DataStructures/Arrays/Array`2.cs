@@ -37,9 +37,6 @@ namespace Langly.DataStructures.Arrays {
 		public nint Capacity => Elements.Length;
 
 		/// <inheritdoc/>
-		public override nint Count => Elements.Length;
-
-		/// <inheritdoc/>
 		public ref TElement this[nint index] => ref Elements.Span[(Int32)index];
 
 		/// <inheritdoc/>

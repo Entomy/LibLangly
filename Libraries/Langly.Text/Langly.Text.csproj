@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<Description>Provides text types and operations for LibLangly.</Description>
+		<PackageTags>langly, text</PackageTags>
+		<AssemblyName>Langly.Text</AssemblyName>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Include="..\GlobalSuppressions.cs" Link="GlobalSuppressions.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Langly.Core\Langly.Core.csproj" />
+	  <ProjectReference Include="..\Langly.DataStructures\Langly.DataStructures.csproj" />
+	</ItemGroup>
+
+</Project>
