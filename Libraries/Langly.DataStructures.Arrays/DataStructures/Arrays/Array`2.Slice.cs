@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
+using Langly.DataStructures.Views;
 
 namespace Langly.DataStructures.Arrays {
 	public partial class Array<TElement, TSelf> : ISlice<Array<TElement, TSelf>.Slice> {

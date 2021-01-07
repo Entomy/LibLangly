@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 
-namespace Langly.DataStructures {
+namespace Langly.DataStructures.Views {
 	/// <summary>
 	/// Provides a view of the collection in reverse order.
 	/// </summary>

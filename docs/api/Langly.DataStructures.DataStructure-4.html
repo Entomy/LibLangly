@@ -81,6 +81,7 @@
     <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
     <div class="level1"><a class="xref" href="Langly.Record-1.html">Record</a>&lt;TSelf&gt;</div>
     <div class="level2"><span class="xref">DataStructure&lt;TIndex, TElement, TSelf, TEnumerator&gt;</span></div>
+      <div class="level3"><a class="xref" href="Langly.DataStructures.Arrays.Array-3.html">Array&lt;TIndex, TElement, TSelf&gt;</a></div>
   </div>
   <div classs="implements">
     <h5>Implements</h5>
@@ -88,6 +89,8 @@
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;TSelf&gt;</div>
     <div><a class="xref" href="Langly.IEquals-1.html">IEquals</a>&lt;<a class="xref" href="Langly.IEquals-1.html">IEquals</a>&lt;TSelf&gt;&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Langly.IEquals-1.html">IEquals</a>&lt;TSelf&gt;&gt;</div>
+    <div><a class="xref" href="Langly.DataStructures.IAssociative-4.html">IAssociative</a>&lt;TIndex, TElement, <a class="xref" href="Langly.DataStructures.DataStructure-4.html">DataStructure</a>&lt;TIndex, TElement, TSelf, TEnumerator&gt;, TEnumerator&gt;</div>
+    <div><a class="xref" href="Langly.DataStructures.ICount.html">ICount</a></div>
     <div><a class="xref" href="Langly.DataStructures.ISequence-2.html">ISequence</a>&lt;<a class="xref" href="Langly.DataStructures.Association-2.html">Association</a>&lt;TIndex, TElement&gt;, TEnumerator&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="Langly.DataStructures.Association-2.html">Association</a>&lt;TIndex, TElement&gt;&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
@@ -95,13 +98,7 @@
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="Langly.Record-1.html#Langly_Record_1_Equals__0_">Record&lt;TSelf&gt;.Equals(TSelf)</a>
-    </div>
-    <div>
       <a class="xref" href="Langly.Record-1.html#Langly_Record_1_Equals_Langly_IEquals__0__">Record&lt;TSelf&gt;.Equals(IEquals&lt;TSelf&gt;)</a>
-    </div>
-    <div>
-      <a class="xref" href="Langly.Record-1.html#Langly_Record_1_ToString">Record&lt;TSelf&gt;.ToString()</a>
     </div>
     <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_">Object.Equals(Object)</a>
@@ -126,7 +123,7 @@
   <h6><strong>Assembly</strong>: Langly.DataStructures.dll</h6>
   <h5 id="Langly_DataStructures_DataStructure_4_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class DataStructure&lt;TIndex, TElement, TSelf, TEnumerator&gt; : Record&lt;TSelf&gt;, IEquals&lt;TSelf&gt;, IEquatable&lt;TSelf&gt;, IEquals&lt;IEquals&lt;TSelf&gt;&gt;, IEquatable&lt;IEquals&lt;TSelf&gt;&gt;, ISequence&lt;Association&lt;TIndex, TElement&gt;, TEnumerator&gt;, IEnumerable&lt;Association&lt;TIndex, TElement&gt;&gt;, IEnumerable where TSelf : DataStructure&lt;TIndex, TElement, TSelf, TEnumerator&gt; where TEnumerator : IEnumerator&lt;Association&lt;TIndex, TElement&gt;&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class DataStructure&lt;TIndex, TElement, TSelf, TEnumerator&gt; : Record&lt;TSelf&gt;, IEquals&lt;TSelf&gt;, IEquatable&lt;TSelf&gt;, IEquals&lt;IEquals&lt;TSelf&gt;&gt;, IEquatable&lt;IEquals&lt;TSelf&gt;&gt;, IAssociative&lt;TIndex, TElement, DataStructure&lt;TIndex, TElement, TSelf, TEnumerator&gt;, TEnumerator&gt;, ICount, ISequence&lt;Association&lt;TIndex, TElement&gt;, TEnumerator&gt;, IEnumerable&lt;Association&lt;TIndex, TElement&gt;&gt;, IEnumerable where TSelf : DataStructure&lt;TIndex, TElement, TSelf, TEnumerator&gt; where TEnumerator : IEnumerator&lt;Association&lt;TIndex, TElement&gt;&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -162,14 +159,228 @@
   <h5 id="Langly_DataStructures_DataStructure_4_remarks"><strong>Remarks</strong></h5>
   <div class="markdown level0 remarks"><p>This is extremely anemic in order to avoid the false assumption and leaky abstraction problems most collection libraries get themselves into. This class only sets up things that are truly common for all data structures.</p>
 </div>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_DataStructure_4_Count.md&amp;value=---%0Auid%3A%20Langly.DataStructures.DataStructure%604.Count%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures/DataStructures/DataStructure`4.cs/#L32">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_DataStructure_4_Count_" data-uid="Langly.DataStructures.DataStructure`4.Count*"></a>
+  <h4 id="Langly_DataStructures_DataStructure_4_Count" data-uid="Langly.DataStructures.DataStructure`4.Count">Count</h4>
+  <div class="markdown level1 summary"><p>Gets the number of elements contained in the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract nint Count { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_DataStructure_4_Elements.md&amp;value=---%0Auid%3A%20Langly.DataStructures.DataStructure%604.Elements%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures/DataStructures/DataStructure`4.cs/#L29">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_DataStructure_4_Elements_" data-uid="Langly.DataStructures.DataStructure`4.Elements*"></a>
+  <h4 id="Langly_DataStructures_DataStructure_4_Elements" data-uid="Langly.DataStructures.DataStructure`4.Elements">Elements</h4>
+  <div class="markdown level1 summary"><p>Gets a view of the elements of this collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ElementView&lt;TIndex, TElement, DataStructure&lt;TIndex, TElement, TSelf, TEnumerator&gt;, TEnumerator&gt; Elements { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Views.ElementView-4.html">ElementView</a>&lt;TIndex, TElement, <a class="xref" href="Langly.DataStructures.DataStructure-4.html">DataStructure</a>&lt;TIndex, TElement, TSelf, TEnumerator&gt;, TEnumerator&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_DataStructure_4_Indicies.md&amp;value=---%0Auid%3A%20Langly.DataStructures.DataStructure%604.Indicies%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures/DataStructures/DataStructure`4.cs/#L26">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_DataStructure_4_Indicies_" data-uid="Langly.DataStructures.DataStructure`4.Indicies*"></a>
+  <h4 id="Langly_DataStructures_DataStructure_4_Indicies" data-uid="Langly.DataStructures.DataStructure`4.Indicies">Indicies</h4>
+  <div class="markdown level1 summary"><p>Gets a view of the indicies of this collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IndexView&lt;TIndex, TElement, DataStructure&lt;TIndex, TElement, TSelf, TEnumerator&gt;, TEnumerator&gt; Indicies { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Views.IndexView-4.html">IndexView</a>&lt;TIndex, TElement, <a class="xref" href="Langly.DataStructures.DataStructure-4.html">DataStructure</a>&lt;TIndex, TElement, TSelf, TEnumerator&gt;, TEnumerator&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="methods">Methods
   </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_DataStructure_4_Equals__2_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.DataStructure%604.Equals(%602)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures/DataStructures/DataStructure`4.cs/#L67">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_DataStructure_4_Equals_" data-uid="Langly.DataStructures.DataStructure`4.Equals*"></a>
+  <h4 id="Langly_DataStructures_DataStructure_4_Equals__2_" data-uid="Langly.DataStructures.DataStructure`4.Equals(`2)">Equals(TSelf)</h4>
+  <div class="markdown level1 summary"><p>Determines if the two values are equal.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(TSelf other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TSelf</span></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>The other value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the two values are equal; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Langly.Record&lt;TSelf&gt;.Equals(TSelf)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_DataStructure_4_Equals__1_Langly_DataStructures_ISequence_Langly_DataStructures_Association__0__1____0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.DataStructure%604.Equals%60%601(Langly.DataStructures.ISequence%7BLangly.DataStructures.Association%7B%600%2C%601%7D%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures/DataStructures/DataStructure`4.cs/#L75">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_DataStructure_4_Equals_" data-uid="Langly.DataStructures.DataStructure`4.Equals*"></a>
+  <h4 id="Langly_DataStructures_DataStructure_4_Equals__1_Langly_DataStructures_ISequence_Langly_DataStructures_Association__0__1____0__" data-uid="Langly.DataStructures.DataStructure`4.Equals``1(Langly.DataStructures.ISequence{Langly.DataStructures.Association{`0,`1},``0})">Equals&lt;TOtherEnumerator&gt;(ISequence&lt;Association&lt;TIndex, TElement&gt;, TOtherEnumerator&gt;)</h4>
+  <div class="markdown level1 summary"><p>Determines if the two sequences are equal.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals&lt;TOtherEnumerator&gt;(ISequence&lt;Association&lt;TIndex, TElement&gt;, TOtherEnumerator&gt; other)
+    where TOtherEnumerator : IEnumerator&lt;Association&lt;TIndex, TElement&gt;&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.ISequence-2.html">ISequence</a>&lt;<a class="xref" href="Langly.DataStructures.Association-2.html">Association</a>&lt;TIndex, TElement&gt;, TOtherEnumerator&gt;</td>
+        <td><span class="parametername">other</span></td>
+        <td><p>The other sequence.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the two sequences are equal; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TOtherEnumerator</span></td>
+        <td><p>The type of the enumerator for the <code data-dev-comment-type="paramref" class="paramref">other</code> sequence.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_DataStructure_4_GetEnumerator.md&amp;value=---%0Auid%3A%20Langly.DataStructures.DataStructure%604.GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures/DataStructures/DataStructure`4.cs/#L16">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures/DataStructures/DataStructure`4.cs/#L102">View Source</a>
   </span>
   <a id="Langly_DataStructures_DataStructure_4_GetEnumerator_" data-uid="Langly.DataStructures.DataStructure`4.GetEnumerator*"></a>
   <h4 id="Langly_DataStructures_DataStructure_4_GetEnumerator" data-uid="Langly.DataStructures.DataStructure`4.GetEnumerator">GetEnumerator()</h4>
@@ -196,6 +407,184 @@
       </tr>
     </tbody>
   </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_DataStructure_4_StructurePrefix.md&amp;value=---%0Auid%3A%20Langly.DataStructures.DataStructure%604.StructurePrefix%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures/DataStructures/DataStructure`4.cs/#L123">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_DataStructure_4_StructurePrefix_" data-uid="Langly.DataStructures.DataStructure`4.StructurePrefix*"></a>
+  <h4 id="Langly_DataStructures_DataStructure_4_StructurePrefix" data-uid="Langly.DataStructures.DataStructure`4.StructurePrefix">StructurePrefix()</h4>
+  <div class="markdown level1 summary"><p>Provides the structure prefix (commonly, its name) for <a class="xref" href="Langly.DataStructures.DataStructure-4.html#Langly_DataStructures_DataStructure_4_ToString">ToString()</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract string StructurePrefix()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><p>The structure prefix as a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_DataStructure_4_ToString.md&amp;value=---%0Auid%3A%20Langly.DataStructures.DataStructure%604.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures/DataStructures/DataStructure`4.cs/#L106">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_DataStructure_4_ToString_" data-uid="Langly.DataStructures.DataStructure`4.ToString*"></a>
+  <h4 id="Langly_DataStructures_DataStructure_4_ToString" data-uid="Langly.DataStructures.DataStructure`4.ToString">ToString()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override sealed string ToString()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Langly.Record&lt;TSelf&gt;.ToString()</span></div>
+  <h3 id="operators">Operators
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_DataStructure_4_op_Equality_Langly_DataStructures_DataStructure__0__1__2__3__Langly_DataStructures_DataStructure__0__1__2__3__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.DataStructure%604.op_Equality(Langly.DataStructures.DataStructure%7B%600%2C%601%2C%602%2C%603%7D%2CLangly.DataStructures.DataStructure%7B%600%2C%601%2C%602%2C%603%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures/DataStructures/DataStructure`4.cs/#L56">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_DataStructure_4_op_Equality_" data-uid="Langly.DataStructures.DataStructure`4.op_Equality*"></a>
+  <h4 id="Langly_DataStructures_DataStructure_4_op_Equality_Langly_DataStructures_DataStructure__0__1__2__3__Langly_DataStructures_DataStructure__0__1__2__3__" data-uid="Langly.DataStructures.DataStructure`4.op_Equality(Langly.DataStructures.DataStructure{`0,`1,`2,`3},Langly.DataStructures.DataStructure{`0,`1,`2,`3})">Equality(DataStructure&lt;TIndex, TElement, TSelf, TEnumerator&gt;, DataStructure&lt;TIndex, TElement, TSelf, TEnumerator&gt;)</h4>
+  <div class="markdown level1 summary"><p>Determines if the two sequences are equal.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator ==(DataStructure&lt;TIndex, TElement, TSelf, TEnumerator&gt; left, DataStructure&lt;TIndex, TElement, TSelf, TEnumerator&gt; right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.DataStructure-4.html">DataStructure</a>&lt;TIndex, TElement, TSelf, TEnumerator&gt;</td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The lefthand sequence.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.DataStructure-4.html">DataStructure</a>&lt;TIndex, TElement, TSelf, TEnumerator&gt;</td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The righthand sequence.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the two sequences are equal; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_DataStructure_4_op_Inequality_Langly_DataStructures_DataStructure__0__1__2__3__Langly_DataStructures_DataStructure__0__1__2__3__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.DataStructure%604.op_Inequality(Langly.DataStructures.DataStructure%7B%600%2C%601%2C%602%2C%603%7D%2CLangly.DataStructures.DataStructure%7B%600%2C%601%2C%602%2C%603%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures/DataStructures/DataStructure`4.cs/#L40">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_DataStructure_4_op_Inequality_" data-uid="Langly.DataStructures.DataStructure`4.op_Inequality*"></a>
+  <h4 id="Langly_DataStructures_DataStructure_4_op_Inequality_Langly_DataStructures_DataStructure__0__1__2__3__Langly_DataStructures_DataStructure__0__1__2__3__" data-uid="Langly.DataStructures.DataStructure`4.op_Inequality(Langly.DataStructures.DataStructure{`0,`1,`2,`3},Langly.DataStructures.DataStructure{`0,`1,`2,`3})">Inequality(DataStructure&lt;TIndex, TElement, TSelf, TEnumerator&gt;, DataStructure&lt;TIndex, TElement, TSelf, TEnumerator&gt;)</h4>
+  <div class="markdown level1 summary"><p>Determines if the two sequences aren't equal.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator !=(DataStructure&lt;TIndex, TElement, TSelf, TEnumerator&gt; left, DataStructure&lt;TIndex, TElement, TSelf, TEnumerator&gt; right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.DataStructure-4.html">DataStructure</a>&lt;TIndex, TElement, TSelf, TEnumerator&gt;</td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The lefthand sequence.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.DataStructure-4.html">DataStructure</a>&lt;TIndex, TElement, TSelf, TEnumerator&gt;</td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The righthand sequence.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the two sequences aren't equal; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="Langly.IEquals-1.html">IEquals&lt;TElement&gt;</a>
@@ -208,6 +597,12 @@
   </div>
   <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">System.IEquatable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.DataStructures.IAssociative-4.html">IAssociative&lt;TIndex, TElement, TSelf, TEnumerator&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.DataStructures.ICount.html">ICount</a>
   </div>
   <div>
       <a class="xref" href="Langly.DataStructures.ISequence-2.html">ISequence&lt;TMember, TEnumerator&gt;</a>
@@ -242,7 +637,7 @@
                     <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_DataStructure_4.md&amp;value=---%0Auid%3A%20Langly.DataStructures.DataStructure%604%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures/DataStructures/DataStructure`4.cs/#L14" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures/DataStructures/DataStructure`4.cs/#L18" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

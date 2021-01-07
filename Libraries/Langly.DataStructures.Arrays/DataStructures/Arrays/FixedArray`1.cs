@@ -29,7 +29,7 @@ namespace Langly.DataStructures.Arrays {
 		protected override String StructurePrefix() => "Fixed";
 
 		private static class Singleton {
-			internal static readonly FixedArray<TElement> Instance = new FixedArray<TElement>(0);
+			internal static readonly FixedArray<TElement> Instance = new FixedArray<TElement>(Memory<TElement>.Empty);
 
 			static Singleton() { }
 		}

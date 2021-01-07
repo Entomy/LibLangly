@@ -141,7 +141,7 @@ namespace Langly.DataStructures {
 		}
 
 		/// <summary>
-		/// Provides the structure prefix (commonly, it's name) for <see cref="ToString()"/>.
+		/// Provides the structure prefix (commonly, its name) for <see cref="ToString()"/>.
 		/// </summary>
 		/// <returns>The structure prefix as a <see cref="String"/>.</returns>
 		[return: NotNull]
