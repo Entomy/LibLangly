@@ -54,6 +54,6 @@ namespace Langly {
 		public sealed override Int32 GetHashCode() => base.GetHashCode();
 
 		/// <inheritdoc/>
-		public sealed override String ToString() => base.ToString();
+		public sealed override System.String ToString() => base.ToString();
 	}
 }

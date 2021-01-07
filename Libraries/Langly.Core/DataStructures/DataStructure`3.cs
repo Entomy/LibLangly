@@ -126,7 +126,7 @@ namespace Langly.DataStructures {
 		public abstract TEnumerator GetEnumerator();
 
 		/// <inheritdoc/>
-		public sealed override String ToString() {
+		public sealed override System.String ToString() {
 			StringBuilder builder = new StringBuilder();
 			nint i = 0;
 			foreach (TElement element in this) {
