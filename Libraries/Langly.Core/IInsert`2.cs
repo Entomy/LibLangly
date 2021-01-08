@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Langly.DataStructures {
+namespace Langly {
 	/// <summary>
 	/// Indicates the type can have elements inserted into it.
 	/// </summary>
@@ -16,7 +16,7 @@ namespace Langly.DataStructures {
 		void Insert([DisallowNull] TIndex index, [AllowNull] TElement element);
 	}
 
-	public static partial class DataStructureExtensions {
+	public static partial class CoreExtensions {
 		/// <summary>
 		/// Insert an element into the collection at the specified index.
 		/// </summary>

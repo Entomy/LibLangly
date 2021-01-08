@@ -89,10 +89,10 @@
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Langly.DataStructures.Lists.Chain-1.html">Chain</a>&lt;TElement&gt;&gt;</div>
     <div><a class="xref" href="Langly.IEquals-1.html">IEquals</a>&lt;<a class="xref" href="Langly.IEquals-1.html">IEquals</a>&lt;<a class="xref" href="Langly.DataStructures.Lists.Chain-1.html">Chain</a>&lt;TElement&gt;&gt;&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Langly.IEquals-1.html">IEquals</a>&lt;<a class="xref" href="Langly.DataStructures.Lists.Chain-1.html">Chain</a>&lt;TElement&gt;&gt;&gt;</div>
-    <div><a class="xref" href="Langly.DataStructures.ICount.html">ICount</a></div>
     <div><a class="xref" href="Langly.DataStructures.IAdd-1.html">IAdd</a>&lt;TElement&gt;</div>
     <div><a class="xref" href="Langly.DataStructures.ISequenceBidi-2.html">ISequenceBidi</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.Lists.Chain-1.Enumerator.html">Chain.Enumerator</a>&lt;&gt;&gt;</div>
     <div><a class="xref" href="Langly.DataStructures.ISequence-2.html">ISequence</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.Lists.Chain-1.Enumerator.html">Chain.Enumerator</a>&lt;&gt;&gt;</div>
+    <div><a class="xref" href="Langly.DataStructures.ICount.html">ICount</a></div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TElement&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
   </div>
@@ -148,7 +148,7 @@
   <h6><strong>Assembly</strong>: Langly.Core.dll</h6>
   <h5 id="Langly_DataStructures_Lists_Chain_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class Chain&lt;TElement&gt; : DataStructure&lt;TElement, Chain&lt;TElement&gt;, Chain&lt;TElement&gt;.Enumerator&gt;, IEquals&lt;Chain&lt;TElement&gt;&gt;, IEquatable&lt;Chain&lt;TElement&gt;&gt;, IEquals&lt;IEquals&lt;Chain&lt;TElement&gt;&gt;&gt;, IEquatable&lt;IEquals&lt;Chain&lt;TElement&gt;&gt;&gt;, ICount, IAdd&lt;TElement&gt;, ISequenceBidi&lt;TElement, Chain&lt;TElement&gt;.Enumerator&gt;, ISequence&lt;TElement, Chain&lt;TElement&gt;.Enumerator&gt;, IEnumerable&lt;TElement&gt;, IEnumerable</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class Chain&lt;TElement&gt; : DataStructure&lt;TElement, Chain&lt;TElement&gt;, Chain&lt;TElement&gt;.Enumerator&gt;, IEquals&lt;Chain&lt;TElement&gt;&gt;, IEquatable&lt;Chain&lt;TElement&gt;&gt;, IEquals&lt;IEquals&lt;Chain&lt;TElement&gt;&gt;&gt;, IEquatable&lt;IEquals&lt;Chain&lt;TElement&gt;&gt;&gt;, IAdd&lt;TElement&gt;, ISequenceBidi&lt;TElement, Chain&lt;TElement&gt;.Enumerator&gt;, ISequence&lt;TElement, Chain&lt;TElement&gt;.Enumerator&gt;, ICount, IEnumerable&lt;TElement&gt;, IEnumerable</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -254,36 +254,6 @@
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Lists_Chain_1_StructurePrefix.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Lists.Chain%601.StructurePrefix%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Core/DataStructures/Lists/Chain`1.cs/#L70">View Source</a>
-  </span>
-  <a id="Langly_DataStructures_Lists_Chain_1_StructurePrefix_" data-uid="Langly.DataStructures.Lists.Chain`1.StructurePrefix*"></a>
-  <h4 id="Langly_DataStructures_Lists_Chain_1_StructurePrefix" data-uid="Langly.DataStructures.Lists.Chain`1.StructurePrefix">StructurePrefix()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override string StructurePrefix()</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="eii">Explicit Interface Implementations
   </h3>
   <span class="small pull-right mobile-hide">
@@ -374,9 +344,6 @@
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">System.IEquatable&lt;T&gt;</a>
   </div>
   <div>
-      <a class="xref" href="Langly.DataStructures.ICount.html">ICount</a>
-  </div>
-  <div>
       <a class="xref" href="Langly.DataStructures.IAdd-1.html">IAdd&lt;TElement&gt;</a>
   </div>
   <div>
@@ -384,6 +351,9 @@
   </div>
   <div>
       <a class="xref" href="Langly.DataStructures.ISequence-2.html">ISequence&lt;TMember, TEnumerator&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.DataStructures.ICount.html">ICount</a>
   </div>
   <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">System.Collections.Generic.IEnumerable&lt;T&gt;</a>

@@ -1,4 +1,4 @@
-﻿namespace Langly.DataStructures {
+﻿namespace Langly {
 	/// <summary>
 	/// Indicates the type is countable.
 	/// </summary>

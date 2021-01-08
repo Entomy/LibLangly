@@ -26,6 +26,9 @@ namespace Langly.DataStructures.Views {
 		public ReverseView(TCollection collection) => Collection = collection;
 
 		/// <inheritdoc/>
+		public nint Count => Collection.Count;
+
+		/// <inheritdoc/>
 		[return: NotNull]
 		public ReverseView<TElement, TCollection, TEnumerator>.Enumerator GetEnumerator() => new Enumerator(Collection);
 
@@ -51,6 +54,9 @@ namespace Langly.DataStructures.Views {
 
 			/// <inheritdoc/>
 			public TElement Current => Enum.Current;
+
+			/// <inheritdoc/>
+			public nint Count => Enum.Count;
 
 			/// <inheritdoc/>
 			public Boolean MoveNext() => Enum.MovePrevious();

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Langly.DataStructures {
+namespace Langly {
 	/// <summary>
 	/// Indicates the type is an enumerator for sequences of <typeparamref name="TElement"/>.
 	/// </summary>

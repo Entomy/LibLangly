@@ -90,8 +90,8 @@
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;TSelf&gt;</div>
     <div><a class="xref" href="Langly.IEquals-1.html">IEquals</a>&lt;<a class="xref" href="Langly.IEquals-1.html">IEquals</a>&lt;TSelf&gt;&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Langly.IEquals-1.html">IEquals</a>&lt;TSelf&gt;&gt;</div>
-    <div><a class="xref" href="Langly.DataStructures.ICount.html">ICount</a></div>
     <div><a class="xref" href="Langly.DataStructures.ISequence-2.html">ISequence</a>&lt;TElement, TEnumerator&gt;</div>
+    <div><a class="xref" href="Langly.DataStructures.ICount.html">ICount</a></div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TElement&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
   </div>
@@ -123,7 +123,7 @@
   <h6><strong>Assembly</strong>: Langly.Core.dll</h6>
   <h5 id="Langly_DataStructures_DataStructure_3_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class DataStructure&lt;TElement, TSelf, TEnumerator&gt; : Record&lt;TSelf&gt;, IEquals&lt;TSelf&gt;, IEquatable&lt;TSelf&gt;, IEquals&lt;IEquals&lt;TSelf&gt;&gt;, IEquatable&lt;IEquals&lt;TSelf&gt;&gt;, ICount, ISequence&lt;TElement, TEnumerator&gt;, IEnumerable&lt;TElement&gt;, IEnumerable where TSelf : DataStructure&lt;TElement, TSelf, TEnumerator&gt; where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class DataStructure&lt;TElement, TSelf, TEnumerator&gt; : Record&lt;TSelf&gt;, IEquals&lt;TSelf&gt;, IEquatable&lt;TSelf&gt;, IEquals&lt;IEquals&lt;TSelf&gt;&gt;, IEquatable&lt;IEquals&lt;TSelf&gt;&gt;, ISequence&lt;TElement, TEnumerator&gt;, ICount, IEnumerable&lt;TElement&gt;, IEnumerable where TSelf : DataStructure&lt;TElement, TSelf, TEnumerator&gt; where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -567,10 +567,10 @@
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">System.IEquatable&lt;T&gt;</a>
   </div>
   <div>
-      <a class="xref" href="Langly.DataStructures.ICount.html">ICount</a>
+      <a class="xref" href="Langly.DataStructures.ISequence-2.html">ISequence&lt;TMember, TEnumerator&gt;</a>
   </div>
   <div>
-      <a class="xref" href="Langly.DataStructures.ISequence-2.html">ISequence&lt;TMember, TEnumerator&gt;</a>
+      <a class="xref" href="Langly.DataStructures.ICount.html">ICount</a>
   </div>
   <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">System.Collections.Generic.IEnumerable&lt;T&gt;</a>

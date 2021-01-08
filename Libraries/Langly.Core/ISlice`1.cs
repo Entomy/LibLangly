@@ -3,7 +3,7 @@ using System;
 #endif
 using System.Diagnostics.CodeAnalysis;
 
-namespace Langly.DataStructures {
+namespace Langly {
 	/// <summary>
 	/// Indicates the collection is sliceable.
 	/// </summary>
@@ -49,7 +49,7 @@ namespace Langly.DataStructures {
 		TSlice Slice(nint start, nint length);
 	}
 
-	public static partial class DataStructureExtensions {
+	public static partial class CoreExtensions {
 		/// <summary>
 		/// Forms a slice out of the collection.
 		/// </summary>

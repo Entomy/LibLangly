@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Langly.DataStructures {
+namespace Langly {
 	/// <summary>
 	/// Indicates the type is a bidirectional enumerator for sequences of <typeparamref name="TElement"/>.
 	/// </summary>

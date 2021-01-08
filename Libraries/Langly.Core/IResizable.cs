@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Langly.DataStructures {
+namespace Langly {
 	/// <summary>
 	/// Indicates the type is resizable.
 	/// </summary>
@@ -45,7 +45,7 @@ namespace Langly.DataStructures {
 		void Shrink() => Resize((nint)(Capacity / φ));
 	}
 
-	public static partial class DataStructureExtensions {
+	public static partial class CoreExtensions {
 		/// <summary>
 		/// Grows the collection by a computed factor.
 		/// </summary>

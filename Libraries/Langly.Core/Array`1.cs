@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
-using System.Text;
+using Langly.DataStructures;
 
-namespace Langly.DataStructures {
+namespace Langly {
 	/// <summary>
 	/// Represents an array of contiguous elements.
 	/// </summary>

@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using Langly.DataStructures.Views;
 
-namespace Langly.DataStructures {
+namespace Langly {
 	/// <summary>
 	/// Indicates the type is a bidirectional sequence of <typeparamref name="TMember"/>.
 	/// </summary>

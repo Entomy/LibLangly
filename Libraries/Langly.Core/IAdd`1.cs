@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Langly.DataStructures {
+namespace Langly {
 	/// <summary>
 	/// Indicates the type can have other elements added to it.
 	/// </summary>
@@ -88,7 +88,7 @@ namespace Langly.DataStructures {
 		}
 	}
 
-	public static partial class DataStructureExtensions {
+	public static partial class CoreExtensions {
 		/// <summary>
 		/// Adds an element to this collection.
 		/// </summary>

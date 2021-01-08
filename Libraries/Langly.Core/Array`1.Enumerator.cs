@@ -4,7 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 using Langly.DataStructures.Views;
 
-namespace Langly.DataStructures {
+namespace Langly {
 	public partial class Array<TElement> : ISequenceBidi<TElement, Array<TElement>.Enumerator> {
 		/// <inheritdoc/>
 		[return: NotNull]
@@ -31,6 +31,9 @@ namespace Langly.DataStructures {
 
 			/// <inheritdoc/>
 			public TElement Current => Elements.Span[i];
+
+			/// <inheritdoc/>
+			public nint Count => Elements.Length;
 
 			public static Boolean operator !=(Array<TElement>.Enumerator left, Array<TElement>.Enumerator right) => !left.Equals(right);
 

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Langly.DataStructures {
+namespace Langly {
 	/// <summary>
 	/// Indicates the type is a sequence of <typeparamref name="TMember"/>.
 	/// </summary>
@@ -10,7 +10,7 @@ namespace Langly.DataStructures {
 	/// <remarks>
 	/// This interface devirtualizes the enumerator, and simplifies numerous parts of the interface through well defined defaults.
 	/// </remarks>
-	public interface ISequence<TMember, out TEnumerator> : System.Collections.Generic.IEnumerable<TMember> where TEnumerator : IEnumerator<TMember> {
+	public interface ISequence<TMember, out TEnumerator> : ICount, System.Collections.Generic.IEnumerable<TMember> where TEnumerator : IEnumerator<TMember> {
 		/// <summary>
 		/// Returns an enumerator that iterates through the sequence.
 		/// </summary>
@@ -91,7 +91,7 @@ namespace Langly.DataStructures {
 		}
 	}
 
-	public static partial class DataStructureExtensions {
+	public static partial class CoreExtensions {
 		/// <summary>
 		/// Folds the collection into a single element as described by the <paramref name="func"/>.
 		/// </summary>

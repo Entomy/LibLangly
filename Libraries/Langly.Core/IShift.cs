@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace Langly.DataStructures {
+namespace Langly {
 	/// <summary>
 	/// Indicates the type can be shifted in position.
 	/// </summary>
@@ -28,7 +28,7 @@ namespace Langly.DataStructures {
 		void ShiftRight(nint amount);
 	}
 
-	public static partial class DataStructureExtensions {
+	public static partial class CoreExtensions {
 		/// <summary>
 		/// Shifts the <paramref name="collection"/> left one position.
 		/// </summary>

@@ -1,4 +1,4 @@
-﻿namespace Langly.DataStructures {
+﻿namespace Langly {
 	/// <summary>
 	/// Indicates the type has a maximum capacity.
 	/// </summary>

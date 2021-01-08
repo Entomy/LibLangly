@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace Langly.DataStructures {
+namespace Langly {
 	/// <summary>
 	/// Indicates the type can be cleared.
 	/// </summary>
@@ -11,7 +11,7 @@ namespace Langly.DataStructures {
 		void Clear();
 	}
 
-	public static partial class DataStructureExtensions {
+	public static partial class CoreExtensions {
 		/// <summary>
 		/// Clears the <paramref name="collection"/>.
 		/// </summary>

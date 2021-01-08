@@ -25,6 +25,9 @@ namespace Langly.DataStructures.Lists {
 			public TElement Current => throw new NotImplementedException();
 
 			/// <inheritdoc/>
+			public nint Count => Chain.Count;
+
+			/// <inheritdoc/>
 			public Boolean MoveNext() => throw new NotImplementedException();
 
 			/// <inheritdoc/>

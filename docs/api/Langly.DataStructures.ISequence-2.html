@@ -76,11 +76,17 @@
   <div class="markdown level0 summary"><p>Indicates the type is a sequence of <code data-dev-comment-type="typeparamref" class="typeparamref">TMember</code>.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Langly.DataStructures.ICount.html#Langly_DataStructures_ICount_Count">ICount.Count</a>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Langly.DataStructures.html">Langly.DataStructures</a></h6>
   <h6><strong>Assembly</strong>: Langly.Core.dll</h6>
   <h5 id="Langly_DataStructures_ISequence_2_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface ISequence&lt;TMember, out TEnumerator&gt; : IEnumerable&lt;TMember&gt;, IEnumerable where TEnumerator : IEnumerator&lt;TMember&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public interface ISequence&lt;TMember, out TEnumerator&gt; : ICount, IEnumerable&lt;TMember&gt;, IEnumerable where TEnumerator : IEnumerator&lt;TMember&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">

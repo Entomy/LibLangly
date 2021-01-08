@@ -24,6 +24,9 @@ namespace Langly.DataStructures.Views {
 		public SequenceView(TCollection collection) => Collection = collection;
 
 		/// <inheritdoc/>
+		public nint Count => Collection.Count;
+
+		/// <inheritdoc/>
 		public TEnumerator GetEnumerator() => Collection.GetEnumerator();
 	}
 }
