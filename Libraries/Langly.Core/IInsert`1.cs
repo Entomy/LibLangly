@@ -3,5 +3,6 @@
 	/// Indicates the collection can have elements inserted into it.
 	/// </summary>
 	/// <typeparam name="TElement">The type of the elements.</typeparam>
-	public interface IInsert<in TElement> : IInsert<nint, TElement> { }
+	/// <typeparam name="TResult">The resulting type; often itself.</typeparam>
+	public interface IInsert<in TElement, out TResult> : IInsert<nint, TElement, TResult> { }
 }

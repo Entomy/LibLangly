@@ -39,6 +39,7 @@ namespace Langly {
 		/// </summary>
 		/// <param name="capacity">The new capacity of the collection.</param>
 		void Resize(nint capacity);
+
 		/// <summary>
 		/// Shrinks the collection by a computed factor.
 		/// </summary>

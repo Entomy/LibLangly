@@ -7,13 +7,14 @@ namespace Langly {
 	/// </summary>
 	/// <typeparam name="TIndex">The type of the indicies.</typeparam>
 	/// <typeparam name="TElement">The type of the elements.</typeparam>
-	public interface IInsert<in TIndex, in TElement> {
+	/// <typeparam name="TResult">The resulting type; often itself.</typeparam>
+	public interface IInsert<in TIndex, in TElement, out TResult> {
 		/// <summary>
 		/// Insert an element into the collection at the specified index.
 		/// </summary>
 		/// <param name="index">The index at which <paramref name="element"/> should be inserted.</param>
 		/// <param name="element">The element to insert.</param>
-		void Insert([DisallowNull] TIndex index, [AllowNull] TElement element);
+		TResult Insert([DisallowNull] TIndex index, [AllowNull] TElement element);
 	}
 
 	public static partial class CoreExtensions {
@@ -22,14 +23,15 @@ namespace Langly {
 		/// </summary>
 		/// <typeparam name="TIndex">The type of the indicies.</typeparam>
 		/// <typeparam name="TElement">The type of the elements.</typeparam>
+		/// <typeparam name="TResult">The resulting type; often itself.</typeparam>
 		/// <param name="collection">This collection.</param>
 		/// <param name="index">The index at which <paramref name="element"/> should be inserted.</param>
 		/// <param name="element">The element to insert.</param>
-		public static void Insert<TIndex, TElement>([AllowNull] this IInsert<TIndex, TElement> collection, [DisallowNull] TIndex index, [AllowNull] TElement element) {
+		public static TResult Insert<TIndex, TElement, TResult>([AllowNull] this IInsert<TIndex, TElement, TResult> collection, [DisallowNull] TIndex index, [AllowNull] TElement element) {
 			if (index is null) {
 				throw new IndexOutOfRangeException();
 			}
-			collection?.Insert(index, element);
+			return collection is not null ? collection.Insert(index, element) : (TResult)collection;
 		}
 	}
 }

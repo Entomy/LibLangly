@@ -10,7 +10,7 @@ namespace Langly.DataStructures.Lists {
 	/// A chain is a hybrid list, employing various optimizations from partial-unrolling to skip-linkage, to reference slicing.
 	/// </remarks>
 	public sealed partial class Chain<TElement> : DataStructure<TElement, Chain<TElement>, Chain<TElement>.Enumerator>,
-		IAdd<TElement> {
+		IAdd<TElement, Chain<TElement>> {
 		/// <summary>
 		/// The head node of the chain.
 		/// </summary>
@@ -42,21 +42,21 @@ namespace Langly.DataStructures.Lists {
 		}
 
 		/// <inheritdoc/>
-		void IAdd<TElement>.Add([AllowNull] TElement element) {
-			if (element is null) {
-				return;
+		Chain<TElement> IAdd<TElement, Chain<TElement>>.Add([AllowNull] TElement element) {
+			if (element is not null) {
+				Tail = new ElementNode(element, previous: Tail, next: null);
+				if (Head is null) {
+					Head = Tail;
+				} else {
+					Tail.Previous.Next = Tail;
+				}
+				Count++;
 			}
-			Tail = new ElementNode(element, previous: Tail, next: null);
-			if (Head is null) {
-				Head = Tail;
-			} else {
-				Tail.Previous.Next = Tail;
-			}
-			Count++;
+			return this;
 		}
 
 		/// <inheritdoc/>
-		void IAdd<TElement>.Add(ReadOnlyMemory<TElement> elements) {
+		Chain<TElement> IAdd<TElement, Chain<TElement>>.Add(ReadOnlyMemory<TElement> elements) {
 			Tail = new MemoryNode(elements, previous: Tail, next: null);
 			if (Head is null) {
 				Head = Tail;
@@ -64,6 +64,7 @@ namespace Langly.DataStructures.Lists {
 				Tail.Previous.Next = Tail;
 			}
 			Count += elements.Length;
+			return this;
 		}
 	}
 }
