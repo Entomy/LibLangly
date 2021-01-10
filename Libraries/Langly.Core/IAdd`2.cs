@@ -15,6 +15,7 @@ namespace Langly {
 		/// <remarks>
 		/// The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.
 		/// </remarks>
+		[return: NotNull]
 		TResult Add([AllowNull] TElement element);
 
 		/// <summary>
@@ -24,7 +25,8 @@ namespace Langly {
 		/// <remarks>
 		/// The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.
 		/// </remarks>
-		TResult Add([AllowNull] TElement[] elements) {
+		[return: NotNull]
+		TResult Add([AllowNull] params TElement[] elements) {
 			if (elements is null) {
 				return (TResult)this;
 			}
@@ -38,6 +40,7 @@ namespace Langly {
 		/// <remarks>
 		/// The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.
 		/// </remarks>
+		[return: NotNull]
 		TResult Add(Memory<TElement> elements) => Add((ReadOnlyMemory<TElement>)elements);
 
 		/// <summary>
@@ -47,6 +50,7 @@ namespace Langly {
 		/// <remarks>
 		/// The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.
 		/// </remarks>
+		[return: NotNull]
 		TResult Add(ReadOnlyMemory<TElement> elements) => Add(elements.Span);
 
 		/// <summary>
@@ -56,6 +60,7 @@ namespace Langly {
 		/// <remarks>
 		/// The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.
 		/// </remarks>
+		[return: NotNull]
 		TResult Add(Span<TElement> elements) => Add((ReadOnlySpan<TElement>)elements);
 
 		/// <summary>
@@ -65,6 +70,7 @@ namespace Langly {
 		/// <remarks>
 		/// The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.
 		/// </remarks>
+		[return: NotNull]
 		TResult Add(ReadOnlySpan<TElement> elements) {
 			foreach (TElement element in elements) {
 				_ = Add(element);
@@ -80,6 +86,7 @@ namespace Langly {
 		/// <remarks>
 		/// The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.
 		/// </remarks>
+		[return: NotNull]
 		TResult Add<TEnumerator>([AllowNull] ISequence<TElement, TEnumerator> elements) where TEnumerator : IEnumerator<TElement> {
 			if (elements is null) {
 				return (TResult)this;

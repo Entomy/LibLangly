@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using System.Text;
 
 namespace Langly.DataStructures.Lists {
 	public partial class Chain<TElement> {
 		/// <summary>
 		/// Represents a <see cref="Node"/> holding multiple contiguous elements.
 		/// </summary>
-		private sealed class MemoryNode : Node {
+		private sealed class MemoryNode : Node, ISlice<MemoryNode> {
 			/// <summary>
 			/// The contiguous memory contained in the node.
 			/// </summary>
@@ -22,6 +23,88 @@ namespace Langly.DataStructures.Lists {
 
 			/// <inheritdoc/>
 			public override nint Count => Memory.Length;
+
+			/// <inheritdoc/>
+			public override ref readonly TElement this[nint index] {
+				get {
+					if (0 > index || index >= Count) {
+						throw new IndexOutOfRangeException();
+					}
+					return ref Memory.Span[(Int32)index];
+				}
+			}
+
+			/// <inheritdoc/>
+			public override Boolean Equals([AllowNull] Node other) {
+				switch (other) {
+				case MemoryNode node:
+					return Memory.Equals(node.Memory);
+				default:
+					return false;
+				}
+			}
+
+			/// <inheritdoc/>
+			public override (Node Head, Node Tail) Insert(nint index, [AllowNull] TElement element) {
+				Node head;
+				Node tail;
+				if (index == 0) {
+					tail = this;
+					head = new ElementNode(element, previous: null, next: tail);
+					tail.Previous = head;
+				} else if (index == Count) {
+					head = this;
+					tail = new ElementNode(element, previous: head, next: null);
+					head.Next = tail;
+				} else {
+					head = Slice(0, index);
+					tail = Slice(index, Count - index);
+					Node mid = new ElementNode(element, previous: head, next: tail);
+					head.Next = mid;
+					tail.Previous = mid;
+				}
+				return (head, tail);
+			}
+
+			/// <inheritdoc/>
+			public override (Node Head, Node Tail) Insert(nint index, ReadOnlyMemory<TElement> elements) {
+				Node head;
+				Node tail;
+				if (index == 0) {
+					tail = this;
+					head = new MemoryNode(elements, previous: null, next: tail);
+					tail.Previous = head;
+				} else if (index == Count) {
+					head = this;
+					tail = new MemoryNode(elements, previous: head, next: null);
+					head.Next = tail;
+				} else {
+					head = Slice(0, index);
+					tail = Slice(index, Count - index);
+					Node mid = new MemoryNode(elements, previous: head, next: tail);
+					head.Next = mid;
+					tail.Previous = mid;
+				}
+				return (head, tail);
+			}
+
+			/// <inheritdoc/>
+			public MemoryNode Slice(nint start, nint length) => new MemoryNode(Memory.Slice((Int32)start, (Int32)length), previous: null, next: null);
+
+			/// <inheritdoc/>
+			[return: NotNull]
+			public override System.String ToString() {
+				StringBuilder builder = new StringBuilder();
+				nint i = 0;
+				foreach (TElement element in Memory.Span) {
+					if (++i == Count) {
+						builder.Append(element);
+					} else {
+						builder.Append(element).Append(',').Append(' ');
+					}
+				}
+				return $"[{builder}]";
+			}
 		}
 	}
 }

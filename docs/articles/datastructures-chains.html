@@ -5,11 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Namespace Langly.DataStructures
-   </title>
+    <title>Chains </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Namespace Langly.DataStructures
-   ">
+    <meta name="title" content="Chains ">
     <meta name="generator" content="docfx 2.56.6.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -68,18 +66,21 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Langly.DataStructures">
-  
-  <h1 id="Langly_DataStructures" data-uid="Langly.DataStructures" class="text-break">Namespace Langly.DataStructures
-  </h1>
-  <div class="markdown level0 summary"></div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="markdown level0 remarks"></div>
-    <h3 id="classes">Classes
-  </h3>
-      <h4><a class="xref" href="Langly.DataStructures.DataStructure-3.html">DataStructure&lt;TElement, TSelf, TEnumerator&gt;</a></h4>
-      <section><p>Represents any possible data structure.</p>
-</section>
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="chains">Chains</h1>
+
+<p>Chains play a critical role in <strong>LibLangly</strong>. When faced with how to handle more complicated work, there's two major approaches.</p>
+<ol>
+<li><p>Mutate an existing object in place</p>
+</li>
+<li><p>Create a copy of the existing object with the changes made.</p>
+</li>
+</ol>
+<p>The first option provides better performance but means consistency isn't maintained and state potentially needs to be tracked. While there's techniques to deal with this, it's often considered a code smell in modern programming.</p>
+<p>The second option provides greater consistency but cripples performance, especially through increased memory pressure. Functional programming languages, where this is the norm, employ techniques to address this which are successful in the smaller scale but fail in the large scale.</p>
+<p>But there's another way, inspired by the work of <a href="https://citeseer.ist.psu.edu/viewdoc/download?doi=10.1.1.14.9450&amp;rep=rep1&amp;type=pdf">Boehm, Atkinson, and Plass</a>, <a href="http://www.eastgate.com/catalog/LiteraryMachines.html">Nelson, et al</a>, <a href="https://cs.uwaterloo.ca/research/tr/1993/28/root2side.pdf">Papadakis</a>, <a href="https://dl.acm.org/doi/10.1145/78973.78977">Pugh</a>, and <a href="https://dl.acm.org/doi/10.1145/182409.182453">Shao, Reppy, and Appel</a>: transformations of a particular data structure.</p>
+<p>A Chain is a hybrid list, a combination of a skip-list and partially-unrolled list which itself internally uses reference slicing for efficiency. It is meant to address two complaints with the Rope. First is that the Rope was designed specifically with text in mind, whereas Chains are generalized data structures. Second is that Ropes are (supposed to be) implemented as special binary trees whos leaves form the text. Oftentimes, &quot;Ropes&quot; are implemented as doubly-linked lists, which is even worse. Not only are trees harder to program, but skip-lists actually provide faster operations when data is ordered. Text is always ordered, and anything that would normally use a simple sequence or linked-list is also ordered, so therefore skip-lists should be preferred. This is integrated with partial-unrolling both as further optimization of traversal, but also allowing for nodes to reference slice existing texts. All of this leads to remarkable optimizations for working with complex data.</p>
+<p>As it turns out, operations like inserts and replaces, especially with irregular sized data, is remarkably easier to implement through transforming chains. Data primatives can stay immutable while still being manipulated through efficient means. As a result, when you use <strong>LibLangly</strong> you will overwhelmingly wind up working with Chains.</p>
 </article>
           </div>
           
@@ -87,6 +88,9 @@
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Documentation/articles/datastructures-chains.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">

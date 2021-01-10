@@ -77,6 +77,9 @@
   <div class="markdown level0 remarks"></div>
     <h3 id="classes">Classes
   </h3>
+      <h4><a class="xref" href="Langly.Array-1.html">Array&lt;TElement&gt;</a></h4>
+      <section><p>Represents an array of contiguous elements.</p>
+</section>
       <h4><a class="xref" href="Langly.CoreExtensions.html">CoreExtensions</a></h4>
       <section><p>Provides extensions for core traits.</p>
 </section>
@@ -88,13 +91,85 @@
 </section>
     <h3 id="structs">Structs
   </h3>
+      <h4><a class="xref" href="Langly.Array-1.Enumerator.html">Array&lt;TElement&gt;.Enumerator</a></h4>
+      <section><p>Provides enumeration over <a class="xref" href="Langly.Array-1.html">Array&lt;TElement&gt;</a>.</p>
+</section>
       <h4><a class="xref" href="Langly.String.html">String</a></h4>
       <section><p>Represents a fixed piece of text.</p>
 </section>
     <h3 id="interfaces">Interfaces
   </h3>
+      <h4><a class="xref" href="Langly.IAdd-2.html">IAdd&lt;TElement, TResult&gt;</a></h4>
+      <section><p>Indicates the type can have other elements added to it.</p>
+</section>
+      <h4><a class="xref" href="Langly.ICapacity.html">ICapacity</a></h4>
+      <section><p>Indicates the type has a maximum capacity.</p>
+</section>
+      <h4><a class="xref" href="Langly.IClear.html">IClear</a></h4>
+      <section><p>Indicates the type can be cleared.</p>
+</section>
+      <h4><a class="xref" href="Langly.ICount.html">ICount</a></h4>
+      <section><p>Indicates the type is countable.</p>
+</section>
+      <h4><a class="xref" href="Langly.IEnumerator-1.html">IEnumerator&lt;TElement&gt;</a></h4>
+      <section><p>Indicates the type is an enumerator for sequences of <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code>.</p>
+</section>
+      <h4><a class="xref" href="Langly.IEnumeratorBidi-1.html">IEnumeratorBidi&lt;TElement&gt;</a></h4>
+      <section><p>Indicates the type is a bidirectional enumerator for sequences of <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code>.</p>
+</section>
       <h4><a class="xref" href="Langly.IEquals-1.html">IEquals&lt;TElement&gt;</a></h4>
       <section><p>Indicates the type can be equal to another.</p>
+</section>
+      <h4><a class="xref" href="Langly.IIndex-1.html">IIndex&lt;TElement&gt;</a></h4>
+      <section><p>Indicates the type is indexable, read and write.</p>
+</section>
+      <h4><a class="xref" href="Langly.IIndex-2.html">IIndex&lt;TIndex, TElement&gt;</a></h4>
+      <section><p>Indicates the type is indexable, read and write.</p>
+</section>
+      <h4><a class="xref" href="Langly.IIndexReadOnly-1.html">IIndexReadOnly&lt;TElement&gt;</a></h4>
+      <section><p>Indicates the type is indexable, read only.</p>
+</section>
+      <h4><a class="xref" href="Langly.IIndexReadOnly-2.html">IIndexReadOnly&lt;TIndex, TElement&gt;</a></h4>
+      <section><p>Indicates the type is indexable, read only.</p>
+</section>
+      <h4><a class="xref" href="Langly.IIndexRef-1.html">IIndexRef&lt;TElement&gt;</a></h4>
+      <section><p>Indicates the type is indexable by reference, read and write.</p>
+</section>
+      <h4><a class="xref" href="Langly.IIndexRef-2.html">IIndexRef&lt;TIndex, TElement&gt;</a></h4>
+      <section><p>Indicates the type is indexable by reference, read and write.</p>
+</section>
+      <h4><a class="xref" href="Langly.IIndexRefReadOnly-1.html">IIndexRefReadOnly&lt;TElement&gt;</a></h4>
+      <section><p>Indicates the type is indexable by reference, read only.</p>
+</section>
+      <h4><a class="xref" href="Langly.IIndexRefReadOnly-2.html">IIndexRefReadOnly&lt;TIndex, TElement&gt;</a></h4>
+      <section><p>Indicates the type is indexable by reference, read only.</p>
+</section>
+      <h4><a class="xref" href="Langly.IInsert-2.html">IInsert&lt;TElement, TResult&gt;</a></h4>
+      <section><p>Indicates the collection can have elements inserted into it.</p>
+</section>
+      <h4><a class="xref" href="Langly.IInsert-3.html">IInsert&lt;TIndex, TElement, TResult&gt;</a></h4>
+      <section><p>Indicates the type can have elements inserted into it.</p>
+</section>
+      <h4><a class="xref" href="Langly.IPostpend-2.html">IPostpend&lt;TElement, TResult&gt;</a></h4>
+      <section><p>Indicates the type can have other elements postpended onto it.</p>
+</section>
+      <h4><a class="xref" href="Langly.IPrepend-2.html">IPrepend&lt;TElement, TResult&gt;</a></h4>
+      <section><p>Indicates the type can have other elements prepended onto it.</p>
+</section>
+      <h4><a class="xref" href="Langly.IResizable.html">IResizable</a></h4>
+      <section><p>Indicates the type is resizable.</p>
+</section>
+      <h4><a class="xref" href="Langly.ISequence-2.html">ISequence&lt;TMember, TEnumerator&gt;</a></h4>
+      <section><p>Indicates the type is a sequence of <code data-dev-comment-type="typeparamref" class="typeparamref">TMember</code>.</p>
+</section>
+      <h4><a class="xref" href="Langly.ISequenceBidi-2.html">ISequenceBidi&lt;TMember, TEnumerator&gt;</a></h4>
+      <section><p>Indicates the type is a bidirectional sequence of <code data-dev-comment-type="typeparamref" class="typeparamref">TMember</code>.</p>
+</section>
+      <h4><a class="xref" href="Langly.IShift.html">IShift</a></h4>
+      <section><p>Indicates the type can be shifted in position.</p>
+</section>
+      <h4><a class="xref" href="Langly.ISlice-1.html">ISlice&lt;TSlice&gt;</a></h4>
+      <section><p>Indicates the collection is sliceable.</p>
 </section>
 </article>
           </div>

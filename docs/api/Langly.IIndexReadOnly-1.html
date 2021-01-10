@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Interface IEquals&lt;TElement&gt;
+    <title>Interface IIndexReadOnly&lt;TElement&gt;
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Interface IEquals&lt;TElement&gt;
+    <meta name="title" content="Interface IIndexReadOnly&lt;TElement&gt;
    ">
     <meta name="generator" content="docfx 2.56.6.0">
     
@@ -68,25 +68,28 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Langly.IEquals`1">
+            <article class="content wrap" id="_content" data-uid="Langly.IIndexReadOnly`1">
   
   
-  <h1 id="Langly_IEquals_1" data-uid="Langly.IEquals`1" class="text-break">Interface IEquals&lt;TElement&gt;
+  <h1 id="Langly_IIndexReadOnly_1" data-uid="Langly.IIndexReadOnly`1" class="text-break">Interface IIndexReadOnly&lt;TElement&gt;
   </h1>
-  <div class="markdown level0 summary"><p>Indicates the type can be equal to another.</p>
+  <div class="markdown level0 summary"><p>Indicates the type is indexable, read only.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1.equals#System_IEquatable_1_Equals__0_">IEquatable&lt;TElement&gt;.Equals(TElement)</a>
+      <a class="xref" href="Langly.IIndexReadOnly-2.html#Langly_IIndexReadOnly_2_Item__0_">IIndexReadOnly&lt;nint, TElement&gt;.Item[nint]</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.ICount.html#Langly_ICount_Count">ICount.Count</a>
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Langly.html">Langly</a></h6>
   <h6><strong>Assembly</strong>: Langly.Core.dll</h6>
-  <h5 id="Langly_IEquals_1_syntax">Syntax</h5>
+  <h5 id="Langly_IIndexReadOnly_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IEquals&lt;TElement&gt; : IEquatable&lt;TElement&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IIndexReadOnly&lt;out TElement&gt; : IIndexReadOnly&lt;nint, TElement&gt;, ICount</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -99,11 +102,33 @@
     <tbody>
       <tr>
         <td><span class="parametername">TElement</span></td>
-        <td><p>The type this can be equal to.</p>
+        <td><p>The type of the elements in the collection.</p>
 </td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Langly_IIndexReadOnly_1_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>This is just a convenience for the most common case of <a class="xref" href="Langly.IIndexReadOnly-2.html">IIndexReadOnly&lt;TIndex, TElement&gt;</a>: indexed by integer.</p>
+</div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Langly.CoreExtensions.html#Langly_CoreExtensions_IndexOfFirst__1_Langly_IIndexReadOnly___0____0_">CoreExtensions.IndexOfFirst&lt;TElement&gt;(IIndexReadOnly&lt;TElement&gt;, TElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.CoreExtensions.html#Langly_CoreExtensions_IndexOfFirst__1_Langly_IIndexReadOnly___0__Langly_IEquals___0__">CoreExtensions.IndexOfFirst&lt;TElement&gt;(IIndexReadOnly&lt;TElement&gt;, IEquals&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.CoreExtensions.html#Langly_CoreExtensions_IndexOfFirst__1_Langly_IIndexReadOnly___0__System_Predicate___0__">CoreExtensions.IndexOfFirst&lt;TElement&gt;(IIndexReadOnly&lt;TElement&gt;, Predicate&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.CoreExtensions.html#Langly_CoreExtensions_IndexOfLast__1_Langly_IIndexReadOnly___0____0_">CoreExtensions.IndexOfLast&lt;TElement&gt;(IIndexReadOnly&lt;TElement&gt;, TElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.CoreExtensions.html#Langly_CoreExtensions_IndexOfLast__1_Langly_IIndexReadOnly___0__Langly_IEquals___0__">CoreExtensions.IndexOfLast&lt;TElement&gt;(IIndexReadOnly&lt;TElement&gt;, IEquals&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.CoreExtensions.html#Langly_CoreExtensions_IndexOfLast__1_Langly_IIndexReadOnly___0__System_Predicate___0__">CoreExtensions.IndexOfLast&lt;TElement&gt;(IIndexReadOnly&lt;TElement&gt;, Predicate&lt;TElement&gt;)</a>
+  </div>
 </article>
           </div>
           
@@ -112,10 +137,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_IEquals_1.md&amp;value=---%0Auid%3A%20Langly.IEquals%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_IIndexReadOnly_1.md&amp;value=---%0Auid%3A%20Langly.IIndexReadOnly%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Core/IEquals`1.cs/#L8" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Core/IIndexReadOnly`1.cs/#L12" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Interface IEquals&lt;TElement&gt;
+    <title>Interface IIndexRef&lt;TIndex, TElement&gt;
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Interface IEquals&lt;TElement&gt;
+    <meta name="title" content="Interface IIndexRef&lt;TIndex, TElement&gt;
    ">
     <meta name="generator" content="docfx 2.56.6.0">
     
@@ -68,25 +68,28 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Langly.IEquals`1">
+            <article class="content wrap" id="_content" data-uid="Langly.IIndexRef`2">
   
   
-  <h1 id="Langly_IEquals_1" data-uid="Langly.IEquals`1" class="text-break">Interface IEquals&lt;TElement&gt;
+  <h1 id="Langly_IIndexRef_2" data-uid="Langly.IIndexRef`2" class="text-break">Interface IIndexRef&lt;TIndex, TElement&gt;
   </h1>
-  <div class="markdown level0 summary"><p>Indicates the type can be equal to another.</p>
+  <div class="markdown level0 summary"><p>Indicates the type is indexable by reference, read and write.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1.equals#System_IEquatable_1_Equals__0_">IEquatable&lt;TElement&gt;.Equals(TElement)</a>
+      <a class="xref" href="Langly.IIndexRefReadOnly-2.html#Langly_IIndexRefReadOnly_2_Item__0_">IIndexRefReadOnly&lt;TIndex, TElement&gt;.Item[TIndex]</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.ICount.html#Langly_ICount_Count">ICount.Count</a>
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Langly.html">Langly</a></h6>
   <h6><strong>Assembly</strong>: Langly.Core.dll</h6>
-  <h5 id="Langly_IEquals_1_syntax">Syntax</h5>
+  <h5 id="Langly_IIndexRef_2_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IEquals&lt;TElement&gt; : IEquatable&lt;TElement&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IIndexRef&lt;in TIndex, TElement&gt; : IIndexRefReadOnly&lt;TIndex, TElement&gt;, ICount</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -98,8 +101,65 @@
     </thead>
     <tbody>
       <tr>
+        <td><span class="parametername">TIndex</span></td>
+        <td><p>The type used to index the collection.</p>
+</td>
+      </tr>
+      <tr>
         <td><span class="parametername">TElement</span></td>
-        <td><p>The type this can be equal to.</p>
+        <td><p>The type of the elements in the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_IIndexRef_2_Item__0_.md&amp;value=---%0Auid%3A%20Langly.IIndexRef%602.Item(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Core/IIndexRef`2.cs/#L13">View Source</a>
+  </span>
+  <a id="Langly_IIndexRef_2_Item_" data-uid="Langly.IIndexRef`2.Item*"></a>
+  <h4 id="Langly_IIndexRef_2_Item__0_" data-uid="Langly.IIndexRef`2.Item(`0)">Item[TIndex]</h4>
+  <div class="markdown level1 summary"><p>Gets a reference to the element at the specified index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TElement this[TIndex index] { get; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TIndex</span></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>The index of the element to get a reference for.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><p>A reference to the element at the specified index.</p>
 </td>
       </tr>
     </tbody>
@@ -112,10 +172,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_IEquals_1.md&amp;value=---%0Auid%3A%20Langly.IEquals%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_IIndexRef_2.md&amp;value=---%0Auid%3A%20Langly.IIndexRef%602%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Core/IEquals`1.cs/#L8" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Core/IIndexRef`2.cs/#L7" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using Langly.DataStructures;
+using Langly.DataStructures.Lists;
 
 namespace Langly {
 	/// <summary>
@@ -10,6 +11,7 @@ namespace Langly {
 	public sealed partial class Array<TElement> : DataStructure<TElement, Array<TElement>, Array<TElement>.Enumerator>,
 		ICapacity,
 		IIndexRef<TElement>,
+		IInsert<TElement, Chain<TElement>>,
 		IShift,
 		ISlice<Array<TElement>> {
 		/// <summary>
@@ -52,6 +54,22 @@ namespace Langly {
 		/// </summary>
 		/// <param name="memory">The backing memory of the array.</param>
 		public static implicit operator Array<TElement>(Memory<TElement> memory) => new Array<TElement>(memory);
+
+		/// <inheritdoc/>
+		[return: NotNull]
+		Chain<TElement> IInsert<nint, TElement, Chain<TElement>>.Insert(nint index, [AllowNull] TElement element) {
+			Chain<TElement> result;
+			if (element is null) {
+				result = new Chain<TElement>(Memory);
+			} else {
+				result = new Chain<TElement>();
+				_ = result
+					.Add(this.Slice(0, index))
+					.Add(element)
+					.Add(this.Slice(index, Count - index));
+			}
+			return result;
+		}
 
 		/// <inheritdoc/>
 		void IShift.ShiftLeft(nint amount) {
