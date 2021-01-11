@@ -11,10 +11,10 @@ namespace Langly.DataStructures.Lists {
 	/// </remarks>
 	public sealed partial class Chain<TElement> : DataStructure<TElement, Chain<TElement>, Chain<TElement>.Enumerator>,
 		IAdd<TElement, Chain<TElement>>,
+		IConcat<TElement, Chain<TElement>>,
 		IIndex<TElement>,
 		IInsert<TElement, Chain<TElement>>,
-		IPostpend<TElement, Chain<TElement>>,
-		IPrepend<TElement, Chain<TElement>> {
+		IReplace<TElement, Chain<TElement>> {
 		/// <summary>
 		/// The head node of the chain.
 		/// </summary>
@@ -289,6 +289,41 @@ namespace Langly.DataStructures.Lists {
 			Memory<TElement> buffer = new TElement[elements.Length];
 			elements.CopyTo(buffer.Span);
 			return ((IPrepend<TElement, Chain<TElement>>)this).Prepend(buffer);
+		}
+
+		/// <inheritdoc/>
+		[return: NotNull]
+		Chain<TElement> IReplace<TElement, TElement, Chain<TElement>>.Replace([AllowNull] TElement search, [AllowNull] TElement replace) {
+			// If the head node is null
+			if (Head is null) {
+				// The chain is empty and there's nothing to do
+				return this;
+			}
+			Node N = Head;
+			Node head = Head;
+			Node tail = Tail;
+			Node prev = null;
+			// Iterate through the entire chain, doing any necessary replacements. Unchanged nodes are reused for efficiency.
+			while (N is not null) {
+				(head, tail) = N.Replace(search, replace);
+				// If the head hasn't been relinked yet. This works because prev is only null on the first iteration. After each iteration prev is always the end of the chain.
+				if (prev is null) {
+					// Relink it
+					Head = head;
+					// This entire chain is now the chain section that was just created
+				} else {
+					// Attach the chain section to the new chain
+					prev.Next = head;
+					head.Previous = prev;
+				}
+				// Move to the next node
+				prev = tail;
+				N = N.Next;
+			}
+			// Finish linking the last node
+			Tail = tail;
+			// All done
+			return this;
 		}
 	}
 }

@@ -89,6 +89,24 @@ namespace Langly.DataStructures.Lists {
 			/// <inheritdoc/>
 			[return: NotNull]
 			public override System.String ToString() => Element.ToString();
+
+			/// <inheritdoc/>
+			public override (Node Head, Node Tail) Replace([AllowNull] TElement search, [AllowNull] TElement replace) {
+				if (Element is null && search is null) {
+					goto True;
+				} else if (Element is null || search is null) {
+					goto False;
+				} else if (Element.Equals(search)) {
+					goto True;
+				} else {
+					goto False;
+				}
+			True:
+				Node rep = new ElementNode(replace, previous: null, next: null);
+				return (rep, rep);
+			False:
+				return (this, this);
+			}
 		}
 	}
 }

@@ -8,9 +8,9 @@ namespace Langly.DataStructures.Lists {
 		/// </summary>
 		private abstract class Node : Record<Node>,
 			IClear,
-			ICount,
 			IIndexRefReadOnly<TElement>,
-			IInsert<TElement, (Node Head, Node Tail)> {
+			IInsert<TElement, (Node Head, Node Tail)>,
+			IReplace<TElement, (Node Head, Node Tail)> {
 			/// <summary>
 			/// The next node in the chain.
 			/// </summary>
@@ -50,6 +50,9 @@ namespace Langly.DataStructures.Lists {
 
 			/// <inheritdoc/>
 			public abstract (Node Head, Node Tail) Insert(nint index, ReadOnlyMemory<TElement> elements);
+
+			/// <inheritdoc/>
+			public abstract (Node Head, Node Tail) Replace([AllowNull] TElement search, [AllowNull] TElement replace);
 		}
 	}
 }

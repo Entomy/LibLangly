@@ -89,6 +89,60 @@ namespace Langly.DataStructures.Lists {
 			}
 
 			/// <inheritdoc/>
+			public override (Node Head, Node Tail) Replace([AllowNull] TElement search, [AllowNull] TElement replace) {
+				Node head = this;
+				Node tail = this;
+				Node prev = null;
+				Int32 o = 0;
+				// Iterate through the node
+				for (Int32 i = 0; i < Count; i++) {
+					// Determine whether a match occurred or not
+					if (Memory.Span[i] is null ^ search is null) {
+						continue;
+					} else if (!Memory.Span[i]?.Equals(search) ?? false) {
+						continue;
+					}
+					// If we're replacing the very start
+					if (i == 0) {
+						head = new ElementNode(replace, previous: null, next: null);
+						tail = head;
+					} else
+					// We're replacing somewhere after the start
+					{
+						// Reuse everything up to this point
+						// If head hasn't been reassigned
+						if (ReferenceEquals(head, this)) {
+							// Do so now
+							head = new MemoryNode(Memory[o..i], previous: tail, next: null);
+							tail = head;
+						} else {
+							// If there's reusable elements
+							if (i > o) {
+								// Add them
+								tail.Next = new MemoryNode(Memory[o..i], previous: tail, next: null);
+								tail = tail.Next;
+							}
+						}
+						// Add the replacement
+						tail.Next = new ElementNode(replace, previous: tail, next: null);
+						tail = tail.Next;
+					}
+					prev = tail;
+					o = i + 1;
+				}
+				// If there's anything left
+				if (o != Count) {
+					// Had anything been replaced?
+					if (!ReferenceEquals(head, this)) {
+						// Attach the remaining parts
+						tail.Next = new MemoryNode(Memory[o..], previous: tail, next: null);
+						tail = tail.Next;
+					}
+				}
+				return (head, tail);
+			}
+
+			/// <inheritdoc/>
 			public MemoryNode Slice(nint start, nint length) => new MemoryNode(Memory.Slice((Int32)start, (Int32)length), previous: null, next: null);
 
 			/// <inheritdoc/>

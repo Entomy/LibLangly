@@ -12,6 +12,7 @@ namespace Langly {
 		ICapacity,
 		IIndexRef<TElement>,
 		IInsert<TElement, Chain<TElement>>,
+		IReplace<TElement, Chain<TElement>>,
 		IShift,
 		ISlice<Array<TElement>> {
 		/// <summary>
@@ -57,19 +58,11 @@ namespace Langly {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		Chain<TElement> IInsert<nint, TElement, Chain<TElement>>.Insert(nint index, [AllowNull] TElement element) {
-			Chain<TElement> result;
-			if (element is null) {
-				result = new Chain<TElement>(Memory);
-			} else {
-				result = new Chain<TElement>();
-				_ = result
-					.Add(this.Slice(0, index))
-					.Add(element)
-					.Add(this.Slice(index, Count - index));
-			}
-			return result;
-		}
+		Chain<TElement> IInsert<nint, TElement, Chain<TElement>>.Insert(nint index, [AllowNull] TElement element) => ((IInsert<nint, TElement, Chain<TElement>>)new Chain<TElement>(Memory)).Insert(index, element);
+
+		/// <inheritdoc/>
+		[return: NotNull]
+		Chain<TElement> IReplace<TElement, TElement, Chain<TElement>>.Replace([AllowNull] TElement search, [AllowNull] TElement replace) => ((IReplace<TElement, TElement, Chain<TElement>>)new Chain<TElement>(Memory)).Replace(search, replace);
 
 		/// <inheritdoc/>
 		void IShift.ShiftLeft(nint amount) {
@@ -95,7 +88,6 @@ namespace Langly {
 
 		/// <inheritdoc/>
 		Array<TElement> ISlice<Array<TElement>>.Slice(nint start, nint length) => new Array<TElement>(Memory.Slice((Int32)start, (Int32)length));
-
 		private static class Singleton {
 			internal static readonly Array<TElement> Instance = new Array<TElement>(Memory<TElement>.Empty);
 
