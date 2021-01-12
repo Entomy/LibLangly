@@ -58,7 +58,7 @@ namespace Langly.DataStructures {
 		/// <param name="elements">The elements of the set.</param>
 		/// <returns>A set of the <paramref name="elements"/>.</returns>
 		[return: NotNull]
-		public static Set<TElement> Of<TElement>([AllowNull] params TElement[] elements) => elements is not null ? new Wrapper<TElement, Array<TElement>>(elements) : Empty<TElement>();
+		public static Set<TElement> Of<TElement>([AllowNull] params TElement[] elements) => elements is not null ? new MemoryWrapper<TElement>(elements) : Empty<TElement>();
 
 		/// <summary>
 		/// Returns a set described by the <paramref name="predicate"/>.

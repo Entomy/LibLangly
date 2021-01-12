@@ -7,7 +7,7 @@ namespace Langly.DataStructures {
 	/// </summary>
 	/// <typeparam name="TElement">The type of elements in the set.</typeparam>
 	/// <typeparam name="TContainer">The type of the backing collection.</typeparam>
-	internal sealed class Wrapper<TElement, TContainer> : Set<TElement>
+	internal sealed class ContainerWrapper<TElement, TContainer> : Set<TElement>
 		where TContainer : IContains<TElement> {
 		/// <summary>
 		/// The backing container of the set.
@@ -15,10 +15,10 @@ namespace Langly.DataStructures {
 		private readonly TContainer Container;
 
 		/// <summary>
-		/// Intializes a new <see cref="Wrapper{TElement, TContainer}"/>.
+		/// Intializes a new <see cref="ContainerWrapper{TElement, TContainer}"/>.
 		/// </summary>
 		/// <param name="container">The backing container of the set.</param>
-		internal Wrapper(TContainer container) => Container = container;
+		internal ContainerWrapper(TContainer container) => Container = container;
 
 		/// <inheritdoc/>
 		protected override Boolean Contains([AllowNull] TElement element) => Container.Contains(element);
