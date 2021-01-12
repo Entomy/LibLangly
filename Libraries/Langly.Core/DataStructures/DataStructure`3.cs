@@ -15,7 +15,7 @@ namespace Langly.DataStructures {
 	/// </remarks>
 	[DebuggerDisplay("{DebuggerDisplay(),nq}")]
 	public abstract class DataStructure<TElement, TSelf, TEnumerator> : Record<TSelf>,
-		ICount,
+		IContains<TElement>,
 		ISequence<TElement, TEnumerator>
 		where TSelf : DataStructure<TElement, TSelf, TEnumerator>
 		where TEnumerator : IEnumerator<TElement> {
@@ -137,6 +137,19 @@ namespace Langly.DataStructures {
 				}
 			}
 			return $"[{builder}]";
+		}
+
+		/// <inheritdoc/>
+		Boolean IContains<TElement>.Contains([AllowNull] TElement element) {
+			TEnumerator ths = GetEnumerator();
+			while (ths.MoveNext()) {
+				if (ths.Current is null && element is null) {
+					return true;
+				} else if (element?.Equals(ths.Current) ?? false) {
+					return true;
+				}
+			}
+			return false;
 		}
 
 		/// <summary>

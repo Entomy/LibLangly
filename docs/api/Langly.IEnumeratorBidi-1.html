@@ -106,6 +106,12 @@
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable.dispose#System_IDisposable_Dispose">IDisposable.Dispose()</a>
     </div>
     <div>
+      <a class="xref" href="Langly.ISequence-2.html#Langly_ISequence_2_Langly_IContains_TMember__Contains__0_">ISequence&lt;TElement, IEnumerator&lt;TElement&gt;&gt;.IContains&lt;TElement&gt;.Contains(TElement)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.ISequence-2.html#Langly_ISequence_2_Fold_System_Func__0__0__0___0_">ISequence&lt;TElement, IEnumerator&lt;TElement&gt;&gt;.Fold(Func&lt;TElement, TElement, TElement&gt;, TElement)</a>
+    </div>
+    <div>
       <a class="xref" href="Langly.ISequence-2.html#Langly_ISequence_2_GetEnumerator">ISequence&lt;TElement, IEnumerator&lt;TElement&gt;&gt;.GetEnumerator()</a>
     </div>
     <div>
@@ -115,9 +121,6 @@
       <a class="xref" href="Langly.ISequence-2.html#Langly_ISequence_2_System_Collections_IEnumerable_GetEnumerator">ISequence&lt;TElement, IEnumerator&lt;TElement&gt;&gt;.IEnumerable.GetEnumerator()</a>
     </div>
     <div>
-      <a class="xref" href="Langly.ISequence-2.html#Langly_ISequence_2_Fold_System_Func__0__0__0___0_">ISequence&lt;TElement, IEnumerator&lt;TElement&gt;&gt;.Fold(Func&lt;TElement, TElement, TElement&gt;, TElement)</a>
-    </div>
-    <div>
       <a class="xref" href="Langly.ISequence-2.html#Langly_ISequence_2_Occurrences__0_">ISequence&lt;TElement, IEnumerator&lt;TElement&gt;&gt;.Occurrences(TElement)</a>
     </div>
     <div>
@@ -125,6 +128,9 @@
     </div>
     <div>
       <a class="xref" href="Langly.ISequence-2.html#Langly_ISequence_2_Occurrences_System_Predicate__0__">ISequence&lt;TElement, IEnumerator&lt;TElement&gt;&gt;.Occurrences(Predicate&lt;TElement&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.IContains-1.html#Langly_IContains_1_Contains__0_">IContains&lt;TElement&gt;.Contains(TElement)</a>
     </div>
     <div>
       <a class="xref" href="Langly.ICount.html#Langly_ICount_Count">ICount.Count</a>
@@ -137,7 +143,7 @@
   <h6><strong>Assembly</strong>: Langly.Core.dll</h6>
   <h5 id="Langly_IEnumeratorBidi_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IEnumeratorBidi&lt;TElement&gt; : IEnumerator&lt;TElement&gt;, IEnumerator&lt;TElement&gt;, IEnumerator, IDisposable, ISequence&lt;TElement, IEnumerator&lt;TElement&gt;&gt;, ICount, IEnumerable&lt;TElement&gt;, IEnumerable</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IEnumeratorBidi&lt;TElement&gt; : IEnumerator&lt;TElement&gt;, IEnumerator&lt;TElement&gt;, IEnumerator, IDisposable, ISequence&lt;TElement, IEnumerator&lt;TElement&gt;&gt;, IContains&lt;TElement&gt;, ICount, IEnumerable&lt;TElement&gt;, IEnumerable</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -239,6 +245,9 @@
     <pre><code class="lang-csharp hljs">void IEnumerator.Reset()</code></pre>
   </div>
   <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Langly.CoreExtensions.html#Langly_CoreExtensions_Contains__1_Langly_IContains___0____0_">CoreExtensions.Contains&lt;TElement&gt;(IContains&lt;TElement&gt;, TElement)</a>
+  </div>
   <div>
       <a class="xref" href="Langly.CoreExtensions.html#Langly_CoreExtensions_Fold__2_Langly_ISequence___0___1__System_Func___0___0___0____0_">CoreExtensions.Fold&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Func&lt;TElement, TElement, TElement&gt;, TElement)</a>
   </div>

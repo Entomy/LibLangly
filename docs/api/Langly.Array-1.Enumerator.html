@@ -84,6 +84,7 @@
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
     <div><a class="xref" href="Langly.ISequence-2.html">ISequence</a>&lt;TElement, <a class="xref" href="Langly.IEnumerator-1.html">IEnumerator</a>&lt;TElement&gt;&gt;</div>
+    <div><a class="xref" href="Langly.IContains-1.html">IContains</a>&lt;TElement&gt;</div>
     <div><a class="xref" href="Langly.ICount.html">ICount</a></div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TElement&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
@@ -112,7 +113,7 @@
   <h6><strong>Assembly</strong>: Langly.Core.dll</h6>
   <h5 id="Langly_Array_1_Enumerator_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public struct Enumerator : IEnumeratorBidi&lt;TElement&gt;, IEnumerator&lt;TElement&gt;, IEnumerator&lt;TElement&gt;, IEnumerator, IDisposable, ISequence&lt;TElement, IEnumerator&lt;TElement&gt;&gt;, ICount, IEnumerable&lt;TElement&gt;, IEnumerable, IEquals&lt;Array&lt;TElement&gt;.Enumerator&gt;, IEquatable&lt;Array&lt;TElement&gt;.Enumerator&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public struct Enumerator : IEnumeratorBidi&lt;TElement&gt;, IEnumerator&lt;TElement&gt;, IEnumerator&lt;TElement&gt;, IEnumerator, IDisposable, ISequence&lt;TElement, IEnumerator&lt;TElement&gt;&gt;, IContains&lt;TElement&gt;, ICount, IEnumerable&lt;TElement&gt;, IEnumerable, IEquals&lt;Array&lt;TElement&gt;.Enumerator&gt;, IEquatable&lt;Array&lt;TElement&gt;.Enumerator&gt;</code></pre>
   </div>
   <h3 id="properties">Properties
   </h3>
@@ -125,8 +126,7 @@
   </span>
   <a id="Langly_Array_1_Enumerator_Count_" data-uid="Langly.Array`1.Enumerator.Count*"></a>
   <h4 id="Langly_Array_1_Enumerator_Count" data-uid="Langly.Array`1.Enumerator.Count">Count</h4>
-  <div class="markdown level1 summary"><p>Gets the number of elements contained in the collection.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -314,8 +314,7 @@
   </span>
   <a id="Langly_Array_1_Enumerator_MovePrevious_" data-uid="Langly.Array`1.Enumerator.MovePrevious*"></a>
   <h4 id="Langly_Array_1_Enumerator_MovePrevious" data-uid="Langly.Array`1.Enumerator.MovePrevious">MovePrevious()</h4>
-  <div class="markdown level1 summary"><p>Retracts the enumerator to the previous item of the collection.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -332,8 +331,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p><span class="xref">true</span> if the enumerator successfully retracted to the next item; <span class="xref">false</span> if the beginning of the collection has been passed.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -346,8 +344,7 @@
   </span>
   <a id="Langly_Array_1_Enumerator_ResetBeginning_" data-uid="Langly.Array`1.Enumerator.ResetBeginning*"></a>
   <h4 id="Langly_Array_1_Enumerator_ResetBeginning" data-uid="Langly.Array`1.Enumerator.ResetBeginning">ResetBeginning()</h4>
-  <div class="markdown level1 summary"><p>Resets the enumerator to the beginning position for forward enumeration.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -362,8 +359,7 @@
   </span>
   <a id="Langly_Array_1_Enumerator_ResetEnding_" data-uid="Langly.Array`1.Enumerator.ResetEnding*"></a>
   <h4 id="Langly_Array_1_Enumerator_ResetEnding" data-uid="Langly.Array`1.Enumerator.ResetEnding">ResetEnding()</h4>
-  <div class="markdown level1 summary"><p>Resets the enumerator to the ending position for reverse enumeration.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -495,6 +491,9 @@
       <a class="xref" href="Langly.ISequence-2.html">ISequence&lt;TMember, TEnumerator&gt;</a>
   </div>
   <div>
+      <a class="xref" href="Langly.IContains-1.html">IContains&lt;TElement&gt;</a>
+  </div>
+  <div>
       <a class="xref" href="Langly.ICount.html">ICount</a>
   </div>
   <div>
@@ -510,6 +509,9 @@
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">System.IEquatable&lt;T&gt;</a>
   </div>
   <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Langly.CoreExtensions.html#Langly_CoreExtensions_Contains__1_Langly_IContains___0____0_">CoreExtensions.Contains&lt;TElement&gt;(IContains&lt;TElement&gt;, TElement)</a>
+  </div>
   <div>
       <a class="xref" href="Langly.CoreExtensions.html#Langly_CoreExtensions_Fold__2_Langly_ISequence___0___1__System_Func___0___0___0____0_">CoreExtensions.Fold&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Func&lt;TElement, TElement, TElement&gt;, TElement)</a>
   </div>

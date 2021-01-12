@@ -103,6 +103,7 @@
     <div><a class="xref" href="Langly.IReplace-3.html">IReplace</a>&lt;TElement, TElement, <a class="xref" href="Langly.DataStructures.Lists.Chain-1.html">Chain</a>&lt;TElement&gt;&gt;</div>
     <div><a class="xref" href="Langly.ISequenceBidi-2.html">ISequenceBidi</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.Lists.Chain-1.Enumerator.html">Chain.Enumerator</a>&lt;&gt;&gt;</div>
     <div><a class="xref" href="Langly.ISequence-2.html">ISequence</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.Lists.Chain-1.Enumerator.html">Chain.Enumerator</a>&lt;&gt;&gt;</div>
+    <div><a class="xref" href="Langly.IContains-1.html">IContains</a>&lt;TElement&gt;</div>
     <div><a class="xref" href="Langly.ICount.html">ICount</a></div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TElement&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
@@ -126,6 +127,9 @@
     </div>
     <div>
       <a class="xref" href="Langly.DataStructures.DataStructure-3.html#Langly_DataStructures_DataStructure_3_ToString">DataStructure&lt;TElement, Chain&lt;TElement&gt;, Chain&lt;TElement&gt;.Enumerator&gt;.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.DataStructures.DataStructure-3.html#Langly_DataStructures_DataStructure_3_Langly_IContains_TElement__Contains__0_">DataStructure&lt;TElement, Chain&lt;TElement&gt;, Chain&lt;TElement&gt;.Enumerator&gt;.IContains&lt;TElement&gt;.Contains(TElement)</a>
     </div>
     <div>
       <a class="xref" href="Langly.Record-1.html#Langly_Record_1_Equals__0_">Record&lt;Chain&lt;TElement&gt;&gt;.Equals(Chain&lt;TElement&gt;)</a>
@@ -159,7 +163,7 @@
   <h6><strong>Assembly</strong>: Langly.Core.dll</h6>
   <h5 id="Langly_DataStructures_Lists_Chain_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class Chain&lt;TElement&gt; : DataStructure&lt;TElement, Chain&lt;TElement&gt;, Chain&lt;TElement&gt;.Enumerator&gt;, IEquals&lt;Chain&lt;TElement&gt;&gt;, IEquatable&lt;Chain&lt;TElement&gt;&gt;, IEquals&lt;IEquals&lt;Chain&lt;TElement&gt;&gt;&gt;, IEquatable&lt;IEquals&lt;Chain&lt;TElement&gt;&gt;&gt;, IAdd&lt;TElement, Chain&lt;TElement&gt;&gt;, IConcat&lt;TElement, Chain&lt;TElement&gt;&gt;, IPostpend&lt;TElement, Chain&lt;TElement&gt;&gt;, IPrepend&lt;TElement, Chain&lt;TElement&gt;&gt;, IIndex&lt;TElement&gt;, IIndex&lt;nint, TElement&gt;, IIndexReadOnly&lt;TElement&gt;, IIndexReadOnly&lt;nint, TElement&gt;, IInsert&lt;TElement, Chain&lt;TElement&gt;&gt;, IInsert&lt;nint, TElement, Chain&lt;TElement&gt;&gt;, IReplace&lt;TElement, Chain&lt;TElement&gt;&gt;, IReplace&lt;TElement, TElement, Chain&lt;TElement&gt;&gt;, ISequenceBidi&lt;TElement, Chain&lt;TElement&gt;.Enumerator&gt;, ISequence&lt;TElement, Chain&lt;TElement&gt;.Enumerator&gt;, ICount, IEnumerable&lt;TElement&gt;, IEnumerable</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class Chain&lt;TElement&gt; : DataStructure&lt;TElement, Chain&lt;TElement&gt;, Chain&lt;TElement&gt;.Enumerator&gt;, IEquals&lt;Chain&lt;TElement&gt;&gt;, IEquatable&lt;Chain&lt;TElement&gt;&gt;, IEquals&lt;IEquals&lt;Chain&lt;TElement&gt;&gt;&gt;, IEquatable&lt;IEquals&lt;Chain&lt;TElement&gt;&gt;&gt;, IAdd&lt;TElement, Chain&lt;TElement&gt;&gt;, IConcat&lt;TElement, Chain&lt;TElement&gt;&gt;, IPostpend&lt;TElement, Chain&lt;TElement&gt;&gt;, IPrepend&lt;TElement, Chain&lt;TElement&gt;&gt;, IIndex&lt;TElement&gt;, IIndex&lt;nint, TElement&gt;, IIndexReadOnly&lt;TElement&gt;, IIndexReadOnly&lt;nint, TElement&gt;, IInsert&lt;TElement, Chain&lt;TElement&gt;&gt;, IInsert&lt;nint, TElement, Chain&lt;TElement&gt;&gt;, IReplace&lt;TElement, Chain&lt;TElement&gt;&gt;, IReplace&lt;TElement, TElement, Chain&lt;TElement&gt;&gt;, ISequenceBidi&lt;TElement, Chain&lt;TElement&gt;.Enumerator&gt;, ISequence&lt;TElement, Chain&lt;TElement&gt;.Enumerator&gt;, IContains&lt;TElement&gt;, ICount, IEnumerable&lt;TElement&gt;, IEnumerable</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -209,8 +213,7 @@
   </span>
   <a id="Langly_DataStructures_Lists_Chain_1_Item_" data-uid="Langly.DataStructures.Lists.Chain`1.Item*"></a>
   <h4 id="Langly_DataStructures_Lists_Chain_1_Item_nint_" data-uid="Langly.DataStructures.Lists.Chain`1.Item(nint)">Item[nint]</h4>
-  <div class="markdown level1 summary"><p>Gets  the element at the specified index.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -244,8 +247,7 @@
     <tbody>
       <tr>
         <td><span class="xref">TElement</span></td>
-        <td><p>The element at the specified index.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -260,8 +262,7 @@
   </span>
   <a id="Langly_DataStructures_Lists_Chain_1_GetEnumerator_" data-uid="Langly.DataStructures.Lists.Chain`1.GetEnumerator*"></a>
   <h4 id="Langly_DataStructures_Lists_Chain_1_GetEnumerator" data-uid="Langly.DataStructures.Lists.Chain`1.GetEnumerator">GetEnumerator()</h4>
-  <div class="markdown level1 summary"><p>Returns an enumerator that iterates through the sequence.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -278,8 +279,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Langly.DataStructures.Lists.Chain-1.Enumerator.html">Chain.Enumerator</a>&lt;&gt;</td>
-        <td><p>An enumerator that can be used to iterate through the collection.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -294,8 +294,7 @@
   </span>
   <a id="Langly_DataStructures_Lists_Chain_1_Reverse_" data-uid="Langly.DataStructures.Lists.Chain`1.Reverse*"></a>
   <h4 id="Langly_DataStructures_Lists_Chain_1_Reverse" data-uid="Langly.DataStructures.Lists.Chain`1.Reverse">Reverse()</h4>
-  <div class="markdown level1 summary"><p>Gets a view of the members of this collection in reverse order.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -327,8 +326,7 @@
   </span>
   <a id="Langly_DataStructures_Lists_Chain_1_Langly_IAdd_TElement_Langly_DataStructures_Lists_Chain_TElement___Add_" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#IAdd{TElement,Langly#DataStructures#Lists#Chain{TElement}}#Add*"></a>
   <h4 id="Langly_DataStructures_Lists_Chain_1_Langly_IAdd_TElement_Langly_DataStructures_Lists_Chain_TElement___Add__0_" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#IAdd{TElement,Langly#DataStructures#Lists#Chain{TElement}}#Add(`0)">IAdd&lt;TElement, Chain&lt;TElement&gt;&gt;.Add(TElement)</h4>
-  <div class="markdown level1 summary"><p>Adds an element to this object.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -347,8 +345,7 @@
       <tr>
         <td><span class="xref">TElement</span></td>
         <td><span class="parametername">element</span></td>
-        <td><p>The element to add.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -367,9 +364,6 @@
       </tr>
     </tbody>
   </table>
-  <h5 id="Langly_DataStructures_Lists_Chain_1_Langly_IAdd_TElement_Langly_DataStructures_Lists_Chain_TElement___Add__0__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Lists_Chain_1_Langly_IAdd_TElement_Langly_DataStructures_Lists_Chain_TElement___Add_System_ReadOnlyMemory__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Lists.Chain%601.Langly%23IAdd%7BTElement%2CLangly%23DataStructures%23Lists%23Chain%7BTElement%7D%7D%23Add(System.ReadOnlyMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -379,8 +373,7 @@
   </span>
   <a id="Langly_DataStructures_Lists_Chain_1_Langly_IAdd_TElement_Langly_DataStructures_Lists_Chain_TElement___Add_" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#IAdd{TElement,Langly#DataStructures#Lists#Chain{TElement}}#Add*"></a>
   <h4 id="Langly_DataStructures_Lists_Chain_1_Langly_IAdd_TElement_Langly_DataStructures_Lists_Chain_TElement___Add_System_ReadOnlyMemory__0__" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#IAdd{TElement,Langly#DataStructures#Lists#Chain{TElement}}#Add(System.ReadOnlyMemory{`0})">IAdd&lt;TElement, Chain&lt;TElement&gt;&gt;.Add(ReadOnlyMemory&lt;TElement&gt;)</h4>
-  <div class="markdown level1 summary"><p>Adds the elements to this object.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -399,8 +392,7 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
-        <td><p>The elements to add.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -419,9 +411,6 @@
       </tr>
     </tbody>
   </table>
-  <h5 id="Langly_DataStructures_Lists_Chain_1_Langly_IAdd_TElement_Langly_DataStructures_Lists_Chain_TElement___Add_System_ReadOnlyMemory__0___remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Lists_Chain_1_Langly_IInsert_nint_TElement_Langly_DataStructures_Lists_Chain_TElement___Insert_nint__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Lists.Chain%601.Langly%23IInsert%7Bnint%2CTElement%2CLangly%23DataStructures%23Lists%23Chain%7BTElement%7D%7D%23Insert(nint%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -431,8 +420,7 @@
   </span>
   <a id="Langly_DataStructures_Lists_Chain_1_Langly_IInsert_nint_TElement_Langly_DataStructures_Lists_Chain_TElement___Insert_" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#IInsert{nint,TElement,Langly#DataStructures#Lists#Chain{TElement}}#Insert*"></a>
   <h4 id="Langly_DataStructures_Lists_Chain_1_Langly_IInsert_nint_TElement_Langly_DataStructures_Lists_Chain_TElement___Insert_nint__0_" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#IInsert{nint,TElement,Langly#DataStructures#Lists#Chain{TElement}}#Insert(nint,`0)">IInsert&lt;nint, TElement, Chain&lt;TElement&gt;&gt;.Insert(nint, TElement)</h4>
-  <div class="markdown level1 summary"><p>Insert an element into the collection at the specified index.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -456,8 +444,7 @@
       <tr>
         <td><span class="xref">TElement</span></td>
         <td><span class="parametername">element</span></td>
-        <td><p>The element to insert.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -472,8 +459,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Langly.DataStructures.Lists.Chain-1.html">Chain</a>&lt;TElement&gt;</td>
-        <td><p>The result of inserting the element.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -486,8 +472,7 @@
   </span>
   <a id="Langly_DataStructures_Lists_Chain_1_Langly_IInsert_nint_TElement_Langly_DataStructures_Lists_Chain_TElement___Insert_" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#IInsert{nint,TElement,Langly#DataStructures#Lists#Chain{TElement}}#Insert*"></a>
   <h4 id="Langly_DataStructures_Lists_Chain_1_Langly_IInsert_nint_TElement_Langly_DataStructures_Lists_Chain_TElement___Insert_nint_System_ReadOnlyMemory__0__" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#IInsert{nint,TElement,Langly#DataStructures#Lists#Chain{TElement}}#Insert(nint,System.ReadOnlyMemory{`0})">IInsert&lt;nint, TElement, Chain&lt;TElement&gt;&gt;.Insert(nint, ReadOnlyMemory&lt;TElement&gt;)</h4>
-  <div class="markdown level1 summary"><p>Inserts the elements into the collection at the specified index.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -511,8 +496,7 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
-        <td><p>The elements to insert.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -527,8 +511,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Langly.DataStructures.Lists.Chain-1.html">Chain</a>&lt;TElement&gt;</td>
-        <td><p>The result of inserting the elements.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -541,8 +524,7 @@
   </span>
   <a id="Langly_DataStructures_Lists_Chain_1_Langly_IPostpend_TElement_Langly_DataStructures_Lists_Chain_TElement___Postpend_" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#IPostpend{TElement,Langly#DataStructures#Lists#Chain{TElement}}#Postpend*"></a>
   <h4 id="Langly_DataStructures_Lists_Chain_1_Langly_IPostpend_TElement_Langly_DataStructures_Lists_Chain_TElement___Postpend__0_" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#IPostpend{TElement,Langly#DataStructures#Lists#Chain{TElement}}#Postpend(`0)">IPostpend&lt;TElement, Chain&lt;TElement&gt;&gt;.Postpend(TElement)</h4>
-  <div class="markdown level1 summary"><p>Postpends the element onto this object.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -561,8 +543,7 @@
       <tr>
         <td><span class="xref">TElement</span></td>
         <td><span class="parametername">element</span></td>
-        <td><p>The element to postpend.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -577,8 +558,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Langly.DataStructures.Lists.Chain-1.html">Chain</a>&lt;TElement&gt;</td>
-        <td><p>The result of postpending the element.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -591,8 +571,7 @@
   </span>
   <a id="Langly_DataStructures_Lists_Chain_1_Langly_IPostpend_TElement_Langly_DataStructures_Lists_Chain_TElement___Postpend_" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#IPostpend{TElement,Langly#DataStructures#Lists#Chain{TElement}}#Postpend*"></a>
   <h4 id="Langly_DataStructures_Lists_Chain_1_Langly_IPostpend_TElement_Langly_DataStructures_Lists_Chain_TElement___Postpend_System_ReadOnlyMemory__0__" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#IPostpend{TElement,Langly#DataStructures#Lists#Chain{TElement}}#Postpend(System.ReadOnlyMemory{`0})">IPostpend&lt;TElement, Chain&lt;TElement&gt;&gt;.Postpend(ReadOnlyMemory&lt;TElement&gt;)</h4>
-  <div class="markdown level1 summary"><p>Postpends the elements onto this object.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -611,8 +590,7 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
-        <td><p>The elements to postpend.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -627,8 +605,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Langly.DataStructures.Lists.Chain-1.html">Chain</a>&lt;TElement&gt;</td>
-        <td><p>The result of postpending the elements.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -641,8 +618,7 @@
   </span>
   <a id="Langly_DataStructures_Lists_Chain_1_Langly_IPostpend_TElement_Langly_DataStructures_Lists_Chain_TElement___Postpend_" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#IPostpend{TElement,Langly#DataStructures#Lists#Chain{TElement}}#Postpend*"></a>
   <h4 id="Langly_DataStructures_Lists_Chain_1_Langly_IPostpend_TElement_Langly_DataStructures_Lists_Chain_TElement___Postpend_System_ReadOnlySpan__0__" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#IPostpend{TElement,Langly#DataStructures#Lists#Chain{TElement}}#Postpend(System.ReadOnlySpan{`0})">IPostpend&lt;TElement, Chain&lt;TElement&gt;&gt;.Postpend(ReadOnlySpan&lt;TElement&gt;)</h4>
-  <div class="markdown level1 summary"><p>Postpends the elements onto this object.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -661,8 +637,7 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
-        <td><p>The elements to postpend.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -677,8 +652,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Langly.DataStructures.Lists.Chain-1.html">Chain</a>&lt;TElement&gt;</td>
-        <td><p>The result of postpending the elements.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -691,8 +665,7 @@
   </span>
   <a id="Langly_DataStructures_Lists_Chain_1_Langly_IPrepend_TElement_Langly_DataStructures_Lists_Chain_TElement___Prepend_" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#IPrepend{TElement,Langly#DataStructures#Lists#Chain{TElement}}#Prepend*"></a>
   <h4 id="Langly_DataStructures_Lists_Chain_1_Langly_IPrepend_TElement_Langly_DataStructures_Lists_Chain_TElement___Prepend__0_" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#IPrepend{TElement,Langly#DataStructures#Lists#Chain{TElement}}#Prepend(`0)">IPrepend&lt;TElement, Chain&lt;TElement&gt;&gt;.Prepend(TElement)</h4>
-  <div class="markdown level1 summary"><p>Prepends the element onto this object.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -711,8 +684,7 @@
       <tr>
         <td><span class="xref">TElement</span></td>
         <td><span class="parametername">element</span></td>
-        <td><p>The element to prepend.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -727,8 +699,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Langly.DataStructures.Lists.Chain-1.html">Chain</a>&lt;TElement&gt;</td>
-        <td><p>The result of prepending the element.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -741,8 +712,7 @@
   </span>
   <a id="Langly_DataStructures_Lists_Chain_1_Langly_IPrepend_TElement_Langly_DataStructures_Lists_Chain_TElement___Prepend_" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#IPrepend{TElement,Langly#DataStructures#Lists#Chain{TElement}}#Prepend*"></a>
   <h4 id="Langly_DataStructures_Lists_Chain_1_Langly_IPrepend_TElement_Langly_DataStructures_Lists_Chain_TElement___Prepend_System_ReadOnlyMemory__0__" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#IPrepend{TElement,Langly#DataStructures#Lists#Chain{TElement}}#Prepend(System.ReadOnlyMemory{`0})">IPrepend&lt;TElement, Chain&lt;TElement&gt;&gt;.Prepend(ReadOnlyMemory&lt;TElement&gt;)</h4>
-  <div class="markdown level1 summary"><p>Prepends the elements onto this object.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -761,8 +731,7 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
-        <td><p>The elements to prepend.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -777,8 +746,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Langly.DataStructures.Lists.Chain-1.html">Chain</a>&lt;TElement&gt;</td>
-        <td><p>The result of prepending the elements.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -791,8 +759,7 @@
   </span>
   <a id="Langly_DataStructures_Lists_Chain_1_Langly_IPrepend_TElement_Langly_DataStructures_Lists_Chain_TElement___Prepend_" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#IPrepend{TElement,Langly#DataStructures#Lists#Chain{TElement}}#Prepend*"></a>
   <h4 id="Langly_DataStructures_Lists_Chain_1_Langly_IPrepend_TElement_Langly_DataStructures_Lists_Chain_TElement___Prepend_System_ReadOnlySpan__0__" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#IPrepend{TElement,Langly#DataStructures#Lists#Chain{TElement}}#Prepend(System.ReadOnlySpan{`0})">IPrepend&lt;TElement, Chain&lt;TElement&gt;&gt;.Prepend(ReadOnlySpan&lt;TElement&gt;)</h4>
-  <div class="markdown level1 summary"><p>Prepends the elements onto this object.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -811,8 +778,7 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
-        <td><p>The elements to prepend.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -827,8 +793,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Langly.DataStructures.Lists.Chain-1.html">Chain</a>&lt;TElement&gt;</td>
-        <td><p>The result of prepending the elements.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -841,8 +806,7 @@
   </span>
   <a id="Langly_DataStructures_Lists_Chain_1_Langly_IReplace_TElement_TElement_Langly_DataStructures_Lists_Chain_TElement___Replace_" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#IReplace{TElement,TElement,Langly#DataStructures#Lists#Chain{TElement}}#Replace*"></a>
   <h4 id="Langly_DataStructures_Lists_Chain_1_Langly_IReplace_TElement_TElement_Langly_DataStructures_Lists_Chain_TElement___Replace__0__0_" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#IReplace{TElement,TElement,Langly#DataStructures#Lists#Chain{TElement}}#Replace(`0,`0)">IReplace&lt;TElement, TElement, Chain&lt;TElement&gt;&gt;.Replace(TElement, TElement)</h4>
-  <div class="markdown level1 summary"><p>Replaces all instances of <code data-dev-comment-type="paramref" class="paramref">search</code> with <code data-dev-comment-type="paramref" class="paramref">replace</code>.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -881,8 +845,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Langly.DataStructures.Lists.Chain-1.html">Chain</a>&lt;TElement&gt;</td>
-        <td><p>The result of replacing <code data-dev-comment-type="paramref" class="paramref">search</code> with <code data-dev-comment-type="paramref" class="paramref">replace</code>.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -942,6 +905,9 @@
       <a class="xref" href="Langly.ISequence-2.html">ISequence&lt;TMember, TEnumerator&gt;</a>
   </div>
   <div>
+      <a class="xref" href="Langly.IContains-1.html">IContains&lt;TElement&gt;</a>
+  </div>
+  <div>
       <a class="xref" href="Langly.ICount.html">ICount</a>
   </div>
   <div>
@@ -971,6 +937,9 @@
   </div>
   <div>
       <a class="xref" href="Langly.CoreExtensions.html#Langly_CoreExtensions_Add__3_Langly_IAdd___0___2__Langly_ISequence___0___1__">CoreExtensions.Add&lt;TElement, TEnumerator, TResult&gt;(IAdd&lt;TElement, TResult&gt;, ISequence&lt;TElement, TEnumerator&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.CoreExtensions.html#Langly_CoreExtensions_Contains__1_Langly_IContains___0____0_">CoreExtensions.Contains&lt;TElement&gt;(IContains&lt;TElement&gt;, TElement)</a>
   </div>
   <div>
       <a class="xref" href="Langly.CoreExtensions.html#Langly_CoreExtensions_IndexOfFirst__1_Langly_IIndexReadOnly___0____0_">CoreExtensions.IndexOfFirst&lt;TElement&gt;(IIndexReadOnly&lt;TElement&gt;, TElement)</a>

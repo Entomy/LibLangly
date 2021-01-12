@@ -91,6 +91,7 @@
     <div><a class="xref" href="Langly.IEquals-1.html">IEquals</a>&lt;<a class="xref" href="Langly.IEquals-1.html">IEquals</a>&lt;TSelf&gt;&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Langly.IEquals-1.html">IEquals</a>&lt;TSelf&gt;&gt;</div>
     <div><a class="xref" href="Langly.ISequence-2.html">ISequence</a>&lt;TElement, TEnumerator&gt;</div>
+    <div><a class="xref" href="Langly.IContains-1.html">IContains</a>&lt;TElement&gt;</div>
     <div><a class="xref" href="Langly.ICount.html">ICount</a></div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TElement&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
@@ -123,7 +124,7 @@
   <h6><strong>Assembly</strong>: Langly.Core.dll</h6>
   <h5 id="Langly_DataStructures_DataStructure_3_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class DataStructure&lt;TElement, TSelf, TEnumerator&gt; : Record&lt;TSelf&gt;, IEquals&lt;TSelf&gt;, IEquatable&lt;TSelf&gt;, IEquals&lt;IEquals&lt;TSelf&gt;&gt;, IEquatable&lt;IEquals&lt;TSelf&gt;&gt;, ISequence&lt;TElement, TEnumerator&gt;, ICount, IEnumerable&lt;TElement&gt;, IEnumerable where TSelf : DataStructure&lt;TElement, TSelf, TEnumerator&gt; where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class DataStructure&lt;TElement, TSelf, TEnumerator&gt; : Record&lt;TSelf&gt;, IEquals&lt;TSelf&gt;, IEquatable&lt;TSelf&gt;, IEquals&lt;IEquals&lt;TSelf&gt;&gt;, IEquatable&lt;IEquals&lt;TSelf&gt;&gt;, ISequence&lt;TElement, TEnumerator&gt;, IContains&lt;TElement&gt;, ICount, IEnumerable&lt;TElement&gt;, IEnumerable where TSelf : DataStructure&lt;TElement, TSelf, TEnumerator&gt; where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -165,8 +166,7 @@
   </span>
   <a id="Langly_DataStructures_DataStructure_3_Count_" data-uid="Langly.DataStructures.DataStructure`3.Count*"></a>
   <h4 id="Langly_DataStructures_DataStructure_3_Count" data-uid="Langly.DataStructures.DataStructure`3.Count">Count</h4>
-  <div class="markdown level1 summary"><p>Gets the number of elements contained in the collection.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -198,8 +198,7 @@
   </span>
   <a id="Langly_DataStructures_DataStructure_3_Equals_" data-uid="Langly.DataStructures.DataStructure`3.Equals*"></a>
   <h4 id="Langly_DataStructures_DataStructure_3_Equals__1_" data-uid="Langly.DataStructures.DataStructure`3.Equals(`1)">Equals(TSelf)</h4>
-  <div class="markdown level1 summary"><p>Determines if the two values are equal.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -218,8 +217,7 @@
       <tr>
         <td><span class="xref">TSelf</span></td>
         <td><span class="parametername">other</span></td>
-        <td><p>The other value.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -234,8 +232,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p><span class="xref">true</span> if the two values are equal; otherwise, <span class="xref">false</span>.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -256,6 +253,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool Equals&lt;TOtherEnumerator&gt;(ISequence&lt;TElement, TOtherEnumerator&gt; other)
+
     where TOtherEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -323,6 +321,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool Equals&lt;TOtherEnumerator&gt;(ISequence&lt;IEquals&lt;TElement&gt;, TOtherEnumerator&gt; other)
+
     where TOtherEnumerator : IEnumerator&lt;IEquals&lt;TElement&gt;&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -384,8 +383,7 @@
   </span>
   <a id="Langly_DataStructures_DataStructure_3_GetEnumerator_" data-uid="Langly.DataStructures.DataStructure`3.GetEnumerator*"></a>
   <h4 id="Langly_DataStructures_DataStructure_3_GetEnumerator" data-uid="Langly.DataStructures.DataStructure`3.GetEnumerator">GetEnumerator()</h4>
-  <div class="markdown level1 summary"><p>Returns an enumerator that iterates through the sequence.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -402,8 +400,7 @@
     <tbody>
       <tr>
         <td><span class="xref">TEnumerator</span></td>
-        <td><p>An enumerator that can be used to iterate through the collection.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -553,6 +550,55 @@
       </tr>
     </tbody>
   </table>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_DataStructure_3_Langly_IContains_TElement__Contains__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.DataStructure%603.Langly%23IContains%7BTElement%7D%23Contains(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Core/DataStructures/DataStructure`3.cs/#L143">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_DataStructure_3_Langly_IContains_TElement__Contains_" data-uid="Langly.DataStructures.DataStructure`3.Langly#IContains{TElement}#Contains*"></a>
+  <h4 id="Langly_DataStructures_DataStructure_3_Langly_IContains_TElement__Contains__0_" data-uid="Langly.DataStructures.DataStructure`3.Langly#IContains{TElement}#Contains(`0)">IContains&lt;TElement&gt;.Contains(TElement)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IContains&lt;TElement&gt;.Contains(TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="Langly.IEquals-1.html">IEquals&lt;TElement&gt;</a>
@@ -570,6 +616,9 @@
       <a class="xref" href="Langly.ISequence-2.html">ISequence&lt;TMember, TEnumerator&gt;</a>
   </div>
   <div>
+      <a class="xref" href="Langly.IContains-1.html">IContains&lt;TElement&gt;</a>
+  </div>
+  <div>
       <a class="xref" href="Langly.ICount.html">ICount</a>
   </div>
   <div>
@@ -579,6 +628,9 @@
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">System.Collections.IEnumerable</a>
   </div>
   <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Langly.CoreExtensions.html#Langly_CoreExtensions_Contains__1_Langly_IContains___0____0_">CoreExtensions.Contains&lt;TElement&gt;(IContains&lt;TElement&gt;, TElement)</a>
+  </div>
   <div>
       <a class="xref" href="Langly.CoreExtensions.html#Langly_CoreExtensions_Fold__2_Langly_ISequence___0___1__System_Func___0___0___0____0_">CoreExtensions.Fold&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Func&lt;TElement, TElement, TElement&gt;, TElement)</a>
   </div>

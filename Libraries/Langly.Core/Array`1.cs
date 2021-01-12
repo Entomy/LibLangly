@@ -51,6 +51,12 @@ namespace Langly {
 		ref readonly TElement IIndexRefReadOnly<nint, TElement>.this[nint index] => ref this[index];
 
 		/// <summary>
+		/// Initializes  a new <see cref="Array{TElement}"/> with the given <paramref name="elements"/>.
+		/// </summary>
+		/// <param name="elements">The elements of the array.</param>
+		public static implicit operator Array<TElement>([AllowNull] TElement[] elements) => elements is not null ? new Array<TElement>(elements) : new Array<TElement>(Memory<TElement>.Empty);
+
+		/// <summary>
 		/// Initializes a new <see cref="Array{TElement}"/> with the given <paramref name="memory"/>.
 		/// </summary>
 		/// <param name="memory">The backing memory of the array.</param>

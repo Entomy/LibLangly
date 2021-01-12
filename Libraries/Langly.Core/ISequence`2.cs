@@ -10,21 +10,23 @@ namespace Langly {
 	/// <remarks>
 	/// This interface devirtualizes the enumerator, and simplifies numerous parts of the interface through well defined defaults.
 	/// </remarks>
-	public interface ISequence<TMember, out TEnumerator> : ICount, System.Collections.Generic.IEnumerable<TMember> where TEnumerator : IEnumerator<TMember> {
-		/// <summary>
-		/// Returns an enumerator that iterates through the sequence.
-		/// </summary>
-		/// <returns>An enumerator that can be used to iterate through the collection.</returns>
-		[return: NotNull]
-		new TEnumerator GetEnumerator();
-
+	public interface ISequence<TMember, out TEnumerator> :
+		IContains<TMember>,
+		ICount,
+		System.Collections.Generic.IEnumerable<TMember>
+		where TEnumerator : IEnumerator<TMember> {
 		/// <inheritdoc/>
-		[return: NotNull]
-		System.Collections.Generic.IEnumerator<TMember> System.Collections.Generic.IEnumerable<TMember>.GetEnumerator() => GetEnumerator();
-
-		/// <inheritdoc/>
-		[return: NotNull]
-		System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() => GetEnumerator();
+		Boolean IContains<TMember>.Contains(TMember element) {
+			TEnumerator ths = GetEnumerator();
+			while (ths.MoveNext()) {
+				if (ths.Current is null && element is null) {
+					return true;
+				} else if (element?.Equals(ths.Current) ?? false) {
+					return true;
+				}
+			}
+			return false;
+		}
 
 		/// <summary>
 		/// Folds the collection into a single element as described by <paramref name="func"/>.
@@ -44,6 +46,20 @@ namespace Langly {
 			return result;
 		}
 
+		/// <summary>
+		/// Returns an enumerator that iterates through the sequence.
+		/// </summary>
+		/// <returns>An enumerator that can be used to iterate through the collection.</returns>
+		[return: NotNull]
+		new TEnumerator GetEnumerator();
+
+		/// <inheritdoc/>
+		[return: NotNull]
+		System.Collections.Generic.IEnumerator<TMember> System.Collections.Generic.IEnumerable<TMember>.GetEnumerator() => GetEnumerator();
+
+		/// <inheritdoc/>
+		[return: NotNull]
+		System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() => GetEnumerator();
 		/// <summary>
 		/// Count all occurrences of <paramref name="element"/> in the collection.
 		/// </summary>

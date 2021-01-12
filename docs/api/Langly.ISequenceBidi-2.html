@@ -79,6 +79,12 @@
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
+      <a class="xref" href="Langly.ISequence-2.html#Langly_ISequence_2_Langly_IContains_TMember__Contains__0_">ISequence&lt;TMember, TEnumerator&gt;.IContains&lt;TMember&gt;.Contains(TMember)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.ISequence-2.html#Langly_ISequence_2_Fold_System_Func__0__0__0___0_">ISequence&lt;TMember, TEnumerator&gt;.Fold(Func&lt;TMember, TMember, TMember&gt;, TMember)</a>
+    </div>
+    <div>
       <a class="xref" href="Langly.ISequence-2.html#Langly_ISequence_2_GetEnumerator">ISequence&lt;TMember, TEnumerator&gt;.GetEnumerator()</a>
     </div>
     <div>
@@ -88,9 +94,6 @@
       <a class="xref" href="Langly.ISequence-2.html#Langly_ISequence_2_System_Collections_IEnumerable_GetEnumerator">ISequence&lt;TMember, TEnumerator&gt;.IEnumerable.GetEnumerator()</a>
     </div>
     <div>
-      <a class="xref" href="Langly.ISequence-2.html#Langly_ISequence_2_Fold_System_Func__0__0__0___0_">ISequence&lt;TMember, TEnumerator&gt;.Fold(Func&lt;TMember, TMember, TMember&gt;, TMember)</a>
-    </div>
-    <div>
       <a class="xref" href="Langly.ISequence-2.html#Langly_ISequence_2_Occurrences__0_">ISequence&lt;TMember, TEnumerator&gt;.Occurrences(TMember)</a>
     </div>
     <div>
@@ -98,6 +101,9 @@
     </div>
     <div>
       <a class="xref" href="Langly.ISequence-2.html#Langly_ISequence_2_Occurrences_System_Predicate__0__">ISequence&lt;TMember, TEnumerator&gt;.Occurrences(Predicate&lt;TMember&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.IContains-1.html#Langly_IContains_1_Contains__0_">IContains&lt;TMember&gt;.Contains(TMember)</a>
     </div>
     <div>
       <a class="xref" href="Langly.ICount.html#Langly_ICount_Count">ICount.Count</a>
@@ -110,7 +116,7 @@
   <h6><strong>Assembly</strong>: Langly.Core.dll</h6>
   <h5 id="Langly_ISequenceBidi_2_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface ISequenceBidi&lt;TMember, TEnumerator&gt; : ISequence&lt;TMember, TEnumerator&gt;, ICount, IEnumerable&lt;TMember&gt;, IEnumerable where TEnumerator : IEnumeratorBidi&lt;TMember&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public interface ISequenceBidi&lt;TMember, TEnumerator&gt; : ISequence&lt;TMember, TEnumerator&gt;, IContains&lt;TMember&gt;, ICount, IEnumerable&lt;TMember&gt;, IEnumerable where TEnumerator : IEnumeratorBidi&lt;TMember&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -170,6 +176,9 @@
     </tbody>
   </table>
   <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Langly.CoreExtensions.html#Langly_CoreExtensions_Contains__1_Langly_IContains___0____0_">CoreExtensions.Contains&lt;TElement&gt;(IContains&lt;TElement&gt;, TElement)</a>
+  </div>
   <div>
       <a class="xref" href="Langly.CoreExtensions.html#Langly_CoreExtensions_Fold__2_Langly_ISequence___0___1__System_Func___0___0___0____0_">CoreExtensions.Fold&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Func&lt;TElement, TElement, TElement&gt;, TElement)</a>
   </div>

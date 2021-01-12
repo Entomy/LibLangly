@@ -1,9 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <DirectedGraph GraphDirection="TopToBottom" Layout="Sugiyama" ZoomLevel="-1" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
   <Nodes>
-    <Node Id="Core" Bounds="83.5466666666666,0,50,25.96" ErrorMessage="Unreferenced node detected:Core (Core)" IsUnreferenced="True" />
+    <Node Id="Core" Bounds="0,0,50,25.96" ErrorMessage="Unreferenced node detected:Core (Core)" IsUnreferenced="True" />
+    <Node Id="Sets" Bounds="7.105427357601E-15,55.96,50,25.96" />
   </Nodes>
-  <Links />
+  <Links>
+    <Link Source="Core" Target="Sets" Bounds="25,25.9599990844727,0,21" />
+  </Links>
   <Properties>
     <Property Id="Bounds" DataType="System.Windows.Rect" />
     <Property Id="ErrorMessage" Label="Error" Description="Error" DataType="System.String" />
