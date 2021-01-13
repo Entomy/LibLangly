@@ -1,11 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <DirectedGraph GraphDirection="TopToBottom" Layout="Sugiyama" ZoomLevel="-1" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
   <Nodes>
-    <Node Id="Core" Bounds="0,0,50,25.96" ErrorMessage="Unreferenced node detected:Core (Core)" IsUnreferenced="True" />
+    <Node Id="Core" Bounds="91,0,50,25.96" ErrorMessage="Node 'Core' has a hub value of 100." Hub="100" IsUnreferenced="True" />
+    <Node Id="Numerics" Bounds="80.9516666666667,55.96,70.0966666666667,25.96" />
     <Node Id="Sets" Bounds="7.105427357601E-15,55.96,50,25.96" />
+    <Node Id="Stacks" Bounds="181.62,55.96,52.76,25.96" />
   </Nodes>
   <Links>
-    <Link Source="Core" Target="Sets" Bounds="25,25.9599990844727,0,21" />
+    <Link Source="Core" Target="Numerics" Bounds="116,25.9599990844727,0,21" />
+    <Link Source="Core" Target="Sets" Bounds="53.7740058898926,25.9599990844727,41.1184196472168,25.2855682373047" />
+    <Link Source="Core" Target="Stacks" Bounds="137.33952331543,25.9599990844727,41.6316833496094,25.3229179382324" />
   </Links>
   <Properties>
     <Property Id="Bounds" DataType="System.Windows.Rect" />
@@ -13,6 +17,7 @@
     <Property Id="Expression" DataType="System.String" />
     <Property Id="GraphDirection" DataType="Microsoft.VisualStudio.Diagrams.Layout.LayoutOrientation" />
     <Property Id="GroupLabel" DataType="System.String" />
+    <Property Id="Hub" Label="Hub" Description="Node is in the top 10% of highly connected nodes" DataType="System.Int32" />
     <Property Id="IsEnabled" DataType="System.Boolean" />
     <Property Id="IsUnreferenced" Label="Unreferenced" Description="Node has no links pointing to it from other nodes in the graph" DataType="System.Boolean" />
     <Property Id="Layout" DataType="System.String" />

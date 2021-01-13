@@ -9,6 +9,7 @@ using System.Diagnostics.CodeAnalysis;
 [assembly: SuppressMessage("Maintainability", "AV1535:Missing block in case or default clause of switch statement", Justification = "Case's are already blocks, making this superfluous.")]
 [assembly: SuppressMessage("Maintainability", "AV1537:If-else-if construct should end with an unconditional else clause", Justification = "This is too context insensitive. Either approach may be fine.")]
 [assembly: SuppressMessage("Maintainability", "AV1551:Method overload should call another overload", Justification = "Typically, what's being done is these are extension methods calling an instance method. This will have to be reviewed by a human since the analyzer doesn't like this pattern.")]
+[assembly: SuppressMessage("Maintainability", "AV1562:Do not declare a parameter as ref or out", Justification = "I don't consider this a problem as long as its used reasonably. Strong type or tuple returns should generally be preferred but aren't always appropriate, especially with fluent pipelines.")]
 
 [assembly: SuppressMessage("Style", "CC0001:You should use 'var' whenever possible.", Justification = "No. Explicit is better than implicit.")]
 [assembly: SuppressMessage("Design", "CC0031:Check for null before calling a delegate", Justification = "This analyzer is broken. There are others which do the checks correctly.")]
