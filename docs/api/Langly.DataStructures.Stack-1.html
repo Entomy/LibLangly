@@ -92,7 +92,6 @@
     <div><a class="xref" href="Langly.ISequence-2.html">ISequence</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.Stack-1.Enumerator.html">Stack.Enumerator</a>&lt;&gt;&gt;</div>
     <div><a class="xref" href="Langly.IContains-1.html">IContains</a>&lt;TElement&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TElement&gt;</div>
-    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
     <div><a class="xref" href="Langly.IPeek-2.html">IPeek</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.Stack-1.html">Stack</a>&lt;TElement&gt;&gt;</div>
     <div><a class="xref" href="Langly.IPop-2.html">IPop</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.Stack-1.html">Stack</a>&lt;TElement&gt;&gt;</div>
     <div><a class="xref" href="Langly.ICount.html">ICount</a></div>
@@ -122,6 +121,9 @@
       <a class="xref" href="Langly.DataStructures.DataStructure-3.html#Langly_DataStructures_DataStructure_3_Langly_IContains_TElement__Contains__0_">DataStructure&lt;TElement, Stack&lt;TElement&gt;, Stack&lt;TElement&gt;.Enumerator&gt;.IContains&lt;TElement&gt;.Contains(TElement)</a>
     </div>
     <div>
+      <span class="xref">Langly.Record&lt;Langly.DataStructures.Stack&lt;TElement&gt;&gt;.Equals(System.Object)</span>
+    </div>
+    <div>
       <a class="xref" href="Langly.Record-1.html#Langly_Record_1_Equals__0_">Record&lt;Stack&lt;TElement&gt;&gt;.Equals(Stack&lt;TElement&gt;)</a>
     </div>
     <div>
@@ -130,30 +132,12 @@
     <div>
       <a class="xref" href="Langly.Record-1.html#Langly_Record_1_ToString">Record&lt;Stack&lt;TElement&gt;&gt;.ToString()</a>
     </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_">Object.Equals(Object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_System_Object_">Object.Equals(Object, Object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#System_Object_GetHashCode">Object.GetHashCode()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#System_Object_GetType">Object.GetType()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#System_Object_MemberwiseClone">Object.MemberwiseClone()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#System_Object_ReferenceEquals_System_Object_System_Object_">Object.ReferenceEquals(Object, Object)</a>
-    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Langly.DataStructures.html">Langly.DataStructures</a></h6>
   <h6><strong>Assembly</strong>: Langly.Stacks.dll</h6>
   <h5 id="Langly_DataStructures_Stack_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class Stack&lt;TElement&gt; : DataStructure&lt;TElement, Stack&lt;TElement&gt;, Stack&lt;TElement&gt;.Enumerator&gt;, IEquals&lt;Stack&lt;TElement&gt;&gt;, IEquatable&lt;Stack&lt;TElement&gt;&gt;, IEquals&lt;IEquals&lt;Stack&lt;TElement&gt;&gt;&gt;, IEquatable&lt;IEquals&lt;Stack&lt;TElement&gt;&gt;&gt;, ISequence&lt;TElement, Stack&lt;TElement&gt;.Enumerator&gt;, IContains&lt;TElement&gt;, IEnumerable&lt;TElement&gt;, IEnumerable, IPeek&lt;TElement, Stack&lt;TElement&gt;&gt;, IPop&lt;TElement, Stack&lt;TElement&gt;&gt;, ICount, IPush&lt;TElement, Stack&lt;TElement&gt;&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class Stack&lt;TElement&gt; : DataStructure&lt;TElement, Stack&lt;TElement&gt;, Stack&lt;TElement&gt;.Enumerator&gt;, IEquals&lt;Stack&lt;TElement&gt;&gt;, IEquatable&lt;Stack&lt;TElement&gt;&gt;, IEquals&lt;IEquals&lt;Stack&lt;TElement&gt;&gt;&gt;, IEquatable&lt;IEquals&lt;Stack&lt;TElement&gt;&gt;&gt;, ISequence&lt;TElement, Stack&lt;TElement&gt;.Enumerator&gt;, IContains&lt;TElement&gt;, IEnumerable&lt;TElement&gt;, IPeek&lt;TElement, Stack&lt;TElement&gt;&gt;, IPop&lt;TElement, Stack&lt;TElement&gt;&gt;, ICount, IPush&lt;TElement, Stack&lt;TElement&gt;&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -398,9 +382,6 @@
   </div>
   <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">System.Collections.Generic.IEnumerable&lt;T&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">System.Collections.IEnumerable</a>
   </div>
   <div>
       <a class="xref" href="Langly.IPeek-2.html">IPeek&lt;TElement, TResult&gt;</a>

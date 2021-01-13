@@ -81,35 +81,11 @@
     <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
     <div class="level1"><span class="xref">Set</span></div>
   </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_">Object.Equals(Object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_System_Object_">Object.Equals(Object, Object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#System_Object_GetHashCode">Object.GetHashCode()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#System_Object_GetType">Object.GetType()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#System_Object_MemberwiseClone">Object.MemberwiseClone()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#System_Object_ReferenceEquals_System_Object_System_Object_">Object.ReferenceEquals(Object, Object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString">Object.ToString()</a>
-    </div>
-  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Langly.DataStructures.html">Langly.DataStructures</a></h6>
   <h6><strong>Assembly</strong>: Langly.Sets.dll</h6>
   <h5 id="Langly_DataStructures_Set_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static class Set</code></pre>
+    <pre><code class="lang-csharp hljs">public static class Set : object</code></pre>
   </div>
   <h5 id="Langly_DataStructures_Set_remarks"><strong>Remarks</strong></h5>
   <div class="markdown level0 remarks"><p>These exist as greatly simplified functions for working with sets. Doing it this way allows the entire generic parameter list to be inferred by context.</p>
@@ -579,7 +555,7 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.predicate-1">Predicate</a>&lt;TElement&gt;</td>
         <td><span class="parametername">predicate</span></td>
-        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.predicate-1">Predicate&lt;T&gt;</a> describing the set.</p>
+        <td><p>The <see cref="!:System.Predicate&lt;T>"></see> describing the set.</p>
 </td>
       </tr>
     </tbody>
@@ -618,19 +594,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Set_Range_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Set.Range(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Set_Range_Int32_Int32_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Set.Range(Int32%2CInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Sets/DataStructures/Set.cs/#L99">View Source</a>
   </span>
   <a id="Langly_DataStructures_Set_Range_" data-uid="Langly.DataStructures.Set.Range*"></a>
-  <h4 id="Langly_DataStructures_Set_Range_System_Int32_System_Int32_" data-uid="Langly.DataStructures.Set.Range(System.Int32,System.Int32)">Range(Int32, Int32)</h4>
+  <h4 id="Langly_DataStructures_Set_Range_Int32_Int32_" data-uid="Langly.DataStructures.Set.Range(Int32,Int32)">Range(Int32, Int32)</h4>
   <div class="markdown level1 summary"><p>Creates a set representing the range of <code data-dev-comment-type="paramref" class="paramref">lower</code>..<code data-dev-comment-type="paramref" class="paramref">upper</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Set&lt;int&gt; Range(int lower, int upper)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Set&lt;Int32&gt; Range(Int32 lower, Int32 upper)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -643,13 +619,13 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="xref">Int32</span></td>
         <td><span class="parametername">lower</span></td>
         <td><p>The lower bound.</p>
 </td>
       </tr>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="xref">Int32</span></td>
         <td><span class="parametername">upper</span></td>
         <td><p>The upper bound.</p>
 </td>
@@ -666,7 +642,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Langly.DataStructures.Set-1.html">Set</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a>&gt;</td>
+        <td><a class="xref" href="Langly.DataStructures.Set-1.html">Set</a>&lt;<span class="xref">Int32</span>&gt;</td>
         <td><p>A set representing the range of <code data-dev-comment-type="paramref" class="paramref">lower</code>..<code data-dev-comment-type="paramref" class="paramref">upper</code>.</p>
 </td>
       </tr>
