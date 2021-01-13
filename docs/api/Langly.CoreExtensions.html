@@ -602,7 +602,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Add&lt;TElement, TEnumerator, TResult&gt;(this IAdd&lt;TElement, TResult&gt; collection, ISequence&lt;TElement, TEnumerator&gt; elements)
-
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -793,7 +792,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TElement Fold&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, Func&lt;TElement, TElement, TElement&gt; func, TElement identity)
-
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2302,7 +2300,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TIndex, TElement, TResult, TEnumerator&gt;(this IInsert&lt;TIndex, TElement, TResult&gt; collection, TIndex index, ISequence&lt;TElement, TEnumerator&gt; elements)
-
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2514,7 +2511,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static nint Occurrences&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, TElement element)
-
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2593,7 +2589,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static nint Occurrences&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, IEquals&lt;TElement&gt; element)
-
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2672,7 +2667,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static nint Occurrences&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, Predicate&lt;TElement&gt; match)
-
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4377,7 +4371,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Push&lt;TElement, TResult, TEnumerator&gt;(this IPush&lt;TElement, TResult&gt; collection, ISequence&lt;TElement, TEnumerator&gt; elements)
-
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
