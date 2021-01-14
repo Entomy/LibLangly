@@ -37,6 +37,16 @@ namespace Langly.DataStructures.Lists {
 			}
 
 			/// <inheritdoc/>
+			public override (TIndex Index, TElement Element) this[nint index] {
+				get {
+					if (index != 0) {
+						throw new IndexOutOfRangeException();
+					}
+					return (Index, Element);
+				}
+			}
+
+			/// <inheritdoc/>
 			public override nint Count => 1;
 
 			/// <inheritdoc/>

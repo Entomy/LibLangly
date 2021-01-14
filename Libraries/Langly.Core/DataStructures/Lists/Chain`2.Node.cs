@@ -7,7 +7,7 @@ namespace Langly.DataStructures.Lists {
 		/// </summary>
 		private abstract class Node : Record<Node>,
 			IClear,
-			ICount {
+			IIndexReadOnly<(TIndex Index, TElement Element)> {
 			/// <summary>
 			/// The next node in the chain.
 			/// </summary>
@@ -29,6 +29,9 @@ namespace Langly.DataStructures.Lists {
 				Next = next;
 				Previous = previous;
 			}
+
+			/// <inheritdoc/>
+			public abstract (TIndex Index, TElement Element) this[nint index] { get; }
 
 			/// <inheritdoc/>
 			public abstract nint Count { get; }

@@ -30,34 +30,24 @@ namespace Langly.DataStructures.Lists {
 		/// <summary>
 		/// Initializes a new <see cref="Chain{TElement}"/>.
 		/// </summary>
-		public Chain() {
+		public Chain() : this(DataStructures.Filter.None) { }
+
+		/// <summary>
+		/// Initializes a new <see cref="Chain{TElement}"/>.
+		/// </summary>
+		/// <param name="filter">Flags designating which filters to set up.</param>
+		public Chain(Filter filter) : base(filter) {
 			Head = null;
 			Tail = null;
 		}
 
-		/// <summary>
-		/// Intializes a new <see cref="Chain{TElement}"/> with the initial <paramref name="element"/>.
-		/// </summary>
-		/// <param name="element">The initial element.</param>
-		internal Chain(TElement element) {
-			Head = new ElementNode(element, previous: null, next: null);
-			Tail = Head;
-			Count = 1;
-		}
-
-		/// <summary>
-		/// Initializes a new <see cref="Chain{TElement}"/> with the initial <paramref name="element"/>.
-		/// </summary>
-		/// <param name="element">The initial element.</param>
-		internal Chain(Memory<TElement> element) {
-			Head = new MemoryNode(element, previous: null, next: null);
-			Tail = Head;
-			Count = 1;
-		}
-
 		/// <inheritdoc/>
+		[MaybeNull, AllowNull]
 		public TElement this[nint index] {
 			get {
+				if (0 > index || index >= Count) {
+					return Filter.IndexOutOfBounds(this, index);
+				}
 				Node N = Head;
 				nint i = 0;
 				// Seeks to the node the element is in, and calculate the index offset (i)
@@ -67,7 +57,7 @@ namespace Langly.DataStructures.Lists {
 				}
 				// If N is null, the index is out of bounds
 				if (N is null) {
-					throw new IndexOutOfRangeException();
+					return Filter.IndexOutOfBounds(this, index);
 				}
 				// Return the element
 				return N[index - i];

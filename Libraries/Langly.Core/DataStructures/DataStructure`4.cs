@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Text;
+using Langly.DataStructures.Filters;
 
 namespace Langly.DataStructures {
 	/// <summary>
@@ -19,6 +20,27 @@ namespace Langly.DataStructures {
 		ISequence<(TIndex Index, TElement Element), TEnumerator>
 		where TSelf : DataStructure<TIndex, TElement, TSelf, TEnumerator>
 		where TEnumerator : IEnumerator<(TIndex Index, TElement Element)> {
+		/// <summary>
+		/// The <see cref="Filter{TIndex, TElement}"/> being used.
+		/// </summary>
+		/// <remarks>
+		/// This is never <see langword="null"/>; a sentinel is used by default.
+		/// </remarks>
+		[NotNull, DisallowNull]
+		protected readonly Filter<TIndex, TElement> Filter;
+
+		/// <summary>
+		/// Initializes a new <see cref="DataStructure{TIndex, TElement, TSelf, TEnumerator}"/>.
+		/// </summary>
+		/// <param name="filter">Flags designating which filters to set up.</param>
+		protected DataStructure(Filter filter) {
+			if ((filter & DataStructures.Filter.Sparse) != 0) {
+				Filter = Sparse<TIndex, TElement>.Instance;
+			} else {
+				Filter = Null<TIndex, TElement>.Instance;
+			}
+		}
+
 		/// <inheritdoc/>
 		public virtual nint Count { get; protected set; }
 

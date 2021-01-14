@@ -20,7 +20,13 @@ namespace Langly.DataStructures.Lists {
 		/// <summary>
 		/// Initializes a new <see cref="Chain{TIndex, TElement}"/>.
 		/// </summary>
-		public Chain() {
+		public Chain() : this(DataStructures.Filter.None) { }
+
+		/// <summary>
+		/// Initializes a new <see cref="Chain{TIndex, TElement}"/>.
+		/// </summary>
+		/// <param name="filter">Flags designating which filters to set up.</param>
+		public Chain(Filter filter) : base(filter) {
 			Head = null;
 			Tail = null;
 		}

@@ -19,7 +19,7 @@ namespace Langly.DataStructures {
 		/// <summary>
 		/// Initializes a new <see cref="Stack{TElement}"/>.
 		/// </summary>
-		public Stack() { }
+		public Stack() : base(DataStructures.Filter.None) { }
 
 		/// <inheritdoc/>
 		[return: NotNull]

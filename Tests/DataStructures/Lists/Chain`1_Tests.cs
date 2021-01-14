@@ -385,6 +385,19 @@ namespace Langly.DataStructures.Lists {
 		}
 
 		[Theory]
+		[InlineData(0, new Int32[] { 1, 2, 3, 4, 5 }, -1)]
+		[InlineData(1, new Int32[] { 1, 2, 3, 4, 5 }, 0)]
+		[InlineData(2, new Int32[] { 1, 2, 3, 4, 5 }, 1)]
+		[InlineData(3, new Int32[] { 1, 2, 3, 4, 5 }, 2)]
+		[InlineData(4, new Int32[] { 1, 2, 3, 4, 5 }, 3)]
+		[InlineData(5, new Int32[] { 1, 2, 3, 4, 5 }, 4)]
+		[InlineData(0, new Int32[] { 1, 2, 3, 4, 5 }, 5)]
+		public void Sparse(Int32 expected, Int32[] values, Int32 index) {
+			Chain<Int32> chain = new Chain<Int32>(Filter.Sparse).Add(values);
+			Assert.Equal(expected, chain[index]);
+		}
+
+		[Theory]
 		[InlineData(0, null)]
 		[InlineData(0, new Int32[] { })]
 		[InlineData(15, new Int32[] { 1, 2, 3, 4, 5 })]
