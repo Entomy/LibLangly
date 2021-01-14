@@ -14,7 +14,7 @@ namespace Langly.DataStructures {
 	/// <remarks>
 	/// This is extremely anemic in order to avoid the false assumption and leaky abstraction problems most collection libraries get themselves into. This class only sets up things that are truly common for all data structures.
 	/// </remarks>
-	[DebuggerDisplay("{DebuggerDisplay(),nq}")]
+	[DebuggerDisplay("{ToString(5),nq}")]
 	public abstract class DataStructure<TElement, TSelf, TEnumerator> : Record<TSelf>,
 		ISequence<TElement, TEnumerator>
 		where TSelf : DataStructure<TElement, TSelf, TEnumerator>
@@ -35,7 +35,7 @@ namespace Langly.DataStructures {
 		protected DataStructure(Filter filter) {
 			if ((filter & DataStructures.Filter.Sparse) != 0) {
 				Filter = Sparse<nint, TElement>.Instance;
-			} else { 
+			} else {
 				Filter = Null<nint, TElement>.Instance;
 			}
 		}
@@ -73,6 +73,19 @@ namespace Langly.DataStructures {
 			} else {
 				return left.Equals(right);
 			}
+		}
+
+		/// <inheritdoc/>
+		Boolean IContains<TElement>.Contains([AllowNull] TElement element) {
+			TEnumerator ths = GetEnumerator();
+			while (ths.MoveNext()) {
+				if (ths.Current is null && element is null) {
+					return true;
+				} else if (element?.Equals(ths.Current) ?? false) {
+					return true;
+				}
+			}
+			return false;
 		}
 
 		/// <inheritdoc/>
@@ -147,43 +160,24 @@ namespace Langly.DataStructures {
 		public abstract TEnumerator GetEnumerator();
 
 		/// <inheritdoc/>
-		public sealed override String ToString() {
+		public sealed override String ToString() => ToString(Count);
+
+		/// <summary>
+		/// Returns a string that represents the current object, with no more than <paramref name="amount"/> elements.
+		/// </summary>
+		/// <param name="amount">The maximum amount of elements to display.</param>
+		public String ToString(nint amount) {
 			StringBuilder builder = new StringBuilder();
 			nint i = 0;
 			foreach (TElement element in this) {
 				if (++i == Count) {
-					builder.Append(element);
+					_ = builder.Append(element);
+					break;
+				} else if (i == amount) {
+					_ = builder.Append(element).Append("...");
+					break;
 				} else {
-					builder.Append(element).Append(',').Append(' ');
-				}
-			}
-			return $"[{builder}]";
-		}
-
-		/// <inheritdoc/>
-		Boolean IContains<TElement>.Contains([AllowNull] TElement element) {
-			TEnumerator ths = GetEnumerator();
-			while (ths.MoveNext()) {
-				if (ths.Current is null && element is null) {
-					return true;
-				} else if (element?.Equals(ths.Current) ?? false) {
-					return true;
-				}
-			}
-			return false;
-		}
-
-		/// <summary>
-		/// Returns a string that represents the current object, suitable for display in the debugger.
-		/// </summary>
-		private String DebuggerDisplay() {
-			StringBuilder builder = new StringBuilder();
-			nint i = 0;
-			foreach (TElement element in this) {
-				if (++i == Count || i == 5) {
-					builder.Append(element);
-				} else {
-					builder.Append(element).Append(',').Append(' ');
+					_ = builder.Append(element).Append(", ");
 				}
 			}
 			return $"[{builder}]";

@@ -534,5 +534,26 @@ namespace Langly.DataStructures.Lists {
 			Chain<Decimal> chain = new Chain<Decimal>().Add(vals);
 			Assert.Equal(expected, chain.Sum());
 		}
+
+		[Theory]
+		[InlineData("[]", null)]
+		[InlineData("[]", new Int32[] { })]
+		[InlineData("[1, 2, 3, 4, 5]", new Int32[] { 1, 2, 3, 4, 5 })]
+		public void ToString(String expected, Int32[] values) {
+			Chain<Int32> chain = new Chain<Int32>().Add(values);
+			Assert.Equal(expected, chain.ToString());
+		}
+
+		[Theory]
+		[InlineData("[]", null, 5)]
+		[InlineData("[]", null, 3)]
+		[InlineData("[]", new Int32[] { }, 5)]
+		[InlineData("[]", new Int32[] { }, 3)]
+		[InlineData("[1, 2, 3, 4, 5]", new Int32[] { 1, 2, 3, 4, 5 }, 5)]
+		[InlineData("[1, 2, 3...]", new Int32[] { 1, 2, 3, 4, 5 }, 3)]
+		public void ToString_Amount(String expected, Int32[] values, Int32 amount) {
+			Chain<Int32> chain = new Chain<Int32>().Add(values);
+			Assert.Equal(expected, chain.ToString(amount));
+		}
 	}
 }

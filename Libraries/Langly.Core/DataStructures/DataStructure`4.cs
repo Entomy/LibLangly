@@ -15,7 +15,7 @@ namespace Langly.DataStructures {
 	/// <remarks>
 	/// This is extremeley anemic in order to avoid the false assumption and leaky abstraction problems most collection libraries get themselves into. This class only sets up things that are truly common for all data structures.
 	/// </remarks>
-	[DebuggerDisplay("{DebuggerDisplay(),nq}")]
+	[DebuggerDisplay("{ToString(5),nq}")]
 	public abstract class DataStructure<TIndex, TElement, TSelf, TEnumerator> : Record<TSelf>,
 		ISequence<(TIndex Index, TElement Element), TEnumerator>
 		where TSelf : DataStructure<TIndex, TElement, TSelf, TEnumerator>
@@ -74,6 +74,17 @@ namespace Langly.DataStructures {
 			} else {
 				return left.Equals(right);
 			}
+		}
+
+		/// <inheritdoc/>
+		Boolean IContains<(TIndex Index, TElement Element)>.Contains((TIndex Index, TElement Element) member) {
+			TEnumerator ths = GetEnumerator();
+			while (ths.MoveNext()) {
+				if (ths.Current.Equals(member)) {
+					return true;
+				}
+			}
+			return false;
 		}
 
 		/// <inheritdoc/>
@@ -148,41 +159,24 @@ namespace Langly.DataStructures {
 		public abstract TEnumerator GetEnumerator();
 
 		/// <inheritdoc/>
-		public sealed override String ToString() {
-			StringBuilder builder = new StringBuilder();
-			nint i = 0;
-			foreach ((TIndex index, TElement element) in this) {
-				if (++i == Count) {
-					builder.Append(index).Append(':').Append(element);
-				} else {
-					builder.Append(index).Append(':').Append(element).Append(',').Append(' ');
-				}
-			}
-			return $"[{builder}]";
-		}
-
-		/// <inheritdoc/>
-		Boolean IContains<(TIndex Index, TElement Element)>.Contains((TIndex Index, TElement Element) member) {
-			TEnumerator ths = GetEnumerator();
-			while (ths.MoveNext()) {
-				if (ths.Current.Equals(member)) {
-					return true;
-				}
-			}
-			return false;
-		}
+		public sealed override String ToString() => ToString(5);
 
 		/// <summary>
-		/// Returns a string that represents the current object, suitable for display in the debugger.
+		/// Returns a string that represents the current object, with no more than <paramref name="amount"/> elements.
 		/// </summary>
-		private String DebuggerDisplay() {
+		/// <param name="amount">The maximum amount of elements to display.</param>
+		public String ToString(nint amount) {
 			StringBuilder builder = new StringBuilder();
 			nint i = 0;
-			foreach ((TIndex index, TElement element) in this) {
-				if (++i == Count || i == 5) {
-					builder.Append(index).Append(':').Append(element);
+			foreach ((TIndex, TElement) member in this) {
+				if (++i == Count) {
+					_ = builder.Append(member);
+					break;
+				} else if (i == amount) {
+					_ = builder.Append(member).Append("...");
+					break;
 				} else {
-					builder.Append(index).Append(':').Append(element).Append(',').Append(' ');
+					_ = builder.Append(member).Append(", ");
 				}
 			}
 			return $"[{builder}]";
