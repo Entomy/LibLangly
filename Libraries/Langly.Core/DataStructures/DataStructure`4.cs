@@ -5,19 +5,20 @@ using System.Text;
 
 namespace Langly.DataStructures {
 	/// <summary>
-	/// Represents any possible data structure.
+	/// Represents any possible associative data structure.
 	/// </summary>
+	/// <typeparam name="TIndex">The type of the indicies of the data structure.</typeparam>
 	/// <typeparam name="TElement">The type of the elements in the data structure.</typeparam>
 	/// <typeparam name="TSelf">The implementing type; itself.</typeparam>
 	/// <typeparam name="TEnumerator">The type of the enumerator for this data structure.</typeparam>
 	/// <remarks>
-	/// This is extremely anemic in order to avoid the false assumption and leaky abstraction problems most collection libraries get themselves into. This class only sets up things that are truly common for all data structures.
+	/// This is extremeley anemic in order to avoid the false assumption and leaky abstraction problems most collection libraries get themselves into. This class only sets up things that are truly common for all data structures.
 	/// </remarks>
 	[DebuggerDisplay("{DebuggerDisplay(),nq}")]
-	public abstract class DataStructure<TElement, TSelf, TEnumerator> : Record<TSelf>,
-		ISequence<TElement, TEnumerator>
-		where TSelf : DataStructure<TElement, TSelf, TEnumerator>
-		where TEnumerator : IEnumerator<TElement> {
+	public abstract class DataStructure<TIndex, TElement, TSelf, TEnumerator> : Record<TSelf>,
+		ISequence<(TIndex Index, TElement Element), TEnumerator>
+		where TSelf : DataStructure<TIndex, TElement, TSelf, TEnumerator>
+		where TEnumerator : IEnumerator<(TIndex Index, TElement Element)> {
 		/// <inheritdoc/>
 		public virtual nint Count { get; protected set; }
 
@@ -27,7 +28,7 @@ namespace Langly.DataStructures {
 		/// <param name="left">The lefthand sequence.</param>
 		/// <param name="right">The righthand sequence.</param>
 		/// <returns><see langword="true"/> if the two sequences aren't equal; otherwise, <see langword="false"/>.</returns>
-		public static Boolean operator !=([AllowNull] DataStructure<TElement, TSelf, TEnumerator> left, [AllowNull] DataStructure<TElement, TSelf, TEnumerator> right) {
+		public static Boolean operator !=([AllowNull] DataStructure<TIndex, TElement, TSelf, TEnumerator> left, [AllowNull] DataStructure<TIndex, TElement, TSelf, TEnumerator> right) {
 			if (left is null && right is null) {
 				return false;
 			} else if (left is null || right is null) {
@@ -43,7 +44,7 @@ namespace Langly.DataStructures {
 		/// <param name="left">The lefthand sequence.</param>
 		/// <param name="right">The righthand sequence.</param>
 		/// <returns><see langword="true"/> if the two sequences are equal; otherwise, <see langword="false"/>.</returns>
-		public static Boolean operator ==([AllowNull] DataStructure<TElement, TSelf, TEnumerator> left, [AllowNull] DataStructure<TElement, TSelf, TEnumerator> right) {
+		public static Boolean operator ==([AllowNull] DataStructure<TIndex, TElement, TSelf, TEnumerator> left, [AllowNull] DataStructure<TIndex, TElement, TSelf, TEnumerator> right) {
 			if (left is null && right is null) {
 				return true;
 			} else if (left is null || right is null) {
@@ -62,7 +63,7 @@ namespace Langly.DataStructures {
 		/// <typeparam name="TOtherEnumerator">The type of the enumerator for the <paramref name="other"/> sequence.</typeparam>
 		/// <param name="other">The other sequence.</param>
 		/// <returns><see langword="true"/> if the two sequences are equal; otherwise, <see langword="false"/>.</returns>
-		public Boolean Equals<TOtherEnumerator>([AllowNull] ISequence<TElement, TOtherEnumerator> other) where TOtherEnumerator : IEnumerator<TElement> {
+		public Boolean Equals<TOtherEnumerator>([AllowNull] ISequence<(TIndex Index, TElement Element), TOtherEnumerator> other) where TOtherEnumerator : IEnumerator<(TIndex Index, TElement Element)> {
 			// We're calling this off an instance, so if the other is null
 			if (other is null) {
 				// They aren't equal
@@ -74,7 +75,7 @@ namespace Langly.DataStructures {
 			// Now iterate through both
 			while (ths.MoveNext() && oth.MoveNext()) {
 				// If the current elements are not equal to each other
-				if (!(oth.Current?.Equals(ths.Current) ?? false)) {
+				if (!oth.Current.Equals(ths.Current)) {
 					// The sequences aren't equal
 					return false;
 				}
@@ -94,7 +95,7 @@ namespace Langly.DataStructures {
 		/// <typeparam name="TOtherEnumerator">The type of the enumerator for the <paramref name="other"/> sequence.</typeparam>
 		/// <param name="other">The other sequence.</param>
 		/// <returns><see langword="true"/> if the two sequences are equal; otherwise, <see langword="false"/>.</returns>
-		public Boolean Equals<TOtherEnumerator>([AllowNull] ISequence<IEquals<TElement>, TOtherEnumerator> other) where TOtherEnumerator : IEnumerator<IEquals<TElement>> {
+		public Boolean Equals<TOtherEnumerator>([AllowNull] ISequence<IEquals<(TIndex Index, TElement Element)>, TOtherEnumerator> other) where TOtherEnumerator : IEnumerator<IEquals<(TIndex Index, TElement Element)>> {
 			// We're calling this off an instance, so if the other is null
 			if (other is null) {
 				// They aren't equal
@@ -106,7 +107,7 @@ namespace Langly.DataStructures {
 			// Now iterate through both
 			while (ths.MoveNext() && oth.MoveNext()) {
 				// If the current elements are not equal to each other
-				if (!(oth.Current?.Equals(ths.Current) ?? false)) {
+				if (!oth.Current.Equals(ths.Current)) {
 					// The sequences aren't equal
 					return false;
 				}
@@ -128,23 +129,21 @@ namespace Langly.DataStructures {
 		public sealed override String ToString() {
 			StringBuilder builder = new StringBuilder();
 			nint i = 0;
-			foreach (TElement element in this) {
+			foreach ((TIndex index, TElement element) in this) {
 				if (++i == Count) {
-					builder.Append(element);
+					builder.Append(index).Append(':').Append(element);
 				} else {
-					builder.Append(element).Append(',').Append(' ');
+					builder.Append(index).Append(':').Append(element).Append(',').Append(' ');
 				}
 			}
 			return $"[{builder}]";
 		}
 
 		/// <inheritdoc/>
-		Boolean IContains<TElement>.Contains([AllowNull] TElement element) {
+		Boolean IContains<(TIndex Index, TElement Element)>.Contains((TIndex Index, TElement Element) member) {
 			TEnumerator ths = GetEnumerator();
 			while (ths.MoveNext()) {
-				if (ths.Current is null && element is null) {
-					return true;
-				} else if (element?.Equals(ths.Current) ?? false) {
+				if (ths.Current.Equals(member)) {
 					return true;
 				}
 			}
@@ -157,11 +156,11 @@ namespace Langly.DataStructures {
 		private String DebuggerDisplay() {
 			StringBuilder builder = new StringBuilder();
 			nint i = 0;
-			foreach (TElement element in this) {
+			foreach ((TIndex index, TElement element) in this) {
 				if (++i == Count || i == 5) {
-					builder.Append(element);
+					builder.Append(index).Append(':').Append(element);
 				} else {
-					builder.Append(element).Append(',').Append(' ');
+					builder.Append(index).Append(':').Append(element).Append(',').Append(' ');
 				}
 			}
 			return $"[{builder}]";

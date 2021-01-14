@@ -18,13 +18,13 @@ namespace Langly.DataStructures.Lists {
 		/// <summary>
 		/// The head node of the chain.
 		/// </summary>
-		[AllowNull]
+		[MaybeNull, AllowNull]
 		private Node Head;
 
 		/// <summary>
 		/// The tail node of the chain.
 		/// </summary>
-		[AllowNull]
+		[MaybeNull, AllowNull]
 		private Node Tail;
 
 		/// <summary>
@@ -152,7 +152,7 @@ namespace Langly.DataStructures.Lists {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		Chain<TElement> IInsert<nint, TElement, Chain<TElement>>.Insert(nint index, ReadOnlyMemory<TElement> elements) {
+		Chain<TElement> IInsert<TElement, Chain<TElement>>.Insert(nint index, ReadOnlyMemory<TElement> elements) {
 			if (index == 0) {
 				return ((IPrepend<TElement, Chain<TElement>>)this).Prepend(elements);
 			} else if (index == Count) {
