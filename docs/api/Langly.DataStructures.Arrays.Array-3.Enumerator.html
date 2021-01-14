@@ -78,13 +78,15 @@
   <div class="markdown level0 conceptual"></div>
   <div classs="implements">
     <h5>Implements</h5>
-    <div><a class="xref" href="Langly.IEnumerator-1.html">IEnumerator</a>&lt;<a class="xref" href="Langly.DataStructures.Association-2.html">Association</a>&lt;TIndex, TElement&gt;&gt;</div>
+    <div><a class="xref" href="Langly.DataStructures.IEnumeratorBidi-1.html">IEnumeratorBidi</a>&lt;<a class="xref" href="Langly.DataStructures.Association-2.html">Association</a>&lt;TIndex, TElement&gt;&gt;</div>
+    <div><a class="xref" href="Langly.DataStructures.IEnumerator-1.html">IEnumerator</a>&lt;<a class="xref" href="Langly.DataStructures.Association-2.html">Association</a>&lt;TIndex, TElement&gt;&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1">IEnumerator</a>&lt;<a class="xref" href="Langly.DataStructures.Association-2.html">Association</a>&lt;TIndex, TElement&gt;&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
-    <div><a class="xref" href="Langly.IEnumerable-2.html">IEnumerable</a>&lt;<a class="xref" href="Langly.DataStructures.Association-2.html">Association</a>&lt;TIndex, TElement&gt;, <a class="xref" href="Langly.IEnumerator-1.html">IEnumerator</a>&lt;<a class="xref" href="Langly.DataStructures.Association-2.html">Association</a>&lt;TIndex, TElement&gt;&gt;&gt;</div>
+    <div><a class="xref" href="Langly.DataStructures.ISequence-2.html">ISequence</a>&lt;<a class="xref" href="Langly.DataStructures.Association-2.html">Association</a>&lt;TIndex, TElement&gt;, <a class="xref" href="Langly.DataStructures.IEnumerator-1.html">IEnumerator</a>&lt;<a class="xref" href="Langly.DataStructures.Association-2.html">Association</a>&lt;TIndex, TElement&gt;&gt;&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="Langly.DataStructures.Association-2.html">Association</a>&lt;TIndex, TElement&gt;&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
+    <div><a class="xref" href="Langly.IEquals-1.html">IEquals</a>&lt;<a class="xref" href="Langly.DataStructures.Arrays.Array-3.Enumerator.html">Array.Enumerator</a>&lt;&gt;&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Langly.DataStructures.Arrays.Array-3.Enumerator.html">Array.Enumerator</a>&lt;&gt;&gt;</div>
   </div>
   <div class="inheritedMembers">
@@ -106,64 +108,19 @@
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Langly.DataStructures.Arrays.html">Langly.DataStructures.Arrays</a></h6>
-  <h6><strong>Assembly</strong>: Collectathon.dll</h6>
+  <h6><strong>Assembly</strong>: Langly.DataStructures.Arrays.dll</h6>
   <h5 id="Langly_DataStructures_Arrays_Array_3_Enumerator_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public struct Enumerator : IEnumerator&lt;Association&lt;TIndex, TElement&gt;&gt;, IEnumerator&lt;Association&lt;TIndex, TElement&gt;&gt;, IEnumerator, IDisposable, IEnumerable&lt;Association&lt;TIndex, TElement&gt;, IEnumerator&lt;Association&lt;TIndex, TElement&gt;&gt;&gt;, IEnumerable&lt;Association&lt;TIndex, TElement&gt;&gt;, IEnumerable, IEquatable&lt;Array&lt;TIndex, TElement, TSelf&gt;.Enumerator&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public struct Enumerator : IEnumeratorBidi&lt;Association&lt;TIndex, TElement&gt;&gt;, IEnumerator&lt;Association&lt;TIndex, TElement&gt;&gt;, IEnumerator&lt;Association&lt;TIndex, TElement&gt;&gt;, IEnumerator, IDisposable, ISequence&lt;Association&lt;TIndex, TElement&gt;, IEnumerator&lt;Association&lt;TIndex, TElement&gt;&gt;&gt;, IEnumerable&lt;Association&lt;TIndex, TElement&gt;&gt;, IEnumerable, IEquals&lt;Array&lt;TIndex, TElement, TSelf&gt;.Enumerator&gt;, IEquatable&lt;Array&lt;TIndex, TElement, TSelf&gt;.Enumerator&gt;</code></pre>
   </div>
-  <h3 id="constructors">Constructors
-  </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Arrays_Array_3_Enumerator__ctor_System_Memory_Langly_DataStructures_Association__0__1___nint_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.Array%603.Enumerator.%23ctor(System.Memory%7BLangly.DataStructures.Association%7B%600%2C%601%7D%7D%2Cnint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/DataStructures/Arrays/Array`3.Enumerator.cs/#L29">View Source</a>
-  </span>
-  <a id="Langly_DataStructures_Arrays_Array_3_Enumerator__ctor_" data-uid="Langly.DataStructures.Arrays.Array`3.Enumerator.#ctor*"></a>
-  <h4 id="Langly_DataStructures_Arrays_Array_3_Enumerator__ctor_System_Memory_Langly_DataStructures_Association__0__1___nint_" data-uid="Langly.DataStructures.Arrays.Array`3.Enumerator.#ctor(System.Memory{Langly.DataStructures.Association{`0,`1}},nint)">Enumerator(Memory&lt;Association&lt;TIndex, TElement&gt;&gt;, nint)</h4>
-  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Langly.DataStructures.Arrays.Array-3.Enumerator.html">Array&lt;TIndex, TElement, TSelf&gt;.Enumerator</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Enumerator(Memory&lt;Association&lt;TIndex, TElement&gt;&gt; members, nint length)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;<a class="xref" href="Langly.DataStructures.Association-2.html">Association</a>&lt;TIndex, TElement&gt;&gt;</td>
-        <td><span class="parametername">members</span></td>
-        <td><p>The members to enumerate over.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">nint</span></td>
-        <td><span class="parametername">length</span></td>
-        <td><p>The length of the <code data-dev-comment-type="paramref" class="paramref">members</code>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Langly_DataStructures_Arrays_Array_3_Enumerator__ctor_System_Memory_Langly_DataStructures_Association__0__1___nint__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>At first it might seem like <code data-dev-comment-type="paramref" class="paramref">length</code> is superfluous, as <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.array">Array</a> has a known length. However, many data structures use an array as an allocated chunk of memory, with the actual array as a portion of this, up to the entire chunk. <code data-dev-comment-type="paramref" class="paramref">length</code> is the actual used portion.</p>
-</div>
   <h3 id="properties">Properties
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Arrays_Array_3_Enumerator_Current.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.Array%603.Enumerator.Current%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Arrays_Array_3_Enumerator_Current.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.Array%603.Enumerator.Current%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/DataStructures/Arrays/Array`3.Enumerator.cs/#L36">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures.Arrays/DataStructures/Arrays/Array`3.Enumerator.cs/#L33">View Source</a>
   </span>
   <a id="Langly_DataStructures_Arrays_Array_3_Enumerator_Current_" data-uid="Langly.DataStructures.Arrays.Array`3.Enumerator.Current*"></a>
   <h4 id="Langly_DataStructures_Arrays_Array_3_Enumerator_Current" data-uid="Langly.DataStructures.Arrays.Array`3.Enumerator.Current">Current</h4>
@@ -192,10 +149,10 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Arrays_Array_3_Enumerator_Equals_Langly_DataStructures_Arrays_Array__0__1__2__Enumerator_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.Array%603.Enumerator.Equals(Langly.DataStructures.Arrays.Array%7B%600%2C%601%2C%602%7D.Enumerator)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Arrays_Array_3_Enumerator_Equals_Langly_DataStructures_Arrays_Array__0__1__2__Enumerator_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.Array%603.Enumerator.Equals(Langly.DataStructures.Arrays.Array%7B%600%2C%601%2C%602%7D.Enumerator)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/DataStructures/Arrays/Array`3.Enumerator.cs/#L53">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures.Arrays/DataStructures/Arrays/Array`3.Enumerator.cs/#L39">View Source</a>
   </span>
   <a id="Langly_DataStructures_Arrays_Array_3_Enumerator_Equals_" data-uid="Langly.DataStructures.Arrays.Array`3.Enumerator.Equals*"></a>
   <h4 id="Langly_DataStructures_Arrays_Array_3_Enumerator_Equals_Langly_DataStructures_Arrays_Array__0__1__2__Enumerator_" data-uid="Langly.DataStructures.Arrays.Array`3.Enumerator.Equals(Langly.DataStructures.Arrays.Array{`0,`1,`2}.Enumerator)">Equals(Array&lt;TIndex, TElement, TSelf&gt;.Enumerator)</h4>
@@ -239,10 +196,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Arrays_Array_3_Enumerator_Equals_System_Object_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.Array%603.Enumerator.Equals(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Arrays_Array_3_Enumerator_Equals_System_Object_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.Array%603.Enumerator.Equals(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/DataStructures/Arrays/Array`3.Enumerator.cs/#L43">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures.Arrays/DataStructures/Arrays/Array`3.Enumerator.cs/#L36">View Source</a>
   </span>
   <a id="Langly_DataStructures_Arrays_Array_3_Enumerator_Equals_" data-uid="Langly.DataStructures.Arrays.Array`3.Enumerator.Equals*"></a>
   <h4 id="Langly_DataStructures_Arrays_Array_3_Enumerator_Equals_System_Object_" data-uid="Langly.DataStructures.Arrays.Array`3.Enumerator.Equals(System.Object)">Equals(Object)</h4>
@@ -288,10 +245,10 @@
   <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetype.equals#System_ValueType_Equals_System_Object_">ValueType.Equals(Object)</a></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Arrays_Array_3_Enumerator_MoveNext.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.Array%603.Enumerator.MoveNext%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Arrays_Array_3_Enumerator_MoveNext.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.Array%603.Enumerator.MoveNext%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/DataStructures/Arrays/Array`3.Enumerator.cs/#L60">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures.Arrays/DataStructures/Arrays/Array`3.Enumerator.cs/#L46">View Source</a>
   </span>
   <a id="Langly_DataStructures_Arrays_Array_3_Enumerator_MoveNext_" data-uid="Langly.DataStructures.Arrays.Array`3.Enumerator.MoveNext*"></a>
   <h4 id="Langly_DataStructures_Arrays_Array_3_Enumerator_MoveNext" data-uid="Langly.DataStructures.Arrays.Array`3.Enumerator.MoveNext">MoveNext()</h4>
@@ -318,58 +275,20 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Arrays_Array_3_Enumerator_Reset.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.Array%603.Enumerator.Reset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Arrays_Array_3_Enumerator_MovePrevious.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.Array%603.Enumerator.MovePrevious%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/DataStructures/Arrays/Array`3.Enumerator.cs/#L63">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures.Arrays/DataStructures/Arrays/Array`3.Enumerator.cs/#L49">View Source</a>
   </span>
-  <a id="Langly_DataStructures_Arrays_Array_3_Enumerator_Reset_" data-uid="Langly.DataStructures.Arrays.Array`3.Enumerator.Reset*"></a>
-  <h4 id="Langly_DataStructures_Arrays_Array_3_Enumerator_Reset" data-uid="Langly.DataStructures.Arrays.Array`3.Enumerator.Reset">Reset()</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="Langly_DataStructures_Arrays_Array_3_Enumerator_MovePrevious_" data-uid="Langly.DataStructures.Arrays.Array`3.Enumerator.MovePrevious*"></a>
+  <h4 id="Langly_DataStructures_Arrays_Array_3_Enumerator_MovePrevious" data-uid="Langly.DataStructures.Arrays.Array`3.Enumerator.MovePrevious">MovePrevious()</h4>
+  <div class="markdown level1 summary"><p>Retracts the enumerator to the previous item of the collection.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Reset()</code></pre>
+    <pre><code class="lang-csharp hljs">public bool MovePrevious()</code></pre>
   </div>
-  <h3 id="operators">Operators
-  </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Arrays_Array_3_Enumerator_op_Equality_Langly_DataStructures_Arrays_Array__0__1__2__Enumerator_Langly_DataStructures_Arrays_Array__0__1__2__Enumerator_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.Array%603.Enumerator.op_Equality(Langly.DataStructures.Arrays.Array%7B%600%2C%601%2C%602%7D.Enumerator%2CLangly.DataStructures.Arrays.Array%7B%600%2C%601%2C%602%7D.Enumerator)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/DataStructures/Arrays/Array`3.Enumerator.cs/#L40">View Source</a>
-  </span>
-  <a id="Langly_DataStructures_Arrays_Array_3_Enumerator_op_Equality_" data-uid="Langly.DataStructures.Arrays.Array`3.Enumerator.op_Equality*"></a>
-  <h4 id="Langly_DataStructures_Arrays_Array_3_Enumerator_op_Equality_Langly_DataStructures_Arrays_Array__0__1__2__Enumerator_Langly_DataStructures_Arrays_Array__0__1__2__Enumerator_" data-uid="Langly.DataStructures.Arrays.Array`3.Enumerator.op_Equality(Langly.DataStructures.Arrays.Array{`0,`1,`2}.Enumerator,Langly.DataStructures.Arrays.Array{`0,`1,`2}.Enumerator)">Equality(Array&lt;TIndex, TElement, TSelf&gt;.Enumerator, Array&lt;TIndex, TElement, TSelf&gt;.Enumerator)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool operator ==(Array&lt;TIndex, TElement, TSelf&gt;.Enumerator left, Array&lt;TIndex, TElement, TSelf&gt;.Enumerator right)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Langly.DataStructures.Arrays.Array-3.Enumerator.html">Array.Enumerator</a>&lt;&gt;</td>
-        <td><span class="parametername">left</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Langly.DataStructures.Arrays.Array-3.Enumerator.html">Array.Enumerator</a>&lt;&gt;</td>
-        <td><span class="parametername">right</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -381,65 +300,49 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
+        <td><p><span class="xref">true</span> if the enumerator successfully retracted to the next item; <span class="xref">false</span> if the beginning of the collection has been passed.</p>
+</td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Arrays_Array_3_Enumerator_op_Inequality_Langly_DataStructures_Arrays_Array__0__1__2__Enumerator_Langly_DataStructures_Arrays_Array__0__1__2__Enumerator_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.Array%603.Enumerator.op_Inequality(Langly.DataStructures.Arrays.Array%7B%600%2C%601%2C%602%7D.Enumerator%2CLangly.DataStructures.Arrays.Array%7B%600%2C%601%2C%602%7D.Enumerator)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Arrays_Array_3_Enumerator_ResetBeginning.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.Array%603.Enumerator.ResetBeginning%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/DataStructures/Arrays/Array`3.Enumerator.cs/#L38">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures.Arrays/DataStructures/Arrays/Array`3.Enumerator.cs/#L52">View Source</a>
   </span>
-  <a id="Langly_DataStructures_Arrays_Array_3_Enumerator_op_Inequality_" data-uid="Langly.DataStructures.Arrays.Array`3.Enumerator.op_Inequality*"></a>
-  <h4 id="Langly_DataStructures_Arrays_Array_3_Enumerator_op_Inequality_Langly_DataStructures_Arrays_Array__0__1__2__Enumerator_Langly_DataStructures_Arrays_Array__0__1__2__Enumerator_" data-uid="Langly.DataStructures.Arrays.Array`3.Enumerator.op_Inequality(Langly.DataStructures.Arrays.Array{`0,`1,`2}.Enumerator,Langly.DataStructures.Arrays.Array{`0,`1,`2}.Enumerator)">Inequality(Array&lt;TIndex, TElement, TSelf&gt;.Enumerator, Array&lt;TIndex, TElement, TSelf&gt;.Enumerator)</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="Langly_DataStructures_Arrays_Array_3_Enumerator_ResetBeginning_" data-uid="Langly.DataStructures.Arrays.Array`3.Enumerator.ResetBeginning*"></a>
+  <h4 id="Langly_DataStructures_Arrays_Array_3_Enumerator_ResetBeginning" data-uid="Langly.DataStructures.Arrays.Array`3.Enumerator.ResetBeginning">ResetBeginning()</h4>
+  <div class="markdown level1 summary"><p>Resets the enumerator to the beginning position for forward enumeration.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool operator !=(Array&lt;TIndex, TElement, TSelf&gt;.Enumerator left, Array&lt;TIndex, TElement, TSelf&gt;.Enumerator right)</code></pre>
+    <pre><code class="lang-csharp hljs">public void ResetBeginning()</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Langly.DataStructures.Arrays.Array-3.Enumerator.html">Array.Enumerator</a>&lt;&gt;</td>
-        <td><span class="parametername">left</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Langly.DataStructures.Arrays.Array-3.Enumerator.html">Array.Enumerator</a>&lt;&gt;</td>
-        <td><span class="parametername">right</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Arrays_Array_3_Enumerator_ResetEnding.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.Array%603.Enumerator.ResetEnding%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures.Arrays/DataStructures/Arrays/Array`3.Enumerator.cs/#L55">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Arrays_Array_3_Enumerator_ResetEnding_" data-uid="Langly.DataStructures.Arrays.Array`3.Enumerator.ResetEnding*"></a>
+  <h4 id="Langly_DataStructures_Arrays_Array_3_Enumerator_ResetEnding" data-uid="Langly.DataStructures.Arrays.Array`3.Enumerator.ResetEnding">ResetEnding()</h4>
+  <div class="markdown level1 summary"><p>Resets the enumerator to the ending position for reverse enumeration.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ResetEnding()</code></pre>
+  </div>
   <h3 id="implements">Implements</h3>
   <div>
-      <a class="xref" href="Langly.IEnumerator-1.html">IEnumerator&lt;TElement&gt;</a>
+      <a class="xref" href="Langly.DataStructures.IEnumeratorBidi-1.html">IEnumeratorBidi&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.DataStructures.IEnumerator-1.html">IEnumerator&lt;TElement&gt;</a>
   </div>
   <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1">System.Collections.Generic.IEnumerator&lt;T&gt;</a>
@@ -451,13 +354,16 @@
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable">System.IDisposable</a>
   </div>
   <div>
-      <a class="xref" href="Langly.IEnumerable-2.html">IEnumerable&lt;TElement, TEnumerator&gt;</a>
+      <a class="xref" href="Langly.DataStructures.ISequence-2.html">ISequence&lt;TMember, TEnumerator&gt;</a>
   </div>
   <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">System.Collections.Generic.IEnumerable&lt;T&gt;</a>
   </div>
   <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">System.Collections.IEnumerable</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IEquals-1.html">IEquals&lt;TElement&gt;</a>
   </div>
   <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">System.IEquatable&lt;T&gt;</a>
@@ -470,10 +376,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Arrays_Array_3_Enumerator.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.Array%603.Enumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Arrays_Array_3_Enumerator.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.Array%603.Enumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/DataStructures/Arrays/Array`3.Enumerator.cs/#L13" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures.Arrays/DataStructures/Arrays/Array`3.Enumerator.cs/#L20" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

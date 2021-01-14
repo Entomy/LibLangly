@@ -73,14 +73,15 @@
   
   <h1 id="Langly_DataStructures_Filter" data-uid="Langly.DataStructures.Filter" class="text-break">Enum Filter
   </h1>
-  <div class="markdown level0 summary"><p>Declares the type of filter, if any, a collection should use.</p>
+  <div class="markdown level0 summary"><p>Indicates the <a class="xref" href="Langly.DataStructures.Filters.Filter-2.html">Filter&lt;TIndex, TElement&gt;</a> that should be set up for the data structure.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Langly.DataStructures.html">Langly.DataStructures</a></h6>
-  <h6><strong>Assembly</strong>: Collectathon.dll</h6>
+  <h6><strong>Assembly</strong>: Langly.Core.dll</h6>
   <h5 id="Langly_DataStructures_Filter_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public enum Filter</code></pre>
+    <pre><code class="lang-csharp hljs">[Flags]
+public enum Filter</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
@@ -94,12 +95,12 @@
     <tbody>
       <tr>
         <td id="Langly_DataStructures_Filter_None">None</td>
-        <td><p>No filtration; operate as-is.</p>
+        <td><p>No filtration; default behavior.</p>
 </td>
       </tr>
       <tr>
-        <td id="Langly_DataStructures_Filter_Unique">Unique</td>
-        <td><p>Unique filtration; only one of each value allowed.</p>
+        <td id="Langly_DataStructures_Filter_Sparse">Sparse</td>
+        <td><p>Sparse filtration; accessing not-present indicies returns the default value.</p>
 </td>
       </tr>
     </tbody>
@@ -112,10 +113,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Filter.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Filter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Filter.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Filter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/DataStructures/Filter.cs/#L5" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Core/DataStructures/Filter.cs/#L8" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

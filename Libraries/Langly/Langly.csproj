@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+		<Description>The entire LibLangly runtime.</Description>
+		<PackageTags>langly</PackageTags>
+		<AssemblyName>Langly</AssemblyName>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<Compile Include="..\GlobalSuppressions.cs" Link="GlobalSuppressions.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Langly.Core\Langly.Core.csproj" />
+	  <ProjectReference Include="..\Langly.Numerics\Langly.Numerics.csproj" />
+	  <ProjectReference Include="..\Langly.Rune\Langly.Rune.csproj" />
+	  <ProjectReference Include="..\Langly.Sets\Langly.Sets.csproj" />
+	  <ProjectReference Include="..\Langly.Stacks\Langly.Stacks.csproj" />
+	</ItemGroup>
+	
+</Project>

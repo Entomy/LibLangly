@@ -1,0 +1,879 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Set&lt;TElement&gt;
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Set&lt;TElement&gt;
+   ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Langly.DataStructures.Set`1">
+  
+  
+  <h1 id="Langly_DataStructures_Set_1" data-uid="Langly.DataStructures.Set`1" class="text-break">Class Set&lt;TElement&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>Represents a set of <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code>.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><a class="xref" href="Langly.Object.html">Object</a></div>
+    <div class="level2"><span class="xref">Set&lt;TElement&gt;</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Langly.IEquals-1.html">IEquals</a>&lt;<a class="xref" href="Langly.Object.html">Object</a>&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Langly.Object.html">Object</a>&gt;</div>
+    <div><a class="xref" href="Langly.IContains-1.html">IContains</a>&lt;TElement&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Langly.Object.html#Langly_Object_Equals_Langly_Object_Langly_Object_">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.Object.html#Langly_Object_Equals_System_Object_">Object.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.Object.html#Langly_Object_Equals_Langly_Object_">Object.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.Object.html#Langly_Object_GetHashCode">Object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.Object.html#Langly_Object_ToString">Object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Langly.DataStructures.html">Langly.DataStructures</a></h6>
+  <h6><strong>Assembly</strong>: Langly.Sets.dll</h6>
+  <h5 id="Langly_DataStructures_Set_1_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class Set&lt;TElement&gt; : Object, IEquals&lt;Object&gt;, IEquatable&lt;Object&gt;, IContains&lt;TElement&gt;</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of elements  in the set.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_DataStructures_Set_1_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>A set is a collection in which any element can only exist once. All other collections are technically multi-sets, if you need such. Furthermore, sets don&apos;t care about data being ordered.</p>
+<p>Unlike <see cref="!:System.Collections.Generic.ISet&lt;T>"></see> this adheres to Set Theory and Set Algebra, so its behavior should not be surprising, and existing techniques and solutions can easily be translated.</p>
+</div>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Set_1_Empty.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Set%601.Empty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Sets/DataStructures/Set`1.cs/#L17">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Set_1_Empty_" data-uid="Langly.DataStructures.Set`1.Empty*"></a>
+  <h4 id="Langly_DataStructures_Set_1_Empty" data-uid="Langly.DataStructures.Set`1.Empty">Empty</h4>
+  <div class="markdown level1 summary"><p>Singleton instance for the empty set (Ø) of <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Set&lt;TElement&gt; Empty { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Set-1.html">Set</a>&lt;TElement&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Set_1_Universe.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Set%601.Universe%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Sets/DataStructures/Set`1.cs/#L22">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Set_1_Universe_" data-uid="Langly.DataStructures.Set`1.Universe*"></a>
+  <h4 id="Langly_DataStructures_Set_1_Universe" data-uid="Langly.DataStructures.Set`1.Universe">Universe</h4>
+  <div class="markdown level1 summary"><p>Singleton instance for the universe set (U) of <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Set&lt;TElement&gt; Universe { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Set-1.html">Set</a>&lt;TElement&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Set_1_ComplimentImpl.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Set%601.ComplimentImpl%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Sets/DataStructures/Set`1.cs/#L75">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Set_1_ComplimentImpl_" data-uid="Langly.DataStructures.Set`1.ComplimentImpl*"></a>
+  <h4 id="Langly_DataStructures_Set_1_ComplimentImpl" data-uid="Langly.DataStructures.Set`1.ComplimentImpl">ComplimentImpl()</h4>
+  <div class="markdown level1 summary"><p>Provides the core implementation for <a class="xref" href="Langly.DataStructures.Set.html#Langly_DataStructures_Set_Compliment__2___1_">Compliment&lt;TElement, TSet&gt;(TSet)</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual Set&lt;TElement&gt; ComplimentImpl()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Set-1.html">Set</a>&lt;TElement&gt;</td>
+        <td><p>The compliment of this set.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Set_1_Contains__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Set%601.Contains(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Sets/DataStructures/Set`1.cs/#L119">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Set_1_Contains_" data-uid="Langly.DataStructures.Set`1.Contains*"></a>
+  <h4 id="Langly_DataStructures_Set_1_Contains__0_" data-uid="Langly.DataStructures.Set`1.Contains(`0)">Contains(TElement)</h4>
+  <div class="markdown level1 summary"><p>Provides the actual implementation of <a class="xref" href="Langly.IContains-1.html#Langly_IContains_1_Contains__0_">Contains(TElement)</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract Boolean Contains(TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element to attempt to find.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">element</code> is contained in this collection; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Set_1_DifferenceImpl__1___0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Set%601.DifferenceImpl%60%601(%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Sets/DataStructures/Set`1.cs/#L84">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Set_1_DifferenceImpl_" data-uid="Langly.DataStructures.Set`1.DifferenceImpl*"></a>
+  <h4 id="Langly_DataStructures_Set_1_DifferenceImpl__1___0_" data-uid="Langly.DataStructures.Set`1.DifferenceImpl``1(``0)">DifferenceImpl&lt;TOther&gt;(TOther)</h4>
+  <div class="markdown level1 summary"><p>Provides the core implementation for <a class="xref" href="Langly.DataStructures.Set.html#Langly_DataStructures_Set_Difference__3___1___2_">Difference&lt;TElement, TFirst, TSecond&gt;(TFirst, TSecond)</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual Set&lt;TElement&gt; DifferenceImpl&lt;TOther&gt;(TOther other)
+    where TOther : Set&lt;TElement&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TOther</span></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>The other set.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Set-1.html">Set</a>&lt;TElement&gt;</td>
+        <td><p>The difference of the <code data-dev-comment-type="paramref" class="paramref">other</code> set from this one.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TOther</span></td>
+        <td><p>The type of <code data-dev-comment-type="paramref" class="paramref">other</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Set_1_DisjunctionImpl__1___0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Set%601.DisjunctionImpl%60%601(%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Sets/DataStructures/Set`1.cs/#L93">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Set_1_DisjunctionImpl_" data-uid="Langly.DataStructures.Set`1.DisjunctionImpl*"></a>
+  <h4 id="Langly_DataStructures_Set_1_DisjunctionImpl__1___0_" data-uid="Langly.DataStructures.Set`1.DisjunctionImpl``1(``0)">DisjunctionImpl&lt;TOther&gt;(TOther)</h4>
+  <div class="markdown level1 summary"><p>Provides  the core implementation for <a class="xref" href="Langly.DataStructures.Set.html#Langly_DataStructures_Set_Disjunction__3___1___2_">Disjunction&lt;TElement, TFirst, TSecond&gt;(TFirst, TSecond)</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual Set&lt;TElement&gt; DisjunctionImpl&lt;TOther&gt;(TOther other)
+    where TOther : Set&lt;TElement&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TOther</span></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>The other set.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Set-1.html">Set</a>&lt;TElement&gt;</td>
+        <td><p>The disjunction of this set and the <code data-dev-comment-type="paramref" class="paramref">other</code> set.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TOther</span></td>
+        <td><p>The type of <code data-dev-comment-type="paramref" class="paramref">other</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Set_1_IntersectionImpl__1___0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Set%601.IntersectionImpl%60%601(%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Sets/DataStructures/Set`1.cs/#L102">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Set_1_IntersectionImpl_" data-uid="Langly.DataStructures.Set`1.IntersectionImpl*"></a>
+  <h4 id="Langly_DataStructures_Set_1_IntersectionImpl__1___0_" data-uid="Langly.DataStructures.Set`1.IntersectionImpl``1(``0)">IntersectionImpl&lt;TOther&gt;(TOther)</h4>
+  <div class="markdown level1 summary"><p>Provides the core implementation for <a class="xref" href="Langly.DataStructures.Set.html#Langly_DataStructures_Set_Intersection__3___1___2_">Intersection&lt;TElement, TFirst, TSecond&gt;(TFirst, TSecond)</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual Set&lt;TElement&gt; IntersectionImpl&lt;TOther&gt;(TOther other)
+    where TOther : Set&lt;TElement&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TOther</span></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>The other set.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Set-1.html">Set</a>&lt;TElement&gt;</td>
+        <td><p>The intersection of this set and the <code data-dev-comment-type="paramref" class="paramref">other</code> set.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TOther</span></td>
+        <td><p>The type of <code data-dev-comment-type="paramref" class="paramref">other</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Set_1_UnionImpl__1___0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Set%601.UnionImpl%60%601(%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Sets/DataStructures/Set`1.cs/#L111">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Set_1_UnionImpl_" data-uid="Langly.DataStructures.Set`1.UnionImpl*"></a>
+  <h4 id="Langly_DataStructures_Set_1_UnionImpl__1___0_" data-uid="Langly.DataStructures.Set`1.UnionImpl``1(``0)">UnionImpl&lt;TOther&gt;(TOther)</h4>
+  <div class="markdown level1 summary"><p>Provides the core implemenation for <a class="xref" href="Langly.DataStructures.Set.html#Langly_DataStructures_Set_Union__3___1___2_">Union&lt;TElement, TFirst, TSecond&gt;(TFirst, TSecond)</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual Set&lt;TElement&gt; UnionImpl&lt;TOther&gt;(TOther other)
+    where TOther : Set&lt;TElement&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TOther</span></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>The other set.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Set-1.html">Set</a>&lt;TElement&gt;</td>
+        <td><p>The union of this set and the <code data-dev-comment-type="paramref" class="paramref">other</code> set.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TOther</span></td>
+        <td><p>The type of <code data-dev-comment-type="paramref" class="paramref">other</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="operators">Operators
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Set_1_op_BitwiseAnd_Langly_DataStructures_Set__0__Langly_DataStructures_Set__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Set%601.op_BitwiseAnd(Langly.DataStructures.Set%7B%600%7D%2CLangly.DataStructures.Set%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Sets/DataStructures/Set`1.cs/#L47">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Set_1_op_BitwiseAnd_" data-uid="Langly.DataStructures.Set`1.op_BitwiseAnd*"></a>
+  <h4 id="Langly_DataStructures_Set_1_op_BitwiseAnd_Langly_DataStructures_Set__0__Langly_DataStructures_Set__0__" data-uid="Langly.DataStructures.Set`1.op_BitwiseAnd(Langly.DataStructures.Set{`0},Langly.DataStructures.Set{`0})">BitwiseAnd(Set&lt;TElement&gt;, Set&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Returns the intersection of <code data-dev-comment-type="paramref" class="paramref">left</code> and <code data-dev-comment-type="paramref" class="paramref">right</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Set&lt;TElement&gt; operator &amp;(Set&lt;TElement&gt; left, Set&lt;TElement&gt; right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Set-1.html">Set</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The lefthand set.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Set-1.html">Set</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The righthand set.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Set-1.html">Set</a>&lt;TElement&gt;</td>
+        <td><p>The intersection of <code data-dev-comment-type="paramref" class="paramref">left</code> and <code data-dev-comment-type="paramref" class="paramref">right</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Set_1_op_BitwiseOr_Langly_DataStructures_Set__0__Langly_DataStructures_Set__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Set%601.op_BitwiseOr(Langly.DataStructures.Set%7B%600%7D%2CLangly.DataStructures.Set%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Sets/DataStructures/Set`1.cs/#L65">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Set_1_op_BitwiseOr_" data-uid="Langly.DataStructures.Set`1.op_BitwiseOr*"></a>
+  <h4 id="Langly_DataStructures_Set_1_op_BitwiseOr_Langly_DataStructures_Set__0__Langly_DataStructures_Set__0__" data-uid="Langly.DataStructures.Set`1.op_BitwiseOr(Langly.DataStructures.Set{`0},Langly.DataStructures.Set{`0})">BitwiseOr(Set&lt;TElement&gt;, Set&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Returns the union of <code data-dev-comment-type="paramref" class="paramref">left</code> and <code data-dev-comment-type="paramref" class="paramref">right</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Set&lt;TElement&gt; operator |(Set&lt;TElement&gt; left, Set&lt;TElement&gt; right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Set-1.html">Set</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The lefthand set.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Set-1.html">Set</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The righthand set.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Set-1.html">Set</a>&lt;TElement&gt;</td>
+        <td><p>The union of <code data-dev-comment-type="paramref" class="paramref">left</code> and <code data-dev-comment-type="paramref" class="paramref">right</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Set_1_op_ExclusiveOr_Langly_DataStructures_Set__0__Langly_DataStructures_Set__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Set%601.op_ExclusiveOr(Langly.DataStructures.Set%7B%600%7D%2CLangly.DataStructures.Set%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Sets/DataStructures/Set`1.cs/#L56">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Set_1_op_ExclusiveOr_" data-uid="Langly.DataStructures.Set`1.op_ExclusiveOr*"></a>
+  <h4 id="Langly_DataStructures_Set_1_op_ExclusiveOr_Langly_DataStructures_Set__0__Langly_DataStructures_Set__0__" data-uid="Langly.DataStructures.Set`1.op_ExclusiveOr(Langly.DataStructures.Set{`0},Langly.DataStructures.Set{`0})">ExclusiveOr(Set&lt;TElement&gt;, Set&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Returns the disjunction of <code data-dev-comment-type="paramref" class="paramref">left</code> and <code data-dev-comment-type="paramref" class="paramref">right</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Set&lt;TElement&gt; operator ^(Set&lt;TElement&gt; left, Set&lt;TElement&gt; right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Set-1.html">Set</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The lefthand set.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Set-1.html">Set</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The righthand set.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Set-1.html">Set</a>&lt;TElement&gt;</td>
+        <td><p>The disjunction of <code data-dev-comment-type="paramref" class="paramref">left</code> and <code data-dev-comment-type="paramref" class="paramref">right</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Set_1_op_LogicalNot_Langly_DataStructures_Set__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Set%601.op_LogicalNot(Langly.DataStructures.Set%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Sets/DataStructures/Set`1.cs/#L38">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Set_1_op_LogicalNot_" data-uid="Langly.DataStructures.Set`1.op_LogicalNot*"></a>
+  <h4 id="Langly_DataStructures_Set_1_op_LogicalNot_Langly_DataStructures_Set__0__" data-uid="Langly.DataStructures.Set`1.op_LogicalNot(Langly.DataStructures.Set{`0})">LogicalNot(Set&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Returns the compliment of the <code data-dev-comment-type="paramref" class="paramref">set</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Set&lt;TElement&gt; operator !(Set&lt;TElement&gt; set)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Set-1.html">Set</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">set</span></td>
+        <td><p>This set.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Set-1.html">Set</a>&lt;TElement&gt;</td>
+        <td><p>The compliment of the <code data-dev-comment-type="paramref" class="paramref">set</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Set_1_op_Subtraction_Langly_DataStructures_Set__0__Langly_DataStructures_Set__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Set%601.op_Subtraction(Langly.DataStructures.Set%7B%600%7D%2CLangly.DataStructures.Set%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Sets/DataStructures/Set`1.cs/#L30">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Set_1_op_Subtraction_" data-uid="Langly.DataStructures.Set`1.op_Subtraction*"></a>
+  <h4 id="Langly_DataStructures_Set_1_op_Subtraction_Langly_DataStructures_Set__0__Langly_DataStructures_Set__0__" data-uid="Langly.DataStructures.Set`1.op_Subtraction(Langly.DataStructures.Set{`0},Langly.DataStructures.Set{`0})">Subtraction(Set&lt;TElement&gt;, Set&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Returns the difference of <code data-dev-comment-type="paramref" class="paramref">right</code> from <code data-dev-comment-type="paramref" class="paramref">left</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Set&lt;TElement&gt; operator -(Set&lt;TElement&gt; left, Set&lt;TElement&gt; right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Set-1.html">Set</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The lefthand set.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Set-1.html">Set</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The righthand set.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Set-1.html">Set</a>&lt;TElement&gt;</td>
+        <td><p>The difference of <code data-dev-comment-type="paramref" class="paramref">right</code> from <code data-dev-comment-type="paramref" class="paramref">left</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Langly.IEquals-1.html">IEquals&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">System.IEquatable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IContains-1.html">IContains&lt;TElement&gt;</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_Set_1.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Set%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Sets/DataStructures/Set`1.cs/#L13" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

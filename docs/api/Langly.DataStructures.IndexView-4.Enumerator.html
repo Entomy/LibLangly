@@ -73,15 +73,16 @@
   
   <h1 id="Langly_DataStructures_IndexView_4_Enumerator" data-uid="Langly.DataStructures.IndexView`4.Enumerator" class="text-break">Struct IndexView&lt;TIndex, TElement, TCollection, TEnumerator&gt;.Enumerator
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Provides an enumerator over the indicies of an associative collection.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div classs="implements">
     <h5>Implements</h5>
-    <div><a class="xref" href="Langly.IEnumerator-1.html">IEnumerator</a>&lt;TIndex&gt;</div>
+    <div><a class="xref" href="Langly.DataStructures.IEnumerator-1.html">IEnumerator</a>&lt;TIndex&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1">IEnumerator</a>&lt;TIndex&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
-    <div><a class="xref" href="Langly.IEnumerable-2.html">IEnumerable</a>&lt;TIndex, <a class="xref" href="Langly.IEnumerator-1.html">IEnumerator</a>&lt;TIndex&gt;&gt;</div>
+    <div><a class="xref" href="Langly.DataStructures.ISequence-2.html">ISequence</a>&lt;TIndex, <a class="xref" href="Langly.DataStructures.IEnumerator-1.html">IEnumerator</a>&lt;TIndex&gt;&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TIndex&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
   </div>
@@ -107,23 +108,24 @@
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Langly.DataStructures.html">Langly.DataStructures</a></h6>
-  <h6><strong>Assembly</strong>: Collectathon.dll</h6>
+  <h6><strong>Assembly</strong>: Langly.DataStructures.dll</h6>
   <h5 id="Langly_DataStructures_IndexView_4_Enumerator_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public struct Enumerator : IEnumerator&lt;TIndex&gt;, IEnumerator&lt;TIndex&gt;, IEnumerator, IDisposable, IEnumerable&lt;TIndex, IEnumerator&lt;TIndex&gt;&gt;, IEnumerable&lt;TIndex&gt;, IEnumerable</code></pre>
+    <pre><code class="lang-csharp hljs">public struct Enumerator : IEnumerator&lt;TIndex&gt;, IEnumerator&lt;TIndex&gt;, IEnumerator, IDisposable, ISequence&lt;TIndex, IEnumerator&lt;TIndex&gt;&gt;, IEnumerable&lt;TIndex&gt;, IEnumerable</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_IndexView_4_Enumerator__ctor__2_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.IndexView%604.Enumerator.%23ctor(%602)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_IndexView_4_Enumerator__ctor__2_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.IndexView%604.Enumerator.%23ctor(%602)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/DataStructures/IndexView`4.cs/#L54">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures/DataStructures/IndexView`4.cs/#L44">View Source</a>
   </span>
   <a id="Langly_DataStructures_IndexView_4_Enumerator__ctor_" data-uid="Langly.DataStructures.IndexView`4.Enumerator.#ctor*"></a>
   <h4 id="Langly_DataStructures_IndexView_4_Enumerator__ctor__2_" data-uid="Langly.DataStructures.IndexView`4.Enumerator.#ctor(`2)">Enumerator(TCollection)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Initialize a new <a class="xref" href="Langly.DataStructures.IndexView-4.Enumerator.html">IndexView&lt;TIndex, TElement, TCollection, TEnumerator&gt;.Enumerator</a>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -142,7 +144,8 @@
       <tr>
         <td><span class="xref">TCollection</span></td>
         <td><span class="parametername">collection</span></td>
-        <td></td>
+        <td><p>The collection to enumerate.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -150,10 +153,10 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_IndexView_4_Enumerator_Current.md&amp;value=---%0Auid%3A%20Langly.DataStructures.IndexView%604.Enumerator.Current%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_IndexView_4_Enumerator_Current.md&amp;value=---%0Auid%3A%20Langly.DataStructures.IndexView%604.Enumerator.Current%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/DataStructures/IndexView`4.cs/#L57">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures/DataStructures/IndexView`4.cs/#L47">View Source</a>
   </span>
   <a id="Langly_DataStructures_IndexView_4_Enumerator_Current_" data-uid="Langly.DataStructures.IndexView`4.Enumerator.Current*"></a>
   <h4 id="Langly_DataStructures_IndexView_4_Enumerator_Current" data-uid="Langly.DataStructures.IndexView`4.Enumerator.Current">Current</h4>
@@ -182,40 +185,10 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_IndexView_4_Enumerator_GetEnumerator.md&amp;value=---%0Auid%3A%20Langly.DataStructures.IndexView%604.Enumerator.GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_IndexView_4_Enumerator_MoveNext.md&amp;value=---%0Auid%3A%20Langly.DataStructures.IndexView%604.Enumerator.MoveNext%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/DataStructures/IndexView`4.cs/#L60">View Source</a>
-  </span>
-  <a id="Langly_DataStructures_IndexView_4_Enumerator_GetEnumerator_" data-uid="Langly.DataStructures.IndexView`4.Enumerator.GetEnumerator*"></a>
-  <h4 id="Langly_DataStructures_IndexView_4_Enumerator_GetEnumerator" data-uid="Langly.DataStructures.IndexView`4.Enumerator.GetEnumerator">GetEnumerator()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IEnumerator&lt;TIndex&gt; GetEnumerator()</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Langly.IEnumerator-1.html">IEnumerator</a>&lt;TIndex&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_IndexView_4_Enumerator_MoveNext.md&amp;value=---%0Auid%3A%20Langly.DataStructures.IndexView%604.Enumerator.MoveNext%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/DataStructures/IndexView`4.cs/#L63">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures/DataStructures/IndexView`4.cs/#L50">View Source</a>
   </span>
   <a id="Langly_DataStructures_IndexView_4_Enumerator_MoveNext_" data-uid="Langly.DataStructures.IndexView`4.Enumerator.MoveNext*"></a>
   <h4 id="Langly_DataStructures_IndexView_4_Enumerator_MoveNext" data-uid="Langly.DataStructures.IndexView`4.Enumerator.MoveNext">MoveNext()</h4>
@@ -242,10 +215,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_IndexView_4_Enumerator_Reset.md&amp;value=---%0Auid%3A%20Langly.DataStructures.IndexView%604.Enumerator.Reset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_IndexView_4_Enumerator_Reset.md&amp;value=---%0Auid%3A%20Langly.DataStructures.IndexView%604.Enumerator.Reset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/DataStructures/IndexView`4.cs/#L66">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures/DataStructures/IndexView`4.cs/#L53">View Source</a>
   </span>
   <a id="Langly_DataStructures_IndexView_4_Enumerator_Reset_" data-uid="Langly.DataStructures.IndexView`4.Enumerator.Reset*"></a>
   <h4 id="Langly_DataStructures_IndexView_4_Enumerator_Reset" data-uid="Langly.DataStructures.IndexView`4.Enumerator.Reset">Reset()</h4>
@@ -257,7 +230,7 @@
   </div>
   <h3 id="implements">Implements</h3>
   <div>
-      <a class="xref" href="Langly.IEnumerator-1.html">IEnumerator&lt;TElement&gt;</a>
+      <a class="xref" href="Langly.DataStructures.IEnumerator-1.html">IEnumerator&lt;TElement&gt;</a>
   </div>
   <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1">System.Collections.Generic.IEnumerator&lt;T&gt;</a>
@@ -269,13 +242,26 @@
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable">System.IDisposable</a>
   </div>
   <div>
-      <a class="xref" href="Langly.IEnumerable-2.html">IEnumerable&lt;TElement, TEnumerator&gt;</a>
+      <a class="xref" href="Langly.DataStructures.ISequence-2.html">ISequence&lt;TMember, TEnumerator&gt;</a>
   </div>
   <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">System.Collections.Generic.IEnumerable&lt;T&gt;</a>
   </div>
   <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">System.Collections.IEnumerable</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Langly.DataStructures.DataStructureExtensions.html#Langly_DataStructures_DataStructureExtensions_Fold__2_Langly_DataStructures_ISequence___0___1__System_Func___0___0___0____0_">DataStructureExtensions.Fold&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Func&lt;TElement, TElement, TElement&gt;, TElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.DataStructures.DataStructureExtensions.html#Langly_DataStructures_DataStructureExtensions_Occurrences__2_Langly_DataStructures_ISequence___0___1____0_">DataStructureExtensions.Occurrences&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, TElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.DataStructures.DataStructureExtensions.html#Langly_DataStructures_DataStructureExtensions_Occurrences__2_Langly_DataStructures_ISequence___0___1__Langly_IEquals___0__">DataStructureExtensions.Occurrences&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, IEquals&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.DataStructures.DataStructureExtensions.html#Langly_DataStructures_DataStructureExtensions_Occurrences__2_Langly_DataStructures_ISequence___0___1__System_Predicate___0__">DataStructureExtensions.Occurrences&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Predicate&lt;TElement&gt;)</a>
   </div>
 </article>
           </div>
@@ -285,10 +271,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_IndexView_4_Enumerator.md&amp;value=---%0Auid%3A%20Langly.DataStructures.IndexView%604.Enumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_IndexView_4_Enumerator.md&amp;value=---%0Auid%3A%20Langly.DataStructures.IndexView%604.Enumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/DataStructures/IndexView`4.cs/#L51" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures/DataStructures/IndexView`4.cs/#L34" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

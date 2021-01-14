@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Struct ReverseView&lt;TMember, TCollection, TEnumerator&gt;
+    <title>Struct ReverseView&lt;TElement, TCollection, TEnumerator&gt;
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Struct ReverseView&lt;TMember, TCollection, TEnumerator&gt;
+    <meta name="title" content="Struct ReverseView&lt;TElement, TCollection, TEnumerator&gt;
    ">
     <meta name="generator" content="docfx 2.56.6.0">
     
@@ -71,20 +71,25 @@
             <article class="content wrap" id="_content" data-uid="Langly.DataStructures.ReverseView`3">
   
   
-  <h1 id="Langly_DataStructures_ReverseView_3" data-uid="Langly.DataStructures.ReverseView`3" class="text-break">Struct ReverseView&lt;TMember, TCollection, TEnumerator&gt;
+  <h1 id="Langly_DataStructures_ReverseView_3" data-uid="Langly.DataStructures.ReverseView`3" class="text-break">Struct ReverseView&lt;TElement, TCollection, TEnumerator&gt;
   </h1>
-  <div class="markdown level0 summary"><p>Represents a reverse view of a collection.</p>
+  <div class="markdown level0 summary"><p>Provides a view of the collection in reverse order.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div classs="implements">
     <h5>Implements</h5>
-    <div><a class="xref" href="Langly.IEnumerable-2.html">IEnumerable</a>&lt;TMember, <a class="xref" href="Langly.DataStructures.ReverseView-3.Enumerator.html">ReverseView.Enumerator</a>&lt;&gt;&gt;</div>
-    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TMember&gt;</div>
+    <div><a class="xref" href="Langly.DataStructures.ISequence-2.html">ISequence</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.ReverseView-3.Enumerator.html">ReverseView.Enumerator</a>&lt;&gt;&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TElement&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
-    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Langly.DataStructures.ReverseView-3.html">ReverseView</a>&lt;TMember, TCollection, TEnumerator&gt;&gt;</div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetype.equals#System_ValueType_Equals_System_Object_">ValueType.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetype.gethashcode#System_ValueType_GetHashCode">ValueType.GetHashCode()</a>
+    </div>
     <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetype.tostring#System_ValueType_ToString">ValueType.ToString()</a>
     </div>
@@ -99,10 +104,10 @@
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Langly.DataStructures.html">Langly.DataStructures</a></h6>
-  <h6><strong>Assembly</strong>: Collectathon.dll</h6>
+  <h6><strong>Assembly</strong>: Langly.DataStructures.dll</h6>
   <h5 id="Langly_DataStructures_ReverseView_3_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public struct ReverseView&lt;TMember, TCollection, TEnumerator&gt; : IEnumerable&lt;TMember, ReverseView&lt;TMember, TCollection, TEnumerator&gt;.Enumerator&gt;, IEnumerable&lt;TMember&gt;, IEnumerable, IEquatable&lt;ReverseView&lt;TMember, TCollection, TEnumerator&gt;&gt; where TCollection : IReversibleEnumerable&lt;TMember, TCollection, TEnumerator&gt; where TEnumerator : IReversibleEnumerator&lt;TMember&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public struct ReverseView&lt;TElement, TCollection, TEnumerator&gt; : ISequence&lt;TElement, ReverseView&lt;TElement, TCollection, TEnumerator&gt;.Enumerator&gt;, IEnumerable&lt;TElement&gt;, IEnumerable where TCollection : ISequenceBidi&lt;TElement, TEnumerator&gt; where TEnumerator : IEnumeratorBidi&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -114,18 +119,54 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="parametername">TMember</span></td>
-        <td><p>The type being enumerated.</p>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of elements in the collection.</p>
 </td>
       </tr>
       <tr>
         <td><span class="parametername">TCollection</span></td>
-        <td><p>The type of the collection being viewed.</p>
+        <td><p>The type of the collection.</p>
 </td>
       </tr>
       <tr>
         <td><span class="parametername">TEnumerator</span></td>
-        <td><p>The type of the enumerator of this collection.</p>
+        <td><p>The type of the enumerator of the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_ReverseView_3__ctor__1_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.ReverseView%603.%23ctor(%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures/DataStructures/ReverseView`3.cs/#L26">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_ReverseView_3__ctor_" data-uid="Langly.DataStructures.ReverseView`3.#ctor*"></a>
+  <h4 id="Langly_DataStructures_ReverseView_3__ctor__1_" data-uid="Langly.DataStructures.ReverseView`3.#ctor(`1)">ReverseView(TCollection)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Langly.DataStructures.ReverseView-3.html">ReverseView&lt;TElement, TCollection, TEnumerator&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ReverseView(TCollection collection)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TCollection</span></td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The collection to reverse.</p>
 </td>
       </tr>
     </tbody>
@@ -134,114 +175,19 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_ReverseView_3_Equals_Langly_DataStructures_ReverseView__0__1__2__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.ReverseView%603.Equals(Langly.DataStructures.ReverseView%7B%600%2C%601%2C%602%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_ReverseView_3_GetEnumerator.md&amp;value=---%0Auid%3A%20Langly.DataStructures.ReverseView%603.GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/DataStructures/ReverseView`3.cs/#L30">View Source</a>
-  </span>
-  <a id="Langly_DataStructures_ReverseView_3_Equals_" data-uid="Langly.DataStructures.ReverseView`3.Equals*"></a>
-  <h4 id="Langly_DataStructures_ReverseView_3_Equals_Langly_DataStructures_ReverseView__0__1__2__" data-uid="Langly.DataStructures.ReverseView`3.Equals(Langly.DataStructures.ReverseView{`0,`1,`2})">Equals(ReverseView&lt;TMember, TCollection, TEnumerator&gt;)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool Equals(ReverseView&lt;TMember, TCollection, TEnumerator&gt; other)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Langly.DataStructures.ReverseView-3.html">ReverseView</a>&lt;TMember, TCollection, TEnumerator&gt;</td>
-        <td><span class="parametername">other</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_ReverseView_3_Equals_System_Object_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.ReverseView%603.Equals(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/DataStructures/ReverseView`3.cs/#L20">View Source</a>
-  </span>
-  <a id="Langly_DataStructures_ReverseView_3_Equals_" data-uid="Langly.DataStructures.ReverseView`3.Equals*"></a>
-  <h4 id="Langly_DataStructures_ReverseView_3_Equals_System_Object_" data-uid="Langly.DataStructures.ReverseView`3.Equals(System.Object)">Equals(Object)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override bool Equals(object obj)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
-        <td><span class="parametername">obj</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetype.equals#System_ValueType_Equals_System_Object_">ValueType.Equals(Object)</a></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_ReverseView_3_GetEnumerator.md&amp;value=---%0Auid%3A%20Langly.DataStructures.ReverseView%603.GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/DataStructures/ReverseView`3.cs/#L36">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures/DataStructures/ReverseView`3.cs/#L29">View Source</a>
   </span>
   <a id="Langly_DataStructures_ReverseView_3_GetEnumerator_" data-uid="Langly.DataStructures.ReverseView`3.GetEnumerator*"></a>
   <h4 id="Langly_DataStructures_ReverseView_3_GetEnumerator" data-uid="Langly.DataStructures.ReverseView`3.GetEnumerator">GetEnumerator()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns an enumerator that iterates through the sequence.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ReverseView&lt;TMember, TCollection, TEnumerator&gt;.Enumerator GetEnumerator()</code></pre>
+    <pre><code class="lang-csharp hljs">public ReverseView&lt;TElement, TCollection, TEnumerator&gt;.Enumerator GetEnumerator()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -254,151 +200,14 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Langly.DataStructures.ReverseView-3.Enumerator.html">ReverseView.Enumerator</a>&lt;&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_ReverseView_3_GetHashCode.md&amp;value=---%0Auid%3A%20Langly.DataStructures.ReverseView%603.GetHashCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/DataStructures/ReverseView`3.cs/#L33">View Source</a>
-  </span>
-  <a id="Langly_DataStructures_ReverseView_3_GetHashCode_" data-uid="Langly.DataStructures.ReverseView`3.GetHashCode*"></a>
-  <h4 id="Langly_DataStructures_ReverseView_3_GetHashCode" data-uid="Langly.DataStructures.ReverseView`3.GetHashCode">GetHashCode()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetype.gethashcode#System_ValueType_GetHashCode">ValueType.GetHashCode()</a></div>
-  <h3 id="operators">Operators
-  </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_ReverseView_3_op_Equality_Langly_DataStructures_ReverseView__0__1__2__Langly_DataStructures_ReverseView__0__1__2__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.ReverseView%603.op_Equality(Langly.DataStructures.ReverseView%7B%600%2C%601%2C%602%7D%2CLangly.DataStructures.ReverseView%7B%600%2C%601%2C%602%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/DataStructures/ReverseView`3.cs/#L17">View Source</a>
-  </span>
-  <a id="Langly_DataStructures_ReverseView_3_op_Equality_" data-uid="Langly.DataStructures.ReverseView`3.op_Equality*"></a>
-  <h4 id="Langly_DataStructures_ReverseView_3_op_Equality_Langly_DataStructures_ReverseView__0__1__2__Langly_DataStructures_ReverseView__0__1__2__" data-uid="Langly.DataStructures.ReverseView`3.op_Equality(Langly.DataStructures.ReverseView{`0,`1,`2},Langly.DataStructures.ReverseView{`0,`1,`2})">Equality(ReverseView&lt;TMember, TCollection, TEnumerator&gt;, ReverseView&lt;TMember, TCollection, TEnumerator&gt;)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool operator ==(ReverseView&lt;TMember, TCollection, TEnumerator&gt; left, ReverseView&lt;TMember, TCollection, TEnumerator&gt; right)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Langly.DataStructures.ReverseView-3.html">ReverseView</a>&lt;TMember, TCollection, TEnumerator&gt;</td>
-        <td><span class="parametername">left</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Langly.DataStructures.ReverseView-3.html">ReverseView</a>&lt;TMember, TCollection, TEnumerator&gt;</td>
-        <td><span class="parametername">right</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_ReverseView_3_op_Inequality_Langly_DataStructures_ReverseView__0__1__2__Langly_DataStructures_ReverseView__0__1__2__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.ReverseView%603.op_Inequality(Langly.DataStructures.ReverseView%7B%600%2C%601%2C%602%7D%2CLangly.DataStructures.ReverseView%7B%600%2C%601%2C%602%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/DataStructures/ReverseView`3.cs/#L15">View Source</a>
-  </span>
-  <a id="Langly_DataStructures_ReverseView_3_op_Inequality_" data-uid="Langly.DataStructures.ReverseView`3.op_Inequality*"></a>
-  <h4 id="Langly_DataStructures_ReverseView_3_op_Inequality_Langly_DataStructures_ReverseView__0__1__2__Langly_DataStructures_ReverseView__0__1__2__" data-uid="Langly.DataStructures.ReverseView`3.op_Inequality(Langly.DataStructures.ReverseView{`0,`1,`2},Langly.DataStructures.ReverseView{`0,`1,`2})">Inequality(ReverseView&lt;TMember, TCollection, TEnumerator&gt;, ReverseView&lt;TMember, TCollection, TEnumerator&gt;)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool operator !=(ReverseView&lt;TMember, TCollection, TEnumerator&gt; left, ReverseView&lt;TMember, TCollection, TEnumerator&gt; right)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Langly.DataStructures.ReverseView-3.html">ReverseView</a>&lt;TMember, TCollection, TEnumerator&gt;</td>
-        <td><span class="parametername">left</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Langly.DataStructures.ReverseView-3.html">ReverseView</a>&lt;TMember, TCollection, TEnumerator&gt;</td>
-        <td><span class="parametername">right</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
+        <td><p>An enumerator that can be used to iterate through the collection.</p>
+</td>
       </tr>
     </tbody>
   </table>
   <h3 id="implements">Implements</h3>
   <div>
-      <a class="xref" href="Langly.IEnumerable-2.html">IEnumerable&lt;TElement, TEnumerator&gt;</a>
+      <a class="xref" href="Langly.DataStructures.ISequence-2.html">ISequence&lt;TMember, TEnumerator&gt;</a>
   </div>
   <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">System.Collections.Generic.IEnumerable&lt;T&gt;</a>
@@ -406,8 +215,18 @@
   <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">System.Collections.IEnumerable</a>
   </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
   <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">System.IEquatable&lt;T&gt;</a>
+      <a class="xref" href="Langly.DataStructures.DataStructureExtensions.html#Langly_DataStructures_DataStructureExtensions_Fold__2_Langly_DataStructures_ISequence___0___1__System_Func___0___0___0____0_">DataStructureExtensions.Fold&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Func&lt;TElement, TElement, TElement&gt;, TElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.DataStructures.DataStructureExtensions.html#Langly_DataStructures_DataStructureExtensions_Occurrences__2_Langly_DataStructures_ISequence___0___1____0_">DataStructureExtensions.Occurrences&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, TElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.DataStructures.DataStructureExtensions.html#Langly_DataStructures_DataStructureExtensions_Occurrences__2_Langly_DataStructures_ISequence___0___1__Langly_IEquals___0__">DataStructureExtensions.Occurrences&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, IEquals&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.DataStructures.DataStructureExtensions.html#Langly_DataStructures_DataStructureExtensions_Occurrences__2_Langly_DataStructures_ISequence___0___1__System_Predicate___0__">DataStructureExtensions.Occurrences&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Predicate&lt;TElement&gt;)</a>
   </div>
 </article>
           </div>
@@ -417,10 +236,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_ReverseView_3.md&amp;value=---%0Auid%3A%20Langly.DataStructures.ReverseView%603%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_DataStructures_ReverseView_3.md&amp;value=---%0Auid%3A%20Langly.DataStructures.ReverseView%603%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon/DataStructures/ReverseView`3.cs/#L10" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.DataStructures/DataStructures/ReverseView`3.cs/#L13" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

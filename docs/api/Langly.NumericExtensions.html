@@ -1,0 +1,1876 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class NumericExtensions
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class NumericExtensions
+   ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Langly.NumericExtensions">
+  
+  
+  <h1 id="Langly_NumericExtensions" data-uid="Langly.NumericExtensions" class="text-break">Class NumericExtensions
+  </h1>
+  <div class="markdown level0 summary"><p>Provides extensions for core traits when used with numeric types.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">NumericExtensions</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Langly.html">Langly</a></h6>
+  <h6><strong>Assembly</strong>: Langly.Numerics.dll</h6>
+  <h5 id="Langly_NumericExtensions_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class NumericExtensions : object</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_NumericExtensions_Max__1_Langly_ISequence_Byte___0__.md&amp;value=---%0Auid%3A%20Langly.NumericExtensions.Max%60%601(Langly.ISequence%7BByte%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Numerics/Max.cs/#L62">View Source</a>
+  </span>
+  <a id="Langly_NumericExtensions_Max_" data-uid="Langly.NumericExtensions.Max*"></a>
+  <h4 id="Langly_NumericExtensions_Max__1_Langly_ISequence_Byte___0__" data-uid="Langly.NumericExtensions.Max``1(Langly.ISequence{Byte,``0})">Max&lt;TEnumerator&gt;(ISequence&lt;Byte, TEnumerator&gt;)</h4>
+  <div class="markdown level1 summary"><p>Finds the maximum of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static UInt32 Max&lt;TEnumerator&gt;(this ISequence&lt;Byte, TEnumerator&gt; values)
+    where TEnumerator : IEnumerator&lt;Byte&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ISequence-2.html">ISequence</a>&lt;<span class="xref">Byte</span>, TEnumerator&gt;</td>
+        <td><span class="parametername">values</span></td>
+        <td><p>The values to find the maximum of.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UInt32</span></td>
+        <td><p>The maximum of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TEnumerator</span></td>
+        <td><p>The type of the enumerator of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_NumericExtensions_Max__1_Langly_ISequence_Decimal___0__.md&amp;value=---%0Auid%3A%20Langly.NumericExtensions.Max%60%601(Langly.ISequence%7BDecimal%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Numerics/Max.cs/#L209">View Source</a>
+  </span>
+  <a id="Langly_NumericExtensions_Max_" data-uid="Langly.NumericExtensions.Max*"></a>
+  <h4 id="Langly_NumericExtensions_Max__1_Langly_ISequence_Decimal___0__" data-uid="Langly.NumericExtensions.Max``1(Langly.ISequence{Decimal,``0})">Max&lt;TEnumerator&gt;(ISequence&lt;Decimal, TEnumerator&gt;)</h4>
+  <div class="markdown level1 summary"><p>Finds the maximum of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Decimal Max&lt;TEnumerator&gt;(this ISequence&lt;Decimal, TEnumerator&gt; values)
+    where TEnumerator : IEnumerator&lt;Decimal&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ISequence-2.html">ISequence</a>&lt;<span class="xref">Decimal</span>, TEnumerator&gt;</td>
+        <td><span class="parametername">values</span></td>
+        <td><p>The values to find the maximum of.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Decimal</span></td>
+        <td><p>The maximum of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TEnumerator</span></td>
+        <td><p>The type of the enumerator of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_NumericExtensions_Max__1_Langly_ISequence_Double___0__.md&amp;value=---%0Auid%3A%20Langly.NumericExtensions.Max%60%601(Langly.ISequence%7BDouble%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Numerics/Max.cs/#L193">View Source</a>
+  </span>
+  <a id="Langly_NumericExtensions_Max_" data-uid="Langly.NumericExtensions.Max*"></a>
+  <h4 id="Langly_NumericExtensions_Max__1_Langly_ISequence_Double___0__" data-uid="Langly.NumericExtensions.Max``1(Langly.ISequence{Double,``0})">Max&lt;TEnumerator&gt;(ISequence&lt;Double, TEnumerator&gt;)</h4>
+  <div class="markdown level1 summary"><p>Finds the maximum of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Double Max&lt;TEnumerator&gt;(this ISequence&lt;Double, TEnumerator&gt; values)
+    where TEnumerator : IEnumerator&lt;Double&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ISequence-2.html">ISequence</a>&lt;<span class="xref">Double</span>, TEnumerator&gt;</td>
+        <td><span class="parametername">values</span></td>
+        <td><p>The values to find the maximum of.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Double</span></td>
+        <td><p>The maximum of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TEnumerator</span></td>
+        <td><p>The type of the enumerator of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_NumericExtensions_Max__1_Langly_ISequence_Int16___0__.md&amp;value=---%0Auid%3A%20Langly.NumericExtensions.Max%60%601(Langly.ISequence%7BInt16%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Numerics/Max.cs/#L78">View Source</a>
+  </span>
+  <a id="Langly_NumericExtensions_Max_" data-uid="Langly.NumericExtensions.Max*"></a>
+  <h4 id="Langly_NumericExtensions_Max__1_Langly_ISequence_Int16___0__" data-uid="Langly.NumericExtensions.Max``1(Langly.ISequence{Int16,``0})">Max&lt;TEnumerator&gt;(ISequence&lt;Int16, TEnumerator&gt;)</h4>
+  <div class="markdown level1 summary"><p>Finds the maximum of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Int32 Max&lt;TEnumerator&gt;(this ISequence&lt;Int16, TEnumerator&gt; values)
+    where TEnumerator : IEnumerator&lt;Int16&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ISequence-2.html">ISequence</a>&lt;<span class="xref">Int16</span>, TEnumerator&gt;</td>
+        <td><span class="parametername">values</span></td>
+        <td><p>The values to find the maximum of.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Int32</span></td>
+        <td><p>The maximum of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TEnumerator</span></td>
+        <td><p>The type of the enumerator of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_NumericExtensions_Max__1_Langly_ISequence_Int32___0__.md&amp;value=---%0Auid%3A%20Langly.NumericExtensions.Max%60%601(Langly.ISequence%7BInt32%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Numerics/Max.cs/#L111">View Source</a>
+  </span>
+  <a id="Langly_NumericExtensions_Max_" data-uid="Langly.NumericExtensions.Max*"></a>
+  <h4 id="Langly_NumericExtensions_Max__1_Langly_ISequence_Int32___0__" data-uid="Langly.NumericExtensions.Max``1(Langly.ISequence{Int32,``0})">Max&lt;TEnumerator&gt;(ISequence&lt;Int32, TEnumerator&gt;)</h4>
+  <div class="markdown level1 summary"><p>Finds the maximum of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Int32 Max&lt;TEnumerator&gt;(this ISequence&lt;Int32, TEnumerator&gt; values)
+    where TEnumerator : IEnumerator&lt;Int32&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ISequence-2.html">ISequence</a>&lt;<span class="xref">Int32</span>, TEnumerator&gt;</td>
+        <td><span class="parametername">values</span></td>
+        <td><p>The values to find the maximum of.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Int32</span></td>
+        <td><p>The maximum of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TEnumerator</span></td>
+        <td><p>The type of the enumerator of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_NumericExtensions_Max__1_Langly_ISequence_Int64___0__.md&amp;value=---%0Auid%3A%20Langly.NumericExtensions.Max%60%601(Langly.ISequence%7BInt64%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Numerics/Max.cs/#L144">View Source</a>
+  </span>
+  <a id="Langly_NumericExtensions_Max_" data-uid="Langly.NumericExtensions.Max*"></a>
+  <h4 id="Langly_NumericExtensions_Max__1_Langly_ISequence_Int64___0__" data-uid="Langly.NumericExtensions.Max``1(Langly.ISequence{Int64,``0})">Max&lt;TEnumerator&gt;(ISequence&lt;Int64, TEnumerator&gt;)</h4>
+  <div class="markdown level1 summary"><p>Finds the maximum of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Int64 Max&lt;TEnumerator&gt;(this ISequence&lt;Int64, TEnumerator&gt; values)
+    where TEnumerator : IEnumerator&lt;Int64&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ISequence-2.html">ISequence</a>&lt;<span class="xref">Int64</span>, TEnumerator&gt;</td>
+        <td><span class="parametername">values</span></td>
+        <td><p>The values to find the maximum of.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Int64</span></td>
+        <td><p>The maximum of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TEnumerator</span></td>
+        <td><p>The type of the enumerator of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_NumericExtensions_Max__1_Langly_ISequence_nint___0__.md&amp;value=---%0Auid%3A%20Langly.NumericExtensions.Max%60%601(Langly.ISequence%7Bnint%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Numerics/Max.cs/#L12">View Source</a>
+  </span>
+  <a id="Langly_NumericExtensions_Max_" data-uid="Langly.NumericExtensions.Max*"></a>
+  <h4 id="Langly_NumericExtensions_Max__1_Langly_ISequence_nint___0__" data-uid="Langly.NumericExtensions.Max``1(Langly.ISequence{nint,``0})">Max&lt;TEnumerator&gt;(ISequence&lt;nint, TEnumerator&gt;)</h4>
+  <div class="markdown level1 summary"><p>Finds the maximum of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static nint Max&lt;TEnumerator&gt;(this ISequence&lt;nint, TEnumerator&gt; values)
+    where TEnumerator : IEnumerator&lt;nint&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ISequence-2.html">ISequence</a>&lt;<span class="xref">nint</span>, TEnumerator&gt;</td>
+        <td><span class="parametername">values</span></td>
+        <td><p>The values to find the maximum of.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><p>The maximum of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TEnumerator</span></td>
+        <td><p>The type of the enumerator of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_NumericExtensions_Max__1_Langly_ISequence_nuint___0__.md&amp;value=---%0Auid%3A%20Langly.NumericExtensions.Max%60%601(Langly.ISequence%7Bnuint%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Numerics/Max.cs/#L28">View Source</a>
+  </span>
+  <a id="Langly_NumericExtensions_Max_" data-uid="Langly.NumericExtensions.Max*"></a>
+  <h4 id="Langly_NumericExtensions_Max__1_Langly_ISequence_nuint___0__" data-uid="Langly.NumericExtensions.Max``1(Langly.ISequence{nuint,``0})">Max&lt;TEnumerator&gt;(ISequence&lt;nuint, TEnumerator&gt;)</h4>
+  <div class="markdown level1 summary"><p>Finds the maximum of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static nuint Max&lt;TEnumerator&gt;(this ISequence&lt;nuint, TEnumerator&gt; values)
+    where TEnumerator : IEnumerator&lt;nuint&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ISequence-2.html">ISequence</a>&lt;<span class="xref">nuint</span>, TEnumerator&gt;</td>
+        <td><span class="parametername">values</span></td>
+        <td><p>The values to find the maximum of.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nuint</span></td>
+        <td><p>The maximum of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TEnumerator</span></td>
+        <td><p>The type of the enumerator of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_NumericExtensions_Max__1_Langly_ISequence_SByte___0__.md&amp;value=---%0Auid%3A%20Langly.NumericExtensions.Max%60%601(Langly.ISequence%7BSByte%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Numerics/Max.cs/#L45">View Source</a>
+  </span>
+  <a id="Langly_NumericExtensions_Max_" data-uid="Langly.NumericExtensions.Max*"></a>
+  <h4 id="Langly_NumericExtensions_Max__1_Langly_ISequence_SByte___0__" data-uid="Langly.NumericExtensions.Max``1(Langly.ISequence{SByte,``0})">Max&lt;TEnumerator&gt;(ISequence&lt;SByte, TEnumerator&gt;)</h4>
+  <div class="markdown level1 summary"><p>Finds the maximum of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Int32 Max&lt;TEnumerator&gt;(this ISequence&lt;SByte, TEnumerator&gt; values)
+    where TEnumerator : IEnumerator&lt;SByte&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ISequence-2.html">ISequence</a>&lt;<span class="xref">SByte</span>, TEnumerator&gt;</td>
+        <td><span class="parametername">values</span></td>
+        <td><p>The values to find the maximum of.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Int32</span></td>
+        <td><p>The maximum of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TEnumerator</span></td>
+        <td><p>The type of the enumerator of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_NumericExtensions_Max__1_Langly_ISequence_Single___0__.md&amp;value=---%0Auid%3A%20Langly.NumericExtensions.Max%60%601(Langly.ISequence%7BSingle%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Numerics/Max.cs/#L177">View Source</a>
+  </span>
+  <a id="Langly_NumericExtensions_Max_" data-uid="Langly.NumericExtensions.Max*"></a>
+  <h4 id="Langly_NumericExtensions_Max__1_Langly_ISequence_Single___0__" data-uid="Langly.NumericExtensions.Max``1(Langly.ISequence{Single,``0})">Max&lt;TEnumerator&gt;(ISequence&lt;Single, TEnumerator&gt;)</h4>
+  <div class="markdown level1 summary"><p>Finds the maximum of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Single Max&lt;TEnumerator&gt;(this ISequence&lt;Single, TEnumerator&gt; values)
+    where TEnumerator : IEnumerator&lt;Single&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ISequence-2.html">ISequence</a>&lt;<span class="xref">Single</span>, TEnumerator&gt;</td>
+        <td><span class="parametername">values</span></td>
+        <td><p>The values to find the maximum of.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Single</span></td>
+        <td><p>The maximum of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TEnumerator</span></td>
+        <td><p>The type of the enumerator of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_NumericExtensions_Max__1_Langly_ISequence_UInt16___0__.md&amp;value=---%0Auid%3A%20Langly.NumericExtensions.Max%60%601(Langly.ISequence%7BUInt16%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Numerics/Max.cs/#L94">View Source</a>
+  </span>
+  <a id="Langly_NumericExtensions_Max_" data-uid="Langly.NumericExtensions.Max*"></a>
+  <h4 id="Langly_NumericExtensions_Max__1_Langly_ISequence_UInt16___0__" data-uid="Langly.NumericExtensions.Max``1(Langly.ISequence{UInt16,``0})">Max&lt;TEnumerator&gt;(ISequence&lt;UInt16, TEnumerator&gt;)</h4>
+  <div class="markdown level1 summary"><p>Finds the maximum of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static UInt32 Max&lt;TEnumerator&gt;(this ISequence&lt;UInt16, TEnumerator&gt; values)
+    where TEnumerator : IEnumerator&lt;UInt16&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ISequence-2.html">ISequence</a>&lt;<span class="xref">UInt16</span>, TEnumerator&gt;</td>
+        <td><span class="parametername">values</span></td>
+        <td><p>The values to find the maximum of.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UInt32</span></td>
+        <td><p>The maximum of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TEnumerator</span></td>
+        <td><p>The type of the enumerator of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_NumericExtensions_Max__1_Langly_ISequence_UInt32___0__.md&amp;value=---%0Auid%3A%20Langly.NumericExtensions.Max%60%601(Langly.ISequence%7BUInt32%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Numerics/Max.cs/#L127">View Source</a>
+  </span>
+  <a id="Langly_NumericExtensions_Max_" data-uid="Langly.NumericExtensions.Max*"></a>
+  <h4 id="Langly_NumericExtensions_Max__1_Langly_ISequence_UInt32___0__" data-uid="Langly.NumericExtensions.Max``1(Langly.ISequence{UInt32,``0})">Max&lt;TEnumerator&gt;(ISequence&lt;UInt32, TEnumerator&gt;)</h4>
+  <div class="markdown level1 summary"><p>Finds the maximum of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static UInt32 Max&lt;TEnumerator&gt;(this ISequence&lt;UInt32, TEnumerator&gt; values)
+    where TEnumerator : IEnumerator&lt;UInt32&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ISequence-2.html">ISequence</a>&lt;<span class="xref">UInt32</span>, TEnumerator&gt;</td>
+        <td><span class="parametername">values</span></td>
+        <td><p>The values to find the maximum of.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UInt32</span></td>
+        <td><p>The maximum of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TEnumerator</span></td>
+        <td><p>The type of the enumerator of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_NumericExtensions_Max__1_Langly_ISequence_UInt64___0__.md&amp;value=---%0Auid%3A%20Langly.NumericExtensions.Max%60%601(Langly.ISequence%7BUInt64%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Numerics/Max.cs/#L160">View Source</a>
+  </span>
+  <a id="Langly_NumericExtensions_Max_" data-uid="Langly.NumericExtensions.Max*"></a>
+  <h4 id="Langly_NumericExtensions_Max__1_Langly_ISequence_UInt64___0__" data-uid="Langly.NumericExtensions.Max``1(Langly.ISequence{UInt64,``0})">Max&lt;TEnumerator&gt;(ISequence&lt;UInt64, TEnumerator&gt;)</h4>
+  <div class="markdown level1 summary"><p>Finds the maximum of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static UInt64 Max&lt;TEnumerator&gt;(this ISequence&lt;UInt64, TEnumerator&gt; values)
+    where TEnumerator : IEnumerator&lt;UInt64&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ISequence-2.html">ISequence</a>&lt;<span class="xref">UInt64</span>, TEnumerator&gt;</td>
+        <td><span class="parametername">values</span></td>
+        <td><p>The values to find the maximum of.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UInt64</span></td>
+        <td><p>The maximum of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TEnumerator</span></td>
+        <td><p>The type of the enumerator of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_NumericExtensions_Sum__1_Langly_ISequence_Byte___0__.md&amp;value=---%0Auid%3A%20Langly.NumericExtensions.Sum%60%601(Langly.ISequence%7BByte%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Numerics/Sum.cs/#L62">View Source</a>
+  </span>
+  <a id="Langly_NumericExtensions_Sum_" data-uid="Langly.NumericExtensions.Sum*"></a>
+  <h4 id="Langly_NumericExtensions_Sum__1_Langly_ISequence_Byte___0__" data-uid="Langly.NumericExtensions.Sum``1(Langly.ISequence{Byte,``0})">Sum&lt;TEnumerator&gt;(ISequence&lt;Byte, TEnumerator&gt;)</h4>
+  <div class="markdown level1 summary"><p>Sums the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static UInt32 Sum&lt;TEnumerator&gt;(this ISequence&lt;Byte, TEnumerator&gt; values)
+    where TEnumerator : IEnumerator&lt;Byte&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ISequence-2.html">ISequence</a>&lt;<span class="xref">Byte</span>, TEnumerator&gt;</td>
+        <td><span class="parametername">values</span></td>
+        <td><p>The values to sum.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UInt32</span></td>
+        <td><p>The sum of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TEnumerator</span></td>
+        <td><p>The type of the enumerator of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_NumericExtensions_Sum__1_Langly_ISequence_Decimal___0__.md&amp;value=---%0Auid%3A%20Langly.NumericExtensions.Sum%60%601(Langly.ISequence%7BDecimal%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Numerics/Sum.cs/#L209">View Source</a>
+  </span>
+  <a id="Langly_NumericExtensions_Sum_" data-uid="Langly.NumericExtensions.Sum*"></a>
+  <h4 id="Langly_NumericExtensions_Sum__1_Langly_ISequence_Decimal___0__" data-uid="Langly.NumericExtensions.Sum``1(Langly.ISequence{Decimal,``0})">Sum&lt;TEnumerator&gt;(ISequence&lt;Decimal, TEnumerator&gt;)</h4>
+  <div class="markdown level1 summary"><p>Sums the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Decimal Sum&lt;TEnumerator&gt;(this ISequence&lt;Decimal, TEnumerator&gt; values)
+    where TEnumerator : IEnumerator&lt;Decimal&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ISequence-2.html">ISequence</a>&lt;<span class="xref">Decimal</span>, TEnumerator&gt;</td>
+        <td><span class="parametername">values</span></td>
+        <td><p>The values to sum.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Decimal</span></td>
+        <td><p>The sum of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TEnumerator</span></td>
+        <td><p>The type of the enumerator of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_NumericExtensions_Sum__1_Langly_ISequence_Double___0__.md&amp;value=---%0Auid%3A%20Langly.NumericExtensions.Sum%60%601(Langly.ISequence%7BDouble%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Numerics/Sum.cs/#L193">View Source</a>
+  </span>
+  <a id="Langly_NumericExtensions_Sum_" data-uid="Langly.NumericExtensions.Sum*"></a>
+  <h4 id="Langly_NumericExtensions_Sum__1_Langly_ISequence_Double___0__" data-uid="Langly.NumericExtensions.Sum``1(Langly.ISequence{Double,``0})">Sum&lt;TEnumerator&gt;(ISequence&lt;Double, TEnumerator&gt;)</h4>
+  <div class="markdown level1 summary"><p>Sums the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Double Sum&lt;TEnumerator&gt;(this ISequence&lt;Double, TEnumerator&gt; values)
+    where TEnumerator : IEnumerator&lt;Double&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ISequence-2.html">ISequence</a>&lt;<span class="xref">Double</span>, TEnumerator&gt;</td>
+        <td><span class="parametername">values</span></td>
+        <td><p>The values to sum.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Double</span></td>
+        <td><p>The sum of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TEnumerator</span></td>
+        <td><p>The type of the enumerator of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_NumericExtensions_Sum__1_Langly_ISequence_Int16___0__.md&amp;value=---%0Auid%3A%20Langly.NumericExtensions.Sum%60%601(Langly.ISequence%7BInt16%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Numerics/Sum.cs/#L78">View Source</a>
+  </span>
+  <a id="Langly_NumericExtensions_Sum_" data-uid="Langly.NumericExtensions.Sum*"></a>
+  <h4 id="Langly_NumericExtensions_Sum__1_Langly_ISequence_Int16___0__" data-uid="Langly.NumericExtensions.Sum``1(Langly.ISequence{Int16,``0})">Sum&lt;TEnumerator&gt;(ISequence&lt;Int16, TEnumerator&gt;)</h4>
+  <div class="markdown level1 summary"><p>Sums the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Int32 Sum&lt;TEnumerator&gt;(this ISequence&lt;Int16, TEnumerator&gt; values)
+    where TEnumerator : IEnumerator&lt;Int16&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ISequence-2.html">ISequence</a>&lt;<span class="xref">Int16</span>, TEnumerator&gt;</td>
+        <td><span class="parametername">values</span></td>
+        <td><p>The values to sum.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Int32</span></td>
+        <td><p>The sum of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TEnumerator</span></td>
+        <td><p>The type of the enumerator of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_NumericExtensions_Sum__1_Langly_ISequence_Int32___0__.md&amp;value=---%0Auid%3A%20Langly.NumericExtensions.Sum%60%601(Langly.ISequence%7BInt32%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Numerics/Sum.cs/#L111">View Source</a>
+  </span>
+  <a id="Langly_NumericExtensions_Sum_" data-uid="Langly.NumericExtensions.Sum*"></a>
+  <h4 id="Langly_NumericExtensions_Sum__1_Langly_ISequence_Int32___0__" data-uid="Langly.NumericExtensions.Sum``1(Langly.ISequence{Int32,``0})">Sum&lt;TEnumerator&gt;(ISequence&lt;Int32, TEnumerator&gt;)</h4>
+  <div class="markdown level1 summary"><p>Sums the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Int32 Sum&lt;TEnumerator&gt;(this ISequence&lt;Int32, TEnumerator&gt; values)
+    where TEnumerator : IEnumerator&lt;Int32&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ISequence-2.html">ISequence</a>&lt;<span class="xref">Int32</span>, TEnumerator&gt;</td>
+        <td><span class="parametername">values</span></td>
+        <td><p>The values to sum.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Int32</span></td>
+        <td><p>The sum of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TEnumerator</span></td>
+        <td><p>The type of the enumerator of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_NumericExtensions_Sum__1_Langly_ISequence_Int64___0__.md&amp;value=---%0Auid%3A%20Langly.NumericExtensions.Sum%60%601(Langly.ISequence%7BInt64%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Numerics/Sum.cs/#L144">View Source</a>
+  </span>
+  <a id="Langly_NumericExtensions_Sum_" data-uid="Langly.NumericExtensions.Sum*"></a>
+  <h4 id="Langly_NumericExtensions_Sum__1_Langly_ISequence_Int64___0__" data-uid="Langly.NumericExtensions.Sum``1(Langly.ISequence{Int64,``0})">Sum&lt;TEnumerator&gt;(ISequence&lt;Int64, TEnumerator&gt;)</h4>
+  <div class="markdown level1 summary"><p>Sums the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Int64 Sum&lt;TEnumerator&gt;(this ISequence&lt;Int64, TEnumerator&gt; values)
+    where TEnumerator : IEnumerator&lt;Int64&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ISequence-2.html">ISequence</a>&lt;<span class="xref">Int64</span>, TEnumerator&gt;</td>
+        <td><span class="parametername">values</span></td>
+        <td><p>The values to sum.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Int64</span></td>
+        <td><p>The sum of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TEnumerator</span></td>
+        <td><p>The type of the enumerator of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_NumericExtensions_Sum__1_Langly_ISequence_nint___0__.md&amp;value=---%0Auid%3A%20Langly.NumericExtensions.Sum%60%601(Langly.ISequence%7Bnint%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Numerics/Sum.cs/#L12">View Source</a>
+  </span>
+  <a id="Langly_NumericExtensions_Sum_" data-uid="Langly.NumericExtensions.Sum*"></a>
+  <h4 id="Langly_NumericExtensions_Sum__1_Langly_ISequence_nint___0__" data-uid="Langly.NumericExtensions.Sum``1(Langly.ISequence{nint,``0})">Sum&lt;TEnumerator&gt;(ISequence&lt;nint, TEnumerator&gt;)</h4>
+  <div class="markdown level1 summary"><p>Sums the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static nint Sum&lt;TEnumerator&gt;(this ISequence&lt;nint, TEnumerator&gt; values)
+    where TEnumerator : IEnumerator&lt;nint&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ISequence-2.html">ISequence</a>&lt;<span class="xref">nint</span>, TEnumerator&gt;</td>
+        <td><span class="parametername">values</span></td>
+        <td><p>The values to sum.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><p>The sum of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TEnumerator</span></td>
+        <td><p>The type of the enumerator of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_NumericExtensions_Sum__1_Langly_ISequence_nuint___0__.md&amp;value=---%0Auid%3A%20Langly.NumericExtensions.Sum%60%601(Langly.ISequence%7Bnuint%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Numerics/Sum.cs/#L28">View Source</a>
+  </span>
+  <a id="Langly_NumericExtensions_Sum_" data-uid="Langly.NumericExtensions.Sum*"></a>
+  <h4 id="Langly_NumericExtensions_Sum__1_Langly_ISequence_nuint___0__" data-uid="Langly.NumericExtensions.Sum``1(Langly.ISequence{nuint,``0})">Sum&lt;TEnumerator&gt;(ISequence&lt;nuint, TEnumerator&gt;)</h4>
+  <div class="markdown level1 summary"><p>Sums the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static nuint Sum&lt;TEnumerator&gt;(this ISequence&lt;nuint, TEnumerator&gt; values)
+    where TEnumerator : IEnumerator&lt;nuint&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ISequence-2.html">ISequence</a>&lt;<span class="xref">nuint</span>, TEnumerator&gt;</td>
+        <td><span class="parametername">values</span></td>
+        <td><p>The values to sum.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nuint</span></td>
+        <td><p>The sum of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TEnumerator</span></td>
+        <td><p>The type of the enumerator of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_NumericExtensions_Sum__1_Langly_ISequence_SByte___0__.md&amp;value=---%0Auid%3A%20Langly.NumericExtensions.Sum%60%601(Langly.ISequence%7BSByte%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Numerics/Sum.cs/#L45">View Source</a>
+  </span>
+  <a id="Langly_NumericExtensions_Sum_" data-uid="Langly.NumericExtensions.Sum*"></a>
+  <h4 id="Langly_NumericExtensions_Sum__1_Langly_ISequence_SByte___0__" data-uid="Langly.NumericExtensions.Sum``1(Langly.ISequence{SByte,``0})">Sum&lt;TEnumerator&gt;(ISequence&lt;SByte, TEnumerator&gt;)</h4>
+  <div class="markdown level1 summary"><p>Sums the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Int32 Sum&lt;TEnumerator&gt;(this ISequence&lt;SByte, TEnumerator&gt; values)
+    where TEnumerator : IEnumerator&lt;SByte&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ISequence-2.html">ISequence</a>&lt;<span class="xref">SByte</span>, TEnumerator&gt;</td>
+        <td><span class="parametername">values</span></td>
+        <td><p>The values to sum.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Int32</span></td>
+        <td><p>The sum of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TEnumerator</span></td>
+        <td><p>The type of the enumerator of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_NumericExtensions_Sum__1_Langly_ISequence_Single___0__.md&amp;value=---%0Auid%3A%20Langly.NumericExtensions.Sum%60%601(Langly.ISequence%7BSingle%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Numerics/Sum.cs/#L177">View Source</a>
+  </span>
+  <a id="Langly_NumericExtensions_Sum_" data-uid="Langly.NumericExtensions.Sum*"></a>
+  <h4 id="Langly_NumericExtensions_Sum__1_Langly_ISequence_Single___0__" data-uid="Langly.NumericExtensions.Sum``1(Langly.ISequence{Single,``0})">Sum&lt;TEnumerator&gt;(ISequence&lt;Single, TEnumerator&gt;)</h4>
+  <div class="markdown level1 summary"><p>Sums the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Single Sum&lt;TEnumerator&gt;(this ISequence&lt;Single, TEnumerator&gt; values)
+    where TEnumerator : IEnumerator&lt;Single&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ISequence-2.html">ISequence</a>&lt;<span class="xref">Single</span>, TEnumerator&gt;</td>
+        <td><span class="parametername">values</span></td>
+        <td><p>The values to sum.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Single</span></td>
+        <td><p>The sum of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TEnumerator</span></td>
+        <td><p>The type of the enumerator of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_NumericExtensions_Sum__1_Langly_ISequence_UInt16___0__.md&amp;value=---%0Auid%3A%20Langly.NumericExtensions.Sum%60%601(Langly.ISequence%7BUInt16%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Numerics/Sum.cs/#L94">View Source</a>
+  </span>
+  <a id="Langly_NumericExtensions_Sum_" data-uid="Langly.NumericExtensions.Sum*"></a>
+  <h4 id="Langly_NumericExtensions_Sum__1_Langly_ISequence_UInt16___0__" data-uid="Langly.NumericExtensions.Sum``1(Langly.ISequence{UInt16,``0})">Sum&lt;TEnumerator&gt;(ISequence&lt;UInt16, TEnumerator&gt;)</h4>
+  <div class="markdown level1 summary"><p>Sums the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static UInt32 Sum&lt;TEnumerator&gt;(this ISequence&lt;UInt16, TEnumerator&gt; values)
+    where TEnumerator : IEnumerator&lt;UInt16&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ISequence-2.html">ISequence</a>&lt;<span class="xref">UInt16</span>, TEnumerator&gt;</td>
+        <td><span class="parametername">values</span></td>
+        <td><p>The values to sum.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UInt32</span></td>
+        <td><p>The sum of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TEnumerator</span></td>
+        <td><p>The type of the enumerator of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_NumericExtensions_Sum__1_Langly_ISequence_UInt32___0__.md&amp;value=---%0Auid%3A%20Langly.NumericExtensions.Sum%60%601(Langly.ISequence%7BUInt32%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Numerics/Sum.cs/#L127">View Source</a>
+  </span>
+  <a id="Langly_NumericExtensions_Sum_" data-uid="Langly.NumericExtensions.Sum*"></a>
+  <h4 id="Langly_NumericExtensions_Sum__1_Langly_ISequence_UInt32___0__" data-uid="Langly.NumericExtensions.Sum``1(Langly.ISequence{UInt32,``0})">Sum&lt;TEnumerator&gt;(ISequence&lt;UInt32, TEnumerator&gt;)</h4>
+  <div class="markdown level1 summary"><p>Sums the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static UInt32 Sum&lt;TEnumerator&gt;(this ISequence&lt;UInt32, TEnumerator&gt; values)
+    where TEnumerator : IEnumerator&lt;UInt32&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ISequence-2.html">ISequence</a>&lt;<span class="xref">UInt32</span>, TEnumerator&gt;</td>
+        <td><span class="parametername">values</span></td>
+        <td><p>The values to sum.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UInt32</span></td>
+        <td><p>The sum of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TEnumerator</span></td>
+        <td><p>The type of the enumerator of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_NumericExtensions_Sum__1_Langly_ISequence_UInt64___0__.md&amp;value=---%0Auid%3A%20Langly.NumericExtensions.Sum%60%601(Langly.ISequence%7BUInt64%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Numerics/Sum.cs/#L160">View Source</a>
+  </span>
+  <a id="Langly_NumericExtensions_Sum_" data-uid="Langly.NumericExtensions.Sum*"></a>
+  <h4 id="Langly_NumericExtensions_Sum__1_Langly_ISequence_UInt64___0__" data-uid="Langly.NumericExtensions.Sum``1(Langly.ISequence{UInt64,``0})">Sum&lt;TEnumerator&gt;(ISequence&lt;UInt64, TEnumerator&gt;)</h4>
+  <div class="markdown level1 summary"><p>Sums the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static UInt64 Sum&lt;TEnumerator&gt;(this ISequence&lt;UInt64, TEnumerator&gt; values)
+    where TEnumerator : IEnumerator&lt;UInt64&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ISequence-2.html">ISequence</a>&lt;<span class="xref">UInt64</span>, TEnumerator&gt;</td>
+        <td><span class="parametername">values</span></td>
+        <td><p>The values to sum.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UInt64</span></td>
+        <td><p>The sum of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TEnumerator</span></td>
+        <td><p>The type of the enumerator of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/new/NewArchitecture/apiSpec/new?filename=Langly_NumericExtensions.md&amp;value=---%0Auid%3A%20Langly.NumericExtensions%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/blob/NewArchitecture/Libraries/Langly.Numerics/Sum.cs/#L5" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
