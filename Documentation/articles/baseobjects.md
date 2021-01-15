@@ -6,12 +6,12 @@ Everything in standard .NET derives from [`Object`](https://docs.microsoft.com/e
 
 ## Object
 
-**Langly**'s `Object` forces reference semantics in every possible way, by explicitly defining this behavior and preventing future classes from defining new behavior that deviates from this. Type classes where referentially equality is appropriate should always derive from this type.
+**Langly**'s [`Object`](https://entomy.github.io/LibLangly/api/Langly.Object.html) forces reference semantics in every possible way, by explicitly defining this behavior and preventing future classes from defining new behavior that deviates from this. Type classes where referentially equality is appropriate should always derive from this type.
 
-When deriving from `Object`, nothing additional needs to be done. Equality and other operations are already defined as they should be.
+When deriving from [`Object`](https://entomy.github.io/LibLangly/api/Langly.Object.html), nothing additional needs to be done. Equality and other operations are already defined as they should be.
 
 ## Record
 
-**Langly**'s `Record` instead establishes contracts about equality in an extensible way. Equality is not defined as a matter of what other types an object might be equal to. It's also not defined through a shared equality contract object that C# `record` uses. Rather, every `Record` is defined as supporting equality for anything that says it's equal to it. This is a subtle but incredibly important thing: it defines a point of extensibility; a general contract for testing equality.
+**Langly**'s [`Record<TSelf>`](https://entomy.github.io/LibLangly/api/Langly.Record-1.html) instead establishes contracts about equality in an extensible way. Equality is not defined as a matter of what other types an object might be equal to. It's also not defined through a shared equality contract object that C# `record` uses. Rather, every [`Record<TSelf>`](https://entomy.github.io/LibLangly/api/Langly.Record-1.html) is defined as supporting equality for anything that says it's equal to it. This is a subtle but incredibly important thing: it defines a point of extensibility; a general contract for testing equality.
 
-When deriving from `Record`, a few extra things need to be defined. These have all been made `abstract` even if they weren't already, so an IDE will prompt you to define these and create the stubs for you.
+When deriving from [`Record<TSelf>`](https://entomy.github.io/LibLangly/api/Langly.Record-1.html), a few extra things need to be defined. These have all been made `abstract` even if they weren't already, so an IDE will prompt you to define these and create the stubs for you.
