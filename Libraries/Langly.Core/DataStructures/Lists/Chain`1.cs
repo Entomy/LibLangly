@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Langly.DataStructures.Filters;
+using System;
 using System.Diagnostics.CodeAnalysis;
 
 namespace Langly.DataStructures.Lists {
@@ -40,6 +41,15 @@ namespace Langly.DataStructures.Lists {
 			Head = null;
 			Tail = null;
 		}
+
+		/// <summary>
+		/// Initializes a new <see cref="Chain{TElement}"/>.
+		/// </summary>
+		/// <param name="filter">The <see cref="Filter{TIndex, TElement}"/> to reuse.</param>
+		/// <remarks>
+		/// This is intended for cases in which an existing collection is converted into a chain, and the filter should be copied over. Because of how <see cref="Filter{TIndex, TElement}"/> is designed, you won't have an instance freely floating around. <see cref="DataStructure{TElement, TSelf, TEnumerator}.Filter"/> is meant to be passed in.
+		/// </remarks>
+		public Chain(Filter<nint, TElement> filter) : base(filter) { }
 
 		/// <inheritdoc/>
 		[MaybeNull, AllowNull]

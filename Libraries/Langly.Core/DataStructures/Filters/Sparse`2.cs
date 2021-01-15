@@ -9,10 +9,10 @@ namespace Langly.DataStructures.Filters {
 	/// <typeparam name="TElement">The type of the elements in the collection being filtered.</typeparam>
 	internal sealed class Sparse<TIndex, TElement> : Filter<TIndex, TElement> {
 		/// <summary>
-		/// The default
+		/// The default element.
 		/// </summary>
 		[MaybeNull]
-		private readonly TElement Default;
+		private static readonly TElement Default;
 
 		/// <summary>
 		/// Initializes a new <see cref="Sparse{TIndex, TElement}"/> filter.
