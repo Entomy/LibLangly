@@ -42,6 +42,8 @@ namespace Langly.DataStructures.Arrays {
 
 		public static implicit operator FixedArray<TElement>(TElement[] elements) => elements is not null ? new FixedArray<TElement>(elements, DataStructures.Filter.None) : Empty;
 
+		public static implicit operator FixedArray<TElement>(Memory<TElement> elements) => new FixedArray<TElement>(elements, DataStructures.Filter.None);
+
 		public static implicit operator FixedArray<TElement>(ReadOnlyMemory<TElement> elements) => new FixedArray<TElement>(elements, DataStructures.Filter.None);
 
 		/// <inheritdoc/>

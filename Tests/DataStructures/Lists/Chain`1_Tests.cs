@@ -35,6 +35,21 @@ namespace Langly.DataStructures.Lists {
 		}
 
 		[Theory]
+		[InlineData(new Int32[] { }, new Int32[] { })]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 5 })]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 2, 5 })]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 2, 4, 5 })]
+		public void Add_Span(Int32[] expected, Int32[] slicePoints) {
+			Chain<Int32> chain = new Chain<Int32>();
+			Int32 i = 0;
+			foreach (Int32 sp in slicePoints) {
+				_ = chain.Add(expected.AsSpan()[i..sp]);
+				i = sp;
+			}
+			Assert.Equal(expected, chain);
+		}
+
+		[Theory]
 		[InlineData(new Int32[] { })]
 		[InlineData(new Int32[] { 1 })]
 		[InlineData(new Int32[] { 1, 2, 3, 4, 5 })]
@@ -118,6 +133,42 @@ namespace Langly.DataStructures.Lists {
 		}
 
 		[Theory]
+		[InlineData(new Int32[] { 0, 1, 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 5 }, 0, 0)]
+		[InlineData(new Int32[] { 1, 0, 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 5 }, 1, 0)]
+		[InlineData(new Int32[] { 1, 2, 0, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 5 }, 2, 0)]
+		[InlineData(new Int32[] { 1, 2, 3, 0, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 5 }, 3, 0)]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 0, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 5 }, 4, 0)]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 5, 0 }, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 5 }, 5, 0)]
+		[InlineData(new Int32[] { 0, 1, 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 2, 5 }, 0, 0)]
+		[InlineData(new Int32[] { 1, 0, 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 2, 5 }, 1, 0)]
+		[InlineData(new Int32[] { 1, 2, 0, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 2, 5 }, 2, 0)]
+		[InlineData(new Int32[] { 1, 2, 3, 0, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 2, 5 }, 3, 0)]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 0, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 2, 5 }, 4, 0)]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 5, 0 }, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 2, 5 }, 5, 0)]
+		[InlineData(new Int32[] { 0, 1, 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 2, 4, 5 }, 0, 0)]
+		[InlineData(new Int32[] { 1, 0, 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 2, 4, 5 }, 1, 0)]
+		[InlineData(new Int32[] { 1, 2, 0, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 2, 4, 5 }, 2, 0)]
+		[InlineData(new Int32[] { 1, 2, 3, 0, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 2, 4, 5 }, 3, 0)]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 0, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 2, 4, 5 }, 4, 0)]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 5, 0 }, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 2, 4, 5 }, 5, 0)]
+		[InlineData(new Int32[] { 0, 1, 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 1, 5 }, 0, 0)]
+		[InlineData(new Int32[] { 1, 0, 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 1, 5 }, 1, 0)]
+		[InlineData(new Int32[] { 1, 2, 0, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 1, 5 }, 2, 0)]
+		[InlineData(new Int32[] { 1, 2, 3, 0, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 1, 5 }, 3, 0)]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 0, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 1, 5 }, 4, 0)]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 5, 0 }, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 1, 5 }, 5, 0)]
+		public void Insert_Element_Span(Int32[] expected, Int32[] initial, Int32[] slicePoints, Int32 index, Int32 element) {
+			Chain<Int32> chain = new Chain<Int32>();
+			Int32 i = 0;
+			foreach (Int32 sp in slicePoints) {
+				_ = chain.Add(initial.AsSpan()[i..sp]);
+				i = sp;
+			}
+			_ = chain.Insert(index, element);
+			Assert.Equal(expected, chain);
+		}
+
+		[Theory]
 		[InlineData(new Int32[] { 0, 0 }, new Int32[] { }, 0, new Int32[] { 0, 0 })]
 		[InlineData(new Int32[] { 0, 0, 1, 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 0, new Int32[] { 0, 0 })]
 		[InlineData(new Int32[] { 1, 0, 0, 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 1, new Int32[] { 0, 0 })]
@@ -131,6 +182,23 @@ namespace Langly.DataStructures.Lists {
 				_ = chain.Add(item);
 			}
 			_ = chain.Insert(index, elements);
+			Assert.Equal(expected, chain);
+		}
+
+		[Theory]
+		[InlineData(new Int32[] { 0, 0 }, new Int32[] { }, 0, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 0, 0, 1, 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 0, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 0, 0, 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 1, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 0, 0, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 2, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 3, 0, 0, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 3, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 0, 0, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 4, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 5, 0, 0 }, new Int32[] { 1, 2, 3, 4, 5 }, 5, new Int32[] { 0, 0 })]
+		public void Insert_Span_Element(Int32[] expected, Int32[] initial, Int32 index, Int32[] elements) {
+			Chain<Int32> chain = new Chain<Int32>();
+			foreach (Int32 item in initial) {
+				_ = chain.Add(item);
+			}
+			_ = chain.Insert(index, elements.AsSpan());
 			Assert.Equal(expected, chain);
 		}
 
@@ -167,6 +235,42 @@ namespace Langly.DataStructures.Lists {
 				i = sp;
 			}
 			_ = chain.Insert(index, elements);
+			Assert.Equal(expected, chain);
+		}
+
+		[Theory]
+		[InlineData(new Int32[] { 0, 0, 1, 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 5 }, 0, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 0, 0, 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 5 }, 1, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 0, 0, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 5 }, 2, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 3, 0, 0, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 5 }, 3, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 0, 0, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 5 }, 4, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 5, 0, 0 }, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 5 }, 5, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 0, 0, 1, 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 2, 5 }, 0, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 0, 0, 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 2, 5 }, 1, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 0, 0, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 2, 5 }, 2, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 3, 0, 0, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 2, 5 }, 3, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 0, 0, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 2, 5 }, 4, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 5, 0, 0 }, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 2, 5 }, 5, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 0, 0, 1, 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 2, 4, 5 }, 0, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 0, 0, 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 2, 4, 5 }, 1, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 0, 0, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 2, 4, 5 }, 2, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 3, 0, 0, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 2, 4, 5 }, 3, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 0, 0, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 2, 4, 5 }, 4, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 5, 0, 0 }, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 2, 4, 5 }, 5, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 0, 0, 1, 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 1, 5 }, 0, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 0, 0, 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 1, 5 }, 1, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 0, 0, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 1, 5 }, 2, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 3, 0, 0, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 1, 5 }, 3, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 0, 0, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 1, 5 }, 4, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 5, 0, 0 }, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 1, 5 }, 5, new Int32[] { 0, 0 })]
+		public void Insert_Span_Span(Int32[] expected, Int32[] initial, Int32[] slicePoints, Int32 index, Int32[] elements) {
+			Chain<Int32> chain = new Chain<Int32>();
+			Int32 i = 0;
+			foreach (Int32 sp in slicePoints) {
+				_ = chain.Add(initial.AsSpan()[i..sp]);
+				i = sp;
+			}
+			_ = chain.Insert(index, elements.AsSpan());
 			Assert.Equal(expected, chain);
 		}
 

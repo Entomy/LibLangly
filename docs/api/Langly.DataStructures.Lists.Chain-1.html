@@ -197,7 +197,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Lists_Chain_1__ctor.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Lists.Chain%601.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/DataStructures/Lists/Chain`1.cs/#L33">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/DataStructures/Lists/Chain`1.cs/#L34">View Source</a>
   </span>
   <a id="Langly_DataStructures_Lists_Chain_1__ctor_" data-uid="Langly.DataStructures.Lists.Chain`1.#ctor*"></a>
   <h4 id="Langly_DataStructures_Lists_Chain_1__ctor" data-uid="Langly.DataStructures.Lists.Chain`1.#ctor">Chain()</h4>
@@ -213,7 +213,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Lists_Chain_1__ctor_Langly_DataStructures_Filter_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Lists.Chain%601.%23ctor(Langly.DataStructures.Filter)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/DataStructures/Lists/Chain`1.cs/#L39">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/DataStructures/Lists/Chain`1.cs/#L40">View Source</a>
   </span>
   <a id="Langly_DataStructures_Lists_Chain_1__ctor_" data-uid="Langly.DataStructures.Lists.Chain`1.#ctor*"></a>
   <h4 id="Langly_DataStructures_Lists_Chain_1__ctor_Langly_DataStructures_Filter_" data-uid="Langly.DataStructures.Lists.Chain`1.#ctor(Langly.DataStructures.Filter)">Chain(Filter)</h4>
@@ -242,6 +242,43 @@
       </tr>
     </tbody>
   </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Lists_Chain_1__ctor_Langly_DataStructures_Filters_Filter_nint__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Lists.Chain%601.%23ctor(Langly.DataStructures.Filters.Filter%7Bnint%2C%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/DataStructures/Lists/Chain`1.cs/#L52">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Lists_Chain_1__ctor_" data-uid="Langly.DataStructures.Lists.Chain`1.#ctor*"></a>
+  <h4 id="Langly_DataStructures_Lists_Chain_1__ctor_Langly_DataStructures_Filters_Filter_nint__0__" data-uid="Langly.DataStructures.Lists.Chain`1.#ctor(Langly.DataStructures.Filters.Filter{nint,`0})">Chain(Filter&lt;nint, TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Langly.DataStructures.Lists.Chain-1.html">Chain&lt;TElement&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Chain(Filter&lt;nint, TElement&gt; filter)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Filters.Filter-2.html">Filter</a>&lt;<span class="xref">nint</span>, TElement&gt;</td>
+        <td><span class="parametername">filter</span></td>
+        <td><p>The <a class="xref" href="Langly.DataStructures.Filters.Filter-2.html">Filter&lt;TIndex, TElement&gt;</a> to reuse.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_DataStructures_Lists_Chain_1__ctor_Langly_DataStructures_Filters_Filter_nint__0___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This is intended for cases in which an existing collection is converted into a chain, and the filter should be copied over. Because of how <a class="xref" href="Langly.DataStructures.Filters.Filter-2.html">Filter&lt;TIndex, TElement&gt;</a> is designed, you won't have an instance freely floating around. <a class="xref" href="Langly.DataStructures.DataStructure-3.html#Langly_DataStructures_DataStructure_3_Filter">Filter</a> is meant to be passed in.</p>
+</div>
   <h3 id="properties">Properties
   </h3>
   <span class="small pull-right mobile-hide">
@@ -249,7 +286,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Lists_Chain_1_Item_nint_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Lists.Chain%601.Item(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/DataStructures/Lists/Chain`1.cs/#L45">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/DataStructures/Lists/Chain`1.cs/#L55">View Source</a>
   </span>
   <a id="Langly_DataStructures_Lists_Chain_1_Item_" data-uid="Langly.DataStructures.Lists.Chain`1.Item*"></a>
   <h4 id="Langly_DataStructures_Lists_Chain_1_Item_nint_" data-uid="Langly.DataStructures.Lists.Chain`1.Item(nint)">Item[nint]</h4>
@@ -367,7 +404,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Lists_Chain_1_Langly_IAdd_TElement_Langly_DataStructures_Lists_Chain_TElement___Add__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Lists.Chain%601.Langly%23IAdd%7BTElement%2CLangly%23DataStructures%23Lists%23Chain%7BTElement%7D%7D%23Add(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/DataStructures/Lists/Chain`1.cs/#L69">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/DataStructures/Lists/Chain`1.cs/#L79">View Source</a>
   </span>
   <a id="Langly_DataStructures_Lists_Chain_1_Langly_IAdd_TElement_Langly_DataStructures_Lists_Chain_TElement___Add_" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#IAdd{TElement,Langly#DataStructures#Lists#Chain{TElement}}#Add*"></a>
   <h4 id="Langly_DataStructures_Lists_Chain_1_Langly_IAdd_TElement_Langly_DataStructures_Lists_Chain_TElement___Add__0_" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#IAdd{TElement,Langly#DataStructures#Lists#Chain{TElement}}#Add(`0)">IAdd&lt;TElement, Chain&lt;TElement&gt;&gt;.Add(TElement)</h4>
@@ -419,7 +456,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Lists_Chain_1_Langly_IAdd_TElement_Langly_DataStructures_Lists_Chain_TElement___Add_System_ReadOnlyMemory__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Lists.Chain%601.Langly%23IAdd%7BTElement%2CLangly%23DataStructures%23Lists%23Chain%7BTElement%7D%7D%23Add(System.ReadOnlyMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/DataStructures/Lists/Chain`1.cs/#L72">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/DataStructures/Lists/Chain`1.cs/#L83">View Source</a>
   </span>
   <a id="Langly_DataStructures_Lists_Chain_1_Langly_IAdd_TElement_Langly_DataStructures_Lists_Chain_TElement___Add_" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#IAdd{TElement,Langly#DataStructures#Lists#Chain{TElement}}#Add*"></a>
   <h4 id="Langly_DataStructures_Lists_Chain_1_Langly_IAdd_TElement_Langly_DataStructures_Lists_Chain_TElement___Add_System_ReadOnlyMemory__0__" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#IAdd{TElement,Langly#DataStructures#Lists#Chain{TElement}}#Add(System.ReadOnlyMemory{`0})">IAdd&lt;TElement, Chain&lt;TElement&gt;&gt;.Add(ReadOnlyMemory&lt;TElement&gt;)</h4>
@@ -468,10 +505,62 @@
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Lists_Chain_1_Langly_IAdd_TElement_Langly_DataStructures_Lists_Chain_TElement___Add_System_ReadOnlySpan__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Lists.Chain%601.Langly%23IAdd%7BTElement%2CLangly%23DataStructures%23Lists%23Chain%7BTElement%7D%7D%23Add(System.ReadOnlySpan%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/DataStructures/Lists/Chain`1.cs/#L87">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Lists_Chain_1_Langly_IAdd_TElement_Langly_DataStructures_Lists_Chain_TElement___Add_" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#IAdd{TElement,Langly#DataStructures#Lists#Chain{TElement}}#Add*"></a>
+  <h4 id="Langly_DataStructures_Lists_Chain_1_Langly_IAdd_TElement_Langly_DataStructures_Lists_Chain_TElement___Add_System_ReadOnlySpan__0__" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#IAdd{TElement,Langly#DataStructures#Lists#Chain{TElement}}#Add(System.ReadOnlySpan{`0})">IAdd&lt;TElement, Chain&lt;TElement&gt;&gt;.Add(ReadOnlySpan&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Adds the elements to this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Chain&lt;TElement&gt; IAdd&lt;TElement, Chain&lt;TElement&gt;&gt;.Add(ReadOnlySpan&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to add.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Lists.Chain-1.html">Chain</a>&lt;TElement&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_DataStructures_Lists_Chain_1_Langly_IAdd_TElement_Langly_DataStructures_Lists_Chain_TElement___Add_System_ReadOnlySpan__0___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Lists_Chain_1_Langly_IInsert_nint_TElement_Langly_DataStructures_Lists_Chain_TElement___Insert_nint__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Lists.Chain%601.Langly%23IInsert%7Bnint%2CTElement%2CLangly%23DataStructures%23Lists%23Chain%7BTElement%7D%7D%23Insert(nint%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/DataStructures/Lists/Chain`1.cs/#L75">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/DataStructures/Lists/Chain`1.cs/#L95">View Source</a>
   </span>
   <a id="Langly_DataStructures_Lists_Chain_1_Langly_IInsert_nint_TElement_Langly_DataStructures_Lists_Chain_TElement___Insert_" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#IInsert{nint,TElement,Langly#DataStructures#Lists#Chain{TElement}}#Insert*"></a>
   <h4 id="Langly_DataStructures_Lists_Chain_1_Langly_IInsert_nint_TElement_Langly_DataStructures_Lists_Chain_TElement___Insert_nint__0_" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#IInsert{nint,TElement,Langly#DataStructures#Lists#Chain{TElement}}#Insert(nint,`0)">IInsert&lt;nint, TElement, Chain&lt;TElement&gt;&gt;.Insert(nint, TElement)</h4>
@@ -526,7 +615,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Lists_Chain_1_Langly_IInsert_TElement_Langly_DataStructures_Lists_Chain_TElement___Insert_nint_System_ReadOnlyMemory__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Lists.Chain%601.Langly%23IInsert%7BTElement%2CLangly%23DataStructures%23Lists%23Chain%7BTElement%7D%7D%23Insert(nint%2CSystem.ReadOnlyMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/DataStructures/Lists/Chain`1.cs/#L144">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/DataStructures/Lists/Chain`1.cs/#L164">View Source</a>
   </span>
   <a id="Langly_DataStructures_Lists_Chain_1_Langly_IInsert_TElement_Langly_DataStructures_Lists_Chain_TElement___Insert_" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#IInsert{TElement,Langly#DataStructures#Lists#Chain{TElement}}#Insert*"></a>
   <h4 id="Langly_DataStructures_Lists_Chain_1_Langly_IInsert_TElement_Langly_DataStructures_Lists_Chain_TElement___Insert_nint_System_ReadOnlyMemory__0__" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#IInsert{TElement,Langly#DataStructures#Lists#Chain{TElement}}#Insert(nint,System.ReadOnlyMemory{`0})">IInsert&lt;TElement, Chain&lt;TElement&gt;&gt;.Insert(nint, ReadOnlyMemory&lt;TElement&gt;)</h4>
@@ -579,10 +668,62 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Lists_Chain_1_Langly_IInsert_TElement_Langly_DataStructures_Lists_Chain_TElement___Insert_nint_System_ReadOnlySpan__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Lists.Chain%601.Langly%23IInsert%7BTElement%2CLangly%23DataStructures%23Lists%23Chain%7BTElement%7D%7D%23Insert(nint%2CSystem.ReadOnlySpan%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/DataStructures/Lists/Chain`1.cs/#L233">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Lists_Chain_1_Langly_IInsert_TElement_Langly_DataStructures_Lists_Chain_TElement___Insert_" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#IInsert{TElement,Langly#DataStructures#Lists#Chain{TElement}}#Insert*"></a>
+  <h4 id="Langly_DataStructures_Lists_Chain_1_Langly_IInsert_TElement_Langly_DataStructures_Lists_Chain_TElement___Insert_nint_System_ReadOnlySpan__0__" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#IInsert{TElement,Langly#DataStructures#Lists#Chain{TElement}}#Insert(nint,System.ReadOnlySpan{`0})">IInsert&lt;TElement, Chain&lt;TElement&gt;&gt;.Insert(nint, ReadOnlySpan&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Chain&lt;TElement&gt; IInsert&lt;TElement, Chain&lt;TElement&gt;&gt;.Insert(nint index, ReadOnlySpan&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">index</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Lists.Chain-1.html">Chain</a>&lt;TElement&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Lists_Chain_1_Langly_IPostpend_TElement_Langly_DataStructures_Lists_Chain_TElement___Postpend__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Lists.Chain%601.Langly%23IPostpend%7BTElement%2CLangly%23DataStructures%23Lists%23Chain%7BTElement%7D%7D%23Postpend(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/DataStructures/Lists/Chain`1.cs/#L213">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/DataStructures/Lists/Chain`1.cs/#L241">View Source</a>
   </span>
   <a id="Langly_DataStructures_Lists_Chain_1_Langly_IPostpend_TElement_Langly_DataStructures_Lists_Chain_TElement___Postpend_" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#IPostpend{TElement,Langly#DataStructures#Lists#Chain{TElement}}#Postpend*"></a>
   <h4 id="Langly_DataStructures_Lists_Chain_1_Langly_IPostpend_TElement_Langly_DataStructures_Lists_Chain_TElement___Postpend__0_" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#IPostpend{TElement,Langly#DataStructures#Lists#Chain{TElement}}#Postpend(`0)">IPostpend&lt;TElement, Chain&lt;TElement&gt;&gt;.Postpend(TElement)</h4>
@@ -632,7 +773,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Lists_Chain_1_Langly_IPostpend_TElement_Langly_DataStructures_Lists_Chain_TElement___Postpend_System_ReadOnlyMemory__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Lists.Chain%601.Langly%23IPostpend%7BTElement%2CLangly%23DataStructures%23Lists%23Chain%7BTElement%7D%7D%23Postpend(System.ReadOnlyMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/DataStructures/Lists/Chain`1.cs/#L228">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/DataStructures/Lists/Chain`1.cs/#L256">View Source</a>
   </span>
   <a id="Langly_DataStructures_Lists_Chain_1_Langly_IPostpend_TElement_Langly_DataStructures_Lists_Chain_TElement___Postpend_" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#IPostpend{TElement,Langly#DataStructures#Lists#Chain{TElement}}#Postpend*"></a>
   <h4 id="Langly_DataStructures_Lists_Chain_1_Langly_IPostpend_TElement_Langly_DataStructures_Lists_Chain_TElement___Postpend_System_ReadOnlyMemory__0__" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#IPostpend{TElement,Langly#DataStructures#Lists#Chain{TElement}}#Postpend(System.ReadOnlyMemory{`0})">IPostpend&lt;TElement, Chain&lt;TElement&gt;&gt;.Postpend(ReadOnlyMemory&lt;TElement&gt;)</h4>
@@ -682,7 +823,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Lists_Chain_1_Langly_IPostpend_TElement_Langly_DataStructures_Lists_Chain_TElement___Postpend_System_ReadOnlySpan__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Lists.Chain%601.Langly%23IPostpend%7BTElement%2CLangly%23DataStructures%23Lists%23Chain%7BTElement%7D%7D%23Postpend(System.ReadOnlySpan%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/DataStructures/Lists/Chain`1.cs/#L241">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/DataStructures/Lists/Chain`1.cs/#L269">View Source</a>
   </span>
   <a id="Langly_DataStructures_Lists_Chain_1_Langly_IPostpend_TElement_Langly_DataStructures_Lists_Chain_TElement___Postpend_" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#IPostpend{TElement,Langly#DataStructures#Lists#Chain{TElement}}#Postpend*"></a>
   <h4 id="Langly_DataStructures_Lists_Chain_1_Langly_IPostpend_TElement_Langly_DataStructures_Lists_Chain_TElement___Postpend_System_ReadOnlySpan__0__" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#IPostpend{TElement,Langly#DataStructures#Lists#Chain{TElement}}#Postpend(System.ReadOnlySpan{`0})">IPostpend&lt;TElement, Chain&lt;TElement&gt;&gt;.Postpend(ReadOnlySpan&lt;TElement&gt;)</h4>
@@ -732,7 +873,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Lists_Chain_1_Langly_IPrepend_TElement_Langly_DataStructures_Lists_Chain_TElement___Prepend__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Lists.Chain%601.Langly%23IPrepend%7BTElement%2CLangly%23DataStructures%23Lists%23Chain%7BTElement%7D%7D%23Prepend(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/DataStructures/Lists/Chain`1.cs/#L249">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/DataStructures/Lists/Chain`1.cs/#L277">View Source</a>
   </span>
   <a id="Langly_DataStructures_Lists_Chain_1_Langly_IPrepend_TElement_Langly_DataStructures_Lists_Chain_TElement___Prepend_" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#IPrepend{TElement,Langly#DataStructures#Lists#Chain{TElement}}#Prepend*"></a>
   <h4 id="Langly_DataStructures_Lists_Chain_1_Langly_IPrepend_TElement_Langly_DataStructures_Lists_Chain_TElement___Prepend__0_" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#IPrepend{TElement,Langly#DataStructures#Lists#Chain{TElement}}#Prepend(`0)">IPrepend&lt;TElement, Chain&lt;TElement&gt;&gt;.Prepend(TElement)</h4>
@@ -782,7 +923,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Lists_Chain_1_Langly_IPrepend_TElement_Langly_DataStructures_Lists_Chain_TElement___Prepend_System_ReadOnlyMemory__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Lists.Chain%601.Langly%23IPrepend%7BTElement%2CLangly%23DataStructures%23Lists%23Chain%7BTElement%7D%7D%23Prepend(System.ReadOnlyMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/DataStructures/Lists/Chain`1.cs/#L264">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/DataStructures/Lists/Chain`1.cs/#L292">View Source</a>
   </span>
   <a id="Langly_DataStructures_Lists_Chain_1_Langly_IPrepend_TElement_Langly_DataStructures_Lists_Chain_TElement___Prepend_" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#IPrepend{TElement,Langly#DataStructures#Lists#Chain{TElement}}#Prepend*"></a>
   <h4 id="Langly_DataStructures_Lists_Chain_1_Langly_IPrepend_TElement_Langly_DataStructures_Lists_Chain_TElement___Prepend_System_ReadOnlyMemory__0__" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#IPrepend{TElement,Langly#DataStructures#Lists#Chain{TElement}}#Prepend(System.ReadOnlyMemory{`0})">IPrepend&lt;TElement, Chain&lt;TElement&gt;&gt;.Prepend(ReadOnlyMemory&lt;TElement&gt;)</h4>
@@ -832,7 +973,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Lists_Chain_1_Langly_IPrepend_TElement_Langly_DataStructures_Lists_Chain_TElement___Prepend_System_ReadOnlySpan__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Lists.Chain%601.Langly%23IPrepend%7BTElement%2CLangly%23DataStructures%23Lists%23Chain%7BTElement%7D%7D%23Prepend(System.ReadOnlySpan%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/DataStructures/Lists/Chain`1.cs/#L277">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/DataStructures/Lists/Chain`1.cs/#L305">View Source</a>
   </span>
   <a id="Langly_DataStructures_Lists_Chain_1_Langly_IPrepend_TElement_Langly_DataStructures_Lists_Chain_TElement___Prepend_" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#IPrepend{TElement,Langly#DataStructures#Lists#Chain{TElement}}#Prepend*"></a>
   <h4 id="Langly_DataStructures_Lists_Chain_1_Langly_IPrepend_TElement_Langly_DataStructures_Lists_Chain_TElement___Prepend_System_ReadOnlySpan__0__" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#IPrepend{TElement,Langly#DataStructures#Lists#Chain{TElement}}#Prepend(System.ReadOnlySpan{`0})">IPrepend&lt;TElement, Chain&lt;TElement&gt;&gt;.Prepend(ReadOnlySpan&lt;TElement&gt;)</h4>
@@ -882,7 +1023,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Lists_Chain_1_Langly_IReplace_TElement_TElement_Langly_DataStructures_Lists_Chain_TElement___Replace__0__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Lists.Chain%601.Langly%23IReplace%7BTElement%2CTElement%2CLangly%23DataStructures%23Lists%23Chain%7BTElement%7D%7D%23Replace(%600%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/DataStructures/Lists/Chain`1.cs/#L285">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/DataStructures/Lists/Chain`1.cs/#L313">View Source</a>
   </span>
   <a id="Langly_DataStructures_Lists_Chain_1_Langly_IReplace_TElement_TElement_Langly_DataStructures_Lists_Chain_TElement___Replace_" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#IReplace{TElement,TElement,Langly#DataStructures#Lists#Chain{TElement}}#Replace*"></a>
   <h4 id="Langly_DataStructures_Lists_Chain_1_Langly_IReplace_TElement_TElement_Langly_DataStructures_Lists_Chain_TElement___Replace__0__0_" data-uid="Langly.DataStructures.Lists.Chain`1.Langly#IReplace{TElement,TElement,Langly#DataStructures#Lists#Chain{TElement}}#Replace(`0,`0)">IReplace&lt;TElement, TElement, Chain&lt;TElement&gt;&gt;.Replace(TElement, TElement)</h4>

@@ -76,10 +76,20 @@ namespace Langly.DataStructures.Lists {
 		}
 
 		/// <inheritdoc/>
+		[return: NotNull]
 		Chain<TElement> IAdd<TElement, Chain<TElement>>.Add([AllowNull] TElement element) => ((IPostpend<TElement, Chain<TElement>>)this).Postpend(element);
 
 		/// <inheritdoc/>
+		[return: NotNull]
 		Chain<TElement> IAdd<TElement, Chain<TElement>>.Add(ReadOnlyMemory<TElement> elements) => ((IPostpend<TElement, Chain<TElement>>)this).Postpend(elements);
+
+		/// <inheritdoc/>
+		[return: NotNull]
+		Chain<TElement> IAdd<TElement, Chain<TElement>>.Add(ReadOnlySpan<TElement> elements) {
+			Memory<TElement> buffer = new TElement[elements.Length];
+			elements.CopyTo(buffer.Span);
+			return ((IAdd<TElement, Chain<TElement>>)this).Add(buffer);
+		}
 
 		/// <inheritdoc/>
 		[return: NotNull]
@@ -217,6 +227,14 @@ namespace Langly.DataStructures.Lists {
 				// We're done
 				return this;
 			}
+		}
+
+		/// <inheritdoc/>
+		[return: NotNull]
+		Chain<TElement> IInsert<TElement, Chain<TElement>>.Insert(nint index, ReadOnlySpan<TElement> elements) {
+			Memory<TElement> buffer = new TElement[elements.Length];
+			elements.CopyTo(buffer.Span);
+			return ((IInsert<TElement, Chain<TElement>>)this).Insert(index, buffer);
 		}
 
 		/// <inheritdoc/>
