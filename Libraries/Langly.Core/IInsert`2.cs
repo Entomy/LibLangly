@@ -67,6 +67,17 @@ namespace Langly {
 
 	public static partial class CoreExtensions {
 		/// <summary>
+		/// Insert an element into the collection at the specified index.
+		/// </summary>
+		/// <typeparam name="TElement">The type of the elements.</typeparam>
+		/// <typeparam name="TResult">The resulting type; often itself.</typeparam>
+		/// <param name="collection">This collection.</param>
+		/// <param name="index">The index at which <paramref name="element"/> should be inserted.</param>
+		/// <param name="element">The element to insert.</param>
+		[return: MaybeNull, NotNullIfNotNull("collection")]
+		public static TResult Insert<TElement, TResult>([AllowNull] this IInsert<TElement, TResult> collection, nint index, [AllowNull] TElement element) => collection is not null ? ((IInsert<nint, TElement, TResult>)collection).Insert(index, element) : (TResult)collection;
+
+		/// <summary>
 		/// Insert the elements into the collection at the specified index.
 		/// </summary>
 		/// <typeparam name="TElement">The type of the elements.</typeparam>

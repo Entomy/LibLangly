@@ -103,7 +103,23 @@ namespace Langly.DataStructures.Arrays {
 
 		/// <inheritdoc/>
 		[return: NotNull]
+		Chain<TElement> IPostpend<TElement, Chain<TElement>>.Postpend(ReadOnlyMemory<TElement> elements) => new Chain<TElement>(Filter).Add(Elements).Postpend(elements);
+
+		/// <inheritdoc/>
+		[return: NotNull]
+		Chain<TElement> IPostpend<TElement, Chain<TElement>>.Postpend(ReadOnlySpan<TElement> elements) => new Chain<TElement>(Filter).Add(Elements).Postpend(elements);
+
+		/// <inheritdoc/>
+		[return: NotNull]
 		Chain<TElement> IPrepend<TElement, Chain<TElement>>.Prepend([AllowNull] TElement element) => new Chain<TElement>(Filter).Add(Elements).Prepend(element);
+
+		/// <inheritdoc/>
+		[return: NotNull]
+		Chain<TElement> IPrepend<TElement, Chain<TElement>>.Prepend(ReadOnlyMemory<TElement> elements) => new Chain<TElement>(Filter).Add(Elements).Prepend(elements);
+
+		/// <inheritdoc/>
+		[return: NotNull]
+		Chain<TElement> IPrepend<TElement, Chain<TElement>>.Prepend(ReadOnlySpan<TElement> elements) => new Chain<TElement>(Filter).Add(Elements).Prepend(elements);
 
 		/// <inheritdoc/>
 		[return: NotNull]

@@ -26,7 +26,7 @@ namespace Langly.DataStructures.Arrays {
 		/// </summary>
 		/// <param name="elements">The elements to use.</param>
 		/// <param name="filter">Flags designated which filters to set up.</param>
-		private FixedArray(ReadOnlyMemory<TElement> elements, Filter filter) : base(elements, filter) { }
+		public FixedArray(ReadOnlyMemory<TElement> elements, Filter filter) : base(elements, filter) { }
 
 		/// <summary>
 		/// Copy constructor.
