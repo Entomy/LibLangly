@@ -1,4 +1,6 @@
-﻿namespace Langly {
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace Langly {
 	/// <summary>
 	/// Indicates the type is indexable, read and write.
 	/// </summary>
@@ -10,7 +12,8 @@
 		/// </summary>
 		/// <param name="index">The index of the element to get.</param>
 		/// <returns>The element at the specified index.</returns>
-		new TElement this[TIndex index] { get; set; }
+		[AllowNull, MaybeNull]
+		new TElement this[[DisallowNull] TIndex index] { get; set; }
 
 		/// <inheritdoc/>
 		TElement IIndexReadOnly<TIndex, TElement>.this[TIndex index] => this[index];

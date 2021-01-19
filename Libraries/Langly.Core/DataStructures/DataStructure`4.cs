@@ -33,13 +33,7 @@ namespace Langly.DataStructures {
 		/// Initializes a new <see cref="DataStructure{TIndex, TElement, TSelf, TEnumerator}"/>.
 		/// </summary>
 		/// <param name="filter">Flags designating which filters to set up.</param>
-		protected DataStructure(Filter filter) {
-			if ((filter & DataStructures.Filter.Sparse) != 0) {
-				Filter = Sparse<TIndex, TElement>.Instance;
-			} else {
-				Filter = Null<TIndex, TElement>.Instance;
-			}
-		}
+		protected DataStructure(Filter filter) => Filter = Filter<TIndex, TElement>.Create(filter);
 
 		/// <summary>
 		/// Copy constructor.
