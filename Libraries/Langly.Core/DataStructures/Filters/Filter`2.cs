@@ -63,5 +63,20 @@ namespace Langly.DataStructures.Filters {
 		/// <exception cref="IndexOutOfRangeException">Thrown if the filter can't handle the <paramref name="index"/> being out of bounds.</exception>
 		[return: MaybeNull]
 		public virtual ref readonly TElement IndexOutOfBounds([DisallowNull] IIndexRef<TIndex, TElement> collection, [AllowNull] TIndex index) => throw new IndexOutOfRangeException();
+
+		/// <summary>
+		/// Creates a <see cref="Filter{TIndex, TElement}"/> from the <paramref name="filter"/> flags.
+		/// </summary>
+		/// <param name="filter">Flags designating which filters to set up.</param>
+		/// <returns>The described <see cref="Filter{TIndex, TElement}"/>.</returns>
+		public static Filter<TIndex, TElement> Create(Filter filter) {
+			Filter<TIndex, TElement> result;
+			if ((filter & Filter.Sparse) != 0) {
+				result = Sparse<TIndex, TElement>.Instance;
+			} else {
+				result = Null<TIndex, TElement>.Instance;
+			}
+			return result;
+		}
 	}
 }
