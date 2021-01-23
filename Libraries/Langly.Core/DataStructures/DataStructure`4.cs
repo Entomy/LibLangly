@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Text;
 using Langly.DataStructures.Filters;
+using Langly.DataStructures.Views;
 
 namespace Langly.DataStructures {
 	/// <summary>
@@ -43,6 +44,16 @@ namespace Langly.DataStructures {
 
 		/// <inheritdoc/>
 		public virtual nint Count { get; protected set; }
+
+		/// <summary>
+		/// The elements of this collection.
+		/// </summary>
+		public ElementView<TIndex, TElement, TSelf, TEnumerator> Elements => new ElementView<TIndex, TElement, TSelf, TEnumerator>((TSelf)this);
+
+		/// <summary>
+		/// The indicies of this collection.
+		/// </summary>
+		public IndexView<TIndex, TElement, TSelf, TEnumerator> Indices => new IndexView<TIndex, TElement, TSelf, TEnumerator>((TSelf)this);
 
 		/// <summary>
 		/// Determines if the two sequences aren't equal.
@@ -168,15 +179,15 @@ namespace Langly.DataStructures {
 		public String ToString(nint amount) {
 			StringBuilder builder = new StringBuilder();
 			nint i = 0;
-			foreach ((TIndex, TElement) member in this) {
+			foreach ((TIndex index, TElement element) in this) {
 				if (++i == Count) {
-					_ = builder.Append(member);
+					_ = builder.Append(index).Append(':').Append(element);
 					break;
 				} else if (i == amount) {
-					_ = builder.Append(member).Append("...");
+					_ = builder.Append(index).Append(':').Append(element).Append("...");
 					break;
 				} else {
-					_ = builder.Append(member).Append(", ");
+					_ = builder.Append(index).Append(':').Append(element).Append(", ");
 				}
 			}
 			return $"[{builder}]";

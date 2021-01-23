@@ -60,6 +60,33 @@ namespace Langly.DataStructures.Lists {
 			}
 
 			/// <inheritdoc/>
+			public override (Boolean Inserted, Node Head, Node Tail) Insert([DisallowNull] TIndex index, [AllowNull] TElement element) {
+				if (Index.Equals(index)) {
+					Node result = new ElementNode(index, element, previous: null, next: null);
+					return (true, result, result);
+				}
+				return (false, this, this);
+			}
+
+			/// <inheritdoc/>
+			public override (Node Head, Node Tail) Replace([AllowNull] TElement search, [AllowNull] TElement replace) {
+				if (Element is null && search is null) {
+					goto True;
+				} else if (Element is null || search is null) {
+					goto False;
+				} else if (Element.Equals(search)) {
+					goto True;
+				} else {
+					goto False;
+				}
+			True:
+				Node rep = new ElementNode(Index, replace, previous: null, next: null);
+				return (rep, rep);
+			False:
+				return (this, this);
+			}
+
+			/// <inheritdoc/>
 			[return: NotNull]
 			public override String ToString() => $"{Index}:{Element?.ToString() ?? "null"}";
 		}

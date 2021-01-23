@@ -1,0 +1,400 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Struct IndexView&lt;TIndex, TElement, TCollection, TEnumerator&gt;
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Struct IndexView&lt;TIndex, TElement, TCollection, TEnumerator&gt;
+   ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Langly.DataStructures.Views.IndexView`4">
+  
+  
+  <h1 id="Langly_DataStructures_Views_IndexView_4" data-uid="Langly.DataStructures.Views.IndexView`4" class="text-break">Struct IndexView&lt;TIndex, TElement, TCollection, TEnumerator&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>Provides a limited view of the indicies of a collection.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Langly.ISequence-2.html">ISequence</a>&lt;TIndex, <a class="xref" href="Langly.DataStructures.Views.IndexView-4.Enumerator.html">IndexView.Enumerator</a>&lt;&gt;&gt;</div>
+    <div><a class="xref" href="Langly.IContains-1.html">IContains</a>&lt;TIndex&gt;</div>
+    <div><a class="xref" href="Langly.ICount.html">ICount</a></div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TIndex&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetype.equals#System_ValueType_Equals_System_Object_">ValueType.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetype.gethashcode#System_ValueType_GetHashCode">ValueType.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_System_Object_">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#System_Object_GetType">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#System_Object_ReferenceEquals_System_Object_System_Object_">Object.ReferenceEquals(Object, Object)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Langly.DataStructures.Views.html">Langly.DataStructures.Views</a></h6>
+  <h6><strong>Assembly</strong>: Langly.Core.dll</h6>
+  <h5 id="Langly_DataStructures_Views_IndexView_4_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public struct IndexView&lt;TIndex, TElement, TCollection, TEnumerator&gt; : ISequence&lt;TIndex, IndexView&lt;TIndex, TElement, TCollection, TEnumerator&gt;.Enumerator&gt;, IContains&lt;TIndex&gt;, ICount, IEnumerable&lt;TIndex&gt;, IEnumerable where TCollection : ISequence&lt;(TIndex Index, TElement Element), TEnumerator&gt; where TEnumerator : IEnumerator&lt;(TIndex Index, TElement Element)&gt;</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TIndex</span></td>
+        <td><p>The type of the indicies of the collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of the elements of the collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TCollection</span></td>
+        <td><p>The type of the colletion being viewed.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TEnumerator</span></td>
+        <td><p>The type of the enumerator for the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Views_IndexView_4__ctor__2_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Views.IndexView%604.%23ctor(%602)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/DataStructures/Views/IndexView`4.cs/#L28">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Views_IndexView_4__ctor_" data-uid="Langly.DataStructures.Views.IndexView`4.#ctor*"></a>
+  <h4 id="Langly_DataStructures_Views_IndexView_4__ctor__2_" data-uid="Langly.DataStructures.Views.IndexView`4.#ctor(`2)">IndexView(TCollection)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Langly.DataStructures.Views.IndexView-4.html">IndexView&lt;TIndex, TElement, TCollection, TEnumerator&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IndexView(TCollection collection)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TCollection</span></td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The collection to view.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Views_IndexView_4_Count.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Views.IndexView%604.Count%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/DataStructures/Views/IndexView`4.cs/#L31">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Views_IndexView_4_Count_" data-uid="Langly.DataStructures.Views.IndexView`4.Count*"></a>
+  <h4 id="Langly_DataStructures_Views_IndexView_4_Count" data-uid="Langly.DataStructures.Views.IndexView`4.Count">Count</h4>
+  <div class="markdown level1 summary"><p>Gets the number of elements contained in the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public nint Count { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Views_IndexView_4_GetEnumerator.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Views.IndexView%604.GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/DataStructures/Views/IndexView`4.Enumerator.cs/#L9">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Views_IndexView_4_GetEnumerator_" data-uid="Langly.DataStructures.Views.IndexView`4.GetEnumerator*"></a>
+  <h4 id="Langly_DataStructures_Views_IndexView_4_GetEnumerator" data-uid="Langly.DataStructures.Views.IndexView`4.GetEnumerator">GetEnumerator()</h4>
+  <div class="markdown level1 summary"><p>Returns an enumerator that iterates through the sequence.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IndexView&lt;TIndex, TElement, TCollection, TEnumerator&gt;.Enumerator GetEnumerator()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Views.IndexView-4.Enumerator.html">IndexView.Enumerator</a>&lt;&gt;</td>
+        <td><p>An enumerator that can be used to iterate through the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Views_IndexView_4_ToString.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Views.IndexView%604.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/DataStructures/Views/IndexView`4.cs/#L34">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Views_IndexView_4_ToString_" data-uid="Langly.DataStructures.Views.IndexView`4.ToString*"></a>
+  <h4 id="Langly_DataStructures_Views_IndexView_4_ToString" data-uid="Langly.DataStructures.Views.IndexView`4.ToString">ToString()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetype.tostring#System_ValueType_ToString">ValueType.ToString()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Views_IndexView_4_ToString_nint_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Views.IndexView%604.ToString(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/DataStructures/Views/IndexView`4.cs/#L41">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Views_IndexView_4_ToString_" data-uid="Langly.DataStructures.Views.IndexView`4.ToString*"></a>
+  <h4 id="Langly_DataStructures_Views_IndexView_4_ToString_nint_" data-uid="Langly.DataStructures.Views.IndexView`4.ToString(nint)">ToString(nint)</h4>
+  <div class="markdown level1 summary"><p>Returns a string that represents the current object, with no more than <code data-dev-comment-type="paramref" class="paramref">amount</code> elements.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ToString(nint amount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td><p>The maximum amount of elements to display.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Langly.ISequence-2.html">ISequence&lt;TMember, TEnumerator&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IContains-1.html">IContains&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.ICount.html">ICount</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">System.Collections.Generic.IEnumerable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">System.Collections.IEnumerable</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Langly.CoreExtensions.html#Langly_CoreExtensions_Contains__1_Langly_IContains___0____0_">CoreExtensions.Contains&lt;TElement&gt;(IContains&lt;TElement&gt;, TElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.CoreExtensions.html#Langly_CoreExtensions_Fold__2_Langly_ISequence___0___1__System_Func___0___0___0____0_">CoreExtensions.Fold&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Func&lt;TElement, TElement, TElement&gt;, TElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.CoreExtensions.html#Langly_CoreExtensions_Occurrences__2_Langly_ISequence___0___1____0_">CoreExtensions.Occurrences&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, TElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.CoreExtensions.html#Langly_CoreExtensions_Occurrences__2_Langly_ISequence___0___1__Langly_IEquals___0__">CoreExtensions.Occurrences&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, IEquals&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.CoreExtensions.html#Langly_CoreExtensions_Occurrences__2_Langly_ISequence___0___1__System_Predicate___0__">CoreExtensions.Occurrences&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Predicate&lt;TElement&gt;)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Views_IndexView_4.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Views.IndexView%604%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/DataStructures/Views/IndexView`4.Enumerator.cs/#L7" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

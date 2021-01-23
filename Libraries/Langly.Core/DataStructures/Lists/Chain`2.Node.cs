@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Langly.DataStructures.Lists {
 	public partial class Chain<TIndex, TElement> {
@@ -7,7 +8,9 @@ namespace Langly.DataStructures.Lists {
 		/// </summary>
 		private abstract class Node : Record<Node>,
 			IClear,
-			IIndexReadOnly<(TIndex Index, TElement Element)> {
+			IIndexReadOnly<nint, (TIndex Index, TElement Element)>,
+			IInsert<TIndex, TElement, (Boolean Inserted, Node Head, Node Tail)>,
+			IReplace<TElement, (Node Head, Node Tail)> {
 			/// <summary>
 			/// The next node in the chain.
 			/// </summary>
@@ -41,6 +44,13 @@ namespace Langly.DataStructures.Lists {
 				Next = null;
 				Previous = null;
 			}
+
+			/// <inheritdoc/>
+			public abstract (Boolean Inserted, Node Head, Node Tail) Insert([DisallowNull] TIndex index, [AllowNull] TElement element);
+
+			/// <inheritdoc/>
+			[return: NotNull]
+			public abstract (Node Head, Node Tail) Replace([AllowNull] TElement search, [AllowNull] TElement replace);
 		}
 	}
 }
