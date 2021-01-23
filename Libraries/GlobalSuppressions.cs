@@ -18,3 +18,5 @@ using System.Diagnostics.CodeAnalysis;
 
 [assembly: SuppressMessage("Design", "MA0018:Do not declare static members on generic types", Justification = "This is clearly the path Microsoft is taking with more modern stuff, as especially evident with Memory<T> and Span<T>. It makes more sense to stay orthogonal to expectations. Not doing this will often require the creation of a second static class just for this purpose, which will cause confusion about which variant has which operations.")]
 [assembly: SuppressMessage("Style", "MA0071:Avoid using redundant else", Justification = "This is too context insensitive. Either approach may be fine.")]
+
+[assembly: SuppressMessage("Major Code Smell", "S907:\"goto\" statement should not be used", Justification = "I'm fine with goto as long as it's not abused. It can, in certain cases, actually result in easier to read code. It's often required in text processing where needed control structures aren't available in most languages.")]

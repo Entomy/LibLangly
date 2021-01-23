@@ -602,6 +602,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Add&lt;TElement, TEnumerator, TResult&gt;(this IAdd&lt;TElement, TResult&gt; collection, ISequence&lt;TElement, TEnumerator&gt; elements)
+
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -792,6 +793,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TElement Fold&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, Func&lt;TElement, TElement, TElement&gt; func, TElement identity)
+
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2357,6 +2359,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TElement, TResult, TEnumerator&gt;(this IInsert&lt;TElement, TResult&gt; collection, nint index, ISequence&lt;TElement, TEnumerator&gt; elements)
+
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2563,6 +2566,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static nint Occurrences&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, TElement element)
+
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2641,6 +2645,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static nint Occurrences&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, IEquals&lt;TElement&gt; element)
+
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2719,6 +2724,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static nint Occurrences&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, Predicate&lt;TElement&gt; match)
+
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4423,6 +4429,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Push&lt;TElement, TResult, TEnumerator&gt;(this IPush&lt;TElement, TResult&gt; collection, ISequence&lt;TElement, TEnumerator&gt; elements)
+
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5017,6 +5024,83 @@
       </tr>
     </tbody>
   </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_CoreExtensions_Zip__2___0_____1___.md&amp;value=---%0Auid%3A%20Langly.CoreExtensions.Zip%60%602(%60%600%5B%5D%2C%60%601%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Zip.cs/#L16">View Source</a>
+  </span>
+  <a id="Langly_CoreExtensions_Zip_" data-uid="Langly.CoreExtensions.Zip*"></a>
+  <h4 id="Langly_CoreExtensions_Zip__2___0_____1___" data-uid="Langly.CoreExtensions.Zip``2(``0[],``1[])">Zip&lt;TIndex, TElement&gt;(TIndex[], TElement[])</h4>
+  <div class="markdown level1 summary"><p>Zips the two collections together.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ZipView&lt;TIndex, TElement, TIndex[], TElement[]&gt; Zip&lt;TIndex, TElement&gt;(this TIndex[] indicies, TElement[] elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TIndex[]</td>
+        <td><span class="parametername">indicies</span></td>
+        <td><p>The collection to use as the indicies.</p>
+</td>
+      </tr>
+      <tr>
+        <td>TElement[]</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The collection to use as the elements.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Views.ZipView-4.html">ZipView</a>&lt;TIndex, TElement, TIndex[], TElement[]&gt;</td>
+        <td><p>A <a class="xref" href="Langly.DataStructures.Views.ZipView-4.html">ZipView&lt;TIndex, TElement, TIndexCollection, TElementCollection&gt;</a> combining the two collections.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TIndex</span></td>
+        <td><p>The type of the indicies.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of the elements.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
 </article>
           </div>
           
@@ -5028,7 +5112,7 @@
                     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_CoreExtensions.md&amp;value=---%0Auid%3A%20Langly.CoreExtensions%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/ISlice`1.cs/#L52" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Zip.cs/#L7" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
