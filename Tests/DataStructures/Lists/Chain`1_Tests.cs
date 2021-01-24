@@ -426,6 +426,157 @@ namespace Langly.DataStructures.Lists {
 		}
 
 		[Theory]
+		[InlineData(0, null)]
+		[InlineData(0, new Int32[] { })]
+		[InlineData(1, new Int32[] { 1, 2, 3, 4, 5 })]
+		[InlineData(1, new Int32[] { 5, 4, 3, 2, 1 })]
+		public void Min_nint(Int32 expected, Int32[] values) {
+			nint[] vals = null;
+			if (values is not null) {
+				vals = new nint[values.Length];
+				for (nint i = 0; i < values.Length; i++) {
+					vals[i] = (nint)values[i];
+				}
+			}
+			Chain<nint> chain = values is not null ? new Chain<nint>().Add(vals) : null;
+			Assert.Equal(expected, chain.Min());
+		}
+
+		[Theory]
+		[InlineData(0, null)]
+		[InlineData(0, new UInt32[] { })]
+		[InlineData(1, new UInt32[] { 1, 2, 3, 4, 5 })]
+		[InlineData(1, new UInt32[] { 5, 4, 3, 2, 1 })]
+		public void Min_nuint(UInt32 expected, UInt32[] values) {
+			nuint[] vals = null;
+			if (values is not null) {
+				vals = new nuint[values.Length];
+				for (nint i = 0; i < values.Length; i++) {
+					vals[i] = (nuint)values[i];
+				}
+			}
+			Chain<nuint> chain = values is not null ? new Chain<nuint>().Add(vals) : null;
+			Assert.Equal(expected, chain.Min());
+		}
+
+		[Theory]
+		[InlineData(0, null)]
+		[InlineData(0, new SByte[] { })]
+		[InlineData(1, new SByte[] { 1, 2, 3, 4, 5 })]
+		[InlineData(1, new SByte[] { 5, 4, 3, 2, 1 })]
+		public void Min_SByte(Int32 expected, SByte[] values) {
+			Chain<SByte> chain = values is not null ? new Chain<SByte>().Add(values) : null;
+			Assert.Equal(expected, chain.Min());
+		}
+
+		[Theory]
+		[InlineData(0, null)]
+		[InlineData(0, new Byte[] { })]
+		[InlineData(1, new Byte[] { 1, 2, 3, 4, 5 })]
+		[InlineData(1, new Byte[] { 5, 4, 3, 2, 1 })]
+		public void Min_Byte(UInt32 expected, Byte[] values) {
+			Chain<Byte> chain = values is not null ? new Chain<Byte>().Add(values) : null;
+			Assert.Equal(expected, chain.Min());
+		}
+
+		[Theory]
+		[InlineData(0, null)]
+		[InlineData(0, new Int16[] { })]
+		[InlineData(1, new Int16[] { 1, 2, 3, 4, 5 })]
+		[InlineData(1, new Int16[] { 5, 4, 3, 2, 1 })]
+		public void Min_Int16(Int32 expected, Int16[] values) {
+			Chain<Int16> chain = values is not null ? new Chain<Int16>().Add(values) : null;
+			Assert.Equal(expected, chain.Min());
+		}
+
+		[Theory]
+		[InlineData(0, null)]
+		[InlineData(0, new UInt16[] { })]
+		[InlineData(1, new UInt16[] { 1, 2, 3, 4, 5 })]
+		[InlineData(1, new UInt16[] { 5, 4, 3, 2, 1 })]
+		public void Min_UInt16(UInt32 expected, UInt16[] values) {
+			Chain<UInt16> chain = values is not null ? new Chain<UInt16>().Add(values) : null;
+			Assert.Equal(expected, chain.Min());
+		}
+
+		[Theory]
+		[InlineData(0, null)]
+		[InlineData(0, new Int32[] { })]
+		[InlineData(1, new Int32[] { 1, 2, 3, 4, 5 })]
+		[InlineData(1, new Int32[] { 5, 4, 3, 2, 1 })]
+		public void Min_Int32(Int32 expected, Int32[] values) {
+			Chain<Int32> chain = values is not null ? new Chain<Int32>().Add(values) : null;
+			Assert.Equal(expected, chain.Min());
+		}
+
+		[Theory]
+		[InlineData(0, null)]
+		[InlineData(0, new UInt32[] { })]
+		[InlineData(1, new UInt32[] { 1, 2, 3, 4, 5 })]
+		[InlineData(1, new UInt32[] { 5, 4, 3, 2, 1 })]
+		public void Min_UInt32(UInt32 expected, UInt32[] values) {
+			Chain<UInt32> chain = values is not null ? new Chain<UInt32>().Add(values) : null;
+			Assert.Equal(expected, chain.Min());
+		}
+
+		[Theory]
+		[InlineData(0, null)]
+		[InlineData(0, new Int64[] { })]
+		[InlineData(1, new Int64[] { 1, 2, 3, 4, 5 })]
+		[InlineData(1, new Int64[] { 5, 4, 3, 2, 1 })]
+		public void Min_Int64(Int64 expected, Int64[] values) {
+			Chain<Int64> chain = values is not null ? new Chain<Int64>().Add(values) : null;
+			Assert.Equal(expected, chain.Min());
+		}
+
+		[Theory]
+		[InlineData(0, null)]
+		[InlineData(0, new UInt64[] { })]
+		[InlineData(1, new UInt64[] { 1, 2, 3, 4, 5 })]
+		[InlineData(1, new UInt64[] { 5, 4, 3, 2, 1 })]
+		public void Min_UInt64(UInt64 expected, UInt64[] values) {
+			Chain<UInt64> chain = values is not null ? new Chain<UInt64>().Add(values) : null;
+			Assert.Equal(expected, chain.Min());
+		}
+
+		[Theory]
+		[InlineData(0, null)]
+		[InlineData(0, new Single[] { })]
+		[InlineData(1, new Single[] { 1, 2, 3, 4, 5 })]
+		[InlineData(1, new Single[] { 5, 4, 3, 2, 1 })]
+		public void Min_Single(Single expected, Single[] values) {
+			Chain<Single> chain = values is not null ? new Chain<Single>().Add(values) : null;
+			Assert.Equal(expected, chain.Min());
+		}
+
+		[Theory]
+		[InlineData(0, null)]
+		[InlineData(0, new Double[] { })]
+		[InlineData(1, new Double[] { 1, 2, 3, 4, 5 })]
+		[InlineData(1, new Double[] { 5, 4, 3, 2, 1 })]
+		public void Min_Double(Double expected, Double[] values) {
+			Chain<Double> chain = values is not null ? new Chain<Double>().Add(values) : null;
+			Assert.Equal(expected, chain.Min());
+		}
+
+		[Theory]
+		[InlineData(0, null)]
+		[InlineData(0, new Int32[] { })]
+		[InlineData(1, new Int32[] { 1, 2, 3, 4, 5 })]
+		[InlineData(1, new Int32[] { 5, 4, 3, 2, 1 })]
+		public void Min_Decimal(Decimal expected, Int32[] values) {
+			Decimal[] vals = null;
+			if (values is not null) {
+				vals = new Decimal[values.Length];
+				for (nint i = 0; i < values.Length; i++) {
+					vals[i] = values[i];
+				}
+			}
+			Chain<Decimal> chain = values is not null ? new Chain<Decimal>().Add(vals) : null;
+			Assert.Equal(expected, chain.Min());
+		}
+
+		[Theory]
 		[InlineData(new Int32[] { }, new Int32[] { }, 0, 0)]
 		[InlineData(new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 0, 0)]
 		[InlineData(new Int32[] { 0, 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 1, 0)]

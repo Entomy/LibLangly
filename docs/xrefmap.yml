@@ -5986,15 +5986,6 @@ references:
   isSpec: "True"
   fullName: Langly.Guard.Contains
   nameWithType: Guard.Contains
-- uid: Langly.Guard.Contains``1(``0,String,Langly.Object)
-  name: Contains<TCollection>(TCollection, String, Object)
-  href: api/Langly.Guard.html#Langly_Guard_Contains__1___0_String_Langly_Object_
-  commentId: M:Langly.Guard.Contains``1(``0,String,Langly.Object)
-  name.vb: Contains(Of TCollection)(TCollection, String, Object)
-  fullName: Langly.Guard.Contains<TCollection>(TCollection, String, Langly.Object)
-  fullName.vb: Langly.Guard.Contains(Of TCollection)(TCollection, String, Langly.Object)
-  nameWithType: Guard.Contains<TCollection>(TCollection, String, Object)
-  nameWithType.vb: Guard.Contains(Of TCollection)(TCollection, String, Object)
 - uid: Langly.Guard.Contains``1(``0[],String,``0)
   name: Contains<T>(T[], String, T)
   href: api/Langly.Guard.html#Langly_Guard_Contains__1___0___String___0_
@@ -6004,6 +5995,24 @@ references:
   fullName.vb: Langly.Guard.Contains(Of T)(T(), String, T)
   nameWithType: Guard.Contains<T>(T[], String, T)
   nameWithType.vb: Guard.Contains(Of T)(T(), String, T)
+- uid: Langly.Guard.Contains``1(ICollection,String,``0)
+  name: Contains<T>(ICollection, String, T)
+  href: api/Langly.Guard.html#Langly_Guard_Contains__1_ICollection_String___0_
+  commentId: M:Langly.Guard.Contains``1(ICollection,String,``0)
+  name.vb: Contains(Of T)(ICollection, String, T)
+  fullName: Langly.Guard.Contains<T>(ICollection, String, T)
+  fullName.vb: Langly.Guard.Contains(Of T)(ICollection, String, T)
+  nameWithType: Guard.Contains<T>(ICollection, String, T)
+  nameWithType.vb: Guard.Contains(Of T)(ICollection, String, T)
+- uid: Langly.Guard.Contains``1(IReadOnlyCollection{``0},String,``0)
+  name: Contains<T>(IReadOnlyCollection<T>, String, T)
+  href: api/Langly.Guard.html#Langly_Guard_Contains__1_IReadOnlyCollection___0__String___0_
+  commentId: M:Langly.Guard.Contains``1(IReadOnlyCollection{``0},String,``0)
+  name.vb: Contains(Of T)(IReadOnlyCollection(Of T), String, T)
+  fullName: Langly.Guard.Contains<T>(IReadOnlyCollection<T>, String, T)
+  fullName.vb: Langly.Guard.Contains(Of T)(IReadOnlyCollection(Of T), String, T)
+  nameWithType: Guard.Contains<T>(IReadOnlyCollection<T>, String, T)
+  nameWithType.vb: Guard.Contains(Of T)(IReadOnlyCollection(Of T), String, T)
 - uid: Langly.Guard.Contains``1(Langly.IContains{``0},String,``0)
   name: Contains<T>(IContains<T>, String, T)
   href: api/Langly.Guard.html#Langly_Guard_Contains__1_Langly_IContains___0__String___0_
@@ -6013,15 +6022,6 @@ references:
   fullName.vb: Langly.Guard.Contains(Of T)(Langly.IContains(Of T), String, T)
   nameWithType: Guard.Contains<T>(IContains<T>, String, T)
   nameWithType.vb: Guard.Contains(Of T)(IContains(Of T), String, T)
-- uid: Langly.Guard.Contains``2(``1,String,``0)
-  name: Contains<T, TCollection>(TCollection, String, T)
-  href: api/Langly.Guard.html#Langly_Guard_Contains__2___1_String___0_
-  commentId: M:Langly.Guard.Contains``2(``1,String,``0)
-  name.vb: Contains(Of T, TCollection)(TCollection, String, T)
-  fullName: Langly.Guard.Contains<T, TCollection>(TCollection, String, T)
-  fullName.vb: Langly.Guard.Contains(Of T, TCollection)(TCollection, String, T)
-  nameWithType: Guard.Contains<T, TCollection>(TCollection, String, T)
-  nameWithType.vb: Guard.Contains(Of T, TCollection)(TCollection, String, T)
 - uid: Langly.Guard.Default*
   name: Default
   href: api/Langly.Guard.html#Langly_Guard_Default_
@@ -8881,6 +8881,130 @@ references:
   fullName.vb: Langly.NumericExtensions.Max(Of TEnumerator)(Langly.ISequence(Of UInt64, TEnumerator))
   nameWithType: NumericExtensions.Max<TEnumerator>(ISequence<UInt64, TEnumerator>)
   nameWithType.vb: NumericExtensions.Max(Of TEnumerator)(ISequence(Of UInt64, TEnumerator))
+- uid: Langly.NumericExtensions.Min*
+  name: Min
+  href: api/Langly.NumericExtensions.html#Langly_NumericExtensions_Min_
+  commentId: Overload:Langly.NumericExtensions.Min
+  isSpec: "True"
+  fullName: Langly.NumericExtensions.Min
+  nameWithType: NumericExtensions.Min
+- uid: Langly.NumericExtensions.Min``1(Langly.ISequence{Byte,``0})
+  name: Min<TEnumerator>(ISequence<Byte, TEnumerator>)
+  href: api/Langly.NumericExtensions.html#Langly_NumericExtensions_Min__1_Langly_ISequence_Byte___0__
+  commentId: M:Langly.NumericExtensions.Min``1(Langly.ISequence{Byte,``0})
+  name.vb: Min(Of TEnumerator)(ISequence(Of Byte, TEnumerator))
+  fullName: Langly.NumericExtensions.Min<TEnumerator>(Langly.ISequence<Byte, TEnumerator>)
+  fullName.vb: Langly.NumericExtensions.Min(Of TEnumerator)(Langly.ISequence(Of Byte, TEnumerator))
+  nameWithType: NumericExtensions.Min<TEnumerator>(ISequence<Byte, TEnumerator>)
+  nameWithType.vb: NumericExtensions.Min(Of TEnumerator)(ISequence(Of Byte, TEnumerator))
+- uid: Langly.NumericExtensions.Min``1(Langly.ISequence{Decimal,``0})
+  name: Min<TEnumerator>(ISequence<Decimal, TEnumerator>)
+  href: api/Langly.NumericExtensions.html#Langly_NumericExtensions_Min__1_Langly_ISequence_Decimal___0__
+  commentId: M:Langly.NumericExtensions.Min``1(Langly.ISequence{Decimal,``0})
+  name.vb: Min(Of TEnumerator)(ISequence(Of Decimal, TEnumerator))
+  fullName: Langly.NumericExtensions.Min<TEnumerator>(Langly.ISequence<Decimal, TEnumerator>)
+  fullName.vb: Langly.NumericExtensions.Min(Of TEnumerator)(Langly.ISequence(Of Decimal, TEnumerator))
+  nameWithType: NumericExtensions.Min<TEnumerator>(ISequence<Decimal, TEnumerator>)
+  nameWithType.vb: NumericExtensions.Min(Of TEnumerator)(ISequence(Of Decimal, TEnumerator))
+- uid: Langly.NumericExtensions.Min``1(Langly.ISequence{Double,``0})
+  name: Min<TEnumerator>(ISequence<Double, TEnumerator>)
+  href: api/Langly.NumericExtensions.html#Langly_NumericExtensions_Min__1_Langly_ISequence_Double___0__
+  commentId: M:Langly.NumericExtensions.Min``1(Langly.ISequence{Double,``0})
+  name.vb: Min(Of TEnumerator)(ISequence(Of Double, TEnumerator))
+  fullName: Langly.NumericExtensions.Min<TEnumerator>(Langly.ISequence<Double, TEnumerator>)
+  fullName.vb: Langly.NumericExtensions.Min(Of TEnumerator)(Langly.ISequence(Of Double, TEnumerator))
+  nameWithType: NumericExtensions.Min<TEnumerator>(ISequence<Double, TEnumerator>)
+  nameWithType.vb: NumericExtensions.Min(Of TEnumerator)(ISequence(Of Double, TEnumerator))
+- uid: Langly.NumericExtensions.Min``1(Langly.ISequence{Int16,``0})
+  name: Min<TEnumerator>(ISequence<Int16, TEnumerator>)
+  href: api/Langly.NumericExtensions.html#Langly_NumericExtensions_Min__1_Langly_ISequence_Int16___0__
+  commentId: M:Langly.NumericExtensions.Min``1(Langly.ISequence{Int16,``0})
+  name.vb: Min(Of TEnumerator)(ISequence(Of Int16, TEnumerator))
+  fullName: Langly.NumericExtensions.Min<TEnumerator>(Langly.ISequence<Int16, TEnumerator>)
+  fullName.vb: Langly.NumericExtensions.Min(Of TEnumerator)(Langly.ISequence(Of Int16, TEnumerator))
+  nameWithType: NumericExtensions.Min<TEnumerator>(ISequence<Int16, TEnumerator>)
+  nameWithType.vb: NumericExtensions.Min(Of TEnumerator)(ISequence(Of Int16, TEnumerator))
+- uid: Langly.NumericExtensions.Min``1(Langly.ISequence{Int32,``0})
+  name: Min<TEnumerator>(ISequence<Int32, TEnumerator>)
+  href: api/Langly.NumericExtensions.html#Langly_NumericExtensions_Min__1_Langly_ISequence_Int32___0__
+  commentId: M:Langly.NumericExtensions.Min``1(Langly.ISequence{Int32,``0})
+  name.vb: Min(Of TEnumerator)(ISequence(Of Int32, TEnumerator))
+  fullName: Langly.NumericExtensions.Min<TEnumerator>(Langly.ISequence<Int32, TEnumerator>)
+  fullName.vb: Langly.NumericExtensions.Min(Of TEnumerator)(Langly.ISequence(Of Int32, TEnumerator))
+  nameWithType: NumericExtensions.Min<TEnumerator>(ISequence<Int32, TEnumerator>)
+  nameWithType.vb: NumericExtensions.Min(Of TEnumerator)(ISequence(Of Int32, TEnumerator))
+- uid: Langly.NumericExtensions.Min``1(Langly.ISequence{Int64,``0})
+  name: Min<TEnumerator>(ISequence<Int64, TEnumerator>)
+  href: api/Langly.NumericExtensions.html#Langly_NumericExtensions_Min__1_Langly_ISequence_Int64___0__
+  commentId: M:Langly.NumericExtensions.Min``1(Langly.ISequence{Int64,``0})
+  name.vb: Min(Of TEnumerator)(ISequence(Of Int64, TEnumerator))
+  fullName: Langly.NumericExtensions.Min<TEnumerator>(Langly.ISequence<Int64, TEnumerator>)
+  fullName.vb: Langly.NumericExtensions.Min(Of TEnumerator)(Langly.ISequence(Of Int64, TEnumerator))
+  nameWithType: NumericExtensions.Min<TEnumerator>(ISequence<Int64, TEnumerator>)
+  nameWithType.vb: NumericExtensions.Min(Of TEnumerator)(ISequence(Of Int64, TEnumerator))
+- uid: Langly.NumericExtensions.Min``1(Langly.ISequence{nint,``0})
+  name: Min<TEnumerator>(ISequence<nint, TEnumerator>)
+  href: api/Langly.NumericExtensions.html#Langly_NumericExtensions_Min__1_Langly_ISequence_nint___0__
+  commentId: M:Langly.NumericExtensions.Min``1(Langly.ISequence{nint,``0})
+  name.vb: Min(Of TEnumerator)(ISequence(Of nint, TEnumerator))
+  fullName: Langly.NumericExtensions.Min<TEnumerator>(Langly.ISequence<nint, TEnumerator>)
+  fullName.vb: Langly.NumericExtensions.Min(Of TEnumerator)(Langly.ISequence(Of nint, TEnumerator))
+  nameWithType: NumericExtensions.Min<TEnumerator>(ISequence<nint, TEnumerator>)
+  nameWithType.vb: NumericExtensions.Min(Of TEnumerator)(ISequence(Of nint, TEnumerator))
+- uid: Langly.NumericExtensions.Min``1(Langly.ISequence{nuint,``0})
+  name: Min<TEnumerator>(ISequence<nuint, TEnumerator>)
+  href: api/Langly.NumericExtensions.html#Langly_NumericExtensions_Min__1_Langly_ISequence_nuint___0__
+  commentId: M:Langly.NumericExtensions.Min``1(Langly.ISequence{nuint,``0})
+  name.vb: Min(Of TEnumerator)(ISequence(Of nuint, TEnumerator))
+  fullName: Langly.NumericExtensions.Min<TEnumerator>(Langly.ISequence<nuint, TEnumerator>)
+  fullName.vb: Langly.NumericExtensions.Min(Of TEnumerator)(Langly.ISequence(Of nuint, TEnumerator))
+  nameWithType: NumericExtensions.Min<TEnumerator>(ISequence<nuint, TEnumerator>)
+  nameWithType.vb: NumericExtensions.Min(Of TEnumerator)(ISequence(Of nuint, TEnumerator))
+- uid: Langly.NumericExtensions.Min``1(Langly.ISequence{SByte,``0})
+  name: Min<TEnumerator>(ISequence<SByte, TEnumerator>)
+  href: api/Langly.NumericExtensions.html#Langly_NumericExtensions_Min__1_Langly_ISequence_SByte___0__
+  commentId: M:Langly.NumericExtensions.Min``1(Langly.ISequence{SByte,``0})
+  name.vb: Min(Of TEnumerator)(ISequence(Of SByte, TEnumerator))
+  fullName: Langly.NumericExtensions.Min<TEnumerator>(Langly.ISequence<SByte, TEnumerator>)
+  fullName.vb: Langly.NumericExtensions.Min(Of TEnumerator)(Langly.ISequence(Of SByte, TEnumerator))
+  nameWithType: NumericExtensions.Min<TEnumerator>(ISequence<SByte, TEnumerator>)
+  nameWithType.vb: NumericExtensions.Min(Of TEnumerator)(ISequence(Of SByte, TEnumerator))
+- uid: Langly.NumericExtensions.Min``1(Langly.ISequence{Single,``0})
+  name: Min<TEnumerator>(ISequence<Single, TEnumerator>)
+  href: api/Langly.NumericExtensions.html#Langly_NumericExtensions_Min__1_Langly_ISequence_Single___0__
+  commentId: M:Langly.NumericExtensions.Min``1(Langly.ISequence{Single,``0})
+  name.vb: Min(Of TEnumerator)(ISequence(Of Single, TEnumerator))
+  fullName: Langly.NumericExtensions.Min<TEnumerator>(Langly.ISequence<Single, TEnumerator>)
+  fullName.vb: Langly.NumericExtensions.Min(Of TEnumerator)(Langly.ISequence(Of Single, TEnumerator))
+  nameWithType: NumericExtensions.Min<TEnumerator>(ISequence<Single, TEnumerator>)
+  nameWithType.vb: NumericExtensions.Min(Of TEnumerator)(ISequence(Of Single, TEnumerator))
+- uid: Langly.NumericExtensions.Min``1(Langly.ISequence{UInt16,``0})
+  name: Min<TEnumerator>(ISequence<UInt16, TEnumerator>)
+  href: api/Langly.NumericExtensions.html#Langly_NumericExtensions_Min__1_Langly_ISequence_UInt16___0__
+  commentId: M:Langly.NumericExtensions.Min``1(Langly.ISequence{UInt16,``0})
+  name.vb: Min(Of TEnumerator)(ISequence(Of UInt16, TEnumerator))
+  fullName: Langly.NumericExtensions.Min<TEnumerator>(Langly.ISequence<UInt16, TEnumerator>)
+  fullName.vb: Langly.NumericExtensions.Min(Of TEnumerator)(Langly.ISequence(Of UInt16, TEnumerator))
+  nameWithType: NumericExtensions.Min<TEnumerator>(ISequence<UInt16, TEnumerator>)
+  nameWithType.vb: NumericExtensions.Min(Of TEnumerator)(ISequence(Of UInt16, TEnumerator))
+- uid: Langly.NumericExtensions.Min``1(Langly.ISequence{UInt32,``0})
+  name: Min<TEnumerator>(ISequence<UInt32, TEnumerator>)
+  href: api/Langly.NumericExtensions.html#Langly_NumericExtensions_Min__1_Langly_ISequence_UInt32___0__
+  commentId: M:Langly.NumericExtensions.Min``1(Langly.ISequence{UInt32,``0})
+  name.vb: Min(Of TEnumerator)(ISequence(Of UInt32, TEnumerator))
+  fullName: Langly.NumericExtensions.Min<TEnumerator>(Langly.ISequence<UInt32, TEnumerator>)
+  fullName.vb: Langly.NumericExtensions.Min(Of TEnumerator)(Langly.ISequence(Of UInt32, TEnumerator))
+  nameWithType: NumericExtensions.Min<TEnumerator>(ISequence<UInt32, TEnumerator>)
+  nameWithType.vb: NumericExtensions.Min(Of TEnumerator)(ISequence(Of UInt32, TEnumerator))
+- uid: Langly.NumericExtensions.Min``1(Langly.ISequence{UInt64,``0})
+  name: Min<TEnumerator>(ISequence<UInt64, TEnumerator>)
+  href: api/Langly.NumericExtensions.html#Langly_NumericExtensions_Min__1_Langly_ISequence_UInt64___0__
+  commentId: M:Langly.NumericExtensions.Min``1(Langly.ISequence{UInt64,``0})
+  name.vb: Min(Of TEnumerator)(ISequence(Of UInt64, TEnumerator))
+  fullName: Langly.NumericExtensions.Min<TEnumerator>(Langly.ISequence<UInt64, TEnumerator>)
+  fullName.vb: Langly.NumericExtensions.Min(Of TEnumerator)(Langly.ISequence(Of UInt64, TEnumerator))
+  nameWithType: NumericExtensions.Min<TEnumerator>(ISequence<UInt64, TEnumerator>)
+  nameWithType.vb: NumericExtensions.Min(Of TEnumerator)(ISequence(Of UInt64, TEnumerator))
 - uid: Langly.NumericExtensions.Sum*
   name: Sum
   href: api/Langly.NumericExtensions.html#Langly_NumericExtensions_Sum_

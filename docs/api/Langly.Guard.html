@@ -490,85 +490,6 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Guard_Contains__1___0_String_Langly_Object_.md&amp;value=---%0Auid%3A%20Langly.Guard.Contains%60%601(%60%600%2CString%2CLangly.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Guards/Contains.cs/#L39">View Source</a>
-  </span>
-  <a id="Langly_Guard_Contains_" data-uid="Langly.Guard.Contains*"></a>
-  <h4 id="Langly_Guard_Contains__1___0_String_Langly_Object_" data-uid="Langly.Guard.Contains``1(``0,String,Langly.Object)">Contains&lt;TCollection&gt;(TCollection, String, Object)</h4>
-  <div class="markdown level1 summary"><p>Guard against the collection not containing a particular value.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void Contains&lt;TCollection&gt;(TCollection collection, String name, Object value)
-    where TCollection : ICollection</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">TCollection</span></td>
-        <td><span class="parametername">collection</span></td>
-        <td><p>The collection.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">String</span></td>
-        <td><span class="parametername">name</span></td>
-        <td><p>The name of the argument.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Langly.Object.html">Object</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>The value to look for.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">TCollection</span></td>
-        <td><p>The type of the collection; must be <see cref="!:ICollection"></see>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Langly.Exceptions.ArgumentNotContainsException.html">ArgumentNotContainsException</a></td>
-        <td><p>Thrown if the guard clause fails.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Guard_Contains__1___0___String___0_.md&amp;value=---%0Auid%3A%20Langly.Guard.Contains%60%601(%60%600%5B%5D%2CString%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -582,6 +503,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Contains&lt;T&gt;(T[] collection, String name, T value)
+
     where T : IEquatable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -648,10 +570,168 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Guard_Contains__1_ICollection_String___0_.md&amp;value=---%0Auid%3A%20Langly.Guard.Contains%60%601(ICollection%2CString%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Guards/Contains.cs/#L39">View Source</a>
+  </span>
+  <a id="Langly_Guard_Contains_" data-uid="Langly.Guard.Contains*"></a>
+  <h4 id="Langly_Guard_Contains__1_ICollection_String___0_" data-uid="Langly.Guard.Contains``1(ICollection,String,``0)">Contains&lt;T&gt;(ICollection, String, T)</h4>
+  <div class="markdown level1 summary"><p>Guard against the collection not containing a particular value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Contains&lt;T&gt;(ICollection collection, String name, T value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ICollection</span></td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The name of the argument.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value to look for.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The type of the elements in the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.Exceptions.ArgumentNotContainsException.html">ArgumentNotContainsException</a></td>
+        <td><p>Thrown if the guard clause fails.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Guard_Contains__1_IReadOnlyCollection___0__String___0_.md&amp;value=---%0Auid%3A%20Langly.Guard.Contains%60%601(IReadOnlyCollection%7B%60%600%7D%2CString%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Guards/Contains.cs/#L61">View Source</a>
+  </span>
+  <a id="Langly_Guard_Contains_" data-uid="Langly.Guard.Contains*"></a>
+  <h4 id="Langly_Guard_Contains__1_IReadOnlyCollection___0__String___0_" data-uid="Langly.Guard.Contains``1(IReadOnlyCollection{``0},String,``0)">Contains&lt;T&gt;(IReadOnlyCollection&lt;T&gt;, String, T)</h4>
+  <div class="markdown level1 summary"><p>Guard against the collection not containing a particular value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Contains&lt;T&gt;(IReadOnlyCollection&lt;T&gt; collection, String name, T value)
+
+    where T : IEquatable&lt;T&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IReadOnlyCollection</span>&lt;T&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The name of the argument.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value to look for.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The type of the elements in the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.Exceptions.ArgumentNotContainsException.html">ArgumentNotContainsException</a></td>
+        <td><p>Thrown if the guard clause fails.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Guard_Contains__1_Langly_IContains___0__String___0_.md&amp;value=---%0Auid%3A%20Langly.Guard.Contains%60%601(Langly.IContains%7B%60%600%7D%2CString%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Guards/Contains.cs/#L84">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Guards/Contains.cs/#L83">View Source</a>
   </span>
   <a id="Langly_Guard_Contains_" data-uid="Langly.Guard.Contains*"></a>
   <h4 id="Langly_Guard_Contains__1_Langly_IContains___0__String___0_" data-uid="Langly.Guard.Contains``1(Langly.IContains{``0},String,``0)">Contains&lt;T&gt;(IContains&lt;T&gt;, String, T)</h4>
@@ -661,6 +741,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Contains&lt;T&gt;(IContains&lt;T&gt; collection, String name, T value)
+
     where T : IEquatable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -727,90 +808,6 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Guard_Contains__2___1_String___0_.md&amp;value=---%0Auid%3A%20Langly.Guard.Contains%60%602(%60%601%2CString%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Guards/Contains.cs/#L62">View Source</a>
-  </span>
-  <a id="Langly_Guard_Contains_" data-uid="Langly.Guard.Contains*"></a>
-  <h4 id="Langly_Guard_Contains__2___1_String___0_" data-uid="Langly.Guard.Contains``2(``1,String,``0)">Contains&lt;T, TCollection&gt;(TCollection, String, T)</h4>
-  <div class="markdown level1 summary"><p>Guard against the collection not containing a particular value.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void Contains&lt;T, TCollection&gt;(TCollection collection, String name, T value)
-    where T : IEquatable&lt;T&gt; where TCollection : IReadOnlyCollection&lt;T&gt;</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">TCollection</span></td>
-        <td><span class="parametername">collection</span></td>
-        <td><p>The collection.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">String</span></td>
-        <td><span class="parametername">name</span></td>
-        <td><p>The name of the argument.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">T</span></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>The value to look for.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">T</span></td>
-        <td><p>The type of the elements in the collection.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="parametername">TCollection</span></td>
-        <td><p>The type of the collection; must be <see cref="!:IReadOnlyCollection&lt;T>"></see>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Langly.Exceptions.ArgumentNotContainsException.html">ArgumentNotContainsException</a></td>
-        <td><p>Thrown if the guard clause fails.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Guard_Default__1___0_String_.md&amp;value=---%0Auid%3A%20Langly.Guard.Default%60%601(%60%600%2CString)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -824,6 +821,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Exception Default&lt;TEnum&gt;(TEnum value, String name)
+
     where TEnum : struct, Enum</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1013,6 +1011,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Empty&lt;TCollection&gt;(TCollection collection, String name)
+
     where TCollection : ICollection</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1446,6 +1445,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Empty&lt;T, TCollection&gt;(TCollection collection, String name)
+
     where TCollection : IReadOnlyCollection&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1648,6 +1648,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Equal&lt;TValue, TOther&gt;(TValue value, String name, TOther other)
+
     where TValue : IEquatable&lt;TOther&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1799,6 +1800,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void GreaterThan&lt;T&gt;(T value, String name, T lower)
+
     where T : IComparable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1945,6 +1947,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void GreaterThanOrEqual&lt;T&gt;(T value, String name, T lower)
+
     where T : IComparable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2024,6 +2027,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void HasFlag&lt;TEnum&gt;(TEnum value, String name, TEnum flags)
+
     where TEnum : struct, Enum</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2806,6 +2810,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void LargerThan&lt;TCollection&gt;(TCollection collection, String name, Int64 lower)
+
     where TCollection : ICollection</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3305,6 +3310,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void LargerThan&lt;T, TCollection&gt;(TCollection collection, String name, Int64 lower)
+
     where TCollection : ICollection&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3456,6 +3462,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void LargerThanOrEqual&lt;TCollection&gt;(TCollection collection, String name, Int64 lower)
+
     where TCollection : ICollection</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3925,6 +3932,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void LargerThanOrEqual&lt;T, TCollection&gt;(TCollection collection, String name, Int64 lower)
+
     where TCollection : ICollection&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4076,6 +4084,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void LesserThan&lt;T&gt;(T value, String name, T upper)
+
     where T : IComparable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4222,6 +4231,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void LesserThanOrEqual&lt;T&gt;(T value, String name, T upper)
+
     where T : IComparable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4301,6 +4311,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void NotContains&lt;TCollection&gt;(TCollection collection, String name, Object value)
+
     where TCollection : ICollection</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4380,6 +4391,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void NotContains&lt;T&gt;(T[] collection, String name, T value)
+
     where T : IEquatable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4537,6 +4549,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void NotContains&lt;T, TCollection&gt;(TCollection collection, String name, T value)
+
     where T : IEquatable&lt;T&gt; where TCollection : ICollection&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4733,6 +4746,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void NotEmpty&lt;TCollection&gt;(TCollection collection, String name)
+
     where TCollection : ICollection</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5166,6 +5180,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void NotEmpty&lt;T, TCollection&gt;(TCollection collection, String name)
+
     where TCollection : ICollection&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5368,6 +5383,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void NotEqual&lt;TValue, TOther&gt;(TValue value, String name, TOther other)
+
     where TValue : IEquatable&lt;TOther&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5972,6 +5988,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Size&lt;TCollection&gt;(TCollection collection, String name, Int64 size)
+
     where TCollection : ICollection</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6441,6 +6458,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Size&lt;T, TCollection&gt;(TCollection collection, String name, Int64 size)
+
     where TCollection : ICollection&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6592,6 +6610,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void SmallerThan&lt;TCollection&gt;(TCollection collection, String name, Int64 upper)
+
     where TCollection : ICollection</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -7091,6 +7110,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void SmallerThan&lt;T, TCollection&gt;(TCollection collection, String name, Int64 upper)
+
     where TCollection : ICollection&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -7242,6 +7262,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void SmallerThanOrEqual&lt;TCollection&gt;(TCollection collection, String name, Int64 upper)
+
     where TCollection : ICollection</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -7711,6 +7732,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Valid&lt;TEnum&gt;(TEnum value, String name)
+
     where TEnum : struct, Enum</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -8671,6 +8693,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Within&lt;T&gt;(T value, String name, T lower, T upper)
+
     where T : IComparable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
