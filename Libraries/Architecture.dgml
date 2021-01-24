@@ -2,8 +2,9 @@
 <DirectedGraph GraphDirection="TopToBottom" Layout="Sugiyama" ZoomLevel="-1" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
   <Nodes>
     <Node Id="Arrays" Bounds="0,111.92,53.0933333333335,25.96" />
+    <Node Id="Console" Bounds="367.268333333333,111.92,62.5566666666666,25.96" />
     <Node Id="Core" Bounds="147.546666666667,55.96,50,25.96" ErrorMessage="Node 'Core' has a hub value of 100." Hub="100" />
-    <Node Id="Guards" Bounds="83.8150000000001,111.92,57.4633333333334,25.96" />
+    <Node Id="Guards" Bounds="83.815,111.92,57.4633333333335,25.96" />
     <Node Id="Numerics" Bounds="137.498333333333,167.88,70.0966666666667,25.96" />
     <Node Id="Rune" Bounds="147.546666666667,0,50,25.96" ErrorMessage="Unreferenced node detected:Rune (Rune)" IsUnreferenced="True" />
     <Node Id="Sets" Bounds="203.546666666667,111.92,50,25.96" />
@@ -11,6 +12,7 @@
   </Nodes>
   <Links>
     <Link Source="Core" Target="Arrays" Bounds="61.4909858703613,78.5221939086914,86.0556755065918,32.9840774536133" />
+    <Link Source="Core" Target="Console" Bounds="197.546661376953,75.1302642822266,160.985504150391,39.8617172241211" />
     <Link Source="Core" Target="Guards" Bounds="133.045440673828,81.9199981689453,25.5841369628906,23.8614807128906" />
     <Link Source="Core" Target="Numerics" Bounds="172.546661376953,81.9199981689453,0,76.9600067138672" />
     <Link Source="Core" Target="Sets" Bounds="185.535949707031,81.9199981689453,23.6551971435547,23.638313293457" />

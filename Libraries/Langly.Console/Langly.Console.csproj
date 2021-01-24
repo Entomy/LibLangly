@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<Description>A replacement Console API with superior usability.</Description>
+		<PackageTags>langly, console</PackageTags>
+		<AssemblyName>Langly.Console</AssemblyName>
+		<Configurations>Debug;Release;Debug-Windows;Release-Windows</Configurations>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Include="..\GlobalSuppressions.cs" Link="GlobalSuppressions.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="PInvoke.Kernel32" Version="0.7.78" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Langly.Core\Langly.Core.csproj" />
+	</ItemGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Windows|AnyCPU' or '$(Configuration)|$(Platform)'=='Debug-Windows|AnyCPU'">
+		<DefineConstants>TRACE;WINDOWS</DefineConstants>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Unix|AnyCPU' or '$(Configuration)|$(Platform)'=='Debug-Unix|AnyCPU'">
+		<DefineConstants>TRACE;UNIX</DefineConstants>
+	</PropertyGroup>
+
+</Project>
