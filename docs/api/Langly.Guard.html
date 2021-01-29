@@ -160,6 +160,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void CanRead&lt;TElement, TResult&gt;(IRead&lt;TElement, TResult&gt; stream, String name)
+
     where TResult : IRead&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -294,6 +295,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void CanSeek&lt;TElement, TResult&gt;(ISeek&lt;TElement, TResult&gt; stream, String name)
+
     where TResult : ISeek&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -428,6 +430,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void CanWrite&lt;TElement, TResult&gt;(IWrite&lt;TElement, TResult&gt; stream, String name)
+
     where TResult : IWrite&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -506,6 +509,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Contains&lt;T&gt;(T[] collection, String name, T value)
+
     where T : IEquatable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -663,6 +667,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Contains&lt;T&gt;(IReadOnlyCollection&lt;T&gt; collection, String name, T value)
+
     where T : IEquatable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -742,6 +747,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Contains&lt;T&gt;(IContains&lt;T&gt; collection, String name, T value)
+
     where T : IEquatable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -821,6 +827,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Exception Default&lt;TEnum&gt;(TEnum value, String name)
+
     where TEnum : struct, Enum</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1010,6 +1017,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Empty&lt;TCollection&gt;(TCollection collection, String name)
+
     where TCollection : ICollection</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1443,6 +1451,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Empty&lt;T, TCollection&gt;(TCollection collection, String name)
+
     where TCollection : IReadOnlyCollection&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1645,6 +1654,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Equal&lt;TValue, TOther&gt;(TValue value, String name, TOther other)
+
     where TValue : IEquatable&lt;TOther&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1796,6 +1806,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void GreaterThan&lt;T&gt;(T value, String name, T lower)
+
     where T : IComparable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1942,6 +1953,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void GreaterThanOrEqual&lt;T&gt;(T value, String name, T lower)
+
     where T : IComparable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2021,6 +2033,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void HasFlag&lt;TEnum&gt;(TEnum value, String name, TEnum flags)
+
     where TEnum : struct, Enum</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2803,6 +2816,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void LargerThan&lt;TCollection&gt;(TCollection collection, String name, Int64 lower)
+
     where TCollection : ICollection</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3302,6 +3316,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void LargerThan&lt;T, TCollection&gt;(TCollection collection, String name, Int64 lower)
+
     where TCollection : ICollection&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3453,6 +3468,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void LargerThanOrEqual&lt;TCollection&gt;(TCollection collection, String name, Int64 lower)
+
     where TCollection : ICollection</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3922,6 +3938,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void LargerThanOrEqual&lt;T, TCollection&gt;(TCollection collection, String name, Int64 lower)
+
     where TCollection : ICollection&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4073,6 +4090,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void LesserThan&lt;T&gt;(T value, String name, T upper)
+
     where T : IComparable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4219,6 +4237,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void LesserThanOrEqual&lt;T&gt;(T value, String name, T upper)
+
     where T : IComparable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4298,6 +4317,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void NotContains&lt;TCollection&gt;(TCollection collection, String name, Object value)
+
     where TCollection : ICollection</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4377,6 +4397,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void NotContains&lt;T&gt;(T[] collection, String name, T value)
+
     where T : IEquatable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4534,6 +4555,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void NotContains&lt;T, TCollection&gt;(TCollection collection, String name, T value)
+
     where T : IEquatable&lt;T&gt; where TCollection : ICollection&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4730,6 +4752,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void NotEmpty&lt;TCollection&gt;(TCollection collection, String name)
+
     where TCollection : ICollection</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5163,6 +5186,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void NotEmpty&lt;T, TCollection&gt;(TCollection collection, String name)
+
     where TCollection : ICollection&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5365,6 +5389,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void NotEqual&lt;TValue, TOther&gt;(TValue value, String name, TOther other)
+
     where TValue : IEquatable&lt;TOther&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5969,6 +5994,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Size&lt;TCollection&gt;(TCollection collection, String name, Int64 size)
+
     where TCollection : ICollection</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6438,6 +6464,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Size&lt;T, TCollection&gt;(TCollection collection, String name, Int64 size)
+
     where TCollection : ICollection&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6589,6 +6616,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void SmallerThan&lt;TCollection&gt;(TCollection collection, String name, Int64 upper)
+
     where TCollection : ICollection</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -7088,6 +7116,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void SmallerThan&lt;T, TCollection&gt;(TCollection collection, String name, Int64 upper)
+
     where TCollection : ICollection&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -7239,6 +7268,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void SmallerThanOrEqual&lt;TCollection&gt;(TCollection collection, String name, Int64 upper)
+
     where TCollection : ICollection</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -7708,6 +7738,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Valid&lt;TEnum&gt;(TEnum value, String name)
+
     where TEnum : struct, Enum</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -8668,6 +8699,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Within&lt;T&gt;(T value, String name, T lower, T upper)
+
     where T : IComparable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>

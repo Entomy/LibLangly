@@ -80,25 +80,26 @@
   <h6><strong>Assembly</strong>: Langly.Console.dll</h6>
   <h5 id="Langly_Internals_IConsoleWriter_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IConsoleWriter</code></pre>
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public interface IConsoleWriter</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Internals_IConsoleWriter_Write_Char__Int32_.md&amp;value=---%0Auid%3A%20Langly.Internals.IConsoleWriter.Write(Char*%2CInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Internals_IConsoleWriter_Write_System_Char__System_Int32_.md&amp;value=---%0Auid%3A%20Langly.Internals.IConsoleWriter.Write(System.Char*%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Console/Internals/IConsoleWriter.cs/#L21">View Source</a>
   </span>
   <a id="Langly_Internals_IConsoleWriter_Write_" data-uid="Langly.Internals.IConsoleWriter.Write*"></a>
-  <h4 id="Langly_Internals_IConsoleWriter_Write_Char__Int32_" data-uid="Langly.Internals.IConsoleWriter.Write(Char*,Int32)">Write(Char*, Int32)</h4>
+  <h4 id="Langly_Internals_IConsoleWriter_Write_System_Char__System_Int32_" data-uid="Langly.Internals.IConsoleWriter.Write(System.Char*,System.Int32)">Write(Char*, Int32)</h4>
   <div class="markdown level1 summary"><p>Writes the text to the standard output stream.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void Write(Char*text, Int32 length)</code></pre>
+    <pre><code class="lang-csharp hljs">void Write(char *text, int length)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -111,13 +112,13 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Char</span>*</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>*</td>
         <td><span class="parametername">text</span></td>
         <td><p>The characters of the text to write.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">Int32</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
         <td><span class="parametername">length</span></td>
         <td><p>The length of the <code data-dev-comment-type="paramref" class="paramref">text</code>.</p>
 </td>
@@ -126,19 +127,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Internals_IConsoleWriter_Write_ReadOnlySpan_Char__.md&amp;value=---%0Auid%3A%20Langly.Internals.IConsoleWriter.Write(ReadOnlySpan%7BChar%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Internals_IConsoleWriter_Write_System_ReadOnlySpan_System_Char__.md&amp;value=---%0Auid%3A%20Langly.Internals.IConsoleWriter.Write(System.ReadOnlySpan%7BSystem.Char%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Console/Internals/IConsoleWriter.cs/#L14">View Source</a>
   </span>
   <a id="Langly_Internals_IConsoleWriter_Write_" data-uid="Langly.Internals.IConsoleWriter.Write*"></a>
-  <h4 id="Langly_Internals_IConsoleWriter_Write_ReadOnlySpan_Char__" data-uid="Langly.Internals.IConsoleWriter.Write(ReadOnlySpan{Char})">Write(ReadOnlySpan&lt;Char&gt;)</h4>
+  <h4 id="Langly_Internals_IConsoleWriter_Write_System_ReadOnlySpan_System_Char__" data-uid="Langly.Internals.IConsoleWriter.Write(System.ReadOnlySpan{System.Char})">Write(ReadOnlySpan&lt;Char&gt;)</h4>
   <div class="markdown level1 summary"><p>Writes the text to the standard output stream.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void Write(ReadOnlySpan&lt;Char&gt; text)</code></pre>
+    <pre><code class="lang-csharp hljs">void Write(ReadOnlySpan&lt;char&gt; text)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -151,7 +152,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ReadOnlySpan</span>&lt;<span class="xref">Char</span>&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
         <td><span class="parametername">text</span></td>
         <td><p>The text to write.</p>
 </td>
@@ -176,19 +177,19 @@
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Internals_IConsoleWriter_WriteLine_Char__Int32_.md&amp;value=---%0Auid%3A%20Langly.Internals.IConsoleWriter.WriteLine(Char*%2CInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Internals_IConsoleWriter_WriteLine_System_Char__System_Int32_.md&amp;value=---%0Auid%3A%20Langly.Internals.IConsoleWriter.WriteLine(System.Char*%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Console/Internals/IConsoleWriter.cs/#L42">View Source</a>
   </span>
   <a id="Langly_Internals_IConsoleWriter_WriteLine_" data-uid="Langly.Internals.IConsoleWriter.WriteLine*"></a>
-  <h4 id="Langly_Internals_IConsoleWriter_WriteLine_Char__Int32_" data-uid="Langly.Internals.IConsoleWriter.WriteLine(Char*,Int32)">WriteLine(Char*, Int32)</h4>
+  <h4 id="Langly_Internals_IConsoleWriter_WriteLine_System_Char__System_Int32_" data-uid="Langly.Internals.IConsoleWriter.WriteLine(System.Char*,System.Int32)">WriteLine(Char*, Int32)</h4>
   <div class="markdown level1 summary"><p>Writes the text and a line terminator to the standard output stream.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">virtual void WriteLine(Char*text, Int32 length)</code></pre>
+    <pre><code class="lang-csharp hljs">virtual void WriteLine(char *text, int length)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -201,13 +202,13 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Char</span>*</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>*</td>
         <td><span class="parametername">text</span></td>
         <td><p>The text to write.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">Int32</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
         <td><span class="parametername">length</span></td>
         <td><p>The length of the <code data-dev-comment-type="paramref" class="paramref">text</code>.</p>
 </td>
@@ -216,19 +217,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Internals_IConsoleWriter_WriteLine_ReadOnlySpan_Char__.md&amp;value=---%0Auid%3A%20Langly.Internals.IConsoleWriter.WriteLine(ReadOnlySpan%7BChar%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Internals_IConsoleWriter_WriteLine_System_ReadOnlySpan_System_Char__.md&amp;value=---%0Auid%3A%20Langly.Internals.IConsoleWriter.WriteLine(System.ReadOnlySpan%7BSystem.Char%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Console/Internals/IConsoleWriter.cs/#L32">View Source</a>
   </span>
   <a id="Langly_Internals_IConsoleWriter_WriteLine_" data-uid="Langly.Internals.IConsoleWriter.WriteLine*"></a>
-  <h4 id="Langly_Internals_IConsoleWriter_WriteLine_ReadOnlySpan_Char__" data-uid="Langly.Internals.IConsoleWriter.WriteLine(ReadOnlySpan{Char})">WriteLine(ReadOnlySpan&lt;Char&gt;)</h4>
+  <h4 id="Langly_Internals_IConsoleWriter_WriteLine_System_ReadOnlySpan_System_Char__" data-uid="Langly.Internals.IConsoleWriter.WriteLine(System.ReadOnlySpan{System.Char})">WriteLine(ReadOnlySpan&lt;Char&gt;)</h4>
   <div class="markdown level1 summary"><p>Writes the text and a line terminator to the standard output stream.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">virtual void WriteLine(ReadOnlySpan&lt;Char&gt; text)</code></pre>
+    <pre><code class="lang-csharp hljs">virtual void WriteLine(ReadOnlySpan&lt;char&gt; text)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -241,7 +242,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ReadOnlySpan</span>&lt;<span class="xref">Char</span>&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
         <td><span class="parametername">text</span></td>
         <td><p>The text to write.</p>
 </td>
