@@ -1,30 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<DirectedGraph GraphDirection="BottomToTop" Layout="Sugiyama" ZoomLevel="-1" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+<DirectedGraph GraphDirection="TopToBottom" Layout="Sugiyama" ZoomLevel="-1" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
   <Nodes>
-    <Node Id="Arrays" Bounds="556.816666666667,111.92,53.0933333333335,25.96" ErrorMessage="Unreferenced node detected:Arrays (Arrays)" IsUnreferenced="True" />
-    <Node Id="Buffers" Bounds="0,111.92,56.7266666666667,25.96" ErrorMessage="Unreferenced node detected:Buffers (Buffers)" IsUnreferenced="True" />
-    <Node Id="Console" Bounds="87.0850000000001,111.92,62.5566666666664,25.96" ErrorMessage="Unreferenced node detected:Console (Console)" IsUnreferenced="True" />
-    <Node Id="Core" Bounds="244.363333333333,55.96,50,25.96" ErrorMessage="Node 'Core' has a hub value of 100." Hub="100" />
-    <Node Id="Guards" Bounds="180.631666666667,111.92,57.4633333333335,25.96" />
-    <Node Id="Numerics" Bounds="234.315,167.88,70.0966666666667,25.96" ErrorMessage="Unreferenced node detected:Numerics (Numerics)" IsUnreferenced="True" />
-    <Node Id="Rune" Bounds="325.363333333333,0,50,25.96" />
-    <Node Id="Sets" Bounds="300.363333333333,111.92,50,25.96" ErrorMessage="Unreferenced node detected:Sets (Sets)" IsUnreferenced="True" />
-    <Node Id="Stacks" Bounds="380.983333333333,111.92,52.76,25.96" ErrorMessage="Unreferenced node detected:Stacks (Stacks)" IsUnreferenced="True" />
-    <Node Id="Streams" Bounds="464.343333333333,111.92,62.04,25.96" ErrorMessage="Unreferenced node detected:Streams (Streams)" IsUnreferenced="True" />
-    <Node Id="Traits" Bounds="244.363333333333,0,50,25.96" />
+    <Node Id="Arrays" Bounds="66.5016666666669,55.96,53.0933333333335,25.96" ErrorMessage="Unreferenced node detected:Arrays (Arrays)" IsUnreferenced="True" />
+    <Node Id="Buffers" Bounds="230.685,55.9599999999999,56.7266666666667,25.96" ErrorMessage="Unreferenced node detected:Buffers (Buffers)" IsUnreferenced="True" />
+    <Node Id="Console" Bounds="400.77,55.9599999999999,62.5566666666664,25.96" ErrorMessage="Unreferenced node detected:Console (Console)" IsUnreferenced="True" />
+    <Node Id="Core" Bounds="234.048333333334,111.92,50,25.96" ErrorMessage="Node 'Core' has a hub value of 81." Hub="81" />
+    <Node Id="Exceptions" Bounds="314.88,111.92,76.3366666666667,25.96" />
+    <Node Id="Guards" Bounds="586.316666666667,55.9599999999999,57.4633333333335,25.96" />
+    <Node Id="Numerics" Bounds="0,0,70.0966666666668,25.96" ErrorMessage="Unreferenced node detected:Numerics (Numerics)" IsUnreferenced="True" />
+    <Node Id="Rune" Bounds="234.048333333334,167.88,50,25.96" />
+    <Node Id="Sets" Bounds="150.048333333334,55.9599999999999,50,25.96" ErrorMessage="Unreferenced node detected:Sets (Sets)" IsUnreferenced="True" />
+    <Node Id="Stacks" Bounds="317.668333333334,55.9599999999999,52.76,25.96" ErrorMessage="Unreferenced node detected:Stacks (Stacks)" IsUnreferenced="True" />
+    <Node Id="Streams" Bounds="494.028333333334,55.9599999999999,62.04,25.96" ErrorMessage="Unreferenced node detected:Streams (Streams)" IsUnreferenced="True" />
+    <Node Id="Traits" Bounds="315.048333333334,167.88,50,25.96" />
   </Nodes>
   <Links>
-    <Link Source="Arrays" Target="Core" Bounds="303.266357421875,73.9577865600586,253.55029296875,42.5073699951172" />
-    <Link Source="Buffers" Target="Core" Bounds="56.7266654968262,76.619758605957,178.860660552979,41.2644805908203" />
-    <Link Source="Console" Target="Core" Bounds="149.257293701172,81.332405090332,86.6669158935547,32.1184158325195" />
-    <Link Source="Core" Target="Rune" Bounds="288.151397705078,31.075662612915,36.0191345214844,24.8843364715576" />
-    <Link Source="Core" Target="Traits" Bounds="269.363342285156,34.9599990844727,0,21" />
-    <Link Source="Guards" Target="Core" Bounds="223.280410766602,88.0585174560547,25.5841522216797,23.8614807128906" />
-    <Link Source="Numerics" Target="Core" Bounds="269.363342285156,90.9199981689453,0,76.9600067138672" />
-    <Link Source="Numerics" Target="Guards" Bounds="229.862106323242,144.018524169922,25.5841369628906,23.8614807128906" />
-    <Link Source="Sets" Target="Core" Bounds="288.718841552734,88.2816848754883,23.6552124023438,23.638313293457" />
-    <Link Source="Stacks" Target="Core" Bounds="302.699615478516,82.4581069946289,78.3630065917969,31.7767639160156" />
-    <Link Source="Streams" Target="Core" Bounds="303.099517822266,77.2934341430664,161.243804931641,39.9256820678711" />
+    <Link Source="Arrays" Target="Core" Bounds="119.595001220703,77.8891067504883,105.924896240234,35.7081756591797" />
+    <Link Source="Buffers" Target="Core" Bounds="259.04833984375,81.9199981689453,0,21" />
+    <Link Source="Console" Target="Core" Bounds="292.611480712891,79.0565414428711,108.16162109375,34.9868469238281" />
+    <Link Source="Core" Target="Rune" Bounds="259.04833984375,137.880004882813,0,21" />
+    <Link Source="Core" Target="Traits" Bounds="277.836395263672,137.880004882813,36.0191345214844,24.8843383789063" />
+    <Link Source="Exceptions" Target="Traits" Bounds="345.100250244141,137.880004882813,4.93270874023438,21.2334442138672" />
+    <Link Source="Guards" Target="Exceptions" Bounds="400.043334960938,76.5275497436523,186.273315429688,39.013542175293" />
+    <Link Source="Numerics" Target="Core" Bounds="35.0483322143555,25.9599990844727,190.151405334473,92.6516571044922" />
+    <Link Source="Numerics" Target="Guards" Bounds="70.0966644287109,15.2435398101807,507.737442016602,40.2480068206787" />
+    <Link Source="Sets" Target="Core" Bounds="194.532257080078,81.9199981689453,37.5420532226563,25.0101699829102" />
+    <Link Source="Stacks" Target="Core" Bounds="286.281372070313,81.9199981689453,38.0510864257813,25.0510482788086" />
+    <Link Source="Streams" Target="Core" Bounds="292.68701171875,76.5647125244141,201.34130859375,38.1659545898438" />
   </Links>
   <Properties>
     <Property Id="Bounds" DataType="System.Windows.Rect" />
