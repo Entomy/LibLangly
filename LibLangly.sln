@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 		.gitignore = .gitignore
-		.kodiak.toml = .kodiak.toml
+		azure-pipelines.yml = azure-pipelines.yml
 		CODE_OF_CONDUCT.md = CODE_OF_CONDUCT.md
 		CONTRIBUTING.md = CONTRIBUTING.md
 		.github\dependabot.yaml = .github\dependabot.yaml
@@ -65,6 +65,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Langly", "Packages\Langly\Langly.csproj", "{4129C713-73A7-4D2F-965A-ADB9CF3C8EF6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Langly.Exceptions", "Libraries\Langly.Exceptions\Langly.Exceptions.csproj", "{3951C396-FB54-46FF-A6AB-719E501B64C6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Langly.Chains", "Libraries\Langly.Chains\Langly.Chains.csproj", "{39EFF160-4296-4971-AE26-F2A6EB09EA9B}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
@@ -498,6 +500,30 @@ Global
 		{3951C396-FB54-46FF-A6AB-719E501B64C6}.Release-Windows|x64.Build.0 = Release|Any CPU
 		{3951C396-FB54-46FF-A6AB-719E501B64C6}.Release-Windows|x86.ActiveCfg = Release|Any CPU
 		{3951C396-FB54-46FF-A6AB-719E501B64C6}.Release-Windows|x86.Build.0 = Release|Any CPU
+		{39EFF160-4296-4971-AE26-F2A6EB09EA9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39EFF160-4296-4971-AE26-F2A6EB09EA9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39EFF160-4296-4971-AE26-F2A6EB09EA9B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{39EFF160-4296-4971-AE26-F2A6EB09EA9B}.Debug|x64.Build.0 = Debug|Any CPU
+		{39EFF160-4296-4971-AE26-F2A6EB09EA9B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{39EFF160-4296-4971-AE26-F2A6EB09EA9B}.Debug|x86.Build.0 = Debug|Any CPU
+		{39EFF160-4296-4971-AE26-F2A6EB09EA9B}.Debug-Windows|Any CPU.ActiveCfg = Debug|Any CPU
+		{39EFF160-4296-4971-AE26-F2A6EB09EA9B}.Debug-Windows|Any CPU.Build.0 = Debug|Any CPU
+		{39EFF160-4296-4971-AE26-F2A6EB09EA9B}.Debug-Windows|x64.ActiveCfg = Debug|Any CPU
+		{39EFF160-4296-4971-AE26-F2A6EB09EA9B}.Debug-Windows|x64.Build.0 = Debug|Any CPU
+		{39EFF160-4296-4971-AE26-F2A6EB09EA9B}.Debug-Windows|x86.ActiveCfg = Debug|Any CPU
+		{39EFF160-4296-4971-AE26-F2A6EB09EA9B}.Debug-Windows|x86.Build.0 = Debug|Any CPU
+		{39EFF160-4296-4971-AE26-F2A6EB09EA9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39EFF160-4296-4971-AE26-F2A6EB09EA9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39EFF160-4296-4971-AE26-F2A6EB09EA9B}.Release|x64.ActiveCfg = Release|Any CPU
+		{39EFF160-4296-4971-AE26-F2A6EB09EA9B}.Release|x64.Build.0 = Release|Any CPU
+		{39EFF160-4296-4971-AE26-F2A6EB09EA9B}.Release|x86.ActiveCfg = Release|Any CPU
+		{39EFF160-4296-4971-AE26-F2A6EB09EA9B}.Release|x86.Build.0 = Release|Any CPU
+		{39EFF160-4296-4971-AE26-F2A6EB09EA9B}.Release-Windows|Any CPU.ActiveCfg = Release|Any CPU
+		{39EFF160-4296-4971-AE26-F2A6EB09EA9B}.Release-Windows|Any CPU.Build.0 = Release|Any CPU
+		{39EFF160-4296-4971-AE26-F2A6EB09EA9B}.Release-Windows|x64.ActiveCfg = Release|Any CPU
+		{39EFF160-4296-4971-AE26-F2A6EB09EA9B}.Release-Windows|x64.Build.0 = Release|Any CPU
+		{39EFF160-4296-4971-AE26-F2A6EB09EA9B}.Release-Windows|x86.ActiveCfg = Release|Any CPU
+		{39EFF160-4296-4971-AE26-F2A6EB09EA9B}.Release-Windows|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -519,6 +545,7 @@ Global
 		{067B1A2B-BEAC-4AB9-AB6F-32D04BD9E4B9} = {3A1CF434-009B-414F-9F21-3F7FDEAA5B6B}
 		{4129C713-73A7-4D2F-965A-ADB9CF3C8EF6} = {7E70A1A2-467E-464D-83D1-5DFE2377D478}
 		{3951C396-FB54-46FF-A6AB-719E501B64C6} = {3A1CF434-009B-414F-9F21-3F7FDEAA5B6B}
+		{39EFF160-4296-4971-AE26-F2A6EB09EA9B} = {3A1CF434-009B-414F-9F21-3F7FDEAA5B6B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BD2AFA89-4002-44D6-99E4-48E735D26B8C}
