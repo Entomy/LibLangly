@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<Description>Provides dictionaries, highly compact data structures indexed by textual elements.</Description>
+		<PackageTags>langly, dictionary, dictionaries</PackageTags>
+		<AssemblyName>Langly.Dictionaries</AssemblyName>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Include="..\GlobalSuppressions.cs" Link="GlobalSuppressions.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Langly.DataStructures\Langly.DataStructures.csproj" />
+	  <ProjectReference Include="..\Langly.Trees\Langly.Trees.csproj" />
+	</ItemGroup>
+
+</Project>

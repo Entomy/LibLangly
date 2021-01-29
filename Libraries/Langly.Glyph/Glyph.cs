@@ -8,7 +8,7 @@ namespace Langly {
 	/// </summary>
 	/// <seealso cref="Char"/>
 	/// <seealso cref="Rune"/>
-	public readonly struct Glyph : IEquals<Char>, IEquals<Rune>, IEquals<Glyph> {
+	public readonly struct Glyph : IEquatable<Char>, IEquatable<Rune>, IEquatable<Glyph> {
 		/// <summary>
 		/// The <see cref="Int32"/> code describing invariant equivalence rules.
 		/// </summary>

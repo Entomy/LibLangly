@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<Description>The core of all LibLangly.</Description>
+		<PackageTags>langly, glyph, glyphs, grapheme, graphemes, grapheme cluster, grapheme clusters</PackageTags>
+		<AssemblyName>Langly.Glyph</AssemblyName>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Include="..\GlobalSuppressions.cs" Link="GlobalSuppressions.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Langly.Rune\Langly.Rune.csproj" />
+	</ItemGroup>
+
+</Project>

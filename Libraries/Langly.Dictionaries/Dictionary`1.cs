@@ -10,8 +10,8 @@ namespace Langly {
 	/// <typeparam name="TElement">The type of the elements in the dictionary.</typeparam>
 	public sealed partial class Dictionary<TElement> :
 		IContains<TElement>,
-		IIndex<Glyph, TElement>,
-		IInsert<Glyph, TElement, Dictionary<TElement>>,
+		IIndex<Char, TElement>,
+		IInsert<Char, TElement, Dictionary<TElement>>,
 		IReplace<TElement, Dictionary<TElement>> {
 		/// <summary>
 		/// The <see cref="Filter{TIndex, TElement}"/> being used.
@@ -20,7 +20,7 @@ namespace Langly {
 		/// This is never <see langword="null"/>; a sentinel is used by default.
 		/// </remarks>
 		[NotNull, DisallowNull]
-		private readonly Filter<Glyph, TElement> Filter;
+		private readonly Filter<Char, TElement> Filter;
 
 		/// <summary>
 		/// The head node of the trie.
@@ -43,13 +43,13 @@ namespace Langly {
 		/// </summary>
 		/// <param name="filter">Flags designating which filters to set up.</param>
 		public Dictionary(Filter filter) {
-			Filter = Filter<Glyph, TElement>.Create(filter);
+			Filter = Filter<Char, TElement>.Create(filter);
 			Head = new Node(index: '\0', element: default, filter: Filter, parent: null);
 		}
 
 		/// <inheritdoc/>
 		[AllowNull, MaybeNull]
-		public TElement this[Glyph index] {
+		public TElement this[Char index] {
 			get => Head[index];
 			set => Head[index] = value;
 		}
@@ -59,7 +59,7 @@ namespace Langly {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public Dictionary<TElement> Insert(Glyph index, [AllowNull] TElement element) {
+		public Dictionary<TElement> Insert(Char index, [AllowNull] TElement element) {
 			_ = Head.Insert(index, element);
 			Count++;
 			return this;

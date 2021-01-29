@@ -14,7 +14,7 @@ namespace Langly.DataStructures.Views {
 		[InlineData(new Char[] { 'a' }, new String[] { "alpha" })]
 		[InlineData(new Char[] { 'a', 'b', 'c' }, new String[] { "alpha", "bravo", "charlie" })]
 		public void Enumerator(Char[] indicies, String[] elements) {
-			var zip = CoreExtensions.Zip(indicies, elements);
+			var zip = indicies.Zip(elements);
 			var z = zip.GetEnumerator();
 			for (nint i = 0; i < indicies.Length; i++) {
 				_ = z.MoveNext();

@@ -8,8 +8,8 @@ namespace Langly {
 		/// <summary>
 		/// Represents the <see cref="Node"/> of a <see cref="Dictionary{TElement}"/>.
 		/// </summary>
-		private sealed class Node : MultiwayNode<Glyph, TElement, Node>,
-			IIndex<Glyph, TElement> {
+		private sealed class Node : MultiwayNode<Char, TElement, Node>,
+			IIndex<Char, TElement> {
 			/// <summary>
 			/// The element of this node.
 			/// </summary>
@@ -23,12 +23,12 @@ namespace Langly {
 			/// This is never <see langword="null"/>; a sentinel is used by default.
 			/// </remarks>
 			[NotNull, DisallowNull]
-			private readonly Filter<Glyph, TElement> Filter;
+			private readonly Filter<Char, TElement> Filter;
 
 			/// <summary>
 			/// The index of this node.
 			/// </summary>
-			private readonly Glyph Index;
+			private readonly Char Index;
 
 			/// <summary>
 			/// Initializes a new <see cref="Node"/>.
@@ -38,7 +38,7 @@ namespace Langly {
 			/// <param name="filter">The <see cref="Filter{TIndex, TElement}"/> to reuse.</param>
 			/// <param name="parent">The parent node of this node.</param>
 			/// <param name="children">The child nodes of this node.</param>
-			public Node(Glyph index, [AllowNull] TElement element, [DisallowNull] Filter<Glyph, TElement> filter, [DisallowNull] Node parent, [DisallowNull] params Node[] children) : base(parent, children) {
+			public Node(Char index, [AllowNull] TElement element, [DisallowNull] Filter<Char, TElement> filter, [DisallowNull] Node parent, [DisallowNull] params Node[] children) : base(parent, children) {
 				Index = index;
 				Element = element;
 				Filter = filter;
@@ -46,7 +46,7 @@ namespace Langly {
 
 			/// <inheritdoc/>
 			[AllowNull, MaybeNull]
-			public TElement this[Glyph index] {
+			public TElement this[Char index] {
 				get {
 					foreach (Node child in Children) {
 						if (child.Index == index) {
@@ -70,7 +70,7 @@ namespace Langly {
 
 			/// <inheritdoc/>
 			[return: NotNull]
-			public override Node Insert(Glyph index, [AllowNull] TElement element) {
+			public override Node Insert(Char index, [AllowNull] TElement element) {
 				// Determine if this child already exists
 				for (nint i = 0; i < Count; i++) {
 					if (Children[i].Index == index) {

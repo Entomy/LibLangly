@@ -1,37 +1,51 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <DirectedGraph GraphDirection="TopToBottom" Layout="Sugiyama" ZoomLevel="-1" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
   <Nodes>
-    <Node Id="Arrays" Bounds="0,111.92,53.0933333333335,25.96" />
-    <Node Id="Buffers" Bounds="228.183333333333,111.92,56.7266666666667,25.96" />
-    <Node Id="Chains" Bounds="56.9883333333334,167.88,55.1166666666668,25.96" />
-    <Node Id="Console" Bounds="142.268333333334,167.88,62.5566666666664,25.96" />
-    <Node Id="Core" Bounds="147.546666666667,55.96,50,25.96" ErrorMessage="Node 'Core' has a hub value of 75." Hub="75" />
-    <Node Id="Exceptions" Bounds="411.378333333334,55.96,76.3366666666666,25.96" />
-    <Node Id="Guards" Bounds="429.815,111.92,57.4633333333336,25.96" />
-    <Node Id="Numerics" Bounds="483.498333333333,167.88,70.0966666666668,25.96" />
-    <Node Id="Rune" Bounds="147.546666666667,0,50,25.96" ErrorMessage="Unreferenced node detected:Rune (Rune)" IsUnreferenced="True" />
-    <Node Id="Sets" Bounds="147.546666666667,111.92,50,25.96" />
-    <Node Id="Stacks" Bounds="315.166666666667,111.92,52.76,25.96" />
-    <Node Id="Streams" Bounds="367.526666666667,167.88,62.0399999999999,25.96" />
-    <Node Id="Traits" Bounds="493.546666666667,0,50,25.96" ErrorMessage="Unreferenced node detected:Traits (Traits)" IsUnreferenced="True" />
+    <Node Id="Arrays" Bounds="523.473333333333,167.88,53.0933333333335,25.96" />
+    <Node Id="Buffers" Bounds="243.656666666667,167.88,56.7266666666667,25.96" />
+    <Node Id="Chains" Bounds="662.461666666667,223.84,55.1166666666668,25.96" />
+    <Node Id="Console" Bounds="196.741666666667,223.84,62.5566666666663,25.96" />
+    <Node Id="Core" Bounds="313.02,55.96,50,25.96" />
+    <Node Id="DataStructures" Bounds="345.193333333333,111.92,97.6533333333333,25.96" ErrorMessage="Node 'DataStructures' has a hub value of 55." Hub="55" />
+    <Node Id="Dictionary" Bounds="289.913333333333,223.84,82.2133333333334,25.96" Label="Dictionaries" />
+    <Node Id="Exceptions" Bounds="93.8516666666667,55.9600000000002,76.3366666666666,25.96" />
+    <Node Id="Glyph" Bounds="182.625,111.92,50.79,25.96" />
+    <Node Id="Guards" Bounds="94.2883333333332,111.92,57.4633333333336,25.96" />
+    <Node Id="Lists" Bounds="362.02,167.88,50,25.96" />
+    <Node Id="Numerics" Bounds="61.9716666666666,167.88,70.0966666666668,25.96" />
+    <Node Id="Rune" Bounds="201.02,55.9600000000002,50,25.96" ErrorMessage="Unreferenced node detected:Rune (Rune)" IsUnreferenced="True" />
+    <Node Id="Sets" Bounds="264.02,111.92,50,25.96" />
+    <Node Id="Stacks" Bounds="606.64,167.88,52.76,25.96" />
+    <Node Id="Streams" Bounds="0,223.84,62.04,25.96" />
+    <Node Id="Text" Bounds="163.02,167.88,50,25.96" />
+    <Node Id="Traits" Bounds="257.02,0,50,25.96" ErrorMessage="Unreferenced node detected:Traits (Traits)" IsUnreferenced="True" />
+    <Node Id="Trees" Bounds="443.02,167.88,50,25.96" />
   </Nodes>
   <Links>
-    <Link Source="Arrays" Target="Chains" Bounds="39.9998474121094,137.880004882813,24.6167907714844,23.7509613037109" />
-    <Link Source="Buffers" Target="Console" Bounds="200.260986328125,137.880004882813,37.0337219238281,24.96875" />
-    <Link Source="Buffers" Target="Streams" Bounds="284.695831298828,135.993148803711,75.1846313476563,29.6290893554688" />
-    <Link Source="Core" Target="Arrays" Bounds="61.4909858703613,78.5221939086914,86.0556755065918,32.9840774536133" />
-    <Link Source="Core" Target="Buffers" Bounds="192.030578613281,81.9199981689453,37.5420684814453,25.0101699829102" />
-    <Link Source="Core" Target="Chains" Bounds="84.5466690063477,81.9199981689453,67.5882797241211,76.9600067138672" />
-    <Link Source="Core" Target="Console" Bounds="130.670562744141,81.9199981689453,28.8868255615234,79.6549072265625" />
-    <Link Source="Core" Target="Sets" Bounds="172.546661376953,81.9199981689453,0,21" />
-    <Link Source="Core" Target="Stacks" Bounds="197.546661376953,77.2181091308594,109.076202392578,36.1177749633789" />
-    <Link Source="Core" Target="Streams" Bounds="197.546661376953,73.4829330444336,201,85.3970718383789" />
-    <Link Source="Exceptions" Target="Guards" Bounds="451.634216308594,81.9199981689453,3.39578247070313,21.1141891479492" />
-    <Link Source="Guards" Target="Numerics" Bounds="472.463745117188,137.880004882813,25.5841674804688,23.8614807128906" />
-    <Link Source="Rune" Target="Core" Bounds="172.546661376953,25.9599990844727,0,21" />
-    <Link Source="Traits" Target="Core" Bounds="206.431213378906,17.0233516693115,287.115447998047,46.4363613128662" />
-    <Link Source="Traits" Target="Exceptions" Bounds="472.541412353516,25.9599990844727,30.0006103515625,24.330924987793" />
-    <Link Source="Traits" Target="Numerics" Bounds="518.546691894531,25.9599990844727,0,132.92000579834" />
+    <Link Source="Arrays" Target="Chains" Bounds="576.504760742188,191.446334838867,77.76123046875,31.0822906494141" />
+    <Link Source="Buffers" Target="Console" Bounds="243.788711547852,193.839996337891,18.0254364013672,22.9250640869141" />
+    <Link Source="Buffers" Target="Streams" Bounds="70.8146743774414,187.810943603516,172.841987609863,39.9329376220703" />
+    <Link Source="Core" Target="DataStructures" Bounds="351.00927734375,81.9199981689453,23.6552124023438,23.638313293457" />
+    <Link Source="Core" Target="Sets" Bounds="306.314544677734,81.9199981689453,20.33984375,23.2289123535156" />
+    <Link Source="DataStructures" Target="Arrays" Bounds="430.204406738281,137.880004882813,84.7974853515625,30.4183654785156" />
+    <Link Source="DataStructures" Target="Buffers" Bounds="307.296844482422,137.880004882813,58.4250793457031,26.7989044189453" />
+    <Link Source="DataStructures" Target="Chains" Bounds="442.8466796875,131.109817504883,247.17333984375,83.7301788330078" />
+    <Link Source="DataStructures" Target="Dictionary" Bounds="331.019989013672,137.880004882813,48.3870849609375,76.9599914550781" />
+    <Link Source="DataStructures" Target="Lists" Bounds="389.760772705078,137.880004882813,2.63555908203125,21.0695953369141" />
+    <Link Source="DataStructures" Target="Stacks" Bounds="442.689239501953,135.839065551758,155.239227294922,35.7726440429688" />
+    <Link Source="DataStructures" Target="Text" Bounds="221.70524597168,137.657104492188,125.353317260742,34.0522766113281" />
+    <Link Source="DataStructures" Target="Trees" Bounds="411.184417724609,137.880004882813,32.4926452636719,24.5714721679688" />
+    <Link Source="Exceptions" Target="Guards" Bounds="126.536659240723,81.9199981689453,3.39577484130859,21.1141891479492" />
+    <Link Source="Glyph" Target="Text" Bounds="195.687973022461,137.880004882813,7.6929931640625,21.5250091552734" />
+    <Link Source="Guards" Target="Numerics" Bounds="106.842964172363,137.880004882813,10.1463012695313,21.8379516601563" />
+    <Link Source="Rune" Target="Glyph" Bounds="214.950988769531,81.9199981689453,6.89389038085938,21.4323196411133" />
+    <Link Source="Traits" Target="Core" Bounds="295.00927734375,25.9599990844727,23.6552124023438,23.638313293457" />
+    <Link Source="Traits" Target="DataStructures" Bounds="306.173828125,25.0482940673828,87.8461608886719,77.8717041015625" />
+    <Link Source="Traits" Target="Exceptions" Bounds="175.245025634766,22.3066673278809,81.7749633789063,30.5075187683105" />
+    <Link Source="Traits" Target="Numerics" Bounds="63.0200004577637,17.7351703643799,193.999988555908,142.453229904175" />
+    <Link Source="Traits" Target="Sets" Bounds="282.019989013672,25.9599990844727,4.25924682617188,77.0296020507813" />
+    <Link Source="Traits" Target="Streams" Bounds="31.0200004577637,17.2045040130615,225.999988555908,197.635492324829" />
+    <Link Source="Trees" Target="Dictionary" Bounds="371.129089355469,191.068130493164,71.8995971679688,29.3686218261719" />
   </Links>
   <Properties>
     <Property Id="Bounds" DataType="System.Windows.Rect" />
@@ -42,6 +56,7 @@
     <Property Id="Hub" Label="Hub" Description="Node is in the top 10% of highly connected nodes" DataType="System.Int32" />
     <Property Id="IsEnabled" DataType="System.Boolean" />
     <Property Id="IsUnreferenced" Label="Unreferenced" Description="Node has no links pointing to it from other nodes in the graph" DataType="System.Boolean" />
+    <Property Id="Label" Label="Label" Description="Displayable label of an Annotatable object" DataType="System.String" />
     <Property Id="Layout" DataType="System.String" />
     <Property Id="TargetType" DataType="System.Type" />
     <Property Id="ToolTip" DataType="System.String" />
