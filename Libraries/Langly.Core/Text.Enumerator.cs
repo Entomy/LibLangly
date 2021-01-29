@@ -2,7 +2,6 @@
 using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
-using Langly.DataStructures.Views;
 
 namespace Langly {
 	public partial class Text : ISequenceBidi<Glyph, Text.Enumerator> {
@@ -12,7 +11,7 @@ namespace Langly {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public ReverseView<Glyph, ISequenceBidi<Glyph, Enumerator>, Enumerator> Reverse() => throw new NotImplementedException();
+		public IEnumerator<Glyph> Reverse() => throw new NotImplementedException();
 
 		/// <summary>
 		/// Provides the enumerator for <see cref="Text"/>.

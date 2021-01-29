@@ -12,7 +12,7 @@ namespace Langly.DataStructures.Arrays {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public ReverseView<TElement, ISequenceBidi<TElement, Array<TElement, TSelf>.Enumerator>, Array<TElement, TSelf>.Enumerator> Reverse() => throw new NotImplementedException();
+		public IEnumerator<TElement> Reverse() => throw new NotImplementedException();
 
 		/// <summary>
 		/// Provides enumeration over <see cref="Array{TElement, TSelf}"/>.

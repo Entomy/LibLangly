@@ -83,10 +83,10 @@
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Langly.html">Langly</a></h6>
-  <h6><strong>Assembly</strong>: Langly.Core.dll</h6>
+  <h6><strong>Assembly</strong>: Langly.Traits.dll</h6>
   <h5 id="Langly_IInsert_2_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IInsert&lt;TElement, out TResult&gt; : IInsert&lt;nint, TElement, TResult&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IInsert&lt;TElement, out TResult&gt; : IInsert&lt;nint, TElement, TResult&gt; where TResult : IInsert&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -116,7 +116,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IInsert_2_Insert_nint__0___.md&amp;value=---%0Auid%3A%20Langly.IInsert%602.Insert(nint%2C%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/IInsert`2.cs/#L17">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IInsert`2.cs/#L17">View Source</a>
   </span>
   <a id="Langly_IInsert_2_Insert_" data-uid="Langly.IInsert`2.Insert*"></a>
   <h4 id="Langly_IInsert_2_Insert_nint__0___" data-uid="Langly.IInsert`2.Insert(nint,`0[])">Insert(nint, TElement[])</h4>
@@ -162,7 +162,7 @@
     <tbody>
       <tr>
         <td><span class="xref">TResult</span></td>
-        <td><p>The result of inserting the elements.</p>
+        <td><p>If the insert occurred successfully, returns a <code data-dev-comment-type="typeparamref" class="typeparamref">TResult</code> containing the original and inserted elements; otherwise, <span class="xref">null</span>.</p>
 </td>
       </tr>
     </tbody>
@@ -172,7 +172,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IInsert_2_Insert_nint_System_Memory__0__.md&amp;value=---%0Auid%3A%20Langly.IInsert%602.Insert(nint%2CSystem.Memory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/IInsert`2.cs/#L26">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IInsert`2.cs/#L26">View Source</a>
   </span>
   <a id="Langly_IInsert_2_Insert_" data-uid="Langly.IInsert`2.Insert*"></a>
   <h4 id="Langly_IInsert_2_Insert_nint_System_Memory__0__" data-uid="Langly.IInsert`2.Insert(nint,System.Memory{`0})">Insert(nint, Memory&lt;TElement&gt;)</h4>
@@ -218,7 +218,7 @@
     <tbody>
       <tr>
         <td><span class="xref">TResult</span></td>
-        <td><p>The result of inserting the elements.</p>
+        <td><p>If the insert occurred successfully, returns a <code data-dev-comment-type="typeparamref" class="typeparamref">TResult</code> containing the original and inserted elements; otherwise, <span class="xref">null</span>.</p>
 </td>
       </tr>
     </tbody>
@@ -228,7 +228,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IInsert_2_Insert_nint_System_ReadOnlyMemory__0__.md&amp;value=---%0Auid%3A%20Langly.IInsert%602.Insert(nint%2CSystem.ReadOnlyMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/IInsert`2.cs/#L35">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IInsert`2.cs/#L35">View Source</a>
   </span>
   <a id="Langly_IInsert_2_Insert_" data-uid="Langly.IInsert`2.Insert*"></a>
   <h4 id="Langly_IInsert_2_Insert_nint_System_ReadOnlyMemory__0__" data-uid="Langly.IInsert`2.Insert(nint,System.ReadOnlyMemory{`0})">Insert(nint, ReadOnlyMemory&lt;TElement&gt;)</h4>
@@ -274,7 +274,7 @@
     <tbody>
       <tr>
         <td><span class="xref">TResult</span></td>
-        <td><p>The result of inserting the elements.</p>
+        <td><p>If the insert occurred successfully, returns a <code data-dev-comment-type="typeparamref" class="typeparamref">TResult</code> containing the original and inserted elements; otherwise, <span class="xref">null</span>.</p>
 </td>
       </tr>
     </tbody>
@@ -284,11 +284,12 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IInsert_2_Insert_nint_System_ReadOnlySpan__0__.md&amp;value=---%0Auid%3A%20Langly.IInsert%602.Insert(nint%2CSystem.ReadOnlySpan%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/IInsert`2.cs/#L48">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IInsert`2.cs/#L53">View Source</a>
   </span>
   <a id="Langly_IInsert_2_Insert_" data-uid="Langly.IInsert`2.Insert*"></a>
   <h4 id="Langly_IInsert_2_Insert_nint_System_ReadOnlySpan__0__" data-uid="Langly.IInsert`2.Insert(nint,System.ReadOnlySpan{`0})">Insert(nint, ReadOnlySpan&lt;TElement&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Inserts the elements into the collection at the specified index.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -307,12 +308,14 @@
       <tr>
         <td><span class="xref">nint</span></td>
         <td><span class="parametername">index</span></td>
-        <td></td>
+        <td><p>The index at which the <code data-dev-comment-type="paramref" class="paramref">elements</code> should be inserted.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
-        <td></td>
+        <td><p>The elements to insert.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -327,7 +330,8 @@
     <tbody>
       <tr>
         <td><span class="xref">TResult</span></td>
-        <td></td>
+        <td><p>If the insert occurred successfully, returns a <code data-dev-comment-type="typeparamref" class="typeparamref">TResult</code> containing the original and inserted elements; otherwise, <span class="xref">null</span>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -336,7 +340,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IInsert_2_Insert_nint_System_Span__0__.md&amp;value=---%0Auid%3A%20Langly.IInsert%602.Insert(nint%2CSystem.Span%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/IInsert`2.cs/#L44">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IInsert`2.cs/#L44">View Source</a>
   </span>
   <a id="Langly_IInsert_2_Insert_" data-uid="Langly.IInsert`2.Insert*"></a>
   <h4 id="Langly_IInsert_2_Insert_nint_System_Span__0__" data-uid="Langly.IInsert`2.Insert(nint,System.Span{`0})">Insert(nint, Span&lt;TElement&gt;)</h4>
@@ -382,7 +386,7 @@
     <tbody>
       <tr>
         <td><span class="xref">TResult</span></td>
-        <td><p>The result of inserting the elements.</p>
+        <td><p>If the insert occurred successfully, returns a <code data-dev-comment-type="typeparamref" class="typeparamref">TResult</code> containing the original and inserted elements; otherwise, <span class="xref">null</span>.</p>
 </td>
       </tr>
     </tbody>
@@ -392,11 +396,12 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IInsert_2_Insert__1_nint_Langly_ISequence__0___0__.md&amp;value=---%0Auid%3A%20Langly.IInsert%602.Insert%60%601(nint%2CLangly.ISequence%7B%600%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/IInsert`2.cs/#L57">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IInsert`2.cs/#L67">View Source</a>
   </span>
   <a id="Langly_IInsert_2_Insert_" data-uid="Langly.IInsert`2.Insert*"></a>
   <h4 id="Langly_IInsert_2_Insert__1_nint_Langly_ISequence__0___0__" data-uid="Langly.IInsert`2.Insert``1(nint,Langly.ISequence{`0,``0})">Insert&lt;TEnumerator&gt;(nint, ISequence&lt;TElement, TEnumerator&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Inserts the elements into the collection at the specified index.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -417,12 +422,14 @@
       <tr>
         <td><span class="xref">nint</span></td>
         <td><span class="parametername">index</span></td>
-        <td></td>
+        <td><p>The index at which the <code data-dev-comment-type="paramref" class="paramref">elements</code> should be inserted.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Langly.ISequence-2.html">ISequence</a>&lt;TElement, TEnumerator&gt;</td>
         <td><span class="parametername">elements</span></td>
-        <td></td>
+        <td><p>The elements to insert.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -437,7 +444,8 @@
     <tbody>
       <tr>
         <td><span class="xref">TResult</span></td>
-        <td></td>
+        <td><p>If the insert occurred successfully, returns a <code data-dev-comment-type="typeparamref" class="typeparamref">TResult</code> containing the original and inserted elements; otherwise, <span class="xref">null</span>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -458,28 +466,28 @@
   </table>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
-      <a class="xref" href="Langly.CoreExtensions.html#Langly_CoreExtensions_Insert__2_Langly_IInsert___0___1__nint___0_">CoreExtensions.Insert&lt;TElement, TResult&gt;(IInsert&lt;TElement, TResult&gt;, nint, TElement)</a>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Insert__2_Langly_IInsert___0___1__nint___0_">TraitExtensions.Insert&lt;TElement, TResult&gt;(IInsert&lt;TElement, TResult&gt;, nint, TElement)</a>
   </div>
   <div>
-      <a class="xref" href="Langly.CoreExtensions.html#Langly_CoreExtensions_Insert__2_Langly_IInsert___0___1__nint___0___">CoreExtensions.Insert&lt;TElement, TResult&gt;(IInsert&lt;TElement, TResult&gt;, nint, TElement[])</a>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Insert__2_Langly_IInsert___0___1__nint___0___">TraitExtensions.Insert&lt;TElement, TResult&gt;(IInsert&lt;TElement, TResult&gt;, nint, TElement[])</a>
   </div>
   <div>
-      <a class="xref" href="Langly.CoreExtensions.html#Langly_CoreExtensions_Insert__2_Langly_IInsert___0___1__nint_System_Memory___0__">CoreExtensions.Insert&lt;TElement, TResult&gt;(IInsert&lt;TElement, TResult&gt;, nint, Memory&lt;TElement&gt;)</a>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Insert__2_Langly_IInsert___0___1__nint_System_Memory___0__">TraitExtensions.Insert&lt;TElement, TResult&gt;(IInsert&lt;TElement, TResult&gt;, nint, Memory&lt;TElement&gt;)</a>
   </div>
   <div>
-      <a class="xref" href="Langly.CoreExtensions.html#Langly_CoreExtensions_Insert__2_Langly_IInsert___0___1__nint_System_ReadOnlyMemory___0__">CoreExtensions.Insert&lt;TElement, TResult&gt;(IInsert&lt;TElement, TResult&gt;, nint, ReadOnlyMemory&lt;TElement&gt;)</a>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Insert__2_Langly_IInsert___0___1__nint_System_ReadOnlyMemory___0__">TraitExtensions.Insert&lt;TElement, TResult&gt;(IInsert&lt;TElement, TResult&gt;, nint, ReadOnlyMemory&lt;TElement&gt;)</a>
   </div>
   <div>
-      <a class="xref" href="Langly.CoreExtensions.html#Langly_CoreExtensions_Insert__2_Langly_IInsert___0___1__nint_System_Span___0__">CoreExtensions.Insert&lt;TElement, TResult&gt;(IInsert&lt;TElement, TResult&gt;, nint, Span&lt;TElement&gt;)</a>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Insert__2_Langly_IInsert___0___1__nint_System_Span___0__">TraitExtensions.Insert&lt;TElement, TResult&gt;(IInsert&lt;TElement, TResult&gt;, nint, Span&lt;TElement&gt;)</a>
   </div>
   <div>
-      <a class="xref" href="Langly.CoreExtensions.html#Langly_CoreExtensions_Insert__2_Langly_IInsert___0___1__nint_System_ReadOnlySpan___0__">CoreExtensions.Insert&lt;TElement, TResult&gt;(IInsert&lt;TElement, TResult&gt;, nint, ReadOnlySpan&lt;TElement&gt;)</a>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Insert__2_Langly_IInsert___0___1__nint_System_ReadOnlySpan___0__">TraitExtensions.Insert&lt;TElement, TResult&gt;(IInsert&lt;TElement, TResult&gt;, nint, ReadOnlySpan&lt;TElement&gt;)</a>
   </div>
   <div>
-      <a class="xref" href="Langly.CoreExtensions.html#Langly_CoreExtensions_Insert__3_Langly_IInsert___0___1__nint_Langly_ISequence___0___2__">CoreExtensions.Insert&lt;TElement, TResult, TEnumerator&gt;(IInsert&lt;TElement, TResult&gt;, nint, ISequence&lt;TElement, TEnumerator&gt;)</a>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Insert__3_Langly_IInsert___0___1__nint_Langly_ISequence___0___2__">TraitExtensions.Insert&lt;TElement, TResult, TEnumerator&gt;(IInsert&lt;TElement, TResult&gt;, nint, ISequence&lt;TElement, TEnumerator&gt;)</a>
   </div>
   <div>
-      <a class="xref" href="Langly.CoreExtensions.html#Langly_CoreExtensions_Insert__3_Langly_IInsert___0___1___2____0___1_">CoreExtensions.Insert&lt;TIndex, TElement, TResult&gt;(IInsert&lt;TIndex, TElement, TResult&gt;, TIndex, TElement)</a>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Insert__3_Langly_IInsert___0___1___2____0___1_">TraitExtensions.Insert&lt;TIndex, TElement, TResult&gt;(IInsert&lt;TIndex, TElement, TResult&gt;, TIndex, TElement)</a>
   </div>
 </article>
           </div>
@@ -492,7 +500,7 @@
                     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IInsert_2.md&amp;value=---%0Auid%3A%20Langly.IInsert%602%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/IInsert`2.cs/#L10" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IInsert`2.cs/#L10" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

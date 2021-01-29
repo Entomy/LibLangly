@@ -22,12 +22,12 @@ namespace Langly {
 		/// Guard against the stream being unseekable.
 		/// </summary>
 		/// <typeparam name="TElement">The type of element being streamed.</typeparam>
-		/// <typeparam name="TError">The type of the error object.</typeparam>
-		/// <param name="stream">The <see cref="IRead{TElement, TError}"/> object.</param>
+		/// <typeparam name="TResult">The type of the error object.</typeparam>
+		/// <param name="stream">The <see cref="IRead{TElement, TResult}"/> object.</param>
 		/// <param name="name">The name of the argument.</param>
 		/// <exception cref="ArgumentNotSeekableException">Thrown if the guard clause fails.</exception>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static void CanSeek<TElement, TError>(ISeek<TElement, TError> stream, String name) {
+		public static void CanSeek<TElement, TResult>(ISeek<TElement, TResult> stream, String name) where TResult : ISeek<TElement, TResult> {
 			if (stream?.Seekable != true) {
 				throw ArgumentNotSeekableException.With(stream, name);
 			}

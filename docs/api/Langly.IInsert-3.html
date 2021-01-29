@@ -77,10 +77,12 @@
 </div>
   <div class="markdown level0 conceptual"></div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Langly.html">Langly</a></h6>
-  <h6><strong>Assembly</strong>: Langly.Core.dll</h6>
+  <h6><strong>Assembly</strong>: Langly.Traits.dll</h6>
   <h5 id="Langly_IInsert_3_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IInsert&lt;in TIndex, in TElement, out TResult&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IInsert&lt;in TIndex, in TElement, out TResult&gt;
+
+    where TResult : IInsert&lt;TIndex, TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -115,7 +117,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IInsert_3_Insert__0__1_.md&amp;value=---%0Auid%3A%20Langly.IInsert%603.Insert(%600%2C%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/IInsert`3.cs/#L18">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IInsert`3.cs/#L18">View Source</a>
   </span>
   <a id="Langly_IInsert_3_Insert_" data-uid="Langly.IInsert`3.Insert*"></a>
   <h4 id="Langly_IInsert_3_Insert__0__1_" data-uid="Langly.IInsert`3.Insert(`0,`1)">Insert(TIndex, TElement)</h4>
@@ -161,14 +163,14 @@
     <tbody>
       <tr>
         <td><span class="xref">TResult</span></td>
-        <td><p>The result of inserting the element.</p>
+        <td><p>If the insert occurred successfully, returns a <code data-dev-comment-type="typeparamref" class="typeparamref">TResult</code> containing the original and inserted elements; otherwise, <span class="xref">null</span>.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
-      <a class="xref" href="Langly.CoreExtensions.html#Langly_CoreExtensions_Insert__3_Langly_IInsert___0___1___2____0___1_">CoreExtensions.Insert&lt;TIndex, TElement, TResult&gt;(IInsert&lt;TIndex, TElement, TResult&gt;, TIndex, TElement)</a>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Insert__3_Langly_IInsert___0___1___2____0___1_">TraitExtensions.Insert&lt;TIndex, TElement, TResult&gt;(IInsert&lt;TIndex, TElement, TResult&gt;, TIndex, TElement)</a>
   </div>
 </article>
           </div>
@@ -181,7 +183,7 @@
                     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IInsert_3.md&amp;value=---%0Auid%3A%20Langly.IInsert%603%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/IInsert`3.cs/#L11" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IInsert`3.cs/#L11" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

@@ -11,7 +11,7 @@ namespace Langly.DataStructures.Trees.Multiway {
 	public abstract class MultiwayNode<TIndex, TElement, TSelf> : TreeNode<TIndex, TElement, TSelf>,
 		ICount,
 		IInsert<TIndex, TElement, TSelf>,
-		IResizable
+		IResizable<TSelf>
 		where TSelf : MultiwayNode<TIndex, TElement, TSelf> {
 		/// <summary>
 		/// Holds all of the child nodes.
@@ -50,10 +50,11 @@ namespace Langly.DataStructures.Trees.Multiway {
 		public abstract TSelf Insert([DisallowNull] TIndex index, [AllowNull] TElement element);
 
 		/// <inheritdoc/>
-		public void Resize(nint capacity) {
+		public TSelf Resize(nint capacity) {
 			TSelf[] newChildren = new TSelf[capacity];
 			Array.Copy(Children, newChildren, Count);
 			Children = newChildren;
+			return (TSelf)this;
 		}
 	}
 }

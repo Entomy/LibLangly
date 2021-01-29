@@ -6,11 +6,7 @@ namespace Langly.DataStructures.Lists {
 		/// <summary>
 		/// Represents any Node of a <see cref="Chain{TElement}"/>.
 		/// </summary>
-		private abstract class Node : Record<Node>,
-			IClear,
-			IIndexRefReadOnly<TElement>,
-			IInsert<TElement, (Node Head, Node Tail)>,
-			IReplace<TElement, (Node Head, Node Tail)> {
+		private abstract class Node : Record<Node> {
 			/// <summary>
 			/// The next node in the chain.
 			/// </summary>
@@ -40,9 +36,11 @@ namespace Langly.DataStructures.Lists {
 			public abstract nint Count { get; }
 
 			/// <inheritdoc/>
-			public void Clear() {
+			[return: NotNull]
+			public Node Clear() {
 				Next = null;
 				Previous = null;
+				return this;
 			}
 
 			/// <inheritdoc/>

@@ -21,12 +21,12 @@ namespace Langly {
 		/// Guard against the stream being unreadable.
 		/// </summary>
 		/// <typeparam name="TElement">The type of element being streamed.</typeparam>
-		/// <typeparam name="TError">The type of the error object.</typeparam>
-		/// <param name="stream">The <see cref="IRead{TElement, TError}"/> object.</param>
+		/// <typeparam name="TResult">The resulting type; often itself..</typeparam>
+		/// <param name="stream">The <see cref="IRead{TElement, TResult}"/> object.</param>
 		/// <param name="name">The name of the argument.</param>
 		/// <exception cref="ArgumentNotReadableException">Thrown if the guard clause fails.</exception>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static void CanRead<TElement, TError>(IRead<TElement, TError> stream, String name) {
+		public static void CanRead<TElement, TResult>(IRead<TElement, TResult> stream, String name) where TResult : IRead<TElement, TResult> {
 			if (stream?.Readable != true) {
 				throw ArgumentNotReadableException.With(stream, name);
 			}

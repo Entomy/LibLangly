@@ -92,10 +92,13 @@
     <div><a class="xref" href="Langly.ISequence-2.html">ISequence</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.Stack-1.Enumerator.html">Stack.Enumerator</a>&lt;&gt;&gt;</div>
     <div><a class="xref" href="Langly.IContains-1.html">IContains</a>&lt;TElement&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="Langly.IAdd-2.html">IAdd</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.Stack-1.html">Stack</a>&lt;TElement&gt;&gt;</div>
     <div><a class="xref" href="Langly.IPeek-2.html">IPeek</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.Stack-1.html">Stack</a>&lt;TElement&gt;&gt;</div>
+    <div><a class="xref" href="Langly.IRead-2.html">IRead</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.Stack-1.html">Stack</a>&lt;TElement&gt;&gt;</div>
     <div><a class="xref" href="Langly.IPop-2.html">IPop</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.Stack-1.html">Stack</a>&lt;TElement&gt;&gt;</div>
     <div><a class="xref" href="Langly.ICount.html">ICount</a></div>
     <div><a class="xref" href="Langly.IPush-2.html">IPush</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.Stack-1.html">Stack</a>&lt;TElement&gt;&gt;</div>
+    <div><a class="xref" href="Langly.IWrite-2.html">IWrite</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.Stack-1.html">Stack</a>&lt;TElement&gt;&gt;</div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -143,7 +146,7 @@
   <h6><strong>Assembly</strong>: Langly.Stacks.dll</h6>
   <h5 id="Langly_DataStructures_Stack_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class Stack&lt;TElement&gt; : DataStructure&lt;TElement, Stack&lt;TElement&gt;, Stack&lt;TElement&gt;.Enumerator&gt;, IEquals&lt;Stack&lt;TElement&gt;&gt;, IEquatable&lt;Stack&lt;TElement&gt;&gt;, IEquals&lt;IEquals&lt;Stack&lt;TElement&gt;&gt;&gt;, IEquatable&lt;IEquals&lt;Stack&lt;TElement&gt;&gt;&gt;, ISequence&lt;TElement, Stack&lt;TElement&gt;.Enumerator&gt;, IContains&lt;TElement&gt;, IEnumerable&lt;TElement&gt;, IPeek&lt;TElement, Stack&lt;TElement&gt;&gt;, IPop&lt;TElement, Stack&lt;TElement&gt;&gt;, ICount, IPush&lt;TElement, Stack&lt;TElement&gt;&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class Stack&lt;TElement&gt; : DataStructure&lt;TElement, Stack&lt;TElement&gt;, Stack&lt;TElement&gt;.Enumerator&gt;, IEquals&lt;Stack&lt;TElement&gt;&gt;, IEquatable&lt;Stack&lt;TElement&gt;&gt;, IEquals&lt;IEquals&lt;Stack&lt;TElement&gt;&gt;&gt;, IEquatable&lt;IEquals&lt;Stack&lt;TElement&gt;&gt;&gt;, ISequence&lt;TElement, Stack&lt;TElement&gt;.Enumerator&gt;, IContains&lt;TElement&gt;, IEnumerable&lt;TElement&gt;, IAdd&lt;TElement, Stack&lt;TElement&gt;&gt;, IPeek&lt;TElement, Stack&lt;TElement&gt;&gt;, IRead&lt;TElement, Stack&lt;TElement&gt;&gt;, IPop&lt;TElement, Stack&lt;TElement&gt;&gt;, ICount, IPush&lt;TElement, Stack&lt;TElement&gt;&gt;, IWrite&lt;TElement, Stack&lt;TElement&gt;&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -168,7 +171,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Stack_1__ctor.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Stack%601.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Stacks/DataStructures/Stack`1.cs/#L22">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Stacks/DataStructures/Stack`1.cs/#L24">View Source</a>
   </span>
   <a id="Langly_DataStructures_Stack_1__ctor_" data-uid="Langly.DataStructures.Stack`1.#ctor*"></a>
   <h4 id="Langly_DataStructures_Stack_1__ctor" data-uid="Langly.DataStructures.Stack`1.#ctor">Stack()</h4>
@@ -190,7 +193,8 @@
   </span>
   <a id="Langly_DataStructures_Stack_1_GetEnumerator_" data-uid="Langly.DataStructures.Stack`1.GetEnumerator*"></a>
   <h4 id="Langly_DataStructures_Stack_1_GetEnumerator" data-uid="Langly.DataStructures.Stack`1.GetEnumerator">GetEnumerator()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns an enumerator that iterates through the sequence.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -207,7 +211,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Langly.DataStructures.Stack-1.Enumerator.html">Stack.Enumerator</a>&lt;&gt;</td>
-        <td></td>
+        <td><p>An enumerator that can be used to iterate through the collection.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -217,14 +222,68 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Stack_1_Langly_IAdd_TElement_Langly_DataStructures_Stack_TElement___Add__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Stack%601.Langly%23IAdd%7BTElement%2CLangly%23DataStructures%23Stack%7BTElement%7D%7D%23Add(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Stacks/DataStructures/Stack`1.cs/#L33">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Stack_1_Langly_IAdd_TElement_Langly_DataStructures_Stack_TElement___Add_" data-uid="Langly.DataStructures.Stack`1.Langly#IAdd{TElement,Langly#DataStructures#Stack{TElement}}#Add*"></a>
+  <h4 id="Langly_DataStructures_Stack_1_Langly_IAdd_TElement_Langly_DataStructures_Stack_TElement___Add__0_" data-uid="Langly.DataStructures.Stack`1.Langly#IAdd{TElement,Langly#DataStructures#Stack{TElement}}#Add(`0)">IAdd&lt;TElement, Stack&lt;TElement&gt;&gt;.Add(TElement)</h4>
+  <div class="markdown level1 summary"><p>Adds an element to this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Stack&lt;TElement&gt; IAdd&lt;TElement, Stack&lt;TElement&gt;&gt;.Add(TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element to add.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Stack-1.html">Stack</a>&lt;TElement&gt;</td>
+        <td><p>If the add occurred successfully, returns a <code data-dev-comment-type="typeparamref" class="typeparamref">TResult</code> containing the original and added elements; otherwise, <span class="xref">null</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_DataStructures_Stack_1_Langly_IAdd_TElement_Langly_DataStructures_Stack_TElement___Add__0__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Stack_1_Langly_IPeek_TElement_Langly_DataStructures_Stack_TElement___Peek__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Stack%601.Langly%23IPeek%7BTElement%2CLangly%23DataStructures%23Stack%7BTElement%7D%7D%23Peek(%600%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Stacks/DataStructures/Stack`1.cs/#L25">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Stacks/DataStructures/Stack`1.cs/#L37">View Source</a>
   </span>
   <a id="Langly_DataStructures_Stack_1_Langly_IPeek_TElement_Langly_DataStructures_Stack_TElement___Peek_" data-uid="Langly.DataStructures.Stack`1.Langly#IPeek{TElement,Langly#DataStructures#Stack{TElement}}#Peek*"></a>
   <h4 id="Langly_DataStructures_Stack_1_Langly_IPeek_TElement_Langly_DataStructures_Stack_TElement___Peek__0__" data-uid="Langly.DataStructures.Stack`1.Langly#IPeek{TElement,Langly#DataStructures#Stack{TElement}}#Peek(`0@)">IPeek&lt;TElement, Stack&lt;TElement&gt;&gt;.Peek(out TElement)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Peeks at the first element.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -243,7 +302,8 @@
       <tr>
         <td><span class="xref">TElement</span></td>
         <td><span class="parametername">element</span></td>
-        <td></td>
+        <td><p>The <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> value that was peeked.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -267,11 +327,12 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Stack_1_Langly_IPop_TElement_Langly_DataStructures_Stack_TElement___Pop__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Stack%601.Langly%23IPop%7BTElement%2CLangly%23DataStructures%23Stack%7BTElement%7D%7D%23Pop(%600%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Stacks/DataStructures/Stack`1.cs/#L32">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Stacks/DataStructures/Stack`1.cs/#L44">View Source</a>
   </span>
   <a id="Langly_DataStructures_Stack_1_Langly_IPop_TElement_Langly_DataStructures_Stack_TElement___Pop_" data-uid="Langly.DataStructures.Stack`1.Langly#IPop{TElement,Langly#DataStructures#Stack{TElement}}#Pop*"></a>
   <h4 id="Langly_DataStructures_Stack_1_Langly_IPop_TElement_Langly_DataStructures_Stack_TElement___Pop__0__" data-uid="Langly.DataStructures.Stack`1.Langly#IPop{TElement,Langly#DataStructures#Stack{TElement}}#Pop(`0@)">IPop&lt;TElement, Stack&lt;TElement&gt;&gt;.Pop(out TElement)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Pops an element off the top of this object.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -290,7 +351,108 @@
       <tr>
         <td><span class="xref">TElement</span></td>
         <td><span class="parametername">element</span></td>
-        <td></td>
+        <td><p>The popped off element.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Stack-1.html">Stack</a>&lt;TElement&gt;</td>
+        <td><p>The result of popping the <code data-dev-comment-type="paramref" class="paramref">element</code> off this object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Stack_1_Langly_IPush_TElement_Langly_DataStructures_Stack_TElement___Push__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Stack%601.Langly%23IPush%7BTElement%2CLangly%23DataStructures%23Stack%7BTElement%7D%7D%23Push(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Stacks/DataStructures/Stack`1.cs/#L55">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Stack_1_Langly_IPush_TElement_Langly_DataStructures_Stack_TElement___Push_" data-uid="Langly.DataStructures.Stack`1.Langly#IPush{TElement,Langly#DataStructures#Stack{TElement}}#Push*"></a>
+  <h4 id="Langly_DataStructures_Stack_1_Langly_IPush_TElement_Langly_DataStructures_Stack_TElement___Push__0_" data-uid="Langly.DataStructures.Stack`1.Langly#IPush{TElement,Langly#DataStructures#Stack{TElement}}#Push(`0)">IPush&lt;TElement, Stack&lt;TElement&gt;&gt;.Push(TElement)</h4>
+  <div class="markdown level1 summary"><p>Pushes an element onto the top of this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Stack&lt;TElement&gt; IPush&lt;TElement, Stack&lt;TElement&gt;&gt;.Push(TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element to push.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Stack-1.html">Stack</a>&lt;TElement&gt;</td>
+        <td><p>The result of pushing the <code data-dev-comment-type="paramref" class="paramref">element</code> onto this object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Stack_1_Langly_IRead_TElement_Langly_DataStructures_Stack_TElement___Read__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Stack%601.Langly%23IRead%7BTElement%2CLangly%23DataStructures%23Stack%7BTElement%7D%7D%23Read(%600%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Stacks/DataStructures/Stack`1.cs/#L63">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Stack_1_Langly_IRead_TElement_Langly_DataStructures_Stack_TElement___Read_" data-uid="Langly.DataStructures.Stack`1.Langly#IRead{TElement,Langly#DataStructures#Stack{TElement}}#Read*"></a>
+  <h4 id="Langly_DataStructures_Stack_1_Langly_IRead_TElement_Langly_DataStructures_Stack_TElement___Read__0__" data-uid="Langly.DataStructures.Stack`1.Langly#IRead{TElement,Langly#DataStructures#Stack{TElement}}#Read(`0@)">IRead&lt;TElement, Stack&lt;TElement&gt;&gt;.Read(out TElement)</h4>
+  <div class="markdown level1 summary"><p>Reads a <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Stack&lt;TElement&gt; IRead&lt;TElement, Stack&lt;TElement&gt;&gt;.Read(out TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> value that was read.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -311,18 +473,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Stack_1_Langly_IPush_TElement_Langly_DataStructures_Stack_TElement___Push__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Stack%601.Langly%23IPush%7BTElement%2CLangly%23DataStructures%23Stack%7BTElement%7D%7D%23Push(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Stack_1_Langly_IWrite_TElement_Langly_DataStructures_Stack_TElement___Write__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Stack%601.Langly%23IWrite%7BTElement%2CLangly%23DataStructures%23Stack%7BTElement%7D%7D%23Write(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Stacks/DataStructures/Stack`1.cs/#L43">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Stacks/DataStructures/Stack`1.cs/#L67">View Source</a>
   </span>
-  <a id="Langly_DataStructures_Stack_1_Langly_IPush_TElement_Langly_DataStructures_Stack_TElement___Push_" data-uid="Langly.DataStructures.Stack`1.Langly#IPush{TElement,Langly#DataStructures#Stack{TElement}}#Push*"></a>
-  <h4 id="Langly_DataStructures_Stack_1_Langly_IPush_TElement_Langly_DataStructures_Stack_TElement___Push__0_" data-uid="Langly.DataStructures.Stack`1.Langly#IPush{TElement,Langly#DataStructures#Stack{TElement}}#Push(`0)">IPush&lt;TElement, Stack&lt;TElement&gt;&gt;.Push(TElement)</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="Langly_DataStructures_Stack_1_Langly_IWrite_TElement_Langly_DataStructures_Stack_TElement___Write_" data-uid="Langly.DataStructures.Stack`1.Langly#IWrite{TElement,Langly#DataStructures#Stack{TElement}}#Write*"></a>
+  <h4 id="Langly_DataStructures_Stack_1_Langly_IWrite_TElement_Langly_DataStructures_Stack_TElement___Write__0_" data-uid="Langly.DataStructures.Stack`1.Langly#IWrite{TElement,Langly#DataStructures#Stack{TElement}}#Write(`0)">IWrite&lt;TElement, Stack&lt;TElement&gt;&gt;.Write(TElement)</h4>
+  <div class="markdown level1 summary"><p>Writes a <code data-dev-comment-type="paramref" class="paramref">element</code>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Stack&lt;TElement&gt; IPush&lt;TElement, Stack&lt;TElement&gt;&gt;.Push(TElement element)</code></pre>
+    <pre><code class="lang-csharp hljs">Stack&lt;TElement&gt; IWrite&lt;TElement, Stack&lt;TElement&gt;&gt;.Write(TElement element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -337,7 +500,8 @@
       <tr>
         <td><span class="xref">TElement</span></td>
         <td><span class="parametername">element</span></td>
-        <td></td>
+        <td><p>The <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> value to write.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -379,7 +543,13 @@
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">System.Collections.Generic.IEnumerable&lt;T&gt;</a>
   </div>
   <div>
-      <a class="xref" href="Langly.IPeek-2.html">IPeek&lt;TElement, TResult&gt;</a>
+      <a class="xref" href="Langly.IAdd-2.html">IAdd&lt;TElement, TResult&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IPeek-2.html">IPeek&lt;TElement, TSelf&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IRead-2.html">IRead&lt;TElement, TResult&gt;</a>
   </div>
   <div>
       <a class="xref" href="Langly.IPop-2.html">IPop&lt;TElement, TResult&gt;</a>
@@ -389,6 +559,9 @@
   </div>
   <div>
       <a class="xref" href="Langly.IPush-2.html">IPush&lt;TElement, TResult&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IWrite-2.html">IWrite&lt;TElement, TResult&gt;</a>
   </div>
 </article>
           </div>

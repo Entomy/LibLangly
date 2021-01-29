@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Interface IPeek&lt;TElement, TResult&gt;
+    <title>Interface IPeek&lt;TElement, TSelf&gt;
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Interface IPeek&lt;TElement, TResult&gt;
+    <meta name="title" content="Interface IPeek&lt;TElement, TSelf&gt;
    ">
     <meta name="generator" content="docfx 2.56.6.0">
     
@@ -71,16 +71,25 @@
             <article class="content wrap" id="_content" data-uid="Langly.IPeek`2">
   
   
-  <h1 id="Langly_IPeek_2" data-uid="Langly.IPeek`2" class="text-break">Interface IPeek&lt;TElement, TResult&gt;
+  <h1 id="Langly_IPeek_2" data-uid="Langly.IPeek`2" class="text-break">Interface IPeek&lt;TElement, TSelf&gt;
   </h1>
   <div class="markdown level0 summary"><p>Indicates the type can have its first element peeked at.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Langly.IRead-2.html#Langly_IRead_2_Readable">IRead&lt;TElement, TSelf&gt;.Readable</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.IRead-2.html#Langly_IRead_2_Read__0__">IRead&lt;TElement, TSelf&gt;.Read(TElement)</a>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Langly.html">Langly</a></h6>
-  <h6><strong>Assembly</strong>: Langly.Core.dll</h6>
+  <h6><strong>Assembly</strong>: Langly.Traits.dll</h6>
   <h5 id="Langly_IPeek_2_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IPeek&lt;TElement, out TResult&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IPeek&lt;TElement, out TSelf&gt; : IRead&lt;TElement, TSelf&gt; where TSelf : IPeek&lt;TElement, TSelf&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -97,8 +106,8 @@
 </td>
       </tr>
       <tr>
-        <td><span class="parametername">TResult</span></td>
-        <td><p>The resulting type; often itself.</p>
+        <td><span class="parametername">TSelf</span></td>
+        <td><p>The implementing type; itself.</p>
 </td>
       </tr>
     </tbody>
@@ -110,7 +119,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IPeek_2_Peek__0__.md&amp;value=---%0Auid%3A%20Langly.IPeek%602.Peek(%600%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/IPeek`2.cs/#L15">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IPeek`2.cs/#L14">View Source</a>
   </span>
   <a id="Langly_IPeek_2_Peek_" data-uid="Langly.IPeek`2.Peek*"></a>
   <h4 id="Langly_IPeek_2_Peek__0__" data-uid="Langly.IPeek`2.Peek(`0@)">Peek(out TElement)</h4>
@@ -119,7 +128,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">TResult Peek(out TElement element)</code></pre>
+    <pre><code class="lang-csharp hljs">TSelf Peek(out TElement element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -134,7 +143,7 @@
       <tr>
         <td><span class="xref">TElement</span></td>
         <td><span class="parametername">element</span></td>
-        <td><p>The peeked element.</p>
+        <td><p>The <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> value that was peeked.</p>
 </td>
       </tr>
     </tbody>
@@ -149,15 +158,17 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">TResult</span></td>
-        <td><p>This object, unchanged.</p>
-</td>
+        <td><span class="xref">TSelf</span></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
-      <a class="xref" href="Langly.CoreExtensions.html#Langly_CoreExtensions_Peek__2_Langly_IPeek___0___1____0__">CoreExtensions.Peek&lt;TElement, TResult&gt;(IPeek&lt;TElement, TResult&gt;, out TElement)</a>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Peek__2_Langly_IPeek___0___1____0__">TraitExtensions.Peek&lt;TElement, TSelf&gt;(IPeek&lt;TElement, TSelf&gt;, out TElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Read__2_Langly_IRead___0___1____0__">TraitExtensions.Read&lt;TElement, TResult&gt;(IRead&lt;TElement, TResult&gt;, out TElement)</a>
   </div>
 </article>
           </div>
@@ -170,7 +181,7 @@
                     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IPeek_2.md&amp;value=---%0Auid%3A%20Langly.IPeek%602%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/IPeek`2.cs/#L9" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IPeek`2.cs/#L9" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

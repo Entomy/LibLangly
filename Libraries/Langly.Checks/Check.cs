@@ -2,6 +2,5 @@
 	/// <summary>
 	/// A collection of various check functions.
 	/// </summary>
-	internal static partial class Check {
-	}
+	internal static partial class Check { }
 }

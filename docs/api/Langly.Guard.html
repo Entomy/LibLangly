@@ -153,13 +153,14 @@
     <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Guards/CanRead.cs/#L28">View Source</a>
   </span>
   <a id="Langly_Guard_CanRead_" data-uid="Langly.Guard.CanRead*"></a>
-  <h4 id="Langly_Guard_CanRead__2_Langly_IRead___0___1__String_" data-uid="Langly.Guard.CanRead``2(Langly.IRead{``0,``1},String)">CanRead&lt;TElement, TError&gt;(IRead&lt;TElement, TError&gt;, String)</h4>
+  <h4 id="Langly_Guard_CanRead__2_Langly_IRead___0___1__String_" data-uid="Langly.Guard.CanRead``2(Langly.IRead{``0,``1},String)">CanRead&lt;TElement, TResult&gt;(IRead&lt;TElement, TResult&gt;, String)</h4>
   <div class="markdown level1 summary"><p>Guard against the stream being unreadable.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void CanRead&lt;TElement, TError&gt;(IRead&lt;TElement, TError&gt; stream, String name)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void CanRead&lt;TElement, TResult&gt;(IRead&lt;TElement, TResult&gt; stream, String name)
+    where TResult : IRead&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -172,9 +173,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Langly.IRead-2.html">IRead</a>&lt;TElement, TError&gt;</td>
+        <td><a class="xref" href="Langly.IRead-2.html">IRead</a>&lt;TElement, TResult&gt;</td>
         <td><span class="parametername">stream</span></td>
-        <td><p>The <a class="xref" href="Langly.IRead-2.html">IRead&lt;TElement, TError&gt;</a> object.</p>
+        <td><p>The <a class="xref" href="Langly.IRead-2.html">IRead&lt;TElement, TResult&gt;</a> object.</p>
 </td>
       </tr>
       <tr>
@@ -200,8 +201,8 @@
 </td>
       </tr>
       <tr>
-        <td><span class="parametername">TError</span></td>
-        <td><p>The type of the error object.</p>
+        <td><span class="parametername">TResult</span></td>
+        <td><p>The resulting type; often itself..</p>
 </td>
       </tr>
     </tbody>
@@ -286,13 +287,14 @@
     <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Guards/CanSeek.cs/#L29">View Source</a>
   </span>
   <a id="Langly_Guard_CanSeek_" data-uid="Langly.Guard.CanSeek*"></a>
-  <h4 id="Langly_Guard_CanSeek__2_Langly_ISeek___0___1__String_" data-uid="Langly.Guard.CanSeek``2(Langly.ISeek{``0,``1},String)">CanSeek&lt;TElement, TError&gt;(ISeek&lt;TElement, TError&gt;, String)</h4>
+  <h4 id="Langly_Guard_CanSeek__2_Langly_ISeek___0___1__String_" data-uid="Langly.Guard.CanSeek``2(Langly.ISeek{``0,``1},String)">CanSeek&lt;TElement, TResult&gt;(ISeek&lt;TElement, TResult&gt;, String)</h4>
   <div class="markdown level1 summary"><p>Guard against the stream being unseekable.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void CanSeek&lt;TElement, TError&gt;(ISeek&lt;TElement, TError&gt; stream, String name)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void CanSeek&lt;TElement, TResult&gt;(ISeek&lt;TElement, TResult&gt; stream, String name)
+    where TResult : ISeek&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -305,9 +307,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Langly.ISeek-2.html">ISeek</a>&lt;TElement, TError&gt;</td>
+        <td><a class="xref" href="Langly.ISeek-2.html">ISeek</a>&lt;TElement, TResult&gt;</td>
         <td><span class="parametername">stream</span></td>
-        <td><p>The <a class="xref" href="Langly.IRead-2.html">IRead&lt;TElement, TError&gt;</a> object.</p>
+        <td><p>The <a class="xref" href="Langly.IRead-2.html">IRead&lt;TElement, TResult&gt;</a> object.</p>
 </td>
       </tr>
       <tr>
@@ -333,7 +335,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="parametername">TError</span></td>
+        <td><span class="parametername">TResult</span></td>
         <td><p>The type of the error object.</p>
 </td>
       </tr>
@@ -419,13 +421,14 @@
     <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Guards/CanWrite.cs/#L29">View Source</a>
   </span>
   <a id="Langly_Guard_CanWrite_" data-uid="Langly.Guard.CanWrite*"></a>
-  <h4 id="Langly_Guard_CanWrite__2_Langly_IWrite___0___1__String_" data-uid="Langly.Guard.CanWrite``2(Langly.IWrite{``0,``1},String)">CanWrite&lt;TElement, TError&gt;(IWrite&lt;TElement, TError&gt;, String)</h4>
+  <h4 id="Langly_Guard_CanWrite__2_Langly_IWrite___0___1__String_" data-uid="Langly.Guard.CanWrite``2(Langly.IWrite{``0,``1},String)">CanWrite&lt;TElement, TResult&gt;(IWrite&lt;TElement, TResult&gt;, String)</h4>
   <div class="markdown level1 summary"><p>Guard against the stream being unwritable.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void CanWrite&lt;TElement, TError&gt;(IWrite&lt;TElement, TError&gt; stream, String name)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void CanWrite&lt;TElement, TResult&gt;(IWrite&lt;TElement, TResult&gt; stream, String name)
+    where TResult : IWrite&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -438,9 +441,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Langly.IWrite-2.html">IWrite</a>&lt;TElement, TError&gt;</td>
+        <td><a class="xref" href="Langly.IWrite-2.html">IWrite</a>&lt;TElement, TResult&gt;</td>
         <td><span class="parametername">stream</span></td>
-        <td><p>The <a class="xref" href="Langly.IWrite-2.html">IWrite&lt;TElement, TError&gt;</a> object.</p>
+        <td><p>The <a class="xref" href="Langly.IWrite-2.html">IWrite&lt;TElement, TResult&gt;</a> object.</p>
 </td>
       </tr>
       <tr>
@@ -466,8 +469,8 @@
 </td>
       </tr>
       <tr>
-        <td><span class="parametername">TError</span></td>
-        <td><p>The type of the error object.</p>
+        <td><span class="parametername">TResult</span></td>
+        <td><p>The resulting type; often itself..</p>
 </td>
       </tr>
     </tbody>
@@ -503,7 +506,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Contains&lt;T&gt;(T[] collection, String name, T value)
-
     where T : IEquatable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -661,7 +663,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Contains&lt;T&gt;(IReadOnlyCollection&lt;T&gt; collection, String name, T value)
-
     where T : IEquatable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -741,7 +742,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Contains&lt;T&gt;(IContains&lt;T&gt; collection, String name, T value)
-
     where T : IEquatable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -821,7 +821,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Exception Default&lt;TEnum&gt;(TEnum value, String name)
-
     where TEnum : struct, Enum</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1011,7 +1010,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Empty&lt;TCollection&gt;(TCollection collection, String name)
-
     where TCollection : ICollection</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1445,7 +1443,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Empty&lt;T, TCollection&gt;(TCollection collection, String name)
-
     where TCollection : IReadOnlyCollection&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1648,7 +1645,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Equal&lt;TValue, TOther&gt;(TValue value, String name, TOther other)
-
     where TValue : IEquatable&lt;TOther&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1800,7 +1796,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void GreaterThan&lt;T&gt;(T value, String name, T lower)
-
     where T : IComparable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1947,7 +1942,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void GreaterThanOrEqual&lt;T&gt;(T value, String name, T lower)
-
     where T : IComparable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2027,7 +2021,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void HasFlag&lt;TEnum&gt;(TEnum value, String name, TEnum flags)
-
     where TEnum : struct, Enum</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2810,7 +2803,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void LargerThan&lt;TCollection&gt;(TCollection collection, String name, Int64 lower)
-
     where TCollection : ICollection</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3310,7 +3302,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void LargerThan&lt;T, TCollection&gt;(TCollection collection, String name, Int64 lower)
-
     where TCollection : ICollection&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3462,7 +3453,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void LargerThanOrEqual&lt;TCollection&gt;(TCollection collection, String name, Int64 lower)
-
     where TCollection : ICollection</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3932,7 +3922,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void LargerThanOrEqual&lt;T, TCollection&gt;(TCollection collection, String name, Int64 lower)
-
     where TCollection : ICollection&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4084,7 +4073,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void LesserThan&lt;T&gt;(T value, String name, T upper)
-
     where T : IComparable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4231,7 +4219,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void LesserThanOrEqual&lt;T&gt;(T value, String name, T upper)
-
     where T : IComparable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4311,7 +4298,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void NotContains&lt;TCollection&gt;(TCollection collection, String name, Object value)
-
     where TCollection : ICollection</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4391,7 +4377,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void NotContains&lt;T&gt;(T[] collection, String name, T value)
-
     where T : IEquatable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4549,7 +4534,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void NotContains&lt;T, TCollection&gt;(TCollection collection, String name, T value)
-
     where T : IEquatable&lt;T&gt; where TCollection : ICollection&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4746,7 +4730,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void NotEmpty&lt;TCollection&gt;(TCollection collection, String name)
-
     where TCollection : ICollection</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5180,7 +5163,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void NotEmpty&lt;T, TCollection&gt;(TCollection collection, String name)
-
     where TCollection : ICollection&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5383,7 +5365,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void NotEqual&lt;TValue, TOther&gt;(TValue value, String name, TOther other)
-
     where TValue : IEquatable&lt;TOther&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5988,7 +5969,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Size&lt;TCollection&gt;(TCollection collection, String name, Int64 size)
-
     where TCollection : ICollection</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6458,7 +6438,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Size&lt;T, TCollection&gt;(TCollection collection, String name, Int64 size)
-
     where TCollection : ICollection&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6610,7 +6589,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void SmallerThan&lt;TCollection&gt;(TCollection collection, String name, Int64 upper)
-
     where TCollection : ICollection</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -7110,7 +7088,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void SmallerThan&lt;T, TCollection&gt;(TCollection collection, String name, Int64 upper)
-
     where TCollection : ICollection&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -7262,7 +7239,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void SmallerThanOrEqual&lt;TCollection&gt;(TCollection collection, String name, Int64 upper)
-
     where TCollection : ICollection</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -7732,7 +7708,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Valid&lt;TEnum&gt;(TEnum value, String name)
-
     where TEnum : struct, Enum</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -8693,7 +8668,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Within&lt;T&gt;(T value, String name, T lower, T upper)
-
     where T : IComparable&lt;T&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>

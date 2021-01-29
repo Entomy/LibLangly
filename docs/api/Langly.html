@@ -77,8 +77,14 @@
   <div class="markdown level0 remarks"></div>
     <h3 id="classes">Classes
   </h3>
+      <h4><a class="xref" href="Langly.Color.html">Color</a></h4>
+      <section><p>Specifies the color for the console.</p>
+</section>
+      <h4><a class="xref" href="Langly.Console.html">Console</a></h4>
+      <section><p>Represents the standard input, output, and error streams.</p>
+</section>
       <h4><a class="xref" href="Langly.CoreExtensions.html">CoreExtensions</a></h4>
-      <section><p>Provides extensions for core traits.</p>
+      <section><p>Provides extensions for core types.</p>
 </section>
       <h4><a class="xref" href="Langly.Dictionary-1.html">Dictionary&lt;TElement&gt;</a></h4>
       <section><p>Represents a dictionary, an efficiently packed collection, indexed by text elements.</p>
@@ -99,7 +105,8 @@
       <section><p>Represents text as a sequence of <a class="xref" href="Langly.Glyph.html">Glyph</a>.</p>
 </section>
       <h4><a class="xref" href="Langly.TraitExtensions.html">TraitExtensions</a></h4>
-      <section></section>
+      <section><p>Provides extensions for traits.</p>
+</section>
     <h3 id="structs">Structs
   </h3>
       <h4><a class="xref" href="Langly.Dictionary-1.Enumerator.html">Dictionary&lt;TElement&gt;.Enumerator</a></h4>
@@ -107,6 +114,9 @@
 </section>
       <h4><a class="xref" href="Langly.Glyph.html">Glyph</a></h4>
       <section><p>Represents a UNICODE Grapheme Cluster.</p>
+</section>
+      <h4><a class="xref" href="Langly.ScreenBuffer.html">ScreenBuffer</a></h4>
+      <section><p>Represents the alternate screen buffer of the <a class="xref" href="Langly.Console.html">Console</a>.</p>
 </section>
       <h4><a class="xref" href="Langly.Text.Enumerator.html">Text.Enumerator</a></h4>
       <section><p>Provides the enumerator for <a class="xref" href="Langly.Text.html">Text</a>.</p>
@@ -119,7 +129,7 @@
       <h4><a class="xref" href="Langly.ICapacity.html">ICapacity</a></h4>
       <section><p>Indicates the type has a maximum capacity.</p>
 </section>
-      <h4><a class="xref" href="Langly.IClear.html">IClear</a></h4>
+      <h4><a class="xref" href="Langly.IClear-1.html">IClear&lt;TSelf&gt;</a></h4>
       <section><p>Indicates the type can be cleared.</p>
 </section>
       <h4><a class="xref" href="Langly.IConcat-2.html">IConcat&lt;TElement, TResult&gt;</a></h4>
@@ -173,7 +183,10 @@
       <h4><a class="xref" href="Langly.IInsert-3.html">IInsert&lt;TIndex, TElement, TResult&gt;</a></h4>
       <section><p>Indicates the type can have elements inserted into it.</p>
 </section>
-      <h4><a class="xref" href="Langly.IPeek-2.html">IPeek&lt;TElement, TResult&gt;</a></h4>
+      <h4><a class="xref" href="Langly.ILoad-2.html">ILoad&lt;TElement, TSelf&gt;</a></h4>
+      <section><p>Indicates the type can load other values into it.</p>
+</section>
+      <h4><a class="xref" href="Langly.IPeek-2.html">IPeek&lt;TElement, TSelf&gt;</a></h4>
       <section><p>Indicates the type can have its first element peeked at.</p>
 </section>
       <h4><a class="xref" href="Langly.IPop-2.html">IPop&lt;TElement, TResult&gt;</a></h4>
@@ -188,7 +201,7 @@
       <h4><a class="xref" href="Langly.IPush-2.html">IPush&lt;TElement, TResult&gt;</a></h4>
       <section><p>Indicates the type can have elements pushed onto it.</p>
 </section>
-      <h4><a class="xref" href="Langly.IRead-2.html">IRead&lt;TElement, TError&gt;</a></h4>
+      <h4><a class="xref" href="Langly.IRead-2.html">IRead&lt;TElement, TResult&gt;</a></h4>
       <section><p>Indicates the type can be read from.</p>
 </section>
       <h4><a class="xref" href="Langly.IReplace-2.html">IReplace&lt;TElement, TResult&gt;</a></h4>
@@ -197,10 +210,10 @@
       <h4><a class="xref" href="Langly.IReplace-3.html">IReplace&lt;TSearch, TReplace, TResult&gt;</a></h4>
       <section><p>Indicates the type can have its elements replaced.</p>
 </section>
-      <h4><a class="xref" href="Langly.IResizable.html">IResizable</a></h4>
+      <h4><a class="xref" href="Langly.IResizable-1.html">IResizable&lt;TSelf&gt;</a></h4>
       <section><p>Indicates the type is resizable.</p>
 </section>
-      <h4><a class="xref" href="Langly.ISeek-2.html">ISeek&lt;TElement, TError&gt;</a></h4>
+      <h4><a class="xref" href="Langly.ISeek-2.html">ISeek&lt;TElement, TResult&gt;</a></h4>
       <section><p>Indicates the type can be seeked.</p>
 </section>
       <h4><a class="xref" href="Langly.ISequence-2.html">ISequence&lt;TMember, TEnumerator&gt;</a></h4>
@@ -209,19 +222,22 @@
       <h4><a class="xref" href="Langly.ISequenceBidi-2.html">ISequenceBidi&lt;TMember, TEnumerator&gt;</a></h4>
       <section><p>Indicates the type is a bidirectional sequence of <code data-dev-comment-type="typeparamref" class="typeparamref">TMember</code>.</p>
 </section>
-      <h4><a class="xref" href="Langly.IShift.html">IShift</a></h4>
+      <h4><a class="xref" href="Langly.IShift-1.html">IShift&lt;TResult&gt;</a></h4>
       <section><p>Indicates the type can be shifted in position.</p>
 </section>
-      <h4><a class="xref" href="Langly.ISlice-1.html">ISlice&lt;TSlice&gt;</a></h4>
+      <h4><a class="xref" href="Langly.ISlice-1.html">ISlice&lt;TResult&gt;</a></h4>
       <section><p>Indicates the collection is sliceable.</p>
 </section>
-      <h4><a class="xref" href="Langly.IWrite-2.html">IWrite&lt;TElement, TError&gt;</a></h4>
+      <h4><a class="xref" href="Langly.IWrite-2.html">IWrite&lt;TElement, TResult&gt;</a></h4>
       <section><p>Indicates the type can be written to.</p>
 </section>
     <h3 id="enums">Enums
   </h3>
       <h4><a class="xref" href="Langly.Case.html">Case</a></h4>
       <section><p>Text case comparison mode.</p>
+</section>
+      <h4><a class="xref" href="Langly.Endian.html">Endian</a></h4>
+      <section><p>The order of bytes of a multi-byte sequence.</p>
 </section>
       <h4><a class="xref" href="Langly.Mean.html">Mean</a></h4>
       <section><p>Indicates the type of mean to calculate.</p>

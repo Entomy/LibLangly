@@ -10,7 +10,7 @@ namespace Langly.DataStructures.Lists {
 		public override Chain<TElement>.Enumerator GetEnumerator() => new Enumerator(this);
 
 		/// <inheritdoc/>
-		public ReverseView<TElement, ISequenceBidi<TElement, Chain<TElement>.Enumerator>, Chain<TElement>.Enumerator> Reverse() => throw new NotImplementedException();
+		public IEnumerator<TElement> Reverse() => throw new NotImplementedException();
 
 		/// <summary>
 		/// Provides enumeration over a <see cref="Chain{TElement}"/>.

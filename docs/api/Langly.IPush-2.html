@@ -77,10 +77,12 @@
 </div>
   <div class="markdown level0 conceptual"></div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Langly.html">Langly</a></h6>
-  <h6><strong>Assembly</strong>: Langly.Core.dll</h6>
+  <h6><strong>Assembly</strong>: Langly.Traits.dll</h6>
   <h5 id="Langly_IPush_2_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IPush&lt;TElement, out TResult&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IPush&lt;TElement, out TResult&gt;
+
+    where TResult : IPush&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -110,7 +112,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IPush_2_Push__0_.md&amp;value=---%0Auid%3A%20Langly.IPush%602.Push(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/IPush`2.cs/#L16">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IPush`2.cs/#L16">View Source</a>
   </span>
   <a id="Langly_IPush_2_Push_" data-uid="Langly.IPush`2.Push*"></a>
   <h4 id="Langly_IPush_2_Push__0_" data-uid="Langly.IPush`2.Push(`0)">Push(TElement)</h4>
@@ -160,7 +162,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IPush_2_Push__0___.md&amp;value=---%0Auid%3A%20Langly.IPush%602.Push(%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/IPush`2.cs/#L24">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IPush`2.cs/#L24">View Source</a>
   </span>
   <a id="Langly_IPush_2_Push_" data-uid="Langly.IPush`2.Push*"></a>
   <h4 id="Langly_IPush_2_Push__0___" data-uid="Langly.IPush`2.Push(`0[])">Push(TElement[])</h4>
@@ -210,7 +212,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IPush_2_Push_System_Memory__0__.md&amp;value=---%0Auid%3A%20Langly.IPush%602.Push(System.Memory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/IPush`2.cs/#L32">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IPush`2.cs/#L32">View Source</a>
   </span>
   <a id="Langly_IPush_2_Push_" data-uid="Langly.IPush`2.Push*"></a>
   <h4 id="Langly_IPush_2_Push_System_Memory__0__" data-uid="Langly.IPush`2.Push(System.Memory{`0})">Push(Memory&lt;TElement&gt;)</h4>
@@ -260,7 +262,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IPush_2_Push_System_ReadOnlyMemory__0__.md&amp;value=---%0Auid%3A%20Langly.IPush%602.Push(System.ReadOnlyMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/IPush`2.cs/#L40">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IPush`2.cs/#L40">View Source</a>
   </span>
   <a id="Langly_IPush_2_Push_" data-uid="Langly.IPush`2.Push*"></a>
   <h4 id="Langly_IPush_2_Push_System_ReadOnlyMemory__0__" data-uid="Langly.IPush`2.Push(System.ReadOnlyMemory{`0})">Push(ReadOnlyMemory&lt;TElement&gt;)</h4>
@@ -310,7 +312,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IPush_2_Push_System_ReadOnlySpan__0__.md&amp;value=---%0Auid%3A%20Langly.IPush%602.Push(System.ReadOnlySpan%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/IPush`2.cs/#L56">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IPush`2.cs/#L56">View Source</a>
   </span>
   <a id="Langly_IPush_2_Push_" data-uid="Langly.IPush`2.Push*"></a>
   <h4 id="Langly_IPush_2_Push_System_ReadOnlySpan__0__" data-uid="Langly.IPush`2.Push(System.ReadOnlySpan{`0})">Push(ReadOnlySpan&lt;TElement&gt;)</h4>
@@ -360,7 +362,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IPush_2_Push_System_Span__0__.md&amp;value=---%0Auid%3A%20Langly.IPush%602.Push(System.Span%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/IPush`2.cs/#L48">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IPush`2.cs/#L48">View Source</a>
   </span>
   <a id="Langly_IPush_2_Push_" data-uid="Langly.IPush`2.Push*"></a>
   <h4 id="Langly_IPush_2_Push_System_Span__0__" data-uid="Langly.IPush`2.Push(System.Span{`0})">Push(Span&lt;TElement&gt;)</h4>
@@ -410,7 +412,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IPush_2_Push__1_Langly_ISequence__0___0__.md&amp;value=---%0Auid%3A%20Langly.IPush%602.Push%60%601(Langly.ISequence%7B%600%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/IPush`2.cs/#L70">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IPush`2.cs/#L70">View Source</a>
   </span>
   <a id="Langly_IPush_2_Push_" data-uid="Langly.IPush`2.Push*"></a>
   <h4 id="Langly_IPush_2_Push__1_Langly_ISequence__0___0__" data-uid="Langly.IPush`2.Push``1(Langly.ISequence{`0,``0})">Push&lt;TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;)</h4>
@@ -475,25 +477,25 @@
   </table>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
-      <a class="xref" href="Langly.CoreExtensions.html#Langly_CoreExtensions_Push__2_Langly_IPush___0___1____0_">CoreExtensions.Push&lt;TElement, TResult&gt;(IPush&lt;TElement, TResult&gt;, TElement)</a>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Push__2_Langly_IPush___0___1____0_">TraitExtensions.Push&lt;TElement, TResult&gt;(IPush&lt;TElement, TResult&gt;, TElement)</a>
   </div>
   <div>
-      <a class="xref" href="Langly.CoreExtensions.html#Langly_CoreExtensions_Push__2_Langly_IPush___0___1____0___">CoreExtensions.Push&lt;TElement, TResult&gt;(IPush&lt;TElement, TResult&gt;, TElement[])</a>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Push__2_Langly_IPush___0___1____0___">TraitExtensions.Push&lt;TElement, TResult&gt;(IPush&lt;TElement, TResult&gt;, TElement[])</a>
   </div>
   <div>
-      <a class="xref" href="Langly.CoreExtensions.html#Langly_CoreExtensions_Push__2_Langly_IPush___0___1__System_Memory___0__">CoreExtensions.Push&lt;TElement, TResult&gt;(IPush&lt;TElement, TResult&gt;, Memory&lt;TElement&gt;)</a>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Push__2_Langly_IPush___0___1__System_Memory___0__">TraitExtensions.Push&lt;TElement, TResult&gt;(IPush&lt;TElement, TResult&gt;, Memory&lt;TElement&gt;)</a>
   </div>
   <div>
-      <a class="xref" href="Langly.CoreExtensions.html#Langly_CoreExtensions_Push__2_Langly_IPush___0___1__System_ReadOnlyMemory___0__">CoreExtensions.Push&lt;TElement, TResult&gt;(IPush&lt;TElement, TResult&gt;, ReadOnlyMemory&lt;TElement&gt;)</a>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Push__2_Langly_IPush___0___1__System_ReadOnlyMemory___0__">TraitExtensions.Push&lt;TElement, TResult&gt;(IPush&lt;TElement, TResult&gt;, ReadOnlyMemory&lt;TElement&gt;)</a>
   </div>
   <div>
-      <a class="xref" href="Langly.CoreExtensions.html#Langly_CoreExtensions_Push__2_Langly_IPush___0___1__System_Span___0__">CoreExtensions.Push&lt;TElement, TResult&gt;(IPush&lt;TElement, TResult&gt;, Span&lt;TElement&gt;)</a>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Push__2_Langly_IPush___0___1__System_Span___0__">TraitExtensions.Push&lt;TElement, TResult&gt;(IPush&lt;TElement, TResult&gt;, Span&lt;TElement&gt;)</a>
   </div>
   <div>
-      <a class="xref" href="Langly.CoreExtensions.html#Langly_CoreExtensions_Push__2_Langly_IPush___0___1__System_ReadOnlySpan___0__">CoreExtensions.Push&lt;TElement, TResult&gt;(IPush&lt;TElement, TResult&gt;, ReadOnlySpan&lt;TElement&gt;)</a>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Push__2_Langly_IPush___0___1__System_ReadOnlySpan___0__">TraitExtensions.Push&lt;TElement, TResult&gt;(IPush&lt;TElement, TResult&gt;, ReadOnlySpan&lt;TElement&gt;)</a>
   </div>
   <div>
-      <a class="xref" href="Langly.CoreExtensions.html#Langly_CoreExtensions_Push__3_Langly_IPush___0___1__Langly_ISequence___0___2__">CoreExtensions.Push&lt;TElement, TResult, TEnumerator&gt;(IPush&lt;TElement, TResult&gt;, ISequence&lt;TElement, TEnumerator&gt;)</a>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Push__3_Langly_IPush___0___1__Langly_ISequence___0___2__">TraitExtensions.Push&lt;TElement, TResult, TEnumerator&gt;(IPush&lt;TElement, TResult&gt;, ISequence&lt;TElement, TEnumerator&gt;)</a>
   </div>
 </article>
           </div>
@@ -506,7 +508,7 @@
                     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IPush_2.md&amp;value=---%0Auid%3A%20Langly.IPush%602%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/IPush`2.cs/#L10" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IPush`2.cs/#L10" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

@@ -37,6 +37,6 @@ namespace Langly.Exceptions {
 		/// <param name="value">The argument value.</param>
 		/// <param name="name">The argument name.</param>
 		/// <returns>An <see cref="ArgumentNotReadableException"/> instance.</returns>
-		public static ArgumentNotReadableException With<TElement, TError>(IRead<TElement, TError> value, String name) => new ArgumentNotReadableException(value, name, "Stream must be readable.");
+		public static ArgumentNotReadableException With<TElement, TResult>(IRead<TElement, TResult> value, String name) where TResult : IRead<TElement, TResult> => new ArgumentNotReadableException(value, name, "Stream must be readable.");
 	}
 }

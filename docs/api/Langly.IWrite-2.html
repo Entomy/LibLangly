@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Interface IWrite&lt;TElement, TError&gt;
+    <title>Interface IWrite&lt;TElement, TResult&gt;
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Interface IWrite&lt;TElement, TError&gt;
+    <meta name="title" content="Interface IWrite&lt;TElement, TResult&gt;
    ">
     <meta name="generator" content="docfx 2.56.6.0">
     
@@ -71,16 +71,18 @@
             <article class="content wrap" id="_content" data-uid="Langly.IWrite`2">
   
   
-  <h1 id="Langly_IWrite_2" data-uid="Langly.IWrite`2" class="text-break">Interface IWrite&lt;TElement, TError&gt;
+  <h1 id="Langly_IWrite_2" data-uid="Langly.IWrite`2" class="text-break">Interface IWrite&lt;TElement, TResult&gt;
   </h1>
   <div class="markdown level0 summary"><p>Indicates the type can be written to.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Langly.html">Langly</a></h6>
-  <h6><strong>Assembly</strong>: Langly.Core.dll</h6>
+  <h6><strong>Assembly</strong>: Langly.Traits.dll</h6>
   <h5 id="Langly_IWrite_2_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IWrite&lt;TElement, TError&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IWrite&lt;TElement, out TResult&gt;
+
+    where TResult : IWrite&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -97,8 +99,8 @@
 </td>
       </tr>
       <tr>
-        <td><span class="parametername">TError</span></td>
-        <td><p>The type of the error object.</p>
+        <td><span class="parametername">TResult</span></td>
+        <td><p>The resulting type; often itself.</p>
 </td>
       </tr>
     </tbody>
@@ -110,7 +112,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IWrite_2_Writable.md&amp;value=---%0Auid%3A%20Langly.IWrite%602.Writable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/IWrite`2.cs/#L17">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWrite`2.cs/#L17">View Source</a>
   </span>
   <a id="Langly_IWrite_2_Writable_" data-uid="Langly.IWrite`2.Writable*"></a>
   <h4 id="Langly_IWrite_2_Writable" data-uid="Langly.IWrite`2.Writable">Writable</h4>
@@ -137,352 +139,16 @@
     </tbody>
   </table>
   <h5 id="Langly_IWrite_2_Writable_remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>This is a state indicator. Of course an <a class="xref" href="Langly.IWrite-2.html">IWrite&lt;TElement, TError&gt;</a> can be written to, but that doesn't mean it can always be written to. Rather, this being <span class="xref">true</span> indicates the type can currently be written to.</p>
+  <div class="markdown level1 remarks"><p>This is a state indicator. Of course an <a class="xref" href="Langly.IWrite-2.html">IWrite&lt;TElement, TResult&gt;</a> can be written to, but that doesn't mean it can always be written to. Rather, this being <span class="xref">true</span> indicates the type can currently be written to.</p>
 </div>
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IWrite_2_TryWrite__0__1__.md&amp;value=---%0Auid%3A%20Langly.IWrite%602.TryWrite(%600%2C%601%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/IWrite`2.cs/#L90">View Source</a>
-  </span>
-  <a id="Langly_IWrite_2_TryWrite_" data-uid="Langly.IWrite`2.TryWrite*"></a>
-  <h4 id="Langly_IWrite_2_TryWrite__0__1__" data-uid="Langly.IWrite`2.TryWrite(`0,`1@)">TryWrite(TElement, out TError)</h4>
-  <div class="markdown level1 summary"><p>Attempts to write a <code data-dev-comment-type="paramref" class="paramref">element</code>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool TryWrite(TElement element, out TError error)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">TElement</span></td>
-        <td><span class="parametername">element</span></td>
-        <td><p>The <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> value to write.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">TError</span></td>
-        <td><span class="parametername">error</span></td>
-        <td><p>The <code data-dev-comment-type="typeparamref" class="typeparamref">TError</code> that occurred, if any.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p><span class="xref">true</span> if the write was successful; otherwise, <span class="xref">false</span>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IWrite_2_TryWrite__0____1__.md&amp;value=---%0Auid%3A%20Langly.IWrite%602.TryWrite(%600%5B%5D%2C%601%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/IWrite`2.cs/#L98">View Source</a>
-  </span>
-  <a id="Langly_IWrite_2_TryWrite_" data-uid="Langly.IWrite`2.TryWrite*"></a>
-  <h4 id="Langly_IWrite_2_TryWrite__0____1__" data-uid="Langly.IWrite`2.TryWrite(`0[],`1@)">TryWrite(TElement[], out TError)</h4>
-  <div class="markdown level1 summary"><p>Attempts to write the <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">virtual bool TryWrite(TElement[] elements, out TError error)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>TElement[]</td>
-        <td><span class="parametername">elements</span></td>
-        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.array">Array</a> of <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> value to write.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">TError</span></td>
-        <td><span class="parametername">error</span></td>
-        <td><p>The <code data-dev-comment-type="typeparamref" class="typeparamref">TError</code> that occurred, if any.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p><span class="xref">true</span> if the write was successful; otherwise, <span class="xref">false</span>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IWrite_2_TryWrite_System_Memory__0___1__.md&amp;value=---%0Auid%3A%20Langly.IWrite%602.TryWrite(System.Memory%7B%600%7D%2C%601%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/IWrite`2.cs/#L117">View Source</a>
-  </span>
-  <a id="Langly_IWrite_2_TryWrite_" data-uid="Langly.IWrite`2.TryWrite*"></a>
-  <h4 id="Langly_IWrite_2_TryWrite_System_Memory__0___1__" data-uid="Langly.IWrite`2.TryWrite(System.Memory{`0},`1@)">TryWrite(Memory&lt;TElement&gt;, out TError)</h4>
-  <div class="markdown level1 summary"><p>Attempts to write the <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">virtual bool TryWrite(Memory&lt;TElement&gt; elements, out TError error)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;TElement&gt;</td>
-        <td><span class="parametername">elements</span></td>
-        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory&lt;T&gt;</a> of <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> value to write.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">TError</span></td>
-        <td><span class="parametername">error</span></td>
-        <td><p>The <code data-dev-comment-type="typeparamref" class="typeparamref">TError</code> that occurred, if any.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p><span class="xref">true</span> if the write was successful; otherwise, <span class="xref">false</span>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IWrite_2_TryWrite_System_ReadOnlyMemory__0___1__.md&amp;value=---%0Auid%3A%20Langly.IWrite%602.TryWrite(System.ReadOnlyMemory%7B%600%7D%2C%601%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/IWrite`2.cs/#L125">View Source</a>
-  </span>
-  <a id="Langly_IWrite_2_TryWrite_" data-uid="Langly.IWrite`2.TryWrite*"></a>
-  <h4 id="Langly_IWrite_2_TryWrite_System_ReadOnlyMemory__0___1__" data-uid="Langly.IWrite`2.TryWrite(System.ReadOnlyMemory{`0},`1@)">TryWrite(ReadOnlyMemory&lt;TElement&gt;, out TError)</h4>
-  <div class="markdown level1 summary"><p>Attempts to write the <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">virtual bool TryWrite(ReadOnlyMemory&lt;TElement&gt; elements, out TError error)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;TElement&gt;</td>
-        <td><span class="parametername">elements</span></td>
-        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory&lt;T&gt;</a> of <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> value to write.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">TError</span></td>
-        <td><span class="parametername">error</span></td>
-        <td><p>The <code data-dev-comment-type="typeparamref" class="typeparamref">TError</code> that occurred, if any.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p><span class="xref">true</span> if the write was successful; otherwise, <span class="xref">false</span>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IWrite_2_TryWrite_System_ReadOnlySpan__0___1__.md&amp;value=---%0Auid%3A%20Langly.IWrite%602.TryWrite(System.ReadOnlySpan%7B%600%7D%2C%601%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/IWrite`2.cs/#L141">View Source</a>
-  </span>
-  <a id="Langly_IWrite_2_TryWrite_" data-uid="Langly.IWrite`2.TryWrite*"></a>
-  <h4 id="Langly_IWrite_2_TryWrite_System_ReadOnlySpan__0___1__" data-uid="Langly.IWrite`2.TryWrite(System.ReadOnlySpan{`0},`1@)">TryWrite(ReadOnlySpan&lt;TElement&gt;, out TError)</h4>
-  <div class="markdown level1 summary"><p>Attempts to write the <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">virtual bool TryWrite(ReadOnlySpan&lt;TElement&gt; elements, out TError error)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;TElement&gt;</td>
-        <td><span class="parametername">elements</span></td>
-        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan&lt;T&gt;</a> of <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> value to write.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">TError</span></td>
-        <td><span class="parametername">error</span></td>
-        <td><p>The <code data-dev-comment-type="typeparamref" class="typeparamref">TError</code> that occurred, if any.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p><span class="xref">true</span> if the write was successful; otherwise, <span class="xref">false</span>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IWrite_2_TryWrite_System_Span__0___1__.md&amp;value=---%0Auid%3A%20Langly.IWrite%602.TryWrite(System.Span%7B%600%7D%2C%601%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/IWrite`2.cs/#L133">View Source</a>
-  </span>
-  <a id="Langly_IWrite_2_TryWrite_" data-uid="Langly.IWrite`2.TryWrite*"></a>
-  <h4 id="Langly_IWrite_2_TryWrite_System_Span__0___1__" data-uid="Langly.IWrite`2.TryWrite(System.Span{`0},`1@)">TryWrite(Span&lt;TElement&gt;, out TError)</h4>
-  <div class="markdown level1 summary"><p>Attempts to write the <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">virtual bool TryWrite(Span&lt;TElement&gt; elements, out TError error)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;TElement&gt;</td>
-        <td><span class="parametername">elements</span></td>
-        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span&lt;T&gt;</a> of <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> value to write.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">TError</span></td>
-        <td><span class="parametername">error</span></td>
-        <td><p>The <code data-dev-comment-type="typeparamref" class="typeparamref">TError</code> that occurred, if any.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p><span class="xref">true</span> if the write was successful; otherwise, <span class="xref">false</span>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IWrite_2_Write__0_.md&amp;value=---%0Auid%3A%20Langly.IWrite%602.Write(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/IWrite`2.cs/#L26">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWrite`2.cs/#L23">View Source</a>
   </span>
   <a id="Langly_IWrite_2_Write_" data-uid="Langly.IWrite`2.Write*"></a>
   <h4 id="Langly_IWrite_2_Write__0_" data-uid="Langly.IWrite`2.Write(`0)">Write(TElement)</h4>
@@ -491,7 +157,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void Write(TElement element)</code></pre>
+    <pre><code class="lang-csharp hljs">TResult Write(TElement element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -511,15 +177,27 @@
       </tr>
     </tbody>
   </table>
-  <h5 id="Langly_IWrite_2_Write__0__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>This assumes the write will never fail, which is an assumption that generally doesn't hold up. It is strongly recommended to use <a class="xref" href="Langly.IWrite-2.html#Langly_IWrite_2_TryWrite__0__1__">TryWrite(TElement, out TError)</a> instead.</p>
-</div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TResult</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IWrite_2_Write__0___.md&amp;value=---%0Auid%3A%20Langly.IWrite%602.Write(%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/IWrite`2.cs/#L35">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWrite`2.cs/#L30">View Source</a>
   </span>
   <a id="Langly_IWrite_2_Write_" data-uid="Langly.IWrite`2.Write*"></a>
   <h4 id="Langly_IWrite_2_Write__0___" data-uid="Langly.IWrite`2.Write(`0[])">Write(TElement[])</h4>
@@ -528,7 +206,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">virtual void Write(TElement[] elements)</code></pre>
+    <pre><code class="lang-csharp hljs">virtual TResult Write(params TElement[] elements)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -548,15 +226,27 @@
       </tr>
     </tbody>
   </table>
-  <h5 id="Langly_IWrite_2_Write__0____remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>This assumes the write will never fail, which is an assumption that generally doesn't hold up. It is strongly recommended to use <a class="xref" href="Langly.IWrite-2.html#Langly_IWrite_2_TryWrite__0____1__">TryWrite(TElement[], out TError)</a> instead.</p>
-</div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TResult</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IWrite_2_Write_System_Memory__0__.md&amp;value=---%0Auid%3A%20Langly.IWrite%602.Write(System.Memory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/IWrite`2.cs/#L51">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWrite`2.cs/#L37">View Source</a>
   </span>
   <a id="Langly_IWrite_2_Write_" data-uid="Langly.IWrite`2.Write*"></a>
   <h4 id="Langly_IWrite_2_Write_System_Memory__0__" data-uid="Langly.IWrite`2.Write(System.Memory{`0})">Write(Memory&lt;TElement&gt;)</h4>
@@ -565,7 +255,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">virtual void Write(Memory&lt;TElement&gt; elements)</code></pre>
+    <pre><code class="lang-csharp hljs">virtual TResult Write(Memory&lt;TElement&gt; elements)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -585,15 +275,27 @@
       </tr>
     </tbody>
   </table>
-  <h5 id="Langly_IWrite_2_Write_System_Memory__0___remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>This assumes the write will never fail, which is an assumption that generally doesn't hold up. It is strongly recommended to use <a class="xref" href="Langly.IWrite-2.html#Langly_IWrite_2_TryWrite__0____1__">TryWrite(TElement[], out TError)</a> instead.</p>
-</div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TResult</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IWrite_2_Write_System_ReadOnlyMemory__0__.md&amp;value=---%0Auid%3A%20Langly.IWrite%602.Write(System.ReadOnlyMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/IWrite`2.cs/#L60">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWrite`2.cs/#L44">View Source</a>
   </span>
   <a id="Langly_IWrite_2_Write_" data-uid="Langly.IWrite`2.Write*"></a>
   <h4 id="Langly_IWrite_2_Write_System_ReadOnlyMemory__0__" data-uid="Langly.IWrite`2.Write(System.ReadOnlyMemory{`0})">Write(ReadOnlyMemory&lt;TElement&gt;)</h4>
@@ -602,7 +304,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">virtual void Write(ReadOnlyMemory&lt;TElement&gt; elements)</code></pre>
+    <pre><code class="lang-csharp hljs">virtual TResult Write(ReadOnlyMemory&lt;TElement&gt; elements)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -622,15 +324,27 @@
       </tr>
     </tbody>
   </table>
-  <h5 id="Langly_IWrite_2_Write_System_ReadOnlyMemory__0___remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>This assumes the write will never fail, which is an assumption that generally doesn't hold up. It is strongly recommended to use <a class="xref" href="Langly.IWrite-2.html#Langly_IWrite_2_TryWrite__0____1__">TryWrite(TElement[], out TError)</a> instead.</p>
-</div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TResult</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IWrite_2_Write_System_ReadOnlySpan__0__.md&amp;value=---%0Auid%3A%20Langly.IWrite%602.Write(System.ReadOnlySpan%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/IWrite`2.cs/#L78">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWrite`2.cs/#L58">View Source</a>
   </span>
   <a id="Langly_IWrite_2_Write_" data-uid="Langly.IWrite`2.Write*"></a>
   <h4 id="Langly_IWrite_2_Write_System_ReadOnlySpan__0__" data-uid="Langly.IWrite`2.Write(System.ReadOnlySpan{`0})">Write(ReadOnlySpan&lt;TElement&gt;)</h4>
@@ -639,7 +353,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">virtual void Write(ReadOnlySpan&lt;TElement&gt; elements)</code></pre>
+    <pre><code class="lang-csharp hljs">virtual TResult Write(ReadOnlySpan&lt;TElement&gt; elements)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -659,15 +373,27 @@
       </tr>
     </tbody>
   </table>
-  <h5 id="Langly_IWrite_2_Write_System_ReadOnlySpan__0___remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>This assumes the write will never fail, which is an assumption that generally doesn't hold up. It is strongly recommended to use <a class="xref" href="Langly.IWrite-2.html#Langly_IWrite_2_TryWrite__0____1__">TryWrite(TElement[], out TError)</a> instead.</p>
-</div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TResult</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IWrite_2_Write_System_Span__0__.md&amp;value=---%0Auid%3A%20Langly.IWrite%602.Write(System.Span%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/IWrite`2.cs/#L69">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWrite`2.cs/#L51">View Source</a>
   </span>
   <a id="Langly_IWrite_2_Write_" data-uid="Langly.IWrite`2.Write*"></a>
   <h4 id="Langly_IWrite_2_Write_System_Span__0__" data-uid="Langly.IWrite`2.Write(System.Span{`0})">Write(Span&lt;TElement&gt;)</h4>
@@ -676,7 +402,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">virtual void Write(Span&lt;TElement&gt; elements)</code></pre>
+    <pre><code class="lang-csharp hljs">virtual TResult Write(Span&lt;TElement&gt; elements)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -696,63 +422,39 @@
       </tr>
     </tbody>
   </table>
-  <h5 id="Langly_IWrite_2_Write_System_Span__0___remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>This assumes the write will never fail, which is an assumption that generally doesn't hold up. It is strongly recommended to use <a class="xref" href="Langly.IWrite-2.html#Langly_IWrite_2_TryWrite__0____1__">TryWrite(TElement[], out TError)</a> instead.</p>
-</div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TResult</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
-      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Write__2_Langly_IWrite___0___1____0_">TraitExtensions.Write&lt;TElement, TError&gt;(IWrite&lt;TElement, TError&gt;, TElement)</a>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Write__2_Langly_IWrite___0___1____0_">TraitExtensions.Write&lt;TElement, TResult&gt;(IWrite&lt;TElement, TResult&gt;, TElement)</a>
   </div>
   <div>
-      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Write__2_Langly_IWrite___0___1____0___">TraitExtensions.Write&lt;TElement, TError&gt;(IWrite&lt;TElement, TError&gt;, TElement[])</a>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Write__2_Langly_IWrite___0___1____0___">TraitExtensions.Write&lt;TElement, TResult&gt;(IWrite&lt;TElement, TResult&gt;, TElement[])</a>
   </div>
   <div>
-      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Write__2_Langly_IWrite___0___1__System_Memory___0__">TraitExtensions.Write&lt;TElement, TError&gt;(IWrite&lt;TElement, TError&gt;, Memory&lt;TElement&gt;)</a>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Write__2_Langly_IWrite___0___1__System_Memory___0__">TraitExtensions.Write&lt;TElement, TResult&gt;(IWrite&lt;TElement, TResult&gt;, Memory&lt;TElement&gt;)</a>
   </div>
   <div>
-      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Write__2_Langly_IWrite___0___1__System_ReadOnlyMemory___0__">TraitExtensions.Write&lt;TElement, TError&gt;(IWrite&lt;TElement, TError&gt;, ReadOnlyMemory&lt;TElement&gt;)</a>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Write__2_Langly_IWrite___0___1__System_ReadOnlyMemory___0__">TraitExtensions.Write&lt;TElement, TResult&gt;(IWrite&lt;TElement, TResult&gt;, ReadOnlyMemory&lt;TElement&gt;)</a>
   </div>
   <div>
-      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Write__2_Langly_IWrite___0___1__System_Span___0__">TraitExtensions.Write&lt;TElement, TError&gt;(IWrite&lt;TElement, TError&gt;, Span&lt;TElement&gt;)</a>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Write__2_Langly_IWrite___0___1__System_Span___0__">TraitExtensions.Write&lt;TElement, TResult&gt;(IWrite&lt;TElement, TResult&gt;, Span&lt;TElement&gt;)</a>
   </div>
   <div>
-      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Write__2_Langly_IWrite___0___1__System_ReadOnlySpan___0__">TraitExtensions.Write&lt;TElement, TError&gt;(IWrite&lt;TElement, TError&gt;, ReadOnlySpan&lt;TElement&gt;)</a>
-  </div>
-  <div>
-      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_TryWrite__2_Langly_IWrite___0___1____0_">TraitExtensions.TryWrite&lt;TElement, TError&gt;(IWrite&lt;TElement, TError&gt;, TElement)</a>
-  </div>
-  <div>
-      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_TryWrite__2_Langly_IWrite___0___1____0___">TraitExtensions.TryWrite&lt;TElement, TError&gt;(IWrite&lt;TElement, TError&gt;, TElement[])</a>
-  </div>
-  <div>
-      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_TryWrite__2_Langly_IWrite___0___1__System_Memory___0__">TraitExtensions.TryWrite&lt;TElement, TError&gt;(IWrite&lt;TElement, TError&gt;, Memory&lt;TElement&gt;)</a>
-  </div>
-  <div>
-      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_TryWrite__2_Langly_IWrite___0___1__System_ReadOnlyMemory___0__">TraitExtensions.TryWrite&lt;TElement, TError&gt;(IWrite&lt;TElement, TError&gt;, ReadOnlyMemory&lt;TElement&gt;)</a>
-  </div>
-  <div>
-      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_TryWrite__2_Langly_IWrite___0___1__System_Span___0__">TraitExtensions.TryWrite&lt;TElement, TError&gt;(IWrite&lt;TElement, TError&gt;, Span&lt;TElement&gt;)</a>
-  </div>
-  <div>
-      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_TryWrite__2_Langly_IWrite___0___1__System_ReadOnlySpan___0__">TraitExtensions.TryWrite&lt;TElement, TError&gt;(IWrite&lt;TElement, TError&gt;, ReadOnlySpan&lt;TElement&gt;)</a>
-  </div>
-  <div>
-      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_TryWrite__2_Langly_IWrite___0___1____0___1__">TraitExtensions.TryWrite&lt;TElement, TError&gt;(IWrite&lt;TElement, TError&gt;, TElement, out TError)</a>
-  </div>
-  <div>
-      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_TryWrite__2_Langly_IWrite___0___1____0_____1__">TraitExtensions.TryWrite&lt;TElement, TError&gt;(IWrite&lt;TElement, TError&gt;, TElement[], out TError)</a>
-  </div>
-  <div>
-      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_TryWrite__2_Langly_IWrite___0___1__System_Memory___0____1__">TraitExtensions.TryWrite&lt;TElement, TError&gt;(IWrite&lt;TElement, TError&gt;, Memory&lt;TElement&gt;, out TError)</a>
-  </div>
-  <div>
-      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_TryWrite__2_Langly_IWrite___0___1__System_ReadOnlyMemory___0____1__">TraitExtensions.TryWrite&lt;TElement, TError&gt;(IWrite&lt;TElement, TError&gt;, ReadOnlyMemory&lt;TElement&gt;, out TError)</a>
-  </div>
-  <div>
-      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_TryWrite__2_Langly_IWrite___0___1__System_Span___0____1__">TraitExtensions.TryWrite&lt;TElement, TError&gt;(IWrite&lt;TElement, TError&gt;, Span&lt;TElement&gt;, out TError)</a>
-  </div>
-  <div>
-      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_TryWrite__2_Langly_IWrite___0___1__System_ReadOnlySpan___0____1__">TraitExtensions.TryWrite&lt;TElement, TError&gt;(IWrite&lt;TElement, TError&gt;, ReadOnlySpan&lt;TElement&gt;, out TError)</a>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Write__2_Langly_IWrite___0___1__System_ReadOnlySpan___0__">TraitExtensions.Write&lt;TElement, TResult&gt;(IWrite&lt;TElement, TResult&gt;, ReadOnlySpan&lt;TElement&gt;)</a>
   </div>
 </article>
           </div>
@@ -765,7 +467,7 @@
                     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IWrite_2.md&amp;value=---%0Auid%3A%20Langly.IWrite%602%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/IWrite`2.cs/#L10" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWrite`2.cs/#L10" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

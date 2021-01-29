@@ -83,10 +83,10 @@
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Langly.html">Langly</a></h6>
-  <h6><strong>Assembly</strong>: Langly.Core.dll</h6>
+  <h6><strong>Assembly</strong>: Langly.Traits.dll</h6>
   <h5 id="Langly_IReplace_2_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IReplace&lt;in TElement, out TResult&gt; : IReplace&lt;TElement, TElement, TResult&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IReplace&lt;in TElement, out TResult&gt; : IReplace&lt;TElement, TElement, TResult&gt; where TResult : IReplace&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -111,7 +111,7 @@
   </table>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
-      <a class="xref" href="Langly.CoreExtensions.html#Langly_CoreExtensions_Replace__3_Langly_IReplace___0___1___2____0___1_">CoreExtensions.Replace&lt;TSearch, TReplace, TResult&gt;(IReplace&lt;TSearch, TReplace, TResult&gt;, TSearch, TReplace)</a>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Replace__3_Langly_IReplace___0___1___2____0___1_">TraitExtensions.Replace&lt;TSearch, TReplace, TResult&gt;(IReplace&lt;TSearch, TReplace, TResult&gt;, TSearch, TReplace)</a>
   </div>
 </article>
           </div>
@@ -124,7 +124,7 @@
                     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IReplace_2.md&amp;value=---%0Auid%3A%20Langly.IReplace%602%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/IReplace`2.cs/#L7" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IReplace`2.cs/#L7" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

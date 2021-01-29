@@ -37,6 +37,6 @@ namespace Langly.Exceptions {
 		/// <param name="value">The argument value.</param>
 		/// <param name="name">The argument name.</param>
 		/// <returns>An <see cref="ArgumentNotWritableException"/> instance.</returns>
-		public static ArgumentNotWritableException With<TElement, TError>(IWrite<TElement, TError> value, String name) => new ArgumentNotWritableException(value, name, "Stream must be writable.");
+		public static ArgumentNotWritableException With<TElement, TResult>(IWrite<TElement, TResult> value, String name) where TResult : IWrite<TElement, TResult> => new ArgumentNotWritableException(value, name, "Stream must be writable.");
 	}
 }
