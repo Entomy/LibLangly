@@ -33,6 +33,24 @@ namespace Langly {
 			}
 			return (TResult)this;
 		}
+
+		/// <summary>
+		/// Pops <paramref name="amount"/> of elements off the top of this object.
+		/// </summary>
+		/// <param name="amount">The amount of elements to pop.</param>
+		/// <param name="elements">The popped off elements.</param>
+		/// <returns>The result of popping the <paramref name="elements"/> off this object.</returns>
+		/// <remarks>
+		/// If <paramref name="amount"/> is greater than <see cref="ICount.Count"/>, this pops off all available elements, but not more.
+		/// </remarks>
+		[return: MaybeNull]
+		TResult Pop(nint amount, out Memory<TElement> elements) {
+			elements = amount > Count ? new TElement[Count] : new TElement[amount];
+			for (Int32 i = 0; i < elements.Length; i++) {
+				_ = Pop(out elements.Span[i]);
+			}
+			return (TResult)this;
+		}
 	}
 
 	public static partial class TraitExtensions {

@@ -60,6 +60,7 @@ namespace Langly {
 		/// <inheritdoc/>
 		[return: NotNull]
 		System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() => GetEnumerator();
+
 		/// <summary>
 		/// Count all occurrences of <paramref name="element"/> in the collection.
 		/// </summary>

@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Sequences &amp; Enumerators </title>
+    <title>Stacks </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Sequences &amp; Enumerators ">
+    <meta name="title" content="Stacks ">
     <meta name="generator" content="docfx 2.56.6.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -67,17 +67,15 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="sequences--enumerators">Sequences &amp; Enumerators</h1>
+<h1 id="stacks">Stacks</h1>
 
-<p><strong>LibLangly</strong> introduces some improvements to the <a href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.ienumerable-1"><code>IEnumerable&lt;T&gt;</code></a> and <a href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.ienumerator-1"><code>IEnumerator&lt;T&gt;</code></a> API's. This includes usability, in that the new interfaces implement a little extra for you, and even performance. Of special interest to many is the new bidirectional support, allowing sequences to be traversed in both directions!</p>
-<h2 id="ienumeratortelement"><a href="https://entomy.github.io/LibLangly/api/Langly.IEnumerator-1.html"><code>IEnumerator&lt;TElement&gt;</code></a></h2>
-<p>This trait is a simple helper around standard enumerators. You don't get anything new, but, instead, it implements many of the API's for you using reasonable defaults that you can still override if need be. You can consider this a simple convenience that speeds up your development.</p>
-<h2 id="ienumeratorbiditelement"><a href="https://entomy.github.io/LibLangly/api/Langly.IEnumeratorBidi-1.html"><code>IEnumeratorBidi&lt;TElement&gt;</code></a></h2>
-<p>This trait additionally adds support for bidirectional traversal over supported sequences. Their default behavior is still forward traversal, but they can be reversed.</p>
-<h2 id="isequencetelement-tenumerator"><a href="https://entomy.github.io/LibLangly/api/Langly.ISequence-2.html"><code>ISequence&lt;TElement, TEnumerator&gt;</code></a></h2>
-<p>This trait is a specialization of <a href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.ienumerable-1"><code>IEnumerable&lt;T&gt;</code></a>. It degeneralizes the enumerator potentially allowing enumeration to not require a heap allocation, a minor but easy performance improvement! It requires the count of elements in the sequence to be known, but allows for predefined <a href="https://entomy.github.io/LibLangly/api/Langly.ISequence-2.html#Langly_ISequence_2_Langly_IContains_TMember__Contains__0_"><code>Contains()</code></a>, <a href="https://entomy.github.io/LibLangly/api/Langly.ISequence-2.html#Langly_ISequence_2_Fold_System_Func__0__0__0___0_"><code>Fold()</code></a>, and <a href="https://entomy.github.io/LibLangly/api/Langly.ISequence-2.html#Langly_ISequence_2_Occurrences__0_"><code>Occurrences()</code></a> methods, as well as use in many cases where a sequence of known length is known. In line with most of <strong>LibLangly</strong>'s traits, this additional functionality is defined for you, using the enumerator you provide, but is still overridable if you need a unique implementation.</p>
-<h2 id="isequencebiditmember-tenumerator"><a href="https://entomy.github.io/LibLangly/api/Langly.ISequenceBidi-2.html"><code>ISequenceBidi&lt;TMember, TEnumerator&gt;</code></a></h2>
-<p>This trait additionally provides the <a href="https://entomy.github.io/LibLangly/api/Langly.ISequenceBidi-2.html#Langly_ISequenceBidi_2_Reverse"><code>Reverse()</code></a> method allowing for efficient reverse enumeration of a sequence. This is preferentially used over LINQ's <a href="https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.reverse"><code>Reverse()</code></a>, allowing efficient reverse enumerators to be used when available, and LINQ's fully universal technique otherwise.</p>
+<p>Contrary to colloquial use of the term, Stacks are <em>not</em> a data structure, but rather, an abstract data type. <strong>LibLangly</strong> does provide a specialized data structure for use exclusively as a stack, but stack functionality can easily be provided by other data structures through a set of stack traits; the same traits the predefined structure implements.</p>
+<h2 id="ipushtelement-tresult"><a href="https://entomy.github.io/LibLangly/api/Langly.IPush-2.html"><code>IPush&lt;TElement, TResult&gt;</code></a></h2>
+<p>This trait indicates that your type supports pushing elements onto it. When you implement <a href="https://entomy.github.io/LibLangly/api/Langly.IPush-2.html#Langly_IPush_2_Push__0_"><code>Push(TElement)</code></a> you'll automatically get overloads that support <a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/params"><code>params TElement[]</code></a>, <a href="https://docs.microsoft.com/en-us/dotnet/api/system.memory-1"><code>Memory&lt;TElement&gt;</code></a>, <a href="https://docs.microsoft.com/en-us/dotnet/api/system.readonlymemory-1"><code>ReadOnlyMemory&lt;TElement&gt;</code></a>, <a href="https://docs.microsoft.com/en-us/dotnet/api/system.span-1"><code>Span&lt;TElement&gt;</code></a>, <a href="https://docs.microsoft.com/en-us/dotnet/api/system.readonlyspan-1"><code>ReadOnlySpan&lt;TElement&gt;</code></a>, and <a href=""><code>ISequence&lt;TElement, TEnumerator</code>&gt;</a>. All for free! If you need specific behavior, you're free to provide implementations of any of the overloads that will be used instead.</p>
+<h2 id="ipoptelement-tresult"><a href="https://entomy.github.io/LibLangly/api/Langly.IPop-2.html"><code>IPop&lt;TElement, TResult&gt;</code></a></h2>
+<p>This trait indicates that your type supports popping elements off it. When you implement <a href="https://entomy.github.io/LibLangly/api/Langly.IPop-2.html#Langly_IPop_2_Pop__0__"><code>Pop(out TElement)</code></a> you'll automatically get overloads that support <a href=""><code>Pop(out TElement[])</code></a> and <a href=""><code>Pop(out Memory&lt;TElement&gt;)</code></a></p>
+<h2 id="ipeektelement-tresult"><a href="https://entomy.github.io/LibLangly/api/Langly.IPeek-2.html"><code>IPeek&lt;TElement, TResult&gt;</code></a></h2>
+<p>This trait indicates that your type supports peeking at the first element. This isn't required, but is highly recommended, for stack behavior. There's no special extra stuff. Rather, it's just very useful for people using your finished type.</p>
 </article>
           </div>
           
@@ -86,7 +84,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/master/Documentation/articles/traits-sequences.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Documentation/articles/traits-stacks.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

@@ -24,11 +24,41 @@ namespace Langly.DataStructures.Lists {
 		[InlineData(new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 5 })]
 		[InlineData(new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 2, 5 })]
 		[InlineData(new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 2, 4, 5 })]
-		public void Add_Memory(Int32[] expected, Int32[] slicePoints) {
+		public void Add_Array(Int32[] expected, Int32[] slicePoints) {
 			Chain<Int32> chain = new Chain<Int32>();
 			Int32 i = 0;
 			foreach (Int32 sp in slicePoints) {
 				_ = chain.Add(expected[i..sp]);
+				i = sp;
+			}
+			Assert.Equal(expected, chain);
+		}
+
+		[Theory]
+		[InlineData(new Int32[] { }, new Int32[] { })]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 5 })]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 2, 5 })]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 2, 4, 5 })]
+		public void Add_Memory(Int32[] expected, Int32[] slicePoints) {
+			Chain<Int32> chain = new Chain<Int32>();
+			Int32 i = 0;
+			foreach (Int32 sp in slicePoints) {
+				_ = chain.Add(expected[i..sp].AsMemory());
+				i = sp;
+			}
+			Assert.Equal(expected, chain);
+		}
+
+		[Theory]
+		[InlineData(new Int32[] { }, new Int32[] { })]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 5 })]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 2, 5 })]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 2, 4, 5 })]
+		public void Add_ReadOnlyMemory(Int32[] expected, Int32[] slicePoints) {
+			Chain<Int32> chain = new Chain<Int32>();
+			Int32 i = 0;
+			foreach (Int32 sp in slicePoints) {
+				_ = chain.Add((ReadOnlyMemory<Int32>)expected[i..sp].AsMemory());
 				i = sp;
 			}
 			Assert.Equal(expected, chain);
@@ -44,6 +74,21 @@ namespace Langly.DataStructures.Lists {
 			Int32 i = 0;
 			foreach (Int32 sp in slicePoints) {
 				_ = chain.Add(expected.AsSpan()[i..sp]);
+				i = sp;
+			}
+			Assert.Equal(expected, chain);
+		}
+
+		[Theory]
+		[InlineData(new Int32[] { }, new Int32[] { })]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 5 })]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 2, 5 })]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 2, 4, 5 })]
+		public void Add_ReadOnlySpan(Int32[] expected, Int32[] slicePoints) {
+			Chain<Int32> chain = new Chain<Int32>();
+			Int32 i = 0;
+			foreach (Int32 sp in slicePoints) {
+				_ = chain.Add((ReadOnlySpan<Int32>)expected[i..sp].AsSpan());
 				i = sp;
 			}
 			Assert.Equal(expected, chain);
