@@ -8,7 +8,7 @@ This trait indicates that your type supports pushing elements onto it. When you 
 
 ## [`IPop<TElement, TResult>`](https://entomy.github.io/LibLangly/api/Langly.IPop-2.html)
 
-This trait indicates that your type supports popping elements off it. When you implement [`Pop(out TElement)`](https://entomy.github.io/LibLangly/api/Langly.IPop-2.html#Langly_IPop_2_Pop__0__) you'll automatically get overloads that support [`Pop(out TElement[])`]() and [`Pop(out Memory<TElement>)`]()
+This trait indicates that your type supports popping elements off it. When you implement [`Pop(out TElement)`](https://entomy.github.io/LibLangly/api/Langly.IPop-2.html#Langly_IPop_2_Pop__0__) you'll automatically get overloads that support [`Pop(out TElement[])`](https://entomy.github.io/LibLangly/api/Langly.IPop-2.html#Langly_IPop_2_Pop_nint__0____) and [`Pop(out Memory<TElement>)`](https://entomy.github.io/LibLangly/api/Langly.IPop-2.html#Langly_IPop_2_Pop_nint_System_Memory__0___)
 
 ## [`IPeek<TElement, TResult>`](https://entomy.github.io/LibLangly/api/Langly.IPeek-2.html)
 
