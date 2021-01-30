@@ -121,7 +121,7 @@ namespace Langly {
 				if (collection.Count == lower) {
 					throw ArgumentIsSizeException.With(collection, name, lower);
 				} else {
-					throw ArgumentIsSizeException.With(collection, name, lower);
+					throw ArgumentSmallerThanException.With(collection, name, lower);
 				}
 			}
 		}
@@ -142,7 +142,7 @@ namespace Langly {
 				if (collection.Count == lower) {
 					throw ArgumentIsSizeException.With(collection, name, lower);
 				} else {
-					throw ArgumentIsSizeException.With(collection, name, lower);
+					throw ArgumentSmallerThanException.With(collection, name, lower);
 				}
 			}
 		}
@@ -161,7 +161,7 @@ namespace Langly {
 				if (collection.Count == lower) {
 					throw ArgumentIsSizeException.With(collection, name, lower);
 				} else {
-					throw ArgumentIsSizeException.With(collection, name, lower);
+					throw ArgumentSmallerThanException.With(collection, name, lower);
 				}
 			}
 		}

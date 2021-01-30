@@ -50,7 +50,7 @@ namespace Langly {
 		/// </summary>
 		[AllowNull, MaybeNull]
 		public static Color Foreground {
-			get => background;
+			get => foreground;
 			set {
 				ConsoleComponents.StateManager.SetForeground(value);
 				foreground = value;

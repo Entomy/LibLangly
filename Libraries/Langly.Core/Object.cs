@@ -10,6 +10,7 @@ namespace Langly {
 	/// This type helps enforce reference semantics when appropriate, by defining certain operations to only work through reference equality and preventing them from being overridden.
 	/// </remarks>
 	/// <seealso cref="Record{TSelf}"/>
+	[SuppressMessage("Major Code Smell", "S4035:Classes implementing \"IEquatable<T>\" should be sealed", Justification = "Equality was fully defined to be referential and those implementations are sealed, actually enforcing the behavior Sonar thinks we're disallowing. So, Sonar really has it backwards.")]
 	public abstract class Object : IEquals<Object> {
 		/// <summary>
 		/// Determines if the two object references are the same.

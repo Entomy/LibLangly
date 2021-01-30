@@ -11,6 +11,7 @@ namespace Langly {
 	/// This type helps enforce structural semantics when appropriate, by establishing certain contracts around how equality works.
 	/// </remarks>
 	/// <seealso cref="Object"/>
+	[SuppressMessage("Major Code Smell", "S4035:Classes implementing \"IEquatable<T>\" should be sealed", Justification = "No, a special pattern Sonar doesn't recognize is being used here.")]
 	public abstract class Record<TSelf> : IEquals<TSelf>, IEquals<IEquals<TSelf>> where TSelf : Record<TSelf> {
 		/// <summary>
 		/// Determines if the two values aren't equal.

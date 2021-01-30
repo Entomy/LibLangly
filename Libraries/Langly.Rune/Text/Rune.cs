@@ -251,6 +251,7 @@ namespace System.Text {
 
 		public int CompareTo(Rune other) => this.Value - other.Value; // values don't span entire 32-bit domain; won't integer overflow
 
+
 		/// <summary>
 		/// Decodes the <see cref="Rune"/> at the beginning of the provided UTF-16 source buffer.
 		/// </summary>
