@@ -2,11 +2,14 @@
 
 using System.Diagnostics.CodeAnalysis;
 
-[assembly: SuppressMessage("Class Design", "AV1008:Class should not be static", Justification = "")]
+[assembly: SuppressMessage("Class Design", "AV1008:Class should not be static", Justification = "Static classes serve a purpose, hence their existance.")]
 [assembly: SuppressMessage("Class Design", "AV1010:Member hides inherited member", Justification = "This isn't intrinsically a problem, and depends on the situation.")]
+[assembly: SuppressMessage("Member Design", "AV1130:Return type in method signature should be a collection interface instead of a concrete type", Justification = "Better yet, the return type should be generic. I agree with this in theory, but in practice, no.")]
+[assembly: SuppressMessage("Member Design", "AV1135:Do not return null for strings, collections or tasks", Justification = "Langly handles null specially so this is a non-issue.")]
 [assembly: SuppressMessage("Maintainability", "AV1500:Member or local function contains too many statements", Justification = "What matters has a lot more to do with the complexity of the code and not the number of statements. ")]
 [assembly: SuppressMessage("Maintainability", "AV1505:Namespace should match with assembly name", Justification = "This entire solution is using a different approach where multiple libraries overlay onto the same namespaces with the added features.")]
 [assembly: SuppressMessage("Maintainability", "AV1506:File should be named in Pascal casing without underscores or generic arity.", Justification = "Too many types have analogues that vary only by their generic arity. It makes far more sense, then, to always name them with generic arity. Otherwise we, what, put multiple types in the same file?")]
+[assembly: SuppressMessage("Maintainability", "AV1522:Assign each property, field, parameter or variable in a separate statement", Justification = "This is fine as long as people don't go crazy with it. I'm leaving this for human review.")]
 [assembly: SuppressMessage("Maintainability", "AV1535:Missing block in case or default clause of switch statement", Justification = "Case's are already blocks, making this superfluous.")]
 [assembly: SuppressMessage("Maintainability", "AV1537:If-else-if construct should end with an unconditional else clause", Justification = "This is too context insensitive. Either approach may be fine.")]
 [assembly: SuppressMessage("Maintainability", "AV1551:Method overload should call another overload", Justification = "Typically, what's being done is these are extension methods calling an instance method. This will have to be reviewed by a human since the analyzer doesn't like this pattern.")]
@@ -25,3 +28,4 @@ using System.Diagnostics.CodeAnalysis;
 [assembly: SuppressMessage("Design", "MA0095:A class that implements IEquatable<T> should override Equals(object)", Justification = "It often is, but this analyzer doesn't check for a base class providing one of these.")]
 
 [assembly: SuppressMessage("Major Code Smell", "S907:\"goto\" statement should not be used", Justification = "I'm fine with goto as long as it's not abused. It can, in certain cases, actually result in easier to read code. It's often required in text processing where needed control structures aren't available in most languages.")]
+[assembly: SuppressMessage("Major Code Smell", "S1168:Empty arrays and collections should be returned instead of null", Justification = "Langly handles null specially so this is a non-issue.")]

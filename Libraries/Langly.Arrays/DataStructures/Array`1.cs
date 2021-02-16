@@ -3,48 +3,63 @@ using Langly.DataStructures.Lists;
 using System;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Langly.DataStructures.Arrays {
+namespace Langly.DataStructures {
 	/// <summary>
-	/// Represents any array type.
+	/// Represents an array of contiguous elements.
 	/// </summary>
 	/// <typeparam name="TElement">The type of elements in the array.</typeparam>
-	/// <typeparam name="TSelf">The implementing type; itself.</typeparam>
 	/// <remarks>
 	/// This is intended as a reusable base for implementing behaviors on top of <see cref="Array"/>s of rank 1.
 	/// </remarks>
-	public abstract partial class Array<TElement, TSelf> : DataStructure<TElement, TSelf, Array<TElement, TSelf>.Enumerator>,
+	public sealed partial class Array<TElement> : DataStructure<TElement, Array<TElement>, Array<TElement>.Enumerator>,
 		IAdd<TElement, Chain<TElement>>,
 		IConcat<TElement, Chain<TElement>>,
 		IIndexReadOnly<TElement>,
 		IInsert<TElement, Chain<TElement>>,
 		IReplace<TElement, Chain<TElement>>,
-		ISlice<TSelf>
-		where TSelf : Array<TElement, TSelf> {
+		ISlice<Array<TElement>> {
 		/// <summary>
 		/// The set of elements.
 		/// </summary>
-		protected ReadOnlyMemory<TElement> Elements;
+		private readonly ReadOnlyMemory<TElement> Elements;
 
 		/// <summary>
-		/// Initializes a new <see cref="Array{TElement, TSelf}"/> with the given <paramref name="capacity"/>.
+		/// Initializes a new <see cref="Array{TElement}"/> with the given <paramref name="capacity"/>.
 		/// </summary>
-		/// <param name="capacity">The initial capacity.</param>
-		/// <param name="filter">Flags designating which filters to set up.</param>
-		protected Array(nint capacity, Filter filter) : base(filter) => Elements = new TElement[capacity];
+		/// <param name="capacity">The capacity.</param>
+		public Array(nint capacity) : this(capacity, DataStructures.Filter.None) { }
 
 		/// <summary>
-		/// Initializes a new <see cref="Array{TElement, TSelf}"/> with the given <paramref name="elements"/>.
+		/// Initializes a new <see cref="Array{TElement}"/> with the given <paramref name="capacity"/> and <paramref name="filter"/>.
+		/// </summary>
+		/// <param name="capacity">The capacity.</param>
+		/// <param name="filter">Flags designating which filters to set up.</param>
+		public Array(nint capacity, Filter filter) : base(filter) => Elements = new TElement[capacity];
+
+		/// <summary>
+		/// Initializes a new <see cref="Array{TElement}"/> with the given <paramref name="elements"/>.
 		/// </summary>
 		/// <param name="elements">The elements to use.</param>
 		/// <param name="filter">Flags designated which filters to set up.</param>
-		protected Array(ReadOnlyMemory<TElement> elements, Filter filter) : base(filter) => Elements = elements;
+		public Array(ReadOnlyMemory<TElement> elements, Filter filter) : base(filter) => Elements = elements;
 
 		/// <summary>
 		/// Copy constructor.
 		/// </summary>
 		/// <param name="elements">The elements to use.</param>
 		/// <param name="filter">The <see cref="Filter{TIndex, TElement}"/> to reuse.</param>
-		protected Array(ReadOnlyMemory<TElement> elements, Filter<nint, TElement> filter) : base(filter) => Elements = elements;
+		private Array(ReadOnlyMemory<TElement> elements, Filter<nint, TElement> filter) : base(filter) => Elements = elements;
+
+		/// <summary>
+		/// An empty <see cref="Array{TElement}"/> singleton.
+		/// </summary>
+		public static Array<TElement> Empty => Singleton.Instance;
+
+		public static implicit operator Array<TElement>([AllowNull] TElement[] elements) => elements is not null ? new Array<TElement>(elements, DataStructures.Filter.None) : Empty;
+
+		public static implicit operator Array<TElement>(Memory<TElement> elements) => new Array<TElement>(elements, DataStructures.Filter.None);
+
+		public static implicit operator Array<TElement>(ReadOnlyMemory<TElement> elements) => new Array<TElement>(elements, DataStructures.Filter.None);
 
 		/// <summary>
 		/// The current capacity of the array; how many elements it can hold.
@@ -127,13 +142,12 @@ namespace Langly.DataStructures.Arrays {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		TSelf ISlice<TSelf>.Slice(nint start, nint length) => Slice(start, length);
+		Array<TElement> ISlice<Array<TElement>>.Slice(nint start, nint length) => new Array<TElement>(Elements.Slice((Int32) start, (Int32) length), Filter);
 
-		/// <summary>
-		/// The actual implementation of <see cref="ISlice{TSlice}.Slice(nint, nint)"/>.
-		/// </summary>
-		/// <param name="start">The index at which to begin the slice.</param>
-		/// <param name="length">The desired length for the slice.</param>
-		protected abstract TSelf Slice(nint start, nint length);
+		private static class Singleton {
+			internal static readonly Array<TElement> Instance = new Array<TElement>(0);
+
+			static Singleton() { }
+		}
 	}
 }

@@ -1,21 +1,20 @@
-﻿using Langly.DataStructures.Views;
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 
-namespace Langly.DataStructures.Arrays {
-	public partial class Array<TElement, TSelf> : ISequenceBidi<TElement, Array<TElement, TSelf>.Enumerator> {
+namespace Langly.DataStructures {
+	public partial class Array<TElement> : ISequenceBidi<TElement, Array<TElement>.Enumerator> {
 		/// <inheritdoc/>
 		[return: NotNull]
-		public override Array<TElement, TSelf>.Enumerator GetEnumerator() => new Enumerator(Elements.Slice(0, (Int32)Count));
+		public override Array<TElement>.Enumerator GetEnumerator() => new Enumerator(Elements);
 
 		/// <inheritdoc/>
 		[return: NotNull]
 		public IEnumerator<TElement> Reverse() => throw new NotImplementedException();
 
 		/// <summary>
-		/// Provides enumeration over <see cref="Array{TElement, TSelf}"/>.
+		/// Provides enumeration over <see cref="Array{TElement}"/>.
 		/// </summary>
 		[StructLayout(LayoutKind.Auto)]
 		public struct Enumerator : IEnumeratorBidi<TElement>, IEquatable<Enumerator> {

@@ -11,7 +11,7 @@ namespace Langly.DataStructures.Trees.Multiway {
 	public abstract class MultiwayNode<TIndex, TElement, TSelf> : TreeNode<TIndex, TElement, TSelf>,
 		ICount,
 		IInsert<TIndex, TElement, TSelf>,
-		IResizable<TSelf>
+		IResize<TSelf>
 		where TSelf : MultiwayNode<TIndex, TElement, TSelf> {
 		/// <summary>
 		/// Holds all of the child nodes.

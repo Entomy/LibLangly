@@ -9,7 +9,7 @@ namespace Langly {
 	/// <remarks>
 	/// This implementation technically leaks an implementation detail, in that the underlying data structure is of a fixed size, and uses array swapping to appear as a dynamic data structure.
 	/// </remarks>
-	public interface IResizable<out TSelf> : ICapacity where TSelf : IResizable<TSelf> {
+	public interface IResize<out TSelf> : ICapacity where TSelf : IResize<TSelf> {
 		/// <summary>
 		/// Phi, the golden ratio.
 		/// </summary>
@@ -41,7 +41,7 @@ namespace Langly {
 		/// Resize the collection to the specified <paramref name="capacity"/>.
 		/// </summary>
 		/// <param name="capacity">The new capacity of the collection.</param>
-		[return: NotNull]
+		[return: MaybeNull]
 		TSelf Resize(nint capacity);
 
 		/// <summary>
@@ -60,21 +60,21 @@ namespace Langly {
 		/// </summary>
 		/// <param name="collection">This collection.</param>
 		[return: MaybeNull, NotNullIfNotNull("collection")]
-		public static TSelf Grow<TSelf>([AllowNull] this IResizable<TSelf> collection) where TSelf : IResizable<TSelf> => collection is not null ? collection.Grow() : default;
+		public static TSelf Grow<TSelf>([AllowNull] this IResize<TSelf> collection) where TSelf : IResize<TSelf> => collection is not null ? collection.Grow() : default;
 
 		/// <summary>
 		/// Resize the collection to the specified <paramref name="capacity"/>.
 		/// </summary>
 		/// <param name="collection">This collection.</param>
 		/// <param name="capacity">The new capacity of the collection.</param>
-		[return: MaybeNull, NotNullIfNotNull("collection")]
-		public static TSelf Resize<TSelf>([AllowNull] this IResizable<TSelf> collection, nint capacity) where TSelf : IResizable<TSelf> => collection is not null ? collection.Resize(capacity) : default;
+		[return: MaybeNull]
+		public static TSelf Resize<TSelf>([AllowNull] this IResize<TSelf> collection, nint capacity) where TSelf : IResize<TSelf> => collection is not null ? collection.Resize(capacity) : default;
 
 		/// <summary>
 		/// Shrinks the collection by a computed factor.
 		/// </summary>
 		/// <param name="collection">This collection.</param>
 		[return: MaybeNull, NotNullIfNotNull("collection")]
-		public static TSelf Shrink<TSelf>([AllowNull] this IResizable<TSelf> collection) where TSelf : IResizable<TSelf> => collection is not null ? collection.Shrink() : default;
+		public static TSelf Shrink<TSelf>([AllowNull] this IResize<TSelf> collection) where TSelf : IResize<TSelf> => collection is not null ? collection.Shrink() : default;
 	}
 }

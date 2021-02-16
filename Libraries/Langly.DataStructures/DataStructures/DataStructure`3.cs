@@ -38,7 +38,7 @@ namespace Langly.DataStructures {
 		/// Copy constructor.
 		/// </summary>
 		/// <param name="filter">The <see cref="Filter{TIndex, TElement}"/> to reuse.</param>
-		protected DataStructure(Filter<nint, TElement> filter) => Filter = filter;
+		protected DataStructure([DisallowNull] Filter<nint, TElement> filter) => Filter = filter;
 
 		/// <inheritdoc/>
 		public virtual nint Count { get; protected set; }

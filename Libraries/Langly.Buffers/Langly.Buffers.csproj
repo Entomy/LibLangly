@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<Description>Provides various premade buffers and a framework for the rapid creation of new buffers.</Description>
+		<Description>Provides buffer types.</Description>
 		<PackageTags>langly, buffer, buffers</PackageTags>
 		<AssemblyName>Langly.Buffers</AssemblyName>
 	</PropertyGroup>
@@ -10,12 +10,8 @@
 		<Compile Include="..\GlobalSuppressions.cs" Link="GlobalSuppressions.cs" />
 	</ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="DataStructures\Buffers\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Langly.DataStructures\Langly.DataStructures.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\Langly.DataStructures\Langly.DataStructures.csproj" />
+	</ItemGroup>
 
 </Project>

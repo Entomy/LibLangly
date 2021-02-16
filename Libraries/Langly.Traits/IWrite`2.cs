@@ -62,6 +62,53 @@ namespace Langly {
 			}
 			return (TResult)this;
 		}
+
+		/// <summary>
+		/// Ensures <paramref name="amount"/> bytes are loaded into this object.
+		/// </summary>
+		/// <typeparam name="TSource">The type of the data source.</typeparam>
+		/// <param name="amount">The amount of <typeparamref name="TElement"/> to have loaded.</param>
+		/// <param name="source">The source to load data from.</param>
+		/// <returns>If the load occurred successfully, returns a <typeparamref name="TResult"/> containing the original and loaded elements; otherwise, <see langword="null"/>.</returns>
+		[return: MaybeNull]
+		TResult EnsureLoaded<TSource>(nint amount, [AllowNull] IRead<TElement, TSource> source) where TSource : IRead<TElement, TSource> {
+			if (source is not null) {
+				for (nint i = 0; i < amount; i++) {
+					Load(source);
+				}
+			}
+			return (TResult)this;
+		}
+
+		/// <summary>
+		/// Loads a byte into this object.
+		/// </summary>
+		/// <typeparam name="TSource">The type of the data source.</typeparam>
+		/// <param name="source">The source to load data from.</param>
+		/// <returns>If the load occurred successfully, returns a <typeparamref name="TResult"/> containing the original and loaded elements; otherwise, <see langword="null"/>.</returns>
+		[return: MaybeNull]
+		TResult Load<TSource>([AllowNull] IRead<TElement, TSource> source) where TSource : IRead<TElement, TSource> {
+			if (source is not null) {
+				source.Read(out TElement element);
+				Write(element);
+			}
+			return (TResult)this;
+		}
+
+		/// <summary>
+		/// Loads <paramref name="amount"/> bytes into this object.
+		/// </summary>
+		/// <typeparam name="TSource">The type of the data source.</typeparam>
+		/// <param name="amount">The amount of elements to load.</param>
+		/// <param name="source">The source to load data from.</param>
+		/// <returns>If the load occurred successfully, returns a <typeparamref name="TResult"/> containing the original and loaded elements; otherwise, <see langword="null"/>.</returns>
+		[return: MaybeNull]
+		TResult Load<TSource>(nint amount, [AllowNull] IRead<TElement, TSource> source) where TSource : IRead<TElement, TSource> {
+			for (nint i = 0; i < amount; i++) {
+				_ = Load(source);
+			}
+			return (TResult)this;
+		}
 	}
 
 	public static partial class TraitExtensions {
@@ -124,5 +171,43 @@ namespace Langly {
 		/// <param name="elements">The <see cref="ReadOnlySpan{T}"/> of <typeparamref name="TElement"/> value to write.</param>
 		[return: MaybeNull]
 		public static TResult Write<TElement, TResult>([AllowNull] this IWrite<TElement, TResult> collection, ReadOnlySpan<TElement> elements) where TResult : IWrite<TElement, TResult> => collection is not null ? collection.Write(elements) : (TResult)collection;
+
+		/// <summary>
+		/// Ensures <paramref name="amount"/> bytes are loaded into this object.
+		/// </summary>
+		/// <typeparam name="TElement">The type of the elements.</typeparam>
+		/// <typeparam name="TResult">The resulting type; often itself.</typeparam>
+		/// <typeparam name="TSource">The type of the data source.</typeparam>
+		/// <param name="collection">This collection.</param>
+		/// <param name="amount">The amount of <typeparamref name="TElement"/> to have loaded.</param>
+		/// <param name="source">The source to load data from.</param>
+		/// <returns>If the load occurred successfully, returns a <typeparamref name="TResult"/> containing the original and loaded elements; otherwise, <see langword="null"/>.</returns>
+		[return: MaybeNull]
+		public static TResult EnsureLoaded<TElement, TResult, TSource>([AllowNull] this IWrite<TElement, TResult> collection, nint amount, [AllowNull] IRead<TElement, TSource> source) where TResult : IWrite<TElement, TResult> where TSource : IRead<TElement, TSource> => collection is not null ? collection.EnsureLoaded(amount, source) : (TResult)collection;
+
+		/// <summary>
+		/// Loads a byte into this object.
+		/// </summary>
+		/// <typeparam name="TElement">The type of the elements.</typeparam>
+		/// <typeparam name="TResult">The resulting type; often itself.</typeparam>
+		/// <typeparam name="TSource">The type of the data source.</typeparam>
+		/// <param name="collection">This collection.</param>
+		/// <param name="source">The source to load data from.</param>
+		/// <returns>If the load occurred successfully, returns a <typeparamref name="TResult"/> containing the original and loaded elements; otherwise, <see langword="null"/>.</returns>
+		[return: MaybeNull]
+		public static TResult Load<TElement, TResult, TSource>([AllowNull] this IWrite<TElement, TResult> collection, [AllowNull] IRead<TElement, TSource> source) where TResult : IWrite<TElement, TResult> where TSource : IRead<TElement, TSource> => collection is not null ? collection.Load(source) : (TResult)collection;
+
+		/// <summary>
+		/// Loads <paramref name="amount"/> bytes into this object.
+		/// </summary>
+		/// <typeparam name="TElement">The type of the elements.</typeparam>
+		/// <typeparam name="TResult">The resulting type; often itself.</typeparam>
+		/// <typeparam name="TSource">The type of the data source.</typeparam>
+		/// <param name="collection">This collection.</param>
+		/// <param name="amount">The amount of elements to load.</param>
+		/// <param name="source">The source to load data from.</param>
+		/// <returns>If the load occurred successfully, returns a <typeparamref name="TResult"/> containing the original and loaded elements; otherwise, <see langword="null"/>.</returns>
+		[return: MaybeNull]
+		public static TResult Load<TElement, TResult, TSource>([AllowNull] this IWrite<TElement, TResult> collection, nint amount, [AllowNull] IRead<TElement, TSource> source) where TResult : IWrite<TElement, TResult> where TSource : IRead<TElement, TSource> => collection is not null ? collection.Load(amount, source) : (TResult)collection;
 	}
 }
