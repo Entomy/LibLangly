@@ -21,7 +21,7 @@ namespace Langly.DataStructures.Lists {
 		/// </summary>
 		[MaybeNull, AllowNull]
 		private Node Head;
-
+		
 		/// <summary>
 		/// The tail node of the chain.
 		/// </summary>

@@ -28,12 +28,7 @@ namespace Langly {
 		/// The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.
 		/// </remarks>
 		[return: MaybeNull]
-		TResult Add([AllowNull] params TElement[] elements) {
-			if (elements is null) {
-				return (TResult)this;
-			}
-			return Add(elements.AsMemory());
-		}
+		TResult Add([AllowNull] params TElement[] elements) => elements is not null ? Add(elements.AsMemory()) : (TResult)this;
 
 		/// <summary>
 		/// Adds the elements to this object.
@@ -78,10 +73,15 @@ namespace Langly {
 		/// </remarks>
 		[return: MaybeNull]
 		TResult Add(ReadOnlySpan<TElement> elements) {
+			TResult result = (TResult)this;
 			foreach (TElement element in elements) {
-				_ = Add(element);
+				result = result.Add(element);
+				if (result is null) {
+					goto Result;
+				}
 			}
-			return (TResult)this;
+		Result:
+			return result;
 		}
 
 		/// <summary>
@@ -95,13 +95,17 @@ namespace Langly {
 		/// </remarks>
 		[return: MaybeNull]
 		TResult Add<TEnumerator>([AllowNull] ISequence<TElement, TEnumerator> elements) where TEnumerator : IEnumerator<TElement> {
-			if (elements is null) {
-				return (TResult)this;
+			TResult result = (TResult)this;
+			if (elements is not null) {
+				foreach (TElement element in elements) {
+					result = result.Add(element);
+					if (result is null) {
+						goto Result;
+					}
+				}
 			}
-			foreach (TElement element in elements) {
-				_ = Add(element);
-			}
-			return (TResult)this;
+		Result:
+			return result;
 		}
 	}
 
@@ -132,7 +136,7 @@ namespace Langly {
 		/// The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.
 		/// </remarks>
 		[return: MaybeNull]
-		public static TResult Add<TElement, TResult>([AllowNull] this IAdd<TElement, TResult> collection, [AllowNull] TElement[] elements) where TResult : IAdd<TElement, TResult> => collection is not null ? collection.Add(elements) : (TResult)collection;
+		public static TResult Add<TElement, TResult>([AllowNull] this IAdd<TElement, TResult> collection, [AllowNull] params TElement[] elements) where TResult : IAdd<TElement, TResult> => collection is not null ? collection.Add(elements) : (TResult)collection;
 
 		/// <summary>
 		/// Adds the elements to this collection.

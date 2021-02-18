@@ -13,6 +13,6 @@ namespace Langly {
 		/// </summary>
 		/// <param name="index">The index of the element to get a reference for.</param>
 		/// <returns>A read-only reference to the element at the specified index.</returns>
-		ref readonly TElement this[TIndex index] { get; }
+		ref readonly TElement this[[DisallowNull] TIndex index] { get; }
 	}
 }

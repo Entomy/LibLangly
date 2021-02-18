@@ -5,11 +5,11 @@ namespace Langly {
 	/// <summary>
 	/// Indicates the type is resizable.
 	/// </summary>
-	/// <typeparam name="TSelf">The implementing type; itself.</typeparam>
+	/// <typeparam name="TResult">The resulting type; often itself.</typeparam>
 	/// <remarks>
 	/// This implementation technically leaks an implementation detail, in that the underlying data structure is of a fixed size, and uses array swapping to appear as a dynamic data structure.
 	/// </remarks>
-	public interface IResize<out TSelf> : ICapacity where TSelf : IResize<TSelf> {
+	public interface IResize<out TResult> : ICapacity where TResult : IResize<TResult> {
 		/// <summary>
 		/// Phi, the golden ratio.
 		/// </summary>
@@ -27,31 +27,21 @@ namespace Langly {
 		/// <summary>
 		/// Grows the collection by a computed factor.
 		/// </summary>
-		[return: NotNull]
-		TSelf Grow() {
-			if (Capacity <= 8) {
-				Resize(13);
-			} else {
-				Resize((nint)(Capacity * φ));
-			}
-			return (TSelf)this;
-		}
+		[return: MaybeNull]
+		TResult Grow() => Capacity <= 8 ? Resize(13) : Resize((nint)(Capacity * φ));
 
 		/// <summary>
 		/// Resize the collection to the specified <paramref name="capacity"/>.
 		/// </summary>
 		/// <param name="capacity">The new capacity of the collection.</param>
 		[return: MaybeNull]
-		TSelf Resize(nint capacity);
+		TResult Resize(nint capacity);
 
 		/// <summary>
 		/// Shrinks the collection by a computed factor.
 		/// </summary>
-		[return: NotNull]
-		TSelf Shrink() {
-			Resize((nint)(Capacity / φ));
-			return (TSelf)this;
-		}
+		[return: MaybeNull]
+		TResult Shrink() => Resize((nint)(Capacity / φ));
 	}
 
 	public static partial class TraitExtensions {

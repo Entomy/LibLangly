@@ -6,7 +6,7 @@ namespace Langly {
 	/// Indicates the type can be seeked.
 	/// </summary>
 	/// <typeparam name="TElement">The type of the element to seek.</typeparam>
-	/// <typeparam name="TResult">The resulting type; often itself..</typeparam>
+	/// <typeparam name="TResult">The resulting type; often itself.</typeparam>
 	public interface ISeek<TElement, out TResult> where TResult : ISeek<TElement, TResult> {
 		/// <summary>
 		/// Can this be seeked?

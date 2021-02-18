@@ -5,14 +5,14 @@ namespace Langly {
 	/// Indicates the type can have its first element peeked at.
 	/// </summary>
 	/// <typeparam name="TElement">The type of the elements.</typeparam>
-	/// <typeparam name="TSelf">The implementing type; itself.</typeparam>
-	public interface IPeek<TElement, out TSelf> : IRead<TElement, TSelf> where TSelf : IPeek<TElement, TSelf> {
+	/// <typeparam name="TResult">The resulting type; often itself.</typeparam>
+	public interface IPeek<TElement, out TResult> : IRead<TElement, TResult> where TResult : IPeek<TElement, TResult> {
 		/// <summary>
 		/// Peeks at the first element.
 		/// </summary>
 		/// <param name="element">The <typeparamref name="TElement"/> value that was peeked.</param>
 		[return: MaybeNull]
-		TSelf Peek([MaybeNull] out TElement element);
+		TResult Peek([MaybeNull] out TElement element);
 	}
 
 	public static partial class TraitExtensions {
@@ -20,15 +20,15 @@ namespace Langly {
 		/// Peeks at the first element.
 		/// </summary>
 		/// <typeparam name="TElement">The type of the elements.</typeparam>
-		/// <typeparam name="TSelf">The resulting type; often itself.</typeparam>
+		/// <typeparam name="TResult">The resulting type; often itself.</typeparam>
 		/// <param name="collection">This collection.</param>
 		/// <param name="element">The peeked element.</param>
 		/// <returns>This object, unchanged.</returns>
 		[return: MaybeNull]
-		public static TSelf Peek<TElement, TSelf>([AllowNull] this IPeek<TElement, TSelf> collection, [MaybeNull] out TElement element) where TSelf : IPeek<TElement, TSelf> {
+		public static TResult Peek<TElement, TResult>([AllowNull] this IPeek<TElement, TResult> collection, [MaybeNull] out TElement element) where TResult : IPeek<TElement, TResult> {
 			if (collection is null) {
 				element = default;
-				return (TSelf)collection;
+				return (TResult)collection;
 			}
 			return collection.Peek(out element);
 		}

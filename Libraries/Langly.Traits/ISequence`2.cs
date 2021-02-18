@@ -16,12 +16,11 @@ namespace Langly {
 		System.Collections.Generic.IEnumerable<TMember>
 		where TEnumerator : IEnumerator<TMember> {
 		/// <inheritdoc/>
-		Boolean IContains<TMember>.Contains(TMember element) {
-			TEnumerator ths = GetEnumerator();
-			while (ths.MoveNext()) {
-				if (ths.Current is null && element is null) {
+		Boolean IContains<TMember>.Contains([AllowNull] TMember element) {
+			foreach (TMember item in this) {
+				if (item is null && element is null) {
 					return true;
-				} else if (element?.Equals(ths.Current) ?? false) {
+				} else if (element?.Equals(item) ?? false) {
 					return true;
 				}
 			}
@@ -40,9 +39,13 @@ namespace Langly {
 		/// </remarks>
 		TMember Fold([DisallowNull] Func<TMember, TMember, TMember> func, TMember identity) {
 			TMember result = identity;
+			if (func is null) {
+				goto Result;
+			}
 			foreach (TMember item in this) {
 				result = func(result, item);
 			}
+		Result:
 			return result;
 		}
 
@@ -67,10 +70,12 @@ namespace Langly {
 		/// <param name="element">The element to count.</param>
 		/// <returns>The amount of occurrences found.</returns>
 		[SuppressMessage("Performance", "HAA0601:Value type to reference type conversion causing boxing allocation", Justification = "There's nothing I can do about this.")]
-		nint Occurrences([DisallowNull] TMember element) {
+		nint Occurrences([AllowNull] TMember element) {
 			nint count = 0;
 			foreach (TMember item in this) {
-				if (element.Equals(item)) {
+				if (item is null && element is null) {
+					count++;
+				} else if (element?.Equals(item) ?? false) {
 					count++;
 				}
 			}
@@ -82,10 +87,12 @@ namespace Langly {
 		/// </summary>
 		/// <param name="element">The element to count.</param>
 		/// <returns>The amount of occurrences found.</returns>
-		nint Occurrences([DisallowNull] IEquals<TMember> element) {
+		nint Occurrences([AllowNull] IEquals<TMember> element) {
 			nint count = 0;
 			foreach (TMember item in this) {
-				if (element.Equals(item)) {
+				if (item is null && element is null) {
+					count++;
+				} else if (element?.Equals(item) ?? false) {
 					count++;
 				}
 			}
@@ -97,10 +104,12 @@ namespace Langly {
 		/// </summary>
 		/// <param name="predicate">The <see cref="Predicate{T}"/> describing a match of the elements to count.</param>
 		/// <returns>The amount of occurrences found.</returns>
-		nint Occurrences([DisallowNull] Predicate<TMember> predicate) {
+		nint Occurrences([AllowNull] Predicate<TMember> predicate) {
 			nint count = 0;
 			foreach (TMember item in this) {
-				if (predicate(item)) {
+				if (item is null && predicate is null) {
+					count++;
+				} else if (predicate?.Invoke(item) ?? false) {
 					count++;
 				}
 			}
@@ -122,12 +131,8 @@ namespace Langly {
 		/// <para><paramref name="func"/> is a magma, so associativity like left-fold and right-fold are completely irrelevant.</para>
 		/// <para><paramref name="identity"/> is required as a start point for the fold. It needs to be the identity of the <paramref name="func"/> to function properly. For example, the identity of addition is <c>0</c>, and the identity of multiplication is <c>1</c>. Without an appropriate identity, the results will be wrong.</para>
 		/// </remarks>
-		public static TElement Fold<TElement, TEnumerator>([AllowNull] this ISequence<TElement, TEnumerator> collection, [AllowNull] Func<TElement, TElement, TElement> func, TElement identity) where TEnumerator : IEnumerator<TElement> {
-			if (collection is null || func is null) {
-				return identity;
-			}
-			return collection.Fold(func, identity);
-		}
+		[return: MaybeNull]
+		public static TElement Fold<TElement, TEnumerator>([AllowNull] this ISequence<TElement, TEnumerator> collection, [DisallowNull] Func<TElement, TElement, TElement> func, TElement identity) where TEnumerator : IEnumerator<TElement> => collection is not null ? collection.Fold(func, identity) : (TElement)collection;
 
 		/// <summary>
 		/// Count all occurrences of <paramref name="element"/> in the collection.

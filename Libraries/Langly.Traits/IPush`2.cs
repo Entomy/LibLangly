@@ -55,10 +55,15 @@ namespace Langly {
 		/// <returns>The result of pushing the <paramref name="elements"/> onto this object.</returns>
 		[return: MaybeNull]
 		TResult Push(ReadOnlySpan<TElement> elements) {
+			TResult result = (TResult)this;
 			foreach (TElement element in elements) {
-				_ = Push(element);
+				result = result.Push(element);
+				if (result is null) {
+					goto Result;
+				}
 			}
-			return (TResult)this;
+		Result:
+			return result;
 		}
 
 		/// <summary>
@@ -69,12 +74,17 @@ namespace Langly {
 		/// <returns>The result of pushing the <paramref name="elements"/> onto this object.</returns>
 		[return: MaybeNull]
 		TResult Push<TEnumerator>([AllowNull] ISequence<TElement, TEnumerator> elements) where TEnumerator : IEnumerator<TElement> {
+			TResult result = (TResult)this;
 			if (elements is not null) {
 				foreach (TElement element in elements) {
-					_ = Push(element);
+					result = result.Push(element);
+					if (result is null) {
+						goto Result;
+					}
 				}
 			}
-			return (TResult)this;
+		Result:
+			return result;
 		}
 	}
 

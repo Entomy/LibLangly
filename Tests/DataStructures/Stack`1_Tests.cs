@@ -10,9 +10,9 @@ namespace Langly.DataStructures {
 			Stack<Int32> stack = new Stack<Int32>().Push(values);
 			Assert.Equal(expected.Length, stack.Count);
 			Assert.Equal(expected, stack);
-			stack.Pop(expected.Length, out Int32[] vals);
+			stack.Pop(expected.Length, out ReadOnlyMemory<Int32> vals);
 			Assert.Equal(0, stack.Count);
-			Assert.Equal(expected, vals);
+			Assert.Equal(expected, vals.ToArray());
 		}
 	}
 }

@@ -4,13 +4,13 @@ namespace Langly {
 	/// <summary>
 	/// Indicates the type can be cleared.
 	/// </summary>
-	/// <typeparam name="TSelf">The implementing type; itself.</typeparam>
-	public interface IClear<out TSelf> where TSelf : IClear<TSelf> {
+	/// <typeparam name="TResult">The resulting type; often itself.</typeparam>
+	public interface IClear<out TResult> where TResult : IClear<TResult> {
 		/// <summary>
 		/// Clears this collection.
 		/// </summary>
 		[return: NotNull]
-		TSelf Clear();
+		TResult Clear();
 	}
 
 	public static partial class TraitExtensions {

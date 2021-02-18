@@ -15,7 +15,7 @@ namespace Langly {
 		/// <param name="elements">The elements to insert.</param>
 		/// <returns>If the insert occurred successfully, returns a <typeparamref name="TResult"/> containing the original and inserted elements; otherwise, <see langword="null"/>.</returns>
 		[return: MaybeNull]
-		TResult Insert(nint index, [AllowNull] params TElement[] elements) => Insert(index, elements.AsMemory());
+		TResult Insert(nint index, [AllowNull] params TElement[] elements) => elements is not null ? Insert(index, elements.AsMemory()) : (TResult)this;
 
 		/// <summary>
 		/// Inserts the elements into the collection at the specified index.
@@ -52,10 +52,11 @@ namespace Langly {
 		/// <returns>If the insert occurred successfully, returns a <typeparamref name="TResult"/> containing the original and inserted elements; otherwise, <see langword="null"/>.</returns>
 		[return: MaybeNull]
 		TResult Insert(nint index, ReadOnlySpan<TElement> elements) {
+			TResult result = (TResult)this;
 			foreach (TElement element in elements) {
-				_ = ((IInsert<nint, TElement, TResult>)this).Insert(index++, element);
+				result = ((IInsert<nint, TElement, TResult>)result).Insert(index++, element);
 			}
-			return (TResult)this;
+			return result;
 		}
 
 		/// <summary>
@@ -66,12 +67,13 @@ namespace Langly {
 		/// <returns>If the insert occurred successfully, returns a <typeparamref name="TResult"/> containing the original and inserted elements; otherwise, <see langword="null"/>.</returns>
 		[return: MaybeNull]
 		TResult Insert<TEnumerator>(nint index, [AllowNull] ISequence<TElement, TEnumerator> elements) where TEnumerator : IEnumerator<TElement> {
+			TResult result = (TResult)this;
 			if (elements is not null) {
 				foreach (TElement element in elements) {
-					_ = ((IInsert<nint, TElement, TResult>)this).Insert(index++, element);
+					result = ((IInsert<nint, TElement, TResult>)result).Insert(index++, element);
 				}
 			}
-			return (TResult)this;
+			return result;
 		}
 	}
 

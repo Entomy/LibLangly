@@ -16,6 +16,7 @@ namespace Langly {
 		new TElement this[[DisallowNull] TIndex index] { get; set; }
 
 		/// <inheritdoc/>
-		TElement IIndexReadOnly<TIndex, TElement>.this[TIndex index] => this[index];
+		[AllowNull, MaybeNull]
+		TElement IIndexReadOnly<TIndex, TElement>.this[[DisallowNull] TIndex index] => this[index];
 	}
 }

@@ -13,6 +13,6 @@ namespace Langly {
 		/// <param name="index">The index of the element to get.</param>
 		/// <returns>The element at the specified index.</returns>
 		[AllowNull, MaybeNull]
-		TElement this[TIndex index] { get; }
+		TElement this[[DisallowNull] TIndex index] { get; }
 	}
 }
