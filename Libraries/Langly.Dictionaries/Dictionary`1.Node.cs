@@ -11,12 +11,6 @@ namespace Langly {
 		private sealed class Node : MultiwayNode<Char, TElement, Node>,
 			IIndex<Char, TElement> {
 			/// <summary>
-			/// The element of this node.
-			/// </summary>
-			[AllowNull, MaybeNull]
-			public TElement Element;
-
-			/// <summary>
 			/// The <see cref="Filter{TIndex, TElement}"/> being used.
 			/// </summary>
 			/// <remarks>
@@ -26,11 +20,6 @@ namespace Langly {
 			private readonly Filter<Char, TElement> Filter;
 
 			/// <summary>
-			/// The index of this node.
-			/// </summary>
-			private readonly Char Index;
-
-			/// <summary>
 			/// Initializes a new <see cref="Node"/>.
 			/// </summary>
 			/// <param name="index">The index of this node.</param>
@@ -38,11 +27,7 @@ namespace Langly {
 			/// <param name="filter">The <see cref="Filter{TIndex, TElement}"/> to reuse.</param>
 			/// <param name="parent">The parent node of this node.</param>
 			/// <param name="children">The child nodes of this node.</param>
-			public Node(Char index, [AllowNull] TElement element, [DisallowNull] Filter<Char, TElement> filter, [DisallowNull] Node parent, [DisallowNull] params Node[] children) : base(parent, children) {
-				Index = index;
-				Element = element;
-				Filter = filter;
-			}
+			public Node(Char index, [AllowNull] TElement element, [DisallowNull] Filter<Char, TElement> filter, [DisallowNull] Node parent, [DisallowNull] params Node[] children) : base(index, element, parent, children) => Filter = filter;
 
 			/// <inheritdoc/>
 			[AllowNull, MaybeNull]
@@ -100,9 +85,6 @@ namespace Langly {
 				}
 				return this;
 			}
-
-			/// <inheritdoc/>
-			public override String ToString() => $"{Index}:{Element}";
 		}
 	}
 }

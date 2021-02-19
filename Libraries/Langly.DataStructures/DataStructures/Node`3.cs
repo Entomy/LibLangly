@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Langly.DataStructures.Lists {
+namespace Langly.DataStructures {
 	/// <summary>
 	/// Represents the base node type of any associative data structure.
 	/// </summary>

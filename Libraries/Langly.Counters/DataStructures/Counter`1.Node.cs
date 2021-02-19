@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
-using Langly.DataStructures.Lists;
+using Langly.DataStructures;
 
 namespace Langly.DataStructures {
 	public partial class Counter<TElement> {

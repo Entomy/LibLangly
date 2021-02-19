@@ -22,9 +22,11 @@ namespace Langly.DataStructures.Trees.Multiway {
 		/// <summary>
 		/// Initializes a new <see cref="MultiwayNode{TIndex, TElement, TSelf}"/>.
 		/// </summary>
+		/// <param name="index">The index of this node.</param>
+		/// <param name="element">The element of this node.</param>
 		/// <param name="parent">The parent node of this node.</param>
 		/// <param name="children">The child nodes of this node.</param>
-		protected MultiwayNode([DisallowNull] TSelf parent, [DisallowNull] params TSelf[] children) : base(parent) => Children = children;
+		protected MultiwayNode([AllowNull] TIndex index, [AllowNull] TElement element, [DisallowNull] TSelf parent, [DisallowNull] params TSelf[] children) : base(index, element, parent) => Children = children;
 
 		/// <inheritdoc/>
 		public nint Capacity {
