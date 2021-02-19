@@ -3,7 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace Langly.DataStructures.Trees {
 	/// <summary>
-	/// Represents the base node type of any tree.
+	/// Represents the base node type of any associative tree.
 	/// </summary>
 	/// <typeparam name="TIndex">The type of the indicies of the nodes.</typeparam>
 	/// <typeparam name="TElement">The type contained in the node.</typeparam>

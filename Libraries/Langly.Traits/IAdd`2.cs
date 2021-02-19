@@ -198,8 +198,8 @@ namespace Langly {
 		/// Adds the elements to this collection.
 		/// </summary>
 		/// <typeparam name="TElement">The type of the elements.</typeparam>
-		/// <typeparam name="TEnumerator">The type of the enumerator of the <paramref name="elements"/>.</typeparam>
 		/// <typeparam name="TResult">The resulting type; often itself.</typeparam>
+		/// <typeparam name="TEnumerator">The type of the enumerator of the <paramref name="elements"/>.</typeparam>
 		/// <param name="collection">This collection.</param>
 		/// <param name="elements">The elements to add.</param>
 		/// <returns>If the add occurred successfully, returns a <typeparamref name="TResult"/> containing the original and added elements; otherwise, <see langword="null"/>.</returns>
@@ -207,6 +207,6 @@ namespace Langly {
 		/// The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.
 		/// </remarks>
 		[return: MaybeNull]
-		public static TResult Add<TElement, TEnumerator, TResult>([AllowNull] this IAdd<TElement, TResult> collection, [AllowNull] ISequence<TElement, TEnumerator> elements) where TEnumerator : IEnumerator<TElement> where TResult : IAdd<TElement, TResult> => collection is not null ? collection.Add(elements) : (TResult)collection;
+		public static TResult Add<TElement, TResult, TEnumerator>([AllowNull] this IAdd<TElement, TResult> collection, [AllowNull] ISequence<TElement, TEnumerator> elements) where TEnumerator : IEnumerator<TElement> where TResult : IAdd<TElement, TResult> => collection is not null ? collection.Add(elements) : (TResult)collection;
 	}
 }
