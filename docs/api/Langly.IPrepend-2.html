@@ -80,7 +80,8 @@
   <h6><strong>Assembly</strong>: Langly.Traits.dll</h6>
   <h5 id="Langly_IPrepend_2_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IPrepend&lt;TElement, out TResult&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IPrepend&lt;TElement, out TResult&gt;
+    where TResult : IPrepend&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -210,7 +211,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IPrepend_2_Prepend_System_Memory__0__.md&amp;value=---%0Auid%3A%20Langly.IPrepend%602.Prepend(System.Memory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IPrepend`2.cs/#L37">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IPrepend`2.cs/#L32">View Source</a>
   </span>
   <a id="Langly_IPrepend_2_Prepend_" data-uid="Langly.IPrepend`2.Prepend*"></a>
   <h4 id="Langly_IPrepend_2_Prepend_System_Memory__0__" data-uid="Langly.IPrepend`2.Prepend(System.Memory{`0})">Prepend(Memory&lt;TElement&gt;)</h4>
@@ -260,7 +261,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IPrepend_2_Prepend_System_ReadOnlyMemory__0__.md&amp;value=---%0Auid%3A%20Langly.IPrepend%602.Prepend(System.ReadOnlyMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IPrepend`2.cs/#L45">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IPrepend`2.cs/#L40">View Source</a>
   </span>
   <a id="Langly_IPrepend_2_Prepend_" data-uid="Langly.IPrepend`2.Prepend*"></a>
   <h4 id="Langly_IPrepend_2_Prepend_System_ReadOnlyMemory__0__" data-uid="Langly.IPrepend`2.Prepend(System.ReadOnlyMemory{`0})">Prepend(ReadOnlyMemory&lt;TElement&gt;)</h4>
@@ -310,7 +311,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IPrepend_2_Prepend_System_ReadOnlySpan__0__.md&amp;value=---%0Auid%3A%20Langly.IPrepend%602.Prepend(System.ReadOnlySpan%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IPrepend`2.cs/#L61">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IPrepend`2.cs/#L56">View Source</a>
   </span>
   <a id="Langly_IPrepend_2_Prepend_" data-uid="Langly.IPrepend`2.Prepend*"></a>
   <h4 id="Langly_IPrepend_2_Prepend_System_ReadOnlySpan__0__" data-uid="Langly.IPrepend`2.Prepend(System.ReadOnlySpan{`0})">Prepend(ReadOnlySpan&lt;TElement&gt;)</h4>
@@ -360,7 +361,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IPrepend_2_Prepend_System_Span__0__.md&amp;value=---%0Auid%3A%20Langly.IPrepend%602.Prepend(System.Span%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IPrepend`2.cs/#L53">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IPrepend`2.cs/#L48">View Source</a>
   </span>
   <a id="Langly_IPrepend_2_Prepend_" data-uid="Langly.IPrepend`2.Prepend*"></a>
   <h4 id="Langly_IPrepend_2_Prepend_System_Span__0__" data-uid="Langly.IPrepend`2.Prepend(System.Span{`0})">Prepend(Span&lt;TElement&gt;)</h4>
@@ -405,6 +406,73 @@
       </tr>
     </tbody>
   </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IPrepend_2_Prepend__1_Langly_ISequence__0___0__.md&amp;value=---%0Auid%3A%20Langly.IPrepend%602.Prepend%60%601(Langly.ISequence%7B%600%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IPrepend`2.cs/#L75">View Source</a>
+  </span>
+  <a id="Langly_IPrepend_2_Prepend_" data-uid="Langly.IPrepend`2.Prepend*"></a>
+  <h4 id="Langly_IPrepend_2_Prepend__1_Langly_ISequence__0___0__" data-uid="Langly.IPrepend`2.Prepend``1(Langly.ISequence{`0,``0})">Prepend&lt;TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;)</h4>
+  <div class="markdown level1 summary"><p>Prepends the elements onto this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">virtual TResult Prepend&lt;TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt; elements)
+    where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ISequence-2.html">ISequence</a>&lt;TElement, TEnumerator&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to prepend.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TResult</span></td>
+        <td><p>If the prepend occurred successfully, returns a <code data-dev-comment-type="typeparamref" class="typeparamref">TResult</code> containing the original and prepended elements; otherwise, <span class="xref">null</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TEnumerator</span></td>
+        <td><p>The type of the enumerator for the <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Prepend__2_Langly_IPrepend___0___1____0_">TraitExtensions.Prepend&lt;TElement, TResult&gt;(IPrepend&lt;TElement, TResult&gt;, TElement)</a>
@@ -423,6 +491,9 @@
   </div>
   <div>
       <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Prepend__2_Langly_IPrepend___0___1__System_ReadOnlySpan___0__">TraitExtensions.Prepend&lt;TElement, TResult&gt;(IPrepend&lt;TElement, TResult&gt;, ReadOnlySpan&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Prepend__3_Langly_IPrepend___0___1__Langly_ISequence___0___2__">TraitExtensions.Prepend&lt;TElement, TResult, TEnumerator&gt;(IPrepend&lt;TElement, TResult&gt;, ISequence&lt;TElement, TEnumerator&gt;)</a>
   </div>
 </article>
           </div>

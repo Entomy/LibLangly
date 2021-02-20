@@ -80,8 +80,9 @@
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
     <div class="level1"><a class="xref" href="Langly.Record-1.html">Record</a>&lt;TSelf&gt;</div>
-    <div class="level2"><a class="xref" href="Langly.DataStructures.Trees.TreeNode-3.html">TreeNode</a>&lt;TIndex, TElement, TSelf&gt;</div>
-    <div class="level3"><span class="xref">MultiwayNode&lt;TIndex, TElement, TSelf&gt;</span></div>
+    <div class="level2"><a class="xref" href="Langly.DataStructures.Node-3.html">Node</a>&lt;TIndex, TElement, TSelf&gt;</div>
+    <div class="level3"><a class="xref" href="Langly.DataStructures.Trees.TreeNode-3.html">TreeNode</a>&lt;TIndex, TElement, TSelf&gt;</div>
+    <div class="level4"><span class="xref">MultiwayNode&lt;TIndex, TElement, TSelf&gt;</span></div>
   </div>
   <div classs="implements">
     <h5>Implements</h5>
@@ -94,7 +95,7 @@
     <div><a class="xref" href="Langly.IReplace-3.html">IReplace</a>&lt;TElement, TElement, TSelf&gt;</div>
     <div><a class="xref" href="Langly.ICount.html">ICount</a></div>
     <div><a class="xref" href="Langly.IInsert-3.html">IInsert</a>&lt;TIndex, TElement, TSelf&gt;</div>
-    <div><a class="xref" href="Langly.IResizable-1.html">IResizable</a>&lt;TSelf&gt;</div>
+    <div><a class="xref" href="Langly.IResize-1.html">IResize</a>&lt;TSelf&gt;</div>
     <div><a class="xref" href="Langly.ICapacity.html">ICapacity</a></div>
   </div>
   <div class="inheritedMembers">
@@ -103,10 +104,22 @@
       <a class="xref" href="Langly.DataStructures.Trees.TreeNode-3.html#Langly_DataStructures_Trees_TreeNode_3_Parent">TreeNode&lt;TIndex, TElement, TSelf&gt;.Parent</a>
     </div>
     <div>
-      <a class="xref" href="Langly.DataStructures.Trees.TreeNode-3.html#Langly_DataStructures_Trees_TreeNode_3_Contains__1_">TreeNode&lt;TIndex, TElement, TSelf&gt;.Contains(TElement)</a>
+      <a class="xref" href="Langly.DataStructures.Node-3.html#Langly_DataStructures_Node_3_Element">Node&lt;TIndex, TElement, TSelf&gt;.Element</a>
     </div>
     <div>
-      <a class="xref" href="Langly.DataStructures.Trees.TreeNode-3.html#Langly_DataStructures_Trees_TreeNode_3_Replace__1__1_">TreeNode&lt;TIndex, TElement, TSelf&gt;.Replace(TElement, TElement)</a>
+      <a class="xref" href="Langly.DataStructures.Node-3.html#Langly_DataStructures_Node_3_Index">Node&lt;TIndex, TElement, TSelf&gt;.Index</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.DataStructures.Node-3.html#Langly_DataStructures_Node_3_Contains__1_">Node&lt;TIndex, TElement, TSelf&gt;.Contains(TElement)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.DataStructures.Node-3.html#Langly_DataStructures_Node_3_Equals__2_">Node&lt;TIndex, TElement, TSelf&gt;.Equals(TSelf)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.DataStructures.Node-3.html#Langly_DataStructures_Node_3_Replace__1__1_">Node&lt;TIndex, TElement, TSelf&gt;.Replace(TElement, TElement)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.DataStructures.Node-3.html#Langly_DataStructures_Node_3_ToString">Node&lt;TIndex, TElement, TSelf&gt;.ToString()</a>
     </div>
     <div>
       <a class="xref" href="Langly.Record-1.html#Langly_Record_1_Equals__0_">Record&lt;TSelf&gt;.Equals(TSelf)</a>
@@ -140,7 +153,7 @@
   <h6><strong>Assembly</strong>: Langly.Trees.dll</h6>
   <h5 id="Langly_DataStructures_Trees_Multiway_MultiwayNode_3_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class MultiwayNode&lt;TIndex, TElement, TSelf&gt; : TreeNode&lt;TIndex, TElement, TSelf&gt;, IEquals&lt;TSelf&gt;, IEquatable&lt;TSelf&gt;, IEquals&lt;IEquals&lt;TSelf&gt;&gt;, IEquatable&lt;IEquals&lt;TSelf&gt;&gt;, IContains&lt;TElement&gt;, IReplace&lt;TElement, TSelf&gt;, IReplace&lt;TElement, TElement, TSelf&gt;, ICount, IInsert&lt;TIndex, TElement, TSelf&gt;, IResizable&lt;TSelf&gt;, ICapacity where TSelf : MultiwayNode&lt;TIndex, TElement, TSelf&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class MultiwayNode&lt;TIndex, TElement, TSelf&gt; : TreeNode&lt;TIndex, TElement, TSelf&gt;, IEquals&lt;TSelf&gt;, IEquatable&lt;TSelf&gt;, IEquals&lt;IEquals&lt;TSelf&gt;&gt;, IEquatable&lt;IEquals&lt;TSelf&gt;&gt;, IContains&lt;TElement&gt;, IReplace&lt;TElement, TSelf&gt;, IReplace&lt;TElement, TElement, TSelf&gt;, ICount, IInsert&lt;TIndex, TElement, TSelf&gt;, IResize&lt;TSelf&gt;, ICapacity where TSelf : MultiwayNode&lt;TIndex, TElement, TSelf&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -172,19 +185,19 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Trees_Multiway_MultiwayNode_3__ctor__2__2___.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Trees.Multiway.MultiwayNode%603.%23ctor(%602%2C%602%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Trees_Multiway_MultiwayNode_3__ctor__0__1__2__2___.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Trees.Multiway.MultiwayNode%603.%23ctor(%600%2C%601%2C%602%2C%602%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Trees/DataStructures/Trees/Multiway/MultiwayNode`3.cs/#L27">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Trees/DataStructures/Trees/Multiway/MultiwayNode`3.cs/#L29">View Source</a>
   </span>
   <a id="Langly_DataStructures_Trees_Multiway_MultiwayNode_3__ctor_" data-uid="Langly.DataStructures.Trees.Multiway.MultiwayNode`3.#ctor*"></a>
-  <h4 id="Langly_DataStructures_Trees_Multiway_MultiwayNode_3__ctor__2__2___" data-uid="Langly.DataStructures.Trees.Multiway.MultiwayNode`3.#ctor(`2,`2[])">MultiwayNode(TSelf, TSelf[])</h4>
+  <h4 id="Langly_DataStructures_Trees_Multiway_MultiwayNode_3__ctor__0__1__2__2___" data-uid="Langly.DataStructures.Trees.Multiway.MultiwayNode`3.#ctor(`0,`1,`2,`2[])">MultiwayNode(TIndex, TElement, TSelf, TSelf[])</h4>
   <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Langly.DataStructures.Trees.Multiway.MultiwayNode-3.html">MultiwayNode&lt;TIndex, TElement, TSelf&gt;</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected MultiwayNode(TSelf parent, params TSelf[] children)</code></pre>
+    <pre><code class="lang-csharp hljs">protected MultiwayNode(TIndex index, TElement element, TSelf parent, params TSelf[] children)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -196,6 +209,18 @@
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <td><span class="xref">TIndex</span></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>The index of this node.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element of this node.</p>
+</td>
+      </tr>
       <tr>
         <td><span class="xref">TSelf</span></td>
         <td><span class="parametername">parent</span></td>
@@ -249,7 +274,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Trees_Multiway_MultiwayNode_3_Capacity.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Trees.Multiway.MultiwayNode%603.Capacity%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Trees/DataStructures/Trees/Multiway/MultiwayNode`3.cs/#L30">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Trees/DataStructures/Trees/Multiway/MultiwayNode`3.cs/#L32">View Source</a>
   </span>
   <a id="Langly_DataStructures_Trees_Multiway_MultiwayNode_3_Capacity_" data-uid="Langly.DataStructures.Trees.Multiway.MultiwayNode`3.Capacity*"></a>
   <h4 id="Langly_DataStructures_Trees_Multiway_MultiwayNode_3_Capacity" data-uid="Langly.DataStructures.Trees.Multiway.MultiwayNode`3.Capacity">Capacity</h4>
@@ -279,7 +304,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Trees_Multiway_MultiwayNode_3_Count.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Trees.Multiway.MultiwayNode%603.Count%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Trees/DataStructures/Trees/Multiway/MultiwayNode`3.cs/#L36">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Trees/DataStructures/Trees/Multiway/MultiwayNode`3.cs/#L38">View Source</a>
   </span>
   <a id="Langly_DataStructures_Trees_Multiway_MultiwayNode_3_Count_" data-uid="Langly.DataStructures.Trees.Multiway.MultiwayNode`3.Count*"></a>
   <h4 id="Langly_DataStructures_Trees_Multiway_MultiwayNode_3_Count" data-uid="Langly.DataStructures.Trees.Multiway.MultiwayNode`3.Count">Count</h4>
@@ -311,7 +336,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Trees_Multiway_MultiwayNode_3_Contains__1_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Trees.Multiway.MultiwayNode%603.Contains(%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Trees/DataStructures/Trees/Multiway/MultiwayNode`3.cs/#L39">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Trees/DataStructures/Trees/Multiway/MultiwayNode`3.cs/#L41">View Source</a>
   </span>
   <a id="Langly_DataStructures_Trees_Multiway_MultiwayNode_3_Contains_" data-uid="Langly.DataStructures.Trees.Multiway.MultiwayNode`3.Contains*"></a>
   <h4 id="Langly_DataStructures_Trees_Multiway_MultiwayNode_3_Contains__1_" data-uid="Langly.DataStructures.Trees.Multiway.MultiwayNode`3.Contains(`1)">Contains(TElement)</h4>
@@ -357,13 +382,13 @@
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">Langly.DataStructures.Trees.TreeNode&lt;TIndex, TElement, TSelf&gt;.Contains(TElement)</span></div>
+  <div><span class="xref">Langly.DataStructures.Node&lt;TIndex, TElement, TSelf&gt;.Contains(TElement)</span></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Trees_Multiway_MultiwayNode_3_Insert__0__1_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Trees.Multiway.MultiwayNode%603.Insert(%600%2C%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Trees/DataStructures/Trees/Multiway/MultiwayNode`3.cs/#L49">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Trees/DataStructures/Trees/Multiway/MultiwayNode`3.cs/#L51">View Source</a>
   </span>
   <a id="Langly_DataStructures_Trees_Multiway_MultiwayNode_3_Insert_" data-uid="Langly.DataStructures.Trees.Multiway.MultiwayNode`3.Insert*"></a>
   <h4 id="Langly_DataStructures_Trees_Multiway_MultiwayNode_3_Insert__0__1_" data-uid="Langly.DataStructures.Trees.Multiway.MultiwayNode`3.Insert(`0,`1)">Insert(TIndex, TElement)</h4>
@@ -419,7 +444,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Trees_Multiway_MultiwayNode_3_Resize_nint_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Trees.Multiway.MultiwayNode%603.Resize(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Trees/DataStructures/Trees/Multiway/MultiwayNode`3.cs/#L53">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Trees/DataStructures/Trees/Multiway/MultiwayNode`3.cs/#L55">View Source</a>
   </span>
   <a id="Langly_DataStructures_Trees_Multiway_MultiwayNode_3_Resize_" data-uid="Langly.DataStructures.Trees.Multiway.MultiwayNode`3.Resize*"></a>
   <h4 id="Langly_DataStructures_Trees_Multiway_MultiwayNode_3_Resize_nint_" data-uid="Langly.DataStructures.Trees.Multiway.MultiwayNode`3.Resize(nint)">Resize(nint)</h4>
@@ -490,7 +515,7 @@
       <a class="xref" href="Langly.IInsert-3.html">IInsert&lt;TIndex, TElement, TResult&gt;</a>
   </div>
   <div>
-      <a class="xref" href="Langly.IResizable-1.html">IResizable&lt;TSelf&gt;</a>
+      <a class="xref" href="Langly.IResize-1.html">IResize&lt;TResult&gt;</a>
   </div>
   <div>
       <a class="xref" href="Langly.ICapacity.html">ICapacity</a>

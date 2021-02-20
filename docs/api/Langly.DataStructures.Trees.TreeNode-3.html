@@ -73,15 +73,16 @@
   
   <h1 id="Langly_DataStructures_Trees_TreeNode_3" data-uid="Langly.DataStructures.Trees.TreeNode`3" class="text-break">Class TreeNode&lt;TIndex, TElement, TSelf&gt;
   </h1>
-  <div class="markdown level0 summary"><p>Represents the base node type of any tree.</p>
+  <div class="markdown level0 summary"><p>Represents the base node type of any associative tree.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
     <div class="level1"><a class="xref" href="Langly.Record-1.html">Record</a>&lt;TSelf&gt;</div>
-    <div class="level2"><span class="xref">TreeNode&lt;TIndex, TElement, TSelf&gt;</span></div>
-      <div class="level3"><a class="xref" href="Langly.DataStructures.Trees.Multiway.MultiwayNode-3.html">MultiwayNode&lt;TIndex, TElement, TSelf&gt;</a></div>
+    <div class="level2"><a class="xref" href="Langly.DataStructures.Node-3.html">Node</a>&lt;TIndex, TElement, TSelf&gt;</div>
+    <div class="level3"><span class="xref">TreeNode&lt;TIndex, TElement, TSelf&gt;</span></div>
+      <div class="level4"><a class="xref" href="Langly.DataStructures.Trees.Multiway.MultiwayNode-3.html">MultiwayNode&lt;TIndex, TElement, TSelf&gt;</a></div>
   </div>
   <div classs="implements">
     <h5>Implements</h5>
@@ -95,6 +96,24 @@
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Langly.DataStructures.Node-3.html#Langly_DataStructures_Node_3_Element">Node&lt;TIndex, TElement, TSelf&gt;.Element</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.DataStructures.Node-3.html#Langly_DataStructures_Node_3_Index">Node&lt;TIndex, TElement, TSelf&gt;.Index</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.DataStructures.Node-3.html#Langly_DataStructures_Node_3_Contains__1_">Node&lt;TIndex, TElement, TSelf&gt;.Contains(TElement)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.DataStructures.Node-3.html#Langly_DataStructures_Node_3_Equals__2_">Node&lt;TIndex, TElement, TSelf&gt;.Equals(TSelf)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.DataStructures.Node-3.html#Langly_DataStructures_Node_3_Replace__1__1_">Node&lt;TIndex, TElement, TSelf&gt;.Replace(TElement, TElement)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.DataStructures.Node-3.html#Langly_DataStructures_Node_3_ToString">Node&lt;TIndex, TElement, TSelf&gt;.ToString()</a>
+    </div>
     <div>
       <a class="xref" href="Langly.Record-1.html#Langly_Record_1_Equals__0_">Record&lt;TSelf&gt;.Equals(TSelf)</a>
     </div>
@@ -127,7 +146,7 @@
   <h6><strong>Assembly</strong>: Langly.Trees.dll</h6>
   <h5 id="Langly_DataStructures_Trees_TreeNode_3_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class TreeNode&lt;TIndex, TElement, TSelf&gt; : Record&lt;TSelf&gt;, IEquals&lt;TSelf&gt;, IEquatable&lt;TSelf&gt;, IEquals&lt;IEquals&lt;TSelf&gt;&gt;, IEquatable&lt;IEquals&lt;TSelf&gt;&gt;, IContains&lt;TElement&gt;, IReplace&lt;TElement, TSelf&gt;, IReplace&lt;TElement, TElement, TSelf&gt; where TSelf : TreeNode&lt;TIndex, TElement, TSelf&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class TreeNode&lt;TIndex, TElement, TSelf&gt; : Node&lt;TIndex, TElement, TSelf&gt;, IEquals&lt;TSelf&gt;, IEquatable&lt;TSelf&gt;, IEquals&lt;IEquals&lt;TSelf&gt;&gt;, IEquatable&lt;IEquals&lt;TSelf&gt;&gt;, IContains&lt;TElement&gt;, IReplace&lt;TElement, TSelf&gt;, IReplace&lt;TElement, TElement, TSelf&gt; where TSelf : TreeNode&lt;TIndex, TElement, TSelf&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -159,19 +178,19 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Trees_TreeNode_3__ctor__2_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Trees.TreeNode%603.%23ctor(%602)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Trees_TreeNode_3__ctor__0__1__2_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Trees.TreeNode%603.%23ctor(%600%2C%601%2C%602)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Trees/DataStructures/Trees/TreeNode`3.cs/#L24">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Trees/DataStructures/Trees/TreeNode`3.cs/#L23">View Source</a>
   </span>
   <a id="Langly_DataStructures_Trees_TreeNode_3__ctor_" data-uid="Langly.DataStructures.Trees.TreeNode`3.#ctor*"></a>
-  <h4 id="Langly_DataStructures_Trees_TreeNode_3__ctor__2_" data-uid="Langly.DataStructures.Trees.TreeNode`3.#ctor(`2)">TreeNode(TSelf)</h4>
+  <h4 id="Langly_DataStructures_Trees_TreeNode_3__ctor__0__1__2_" data-uid="Langly.DataStructures.Trees.TreeNode`3.#ctor(`0,`1,`2)">TreeNode(TIndex, TElement, TSelf)</h4>
   <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Langly.DataStructures.Trees.TreeNode-3.html">TreeNode&lt;TIndex, TElement, TSelf&gt;</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected TreeNode(TSelf parent)</code></pre>
+    <pre><code class="lang-csharp hljs">protected TreeNode(TIndex index, TElement element, TSelf parent)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -183,6 +202,18 @@
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <td><span class="xref">TIndex</span></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>The index of this node.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element of this node.</p>
+</td>
+      </tr>
       <tr>
         <td><span class="xref">TSelf</span></td>
         <td><span class="parametername">parent</span></td>
@@ -198,7 +229,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Trees_TreeNode_3_Parent.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Trees.TreeNode%603.Parent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Trees/DataStructures/Trees/TreeNode`3.cs/#L18">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Trees/DataStructures/Trees/TreeNode`3.cs/#L15">View Source</a>
   </span>
   <a id="Langly_DataStructures_Trees_TreeNode_3_Parent_" data-uid="Langly.DataStructures.Trees.TreeNode`3.Parent*"></a>
   <h4 id="Langly_DataStructures_Trees_TreeNode_3_Parent" data-uid="Langly.DataStructures.Trees.TreeNode`3.Parent">Parent</h4>
@@ -221,112 +252,6 @@
       <tr>
         <td><span class="xref">TSelf</span></td>
         <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="methods">Methods
-  </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Trees_TreeNode_3_Contains__1_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Trees.TreeNode%603.Contains(%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Trees/DataStructures/Trees/TreeNode`3.cs/#L27">View Source</a>
-  </span>
-  <a id="Langly_DataStructures_Trees_TreeNode_3_Contains_" data-uid="Langly.DataStructures.Trees.TreeNode`3.Contains*"></a>
-  <h4 id="Langly_DataStructures_Trees_TreeNode_3_Contains__1_" data-uid="Langly.DataStructures.Trees.TreeNode`3.Contains(`1)">Contains(TElement)</h4>
-  <div class="markdown level1 summary"><p>Determines whether this collection contains the specified <code data-dev-comment-type="paramref" class="paramref">element</code>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract bool Contains(TElement element)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">TElement</span></td>
-        <td><span class="parametername">element</span></td>
-        <td><p>The element to attempt to find.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">element</code> is contained in this collection; otherwise, <span class="xref">false</span>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Trees_TreeNode_3_Replace__1__1_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Trees.TreeNode%603.Replace(%601%2C%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Trees/DataStructures/Trees/TreeNode`3.cs/#L30">View Source</a>
-  </span>
-  <a id="Langly_DataStructures_Trees_TreeNode_3_Replace_" data-uid="Langly.DataStructures.Trees.TreeNode`3.Replace*"></a>
-  <h4 id="Langly_DataStructures_Trees_TreeNode_3_Replace__1__1_" data-uid="Langly.DataStructures.Trees.TreeNode`3.Replace(`1,`1)">Replace(TElement, TElement)</h4>
-  <div class="markdown level1 summary"><p>Replaces all instances of <code data-dev-comment-type="paramref" class="paramref">search</code> with <code data-dev-comment-type="paramref" class="paramref">replace</code>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract TSelf Replace(TElement search, TElement replace)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">TElement</span></td>
-        <td><span class="parametername">search</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">TElement</span></td>
-        <td><span class="parametername">replace</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">TSelf</span></td>
-        <td><p>The result of replacing <code data-dev-comment-type="paramref" class="paramref">search</code> with <code data-dev-comment-type="paramref" class="paramref">replace</code>.</p>
-</td>
       </tr>
     </tbody>
   </table>
@@ -363,7 +288,7 @@
                     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Trees_TreeNode_3.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Trees.TreeNode%603%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Trees/DataStructures/Trees/TreeNode`3.cs/#L11" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Trees/DataStructures/Trees/TreeNode`3.cs/#L10" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

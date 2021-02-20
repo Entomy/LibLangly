@@ -73,7 +73,7 @@
   
   <h1 id="Langly_IConcat_2" data-uid="Langly.IConcat`2" class="text-break">Interface IConcat&lt;TElement, TResult&gt;
   </h1>
-  <div class="markdown level0 summary"><p>Indicates the type can have other elements concated onto it.</p>
+  <div class="markdown level0 summary"><p>Indicates the type can have other elements concatenated onto it.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritedMembers">
@@ -97,6 +97,9 @@
       <a class="xref" href="Langly.IPostpend-2.html#Langly_IPostpend_2_Postpend_System_ReadOnlySpan__0__">IPostpend&lt;TElement, TResult&gt;.Postpend(ReadOnlySpan&lt;TElement&gt;)</a>
     </div>
     <div>
+      <a class="xref" href="Langly.IPostpend-2.html#Langly_IPostpend_2_Postpend__1_Langly_ISequence__0___0__">IPostpend&lt;TElement, TResult&gt;.Postpend&lt;TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;)</a>
+    </div>
+    <div>
       <a class="xref" href="Langly.IPrepend-2.html#Langly_IPrepend_2_Prepend__0_">IPrepend&lt;TElement, TResult&gt;.Prepend(TElement)</a>
     </div>
     <div>
@@ -114,12 +117,15 @@
     <div>
       <a class="xref" href="Langly.IPrepend-2.html#Langly_IPrepend_2_Prepend_System_ReadOnlySpan__0__">IPrepend&lt;TElement, TResult&gt;.Prepend(ReadOnlySpan&lt;TElement&gt;)</a>
     </div>
+    <div>
+      <a class="xref" href="Langly.IPrepend-2.html#Langly_IPrepend_2_Prepend__1_Langly_ISequence__0___0__">IPrepend&lt;TElement, TResult&gt;.Prepend&lt;TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;)</a>
+    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Langly.html">Langly</a></h6>
   <h6><strong>Assembly</strong>: Langly.Traits.dll</h6>
   <h5 id="Langly_IConcat_2_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IConcat&lt;TElement, out TResult&gt; : IPostpend&lt;TElement, TResult&gt;, IPrepend&lt;TElement, TResult&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IConcat&lt;TElement, out TResult&gt; : IPostpend&lt;TElement, TResult&gt;, IPrepend&lt;TElement, TResult&gt; where TResult : IConcat&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -142,9 +148,6 @@
       </tr>
     </tbody>
   </table>
-  <h5 id="Langly_IConcat_2_remarks"><strong>Remarks</strong></h5>
-  <div class="markdown level0 remarks"><p>This is nothing more than a convenience around <a class="xref" href="Langly.IPostpend-2.html">IPostpend&lt;TElement, TResult&gt;</a> and <a class="xref" href="Langly.IPrepend-2.html">IPrepend&lt;TElement, TResult&gt;</a> which will often be used together.</p>
-</div>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Postpend__2_Langly_IPostpend___0___1____0_">TraitExtensions.Postpend&lt;TElement, TResult&gt;(IPostpend&lt;TElement, TResult&gt;, TElement)</a>
@@ -165,6 +168,9 @@
       <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Postpend__2_Langly_IPostpend___0___1__System_ReadOnlySpan___0__">TraitExtensions.Postpend&lt;TElement, TResult&gt;(IPostpend&lt;TElement, TResult&gt;, ReadOnlySpan&lt;TElement&gt;)</a>
   </div>
   <div>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Postpend__3_Langly_IPostpend___0___1__Langly_ISequence___0___2__">TraitExtensions.Postpend&lt;TElement, TResult, TEnumerator&gt;(IPostpend&lt;TElement, TResult&gt;, ISequence&lt;TElement, TEnumerator&gt;)</a>
+  </div>
+  <div>
       <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Prepend__2_Langly_IPrepend___0___1____0_">TraitExtensions.Prepend&lt;TElement, TResult&gt;(IPrepend&lt;TElement, TResult&gt;, TElement)</a>
   </div>
   <div>
@@ -181,6 +187,9 @@
   </div>
   <div>
       <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Prepend__2_Langly_IPrepend___0___1__System_ReadOnlySpan___0__">TraitExtensions.Prepend&lt;TElement, TResult&gt;(IPrepend&lt;TElement, TResult&gt;, ReadOnlySpan&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Prepend__3_Langly_IPrepend___0___1__Langly_ISequence___0___2__">TraitExtensions.Prepend&lt;TElement, TResult, TEnumerator&gt;(IPrepend&lt;TElement, TResult&gt;, ISequence&lt;TElement, TEnumerator&gt;)</a>
   </div>
 </article>
           </div>
