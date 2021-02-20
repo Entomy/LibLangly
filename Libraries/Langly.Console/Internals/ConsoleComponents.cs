@@ -5,13 +5,13 @@ namespace Langly.Internals {
 	/// The internal components of the <see cref="Console"/>.
 	/// </summary>
 	public static class ConsoleComponents {
-		private static IConsoleErrorWriter errorWriter = StandardConsole.Instance;
+		private static IConsoleError error = StandardError.Instance;
 
-		private static IConsoleReader reader = StandardConsole.Instance;
+		private static IConsoleReader reader = StandardInput.Instance;
 
 		private static IConsoleStateManager stateManager = VTEscapeSequenceStateManager.Instance;
 
-		private static IConsoleWriter writer = StandardConsole.Instance;
+		private static IConsoleWriter writer = StandardOutput.Instance;
 
 		/// <summary>
 		/// The object responsible for handling writes of errors.
@@ -20,9 +20,9 @@ namespace Langly.Internals {
 		/// By default this performs normal write operations, but another object can be injected through this property that provides atypical behavior, such as for debugging. Setting to <see langword="null"/> will reset to standard behavior.
 		/// </remarks>
 		[CLSCompliant(false)]
-		public static IConsoleErrorWriter ErrorWriter {
-			get => errorWriter;
-			set => errorWriter = value ?? StandardConsole.Instance;
+		public static IConsoleError Error {
+			get => error;
+			set => error = value ?? StandardError.Instance;
 		}
 
 		/// <summary>
@@ -34,7 +34,7 @@ namespace Langly.Internals {
 		[CLSCompliant(false)]
 		public static IConsoleReader Reader {
 			get => reader;
-			set => reader = value ?? StandardConsole.Instance;
+			set => reader = value ?? StandardInput.Instance;
 		}
 
 		/// <summary>
@@ -57,7 +57,7 @@ namespace Langly.Internals {
 		[CLSCompliant(false)]
 		public static IConsoleWriter Writer {
 			get => writer;
-			set => writer = value ?? StandardConsole.Instance;
+			set => writer = value ?? StandardOutput.Instance;
 		}
 	}
 }

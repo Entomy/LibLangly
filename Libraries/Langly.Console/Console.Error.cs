@@ -14,9 +14,9 @@ namespace Langly {
 				return;
 			}
 			ConsoleComponents.StateManager.SetForeground(Color.Red);
-			ConsoleComponents.ErrorWriter.Write(" Error: ");
+			ConsoleComponents.Error.Write(" Error: ");
 			ConsoleComponents.StateManager.SetForeground(Foreground);
-			ConsoleComponents.ErrorWriter.Write(exception.Message);
+			ConsoleComponents.Error.Write(exception.Message);
 		}
 		#endregion
 	}

@@ -38,7 +38,7 @@ namespace Langly {
 		/// <summary>
 		/// Gets the alternate screen buffer, and actives it.
 		/// </summary>
-		public static ScreenBuffer Buffer {
+		public static ScreenBuffer ScreenBuffer {
 			get {
 				ConsoleComponents.StateManager.UseAlternateScreenBuffer();
 				return new ScreenBuffer();
@@ -60,8 +60,11 @@ namespace Langly {
 		/// <summary>
 		/// Sets the console window title.
 		/// </summary>
+		/// <remarks>
+		/// Setting this to <see langword="null"/> sets the title to the current process name; typically the default name for the title.
+		/// </remarks>
 		[SuppressMessage("Major Code Smell", "S2376:Write-only properties should not be used", Justification = "There's no corresponding get-title sequence we can use.")]
-		[DisallowNull, NotNull]
+		[AllowNull, NotNull]
 		public static String Title {
 			set => ConsoleComponents.StateManager.SetTitle(value);
 		}

@@ -48,9 +48,9 @@ namespace Langly.Internals {
 
 		/// <inheritdoc/>
 		public void UseMainScreenBuffer() => ConsoleComponents.Writer.Write("\x1B[?1049l");
-		
+
 		/// <inheritdoc/>
-		public void SetTitle([DisallowNull] String title) {
+		public void SetTitle([AllowNull] String title) {
 			if (title is not null) {
 				ConsoleComponents.Writer.Write($"\x1B]2;{title}\b");
 			} else {

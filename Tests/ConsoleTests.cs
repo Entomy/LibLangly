@@ -10,7 +10,7 @@ namespace Langly {
 		public ConsoleTests() {
 			ConsoleComponents.Reader = tester;
 			ConsoleComponents.Writer = tester;
-			ConsoleComponents.ErrorWriter = tester;
+			ConsoleComponents.Error = tester;
 			ConsoleComponents.StateManager = new StubStateManager();
 		}
 

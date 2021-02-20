@@ -22,7 +22,7 @@ namespace Langly.Internals {
 		/// Sets the console title.
 		/// </summary>
 		/// <param name="title">The title to set.</param>
-		void SetTitle([DisallowNull] String title);
+		void SetTitle([AllowNull] String title);
 
 		/// <summary>
 		/// Switch to the alternate screen buffer.

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
 namespace Langly.Internals {
@@ -8,7 +9,7 @@ namespace Langly.Internals {
 	/// <remarks>
 	/// By injecting this into <see cref="Console"/>, those operations will be passed here instead, enabling introspection.
 	/// </remarks>
-	public sealed class TestConsole : IConsoleReader, IConsoleWriter, IConsoleErrorWriter {
+	public sealed class TestConsole : IConsoleReader, IConsoleWriter, IConsoleError {
 		private readonly StringBuilder ErrorLog = new StringBuilder();
 		private readonly StringBuilder WriteLog = new StringBuilder();
 
@@ -35,21 +36,41 @@ namespace Langly.Internals {
 		}
 
 		/// <inheritdoc/>
-		void IConsoleWriter.Write(ReadOnlySpan<Char> text) => WriteLog.Append(text);
+		public Boolean Readable => true;
 
 		/// <inheritdoc/>
-		unsafe void IConsoleWriter.Write(Char* text, Int32 length) => WriteLog.Append(text, length);
+		public Boolean Writable => true;
 
 		/// <inheritdoc/>
-		void IConsoleErrorWriter.Write(ReadOnlySpan<Char> text) => ErrorLog.Append(text);
+		[return: MaybeNull]
+		IConsoleReader IRead<Char, IConsoleReader>.Read(out Char element) => throw new NotImplementedException();
 
 		/// <inheritdoc/>
-		unsafe void IConsoleErrorWriter.Write(Char* text, Int32 length) => ErrorLog.Append(text, length);
+		[return: MaybeNull]
+		IConsoleWriter IWrite<Char, IConsoleWriter>.Write(Char element) {
+			WriteLog.Append(element);
+			return this;
+		}
 
 		/// <inheritdoc/>
-		void IConsoleWriter.WriteLine() => WriteLog.AppendLine();
+		[return: MaybeNull]
+		IConsoleWriter IWrite<Char, IConsoleWriter>.Write(ReadOnlyMemory<Char> elements) {
+			WriteLog.Append(elements);
+			return this;
+		}
 
 		/// <inheritdoc/>
-		void IConsoleErrorWriter.WriteLine() => ErrorLog.AppendLine();
+		[return: MaybeNull]
+		IConsoleError IWrite<Char, IConsoleError>.Write(Char element) {
+			ErrorLog.Append(element);
+			return this;
+		}
+
+		/// <inheritdoc/>
+		[return: MaybeNull]
+		IConsoleError IWrite<Char, IConsoleError>.Write(ReadOnlyMemory<char> elements) {
+			ErrorLog.Append(elements);
+			return this;
+		}
 	}
 }

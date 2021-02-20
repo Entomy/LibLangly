@@ -17,7 +17,7 @@ namespace Langly.Internals {
 		public void SetForeground([AllowNull] Color value) { }
 
 		/// <inheritdoc/>
-		public void SetTitle([DisallowNull] String title) { }
+		public void SetTitle([AllowNull] String title) { }
 
 		/// <inheritdoc/>
 		public void UseAlternateScreenBuffer() { }
