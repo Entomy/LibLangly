@@ -417,6 +417,15 @@ namespace Langly {
 		}
 
 		[Theory]
+		[InlineData('a', new Char[] { 'a' })]
+		[InlineData('a', new Char[] { 'a', 'a', 'a', 'b', 'b', 'c' })]
+		[InlineData('c', new Char[] { 'a', 'b', 'b', 'c', 'c', 'c' })]
+		public void Mode(Char expected, Char[] values) {
+			Chain<Char> chain = new Chain<Char>().Add(values);
+			Assert.Equal(expected, chain.Mode());
+		}
+
+		[Theory]
 		[InlineData(Double.NaN, null)]
 		[InlineData(Double.NaN, new Int32[] { })]
 		[InlineData(120, new Int32[] { 1, 2, 3, 4, 5 })]

@@ -22,7 +22,7 @@ namespace Langly {
 		/// Averages the <paramref name="values"/>.
 		/// </summary>
 		/// <typeparam name="TEnumerator">The type of the enumerator of the <paramref name="values"/>.</typeparam>
-		/// <param name="values">The values to sum.</param>
+		/// <param name="values">The values to find the mean of.</param>
 		/// <param name="mean">The type of mean to calculate.</param>
 		/// <returns>The mean of the <paramref name="values"/>.</returns>
 		public static Double Mean<TEnumerator>([AllowNull] this ISequence<nint, TEnumerator> values, Mean mean) where TEnumerator : IEnumerator<nint> => mean switch {
@@ -35,7 +35,7 @@ namespace Langly {
 		/// Averages the <paramref name="values"/>.
 		/// </summary>
 		/// <typeparam name="TEnumerator">The type of the enumerator of the <paramref name="values"/>.</typeparam>
-		/// <param name="values">The values to sum.</param>
+		/// <param name="values">The values to find the mean of.</param>
 		/// <param name="mean">The type of mean to calculate.</param>
 		/// <returns>The mean of the <paramref name="values"/>.</returns>
 		[CLSCompliant(false)]
@@ -49,7 +49,7 @@ namespace Langly {
 		/// Averages the <paramref name="values"/>.
 		/// </summary>
 		/// <typeparam name="TEnumerator">The type of the enumerator of the <paramref name="values"/>.</typeparam>
-		/// <param name="values">The values to sum.</param>
+		/// <param name="values">The values to find the mean of.</param>
 		/// <param name="mean">The type of mean to calculate.</param>
 		/// <returns>The mean of the <paramref name="values"/>.</returns>
 		public static Double Mean<TEnumerator>([AllowNull] this ISequence<Byte, TEnumerator> values, Mean mean) where TEnumerator : IEnumerator<Byte> => mean switch {
@@ -62,7 +62,7 @@ namespace Langly {
 		/// Averages the <paramref name="values"/>.
 		/// </summary>
 		/// <typeparam name="TEnumerator">The type of the enumerator of the <paramref name="values"/>.</typeparam>
-		/// <param name="values">The values to sum.</param>
+		/// <param name="values">The values to find the mean of.</param>
 		/// <param name="mean">The type of mean to calculate.</param>
 		/// <returns>The mean of the <paramref name="values"/>.</returns>
 		[CLSCompliant(false)]
@@ -76,7 +76,7 @@ namespace Langly {
 		/// Averages the <paramref name="values"/>.
 		/// </summary>
 		/// <typeparam name="TEnumerator">The type of the enumerator of the <paramref name="values"/>.</typeparam>
-		/// <param name="values">The values to sum.</param>
+		/// <param name="values">The values to find the mean of.</param>
 		/// <param name="mean">The type of mean to calculate.</param>
 		/// <returns>The mean of the <paramref name="values"/>.</returns>
 		public static Double Mean<TEnumerator>([AllowNull] this ISequence<Int16, TEnumerator> values, Mean mean) where TEnumerator : IEnumerator<Int16> => mean switch {
@@ -89,7 +89,7 @@ namespace Langly {
 		/// Averages the <paramref name="values"/>.
 		/// </summary>
 		/// <typeparam name="TEnumerator">The type of the enumerator of the <paramref name="values"/>.</typeparam>
-		/// <param name="values">The values to sum.</param>
+		/// <param name="values">The values to find the mean of.</param>
 		/// <param name="mean">The type of mean to calculate.</param>
 		/// <returns>The mean of the <paramref name="values"/>.</returns>
 		[CLSCompliant(false)]
@@ -103,7 +103,7 @@ namespace Langly {
 		/// Averages the <paramref name="values"/>.
 		/// </summary>
 		/// <typeparam name="TEnumerator">The type of the enumerator of the <paramref name="values"/>.</typeparam>
-		/// <param name="values">The values to sum.</param>
+		/// <param name="values">The values to find the mean of.</param>
 		/// <param name="mean">The type of mean to calculate.</param>
 		/// <returns>The mean of the <paramref name="values"/>.</returns>
 		public static Double Mean<TEnumerator>([AllowNull] this ISequence<Int32, TEnumerator> values, Mean mean) where TEnumerator : IEnumerator<Int32> => mean switch {
@@ -116,7 +116,7 @@ namespace Langly {
 		/// Averages the <paramref name="values"/>.
 		/// </summary>
 		/// <typeparam name="TEnumerator">The type of the enumerator of the <paramref name="values"/>.</typeparam>
-		/// <param name="values">The values to sum.</param>
+		/// <param name="values">The values to find the mean of.</param>
 		/// <param name="mean">The type of mean to calculate.</param>
 		/// <returns>The mean of the <paramref name="values"/>.</returns>
 		[CLSCompliant(false)]
@@ -130,7 +130,7 @@ namespace Langly {
 		/// Averages the <paramref name="values"/>.
 		/// </summary>
 		/// <typeparam name="TEnumerator">The type of the enumerator of the <paramref name="values"/>.</typeparam>
-		/// <param name="values">The values to sum.</param>
+		/// <param name="values">The values to find the mean of.</param>
 		/// <param name="mean">The type of mean to calculate.</param>
 		/// <returns>The mean of the <paramref name="values"/>.</returns>
 		public static Double Mean<TEnumerator>([AllowNull] this ISequence<Int64, TEnumerator> values, Mean mean) where TEnumerator : IEnumerator<Int64> => mean switch {
@@ -143,7 +143,7 @@ namespace Langly {
 		/// Averages the <paramref name="values"/>.
 		/// </summary>
 		/// <typeparam name="TEnumerator">The type of the enumerator of the <paramref name="values"/>.</typeparam>
-		/// <param name="values">The values to sum.</param>
+		/// <param name="values">The values to find the mean of.</param>
 		/// <param name="mean">The type of mean to calculate.</param>
 		/// <returns>The mean of the <paramref name="values"/>.</returns>
 		[CLSCompliant(false)]
@@ -157,7 +157,7 @@ namespace Langly {
 		/// Averages the <paramref name="values"/>.
 		/// </summary>
 		/// <typeparam name="TEnumerator">The type of the enumerator of the <paramref name="values"/>.</typeparam>
-		/// <param name="values">The values to sum.</param>
+		/// <param name="values">The values to find the mean of.</param>
 		/// <param name="mean">The type of mean to calculate.</param>
 		/// <returns>The mean of the <paramref name="values"/>.</returns>
 		public static Double Mean<TEnumerator>([AllowNull] this ISequence<Single, TEnumerator> values, Mean mean) where TEnumerator : IEnumerator<Single> => mean switch {
@@ -170,7 +170,7 @@ namespace Langly {
 		/// Averages the <paramref name="values"/>.
 		/// </summary>
 		/// <typeparam name="TEnumerator">The type of the enumerator of the <paramref name="values"/>.</typeparam>
-		/// <param name="values">The values to sum.</param>
+		/// <param name="values">The values to find the mean of.</param>
 		/// <param name="mean">The type of mean to calculate.</param>
 		/// <returns>The mean of the <paramref name="values"/>.</returns>
 		public static Double Mean<TEnumerator>([AllowNull] this ISequence<Double, TEnumerator> values, Mean mean) where TEnumerator : IEnumerator<Double> => mean switch {
@@ -183,7 +183,7 @@ namespace Langly {
 		/// Averages the <paramref name="values"/>.
 		/// </summary>
 		/// <typeparam name="TEnumerator">The type of the enumerator of the <paramref name="values"/>.</typeparam>
-		/// <param name="values">The values to sum.</param>
+		/// <param name="values">The values to find the mean of.</param>
 		/// <param name="mean">The type of mean to calculate.</param>
 		/// <returns>The mean of the <paramref name="values"/>.</returns>
 		public static Decimal Mean<TEnumerator>([AllowNull] this ISequence<Decimal, TEnumerator> values, Mean mean) where TEnumerator : IEnumerator<Decimal> {
