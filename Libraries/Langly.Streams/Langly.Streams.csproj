@@ -1,10 +1,10 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
+		<TargetFrameworks>net5.0-windows</TargetFrameworks>
 		<Description>A replacement Streams API with superior usability.</Description>
 		<PackageTags>langly, stream, streams</PackageTags>
 		<AssemblyName>Langly.Streams</AssemblyName>
-		<Configurations>Debug;Release;Debug-Windows;Release-Windows</Configurations>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -19,14 +19,6 @@
 	  <ProjectReference Include="..\Langly.Buffers\Langly.Buffers.csproj" />
 	  <ProjectReference Include="..\Langly.Traits\Langly.Traits.csproj" />
 	</ItemGroup>
-
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Windows|AnyCPU' or '$(Configuration)|$(Platform)'=='Debug-Windows|AnyCPU'">
-		<DefineConstants>TRACE;WINDOWS</DefineConstants>
-	</PropertyGroup>
-
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Unix|AnyCPU' or '$(Configuration)|$(Platform)'=='Debug-Unix|AnyCPU'">
-		<DefineConstants>TRACE;UNIX</DefineConstants>
-	</PropertyGroup>
 
 	<Import Project="..\Langly.Checks\Langly.Checks.projitems" Label="Shared" />
 
