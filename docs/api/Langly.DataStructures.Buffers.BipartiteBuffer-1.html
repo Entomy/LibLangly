@@ -1,0 +1,776 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class BipartiteBuffer&lt;TElement&gt;
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class BipartiteBuffer&lt;TElement&gt;
+   ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1">
+  
+  
+  <h1 id="Langly_DataStructures_Buffers_BipartiteBuffer_1" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1" class="text-break">Class BipartiteBuffer&lt;TElement&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>Represents a bipartite buffer.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><a class="xref" href="Langly.Record-1.html">Record</a>&lt;<a class="xref" href="Langly.DataStructures.Buffers.BipartiteBuffer-1.html">BipartiteBuffer</a>&lt;TElement&gt;&gt;</div>
+    <div class="level2"><a class="xref" href="Langly.DataStructures.DataStructure-3.html">DataStructure</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.Buffers.BipartiteBuffer-1.html">BipartiteBuffer</a>&lt;TElement&gt;, <a class="xref" href="Langly.DataStructures.Buffers.BipartiteBuffer-1.Enumerator.html">BipartiteBuffer.Enumerator</a>&lt;&gt;&gt;</div>
+    <div class="level3"><span class="xref">BipartiteBuffer&lt;TElement&gt;</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Langly.IEquals-1.html">IEquals</a>&lt;<a class="xref" href="Langly.DataStructures.Buffers.BipartiteBuffer-1.html">BipartiteBuffer</a>&lt;TElement&gt;&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Langly.DataStructures.Buffers.BipartiteBuffer-1.html">BipartiteBuffer</a>&lt;TElement&gt;&gt;</div>
+    <div><a class="xref" href="Langly.IEquals-1.html">IEquals</a>&lt;<a class="xref" href="Langly.IEquals-1.html">IEquals</a>&lt;<a class="xref" href="Langly.DataStructures.Buffers.BipartiteBuffer-1.html">BipartiteBuffer</a>&lt;TElement&gt;&gt;&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Langly.IEquals-1.html">IEquals</a>&lt;<a class="xref" href="Langly.DataStructures.Buffers.BipartiteBuffer-1.html">BipartiteBuffer</a>&lt;TElement&gt;&gt;&gt;</div>
+    <div><a class="xref" href="Langly.ISequence-2.html">ISequence</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.Buffers.BipartiteBuffer-1.Enumerator.html">BipartiteBuffer.Enumerator</a>&lt;&gt;&gt;</div>
+    <div><a class="xref" href="Langly.IContains-1.html">IContains</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
+    <div><a class="xref" href="Langly.IAdd-2.html">IAdd</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.Buffers.BipartiteBuffer-1.html">BipartiteBuffer</a>&lt;TElement&gt;&gt;</div>
+    <div><a class="xref" href="Langly.ICapacity.html">ICapacity</a></div>
+    <div><a class="xref" href="Langly.IClear-1.html">IClear</a>&lt;<a class="xref" href="Langly.DataStructures.Buffers.BipartiteBuffer-1.html">BipartiteBuffer</a>&lt;TElement&gt;&gt;</div>
+    <div><a class="xref" href="Langly.IIndex-1.html">IIndex</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="Langly.IIndex-2.html">IIndex</a>&lt;<span class="xref">nint</span>, TElement&gt;</div>
+    <div><a class="xref" href="Langly.IIndexReadOnly-1.html">IIndexReadOnly</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="Langly.IIndexReadOnly-2.html">IIndexReadOnly</a>&lt;<span class="xref">nint</span>, TElement&gt;</div>
+    <div><a class="xref" href="Langly.ICount.html">ICount</a></div>
+    <div><a class="xref" href="Langly.IPeek-2.html">IPeek</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.Buffers.BipartiteBuffer-1.html">BipartiteBuffer</a>&lt;TElement&gt;&gt;</div>
+    <div><a class="xref" href="Langly.IRead-2.html">IRead</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.Buffers.BipartiteBuffer-1.html">BipartiteBuffer</a>&lt;TElement&gt;&gt;</div>
+    <div><a class="xref" href="Langly.IWrite-2.html">IWrite</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.Buffers.BipartiteBuffer-1.html">BipartiteBuffer</a>&lt;TElement&gt;&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Langly.DataStructures.DataStructure-3.html#Langly_DataStructures_DataStructure_3_Filter">DataStructure&lt;TElement, BipartiteBuffer&lt;TElement&gt;, BipartiteBuffer&lt;TElement&gt;.Enumerator&gt;.Filter</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.DataStructures.DataStructure-3.html#Langly_DataStructures_DataStructure_3_Count">DataStructure&lt;TElement, BipartiteBuffer&lt;TElement&gt;, BipartiteBuffer&lt;TElement&gt;.Enumerator&gt;.Count</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.DataStructures.DataStructure-3.html#Langly_DataStructures_DataStructure_3_Langly_IContains_TElement__Contains__0_">DataStructure&lt;TElement, BipartiteBuffer&lt;TElement&gt;, BipartiteBuffer&lt;TElement&gt;.Enumerator&gt;.IContains&lt;TElement&gt;.Contains(TElement)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.DataStructures.DataStructure-3.html#Langly_DataStructures_DataStructure_3_Equals__1_">DataStructure&lt;TElement, BipartiteBuffer&lt;TElement&gt;, BipartiteBuffer&lt;TElement&gt;.Enumerator&gt;.Equals(BipartiteBuffer&lt;TElement&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.DataStructures.DataStructure-3.html#Langly_DataStructures_DataStructure_3_Equals__1_Langly_ISequence__0___0__">DataStructure&lt;TElement, BipartiteBuffer&lt;TElement&gt;, BipartiteBuffer&lt;TElement&gt;.Enumerator&gt;.Equals&lt;TOtherEnumerator&gt;(ISequence&lt;TElement, TOtherEnumerator&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.DataStructures.DataStructure-3.html#Langly_DataStructures_DataStructure_3_Equals__1_Langly_ISequence_Langly_IEquals__0____0__">DataStructure&lt;TElement, BipartiteBuffer&lt;TElement&gt;, BipartiteBuffer&lt;TElement&gt;.Enumerator&gt;.Equals&lt;TOtherEnumerator&gt;(ISequence&lt;IEquals&lt;TElement&gt;, TOtherEnumerator&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.DataStructures.DataStructure-3.html#Langly_DataStructures_DataStructure_3_GetEnumerator">DataStructure&lt;TElement, BipartiteBuffer&lt;TElement&gt;, BipartiteBuffer&lt;TElement&gt;.Enumerator&gt;.GetEnumerator()</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.DataStructures.DataStructure-3.html#Langly_DataStructures_DataStructure_3_ToString">DataStructure&lt;TElement, BipartiteBuffer&lt;TElement&gt;, BipartiteBuffer&lt;TElement&gt;.Enumerator&gt;.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.DataStructures.DataStructure-3.html#Langly_DataStructures_DataStructure_3_ToString_nint_">DataStructure&lt;TElement, BipartiteBuffer&lt;TElement&gt;, BipartiteBuffer&lt;TElement&gt;.Enumerator&gt;.ToString(nint)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.Record-1.html#Langly_Record_1_Equals__0_">Record&lt;BipartiteBuffer&lt;TElement&gt;&gt;.Equals(BipartiteBuffer&lt;TElement&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.Record-1.html#Langly_Record_1_Equals_Langly_IEquals__0__">Record&lt;BipartiteBuffer&lt;TElement&gt;&gt;.Equals(IEquals&lt;BipartiteBuffer&lt;TElement&gt;&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.Record-1.html#Langly_Record_1_ToString">Record&lt;BipartiteBuffer&lt;TElement&gt;&gt;.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_">Object.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_System_Object_">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#System_Object_GetHashCode">Object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#System_Object_GetType">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#System_Object_MemberwiseClone">Object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#System_Object_ReferenceEquals_System_Object_System_Object_">Object.ReferenceEquals(Object, Object)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Langly.DataStructures.Buffers.html">Langly.DataStructures.Buffers</a></h6>
+  <h6><strong>Assembly</strong>: Langly.Buffers.dll</h6>
+  <h5 id="Langly_DataStructures_Buffers_BipartiteBuffer_1_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class BipartiteBuffer&lt;TElement&gt; : DataStructure&lt;TElement, BipartiteBuffer&lt;TElement&gt;, BipartiteBuffer&lt;TElement&gt;.Enumerator&gt;, IEquals&lt;BipartiteBuffer&lt;TElement&gt;&gt;, IEquatable&lt;BipartiteBuffer&lt;TElement&gt;&gt;, IEquals&lt;IEquals&lt;BipartiteBuffer&lt;TElement&gt;&gt;&gt;, IEquatable&lt;IEquals&lt;BipartiteBuffer&lt;TElement&gt;&gt;&gt;, ISequence&lt;TElement, BipartiteBuffer&lt;TElement&gt;.Enumerator&gt;, IContains&lt;TElement&gt;, IEnumerable&lt;TElement&gt;, IEnumerable, IAdd&lt;TElement, BipartiteBuffer&lt;TElement&gt;&gt;, ICapacity, IClear&lt;BipartiteBuffer&lt;TElement&gt;&gt;, IIndex&lt;TElement&gt;, IIndex&lt;nint, TElement&gt;, IIndexReadOnly&lt;TElement&gt;, IIndexReadOnly&lt;nint, TElement&gt;, ICount, IPeek&lt;TElement, BipartiteBuffer&lt;TElement&gt;&gt;, IRead&lt;TElement, BipartiteBuffer&lt;TElement&gt;&gt;, IWrite&lt;TElement, BipartiteBuffer&lt;TElement&gt;&gt;</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of the elements in the buffer.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_DataStructures_Buffers_BipartiteBuffer_1_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>This is a type of large buffer exhibiting ring-like behavior. It doesn't operate in the same way as a ring, keeping memory contiguous, which is a major advantage. It operates through partitioning the memory into two regions, advancing them like a ring-buffer would, but preventing breaking either partition. As a result, this buffer can return direct <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory&lt;T&gt;</a>, rather than allocate-fill-return.</p>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Buffers_BipartiteBuffer_1__ctor.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Buffers.BipartiteBuffer%601.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Buffers/DataStructures/Buffers/BipartiteBuffer`1.cs/#L46">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Buffers_BipartiteBuffer_1__ctor_" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.#ctor*"></a>
+  <h4 id="Langly_DataStructures_Buffers_BipartiteBuffer_1__ctor" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.#ctor">BipartiteBuffer()</h4>
+  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Langly.DataStructures.Buffers.BipartiteBuffer-1.html">BipartiteBuffer&lt;TElement&gt;</a> buffer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BipartiteBuffer()</code></pre>
+  </div>
+  <h5 id="Langly_DataStructures_Buffers_BipartiteBuffer_1__ctor_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This uses an entire memory page as the buffer. This is by far the best for performance, and the most common use case for a bipartite buffer. It may, however, be way more memory than your application requires.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Buffers_BipartiteBuffer_1__ctor_nint_Langly_DataStructures_Filter_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Buffers.BipartiteBuffer%601.%23ctor(nint%2CLangly.DataStructures.Filter)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Buffers/DataStructures/Buffers/BipartiteBuffer`1.cs/#L53">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Buffers_BipartiteBuffer_1__ctor_" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.#ctor*"></a>
+  <h4 id="Langly_DataStructures_Buffers_BipartiteBuffer_1__ctor_nint_Langly_DataStructures_Filter_" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.#ctor(nint,Langly.DataStructures.Filter)">BipartiteBuffer(nint, Filter)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Langly.DataStructures.Buffers.BipartiteBuffer-1.html">BipartiteBuffer&lt;TElement&gt;</a> buffer with the given <code data-dev-comment-type="paramref" class="paramref">capacity</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BipartiteBuffer(nint capacity, Filter filter)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">capacity</span></td>
+        <td><p>The maximum capacity of the buffer.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Filter.html">Filter</a></td>
+        <td><span class="parametername">filter</span></td>
+        <td><p>Flags designating which filters to set up.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Buffers_BipartiteBuffer_1_Capacity.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Buffers.BipartiteBuffer%601.Capacity%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Buffers/DataStructures/Buffers/BipartiteBuffer`1.cs/#L84">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Buffers_BipartiteBuffer_1_Capacity_" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.Capacity*"></a>
+  <h4 id="Langly_DataStructures_Buffers_BipartiteBuffer_1_Capacity" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.Capacity">Capacity</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public nint Capacity { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Buffers_BipartiteBuffer_1_Count.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Buffers.BipartiteBuffer%601.Count%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Buffers/DataStructures/Buffers/BipartiteBuffer`1.cs/#L75">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Buffers_BipartiteBuffer_1_Count_" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.Count*"></a>
+  <h4 id="Langly_DataStructures_Buffers_BipartiteBuffer_1_Count" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.Count">Count</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override nint Count { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Langly.DataStructures.DataStructure&lt;TElement, Langly.DataStructures.Buffers.BipartiteBuffer&lt;TElement&gt;, Langly.DataStructures.Buffers.BipartiteBuffer&lt;TElement&gt;.Enumerator&gt;.Count</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Buffers_BipartiteBuffer_1_Item_nint_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Buffers.BipartiteBuffer%601.Item(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Buffers/DataStructures/Buffers/BipartiteBuffer`1.cs/#L60">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Buffers_BipartiteBuffer_1_Item_" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.Item*"></a>
+  <h4 id="Langly_DataStructures_Buffers_BipartiteBuffer_1_Item_nint_" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.Item(nint)">Item[nint]</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TElement this[nint index] { get; set; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">index</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Buffers_BipartiteBuffer_1_Readable.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Buffers.BipartiteBuffer%601.Readable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Buffers/DataStructures/Buffers/BipartiteBuffer`1.cs/#L78">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Buffers_BipartiteBuffer_1_Readable_" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.Readable*"></a>
+  <h4 id="Langly_DataStructures_Buffers_BipartiteBuffer_1_Readable" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.Readable">Readable</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Readable { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Buffers_BipartiteBuffer_1_Writable.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Buffers.BipartiteBuffer%601.Writable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Buffers/DataStructures/Buffers/BipartiteBuffer`1.cs/#L81">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Buffers_BipartiteBuffer_1_Writable_" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.Writable*"></a>
+  <h4 id="Langly_DataStructures_Buffers_BipartiteBuffer_1_Writable" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.Writable">Writable</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Writable { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Buffers_BipartiteBuffer_1_GetEnumerator.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Buffers.BipartiteBuffer%601.GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Buffers/DataStructures/Buffers/BipartiteBuffer`1.Enumerator.cs/#L9">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Buffers_BipartiteBuffer_1_GetEnumerator_" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.GetEnumerator*"></a>
+  <h4 id="Langly_DataStructures_Buffers_BipartiteBuffer_1_GetEnumerator" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.GetEnumerator">GetEnumerator()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override BipartiteBuffer&lt;TElement&gt;.Enumerator GetEnumerator()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Buffers.BipartiteBuffer-1.Enumerator.html">BipartiteBuffer.Enumerator</a>&lt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Langly.DataStructures.DataStructure&lt;TElement, Langly.DataStructures.Buffers.BipartiteBuffer&lt;TElement&gt;, Langly.DataStructures.Buffers.BipartiteBuffer&lt;TElement&gt;.Enumerator&gt;.GetEnumerator()</span></div>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Buffers_BipartiteBuffer_1_Langly_IAdd_TElement_Langly_DataStructures_Buffers_BipartiteBuffer_TElement___Add__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Buffers.BipartiteBuffer%601.Langly%23IAdd%7BTElement%2CLangly%23DataStructures%23Buffers%23BipartiteBuffer%7BTElement%7D%7D%23Add(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Buffers/DataStructures/Buffers/BipartiteBuffer`1.cs/#L87">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Buffers_BipartiteBuffer_1_Langly_IAdd_TElement_Langly_DataStructures_Buffers_BipartiteBuffer_TElement___Add_" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.Langly#IAdd{TElement,Langly#DataStructures#Buffers#BipartiteBuffer{TElement}}#Add*"></a>
+  <h4 id="Langly_DataStructures_Buffers_BipartiteBuffer_1_Langly_IAdd_TElement_Langly_DataStructures_Buffers_BipartiteBuffer_TElement___Add__0_" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.Langly#IAdd{TElement,Langly#DataStructures#Buffers#BipartiteBuffer{TElement}}#Add(`0)">IAdd&lt;TElement, BipartiteBuffer&lt;TElement&gt;&gt;.Add(TElement)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">BipartiteBuffer&lt;TElement&gt; IAdd&lt;TElement, BipartiteBuffer&lt;TElement&gt;&gt;.Add(TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Buffers.BipartiteBuffer-1.html">BipartiteBuffer</a>&lt;TElement&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Buffers_BipartiteBuffer_1_Langly_IClear_Langly_DataStructures_Buffers_BipartiteBuffer_TElement___Clear.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Buffers.BipartiteBuffer%601.Langly%23IClear%7BLangly%23DataStructures%23Buffers%23BipartiteBuffer%7BTElement%7D%7D%23Clear%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Buffers/DataStructures/Buffers/BipartiteBuffer`1.cs/#L91">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Buffers_BipartiteBuffer_1_Langly_IClear_Langly_DataStructures_Buffers_BipartiteBuffer_TElement___Clear_" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.Langly#IClear{Langly#DataStructures#Buffers#BipartiteBuffer{TElement}}#Clear*"></a>
+  <h4 id="Langly_DataStructures_Buffers_BipartiteBuffer_1_Langly_IClear_Langly_DataStructures_Buffers_BipartiteBuffer_TElement___Clear" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.Langly#IClear{Langly#DataStructures#Buffers#BipartiteBuffer{TElement}}#Clear">IClear&lt;BipartiteBuffer&lt;TElement&gt;&gt;.Clear()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">BipartiteBuffer&lt;TElement&gt; IClear&lt;BipartiteBuffer&lt;TElement&gt;&gt;.Clear()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Buffers.BipartiteBuffer-1.html">BipartiteBuffer</a>&lt;TElement&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Buffers_BipartiteBuffer_1_Langly_IPeek_TElement_Langly_DataStructures_Buffers_BipartiteBuffer_TElement___Peek__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Buffers.BipartiteBuffer%601.Langly%23IPeek%7BTElement%2CLangly%23DataStructures%23Buffers%23BipartiteBuffer%7BTElement%7D%7D%23Peek(%600%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Buffers/DataStructures/Buffers/BipartiteBuffer`1.cs/#L99">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Buffers_BipartiteBuffer_1_Langly_IPeek_TElement_Langly_DataStructures_Buffers_BipartiteBuffer_TElement___Peek_" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.Langly#IPeek{TElement,Langly#DataStructures#Buffers#BipartiteBuffer{TElement}}#Peek*"></a>
+  <h4 id="Langly_DataStructures_Buffers_BipartiteBuffer_1_Langly_IPeek_TElement_Langly_DataStructures_Buffers_BipartiteBuffer_TElement___Peek__0__" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.Langly#IPeek{TElement,Langly#DataStructures#Buffers#BipartiteBuffer{TElement}}#Peek(`0@)">IPeek&lt;TElement, BipartiteBuffer&lt;TElement&gt;&gt;.Peek(out TElement)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">BipartiteBuffer&lt;TElement&gt; IPeek&lt;TElement, BipartiteBuffer&lt;TElement&gt;&gt;.Peek(out TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Buffers.BipartiteBuffer-1.html">BipartiteBuffer</a>&lt;TElement&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Buffers_BipartiteBuffer_1_Langly_IRead_TElement_Langly_DataStructures_Buffers_BipartiteBuffer_TElement___Read__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Buffers.BipartiteBuffer%601.Langly%23IRead%7BTElement%2CLangly%23DataStructures%23Buffers%23BipartiteBuffer%7BTElement%7D%7D%23Read(%600%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Buffers/DataStructures/Buffers/BipartiteBuffer`1.cs/#L114">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Buffers_BipartiteBuffer_1_Langly_IRead_TElement_Langly_DataStructures_Buffers_BipartiteBuffer_TElement___Read_" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.Langly#IRead{TElement,Langly#DataStructures#Buffers#BipartiteBuffer{TElement}}#Read*"></a>
+  <h4 id="Langly_DataStructures_Buffers_BipartiteBuffer_1_Langly_IRead_TElement_Langly_DataStructures_Buffers_BipartiteBuffer_TElement___Read__0__" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.Langly#IRead{TElement,Langly#DataStructures#Buffers#BipartiteBuffer{TElement}}#Read(`0@)">IRead&lt;TElement, BipartiteBuffer&lt;TElement&gt;&gt;.Read(out TElement)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">BipartiteBuffer&lt;TElement&gt; IRead&lt;TElement, BipartiteBuffer&lt;TElement&gt;&gt;.Read(out TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Buffers.BipartiteBuffer-1.html">BipartiteBuffer</a>&lt;TElement&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Buffers_BipartiteBuffer_1_Langly_IWrite_TElement_Langly_DataStructures_Buffers_BipartiteBuffer_TElement___Write__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Buffers.BipartiteBuffer%601.Langly%23IWrite%7BTElement%2CLangly%23DataStructures%23Buffers%23BipartiteBuffer%7BTElement%7D%7D%23Write(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Buffers/DataStructures/Buffers/BipartiteBuffer`1.cs/#L129">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Buffers_BipartiteBuffer_1_Langly_IWrite_TElement_Langly_DataStructures_Buffers_BipartiteBuffer_TElement___Write_" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.Langly#IWrite{TElement,Langly#DataStructures#Buffers#BipartiteBuffer{TElement}}#Write*"></a>
+  <h4 id="Langly_DataStructures_Buffers_BipartiteBuffer_1_Langly_IWrite_TElement_Langly_DataStructures_Buffers_BipartiteBuffer_TElement___Write__0_" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.Langly#IWrite{TElement,Langly#DataStructures#Buffers#BipartiteBuffer{TElement}}#Write(`0)">IWrite&lt;TElement, BipartiteBuffer&lt;TElement&gt;&gt;.Write(TElement)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">BipartiteBuffer&lt;TElement&gt; IWrite&lt;TElement, BipartiteBuffer&lt;TElement&gt;&gt;.Write(TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Buffers.BipartiteBuffer-1.html">BipartiteBuffer</a>&lt;TElement&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Langly.IEquals-1.html">IEquals&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">System.IEquatable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IEquals-1.html">IEquals&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">System.IEquatable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.ISequence-2.html">ISequence&lt;TMember, TEnumerator&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IContains-1.html">IContains&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">System.Collections.Generic.IEnumerable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">System.Collections.IEnumerable</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IAdd-2.html">IAdd&lt;TElement, TResult&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.ICapacity.html">ICapacity</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IClear-1.html">IClear&lt;TResult&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IIndex-1.html">IIndex&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IIndex-2.html">IIndex&lt;TIndex, TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IIndexReadOnly-1.html">IIndexReadOnly&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IIndexReadOnly-2.html">IIndexReadOnly&lt;TIndex, TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.ICount.html">ICount</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IPeek-2.html">IPeek&lt;TElement, TResult&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IRead-2.html">IRead&lt;TElement, TResult&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IWrite-2.html">IWrite&lt;TElement, TResult&gt;</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Buffers_BipartiteBuffer_1.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Buffers.BipartiteBuffer%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Buffers/DataStructures/Buffers/BipartiteBuffer`1.Partition.cs/#L7" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

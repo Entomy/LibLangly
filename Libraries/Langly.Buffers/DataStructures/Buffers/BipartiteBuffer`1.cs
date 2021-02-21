@@ -15,13 +15,13 @@ namespace Langly.DataStructures.Buffers {
 	/// <remarks>
 	/// This is a type of large buffer exhibiting ring-like behavior. It doesn't operate in the same way as a ring, keeping memory contiguous, which is a major advantage. It operates through partitioning the memory into two regions, advancing them like a ring-buffer would, but preventing breaking either partition. As a result, this buffer can return direct <see cref="ReadOnlyMemory{T}"/>, rather than allocate-fill-return.
 	/// </remarks>
-	public sealed partial class Bipartite<TElement> : DataStructure<TElement, Bipartite<TElement>, Bipartite<TElement>.Enumerator>,
-		IAdd<TElement, Bipartite<TElement>>,
+	public sealed partial class BipartiteBuffer<TElement> : DataStructure<TElement, BipartiteBuffer<TElement>, BipartiteBuffer<TElement>.Enumerator>,
+		IAdd<TElement, BipartiteBuffer<TElement>>,
 		ICapacity,
-		IClear<Bipartite<TElement>>,
+		IClear<BipartiteBuffer<TElement>>,
 		IIndex<TElement>,
-		IPeek<TElement, Bipartite<TElement>>,
-		IWrite<TElement, Bipartite<TElement>> {
+		IPeek<TElement, BipartiteBuffer<TElement>>,
+		IWrite<TElement, BipartiteBuffer<TElement>> {
 		/// <summary>
 		/// The backing memory of the buffer.
 		/// </summary>
@@ -38,19 +38,19 @@ namespace Langly.DataStructures.Buffers {
 		private Partition Secondary;
 
 		/// <summary>
-		/// Initializes a new <see cref="Bipartite{TElement}"/> buffer.
+		/// Initializes a new <see cref="BipartiteBuffer{TElement}"/> buffer.
 		/// </summary>
 		/// <remarks>
 		/// This uses an entire memory page as the buffer. This is by far the best for performance, and the most common use case for a bipartite buffer. It may, however, be way more memory than your application requires.
 		/// </remarks>
-		public Bipartite() : this(Environment.SystemPageSize / Unsafe.SizeOf<TElement>(), DataStructures.Filter.None) { }
+		public BipartiteBuffer() : this(Environment.SystemPageSize / Unsafe.SizeOf<TElement>(), DataStructures.Filter.None) { }
 
 		/// <summary>
-		/// Initializes a new <see cref="Bipartite{TElement}"/> buffer with the given <paramref name="capacity"/>.
+		/// Initializes a new <see cref="BipartiteBuffer{TElement}"/> buffer with the given <paramref name="capacity"/>.
 		/// </summary>
 		/// <param name="capacity">The maximum capacity of the buffer.</param>
 		/// <param name="filter">Flags designating which filters to set up.</param>
-		public Bipartite(nint capacity, Filter filter) : base(filter) {
+		public BipartiteBuffer(nint capacity, Filter filter) : base(filter) {
 			Memory = new TElement[capacity];
 			Primary = new Partition(Memory, Filter).Allocate(0, (Int32)Capacity);
 			Secondary = new Partition(Memory, Filter);
@@ -85,11 +85,11 @@ namespace Langly.DataStructures.Buffers {
 
 		/// <inheritdoc/>
 		[return: MaybeNull]
-		Bipartite<TElement> IAdd<TElement, Bipartite<TElement>>.Add([AllowNull] TElement element) => ((IWrite<TElement, Bipartite<TElement>>)this).Write(element);
+		BipartiteBuffer<TElement> IAdd<TElement, BipartiteBuffer<TElement>>.Add([AllowNull] TElement element) => ((IWrite<TElement, BipartiteBuffer<TElement>>)this).Write(element);
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		Bipartite<TElement> IClear<Bipartite<TElement>>.Clear() {
+		BipartiteBuffer<TElement> IClear<BipartiteBuffer<TElement>>.Clear() {
 			Primary = Primary.Clear();
 			Secondary = Secondary.Clear();
 			return this;
@@ -97,7 +97,7 @@ namespace Langly.DataStructures.Buffers {
 
 		/// <inheritdoc/>
 		[return: MaybeNull]
-		Bipartite<TElement> IPeek<TElement, Bipartite<TElement>>.Peek([MaybeNull] out TElement element) {
+		BipartiteBuffer<TElement> IPeek<TElement, BipartiteBuffer<TElement>>.Peek([MaybeNull] out TElement element) {
 			if (Secondary.Readable) {
 				_ = Secondary.Peek(out element);
 				return this;
@@ -112,7 +112,7 @@ namespace Langly.DataStructures.Buffers {
 
 		/// <inheritdoc/>
 		[return: MaybeNull]
-		Bipartite<TElement> IRead<TElement, Bipartite<TElement>>.Read([MaybeNull] out TElement element) {
+		BipartiteBuffer<TElement> IRead<TElement, BipartiteBuffer<TElement>>.Read([MaybeNull] out TElement element) {
 			if (Secondary.Readable) {
 				_ = Secondary.Read(out element);
 				return this;
@@ -127,7 +127,7 @@ namespace Langly.DataStructures.Buffers {
 
 		/// <inheritdoc/>
 		[return: MaybeNull]
-		Bipartite<TElement> IWrite<TElement, Bipartite<TElement>>.Write([AllowNull] TElement element) {
+		BipartiteBuffer<TElement> IWrite<TElement, BipartiteBuffer<TElement>>.Write([AllowNull] TElement element) {
 			if (Secondary.Writable) {
 				_ = Secondary.Write(element);
 				return this;

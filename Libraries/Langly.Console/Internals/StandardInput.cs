@@ -22,7 +22,26 @@ namespace Langly.Internals {
 			null;
 #endif
 
-		private StandardInput() { }
+		/// <summary>
+		/// The buffer for reads.
+		/// </summary>
+		private readonly Memory<Char> Buffer;
+
+		/// <summary>
+		/// The length of the actual <see cref="Buffer"/>.
+		/// </summary>
+		private Int32 Length;
+
+		/// <summary>
+		/// The position within the <see cref="Buffer"/>.
+		/// </summary>
+		private Int32 Position;
+
+		private StandardInput() {
+			Buffer = new Char[256];
+			Length = 0;
+			Position = 0;
+		}
 
 		/// <summary>
 		/// A singleton instance of <see cref="StandardInput"/>.
@@ -33,10 +52,58 @@ namespace Langly.Internals {
 		public Boolean Readable => true;
 
 		/// <inheritdoc/>
-		[return: MaybeNull]
+		[return: NotNull]
+		public IConsoleReader Peek(out Char element) {
+			if (Position == Length) {
+				FillBuffer();
+			}
+			element = Buffer.Span[Position];
+			return this;
+		}
+
+		/// <inheritdoc/>
+		[return: NotNull]
 		public IConsoleReader Read(out Char element) {
+			if (Position == Length) {
+				FillBuffer();
+			}
+			element = Buffer.Span[Position++];
+			return this;
+		}
+
+		/// <inheritdoc/>
+		[return: NotNull]
+		public IConsoleReader ReadLine([NotNull] out String elements) {
+			if (Position == Length) {
+				FillBuffer();
+			}
+			Int32 i = 0;
 #if WINDOWS
-			throw new NotImplementedException();
+			Boolean MaybeEnding = false;
+#endif
+			foreach (Char item in Buffer.Span.Slice(Position)) {
+#if WINDOWS
+				if (MaybeEnding && item == '\n') {
+					break;
+				} else if (item == '\r') {
+					MaybeEnding = true;
+				}
+#else
+				if (item == '\n') {
+					break;
+				}
+#endif
+				i++;
+			}
+			elements = new String(Buffer.Span.Slice(Position, i));
+			Position = i;
+			return this;
+		}
+
+		private unsafe void FillBuffer() {
+#if WINDOWS
+			ReadConsole(Handle, Buffer.Span, out Length, null);
+			Position = 0;
 #else
 			throw new PlatformNotSupportedException();
 #endif

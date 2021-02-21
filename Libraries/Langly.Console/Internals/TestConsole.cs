@@ -24,6 +24,12 @@ namespace Langly.Internals {
 			}
 		}
 
+		/// <inheritdoc/>
+		public Boolean Readable => true;
+
+		/// <inheritdoc/>
+		public Boolean Writable => true;
+
 		/// <summary>
 		/// Gets the written text from the buffer and flushes the buffer.
 		/// </summary>
@@ -36,40 +42,27 @@ namespace Langly.Internals {
 		}
 
 		/// <inheritdoc/>
-		public Boolean Readable => true;
+		[return: NotNull]
+		IConsoleReader IPeek<Char, IConsoleReader>.Peek(out Char element) => throw new NotImplementedException();
 
 		/// <inheritdoc/>
-		public Boolean Writable => true;
-
-		/// <inheritdoc/>
-		[return: MaybeNull]
+		[return: NotNull]
 		IConsoleReader IRead<Char, IConsoleReader>.Read(out Char element) => throw new NotImplementedException();
 
+		[return: NotNull]
+		IConsoleReader IConsoleReader.ReadLine(out String elements) => throw new NotImplementedException();
+
 		/// <inheritdoc/>
-		[return: MaybeNull]
+		[return: NotNull]
 		IConsoleWriter IWrite<Char, IConsoleWriter>.Write(Char element) {
 			WriteLog.Append(element);
 			return this;
 		}
 
 		/// <inheritdoc/>
-		[return: MaybeNull]
-		IConsoleWriter IWrite<Char, IConsoleWriter>.Write(ReadOnlyMemory<Char> elements) {
-			WriteLog.Append(elements);
-			return this;
-		}
-
-		/// <inheritdoc/>
-		[return: MaybeNull]
+		[return: NotNull]
 		IConsoleError IWrite<Char, IConsoleError>.Write(Char element) {
 			ErrorLog.Append(element);
-			return this;
-		}
-
-		/// <inheritdoc/>
-		[return: MaybeNull]
-		IConsoleError IWrite<Char, IConsoleError>.Write(ReadOnlyMemory<char> elements) {
-			ErrorLog.Append(elements);
 			return this;
 		}
 	}

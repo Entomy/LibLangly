@@ -4,13 +4,13 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 
 namespace Langly.DataStructures.Buffers {
-	public partial class Bipartite<TElement> {
+	public partial class BipartiteBuffer<TElement> {
 		/// <inheritdoc/>
 		[return: NotNull]
-		public override Bipartite<TElement>.Enumerator GetEnumerator() => new Enumerator(this);
+		public override BipartiteBuffer<TElement>.Enumerator GetEnumerator() => new Enumerator(this);
 
 		/// <summary>
-		/// Provides enumeration over a <see cref="Bipartite{TElement}"/> buffer.
+		/// Provides enumeration over a <see cref="BipartiteBuffer{TElement}"/>.
 		/// </summary>
 		[EditorBrowsable(EditorBrowsableState.Advanced)]
 		[StructLayout(LayoutKind.Auto)]
@@ -19,7 +19,7 @@ namespace Langly.DataStructures.Buffers {
 			/// The buffer being enumerated.
 			/// </summary>
 			[DisallowNull, NotNull]
-			private readonly Bipartite<TElement> Buffer;
+			private readonly BipartiteBuffer<TElement> Buffer;
 
 			/// <summary>
 			/// The current index.
@@ -30,7 +30,7 @@ namespace Langly.DataStructures.Buffers {
 			/// Initializes a new <see cref="Enumerator"/>.
 			/// </summary>
 			/// <param name="buffer">The buffer to enumerate.</param>
-			public Enumerator([DisallowNull] Bipartite<TElement> buffer) {
+			public Enumerator([DisallowNull] BipartiteBuffer<TElement> buffer) {
 				Buffer = buffer;
 				i = -1;
 			}

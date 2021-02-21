@@ -8,6 +8,7 @@ namespace Benchmarks {
 			Console.Title = "Langly Benchmarks";
 			using ScreenBuffer Screen = Console.ScreenBuffer;
 			Console.WriteLine("Hello World");
+			Console.WriteLine(Console.ReadLine());
 			Thread.Sleep(1000);
 		}
 	}

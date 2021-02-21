@@ -115,20 +115,20 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Internals_ConsoleComponents_ErrorWriter.md&amp;value=---%0Auid%3A%20Langly.Internals.ConsoleComponents.ErrorWriter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Internals_ConsoleComponents_Error.md&amp;value=---%0Auid%3A%20Langly.Internals.ConsoleComponents.Error%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Console/Internals/ConsoleComponents.cs/#L22">View Source</a>
   </span>
-  <a id="Langly_Internals_ConsoleComponents_ErrorWriter_" data-uid="Langly.Internals.ConsoleComponents.ErrorWriter*"></a>
-  <h4 id="Langly_Internals_ConsoleComponents_ErrorWriter" data-uid="Langly.Internals.ConsoleComponents.ErrorWriter">ErrorWriter</h4>
+  <a id="Langly_Internals_ConsoleComponents_Error_" data-uid="Langly.Internals.ConsoleComponents.Error*"></a>
+  <h4 id="Langly_Internals_ConsoleComponents_Error" data-uid="Langly.Internals.ConsoleComponents.Error">Error</h4>
   <div class="markdown level1 summary"><p>The object responsible for handling writes of errors.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
-public static IConsoleErrorWriter ErrorWriter { get; set; }</code></pre>
+public static IConsoleError Error { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -140,12 +140,12 @@ public static IConsoleErrorWriter ErrorWriter { get; set; }</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Langly.Internals.IConsoleErrorWriter.html">IConsoleErrorWriter</a></td>
+        <td><a class="xref" href="Langly.Internals.IConsoleError.html">IConsoleError</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="Langly_Internals_ConsoleComponents_ErrorWriter_remarks">Remarks</h5>
+  <h5 id="Langly_Internals_ConsoleComponents_Error_remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>By default this performs normal write operations, but another object can be injected through this property that provides atypical behavior, such as for debugging. Setting to <span class="xref">null</span> will reset to standard behavior.</p>
 </div>
   <span class="small pull-right mobile-hide">

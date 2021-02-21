@@ -84,8 +84,17 @@
   <div classs="implements">
     <h5>Implements</h5>
     <div><a class="xref" href="Langly.Internals.IConsoleReader.html">IConsoleReader</a></div>
+    <div><a class="xref" href="Langly.IPeek-2.html">IPeek</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>, <a class="xref" href="Langly.Internals.IConsoleReader.html">IConsoleReader</a>&gt;</div>
+    <div><a class="xref" href="Langly.IReadUnsafe-2.html">IReadUnsafe</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>, <a class="xref" href="Langly.Internals.IConsoleReader.html">IConsoleReader</a>&gt;</div>
+    <div><a class="xref" href="Langly.IRead-2.html">IRead</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>, <a class="xref" href="Langly.Internals.IConsoleReader.html">IConsoleReader</a>&gt;</div>
     <div><a class="xref" href="Langly.Internals.IConsoleWriter.html">IConsoleWriter</a></div>
-    <div><a class="xref" href="Langly.Internals.IConsoleErrorWriter.html">IConsoleErrorWriter</a></div>
+    <div><a class="xref" href="Langly.IWriteText-1.html">IWriteText</a>&lt;<a class="xref" href="Langly.Internals.IConsoleWriter.html">IConsoleWriter</a>&gt;</div>
+    <div><a class="xref" href="Langly.IWriteUnsafe-2.html">IWriteUnsafe</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>, <a class="xref" href="Langly.Internals.IConsoleWriter.html">IConsoleWriter</a>&gt;</div>
+    <div><a class="xref" href="Langly.IWrite-2.html">IWrite</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>, <a class="xref" href="Langly.Internals.IConsoleWriter.html">IConsoleWriter</a>&gt;</div>
+    <div><a class="xref" href="Langly.Internals.IConsoleError.html">IConsoleError</a></div>
+    <div><a class="xref" href="Langly.IWriteText-1.html">IWriteText</a>&lt;<a class="xref" href="Langly.Internals.IConsoleError.html">IConsoleError</a>&gt;</div>
+    <div><a class="xref" href="Langly.IWriteUnsafe-2.html">IWriteUnsafe</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>, <a class="xref" href="Langly.Internals.IConsoleError.html">IConsoleError</a>&gt;</div>
+    <div><a class="xref" href="Langly.IWrite-2.html">IWrite</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>, <a class="xref" href="Langly.Internals.IConsoleError.html">IConsoleError</a>&gt;</div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -115,7 +124,7 @@
   <h6><strong>Assembly</strong>: Langly.Console.dll</h6>
   <h5 id="Langly_Internals_TestConsole_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class TestConsole : IConsoleReader, IConsoleWriter, IConsoleErrorWriter</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class TestConsole : IConsoleReader, IPeek&lt;char, IConsoleReader&gt;, IReadUnsafe&lt;char, IConsoleReader&gt;, IRead&lt;char, IConsoleReader&gt;, IConsoleWriter, IWriteText&lt;IConsoleWriter&gt;, IWriteUnsafe&lt;char, IConsoleWriter&gt;, IWrite&lt;char, IConsoleWriter&gt;, IConsoleError, IWriteText&lt;IConsoleError&gt;, IWriteUnsafe&lt;char, IConsoleError&gt;, IWrite&lt;char, IConsoleError&gt;</code></pre>
   </div>
   <h5 id="Langly_Internals_TestConsole_remarks"><strong>Remarks</strong></h5>
   <div class="markdown level0 remarks"><p>By injecting this into <a class="xref" href="Langly.Console.html">Console</a>, those operations will be passed here instead, enabling introspection.</p>
@@ -127,7 +136,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Internals_TestConsole_Errors.md&amp;value=---%0Auid%3A%20Langly.Internals.TestConsole.Errors%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Console/Internals/TestConsole.cs/#L18">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Console/Internals/TestConsole.cs/#L19">View Source</a>
   </span>
   <a id="Langly_Internals_TestConsole_Errors_" data-uid="Langly.Internals.TestConsole.Errors*"></a>
   <h4 id="Langly_Internals_TestConsole_Errors" data-uid="Langly.Internals.TestConsole.Errors">Errors</h4>
@@ -155,10 +164,78 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Internals_TestConsole_Readable.md&amp;value=---%0Auid%3A%20Langly.Internals.TestConsole.Readable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Console/Internals/TestConsole.cs/#L28">View Source</a>
+  </span>
+  <a id="Langly_Internals_TestConsole_Readable_" data-uid="Langly.Internals.TestConsole.Readable*"></a>
+  <h4 id="Langly_Internals_TestConsole_Readable" data-uid="Langly.Internals.TestConsole.Readable">Readable</h4>
+  <div class="markdown level1 summary"><p>Can this be read from?</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Readable { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_Internals_TestConsole_Readable_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This is a state indicator. Of course an <a class="xref" href="Langly.IRead-2.html">IRead&lt;TElement, TResult&gt;</a> can be read from, but that doesn't mean it can always be read from. Rather, this being <span class="xref">true</span> indicates the type can currently be read from.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Internals_TestConsole_Writable.md&amp;value=---%0Auid%3A%20Langly.Internals.TestConsole.Writable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Console/Internals/TestConsole.cs/#L31">View Source</a>
+  </span>
+  <a id="Langly_Internals_TestConsole_Writable_" data-uid="Langly.Internals.TestConsole.Writable*"></a>
+  <h4 id="Langly_Internals_TestConsole_Writable" data-uid="Langly.Internals.TestConsole.Writable">Writable</h4>
+  <div class="markdown level1 summary"><p>Can this be written to?</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Writable { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_Internals_TestConsole_Writable_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This is a state indicator. Of course an <a class="xref" href="Langly.IWrite-2.html">IWrite&lt;TElement, TResult&gt;</a> can be written to, but that doesn't mean it can always be written to. Rather, this being <span class="xref">true</span> indicates the type can currently be written to.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Internals_TestConsole_Written.md&amp;value=---%0Auid%3A%20Langly.Internals.TestConsole.Written%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Console/Internals/TestConsole.cs/#L29">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Console/Internals/TestConsole.cs/#L36">View Source</a>
   </span>
   <a id="Langly_Internals_TestConsole_Written_" data-uid="Langly.Internals.TestConsole.Written*"></a>
   <h4 id="Langly_Internals_TestConsole_Written" data-uid="Langly.Internals.TestConsole.Written">Written</h4>
@@ -188,19 +265,18 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Internals_TestConsole_Langly_Internals_IConsoleErrorWriter_Write_System_Char__System_Int32_.md&amp;value=---%0Auid%3A%20Langly.Internals.TestConsole.Langly%23Internals%23IConsoleErrorWriter%23Write(System.Char*%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Internals_TestConsole_Langly_Internals_IConsoleReader_ReadLine_System_String__.md&amp;value=---%0Auid%3A%20Langly.Internals.TestConsole.Langly%23Internals%23IConsoleReader%23ReadLine(System.String%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Console/Internals/TestConsole.cs/#L47">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Console/Internals/TestConsole.cs/#L52">View Source</a>
   </span>
-  <a id="Langly_Internals_TestConsole_Langly_Internals_IConsoleErrorWriter_Write_" data-uid="Langly.Internals.TestConsole.Langly#Internals#IConsoleErrorWriter#Write*"></a>
-  <h4 id="Langly_Internals_TestConsole_Langly_Internals_IConsoleErrorWriter_Write_System_Char__System_Int32_" data-uid="Langly.Internals.TestConsole.Langly#Internals#IConsoleErrorWriter#Write(System.Char*,System.Int32)">IConsoleErrorWriter.Write(Char*, Int32)</h4>
-  <div class="markdown level1 summary"><p>Writes the text to the standard output stream.</p>
-</div>
+  <a id="Langly_Internals_TestConsole_Langly_Internals_IConsoleReader_ReadLine_" data-uid="Langly.Internals.TestConsole.Langly#Internals#IConsoleReader#ReadLine*"></a>
+  <h4 id="Langly_Internals_TestConsole_Langly_Internals_IConsoleReader_ReadLine_System_String__" data-uid="Langly.Internals.TestConsole.Langly#Internals#IConsoleReader#ReadLine(System.String@)">IConsoleReader.ReadLine(out String)</h4>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void IConsoleErrorWriter.Write(char *text, int length)</code></pre>
+    <pre><code class="lang-csharp hljs">IConsoleReader IConsoleReader.ReadLine(out string elements)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -213,34 +289,42 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>*</td>
-        <td><span class="parametername">text</span></td>
-        <td><p>The characters of the text to write.</p>
-</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">elements</span></td>
+        <td></td>
       </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td><span class="parametername">length</span></td>
-        <td><p>The length of the <code data-dev-comment-type="paramref" class="paramref">text</code>.</p>
-</td>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.Internals.IConsoleReader.html">IConsoleReader</a></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Internals_TestConsole_Langly_Internals_IConsoleErrorWriter_Write_System_ReadOnlySpan_System_Char__.md&amp;value=---%0Auid%3A%20Langly.Internals.TestConsole.Langly%23Internals%23IConsoleErrorWriter%23Write(System.ReadOnlySpan%7BSystem.Char%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Internals_TestConsole_Langly_IPeek_System_Char_Langly_Internals_IConsoleReader__Peek_System_Char__.md&amp;value=---%0Auid%3A%20Langly.Internals.TestConsole.Langly%23IPeek%7BSystem%23Char%2CLangly%23Internals%23IConsoleReader%7D%23Peek(System.Char%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Console/Internals/TestConsole.cs/#L44">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Console/Internals/TestConsole.cs/#L45">View Source</a>
   </span>
-  <a id="Langly_Internals_TestConsole_Langly_Internals_IConsoleErrorWriter_Write_" data-uid="Langly.Internals.TestConsole.Langly#Internals#IConsoleErrorWriter#Write*"></a>
-  <h4 id="Langly_Internals_TestConsole_Langly_Internals_IConsoleErrorWriter_Write_System_ReadOnlySpan_System_Char__" data-uid="Langly.Internals.TestConsole.Langly#Internals#IConsoleErrorWriter#Write(System.ReadOnlySpan{System.Char})">IConsoleErrorWriter.Write(ReadOnlySpan&lt;Char&gt;)</h4>
-  <div class="markdown level1 summary"><p>Writes the text to the standard output stream.</p>
+  <a id="Langly_Internals_TestConsole_Langly_IPeek_System_Char_Langly_Internals_IConsoleReader__Peek_" data-uid="Langly.Internals.TestConsole.Langly#IPeek{System#Char,Langly#Internals#IConsoleReader}#Peek*"></a>
+  <h4 id="Langly_Internals_TestConsole_Langly_IPeek_System_Char_Langly_Internals_IConsoleReader__Peek_System_Char__" data-uid="Langly.Internals.TestConsole.Langly#IPeek{System#Char,Langly#Internals#IConsoleReader}#Peek(System.Char@)">IPeek&lt;Char, IConsoleReader&gt;.Peek(out Char)</h4>
+  <div class="markdown level1 summary"><p>Peeks at the first element.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void IConsoleErrorWriter.Write(ReadOnlySpan&lt;char&gt; text)</code></pre>
+    <pre><code class="lang-csharp hljs">IConsoleReader IPeek&lt;char, IConsoleReader&gt;.Peek(out char element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -253,44 +337,42 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
-        <td><span class="parametername">text</span></td>
-        <td><p>The text to write.</p>
-</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.Internals.IConsoleReader.html">IConsoleReader</a></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Internals_TestConsole_Langly_Internals_IConsoleErrorWriter_WriteLine.md&amp;value=---%0Auid%3A%20Langly.Internals.TestConsole.Langly%23Internals%23IConsoleErrorWriter%23WriteLine%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Internals_TestConsole_Langly_IRead_System_Char_Langly_Internals_IConsoleReader__Read_System_Char__.md&amp;value=---%0Auid%3A%20Langly.Internals.TestConsole.Langly%23IRead%7BSystem%23Char%2CLangly%23Internals%23IConsoleReader%7D%23Read(System.Char%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Console/Internals/TestConsole.cs/#L53">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Console/Internals/TestConsole.cs/#L49">View Source</a>
   </span>
-  <a id="Langly_Internals_TestConsole_Langly_Internals_IConsoleErrorWriter_WriteLine_" data-uid="Langly.Internals.TestConsole.Langly#Internals#IConsoleErrorWriter#WriteLine*"></a>
-  <h4 id="Langly_Internals_TestConsole_Langly_Internals_IConsoleErrorWriter_WriteLine" data-uid="Langly.Internals.TestConsole.Langly#Internals#IConsoleErrorWriter#WriteLine">IConsoleErrorWriter.WriteLine()</h4>
-  <div class="markdown level1 summary"><p>Writes a line terminator to the standard output stream.</p>
+  <a id="Langly_Internals_TestConsole_Langly_IRead_System_Char_Langly_Internals_IConsoleReader__Read_" data-uid="Langly.Internals.TestConsole.Langly#IRead{System#Char,Langly#Internals#IConsoleReader}#Read*"></a>
+  <h4 id="Langly_Internals_TestConsole_Langly_IRead_System_Char_Langly_Internals_IConsoleReader__Read_System_Char__" data-uid="Langly.Internals.TestConsole.Langly#IRead{System#Char,Langly#Internals#IConsoleReader}#Read(System.Char@)">IRead&lt;Char, IConsoleReader&gt;.Read(out Char)</h4>
+  <div class="markdown level1 summary"><p>Reads a <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void IConsoleErrorWriter.WriteLine()</code></pre>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Internals_TestConsole_Langly_Internals_IConsoleWriter_Write_System_Char__System_Int32_.md&amp;value=---%0Auid%3A%20Langly.Internals.TestConsole.Langly%23Internals%23IConsoleWriter%23Write(System.Char*%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Console/Internals/TestConsole.cs/#L41">View Source</a>
-  </span>
-  <a id="Langly_Internals_TestConsole_Langly_Internals_IConsoleWriter_Write_" data-uid="Langly.Internals.TestConsole.Langly#Internals#IConsoleWriter#Write*"></a>
-  <h4 id="Langly_Internals_TestConsole_Langly_Internals_IConsoleWriter_Write_System_Char__System_Int32_" data-uid="Langly.Internals.TestConsole.Langly#Internals#IConsoleWriter#Write(System.Char*,System.Int32)">IConsoleWriter.Write(Char*, Int32)</h4>
-  <div class="markdown level1 summary"><p>Writes the text to the standard output stream.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void IConsoleWriter.Write(char *text, int length)</code></pre>
+    <pre><code class="lang-csharp hljs">IConsoleReader IRead&lt;char, IConsoleReader&gt;.Read(out char element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -303,34 +385,43 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>*</td>
-        <td><span class="parametername">text</span></td>
-        <td><p>The characters of the text to write.</p>
-</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
       </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td><span class="parametername">length</span></td>
-        <td><p>The length of the <code data-dev-comment-type="paramref" class="paramref">text</code>.</p>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.Internals.IConsoleReader.html">IConsoleReader</a></td>
+        <td><p>A <code data-dev-comment-type="typeparamref" class="typeparamref">TResult</code> instance if successful; otherwise, <span class="xref">null</span>.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Internals_TestConsole_Langly_Internals_IConsoleWriter_Write_System_ReadOnlySpan_System_Char__.md&amp;value=---%0Auid%3A%20Langly.Internals.TestConsole.Langly%23Internals%23IConsoleWriter%23Write(System.ReadOnlySpan%7BSystem.Char%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Internals_TestConsole_Langly_IWrite_System_Char_Langly_Internals_IConsoleError__Write_System_Char_.md&amp;value=---%0Auid%3A%20Langly.Internals.TestConsole.Langly%23IWrite%7BSystem%23Char%2CLangly%23Internals%23IConsoleError%7D%23Write(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Console/Internals/TestConsole.cs/#L38">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Console/Internals/TestConsole.cs/#L63">View Source</a>
   </span>
-  <a id="Langly_Internals_TestConsole_Langly_Internals_IConsoleWriter_Write_" data-uid="Langly.Internals.TestConsole.Langly#Internals#IConsoleWriter#Write*"></a>
-  <h4 id="Langly_Internals_TestConsole_Langly_Internals_IConsoleWriter_Write_System_ReadOnlySpan_System_Char__" data-uid="Langly.Internals.TestConsole.Langly#Internals#IConsoleWriter#Write(System.ReadOnlySpan{System.Char})">IConsoleWriter.Write(ReadOnlySpan&lt;Char&gt;)</h4>
-  <div class="markdown level1 summary"><p>Writes the text to the standard output stream.</p>
+  <a id="Langly_Internals_TestConsole_Langly_IWrite_System_Char_Langly_Internals_IConsoleError__Write_" data-uid="Langly.Internals.TestConsole.Langly#IWrite{System#Char,Langly#Internals#IConsoleError}#Write*"></a>
+  <h4 id="Langly_Internals_TestConsole_Langly_IWrite_System_Char_Langly_Internals_IConsoleError__Write_System_Char_" data-uid="Langly.Internals.TestConsole.Langly#IWrite{System#Char,Langly#Internals#IConsoleError}#Write(System.Char)">IWrite&lt;Char, IConsoleError&gt;.Write(Char)</h4>
+  <div class="markdown level1 summary"><p>Writes a <code data-dev-comment-type="paramref" class="paramref">element</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void IConsoleWriter.Write(ReadOnlySpan&lt;char&gt; text)</code></pre>
+    <pre><code class="lang-csharp hljs">IConsoleError IWrite&lt;char, IConsoleError&gt;.Write(char element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -343,38 +434,113 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
-        <td><span class="parametername">text</span></td>
-        <td><p>The text to write.</p>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.Internals.IConsoleError.html">IConsoleError</a></td>
+        <td><p>A <code data-dev-comment-type="typeparamref" class="typeparamref">TResult</code> instance if successful; otherwise, <span class="xref">null</span>.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Internals_TestConsole_Langly_Internals_IConsoleWriter_WriteLine.md&amp;value=---%0Auid%3A%20Langly.Internals.TestConsole.Langly%23Internals%23IConsoleWriter%23WriteLine%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Internals_TestConsole_Langly_IWrite_System_Char_Langly_Internals_IConsoleWriter__Write_System_Char_.md&amp;value=---%0Auid%3A%20Langly.Internals.TestConsole.Langly%23IWrite%7BSystem%23Char%2CLangly%23Internals%23IConsoleWriter%7D%23Write(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Console/Internals/TestConsole.cs/#L50">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Console/Internals/TestConsole.cs/#L56">View Source</a>
   </span>
-  <a id="Langly_Internals_TestConsole_Langly_Internals_IConsoleWriter_WriteLine_" data-uid="Langly.Internals.TestConsole.Langly#Internals#IConsoleWriter#WriteLine*"></a>
-  <h4 id="Langly_Internals_TestConsole_Langly_Internals_IConsoleWriter_WriteLine" data-uid="Langly.Internals.TestConsole.Langly#Internals#IConsoleWriter#WriteLine">IConsoleWriter.WriteLine()</h4>
-  <div class="markdown level1 summary"><p>Writes a line terminator to the standard output stream.</p>
+  <a id="Langly_Internals_TestConsole_Langly_IWrite_System_Char_Langly_Internals_IConsoleWriter__Write_" data-uid="Langly.Internals.TestConsole.Langly#IWrite{System#Char,Langly#Internals#IConsoleWriter}#Write*"></a>
+  <h4 id="Langly_Internals_TestConsole_Langly_IWrite_System_Char_Langly_Internals_IConsoleWriter__Write_System_Char_" data-uid="Langly.Internals.TestConsole.Langly#IWrite{System#Char,Langly#Internals#IConsoleWriter}#Write(System.Char)">IWrite&lt;Char, IConsoleWriter&gt;.Write(Char)</h4>
+  <div class="markdown level1 summary"><p>Writes a <code data-dev-comment-type="paramref" class="paramref">element</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void IConsoleWriter.WriteLine()</code></pre>
+    <pre><code class="lang-csharp hljs">IConsoleWriter IWrite&lt;char, IConsoleWriter&gt;.Write(char element)</code></pre>
   </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.Internals.IConsoleWriter.html">IConsoleWriter</a></td>
+        <td><p>A <code data-dev-comment-type="typeparamref" class="typeparamref">TResult</code> instance if successful; otherwise, <span class="xref">null</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="Langly.Internals.IConsoleReader.html">IConsoleReader</a>
   </div>
   <div>
+      <a class="xref" href="Langly.IPeek-2.html">IPeek&lt;TElement, TResult&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IReadUnsafe-2.html">IReadUnsafe&lt;TElement, TResult&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IRead-2.html">IRead&lt;TElement, TResult&gt;</a>
+  </div>
+  <div>
       <a class="xref" href="Langly.Internals.IConsoleWriter.html">IConsoleWriter</a>
   </div>
   <div>
-      <a class="xref" href="Langly.Internals.IConsoleErrorWriter.html">IConsoleErrorWriter</a>
+      <a class="xref" href="Langly.IWriteText-1.html">IWriteText&lt;TResult&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IWriteUnsafe-2.html">IWriteUnsafe&lt;TElement, TResult&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IWrite-2.html">IWrite&lt;TElement, TResult&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.Internals.IConsoleError.html">IConsoleError</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IWriteText-1.html">IWriteText&lt;TResult&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IWriteUnsafe-2.html">IWriteUnsafe&lt;TElement, TResult&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IWrite-2.html">IWrite&lt;TElement, TResult&gt;</a>
   </div>
 </article>
           </div>
@@ -387,7 +553,7 @@
                     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Internals_TestConsole.md&amp;value=---%0Auid%3A%20Langly.Internals.TestConsole%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Console/Internals/TestConsole.cs/#L11" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Console/Internals/TestConsole.cs/#L12" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

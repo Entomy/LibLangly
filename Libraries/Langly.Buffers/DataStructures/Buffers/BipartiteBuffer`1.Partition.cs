@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 using Langly.DataStructures.Filters;
 
 namespace Langly.DataStructures.Buffers {
-	public partial class Bipartite<TElement> {
+	public partial class BipartiteBuffer<TElement> {
 		/// <summary>
 		/// Represents a partition of the buffer.
 		/// </summary>
