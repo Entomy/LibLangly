@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using System.Runtime.Versioning;
 using Langly.Internals;
 
 namespace Langly {
@@ -9,6 +10,7 @@ namespace Langly {
 	/// <remarks>
 	/// This is intended as a replacement for <see cref="System.Console"/>. It bypasses much of the .NET runtime functionality, instead binding to the native console API's directly. It also operates in a uniquely different way, going for the direct API's than operating as a stream.
 	/// </remarks>
+	[SupportedOSPlatform("windows")]
 	[SuppressMessage("Blocker Code Smell", "S3427:Method overloads with default parameter values should not overlap ", Justification = "Sonar has absolutely no idea what's going on here.")]
 	public static partial class Console {
 		/// <summary>
