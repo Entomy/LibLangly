@@ -17,7 +17,7 @@ namespace Langly {
 			[NotNull]
 			private readonly Dictionary<TElement> Dictionary;
 
-			[NotNull]
+			[AllowNull, MaybeNull]
 			private Node N;
 
 			/// <summary>
