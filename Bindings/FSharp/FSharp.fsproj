@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net5.0-windows</TargetFrameworks>
+		<Description>F# bindings for the entire LibLangly runtime.</Description>
+		<PackageTags>langly, f#, fsharp</PackageTags>
+		<AssemblyName>Langly.FSharp</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Packages\Langly\Langly.csproj" />
+    <ProjectReference Include="..\FSharp.Traits\FSharp.Traits.fsproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+		<Description>F# bindings for Langly.Traits.</Description>
+		<PackageTags>langly, traits, f#, fsharp</PackageTags>
+		<AssemblyName>Langly.FSharp</AssemblyName>
+	</PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Bindings.fs" />
+    <Compile Include="Langly.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libraries\Langly.Traits\Langly.Traits.csproj" />
+  </ItemGroup>
+
+</Project>
