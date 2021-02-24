@@ -58,6 +58,7 @@ namespace Langly {
 		/// <param name="lower">The lower bound.</param>
 		/// <param name="upper">The upper bound.</param>
 		/// <exception cref="ArgumentNotWithinException">Thrown if the guard clause fails.</exception>
+		[CLSCompliant(false)]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static void Within(SByte value, String name, SByte lower, SByte upper) {
 			if (!Check.Within(value, lower, upper)) {
@@ -88,6 +89,7 @@ namespace Langly {
 		/// <param name="lower">The lower bound.</param>
 		/// <param name="upper">The upper bound.</param>
 		/// <exception cref="ArgumentNotWithinException">Thrown if the guard clause fails.</exception>
+		[CLSCompliant(false)]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static void Within(UInt16 value, String name, UInt16 lower, UInt16 upper) {
 			if (!Check.Within(value, lower, upper)) {
@@ -118,6 +120,7 @@ namespace Langly {
 		/// <param name="lower">The lower bound.</param>
 		/// <param name="upper">The upper bound.</param>
 		/// <exception cref="ArgumentNotWithinException">Thrown if the guard clause fails.</exception>
+		[CLSCompliant(false)]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static void Within(UInt32 value, String name, UInt32 lower, UInt32 upper) {
 			if (!Check.Within(value, lower, upper)) {
@@ -148,6 +151,7 @@ namespace Langly {
 		/// <param name="lower">The lower bound.</param>
 		/// <param name="upper">The upper bound.</param>
 		/// <exception cref="ArgumentNotWithinException">Thrown if the guard clause fails.</exception>
+		[CLSCompliant(false)]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static void Within(UInt64 value, String name, UInt64 lower, UInt64 upper) {
 			if (!Check.Within(value, lower, upper)) {

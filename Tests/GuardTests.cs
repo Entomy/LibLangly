@@ -22,8 +22,8 @@ namespace Langly {
 		[InlineData(new Char[] { 'a', 'b', 'c' }, 'a', true)]
 		[InlineData(new Char[] { 'a', 'b', 'c' }, 'c', true)]
 		[InlineData(new Char[] { 'a', 'b', 'c' }, 'd', false)]
-		public void Contains_WeakList_Char(Char[] values, Char value, Boolean succeeds) {
-			System.Collections.ICollection collection = values is null ? null : new System.Collections.ArrayList(values);
+		public void Contains_GenericList_Char(Char[] values, Char value, Boolean succeeds) {
+			System.Collections.Generic.IReadOnlyList<Char> collection = values is null ? null : new System.Collections.Generic.List<Char>(values);
 			if (succeeds) {
 				Guard.Contains(collection, nameof(collection), value);
 			} else {
@@ -36,8 +36,8 @@ namespace Langly {
 		[InlineData(new Char[] { 'a', 'b', 'c' }, 'a', true)]
 		[InlineData(new Char[] { 'a', 'b', 'c' }, 'c', true)]
 		[InlineData(new Char[] { 'a', 'b', 'c' }, 'd', false)]
-		public void Contains_GenericList_Char(Char[] values, Char value, Boolean succeeds) {
-			System.Collections.Generic.IReadOnlyList<Char> collection = values is null ? null : new System.Collections.Generic.List<Char>(values);
+		public void Contains_WeakList_Char(Char[] values, Char value, Boolean succeeds) {
+			System.Collections.ICollection collection = values is null ? null : new System.Collections.ArrayList(values);
 			if (succeeds) {
 				Guard.Contains(collection, nameof(collection), value);
 			} else {
@@ -71,34 +71,9 @@ namespace Langly {
 
 		[Theory]
 		[InlineData(null, true)]
-		[InlineData("", true)]
-		[InlineData("hello", false)]
-		public void Empty_String(String collection, Boolean succeeds) {
-			if (succeeds) {
-				Guard.Empty(collection, nameof(collection));
-			} else {
-				Assert.Throws<ArgumentNotEmptyException>(() => Guard.Empty(collection, nameof(collection)));
-			}
-		}
-
-		[Theory]
-		[InlineData(null, true)]
 		[InlineData(new Int32[] { }, true)]
 		[InlineData(new Int32[] { 1, 2, 3 }, false)]
 		public void Empty_Array(Int32[] collection, Boolean succeeds) {
-			if (succeeds) {
-				Guard.Empty(collection, nameof(collection));
-			} else {
-				Assert.Throws<ArgumentNotEmptyException>(() => Guard.Empty(collection, nameof(collection)));
-			}
-		}
-
-		[Theory]
-		[InlineData(null, true)]
-		[InlineData(new Int32[] { }, true)]
-		[InlineData(new Int32[] { 1, 2, 3 }, false)]
-		public void Empty_WeakList(Int32[] values, Boolean succeeds) {
-			System.Collections.IList collection = values is null ? null : new System.Collections.ArrayList(values);
 			if (succeeds) {
 				Guard.Empty(collection, nameof(collection));
 			} else {
@@ -116,6 +91,31 @@ namespace Langly {
 				Guard.Empty<Int32, System.Collections.Generic.IReadOnlyList<Int32>>(collection, nameof(collection));
 			} else {
 				Assert.Throws<ArgumentNotEmptyException>(() => Guard.Empty<Int32, System.Collections.Generic.IReadOnlyList<Int32>>(collection, nameof(collection)));
+			}
+		}
+
+		[Theory]
+		[InlineData(null, true)]
+		[InlineData("", true)]
+		[InlineData("hello", false)]
+		public void Empty_String(String collection, Boolean succeeds) {
+			if (succeeds) {
+				Guard.Empty(collection, nameof(collection));
+			} else {
+				Assert.Throws<ArgumentNotEmptyException>(() => Guard.Empty(collection, nameof(collection)));
+			}
+		}
+
+		[Theory]
+		[InlineData(null, true)]
+		[InlineData(new Int32[] { }, true)]
+		[InlineData(new Int32[] { 1, 2, 3 }, false)]
+		public void Empty_WeakList(Int32[] values, Boolean succeeds) {
+			System.Collections.IList collection = values is null ? null : new System.Collections.ArrayList(values);
+			if (succeeds) {
+				Guard.Empty(collection, nameof(collection));
+			} else {
+				Assert.Throws<ArgumentNotEmptyException>(() => Guard.Empty(collection, nameof(collection)));
 			}
 		}
 
@@ -142,6 +142,7 @@ namespace Langly {
 				Assert.Throws<ArgumentNotEqualException>(() => Guard.Equal(value, nameof(value), other));
 			}
 		}
+
 		[Theory]
 		[InlineData("hi", "hi", true)]
 		[InlineData("hi", "no", false)]
@@ -207,20 +208,6 @@ namespace Langly {
 		}
 
 		[Theory]
-		[InlineData(null, false)]
-		[InlineData(1, true)]
-		[InlineData(1.5, false)]
-		[InlineData('a', false)]
-		[InlineData("hi", false)]
-		public void OfType_Int32(System.Object value, Boolean succeeds) {
-			if (succeeds) {
-				Guard.OfType<Int32>(value, nameof(value));
-			} else {
-				Assert.Throws<ArgumentNotTypeException>(() => Guard.OfType<Int32>(value, nameof(value)));
-			}
-		}
-
-		[Theory]
 		[InlineData(new Int32[] { }, false)]
 		[InlineData(new Int32[] { 1, 2, 3 }, true)]
 		public void NotEmpty_Array(Int32[] value, Boolean succeeds) {
@@ -243,6 +230,20 @@ namespace Langly {
 		}
 
 		[Theory]
+		[InlineData(null, false)]
+		[InlineData(1, true)]
+		[InlineData(1.5, false)]
+		[InlineData('a', false)]
+		[InlineData("hi", false)]
+		public void OfType_Int32(System.Object value, Boolean succeeds) {
+			if (succeeds) {
+				Guard.OfType<Int32>(value, nameof(value));
+			} else {
+				Assert.Throws<ArgumentNotTypeException>(() => Guard.OfType<Int32>(value, nameof(value)));
+			}
+		}
+
+		[Theory]
 		[InlineData(-1, false)]
 		[InlineData(0, true)]
 		[InlineData(1, true)]
@@ -253,6 +254,54 @@ namespace Langly {
 				Guard.Valid((ConsoleColor)value, nameof(value));
 			} else {
 				Assert.Throws<ArgumentNotValidException>(() => Guard.Valid((ConsoleColor)value, nameof(value)));
+			}
+		}
+
+		[Theory]
+		[InlineData(0, 1, 5, false)]
+		[InlineData(1, 1, 5, true)]
+		[InlineData(2, 1, 5, true)]
+		[InlineData(3, 1, 5, true)]
+		[InlineData(4, 1, 5, true)]
+		[InlineData(5, 1, 5, true)]
+		[InlineData(6, 1, 5, false)]
+		public void Within_Byte(Byte value, Byte lower, Byte upper, Boolean succeeds) {
+			if (succeeds) {
+				Guard.Within(value, nameof(value), lower, upper);
+			} else {
+				Assert.Throws<ArgumentNotWithinException>(() => Guard.Within(value, nameof(value), lower, upper));
+			}
+		}
+
+		[Theory]
+		[InlineData(0, 1, 5, false)]
+		[InlineData(1, 1, 5, true)]
+		[InlineData(2, 1, 5, true)]
+		[InlineData(3, 1, 5, true)]
+		[InlineData(4, 1, 5, true)]
+		[InlineData(5, 1, 5, true)]
+		[InlineData(6, 1, 5, false)]
+		public void Within_Double(Double value, Double lower, Double upper, Boolean succeeds) {
+			if (succeeds) {
+				Guard.Within(value, nameof(value), lower, upper);
+			} else {
+				Assert.Throws<ArgumentNotWithinException>(() => Guard.Within(value, nameof(value), lower, upper));
+			}
+		}
+
+		[Theory]
+		[InlineData(0, 1, 5, false)]
+		[InlineData(1, 1, 5, true)]
+		[InlineData(2, 1, 5, true)]
+		[InlineData(3, 1, 5, true)]
+		[InlineData(4, 1, 5, true)]
+		[InlineData(5, 1, 5, true)]
+		[InlineData(6, 1, 5, false)]
+		public void Within_Int16(Int16 value, Int16 lower, Int16 upper, Boolean succeeds) {
+			if (succeeds) {
+				Guard.Within(value, nameof(value), lower, upper);
+			} else {
+				Assert.Throws<ArgumentNotWithinException>(() => Guard.Within(value, nameof(value), lower, upper));
 			}
 		}
 
@@ -280,7 +329,119 @@ namespace Langly {
 		[InlineData(4, 1, 5, true)]
 		[InlineData(5, 1, 5, true)]
 		[InlineData(6, 1, 5, false)]
+		public void Within_Int64(Int64 value, Int64 lower, Int64 upper, Boolean succeeds) {
+			if (succeeds) {
+				Guard.Within(value, nameof(value), lower, upper);
+			} else {
+				Assert.Throws<ArgumentNotWithinException>(() => Guard.Within(value, nameof(value), lower, upper));
+			}
+		}
+
+		[Theory]
+		[InlineData(0, 1, 5, false)]
+		[InlineData(1, 1, 5, true)]
+		[InlineData(2, 1, 5, true)]
+		[InlineData(3, 1, 5, true)]
+		[InlineData(4, 1, 5, true)]
+		[InlineData(5, 1, 5, true)]
+		[InlineData(6, 1, 5, false)]
+		public void Within_nint(Int32 value, Int32 lower, Int32 upper, Boolean succeeds) {
+			if (succeeds) {
+				Guard.Within((nint)value, nameof(value), (nint)lower, (nint)upper);
+			} else {
+				Assert.Throws<ArgumentNotWithinException>(() => Guard.Within(value, nameof(value), lower, upper));
+			}
+		}
+
+		[Theory]
+		[InlineData(0, 1, 5, false)]
+		[InlineData(1, 1, 5, true)]
+		[InlineData(2, 1, 5, true)]
+		[InlineData(3, 1, 5, true)]
+		[InlineData(4, 1, 5, true)]
+		[InlineData(5, 1, 5, true)]
+		[InlineData(6, 1, 5, false)]
+		public void Within_nuint(UInt32 value, UInt32 lower, UInt32 upper, Boolean succeeds) {
+			if (succeeds) {
+				Guard.Within((nuint)value, nameof(value), (nuint)lower, (nuint)upper);
+			} else {
+				Assert.Throws<ArgumentNotWithinException>(() => Guard.Within(value, nameof(value), lower, upper));
+			}
+		}
+
+		[Theory]
+		[InlineData(0, 1, 5, false)]
+		[InlineData(1, 1, 5, true)]
+		[InlineData(2, 1, 5, true)]
+		[InlineData(3, 1, 5, true)]
+		[InlineData(4, 1, 5, true)]
+		[InlineData(5, 1, 5, true)]
+		[InlineData(6, 1, 5, false)]
+		public void Within_SByte(SByte value, SByte lower, SByte upper, Boolean succeeds) {
+			if (succeeds) {
+				Guard.Within(value, nameof(value), lower, upper);
+			} else {
+				Assert.Throws<ArgumentNotWithinException>(() => Guard.Within(value, nameof(value), lower, upper));
+			}
+		}
+
+		[Theory]
+		[InlineData(0, 1, 5, false)]
+		[InlineData(1, 1, 5, true)]
+		[InlineData(2, 1, 5, true)]
+		[InlineData(3, 1, 5, true)]
+		[InlineData(4, 1, 5, true)]
+		[InlineData(5, 1, 5, true)]
+		[InlineData(6, 1, 5, false)]
+		public void Within_Single(Single value, Single lower, Single upper, Boolean succeeds) {
+			if (succeeds) {
+				Guard.Within(value, nameof(value), lower, upper);
+			} else {
+				Assert.Throws<ArgumentNotWithinException>(() => Guard.Within(value, nameof(value), lower, upper));
+			}
+		}
+
+		[Theory]
+		[InlineData(0, 1, 5, false)]
+		[InlineData(1, 1, 5, true)]
+		[InlineData(2, 1, 5, true)]
+		[InlineData(3, 1, 5, true)]
+		[InlineData(4, 1, 5, true)]
+		[InlineData(5, 1, 5, true)]
+		[InlineData(6, 1, 5, false)]
+		public void Within_UInt16(UInt16 value, UInt16 lower, UInt16 upper, Boolean succeeds) {
+			if (succeeds) {
+				Guard.Within(value, nameof(value), lower, upper);
+			} else {
+				Assert.Throws<ArgumentNotWithinException>(() => Guard.Within(value, nameof(value), lower, upper));
+			}
+		}
+
+		[Theory]
+		[InlineData(0, 1, 5, false)]
+		[InlineData(1, 1, 5, true)]
+		[InlineData(2, 1, 5, true)]
+		[InlineData(3, 1, 5, true)]
+		[InlineData(4, 1, 5, true)]
+		[InlineData(5, 1, 5, true)]
+		[InlineData(6, 1, 5, false)]
 		public void Within_UInt32(UInt32 value, UInt32 lower, UInt32 upper, Boolean succeeds) {
+			if (succeeds) {
+				Guard.Within(value, nameof(value), lower, upper);
+			} else {
+				Assert.Throws<ArgumentNotWithinException>(() => Guard.Within(value, nameof(value), lower, upper));
+			}
+		}
+
+		[Theory]
+		[InlineData(0, 1, 5, false)]
+		[InlineData(1, 1, 5, true)]
+		[InlineData(2, 1, 5, true)]
+		[InlineData(3, 1, 5, true)]
+		[InlineData(4, 1, 5, true)]
+		[InlineData(5, 1, 5, true)]
+		[InlineData(6, 1, 5, false)]
+		public void Within_UInt64(UInt64 value, UInt64 lower, UInt64 upper, Boolean succeeds) {
 			if (succeeds) {
 				Guard.Within(value, nameof(value), lower, upper);
 			} else {

@@ -42,7 +42,7 @@ namespace Langly {
 		/// <param name="upper">The upper bound.</param>
 		/// <returns><see langword="true"/> if the value is within the range; otherwise, <see langword="false"/>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static Boolean Within(Byte value, Byte lower, Byte upper) => (value - lower) <= (upper - lower);
+		public static Boolean Within(Byte value, Byte lower, Byte upper) => ((UInt32)value - (UInt32)lower) <= ((UInt32)upper - (UInt32)lower);
 
 		/// <summary>
 		/// Checks if the <paramref name="value"/> is within the range, <paramref name="lower"/>..<paramref name="upper"/>.
@@ -62,7 +62,7 @@ namespace Langly {
 		/// <param name="upper">The upper bound.</param>
 		/// <returns><see langword="true"/> if the value is within the range; otherwise, <see langword="false"/>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static Boolean Within(UInt16 value, UInt16 lower, UInt16 upper) => (value - lower) <= (upper - lower);
+		public static Boolean Within(UInt16 value, UInt16 lower, UInt16 upper) => ((UInt32)value - (UInt32)lower) <= ((UInt32)upper - (UInt32)lower);
 
 		/// <summary>
 		/// Checks if the <paramref name="value"/> is within the range, <paramref name="lower"/>..<paramref name="upper"/>.
