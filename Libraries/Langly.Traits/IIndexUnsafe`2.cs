@@ -8,7 +8,7 @@ namespace Langly {
 	/// <typeparam name="TIndex">The type used to index the collection.</typeparam>
 	/// <typeparam name="TElement">The type of the elements in the collection.</typeparam>
 	[CLSCompliant(false)]
-	public interface IIndexUnsafe<in TIndex, TElement> : IIndex<TIndex, TElement>, IIndexReadOnlyUnsafe<TIndex, TElement> where TIndex : unmanaged {
+	public interface IIndexUnsafe<TIndex, TElement> : IIndex<TIndex, TElement>, IIndexReadOnlyUnsafe<TIndex, TElement> where TIndex : unmanaged {
 		/// <summary>
 		/// Gets or sets the element at the specified index.
 		/// </summary>
