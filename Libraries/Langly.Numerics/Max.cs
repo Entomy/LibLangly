@@ -242,6 +242,8 @@ namespace Langly {
 		/// <typeparam name="TEnumerator">The type of the enumerator of the <paramref name="values"/>.</typeparam>
 		/// <param name="values">The values to find the maximum of.</param>
 		/// <returns>The maximum of the <paramref name="values"/>.</returns>
+		/// <exception cref="Exceptions.ArgumentNullException">Thrown when <paramref name="values"/> is null, because <see cref="Decimal"/> doesn't have a NaN value.</exception>
+		/// <exception cref="Exceptions.ArgumentEmptyException">Throw when <paramref name="values"/> is empty, because <see cref="Decimal"/> doesn't have a NaN value.</exception>
 		public static Decimal Max<TEnumerator>([DisallowNull] this ISequence<Decimal, TEnumerator> values) where TEnumerator : IEnumerator<Decimal> {
 			Guard.NotNull(values, nameof(values));
 			Guard.NotEmpty(values, nameof(values));

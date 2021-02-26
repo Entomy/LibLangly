@@ -54,7 +54,7 @@ namespace Langly {
 		/// <returns>The mean of the <paramref name="values"/>.</returns>
 		public static Double Mean<TEnumerator>([AllowNull] this ISequence<Byte, TEnumerator> values, Mean mean) where TEnumerator : IEnumerator<Byte> => mean switch {
 			Langly.Mean.Arithmetic => (Double)values.Sum() / (values?.Count ?? 0),
-			Langly.Mean.Geometric => Math.Pow(values.Product(), 1.0f / (values?.Count ?? 0)),
+			Langly.Mean.Geometric => Math.Pow(values.Product(), 1.0 / (values?.Count ?? 0)),
 			_ => throw Guard.Default(mean, nameof(mean)),
 		};
 
@@ -68,7 +68,7 @@ namespace Langly {
 		[CLSCompliant(false)]
 		public static Double Mean<TEnumerator>([AllowNull] this ISequence<SByte, TEnumerator> values, Mean mean) where TEnumerator : IEnumerator<SByte> => mean switch {
 			Langly.Mean.Arithmetic => (Double)values.Sum() / (values?.Count ?? 0),
-			Langly.Mean.Geometric => Math.Pow(values.Product(), 1.0f / (values?.Count ?? 0)),
+			Langly.Mean.Geometric => Math.Pow(values.Product(), 1.0 / (values?.Count ?? 0)),
 			_ => throw Guard.Default(mean, nameof(mean)),
 		};
 
@@ -81,7 +81,7 @@ namespace Langly {
 		/// <returns>The mean of the <paramref name="values"/>.</returns>
 		public static Double Mean<TEnumerator>([AllowNull] this ISequence<Int16, TEnumerator> values, Mean mean) where TEnumerator : IEnumerator<Int16> => mean switch {
 			Langly.Mean.Arithmetic => (Double)values.Sum() / (values?.Count ?? 0),
-			Langly.Mean.Geometric => Math.Pow(values.Product(), 1.0f / (values?.Count ?? 0)),
+			Langly.Mean.Geometric => Math.Pow(values.Product(), 1.0 / (values?.Count ?? 0)),
 			_ => throw Guard.Default(mean, nameof(mean)),
 		};
 
@@ -95,7 +95,7 @@ namespace Langly {
 		[CLSCompliant(false)]
 		public static Double Mean<TEnumerator>([AllowNull] this ISequence<UInt16, TEnumerator> values, Mean mean) where TEnumerator : IEnumerator<UInt16> => mean switch {
 			Langly.Mean.Arithmetic => (Double)values.Sum() / (values?.Count ?? 0),
-			Langly.Mean.Geometric => Math.Pow(values.Product(), 1.0f / (values?.Count ?? 0)),
+			Langly.Mean.Geometric => Math.Pow(values.Product(), 1.0 / (values?.Count ?? 0)),
 			_ => throw Guard.Default(mean, nameof(mean)),
 		};
 
@@ -162,7 +162,7 @@ namespace Langly {
 		/// <returns>The mean of the <paramref name="values"/>.</returns>
 		public static Double Mean<TEnumerator>([AllowNull] this ISequence<Single, TEnumerator> values, Mean mean) where TEnumerator : IEnumerator<Single> => mean switch {
 			Langly.Mean.Arithmetic => (Double)values.Sum() / (values?.Count ?? 0),
-			Langly.Mean.Geometric => Math.Pow(values.Product(), 1.0f / (values?.Count ?? 0)),
+			Langly.Mean.Geometric => Math.Pow(values.Product(), 1.0 / (values?.Count ?? 0)),
 			_ => throw Guard.Default(mean, nameof(mean)),
 		};
 

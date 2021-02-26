@@ -68,7 +68,7 @@ namespace Langly {
 		/// <typeparam name="TEnumerator">The type of the enumerator of the <paramref name="values"/>.</typeparam>
 		/// <param name="values">The values to sum.</param>
 		/// <returns>The sum of the <paramref name="values"/>.</returns>
-		public static Double Product<TEnumerator>([AllowNull] this ISequence<Byte, TEnumerator> values) where TEnumerator : IEnumerator<Byte> {
+		public static Single Product<TEnumerator>([AllowNull] this ISequence<Byte, TEnumerator> values) where TEnumerator : IEnumerator<Byte> {
 			if (values is null || values.Count == 0) {
 				return Single.NaN;
 			}

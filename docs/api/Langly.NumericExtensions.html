@@ -128,7 +128,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static double Max&lt;TEnumerator&gt;(this ISequence&lt;nint, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;nint&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -197,7 +196,6 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static double Max&lt;TEnumerator&gt;(this ISequence&lt;nuint, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;nuint&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -265,7 +263,6 @@ public static double Max&lt;TEnumerator&gt;(this ISequence&lt;nuint, TEnumerator
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static float Max&lt;TEnumerator&gt;(this ISequence&lt;byte, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;byte&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -323,7 +320,7 @@ public static double Max&lt;TEnumerator&gt;(this ISequence&lt;nuint, TEnumerator
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_NumericExtensions_Max__1_Langly_ISequence_System_Decimal___0__.md&amp;value=---%0Auid%3A%20Langly.NumericExtensions.Max%60%601(Langly.ISequence%7BSystem.Decimal%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Numerics/Max.cs/#L245">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Numerics/Max.cs/#L247">View Source</a>
   </span>
   <a id="Langly_NumericExtensions_Max_" data-uid="Langly.NumericExtensions.Max*"></a>
   <h4 id="Langly_NumericExtensions_Max__1_Langly_ISequence_System_Decimal___0__" data-uid="Langly.NumericExtensions.Max``1(Langly.ISequence{System.Decimal,``0})">Max&lt;TEnumerator&gt;(ISequence&lt;Decimal, TEnumerator&gt;)</h4>
@@ -333,7 +330,6 @@ public static double Max&lt;TEnumerator&gt;(this ISequence&lt;nuint, TEnumerator
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static decimal Max&lt;TEnumerator&gt;(this ISequence&lt;decimal, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;decimal&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -386,6 +382,27 @@ public static double Max&lt;TEnumerator&gt;(this ISequence&lt;nuint, TEnumerator
       </tr>
     </tbody>
   </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.Exceptions.ArgumentNullException.html">ArgumentNullException</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">values</code> is null, because <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.decimal">Decimal</a> doesn't have a NaN value.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.Exceptions.ArgumentEmptyException.html">ArgumentEmptyException</a></td>
+        <td><p>Throw when <code data-dev-comment-type="paramref" class="paramref">values</code> is empty, because <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.decimal">Decimal</a> doesn't have a NaN value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_NumericExtensions_Max__1_Langly_ISequence_System_Double___0__.md&amp;value=---%0Auid%3A%20Langly.NumericExtensions.Max%60%601(Langly.ISequence%7BSystem.Double%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -401,7 +418,6 @@ public static double Max&lt;TEnumerator&gt;(this ISequence&lt;nuint, TEnumerator
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static double Max&lt;TEnumerator&gt;(this ISequence&lt;double, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;double&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -469,7 +485,6 @@ public static double Max&lt;TEnumerator&gt;(this ISequence&lt;nuint, TEnumerator
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static float Max&lt;TEnumerator&gt;(this ISequence&lt;short, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;short&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -537,7 +552,6 @@ public static double Max&lt;TEnumerator&gt;(this ISequence&lt;nuint, TEnumerator
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static double Max&lt;TEnumerator&gt;(this ISequence&lt;int, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;int&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -605,7 +619,6 @@ public static double Max&lt;TEnumerator&gt;(this ISequence&lt;nuint, TEnumerator
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static double Max&lt;TEnumerator&gt;(this ISequence&lt;long, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;long&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -674,7 +687,6 @@ public static double Max&lt;TEnumerator&gt;(this ISequence&lt;nuint, TEnumerator
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static float Max&lt;TEnumerator&gt;(this ISequence&lt;sbyte, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;sbyte&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -742,7 +754,6 @@ public static float Max&lt;TEnumerator&gt;(this ISequence&lt;sbyte, TEnumerator&
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static float Max&lt;TEnumerator&gt;(this ISequence&lt;float, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;float&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -811,7 +822,6 @@ public static float Max&lt;TEnumerator&gt;(this ISequence&lt;sbyte, TEnumerator&
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static float Max&lt;TEnumerator&gt;(this ISequence&lt;ushort, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;ushort&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -880,7 +890,6 @@ public static float Max&lt;TEnumerator&gt;(this ISequence&lt;ushort, TEnumerator
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static double Max&lt;TEnumerator&gt;(this ISequence&lt;uint, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;uint&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -949,7 +958,6 @@ public static double Max&lt;TEnumerator&gt;(this ISequence&lt;uint, TEnumerator&
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static double Max&lt;TEnumerator&gt;(this ISequence&lt;ulong, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;ulong&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1017,7 +1025,6 @@ public static double Max&lt;TEnumerator&gt;(this ISequence&lt;ulong, TEnumerator
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static double Mean&lt;TEnumerator&gt;(this ISequence&lt;nint, TEnumerator&gt; values, Mean mean)
-
     where TEnumerator : IEnumerator&lt;nint&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1092,7 +1099,6 @@ public static double Max&lt;TEnumerator&gt;(this ISequence&lt;ulong, TEnumerator
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static double Mean&lt;TEnumerator&gt;(this ISequence&lt;nuint, TEnumerator&gt; values, Mean mean)
-
     where TEnumerator : IEnumerator&lt;nuint&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1166,7 +1172,6 @@ public static double Mean&lt;TEnumerator&gt;(this ISequence&lt;nuint, TEnumerato
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static double Mean&lt;TEnumerator&gt;(this ISequence&lt;byte, TEnumerator&gt; values, Mean mean)
-
     where TEnumerator : IEnumerator&lt;byte&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1240,7 +1245,6 @@ public static double Mean&lt;TEnumerator&gt;(this ISequence&lt;nuint, TEnumerato
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static decimal Mean&lt;TEnumerator&gt;(this ISequence&lt;decimal, TEnumerator&gt; values, Mean mean)
-
     where TEnumerator : IEnumerator&lt;decimal&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1314,7 +1318,6 @@ public static double Mean&lt;TEnumerator&gt;(this ISequence&lt;nuint, TEnumerato
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static double Mean&lt;TEnumerator&gt;(this ISequence&lt;double, TEnumerator&gt; values, Mean mean)
-
     where TEnumerator : IEnumerator&lt;double&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1388,7 +1391,6 @@ public static double Mean&lt;TEnumerator&gt;(this ISequence&lt;nuint, TEnumerato
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static double Mean&lt;TEnumerator&gt;(this ISequence&lt;short, TEnumerator&gt; values, Mean mean)
-
     where TEnumerator : IEnumerator&lt;short&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1462,7 +1464,6 @@ public static double Mean&lt;TEnumerator&gt;(this ISequence&lt;nuint, TEnumerato
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static double Mean&lt;TEnumerator&gt;(this ISequence&lt;int, TEnumerator&gt; values, Mean mean)
-
     where TEnumerator : IEnumerator&lt;int&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1536,7 +1537,6 @@ public static double Mean&lt;TEnumerator&gt;(this ISequence&lt;nuint, TEnumerato
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static double Mean&lt;TEnumerator&gt;(this ISequence&lt;long, TEnumerator&gt; values, Mean mean)
-
     where TEnumerator : IEnumerator&lt;long&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1611,7 +1611,6 @@ public static double Mean&lt;TEnumerator&gt;(this ISequence&lt;nuint, TEnumerato
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static double Mean&lt;TEnumerator&gt;(this ISequence&lt;sbyte, TEnumerator&gt; values, Mean mean)
-
     where TEnumerator : IEnumerator&lt;sbyte&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1685,7 +1684,6 @@ public static double Mean&lt;TEnumerator&gt;(this ISequence&lt;sbyte, TEnumerato
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static double Mean&lt;TEnumerator&gt;(this ISequence&lt;float, TEnumerator&gt; values, Mean mean)
-
     where TEnumerator : IEnumerator&lt;float&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1760,7 +1758,6 @@ public static double Mean&lt;TEnumerator&gt;(this ISequence&lt;sbyte, TEnumerato
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static double Mean&lt;TEnumerator&gt;(this ISequence&lt;ushort, TEnumerator&gt; values, Mean mean)
-
     where TEnumerator : IEnumerator&lt;ushort&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1835,7 +1832,6 @@ public static double Mean&lt;TEnumerator&gt;(this ISequence&lt;ushort, TEnumerat
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static double Mean&lt;TEnumerator&gt;(this ISequence&lt;uint, TEnumerator&gt; values, Mean mean)
-
     where TEnumerator : IEnumerator&lt;uint&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1910,7 +1906,6 @@ public static double Mean&lt;TEnumerator&gt;(this ISequence&lt;uint, TEnumerator
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static double Mean&lt;TEnumerator&gt;(this ISequence&lt;ulong, TEnumerator&gt; values, Mean mean)
-
     where TEnumerator : IEnumerator&lt;ulong&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1984,7 +1979,6 @@ public static double Mean&lt;TEnumerator&gt;(this ISequence&lt;ulong, TEnumerato
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static double Min&lt;TEnumerator&gt;(this ISequence&lt;nint, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;nint&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2053,7 +2047,6 @@ public static double Mean&lt;TEnumerator&gt;(this ISequence&lt;ulong, TEnumerato
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static double Min&lt;TEnumerator&gt;(this ISequence&lt;nuint, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;nuint&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2121,7 +2114,6 @@ public static double Min&lt;TEnumerator&gt;(this ISequence&lt;nuint, TEnumerator
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static float Min&lt;TEnumerator&gt;(this ISequence&lt;byte, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;byte&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2189,7 +2181,6 @@ public static double Min&lt;TEnumerator&gt;(this ISequence&lt;nuint, TEnumerator
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static decimal Min&lt;TEnumerator&gt;(this ISequence&lt;decimal, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;decimal&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2257,7 +2248,6 @@ public static double Min&lt;TEnumerator&gt;(this ISequence&lt;nuint, TEnumerator
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static double Min&lt;TEnumerator&gt;(this ISequence&lt;double, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;double&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2325,7 +2315,6 @@ public static double Min&lt;TEnumerator&gt;(this ISequence&lt;nuint, TEnumerator
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static float Min&lt;TEnumerator&gt;(this ISequence&lt;short, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;short&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2393,7 +2382,6 @@ public static double Min&lt;TEnumerator&gt;(this ISequence&lt;nuint, TEnumerator
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static double Min&lt;TEnumerator&gt;(this ISequence&lt;int, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;int&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2461,7 +2449,6 @@ public static double Min&lt;TEnumerator&gt;(this ISequence&lt;nuint, TEnumerator
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static double Min&lt;TEnumerator&gt;(this ISequence&lt;long, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;long&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2530,7 +2517,6 @@ public static double Min&lt;TEnumerator&gt;(this ISequence&lt;nuint, TEnumerator
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static float Min&lt;TEnumerator&gt;(this ISequence&lt;sbyte, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;sbyte&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2598,7 +2584,6 @@ public static float Min&lt;TEnumerator&gt;(this ISequence&lt;sbyte, TEnumerator&
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static float Min&lt;TEnumerator&gt;(this ISequence&lt;float, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;float&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2667,7 +2652,6 @@ public static float Min&lt;TEnumerator&gt;(this ISequence&lt;sbyte, TEnumerator&
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static float Min&lt;TEnumerator&gt;(this ISequence&lt;ushort, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;ushort&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2736,7 +2720,6 @@ public static float Min&lt;TEnumerator&gt;(this ISequence&lt;ushort, TEnumerator
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static double Min&lt;TEnumerator&gt;(this ISequence&lt;uint, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;uint&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2805,7 +2788,6 @@ public static double Min&lt;TEnumerator&gt;(this ISequence&lt;uint, TEnumerator&
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static double Min&lt;TEnumerator&gt;(this ISequence&lt;ulong, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;ulong&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2873,7 +2855,6 @@ public static double Min&lt;TEnumerator&gt;(this ISequence&lt;ulong, TEnumerator
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TElement Mode&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2946,7 +2927,6 @@ public static double Min&lt;TEnumerator&gt;(this ISequence&lt;ulong, TEnumerator
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static double Product&lt;TEnumerator&gt;(this ISequence&lt;nint, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;nint&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3015,7 +2995,6 @@ public static double Min&lt;TEnumerator&gt;(this ISequence&lt;ulong, TEnumerator
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static double Product&lt;TEnumerator&gt;(this ISequence&lt;nuint, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;nuint&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3082,8 +3061,7 @@ public static double Product&lt;TEnumerator&gt;(this ISequence&lt;nuint, TEnumer
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double Product&lt;TEnumerator&gt;(this ISequence&lt;byte, TEnumerator&gt; values)
-
+    <pre><code class="lang-csharp hljs">public static float Product&lt;TEnumerator&gt;(this ISequence&lt;byte, TEnumerator&gt; values)
     where TEnumerator : IEnumerator&lt;byte&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3114,7 +3092,7 @@ public static double Product&lt;TEnumerator&gt;(this ISequence&lt;nuint, TEnumer
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
         <td><p>The sum of the <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
 </td>
       </tr>
@@ -3151,7 +3129,6 @@ public static double Product&lt;TEnumerator&gt;(this ISequence&lt;nuint, TEnumer
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static decimal Product&lt;TEnumerator&gt;(this ISequence&lt;decimal, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;decimal&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3219,7 +3196,6 @@ public static double Product&lt;TEnumerator&gt;(this ISequence&lt;nuint, TEnumer
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static double Product&lt;TEnumerator&gt;(this ISequence&lt;double, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;double&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3287,7 +3263,6 @@ public static double Product&lt;TEnumerator&gt;(this ISequence&lt;nuint, TEnumer
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static float Product&lt;TEnumerator&gt;(this ISequence&lt;short, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;short&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3355,7 +3330,6 @@ public static double Product&lt;TEnumerator&gt;(this ISequence&lt;nuint, TEnumer
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static double Product&lt;TEnumerator&gt;(this ISequence&lt;int, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;int&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3423,7 +3397,6 @@ public static double Product&lt;TEnumerator&gt;(this ISequence&lt;nuint, TEnumer
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static double Product&lt;TEnumerator&gt;(this ISequence&lt;long, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;long&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3492,7 +3465,6 @@ public static double Product&lt;TEnumerator&gt;(this ISequence&lt;nuint, TEnumer
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static float Product&lt;TEnumerator&gt;(this ISequence&lt;sbyte, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;sbyte&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3560,7 +3532,6 @@ public static float Product&lt;TEnumerator&gt;(this ISequence&lt;sbyte, TEnumera
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static float Product&lt;TEnumerator&gt;(this ISequence&lt;float, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;float&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3629,7 +3600,6 @@ public static float Product&lt;TEnumerator&gt;(this ISequence&lt;sbyte, TEnumera
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static float Product&lt;TEnumerator&gt;(this ISequence&lt;ushort, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;ushort&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3698,7 +3668,6 @@ public static float Product&lt;TEnumerator&gt;(this ISequence&lt;ushort, TEnumer
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static double Product&lt;TEnumerator&gt;(this ISequence&lt;uint, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;uint&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3767,7 +3736,6 @@ public static double Product&lt;TEnumerator&gt;(this ISequence&lt;uint, TEnumera
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static double Product&lt;TEnumerator&gt;(this ISequence&lt;ulong, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;ulong&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3835,7 +3803,6 @@ public static double Product&lt;TEnumerator&gt;(this ISequence&lt;ulong, TEnumer
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static double Sum&lt;TEnumerator&gt;(this ISequence&lt;nint, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;nint&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3904,7 +3871,6 @@ public static double Product&lt;TEnumerator&gt;(this ISequence&lt;ulong, TEnumer
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static double Sum&lt;TEnumerator&gt;(this ISequence&lt;nuint, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;nuint&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3972,7 +3938,6 @@ public static double Sum&lt;TEnumerator&gt;(this ISequence&lt;nuint, TEnumerator
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static float Sum&lt;TEnumerator&gt;(this ISequence&lt;byte, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;byte&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4040,7 +4005,6 @@ public static double Sum&lt;TEnumerator&gt;(this ISequence&lt;nuint, TEnumerator
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static decimal Sum&lt;TEnumerator&gt;(this ISequence&lt;decimal, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;decimal&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4108,7 +4072,6 @@ public static double Sum&lt;TEnumerator&gt;(this ISequence&lt;nuint, TEnumerator
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static double Sum&lt;TEnumerator&gt;(this ISequence&lt;double, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;double&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4176,7 +4139,6 @@ public static double Sum&lt;TEnumerator&gt;(this ISequence&lt;nuint, TEnumerator
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static float Sum&lt;TEnumerator&gt;(this ISequence&lt;short, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;short&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4244,7 +4206,6 @@ public static double Sum&lt;TEnumerator&gt;(this ISequence&lt;nuint, TEnumerator
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static double Sum&lt;TEnumerator&gt;(this ISequence&lt;int, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;int&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4312,7 +4273,6 @@ public static double Sum&lt;TEnumerator&gt;(this ISequence&lt;nuint, TEnumerator
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static double Sum&lt;TEnumerator&gt;(this ISequence&lt;long, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;long&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4381,7 +4341,6 @@ public static double Sum&lt;TEnumerator&gt;(this ISequence&lt;nuint, TEnumerator
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static float Sum&lt;TEnumerator&gt;(this ISequence&lt;sbyte, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;sbyte&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4449,7 +4408,6 @@ public static float Sum&lt;TEnumerator&gt;(this ISequence&lt;sbyte, TEnumerator&
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static float Sum&lt;TEnumerator&gt;(this ISequence&lt;float, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;float&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4518,7 +4476,6 @@ public static float Sum&lt;TEnumerator&gt;(this ISequence&lt;sbyte, TEnumerator&
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static float Sum&lt;TEnumerator&gt;(this ISequence&lt;ushort, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;ushort&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4587,7 +4544,6 @@ public static float Sum&lt;TEnumerator&gt;(this ISequence&lt;ushort, TEnumerator
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static double Sum&lt;TEnumerator&gt;(this ISequence&lt;uint, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;uint&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4656,7 +4612,6 @@ public static double Sum&lt;TEnumerator&gt;(this ISequence&lt;uint, TEnumerator&
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static double Sum&lt;TEnumerator&gt;(this ISequence&lt;ulong, TEnumerator&gt; values)
-
     where TEnumerator : IEnumerator&lt;ulong&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
