@@ -5,7 +5,12 @@
 		<Description>The entire LibLangly runtime.</Description>
 		<PackageTags>langly</PackageTags>
 		<AssemblyName>Langly</AssemblyName>
-  </PropertyGroup>
+		<PackageIcon>Logo.png</PackageIcon>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="Logo.png" Pack="true" Visible="true" PackagePath="\" />
+	</ItemGroup>
 
 	<ItemGroup>
 	  <ProjectReference Include="..\..\Libraries\Langly.Arrays\Langly.Arrays.csproj" />

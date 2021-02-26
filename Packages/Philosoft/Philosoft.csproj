@@ -2,9 +2,17 @@
 
   <PropertyGroup>
 		<TargetFramework>net5.0</TargetFramework>
+		<Description>Think about your code differently. Love your code.</Description>
+		<PackageTags>trait, traits, trait-based</PackageTags>
+		<AssemblyName>Philosoft</AssemblyName>
+		<PackageIcon>Logo.png</PackageIcon>
 	</PropertyGroup>
 
-  <ItemGroup>
+	<ItemGroup>
+		<None Include="Logo.png" Pack="true" Visible="true" PackagePath="\" />
+	</ItemGroup>
+
+	<ItemGroup>
     <ProjectReference Include="..\..\Libraries\Langly.Traits\Langly.Traits.csproj" />
   </ItemGroup>
 
