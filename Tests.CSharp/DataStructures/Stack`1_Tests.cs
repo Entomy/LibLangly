@@ -4,13 +4,12 @@ using Xunit;
 namespace Langly.DataStructures {
 	public class Stack1_Tests {
 		[Theory]
-		[InlineData(new Int32[] { }, new Int32[] { })]
-		[InlineData(new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 5, 4, 3, 2, 1 })]
+		[MemberData(nameof(Stack1_Data.Stack), MemberType = typeof(Stack1_Data))]
 		public void Stack(Int32[] expected, Int32[] values) {
-			Stack<Int32> stack = new Stack<Int32>().Push(values);
+			Stack<Int32> stack = new Stack<Int32>().Write(values);
 			Assert.Equal(expected.Length, stack.Count);
 			Assert.Equal(expected, stack);
-			stack.Pop(expected.Length, out ReadOnlyMemory<Int32> vals);
+			stack.Read(expected.Length, out ReadOnlyMemory<Int32> vals);
 			Assert.Equal(0, stack.Count);
 			Assert.Equal(expected, vals.ToArray());
 		}
