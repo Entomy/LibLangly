@@ -7,7 +7,6 @@ namespace Langly.DataStructures {
 	/// </summary>
 	/// <typeparam name="TElement">The type of the elements in the stack.</typeparam>
 	public sealed partial class Stack<TElement> : DataStructure<TElement, Stack<TElement>, Stack<TElement>.Enumerator>,
-		IAdd<TElement, Stack<TElement>>,
 		IPeek<TElement, Stack<TElement>>,
 		IWrite<TElement, Stack<TElement>> {
 		/// <summary>
@@ -29,7 +28,11 @@ namespace Langly.DataStructures {
 
 		/// <inheritdoc/>
 		[return: MaybeNull]
-		Stack<TElement> IAdd<TElement, Stack<TElement>>.Add([AllowNull] TElement element) => ((IWrite<TElement, Stack<TElement>>)this).Write(element);
+		Stack<TElement> IAdd<TElement, Stack<TElement>>.Add([AllowNull] TElement element) {
+			Head = new Node(element, next: Head);
+			Count++;
+			return this;
+		}
 
 		/// <inheritdoc/>
 		[return: MaybeNull]
@@ -52,14 +55,6 @@ namespace Langly.DataStructures {
 				element = default;
 				return null;
 			}
-		}
-
-		/// <inheritdoc/>
-		[return: MaybeNull]
-		Stack<TElement> IWrite<TElement, Stack<TElement>>.Write([AllowNull] TElement element) {
-			Head = new Node(element, next: Head);
-			Count++;
-			return this;
 		}
 	}
 }

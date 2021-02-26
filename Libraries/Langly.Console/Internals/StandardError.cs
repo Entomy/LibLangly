@@ -34,7 +34,7 @@ namespace Langly.Internals {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public unsafe IConsoleError Write(Char element) {
+		unsafe IConsoleError IAdd<Char, IConsoleError>.Add(Char element) {
 #if WINDOWS
 			WriteConsole(Handle, &element, 1, out _, IntPtr.Zero);
 			return this;
@@ -45,7 +45,7 @@ namespace Langly.Internals {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public unsafe IConsoleError Write([AllowNull] Char* elements, Int32 length) {
+		unsafe IConsoleError IAddUnsafe<Char, IConsoleError>.Add([AllowNull] Char* elements, Int32 length) {
 			if (elements is null) {
 				return this;
 			}

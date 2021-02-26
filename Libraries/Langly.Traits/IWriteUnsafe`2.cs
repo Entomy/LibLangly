@@ -8,17 +8,7 @@ namespace Langly {
 	/// <typeparam name="TElement">The type of the element to write.</typeparam>
 	/// <typeparam name="TResult">The resulting type; often itself.</typeparam>
 	[CLSCompliant(false)]
-	public interface IWriteUnsafe<TElement, out TResult> : IWrite<TElement, TResult> where TElement : unmanaged where TResult : IWriteUnsafe<TElement, TResult> {
-		/// <inheritdoc/>
-		[return: MaybeNull]
-		unsafe TResult IWrite<TElement, TResult>.Write(ReadOnlySpan<TElement> elements) {
-			TResult result = (TResult)this;
-			fixed (TElement* elmts = elements) {
-				result = result.Write(elmts, elements.Length);
-			}
-			return result;
-		}
-
+	public interface IWriteUnsafe<TElement, out TResult> : IAddUnsafe<TElement, TResult>, IWrite<TElement, TResult> where TElement : unmanaged where TResult : IWriteUnsafe<TElement, TResult> {
 		/// <summary>
 		/// Writes the <paramref name="elements"/>.
 		/// </summary>
@@ -26,19 +16,7 @@ namespace Langly {
 		/// <param name="length">The length of the <paramref name="elements"/>.</param>
 		/// <returns>A <typeparamref name="TResult"/> instance if successful; otherwise, <see langword="null"/>.</returns>
 		[return: MaybeNull]
-		unsafe TResult Write([AllowNull] TElement* elements, Int32 length) {
-			TResult result = (TResult)this;
-			if (elements != null) {
-				for (Int32 i = 0; i < length; i++) {
-					result = result.Write(elements[i]);
-					if (result is null) {
-						goto Result;
-					}
-				}
-			}
-		Result:
-			return result;
-		}
+		unsafe TResult Write([AllowNull] TElement* elements, Int32 length) => Add(elements, length);
 	}
 
 	public static partial class TraitExtensions {

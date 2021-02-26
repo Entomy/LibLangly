@@ -93,7 +93,6 @@
     <div><a class="xref" href="Langly.IContains-1.html">IContains</a>&lt;TElement&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TElement&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
-    <div><a class="xref" href="Langly.IAdd-2.html">IAdd</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.Buffers.BipartiteBuffer-1.html">BipartiteBuffer</a>&lt;TElement&gt;&gt;</div>
     <div><a class="xref" href="Langly.ICapacity.html">ICapacity</a></div>
     <div><a class="xref" href="Langly.IClear-1.html">IClear</a>&lt;<a class="xref" href="Langly.DataStructures.Buffers.BipartiteBuffer-1.html">BipartiteBuffer</a>&lt;TElement&gt;&gt;</div>
     <div><a class="xref" href="Langly.IIndex-1.html">IIndex</a>&lt;TElement&gt;</div>
@@ -104,6 +103,7 @@
     <div><a class="xref" href="Langly.IPeek-2.html">IPeek</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.Buffers.BipartiteBuffer-1.html">BipartiteBuffer</a>&lt;TElement&gt;&gt;</div>
     <div><a class="xref" href="Langly.IRead-2.html">IRead</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.Buffers.BipartiteBuffer-1.html">BipartiteBuffer</a>&lt;TElement&gt;&gt;</div>
     <div><a class="xref" href="Langly.IWrite-2.html">IWrite</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.Buffers.BipartiteBuffer-1.html">BipartiteBuffer</a>&lt;TElement&gt;&gt;</div>
+    <div><a class="xref" href="Langly.IAdd-2.html">IAdd</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.Buffers.BipartiteBuffer-1.html">BipartiteBuffer</a>&lt;TElement&gt;&gt;</div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -166,7 +166,7 @@
   <h6><strong>Assembly</strong>: Langly.Buffers.dll</h6>
   <h5 id="Langly_DataStructures_Buffers_BipartiteBuffer_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class BipartiteBuffer&lt;TElement&gt; : DataStructure&lt;TElement, BipartiteBuffer&lt;TElement&gt;, BipartiteBuffer&lt;TElement&gt;.Enumerator&gt;, IEquals&lt;BipartiteBuffer&lt;TElement&gt;&gt;, IEquatable&lt;BipartiteBuffer&lt;TElement&gt;&gt;, IEquals&lt;IEquals&lt;BipartiteBuffer&lt;TElement&gt;&gt;&gt;, IEquatable&lt;IEquals&lt;BipartiteBuffer&lt;TElement&gt;&gt;&gt;, ISequence&lt;TElement, BipartiteBuffer&lt;TElement&gt;.Enumerator&gt;, IContains&lt;TElement&gt;, IEnumerable&lt;TElement&gt;, IEnumerable, IAdd&lt;TElement, BipartiteBuffer&lt;TElement&gt;&gt;, ICapacity, IClear&lt;BipartiteBuffer&lt;TElement&gt;&gt;, IIndex&lt;TElement&gt;, IIndex&lt;nint, TElement&gt;, IIndexReadOnly&lt;TElement&gt;, IIndexReadOnly&lt;nint, TElement&gt;, ICount, IPeek&lt;TElement, BipartiteBuffer&lt;TElement&gt;&gt;, IRead&lt;TElement, BipartiteBuffer&lt;TElement&gt;&gt;, IWrite&lt;TElement, BipartiteBuffer&lt;TElement&gt;&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class BipartiteBuffer&lt;TElement&gt; : DataStructure&lt;TElement, BipartiteBuffer&lt;TElement&gt;, BipartiteBuffer&lt;TElement&gt;.Enumerator&gt;, IEquals&lt;BipartiteBuffer&lt;TElement&gt;&gt;, IEquatable&lt;BipartiteBuffer&lt;TElement&gt;&gt;, IEquals&lt;IEquals&lt;BipartiteBuffer&lt;TElement&gt;&gt;&gt;, IEquatable&lt;IEquals&lt;BipartiteBuffer&lt;TElement&gt;&gt;&gt;, ISequence&lt;TElement, BipartiteBuffer&lt;TElement&gt;.Enumerator&gt;, IContains&lt;TElement&gt;, IEnumerable&lt;TElement&gt;, IEnumerable, ICapacity, IClear&lt;BipartiteBuffer&lt;TElement&gt;&gt;, IIndex&lt;TElement&gt;, IIndex&lt;nint, TElement&gt;, IIndexReadOnly&lt;TElement&gt;, IIndexReadOnly&lt;nint, TElement&gt;, ICount, IPeek&lt;TElement, BipartiteBuffer&lt;TElement&gt;&gt;, IRead&lt;TElement, BipartiteBuffer&lt;TElement&gt;&gt;, IWrite&lt;TElement, BipartiteBuffer&lt;TElement&gt;&gt;, IAdd&lt;TElement, BipartiteBuffer&lt;TElement&gt;&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -368,8 +368,7 @@
   </span>
   <a id="Langly_DataStructures_Buffers_BipartiteBuffer_1_Readable_" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.Readable*"></a>
   <h4 id="Langly_DataStructures_Buffers_BipartiteBuffer_1_Readable" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.Readable">Readable</h4>
-  <div class="markdown level1 summary"><p>Can this be read from?</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -390,9 +389,6 @@
       </tr>
     </tbody>
   </table>
-  <h5 id="Langly_DataStructures_Buffers_BipartiteBuffer_1_Readable_remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>This is a state indicator. Of course an <a class="xref" href="Langly.IRead-2.html">IRead&lt;TElement, TResult&gt;</a> can be read from, but that doesn't mean it can always be read from. Rather, this being <span class="xref">true</span> indicates the type can currently be read from.</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Buffers_BipartiteBuffer_1_Writable.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Buffers.BipartiteBuffer%601.Writable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -402,8 +398,7 @@
   </span>
   <a id="Langly_DataStructures_Buffers_BipartiteBuffer_1_Writable_" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.Writable*"></a>
   <h4 id="Langly_DataStructures_Buffers_BipartiteBuffer_1_Writable" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.Writable">Writable</h4>
-  <div class="markdown level1 summary"><p>Can this be written to?</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -424,9 +419,6 @@
       </tr>
     </tbody>
   </table>
-  <h5 id="Langly_DataStructures_Buffers_BipartiteBuffer_1_Writable_remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>This is a state indicator. Of course an <a class="xref" href="Langly.IWrite-2.html">IWrite&lt;TElement, TResult&gt;</a> can be written to, but that doesn't mean it can always be written to. Rather, this being <span class="xref">true</span> indicates the type can currently be written to.</p>
-</div>
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
@@ -438,8 +430,7 @@
   </span>
   <a id="Langly_DataStructures_Buffers_BipartiteBuffer_1_GetEnumerator_" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.GetEnumerator*"></a>
   <h4 id="Langly_DataStructures_Buffers_BipartiteBuffer_1_GetEnumerator" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.GetEnumerator">GetEnumerator()</h4>
-  <div class="markdown level1 summary"><p>Returns an enumerator that iterates through the sequence.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -456,8 +447,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Langly.DataStructures.Buffers.BipartiteBuffer-1.Enumerator.html">BipartiteBuffer.Enumerator</a>&lt;&gt;</td>
-        <td><p>An enumerator that can be used to iterate through the collection.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -474,8 +464,7 @@
   </span>
   <a id="Langly_DataStructures_Buffers_BipartiteBuffer_1_Langly_IAdd_TElement_Langly_DataStructures_Buffers_BipartiteBuffer_TElement___Add_" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.Langly#IAdd{TElement,Langly#DataStructures#Buffers#BipartiteBuffer{TElement}}#Add*"></a>
   <h4 id="Langly_DataStructures_Buffers_BipartiteBuffer_1_Langly_IAdd_TElement_Langly_DataStructures_Buffers_BipartiteBuffer_TElement___Add__0_" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.Langly#IAdd{TElement,Langly#DataStructures#Buffers#BipartiteBuffer{TElement}}#Add(`0)">IAdd&lt;TElement, BipartiteBuffer&lt;TElement&gt;&gt;.Add(TElement)</h4>
-  <div class="markdown level1 summary"><p>Adds an element to this object.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -494,8 +483,7 @@
       <tr>
         <td><span class="xref">TElement</span></td>
         <td><span class="parametername">element</span></td>
-        <td><p>The element to add.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -510,14 +498,10 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Langly.DataStructures.Buffers.BipartiteBuffer-1.html">BipartiteBuffer</a>&lt;TElement&gt;</td>
-        <td><p>If the add occurred successfully, returns a <code data-dev-comment-type="typeparamref" class="typeparamref">TResult</code> containing the original and added elements; otherwise, <span class="xref">null</span>.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="Langly_DataStructures_Buffers_BipartiteBuffer_1_Langly_IAdd_TElement_Langly_DataStructures_Buffers_BipartiteBuffer_TElement___Add__0__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Buffers_BipartiteBuffer_1_Langly_IClear_Langly_DataStructures_Buffers_BipartiteBuffer_TElement___Clear.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Buffers.BipartiteBuffer%601.Langly%23IClear%7BLangly%23DataStructures%23Buffers%23BipartiteBuffer%7BTElement%7D%7D%23Clear%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -527,8 +511,7 @@
   </span>
   <a id="Langly_DataStructures_Buffers_BipartiteBuffer_1_Langly_IClear_Langly_DataStructures_Buffers_BipartiteBuffer_TElement___Clear_" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.Langly#IClear{Langly#DataStructures#Buffers#BipartiteBuffer{TElement}}#Clear*"></a>
   <h4 id="Langly_DataStructures_Buffers_BipartiteBuffer_1_Langly_IClear_Langly_DataStructures_Buffers_BipartiteBuffer_TElement___Clear" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.Langly#IClear{Langly#DataStructures#Buffers#BipartiteBuffer{TElement}}#Clear">IClear&lt;BipartiteBuffer&lt;TElement&gt;&gt;.Clear()</h4>
-  <div class="markdown level1 summary"><p>Clears this collection.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -558,8 +541,7 @@
   </span>
   <a id="Langly_DataStructures_Buffers_BipartiteBuffer_1_Langly_IPeek_TElement_Langly_DataStructures_Buffers_BipartiteBuffer_TElement___Peek_" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.Langly#IPeek{TElement,Langly#DataStructures#Buffers#BipartiteBuffer{TElement}}#Peek*"></a>
   <h4 id="Langly_DataStructures_Buffers_BipartiteBuffer_1_Langly_IPeek_TElement_Langly_DataStructures_Buffers_BipartiteBuffer_TElement___Peek__0__" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.Langly#IPeek{TElement,Langly#DataStructures#Buffers#BipartiteBuffer{TElement}}#Peek(`0@)">IPeek&lt;TElement, BipartiteBuffer&lt;TElement&gt;&gt;.Peek(out TElement)</h4>
-  <div class="markdown level1 summary"><p>Peeks at the first element.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -578,8 +560,7 @@
       <tr>
         <td><span class="xref">TElement</span></td>
         <td><span class="parametername">element</span></td>
-        <td><p>The <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> value that was peeked.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -607,8 +588,7 @@
   </span>
   <a id="Langly_DataStructures_Buffers_BipartiteBuffer_1_Langly_IRead_TElement_Langly_DataStructures_Buffers_BipartiteBuffer_TElement___Read_" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.Langly#IRead{TElement,Langly#DataStructures#Buffers#BipartiteBuffer{TElement}}#Read*"></a>
   <h4 id="Langly_DataStructures_Buffers_BipartiteBuffer_1_Langly_IRead_TElement_Langly_DataStructures_Buffers_BipartiteBuffer_TElement___Read__0__" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.Langly#IRead{TElement,Langly#DataStructures#Buffers#BipartiteBuffer{TElement}}#Read(`0@)">IRead&lt;TElement, BipartiteBuffer&lt;TElement&gt;&gt;.Read(out TElement)</h4>
-  <div class="markdown level1 summary"><p>Reads a <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code>.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -627,8 +607,7 @@
       <tr>
         <td><span class="xref">TElement</span></td>
         <td><span class="parametername">element</span></td>
-        <td><p>The <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> value that was read.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -643,8 +622,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Langly.DataStructures.Buffers.BipartiteBuffer-1.html">BipartiteBuffer</a>&lt;TElement&gt;</td>
-        <td><p>A <code data-dev-comment-type="typeparamref" class="typeparamref">TResult</code> instance if successful; otherwise, <span class="xref">null</span>.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -657,8 +635,7 @@
   </span>
   <a id="Langly_DataStructures_Buffers_BipartiteBuffer_1_Langly_IWrite_TElement_Langly_DataStructures_Buffers_BipartiteBuffer_TElement___Write_" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.Langly#IWrite{TElement,Langly#DataStructures#Buffers#BipartiteBuffer{TElement}}#Write*"></a>
   <h4 id="Langly_DataStructures_Buffers_BipartiteBuffer_1_Langly_IWrite_TElement_Langly_DataStructures_Buffers_BipartiteBuffer_TElement___Write__0_" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.Langly#IWrite{TElement,Langly#DataStructures#Buffers#BipartiteBuffer{TElement}}#Write(`0)">IWrite&lt;TElement, BipartiteBuffer&lt;TElement&gt;&gt;.Write(TElement)</h4>
-  <div class="markdown level1 summary"><p>Writes a <code data-dev-comment-type="paramref" class="paramref">element</code>.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -677,8 +654,7 @@
       <tr>
         <td><span class="xref">TElement</span></td>
         <td><span class="parametername">element</span></td>
-        <td><p>The <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> value to write.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -693,8 +669,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Langly.DataStructures.Buffers.BipartiteBuffer-1.html">BipartiteBuffer</a>&lt;TElement&gt;</td>
-        <td><p>A <code data-dev-comment-type="typeparamref" class="typeparamref">TResult</code> instance if successful; otherwise, <span class="xref">null</span>.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -722,9 +697,6 @@
   </div>
   <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">System.Collections.IEnumerable</a>
-  </div>
-  <div>
-      <a class="xref" href="Langly.IAdd-2.html">IAdd&lt;TElement, TResult&gt;</a>
   </div>
   <div>
       <a class="xref" href="Langly.ICapacity.html">ICapacity</a>
@@ -755,6 +727,9 @@
   </div>
   <div>
       <a class="xref" href="Langly.IWrite-2.html">IWrite&lt;TElement, TResult&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IAdd-2.html">IAdd&lt;TElement, TResult&gt;</a>
   </div>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>

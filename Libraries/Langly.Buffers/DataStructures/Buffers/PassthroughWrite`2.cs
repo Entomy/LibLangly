@@ -30,6 +30,11 @@ namespace Langly.DataStructures.Buffers {
 		/// <inheritdoc/>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[return: MaybeNull]
-		public PassthroughWrite<TElement, TWrite> Write([AllowNull] TElement element) => Sink.Write(element) is not null ? this : null;
+		PassthroughWrite<TElement, TWrite> IAdd<TElement, PassthroughWrite<TElement, TWrite>>.Add([AllowNull] TElement element) => Sink.Write(element) is not null ? this : null;
+
+		/// <inheritdoc/>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		[return: MaybeNull]
+		public PassthroughWrite<TElement, TWrite> Write([AllowNull] TElement element) => ((IAdd<TElement, PassthroughWrite<TElement, TWrite>>)this).Add(element);
 	}
 }

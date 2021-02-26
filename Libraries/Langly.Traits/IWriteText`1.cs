@@ -6,20 +6,14 @@ namespace Langly {
 	/// Indicates the type can be written to, with additional textual operations.
 	/// </summary>
 	/// <typeparam name="TResult">The resulting type; often itself.</typeparam>
-	public interface IWriteText<out TResult> : IWrite<Char, TResult> where TResult : IWriteText<TResult> {
+	public interface IWriteText<out TResult> : IAddText<TResult>, IWrite<Char, TResult> where TResult : IWriteText<TResult> {
 		/// <summary>
 		/// Writes the <paramref name="elements"/>.
 		/// </summary>
 		/// <param name="elements">The <see cref="String"/> value to write.</param>
 		/// <returns>A <typeparamref name="TResult"/> instance if successful; otherwise, <see langword="null"/>.</returns>
 		[return: MaybeNull]
-		public TResult Write([AllowNull] String elements) {
-			TResult result = (TResult)this;
-			if (elements is not null) {
-				result = result.Write(elements.AsMemory());
-			}
-			return result;
-		}
+		public TResult Write([AllowNull] String elements) => Add(elements);
 
 		/// <summary>
 		/// Writes a line terminator.

@@ -54,14 +54,14 @@ namespace Langly.Internals {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		IConsoleWriter IWrite<Char, IConsoleWriter>.Write(Char element) {
+		IConsoleWriter IAdd<Char, IConsoleWriter>.Add(Char element) {
 			WriteLog.Append(element);
 			return this;
 		}
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		IConsoleError IWrite<Char, IConsoleError>.Write(Char element) {
+		IConsoleError IAdd<Char, IConsoleError>.Add(Char element) {
 			ErrorLog.Append(element);
 			return this;
 		}

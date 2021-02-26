@@ -11,17 +11,17 @@ namespace Langly.DataStructures.Buffers {
 		[StructLayout(LayoutKind.Auto)]
 		private struct Partition : ICapacity, IClear<Partition>, ICount, IIndex<TElement>, IPeek<TElement, Partition>, IResize<Partition>, IWrite<TElement, Partition> {
 			/// <summary>
-			/// The backing memory of the buffer.
-			/// </summary>
-			private readonly Memory<TElement> Memory;
-
-			/// <summary>
 			/// The <see cref="Filter{TIndex, TElement}"/> being used.
 			/// </summary>
 			/// <remarks>
 			/// This is never <see langword="null"/>; a sentinel is used by default.
 			/// </remarks>
 			private readonly Filter<nint, TElement> Filter;
+
+			/// <summary>
+			/// The backing memory of the buffer.
+			/// </summary>
+			private readonly Memory<TElement> Memory;
 
 			/// <summary>
 			/// Initializes a new <see cref="Partition"/>.
@@ -36,13 +36,11 @@ namespace Langly.DataStructures.Buffers {
 				Count = 0;
 			}
 
-			/// <summary>
-			/// The starting position of this <see cref="Partition"/>.
-			/// </summary>
-			private nint Start { get; set; }
-
 			/// <inheritdoc/>
 			public nint Capacity { get; set; }
+
+			/// <inheritdoc/>
+			public nint Count { get; private set; }
 
 			/// <inheritdoc/>
 			public Boolean Readable => Capacity > 0;
@@ -50,8 +48,10 @@ namespace Langly.DataStructures.Buffers {
 			/// <inheritdoc/>
 			public Boolean Writable => Capacity > Count;
 
-			/// <inheritdoc/>
-			public nint Count { get; private set; }
+			/// <summary>
+			/// The starting position of this <see cref="Partition"/>.
+			/// </summary>
+			private nint Start { get; set; }
 
 			/// <inheritdoc/>
 			[AllowNull, MaybeNull]
@@ -68,6 +68,12 @@ namespace Langly.DataStructures.Buffers {
 					}
 					Memory.Span[(Int32)(Start + index)] = value;
 				}
+			}
+
+			/// <inheritdoc/>
+			public Partition Add([AllowNull] TElement element) {
+				Memory.Span[(Int32)Count++] = element;
+				return this;
 			}
 
 			/// <summary>
@@ -110,10 +116,7 @@ namespace Langly.DataStructures.Buffers {
 			}
 
 			/// <inheritdoc/>
-			public Partition Write([AllowNull] TElement element) {
-				Memory.Span[(Int32)Count++] = element;
-				return this;
-			}
+			public Partition Write([AllowNull] TElement element) => Add(element);
 		}
 	}
 }

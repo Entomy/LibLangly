@@ -79,6 +79,9 @@
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
+      <a class="xref" href="Langly.IAddText-1.html#Langly_IAddText_1_Add_System_String_">IAddText&lt;TResult&gt;.Add(String)</a>
+    </div>
+    <div>
       <a class="xref" href="Langly.IWrite-2.html#Langly_IWrite_2_Writable">IWrite&lt;Char, TResult&gt;.Writable</a>
     </div>
     <div>
@@ -100,6 +103,9 @@
       <a class="xref" href="Langly.IWrite-2.html#Langly_IWrite_2_Write_System_ReadOnlySpan__0__">IWrite&lt;Char, TResult&gt;.Write(ReadOnlySpan&lt;Char&gt;)</a>
     </div>
     <div>
+      <a class="xref" href="Langly.IWrite-2.html#Langly_IWrite_2_Write__1_Langly_ISequence__0___0__">IWrite&lt;Char, TResult&gt;.Write&lt;TEnumerator&gt;(ISequence&lt;Char, TEnumerator&gt;)</a>
+    </div>
+    <div>
       <a class="xref" href="Langly.IWrite-2.html#Langly_IWrite_2_EnsureLoaded__1_nint_Langly_IRead__0___0__">IWrite&lt;Char, TResult&gt;.EnsureLoaded&lt;TSource&gt;(nint, IRead&lt;Char, TSource&gt;)</a>
     </div>
     <div>
@@ -108,12 +114,33 @@
     <div>
       <a class="xref" href="Langly.IWrite-2.html#Langly_IWrite_2_Load__1_nint_Langly_IRead__0___0__">IWrite&lt;Char, TResult&gt;.Load&lt;TSource&gt;(nint, IRead&lt;Char, TSource&gt;)</a>
     </div>
+    <div>
+      <a class="xref" href="Langly.IAdd-2.html#Langly_IAdd_2_Add__0_">IAdd&lt;Char, TResult&gt;.Add(Char)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.IAdd-2.html#Langly_IAdd_2_Add__0___">IAdd&lt;Char, TResult&gt;.Add(Char[])</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.IAdd-2.html#Langly_IAdd_2_Add_System_Memory__0__">IAdd&lt;Char, TResult&gt;.Add(Memory&lt;Char&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.IAdd-2.html#Langly_IAdd_2_Add_System_ReadOnlyMemory__0__">IAdd&lt;Char, TResult&gt;.Add(ReadOnlyMemory&lt;Char&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.IAdd-2.html#Langly_IAdd_2_Add_System_Span__0__">IAdd&lt;Char, TResult&gt;.Add(Span&lt;Char&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.IAdd-2.html#Langly_IAdd_2_Add_System_ReadOnlySpan__0__">IAdd&lt;Char, TResult&gt;.Add(ReadOnlySpan&lt;Char&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.IAdd-2.html#Langly_IAdd_2_Add__1_Langly_ISequence__0___0__">IAdd&lt;Char, TResult&gt;.Add&lt;TEnumerator&gt;(ISequence&lt;Char, TEnumerator&gt;)</a>
+    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Langly.html">Langly</a></h6>
   <h6><strong>Assembly</strong>: Langly.Traits.dll</h6>
   <h5 id="Langly_IWriteText_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IWriteText&lt;out TResult&gt; : IWrite&lt;char, TResult&gt; where TResult : IWriteText&lt;TResult&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IWriteText&lt;out TResult&gt; : IAddText&lt;TResult&gt;, IWrite&lt;char, TResult&gt;, IAdd&lt;char, TResult&gt; where TResult : IWriteText&lt;TResult&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -188,7 +215,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IWriteText_1_WriteLine.md&amp;value=---%0Auid%3A%20Langly.IWriteText%601.WriteLine%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWriteText`1.cs/#L28">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWriteText`1.cs/#L22">View Source</a>
   </span>
   <a id="Langly_IWriteText_1_WriteLine_" data-uid="Langly.IWriteText`1.WriteLine*"></a>
   <h4 id="Langly_IWriteText_1_WriteLine" data-uid="Langly.IWriteText`1.WriteLine">WriteLine()</h4>
@@ -216,6 +243,30 @@
     </tbody>
   </table>
   <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Add__1_Langly_IAddText___0__System_String_">TraitExtensions.Add&lt;TResult&gt;(IAddText&lt;TResult&gt;, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Add__2_Langly_IAdd___0___1____0_">TraitExtensions.Add&lt;TElement, TResult&gt;(IAdd&lt;TElement, TResult&gt;, TElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Add__2_Langly_IAdd___0___1____0___">TraitExtensions.Add&lt;TElement, TResult&gt;(IAdd&lt;TElement, TResult&gt;, TElement[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Add__2_Langly_IAdd___0___1__System_Memory___0__">TraitExtensions.Add&lt;TElement, TResult&gt;(IAdd&lt;TElement, TResult&gt;, Memory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Add__2_Langly_IAdd___0___1__System_ReadOnlyMemory___0__">TraitExtensions.Add&lt;TElement, TResult&gt;(IAdd&lt;TElement, TResult&gt;, ReadOnlyMemory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Add__2_Langly_IAdd___0___1__System_Span___0__">TraitExtensions.Add&lt;TElement, TResult&gt;(IAdd&lt;TElement, TResult&gt;, Span&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Add__2_Langly_IAdd___0___1__System_ReadOnlySpan___0__">TraitExtensions.Add&lt;TElement, TResult&gt;(IAdd&lt;TElement, TResult&gt;, ReadOnlySpan&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Add__3_Langly_IAdd___0___1__Langly_ISequence___0___2__">TraitExtensions.Add&lt;TElement, TResult, TEnumerator&gt;(IAdd&lt;TElement, TResult&gt;, ISequence&lt;TElement, TEnumerator&gt;)</a>
+  </div>
   <div>
       <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Write__1_Langly_IWriteText___0__System_String_">TraitExtensions.Write&lt;TResult&gt;(IWriteText&lt;TResult&gt;, String)</a>
   </div>

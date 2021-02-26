@@ -7,14 +7,14 @@ namespace Langly {
 	/// </summary>
 	/// <typeparam name="TElement">The type of the element to write.</typeparam>
 	/// <typeparam name="TResult">The resulting type; often itself.</typeparam>
-	public interface IWrite<TElement, out TResult> where TResult : IWrite<TElement, TResult> {
+	public interface IWrite<TElement, out TResult> : IAdd<TElement, TResult> where TResult : IWrite<TElement, TResult> {
 		/// <summary>
 		/// Can this be written to?
 		/// </summary>
 		/// <remarks>
 		/// This is a state indicator. Of course an <see cref="IWrite{TElement, TResult}"/> can be written to, but that doesn't mean it can always be written to. Rather, this being <see langword="true"/> indicates the type can currently be written to.
 		/// </remarks>
-		public Boolean Writable { get; }
+		Boolean Writable { get; }
 
 		/// <summary>
 		/// Writes a <paramref name="element"/>.
@@ -22,7 +22,7 @@ namespace Langly {
 		/// <param name="element">The <typeparamref name="TElement"/> value to write.</param>
 		/// <returns>A <typeparamref name="TResult"/> instance if successful; otherwise, <see langword="null"/>.</returns>
 		[return: MaybeNull]
-		public TResult Write([AllowNull] TElement element);
+		TResult Write([AllowNull] TElement element) => Add(element);
 
 		/// <summary>
 		/// Writes the <paramref name="elements"/>.
@@ -30,13 +30,7 @@ namespace Langly {
 		/// <param name="elements">The <see cref="Array"/> of <typeparamref name="TElement"/> value to write.</param>
 		/// <returns>A <typeparamref name="TResult"/> instance if successful; otherwise, <see langword="null"/>.</returns>
 		[return: MaybeNull]
-		public TResult Write([AllowNull] params TElement[] elements) {
-			TResult result = (TResult)this;
-			if (elements is not null) {
-				result = result.Write(elements.AsMemory());
-			}
-			return result;
-		}
+		TResult Write([AllowNull] params TElement[] elements) => Add(elements);
 
 		/// <summary>
 		/// Writes the <paramref name="elements"/>.
@@ -44,7 +38,7 @@ namespace Langly {
 		/// <param name="elements">The <see cref="Memory{T}"/> of <typeparamref name="TElement"/> value to write.</param>
 		/// <returns>A <typeparamref name="TResult"/> instance if successful; otherwise, <see langword="null"/>.</returns>
 		[return: MaybeNull]
-		public TResult Write(Memory<TElement> elements) => Write(elements.Span);
+		TResult Write(Memory<TElement> elements) => Add(elements);
 
 		/// <summary>
 		/// Writes the <paramref name="elements"/>.
@@ -52,7 +46,7 @@ namespace Langly {
 		/// <param name="elements">The <see cref="ReadOnlyMemory{T}"/> of <typeparamref name="TElement"/> value to write.</param>
 		/// <returns>A <typeparamref name="TResult"/> instance if successful; otherwise, <see langword="null"/>.</returns>
 		[return: MaybeNull]
-		public TResult Write(ReadOnlyMemory<TElement> elements) => Write(elements.Span);
+		TResult Write(ReadOnlyMemory<TElement> elements) => Add(elements);
 
 		/// <summary>
 		/// Writes the <paramref name="elements"/>.
@@ -60,7 +54,7 @@ namespace Langly {
 		/// <param name="elements">The <see cref="Span{T}"/> of <typeparamref name="TElement"/> value to write.</param>
 		/// <returns>A <typeparamref name="TResult"/> instance if successful; otherwise, <see langword="null"/>.</returns>
 		[return: MaybeNull]
-		public TResult Write(Span<TElement> elements) => Write((ReadOnlySpan<TElement>)elements);
+		TResult Write(Span<TElement> elements) => Add(elements);
 
 		/// <summary>
 		/// Writes the <paramref name="elements"/>.
@@ -68,17 +62,16 @@ namespace Langly {
 		/// <param name="elements">The <see cref="ReadOnlySpan{T}"/> of <typeparamref name="TElement"/> value to write.</param>
 		/// <returns>A <typeparamref name="TResult"/> instance if successful; otherwise, <see langword="null"/>.</returns>
 		[return: MaybeNull]
-		public TResult Write(ReadOnlySpan<TElement> elements) {
-			TResult result = (TResult)this;
-			foreach (TElement element in elements) {
-				result = result.Write(element);
-				if (result is null) {
-					goto Result;
-				}
-			}
-		Result:
-			return result;
-		}
+		TResult Write(ReadOnlySpan<TElement> elements) => Add(elements);
+
+		/// <summary>
+		/// Writes the <paramref name="elements"/>.
+		/// </summary>
+		/// <typeparam name="TEnumerator">The type of the enumerator of the <paramref name="elements"/>.</typeparam>
+		/// <param name="elements">The <see cref="ReadOnlySpan{T}"/> of <typeparamref name="TElement"/> value to write.</param>
+		/// <returns>A <typeparamref name="TResult"/> instance if successful; otherwise, <see langword="null"/>.</returns>
+		[return: MaybeNull]
+		TResult Write<TEnumerator>([AllowNull] ISequence<TElement, TEnumerator> elements) where TEnumerator : IEnumerator<TElement> => Add(elements);
 
 		/// <summary>
 		/// Ensures <paramref name="amount"/> bytes are loaded into this object.
@@ -112,7 +105,9 @@ namespace Langly {
 		TResult Load<TSource>([AllowNull] IRead<TElement, TSource> source) where TSource : IRead<TElement, TSource> {
 			TResult result = (TResult)this;
 			if (source is not null) {
-				_ = source.Read(out TElement element);
+				if (source.Read(out TElement element) is null) {
+					return default;
+				}
 				result = result.Write(element);
 			}
 			return result;

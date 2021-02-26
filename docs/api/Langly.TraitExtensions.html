@@ -128,6 +128,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Add&lt;TResult&gt;(this IAddText&lt;TResult&gt; collection, string elements)
+
     where TResult : IAddText&lt;TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -204,6 +205,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Add&lt;TElement, TResult&gt;(this IAdd&lt;TElement, TResult&gt; collection, TElement element)
+
     where TResult : IAdd&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -285,6 +287,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Add&lt;TElement, TResult&gt;(this IAdd&lt;TElement, TResult&gt; collection, params TElement[] elements)
+
     where TResult : IAdd&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -366,6 +369,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Add&lt;TElement, TResult&gt;(this IAdd&lt;TElement, TResult&gt; collection, Memory&lt;TElement&gt; elements)
+
     where TResult : IAdd&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -447,6 +451,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Add&lt;TElement, TResult&gt;(this IAdd&lt;TElement, TResult&gt; collection, ReadOnlyMemory&lt;TElement&gt; elements)
+
     where TResult : IAdd&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -528,6 +533,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Add&lt;TElement, TResult&gt;(this IAdd&lt;TElement, TResult&gt; collection, ReadOnlySpan&lt;TElement&gt; elements)
+
     where TResult : IAdd&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -609,6 +615,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Add&lt;TElement, TResult&gt;(this IAdd&lt;TElement, TResult&gt; collection, Span&lt;TElement&gt; elements)
+
     where TResult : IAdd&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -691,6 +698,7 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, TResult&gt; collection, TElement*elements, int length)
+
     where TElement : struct where TResult : IAddUnsafe&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -778,6 +786,7 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Add&lt;TElement, TResult, TEnumerator&gt;(this IAdd&lt;TElement, TResult&gt; collection, ISequence&lt;TElement, TEnumerator&gt; elements)
+
     where TResult : IAdd&lt;TElement, TResult&gt; where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -864,6 +873,7 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TSelf Clear&lt;TSelf&gt;(this IClear&lt;TSelf&gt; collection)
+
     where TSelf : IClear&lt;TSelf&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1132,7 +1142,7 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_EnsureLoaded__3_Langly_IWrite___0___1__nint_Langly_IRead___0___2__.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.EnsureLoaded%60%603(Langly.IWrite%7B%60%600%2C%60%601%7D%2Cnint%2CLangly.IRead%7B%60%600%2C%60%602%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWrite`2.cs/#L219">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWrite`2.cs/#L214">View Source</a>
   </span>
   <a id="Langly_TraitExtensions_EnsureLoaded_" data-uid="Langly.TraitExtensions.EnsureLoaded*"></a>
   <h4 id="Langly_TraitExtensions_EnsureLoaded__3_Langly_IWrite___0___1__nint_Langly_IRead___0___2__" data-uid="Langly.TraitExtensions.EnsureLoaded``3(Langly.IWrite{``0,``1},nint,Langly.IRead{``0,``2})">EnsureLoaded&lt;TElement, TResult, TSource&gt;(IWrite&lt;TElement, TResult&gt;, nint, IRead&lt;TElement, TSource&gt;)</h4>
@@ -1142,6 +1152,7 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult EnsureLoaded&lt;TElement, TResult, TSource&gt;(this IWrite&lt;TElement, TResult&gt; stream, nint amount, IRead&lt;TElement, TSource&gt; source)
+
     where TResult : IWrite&lt;TElement, TResult&gt; where TSource : IRead&lt;TElement, TSource&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1231,6 +1242,7 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TElement Fold&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, Func&lt;TElement, TElement, TElement&gt; func, TElement identity)
+
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1319,6 +1331,7 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TSelf Grow&lt;TSelf&gt;(this IResize&lt;TSelf&gt; collection)
+
     where TSelf : IResize&lt;TSelf&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2248,6 +2261,7 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TResult&gt;(this IInsertText&lt;TResult&gt; collection, nint index, string elements)
+
     where TResult : IInsertText&lt;TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2327,6 +2341,7 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TElement, TResult&gt;(this IInsert&lt;TElement, TResult&gt; collection, nint index, TElement element)
+
     where TResult : IInsert&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2411,6 +2426,7 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TElement, TResult&gt;(this IInsert&lt;TElement, TResult&gt; collection, nint index, params TElement[] elements)
+
     where TResult : IInsert&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2495,6 +2511,7 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TElement, TResult&gt;(this IInsert&lt;TElement, TResult&gt; collection, nint index, Memory&lt;TElement&gt; elements)
+
     where TResult : IInsert&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2579,6 +2596,7 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TElement, TResult&gt;(this IInsert&lt;TElement, TResult&gt; collection, nint index, ReadOnlyMemory&lt;TElement&gt; elements)
+
     where TResult : IInsert&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2663,6 +2681,7 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TElement, TResult&gt;(this IInsert&lt;TElement, TResult&gt; collection, nint index, ReadOnlySpan&lt;TElement&gt; elements)
+
     where TResult : IInsert&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2747,6 +2766,7 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TElement, TResult&gt;(this IInsert&lt;TElement, TResult&gt; collection, nint index, Span&lt;TElement&gt; elements)
+
     where TResult : IInsert&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2831,6 +2851,7 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TElement, TResult&gt;(this IInsertText&lt;TElement, TResult&gt; collection, char[] index, TElement element)
+
     where TResult : IInsertText&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2913,6 +2934,7 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TElement, TResult&gt;(this IInsertText&lt;TElement, TResult&gt; collection, Memory&lt;char&gt; index, TElement element)
+
     where TResult : IInsertText&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2995,6 +3017,7 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TElement, TResult&gt;(this IInsertText&lt;TElement, TResult&gt; collection, ReadOnlyMemory&lt;char&gt; index, TElement element)
+
     where TResult : IInsertText&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3077,6 +3100,7 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TElement, TResult&gt;(this IInsertText&lt;TElement, TResult&gt; collection, ReadOnlySpan&lt;char&gt; index, TElement element)
+
     where TResult : IInsertText&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3159,6 +3183,7 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TElement, TResult&gt;(this IInsertText&lt;TElement, TResult&gt; collection, Span&lt;char&gt; index, TElement element)
+
     where TResult : IInsertText&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3241,6 +3266,7 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TElement, TResult&gt;(this IInsertText&lt;TElement, TResult&gt; collection, string index, TElement element)
+
     where TResult : IInsertText&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3323,6 +3349,7 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TElement, TResult&gt;(this IInsertText&lt;TElement, TResult&gt; collection, Rune index, TElement element)
+
     where TResult : IInsertText&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3406,6 +3433,7 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TElement, TResult&gt; collection, nint index, TElement*elements, int length)
+
     where TElement : struct where TResult : IInsertUnsafe&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3496,6 +3524,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TIndex, TElement, TResult&gt;(this IInsert&lt;TIndex, TElement, TResult&gt; collection, TIndex index, TElement element)
+
     where TResult : IInsert&lt;TIndex, TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3585,6 +3614,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TElement, TResult, TEnumerator&gt;(this IInsert&lt;TElement, TResult&gt; collection, nint index, ISequence&lt;TElement, TEnumerator&gt; elements)
+
     where TResult : IInsert&lt;TElement, TResult&gt; where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3664,7 +3694,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_Load__3_Langly_IWrite___0___1__Langly_IRead___0___2__.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.Load%60%603(Langly.IWrite%7B%60%600%2C%60%601%7D%2CLangly.IRead%7B%60%600%2C%60%602%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWrite`2.cs/#L231">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWrite`2.cs/#L226">View Source</a>
   </span>
   <a id="Langly_TraitExtensions_Load_" data-uid="Langly.TraitExtensions.Load*"></a>
   <h4 id="Langly_TraitExtensions_Load__3_Langly_IWrite___0___1__Langly_IRead___0___2__" data-uid="Langly.TraitExtensions.Load``3(Langly.IWrite{``0,``1},Langly.IRead{``0,``2})">Load&lt;TElement, TResult, TSource&gt;(IWrite&lt;TElement, TResult&gt;, IRead&lt;TElement, TSource&gt;)</h4>
@@ -3674,6 +3704,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Load&lt;TElement, TResult, TSource&gt;(this IWrite&lt;TElement, TResult&gt; stream, IRead&lt;TElement, TSource&gt; source)
+
     where TResult : IWrite&lt;TElement, TResult&gt; where TSource : IRead&lt;TElement, TSource&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3747,7 +3778,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_Load__3_Langly_IWrite___0___1__nint_Langly_IRead___0___2__.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.Load%60%603(Langly.IWrite%7B%60%600%2C%60%601%7D%2Cnint%2CLangly.IRead%7B%60%600%2C%60%602%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWrite`2.cs/#L244">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWrite`2.cs/#L239">View Source</a>
   </span>
   <a id="Langly_TraitExtensions_Load_" data-uid="Langly.TraitExtensions.Load*"></a>
   <h4 id="Langly_TraitExtensions_Load__3_Langly_IWrite___0___1__nint_Langly_IRead___0___2__" data-uid="Langly.TraitExtensions.Load``3(Langly.IWrite{``0,``1},nint,Langly.IRead{``0,``2})">Load&lt;TElement, TResult, TSource&gt;(IWrite&lt;TElement, TResult&gt;, nint, IRead&lt;TElement, TSource&gt;)</h4>
@@ -3757,6 +3788,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Load&lt;TElement, TResult, TSource&gt;(this IWrite&lt;TElement, TResult&gt; stream, nint amount, IRead&lt;TElement, TSource&gt; source)
+
     where TResult : IWrite&lt;TElement, TResult&gt; where TSource : IRead&lt;TElement, TSource&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3964,6 +3996,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static nint Occurrences&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, TElement element)
+
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4042,6 +4075,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static nint Occurrences&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, IEquals&lt;TElement&gt; element)
+
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4120,6 +4154,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static nint Occurrences&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, Predicate&lt;TElement&gt; match)
+
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4198,6 +4233,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Peek&lt;TElement, TResult&gt;(this IPeek&lt;TElement, TResult&gt; collection, out TElement element)
+
     where TResult : IPeek&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4276,6 +4312,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Postpend&lt;TElement, TResult&gt;(this IPostpend&lt;TElement, TResult&gt; collection, TElement element)
+
     where TResult : IPostpend&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4354,6 +4391,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Postpend&lt;TElement, TResult&gt;(this IPostpend&lt;TElement, TResult&gt; collection, params TElement[] elements)
+
     where TResult : IPostpend&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4432,6 +4470,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Postpend&lt;TElement, TResult&gt;(this IPostpend&lt;TElement, TResult&gt; collection, Memory&lt;TElement&gt; elements)
+
     where TResult : IPostpend&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4510,6 +4549,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Postpend&lt;TElement, TResult&gt;(this IPostpend&lt;TElement, TResult&gt; collection, ReadOnlyMemory&lt;TElement&gt; elements)
+
     where TResult : IPostpend&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4588,6 +4628,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Postpend&lt;TElement, TResult&gt;(this IPostpend&lt;TElement, TResult&gt; collection, ReadOnlySpan&lt;TElement&gt; elements)
+
     where TResult : IPostpend&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4666,6 +4707,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Postpend&lt;TElement, TResult&gt;(this IPostpend&lt;TElement, TResult&gt; collection, Span&lt;TElement&gt; elements)
+
     where TResult : IPostpend&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4744,6 +4786,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Postpend&lt;TElement, TResult, TEnumerator&gt;(this IPostpend&lt;TElement, TResult&gt; collection, ISequence&lt;TElement, TEnumerator&gt; elements)
+
     where TResult : IPostpend&lt;TElement, TResult&gt; where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4827,6 +4870,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Prepend&lt;TElement, TResult&gt;(this IPrepend&lt;TElement, TResult&gt; collection, TElement element)
+
     where TResult : IPrepend&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4905,6 +4949,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Prepend&lt;TElement, TResult&gt;(this IPrepend&lt;TElement, TResult&gt; collection, params TElement[] elements)
+
     where TResult : IPrepend&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4983,6 +5028,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Prepend&lt;TElement, TResult&gt;(this IPrepend&lt;TElement, TResult&gt; collection, Memory&lt;TElement&gt; elements)
+
     where TResult : IPrepend&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5061,6 +5107,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Prepend&lt;TElement, TResult&gt;(this IPrepend&lt;TElement, TResult&gt; collection, ReadOnlyMemory&lt;TElement&gt; elements)
+
     where TResult : IPrepend&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5139,6 +5186,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Prepend&lt;TElement, TResult&gt;(this IPrepend&lt;TElement, TResult&gt; collection, ReadOnlySpan&lt;TElement&gt; elements)
+
     where TResult : IPrepend&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5217,6 +5265,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Prepend&lt;TElement, TResult&gt;(this IPrepend&lt;TElement, TResult&gt; collection, Span&lt;TElement&gt; elements)
+
     where TResult : IPrepend&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5295,6 +5344,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Prepend&lt;TElement, TResult, TEnumerator&gt;(this IPrepend&lt;TElement, TResult&gt; collection, ISequence&lt;TElement, TEnumerator&gt; elements)
+
     where TResult : IPrepend&lt;TElement, TResult&gt; where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5378,6 +5428,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Read&lt;TElement, TResult&gt;(this IRead&lt;TElement, TResult&gt; stream, out TElement element)
+
     where TResult : IRead&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5456,6 +5507,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Read&lt;TElement, TResult&gt;(this IRead&lt;TElement, TResult&gt; stream, TElement[] elements)
+
     where TResult : IRead&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5534,6 +5586,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Read&lt;TElement, TResult&gt;(this IRead&lt;TElement, TResult&gt; stream, nint amount, out TElement[] elements)
+
     where TResult : IRead&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5618,6 +5671,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Read&lt;TElement, TResult&gt;(this IRead&lt;TElement, TResult&gt; stream, nint amount, out ReadOnlyMemory&lt;TElement&gt; elements)
+
     where TResult : IRead&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5702,6 +5756,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Read&lt;TElement, TResult&gt;(this IRead&lt;TElement, TResult&gt; stream, nint amount, out ReadOnlySpan&lt;TElement&gt; elements)
+
     where TResult : IRead&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5786,6 +5841,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Read&lt;TElement, TResult&gt;(this IRead&lt;TElement, TResult&gt; stream, Memory&lt;TElement&gt; elements)
+
     where TResult : IRead&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5864,6 +5920,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Read&lt;TElement, TResult&gt;(this IRead&lt;TElement, TResult&gt; stream, Span&lt;TElement&gt; elements)
+
     where TResult : IRead&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5942,6 +5999,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Replace&lt;TSearch, TReplace, TResult&gt;(this IReplace&lt;TSearch, TReplace, TResult&gt; collection, TSearch search, TReplace replace)
+
     where TResult : IReplace&lt;TSearch, TReplace, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6031,6 +6089,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TSelf Resize&lt;TSelf&gt;(this IResize&lt;TSelf&gt; collection, nint capacity)
+
     where TSelf : IResize&lt;TSelf&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6102,6 +6161,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Seek&lt;TElement, TResult&gt;(this ISeek&lt;TElement, TResult&gt; collection, nint offset)
+
     where TResult : ISeek&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6179,6 +6239,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult ShiftLeft&lt;TResult&gt;(this IShift&lt;TResult&gt; collection)
+
     where TResult : IShift&lt;TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6244,6 +6305,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult ShiftLeft&lt;TResult&gt;(this IShift&lt;TResult&gt; collection, nint amount)
+
     where TResult : IShift&lt;TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6315,6 +6377,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult ShiftRight&lt;TResult&gt;(this IShift&lt;TResult&gt; collection)
+
     where TResult : IShift&lt;TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6380,6 +6443,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult ShiftRight&lt;TResult&gt;(this IShift&lt;TResult&gt; collection, nint amount)
+
     where TResult : IShift&lt;TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6451,6 +6515,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TSelf Shrink&lt;TSelf&gt;(this IResize&lt;TSelf&gt; collection)
+
     where TSelf : IResize&lt;TSelf&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6516,6 +6581,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Slice&lt;TResult&gt;(this ISlice&lt;TResult&gt; collection)
+
     where TResult : ISlice&lt;TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6583,6 +6649,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Slice&lt;TResult&gt;(this ISlice&lt;TResult&gt; collection, nint start)
+
     where TResult : ISlice&lt;TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6656,6 +6723,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Slice&lt;TResult&gt;(this ISlice&lt;TResult&gt; collection, nint start, nint length)
+
     where TResult : ISlice&lt;TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6725,7 +6793,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_Write__1_Langly_IWriteText___0__System_String_.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.Write%60%601(Langly.IWriteText%7B%60%600%7D%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWriteText`1.cs/#L40">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWriteText`1.cs/#L34">View Source</a>
   </span>
   <a id="Langly_TraitExtensions_Write_" data-uid="Langly.TraitExtensions.Write*"></a>
   <h4 id="Langly_TraitExtensions_Write__1_Langly_IWriteText___0__System_String_" data-uid="Langly.TraitExtensions.Write``1(Langly.IWriteText{``0},System.String)">Write&lt;TResult&gt;(IWriteText&lt;TResult&gt;, String)</h4>
@@ -6735,6 +6803,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Write&lt;TResult&gt;(this IWriteText&lt;TResult&gt; stream, string elements)
+
     where TResult : IWriteText&lt;TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6798,7 +6867,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_Write__2_Langly_IWrite___0___1____0_.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.Write%60%602(Langly.IWrite%7B%60%600%2C%60%601%7D%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWrite`2.cs/#L151">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWrite`2.cs/#L146">View Source</a>
   </span>
   <a id="Langly_TraitExtensions_Write_" data-uid="Langly.TraitExtensions.Write*"></a>
   <h4 id="Langly_TraitExtensions_Write__2_Langly_IWrite___0___1____0_" data-uid="Langly.TraitExtensions.Write``2(Langly.IWrite{``0,``1},``0)">Write&lt;TElement, TResult&gt;(IWrite&lt;TElement, TResult&gt;, TElement)</h4>
@@ -6808,6 +6877,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Write&lt;TElement, TResult&gt;(this IWrite&lt;TElement, TResult&gt; stream, TElement element)
+
     where TResult : IWrite&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6876,7 +6946,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_Write__2_Langly_IWrite___0___1____0___.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.Write%60%602(Langly.IWrite%7B%60%600%2C%60%601%7D%2C%60%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWrite`2.cs/#L162">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWrite`2.cs/#L157">View Source</a>
   </span>
   <a id="Langly_TraitExtensions_Write_" data-uid="Langly.TraitExtensions.Write*"></a>
   <h4 id="Langly_TraitExtensions_Write__2_Langly_IWrite___0___1____0___" data-uid="Langly.TraitExtensions.Write``2(Langly.IWrite{``0,``1},``0[])">Write&lt;TElement, TResult&gt;(IWrite&lt;TElement, TResult&gt;, TElement[])</h4>
@@ -6886,6 +6956,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Write&lt;TElement, TResult&gt;(this IWrite&lt;TElement, TResult&gt; stream, params TElement[] elements)
+
     where TResult : IWrite&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6954,7 +7025,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_Write__2_Langly_IWrite___0___1__System_Memory___0__.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.Write%60%602(Langly.IWrite%7B%60%600%2C%60%601%7D%2CSystem.Memory%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWrite`2.cs/#L173">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWrite`2.cs/#L168">View Source</a>
   </span>
   <a id="Langly_TraitExtensions_Write_" data-uid="Langly.TraitExtensions.Write*"></a>
   <h4 id="Langly_TraitExtensions_Write__2_Langly_IWrite___0___1__System_Memory___0__" data-uid="Langly.TraitExtensions.Write``2(Langly.IWrite{``0,``1},System.Memory{``0})">Write&lt;TElement, TResult&gt;(IWrite&lt;TElement, TResult&gt;, Memory&lt;TElement&gt;)</h4>
@@ -6964,6 +7035,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Write&lt;TElement, TResult&gt;(this IWrite&lt;TElement, TResult&gt; stream, Memory&lt;TElement&gt; elements)
+
     where TResult : IWrite&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -7032,7 +7104,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_Write__2_Langly_IWrite___0___1__System_ReadOnlyMemory___0__.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.Write%60%602(Langly.IWrite%7B%60%600%2C%60%601%7D%2CSystem.ReadOnlyMemory%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWrite`2.cs/#L184">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWrite`2.cs/#L179">View Source</a>
   </span>
   <a id="Langly_TraitExtensions_Write_" data-uid="Langly.TraitExtensions.Write*"></a>
   <h4 id="Langly_TraitExtensions_Write__2_Langly_IWrite___0___1__System_ReadOnlyMemory___0__" data-uid="Langly.TraitExtensions.Write``2(Langly.IWrite{``0,``1},System.ReadOnlyMemory{``0})">Write&lt;TElement, TResult&gt;(IWrite&lt;TElement, TResult&gt;, ReadOnlyMemory&lt;TElement&gt;)</h4>
@@ -7042,6 +7114,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Write&lt;TElement, TResult&gt;(this IWrite&lt;TElement, TResult&gt; stream, ReadOnlyMemory&lt;TElement&gt; elements)
+
     where TResult : IWrite&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -7110,7 +7183,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_Write__2_Langly_IWrite___0___1__System_ReadOnlySpan___0__.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.Write%60%602(Langly.IWrite%7B%60%600%2C%60%601%7D%2CSystem.ReadOnlySpan%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWrite`2.cs/#L206">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWrite`2.cs/#L201">View Source</a>
   </span>
   <a id="Langly_TraitExtensions_Write_" data-uid="Langly.TraitExtensions.Write*"></a>
   <h4 id="Langly_TraitExtensions_Write__2_Langly_IWrite___0___1__System_ReadOnlySpan___0__" data-uid="Langly.TraitExtensions.Write``2(Langly.IWrite{``0,``1},System.ReadOnlySpan{``0})">Write&lt;TElement, TResult&gt;(IWrite&lt;TElement, TResult&gt;, ReadOnlySpan&lt;TElement&gt;)</h4>
@@ -7120,6 +7193,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Write&lt;TElement, TResult&gt;(this IWrite&lt;TElement, TResult&gt; stream, ReadOnlySpan&lt;TElement&gt; elements)
+
     where TResult : IWrite&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -7188,7 +7262,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_Write__2_Langly_IWrite___0___1__System_Span___0__.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.Write%60%602(Langly.IWrite%7B%60%600%2C%60%601%7D%2CSystem.Span%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWrite`2.cs/#L195">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWrite`2.cs/#L190">View Source</a>
   </span>
   <a id="Langly_TraitExtensions_Write_" data-uid="Langly.TraitExtensions.Write*"></a>
   <h4 id="Langly_TraitExtensions_Write__2_Langly_IWrite___0___1__System_Span___0__" data-uid="Langly.TraitExtensions.Write``2(Langly.IWrite{``0,``1},System.Span{``0})">Write&lt;TElement, TResult&gt;(IWrite&lt;TElement, TResult&gt;, Span&lt;TElement&gt;)</h4>
@@ -7198,6 +7272,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Write&lt;TElement, TResult&gt;(this IWrite&lt;TElement, TResult&gt; stream, Span&lt;TElement&gt; elements)
+
     where TResult : IWrite&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -7266,7 +7341,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_Write__2_Langly_IWriteUnsafe___0___1____0__System_Int32_.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.Write%60%602(Langly.IWriteUnsafe%7B%60%600%2C%60%601%7D%2C%60%600*%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWriteUnsafe`2.cs/#L54">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWriteUnsafe`2.cs/#L32">View Source</a>
   </span>
   <a id="Langly_TraitExtensions_Write_" data-uid="Langly.TraitExtensions.Write*"></a>
   <h4 id="Langly_TraitExtensions_Write__2_Langly_IWriteUnsafe___0___1____0__System_Int32_" data-uid="Langly.TraitExtensions.Write``2(Langly.IWriteUnsafe{``0,``1},``0*,System.Int32)">Write&lt;TElement, TResult&gt;(IWriteUnsafe&lt;TElement, TResult&gt;, TElement*, Int32)</h4>
@@ -7277,6 +7352,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static TResult Write&lt;TElement, TResult&gt;(this IWriteUnsafe&lt;TElement, TResult&gt; stream, TElement*elements, int length)
+
     where TElement : struct where TResult : IWriteUnsafe&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -7351,7 +7427,7 @@ public static TResult Write&lt;TElement, TResult&gt;(this IWriteUnsafe&lt;TEleme
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_WriteLine__1_Langly_IWriteText___0__.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.WriteLine%60%601(Langly.IWriteText%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWriteText`1.cs/#L49">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWriteText`1.cs/#L43">View Source</a>
   </span>
   <a id="Langly_TraitExtensions_WriteLine_" data-uid="Langly.TraitExtensions.WriteLine*"></a>
   <h4 id="Langly_TraitExtensions_WriteLine__1_Langly_IWriteText___0__" data-uid="Langly.TraitExtensions.WriteLine``1(Langly.IWriteText{``0})">WriteLine&lt;TResult&gt;(IWriteText&lt;TResult&gt;)</h4>
@@ -7361,6 +7437,7 @@ public static TResult Write&lt;TElement, TResult&gt;(this IWriteUnsafe&lt;TEleme
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult WriteLine&lt;TResult&gt;(this IWriteText&lt;TResult&gt; stream)
+
     where TResult : IWriteText&lt;TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -7418,7 +7495,7 @@ public static TResult Write&lt;TElement, TResult&gt;(this IWriteUnsafe&lt;TEleme
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_WriteLine__1_Langly_IWriteText___0__System_Char_.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.WriteLine%60%601(Langly.IWriteText%7B%60%600%7D%2CSystem.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWriteText`1.cs/#L59">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWriteText`1.cs/#L53">View Source</a>
   </span>
   <a id="Langly_TraitExtensions_WriteLine_" data-uid="Langly.TraitExtensions.WriteLine*"></a>
   <h4 id="Langly_TraitExtensions_WriteLine__1_Langly_IWriteText___0__System_Char_" data-uid="Langly.TraitExtensions.WriteLine``1(Langly.IWriteText{``0},System.Char)">WriteLine&lt;TResult&gt;(IWriteText&lt;TResult&gt;, Char)</h4>
@@ -7428,6 +7505,7 @@ public static TResult Write&lt;TElement, TResult&gt;(this IWriteUnsafe&lt;TEleme
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult WriteLine&lt;TResult&gt;(this IWriteText&lt;TResult&gt; stream, char element)
+
     where TResult : IWriteText&lt;TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -7491,7 +7569,7 @@ public static TResult Write&lt;TElement, TResult&gt;(this IWriteUnsafe&lt;TEleme
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_WriteLine__1_Langly_IWriteText___0__System_Char___.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.WriteLine%60%601(Langly.IWriteText%7B%60%600%7D%2CSystem.Char%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWriteText`1.cs/#L79">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWriteText`1.cs/#L73">View Source</a>
   </span>
   <a id="Langly_TraitExtensions_WriteLine_" data-uid="Langly.TraitExtensions.WriteLine*"></a>
   <h4 id="Langly_TraitExtensions_WriteLine__1_Langly_IWriteText___0__System_Char___" data-uid="Langly.TraitExtensions.WriteLine``1(Langly.IWriteText{``0},System.Char[])">WriteLine&lt;TResult&gt;(IWriteText&lt;TResult&gt;, Char[])</h4>
@@ -7501,6 +7579,7 @@ public static TResult Write&lt;TElement, TResult&gt;(this IWriteUnsafe&lt;TEleme
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult WriteLine&lt;TResult&gt;(this IWriteText&lt;TResult&gt; stream, params char[] elements)
+
     where TResult : IWriteText&lt;TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -7564,7 +7643,7 @@ public static TResult Write&lt;TElement, TResult&gt;(this IWriteUnsafe&lt;TEleme
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_WriteLine__1_Langly_IWriteText___0__System_Memory_System_Char__.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.WriteLine%60%601(Langly.IWriteText%7B%60%600%7D%2CSystem.Memory%7BSystem.Char%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWriteText`1.cs/#L89">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWriteText`1.cs/#L83">View Source</a>
   </span>
   <a id="Langly_TraitExtensions_WriteLine_" data-uid="Langly.TraitExtensions.WriteLine*"></a>
   <h4 id="Langly_TraitExtensions_WriteLine__1_Langly_IWriteText___0__System_Memory_System_Char__" data-uid="Langly.TraitExtensions.WriteLine``1(Langly.IWriteText{``0},System.Memory{System.Char})">WriteLine&lt;TResult&gt;(IWriteText&lt;TResult&gt;, Memory&lt;Char&gt;)</h4>
@@ -7574,6 +7653,7 @@ public static TResult Write&lt;TElement, TResult&gt;(this IWriteUnsafe&lt;TEleme
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult WriteLine&lt;TResult&gt;(this IWriteText&lt;TResult&gt; stream, Memory&lt;char&gt; elements)
+
     where TResult : IWriteText&lt;TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -7637,7 +7717,7 @@ public static TResult Write&lt;TElement, TResult&gt;(this IWriteUnsafe&lt;TEleme
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_WriteLine__1_Langly_IWriteText___0__System_ReadOnlyMemory_System_Char__.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.WriteLine%60%601(Langly.IWriteText%7B%60%600%7D%2CSystem.ReadOnlyMemory%7BSystem.Char%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWriteText`1.cs/#L99">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWriteText`1.cs/#L93">View Source</a>
   </span>
   <a id="Langly_TraitExtensions_WriteLine_" data-uid="Langly.TraitExtensions.WriteLine*"></a>
   <h4 id="Langly_TraitExtensions_WriteLine__1_Langly_IWriteText___0__System_ReadOnlyMemory_System_Char__" data-uid="Langly.TraitExtensions.WriteLine``1(Langly.IWriteText{``0},System.ReadOnlyMemory{System.Char})">WriteLine&lt;TResult&gt;(IWriteText&lt;TResult&gt;, ReadOnlyMemory&lt;Char&gt;)</h4>
@@ -7647,6 +7727,7 @@ public static TResult Write&lt;TElement, TResult&gt;(this IWriteUnsafe&lt;TEleme
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult WriteLine&lt;TResult&gt;(this IWriteText&lt;TResult&gt; stream, ReadOnlyMemory&lt;char&gt; elements)
+
     where TResult : IWriteText&lt;TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -7710,7 +7791,7 @@ public static TResult Write&lt;TElement, TResult&gt;(this IWriteUnsafe&lt;TEleme
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_WriteLine__1_Langly_IWriteText___0__System_ReadOnlySpan_System_Char__.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.WriteLine%60%601(Langly.IWriteText%7B%60%600%7D%2CSystem.ReadOnlySpan%7BSystem.Char%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWriteText`1.cs/#L119">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWriteText`1.cs/#L113">View Source</a>
   </span>
   <a id="Langly_TraitExtensions_WriteLine_" data-uid="Langly.TraitExtensions.WriteLine*"></a>
   <h4 id="Langly_TraitExtensions_WriteLine__1_Langly_IWriteText___0__System_ReadOnlySpan_System_Char__" data-uid="Langly.TraitExtensions.WriteLine``1(Langly.IWriteText{``0},System.ReadOnlySpan{System.Char})">WriteLine&lt;TResult&gt;(IWriteText&lt;TResult&gt;, ReadOnlySpan&lt;Char&gt;)</h4>
@@ -7720,6 +7801,7 @@ public static TResult Write&lt;TElement, TResult&gt;(this IWriteUnsafe&lt;TEleme
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult WriteLine&lt;TResult&gt;(this IWriteText&lt;TResult&gt; stream, ReadOnlySpan&lt;char&gt; elements)
+
     where TResult : IWriteText&lt;TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -7783,7 +7865,7 @@ public static TResult Write&lt;TElement, TResult&gt;(this IWriteUnsafe&lt;TEleme
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_WriteLine__1_Langly_IWriteText___0__System_Span_System_Char__.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.WriteLine%60%601(Langly.IWriteText%7B%60%600%7D%2CSystem.Span%7BSystem.Char%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWriteText`1.cs/#L109">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWriteText`1.cs/#L103">View Source</a>
   </span>
   <a id="Langly_TraitExtensions_WriteLine_" data-uid="Langly.TraitExtensions.WriteLine*"></a>
   <h4 id="Langly_TraitExtensions_WriteLine__1_Langly_IWriteText___0__System_Span_System_Char__" data-uid="Langly.TraitExtensions.WriteLine``1(Langly.IWriteText{``0},System.Span{System.Char})">WriteLine&lt;TResult&gt;(IWriteText&lt;TResult&gt;, Span&lt;Char&gt;)</h4>
@@ -7793,6 +7875,7 @@ public static TResult Write&lt;TElement, TResult&gt;(this IWriteUnsafe&lt;TEleme
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult WriteLine&lt;TResult&gt;(this IWriteText&lt;TResult&gt; stream, Span&lt;char&gt; elements)
+
     where TResult : IWriteText&lt;TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -7856,7 +7939,7 @@ public static TResult Write&lt;TElement, TResult&gt;(this IWriteUnsafe&lt;TEleme
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_WriteLine__1_Langly_IWriteText___0__System_String_.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.WriteLine%60%601(Langly.IWriteText%7B%60%600%7D%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWriteText`1.cs/#L69">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWriteText`1.cs/#L63">View Source</a>
   </span>
   <a id="Langly_TraitExtensions_WriteLine_" data-uid="Langly.TraitExtensions.WriteLine*"></a>
   <h4 id="Langly_TraitExtensions_WriteLine__1_Langly_IWriteText___0__System_String_" data-uid="Langly.TraitExtensions.WriteLine``1(Langly.IWriteText{``0},System.String)">WriteLine&lt;TResult&gt;(IWriteText&lt;TResult&gt;, String)</h4>
@@ -7866,6 +7949,7 @@ public static TResult Write&lt;TElement, TResult&gt;(this IWriteUnsafe&lt;TEleme
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult WriteLine&lt;TResult&gt;(this IWriteText&lt;TResult&gt; stream, string elements)
+
     where TResult : IWriteText&lt;TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -7929,7 +8013,7 @@ public static TResult Write&lt;TElement, TResult&gt;(this IWriteUnsafe&lt;TEleme
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_WriteLine__1_Langly_IWriteUnsafe_System_Char___0__System_Char__System_Int32_.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.WriteLine%60%601(Langly.IWriteUnsafe%7BSystem.Char%2C%60%600%7D%2CSystem.Char*%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWriteUnsafe`2.cs/#L66">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IWriteUnsafe`2.cs/#L44">View Source</a>
   </span>
   <a id="Langly_TraitExtensions_WriteLine_" data-uid="Langly.TraitExtensions.WriteLine*"></a>
   <h4 id="Langly_TraitExtensions_WriteLine__1_Langly_IWriteUnsafe_System_Char___0__System_Char__System_Int32_" data-uid="Langly.TraitExtensions.WriteLine``1(Langly.IWriteUnsafe{System.Char,``0},System.Char*,System.Int32)">WriteLine&lt;TResult&gt;(IWriteUnsafe&lt;Char, TResult&gt;, Char*, Int32)</h4>
@@ -7940,6 +8024,7 @@ public static TResult Write&lt;TElement, TResult&gt;(this IWriteUnsafe&lt;TEleme
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static TResult WriteLine&lt;TResult&gt;(this IWriteUnsafe&lt;char, TResult&gt; stream, char *elements, int length)
+
     where TResult : IWriteText&lt;TResult&gt;, IWriteUnsafe&lt;char, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>

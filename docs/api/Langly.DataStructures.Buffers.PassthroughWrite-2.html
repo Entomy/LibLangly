@@ -87,6 +87,7 @@
     <div><a class="xref" href="Langly.IEquals-1.html">IEquals</a>&lt;<a class="xref" href="Langly.Object.html">Object</a>&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Langly.Object.html">Object</a>&gt;</div>
     <div><a class="xref" href="Langly.IWrite-2.html">IWrite</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.Buffers.PassthroughWrite-2.html">PassthroughWrite</a>&lt;TElement, TWrite&gt;&gt;</div>
+    <div><a class="xref" href="Langly.IAdd-2.html">IAdd</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.Buffers.PassthroughWrite-2.html">PassthroughWrite</a>&lt;TElement, TWrite&gt;&gt;</div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -122,7 +123,7 @@
   <h6><strong>Assembly</strong>: Langly.Buffers.dll</h6>
   <h5 id="Langly_DataStructures_Buffers_PassthroughWrite_2_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class PassthroughWrite&lt;TElement, TWrite&gt; : Object, IEquals&lt;Object&gt;, IEquatable&lt;Object&gt;, IWrite&lt;TElement, PassthroughWrite&lt;TElement, TWrite&gt;&gt; where TWrite : IWrite&lt;TElement, TWrite&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public class PassthroughWrite&lt;TElement, TWrite&gt; : Object, IEquals&lt;Object&gt;, IEquatable&lt;Object&gt;, IWrite&lt;TElement, PassthroughWrite&lt;TElement, TWrite&gt;&gt;, IAdd&lt;TElement, PassthroughWrite&lt;TElement, TWrite&gt;&gt; where TWrite : IWrite&lt;TElement, TWrite&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -227,8 +228,7 @@
   </span>
   <a id="Langly_DataStructures_Buffers_PassthroughWrite_2_Writable_" data-uid="Langly.DataStructures.Buffers.PassthroughWrite`2.Writable*"></a>
   <h4 id="Langly_DataStructures_Buffers_PassthroughWrite_2_Writable" data-uid="Langly.DataStructures.Buffers.PassthroughWrite`2.Writable">Writable</h4>
-  <div class="markdown level1 summary"><p>Can this be written to?</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -249,9 +249,6 @@
       </tr>
     </tbody>
   </table>
-  <h5 id="Langly_DataStructures_Buffers_PassthroughWrite_2_Writable_remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>This is a state indicator. Of course an <a class="xref" href="Langly.IWrite-2.html">IWrite&lt;TElement, TResult&gt;</a> can be written to, but that doesn't mean it can always be written to. Rather, this being <span class="xref">true</span> indicates the type can currently be written to.</p>
-</div>
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
@@ -263,8 +260,7 @@
   </span>
   <a id="Langly_DataStructures_Buffers_PassthroughWrite_2_Write_" data-uid="Langly.DataStructures.Buffers.PassthroughWrite`2.Write*"></a>
   <h4 id="Langly_DataStructures_Buffers_PassthroughWrite_2_Write__0_" data-uid="Langly.DataStructures.Buffers.PassthroughWrite`2.Write(`0)">Write(TElement)</h4>
-  <div class="markdown level1 summary"><p>Writes a <code data-dev-comment-type="paramref" class="paramref">element</code>.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -283,8 +279,7 @@
       <tr>
         <td><span class="xref">TElement</span></td>
         <td><span class="parametername">element</span></td>
-        <td><p>The <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> value to write.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -299,8 +294,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Langly.DataStructures.Buffers.PassthroughWrite-2.html">PassthroughWrite</a>&lt;TElement, TWrite&gt;</td>
-        <td><p>A <code data-dev-comment-type="typeparamref" class="typeparamref">TResult</code> instance if successful; otherwise, <span class="xref">null</span>.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -313,6 +307,9 @@
   </div>
   <div>
       <a class="xref" href="Langly.IWrite-2.html">IWrite&lt;TElement, TResult&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IAdd-2.html">IAdd&lt;TElement, TResult&gt;</a>
   </div>
 </article>
           </div>
