@@ -3,21 +3,21 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace Langly {
 	/// <summary>
-	/// Indicates the type is a sequence of <typeparamref name="TMember"/>.
+	/// Indicates the type is a sequence of <typeparamref name="TElement"/>.
 	/// </summary>
-	/// <typeparam name="TMember">The type of elements in the sequence.</typeparam>
+	/// <typeparam name="TElement">The type of elements in the sequence.</typeparam>
 	/// <typeparam name="TEnumerator">The type of the enumerator for this sequence.</typeparam>
 	/// <remarks>
 	/// This interface devirtualizes the enumerator, and simplifies numerous parts of the interface through well defined defaults.
 	/// </remarks>
-	public interface ISequence<TMember, out TEnumerator> :
-		IContains<TMember>,
+	public interface ISequence<TElement, out TEnumerator> :
+		IContains<TElement>,
 		ICount,
-		System.Collections.Generic.IEnumerable<TMember>
-		where TEnumerator : IEnumerator<TMember> {
+		System.Collections.Generic.IEnumerable<TElement>
+		where TEnumerator : IEnumerator<TElement> {
 		/// <inheritdoc/>
-		Boolean IContains<TMember>.Contains([AllowNull] TMember element) {
-			foreach (TMember item in this) {
+		Boolean IContains<TElement>.Contains([AllowNull] TElement element) {
+			foreach (TElement item in this) {
 				if (item is null && element is null) {
 					return true;
 				} else if (element?.Equals(item) ?? false) {
@@ -37,12 +37,12 @@ namespace Langly {
 		/// <para><paramref name="func"/> is a magma, so associativity like left-fold and right-fold are completely irrelevant.</para>
 		/// <para><paramref name="identity"/> is required as a start point for the fold. It needs to be the identity of the <paramref name="func"/> to function properly. For example, the identity of addition is <c>0</c>, and the identity of multiplication is <c>1</c>. Without an appropriate identity, the results will be wrong.</para>
 		/// </remarks>
-		TMember Fold([DisallowNull] Func<TMember, TMember, TMember> func, TMember identity) {
-			TMember result = identity;
+		TElement Fold([DisallowNull] Func<TElement, TElement, TElement> func, TElement identity) {
+			TElement result = identity;
 			if (func is null) {
 				goto Result;
 			}
-			foreach (TMember item in this) {
+			foreach (TElement item in this) {
 				result = func(result, item);
 			}
 		Result:
@@ -58,7 +58,7 @@ namespace Langly {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		System.Collections.Generic.IEnumerator<TMember> System.Collections.Generic.IEnumerable<TMember>.GetEnumerator() => GetEnumerator();
+		System.Collections.Generic.IEnumerator<TElement> System.Collections.Generic.IEnumerable<TElement>.GetEnumerator() => GetEnumerator();
 
 		/// <inheritdoc/>
 		[return: NotNull]
@@ -70,9 +70,9 @@ namespace Langly {
 		/// <param name="element">The element to count.</param>
 		/// <returns>The amount of occurrences found.</returns>
 		[SuppressMessage("Performance", "HAA0601:Value type to reference type conversion causing boxing allocation", Justification = "There's nothing I can do about this.")]
-		nint Occurrences([AllowNull] TMember element) {
+		nint Occurrences([AllowNull] TElement element) {
 			nint count = 0;
-			foreach (TMember item in this) {
+			foreach (TElement item in this) {
 				if (item is null && element is null) {
 					count++;
 				} else if (element?.Equals(item) ?? false) {
@@ -87,9 +87,9 @@ namespace Langly {
 		/// </summary>
 		/// <param name="element">The element to count.</param>
 		/// <returns>The amount of occurrences found.</returns>
-		nint Occurrences([AllowNull] IEquals<TMember> element) {
+		nint Occurrences([AllowNull] IEquals<TElement> element) {
 			nint count = 0;
-			foreach (TMember item in this) {
+			foreach (TElement item in this) {
 				if (item is null && element is null) {
 					count++;
 				} else if (element?.Equals(item) ?? false) {
@@ -104,9 +104,9 @@ namespace Langly {
 		/// </summary>
 		/// <param name="predicate">The <see cref="Predicate{T}"/> describing a match of the elements to count.</param>
 		/// <returns>The amount of occurrences found.</returns>
-		nint Occurrences([AllowNull] Predicate<TMember> predicate) {
+		nint Occurrences([AllowNull] Predicate<TElement> predicate) {
 			nint count = 0;
-			foreach (TMember item in this) {
+			foreach (TElement item in this) {
 				if (item is null && predicate is null) {
 					count++;
 				} else if (predicate?.Invoke(item) ?? false) {
