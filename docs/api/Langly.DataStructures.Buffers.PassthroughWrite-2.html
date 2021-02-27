@@ -228,7 +228,8 @@
   </span>
   <a id="Langly_DataStructures_Buffers_PassthroughWrite_2_Writable_" data-uid="Langly.DataStructures.Buffers.PassthroughWrite`2.Writable*"></a>
   <h4 id="Langly_DataStructures_Buffers_PassthroughWrite_2_Writable" data-uid="Langly.DataStructures.Buffers.PassthroughWrite`2.Writable">Writable</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Can this be written to?</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -249,6 +250,9 @@
       </tr>
     </tbody>
   </table>
+  <h5 id="Langly_DataStructures_Buffers_PassthroughWrite_2_Writable_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This is a state indicator. Of course an <a class="xref" href="Langly.IWrite-2.html">IWrite&lt;TElement, TResult&gt;</a> can be written to, but that doesn't mean it can always be written to. Rather, this being <span class="xref">true</span> indicates the type can currently be written to.</p>
+</div>
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
@@ -256,11 +260,12 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Buffers_PassthroughWrite_2_Write__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Buffers.PassthroughWrite%602.Write(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Buffers/DataStructures/Buffers/PassthroughWrite`2.cs/#L31">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Buffers/DataStructures/Buffers/PassthroughWrite`2.cs/#L36">View Source</a>
   </span>
   <a id="Langly_DataStructures_Buffers_PassthroughWrite_2_Write_" data-uid="Langly.DataStructures.Buffers.PassthroughWrite`2.Write*"></a>
   <h4 id="Langly_DataStructures_Buffers_PassthroughWrite_2_Write__0_" data-uid="Langly.DataStructures.Buffers.PassthroughWrite`2.Write(`0)">Write(TElement)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Writes a <code data-dev-comment-type="paramref" class="paramref">element</code>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -279,7 +284,8 @@
       <tr>
         <td><span class="xref">TElement</span></td>
         <td><span class="parametername">element</span></td>
-        <td></td>
+        <td><p>The <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> value to write.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -294,10 +300,66 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Langly.DataStructures.Buffers.PassthroughWrite-2.html">PassthroughWrite</a>&lt;TElement, TWrite&gt;</td>
-        <td></td>
+        <td><p>A <code data-dev-comment-type="typeparamref" class="typeparamref">TResult</code> instance if successful; otherwise, <span class="xref">null</span>.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Buffers_PassthroughWrite_2_Langly_IAdd_TElement_Langly_DataStructures_Buffers_PassthroughWrite_TElement_TWrite___Add__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Buffers.PassthroughWrite%602.Langly%23IAdd%7BTElement%2CLangly%23DataStructures%23Buffers%23PassthroughWrite%7BTElement%2CTWrite%7D%7D%23Add(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Buffers/DataStructures/Buffers/PassthroughWrite`2.cs/#L31">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Buffers_PassthroughWrite_2_Langly_IAdd_TElement_Langly_DataStructures_Buffers_PassthroughWrite_TElement_TWrite___Add_" data-uid="Langly.DataStructures.Buffers.PassthroughWrite`2.Langly#IAdd{TElement,Langly#DataStructures#Buffers#PassthroughWrite{TElement,TWrite}}#Add*"></a>
+  <h4 id="Langly_DataStructures_Buffers_PassthroughWrite_2_Langly_IAdd_TElement_Langly_DataStructures_Buffers_PassthroughWrite_TElement_TWrite___Add__0_" data-uid="Langly.DataStructures.Buffers.PassthroughWrite`2.Langly#IAdd{TElement,Langly#DataStructures#Buffers#PassthroughWrite{TElement,TWrite}}#Add(`0)">IAdd&lt;TElement, PassthroughWrite&lt;TElement, TWrite&gt;&gt;.Add(TElement)</h4>
+  <div class="markdown level1 summary"><p>Adds an element to this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">PassthroughWrite&lt;TElement, TWrite&gt; IAdd&lt;TElement, PassthroughWrite&lt;TElement, TWrite&gt;&gt;.Add(TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element to add.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Buffers.PassthroughWrite-2.html">PassthroughWrite</a>&lt;TElement, TWrite&gt;</td>
+        <td><p>If the add occurred successfully, returns a <code data-dev-comment-type="typeparamref" class="typeparamref">TResult</code> containing the original and added elements; otherwise, <span class="xref">null</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_DataStructures_Buffers_PassthroughWrite_2_Langly_IAdd_TElement_Langly_DataStructures_Buffers_PassthroughWrite_TElement_TWrite___Add__0__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.</p>
+</div>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="Langly.IEquals-1.html">IEquals&lt;TElement&gt;</a>
