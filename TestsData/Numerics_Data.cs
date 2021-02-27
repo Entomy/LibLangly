@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 namespace Langly {
-	public static class NumericsData {
+	public static class Numerics_Data {
 		public static IEnumerable<object[]> Max_nint() {
 			yield return new object[] { Double.NaN, null };
 			yield return new object[] { Double.NaN, new nint[] { } };

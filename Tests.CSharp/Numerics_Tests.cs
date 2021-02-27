@@ -3,93 +3,93 @@ using Xunit;
 using Langly.DataStructures.Lists;
 
 namespace Langly {
-	public class NumericsTests {
+	public class Numerics_Tests {
 		[Theory]
-		[MemberData(nameof(NumericsData.Max_nint), MemberType = typeof(NumericsData))]
+		[MemberData(nameof(Numerics_Data.Max_nint), MemberType = typeof(Numerics_Data))]
 		public void Max_nint(Double expected, nint[] values) {
 			Chain<nint> chain = new Chain<nint>().Add(values);
 			Assert.Equal(expected, chain.Max());
 		}
 
 		[Theory]
-		[MemberData(nameof(NumericsData.Max_nuint), MemberType = typeof(NumericsData))]
+		[MemberData(nameof(Numerics_Data.Max_nuint), MemberType = typeof(Numerics_Data))]
 		public void Max_nuint(Double expected, nuint[] values) {
 			Chain<nuint> chain = new Chain<nuint>().Add(values);
 			Assert.Equal(expected, chain.Max());
 		}
 
 		[Theory]
-		[MemberData(nameof(NumericsData.Max_SByte), MemberType = typeof(NumericsData))]
+		[MemberData(nameof(Numerics_Data.Max_SByte), MemberType = typeof(Numerics_Data))]
 		public void Max_SByte(Single expected, SByte[] values) {
 			Chain<SByte> chain = new Chain<SByte>().Add(values);
 			Assert.Equal(expected, chain.Max());
 		}
 
 		[Theory]
-		[MemberData(nameof(NumericsData.Max_Byte), MemberType = typeof(NumericsData))]
+		[MemberData(nameof(Numerics_Data.Max_Byte), MemberType = typeof(Numerics_Data))]
 		public void Max_Byte(Single expected, Byte[] values) {
 			Chain<Byte> chain = new Chain<Byte>().Add(values);
 			Assert.Equal(expected, chain.Max());
 		}
 
 		[Theory]
-		[MemberData(nameof(NumericsData.Max_Int16), MemberType = typeof(NumericsData))]
+		[MemberData(nameof(Numerics_Data.Max_Int16), MemberType = typeof(Numerics_Data))]
 		public void Max_Int16(Single expected, Int16[] values) {
 			Chain<Int16> chain = new Chain<Int16>().Add(values);
 			Assert.Equal(expected, chain.Max());
 		}
 
 		[Theory]
-		[MemberData(nameof(NumericsData.Max_UInt16), MemberType = typeof(NumericsData))]
+		[MemberData(nameof(Numerics_Data.Max_UInt16), MemberType = typeof(Numerics_Data))]
 		public void Max_UInt16(Single expected, UInt16[] values) {
 			Chain<UInt16> chain = new Chain<UInt16>().Add(values);
 			Assert.Equal(expected, chain.Max());
 		}
 
 		[Theory]
-		[MemberData(nameof(NumericsData.Max_Int32), MemberType = typeof(NumericsData))]
+		[MemberData(nameof(Numerics_Data.Max_Int32), MemberType = typeof(Numerics_Data))]
 		public void Max_Int32(Double expected, Int32[] values) {
 			Chain<Int32> chain = new Chain<Int32>().Add(values);
 			Assert.Equal(expected, chain.Max());
 		}
 
 		[Theory]
-		[MemberData(nameof(NumericsData.Max_UInt32), MemberType = typeof(NumericsData))]
+		[MemberData(nameof(Numerics_Data.Max_UInt32), MemberType = typeof(Numerics_Data))]
 		public void Max_UInt32(Double expected, UInt32[] values) {
 			Chain<UInt32> chain = new Chain<UInt32>().Add(values);
 			Assert.Equal(expected, chain.Max());
 		}
 
 		[Theory]
-		[MemberData(nameof(NumericsData.Max_Int64), MemberType = typeof(NumericsData))]
+		[MemberData(nameof(Numerics_Data.Max_Int64), MemberType = typeof(Numerics_Data))]
 		public void Max_Int64(Double expected, Int64[] values) {
 			Chain<Int64> chain = new Chain<Int64>().Add(values);
 			Assert.Equal(expected, chain.Max());
 		}
 
 		[Theory]
-		[MemberData(nameof(NumericsData.Max_UInt64), MemberType = typeof(NumericsData))]
+		[MemberData(nameof(Numerics_Data.Max_UInt64), MemberType = typeof(Numerics_Data))]
 		public void Max_UInt64(Double expected, UInt64[] values) {
 			Chain<UInt64> chain = new Chain<UInt64>().Add(values);
 			Assert.Equal(expected, chain.Max());
 		}
 
 		[Theory]
-		[MemberData(nameof(NumericsData.Max_Single), MemberType = typeof(NumericsData))]
+		[MemberData(nameof(Numerics_Data.Max_Single), MemberType = typeof(Numerics_Data))]
 		public void Max_Single(Single expected, Single[] values) {
 			Chain<Single> chain = new Chain<Single>().Add(values);
 			Assert.Equal(expected, chain.Max());
 		}
 
 		[Theory]
-		[MemberData(nameof(NumericsData.Max_Double), MemberType = typeof(NumericsData))]
+		[MemberData(nameof(Numerics_Data.Max_Double), MemberType = typeof(Numerics_Data))]
 		public void Max_Double(Double expected, Double[] values) {
 			Chain<Double> chain = new Chain<Double>().Add(values);
 			Assert.Equal(expected, chain.Max());
 		}
 
 		[Theory]
-		[MemberData(nameof(NumericsData.Max_Decimal), MemberType = typeof(NumericsData))]
+		[MemberData(nameof(Numerics_Data.Max_Decimal), MemberType = typeof(Numerics_Data))]
 		public void Max_Decimal(Decimal expected, Decimal[] values) {
 			Chain<Decimal> chain = values is not null ? new Chain<Decimal>().Add(values) : null;
 			if (chain is null) {
@@ -102,84 +102,84 @@ namespace Langly {
 		}
 
 		[Theory]
-		[MemberData(nameof(NumericsData.Mean_nint), MemberType = typeof(NumericsData))]
+		[MemberData(nameof(Numerics_Data.Mean_nint), MemberType = typeof(Numerics_Data))]
 		public void Mean_nint(Double expected, nint[] values, Mean mean) {
 			Chain<nint> chain = values is not null ? new Chain<nint>().Add(values) : null;
 			Assert.Equal(expected, chain.Mean(mean));
 		}
 
 		[Theory]
-		[MemberData(nameof(NumericsData.Mean_nuint), MemberType = typeof(NumericsData))]
+		[MemberData(nameof(Numerics_Data.Mean_nuint), MemberType = typeof(Numerics_Data))]
 		public void Mean_nuint(Double expected, nuint[] values, Mean mean) {
 			Chain<nuint> chain = values is not null ? new Chain<nuint>().Add(values) : null;
 			Assert.Equal(expected, chain.Mean(mean));
 		}
 
 		[Theory]
-		[MemberData(nameof(NumericsData.Mean_Byte), MemberType = typeof(NumericsData))]
+		[MemberData(nameof(Numerics_Data.Mean_Byte), MemberType = typeof(Numerics_Data))]
 		public void Mean_Byte(Double expected, Byte[] values, Mean mean) {
 			Chain<Byte> chain = values is not null ? new Chain<Byte>().Add(values) : null;
 			Assert.Equal(expected, chain.Mean(mean));
 		}
 
 		[Theory]
-		[MemberData(nameof(NumericsData.Mean_SByte), MemberType = typeof(NumericsData))]
+		[MemberData(nameof(Numerics_Data.Mean_SByte), MemberType = typeof(Numerics_Data))]
 		public void Mean_SByte(Double expected, SByte[] values, Mean mean) {
 			Chain<SByte> chain = values is not null ? new Chain<SByte>().Add(values) : null;
 			Assert.Equal(expected, chain.Mean(mean));
 		}
 
 		[Theory]
-		[MemberData(nameof(NumericsData.Mean_Int16), MemberType = typeof(NumericsData))]
+		[MemberData(nameof(Numerics_Data.Mean_Int16), MemberType = typeof(Numerics_Data))]
 		public void Mean_Int16(Double expected, Int16[] values, Mean mean) {
 			Chain<Int16> chain = values is not null ? new Chain<Int16>().Add(values) : null;
 			Assert.Equal(expected, chain.Mean(mean));
 		}
 
 		[Theory]
-		[MemberData(nameof(NumericsData.Mean_UInt16), MemberType = typeof(NumericsData))]
+		[MemberData(nameof(Numerics_Data.Mean_UInt16), MemberType = typeof(Numerics_Data))]
 		public void Mean_UInt16(Double expected, UInt16[] values, Mean mean) {
 			Chain<UInt16> chain = values is not null ? new Chain<UInt16>().Add(values) : null;
 			Assert.Equal(expected, chain.Mean(mean));
 		}
 
 		[Theory]
-		[MemberData(nameof(NumericsData.Mean_Int32), MemberType = typeof(NumericsData))]
+		[MemberData(nameof(Numerics_Data.Mean_Int32), MemberType = typeof(Numerics_Data))]
 		public void Mean_Int32(Double expected, Int32[] values, Mean mean) {
 			Chain<Int32> chain = values is not null ? new Chain<Int32>().Add(values) : null;
 			Assert.Equal(expected, chain.Mean(mean));
 		}
 
 		[Theory]
-		[MemberData(nameof(NumericsData.Mean_UInt32), MemberType = typeof(NumericsData))]
+		[MemberData(nameof(Numerics_Data.Mean_UInt32), MemberType = typeof(Numerics_Data))]
 		public void Mean_UInt32(Double expected, UInt32[] values, Mean mean) {
 			Chain<UInt32> chain = values is not null ? new Chain<UInt32>().Add(values) : null;
 			Assert.Equal(expected, chain.Mean(mean));
 		}
 
 		[Theory]
-		[MemberData(nameof(NumericsData.Mean_Int64), MemberType = typeof(NumericsData))]
+		[MemberData(nameof(Numerics_Data.Mean_Int64), MemberType = typeof(Numerics_Data))]
 		public void Mean_Int64(Double expected, Int64[] values, Mean mean) {
 			Chain<Int64> chain = values is not null ? new Chain<Int64>().Add(values) : null;
 			Assert.Equal(expected, chain.Mean(mean));
 		}
 
 		[Theory]
-		[MemberData(nameof(NumericsData.Mean_UInt64), MemberType = typeof(NumericsData))]
+		[MemberData(nameof(Numerics_Data.Mean_UInt64), MemberType = typeof(Numerics_Data))]
 		public void Mean_UInt64(Double expected, UInt64[] values, Mean mean) {
 			Chain<UInt64> chain = values is not null ? new Chain<UInt64>().Add(values) : null;
 			Assert.Equal(expected, chain.Mean(mean));
 		}
 
 		[Theory]
-		[MemberData(nameof(NumericsData.Mean_Single), MemberType = typeof(NumericsData))]
+		[MemberData(nameof(Numerics_Data.Mean_Single), MemberType = typeof(Numerics_Data))]
 		public void Mean_Single(Double expected, Single[] values, Mean mean) {
 			Chain<Single> chain = values is not null ? new Chain<Single>().Add(values) : null;
 			Assert.Equal(expected, chain.Mean(mean));
 		}
 
 		[Theory]
-		[MemberData(nameof(NumericsData.Mean_Double), MemberType = typeof(NumericsData))]
+		[MemberData(nameof(Numerics_Data.Mean_Double), MemberType = typeof(Numerics_Data))]
 		public void Mean_Double(Double expected, Double[] values, Mean mean) {
 			Chain<Double> chain = values is not null ? new Chain<Double>().Add(values) : null;
 			Assert.Equal(expected, chain.Mean(mean));
