@@ -3,7 +3,7 @@ using Xunit;
 using Langly.Exceptions;
 
 namespace Langly {
-	public class GuardTests {
+	public class Guard_Tests {
 		[Theory]
 		[InlineData(null, '\0', false)]
 		[InlineData(new Char[] { 'a', 'b', 'c' }, 'a', true)]

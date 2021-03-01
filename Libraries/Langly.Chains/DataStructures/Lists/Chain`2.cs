@@ -2,6 +2,14 @@
 using System.Diagnostics.CodeAnalysis;
 
 namespace Langly.DataStructures.Lists {
+	/// <summary>
+	/// Represents an associative Chain, a type of highly sophisticated List.
+	/// </summary>
+	/// <typeparam name="TIndex">The type of the index of the elements.</typeparam>
+	/// <typeparam name="TElement">The type of the elements in the chain.</typeparam>
+	/// <remarks>
+	/// A chain is a hybrid list, employing various optimizations from partial-unrolling to skip-linkage, to reference slicing.
+	/// </remarks>
 	public sealed partial class Chain<TIndex, TElement> : DataStructure<TIndex, TElement, Chain<TIndex, TElement>, Chain<TIndex, TElement>.Enumerator>,
 		IIndex<TIndex, TElement>,
 		IInsert<TIndex, TElement, Chain<TIndex, TElement>>,

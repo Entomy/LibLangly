@@ -81,10 +81,21 @@ module NumericsTests =
     [<Theory>]
     [<MemberData(nameof(Numerics_Data.Max_Decimal), MemberType = typeof<Numerics_Data>)>]
     let ``Max_decimal`` (expected:decimal, values:decimal array) =
-        let chain = match values with
-                    | null -> null
-                    | _ -> new Chain<decimal>() |> add values
+        let chain = new Chain<decimal>() |> add values
         match chain with
         | null -> Assert.Throws<Exceptions.ArgumentNullException>(fun () -> max chain |> ignore) |> ignore
         | chain when chain.Count = 0n -> Assert.Throws<Exceptions.ArgumentEmptyException>(fun () -> max chain |> ignore) |> ignore
         | _ -> Assert.Equal(expected, max chain)
+
+    [<Theory>]
+    [<MemberData(nameof(Numerics_Data.Mean_nint), MemberType = typeof<Numerics_Data>)>]
+    let ``Mean_nativeint`` (expected:double, values:nativeint array, kind:Mean) =
+        let chain = new Chain<nativeint>() |> add values
+        Assert.Equal(expected, mean kind chain)
+
+
+    [<Theory>]
+    [<MemberData(nameof(Numerics_Data.Mean_nuint), MemberType = typeof<Numerics_Data>)>]
+    let ``Mean_unativeint`` (expected:double, values:unativeint array, kind:Mean) =
+        let chain = new Chain<unativeint>() |> add values
+        Assert.Equal(expected, mean kind chain)

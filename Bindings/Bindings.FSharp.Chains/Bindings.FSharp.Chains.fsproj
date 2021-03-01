@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+		<Description>F# bindings for Langly.Chains.</Description>
+		<PackageTags>langly, chains, f#, fsharp</PackageTags>
+		<AssemblyName>Langly.Chains.FSharp</AssemblyName>
+	</PropertyGroup>
+
+	<ItemGroup>
+    <Compile Include="Langly.DataStructures.Lists.fs" />
+  </ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\Libraries\Langly.Chains\Langly.Chains.csproj" />
+	</ItemGroup>
+
+</Project>

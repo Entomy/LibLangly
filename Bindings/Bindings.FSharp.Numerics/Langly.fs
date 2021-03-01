@@ -18,10 +18,7 @@ module Functions =
     /// <param name="values">The values to find the mean of.</param>
     /// <param name="mean">The type of mean to calculate.</param>
     /// <returns>The mean of the <paramref name="values"/>.</returns>
-    let inline mean (kind:mean)(values:^values):^result =
-        match kind with
-        | Arithmetic -> Mean<NumericExtensions, ^values, ^result> values meanEnum.Arithmetic
-        | Geometric -> Mean<NumericExtensions, ^values, ^result> values meanEnum.Geometric
+    let inline mean (kind:Mean)(values:^values):^result = Mean<NumericExtensions, ^values, ^result> values kind
 
     /// <summary>
     /// Finds the minimum of the <paramref name="values"/>.

@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+		<Description>F# bindings for Langly.Lists.</Description>
+		<PackageTags>langly, lists, f#, fsharp</PackageTags>
+		<AssemblyName>Langly.Lists.FSharp</AssemblyName>
+	</PropertyGroup>
+
+	<ItemGroup>
+    <Compile Include="Langly.DataStructures.Lists.fs" />
+  </ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\Libraries\Langly.Lists\Langly.Lists.csproj" />
+	</ItemGroup>
+
+</Project>
