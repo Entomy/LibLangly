@@ -1,5 +1,6 @@
 ﻿namespace Langly.DataStructures.Lists
 
+open Langly
 open Langly.DataStructures.Lists
 
 /// <summary>
@@ -11,7 +12,3 @@ type chain< ^t> = Chain< ^t>
 /// Represents an associative Chain, a type of highly sophisticated List.
 /// </summary>
 type chain< ^i, ^t> = Chain< ^i, ^t>
-
-[<AutoOpen>]
-module Functions =
-    ()

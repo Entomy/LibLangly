@@ -102,87 +102,171 @@ namespace Langly {
 		}
 
 		[Theory]
-		[MemberData(nameof(Numerics_Data.Mean_nint), MemberType = typeof(Numerics_Data))]
-		public void Mean_nint(Double expected, nint[] values, Mean mean) {
+		[MemberData(nameof(Numerics_Data.ArithmeticMean_nint), MemberType = typeof(Numerics_Data))]
+		public void ArithmeticMean_nint(Double expected, nint[] values) {
 			Chain<nint> chain = values is not null ? new Chain<nint>().Add(values) : null;
-			Assert.Equal(expected, chain.Mean(mean));
+			Assert.Equal(expected, chain.ArithmeticMean());
 		}
 
 		[Theory]
-		[MemberData(nameof(Numerics_Data.Mean_nuint), MemberType = typeof(Numerics_Data))]
-		public void Mean_nuint(Double expected, nuint[] values, Mean mean) {
+		[MemberData(nameof(Numerics_Data.ArithmeticMean_nuint), MemberType = typeof(Numerics_Data))]
+		public void ArithmeticMean_nuint(Double expected, nuint[] values) {
 			Chain<nuint> chain = values is not null ? new Chain<nuint>().Add(values) : null;
-			Assert.Equal(expected, chain.Mean(mean));
+			Assert.Equal(expected, chain.ArithmeticMean());
 		}
 
 		[Theory]
-		[MemberData(nameof(Numerics_Data.Mean_Byte), MemberType = typeof(Numerics_Data))]
-		public void Mean_Byte(Double expected, Byte[] values, Mean mean) {
+		[MemberData(nameof(Numerics_Data.ArithmeticMean_Byte), MemberType = typeof(Numerics_Data))]
+		public void ArithmeticMean_Byte(Double expected, Byte[] values) {
 			Chain<Byte> chain = values is not null ? new Chain<Byte>().Add(values) : null;
-			Assert.Equal(expected, chain.Mean(mean));
+			Assert.Equal(expected, chain.ArithmeticMean());
 		}
 
 		[Theory]
-		[MemberData(nameof(Numerics_Data.Mean_SByte), MemberType = typeof(Numerics_Data))]
-		public void Mean_SByte(Double expected, SByte[] values, Mean mean) {
+		[MemberData(nameof(Numerics_Data.ArithmeticMean_SByte), MemberType = typeof(Numerics_Data))]
+		public void ArithmeticMean_SByte(Double expected, SByte[] values) {
 			Chain<SByte> chain = values is not null ? new Chain<SByte>().Add(values) : null;
-			Assert.Equal(expected, chain.Mean(mean));
+			Assert.Equal(expected, chain.ArithmeticMean());
 		}
 
 		[Theory]
-		[MemberData(nameof(Numerics_Data.Mean_Int16), MemberType = typeof(Numerics_Data))]
-		public void Mean_Int16(Double expected, Int16[] values, Mean mean) {
+		[MemberData(nameof(Numerics_Data.ArithmeticMean_Int16), MemberType = typeof(Numerics_Data))]
+		public void ArithmeticMean_Int16(Double expected, Int16[] values) {
 			Chain<Int16> chain = values is not null ? new Chain<Int16>().Add(values) : null;
-			Assert.Equal(expected, chain.Mean(mean));
+			Assert.Equal(expected, chain.ArithmeticMean());
 		}
 
 		[Theory]
-		[MemberData(nameof(Numerics_Data.Mean_UInt16), MemberType = typeof(Numerics_Data))]
-		public void Mean_UInt16(Double expected, UInt16[] values, Mean mean) {
+		[MemberData(nameof(Numerics_Data.ArithmeticMean_UInt16), MemberType = typeof(Numerics_Data))]
+		public void ArithmeticMean_UInt16(Double expected, UInt16[] values) {
 			Chain<UInt16> chain = values is not null ? new Chain<UInt16>().Add(values) : null;
-			Assert.Equal(expected, chain.Mean(mean));
+			Assert.Equal(expected, chain.ArithmeticMean());
 		}
 
 		[Theory]
-		[MemberData(nameof(Numerics_Data.Mean_Int32), MemberType = typeof(Numerics_Data))]
-		public void Mean_Int32(Double expected, Int32[] values, Mean mean) {
+		[MemberData(nameof(Numerics_Data.ArithmeticMean_Int32), MemberType = typeof(Numerics_Data))]
+		public void ArithmeticMean_Int32(Double expected, Int32[] values) {
 			Chain<Int32> chain = values is not null ? new Chain<Int32>().Add(values) : null;
-			Assert.Equal(expected, chain.Mean(mean));
+			Assert.Equal(expected, chain.ArithmeticMean());
 		}
 
 		[Theory]
-		[MemberData(nameof(Numerics_Data.Mean_UInt32), MemberType = typeof(Numerics_Data))]
-		public void Mean_UInt32(Double expected, UInt32[] values, Mean mean) {
+		[MemberData(nameof(Numerics_Data.ArithmeticMean_UInt32), MemberType = typeof(Numerics_Data))]
+		public void ArithmeticMean_UInt32(Double expected, UInt32[] values) {
 			Chain<UInt32> chain = values is not null ? new Chain<UInt32>().Add(values) : null;
-			Assert.Equal(expected, chain.Mean(mean));
+			Assert.Equal(expected, chain.ArithmeticMean());
 		}
 
 		[Theory]
-		[MemberData(nameof(Numerics_Data.Mean_Int64), MemberType = typeof(Numerics_Data))]
-		public void Mean_Int64(Double expected, Int64[] values, Mean mean) {
+		[MemberData(nameof(Numerics_Data.ArithmeticMean_Int64), MemberType = typeof(Numerics_Data))]
+		public void ArithmeticMean_Int64(Double expected, Int64[] values) {
 			Chain<Int64> chain = values is not null ? new Chain<Int64>().Add(values) : null;
-			Assert.Equal(expected, chain.Mean(mean));
+			Assert.Equal(expected, chain.ArithmeticMean());
 		}
 
 		[Theory]
-		[MemberData(nameof(Numerics_Data.Mean_UInt64), MemberType = typeof(Numerics_Data))]
-		public void Mean_UInt64(Double expected, UInt64[] values, Mean mean) {
+		[MemberData(nameof(Numerics_Data.ArithmeticMean_UInt64), MemberType = typeof(Numerics_Data))]
+		public void ArithmeticMean_UInt64(Double expected, UInt64[] values) {
 			Chain<UInt64> chain = values is not null ? new Chain<UInt64>().Add(values) : null;
-			Assert.Equal(expected, chain.Mean(mean));
+			Assert.Equal(expected, chain.ArithmeticMean());
 		}
 
 		[Theory]
-		[MemberData(nameof(Numerics_Data.Mean_Single), MemberType = typeof(Numerics_Data))]
-		public void Mean_Single(Double expected, Single[] values, Mean mean) {
+		[MemberData(nameof(Numerics_Data.ArithmeticMean_Single), MemberType = typeof(Numerics_Data))]
+		public void ArithmeticMean_Single(Double expected, Single[] values) {
 			Chain<Single> chain = values is not null ? new Chain<Single>().Add(values) : null;
-			Assert.Equal(expected, chain.Mean(mean));
+			Assert.Equal(expected, chain.ArithmeticMean());
 		}
 
 		[Theory]
-		[MemberData(nameof(Numerics_Data.Mean_Double), MemberType = typeof(Numerics_Data))]
-		public void Mean_Double(Double expected, Double[] values, Mean mean) {
+		[MemberData(nameof(Numerics_Data.ArithmeticMean_Double), MemberType = typeof(Numerics_Data))]
+		public void ArithmeticMean_Double(Double expected, Double[] values) {
 			Chain<Double> chain = values is not null ? new Chain<Double>().Add(values) : null;
-			Assert.Equal(expected, chain.Mean(mean));
+			Assert.Equal(expected, chain.ArithmeticMean());
+		}
+
+		[Theory]
+		[MemberData(nameof(Numerics_Data.GeometricMean_nint), MemberType = typeof(Numerics_Data))]
+		public void GeometricMean_nint(Double expected, nint[] values) {
+			Chain<nint> chain = values is not null ? new Chain<nint>().Add(values) : null;
+			Assert.Equal(expected, chain.GeometricMean());
+		}
+
+		[Theory]
+		[MemberData(nameof(Numerics_Data.GeometricMean_nuint), MemberType = typeof(Numerics_Data))]
+		public void GeometricMean_nuint(Double expected, nuint[] values) {
+			Chain<nuint> chain = values is not null ? new Chain<nuint>().Add(values) : null;
+			Assert.Equal(expected, chain.GeometricMean());
+		}
+
+		[Theory]
+		[MemberData(nameof(Numerics_Data.GeometricMean_Byte), MemberType = typeof(Numerics_Data))]
+		public void GeometricMean_Byte(Double expected, Byte[] values) {
+			Chain<Byte> chain = values is not null ? new Chain<Byte>().Add(values) : null;
+			Assert.Equal(expected, chain.GeometricMean());
+		}
+
+		[Theory]
+		[MemberData(nameof(Numerics_Data.GeometricMean_SByte), MemberType = typeof(Numerics_Data))]
+		public void GeometricMean_SByte(Double expected, SByte[] values) {
+			Chain<SByte> chain = values is not null ? new Chain<SByte>().Add(values) : null;
+			Assert.Equal(expected, chain.GeometricMean());
+		}
+
+		[Theory]
+		[MemberData(nameof(Numerics_Data.GeometricMean_Int16), MemberType = typeof(Numerics_Data))]
+		public void GeometricMean_Int16(Double expected, Int16[] values) {
+			Chain<Int16> chain = values is not null ? new Chain<Int16>().Add(values) : null;
+			Assert.Equal(expected, chain.GeometricMean());
+		}
+
+		[Theory]
+		[MemberData(nameof(Numerics_Data.GeometricMean_UInt16), MemberType = typeof(Numerics_Data))]
+		public void GeometricMean_UInt16(Double expected, UInt16[] values) {
+			Chain<UInt16> chain = values is not null ? new Chain<UInt16>().Add(values) : null;
+			Assert.Equal(expected, chain.GeometricMean());
+		}
+
+		[Theory]
+		[MemberData(nameof(Numerics_Data.GeometricMean_Int32), MemberType = typeof(Numerics_Data))]
+		public void GeometricMean_Int32(Double expected, Int32[] values) {
+			Chain<Int32> chain = values is not null ? new Chain<Int32>().Add(values) : null;
+			Assert.Equal(expected, chain.GeometricMean());
+		}
+
+		[Theory]
+		[MemberData(nameof(Numerics_Data.GeometricMean_UInt32), MemberType = typeof(Numerics_Data))]
+		public void GeometricMean_UInt32(Double expected, UInt32[] values) {
+			Chain<UInt32> chain = values is not null ? new Chain<UInt32>().Add(values) : null;
+			Assert.Equal(expected, chain.GeometricMean());
+		}
+
+		[Theory]
+		[MemberData(nameof(Numerics_Data.GeometricMean_Int64), MemberType = typeof(Numerics_Data))]
+		public void GeometricMean_Int64(Double expected, Int64[] values) {
+			Chain<Int64> chain = values is not null ? new Chain<Int64>().Add(values) : null;
+			Assert.Equal(expected, chain.GeometricMean());
+		}
+
+		[Theory]
+		[MemberData(nameof(Numerics_Data.GeometricMean_UInt64), MemberType = typeof(Numerics_Data))]
+		public void GeometricMean_UInt64(Double expected, UInt64[] values) {
+			Chain<UInt64> chain = values is not null ? new Chain<UInt64>().Add(values) : null;
+			Assert.Equal(expected, chain.GeometricMean());
+		}
+
+		[Theory]
+		[MemberData(nameof(Numerics_Data.GeometricMean_Single), MemberType = typeof(Numerics_Data))]
+		public void GeometricMean_Single(Double expected, Single[] values) {
+			Chain<Single> chain = values is not null ? new Chain<Single>().Add(values) : null;
+			Assert.Equal(expected, chain.GeometricMean());
+		}
+
+		[Theory]
+		[MemberData(nameof(Numerics_Data.GeometricMean_Double), MemberType = typeof(Numerics_Data))]
+		public void GeometricMean_Double(Double expected, Double[] values) {
+			Chain<Double> chain = values is not null ? new Chain<Double>().Add(values) : null;
+			Assert.Equal(expected, chain.GeometricMean());
 		}
 
 		[Theory]

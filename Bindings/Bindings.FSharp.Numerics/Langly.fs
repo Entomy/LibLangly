@@ -1,6 +1,7 @@
 ﻿namespace Langly
 
 open System
+open Langly
 open Bindings
 
 [<AutoOpen>]
@@ -13,12 +14,22 @@ module Functions =
     let inline max (values:^values):^result = Max<NumericExtensions, ^values, ^result> values
 
     /// <summary>
-    /// Averages the <paramref name="values"/>.
+    /// Contains different averaging functions
     /// </summary>
-    /// <param name="values">The values to find the mean of.</param>
-    /// <param name="mean">The type of mean to calculate.</param>
-    /// <returns>The mean of the <paramref name="values"/>.</returns>
-    let inline mean (kind:Mean)(values:^values):^result = Mean<NumericExtensions, ^values, ^result> values kind
+    module mean =
+        /// <summary>
+        /// Finds the arithmetic mean of the <paramref name="values"/>.
+        /// </summary>
+        /// <param name="values">The values to find the mean of.</param>
+        /// <returns>The mean of the <paramref name="values"/>.</returns>
+        let inline arithmetic (values:^values):^result = ArithmeticMean<NumericExtensions, ^values, ^result> values
+
+        /// <summary>
+        /// Finds the geometric mean of the <paramref name="values"/>.
+        /// </summary>
+        /// <param name="values">The values to find the mean of.</param>
+        /// <returns>The mean of the <paramref name="values"/>.</returns>
+        let inline geometric (values:^values):^result = GeometricMean<NumericExtensions, ^values, ^result> values
 
     /// <summary>
     /// Finds the minimum of the <paramref name="values"/>.

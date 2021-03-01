@@ -3,7 +3,9 @@
 module internal Bindings =
     let inline Max< ^t, ^a, ^b when (^t or ^a) : (static member Max : ^a -> ^b)> values = ((^t or ^a) : (static member Max : ^a -> ^b)(values))
 
-    let inline Mean< ^t, ^a, ^b when (^t or ^a) : (static member Mean : ^a * Mean -> ^b)> values kind = ((^t or ^a) : (static member Mean : ^a * Mean -> ^b)(values, kind))
+    let inline ArithmeticMean< ^t, ^a, ^b when (^t or ^a) : (static member ArithmeticMean : ^a -> ^b)> values = ((^t or ^a) : (static member ArithmeticMean : ^a -> ^b)(values))
+
+    let inline GeometricMean< ^t, ^a, ^b when (^t or ^a) : (static member GeometricMean : ^a -> ^b)> values = ((^t or ^a) : (static member GeometricMean : ^a -> ^b)(values))
 
     let inline Min< ^t, ^a, ^b when (^t or ^a) : (static member Min : ^a -> ^b)> values = ((^t or ^a) : (static member Min : ^a -> ^b)(values))
 

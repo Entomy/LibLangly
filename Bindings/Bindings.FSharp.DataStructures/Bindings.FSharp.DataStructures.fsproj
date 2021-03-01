@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+		<Description>F# bindings for Langly.DataStructures.</Description>
+		<PackageTags>langly, data structures, f#, fsharp</PackageTags>
+		<AssemblyName>Langly.DataStructures.FSharp</AssemblyName>
+	</PropertyGroup>
+
+	<ItemGroup>
+    <Compile Include="Langly.DataStructures.Filters.fs" />
+    <Compile Include="Langly.DataStructures.fs" />
+  </ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\Libraries\Langly.DataStructures\Langly.DataStructures.csproj" />
+	  <ProjectReference Include="..\Bindings.FSharp.Core\Bindings.FSharp.Core.fsproj" />
+	  <ProjectReference Include="..\Bindings.FSharp.Traits\Bindings.FSharp.Traits.fsproj" />
+	</ItemGroup>
+
+</Project>
