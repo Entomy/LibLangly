@@ -23,8 +23,6 @@ module internal Bindings =
 
     let inline Occurrences< ^t, ^a, ^b when (^t or ^a) : (static member Occurrences : ^a * ^b -> nativeint)> collection element = ((^t or ^a) : (static member Occurrences : ^a * ^b -> nativeint)(collection, element))
 
-    let inline Push< ^t, ^a, ^b, ^c when (^t or ^a) : (static member Push : ^a * ^b -> ^c)> collection elements = ((^t or ^a) : (static member Push : ^a * ^b -> ^c)(collection, elements))
-
     let inline Replace< ^t, ^a, ^b, ^c, ^d when (^t or ^a) : (static member Replace : ^a * ^b * ^c -> ^d)> collection search replace = ((^t or ^a) : (static member Replace : ^a * ^b * ^c -> ^d)(collection, search, replace))
 
     let inline Resize< ^t, ^a, ^b when (^t or ^a) : (static member Resize : ^a * nativeint -> ^b)> collection capacity = ((^t or ^a) : (static member Resize : ^a * nativeint -> ^b)(collection, capacity))

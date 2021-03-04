@@ -9,7 +9,9 @@ namespace Langly.DataStructures.Lists {
 		}
 
 		[Theory]
-		[MemberData(nameof(Collection2_Data.Insert), MemberType = typeof(Collection2_Data))]
+		[InlineData(new Char[] { }, new String[] { })]
+		[InlineData(new Char[] { 'a' }, new String[] { "alpha" })]
+		[InlineData(new Char[] { 'a', 'b', 'c' }, new String[] { "alpha", "bravo", "charlie" })]
 		public void Insert(Char[] indicies, String[] elements) {
 			Chain<Char, String> chain = new Chain<Char, String>();
 			for (nint i = 0; i < indicies.Length; i++) {

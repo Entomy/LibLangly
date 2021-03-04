@@ -9,7 +9,7 @@ module Functions =
     /// Adds the elements to the collection.
     /// </summary>
     /// <param name="collection">This collection.</param>
-    /// <param name="element">The element to add.</param>
+    /// <param name="elements">The elements to add.</param>
     /// <returns>If the add occurred successfully, returns an object containing the original and added elements; otherwise, <see langword="null"/>.</returns>
     /// <remarks>
     /// The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.
@@ -61,6 +61,7 @@ module Functions =
     /// <summary>
     /// Folds the collection into a single element as described by <paramref name="func"/>.
     /// </summary>
+    /// <param name="collection">This collection</param>
     /// <param name="func">The function describing the folding operation. This is a magma.</param>
     /// <param name="identity">The identity value for <paramref name="func"/>.</param>
     /// <returns>A single element after folding the entire collection.</returns>
@@ -113,18 +114,6 @@ module Functions =
     let inline occurrences (element:^element)(collection:^collection):nativeint = Occurrences<TraitExtensions, ^collection, ^element> collection element
 
     //TODO: peek
-
-    //TODO: pop
-
-    /// <summary>
-    /// Pushes the elements onto the top of this object.
-    /// </summary>
-    /// <typeparam name="TElement">The type of the elements in the collection.</typeparam>
-    /// <typeparam name="TResult">The resulting type; often itself.</typeparam>
-    /// <param name="collection">This collection.</param>
-    /// <param name="elements">The elements to push.</param>
-    /// <returns>The result of pushing the <paramref name="elements"/> onto this object.</returns>
-    let inline push (elements:^elements)(collection:^collection):^result = Push<TraitExtensions, ^collection, ^elements, ^result> collection elements
 
     //TODO: read
 

@@ -235,23 +235,5 @@ namespace Langly {
 			}
 			return i;
 		}
-
-		/// <summary>
-		/// Multiplies the <paramref name="values"/>.
-		/// </summary>
-		/// <typeparam name="TEnumerator">The type of the enumerator of the <paramref name="values"/>.</typeparam>
-		/// <param name="values">The values to sum.</param>
-		/// <returns>The sum of the <paramref name="values"/>.</returns>
-		public static Decimal Product<TEnumerator>([AllowNull] this ISequence<Decimal, TEnumerator> values) where TEnumerator : IEnumerator<Decimal> {
-			Guard.NotNull(values, nameof(values));
-			Guard.NotEmpty(values, nameof(values));
-			Decimal i = 1;
-			if (values is not null) {
-				foreach (Decimal value in values) {
-					i *= value;
-				}
-			}
-			return i;
-		}
 	}
 }

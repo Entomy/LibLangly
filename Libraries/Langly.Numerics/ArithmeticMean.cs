@@ -103,17 +103,5 @@ namespace Langly {
 		/// <param name="values">The values to find the mean of.</param>
 		/// <returns>The mean of the <paramref name="values"/>.</returns>
 		public static Double ArithmeticMean<TEnumerator>([AllowNull] this ISequence<Double, TEnumerator> values) where TEnumerator : IEnumerator<Double> => values.Sum() / (values?.Count ?? 0);
-
-		/// <summary>
-		/// Averages the <paramref name="values"/>.
-		/// </summary>
-		/// <typeparam name="TEnumerator">The type of the enumerator of the <paramref name="values"/>.</typeparam>
-		/// <param name="values">The values to find the mean of.</param>
-		/// <returns>The mean of the <paramref name="values"/>.</returns>
-		public static Decimal ArithmeticMean<TEnumerator>([AllowNull] this ISequence<Decimal, TEnumerator> values) where TEnumerator : IEnumerator<Decimal> {
-			Guard.NotNull(values, nameof(values));
-			Guard.NotEmpty(values, nameof(values));
-			return values.Sum() / values.Count;
-		}
 	}
 }

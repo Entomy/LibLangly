@@ -4,7 +4,9 @@ using Xunit;
 namespace Langly.DataStructures {
 	public class Stack1_Tests {
 		[Theory]
-		[MemberData(nameof(Stack1_Data.Stack), MemberType = typeof(Stack1_Data))]
+		[InlineData(new Int32[] { }, new Int32[] { })]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 5, 4, 3, 2, 1 })]
+
 		public void Stack(Int32[] expected, Int32[] values) {
 			Stack<Int32> stack = new Stack<Int32>().Write(values);
 			Assert.Equal(expected.Length, stack.Count);

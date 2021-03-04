@@ -12,6 +12,7 @@ namespace Langly.DataStructures.Lists {
 	/// </remarks>
 	public sealed partial class Chain<TElement> : DataStructure<TElement, Chain<TElement>, Chain<TElement>.Enumerator>,
 		IAdd<TElement, Chain<TElement>>,
+		IClear<Chain<TElement>>,
 		IConcat<TElement, Chain<TElement>>,
 		IIndex<TElement>,
 		IInsert<TElement, Chain<TElement>>,
@@ -21,7 +22,7 @@ namespace Langly.DataStructures.Lists {
 		/// </summary>
 		[MaybeNull, AllowNull]
 		private Node Head;
-		
+
 		/// <summary>
 		/// The tail node of the chain.
 		/// </summary>
@@ -89,6 +90,19 @@ namespace Langly.DataStructures.Lists {
 			Memory<TElement> buffer = new TElement[elements.Length];
 			elements.CopyTo(buffer.Span);
 			return ((IAdd<TElement, Chain<TElement>>)this).Add(buffer);
+		}
+
+		/// <inheritdoc/>
+		[return: NotNull]
+		Chain<TElement> IClear<Chain<TElement>>.Clear() {
+			Node N = Head;
+			while (N is not null) {
+				N.Previous?.Clear();
+				N = N.Next;
+			}
+			N?.Clear();
+			Count = 0;
+			return this;
 		}
 
 		/// <inheritdoc/>
