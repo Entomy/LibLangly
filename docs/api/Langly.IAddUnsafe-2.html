@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface IAddUnsafe&lt;TElement, TResult&gt;
    ">
-    <meta name="generator" content="docfx 2.56.6.0">
+    <meta name="generator" content="docfx 2.56.7.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -200,7 +200,8 @@ public interface IAddUnsafe&lt;TElement, out TResult&gt; : IAdd&lt;TElement, TRe
   </span>
   <a id="Langly_IAddUnsafe_2_Langly_IAdd_TElement_TResult__Add_" data-uid="Langly.IAddUnsafe`2.Langly#IAdd{TElement,TResult}#Add*"></a>
   <h4 id="Langly_IAddUnsafe_2_Langly_IAdd_TElement_TResult__Add_System_ReadOnlySpan__0__" data-uid="Langly.IAddUnsafe`2.Langly#IAdd{TElement,TResult}#Add(System.ReadOnlySpan{`0})">IAdd&lt;TElement, TResult&gt;.Add(ReadOnlySpan&lt;TElement&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds the elements to this object.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -219,7 +220,8 @@ public interface IAddUnsafe&lt;TElement, out TResult&gt; : IAdd&lt;TElement, TRe
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
-        <td></td>
+        <td><p>The elements to add.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -234,10 +236,14 @@ public interface IAddUnsafe&lt;TElement, out TResult&gt; : IAdd&lt;TElement, TRe
     <tbody>
       <tr>
         <td><span class="xref">TResult</span></td>
-        <td></td>
+        <td><p>If the add occurred successfully, returns a <code data-dev-comment-type="typeparamref" class="typeparamref">TResult</code> containing the original and added elements; otherwise, <span class="xref">null</span>.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Langly_IAddUnsafe_2_Langly_IAdd_TElement_TResult__Add_System_ReadOnlySpan__0___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.</p>
+</div>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Add__2_Langly_IAddUnsafe___0___1____0__System_Int32_">TraitExtensions.Add&lt;TElement, TResult&gt;(IAddUnsafe&lt;TElement, TResult&gt;, TElement*, Int32)</a>
