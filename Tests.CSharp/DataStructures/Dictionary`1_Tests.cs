@@ -17,7 +17,7 @@ namespace Langly.DataStructures {
 		public void Insert_Char(Char[] indicies, Int32[] elements) {
 			Dictionary<Int32> dict = new Dictionary<Int32>();
 			for (nint i = 0; i < indicies.Length; i++) {
-				_ = dict.Insert(indicies[i], elements[i]);
+				dict = dict.Insert(indicies[i], elements[i]);
 			}
 			Assert.Equal(indicies.Length, dict.Count);
 			for (nint i = 0; i < indicies.Length; i++) {
@@ -32,7 +32,7 @@ namespace Langly.DataStructures {
 		public void Insert_String(String[] indicies, Int32[] elements) {
 			Dictionary<Int32> dict = new Dictionary<Int32>();
 			for (nint i = 0; i < indicies.Length; i++) {
-				_ = dict.Insert(indicies[i], elements[i]);
+				dict = dict.Insert(indicies[i], elements[i]);
 			}
 			Assert.Equal(indicies.Length, dict.Count);
 			for (nint i = 0; i < indicies.Length; i++) {

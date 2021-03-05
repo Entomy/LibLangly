@@ -44,7 +44,7 @@ namespace Langly.DataStructures {
 			&& ((Element is null && other.Element is null) || (Element?.Equals(other.Element) ?? false));
 
 		/// <inheritdoc/>
-		[return: NotNull]
+		[return: MaybeNull]
 		public abstract TSelf Replace([AllowNull] TElement search, [AllowNull] TElement replace);
 
 		/// <inheritdoc/>

@@ -78,15 +78,15 @@
   <div class="markdown level0 conceptual"></div>
   <div classs="implements">
     <h5>Implements</h5>
+    <div><a class="xref" href="Langly.IEquals-1.html">IEquals</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</div>
+    <div><a class="xref" href="Langly.IEquals-1.html">IEquals</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a>&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.text.rune">Rune</a>&gt;</div>
+    <div><a class="xref" href="Langly.IEquals-1.html">IEquals</a>&lt;<a class="xref" href="Langly.Glyph.html">Glyph</a>&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Langly.Glyph.html">Glyph</a>&gt;</div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetype.tostring#System_ValueType_ToString">ValueType.ToString()</a>
-    </div>
     <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_System_Object_">Object.Equals(Object, Object)</a>
     </div>
@@ -101,7 +101,7 @@
   <h6><strong>Assembly</strong>: Langly.Glyph.dll</h6>
   <h5 id="Langly_Glyph_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public struct Glyph : IEquatable&lt;char&gt;, IEquatable&lt;Rune&gt;, IEquatable&lt;Glyph&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public struct Glyph : IEquals&lt;char&gt;, IEquatable&lt;char&gt;, IEquals&lt;Rune&gt;, IEquatable&lt;Rune&gt;, IEquals&lt;Glyph&gt;, IEquatable&lt;Glyph&gt;</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -180,7 +180,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Glyph_Equals_Langly_Glyph_.md&amp;value=---%0Auid%3A%20Langly.Glyph.Equals(Langly.Glyph)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Glyph/Glyph.cs/#L66">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Glyph/Glyph.cs/#L85">View Source</a>
   </span>
   <a id="Langly_Glyph_Equals_" data-uid="Langly.Glyph.Equals*"></a>
   <h4 id="Langly_Glyph_Equals_Langly_Glyph_" data-uid="Langly.Glyph.Equals(Langly.Glyph)">Equals(Glyph)</h4>
@@ -227,7 +227,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Glyph_Equals_System_Char_.md&amp;value=---%0Auid%3A%20Langly.Glyph.Equals(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Glyph/Glyph.cs/#L60">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Glyph/Glyph.cs/#L79">View Source</a>
   </span>
   <a id="Langly_Glyph_Equals_" data-uid="Langly.Glyph.Equals*"></a>
   <h4 id="Langly_Glyph_Equals_System_Char_" data-uid="Langly.Glyph.Equals(System.Char)">Equals(Char)</h4>
@@ -274,7 +274,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Glyph_Equals_System_Object_.md&amp;value=---%0Auid%3A%20Langly.Glyph.Equals(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Glyph/Glyph.cs/#L46">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Glyph/Glyph.cs/#L65">View Source</a>
   </span>
   <a id="Langly_Glyph_Equals_" data-uid="Langly.Glyph.Equals*"></a>
   <h4 id="Langly_Glyph_Equals_System_Object_" data-uid="Langly.Glyph.Equals(System.Object)">Equals(Object)</h4>
@@ -323,7 +323,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Glyph_Equals_System_Text_Rune_.md&amp;value=---%0Auid%3A%20Langly.Glyph.Equals(System.Text.Rune)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Glyph/Glyph.cs/#L63">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Glyph/Glyph.cs/#L82">View Source</a>
   </span>
   <a id="Langly_Glyph_Equals_" data-uid="Langly.Glyph.Equals*"></a>
   <h4 id="Langly_Glyph_Equals_System_Text_Rune_" data-uid="Langly.Glyph.Equals(System.Text.Rune)">Equals(Rune)</h4>
@@ -370,7 +370,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Glyph_GetHashCode.md&amp;value=---%0Auid%3A%20Langly.Glyph.GetHashCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Glyph/Glyph.cs/#L69">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Glyph/Glyph.cs/#L88">View Source</a>
   </span>
   <a id="Langly_Glyph_GetHashCode_" data-uid="Langly.Glyph.GetHashCode*"></a>
   <h4 id="Langly_Glyph_GetHashCode" data-uid="Langly.Glyph.GetHashCode">GetHashCode()</h4>
@@ -397,6 +397,188 @@
   </table>
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetype.gethashcode#System_ValueType_GetHashCode">ValueType.GetHashCode()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Glyph_ToLowerInvariant_Langly_Glyph_.md&amp;value=---%0Auid%3A%20Langly.Glyph.ToLowerInvariant(Langly.Glyph)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Glyph/Glyph.cs/#L48">View Source</a>
+  </span>
+  <a id="Langly_Glyph_ToLowerInvariant_" data-uid="Langly.Glyph.ToLowerInvariant*"></a>
+  <h4 id="Langly_Glyph_ToLowerInvariant_Langly_Glyph_" data-uid="Langly.Glyph.ToLowerInvariant(Langly.Glyph)">ToLowerInvariant(Glyph)</h4>
+  <div class="markdown level1 summary"><p>Returns a copy of the specified <a class="xref" href="Langly.Glyph.html">Glyph</a> converted to lowercase.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Glyph ToLowerInvariant(Glyph glyph)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.Glyph.html">Glyph</a></td>
+        <td><span class="parametername">glyph</span></td>
+        <td><p>The UNICODE grapheme cluster to convert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.Glyph.html">Glyph</a></td>
+        <td><p>The lowercase equivalent of value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Glyph_ToString.md&amp;value=---%0Auid%3A%20Langly.Glyph.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Glyph/Glyph.cs/#L91">View Source</a>
+  </span>
+  <a id="Langly_Glyph_ToString_" data-uid="Langly.Glyph.ToString*"></a>
+  <h4 id="Langly_Glyph_ToString" data-uid="Langly.Glyph.ToString">ToString()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetype.tostring#System_ValueType_ToString">ValueType.ToString()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Glyph_ToTitleInvariant_Langly_Glyph_.md&amp;value=---%0Auid%3A%20Langly.Glyph.ToTitleInvariant(Langly.Glyph)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Glyph/Glyph.cs/#L55">View Source</a>
+  </span>
+  <a id="Langly_Glyph_ToTitleInvariant_" data-uid="Langly.Glyph.ToTitleInvariant*"></a>
+  <h4 id="Langly_Glyph_ToTitleInvariant_Langly_Glyph_" data-uid="Langly.Glyph.ToTitleInvariant(Langly.Glyph)">ToTitleInvariant(Glyph)</h4>
+  <div class="markdown level1 summary"><p>Returns a copy of the specified <a class="xref" href="Langly.Glyph.html">Glyph</a> converted to titlecase.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Glyph ToTitleInvariant(Glyph glyph)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.Glyph.html">Glyph</a></td>
+        <td><span class="parametername">glyph</span></td>
+        <td><p>The UNICODE grapheme cluster to convert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.Glyph.html">Glyph</a></td>
+        <td><p>The titlecase equivalent of value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Glyph_ToUpperInvariant_Langly_Glyph_.md&amp;value=---%0Auid%3A%20Langly.Glyph.ToUpperInvariant(Langly.Glyph)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Glyph/Glyph.cs/#L62">View Source</a>
+  </span>
+  <a id="Langly_Glyph_ToUpperInvariant_" data-uid="Langly.Glyph.ToUpperInvariant*"></a>
+  <h4 id="Langly_Glyph_ToUpperInvariant_Langly_Glyph_" data-uid="Langly.Glyph.ToUpperInvariant(Langly.Glyph)">ToUpperInvariant(Glyph)</h4>
+  <div class="markdown level1 summary"><p>Returns a copy of the specified <a class="xref" href="Langly.Glyph.html">Glyph</a> converted to uppercase.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Glyph ToUpperInvariant(Glyph glyph)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.Glyph.html">Glyph</a></td>
+        <td><span class="parametername">glyph</span></td>
+        <td><p>The UNICODE grapheme cluster to convert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.Glyph.html">Glyph</a></td>
+        <td><p>The uppercase equivalent of value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="operators">Operators
   </h3>
   <span class="small pull-right mobile-hide">
@@ -404,7 +586,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Glyph_op_Equality_Langly_Glyph_Langly_Glyph_.md&amp;value=---%0Auid%3A%20Langly.Glyph.op_Equality(Langly.Glyph%2CLangly.Glyph)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Glyph/Glyph.cs/#L43">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Glyph/Glyph.cs/#L41">View Source</a>
   </span>
   <a id="Langly_Glyph_op_Equality_" data-uid="Langly.Glyph.op_Equality*"></a>
   <h4 id="Langly_Glyph_op_Equality_Langly_Glyph_Langly_Glyph_" data-uid="Langly.Glyph.op_Equality(Langly.Glyph,Langly.Glyph)">Equality(Glyph, Glyph)</h4>
@@ -550,7 +732,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Glyph_op_Inequality_Langly_Glyph_Langly_Glyph_.md&amp;value=---%0Auid%3A%20Langly.Glyph.op_Inequality(Langly.Glyph%2CLangly.Glyph)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Glyph/Glyph.cs/#L40">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Glyph/Glyph.cs/#L39">View Source</a>
   </span>
   <a id="Langly_Glyph_op_Inequality_" data-uid="Langly.Glyph.op_Inequality*"></a>
   <h4 id="Langly_Glyph_op_Inequality_Langly_Glyph_Langly_Glyph_" data-uid="Langly.Glyph.op_Inequality(Langly.Glyph,Langly.Glyph)">Inequality(Glyph, Glyph)</h4>
@@ -599,10 +781,19 @@
   </table>
   <h3 id="implements">Implements</h3>
   <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">System.IEquatable&lt;T&gt;</a>
+      <a class="xref" href="Langly.IEquals-1.html">IEquals&lt;TElement&gt;</a>
   </div>
   <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">System.IEquatable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IEquals-1.html">IEquals&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">System.IEquatable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IEquals-1.html">IEquals&lt;TElement&gt;</a>
   </div>
   <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">System.IEquatable&lt;T&gt;</a>
@@ -623,7 +814,7 @@
                     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Glyph.md&amp;value=---%0Auid%3A%20Langly.Glyph%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Glyph/Glyph.cs/#L11" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Glyph/Glyph.Table.cs/#L2" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

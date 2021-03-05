@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<TargetFramework>net5.0</TargetFramework>
-		<Description>The core of all LibLangly.</Description>
+		<Description>Provides a specialized type for working with graphemes.</Description>
 		<PackageTags>langly, glyph, glyphs, grapheme, graphemes, grapheme cluster, grapheme clusters</PackageTags>
 		<AssemblyName>Langly.Glyph</AssemblyName>
 	</PropertyGroup>
@@ -12,6 +12,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\Langly.Dictionaries\Langly.Dictionaries.csproj" />
 	  <ProjectReference Include="..\Langly.Rune\Langly.Rune.csproj" />
 	</ItemGroup>
 

@@ -10,7 +10,7 @@ namespace Langly {
 	/// <typeparam name="TElement">The type of the elements in the dictionary.</typeparam>
 	public sealed partial class Dictionary<TElement> :
 		IContains<TElement>,
-		IIndexText<TElement>, IIndexUnsafe<Char, TElement>,
+		IIndexText<TElement>, IIndexUnsafe<Char, TElement>, IIndexUnsafe<Int32, TElement>,
 		IInsertText<TElement, Dictionary<TElement>>,
 		IReplace<TElement, Dictionary<TElement>> {
 		/// <summary>
@@ -20,7 +20,7 @@ namespace Langly {
 		/// This is never <see langword="null"/>; a sentinel is used by default.
 		/// </remarks>
 		[NotNull, DisallowNull]
-		private readonly Filter<Char, TElement> Filter;
+		private readonly Filter<Int32, TElement> Filter;
 
 		/// <summary>
 		/// The head node of the trie.
@@ -40,7 +40,7 @@ namespace Langly {
 		/// </summary>
 		/// <param name="filter">Flags designating which filters to set up.</param>
 		public Dictionary(Filter filter) {
-			Filter = Filter<Char, TElement>.Create(filter);
+			Filter = Filter<Int32, TElement>.Create(filter);
 			Head = new Node(index: '\0', filter: Filter, parent: Head);
 		}
 
@@ -97,8 +97,24 @@ namespace Langly {
 		}
 
 		/// <inheritdoc/>
+		[CLSCompliant(false)]
 		[AllowNull, MaybeNull]
 		public unsafe TElement this[[DisallowNull] Char* index, Int32 length] {
+			get => Head[index, length].Element;
+			set => Head[index, length].Element = value;
+		}
+
+		/// <inheritdoc/>
+		[AllowNull, MaybeNull]
+		public TElement this[Int32 index] {
+			get => Head[index].Element;
+			set => Head[index].Element = value;
+		}
+
+		/// <inheritdoc/>
+		[CLSCompliant(false)]
+		[AllowNull, MaybeNull]
+		public unsafe TElement this[[DisallowNull] Int32* index, Int32 length] {
 			get => Head[index, length].Element;
 			set => Head[index, length].Element = value;
 		}

@@ -8,7 +8,7 @@ namespace Langly {
 	/// </summary>
 	/// <seealso cref="Char"/>
 	/// <seealso cref="Rune"/>
-	public readonly struct Glyph : IEquatable<Char>, IEquatable<Rune>, IEquatable<Glyph> {
+	public readonly partial struct Glyph : IEquals<Char>, IEquals<Rune>, IEquals<Glyph> {
 		/// <summary>
 		/// The <see cref="Int32"/> code describing invariant equivalence rules.
 		/// </summary>
@@ -36,11 +36,30 @@ namespace Langly {
 
 		public static implicit operator Glyph(Rune rune) => new Glyph(rune);
 
-		/// <inheritdoc/>
 		public static Boolean operator !=(Glyph left, Glyph right) => !left.Equals(right);
 
-		/// <inheritdoc/>
 		public static Boolean operator ==(Glyph left, Glyph right) => left.Equals(right);
+
+		/// <summary>
+		/// Returns a copy of the specified <see cref="Glyph"/> converted to lowercase.
+		/// </summary>
+		/// <param name="glyph">The UNICODE grapheme cluster to convert.</param>
+		/// <returns>The lowercase equivalent of value.</returns>
+		public static Glyph ToLowerInvariant(Glyph glyph) => new Glyph(Table[glyph.Code].Lowercase);
+
+		/// <summary>
+		/// Returns a copy of the specified <see cref="Glyph"/> converted to titlecase.
+		/// </summary>
+		/// <param name="glyph">The UNICODE grapheme cluster to convert.</param>
+		/// <returns>The titlecase equivalent of value.</returns>
+		public static Glyph ToTitleInvariant(Glyph glyph) => new Glyph(Table[glyph.Code].Titlecase);
+
+		/// <summary>
+		/// Returns a copy of the specified <see cref="Glyph"/> converted to uppercase.
+		/// </summary>
+		/// <param name="glyph">The UNICODE grapheme cluster to convert.</param>
+		/// <returns>The uppercase equivalent of value.</returns>
+		public static Glyph ToUpperInvariant(Glyph glyph) => new Glyph(Table[glyph.Code].Uppercase);
 
 		/// <inheritdoc/>
 		public override Boolean Equals([AllowNull] System.Object obj) {
@@ -67,5 +86,9 @@ namespace Langly {
 
 		/// <inheritdoc/>
 		public override Int32 GetHashCode() => Code;
+
+		/// <inheritdoc/>
+		[return: NotNull]
+		public override String ToString() => Table[Code].Sequence;
 	}
 }

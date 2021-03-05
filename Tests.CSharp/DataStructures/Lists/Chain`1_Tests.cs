@@ -107,6 +107,16 @@ namespace Langly.DataStructures.Lists {
 		[Theory]
 		[InlineData(new Int32[] { })]
 		[InlineData(new Int32[] { 1, 2, 3, 4, 5 })]
+		public void Clear(Int32[] values) {
+			Chain<Int32> chain = new Chain<Int32>().Add(values);
+			Assert.Equal(values.Length, chain.Count);
+			chain = chain.Clear();
+			Assert.Equal(0, chain.Count);
+		}
+
+		[Theory]
+		[InlineData(new Int32[] { })]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 5 })]
 		public void Indexer_Element(Int32[] expected) {
 			Chain<Int32> chain = new Chain<Int32>();
 			foreach (Int32 item in expected) {

@@ -48,7 +48,7 @@ namespace Langly.DataStructures.Trees.Multiway {
 		}
 
 		/// <inheritdoc/>
-		[return: NotNull]
+		[return: MaybeNull]
 		public abstract TSelf Insert([DisallowNull] TIndex index, [AllowNull] TElement element);
 
 		/// <inheritdoc/>
