@@ -57,7 +57,7 @@ namespace Langly {
 		public Byte Byte(Byte min, Byte max) {
 		TryAgain:
 			Byte @byte = Byte();
-			if (Check.Within(@byte, min, max)) {
+			if (min <= @byte && @byte <= max) {
 				return @byte;
 			} else {
 				goto TryAgain;
@@ -94,7 +94,7 @@ namespace Langly {
 		public Char Char(Char min, Char max) {
 		TryAgain:
 			Char @char = Char();
-			if (Check.Within(@char, min, max)) {
+			if (min <= @char && @char <= max) {
 				return @char;
 			} else {
 				goto TryAgain;
@@ -127,7 +127,7 @@ namespace Langly {
 		public Decimal Decimal(Decimal min, Decimal max) {
 		TryAgain:
 			Decimal @decimal = Decimal();
-			if (Check.Within(@decimal, min, max)) {
+			if (min <= @decimal && @decimal <= max) {
 				return @decimal;
 			} else {
 				goto TryAgain;
@@ -164,7 +164,7 @@ namespace Langly {
 		public Double Double(Double min, Double max) {
 		TryAgain:
 			Double @double = Double();
-			if (Check.Within(@double, min, max)) {
+			if (min <= @double && @double <= max) {
 				return @double;
 			} else {
 				goto TryAgain;
@@ -201,7 +201,7 @@ namespace Langly {
 		public Int16 Int16(Int16 min, Int16 max) {
 		TryAgain:
 			Int16 @short = Int16();
-			if (Check.Within(@short, min, max)) {
+			if (min <= @short && @short <= max) {
 				return @short;
 			} else {
 				goto TryAgain;
@@ -238,7 +238,7 @@ namespace Langly {
 		public Int32 Int32(Int32 min, Int32 max) {
 		TryAgain:
 			Int32 @int = Int32();
-			if (Check.Within(@int, min, max)) {
+			if (min <= @int && @int <= max) {
 				return @int;
 			} else {
 				goto TryAgain;
@@ -275,7 +275,7 @@ namespace Langly {
 		public Int64 Int64(Int64 min, Int64 max) {
 		TryAgain:
 			Int64 @long = Int64();
-			if (Check.Within(@long, min, max)) {
+			if (min <= @long && @long <= max) {
 				return @long;
 			} else {
 				goto TryAgain;
@@ -318,8 +318,8 @@ namespace Langly {
 		/// <returns>A random <see cref="System.IntPtr"/> value within the range of <paramref name="min"/>..<paramref name="max"/>.</returns>
 		public IntPtr IntPtr(IntPtr min, IntPtr max) {
 		TryAgain:
-			IntPtr @nint = IntPtr();
-			if (Check.Within(@nint, min, max)) {
+			nint @nint = IntPtr();
+			if (min <= @nint && @nint <= max) {
 				return @nint;
 			} else {
 				goto TryAgain;
@@ -358,7 +358,7 @@ namespace Langly {
 		public SByte SByte(SByte min, SByte max) {
 		TryAgain:
 			SByte @sbyte = SByte();
-			if (Check.Within(@sbyte, min, max)) {
+			if (min <= @sbyte && @sbyte <= max) {
 				return @sbyte;
 			} else {
 				goto TryAgain;
@@ -396,7 +396,7 @@ namespace Langly {
 		public Single Single(Single min, Single max) {
 		TryAgain:
 			Single @single = Single();
-			if (Check.Within(@single, min, max)) {
+			if (min <= @single && @single <= max) {
 				return @single;
 			} else {
 				goto TryAgain;
@@ -435,7 +435,7 @@ namespace Langly {
 		public UInt16 UInt16(UInt16 min, UInt16 max) {
 		TryAgain:
 			UInt16 @ushort = UInt16();
-			if (Check.Within(@ushort, min, max)) {
+			if (min <= @ushort && @ushort <= max) {
 				return @ushort;
 			} else {
 				goto TryAgain;
@@ -475,7 +475,7 @@ namespace Langly {
 		public UInt32 UInt32(UInt32 min, UInt32 max) {
 		TryAgain:
 			UInt32 @uint = UInt32();
-			if (Check.Within(@uint, min, max)) {
+			if (min <= @uint && @uint <= max) {
 				return @uint;
 			} else {
 				goto TryAgain;
@@ -515,7 +515,7 @@ namespace Langly {
 		public UInt64 UInt64(UInt64 min, UInt64 max) {
 		TryAgain:
 			UInt64 @ulong = UInt64();
-			if (Check.Within(@ulong, min, max)) {
+			if (min <= @ulong && @ulong <= max) {
 				return @ulong;
 			} else {
 				goto TryAgain;
@@ -560,8 +560,8 @@ namespace Langly {
 		[CLSCompliant(false)]
 		public UIntPtr UIntPtr(UIntPtr min, UIntPtr max) {
 		TryAgain:
-			UIntPtr @nuint = UIntPtr();
-			if (Check.Within(@nuint, min, max)) {
+			nuint @nuint = UIntPtr();
+			if (min <= @nuint && @nuint <= max) {
 				return @nuint;
 			} else {
 				goto TryAgain;

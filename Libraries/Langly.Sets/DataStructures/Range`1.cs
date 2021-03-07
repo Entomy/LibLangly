@@ -28,6 +28,6 @@ namespace Langly.DataStructures {
 		}
 
 		/// <inheritdoc/>
-		protected override Boolean Contains([AllowNull] TElement element) => Check.Within(element, Lower, Upper);
+		protected override Boolean Contains([AllowNull] TElement element) => element is not null && Lower.CompareTo(element) <= 0 && element.CompareTo(element) <= 0;
 	}
 }

@@ -13,6 +13,6 @@ namespace Langly.DataStructures {
 		public RangeInt32(Int32 lower, Int32 upper) : base(lower, upper) { }
 
 		/// <inheritdoc/>
-		protected override Boolean Contains(Int32 element) => Check.Within(element, Lower, Upper);
+		protected override Boolean Contains(Int32 element) => Lower <= element && element <= Upper;
 	}
 }
