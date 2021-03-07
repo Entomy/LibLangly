@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using FastEnumUtility;
 
 namespace Langly {
 	/// <summary>
@@ -15,6 +16,27 @@ namespace Langly {
 		/// Initializes a new <see cref="Generator"/>.
 		/// </summary>
 		public Generator() => Random = new Random();
+
+		/// <summary>
+		/// Generates a <see cref="System.Boolean"/> value.
+		/// </summary>
+		/// <returns>A random <see cref="System.Boolean"/> value.</returns>
+		public unsafe Boolean Boolean() {
+			Span<Byte> buffer = stackalloc Byte[sizeof(Boolean)];
+			Random.NextBytes(buffer);
+			return buffer[0] % 2 == 0; // even/odd checks ensure equal distribution, whereas casts would favor true.
+		}
+
+		/// <summary>
+		/// Generates a sequence of <see cref="System.Boolean"/> values.
+		/// </summary>
+		/// <param name="amount">The amount of values to generate.</param>
+		/// <returns>A sequence of random <see cref="System.Boolean"/> values.</returns>
+		public IEnumerable<Boolean> Boolean(nint amount) {
+			for (nint i = 0; i < amount; i++) {
+				yield return Boolean();
+			}
+		}
 
 		/// <summary>
 		/// Generates a <see cref="System.Byte"/> value.
@@ -87,6 +109,39 @@ namespace Langly {
 		public IEnumerable<Char> Char(nint amount) {
 			for (nint i = 0; i < amount; i++) {
 				yield return Char();
+			}
+		}
+
+		/// <summary>
+		/// Generates a <see cref="System.Decimal"/> value.
+		/// </summary>
+		/// <returns>A random <see cref="System.Decimal"/> value.</returns>
+		public unsafe Decimal Decimal() => new Decimal(Int32(), Int32(), Int32(), Boolean(), Byte(0, 28));
+
+		/// <summary>
+		/// Generates a <see cref="System.Decimal"/> value within the range of <paramref name="min"/>..<paramref name="max"/>.
+		/// </summary>
+		/// <param name="min">The minimum possible value.</param>
+		/// <param name="max">The maximum possible value.</param>
+		/// <returns>A random <see cref="System.Decimal"/> value within the range of <paramref name="min"/>..<paramref name="max"/>.</returns>
+		public Decimal Decimal(Decimal min, Decimal max) {
+		TryAgain:
+			Decimal @decimal = Decimal();
+			if (Check.Within(@decimal, min, max)) {
+				return @decimal;
+			} else {
+				goto TryAgain;
+			}
+		}
+
+		/// <summary>
+		/// Generates a sequence of <see cref="System.Decimal"/> values.
+		/// </summary>
+		/// <param name="amount">The amount of values to generate.</param>
+		/// <returns>A sequence of random <see cref="System.Decimal"/> values.</returns>
+		public IEnumerable<Decimal> Decimal(nint amount) {
+			for (nint i = 0; i < amount; i++) {
+				yield return Decimal();
 			}
 		}
 

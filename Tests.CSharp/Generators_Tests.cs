@@ -6,6 +6,13 @@ namespace Langly {
 		private readonly Generator Generator = new Generator();
 
 		[Fact]
+		public void Boolean() {
+			for (nint i = 0; i < 1_000; i++) {
+				_ = Generator.Boolean();
+			}
+		}
+
+		[Fact]
 		public void Byte() {
 			for (nint i = 0; i < 1_000_000; i++) {
 				_ = Generator.Byte();
@@ -16,6 +23,13 @@ namespace Langly {
 		public void Char() {
 			for (nint i = 0; i < 1_000_000; i++) {
 				_ = Generator.Char();
+			}
+		}
+
+		[Fact]
+		public void Decimal() {
+			for (nint i = 0; i < 1_000_000; i++) {
+				_ = Generator.Decimal();
 			}
 		}
 
