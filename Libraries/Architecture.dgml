@@ -1,45 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <DirectedGraph GraphDirection="TopToBottom" Layout="Sugiyama" ZoomLevel="-1" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
   <Nodes>
-    <Node Id="Arrays" Bounds="0,335.76,53.0933333333335,25.96" />
-    <Node Id="Buffers" Bounds="77.1833333333335,167.88,56.7266666666667,25.96" />
-    <Node Id="Chains" Bounds="18.9883333333333,279.8,55.1166666666668,25.96" />
-    <Node Id="Console" Bounds="164.268333333334,335.76,62.5566666666664,25.96" />
-    <Node Id="Core" Bounds="173.546666666667,55.96,50,25.96" />
-    <Node Id="Counters" Bounds="164.721666666667,167.88,67.6500000000001,25.96" />
-    <Node Id="DataStructures" Bounds="149.72,111.92,97.6533333333332,25.96" ErrorMessage="Node 'DataStructures' has a hub value of 38." Hub="38" />
-    <Node Id="Dictionary" Bounds="352.44,223.84,82.2133333333334,25.96" Label="Dictionaries" />
-    <Node Id="Generators" Bounds="505.926666666667,0,78.22,25.96" ErrorMessage="Unreferenced node detected:Generators (Generators)" IsUnreferenced="True" />
-    <Node Id="Glyph" Bounds="170.151666666667,279.8,50.79,25.9599999999999" />
-    <Node Id="Lists" Bounds="342.546666666667,167.88,50,25.96" />
-    <Node Id="Numerics" Bounds="251.498333333333,223.84,70.0966666666667,25.96" />
-    <Node Id="Rune" Bounds="170.546666666667,223.84,50,25.96" ErrorMessage="Unreferenced node detected:Rune (Rune)" IsUnreferenced="True" />
-    <Node Id="Sets" Bounds="69.5466666666666,111.92,50,25.96" />
-    <Node Id="Stacks" Bounds="423.166666666667,167.88,52.76,25.96" />
-    <Node Id="Streams" Bounds="77.5266666666668,223.84,62.04,25.96" />
-    <Node Id="Text" Bounds="83.5466666666667,335.76,50,25.96" />
-    <Node Id="Traits" Bounds="173.546666666667,0,50,25.96" ErrorMessage="Unreferenced node detected:Traits (Traits)" IsUnreferenced="True" />
-    <Node Id="Trees" Bounds="262.546666666667,167.88,49.9999999999999,25.96" />
+    <Node Id="Arrays" Bounds="143.833333333333,335.76,53.0933333333335,25.96" />
+    <Node Id="Buffers" Bounds="83.0166666666667,167.88,56.7266666666667,25.96" />
+    <Node Id="Chains" Bounds="142.821666666667,279.8,55.1166666666668,25.96" />
+    <Node Id="Console" Bounds="429.101666666667,335.76,62.5566666666664,25.96" />
+    <Node Id="Core" Bounds="249.38,55.96,50,25.96" />
+    <Node Id="Counters" Bounds="281.555,167.88,67.6500000000001,25.96" />
+    <Node Id="DataStructures" Bounds="121.553333333333,111.92,97.6533333333332,25.96" ErrorMessage="Node 'DataStructures' has a hub value of 38." Hub="38" />
+    <Node Id="Dictionary" Bounds="347.273333333333,223.84,82.2133333333334,25.96" Label="Dictionaries" />
+    <Node Id="Generators" Bounds="330.27,0,78.22,25.96" ErrorMessage="Unreferenced node detected:Generators (Generators)" IsUnreferenced="True" />
+    <Node Id="Glyph" Bounds="434.985,279.8,50.79,25.9599999999999" />
+    <Node Id="Lists" Bounds="201.38,167.88,50,25.96" />
+    <Node Id="Numerics" Bounds="246.331666666667,223.84,70.0966666666667,25.96" />
+    <Node Id="Rune" Bounds="435.38,55.9600000000002,50,25.96" />
+    <Node Id="Sets" Bounds="249.38,111.92,50,25.96" />
+    <Node Id="Stacks" Bounds="-2.8421709430404E-14,167.88,52.76,25.96" />
+    <Node Id="Streams" Bounds="77.3600000000001,223.84,62.04,25.96" />
+    <Node Id="Text" Bounds="348.38,335.76,50,25.96" />
+    <Node Id="Traits" Bounds="249.38,0,50,25.96" ErrorMessage="Unreferenced node detected:Traits (Traits)" IsUnreferenced="True" />
+    <Node Id="Trees" Bounds="379.38,167.88,49.9999999999999,25.96" />
   </Nodes>
   <Links>
-    <Link Source="Buffers" Target="Streams" Bounds="106.242523193359,193.839996337891,1.12649536132813,21.0129089355469" />
-    <Link Source="Chains" Target="Arrays" Bounds="34.2146415710449,305.760009765625,7.69299697875977,21.5249938964844" />
-    <Link Source="Chains" Target="Text" Bounds="60.9276542663574,305.760009765625,26.556957244873,23.9697875976563" />
-    <Link Source="Core" Target="DataStructures" Bounds="198.546661376953,81.9199981689453,0,21" />
-    <Link Source="Core" Target="Sets" Bounds="125.911514282227,81.5521697998047,49.1958160400391,26.4711303710938" />
-    <Link Source="Counters" Target="Numerics" Bounds="218.958389282227,193.839996337891,39.5820465087891,25.1705780029297" />
-    <Link Source="DataStructures" Target="Buffers" Bounds="134.829727172852,137.880004882813,42.1454620361328,25.3597869873047" />
-    <Link Source="DataStructures" Target="Chains" Bounds="46.5466651916504,137.880004882813,111.645488739014,132.919982910156" />
-    <Link Source="DataStructures" Target="Counters" Bounds="198.546661376953,137.880004882813,0,21" />
-    <Link Source="DataStructures" Target="Lists" Bounds="237.746444702148,137.880004882813,96.2564239501953,31.8728332519531" />
-    <Link Source="DataStructures" Target="Stacks" Bounds="247.365264892578,135.099868774414,167.097747802734,36.3096771240234" />
-    <Link Source="DataStructures" Target="Trees" Bounds="219.190338134766,137.880004882813,40.0935974121094,25.2093963623047" />
-    <Link Source="Dictionary" Target="Glyph" Bounds="229.602416992188,248.32080078125,123.251617431641,34.8341369628906" />
-    <Link Source="Glyph" Target="Console" Bounds="195.546661376953,305.760009765625,0,21" />
-    <Link Source="Glyph" Target="Text" Bounds="136.295806884766,305.760009765625,39.0710906982422,25.1312255859375" />
-    <Link Source="Rune" Target="Glyph" Bounds="195.546661376953,249.800003051758,0,20.9999847412109" />
-    <Link Source="Traits" Target="Core" Bounds="198.546661376953,25.9599990844727,0,21" />
-    <Link Source="Trees" Target="Dictionary" Bounds="311.196746826172,193.345443725586,49.8040771484375,26.2928161621094" />
+    <Link Source="Buffers" Target="Streams" Bounds="109.557647705078,193.839996337891,1.12649536132813,21.0129089355469" />
+    <Link Source="Chains" Target="Arrays" Bounds="170.380004882813,305.760009765625,0,21" />
+    <Link Source="Chains" Target="Text" Bounds="197.938339233398,300.376861572266,141.765274047852,39.0797424316406" />
+    <Link Source="Core" Target="DataStructures" Bounds="202.428451538086,81.5521697998047,48.51220703125,26.1032943725586" />
+    <Link Source="Core" Target="Sets" Bounds="274.380004882813,81.9199981689453,0,21" />
+    <Link Source="Counters" Target="Numerics" Bounds="293.939575195313,193.839996337891,13.5540771484375,22.3083953857422" />
+    <Link Source="DataStructures" Target="Buffers" Bounds="131.595092773438,137.880004882813,25.0997772216797,23.8064880371094" />
+    <Link Source="DataStructures" Target="Chains" Bounds="170.380004882813,137.880004882813,0,132.919982910156" />
+    <Link Source="DataStructures" Target="Counters" Bounds="204.012954711914,137.880004882813,70.5417938232422,27.2242736816406" />
+    <Link Source="DataStructures" Target="Lists" Bounds="183.369277954102,137.880004882813,23.6552124023438,23.6383056640625" />
+    <Link Source="DataStructures" Target="Stacks" Bounds="61.1369285583496,137.880004882813,75.8420753479004,29.4730682373047" />
+    <Link Source="DataStructures" Target="Trees" Bounds="218.972579956055,136.041793823242,151.711502075195,35.7096099853516" />
+    <Link Source="Dictionary" Target="Glyph" Bounds="405.080505371094,249.800003051758,31.492919921875,24.4770050048828" />
+    <Link Source="Generators" Target="Core" Bounds="304.169677734375,25.9599990844727,43.1749267578125,25.432315826416" />
+    <Link Source="Generators" Target="Rune" Bounds="390.487579345703,25.9599990844727,41.118408203125,25.2855682373047" />
+    <Link Source="Glyph" Target="Console" Bounds="460.380004882813,305.760009765625,0,21" />
+    <Link Source="Glyph" Target="Text" Bounds="401.129119873047,305.760009765625,39.0711059570313,25.1312255859375" />
+    <Link Source="Rune" Target="Glyph" Bounds="460.380004882813,81.9199981689453,0,188.879989624023" />
+    <Link Source="Traits" Target="Core" Bounds="274.380004882813,25.9599990844727,0,21" />
+    <Link Source="Trees" Target="Dictionary" Bounds="394.565338134766,193.839996337891,6.10345458984375,21.3467559814453" />
   </Links>
   <Properties>
     <Property Id="Bounds" DataType="System.Windows.Rect" />

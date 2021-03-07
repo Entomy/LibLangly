@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Text;
 using Xunit;
 
 namespace Langly {
@@ -6,107 +6,51 @@ namespace Langly {
 		private readonly Generator Generator = new Generator();
 
 		[Fact]
-		public void Boolean() {
-			for (nint i = 0; i < 1_000; i++) {
-				_ = Generator.Boolean();
-			}
-		}
+		public void Boolean() => Generator.Boolean(1_000_000);
 
 		[Fact]
-		public void Byte() {
-			for (nint i = 0; i < 1_000_000; i++) {
-				_ = Generator.Byte();
-			}
-		}
+		public void Byte() => Generator.Byte(1_000_000);
 
 		[Fact]
-		public void Char() {
-			for (nint i = 0; i < 1_000_000; i++) {
-				_ = Generator.Char();
-			}
-		}
+		public void Char() => Generator.Char(1_000_000);
 
 		[Fact]
-		public void Decimal() {
-			for (nint i = 0; i < 1_000_000; i++) {
-				_ = Generator.Decimal();
-			}
-		}
+		public void Decimal() => Generator.Decimal(1_000_000);
 
 		[Fact]
-		public void Double() {
-			for (nint i = 0; i < 1_000_000; i++) {
-				_ = Generator.Double();
-			}
-		}
+		public void Double() => Generator.Double(1_000_000);
 
 		[Fact]
-		public void Int16() {
-			for (nint i = 0; i < 1_000_000; i++) {
-				_ = Generator.Int16();
-			}
-		}
+		public void Int16() => Generator.Int16(1_000_000);
 
 		[Fact]
-		public void Int32() {
-			for (nint i = 0; i < 1_000_000; i++) {
-				_ = Generator.Int32();
-			}
-		}
+		public void Int32() => Generator.Int32(1_000_000);
 
 		[Fact]
-		public void Int64() {
-			for (nint i = 0; i < 1_000_000; i++) {
-				_ = Generator.Int64();
-			}
-		}
+		public void Int64() => Generator.Int64(1_000_000);
 
 		[Fact]
-		public void IntPtr() {
-			for (nint i = 0; i < 1_000_000; i++) {
-				_ = Generator.IntPtr();
-			}
-		}
+		public void IntPtr() => Generator.IntPtr(1_000_000);
 
 		[Fact]
-		public void SByte() {
-			for (nint i = 0; i < 1_000_000; i++) {
-				_ = Generator.SByte();
-			}
-		}
-		[Fact]
-		public void Single() {
-			for (nint i = 0; i < 1_000_000; i++) {
-				_ = Generator.Single();
-			}
-		}
+		public void Rune() => Generator.Rune(1_000_000);
 
 		[Fact]
-		public void UInt16() {
-			for (nint i = 0; i < 1_000_000; i++) {
-				_ = Generator.UInt16();
-			}
-		}
+		public void SByte() => Generator.SByte(1_000_000);
 
 		[Fact]
-		public void UInt32() {
-			for (nint i = 0; i < 1_000_000; i++) {
-				_ = Generator.UInt32();
-			}
-		}
+		public void Single() => Generator.Single(1_000_000);
 
 		[Fact]
-		public void UInt64() {
-			for (nint i = 0; i < 1_000_000; i++) {
-				_ = Generator.UInt64();
-			}
-		}
+		public void UInt16() => Generator.UInt16(1_000_000);
 
 		[Fact]
-		public void UIntPtr() {
-			for (nint i = 0; i < 1_000_000; i++) {
-				_ = Generator.UIntPtr();
-			}
-		}
+		public void UInt32() => Generator.UInt32(1_000_000);
+
+		[Fact]
+		public void UInt64() => Generator.UInt64(1_000_000);
+
+		[Fact]
+		public void UIntPtr() => Generator.UIntPtr(1_000_000);
 	}
 }
