@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Interface IIndex&lt;TIndex, TElement&gt;
+    <title>Interface ICompare&lt;TElement&gt;
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Interface IIndex&lt;TIndex, TElement&gt;
+    <meta name="title" content="Interface ICompare&lt;TElement&gt;
    ">
     <meta name="generator" content="docfx 2.56.7.0">
     
@@ -68,28 +68,31 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Langly.IIndex`2">
+            <article class="content wrap" id="_content" data-uid="Langly.ICompare`1">
   
   
-  <h1 id="Langly_IIndex_2" data-uid="Langly.IIndex`2" class="text-break">Interface IIndex&lt;TIndex, TElement&gt;
+  <h1 id="Langly_ICompare_1" data-uid="Langly.ICompare`1" class="text-break">Interface ICompare&lt;TElement&gt;
   </h1>
-  <div class="markdown level0 summary"><p>Indicates the type is indexable, read and write.</p>
+  <div class="markdown level0 summary"><p>Indicates the type can be compared to another.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="Langly.IIndexReadOnly-2.html#Langly_IIndexReadOnly_2_Item__0_">IIndexReadOnly&lt;TIndex, TElement&gt;.Item[TIndex]</a>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.icomparable.compareto#System_IComparable_CompareTo_System_Object_">IComparable.CompareTo(Object)</a>
     </div>
     <div>
-      <a class="xref" href="Langly.ICount.html#Langly_ICount_Count">ICount.Count</a>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.icomparable-1.compareto#System_IComparable_1_CompareTo__0_">IComparable&lt;TElement&gt;.CompareTo(TElement)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1.equals#System_IEquatable_1_Equals__0_">IEquatable&lt;TElement&gt;.Equals(TElement)</a>
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Langly.html">Langly</a></h6>
   <h6><strong>Assembly</strong>: Langly.Traits.dll</h6>
-  <h5 id="Langly_IIndex_2_syntax">Syntax</h5>
+  <h5 id="Langly_ICompare_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IIndex&lt;in TIndex, TElement&gt; : IIndexReadOnly&lt;TIndex, TElement&gt;, ICount</code></pre>
+    <pre><code class="lang-csharp hljs">public interface ICompare&lt;TElement&gt; : IComparable, IComparable&lt;TElement&gt;, IEquals&lt;TElement&gt;, IEquatable&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -101,65 +104,8 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="parametername">TIndex</span></td>
-        <td><p>The type used to index the collection.</p>
-</td>
-      </tr>
-      <tr>
         <td><span class="parametername">TElement</span></td>
-        <td><p>The type of the elements in the collection.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="properties">Properties
-  </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IIndex_2_Item__0_.md&amp;value=---%0Auid%3A%20Langly.IIndex%602.Item(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IIndex`2.cs/#L15">View Source</a>
-  </span>
-  <a id="Langly_IIndex_2_Item_" data-uid="Langly.IIndex`2.Item*"></a>
-  <h4 id="Langly_IIndex_2_Item__0_" data-uid="Langly.IIndex`2.Item(`0)">Item[TIndex]</h4>
-  <div class="markdown level1 summary"><p>Gets  the element at the specified index.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">TElement this[TIndex index] { get; set; }</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">TIndex</span></td>
-        <td><span class="parametername">index</span></td>
-        <td><p>The index of the element to get.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">TElement</span></td>
-        <td><p>The element at the specified index.</p>
+        <td><p>The type this can be compared to.</p>
 </td>
       </tr>
     </tbody>
@@ -168,19 +114,18 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IIndex_2_Langly_IIndexReadOnly_TIndex_TElement__Item__0_.md&amp;value=---%0Auid%3A%20Langly.IIndex%602.Langly%23IIndexReadOnly%7BTIndex%2CTElement%7D%23Item(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_ICompare_1_System_IComparable_CompareTo_System_Object_.md&amp;value=---%0Auid%3A%20Langly.ICompare%601.System%23IComparable%23CompareTo(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IIndex`2.cs/#L19">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/ICompare`1.cs/#L11">View Source</a>
   </span>
-  <a id="Langly_IIndex_2_Langly_IIndexReadOnly_TIndex_TElement__Item_" data-uid="Langly.IIndex`2.Langly#IIndexReadOnly{TIndex,TElement}#Item*"></a>
-  <h4 id="Langly_IIndex_2_Langly_IIndexReadOnly_TIndex_TElement__Item__0_" data-uid="Langly.IIndex`2.Langly#IIndexReadOnly{TIndex,TElement}#Item(`0)">IIndexReadOnly&lt;TIndex, TElement&gt;.Item[TIndex]</h4>
-  <div class="markdown level1 summary"><p>Gets the element at the specified index.</p>
-</div>
+  <a id="Langly_ICompare_1_System_IComparable_CompareTo_" data-uid="Langly.ICompare`1.System#IComparable#CompareTo*"></a>
+  <h4 id="Langly_ICompare_1_System_IComparable_CompareTo_System_Object_" data-uid="Langly.ICompare`1.System#IComparable#CompareTo(System.Object)">IComparable.CompareTo(Object)</h4>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">TElement IIndexReadOnly&lt;TIndex, TElement&gt;.this[TIndex index] { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">int IComparable.CompareTo(object obj)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -193,10 +138,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">TIndex</span></td>
-        <td><span class="parametername">index</span></td>
-        <td><p>The index of the element to get.</p>
-</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -210,9 +154,55 @@
     </thead>
     <tbody>
       <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_ICompare_1_System_IEquatable_TElement__Equals__0_.md&amp;value=---%0Auid%3A%20Langly.ICompare%601.System%23IEquatable%7BTElement%7D%23Equals(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/ICompare`1.cs/#L21">View Source</a>
+  </span>
+  <a id="Langly_ICompare_1_System_IEquatable_TElement__Equals_" data-uid="Langly.ICompare`1.System#IEquatable{TElement}#Equals*"></a>
+  <h4 id="Langly_ICompare_1_System_IEquatable_TElement__Equals__0_" data-uid="Langly.ICompare`1.System#IEquatable{TElement}#Equals(`0)">IEquatable&lt;TElement&gt;.Equals(TElement)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IEquatable&lt;TElement&gt;.Equals(TElement other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
         <td><span class="xref">TElement</span></td>
-        <td><p>The element at the specified index.</p>
-</td>
+        <td><span class="parametername">other</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -224,10 +214,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IIndex_2.md&amp;value=---%0Auid%3A%20Langly.IIndex%602%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_ICompare_1.md&amp;value=---%0Auid%3A%20Langly.ICompare%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IIndex`2.cs/#L9" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/ICompare`1.cs/#L9" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

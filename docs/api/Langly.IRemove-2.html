@@ -1,0 +1,1252 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interface IRemove&lt;TElement, TResult&gt;
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interface IRemove&lt;TElement, TResult&gt;
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Langly.IRemove`2">
+  
+  
+  <h1 id="Langly_IRemove_2" data-uid="Langly.IRemove`2" class="text-break">Interface IRemove&lt;TElement, TResult&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>Indicates the type can have elements removed from it.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Langly.html">Langly</a></h6>
+  <h6><strong>Assembly</strong>: Langly.Traits.dll</h6>
+  <h5 id="Langly_IRemove_2_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IRemove&lt;TElement, out TResult&gt;
+    where TResult : IRemove&lt;TElement, TResult&gt;</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of the elements.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TResult</span></td>
+        <td><p>The resulting type; often itself.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IRemove_2_Remove__0_.md&amp;value=---%0Auid%3A%20Langly.IRemove%602.Remove(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IRemove`2.cs/#L16">View Source</a>
+  </span>
+  <a id="Langly_IRemove_2_Remove_" data-uid="Langly.IRemove`2.Remove*"></a>
+  <h4 id="Langly_IRemove_2_Remove__0_" data-uid="Langly.IRemove`2.Remove(`0)">Remove(TElement)</h4>
+  <div class="markdown level1 summary"><p>Removes all instances of the element from this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TResult Remove(TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element to remove.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TResult</span></td>
+        <td><p>The original elements after the specified element has been removed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IRemove_2_Remove__0___.md&amp;value=---%0Auid%3A%20Langly.IRemove%602.Remove(%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IRemove`2.cs/#L24">View Source</a>
+  </span>
+  <a id="Langly_IRemove_2_Remove_" data-uid="Langly.IRemove`2.Remove*"></a>
+  <h4 id="Langly_IRemove_2_Remove__0___" data-uid="Langly.IRemove`2.Remove(`0[])">Remove(TElement[])</h4>
+  <div class="markdown level1 summary"><p>Removes all instances of the elements from this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">virtual TResult Remove(params TElement[] elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TElement[]</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to remove.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TResult</span></td>
+        <td><p>The original elements after the specified elements have been removed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IRemove_2_Remove_System_Memory__0__.md&amp;value=---%0Auid%3A%20Langly.IRemove%602.Remove(System.Memory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IRemove`2.cs/#L32">View Source</a>
+  </span>
+  <a id="Langly_IRemove_2_Remove_" data-uid="Langly.IRemove`2.Remove*"></a>
+  <h4 id="Langly_IRemove_2_Remove_System_Memory__0__" data-uid="Langly.IRemove`2.Remove(System.Memory{`0})">Remove(Memory&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Removes all instances of the elements from this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">virtual TResult Remove(Memory&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to remove.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TResult</span></td>
+        <td><p>The original elements after the specified elements have been removed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IRemove_2_Remove_System_ReadOnlyMemory__0__.md&amp;value=---%0Auid%3A%20Langly.IRemove%602.Remove(System.ReadOnlyMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IRemove`2.cs/#L40">View Source</a>
+  </span>
+  <a id="Langly_IRemove_2_Remove_" data-uid="Langly.IRemove`2.Remove*"></a>
+  <h4 id="Langly_IRemove_2_Remove_System_ReadOnlyMemory__0__" data-uid="Langly.IRemove`2.Remove(System.ReadOnlyMemory{`0})">Remove(ReadOnlyMemory&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Removes all instances of the elements from this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">virtual TResult Remove(ReadOnlyMemory&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to remove.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TResult</span></td>
+        <td><p>The original elements after the specified elements have been removed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IRemove_2_Remove_System_ReadOnlySpan__0__.md&amp;value=---%0Auid%3A%20Langly.IRemove%602.Remove(System.ReadOnlySpan%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IRemove`2.cs/#L56">View Source</a>
+  </span>
+  <a id="Langly_IRemove_2_Remove_" data-uid="Langly.IRemove`2.Remove*"></a>
+  <h4 id="Langly_IRemove_2_Remove_System_ReadOnlySpan__0__" data-uid="Langly.IRemove`2.Remove(System.ReadOnlySpan{`0})">Remove(ReadOnlySpan&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Removes all instances of the elements from this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">virtual TResult Remove(ReadOnlySpan&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to remove.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TResult</span></td>
+        <td><p>The original elements after the specified elements have been removed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IRemove_2_Remove_System_Span__0__.md&amp;value=---%0Auid%3A%20Langly.IRemove%602.Remove(System.Span%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IRemove`2.cs/#L48">View Source</a>
+  </span>
+  <a id="Langly_IRemove_2_Remove_" data-uid="Langly.IRemove`2.Remove*"></a>
+  <h4 id="Langly_IRemove_2_Remove_System_Span__0__" data-uid="Langly.IRemove`2.Remove(System.Span{`0})">Remove(Span&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Removes all instances of the elements from this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">virtual TResult Remove(Span&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to remove.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TResult</span></td>
+        <td><p>The original elements after the specified elements have been removed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IRemove_2_Remove__1_Langly_ISequence__0___0__.md&amp;value=---%0Auid%3A%20Langly.IRemove%602.Remove%60%601(Langly.ISequence%7B%600%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IRemove`2.cs/#L71">View Source</a>
+  </span>
+  <a id="Langly_IRemove_2_Remove_" data-uid="Langly.IRemove`2.Remove*"></a>
+  <h4 id="Langly_IRemove_2_Remove__1_Langly_ISequence__0___0__" data-uid="Langly.IRemove`2.Remove``1(Langly.ISequence{`0,``0})">Remove&lt;TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;)</h4>
+  <div class="markdown level1 summary"><p>Removes all instances of the elements from this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">virtual TResult Remove&lt;TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt; elements)
+    where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ISequence-2.html">ISequence</a>&lt;TElement, TEnumerator&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to remove.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TResult</span></td>
+        <td><p>The original elements after the specified elements have been removed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TEnumerator</span></td>
+        <td><p>The type of the enumerator of the <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IRemove_2_RemoveFirst__0_.md&amp;value=---%0Auid%3A%20Langly.IRemove%602.RemoveFirst(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IRemove`2.cs/#L87">View Source</a>
+  </span>
+  <a id="Langly_IRemove_2_RemoveFirst_" data-uid="Langly.IRemove`2.RemoveFirst*"></a>
+  <h4 id="Langly_IRemove_2_RemoveFirst__0_" data-uid="Langly.IRemove`2.RemoveFirst(`0)">RemoveFirst(TElement)</h4>
+  <div class="markdown level1 summary"><p>Removes the first instance of the element from this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TResult RemoveFirst(TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element to remove.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TResult</span></td>
+        <td><p>The original elements after the specified element has been removed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IRemove_2_RemoveFirst__0___.md&amp;value=---%0Auid%3A%20Langly.IRemove%602.RemoveFirst(%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IRemove`2.cs/#L95">View Source</a>
+  </span>
+  <a id="Langly_IRemove_2_RemoveFirst_" data-uid="Langly.IRemove`2.RemoveFirst*"></a>
+  <h4 id="Langly_IRemove_2_RemoveFirst__0___" data-uid="Langly.IRemove`2.RemoveFirst(`0[])">RemoveFirst(TElement[])</h4>
+  <div class="markdown level1 summary"><p>Removes the first instance of the elements from this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">virtual TResult RemoveFirst(params TElement[] elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TElement[]</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to remove.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TResult</span></td>
+        <td><p>The original elements after the specified elements have been removed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IRemove_2_RemoveFirst_System_Memory__0__.md&amp;value=---%0Auid%3A%20Langly.IRemove%602.RemoveFirst(System.Memory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IRemove`2.cs/#L103">View Source</a>
+  </span>
+  <a id="Langly_IRemove_2_RemoveFirst_" data-uid="Langly.IRemove`2.RemoveFirst*"></a>
+  <h4 id="Langly_IRemove_2_RemoveFirst_System_Memory__0__" data-uid="Langly.IRemove`2.RemoveFirst(System.Memory{`0})">RemoveFirst(Memory&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Removes the first instance of the elements from this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">virtual TResult RemoveFirst(Memory&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to remove.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TResult</span></td>
+        <td><p>The original elements after the specified elements have been removed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IRemove_2_RemoveFirst_System_ReadOnlyMemory__0__.md&amp;value=---%0Auid%3A%20Langly.IRemove%602.RemoveFirst(System.ReadOnlyMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IRemove`2.cs/#L111">View Source</a>
+  </span>
+  <a id="Langly_IRemove_2_RemoveFirst_" data-uid="Langly.IRemove`2.RemoveFirst*"></a>
+  <h4 id="Langly_IRemove_2_RemoveFirst_System_ReadOnlyMemory__0__" data-uid="Langly.IRemove`2.RemoveFirst(System.ReadOnlyMemory{`0})">RemoveFirst(ReadOnlyMemory&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Removes the first instance of the elements from this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">virtual TResult RemoveFirst(ReadOnlyMemory&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to remove.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TResult</span></td>
+        <td><p>The original elements after the specified elements have been removed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IRemove_2_RemoveFirst_System_ReadOnlySpan__0__.md&amp;value=---%0Auid%3A%20Langly.IRemove%602.RemoveFirst(System.ReadOnlySpan%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IRemove`2.cs/#L127">View Source</a>
+  </span>
+  <a id="Langly_IRemove_2_RemoveFirst_" data-uid="Langly.IRemove`2.RemoveFirst*"></a>
+  <h4 id="Langly_IRemove_2_RemoveFirst_System_ReadOnlySpan__0__" data-uid="Langly.IRemove`2.RemoveFirst(System.ReadOnlySpan{`0})">RemoveFirst(ReadOnlySpan&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Removes the first instance of the elements from this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">virtual TResult RemoveFirst(ReadOnlySpan&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to remove.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TResult</span></td>
+        <td><p>The original elements after the specified elements have been removed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IRemove_2_RemoveFirst_System_Span__0__.md&amp;value=---%0Auid%3A%20Langly.IRemove%602.RemoveFirst(System.Span%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IRemove`2.cs/#L119">View Source</a>
+  </span>
+  <a id="Langly_IRemove_2_RemoveFirst_" data-uid="Langly.IRemove`2.RemoveFirst*"></a>
+  <h4 id="Langly_IRemove_2_RemoveFirst_System_Span__0__" data-uid="Langly.IRemove`2.RemoveFirst(System.Span{`0})">RemoveFirst(Span&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Removes the first instance of the elements from this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">virtual TResult RemoveFirst(Span&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to remove.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TResult</span></td>
+        <td><p>The original elements after the specified elements have been removed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IRemove_2_RemoveFirst__1_Langly_ISequence__0___0__.md&amp;value=---%0Auid%3A%20Langly.IRemove%602.RemoveFirst%60%601(Langly.ISequence%7B%600%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IRemove`2.cs/#L142">View Source</a>
+  </span>
+  <a id="Langly_IRemove_2_RemoveFirst_" data-uid="Langly.IRemove`2.RemoveFirst*"></a>
+  <h4 id="Langly_IRemove_2_RemoveFirst__1_Langly_ISequence__0___0__" data-uid="Langly.IRemove`2.RemoveFirst``1(Langly.ISequence{`0,``0})">RemoveFirst&lt;TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;)</h4>
+  <div class="markdown level1 summary"><p>Removes the first instance of the elements from this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">virtual TResult RemoveFirst&lt;TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt; elements)
+    where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ISequence-2.html">ISequence</a>&lt;TElement, TEnumerator&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to remove.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TResult</span></td>
+        <td><p>The original elements after the specified elements have been removed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TEnumerator</span></td>
+        <td><p>The type of the enumerator of the <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IRemove_2_RemoveLast__0_.md&amp;value=---%0Auid%3A%20Langly.IRemove%602.RemoveLast(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IRemove`2.cs/#L158">View Source</a>
+  </span>
+  <a id="Langly_IRemove_2_RemoveLast_" data-uid="Langly.IRemove`2.RemoveLast*"></a>
+  <h4 id="Langly_IRemove_2_RemoveLast__0_" data-uid="Langly.IRemove`2.RemoveLast(`0)">RemoveLast(TElement)</h4>
+  <div class="markdown level1 summary"><p>Removes the last instance of the element from this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TResult RemoveLast(TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element to remove.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TResult</span></td>
+        <td><p>The original elements after the specified element has been removed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IRemove_2_RemoveLast__0___.md&amp;value=---%0Auid%3A%20Langly.IRemove%602.RemoveLast(%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IRemove`2.cs/#L166">View Source</a>
+  </span>
+  <a id="Langly_IRemove_2_RemoveLast_" data-uid="Langly.IRemove`2.RemoveLast*"></a>
+  <h4 id="Langly_IRemove_2_RemoveLast__0___" data-uid="Langly.IRemove`2.RemoveLast(`0[])">RemoveLast(TElement[])</h4>
+  <div class="markdown level1 summary"><p>Removes the last instance of the elements from this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">virtual TResult RemoveLast(params TElement[] elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TElement[]</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to remove.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TResult</span></td>
+        <td><p>The original elements after the specified elements have been removed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IRemove_2_RemoveLast_System_Memory__0__.md&amp;value=---%0Auid%3A%20Langly.IRemove%602.RemoveLast(System.Memory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IRemove`2.cs/#L174">View Source</a>
+  </span>
+  <a id="Langly_IRemove_2_RemoveLast_" data-uid="Langly.IRemove`2.RemoveLast*"></a>
+  <h4 id="Langly_IRemove_2_RemoveLast_System_Memory__0__" data-uid="Langly.IRemove`2.RemoveLast(System.Memory{`0})">RemoveLast(Memory&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Removes the last instance of the elements from this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">virtual TResult RemoveLast(Memory&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to remove.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TResult</span></td>
+        <td><p>The original elements after the specified elements have been removed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IRemove_2_RemoveLast_System_ReadOnlyMemory__0__.md&amp;value=---%0Auid%3A%20Langly.IRemove%602.RemoveLast(System.ReadOnlyMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IRemove`2.cs/#L182">View Source</a>
+  </span>
+  <a id="Langly_IRemove_2_RemoveLast_" data-uid="Langly.IRemove`2.RemoveLast*"></a>
+  <h4 id="Langly_IRemove_2_RemoveLast_System_ReadOnlyMemory__0__" data-uid="Langly.IRemove`2.RemoveLast(System.ReadOnlyMemory{`0})">RemoveLast(ReadOnlyMemory&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Removes the last instance of the elements from this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">virtual TResult RemoveLast(ReadOnlyMemory&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to remove.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TResult</span></td>
+        <td><p>The original elements after the specified elements have been removed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IRemove_2_RemoveLast_System_ReadOnlySpan__0__.md&amp;value=---%0Auid%3A%20Langly.IRemove%602.RemoveLast(System.ReadOnlySpan%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IRemove`2.cs/#L198">View Source</a>
+  </span>
+  <a id="Langly_IRemove_2_RemoveLast_" data-uid="Langly.IRemove`2.RemoveLast*"></a>
+  <h4 id="Langly_IRemove_2_RemoveLast_System_ReadOnlySpan__0__" data-uid="Langly.IRemove`2.RemoveLast(System.ReadOnlySpan{`0})">RemoveLast(ReadOnlySpan&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Removes the last instance of the elements from this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">virtual TResult RemoveLast(ReadOnlySpan&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to remove.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TResult</span></td>
+        <td><p>The original elements after the specified elements have been removed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IRemove_2_RemoveLast_System_Span__0__.md&amp;value=---%0Auid%3A%20Langly.IRemove%602.RemoveLast(System.Span%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IRemove`2.cs/#L190">View Source</a>
+  </span>
+  <a id="Langly_IRemove_2_RemoveLast_" data-uid="Langly.IRemove`2.RemoveLast*"></a>
+  <h4 id="Langly_IRemove_2_RemoveLast_System_Span__0__" data-uid="Langly.IRemove`2.RemoveLast(System.Span{`0})">RemoveLast(Span&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Removes the last instance of the elements from this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">virtual TResult RemoveLast(Span&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to remove.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TResult</span></td>
+        <td><p>The original elements after the specified elements have been removed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IRemove_2_RemoveLast__1_Langly_ISequence__0___0__.md&amp;value=---%0Auid%3A%20Langly.IRemove%602.RemoveLast%60%601(Langly.ISequence%7B%600%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IRemove`2.cs/#L213">View Source</a>
+  </span>
+  <a id="Langly_IRemove_2_RemoveLast_" data-uid="Langly.IRemove`2.RemoveLast*"></a>
+  <h4 id="Langly_IRemove_2_RemoveLast__1_Langly_ISequence__0___0__" data-uid="Langly.IRemove`2.RemoveLast``1(Langly.ISequence{`0,``0})">RemoveLast&lt;TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;)</h4>
+  <div class="markdown level1 summary"><p>Removes the last instance of the elements from this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">virtual TResult RemoveLast&lt;TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt; elements)
+    where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.ISequence-2.html">ISequence</a>&lt;TElement, TEnumerator&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to remove.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TResult</span></td>
+        <td><p>The original elements after the specified elements have been removed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TEnumerator</span></td>
+        <td><p>The type of the enumerator of the <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IRemove_2.md&amp;value=---%0Auid%3A%20Langly.IRemove%602%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IRemove`2.cs/#L10" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
