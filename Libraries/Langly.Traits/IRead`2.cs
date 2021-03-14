@@ -48,7 +48,7 @@ namespace Langly {
 		/// <returns>A <typeparamref name="TResult"/> instance if successful; otherwise, <see langword="null"/>.</returns>
 		[return: MaybeNull]
 		TResult Read(nint amount, out ReadOnlyMemory<TElement> elements) {
-			TResult result = (TResult)this;
+			TResult? result = (TResult)this;
 			Memory<TElement> buffer = new TElement[amount];
 			Int32 i = 0;
 			for (; i < amount; i++) {
@@ -65,14 +65,10 @@ namespace Langly {
 		/// <returns>A <typeparamref name="TResult"/> instance if successful; otherwise, <see langword="null"/>.</returns>
 		[return: MaybeNull]
 		TResult Read(Span<TElement> elements) {
-			TResult result = (TResult)this;
+			TResult? result = (TResult)this;
 			for (Int32 i = 0; i < elements.Length; i++) {
-				result = result.Read(out elements[i]);
-				if (result is null) {
-					goto Result;
-				}
+				if ((result = result!.Read(out elements[i])) is null) { return default; }
 			}
-		Result:
 			return result;
 		}
 
@@ -84,7 +80,7 @@ namespace Langly {
 		/// <returns>A <typeparamref name="TResult"/> instance if successful; otherwise, <see langword="null"/>.</returns>
 		[return: MaybeNull]
 		TResult Read(nint amount, out ReadOnlySpan<TElement> elements) {
-			TResult result = Read(amount, out ReadOnlyMemory<TElement> elmts);
+			TResult? result = Read(amount, out ReadOnlyMemory<TElement> elmts);
 			elements = elmts.Span;
 			return result;
 		}

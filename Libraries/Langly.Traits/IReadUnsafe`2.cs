@@ -12,9 +12,9 @@ namespace Langly {
 		/// <inheritdoc/>
 		[return: MaybeNull]
 		unsafe TResult IRead<TElement, TResult>.Read(Span<TElement> elements) {
-			TResult result = (TResult)this;
+			TResult? result = (TResult)this;
 			fixed (TElement* elmts = elements) {
-				result = result.Read(elmts, elements.Length);
+				if ((result = result!.Read(elmts, elements.Length)) is null) { return default; }
 			}
 			return result;
 		}
@@ -27,14 +27,10 @@ namespace Langly {
 		/// <returns>A <typeparamref name="TResult"/> instance if successful; otherwise, <see langword="null"/>.</returns>
 		[return: MaybeNull]
 		unsafe TResult Read([DisallowNull] TElement* elements, Int32 length) {
-			TResult result = (TResult)this;
+			TResult? result = (TResult)this;
 			for (Int32 i = 0; i < length; i++) {
-				result = result.Read(out elements[i]);
-				if (result is null) {
-					goto Result;
-				}
+				if ((result = result!.Read(out elements[i])) is null) { return default; }
 			}
-		Result:
 			return result;
 		}
 	}

@@ -73,14 +73,10 @@ namespace Langly {
 		/// </remarks>
 		[return: MaybeNull]
 		TResult Add(ReadOnlySpan<TElement> elements) {
-			TResult result = (TResult)this;
+			TResult? result = (TResult)this;
 			foreach (TElement element in elements) {
-				result = result.Add(element);
-				if (result is null) {
-					goto Result;
-				}
+				if ((result = result!.Add(element)) is null) { return default; }
 			}
-		Result:
 			return result;
 		}
 
@@ -95,16 +91,12 @@ namespace Langly {
 		/// </remarks>
 		[return: MaybeNull]
 		TResult Add<TEnumerator>([AllowNull] ISequence<TElement, TEnumerator> elements) where TEnumerator : IEnumerator<TElement> {
-			TResult result = (TResult)this;
+			TResult? result = (TResult)this;
 			if (elements is not null) {
 				foreach (TElement element in elements) {
-					result = result.Add(element);
-					if (result is null) {
-						goto Result;
-					}
+					if ((result = result!.Add(element)) is null) { return default; }
 				}
 			}
-		Result:
 			return result;
 		}
 	}

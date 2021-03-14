@@ -52,9 +52,9 @@ namespace Langly {
 		/// <returns>If the insert occurred successfully, returns a <typeparamref name="TResult"/> containing the original and inserted elements; otherwise, <see langword="null"/>.</returns>
 		[return: MaybeNull]
 		TResult Insert(nint index, ReadOnlySpan<TElement> elements) {
-			TResult result = (TResult)this;
+			TResult? result = (TResult)this;
 			foreach (TElement element in elements) {
-				result = ((IInsert<nint, TElement, TResult>)result).Insert(index++, element);
+				if ((result = ((IInsert<nint, TElement, TResult>)result).Insert(index++, element)) is null) { return default; }
 			}
 			return result;
 		}
@@ -67,10 +67,10 @@ namespace Langly {
 		/// <returns>If the insert occurred successfully, returns a <typeparamref name="TResult"/> containing the original and inserted elements; otherwise, <see langword="null"/>.</returns>
 		[return: MaybeNull]
 		TResult Insert<TEnumerator>(nint index, [AllowNull] ISequence<TElement, TEnumerator> elements) where TEnumerator : IEnumerator<TElement> {
-			TResult result = (TResult)this;
+			TResult? result = (TResult)this;
 			if (elements is not null) {
 				foreach (TElement element in elements) {
-					result = ((IInsert<nint, TElement, TResult>)result).Insert(index++, element);
+					if ((result = ((IInsert<nint, TElement, TResult>)result).Insert(index++, element)) is null) { return default; }
 				}
 			}
 			return result;

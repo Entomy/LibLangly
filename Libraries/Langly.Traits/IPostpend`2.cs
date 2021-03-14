@@ -60,14 +60,10 @@ namespace Langly {
 		/// <returns>If the postpend occurred successfully, returns a <typeparamref name="TResult"/> containing the original and postpended elements; otherwise, <see langword="null"/>.</returns>
 		[return: MaybeNull]
 		TResult Postpend(ReadOnlySpan<TElement> elements) {
-			TResult result = (TResult)this;
+			TResult? result = (TResult)this;
 			for (Int32 i = elements.Length - 1; i >= 0; i--) {
-				result = result.Postpend(elements[i]);
-				if (result is null) {
-					goto Result;
-				}
+				if ((result = result!.Postpend(elements[i])) is null) { return default; }
 			}
-		Result:
 			return result;
 		}
 
@@ -79,16 +75,12 @@ namespace Langly {
 		/// <returns>If the postpend occurred successfully, returns a <typeparamref name="TResult"/> containing the original and postpended elements; otherwise, <see langword="null"/>.</returns>
 		[return: MaybeNull]
 		TResult Postpend<TEnumerator>([AllowNull] ISequence<TElement, TEnumerator> elements) where TEnumerator : IEnumerator<TElement> {
-			TResult result = (TResult)this;
+			TResult? result = (TResult)this;
 			if (elements is not null) {
 				foreach (TElement element in elements) {
-					result = result.Postpend(element);
-					if (result is null) {
-						goto Result;
-					}
+					if ((result = result!.Postpend(element)) is null) { return default; }
 				}
 			}
-		Result:
 			return result;
 		}
 	}

@@ -12,9 +12,9 @@ namespace Langly {
 		/// <inheritdoc/>
 		[return: MaybeNull]
 		unsafe TResult IAdd<TElement, TResult>.Add(ReadOnlySpan<TElement> elements) {
-			TResult result = (TResult)this;
+			TResult? result = (TResult)this;
 			fixed (TElement* elmts = elements) {
-				result = result.Add(elmts, elements.Length);
+				if ((result = result!.Add(elmts, elements.Length)) is null) { return default; }
 			}
 			return result;
 		}
@@ -30,16 +30,12 @@ namespace Langly {
 		/// </remarks>
 		[return: MaybeNull]
 		unsafe TResult Add([AllowNull] TElement* elements, Int32 length) {
-			TResult result = (TResult)this;
+			TResult? result = (TResult)this;
 			if (elements != null) {
 				for (Int32 i = 0; i < length; i++) {
-					result = result.Add(elements[i]);
-					if (result is null) {
-						goto Result;
-					}
+					if ((result = result!.Add(elements[i])) is null) { return default; }
 				}
 			}
-		Result:
 			return result;
 		}
 	}

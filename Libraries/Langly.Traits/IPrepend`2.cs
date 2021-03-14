@@ -55,14 +55,10 @@ namespace Langly {
 		/// <returns>If the prepend occurred successfully, returns a <typeparamref name="TResult"/> containing the original and prepended elements; otherwise, <see langword="null"/>.</returns>
 		[return: MaybeNull]
 		TResult Prepend(ReadOnlySpan<TElement> elements) {
-			TResult result = (TResult)this;
+			TResult? result = (TResult)this;
 			for (Int32 i = elements.Length - 1; i >= 0; i--) {
-				result = result.Prepend(elements[i]);
-				if (result is null) {
-					goto Result;
-				}
+				if ((result = result!.Prepend(elements[i])) is null) { return default; }
 			}
-		Result:
 			return result;
 		}
 
@@ -74,16 +70,12 @@ namespace Langly {
 		/// <returns>If the prepend occurred successfully, returns a <typeparamref name="TResult"/> containing the original and prepended elements; otherwise, <see langword="null"/>.</returns>
 		[return: MaybeNull]
 		TResult Prepend<TEnumerator>([AllowNull] ISequence<TElement, TEnumerator> elements) where TEnumerator : IEnumerator<TElement> {
-			TResult result = (TResult)this;
+			TResult? result = (TResult)this;
 			if (elements is not null) {
 				foreach (TElement element in elements) {
-					result = result.Prepend(element);
-					if (result is null) {
-						goto Result;
-					}
+					if ((result = result!.Prepend(element)) is null) { return default; }
 				}
 			}
-		Result:
 			return result;
 		}
 	}

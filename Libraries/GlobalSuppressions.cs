@@ -28,4 +28,5 @@ using System.Diagnostics.CodeAnalysis;
 [assembly: SuppressMessage("Design", "MA0095:A class that implements IEquatable<T> should override Equals(object)", Justification = "It often is, but this analyzer doesn't check for a base class providing one of these.")]
 
 [assembly: SuppressMessage("Major Code Smell", "S907:\"goto\" statement should not be used", Justification = "I'm fine with goto as long as it's not abused. It can, in certain cases, actually result in easier to read code. It's often required in text processing where needed control structures aren't available in most languages.")]
+[assembly: SuppressMessage("Major Code Smell", "S1121:Assignments should not be made from within sub-expressions", Justification = "This depends extensively on context. Especially for GDE where this is a well formed patter, the code is far more succinct. Use it sparingly.")]
 [assembly: SuppressMessage("Major Code Smell", "S1168:Empty arrays and collections should be returned instead of null", Justification = "Langly handles null specially so this is a non-issue.")]

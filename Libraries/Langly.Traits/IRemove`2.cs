@@ -55,7 +55,7 @@ namespace Langly {
 		/// <returns>The original elements after the specified elements have been removed.</returns>
 		[return: NotNull]
 		TResult Remove(ReadOnlySpan<TElement> elements) {
-			TResult result = (TResult)this;
+			TResult? result = (TResult)this;
 			foreach (TElement element in elements) {
 				result = result.Remove(element);
 			}

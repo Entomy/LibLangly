@@ -82,16 +82,12 @@ namespace Langly {
 		/// <returns>If the load occurred successfully, returns a <typeparamref name="TResult"/> containing the original and loaded elements; otherwise, <see langword="null"/>.</returns>
 		[return: MaybeNull]
 		TResult EnsureLoaded<TSource>(nint amount, [AllowNull] IRead<TElement, TSource> source) where TSource : IRead<TElement, TSource> {
-			TResult result = (TResult)this;
+			TResult? result = (TResult)this;
 			if (source is not null) {
 				for (nint i = 0; i < amount; i++) {
-					result = result.Load(source);
-					if (result is null) {
-						goto Result;
-					}
+					if ((result = result!.Load(source)) is null) { return default; }
 				}
 			}
-		Result:
 			return result;
 		}
 
