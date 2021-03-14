@@ -180,6 +180,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">virtual TResult EnsureLoaded&lt;TSource&gt;(nint amount, IRead&lt;TElement, TSource&gt; source)
+
     where TSource : IRead&lt;TElement, TSource&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -253,6 +254,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">virtual TResult Load&lt;TSource&gt;(IRead&lt;TElement, TSource&gt; source)
+
     where TSource : IRead&lt;TElement, TSource&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -320,6 +322,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">virtual TResult Load&lt;TSource&gt;(nint amount, IRead&lt;TElement, TSource&gt; source)
+
     where TSource : IRead&lt;TElement, TSource&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -693,6 +696,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">virtual TResult Write&lt;TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt; elements)
+
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>

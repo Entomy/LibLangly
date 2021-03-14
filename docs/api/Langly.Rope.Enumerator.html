@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Struct Chain&lt;TElement&gt;.Enumerator
+    <title>Struct Rope.Enumerator
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Struct Chain&lt;TElement&gt;.Enumerator
+    <meta name="title" content="Struct Rope.Enumerator
    ">
     <meta name="generator" content="docfx 2.56.7.0">
     
@@ -68,25 +68,25 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Langly.DataStructures.Lists.Chain`1.Enumerator">
+            <article class="content wrap" id="_content" data-uid="Langly.Rope.Enumerator">
   
   
-  <h1 id="Langly_DataStructures_Lists_Chain_1_Enumerator" data-uid="Langly.DataStructures.Lists.Chain`1.Enumerator" class="text-break">Struct Chain&lt;TElement&gt;.Enumerator
+  <h1 id="Langly_Rope_Enumerator" data-uid="Langly.Rope.Enumerator" class="text-break">Struct Rope.Enumerator
   </h1>
-  <div class="markdown level0 summary"><p>Provides enumeration over a <a class="xref" href="Langly.DataStructures.Lists.Chain-1.html">Chain&lt;TElement&gt;</a>.</p>
+  <div class="markdown level0 summary"><p>Provides the enumerator for <a class="xref" href="Langly.Rope.html">Rope</a>.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div classs="implements">
     <h5>Implements</h5>
-    <div><a class="xref" href="Langly.IEnumeratorBidi-1.html">IEnumeratorBidi</a>&lt;TElement&gt;</div>
-    <div><a class="xref" href="Langly.IEnumerator-1.html">IEnumerator</a>&lt;TElement&gt;</div>
-    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1">IEnumerator</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="Langly.IEnumeratorBidi-1.html">IEnumeratorBidi</a>&lt;<a class="xref" href="Langly.Glyph.html">Glyph</a>&gt;</div>
+    <div><a class="xref" href="Langly.IEnumerator-1.html">IEnumerator</a>&lt;<a class="xref" href="Langly.Glyph.html">Glyph</a>&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1">IEnumerator</a>&lt;<a class="xref" href="Langly.Glyph.html">Glyph</a>&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
-    <div><a class="xref" href="Langly.ISequence-2.html">ISequence</a>&lt;TElement, <a class="xref" href="Langly.IEnumerator-1.html">IEnumerator</a>&lt;TElement&gt;&gt;</div>
-    <div><a class="xref" href="Langly.IContains-1.html">IContains</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="Langly.ISequence-2.html">ISequence</a>&lt;<a class="xref" href="Langly.Glyph.html">Glyph</a>, <a class="xref" href="Langly.IEnumerator-1.html">IEnumerator</a>&lt;<a class="xref" href="Langly.Glyph.html">Glyph</a>&gt;&gt;</div>
+    <div><a class="xref" href="Langly.IContains-1.html">IContains</a>&lt;<a class="xref" href="Langly.Glyph.html">Glyph</a>&gt;</div>
     <div><a class="xref" href="Langly.ICount.html">ICount</a></div>
-    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="Langly.Glyph.html">Glyph</a>&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
   </div>
   <div class="inheritedMembers">
@@ -110,59 +110,23 @@
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#System_Object_ReferenceEquals_System_Object_System_Object_">Object.ReferenceEquals(Object, Object)</a>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="Langly.DataStructures.Lists.html">Langly.DataStructures.Lists</a></h6>
-  <h6><strong>Assembly</strong>: Langly.Chains.dll</h6>
-  <h5 id="Langly_DataStructures_Lists_Chain_1_Enumerator_syntax">Syntax</h5>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Langly.html">Langly</a></h6>
+  <h6><strong>Assembly</strong>: Langly.Ropes.dll</h6>
+  <h5 id="Langly_Rope_Enumerator_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public struct Enumerator : IEnumeratorBidi&lt;TElement&gt;, IEnumerator&lt;TElement&gt;, IEnumerator&lt;TElement&gt;, IEnumerator, IDisposable, ISequence&lt;TElement, IEnumerator&lt;TElement&gt;&gt;, IContains&lt;TElement&gt;, ICount, IEnumerable&lt;TElement&gt;, IEnumerable</code></pre>
+    <pre><code class="lang-csharp hljs">public struct Enumerator : IEnumeratorBidi&lt;Glyph&gt;, IEnumerator&lt;Glyph&gt;, IEnumerator&lt;Glyph&gt;, IEnumerator, IDisposable, ISequence&lt;Glyph, IEnumerator&lt;Glyph&gt;&gt;, IContains&lt;Glyph&gt;, ICount, IEnumerable&lt;Glyph&gt;, IEnumerable</code></pre>
   </div>
-  <h3 id="constructors">Constructors
-  </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Lists_Chain_1_Enumerator__ctor_Langly_DataStructures_Lists_Chain__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Lists.Chain%601.Enumerator.%23ctor(Langly.DataStructures.Lists.Chain%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Chains/DataStructures/Lists/Chain`1.Enumerator.cs/#L33">View Source</a>
-  </span>
-  <a id="Langly_DataStructures_Lists_Chain_1_Enumerator__ctor_" data-uid="Langly.DataStructures.Lists.Chain`1.Enumerator.#ctor*"></a>
-  <h4 id="Langly_DataStructures_Lists_Chain_1_Enumerator__ctor_Langly_DataStructures_Lists_Chain__0__" data-uid="Langly.DataStructures.Lists.Chain`1.Enumerator.#ctor(Langly.DataStructures.Lists.Chain{`0})">Enumerator(Chain&lt;TElement&gt;)</h4>
-  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Langly.DataStructures.Lists.Chain-1.Enumerator.html">Chain&lt;TElement&gt;.Enumerator</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Enumerator(Chain&lt;TElement&gt; chain)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Langly.DataStructures.Lists.Chain-1.html">Chain</a>&lt;TElement&gt;</td>
-        <td><span class="parametername">chain</span></td>
-        <td><p>The <a class="xref" href="Langly.DataStructures.Lists.Chain-1.html">Chain&lt;TElement&gt;</a> to enumerate.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="properties">Properties
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Lists_Chain_1_Enumerator_Count.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Lists.Chain%601.Enumerator.Count%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Rope_Enumerator_Count.md&amp;value=---%0Auid%3A%20Langly.Rope.Enumerator.Count%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Chains/DataStructures/Lists/Chain`1.Enumerator.cs/#L43">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Ropes/Rope.Enumerator.cs/#L26">View Source</a>
   </span>
-  <a id="Langly_DataStructures_Lists_Chain_1_Enumerator_Count_" data-uid="Langly.DataStructures.Lists.Chain`1.Enumerator.Count*"></a>
-  <h4 id="Langly_DataStructures_Lists_Chain_1_Enumerator_Count" data-uid="Langly.DataStructures.Lists.Chain`1.Enumerator.Count">Count</h4>
+  <a id="Langly_Rope_Enumerator_Count_" data-uid="Langly.Rope.Enumerator.Count*"></a>
+  <h4 id="Langly_Rope_Enumerator_Count" data-uid="Langly.Rope.Enumerator.Count">Count</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -186,18 +150,18 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Lists_Chain_1_Enumerator_Current.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Lists.Chain%601.Enumerator.Current%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Rope_Enumerator_Current.md&amp;value=---%0Auid%3A%20Langly.Rope.Enumerator.Current%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Chains/DataStructures/Lists/Chain`1.Enumerator.cs/#L40">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Ropes/Rope.Enumerator.cs/#L23">View Source</a>
   </span>
-  <a id="Langly_DataStructures_Lists_Chain_1_Enumerator_Current_" data-uid="Langly.DataStructures.Lists.Chain`1.Enumerator.Current*"></a>
-  <h4 id="Langly_DataStructures_Lists_Chain_1_Enumerator_Current" data-uid="Langly.DataStructures.Lists.Chain`1.Enumerator.Current">Current</h4>
+  <a id="Langly_Rope_Enumerator_Current_" data-uid="Langly.Rope.Enumerator.Current*"></a>
+  <h4 id="Langly_Rope_Enumerator_Current" data-uid="Langly.Rope.Enumerator.Current">Current</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public TElement Current { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Glyph Current { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -209,7 +173,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">TElement</span></td>
+        <td><a class="xref" href="Langly.Glyph.html">Glyph</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -218,13 +182,13 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Lists_Chain_1_Enumerator_MoveNext.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Lists.Chain%601.Enumerator.MoveNext%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Rope_Enumerator_MoveNext.md&amp;value=---%0Auid%3A%20Langly.Rope.Enumerator.MoveNext%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Chains/DataStructures/Lists/Chain`1.Enumerator.cs/#L46">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Ropes/Rope.Enumerator.cs/#L29">View Source</a>
   </span>
-  <a id="Langly_DataStructures_Lists_Chain_1_Enumerator_MoveNext_" data-uid="Langly.DataStructures.Lists.Chain`1.Enumerator.MoveNext*"></a>
-  <h4 id="Langly_DataStructures_Lists_Chain_1_Enumerator_MoveNext" data-uid="Langly.DataStructures.Lists.Chain`1.Enumerator.MoveNext">MoveNext()</h4>
+  <a id="Langly_Rope_Enumerator_MoveNext_" data-uid="Langly.Rope.Enumerator.MoveNext*"></a>
+  <h4 id="Langly_Rope_Enumerator_MoveNext" data-uid="Langly.Rope.Enumerator.MoveNext">MoveNext()</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -248,13 +212,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Lists_Chain_1_Enumerator_MovePrevious.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Lists.Chain%601.Enumerator.MovePrevious%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Rope_Enumerator_MovePrevious.md&amp;value=---%0Auid%3A%20Langly.Rope.Enumerator.MovePrevious%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Chains/DataStructures/Lists/Chain`1.Enumerator.cs/#L71">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Ropes/Rope.Enumerator.cs/#L32">View Source</a>
   </span>
-  <a id="Langly_DataStructures_Lists_Chain_1_Enumerator_MovePrevious_" data-uid="Langly.DataStructures.Lists.Chain`1.Enumerator.MovePrevious*"></a>
-  <h4 id="Langly_DataStructures_Lists_Chain_1_Enumerator_MovePrevious" data-uid="Langly.DataStructures.Lists.Chain`1.Enumerator.MovePrevious">MovePrevious()</h4>
+  <a id="Langly_Rope_Enumerator_MovePrevious_" data-uid="Langly.Rope.Enumerator.MovePrevious*"></a>
+  <h4 id="Langly_Rope_Enumerator_MovePrevious" data-uid="Langly.Rope.Enumerator.MovePrevious">MovePrevious()</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -278,13 +242,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Lists_Chain_1_Enumerator_ResetBeginning.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Lists.Chain%601.Enumerator.ResetBeginning%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Rope_Enumerator_ResetBeginning.md&amp;value=---%0Auid%3A%20Langly.Rope.Enumerator.ResetBeginning%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Chains/DataStructures/Lists/Chain`1.Enumerator.cs/#L103">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Ropes/Rope.Enumerator.cs/#L35">View Source</a>
   </span>
-  <a id="Langly_DataStructures_Lists_Chain_1_Enumerator_ResetBeginning_" data-uid="Langly.DataStructures.Lists.Chain`1.Enumerator.ResetBeginning*"></a>
-  <h4 id="Langly_DataStructures_Lists_Chain_1_Enumerator_ResetBeginning" data-uid="Langly.DataStructures.Lists.Chain`1.Enumerator.ResetBeginning">ResetBeginning()</h4>
+  <a id="Langly_Rope_Enumerator_ResetBeginning_" data-uid="Langly.Rope.Enumerator.ResetBeginning*"></a>
+  <h4 id="Langly_Rope_Enumerator_ResetBeginning" data-uid="Langly.Rope.Enumerator.ResetBeginning">ResetBeginning()</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -293,13 +257,13 @@
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Lists_Chain_1_Enumerator_ResetEnding.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Lists.Chain%601.Enumerator.ResetEnding%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Rope_Enumerator_ResetEnding.md&amp;value=---%0Auid%3A%20Langly.Rope.Enumerator.ResetEnding%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Chains/DataStructures/Lists/Chain`1.Enumerator.cs/#L109">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Ropes/Rope.Enumerator.cs/#L38">View Source</a>
   </span>
-  <a id="Langly_DataStructures_Lists_Chain_1_Enumerator_ResetEnding_" data-uid="Langly.DataStructures.Lists.Chain`1.Enumerator.ResetEnding*"></a>
-  <h4 id="Langly_DataStructures_Lists_Chain_1_Enumerator_ResetEnding" data-uid="Langly.DataStructures.Lists.Chain`1.Enumerator.ResetEnding">ResetEnding()</h4>
+  <a id="Langly_Rope_Enumerator_ResetEnding_" data-uid="Langly.Rope.Enumerator.ResetEnding*"></a>
+  <h4 id="Langly_Rope_Enumerator_ResetEnding" data-uid="Langly.Rope.Enumerator.ResetEnding">ResetEnding()</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -337,10 +301,6 @@
   <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">System.Collections.IEnumerable</a>
   </div>
-  <h3 id="extensionmethods">Extension Methods</h3>
-  <div>
-      <a class="xref" href="Langly.NumericExtensions.html#Langly_NumericExtensions_Mode__2_Langly_ISequence___0___1__">NumericExtensions.Mode&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;)</a>
-  </div>
 </article>
           </div>
           
@@ -349,10 +309,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Lists_Chain_1_Enumerator.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Lists.Chain%601.Enumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Rope_Enumerator.md&amp;value=---%0Auid%3A%20Langly.Rope.Enumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Chains/DataStructures/Lists/Chain`1.Enumerator.cs/#L18" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Ropes/Rope.Enumerator.cs/#L19" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

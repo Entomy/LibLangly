@@ -4,28 +4,29 @@
     <Node Id="Arrays" Bounds="375.563333333333,335.76,53.0933333333335,25.96" />
     <Node Id="Buffers" Bounds="233.746666666667,167.88,56.7266666666667,25.96" />
     <Node Id="Chains" Bounds="374.551666666667,279.8,55.1166666666668,25.96" />
-    <Node Id="Console" Bounds="201.831666666667,335.76,62.5566666666664,25.96" />
-    <Node Id="Core" Bounds="377.11,55.96,50,25.96" ErrorMessage="Node 'Core' has a hub value of 21." Hub="21" />
+    <Node Id="Console" Bounds="199.831666666667,335.76,62.5566666666664,25.96" />
+    <Node Id="Core" Bounds="377.11,55.96,50,25.96" ErrorMessage="Node 'Core' has a hub value of 20." Hub="20" />
     <Node Id="Counters" Bounds="96.285,167.88,67.6500000000001,25.96" />
-    <Node Id="DataStructures" Bounds="353.283333333333,111.92,97.6533333333332,25.96" ErrorMessage="Node 'DataStructures' has a hub value of 36." Hub="36" />
+    <Node Id="DataStructures" Bounds="353.283333333333,111.92,97.6533333333332,25.96" ErrorMessage="Node 'DataStructures' has a hub value of 35." Hub="35" />
     <Node Id="Dictionary" Bounds="289.003333333333,223.84,82.2133333333334,25.96" Label="Dictionaries" />
     <Node Id="Encodings" Bounds="1.93166666666673,279.8,74.3566666666667,25.96" />
     <Node Id="Generators" Bounds="0,0,78.22,25.96" ErrorMessage="Unreferenced node detected:Generators (Generators)" IsUnreferenced="True" />
-    <Node Id="Glyph" Bounds="293.715,279.8,50.79,25.9599999999999" ErrorMessage="Node 'Glyph' has a hub value of 21." Hub="21" />
+    <Node Id="Glyph" Bounds="293.715,279.8,50.79,25.9599999999999" ErrorMessage="Node 'Glyph' has a hub value of 20." Hub="20" />
     <Node Id="Lists" Bounds="516.11,167.88,50,25.96" />
     <Node Id="Numerics" Bounds="95.0616666666667,223.84,70.0966666666667,25.96" />
+    <Node Id="Ropes" Bounds="292.97,335.76,52.28,25.96" />
     <Node Id="Rune" Bounds="14.11,223.84,50,25.96" />
     <Node Id="Sets" Bounds="481.11,111.92,50,25.96" />
     <Node Id="Stacks" Bounds="432.73,167.88,52.76,25.96" />
     <Node Id="Streams" Bounds="196.09,223.84,62.04,25.96" />
-    <Node Id="Text" Bounds="295.11,335.76,50,25.96" />
+    <Node Id="Text" Bounds="294.11,391.72,50,25.96" />
     <Node Id="Traits" Bounds="377.11,0,50,25.96" ErrorMessage="Unreferenced node detected:Traits (Traits)" IsUnreferenced="True" />
     <Node Id="Trees" Bounds="321.11,167.88,49.9999999999999,25.96" />
   </Nodes>
   <Links>
     <Link Source="Buffers" Target="Streams" Bounds="240.000747680664,193.839996337891,13.9909515380859,22.3695526123047" />
     <Link Source="Chains" Target="Arrays" Bounds="402.109985351563,305.760009765625,0,21" />
-    <Link Source="Chains" Target="Text" Bounds="346.563903808594,305.760009765625,36.5260925292969,24.9268188476563" />
+    <Link Source="Chains" Target="Ropes" Bounds="345.824310302734,305.760009765625,37.0337219238281,24.96875" />
     <Link Source="Core" Target="DataStructures" Bounds="402.109985351563,81.9199981689453,0,21" />
     <Link Source="Core" Target="Sets" Bounds="425.549346923828,81.5521697998047,49.19580078125,26.4711303710938" />
     <Link Source="Counters" Target="Numerics" Bounds="130.110000610352,193.839996337891,0,21" />
@@ -38,8 +39,9 @@
     <Link Source="Dictionary" Target="Glyph" Bounds="323.397369384766,249.800003051758,4.16116333007813,21.1689910888672" />
     <Link Source="Generators" Target="Core" Bounds="78.2200012207031,19.0091896057129,289.995086669922,44.7055778503418" />
     <Link Source="Generators" Target="Rune" Bounds="39.1100006103516,25.9599990844727,0,188.879997253418" />
-    <Link Source="Glyph" Target="Console" Bounds="260.601409912109,305.760009765625,38.5607604980469,25.0914001464844" />
-    <Link Source="Glyph" Target="Text" Bounds="319.341949462891,305.760009765625,0.37530517578125,21.0014343261719" />
+    <Link Source="Glyph" Target="Console" Bounds="259.116241455078,305.760009765625,39.58203125,25.1705627441406" />
+    <Link Source="Glyph" Target="Ropes" Bounds="319.109985351563,305.760009765625,0,21" />
+    <Link Source="Ropes" Target="Text" Bounds="319.109985351563,361.720001220703,0,21" />
     <Link Source="Rune" Target="Encodings" Bounds="39.1100006103516,249.800003051758,0,20.9999847412109" />
     <Link Source="Rune" Target="Glyph" Bounds="64.1100006103516,244.435775756836,220.73860168457,42.3740081787109" />
     <Link Source="Traits" Target="Core" Bounds="402.109985351563,25.9599990844727,0,21" />

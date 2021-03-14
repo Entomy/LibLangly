@@ -4,7 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 
 namespace Langly {
-	public partial class Text : ISequenceBidi<Glyph, Text.Enumerator> {
+	public partial class Rope : ISequenceBidi<Glyph, Rope.Enumerator> {
 		/// <inheritdoc/>
 		[return: NotNull]
 		public override Enumerator GetEnumerator() => throw new NotImplementedException();
@@ -14,7 +14,7 @@ namespace Langly {
 		public IEnumerator<Glyph> Reverse() => throw new NotImplementedException();
 
 		/// <summary>
-		/// Provides the enumerator for <see cref="Text"/>.
+		/// Provides the enumerator for <see cref="Rope"/>.
 		/// </summary>
 		[EditorBrowsable(EditorBrowsableState.Advanced)]
 		[StructLayout(LayoutKind.Auto)]
