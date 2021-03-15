@@ -1,16 +1,11 @@
 ﻿using System;
 using Xunit;
-using static Langly.DataStructures.Set;
 
 namespace Langly.DataStructures {
 	public class Set1_Tests {
 		[Fact]
 		public void Compliment() {
-			// Identities
-			Assert.Equal(Empty<Int32>(), !Universe<Int32>());
-			Assert.Equal(Universe<Int32>(), !Empty<Int32>());
-			// General
-			Set<Int32> singles = Set.Range(0, 9);
+			Set<Int32> singles = Set<Int32>.Range(0, 9);
 			Set<Int32> nonSingles = !singles;
 			Assert.True(nonSingles.Contains(-10));
 			Assert.False(nonSingles.Contains(0));
@@ -21,8 +16,8 @@ namespace Langly.DataStructures {
 
 		[Fact]
 		public void Difference() {
-			Set<Int32> singles = Set.Range(0, 9);
-			Set<Int32> primes = Of(2, 3, 5, 7, 11);
+			Set<Int32> singles = Set<Int32>.Range(0, 9);
+			Set<Int32> primes = new(2, 3, 5, 7, 11);
 			Set<Int32> nonPrimeSingles = singles - primes;
 			Assert.True(nonPrimeSingles.Contains(0));
 			Assert.True(nonPrimeSingles.Contains(1));
@@ -38,8 +33,8 @@ namespace Langly.DataStructures {
 
 		[Fact]
 		public void Disjunction() {
-			Set<Int32> singles = Set.Range(0, 9);
-			Set<Int32> primes = Of(2, 3, 5, 7, 11);
+			Set<Int32> singles = Set<Int32>.Range(0, 9);
+			Set<Int32> primes = new(2, 3, 5, 7, 11);
 			Set<Int32> singleOrPrime = singles ^ primes;
 			Assert.False(singleOrPrime.Contains(7));
 			Assert.True(singleOrPrime.Contains(8));
@@ -52,12 +47,12 @@ namespace Langly.DataStructures {
 		[InlineData(true, null)]
 		[InlineData(false, "")]
 		[InlineData(false, "hi")]
-		public void Empty(Boolean expected, System.String text) => Assert.Equal(expected, Empty<System.String>().Contains(text));
+		public void Empty(Boolean expected, String text) => Assert.Equal(expected, Set<String>.Empty.Contains(text));
 
 		[Fact]
 		public void Intersection() {
-			Set<Int32> evens = Of((Int32 x) => x % 2 == 0);
-			Set<Int32> primes = Of(2, 3, 5, 7);
+			Set<Int32> evens = new((Int32 x) => x % 2 == 0);
+			Set<Int32> primes = new(2, 3, 5, 7);
 			Set<Int32> evenPrimes = evens & primes;
 			Assert.False(evenPrimes.Contains(0));
 			Assert.False(evenPrimes.Contains(1));
@@ -77,12 +72,12 @@ namespace Langly.DataStructures {
 		[InlineData(8, 0, 9, true)]
 		[InlineData(9, 0, 9, true)]
 		[InlineData(10, 0, 9, false)]
-		public void Range(Int32 value, Int32 lower, Int32 upper, Boolean expected) => Assert.Equal(expected, Set.Range(lower, upper).Contains(value));
+		public void Range(Int32 value, Int32 lower, Int32 upper, Boolean expected) => Assert.Equal(expected, Set<Int32>.Range(lower, upper).Contains(value));
 
 		[Fact]
 		public void Union() {
-			Set<Int32> evens = Of((Int32 x) => x % 2 == 0);
-			Set<Int32> odds = Of((Int32 x) => x % 2 != 0);
+			Set<Int32> evens = new((Int32 x) => x % 2 == 0);
+			Set<Int32> odds = new((Int32 x) => x % 2 != 0);
 			Set<Int32> universe = evens | odds;
 			Assert.True(universe.Contains(-10));
 			Assert.True(universe.Contains(0));
@@ -93,6 +88,6 @@ namespace Langly.DataStructures {
 		[InlineData(false, null)]
 		[InlineData(true, "")]
 		[InlineData(true, "hi")]
-		public void Universe(Boolean expected, System.String text) => Assert.Equal(expected, Universe<System.String>().Contains(text));
+		public void Universe(Boolean expected, String text) => Assert.Equal(expected, Set<String>.Universe.Contains(text));
 	}
 }
