@@ -1,70 +1,62 @@
-﻿//NOTE: The contents of this file are not technically part of the backport, but are either required for its functioning, or so useful they are provided anyways. License should still be considered MIT, .NET Foundation. I'm not going to make a claim on any of this because it's all trivial code.
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using System.Globalization;
 using Langly;
 
 namespace System.Text {
 	/// <summary>
-	/// Provides extensions related to <see cref="Rune"/>.
+	/// Provides extensions related to <see cref="Text.Rune"/>.
 	/// </summary>
 	public static class RuneExtensions {
 		/// <summary>
-		/// Returns an enumeration of <see cref="Rune"/> from this string.
+		/// Returns an enumeration of <see cref="Text.Rune"/> from this string.
 		/// </summary>
 		/// <remarks>
 		/// Invalid sequences will be represented in the enumeration by <see cref="Rune.ReplacementChar"/>.
 		/// </remarks>
-		public static StringRuneEnumerator EnumerateRunes(this String @string) =>
-#if NETSTANDARD
-			new StringRuneEnumerator(@string);
-#else
-			@string.EnumerateRunes();
-#endif
+		public static StringRuneEnumerator EnumerateRunes(this String @string) => @string.EnumerateRunes();
 
 		/// <summary>
-		/// Returns an enumeration of <see cref="Rune"/> from this array.
+		/// Returns an enumeration of <see cref="Text.Rune"/> from this array.
 		/// </summary>
 		/// <remarks>
 		/// Invalid sequences will be represented in the enumeration by <see cref="Rune.ReplacementChar"/>.
 		/// </remarks>
-		public static SpanRuneEnumerator EnumerateRunes(this Char[] array) =>
-#if NETSTANDARD
-			new SpanRuneEnumerator(array.AsSpan());
-#else
-			MemoryExtensions.EnumerateRunes(array.AsSpan());
-#endif
+		public static SpanRuneEnumerator EnumerateRunes(this Char[] array) => MemoryExtensions.EnumerateRunes(array);
 
 		/// <summary>
-		/// Returns an enumeration of <see cref="Rune"/> from the provided span.
+		/// Returns an enumeration of <see cref="Text.Rune"/> from the provided memory.
 		/// </summary>
 		/// <remarks>
 		/// Invalid sequences will be represented in the enumeration by <see cref="Rune.ReplacementChar"/>.
 		/// </remarks>
-		public static SpanRuneEnumerator EnumerateRunes(this ReadOnlySpan<Char> span) =>
-#if NETSTANDARD
-			new SpanRuneEnumerator(span);
-#else
-			MemoryExtensions.EnumerateRunes(span);
-#endif
-
+		public static SpanRuneEnumerator EnumerateRunes(this Memory<Char> memory) => MemoryExtensions.EnumerateRunes(memory.Span);
 
 		/// <summary>
-		/// Returns an enumeration of <see cref="Rune"/> from the provided span.
+		/// Returns an enumeration of <see cref="Text.Rune"/> from the provided memory.
 		/// </summary>
 		/// <remarks>
 		/// Invalid sequences will be represented in the enumeration by <see cref="Rune.ReplacementChar"/>.
 		/// </remarks>
-		public static SpanRuneEnumerator EnumerateRunes(this Span<Char> span) =>
-#if NETSTANDARD
-			new SpanRuneEnumerator(span);
-#else
-			MemoryExtensions.EnumerateRunes(span);
-#endif
+		public static SpanRuneEnumerator EnumerateRunes(this ReadOnlyMemory<Char> memory) => MemoryExtensions.EnumerateRunes(memory.Span);
 
 		/// <summary>
-		/// Returns an enumeration of <see cref="Rune"/> from the provided sequence.
+		/// Returns an enumeration of <see cref="Text.Rune"/> from the provided span.
+		/// </summary>
+		/// <remarks>
+		/// Invalid sequences will be represented in the enumeration by <see cref="Rune.ReplacementChar"/>.
+		/// </remarks>
+		public static SpanRuneEnumerator EnumerateRunes(this Span<Char> span) => MemoryExtensions.EnumerateRunes(span);
+
+		/// <summary>
+		/// Returns an enumeration of <see cref="Text.Rune"/> from the provided span.
+		/// </summary>
+		/// <remarks>
+		/// Invalid sequences will be represented in the enumeration by <see cref="Rune.ReplacementChar"/>.
+		/// </remarks>
+		public static SpanRuneEnumerator EnumerateRunes(this ReadOnlySpan<Char> span) => MemoryExtensions.EnumerateRunes(span);
+
+		/// <summary>
+		/// Returns an enumeration of <see cref="Text.Rune"/> from the provided sequence.
 		/// </summary>
 		/// <remarks>
 		/// Invalid sequences will be represented in the enumeration by <see cref="Rune.ReplacementChar"/>.
@@ -72,7 +64,7 @@ namespace System.Text {
 		public static SeqRuneEnumerator EnumerateRunes(this IEnumerable<Char> enumerable) => new SeqRuneEnumerator(enumerable);
 
 		/// <summary>
-		/// Gets the <see cref="Rune"/> which begins at index <paramref name="index"/> in string <paramref name="input"/>.
+		/// Gets the <see cref="Text.Rune"/> which begins at index <paramref name="index"/> in string <paramref name="input"/>.
 		/// </summary>
 		/// <remarks>
 		/// Throws if <paramref name="input"/> is null, if <paramref name="index"/> is out of range, or if <paramref name="index"/> does not reference the start of a valid scalar value within <paramref name="input"/>.
@@ -80,7 +72,7 @@ namespace System.Text {
 		public static Rune GetRuneAt(this String input, Int32 index) => GetRuneAt(input.AsSpan(), index);
 
 		/// <summary>
-		/// Gets the <see cref="Rune"/> which begins at index <paramref name="index"/> in string <paramref name="input"/>.
+		/// Gets the <see cref="Text.Rune"/> which begins at index <paramref name="index"/> in string <paramref name="input"/>.
 		/// </summary>
 		/// <remarks>
 		/// Throws if <paramref name="input"/> is null, if <paramref name="index"/> is out of range, or if <paramref name="index"/> does not reference the start of a valid scalar value within <paramref name="input"/>.
@@ -88,7 +80,23 @@ namespace System.Text {
 		public static Rune GetRuneAt(this Char[] input, Int32 index) => GetRuneAt(input.AsSpan(), index);
 
 		/// <summary>
-		/// Gets the <see cref="Rune"/> which begins at index <paramref name="index"/> in string <paramref name="input"/>.
+		/// Gets the <see cref="Text.Rune"/> which begins at index <paramref name="index"/> in string <paramref name="input"/>.
+		/// </summary>
+		/// <remarks>
+		/// Throws if <paramref name="index"/> is out of range, or if <paramref name="index"/> does not reference the start of a valid scalar value within <paramref name="input"/>.
+		/// </remarks>
+		public static Rune GetRuneAt(this Memory<Char> input, Int32 index) => GetRuneAt(input.Span, index);
+
+		/// <summary>
+		/// Gets the <see cref="Text.Rune"/> which begins at index <paramref name="index"/> in string <paramref name="input"/>.
+		/// </summary>
+		/// <remarks>
+		/// Throws if <paramref name="index"/> is out of range, or if <paramref name="index"/> does not reference the start of a valid scalar value within <paramref name="input"/>.
+		/// </remarks>
+		public static Rune GetRuneAt(this ReadOnlyMemory<Char> input, Int32 index) => GetRuneAt(input.Span, index);
+
+		/// <summary>
+		/// Gets the <see cref="Text.Rune"/> which begins at index <paramref name="index"/> in string <paramref name="input"/>.
 		/// </summary>
 		/// <remarks>
 		/// Throws if <paramref name="index"/> is out of range, or if <paramref name="index"/> does not reference the start of a valid scalar value within <paramref name="input"/>.
@@ -96,7 +104,7 @@ namespace System.Text {
 		public static Rune GetRuneAt(this Span<Char> input, Int32 index) => GetRuneAt((ReadOnlySpan<Char>)input, index);
 
 		/// <summary>
-		/// Gets the <see cref="Rune"/> which begins at index <paramref name="index"/> in string <paramref name="input"/>.
+		/// Gets the <see cref="Text.Rune"/> which begins at index <paramref name="index"/> in string <paramref name="input"/>.
 		/// </summary>
 		/// <remarks>
 		/// Throws if <paramref name="index"/> is out of range, or if <paramref name="index"/> does not reference the start of a valid scalar value within <paramref name="input"/>.
@@ -104,7 +112,7 @@ namespace System.Text {
 		public static Rune GetRuneAt(this ReadOnlySpan<Char> input, Int32 index) => GetRuneAt(input, index, out _);
 
 		/// <summary>
-		/// Gets the <see cref="Rune"/> which begins at index <paramref name="index"/> in string <paramref name="input"/>.
+		/// Gets the <see cref="Text.Rune"/> which begins at index <paramref name="index"/> in string <paramref name="input"/>.
 		/// </summary>
 		/// <remarks>
 		/// Throws if <paramref name="input"/> is null, if <paramref name="index"/> is out of range, or if <paramref name="index"/> does not reference the start of a valid scalar value within <paramref name="input"/>.
@@ -112,7 +120,7 @@ namespace System.Text {
 		public static Rune GetRuneAt(this String input, Int32 index, out Int32 newIndex) => GetRuneAt(input.AsSpan(), index, out newIndex);
 
 		/// <summary>
-		/// Gets the <see cref="Rune"/> which begins at index <paramref name="index"/> in string <paramref name="input"/>.
+		/// Gets the <see cref="Text.Rune"/> which begins at index <paramref name="index"/> in string <paramref name="input"/>.
 		/// </summary>
 		/// <remarks>
 		/// Throws if <paramref name="input"/> is null, if <paramref name="index"/> is out of range, or if <paramref name="index"/> does not reference the start of a valid scalar value within <paramref name="input"/>.
@@ -120,7 +128,23 @@ namespace System.Text {
 		public static Rune GetRuneAt(this Char[] input, Int32 index, out Int32 newIndex) => GetRuneAt(input.AsSpan(), index, out newIndex);
 
 		/// <summary>
-		/// Gets the <see cref="Rune"/> which begins at index <paramref name="index"/> in string <paramref name="input"/>.
+		/// Gets the <see cref="Text.Rune"/> which begins at index <paramref name="index"/> in string <paramref name="input"/>.
+		/// </summary>
+		/// <remarks>
+		/// Throws if <paramref name="index"/> is out of range, or if <paramref name="index"/> does not reference the start of a valid scalar value within <paramref name="input"/>.
+		/// </remarks>
+		public static Rune GetRuneAt(this Memory<Char> input, Int32 index, out Int32 newIndex) => GetRuneAt(input.Span, index, out newIndex);
+
+		/// <summary>
+		/// Gets the <see cref="Text.Rune"/> which begins at index <paramref name="index"/> in string <paramref name="input"/>.
+		/// </summary>
+		/// <remarks>
+		/// Throws if <paramref name="index"/> is out of range, or if <paramref name="index"/> does not reference the start of a valid scalar value within <paramref name="input"/>.
+		/// </remarks>
+		public static Rune GetRuneAt(this ReadOnlyMemory<Char> input, Int32 index, out Int32 newIndex) => GetRuneAt(input.Span, index, out newIndex);
+
+		/// <summary>
+		/// Gets the <see cref="Text.Rune"/> which begins at index <paramref name="index"/> in string <paramref name="input"/>.
 		/// </summary>
 		/// <remarks>
 		/// Throws if <paramref name="index"/> is out of range, or if <paramref name="index"/> does not reference the start of a valid scalar value within <paramref name="input"/>.
@@ -128,7 +152,7 @@ namespace System.Text {
 		public static Rune GetRuneAt(this Span<Char> input, Int32 index, out Int32 newIndex) => GetRuneAt((ReadOnlySpan<Char>)input, index, out newIndex);
 
 		/// <summary>
-		/// Gets the <see cref="Rune"/> which begins at index <paramref name="index"/> in string <paramref name="input"/>.
+		/// Gets the <see cref="Text.Rune"/> which begins at index <paramref name="index"/> in string <paramref name="input"/>.
 		/// </summary>
 		/// <remarks>
 		/// Throws if <paramref name="index"/> is out of range, or if <paramref name="index"/> does not reference the start of a valid scalar value within <paramref name="input"/>.
@@ -189,10 +213,6 @@ namespace System.Text {
 				yield return generator.Rune();
 			}
 		}
-
-		internal static String ToLower(this String @string, CultureInfo culture) => culture.TextInfo.ToLower(@string);
-
-		internal static String ToUpper(this String @string, CultureInfo culture) => culture.TextInfo.ToUpper(@string);
 	}
 }
 

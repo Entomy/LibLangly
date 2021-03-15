@@ -1,6 +1,4 @@
-﻿//NOTE: The contents of this file are not technically part of the backport, but are so useful they are provided anyways. License should still be considered MIT, .NET Foundation. I'm not going to make a claim on any of this because it's all trivial code.
-
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 
 namespace System.Text {
@@ -48,9 +46,7 @@ namespace System.Text {
 		Object? IEnumerator.Current => Current;
 
 		/// <inheritdoc/>
-		void IDisposable.Dispose() {
-			// no-op
-		}
+		void IDisposable.Dispose() => Chars.Dispose();
 
 		/// <inheritdoc/>
 		IEnumerator IEnumerable.GetEnumerator() => this;
