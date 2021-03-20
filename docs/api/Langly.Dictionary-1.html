@@ -89,14 +89,12 @@
     <div><a class="xref" href="Langly.IIndex-2.html">IIndex</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>, TElement&gt;</div>
     <div><a class="xref" href="Langly.IIndexReadOnlyUnsafe-2.html">IIndexReadOnlyUnsafe</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>, TElement&gt;</div>
     <div><a class="xref" href="Langly.IIndexReadOnly-2.html">IIndexReadOnly</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>, TElement&gt;</div>
-    <div><a class="xref" href="Langly.IIndexUnsafe-2.html">IIndexUnsafe</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a>, TElement&gt;</div>
-    <div><a class="xref" href="Langly.IIndex-2.html">IIndex</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a>, TElement&gt;</div>
-    <div><a class="xref" href="Langly.IIndexReadOnlyUnsafe-2.html">IIndexReadOnlyUnsafe</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a>, TElement&gt;</div>
-    <div><a class="xref" href="Langly.IIndexReadOnly-2.html">IIndexReadOnly</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a>, TElement&gt;</div>
     <div><a class="xref" href="Langly.IInsertText-2.html">IInsertText</a>&lt;TElement, <a class="xref" href="Langly.Dictionary-1.html">Dictionary</a>&lt;TElement&gt;&gt;</div>
     <div><a class="xref" href="Langly.IInsert-3.html">IInsert</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>, TElement, <a class="xref" href="Langly.Dictionary-1.html">Dictionary</a>&lt;TElement&gt;&gt;</div>
     <div><a class="xref" href="Langly.IReplace-2.html">IReplace</a>&lt;TElement, <a class="xref" href="Langly.Dictionary-1.html">Dictionary</a>&lt;TElement&gt;&gt;</div>
     <div><a class="xref" href="Langly.IReplace-3.html">IReplace</a>&lt;TElement, TElement, <a class="xref" href="Langly.Dictionary-1.html">Dictionary</a>&lt;TElement&gt;&gt;</div>
+    <div><a class="xref" href="Langly.IParseUnsafe-1.html">IParseUnsafe</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="Langly.IParse-1.html">IParse</a>&lt;TElement&gt;</div>
     <div><a class="xref" href="Langly.ISequence-2.html">ISequence</a>&lt;TElement, <a class="xref" href="Langly.Dictionary-1.Enumerator.html">Dictionary.Enumerator</a>&lt;&gt;&gt;</div>
     <div><a class="xref" href="Langly.IContains-1.html">IContains</a>&lt;TElement&gt;</div>
     <div><a class="xref" href="Langly.ICount.html">ICount</a></div>
@@ -131,7 +129,7 @@
   <h6><strong>Assembly</strong>: Langly.Dictionaries.dll</h6>
   <h5 id="Langly_Dictionary_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class Dictionary&lt;TElement&gt; : IIndexText&lt;TElement&gt;, IIndexReadOnlyText&lt;TElement&gt;, IIndexUnsafe&lt;char, TElement&gt;, IIndex&lt;char, TElement&gt;, IIndexReadOnlyUnsafe&lt;char, TElement&gt;, IIndexReadOnly&lt;char, TElement&gt;, IIndexUnsafe&lt;int, TElement&gt;, IIndex&lt;int, TElement&gt;, IIndexReadOnlyUnsafe&lt;int, TElement&gt;, IIndexReadOnly&lt;int, TElement&gt;, IInsertText&lt;TElement, Dictionary&lt;TElement&gt;&gt;, IInsert&lt;char, TElement, Dictionary&lt;TElement&gt;&gt;, IReplace&lt;TElement, Dictionary&lt;TElement&gt;&gt;, IReplace&lt;TElement, TElement, Dictionary&lt;TElement&gt;&gt;, ISequence&lt;TElement, Dictionary&lt;TElement&gt;.Enumerator&gt;, IContains&lt;TElement&gt;, ICount, IEnumerable&lt;TElement&gt;, IEnumerable</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class Dictionary&lt;TElement&gt; : IIndexText&lt;TElement&gt;, IIndexReadOnlyText&lt;TElement&gt;, IIndexUnsafe&lt;char, TElement&gt;, IIndex&lt;char, TElement&gt;, IIndexReadOnlyUnsafe&lt;char, TElement&gt;, IIndexReadOnly&lt;char, TElement&gt;, IInsertText&lt;TElement, Dictionary&lt;TElement&gt;&gt;, IInsert&lt;char, TElement, Dictionary&lt;TElement&gt;&gt;, IReplace&lt;TElement, Dictionary&lt;TElement&gt;&gt;, IReplace&lt;TElement, TElement, Dictionary&lt;TElement&gt;&gt;, IParseUnsafe&lt;TElement&gt;, IParse&lt;TElement&gt;, ISequence&lt;TElement, Dictionary&lt;TElement&gt;.Enumerator&gt;, IContains&lt;TElement&gt;, ICount, IEnumerable&lt;TElement&gt;, IEnumerable</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -156,7 +154,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Dictionary_1__ctor.md&amp;value=---%0Auid%3A%20Langly.Dictionary%601.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Dictionaries/Dictionary`1.cs/#L36">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Dictionaries/Dictionary`1.cs/#L38">View Source</a>
   </span>
   <a id="Langly_Dictionary_1__ctor_" data-uid="Langly.Dictionary`1.#ctor*"></a>
   <h4 id="Langly_Dictionary_1__ctor" data-uid="Langly.Dictionary`1.#ctor">Dictionary()</h4>
@@ -172,7 +170,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Dictionary_1__ctor_Langly_DataStructures_Filter_.md&amp;value=---%0Auid%3A%20Langly.Dictionary%601.%23ctor(Langly.DataStructures.Filter)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Dictionaries/Dictionary`1.cs/#L42">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Dictionaries/Dictionary`1.cs/#L44">View Source</a>
   </span>
   <a id="Langly_Dictionary_1__ctor_" data-uid="Langly.Dictionary`1.#ctor*"></a>
   <h4 id="Langly_Dictionary_1__ctor_Langly_DataStructures_Filter_" data-uid="Langly.Dictionary`1.#ctor(Langly.DataStructures.Filter)">Dictionary(Filter)</h4>
@@ -208,7 +206,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Dictionary_1_Count.md&amp;value=---%0Auid%3A%20Langly.Dictionary%601.Count%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Dictionaries/Dictionary`1.cs/#L48">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Dictionaries/Dictionary`1.cs/#L50">View Source</a>
   </span>
   <a id="Langly_Dictionary_1_Count_" data-uid="Langly.Dictionary`1.Count*"></a>
   <h4 id="Langly_Dictionary_1_Count" data-uid="Langly.Dictionary`1.Count">Count</h4>
@@ -238,7 +236,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Dictionary_1_Item_System_Char_.md&amp;value=---%0Auid%3A%20Langly.Dictionary%601.Item(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Dictionaries/Dictionary`1.cs/#L51">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Dictionaries/Dictionary`1.cs/#L53">View Source</a>
   </span>
   <a id="Langly_Dictionary_1_Item_" data-uid="Langly.Dictionary`1.Item*"></a>
   <h4 id="Langly_Dictionary_1_Item_System_Char_" data-uid="Langly.Dictionary`1.Item(System.Char)">Item[Char]</h4>
@@ -287,7 +285,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Dictionary_1_Item_System_Char__System_Int32_.md&amp;value=---%0Auid%3A%20Langly.Dictionary%601.Item(System.Char*%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Dictionaries/Dictionary`1.cs/#L100">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Dictionaries/Dictionary`1.cs/#L102">View Source</a>
   </span>
   <a id="Langly_Dictionary_1_Item_" data-uid="Langly.Dictionary`1.Item*"></a>
   <h4 id="Langly_Dictionary_1_Item_System_Char__System_Int32_" data-uid="Langly.Dictionary`1.Item(System.Char*,System.Int32)">Item[Char*, Int32]</h4>
@@ -343,7 +341,7 @@ public TElement this[char *index, int length] { get; set; }</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Dictionary_1_Item_System_Char___.md&amp;value=---%0Auid%3A%20Langly.Dictionary%601.Item(System.Char%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Dictionaries/Dictionary`1.cs/#L65">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Dictionaries/Dictionary`1.cs/#L67">View Source</a>
   </span>
   <a id="Langly_Dictionary_1_Item_" data-uid="Langly.Dictionary`1.Item*"></a>
   <h4 id="Langly_Dictionary_1_Item_System_Char___" data-uid="Langly.Dictionary`1.Item(System.Char[])">Item[Char[]]</h4>
@@ -390,115 +388,10 @@ public TElement this[char *index, int length] { get; set; }</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Dictionary_1_Item_System_Int32_.md&amp;value=---%0Auid%3A%20Langly.Dictionary%601.Item(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Dictionaries/Dictionary`1.cs/#L108">View Source</a>
-  </span>
-  <a id="Langly_Dictionary_1_Item_" data-uid="Langly.Dictionary`1.Item*"></a>
-  <h4 id="Langly_Dictionary_1_Item_System_Int32_" data-uid="Langly.Dictionary`1.Item(System.Int32)">Item[Int32]</h4>
-  <div class="markdown level1 summary"><p>Gets  the element at the specified index.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public TElement this[int index] { get; set; }</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td><span class="parametername">index</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">TElement</span></td>
-        <td><p>The element at the specified index.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Dictionary_1_Item_System_Int32__System_Int32_.md&amp;value=---%0Auid%3A%20Langly.Dictionary%601.Item(System.Int32*%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Dictionaries/Dictionary`1.cs/#L115">View Source</a>
-  </span>
-  <a id="Langly_Dictionary_1_Item_" data-uid="Langly.Dictionary`1.Item*"></a>
-  <h4 id="Langly_Dictionary_1_Item_System_Int32__System_Int32_" data-uid="Langly.Dictionary`1.Item(System.Int32*,System.Int32)">Item[Int32*, Int32]</h4>
-  <div class="markdown level1 summary"><p>Gets or sets the element at the specified index.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
-public TElement this[int *index, int length] { get; set; }</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a>*</td>
-        <td><span class="parametername">index</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td><span class="parametername">length</span></td>
-        <td><p>The length of the <code data-dev-comment-type="paramref" class="paramref">index</code>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">TElement</span></td>
-        <td><p>The element at the specified index.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Dictionary_1_Item_System_Memory_System_Char__.md&amp;value=---%0Auid%3A%20Langly.Dictionary%601.Item(System.Memory%7BSystem.Char%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Dictionaries/Dictionary`1.cs/#L72">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Dictionaries/Dictionary`1.cs/#L74">View Source</a>
   </span>
   <a id="Langly_Dictionary_1_Item_" data-uid="Langly.Dictionary`1.Item*"></a>
   <h4 id="Langly_Dictionary_1_Item_System_Memory_System_Char__" data-uid="Langly.Dictionary`1.Item(System.Memory{System.Char})">Item[Memory&lt;Char&gt;]</h4>
@@ -548,7 +441,7 @@ public TElement this[int *index, int length] { get; set; }</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Dictionary_1_Item_System_ReadOnlyMemory_System_Char__.md&amp;value=---%0Auid%3A%20Langly.Dictionary%601.Item(System.ReadOnlyMemory%7BSystem.Char%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Dictionaries/Dictionary`1.cs/#L79">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Dictionaries/Dictionary`1.cs/#L81">View Source</a>
   </span>
   <a id="Langly_Dictionary_1_Item_" data-uid="Langly.Dictionary`1.Item*"></a>
   <h4 id="Langly_Dictionary_1_Item_System_ReadOnlyMemory_System_Char__" data-uid="Langly.Dictionary`1.Item(System.ReadOnlyMemory{System.Char})">Item[ReadOnlyMemory&lt;Char&gt;]</h4>
@@ -598,7 +491,7 @@ public TElement this[int *index, int length] { get; set; }</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Dictionary_1_Item_System_ReadOnlySpan_System_Char__.md&amp;value=---%0Auid%3A%20Langly.Dictionary%601.Item(System.ReadOnlySpan%7BSystem.Char%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Dictionaries/Dictionary`1.cs/#L93">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Dictionaries/Dictionary`1.cs/#L95">View Source</a>
   </span>
   <a id="Langly_Dictionary_1_Item_" data-uid="Langly.Dictionary`1.Item*"></a>
   <h4 id="Langly_Dictionary_1_Item_System_ReadOnlySpan_System_Char__" data-uid="Langly.Dictionary`1.Item(System.ReadOnlySpan{System.Char})">Item[ReadOnlySpan&lt;Char&gt;]</h4>
@@ -648,7 +541,7 @@ public TElement this[int *index, int length] { get; set; }</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Dictionary_1_Item_System_Span_System_Char__.md&amp;value=---%0Auid%3A%20Langly.Dictionary%601.Item(System.Span%7BSystem.Char%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Dictionaries/Dictionary`1.cs/#L86">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Dictionaries/Dictionary`1.cs/#L88">View Source</a>
   </span>
   <a id="Langly_Dictionary_1_Item_" data-uid="Langly.Dictionary`1.Item*"></a>
   <h4 id="Langly_Dictionary_1_Item_System_Span_System_Char__" data-uid="Langly.Dictionary`1.Item(System.Span{System.Char})">Item[Span&lt;Char&gt;]</h4>
@@ -698,7 +591,7 @@ public TElement this[int *index, int length] { get; set; }</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Dictionary_1_Item_System_String_.md&amp;value=---%0Auid%3A%20Langly.Dictionary%601.Item(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Dictionaries/Dictionary`1.cs/#L58">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Dictionaries/Dictionary`1.cs/#L60">View Source</a>
   </span>
   <a id="Langly_Dictionary_1_Item_" data-uid="Langly.Dictionary`1.Item*"></a>
   <h4 id="Langly_Dictionary_1_Item_System_String_" data-uid="Langly.Dictionary`1.Item(System.String)">Item[String]</h4>
@@ -747,6 +640,49 @@ public TElement this[int *index, int length] { get; set; }</code></pre>
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Dictionary_1_Add_System_String__0_.md&amp;value=---%0Auid%3A%20Langly.Dictionary%601.Add(System.String%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Dictionaries/Dictionary`1.cs/#L117">View Source</a>
+  </span>
+  <a id="Langly_Dictionary_1_Add_" data-uid="Langly.Dictionary`1.Add*"></a>
+  <h4 id="Langly_Dictionary_1_Add_System_String__0_" data-uid="Langly.Dictionary`1.Add(System.String,`0)">Add(String, TElement)</h4>
+  <div class="markdown level1 summary"><p>Adds an element into the collection at the specified index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(string index, TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>The index at which the <code data-dev-comment-type="paramref" class="paramref">element</code> should be inserted.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element to insert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_Dictionary_1_Add_System_String__0__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This exists to support collection initializers, and otherwise just does <a class="xref" href="Langly.IInsertText-2.html#Langly_IInsertText_2_Insert_System_String__0_">Insert(String, TElement)</a>.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Dictionary_1_GetEnumerator.md&amp;value=---%0Auid%3A%20Langly.Dictionary%601.GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -784,7 +720,7 @@ public TElement this[int *index, int length] { get; set; }</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Dictionary_1_Langly_IContains_TElement__Contains__0_.md&amp;value=---%0Auid%3A%20Langly.Dictionary%601.Langly%23IContains%7BTElement%7D%23Contains(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Dictionaries/Dictionary`1.cs/#L123">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Dictionaries/Dictionary`1.cs/#L121">View Source</a>
   </span>
   <a id="Langly_Dictionary_1_Langly_IContains_TElement__Contains_" data-uid="Langly.Dictionary`1.Langly#IContains{TElement}#Contains*"></a>
   <h4 id="Langly_Dictionary_1_Langly_IContains_TElement__Contains__0_" data-uid="Langly.Dictionary`1.Langly#IContains{TElement}#Contains(`0)">IContains&lt;TElement&gt;.Contains(TElement)</h4>
@@ -834,7 +770,7 @@ public TElement this[int *index, int length] { get; set; }</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Dictionary_1_Langly_IInsert_System_Char_TElement_Langly_Dictionary_TElement___Insert_System_Char__0_.md&amp;value=---%0Auid%3A%20Langly.Dictionary%601.Langly%23IInsert%7BSystem%23Char%2CTElement%2CLangly%23Dictionary%7BTElement%7D%7D%23Insert(System.Char%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Dictionaries/Dictionary`1.cs/#L126">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Dictionaries/Dictionary`1.cs/#L124">View Source</a>
   </span>
   <a id="Langly_Dictionary_1_Langly_IInsert_System_Char_TElement_Langly_Dictionary_TElement___Insert_" data-uid="Langly.Dictionary`1.Langly#IInsert{System#Char,TElement,Langly#Dictionary{TElement}}#Insert*"></a>
   <h4 id="Langly_Dictionary_1_Langly_IInsert_System_Char_TElement_Langly_Dictionary_TElement___Insert_System_Char__0_" data-uid="Langly.Dictionary`1.Langly#IInsert{System#Char,TElement,Langly#Dictionary{TElement}}#Insert(System.Char,`0)">IInsert&lt;Char, TElement, Dictionary&lt;TElement&gt;&gt;.Insert(Char, TElement)</h4>
@@ -889,7 +825,7 @@ public TElement this[int *index, int length] { get; set; }</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Dictionary_1_Langly_IInsertText_TElement_Langly_Dictionary_TElement___Insert_System_ReadOnlySpan_System_Char___0_.md&amp;value=---%0Auid%3A%20Langly.Dictionary%601.Langly%23IInsertText%7BTElement%2CLangly%23Dictionary%7BTElement%7D%7D%23Insert(System.ReadOnlySpan%7BSystem.Char%7D%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Dictionaries/Dictionary`1.cs/#L134">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Dictionaries/Dictionary`1.cs/#L132">View Source</a>
   </span>
   <a id="Langly_Dictionary_1_Langly_IInsertText_TElement_Langly_Dictionary_TElement___Insert_" data-uid="Langly.Dictionary`1.Langly#IInsertText{TElement,Langly#Dictionary{TElement}}#Insert*"></a>
   <h4 id="Langly_Dictionary_1_Langly_IInsertText_TElement_Langly_Dictionary_TElement___Insert_System_ReadOnlySpan_System_Char___0_" data-uid="Langly.Dictionary`1.Langly#IInsertText{TElement,Langly#Dictionary{TElement}}#Insert(System.ReadOnlySpan{System.Char},`0)">IInsertText&lt;TElement, Dictionary&lt;TElement&gt;&gt;.Insert(ReadOnlySpan&lt;Char&gt;, TElement)</h4>
@@ -942,10 +878,429 @@ public TElement this[int *index, int length] { get; set; }</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Dictionary_1_Langly_IParse_TElement__Parse_System_Char___System_Int32__.md&amp;value=---%0Auid%3A%20Langly.Dictionary%601.Langly%23IParse%7BTElement%7D%23Parse(System.Char%5B%5D%2CSystem.Int32%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Dictionaries/Dictionary`1.cs/#L155">View Source</a>
+  </span>
+  <a id="Langly_Dictionary_1_Langly_IParse_TElement__Parse_" data-uid="Langly.Dictionary`1.Langly#IParse{TElement}#Parse*"></a>
+  <h4 id="Langly_Dictionary_1_Langly_IParse_TElement__Parse_System_Char___System_Int32__" data-uid="Langly.Dictionary`1.Langly#IParse{TElement}#Parse(System.Char[],System.Int32@)">IParse&lt;TElement&gt;.Parse(Char[], ref Int32)</h4>
+  <div class="markdown level1 summary"><p>Parses a <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> from the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TElement IParse&lt;TElement&gt;.Parse(char[] source, ref int pos)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>[]</td>
+        <td><span class="parametername">source</span></td>
+        <td><p>The source to parse.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">pos</span></td>
+        <td><p>The position within the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><p>The element that was parsed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_Dictionary_1_Langly_IParse_TElement__Parse_System_Char___System_Int32___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>When this call occurs <code data-dev-comment-type="paramref" class="paramref">pos</code> is the index at which to begin parsing. As this method executes <code data-dev-comment-type="paramref" class="paramref">pos</code> is updated such that when this call returns <code data-dev-comment-type="paramref" class="paramref">pos</code> is after the parsed value. This allows for continually parsing elements from the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Dictionary_1_Langly_IParse_TElement__Parse_System_Memory_System_Char__System_Int32__.md&amp;value=---%0Auid%3A%20Langly.Dictionary%601.Langly%23IParse%7BTElement%7D%23Parse(System.Memory%7BSystem.Char%7D%2CSystem.Int32%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Dictionaries/Dictionary`1.cs/#L159">View Source</a>
+  </span>
+  <a id="Langly_Dictionary_1_Langly_IParse_TElement__Parse_" data-uid="Langly.Dictionary`1.Langly#IParse{TElement}#Parse*"></a>
+  <h4 id="Langly_Dictionary_1_Langly_IParse_TElement__Parse_System_Memory_System_Char__System_Int32__" data-uid="Langly.Dictionary`1.Langly#IParse{TElement}#Parse(System.Memory{System.Char},System.Int32@)">IParse&lt;TElement&gt;.Parse(Memory&lt;Char&gt;, ref Int32)</h4>
+  <div class="markdown level1 summary"><p>Parses a <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> from the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TElement IParse&lt;TElement&gt;.Parse(Memory&lt;char&gt; source, ref int pos)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">source</span></td>
+        <td><p>The source to parse.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">pos</span></td>
+        <td><p>The position within the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><p>The element that was parsed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_Dictionary_1_Langly_IParse_TElement__Parse_System_Memory_System_Char__System_Int32___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>When this call occurs <code data-dev-comment-type="paramref" class="paramref">pos</code> is the index at which to begin parsing. As this method executes <code data-dev-comment-type="paramref" class="paramref">pos</code> is updated such that when this call returns <code data-dev-comment-type="paramref" class="paramref">pos</code> is after the parsed value. This allows for continually parsing elements from the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Dictionary_1_Langly_IParse_TElement__Parse_System_ReadOnlyMemory_System_Char__System_Int32__.md&amp;value=---%0Auid%3A%20Langly.Dictionary%601.Langly%23IParse%7BTElement%7D%23Parse(System.ReadOnlyMemory%7BSystem.Char%7D%2CSystem.Int32%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Dictionaries/Dictionary`1.cs/#L163">View Source</a>
+  </span>
+  <a id="Langly_Dictionary_1_Langly_IParse_TElement__Parse_" data-uid="Langly.Dictionary`1.Langly#IParse{TElement}#Parse*"></a>
+  <h4 id="Langly_Dictionary_1_Langly_IParse_TElement__Parse_System_ReadOnlyMemory_System_Char__System_Int32__" data-uid="Langly.Dictionary`1.Langly#IParse{TElement}#Parse(System.ReadOnlyMemory{System.Char},System.Int32@)">IParse&lt;TElement&gt;.Parse(ReadOnlyMemory&lt;Char&gt;, ref Int32)</h4>
+  <div class="markdown level1 summary"><p>Parses a <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> from the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TElement IParse&lt;TElement&gt;.Parse(ReadOnlyMemory&lt;char&gt; source, ref int pos)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">source</span></td>
+        <td><p>The source to parse.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">pos</span></td>
+        <td><p>The position within the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><p>The element that was parsed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_Dictionary_1_Langly_IParse_TElement__Parse_System_ReadOnlyMemory_System_Char__System_Int32___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>When this call occurs <code data-dev-comment-type="paramref" class="paramref">pos</code> is the index at which to begin parsing. As this method executes <code data-dev-comment-type="paramref" class="paramref">pos</code> is updated such that when this call returns <code data-dev-comment-type="paramref" class="paramref">pos</code> is after the parsed value. This allows for continually parsing elements from the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Dictionary_1_Langly_IParse_TElement__Parse_System_ReadOnlySpan_System_Char__System_Int32__.md&amp;value=---%0Auid%3A%20Langly.Dictionary%601.Langly%23IParse%7BTElement%7D%23Parse(System.ReadOnlySpan%7BSystem.Char%7D%2CSystem.Int32%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Dictionaries/Dictionary`1.cs/#L171">View Source</a>
+  </span>
+  <a id="Langly_Dictionary_1_Langly_IParse_TElement__Parse_" data-uid="Langly.Dictionary`1.Langly#IParse{TElement}#Parse*"></a>
+  <h4 id="Langly_Dictionary_1_Langly_IParse_TElement__Parse_System_ReadOnlySpan_System_Char__System_Int32__" data-uid="Langly.Dictionary`1.Langly#IParse{TElement}#Parse(System.ReadOnlySpan{System.Char},System.Int32@)">IParse&lt;TElement&gt;.Parse(ReadOnlySpan&lt;Char&gt;, ref Int32)</h4>
+  <div class="markdown level1 summary"><p>Parses a <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> from the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TElement IParse&lt;TElement&gt;.Parse(ReadOnlySpan&lt;char&gt; source, ref int pos)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">source</span></td>
+        <td><p>The source to parse.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">pos</span></td>
+        <td><p>The position within the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><p>The element that was parsed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_Dictionary_1_Langly_IParse_TElement__Parse_System_ReadOnlySpan_System_Char__System_Int32___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>When this call occurs <code data-dev-comment-type="paramref" class="paramref">pos</code> is the index at which to begin parsing. As this method executes <code data-dev-comment-type="paramref" class="paramref">pos</code> is updated such that when this call returns <code data-dev-comment-type="paramref" class="paramref">pos</code> is after the parsed value. This allows for continually parsing elements from the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Dictionary_1_Langly_IParse_TElement__Parse_System_Span_System_Char__System_Int32__.md&amp;value=---%0Auid%3A%20Langly.Dictionary%601.Langly%23IParse%7BTElement%7D%23Parse(System.Span%7BSystem.Char%7D%2CSystem.Int32%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Dictionaries/Dictionary`1.cs/#L167">View Source</a>
+  </span>
+  <a id="Langly_Dictionary_1_Langly_IParse_TElement__Parse_" data-uid="Langly.Dictionary`1.Langly#IParse{TElement}#Parse*"></a>
+  <h4 id="Langly_Dictionary_1_Langly_IParse_TElement__Parse_System_Span_System_Char__System_Int32__" data-uid="Langly.Dictionary`1.Langly#IParse{TElement}#Parse(System.Span{System.Char},System.Int32@)">IParse&lt;TElement&gt;.Parse(Span&lt;Char&gt;, ref Int32)</h4>
+  <div class="markdown level1 summary"><p>Parses a <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> from the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TElement IParse&lt;TElement&gt;.Parse(Span&lt;char&gt; source, ref int pos)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">source</span></td>
+        <td><p>The source to parse.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">pos</span></td>
+        <td><p>The position within the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><p>The element that was parsed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_Dictionary_1_Langly_IParse_TElement__Parse_System_Span_System_Char__System_Int32___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>When this call occurs <code data-dev-comment-type="paramref" class="paramref">pos</code> is the index at which to begin parsing. As this method executes <code data-dev-comment-type="paramref" class="paramref">pos</code> is updated such that when this call returns <code data-dev-comment-type="paramref" class="paramref">pos</code> is after the parsed value. This allows for continually parsing elements from the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Dictionary_1_Langly_IParse_TElement__Parse_System_String_System_Int32__.md&amp;value=---%0Auid%3A%20Langly.Dictionary%601.Langly%23IParse%7BTElement%7D%23Parse(System.String%2CSystem.Int32%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Dictionaries/Dictionary`1.cs/#L151">View Source</a>
+  </span>
+  <a id="Langly_Dictionary_1_Langly_IParse_TElement__Parse_" data-uid="Langly.Dictionary`1.Langly#IParse{TElement}#Parse*"></a>
+  <h4 id="Langly_Dictionary_1_Langly_IParse_TElement__Parse_System_String_System_Int32__" data-uid="Langly.Dictionary`1.Langly#IParse{TElement}#Parse(System.String,System.Int32@)">IParse&lt;TElement&gt;.Parse(String, ref Int32)</h4>
+  <div class="markdown level1 summary"><p>Parses a <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> from the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TElement IParse&lt;TElement&gt;.Parse(string source, ref int pos)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">source</span></td>
+        <td><p>The source to parse.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">pos</span></td>
+        <td><p>The position within the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><p>The element that was parsed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_Dictionary_1_Langly_IParse_TElement__Parse_System_String_System_Int32___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>When this call occurs <code data-dev-comment-type="paramref" class="paramref">pos</code> is the index at which to begin parsing. As this method executes <code data-dev-comment-type="paramref" class="paramref">pos</code> is updated such that when this call returns <code data-dev-comment-type="paramref" class="paramref">pos</code> is after the parsed value. This allows for continually parsing elements from the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Dictionary_1_Langly_IParseUnsafe_TElement__Parse_System_Char__System_Int32_System_Int32__.md&amp;value=---%0Auid%3A%20Langly.Dictionary%601.Langly%23IParseUnsafe%7BTElement%7D%23Parse(System.Char*%2CSystem.Int32%2CSystem.Int32%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Dictionaries/Dictionary`1.cs/#L175">View Source</a>
+  </span>
+  <a id="Langly_Dictionary_1_Langly_IParseUnsafe_TElement__Parse_" data-uid="Langly.Dictionary`1.Langly#IParseUnsafe{TElement}#Parse*"></a>
+  <h4 id="Langly_Dictionary_1_Langly_IParseUnsafe_TElement__Parse_System_Char__System_Int32_System_Int32__" data-uid="Langly.Dictionary`1.Langly#IParseUnsafe{TElement}#Parse(System.Char*,System.Int32,System.Int32@)">IParseUnsafe&lt;TElement&gt;.Parse(Char*, Int32, ref Int32)</h4>
+  <div class="markdown level1 summary"><p>Parses a <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> from the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TElement IParseUnsafe&lt;TElement&gt;.Parse(char *source, int length, ref int pos)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>*</td>
+        <td><span class="parametername">source</span></td>
+        <td><p>The source to parse.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">length</span></td>
+        <td><p>The length of the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">pos</span></td>
+        <td><p>The position within the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><p>The element that was parsed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_Dictionary_1_Langly_IParseUnsafe_TElement__Parse_System_Char__System_Int32_System_Int32___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>When this call occurs <code data-dev-comment-type="paramref" class="paramref">pos</code> is the index at which to begin parsing. As this method executes <code data-dev-comment-type="paramref" class="paramref">pos</code> is updated such that when this call returns <code data-dev-comment-type="paramref" class="paramref">pos</code> is after the parsed value. This allows for continually parsing elements from the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Dictionary_1_Langly_IReplace_TElement_TElement_Langly_Dictionary_TElement___Replace__0__0_.md&amp;value=---%0Auid%3A%20Langly.Dictionary%601.Langly%23IReplace%7BTElement%2CTElement%2CLangly%23Dictionary%7BTElement%7D%7D%23Replace(%600%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Dictionaries/Dictionary`1.cs/#L153">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Dictionaries/Dictionary`1.cs/#L179">View Source</a>
   </span>
   <a id="Langly_Dictionary_1_Langly_IReplace_TElement_TElement_Langly_Dictionary_TElement___Replace_" data-uid="Langly.Dictionary`1.Langly#IReplace{TElement,TElement,Langly#Dictionary{TElement}}#Replace*"></a>
   <h4 id="Langly_Dictionary_1_Langly_IReplace_TElement_TElement_Langly_Dictionary_TElement___Replace__0__0_" data-uid="Langly.Dictionary`1.Langly#IReplace{TElement,TElement,Langly#Dictionary{TElement}}#Replace(`0,`0)">IReplace&lt;TElement, TElement, Dictionary&lt;TElement&gt;&gt;.Replace(TElement, TElement)</h4>
@@ -1014,18 +1369,6 @@ public TElement this[int *index, int length] { get; set; }</code></pre>
       <a class="xref" href="Langly.IIndexReadOnly-2.html">IIndexReadOnly&lt;TIndex, TElement&gt;</a>
   </div>
   <div>
-      <a class="xref" href="Langly.IIndexUnsafe-2.html">IIndexUnsafe&lt;TIndex, TElement&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="Langly.IIndex-2.html">IIndex&lt;TIndex, TElement&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="Langly.IIndexReadOnlyUnsafe-2.html">IIndexReadOnlyUnsafe&lt;TIndex, TElement&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="Langly.IIndexReadOnly-2.html">IIndexReadOnly&lt;TIndex, TElement&gt;</a>
-  </div>
-  <div>
       <a class="xref" href="Langly.IInsertText-2.html">IInsertText&lt;TElement, TResult&gt;</a>
   </div>
   <div>
@@ -1036,6 +1379,12 @@ public TElement this[int *index, int length] { get; set; }</code></pre>
   </div>
   <div>
       <a class="xref" href="Langly.IReplace-3.html">IReplace&lt;TSearch, TReplace, TResult&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IParseUnsafe-1.html">IParseUnsafe&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IParse-1.html">IParse&lt;TElement&gt;</a>
   </div>
   <div>
       <a class="xref" href="Langly.ISequence-2.html">ISequence&lt;TElement, TEnumerator&gt;</a>

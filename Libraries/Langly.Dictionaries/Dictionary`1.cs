@@ -10,9 +10,10 @@ namespace Langly {
 	/// <typeparam name="TElement">The type of the elements in the dictionary.</typeparam>
 	public sealed partial class Dictionary<TElement> :
 		IContains<TElement>,
-		IIndexText<TElement>, IIndexUnsafe<Char, TElement>, IIndexUnsafe<Int32, TElement>,
+		IIndexText<TElement>, IIndexUnsafe<Char, TElement>,
 		IInsertText<TElement, Dictionary<TElement>>,
-		IReplace<TElement, Dictionary<TElement>> {
+		IReplace<TElement, Dictionary<TElement>>,
+		IParseUnsafe<TElement> {
 		/// <summary>
 		/// The <see cref="Filter{TIndex, TElement}"/> being used.
 		/// </summary>
@@ -20,7 +21,7 @@ namespace Langly {
 		/// This is never <see langword="null"/>; a sentinel is used by default.
 		/// </remarks>
 		[NotNull, DisallowNull]
-		private readonly Filter<Int32, TElement> Filter;
+		private readonly Filter<Char, TElement> Filter;
 
 		/// <summary>
 		/// The head node of the trie.
@@ -28,6 +29,7 @@ namespace Langly {
 		/// <remarks>
 		/// This uses a sentinel to simplify coding. Since we're calling everything off of this node, if it's never null, the code is simpler.
 		/// </remarks>
+		[NotNull, DisallowNull]
 		private readonly Node Head;
 
 		/// <summary>
@@ -40,7 +42,7 @@ namespace Langly {
 		/// </summary>
 		/// <param name="filter">Flags designating which filters to set up.</param>
 		public Dictionary(Filter filter) {
-			Filter = Filter<Int32, TElement>.Create(filter);
+			Filter = Filter<Char, TElement>.Create(filter);
 			Head = new Node(index: '\0', filter: Filter, parent: Head);
 		}
 
@@ -104,20 +106,16 @@ namespace Langly {
 			set => Head[index, length].Element = value;
 		}
 
-		/// <inheritdoc/>
-		[AllowNull, MaybeNull]
-		public TElement this[Int32 index] {
-			get => Head[index].Element;
-			set => Head[index].Element = value;
-		}
-
-		/// <inheritdoc/>
-		[CLSCompliant(false)]
-		[AllowNull, MaybeNull]
-		public unsafe TElement this[[DisallowNull] Int32* index, Int32 length] {
-			get => Head[index, length].Element;
-			set => Head[index, length].Element = value;
-		}
+		/// <summary>
+		/// Adds an element into the collection at the specified index.
+		/// </summary>
+		/// <param name="index">The index at which the <paramref name="element"/> should be inserted.</param>
+		/// <param name="element">The element to insert.</param>
+		/// <remarks>
+		/// This exists to support collection initializers, and otherwise just does <see cref="IInsertText{TElement, TResult}.Insert(String, TElement)"/>.
+		/// </remarks>
+		[return: MaybeNull]
+		public void Add([DisallowNull] String index, [AllowNull] TElement element) => ((IInsertText<TElement, Dictionary<TElement>>)this).Insert(index, element);
 
 		/// <inheritdoc/>
 		Boolean IContains<TElement>.Contains([AllowNull] TElement element) => Head.Contains(element);
@@ -148,6 +146,34 @@ namespace Langly {
 			Count++;
 			return this;
 		}
+
+		/// <inheritdoc/>
+		[return: MaybeNull]
+		TElement IParse<TElement>.Parse([AllowNull] String source, ref Int32 pos) => Head.Parse(source, ref pos);
+
+		///<inheritdoc/>
+		[return: MaybeNull]
+		TElement IParse<TElement>.Parse([AllowNull] Char[] source, ref Int32 pos) => Head.Parse(source, ref pos);
+
+		/// <inheritdoc/>
+		[return: MaybeNull]
+		TElement IParse<TElement>.Parse(Memory<Char> source, ref Int32 pos) => Head.Parse(source, ref pos);
+
+		/// <inheritdoc/>
+		[return: MaybeNull]
+		TElement IParse<TElement>.Parse(ReadOnlyMemory<Char> source, ref Int32 pos) => Head.Parse(source, ref pos);
+
+		/// <inheritdoc/>
+		[return: MaybeNull]
+		TElement IParse<TElement>.Parse(Span<Char> source, ref Int32 pos) => Head.Parse(source, ref pos);
+
+		/// <inheritdoc/>
+		[return: MaybeNull]
+		TElement IParse<TElement>.Parse(ReadOnlySpan<Char> source, ref Int32 pos) => Head.Parse(source, ref pos);
+
+		/// <inheritdoc/>
+		[return: MaybeNull]
+		unsafe TElement IParseUnsafe<TElement>.Parse([AllowNull] Char* source, Int32 length, ref Int32 pos) => Head.Parse(source, length, ref pos);
 
 		/// <inheritdoc/>
 		[return: MaybeNull]

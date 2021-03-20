@@ -128,6 +128,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Add&lt;TResult&gt;(this IAddText&lt;TResult&gt; collection, string elements)
+
     where TResult : IAddText&lt;TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -204,6 +205,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Add&lt;TElement, TResult&gt;(this IAdd&lt;TElement, TResult&gt; collection, TElement element)
+
     where TResult : IAdd&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -285,6 +287,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Add&lt;TElement, TResult&gt;(this IAdd&lt;TElement, TResult&gt; collection, params TElement[] elements)
+
     where TResult : IAdd&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -366,6 +369,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Add&lt;TElement, TResult&gt;(this IAdd&lt;TElement, TResult&gt; collection, Memory&lt;TElement&gt; elements)
+
     where TResult : IAdd&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -447,6 +451,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Add&lt;TElement, TResult&gt;(this IAdd&lt;TElement, TResult&gt; collection, ReadOnlyMemory&lt;TElement&gt; elements)
+
     where TResult : IAdd&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -528,6 +533,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Add&lt;TElement, TResult&gt;(this IAdd&lt;TElement, TResult&gt; collection, ReadOnlySpan&lt;TElement&gt; elements)
+
     where TResult : IAdd&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -609,6 +615,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Add&lt;TElement, TResult&gt;(this IAdd&lt;TElement, TResult&gt; collection, Span&lt;TElement&gt; elements)
+
     where TResult : IAdd&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -691,6 +698,7 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, TResult&gt; collection, TElement*elements, int length)
+
     where TElement : struct where TResult : IAddUnsafe&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -778,6 +786,7 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Add&lt;TElement, TResult, TEnumerator&gt;(this IAdd&lt;TElement, TResult&gt; collection, ISequence&lt;TElement, TEnumerator&gt; elements)
+
     where TResult : IAdd&lt;TElement, TResult&gt; where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -864,6 +873,7 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TSelf Clear&lt;TSelf&gt;(this IClear&lt;TSelf&gt; collection)
+
     where TSelf : IClear&lt;TSelf&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1142,6 +1152,7 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult EnsureLoaded&lt;TElement, TResult, TSource&gt;(this IWrite&lt;TElement, TResult&gt; stream, nint amount, IRead&lt;TElement, TSource&gt; source)
+
     where TResult : IWrite&lt;TElement, TResult&gt; where TSource : IRead&lt;TElement, TSource&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1231,6 +1242,7 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TElement Fold&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, Func&lt;TElement, TElement, TElement&gt; func, TElement identity)
+
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1319,6 +1331,7 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TSelf Grow&lt;TSelf&gt;(this IResize&lt;TSelf&gt; collection)
+
     where TSelf : IResize&lt;TSelf&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2248,6 +2261,7 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TResult&gt;(this IInsertText&lt;TResult&gt; collection, nint index, string elements)
+
     where TResult : IInsertText&lt;TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2327,6 +2341,7 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TElement, TResult&gt;(this IInsert&lt;TElement, TResult&gt; collection, nint index, TElement element)
+
     where TResult : IInsert&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2411,6 +2426,7 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TElement, TResult&gt;(this IInsert&lt;TElement, TResult&gt; collection, nint index, params TElement[] elements)
+
     where TResult : IInsert&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2495,6 +2511,7 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TElement, TResult&gt;(this IInsert&lt;TElement, TResult&gt; collection, nint index, Memory&lt;TElement&gt; elements)
+
     where TResult : IInsert&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2579,6 +2596,7 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TElement, TResult&gt;(this IInsert&lt;TElement, TResult&gt; collection, nint index, ReadOnlyMemory&lt;TElement&gt; elements)
+
     where TResult : IInsert&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2663,6 +2681,7 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TElement, TResult&gt;(this IInsert&lt;TElement, TResult&gt; collection, nint index, ReadOnlySpan&lt;TElement&gt; elements)
+
     where TResult : IInsert&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2747,6 +2766,7 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TElement, TResult&gt;(this IInsert&lt;TElement, TResult&gt; collection, nint index, Span&lt;TElement&gt; elements)
+
     where TResult : IInsert&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2831,6 +2851,7 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TElement, TResult&gt;(this IInsertText&lt;TElement, TResult&gt; collection, char[] index, TElement element)
+
     where TResult : IInsertText&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2913,6 +2934,7 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TElement, TResult&gt;(this IInsertText&lt;TElement, TResult&gt; collection, Memory&lt;char&gt; index, TElement element)
+
     where TResult : IInsertText&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2995,6 +3017,7 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TElement, TResult&gt;(this IInsertText&lt;TElement, TResult&gt; collection, ReadOnlyMemory&lt;char&gt; index, TElement element)
+
     where TResult : IInsertText&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3077,6 +3100,7 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TElement, TResult&gt;(this IInsertText&lt;TElement, TResult&gt; collection, ReadOnlySpan&lt;char&gt; index, TElement element)
+
     where TResult : IInsertText&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3159,6 +3183,7 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TElement, TResult&gt;(this IInsertText&lt;TElement, TResult&gt; collection, Span&lt;char&gt; index, TElement element)
+
     where TResult : IInsertText&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3241,6 +3266,7 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TElement, TResult&gt;(this IInsertText&lt;TElement, TResult&gt; collection, string index, TElement element)
+
     where TResult : IInsertText&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3323,6 +3349,7 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TElement, TResult&gt;(this IInsertText&lt;TElement, TResult&gt; collection, Rune index, TElement element)
+
     where TResult : IInsertText&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3406,6 +3433,7 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TElement, TResult&gt; collection, nint index, TElement*elements, int length)
+
     where TElement : struct where TResult : IInsertUnsafe&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3496,6 +3524,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TIndex, TElement, TResult&gt;(this IInsert&lt;TIndex, TElement, TResult&gt; collection, TIndex index, TElement element)
+
     where TResult : IInsert&lt;TIndex, TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3585,6 +3614,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TElement, TResult, TEnumerator&gt;(this IInsert&lt;TElement, TResult&gt; collection, nint index, ISequence&lt;TElement, TEnumerator&gt; elements)
+
     where TResult : IInsert&lt;TElement, TResult&gt; where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3674,6 +3704,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Load&lt;TElement, TResult, TSource&gt;(this IWrite&lt;TElement, TResult&gt; stream, IRead&lt;TElement, TSource&gt; source)
+
     where TResult : IWrite&lt;TElement, TResult&gt; where TSource : IRead&lt;TElement, TSource&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3757,6 +3788,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Load&lt;TElement, TResult, TSource&gt;(this IWrite&lt;TElement, TResult&gt; stream, nint amount, IRead&lt;TElement, TSource&gt; source)
+
     where TResult : IWrite&lt;TElement, TResult&gt; where TSource : IRead&lt;TElement, TSource&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3964,6 +3996,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static nint Occurrences&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, TElement element)
+
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4042,6 +4075,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static nint Occurrences&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, IEquals&lt;TElement&gt; element)
+
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4120,6 +4154,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static nint Occurrences&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, Predicate&lt;TElement&gt; match)
+
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4185,6 +4220,580 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_Parse__1_Langly_IParse___0__System_Char___System_Int32__.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.Parse%60%601(Langly.IParse%7B%60%600%7D%2CSystem.Char%5B%5D%2CSystem.Int32%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IParse`1.cs/#L109">View Source</a>
+  </span>
+  <a id="Langly_TraitExtensions_Parse_" data-uid="Langly.TraitExtensions.Parse*"></a>
+  <h4 id="Langly_TraitExtensions_Parse__1_Langly_IParse___0__System_Char___System_Int32__" data-uid="Langly.TraitExtensions.Parse``1(Langly.IParse{``0},System.Char[],System.Int32@)">Parse&lt;TElement&gt;(IParse&lt;TElement&gt;, Char[], ref Int32)</h4>
+  <div class="markdown level1 summary"><p>Parses a <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> from the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static TElement Parse&lt;TElement&gt;(this IParse&lt;TElement&gt; parser, char[] source, ref int pos)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.IParse-1.html">IParse</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">parser</span></td>
+        <td><p>This parser.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>[]</td>
+        <td><span class="parametername">source</span></td>
+        <td><p>The source to parse.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">pos</span></td>
+        <td><p>The position within the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><p>The element that was parsed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of the elements being parsed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_TraitExtensions_Parse__1_Langly_IParse___0__System_Char___System_Int32___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>When this call occurs <code data-dev-comment-type="paramref" class="paramref">pos</code> is the index at which to begin parsing. As this method executes <code data-dev-comment-type="paramref" class="paramref">pos</code> is updated such that when this call returns <code data-dev-comment-type="paramref" class="paramref">pos</code> is after the parsed value. This allows for continually parsing elements from the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_Parse__1_Langly_IParse___0__System_Memory_System_Char__System_Int32__.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.Parse%60%601(Langly.IParse%7B%60%600%7D%2CSystem.Memory%7BSystem.Char%7D%2CSystem.Int32%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IParse`1.cs/#L123">View Source</a>
+  </span>
+  <a id="Langly_TraitExtensions_Parse_" data-uid="Langly.TraitExtensions.Parse*"></a>
+  <h4 id="Langly_TraitExtensions_Parse__1_Langly_IParse___0__System_Memory_System_Char__System_Int32__" data-uid="Langly.TraitExtensions.Parse``1(Langly.IParse{``0},System.Memory{System.Char},System.Int32@)">Parse&lt;TElement&gt;(IParse&lt;TElement&gt;, Memory&lt;Char&gt;, ref Int32)</h4>
+  <div class="markdown level1 summary"><p>Parses a <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> from the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static TElement Parse&lt;TElement&gt;(this IParse&lt;TElement&gt; parser, Memory&lt;char&gt; source, ref int pos)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.IParse-1.html">IParse</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">parser</span></td>
+        <td><p>This parser.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">source</span></td>
+        <td><p>The source to parse.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">pos</span></td>
+        <td><p>The position within the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><p>The element that was parsed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of the elements being parsed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_TraitExtensions_Parse__1_Langly_IParse___0__System_Memory_System_Char__System_Int32___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>When this call occurs <code data-dev-comment-type="paramref" class="paramref">pos</code> is the index at which to begin parsing. As this method executes <code data-dev-comment-type="paramref" class="paramref">pos</code> is updated such that when this call returns <code data-dev-comment-type="paramref" class="paramref">pos</code> is after the parsed value. This allows for continually parsing elements from the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_Parse__1_Langly_IParse___0__System_ReadOnlyMemory_System_Char__System_Int32__.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.Parse%60%601(Langly.IParse%7B%60%600%7D%2CSystem.ReadOnlyMemory%7BSystem.Char%7D%2CSystem.Int32%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IParse`1.cs/#L137">View Source</a>
+  </span>
+  <a id="Langly_TraitExtensions_Parse_" data-uid="Langly.TraitExtensions.Parse*"></a>
+  <h4 id="Langly_TraitExtensions_Parse__1_Langly_IParse___0__System_ReadOnlyMemory_System_Char__System_Int32__" data-uid="Langly.TraitExtensions.Parse``1(Langly.IParse{``0},System.ReadOnlyMemory{System.Char},System.Int32@)">Parse&lt;TElement&gt;(IParse&lt;TElement&gt;, ReadOnlyMemory&lt;Char&gt;, ref Int32)</h4>
+  <div class="markdown level1 summary"><p>Parses a <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> from the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static TElement Parse&lt;TElement&gt;(this IParse&lt;TElement&gt; parser, ReadOnlyMemory&lt;char&gt; source, ref int pos)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.IParse-1.html">IParse</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">parser</span></td>
+        <td><p>This parser.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">source</span></td>
+        <td><p>The source to parse.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">pos</span></td>
+        <td><p>The position within the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><p>The element that was parsed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of the elements being parsed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_TraitExtensions_Parse__1_Langly_IParse___0__System_ReadOnlyMemory_System_Char__System_Int32___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>When this call occurs <code data-dev-comment-type="paramref" class="paramref">pos</code> is the index at which to begin parsing. As this method executes <code data-dev-comment-type="paramref" class="paramref">pos</code> is updated such that when this call returns <code data-dev-comment-type="paramref" class="paramref">pos</code> is after the parsed value. This allows for continually parsing elements from the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_Parse__1_Langly_IParse___0__System_ReadOnlySpan_System_Char__System_Int32__.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.Parse%60%601(Langly.IParse%7B%60%600%7D%2CSystem.ReadOnlySpan%7BSystem.Char%7D%2CSystem.Int32%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IParse`1.cs/#L165">View Source</a>
+  </span>
+  <a id="Langly_TraitExtensions_Parse_" data-uid="Langly.TraitExtensions.Parse*"></a>
+  <h4 id="Langly_TraitExtensions_Parse__1_Langly_IParse___0__System_ReadOnlySpan_System_Char__System_Int32__" data-uid="Langly.TraitExtensions.Parse``1(Langly.IParse{``0},System.ReadOnlySpan{System.Char},System.Int32@)">Parse&lt;TElement&gt;(IParse&lt;TElement&gt;, ReadOnlySpan&lt;Char&gt;, ref Int32)</h4>
+  <div class="markdown level1 summary"><p>Parses a <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> from the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static TElement Parse&lt;TElement&gt;(this IParse&lt;TElement&gt; parser, ReadOnlySpan&lt;char&gt; source, ref int pos)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.IParse-1.html">IParse</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">parser</span></td>
+        <td><p>This parser.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">source</span></td>
+        <td><p>The source to parse.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">pos</span></td>
+        <td><p>The position within the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><p>The element that was parsed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of the elements being parsed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_TraitExtensions_Parse__1_Langly_IParse___0__System_ReadOnlySpan_System_Char__System_Int32___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>When this call occurs <code data-dev-comment-type="paramref" class="paramref">pos</code> is the index at which to begin parsing. As this method executes <code data-dev-comment-type="paramref" class="paramref">pos</code> is updated such that when this call returns <code data-dev-comment-type="paramref" class="paramref">pos</code> is after the parsed value. This allows for continually parsing elements from the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_Parse__1_Langly_IParse___0__System_Span_System_Char__System_Int32__.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.Parse%60%601(Langly.IParse%7B%60%600%7D%2CSystem.Span%7BSystem.Char%7D%2CSystem.Int32%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IParse`1.cs/#L151">View Source</a>
+  </span>
+  <a id="Langly_TraitExtensions_Parse_" data-uid="Langly.TraitExtensions.Parse*"></a>
+  <h4 id="Langly_TraitExtensions_Parse__1_Langly_IParse___0__System_Span_System_Char__System_Int32__" data-uid="Langly.TraitExtensions.Parse``1(Langly.IParse{``0},System.Span{System.Char},System.Int32@)">Parse&lt;TElement&gt;(IParse&lt;TElement&gt;, Span&lt;Char&gt;, ref Int32)</h4>
+  <div class="markdown level1 summary"><p>Parses a <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> from the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static TElement Parse&lt;TElement&gt;(this IParse&lt;TElement&gt; parser, Span&lt;char&gt; source, ref int pos)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.IParse-1.html">IParse</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">parser</span></td>
+        <td><p>This parser.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">source</span></td>
+        <td><p>The source to parse.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">pos</span></td>
+        <td><p>The position within the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><p>The element that was parsed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of the elements being parsed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_TraitExtensions_Parse__1_Langly_IParse___0__System_Span_System_Char__System_Int32___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>When this call occurs <code data-dev-comment-type="paramref" class="paramref">pos</code> is the index at which to begin parsing. As this method executes <code data-dev-comment-type="paramref" class="paramref">pos</code> is updated such that when this call returns <code data-dev-comment-type="paramref" class="paramref">pos</code> is after the parsed value. This allows for continually parsing elements from the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_Parse__1_Langly_IParse___0__System_String_System_Int32__.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.Parse%60%601(Langly.IParse%7B%60%600%7D%2CSystem.String%2CSystem.Int32%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IParse`1.cs/#L95">View Source</a>
+  </span>
+  <a id="Langly_TraitExtensions_Parse_" data-uid="Langly.TraitExtensions.Parse*"></a>
+  <h4 id="Langly_TraitExtensions_Parse__1_Langly_IParse___0__System_String_System_Int32__" data-uid="Langly.TraitExtensions.Parse``1(Langly.IParse{``0},System.String,System.Int32@)">Parse&lt;TElement&gt;(IParse&lt;TElement&gt;, String, ref Int32)</h4>
+  <div class="markdown level1 summary"><p>Parses a <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> from the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static TElement Parse&lt;TElement&gt;(this IParse&lt;TElement&gt; parser, string source, ref int pos)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.IParse-1.html">IParse</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">parser</span></td>
+        <td><p>This parser.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">source</span></td>
+        <td><p>The source to parse.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">pos</span></td>
+        <td><p>The position within the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><p>The element that was parsed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of the elements being parsed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_TraitExtensions_Parse__1_Langly_IParse___0__System_String_System_Int32___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>When this call occurs <code data-dev-comment-type="paramref" class="paramref">pos</code> is the index at which to begin parsing. As this method executes <code data-dev-comment-type="paramref" class="paramref">pos</code> is updated such that when this call returns <code data-dev-comment-type="paramref" class="paramref">pos</code> is after the parsed value. This allows for continually parsing elements from the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_Parse__1_Langly_IParseUnsafe___0__System_Char__System_Int32_System_Int32__.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.Parse%60%601(Langly.IParseUnsafe%7B%60%600%7D%2CSystem.Char*%2CSystem.Int32%2CSystem.Int32%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IParseUnsafe`1.cs/#L38">View Source</a>
+  </span>
+  <a id="Langly_TraitExtensions_Parse_" data-uid="Langly.TraitExtensions.Parse*"></a>
+  <h4 id="Langly_TraitExtensions_Parse__1_Langly_IParseUnsafe___0__System_Char__System_Int32_System_Int32__" data-uid="Langly.TraitExtensions.Parse``1(Langly.IParseUnsafe{``0},System.Char*,System.Int32,System.Int32@)">Parse&lt;TElement&gt;(IParseUnsafe&lt;TElement&gt;, Char*, Int32, ref Int32)</h4>
+  <div class="markdown level1 summary"><p>Parses a <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> from the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; parser, char *source, int length, ref int pos)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.IParseUnsafe-1.html">IParseUnsafe</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">parser</span></td>
+        <td><p>This parser.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>*</td>
+        <td><span class="parametername">source</span></td>
+        <td><p>The source to parse.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">length</span></td>
+        <td><p>The length of the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">pos</span></td>
+        <td><p>The position within the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><p>The element that was parsed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of the elements being parsed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_TraitExtensions_Parse__1_Langly_IParseUnsafe___0__System_Char__System_Int32_System_Int32___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>When this call occurs <code data-dev-comment-type="paramref" class="paramref">pos</code> is the index at which to begin parsing. As this method executes <code data-dev-comment-type="paramref" class="paramref">pos</code> is updated such that when this call returns <code data-dev-comment-type="paramref" class="paramref">pos</code> is after the parsed value. This allows for continually parsing elements from the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_Peek__2_Langly_IPeek___0___1____0__.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.Peek%60%602(Langly.IPeek%7B%60%600%2C%60%601%7D%2C%60%600%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -4198,6 +4807,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Peek&lt;TElement, TResult&gt;(this IPeek&lt;TElement, TResult&gt; collection, out TElement element)
+
     where TResult : IPeek&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4276,6 +4886,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Postpend&lt;TElement, TResult&gt;(this IPostpend&lt;TElement, TResult&gt; collection, TElement element)
+
     where TResult : IPostpend&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4354,6 +4965,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Postpend&lt;TElement, TResult&gt;(this IPostpend&lt;TElement, TResult&gt; collection, params TElement[] elements)
+
     where TResult : IPostpend&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4432,6 +5044,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Postpend&lt;TElement, TResult&gt;(this IPostpend&lt;TElement, TResult&gt; collection, Memory&lt;TElement&gt; elements)
+
     where TResult : IPostpend&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4510,6 +5123,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Postpend&lt;TElement, TResult&gt;(this IPostpend&lt;TElement, TResult&gt; collection, ReadOnlyMemory&lt;TElement&gt; elements)
+
     where TResult : IPostpend&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4588,6 +5202,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Postpend&lt;TElement, TResult&gt;(this IPostpend&lt;TElement, TResult&gt; collection, ReadOnlySpan&lt;TElement&gt; elements)
+
     where TResult : IPostpend&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4666,6 +5281,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Postpend&lt;TElement, TResult&gt;(this IPostpend&lt;TElement, TResult&gt; collection, Span&lt;TElement&gt; elements)
+
     where TResult : IPostpend&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4744,6 +5360,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Postpend&lt;TElement, TResult, TEnumerator&gt;(this IPostpend&lt;TElement, TResult&gt; collection, ISequence&lt;TElement, TEnumerator&gt; elements)
+
     where TResult : IPostpend&lt;TElement, TResult&gt; where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4827,6 +5444,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Prepend&lt;TElement, TResult&gt;(this IPrepend&lt;TElement, TResult&gt; collection, TElement element)
+
     where TResult : IPrepend&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4905,6 +5523,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Prepend&lt;TElement, TResult&gt;(this IPrepend&lt;TElement, TResult&gt; collection, params TElement[] elements)
+
     where TResult : IPrepend&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4983,6 +5602,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Prepend&lt;TElement, TResult&gt;(this IPrepend&lt;TElement, TResult&gt; collection, Memory&lt;TElement&gt; elements)
+
     where TResult : IPrepend&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5061,6 +5681,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Prepend&lt;TElement, TResult&gt;(this IPrepend&lt;TElement, TResult&gt; collection, ReadOnlyMemory&lt;TElement&gt; elements)
+
     where TResult : IPrepend&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5139,6 +5760,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Prepend&lt;TElement, TResult&gt;(this IPrepend&lt;TElement, TResult&gt; collection, ReadOnlySpan&lt;TElement&gt; elements)
+
     where TResult : IPrepend&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5217,6 +5839,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Prepend&lt;TElement, TResult&gt;(this IPrepend&lt;TElement, TResult&gt; collection, Span&lt;TElement&gt; elements)
+
     where TResult : IPrepend&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5295,6 +5918,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Prepend&lt;TElement, TResult, TEnumerator&gt;(this IPrepend&lt;TElement, TResult&gt; collection, ISequence&lt;TElement, TEnumerator&gt; elements)
+
     where TResult : IPrepend&lt;TElement, TResult&gt; where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5378,6 +6002,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Read&lt;TElement, TResult&gt;(this IRead&lt;TElement, TResult&gt; stream, out TElement element)
+
     where TResult : IRead&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5456,6 +6081,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Read&lt;TElement, TResult&gt;(this IRead&lt;TElement, TResult&gt; stream, TElement[] elements)
+
     where TResult : IRead&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5534,6 +6160,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Read&lt;TElement, TResult&gt;(this IRead&lt;TElement, TResult&gt; stream, nint amount, out TElement[] elements)
+
     where TResult : IRead&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5618,6 +6245,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Read&lt;TElement, TResult&gt;(this IRead&lt;TElement, TResult&gt; stream, nint amount, out ReadOnlyMemory&lt;TElement&gt; elements)
+
     where TResult : IRead&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5702,6 +6330,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Read&lt;TElement, TResult&gt;(this IRead&lt;TElement, TResult&gt; stream, nint amount, out ReadOnlySpan&lt;TElement&gt; elements)
+
     where TResult : IRead&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5786,6 +6415,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Read&lt;TElement, TResult&gt;(this IRead&lt;TElement, TResult&gt; stream, Memory&lt;TElement&gt; elements)
+
     where TResult : IRead&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5864,6 +6494,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Read&lt;TElement, TResult&gt;(this IRead&lt;TElement, TResult&gt; stream, Span&lt;TElement&gt; elements)
+
     where TResult : IRead&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5942,6 +6573,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Remove&lt;TElement, TResult&gt;(IRemove&lt;TElement, TResult&gt; collection, TElement element)
+
     where TResult : IRemove&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6020,6 +6652,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Remove&lt;TElement, TResult&gt;(IRemove&lt;TElement, TResult&gt; collection, params TElement[] elements)
+
     where TResult : IRemove&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6098,6 +6731,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Remove&lt;TElement, TResult&gt;(IRemove&lt;TElement, TResult&gt; collection, Memory&lt;TElement&gt; elements)
+
     where TResult : IRemove&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6176,6 +6810,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Remove&lt;TElement, TResult&gt;(IRemove&lt;TElement, TResult&gt; collection, ReadOnlyMemory&lt;TElement&gt; elements)
+
     where TResult : IRemove&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6254,6 +6889,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Remove&lt;TElement, TResult&gt;(IRemove&lt;TElement, TResult&gt; collection, ReadOnlySpan&lt;TElement&gt; elements)
+
     where TResult : IRemove&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6332,6 +6968,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Remove&lt;TElement, TResult&gt;(IRemove&lt;TElement, TResult&gt; collection, Span&lt;TElement&gt; elements)
+
     where TResult : IRemove&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6410,6 +7047,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Remove&lt;TElement, TResult, TEnumerator&gt;(IRemove&lt;TElement, TResult&gt; collection, ISequence&lt;TElement, TEnumerator&gt; elements)
+
     where TResult : IRemove&lt;TElement, TResult&gt; where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6493,6 +7131,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult RemoveFirst&lt;TElement, TResult&gt;(IRemove&lt;TElement, TResult&gt; collection, TElement element)
+
     where TResult : IRemove&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6571,6 +7210,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult RemoveFirst&lt;TElement, TResult&gt;(IRemove&lt;TElement, TResult&gt; collection, params TElement[] elements)
+
     where TResult : IRemove&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6649,6 +7289,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult RemoveFirst&lt;TElement, TResult&gt;(IRemove&lt;TElement, TResult&gt; collection, Memory&lt;TElement&gt; elements)
+
     where TResult : IRemove&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6727,6 +7368,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult RemoveFirst&lt;TElement, TResult&gt;(IRemove&lt;TElement, TResult&gt; collection, ReadOnlyMemory&lt;TElement&gt; elements)
+
     where TResult : IRemove&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6805,6 +7447,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult RemoveFirst&lt;TElement, TResult&gt;(IRemove&lt;TElement, TResult&gt; collection, ReadOnlySpan&lt;TElement&gt; elements)
+
     where TResult : IRemove&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6883,6 +7526,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult RemoveFirst&lt;TElement, TResult&gt;(IRemove&lt;TElement, TResult&gt; collection, Span&lt;TElement&gt; elements)
+
     where TResult : IRemove&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6961,6 +7605,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult RemoveFirst&lt;TElement, TResult, TEnumerator&gt;(IRemove&lt;TElement, TResult&gt; collection, ISequence&lt;TElement, TEnumerator&gt; elements)
+
     where TResult : IRemove&lt;TElement, TResult&gt; where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -7044,6 +7689,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult RemoveLast&lt;TElement, TResult&gt;(IRemove&lt;TElement, TResult&gt; collection, TElement element)
+
     where TResult : IRemove&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -7122,6 +7768,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult RemoveLast&lt;TElement, TResult&gt;(IRemove&lt;TElement, TResult&gt; collection, params TElement[] elements)
+
     where TResult : IRemove&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -7200,6 +7847,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult RemoveLast&lt;TElement, TResult&gt;(IRemove&lt;TElement, TResult&gt; collection, Memory&lt;TElement&gt; elements)
+
     where TResult : IRemove&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -7278,6 +7926,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult RemoveLast&lt;TElement, TResult&gt;(IRemove&lt;TElement, TResult&gt; collection, ReadOnlyMemory&lt;TElement&gt; elements)
+
     where TResult : IRemove&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -7356,6 +8005,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult RemoveLast&lt;TElement, TResult&gt;(IRemove&lt;TElement, TResult&gt; collection, ReadOnlySpan&lt;TElement&gt; elements)
+
     where TResult : IRemove&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -7434,6 +8084,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult RemoveLast&lt;TElement, TResult&gt;(IRemove&lt;TElement, TResult&gt; collection, Span&lt;TElement&gt; elements)
+
     where TResult : IRemove&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -7512,6 +8163,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult RemoveLast&lt;TElement, TResult, TEnumerator&gt;(IRemove&lt;TElement, TResult&gt; collection, ISequence&lt;TElement, TEnumerator&gt; elements)
+
     where TResult : IRemove&lt;TElement, TResult&gt; where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -7595,6 +8247,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Replace&lt;TSearch, TReplace, TResult&gt;(this IReplace&lt;TSearch, TReplace, TResult&gt; collection, TSearch search, TReplace replace)
+
     where TResult : IReplace&lt;TSearch, TReplace, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -7684,6 +8337,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TSelf Resize&lt;TSelf&gt;(this IResize&lt;TSelf&gt; collection, nint capacity)
+
     where TSelf : IResize&lt;TSelf&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -7755,6 +8409,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Seek&lt;TElement, TResult&gt;(this ISeek&lt;TElement, TResult&gt; collection, nint offset)
+
     where TResult : ISeek&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -7832,6 +8487,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult ShiftLeft&lt;TResult&gt;(this IShift&lt;TResult&gt; collection)
+
     where TResult : IShift&lt;TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -7897,6 +8553,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult ShiftLeft&lt;TResult&gt;(this IShift&lt;TResult&gt; collection, nint amount)
+
     where TResult : IShift&lt;TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -7968,6 +8625,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult ShiftRight&lt;TResult&gt;(this IShift&lt;TResult&gt; collection)
+
     where TResult : IShift&lt;TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -8033,6 +8691,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult ShiftRight&lt;TResult&gt;(this IShift&lt;TResult&gt; collection, nint amount)
+
     where TResult : IShift&lt;TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -8104,6 +8763,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TSelf Shrink&lt;TSelf&gt;(this IResize&lt;TSelf&gt; collection)
+
     where TSelf : IResize&lt;TSelf&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -8169,6 +8829,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Slice&lt;TResult&gt;(this ISlice&lt;TResult&gt; collection)
+
     where TResult : ISlice&lt;TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -8236,6 +8897,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Slice&lt;TResult&gt;(this ISlice&lt;TResult&gt; collection, nint start)
+
     where TResult : ISlice&lt;TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -8309,6 +8971,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Slice&lt;TResult&gt;(this ISlice&lt;TResult&gt; collection, nint start, nint length)
+
     where TResult : ISlice&lt;TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -8388,6 +9051,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Write&lt;TResult&gt;(this IWriteText&lt;TResult&gt; stream, string elements)
+
     where TResult : IWriteText&lt;TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -8461,6 +9125,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Write&lt;TElement, TResult&gt;(this IWrite&lt;TElement, TResult&gt; stream, TElement element)
+
     where TResult : IWrite&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -8539,6 +9204,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Write&lt;TElement, TResult&gt;(this IWrite&lt;TElement, TResult&gt; stream, params TElement[] elements)
+
     where TResult : IWrite&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -8617,6 +9283,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Write&lt;TElement, TResult&gt;(this IWrite&lt;TElement, TResult&gt; stream, Memory&lt;TElement&gt; elements)
+
     where TResult : IWrite&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -8695,6 +9362,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Write&lt;TElement, TResult&gt;(this IWrite&lt;TElement, TResult&gt; stream, ReadOnlyMemory&lt;TElement&gt; elements)
+
     where TResult : IWrite&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -8773,6 +9441,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Write&lt;TElement, TResult&gt;(this IWrite&lt;TElement, TResult&gt; stream, ReadOnlySpan&lt;TElement&gt; elements)
+
     where TResult : IWrite&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -8851,6 +9520,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Write&lt;TElement, TResult&gt;(this IWrite&lt;TElement, TResult&gt; stream, Span&lt;TElement&gt; elements)
+
     where TResult : IWrite&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -8930,6 +9600,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static TResult Write&lt;TElement, TResult&gt;(this IWriteUnsafe&lt;TElement, TResult&gt; stream, TElement*elements, int length)
+
     where TElement : struct where TResult : IWriteUnsafe&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -9014,6 +9685,7 @@ public static TResult Write&lt;TElement, TResult&gt;(this IWriteUnsafe&lt;TEleme
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult WriteLine&lt;TResult&gt;(this IWriteText&lt;TResult&gt; stream)
+
     where TResult : IWriteText&lt;TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -9081,6 +9753,7 @@ public static TResult Write&lt;TElement, TResult&gt;(this IWriteUnsafe&lt;TEleme
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult WriteLine&lt;TResult&gt;(this IWriteText&lt;TResult&gt; stream, char element)
+
     where TResult : IWriteText&lt;TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -9154,6 +9827,7 @@ public static TResult Write&lt;TElement, TResult&gt;(this IWriteUnsafe&lt;TEleme
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult WriteLine&lt;TResult&gt;(this IWriteText&lt;TResult&gt; stream, params char[] elements)
+
     where TResult : IWriteText&lt;TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -9227,6 +9901,7 @@ public static TResult Write&lt;TElement, TResult&gt;(this IWriteUnsafe&lt;TEleme
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult WriteLine&lt;TResult&gt;(this IWriteText&lt;TResult&gt; stream, Memory&lt;char&gt; elements)
+
     where TResult : IWriteText&lt;TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -9300,6 +9975,7 @@ public static TResult Write&lt;TElement, TResult&gt;(this IWriteUnsafe&lt;TEleme
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult WriteLine&lt;TResult&gt;(this IWriteText&lt;TResult&gt; stream, ReadOnlyMemory&lt;char&gt; elements)
+
     where TResult : IWriteText&lt;TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -9373,6 +10049,7 @@ public static TResult Write&lt;TElement, TResult&gt;(this IWriteUnsafe&lt;TEleme
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult WriteLine&lt;TResult&gt;(this IWriteText&lt;TResult&gt; stream, ReadOnlySpan&lt;char&gt; elements)
+
     where TResult : IWriteText&lt;TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -9446,6 +10123,7 @@ public static TResult Write&lt;TElement, TResult&gt;(this IWriteUnsafe&lt;TEleme
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult WriteLine&lt;TResult&gt;(this IWriteText&lt;TResult&gt; stream, Span&lt;char&gt; elements)
+
     where TResult : IWriteText&lt;TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -9519,6 +10197,7 @@ public static TResult Write&lt;TElement, TResult&gt;(this IWriteUnsafe&lt;TEleme
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult WriteLine&lt;TResult&gt;(this IWriteText&lt;TResult&gt; stream, string elements)
+
     where TResult : IWriteText&lt;TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -9593,6 +10272,7 @@ public static TResult Write&lt;TElement, TResult&gt;(this IWriteUnsafe&lt;TEleme
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static TResult WriteLine&lt;TResult&gt;(this IWriteUnsafe&lt;char, TResult&gt; stream, char *elements, int length)
+
     where TResult : IWriteText&lt;TResult&gt;, IWriteUnsafe&lt;char, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>

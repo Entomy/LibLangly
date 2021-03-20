@@ -8,9 +8,10 @@ namespace Langly {
 		/// <summary>
 		/// Represents the <see cref="Node"/> of a <see cref="Dictionary{TElement}"/>.
 		/// </summary>
-		private sealed class Node : MultiwayNode<Int32, TElement, Node>,
-			IIndexReadOnlyText<Node>, IIndexReadOnlyUnsafe<Char, Node>, IIndexReadOnlyUnsafe<Int32, Node>,
-			IInsertText<TElement, Node> {
+		private sealed class Node : MultiwayNode<Char, TElement, Node>,
+			IIndexReadOnlyText<Node>, IIndexReadOnlyUnsafe<Char, Node>,
+			IInsertText<TElement, Node>,
+			IParseUnsafe<TElement> {
 			/// <summary>
 			/// The <see cref="Filter{TIndex, TElement}"/> being used.
 			/// </summary>
@@ -18,7 +19,7 @@ namespace Langly {
 			/// This is never <see langword="null"/>; a sentinel is used by default.
 			/// </remarks>
 			[NotNull, DisallowNull]
-			private readonly Filter<Int32, TElement> Filter;
+			private readonly Filter<Char, TElement> Filter;
 
 			/// <summary>
 			/// Initializes a new linkage <see cref="Node"/>.
@@ -27,7 +28,7 @@ namespace Langly {
 			/// <param name="filter">The <see cref="Filter{TIndex, TElement}"/> to reuse.</param>
 			/// <param name="parent">The parent node of this node.</param>
 			/// <param name="children">The child nodes of this node.</param>
-			public Node(Int32 index, [DisallowNull] Filter<Int32, TElement> filter, [DisallowNull] Node parent, [DisallowNull] params Node[] children) : base(index, default, parent, children) {
+			public Node(Char index, [DisallowNull] Filter<Char, TElement> filter, [DisallowNull] Node parent, [DisallowNull] params Node[] children) : base(index, default, parent, children) {
 				Terminal = false;
 				Filter = filter;
 			}
@@ -40,7 +41,7 @@ namespace Langly {
 			/// <param name="filter">The <see cref="Filter{TIndex, TElement}"/> to reuse.</param>
 			/// <param name="parent">The parent node of this node.</param>
 			/// <param name="children">The child nodes of this node.</param>
-			public Node(Int32 index, [AllowNull] TElement element, [DisallowNull] Filter<Int32, TElement> filter, [DisallowNull] Node parent, [DisallowNull] params Node[] children) : base(index, element, parent, children) {
+			public Node(Char index, [AllowNull] TElement element, [DisallowNull] Filter<Char, TElement> filter, [DisallowNull] Node parent, [DisallowNull] params Node[] children) : base(index, element, parent, children) {
 				Terminal = true;
 				Filter = filter;
 			}
@@ -51,10 +52,10 @@ namespace Langly {
 			public Boolean Terminal { get; set; }
 
 			/// <inheritdoc/>
-			[MaybeNull]
+			[AllowNull, MaybeNull]
 			public Node this[Char index] {
 				get {
-					foreach (Node child in Children) {
+					foreach (Node child in Children[0..(Int32)Count]) {
 						if (child.Index == index) {
 							return child;
 						}
@@ -104,46 +105,6 @@ namespace Langly {
 			public unsafe Node this[[DisallowNull] Char* index, Int32 length] => this[new ReadOnlySpan<Char>(index, length)];
 
 			/// <inheritdoc/>
-			[AllowNull, MaybeNull]
-			public Node this[Int32 index] => this[index];
-
-			/// <inheritdoc/>
-			[AllowNull, MaybeNull]
-			public Node this[Int32[] index] => this[index.AsMemory()];
-
-			/// <inheritdoc/>
-			[AllowNull, MaybeNull]
-			public Node this[Memory<Int32> index] => this[(ReadOnlyMemory<Int32>)index];
-
-			/// <inheritdoc/>
-			[AllowNull, MaybeNull]
-			public Node this[ReadOnlyMemory<Int32> index] => this[index.Span];
-
-			/// <inheritdoc/>
-			[AllowNull, MaybeNull]
-			public Node this[Span<Int32> index] => this[(ReadOnlySpan<Int32>)index];
-
-			/// <inheritdoc/>
-			[AllowNull, MaybeNull]
-			public Node this[ReadOnlySpan<Int32> index] {
-				get {
-					Node N = this;
-					foreach (Int32 item in index) {
-						N = N[item];
-						if (N is null) {
-							goto Result;
-						}
-					}
-				Result:
-					return N;
-				}
-			}
-
-			/// <inheritdoc/>
-			[AllowNull, MaybeNull]
-			public unsafe Node this[[DisallowNull] Int32* index, Int32 length] => this[new ReadOnlySpan<Char>(index, length)];
-
-			/// <inheritdoc/>
 			public override Boolean Equals([AllowNull] Node other) => ReferenceEquals(this, other);
 
 			/// <summary>
@@ -152,7 +113,7 @@ namespace Langly {
 			/// <param name="index">The index of the linkage node.</param>
 			/// <returns>The <see cref="Node"/> that was inserted, if successful; otherwise, <see langword="null"/>.</returns>
 			[return: NotNull]
-			public Node Insert(Int32 index) {
+			public Node Insert(Char index) {
 				// Determine if this child already exists
 				for (nint i = 0; i < Count; i++) {
 					if (Children[i].Index == index) {
@@ -176,7 +137,7 @@ namespace Langly {
 			/// <param name="element">The element of the terminal node.</param>
 			/// <returns>The <see cref="Node"/> that was inserted, if successful; otherwise, <see langword="null"/>.</returns>
 			[return: NotNull]
-			public override Node Insert(Int32 index, [AllowNull] TElement element) {
+			public override Node Insert(Char index, [AllowNull] TElement element) {
 				// Determine if this child already exists
 				for (nint i = 0; i < Count; i++) {
 					if (Children[i].Index == index) {
@@ -196,16 +157,117 @@ namespace Langly {
 
 			/// <inheritdoc/>
 			[return: MaybeNull]
-			public Node Insert(Char index, [AllowNull] TElement element) => Insert((Int32)index, element);
-
-			/// <inheritdoc/>
-			[return: MaybeNull]
 			public Node Insert(ReadOnlySpan<Char> index, [AllowNull] TElement element) {
 				Node result = this;
 				for (Int32 i = 0; i < index.Length - 1; i++) {
 					result = result.Insert(index[i]);
 				}
 				return result.Insert(index[index.Length - 1], element);
+			}
+
+			/// <inheritdoc/>
+			[return: MaybeNull]
+			public TElement Parse([DisallowNull] String source, ref Int32 pos) {
+				if (pos == source.Length) {
+					return Element;
+				}
+				Node? next = this[source[pos]];
+				if (next is not null) {
+					pos++;
+					return next.Parse(source, ref pos);
+				} else {
+					return Element;
+				}
+			}
+
+			/// <inheritdoc/>
+			[return: MaybeNull]
+			public TElement Parse([DisallowNull] Char[] source, ref Int32 pos) {
+				if (pos == source.Length) {
+					return Element;
+				}
+				Node? next = this[source[pos]];
+				if (next is not null) {
+					pos++;
+					return next.Parse(source, ref pos);
+				} else {
+					return Element;
+				}
+			}
+
+			/// <inheritdoc/>
+			[return: MaybeNull]
+			public TElement Parse(Memory<Char> source, ref Int32 pos) {
+				if (pos == source.Length) {
+					return Element;
+				}
+				Node? next = this[source.Span[pos]];
+				if (next is not null) {
+					pos++;
+					return next.Parse(source, ref pos);
+				} else {
+					return Element;
+				}
+			}
+
+			/// <inheritdoc/>
+			[return: MaybeNull]
+			public TElement Parse(ReadOnlyMemory<Char> source, ref Int32 pos) {
+				if (pos == source.Length) {
+					return Element;
+				}
+				Node? next = this[source.Span[pos]];
+				if (next is not null) {
+					pos++;
+					return next.Parse(source, ref pos);
+				} else {
+					return Element;
+				}
+			}
+
+			/// <inheritdoc/>
+			[return: MaybeNull]
+			public TElement Parse(Span<Char> source, ref Int32 pos) {
+				if (pos == source.Length) {
+					return Element;
+				}
+				Node? next = this[source[pos]];
+				if (next is not null) {
+					pos++;
+					return next.Parse(source, ref pos);
+				} else {
+					return Element;
+				}
+			}
+
+			/// <inheritdoc/>
+			[return: MaybeNull]
+			public TElement Parse(ReadOnlySpan<Char> source, ref Int32 pos) {
+				if (pos == source.Length) {
+					return Element;
+				}
+				Node? next = this[source[pos]];
+				if (next is not null) {
+					pos++;
+					return next.Parse(source, ref pos);
+				} else {
+					return Element;
+				}
+			}
+
+			/// <inheritdoc/>
+			[return: MaybeNull]
+			public unsafe TElement Parse([DisallowNull] Char* source, Int32 length, ref Int32 pos) {
+				if (pos == length) {
+					return Element;
+				}
+				Node? next = this[source[pos]];
+				if (next is not null) {
+					pos++;
+					return next.Parse(source, length, ref pos);
+				} else {
+					return Element;
+				}
 			}
 
 			/// <inheritdoc/>
