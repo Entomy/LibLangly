@@ -43,6 +43,11 @@ namespace Langly {
 		public Int32 Utf8SequenceLength => Table[Code].UTF8SequenceLength;
 
 		/// <summary>
+		/// Gets the Unicode Grapheme Cluster Equivalency Code as an integer.
+		/// </summary>
+		public Int32 Value => Code;
+
+		/// <summary>
 		/// Converts the <see cref="Char"/> to a <see cref="Glyph"/>.
 		/// </summary>
 		/// <param name="char">The <see cref="Char"/> to convert.</param>
