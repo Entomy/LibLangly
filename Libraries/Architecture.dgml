@@ -5,18 +5,19 @@
     <Node Id="Buffers" Bounds="363.746666666667,167.88,56.7266666666667,25.96" />
     <Node Id="Categories" Bounds="17.8966666666666,335.76,76.4266666666667,25.96" />
     <Node Id="Chains" Bounds="305.551666666667,279.8,55.1166666666668,25.96" />
-    <Node Id="Console" Bounds="124.831666666667,335.76,62.5566666666664,25.96" />
+    <Node Id="Console" Bounds="125.831666666667,335.76,62.5566666666664,25.96" />
     <Node Id="Core" Bounds="95.11,55.96,50,25.96" />
     <Node Id="Counters" Bounds="154.285,167.88,67.6500000000001,25.96" />
-    <Node Id="DataStructures" Bounds="284.283333333333,111.92,97.6533333333332,25.96" ErrorMessage="Node 'DataStructures' has a hub value of 31." Hub="31" />
+    <Node Id="DataStructures" Bounds="284.283333333333,111.92,97.6533333333332,25.96" ErrorMessage="Node 'DataStructures' has a hub value of 30." Hub="30" />
     <Node Id="Dictionary" Bounds="220.003333333333,223.84,82.2133333333334,25.96" Label="Dictionaries" />
     <Node Id="Encodings" Bounds="14.9316666666667,111.92,74.3566666666667,25.96" />
     <Node Id="Generators" Bounds="0,1.13686837721616E-13,78.22,25.96" ErrorMessage="Unreferenced node detected:Generators (Generators)" IsUnreferenced="True" />
-    <Node Id="Glyph" Bounds="111.715,279.8,50.79,25.9599999999999" ErrorMessage="Node 'Glyph' has a hub value of 22." Hub="22" />
-    <Node Id="Interactive" Bounds="118.536666666667,391.72,75.1466666666665,25.96" />
+    <Node Id="Glyph" Bounds="111.715,279.8,50.79,25.9599999999999" ErrorMessage="Node 'Glyph' has a hub value of 21." Hub="21" />
+    <Node Id="Interactive" Bounds="119.536666666667,391.72,75.1466666666665,25.96" />
+    <Node Id="Linguistics" Bounds="14.7033333333333,391.72,74.8133333333333,25.96" />
     <Node Id="Lists" Bounds="451.11,167.88,50,25.96" />
     <Node Id="Numerics" Bounds="119.061666666667,223.84,70.0966666666667,25.96" />
-    <Node Id="Ropes" Bounds="223.97,335.76,52.28,25.96" />
+    <Node Id="Ropes" Bounds="223.97,335.76,52.2799999999999,25.96" />
     <Node Id="Rune" Bounds="14.11,55.96,50,25.96" />
     <Node Id="Sets" Bounds="31.11,279.8,50,25.96" />
     <Node Id="Stacks" Bounds="531.73,167.88,52.76,25.96" />
@@ -27,9 +28,10 @@
   </Nodes>
   <Links>
     <Link Source="Buffers" Target="Streams" Bounds="392.805847167969,193.839996337891,1.12649536132813,21.0129089355469" />
+    <Link Source="Categories" Target="Linguistics" Bounds="53.6794853210449,361.720001220703,1.50270843505859,21.0228881835938" />
     <Link Source="Chains" Target="Arrays" Bounds="333.109985351563,305.760009765625,0,21" />
     <Link Source="Chains" Target="Ropes" Bounds="276.824310302734,305.760009765625,37.0337219238281,24.96875" />
-    <Link Source="Console" Target="Interactive" Bounds="156.110000610352,361.720001220703,0,21" />
+    <Link Source="Console" Target="Interactive" Bounds="157.110000610352,361.720001220703,0,21" />
     <Link Source="Core" Target="DataStructures" Bounds="145.110000610352,75.5080718994141,131.805465698242,34.6283264160156" />
     <Link Source="Core" Target="Sets" Bounds="64.2642517089844,81.9199981689453,55.8457489013672,189.47038269043" />
     <Link Source="Counters" Target="Numerics" Bounds="166.669586181641,193.839996337891,13.5540618896484,22.3083953857422" />
@@ -44,7 +46,7 @@
     <Link Source="Generators" Target="Core" Bounds="57.898063659668,25.9599990844727,36.0191421508789,24.8843383789063" />
     <Link Source="Generators" Target="Rune" Bounds="39.1100006103516,25.9599990844727,0,21" />
     <Link Source="Glyph" Target="Categories" Bounds="82.3027877807617,305.760009765625,36.0191497802734,24.8843383789063" />
-    <Link Source="Glyph" Target="Console" Bounds="141.517074584961,305.760009765625,7.29232788085938,21.4778137207031" />
+    <Link Source="Glyph" Target="Console" Bounds="141.7490234375,305.760009765625,7.69300842285156,21.5249938964844" />
     <Link Source="Glyph" Target="Ropes" Bounds="161.599563598633,304.907745361328,55.4819488525391,27.475830078125" />
     <Link Source="Ropes" Target="Text" Bounds="250.110000610352,361.720001220703,0,21" />
     <Link Source="Rune" Target="Encodings" Bounds="42.1253700256348,81.9199981689453,4.93271255493164,21.2334442138672" />

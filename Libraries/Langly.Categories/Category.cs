@@ -21,211 +21,211 @@ namespace Langly {
 		/// A box-drawing character.
 		/// </summary>
 		[DisallowNull, NotNull]
-		public static readonly Category BoxDrawing = Range('\u2500', '\u257F');
+		public static Category BoxDrawing { get; } = Range('\u2500', '\u257F');
 
 		/// <summary>
 		/// A closing punctuation mark (of a pair).
 		/// </summary>
 		[DisallowNull, NotNull]
-		public static readonly Category ClosePunctuation = new(UnicodeCategory.ClosePunctuation);
+		public static Category ClosePunctuation { get; } = new(UnicodeCategory.ClosePunctuation);
 
 		/// <summary>
 		/// A connecting punctuation mark, like a tie.
 		/// </summary>
 		[DisallowNull, NotNull]
-		public static readonly Category ConnectorPunctuation = new(UnicodeCategory.ConnectorPunctuation);
+		public static Category ConnectorPunctuation { get; } = new(UnicodeCategory.ConnectorPunctuation);
 
 		/// <summary>
 		/// A C0 or C1 control code.
 		/// </summary>
 		[DisallowNull, NotNull]
-		public static readonly Category Control = new(UnicodeCategory.Control);
+		public static Category Control { get; } = new(UnicodeCategory.Control);
 
 		/// <summary>
 		/// A currency sign.
 		/// </summary>
 		[DisallowNull, NotNull]
-		public static readonly Category CurrencySymbol = new(UnicodeCategory.CurrencySymbol);
+		public static Category CurrencySymbol { get; } = new(UnicodeCategory.CurrencySymbol);
 
 		/// <summary>
 		/// A dash or hyphen punctuation mark.
 		/// </summary>
 		[DisallowNull, NotNull]
-		public static readonly Category DashPunctuation = new(UnicodeCategory.DashPunctuation);
+		public static Category DashPunctuation { get; } = new(UnicodeCategory.DashPunctuation);
 
 		/// <summary>
 		/// A decimal digit.
 		/// </summary>
 		[DisallowNull, NotNull]
-		public static readonly Category DecimalNumber = new(UnicodeCategory.DecimalDigitNumber);
+		public static Category DecimalNumber { get; } = new(UnicodeCategory.DecimalDigitNumber);
 
 		/// <summary>
 		/// An enclosing combining mark.
 		/// </summary>
 		[DisallowNull, NotNull]
-		public static readonly Category EnclosingMark = new(UnicodeCategory.EnclosingMark);
+		public static Category EnclosingMark { get; } = new(UnicodeCategory.EnclosingMark);
 
 		/// <summary>
 		/// A final quotation mark.
 		/// </summary>
 		[DisallowNull, NotNull]
-		public static readonly Category FinalPunctuation = new(UnicodeCategory.FinalQuotePunctuation);
+		public static Category FinalPunctuation { get; } = new(UnicodeCategory.FinalQuotePunctuation);
 
 		/// <summary>
 		/// A format control character.
 		/// </summary>
 		[DisallowNull, NotNull]
-		public static readonly Category Format = new(UnicodeCategory.Format);
+		public static Category Format { get; } = new(UnicodeCategory.Format);
 
 		/// <summary>
 		/// A hexadecimal digit.
 		/// </summary>
 		[DisallowNull, NotNull]
-		public static readonly Category HexadecimalNumber = new(ContributoryProperties.HexDigit | ContributoryProperties.AsciiHexDigit);
+		public static Category HexadecimalNumber { get; } = new(ContributoryProperties.HexDigit | ContributoryProperties.AsciiHexDigit);
 
 		/// <summary>
 		/// An initial quotation mark.
 		/// </summary>
 		[DisallowNull, NotNull]
-		public static readonly Category InitialPunctuation = new(UnicodeCategory.InitialQuotePunctuation);
+		public static Category InitialPunctuation { get; } = new(UnicodeCategory.InitialQuotePunctuation);
 
 		/// <summary>
 		/// A letterlike numeric character.
 		/// </summary>
 		[DisallowNull, NotNull]
-		public static readonly Category LetterNumber = new(UnicodeCategory.LetterNumber);
+		public static Category LetterNumber { get; } = new(UnicodeCategory.LetterNumber);
 
 		/// <summary>
 		/// U+2028 LINE SEPARATOR only.
 		/// </summary>
 		[DisallowNull, NotNull]
-		public static readonly Category LineSeparator = new(UnicodeCategory.LineSeparator);
+		public static Category LineSeparator { get; } = new(UnicodeCategory.LineSeparator);
 
 		/// <summary>
 		/// A lowercase letter.
 		/// </summary>
 		[DisallowNull, NotNull]
-		public static readonly Category LowercaseLetter = new(UnicodeCategory.LowercaseLetter);
+		public static Category LowercaseLetter { get; } = new(UnicodeCategory.LowercaseLetter);
 
 		/// <summary>
 		/// A symbol of mathematical use.
 		/// </summary>
 		[DisallowNull, NotNull]
-		public static readonly Category MathSymbol = new(UnicodeCategory.MathSymbol);
+		public static Category MathSymbol { get; } = new(UnicodeCategory.MathSymbol);
 
 		/// <summary>
 		/// A modifier letter.
 		/// </summary>
 		[DisallowNull, NotNull]
-		public static readonly Category ModifierLetter = new(UnicodeCategory.ModifierLetter);
+		public static Category ModifierLetter { get; } = new(UnicodeCategory.ModifierLetter);
 
 		/// <summary>
 		/// A non-letterlike modifier symbol.
 		/// </summary>
 		[DisallowNull, NotNull]
-		public static readonly Category ModifierSymbol = new(UnicodeCategory.ModifierSymbol);
+		public static Category ModifierSymbol { get; } = new(UnicodeCategory.ModifierSymbol);
 
 		/// <summary>
 		/// A nonspacing combining mark (zero advance width);
 		/// </summary>
 		[DisallowNull, NotNull]
-		public static readonly Category NonspacingMark = new(UnicodeCategory.NonSpacingMark);
+		public static Category NonspacingMark { get; } = new(UnicodeCategory.NonSpacingMark);
 
 		/// <summary>
 		/// An opening punctuation mark (of a pair).
 		/// </summary>
 		[DisallowNull, NotNull]
-		public static readonly Category OpenPunctuation = new(UnicodeCategory.OpenPunctuation);
+		public static Category OpenPunctuation { get; } = new(UnicodeCategory.OpenPunctuation);
 
 		/// <summary>
 		/// Other letters, including syllables and ideographs.
 		/// </summary>
 		[DisallowNull, NotNull]
-		public static readonly Category OtherLetter = new(UnicodeCategory.OtherLetter);
+		public static Category OtherLetter { get; } = new(UnicodeCategory.OtherLetter);
 
 		/// <summary>
 		/// A numeric character of other type.
 		/// </summary>
 		[DisallowNull, NotNull]
-		public static readonly Category OtherNumber = new(UnicodeCategory.OtherNumber);
+		public static Category OtherNumber { get; } = new(UnicodeCategory.OtherNumber);
 
 		/// <summary>
 		/// A punctuation mark of other type.
 		/// </summary>
 		[DisallowNull, NotNull]
-		public static readonly Category OtherPunctuation = new(UnicodeCategory.OtherPunctuation);
+		public static Category OtherPunctuation { get; } = new(UnicodeCategory.OtherPunctuation);
 
 		/// <summary>
 		/// A symbol of other type.
 		/// </summary>
 		[DisallowNull, NotNull]
-		public static readonly Category OtherSymbol = new(UnicodeCategory.OtherSymbol);
+		public static Category OtherSymbol { get; } = new(UnicodeCategory.OtherSymbol);
 
 		/// <summary>
 		/// U+2029 PARAGRAPH SEPARATOR only.
 		/// </summary>
 		[DisallowNull, NotNull]
-		public static readonly Category ParagraphSeparator = new(UnicodeCategory.ParagraphSeparator);
+		public static Category ParagraphSeparator { get; } = new(UnicodeCategory.ParagraphSeparator);
 
 		/// <summary>
 		/// A private-use character.
 		/// </summary>
 		[DisallowNull, NotNull]
-		public static readonly Category PrivateUse = new(UnicodeCategory.PrivateUse);
+		public static Category PrivateUse { get; } = new(UnicodeCategory.PrivateUse);
 
 		/// <summary>
 		/// A space character (of various non-zero widths).
 		/// </summary>
 		[DisallowNull, NotNull]
-		public static readonly Category SpaceSeparator = new(UnicodeCategory.SpaceSeparator);
+		public static Category SpaceSeparator { get; } = new(UnicodeCategory.SpaceSeparator);
 
 		/// <summary>
 		/// A spacing combining mark (positive advance width).
 		/// </summary>
 		[DisallowNull, NotNull]
-		public static readonly Category SpacingMark = new(UnicodeCategory.SpacingCombiningMark);
+		public static Category SpacingMark { get; } = new(UnicodeCategory.SpacingCombiningMark);
 
 		/// <summary>
 		/// A subscript character.
 		/// </summary>
 		[DisallowNull, NotNull]
-		public static readonly Category Subscript = Range('\u2080', '\u209C');
+		public static Category Subscript { get; } = Range('\u2080', '\u209C');
 
 		/// <summary>
 		/// A superscript character.
 		/// </summary>
 		[DisallowNull, NotNull]
-		public static readonly Category Superscript = new((element) => element == '\u00B2' || element == '\u00B3' || element == '\u00B9' || ('\u2070' <= element && element <= '\u207F'));
+		public static Category Superscript { get; } = new((element) => element == '\u00B2' || element == '\u00B3' || element == '\u00B9' || ('\u2070' <= element && element <= '\u207F'));
 
 		/// <summary>
 		/// A surrogate code point.
 		/// </summary>
 		[DisallowNull, NotNull]
-		public static readonly Category Surrogate = new(UnicodeCategory.Surrogate);
+		public static Category Surrogate { get; } = new(UnicodeCategory.Surrogate);
 
 		/// <summary>
 		/// A digraphic character, with first part uppercase.
 		/// </summary>
 		[DisallowNull, NotNull]
-		public static readonly Category TitlecaseLetter = new(UnicodeCategory.TitlecaseLetter);
+		public static Category TitlecaseLetter { get; } = new(UnicodeCategory.TitlecaseLetter);
 
 		/// <summary>
 		/// A reserved unassigned code point or a noncharacter.
 		/// </summary>
 		[DisallowNull, NotNull]
-		public static readonly Category Unassigned = new(UnicodeCategory.OtherNotAssigned);
+		public static Category Unassigned { get; } = new(UnicodeCategory.OtherNotAssigned);
 
 		/// <summary>
 		/// An uppercase letter.
 		/// </summary>
 		[DisallowNull, NotNull]
-		public static readonly Category UppercaseLetter = new(UnicodeCategory.UppercaseLetter);
+		public static Category UppercaseLetter { get; } = new(UnicodeCategory.UppercaseLetter);
 
 		/// <summary>
 		/// A whitespace character.
 		/// </summary>
 		[DisallowNull, NotNull]
-		public static readonly Category WhiteSpace = new(ContributoryProperties.WhiteSpace);
+		public static Category WhiteSpace { get; } = new(ContributoryProperties.WhiteSpace);
 		#endregion
 
 		#region Composed
@@ -233,54 +233,55 @@ namespace Langly {
 		/// Any cased letter character.
 		/// </summary>
 		[DisallowNull, NotNull]
-		public static readonly Category CasedLetter = LowercaseLetter | UppercaseLetter | TitlecaseLetter;
+		public static Category CasedLetter { get; } = LowercaseLetter | UppercaseLetter | TitlecaseLetter;
 
 		/// <summary>
 		/// Any letter character.
 		/// </summary>
 		[DisallowNull, NotNull]
-		public static readonly Category Letter = CasedLetter | ModifierLetter | OtherLetter;
+		public static Category Letter { get; } = CasedLetter | ModifierLetter | OtherLetter;
 
 		/// <summary>
 		/// Any mark character.
 		/// </summary>
 		[DisallowNull, NotNull]
-		public static readonly Category Mark = NonspacingMark | SpacingMark | EnclosingMark;
+		public static Category Mark { get; } = NonspacingMark | SpacingMark | EnclosingMark;
 
 		/// <summary>
 		/// Any number character.
 		/// </summary>
 		[DisallowNull, NotNull]
-		public static readonly Category Number = DecimalNumber | LetterNumber | OtherNumber;
+		public static Category Number { get; } = DecimalNumber | LetterNumber | OtherNumber;
 
 		/// <summary>
 		/// Any other character.
 		/// </summary>
 		[DisallowNull, NotNull]
-		public static readonly Category Other = Control | Format | Surrogate | PrivateUse | Unassigned;
+		public static Category Other { get; } = Control | Format | Surrogate | PrivateUse | Unassigned;
 
 		/// <summary>
 		/// Any punctuation character.
 		/// </summary>
 		[DisallowNull, NotNull]
-		public static readonly Category Punctuation = ConnectorPunctuation | DashPunctuation | OpenPunctuation | ClosePunctuation | InitialPunctuation | FinalPunctuation | OtherPunctuation;
+		public static Category Punctuation { get; } = ConnectorPunctuation | DashPunctuation | OpenPunctuation | ClosePunctuation | InitialPunctuation | FinalPunctuation | OtherPunctuation;
 
 		/// <summary>
 		/// Any separator character.
 		/// </summary>
 		[DisallowNull, NotNull]
-		public static readonly Category Separator = SpaceSeparator | LineSeparator | ParagraphSeparator;
+		public static Category Separator { get; } = SpaceSeparator | LineSeparator | ParagraphSeparator;
 
 		/// <summary>
 		/// Any symbol character.
 		/// </summary>
 		[DisallowNull, NotNull]
-		public static readonly Category Symbol = MathSymbol | CurrencySymbol | ModifierSymbol | OtherSymbol;
+		public static Category Symbol { get; } = MathSymbol | CurrencySymbol | ModifierSymbol | OtherSymbol;
 		#endregion
 
 		/// <summary>
 		/// Initializes a new <see cref="Category"/>.
 		/// </summary>
+		/// <param name="predicate">The <see cref="Predicate{T}"/> used to determine inclusion into the category.</param>
 		protected Category([DisallowNull] Predicate<Glyph> predicate) : base(predicate) { }
 
 		/// <summary>

@@ -27,6 +27,26 @@ namespace Langly {
 		}
 
 		[Theory]
+		[InlineData("\u002F", "\u0030", "\u0039", false)]
+		[InlineData("\u0030", "\u0030", "\u0039", true)]
+		[InlineData("\u0031", "\u0030", "\u0039", true)]
+		[InlineData("\u0038", "\u0030", "\u0039", true)]
+		[InlineData("\u0039", "\u0030", "\u0039", true)]
+		[InlineData("\u003A", "\u0030", "\u0039", false)]
+		[InlineData("\u0040", "\u0041", "\u005A", false)]
+		[InlineData("\u0041", "\u0041", "\u005A", true)]
+		[InlineData("\u0042", "\u0041", "\u005A", true)]
+		[InlineData("\u0059", "\u0041", "\u005A", true)]
+		[InlineData("\u005A", "\u0041", "\u005A", true)]
+		[InlineData("\u005B", "\u0041", "\u005A", false)]
+		public void Compare_Range(String value, String lower, String upper, Boolean expected) {
+			Glyph val = Glyph.Parse(value);
+			Glyph low = Glyph.Parse(lower);
+			Glyph upp = Glyph.Parse(upper);
+			Assert.Equal(expected, low <= val && val <= upp);
+		}
+
+		[Theory]
 		[InlineData("\u00C0")]
 		[InlineData("\u0041\u0300")] // À
 		[InlineData("\u00C1")]
