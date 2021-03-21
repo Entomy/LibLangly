@@ -1,7 +1,4 @@
-﻿using System;
-using System.Diagnostics.CodeAnalysis;
-
-namespace Langly {
+﻿namespace Langly {
 	/// <summary>
 	/// Indicates the type can have other elements concatenated onto it.
 	/// </summary>

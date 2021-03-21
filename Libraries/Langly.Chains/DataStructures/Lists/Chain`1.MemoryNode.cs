@@ -147,7 +147,7 @@ namespace Langly.DataStructures.Lists {
 
 			/// <inheritdoc/>
 			[return: NotNull]
-			public override System.String ToString() {
+			public override String ToString() {
 				StringBuilder builder = new StringBuilder();
 				nint i = 0;
 				foreach (TElement element in Memory.Span) {

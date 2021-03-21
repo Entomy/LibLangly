@@ -6,17 +6,19 @@ namespace Langly.DataStructures.Lists {
 		/// <summary>
 		/// Represents any Node of a <see cref="Chain{TElement}"/>.
 		/// </summary>
-		private abstract class Node : Record<Node> {
+		private abstract class Node : Record<Node>,
+			IClear<Node>,
+			IIndexRefReadOnly<TElement> {
 			/// <summary>
 			/// The next node in the chain.
 			/// </summary>
-			[AllowNull]
+			[AllowNull, MaybeNull]
 			public Node Next;
 
 			/// <summary>
 			/// The previous node in the chain.
 			/// </summary>
-			[AllowNull]
+			[AllowNull, MaybeNull]
 			public Node Previous;
 
 			/// <summary>
