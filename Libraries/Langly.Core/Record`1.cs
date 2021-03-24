@@ -145,6 +145,6 @@ namespace Langly {
 		public sealed override Int32 GetHashCode() => base.GetHashCode();
 
 		/// <inheritdoc/>
-		public abstract override System.String ToString();
+		public abstract override String ToString();
 	}
 }
