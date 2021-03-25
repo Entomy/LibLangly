@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
-namespace Langly {
+namespace Langly.DataStructures {
 	/// <summary>
 	/// Represents an array of contiguous elements.
 	/// </summary>

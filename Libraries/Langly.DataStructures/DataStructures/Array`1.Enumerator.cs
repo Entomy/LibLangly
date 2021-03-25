@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 
-namespace Langly {
+namespace Langly.DataStructures {
 	public partial struct Array<TElement> : ISequenceBidi<TElement, Array<TElement>.Enumerator> {
 		/// <inheritdoc/>
 		public Enumerator GetEnumerator() => new Enumerator(this);

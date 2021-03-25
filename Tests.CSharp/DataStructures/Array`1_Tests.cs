@@ -1,7 +1,7 @@
 ﻿using System;
 using Xunit;
 
-namespace Langly {
+namespace Langly.DataStructures {
 	public class Array1_Tests {
 		[Theory]
 		[InlineData(new Int32[] { 1 }, new Int32[] { }, 1)]
