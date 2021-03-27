@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using Langly.DataStructures;
-using Langly.DataStructures.Lists;
 
 namespace Langly {
 	/// <summary>
 	/// Represents text as a sequence of <see cref="Glyph"/>.
 	/// </summary>
 	/// <remarks>
-	/// <para>This is, itself, a variation of <see cref="Chain{TElement}"/>, and is very similar to a Rope datastructure, only with some optimizations for ordered data. The Rope name is reused, but in the pedantic sense, this is not a Rope, as it's not a binary tree. Never-the-less, it serves the same role as a proper Rope.</para>
-	/// <para>The actual data structure here is a hybridized skip-list and partially-unrolled-list, just like a <see cref="Chain{TElement}"/>. However, there is an additional internal list, which maintains </para>
+	/// <para>This is, itself, a variation of a Chain, and is very similar to a Rope datastructure, only with some optimizations for ordered data. The Rope name is reused, but in the pedantic sense, this is not a Rope, as it's not a binary tree. Never-the-less, it serves the same role as a proper Rope.</para>
+	/// <para>The actual data structure here is a hybridized skip-list and partially-unrolled-list, just like a Chain. However, there is an additional internal list, which maintains the indicies of <see cref="Glyph"/>s. This list is used to rapidly seek and jump to various positions within the <see cref="Rope"/>.</para>
 	/// </remarks>
 	public sealed partial class Rope : DataStructure<Glyph, Rope, Rope.Enumerator>,
 		IAddText<Rope>,

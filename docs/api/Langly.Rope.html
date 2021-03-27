@@ -168,8 +168,8 @@
     <pre><code class="lang-csharp hljs">public sealed class Rope : DataStructure&lt;Glyph, Rope, Rope.Enumerator&gt;, IEquals&lt;Rope&gt;, IEquatable&lt;Rope&gt;, IEquals&lt;IEquals&lt;Rope&gt;&gt;, IEquatable&lt;IEquals&lt;Rope&gt;&gt;, IAddText&lt;Rope&gt;, IAdd&lt;char, Rope&gt;, IConcatText&lt;Rope&gt;, IConcat&lt;char, Rope&gt;, IPostpendText&lt;Rope&gt;, IPostpend&lt;char, Rope&gt;, IPrependText&lt;Rope&gt;, IPrepend&lt;char, Rope&gt;, ISequenceBidi&lt;Glyph, Rope.Enumerator&gt;, ISequence&lt;Glyph, Rope.Enumerator&gt;, IContains&lt;Glyph&gt;, ICount, IEnumerable&lt;Glyph&gt;, IEnumerable</code></pre>
   </div>
   <h5 id="Langly_Rope_remarks"><strong>Remarks</strong></h5>
-  <div class="markdown level0 remarks"><p>This is, itself, a variation of <a class="xref" href="Langly.DataStructures.Lists.Chain-1.html">Chain&lt;TElement&gt;</a>, and is very similar to a Rope datastructure, only with some optimizations for ordered data. The Rope name is reused, but in the pedantic sense, this is not a Rope, as it&apos;s not a binary tree. Never-the-less, it serves the same role as a proper Rope.</p>
-<p>The actual data structure here is a hybridized skip-list and partially-unrolled-list, just like a <a class="xref" href="Langly.DataStructures.Lists.Chain-1.html">Chain&lt;TElement&gt;</a>. However, there is an additional internal list, which maintains </p>
+  <div class="markdown level0 remarks"><p>This is, itself, a variation of a Chain, and is very similar to a Rope datastructure, only with some optimizations for ordered data. The Rope name is reused, but in the pedantic sense, this is not a Rope, as it&apos;s not a binary tree. Never-the-less, it serves the same role as a proper Rope.</p>
+<p>The actual data structure here is a hybridized skip-list and partially-unrolled-list, just like a Chain. However, there is an additional internal list, which maintains the indicies of <a class="xref" href="Langly.Glyph.html">Glyph</a>s. This list is used to rapidly seek and jump to various positions within the <a class="xref" href="Langly.Rope.html">Rope</a>.</p>
 </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -178,7 +178,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Rope__ctor.md&amp;value=---%0Auid%3A%20Langly.Rope.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Ropes/Rope.cs/#L32">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Ropes/Rope.cs/#L31">View Source</a>
   </span>
   <a id="Langly_Rope__ctor_" data-uid="Langly.Rope.#ctor*"></a>
   <h4 id="Langly_Rope__ctor" data-uid="Langly.Rope.#ctor">Rope()</h4>
@@ -196,7 +196,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Rope_Count.md&amp;value=---%0Auid%3A%20Langly.Rope.Count%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Ropes/Rope.cs/#L37">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Ropes/Rope.cs/#L36">View Source</a>
   </span>
   <a id="Langly_Rope_Count_" data-uid="Langly.Rope.Count*"></a>
   <h4 id="Langly_Rope_Count" data-uid="Langly.Rope.Count">Count</h4>
@@ -298,7 +298,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Rope_Langly_IAdd_System_Char_Langly_Rope__Add_System_Char_.md&amp;value=---%0Auid%3A%20Langly.Rope.Langly%23IAdd%7BSystem%23Char%2CLangly%23Rope%7D%23Add(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Ropes/Rope.cs/#L43">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Ropes/Rope.cs/#L42">View Source</a>
   </span>
   <a id="Langly_Rope_Langly_IAdd_System_Char_Langly_Rope__Add_" data-uid="Langly.Rope.Langly#IAdd{System#Char,Langly#Rope}#Add*"></a>
   <h4 id="Langly_Rope_Langly_IAdd_System_Char_Langly_Rope__Add_System_Char_" data-uid="Langly.Rope.Langly#IAdd{System#Char,Langly#Rope}#Add(System.Char)">IAdd&lt;Char, Rope&gt;.Add(Char)</h4>
@@ -350,7 +350,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Rope_Langly_IAdd_System_Char_Langly_Rope__Add_System_Char___.md&amp;value=---%0Auid%3A%20Langly.Rope.Langly%23IAdd%7BSystem%23Char%2CLangly%23Rope%7D%23Add(System.Char%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Ropes/Rope.cs/#L47">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Ropes/Rope.cs/#L46">View Source</a>
   </span>
   <a id="Langly_Rope_Langly_IAdd_System_Char_Langly_Rope__Add_" data-uid="Langly.Rope.Langly#IAdd{System#Char,Langly#Rope}#Add*"></a>
   <h4 id="Langly_Rope_Langly_IAdd_System_Char_Langly_Rope__Add_System_Char___" data-uid="Langly.Rope.Langly#IAdd{System#Char,Langly#Rope}#Add(System.Char[])">IAdd&lt;Char, Rope&gt;.Add(Char[])</h4>
@@ -402,7 +402,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Rope_Langly_IAdd_System_Char_Langly_Rope__Add_System_Memory_System_Char__.md&amp;value=---%0Auid%3A%20Langly.Rope.Langly%23IAdd%7BSystem%23Char%2CLangly%23Rope%7D%23Add(System.Memory%7BSystem.Char%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Ropes/Rope.cs/#L51">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Ropes/Rope.cs/#L50">View Source</a>
   </span>
   <a id="Langly_Rope_Langly_IAdd_System_Char_Langly_Rope__Add_" data-uid="Langly.Rope.Langly#IAdd{System#Char,Langly#Rope}#Add*"></a>
   <h4 id="Langly_Rope_Langly_IAdd_System_Char_Langly_Rope__Add_System_Memory_System_Char__" data-uid="Langly.Rope.Langly#IAdd{System#Char,Langly#Rope}#Add(System.Memory{System.Char})">IAdd&lt;Char, Rope&gt;.Add(Memory&lt;Char&gt;)</h4>
@@ -454,7 +454,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Rope_Langly_IAdd_System_Char_Langly_Rope__Add_System_ReadOnlyMemory_System_Char__.md&amp;value=---%0Auid%3A%20Langly.Rope.Langly%23IAdd%7BSystem%23Char%2CLangly%23Rope%7D%23Add(System.ReadOnlyMemory%7BSystem.Char%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Ropes/Rope.cs/#L55">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Ropes/Rope.cs/#L54">View Source</a>
   </span>
   <a id="Langly_Rope_Langly_IAdd_System_Char_Langly_Rope__Add_" data-uid="Langly.Rope.Langly#IAdd{System#Char,Langly#Rope}#Add*"></a>
   <h4 id="Langly_Rope_Langly_IAdd_System_Char_Langly_Rope__Add_System_ReadOnlyMemory_System_Char__" data-uid="Langly.Rope.Langly#IAdd{System#Char,Langly#Rope}#Add(System.ReadOnlyMemory{System.Char})">IAdd&lt;Char, Rope&gt;.Add(ReadOnlyMemory&lt;Char&gt;)</h4>
@@ -506,7 +506,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Rope_Langly_IAdd_System_Char_Langly_Rope__Add_System_ReadOnlySpan_System_Char__.md&amp;value=---%0Auid%3A%20Langly.Rope.Langly%23IAdd%7BSystem%23Char%2CLangly%23Rope%7D%23Add(System.ReadOnlySpan%7BSystem.Char%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Ropes/Rope.cs/#L63">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Ropes/Rope.cs/#L62">View Source</a>
   </span>
   <a id="Langly_Rope_Langly_IAdd_System_Char_Langly_Rope__Add_" data-uid="Langly.Rope.Langly#IAdd{System#Char,Langly#Rope}#Add*"></a>
   <h4 id="Langly_Rope_Langly_IAdd_System_Char_Langly_Rope__Add_System_ReadOnlySpan_System_Char__" data-uid="Langly.Rope.Langly#IAdd{System#Char,Langly#Rope}#Add(System.ReadOnlySpan{System.Char})">IAdd&lt;Char, Rope&gt;.Add(ReadOnlySpan&lt;Char&gt;)</h4>
@@ -558,7 +558,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Rope_Langly_IAdd_System_Char_Langly_Rope__Add_System_Span_System_Char__.md&amp;value=---%0Auid%3A%20Langly.Rope.Langly%23IAdd%7BSystem%23Char%2CLangly%23Rope%7D%23Add(System.Span%7BSystem.Char%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Ropes/Rope.cs/#L59">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Ropes/Rope.cs/#L58">View Source</a>
   </span>
   <a id="Langly_Rope_Langly_IAdd_System_Char_Langly_Rope__Add_" data-uid="Langly.Rope.Langly#IAdd{System#Char,Langly#Rope}#Add*"></a>
   <h4 id="Langly_Rope_Langly_IAdd_System_Char_Langly_Rope__Add_System_Span_System_Char__" data-uid="Langly.Rope.Langly#IAdd{System#Char,Langly#Rope}#Add(System.Span{System.Char})">IAdd&lt;Char, Rope&gt;.Add(Span&lt;Char&gt;)</h4>
@@ -610,7 +610,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Rope_Langly_IAdd_System_Char_Langly_Rope__Add__1_Langly_ISequence_System_Char___0__.md&amp;value=---%0Auid%3A%20Langly.Rope.Langly%23IAdd%7BSystem%23Char%2CLangly%23Rope%7D%23Add%60%601(Langly.ISequence%7BSystem.Char%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Ropes/Rope.cs/#L67">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Ropes/Rope.cs/#L66">View Source</a>
   </span>
   <a id="Langly_Rope_Langly_IAdd_System_Char_Langly_Rope__Add_" data-uid="Langly.Rope.Langly#IAdd{System#Char,Langly#Rope}#Add*"></a>
   <h4 id="Langly_Rope_Langly_IAdd_System_Char_Langly_Rope__Add__1_Langly_ISequence_System_Char___0__" data-uid="Langly.Rope.Langly#IAdd{System#Char,Langly#Rope}#Add``1(Langly.ISequence{System.Char,``0})">IAdd&lt;Char, Rope&gt;.Add&lt;TEnumerator&gt;(ISequence&lt;Char, TEnumerator&gt;)</h4>
@@ -679,7 +679,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Rope_Langly_IPostpend_System_Char_Langly_Rope__Postpend_System_Char_.md&amp;value=---%0Auid%3A%20Langly.Rope.Langly%23IPostpend%7BSystem%23Char%2CLangly%23Rope%7D%23Postpend(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Ropes/Rope.cs/#L71">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Ropes/Rope.cs/#L70">View Source</a>
   </span>
   <a id="Langly_Rope_Langly_IPostpend_System_Char_Langly_Rope__Postpend_" data-uid="Langly.Rope.Langly#IPostpend{System#Char,Langly#Rope}#Postpend*"></a>
   <h4 id="Langly_Rope_Langly_IPostpend_System_Char_Langly_Rope__Postpend_System_Char_" data-uid="Langly.Rope.Langly#IPostpend{System#Char,Langly#Rope}#Postpend(System.Char)">IPostpend&lt;Char, Rope&gt;.Postpend(Char)</h4>
@@ -728,7 +728,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Rope_Langly_IPrepend_System_Char_Langly_Rope__Prepend_System_Char_.md&amp;value=---%0Auid%3A%20Langly.Rope.Langly%23IPrepend%7BSystem%23Char%2CLangly%23Rope%7D%23Prepend(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Ropes/Rope.cs/#L84">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Ropes/Rope.cs/#L83">View Source</a>
   </span>
   <a id="Langly_Rope_Langly_IPrepend_System_Char_Langly_Rope__Prepend_" data-uid="Langly.Rope.Langly#IPrepend{System#Char,Langly#Rope}#Prepend*"></a>
   <h4 id="Langly_Rope_Langly_IPrepend_System_Char_Langly_Rope__Prepend_System_Char_" data-uid="Langly.Rope.Langly#IPrepend{System#Char,Langly#Rope}#Prepend(System.Char)">IPrepend&lt;Char, Rope&gt;.Prepend(Char)</h4>
