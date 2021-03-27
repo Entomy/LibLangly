@@ -9,12 +9,6 @@ namespace Langly.DataStructures.Arrays {
 	/// <typeparam name="TElement">The type of elements in the array.</typeparam>
 	public sealed class BoundedArray<TElement> : FlexibleArray<TElement, BoundedArray<TElement>> {
 		/// <summary>
-		/// An empty <see cref="BoundedArray{TElement}"/> singleton.
-		/// </summary>
-		[NotNull]
-		public static BoundedArray<TElement> Empty => Singleton.Instance;
-
-		/// <summary>
 		/// Initializes a new <see cref="BoundedArray{TElement}"/> with the given <paramref name="capacity"/>.
 		/// </summary>
 		/// <param name="capacity">The maximum capacity.</param>
@@ -46,7 +40,7 @@ namespace Langly.DataStructures.Arrays {
 		/// </summary>
 		/// <param name="array">The <see cref="Array"/> to convert.</param>
 		[return: NotNull]
-		public static implicit operator BoundedArray<TElement>([AllowNull] TElement[] array) => array is not null ? new(array) : Empty;
+		public static implicit operator BoundedArray<TElement>([AllowNull] TElement[] array) => array is not null ? new(array) : new(Memory<TElement>.Empty);
 
 		/// <summary>
 		/// Converts the <paramref name="memory"/> to a <see cref="BoundedArray{TElement}"/>.
@@ -66,12 +60,5 @@ namespace Langly.DataStructures.Arrays {
 		/// <inheritdoc/>
 		[return: MaybeNull]
 		protected override BoundedArray<TElement> Prepend([AllowNull] TElement element) => Count < Capacity ? base.Prepend(element) : null;
-
-		private static class Singleton {
-			static Singleton() { }
-
-			[DisallowNull, NotNull]
-			internal static readonly BoundedArray<TElement> Instance = new BoundedArray<TElement>(0);
-		}
 	}
 }

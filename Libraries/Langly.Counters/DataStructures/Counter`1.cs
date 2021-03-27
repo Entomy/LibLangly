@@ -9,8 +9,7 @@ namespace Langly.DataStructures {
 	/// </summary>
 	/// <typeparam name="TElement">The type of the elements being counted.</typeparam>
 	/// <remarks>
-	/// <para>This isn't intended for counting a single thing over and over. Rather, it's meant for counting collections of things all at once, and then doing things with those counts.</para>
-	/// <para>This isn't derived from <see cref="DataStructure{TIndex, TElement, TSelf, TEnumerator}"/>, and instead uses its own hardcoded behavior. As such, custom filtration isn't possible, with it instead doing its own combination of unique and sparse filtration as appropriate.</para>
+	/// This isn't intended for counting a single thing over and over. Rather, it's meant for counting collections of things all at once, and then doing things with those counts.
 	/// </remarks>
 	[DebuggerDisplay("{ToString(5),nq}")]
 	public sealed partial class Counter<TElement> : Record<Counter<TElement>>,

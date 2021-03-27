@@ -9,10 +9,9 @@ namespace Langly.DataStructures.Arrays {
 	/// <typeparam name="TElement">The type of elements in the array.</typeparam>
 	public sealed class DynamicArray<TElement> : FlexibleArray<TElement, DynamicArray<TElement>>, IResize<DynamicArray<TElement>> {
 		/// <summary>
-		/// An empty <see cref="DynamicArray{TElement}"/> singleton.
+		/// Initializes a new <see cref="DynamicArray{TElement}"/>.
 		/// </summary>
-		[NotNull]
-		public static DynamicArray<TElement> Empty => Singleton.Instance;
+		public DynamicArray() : this(0) { }
 
 		/// <summary>
 		/// Initializes a new <see cref="DynamicArray{TElement}"/> with the given <paramref name="capacity"/>.
@@ -52,7 +51,7 @@ namespace Langly.DataStructures.Arrays {
 		/// </summary>
 		/// <param name="array">The <see cref="Array"/> to convert.</param>
 		[return: NotNull]
-		public static implicit operator DynamicArray<TElement>([AllowNull] TElement[] array) => array is not null ? new(array) : Empty;
+		public static implicit operator DynamicArray<TElement>([AllowNull] TElement[] array) => array is not null ? new(array) : new();
 
 		/// <summary>
 		/// Converts the <paramref name="memory"/> to a <see cref="DynamicArray{TElement}"/>.
@@ -90,13 +89,6 @@ namespace Langly.DataStructures.Arrays {
 				((IResize<DynamicArray<TElement>>)this).Grow();
 			}
 			return base.Prepend(element);
-		}
-
-		private static class Singleton {
-			static Singleton() { }
-
-			[DisallowNull, NotNull]
-			internal static readonly DynamicArray<TElement> Instance = new DynamicArray<TElement>(0);
 		}
 	}
 }

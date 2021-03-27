@@ -101,6 +101,8 @@ namespace Langly.DataStructures.Lists {
 				N = N.Next;
 			}
 			N?.Clear();
+			Head = null;
+			Tail = null;
 			Count = 0;
 			return this;
 		}
