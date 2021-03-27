@@ -7,8 +7,3 @@ open Langly.DataStructures.Lists
 /// Represents a Chain, a type of highly sophisticated List.
 /// </summary>
 type chain< ^t> = Chain< ^t>
-
-/// <summary>
-/// Represents an associative Chain, a type of highly sophisticated List.
-/// </summary>
-type chain< ^i, ^t> = Chain< ^i, ^t>
