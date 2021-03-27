@@ -182,7 +182,7 @@ namespace Langly.DataStructures.Arrays {
 		/// <returns>If the insert occurred successfully, returns a <typeparamref name="TSelf"/> containing the original and inserted elements; otherwise, <see langword="null"/>.</returns>
 		[return: MaybeNull]
 		protected virtual TSelf Insert(nint index, [AllowNull] TElement element) {
-			for (Int32 i = Memory.Length - 1; i >= index;) {
+			for (Int32 i = Memory.Length - 1; i > index;) {
 				Memory.Span[i] = Memory.Span[--i];
 			}
 			Memory.Span[(Int32)index] = element;
