@@ -84,6 +84,8 @@
     <div><a class="xref" href="Langly.IPrepend-2.html">IPrepend</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.Array-1.html">Array</a>&lt;TElement&gt;&gt;</div>
     <div><a class="xref" href="Langly.IEquals-1.html">IEquals</a>&lt;<a class="xref" href="Langly.DataStructures.Array-1.html">Array</a>&lt;TElement&gt;&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Langly.DataStructures.Array-1.html">Array</a>&lt;TElement&gt;&gt;</div>
+    <div><a class="xref" href="Langly.IEquals-1.html">IEquals</a>&lt;<a class="xref" href="Langly.IEquals-1.html">IEquals</a>&lt;<a class="xref" href="Langly.DataStructures.Array-1.html">Array</a>&lt;TElement&gt;&gt;&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Langly.IEquals-1.html">IEquals</a>&lt;<a class="xref" href="Langly.DataStructures.Array-1.html">Array</a>&lt;TElement&gt;&gt;&gt;</div>
     <div><a class="xref" href="Langly.IIndexRefReadOnly-1.html">IIndexRefReadOnly</a>&lt;TElement&gt;</div>
     <div><a class="xref" href="Langly.IIndexRefReadOnly-2.html">IIndexRefReadOnly</a>&lt;<span class="xref">nint</span>, TElement&gt;</div>
     <div><a class="xref" href="Langly.IInsert-2.html">IInsert</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.Array-1.html">Array</a>&lt;TElement&gt;&gt;</div>
@@ -118,7 +120,7 @@
   <h6><strong>Assembly</strong>: Langly.DataStructures.dll</h6>
   <h5 id="Langly_DataStructures_Array_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public struct Array&lt;TElement&gt; : IAdd&lt;TElement, Array&lt;TElement&gt;&gt;, IConcat&lt;TElement, Array&lt;TElement&gt;&gt;, IPostpend&lt;TElement, Array&lt;TElement&gt;&gt;, IPrepend&lt;TElement, Array&lt;TElement&gt;&gt;, IEquals&lt;Array&lt;TElement&gt;&gt;, IEquatable&lt;Array&lt;TElement&gt;&gt;, IIndexRefReadOnly&lt;TElement&gt;, IIndexRefReadOnly&lt;nint, TElement&gt;, IInsert&lt;TElement, Array&lt;TElement&gt;&gt;, IInsert&lt;nint, TElement, Array&lt;TElement&gt;&gt;, IRemove&lt;TElement, Array&lt;TElement&gt;&gt;, IReplace&lt;TElement, Array&lt;TElement&gt;&gt;, IReplace&lt;TElement, TElement, Array&lt;TElement&gt;&gt;, IResize&lt;Array&lt;TElement&gt;&gt;, ICapacity, IShift&lt;Array&lt;TElement&gt;&gt;, ISlice&lt;Array&lt;TElement&gt;&gt;, ISequenceBidi&lt;TElement, Array&lt;TElement&gt;.Enumerator&gt;, ISequence&lt;TElement, Array&lt;TElement&gt;.Enumerator&gt;, IContains&lt;TElement&gt;, ICount, IEnumerable&lt;TElement&gt;, IEnumerable</code></pre>
+    <pre><code class="lang-csharp hljs">public struct Array&lt;TElement&gt; : IAdd&lt;TElement, Array&lt;TElement&gt;&gt;, IConcat&lt;TElement, Array&lt;TElement&gt;&gt;, IPostpend&lt;TElement, Array&lt;TElement&gt;&gt;, IPrepend&lt;TElement, Array&lt;TElement&gt;&gt;, IEquals&lt;Array&lt;TElement&gt;&gt;, IEquatable&lt;Array&lt;TElement&gt;&gt;, IEquals&lt;IEquals&lt;Array&lt;TElement&gt;&gt;&gt;, IEquatable&lt;IEquals&lt;Array&lt;TElement&gt;&gt;&gt;, IIndexRefReadOnly&lt;TElement&gt;, IIndexRefReadOnly&lt;nint, TElement&gt;, IInsert&lt;TElement, Array&lt;TElement&gt;&gt;, IInsert&lt;nint, TElement, Array&lt;TElement&gt;&gt;, IRemove&lt;TElement, Array&lt;TElement&gt;&gt;, IReplace&lt;TElement, Array&lt;TElement&gt;&gt;, IReplace&lt;TElement, TElement, Array&lt;TElement&gt;&gt;, IResize&lt;Array&lt;TElement&gt;&gt;, ICapacity, IShift&lt;Array&lt;TElement&gt;&gt;, ISlice&lt;Array&lt;TElement&gt;&gt;, ISequenceBidi&lt;TElement, Array&lt;TElement&gt;.Enumerator&gt;, ISequence&lt;TElement, Array&lt;TElement&gt;.Enumerator&gt;, IContains&lt;TElement&gt;, ICount, IEnumerable&lt;TElement&gt;, IEnumerable</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -136,6 +138,9 @@
       </tr>
     </tbody>
   </table>
+  <h5 id="Langly_DataStructures_Array_1_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>Nearly every operation that changes the array allocates a new array and copies over elements as part of its operation. These methods are implemented for orthogonality, but are highly recommended to not be used. If you have to do many operations transforming the data, there are various dynamic data structures you probably want to be using instead.</p>
+</div>
   <h3 id="constructors">Constructors
   </h3>
   <span class="small pull-right mobile-hide">
@@ -143,7 +148,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1__ctor__0___.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.%23ctor(%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L35">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L38">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1__ctor_" data-uid="Langly.DataStructures.Array`1.#ctor*"></a>
   <h4 id="Langly_DataStructures_Array_1__ctor__0___" data-uid="Langly.DataStructures.Array`1.#ctor(`0[])">Array(TElement[])</h4>
@@ -172,6 +177,40 @@
       </tr>
     </tbody>
   </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1__ctor_System_ReadOnlyMemory__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.%23ctor(System.ReadOnlyMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L44">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Array_1__ctor_" data-uid="Langly.DataStructures.Array`1.#ctor*"></a>
+  <h4 id="Langly_DataStructures_Array_1__ctor_System_ReadOnlyMemory__0__" data-uid="Langly.DataStructures.Array`1.#ctor(System.ReadOnlyMemory{`0})">Array(ReadOnlyMemory&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Langly.DataStructures.Array-1.html">Array&lt;TElement&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Array(ReadOnlyMemory&lt;TElement&gt; memory)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">memory</span></td>
+        <td><p>The memory of the array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="properties">Properties
   </h3>
   <span class="small pull-right mobile-hide">
@@ -179,7 +218,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_Capacity.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.Capacity%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L49">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L52">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_Capacity_" data-uid="Langly.DataStructures.Array`1.Capacity*"></a>
   <h4 id="Langly_DataStructures_Array_1_Capacity" data-uid="Langly.DataStructures.Array`1.Capacity">Capacity</h4>
@@ -209,7 +248,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_Count.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.Count%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L55">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L58">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_Count_" data-uid="Langly.DataStructures.Array`1.Count*"></a>
   <h4 id="Langly_DataStructures_Array_1_Count" data-uid="Langly.DataStructures.Array`1.Count">Count</h4>
@@ -239,7 +278,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_Empty.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.Empty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L46">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L49">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_Empty_" data-uid="Langly.DataStructures.Array`1.Empty*"></a>
   <h4 id="Langly_DataStructures_Array_1_Empty" data-uid="Langly.DataStructures.Array`1.Empty">Empty</h4>
@@ -270,7 +309,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_Item_nint_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.Item(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L58">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L61">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_Item_" data-uid="Langly.DataStructures.Array`1.Item*"></a>
   <h4 id="Langly_DataStructures_Array_1_Item_nint_" data-uid="Langly.DataStructures.Array`1.Item(nint)">Item[nint]</h4>
@@ -317,7 +356,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_Item_System_Range_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.Item(System.Range)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L61">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L64">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_Item_" data-uid="Langly.DataStructures.Array`1.Item*"></a>
   <h4 id="Langly_DataStructures_Array_1_Item_System_Range_" data-uid="Langly.DataStructures.Array`1.Item(System.Range)">Item[Range]</h4>
@@ -369,7 +408,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_Add__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.Add(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L105">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L140">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_Add_" data-uid="Langly.DataStructures.Array`1.Add*"></a>
   <h4 id="Langly_DataStructures_Array_1_Add__0_" data-uid="Langly.DataStructures.Array`1.Add(`0)">Add(TElement)</h4>
@@ -422,7 +461,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_Add__0___.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.Add(%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L108">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L143">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_Add_" data-uid="Langly.DataStructures.Array`1.Add*"></a>
   <h4 id="Langly_DataStructures_Array_1_Add__0___" data-uid="Langly.DataStructures.Array`1.Add(`0[])">Add(TElement[])</h4>
@@ -475,7 +514,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_Add_System_Memory__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.Add(System.Memory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L111">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L146">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_Add_" data-uid="Langly.DataStructures.Array`1.Add*"></a>
   <h4 id="Langly_DataStructures_Array_1_Add_System_Memory__0__" data-uid="Langly.DataStructures.Array`1.Add(System.Memory{`0})">Add(Memory&lt;TElement&gt;)</h4>
@@ -528,7 +567,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_Add_System_ReadOnlyMemory__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.Add(System.ReadOnlyMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L114">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L149">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_Add_" data-uid="Langly.DataStructures.Array`1.Add*"></a>
   <h4 id="Langly_DataStructures_Array_1_Add_System_ReadOnlyMemory__0__" data-uid="Langly.DataStructures.Array`1.Add(System.ReadOnlyMemory{`0})">Add(ReadOnlyMemory&lt;TElement&gt;)</h4>
@@ -581,7 +620,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_Add_System_ReadOnlySpan__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.Add(System.ReadOnlySpan%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L120">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L155">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_Add_" data-uid="Langly.DataStructures.Array`1.Add*"></a>
   <h4 id="Langly_DataStructures_Array_1_Add_System_ReadOnlySpan__0__" data-uid="Langly.DataStructures.Array`1.Add(System.ReadOnlySpan{`0})">Add(ReadOnlySpan&lt;TElement&gt;)</h4>
@@ -634,7 +673,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_Add_System_Span__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.Add(System.Span%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L117">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L152">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_Add_" data-uid="Langly.DataStructures.Array`1.Add*"></a>
   <h4 id="Langly_DataStructures_Array_1_Add_System_Span__0__" data-uid="Langly.DataStructures.Array`1.Add(System.Span{`0})">Add(Span&lt;TElement&gt;)</h4>
@@ -687,7 +726,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_Add__1_Langly_ISequence__0___0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.Add%60%601(Langly.ISequence%7B%600%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L123">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L158">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_Add_" data-uid="Langly.DataStructures.Array`1.Add*"></a>
   <h4 id="Langly_DataStructures_Array_1_Add__1_Langly_ISequence__0___0__" data-uid="Langly.DataStructures.Array`1.Add``1(Langly.ISequence{`0,``0})">Add&lt;TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;)</h4>
@@ -757,7 +796,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_Contains__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.Contains(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L126">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L161">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_Contains_" data-uid="Langly.DataStructures.Array`1.Contains*"></a>
   <h4 id="Langly_DataStructures_Array_1_Contains__0_" data-uid="Langly.DataStructures.Array`1.Contains(`0)">Contains(TElement)</h4>
@@ -807,7 +846,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_Equals_Langly_DataStructures_Array__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.Equals(Langly.DataStructures.Array%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L146">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L183">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_Equals_" data-uid="Langly.DataStructures.Array`1.Equals*"></a>
   <h4 id="Langly_DataStructures_Array_1_Equals_Langly_DataStructures_Array__0__" data-uid="Langly.DataStructures.Array`1.Equals(Langly.DataStructures.Array{`0})">Equals(Array&lt;TElement&gt;)</h4>
@@ -851,10 +890,57 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_Equals_Langly_IEquals_Langly_DataStructures_Array__0___.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.Equals(Langly.IEquals%7BLangly.DataStructures.Array%7B%600%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L196">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Array_1_Equals_" data-uid="Langly.DataStructures.Array`1.Equals*"></a>
+  <h4 id="Langly_DataStructures_Array_1_Equals_Langly_IEquals_Langly_DataStructures_Array__0___" data-uid="Langly.DataStructures.Array`1.Equals(Langly.IEquals{Langly.DataStructures.Array{`0}})">Equals(IEquals&lt;Array&lt;TElement&gt;&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(IEquals&lt;Array&lt;TElement&gt;&gt; other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.IEquals-1.html">IEquals</a>&lt;<a class="xref" href="Langly.DataStructures.Array-1.html">Array</a>&lt;TElement&gt;&gt;</td>
+        <td><span class="parametername">other</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_Equals_System_Object_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.Equals(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L136">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L171">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_Equals_" data-uid="Langly.DataStructures.Array`1.Equals*"></a>
   <h4 id="Langly_DataStructures_Array_1_Equals_System_Object_" data-uid="Langly.DataStructures.Array`1.Equals(System.Object)">Equals(Object)</h4>
@@ -935,7 +1021,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_GetHashCode.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.GetHashCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L159">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L199">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_GetHashCode_" data-uid="Langly.DataStructures.Array`1.GetHashCode*"></a>
   <h4 id="Langly_DataStructures_Array_1_GetHashCode" data-uid="Langly.DataStructures.Array`1.GetHashCode">GetHashCode()</h4>
@@ -967,7 +1053,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_Insert_nint__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.Insert(nint%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L162">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L202">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_Insert_" data-uid="Langly.DataStructures.Array`1.Insert*"></a>
   <h4 id="Langly_DataStructures_Array_1_Insert_nint__0_" data-uid="Langly.DataStructures.Array`1.Insert(nint,`0)">Insert(nint, TElement)</h4>
@@ -1019,7 +1105,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_Insert_nint__0___.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.Insert(nint%2C%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L174">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L214">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_Insert_" data-uid="Langly.DataStructures.Array`1.Insert*"></a>
   <h4 id="Langly_DataStructures_Array_1_Insert_nint__0___" data-uid="Langly.DataStructures.Array`1.Insert(nint,`0[])">Insert(nint, TElement[])</h4>
@@ -1071,7 +1157,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_Insert_nint_System_Memory__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.Insert(nint%2CSystem.Memory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L177">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L217">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_Insert_" data-uid="Langly.DataStructures.Array`1.Insert*"></a>
   <h4 id="Langly_DataStructures_Array_1_Insert_nint_System_Memory__0__" data-uid="Langly.DataStructures.Array`1.Insert(nint,System.Memory{`0})">Insert(nint, Memory&lt;TElement&gt;)</h4>
@@ -1123,7 +1209,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_Insert_nint_System_ReadOnlyMemory__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.Insert(nint%2CSystem.ReadOnlyMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L180">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L220">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_Insert_" data-uid="Langly.DataStructures.Array`1.Insert*"></a>
   <h4 id="Langly_DataStructures_Array_1_Insert_nint_System_ReadOnlyMemory__0__" data-uid="Langly.DataStructures.Array`1.Insert(nint,System.ReadOnlyMemory{`0})">Insert(nint, ReadOnlyMemory&lt;TElement&gt;)</h4>
@@ -1175,7 +1261,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_Insert_nint_System_ReadOnlySpan__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.Insert(nint%2CSystem.ReadOnlySpan%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L186">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L226">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_Insert_" data-uid="Langly.DataStructures.Array`1.Insert*"></a>
   <h4 id="Langly_DataStructures_Array_1_Insert_nint_System_ReadOnlySpan__0__" data-uid="Langly.DataStructures.Array`1.Insert(nint,System.ReadOnlySpan{`0})">Insert(nint, ReadOnlySpan&lt;TElement&gt;)</h4>
@@ -1227,7 +1313,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_Insert_nint_System_Span__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.Insert(nint%2CSystem.Span%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L183">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L223">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_Insert_" data-uid="Langly.DataStructures.Array`1.Insert*"></a>
   <h4 id="Langly_DataStructures_Array_1_Insert_nint_System_Span__0__" data-uid="Langly.DataStructures.Array`1.Insert(nint,System.Span{`0})">Insert(nint, Span&lt;TElement&gt;)</h4>
@@ -1279,7 +1365,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_Insert__1_nint_Langly_ISequence__0___0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.Insert%60%601(nint%2CLangly.ISequence%7B%600%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L195">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L235">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_Insert_" data-uid="Langly.DataStructures.Array`1.Insert*"></a>
   <h4 id="Langly_DataStructures_Array_1_Insert__1_nint_Langly_ISequence__0___0__" data-uid="Langly.DataStructures.Array`1.Insert``1(nint,Langly.ISequence{`0,``0})">Insert&lt;TEnumerator&gt;(nint, ISequence&lt;TElement, TEnumerator&gt;)</h4>
@@ -1347,7 +1433,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_Postpend__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.Postpend(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L198">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L238">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_Postpend_" data-uid="Langly.DataStructures.Array`1.Postpend*"></a>
   <h4 id="Langly_DataStructures_Array_1_Postpend__0_" data-uid="Langly.DataStructures.Array`1.Postpend(`0)">Postpend(TElement)</h4>
@@ -1397,7 +1483,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_Postpend__0___.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.Postpend(%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L209">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L249">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_Postpend_" data-uid="Langly.DataStructures.Array`1.Postpend*"></a>
   <h4 id="Langly_DataStructures_Array_1_Postpend__0___" data-uid="Langly.DataStructures.Array`1.Postpend(`0[])">Postpend(TElement[])</h4>
@@ -1447,7 +1533,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_Postpend_System_Memory__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.Postpend(System.Memory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L212">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L252">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_Postpend_" data-uid="Langly.DataStructures.Array`1.Postpend*"></a>
   <h4 id="Langly_DataStructures_Array_1_Postpend_System_Memory__0__" data-uid="Langly.DataStructures.Array`1.Postpend(System.Memory{`0})">Postpend(Memory&lt;TElement&gt;)</h4>
@@ -1497,7 +1583,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_Postpend_System_ReadOnlyMemory__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.Postpend(System.ReadOnlyMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L215">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L255">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_Postpend_" data-uid="Langly.DataStructures.Array`1.Postpend*"></a>
   <h4 id="Langly_DataStructures_Array_1_Postpend_System_ReadOnlyMemory__0__" data-uid="Langly.DataStructures.Array`1.Postpend(System.ReadOnlyMemory{`0})">Postpend(ReadOnlyMemory&lt;TElement&gt;)</h4>
@@ -1547,7 +1633,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_Postpend_System_ReadOnlySpan__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.Postpend(System.ReadOnlySpan%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L221">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L261">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_Postpend_" data-uid="Langly.DataStructures.Array`1.Postpend*"></a>
   <h4 id="Langly_DataStructures_Array_1_Postpend_System_ReadOnlySpan__0__" data-uid="Langly.DataStructures.Array`1.Postpend(System.ReadOnlySpan{`0})">Postpend(ReadOnlySpan&lt;TElement&gt;)</h4>
@@ -1597,7 +1683,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_Postpend_System_Span__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.Postpend(System.Span%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L218">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L258">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_Postpend_" data-uid="Langly.DataStructures.Array`1.Postpend*"></a>
   <h4 id="Langly_DataStructures_Array_1_Postpend_System_Span__0__" data-uid="Langly.DataStructures.Array`1.Postpend(System.Span{`0})">Postpend(Span&lt;TElement&gt;)</h4>
@@ -1647,7 +1733,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_Postpend__1_Langly_ISequence__0___0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.Postpend%60%601(Langly.ISequence%7B%600%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L232">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L272">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_Postpend_" data-uid="Langly.DataStructures.Array`1.Postpend*"></a>
   <h4 id="Langly_DataStructures_Array_1_Postpend__1_Langly_ISequence__0___0__" data-uid="Langly.DataStructures.Array`1.Postpend``1(Langly.ISequence{`0,``0})">Postpend&lt;TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;)</h4>
@@ -1714,7 +1800,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_Prepend__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.Prepend(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L246">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L286">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_Prepend_" data-uid="Langly.DataStructures.Array`1.Prepend*"></a>
   <h4 id="Langly_DataStructures_Array_1_Prepend__0_" data-uid="Langly.DataStructures.Array`1.Prepend(`0)">Prepend(TElement)</h4>
@@ -1764,7 +1850,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_Prepend__0___.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.Prepend(%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L257">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L297">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_Prepend_" data-uid="Langly.DataStructures.Array`1.Prepend*"></a>
   <h4 id="Langly_DataStructures_Array_1_Prepend__0___" data-uid="Langly.DataStructures.Array`1.Prepend(`0[])">Prepend(TElement[])</h4>
@@ -1814,7 +1900,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_Prepend_System_Memory__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.Prepend(System.Memory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L260">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L300">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_Prepend_" data-uid="Langly.DataStructures.Array`1.Prepend*"></a>
   <h4 id="Langly_DataStructures_Array_1_Prepend_System_Memory__0__" data-uid="Langly.DataStructures.Array`1.Prepend(System.Memory{`0})">Prepend(Memory&lt;TElement&gt;)</h4>
@@ -1864,7 +1950,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_Prepend_System_ReadOnlyMemory__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.Prepend(System.ReadOnlyMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L263">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L303">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_Prepend_" data-uid="Langly.DataStructures.Array`1.Prepend*"></a>
   <h4 id="Langly_DataStructures_Array_1_Prepend_System_ReadOnlyMemory__0__" data-uid="Langly.DataStructures.Array`1.Prepend(System.ReadOnlyMemory{`0})">Prepend(ReadOnlyMemory&lt;TElement&gt;)</h4>
@@ -1914,7 +2000,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_Prepend_System_ReadOnlySpan__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.Prepend(System.ReadOnlySpan%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L269">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L309">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_Prepend_" data-uid="Langly.DataStructures.Array`1.Prepend*"></a>
   <h4 id="Langly_DataStructures_Array_1_Prepend_System_ReadOnlySpan__0__" data-uid="Langly.DataStructures.Array`1.Prepend(System.ReadOnlySpan{`0})">Prepend(ReadOnlySpan&lt;TElement&gt;)</h4>
@@ -1964,7 +2050,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_Prepend_System_Span__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.Prepend(System.Span%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L266">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L306">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_Prepend_" data-uid="Langly.DataStructures.Array`1.Prepend*"></a>
   <h4 id="Langly_DataStructures_Array_1_Prepend_System_Span__0__" data-uid="Langly.DataStructures.Array`1.Prepend(System.Span{`0})">Prepend(Span&lt;TElement&gt;)</h4>
@@ -2014,7 +2100,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_Prepend__1_Langly_ISequence__0___0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.Prepend%60%601(Langly.ISequence%7B%600%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L280">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L320">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_Prepend_" data-uid="Langly.DataStructures.Array`1.Prepend*"></a>
   <h4 id="Langly_DataStructures_Array_1_Prepend__1_Langly_ISequence__0___0__" data-uid="Langly.DataStructures.Array`1.Prepend``1(Langly.ISequence{`0,``0})">Prepend&lt;TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;)</h4>
@@ -2081,7 +2167,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_Remove__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.Remove(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L294">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L334">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_Remove_" data-uid="Langly.DataStructures.Array`1.Remove*"></a>
   <h4 id="Langly_DataStructures_Array_1_Remove__0_" data-uid="Langly.DataStructures.Array`1.Remove(`0)">Remove(TElement)</h4>
@@ -2131,7 +2217,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_RemoveFirst__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.RemoveFirst(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L297">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L346">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_RemoveFirst_" data-uid="Langly.DataStructures.Array`1.RemoveFirst*"></a>
   <h4 id="Langly_DataStructures_Array_1_RemoveFirst__0_" data-uid="Langly.DataStructures.Array`1.RemoveFirst(`0)">RemoveFirst(TElement)</h4>
@@ -2181,7 +2267,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_RemoveLast__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.RemoveLast(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L300">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L364">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_RemoveLast_" data-uid="Langly.DataStructures.Array`1.RemoveLast*"></a>
   <h4 id="Langly_DataStructures_Array_1_RemoveLast__0_" data-uid="Langly.DataStructures.Array`1.RemoveLast(`0)">RemoveLast(TElement)</h4>
@@ -2231,7 +2317,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_Replace__0__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.Replace(%600%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L303">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L382">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_Replace_" data-uid="Langly.DataStructures.Array`1.Replace*"></a>
   <h4 id="Langly_DataStructures_Array_1_Replace__0__0_" data-uid="Langly.DataStructures.Array`1.Replace(`0,`0)">Replace(TElement, TElement)</h4>
@@ -2285,7 +2371,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_Resize_nint_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.Resize(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L312">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L391">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_Resize_" data-uid="Langly.DataStructures.Array`1.Resize*"></a>
   <h4 id="Langly_DataStructures_Array_1_Resize_nint_" data-uid="Langly.DataStructures.Array`1.Resize(nint)">Resize(nint)</h4>
@@ -2362,7 +2448,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_ShiftLeft.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.ShiftLeft%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L319">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L398">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_ShiftLeft_" data-uid="Langly.DataStructures.Array`1.ShiftLeft*"></a>
   <h4 id="Langly_DataStructures_Array_1_ShiftLeft" data-uid="Langly.DataStructures.Array`1.ShiftLeft">ShiftLeft()</h4>
@@ -2393,7 +2479,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_ShiftLeft_nint_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.ShiftLeft(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L322">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L401">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_ShiftLeft_" data-uid="Langly.DataStructures.Array`1.ShiftLeft*"></a>
   <h4 id="Langly_DataStructures_Array_1_ShiftLeft_nint_" data-uid="Langly.DataStructures.Array`1.ShiftLeft(nint)">ShiftLeft(nint)</h4>
@@ -2440,7 +2526,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_ShiftRight.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.ShiftRight%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L338">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L417">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_ShiftRight_" data-uid="Langly.DataStructures.Array`1.ShiftRight*"></a>
   <h4 id="Langly_DataStructures_Array_1_ShiftRight" data-uid="Langly.DataStructures.Array`1.ShiftRight">ShiftRight()</h4>
@@ -2471,7 +2557,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_ShiftRight_nint_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.ShiftRight(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L341">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L420">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_ShiftRight_" data-uid="Langly.DataStructures.Array`1.ShiftRight*"></a>
   <h4 id="Langly_DataStructures_Array_1_ShiftRight_nint_" data-uid="Langly.DataStructures.Array`1.ShiftRight(nint)">ShiftRight(nint)</h4>
@@ -2518,7 +2604,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_Slice.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.Slice%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L357">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L436">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_Slice_" data-uid="Langly.DataStructures.Array`1.Slice*"></a>
   <h4 id="Langly_DataStructures_Array_1_Slice" data-uid="Langly.DataStructures.Array`1.Slice">Slice()</h4>
@@ -2550,7 +2636,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_Slice_nint_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.Slice(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L360">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L439">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_Slice_" data-uid="Langly.DataStructures.Array`1.Slice*"></a>
   <h4 id="Langly_DataStructures_Array_1_Slice_nint_" data-uid="Langly.DataStructures.Array`1.Slice(nint)">Slice(nint)</h4>
@@ -2597,7 +2683,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_Slice_nint_nint_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.Slice(nint%2Cnint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L363">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L442">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_Slice_" data-uid="Langly.DataStructures.Array`1.Slice*"></a>
   <h4 id="Langly_DataStructures_Array_1_Slice_nint_nint_" data-uid="Langly.DataStructures.Array`1.Slice(nint,nint)">Slice(nint, nint)</h4>
@@ -2649,7 +2735,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_ToString.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L366">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L445">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_ToString_" data-uid="Langly.DataStructures.Array`1.ToString*"></a>
   <h4 id="Langly_DataStructures_Array_1_ToString" data-uid="Langly.DataStructures.Array`1.ToString">ToString()</h4>
@@ -2681,7 +2767,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_ToString_nint_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.ToString(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L372">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L451">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_ToString_" data-uid="Langly.DataStructures.Array`1.ToString*"></a>
   <h4 id="Langly_DataStructures_Array_1_ToString_nint_" data-uid="Langly.DataStructures.Array`1.ToString(nint)">ToString(nint)</h4>
@@ -2732,7 +2818,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_op_Equality_Langly_DataStructures_Array__0__Langly_DataStructures_Array__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.op_Equality(Langly.DataStructures.Array%7B%600%7D%2CLangly.DataStructures.Array%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L95">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L114">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_op_Equality_" data-uid="Langly.DataStructures.Array`1.op_Equality*"></a>
   <h4 id="Langly_DataStructures_Array_1_op_Equality_Langly_DataStructures_Array__0__Langly_DataStructures_Array__0__" data-uid="Langly.DataStructures.Array`1.op_Equality(Langly.DataStructures.Array{`0},Langly.DataStructures.Array{`0})">Equality(Array&lt;TElement&gt;, Array&lt;TElement&gt;)</h4>
@@ -2785,10 +2871,122 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_op_Equality_Langly_DataStructures_Array__0__Langly_IEquals_Langly_DataStructures_Array__0___.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.op_Equality(Langly.DataStructures.Array%7B%600%7D%2CLangly.IEquals%7BLangly.DataStructures.Array%7B%600%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L122">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Array_1_op_Equality_" data-uid="Langly.DataStructures.Array`1.op_Equality*"></a>
+  <h4 id="Langly_DataStructures_Array_1_op_Equality_Langly_DataStructures_Array__0__Langly_IEquals_Langly_DataStructures_Array__0___" data-uid="Langly.DataStructures.Array`1.op_Equality(Langly.DataStructures.Array{`0},Langly.IEquals{Langly.DataStructures.Array{`0}})">Equality(Array&lt;TElement&gt;, IEquals&lt;Array&lt;TElement&gt;&gt;)</h4>
+  <div class="markdown level1 summary"><p>Determines if the two sequences are equal.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator ==(Array&lt;TElement&gt; left, IEquals&lt;Array&lt;TElement&gt;&gt; right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Array-1.html">Array</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The lefthand sequence.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.IEquals-1.html">IEquals</a>&lt;<a class="xref" href="Langly.DataStructures.Array-1.html">Array</a>&lt;TElement&gt;&gt;</td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The righthand sequence.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the two sequences are equal; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_op_Equality_Langly_IEquals_Langly_DataStructures_Array__0___Langly_DataStructures_Array__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.op_Equality(Langly.IEquals%7BLangly.DataStructures.Array%7B%600%7D%7D%2CLangly.DataStructures.Array%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L130">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Array_1_op_Equality_" data-uid="Langly.DataStructures.Array`1.op_Equality*"></a>
+  <h4 id="Langly_DataStructures_Array_1_op_Equality_Langly_IEquals_Langly_DataStructures_Array__0___Langly_DataStructures_Array__0__" data-uid="Langly.DataStructures.Array`1.op_Equality(Langly.IEquals{Langly.DataStructures.Array{`0}},Langly.DataStructures.Array{`0})">Equality(IEquals&lt;Array&lt;TElement&gt;&gt;, Array&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Determines if the two sequences are equal.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator ==(IEquals&lt;Array&lt;TElement&gt;&gt; left, Array&lt;TElement&gt; right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.IEquals-1.html">IEquals</a>&lt;<a class="xref" href="Langly.DataStructures.Array-1.html">Array</a>&lt;TElement&gt;&gt;</td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The lefthand sequence.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Array-1.html">Array</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The righthand sequence.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the two sequences are equal; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_op_Implicit__0____Langly_DataStructures_Array__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.op_Implicit(%600%5B%5D)~Langly.DataStructures.Array%7B%600%7D%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L72">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L75">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_op_Implicit_" data-uid="Langly.DataStructures.Array`1.op_Implicit*"></a>
   <h4 id="Langly_DataStructures_Array_1_op_Implicit__0____Langly_DataStructures_Array__0_" data-uid="Langly.DataStructures.Array`1.op_Implicit(`0[])~Langly.DataStructures.Array{`0}">Implicit(TElement[] to Array&lt;TElement&gt;)</h4>
@@ -2837,7 +3035,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_op_Inequality_Langly_DataStructures_Array__0__Langly_DataStructures_Array__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.op_Inequality(Langly.DataStructures.Array%7B%600%7D%2CLangly.DataStructures.Array%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L80">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L83">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_op_Inequality_" data-uid="Langly.DataStructures.Array`1.op_Inequality*"></a>
   <h4 id="Langly_DataStructures_Array_1_op_Inequality_Langly_DataStructures_Array__0__Langly_DataStructures_Array__0__" data-uid="Langly.DataStructures.Array`1.op_Inequality(Langly.DataStructures.Array{`0},Langly.DataStructures.Array{`0})">Inequality(Array&lt;TElement&gt;, Array&lt;TElement&gt;)</h4>
@@ -2890,10 +3088,122 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_op_Inequality_Langly_DataStructures_Array__0__Langly_IEquals_Langly_DataStructures_Array__0___.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.op_Inequality(Langly.DataStructures.Array%7B%600%7D%2CLangly.IEquals%7BLangly.DataStructures.Array%7B%600%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L91">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Array_1_op_Inequality_" data-uid="Langly.DataStructures.Array`1.op_Inequality*"></a>
+  <h4 id="Langly_DataStructures_Array_1_op_Inequality_Langly_DataStructures_Array__0__Langly_IEquals_Langly_DataStructures_Array__0___" data-uid="Langly.DataStructures.Array`1.op_Inequality(Langly.DataStructures.Array{`0},Langly.IEquals{Langly.DataStructures.Array{`0}})">Inequality(Array&lt;TElement&gt;, IEquals&lt;Array&lt;TElement&gt;&gt;)</h4>
+  <div class="markdown level1 summary"><p>Determines if the two sequences aren't equal.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator !=(Array&lt;TElement&gt; left, IEquals&lt;Array&lt;TElement&gt;&gt; right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Array-1.html">Array</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The lefthand sequence.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.IEquals-1.html">IEquals</a>&lt;<a class="xref" href="Langly.DataStructures.Array-1.html">Array</a>&lt;TElement&gt;&gt;</td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The righthand sequence.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the two sequences aren't equal; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_op_Inequality_Langly_IEquals_Langly_DataStructures_Array__0___Langly_DataStructures_Array__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.op_Inequality(Langly.IEquals%7BLangly.DataStructures.Array%7B%600%7D%7D%2CLangly.DataStructures.Array%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L99">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Array_1_op_Inequality_" data-uid="Langly.DataStructures.Array`1.op_Inequality*"></a>
+  <h4 id="Langly_DataStructures_Array_1_op_Inequality_Langly_IEquals_Langly_DataStructures_Array__0___Langly_DataStructures_Array__0__" data-uid="Langly.DataStructures.Array`1.op_Inequality(Langly.IEquals{Langly.DataStructures.Array{`0}},Langly.DataStructures.Array{`0})">Inequality(IEquals&lt;Array&lt;TElement&gt;&gt;, Array&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Determines if the two sequences aren't equal.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator !=(IEquals&lt;Array&lt;TElement&gt;&gt; left, Array&lt;TElement&gt; right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.IEquals-1.html">IEquals</a>&lt;<a class="xref" href="Langly.DataStructures.Array-1.html">Array</a>&lt;TElement&gt;&gt;</td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The lefthand sequence.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Array-1.html">Array</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The righthand sequence.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the two sequences aren't equal; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_op_LeftShift_Langly_DataStructures_Array__0__System_Int32_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.op_LeftShift(Langly.DataStructures.Array%7B%600%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L87">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L106">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_op_LeftShift_" data-uid="Langly.DataStructures.Array`1.op_LeftShift*"></a>
   <h4 id="Langly_DataStructures_Array_1_op_LeftShift_Langly_DataStructures_Array__0__System_Int32_" data-uid="Langly.DataStructures.Array`1.op_LeftShift(Langly.DataStructures.Array{`0},System.Int32)">LeftShift(Array&lt;TElement&gt;, Int32)</h4>
@@ -2948,7 +3258,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_op_RightShift_Langly_DataStructures_Array__0__System_Int32_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.op_RightShift(Langly.DataStructures.Array%7B%600%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L102">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.cs/#L137">View Source</a>
   </span>
   <a id="Langly_DataStructures_Array_1_op_RightShift_" data-uid="Langly.DataStructures.Array`1.op_RightShift*"></a>
   <h4 id="Langly_DataStructures_Array_1_op_RightShift_Langly_DataStructures_Array__0__System_Int32_" data-uid="Langly.DataStructures.Array`1.op_RightShift(Langly.DataStructures.Array{`0},System.Int32)">RightShift(Array&lt;TElement&gt;, Int32)</h4>
@@ -3010,6 +3320,12 @@
   </div>
   <div>
       <a class="xref" href="Langly.IPrepend-2.html">IPrepend&lt;TElement, TResult&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.IEquals-1.html">IEquals&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">System.IEquatable&lt;T&gt;</a>
   </div>
   <div>
       <a class="xref" href="Langly.IEquals-1.html">IEquals&lt;TElement&gt;</a>

@@ -8,6 +8,9 @@ namespace Langly.DataStructures {
 	/// Represents an array of contiguous elements.
 	/// </summary>
 	/// <typeparam name="TElement">The type of the elements in the array.</typeparam>
+	/// <remarks>
+	/// Nearly every operation that changes the array allocates a new array and copies over elements as part of its operation. These methods are implemented for orthogonality, but are highly recommended to not be used. If you have to do many operations transforming the data, there are various dynamic data structures you probably want to be using instead.
+	/// </remarks>
 	[DebuggerDisplay("{ToString(5),nq}")]
 	public readonly partial struct Array<TElement> :
 		IAdd<TElement, Array<TElement>>,
@@ -15,7 +18,7 @@ namespace Langly.DataStructures {
 		IConcat<TElement, Array<TElement>>,
 		IContains<TElement>,
 		ICount,
-		IEquals<Array<TElement>>,
+		IEquals<Array<TElement>>, IEquals<IEquals<Array<TElement>>>,
 		IIndexRefReadOnly<TElement>,
 		IInsert<TElement, Array<TElement>>,
 		IRemove<TElement, Array<TElement>>,
@@ -38,7 +41,7 @@ namespace Langly.DataStructures {
 		/// Initializes a new <see cref="Array{TElement}"/>.
 		/// </summary>
 		/// <param name="memory">The memory of the array.</param>
-		private Array(ReadOnlyMemory<TElement> memory) => Memory = memory;
+		public Array(ReadOnlyMemory<TElement> memory) => Memory = memory;
 
 		/// <summary>
 		/// Returns an empty <see cref="Array{TElement}"/>
@@ -80,6 +83,22 @@ namespace Langly.DataStructures {
 		public static Boolean operator !=(Array<TElement> left, Array<TElement> right) => !left.Equals(right);
 
 		/// <summary>
+		/// Determines if the two sequences aren't equal.
+		/// </summary>
+		/// <param name="left">The lefthand sequence.</param>
+		/// <param name="right">The righthand sequence.</param>
+		/// <returns><see langword="true"/> if the two sequences aren't equal; otherwise, <see langword="false"/>.</returns>
+		public static Boolean operator !=(Array<TElement> left, [AllowNull] IEquals<Array<TElement>> right) => right?.Equals(left) ?? left.Count == 0;
+
+		/// <summary>
+		/// Determines if the two sequences aren't equal.
+		/// </summary>
+		/// <param name="left">The lefthand sequence.</param>
+		/// <param name="right">The righthand sequence.</param>
+		/// <returns><see langword="true"/> if the two sequences aren't equal; otherwise, <see langword="false"/>.</returns>
+		public static Boolean operator !=([AllowNull] IEquals<Array<TElement>> left, Array<TElement> right) => left?.Equals(right) ?? right.Count == 0;
+
+		/// <summary>
 		/// Shifts the <paramref name="array"/> left by <paramref name="amount"/>.
 		/// </summary>
 		/// <param name="array">The <see cref="Array{TElement}"/> to shift.</param>
@@ -93,6 +112,22 @@ namespace Langly.DataStructures {
 		/// <param name="right">The righthand sequence.</param>
 		/// <returns><see langword="true"/> if the two sequences are equal; otherwise, <see langword="false"/>.</returns>
 		public static Boolean operator ==(Array<TElement> left, Array<TElement> right) => left.Equals(right);
+
+		/// <summary>
+		/// Determines if the two sequences are equal.
+		/// </summary>
+		/// <param name="left">The lefthand sequence.</param>
+		/// <param name="right">The righthand sequence.</param>
+		/// <returns><see langword="true"/> if the two sequences are equal; otherwise, <see langword="false"/>.</returns>
+		public static Boolean operator ==(Array<TElement> left, [AllowNull] IEquals<Array<TElement>> right) => right?.Equals(left) ?? left.Count == 0;
+
+		/// <summary>
+		/// Determines if the two sequences are equal.
+		/// </summary>
+		/// <param name="left">The lefthand sequence.</param>
+		/// <param name="right">The righthand sequence.</param>
+		/// <returns><see langword="true"/> if the two sequences are equal; otherwise, <see langword="false"/>.</returns>
+		public static Boolean operator ==([AllowNull] IEquals<Array<TElement>> left, Array<TElement> right) => left?.Equals(right) ?? right.Count == 0;
 
 		/// <summary>
 		/// Shifts the <paramref name="array"/> right by <paramref name="amount"/>.
@@ -137,6 +172,8 @@ namespace Langly.DataStructures {
 			switch (obj) {
 			case Array<TElement> array:
 				return Equals(array);
+			case IEquals<Array<TElement>> other:
+				return other.Equals(this);
 			default:
 				return false;
 			}
@@ -154,6 +191,9 @@ namespace Langly.DataStructures {
 			}
 			return true;
 		}
+
+		/// <inheritdoc/>
+		public Boolean Equals([AllowNull] IEquals<Array<TElement>> other) => other is not null ? other.Equals(this) : Count == 0;
 
 		/// <inheritdoc/>
 		public override Int32 GetHashCode() => Memory.GetHashCode();
@@ -291,13 +331,52 @@ namespace Langly.DataStructures {
 		}
 
 		/// <inheritdoc/>
-		public Array<TElement> Remove([AllowNull] TElement element) => throw new NotImplementedException();
+		public Array<TElement> Remove([AllowNull] TElement element) {
+			TElement[] Array = new TElement[Count];
+			Int32 i = 0;
+			foreach (TElement item in Memory.Span) {
+				if (!Equals(item, element)) {
+					Array[i] = item;
+				}
+			}
+			return new(Array.AsMemory().Slice(0, i));
+		}
 
 		/// <inheritdoc/>
-		public Array<TElement> RemoveFirst([AllowNull] TElement element) => throw new NotImplementedException();
+		public Array<TElement> RemoveFirst([AllowNull] TElement element) {
+			TElement[] Array = new TElement[Count];
+			Int32 i = 0;
+			// Loop through, looking for the first match
+			for (; i < Count; i++) {
+				if (Equals(Memory.Span[i], element)) {
+					break;
+				}
+				Array[i] = Memory.Span[i];
+			}
+			// Finish copying elements
+			for (; i < Count; i++) {
+				Array[i] = Memory.Span[i];
+			}
+			return new(Array.AsMemory().Slice(0, i));
+		}
 
 		/// <inheritdoc/>
-		public Array<TElement> RemoveLast([AllowNull] TElement element) => throw new NotImplementedException();
+		public Array<TElement> RemoveLast([AllowNull] TElement element) {
+			TElement[] Array = new TElement[Count];
+			Int32 i = (Int32)Count - 1;
+			// Loop through, looking for the first match
+			for (; i > 0; i--) {
+				if (Equals(Memory.Span[i], element)) {
+					break;
+				}
+				Array[i] = Memory.Span[i];
+			}
+			// Finish copying elements
+			for (; i > 0; i--) {
+				Array[i] = Memory.Span[i];
+			}
+			return new(Array.AsMemory().Slice(i));
+		}
 
 		/// <inheritdoc/>
 		public Array<TElement> Replace([AllowNull] TElement search, [AllowNull] TElement replace) {
