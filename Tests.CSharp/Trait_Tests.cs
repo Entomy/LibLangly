@@ -236,5 +236,21 @@ namespace Langly {
 			collection = TraitExtensions.Insert(collection, index, elements);
 			Assert.Equal(expected, collection);
 		}
+
+		public static System.Collections.Generic.IEnumerable<object[]> Replace_Element_Data(Int32 search, Int32 replace, Int32[] expected) {
+			yield return new object[] { new Array<Int32>(1, 2, 1, 2, 1), search, replace, expected };
+			yield return new object[] { new BoundedArray<Int32>(8) { 1, 2, 1, 2, 1 }, search, replace, expected };
+			yield return new object[] { new DynamicArray<Int32>() { 1, 2, 1, 2, 1 }, search, replace, expected };
+			yield return new object[] { new Chain<Int32>() { 1, 2, 1, 2, 1 }, search, replace, expected };
+		}
+
+		[Theory]
+		[MemberData(nameof(Replace_Element_Data), 0, 0, new Int32[] { 1, 2, 1, 2, 1 })]
+		[MemberData(nameof(Replace_Element_Data), 1, 0, new Int32[] { 0, 2, 0, 2, 0 })]
+		[MemberData(nameof(Replace_Element_Data), 2, 0, new Int32[] { 1, 0, 1, 0, 1 })]
+		public void Replace_Element<TElement, TCollection>(TCollection collection, TElement search, TElement replace, TElement[] expected) where TCollection : IReplace<TElement, TCollection>, System.Collections.Generic.IEnumerable<TElement> {
+			collection = collection.Replace(search, replace);
+			Assert.Equal(expected, collection);
+		}
 	}
 }
