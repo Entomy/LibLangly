@@ -238,7 +238,6 @@ namespace Langly {
 		}
 
 		public static System.Collections.Generic.IEnumerable<object[]> Replace_Element_Data(Int32 search, Int32 replace, Int32[] expected) {
-			yield return new object[] { new Array<Int32>(1, 2, 1, 2, 1), search, replace, expected };
 			yield return new object[] { new BoundedArray<Int32>(8) { 1, 2, 1, 2, 1 }, search, replace, expected };
 			yield return new object[] { new DynamicArray<Int32>() { 1, 2, 1, 2, 1 }, search, replace, expected };
 			yield return new object[] { new Chain<Int32>() { 1, 2, 1, 2, 1 }, search, replace, expected };

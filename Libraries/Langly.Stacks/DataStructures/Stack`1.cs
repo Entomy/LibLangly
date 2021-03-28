@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using Xunit.Abstractions;
 
 namespace Langly.DataStructures {
 	/// <summary>
@@ -54,6 +55,13 @@ namespace Langly.DataStructures {
 			} else {
 				element = default;
 				return null;
+			}
+		}
+
+		/// <inheritdoc/>
+		protected override void Deserialize(IXunitSerializationInfo info) {
+			foreach (TElement item in info.GetValue<TElement[]>("Array")) {
+				((IAdd<TElement, Stack<TElement>>)this).Add(item);
 			}
 		}
 	}

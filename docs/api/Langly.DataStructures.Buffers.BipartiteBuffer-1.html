@@ -93,6 +93,7 @@
     <div><a class="xref" href="Langly.IContains-1.html">IContains</a>&lt;TElement&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TElement&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
+    <div><span class="xref">Xunit.Abstractions.IXunitSerializable</span></div>
     <div><a class="xref" href="Langly.ICapacity.html">ICapacity</a></div>
     <div><a class="xref" href="Langly.IClear-1.html">IClear</a>&lt;<a class="xref" href="Langly.DataStructures.Buffers.BipartiteBuffer-1.html">BipartiteBuffer</a>&lt;TElement&gt;&gt;</div>
     <div><a class="xref" href="Langly.IIndex-1.html">IIndex</a>&lt;TElement&gt;</div>
@@ -117,6 +118,12 @@
       <a class="xref" href="Langly.DataStructures.DataStructure-3.html#Langly_DataStructures_DataStructure_3_Langly_IContains_TElement__Contains__0_">DataStructure&lt;TElement, BipartiteBuffer&lt;TElement&gt;, BipartiteBuffer&lt;TElement&gt;.Enumerator&gt;.IContains&lt;TElement&gt;.Contains(TElement)</a>
     </div>
     <div>
+      <a class="xref" href="Langly.DataStructures.DataStructure-3.html#Langly_DataStructures_DataStructure_3_Xunit_Abstractions_IXunitSerializable_Deserialize_Xunit_Abstractions_IXunitSerializationInfo_">DataStructure&lt;TElement, BipartiteBuffer&lt;TElement&gt;, BipartiteBuffer&lt;TElement&gt;.Enumerator&gt;.IXunitSerializable.Deserialize(IXunitSerializationInfo)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.DataStructures.DataStructure-3.html#Langly_DataStructures_DataStructure_3_Deserialize_Xunit_Abstractions_IXunitSerializationInfo_">DataStructure&lt;TElement, BipartiteBuffer&lt;TElement&gt;, BipartiteBuffer&lt;TElement&gt;.Enumerator&gt;.Deserialize(IXunitSerializationInfo)</a>
+    </div>
+    <div>
       <a class="xref" href="Langly.DataStructures.DataStructure-3.html#Langly_DataStructures_DataStructure_3_Equals__1_">DataStructure&lt;TElement, BipartiteBuffer&lt;TElement&gt;, BipartiteBuffer&lt;TElement&gt;.Enumerator&gt;.Equals(BipartiteBuffer&lt;TElement&gt;)</a>
     </div>
     <div>
@@ -127,6 +134,12 @@
     </div>
     <div>
       <a class="xref" href="Langly.DataStructures.DataStructure-3.html#Langly_DataStructures_DataStructure_3_GetEnumerator">DataStructure&lt;TElement, BipartiteBuffer&lt;TElement&gt;, BipartiteBuffer&lt;TElement&gt;.Enumerator&gt;.GetEnumerator()</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.DataStructures.DataStructure-3.html#Langly_DataStructures_DataStructure_3_Xunit_Abstractions_IXunitSerializable_Serialize_Xunit_Abstractions_IXunitSerializationInfo_">DataStructure&lt;TElement, BipartiteBuffer&lt;TElement&gt;, BipartiteBuffer&lt;TElement&gt;.Enumerator&gt;.IXunitSerializable.Serialize(IXunitSerializationInfo)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.DataStructures.DataStructure-3.html#Langly_DataStructures_DataStructure_3_Serialize_Xunit_Abstractions_IXunitSerializationInfo_">DataStructure&lt;TElement, BipartiteBuffer&lt;TElement&gt;, BipartiteBuffer&lt;TElement&gt;.Enumerator&gt;.Serialize(IXunitSerializationInfo)</a>
     </div>
     <div>
       <a class="xref" href="Langly.DataStructures.DataStructure-3.html#Langly_DataStructures_DataStructure_3_ToString">DataStructure&lt;TElement, BipartiteBuffer&lt;TElement&gt;, BipartiteBuffer&lt;TElement&gt;.Enumerator&gt;.ToString()</a>
@@ -166,7 +179,7 @@
   <h6><strong>Assembly</strong>: Langly.Buffers.dll</h6>
   <h5 id="Langly_DataStructures_Buffers_BipartiteBuffer_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class BipartiteBuffer&lt;TElement&gt; : DataStructure&lt;TElement, BipartiteBuffer&lt;TElement&gt;, BipartiteBuffer&lt;TElement&gt;.Enumerator&gt;, IEquals&lt;BipartiteBuffer&lt;TElement&gt;&gt;, IEquatable&lt;BipartiteBuffer&lt;TElement&gt;&gt;, IEquals&lt;IEquals&lt;BipartiteBuffer&lt;TElement&gt;&gt;&gt;, IEquatable&lt;IEquals&lt;BipartiteBuffer&lt;TElement&gt;&gt;&gt;, ISequence&lt;TElement, BipartiteBuffer&lt;TElement&gt;.Enumerator&gt;, IContains&lt;TElement&gt;, IEnumerable&lt;TElement&gt;, IEnumerable, ICapacity, IClear&lt;BipartiteBuffer&lt;TElement&gt;&gt;, IIndex&lt;TElement&gt;, IIndex&lt;nint, TElement&gt;, IIndexReadOnly&lt;TElement&gt;, IIndexReadOnly&lt;nint, TElement&gt;, ICount, IPeek&lt;TElement, BipartiteBuffer&lt;TElement&gt;&gt;, IRead&lt;TElement, BipartiteBuffer&lt;TElement&gt;&gt;, IWrite&lt;TElement, BipartiteBuffer&lt;TElement&gt;&gt;, IAdd&lt;TElement, BipartiteBuffer&lt;TElement&gt;&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class BipartiteBuffer&lt;TElement&gt; : DataStructure&lt;TElement, BipartiteBuffer&lt;TElement&gt;, BipartiteBuffer&lt;TElement&gt;.Enumerator&gt;, IEquals&lt;BipartiteBuffer&lt;TElement&gt;&gt;, IEquatable&lt;BipartiteBuffer&lt;TElement&gt;&gt;, IEquals&lt;IEquals&lt;BipartiteBuffer&lt;TElement&gt;&gt;&gt;, IEquatable&lt;IEquals&lt;BipartiteBuffer&lt;TElement&gt;&gt;&gt;, ISequence&lt;TElement, BipartiteBuffer&lt;TElement&gt;.Enumerator&gt;, IContains&lt;TElement&gt;, IEnumerable&lt;TElement&gt;, IEnumerable, IXunitSerializable, ICapacity, IClear&lt;BipartiteBuffer&lt;TElement&gt;&gt;, IIndex&lt;TElement&gt;, IIndex&lt;nint, TElement&gt;, IIndexReadOnly&lt;TElement&gt;, IIndexReadOnly&lt;nint, TElement&gt;, ICount, IPeek&lt;TElement, BipartiteBuffer&lt;TElement&gt;&gt;, IRead&lt;TElement, BipartiteBuffer&lt;TElement&gt;&gt;, IWrite&lt;TElement, BipartiteBuffer&lt;TElement&gt;&gt;, IAdd&lt;TElement, BipartiteBuffer&lt;TElement&gt;&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -194,7 +207,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/TraitTests/apiSpec/new?filename=Langly_DataStructures_Buffers_BipartiteBuffer_1__ctor.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Buffers.BipartiteBuffer%601.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Buffers/DataStructures/Buffers/BipartiteBuffer`1.cs/#L46">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Buffers/DataStructures/Buffers/BipartiteBuffer`1.cs/#L47">View Source</a>
   </span>
   <a id="Langly_DataStructures_Buffers_BipartiteBuffer_1__ctor_" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.#ctor*"></a>
   <h4 id="Langly_DataStructures_Buffers_BipartiteBuffer_1__ctor" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.#ctor">BipartiteBuffer()</h4>
@@ -213,7 +226,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/TraitTests/apiSpec/new?filename=Langly_DataStructures_Buffers_BipartiteBuffer_1__ctor_nint_Langly_DataStructures_Filter_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Buffers.BipartiteBuffer%601.%23ctor(nint%2CLangly.DataStructures.Filter)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Buffers/DataStructures/Buffers/BipartiteBuffer`1.cs/#L53">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Buffers/DataStructures/Buffers/BipartiteBuffer`1.cs/#L54">View Source</a>
   </span>
   <a id="Langly_DataStructures_Buffers_BipartiteBuffer_1__ctor_" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.#ctor*"></a>
   <h4 id="Langly_DataStructures_Buffers_BipartiteBuffer_1__ctor_nint_Langly_DataStructures_Filter_" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.#ctor(nint,Langly.DataStructures.Filter)">BipartiteBuffer(nint, Filter)</h4>
@@ -255,7 +268,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/TraitTests/apiSpec/new?filename=Langly_DataStructures_Buffers_BipartiteBuffer_1_Capacity.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Buffers.BipartiteBuffer%601.Capacity%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Buffers/DataStructures/Buffers/BipartiteBuffer`1.cs/#L84">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Buffers/DataStructures/Buffers/BipartiteBuffer`1.cs/#L61">View Source</a>
   </span>
   <a id="Langly_DataStructures_Buffers_BipartiteBuffer_1_Capacity_" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.Capacity*"></a>
   <h4 id="Langly_DataStructures_Buffers_BipartiteBuffer_1_Capacity" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.Capacity">Capacity</h4>
@@ -285,7 +298,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/TraitTests/apiSpec/new?filename=Langly_DataStructures_Buffers_BipartiteBuffer_1_Count.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Buffers.BipartiteBuffer%601.Count%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Buffers/DataStructures/Buffers/BipartiteBuffer`1.cs/#L75">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Buffers/DataStructures/Buffers/BipartiteBuffer`1.cs/#L64">View Source</a>
   </span>
   <a id="Langly_DataStructures_Buffers_BipartiteBuffer_1_Count_" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.Count*"></a>
   <h4 id="Langly_DataStructures_Buffers_BipartiteBuffer_1_Count" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.Count">Count</h4>
@@ -317,7 +330,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/TraitTests/apiSpec/new?filename=Langly_DataStructures_Buffers_BipartiteBuffer_1_Item_nint_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Buffers.BipartiteBuffer%601.Item(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Buffers/DataStructures/Buffers/BipartiteBuffer`1.cs/#L60">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Buffers/DataStructures/Buffers/BipartiteBuffer`1.cs/#L73">View Source</a>
   </span>
   <a id="Langly_DataStructures_Buffers_BipartiteBuffer_1_Item_" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.Item*"></a>
   <h4 id="Langly_DataStructures_Buffers_BipartiteBuffer_1_Item_nint_" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.Item(nint)">Item[nint]</h4>
@@ -364,7 +377,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/TraitTests/apiSpec/new?filename=Langly_DataStructures_Buffers_BipartiteBuffer_1_Readable.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Buffers.BipartiteBuffer%601.Readable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Buffers/DataStructures/Buffers/BipartiteBuffer`1.cs/#L78">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Buffers/DataStructures/Buffers/BipartiteBuffer`1.cs/#L67">View Source</a>
   </span>
   <a id="Langly_DataStructures_Buffers_BipartiteBuffer_1_Readable_" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.Readable*"></a>
   <h4 id="Langly_DataStructures_Buffers_BipartiteBuffer_1_Readable" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.Readable">Readable</h4>
@@ -394,7 +407,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/TraitTests/apiSpec/new?filename=Langly_DataStructures_Buffers_BipartiteBuffer_1_Writable.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Buffers.BipartiteBuffer%601.Writable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Buffers/DataStructures/Buffers/BipartiteBuffer`1.cs/#L81">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Buffers/DataStructures/Buffers/BipartiteBuffer`1.cs/#L70">View Source</a>
   </span>
   <a id="Langly_DataStructures_Buffers_BipartiteBuffer_1_Writable_" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.Writable*"></a>
   <h4 id="Langly_DataStructures_Buffers_BipartiteBuffer_1_Writable" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.Writable">Writable</h4>
@@ -421,6 +434,40 @@
   </table>
   <h3 id="methods">Methods
   </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/TraitTests/apiSpec/new?filename=Langly_DataStructures_Buffers_BipartiteBuffer_1_Deserialize_Xunit_Abstractions_IXunitSerializationInfo_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Buffers.BipartiteBuffer%601.Deserialize(Xunit.Abstractions.IXunitSerializationInfo)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Buffers/DataStructures/Buffers/BipartiteBuffer`1.cs/#L143">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Buffers_BipartiteBuffer_1_Deserialize_" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.Deserialize*"></a>
+  <h4 id="Langly_DataStructures_Buffers_BipartiteBuffer_1_Deserialize_Xunit_Abstractions_IXunitSerializationInfo_" data-uid="Langly.DataStructures.Buffers.BipartiteBuffer`1.Deserialize(Xunit.Abstractions.IXunitSerializationInfo)">Deserialize(IXunitSerializationInfo)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Deserialize(IXunitSerializationInfo info)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Xunit.Abstractions.IXunitSerializationInfo</span></td>
+        <td><span class="parametername">info</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Langly.DataStructures.DataStructure&lt;TElement, Langly.DataStructures.Buffers.BipartiteBuffer&lt;TElement&gt;, Langly.DataStructures.Buffers.BipartiteBuffer&lt;TElement&gt;.Enumerator&gt;.Deserialize(Xunit.Abstractions.IXunitSerializationInfo)</span></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/TraitTests/apiSpec/new?filename=Langly_DataStructures_Buffers_BipartiteBuffer_1_GetEnumerator.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Buffers.BipartiteBuffer%601.GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -697,6 +744,9 @@
   </div>
   <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">System.Collections.IEnumerable</a>
+  </div>
+  <div>
+      <span class="xref">Xunit.Abstractions.IXunitSerializable</span>
   </div>
   <div>
       <a class="xref" href="Langly.ICapacity.html">ICapacity</a>

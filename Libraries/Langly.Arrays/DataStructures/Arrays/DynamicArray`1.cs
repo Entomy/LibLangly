@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using Langly.DataStructures.Filters;
+using Xunit.Abstractions;
 
 namespace Langly.DataStructures.Arrays {
 	/// <summary>
@@ -67,6 +68,13 @@ namespace Langly.DataStructures.Arrays {
 			Memory.CopyTo(newBuffer);
 			Memory = newBuffer;
 			return this;
+		}
+
+		/// <inheritdoc/>
+		protected override void Deserialize(IXunitSerializationInfo info) {
+			foreach (TElement item in info.GetValue<TElement[]>("Array")) {
+				((IAdd<TElement, DynamicArray<TElement>>)this).Add(item);
+			}
 		}
 
 		/// <inheritdoc/>

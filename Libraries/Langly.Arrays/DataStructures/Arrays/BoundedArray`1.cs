@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using Langly.DataStructures.Filters;
+using Xunit.Abstractions;
 
 namespace Langly.DataStructures.Arrays {
 	/// <summary>
@@ -50,6 +51,15 @@ namespace Langly.DataStructures.Arrays {
 		public static implicit operator BoundedArray<TElement>(Memory<TElement> memory) => new(memory);
 
 		/// <inheritdoc/>
+		protected override void Deserialize(IXunitSerializationInfo info) {
+			Int64 capacity = info.GetValue<Int64>(nameof(Capacity));
+			Memory = new TElement[capacity];
+			foreach (TElement item in info.GetValue<TElement[]>("Array")) {
+				((IAdd<TElement, BoundedArray<TElement>>)this).Add(item);
+			}
+		}
+
+		/// <inheritdoc/>
 		[return: MaybeNull]
 		protected override BoundedArray<TElement> Insert(nint index, [AllowNull] TElement element) => Count < Capacity ? base.Insert(index, element) : null;
 
@@ -60,5 +70,11 @@ namespace Langly.DataStructures.Arrays {
 		/// <inheritdoc/>
 		[return: MaybeNull]
 		protected override BoundedArray<TElement> Prepend([AllowNull] TElement element) => Count < Capacity ? base.Prepend(element) : null;
+
+		/// <inheritdoc/>
+		protected override void Serialize(IXunitSerializationInfo info) {
+			info.AddValue(nameof(Capacity), (Int64)Capacity, typeof(Int64));
+			base.Serialize(info);
+		}
 	}
 }

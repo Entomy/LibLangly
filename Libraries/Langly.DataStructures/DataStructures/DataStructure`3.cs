@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Text;
 using Langly.DataStructures.Filters;
+using Xunit.Abstractions;
 
 namespace Langly.DataStructures {
 	/// <summary>
@@ -16,7 +17,8 @@ namespace Langly.DataStructures {
 	/// </remarks>
 	[DebuggerDisplay("{ToString(5),nq}")]
 	public abstract class DataStructure<TElement, TSelf, TEnumerator> : Record<TSelf>,
-		ISequence<TElement, TEnumerator>
+		ISequence<TElement, TEnumerator>,
+		IXunitSerializable
 		where TSelf : DataStructure<TElement, TSelf, TEnumerator>
 		where TEnumerator : IEnumerator<TElement> {
 		/// <summary>
@@ -89,6 +91,15 @@ namespace Langly.DataStructures {
 		}
 
 		/// <inheritdoc/>
+		void IXunitSerializable.Deserialize(IXunitSerializationInfo info) => Deserialize(info);
+
+		/// <summary>
+		/// Called when the object should populate itself with data from the serialization info.
+		/// </summary>
+		/// <param name="info">The info to get the data from.</param>
+		protected abstract void Deserialize(IXunitSerializationInfo info);
+
+		/// <inheritdoc/>
 		public override Boolean Equals([AllowNull] TSelf other) => ReferenceEquals(this, other) || Equals<TEnumerator>(other);
 
 		/// <summary>
@@ -158,6 +169,22 @@ namespace Langly.DataStructures {
 		/// <inheritdoc/>
 		[return: NotNull]
 		public abstract TEnumerator GetEnumerator();
+
+		/// <inheritdoc/>
+		void IXunitSerializable.Serialize(IXunitSerializationInfo info) => Serialize(info);
+
+		/// <summary>
+		/// Called when the object should store its data into the serialization info.
+		/// </summary>
+		/// <param name="info">The info to store data in.</param>
+		protected virtual void Serialize(IXunitSerializationInfo info) {
+			TElement[] Array = new TElement[Count];
+			Int32 a = 0;
+			foreach (TElement item in this) {
+				Array[a++] = item;
+			}
+			info.AddValue(nameof(Array), Array, typeof(TElement[]));
+		}
 
 		/// <inheritdoc/>
 		public sealed override String ToString() => ToString(Count);

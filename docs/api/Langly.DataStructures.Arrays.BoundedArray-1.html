@@ -90,6 +90,7 @@
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Langly.DataStructures.Arrays.BoundedArray-1.html">BoundedArray</a>&lt;TElement&gt;&gt;</div>
     <div><a class="xref" href="Langly.IEquals-1.html">IEquals</a>&lt;<a class="xref" href="Langly.IEquals-1.html">IEquals</a>&lt;<a class="xref" href="Langly.DataStructures.Arrays.BoundedArray-1.html">BoundedArray</a>&lt;TElement&gt;&gt;&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Langly.IEquals-1.html">IEquals</a>&lt;<a class="xref" href="Langly.DataStructures.Arrays.BoundedArray-1.html">BoundedArray</a>&lt;TElement&gt;&gt;&gt;</div>
+    <div><span class="xref">Xunit.Abstractions.IXunitSerializable</span></div>
     <div><a class="xref" href="Langly.IAdd-2.html">IAdd</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.Arrays.BoundedArray-1.html">BoundedArray</a>&lt;TElement&gt;&gt;</div>
     <div><a class="xref" href="Langly.ICapacity.html">ICapacity</a></div>
     <div><a class="xref" href="Langly.IClear-1.html">IClear</a>&lt;<a class="xref" href="Langly.DataStructures.Arrays.BoundedArray-1.html">BoundedArray</a>&lt;TElement&gt;&gt;</div>
@@ -180,6 +181,12 @@
       <a class="xref" href="Langly.DataStructures.DataStructure-3.html#Langly_DataStructures_DataStructure_3_Langly_IContains_TElement__Contains__0_">DataStructure&lt;TElement, BoundedArray&lt;TElement&gt;, FlexibleArray&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.Enumerator&gt;.IContains&lt;TElement&gt;.Contains(TElement)</a>
     </div>
     <div>
+      <a class="xref" href="Langly.DataStructures.DataStructure-3.html#Langly_DataStructures_DataStructure_3_Xunit_Abstractions_IXunitSerializable_Deserialize_Xunit_Abstractions_IXunitSerializationInfo_">DataStructure&lt;TElement, BoundedArray&lt;TElement&gt;, FlexibleArray&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.Enumerator&gt;.IXunitSerializable.Deserialize(IXunitSerializationInfo)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.DataStructures.DataStructure-3.html#Langly_DataStructures_DataStructure_3_Deserialize_Xunit_Abstractions_IXunitSerializationInfo_">DataStructure&lt;TElement, BoundedArray&lt;TElement&gt;, FlexibleArray&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.Enumerator&gt;.Deserialize(IXunitSerializationInfo)</a>
+    </div>
+    <div>
       <a class="xref" href="Langly.DataStructures.DataStructure-3.html#Langly_DataStructures_DataStructure_3_Equals__1_">DataStructure&lt;TElement, BoundedArray&lt;TElement&gt;, FlexibleArray&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.Enumerator&gt;.Equals(BoundedArray&lt;TElement&gt;)</a>
     </div>
     <div>
@@ -190,6 +197,12 @@
     </div>
     <div>
       <a class="xref" href="Langly.DataStructures.DataStructure-3.html#Langly_DataStructures_DataStructure_3_GetEnumerator">DataStructure&lt;TElement, BoundedArray&lt;TElement&gt;, FlexibleArray&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.Enumerator&gt;.GetEnumerator()</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.DataStructures.DataStructure-3.html#Langly_DataStructures_DataStructure_3_Xunit_Abstractions_IXunitSerializable_Serialize_Xunit_Abstractions_IXunitSerializationInfo_">DataStructure&lt;TElement, BoundedArray&lt;TElement&gt;, FlexibleArray&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.Enumerator&gt;.IXunitSerializable.Serialize(IXunitSerializationInfo)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.DataStructures.DataStructure-3.html#Langly_DataStructures_DataStructure_3_Serialize_Xunit_Abstractions_IXunitSerializationInfo_">DataStructure&lt;TElement, BoundedArray&lt;TElement&gt;, FlexibleArray&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.Enumerator&gt;.Serialize(IXunitSerializationInfo)</a>
     </div>
     <div>
       <a class="xref" href="Langly.DataStructures.DataStructure-3.html#Langly_DataStructures_DataStructure_3_ToString">DataStructure&lt;TElement, BoundedArray&lt;TElement&gt;, FlexibleArray&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.Enumerator&gt;.ToString()</a>
@@ -229,7 +242,7 @@
   <h6><strong>Assembly</strong>: Langly.Arrays.dll</h6>
   <h5 id="Langly_DataStructures_Arrays_BoundedArray_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class BoundedArray&lt;TElement&gt; : FlexibleArray&lt;TElement, BoundedArray&lt;TElement&gt;&gt;, IEquals&lt;BoundedArray&lt;TElement&gt;&gt;, IEquatable&lt;BoundedArray&lt;TElement&gt;&gt;, IEquals&lt;IEquals&lt;BoundedArray&lt;TElement&gt;&gt;&gt;, IEquatable&lt;IEquals&lt;BoundedArray&lt;TElement&gt;&gt;&gt;, IAdd&lt;TElement, BoundedArray&lt;TElement&gt;&gt;, ICapacity, IClear&lt;BoundedArray&lt;TElement&gt;&gt;, IConcat&lt;TElement, BoundedArray&lt;TElement&gt;&gt;, IPostpend&lt;TElement, BoundedArray&lt;TElement&gt;&gt;, IPrepend&lt;TElement, BoundedArray&lt;TElement&gt;&gt;, IIndex&lt;TElement&gt;, IIndex&lt;nint, TElement&gt;, IIndexReadOnly&lt;TElement&gt;, IIndexReadOnly&lt;nint, TElement&gt;, IInsert&lt;TElement, BoundedArray&lt;TElement&gt;&gt;, IInsert&lt;nint, TElement, BoundedArray&lt;TElement&gt;&gt;, IRemove&lt;TElement, BoundedArray&lt;TElement&gt;&gt;, IReplace&lt;TElement, BoundedArray&lt;TElement&gt;&gt;, IReplace&lt;TElement, TElement, BoundedArray&lt;TElement&gt;&gt;, IShift&lt;BoundedArray&lt;TElement&gt;&gt;, ISlice&lt;Array&lt;TElement&gt;&gt;, ISequenceBidi&lt;TElement, FlexibleArray&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.Enumerator&gt;, ISequence&lt;TElement, FlexibleArray&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.Enumerator&gt;, IContains&lt;TElement&gt;, ICount, IEnumerable&lt;TElement&gt;, IEnumerable</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class BoundedArray&lt;TElement&gt; : FlexibleArray&lt;TElement, BoundedArray&lt;TElement&gt;&gt;, IEquals&lt;BoundedArray&lt;TElement&gt;&gt;, IEquatable&lt;BoundedArray&lt;TElement&gt;&gt;, IEquals&lt;IEquals&lt;BoundedArray&lt;TElement&gt;&gt;&gt;, IEquatable&lt;IEquals&lt;BoundedArray&lt;TElement&gt;&gt;&gt;, IXunitSerializable, IAdd&lt;TElement, BoundedArray&lt;TElement&gt;&gt;, ICapacity, IClear&lt;BoundedArray&lt;TElement&gt;&gt;, IConcat&lt;TElement, BoundedArray&lt;TElement&gt;&gt;, IPostpend&lt;TElement, BoundedArray&lt;TElement&gt;&gt;, IPrepend&lt;TElement, BoundedArray&lt;TElement&gt;&gt;, IIndex&lt;TElement&gt;, IIndex&lt;nint, TElement&gt;, IIndexReadOnly&lt;TElement&gt;, IIndexReadOnly&lt;nint, TElement&gt;, IInsert&lt;TElement, BoundedArray&lt;TElement&gt;&gt;, IInsert&lt;nint, TElement, BoundedArray&lt;TElement&gt;&gt;, IRemove&lt;TElement, BoundedArray&lt;TElement&gt;&gt;, IReplace&lt;TElement, BoundedArray&lt;TElement&gt;&gt;, IReplace&lt;TElement, TElement, BoundedArray&lt;TElement&gt;&gt;, IShift&lt;BoundedArray&lt;TElement&gt;&gt;, ISlice&lt;Array&lt;TElement&gt;&gt;, ISequenceBidi&lt;TElement, FlexibleArray&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.Enumerator&gt;, ISequence&lt;TElement, FlexibleArray&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.Enumerator&gt;, IContains&lt;TElement&gt;, ICount, IEnumerable&lt;TElement&gt;, IEnumerable</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -254,7 +267,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/TraitTests/apiSpec/new?filename=Langly_DataStructures_Arrays_BoundedArray_1__ctor_nint_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.BoundedArray%601.%23ctor(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Arrays/DataStructures/Arrays/BoundedArray`1.cs/#L15">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Arrays/DataStructures/Arrays/BoundedArray`1.cs/#L16">View Source</a>
   </span>
   <a id="Langly_DataStructures_Arrays_BoundedArray_1__ctor_" data-uid="Langly.DataStructures.Arrays.BoundedArray`1.#ctor*"></a>
   <h4 id="Langly_DataStructures_Arrays_BoundedArray_1__ctor_nint_" data-uid="Langly.DataStructures.Arrays.BoundedArray`1.#ctor(nint)">BoundedArray(nint)</h4>
@@ -288,7 +301,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/TraitTests/apiSpec/new?filename=Langly_DataStructures_Arrays_BoundedArray_1__ctor_nint_Langly_DataStructures_Filter_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.BoundedArray%601.%23ctor(nint%2CLangly.DataStructures.Filter)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Arrays/DataStructures/Arrays/BoundedArray`1.cs/#L22">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Arrays/DataStructures/Arrays/BoundedArray`1.cs/#L23">View Source</a>
   </span>
   <a id="Langly_DataStructures_Arrays_BoundedArray_1__ctor_" data-uid="Langly.DataStructures.Arrays.BoundedArray`1.#ctor*"></a>
   <h4 id="Langly_DataStructures_Arrays_BoundedArray_1__ctor_nint_Langly_DataStructures_Filter_" data-uid="Langly.DataStructures.Arrays.BoundedArray`1.#ctor(nint,Langly.DataStructures.Filter)">BoundedArray(nint, Filter)</h4>
@@ -327,10 +340,46 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/TraitTests/apiSpec/new?filename=Langly_DataStructures_Arrays_BoundedArray_1_Deserialize_Xunit_Abstractions_IXunitSerializationInfo_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.BoundedArray%601.Deserialize(Xunit.Abstractions.IXunitSerializationInfo)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Arrays/DataStructures/Arrays/BoundedArray`1.cs/#L54">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Arrays_BoundedArray_1_Deserialize_" data-uid="Langly.DataStructures.Arrays.BoundedArray`1.Deserialize*"></a>
+  <h4 id="Langly_DataStructures_Arrays_BoundedArray_1_Deserialize_Xunit_Abstractions_IXunitSerializationInfo_" data-uid="Langly.DataStructures.Arrays.BoundedArray`1.Deserialize(Xunit.Abstractions.IXunitSerializationInfo)">Deserialize(IXunitSerializationInfo)</h4>
+  <div class="markdown level1 summary"><p>Called when the object should populate itself with data from the serialization info.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Deserialize(IXunitSerializationInfo info)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Xunit.Abstractions.IXunitSerializationInfo</span></td>
+        <td><span class="parametername">info</span></td>
+        <td><p>The info to get the data from.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Langly.DataStructures.DataStructure&lt;TElement, Langly.DataStructures.Arrays.BoundedArray&lt;TElement&gt;, Langly.DataStructures.Arrays.FlexibleArray&lt;TElement, Langly.DataStructures.Arrays.BoundedArray&lt;TElement&gt;&gt;.Enumerator&gt;.Deserialize(Xunit.Abstractions.IXunitSerializationInfo)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/TraitTests/apiSpec/new?filename=Langly_DataStructures_Arrays_BoundedArray_1_Insert_nint__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.BoundedArray%601.Insert(nint%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Arrays/DataStructures/Arrays/BoundedArray`1.cs/#L53">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Arrays/DataStructures/Arrays/BoundedArray`1.cs/#L63">View Source</a>
   </span>
   <a id="Langly_DataStructures_Arrays_BoundedArray_1_Insert_" data-uid="Langly.DataStructures.Arrays.BoundedArray`1.Insert*"></a>
   <h4 id="Langly_DataStructures_Arrays_BoundedArray_1_Insert_nint__0_" data-uid="Langly.DataStructures.Arrays.BoundedArray`1.Insert(nint,`0)">Insert(nint, TElement)</h4>
@@ -388,7 +437,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/TraitTests/apiSpec/new?filename=Langly_DataStructures_Arrays_BoundedArray_1_Postpend__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.BoundedArray%601.Postpend(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Arrays/DataStructures/Arrays/BoundedArray`1.cs/#L57">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Arrays/DataStructures/Arrays/BoundedArray`1.cs/#L67">View Source</a>
   </span>
   <a id="Langly_DataStructures_Arrays_BoundedArray_1_Postpend_" data-uid="Langly.DataStructures.Arrays.BoundedArray`1.Postpend*"></a>
   <h4 id="Langly_DataStructures_Arrays_BoundedArray_1_Postpend__0_" data-uid="Langly.DataStructures.Arrays.BoundedArray`1.Postpend(`0)">Postpend(TElement)</h4>
@@ -440,7 +489,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/TraitTests/apiSpec/new?filename=Langly_DataStructures_Arrays_BoundedArray_1_Prepend__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.BoundedArray%601.Prepend(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Arrays/DataStructures/Arrays/BoundedArray`1.cs/#L61">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Arrays/DataStructures/Arrays/BoundedArray`1.cs/#L71">View Source</a>
   </span>
   <a id="Langly_DataStructures_Arrays_BoundedArray_1_Prepend_" data-uid="Langly.DataStructures.Arrays.BoundedArray`1.Prepend*"></a>
   <h4 id="Langly_DataStructures_Arrays_BoundedArray_1_Prepend__0_" data-uid="Langly.DataStructures.Arrays.BoundedArray`1.Prepend(`0)">Prepend(TElement)</h4>
@@ -487,6 +536,42 @@
   </table>
   <h5 class="overrides">Overrides</h5>
   <div><span class="xref">Langly.DataStructures.Arrays.FlexibleArray&lt;TElement, Langly.DataStructures.Arrays.BoundedArray&lt;TElement&gt;&gt;.Prepend(TElement)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/TraitTests/apiSpec/new?filename=Langly_DataStructures_Arrays_BoundedArray_1_Serialize_Xunit_Abstractions_IXunitSerializationInfo_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.BoundedArray%601.Serialize(Xunit.Abstractions.IXunitSerializationInfo)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Arrays/DataStructures/Arrays/BoundedArray`1.cs/#L75">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Arrays_BoundedArray_1_Serialize_" data-uid="Langly.DataStructures.Arrays.BoundedArray`1.Serialize*"></a>
+  <h4 id="Langly_DataStructures_Arrays_BoundedArray_1_Serialize_Xunit_Abstractions_IXunitSerializationInfo_" data-uid="Langly.DataStructures.Arrays.BoundedArray`1.Serialize(Xunit.Abstractions.IXunitSerializationInfo)">Serialize(IXunitSerializationInfo)</h4>
+  <div class="markdown level1 summary"><p>Called when the object should store its data into the serialization info.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Serialize(IXunitSerializationInfo info)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Xunit.Abstractions.IXunitSerializationInfo</span></td>
+        <td><span class="parametername">info</span></td>
+        <td><p>The info to store data in.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Langly.DataStructures.DataStructure&lt;TElement, Langly.DataStructures.Arrays.BoundedArray&lt;TElement&gt;, Langly.DataStructures.Arrays.FlexibleArray&lt;TElement, Langly.DataStructures.Arrays.BoundedArray&lt;TElement&gt;&gt;.Enumerator&gt;.Serialize(Xunit.Abstractions.IXunitSerializationInfo)</span></div>
   <h3 id="operators">Operators
   </h3>
   <span class="small pull-right mobile-hide">
@@ -494,7 +579,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/TraitTests/apiSpec/new?filename=Langly_DataStructures_Arrays_BoundedArray_1_op_Implicit__0____Langly_DataStructures_Arrays_BoundedArray__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.BoundedArray%601.op_Implicit(%600%5B%5D)~Langly.DataStructures.Arrays.BoundedArray%7B%600%7D%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Arrays/DataStructures/Arrays/BoundedArray`1.cs/#L42">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Arrays/DataStructures/Arrays/BoundedArray`1.cs/#L43">View Source</a>
   </span>
   <a id="Langly_DataStructures_Arrays_BoundedArray_1_op_Implicit_" data-uid="Langly.DataStructures.Arrays.BoundedArray`1.op_Implicit*"></a>
   <h4 id="Langly_DataStructures_Arrays_BoundedArray_1_op_Implicit__0____Langly_DataStructures_Arrays_BoundedArray__0_" data-uid="Langly.DataStructures.Arrays.BoundedArray`1.op_Implicit(`0[])~Langly.DataStructures.Arrays.BoundedArray{`0}">Implicit(TElement[] to BoundedArray&lt;TElement&gt;)</h4>
@@ -543,7 +628,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/TraitTests/apiSpec/new?filename=Langly_DataStructures_Arrays_BoundedArray_1_op_Implicit_System_Memory__0___Langly_DataStructures_Arrays_BoundedArray__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.BoundedArray%601.op_Implicit(System.Memory%7B%600%7D)~Langly.DataStructures.Arrays.BoundedArray%7B%600%7D%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Arrays/DataStructures/Arrays/BoundedArray`1.cs/#L49">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Arrays/DataStructures/Arrays/BoundedArray`1.cs/#L50">View Source</a>
   </span>
   <a id="Langly_DataStructures_Arrays_BoundedArray_1_op_Implicit_" data-uid="Langly.DataStructures.Arrays.BoundedArray`1.op_Implicit*"></a>
   <h4 id="Langly_DataStructures_Arrays_BoundedArray_1_op_Implicit_System_Memory__0___Langly_DataStructures_Arrays_BoundedArray__0_" data-uid="Langly.DataStructures.Arrays.BoundedArray`1.op_Implicit(System.Memory{`0})~Langly.DataStructures.Arrays.BoundedArray{`0}">Implicit(Memory&lt;TElement&gt; to BoundedArray&lt;TElement&gt;)</h4>
@@ -599,6 +684,9 @@
   </div>
   <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">System.IEquatable&lt;T&gt;</a>
+  </div>
+  <div>
+      <span class="xref">Xunit.Abstractions.IXunitSerializable</span>
   </div>
   <div>
       <a class="xref" href="Langly.IAdd-2.html">IAdd&lt;TElement, TResult&gt;</a>
@@ -684,7 +772,7 @@
                     <a href="https://github.com/Entomy/LibLangly/new/TraitTests/apiSpec/new?filename=Langly_DataStructures_Arrays_BoundedArray_1.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.BoundedArray%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Arrays/DataStructures/Arrays/BoundedArray`1.cs/#L10" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Arrays/DataStructures/Arrays/BoundedArray`1.cs/#L11" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

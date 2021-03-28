@@ -89,6 +89,7 @@
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Langly.Rope.html">Rope</a>&gt;</div>
     <div><a class="xref" href="Langly.IEquals-1.html">IEquals</a>&lt;<a class="xref" href="Langly.IEquals-1.html">IEquals</a>&lt;<a class="xref" href="Langly.Rope.html">Rope</a>&gt;&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Langly.IEquals-1.html">IEquals</a>&lt;<a class="xref" href="Langly.Rope.html">Rope</a>&gt;&gt;</div>
+    <div><span class="xref">Xunit.Abstractions.IXunitSerializable</span></div>
     <div><a class="xref" href="Langly.IAddText-1.html">IAddText</a>&lt;<a class="xref" href="Langly.Rope.html">Rope</a>&gt;</div>
     <div><a class="xref" href="Langly.IAdd-2.html">IAdd</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>, <a class="xref" href="Langly.Rope.html">Rope</a>&gt;</div>
     <div><a class="xref" href="Langly.IConcatText-1.html">IConcatText</a>&lt;<a class="xref" href="Langly.Rope.html">Rope</a>&gt;</div>
@@ -116,6 +117,12 @@
       <a class="xref" href="Langly.DataStructures.DataStructure-3.html#Langly_DataStructures_DataStructure_3_Langly_IContains_TElement__Contains__0_">DataStructure&lt;Glyph, Rope, Rope.Enumerator&gt;.IContains&lt;Glyph&gt;.Contains(Glyph)</a>
     </div>
     <div>
+      <a class="xref" href="Langly.DataStructures.DataStructure-3.html#Langly_DataStructures_DataStructure_3_Xunit_Abstractions_IXunitSerializable_Deserialize_Xunit_Abstractions_IXunitSerializationInfo_">DataStructure&lt;Glyph, Rope, Rope.Enumerator&gt;.IXunitSerializable.Deserialize(IXunitSerializationInfo)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.DataStructures.DataStructure-3.html#Langly_DataStructures_DataStructure_3_Deserialize_Xunit_Abstractions_IXunitSerializationInfo_">DataStructure&lt;Glyph, Rope, Rope.Enumerator&gt;.Deserialize(IXunitSerializationInfo)</a>
+    </div>
+    <div>
       <a class="xref" href="Langly.DataStructures.DataStructure-3.html#Langly_DataStructures_DataStructure_3_Equals__1_">DataStructure&lt;Glyph, Rope, Rope.Enumerator&gt;.Equals(Rope)</a>
     </div>
     <div>
@@ -126,6 +133,12 @@
     </div>
     <div>
       <a class="xref" href="Langly.DataStructures.DataStructure-3.html#Langly_DataStructures_DataStructure_3_GetEnumerator">DataStructure&lt;Glyph, Rope, Rope.Enumerator&gt;.GetEnumerator()</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.DataStructures.DataStructure-3.html#Langly_DataStructures_DataStructure_3_Xunit_Abstractions_IXunitSerializable_Serialize_Xunit_Abstractions_IXunitSerializationInfo_">DataStructure&lt;Glyph, Rope, Rope.Enumerator&gt;.IXunitSerializable.Serialize(IXunitSerializationInfo)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.DataStructures.DataStructure-3.html#Langly_DataStructures_DataStructure_3_Serialize_Xunit_Abstractions_IXunitSerializationInfo_">DataStructure&lt;Glyph, Rope, Rope.Enumerator&gt;.Serialize(IXunitSerializationInfo)</a>
     </div>
     <div>
       <a class="xref" href="Langly.DataStructures.DataStructure-3.html#Langly_DataStructures_DataStructure_3_ToString">DataStructure&lt;Glyph, Rope, Rope.Enumerator&gt;.ToString()</a>
@@ -165,7 +178,7 @@
   <h6><strong>Assembly</strong>: Langly.Ropes.dll</h6>
   <h5 id="Langly_Rope_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class Rope : DataStructure&lt;Glyph, Rope, Rope.Enumerator&gt;, IEquals&lt;Rope&gt;, IEquatable&lt;Rope&gt;, IEquals&lt;IEquals&lt;Rope&gt;&gt;, IEquatable&lt;IEquals&lt;Rope&gt;&gt;, IAddText&lt;Rope&gt;, IAdd&lt;char, Rope&gt;, IConcatText&lt;Rope&gt;, IConcat&lt;char, Rope&gt;, IPostpendText&lt;Rope&gt;, IPostpend&lt;char, Rope&gt;, IPrependText&lt;Rope&gt;, IPrepend&lt;char, Rope&gt;, ISequenceBidi&lt;Glyph, Rope.Enumerator&gt;, ISequence&lt;Glyph, Rope.Enumerator&gt;, IContains&lt;Glyph&gt;, ICount, IEnumerable&lt;Glyph&gt;, IEnumerable</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class Rope : DataStructure&lt;Glyph, Rope, Rope.Enumerator&gt;, IEquals&lt;Rope&gt;, IEquatable&lt;Rope&gt;, IEquals&lt;IEquals&lt;Rope&gt;&gt;, IEquatable&lt;IEquals&lt;Rope&gt;&gt;, IXunitSerializable, IAddText&lt;Rope&gt;, IAdd&lt;char, Rope&gt;, IConcatText&lt;Rope&gt;, IConcat&lt;char, Rope&gt;, IPostpendText&lt;Rope&gt;, IPostpend&lt;char, Rope&gt;, IPrependText&lt;Rope&gt;, IPrepend&lt;char, Rope&gt;, ISequenceBidi&lt;Glyph, Rope.Enumerator&gt;, ISequence&lt;Glyph, Rope.Enumerator&gt;, IContains&lt;Glyph&gt;, ICount, IEnumerable&lt;Glyph&gt;, IEnumerable</code></pre>
   </div>
   <h5 id="Langly_Rope_remarks"><strong>Remarks</strong></h5>
   <div class="markdown level0 remarks"><p>This is, itself, a variation of a Chain, and is very similar to a Rope datastructure, only with some optimizations for ordered data. The Rope name is reused, but in the pedantic sense, this is not a Rope, as it&apos;s not a binary tree. Never-the-less, it serves the same role as a proper Rope.</p>
@@ -178,7 +191,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/TraitTests/apiSpec/new?filename=Langly_Rope__ctor.md&amp;value=---%0Auid%3A%20Langly.Rope.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Ropes/Rope.cs/#L31">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Ropes/Rope.cs/#L32">View Source</a>
   </span>
   <a id="Langly_Rope__ctor_" data-uid="Langly.Rope.#ctor*"></a>
   <h4 id="Langly_Rope__ctor" data-uid="Langly.Rope.#ctor">Rope()</h4>
@@ -196,7 +209,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/TraitTests/apiSpec/new?filename=Langly_Rope_Count.md&amp;value=---%0Auid%3A%20Langly.Rope.Count%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Ropes/Rope.cs/#L36">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Ropes/Rope.cs/#L37">View Source</a>
   </span>
   <a id="Langly_Rope_Count_" data-uid="Langly.Rope.Count*"></a>
   <h4 id="Langly_Rope_Count" data-uid="Langly.Rope.Count">Count</h4>
@@ -226,6 +239,40 @@
   <div><span class="xref">Langly.DataStructures.DataStructure&lt;Langly.Glyph, Langly.Rope, Langly.Rope.Enumerator&gt;.Count</span></div>
   <h3 id="methods">Methods
   </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/TraitTests/apiSpec/new?filename=Langly_Rope_Deserialize_Xunit_Abstractions_IXunitSerializationInfo_.md&amp;value=---%0Auid%3A%20Langly.Rope.Deserialize(Xunit.Abstractions.IXunitSerializationInfo)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Ropes/Rope.cs/#L97">View Source</a>
+  </span>
+  <a id="Langly_Rope_Deserialize_" data-uid="Langly.Rope.Deserialize*"></a>
+  <h4 id="Langly_Rope_Deserialize_Xunit_Abstractions_IXunitSerializationInfo_" data-uid="Langly.Rope.Deserialize(Xunit.Abstractions.IXunitSerializationInfo)">Deserialize(IXunitSerializationInfo)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Deserialize(IXunitSerializationInfo info)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Xunit.Abstractions.IXunitSerializationInfo</span></td>
+        <td><span class="parametername">info</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Langly.DataStructures.DataStructure&lt;Langly.Glyph, Langly.Rope, Langly.Rope.Enumerator&gt;.Deserialize(Xunit.Abstractions.IXunitSerializationInfo)</span></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/TraitTests/apiSpec/new?filename=Langly_Rope_GetEnumerator.md&amp;value=---%0Auid%3A%20Langly.Rope.GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -295,7 +342,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/TraitTests/apiSpec/new?filename=Langly_Rope_Langly_IAdd_System_Char_Langly_Rope__Add_System_Char_.md&amp;value=---%0Auid%3A%20Langly.Rope.Langly%23IAdd%7BSystem%23Char%2CLangly%23Rope%7D%23Add(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Ropes/Rope.cs/#L42">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Ropes/Rope.cs/#L43">View Source</a>
   </span>
   <a id="Langly_Rope_Langly_IAdd_System_Char_Langly_Rope__Add_" data-uid="Langly.Rope.Langly#IAdd{System#Char,Langly#Rope}#Add*"></a>
   <h4 id="Langly_Rope_Langly_IAdd_System_Char_Langly_Rope__Add_System_Char_" data-uid="Langly.Rope.Langly#IAdd{System#Char,Langly#Rope}#Add(System.Char)">IAdd&lt;Char, Rope&gt;.Add(Char)</h4>
@@ -342,7 +389,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/TraitTests/apiSpec/new?filename=Langly_Rope_Langly_IAdd_System_Char_Langly_Rope__Add_System_Char___.md&amp;value=---%0Auid%3A%20Langly.Rope.Langly%23IAdd%7BSystem%23Char%2CLangly%23Rope%7D%23Add(System.Char%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Ropes/Rope.cs/#L46">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Ropes/Rope.cs/#L47">View Source</a>
   </span>
   <a id="Langly_Rope_Langly_IAdd_System_Char_Langly_Rope__Add_" data-uid="Langly.Rope.Langly#IAdd{System#Char,Langly#Rope}#Add*"></a>
   <h4 id="Langly_Rope_Langly_IAdd_System_Char_Langly_Rope__Add_System_Char___" data-uid="Langly.Rope.Langly#IAdd{System#Char,Langly#Rope}#Add(System.Char[])">IAdd&lt;Char, Rope&gt;.Add(Char[])</h4>
@@ -389,7 +436,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/TraitTests/apiSpec/new?filename=Langly_Rope_Langly_IAdd_System_Char_Langly_Rope__Add_System_Memory_System_Char__.md&amp;value=---%0Auid%3A%20Langly.Rope.Langly%23IAdd%7BSystem%23Char%2CLangly%23Rope%7D%23Add(System.Memory%7BSystem.Char%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Ropes/Rope.cs/#L50">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Ropes/Rope.cs/#L51">View Source</a>
   </span>
   <a id="Langly_Rope_Langly_IAdd_System_Char_Langly_Rope__Add_" data-uid="Langly.Rope.Langly#IAdd{System#Char,Langly#Rope}#Add*"></a>
   <h4 id="Langly_Rope_Langly_IAdd_System_Char_Langly_Rope__Add_System_Memory_System_Char__" data-uid="Langly.Rope.Langly#IAdd{System#Char,Langly#Rope}#Add(System.Memory{System.Char})">IAdd&lt;Char, Rope&gt;.Add(Memory&lt;Char&gt;)</h4>
@@ -436,7 +483,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/TraitTests/apiSpec/new?filename=Langly_Rope_Langly_IAdd_System_Char_Langly_Rope__Add_System_ReadOnlyMemory_System_Char__.md&amp;value=---%0Auid%3A%20Langly.Rope.Langly%23IAdd%7BSystem%23Char%2CLangly%23Rope%7D%23Add(System.ReadOnlyMemory%7BSystem.Char%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Ropes/Rope.cs/#L54">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Ropes/Rope.cs/#L55">View Source</a>
   </span>
   <a id="Langly_Rope_Langly_IAdd_System_Char_Langly_Rope__Add_" data-uid="Langly.Rope.Langly#IAdd{System#Char,Langly#Rope}#Add*"></a>
   <h4 id="Langly_Rope_Langly_IAdd_System_Char_Langly_Rope__Add_System_ReadOnlyMemory_System_Char__" data-uid="Langly.Rope.Langly#IAdd{System#Char,Langly#Rope}#Add(System.ReadOnlyMemory{System.Char})">IAdd&lt;Char, Rope&gt;.Add(ReadOnlyMemory&lt;Char&gt;)</h4>
@@ -483,7 +530,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/TraitTests/apiSpec/new?filename=Langly_Rope_Langly_IAdd_System_Char_Langly_Rope__Add_System_ReadOnlySpan_System_Char__.md&amp;value=---%0Auid%3A%20Langly.Rope.Langly%23IAdd%7BSystem%23Char%2CLangly%23Rope%7D%23Add(System.ReadOnlySpan%7BSystem.Char%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Ropes/Rope.cs/#L62">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Ropes/Rope.cs/#L63">View Source</a>
   </span>
   <a id="Langly_Rope_Langly_IAdd_System_Char_Langly_Rope__Add_" data-uid="Langly.Rope.Langly#IAdd{System#Char,Langly#Rope}#Add*"></a>
   <h4 id="Langly_Rope_Langly_IAdd_System_Char_Langly_Rope__Add_System_ReadOnlySpan_System_Char__" data-uid="Langly.Rope.Langly#IAdd{System#Char,Langly#Rope}#Add(System.ReadOnlySpan{System.Char})">IAdd&lt;Char, Rope&gt;.Add(ReadOnlySpan&lt;Char&gt;)</h4>
@@ -530,7 +577,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/TraitTests/apiSpec/new?filename=Langly_Rope_Langly_IAdd_System_Char_Langly_Rope__Add_System_Span_System_Char__.md&amp;value=---%0Auid%3A%20Langly.Rope.Langly%23IAdd%7BSystem%23Char%2CLangly%23Rope%7D%23Add(System.Span%7BSystem.Char%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Ropes/Rope.cs/#L58">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Ropes/Rope.cs/#L59">View Source</a>
   </span>
   <a id="Langly_Rope_Langly_IAdd_System_Char_Langly_Rope__Add_" data-uid="Langly.Rope.Langly#IAdd{System#Char,Langly#Rope}#Add*"></a>
   <h4 id="Langly_Rope_Langly_IAdd_System_Char_Langly_Rope__Add_System_Span_System_Char__" data-uid="Langly.Rope.Langly#IAdd{System#Char,Langly#Rope}#Add(System.Span{System.Char})">IAdd&lt;Char, Rope&gt;.Add(Span&lt;Char&gt;)</h4>
@@ -577,7 +624,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/TraitTests/apiSpec/new?filename=Langly_Rope_Langly_IAdd_System_Char_Langly_Rope__Add__1_Langly_ISequence_System_Char___0__.md&amp;value=---%0Auid%3A%20Langly.Rope.Langly%23IAdd%7BSystem%23Char%2CLangly%23Rope%7D%23Add%60%601(Langly.ISequence%7BSystem.Char%2C%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Ropes/Rope.cs/#L66">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Ropes/Rope.cs/#L67">View Source</a>
   </span>
   <a id="Langly_Rope_Langly_IAdd_System_Char_Langly_Rope__Add_" data-uid="Langly.Rope.Langly#IAdd{System#Char,Langly#Rope}#Add*"></a>
   <h4 id="Langly_Rope_Langly_IAdd_System_Char_Langly_Rope__Add__1_Langly_ISequence_System_Char___0__" data-uid="Langly.Rope.Langly#IAdd{System#Char,Langly#Rope}#Add``1(Langly.ISequence{System.Char,``0})">IAdd&lt;Char, Rope&gt;.Add&lt;TEnumerator&gt;(ISequence&lt;Char, TEnumerator&gt;)</h4>
@@ -641,7 +688,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/TraitTests/apiSpec/new?filename=Langly_Rope_Langly_IPostpend_System_Char_Langly_Rope__Postpend_System_Char_.md&amp;value=---%0Auid%3A%20Langly.Rope.Langly%23IPostpend%7BSystem%23Char%2CLangly%23Rope%7D%23Postpend(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Ropes/Rope.cs/#L70">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Ropes/Rope.cs/#L71">View Source</a>
   </span>
   <a id="Langly_Rope_Langly_IPostpend_System_Char_Langly_Rope__Postpend_" data-uid="Langly.Rope.Langly#IPostpend{System#Char,Langly#Rope}#Postpend*"></a>
   <h4 id="Langly_Rope_Langly_IPostpend_System_Char_Langly_Rope__Postpend_System_Char_" data-uid="Langly.Rope.Langly#IPostpend{System#Char,Langly#Rope}#Postpend(System.Char)">IPostpend&lt;Char, Rope&gt;.Postpend(Char)</h4>
@@ -688,7 +735,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/TraitTests/apiSpec/new?filename=Langly_Rope_Langly_IPrepend_System_Char_Langly_Rope__Prepend_System_Char_.md&amp;value=---%0Auid%3A%20Langly.Rope.Langly%23IPrepend%7BSystem%23Char%2CLangly%23Rope%7D%23Prepend(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Ropes/Rope.cs/#L83">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/TraitTests/Libraries/Langly.Ropes/Rope.cs/#L84">View Source</a>
   </span>
   <a id="Langly_Rope_Langly_IPrepend_System_Char_Langly_Rope__Prepend_" data-uid="Langly.Rope.Langly#IPrepend{System#Char,Langly#Rope}#Prepend*"></a>
   <h4 id="Langly_Rope_Langly_IPrepend_System_Char_Langly_Rope__Prepend_System_Char_" data-uid="Langly.Rope.Langly#IPrepend{System#Char,Langly#Rope}#Prepend(System.Char)">IPrepend&lt;Char, Rope&gt;.Prepend(Char)</h4>
@@ -742,6 +789,9 @@
   </div>
   <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">System.IEquatable&lt;T&gt;</a>
+  </div>
+  <div>
+      <span class="xref">Xunit.Abstractions.IXunitSerializable</span>
   </div>
   <div>
       <a class="xref" href="Langly.IAddText-1.html">IAddText&lt;TResult&gt;</a>

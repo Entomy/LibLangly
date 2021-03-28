@@ -1,6 +1,7 @@
 ﻿using Langly.DataStructures.Filters;
 using System;
 using System.Diagnostics.CodeAnalysis;
+using Xunit.Abstractions;
 
 namespace Langly.DataStructures.Lists {
 	/// <summary>
@@ -359,5 +360,8 @@ namespace Langly.DataStructures.Lists {
 			// All done
 			return this;
 		}
+
+		/// <inheritdoc/>
+		protected override void Deserialize(IXunitSerializationInfo info) => ((IAdd<TElement, Chain<TElement>>)this).Add(info.GetValue<TElement[]>("Array"));
 	}
 }

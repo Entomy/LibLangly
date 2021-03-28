@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using Langly.DataStructures;
+using Xunit.Abstractions;
 
 namespace Langly {
 	/// <summary>
@@ -91,5 +92,8 @@ namespace Langly {
 			//TODO: Increment Count
 			return this;
 		}
+
+		/// <inheritdoc/>
+		protected override void Deserialize(IXunitSerializationInfo info) => ((IAdd<Char, Rope>)this).Add(info.GetValue<Char[]>("Array"));
 	}
 }

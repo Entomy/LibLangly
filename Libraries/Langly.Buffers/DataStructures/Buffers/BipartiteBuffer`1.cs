@@ -6,6 +6,7 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
+using Xunit.Abstractions;
 
 namespace Langly.DataStructures.Buffers {
 	/// <summary>
@@ -57,6 +58,18 @@ namespace Langly.DataStructures.Buffers {
 		}
 
 		/// <inheritdoc/>
+		public nint Capacity => Memory.Length;
+
+		/// <inheritdoc/>
+		public override nint Count => Primary.Count + Secondary.Count;
+
+		/// <inheritdoc/>
+		public Boolean Readable => Primary.Readable || Secondary.Readable;
+
+		/// <inheritdoc/>
+		public Boolean Writable => Primary.Writable || Secondary.Writable;
+
+		/// <inheritdoc/>
 		[AllowNull, MaybeNull]
 		public TElement this[[DisallowNull] nint index] {
 			get {
@@ -70,19 +83,6 @@ namespace Langly.DataStructures.Buffers {
 			}
 			set => throw new NotImplementedException();
 		}
-
-		/// <inheritdoc/>
-		public override nint Count => Primary.Count + Secondary.Count;
-
-		/// <inheritdoc/>
-		public Boolean Readable => Primary.Readable || Secondary.Readable;
-
-		/// <inheritdoc/>
-		public Boolean Writable => Primary.Writable || Secondary.Writable;
-
-		/// <inheritdoc/>
-		public nint Capacity => Memory.Length;
-
 		/// <inheritdoc/>
 		[return: MaybeNull]
 		BipartiteBuffer<TElement> IAdd<TElement, BipartiteBuffer<TElement>>.Add([AllowNull] TElement element) => ((IWrite<TElement, BipartiteBuffer<TElement>>)this).Write(element);
@@ -136,6 +136,14 @@ namespace Langly.DataStructures.Buffers {
 				return this;
 			} else {
 				return null;
+			}
+		}
+
+		/// <inheritdoc/>
+		protected override void Deserialize(IXunitSerializationInfo info) {
+			((IClear<BipartiteBuffer<TElement>>)this).Clear();
+			foreach (TElement item in info.GetValue<TElement[]>("Array")) {
+				((IAdd<TElement, BipartiteBuffer<TElement>>)this).Add(item);
 			}
 		}
 	}
