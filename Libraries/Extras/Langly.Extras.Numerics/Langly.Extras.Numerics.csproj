@@ -1,18 +1,18 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFramework>net5.0</TargetFramework>
 		<Description>Provides numeric types and functions on top of LibLangly.</Description>
 		<PackageTags>langly, numerics, math, maths, mathematic, mathematics</PackageTags>
-		<AssemblyName>Langly.Numerics</AssemblyName>
+		<AssemblyName>Langly.Extras.Numerics</AssemblyName>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<Compile Include="..\GlobalSuppressions.cs" Link="GlobalSuppressions.cs" />
+		<Compile Include="..\..\GlobalSuppressions.cs" Link="GlobalSuppressions.cs" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\Langly.Counters\Langly.Counters.csproj" />
+		<ProjectReference Include="..\..\Langly.Counters\Langly.Counters.csproj" />
 	</ItemGroup>
 
 </Project>

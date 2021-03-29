@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+		<Description>Provides trait testing contracts on top of LibLangly.</Description>
+		<PackageTags>langly, trait, traits, test, tests, testing, unit test, unit tests, unit testing</PackageTags>
+		<AssemblyName>Langly.Extras.Testing</AssemblyName>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Include="..\..\GlobalSuppressions.cs" Link="GlobalSuppressions.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="xunit.assert" Version="2.4.1" />
+	  <PackageReference Include="xunit.extensibility.core" Version="2.4.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\Langly.Traits\Langly.Traits.csproj" />
+	</ItemGroup>
+
+</Project>
