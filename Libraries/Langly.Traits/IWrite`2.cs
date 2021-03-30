@@ -51,22 +51,6 @@ namespace Langly {
 		/// <summary>
 		/// Writes the <paramref name="elements"/>.
 		/// </summary>
-		/// <param name="elements">The <see cref="Span{T}"/> of <typeparamref name="TElement"/> value to write.</param>
-		/// <returns>A <typeparamref name="TResult"/> instance if successful; otherwise, <see langword="null"/>.</returns>
-		[return: MaybeNull]
-		TResult Write(Span<TElement> elements) => Add(elements);
-
-		/// <summary>
-		/// Writes the <paramref name="elements"/>.
-		/// </summary>
-		/// <param name="elements">The <see cref="ReadOnlySpan{T}"/> of <typeparamref name="TElement"/> value to write.</param>
-		/// <returns>A <typeparamref name="TResult"/> instance if successful; otherwise, <see langword="null"/>.</returns>
-		[return: MaybeNull]
-		TResult Write(ReadOnlySpan<TElement> elements) => Add(elements);
-
-		/// <summary>
-		/// Writes the <paramref name="elements"/>.
-		/// </summary>
 		/// <typeparam name="TEnumerator">The type of the enumerator of the <paramref name="elements"/>.</typeparam>
 		/// <param name="elements">The <see cref="ReadOnlySpan{T}"/> of <typeparamref name="TElement"/> value to write.</param>
 		/// <returns>A <typeparamref name="TResult"/> instance if successful; otherwise, <see langword="null"/>.</returns>
@@ -174,28 +158,6 @@ namespace Langly {
 		/// <returns>A <typeparamref name="TResult"/> instance if successful; otherwise, <see langword="null"/>.</returns>
 		[return: MaybeNull]
 		public static TResult Write<TElement, TResult>([AllowNull] this IWrite<TElement, TResult> stream, ReadOnlyMemory<TElement> elements) where TResult : IWrite<TElement, TResult> => stream is not null ? stream.Write(elements) : (TResult)stream;
-
-		/// <summary>
-		/// Writes the <paramref name="elements"/> to the <paramref name="stream"/>.
-		/// </summary>
-		/// <typeparam name="TElement">The type of the element to write.</typeparam>
-		/// <typeparam name="TResult">The type of the error object.</typeparam>
-		/// <param name="stream">The stream to write to.</param>
-		/// <param name="elements">The <see cref="Span{T}"/> of <typeparamref name="TElement"/> values to write.</param>
-		/// <returns>A <typeparamref name="TResult"/> instance if successful; otherwise, <see langword="null"/>.</returns>
-		[return: MaybeNull]
-		public static TResult Write<TElement, TResult>([AllowNull] this IWrite<TElement, TResult> stream, Span<TElement> elements) where TResult : IWrite<TElement, TResult> => stream is not null ? stream.Write(elements) : (TResult)stream;
-
-		/// <summary>
-		/// Writes the <paramref name="elements"/> to the <paramref name="stream"/>.
-		/// </summary>
-		/// <typeparam name="TElement">The type of the element to write.</typeparam>
-		/// <typeparam name="TResult">The type of the error object.</typeparam>
-		/// <param name="stream">The stream to write to.</param>
-		/// <param name="elements">The <see cref="ReadOnlySpan{T}"/> of <typeparamref name="TElement"/> values to write.</param>
-		/// <returns>A <typeparamref name="TResult"/> instance if successful; otherwise, <see langword="null"/>.</returns>
-		[return: MaybeNull]
-		public static TResult Write<TElement, TResult>([AllowNull] this IWrite<TElement, TResult> stream, ReadOnlySpan<TElement> elements) where TResult : IWrite<TElement, TResult> => stream is not null ? stream.Write(elements) : (TResult)stream;
 
 		/// <summary>
 		/// Ensures <paramref name="amount"/> elements are loaded into this object.

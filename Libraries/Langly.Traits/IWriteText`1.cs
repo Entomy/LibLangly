@@ -101,7 +101,7 @@ namespace Langly {
 		/// <param name="elements">The <see cref="Span{T}"/> of <see cref="Char"/> values to write.</param>
 		/// <returns>A <typeparamref name="TResult"/> instance if successful; otherwise, <see langword="null"/>.</returns>
 		[return: MaybeNull]
-		public static TResult WriteLine<TResult>([AllowNull] this IWriteText<TResult> stream, Span<Char> elements) where TResult : IWriteText<TResult> => stream is not null ? stream.Write(elements).WriteLine() : (TResult)stream;
+		public static TResult WriteLine<TResult>([AllowNull] this IWriteSpan<Char, TResult> stream, Span<Char> elements) where TResult : IWriteSpan<Char, TResult>, IWriteText<TResult> => stream is not null ? stream.Write(elements).WriteLine() : (TResult)stream;
 
 		/// <summary>
 		/// Writes the <paramref name="elements"/> and a line terminator to the <paramref name="stream"/>.
@@ -111,7 +111,7 @@ namespace Langly {
 		/// <param name="elements">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> values to write.</param>
 		/// <returns>A <typeparamref name="TResult"/> instance if successful; otherwise, <see langword="null"/>.</returns>
 		[return: MaybeNull]
-		public static TResult WriteLine<TResult>([AllowNull] this IWriteText<TResult> stream, ReadOnlySpan<Char> elements) where TResult : IWriteText<TResult> => stream is not null ? stream.Write(elements).WriteLine() : (TResult)stream;
+		public static TResult WriteLine<TResult>([AllowNull] this IWriteSpan<Char, TResult> stream, ReadOnlySpan<Char> elements) where TResult : IWriteSpan<Char, TResult>, IWriteText<TResult> => stream is not null ? stream.Write(elements).WriteLine() : (TResult)stream;
 
 	}
 }

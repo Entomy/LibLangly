@@ -9,16 +9,6 @@ namespace Langly {
 	/// <typeparam name="TResult">The resulting type; often itself.</typeparam>
 	[CLSCompliant(false)]
 	public interface IInsertUnsafe<TElement, out TResult> : IInsert<TElement, TResult> where TElement : unmanaged where TResult : IInsertUnsafe<TElement, TResult> {
-		/// <inheritdoc/>
-		[return: MaybeNull]
-		unsafe TResult IInsert<TElement, TResult>.Insert(nint index, ReadOnlySpan<TElement> elements) {
-			TResult result = (TResult)this;
-			fixed (TElement* elmts = elements) {
-				result = result.Insert(index, elmts, elements.Length);
-			}
-			return result;
-		}
-
 		/// <summary>
 		/// Inserts the elements into the collection at the specified index.
 		/// </summary>

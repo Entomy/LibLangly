@@ -91,12 +91,6 @@
       <a class="xref" href="Langly.IAdd-2.html#Langly_IAdd_2_Add_System_ReadOnlyMemory__0__">IAdd&lt;TElement, TResult&gt;.Add(ReadOnlyMemory&lt;TElement&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="Langly.IAdd-2.html#Langly_IAdd_2_Add_System_Span__0__">IAdd&lt;TElement, TResult&gt;.Add(Span&lt;TElement&gt;)</a>
-    </div>
-    <div>
-      <a class="xref" href="Langly.IAdd-2.html#Langly_IAdd_2_Add_System_ReadOnlySpan__0__">IAdd&lt;TElement, TResult&gt;.Add(ReadOnlySpan&lt;TElement&gt;)</a>
-    </div>
-    <div>
       <a class="xref" href="Langly.IAdd-2.html#Langly_IAdd_2_Add__1_Langly_ISequence__0___0__">IAdd&lt;TElement, TResult&gt;.Add&lt;TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;)</a>
     </div>
   </div>
@@ -135,7 +129,7 @@ public interface IAddUnsafe&lt;TElement, out TResult&gt; : IAdd&lt;TElement, TRe
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IAddUnsafe_2_Add__0__System_Int32_.md&amp;value=---%0Auid%3A%20Langly.IAddUnsafe%602.Add(%600*%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IAddUnsafe`2.cs/#L31">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IAddUnsafe`2.cs/#L21">View Source</a>
   </span>
   <a id="Langly_IAddUnsafe_2_Add_" data-uid="Langly.IAddUnsafe`2.Add*"></a>
   <h4 id="Langly_IAddUnsafe_2_Add__0__System_Int32_" data-uid="Langly.IAddUnsafe`2.Add(`0*,System.Int32)">Add(TElement*, Int32)</h4>
@@ -189,61 +183,6 @@ public interface IAddUnsafe&lt;TElement, out TResult&gt; : IAdd&lt;TElement, TRe
   <h5 id="Langly_IAddUnsafe_2_Add__0__System_Int32__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.</p>
 </div>
-  <h3 id="eii">Explicit Interface Implementations
-  </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IAddUnsafe_2_Langly_IAdd_TElement_TResult__Add_System_ReadOnlySpan__0__.md&amp;value=---%0Auid%3A%20Langly.IAddUnsafe%602.Langly%23IAdd%7BTElement%2CTResult%7D%23Add(System.ReadOnlySpan%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Traits/IAddUnsafe`2.cs/#L13">View Source</a>
-  </span>
-  <a id="Langly_IAddUnsafe_2_Langly_IAdd_TElement_TResult__Add_" data-uid="Langly.IAddUnsafe`2.Langly#IAdd{TElement,TResult}#Add*"></a>
-  <h4 id="Langly_IAddUnsafe_2_Langly_IAdd_TElement_TResult__Add_System_ReadOnlySpan__0__" data-uid="Langly.IAddUnsafe`2.Langly#IAdd{TElement,TResult}#Add(System.ReadOnlySpan{`0})">IAdd&lt;TElement, TResult&gt;.Add(ReadOnlySpan&lt;TElement&gt;)</h4>
-  <div class="markdown level1 summary"><p>Adds the elements to this object.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">TResult IAdd&lt;TElement, TResult&gt;.Add(ReadOnlySpan&lt;TElement&gt; elements)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;TElement&gt;</td>
-        <td><span class="parametername">elements</span></td>
-        <td><p>The elements to add.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">TResult</span></td>
-        <td><p>If the add occurred successfully, returns a <code data-dev-comment-type="typeparamref" class="typeparamref">TResult</code> containing the original and added elements; otherwise, <span class="xref">null</span>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Langly_IAddUnsafe_2_Langly_IAdd_TElement_TResult__Add_System_ReadOnlySpan__0___remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.</p>
-</div>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Add__2_Langly_IAddUnsafe___0___1____0__System_Int32_">TraitExtensions.Add&lt;TElement, TResult&gt;(IAddUnsafe&lt;TElement, TResult&gt;, TElement*, Int32)</a>
@@ -259,12 +198,6 @@ public interface IAddUnsafe&lt;TElement, out TResult&gt; : IAdd&lt;TElement, TRe
   </div>
   <div>
       <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Add__2_Langly_IAdd___0___1__System_ReadOnlyMemory___0__">TraitExtensions.Add&lt;TElement, TResult&gt;(IAdd&lt;TElement, TResult&gt;, ReadOnlyMemory&lt;TElement&gt;)</a>
-  </div>
-  <div>
-      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Add__2_Langly_IAdd___0___1__System_Span___0__">TraitExtensions.Add&lt;TElement, TResult&gt;(IAdd&lt;TElement, TResult&gt;, Span&lt;TElement&gt;)</a>
-  </div>
-  <div>
-      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Add__2_Langly_IAdd___0___1__System_ReadOnlySpan___0__">TraitExtensions.Add&lt;TElement, TResult&gt;(IAdd&lt;TElement, TResult&gt;, ReadOnlySpan&lt;TElement&gt;)</a>
   </div>
   <div>
       <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Add__3_Langly_IAdd___0___1__Langly_ISequence___0___2__">TraitExtensions.Add&lt;TElement, TResult, TEnumerator&gt;(IAdd&lt;TElement, TResult&gt;, ISequence&lt;TElement, TEnumerator&gt;)</a>

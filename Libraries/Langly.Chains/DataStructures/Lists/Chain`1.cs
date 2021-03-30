@@ -86,14 +86,6 @@ namespace Langly.DataStructures.Lists {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		Chain<TElement> IAdd<TElement, Chain<TElement>>.Add(ReadOnlySpan<TElement> elements) {
-			Memory<TElement> buffer = new TElement[elements.Length];
-			elements.CopyTo(buffer.Span);
-			return ((IAdd<TElement, Chain<TElement>>)this).Add(buffer);
-		}
-
-		/// <inheritdoc/>
-		[return: NotNull]
 		Chain<TElement> IClear<Chain<TElement>>.Clear() {
 			Node N = Head;
 			while (N is not null) {
@@ -245,14 +237,6 @@ namespace Langly.DataStructures.Lists {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		Chain<TElement> IInsert<TElement, Chain<TElement>>.Insert(nint index, ReadOnlySpan<TElement> elements) {
-			Memory<TElement> buffer = new TElement[elements.Length];
-			elements.CopyTo(buffer.Span);
-			return ((IInsert<TElement, Chain<TElement>>)this).Insert(index, buffer);
-		}
-
-		/// <inheritdoc/>
-		[return: NotNull]
 		Chain<TElement> IPostpend<TElement, Chain<TElement>>.Postpend([AllowNull] TElement element) {
 			if (element is not null) {
 				Tail = new ElementNode(element, previous: Tail, next: null);
@@ -281,14 +265,6 @@ namespace Langly.DataStructures.Lists {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		Chain<TElement> IPostpend<TElement, Chain<TElement>>.Postpend(ReadOnlySpan<TElement> elements) {
-			Memory<TElement> buffer = new TElement[elements.Length];
-			elements.CopyTo(buffer.Span);
-			return ((IPostpend<TElement, Chain<TElement>>)this).Postpend(buffer);
-		}
-
-		/// <inheritdoc/>
-		[return: NotNull]
 		Chain<TElement> IPrepend<TElement, Chain<TElement>>.Prepend([AllowNull] TElement element) {
 			if (element is not null) {
 				Head = new ElementNode(element, previous: null, next: Head);
@@ -313,14 +289,6 @@ namespace Langly.DataStructures.Lists {
 			}
 			Count++;
 			return this;
-		}
-
-		/// <inheritdoc/>
-		[return: NotNull]
-		Chain<TElement> IPrepend<TElement, Chain<TElement>>.Prepend(ReadOnlySpan<TElement> elements) {
-			Memory<TElement> buffer = new TElement[elements.Length];
-			elements.CopyTo(buffer.Span);
-			return ((IPrepend<TElement, Chain<TElement>>)this).Prepend(buffer);
 		}
 
 		/// <inheritdoc/>

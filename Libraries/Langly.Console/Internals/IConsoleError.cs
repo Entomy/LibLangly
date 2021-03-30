@@ -5,5 +5,5 @@ namespace Langly.Internals {
 	/// Indicates the type provides error-write behavior for the <see cref="Console"/>.
 	/// </summary>
 	[CLSCompliant(false)]
-	public interface IConsoleError : IWriteText<IConsoleError>, IWriteUnsafe<Char, IConsoleError> { }
+	public interface IConsoleError : IWriteSpan<Char, IConsoleError>, IWriteText<IConsoleError>, IWriteUnsafe<Char, IConsoleError> { }
 }

@@ -56,14 +56,6 @@ namespace Langly {
 
 		/// <inheritdoc/>
 		[return: MaybeNull]
-		Rope IAdd<Char, Rope>.Add(Span<Char> elements) => ((IPostpend<Char, Rope>)this).Postpend(elements);
-
-		/// <inheritdoc/>
-		[return: MaybeNull]
-		Rope IAdd<Char, Rope>.Add(ReadOnlySpan<Char> elements) => ((IPostpend<Char, Rope>)this).Postpend(elements);
-
-		/// <inheritdoc/>
-		[return: MaybeNull]
 		Rope IAdd<Char, Rope>.Add<TEnumerator>([AllowNull] ISequence<Char, TEnumerator> elements) => ((IPostpend<Char, Rope>)this).Postpend(elements);
 
 		/// <inheritdoc/>

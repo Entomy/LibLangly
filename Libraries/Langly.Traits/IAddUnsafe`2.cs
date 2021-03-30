@@ -9,16 +9,6 @@ namespace Langly {
 	/// <typeparam name="TResult">The resulting type; often itself.</typeparam>
 	[CLSCompliant(false)]
 	public interface IAddUnsafe<TElement, out TResult> : IAdd<TElement, TResult> where TElement : unmanaged where TResult : IAddUnsafe<TElement, TResult> {
-		/// <inheritdoc/>
-		[return: MaybeNull]
-		unsafe TResult IAdd<TElement, TResult>.Add(ReadOnlySpan<TElement> elements) {
-			TResult? result = (TResult)this;
-			fixed (TElement* elmts = elements) {
-				if ((result = result!.Add(elmts, elements.Length)) is null) { return default; }
-			}
-			return result;
-		}
-
 		/// <summary>
 		/// Adds the <paramref name="elements"/> to this object.
 		/// </summary>
