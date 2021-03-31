@@ -69,7 +69,7 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="arrays">Arrays</h1>
 
-<p>Arrays are the most basic of all data structures. This being said, **LibLangly provides several options, all with very sophisticated API's. In all cases, an Array is a contiguous collection of elements, and only varies in how work is done.</p>
+<p>Arrays are the most basic of all data structures. This being said, <strong>LibLangly</strong> provides several options, all with very sophisticated API's. In all cases, an Array is a contiguous collection of elements, and only varies in how work is done.</p>
 <h2 id="arraytelement"><a href="https://entomy.github.io/LibLangly/api/Langly.DataStructures.Array-1.html"><code>Array&lt;TElement&gt;</code></a></h2>
 <p>This is the most primative implementation of an Array. It is read only as a form of optimization, and only one-dimensional as a matter of semantics. It should be considered analogous to <a href="https://docs.microsoft.com/en-us/dotnet/api/system.readonlymemory-1"><code>ReadOnlyMemory&lt;T&gt;</code></a>. While it supports operations that would modify its elements, it does so by <em>always</em> creating a new array, which means an allocation always occurs. These operations are not recommended in the majority of cases, and are only provided for orthogonality. Furthermore, as a simplification, this is implemented as a value type (<code>struct</code>), so <code>null</code> doesn't need to be considered. Most cases where arrays would be used are best served through this type.</p>
 <h2 id="flexiblearraytelement-tself"><a href="https://entomy.github.io/LibLangly/api/Langly.DataStructures.Arrays.FlexibleArray-2.html"><code>FlexibleArray&lt;TElement, TSelf&gt;</code></a></h2>

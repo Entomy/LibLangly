@@ -1,6 +1,6 @@
 ﻿# Arrays
 
-Arrays are the most basic of all data structures. This being said, **LibLangly provides several options, all with very sophisticated API's. In all cases, an Array is a contiguous collection of elements, and only varies in how work is done.
+Arrays are the most basic of all data structures. This being said, **LibLangly** provides several options, all with very sophisticated API's. In all cases, an Array is a contiguous collection of elements, and only varies in how work is done.
 
 ## [`Array<TElement>`](https://entomy.github.io/LibLangly/api/Langly.DataStructures.Array-1.html)
 
