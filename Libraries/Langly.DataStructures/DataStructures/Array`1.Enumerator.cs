@@ -4,19 +4,16 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 
 namespace Langly.DataStructures {
-	public partial struct Array<TElement> : ISequenceBidi<TElement, Array<TElement>.Enumerator> {
+	public partial struct Array<TElement> : ISequence<TElement, Array<TElement>.Enumerator> {
 		/// <inheritdoc/>
 		public Enumerator GetEnumerator() => new Enumerator(this);
-
-		[return: NotNull]
-		public IEnumerator<TElement> Reverse() => throw new NotImplementedException();
 
 		/// <summary>
 		/// Provides enumeration over a <see cref="Array{TElement}"/>.
 		/// </summary>
 		[EditorBrowsable(EditorBrowsableState.Advanced)]
 		[StructLayout(LayoutKind.Auto)]
-		public struct Enumerator : IEnumeratorBidi<TElement> {
+		public struct Enumerator : IEnumerator<TElement> {
 			/// <summary>
 			/// The <see cref="Array{TElement}"/> being enumerated.
 			/// </summary>
@@ -43,13 +40,7 @@ namespace Langly.DataStructures {
 			public Boolean MoveNext() => ++i < Count;
 
 			/// <inheritdoc/>
-			public Boolean MovePrevious() => i-- > 0;
-
-			/// <inheritdoc/>
-			public void ResetBeginning() => i = -1;
-
-			/// <inheritdoc/>
-			public void ResetEnding() => i = Count;
+			public void Reset() => i = -1;
 		}
 	}
 }

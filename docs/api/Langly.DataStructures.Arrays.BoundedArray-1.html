@@ -107,7 +107,6 @@
     <div><a class="xref" href="Langly.IReplace-3.html">IReplace</a>&lt;TElement, TElement, <a class="xref" href="Langly.DataStructures.Arrays.BoundedArray-1.html">BoundedArray</a>&lt;TElement&gt;&gt;</div>
     <div><a class="xref" href="Langly.IShift-1.html">IShift</a>&lt;<a class="xref" href="Langly.DataStructures.Arrays.BoundedArray-1.html">BoundedArray</a>&lt;TElement&gt;&gt;</div>
     <div><a class="xref" href="Langly.ISlice-1.html">ISlice</a>&lt;<a class="xref" href="Langly.DataStructures.Array-1.html">Array</a>&lt;TElement&gt;&gt;</div>
-    <div><a class="xref" href="Langly.ISequenceBidi-2.html">ISequenceBidi</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.Arrays.FlexibleArray-2.Enumerator.html">FlexibleArray.Enumerator</a>&lt;&gt;&gt;</div>
     <div><a class="xref" href="Langly.ISequence-2.html">ISequence</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.Arrays.FlexibleArray-2.Enumerator.html">FlexibleArray.Enumerator</a>&lt;&gt;&gt;</div>
     <div><a class="xref" href="Langly.IContains-1.html">IContains</a>&lt;TElement&gt;</div>
     <div><a class="xref" href="Langly.ICount.html">ICount</a></div>
@@ -168,9 +167,6 @@
       <a class="xref" href="Langly.DataStructures.Arrays.FlexibleArray-2.html#Langly_DataStructures_Arrays_FlexibleArray_2_GetEnumerator">FlexibleArray&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.GetEnumerator()</a>
     </div>
     <div>
-      <a class="xref" href="Langly.DataStructures.Arrays.FlexibleArray-2.html#Langly_DataStructures_Arrays_FlexibleArray_2_Reverse">FlexibleArray&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.Reverse()</a>
-    </div>
-    <div>
       <a class="xref" href="Langly.DataStructures.DataStructure-3.html#Langly_DataStructures_DataStructure_3_Filter">DataStructure&lt;TElement, BoundedArray&lt;TElement&gt;, FlexibleArray&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.Enumerator&gt;.Filter</a>
     </div>
     <div>
@@ -229,7 +225,7 @@
   <h6><strong>Assembly</strong>: Langly.Arrays.dll</h6>
   <h5 id="Langly_DataStructures_Arrays_BoundedArray_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class BoundedArray&lt;TElement&gt; : FlexibleArray&lt;TElement, BoundedArray&lt;TElement&gt;&gt;, IEquals&lt;BoundedArray&lt;TElement&gt;&gt;, IEquatable&lt;BoundedArray&lt;TElement&gt;&gt;, IEquals&lt;IEquals&lt;BoundedArray&lt;TElement&gt;&gt;&gt;, IEquatable&lt;IEquals&lt;BoundedArray&lt;TElement&gt;&gt;&gt;, IAdd&lt;TElement, BoundedArray&lt;TElement&gt;&gt;, ICapacity, IClear&lt;BoundedArray&lt;TElement&gt;&gt;, IConcat&lt;TElement, BoundedArray&lt;TElement&gt;&gt;, IPostpend&lt;TElement, BoundedArray&lt;TElement&gt;&gt;, IPrepend&lt;TElement, BoundedArray&lt;TElement&gt;&gt;, IIndex&lt;TElement&gt;, IIndex&lt;nint, TElement&gt;, IIndexReadOnly&lt;TElement&gt;, IIndexReadOnly&lt;nint, TElement&gt;, IInsert&lt;TElement, BoundedArray&lt;TElement&gt;&gt;, IInsert&lt;nint, TElement, BoundedArray&lt;TElement&gt;&gt;, IRemove&lt;TElement, BoundedArray&lt;TElement&gt;&gt;, IReplace&lt;TElement, BoundedArray&lt;TElement&gt;&gt;, IReplace&lt;TElement, TElement, BoundedArray&lt;TElement&gt;&gt;, IShift&lt;BoundedArray&lt;TElement&gt;&gt;, ISlice&lt;Array&lt;TElement&gt;&gt;, ISequenceBidi&lt;TElement, FlexibleArray&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.Enumerator&gt;, ISequence&lt;TElement, FlexibleArray&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.Enumerator&gt;, IContains&lt;TElement&gt;, ICount, IEnumerable&lt;TElement&gt;, IEnumerable</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class BoundedArray&lt;TElement&gt; : FlexibleArray&lt;TElement, BoundedArray&lt;TElement&gt;&gt;, IEquals&lt;BoundedArray&lt;TElement&gt;&gt;, IEquatable&lt;BoundedArray&lt;TElement&gt;&gt;, IEquals&lt;IEquals&lt;BoundedArray&lt;TElement&gt;&gt;&gt;, IEquatable&lt;IEquals&lt;BoundedArray&lt;TElement&gt;&gt;&gt;, IAdd&lt;TElement, BoundedArray&lt;TElement&gt;&gt;, ICapacity, IClear&lt;BoundedArray&lt;TElement&gt;&gt;, IConcat&lt;TElement, BoundedArray&lt;TElement&gt;&gt;, IPostpend&lt;TElement, BoundedArray&lt;TElement&gt;&gt;, IPrepend&lt;TElement, BoundedArray&lt;TElement&gt;&gt;, IIndex&lt;TElement&gt;, IIndex&lt;nint, TElement&gt;, IIndexReadOnly&lt;TElement&gt;, IIndexReadOnly&lt;nint, TElement&gt;, IInsert&lt;TElement, BoundedArray&lt;TElement&gt;&gt;, IInsert&lt;nint, TElement, BoundedArray&lt;TElement&gt;&gt;, IRemove&lt;TElement, BoundedArray&lt;TElement&gt;&gt;, IReplace&lt;TElement, BoundedArray&lt;TElement&gt;&gt;, IReplace&lt;TElement, TElement, BoundedArray&lt;TElement&gt;&gt;, IShift&lt;BoundedArray&lt;TElement&gt;&gt;, ISlice&lt;Array&lt;TElement&gt;&gt;, ISequence&lt;TElement, FlexibleArray&lt;TElement, BoundedArray&lt;TElement&gt;&gt;.Enumerator&gt;, IContains&lt;TElement&gt;, ICount, IEnumerable&lt;TElement&gt;, IEnumerable</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -673,9 +669,6 @@
   </div>
   <div>
       <a class="xref" href="Langly.ISlice-1.html">ISlice&lt;TResult&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="Langly.ISequenceBidi-2.html">ISequenceBidi&lt;TElement, TEnumerator&gt;</a>
   </div>
   <div>
       <a class="xref" href="Langly.ISequence-2.html">ISequence&lt;TElement, TEnumerator&gt;</a>

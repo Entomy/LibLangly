@@ -97,7 +97,6 @@
     <div><a class="xref" href="Langly.ICapacity.html">ICapacity</a></div>
     <div><a class="xref" href="Langly.IShift-1.html">IShift</a>&lt;<a class="xref" href="Langly.DataStructures.Array-1.html">Array</a>&lt;TElement&gt;&gt;</div>
     <div><a class="xref" href="Langly.ISlice-1.html">ISlice</a>&lt;<a class="xref" href="Langly.DataStructures.Array-1.html">Array</a>&lt;TElement&gt;&gt;</div>
-    <div><a class="xref" href="Langly.ISequenceBidi-2.html">ISequenceBidi</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.Array-1.Enumerator.html">Array.Enumerator</a>&lt;&gt;&gt;</div>
     <div><a class="xref" href="Langly.ISequence-2.html">ISequence</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.Array-1.Enumerator.html">Array.Enumerator</a>&lt;&gt;&gt;</div>
     <div><a class="xref" href="Langly.IContains-1.html">IContains</a>&lt;TElement&gt;</div>
     <div><a class="xref" href="Langly.ICount.html">ICount</a></div>
@@ -120,7 +119,7 @@
   <h6><strong>Assembly</strong>: Langly.DataStructures.dll</h6>
   <h5 id="Langly_DataStructures_Array_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public struct Array&lt;TElement&gt; : IAdd&lt;TElement, Array&lt;TElement&gt;&gt;, IConcat&lt;TElement, Array&lt;TElement&gt;&gt;, IPostpend&lt;TElement, Array&lt;TElement&gt;&gt;, IPrepend&lt;TElement, Array&lt;TElement&gt;&gt;, IEquals&lt;Array&lt;TElement&gt;&gt;, IEquatable&lt;Array&lt;TElement&gt;&gt;, IEquals&lt;IEquals&lt;Array&lt;TElement&gt;&gt;&gt;, IEquatable&lt;IEquals&lt;Array&lt;TElement&gt;&gt;&gt;, IIndexRefReadOnly&lt;TElement&gt;, IIndexRefReadOnly&lt;nint, TElement&gt;, IInsert&lt;TElement, Array&lt;TElement&gt;&gt;, IInsert&lt;nint, TElement, Array&lt;TElement&gt;&gt;, IRemove&lt;TElement, Array&lt;TElement&gt;&gt;, IReplace&lt;TElement, Array&lt;TElement&gt;&gt;, IReplace&lt;TElement, TElement, Array&lt;TElement&gt;&gt;, IResize&lt;Array&lt;TElement&gt;&gt;, ICapacity, IShift&lt;Array&lt;TElement&gt;&gt;, ISlice&lt;Array&lt;TElement&gt;&gt;, ISequenceBidi&lt;TElement, Array&lt;TElement&gt;.Enumerator&gt;, ISequence&lt;TElement, Array&lt;TElement&gt;.Enumerator&gt;, IContains&lt;TElement&gt;, ICount, IEnumerable&lt;TElement&gt;, IEnumerable</code></pre>
+    <pre><code class="lang-csharp hljs">public struct Array&lt;TElement&gt; : IAdd&lt;TElement, Array&lt;TElement&gt;&gt;, IConcat&lt;TElement, Array&lt;TElement&gt;&gt;, IPostpend&lt;TElement, Array&lt;TElement&gt;&gt;, IPrepend&lt;TElement, Array&lt;TElement&gt;&gt;, IEquals&lt;Array&lt;TElement&gt;&gt;, IEquatable&lt;Array&lt;TElement&gt;&gt;, IEquals&lt;IEquals&lt;Array&lt;TElement&gt;&gt;&gt;, IEquatable&lt;IEquals&lt;Array&lt;TElement&gt;&gt;&gt;, IIndexRefReadOnly&lt;TElement&gt;, IIndexRefReadOnly&lt;nint, TElement&gt;, IInsert&lt;TElement, Array&lt;TElement&gt;&gt;, IInsert&lt;nint, TElement, Array&lt;TElement&gt;&gt;, IRemove&lt;TElement, Array&lt;TElement&gt;&gt;, IReplace&lt;TElement, Array&lt;TElement&gt;&gt;, IReplace&lt;TElement, TElement, Array&lt;TElement&gt;&gt;, IResize&lt;Array&lt;TElement&gt;&gt;, ICapacity, IShift&lt;Array&lt;TElement&gt;&gt;, ISlice&lt;Array&lt;TElement&gt;&gt;, ISequence&lt;TElement, Array&lt;TElement&gt;.Enumerator&gt;, IContains&lt;TElement&gt;, ICount, IEnumerable&lt;TElement&gt;, IEnumerable</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2313,36 +2312,6 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_Reverse.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.Reverse%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.DataStructures/DataStructures/Array`1.Enumerator.cs/#L11">View Source</a>
-  </span>
-  <a id="Langly_DataStructures_Array_1_Reverse_" data-uid="Langly.DataStructures.Array`1.Reverse*"></a>
-  <h4 id="Langly_DataStructures_Array_1_Reverse" data-uid="Langly.DataStructures.Array`1.Reverse">Reverse()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IEnumerator&lt;TElement&gt; Reverse()</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Langly.IEnumerator-1.html">IEnumerator</a>&lt;TElement&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Array_1_ShiftLeft.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Array%601.ShiftLeft%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -3259,9 +3228,6 @@
   </div>
   <div>
       <a class="xref" href="Langly.ISlice-1.html">ISlice&lt;TResult&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="Langly.ISequenceBidi-2.html">ISequenceBidi&lt;TElement, TEnumerator&gt;</a>
   </div>
   <div>
       <a class="xref" href="Langly.ISequence-2.html">ISequence&lt;TElement, TEnumerator&gt;</a>

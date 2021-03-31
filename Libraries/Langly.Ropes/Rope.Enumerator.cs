@@ -4,21 +4,17 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 
 namespace Langly {
-	public partial class Rope : ISequenceBidi<Glyph, Rope.Enumerator> {
+	public partial class Rope : ISequence<Glyph, Rope.Enumerator> {
 		/// <inheritdoc/>
 		[return: NotNull]
 		public override Enumerator GetEnumerator() => throw new NotImplementedException();
-
-		/// <inheritdoc/>
-		[return: NotNull]
-		public IEnumerator<Glyph> Reverse() => throw new NotImplementedException();
 
 		/// <summary>
 		/// Provides the enumerator for <see cref="Rope"/>.
 		/// </summary>
 		[EditorBrowsable(EditorBrowsableState.Advanced)]
 		[StructLayout(LayoutKind.Auto)]
-		public struct Enumerator : IEnumeratorBidi<Glyph> {
+		public struct Enumerator : IEnumerator<Glyph> {
 			/// <inheritdoc/>
 			public Glyph Current { get; }
 
@@ -29,13 +25,7 @@ namespace Langly {
 			public Boolean MoveNext() => throw new NotImplementedException();
 
 			/// <inheritdoc/>
-			public Boolean MovePrevious() => throw new NotImplementedException();
-
-			/// <inheritdoc/>
-			public void ResetBeginning() => throw new NotImplementedException();
-
-			/// <inheritdoc/>
-			public void ResetEnding() => throw new NotImplementedException();
+			public void Reset() => throw new NotImplementedException();
 		}
 	}
 }

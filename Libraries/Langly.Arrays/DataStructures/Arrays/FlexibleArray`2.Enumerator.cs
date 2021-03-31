@@ -1,22 +1,17 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 
 namespace Langly.DataStructures.Arrays {
-	public partial class FlexibleArray<TElement, TSelf> : ISequenceBidi<TElement, FlexibleArray<TElement, TSelf>.Enumerator> {
+	public partial class FlexibleArray<TElement, TSelf> : ISequence<TElement, FlexibleArray<TElement, TSelf>.Enumerator> {
 		/// <inheritdoc/>
 		public sealed override Enumerator GetEnumerator() => new Enumerator(Memory, Count);
-
-		/// <inheritdoc/>
-		[return: NotNull]
-		public IEnumerator<TElement> Reverse() => throw new NotImplementedException();
 
 		/// <summary>
 		/// Provides enumeration over <see cref="FlexibleArray{TElement, TSelf}"/>.
 		/// </summary>
 		[StructLayout(LayoutKind.Auto)]
-		public struct Enumerator : IEnumeratorBidi<TElement>, IEquatable<Enumerator> {
+		public struct Enumerator : IEnumerator<TElement>, IEquatable<Enumerator> {
 			private readonly Memory<TElement> Elements;
 
 			private nint i;
@@ -66,13 +61,7 @@ namespace Langly.DataStructures.Arrays {
 			public Boolean MoveNext() => ++i < Count;
 
 			/// <inheritdoc/>
-			public Boolean MovePrevious() => i-- > 0;
-
-			/// <inheritdoc/>
-			public void ResetBeginning() => i = -1;
-
-			/// <inheritdoc/>
-			public void ResetEnding() => i = Count;
+			public void Reset() => i = -1;
 		}
 	}
 }
