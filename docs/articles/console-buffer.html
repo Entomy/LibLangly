@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Console </title>
+    <title>Console Screen Buffer </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Console ">
+    <meta name="title" content="Console Screen Buffer ">
     <meta name="generator" content="docfx 2.56.7.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -67,14 +67,10 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="console">Console</h1>
+<h1 id="console-screen-buffer">Console Screen Buffer</h1>
 
-<p><a href="https://entomy.github.io/LibLangly/api/Langly.Console.html"><code>Console</code></a> is a reimagining of how the <a href="https://docs.microsoft.com/en-us/dotnet/api/system.console">.NET <code>Console</code></a> should work. Despite numerous advances in graphics technology, console apps have become quite trendy. This is a welcome trend, as not only are console apps more efficient and generally more accessible, but it's also forced us to relook at console app design through a more modern lens.</p>
-<div class="WARNING">
-<h5>Warning</h5>
-<p>This completely bypasses <a href="https://docs.microsoft.com/en-us/dotnet/api/system.console"><code>System.Console</code></a> and uses its own internals. Of particular note is using virtual terminal escape sequences across all platforms. This is inline with the <a href="https://docs.microsoft.com/en-us/windows/console/ecosystem-roadmap">Windows Console and Terminal roadmap</a> but will mean older platforms aren't supported out-of-the-box.</p>
-</div>
-<p>Generally speaking, <a href="https://entomy.github.io/LibLangly/api/Langly.Console.html"><code>Console</code></a> looks like the same <a href="https://docs.microsoft.com/en-us/dotnet/api/system.console"><code>System.Console</code></a> you're used to, and in many cases drop-in replacement is possible. Include it like so:</p>
+<p>Alternate screen buffers are extremely useful for interactive console applications. However, managing these through ANSI Escape Sequences is obnoxious.</p>
+<p><a href="https://entomy.github.io/LibLangly/api/Langly.Console.html"><code>Console</code></a> contains a property <a href="https://entomy.github.io/LibLangly/api/Langly.Console.html#Langly_Console_ScreenBuffer"><code>ScreenBuffer</code></a> that, when accessed, creates a <a href="https://entomy.github.io/LibLangly/api/Langly.ScreenBuffer.html"><code>ScreenBuffer</code></a> object. Upon access, the alternate screen buffer is activated, and upon disposal, the alternative screen buffer is also disposed. Using it is as simple as follows:</p>
 <div class="tabGroup" id="tabgroup_CeZOj-G++Q">
 <ul role="tablist">
 <li role="presentation">
@@ -89,54 +85,23 @@
 </ul>
 <section id="tabpanel_CeZOj-G++Q_cs" role="tabpanel" data-tab="cs">
 
-<pre><code class="lang-csharp">using Langly; // If System is not used
-// Or
-using Console = Langly.Console; // If System is used
+<pre><code class="lang-csharp">using var ScreenBuffer = Console.ScreenBuffer;
 </code></pre>
 </section>
 <section id="tabpanel_CeZOj-G++Q_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
 
-<pre><code class="lang-vbnet">Imports Langly 'If System is not used
-'Or
-Imports Console = Langly.Console 'If System is used
+<pre><code class="lang-vbnet">Using ScreenBuffer As ScreenBuffer = Console.ScreenBuffer
+End Using
 </code></pre>
 </section>
 <section id="tabpanel_CeZOj-G++Q_fs" role="tabpanel" data-tab="fs" aria-hidden="true" hidden="hidden">
 
-<pre><code class="lang-fsharp">open Langly
+<pre><code class="lang-fsharp">use screenBuffer = Console.ScreenBuffer
 </code></pre>
 </section>
 </div>
 
-<p>For additional features you'll need to include the <code>Langly</code> namespace, not just the <code>Console</code> alias.</p>
-<div class="tabGroup" id="tabgroup_CeZOj-G++Q-1">
-<ul role="tablist">
-<li role="presentation">
-<a href="#tabpanel_CeZOj-G++Q-1_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-1_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
-</li>
-<li role="presentation">
-<a href="#tabpanel_CeZOj-G++Q-1_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-1_vb" data-tab="vb" tabindex="-1">VB</a>
-</li>
-<li role="presentation">
-<a href="#tabpanel_CeZOj-G++Q-1_fs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-1_fs" data-tab="fs" tabindex="-1">F#</a>
-</li>
-</ul>
-<section id="tabpanel_CeZOj-G++Q-1_cs" role="tabpanel" data-tab="cs">
-
-<pre><code class="lang-csharp">Console.WriteLine(&quot;Hello from Langly.Console!&quot;);
-</code></pre>
-</section>
-<section id="tabpanel_CeZOj-G++Q-1_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
-
-<pre><code class="lang-vbnet">Console.WriteLine(&quot;Hello from Langly.Console!&quot;)
-</code></pre>
-</section>
-<section id="tabpanel_CeZOj-G++Q-1_fs" role="tabpanel" data-tab="fs" aria-hidden="true" hidden="hidden">
-
-<pre><code class="lang-fsharp">Console.WriteLine(&quot;Hello from Langly.Console!&quot;)
-</code></pre>
-</section>
-</div>
+<p>As a matter of convenience <a href="https://entomy.github.io/LibLangly/api/Langly.ScreenBuffer.html"><code>ScreenBuffer</code></a> rexposes the same operations that <a href="https://entomy.github.io/LibLangly/api/Langly.Console.html"><code>Console</code></a> has. Furthermore, it also serves as a convenient way to extend what's normally thought of as a non-extendable type. Because the property returns an instance (even if it's a ref struct), it's possible to write extension methods for things like interactive console applications or even text-mode user interfaces.</p>
 </article>
           </div>
           
@@ -145,7 +110,7 @@ Imports Console = Langly.Console 'If System is used
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/master/Documentation/articles/console.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Documentation/articles/console-buffer.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

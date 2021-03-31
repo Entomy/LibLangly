@@ -26,7 +26,7 @@ Imports Console = Langly.Console 'If System is used
 # [F#](#tab/fs)
 
 ~~~~fsharp
-// Not implemented yet
+open Langly
 ~~~~
 
 ***
@@ -48,7 +48,7 @@ Console.WriteLine("Hello from Langly.Console!")
 # [F#](#tab/fs)
 
 ~~~~fsharp
-// Not implemented yet
+Console.WriteLine("Hello from Langly.Console!")
 ~~~~
 
 ***
