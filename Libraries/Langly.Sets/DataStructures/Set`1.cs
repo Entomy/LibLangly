@@ -6,7 +6,7 @@ namespace Langly.DataStructures {
 	/// <summary>
 	/// Represents a set of <typeparamref name="TElement"/>.
 	/// </summary>
-	/// <typeparam name="TElement">The type of elements  in the set.</typeparam>
+	/// <typeparam name="TElement">The type of elements in the set.</typeparam>
 	/// <remarks>
 	/// <para>A set is a collection in which any element can only exist once. All other collections are technically multi-sets, if you need such. Furthermore, sets don't care about data being ordered.</para>
 	/// <para>Unlike <see cref="System.Collections.Generic.ISet{T}"/> this adheres to Set Theory and Set Algebra, so its behavior should not be surprising, and existing techniques and solutions can easily be translated.</para>

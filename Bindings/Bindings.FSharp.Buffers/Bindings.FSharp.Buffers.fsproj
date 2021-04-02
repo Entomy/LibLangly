@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+		<Description>F# bindings for Langly.Buffers.</Description>
+		<PackageTags>langly, buffers, f#, fsharp</PackageTags>
+		<AssemblyName>Langly.Buffers.FSharp</AssemblyName>
+	</PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Langly.DataStructures.Buffers.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libraries\Langly.Buffers\Langly.Buffers.csproj" />
+    <ProjectReference Include="..\Bindings.FSharp.DataStructures\Bindings.FSharp.DataStructures.fsproj" />
+  </ItemGroup>
+
+</Project>

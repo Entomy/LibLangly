@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+		<Description>F# bindings for Langly.Stacks.</Description>
+		<PackageTags>langly, stacks, f#, fsharp</PackageTags>
+		<AssemblyName>Langly.Stacks.FSharp</AssemblyName>
+	</PropertyGroup>
+
+	<ItemGroup>
+    <Compile Include="Library.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libraries\Langly.Stacks\Langly.Stacks.csproj" />
+  </ItemGroup>
+
+</Project>

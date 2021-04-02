@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+		<Description>F# bindings for Langly.Encodings.</Description>
+		<PackageTags>langly, encodings, f#, fsharp</PackageTags>
+		<AssemblyName>Langly.Encodings.FSharp</AssemblyName>
+	</PropertyGroup>
+
+	<ItemGroup>
+    <Compile Include="Langly.fs" />
+  </ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\Libraries\Langly.Encodings\Langly.Encodings.csproj" />
+	</ItemGroup>
+
+</Project>

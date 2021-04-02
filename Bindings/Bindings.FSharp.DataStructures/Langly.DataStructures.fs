@@ -3,6 +3,11 @@
 open Langly
 
 /// <summary>
+/// Represents an array of contiguous elements.
+/// </summary>
+type array< ^element> = Array< ^element>
+
+/// <summary>
 /// Represents any possible data structure.
 /// </summary>
 type datastructure< ^element, ^self, ^enumerator when ^self :> DataStructure< ^element, ^self, ^enumerator> and ^enumerator :> IEnumerator< ^element>> = DataStructure< ^element, ^self, ^enumerator>
