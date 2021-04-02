@@ -37,6 +37,12 @@ namespace Langly.DataStructures.Lists {
 		/// <summary>
 		/// Initializes a new <see cref="Chain{TElement}"/>.
 		/// </summary>
+		/// <param name="elements">The initial elements of the <see cref="Chain{TElement}"/>.</param>
+		public Chain([DisallowNull] params TElement[] elements) : this(elements, DataStructures.Filter.None) { }
+
+		/// <summary>
+		/// Initializes a new <see cref="Chain{TElement}"/>.
+		/// </summary>
 		/// <param name="filter">Flags designating which filters to set up.</param>
 		public Chain(Filter filter) : base(filter) {
 			Head = null;
@@ -46,11 +52,13 @@ namespace Langly.DataStructures.Lists {
 		/// <summary>
 		/// Initializes a new <see cref="Chain{TElement}"/>.
 		/// </summary>
-		/// <param name="filter">The <see cref="Filter{TIndex, TElement}"/> to reuse.</param>
-		/// <remarks>
-		/// This is intended for cases in which an existing collection is converted into a chain, and the filter should be copied over. Because of how <see cref="Filter{TIndex, TElement}"/> is designed, you won't have an instance freely floating around. <see cref="DataStructure{TElement, TSelf, TEnumerator}.Filter"/> is meant to be passed in.
-		/// </remarks>
-		public Chain(Filter<nint, TElement> filter) : base(filter) { }
+		/// <param name="elements">The initial elements of the <see cref="Chain{TElement}"/>.</param>
+		/// <param name="filter">Flags designating which filters to set up.</param>
+		public Chain([DisallowNull] TElement[] elements, Filter filter) : base(filter) {
+			Head = new MemoryNode(elements, previous: null, next: null);
+			Tail = Head;
+			Count += elements.Length;
+		}
 
 		/// <inheritdoc/>
 		[MaybeNull, AllowNull]

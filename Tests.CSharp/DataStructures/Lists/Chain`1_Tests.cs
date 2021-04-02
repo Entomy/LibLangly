@@ -1,22 +1,19 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using Xunit;
 
 namespace Langly.DataStructures.Lists {
-	public class Chain1_Tests {
+	public class Chain1_Tests : IAddContract {
 		[Fact]
 		public void Constructor() {
 			Chain<Int32> chain = new Chain<Int32>();
 		}
 
 		[Theory]
-		[InlineData(new Int32[] { })]
-		[InlineData(new Int32[] { 1, 2, 3, 4, 5 })]
-		public void Add_Element(Int32[] expected) {
-			Chain<Int32> chain = new Chain<Int32>();
-			foreach (Int32 item in expected) {
-				chain = chain.Add(item);
-			}
-			Assert.Equal(expected, chain);
+		[MemberData(nameof(IAddContract.Add_Element_Data), MemberType = typeof(IAddContract))]
+		public void Add_Element<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[] values) {
+			Chain<TElement> chain = initial is not null ? new(initial) : null;
+			IAddContract.Add_Element(expected, chain, values);
 		}
 
 		[Theory]
