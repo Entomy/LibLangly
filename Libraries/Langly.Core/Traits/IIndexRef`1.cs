@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using Langly.Traits;
 
-namespace Langly {
+namespace Langly.Traits {
 	/// <summary>
 	/// Indicates the type is indexable by reference, read and write.
 	/// </summary>
@@ -23,7 +24,9 @@ namespace Langly {
 			}
 		}
 	}
+}
 
+namespace Langly {
 	public static partial class TraitExtensions {
 		/// <summary>
 		/// Applies the <paramref name="func"/> to each element of the <paramref name="collection"/>.

@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
+using Langly.Traits;
 
 namespace Langly.DataStructures.Lists {
 	public partial class Chain<TElement> : ISequence<TElement, Chain<TElement>.Enumerator> {

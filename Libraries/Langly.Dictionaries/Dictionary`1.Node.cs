@@ -2,6 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using Langly.DataStructures.Filters;
 using Langly.DataStructures.Trees.Multiway;
+using Langly.Traits;
 
 namespace Langly {
 	public sealed partial class Dictionary<TElement> {

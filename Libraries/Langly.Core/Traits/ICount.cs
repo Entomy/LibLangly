@@ -1,4 +1,4 @@
-﻿namespace Langly {
+﻿namespace Langly.Traits {
 	/// <summary>
 	/// Indicates the type is countable.
 	/// </summary>

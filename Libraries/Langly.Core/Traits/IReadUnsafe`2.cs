@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Langly {
+namespace Langly.Traits {
 	/// <summary>
 	/// Indicates the type can be read from, with additional unsafe operations.
 	/// </summary>

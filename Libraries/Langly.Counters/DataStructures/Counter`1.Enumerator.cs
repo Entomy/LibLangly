@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
+using Langly.Traits;
 
 namespace Langly.DataStructures {
 	public partial class Counter<TElement> : ISequence<TElement, Counter<TElement>.Enumerator> {

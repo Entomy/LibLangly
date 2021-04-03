@@ -3,6 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 #if WINDOWS
 using static PInvoke.Kernel32;
 #endif
+using Langly.Traits;
 
 namespace Langly.Internals {
 	/// <summary>

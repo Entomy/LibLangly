@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
+using Langly.Traits;
 
 namespace Langly {
 	public sealed partial class Dictionary<TElement> : ISequence<TElement, Dictionary<TElement>.Enumerator> {

@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using Langly.Traits;
 
-namespace Langly {
+namespace Langly.Traits {
 	/// <summary>
 	/// Indicates the collection can have elements inserted into it, with additional textual operations.
 	/// </summary>
@@ -16,7 +17,9 @@ namespace Langly {
 		[return: MaybeNull]
 		TResult Insert(nint index, [AllowNull] String elements) => elements is not null ? Insert(index, elements.AsMemory()) : (TResult)this;
 	}
+}
 
+namespace Langly {
 	public static partial class TraitExtensions {
 		/// <summary>
 		/// Insert an element into the collection at the specified index.

@@ -2,6 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 using Langly.DataStructures.Filters;
+using Langly.Traits;
 
 namespace Langly.DataStructures.Buffers {
 	public partial class BipartiteBuffer<TElement> {

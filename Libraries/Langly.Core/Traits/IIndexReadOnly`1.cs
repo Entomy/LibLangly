@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using Langly.Traits;
 
-namespace Langly {
+namespace Langly.Traits {
 	/// <summary>
 	/// Indicates the type is indexable, read only.
 	/// </summary>
@@ -10,7 +11,9 @@ namespace Langly {
 	/// This is just a convenience for the most common case of <see cref="IIndexReadOnly{TIndex, TElement}"/>: indexed by integer.
 	/// </remarks>
 	public interface IIndexReadOnly<out TElement> : IIndexReadOnly<nint, TElement> { }
+}
 
+namespace Langly {
 	public static partial class TraitExtensions {
 		/// <summary>
 		/// Searches for the specified <paramref name="element"/> and returns the index of its first occurrence.

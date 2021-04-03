@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using Langly.Traits;
 
-namespace Langly {
+namespace Langly.Traits {
 	/// <summary>
 	/// Indicates the type is resizable.
 	/// </summary>
@@ -43,7 +44,9 @@ namespace Langly {
 		[return: MaybeNull]
 		TResult Shrink() => Resize((nint)(Capacity / φ));
 	}
+}
 
+namespace Langly {
 	public static partial class TraitExtensions {
 		/// <summary>
 		/// Grows the collection by a computed factor.

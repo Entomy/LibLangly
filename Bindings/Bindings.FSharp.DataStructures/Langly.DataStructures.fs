@@ -1,6 +1,7 @@
 ﻿namespace Langly.DataStructures
 
 open Langly
+open Langly.Traits
 
 /// <summary>
 /// Represents an array of contiguous elements.

@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Text;
 using Langly.DataStructures.Filters;
+using Langly.Traits;
 
 namespace Langly.DataStructures {
 	/// <summary>

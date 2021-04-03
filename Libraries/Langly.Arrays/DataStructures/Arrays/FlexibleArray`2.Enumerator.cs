@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
+using Langly.Traits;
 
 namespace Langly.DataStructures.Arrays {
 	public partial class FlexibleArray<TElement, TSelf> : ISequence<TElement, FlexibleArray<TElement, TSelf>.Enumerator> {

@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using Langly.Traits;
 
-namespace Langly {
+namespace Langly.Traits {
 	/// <summary>
 	/// Indicates the type can be written to, with additional textual operations.
 	/// </summary>
@@ -22,7 +23,9 @@ namespace Langly {
 		[return: MaybeNull]
 		public TResult WriteLine() => Write(Environment.NewLine);
 	}
+}
 
+namespace Langly {
 	public static partial class TraitExtensions {
 		/// <summary>
 		/// Writes the <paramref name="elements"/> to the <paramref name="stream"/>.

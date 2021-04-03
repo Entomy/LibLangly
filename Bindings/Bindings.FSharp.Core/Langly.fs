@@ -1,6 +1,7 @@
 ﻿namespace Langly
 
 open System
+open Langly.Traits
 open Bindings
 
 /// <summary>

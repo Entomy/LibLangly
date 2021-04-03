@@ -2,6 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using Langly.DataStructures;
 using Langly.DataStructures.Filters;
+using Langly.Traits;
 
 namespace Langly {
 	/// <summary>

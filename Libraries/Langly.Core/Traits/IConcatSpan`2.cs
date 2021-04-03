@@ -1,4 +1,4 @@
-﻿namespace Langly {
+﻿namespace Langly.Traits {
 	/// <summary>
 	/// Indicates the type can have other elements concatenated onto it, with additional textual operations.
 	/// </summary>

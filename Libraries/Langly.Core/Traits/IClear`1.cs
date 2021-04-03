@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using Langly.Traits;
 
-namespace Langly {
+namespace Langly.Traits {
 	/// <summary>
 	/// Indicates the type can be cleared.
 	/// </summary>
@@ -12,7 +13,9 @@ namespace Langly {
 		[return: NotNull]
 		TResult Clear();
 	}
+}
 
+namespace Langly {
 	public static partial class TraitExtensions {
 		/// <summary>
 		/// Clears the <paramref name="collection"/>.

@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using Langly.Traits;
 
-namespace Langly {
+namespace Langly.Traits {
 	/// <summary>
 	/// Indicates the type can contain elements, and test against those.
 	/// </summary>
@@ -46,7 +47,9 @@ namespace Langly {
 			return true;
 		}
 	}
+}
 
+namespace Langly {
 	public static partial class TraitExtensions {
 		/// <summary>
 		/// Determines whether this collection contains the specified <paramref name="element"/>.

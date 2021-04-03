@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Text;
 using System.Unicode;
 using Langly.DataStructures;
+using Langly.Traits;
 
 namespace Langly {
 	/// <summary>

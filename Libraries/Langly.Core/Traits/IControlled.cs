@@ -2,7 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 
-namespace Langly {
+namespace Langly.Traits {
 	/// <summary>
 	/// Implements a very resiliant <see cref="IDisposable"/> base that's easy and safe to extend.
 	/// </summary>

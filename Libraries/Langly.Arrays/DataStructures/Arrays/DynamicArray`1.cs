@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using Langly.DataStructures.Filters;
+using Langly.Traits;
 
 namespace Langly.DataStructures.Arrays {
 	/// <summary>

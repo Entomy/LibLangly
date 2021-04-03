@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using Langly.DataStructures;
+using Langly.Traits;
 
 namespace Langly {
 	/// <summary>

@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using Langly.Traits;
 
-namespace Langly {
+namespace Langly.Traits {
 	/// <summary>
 	/// Indicates the type can have other elements postpended onto it.
 	/// </summary>
@@ -68,7 +69,9 @@ namespace Langly {
 			return result;
 		}
 	}
+}
 
+namespace Langly {
 	public static partial class TraitExtensions {
 		/// <summary>
 		/// Postpends the element onto this object.

@@ -1,0 +1,547 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interface ISequence&lt;TElement, TEnumerator&gt;
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interface ISequence&lt;TElement, TEnumerator&gt;
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Langly.Traits.ISequence`2">
+  
+  
+  <h1 id="Langly_Traits_ISequence_2" data-uid="Langly.Traits.ISequence`2" class="text-break">Interface ISequence&lt;TElement, TEnumerator&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>Indicates the type is a sequence of <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code>.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Langly.Traits.IContains-1.html#Langly_Traits_IContains_1_Contains__0_">IContains&lt;TElement&gt;.Contains(TElement)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.Traits.IContains-1.html#Langly_Traits_IContains_1_ContainsAny__0___">IContains&lt;TElement&gt;.ContainsAny(TElement[])</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.Traits.IContains-1.html#Langly_Traits_IContains_1_ContainsAll__0___">IContains&lt;TElement&gt;.ContainsAll(TElement[])</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.Traits.ICount.html#Langly_Traits_ICount_Count">ICount.Count</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Langly.Traits.html">Langly.Traits</a></h6>
+  <h6><strong>Assembly</strong>: Langly.Core.dll</h6>
+  <h5 id="Langly_Traits_ISequence_2_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface ISequence&lt;TElement, out TEnumerator&gt; : IContains&lt;TElement&gt;, ICount, IEnumerable&lt;TElement&gt;, IEnumerable where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of elements in the sequence.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TEnumerator</span></td>
+        <td><p>The type of the enumerator for this sequence.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_Traits_ISequence_2_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>This interface devirtualizes the enumerator, and simplifies numerous parts of the interface through well defined defaults.</p>
+</div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Traits_ISequence_2_Fold_System_Func__0__0__0___0_.md&amp;value=---%0Auid%3A%20Langly.Traits.ISequence%602.Fold(System.Func%7B%600%2C%600%2C%600%7D%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/ISequence`2.cs/#L41">View Source</a>
+  </span>
+  <a id="Langly_Traits_ISequence_2_Fold_" data-uid="Langly.Traits.ISequence`2.Fold*"></a>
+  <h4 id="Langly_Traits_ISequence_2_Fold_System_Func__0__0__0___0_" data-uid="Langly.Traits.ISequence`2.Fold(System.Func{`0,`0,`0},`0)">Fold(Func&lt;TElement, TElement, TElement&gt;, TElement)</h4>
+  <div class="markdown level1 summary"><p>Folds the collection into a single element as described by <code data-dev-comment-type="paramref" class="paramref">func</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">virtual TElement Fold(Func&lt;TElement, TElement, TElement&gt; func, TElement identity)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.func-3">Func</a>&lt;TElement, TElement, TElement&gt;</td>
+        <td><span class="parametername">func</span></td>
+        <td><p>The function describing the folding operation. This is a magma.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">identity</span></td>
+        <td><p>The identity value for <code data-dev-comment-type="paramref" class="paramref">func</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><p>A single element after folding the entire collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_Traits_ISequence_2_Fold_System_Func__0__0__0___0__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p><code data-dev-comment-type="paramref" class="paramref">func</code> is a magma, so associativity like left-fold and right-fold are completely irrelevant.</p>
+<p><code data-dev-comment-type="paramref" class="paramref">identity</code> is required as a start point for the fold. It needs to be the identity of the <code data-dev-comment-type="paramref" class="paramref">func</code> to function properly. For example, the identity of addition is <code>0</code>, and the identity of multiplication is <code>1</code>. Without an appropriate identity, the results will be wrong.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Traits_ISequence_2_GetEnumerator.md&amp;value=---%0Auid%3A%20Langly.Traits.ISequence%602.GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/ISequence`2.cs/#L57">View Source</a>
+  </span>
+  <a id="Langly_Traits_ISequence_2_GetEnumerator_" data-uid="Langly.Traits.ISequence`2.GetEnumerator*"></a>
+  <h4 id="Langly_Traits_ISequence_2_GetEnumerator" data-uid="Langly.Traits.ISequence`2.GetEnumerator">GetEnumerator()</h4>
+  <div class="markdown level1 summary"><p>Returns an enumerator that iterates through the sequence.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TEnumerator GetEnumerator()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TEnumerator</span></td>
+        <td><p>An enumerator that can be used to iterate through the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Traits_ISequence_2_Occurrences__0_.md&amp;value=---%0Auid%3A%20Langly.Traits.ISequence%602.Occurrences(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/ISequence`2.cs/#L73">View Source</a>
+  </span>
+  <a id="Langly_Traits_ISequence_2_Occurrences_" data-uid="Langly.Traits.ISequence`2.Occurrences*"></a>
+  <h4 id="Langly_Traits_ISequence_2_Occurrences__0_" data-uid="Langly.Traits.ISequence`2.Occurrences(`0)">Occurrences(TElement)</h4>
+  <div class="markdown level1 summary"><p>Count all occurrences of <code data-dev-comment-type="paramref" class="paramref">element</code> in the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">virtual nint Occurrences(TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element to count.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><p>The amount of occurrences found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Traits_ISequence_2_Occurrences_Langly_Traits_IEquals__0__.md&amp;value=---%0Auid%3A%20Langly.Traits.ISequence%602.Occurrences(Langly.Traits.IEquals%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/ISequence`2.cs/#L91">View Source</a>
+  </span>
+  <a id="Langly_Traits_ISequence_2_Occurrences_" data-uid="Langly.Traits.ISequence`2.Occurrences*"></a>
+  <h4 id="Langly_Traits_ISequence_2_Occurrences_Langly_Traits_IEquals__0__" data-uid="Langly.Traits.ISequence`2.Occurrences(Langly.Traits.IEquals{`0})">Occurrences(IEquals&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Count all occurrences of <code data-dev-comment-type="paramref" class="paramref">element</code> in the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">virtual nint Occurrences(IEquals&lt;TElement&gt; element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.Traits.IEquals-1.html">IEquals</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element to count.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><p>The amount of occurrences found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Traits_ISequence_2_Occurrences_System_Predicate__0__.md&amp;value=---%0Auid%3A%20Langly.Traits.ISequence%602.Occurrences(System.Predicate%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/ISequence`2.cs/#L108">View Source</a>
+  </span>
+  <a id="Langly_Traits_ISequence_2_Occurrences_" data-uid="Langly.Traits.ISequence`2.Occurrences*"></a>
+  <h4 id="Langly_Traits_ISequence_2_Occurrences_System_Predicate__0__" data-uid="Langly.Traits.ISequence`2.Occurrences(System.Predicate{`0})">Occurrences(Predicate&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Count all occurrences of elements that match the provided predicate in the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">virtual nint Occurrences(Predicate&lt;TElement&gt; predicate)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.predicate-1">Predicate</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">predicate</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.predicate-1">Predicate&lt;T&gt;</a> describing a match of the elements to count.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><p>The amount of occurrences found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Traits_ISequence_2_Langly_Traits_IContains_TElement__Contains__0_.md&amp;value=---%0Auid%3A%20Langly.Traits.ISequence%602.Langly%23Traits%23IContains%7BTElement%7D%23Contains(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/ISequence`2.cs/#L20">View Source</a>
+  </span>
+  <a id="Langly_Traits_ISequence_2_Langly_Traits_IContains_TElement__Contains_" data-uid="Langly.Traits.ISequence`2.Langly#Traits#IContains{TElement}#Contains*"></a>
+  <h4 id="Langly_Traits_ISequence_2_Langly_Traits_IContains_TElement__Contains__0_" data-uid="Langly.Traits.ISequence`2.Langly#Traits#IContains{TElement}#Contains(`0)">IContains&lt;TElement&gt;.Contains(TElement)</h4>
+  <div class="markdown level1 summary"><p>Determines whether this collection contains the specified <code data-dev-comment-type="paramref" class="paramref">element</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IContains&lt;TElement&gt;.Contains(TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element to attempt to find.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">element</code> is contained in this collection; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Traits_ISequence_2_System_Collections_Generic_IEnumerable_TElement__GetEnumerator.md&amp;value=---%0Auid%3A%20Langly.Traits.ISequence%602.System%23Collections%23Generic%23IEnumerable%7BTElement%7D%23GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/ISequence`2.cs/#L61">View Source</a>
+  </span>
+  <a id="Langly_Traits_ISequence_2_System_Collections_Generic_IEnumerable_TElement__GetEnumerator_" data-uid="Langly.Traits.ISequence`2.System#Collections#Generic#IEnumerable{TElement}#GetEnumerator*"></a>
+  <h4 id="Langly_Traits_ISequence_2_System_Collections_Generic_IEnumerable_TElement__GetEnumerator" data-uid="Langly.Traits.ISequence`2.System#Collections#Generic#IEnumerable{TElement}#GetEnumerator">IEnumerable&lt;TElement&gt;.GetEnumerator()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerator&lt;TElement&gt; IEnumerable&lt;TElement&gt;.GetEnumerator()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1">IEnumerator</a>&lt;TElement&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Traits_ISequence_2_System_Collections_IEnumerable_GetEnumerator.md&amp;value=---%0Auid%3A%20Langly.Traits.ISequence%602.System%23Collections%23IEnumerable%23GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/ISequence`2.cs/#L65">View Source</a>
+  </span>
+  <a id="Langly_Traits_ISequence_2_System_Collections_IEnumerable_GetEnumerator_" data-uid="Langly.Traits.ISequence`2.System#Collections#IEnumerable#GetEnumerator*"></a>
+  <h4 id="Langly_Traits_ISequence_2_System_Collections_IEnumerable_GetEnumerator" data-uid="Langly.Traits.ISequence`2.System#Collections#IEnumerable#GetEnumerator">IEnumerable.GetEnumerator()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerator IEnumerable.GetEnumerator()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Contains__1_Langly_Traits_IContains___0____0_">TraitExtensions.Contains&lt;TElement&gt;(IContains&lt;TElement&gt;, TElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_ContainsAny__1_Langly_Traits_IContains___0____0___">TraitExtensions.ContainsAny&lt;TElement&gt;(IContains&lt;TElement&gt;, TElement[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_ContainsAll__1_Langly_Traits_IContains___0____0___">TraitExtensions.ContainsAll&lt;TElement&gt;(IContains&lt;TElement&gt;, TElement[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Fold__2_Langly_Traits_ISequence___0___1__System_Func___0___0___0____0_">TraitExtensions.Fold&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Func&lt;TElement, TElement, TElement&gt;, TElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Occurrences__2_Langly_Traits_ISequence___0___1____0_">TraitExtensions.Occurrences&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, TElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Occurrences__2_Langly_Traits_ISequence___0___1__Langly_Traits_IEquals___0__">TraitExtensions.Occurrences&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, IEquals&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Occurrences__2_Langly_Traits_ISequence___0___1__System_Predicate___0__">TraitExtensions.Occurrences&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Predicate&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.NumericExtensions.html#Langly_NumericExtensions_Mode__2_Langly_Traits_ISequence___0___1__">NumericExtensions.Mode&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Traits_ISequence_2.md&amp;value=---%0Auid%3A%20Langly.Traits.ISequence%602%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/ISequence`2.cs/#L14" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

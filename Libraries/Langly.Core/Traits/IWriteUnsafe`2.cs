@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using Langly.Traits;
 
-namespace Langly {
+namespace Langly.Traits {
 	/// <summary>
 	/// Indicates the type can be written to, with additional unsafe operations.
 	/// </summary>
@@ -18,7 +19,9 @@ namespace Langly {
 		[return: MaybeNull]
 		unsafe TResult Write([AllowNull] TElement* elements, Int32 length) => Add(elements, length);
 	}
+}
 
+namespace Langly {
 	public static partial class TraitExtensions {
 		/// <summary>
 		/// Writes the <paramref name="elements"/> to the <paramref name="stream"/>.

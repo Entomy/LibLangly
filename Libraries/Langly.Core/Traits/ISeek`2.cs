@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using Langly.Traits;
 
-namespace Langly {
+namespace Langly.Traits {
 	/// <summary>
 	/// Indicates the type can be seeked.
 	/// </summary>
@@ -28,7 +29,9 @@ namespace Langly {
 		[return: NotNull]
 		TResult Seek(nint offset);
 	}
+}
 
+namespace Langly {
 	public static partial class TraitExtensions {
 		/// <summary>
 		/// Seeks to the <paramref name="offset"/>.

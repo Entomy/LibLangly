@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using Langly.Traits;
 
-namespace Langly {
+namespace Langly.Traits {
 	/// <summary>
 	/// Indicates the type can have its first element peeked at.
 	/// </summary>
@@ -14,7 +15,9 @@ namespace Langly {
 		[return: MaybeNull]
 		TResult Peek([MaybeNull] out TElement element);
 	}
+}
 
+namespace Langly {
 	public static partial class TraitExtensions {
 		/// <summary>
 		/// Peeks at the first element.

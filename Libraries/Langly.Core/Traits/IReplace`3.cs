@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using Langly.Traits;
 
-namespace Langly {
+namespace Langly.Traits {
 	/// <summary>
 	/// Indicates the type can have its elements replaced.
 	/// </summary>
@@ -17,7 +18,9 @@ namespace Langly {
 		[return: MaybeNull]
 		TResult Replace([AllowNull] TSearch search, [AllowNull] TReplace replace);
 	}
+}
 
+namespace Langly {
 	public static partial class TraitExtensions {
 		/// <summary>
 		/// Replaces all instances of <paramref name="search"/> with <paramref name="replace"/>.

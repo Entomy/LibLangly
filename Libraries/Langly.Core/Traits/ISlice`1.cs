@@ -1,15 +1,13 @@
-﻿#if !NETSTANDARD2_1
-using System;
-#endif
+﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using Langly.Traits;
 
-namespace Langly {
+namespace Langly.Traits {
 	/// <summary>
 	/// Indicates the collection is sliceable.
 	/// </summary>
 	/// <typeparam name="TResult">The resulting type; often itself.</typeparam>
 	public interface ISlice<out TResult> : ICount where TResult : ISlice<TResult> {
-#if !NETSTANDARD2_1
 		/// <summary>
 		/// Gets a slice out of the collection within the specified range.
 		/// </summary>
@@ -22,7 +20,6 @@ namespace Langly {
 				return Slice(start, length);
 			}
 		}
-#endif
 
 		/// <summary>
 		/// Forms a slice out of the collection.
@@ -48,7 +45,9 @@ namespace Langly {
 		[return: MaybeNull]
 		TResult Slice(nint start, nint length);
 	}
+}
 
+namespace Langly {
 	public static partial class TraitExtensions {
 		/// <summary>
 		/// Forms a slice out of the collection.

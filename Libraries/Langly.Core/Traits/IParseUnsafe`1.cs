@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using Langly.Traits;
 
-namespace Langly {
+namespace Langly.Traits {
 	/// <summary>
 	/// Indicates the type is capable of parsing elements from a source.
 	/// </summary>
@@ -21,7 +22,9 @@ namespace Langly {
 		[return: MaybeNull]
 		unsafe TElement Parse([AllowNull] Char* source, Int32 length, ref Int32 pos) => Parse(new ReadOnlySpan<Char>(source, length), ref pos);
 	}
+}
 
+namespace Langly {
 	public static partial class TraitExtensions {
 		/// <summary>
 		/// Parses a <typeparamref name="TElement"/> from the <paramref name="source"/>.

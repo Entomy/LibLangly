@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using Xunit;
+using Langly.Traits;
 
 namespace Langly.DataStructures.Lists {
 	public class Chain1_Tests : IAddContract {

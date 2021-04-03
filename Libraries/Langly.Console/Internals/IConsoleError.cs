@@ -1,4 +1,5 @@
 ﻿using System;
+using Langly.Traits;
 
 namespace Langly.Internals {
 	/// <summary>

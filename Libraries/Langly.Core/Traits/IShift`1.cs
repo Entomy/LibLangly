@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using Langly.Traits;
 
-namespace Langly {
+namespace Langly.Traits {
 	/// <summary>
 	/// Indicates the type can be shifted in position.
 	/// </summary>
@@ -32,7 +33,9 @@ namespace Langly {
 		[return: NotNull]
 		TResult ShiftRight(nint amount);
 	}
+}
 
+namespace Langly {
 	public static partial class TraitExtensions {
 		/// <summary>
 		/// Shifts the <paramref name="collection"/> left one position.

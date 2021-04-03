@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using Langly.Traits;
 
-namespace Langly {
+namespace Langly.Traits {
 	/// <summary>
 	/// Indicates the type is a sequence of <typeparamref name="TElement"/>.
 	/// </summary>
@@ -116,7 +117,9 @@ namespace Langly {
 			return count;
 		}
 	}
+}
 
+namespace Langly {
 	public static partial class TraitExtensions {
 		/// <summary>
 		/// Folds the collection into a single element as described by the <paramref name="func"/>.

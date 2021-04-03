@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using Langly.Traits;
 
 namespace Langly.DataStructures.Lists {
 	public partial class Chain<TElement> {
