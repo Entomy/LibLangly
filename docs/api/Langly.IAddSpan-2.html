@@ -128,7 +128,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IAddSpan_2_Add_System_ReadOnlySpan__0__.md&amp;value=---%0Auid%3A%20Langly.IAddSpan%602.Add(System.ReadOnlySpan%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/IAddSpan`2.cs/#L38">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/IAddSpan`2.cs/#L38">View Source</a>
   </span>
   <a id="Langly_IAddSpan_2_Add_" data-uid="Langly.IAddSpan`2.Add*"></a>
   <h4 id="Langly_IAddSpan_2_Add_System_ReadOnlySpan__0__" data-uid="Langly.IAddSpan`2.Add(System.ReadOnlySpan{`0})">Add(ReadOnlySpan&lt;TElement&gt;)</h4>
@@ -181,7 +181,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IAddSpan_2_Add_System_Span__0__.md&amp;value=---%0Auid%3A%20Langly.IAddSpan%602.Add(System.Span%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/IAddSpan`2.cs/#L27">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/IAddSpan`2.cs/#L27">View Source</a>
   </span>
   <a id="Langly_IAddSpan_2_Add_" data-uid="Langly.IAddSpan`2.Add*"></a>
   <h4 id="Langly_IAddSpan_2_Add_System_Span__0__" data-uid="Langly.IAddSpan`2.Add(System.Span{`0})">Add(Span&lt;TElement&gt;)</h4>
@@ -236,11 +236,12 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IAddSpan_2_Langly_IAdd_TElement_TResult__Add_System_Memory__0__.md&amp;value=---%0Auid%3A%20Langly.IAddSpan%602.Langly%23IAdd%7BTElement%2CTResult%7D%23Add(System.Memory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/IAddSpan`2.cs/#L12">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/IAddSpan`2.cs/#L12">View Source</a>
   </span>
   <a id="Langly_IAddSpan_2_Langly_IAdd_TElement_TResult__Add_" data-uid="Langly.IAddSpan`2.Langly#IAdd{TElement,TResult}#Add*"></a>
   <h4 id="Langly_IAddSpan_2_Langly_IAdd_TElement_TResult__Add_System_Memory__0__" data-uid="Langly.IAddSpan`2.Langly#IAdd{TElement,TResult}#Add(System.Memory{`0})">IAdd&lt;TElement, TResult&gt;.Add(Memory&lt;TElement&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds the elements to this object.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -259,7 +260,8 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
-        <td></td>
+        <td><p>The elements to add.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -274,20 +276,25 @@
     <tbody>
       <tr>
         <td><span class="xref">TResult</span></td>
-        <td></td>
+        <td><p>If the add occurred successfully, returns a <code data-dev-comment-type="typeparamref" class="typeparamref">TResult</code> containing the original and added elements; otherwise, <span class="xref">null</span>.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Langly_IAddSpan_2_Langly_IAdd_TElement_TResult__Add_System_Memory__0___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IAddSpan_2_Langly_IAdd_TElement_TResult__Add_System_ReadOnlyMemory__0__.md&amp;value=---%0Auid%3A%20Langly.IAddSpan%602.Langly%23IAdd%7BTElement%2CTResult%7D%23Add(System.ReadOnlyMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/IAddSpan`2.cs/#L16">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/IAddSpan`2.cs/#L16">View Source</a>
   </span>
   <a id="Langly_IAddSpan_2_Langly_IAdd_TElement_TResult__Add_" data-uid="Langly.IAddSpan`2.Langly#IAdd{TElement,TResult}#Add*"></a>
   <h4 id="Langly_IAddSpan_2_Langly_IAdd_TElement_TResult__Add_System_ReadOnlyMemory__0__" data-uid="Langly.IAddSpan`2.Langly#IAdd{TElement,TResult}#Add(System.ReadOnlyMemory{`0})">IAdd&lt;TElement, TResult&gt;.Add(ReadOnlyMemory&lt;TElement&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds the elements to this object.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -306,7 +313,8 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
-        <td></td>
+        <td><p>The elements to add.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -321,10 +329,14 @@
     <tbody>
       <tr>
         <td><span class="xref">TResult</span></td>
-        <td></td>
+        <td><p>If the add occurred successfully, returns a <code data-dev-comment-type="typeparamref" class="typeparamref">TResult</code> containing the original and added elements; otherwise, <span class="xref">null</span>.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Langly_IAddSpan_2_Langly_IAdd_TElement_TResult__Add_System_ReadOnlyMemory__0___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.</p>
+</div>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Add__2_Langly_IAddSpan___0___1__System_Span___0__">TraitExtensions.Add&lt;TElement, TResult&gt;(IAddSpan&lt;TElement, TResult&gt;, Span&lt;TElement&gt;)</a>
@@ -358,7 +370,7 @@
                     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_IAddSpan_2.md&amp;value=---%0Auid%3A%20Langly.IAddSpan%602%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/IAddSpan`2.cs/#L10" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/IAddSpan`2.cs/#L10" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
