@@ -226,6 +226,7 @@ namespace Langly.Traits {
 
 namespace Langly {
 	public static partial class TraitExtensions {
+		#region Remove(Collection, TElement)
 		/// <summary>
 		/// Removes all instances of the element from this object.
 		/// </summary>
@@ -235,8 +236,32 @@ namespace Langly {
 		/// <param name="element">The element to remove.</param>
 		/// <returns>The original elements after the specified element has been removed.</returns>
 		[return: MaybeNull]
-		public static TResult Remove<TElement, TResult>([AllowNull] IRemove<TElement, TResult> collection, [AllowNull] TElement element) where TResult : IRemove<TElement, TResult> => collection is not null ? collection.Remove(element) : (TResult)collection;
+		public static TResult Remove<TElement, TResult>([AllowNull] this IRemove<TElement, TResult> collection, [AllowNull] TElement element) where TResult : IRemove<TElement, TResult> => collection is not null ? collection.Remove(element) : (TResult)collection;
 
+		/// <summary>
+		/// Removes all instances of the element from this object.
+		/// </summary>
+		/// <typeparam name="TElement">The type of the elements.</typeparam>
+		/// <param name="collection">This collection.</param>
+		/// <param name="element">The element to remove.</param>
+		/// <returns>The original elements after the specified element has been removed.</returns>
+		[return: MaybeNull, NotNullIfNotNull("collection")]
+		public static TElement[] Remove<TElement>([AllowNull] this TElement[] collection, [AllowNull] TElement element) {
+			if (collection is null || collection.Length == 0) {
+				return collection;
+			}
+			TElement[] Array = new TElement[collection.Length];
+			Int32 i = 0;
+			foreach (TElement item in collection) {
+				if (!Equals(item, element)) {
+					Array[i] = item;
+				}
+			}
+			return Array[0..i];
+		}
+		#endregion
+
+		#region Remove(Collection, TElement[])
 		/// <summary>
 		/// Removes all instances of the elements from this object.
 		/// </summary>
@@ -246,8 +271,10 @@ namespace Langly {
 		/// <param name="elements">The elements to remove.</param>
 		/// <returns>The original elements after the specified elements have been removed.</returns>
 		[return: MaybeNull]
-		public static TResult Remove<TElement, TResult>([AllowNull] IRemove<TElement, TResult> collection,  [AllowNull] params TElement[] elements) where TResult : IRemove<TElement, TResult> => collection is not null ? collection.Remove(elements) : (TResult)collection;
+		public static TResult Remove<TElement, TResult>([AllowNull] this IRemove<TElement, TResult> collection,  [AllowNull] params TElement[] elements) where TResult : IRemove<TElement, TResult> => collection is not null ? collection.Remove(elements) : (TResult)collection;
+		#endregion
 
+		#region Remove(Collection, Memory<TElement>)
 		/// <summary>
 		/// Removes all instances of the elements from this object.
 		/// </summary>
@@ -257,8 +284,10 @@ namespace Langly {
 		/// <param name="elements">The elements to remove.</param>
 		/// <returns>The original elements after the specified elements have been removed.</returns>
 		[return: MaybeNull]
-		public static TResult Remove<TElement, TResult>([AllowNull] IRemove<TElement, TResult> collection, Memory<TElement> elements) where TResult : IRemove<TElement, TResult> => collection is not null ? collection.Remove(elements) : (TResult)collection;
+		public static TResult Remove<TElement, TResult>([AllowNull] this IRemove<TElement, TResult> collection, Memory<TElement> elements) where TResult : IRemove<TElement, TResult> => collection is not null ? collection.Remove(elements) : (TResult)collection;
+		#endregion
 
+		#region Remove(Collection, ReadOnlyMemory<TElement>)
 		/// <summary>
 		/// Removes all instances of the elements from this object.
 		/// </summary>
@@ -268,8 +297,10 @@ namespace Langly {
 		/// <param name="elements">The elements to remove.</param>
 		/// <returns>The original elements after the specified elements have been removed.</returns>
 		[return: MaybeNull]
-		public static TResult Remove<TElement, TResult>([AllowNull] IRemove<TElement, TResult> collection, ReadOnlyMemory<TElement> elements) where TResult : IRemove<TElement, TResult> => collection is not null ? collection.Remove(elements) : (TResult)collection;
+		public static TResult Remove<TElement, TResult>([AllowNull] this IRemove<TElement, TResult> collection, ReadOnlyMemory<TElement> elements) where TResult : IRemove<TElement, TResult> => collection is not null ? collection.Remove(elements) : (TResult)collection;
+		#endregion
 
+		#region Remove(Collection, Span<TElement>)
 		/// <summary>
 		/// Removes all instances of the elements from this object.
 		/// </summary>
@@ -279,8 +310,10 @@ namespace Langly {
 		/// <param name="elements">The elements to remove.</param>
 		/// <returns>The original elements after the specified elements have been removed.</returns>
 		[return: MaybeNull]
-		public static TResult Remove<TElement, TResult>([AllowNull] IRemove<TElement, TResult> collection, Span<TElement> elements) where TResult : IRemove<TElement, TResult> => collection is not null ? collection.Remove(elements) : (TResult)collection;
+		public static TResult Remove<TElement, TResult>([AllowNull] this IRemove<TElement, TResult> collection, Span<TElement> elements) where TResult : IRemove<TElement, TResult> => collection is not null ? collection.Remove(elements) : (TResult)collection;
+		#endregion
 
+		#region Remove(Collection, ReadOnlySpan<TElement>)
 		/// <summary>
 		/// Removes all instances of the elements from this object.
 		/// </summary>
@@ -290,8 +323,10 @@ namespace Langly {
 		/// <param name="elements">The elements to remove.</param>
 		/// <returns>The original elements after the specified elements have been removed.</returns>
 		[return: MaybeNull]
-		public static TResult Remove<TElement, TResult>([AllowNull] IRemove<TElement, TResult> collection, ReadOnlySpan<TElement> elements) where TResult : IRemove<TElement, TResult> => collection is not null ? collection.Remove(elements) : (TResult)collection;
+		public static TResult Remove<TElement, TResult>([AllowNull] this IRemove<TElement, TResult> collection, ReadOnlySpan<TElement> elements) where TResult : IRemove<TElement, TResult> => collection is not null ? collection.Remove(elements) : (TResult)collection;
+		#endregion
 
+		#region Remove(Collection, Sequence)
 		/// <summary>
 		/// Removes all instances of the elements from this object.
 		/// </summary>
@@ -302,8 +337,10 @@ namespace Langly {
 		/// <param name="elements">The elements to remove.</param>
 		/// <returns>The original elements after the specified elements have been removed.</returns>
 		[return: MaybeNull]
-		public static TResult Remove<TElement, TResult, TEnumerator>([AllowNull] IRemove<TElement, TResult> collection, [AllowNull] ISequence<TElement, TEnumerator> elements) where TResult : IRemove<TElement, TResult> where TEnumerator : IEnumerator<TElement> => collection is not null ? collection.Remove(elements) : (TResult)collection;
+		public static TResult Remove<TElement, TResult, TEnumerator>([AllowNull] this IRemove<TElement, TResult> collection, [AllowNull] ISequence<TElement, TEnumerator> elements) where TResult : IRemove<TElement, TResult> where TEnumerator : IEnumerator<TElement> => collection is not null ? collection.Remove(elements) : (TResult)collection;
+		#endregion
 
+		#region RemoveFirst(Collection, TElement)
 		/// <summary>
 		/// Removes the first instance of the element from this object.
 		/// </summary>
@@ -313,8 +350,38 @@ namespace Langly {
 		/// <param name="element">The element to remove.</param>
 		/// <returns>The original elements after the specified element has been removed.</returns>
 		[return: MaybeNull]
-		public static TResult RemoveFirst<TElement, TResult>([AllowNull] IRemove<TElement, TResult> collection, [AllowNull] TElement element) where TResult : IRemove<TElement, TResult> => collection is not null ? collection.RemoveFirst(element) : (TResult)collection;
+		public static TResult RemoveFirst<TElement, TResult>([AllowNull] this IRemove<TElement, TResult> collection, [AllowNull] TElement element) where TResult : IRemove<TElement, TResult> => collection is not null ? collection.RemoveFirst(element) : (TResult)collection;
 
+		/// <summary>
+		/// Removes the first instance of the element from this object.
+		/// </summary>
+		/// <typeparam name="TElement">The type of the elements.</typeparam>
+		/// <param name="collection">This collection.</param>
+		/// <param name="element">The element to remove.</param>
+		/// <returns>The original elements after the specified element has been removed.</returns>
+		[return: MaybeNull, NotNullIfNotNull("collection")]
+		public static TElement[] RemoveFirst<TElement>([AllowNull] this TElement[] collection, [AllowNull] TElement element) {
+			if (collection is null || collection.Length == 0) {
+				return collection;
+			}
+			TElement[] Array = new TElement[collection.Length];
+			Int32 i = 0;
+			// Loop through, looking for the first match
+			for (; i < collection.Length; i++) {
+				if (Equals(collection[i], element)) {
+					break;
+				}
+				Array[i] = collection[i];
+			}
+			// Finish copying elements
+			for (; i < collection.Length; i++) {
+				Array[i] = collection[i];
+			}
+			return Array[0..i];
+		}
+		#endregion
+
+		#region RemoveFirst(Collection, TElement[])
 		/// <summary>
 		/// Removes the first instance of the elements from this object.
 		/// </summary>
@@ -324,8 +391,10 @@ namespace Langly {
 		/// <param name="elements">The elements to remove.</param>
 		/// <returns>The original elements after the specified elements have been removed.</returns>
 		[return: MaybeNull]
-		public static TResult RemoveFirst<TElement, TResult>([AllowNull] IRemove<TElement, TResult> collection, [AllowNull] params TElement[] elements) where TResult : IRemove<TElement, TResult> => collection is not null ? collection.RemoveFirst(elements) : (TResult)collection;
+		public static TResult RemoveFirst<TElement, TResult>([AllowNull] this IRemove<TElement, TResult> collection, [AllowNull] params TElement[] elements) where TResult : IRemove<TElement, TResult> => collection is not null ? collection.RemoveFirst(elements) : (TResult)collection;
+		#endregion
 
+		#region RemoveFirst(Collection, Memory<TElement>)
 		/// <summary>
 		/// Removes the first instance of the elements from this object.
 		/// </summary>
@@ -335,8 +404,10 @@ namespace Langly {
 		/// <param name="elements">The elements to remove.</param>
 		/// <returns>The original elements after the specified elements have been removed.</returns>
 		[return: MaybeNull]
-		public static TResult RemoveFirst<TElement, TResult>([AllowNull] IRemove<TElement, TResult> collection, Memory<TElement> elements) where TResult : IRemove<TElement, TResult> => collection is not null ? collection.RemoveFirst(elements) : (TResult)collection;
+		public static TResult RemoveFirst<TElement, TResult>([AllowNull] this IRemove<TElement, TResult> collection, Memory<TElement> elements) where TResult : IRemove<TElement, TResult> => collection is not null ? collection.RemoveFirst(elements) : (TResult)collection;
+		#endregion
 
+		#region RemoveFirst(Collection, ReadOnlyMemory<TElement>)
 		/// <summary>
 		/// Removes the first instance of the elements from this object.
 		/// </summary>
@@ -346,8 +417,10 @@ namespace Langly {
 		/// <param name="elements">The elements to remove.</param>
 		/// <returns>The original elements after the specified elements have been removed.</returns>
 		[return: MaybeNull]
-		public static TResult RemoveFirst<TElement, TResult>([AllowNull] IRemove<TElement, TResult> collection, ReadOnlyMemory<TElement> elements) where TResult : IRemove<TElement, TResult> => collection is not null ? collection.RemoveFirst(elements) : (TResult)collection;
+		public static TResult RemoveFirst<TElement, TResult>([AllowNull] this IRemove<TElement, TResult> collection, ReadOnlyMemory<TElement> elements) where TResult : IRemove<TElement, TResult> => collection is not null ? collection.RemoveFirst(elements) : (TResult)collection;
+		#endregion
 
+		#region RemoveFirst(Collection, Span<TElement>)
 		/// <summary>
 		/// Removes the first instance of the elements from this object.
 		/// </summary>
@@ -357,8 +430,10 @@ namespace Langly {
 		/// <param name="elements">The elements to remove.</param>
 		/// <returns>The original elements after the specified elements have been removed.</returns>
 		[return: MaybeNull]
-		public static TResult RemoveFirst<TElement, TResult>([AllowNull] IRemove<TElement, TResult> collection, Span<TElement> elements) where TResult : IRemove<TElement, TResult> => collection is not null ? collection.RemoveFirst(elements) : (TResult)collection;
+		public static TResult RemoveFirst<TElement, TResult>([AllowNull] this IRemove<TElement, TResult> collection, Span<TElement> elements) where TResult : IRemove<TElement, TResult> => collection is not null ? collection.RemoveFirst(elements) : (TResult)collection;
+		#endregion
 
+		#region RemoveFirst(Collection, ReadOnlySpan<TElement>)
 		/// <summary>
 		/// Removes the first instance of the elements from this object.
 		/// </summary>
@@ -368,8 +443,10 @@ namespace Langly {
 		/// <param name="elements">The elements to remove.</param>
 		/// <returns>The original elements after the specified elements have been removed.</returns>
 		[return: MaybeNull]
-		public static TResult RemoveFirst<TElement, TResult>([AllowNull] IRemove<TElement, TResult> collection, ReadOnlySpan<TElement> elements) where TResult : IRemove<TElement, TResult> => collection is not null ? collection.RemoveFirst(elements) : (TResult)collection;
+		public static TResult RemoveFirst<TElement, TResult>([AllowNull] this IRemove<TElement, TResult> collection, ReadOnlySpan<TElement> elements) where TResult : IRemove<TElement, TResult> => collection is not null ? collection.RemoveFirst(elements) : (TResult)collection;
+		#endregion
 
+		#region RemoveFirst(Collection, Sequence)
 		/// <summary>
 		/// Removes the first instance of the elements from this object.
 		/// </summary>
@@ -380,8 +457,10 @@ namespace Langly {
 		/// <param name="elements">The elements to remove.</param>
 		/// <returns>The original elements after the specified elements have been removed.</returns>
 		[return: MaybeNull]
-		public static TResult RemoveFirst<TElement, TResult, TEnumerator>([AllowNull] IRemove<TElement, TResult> collection, [AllowNull] ISequence<TElement, TEnumerator> elements) where TResult : IRemove<TElement, TResult> where TEnumerator : IEnumerator<TElement> => collection is not null ? collection.RemoveFirst(elements) : (TResult)collection;
+		public static TResult RemoveFirst<TElement, TResult, TEnumerator>([AllowNull] this IRemove<TElement, TResult> collection, [AllowNull] ISequence<TElement, TEnumerator> elements) where TResult : IRemove<TElement, TResult> where TEnumerator : IEnumerator<TElement> => collection is not null ? collection.RemoveFirst(elements) : (TResult)collection;
+		#endregion
 
+		#region RemoveLast(Collection, TElement)
 		/// <summary>
 		/// Removes the last instance of the element from this object.
 		/// </summary>
@@ -391,8 +470,35 @@ namespace Langly {
 		/// <param name="element">The element to remove.</param>
 		/// <returns>The original elements after the specified element has been removed.</returns>
 		[return: MaybeNull]
-		public static TResult RemoveLast<TElement, TResult>([AllowNull] IRemove<TElement, TResult> collection, [AllowNull] TElement element) where TResult : IRemove<TElement, TResult> => collection is not null ? collection.RemoveLast(element) : (TResult)collection;
+		public static TResult RemoveLast<TElement, TResult>([AllowNull] this IRemove<TElement, TResult> collection, [AllowNull] TElement element) where TResult : IRemove<TElement, TResult> => collection is not null ? collection.RemoveLast(element) : (TResult)collection;
 
+		/// <summary>
+		/// Removes the last instance of the element from this object.
+		/// </summary>
+		/// <typeparam name="TElement">The type of the elements.</typeparam>
+		/// <param name="collection">This collection.</param>
+		/// <param name="element">The element to remove.</param>
+		/// <returns>The original elements after the specified element has been removed.</returns>
+		[return: MaybeNull, NotNullIfNotNull("collection")]
+		public static TElement[] RemoveLast<TElement>([AllowNull] this TElement[] collection, [AllowNull] TElement element) {
+			TElement[] Array = new TElement[collection.Length];
+			Int32 i = collection.Length - 1;
+			// Loop through, looking for the first match
+			for (; i > 0; i--) {
+				if (Equals(collection[i], element)) {
+					break;
+				}
+				Array[i] = collection[i];
+			}
+			// Finish copying elements
+			for (; i > 0; i--) {
+				Array[i] = collection[i];
+			}
+			return Array[i..];
+		}
+		#endregion
+
+		#region RemoveLast(Collection, TElement[])
 		/// <summary>
 		/// Removes the last instance of the elements from this object.
 		/// </summary>
@@ -402,8 +508,10 @@ namespace Langly {
 		/// <param name="elements">The elements to remove.</param>
 		/// <returns>The original elements after the specified elements have been removed.</returns>
 		[return: MaybeNull]
-		public static TResult RemoveLast<TElement, TResult>([AllowNull] IRemove<TElement, TResult> collection, [AllowNull] params TElement[] elements) where TResult : IRemove<TElement, TResult> => collection is not null ? collection.RemoveLast(elements) : (TResult)collection;
+		public static TResult RemoveLast<TElement, TResult>([AllowNull] this IRemove<TElement, TResult> collection, [AllowNull] params TElement[] elements) where TResult : IRemove<TElement, TResult> => collection is not null ? collection.RemoveLast(elements) : (TResult)collection;
+		#endregion
 
+		#region RemoveLast(Collection, Memory<TElement>)
 		/// <summary>
 		/// Removes the last instance of the elements from this object.
 		/// </summary>
@@ -413,8 +521,10 @@ namespace Langly {
 		/// <param name="elements">The elements to remove.</param>
 		/// <returns>The original elements after the specified elements have been removed.</returns>
 		[return: NotNull]
-		public static TResult RemoveLast<TElement, TResult>([AllowNull] IRemove<TElement, TResult> collection, Memory<TElement> elements) where TResult : IRemove<TElement, TResult> => collection is not null ? collection.RemoveLast(elements) : (TResult)collection;
+		public static TResult RemoveLast<TElement, TResult>([AllowNull] this IRemove<TElement, TResult> collection, Memory<TElement> elements) where TResult : IRemove<TElement, TResult> => collection is not null ? collection.RemoveLast(elements) : (TResult)collection;
+		#endregion
 
+		#region RemoveLast(Collection, ReadOnlyMemory<TElement>)
 		/// <summary>
 		/// Removes the last instance of the elements from this object.
 		/// </summary>
@@ -424,8 +534,10 @@ namespace Langly {
 		/// <param name="elements">The elements to remove.</param>
 		/// <returns>The original elements after the specified elements have been removed.</returns>
 		[return: MaybeNull]
-		public static TResult RemoveLast<TElement, TResult>([AllowNull] IRemove<TElement, TResult> collection, ReadOnlyMemory<TElement> elements) where TResult : IRemove<TElement, TResult> => collection is not null ? collection.RemoveLast(elements) : (TResult)collection;
+		public static TResult RemoveLast<TElement, TResult>([AllowNull] this IRemove<TElement, TResult> collection, ReadOnlyMemory<TElement> elements) where TResult : IRemove<TElement, TResult> => collection is not null ? collection.RemoveLast(elements) : (TResult)collection;
+		#endregion
 
+		#region RemoveLast(Collection, Span<TElement>)
 		/// <summary>
 		/// Removes the last instance of the elements from this object.
 		/// </summary>
@@ -435,8 +547,10 @@ namespace Langly {
 		/// <param name="elements">The elements to remove.</param>
 		/// <returns>The original elements after the specified elements have been removed.</returns>
 		[return: MaybeNull]
-		public static TResult RemoveLast<TElement, TResult>([AllowNull] IRemove<TElement, TResult> collection, Span<TElement> elements) where TResult : IRemove<TElement, TResult> => collection is not null ? collection.RemoveLast(elements) : (TResult)collection;
+		public static TResult RemoveLast<TElement, TResult>([AllowNull] this IRemove<TElement, TResult> collection, Span<TElement> elements) where TResult : IRemove<TElement, TResult> => collection is not null ? collection.RemoveLast(elements) : (TResult)collection;
+		#endregion
 
+		#region RemoveLast(Collection, ReadOnlySpan<TElement>)
 		/// <summary>
 		/// Removes the last instance of the elements from this object.
 		/// </summary>
@@ -446,8 +560,10 @@ namespace Langly {
 		/// <param name="elements">The elements to remove.</param>
 		/// <returns>The original elements after the specified elements have been removed.</returns>
 		[return: MaybeNull]
-		public static TResult RemoveLast<TElement, TResult>([AllowNull] IRemove<TElement, TResult> collection, ReadOnlySpan<TElement> elements) where TResult : IRemove<TElement, TResult> => collection is not null ? collection.RemoveLast(elements) : (TResult)collection;
+		public static TResult RemoveLast<TElement, TResult>([AllowNull] this IRemove<TElement, TResult> collection, ReadOnlySpan<TElement> elements) where TResult : IRemove<TElement, TResult> => collection is not null ? collection.RemoveLast(elements) : (TResult)collection;
+		#endregion
 
+		#region RemoveLast(Collection, Sequence)
 		/// <summary>
 		/// Removes the last instance of the elements from this object.
 		/// </summary>
@@ -458,6 +574,7 @@ namespace Langly {
 		/// <param name="elements">The elements to remove.</param>
 		/// <returns>The original elements after the specified elements have been removed.</returns>
 		[return: MaybeNull]
-		public static TResult RemoveLast<TElement, TResult, TEnumerator>([AllowNull] IRemove<TElement, TResult> collection, [AllowNull] ISequence<TElement, TEnumerator> elements) where TResult : IRemove<TElement, TResult> where TEnumerator : IEnumerator<TElement> => collection is not null ? collection.RemoveLast(elements) : (TResult)collection;
+		public static TResult RemoveLast<TElement, TResult, TEnumerator>([AllowNull] this IRemove<TElement, TResult> collection, [AllowNull] ISequence<TElement, TEnumerator> elements) where TResult : IRemove<TElement, TResult> where TEnumerator : IEnumerator<TElement> => collection is not null ? collection.RemoveLast(elements) : (TResult)collection;
+		#endregion
 	}
 }

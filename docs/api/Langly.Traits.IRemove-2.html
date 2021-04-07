@@ -81,6 +81,7 @@
   <h5 id="Langly_Traits_IRemove_2_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public interface IRemove&lt;TElement, out TResult&gt;
+
     where TResult : IRemove&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
@@ -421,6 +422,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">virtual TResult Remove&lt;TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt; elements)
+
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -788,6 +790,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">virtual TResult RemoveFirst&lt;TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt; elements)
+
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1155,6 +1158,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">virtual TResult RemoveLast&lt;TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt; elements)
+
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1207,6 +1211,70 @@
       </tr>
     </tbody>
   </table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Remove__2_Langly_Traits_IRemove___0___1____0_">TraitExtensions.Remove&lt;TElement, TResult&gt;(IRemove&lt;TElement, TResult&gt;, TElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Remove__2_Langly_Traits_IRemove___0___1____0___">TraitExtensions.Remove&lt;TElement, TResult&gt;(IRemove&lt;TElement, TResult&gt;, TElement[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Remove__2_Langly_Traits_IRemove___0___1__System_Memory___0__">TraitExtensions.Remove&lt;TElement, TResult&gt;(IRemove&lt;TElement, TResult&gt;, Memory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Remove__2_Langly_Traits_IRemove___0___1__System_ReadOnlyMemory___0__">TraitExtensions.Remove&lt;TElement, TResult&gt;(IRemove&lt;TElement, TResult&gt;, ReadOnlyMemory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Remove__2_Langly_Traits_IRemove___0___1__System_Span___0__">TraitExtensions.Remove&lt;TElement, TResult&gt;(IRemove&lt;TElement, TResult&gt;, Span&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Remove__2_Langly_Traits_IRemove___0___1__System_ReadOnlySpan___0__">TraitExtensions.Remove&lt;TElement, TResult&gt;(IRemove&lt;TElement, TResult&gt;, ReadOnlySpan&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_Remove__3_Langly_Traits_IRemove___0___1__Langly_Traits_ISequence___0___2__">TraitExtensions.Remove&lt;TElement, TResult, TEnumerator&gt;(IRemove&lt;TElement, TResult&gt;, ISequence&lt;TElement, TEnumerator&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_RemoveFirst__2_Langly_Traits_IRemove___0___1____0_">TraitExtensions.RemoveFirst&lt;TElement, TResult&gt;(IRemove&lt;TElement, TResult&gt;, TElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_RemoveFirst__2_Langly_Traits_IRemove___0___1____0___">TraitExtensions.RemoveFirst&lt;TElement, TResult&gt;(IRemove&lt;TElement, TResult&gt;, TElement[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_RemoveFirst__2_Langly_Traits_IRemove___0___1__System_Memory___0__">TraitExtensions.RemoveFirst&lt;TElement, TResult&gt;(IRemove&lt;TElement, TResult&gt;, Memory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_RemoveFirst__2_Langly_Traits_IRemove___0___1__System_ReadOnlyMemory___0__">TraitExtensions.RemoveFirst&lt;TElement, TResult&gt;(IRemove&lt;TElement, TResult&gt;, ReadOnlyMemory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_RemoveFirst__2_Langly_Traits_IRemove___0___1__System_Span___0__">TraitExtensions.RemoveFirst&lt;TElement, TResult&gt;(IRemove&lt;TElement, TResult&gt;, Span&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_RemoveFirst__2_Langly_Traits_IRemove___0___1__System_ReadOnlySpan___0__">TraitExtensions.RemoveFirst&lt;TElement, TResult&gt;(IRemove&lt;TElement, TResult&gt;, ReadOnlySpan&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_RemoveFirst__3_Langly_Traits_IRemove___0___1__Langly_Traits_ISequence___0___2__">TraitExtensions.RemoveFirst&lt;TElement, TResult, TEnumerator&gt;(IRemove&lt;TElement, TResult&gt;, ISequence&lt;TElement, TEnumerator&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_RemoveLast__2_Langly_Traits_IRemove___0___1____0_">TraitExtensions.RemoveLast&lt;TElement, TResult&gt;(IRemove&lt;TElement, TResult&gt;, TElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_RemoveLast__2_Langly_Traits_IRemove___0___1____0___">TraitExtensions.RemoveLast&lt;TElement, TResult&gt;(IRemove&lt;TElement, TResult&gt;, TElement[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_RemoveLast__2_Langly_Traits_IRemove___0___1__System_Memory___0__">TraitExtensions.RemoveLast&lt;TElement, TResult&gt;(IRemove&lt;TElement, TResult&gt;, Memory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_RemoveLast__2_Langly_Traits_IRemove___0___1__System_ReadOnlyMemory___0__">TraitExtensions.RemoveLast&lt;TElement, TResult&gt;(IRemove&lt;TElement, TResult&gt;, ReadOnlyMemory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_RemoveLast__2_Langly_Traits_IRemove___0___1__System_Span___0__">TraitExtensions.RemoveLast&lt;TElement, TResult&gt;(IRemove&lt;TElement, TResult&gt;, Span&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_RemoveLast__2_Langly_Traits_IRemove___0___1__System_ReadOnlySpan___0__">TraitExtensions.RemoveLast&lt;TElement, TResult&gt;(IRemove&lt;TElement, TResult&gt;, ReadOnlySpan&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Langly.TraitExtensions.html#Langly_TraitExtensions_RemoveLast__3_Langly_Traits_IRemove___0___1__Langly_Traits_ISequence___0___2__">TraitExtensions.RemoveLast&lt;TElement, TResult, TEnumerator&gt;(IRemove&lt;TElement, TResult&gt;, ISequence&lt;TElement, TEnumerator&gt;)</a>
+  </div>
 </article>
           </div>
           

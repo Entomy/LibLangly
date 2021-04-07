@@ -19,12 +19,13 @@ namespace Langly.DataStructures.Arrays {
 		IRemove<TElement, TSelf>,
 		IReplace<TElement, TSelf>,
 		IShift<TSelf>,
-		ISlice<Array<TElement>>
+		ISlice<Memory<TElement>>
 		where TSelf : FlexibleArray<TElement, TSelf> {
 		/// <summary>
 		/// The backing array of this <see cref="FlexibleArray{TElement, TSelf}"/>.
 		/// </summary>
-		protected Memory<TElement> Memory;
+		[DisallowNull, NotNull]
+		protected TElement[] Memory;
 
 		/// <summary>
 		/// Initializes a new <see cref="FlexibleArray{TElement, TSelf}"/> with the given <paramref name="capacity"/>.
@@ -40,10 +41,10 @@ namespace Langly.DataStructures.Arrays {
 		/// <summary>
 		/// Initializes a new <see cref="FlexibleArray{TElement, TSelf}"/> with the given <paramref name="memory"/>.
 		/// </summary>
-		/// <param name="memory">The <see cref="Memory{T}"/> to reuse.</param>
+		/// <param name="memory">The <see cref="Array"/> of <typeparamref name="TElement"/> to reuse.</param>
 		/// <param name="count">The amount of elements in the array.</param>
 		/// <param name="filter">The type of filter to use.</param>
-		protected FlexibleArray(Memory<TElement> memory, nint count, Filter filter) : base(filter) {
+		protected FlexibleArray([DisallowNull] TElement[] memory, nint count, Filter filter) : base(filter) {
 			Memory = memory;
 			Count = count;
 		}
@@ -51,10 +52,10 @@ namespace Langly.DataStructures.Arrays {
 		/// <summary>
 		/// Copy constructor
 		/// </summary>
-		/// <param name="memory">The <see cref="Memory{T}"/> to reuse.</param>
+		/// <param name="memory">The <see cref="Array"/> of <typeparamref name="TElement"/> to reuse.</param>
 		/// <param name="count">The amount of elements in the array.</param>
 		/// <param name="filter">The <see cref="Filter{TIndex, TElement}"/> to reuse.</param>
-		protected FlexibleArray(Memory<TElement> memory, nint count, [DisallowNull] Filter<nint, TElement> filter) : base(filter) {
+		protected FlexibleArray([DisallowNull] TElement[] memory, nint count, [DisallowNull] Filter<nint, TElement> filter) : base(filter) {
 			Memory = memory;
 			Count = count;
 		}
@@ -65,15 +66,15 @@ namespace Langly.DataStructures.Arrays {
 		/// <inheritdoc/>
 		[AllowNull, MaybeNull]
 		public TElement this[nint index] {
-			get => Memory.Span[(Int32)index];
-			set => Memory.Span[(Int32)index] = value;
+			get => Memory[(Int32)index];
+			set => Memory[(Int32)index] = value;
 		}
 
 		/// <inheritdoc/>
-		public Array<TElement> this[Range range] {
+		public Memory<TElement> this[Range range] {
 			get {
 				(Int32 offset, Int32 length) = range.GetOffsetAndLength((Int32)Count);
-				return ((ISlice<Array<TElement>>)this).Slice(offset, length);
+				return ((ISlice<Memory<TElement>>)this).Slice(offset, length);
 			}
 		}
 
@@ -91,7 +92,7 @@ namespace Langly.DataStructures.Arrays {
 		/// <param name="array">The <see cref="FlexibleArray{TElement, TSelf}"/> to shift.</param>
 		/// <param name="amount">The amount of positions to shift.</param>
 		[return: MaybeNull, NotNullIfNotNull("array")]
-		public static TSelf operator >>([AllowNull] FlexibleArray<TElement, TSelf> array, Int32 amount) => array.ShiftRight(amount);
+		public static TSelf operator >>([AllowNull] FlexibleArray<TElement, TSelf> array, Int32 amount) => array?.ShiftRight(amount);
 
 		/// <inheritdoc/>
 		[return: MaybeNull]
@@ -132,8 +133,8 @@ namespace Langly.DataStructures.Arrays {
 		[return: MaybeNull]
 		TSelf IReplace<TElement, TElement, TSelf>.Replace([AllowNull] TElement search, [AllowNull] TElement replace) {
 			for (Int32 i = 0; i < Count; i++) {
-				if (Equals(Memory.Span[i], search)) {
-					Memory.Span[i] = replace;
+				if (Equals(Memory[i], search)) {
+					Memory[i] = replace;
 				}
 			}
 			return (TSelf)this;
@@ -147,10 +148,10 @@ namespace Langly.DataStructures.Arrays {
 			}
 			Int32 i = 0;
 			for (; i < Memory.Length - amount; i++) {
-				Memory.Span[i] = Memory.Span[(Int32)(i + amount)];
+				Memory[i] = Memory[(Int32)(i + amount)];
 			}
-			for (; i < Memory.Span.Length; i++) {
-				Memory.Span[i] = default;
+			for (; i < Memory.Length; i++) {
+				Memory[i] = default;
 			}
 			return (TSelf)this;
 		}
@@ -163,17 +164,17 @@ namespace Langly.DataStructures.Arrays {
 			}
 			Int32 i = Memory.Length - 1;
 			for (; i >= amount; i--) {
-				Memory.Span[i] = Memory.Span[(Int32)(i - amount)];
+				Memory[i] = Memory[(Int32)(i - amount)];
 			}
 			for (; i >= 0; i--) {
-				Memory.Span[i] = default;
+				Memory[i] = default;
 			}
 			return (TSelf)this;
 		}
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		Array<TElement> ISlice<Array<TElement>>.Slice(nint start, nint length) => new(Memory.Slice((Int32)start, (Int32)length));
+		Memory<TElement> ISlice<Memory<TElement>>.Slice(nint start, nint length) => Memory.Slice((Int32)start, (Int32)length);
 
 		/// <summary>
 		/// Insert an element into the collection at the specified index.
@@ -184,9 +185,9 @@ namespace Langly.DataStructures.Arrays {
 		[return: MaybeNull]
 		protected virtual TSelf Insert(nint index, [AllowNull] TElement element) {
 			for (Int32 i = Memory.Length - 1; i >= index;) {
-				Memory.Span[i] = Memory.Span[--i];
+				Memory[i] = Memory[--i];
 			}
-			Memory.Span[(Int32)index] = element;
+			Memory[(Int32)index] = element;
 			Count++;
 			return (TSelf)this;
 		}

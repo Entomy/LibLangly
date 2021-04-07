@@ -107,7 +107,7 @@
     <div><a class="xref" href="Langly.Traits.IReplace-2.html">IReplace</a>&lt;TElement, TSelf&gt;</div>
     <div><a class="xref" href="Langly.Traits.IReplace-3.html">IReplace</a>&lt;TElement, TElement, TSelf&gt;</div>
     <div><a class="xref" href="Langly.Traits.IShift-1.html">IShift</a>&lt;TSelf&gt;</div>
-    <div><a class="xref" href="Langly.Traits.ISlice-1.html">ISlice</a>&lt;<a class="xref" href="Langly.DataStructures.Array-1.html">Array</a>&lt;TElement&gt;&gt;</div>
+    <div><a class="xref" href="Langly.Traits.ISlice-1.html">ISlice</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;TElement&gt;&gt;</div>
     <div><a class="xref" href="Langly.Traits.ISequence-2.html">ISequence</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.Arrays.FlexibleArray-2.Enumerator.html">FlexibleArray.Enumerator</a>&lt;&gt;&gt;</div>
     <div><a class="xref" href="Langly.Traits.IContains-1.html">IContains</a>&lt;TElement&gt;</div>
     <div><a class="xref" href="Langly.Traits.ICount.html">ICount</a></div>
@@ -175,7 +175,7 @@
   <h6><strong>Assembly</strong>: Langly.Arrays.dll</h6>
   <h5 id="Langly_DataStructures_Arrays_FlexibleArray_2_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class FlexibleArray&lt;TElement, TSelf&gt; : DataStructure&lt;TElement, TSelf, FlexibleArray&lt;TElement, TSelf&gt;.Enumerator&gt;, IEquals&lt;TSelf&gt;, IEquatable&lt;TSelf&gt;, IEquals&lt;IEquals&lt;TSelf&gt;&gt;, IEquatable&lt;IEquals&lt;TSelf&gt;&gt;, IAdd&lt;TElement, TSelf&gt;, ICapacity, IClear&lt;TSelf&gt;, IConcat&lt;TElement, TSelf&gt;, IPostpend&lt;TElement, TSelf&gt;, IPrepend&lt;TElement, TSelf&gt;, IIndex&lt;TElement&gt;, IIndex&lt;nint, TElement&gt;, IIndexReadOnly&lt;TElement&gt;, IIndexReadOnly&lt;nint, TElement&gt;, IInsert&lt;TElement, TSelf&gt;, IInsert&lt;nint, TElement, TSelf&gt;, IRemove&lt;TElement, TSelf&gt;, IReplace&lt;TElement, TSelf&gt;, IReplace&lt;TElement, TElement, TSelf&gt;, IShift&lt;TSelf&gt;, ISlice&lt;Array&lt;TElement&gt;&gt;, ISequence&lt;TElement, FlexibleArray&lt;TElement, TSelf&gt;.Enumerator&gt;, IContains&lt;TElement&gt;, ICount, IEnumerable&lt;TElement&gt;, IEnumerable where TSelf : FlexibleArray&lt;TElement, TSelf&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class FlexibleArray&lt;TElement, TSelf&gt; : DataStructure&lt;TElement, TSelf, FlexibleArray&lt;TElement, TSelf&gt;.Enumerator&gt;, IEquals&lt;TSelf&gt;, IEquatable&lt;TSelf&gt;, IEquals&lt;IEquals&lt;TSelf&gt;&gt;, IEquatable&lt;IEquals&lt;TSelf&gt;&gt;, IAdd&lt;TElement, TSelf&gt;, ICapacity, IClear&lt;TSelf&gt;, IConcat&lt;TElement, TSelf&gt;, IPostpend&lt;TElement, TSelf&gt;, IPrepend&lt;TElement, TSelf&gt;, IIndex&lt;TElement&gt;, IIndex&lt;nint, TElement&gt;, IIndexReadOnly&lt;TElement&gt;, IIndexReadOnly&lt;nint, TElement&gt;, IInsert&lt;TElement, TSelf&gt;, IInsert&lt;nint, TElement, TSelf&gt;, IRemove&lt;TElement, TSelf&gt;, IReplace&lt;TElement, TSelf&gt;, IReplace&lt;TElement, TElement, TSelf&gt;, IShift&lt;TSelf&gt;, ISlice&lt;Memory&lt;TElement&gt;&gt;, ISequence&lt;TElement, FlexibleArray&lt;TElement, TSelf&gt;.Enumerator&gt;, IContains&lt;TElement&gt;, ICount, IEnumerable&lt;TElement&gt;, IEnumerable where TSelf : FlexibleArray&lt;TElement, TSelf&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -202,10 +202,102 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Arrays_FlexibleArray_2__ctor__0___nint_Langly_DataStructures_Filter_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.FlexibleArray%602.%23ctor(%600%5B%5D%2Cnint%2CLangly.DataStructures.Filter)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/FlexibleArray`2.cs/#L47">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Arrays_FlexibleArray_2__ctor_" data-uid="Langly.DataStructures.Arrays.FlexibleArray`2.#ctor*"></a>
+  <h4 id="Langly_DataStructures_Arrays_FlexibleArray_2__ctor__0___nint_Langly_DataStructures_Filter_" data-uid="Langly.DataStructures.Arrays.FlexibleArray`2.#ctor(`0[],nint,Langly.DataStructures.Filter)">FlexibleArray(TElement[], nint, Filter)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Langly.DataStructures.Arrays.FlexibleArray-2.html">FlexibleArray&lt;TElement, TSelf&gt;</a> with the given <code data-dev-comment-type="paramref" class="paramref">memory</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected FlexibleArray(TElement[] memory, nint count, Filter filter)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TElement[]</td>
+        <td><span class="parametername">memory</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.array">Array</a> of <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> to reuse.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">count</span></td>
+        <td><p>The amount of elements in the array.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Filter.html">Filter</a></td>
+        <td><span class="parametername">filter</span></td>
+        <td><p>The type of filter to use.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Arrays_FlexibleArray_2__ctor__0___nint_Langly_DataStructures_Filters_Filter_nint__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.FlexibleArray%602.%23ctor(%600%5B%5D%2Cnint%2CLangly.DataStructures.Filters.Filter%7Bnint%2C%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/FlexibleArray`2.cs/#L58">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Arrays_FlexibleArray_2__ctor_" data-uid="Langly.DataStructures.Arrays.FlexibleArray`2.#ctor*"></a>
+  <h4 id="Langly_DataStructures_Arrays_FlexibleArray_2__ctor__0___nint_Langly_DataStructures_Filters_Filter_nint__0__" data-uid="Langly.DataStructures.Arrays.FlexibleArray`2.#ctor(`0[],nint,Langly.DataStructures.Filters.Filter{nint,`0})">FlexibleArray(TElement[], nint, Filter&lt;nint, TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Copy constructor</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected FlexibleArray(TElement[] memory, nint count, Filter&lt;nint, TElement&gt; filter)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TElement[]</td>
+        <td><span class="parametername">memory</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.array">Array</a> of <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> to reuse.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">count</span></td>
+        <td><p>The amount of elements in the array.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.DataStructures.Filters.Filter-2.html">Filter</a>&lt;<span class="xref">nint</span>, TElement&gt;</td>
+        <td><span class="parametername">filter</span></td>
+        <td><p>The <a class="xref" href="Langly.DataStructures.Filters.Filter-2.html">Filter&lt;TIndex, TElement&gt;</a> to reuse.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Arrays_FlexibleArray_2__ctor_nint_nint_Langly_DataStructures_Filter_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.FlexibleArray%602.%23ctor(nint%2Cnint%2CLangly.DataStructures.Filter)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/FlexibleArray`2.cs/#L35">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/FlexibleArray`2.cs/#L36">View Source</a>
   </span>
   <a id="Langly_DataStructures_Arrays_FlexibleArray_2__ctor_" data-uid="Langly.DataStructures.Arrays.FlexibleArray`2.#ctor*"></a>
   <h4 id="Langly_DataStructures_Arrays_FlexibleArray_2__ctor_nint_nint_Langly_DataStructures_Filter_" data-uid="Langly.DataStructures.Arrays.FlexibleArray`2.#ctor(nint,nint,Langly.DataStructures.Filter)">FlexibleArray(nint, nint, Filter)</h4>
@@ -246,98 +338,6 @@
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Arrays_FlexibleArray_2__ctor_System_Memory__0__nint_Langly_DataStructures_Filter_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.FlexibleArray%602.%23ctor(System.Memory%7B%600%7D%2Cnint%2CLangly.DataStructures.Filter)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/FlexibleArray`2.cs/#L46">View Source</a>
-  </span>
-  <a id="Langly_DataStructures_Arrays_FlexibleArray_2__ctor_" data-uid="Langly.DataStructures.Arrays.FlexibleArray`2.#ctor*"></a>
-  <h4 id="Langly_DataStructures_Arrays_FlexibleArray_2__ctor_System_Memory__0__nint_Langly_DataStructures_Filter_" data-uid="Langly.DataStructures.Arrays.FlexibleArray`2.#ctor(System.Memory{`0},nint,Langly.DataStructures.Filter)">FlexibleArray(Memory&lt;TElement&gt;, nint, Filter)</h4>
-  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Langly.DataStructures.Arrays.FlexibleArray-2.html">FlexibleArray&lt;TElement, TSelf&gt;</a> with the given <code data-dev-comment-type="paramref" class="paramref">memory</code>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected FlexibleArray(Memory&lt;TElement&gt; memory, nint count, Filter filter)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;TElement&gt;</td>
-        <td><span class="parametername">memory</span></td>
-        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory&lt;T&gt;</a> to reuse.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">nint</span></td>
-        <td><span class="parametername">count</span></td>
-        <td><p>The amount of elements in the array.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Langly.DataStructures.Filter.html">Filter</a></td>
-        <td><span class="parametername">filter</span></td>
-        <td><p>The type of filter to use.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Arrays_FlexibleArray_2__ctor_System_Memory__0__nint_Langly_DataStructures_Filters_Filter_nint__0__.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.FlexibleArray%602.%23ctor(System.Memory%7B%600%7D%2Cnint%2CLangly.DataStructures.Filters.Filter%7Bnint%2C%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/FlexibleArray`2.cs/#L57">View Source</a>
-  </span>
-  <a id="Langly_DataStructures_Arrays_FlexibleArray_2__ctor_" data-uid="Langly.DataStructures.Arrays.FlexibleArray`2.#ctor*"></a>
-  <h4 id="Langly_DataStructures_Arrays_FlexibleArray_2__ctor_System_Memory__0__nint_Langly_DataStructures_Filters_Filter_nint__0__" data-uid="Langly.DataStructures.Arrays.FlexibleArray`2.#ctor(System.Memory{`0},nint,Langly.DataStructures.Filters.Filter{nint,`0})">FlexibleArray(Memory&lt;TElement&gt;, nint, Filter&lt;nint, TElement&gt;)</h4>
-  <div class="markdown level1 summary"><p>Copy constructor</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected FlexibleArray(Memory&lt;TElement&gt; memory, nint count, Filter&lt;nint, TElement&gt; filter)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;TElement&gt;</td>
-        <td><span class="parametername">memory</span></td>
-        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory&lt;T&gt;</a> to reuse.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">nint</span></td>
-        <td><span class="parametername">count</span></td>
-        <td><p>The amount of elements in the array.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Langly.DataStructures.Filters.Filter-2.html">Filter</a>&lt;<span class="xref">nint</span>, TElement&gt;</td>
-        <td><span class="parametername">filter</span></td>
-        <td><p>The <a class="xref" href="Langly.DataStructures.Filters.Filter-2.html">Filter&lt;TIndex, TElement&gt;</a> to reuse.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="fields">Fields
   </h3>
   <span class="small pull-right mobile-hide">
@@ -345,7 +345,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Arrays_FlexibleArray_2_Memory.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.FlexibleArray%602.Memory%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/FlexibleArray`2.cs/#L27">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/FlexibleArray`2.cs/#L28">View Source</a>
   </span>
   <h4 id="Langly_DataStructures_Arrays_FlexibleArray_2_Memory" data-uid="Langly.DataStructures.Arrays.FlexibleArray`2.Memory">Memory</h4>
   <div class="markdown level1 summary"><p>The backing array of this <a class="xref" href="Langly.DataStructures.Arrays.FlexibleArray-2.html">FlexibleArray&lt;TElement, TSelf&gt;</a>.</p>
@@ -353,7 +353,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected Memory&lt;TElement&gt; Memory</code></pre>
+    <pre><code class="lang-csharp hljs">protected TElement[] Memory</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -365,7 +365,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;TElement&gt;</td>
+        <td>TElement[]</td>
         <td></td>
       </tr>
     </tbody>
@@ -377,7 +377,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Arrays_FlexibleArray_2_Capacity.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.FlexibleArray%602.Capacity%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/FlexibleArray`2.cs/#L63">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/FlexibleArray`2.cs/#L64">View Source</a>
   </span>
   <a id="Langly_DataStructures_Arrays_FlexibleArray_2_Capacity_" data-uid="Langly.DataStructures.Arrays.FlexibleArray`2.Capacity*"></a>
   <h4 id="Langly_DataStructures_Arrays_FlexibleArray_2_Capacity" data-uid="Langly.DataStructures.Arrays.FlexibleArray`2.Capacity">Capacity</h4>
@@ -407,7 +407,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Arrays_FlexibleArray_2_Item_nint_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.FlexibleArray%602.Item(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/FlexibleArray`2.cs/#L66">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/FlexibleArray`2.cs/#L67">View Source</a>
   </span>
   <a id="Langly_DataStructures_Arrays_FlexibleArray_2_Item_" data-uid="Langly.DataStructures.Arrays.FlexibleArray`2.Item*"></a>
   <h4 id="Langly_DataStructures_Arrays_FlexibleArray_2_Item_nint_" data-uid="Langly.DataStructures.Arrays.FlexibleArray`2.Item(nint)">Item[nint]</h4>
@@ -454,7 +454,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Arrays_FlexibleArray_2_Item_System_Range_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.FlexibleArray%602.Item(System.Range)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/FlexibleArray`2.cs/#L73">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/FlexibleArray`2.cs/#L74">View Source</a>
   </span>
   <a id="Langly_DataStructures_Arrays_FlexibleArray_2_Item_" data-uid="Langly.DataStructures.Arrays.FlexibleArray`2.Item*"></a>
   <h4 id="Langly_DataStructures_Arrays_FlexibleArray_2_Item_System_Range_" data-uid="Langly.DataStructures.Arrays.FlexibleArray`2.Item(System.Range)">Item[Range]</h4>
@@ -463,7 +463,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Array&lt;TElement&gt; this[Range range] { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Memory&lt;TElement&gt; this[Range range] { get; }</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -493,7 +493,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Langly.DataStructures.Array-1.html">Array</a>&lt;TElement&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;TElement&gt;</td>
         <td><p>A slice that consists of all the elements of the current collection within the <code data-dev-comment-type="paramref" class="paramref">range</code>.</p>
 </td>
       </tr>
@@ -540,7 +540,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Arrays_FlexibleArray_2_Insert_nint__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.FlexibleArray%602.Insert(nint%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/FlexibleArray`2.cs/#L184">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/FlexibleArray`2.cs/#L185">View Source</a>
   </span>
   <a id="Langly_DataStructures_Arrays_FlexibleArray_2_Insert_" data-uid="Langly.DataStructures.Arrays.FlexibleArray`2.Insert*"></a>
   <h4 id="Langly_DataStructures_Arrays_FlexibleArray_2_Insert_nint__0_" data-uid="Langly.DataStructures.Arrays.FlexibleArray`2.Insert(nint,`0)">Insert(nint, TElement)</h4>
@@ -596,7 +596,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Arrays_FlexibleArray_2_Postpend__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.FlexibleArray%602.Postpend(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/FlexibleArray`2.cs/#L199">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/FlexibleArray`2.cs/#L200">View Source</a>
   </span>
   <a id="Langly_DataStructures_Arrays_FlexibleArray_2_Postpend_" data-uid="Langly.DataStructures.Arrays.FlexibleArray`2.Postpend*"></a>
   <h4 id="Langly_DataStructures_Arrays_FlexibleArray_2_Postpend__0_" data-uid="Langly.DataStructures.Arrays.FlexibleArray`2.Postpend(`0)">Postpend(TElement)</h4>
@@ -646,7 +646,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Arrays_FlexibleArray_2_Prepend__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.FlexibleArray%602.Prepend(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/FlexibleArray`2.cs/#L210">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/FlexibleArray`2.cs/#L211">View Source</a>
   </span>
   <a id="Langly_DataStructures_Arrays_FlexibleArray_2_Prepend_" data-uid="Langly.DataStructures.Arrays.FlexibleArray`2.Prepend*"></a>
   <h4 id="Langly_DataStructures_Arrays_FlexibleArray_2_Prepend__0_" data-uid="Langly.DataStructures.Arrays.FlexibleArray`2.Prepend(`0)">Prepend(TElement)</h4>
@@ -698,7 +698,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Arrays_FlexibleArray_2_op_LeftShift_Langly_DataStructures_Arrays_FlexibleArray__0__1__System_Int32_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.FlexibleArray%602.op_LeftShift(Langly.DataStructures.Arrays.FlexibleArray%7B%600%2C%601%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/FlexibleArray`2.cs/#L85">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/FlexibleArray`2.cs/#L86">View Source</a>
   </span>
   <a id="Langly_DataStructures_Arrays_FlexibleArray_2_op_LeftShift_" data-uid="Langly.DataStructures.Arrays.FlexibleArray`2.op_LeftShift*"></a>
   <h4 id="Langly_DataStructures_Arrays_FlexibleArray_2_op_LeftShift_Langly_DataStructures_Arrays_FlexibleArray__0__1__System_Int32_" data-uid="Langly.DataStructures.Arrays.FlexibleArray`2.op_LeftShift(Langly.DataStructures.Arrays.FlexibleArray{`0,`1},System.Int32)">LeftShift(FlexibleArray&lt;TElement, TSelf&gt;, Int32)</h4>
@@ -753,7 +753,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Arrays_FlexibleArray_2_op_RightShift_Langly_DataStructures_Arrays_FlexibleArray__0__1__System_Int32_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.FlexibleArray%602.op_RightShift(Langly.DataStructures.Arrays.FlexibleArray%7B%600%2C%601%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/FlexibleArray`2.cs/#L93">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/FlexibleArray`2.cs/#L94">View Source</a>
   </span>
   <a id="Langly_DataStructures_Arrays_FlexibleArray_2_op_RightShift_" data-uid="Langly.DataStructures.Arrays.FlexibleArray`2.op_RightShift*"></a>
   <h4 id="Langly_DataStructures_Arrays_FlexibleArray_2_op_RightShift_Langly_DataStructures_Arrays_FlexibleArray__0__1__System_Int32_" data-uid="Langly.DataStructures.Arrays.FlexibleArray`2.op_RightShift(Langly.DataStructures.Arrays.FlexibleArray{`0,`1},System.Int32)">RightShift(FlexibleArray&lt;TElement, TSelf&gt;, Int32)</h4>
@@ -810,7 +810,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Arrays_FlexibleArray_2_Langly_Traits_IAdd_TElement_TSelf__Add__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.FlexibleArray%602.Langly%23Traits%23IAdd%7BTElement%2CTSelf%7D%23Add(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/FlexibleArray`2.cs/#L97">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/FlexibleArray`2.cs/#L98">View Source</a>
   </span>
   <a id="Langly_DataStructures_Arrays_FlexibleArray_2_Langly_Traits_IAdd_TElement_TSelf__Add_" data-uid="Langly.DataStructures.Arrays.FlexibleArray`2.Langly#Traits#IAdd{TElement,TSelf}#Add*"></a>
   <h4 id="Langly_DataStructures_Arrays_FlexibleArray_2_Langly_Traits_IAdd_TElement_TSelf__Add__0_" data-uid="Langly.DataStructures.Arrays.FlexibleArray`2.Langly#Traits#IAdd{TElement,TSelf}#Add(`0)">IAdd&lt;TElement, TSelf&gt;.Add(TElement)</h4>
@@ -863,7 +863,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Arrays_FlexibleArray_2_Langly_Traits_IClear_TSelf__Clear.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.FlexibleArray%602.Langly%23Traits%23IClear%7BTSelf%7D%23Clear%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/FlexibleArray`2.cs/#L101">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/FlexibleArray`2.cs/#L102">View Source</a>
   </span>
   <a id="Langly_DataStructures_Arrays_FlexibleArray_2_Langly_Traits_IClear_TSelf__Clear_" data-uid="Langly.DataStructures.Arrays.FlexibleArray`2.Langly#Traits#IClear{TSelf}#Clear*"></a>
   <h4 id="Langly_DataStructures_Arrays_FlexibleArray_2_Langly_Traits_IClear_TSelf__Clear" data-uid="Langly.DataStructures.Arrays.FlexibleArray`2.Langly#Traits#IClear{TSelf}#Clear">IClear&lt;TSelf&gt;.Clear()</h4>
@@ -894,7 +894,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Arrays_FlexibleArray_2_Langly_Traits_IInsert_nint_TElement_TSelf__Insert_nint__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.FlexibleArray%602.Langly%23Traits%23IInsert%7Bnint%2CTElement%2CTSelf%7D%23Insert(nint%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/FlexibleArray`2.cs/#L108">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/FlexibleArray`2.cs/#L109">View Source</a>
   </span>
   <a id="Langly_DataStructures_Arrays_FlexibleArray_2_Langly_Traits_IInsert_nint_TElement_TSelf__Insert_" data-uid="Langly.DataStructures.Arrays.FlexibleArray`2.Langly#Traits#IInsert{nint,TElement,TSelf}#Insert*"></a>
   <h4 id="Langly_DataStructures_Arrays_FlexibleArray_2_Langly_Traits_IInsert_nint_TElement_TSelf__Insert_nint__0_" data-uid="Langly.DataStructures.Arrays.FlexibleArray`2.Langly#Traits#IInsert{nint,TElement,TSelf}#Insert(nint,`0)">IInsert&lt;nint, TElement, TSelf&gt;.Insert(nint, TElement)</h4>
@@ -946,7 +946,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Arrays_FlexibleArray_2_Langly_Traits_IPostpend_TElement_TSelf__Postpend__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.FlexibleArray%602.Langly%23Traits%23IPostpend%7BTElement%2CTSelf%7D%23Postpend(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/FlexibleArray`2.cs/#L112">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/FlexibleArray`2.cs/#L113">View Source</a>
   </span>
   <a id="Langly_DataStructures_Arrays_FlexibleArray_2_Langly_Traits_IPostpend_TElement_TSelf__Postpend_" data-uid="Langly.DataStructures.Arrays.FlexibleArray`2.Langly#Traits#IPostpend{TElement,TSelf}#Postpend*"></a>
   <h4 id="Langly_DataStructures_Arrays_FlexibleArray_2_Langly_Traits_IPostpend_TElement_TSelf__Postpend__0_" data-uid="Langly.DataStructures.Arrays.FlexibleArray`2.Langly#Traits#IPostpend{TElement,TSelf}#Postpend(`0)">IPostpend&lt;TElement, TSelf&gt;.Postpend(TElement)</h4>
@@ -996,7 +996,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Arrays_FlexibleArray_2_Langly_Traits_IPrepend_TElement_TSelf__Prepend__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.FlexibleArray%602.Langly%23Traits%23IPrepend%7BTElement%2CTSelf%7D%23Prepend(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/FlexibleArray`2.cs/#L116">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/FlexibleArray`2.cs/#L117">View Source</a>
   </span>
   <a id="Langly_DataStructures_Arrays_FlexibleArray_2_Langly_Traits_IPrepend_TElement_TSelf__Prepend_" data-uid="Langly.DataStructures.Arrays.FlexibleArray`2.Langly#Traits#IPrepend{TElement,TSelf}#Prepend*"></a>
   <h4 id="Langly_DataStructures_Arrays_FlexibleArray_2_Langly_Traits_IPrepend_TElement_TSelf__Prepend__0_" data-uid="Langly.DataStructures.Arrays.FlexibleArray`2.Langly#Traits#IPrepend{TElement,TSelf}#Prepend(`0)">IPrepend&lt;TElement, TSelf&gt;.Prepend(TElement)</h4>
@@ -1046,7 +1046,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Arrays_FlexibleArray_2_Langly_Traits_IRemove_TElement_TSelf__Remove__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.FlexibleArray%602.Langly%23Traits%23IRemove%7BTElement%2CTSelf%7D%23Remove(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/FlexibleArray`2.cs/#L120">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/FlexibleArray`2.cs/#L121">View Source</a>
   </span>
   <a id="Langly_DataStructures_Arrays_FlexibleArray_2_Langly_Traits_IRemove_TElement_TSelf__Remove_" data-uid="Langly.DataStructures.Arrays.FlexibleArray`2.Langly#Traits#IRemove{TElement,TSelf}#Remove*"></a>
   <h4 id="Langly_DataStructures_Arrays_FlexibleArray_2_Langly_Traits_IRemove_TElement_TSelf__Remove__0_" data-uid="Langly.DataStructures.Arrays.FlexibleArray`2.Langly#Traits#IRemove{TElement,TSelf}#Remove(`0)">IRemove&lt;TElement, TSelf&gt;.Remove(TElement)</h4>
@@ -1096,7 +1096,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Arrays_FlexibleArray_2_Langly_Traits_IRemove_TElement_TSelf__RemoveFirst__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.FlexibleArray%602.Langly%23Traits%23IRemove%7BTElement%2CTSelf%7D%23RemoveFirst(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/FlexibleArray`2.cs/#L124">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/FlexibleArray`2.cs/#L125">View Source</a>
   </span>
   <a id="Langly_DataStructures_Arrays_FlexibleArray_2_Langly_Traits_IRemove_TElement_TSelf__RemoveFirst_" data-uid="Langly.DataStructures.Arrays.FlexibleArray`2.Langly#Traits#IRemove{TElement,TSelf}#RemoveFirst*"></a>
   <h4 id="Langly_DataStructures_Arrays_FlexibleArray_2_Langly_Traits_IRemove_TElement_TSelf__RemoveFirst__0_" data-uid="Langly.DataStructures.Arrays.FlexibleArray`2.Langly#Traits#IRemove{TElement,TSelf}#RemoveFirst(`0)">IRemove&lt;TElement, TSelf&gt;.RemoveFirst(TElement)</h4>
@@ -1146,7 +1146,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Arrays_FlexibleArray_2_Langly_Traits_IRemove_TElement_TSelf__RemoveLast__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.FlexibleArray%602.Langly%23Traits%23IRemove%7BTElement%2CTSelf%7D%23RemoveLast(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/FlexibleArray`2.cs/#L128">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/FlexibleArray`2.cs/#L129">View Source</a>
   </span>
   <a id="Langly_DataStructures_Arrays_FlexibleArray_2_Langly_Traits_IRemove_TElement_TSelf__RemoveLast_" data-uid="Langly.DataStructures.Arrays.FlexibleArray`2.Langly#Traits#IRemove{TElement,TSelf}#RemoveLast*"></a>
   <h4 id="Langly_DataStructures_Arrays_FlexibleArray_2_Langly_Traits_IRemove_TElement_TSelf__RemoveLast__0_" data-uid="Langly.DataStructures.Arrays.FlexibleArray`2.Langly#Traits#IRemove{TElement,TSelf}#RemoveLast(`0)">IRemove&lt;TElement, TSelf&gt;.RemoveLast(TElement)</h4>
@@ -1196,7 +1196,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Arrays_FlexibleArray_2_Langly_Traits_IReplace_TElement_TElement_TSelf__Replace__0__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.FlexibleArray%602.Langly%23Traits%23IReplace%7BTElement%2CTElement%2CTSelf%7D%23Replace(%600%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/FlexibleArray`2.cs/#L132">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/FlexibleArray`2.cs/#L133">View Source</a>
   </span>
   <a id="Langly_DataStructures_Arrays_FlexibleArray_2_Langly_Traits_IReplace_TElement_TElement_TSelf__Replace_" data-uid="Langly.DataStructures.Arrays.FlexibleArray`2.Langly#Traits#IReplace{TElement,TElement,TSelf}#Replace*"></a>
   <h4 id="Langly_DataStructures_Arrays_FlexibleArray_2_Langly_Traits_IReplace_TElement_TElement_TSelf__Replace__0__0_" data-uid="Langly.DataStructures.Arrays.FlexibleArray`2.Langly#Traits#IReplace{TElement,TElement,TSelf}#Replace(`0,`0)">IReplace&lt;TElement, TElement, TSelf&gt;.Replace(TElement, TElement)</h4>

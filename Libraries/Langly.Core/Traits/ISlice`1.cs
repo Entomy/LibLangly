@@ -7,7 +7,7 @@ namespace Langly.Traits {
 	/// Indicates the collection is sliceable.
 	/// </summary>
 	/// <typeparam name="TResult">The resulting type; often itself.</typeparam>
-	public interface ISlice<out TResult> : ICount where TResult : ISlice<TResult> {
+	public interface ISlice<out TResult> : ICount {
 		/// <summary>
 		/// Gets a slice out of the collection within the specified range.
 		/// </summary>
@@ -49,6 +49,7 @@ namespace Langly.Traits {
 
 namespace Langly {
 	public static partial class TraitExtensions {
+		#region Slice()
 		/// <summary>
 		/// Forms a slice out of the collection.
 		/// </summary>
@@ -56,8 +57,31 @@ namespace Langly {
 		/// <typeparam name="TResult">The resulting type; often itself.</typeparam>
 		/// <returns>A slice that consists of all elements of the current collection.</returns>
 		[return: MaybeNull]
-		public static TResult Slice<TResult>([AllowNull] this ISlice<TResult> collection) where TResult : ISlice<TResult> => collection is not null ? collection.Slice() : default;
+		public static TResult Slice<TResult>([AllowNull] this ISlice<TResult> collection) => collection is not null ? collection.Slice() : default;
 
+		/// <summary>
+		/// Forms a slice out of the collection.
+		/// </summary>
+		/// <param name="collection">This collection.</param>
+		/// <returns>A slice that consists of all elements of the current collection.</returns>
+		public static Memory<TElement> Slice<TElement>([AllowNull] this TElement[] collection) => collection is not null ? collection.AsMemory() : default;
+
+		/// <summary>
+		/// Forms a slice out of the collection.
+		/// </summary>
+		/// <param name="collection">This collection.</param>
+		/// <returns>A slice that consists of all elements of the current collection.</returns>
+		public static Memory<TElement> Slice<TElement>(this Memory<TElement> collection) => collection;
+
+		/// <summary>
+		/// Forms a slice out of the collection.
+		/// </summary>
+		/// <param name="collection">This collection.</param>
+		/// <returns>A slice that consists of all elements of the current collection.</returns>
+		public static ReadOnlyMemory<TElement> Slice<TElement>(this ReadOnlyMemory<TElement> collection) => collection;
+		#endregion
+
+		#region Slice(nint)
 		/// <summary>
 		/// Forms a slice out of the collection that begins at a specified index.
 		/// </summary>
@@ -66,8 +90,34 @@ namespace Langly {
 		/// <typeparam name="TResult">The resulting type; often itself.</typeparam>
 		/// <returns>A slice that consists of all elements of the current collection from <paramref name="start"/> to the end of the collection.</returns>
 		[return: MaybeNull]
-		public static TResult Slice<TResult>([AllowNull] this ISlice<TResult> collection, nint start) where TResult : ISlice<TResult> => collection is not null ? collection.Slice(start) : default;
+		public static TResult Slice<TResult>([AllowNull] this ISlice<TResult> collection, nint start) => collection is not null ? collection.Slice(start) : default;
 
+		/// <summary>
+		/// Forms a slice out of the collection that begins at a specified index.
+		/// </summary>
+		/// <param name="collection">This collection.</param>
+		/// <param name="start">The index at which to begin the slice.</param>
+		/// <returns>A slice that consists of all elements of the current collection from <paramref name="start"/> to the end of the collection.</returns>
+		public static Memory<TElement> Slice<TElement>([AllowNull] this TElement[] collection, nint start) => collection is not null ? collection.AsMemory().Slice((Int32)start) : default;
+
+		/// <summary>
+		/// Forms a slice out of the collection that begins at a specified index.
+		/// </summary>
+		/// <param name="collection">This collection.</param>
+		/// <param name="start">The index at which to begin the slice.</param>
+		/// <returns>A slice that consists of all elements of the current collection from <paramref name="start"/> to the end of the collection.</returns>
+		public static Memory<TElement> Slice<TElement>(this Memory<TElement> collection, nint start) => collection.Slice((Int32)start);
+
+		/// <summary>
+		/// Forms a slice out of the collection that begins at a specified index.
+		/// </summary>
+		/// <param name="collection">This collection.</param>
+		/// <param name="start">The index at which to begin the slice.</param>
+		/// <returns>A slice that consists of all elements of the current collection from <paramref name="start"/> to the end of the collection.</returns>
+		public static ReadOnlyMemory<TElement> Slice<TElement>(this ReadOnlyMemory<TElement> collection, nint start) => collection.Slice((Int32)start);
+		#endregion
+
+		#region Slice(nint, nint)
 		/// <summary>
 		/// Forms a slice out of the current span starting at a specified index for a specified length.
 		/// </summary>
@@ -77,6 +127,34 @@ namespace Langly {
 		/// <typeparam name="TResult">The resulting type; often itself.</typeparam>
 		/// <returns>A slice that consists of <paramref name="length"/> elements from the current collection starting at <paramref name="start"/>.</returns>
 		[return: MaybeNull]
-		public static TResult Slice<TResult>([AllowNull] this ISlice<TResult> collection, nint start, nint length) where TResult : ISlice<TResult> => collection is not null ? collection.Slice(start, length) : default;
+		public static TResult Slice<TResult>([AllowNull] this ISlice<TResult> collection, nint start, nint length) => collection is not null ? collection.Slice(start, length) : default;
+
+		/// <summary>
+		/// Forms a slice out of the current span starting at a specified index for a specified length.
+		/// </summary>
+		/// <param name="collection">This collection.</param>
+		/// <param name="start">The index at which to begin the slice.</param>
+		/// <param name="length">The desired length for the slice.</param>
+		/// <returns>A slice that consists of <paramref name="length"/> elements from the current collection starting at <paramref name="start"/>.</returns>
+		public static Memory<TElement> Slice<TElement>([AllowNull] this TElement[] collection, nint start, nint length) => collection is not null ? collection.AsMemory().Slice((Int32)start, (Int32)length) : default;
+
+		/// <summary>
+		/// Forms a slice out of the current span starting at a specified index for a specified length.
+		/// </summary>
+		/// <param name="collection">This collection.</param>
+		/// <param name="start">The index at which to begin the slice.</param>
+		/// <param name="length">The desired length for the slice.</param>
+		/// <returns>A slice that consists of <paramref name="length"/> elements from the current collection starting at <paramref name="start"/>.</returns>
+		public static Memory<TElement> Slice<TElement>(this Memory<TElement> collection, nint start, nint length) => collection.Slice((Int32)start, (Int32)length);
+
+		/// <summary>
+		/// Forms a slice out of the current span starting at a specified index for a specified length.
+		/// </summary>
+		/// <param name="collection">This collection.</param>
+		/// <param name="start">The index at which to begin the slice.</param>
+		/// <param name="length">The desired length for the slice.</param>
+		/// <returns>A slice that consists of <paramref name="length"/> elements from the current collection starting at <paramref name="start"/>.</returns>
+		public static ReadOnlyMemory<TElement> Slice<TElement>(this ReadOnlyMemory<TElement> collection, nint start, nint length) => collection.Slice((Int32)start, (Int32)length);
+		#endregion
 	}
 }

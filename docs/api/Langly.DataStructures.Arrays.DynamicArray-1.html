@@ -105,7 +105,7 @@
     <div><a class="xref" href="Langly.Traits.IReplace-2.html">IReplace</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.Arrays.DynamicArray-1.html">DynamicArray</a>&lt;TElement&gt;&gt;</div>
     <div><a class="xref" href="Langly.Traits.IReplace-3.html">IReplace</a>&lt;TElement, TElement, <a class="xref" href="Langly.DataStructures.Arrays.DynamicArray-1.html">DynamicArray</a>&lt;TElement&gt;&gt;</div>
     <div><a class="xref" href="Langly.Traits.IShift-1.html">IShift</a>&lt;<a class="xref" href="Langly.DataStructures.Arrays.DynamicArray-1.html">DynamicArray</a>&lt;TElement&gt;&gt;</div>
-    <div><a class="xref" href="Langly.Traits.ISlice-1.html">ISlice</a>&lt;<a class="xref" href="Langly.DataStructures.Array-1.html">Array</a>&lt;TElement&gt;&gt;</div>
+    <div><a class="xref" href="Langly.Traits.ISlice-1.html">ISlice</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;TElement&gt;&gt;</div>
     <div><a class="xref" href="Langly.Traits.ISequence-2.html">ISequence</a>&lt;TElement, <a class="xref" href="Langly.DataStructures.Arrays.FlexibleArray-2.Enumerator.html">FlexibleArray.Enumerator</a>&lt;&gt;&gt;</div>
     <div><a class="xref" href="Langly.Traits.IContains-1.html">IContains</a>&lt;TElement&gt;</div>
     <div><a class="xref" href="Langly.Traits.ICount.html">ICount</a></div>
@@ -226,7 +226,7 @@
   <h6><strong>Assembly</strong>: Langly.Arrays.dll</h6>
   <h5 id="Langly_DataStructures_Arrays_DynamicArray_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class DynamicArray&lt;TElement&gt; : FlexibleArray&lt;TElement, DynamicArray&lt;TElement&gt;&gt;, IEquals&lt;DynamicArray&lt;TElement&gt;&gt;, IEquatable&lt;DynamicArray&lt;TElement&gt;&gt;, IEquals&lt;IEquals&lt;DynamicArray&lt;TElement&gt;&gt;&gt;, IEquatable&lt;IEquals&lt;DynamicArray&lt;TElement&gt;&gt;&gt;, IAdd&lt;TElement, DynamicArray&lt;TElement&gt;&gt;, IClear&lt;DynamicArray&lt;TElement&gt;&gt;, IConcat&lt;TElement, DynamicArray&lt;TElement&gt;&gt;, IPostpend&lt;TElement, DynamicArray&lt;TElement&gt;&gt;, IPrepend&lt;TElement, DynamicArray&lt;TElement&gt;&gt;, IIndex&lt;TElement&gt;, IIndex&lt;nint, TElement&gt;, IIndexReadOnly&lt;TElement&gt;, IIndexReadOnly&lt;nint, TElement&gt;, IInsert&lt;TElement, DynamicArray&lt;TElement&gt;&gt;, IInsert&lt;nint, TElement, DynamicArray&lt;TElement&gt;&gt;, IRemove&lt;TElement, DynamicArray&lt;TElement&gt;&gt;, IReplace&lt;TElement, DynamicArray&lt;TElement&gt;&gt;, IReplace&lt;TElement, TElement, DynamicArray&lt;TElement&gt;&gt;, IShift&lt;DynamicArray&lt;TElement&gt;&gt;, ISlice&lt;Array&lt;TElement&gt;&gt;, ISequence&lt;TElement, FlexibleArray&lt;TElement, DynamicArray&lt;TElement&gt;&gt;.Enumerator&gt;, IContains&lt;TElement&gt;, ICount, IEnumerable&lt;TElement&gt;, IEnumerable, IResize&lt;DynamicArray&lt;TElement&gt;&gt;, ICapacity</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class DynamicArray&lt;TElement&gt; : FlexibleArray&lt;TElement, DynamicArray&lt;TElement&gt;&gt;, IEquals&lt;DynamicArray&lt;TElement&gt;&gt;, IEquatable&lt;DynamicArray&lt;TElement&gt;&gt;, IEquals&lt;IEquals&lt;DynamicArray&lt;TElement&gt;&gt;&gt;, IEquatable&lt;IEquals&lt;DynamicArray&lt;TElement&gt;&gt;&gt;, IAdd&lt;TElement, DynamicArray&lt;TElement&gt;&gt;, IClear&lt;DynamicArray&lt;TElement&gt;&gt;, IConcat&lt;TElement, DynamicArray&lt;TElement&gt;&gt;, IPostpend&lt;TElement, DynamicArray&lt;TElement&gt;&gt;, IPrepend&lt;TElement, DynamicArray&lt;TElement&gt;&gt;, IIndex&lt;TElement&gt;, IIndex&lt;nint, TElement&gt;, IIndexReadOnly&lt;TElement&gt;, IIndexReadOnly&lt;nint, TElement&gt;, IInsert&lt;TElement, DynamicArray&lt;TElement&gt;&gt;, IInsert&lt;nint, TElement, DynamicArray&lt;TElement&gt;&gt;, IRemove&lt;TElement, DynamicArray&lt;TElement&gt;&gt;, IReplace&lt;TElement, DynamicArray&lt;TElement&gt;&gt;, IReplace&lt;TElement, TElement, DynamicArray&lt;TElement&gt;&gt;, IShift&lt;DynamicArray&lt;TElement&gt;&gt;, ISlice&lt;Memory&lt;TElement&gt;&gt;, ISequence&lt;TElement, FlexibleArray&lt;TElement, DynamicArray&lt;TElement&gt;&gt;.Enumerator&gt;, IContains&lt;TElement&gt;, ICount, IEnumerable&lt;TElement&gt;, IEnumerable, IResize&lt;DynamicArray&lt;TElement&gt;&gt;, ICapacity</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -248,10 +248,26 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Arrays_DynamicArray_1__ctor.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.DynamicArray%601.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/DynamicArray`1.cs/#L15">View Source</a>
+  </span>
+  <a id="Langly_DataStructures_Arrays_DynamicArray_1__ctor_" data-uid="Langly.DataStructures.Arrays.DynamicArray`1.#ctor*"></a>
+  <h4 id="Langly_DataStructures_Arrays_DynamicArray_1__ctor" data-uid="Langly.DataStructures.Arrays.DynamicArray`1.#ctor">DynamicArray()</h4>
+  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Langly.DataStructures.Arrays.DynamicArray-1.html">DynamicArray&lt;TElement&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DynamicArray()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Arrays_DynamicArray_1__ctor_nint_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.DynamicArray%601.%23ctor(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/DynamicArray`1.cs/#L22">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/DynamicArray`1.cs/#L21">View Source</a>
   </span>
   <a id="Langly_DataStructures_Arrays_DynamicArray_1__ctor_" data-uid="Langly.DataStructures.Arrays.DynamicArray`1.#ctor*"></a>
   <h4 id="Langly_DataStructures_Arrays_DynamicArray_1__ctor_nint_" data-uid="Langly.DataStructures.Arrays.DynamicArray`1.#ctor(nint)">DynamicArray(nint)</h4>
@@ -285,7 +301,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Arrays_DynamicArray_1__ctor_nint_Langly_DataStructures_Filter_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.DynamicArray%601.%23ctor(nint%2CLangly.DataStructures.Filter)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/DynamicArray`1.cs/#L29">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/DynamicArray`1.cs/#L28">View Source</a>
   </span>
   <a id="Langly_DataStructures_Arrays_DynamicArray_1__ctor_" data-uid="Langly.DataStructures.Arrays.DynamicArray`1.#ctor*"></a>
   <h4 id="Langly_DataStructures_Arrays_DynamicArray_1__ctor_nint_Langly_DataStructures_Filter_" data-uid="Langly.DataStructures.Arrays.DynamicArray`1.#ctor(nint,Langly.DataStructures.Filter)">DynamicArray(nint, Filter)</h4>
@@ -327,7 +343,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Arrays_DynamicArray_1_Capacity.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.DynamicArray%601.Capacity%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/DynamicArray`1.cs/#L46">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/DynamicArray`1.cs/#L45">View Source</a>
   </span>
   <a id="Langly_DataStructures_Arrays_DynamicArray_1_Capacity_" data-uid="Langly.DataStructures.Arrays.DynamicArray`1.Capacity*"></a>
   <h4 id="Langly_DataStructures_Arrays_DynamicArray_1_Capacity" data-uid="Langly.DataStructures.Arrays.DynamicArray`1.Capacity">Capacity</h4>
@@ -352,37 +368,6 @@
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Arrays_DynamicArray_1_Empty.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.DynamicArray%601.Empty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/DynamicArray`1.cs/#L15">View Source</a>
-  </span>
-  <a id="Langly_DataStructures_Arrays_DynamicArray_1_Empty_" data-uid="Langly.DataStructures.Arrays.DynamicArray`1.Empty*"></a>
-  <h4 id="Langly_DataStructures_Arrays_DynamicArray_1_Empty" data-uid="Langly.DataStructures.Arrays.DynamicArray`1.Empty">Empty</h4>
-  <div class="markdown level1 summary"><p>An empty <a class="xref" href="Langly.DataStructures.Arrays.DynamicArray-1.html">DynamicArray&lt;TElement&gt;</a> singleton.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static DynamicArray&lt;TElement&gt; Empty { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Langly.DataStructures.Arrays.DynamicArray-1.html">DynamicArray</a>&lt;TElement&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
@@ -390,7 +375,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Arrays_DynamicArray_1_Insert_nint__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.DynamicArray%601.Insert(nint%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/DynamicArray`1.cs/#L75">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/DynamicArray`1.cs/#L67">View Source</a>
   </span>
   <a id="Langly_DataStructures_Arrays_DynamicArray_1_Insert_" data-uid="Langly.DataStructures.Arrays.DynamicArray`1.Insert*"></a>
   <h4 id="Langly_DataStructures_Arrays_DynamicArray_1_Insert_nint__0_" data-uid="Langly.DataStructures.Arrays.DynamicArray`1.Insert(nint,`0)">Insert(nint, TElement)</h4>
@@ -448,7 +433,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Arrays_DynamicArray_1_Postpend__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.DynamicArray%601.Postpend(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/DynamicArray`1.cs/#L79">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/DynamicArray`1.cs/#L71">View Source</a>
   </span>
   <a id="Langly_DataStructures_Arrays_DynamicArray_1_Postpend_" data-uid="Langly.DataStructures.Arrays.DynamicArray`1.Postpend*"></a>
   <h4 id="Langly_DataStructures_Arrays_DynamicArray_1_Postpend__0_" data-uid="Langly.DataStructures.Arrays.DynamicArray`1.Postpend(`0)">Postpend(TElement)</h4>
@@ -500,7 +485,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Arrays_DynamicArray_1_Prepend__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.DynamicArray%601.Prepend(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/DynamicArray`1.cs/#L88">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/DynamicArray`1.cs/#L80">View Source</a>
   </span>
   <a id="Langly_DataStructures_Arrays_DynamicArray_1_Prepend_" data-uid="Langly.DataStructures.Arrays.DynamicArray`1.Prepend*"></a>
   <h4 id="Langly_DataStructures_Arrays_DynamicArray_1_Prepend__0_" data-uid="Langly.DataStructures.Arrays.DynamicArray`1.Prepend(`0)">Prepend(TElement)</h4>
@@ -554,7 +539,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Arrays_DynamicArray_1_op_Implicit__0____Langly_DataStructures_Arrays_DynamicArray__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.DynamicArray%601.op_Implicit(%600%5B%5D)~Langly.DataStructures.Arrays.DynamicArray%7B%600%7D%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/DynamicArray`1.cs/#L55">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/DynamicArray`1.cs/#L54">View Source</a>
   </span>
   <a id="Langly_DataStructures_Arrays_DynamicArray_1_op_Implicit_" data-uid="Langly.DataStructures.Arrays.DynamicArray`1.op_Implicit*"></a>
   <h4 id="Langly_DataStructures_Arrays_DynamicArray_1_op_Implicit__0____Langly_DataStructures_Arrays_DynamicArray__0_" data-uid="Langly.DataStructures.Arrays.DynamicArray`1.op_Implicit(`0[])~Langly.DataStructures.Arrays.DynamicArray{`0}">Implicit(TElement[] to DynamicArray&lt;TElement&gt;)</h4>
@@ -579,55 +564,6 @@
         <td>TElement[]</td>
         <td><span class="parametername">array</span></td>
         <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.array">Array</a> to convert.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Langly.DataStructures.Arrays.DynamicArray-1.html">DynamicArray</a>&lt;TElement&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_DataStructures_Arrays_DynamicArray_1_op_Implicit_System_Memory__0___Langly_DataStructures_Arrays_DynamicArray__0_.md&amp;value=---%0Auid%3A%20Langly.DataStructures.Arrays.DynamicArray%601.op_Implicit(System.Memory%7B%600%7D)~Langly.DataStructures.Arrays.DynamicArray%7B%600%7D%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Arrays/DataStructures/Arrays/DynamicArray`1.cs/#L62">View Source</a>
-  </span>
-  <a id="Langly_DataStructures_Arrays_DynamicArray_1_op_Implicit_" data-uid="Langly.DataStructures.Arrays.DynamicArray`1.op_Implicit*"></a>
-  <h4 id="Langly_DataStructures_Arrays_DynamicArray_1_op_Implicit_System_Memory__0___Langly_DataStructures_Arrays_DynamicArray__0_" data-uid="Langly.DataStructures.Arrays.DynamicArray`1.op_Implicit(System.Memory{`0})~Langly.DataStructures.Arrays.DynamicArray{`0}">Implicit(Memory&lt;TElement&gt; to DynamicArray&lt;TElement&gt;)</h4>
-  <div class="markdown level1 summary"><p>Converts the <code data-dev-comment-type="paramref" class="paramref">memory</code> to a <a class="xref" href="Langly.DataStructures.Arrays.DynamicArray-1.html">DynamicArray&lt;TElement&gt;</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static implicit operator DynamicArray&lt;TElement&gt;(Memory&lt;TElement&gt; memory)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;TElement&gt;</td>
-        <td><span class="parametername">memory</span></td>
-        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory&lt;T&gt;</a> to convert.</p>
 </td>
       </tr>
     </tbody>
