@@ -11,7 +11,7 @@ namespace Langly {
 	/// <typeparam name="TElement">The type of the elements in the dictionary.</typeparam>
 	public sealed partial class Dictionary<TElement> :
 		IContains<TElement>,
-		IIndexText<TElement>, IIndexUnsafe<Char, TElement>,
+		IIndexUnsafe<Char, TElement>, IIndex<String, TElement>, IIndex<Char[], TElement>, IIndex<Memory<Char>, TElement>, IIndex<ReadOnlyMemory<Char>, TElement>,
 		IInsertText<TElement, Dictionary<TElement>>,
 		IReplace<TElement, Dictionary<TElement>>,
 		IParseUnsafe<TElement> {

@@ -10,7 +10,6 @@ namespace Langly {
 		/// Represents the <see cref="Node"/> of a <see cref="Dictionary{TElement}"/>.
 		/// </summary>
 		private sealed class Node : MultiwayNode<Char, TElement, Node>,
-			IIndexReadOnlyText<Node>, IIndexReadOnlyUnsafe<Char, Node>,
 			IInsertText<TElement, Node>,
 			IParseUnsafe<TElement> {
 			/// <summary>
