@@ -368,5 +368,17 @@ namespace Langly {
 		[return: MaybeNull]
 		public static TResult Postpend<TElement, TResult, TEnumerator>([AllowNull] this IPostpend<TElement, TResult> collection, [AllowNull] ISequence<TElement, TEnumerator> elements) where TResult : IPostpend<TElement, TResult> where TEnumerator : IEnumerator<TElement> => collection is not null ? collection.Postpend(elements) : (TResult)collection;
 		#endregion
+
+		#region Postpend(Collection, String)
+		/// <summary>
+		/// Postpends the elements onto this object.
+		/// </summary>
+		/// <typeparam name="TResult">The resulting type; often itself.</typeparam>
+		/// <param name="collection">This collection.</param>
+		/// <param name="elements">The elements to postpend.</param>
+		/// <returns>If the postpend occurred successfully, returns a <typeparamref name="TResult"/> containing the original and postpended elements; otherwise, <see langword="null"/>.</returns>
+		[return: MaybeNull]
+		public static TResult Postpend<TResult>([AllowNull] this IPostpend<Char, TResult> collection, [AllowNull] String elements) where TResult : IPostpend<Char, TResult> => collection is not null && elements is not null ? collection.Postpend(elements.AsMemory()) : (TResult)collection;
+		#endregion
 	}
 }

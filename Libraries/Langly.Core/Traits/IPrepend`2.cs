@@ -363,5 +363,17 @@ namespace Langly {
 		[return: MaybeNull]
 		public static TResult Prepend<TElement, TResult, TEnumerator>([AllowNull] this IPrepend<TElement, TResult> collection, [AllowNull] ISequence<TElement, TEnumerator> elements) where TResult : IPrepend<TElement, TResult> where TEnumerator : IEnumerator<TElement> => collection is not null ? collection.Prepend(elements) : (TResult)collection;
 		#endregion
+
+		#region Prepend(Collection, String)
+		/// <summary>
+		/// Prepends the elements onto this object.
+		/// </summary>
+		/// <typeparam name="TResult">The resulting type; often itself.</typeparam>
+		/// <param name="collection">This collection.</param>
+		/// <param name="elements">The elements to prepend.</param>
+		/// <returns>If the prepend occurred successfully, returns a <typeparamref name="TResult"/> containing the original and prepended elements; otherwise, <see langword="null"/>.</returns>
+		[return: MaybeNull]
+		public static TResult Prepend<TResult>([AllowNull] this IPrepend<Char, TResult> collection, [AllowNull] String elements) where TResult : IPrepend<Char, TResult> => collection is not null ? collection.Prepend(elements.AsMemory()) : (TResult)collection;
+		#endregion
 	}
 }

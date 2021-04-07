@@ -13,7 +13,7 @@ namespace Langly {
 	/// </remarks>
 	public sealed partial class Rope : DataStructure<Glyph, Rope, Rope.Enumerator>,
 		IAdd<Char, Rope>,
-		IConcatText<Rope> {
+		IConcat<Char, Rope> {
 		/// <summary>
 		/// The head node of the rope.
 		/// </summary>
