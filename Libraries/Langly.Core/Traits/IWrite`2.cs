@@ -132,6 +132,16 @@ namespace Langly {
 		/// <summary>
 		/// Writes the <paramref name="elements"/> to the <paramref name="stream"/>.
 		/// </summary>
+		/// <typeparam name="TResult">The type of the error object.</typeparam>
+		/// <param name="stream">The stream to write to.</param>
+		/// <param name="elements">The <see cref="String"/> to write.</param>
+		/// <returns>A <typeparamref name="TResult"/> instance if successful; otherwise, <see langword="null"/>.</returns>
+		[return: MaybeNull]
+		public static TResult Write<TResult>([AllowNull] this IWrite<Char, TResult> stream, [AllowNull] String elements) where TResult : IWrite<Char, TResult> => stream is not null && elements is not null ? stream.Write(elements.AsMemory()) : (TResult)stream;
+
+		/// <summary>
+		/// Writes the <paramref name="elements"/> to the <paramref name="stream"/>.
+		/// </summary>
 		/// <typeparam name="TElement">The type of the element to write.</typeparam>
 		/// <typeparam name="TResult">The type of the error object.</typeparam>
 		/// <param name="stream">The stream to write to.</param>
@@ -161,6 +171,65 @@ namespace Langly {
 		/// <returns>A <typeparamref name="TResult"/> instance if successful; otherwise, <see langword="null"/>.</returns>
 		[return: MaybeNull]
 		public static TResult Write<TElement, TResult>([AllowNull] this IWrite<TElement, TResult> stream, ReadOnlyMemory<TElement> elements) where TResult : IWrite<TElement, TResult> => stream is not null ? stream.Write(elements) : (TResult)stream;
+
+		/// <summary>
+		/// Writes a line terminator to the <paramref name="stream"/>.
+		/// </summary>
+		/// <typeparam name="TResult">The resulting type; often itself.</typeparam>
+		/// <param name="stream">The stream to write to.</param>
+		/// <returns>A <typeparamref name="TResult"/> instance if successful; otherwise, <see langword="null"/>.</returns>
+		[return: MaybeNull]
+		public static TResult WriteLine<TResult>([AllowNull] this IWrite<Char, TResult> stream) where TResult : IWrite<Char, TResult> => stream is not null ? stream.Write(Environment.NewLine) : (TResult)stream;
+
+		/// <summary>
+		/// Writes the <paramref name="element"/> and a line terminator to the <paramref name="stream"/>.
+		/// </summary>
+		/// <typeparam name="TResult">The resulting type; often itself.</typeparam>
+		/// <param name="stream">The stream to write to.</param>
+		/// <param name="element">The <see cref="Char"/> value to write.</param>
+		/// <returns>A <typeparamref name="TResult"/> instance if successful; otherwise, <see langword="null"/>.</returns>
+		[return: MaybeNull]
+		public static TResult WriteLine<TResult>([AllowNull] this IWrite<Char, TResult> stream, Char element) where TResult : IWrite<Char, TResult> => stream is not null ? stream.Write(element).WriteLine() : (TResult)stream;
+
+		/// <summary>
+		/// Writes the <paramref name="elements"/> and a line terminator to the <paramref name="stream"/>.
+		/// </summary>
+		/// <typeparam name="TResult">The resulting type; often itself.</typeparam>
+		/// <param name="stream">The stream to write to.</param>
+		/// <param name="elements">The <see cref="String"/> value to write.</param>
+		/// <returns>A <typeparamref name="TResult"/> instance if successful; otherwise, <see langword="null"/>.</returns>
+		[return: MaybeNull]
+		public static TResult WriteLine<TResult>([AllowNull] this IWrite<Char, TResult> stream, [AllowNull] String elements) where TResult : IWrite<Char, TResult> => stream is not null ? stream.Write(elements).WriteLine() : (TResult)stream;
+
+		/// <summary>
+		/// Writes the <paramref name="elements"/> and a line terminator to the <paramref name="stream"/>
+		/// </summary>
+		/// <typeparam name="TResult">The resulting type; often itself.</typeparam>
+		/// <param name="stream">The stream to write to.</param>
+		/// <param name="elements">The <see cref="Memory{T}"/> of <see cref="Char"/> values to write.</param>
+		/// <returns>A <typeparamref name="TResult"/> instance if successful; otherwise, <see langword="null"/>.</returns>
+		[return: MaybeNull]
+		public static TResult WriteLine<TResult>([AllowNull] this IWrite<Char, TResult> stream, [AllowNull] params Char[] elements) where TResult : IWrite<Char, TResult> => stream is not null ? stream.Write(elements).WriteLine() : (TResult)stream;
+
+		/// <summary>
+		/// Writes the <paramref name="elements"/> and a line terminator to the <paramref name="stream"/>
+		/// </summary>
+		/// <typeparam name="TResult">The resulting type; often itself.</typeparam>
+		/// <param name="stream">The stream to write to.</param>
+		/// <param name="elements">The <see cref="Memory{T}"/> of <see cref="Char"/> values to write.</param>
+		/// <returns>A <typeparamref name="TResult"/> instance if successful; otherwise, <see langword="null"/>.</returns>
+		[return: MaybeNull]
+		public static TResult WriteLine<TResult>([AllowNull] this IWrite<Char, TResult> stream, Memory<Char> elements) where TResult : IWrite<Char, TResult> => stream is not null ? stream.Write(elements).WriteLine() : (TResult)stream;
+
+		/// <summary>
+		/// Writes the <paramref name="elements"/> and a line terminator to the <paramref name="stream"/>.
+		/// </summary>
+		/// <typeparam name="TResult">The resulting type; often itself.</typeparam>
+		/// <param name="stream">The stream to write to.</param>
+		/// <param name="elements">The <see cref="ReadOnlyMemory{T}"/> of <see cref="Char"/> values to write.</param>
+		/// <returns>A <typeparamref name="TResult"/> instance if successful; otherwise, <see langword="null"/>.</returns>
+		[return: MaybeNull]
+		public static TResult WriteLine<TResult>([AllowNull] this IWrite<Char, TResult> stream, ReadOnlyMemory<Char> elements) where TResult : IWrite<Char, TResult> => stream is not null ? stream.Write(elements).WriteLine() : (TResult)stream;
 
 		/// <summary>
 		/// Ensures <paramref name="amount"/> elements are loaded into this object.

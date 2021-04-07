@@ -17,6 +17,7 @@ namespace Langly {
 			ConsoleComponents.Error.Write(" Error: ");
 			ConsoleComponents.StateManager.SetForeground(Foreground);
 			ConsoleComponents.Error.Write(exception.Message);
+			ConsoleComponents.Error.WriteLine();
 		}
 		#endregion
 	}

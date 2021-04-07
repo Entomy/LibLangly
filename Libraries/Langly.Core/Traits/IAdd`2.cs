@@ -309,5 +309,20 @@ namespace Langly {
 		[return: MaybeNull]
 		public static TResult Add<TElement, TResult, TEnumerator>([AllowNull] this IAdd<TElement, TResult> collection, [AllowNull] ISequence<TElement, TEnumerator> elements) where TEnumerator : IEnumerator<TElement> where TResult : IAdd<TElement, TResult> => collection is not null ? collection.Add(elements) : (TResult)collection;
 		#endregion
+
+		#region Add(Collection, String)
+		/// <summary>
+		/// Adds the elements to this collection.
+		/// </summary>
+		/// <typeparam name="TResult">The resulting type; often itself.</typeparam>
+		/// <param name="collection">This collection.</param>
+		/// <param name="elements">The elements to add.</param>
+		/// <returns>If the add occurred successfully, returns a <typeparamref name="TResult"/> containing the original and added elements; otherwise, <see langword="null"/>.</returns>
+		/// <remarks>
+		/// The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.
+		/// </remarks>
+		[return: MaybeNull]
+		public static TResult Add<TResult>([AllowNull] this IAdd<Char, TResult> collection, [AllowNull] String elements) where TResult : IAdd<Char, TResult> => collection is not null && elements is not null ? collection.Add(elements.AsMemory()) : (TResult)collection;
+		#endregion
 	}
 }

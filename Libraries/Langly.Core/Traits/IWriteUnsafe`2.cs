@@ -46,6 +46,6 @@ namespace Langly {
 		/// <returns>A <typeparamref name="TResult"/> instance if successful; otherwise, <see langword="null"/>.</returns>
 		[CLSCompliant(false)]
 		[return: MaybeNull]
-		public static unsafe TResult WriteLine<TResult>([AllowNull] this IWriteUnsafe<Char, TResult> stream, [AllowNull] Char* elements, Int32 length) where TResult : IWriteText<TResult>, IWriteUnsafe<Char, TResult> => stream is not null ? stream.Write(elements, length).WriteLine() : (TResult)stream;
+		public static unsafe TResult WriteLine<TResult>([AllowNull] this IWriteUnsafe<Char, TResult> stream, [AllowNull] Char* elements, Int32 length) where TResult : IWriteUnsafe<Char, TResult> => stream is not null ? stream.Write(elements, length).WriteLine() : (TResult)stream;
 	}
 }

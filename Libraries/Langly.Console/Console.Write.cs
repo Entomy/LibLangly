@@ -242,11 +242,10 @@ namespace Langly {
 		/// </summary>
 		/// <param name="text">The text to write.</param>
 		public static void WriteLine([AllowNull] String text) {
-			if (text is null) {
-				ConsoleComponents.Writer.WriteLine();
-				return;
+			if (text is not null) {
+				ConsoleComponents.Writer.Write(text);
 			}
-			ConsoleComponents.Writer.WriteLine(text);
+			ConsoleComponents.Writer.WriteLine();
 		}
 
 		/// <summary>
@@ -266,7 +265,8 @@ namespace Langly {
 			if (background is not null) {
 				ConsoleComponents.StateManager.SetBackground(background);
 			}
-			ConsoleComponents.Writer.WriteLine(text);
+			ConsoleComponents.Writer.Write(text);
+			ConsoleComponents.Writer.WriteLine();
 			ConsoleComponents.StateManager.SetForeground(Foreground);
 			ConsoleComponents.StateManager.SetBackground(Background);
 		}
@@ -276,11 +276,10 @@ namespace Langly {
 		/// </summary>
 		/// <param name="text">The text to write.</param>
 		public static void WriteLine([AllowNull] Char[] text) {
-			if (text is null) {
-				ConsoleComponents.Writer.WriteLine();
-				return;
+			if (text is not null) {
+				ConsoleComponents.Writer.Write(text);
 			}
-			ConsoleComponents.Writer.WriteLine(text);
+			ConsoleComponents.Writer.WriteLine();
 		}
 
 		/// <summary>
@@ -300,7 +299,8 @@ namespace Langly {
 			if (background is not null) {
 				ConsoleComponents.StateManager.SetBackground(background);
 			}
-			ConsoleComponents.Writer.WriteLine(text);
+			ConsoleComponents.Writer.Write(text);
+			ConsoleComponents.Writer.WriteLine();
 			ConsoleComponents.StateManager.SetForeground(Foreground);
 			ConsoleComponents.StateManager.SetBackground(Background);
 		}
@@ -445,11 +445,10 @@ namespace Langly {
 		/// </summary>
 		/// <param name="obj">The object to write.</param>
 		public static void WriteLine([AllowNull] System.Object obj) {
-			if (obj is null) {
-				ConsoleComponents.Writer.WriteLine();
-				return;
+			if (obj is not null) {
+				ConsoleComponents.Writer.Write(obj.ToString());
 			}
-			ConsoleComponents.Writer.WriteLine(obj.ToString());
+			ConsoleComponents.Writer.WriteLine();
 		}
 
 		/// <summary>
@@ -469,7 +468,8 @@ namespace Langly {
 			if (background is not null) {
 				ConsoleComponents.StateManager.SetBackground(background);
 			}
-			ConsoleComponents.Writer.WriteLine(obj.ToString());
+			ConsoleComponents.Writer.Write(obj.ToString());
+			ConsoleComponents.Writer.WriteLine();
 			ConsoleComponents.StateManager.SetForeground(Foreground);
 			ConsoleComponents.StateManager.SetBackground(Background);
 		}

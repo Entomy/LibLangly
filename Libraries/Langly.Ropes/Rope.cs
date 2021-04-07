@@ -12,7 +12,7 @@ namespace Langly {
 	/// <para>The actual data structure here is a hybridized skip-list and partially-unrolled-list, just like a Chain. However, there is an additional internal list, which maintains the indicies of <see cref="Glyph"/>s. This list is used to rapidly seek and jump to various positions within the <see cref="Rope"/>.</para>
 	/// </remarks>
 	public sealed partial class Rope : DataStructure<Glyph, Rope, Rope.Enumerator>,
-		IAddText<Rope>,
+		IAdd<Char, Rope>,
 		IConcatText<Rope> {
 		/// <summary>
 		/// The head node of the rope.

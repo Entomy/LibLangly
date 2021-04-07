@@ -89,7 +89,6 @@
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Langly.Rope.html">Rope</a>&gt;</div>
     <div><a class="xref" href="Langly.Traits.IEquals-1.html">IEquals</a>&lt;<a class="xref" href="Langly.Traits.IEquals-1.html">IEquals</a>&lt;<a class="xref" href="Langly.Rope.html">Rope</a>&gt;&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Langly.Traits.IEquals-1.html">IEquals</a>&lt;<a class="xref" href="Langly.Rope.html">Rope</a>&gt;&gt;</div>
-    <div><a class="xref" href="Langly.Traits.IAddText-1.html">IAddText</a>&lt;<a class="xref" href="Langly.Rope.html">Rope</a>&gt;</div>
     <div><a class="xref" href="Langly.Traits.IAdd-2.html">IAdd</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>, <a class="xref" href="Langly.Rope.html">Rope</a>&gt;</div>
     <div><a class="xref" href="Langly.Traits.IConcatText-1.html">IConcatText</a>&lt;<a class="xref" href="Langly.Rope.html">Rope</a>&gt;</div>
     <div><a class="xref" href="Langly.Traits.IConcat-2.html">IConcat</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>, <a class="xref" href="Langly.Rope.html">Rope</a>&gt;</div>
@@ -164,7 +163,7 @@
   <h6><strong>Assembly</strong>: Langly.Ropes.dll</h6>
   <h5 id="Langly_Rope_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class Rope : DataStructure&lt;Glyph, Rope, Rope.Enumerator&gt;, IEquals&lt;Rope&gt;, IEquatable&lt;Rope&gt;, IEquals&lt;IEquals&lt;Rope&gt;&gt;, IEquatable&lt;IEquals&lt;Rope&gt;&gt;, IAddText&lt;Rope&gt;, IAdd&lt;char, Rope&gt;, IConcatText&lt;Rope&gt;, IConcat&lt;char, Rope&gt;, IPostpendText&lt;Rope&gt;, IPostpend&lt;char, Rope&gt;, IPrependText&lt;Rope&gt;, IPrepend&lt;char, Rope&gt;, ISequence&lt;Glyph, Rope.Enumerator&gt;, IContains&lt;Glyph&gt;, ICount, IEnumerable&lt;Glyph&gt;, IEnumerable</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class Rope : DataStructure&lt;Glyph, Rope, Rope.Enumerator&gt;, IEquals&lt;Rope&gt;, IEquatable&lt;Rope&gt;, IEquals&lt;IEquals&lt;Rope&gt;&gt;, IEquatable&lt;IEquals&lt;Rope&gt;&gt;, IAdd&lt;char, Rope&gt;, IConcatText&lt;Rope&gt;, IConcat&lt;char, Rope&gt;, IPostpendText&lt;Rope&gt;, IPostpend&lt;char, Rope&gt;, IPrependText&lt;Rope&gt;, IPrepend&lt;char, Rope&gt;, ISequence&lt;Glyph, Rope.Enumerator&gt;, IContains&lt;Glyph&gt;, ICount, IEnumerable&lt;Glyph&gt;, IEnumerable</code></pre>
   </div>
   <h5 id="Langly_Rope_remarks"><strong>Remarks</strong></h5>
   <div class="markdown level0 remarks"><p>This is, itself, a variation of a Chain, and is very similar to a Rope datastructure, only with some optimizations for ordered data. The Rope name is reused, but in the pedantic sense, this is not a Rope, as it&apos;s not a binary tree. Never-the-less, it serves the same role as a proper Rope.</p>
@@ -617,9 +616,6 @@
   </div>
   <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">System.IEquatable&lt;T&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="Langly.Traits.IAddText-1.html">IAddText&lt;TResult&gt;</a>
   </div>
   <div>
       <a class="xref" href="Langly.Traits.IAdd-2.html">IAdd&lt;TElement, TResult&gt;</a>

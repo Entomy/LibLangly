@@ -90,8 +90,6 @@
     <div><a class="xref" href="Langly.Internals.IConsoleWriter.html">IConsoleWriter</a></div>
     <div><a class="xref" href="Langly.Traits.IWriteSpan-2.html">IWriteSpan</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>, <a class="xref" href="Langly.Internals.IConsoleWriter.html">IConsoleWriter</a>&gt;</div>
     <div><a class="xref" href="Langly.Traits.IAddSpan-2.html">IAddSpan</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>, <a class="xref" href="Langly.Internals.IConsoleWriter.html">IConsoleWriter</a>&gt;</div>
-    <div><a class="xref" href="Langly.Traits.IWriteText-1.html">IWriteText</a>&lt;<a class="xref" href="Langly.Internals.IConsoleWriter.html">IConsoleWriter</a>&gt;</div>
-    <div><a class="xref" href="Langly.Traits.IAddText-1.html">IAddText</a>&lt;<a class="xref" href="Langly.Internals.IConsoleWriter.html">IConsoleWriter</a>&gt;</div>
     <div><a class="xref" href="Langly.Traits.IWriteUnsafe-2.html">IWriteUnsafe</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>, <a class="xref" href="Langly.Internals.IConsoleWriter.html">IConsoleWriter</a>&gt;</div>
     <div><a class="xref" href="Langly.Traits.IAddUnsafe-2.html">IAddUnsafe</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>, <a class="xref" href="Langly.Internals.IConsoleWriter.html">IConsoleWriter</a>&gt;</div>
     <div><a class="xref" href="Langly.Traits.IWrite-2.html">IWrite</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>, <a class="xref" href="Langly.Internals.IConsoleWriter.html">IConsoleWriter</a>&gt;</div>
@@ -99,8 +97,6 @@
     <div><a class="xref" href="Langly.Internals.IConsoleError.html">IConsoleError</a></div>
     <div><a class="xref" href="Langly.Traits.IWriteSpan-2.html">IWriteSpan</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>, <a class="xref" href="Langly.Internals.IConsoleError.html">IConsoleError</a>&gt;</div>
     <div><a class="xref" href="Langly.Traits.IAddSpan-2.html">IAddSpan</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>, <a class="xref" href="Langly.Internals.IConsoleError.html">IConsoleError</a>&gt;</div>
-    <div><a class="xref" href="Langly.Traits.IWriteText-1.html">IWriteText</a>&lt;<a class="xref" href="Langly.Internals.IConsoleError.html">IConsoleError</a>&gt;</div>
-    <div><a class="xref" href="Langly.Traits.IAddText-1.html">IAddText</a>&lt;<a class="xref" href="Langly.Internals.IConsoleError.html">IConsoleError</a>&gt;</div>
     <div><a class="xref" href="Langly.Traits.IWriteUnsafe-2.html">IWriteUnsafe</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>, <a class="xref" href="Langly.Internals.IConsoleError.html">IConsoleError</a>&gt;</div>
     <div><a class="xref" href="Langly.Traits.IAddUnsafe-2.html">IAddUnsafe</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>, <a class="xref" href="Langly.Internals.IConsoleError.html">IConsoleError</a>&gt;</div>
     <div><a class="xref" href="Langly.Traits.IWrite-2.html">IWrite</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>, <a class="xref" href="Langly.Internals.IConsoleError.html">IConsoleError</a>&gt;</div>
@@ -134,7 +130,7 @@
   <h6><strong>Assembly</strong>: Langly.Console.dll</h6>
   <h5 id="Langly_Internals_TestConsole_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class TestConsole : IConsoleReader, IPeek&lt;char, IConsoleReader&gt;, IReadUnsafe&lt;char, IConsoleReader&gt;, IRead&lt;char, IConsoleReader&gt;, IConsoleWriter, IWriteSpan&lt;char, IConsoleWriter&gt;, IAddSpan&lt;char, IConsoleWriter&gt;, IWriteText&lt;IConsoleWriter&gt;, IAddText&lt;IConsoleWriter&gt;, IWriteUnsafe&lt;char, IConsoleWriter&gt;, IAddUnsafe&lt;char, IConsoleWriter&gt;, IWrite&lt;char, IConsoleWriter&gt;, IAdd&lt;char, IConsoleWriter&gt;, IConsoleError, IWriteSpan&lt;char, IConsoleError&gt;, IAddSpan&lt;char, IConsoleError&gt;, IWriteText&lt;IConsoleError&gt;, IAddText&lt;IConsoleError&gt;, IWriteUnsafe&lt;char, IConsoleError&gt;, IAddUnsafe&lt;char, IConsoleError&gt;, IWrite&lt;char, IConsoleError&gt;, IAdd&lt;char, IConsoleError&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class TestConsole : IConsoleReader, IPeek&lt;char, IConsoleReader&gt;, IReadUnsafe&lt;char, IConsoleReader&gt;, IRead&lt;char, IConsoleReader&gt;, IConsoleWriter, IWriteSpan&lt;char, IConsoleWriter&gt;, IAddSpan&lt;char, IConsoleWriter&gt;, IWriteUnsafe&lt;char, IConsoleWriter&gt;, IAddUnsafe&lt;char, IConsoleWriter&gt;, IWrite&lt;char, IConsoleWriter&gt;, IAdd&lt;char, IConsoleWriter&gt;, IConsoleError, IWriteSpan&lt;char, IConsoleError&gt;, IAddSpan&lt;char, IConsoleError&gt;, IWriteUnsafe&lt;char, IConsoleError&gt;, IAddUnsafe&lt;char, IConsoleError&gt;, IWrite&lt;char, IConsoleError&gt;, IAdd&lt;char, IConsoleError&gt;</code></pre>
   </div>
   <h5 id="Langly_Internals_TestConsole_remarks"><strong>Remarks</strong></h5>
   <div class="markdown level0 remarks"><p>By injecting this into <a class="xref" href="Langly.Console.html">Console</a>, those operations will be passed here instead, enabling introspection.</p>
@@ -181,7 +177,8 @@
   </span>
   <a id="Langly_Internals_TestConsole_Readable_" data-uid="Langly.Internals.TestConsole.Readable*"></a>
   <h4 id="Langly_Internals_TestConsole_Readable" data-uid="Langly.Internals.TestConsole.Readable">Readable</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Can this be read from?</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -202,6 +199,9 @@
       </tr>
     </tbody>
   </table>
+  <h5 id="Langly_Internals_TestConsole_Readable_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This is a state indicator. Of course an <a class="xref" href="Langly.Traits.IRead-2.html">IRead&lt;TElement, TResult&gt;</a> can be read from, but that doesn't mean it can always be read from. Rather, this being <span class="xref">true</span> indicates the type can currently be read from.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Internals_TestConsole_Writable.md&amp;value=---%0Auid%3A%20Langly.Internals.TestConsole.Writable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -211,7 +211,8 @@
   </span>
   <a id="Langly_Internals_TestConsole_Writable_" data-uid="Langly.Internals.TestConsole.Writable*"></a>
   <h4 id="Langly_Internals_TestConsole_Writable" data-uid="Langly.Internals.TestConsole.Writable">Writable</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Can this be written to?</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -232,6 +233,9 @@
       </tr>
     </tbody>
   </table>
+  <h5 id="Langly_Internals_TestConsole_Writable_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This is a state indicator. Of course an <a class="xref" href="Langly.Traits.IWrite-2.html">IWrite&lt;TElement, TResult&gt;</a> can be written to, but that doesn't mean it can always be written to. Rather, this being <span class="xref">true</span> indicates the type can currently be written to.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Internals_TestConsole_Written.md&amp;value=---%0Auid%3A%20Langly.Internals.TestConsole.Written%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -321,7 +325,8 @@
   </span>
   <a id="Langly_Internals_TestConsole_Langly_Traits_IAdd_System_Char_Langly_Internals_IConsoleError__Add_" data-uid="Langly.Internals.TestConsole.Langly#Traits#IAdd{System#Char,Langly#Internals#IConsoleError}#Add*"></a>
   <h4 id="Langly_Internals_TestConsole_Langly_Traits_IAdd_System_Char_Langly_Internals_IConsoleError__Add_System_Char_" data-uid="Langly.Internals.TestConsole.Langly#Traits#IAdd{System#Char,Langly#Internals#IConsoleError}#Add(System.Char)">IAdd&lt;Char, IConsoleError&gt;.Add(Char)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds an element to this object.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -355,10 +360,14 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Langly.Internals.IConsoleError.html">IConsoleError</a></td>
-        <td></td>
+        <td><p>If the add occurred successfully, returns a <code data-dev-comment-type="typeparamref" class="typeparamref">TResult</code> containing the original and added elements; otherwise, <span class="xref">null</span>.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Langly_Internals_TestConsole_Langly_Traits_IAdd_System_Char_Langly_Internals_IConsoleError__Add_System_Char__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Internals_TestConsole_Langly_Traits_IAdd_System_Char_Langly_Internals_IConsoleWriter__Add_System_Char_.md&amp;value=---%0Auid%3A%20Langly.Internals.TestConsole.Langly%23Traits%23IAdd%7BSystem%23Char%2CLangly%23Internals%23IConsoleWriter%7D%23Add(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -368,7 +377,8 @@
   </span>
   <a id="Langly_Internals_TestConsole_Langly_Traits_IAdd_System_Char_Langly_Internals_IConsoleWriter__Add_" data-uid="Langly.Internals.TestConsole.Langly#Traits#IAdd{System#Char,Langly#Internals#IConsoleWriter}#Add*"></a>
   <h4 id="Langly_Internals_TestConsole_Langly_Traits_IAdd_System_Char_Langly_Internals_IConsoleWriter__Add_System_Char_" data-uid="Langly.Internals.TestConsole.Langly#Traits#IAdd{System#Char,Langly#Internals#IConsoleWriter}#Add(System.Char)">IAdd&lt;Char, IConsoleWriter&gt;.Add(Char)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds an element to this object.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -402,10 +412,14 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Langly.Internals.IConsoleWriter.html">IConsoleWriter</a></td>
-        <td></td>
+        <td><p>If the add occurred successfully, returns a <code data-dev-comment-type="typeparamref" class="typeparamref">TResult</code> containing the original and added elements; otherwise, <span class="xref">null</span>.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Langly_Internals_TestConsole_Langly_Traits_IAdd_System_Char_Langly_Internals_IConsoleWriter__Add_System_Char__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Internals_TestConsole_Langly_Traits_IPeek_System_Char_Langly_Internals_IConsoleReader__Peek_System_Char__.md&amp;value=---%0Auid%3A%20Langly.Internals.TestConsole.Langly%23Traits%23IPeek%7BSystem%23Char%2CLangly%23Internals%23IConsoleReader%7D%23Peek(System.Char%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -415,7 +429,8 @@
   </span>
   <a id="Langly_Internals_TestConsole_Langly_Traits_IPeek_System_Char_Langly_Internals_IConsoleReader__Peek_" data-uid="Langly.Internals.TestConsole.Langly#Traits#IPeek{System#Char,Langly#Internals#IConsoleReader}#Peek*"></a>
   <h4 id="Langly_Internals_TestConsole_Langly_Traits_IPeek_System_Char_Langly_Internals_IConsoleReader__Peek_System_Char__" data-uid="Langly.Internals.TestConsole.Langly#Traits#IPeek{System#Char,Langly#Internals#IConsoleReader}#Peek(System.Char@)">IPeek&lt;Char, IConsoleReader&gt;.Peek(out Char)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Peeks at the first element.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -462,7 +477,8 @@
   </span>
   <a id="Langly_Internals_TestConsole_Langly_Traits_IRead_System_Char_Langly_Internals_IConsoleReader__Read_" data-uid="Langly.Internals.TestConsole.Langly#Traits#IRead{System#Char,Langly#Internals#IConsoleReader}#Read*"></a>
   <h4 id="Langly_Internals_TestConsole_Langly_Traits_IRead_System_Char_Langly_Internals_IConsoleReader__Read_System_Char__" data-uid="Langly.Internals.TestConsole.Langly#Traits#IRead{System#Char,Langly#Internals#IConsoleReader}#Read(System.Char@)">IRead&lt;Char, IConsoleReader&gt;.Read(out Char)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Reads a <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -496,7 +512,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Langly.Internals.IConsoleReader.html">IConsoleReader</a></td>
-        <td></td>
+        <td><p>A <code data-dev-comment-type="typeparamref" class="typeparamref">TResult</code> instance if successful; otherwise, <span class="xref">null</span>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -523,12 +540,6 @@
       <a class="xref" href="Langly.Traits.IAddSpan-2.html">IAddSpan&lt;TElement, TResult&gt;</a>
   </div>
   <div>
-      <a class="xref" href="Langly.Traits.IWriteText-1.html">IWriteText&lt;TResult&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="Langly.Traits.IAddText-1.html">IAddText&lt;TResult&gt;</a>
-  </div>
-  <div>
       <a class="xref" href="Langly.Traits.IWriteUnsafe-2.html">IWriteUnsafe&lt;TElement, TResult&gt;</a>
   </div>
   <div>
@@ -548,12 +559,6 @@
   </div>
   <div>
       <a class="xref" href="Langly.Traits.IAddSpan-2.html">IAddSpan&lt;TElement, TResult&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="Langly.Traits.IWriteText-1.html">IWriteText&lt;TResult&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="Langly.Traits.IAddText-1.html">IAddText&lt;TResult&gt;</a>
   </div>
   <div>
       <a class="xref" href="Langly.Traits.IWriteUnsafe-2.html">IWriteUnsafe&lt;TElement, TResult&gt;</a>

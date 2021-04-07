@@ -50,5 +50,25 @@ namespace Langly {
 		/// <returns>A <typeparamref name="TResult"/> instance if successful; otherwise, <see langword="null"/>.</returns>
 		[return: MaybeNull]
 		public static TResult Write<TElement, TResult>([AllowNull] this IWriteSpan<TElement, TResult> stream, ReadOnlySpan<TElement> elements) where TResult : IWriteSpan<TElement, TResult> => stream is not null ? stream.Write(elements) : (TResult)stream;
+
+		/// <summary>
+		/// Writes the <paramref name="elements"/> and a line terminator to the <paramref name="stream"/>
+		/// </summary>
+		/// <typeparam name="TResult">The type of the error object.</typeparam>
+		/// <param name="stream">The stream to write to.</param>
+		/// <param name="elements">The <see cref="Span{T}"/> of <see cref="Char"/> values to write.</param>
+		/// <returns>A <typeparamref name="TResult"/> instance if successful; otherwise, <see langword="null"/>.</returns>
+		[return: MaybeNull]
+		public static TResult WriteLine<TResult>([AllowNull] this IWriteSpan<Char, TResult> stream, Span<Char> elements) where TResult : IWriteSpan<Char, TResult> => stream is not null ? stream.Write(elements).WriteLine() : (TResult)stream;
+
+		/// <summary>
+		/// Writes the <paramref name="elements"/> and a line terminator to the <paramref name="stream"/>
+		/// </summary>
+		/// <typeparam name="TResult">The type of the error object.</typeparam>
+		/// <param name="stream">The stream to write to.</param>
+		/// <param name="elements">The <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> values to write.</param>
+		/// <returns>A <typeparamref name="TResult"/> instance if successful; otherwise, <see langword="null"/>.</returns>
+		[return: MaybeNull]
+		public static TResult WriteLine<TResult>([AllowNull] this IWriteSpan<Char, TResult> stream, ReadOnlySpan<Char> elements) where TResult : IWriteSpan<Char, TResult> => stream is not null ? stream.Write(elements).WriteLine() : (TResult)stream;
 	}
 }
