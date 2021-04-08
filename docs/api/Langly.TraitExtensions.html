@@ -428,7 +428,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Add&lt;TResult&gt;(this IAdd&lt;char, TResult&gt; collection, string elements)
-
     where TResult : IAdd&lt;char, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1105,7 +1104,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Add&lt;TElement, TResult&gt;(this IAdd&lt;TElement, TResult&gt; collection, TElement element)
-
     where TResult : IAdd&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1187,7 +1185,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Add&lt;TElement, TResult&gt;(this IAdd&lt;TElement, TResult&gt; collection, params TElement[] elements)
-
     where TResult : IAdd&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1269,7 +1266,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Add&lt;TElement, TResult&gt;(this IAdd&lt;TElement, TResult&gt; collection, Memory&lt;TElement&gt; elements)
-
     where TResult : IAdd&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1351,7 +1347,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Add&lt;TElement, TResult&gt;(this IAdd&lt;TElement, TResult&gt; collection, ReadOnlyMemory&lt;TElement&gt; elements)
-
     where TResult : IAdd&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1433,7 +1428,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Add&lt;TElement, TResult&gt;(this IAddSpan&lt;TElement, TResult&gt; collection, ReadOnlySpan&lt;TElement&gt; elements)
-
     where TResult : IAddSpan&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1515,7 +1509,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Add&lt;TElement, TResult&gt;(this IAddSpan&lt;TElement, TResult&gt; collection, Span&lt;TElement&gt; elements)
-
     where TResult : IAddSpan&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1598,7 +1591,6 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, TResult&gt; collection, TElement*elements, int length)
-
     where TElement : struct where TResult : IAddUnsafe&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1686,7 +1678,6 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Add&lt;TElement, TResult, TEnumerator&gt;(this IAdd&lt;TElement, TResult&gt; collection, ISequence&lt;TElement, TEnumerator&gt; elements)
-
     where TResult : IAdd&lt;TElement, TResult&gt; where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1773,7 +1764,6 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TSelf Clear&lt;TSelf&gt;(this IClear&lt;TSelf&gt; collection)
-
     where TSelf : IClear&lt;TSelf&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2703,7 +2693,6 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult EnsureLoaded&lt;TElement, TResult, TSource&gt;(this IWrite&lt;TElement, TResult&gt; stream, nint amount, IRead&lt;TElement, TSource&gt; source)
-
     where TResult : IWrite&lt;TElement, TResult&gt; where TSource : IRead&lt;TElement, TSource&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2780,10 +2769,486 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_Fold_System_String_System_Func_System_Char_System_Char_System_Char__System_Char_.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.Fold(System.String%2CSystem.Func%7BSystem.Char%2CSystem.Char%2CSystem.Char%7D%2CSystem.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/ISequence`2.cs/#L152">View Source</a>
+  </span>
+  <a id="Langly_TraitExtensions_Fold_" data-uid="Langly.TraitExtensions.Fold*"></a>
+  <h4 id="Langly_TraitExtensions_Fold_System_String_System_Func_System_Char_System_Char_System_Char__System_Char_" data-uid="Langly.TraitExtensions.Fold(System.String,System.Func{System.Char,System.Char,System.Char},System.Char)">Fold(String, Func&lt;Char, Char, Char&gt;, Char)</h4>
+  <div class="markdown level1 summary"><p>Folds the collection into a single element as described by the <code data-dev-comment-type="paramref" class="paramref">func</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static char Fold(this string collection, Func&lt;char, char, char&gt; func, char identity)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.func-3">Func</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>, <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>, <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">func</span></td>
+        <td><p>The function describing the folding operation. This is a magma.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a></td>
+        <td><span class="parametername">identity</span></td>
+        <td><p>The identity value for <code data-dev-comment-type="paramref" class="paramref">func</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a></td>
+        <td><p>A single element after folding the entire <code data-dev-comment-type="paramref" class="paramref">collection</code>. If <code data-dev-comment-type="paramref" class="paramref">collection</code> or <code data-dev-comment-type="paramref" class="paramref">func</code> are <span class="xref">null</span> this function returns <code data-dev-comment-type="paramref" class="paramref">identity</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_TraitExtensions_Fold_System_String_System_Func_System_Char_System_Char_System_Char__System_Char__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p><code data-dev-comment-type="paramref" class="paramref">func</code> is a magma, so associativity like left-fold and right-fold are completely irrelevant.</p>
+<p><code data-dev-comment-type="paramref" class="paramref">identity</code> is required as a start point for the fold. It needs to be the identity of the <code data-dev-comment-type="paramref" class="paramref">func</code> to function properly. For example, the identity of addition is <code>0</code>, and the identity of multiplication is <code>1</code>. Without an appropriate identity, the results will be wrong.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_Fold__1___0___System_Func___0___0___0____0_.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.Fold%60%601(%60%600%5B%5D%2CSystem.Func%7B%60%600%2C%60%600%2C%60%600%7D%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/ISequence`2.cs/#L167">View Source</a>
+  </span>
+  <a id="Langly_TraitExtensions_Fold_" data-uid="Langly.TraitExtensions.Fold*"></a>
+  <h4 id="Langly_TraitExtensions_Fold__1___0___System_Func___0___0___0____0_" data-uid="Langly.TraitExtensions.Fold``1(``0[],System.Func{``0,``0,``0},``0)">Fold&lt;TElement&gt;(TElement[], Func&lt;TElement, TElement, TElement&gt;, TElement)</h4>
+  <div class="markdown level1 summary"><p>Folds the collection into a single element as described by the <code data-dev-comment-type="paramref" class="paramref">func</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static TElement Fold&lt;TElement&gt;(this TElement[] collection, Func&lt;TElement, TElement, TElement&gt; func, TElement identity)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TElement[]</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.func-3">Func</a>&lt;TElement, TElement, TElement&gt;</td>
+        <td><span class="parametername">func</span></td>
+        <td><p>The function describing the folding operation. This is a magma.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">identity</span></td>
+        <td><p>The identity value for <code data-dev-comment-type="paramref" class="paramref">func</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><p>A single element after folding the entire <code data-dev-comment-type="paramref" class="paramref">collection</code>. If <code data-dev-comment-type="paramref" class="paramref">collection</code> or <code data-dev-comment-type="paramref" class="paramref">func</code> are <span class="xref">null</span> this function returns <code data-dev-comment-type="paramref" class="paramref">identity</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of elements in the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_TraitExtensions_Fold__1___0___System_Func___0___0___0____0__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p><code data-dev-comment-type="paramref" class="paramref">func</code> is a magma, so associativity like left-fold and right-fold are completely irrelevant.</p>
+<p><code data-dev-comment-type="paramref" class="paramref">identity</code> is required as a start point for the fold. It needs to be the identity of the <code data-dev-comment-type="paramref" class="paramref">func</code> to function properly. For example, the identity of addition is <code>0</code>, and the identity of multiplication is <code>1</code>. Without an appropriate identity, the results will be wrong.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_Fold__1_System_Memory___0__System_Func___0___0___0____0_.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.Fold%60%601(System.Memory%7B%60%600%7D%2CSystem.Func%7B%60%600%2C%60%600%2C%60%600%7D%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/ISequence`2.cs/#L182">View Source</a>
+  </span>
+  <a id="Langly_TraitExtensions_Fold_" data-uid="Langly.TraitExtensions.Fold*"></a>
+  <h4 id="Langly_TraitExtensions_Fold__1_System_Memory___0__System_Func___0___0___0____0_" data-uid="Langly.TraitExtensions.Fold``1(System.Memory{``0},System.Func{``0,``0,``0},``0)">Fold&lt;TElement&gt;(Memory&lt;TElement&gt;, Func&lt;TElement, TElement, TElement&gt;, TElement)</h4>
+  <div class="markdown level1 summary"><p>Folds the collection into a single element as described by the <code data-dev-comment-type="paramref" class="paramref">func</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static TElement Fold&lt;TElement&gt;(this Memory&lt;TElement&gt; collection, Func&lt;TElement, TElement, TElement&gt; func, TElement identity)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.func-3">Func</a>&lt;TElement, TElement, TElement&gt;</td>
+        <td><span class="parametername">func</span></td>
+        <td><p>The function describing the folding operation. This is a magma.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">identity</span></td>
+        <td><p>The identity value for <code data-dev-comment-type="paramref" class="paramref">func</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><p>A single element after folding the entire <code data-dev-comment-type="paramref" class="paramref">collection</code>. If <code data-dev-comment-type="paramref" class="paramref">collection</code> or <code data-dev-comment-type="paramref" class="paramref">func</code> are <span class="xref">null</span> this function returns <code data-dev-comment-type="paramref" class="paramref">identity</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of elements in the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_TraitExtensions_Fold__1_System_Memory___0__System_Func___0___0___0____0__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p><code data-dev-comment-type="paramref" class="paramref">func</code> is a magma, so associativity like left-fold and right-fold are completely irrelevant.</p>
+<p><code data-dev-comment-type="paramref" class="paramref">identity</code> is required as a start point for the fold. It needs to be the identity of the <code data-dev-comment-type="paramref" class="paramref">func</code> to function properly. For example, the identity of addition is <code>0</code>, and the identity of multiplication is <code>1</code>. Without an appropriate identity, the results will be wrong.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_Fold__1_System_ReadOnlyMemory___0__System_Func___0___0___0____0_.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.Fold%60%601(System.ReadOnlyMemory%7B%60%600%7D%2CSystem.Func%7B%60%600%2C%60%600%2C%60%600%7D%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/ISequence`2.cs/#L197">View Source</a>
+  </span>
+  <a id="Langly_TraitExtensions_Fold_" data-uid="Langly.TraitExtensions.Fold*"></a>
+  <h4 id="Langly_TraitExtensions_Fold__1_System_ReadOnlyMemory___0__System_Func___0___0___0____0_" data-uid="Langly.TraitExtensions.Fold``1(System.ReadOnlyMemory{``0},System.Func{``0,``0,``0},``0)">Fold&lt;TElement&gt;(ReadOnlyMemory&lt;TElement&gt;, Func&lt;TElement, TElement, TElement&gt;, TElement)</h4>
+  <div class="markdown level1 summary"><p>Folds the collection into a single element as described by the <code data-dev-comment-type="paramref" class="paramref">func</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static TElement Fold&lt;TElement&gt;(this ReadOnlyMemory&lt;TElement&gt; collection, Func&lt;TElement, TElement, TElement&gt; func, TElement identity)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.func-3">Func</a>&lt;TElement, TElement, TElement&gt;</td>
+        <td><span class="parametername">func</span></td>
+        <td><p>The function describing the folding operation. This is a magma.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">identity</span></td>
+        <td><p>The identity value for <code data-dev-comment-type="paramref" class="paramref">func</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><p>A single element after folding the entire <code data-dev-comment-type="paramref" class="paramref">collection</code>. If <code data-dev-comment-type="paramref" class="paramref">collection</code> or <code data-dev-comment-type="paramref" class="paramref">func</code> are <span class="xref">null</span> this function returns <code data-dev-comment-type="paramref" class="paramref">identity</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of elements in the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_TraitExtensions_Fold__1_System_ReadOnlyMemory___0__System_Func___0___0___0____0__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p><code data-dev-comment-type="paramref" class="paramref">func</code> is a magma, so associativity like left-fold and right-fold are completely irrelevant.</p>
+<p><code data-dev-comment-type="paramref" class="paramref">identity</code> is required as a start point for the fold. It needs to be the identity of the <code data-dev-comment-type="paramref" class="paramref">func</code> to function properly. For example, the identity of addition is <code>0</code>, and the identity of multiplication is <code>1</code>. Without an appropriate identity, the results will be wrong.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_Fold__1_System_ReadOnlySpan___0__System_Func___0___0___0____0_.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.Fold%60%601(System.ReadOnlySpan%7B%60%600%7D%2CSystem.Func%7B%60%600%2C%60%600%2C%60%600%7D%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/ISequence`2.cs/#L227">View Source</a>
+  </span>
+  <a id="Langly_TraitExtensions_Fold_" data-uid="Langly.TraitExtensions.Fold*"></a>
+  <h4 id="Langly_TraitExtensions_Fold__1_System_ReadOnlySpan___0__System_Func___0___0___0____0_" data-uid="Langly.TraitExtensions.Fold``1(System.ReadOnlySpan{``0},System.Func{``0,``0,``0},``0)">Fold&lt;TElement&gt;(ReadOnlySpan&lt;TElement&gt;, Func&lt;TElement, TElement, TElement&gt;, TElement)</h4>
+  <div class="markdown level1 summary"><p>Folds the collection into a single element as described by the <code data-dev-comment-type="paramref" class="paramref">func</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static TElement Fold&lt;TElement&gt;(this ReadOnlySpan&lt;TElement&gt; collection, Func&lt;TElement, TElement, TElement&gt; func, TElement identity)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.func-3">Func</a>&lt;TElement, TElement, TElement&gt;</td>
+        <td><span class="parametername">func</span></td>
+        <td><p>The function describing the folding operation. This is a magma.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">identity</span></td>
+        <td><p>The identity value for <code data-dev-comment-type="paramref" class="paramref">func</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><p>A single element after folding the entire <code data-dev-comment-type="paramref" class="paramref">collection</code>. If <code data-dev-comment-type="paramref" class="paramref">collection</code> or <code data-dev-comment-type="paramref" class="paramref">func</code> are <span class="xref">null</span> this function returns <code data-dev-comment-type="paramref" class="paramref">identity</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of elements in the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_TraitExtensions_Fold__1_System_ReadOnlySpan___0__System_Func___0___0___0____0__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p><code data-dev-comment-type="paramref" class="paramref">func</code> is a magma, so associativity like left-fold and right-fold are completely irrelevant.</p>
+<p><code data-dev-comment-type="paramref" class="paramref">identity</code> is required as a start point for the fold. It needs to be the identity of the <code data-dev-comment-type="paramref" class="paramref">func</code> to function properly. For example, the identity of addition is <code>0</code>, and the identity of multiplication is <code>1</code>. Without an appropriate identity, the results will be wrong.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_Fold__1_System_Span___0__System_Func___0___0___0____0_.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.Fold%60%601(System.Span%7B%60%600%7D%2CSystem.Func%7B%60%600%2C%60%600%2C%60%600%7D%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/ISequence`2.cs/#L212">View Source</a>
+  </span>
+  <a id="Langly_TraitExtensions_Fold_" data-uid="Langly.TraitExtensions.Fold*"></a>
+  <h4 id="Langly_TraitExtensions_Fold__1_System_Span___0__System_Func___0___0___0____0_" data-uid="Langly.TraitExtensions.Fold``1(System.Span{``0},System.Func{``0,``0,``0},``0)">Fold&lt;TElement&gt;(Span&lt;TElement&gt;, Func&lt;TElement, TElement, TElement&gt;, TElement)</h4>
+  <div class="markdown level1 summary"><p>Folds the collection into a single element as described by the <code data-dev-comment-type="paramref" class="paramref">func</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static TElement Fold&lt;TElement&gt;(this Span&lt;TElement&gt; collection, Func&lt;TElement, TElement, TElement&gt; func, TElement identity)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.func-3">Func</a>&lt;TElement, TElement, TElement&gt;</td>
+        <td><span class="parametername">func</span></td>
+        <td><p>The function describing the folding operation. This is a magma.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">identity</span></td>
+        <td><p>The identity value for <code data-dev-comment-type="paramref" class="paramref">func</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><p>A single element after folding the entire <code data-dev-comment-type="paramref" class="paramref">collection</code>. If <code data-dev-comment-type="paramref" class="paramref">collection</code> or <code data-dev-comment-type="paramref" class="paramref">func</code> are <span class="xref">null</span> this function returns <code data-dev-comment-type="paramref" class="paramref">identity</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of elements in the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Langly_TraitExtensions_Fold__1_System_Span___0__System_Func___0___0___0____0__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p><code data-dev-comment-type="paramref" class="paramref">func</code> is a magma, so associativity like left-fold and right-fold are completely irrelevant.</p>
+<p><code data-dev-comment-type="paramref" class="paramref">identity</code> is required as a start point for the fold. It needs to be the identity of the <code data-dev-comment-type="paramref" class="paramref">func</code> to function properly. For example, the identity of addition is <code>0</code>, and the identity of multiplication is <code>1</code>. Without an appropriate identity, the results will be wrong.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_Fold__2_Langly_Traits_ISequence___0___1__System_Func___0___0___0____0_.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.Fold%60%602(Langly.Traits.ISequence%7B%60%600%2C%60%601%7D%2CSystem.Func%7B%60%600%2C%60%600%2C%60%600%7D%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/ISequence`2.cs/#L137">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/ISequence`2.cs/#L138">View Source</a>
   </span>
   <a id="Langly_TraitExtensions_Fold_" data-uid="Langly.TraitExtensions.Fold*"></a>
   <h4 id="Langly_TraitExtensions_Fold__2_Langly_Traits_ISequence___0___1__System_Func___0___0___0____0_" data-uid="Langly.TraitExtensions.Fold``2(Langly.Traits.ISequence{``0,``1},System.Func{``0,``0,``0},``0)">Fold&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Func&lt;TElement, TElement, TElement&gt;, TElement)</h4>
@@ -2793,7 +3258,6 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TElement Fold&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, Func&lt;TElement, TElement, TElement&gt; func, TElement identity)
-
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2946,7 +3410,6 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TSelf Grow&lt;TSelf&gt;(this IResize&lt;TSelf&gt; collection)
-
     where TSelf : IResize&lt;TSelf&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4316,7 +4779,6 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TResult&gt;(this IInsertText&lt;TResult&gt; collection, nint index, string elements)
-
     where TResult : IInsertText&lt;TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5020,7 +5482,6 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TElement, TResult&gt;(this IInsert&lt;TElement, TResult&gt; collection, nint index, TElement element)
-
     where TResult : IInsert&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5105,7 +5566,6 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TElement, TResult&gt;(this IInsert&lt;TElement, TResult&gt; collection, nint index, params TElement[] elements)
-
     where TResult : IInsert&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5190,7 +5650,6 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TElement, TResult&gt;(this IInsert&lt;TElement, TResult&gt; collection, nint index, Memory&lt;TElement&gt; elements)
-
     where TResult : IInsert&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5275,7 +5734,6 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TElement, TResult&gt;(this IInsert&lt;TElement, TResult&gt; collection, nint index, ReadOnlyMemory&lt;TElement&gt; elements)
-
     where TResult : IInsert&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5360,7 +5818,6 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TElement, TResult&gt;(this IInsertSpan&lt;TElement, TResult&gt; collection, nint index, ReadOnlySpan&lt;TElement&gt; elements)
-
     where TResult : IInsertSpan&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5445,7 +5902,6 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TElement, TResult&gt;(this IInsertSpan&lt;TElement, TResult&gt; collection, nint index, Span&lt;TElement&gt; elements)
-
     where TResult : IInsertSpan&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5530,7 +5986,6 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TElement, TResult&gt;(this IInsertText&lt;TElement, TResult&gt; collection, char[] index, TElement element)
-
     where TResult : IInsertText&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5613,7 +6068,6 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TElement, TResult&gt;(this IInsertText&lt;TElement, TResult&gt; collection, Memory&lt;char&gt; index, TElement element)
-
     where TResult : IInsertText&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5696,7 +6150,6 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TElement, TResult&gt;(this IInsertText&lt;TElement, TResult&gt; collection, ReadOnlyMemory&lt;char&gt; index, TElement element)
-
     where TResult : IInsertText&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5779,7 +6232,6 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TElement, TResult&gt;(this IInsertText&lt;TElement, TResult&gt; collection, ReadOnlySpan&lt;char&gt; index, TElement element)
-
     where TResult : IInsertText&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5862,7 +6314,6 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TElement, TResult&gt;(this IInsertText&lt;TElement, TResult&gt; collection, Span&lt;char&gt; index, TElement element)
-
     where TResult : IInsertText&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5945,7 +6396,6 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TElement, TResult&gt;(this IInsertText&lt;TElement, TResult&gt; collection, string index, TElement element)
-
     where TResult : IInsertText&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6028,7 +6478,6 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TElement, TResult&gt;(this IInsertText&lt;TElement, TResult&gt; collection, Rune index, TElement element)
-
     where TResult : IInsertText&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6112,7 +6561,6 @@ public static TResult Add&lt;TElement, TResult&gt;(this IAddUnsafe&lt;TElement, 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TElement, TResult&gt; collection, nint index, TElement*elements, int length)
-
     where TElement : struct where TResult : IInsertUnsafe&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6203,7 +6651,6 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TIndex, TElement, TResult&gt;(this IInsert&lt;TIndex, TElement, TResult&gt; collection, TIndex index, TElement element)
-
     where TResult : IInsert&lt;TIndex, TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6293,7 +6740,6 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Insert&lt;TElement, TResult, TEnumerator&gt;(this IInsert&lt;TElement, TResult&gt; collection, nint index, ISequence&lt;TElement, TEnumerator&gt; elements)
-
     where TResult : IInsert&lt;TElement, TResult&gt; where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6383,7 +6829,6 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Load&lt;TElement, TResult, TSource&gt;(this IWrite&lt;TElement, TResult&gt; stream, IRead&lt;TElement, TSource&gt; source)
-
     where TResult : IWrite&lt;TElement, TResult&gt; where TSource : IRead&lt;TElement, TSource&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6467,7 +6912,6 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Load&lt;TElement, TResult, TSource&gt;(this IWrite&lt;TElement, TResult&gt; stream, nint amount, IRead&lt;TElement, TSource&gt; source)
-
     where TResult : IWrite&lt;TElement, TResult&gt; where TSource : IRead&lt;TElement, TSource&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6662,10 +7106,1258 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_Occurrences_System_String_Langly_Traits_IEquals_System_Char__.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.Occurrences(System.String%2CLangly.Traits.IEquals%7BSystem.Char%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/ISequence`2.cs/#L354">View Source</a>
+  </span>
+  <a id="Langly_TraitExtensions_Occurrences_" data-uid="Langly.TraitExtensions.Occurrences*"></a>
+  <h4 id="Langly_TraitExtensions_Occurrences_System_String_Langly_Traits_IEquals_System_Char__" data-uid="Langly.TraitExtensions.Occurrences(System.String,Langly.Traits.IEquals{System.Char})">Occurrences(String, IEquals&lt;Char&gt;)</h4>
+  <div class="markdown level1 summary"><p>Count all occurrences of <code data-dev-comment-type="paramref" class="paramref">element</code> in the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static nint Occurrences(this string collection, IEquals&lt;char&gt; element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.Traits.IEquals-1.html">IEquals</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element to count.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><p>The amount of occurrences found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_Occurrences_System_String_System_Char_.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.Occurrences(System.String%2CSystem.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/ISequence`2.cs/#L267">View Source</a>
+  </span>
+  <a id="Langly_TraitExtensions_Occurrences_" data-uid="Langly.TraitExtensions.Occurrences*"></a>
+  <h4 id="Langly_TraitExtensions_Occurrences_System_String_System_Char_" data-uid="Langly.TraitExtensions.Occurrences(System.String,System.Char)">Occurrences(String, Char)</h4>
+  <div class="markdown level1 summary"><p>Count all occurrences of <code data-dev-comment-type="paramref" class="paramref">element</code> in the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static nint Occurrences(this string collection, char element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element to count.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><p>The amount of occurrences found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_Occurrences_System_String_System_Predicate_System_Char__.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.Occurrences(System.String%2CSystem.Predicate%7BSystem.Char%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/ISequence`2.cs/#L441">View Source</a>
+  </span>
+  <a id="Langly_TraitExtensions_Occurrences_" data-uid="Langly.TraitExtensions.Occurrences*"></a>
+  <h4 id="Langly_TraitExtensions_Occurrences_System_String_System_Predicate_System_Char__" data-uid="Langly.TraitExtensions.Occurrences(System.String,System.Predicate{System.Char})">Occurrences(String, Predicate&lt;Char&gt;)</h4>
+  <div class="markdown level1 summary"><p>Count all occurrences of elements that match the provided predicate in the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static nint Occurrences(this string collection, Predicate&lt;char&gt; predicate)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.predicate-1">Predicate</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">predicate</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.predicate-1">Predicate&lt;T&gt;</a> describing a match of the elements to count.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><p>The amount of occurrences found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_Occurrences__1___0_____0_.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.Occurrences%60%601(%60%600%5B%5D%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/ISequence`2.cs/#L276">View Source</a>
+  </span>
+  <a id="Langly_TraitExtensions_Occurrences_" data-uid="Langly.TraitExtensions.Occurrences*"></a>
+  <h4 id="Langly_TraitExtensions_Occurrences__1___0_____0_" data-uid="Langly.TraitExtensions.Occurrences``1(``0[],``0)">Occurrences&lt;TElement&gt;(TElement[], TElement)</h4>
+  <div class="markdown level1 summary"><p>Count all occurrences of <code data-dev-comment-type="paramref" class="paramref">element</code> in the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static nint Occurrences&lt;TElement&gt;(this TElement[] collection, TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TElement[]</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element to count.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><p>The amount of occurrences found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of elements in the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_Occurrences__1___0___Langly_Traits_IEquals___0__.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.Occurrences%60%601(%60%600%5B%5D%2CLangly.Traits.IEquals%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/ISequence`2.cs/#L363">View Source</a>
+  </span>
+  <a id="Langly_TraitExtensions_Occurrences_" data-uid="Langly.TraitExtensions.Occurrences*"></a>
+  <h4 id="Langly_TraitExtensions_Occurrences__1___0___Langly_Traits_IEquals___0__" data-uid="Langly.TraitExtensions.Occurrences``1(``0[],Langly.Traits.IEquals{``0})">Occurrences&lt;TElement&gt;(TElement[], IEquals&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Count all occurrences of <code data-dev-comment-type="paramref" class="paramref">element</code> in the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static nint Occurrences&lt;TElement&gt;(this TElement[] collection, IEquals&lt;TElement&gt; element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TElement[]</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.Traits.IEquals-1.html">IEquals</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element to count.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><p>The amount of occurrences found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of elements in the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_Occurrences__1___0___System_Predicate___0__.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.Occurrences%60%601(%60%600%5B%5D%2CSystem.Predicate%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/ISequence`2.cs/#L450">View Source</a>
+  </span>
+  <a id="Langly_TraitExtensions_Occurrences_" data-uid="Langly.TraitExtensions.Occurrences*"></a>
+  <h4 id="Langly_TraitExtensions_Occurrences__1___0___System_Predicate___0__" data-uid="Langly.TraitExtensions.Occurrences``1(``0[],System.Predicate{``0})">Occurrences&lt;TElement&gt;(TElement[], Predicate&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Count all occurrences of elements that match the provided predicate in the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static nint Occurrences&lt;TElement&gt;(this TElement[] collection, Predicate&lt;TElement&gt; predicate)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TElement[]</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.predicate-1">Predicate</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">predicate</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.predicate-1">Predicate&lt;T&gt;</a> describing a match of the elements to count.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><p>The amount of occurrences found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of elements in the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_Occurrences__1_System_Memory___0____0_.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.Occurrences%60%601(System.Memory%7B%60%600%7D%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/ISequence`2.cs/#L285">View Source</a>
+  </span>
+  <a id="Langly_TraitExtensions_Occurrences_" data-uid="Langly.TraitExtensions.Occurrences*"></a>
+  <h4 id="Langly_TraitExtensions_Occurrences__1_System_Memory___0____0_" data-uid="Langly.TraitExtensions.Occurrences``1(System.Memory{``0},``0)">Occurrences&lt;TElement&gt;(Memory&lt;TElement&gt;, TElement)</h4>
+  <div class="markdown level1 summary"><p>Count all occurrences of <code data-dev-comment-type="paramref" class="paramref">element</code> in the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static nint Occurrences&lt;TElement&gt;(this Memory&lt;TElement&gt; collection, TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element to count.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><p>The amount of occurrences found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of elements in the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_Occurrences__1_System_Memory___0__Langly_Traits_IEquals___0__.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.Occurrences%60%601(System.Memory%7B%60%600%7D%2CLangly.Traits.IEquals%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/ISequence`2.cs/#L372">View Source</a>
+  </span>
+  <a id="Langly_TraitExtensions_Occurrences_" data-uid="Langly.TraitExtensions.Occurrences*"></a>
+  <h4 id="Langly_TraitExtensions_Occurrences__1_System_Memory___0__Langly_Traits_IEquals___0__" data-uid="Langly.TraitExtensions.Occurrences``1(System.Memory{``0},Langly.Traits.IEquals{``0})">Occurrences&lt;TElement&gt;(Memory&lt;TElement&gt;, IEquals&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Count all occurrences of <code data-dev-comment-type="paramref" class="paramref">element</code> in the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static nint Occurrences&lt;TElement&gt;(this Memory&lt;TElement&gt; collection, IEquals&lt;TElement&gt; element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.Traits.IEquals-1.html">IEquals</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element to count.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><p>The amount of occurrences found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of elements in the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_Occurrences__1_System_Memory___0__System_Predicate___0__.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.Occurrences%60%601(System.Memory%7B%60%600%7D%2CSystem.Predicate%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/ISequence`2.cs/#L459">View Source</a>
+  </span>
+  <a id="Langly_TraitExtensions_Occurrences_" data-uid="Langly.TraitExtensions.Occurrences*"></a>
+  <h4 id="Langly_TraitExtensions_Occurrences__1_System_Memory___0__System_Predicate___0__" data-uid="Langly.TraitExtensions.Occurrences``1(System.Memory{``0},System.Predicate{``0})">Occurrences&lt;TElement&gt;(Memory&lt;TElement&gt;, Predicate&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Count all occurrences of elements that match the provided predicate in the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static nint Occurrences&lt;TElement&gt;(this Memory&lt;TElement&gt; collection, Predicate&lt;TElement&gt; predicate)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.predicate-1">Predicate</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">predicate</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.predicate-1">Predicate&lt;T&gt;</a> describing a match of the elements to count.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><p>The amount of occurrences found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of elements in the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_Occurrences__1_System_ReadOnlyMemory___0____0_.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.Occurrences%60%601(System.ReadOnlyMemory%7B%60%600%7D%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/ISequence`2.cs/#L294">View Source</a>
+  </span>
+  <a id="Langly_TraitExtensions_Occurrences_" data-uid="Langly.TraitExtensions.Occurrences*"></a>
+  <h4 id="Langly_TraitExtensions_Occurrences__1_System_ReadOnlyMemory___0____0_" data-uid="Langly.TraitExtensions.Occurrences``1(System.ReadOnlyMemory{``0},``0)">Occurrences&lt;TElement&gt;(ReadOnlyMemory&lt;TElement&gt;, TElement)</h4>
+  <div class="markdown level1 summary"><p>Count all occurrences of <code data-dev-comment-type="paramref" class="paramref">element</code> in the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static nint Occurrences&lt;TElement&gt;(this ReadOnlyMemory&lt;TElement&gt; collection, TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element to count.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><p>The amount of occurrences found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of elements in the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_Occurrences__1_System_ReadOnlyMemory___0__Langly_Traits_IEquals___0__.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.Occurrences%60%601(System.ReadOnlyMemory%7B%60%600%7D%2CLangly.Traits.IEquals%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/ISequence`2.cs/#L381">View Source</a>
+  </span>
+  <a id="Langly_TraitExtensions_Occurrences_" data-uid="Langly.TraitExtensions.Occurrences*"></a>
+  <h4 id="Langly_TraitExtensions_Occurrences__1_System_ReadOnlyMemory___0__Langly_Traits_IEquals___0__" data-uid="Langly.TraitExtensions.Occurrences``1(System.ReadOnlyMemory{``0},Langly.Traits.IEquals{``0})">Occurrences&lt;TElement&gt;(ReadOnlyMemory&lt;TElement&gt;, IEquals&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Count all occurrences of <code data-dev-comment-type="paramref" class="paramref">element</code> in the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static nint Occurrences&lt;TElement&gt;(this ReadOnlyMemory&lt;TElement&gt; collection, IEquals&lt;TElement&gt; element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.Traits.IEquals-1.html">IEquals</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element to count.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><p>The amount of occurrences found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of elements in the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_Occurrences__1_System_ReadOnlyMemory___0__System_Predicate___0__.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.Occurrences%60%601(System.ReadOnlyMemory%7B%60%600%7D%2CSystem.Predicate%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/ISequence`2.cs/#L468">View Source</a>
+  </span>
+  <a id="Langly_TraitExtensions_Occurrences_" data-uid="Langly.TraitExtensions.Occurrences*"></a>
+  <h4 id="Langly_TraitExtensions_Occurrences__1_System_ReadOnlyMemory___0__System_Predicate___0__" data-uid="Langly.TraitExtensions.Occurrences``1(System.ReadOnlyMemory{``0},System.Predicate{``0})">Occurrences&lt;TElement&gt;(ReadOnlyMemory&lt;TElement&gt;, Predicate&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Count all occurrences of elements that match the provided predicate in the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static nint Occurrences&lt;TElement&gt;(this ReadOnlyMemory&lt;TElement&gt; collection, Predicate&lt;TElement&gt; predicate)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.predicate-1">Predicate</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">predicate</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.predicate-1">Predicate&lt;T&gt;</a> describing a match of the elements to count.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><p>The amount of occurrences found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of elements in the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_Occurrences__1_System_ReadOnlySpan___0____0_.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.Occurrences%60%601(System.ReadOnlySpan%7B%60%600%7D%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/ISequence`2.cs/#L312">View Source</a>
+  </span>
+  <a id="Langly_TraitExtensions_Occurrences_" data-uid="Langly.TraitExtensions.Occurrences*"></a>
+  <h4 id="Langly_TraitExtensions_Occurrences__1_System_ReadOnlySpan___0____0_" data-uid="Langly.TraitExtensions.Occurrences``1(System.ReadOnlySpan{``0},``0)">Occurrences&lt;TElement&gt;(ReadOnlySpan&lt;TElement&gt;, TElement)</h4>
+  <div class="markdown level1 summary"><p>Count all occurrences of <code data-dev-comment-type="paramref" class="paramref">element</code> in the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static nint Occurrences&lt;TElement&gt;(this ReadOnlySpan&lt;TElement&gt; collection, TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element to count.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><p>The amount of occurrences found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of elements in the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_Occurrences__1_System_ReadOnlySpan___0__Langly_Traits_IEquals___0__.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.Occurrences%60%601(System.ReadOnlySpan%7B%60%600%7D%2CLangly.Traits.IEquals%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/ISequence`2.cs/#L399">View Source</a>
+  </span>
+  <a id="Langly_TraitExtensions_Occurrences_" data-uid="Langly.TraitExtensions.Occurrences*"></a>
+  <h4 id="Langly_TraitExtensions_Occurrences__1_System_ReadOnlySpan___0__Langly_Traits_IEquals___0__" data-uid="Langly.TraitExtensions.Occurrences``1(System.ReadOnlySpan{``0},Langly.Traits.IEquals{``0})">Occurrences&lt;TElement&gt;(ReadOnlySpan&lt;TElement&gt;, IEquals&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Count all occurrences of <code data-dev-comment-type="paramref" class="paramref">element</code> in the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static nint Occurrences&lt;TElement&gt;(this ReadOnlySpan&lt;TElement&gt; collection, IEquals&lt;TElement&gt; element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.Traits.IEquals-1.html">IEquals</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element to count.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><p>The amount of occurrences found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of elements in the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_Occurrences__1_System_ReadOnlySpan___0__System_Predicate___0__.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.Occurrences%60%601(System.ReadOnlySpan%7B%60%600%7D%2CSystem.Predicate%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/ISequence`2.cs/#L486">View Source</a>
+  </span>
+  <a id="Langly_TraitExtensions_Occurrences_" data-uid="Langly.TraitExtensions.Occurrences*"></a>
+  <h4 id="Langly_TraitExtensions_Occurrences__1_System_ReadOnlySpan___0__System_Predicate___0__" data-uid="Langly.TraitExtensions.Occurrences``1(System.ReadOnlySpan{``0},System.Predicate{``0})">Occurrences&lt;TElement&gt;(ReadOnlySpan&lt;TElement&gt;, Predicate&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Count all occurrences of elements that match the provided predicate in the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static nint Occurrences&lt;TElement&gt;(this ReadOnlySpan&lt;TElement&gt; collection, Predicate&lt;TElement&gt; predicate)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.predicate-1">Predicate</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">predicate</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.predicate-1">Predicate&lt;T&gt;</a> describing a match of the elements to count.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><p>The amount of occurrences found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of elements in the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_Occurrences__1_System_Span___0____0_.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.Occurrences%60%601(System.Span%7B%60%600%7D%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/ISequence`2.cs/#L303">View Source</a>
+  </span>
+  <a id="Langly_TraitExtensions_Occurrences_" data-uid="Langly.TraitExtensions.Occurrences*"></a>
+  <h4 id="Langly_TraitExtensions_Occurrences__1_System_Span___0____0_" data-uid="Langly.TraitExtensions.Occurrences``1(System.Span{``0},``0)">Occurrences&lt;TElement&gt;(Span&lt;TElement&gt;, TElement)</h4>
+  <div class="markdown level1 summary"><p>Count all occurrences of <code data-dev-comment-type="paramref" class="paramref">element</code> in the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static nint Occurrences&lt;TElement&gt;(this Span&lt;TElement&gt; collection, TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element to count.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><p>The amount of occurrences found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of elements in the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_Occurrences__1_System_Span___0__Langly_Traits_IEquals___0__.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.Occurrences%60%601(System.Span%7B%60%600%7D%2CLangly.Traits.IEquals%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/ISequence`2.cs/#L390">View Source</a>
+  </span>
+  <a id="Langly_TraitExtensions_Occurrences_" data-uid="Langly.TraitExtensions.Occurrences*"></a>
+  <h4 id="Langly_TraitExtensions_Occurrences__1_System_Span___0__Langly_Traits_IEquals___0__" data-uid="Langly.TraitExtensions.Occurrences``1(System.Span{``0},Langly.Traits.IEquals{``0})">Occurrences&lt;TElement&gt;(Span&lt;TElement&gt;, IEquals&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Count all occurrences of <code data-dev-comment-type="paramref" class="paramref">element</code> in the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static nint Occurrences&lt;TElement&gt;(this Span&lt;TElement&gt; collection, IEquals&lt;TElement&gt; element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Langly.Traits.IEquals-1.html">IEquals</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element to count.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><p>The amount of occurrences found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of elements in the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_Occurrences__1_System_Span___0__System_Predicate___0__.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.Occurrences%60%601(System.Span%7B%60%600%7D%2CSystem.Predicate%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/ISequence`2.cs/#L477">View Source</a>
+  </span>
+  <a id="Langly_TraitExtensions_Occurrences_" data-uid="Langly.TraitExtensions.Occurrences*"></a>
+  <h4 id="Langly_TraitExtensions_Occurrences__1_System_Span___0__System_Predicate___0__" data-uid="Langly.TraitExtensions.Occurrences``1(System.Span{``0},System.Predicate{``0})">Occurrences&lt;TElement&gt;(Span&lt;TElement&gt;, Predicate&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Count all occurrences of elements that match the provided predicate in the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static nint Occurrences&lt;TElement&gt;(this Span&lt;TElement&gt; collection, Predicate&lt;TElement&gt; predicate)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.predicate-1">Predicate</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">predicate</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.predicate-1">Predicate&lt;T&gt;</a> describing a match of the elements to count.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><p>The amount of occurrences found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of elements in the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_Occurrences__2_Langly_Traits_ISequence___0___1____0_.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.Occurrences%60%602(Langly.Traits.ISequence%7B%60%600%2C%60%601%7D%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/ISequence`2.cs/#L148">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/ISequence`2.cs/#L252">View Source</a>
   </span>
   <a id="Langly_TraitExtensions_Occurrences_" data-uid="Langly.TraitExtensions.Occurrences*"></a>
   <h4 id="Langly_TraitExtensions_Occurrences__2_Langly_Traits_ISequence___0___1____0_" data-uid="Langly.TraitExtensions.Occurrences``2(Langly.Traits.ISequence{``0,``1},``0)">Occurrences&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, TElement)</h4>
@@ -6675,7 +8367,6 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static nint Occurrences&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, TElement element)
-
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6744,7 +8435,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_Occurrences__2_Langly_Traits_ISequence___0___1__Langly_Traits_IEquals___0__.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.Occurrences%60%602(Langly.Traits.ISequence%7B%60%600%2C%60%601%7D%2CLangly.Traits.IEquals%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/ISequence`2.cs/#L165">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/ISequence`2.cs/#L339">View Source</a>
   </span>
   <a id="Langly_TraitExtensions_Occurrences_" data-uid="Langly.TraitExtensions.Occurrences*"></a>
   <h4 id="Langly_TraitExtensions_Occurrences__2_Langly_Traits_ISequence___0___1__Langly_Traits_IEquals___0__" data-uid="Langly.TraitExtensions.Occurrences``2(Langly.Traits.ISequence{``0,``1},Langly.Traits.IEquals{``0})">Occurrences&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, IEquals&lt;TElement&gt;)</h4>
@@ -6754,7 +8445,6 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static nint Occurrences&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, IEquals&lt;TElement&gt; element)
-
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6823,7 +8513,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_Occurrences__2_Langly_Traits_ISequence___0___1__System_Predicate___0__.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.Occurrences%60%602(Langly.Traits.ISequence%7B%60%600%2C%60%601%7D%2CSystem.Predicate%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/ISequence`2.cs/#L182">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/ISequence`2.cs/#L426">View Source</a>
   </span>
   <a id="Langly_TraitExtensions_Occurrences_" data-uid="Langly.TraitExtensions.Occurrences*"></a>
   <h4 id="Langly_TraitExtensions_Occurrences__2_Langly_Traits_ISequence___0___1__System_Predicate___0__" data-uid="Langly.TraitExtensions.Occurrences``2(Langly.Traits.ISequence{``0,``1},System.Predicate{``0})">Occurrences&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Predicate&lt;TElement&gt;)</h4>
@@ -6832,8 +8522,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static nint Occurrences&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, Predicate&lt;TElement&gt; match)
-
+    <pre><code class="lang-csharp hljs">public static nint Occurrences&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, Predicate&lt;TElement&gt; predicate)
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6854,7 +8543,7 @@ public static TResult Insert&lt;TElement, TResult&gt;(this IInsertUnsafe&lt;TEle
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.predicate-1">Predicate</a>&lt;TElement&gt;</td>
-        <td><span class="parametername">match</span></td>
+        <td><span class="parametername">predicate</span></td>
         <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.predicate-1">Predicate&lt;T&gt;</a> describing a match of the elements to count.</p>
 </td>
       </tr>
@@ -7486,7 +9175,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Peek&lt;TElement, TResult&gt;(this IPeek&lt;TElement, TResult&gt; collection, out TElement element)
-
     where TResult : IPeek&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -7853,7 +9541,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Postpend&lt;TResult&gt;(this IPostpend&lt;char, TResult&gt; collection, string elements)
-
     where TResult : IPostpend&lt;char, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -8503,7 +10190,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Postpend&lt;TElement, TResult&gt;(this IPostpend&lt;TElement, TResult&gt; collection, TElement element)
-
     where TResult : IPostpend&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -8582,7 +10268,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Postpend&lt;TElement, TResult&gt;(this IPostpend&lt;TElement, TResult&gt; collection, params TElement[] elements)
-
     where TResult : IPostpend&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -8661,7 +10346,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Postpend&lt;TElement, TResult&gt;(this IPostpend&lt;TElement, TResult&gt; collection, Memory&lt;TElement&gt; elements)
-
     where TResult : IPostpend&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -8740,7 +10424,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Postpend&lt;TElement, TResult&gt;(this IPostpend&lt;TElement, TResult&gt; collection, ReadOnlyMemory&lt;TElement&gt; elements)
-
     where TResult : IPostpend&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -8819,7 +10502,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Postpend&lt;TElement, TResult&gt;(this IPostpendSpan&lt;TElement, TResult&gt; collection, ReadOnlySpan&lt;TElement&gt; elements)
-
     where TResult : IPostpendSpan&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -8898,7 +10580,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Postpend&lt;TElement, TResult&gt;(this IPostpendSpan&lt;TElement, TResult&gt; collection, Span&lt;TElement&gt; elements)
-
     where TResult : IPostpendSpan&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -8977,7 +10658,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Postpend&lt;TElement, TResult, TEnumerator&gt;(this IPostpend&lt;TElement, TResult&gt; collection, ISequence&lt;TElement, TEnumerator&gt; elements)
-
     where TResult : IPostpend&lt;TElement, TResult&gt; where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -9349,7 +11029,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Prepend&lt;TResult&gt;(this IPrepend&lt;char, TResult&gt; collection, string elements)
-
     where TResult : IPrepend&lt;char, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -9999,7 +11678,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Prepend&lt;TElement, TResult&gt;(this IPrepend&lt;TElement, TResult&gt; collection, TElement element)
-
     where TResult : IPrepend&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -10078,7 +11756,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Prepend&lt;TElement, TResult&gt;(this IPrepend&lt;TElement, TResult&gt; collection, params TElement[] elements)
-
     where TResult : IPrepend&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -10157,7 +11834,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Prepend&lt;TElement, TResult&gt;(this IPrepend&lt;TElement, TResult&gt; collection, Memory&lt;TElement&gt; elements)
-
     where TResult : IPrepend&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -10236,7 +11912,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Prepend&lt;TElement, TResult&gt;(this IPrepend&lt;TElement, TResult&gt; collection, ReadOnlyMemory&lt;TElement&gt; elements)
-
     where TResult : IPrepend&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -10315,7 +11990,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Prepend&lt;TElement, TResult&gt;(this IPrependSpan&lt;TElement, TResult&gt; collection, ReadOnlySpan&lt;TElement&gt; elements)
-
     where TResult : IPrependSpan&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -10394,7 +12068,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Prepend&lt;TElement, TResult&gt;(this IPrependSpan&lt;TElement, TResult&gt; collection, Span&lt;TElement&gt; elements)
-
     where TResult : IPrependSpan&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -10473,7 +12146,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Prepend&lt;TElement, TResult, TEnumerator&gt;(this IPrepend&lt;TElement, TResult&gt; collection, ISequence&lt;TElement, TEnumerator&gt; elements)
-
     where TResult : IPrepend&lt;TElement, TResult&gt; where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -10557,7 +12229,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Read&lt;TElement, TResult&gt;(this IRead&lt;TElement, TResult&gt; stream, out TElement element)
-
     where TResult : IRead&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -10636,7 +12307,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Read&lt;TElement, TResult&gt;(this IRead&lt;TElement, TResult&gt; stream, TElement[] elements)
-
     where TResult : IRead&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -10715,7 +12385,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Read&lt;TElement, TResult&gt;(this IRead&lt;TElement, TResult&gt; stream, nint amount, out TElement[] elements)
-
     where TResult : IRead&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -10800,7 +12469,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Read&lt;TElement, TResult&gt;(this IRead&lt;TElement, TResult&gt; stream, nint amount, out ReadOnlyMemory&lt;TElement&gt; elements)
-
     where TResult : IRead&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -10885,7 +12553,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Read&lt;TElement, TResult&gt;(this IRead&lt;TElement, TResult&gt; stream, nint amount, out ReadOnlySpan&lt;TElement&gt; elements)
-
     where TResult : IRead&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -10970,7 +12637,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Read&lt;TElement, TResult&gt;(this IRead&lt;TElement, TResult&gt; stream, Memory&lt;TElement&gt; elements)
-
     where TResult : IRead&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -11049,7 +12715,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Read&lt;TElement, TResult&gt;(this IRead&lt;TElement, TResult&gt; stream, Span&lt;TElement&gt; elements)
-
     where TResult : IRead&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -11200,7 +12865,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Remove&lt;TElement, TResult&gt;(this IRemove&lt;TElement, TResult&gt; collection, TElement element)
-
     where TResult : IRemove&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -11279,7 +12943,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Remove&lt;TElement, TResult&gt;(this IRemove&lt;TElement, TResult&gt; collection, params TElement[] elements)
-
     where TResult : IRemove&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -11358,7 +13021,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Remove&lt;TElement, TResult&gt;(this IRemove&lt;TElement, TResult&gt; collection, Memory&lt;TElement&gt; elements)
-
     where TResult : IRemove&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -11437,7 +13099,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Remove&lt;TElement, TResult&gt;(this IRemove&lt;TElement, TResult&gt; collection, ReadOnlyMemory&lt;TElement&gt; elements)
-
     where TResult : IRemove&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -11516,7 +13177,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Remove&lt;TElement, TResult&gt;(this IRemove&lt;TElement, TResult&gt; collection, ReadOnlySpan&lt;TElement&gt; elements)
-
     where TResult : IRemove&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -11595,7 +13255,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Remove&lt;TElement, TResult&gt;(this IRemove&lt;TElement, TResult&gt; collection, Span&lt;TElement&gt; elements)
-
     where TResult : IRemove&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -11674,7 +13333,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Remove&lt;TElement, TResult, TEnumerator&gt;(this IRemove&lt;TElement, TResult&gt; collection, ISequence&lt;TElement, TEnumerator&gt; elements)
-
     where TResult : IRemove&lt;TElement, TResult&gt; where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -11830,7 +13488,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult RemoveFirst&lt;TElement, TResult&gt;(this IRemove&lt;TElement, TResult&gt; collection, TElement element)
-
     where TResult : IRemove&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -11909,7 +13566,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult RemoveFirst&lt;TElement, TResult&gt;(this IRemove&lt;TElement, TResult&gt; collection, params TElement[] elements)
-
     where TResult : IRemove&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -11988,7 +13644,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult RemoveFirst&lt;TElement, TResult&gt;(this IRemove&lt;TElement, TResult&gt; collection, Memory&lt;TElement&gt; elements)
-
     where TResult : IRemove&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -12067,7 +13722,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult RemoveFirst&lt;TElement, TResult&gt;(this IRemove&lt;TElement, TResult&gt; collection, ReadOnlyMemory&lt;TElement&gt; elements)
-
     where TResult : IRemove&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -12146,7 +13800,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult RemoveFirst&lt;TElement, TResult&gt;(this IRemove&lt;TElement, TResult&gt; collection, ReadOnlySpan&lt;TElement&gt; elements)
-
     where TResult : IRemove&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -12225,7 +13878,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult RemoveFirst&lt;TElement, TResult&gt;(this IRemove&lt;TElement, TResult&gt; collection, Span&lt;TElement&gt; elements)
-
     where TResult : IRemove&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -12304,7 +13956,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult RemoveFirst&lt;TElement, TResult, TEnumerator&gt;(this IRemove&lt;TElement, TResult&gt; collection, ISequence&lt;TElement, TEnumerator&gt; elements)
-
     where TResult : IRemove&lt;TElement, TResult&gt; where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -12460,7 +14111,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult RemoveLast&lt;TElement, TResult&gt;(this IRemove&lt;TElement, TResult&gt; collection, TElement element)
-
     where TResult : IRemove&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -12539,7 +14189,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult RemoveLast&lt;TElement, TResult&gt;(this IRemove&lt;TElement, TResult&gt; collection, params TElement[] elements)
-
     where TResult : IRemove&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -12618,7 +14267,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult RemoveLast&lt;TElement, TResult&gt;(this IRemove&lt;TElement, TResult&gt; collection, Memory&lt;TElement&gt; elements)
-
     where TResult : IRemove&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -12697,7 +14345,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult RemoveLast&lt;TElement, TResult&gt;(this IRemove&lt;TElement, TResult&gt; collection, ReadOnlyMemory&lt;TElement&gt; elements)
-
     where TResult : IRemove&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -12776,7 +14423,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult RemoveLast&lt;TElement, TResult&gt;(this IRemove&lt;TElement, TResult&gt; collection, ReadOnlySpan&lt;TElement&gt; elements)
-
     where TResult : IRemove&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -12855,7 +14501,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult RemoveLast&lt;TElement, TResult&gt;(this IRemove&lt;TElement, TResult&gt; collection, Span&lt;TElement&gt; elements)
-
     where TResult : IRemove&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -12934,7 +14579,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult RemoveLast&lt;TElement, TResult, TEnumerator&gt;(this IRemove&lt;TElement, TResult&gt; collection, ISequence&lt;TElement, TEnumerator&gt; elements)
-
     where TResult : IRemove&lt;TElement, TResult&gt; where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -13252,7 +14896,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Replace&lt;TSearch, TReplace, TResult&gt;(this IReplace&lt;TSearch, TReplace, TResult&gt; collection, TSearch search, TReplace replace)
-
     where TResult : IReplace&lt;TSearch, TReplace, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -13412,7 +15055,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TSelf Resize&lt;TSelf&gt;(this IResize&lt;TSelf&gt; collection, nint capacity)
-
     where TSelf : IResize&lt;TSelf&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -13624,7 +15266,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Seek&lt;TElement, TResult&gt;(this ISeek&lt;TElement, TResult&gt; collection, nint offset)
-
     where TResult : ISeek&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -13689,10 +15330,116 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_ShiftLeft__1___0___.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.ShiftLeft%60%601(%60%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_ShiftLeft_System_String_.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.ShiftLeft(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/IShift`1.cs/#L59">View Source</a>
+  </span>
+  <a id="Langly_TraitExtensions_ShiftLeft_" data-uid="Langly.TraitExtensions.ShiftLeft*"></a>
+  <h4 id="Langly_TraitExtensions_ShiftLeft_System_String_" data-uid="Langly.TraitExtensions.ShiftLeft(System.String)">ShiftLeft(String)</h4>
+  <div class="markdown level1 summary"><p>Shifts the <code data-dev-comment-type="paramref" class="paramref">collection</code> left by one position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string ShiftLeft(this string collection)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><p>An <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a> after the elements are shifted.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_ShiftLeft_System_String_nint_.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.ShiftLeft(System.String%2Cnint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/IShift`1.cs/#L115">View Source</a>
+  </span>
+  <a id="Langly_TraitExtensions_ShiftLeft_" data-uid="Langly.TraitExtensions.ShiftLeft*"></a>
+  <h4 id="Langly_TraitExtensions_ShiftLeft_System_String_nint_" data-uid="Langly.TraitExtensions.ShiftLeft(System.String,nint)">ShiftLeft(String, nint)</h4>
+  <div class="markdown level1 summary"><p>Shifts the <code data-dev-comment-type="paramref" class="paramref">collection</code> left by <code data-dev-comment-type="paramref" class="paramref">amount</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string ShiftLeft(this string collection, nint amount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td><p>The amount of positions to shift.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><p>A <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a> after the elements are shifted.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_ShiftLeft__1___0___.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.ShiftLeft%60%601(%60%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/IShift`1.cs/#L67">View Source</a>
   </span>
   <a id="Langly_TraitExtensions_ShiftLeft_" data-uid="Langly.TraitExtensions.ShiftLeft*"></a>
   <h4 id="Langly_TraitExtensions_ShiftLeft__1___0___" data-uid="Langly.TraitExtensions.ShiftLeft``1(``0[])">ShiftLeft&lt;TElement&gt;(TElement[])</h4>
@@ -13757,7 +15504,7 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_ShiftLeft__1___0___nint_.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.ShiftLeft%60%601(%60%600%5B%5D%2Cnint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/IShift`1.cs/#L93">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/IShift`1.cs/#L137">View Source</a>
   </span>
   <a id="Langly_TraitExtensions_ShiftLeft_" data-uid="Langly.TraitExtensions.ShiftLeft*"></a>
   <h4 id="Langly_TraitExtensions_ShiftLeft__1___0___nint_" data-uid="Langly.TraitExtensions.ShiftLeft``1(``0[],nint)">ShiftLeft&lt;TElement&gt;(TElement[], nint)</h4>
@@ -13838,7 +15585,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult ShiftLeft&lt;TResult&gt;(this IShift&lt;TResult&gt; collection)
-
     where TResult : IShift&lt;TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -13895,7 +15641,7 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_ShiftLeft__1_Langly_Traits_IShift___0__nint_.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.ShiftLeft%60%601(Langly.Traits.IShift%7B%60%600%7D%2Cnint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/IShift`1.cs/#L84">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/IShift`1.cs/#L106">View Source</a>
   </span>
   <a id="Langly_TraitExtensions_ShiftLeft_" data-uid="Langly.TraitExtensions.ShiftLeft*"></a>
   <h4 id="Langly_TraitExtensions_ShiftLeft__1_Langly_Traits_IShift___0__nint_" data-uid="Langly.TraitExtensions.ShiftLeft``1(Langly.Traits.IShift{``0},nint)">ShiftLeft&lt;TResult&gt;(IShift&lt;TResult&gt;, nint)</h4>
@@ -13905,7 +15651,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult ShiftLeft&lt;TResult&gt;(this IShift&lt;TResult&gt; collection, nint amount)
-
     where TResult : IShift&lt;TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -13968,7 +15713,7 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_ShiftLeft__1_System_Memory___0__.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.ShiftLeft%60%601(System.Memory%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/IShift`1.cs/#L67">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/IShift`1.cs/#L75">View Source</a>
   </span>
   <a id="Langly_TraitExtensions_ShiftLeft_" data-uid="Langly.TraitExtensions.ShiftLeft*"></a>
   <h4 id="Langly_TraitExtensions_ShiftLeft__1_System_Memory___0__" data-uid="Langly.TraitExtensions.ShiftLeft``1(System.Memory{``0})">ShiftLeft&lt;TElement&gt;(Memory&lt;TElement&gt;)</h4>
@@ -14033,7 +15778,7 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_ShiftLeft__1_System_Memory___0__nint_.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.ShiftLeft%60%601(System.Memory%7B%60%600%7D%2Cnint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/IShift`1.cs/#L115">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/IShift`1.cs/#L159">View Source</a>
   </span>
   <a id="Langly_TraitExtensions_ShiftLeft_" data-uid="Langly.TraitExtensions.ShiftLeft*"></a>
   <h4 id="Langly_TraitExtensions_ShiftLeft__1_System_Memory___0__nint_" data-uid="Langly.TraitExtensions.ShiftLeft``1(System.Memory{``0},nint)">ShiftLeft&lt;TElement&gt;(Memory&lt;TElement&gt;, nint)</h4>
@@ -14104,7 +15849,7 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_ShiftLeft__1_System_ReadOnlyMemory___0__.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.ShiftLeft%60%601(System.ReadOnlyMemory%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/IShift`1.cs/#L74">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/IShift`1.cs/#L82">View Source</a>
   </span>
   <a id="Langly_TraitExtensions_ShiftLeft_" data-uid="Langly.TraitExtensions.ShiftLeft*"></a>
   <h4 id="Langly_TraitExtensions_ShiftLeft__1_System_ReadOnlyMemory___0__" data-uid="Langly.TraitExtensions.ShiftLeft``1(System.ReadOnlyMemory{``0})">ShiftLeft&lt;TElement&gt;(ReadOnlyMemory&lt;TElement&gt;)</h4>
@@ -14169,7 +15914,7 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_ShiftLeft__1_System_ReadOnlyMemory___0__nint_.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.ShiftLeft%60%601(System.ReadOnlyMemory%7B%60%600%7D%2Cnint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/IShift`1.cs/#L136">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/IShift`1.cs/#L180">View Source</a>
   </span>
   <a id="Langly_TraitExtensions_ShiftLeft_" data-uid="Langly.TraitExtensions.ShiftLeft*"></a>
   <h4 id="Langly_TraitExtensions_ShiftLeft__1_System_ReadOnlyMemory___0__nint_" data-uid="Langly.TraitExtensions.ShiftLeft``1(System.ReadOnlyMemory{``0},nint)">ShiftLeft&lt;TElement&gt;(ReadOnlyMemory&lt;TElement&gt;, nint)</h4>
@@ -14237,10 +15982,282 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_ShiftLeft__1_System_ReadOnlySpan___0__.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.ShiftLeft%60%601(System.ReadOnlySpan%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/IShift`1.cs/#L96">View Source</a>
+  </span>
+  <a id="Langly_TraitExtensions_ShiftLeft_" data-uid="Langly.TraitExtensions.ShiftLeft*"></a>
+  <h4 id="Langly_TraitExtensions_ShiftLeft__1_System_ReadOnlySpan___0__" data-uid="Langly.TraitExtensions.ShiftLeft``1(System.ReadOnlySpan{``0})">ShiftLeft&lt;TElement&gt;(ReadOnlySpan&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Shifts the <code data-dev-comment-type="paramref" class="paramref">collection</code> left by one position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ReadOnlySpan&lt;TElement&gt; ShiftLeft&lt;TElement&gt;(this ReadOnlySpan&lt;TElement&gt; collection)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;TElement&gt;</td>
+        <td><p>An <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan&lt;T&gt;</a> of <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> after the elements are shifted.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_ShiftLeft__1_System_ReadOnlySpan___0__nint_.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.ShiftLeft%60%601(System.ReadOnlySpan%7B%60%600%7D%2Cnint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/IShift`1.cs/#L222">View Source</a>
+  </span>
+  <a id="Langly_TraitExtensions_ShiftLeft_" data-uid="Langly.TraitExtensions.ShiftLeft*"></a>
+  <h4 id="Langly_TraitExtensions_ShiftLeft__1_System_ReadOnlySpan___0__nint_" data-uid="Langly.TraitExtensions.ShiftLeft``1(System.ReadOnlySpan{``0},nint)">ShiftLeft&lt;TElement&gt;(ReadOnlySpan&lt;TElement&gt;, nint)</h4>
+  <div class="markdown level1 summary"><p>Shifts the <code data-dev-comment-type="paramref" class="paramref">collection</code> left by <code data-dev-comment-type="paramref" class="paramref">amount</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ReadOnlySpan&lt;TElement&gt; ShiftLeft&lt;TElement&gt;(this ReadOnlySpan&lt;TElement&gt; collection, nint amount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td><p>The amount of positions to shift.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;TElement&gt;</td>
+        <td><p>An <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan&lt;T&gt;</a> of <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> after the elements are shifted.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_ShiftLeft__1_System_Span___0__.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.ShiftLeft%60%601(System.Span%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/IShift`1.cs/#L89">View Source</a>
+  </span>
+  <a id="Langly_TraitExtensions_ShiftLeft_" data-uid="Langly.TraitExtensions.ShiftLeft*"></a>
+  <h4 id="Langly_TraitExtensions_ShiftLeft__1_System_Span___0__" data-uid="Langly.TraitExtensions.ShiftLeft``1(System.Span{``0})">ShiftLeft&lt;TElement&gt;(Span&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Shifts the <code data-dev-comment-type="paramref" class="paramref">collection</code> left by one position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Span&lt;TElement&gt; ShiftLeft&lt;TElement&gt;(this Span&lt;TElement&gt; collection)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;TElement&gt;</td>
+        <td><p>An <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span&lt;T&gt;</a> of <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> after the elements are shifted.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_ShiftLeft__1_System_Span___0__nint_.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.ShiftLeft%60%601(System.Span%7B%60%600%7D%2Cnint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/IShift`1.cs/#L201">View Source</a>
+  </span>
+  <a id="Langly_TraitExtensions_ShiftLeft_" data-uid="Langly.TraitExtensions.ShiftLeft*"></a>
+  <h4 id="Langly_TraitExtensions_ShiftLeft__1_System_Span___0__nint_" data-uid="Langly.TraitExtensions.ShiftLeft``1(System.Span{``0},nint)">ShiftLeft&lt;TElement&gt;(Span&lt;TElement&gt;, nint)</h4>
+  <div class="markdown level1 summary"><p>Shifts the <code data-dev-comment-type="paramref" class="paramref">collection</code> left by <code data-dev-comment-type="paramref" class="paramref">amount</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Span&lt;TElement&gt; ShiftLeft&lt;TElement&gt;(this Span&lt;TElement&gt; collection, nint amount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td><p>The amount of positions to shift.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;TElement&gt;</td>
+        <td><p>An <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span&lt;T&gt;</a> of <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> after the elements are shifted.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_ShiftRight__1___0___.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.ShiftRight%60%601(%60%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/IShift`1.cs/#L166">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/IShift`1.cs/#L252">View Source</a>
   </span>
   <a id="Langly_TraitExtensions_ShiftRight_" data-uid="Langly.TraitExtensions.ShiftRight*"></a>
   <h4 id="Langly_TraitExtensions_ShiftRight__1___0___" data-uid="Langly.TraitExtensions.ShiftRight``1(``0[])">ShiftRight&lt;TElement&gt;(TElement[])</h4>
@@ -14305,7 +16322,7 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_ShiftRight__1___0___nint_.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.ShiftRight%60%601(%60%600%5B%5D%2Cnint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/IShift`1.cs/#L200">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/IShift`1.cs/#L300">View Source</a>
   </span>
   <a id="Langly_TraitExtensions_ShiftRight_" data-uid="Langly.TraitExtensions.ShiftRight*"></a>
   <h4 id="Langly_TraitExtensions_ShiftRight__1___0___nint_" data-uid="Langly.TraitExtensions.ShiftRight``1(``0[],nint)">ShiftRight&lt;TElement&gt;(TElement[], nint)</h4>
@@ -14376,7 +16393,7 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_ShiftRight__1_Langly_Traits_IShift___0__.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.ShiftRight%60%601(Langly.Traits.IShift%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/IShift`1.cs/#L158">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/IShift`1.cs/#L244">View Source</a>
   </span>
   <a id="Langly_TraitExtensions_ShiftRight_" data-uid="Langly.TraitExtensions.ShiftRight*"></a>
   <h4 id="Langly_TraitExtensions_ShiftRight__1_Langly_Traits_IShift___0__" data-uid="Langly.TraitExtensions.ShiftRight``1(Langly.Traits.IShift{``0})">ShiftRight&lt;TResult&gt;(IShift&lt;TResult&gt;)</h4>
@@ -14386,7 +16403,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult ShiftRight&lt;TResult&gt;(this IShift&lt;TResult&gt; collection)
-
     where TResult : IShift&lt;TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -14443,7 +16459,7 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_ShiftRight__1_Langly_Traits_IShift___0__nint_.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.ShiftRight%60%601(Langly.Traits.IShift%7B%60%600%7D%2Cnint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/IShift`1.cs/#L191">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/IShift`1.cs/#L291">View Source</a>
   </span>
   <a id="Langly_TraitExtensions_ShiftRight_" data-uid="Langly.TraitExtensions.ShiftRight*"></a>
   <h4 id="Langly_TraitExtensions_ShiftRight__1_Langly_Traits_IShift___0__nint_" data-uid="Langly.TraitExtensions.ShiftRight``1(Langly.Traits.IShift{``0},nint)">ShiftRight&lt;TResult&gt;(IShift&lt;TResult&gt;, nint)</h4>
@@ -14453,7 +16469,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult ShiftRight&lt;TResult&gt;(this IShift&lt;TResult&gt; collection, nint amount)
-
     where TResult : IShift&lt;TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -14516,7 +16531,7 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_ShiftRight__1_System_Memory___0__.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.ShiftRight%60%601(System.Memory%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/IShift`1.cs/#L174">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/IShift`1.cs/#L260">View Source</a>
   </span>
   <a id="Langly_TraitExtensions_ShiftRight_" data-uid="Langly.TraitExtensions.ShiftRight*"></a>
   <h4 id="Langly_TraitExtensions_ShiftRight__1_System_Memory___0__" data-uid="Langly.TraitExtensions.ShiftRight``1(System.Memory{``0})">ShiftRight&lt;TElement&gt;(Memory&lt;TElement&gt;)</h4>
@@ -14581,7 +16596,7 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_ShiftRight__1_System_Memory___0__nint_.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.ShiftRight%60%601(System.Memory%7B%60%600%7D%2Cnint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/IShift`1.cs/#L222">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/IShift`1.cs/#L322">View Source</a>
   </span>
   <a id="Langly_TraitExtensions_ShiftRight_" data-uid="Langly.TraitExtensions.ShiftRight*"></a>
   <h4 id="Langly_TraitExtensions_ShiftRight__1_System_Memory___0__nint_" data-uid="Langly.TraitExtensions.ShiftRight``1(System.Memory{``0},nint)">ShiftRight&lt;TElement&gt;(Memory&lt;TElement&gt;, nint)</h4>
@@ -14652,7 +16667,7 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_ShiftRight__1_System_ReadOnlyMemory___0__.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.ShiftRight%60%601(System.ReadOnlyMemory%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/IShift`1.cs/#L181">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/IShift`1.cs/#L267">View Source</a>
   </span>
   <a id="Langly_TraitExtensions_ShiftRight_" data-uid="Langly.TraitExtensions.ShiftRight*"></a>
   <h4 id="Langly_TraitExtensions_ShiftRight__1_System_ReadOnlyMemory___0__" data-uid="Langly.TraitExtensions.ShiftRight``1(System.ReadOnlyMemory{``0})">ShiftRight&lt;TElement&gt;(ReadOnlyMemory&lt;TElement&gt;)</h4>
@@ -14717,7 +16732,7 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_ShiftRight__1_System_ReadOnlyMemory___0__nint_.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.ShiftRight%60%601(System.ReadOnlyMemory%7B%60%600%7D%2Cnint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/IShift`1.cs/#L243">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/IShift`1.cs/#L343">View Source</a>
   </span>
   <a id="Langly_TraitExtensions_ShiftRight_" data-uid="Langly.TraitExtensions.ShiftRight*"></a>
   <h4 id="Langly_TraitExtensions_ShiftRight__1_System_ReadOnlyMemory___0__nint_" data-uid="Langly.TraitExtensions.ShiftRight``1(System.ReadOnlyMemory{``0},nint)">ShiftRight&lt;TElement&gt;(ReadOnlyMemory&lt;TElement&gt;, nint)</h4>
@@ -14764,6 +16779,278 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;TElement&gt;</td>
         <td><p>An <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory&lt;T&gt;</a> of <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> after the elements are shifted.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_ShiftRight__1_System_ReadOnlySpan___0__.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.ShiftRight%60%601(System.ReadOnlySpan%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/IShift`1.cs/#L281">View Source</a>
+  </span>
+  <a id="Langly_TraitExtensions_ShiftRight_" data-uid="Langly.TraitExtensions.ShiftRight*"></a>
+  <h4 id="Langly_TraitExtensions_ShiftRight__1_System_ReadOnlySpan___0__" data-uid="Langly.TraitExtensions.ShiftRight``1(System.ReadOnlySpan{``0})">ShiftRight&lt;TElement&gt;(ReadOnlySpan&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Shifts the <code data-dev-comment-type="paramref" class="paramref">collection</code> right by one position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ReadOnlySpan&lt;TElement&gt; ShiftRight&lt;TElement&gt;(this ReadOnlySpan&lt;TElement&gt; collection)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;TElement&gt;</td>
+        <td><p>An <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan&lt;T&gt;</a> of <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> after the elements are shifted.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_ShiftRight__1_System_ReadOnlySpan___0__nint_.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.ShiftRight%60%601(System.ReadOnlySpan%7B%60%600%7D%2Cnint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/IShift`1.cs/#L385">View Source</a>
+  </span>
+  <a id="Langly_TraitExtensions_ShiftRight_" data-uid="Langly.TraitExtensions.ShiftRight*"></a>
+  <h4 id="Langly_TraitExtensions_ShiftRight__1_System_ReadOnlySpan___0__nint_" data-uid="Langly.TraitExtensions.ShiftRight``1(System.ReadOnlySpan{``0},nint)">ShiftRight&lt;TElement&gt;(ReadOnlySpan&lt;TElement&gt;, nint)</h4>
+  <div class="markdown level1 summary"><p>Shifts the <code data-dev-comment-type="paramref" class="paramref">collection</code> right by <code data-dev-comment-type="paramref" class="paramref">amount</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ReadOnlySpan&lt;TElement&gt; ShiftRight&lt;TElement&gt;(this ReadOnlySpan&lt;TElement&gt; collection, nint amount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td><p>The amount of positions to shift.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;TElement&gt;</td>
+        <td><p>An <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan&lt;T&gt;</a> of <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> after the elements are shifted.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_ShiftRight__1_System_Span___0__.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.ShiftRight%60%601(System.Span%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/IShift`1.cs/#L274">View Source</a>
+  </span>
+  <a id="Langly_TraitExtensions_ShiftRight_" data-uid="Langly.TraitExtensions.ShiftRight*"></a>
+  <h4 id="Langly_TraitExtensions_ShiftRight__1_System_Span___0__" data-uid="Langly.TraitExtensions.ShiftRight``1(System.Span{``0})">ShiftRight&lt;TElement&gt;(Span&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Shifts the <code data-dev-comment-type="paramref" class="paramref">collection</code> right by one position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Span&lt;TElement&gt; ShiftRight&lt;TElement&gt;(this Span&lt;TElement&gt; collection)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;TElement&gt;</td>
+        <td><p>An <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span&lt;T&gt;</a> of <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> after the elements are shifted.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_TraitExtensions_ShiftRight__1_System_Span___0__nint_.md&amp;value=---%0Auid%3A%20Langly.TraitExtensions.ShiftRight%60%601(System.Span%7B%60%600%7D%2Cnint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Libraries/Langly.Core/Traits/IShift`1.cs/#L364">View Source</a>
+  </span>
+  <a id="Langly_TraitExtensions_ShiftRight_" data-uid="Langly.TraitExtensions.ShiftRight*"></a>
+  <h4 id="Langly_TraitExtensions_ShiftRight__1_System_Span___0__nint_" data-uid="Langly.TraitExtensions.ShiftRight``1(System.Span{``0},nint)">ShiftRight&lt;TElement&gt;(Span&lt;TElement&gt;, nint)</h4>
+  <div class="markdown level1 summary"><p>Shifts the <code data-dev-comment-type="paramref" class="paramref">collection</code> right by <code data-dev-comment-type="paramref" class="paramref">amount</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Span&lt;TElement&gt; ShiftRight&lt;TElement&gt;(this Span&lt;TElement&gt; collection, nint amount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>This collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td><p>The amount of positions to shift.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;TElement&gt;</td>
+        <td><p>An <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span&lt;T&gt;</a> of <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> after the elements are shifted.</p>
 </td>
       </tr>
     </tbody>
@@ -14862,7 +17149,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TSelf Shrink&lt;TSelf&gt;(this IResize&lt;TSelf&gt; collection)
-
     where TSelf : IResize&lt;TSelf&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -15911,7 +18197,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Write&lt;TResult&gt;(this IWrite&lt;char, TResult&gt; stream, string elements)
-
     where TResult : IWrite&lt;char, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -15985,7 +18270,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Write&lt;TElement, TResult&gt;(this IWrite&lt;TElement, TResult&gt; stream, TElement element)
-
     where TResult : IWrite&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -16064,7 +18348,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Write&lt;TElement, TResult&gt;(this IWrite&lt;TElement, TResult&gt; stream, params TElement[] elements)
-
     where TResult : IWrite&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -16143,7 +18426,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Write&lt;TElement, TResult&gt;(this IWrite&lt;TElement, TResult&gt; stream, Memory&lt;TElement&gt; elements)
-
     where TResult : IWrite&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -16222,7 +18504,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Write&lt;TElement, TResult&gt;(this IWrite&lt;TElement, TResult&gt; stream, ReadOnlyMemory&lt;TElement&gt; elements)
-
     where TResult : IWrite&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -16301,7 +18582,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Write&lt;TElement, TResult&gt;(this IWriteSpan&lt;TElement, TResult&gt; stream, ReadOnlySpan&lt;TElement&gt; elements)
-
     where TResult : IWriteSpan&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -16380,7 +18660,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult Write&lt;TElement, TResult&gt;(this IWriteSpan&lt;TElement, TResult&gt; stream, Span&lt;TElement&gt; elements)
-
     where TResult : IWriteSpan&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -16460,7 +18739,6 @@ public static TElement Parse&lt;TElement&gt;(this IParseUnsafe&lt;TElement&gt; p
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static TResult Write&lt;TElement, TResult&gt;(this IWriteUnsafe&lt;TElement, TResult&gt; stream, TElement*elements, int length)
-
     where TElement : struct where TResult : IWriteUnsafe&lt;TElement, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -16545,7 +18823,6 @@ public static TResult Write&lt;TElement, TResult&gt;(this IWriteUnsafe&lt;TEleme
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult WriteLine&lt;TResult&gt;(this IWrite&lt;char, TResult&gt; stream)
-
     where TResult : IWrite&lt;char, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -16613,7 +18890,6 @@ public static TResult Write&lt;TElement, TResult&gt;(this IWriteUnsafe&lt;TEleme
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult WriteLine&lt;TResult&gt;(this IWrite&lt;char, TResult&gt; stream, char element)
-
     where TResult : IWrite&lt;char, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -16687,7 +18963,6 @@ public static TResult Write&lt;TElement, TResult&gt;(this IWriteUnsafe&lt;TEleme
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult WriteLine&lt;TResult&gt;(this IWrite&lt;char, TResult&gt; stream, params char[] elements)
-
     where TResult : IWrite&lt;char, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -16761,7 +19036,6 @@ public static TResult Write&lt;TElement, TResult&gt;(this IWriteUnsafe&lt;TEleme
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult WriteLine&lt;TResult&gt;(this IWrite&lt;char, TResult&gt; stream, Memory&lt;char&gt; elements)
-
     where TResult : IWrite&lt;char, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -16835,7 +19109,6 @@ public static TResult Write&lt;TElement, TResult&gt;(this IWriteUnsafe&lt;TEleme
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult WriteLine&lt;TResult&gt;(this IWrite&lt;char, TResult&gt; stream, ReadOnlyMemory&lt;char&gt; elements)
-
     where TResult : IWrite&lt;char, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -16909,7 +19182,6 @@ public static TResult Write&lt;TElement, TResult&gt;(this IWriteUnsafe&lt;TEleme
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult WriteLine&lt;TResult&gt;(this IWrite&lt;char, TResult&gt; stream, string elements)
-
     where TResult : IWrite&lt;char, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -16983,7 +19255,6 @@ public static TResult Write&lt;TElement, TResult&gt;(this IWriteUnsafe&lt;TEleme
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult WriteLine&lt;TResult&gt;(this IWriteSpan&lt;char, TResult&gt; stream, ReadOnlySpan&lt;char&gt; elements)
-
     where TResult : IWriteSpan&lt;char, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -17057,7 +19328,6 @@ public static TResult Write&lt;TElement, TResult&gt;(this IWriteUnsafe&lt;TEleme
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TResult WriteLine&lt;TResult&gt;(this IWriteSpan&lt;char, TResult&gt; stream, Span&lt;char&gt; elements)
-
     where TResult : IWriteSpan&lt;char, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -17132,7 +19402,6 @@ public static TResult Write&lt;TElement, TResult&gt;(this IWriteUnsafe&lt;TEleme
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static TResult WriteLine&lt;TResult&gt;(this IWriteUnsafe&lt;char, TResult&gt; stream, char *elements, int length)
-
     where TResult : IWriteUnsafe&lt;char, TResult&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>

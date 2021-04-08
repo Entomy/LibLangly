@@ -88,6 +88,23 @@ namespace Langly {
 		/// <summary>
 		/// Postpends the element onto this object.
 		/// </summary>
+		/// <param name="collection">This collection.</param>
+		/// <param name="element">The element to postpend.</param>
+		/// <returns>Returns a <see cref="String"/> containing the original and postpended elements.</returns>
+		[return: MaybeNull, NotNullIfNotNull("collection"), NotNullIfNotNull("element")]
+		public static String Postpend([AllowNull] this String collection, Char element) {
+			if (collection is null || collection.Length == 0) {
+				return new String(element, 1);
+			}
+			Char[] Array = new Char[collection.Length + 1];
+			collection.AsMemory().CopyTo(Array);
+			Array[collection.Length] = element;
+			return new(Array);
+		}
+
+		/// <summary>
+		/// Postpends the element onto this object.
+		/// </summary>
 		/// <typeparam name="TElement">The type of the elements.</typeparam>
 		/// <param name="collection">This collection.</param>
 		/// <param name="element">The element to postpend.</param>
@@ -155,6 +172,25 @@ namespace Langly {
 		/// <returns>If the postpend occurred successfully, returns a <typeparamref name="TResult"/> containing the original and postpended elements; otherwise, <see langword="null"/>.</returns>
 		[return: MaybeNull]
 		public static TResult Postpend<TElement, TResult>([AllowNull] this IPostpend<TElement, TResult> collection, [AllowNull] params TElement[] elements) where TResult : IPostpend<TElement, TResult> => collection is not null ? collection.Postpend(elements) : (TResult)collection;
+
+		/// <summary>
+		/// Postpends the element onto this object.
+		/// </summary>
+		/// <param name="collection">This collection.</param>
+		/// <param name="elements">The elements to postpend.</param>
+		/// <returns>Returns a <see cref="String"/> containing the original and postpended elements.</returns>
+		[return: MaybeNull, NotNullIfNotNull("collection"), NotNullIfNotNull("elements")]
+		public static String Postpend([AllowNull] this String collection, [AllowNull] params Char[] elements) {
+			if (elements is null || elements.Length == 0) {
+				return collection;
+			} else if (collection is null || collection.Length == 0) {
+				return new(elements);
+			}
+			Char[] Array = new Char[collection.Length + elements.Length];
+			collection.AsMemory().CopyTo(Array);
+			elements.CopyTo(Array.AsMemory().Slice(collection.Length, elements.Length));
+			return new(Array);
+		}
 
 		/// <summary>
 		/// Postpends the element onto this object.
@@ -230,6 +266,25 @@ namespace Langly {
 		/// <summary>
 		/// Postpends the element onto this object.
 		/// </summary>
+		/// <param name="collection">This collection.</param>
+		/// <param name="elements">The elements to postpend.</param>
+		/// <returns>Returns a <see cref="String"/> containing the original and postpended elements.</returns>
+		[return: MaybeNull, NotNullIfNotNull("collection")]
+		public static String Postpend([AllowNull] this String collection, Memory<Char> elements) {
+			if (elements.Length == 0) {
+				return collection;
+			} else if (collection is null || collection.Length == 0) {
+				return new(elements.Span);
+			}
+			Char[] Array = new Char[collection.Length + elements.Length];
+			collection.AsMemory().CopyTo(Array);
+			elements.CopyTo(Array.AsMemory().Slice(collection.Length, elements.Length));
+			return new(Array);
+		}
+
+		/// <summary>
+		/// Postpends the element onto this object.
+		/// </summary>
 		/// <typeparam name="TElement">The type of the elements.</typeparam>
 		/// <param name="collection">This collection.</param>
 		/// <param name="elements">The elements to postpend.</param>
@@ -296,6 +351,25 @@ namespace Langly {
 		/// <returns>If the postpend occurred successfully, returns a <typeparamref name="TResult"/> containing the original and postpended elements; otherwise, <see langword="null"/>.</returns>
 		[return: MaybeNull]
 		public static TResult Postpend<TElement, TResult>([AllowNull] this IPostpend<TElement, TResult> collection, ReadOnlyMemory<TElement> elements) where TResult : IPostpend<TElement, TResult> => collection is not null ? collection.Postpend(elements) : (TResult)collection;
+
+		/// <summary>
+		/// Postpends the element onto this object.
+		/// </summary>
+		/// <param name="collection">This collection.</param>
+		/// <param name="elements">The elements to postpend.</param>
+		/// <returns>Returns a <see cref="String"/> containing the original and postpended elements.</returns>
+		[return: MaybeNull, NotNullIfNotNull("collection")]
+		public static String Postpend([AllowNull] this String collection, ReadOnlyMemory<Char> elements) {
+			if (elements.Length == 0) {
+				return collection;
+			} else if (collection is null || collection.Length == 0) {
+				return new(elements.Span);
+			}
+			Char[] Array = new Char[collection.Length + elements.Length];
+			collection.AsMemory().CopyTo(Array);
+			elements.CopyTo(Array.AsMemory().Slice(collection.Length, elements.Length));
+			return new(Array);
+		}
 
 		/// <summary>
 		/// Postpends the element onto this object.
@@ -379,6 +453,25 @@ namespace Langly {
 		/// <returns>If the postpend occurred successfully, returns a <typeparamref name="TResult"/> containing the original and postpended elements; otherwise, <see langword="null"/>.</returns>
 		[return: MaybeNull]
 		public static TResult Postpend<TResult>([AllowNull] this IPostpend<Char, TResult> collection, [AllowNull] String elements) where TResult : IPostpend<Char, TResult> => collection is not null && elements is not null ? collection.Postpend(elements.AsMemory()) : (TResult)collection;
+
+		/// <summary>
+		/// Postpends the elements onto this object.
+		/// </summary>
+		/// <param name="collection">This collection.</param>
+		/// <param name="elements">The elements to postpend.</param>
+		/// <returns>Returns a <see cref="String"/> containing the original and postpended elements.</returns>
+		[return: MaybeNull, NotNullIfNotNull("collection"), NotNullIfNotNull("elements")]
+		public static String Postpend([AllowNull] this String collection, [AllowNull] String elements) {
+			if (elements is null || elements.Length == 0) {
+				return collection;
+			} else if (collection is null || collection.Length == 0) {
+				return elements;
+			}
+			Char[] Array = new Char[collection.Length + elements.Length];
+			collection.AsMemory().CopyTo(Array);
+			elements.AsMemory().CopyTo(Array.AsMemory().Slice(collection.Length, elements.Length));
+			return new(Array);
+		}
 		#endregion
 	}
 }

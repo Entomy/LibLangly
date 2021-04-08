@@ -38,7 +38,7 @@ namespace Langly.Traits {
 		/// <para><paramref name="func"/> is a magma, so associativity like left-fold and right-fold are completely irrelevant.</para>
 		/// <para><paramref name="identity"/> is required as a start point for the fold. It needs to be the identity of the <paramref name="func"/> to function properly. For example, the identity of addition is <c>0</c>, and the identity of multiplication is <c>1</c>. Without an appropriate identity, the results will be wrong.</para>
 		/// </remarks>
-		TElement Fold([DisallowNull] Func<TElement, TElement, TElement> func, TElement identity) {
+		TElement Fold([DisallowNull] Func<TElement, TElement, TElement> func, [AllowNull] TElement identity) {
 			TElement result = identity;
 			if (func is null) {
 				goto Result;
@@ -110,7 +110,7 @@ namespace Langly.Traits {
 			foreach (TElement item in this) {
 				if (item is null && predicate is null) {
 					count++;
-				} else if (predicate?.Invoke(item) ?? false) {
+				} else if (predicate(item)) {
 					count++;
 				}
 			}
@@ -121,6 +121,7 @@ namespace Langly.Traits {
 
 namespace Langly {
 	public static partial class TraitExtensions {
+		#region Fold()
 		/// <summary>
 		/// Folds the collection into a single element as described by the <paramref name="func"/>.
 		/// </summary>
@@ -135,8 +136,111 @@ namespace Langly {
 		/// <para><paramref name="identity"/> is required as a start point for the fold. It needs to be the identity of the <paramref name="func"/> to function properly. For example, the identity of addition is <c>0</c>, and the identity of multiplication is <c>1</c>. Without an appropriate identity, the results will be wrong.</para>
 		/// </remarks>
 		[return: MaybeNull]
-		public static TElement Fold<TElement, TEnumerator>([AllowNull] this ISequence<TElement, TEnumerator> collection, [DisallowNull] Func<TElement, TElement, TElement> func, TElement identity) where TEnumerator : IEnumerator<TElement> => collection is not null ? collection.Fold(func, identity) : (TElement)collection;
+		public static TElement Fold<TElement, TEnumerator>([AllowNull] this ISequence<TElement, TEnumerator> collection, [DisallowNull] Func<TElement, TElement, TElement> func, [AllowNull] TElement identity) where TEnumerator : IEnumerator<TElement> => collection is not null ? collection.Fold(func, identity) : identity;
 
+		/// <summary>
+		/// Folds the collection into a single element as described by the <paramref name="func"/>.
+		/// </summary>
+		/// <param name="collection">This collection.</param>
+		/// <param name="func">The function describing the folding operation. This is a magma.</param>
+		/// <param name="identity">The identity value for <paramref name="func"/>.</param>
+		/// <returns>A single element after folding the entire <paramref name="collection"/>. If <paramref name="collection"/> or <paramref name="func"/> are <see langword="null"/> this function returns <paramref name="identity"/>.</returns>
+		/// <remarks>
+		/// <para><paramref name="func"/> is a magma, so associativity like left-fold and right-fold are completely irrelevant.</para>
+		/// <para><paramref name="identity"/> is required as a start point for the fold. It needs to be the identity of the <paramref name="func"/> to function properly. For example, the identity of addition is <c>0</c>, and the identity of multiplication is <c>1</c>. Without an appropriate identity, the results will be wrong.</para>
+		/// </remarks>
+		[return: MaybeNull]
+		public static Char Fold([AllowNull] this String collection, [DisallowNull] Func<Char, Char, Char> func, Char identity) => collection is not null ? Fold(collection.AsMemory(), func, identity) : identity;
+
+		/// <summary>
+		/// Folds the collection into a single element as described by the <paramref name="func"/>.
+		/// </summary>
+		/// <typeparam name="TElement">The type of elements in the collection.</typeparam>
+		/// <param name="collection">This collection.</param>
+		/// <param name="func">The function describing the folding operation. This is a magma.</param>
+		/// <param name="identity">The identity value for <paramref name="func"/>.</param>
+		/// <returns>A single element after folding the entire <paramref name="collection"/>. If <paramref name="collection"/> or <paramref name="func"/> are <see langword="null"/> this function returns <paramref name="identity"/>.</returns>
+		/// <remarks>
+		/// <para><paramref name="func"/> is a magma, so associativity like left-fold and right-fold are completely irrelevant.</para>
+		/// <para><paramref name="identity"/> is required as a start point for the fold. It needs to be the identity of the <paramref name="func"/> to function properly. For example, the identity of addition is <c>0</c>, and the identity of multiplication is <c>1</c>. Without an appropriate identity, the results will be wrong.</para>
+		/// </remarks>
+		[return: MaybeNull]
+		public static TElement Fold<TElement>([AllowNull] this TElement[] collection, [DisallowNull] Func<TElement, TElement, TElement> func, [AllowNull] TElement identity) => collection is not null ? Fold(collection.AsMemory(), func, identity) : identity;
+
+		/// <summary>
+		/// Folds the collection into a single element as described by the <paramref name="func"/>.
+		/// </summary>
+		/// <typeparam name="TElement">The type of elements in the collection.</typeparam>
+		/// <param name="collection">This collection.</param>
+		/// <param name="func">The function describing the folding operation. This is a magma.</param>
+		/// <param name="identity">The identity value for <paramref name="func"/>.</param>
+		/// <returns>A single element after folding the entire <paramref name="collection"/>. If <paramref name="collection"/> or <paramref name="func"/> are <see langword="null"/> this function returns <paramref name="identity"/>.</returns>
+		/// <remarks>
+		/// <para><paramref name="func"/> is a magma, so associativity like left-fold and right-fold are completely irrelevant.</para>
+		/// <para><paramref name="identity"/> is required as a start point for the fold. It needs to be the identity of the <paramref name="func"/> to function properly. For example, the identity of addition is <c>0</c>, and the identity of multiplication is <c>1</c>. Without an appropriate identity, the results will be wrong.</para>
+		/// </remarks>
+		[return: MaybeNull]
+		public static TElement Fold<TElement>(this Memory<TElement> collection, [DisallowNull] Func<TElement, TElement, TElement> func, [AllowNull] TElement identity) => Fold(collection.Span, func, identity);
+
+		/// <summary>
+		/// Folds the collection into a single element as described by the <paramref name="func"/>.
+		/// </summary>
+		/// <typeparam name="TElement">The type of elements in the collection.</typeparam>
+		/// <param name="collection">This collection.</param>
+		/// <param name="func">The function describing the folding operation. This is a magma.</param>
+		/// <param name="identity">The identity value for <paramref name="func"/>.</param>
+		/// <returns>A single element after folding the entire <paramref name="collection"/>. If <paramref name="collection"/> or <paramref name="func"/> are <see langword="null"/> this function returns <paramref name="identity"/>.</returns>
+		/// <remarks>
+		/// <para><paramref name="func"/> is a magma, so associativity like left-fold and right-fold are completely irrelevant.</para>
+		/// <para><paramref name="identity"/> is required as a start point for the fold. It needs to be the identity of the <paramref name="func"/> to function properly. For example, the identity of addition is <c>0</c>, and the identity of multiplication is <c>1</c>. Without an appropriate identity, the results will be wrong.</para>
+		/// </remarks>
+		[return: MaybeNull]
+		public static TElement Fold<TElement>(this ReadOnlyMemory<TElement> collection, [DisallowNull] Func<TElement, TElement, TElement> func, [AllowNull] TElement identity) => Fold(collection.Span, func, identity);
+
+		/// <summary>
+		/// Folds the collection into a single element as described by the <paramref name="func"/>.
+		/// </summary>
+		/// <typeparam name="TElement">The type of elements in the collection.</typeparam>
+		/// <param name="collection">This collection.</param>
+		/// <param name="func">The function describing the folding operation. This is a magma.</param>
+		/// <param name="identity">The identity value for <paramref name="func"/>.</param>
+		/// <returns>A single element after folding the entire <paramref name="collection"/>. If <paramref name="collection"/> or <paramref name="func"/> are <see langword="null"/> this function returns <paramref name="identity"/>.</returns>
+		/// <remarks>
+		/// <para><paramref name="func"/> is a magma, so associativity like left-fold and right-fold are completely irrelevant.</para>
+		/// <para><paramref name="identity"/> is required as a start point for the fold. It needs to be the identity of the <paramref name="func"/> to function properly. For example, the identity of addition is <c>0</c>, and the identity of multiplication is <c>1</c>. Without an appropriate identity, the results will be wrong.</para>
+		/// </remarks>
+		[return: MaybeNull]
+		public static TElement Fold<TElement>(this Span<TElement> collection, [DisallowNull] Func<TElement, TElement, TElement> func, [AllowNull] TElement identity) => Fold((ReadOnlySpan<TElement>)collection, func, identity);
+
+		/// <summary>
+		/// Folds the collection into a single element as described by the <paramref name="func"/>.
+		/// </summary>
+		/// <typeparam name="TElement">The type of elements in the collection.</typeparam>
+		/// <param name="collection">This collection.</param>
+		/// <param name="func">The function describing the folding operation. This is a magma.</param>
+		/// <param name="identity">The identity value for <paramref name="func"/>.</param>
+		/// <returns>A single element after folding the entire <paramref name="collection"/>. If <paramref name="collection"/> or <paramref name="func"/> are <see langword="null"/> this function returns <paramref name="identity"/>.</returns>
+		/// <remarks>
+		/// <para><paramref name="func"/> is a magma, so associativity like left-fold and right-fold are completely irrelevant.</para>
+		/// <para><paramref name="identity"/> is required as a start point for the fold. It needs to be the identity of the <paramref name="func"/> to function properly. For example, the identity of addition is <c>0</c>, and the identity of multiplication is <c>1</c>. Without an appropriate identity, the results will be wrong.</para>
+		/// </remarks>
+		[return: MaybeNull]
+		public static TElement Fold<TElement>(this ReadOnlySpan<TElement> collection, [DisallowNull] Func<TElement, TElement, TElement> func, [AllowNull] TElement identity) {
+			TElement result = identity;
+			if (func is not null) {
+				if (func is null) {
+					goto Result;
+				}
+				foreach (TElement item in collection) {
+					result = func(result, item);
+				}
+			}
+		Result:
+			return result;
+		}
+		#endregion
+
+		#region Occurrences(Collection, TElement)
 		/// <summary>
 		/// Count all occurrences of <paramref name="element"/> in the collection.
 		/// </summary>
@@ -157,6 +261,76 @@ namespace Langly {
 		/// <summary>
 		/// Count all occurrences of <paramref name="element"/> in the collection.
 		/// </summary>
+		/// <param name="collection">This collection.</param>
+		/// <param name="element">The element to count.</param>
+		/// <returns>The amount of occurrences found.</returns>
+		public static nint Occurrences([AllowNull] this String collection, Char element) => collection is not null ? Occurrences(collection.AsMemory(), element) : 0;
+
+		/// <summary>
+		/// Count all occurrences of <paramref name="element"/> in the collection.
+		/// </summary>
+		/// <typeparam name="TElement">The type of elements in the collection.</typeparam>
+		/// <param name="collection">This collection.</param>
+		/// <param name="element">The element to count.</param>
+		/// <returns>The amount of occurrences found.</returns>
+		public static nint Occurrences<TElement>([AllowNull] this TElement[] collection, [AllowNull] TElement element) => collection is not null ? Occurrences(collection.AsMemory(), element) : 0;
+
+		/// <summary>
+		/// Count all occurrences of <paramref name="element"/> in the collection.
+		/// </summary>
+		/// <typeparam name="TElement">The type of elements in the collection.</typeparam>
+		/// <param name="collection">This collection.</param>
+		/// <param name="element">The element to count.</param>
+		/// <returns>The amount of occurrences found.</returns>
+		public static nint Occurrences<TElement>(this Memory<TElement> collection, [AllowNull] TElement element) => Occurrences(collection.Span, element);
+
+		/// <summary>
+		/// Count all occurrences of <paramref name="element"/> in the collection.
+		/// </summary>
+		/// <typeparam name="TElement">The type of elements in the collection.</typeparam>
+		/// <param name="collection">This collection.</param>
+		/// <param name="element">The element to count.</param>
+		/// <returns>The amount of occurrences found.</returns>
+		public static nint Occurrences<TElement>(this ReadOnlyMemory<TElement> collection, [AllowNull] TElement element) => Occurrences(collection.Span, element);
+
+		/// <summary>
+		/// Count all occurrences of <paramref name="element"/> in the collection.
+		/// </summary>
+		/// <typeparam name="TElement">The type of elements in the collection.</typeparam>
+		/// <param name="collection">This collection.</param>
+		/// <param name="element">The element to count.</param>
+		/// <returns>The amount of occurrences found.</returns>
+		public static nint Occurrences<TElement>(this Span<TElement> collection, [AllowNull] TElement element) => Occurrences((ReadOnlySpan<TElement>)collection, element);
+
+		/// <summary>
+		/// Count all occurrences of <paramref name="element"/> in the collection.
+		/// </summary>
+		/// <typeparam name="TElement">The type of elements in the collection.</typeparam>
+		/// <param name="collection">This collection.</param>
+		/// <param name="element">The element to count.</param>
+		/// <returns>The amount of occurrences found.</returns>
+		public static nint Occurrences<TElement>(this ReadOnlySpan<TElement> collection, [AllowNull] TElement element) {
+			if (collection.Length == 0) {
+				return 0;
+			} else if (element is null) {
+				return NullOccurrences(collection);
+			}
+			nint count = 0;
+			foreach (TElement item in collection) {
+				if (item is null && element is null) {
+					count++;
+				} else if (element?.Equals(item) ?? false) {
+					count++;
+				}
+			}
+			return count;
+		}
+		#endregion
+
+		#region Occurrences(Collection, IEquals<TElement>)
+		/// <summary>
+		/// Count all occurrences of <paramref name="element"/> in the collection.
+		/// </summary>
 		/// <typeparam name="TElement">The type of elements in the collection.</typeparam>
 		/// <typeparam name="TEnumerator">The type of the enumerator of the collection.</typeparam>
 		/// <param name="collection">This collection.</param>
@@ -172,23 +346,172 @@ namespace Langly {
 		}
 
 		/// <summary>
+		/// Count all occurrences of <paramref name="element"/> in the collection.
+		/// </summary>
+		/// <param name="collection">This collection.</param>
+		/// <param name="element">The element to count.</param>
+		/// <returns>The amount of occurrences found.</returns>
+		public static nint Occurrences([AllowNull] this String collection, [AllowNull] IEquals<Char> element) => Occurrences(collection.AsMemory(), element);
+
+		/// <summary>
+		/// Count all occurrences of <paramref name="element"/> in the collection.
+		/// </summary>
+		/// <typeparam name="TElement">The type of elements in the collection.</typeparam>
+		/// <param name="collection">This collection.</param>
+		/// <param name="element">The element to count.</param>
+		/// <returns>The amount of occurrences found.</returns>
+		public static nint Occurrences<TElement>([AllowNull] this TElement[] collection, [AllowNull] IEquals<TElement> element) => Occurrences(collection.AsMemory(), element);
+
+		/// <summary>
+		/// Count all occurrences of <paramref name="element"/> in the collection.
+		/// </summary>
+		/// <typeparam name="TElement">The type of elements in the collection.</typeparam>
+		/// <param name="collection">This collection.</param>
+		/// <param name="element">The element to count.</param>
+		/// <returns>The amount of occurrences found.</returns>
+		public static nint Occurrences<TElement>(this Memory<TElement> collection, [AllowNull] IEquals<TElement> element) => Occurrences(collection.Span, element);
+
+		/// <summary>
+		/// Count all occurrences of <paramref name="element"/> in the collection.
+		/// </summary>
+		/// <typeparam name="TElement">The type of elements in the collection.</typeparam>
+		/// <param name="collection">This collection.</param>
+		/// <param name="element">The element to count.</param>
+		/// <returns>The amount of occurrences found.</returns>
+		public static nint Occurrences<TElement>(this ReadOnlyMemory<TElement> collection, [AllowNull] IEquals<TElement> element) => Occurrences(collection.Span, element);
+
+		/// <summary>
+		/// Count all occurrences of <paramref name="element"/> in the collection.
+		/// </summary>
+		/// <typeparam name="TElement">The type of elements in the collection.</typeparam>
+		/// <param name="collection">This collection.</param>
+		/// <param name="element">The element to count.</param>
+		/// <returns>The amount of occurrences found.</returns>
+		public static nint Occurrences<TElement>(this Span<TElement> collection, [AllowNull] IEquals<TElement> element) => Occurrences((ReadOnlySpan<TElement>)collection, element);
+
+		/// <summary>
+		/// Count all occurrences of <paramref name="element"/> in the collection.
+		/// </summary>
+		/// <typeparam name="TElement">The type of elements in the collection.</typeparam>
+		/// <param name="collection">This collection.</param>
+		/// <param name="element">The element to count.</param>
+		/// <returns>The amount of occurrences found.</returns>
+		public static nint Occurrences<TElement>(this ReadOnlySpan<TElement> collection, [AllowNull] IEquals<TElement> element) {
+			if (collection.Length == 0) {
+				return 0;
+			} else if (element is null) {
+				return NullOccurrences(collection);
+			}
+			nint count = 0;
+			foreach (TElement item in collection) {
+				if (item is null && element is null) {
+					count++;
+				} else if (element?.Equals(item) ?? false) {
+					count++;
+				}
+			}
+			return count;
+		}
+		#endregion
+
+		#region Occurrences(Collection, Predicate<TElement>)
+		/// <summary>
 		/// Count all occurrences of elements that match the provided predicate in the collection.
 		/// </summary>
 		/// <typeparam name="TElement">The type of elements in the collection.</typeparam>
 		/// <typeparam name="TEnumerator">The type of the enumerator of the collection.</typeparam>
 		/// <param name="collection">This collection.</param>
-		/// <param name="match">The <see cref="Predicate{T}"/> describing a match of the elements to count.</param>
+		/// <param name="predicate">The <see cref="Predicate{T}"/> describing a match of the elements to count.</param>
 		/// <returns>The amount of occurrences found.</returns>
-		public static nint Occurrences<TElement, TEnumerator>([AllowNull] this ISequence<TElement, TEnumerator> collection, [AllowNull] Predicate<TElement> match) where TEnumerator : IEnumerator<TElement> {
+		public static nint Occurrences<TElement, TEnumerator>([AllowNull] this ISequence<TElement, TEnumerator> collection, [AllowNull] Predicate<TElement> predicate) where TEnumerator : IEnumerator<TElement> {
 			if (collection is null) {
 				return 0;
-			} else if (match is null) {
+			} else if (predicate is null) {
 				return NullOccurrences(collection);
 			}
-			return collection.Occurrences(match);
+			return collection.Occurrences(predicate);
 		}
 
+		/// <summary>
+		/// Count all occurrences of elements that match the provided predicate in the collection.
+		/// </summary>
+		/// <param name="collection">This collection.</param>
+		/// <param name="predicate">The <see cref="Predicate{T}"/> describing a match of the elements to count.</param>
+		/// <returns>The amount of occurrences found.</returns>
+		public static nint Occurrences([AllowNull] this String collection, [AllowNull] Predicate<Char> predicate) => collection is not null ? Occurrences(collection.AsMemory(), predicate) : 0;
+
+		/// <summary>
+		/// Count all occurrences of elements that match the provided predicate in the collection.
+		/// </summary>
+		/// <typeparam name="TElement">The type of elements in the collection.</typeparam>
+		/// <param name="collection">This collection.</param>
+		/// <param name="predicate">The <see cref="Predicate{T}"/> describing a match of the elements to count.</param>
+		/// <returns>The amount of occurrences found.</returns>
+		public static nint Occurrences<TElement>([AllowNull] this TElement[] collection, [AllowNull] Predicate<TElement> predicate) => collection is not null ? Occurrences(collection.AsMemory(), predicate) : 0;
+
+		/// <summary>
+		/// Count all occurrences of elements that match the provided predicate in the collection.
+		/// </summary>
+		/// <typeparam name="TElement">The type of elements in the collection.</typeparam>
+		/// <param name="collection">This collection.</param>
+		/// <param name="predicate">The <see cref="Predicate{T}"/> describing a match of the elements to count.</param>
+		/// <returns>The amount of occurrences found.</returns>
+		public static nint Occurrences<TElement>(this Memory<TElement> collection, [AllowNull] Predicate<TElement> predicate) => Occurrences(collection.Span, predicate);
+
+		/// <summary>
+		/// Count all occurrences of elements that match the provided predicate in the collection.
+		/// </summary>
+		/// <typeparam name="TElement">The type of elements in the collection.</typeparam>
+		/// <param name="collection">This collection.</param>
+		/// <param name="predicate">The <see cref="Predicate{T}"/> describing a match of the elements to count.</param>
+		/// <returns>The amount of occurrences found.</returns>
+		public static nint Occurrences<TElement>(this ReadOnlyMemory<TElement> collection, [AllowNull] Predicate<TElement> predicate) => Occurrences(collection.Span, predicate);
+
+		/// <summary>
+		/// Count all occurrences of elements that match the provided predicate in the collection.
+		/// </summary>
+		/// <typeparam name="TElement">The type of elements in the collection.</typeparam>
+		/// <param name="collection">This collection.</param>
+		/// <param name="predicate">The <see cref="Predicate{T}"/> describing a match of the elements to count.</param>
+		/// <returns>The amount of occurrences found.</returns>
+		public static nint Occurrences<TElement>(this Span<TElement> collection, [AllowNull] Predicate<TElement> predicate) => Occurrences((ReadOnlySpan<TElement>)collection, predicate);
+
+		/// <summary>
+		/// Count all occurrences of elements that match the provided predicate in the collection.
+		/// </summary>
+		/// <typeparam name="TElement">The type of elements in the collection.</typeparam>
+		/// <param name="collection">This collection.</param>
+		/// <param name="predicate">The <see cref="Predicate{T}"/> describing a match of the elements to count.</param>
+		/// <returns>The amount of occurrences found.</returns>
+		public static nint Occurrences<TElement>(this ReadOnlySpan<TElement> collection, [AllowNull] Predicate<TElement> predicate) {
+			if (collection.Length == 0) {
+				return 0;
+			} else if (predicate is null) {
+				return NullOccurrences(collection);
+			}
+			nint count = 0;
+			foreach (TElement item in collection) {
+				if (item is null && predicate is null) {
+					count++;
+				} else if (predicate(item)) {
+					count++;
+				}
+			}
+			return count;
+		}
+		#endregion
+
 		private static nint NullOccurrences<TElement, TEnumerator>([DisallowNull] ISequence<TElement, TEnumerator> collection) where TEnumerator : IEnumerator<TElement> {
+			nint count = 0;
+			foreach (TElement item in collection) {
+				if (item is null) {
+					count++;
+				}
+			}
+			return count;
+		}
+
+		private static nint NullOccurrences<TElement>([DisallowNull] ReadOnlySpan<TElement> collection) {
 			nint count = 0;
 			foreach (TElement item in collection) {
 				if (item is null) {
