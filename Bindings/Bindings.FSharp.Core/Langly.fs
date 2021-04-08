@@ -15,6 +15,11 @@ type case = Case
 type endian = Endian
 
 /// <summary>
+/// Provides a generator for the creation of random values and objects.
+/// </summary>
+type generator = Generator
+
+/// <summary>
 /// Represents the base of all <see cref="Langly"/> objects.
 /// </summary>
 type object = Object
@@ -130,6 +135,7 @@ module Functions =
     /// <summary>
     /// Count all occurrences of <paramref name="element"/> in the collection.
     /// </summary>
+    /// <param name="collection">This collection.</param>
     /// <param name="element">The element to count.</param>
     /// <returns>The amount of occurrences found.</returns>
     let inline occurrences (element:^element)(collection:^collection):nativeint = Occurrences<TraitExtensions, ^collection, ^element> collection element
@@ -158,12 +164,14 @@ module Functions =
     /// <summary>
     /// Resize the collection to the specified <paramref name="capacity"/>.
     /// </summary>
+    /// <param name="collection">This collection.</param>
     /// <param name="capacity">The new capacity of the collection.</param>
     let inline resize (capacity:nativeint)(collection:^collection):^result = Resize<TraitExtensions, ^collection, ^result> collection capacity
     
     /// <summary>
     /// Seeks to the <paramref name="offset"/>.
     /// </summary>
+    /// <param name="stream">This stream.</param>
     /// <param name="offset">The offset of <typeparamref name="TElement"/> from the current position to seek to.</param>
     let inline seek (offset:nativeint)(stream:^stream):^result = Seek<TraitExtensions, ^stream, ^result> stream offset
 
@@ -175,9 +183,21 @@ module Functions =
     /// </remarks>
     let inline seekable (stream:#ISeek<_, _>):bool = stream.Seekable
 
-    //TODO: shiftLeft
+    /// <summary>
+    /// Shifts the collection left by <paramref name="amount"/>.
+    /// </summary>
+    /// <param name="collection">This collection.</param>
+    /// <param name="amount">The amount of positions to shift.</param>
+    /// <returns>A <typeparamref name="TResult"/> after the elements are shifted.</returns>
+    let inline ( <<< ) (collection:^collection)(amount:^amount):^result = ShiftLeft<TraitExtensions, ^collection, ^amount, ^result> collection amount
 
-    //TODO: shiftRight
+    /// <summary>
+    /// Shifts the collection right by <paramref name="amount"/>.
+    /// </summary>
+    /// <param name="collection">This collection.</param>
+    /// <param name="amount">The amount of positions to shift.</param>
+    /// <returns>A <typeparamref name="TResult"/> after the elements are shifted.</returns>
+    let inline ( >>> ) (collection:^collection)(amount:^amount):^result = ShiftRight<TraitExtensions, ^collection, ^amount, ^result> collection amount
 
     /// <summary>
     /// Shrinks the collection by a computed factor.

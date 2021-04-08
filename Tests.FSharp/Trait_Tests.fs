@@ -2,6 +2,7 @@
 
 open System
 open Langly
+open Langly.DataStructures.Arrays
 open Langly.DataStructures.Lists
 open Xunit
 
@@ -23,8 +24,10 @@ module Trait_Tests =
         |> ignore
         Assert.Equal([ 1; 2; 3; 4; 5 ], chain)
 
-    [<Fact(Skip = "Not implemented yet")>]
-    let ``Capacity`` () = raise(NotImplementedException()) |> ignore
+    [<Fact>]
+    let ``Capacity`` () =
+        let array = new BoundedArray<int32>(8n)
+        Assert.Equal(8n, capacity array)
 
     [<Fact>]
     let ``Clear`` () =
@@ -80,8 +83,10 @@ module Trait_Tests =
         Assert.Equal(15, chain |> fold (fun (l)(r) -> l + r) 0)
         Assert.Equal(120, chain |> fold (fun (l)(r) -> l * r) 1)
 
-    [<Fact(Skip = "Not implemented yet")>]
-    let ``Grow`` () = raise(NotImplementedException()) |> ignore
+    [<Fact>]
+    let ``Grow`` () =
+        let array = new DynamicArray<int32>(8n) |> grow
+        Assert.True((capacity array) > 8n)
 
     [<Fact>]
     let ``IndexOfFirst`` () =
@@ -141,8 +146,15 @@ module Trait_Tests =
     [<Fact(Skip = "Not implemented yet")>]
     let ``Seekable`` () = raise(NotImplementedException()) |> ignore
 
-    [<Fact(Skip = "Not implemented yet")>]
-    let ``Shrink`` () = raise(NotImplementedException()) |> ignore
+    [<Fact>]
+    let ``Shift`` () =
+        Assert.Equal<int32>([| 2; 3; 4; 5; 0 |], [| 1; 2; 3; 4; 5 |] <<< 1n)
+        Assert.Equal<int32>([| 0; 1; 2; 3; 4 |], [| 1; 2; 3; 4; 5 |] >>> 1n)
+
+    [<Fact>]
+    let ``Shrink`` () =
+        let array = new DynamicArray<int32>(8n) |> shrink
+        Assert.True((capacity array) < 8n)
 
     [<Fact(Skip = "Not implemented yet")>]
     let ``Write`` () = raise(NotImplementedException()) |> ignore

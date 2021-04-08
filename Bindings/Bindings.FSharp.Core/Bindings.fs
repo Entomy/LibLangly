@@ -29,6 +29,10 @@ module internal Bindings =
 
     let inline Seek< ^t, ^a, ^b when (^t or ^a) : (static member Seek : ^a * nativeint -> ^b)> collection offset = ((^t or ^a) : (static member Seek : ^a * nativeint -> ^b)(collection, offset))
 
+    let inline ShiftLeft< ^t, ^a, ^b, ^c when (^t or ^a) : (static member ShiftLeft : ^a * ^b -> ^c)> collection amount = ((^t or ^a) : (static member ShiftLeft : ^a * ^b -> ^c)(collection, amount))
+
+    let inline ShiftRight< ^t, ^a, ^b, ^c when (^t or ^a) : (static member ShiftRight : ^a * ^b -> ^c)> collection amount = ((^t or ^a) : (static member ShiftRight : ^a * ^b -> ^c)(collection, amount))
+
     let inline Shrink< ^t, ^a, ^b when (^t or ^a) : (static member Shrink : ^a -> ^b)> collection = ((^t or ^a) : (static member Shrink : ^a -> ^b)(collection))
 
     let inline Write< ^t, ^a, ^b, ^c when (^t or ^a) : (static member Write : ^a * ^b -> ^c)> collection elements = ((^t or ^a) : (static member Write : ^a * ^b -> ^c)(collection, elements))
