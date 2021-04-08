@@ -21,6 +21,17 @@ namespace Langly.DataStructures {
 		/// </summary>
 		public Stack() : base(DataStructures.Filter.None) { }
 
+		/// <summary>
+		/// Initializes a new <see cref="Stack{TElement}"/> with the given <paramref name="elements"/>.
+		/// </summary>
+		/// <param name="elements">The initial elements of the stack.</param>
+		public Stack([DisallowNull] params TElement[] elements) : base(DataStructures.Filter.None) {
+			foreach (TElement item in elements) {
+				Head = new Node(item, next: Head);
+			}
+			Count = elements.Length;
+		}
+
 		/// <inheritdoc/>
 		public Boolean Readable => Count > 0;
 
