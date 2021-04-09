@@ -1,9 +1,0 @@
-﻿namespace Langly.DataStructures.Lists
-
-open Langly
-open Langly.DataStructures.Lists
-
-/// <summary>
-/// Represents a Chain, a type of highly sophisticated List.
-/// </summary>
-type chain< ^t> = Chain< ^t>
