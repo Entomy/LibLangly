@@ -1,3 +1,0 @@
-﻿# Stacks
-
-Stacks are one of the simplest data structures. Specifically, they realize first-in, first-out (FIFO). Because stacks are technically not a data structure, but rather, an abstract data type, **LibLangly** can treat numerous data structures as stacks if they support the necessary [traits](https://entomy.github.io/LibLangly/articles/traits-stacks.html). This, however, is a more bare bones data structure which specifically implements stack traits and little else. If you specifically need a stack and nothing else, this can help with efficiency.

@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+		<Description>F# bindings for Philosoft.Extensions.</Description>
+		<PackageTags>f#, fsharp</PackageTags>
+		<AssemblyName>Philosoft.Extensions.FSharp</AssemblyName>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Include="Bindings.fs" />
+		<Compile Include="Functions.fs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Philosoft.Extensions\Philosoft.Extensions.csproj" />
+	</ItemGroup>
+
+</Project>
