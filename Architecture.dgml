@@ -1,11 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <DirectedGraph GraphDirection="TopToBottom" Layout="Sugiyama" ZoomLevel="-1" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
   <Nodes>
-    <Node Id="NumbersomeRandom" Bounds="105.623333333333,0,92.3433333333333,41.92" ErrorMessage="Unreferenced node detected:Numbersome&#xD;&#xA;Random (NumbersomeRandom)" IsUnreferenced="True" Label="Numbersome&#xD;&#xA;Random" />
-    <Node Id="PhilosoftExtensions" Bounds="0,71.9200000000001,75.6233333333333,41.92" ErrorMessage="Node 'Philosoft&#xD;&#xA;Extensions' has a hub value of 50." Hub="50" Label="Philosoft&#xD;&#xA;Extensions" />
-    <Node Id="PhilosoftTraits" Bounds="4.66166666666665,0,66.3,41.92" ErrorMessage="Node 'Philosoft&#xD;&#xA;Traits' has a hub value of 50." Hub="50" IsUnreferenced="True" Label="Philosoft&#xD;&#xA;Traits" />
+    <Node Id="NumbersomeRandom" Bounds="105.64,71.9200000000001,92.3433333333333,41.92" ErrorMessage="Unreferenced node detected:Numbersome&#xD;&#xA;Random (NumbersomeRandom)" IsUnreferenced="True" Label="Numbersome&#xD;&#xA;Random" />
+    <Node Id="PhilosoftContracts" Bounds="116.661666666667,143.84,70.3,41.92" ErrorMessage="Node 'Philosoft&#xD;&#xA;Contracts' has a hub value of 66." Hub="66" Label="Philosoft&#xD;&#xA;Contracts" />
+    <Node Id="PhilosoftExtensions" Bounds="0,71.9200000000001,75.6233333333333,41.92" ErrorMessage="Node 'Philosoft&#xD;&#xA;Extensions' has a hub value of 66." Hub="66" Label="Philosoft&#xD;&#xA;Extensions" />
+    <Node Id="PhilosoftTraits" Bounds="4.66166666666665,0,66.3,41.92" ErrorMessage="Unreferenced node detected:Philosoft&#xD;&#xA;Traits (PhilosoftTraits)" IsUnreferenced="True" Label="Philosoft&#xD;&#xA;Traits" />
   </Nodes>
   <Links>
+    <Link Source="NumbersomeRandom" Target="PhilosoftContracts" Bounds="151.811660766602,113.839996337891,0,21" />
+    <Link Source="PhilosoftExtensions" Target="PhilosoftContracts" Bounds="71.0352478027344,113.839996337891,40.1451263427734,25.3266448974609" />
     <Link Source="PhilosoftTraits" Target="PhilosoftExtensions" Bounds="37.8116683959961,41.9199981689453,0,21" />
   </Links>
   <Properties>

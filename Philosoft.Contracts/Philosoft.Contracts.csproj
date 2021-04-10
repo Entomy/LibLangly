@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+		<LangVersion>9.0</LangVersion>
+		<Nullable>enable</Nullable>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<Description>Provides contract types for helping test trait APIs.</Description>
+		<PackageTags>trait, traits, trait-based</PackageTags>
+		<AssemblyName>Philosoft.Contracts</AssemblyName>
+		<RootNamespace>System.Traits.Contracts</RootNamespace>
+		<PackageIcon>Logo.png</PackageIcon>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Include="..\GlobalSuppressions.cs" Link="GlobalSuppressions.cs" />
+		<None Include="Logo.png" Pack="true" Visible="true" PackagePath="\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="MSTest.TestFramework" Version="2.2.3" />
+	  <PackageReference Include="xunit.assert" Version="2.4.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Numbersome.Random\Numbersome.Random.csproj" />
+		<ProjectReference Include="..\Philosoft.Extensions\Philosoft.Extensions.csproj" />
+	</ItemGroup>
+
+</Project>
