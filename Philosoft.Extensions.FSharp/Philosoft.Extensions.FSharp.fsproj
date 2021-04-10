@@ -5,7 +5,12 @@
 		<Description>F# bindings for Philosoft.Extensions.</Description>
 		<PackageTags>f#, fsharp</PackageTags>
 		<AssemblyName>Philosoft.Extensions.FSharp</AssemblyName>
+		<PackageIcon>Logo.png</PackageIcon>
 	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="Logo.png" Pack="true" Visible="true" PackagePath="\" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<Compile Include="Bindings.fs" />
