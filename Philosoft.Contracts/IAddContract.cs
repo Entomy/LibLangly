@@ -28,114 +28,139 @@ namespace System.Traits.Contracts {
 		}
 
 		/// <summary>
-		/// Validates <see cref="IAdd{TElement, TResult}.Add(Memory{TElement})"/>.
+		/// Tests <see cref="IAdd{TElement, TResult}.Add(TElement[])"/>.
 		/// </summary>
 		/// <typeparam name="TElement">The type of the elements.</typeparam>
 		/// <typeparam name="TSubject">The type of the <paramref name="subject"/>.</typeparam>
 		/// <param name="expected">The expected values the <paramref name="subject"/> contains.</param>
 		/// <param name="subject">The object being tested.</param>
 		/// <param name="values">The values to add to the <paramref name="subject"/>.</param>
-		public static void Validate<TElement, TSubject>([AllowNull] TElement[] expected, [AllowNull] TSubject subject, [AllowNull] Memory<TElement>[] values) where TSubject : IAdd<TElement, TSubject>, IEnumerable<TElement> {
-			if (values is not null) {
-				foreach (Memory<TElement> item in values) {
-					subject = PhilosoftExtensions.Add(subject, item);
-				}
-			}
-			if (expected is not null) {
-				foreach (TElement exp in expected) {
-					Assert.Contains(exp, subject);
-				}
-			} else {
-				Assert.IsNull(subject);
-			}
-		}
-
-		/// <summary>
-		/// Validates <see cref="IAdd{TElement, TResult}.Add(ReadOnlyMemory{TElement})"/>.
-		/// </summary>
-		/// <typeparam name="TElement">The type of the elements.</typeparam>
-		/// <typeparam name="TSubject">The type of the <paramref name="subject"/>.</typeparam>
-		/// <param name="expected">The expected values the <paramref name="subject"/> contains.</param>
-		/// <param name="subject">The object being tested.</param>
-		/// <param name="values">The values to add to the <paramref name="subject"/>.</param>
-		public static void Validate<TElement, TSubject>([AllowNull] TElement[] expected, [AllowNull] TSubject subject, [AllowNull] ReadOnlyMemory<TElement>[] values) where TSubject : IAdd<TElement, TSubject>, IEnumerable<TElement> {
-			if (values is not null) {
-				foreach (ReadOnlyMemory<TElement> item in values) {
-					subject = PhilosoftExtensions.Add(subject, item);
-				}
-			}
-			if (expected is not null) {
-				foreach (TElement exp in expected) {
-					Assert.Contains(exp, subject);
-				}
-			} else {
-				Assert.IsNull(subject);
-			}
-		}
-
-		/// <summary>
-		/// Validates <see cref="IAdd{TElement, TResult}.Add(TElement[])"/>.
-		/// </summary>
-		/// <typeparam name="TElement">The type of the elements.</typeparam>
-		/// <typeparam name="TSubject">The type of the <paramref name="subject"/>.</typeparam>
-		/// <param name="expected">The expected values the <paramref name="subject"/> contains.</param>
-		/// <param name="subject">The object being tested.</param>
-		/// <param name="values">The values to add to the <paramref name="subject"/>.</param>
-		public static void Validate<TElement, TSubject>([AllowNull] TElement[] expected, [AllowNull] TSubject subject, [AllowNull] TElement[][] values) where TSubject : IAdd<TElement, TSubject>, IEnumerable<TElement> {
+		public static void Test_Array<TElement, TSubject>([AllowNull] TElement[] expected, [AllowNull] TSubject subject, [AllowNull] TElement[][] values) where TSubject : IAdd<TElement, TSubject>, IEnumerable<TElement> {
+			Boolean opFailed = false;
 			if (values is not null) {
 				foreach (TElement[] item in values) {
 					subject = PhilosoftExtensions.Add(subject, item);
+					opFailed = subject is null;
 				}
 			}
-			if (expected is not null) {
-				foreach (TElement exp in expected) {
-					Assert.Contains(exp, subject);
-				}
-			} else {
-				Assert.IsNull(subject);
-			}
+			Validate(expected, subject, opFailed);
 		}
 
 		/// <summary>
-		/// Validates <see cref="IAdd{TElement, TResult}.Add(TElement)"/>.
+		/// Tests <see cref="IAdd{TElement, TResult}.Add(TElement)"/>.
 		/// </summary>
 		/// <typeparam name="TElement">The type of the elements.</typeparam>
 		/// <typeparam name="TSubject">The type of the <paramref name="subject"/>.</typeparam>
 		/// <param name="expected">The expected values the <paramref name="subject"/> contains.</param>
 		/// <param name="subject">The object being tested.</param>
 		/// <param name="values">The values to add to the <paramref name="subject"/>.</param>
-		public static void Validate<TElement, TSubject>([AllowNull] TElement[] expected, [AllowNull] TSubject subject, [AllowNull] TElement[] values) where TSubject : IAdd<TElement, TSubject>, IEnumerable<TElement> {
+		public static void Test_Element<TElement, TSubject>([AllowNull] TElement[] expected, [AllowNull] TSubject subject, [AllowNull] TElement[] values) where TSubject : IAdd<TElement, TSubject>, IEnumerable<TElement> {
+			Boolean opFailed = false;
 			if (values is not null) {
 				foreach (TElement item in values) {
 					subject = PhilosoftExtensions.Add(subject, item);
+					opFailed = subject is null;
 				}
 			}
-			if (expected is not null) {
-				foreach (TElement exp in expected) {
-					Assert.Contains(exp, subject);
-				}
-			} else {
-				Assert.IsNull(subject);
-			}
+			Validate(expected, subject, opFailed);
 		}
 
 		/// <summary>
-		/// Validates <see cref="IAdd{TElement, TResult}.Add(Memory{TElement})"/>.
+		/// Tests <see cref="IAdd{TElement, TResult}.Add(Memory{TElement})"/>.
 		/// </summary>
-		/// <typeparam name="TElement">The type of the elements in the collection.</typeparam>
-		/// <param name="expected">The expected values the subject contains.</param>
-		/// <param name="initial">The initial values of the subject.</param>
-		/// <param name="values">The values to add to the subject.</param>
-		void Add_Memory<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values);
+		/// <typeparam name="TElement">The type of the elements.</typeparam>
+		/// <typeparam name="TSubject">The type of the <paramref name="subject"/>.</typeparam>
+		/// <param name="expected">The expected values the <paramref name="subject"/> contains.</param>
+		/// <param name="subject">The object being tested.</param>
+		/// <param name="values">The values to add to the <paramref name="subject"/>.</param>
+		public static void Test_Memory<TElement, TSubject>([AllowNull] TElement[] expected, [AllowNull] TSubject subject, [AllowNull] TElement[][] values) where TSubject : IAdd<TElement, TSubject>, IEnumerable<TElement> {
+			Boolean opFailed = false;
+			if (values is not null) {
+				foreach (TElement[] item in values) {
+					subject = PhilosoftExtensions.Add(subject, item.AsMemory());
+					opFailed = subject is null;
+				}
+			}
+			Validate(expected, subject, opFailed);
+		}
 
 		/// <summary>
-		/// Validates <see cref="IAdd{TElement, TResult}.Add(ReadOnlyMemory{TElement})"/>.
+		/// Tests <see cref="IAddUnsafe{TElement, TResult}.Add(TElement*, Int32)"/>.
 		/// </summary>
-		/// <typeparam name="TElement">The type of the elements in the collection.</typeparam>
-		/// <param name="expected">The expected values the subject contains.</param>
-		/// <param name="initial">The initial values of the subject.</param>
-		/// <param name="values">The values to add to the subject.</param>
-		void Add_ReadOnlyMemory<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values);
+		/// <typeparam name="TElement">The type of the elements.</typeparam>
+		/// <typeparam name="TSubject">The type of the <paramref name="subject"/>.</typeparam>
+		/// <param name="expected">The expected values the <paramref name="subject"/> contains.</param>
+		/// <param name="subject">The object being tested.</param>
+		/// <param name="values">The values to add to the <paramref name="subject"/>.</param>
+		public static unsafe void Test_Pointer<TElement, TSubject>([AllowNull] TElement[] expected, [AllowNull] TSubject subject, [AllowNull] TElement[][] values) where TElement : unmanaged where TSubject : IAddUnsafe<TElement, TSubject>, IEnumerable<TElement> {
+			Boolean opFailed = false;
+			if (values is not null) {
+				foreach (TElement[] item in values) {
+					fixed (TElement* itm = item) {
+						subject = PhilosoftExtensions.Add(subject, itm, item.Length);
+						opFailed = subject is null;
+					}
+				}
+			}
+			Validate(expected, subject, opFailed);
+		}
+
+		/// <summary>
+		/// Tests <see cref="IAdd{TElement, TResult}.Add(ReadOnlyMemory{TElement})"/>.
+		/// </summary>
+		/// <typeparam name="TElement">The type of the elements.</typeparam>
+		/// <typeparam name="TSubject">The type of the <paramref name="subject"/>.</typeparam>
+		/// <param name="expected">The expected values the <paramref name="subject"/> contains.</param>
+		/// <param name="subject">The object being tested.</param>
+		/// <param name="values">The values to add to the <paramref name="subject"/>.</param>
+		public static void Test_ReadOnlyMemory<TElement, TSubject>([AllowNull] TElement[] expected, [AllowNull] TSubject subject, [AllowNull] TElement[][] values) where TSubject : IAdd<TElement, TSubject>, IEnumerable<TElement> {
+			Boolean opFailed = false;
+			if (values is not null) {
+				foreach (TElement[] item in values) {
+					subject = PhilosoftExtensions.Add(subject, (ReadOnlyMemory<TElement>)item.AsMemory());
+					opFailed = subject is null;
+				}
+			}
+			Validate(expected, subject, opFailed);
+		}
+
+		/// <summary>
+		/// Tests <see cref="IAddSpan{TElement, TResult}.Add(ReadOnlySpan{TElement})"/>.
+		/// </summary>
+		/// <typeparam name="TElement">The type of the elements.</typeparam>
+		/// <typeparam name="TSubject">The type of the <paramref name="subject"/>.</typeparam>
+		/// <param name="expected">The expected values the <paramref name="subject"/> contains.</param>
+		/// <param name="subject">The object being tested.</param>
+		/// <param name="values">The values to add to the <paramref name="subject"/>.</param>
+		public static void Test_ReadOnlySpan<TElement, TSubject>([AllowNull] TElement[] expected, [AllowNull] TSubject subject, [AllowNull] TElement[][] values) where TSubject : IAddSpan<TElement, TSubject>, IEnumerable<TElement> {
+			Boolean opFailed = false;
+			if (values is not null) {
+				foreach (TElement[] item in values) {
+					subject = PhilosoftExtensions.Add(subject, (ReadOnlySpan<TElement>)item.AsSpan());
+					opFailed = subject is null;
+				}
+			}
+			Validate(expected, subject, opFailed);
+		}
+
+		/// <summary>
+		/// Tests <see cref="IAddSpan{TElement, TResult}.Add(Span{TElement})"/>.
+		/// </summary>
+		/// <typeparam name="TElement">The type of the elements.</typeparam>
+		/// <typeparam name="TSubject">The type of the <paramref name="subject"/>.</typeparam>
+		/// <param name="expected">The expected values the <paramref name="subject"/> contains.</param>
+		/// <param name="subject">The object being tested.</param>
+		/// <param name="values">The values to add to the <paramref name="subject"/>.</param>
+		public static void Test_Span<TElement, TSubject>([AllowNull] TElement[] expected, [AllowNull] TSubject subject, [AllowNull] TElement[][] values) where TSubject : IAddSpan<TElement, TSubject>, IEnumerable<TElement> {
+			Boolean opFailed = false;
+			if (values is not null) {
+				foreach (TElement[] item in values) {
+					subject = PhilosoftExtensions.Add(subject, item.AsSpan());
+					opFailed = subject is null;
+				}
+			}
+			Validate(expected, subject, opFailed);
+		}
 
 		/// <summary>
 		/// Validates <see cref="IAdd{TElement, TResult}.Add(TElement[])"/>.
@@ -154,5 +179,77 @@ namespace System.Traits.Contracts {
 		/// <param name="initial">The initial values of the subject.</param>
 		/// <param name="values">The values to add to the subject.</param>
 		void Add_Element<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[] values);
+
+		/// <summary>
+		/// Validates <see cref="IAdd{TElement, TResult}.Add(Memory{TElement})"/>.
+		/// </summary>
+		/// <typeparam name="TElement">The type of the elements in the collection.</typeparam>
+		/// <param name="expected">The expected values the subject contains.</param>
+		/// <param name="initial">The initial values of the subject.</param>
+		/// <param name="values">The values to add to the subject.</param>
+		void Add_Memory<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values);
+
+		/// <summary>
+		/// Validates <see cref="IAddUnsafe{TElement, TResult}.Add(TElement*, Int32)"/>.
+		/// </summary>
+		/// <typeparam name="TElement">The type of the elements in the collection.</typeparam>
+		/// <param name="expected">The expected values the subject contains.</param>
+		/// <param name="initial">The initial values of the subject.</param>
+		/// <param name="values">The values to add to the subject.</param>
+		unsafe void Add_Pointer<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values);
+
+		/// <summary>
+		/// Validates <see cref="IAdd{TElement, TResult}.Add(ReadOnlyMemory{TElement})"/>.
+		/// </summary>
+		/// <typeparam name="TElement">The type of the elements in the collection.</typeparam>
+		/// <param name="expected">The expected values the subject contains.</param>
+		/// <param name="initial">The initial values of the subject.</param>
+		/// <param name="values">The values to add to the subject.</param>
+		void Add_ReadOnlyMemory<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values);
+
+		/// <summary>
+		/// Validates <see cref="IAddSpan{TElement, TResult}.Add(ReadOnlySpan{TElement})"/>.
+		/// </summary>
+		/// <typeparam name="TElement">The type of the elements in the collection.</typeparam>
+		/// <param name="expected">The expected values the subject contains.</param>
+		/// <param name="initial">The initial values of the subject.</param>
+		/// <param name="values">The values to add to the subject.</param>
+		void Add_ReadOnlySpan<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values);
+
+		/// <summary>
+		/// Validates <see cref="IAddSpan{TElement, TResult}.Add(Span{TElement})"/>.
+		/// </summary>
+		/// <typeparam name="TElement">The type of the elements in the collection.</typeparam>
+		/// <param name="expected">The expected values the subject contains.</param>
+		/// <param name="initial">The initial values of the subject.</param>
+		/// <param name="values">The values to add to the subject.</param>
+		void Add_Span<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values);
+
+		/// <summary>
+		/// Validates that the <paramref name="subject"/> contains the <paramref name="expected"/> elements.
+		/// </summary>
+		/// <typeparam name="TElement">The type of the elements.</typeparam>
+		/// <param name="expected">The expected values the <paramref name="subject"/> contains.</param>
+		/// <param name="subject">The object being tested.</param>
+		protected static void Validate<TElement>([AllowNull] TElement[] expected, [AllowNull] IEnumerable<TElement> subject) => Validate(expected, subject, false);
+
+		/// <summary>
+		/// Validates that the <paramref name="subject"/> contains the <paramref name="expected"/> elements.
+		/// </summary>
+		/// <typeparam name="TElement">The type of the elements.</typeparam>
+		/// <param name="expected">The expected values the <paramref name="subject"/> contains.</param>
+		/// <param name="subject">The object being tested.</param>
+		/// <param name="opFailed">Whether the test operations failed.</param>
+		protected static void Validate<TElement>([AllowNull] TElement[] expected, [AllowNull] IEnumerable<TElement> subject, Boolean opFailed) {
+			if (opFailed) {
+				Assert.IsNull(subject);
+			} else if (expected is not null) {
+				foreach (TElement exp in expected) {
+					Assert.Contains(exp, subject);
+				}
+			} else {
+				Assert.IsNull(subject);
+			}
+		}
 	}
 }

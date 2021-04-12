@@ -14,8 +14,7 @@ namespace System.Traits {
 	public interface ISequence<TElement, TEnumerator> :
 		IContains<TElement>,
 		ICount,
-		IEnumerable<TElement>,
-		IEquatable<IEnumerable<TElement>>, IEquatable<IEquatable<ISequence<TElement, TEnumerator>>>
+		IEnumerable<TElement>
 		where TEnumerator : IEnumerator<TElement> {
 		/// <inheritdoc/>
 		Boolean IContains<TElement>.Contains([AllowNull] TElement element) {
@@ -28,14 +27,6 @@ namespace System.Traits {
 			}
 			return false;
 		}
-
-		/// <summary>
-		/// Indicates whether the current object is equal to another object of the same type.
-		/// </summary>
-		/// <typeparam name="TOtherEnumerator">The type of the enumerator for the <paramref name="other"/> object.</typeparam>
-		/// <param name="other">An object to compare with this object.</param>
-		/// <returns><see langword="true"/> if the current object is equal to the <paramref name="other"/> parameter; otherwise, <see langword="false"/>.</returns>
-		Boolean Equals<TOtherEnumerator>([AllowNull] ISequence<TElement, TOtherEnumerator> other) where TOtherEnumerator : IEnumerator<TElement>;
 
 		/// <summary>
 		/// Folds the collection into a single element as described by <paramref name="func"/>.

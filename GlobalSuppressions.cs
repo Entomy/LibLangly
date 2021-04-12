@@ -2,3 +2,4 @@
 
 using System.Diagnostics.CodeAnalysis;
 
+[assembly: SuppressMessage("CodeQuality", "IDE0079:Remove unnecessary suppression", Justification = "There's a reason justification parameters exist, and are always filled out.")]
