@@ -5,7 +5,7 @@ using System.Traits.Contracts;
 using Xunit;
 
 namespace Langly {
-	public class BoundedArray1_Tests : IAddContract<xUnit>, IClearContract<xUnit> {
+	public class BoundedArray1_Tests : IAddContract<xUnit>, IClearContract<xUnit>, IShiftContract<xUnit> {
 		/// <inheritdoc/>
 		[Theory]
 		[MemberData(nameof(IAddContract<xUnit>.Add_Array_Data), MemberType = typeof(IAddContract<xUnit>))]
@@ -53,6 +53,54 @@ namespace Langly {
 		public void Clear<TElement>([AllowNull] TElement[] initial) {
 			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
 			IClearContract<xUnit>.Test<TElement, BoundedArray<TElement>>(array);
+		}
+
+		/// <inheritdoc/>
+		[Theory]
+		[MemberData(nameof(IShiftContract<xUnit>.ShiftLeft_Data), MemberType = typeof(IShiftContract<xUnit>))]
+		public void ShiftLeft<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial) {
+			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
+			IShiftContract<xUnit>.Test_Left(expected, array);
+		}
+
+		/// <inheritdoc/>
+		[Theory]
+		[MemberData(nameof(IShiftContract<xUnit>.ShiftLeftBy_Data), MemberType = typeof(IShiftContract<xUnit>))]
+		public void ShiftLeftBy<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, Int32 amount) {
+			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
+			IShiftContract<xUnit>.Test_Left(expected, array, amount);
+		}
+
+		/// <inheritdoc/>
+		[Theory]
+		[MemberData(nameof(IShiftContract<xUnit>.ShiftLeftBy_Data), MemberType = typeof(IShiftContract<xUnit>))]
+		public void ShiftLeftOp<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, Int32 amount) {
+			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
+			IShiftContract<xUnit>.Validate(expected, array << amount);
+		}
+
+		/// <inheritdoc/>
+		[Theory]
+		[MemberData(nameof(IShiftContract<xUnit>.ShiftRight_Data), MemberType = typeof(IShiftContract<xUnit>))]
+		public void ShiftRight<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial) {
+			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
+			IShiftContract<xUnit>.Test_Right(expected, array);
+		}
+
+		/// <inheritdoc/>
+		[Theory]
+		[MemberData(nameof(IShiftContract<xUnit>.ShiftRightBy_Data), MemberType = typeof(IShiftContract<xUnit>))]
+		public void ShiftRightBy<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, Int32 amount) {
+			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
+			IShiftContract<xUnit>.Test_Right(expected, array, amount);
+		}
+
+		/// <inheritdoc/>
+		[Theory]
+		[MemberData(nameof(IShiftContract<xUnit>.ShiftRightBy_Data), MemberType = typeof(IShiftContract<xUnit>))]
+		public void ShiftRightOp<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, Int32 amount) {
+			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
+			IShiftContract<xUnit>.Validate(expected, array >> amount);
 		}
 	}
 }
