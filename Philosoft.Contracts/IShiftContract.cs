@@ -26,6 +26,7 @@ namespace System.Traits.Contracts {
 			yield return new Object[] { null, null, 1 };
 			yield return new Object[] { Array.Empty<Int32>(), Array.Empty<Int32>(), 1 };
 			yield return new Object[] { new Int32[] { 2, 3, 4, 5, 0 }, new Int32[] { 1, 2, 3, 4, 5 }, 1 };
+			yield return new Object[] { new Int32[] { 3, 4, 5, 0, 0 }, new Int32[] { 1, 2, 3, 4, 5 }, 2 };
 		}
 
 		/// <summary>
@@ -46,6 +47,7 @@ namespace System.Traits.Contracts {
 			yield return new Object[] { null, null, 1 };
 			yield return new Object[] { Array.Empty<Int32>(), Array.Empty<Int32>(), 1 };
 			yield return new Object[] { new Int32[] { 0, 1, 2, 3, 4 }, new Int32[] { 1, 2, 3, 4, 5 }, 1 };
+			yield return new Object[] { new Int32[] { 0, 0, 1, 2, 3 }, new Int32[] { 1, 2, 3, 4, 5 }, 2 };
 		}
 
 		/// <summary>

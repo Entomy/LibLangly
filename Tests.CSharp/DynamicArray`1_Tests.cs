@@ -92,7 +92,7 @@ namespace Langly {
 		[MemberData(nameof(IShiftContract<xUnit>.ShiftRightBy_Data), MemberType = typeof(IShiftContract<xUnit>))]
 		public void ShiftRightBy<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, Int32 amount) {
 			DynamicArray<TElement> array = initial is not null ? new DynamicArray<TElement>(initial) : null;
-			IShiftContract<xUnit>.Test_Right(expected, array);
+			IShiftContract<xUnit>.Test_Right(expected, array, amount);
 		}
 
 		/// <inheritdoc/>
