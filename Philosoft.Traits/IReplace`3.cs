@@ -14,7 +14,7 @@ namespace System.Traits {
 		/// <param name="search">The element to replace.</param>
 		/// <param name="replace">The element to use instead.</param>
 		/// <returns>The result of replacing <paramref name="search"/> with <paramref name="replace"/>.</returns>
-		[return: MaybeNull]
+		[return: NotNull]
 		TResult Replace([AllowNull] TSearch search, [AllowNull] TReplace replace);
 	}
 }

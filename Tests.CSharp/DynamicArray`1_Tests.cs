@@ -56,6 +56,17 @@ namespace Langly {
 		}
 
 		/// <inheritdoc/>
+		public void Replace_Complex<TSearch, TReplace>([AllowNull] TSearch[] expected, [AllowNull] TSearch[] initial, [AllowNull] TSearch search, [AllowNull] TReplace replace) => throw new NotImplementedException();
+
+		/// <inheritdoc/>
+		[Theory]
+		[MemberData(nameof(IReplaceContract<xUnit>.Replace_Data), MemberType = typeof(IReplaceContract<xUnit>))]
+		public void Replace_Simple<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement search, [AllowNull] TElement replace) {
+			DynamicArray<TElement> array = initial is not null ? new DynamicArray<TElement>(initial) : null;
+			IReplaceContract<xUnit>.Test(expected, array, search, replace);
+		}
+
+		/// <inheritdoc/>
 		[Theory]
 		[MemberData(nameof(IShiftContract<xUnit>.ShiftLeft_Data), MemberType = typeof(IShiftContract<xUnit>))]
 		public void ShiftLeft<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial) {

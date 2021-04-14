@@ -6,7 +6,7 @@ namespace System.Traits.Contracts {
 	/// <summary>
 	/// Contract for validating <see cref="IShift{TResult}"/>.
 	/// </summary>
-	/// <typeparam name="TAssert"></typeparam>
+	/// <typeparam name="TAssert">The type of the test asserter to use.</typeparam>
 	public interface IShiftContract<out TAssert> : IContract<TAssert> where TAssert : IAssert, new() {
 		/// <summary>
 		/// Standard test cases for <see cref="ShiftLeft{TElement}(TElement[], TElement[])"/>.

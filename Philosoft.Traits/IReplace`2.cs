@@ -1,4 +1,6 @@
-﻿namespace System.Traits {
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace System.Traits {
 	/// <summary>
 	/// Indicates the type can have its elements replaced.
 	/// </summary>

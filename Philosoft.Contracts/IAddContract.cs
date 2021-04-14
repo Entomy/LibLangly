@@ -6,6 +6,7 @@ namespace System.Traits.Contracts {
 	/// <summary>
 	/// Contract for validating <see cref="IAdd{TElement, TResult}"/>.
 	/// </summary>
+	/// <typeparam name="TAssert">The type of the test asserter to use.</typeparam>
 	public interface IAddContract<out TAssert> : IContract<TAssert> where TAssert : IAssert, new() {
 		/// <summary>
 		/// Standard test cases for <see cref="Add_Array{TElement}(TElement[], TElement[], TElement[][])"/>.
