@@ -1,5 +1,8 @@
 ﻿namespace Collectathon.Arrays
 
+open System
+open System.Runtime.InteropServices
+
 /// <summary>
 /// Represents a bounded array, a type of flexible array who's size can not grow above its capacity, but can freely resize below that capacity.
 /// </summary>
@@ -12,6 +15,11 @@ type dynamic<'t> = DynamicArray<'t>
 
 [<AutoOpen>]
 module Functions =
+    [<assembly: CLSCompliant(true)>]
+    [<assembly: ComVisible(true)>]
+    [<assembly: Guid("577A3143-08EC-4491-894D-88CA0341EC9D")>]
+    do ()
+    
     /// <summary>
     /// Converts the array to a bounded array.
     /// </summary>

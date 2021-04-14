@@ -1,11 +1,17 @@
 ﻿namespace System
 
 open System
+open System.Runtime.InteropServices
 open System.Traits
 open Bindings
 
 [<AutoOpen>]
 module Functions =
+    [<assembly: CLSCompliant(true)>]
+    [<assembly: ComVisible(true)>]
+    [<assembly: Guid("C3C9244D-E1A2-4CF1-988C-12CAE90F6F35")>]
+    do ()
+
     /// <summary>
     /// Adds the elements to the collection.
     /// </summary>
