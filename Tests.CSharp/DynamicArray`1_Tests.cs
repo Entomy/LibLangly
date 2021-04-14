@@ -5,7 +5,7 @@ using System.Traits.Contracts;
 using Xunit;
 
 namespace Langly {
-	public class DynamicArray1_Tests : IAddContract<xUnit>, IClearContract<xUnit>, IShiftContract<xUnit> {
+	public class DynamicArray1_Tests : IAddContract<xUnit>, IClearContract<xUnit>, IShiftContract<xUnit>, ISliceContract<xUnit> {
 		/// <inheritdoc/>
 		[Theory]
 		[MemberData(nameof(IAddContract<xUnit>.Add_Array_Data), MemberType = typeof(IAddContract<xUnit>))]
@@ -112,6 +112,38 @@ namespace Langly {
 		public void ShiftRightOp<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, Int32 amount) {
 			DynamicArray<TElement> array = initial is not null ? new DynamicArray<TElement>(initial) : null;
 			IShiftContract<xUnit>.Validate(expected, array >> amount);
+		}
+
+		/// <inheritdoc/>
+		[Theory]
+		[MemberData(nameof(ISliceContract<xUnit>.Slice_Data), MemberType = typeof(ISliceContract<xUnit>))]
+		public void Slice<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial) {
+			DynamicArray<TElement> array = initial is not null ? new DynamicArray<TElement>(initial) : null;
+			ISliceContract<xUnit>.Test(expected, array);
+		}
+
+		/// <inheritdoc/>
+		[Theory]
+		[MemberData(nameof(ISliceContract<xUnit>.Slice_Range_Data), MemberType = typeof(ISliceContract<xUnit>))]
+		public void Slice_Range<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, Int32 start, Int32 end) {
+			DynamicArray<TElement> array = initial is not null ? new DynamicArray<TElement>(initial) : null;
+			ISliceContract<xUnit>.Validate(expected, array[start..end]);
+		}
+
+		/// <inheritdoc/>
+		[Theory]
+		[MemberData(nameof(ISliceContract<xUnit>.Slice_Start_Data), MemberType = typeof(ISliceContract<xUnit>))]
+		public void Slice_Start<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, Int32 start) {
+			DynamicArray<TElement> array = initial is not null ? new DynamicArray<TElement>(initial) : null;
+			ISliceContract<xUnit>.Test(expected, array, start);
+		}
+
+		/// <inheritdoc/>
+		[Theory]
+		[MemberData(nameof(ISliceContract<xUnit>.Slice_Start_Length_Data), MemberType = typeof(ISliceContract<xUnit>))]
+		public void Slice_Start_Length<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, Int32 start, Int32 length) {
+			DynamicArray<TElement> array = initial is not null ? new DynamicArray<TElement>(initial) : null;
+			ISliceContract<xUnit>.Test(expected, array, start, length);
 		}
 	}
 }
