@@ -19,6 +19,9 @@ namespace System.Traits.Contracts {
 		public void Equals<T>([AllowNull] T expected, [AllowNull] T actual) => Assert.Equal(expected, actual);
 
 		/// <inheritdoc/>
+		public void Equals<T>([AllowNull] IEnumerable<T> expected, [AllowNull] IEnumerable<T> actual) => Assert.Equal(expected, actual);
+
+		/// <inheritdoc/>
 		public void IsNull([AllowNull] Object value) => Assert.Null(value);
 	}
 }

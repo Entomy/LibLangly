@@ -30,6 +30,17 @@ namespace System.Traits.Contracts {
 		public void Equals<T>([AllowNull] T expected, [AllowNull] T actual) => Assert.AreEqual(expected, actual);
 
 		/// <inheritdoc/>
+		public void Equals<T>([AllowNull] IEnumerable<T> expected, [AllowNull] IEnumerable<T> actual) {
+			Collections.Generic.IEnumerator<T> exp = expected.GetEnumerator();
+			Collections.Generic.IEnumerator<T> act = expected.GetEnumerator();
+			while (exp.MoveNext() && act.MoveNext()) {
+				if (!Object.Equals(exp.Current, act.Current)) {
+					throw new AssertFailedException();
+				}
+			}
+		}
+
+		/// <inheritdoc/>
 		public void IsNull([AllowNull] Object value) => Assert.IsNull(value);
 	}
 }

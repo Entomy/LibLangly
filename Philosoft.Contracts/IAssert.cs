@@ -22,12 +22,20 @@ namespace System.Traits.Contracts {
 		void Empty([DisallowNull] IEnumerable sequence);
 
 		/// <summary>
-		/// Tests whether the specified values are equal and throws an exception if the two values are not equal. 
+		/// Tests whether the specified values are equal.
 		/// </summary>
 		/// <typeparam name="T">The type of values to compare.</typeparam>
 		/// <param name="expected">The first value to compare. This is the value the tests expects.</param>
 		/// <param name="actual">The second value to compare. This is the value produced by the code under test.</param>
 		void Equals<T>([AllowNull] T expected, [AllowNull] T actual);
+
+		/// <summary>
+		/// Tests whether the specified values are equal.
+		/// </summary>
+		/// <typeparam name="T">The type of values to compare.</typeparam>
+		/// <param name="expected">The first value to compare. This is the value the test expects.</param>
+		/// <param name="actual">The second value to compare. This is the value produced by the code under test.</param>
+		void Equals<T>([AllowNull] IEnumerable<T> expected, [AllowNull] IEnumerable<T> actual);
 
 		/// <summary>
 		/// Tests whether the specified object is null and throws an exception if it is not.

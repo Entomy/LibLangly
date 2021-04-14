@@ -2,6 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Traits;
 using Collectathon.Filters;
+using Langly;
 
 namespace Collectathon.Arrays {
 	/// <summary>
@@ -96,76 +97,12 @@ namespace Collectathon.Arrays {
 		}
 
 		/// <summary>
-		/// Determines if the two sequences aren't equal.
-		/// </summary>
-		/// <param name="left">The lefthand sequence.</param>
-		/// <param name="right">The righthand sequence.</param>
-		/// <returns><see langword="true"/> if the two sequences aren't equal; otherwise, <see langword="false"/>.</returns>
-		public static Boolean operator !=([AllowNull] FlexibleArray<TElement, TSelf> left, [AllowNull] TSelf right) {
-			if (left is null && right is null) {
-				return false;
-			} else if (left is null || right is null) {
-				return true;
-			} else {
-				return !left.Equals(right);
-			}
-		}
-
-		/// <summary>
-		/// Determines if the two sequences aren't equal.
-		/// </summary>
-		/// <param name="left">The lefthand sequence.</param>
-		/// <param name="right">The righthand sequence.</param>
-		/// <returns><see langword="true"/> if the two sequences aren't equal; otherwise, <see langword="false"/>.</returns>
-		public static Boolean operator !=([AllowNull] TSelf left, [AllowNull] FlexibleArray<TElement, TSelf> right) {
-			if (left is null && right is null) {
-				return false;
-			} else if (left is null || right is null) {
-				return true;
-			} else {
-				return !left.Equals(right);
-			}
-		}
-
-		/// <summary>
 		/// Shifts the <paramref name="array"/> left by <paramref name="amount"/>.
 		/// </summary>
 		/// <param name="array">The <see cref="FlexibleArray{TElement, TSelf}"/> to shift.</param>
 		/// <param name="amount">The amount of positions to shift.</param>
 		[return: MaybeNull, NotNullIfNotNull("array")]
 		public static TSelf operator <<([AllowNull] FlexibleArray<TElement, TSelf> array, Int32 amount) => array?.ShiftLeft(amount);
-
-		/// <summary>
-		/// Determines if the two sequences are equal.
-		/// </summary>
-		/// <param name="left">The lefthand sequence.</param>
-		/// <param name="right">The righthand sequence.</param>
-		/// <returns><see langword="true"/> if the two sequences are equal; otherwise, <see langword="false"/>.</returns>
-		public static Boolean operator ==([AllowNull] FlexibleArray<TElement, TSelf> left, [AllowNull] TSelf right) {
-			if (left is null && right is null) {
-				return true;
-			} else if (left is null || right is null) {
-				return false;
-			} else {
-				return left.Equals(right);
-			}
-		}
-
-		/// <summary>
-		/// Determines if the two sequences are equal.
-		/// </summary>
-		/// <param name="left">The lefthand sequence.</param>
-		/// <param name="right">The righthand sequence.</param>
-		/// <returns><see langword="true"/> if the two sequences are equal; otherwise, <see langword="false"/>.</returns>
-		public static Boolean operator ==([AllowNull] TSelf left, [AllowNull] FlexibleArray<TElement, TSelf> right) {
-			if (left is null && right is null) {
-				return true;
-			} else if (left is null || right is null) {
-				return false;
-			} else {
-				return left.Equals(right);
-			}
-		}
 
 		/// <summary>
 		/// Shifts the <paramref name="array"/> right by <paramref name="amount"/>.
@@ -197,40 +134,21 @@ namespace Collectathon.Arrays {
 				return Equals(other);
 			case FlexibleArray<TElement, TSelf> other:
 				return Equals(other);
+			case System.Collections.Generic.IEnumerable<TElement> other:
+				return Equals(other);
 			default:
 				return false;
 			}
 		}
 
 		/// <inheritdoc/>
-		public Boolean Equals([AllowNull] TSelf other) => Equals(other as FlexibleArray<TElement, TSelf>);
+		public Boolean Equals([AllowNull] TSelf other) => Collection.Equals(this, other);
 
 		/// <inheritdoc/>
-		public Boolean Equals([AllowNull] FlexibleArray<TElement, TSelf> other) {
-			// We're calling this off an instance, so if the other is null
-			if (other is null) {
-				// They aren't equal
-				return false;
-			}
-			// Get enumerators for each
-			using Enumerator seq = GetEnumerator();
-			using Enumerator oth = other.GetEnumerator();
-			// Now iterate through both
-			while (seq.MoveNext() && oth.MoveNext()) {
-				// If the current elements are not equal to each other
-				if (!(oth.Current?.Equals(seq.Current) ?? false)) {
-					// The sequences aren't equal
-					return false;
-				}
-			}
-			// If any enumerator can still advance
-			if (seq.MoveNext() || oth.MoveNext()) {
-				// They aren't the same length and therefore aren't equal
-				return false;
-			}
-			// We've validated that the sequences are the same length, and contain the same elements in the same order, so are therefore equal.
-			return true;
-		}
+		public Boolean Equals([AllowNull] FlexibleArray<TElement, TSelf> other) => Collection.Equals(this, other);
+
+		/// <inheritdoc/>
+		public Boolean Equals([AllowNull] System.Collections.Generic.IEnumerable<TElement> other) => Collection.Equals(this, other);
 
 		/// <inheritdoc/>
 		[return: NotNull]

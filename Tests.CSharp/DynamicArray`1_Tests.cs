@@ -56,6 +56,25 @@ namespace Langly {
 		}
 
 		/// <inheritdoc/>
+		[Theory]
+		[InlineData(new Int32[] { })]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 5 })]
+
+		public void Equals([AllowNull] Int32[] values) {
+			DynamicArray<Int32> val = values is not null ? new DynamicArray<Int32>(values) : null;
+			Assert.Equal(values, val);
+			Assert.True(val.Equals(values));
+			DynamicArray<Int32> exp = values is not null ? new DynamicArray<Int32>(values) : null;
+			Assert.Equal(exp, val);
+			Assert.Equal<Int32>(exp, val);
+			Assert.True(val.Equals(exp));
+			BoundedArray<Int32> dval = values is not null ? new BoundedArray<Int32>(values) : null;
+			BoundedArray<Int32> dexp = values is not null ? new BoundedArray<Int32>(values) : null;
+			Assert.True(val.Equals(dval));
+			Assert.True(dval.Equals(val));
+		}
+
+		/// <inheritdoc/>
 		public void Replace_Complex<TSearch, TReplace>([AllowNull] TSearch[] expected, [AllowNull] TSearch[] initial, [AllowNull] TSearch search, [AllowNull] TReplace replace) => throw new NotImplementedException();
 
 		/// <inheritdoc/>
