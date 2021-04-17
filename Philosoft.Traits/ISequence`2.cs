@@ -29,6 +29,36 @@ namespace System.Traits {
 		}
 
 		/// <summary>
+		/// Copies all the elements of the current sequence into an array.
+		/// </summary>
+		/// <param name="array">The array to copy items into.</param>
+		/// <exception cref="ArgumentException">The destination is shorter than this sequence.</exception>
+		/// <exception cref="ArgumentNullException">The destination is <see langword="null"/>.</exception>
+		void CopyTo([DisallowNull] TElement[] array) => CopyTo(array.AsSpan());
+
+		/// <summary>
+		/// Copies all the elements of the current sequence into a memory region.
+		/// </summary>
+		/// <param name="memory">The memory to copy items into.</param>
+		/// <exception cref="ArgumentException">The destination is shorter than this sequence.</exception>
+		void CopyTo(Memory<TElement> memory) => CopyTo(memory.Span);
+
+		/// <summary>
+		/// Copyes all the elements of the current sequence into the span.
+		/// </summary>
+		/// <param name="span">The span to copy items into.</param>
+		/// <exception cref="ArgumentException">The destination is shorter than this sequence.</exception>
+		void CopyTo(Span<TElement> span) {
+			if (Count > span.Length) {
+				throw new ArgumentException();
+			}
+			Int32 i = 0;
+			foreach (TElement item in this) {
+				span[i++] = item;
+			}
+		}
+
+		/// <summary>
 		/// Folds the collection into a single element as described by <paramref name="func"/>.
 		/// </summary>
 		/// <param name="func">The function describing the folding operation. This is a magma.</param>
