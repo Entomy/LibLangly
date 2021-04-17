@@ -28,6 +28,6 @@ namespace System {
 		/// Shrinks the collection by a computed factor.
 		/// </summary>
 		/// <param name="collection">This collection.</param>
-		public static ReadOnlyMemory<TElement> Shrink<TElement>(this ReadOnlyMemory<TElement> collection) => collection.Resize((nint)(collection.Length / φ));
+		public static Span<TElement> Shrink<TElement>(this Span<TElement> collection) => collection.Resize((nint)(collection.Length / φ));
 	}
 }

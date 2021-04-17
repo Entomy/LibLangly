@@ -50,7 +50,7 @@ namespace System {
 		/// <param name="collection">This collection.</param>
 		/// <param name="capacity">The new capacity of the collection.</param>
 		[return: MaybeNull, NotNullIfNotNull("collection")]
-		public static ReadOnlyMemory<TElement> Resize<TElement>(this ReadOnlyMemory<TElement> collection, nint capacity) {
+		public static Span<TElement> Resize<TElement>(this Span<TElement> collection, nint capacity) {
 			if (collection.Length == 0) {
 				return new TElement[capacity];
 			}

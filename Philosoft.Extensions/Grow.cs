@@ -28,7 +28,7 @@ namespace System {
 		/// Grows the collection by a computed factor.
 		/// </summary>
 		/// <param name="collection">This collection.</param>
-		public static ReadOnlyMemory<TElement> Grow<TElement>(this ReadOnlyMemory<TElement> collection) => collection.Length <= 8 ? collection.Resize(13) : collection.Resize((nint)(collection.Length * φ));
+		public static Span<TElement> Grow<TElement>(this Span<TElement> collection) => collection.Length <= 8 ? collection.Resize(13) : collection.Resize((nint)(collection.Length * φ));
 
 	}
 }

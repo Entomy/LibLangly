@@ -32,7 +32,7 @@ namespace System {
 		/// <para><paramref name="identity"/> is required as a start point for the fold. It needs to be the identity of the <paramref name="func"/> to function properly. For example, the identity of addition is <c>0</c>, and the identity of multiplication is <c>1</c>. Without an appropriate identity, the results will be wrong.</para>
 		/// </remarks>
 		[return: MaybeNull]
-		public static Char Fold([AllowNull] this String collection, [DisallowNull] Func<Char, Char, Char> func, Char identity) => collection is not null ? Fold(collection.AsMemory(), func, identity) : identity;
+		public static Char Fold([AllowNull] this String collection, [DisallowNull] Func<Char, Char, Char> func, Char identity) => collection is not null ? Fold(collection.AsSpan(), func, identity) : identity;
 
 		/// <summary>
 		/// Folds the collection into a single element as described by the <paramref name="func"/>.
@@ -47,7 +47,7 @@ namespace System {
 		/// <para><paramref name="identity"/> is required as a start point for the fold. It needs to be the identity of the <paramref name="func"/> to function properly. For example, the identity of addition is <c>0</c>, and the identity of multiplication is <c>1</c>. Without an appropriate identity, the results will be wrong.</para>
 		/// </remarks>
 		[return: MaybeNull]
-		public static TElement Fold<TElement>([AllowNull] this TElement[] collection, [DisallowNull] Func<TElement, TElement, TElement> func, [AllowNull] TElement identity) => collection is not null ? Fold(collection.AsMemory(), func, identity) : identity;
+		public static TElement Fold<TElement>([AllowNull] this TElement[] collection, [DisallowNull] Func<TElement, TElement, TElement> func, [AllowNull] TElement identity) => collection is not null ? Fold(collection.AsSpan(), func, identity) : identity;
 
 		/// <summary>
 		/// Folds the collection into a single element as described by the <paramref name="func"/>.
