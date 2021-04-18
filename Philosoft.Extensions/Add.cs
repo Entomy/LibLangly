@@ -65,6 +65,30 @@ namespace System {
 		/// The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.
 		/// </remarks>
 		public static ReadOnlyMemory<TElement> Add<TElement>(this ReadOnlyMemory<TElement> collection, [AllowNull] TElement element) => collection.Postpend(element);
+
+		/// <summary>
+		/// Adds an element to this collection.
+		/// </summary>
+		/// <typeparam name="TElement">The type of the elements.</typeparam>
+		/// <param name="collection">this collection.</param>
+		/// <param name="element">The element to add.</param>
+		/// <returns>Returns an <see cref="Span{T}"/> of <typeparamref name="TElement"/> containing the original and added elements.</returns>
+		/// <remarks>
+		/// The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.
+		/// </remarks>
+		public static Span<TElement> Add<TElement>(this Span<TElement> collection, [AllowNull] TElement element) => collection.Postpend(element);
+
+		/// <summary>
+		/// Adds an element to this collection.
+		/// </summary>
+		/// <typeparam name="TElement">The type of the elements.</typeparam>
+		/// <param name="collection">this collection.</param>
+		/// <param name="element">The element to add.</param>
+		/// <returns>Returns an <see cref="ReadOnlySpan{T}"/> of <typeparamref name="TElement"/> containing the original and added elements.</returns>
+		/// <remarks>
+		/// The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.
+		/// </remarks>
+		public static ReadOnlySpan<TElement> Add<TElement>(this ReadOnlySpan<TElement> collection, [AllowNull] TElement element) => collection.Postpend(element);
 		#endregion
 
 		#region Add(Collection, TElement[])
@@ -128,6 +152,30 @@ namespace System {
 		/// The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.
 		/// </remarks>
 		public static ReadOnlyMemory<TElement> Add<TElement>(this ReadOnlyMemory<TElement> collection, [AllowNull] params TElement[] elements) => collection.Postpend(elements);
+
+		/// <summary>
+		/// Adds the elements to this collection.
+		/// </summary>
+		/// <typeparam name="TElement">The type of the elements.</typeparam>
+		/// <param name="collection">This collection.</param>
+		/// <param name="elements">The elements to add.</param>
+		/// <returns>Returns a <see cref="Span{T}"/> of <typeparamref name="TElement"/> containing the original and added elements.</returns>
+		/// <remarks>
+		/// The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.
+		/// </remarks>
+		public static Span<TElement> Add<TElement>(this Span<TElement> collection, [AllowNull] params TElement[] elements) => collection.Postpend(elements);
+
+		/// <summary>
+		/// Adds the elements to this collection.
+		/// </summary>
+		/// <typeparam name="TElement">The type of the elements.</typeparam>
+		/// <param name="collection">This collection.</param>
+		/// <param name="elements">The elements to add.</param>
+		/// <returns>Returns a <see cref="ReadOnlySpan{T}"/> of <typeparamref name="TElement"/> containing the original and added elements.</returns>
+		/// <remarks>
+		/// The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.
+		/// </remarks>
+		public static ReadOnlySpan<TElement> Add<TElement>(this ReadOnlySpan<TElement> collection, [AllowNull] params TElement[] elements) => collection.Postpend(elements);
 		#endregion
 
 		#region Add(Collection, Memory<TElement>)
@@ -191,6 +239,30 @@ namespace System {
 		/// The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.
 		/// </remarks>
 		public static ReadOnlyMemory<TElement> Add<TElement>(this ReadOnlyMemory<TElement> collection, Memory<TElement> elements) => collection.Postpend(elements);
+
+		/// <summary>
+		/// Adds the elements to this collection.
+		/// </summary>
+		/// <typeparam name="TElement">The type of the elements.</typeparam>
+		/// <param name="collection">This collection.</param>
+		/// <param name="elements">The elements to add.</param>
+		/// <returns>Returns a <see cref="Span{T}"/> of <typeparamref name="TElement"/> containing the original and added elements.</returns>
+		/// <remarks>
+		/// The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.
+		/// </remarks>
+		public static Span<TElement> Add<TElement>(this Span<TElement> collection, Memory<TElement> elements) => collection.Postpend(elements);
+
+		/// <summary>
+		/// Adds the elements to this collection.
+		/// </summary>
+		/// <typeparam name="TElement">The type of the elements.</typeparam>
+		/// <param name="collection">This collection.</param>
+		/// <param name="elements">The elements to add.</param>
+		/// <returns>Returns a <see cref="ReadOnlySpan{T}"/> of <typeparamref name="TElement"/> containing the original and added elements.</returns>
+		/// <remarks>
+		/// The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.
+		/// </remarks>
+		public static ReadOnlySpan<TElement> Add<TElement>(this ReadOnlySpan<TElement> collection, Memory<TElement> elements) => collection.Postpend(elements);
 		#endregion
 
 		#region Add(Collection, ReadOnlyMemory<TElement>)
@@ -254,6 +326,30 @@ namespace System {
 		/// The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.
 		/// </remarks>
 		public static ReadOnlyMemory<TElement> Add<TElement>(this ReadOnlyMemory<TElement> collection, ReadOnlyMemory<TElement> elements) => collection.Postpend(elements);
+
+		/// <summary>
+		/// Adds the elements to this collection.
+		/// </summary>
+		/// <typeparam name="TElement">The type of the elements.</typeparam>
+		/// <param name="collection">This collection.</param>
+		/// <param name="elements">The elements to add.</param>
+		/// <returns>Returns a <see cref="ReadOnlySpan{T}"/> of <typeparamref name="TElement"/> containing the original and added elements.</returns>
+		/// <remarks>
+		/// The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.
+		/// </remarks>
+		public static ReadOnlySpan<TElement> Add<TElement>(this Span<TElement> collection, ReadOnlyMemory<TElement> elements) => collection.Postpend(elements);
+
+		/// <summary>
+		/// Adds the elements to this collection.
+		/// </summary>
+		/// <typeparam name="TElement">The type of the elements.</typeparam>
+		/// <param name="collection">This collection.</param>
+		/// <param name="elements">The elements to add.</param>
+		/// <returns>Returns a <see cref="ReadOnlySpan{T}"/> of <typeparamref name="TElement"/> containing the original and added elements.</returns>
+		/// <remarks>
+		/// The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.
+		/// </remarks>
+		public static ReadOnlySpan<TElement> Add<TElement>(this ReadOnlySpan<TElement> collection, ReadOnlyMemory<TElement> elements) => collection.Postpend(elements);
 		#endregion
 
 		#region Add(Collection, Span<TElement>)

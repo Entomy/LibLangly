@@ -9,7 +9,7 @@ namespace System.Traits.Contracts {
 	/// <typeparam name="TAssert">The type of the test asserter to use.</typeparam>
 	public interface IReplaceContract<out TAssert> : IContract<TAssert> where TAssert : IAssert, new() {
 		/// <summary>
-		/// Standard test cases for <see cref="Replace{TSearch, TReplace}(TSearch[], TSearch[], TSearch, TReplace)"/>.
+		/// Standard test cases for <see cref="Replace_Simple{TElement}(TElement[], TElement[], TElement, TElement)"/>.
 		/// </summary>
 		/// <returns>The test cases.</returns>
 		public static IEnumerable<Object[]> Replace_Data() {
