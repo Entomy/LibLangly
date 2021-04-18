@@ -225,5 +225,74 @@ namespace Langly {
 				Assert.True(ros.Length == 0);
 			}
 		}
+
+		[Theory]
+		[InlineData(false, new Int32[] { 1, 2, 3 }, 0)]
+		[InlineData(true, new Int32[] { 1, 2, 3 }, 1)]
+		[InlineData(true, new Int32[] { 1, 2, 3 }, 2)]
+		[InlineData(true, new Int32[] { 1, 2, 3 }, 3)]
+		[InlineData(false, new Int32[] { 1, 2, 3 }, 4)]
+		public void Contains_Element(Boolean expected, Int32[] values, Int32 element) {
+			Assert.Equal(expected, PhilosoftExtensions.Contains(values, element));
+			Assert.Equal(expected, PhilosoftExtensions.Contains(values.AsMemory(), element));
+			Assert.Equal(expected, PhilosoftExtensions.Contains((ReadOnlyMemory<Int32>)values.AsMemory(), element));
+			Assert.Equal(expected, PhilosoftExtensions.Contains(values.AsSpan(), element));
+			Assert.Equal(expected, PhilosoftExtensions.Contains((ReadOnlySpan<Int32>)values.AsSpan(), element));
+		}
+
+		[Theory]
+		[InlineData(true, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 1, 2, 3 })]
+		[InlineData(true, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 2, 3, 4 })]
+		[InlineData(true, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 3, 4, 5 })]
+		[InlineData(false, new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 4, 5, 6 })]
+		public void ContainsAll(Boolean expected, Int32[] values, Int32[] elements) {
+			Assert.Equal(expected, PhilosoftExtensions.ContainsAll(values, elements));
+			Assert.Equal(expected, PhilosoftExtensions.ContainsAll(values.AsMemory(), elements));
+			Assert.Equal(expected, PhilosoftExtensions.ContainsAll((ReadOnlyMemory<Int32>)values.AsMemory(), elements));
+			Assert.Equal(expected, PhilosoftExtensions.ContainsAll(values.AsSpan(), elements));
+			Assert.Equal(expected, PhilosoftExtensions.ContainsAll((ReadOnlySpan<Int32>)values.AsSpan(), elements));
+		}
+
+		[Theory]
+		[InlineData(true, new Int32[] { 1, 2, 3 }, new Int32[] { 1, 2, 3 })]
+		[InlineData(true, new Int32[] { 1, 2, 3 }, new Int32[] { 2, 3, 4 })]
+		[InlineData(true, new Int32[] { 1, 2, 3 }, new Int32[] { 3, 4, 5 })]
+		[InlineData(false, new Int32[] { 1, 2, 3 }, new Int32[] { 4, 5, 6 })]
+		public void ContainsAny(Boolean expected, Int32[] values, Int32[] elements) {
+			Assert.Equal(expected, PhilosoftExtensions.ContainsAny(values, elements));
+			Assert.Equal(expected, PhilosoftExtensions.ContainsAny(values.AsMemory(), elements));
+			Assert.Equal(expected, PhilosoftExtensions.ContainsAny((ReadOnlyMemory<Int32>)values.AsMemory(), elements));
+			Assert.Equal(expected, PhilosoftExtensions.ContainsAny(values.AsSpan(), elements));
+			Assert.Equal(expected, PhilosoftExtensions.ContainsAny((ReadOnlySpan<Int32>)values.AsSpan(), elements));
+		}
+
+		[Theory]
+		[InlineData(0, null)]
+		[InlineData(0, new Int32[] { })]
+		[InlineData(15, new Int32[] { 1, 2, 3, 4, 5 })]
+		public void Fold(Int32 expected, Int32[] values) {
+			Assert.Equal(expected, PhilosoftExtensions.Fold(values, (x, y) => x + y, 0));
+			Assert.Equal(expected, PhilosoftExtensions.Fold(values.AsMemory(), (x, y) => x + y, 0));
+			Assert.Equal(expected, PhilosoftExtensions.Fold((ReadOnlyMemory<Int32>)values.AsMemory(), (x, y) => x + y, 0));
+			Assert.Equal(expected, PhilosoftExtensions.Fold(values.AsSpan(), (x, y) => x + y, 0));
+			Assert.Equal(expected, PhilosoftExtensions.Fold((ReadOnlySpan<Int32>)values.AsSpan(), (x, y) => x + y, 0));
+		}
+
+		[Theory]
+		[InlineData(new Int32[] { })]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 5 })]
+		public void Grow(Int32[] values) {
+			var arr = PhilosoftExtensions.Grow(values);
+			var mem = PhilosoftExtensions.Grow(values.AsMemory());
+			var spn = PhilosoftExtensions.Grow(values.AsSpan());
+			Assert.True(arr.Length > values.Length);
+			Assert.True(mem.Length > values.Length);
+			Assert.True(spn.Length > values.Length);
+			foreach (Int32 value in values) {
+				Assert.Contains(value, arr);
+				Assert.Contains(value, mem.ToArray());
+				Assert.Contains(value, spn.ToArray());
+			}
+		}
 	}
 }
