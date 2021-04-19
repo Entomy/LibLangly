@@ -638,83 +638,6 @@ namespace System {
 		/// </remarks>
 		[return: MaybeNull]
 		public static TResult Add<TElement, TResult, TEnumerator>([AllowNull] this IAdd<TElement, TResult> collection, [AllowNull] ISequence<TElement, TEnumerator> elements) where TEnumerator : IEnumerator<TElement> where TResult : IAdd<TElement, TResult> => collection is not null ? collection.Add(elements) : (TResult)collection;
-
-		/// <summary>
-		/// Adds the elements to this collection.
-		/// </summary>
-		/// <typeparam name="TEnumerator">The type of the enumerator of the <paramref name="elements"/>.</typeparam>
-		/// <param name="collection">This collection.</param>
-		/// <param name="elements">The elements to add.</param>
-		/// <returns>Returns a <see cref="ReadOnlyMemory{T}"/> of <see cref="Char"/> containing the original and added elements.</returns>
-		/// <remarks>
-		/// The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.
-		/// </remarks>
-		public static ReadOnlyMemory<Char> Add<TEnumerator>([AllowNull] this String collection, [AllowNull] ISequence<Char, TEnumerator> elements) where TEnumerator : IEnumerator<Char> => collection.Postpend(elements);
-
-		/// <summary>
-		/// Adds the elements to this collection.
-		/// </summary>
-		/// <typeparam name="TElement">The type of the elements.</typeparam>
-		/// <typeparam name="TEnumerator">The type of the enumerator of the <paramref name="elements"/>.</typeparam>
-		/// <param name="collection">This collection.</param>
-		/// <param name="elements">The elements to add.</param>
-		/// <returns>Returns a <see cref="Memory{T}"/> of <see cref="Char"/> containing the original and added elements.</returns>
-		/// <remarks>
-		/// The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.
-		/// </remarks>
-		public static Memory<TElement> Add<TElement, TEnumerator>([AllowNull] this TElement[] collection, [AllowNull] ISequence<TElement, TEnumerator> elements) where TEnumerator : IEnumerator<TElement> => collection.Postpend(elements);
-
-		/// <summary>
-		/// Adds the elements to this collection.
-		/// </summary>
-		/// <typeparam name="TElement">The type of the elements.</typeparam>
-		/// <typeparam name="TEnumerator">The type of the enumerator of the <paramref name="elements"/>.</typeparam>
-		/// <param name="collection">This collection.</param>
-		/// <param name="elements">The elements to add.</param>
-		/// <returns>Returns a <see cref="Memory{T}"/> of <see cref="Char"/> containing the original and added elements.</returns>
-		/// <remarks>
-		/// The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.
-		/// </remarks>
-		public static Memory<TElement> Add<TElement, TEnumerator>(this Memory<TElement> collection, [AllowNull] ISequence<TElement, TEnumerator> elements) where TEnumerator : IEnumerator<TElement> => collection.Postpend(elements);
-
-		/// <summary>
-		/// Adds the elements to this collection.
-		/// </summary>
-		/// <typeparam name="TElement">The type of the elements.</typeparam>
-		/// <typeparam name="TEnumerator">The type of the enumerator of the <paramref name="elements"/>.</typeparam>
-		/// <param name="collection">This collection.</param>
-		/// <param name="elements">The elements to add.</param>
-		/// <returns>Returns a <see cref="ReadOnlyMemory{T}"/> of <see cref="Char"/> containing the original and added elements.</returns>
-		/// <remarks>
-		/// The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.
-		/// </remarks>
-		public static ReadOnlyMemory<TElement> Add<TElement, TEnumerator>(this ReadOnlyMemory<TElement> collection, [AllowNull] ISequence<TElement, TEnumerator> elements) where TEnumerator : IEnumerator<TElement> => collection.Postpend(elements);
-
-		/// <summary>
-		/// Adds the elements to this collection.
-		/// </summary>
-		/// <typeparam name="TElement">The type of the elements.</typeparam>
-		/// <typeparam name="TEnumerator">The type of the enumerator of the <paramref name="elements"/>.</typeparam>
-		/// <param name="collection">This collection.</param>
-		/// <param name="elements">The elements to add.</param>
-		/// <returns>Returns a <see cref="Span{T}"/> of <see cref="Char"/> containing the original and added elements.</returns>
-		/// <remarks>
-		/// The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.
-		/// </remarks>
-		public static Span<TElement> Add<TElement, TEnumerator>(this Span<TElement> collection, [AllowNull] ISequence<TElement, TEnumerator> elements) where TEnumerator : IEnumerator<TElement> => collection.Postpend(elements);
-
-		/// <summary>
-		/// Adds the elements to this collection.
-		/// </summary>
-		/// <typeparam name="TElement">The type of the elements.</typeparam>
-		/// <typeparam name="TEnumerator">The type of the enumerator of the <paramref name="elements"/>.</typeparam>
-		/// <param name="collection">This collection.</param>
-		/// <param name="elements">The elements to add.</param>
-		/// <returns>Returns a <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> containing the original and added elements.</returns>
-		/// <remarks>
-		/// The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.
-		/// </remarks>
-		public static ReadOnlySpan<TElement> Add<TElement, TEnumerator>(this ReadOnlySpan<TElement> collection, [AllowNull] ISequence<TElement, TEnumerator> elements) where TEnumerator : IEnumerator<TElement> => collection.Postpend(elements);
 		#endregion
 
 		#region Add(Collection, String)
@@ -740,7 +663,7 @@ namespace System {
 		/// <remarks>
 		/// The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.
 		/// </remarks>
-		public static String Add([AllowNull] this String collection, [AllowNull] String elements) => collection.Postpend(elements);
+		public static ReadOnlyMemory<Char> Add([AllowNull] this String collection, [AllowNull] String elements) => collection.Postpend(elements);
 
 		/// <summary>
 		/// Adds an element to this collection.

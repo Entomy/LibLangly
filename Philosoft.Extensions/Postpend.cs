@@ -27,10 +27,7 @@ namespace System {
 			if (collection is null || collection.Length == 0) {
 				return new Char[] { element };
 			}
-			Char[] Array = new Char[collection.Length + 1];
-			collection.AsMemory().CopyTo(Array);
-			Array[collection.Length] = element;
-			return Array;
+			return PostpendKernel<Char>(collection, element);
 		}
 
 		/// <summary>
@@ -46,10 +43,7 @@ namespace System {
 			} else if (collection is null || collection.Length == 0) {
 				return new[] { element };
 			}
-			TElement[] Array = new TElement[collection.Length + 1];
-			System.Array.Copy(collection, Array, collection.Length);
-			Array[collection.Length] = element;
-			return Array;
+			return PostpendKernel<TElement>(collection, element);
 		}
 
 		/// <summary>
@@ -65,10 +59,7 @@ namespace System {
 			} else if (collection.Length == 0) {
 				return new[] { element };
 			}
-			TElement[] Array = new TElement[collection.Length + 1];
-			collection.CopyTo(Array);
-			Array[collection.Length] = element;
-			return Array;
+			return PostpendKernel<TElement>(collection.Span, element);
 		}
 
 		/// <summary>
@@ -84,10 +75,7 @@ namespace System {
 			} else if (collection.Length == 0) {
 				return new[] { element };
 			}
-			TElement[] Array = new TElement[collection.Length + 1];
-			collection.CopyTo(Array);
-			Array[collection.Length] = element;
-			return Array;
+			return PostpendKernel<TElement>(collection.Span, element);
 		}
 
 		/// <summary>
@@ -103,10 +91,7 @@ namespace System {
 			} else if (collection.Length == 0) {
 				return new[] { element };
 			}
-			TElement[] Array = new TElement[collection.Length + 1];
-			collection.CopyTo(Array);
-			Array[collection.Length] = element;
-			return Array;
+			return PostpendKernel<TElement>(collection, element);
 		}
 
 		/// <summary>
@@ -122,10 +107,7 @@ namespace System {
 			} else if (collection.Length == 0) {
 				return new[] { element };
 			}
-			TElement[] Array = new TElement[collection.Length + 1];
-			collection.CopyTo(Array);
-			Array[collection.Length] = element;
-			return Array;
+			return PostpendKernel<TElement>(collection, element);
 		}
 		#endregion
 
@@ -153,10 +135,7 @@ namespace System {
 			} else if (collection is null || collection.Length == 0) {
 				return elements;
 			}
-			Char[] Array = new Char[collection.Length + elements.Length];
-			collection.AsMemory().CopyTo(Array);
-			elements.CopyTo(Array.AsMemory().Slice(collection.Length, elements.Length));
-			return Array;
+			return PostpendKernel<Char>(collection, elements);
 		}
 
 		/// <summary>
@@ -172,10 +151,7 @@ namespace System {
 			} else if (collection is null || collection.Length == 0) {
 				return elements;
 			}
-			TElement[] Array = new TElement[collection.Length + elements.Length];
-			System.Array.Copy(collection, Array, collection.Length);
-			elements.CopyTo(Array.AsMemory().Slice(collection.Length, elements.Length));
-			return Array;
+			return PostpendKernel<TElement>(collection, elements);
 		}
 
 		/// <summary>
@@ -191,10 +167,7 @@ namespace System {
 			} else if (collection.Length == 0) {
 				return elements;
 			}
-			TElement[] Array = new TElement[collection.Length + elements.Length];
-			collection.CopyTo(Array);
-			elements.CopyTo(Array.AsMemory().Slice(collection.Length, elements.Length));
-			return Array;
+			return PostpendKernel<TElement>(collection.Span, elements);
 		}
 
 		/// <summary>
@@ -210,10 +183,7 @@ namespace System {
 			} else if (collection.Length == 0) {
 				return elements;
 			}
-			TElement[] Array = new TElement[collection.Length + elements.Length];
-			collection.CopyTo(Array);
-			elements.CopyTo(Array.AsMemory().Slice(collection.Length, elements.Length));
-			return Array;
+			return PostpendKernel<TElement>(collection.Span, elements);
 		}
 
 		/// <summary>
@@ -229,10 +199,7 @@ namespace System {
 			} else if (collection.Length == 0) {
 				return elements;
 			}
-			TElement[] Array = new TElement[collection.Length + elements.Length];
-			collection.CopyTo(Array);
-			elements.CopyTo(Array.AsMemory().Slice(collection.Length, elements.Length));
-			return Array;
+			return PostpendKernel<TElement>(collection, elements);
 		}
 
 		/// <summary>
@@ -248,10 +215,7 @@ namespace System {
 			} else if (collection.Length == 0) {
 				return elements;
 			}
-			TElement[] Array = new TElement[collection.Length + elements.Length];
-			collection.CopyTo(Array);
-			elements.CopyTo(Array.AsMemory().Slice(collection.Length, elements.Length));
-			return Array;
+			return PostpendKernel<TElement>(collection, elements);
 		}
 		#endregion
 
@@ -279,10 +243,7 @@ namespace System {
 			} else if (collection is null || collection.Length == 0) {
 				return elements;
 			}
-			Char[] Array = new Char[collection.Length + elements.Length];
-			collection.AsMemory().CopyTo(Array);
-			elements.CopyTo(Array.AsMemory().Slice(collection.Length, elements.Length));
-			return Array;
+			return PostpendKernel<Char>(collection, elements.Span);
 		}
 
 		/// <summary>
@@ -298,10 +259,7 @@ namespace System {
 			} else if (collection is null || collection.Length == 0) {
 				return elements;
 			}
-			TElement[] Array = new TElement[collection.Length + elements.Length];
-			System.Array.Copy(collection, Array, collection.Length);
-			elements.CopyTo(Array.AsMemory().Slice(collection.Length, elements.Length));
-			return Array;
+			return PostpendKernel<TElement>(collection, elements.Span);
 		}
 
 		/// <summary>
@@ -317,10 +275,7 @@ namespace System {
 			} else if (collection.Length == 0) {
 				return elements;
 			}
-			TElement[] Array = new TElement[collection.Length + elements.Length];
-			collection.CopyTo(Array);
-			elements.CopyTo(Array.AsMemory().Slice(collection.Length, elements.Length));
-			return Array;
+			return PostpendKernel<TElement>(collection.Span, elements.Span);
 		}
 
 		/// <summary>
@@ -336,10 +291,7 @@ namespace System {
 			} else if (collection.Length == 0) {
 				return elements;
 			}
-			TElement[] Array = new TElement[collection.Length + elements.Length];
-			collection.CopyTo(Array);
-			elements.CopyTo(Array.AsMemory().Slice(collection.Length, elements.Length));
-			return Array;
+			return PostpendKernel<TElement>(collection.Span, elements.Span);
 		}
 
 		/// <summary>
@@ -355,10 +307,7 @@ namespace System {
 			} else if (collection.Length == 0) {
 				return elements.Span;
 			}
-			TElement[] Array = new TElement[collection.Length + elements.Length];
-			collection.CopyTo(Array);
-			elements.CopyTo(Array.AsMemory().Slice(collection.Length, elements.Length));
-			return Array;
+			return PostpendKernel<TElement>(collection, elements.Span);
 		}
 
 		/// <summary>
@@ -374,10 +323,7 @@ namespace System {
 			} else if (collection.Length == 0) {
 				return elements.Span;
 			}
-			TElement[] Array = new TElement[collection.Length + elements.Length];
-			collection.CopyTo(Array);
-			elements.CopyTo(Array.AsMemory().Slice(collection.Length, elements.Length));
-			return Array;
+			return PostpendKernel<TElement>(collection, elements.Span);
 		}
 		#endregion
 
@@ -405,10 +351,7 @@ namespace System {
 			} else if (collection is null || collection.Length == 0) {
 				return elements;
 			}
-			Char[] Array = new Char[collection.Length + elements.Length];
-			collection.AsMemory().CopyTo(Array);
-			elements.CopyTo(Array.AsMemory().Slice(collection.Length, elements.Length));
-			return Array;
+			return PostpendKernel<Char>(collection, elements.Span);
 		}
 
 		/// <summary>
@@ -424,10 +367,7 @@ namespace System {
 			} else if (collection is null || collection.Length == 0) {
 				return elements;
 			}
-			TElement[] Array = new TElement[collection.Length + elements.Length];
-			System.Array.Copy(collection, Array, collection.Length);
-			elements.CopyTo(Array.AsMemory().Slice(collection.Length, elements.Length));
-			return Array;
+			return PostpendKernel<TElement>(collection, elements.Span);
 		}
 
 		/// <summary>
@@ -443,10 +383,7 @@ namespace System {
 			} else if (collection.Length == 0) {
 				return elements;
 			}
-			TElement[] Array = new TElement[collection.Length + elements.Length];
-			collection.CopyTo(Array);
-			elements.CopyTo(Array.AsMemory().Slice(collection.Length, elements.Length));
-			return Array;
+			return PostpendKernel<TElement>(collection.Span, elements.Span);
 		}
 
 		/// <summary>
@@ -462,10 +399,7 @@ namespace System {
 			} else if (collection.Length == 0) {
 				return elements;
 			}
-			TElement[] Array = new TElement[collection.Length + elements.Length];
-			collection.CopyTo(Array);
-			elements.CopyTo(Array.AsMemory().Slice(collection.Length, elements.Length));
-			return Array;
+			return PostpendKernel<TElement>(collection.Span, elements.Span);
 		}
 
 		/// <summary>
@@ -481,10 +415,7 @@ namespace System {
 			} else if (collection.Length == 0) {
 				return elements.Span;
 			}
-			TElement[] Array = new TElement[collection.Length + elements.Length];
-			collection.CopyTo(Array);
-			elements.CopyTo(Array.AsMemory().Slice(collection.Length, elements.Length));
-			return Array;
+			return PostpendKernel<TElement>(collection, elements.Span);
 		}
 
 		/// <summary>
@@ -500,10 +431,7 @@ namespace System {
 			} else if (collection.Length == 0) {
 				return elements.Span;
 			}
-			TElement[] Array = new TElement[collection.Length + elements.Length];
-			collection.CopyTo(Array);
-			elements.CopyTo(Array.AsMemory().Slice(collection.Length, elements.Length));
-			return Array;
+			return PostpendKernel<TElement>(collection, elements.Span);
 		}
 		#endregion
 
@@ -531,10 +459,7 @@ namespace System {
 			} else if (collection is null || collection.Length == 0) {
 				return elements;
 			}
-			Char[] Array = new Char[collection.Length + elements.Length];
-			collection.AsMemory().CopyTo(Array);
-			elements.CopyTo(Array.AsSpan().Slice(collection.Length, elements.Length));
-			return Array;
+			return PostpendKernel<Char>(collection, elements);
 		}
 
 		/// <summary>
@@ -550,10 +475,7 @@ namespace System {
 			} else if (collection is null || collection.Length == 0) {
 				return elements;
 			}
-			TElement[] Array = new TElement[collection.Length + elements.Length];
-			System.Array.Copy(collection, Array, collection.Length);
-			elements.CopyTo(Array.AsSpan().Slice(collection.Length, elements.Length));
-			return Array;
+			return PostpendKernel<TElement>(collection, elements);
 		}
 
 		/// <summary>
@@ -569,10 +491,7 @@ namespace System {
 			} else if (collection.Length == 0) {
 				return elements;
 			}
-			TElement[] Array = new TElement[collection.Length + elements.Length];
-			collection.CopyTo(Array);
-			elements.CopyTo(Array.AsSpan().Slice(collection.Length, elements.Length));
-			return Array;
+			return PostpendKernel<TElement>(collection.Span, elements);
 		}
 
 		/// <summary>
@@ -588,10 +507,7 @@ namespace System {
 			} else if (collection.Length == 0) {
 				return elements;
 			}
-			TElement[] Array = new TElement[collection.Length + elements.Length];
-			collection.CopyTo(Array);
-			elements.CopyTo(Array.AsSpan().Slice(collection.Length, elements.Length));
-			return Array;
+			return PostpendKernel<TElement>(collection.Span, elements);
 		}
 
 		/// <summary>
@@ -607,10 +523,7 @@ namespace System {
 			} else if (collection.Length == 0) {
 				return elements;
 			}
-			TElement[] Array = new TElement[collection.Length + elements.Length];
-			collection.CopyTo(Array);
-			elements.CopyTo(Array.AsSpan().Slice(collection.Length, elements.Length));
-			return Array;
+			return PostpendKernel<TElement>(collection, elements);
 		}
 
 		/// <summary>
@@ -626,10 +539,7 @@ namespace System {
 			} else if (collection.Length == 0) {
 				return elements;
 			}
-			TElement[] Array = new TElement[collection.Length + elements.Length];
-			collection.CopyTo(Array);
-			elements.CopyTo(Array.AsSpan().Slice(collection.Length, elements.Length));
-			return Array;
+			return PostpendKernel<TElement>(collection, elements);
 		}
 		#endregion
 
@@ -657,10 +567,7 @@ namespace System {
 			} else if (collection is null || collection.Length == 0) {
 				return elements;
 			}
-			Char[] Array = new Char[collection.Length + elements.Length];
-			collection.AsMemory().CopyTo(Array);
-			elements.CopyTo(Array.AsSpan().Slice(collection.Length, elements.Length));
-			return Array;
+			return PostpendKernel<Char>(collection, elements);
 		}
 
 		/// <summary>
@@ -676,10 +583,7 @@ namespace System {
 			} else if (collection is null || collection.Length == 0) {
 				return elements;
 			}
-			TElement[] Array = new TElement[collection.Length + elements.Length];
-			System.Array.Copy(collection, Array, collection.Length);
-			elements.CopyTo(Array.AsSpan().Slice(collection.Length, elements.Length));
-			return Array;
+			return PostpendKernel<TElement>(collection, elements);
 		}
 
 		/// <summary>
@@ -695,10 +599,7 @@ namespace System {
 			} else if (collection.Length == 0) {
 				return elements;
 			}
-			TElement[] Array = new TElement[collection.Length + elements.Length];
-			collection.CopyTo(Array);
-			elements.CopyTo(Array.AsSpan().Slice(collection.Length, elements.Length));
-			return Array;
+			return PostpendKernel<TElement>(collection.Span, elements);
 		}
 
 		/// <summary>
@@ -714,10 +615,7 @@ namespace System {
 			} else if (collection.Length == 0) {
 				return elements;
 			}
-			TElement[] Array = new TElement[collection.Length + elements.Length];
-			collection.CopyTo(Array);
-			elements.CopyTo(Array.AsSpan().Slice(collection.Length, elements.Length));
-			return Array;
+			return PostpendKernel<TElement>(collection.Span, elements);
 		}
 
 		/// <summary>
@@ -733,10 +631,7 @@ namespace System {
 			} else if (collection.Length == 0) {
 				return elements;
 			}
-			TElement[] Array = new TElement[collection.Length + elements.Length];
-			collection.CopyTo(Array);
-			elements.CopyTo(Array.AsSpan().Slice(collection.Length, elements.Length));
-			return Array;
+			return PostpendKernel<TElement>(collection, elements);
 		}
 
 		/// <summary>
@@ -752,10 +647,7 @@ namespace System {
 			} else if (collection.Length == 0) {
 				return elements;
 			}
-			TElement[] Array = new TElement[collection.Length + elements.Length];
-			collection.CopyTo(Array);
-			elements.CopyTo(Array.AsSpan().Slice(collection.Length, elements.Length));
-			return Array;
+			return PostpendKernel<TElement>(collection, elements);
 		}
 		#endregion
 
@@ -788,10 +680,7 @@ namespace System {
 			} else if (collection is null || collection.Length == 0) {
 				return new ReadOnlySpan<Char>(elements, length);
 			}
-			Char[] Array = new Char[collection.Length + length];
-			collection.AsMemory().CopyTo(Array);
-			Pointer.Copy(elements, length, Array.Slice(collection.Length));
-			return Array;
+			return PostpendKernel<Char>(collection, elements, length);
 		}
 
 		/// <summary>
@@ -810,10 +699,7 @@ namespace System {
 			} else if (collection is null || collection.Length == 0) {
 				return new ReadOnlySpan<TElement>(elements, length);
 			}
-			TElement[] Array = new TElement[collection.Length + length];
-			collection.AsMemory().CopyTo(Array);
-			Pointer.Copy(elements, length, Array.Slice(collection.Length));
-			return Array;
+			return PostpendKernel<TElement>(collection, elements, length);
 		}
 
 		/// <summary>
@@ -832,10 +718,7 @@ namespace System {
 			} else if (collection.Length == 0) {
 				return new ReadOnlySpan<TElement>(elements, length);
 			}
-			TElement[] Array = new TElement[collection.Length + length];
-			collection.CopyTo(Array);
-			Pointer.Copy(elements, length, Array.Slice(collection.Length));
-			return Array;
+			return PostpendKernel<TElement>(collection.Span, elements, length);
 		}
 
 		/// <summary>
@@ -854,10 +737,7 @@ namespace System {
 			} else if (collection.Length == 0) {
 				return new ReadOnlySpan<TElement>(elements, length);
 			}
-			TElement[] Array = new TElement[collection.Length + length];
-			collection.CopyTo(Array);
-			Pointer.Copy(elements, length, Array.Slice(collection.Length));
-			return Array;
+			return PostpendKernel<TElement>(collection.Span, elements, length);
 		}
 
 		/// <summary>
@@ -876,10 +756,7 @@ namespace System {
 			} else if (collection.Length == 0) {
 				return new ReadOnlySpan<TElement>(elements, length);
 			}
-			TElement[] Array = new TElement[collection.Length + length];
-			collection.CopyTo(Array);
-			Pointer.Copy(elements, length, Array.Slice(collection.Length));
-			return Array;
+			return PostpendKernel<TElement>(collection, elements, length);
 		}
 
 		/// <summary>
@@ -898,10 +775,7 @@ namespace System {
 			} else if (collection.Length == 0) {
 				return new ReadOnlySpan<TElement>(elements, length);
 			}
-			TElement[] Array = new TElement[collection.Length + length];
-			collection.CopyTo(Array);
-			Pointer.Copy(elements, length, Array.Slice(collection.Length));
-			return Array;
+			return PostpendKernel<TElement>(collection, elements, length);
 		}
 		#endregion
 
@@ -917,143 +791,6 @@ namespace System {
 		/// <returns>If the postpend occurred successfully, returns a <typeparamref name="TResult"/> containing the original and postpended elements; otherwise, <see langword="null"/>.</returns>
 		[return: MaybeNull]
 		public static TResult Postpend<TElement, TResult, TEnumerator>([AllowNull] this IPostpend<TElement, TResult> collection, [AllowNull] ISequence<TElement, TEnumerator> elements) where TResult : IPostpend<TElement, TResult> where TEnumerator : IEnumerator<TElement> => collection is not null ? collection.Postpend(elements) : (TResult)collection;
-
-		/// <summary>
-		/// Postpends the elements onto this object.
-		/// </summary>
-		/// <typeparam name="TEnumerator">The type of the enumerator for the <paramref name="elements"/>.</typeparam>
-		/// <param name="collection">This collection.</param>
-		/// <param name="elements">The elements to postpend.</param>
-		/// <returns>Returns a <see cref="ReadOnlyMemory{T}"/> of <see cref="Char"/> containing the original and postpended elements.</returns>
-		public static ReadOnlyMemory<Char> Postpend<TEnumerator>([AllowNull] this String collection, [AllowNull] ISequence<Char, TEnumerator> elements) where TEnumerator : IEnumerator<Char> {
-			Char[] Array;
-			if (elements is null || elements.Count == 0) {
-				return collection.AsMemory();
-			} else if (collection is null || collection.Length == 0) {
-				Array = new Char[elements.Count];
-				elements.CopyTo(Array);
-			} else {
-				Array = new Char[collection.Length + elements.Count];
-				collection.AsMemory().CopyTo(Array);
-				elements.CopyTo(Array.AsMemory().Slice(collection.Length, elements.Count));
-			}
-			return Array;
-		}
-
-		/// <summary>
-		/// Postpends the element onto this object.
-		/// </summary>
-		/// <typeparam name="TElement">The type of the elements.</typeparam>
-		/// <typeparam name="TEnumerator">The type of the enumerator for the <paramref name="elements"/>.</typeparam>
-		/// <param name="collection">This collection.</param>
-		/// <param name="elements">The elements to postpend.</param>
-		/// <returns>Returns a <see cref="Memory{T}"/> of <typeparamref name="TElement"/> containing the original and postpended elements.</returns>
-		public static Memory<TElement> Postpend<TElement, TEnumerator>([AllowNull] this TElement[] collection, [AllowNull] ISequence<TElement, TEnumerator> elements) where TEnumerator : IEnumerator<TElement> {
-			TElement[] Array;
-			if (elements is null || elements.Count == 0) {
-				return collection;
-			} else if (collection is null || collection.Length == 0) {
-				Array = new TElement[elements.Count];
-				elements.CopyTo(Array);
-			} else {
-				Array = new TElement[collection.Length + elements.Count];
-				System.Array.Copy(collection, Array, collection.Length);
-				elements.CopyTo(Array.AsSpan().Slice(collection.Length, (Int32)elements.Count));
-			}
-			return Array;
-		}
-
-		/// <summary>
-		/// Postpends the element onto this object.
-		/// </summary>
-		/// <typeparam name="TElement">The type of the elements.</typeparam>
-		/// <typeparam name="TEnumerator">The type of the enumerator for the <paramref name="elements"/>.</typeparam>
-		/// <param name="collection">This collection.</param>
-		/// <param name="elements">The elements to postpend.</param>
-		/// <returns>Returns a <see cref="Memory{T}"/> of <typeparamref name="TElement"/> containing the original and postpended elements.</returns>
-		public static Memory<TElement> Postpend<TElement, TEnumerator>(this Memory<TElement> collection, [AllowNull] ISequence<TElement, TEnumerator> elements) where TEnumerator : IEnumerator<TElement> {
-			TElement[] Array;
-			if (elements is null || elements.Count == 0) {
-				return collection;
-			} else if (collection.Length == 0) {
-				Array = new TElement[elements.Count];
-				elements.CopyTo(Array);
-			} else {
-				Array = new TElement[collection.Length + elements.Count];
-				collection.CopyTo(Array);
-				elements.CopyTo(Array.AsSpan().Slice(collection.Length, (Int32)elements.Count));
-			}
-			return Array;
-		}
-
-		/// <summary>
-		/// Postpends the element onto this object.
-		/// </summary>
-		/// <typeparam name="TElement">The type of the elements.</typeparam>
-		/// <typeparam name="TEnumerator">The type of the enumerator for the <paramref name="elements"/>.</typeparam>
-		/// <param name="collection">This collection.</param>
-		/// <param name="elements">The elements to postpend.</param>
-		/// <returns>Returns a <see cref="ReadOnlyMemory{T}"/> of <typeparamref name="TElement"/> containing the original and postpended elements.</returns>
-		public static ReadOnlyMemory<TElement> Postpend<TElement, TEnumerator>(this ReadOnlyMemory<TElement> collection, [AllowNull] ISequence<TElement, TEnumerator> elements) where TEnumerator : IEnumerator<TElement> {
-			TElement[] Array;
-			if (elements is null || elements.Count == 0) {
-				return collection;
-			} else if (collection.Length == 0) {
-				Array = new TElement[elements.Count];
-				elements.CopyTo(Array);
-			} else {
-				Array = new TElement[collection.Length + elements.Count];
-				collection.CopyTo(Array);
-				elements.CopyTo(Array.AsSpan().Slice(collection.Length, (Int32)elements.Count));
-			}
-			return Array;
-		}
-
-		/// <summary>
-		/// Postpends the element onto this object.
-		/// </summary>
-		/// <typeparam name="TElement">The type of the elements.</typeparam>
-		/// <typeparam name="TEnumerator">The type of the enumerator for the <paramref name="elements"/>.</typeparam>
-		/// <param name="collection">This collection.</param>
-		/// <param name="elements">The elements to postpend.</param>
-		/// <returns>Returns a <see cref="Span{T}"/> of <typeparamref name="TElement"/> containing the original and postpended elements.</returns>
-		public static Span<TElement> Postpend<TElement, TEnumerator>(this Span<TElement> collection, [AllowNull] ISequence<TElement, TEnumerator> elements) where TEnumerator : IEnumerator<TElement> {
-			TElement[] Array;
-			if (elements is null || elements.Count == 0) {
-				return collection;
-			} else if (collection.Length == 0) {
-				Array = new TElement[elements.Count];
-				elements.CopyTo(Array);
-			} else {
-				Array = new TElement[collection.Length + elements.Count];
-				collection.CopyTo(Array);
-				elements.CopyTo(Array.AsSpan().Slice(collection.Length, (Int32)elements.Count));
-			}
-			return Array;
-		}
-
-		/// <summary>
-		/// Postpends the element onto this object.
-		/// </summary>
-		/// <typeparam name="TElement">The type of the elements.</typeparam>
-		/// <typeparam name="TEnumerator">The type of the enumerator for the <paramref name="elements"/>.</typeparam>
-		/// <param name="collection">This collection.</param>
-		/// <param name="elements">The elements to postpend.</param>
-		/// <returns>Returns a <see cref="ReadOnlySpan{T}"/> of <typeparamref name="TElement"/> containing the original and postpended elements.</returns>
-		public static ReadOnlySpan<TElement> Postpend<TElement, TEnumerator>(this ReadOnlySpan<TElement> collection, [AllowNull] ISequence<TElement, TEnumerator> elements) where TEnumerator : IEnumerator<TElement> {
-			TElement[] Array;
-			if (elements is null || elements.Count == 0) {
-				return collection;
-			} else if (collection.Length == 0) {
-				Array = new TElement[elements.Count];
-				elements.CopyTo(Array);
-			} else {
-				Array = new TElement[collection.Length + elements.Count];
-				collection.CopyTo(Array);
-				elements.CopyTo(Array.AsSpan().Slice(collection.Length, (Int32)elements.Count));
-			}
-			return Array;
-		}
 		#endregion
 
 		#region Postpend(Collection, String)
@@ -1073,17 +810,13 @@ namespace System {
 		/// <param name="collection">This collection.</param>
 		/// <param name="elements">The elements to postpend.</param>
 		/// <returns>Returns a <see cref="String"/> containing the original and postpended elements.</returns>
-		[return: MaybeNull, NotNullIfNotNull("collection"), NotNullIfNotNull("elements")]
-		public static String Postpend([AllowNull] this String collection, [AllowNull] String elements) {
+		public static ReadOnlyMemory<Char> Postpend([AllowNull] this String collection, [AllowNull] String elements) {
 			if (elements is null || elements.Length == 0) {
-				return collection;
+				return collection.AsMemory();
 			} else if (collection is null || collection.Length == 0) {
-				return elements;
+				return elements.AsMemory();
 			}
-			Char[] Array = new Char[collection.Length + elements.Length];
-			collection.AsMemory().CopyTo(Array);
-			elements.AsMemory().CopyTo(Array.AsMemory().Slice(collection.Length, elements.Length));
-			return new(Array);
+			return PostpendKernel<Char>(collection, elements);
 		}
 
 		/// <summary>
@@ -1098,10 +831,7 @@ namespace System {
 			} else if (collection is null || collection.Length == 0) {
 				return elements.AsMemory();
 			}
-			Char[] Array = new Char[collection.Length + elements.Length];
-			collection.AsMemory().CopyTo(Array);
-			elements.AsMemory().CopyTo(Array.AsMemory().Slice(collection.Length, elements.Length));
-			return Array;
+			return PostpendKernel<Char>(collection, elements);
 		}
 
 		/// <summary>
@@ -1116,10 +846,7 @@ namespace System {
 			} else if (collection.Length == 0) {
 				return elements.AsMemory();
 			}
-			Char[] Array = new Char[collection.Length + elements.Length];
-			collection.CopyTo(Array);
-			elements.AsMemory().CopyTo(Array.AsMemory().Slice(collection.Length, elements.Length));
-			return Array;
+			return PostpendKernel<Char>(collection.Span, elements);
 		}
 
 		/// <summary>
@@ -1134,10 +861,7 @@ namespace System {
 			} else if (collection.Length == 0) {
 				return elements.AsMemory();
 			}
-			Char[] Array = new Char[collection.Length + elements.Length];
-			collection.CopyTo(Array);
-			elements.AsMemory().CopyTo(Array.AsMemory().Slice(collection.Length, elements.Length));
-			return Array;
+			return PostpendKernel<Char>(collection.Span, elements);
 		}
 
 		/// <summary>
@@ -1152,10 +876,7 @@ namespace System {
 			} else if (collection.Length == 0) {
 				return elements.AsSpan();
 			}
-			Char[] Array = new Char[collection.Length + elements.Length];
-			collection.CopyTo(Array);
-			elements.AsMemory().CopyTo(Array.AsMemory().Slice(collection.Length, elements.Length));
-			return Array;
+			return PostpendKernel<Char>(collection, elements);
 		}
 
 		/// <summary>
@@ -1170,11 +891,33 @@ namespace System {
 			} else if (collection.Length == 0) {
 				return elements.AsSpan();
 			}
-			Char[] Array = new Char[collection.Length + elements.Length];
-			collection.CopyTo(Array);
-			elements.AsMemory().CopyTo(Array.AsMemory().Slice(collection.Length, elements.Length));
-			return Array;
+			return PostpendKernel<Char>(collection, elements);
 		}
 		#endregion
+
+		[return: NotNull]
+		private static TElement[] PostpendKernel<TElement>(ReadOnlySpan<TElement> collection, [DisallowNull] TElement element) {
+			TElement[] array = new TElement[collection.Length + 1];
+			collection.CopyTo(array);
+			array[collection.Length] = element;
+			return array;
+		}
+
+		[return: NotNull]
+		private static TElement[] PostpendKernel<TElement>(ReadOnlySpan<TElement> collection, ReadOnlySpan<TElement> elements) {
+			TElement[] array = new TElement[collection.Length + elements.Length];
+			collection.CopyTo(array);
+			elements.CopyTo(array.Slice(collection.Length, elements.Length));
+			return array;
+		}
+
+		[CLSCompliant(false)]
+		[return: NotNull]
+		private static unsafe TElement[] PostpendKernel<TElement>(ReadOnlySpan<TElement> collection, TElement* elements, Int32 length) where TElement : unmanaged {
+			TElement[] array = new TElement[collection.Length + length];
+			collection.CopyTo(array);
+			Pointer.Copy(elements, length, array.Slice(collection.Length, length));
+			return array;
+		}
 	}
 }

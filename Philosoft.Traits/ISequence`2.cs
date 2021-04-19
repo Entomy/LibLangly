@@ -89,11 +89,11 @@ namespace System.Traits {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		System.Collections.Generic.IEnumerator<TElement> IEnumerable<TElement>.GetEnumerator() => GetEnumerator();
+		Collections.Generic.IEnumerator<TElement> IEnumerable<TElement>.GetEnumerator() => GetEnumerator();
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() => GetEnumerator();
+		Collections.IEnumerator Collections.IEnumerable.GetEnumerator() => GetEnumerator();
 
 		/// <summary>
 		/// Count all occurrences of <paramref name="element"/> in the collection.
@@ -145,6 +145,17 @@ namespace System.Traits {
 				}
 			}
 			return count;
+		}
+
+		/// <summary>
+		/// Creates an array from a <see cref="ISequence{TElement, TEnumerator}"/>.
+		/// </summary>
+		/// <returns>An array that contains the elements from the input sequence.</returns>
+		[return: NotNull]
+		TElement[] ToArray() {
+			TElement[] array = new TElement[Count];
+			CopyTo(array);
+			return array;
 		}
 	}
 }
