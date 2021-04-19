@@ -330,6 +330,203 @@ namespace Langly {
 		}
 
 		[Theory]
+		[InlineData(new Int32[] { 1, 2, 3 }, null, 0, new Int32[] { 1, 2, 3 })]
+		[InlineData(new Int32[] { 1, 2, 3 }, new Int32[] { }, 0, new Int32[] { 1, 2, 3 })]
+		[InlineData(new Int32[] { 0, 0, 1, 2, 3 }, new Int32[] { 1, 2, 3 }, 0, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 0, 0, 2, 3 }, new Int32[] { 1, 2, 3 }, 1, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 0, 0, 3 }, new Int32[] { 1, 2, 3 }, 2, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 3, 0, 0 }, new Int32[] { 1, 2, 3 }, 3, new Int32[] { 0, 0 })]
+		public void Insert_Array(Int32[] expected, Int32[] initial, Int32 index, Int32[] values) {
+			var arr = PhilosoftExtensions.Insert(initial, index, values);
+			var mem = PhilosoftExtensions.Insert(initial.AsMemory(), index, values);
+			var rom = PhilosoftExtensions.Insert((ReadOnlyMemory<Int32>)initial.AsMemory(), index, values);
+			var spn = PhilosoftExtensions.Insert(initial.AsSpan(), index, values);
+			var ros = PhilosoftExtensions.Insert((ReadOnlySpan<Int32>)initial.AsSpan(), index, values);
+			if (expected is not null) {
+				Assert.Equal(expected, arr.ToArray());
+				Assert.Equal(expected, mem.ToArray());
+				Assert.Equal(expected, rom.ToArray());
+				Assert.Equal(expected, spn.ToArray());
+				Assert.Equal(expected, ros.ToArray());
+			} else {
+				Assert.True(arr.Length == 0);
+				Assert.True(mem.Length == 0);
+				Assert.True(rom.Length == 0);
+				Assert.True(spn.Length == 0);
+				Assert.True(ros.Length == 0);
+			}
+		}
+
+		[Theory]
+		[InlineData(new Int32[] { 1 }, null, 0, 1)]
+		[InlineData(new Int32[] { 1 }, new Int32[] { }, 0, 1)]
+		[InlineData(new Int32[] { 0, 1, 2, 3 }, new Int32[] { 1, 2, 3 }, 0, 0)]
+		[InlineData(new Int32[] { 1, 0, 2, 3 }, new Int32[] { 1, 2, 3 }, 1, 0)]
+		[InlineData(new Int32[] { 1, 2, 0, 3 }, new Int32[] { 1, 2, 3 }, 2, 0)]
+		[InlineData(new Int32[] { 1, 2, 3, 0 }, new Int32[] { 1, 2, 3 }, 3, 0)]
+		public void Insert_Element(Int32[] expected, Int32[] initial, Int32 index, Int32 value) {
+			var arr = PhilosoftExtensions.Insert(initial, index, value);
+			var mem = PhilosoftExtensions.Insert(initial.AsMemory(), index, value);
+			var rom = PhilosoftExtensions.Insert((ReadOnlyMemory<Int32>)initial.AsMemory(), index, value);
+			var spn = PhilosoftExtensions.Insert(initial.AsSpan(), index, value);
+			var ros = PhilosoftExtensions.Insert((ReadOnlySpan<Int32>)initial.AsSpan(), index, value);
+			if (expected is not null) {
+				Assert.Equal(expected, arr.ToArray());
+				Assert.Equal(expected, mem.ToArray());
+				Assert.Equal(expected, rom.ToArray());
+				Assert.Equal(expected, spn.ToArray());
+				Assert.Equal(expected, ros.ToArray());
+			} else {
+				Assert.True(arr.Length == 0);
+				Assert.True(mem.Length == 0);
+				Assert.True(rom.Length == 0);
+				Assert.True(spn.Length == 0);
+				Assert.True(ros.Length == 0);
+			}
+		}
+
+		[Theory]
+		[InlineData(new Int32[] { 1, 2, 3 }, null, 0, new Int32[] { 1, 2, 3 })]
+		[InlineData(new Int32[] { 1, 2, 3 }, new Int32[] { }, 0, new Int32[] { 1, 2, 3 })]
+		[InlineData(new Int32[] { 0, 0, 1, 2, 3 }, new Int32[] { 1, 2, 3 }, 0, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 0, 0, 2, 3 }, new Int32[] { 1, 2, 3 }, 1, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 0, 0, 3 }, new Int32[] { 1, 2, 3 }, 2, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 3, 0, 0 }, new Int32[] { 1, 2, 3 }, 3, new Int32[] { 0, 0 })]
+		public void Insert_Memory(Int32[] expected, Int32[] initial, Int32 index, Int32[] values) {
+			var arr = PhilosoftExtensions.Insert(initial, index, values.AsMemory());
+			var mem = PhilosoftExtensions.Insert(initial.AsMemory(), index, values.AsMemory());
+			var rom = PhilosoftExtensions.Insert((ReadOnlyMemory<Int32>)initial.AsMemory(), index, values.AsMemory());
+			var spn = PhilosoftExtensions.Insert(initial.AsSpan(), index, values.AsMemory());
+			var ros = PhilosoftExtensions.Insert((ReadOnlySpan<Int32>)initial.AsSpan(), index, values.AsMemory());
+			if (expected is not null) {
+				Assert.Equal(expected, arr.ToArray());
+				Assert.Equal(expected, mem.ToArray());
+				Assert.Equal(expected, rom.ToArray());
+				Assert.Equal(expected, spn.ToArray());
+				Assert.Equal(expected, ros.ToArray());
+			} else {
+				Assert.True(arr.Length == 0);
+				Assert.True(mem.Length == 0);
+				Assert.True(rom.Length == 0);
+				Assert.True(spn.Length == 0);
+				Assert.True(ros.Length == 0);
+			}
+		}
+
+		[Theory]
+		[InlineData(new Int32[] { 1, 2, 3 }, null, 0, new Int32[] { 1, 2, 3 })]
+		[InlineData(new Int32[] { 1, 2, 3 }, new Int32[] { }, 0, new Int32[] { 1, 2, 3 })]
+		[InlineData(new Int32[] { 0, 0, 1, 2, 3 }, new Int32[] { 1, 2, 3 }, 0, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 0, 0, 2, 3 }, new Int32[] { 1, 2, 3 }, 1, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 0, 0, 3 }, new Int32[] { 1, 2, 3 }, 2, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 3, 0, 0 }, new Int32[] { 1, 2, 3 }, 3, new Int32[] { 0, 0 })]
+		public unsafe void Insert_Pointer(Int32[] expected, Int32[] initial, Int32 index, Int32[] values) {
+			fixed (Int32* vals = values) {
+				var arr = PhilosoftExtensions.Insert(initial, index, vals, values.Length);
+				var mem = PhilosoftExtensions.Insert(initial.AsMemory(), index, vals, values.Length);
+				var rom = PhilosoftExtensions.Insert((ReadOnlyMemory<Int32>)initial.AsMemory(), index, vals, values.Length);
+				var spn = PhilosoftExtensions.Insert(initial.AsSpan(), index, vals, values.Length);
+				var ros = PhilosoftExtensions.Insert((ReadOnlySpan<Int32>)initial.AsSpan(), index, vals, values.Length);
+				if (expected is not null) {
+					Assert.Equal(expected, arr.ToArray());
+					Assert.Equal(expected, mem.ToArray());
+					Assert.Equal(expected, rom.ToArray());
+					Assert.Equal(expected, spn.ToArray());
+					Assert.Equal(expected, ros.ToArray());
+				} else {
+					Assert.True(arr.Length == 0);
+					Assert.True(mem.Length == 0);
+					Assert.True(rom.Length == 0);
+					Assert.True(spn.Length == 0);
+					Assert.True(ros.Length == 0);
+				}
+			}
+		}
+
+		[Theory]
+		[InlineData(new Int32[] { 1, 2, 3 }, null, 0, new Int32[] { 1, 2, 3 })]
+		[InlineData(new Int32[] { 1, 2, 3 }, new Int32[] { }, 0, new Int32[] { 1, 2, 3 })]
+		[InlineData(new Int32[] { 0, 0, 1, 2, 3 }, new Int32[] { 1, 2, 3 }, 0, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 0, 0, 2, 3 }, new Int32[] { 1, 2, 3 }, 1, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 0, 0, 3 }, new Int32[] { 1, 2, 3 }, 2, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 3, 0, 0 }, new Int32[] { 1, 2, 3 }, 3, new Int32[] { 0, 0 })]
+		public void Insert_ReadOnlyMemory(Int32[] expected, Int32[] initial, Int32 index, Int32[] values) {
+			var arr = PhilosoftExtensions.Insert(initial, index, (ReadOnlyMemory<Int32>)values.AsMemory());
+			var mem = PhilosoftExtensions.Insert(initial.AsMemory(), index, (ReadOnlyMemory<Int32>)values.AsMemory());
+			var rom = PhilosoftExtensions.Insert((ReadOnlyMemory<Int32>)initial.AsMemory(), index, (ReadOnlyMemory<Int32>)values.AsMemory());
+			var spn = PhilosoftExtensions.Insert(initial.AsSpan(), index, (ReadOnlyMemory<Int32>)values.AsMemory());
+			var ros = PhilosoftExtensions.Insert((ReadOnlySpan<Int32>)initial.AsSpan(), index, (ReadOnlyMemory<Int32>)values.AsMemory());
+			if (expected is not null) {
+				Assert.Equal(expected, arr.ToArray());
+				Assert.Equal(expected, mem.ToArray());
+				Assert.Equal(expected, rom.ToArray());
+				Assert.Equal(expected, spn.ToArray());
+				Assert.Equal(expected, ros.ToArray());
+			} else {
+				Assert.True(arr.Length == 0);
+				Assert.True(mem.Length == 0);
+				Assert.True(rom.Length == 0);
+				Assert.True(spn.Length == 0);
+				Assert.True(ros.Length == 0);
+			}
+		}
+		[Theory]
+		[InlineData(new Int32[] { 1, 2, 3 }, null, 0, new Int32[] { 1, 2, 3 })]
+		[InlineData(new Int32[] { 1, 2, 3 }, new Int32[] { }, 0, new Int32[] { 1, 2, 3 })]
+		[InlineData(new Int32[] { 0, 0, 1, 2, 3 }, new Int32[] { 1, 2, 3 }, 0, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 0, 0, 2, 3 }, new Int32[] { 1, 2, 3 }, 1, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 0, 0, 3 }, new Int32[] { 1, 2, 3 }, 2, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 3, 0, 0 }, new Int32[] { 1, 2, 3 }, 3, new Int32[] { 0, 0 })]
+		public void Insert_ReadOnlySpan(Int32[] expected, Int32[] initial, Int32 index, Int32[] values) {
+			var arr = PhilosoftExtensions.Insert(initial, index, (ReadOnlySpan<Int32>)values.AsSpan());
+			var mem = PhilosoftExtensions.Insert(initial.AsMemory(), index, values.AsSpan());
+			var rom = PhilosoftExtensions.Insert((ReadOnlyMemory<Int32>)initial.AsMemory(), index, values.AsSpan());
+			var spn = PhilosoftExtensions.Insert(initial.AsSpan(), index, values.AsSpan());
+			var ros = PhilosoftExtensions.Insert((ReadOnlySpan<Int32>)initial.AsSpan(), index, values.AsSpan());
+			if (expected is not null) {
+				Assert.Equal(expected, arr.ToArray());
+				Assert.Equal(expected, mem.ToArray());
+				Assert.Equal(expected, rom.ToArray());
+				Assert.Equal(expected, spn.ToArray());
+				Assert.Equal(expected, ros.ToArray());
+			} else {
+				Assert.True(arr.Length == 0);
+				Assert.True(mem.Length == 0);
+				Assert.True(rom.Length == 0);
+				Assert.True(spn.Length == 0);
+				Assert.True(ros.Length == 0);
+			}
+		}
+
+		[Theory]
+		[InlineData(new Int32[] { 1, 2, 3 }, null, 0, new Int32[] { 1, 2, 3 })]
+		[InlineData(new Int32[] { 1, 2, 3 }, new Int32[] { }, 0, new Int32[] { 1, 2, 3 })]
+		[InlineData(new Int32[] { 0, 0, 1, 2, 3 }, new Int32[] { 1, 2, 3 }, 0, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 0, 0, 2, 3 }, new Int32[] { 1, 2, 3 }, 1, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 0, 0, 3 }, new Int32[] { 1, 2, 3 }, 2, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 3, 0, 0 }, new Int32[] { 1, 2, 3 }, 3, new Int32[] { 0, 0 })]
+		public void Insert_Span(Int32[] expected, Int32[] initial, Int32 index, Int32[] values) {
+			var arr = PhilosoftExtensions.Insert(initial, index, values.AsSpan());
+			var mem = PhilosoftExtensions.Insert(initial.AsMemory(), index, values.AsSpan());
+			var rom = PhilosoftExtensions.Insert((ReadOnlyMemory<Int32>)initial.AsMemory(), index, values.AsSpan());
+			var spn = PhilosoftExtensions.Insert(initial.AsSpan(), index, values.AsSpan());
+			var ros = PhilosoftExtensions.Insert((ReadOnlySpan<Int32>)initial.AsSpan(), index, values.AsSpan());
+			if (expected is not null) {
+				Assert.Equal(expected, arr.ToArray());
+				Assert.Equal(expected, mem.ToArray());
+				Assert.Equal(expected, rom.ToArray());
+				Assert.Equal(expected, spn.ToArray());
+				Assert.Equal(expected, ros.ToArray());
+			} else {
+				Assert.True(arr.Length == 0);
+				Assert.True(mem.Length == 0);
+				Assert.True(rom.Length == 0);
+				Assert.True(spn.Length == 0);
+				Assert.True(ros.Length == 0);
+			}
+		}
+
+		[Theory]
 		[InlineData(new Int32[] { }, new Int32[] { })]
 		[InlineData(new Int32[] { 2, 4, 6, 8, 10 }, new Int32[] { 1, 2, 3, 4, 5 })]
 		public void Map(Int32[] expected, Int32[] values) {
