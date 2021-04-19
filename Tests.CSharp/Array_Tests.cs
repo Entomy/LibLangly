@@ -536,5 +536,41 @@ namespace Langly {
 			Assert.Equal(expected, PhilosoftExtensions.Map(values.AsSpan(), (x) => x * 2).ToArray());
 			Assert.Equal(expected, PhilosoftExtensions.Map((ReadOnlySpan<Int32>)values.AsSpan(), (x) => x * 2).ToArray());
 		}
+
+		[Theory]
+		[InlineData(0, null, 0)]
+		[InlineData(0, new Int32[] { }, 0)]
+		[InlineData(0, new Int32[] { 1 }, 0)]
+		[InlineData(1, new Int32[] { 0 }, 0)]
+		[InlineData(0, new Int32[] { 1, 1, 1 }, 0)]
+		[InlineData(3, new Int32[] { 0, 0, 0 }, 0)]
+		[InlineData(0, new Int32[] { 1, 2, 1, 2, 1 }, 0)]
+		[InlineData(3, new Int32[] { 0, 2, 0, 2, 0 }, 0)]
+		[InlineData(2, new Int32[] { 1, 0, 1, 0, 1 }, 0)]
+		public void Occurrences_Element(Int32 expected, Int32[] values, Int32 element) {
+			Assert.Equal(expected, PhilosoftExtensions.Occurrences(values, element));
+			Assert.Equal(expected, PhilosoftExtensions.Occurrences(values.AsMemory(), element));
+			Assert.Equal(expected, PhilosoftExtensions.Occurrences((ReadOnlyMemory<Int32>)values.AsMemory(), element));
+			Assert.Equal(expected, PhilosoftExtensions.Occurrences(values.AsSpan(), element));
+			Assert.Equal(expected, PhilosoftExtensions.Occurrences((ReadOnlySpan<Int32>)values.AsSpan(), element));
+		}
+
+		[Theory]
+		[InlineData(0, null)]
+		[InlineData(0, new Int32[] { })]
+		[InlineData(0, new Int32[] { 1 })]
+		[InlineData(1, new Int32[] { 2 })]
+		[InlineData(0, new Int32[] { 1, 1, 1 })]
+		[InlineData(3, new Int32[] { 2, 2, 2 })]
+		[InlineData(3, new Int32[] { 2, 4, 6 })]
+		[InlineData(2, new Int32[] { 1, 2, 1, 2, 1 })]
+		[InlineData(3, new Int32[] { 2, 1, 2, 1, 2 })]
+		public void Occurrences_Predicate(Int32 expected, Int32[] values) {
+			Assert.Equal(expected, PhilosoftExtensions.Occurrences(values, (x) => x % 2 == 0));
+			Assert.Equal(expected, PhilosoftExtensions.Occurrences(values.AsMemory(), (x) => x % 2 == 0));
+			Assert.Equal(expected, PhilosoftExtensions.Occurrences((ReadOnlyMemory<Int32>)values.AsMemory(), (x) => x % 2 == 0));
+			Assert.Equal(expected, PhilosoftExtensions.Occurrences(values.AsSpan(), (x) => x % 2 == 0));
+			Assert.Equal(expected, PhilosoftExtensions.Occurrences((ReadOnlySpan<Int32>)values.AsSpan(), (x) => x % 2 == 0));
+		}
 	}
 }
