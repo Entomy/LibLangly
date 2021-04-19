@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Diagnostics.CodeAnalysis;
-using System.Traits.Contracts;
 using Xunit;
 
 namespace Langly {
@@ -293,6 +291,53 @@ namespace Langly {
 				Assert.Contains(value, mem.ToArray());
 				Assert.Contains(value, spn.ToArray());
 			}
+		}
+
+		[Theory]
+		[InlineData(-1, null, 1)]
+		[InlineData(-1, new Int32[] { }, 1)]
+		[InlineData(0, new Int32[] { 1, 2, 3 }, 1)]
+		[InlineData(1, new Int32[] { 1, 2, 3 }, 2)]
+		[InlineData(2, new Int32[] { 1, 2, 3 }, 3)]
+		[InlineData(0, new Int32[] { 1, 2, 3, 1, 2, 3 }, 1)]
+		[InlineData(1, new Int32[] { 1, 2, 3, 1, 2, 3 }, 2)]
+		[InlineData(2, new Int32[] { 1, 2, 3, 1, 2, 3 }, 3)]
+		[InlineData(-1, new Int32[] { 1, 2, 3 }, 4)]
+		public void IndexOfFirst(Int32 expected, Int32[] values, Int32 element) {
+			Assert.Equal(expected, PhilosoftExtensions.IndexOfFirst(values, element));
+			Assert.Equal(expected, PhilosoftExtensions.IndexOfFirst(values.AsMemory(), element));
+			Assert.Equal(expected, PhilosoftExtensions.IndexOfFirst((ReadOnlyMemory<Int32>)values.AsMemory(), element));
+			Assert.Equal(expected, PhilosoftExtensions.IndexOfFirst(values.AsSpan(), element));
+			Assert.Equal(expected, PhilosoftExtensions.IndexOfFirst((ReadOnlySpan<Int32>)values.AsSpan(), element));
+		}
+
+		[Theory]
+		[InlineData(-1, null, 1)]
+		[InlineData(-1, new Int32[] { }, 1)]
+		[InlineData(0, new Int32[] { 1, 2, 3 }, 1)]
+		[InlineData(1, new Int32[] { 1, 2, 3 }, 2)]
+		[InlineData(2, new Int32[] { 1, 2, 3 }, 3)]
+		[InlineData(3, new Int32[] { 1, 2, 3, 1, 2, 3 }, 1)]
+		[InlineData(4, new Int32[] { 1, 2, 3, 1, 2, 3 }, 2)]
+		[InlineData(5, new Int32[] { 1, 2, 3, 1, 2, 3 }, 3)]
+		[InlineData(-1, new Int32[] { 1, 2, 3 }, 4)]
+		public void IndexOfLast(Int32 expected, Int32[] values, Int32 element) {
+			Assert.Equal(expected, PhilosoftExtensions.IndexOfLast(values, element));
+			Assert.Equal(expected, PhilosoftExtensions.IndexOfLast(values.AsMemory(), element));
+			Assert.Equal(expected, PhilosoftExtensions.IndexOfLast((ReadOnlyMemory<Int32>)values.AsMemory(), element));
+			Assert.Equal(expected, PhilosoftExtensions.IndexOfLast(values.AsSpan(), element));
+			Assert.Equal(expected, PhilosoftExtensions.IndexOfLast((ReadOnlySpan<Int32>)values.AsSpan(), element));
+		}
+
+		[Theory]
+		[InlineData(new Int32[] { }, new Int32[] { })]
+		[InlineData(new Int32[] { 2, 4, 6, 8, 10 }, new Int32[] { 1, 2, 3, 4, 5 })]
+		public void Map(Int32[] expected, Int32[] values) {
+			Assert.Equal(expected, PhilosoftExtensions.Map(values, (x) => x * 2).ToArray());
+			Assert.Equal(expected, PhilosoftExtensions.Map(values.AsMemory(), (x) => x * 2).ToArray());
+			Assert.Equal(expected, PhilosoftExtensions.Map((ReadOnlyMemory<Int32>)values.AsMemory(), (x) => x * 2).ToArray());
+			Assert.Equal(expected, PhilosoftExtensions.Map(values.AsSpan(), (x) => x * 2).ToArray());
+			Assert.Equal(expected, PhilosoftExtensions.Map((ReadOnlySpan<Int32>)values.AsSpan(), (x) => x * 2).ToArray());
 		}
 	}
 }
