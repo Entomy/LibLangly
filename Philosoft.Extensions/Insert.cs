@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Traits;
+using Langly;
 
 namespace System {
 	public static partial class PhilosoftExtensions {
@@ -740,7 +741,7 @@ namespace System {
 			} else if (collection is null || collection.Length == 0) {
 				return new ReadOnlySpan<Char>(elements, length);
 			}
-			return InsertKernel<Char>(collection, index, new ReadOnlySpan<Char>(elements, length));
+			return InsertKernel<Char>(collection, index, elements, length);
 		}
 
 		/// <summary>
@@ -759,7 +760,7 @@ namespace System {
 			} else if (collection is null || collection.Length == 0) {
 				return new ReadOnlySpan<TElement>(elements, length);
 			}
-			return InsertKernel<TElement>(collection, index, new ReadOnlySpan<TElement>(elements, length));
+			return InsertKernel<TElement>(collection, index, elements, length);
 		}
 
 		/// <summary>
@@ -778,7 +779,7 @@ namespace System {
 			} else if (collection.Length == 0) {
 				return new ReadOnlySpan<TElement>(elements, length);
 			}
-			return InsertKernel<TElement>(collection.Span, index, new ReadOnlySpan<TElement>(elements, length));
+			return InsertKernel<TElement>(collection.Span, index, elements, length);
 		}
 
 		/// <summary>
@@ -797,7 +798,7 @@ namespace System {
 			} else if (collection.Length == 0) {
 				return new ReadOnlySpan<TElement>(elements, length);
 			}
-			return InsertKernel<TElement>(collection.Span, index, new ReadOnlySpan<TElement>(elements, length));
+			return InsertKernel<TElement>(collection.Span, index, elements, length);
 		}
 
 		/// <summary>
@@ -816,7 +817,7 @@ namespace System {
 			} else if (collection.Length == 0) {
 				return new ReadOnlySpan<TElement>(elements, length);
 			}
-			return InsertKernel<TElement>(collection, index, new ReadOnlySpan<TElement>(elements, length));
+			return InsertKernel<TElement>(collection, index, elements, length);
 		}
 
 		/// <summary>
@@ -835,7 +836,7 @@ namespace System {
 			} else if (collection.Length == 0) {
 				return new ReadOnlySpan<TElement>(elements, length);
 			}
-			return InsertKernel<TElement>(collection, index, new ReadOnlySpan<TElement>(elements, length));
+			return InsertKernel<TElement>(collection, index, elements, length);
 		}
 		#endregion
 
@@ -855,6 +856,112 @@ namespace System {
 		#endregion
 
 		#region Insert(Collection, nint, String)
+		/// <summary>
+		/// Insert the elements into the collection at the specified index.
+		/// </summary>
+		/// <typeparam name="TResult">The resulting type; often itself.</typeparam>
+		/// <param name="collection">This collection.</param>
+		/// <param name="index">The index at which the <paramref name="elements"/> should be inserted.</param>
+		/// <param name="elements">The elements to insert.</param>
+		/// <returns>If the insert occurred successfully, returns a <typeparamref name="TResult"/> containing the original and inserted elements; otherwise, <see langword="null"/>.</returns>
+		[return: MaybeNull]
+		public static TResult Insert<TResult>([AllowNull] this IInsert<Char, TResult> collection, nint index, [AllowNull] String elements) where TResult : IInsert<Char, TResult> => collection is not null ? collection.Insert(index, elements) : (TResult)collection;
+
+		/// <summary>
+		/// Insert the elements into the collection at the specified index.
+		/// </summary>
+		/// <param name="collection">This collection.</param>
+		/// <param name="index">The index at which the <paramref name="elements"/> should be inserted.</param>
+		/// <param name="elements">The elements to insert.</param>
+		/// <returns>Returns a <see cref="ReadOnlyMemory{T}"/> of <see cref="Char"/> containing the original and inserted elements.</returns>
+		public static ReadOnlyMemory<Char> Insert([AllowNull] this String collection, nint index, [AllowNull] String elements) {
+			if (elements is null || elements.Length == 0) {
+				return collection.AsMemory();
+			} else if (collection is null || collection.Length == 0) {
+				return elements.AsMemory();
+			}
+			return InsertKernel<Char>(collection, index, elements);
+		}
+
+		/// <summary>
+		/// Insert the elements into the collection at the specified index.
+		/// </summary>
+		/// <param name="collection">This collection.</param>
+		/// <param name="index">The index at which the <paramref name="elements"/> should be inserted.</param>
+		/// <param name="elements">The elements to insert.</param>
+		/// <returns>Returns a <see cref="ReadOnlyMemory{T}"/> of <see cref="Char"/> containing the original and inserted elements.</returns>
+		public static ReadOnlyMemory<Char> Insert([AllowNull] this Char[] collection, nint index, [AllowNull] String elements) {
+			if (elements is null || elements.Length == 0) {
+				return collection.AsMemory();
+			} else if (collection is null || collection.Length == 0) {
+				return elements.AsMemory();
+			}
+			return InsertKernel<Char>(collection, index, elements);
+		}
+
+		/// <summary>
+		/// Insert the elements into the collection at the specified index.
+		/// </summary>
+		/// <param name="collection">This collection.</param>
+		/// <param name="index">The index at which the <paramref name="elements"/> should be inserted.</param>
+		/// <param name="elements">The elements to insert.</param>
+		/// <returns>Returns a <see cref="ReadOnlyMemory{T}"/> of <see cref="Char"/> containing the original and inserted elements.</returns>
+		public static ReadOnlyMemory<Char> Insert(this Memory<Char> collection, nint index, [AllowNull] String elements) {
+			if (elements is null || elements.Length == 0) {
+				return collection;
+			} else if (collection.Length == 0) {
+				return elements.AsMemory();
+			}
+			return InsertKernel<Char>(collection.Span, index, elements);
+		}
+
+		/// <summary>
+		/// Insert the elements into the collection at the specified index.
+		/// </summary>
+		/// <param name="collection">This collection.</param>
+		/// <param name="index">The index at which the <paramref name="elements"/> should be inserted.</param>
+		/// <param name="elements">The elements to insert.</param>
+		/// <returns>Returns a <see cref="ReadOnlyMemory{T}"/> of <see cref="Char"/> containing the original and inserted elements.</returns>
+		public static ReadOnlyMemory<Char> Insert(this ReadOnlyMemory<Char> collection, nint index, [AllowNull] String elements) {
+			if (elements is null || elements.Length == 0) {
+				return collection;
+			} else if (collection.Length == 0) {
+				return elements.AsMemory();
+			}
+			return InsertKernel<Char>(collection.Span, index, elements);
+		}
+
+		/// <summary>
+		/// Insert the elements into the collection at the specified index.
+		/// </summary>
+		/// <param name="collection">This collection.</param>
+		/// <param name="index">The index at which the <paramref name="elements"/> should be inserted.</param>
+		/// <param name="elements">The elements to insert.</param>
+		/// <returns>Returns a <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> containing the original and inserted elements.</returns>
+		public static ReadOnlySpan<Char> Insert(this Span<Char> collection, nint index, [AllowNull] String elements) {
+			if (elements is null || elements.Length == 0) {
+				return collection;
+			} else if (collection.Length == 0) {
+				return elements.AsSpan();
+			}
+			return InsertKernel<Char>(collection, index, elements);
+		}
+
+		/// <summary>
+		/// Insert the elements into the collection at the specified index.
+		/// </summary>
+		/// <param name="collection">This collection.</param>
+		/// <param name="index">The index at which the <paramref name="elements"/> should be inserted.</param>
+		/// <param name="elements">The elements to insert.</param>
+		/// <returns>Returns a <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> containing the original and inserted elements.</returns>
+		public static ReadOnlySpan<Char> Insert(this ReadOnlySpan<Char> collection, nint index, [AllowNull] String elements) {
+			if (elements is null || elements.Length == 0) {
+				return collection;
+			} else if (collection.Length == 0) {
+				return elements.AsSpan();
+			}
+			return InsertKernel<Char>(collection, index, elements);
+		}
 		#endregion
 
 		[return: NotNull]
@@ -872,6 +979,15 @@ namespace System {
 			collection.Slice(0, index).CopyTo(array);
 			elements.CopyTo(array.Slice(index));
 			collection.Slice(index).CopyTo(array.Slice(index + elements.Length));
+			return array;
+		}
+
+		[return: NotNull]
+		public static unsafe TElement[] InsertKernel<TElement>(ReadOnlySpan<TElement> collection, nint index, [DisallowNull] TElement* elements, Int32 length) where TElement : unmanaged {
+			TElement[] array = new TElement[collection.Length + length];
+			collection.Slice(0, index).CopyTo(array);
+			Pointer.Copy(elements, length, array.Slice(index));
+			collection.Slice(index).CopyTo(array.Slice(index + length));
 			return array;
 		}
 	}
