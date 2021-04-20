@@ -18,42 +18,72 @@ namespace System {
 		/// </summary>
 		/// <param name="collection">This collection.</param>
 		/// <returns>An <see cref="ReadOnlyMemory{T}"/> of <see cref="Char"/> after the elements are shifted.</returns>
-		public static ReadOnlyMemory<Char> ShiftRight([AllowNull] this String collection) => ShiftRightKernel<Char>(collection.AsSpan(), 1);
+		public static ReadOnlyMemory<Char> ShiftRight([AllowNull] this String collection) {
+			if (collection is null || collection.Length == 0) {
+				return collection.AsMemory();
+			}
+			return ShiftRightKernel<Char>(collection.AsSpan(), 1);
+		}
 
 		/// <summary>
 		/// Shifts the <paramref name="collection"/> right by one position.
 		/// </summary>
 		/// <param name="collection">This collection.</param>
 		/// <returns>An <see cref="Memory{T}"/> of <typeparamref name="TElement"/> after the elements are shifted.</returns>
-		public static Memory<TElement> ShiftRight<TElement>([AllowNull] this TElement[] collection) => ShiftRightKernel<TElement>(collection.AsSpan(), 1);
+		public static Memory<TElement> ShiftRight<TElement>([AllowNull] this TElement[] collection) {
+			if (collection is null || collection.Length == 0) {
+				return collection;
+			}
+			return ShiftRightKernel<TElement>(collection.AsSpan(), 1);
+		}
 
 		/// <summary>
 		/// Shifts the <paramref name="collection"/> right by one position.
 		/// </summary>
 		/// <param name="collection">This collection.</param>
 		/// <returns>An <see cref="Memory{T}"/> of <typeparamref name="TElement"/> after the elements are shifted.</returns>
-		public static Memory<TElement> ShiftRight<TElement>(this Memory<TElement> collection) => ShiftRightKernel<TElement>(collection.Span, 1);
+		public static Memory<TElement> ShiftRight<TElement>(this Memory<TElement> collection) {
+			if (collection.Length == 0) {
+				return collection;
+			}
+			return ShiftRightKernel<TElement>(collection.Span, 1);
+		}
 
 		/// <summary>
 		/// Shifts the <paramref name="collection"/> right by one position.
 		/// </summary>
 		/// <param name="collection">This collection.</param>
 		/// <returns>An <see cref="ReadOnlyMemory{T}"/> of <typeparamref name="TElement"/> after the elements are shifted.</returns>
-		public static ReadOnlyMemory<TElement> ShiftRight<TElement>(this ReadOnlyMemory<TElement> collection) => ShiftRightKernel<TElement>(collection.Span, 1);
+		public static ReadOnlyMemory<TElement> ShiftRight<TElement>(this ReadOnlyMemory<TElement> collection) {
+			if (collection.Length == 0) {
+				return collection;
+			}
+			return ShiftRightKernel<TElement>(collection.Span, 1);
+		}
 
 		/// <summary>
 		/// Shifts the <paramref name="collection"/> right by one position.
 		/// </summary>
 		/// <param name="collection">This collection.</param>
 		/// <returns>An <see cref="Span{T}"/> of <typeparamref name="TElement"/> after the elements are shifted.</returns>
-		public static Span<TElement> ShiftRight<TElement>(this Span<TElement> collection) => ShiftRightKernel<TElement>(collection, 1);
+		public static Span<TElement> ShiftRight<TElement>(this Span<TElement> collection) {
+			if (collection.Length == 0) {
+				return collection;
+			}
+			return ShiftRightKernel<TElement>(collection, 1);
+		}
 
 		/// <summary>
 		/// Shifts the <paramref name="collection"/> right by one position.
 		/// </summary>
 		/// <param name="collection">This collection.</param>
 		/// <returns>An <see cref="ReadOnlySpan{T}"/> of <typeparamref name="TElement"/> after the elements are shifted.</returns>
-		public static ReadOnlySpan<TElement> ShiftRight<TElement>(this ReadOnlySpan<TElement> collection) => ShiftRightKernel<TElement>(collection, 1);
+		public static ReadOnlySpan<TElement> ShiftRight<TElement>(this ReadOnlySpan<TElement> collection) {
+			if (collection.Length == 0) {
+				return collection;
+			}
+			return ShiftRightKernel<TElement>(collection, 1);
+		}
 		#endregion
 
 		#region ShiftRight(Collection, nint)
@@ -73,7 +103,7 @@ namespace System {
 		/// <param name="amount">The amount of positions to shift.</param>
 		/// <returns>An <see cref="ReadOnlyMemory{T}"/> of <see cref="Char"/> after the elements are shifted.</returns>
 		public static ReadOnlyMemory<Char> ShiftRight([AllowNull] this String collection, nint amount) {
-			if (collection is null || amount == 0) {
+			if (collection is null || collection.Length == 0 || amount == 0) {
 				return collection.AsMemory();
 			}
 			return ShiftRightKernel<Char>(collection, amount);
@@ -86,7 +116,7 @@ namespace System {
 		/// <param name="amount">The amount of positions to shift.</param>
 		/// <returns>An <see cref="Memory{T}"/> of <typeparamref name="TElement"/> after the elements are shifted.</returns>
 		public static Memory<TElement> ShiftRight<TElement>([AllowNull] this TElement[] collection, nint amount) {
-			if (collection is null || amount == 0) {
+			if (collection is null || collection.Length == 0 || amount == 0) {
 				return collection;
 			}
 			return ShiftRightKernel<TElement>(collection, amount);
@@ -99,7 +129,7 @@ namespace System {
 		/// <param name="amount">The amount of positions to shift.</param>
 		/// <returns>An <see cref="Memory{T}"/> of <typeparamref name="TElement"/> after the elements are shifted.</returns>
 		public static Memory<TElement> ShiftRight<TElement>(this Memory<TElement> collection, nint amount) {
-			if (amount == 0) {
+			if (collection.Length == 0 || amount == 0) {
 				return collection;
 			}
 			return ShiftRightKernel<TElement>(collection.Span, amount);
@@ -112,7 +142,7 @@ namespace System {
 		/// <param name="amount">The amount of positions to shift.</param>
 		/// <returns>An <see cref="ReadOnlyMemory{T}"/> of <typeparamref name="TElement"/> after the elements are shifted.</returns>
 		public static ReadOnlyMemory<TElement> ShiftRight<TElement>(this ReadOnlyMemory<TElement> collection, nint amount) {
-			if (amount == 0) {
+			if (collection.Length == 0 || amount == 0) {
 				return collection;
 			}
 			return ShiftRightKernel<TElement>(collection.Span, amount);
@@ -125,7 +155,7 @@ namespace System {
 		/// <param name="amount">The amount of positions to shift.</param>
 		/// <returns>An <see cref="Span{T}"/> of <typeparamref name="TElement"/> after the elements are shifted.</returns>
 		public static Span<TElement> ShiftRight<TElement>(this Span<TElement> collection, nint amount) {
-			if (amount == 0) {
+			if (collection.Length == 0 || amount == 0) {
 				return collection;
 			}
 			return ShiftRightKernel<TElement>(collection, amount);
@@ -138,7 +168,7 @@ namespace System {
 		/// <param name="amount">The amount of positions to shift.</param>
 		/// <returns>An <see cref="ReadOnlySpan{T}"/> of <typeparamref name="TElement"/> after the elements are shifted.</returns>
 		public static ReadOnlySpan<TElement> ShiftRight<TElement>(this ReadOnlySpan<TElement> collection, nint amount) {
-			if (amount == 0) {
+			if (collection.Length == 0 || amount == 0) {
 				return collection;
 			}
 			return ShiftRightKernel<TElement>(collection, amount);
@@ -148,13 +178,7 @@ namespace System {
 		[return: NotNull]
 		private static TElement[] ShiftRightKernel<TElement>(ReadOnlySpan<TElement> collection, nint amount) {
 			TElement[] array = new TElement[collection.Length];
-			nint i = 0;
-			for (; i < amount; i++) {
-				array[i] = default;
-			}
-			for (Int32 j = 0; i < collection.Length; j++) {
-				array[i++] = collection[j];
-			}
+			collection.Slice(0, collection.Length - amount).CopyTo(array.Slice(amount));
 			return array;
 		}
 	}

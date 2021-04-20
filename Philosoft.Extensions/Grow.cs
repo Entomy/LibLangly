@@ -16,19 +16,30 @@ namespace System {
 		/// </summary>
 		/// <param name="collection">This collection.</param>
 		[return: MaybeNull, NotNullIfNotNull("collection")]
-		public static TElement[] Grow<TElement>([AllowNull] this TElement[] collection) => collection is null || collection.Length <= 8 ? collection.Resize(13) : collection.Resize((nint)(collection.Length * φ));
+		public static TElement[] Grow<TElement>([AllowNull] this TElement[] collection) {
+			if (collection is null) {
+				return null;
+			}
+			return GrowKernel<TElement>(collection);
+		}
 
 		/// <summary>
 		/// Grows the collection by a computed factor.
 		/// </summary>
 		/// <param name="collection">This collection.</param>
-		public static Memory<TElement> Grow<TElement>(this Memory<TElement> collection) => collection.Length <= 8 ? collection.Resize(13) : collection.Resize((nint)(collection.Length * φ));
+		public static Memory<TElement> Grow<TElement>(this Memory<TElement> collection) => GrowKernel<TElement>(collection.Span);
 
 		/// <summary>
 		/// Grows the collection by a computed factor.
 		/// </summary>
 		/// <param name="collection">This collection.</param>
-		public static Span<TElement> Grow<TElement>(this Span<TElement> collection) => collection.Length <= 8 ? collection.Resize(13) : collection.Resize((nint)(collection.Length * φ));
+		public static Span<TElement> Grow<TElement>(this Span<TElement> collection) => GrowKernel<TElement>(collection);
 
+		[return: NotNull]
+		private static TElement[] GrowKernel<TElement>(ReadOnlySpan<TElement> collection) {
+			TElement[] array = new TElement[collection.Length <= 8 ? 13 : (nint)(collection.Length * φ)];
+			collection.CopyTo(array);
+			return array;
+		}
 	}
 }

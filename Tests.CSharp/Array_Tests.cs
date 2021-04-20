@@ -286,11 +286,9 @@ namespace Langly {
 			Assert.True(arr.Length > values.Length);
 			Assert.True(mem.Length > values.Length);
 			Assert.True(spn.Length > values.Length);
-			foreach (Int32 value in values) {
-				Assert.Contains(value, arr);
-				Assert.Contains(value, mem.ToArray());
-				Assert.Contains(value, spn.ToArray());
-			}
+			Assert.Equal(values, arr.Slice(0, values.Length).ToArray());
+			Assert.Equal(values, mem.Slice(0, values.Length).ToArray());
+			Assert.Equal(values, spn.Slice(0, values.Length).ToArray());
 		}
 
 		[Theory]
@@ -571,6 +569,160 @@ namespace Langly {
 			Assert.Equal(expected, PhilosoftExtensions.Occurrences((ReadOnlyMemory<Int32>)values.AsMemory(), (x) => x % 2 == 0));
 			Assert.Equal(expected, PhilosoftExtensions.Occurrences(values.AsSpan(), (x) => x % 2 == 0));
 			Assert.Equal(expected, PhilosoftExtensions.Occurrences((ReadOnlySpan<Int32>)values.AsSpan(), (x) => x % 2 == 0));
+		}
+
+		[Theory]
+		[InlineData(new Int32[] { }, new Int32[] { }, 0, 0)]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 0, 0)]
+		[InlineData(new Int32[] { 0, 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 1, 0)]
+		[InlineData(new Int32[] { 1, 0, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 2, 0)]
+		[InlineData(new Int32[] { 1, 2, 0, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 3, 0)]
+		[InlineData(new Int32[] { 1, 2, 3, 0, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 4, 0)]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 0 }, new Int32[] { 1, 2, 3, 4, 5 }, 5, 0)]
+		[InlineData(new Int32[] { 0, 2, 0, 2, 0 }, new Int32[] { 1, 2, 1, 2, 1 }, 1, 0)]
+		[InlineData(new Int32[] { 0, 0, 0, 0, 0 }, new Int32[] { 1, 1, 1, 1, 1 }, 1, 0)]
+		public void Replace(Int32[] expected, Int32[] initial, Int32 search, Int32 replace) {
+			var arr = PhilosoftExtensions.Replace(initial, search, replace);
+			var mem = PhilosoftExtensions.Replace(initial.AsMemory(), search, replace);
+			var rom = PhilosoftExtensions.Replace((ReadOnlyMemory<Int32>)initial.AsMemory(), search, replace);
+			var spn = PhilosoftExtensions.Replace(initial.AsSpan(), search, replace);
+			var ros = PhilosoftExtensions.Replace((ReadOnlySpan<Int32>)initial.AsSpan(), search, replace);
+			if (expected is not null) {
+				Assert.Equal(expected, arr.ToArray());
+				Assert.Equal(expected, mem.ToArray());
+				Assert.Equal(expected, rom.ToArray());
+				Assert.Equal(expected, spn.ToArray());
+				Assert.Equal(expected, ros.ToArray());
+			} else {
+				Assert.True(arr.Length == 0);
+				Assert.True(mem.Length == 0);
+				Assert.True(rom.Length == 0);
+				Assert.True(spn.Length == 0);
+				Assert.True(ros.Length == 0);
+			}
+		}
+
+		[Theory]
+		[InlineData(null, null)]
+		[InlineData(new Int32[] { }, new Int32[] { })]
+		[InlineData(new Int32[] { 2, 3, 4, 5, 0 }, new Int32[] { 1, 2, 3, 4, 5 })]
+		public void ShiftLeft(Int32[] expected, Int32[] initial) {
+			var arr = PhilosoftExtensions.ShiftLeft(initial);
+			var mem = PhilosoftExtensions.ShiftLeft(initial.AsMemory());
+			var rom = PhilosoftExtensions.ShiftLeft((ReadOnlyMemory<Int32>)initial.AsMemory());
+			var spn = PhilosoftExtensions.ShiftLeft(initial.AsSpan());
+			var ros = PhilosoftExtensions.ShiftLeft((ReadOnlySpan<Int32>)initial.AsSpan());
+			if (expected is not null) {
+				Assert.Equal(expected, arr.ToArray());
+				Assert.Equal(expected, mem.ToArray());
+				Assert.Equal(expected, rom.ToArray());
+				Assert.Equal(expected, spn.ToArray());
+				Assert.Equal(expected, ros.ToArray());
+			} else {
+				Assert.True(arr.Length == 0);
+				Assert.True(mem.Length == 0);
+				Assert.True(rom.Length == 0);
+				Assert.True(spn.Length == 0);
+				Assert.True(ros.Length == 0);
+			}
+		}
+
+		[Theory]
+		[InlineData(null, null, 1)]
+		[InlineData(new Int32[] { }, new Int32[] { }, 1)]
+		[InlineData(new Int32[] { 2, 3, 4, 5, 0 }, new Int32[] { 1, 2, 3, 4, 5 }, 1)]
+		[InlineData(new Int32[] { 3, 4, 5, 0, 0 }, new Int32[] { 1, 2, 3, 4, 5 }, 2)]
+		public void ShiftLeftBy(Int32[] expected, Int32[] initial, Int32 amount) {
+			var arr = PhilosoftExtensions.ShiftLeft(initial, amount);
+			var mem = PhilosoftExtensions.ShiftLeft(initial.AsMemory(), amount);
+			var rom = PhilosoftExtensions.ShiftLeft((ReadOnlyMemory<Int32>)initial.AsMemory(), amount);
+			var spn = PhilosoftExtensions.ShiftLeft(initial.AsSpan(), amount);
+			var ros = PhilosoftExtensions.ShiftLeft((ReadOnlySpan<Int32>)initial.AsSpan(), amount);
+			if (expected is not null) {
+				Assert.Equal(expected, arr.ToArray());
+				Assert.Equal(expected, mem.ToArray());
+				Assert.Equal(expected, rom.ToArray());
+				Assert.Equal(expected, spn.ToArray());
+				Assert.Equal(expected, ros.ToArray());
+			} else {
+				Assert.True(arr.Length == 0);
+				Assert.True(mem.Length == 0);
+				Assert.True(rom.Length == 0);
+				Assert.True(spn.Length == 0);
+				Assert.True(ros.Length == 0);
+			}
+		}
+
+		[Theory]
+		[InlineData(null, null)]
+		[InlineData(new Int32[] { }, new Int32[] { })]
+		[InlineData(new Int32[] { 0, 1, 2, 3, 4 }, new Int32[] { 1, 2, 3, 4, 5 })]
+		public void ShiftRight(Int32[] expected, Int32[] initial) {
+			var arr = PhilosoftExtensions.ShiftRight(initial);
+			var mem = PhilosoftExtensions.ShiftRight(initial.AsMemory());
+			var rom = PhilosoftExtensions.ShiftRight((ReadOnlyMemory<Int32>)initial.AsMemory());
+			var spn = PhilosoftExtensions.ShiftRight(initial.AsSpan());
+			var ros = PhilosoftExtensions.ShiftRight((ReadOnlySpan<Int32>)initial.AsSpan());
+			if (expected is not null) {
+				Assert.Equal(expected, arr.ToArray());
+				Assert.Equal(expected, mem.ToArray());
+				Assert.Equal(expected, rom.ToArray());
+				Assert.Equal(expected, spn.ToArray());
+				Assert.Equal(expected, ros.ToArray());
+			} else {
+				Assert.True(arr.Length == 0);
+				Assert.True(mem.Length == 0);
+				Assert.True(rom.Length == 0);
+				Assert.True(spn.Length == 0);
+				Assert.True(ros.Length == 0);
+			}
+		}
+
+		[Theory]
+		[InlineData(null, null, 1)]
+		[InlineData(new Int32[] { }, new Int32[] { }, 1)]
+		[InlineData(new Int32[] { 0, 1, 2, 3, 4 }, new Int32[] { 1, 2, 3, 4, 5 }, 1)]
+		[InlineData(new Int32[] { 0, 0, 1, 2, 3 }, new Int32[] { 1, 2, 3, 4, 5 }, 2)]
+		public void ShiftRightBy(Int32[] expected, Int32[] initial, Int32 amount) {
+			var arr = PhilosoftExtensions.ShiftRight(initial, amount);
+			var mem = PhilosoftExtensions.ShiftRight(initial.AsMemory(), amount);
+			var rom = PhilosoftExtensions.ShiftRight((ReadOnlyMemory<Int32>)initial.AsMemory(), amount);
+			var spn = PhilosoftExtensions.ShiftRight(initial.AsSpan(), amount);
+			var ros = PhilosoftExtensions.ShiftRight((ReadOnlySpan<Int32>)initial.AsSpan(), amount);
+			if (expected is not null) {
+				Assert.Equal(expected, arr.ToArray());
+				Assert.Equal(expected, mem.ToArray());
+				Assert.Equal(expected, rom.ToArray());
+				Assert.Equal(expected, spn.ToArray());
+				Assert.Equal(expected, ros.ToArray());
+			} else {
+				Assert.True(arr.Length == 0);
+				Assert.True(mem.Length == 0);
+				Assert.True(rom.Length == 0);
+				Assert.True(spn.Length == 0);
+				Assert.True(ros.Length == 0);
+			}
+		}
+
+		[Theory]
+		[InlineData(new Int32[] { })]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 5 })]
+		public void Shrink(Int32[] values) {
+			var arr = PhilosoftExtensions.Shrink(values);
+			var mem = PhilosoftExtensions.Shrink(values.AsMemory());
+			var spn = PhilosoftExtensions.Shrink(values.AsSpan());
+			if (values.Length > 0) {
+				Assert.True(arr.Length < values.Length);
+				Assert.True(mem.Length < values.Length);
+				Assert.True(spn.Length < values.Length);
+			} else {
+				Assert.True(arr.Length == 0);
+				Assert.True(mem.Length == 0);
+				Assert.True(spn.Length == 0);
+			}
+			Assert.Equal(values.Slice(0, arr.Length).ToArray(), arr);
+			Assert.Equal(values.Slice(0, mem.Length).ToArray(), mem.ToArray());
+			Assert.Equal(values.Slice(0, spn.Length).ToArray(), spn.ToArray());
 		}
 	}
 }

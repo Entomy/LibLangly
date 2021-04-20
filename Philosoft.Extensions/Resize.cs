@@ -21,12 +21,8 @@ namespace System {
 		public static TElement[] Resize<TElement>([AllowNull] this TElement[] collection, nint capacity) {
 			if (collection is null) {
 				return null;
-			} else if (collection.Length == 0) {
-				return new TElement[capacity];
 			}
-			TElement[] Array = new TElement[capacity];
-			System.Array.Copy(collection, Array, collection.Length);
-			return Array;
+			return ResizeKernel<TElement>(collection, capacity);
 		}
 
 		/// <summary>
@@ -34,29 +30,20 @@ namespace System {
 		/// </summary>
 		/// <param name="collection">This collection.</param>
 		/// <param name="capacity">The new capacity of the collection.</param>
-		[return: MaybeNull, NotNullIfNotNull("collection")]
-		public static Memory<TElement> Resize<TElement>(this Memory<TElement> collection, nint capacity) {
-			if (collection.Length == 0) {
-				return new TElement[capacity];
-			}
-			TElement[] Array = new TElement[capacity];
-			collection.CopyTo(Array);
-			return Array;
-		}
+		public static Memory<TElement> Resize<TElement>(this Memory<TElement> collection, nint capacity) => ResizeKernel<TElement>(collection.Span, capacity);
 
 		/// <summary>
 		/// Resize the collection to the specified <paramref name="capacity"/>.
 		/// </summary>
 		/// <param name="collection">This collection.</param>
 		/// <param name="capacity">The new capacity of the collection.</param>
-		[return: MaybeNull, NotNullIfNotNull("collection")]
-		public static Span<TElement> Resize<TElement>(this Span<TElement> collection, nint capacity) {
-			if (collection.Length == 0) {
-				return new TElement[capacity];
-			}
-			TElement[] Array = new TElement[capacity];
-			collection.CopyTo(Array);
-			return Array;
+		public static Span<TElement> Resize<TElement>(this Span<TElement> collection, nint capacity) => ResizeKernel<TElement>(collection, capacity);
+
+		[return: NotNull]
+		private static TElement[] ResizeKernel<TElement>(ReadOnlySpan<TElement> collection, nint capacity) {
+			TElement[] array = new TElement[capacity];
+			collection.CopyTo(array);
+			return array;
 		}
 	}
 }
