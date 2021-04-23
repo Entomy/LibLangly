@@ -78,7 +78,7 @@ namespace System.Traits.Contracts {
 		/// Validates that the <paramref name="subject"/> has had the necessary objects replaced.
 		/// </summary>
 		/// <typeparam name="TElement">The type of the elements.</typeparam>
-		/// <param name="expected">The expected values type <paramref name="subject"/> contains.</param>
+		/// <param name="expected">The expected values the <paramref name="subject"/> contains.</param>
 		/// <param name="subject">The object being tested.</param>
 		protected static void Validate<TElement>([AllowNull] TElement[] expected, [AllowNull] IEnumerable<TElement> subject) {
 			if (expected is not null) {

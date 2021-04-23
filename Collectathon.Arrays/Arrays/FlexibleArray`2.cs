@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Traits;
 using Collectathon.Filters;
@@ -10,6 +11,7 @@ namespace Collectathon.Arrays {
 	/// </summary>
 	/// <typeparam name="TElement">The type of the elements in the array.</typeparam>
 	/// <typeparam name="TSelf">The implementing type; itself.</typeparam>
+	[DebuggerDisplay("{ToString(5)},nq")]
 	public abstract partial class FlexibleArray<TElement, TSelf> :
 		IAdd<TElement, TSelf>,
 		ICapacity,
@@ -172,11 +174,29 @@ namespace Collectathon.Arrays {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		TSelf IRemove<TElement, TSelf>.Remove([AllowNull] TElement element) => throw new NotImplementedException();
+		TSelf IRemove<TElement, TSelf>.Remove([AllowNull] TElement element) {
+			for (nint i = 0; i < Count; i++) {
+				if (Equals(Memory[i], element)) {
+					Memory[i] = Memory[i + 1];
+					i--;
+					Count--;
+				}
+			}
+			return (TSelf)this;
+		}
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		TSelf IRemove<TElement, TSelf>.RemoveFirst([AllowNull] TElement element) => throw new NotImplementedException();
+		TSelf IRemove<TElement, TSelf>.RemoveFirst([AllowNull] TElement element) {
+			for (nint i = 0; i < Count; i++) {
+				if (Equals(Memory[i], element)) {
+					Memory.Slice(i).CopyTo(Memory.Slice(--i));
+					Count--;
+					return (TSelf)this;
+				}
+			}
+			return (TSelf)this;
+		}
 
 		/// <inheritdoc/>
 		[return: NotNull]
@@ -196,32 +216,22 @@ namespace Collectathon.Arrays {
 		/// <inheritdoc/>
 		[return: NotNull]
 		TSelf IShift<TSelf>.ShiftLeft(nint amount) {
-			if (amount == 0) {
+			if (amount == 0 || Count == 0) {
 				return (TSelf)this;
 			}
-			Int32 i = 0;
-			for (; i < Memory.Length - amount; i++) {
-				Memory[i] = Memory[(Int32)(i + amount)];
-			}
-			for (; i < Memory.Length; i++) {
-				Memory[i] = default;
-			}
+			Memory.Slice(amount).CopyTo(Memory);
+			Memory.Slice(Capacity - amount).Span.Clear();
 			return (TSelf)this;
 		}
 
 		/// <inheritdoc/>
 		[return: NotNull]
 		TSelf IShift<TSelf>.ShiftRight(nint amount) {
-			if (amount == 0) {
+			if (amount == 0 || Count == 0) {
 				return (TSelf)this;
 			}
-			Int32 i = Memory.Length - 1;
-			for (; i >= amount; i--) {
-				Memory[i] = Memory[(Int32)(i - amount)];
-			}
-			for (; i >= 0; i--) {
-				Memory[i] = default;
-			}
+			Memory.Slice(0, Capacity - amount).CopyTo(Memory.Slice(amount));
+			Memory.Slice(0, amount).Span.Clear();
 			return (TSelf)this;
 		}
 
@@ -268,5 +278,13 @@ namespace Collectathon.Arrays {
 			Count++;
 			return (TSelf)this;
 		}
+
+		/// <inheritdoc/>
+		[return: NotNull]
+		public sealed override String ToString() => ToString(Count);
+
+		/// <inheritdoc/>
+		[return: NotNull]
+		public String ToString(nint amount) => ((ISequence<TElement, Enumerator>)this).ToString(amount);
 	}
 }

@@ -13,6 +13,7 @@ namespace System.Traits {
 	/// </remarks>
 	public interface ISequence<TElement, TEnumerator> :
 		IContains<TElement>,
+		ICopy<TElement>,
 		ICount,
 		IEnumerable<TElement>
 		where TEnumerator : IEnumerator<TElement> {
@@ -28,27 +29,8 @@ namespace System.Traits {
 			return false;
 		}
 
-		/// <summary>
-		/// Copies all the elements of the current sequence into an array.
-		/// </summary>
-		/// <param name="array">The array to copy items into.</param>
-		/// <exception cref="ArgumentException">The destination is shorter than this sequence.</exception>
-		/// <exception cref="ArgumentNullException">The destination is <see langword="null"/>.</exception>
-		void CopyTo([DisallowNull] TElement[] array) => CopyTo(array.AsSpan());
-
-		/// <summary>
-		/// Copies all the elements of the current sequence into a memory region.
-		/// </summary>
-		/// <param name="memory">The memory to copy items into.</param>
-		/// <exception cref="ArgumentException">The destination is shorter than this sequence.</exception>
-		void CopyTo(Memory<TElement> memory) => CopyTo(memory.Span);
-
-		/// <summary>
-		/// Copyes all the elements of the current sequence into the span.
-		/// </summary>
-		/// <param name="span">The span to copy items into.</param>
-		/// <exception cref="ArgumentException">The destination is shorter than this sequence.</exception>
-		void CopyTo(Span<TElement> span) {
+		/// <inheritdoc/>
+		void ICopy<TElement>.CopyTo(Span<TElement> span) {
 			if (Count > span.Length) {
 				throw new ArgumentException();
 			}
@@ -156,6 +138,28 @@ namespace System.Traits {
 			TElement[] array = new TElement[Count];
 			CopyTo(array);
 			return array;
+		}
+
+		/// <summary>
+		/// Returns a string that represents this sequence, with no more than <paramref name="amount"/> elements.
+		/// </summary>
+		/// <param name="amount">The maximum amount of elements to display.</param>
+		[return: NotNull]
+		String ToString(nint amount) {
+			Text.StringBuilder builder = new Text.StringBuilder();
+			nint i = 0;
+			foreach (TElement element in this) {
+				if (++i == Count) {
+					_ = builder.Append(element);
+					break;
+				} else if (i == amount) {
+					_ = builder.Append(element).Append("...");
+					break;
+				} else {
+					_ = builder.Append(element).Append(", ");
+				}
+			}
+			return $"[{builder}]";
 		}
 	}
 }

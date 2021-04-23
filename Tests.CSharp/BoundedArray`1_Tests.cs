@@ -5,7 +5,7 @@ using System.Traits.Contracts;
 using Xunit;
 
 namespace Langly {
-	public class BoundedArray1_Tests : IAddContract<xUnit>, IClearContract<xUnit>, IReplaceContract<xUnit>, IShiftContract<xUnit>, ISliceContract<xUnit> {
+	public class BoundedArray1_Tests : IAddContract<xUnit>, IClearContract<xUnit>, IReplaceContract<xUnit>, ISequenceContract<xUnit>, IShiftContract<xUnit>, ISliceContract<xUnit> {
 		/// <inheritdoc/>
 		[Theory]
 		[MemberData(nameof(IAddContract<xUnit>.Add_Array_Data), MemberType = typeof(IAddContract<xUnit>))]
@@ -53,6 +53,14 @@ namespace Langly {
 		public void Clear<TElement>([AllowNull] TElement[] initial) {
 			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
 			IClearContract<xUnit>.Test<TElement, BoundedArray<TElement>>(array);
+		}
+
+		/// <inheritdoc/>
+		[Theory]
+		[MemberData(nameof(ISequenceContract<xUnit>.Enumerator_Data), MemberType = typeof(ISequenceContract<xUnit>))]
+		public void Enumerator<TElement>([DisallowNull] TElement[] values) {
+			BoundedArray<TElement> array = values is not null ? new BoundedArray<TElement>(values) : null;
+			ISequenceContract<xUnit>.Test_Enumerator(values, array);
 		}
 
 		/// <inheritdoc/>
