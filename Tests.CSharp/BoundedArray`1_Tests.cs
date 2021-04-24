@@ -83,6 +83,16 @@ namespace Langly {
 		}
 
 		/// <inheritdoc/>
+		[Theory]
+		[InlineData(0, null)]
+		[InlineData(0, new Int32[] { })]
+		[InlineData(15, new Int32[] { 1, 2, 3, 4, 5 })]
+		public void Fold(Int32 expected, [AllowNull] Int32[] values) {
+			BoundedArray<Int32> array = values is not null ? new BoundedArray<Int32>(values) : null;
+			ISequenceContract<xUnit>.Test_Fold(expected, array, (a, b) => a + b, 0);
+		}
+
+		/// <inheritdoc/>
 		public void Replace_Complex<TSearch, TReplace>([AllowNull] TSearch[] expected, [AllowNull] TSearch[] initial, [AllowNull] TSearch search, [AllowNull] TReplace replace) => throw new NotImplementedException();
 
 		/// <inheritdoc/>
@@ -171,6 +181,14 @@ namespace Langly {
 		public void Slice_Start_Length<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, Int32 start, Int32 length) {
 			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
 			ISliceContract<xUnit>.Test(expected, array, start, length);
+		}
+
+		/// <inheritdoc/>
+		[Theory]
+		[MemberData(nameof(ISequenceContract<xUnit>.ToArray_Data), MemberType = typeof(ISequenceContract<xUnit>))]
+		public void ToArray<TElement>([AllowNull] TElement[] values) {
+			BoundedArray<TElement> array = values is not null ? new BoundedArray<TElement>(values) : null;
+			ISequenceContract<xUnit>.Test_ToArray(values, array);
 		}
 
 		/// <inheritdoc/>
