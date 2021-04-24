@@ -61,6 +61,10 @@ namespace Collectathon.Arrays {
 
 			/// <inheritdoc/>
 			public void Reset() => i = -1;
+
+			/// <inheritdoc/>
+			[return: NotNull]
+			public String ToString(nint amount) => throw new NotImplementedException();
 		}
 	}
 }

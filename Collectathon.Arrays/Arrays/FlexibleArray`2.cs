@@ -281,10 +281,10 @@ namespace Collectathon.Arrays {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public sealed override String ToString() => ToString(Count);
+		public sealed override String ToString() => ISequence<TElement, Enumerator>.ToString(this, Count);
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public String ToString(nint amount) => ((ISequence<TElement, Enumerator>)this).ToString(amount);
+		public String ToString(nint amount) => ISequence<TElement, Enumerator>.ToString(this, amount);
 	}
 }

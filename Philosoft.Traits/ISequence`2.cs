@@ -145,11 +145,20 @@ namespace System.Traits {
 		/// </summary>
 		/// <param name="amount">The maximum amount of elements to display.</param>
 		[return: NotNull]
-		String ToString(nint amount) {
+		String ToString(nint amount);
+
+		/// <summary>
+		///Returns a string that represents this sequence.
+		/// </summary>
+		/// <param name="sequence">The sequence to convert.</param>
+		/// <param name="amount">The maximum amount of elements to display.</param>
+		/// <returns>A <see cref="String"/> representing the <paramref name="sequence"/>.</returns>
+		[return: MaybeNull, NotNullIfNotNull("sequence")]
+		protected static String ToString(ISequence<TElement, TEnumerator> sequence, nint amount) {
 			Text.StringBuilder builder = new Text.StringBuilder();
 			nint i = 0;
-			foreach (TElement element in this) {
-				if (++i == Count) {
+			foreach (TElement element in sequence) {
+				if (++i == sequence.Count) {
 					_ = builder.Append(element);
 					break;
 				} else if (i == amount) {

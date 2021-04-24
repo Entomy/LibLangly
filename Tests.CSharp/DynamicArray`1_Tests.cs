@@ -172,5 +172,13 @@ namespace Langly {
 			DynamicArray<TElement> array = initial is not null ? new DynamicArray<TElement>(initial) : null;
 			ISliceContract<xUnit>.Test(expected, array, start, length);
 		}
+
+		/// <inheritdoc/>
+		[Theory]
+		[MemberData(nameof(ISequenceContract<xUnit>.ToString_Data), MemberType = typeof(ISequenceContract<xUnit>))]
+		public void ToString<TElement>([DisallowNull] String expected, [DisallowNull] TElement[] values, Int32 amount) {
+			DynamicArray<TElement> array = new DynamicArray<TElement>(values);
+			ISequenceContract<xUnit>.Test_ToString(expected, array, amount);
+		}
 	}
 }

@@ -172,5 +172,13 @@ namespace Langly {
 			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
 			ISliceContract<xUnit>.Test(expected, array, start, length);
 		}
+
+		/// <inheritdoc/>
+		[Theory]
+		[MemberData(nameof(ISequenceContract<xUnit>.ToString_Data), MemberType = typeof(ISequenceContract<xUnit>))]
+		public void ToString<TElement>([DisallowNull] String expected, [DisallowNull] TElement[] values, Int32 amount) {
+			BoundedArray<TElement> array = new BoundedArray<TElement>(values);
+			ISequenceContract<xUnit>.Test_ToString(expected, array, amount);
+		}
 	}
 }
