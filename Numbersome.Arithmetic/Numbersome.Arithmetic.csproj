@@ -5,9 +5,9 @@
 		<LangVersion>9.0</LangVersion>
 		<Nullable>enable</Nullable>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-		<Description>Meta-package for all of Numbersome.</Description>
-		<PackageTags>number, numbers, numeric, numerics, math, maths, mathematic, mathematics</PackageTags>
-		<AssemblyName>Numbersome</AssemblyName>
+		<Description>Provides various arithmetic extensions.</Description>
+		<PackageTags>number, numbers, numeric, numerics, math, maths, mathematic, mathematics, arithmetic</PackageTags>
+		<AssemblyName>Numbersome.Arithmetic</AssemblyName>
 		<PackageIcon>Logo.png</PackageIcon>
 	</PropertyGroup>
 
@@ -17,8 +17,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\Numbersome.Arithmetic\Numbersome.Arithmetic.csproj" />
-	  <ProjectReference Include="..\Numbersome.Random\Numbersome.Random.csproj" />
+	  <ProjectReference Include="..\Philosoft.Traits\Philosoft.Traits.csproj" />
 	</ItemGroup>
 
 </Project>
