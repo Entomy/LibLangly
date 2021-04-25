@@ -93,6 +93,27 @@ namespace Langly {
 		}
 
 		/// <inheritdoc/>
+		[Theory]
+		[MemberData(nameof(ISequenceContract<xUnit>.Occurrences_Element_Data), MemberType = typeof(ISequenceContract<xUnit>))]
+		public void Occurrences_Element<TElement>(Int32 expected, [AllowNull] TElement[] values, [AllowNull] TElement element) {
+			BoundedArray<TElement> array = values is not null ? new BoundedArray<TElement>(values) : null;
+			ISequenceContract<xUnit>.Test_Occurrences(expected, array, element);
+		}
+
+		/// <inheritdoc/>
+		[Theory]
+		[InlineData(0, null)]
+		[InlineData(0, new Int32[] { })]
+		[InlineData(0, new Int32[] { 1 })]
+		[InlineData(0, new Int32[] { 1, 1, 1, 1, 1 })]
+		[InlineData(2, new Int32[] { 1, 2, 1, 2, 1 })]
+		[InlineData(3, new Int32[] { 2, 1, 2, 1, 2 })]
+		public void Occurrences_Predicate(Int32 expected, [AllowNull] Int32[] values) {
+			BoundedArray<Int32> array = values is not null ? new BoundedArray<Int32>(values) : null;
+			ISequenceContract<xUnit>.Test_Occurrences(expected, array, (x) => x % 2 == 0);
+		}
+
+		/// <inheritdoc/>
 		public void Replace_Complex<TSearch, TReplace>([AllowNull] TSearch[] expected, [AllowNull] TSearch[] initial, [AllowNull] TSearch search, [AllowNull] TReplace replace) => throw new NotImplementedException();
 
 		/// <inheritdoc/>

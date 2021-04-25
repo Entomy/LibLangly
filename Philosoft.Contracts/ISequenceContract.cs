@@ -18,6 +18,18 @@ namespace System.Traits.Contracts {
 		}
 
 		/// <summary>
+		/// Standard test cases for <see cref="Occurrences_Element{TElement}(Int32, TElement[], TElement)"/>.
+		/// </summary>
+		/// <returns>The test cases.</returns>
+		public static IEnumerable<Object[]> Occurrences_Element_Data() {
+			yield return new Object[] { 0, null, 0 };
+			yield return new Object[] { 0, new Int32[] { 1, 2, 3, 4, 5 }, 0 };
+			yield return new Object[] { 1, new Int32[] { 1, 2, 3, 4, 5 }, 1 };
+			yield return new Object[] { 3, new Int32[] { 1, 2, 1, 2, 1 }, 1 };
+			yield return new Object[] { 2, new Int32[] { 1, 2, 1, 2, 1 }, 2 };
+		}
+
+		/// <summary>
 		/// Tests <see cref="ISequence{TElement, TEnumerator}.GetEnumerator()"/>.
 		/// </summary>
 		/// <typeparam name="TElement">The type of the elements.</typeparam>
@@ -43,6 +55,25 @@ namespace System.Traits.Contracts {
 		/// <param name="func">The <see cref="Func{T1, T2, TResult}"/> to use for the fold.</param>
 		/// <param name="identity">The identity of the fold.</param>
 		public static void Test_Fold<TEnumerator>(Int32 expected, [AllowNull] ISequence<Int32, TEnumerator> subject, [AllowNull] Func<Int32, Int32, Int32> func, Int32 identity) where TEnumerator : IEnumerator<Int32> => Assert.Equals(expected, PhilosoftExtensions.Fold(subject, func, identity));
+
+		/// <summary>
+		/// Tests <see cref="ISequence{TElement, TEnumerator}.Occurrences(TElement)"/>.
+		/// </summary>
+		/// <typeparam name="TElement">The type of the elements.</typeparam>
+		/// <typeparam name="TEnumerator">The type of the enumerator.</typeparam>
+		/// <param name="expected">The expected amount of occurrences.</param>
+		/// <param name="subject">The object being tested.</param>
+		/// <param name="element">The element to count.</param>
+		public static void Test_Occurrences<TElement, TEnumerator>(Int32 expected, [AllowNull] ISequence<TElement, TEnumerator> subject, [AllowNull] TElement element) where TEnumerator : IEnumerator<TElement> => Assert.Equals(expected, PhilosoftExtensions.Occurrences(subject, element));
+
+		/// <summary>
+		/// Tests <see cref="ISequence{TElement, TEnumerator}.Occurrences(Predicate{TElement})"/>.
+		/// </summary>
+		/// <typeparam name="TEnumerator">The type of the enumerator.</typeparam>
+		/// <param name="expected">The expected amount of occurrences.</param>
+		/// <param name="subject">The object being tested.</param>
+		/// <param name="predicate">The predicate describing elements to count.</param>
+		public static void Test_Occurrences<TEnumerator>(Int32 expected, [AllowNull] ISequence<Int32, TEnumerator> subject, [AllowNull] Predicate<Int32> predicate) where TEnumerator : IEnumerator<Int32> => Assert.Equals(expected, PhilosoftExtensions.Occurrences(subject, predicate));
 
 		/// <summary>
 		/// Tests <see cref="ISequence{TElement, TEnumerator}.ToArray()"/>.
@@ -106,6 +137,22 @@ namespace System.Traits.Contracts {
 		/// <param name="expected">The expected value of the fold.</param>
 		/// <param name="values">The values of the subject.</param>
 		void Fold(Int32 expected, [AllowNull] Int32[] values);
+
+		/// <summary>
+		/// Validates <see cref="ISequence{TElement, TEnumerator}.Occurrences(TElement)"/>.
+		/// </summary>
+		/// <typeparam name="TElement">The type of the elements in this collection.</typeparam>
+		/// <param name="expected">The expected amount of occurrences.</param>
+		/// <param name="values">The values of the subject.</param>
+		/// <param name="element">The element to count.</param>
+		void Occurrences_Element<TElement>(Int32 expected, [AllowNull] TElement[] values, [AllowNull] TElement element);
+
+		/// <summary>
+		/// Validates <see cref="ISequence{TElement, TEnumerator}.Occurrences(Predicate{TElement})"/>.
+		/// </summary>
+		/// <param name="expected">The expected amount of occurrences.</param>
+		/// <param name="values">The values of the subject.</param>
+		void Occurrences_Predicate(Int32 expected, [AllowNull] Int32[] values);
 
 		/// <summary>
 		/// Validates <see cref="ISequence{TElement, TEnumerator}.ToArray()"/>.
