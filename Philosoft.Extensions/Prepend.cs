@@ -3,7 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Traits;
 
 namespace System {
-	public static partial class PhilosoftExtensions {
+	public static partial class TraitExtensions {
 		#region Prepend(Collection, TElement)
 		/// <summary>
 		/// Prepends the element onto this object.

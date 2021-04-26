@@ -4,7 +4,7 @@ using System.Traits;
 using Langly;
 
 namespace System {
-	public static partial class PhilosoftExtensions {
+	public static partial class TraitExtensions {
 		/// <summary>
 		/// Insert an element into the collection at the specified index.
 		/// </summary>

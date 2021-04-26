@@ -3,7 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Traits;
 
 namespace System {
-	public static partial class PhilosoftExtensions {
+	public static partial class TraitExtensions {
 		/// <summary>
 		/// Parses a <typeparamref name="TElement"/> from the <paramref name="source"/>.
 		/// </summary>

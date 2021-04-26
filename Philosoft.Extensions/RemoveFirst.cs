@@ -3,7 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Traits;
 
 namespace System {
-	public static partial class PhilosoftExtensions {
+	public static partial class TraitExtensions {
 		#region RemoveFirst(Collection, TElement)
 		/// <summary>
 		/// Removes the first instance of the element from this object.

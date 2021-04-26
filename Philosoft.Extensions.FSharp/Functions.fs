@@ -21,7 +21,7 @@ module Functions =
     /// <remarks>
     /// The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.
     /// </remarks>
-    let inline add (elements:^elements)(collection:^collection):^result = Add<PhilosoftExtensions, ^collection, ^elements, ^result> collection elements
+    let inline add (elements:^elements)(collection:^collection):^result = Add<TraitExtensions, ^collection, ^elements, ^result> collection elements
 
     /// <summary>
     /// The maximum capacity of the collection.
@@ -32,9 +32,9 @@ module Functions =
     /// Clears the <paramref name="collection"/>.
     /// </summary>
     /// <param name="collection">This collection.</param>
-    let inline clear (collection:^collection):^result = Clear<PhilosoftExtensions, ^collection, ^result> collection
+    let inline clear (collection:^collection):^result = Clear<TraitExtensions, ^collection, ^result> collection
 
-    //TODO: concat
+    //TODO: concat operator?
 
     /// <summary>
     /// Determines whether this collection contains the specified <paramref name="element"/>.
@@ -42,15 +42,7 @@ module Functions =
     /// <param name="collection">This collection.</param>
     /// <param name="element">The element to attempt to find.</param>
     /// <returns><see langword="true"/> if <paramref name="element"/> is contained in this collection; otherwise, <see langword="false"/>.</returns>
-    let inline contains (element:^element)(collection:^collection):bool = Contains<PhilosoftExtensions, ^collection, ^element> collection element
-
-    /// <summary>
-    /// Determines whether this collection contains any of the specified <paramref name="elements"/>.
-    /// </summary>
-    /// <param name="collection">This collection.</param>
-    /// <param name="elements">The elements to attempt to find.</param>
-    /// <returns><see langword="true"/> if any of the <paramref name="elements"/> are contained in this collection; otherwise <see langword="false"/>.</returns>
-    let inline containsAny (elements:^elements)(collection:^collection):bool = ContainsAny<PhilosoftExtensions, ^collection, ^elements> collection elements
+    let inline contains (element:^element)(collection:^collection):bool = Contains<TraitExtensions, ^collection, ^element> collection element
 
     /// <summary>
     /// Determines whether this collection contains all of the specified <paramref name="elements"/>.
@@ -58,12 +50,24 @@ module Functions =
     /// <param name="collection">This collection.</param>
     /// <param name="elements">The elements to attempt to find.</param>
     /// <returns><see langword="true"/> if all of the <paramref name="elements"/> are contained in this collection; otherwise <see langword="false"/>.</returns>
-    let inline containsAll (elements:^elements)(collection:^collection):bool = ContainsAll<PhilosoftExtensions, ^collection, ^elements> collection elements
+    let inline containsAll (elements:^element array)(collection:^collection):bool = ContainsAll<TraitExtensions, ^collection, ^element> collection elements
+
+    /// <summary>
+    /// Determines whether this collection contains any of the specified <paramref name="elements"/>.
+    /// </summary>
+    /// <param name="collection">This collection.</param>
+    /// <param name="elements">The elements to attempt to find.</param>
+    /// <returns><see langword="true"/> if any of the <paramref name="elements"/> are contained in this collection; otherwise <see langword="false"/>.</returns>
+    let inline containsAny (elements:^element array)(collection:^collection):bool = ContainsAny<TraitExtensions, ^collection, ^element> collection elements
+
+    //TODO: copyto
 
     /// <summary>
     /// Gets the number of elements contained in the collection.
     /// </summary>
     let inline count (collection:#ICount):nativeint = collection.Count
+
+    //TODO: ensureLoaded
 
     /// <summary>
     /// Folds the collection into a single element as described by <paramref name="func"/>.
@@ -76,12 +80,12 @@ module Functions =
     /// <para><paramref name="func"/> is a magma, so associativity like left-fold and right-fold are completely irrelevant.</para>
     /// <para><paramref name="identity"/> is required as a start point for the fold. It needs to be the identity of the <paramref name="func"/> to function properly. For example, the identity of addition is <c>0</c>, and the identity of multiplication is <c>1</c>. Without an appropriate identity, the results will be wrong.</para>
     /// </remarks>
-    let inline fold (func:^element -> ^element -> ^element)(identity:^element)(collection:^collection):^element = Fold<PhilosoftExtensions, ^collection, ^func, ^element> (collection) (Func< ^element, ^element, ^element>(func)) (identity)
+    let inline fold (func:^element -> ^element -> ^element)(identity:^element)(collection:^collection):^element = Fold<TraitExtensions, ^collection, ^func, ^element> (collection) (Func< ^element, ^element, ^element>(func)) (identity)
 
     /// <summary>
     /// Grows the collection by a computed factor.
     /// </summary>
-    let inline grow (collection:^collection):^result = Grow<PhilosoftExtensions, ^collection, ^result> collection
+    let inline grow (collection:^collection):^result = Grow<TraitExtensions, ^collection, ^result> collection
 
     /// <summary>
     /// Searches for the specified <paramref name="element"/> and returns the index of its first occurrence.
@@ -89,7 +93,7 @@ module Functions =
     /// <param name="collection">The collection to search.</param>
     /// <param name="element">The item to locate in the collection.</param>
     /// <returns>The index of the first occurrence of <paramref name="element"/> in <paramref name="collection"/>, if found; otherwise, <c>-1</c>.</returns>
-    let inline indexOfFirst (element:^element)(collection:^collection):nativeint = IndexOfFirst<PhilosoftExtensions, ^collection, ^element> collection element
+    let inline indexOfFirst (element:^element)(collection:^collection):nativeint = IndexOfFirst<TraitExtensions, ^collection, ^element> collection element
 
     /// <summary>
     /// Searches for the specified <paramref name="element"/> and returns the index of its last occurrence.
@@ -98,7 +102,7 @@ module Functions =
     /// <param name="collection">The collection to search.</param>
     /// <param name="element">The item to locate in the collection.</param>
     /// <returns>The index of the last occurrence of <paramref name="element"/> in <paramref name="collection"/>, if found; otherwise, <c>-1</c>.</returns>
-    let inline indexOfLast (element:^element)(collection:^collection):nativeint = IndexOfLast<PhilosoftExtensions, ^collection, ^element> collection element    
+    let inline indexOfLast (element:^element)(collection:^collection):nativeint = IndexOfLast<TraitExtensions, ^collection, ^element> collection element    
 
     /// <summary>
     /// Insert an element into the collection at the specified index.
@@ -109,7 +113,9 @@ module Functions =
     /// <param name="index">The index at which <paramref name="element"/> should be inserted.</param>
     /// <param name="element">The element to insert.</param>
     /// <returns>If the insert occurred successfully, returns a <typeparamref name="TResult"/> containing the original and inserted elements; otherwise, <see langword="null"/>.</returns>
-    let inline insert (index:^index)(element:^element)(collection:^collection):^result = Insert<PhilosoftExtensions, ^collection, ^index, ^element, ^result> collection index element
+    let inline insert (index:^index)(element:^element)(collection:^collection):^result = Insert<TraitExtensions, ^collection, ^index, ^element, ^result> collection index element
+
+    //TODO: load
 
     //TODO: map
 
@@ -119,9 +125,15 @@ module Functions =
     /// <param name="collection">This collection.</param>
     /// <param name="element">The element to count.</param>
     /// <returns>The amount of occurrences found.</returns>
-    let inline occurrences (element:^element)(collection:^collection):nativeint = Occurrences<PhilosoftExtensions, ^collection, ^element> collection element
+    let inline occurrences (element:^element)(collection:^collection):nativeint = Occurrences<TraitExtensions, ^collection, ^element> collection element
+
+    //TODO: parse
 
     //TODO: peek
+
+    //TODO: postpend
+
+    //TODO: prepend
 
     //TODO: read
 
@@ -133,6 +145,12 @@ module Functions =
     /// </remarks>
     let inline readable (stream:#IRead<_, _>):bool = stream.Readable
 
+    //TODO: remove
+
+    //TODO: removeFirst
+
+    //TODO: removeLast
+
     /// <summary>
     /// Replaces all instances of <paramref name="search"/> with <paramref name="replace"/>.
     /// </summary>
@@ -140,21 +158,21 @@ module Functions =
     /// <param name="search">The element to replace.</param>
     /// <param name="replace">The element to use instead.</param>
     /// <returns>The result of replacing <paramref name="search"/> with <paramref name="replace"/>.</returns>
-    let inline replace (search:^search)(replace:^replace)(collection:^collection):^result = Replace<PhilosoftExtensions, ^collection, ^search, ^replace, ^result> collection search replace
+    let inline replace (search:^search)(replace:^replace)(collection:^collection):^result = Replace<TraitExtensions, ^collection, ^search, ^replace, ^result> collection search replace
 
     /// <summary>
     /// Resize the collection to the specified <paramref name="capacity"/>.
     /// </summary>
     /// <param name="collection">This collection.</param>
     /// <param name="capacity">The new capacity of the collection.</param>
-    let inline resize (capacity:nativeint)(collection:^collection):^result = Resize<PhilosoftExtensions, ^collection, ^result> collection capacity
+    let inline resize (capacity:nativeint)(collection:^collection):^result = Resize<TraitExtensions, ^collection, ^result> collection capacity
     
     /// <summary>
     /// Seeks to the <paramref name="offset"/>.
     /// </summary>
     /// <param name="stream">This stream.</param>
     /// <param name="offset">The offset of <typeparamref name="TElement"/> from the current position to seek to.</param>
-    let inline seek (offset:nativeint)(stream:^stream):^result = Seek<PhilosoftExtensions, ^stream, ^result> stream offset
+    let inline seek (offset:nativeint)(stream:^stream):^result = Seek<TraitExtensions, ^stream, ^result> stream offset
 
     /// <summary>
     /// Can this be seeked?
@@ -170,7 +188,7 @@ module Functions =
     /// <param name="collection">This collection.</param>
     /// <param name="amount">The amount of positions to shift.</param>
     /// <returns>A <typeparamref name="TResult"/> after the elements are shifted.</returns>
-    let inline ( <<< ) (collection:^collection)(amount:^amount):^result = ShiftLeft<PhilosoftExtensions, ^collection, ^amount, ^result> collection amount
+    let inline ( <<< ) (collection:^collection)(amount:nativeint) = ShiftLeft<TraitExtensions, ^collection, ^result> collection amount
 
     /// <summary>
     /// Shifts the collection right by <paramref name="amount"/>.
@@ -178,12 +196,18 @@ module Functions =
     /// <param name="collection">This collection.</param>
     /// <param name="amount">The amount of positions to shift.</param>
     /// <returns>A <typeparamref name="TResult"/> after the elements are shifted.</returns>
-    let inline ( >>> ) (collection:^collection)(amount:^amount):^result = ShiftRight<PhilosoftExtensions, ^collection, ^amount, ^result> collection amount
+    let inline ( >>> ) (collection:^collection)(amount:nativeint) = ShiftRight<TraitExtensions, ^collection, ^result> collection amount
 
     /// <summary>
     /// Shrinks the collection by a computed factor.
     /// </summary>
-    let inline shrink (collection:^collection):^result = Shrink<PhilosoftExtensions, ^collection, ^result> collection
+    let inline shrink (collection:^collection):^result = Shrink<TraitExtensions, ^collection, ^result> collection
+
+    type ISlice<'result> with
+        member this.GetSlice(start:int option, stop:int option):'result =
+            let str = nativeint (defaultArg start 0)
+            let stp = nativeint (defaultArg stop (int this.Count))
+            this.Slice(str, stp - str)
 
     /// <summary>
     /// Writes the <paramref name="elements"/> to the <paramref name="stream"/>.
@@ -193,7 +217,7 @@ module Functions =
     /// <param name="stream">The stream to write to.</param>
     /// <param name="elements">The elements to write.</param>
     /// <returns>A <typeparamref name="TResult"/> instance if successful; otherwise, <see langword="null"/>.</returns>
-    let inline write (elements:^elements)(stream:^stream):^result = Write<PhilosoftExtensions, ^stream, ^elements, ^result> stream elements
+    let inline write (elements:^elements)(stream:^stream):^result = Write<TraitExtensions, ^stream, ^elements, ^result> stream elements
 
     /// <summary>
     /// Can this be written to?

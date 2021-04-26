@@ -4,7 +4,7 @@ using System.Traits;
 using Langly;
 
 namespace System {
-	public static partial class PhilosoftExtensions {
+	public static partial class TraitExtensions {
 		#region Postpend(Collection, TElement)
 		/// <summary>
 		/// Postpends the element onto this object.

@@ -3,7 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Traits;
 
 namespace System {
-	public static partial class PhilosoftExtensions {
+	public static partial class TraitExtensions {
 		/// <summary>
 		/// Creates an array from a <see cref="ISequence{TElement, TEnumerator}"/>.
 		/// </summary>

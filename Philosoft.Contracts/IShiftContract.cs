@@ -58,7 +58,7 @@ namespace System.Traits.Contracts {
 		/// <param name="expected">The expected values the <paramref name="subject"/> contains.</param>
 		/// <param name="subject">The object being tested.</param>
 		public static void Test_Left<TElement, TSubject>([AllowNull] TElement[] expected, [AllowNull] TSubject subject) where TSubject : IShift<TSubject>, IEnumerable<TElement> {
-			subject = PhilosoftExtensions.ShiftLeft(subject);
+			subject = TraitExtensions.ShiftLeft(subject);
 			Validate(expected, subject);
 		}
 
@@ -71,7 +71,7 @@ namespace System.Traits.Contracts {
 		/// <param name="subject">The object being tested.</param>
 		/// <param name="amount">The amount of positions to shift.</param>
 		public static void Test_Left<TElement, TSubject>([AllowNull] TElement[] expected, [AllowNull] TSubject subject, Int32 amount) where TSubject : IShift<TSubject>, IEnumerable<TElement> {
-			subject = PhilosoftExtensions.ShiftLeft(subject, amount);
+			subject = TraitExtensions.ShiftLeft(subject, amount);
 			Validate(expected, subject);
 		}
 
@@ -83,7 +83,7 @@ namespace System.Traits.Contracts {
 		/// <param name="expected">The expected values the <paramref name="subject"/> contains.</param>
 		/// <param name="subject">The object being tested.</param>
 		public static void Test_Right<TElement, TSubject>([AllowNull] TElement[] expected, [AllowNull] TSubject subject) where TSubject : IShift<TSubject>, IEnumerable<TElement> {
-			subject = PhilosoftExtensions.ShiftRight(subject);
+			subject = TraitExtensions.ShiftRight(subject);
 			Validate(expected, subject);
 		}
 
@@ -96,7 +96,7 @@ namespace System.Traits.Contracts {
 		/// <param name="subject">The object being tested.</param>
 		/// <param name="amount">The amount of positions to shift.</param>
 		public static void Test_Right<TElement, TSubject>([AllowNull] TElement[] expected, [AllowNull] TSubject subject, Int32 amount) where TSubject : IShift<TSubject>, IEnumerable<TElement> {
-			subject = PhilosoftExtensions.ShiftRight(subject, amount);
+			subject = TraitExtensions.ShiftRight(subject, amount);
 			Validate(expected, subject);
 		}
 

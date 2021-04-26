@@ -35,7 +35,7 @@ namespace System.Traits.Contracts {
 		/// <param name="search">The element to replace.</param>
 		/// <param name="replace">The element to use instead.</param>
 		public static void Test<TSearch, TReplace, TSubject>([AllowNull] TSearch[] expected, [AllowNull] IReplace<TSearch, TReplace, TSubject> subject, [AllowNull] TSearch search, [AllowNull] TReplace replace) where TSubject : IReplace<TSearch, TReplace, TSubject>, IEnumerable<TSearch> {
-			subject = PhilosoftExtensions.Replace(subject, search, replace);
+			subject = TraitExtensions.Replace(subject, search, replace);
 			Validate(expected, (TSubject)subject);
 		}
 
@@ -49,7 +49,7 @@ namespace System.Traits.Contracts {
 		/// <param name="search">The element to replace.</param>
 		/// <param name="replace">The element to use instead.</param>
 		public static void Test<TElement, TSubject>([AllowNull] TElement[] expected, [AllowNull] IReplace<TElement, TSubject> subject, [AllowNull] TElement search, [AllowNull] TElement replace) where TSubject : IReplace<TElement, TSubject>, IEnumerable<TElement> {
-			subject = PhilosoftExtensions.Replace(subject, search, replace);
+			subject = TraitExtensions.Replace(subject, search, replace);
 			Validate(expected, (TSubject)subject);
 		}
 

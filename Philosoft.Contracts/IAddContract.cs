@@ -40,7 +40,7 @@ namespace System.Traits.Contracts {
 			Boolean opFailed = false;
 			if (values is not null) {
 				foreach (TElement[] item in values) {
-					subject = PhilosoftExtensions.Add(subject, item);
+					subject = TraitExtensions.Add(subject, item);
 					opFailed = subject is null;
 				}
 			}
@@ -59,7 +59,7 @@ namespace System.Traits.Contracts {
 			Boolean opFailed = false;
 			if (values is not null) {
 				foreach (TElement item in values) {
-					subject = PhilosoftExtensions.Add(subject, item);
+					subject = TraitExtensions.Add(subject, item);
 					opFailed = subject is null;
 				}
 			}
@@ -78,7 +78,7 @@ namespace System.Traits.Contracts {
 			Boolean opFailed = false;
 			if (values is not null) {
 				foreach (TElement[] item in values) {
-					subject = PhilosoftExtensions.Add(subject, item.AsMemory());
+					subject = TraitExtensions.Add(subject, item.AsMemory());
 					opFailed = subject is null;
 				}
 			}
@@ -98,7 +98,7 @@ namespace System.Traits.Contracts {
 			if (values is not null) {
 				foreach (TElement[] item in values) {
 					fixed (TElement* itm = item) {
-						subject = PhilosoftExtensions.Add(subject, itm, item.Length);
+						subject = TraitExtensions.Add(subject, itm, item.Length);
 						opFailed = subject is null;
 					}
 				}
@@ -118,7 +118,7 @@ namespace System.Traits.Contracts {
 			Boolean opFailed = false;
 			if (values is not null) {
 				foreach (TElement[] item in values) {
-					subject = PhilosoftExtensions.Add(subject, (ReadOnlyMemory<TElement>)item.AsMemory());
+					subject = TraitExtensions.Add(subject, (ReadOnlyMemory<TElement>)item.AsMemory());
 					opFailed = subject is null;
 				}
 			}
@@ -137,7 +137,7 @@ namespace System.Traits.Contracts {
 			Boolean opFailed = false;
 			if (values is not null) {
 				foreach (TElement[] item in values) {
-					subject = PhilosoftExtensions.Add(subject, (ReadOnlySpan<TElement>)item.AsSpan());
+					subject = TraitExtensions.Add(subject, (ReadOnlySpan<TElement>)item.AsSpan());
 					opFailed = subject is null;
 				}
 			}
@@ -156,7 +156,7 @@ namespace System.Traits.Contracts {
 			Boolean opFailed = false;
 			if (values is not null) {
 				foreach (TElement[] item in values) {
-					subject = PhilosoftExtensions.Add(subject, item.AsSpan());
+					subject = TraitExtensions.Add(subject, item.AsSpan());
 					opFailed = subject is null;
 				}
 			}

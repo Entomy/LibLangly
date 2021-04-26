@@ -3,7 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Traits;
 
 namespace System {
-	public static partial class PhilosoftExtensions {
+	public static partial class TraitExtensions {
 		#region CopyTo(Collection, TElement[])
 		/// <summary>
 		/// Copies all the elements of the current sequence into an array.

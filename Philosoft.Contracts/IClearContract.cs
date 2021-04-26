@@ -25,7 +25,7 @@ namespace System.Traits.Contracts {
 		/// <typeparam name="TSubject">The type of the <paramref name="subject"/>.</typeparam>
 		/// <param name="subject">The object being tested.</param>
 		public static void Test<TElement, TSubject>([AllowNull] TSubject subject) where TSubject : IClear<TSubject>, IEnumerable<TElement> {
-			PhilosoftExtensions.Clear(subject);
+			TraitExtensions.Clear(subject);
 			Validate<TElement, TSubject>(subject);
 		}
 

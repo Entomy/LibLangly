@@ -3,7 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Traits;
 
 namespace System {
-	public static partial class PhilosoftExtensions {
+	public static partial class TraitExtensions {
 		/// <summary>
 		/// Writes the <paramref name="element"/> to the <paramref name="stream"/>.
 		/// </summary>

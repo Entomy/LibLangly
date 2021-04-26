@@ -7,9 +7,9 @@ module internal Bindings =
 
     let inline Contains< ^t, ^a, ^b when (^t or ^a) : (static member Contains : ^a * ^b -> bool)> collection element = ((^t or ^a) : (static member Contains : ^a * ^b -> bool)(collection, element))
 
-    let inline ContainsAny< ^t, ^a, ^b when (^t or ^a) : (static member ContainsAny : ^a * ^b -> bool)> collection elements = ((^t or ^a) : (static member ContainsAny : ^a * ^b -> bool)(collection, elements))
+    let inline ContainsAny< ^t, ^a, ^b when (^t or ^a) : (static member ContainsAny : ^a * ^b array -> bool)> collection elements = ((^t or ^a) : (static member ContainsAny : ^a * ^b array -> bool)(collection, elements))
 
-    let inline ContainsAll< ^t, ^a, ^b when (^t or ^a) : (static member ContainsAll : ^a * ^b -> bool)> collection elements = ((^t or ^a) : (static member ContainsAll : ^a * ^b -> bool)(collection, elements))
+    let inline ContainsAll< ^t, ^a, ^b when (^t or ^a) : (static member ContainsAll : ^a * ^b array -> bool)> collection elements = ((^t or ^a) : (static member ContainsAll : ^a * ^b array -> bool)(collection, elements))
 
     let inline Fold< ^t, ^a, ^b, ^c when (^t or ^a) : (static member Fold : ^a * ^b * ^c -> ^c)> collection func identity = ((^t or ^a) : (static member Fold : ^a * ^b * ^c -> ^c)(collection, func, identity))
 
@@ -29,9 +29,9 @@ module internal Bindings =
 
     let inline Seek< ^t, ^a, ^b when (^t or ^a) : (static member Seek : ^a * nativeint -> ^b)> collection offset = ((^t or ^a) : (static member Seek : ^a * nativeint -> ^b)(collection, offset))
 
-    let inline ShiftLeft< ^t, ^a, ^b, ^c when (^t or ^a) : (static member ShiftLeft : ^a * ^b -> ^c)> collection amount = ((^t or ^a) : (static member ShiftLeft : ^a * ^b -> ^c)(collection, amount))
+    let inline ShiftLeft< ^t, ^a, ^b when (^t or ^a) : (static member ShiftLeft : ^a * nativeint -> ^b)> collection amount = ((^t or ^a) : (static member ShiftLeft : ^a * nativeint -> ^b)(collection, amount))
 
-    let inline ShiftRight< ^t, ^a, ^b, ^c when (^t or ^a) : (static member ShiftRight : ^a * ^b -> ^c)> collection amount = ((^t or ^a) : (static member ShiftRight : ^a * ^b -> ^c)(collection, amount))
+    let inline ShiftRight< ^t, ^a, ^b when (^t or ^a) : (static member ShiftRight : ^a * nativeint -> ^b)> collection amount = ((^t or ^a) : (static member ShiftRight : ^a * nativeint -> ^b)(collection, amount))
 
     let inline Shrink< ^t, ^a, ^b when (^t or ^a) : (static member Shrink : ^a -> ^b)> collection = ((^t or ^a) : (static member Shrink : ^a -> ^b)(collection))
 

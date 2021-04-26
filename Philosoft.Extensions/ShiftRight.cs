@@ -3,7 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Traits;
 
 namespace System {
-	public static partial class PhilosoftExtensions {
+	public static partial class TraitExtensions {
 		#region ShiftRight(Collection)
 		/// <summary>
 		/// Shifts the <paramref name="collection"/> right one position.

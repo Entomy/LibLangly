@@ -3,7 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Traits;
 
 namespace System {
-	public static partial class PhilosoftExtensions {
+	public static partial class TraitExtensions {
 		#region Occurrences(Collection, TElement)
 		/// <summary>
 		/// Count all occurrences of <paramref name="element"/> in the collection.
@@ -74,93 +74,6 @@ namespace System {
 		/// <param name="element">The element to count.</param>
 		/// <returns>The amount of occurrences found.</returns>
 		public static nint Occurrences<TElement>(this ReadOnlySpan<TElement> collection, [AllowNull] TElement element) {
-			if (collection.Length == 0) {
-				return 0;
-			} else if (element is null) {
-				return NullOccurrences(collection);
-			}
-			nint count = 0;
-			foreach (TElement item in collection) {
-				if (item is null && element is null) {
-					count++;
-				} else if (element?.Equals(item) ?? false) {
-					count++;
-				}
-			}
-			return count;
-		}
-		#endregion
-
-		#region Occurrences(Collection, IEquals<TElement>)
-		/// <summary>
-		/// Count all occurrences of <paramref name="element"/> in the collection.
-		/// </summary>
-		/// <typeparam name="TElement">The type of elements in the collection.</typeparam>
-		/// <typeparam name="TEnumerator">The type of the enumerator of the collection.</typeparam>
-		/// <param name="collection">This collection.</param>
-		/// <param name="element">The element to count.</param>
-		/// <returns>The amount of occurrences found.</returns>
-		public static nint Occurrences<TElement, TEnumerator>([AllowNull] this ISequence<TElement, TEnumerator> collection, [AllowNull] IEquatable<TElement> element) where TEnumerator : IEnumerator<TElement> {
-			if (collection is null) {
-				return 0;
-			} else if (element is null) {
-				return NullOccurrences(collection);
-			}
-			return collection.Occurrences(element);
-		}
-
-		/// <summary>
-		/// Count all occurrences of <paramref name="element"/> in the collection.
-		/// </summary>
-		/// <param name="collection">This collection.</param>
-		/// <param name="element">The element to count.</param>
-		/// <returns>The amount of occurrences found.</returns>
-		public static nint Occurrences([AllowNull] this String collection, [AllowNull] IEquatable<Char> element) => Occurrences(collection.AsMemory(), element);
-
-		/// <summary>
-		/// Count all occurrences of <paramref name="element"/> in the collection.
-		/// </summary>
-		/// <typeparam name="TElement">The type of elements in the collection.</typeparam>
-		/// <param name="collection">This collection.</param>
-		/// <param name="element">The element to count.</param>
-		/// <returns>The amount of occurrences found.</returns>
-		public static nint Occurrences<TElement>([AllowNull] this TElement[] collection, [AllowNull] IEquatable<TElement> element) => Occurrences(collection.AsMemory(), element);
-
-		/// <summary>
-		/// Count all occurrences of <paramref name="element"/> in the collection.
-		/// </summary>
-		/// <typeparam name="TElement">The type of elements in the collection.</typeparam>
-		/// <param name="collection">This collection.</param>
-		/// <param name="element">The element to count.</param>
-		/// <returns>The amount of occurrences found.</returns>
-		public static nint Occurrences<TElement>(this Memory<TElement> collection, [AllowNull] IEquatable<TElement> element) => Occurrences(collection.Span, element);
-
-		/// <summary>
-		/// Count all occurrences of <paramref name="element"/> in the collection.
-		/// </summary>
-		/// <typeparam name="TElement">The type of elements in the collection.</typeparam>
-		/// <param name="collection">This collection.</param>
-		/// <param name="element">The element to count.</param>
-		/// <returns>The amount of occurrences found.</returns>
-		public static nint Occurrences<TElement>(this ReadOnlyMemory<TElement> collection, [AllowNull] IEquatable<TElement> element) => Occurrences(collection.Span, element);
-
-		/// <summary>
-		/// Count all occurrences of <paramref name="element"/> in the collection.
-		/// </summary>
-		/// <typeparam name="TElement">The type of elements in the collection.</typeparam>
-		/// <param name="collection">This collection.</param>
-		/// <param name="element">The element to count.</param>
-		/// <returns>The amount of occurrences found.</returns>
-		public static nint Occurrences<TElement>(this Span<TElement> collection, [AllowNull] IEquatable<TElement> element) => Occurrences((ReadOnlySpan<TElement>)collection, element);
-
-		/// <summary>
-		/// Count all occurrences of <paramref name="element"/> in the collection.
-		/// </summary>
-		/// <typeparam name="TElement">The type of elements in the collection.</typeparam>
-		/// <param name="collection">This collection.</param>
-		/// <param name="element">The element to count.</param>
-		/// <returns>The amount of occurrences found.</returns>
-		public static nint Occurrences<TElement>(this ReadOnlySpan<TElement> collection, [AllowNull] IEquatable<TElement> element) {
 			if (collection.Length == 0) {
 				return 0;
 			} else if (element is null) {

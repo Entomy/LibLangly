@@ -3,9 +3,9 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace System {
 	/// <summary>
-	/// Provides extensions for Philosoft Traits.
+	/// Provides extensions for <see cref="System.Traits"/>.
 	/// </summary>
-	public static partial class PhilosoftExtensions {
+	public static partial class TraitExtensions {
 		/// <summary>
 		/// Phi, the golden ratio.
 		/// </summary>

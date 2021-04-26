@@ -53,7 +53,7 @@ namespace System.Traits.Contracts {
 		/// <param name="expected">The expected values the <paramref name="subject"/> contains.</param>
 		/// <param name="subject">The object being tested.</param>
 		public static void Test<TElement, TSlice>([AllowNull] TElement[] expected, [AllowNull] ISlice<TSlice> subject) where TSlice : IEnumerable<TElement> {
-			TSlice slice = PhilosoftExtensions.Slice(subject);
+			TSlice slice = TraitExtensions.Slice(subject);
 			Validate(expected, slice);
 		}
 
@@ -64,7 +64,7 @@ namespace System.Traits.Contracts {
 		/// <param name="expected">The expected values the <paramref name="subject"/> contains.</param>
 		/// <param name="subject">The object being tested.</param>
 		public static void Test<TElement>([AllowNull] TElement[] expected, [AllowNull] ISlice<Memory<TElement>> subject) {
-			Memory<TElement> slice = PhilosoftExtensions.Slice(subject);
+			Memory<TElement> slice = TraitExtensions.Slice(subject);
 			Validate(expected, slice);
 		}
 
@@ -76,7 +76,7 @@ namespace System.Traits.Contracts {
 		/// <param name="expected">The expected values the <paramref name="subject"/> contains.</param>
 		/// <param name="subject">The object being tested.</param>
 		public static void Test<TElement, TSubject>([AllowNull] TElement[] expected, [AllowNull] ISlice<ReadOnlyMemory<TElement>> subject) {
-			ReadOnlyMemory<TElement> slice = PhilosoftExtensions.Slice(subject);
+			ReadOnlyMemory<TElement> slice = TraitExtensions.Slice(subject);
 			Validate(expected, slice);
 		}
 
@@ -89,7 +89,7 @@ namespace System.Traits.Contracts {
 		/// <param name="subject">The object being tested.</param>
 		/// <param name="start">The starting index of the slice.</param>
 		public static void Test<TElement, TSlice>([AllowNull] TElement[] expected, [AllowNull] ISlice<TSlice> subject, Int32 start) where TSlice : IEnumerable<TElement> {
-			TSlice slice = PhilosoftExtensions.Slice(subject, start);
+			TSlice slice = TraitExtensions.Slice(subject, start);
 			Validate(expected, slice);
 		}
 
@@ -101,7 +101,7 @@ namespace System.Traits.Contracts {
 		/// <param name="subject">The object being tested.</param>
 		/// <param name="start">The starting index of the slice.</param>
 		public static void Test<TElement>([AllowNull] TElement[] expected, [AllowNull] ISlice<Memory<TElement>> subject, Int32 start) {
-			Memory<TElement> slice = PhilosoftExtensions.Slice(subject, start);
+			Memory<TElement> slice = TraitExtensions.Slice(subject, start);
 			Validate(expected, slice);
 		}
 
@@ -114,7 +114,7 @@ namespace System.Traits.Contracts {
 		/// <param name="subject">The object being tested.</param>
 		/// <param name="start">The starting index of the slice.</param>
 		public static void Test<TElement, TSubject>([AllowNull] TElement[] expected, [AllowNull] ISlice<ReadOnlyMemory<TElement>> subject, Int32 start) {
-			ReadOnlyMemory<TElement> slice = PhilosoftExtensions.Slice(subject, start);
+			ReadOnlyMemory<TElement> slice = TraitExtensions.Slice(subject, start);
 			Validate(expected, slice);
 		}
 
@@ -128,7 +128,7 @@ namespace System.Traits.Contracts {
 		/// <param name="start">The starting index of the slice.</param>
 		/// <param name="length">The length of the slice.</param>
 		public static void Test<TElement, TSlice>([AllowNull] TElement[] expected, [AllowNull] ISlice<TSlice> subject, Int32 start, Int32 length) where TSlice : IEnumerable<TElement> {
-			TSlice slice = PhilosoftExtensions.Slice(subject, start, length);
+			TSlice slice = TraitExtensions.Slice(subject, start, length);
 			Validate(expected, slice);
 		}
 
@@ -141,7 +141,7 @@ namespace System.Traits.Contracts {
 		/// <param name="start">The starting index of the slice.</param>
 		/// <param name="length">The length of the slice.</param>
 		public static void Test<TElement>([AllowNull] TElement[] expected, [AllowNull] ISlice<Memory<TElement>> subject, Int32 start, Int32 length) {
-			Memory<TElement> slice = PhilosoftExtensions.Slice(subject, start, length);
+			Memory<TElement> slice = TraitExtensions.Slice(subject, start, length);
 			Validate(expected, slice);
 		}
 
@@ -155,7 +155,7 @@ namespace System.Traits.Contracts {
 		/// <param name="start">The starting index of the slice.</param>
 		/// <param name="length">The length of the slice.</param>
 		public static void Test<TElement, TSubject>([AllowNull] TElement[] expected, [AllowNull] ISlice<ReadOnlyMemory<TElement>> subject, Int32 start, Int32 length) {
-			ReadOnlyMemory<TElement> slice = PhilosoftExtensions.Slice(subject, start, length);
+			ReadOnlyMemory<TElement> slice = TraitExtensions.Slice(subject, start, length);
 			Validate(expected, slice);
 		}
 

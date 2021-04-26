@@ -2,7 +2,7 @@
 using System.Traits;
 
 namespace System {
-	public static partial class PhilosoftExtensions {
+	public static partial class TraitExtensions {
 		/// <summary>
 		/// Clears the <paramref name="collection"/>.
 		/// </summary>

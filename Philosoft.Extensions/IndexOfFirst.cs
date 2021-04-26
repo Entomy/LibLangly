@@ -3,7 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Traits;
 
 namespace System {
-	public static partial class PhilosoftExtensions {
+	public static partial class TraitExtensions {
 		#region IndexOfFirst(Collection, TElement)
 		/// <summary>
 		/// Searches for the specified <paramref name="element"/> and returns the index of its first occurrence.
@@ -99,113 +99,6 @@ namespace System {
 		/// <param name="element">The item to locate in the collection.</param>
 		/// <returns>The index of the first occurrence of <paramref name="element"/> in <paramref name="collection"/>, if found; otherwise, <c>-1</c>.</returns>
 		public static nint IndexOfFirst<TElement>(this ReadOnlySpan<TElement> collection, [AllowNull] TElement element) {
-			if (element is null) {
-				return IndexOfFirstNull(collection);
-			}
-			for (Int32 i = 0; i < collection.Length; i++) {
-				if (element.Equals(collection[i])) {
-					return i;
-				}
-			}
-			return -1;
-		}
-		#endregion
-
-		#region IndexOfFirst(Collection, IEquatable<TElement>)
-		/// <summary>
-		/// Searches for the specified <paramref name="element"/> and returns the index of its first occurrence.
-		/// </summary>
-		/// <typeparam name="TElement">The type of the elements of the collection.</typeparam>
-		/// <param name="collection">The collection to search.</param>
-		/// <param name="element">The item to locate in the collection.</param>
-		/// <returns>The index of the first occurrence of <paramref name="element"/> in <paramref name="collection"/>, if found; otherwise, <c>-1</c>.</returns>
-		public static nint IndexOfFirst<TElement>([AllowNull] this IIndexReadOnly<TElement> collection, [AllowNull] IEquatable<TElement> element) {
-			if (collection is null) {
-				return -1;
-			} else if (element is null) {
-				return IndexOfFirstNull(collection);
-			}
-			for (nint i = 0; i < collection.Count; i++) {
-				if (element.Equals(collection[i])) {
-					return i;
-				}
-			}
-			return -1;
-		}
-
-		/// <summary>
-		/// Searches for the specified <paramref name="element"/> and returns the index of its first occurrence.
-		/// </summary>
-		/// <typeparam name="TElement">The type of the elements of the collection.</typeparam>
-		/// <param name="collection">The collection to search.</param>
-		/// <param name="element">The item to locate in the collection.</param>
-		/// <returns>The index of the first occurrence of <paramref name="element"/> in <paramref name="collection"/>, if found; otherwise, <c>-1</c>.</returns>
-		public static nint IndexOfFirst<TElement>([AllowNull] this IIndexRefReadOnly<TElement> collection, [AllowNull] IEquatable<TElement> element) {
-			if (collection is null) {
-				return -1;
-			} else if (element is null) {
-				return IndexOfFirstNull(collection);
-			}
-			for (nint i = 0; i < collection.Count; i++) {
-				if (element.Equals(collection[i])) {
-					return i;
-				}
-			}
-			return -1;
-		}
-
-		/// <summary>
-		/// Searches for the specified <paramref name="element"/> and returns the index of its first occurrence.
-		/// </summary>
-		/// <param name="collection">The collection to search.</param>
-		/// <param name="element">The item to locate in the collection.</param>
-		/// <returns>The index of the first occurrence of <paramref name="element"/> in <paramref name="collection"/>, if found; otherwise, <c>-1</c>.</returns>
-		public static nint IndexOfFirst([AllowNull] this String collection, [AllowNull] IEquatable<Char> element) => collection is not null ? IndexOfFirst(collection.AsSpan(), element) : -1;
-
-		/// <summary>
-		/// Searches for the specified <paramref name="element"/> and returns the index of its first occurrence.
-		/// </summary>
-		/// <typeparam name="TElement">The type of the elements of the collection.</typeparam>
-		/// <param name="collection">The collection to search.</param>
-		/// <param name="element">The item to locate in the collection.</param>
-		/// <returns>The index of the first occurrence of <paramref name="element"/> in <paramref name="collection"/>, if found; otherwise, <c>-1</c>.</returns>
-		public static nint IndexOfFirst<TElement>([AllowNull] this TElement[] collection, [AllowNull] IEquatable<TElement> element) => collection is not null ? IndexOfFirst(collection.AsSpan(), element) : -1;
-
-		/// <summary>
-		/// Searches for the specified <paramref name="element"/> and returns the index of its first occurrence.
-		/// </summary>
-		/// <typeparam name="TElement">The type of the elements of the collection.</typeparam>
-		/// <param name="collection">The collection to search.</param>
-		/// <param name="element">The item to locate in the collection.</param>
-		/// <returns>The index of the first occurrence of <paramref name="element"/> in <paramref name="collection"/>, if found; otherwise, <c>-1</c>.</returns>
-		public static nint IndexOfFirst<TElement>(this Memory<TElement> collection, [AllowNull] IEquatable<TElement> element) => IndexOfFirst(collection.Span, element);
-
-		/// <summary>
-		/// Searches for the specified <paramref name="element"/> and returns the index of its first occurrence.
-		/// </summary>
-		/// <typeparam name="TElement">The type of the elements of the collection.</typeparam>
-		/// <param name="collection">The collection to search.</param>
-		/// <param name="element">The item to locate in the collection.</param>
-		/// <returns>The index of the first occurrence of <paramref name="element"/> in <paramref name="collection"/>, if found; otherwise, <c>-1</c>.</returns>
-		public static nint IndexOfFirst<TElement>(this ReadOnlyMemory<TElement> collection, [AllowNull] IEquatable<TElement> element) => IndexOfFirst(collection.Span, element);
-
-		/// <summary>
-		/// Searches for the specified <paramref name="element"/> and returns the index of its first occurrence.
-		/// </summary>
-		/// <typeparam name="TElement">The type of the elements of the collection.</typeparam>
-		/// <param name="collection">The collection to search.</param>
-		/// <param name="element">The item to locate in the collection.</param>
-		/// <returns>The index of the first occurrence of <paramref name="element"/> in <paramref name="collection"/>, if found; otherwise, <c>-1</c>.</returns>
-		public static nint IndexOfFirst<TElement>(this Span<TElement> collection, [AllowNull] IEquatable<TElement> element) => IndexOfFirst((ReadOnlySpan<TElement>)collection, element);
-
-		/// <summary>
-		/// Searches for the specified <paramref name="element"/> and returns the index of its first occurrence.
-		/// </summary>
-		/// <typeparam name="TElement">The type of the elements of the collection.</typeparam>
-		/// <param name="collection">The collection to search.</param>
-		/// <param name="element">The item to locate in the collection.</param>
-		/// <returns>The index of the first occurrence of <paramref name="element"/> in <paramref name="collection"/>, if found; otherwise, <c>-1</c>.</returns>
-		public static nint IndexOfFirst<TElement>(this ReadOnlySpan<TElement> collection, [AllowNull] IEquatable<TElement> element) {
 			if (element is null) {
 				return IndexOfFirstNull(collection);
 			}

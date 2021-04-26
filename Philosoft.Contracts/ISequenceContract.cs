@@ -54,7 +54,7 @@ namespace System.Traits.Contracts {
 		/// <param name="subject">The object being tested.</param>
 		/// <param name="func">The <see cref="Func{T1, T2, TResult}"/> to use for the fold.</param>
 		/// <param name="identity">The identity of the fold.</param>
-		public static void Test_Fold<TEnumerator>(Int32 expected, [AllowNull] ISequence<Int32, TEnumerator> subject, [AllowNull] Func<Int32, Int32, Int32> func, Int32 identity) where TEnumerator : IEnumerator<Int32> => Assert.Equals(expected, PhilosoftExtensions.Fold(subject, func, identity));
+		public static void Test_Fold<TEnumerator>(Int32 expected, [AllowNull] ISequence<Int32, TEnumerator> subject, [AllowNull] Func<Int32, Int32, Int32> func, Int32 identity) where TEnumerator : IEnumerator<Int32> => Assert.Equals(expected, TraitExtensions.Fold(subject, func, identity));
 
 		/// <summary>
 		/// Tests <see cref="ISequence{TElement, TEnumerator}.Occurrences(TElement)"/>.
@@ -64,7 +64,7 @@ namespace System.Traits.Contracts {
 		/// <param name="expected">The expected amount of occurrences.</param>
 		/// <param name="subject">The object being tested.</param>
 		/// <param name="element">The element to count.</param>
-		public static void Test_Occurrences<TElement, TEnumerator>(Int32 expected, [AllowNull] ISequence<TElement, TEnumerator> subject, [AllowNull] TElement element) where TEnumerator : IEnumerator<TElement> => Assert.Equals(expected, PhilosoftExtensions.Occurrences(subject, element));
+		public static void Test_Occurrences<TElement, TEnumerator>(Int32 expected, [AllowNull] ISequence<TElement, TEnumerator> subject, [AllowNull] TElement element) where TEnumerator : IEnumerator<TElement> => Assert.Equals(expected, TraitExtensions.Occurrences(subject, element));
 
 		/// <summary>
 		/// Tests <see cref="ISequence{TElement, TEnumerator}.Occurrences(Predicate{TElement})"/>.
@@ -73,7 +73,7 @@ namespace System.Traits.Contracts {
 		/// <param name="expected">The expected amount of occurrences.</param>
 		/// <param name="subject">The object being tested.</param>
 		/// <param name="predicate">The predicate describing elements to count.</param>
-		public static void Test_Occurrences<TEnumerator>(Int32 expected, [AllowNull] ISequence<Int32, TEnumerator> subject, [AllowNull] Predicate<Int32> predicate) where TEnumerator : IEnumerator<Int32> => Assert.Equals(expected, PhilosoftExtensions.Occurrences(subject, predicate));
+		public static void Test_Occurrences<TEnumerator>(Int32 expected, [AllowNull] ISequence<Int32, TEnumerator> subject, [AllowNull] Predicate<Int32> predicate) where TEnumerator : IEnumerator<Int32> => Assert.Equals(expected, TraitExtensions.Occurrences(subject, predicate));
 
 		/// <summary>
 		/// Tests <see cref="ISequence{TElement, TEnumerator}.ToArray()"/>.
@@ -82,7 +82,7 @@ namespace System.Traits.Contracts {
 		/// <typeparam name="TEnumerator">The type of the enumerator.</typeparam>
 		/// <param name="expected">The expected array.</param>
 		/// <param name="subject">The object being tested.</param>
-		public static void Test_ToArray<TElement, TEnumerator>([AllowNull] TElement[] expected, [AllowNull] ISequence<TElement, TEnumerator> subject) where TEnumerator : IEnumerator<TElement> => Assert.Equals(expected, PhilosoftExtensions.ToArray(subject));
+		public static void Test_ToArray<TElement, TEnumerator>([AllowNull] TElement[] expected, [AllowNull] ISequence<TElement, TEnumerator> subject) where TEnumerator : IEnumerator<TElement> => Assert.Equals(expected, TraitExtensions.ToArray(subject));
 
 		/// <summary>
 		/// Tests <see cref="ISequence{TElement, TEnumerator}.ToString(nint)"/>.

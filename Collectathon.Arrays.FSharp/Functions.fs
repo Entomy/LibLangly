@@ -15,17 +15,17 @@ type dynamic<'t> = DynamicArray<'t>
 
 [<AutoOpen>]
 module Functions =
-    [<assembly: CLSCompliant(true)>]
-    [<assembly: ComVisible(true)>]
+    [<assembly: CLSCompliant(false)>]
+    [<assembly: ComVisible(false)>]
     [<assembly: Guid("577A3143-08EC-4491-894D-88CA0341EC9D")>]
     do ()
     
     /// <summary>
     /// Converts the array to a bounded array.
     /// </summary>
-    let bounded (array:'t array) = BoundedArray<'t>.op_Implicit(array)
+    let inline bounded<'t> (array:'t array) = BoundedArray<'t>.op_Implicit(array)
 
     /// <summary>
     /// Converts the array to a dynamic array.
     /// </summary>
-    let dynamic (array:'t array) = DynamicArray<'t>.op_Implicit(array)
+    let inline dynamic<'t> (array:'t array) = DynamicArray<'t>.op_Implicit(array)
