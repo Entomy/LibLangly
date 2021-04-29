@@ -43,14 +43,15 @@ namespace Collectathon.Arrays {
 		/// Converts the <paramref name="array"/> to a <see cref="DynamicArray{TElement}"/>.
 		/// </summary>
 		/// <param name="array">The <see cref="Array"/> to convert.</param>
-		[return: NotNull]
-		public static implicit operator DynamicArray<TElement>([AllowNull] TElement[] array) => array is not null ? new(array) : new();
+		[return: MaybeNull, NotNullIfNotNull("array")]
+		public static implicit operator DynamicArray<TElement>([AllowNull] TElement[] array) => array is not null ? new(array) : null;
 
 		/// <inheritdoc/>
 		[return: NotNull]
 		DynamicArray<TElement> IResize<DynamicArray<TElement>>.Resize(nint capacity) {
 			TElement[] newBuffer = new TElement[capacity];
-			Array.Copy(Memory, newBuffer, (Int32)Count);
+			Memory.Slice(0, capacity > Capacity ? Capacity : capacity).CopyTo(newBuffer);
+			Count = Count < capacity ? Count : capacity;
 			Memory = newBuffer;
 			return this;
 		}
@@ -70,11 +71,29 @@ namespace Collectathon.Arrays {
 
 		/// <inheritdoc/>
 		[return: MaybeNull]
+		protected override DynamicArray<TElement> Postpend(ReadOnlyMemory<TElement> elements) {
+			if (Count + elements.Length >= Capacity) {
+				((IResize<DynamicArray<TElement>>)this).Resize(Capacity + elements.Length);
+			}
+			return base.Postpend(elements);
+		}
+
+		/// <inheritdoc/>
+		[return: MaybeNull]
 		protected override DynamicArray<TElement> Prepend([AllowNull] TElement element) {
 			if (Count == Capacity) {
 				((IResize<DynamicArray<TElement>>)this).Grow();
 			}
 			return base.Prepend(element);
+		}
+
+		/// <inheritdoc/>
+		[return: MaybeNull]
+		protected override DynamicArray<TElement> Prepend(ReadOnlyMemory<TElement> elements) {
+			if (Count + elements.Length >= Capacity) {
+				((IResize<DynamicArray<TElement>>)this).Resize(Capacity + elements.Length);
+			}
+			return base.Prepend(elements);
 		}
 	}
 }

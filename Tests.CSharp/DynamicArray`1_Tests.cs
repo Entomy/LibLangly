@@ -5,7 +5,7 @@ using System.Traits.Contracts;
 using Xunit;
 
 namespace Langly {
-	public class DynamicArray1_Tests : IAddContract<xUnit>, IClearContract<xUnit>, ISequenceContract<xUnit>, IShiftContract<xUnit>, ISliceContract<xUnit> {
+	public class DynamicArray1_Tests : IAddContract<xUnit>, IClearContract<xUnit>, IPostpendContract<xUnit>, IPrependContract<xUnit>, IReplaceContract<xUnit>, IResizeContract<xUnit>, ISequenceContract<xUnit>, IShiftContract<xUnit>, ISliceContract<xUnit> {
 		/// <inheritdoc/>
 		[Theory]
 		[MemberData(nameof(IAddContract<xUnit>.Add_Array_Data), MemberType = typeof(IAddContract<xUnit>))]
@@ -94,6 +94,14 @@ namespace Langly {
 
 		/// <inheritdoc/>
 		[Theory]
+		[MemberData(nameof(IResizeContract<xUnit>.Grow_Data), MemberType = typeof(IResizeContract<xUnit>))]
+		public void Grow<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial) {
+			DynamicArray<TElement> array = initial is not null ? new DynamicArray<TElement>(initial) : null;
+			IResizeContract<xUnit>.Test_Grow(expected, array);
+		}
+
+		/// <inheritdoc/>
+		[Theory]
 		[MemberData(nameof(ISequenceContract<xUnit>.Occurrences_Element_Data), MemberType = typeof(ISequenceContract<xUnit>))]
 		public void Occurrences_Element<TElement>(Int32 expected, [AllowNull] TElement[] values, [AllowNull] TElement element) {
 			DynamicArray<TElement> array = values is not null ? new DynamicArray<TElement>(values) : null;
@@ -114,6 +122,88 @@ namespace Langly {
 		}
 
 		/// <inheritdoc/>
+		[Theory]
+		[MemberData(nameof(IPostpendContract<xUnit>.Postpend_Array_Data), MemberType = typeof(IPostpendContract<xUnit>))]
+		public void Postpend_Array<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values) {
+			DynamicArray<TElement> array = initial is not null ? new DynamicArray<TElement>(initial) : null;
+			IPostpendContract<xUnit>.Test_Array(expected, array, values);
+		}
+
+		/// <inheritdoc/>
+		[Theory]
+		[MemberData(nameof(IPostpendContract<xUnit>.Postpend_Element_Data), MemberType = typeof(IPostpendContract<xUnit>))]
+		public void Postpend_Element<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[] values) {
+			DynamicArray<TElement> array = initial is not null ? new DynamicArray<TElement>(initial) : null;
+			IPostpendContract<xUnit>.Test_Element(expected, array, values);
+		}
+
+		/// <inheritdoc/>
+		[Theory]
+		[MemberData(nameof(IPostpendContract<xUnit>.Postpend_Array_Data), MemberType = typeof(IPostpendContract<xUnit>))]
+		public void Postpend_Memory<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values) {
+			DynamicArray<TElement> array = initial is not null ? new DynamicArray<TElement>(initial) : null;
+			IPostpendContract<xUnit>.Test_Memory(expected, array, values);
+		}
+
+		/// <inheritdoc/>
+		public void Postpend_Pointer<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values) => throw new NotImplementedException();
+
+		/// <inheritdoc/>
+		[Theory]
+		[MemberData(nameof(IPostpendContract<xUnit>.Postpend_Array_Data), MemberType = typeof(IPostpendContract<xUnit>))]
+		public void Postpend_ReadOnlyMemory<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values) {
+			DynamicArray<TElement> array = initial is not null ? new DynamicArray<TElement>(initial) : null;
+			IPostpendContract<xUnit>.Test_ReadOnlyMemory(expected, array, values);
+		}
+
+		/// <inheritdoc/>
+		public void Postpend_ReadOnlySpan<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values) => throw new NotImplementedException();
+
+		/// <inheritdoc/>
+		public void Postpend_Span<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values) => throw new NotImplementedException();
+
+		/// <inheritdoc/>
+		[Theory]
+		[MemberData(nameof(IPrependContract<xUnit>.Prepend_Array_Data), MemberType = typeof(IPrependContract<xUnit>))]
+		public void Prepend_Array<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values) {
+			DynamicArray<TElement> array = initial is not null ? new DynamicArray<TElement>(initial) : null;
+			IPrependContract<xUnit>.Test_ReadOnlyMemory(expected, array, values);
+		}
+
+		/// <inheritdoc/>
+		[Theory]
+		[MemberData(nameof(IPrependContract<xUnit>.Prepend_Element_Data), MemberType = typeof(IPrependContract<xUnit>))]
+		public void Prepend_Element<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[] values) {
+			DynamicArray<TElement> array = initial is not null ? new DynamicArray<TElement>(initial) : null;
+			IPrependContract<xUnit>.Test_Element(expected, array, values);
+		}
+
+		/// <inheritdoc/>
+		[Theory]
+		[MemberData(nameof(IPrependContract<xUnit>.Prepend_Array_Data), MemberType = typeof(IPrependContract<xUnit>))]
+		public void Prepend_Memory<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values) {
+			DynamicArray<TElement> array = initial is not null ? new DynamicArray<TElement>(initial) : null;
+			IPrependContract<xUnit>.Test_Memory(expected, array, values);
+		}
+
+		/// <inheritdoc/>
+		public void Prepend_Pointer<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values) => throw new NotImplementedException();
+
+		/// <inheritdoc/>
+		[Theory]
+		[MemberData(nameof(IPrependContract<xUnit>.Prepend_Array_Data), MemberType = typeof(IPrependContract<xUnit>))]
+		public void Prepend_ReadOnlyMemory<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values) {
+			DynamicArray<TElement> array = initial is not null ? new DynamicArray<TElement>(initial) : null;
+			IPrependContract<xUnit>.Test_ReadOnlyMemory(expected, array, values);
+		}
+
+		/// <inheritdoc/>
+		public void Prepend_ReadOnlySpan<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values) => throw new NotImplementedException();
+
+		/// <inheritdoc/>
+		public void Prepend_Span<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values) => throw new NotImplementedException();
+
+		/// <inheritdoc/>
 		public void Replace_Complex<TSearch, TReplace>([AllowNull] TSearch[] expected, [AllowNull] TSearch[] initial, [AllowNull] TSearch search, [AllowNull] TReplace replace) => throw new NotImplementedException();
 
 		/// <inheritdoc/>
@@ -122,6 +212,14 @@ namespace Langly {
 		public void Replace_Simple<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement search, [AllowNull] TElement replace) {
 			DynamicArray<TElement> array = initial is not null ? new DynamicArray<TElement>(initial) : null;
 			IReplaceContract<xUnit>.Test(expected, array, search, replace);
+		}
+
+		/// <inheritdoc/>
+		[Theory]
+		[MemberData(nameof(IResizeContract<xUnit>.Resize_Data), MemberType = typeof(IResizeContract<xUnit>))]
+		public void Resize<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, Int32 capacity) {
+			DynamicArray<TElement> array = initial is not null ? new DynamicArray<TElement>(initial) : null;
+			IResizeContract<xUnit>.Test_Resize(expected, array, capacity);
 		}
 
 		/// <inheritdoc/>
@@ -170,6 +268,14 @@ namespace Langly {
 		public void ShiftRightOp<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, Int32 amount) {
 			DynamicArray<TElement> array = initial is not null ? new DynamicArray<TElement>(initial) : null;
 			IShiftContract<xUnit>.Validate(expected, array >> amount);
+		}
+
+		/// <inheritdoc/>
+		[Theory]
+		[MemberData(nameof(IResizeContract<xUnit>.Shrink_Data), MemberType = typeof(IResizeContract<xUnit>))]
+		public void Shrink<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial) {
+			DynamicArray<TElement> array = initial is not null ? new DynamicArray<TElement>(initial) : null;
+			IResizeContract<xUnit>.Test_Shrink(expected, array);
 		}
 
 		/// <inheritdoc/>

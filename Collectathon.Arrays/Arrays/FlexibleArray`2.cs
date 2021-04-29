@@ -11,7 +11,7 @@ namespace Collectathon.Arrays {
 	/// </summary>
 	/// <typeparam name="TElement">The type of the elements in the array.</typeparam>
 	/// <typeparam name="TSelf">The implementing type; itself.</typeparam>
-	[DebuggerDisplay("{ToString(5)},nq")]
+	[DebuggerDisplay("{ToString(5),nq}")]
 	public abstract partial class FlexibleArray<TElement, TSelf> :
 		IAdd<TElement, TSelf>,
 		ICapacity,
@@ -170,7 +170,15 @@ namespace Collectathon.Arrays {
 
 		/// <inheritdoc/>
 		[return: MaybeNull]
+		TSelf IPostpend<TElement, TSelf>.Postpend(ReadOnlyMemory<TElement> elements) => Postpend(elements);
+
+		/// <inheritdoc/>
+		[return: MaybeNull]
 		TSelf IPrepend<TElement, TSelf>.Prepend([AllowNull] TElement element) => Prepend(element);
+
+		/// <inheritdoc/>
+		[return: MaybeNull]
+		TSelf IPrepend<TElement, TSelf>.Prepend(ReadOnlyMemory<TElement> elements) => Prepend(elements);
 
 		/// <inheritdoc/>
 		[return: NotNull]
@@ -262,7 +270,19 @@ namespace Collectathon.Arrays {
 		/// <returns>If the postpend occurred successfully, returns a <typeparamref name="TSelf"/> containing the original and postpended elements; otherwise, <see langword="null"/>.</returns>
 		[return: MaybeNull]
 		protected virtual TSelf Postpend([AllowNull] TElement element) {
-			this[Count++] = element;
+			Memory[Count++] = element;
+			return (TSelf)this;
+		}
+
+		/// <summary>
+		/// Postpends the elements onto this object.
+		/// </summary>
+		/// <param name="elements">The elements to postpend.</param>
+		/// <returns>If the postpend occurred successfully, returns a <typeparamref name="TSelf"/> containing the original and postpended elements; otherwise, <see langword="null"/>.</returns>
+		[return: MaybeNull]
+		protected virtual TSelf Postpend(ReadOnlyMemory<TElement> elements) {
+			elements.CopyTo(Memory.Slice(Count));
+			Count += elements.Length;
 			return (TSelf)this;
 		}
 
@@ -274,8 +294,21 @@ namespace Collectathon.Arrays {
 		[return: MaybeNull]
 		protected virtual TSelf Prepend([AllowNull] TElement element) {
 			((IShift<TSelf>)this).ShiftRight(1);
-			this[0] = element;
+			Memory[0] = element;
 			Count++;
+			return (TSelf)this;
+		}
+
+		/// <summary>
+		/// Prepends the elements onto this object.
+		/// </summary>
+		/// <param name="elements">The elements to prepend.</param>
+		/// <returns>If the prepend occurred successfully, returns a <typeparamref name="TSelf"/> containing the original and prepended elements; otherwise, <see langword="null"/>.</returns>
+		[return: MaybeNull]
+		protected virtual TSelf Prepend(ReadOnlyMemory<TElement> elements) {
+			((IShift<TSelf>)this).ShiftRight(elements.Length);
+			elements.CopyTo(Memory);
+			Count += elements.Length;
 			return (TSelf)this;
 		}
 

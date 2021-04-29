@@ -36,8 +36,8 @@ namespace Collectathon.Arrays {
 		/// Converts the <paramref name="array"/> to a <see cref="BoundedArray{TElement}"/>.
 		/// </summary>
 		/// <param name="array">The <see cref="Array"/> to convert.</param>
-		[return: NotNull]
-		public static implicit operator BoundedArray<TElement>([AllowNull] TElement[] array) => array is not null ? new(array) : new();
+		[return: MaybeNull, NotNullIfNotNull("array")]
+		public static implicit operator BoundedArray<TElement>([AllowNull] TElement[] array) => array is not null ? new(array) : null;
 
 		/// <inheritdoc/>
 		[return: MaybeNull]
@@ -49,6 +49,14 @@ namespace Collectathon.Arrays {
 
 		/// <inheritdoc/>
 		[return: MaybeNull]
+		protected override BoundedArray<TElement> Postpend(ReadOnlyMemory<TElement> elements) => Count + elements.Length < Capacity ? base.Postpend(elements) : null;
+
+		/// <inheritdoc/>
+		[return: MaybeNull]
 		protected override BoundedArray<TElement> Prepend([AllowNull] TElement element) => Count < Capacity ? base.Prepend(element) : null;
+
+		/// <inheritdoc/>
+		[return: MaybeNull]
+		protected override BoundedArray<TElement> Prepend(ReadOnlyMemory<TElement> elements) => Count + elements.Length < Capacity ? base.Prepend(elements) : null;
 	}
 }

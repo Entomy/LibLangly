@@ -5,7 +5,7 @@ using System.Traits.Contracts;
 using Xunit;
 
 namespace Langly {
-	public class BoundedArray1_Tests : IAddContract<xUnit>, IClearContract<xUnit>, IReplaceContract<xUnit>, ISequenceContract<xUnit>, IShiftContract<xUnit>, ISliceContract<xUnit> {
+	public class BoundedArray1_Tests : IAddContract<xUnit>, IClearContract<xUnit>, IPostpendContract<xUnit>, IPrependContract<xUnit>, IReplaceContract<xUnit>, ISequenceContract<xUnit>, IShiftContract<xUnit>, ISliceContract<xUnit> {
 		/// <inheritdoc/>
 		[Theory]
 		[MemberData(nameof(IAddContract<xUnit>.Add_Array_Data), MemberType = typeof(IAddContract<xUnit>))]
@@ -112,6 +112,88 @@ namespace Langly {
 			BoundedArray<Int32> array = values is not null ? new BoundedArray<Int32>(values) : null;
 			ISequenceContract<xUnit>.Test_Occurrences(expected, array, (x) => x % 2 == 0);
 		}
+
+		/// <inheritdoc/>
+		[Theory]
+		[MemberData(nameof(IPostpendContract<xUnit>.Postpend_Array_Data), MemberType = typeof(IPostpendContract<xUnit>))]
+		public void Postpend_Array<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values) {
+			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
+			IPostpendContract<xUnit>.Test_Array(expected, array, values);
+		}
+
+		/// <inheritdoc/>
+		[Theory]
+		[MemberData(nameof(IPostpendContract<xUnit>.Postpend_Element_Data), MemberType = typeof(IPostpendContract<xUnit>))]
+		public void Postpend_Element<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[] values) {
+			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
+			IPostpendContract<xUnit>.Test_Element(expected, array, values);
+		}
+
+		/// <inheritdoc/>
+		[Theory]
+		[MemberData(nameof(IPostpendContract<xUnit>.Postpend_Array_Data), MemberType = typeof(IPostpendContract<xUnit>))]
+		public void Postpend_Memory<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values) {
+			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
+			IPostpendContract<xUnit>.Test_Memory(expected, array, values);
+		}
+
+		/// <inheritdoc/>
+		public void Postpend_Pointer<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values) => throw new NotImplementedException();
+
+		/// <inheritdoc/>
+		[Theory]
+		[MemberData(nameof(IPostpendContract<xUnit>.Postpend_Array_Data), MemberType = typeof(IPostpendContract<xUnit>))]
+		public void Postpend_ReadOnlyMemory<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values) {
+			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
+			IPostpendContract<xUnit>.Test_ReadOnlyMemory(expected, array, values);
+		}
+
+		/// <inheritdoc/>
+		public void Postpend_ReadOnlySpan<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values) => throw new NotImplementedException();
+
+		/// <inheritdoc/>
+		public void Postpend_Span<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values) => throw new NotImplementedException();
+
+		/// <inheritdoc/>
+		[Theory]
+		[MemberData(nameof(IPrependContract<xUnit>.Prepend_Array_Data), MemberType = typeof(IPrependContract<xUnit>))]
+		public void Prepend_Array<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values) {
+			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
+			IPostpendContract<xUnit>.Test_Array(expected, array, values);
+		}
+
+		/// <inheritdoc/>
+		[Theory]
+		[MemberData(nameof(IPrependContract<xUnit>.Prepend_Element_Data), MemberType = typeof(IPrependContract<xUnit>))]
+		public void Prepend_Element<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[] values) {
+			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
+			IPrependContract<xUnit>.Test_Element(expected, array, values);
+		}
+
+		/// <inheritdoc/>
+		[Theory]
+		[MemberData(nameof(IPrependContract<xUnit>.Prepend_Array_Data), MemberType = typeof(IPrependContract<xUnit>))]
+		public void Prepend_Memory<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values) {
+			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
+			IPrependContract<xUnit>.Test_Memory(expected, array, values);
+		}
+
+		/// <inheritdoc/>
+		public void Prepend_Pointer<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values) => throw new NotImplementedException();
+
+		/// <inheritdoc/>
+		[Theory]
+		[MemberData(nameof(IPrependContract<xUnit>.Prepend_Array_Data), MemberType = typeof(IPrependContract<xUnit>))]
+		public void Prepend_ReadOnlyMemory<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values) {
+			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
+			IPrependContract<xUnit>.Test_ReadOnlyMemory(expected, array, values);
+		}
+
+		/// <inheritdoc/>
+		public void Prepend_ReadOnlySpan<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values) => throw new NotImplementedException();
+
+		/// <inheritdoc/>
+		public void Prepend_Span<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values) => throw new NotImplementedException();
 
 		/// <inheritdoc/>
 		public void Replace_Complex<TSearch, TReplace>([AllowNull] TSearch[] expected, [AllowNull] TSearch[] initial, [AllowNull] TSearch search, [AllowNull] TReplace replace) => throw new NotImplementedException();

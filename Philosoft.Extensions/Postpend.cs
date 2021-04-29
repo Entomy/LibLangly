@@ -690,14 +690,14 @@ namespace System {
 		/// <param name="collection">This collection.</param>
 		/// <param name="elements">The elements to postpend.</param>
 		/// <param name="length">The length of the <paramref name="elements"/>.</param>
-		/// <returns>Returns a <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> containing the original and postpended elements.</returns>
+		/// <returns>Returns a <see cref="Span{T}"/> of <see cref="Char"/> containing the original and postpended elements.</returns>
 		[CLSCompliant(false)]
 		[return: MaybeNull]
-		public static unsafe ReadOnlySpan<TElement> Postpend<TElement>([AllowNull] this TElement[] collection, [AllowNull] TElement* elements, Int32 length) where TElement : unmanaged {
+		public static unsafe Span<TElement> Postpend<TElement>([AllowNull] this TElement[] collection, [AllowNull] TElement* elements, Int32 length) where TElement : unmanaged {
 			if (length == 0) {
 				return collection.AsSpan();
 			} else if (collection is null || collection.Length == 0) {
-				return new ReadOnlySpan<TElement>(elements, length);
+				return new Span<TElement>(elements, length);
 			}
 			return PostpendKernel<TElement>(collection, elements, length);
 		}
@@ -709,14 +709,14 @@ namespace System {
 		/// <param name="collection">This collection.</param>
 		/// <param name="elements">The elements to postpend.</param>
 		/// <param name="length">The length of the <paramref name="elements"/>.</param>
-		/// <returns>Returns a <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> containing the original and postpended elements.</returns>
+		/// <returns>Returns a <see cref="Span{T}"/> of <see cref="Char"/> containing the original and postpended elements.</returns>
 		[CLSCompliant(false)]
 		[return: MaybeNull]
-		public static unsafe ReadOnlySpan<TElement> Postpend<TElement>(this Memory<TElement> collection, [AllowNull] TElement* elements, Int32 length) where TElement : unmanaged {
+		public static unsafe Span<TElement> Postpend<TElement>(this Memory<TElement> collection, [AllowNull] TElement* elements, Int32 length) where TElement : unmanaged {
 			if (length == 0) {
 				return collection.Span;
 			} else if (collection.Length == 0) {
-				return new ReadOnlySpan<TElement>(elements, length);
+				return new Span<TElement>(elements, length);
 			}
 			return PostpendKernel<TElement>(collection.Span, elements, length);
 		}
@@ -747,14 +747,14 @@ namespace System {
 		/// <param name="collection">This collection.</param>
 		/// <param name="elements">The elements to postpend.</param>
 		/// <param name="length">The length of the <paramref name="elements"/>.</param>
-		/// <returns>Returns a <see cref="ReadOnlySpan{T}"/> of <see cref="Char"/> containing the original and postpended elements.</returns>
+		/// <returns>Returns a <see cref="Span{T}"/> of <see cref="Char"/> containing the original and postpended elements.</returns>
 		[CLSCompliant(false)]
 		[return: MaybeNull]
-		public static unsafe ReadOnlySpan<TElement> Postpend<TElement>(this Span<TElement> collection, [AllowNull] TElement* elements, Int32 length) where TElement : unmanaged {
+		public static unsafe Span<TElement> Postpend<TElement>(this Span<TElement> collection, [AllowNull] TElement* elements, Int32 length) where TElement : unmanaged {
 			if (length == 0) {
 				return collection;
 			} else if (collection.Length == 0) {
-				return new ReadOnlySpan<TElement>(elements, length);
+				return new Span<TElement>(elements, length);
 			}
 			return PostpendKernel<TElement>(collection, elements, length);
 		}
