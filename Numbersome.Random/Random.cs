@@ -149,7 +149,7 @@ namespace Numbersome {
 		/// Generates a <see cref="Double"/> value.
 		/// </summary>
 		/// <returns>A random <see cref="Double"/> value.</returns>
-		public unsafe Double NextDouble() {
+		new public unsafe Double NextDouble() {
 			Span<Byte> buffer = stackalloc Byte[sizeof(Double)];
 			NextBytes(buffer);
 			return BitConverter.ToDouble(buffer);
