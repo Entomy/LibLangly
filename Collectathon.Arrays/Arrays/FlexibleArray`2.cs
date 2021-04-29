@@ -166,6 +166,10 @@ namespace Collectathon.Arrays {
 
 		/// <inheritdoc/>
 		[return: MaybeNull]
+		TSelf IInsert<TElement, TSelf>.Insert(nint index, ReadOnlyMemory<TElement> elements) => Insert(index, elements);
+
+		/// <inheritdoc/>
+		[return: MaybeNull]
 		TSelf IPostpend<TElement, TSelf>.Postpend([AllowNull] TElement element) => Postpend(element);
 
 		/// <inheritdoc/>
@@ -247,6 +251,14 @@ namespace Collectathon.Arrays {
 		[return: NotNull]
 		Memory<TElement> ISlice<Memory<TElement>>.Slice(nint start, nint length) => Memory.Slice((Int32)start, (Int32)length);
 
+		/// <inheritdoc/>
+		[return: NotNull]
+		public sealed override String ToString() => ISequence<TElement, Enumerator>.ToString(this, Count);
+
+		/// <inheritdoc/>
+		[return: NotNull]
+		public String ToString(nint amount) => ISequence<TElement, Enumerator>.ToString(this, amount);
+
 		/// <summary>
 		/// Insert an element into the collection at the specified index.
 		/// </summary>
@@ -255,11 +267,23 @@ namespace Collectathon.Arrays {
 		/// <returns>If the insert occurred successfully, returns a <typeparamref name="TSelf"/> containing the original and inserted elements; otherwise, <see langword="null"/>.</returns>
 		[return: MaybeNull]
 		protected virtual TSelf Insert(nint index, [AllowNull] TElement element) {
-			for (Int32 i = Memory.Length - 1; i >= index;) {
-				Memory[i] = Memory[--i];
-			}
+			Memory.Slice(index, Count - index).CopyTo(Memory.Slice(index + 1));
 			Memory[(Int32)index] = element;
 			Count++;
+			return (TSelf)this;
+		}
+
+		/// <summary>
+		/// Insert the elements into the collection at the specified index.
+		/// </summary>
+		/// <param name="index">The index at which the <paramref name="elements"/> should be inserted.</param>
+		/// <param name="elements">The element to insert.</param>
+		/// <returns>If the insert occurred successfully, returns a <typeparamref name="TSelf"/> containing the original and inserted elements; otherwise, <see langword="null"/>.</returns>
+		[return: MaybeNull]
+		protected virtual TSelf Insert(nint index, ReadOnlyMemory<TElement> elements) {
+			Memory.Slice(index, Count - index).CopyTo(Memory.Slice(index + elements.Length));
+			elements.CopyTo(Memory.Slice(index));
+			Count += elements.Length;
 			return (TSelf)this;
 		}
 
@@ -311,13 +335,5 @@ namespace Collectathon.Arrays {
 			Count += elements.Length;
 			return (TSelf)this;
 		}
-
-		/// <inheritdoc/>
-		[return: NotNull]
-		public sealed override String ToString() => ISequence<TElement, Enumerator>.ToString(this, Count);
-
-		/// <inheritdoc/>
-		[return: NotNull]
-		public String ToString(nint amount) => ISequence<TElement, Enumerator>.ToString(this, amount);
 	}
 }

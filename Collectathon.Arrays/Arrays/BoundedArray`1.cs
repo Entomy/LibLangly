@@ -45,6 +45,10 @@ namespace Collectathon.Arrays {
 
 		/// <inheritdoc/>
 		[return: MaybeNull]
+		protected override BoundedArray<TElement> Insert(nint index, ReadOnlyMemory<TElement> elements) => Count + elements.Length < Capacity ? base.Insert(index, elements) : null;
+
+		/// <inheritdoc/>
+		[return: MaybeNull]
 		protected override BoundedArray<TElement> Postpend([AllowNull] TElement element) => Count < Capacity ? base.Postpend(element) : null;
 
 		/// <inheritdoc/>

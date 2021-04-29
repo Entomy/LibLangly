@@ -197,7 +197,7 @@ namespace System.Traits.Contracts {
 		/// <param name="expected">The expected values the subject contains.</param>
 		/// <param name="initial">The initial values of the subject.</param>
 		/// <param name="values">The values to add to the subject.</param>
-		unsafe void Add_Pointer<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values);
+		void Add_Pointer<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values) where TElement : unmanaged;
 
 		/// <summary>
 		/// Validates <see cref="IAdd{TElement, TResult}.Add(ReadOnlyMemory{TElement})"/>.

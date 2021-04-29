@@ -5,7 +5,7 @@ using System.Traits.Contracts;
 using Xunit;
 
 namespace Langly {
-	public class BoundedArray1_Tests : IAddContract<xUnit>, IClearContract<xUnit>, IPostpendContract<xUnit>, IPrependContract<xUnit>, IReplaceContract<xUnit>, ISequenceContract<xUnit>, IShiftContract<xUnit>, ISliceContract<xUnit> {
+	public class BoundedArray1_Tests : IAddContract<xUnit>, IClearContract<xUnit>, IInsertContract<xUnit>, IPostpendContract<xUnit>, IPrependContract<xUnit>, IReplaceContract<xUnit>, ISequenceContract<xUnit>, IShiftContract<xUnit>, ISliceContract<xUnit> {
 		/// <inheritdoc/>
 		[Theory]
 		[MemberData(nameof(IAddContract<xUnit>.Add_Array_Data), MemberType = typeof(IAddContract<xUnit>))]
@@ -31,7 +31,7 @@ namespace Langly {
 		}
 
 		/// <inheritdoc/>
-		public void Add_Pointer<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values) => throw new NotImplementedException();
+		public void Add_Pointer<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values) where TElement : unmanaged => throw new NotImplementedException();
 
 		/// <inheritdoc/>
 		[Theory]
@@ -91,6 +91,50 @@ namespace Langly {
 			BoundedArray<Int32> array = values is not null ? new BoundedArray<Int32>(values) : null;
 			ISequenceContract<xUnit>.Test_Fold(expected, array, (a, b) => a + b, 0);
 		}
+
+		/// <inheritdoc/>
+		[Theory]
+		[MemberData(nameof(IInsertContract<xUnit>.Insert_Array_Data), MemberType = typeof(IInsertContract<xUnit>))]
+		public void Insert_Array<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, Int32 index, [AllowNull] TElement[] values) {
+			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
+			IInsertContract<xUnit>.Test_Array(expected, array, index, values);
+		}
+
+		/// <inheritdoc/>
+		public void Insert_Element_Complex<TIndex, TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [DisallowNull] TIndex index, [AllowNull] TElement value) => throw new NotImplementedException();
+
+		/// <inheritdoc/>
+		[Theory]
+		[MemberData(nameof(IInsertContract<xUnit>.Insert_Element_Simple_Data), MemberType = typeof(IInsertContract<xUnit>))]
+		public void Insert_Element_Simple<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, Int32 index, [AllowNull] TElement value) {
+			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
+			IInsertContract<xUnit>.Test_Element(expected, array, index, value);
+		}
+
+		/// <inheritdoc/>
+		[Theory]
+		[MemberData(nameof(IInsertContract<xUnit>.Insert_Array_Data), MemberType = typeof(IInsertContract<xUnit>))]
+		public void Insert_Memory<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, Int32 index, [AllowNull] TElement[] values) {
+			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
+			IInsertContract<xUnit>.Test_Memory(expected, array, index, values);
+		}
+
+		/// <inheritdoc/>
+		public void Insert_Pointer<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, Int32 index, [AllowNull] TElement[] values) where TElement : unmanaged => throw new NotImplementedException();
+
+		/// <inheritdoc/>
+		[Theory]
+		[MemberData(nameof(IInsertContract<xUnit>.Insert_Array_Data), MemberType = typeof(IInsertContract<xUnit>))]
+		public void Insert_ReadOnlyMemory<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, Int32 index, [AllowNull] TElement[] values) {
+			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
+			IInsertContract<xUnit>.Test_ReadOnlyMemory(expected, array, index, values);
+		}
+
+		/// <inheritdoc/>
+		public void Insert_ReadOnlySpan<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, Int32 index, [AllowNull] TElement[] values) => throw new NotImplementedException();
+
+		/// <inheritdoc/>
+		public void Insert_Span<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, Int32 index, [AllowNull] TElement[] values) => throw new NotImplementedException();
 
 		/// <inheritdoc/>
 		[Theory]

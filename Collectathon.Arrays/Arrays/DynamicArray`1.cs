@@ -58,7 +58,21 @@ namespace Collectathon.Arrays {
 
 		/// <inheritdoc/>
 		[return: MaybeNull]
-		protected override DynamicArray<TElement> Insert(nint index, [AllowNull] TElement element) => base.Insert(index, element);
+		protected override DynamicArray<TElement> Insert(nint index, [AllowNull] TElement element) {
+			if (Count == Capacity) {
+				((IResize<DynamicArray<TElement>>)this).Grow();
+			}
+			return base.Insert(index, element);
+		}
+
+		/// <inheritdoc/>
+		[return: MaybeNull]
+		protected override DynamicArray<TElement> Insert(nint index, ReadOnlyMemory<TElement> elements) {
+			if (Count + elements.Length >= Capacity) {
+				((IResize<DynamicArray<TElement>>)this).Resize(Capacity + elements.Length);
+			}
+			return base.Insert(index, elements);
+		}
 
 		/// <inheritdoc/>
 		[return: MaybeNull]
