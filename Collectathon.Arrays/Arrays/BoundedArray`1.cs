@@ -17,20 +17,20 @@ namespace Collectathon.Arrays {
 		/// Initializes a new <see cref="BoundedArray{TElement}"/> with the given <paramref name="capacity"/>.
 		/// </summary>
 		/// <param name="capacity">The maximum capacity.</param>
-		public BoundedArray(nint capacity) : this(capacity, FilterType.None) { }
+		public BoundedArray(nint capacity) : this(capacity, Filters.None) { }
 
 		/// <summary>
 		/// Initializes a new <see cref="BoundedArray{TElement}"/> with the given <paramref name="capacity"/>.
 		/// </summary>
 		/// <param name="capacity">The maximum capacity.</param>
 		/// <param name="filter">The type of filter to use.</param>
-		public BoundedArray(nint capacity, FilterType filter) : base(capacity, 0, filter) { }
+		public BoundedArray(nint capacity, Filters filter) : base(capacity, 0, filter) { }
 
 		/// <summary>
 		/// Initializes a new <see cref="BoundedArray{TElement}"/>
 		/// </summary>
 		/// <param name="memory">The <see cref="Array"/> of <typeparamref name="TElement"/> to reuse.</param>
-		public BoundedArray([DisallowNull] TElement[] memory) : base(memory, memory.Length, FilterType.None) { }
+		public BoundedArray([DisallowNull] TElement[] memory) : base(memory, memory.Length, Filters.None) { }
 
 		/// <summary>
 		/// Converts the <paramref name="array"/> to a <see cref="BoundedArray{TElement}"/>.

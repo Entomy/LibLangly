@@ -18,20 +18,20 @@ namespace Collectathon.Arrays {
 		/// Initializes a new <see cref="DynamicArray{TElement}"/> with the given <paramref name="capacity"/>.
 		/// </summary>
 		/// <param name="capacity">The maximum capacity.</param>
-		public DynamicArray(nint capacity) : this(capacity, Collectathon.FilterType.None) { }
+		public DynamicArray(nint capacity) : this(capacity, Filters.None) { }
 
 		/// <summary>
 		/// Initializes a new <see cref="DynamicArray{TElement}"/> with the given <paramref name="capacity"/>.
 		/// </summary>
 		/// <param name="capacity">The maximum capacity.</param>
 		/// <param name="filter">The type of filter to use.</param>
-		public DynamicArray(nint capacity, FilterType filter) : base(capacity, 0, filter) { }
+		public DynamicArray(nint capacity, Filters filter) : base(capacity, 0, filter) { }
 
 		/// <summary>
 		/// Conversion constructor.
 		/// </summary>
 		/// <param name="memory">The <see cref="Array"/> of <typeparamref name="TElement"/> to reuse.</param>
-		public DynamicArray([DisallowNull] TElement[] memory) : base(memory, memory.Length, FilterType.None) { }
+		public DynamicArray([DisallowNull] TElement[] memory) : base(memory, memory.Length, Filters.None) { }
 
 		/// <inheritdoc/>
 		new public nint Capacity {

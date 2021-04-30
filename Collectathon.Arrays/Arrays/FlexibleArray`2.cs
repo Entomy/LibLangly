@@ -2,7 +2,6 @@
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Traits;
-using Collectathon.Filters;
 using Langly;
 
 namespace Collectathon.Arrays {
@@ -47,7 +46,7 @@ namespace Collectathon.Arrays {
 		/// <param name="capacity">The initial capacity.</param>
 		/// <param name="count">The amount of elements in the array.</param>
 		/// <param name="filter">The type of filter to use.</param>
-		protected FlexibleArray(nint capacity, nint count, FilterType filter) {
+		protected FlexibleArray(nint capacity, nint count, Filters filter) {
 			Memory = new TElement[capacity];
 			Count = count;
 			Filter = Filter<nint, TElement>.Create(filter);
@@ -59,7 +58,7 @@ namespace Collectathon.Arrays {
 		/// <param name="memory">The <see cref="Array"/> of <typeparamref name="TElement"/> to reuse.</param>
 		/// <param name="count">The amount of elements in the array.</param>
 		/// <param name="filter">The type of filter to use.</param>
-		protected FlexibleArray([DisallowNull] TElement[] memory, nint count, FilterType filter) {
+		protected FlexibleArray([DisallowNull] TElement[] memory, nint count, Filters filter) {
 			Memory = memory;
 			Count = count;
 			Filter = Filter<nint, TElement>.Create(filter);
