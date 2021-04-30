@@ -48,5 +48,51 @@ namespace Collectathon.Stacks {
 			return stack;
 		}
 		#endregion
+
+		#region Single
+		/// <summary>
+		/// Takes the absolute value of the top element, and pushes the result back onto the stack.
+		/// </summary>
+		/// <param name="stack">This <see cref="Stack{TElement}"/>.</param>
+		/// <returns>A <see	cref="Stack{TElement}"/> instance if successful; otherwise, <see langword="null"/>.</returns>
+		[return: MaybeNull]
+		public static Stack<Single> Abs([AllowNull] this Stack<Single> stack) => stack.Abs(out Single result).Write(result);
+
+		/// <summary>
+		/// Takes the absolute value of the top element, and returns the <paramref name="result"/>.
+		/// </summary>
+		/// <param name="stack">This <see cref="Stack{TElement}"/>.</param>
+		/// <param name="result">The result of the absolute value.</param>
+		/// <returns>A <see	cref="Stack{TElement}"/> instance if successful; otherwise, <see langword="null"/>.</returns>
+		[return: MaybeNull]
+		public static Stack<Single> Abs([AllowNull] this Stack<Single> stack, out Single result) {
+			stack.Read(out Single value);
+			result = Math.Abs(value);
+			return stack;
+		}
+		#endregion
+
+		#region Double
+		/// <summary>
+		/// Takes the absolute value of the top element, and pushes the result back onto the stack.
+		/// </summary>
+		/// <param name="stack">This <see cref="Stack{TElement}"/>.</param>
+		/// <returns>A <see	cref="Stack{TElement}"/> instance if successful; otherwise, <see langword="null"/>.</returns>
+		[return: MaybeNull]
+		public static Stack<Double> Abs([AllowNull] this Stack<Double> stack) => stack.Abs(out Double result).Write(result);
+
+		/// <summary>
+		/// Takes the absolute value of the top element, and returns the <paramref name="result"/>.
+		/// </summary>
+		/// <param name="stack">This <see cref="Stack{TElement}"/>.</param>
+		/// <param name="result">The result of the absolute value.</param>
+		/// <returns>A <see	cref="Stack{TElement}"/> instance if successful; otherwise, <see langword="null"/>.</returns>
+		[return: MaybeNull]
+		public static Stack<Double> Abs([AllowNull] this Stack<Double> stack, out Double result) {
+			stack.Read(out Double value);
+			result = Math.Abs(value);
+			return stack;
+		}
+		#endregion
 	}
 }

@@ -50,5 +50,53 @@ namespace Collectathon.Stacks {
 			return stack;
 		}
 		#endregion
+
+		#region Single
+		/// <summary>
+		/// Divides the top two elements together, and pushes the result back onto the stack.
+		/// </summary>
+		/// <param name="stack">This <see cref="Stack{TElement}"/>.</param>
+		/// <returns>A <see	cref="Stack{TElement}"/> instance if successful; otherwise, <see langword="null"/>.</returns>
+		[return: MaybeNull]
+		public static Stack<Single> Div([AllowNull] this Stack<Single> stack) => stack.Div(out Single result).Write(result);
+
+		/// <summary>
+		/// Divides the top two elements together, and returns the <paramref name="result"/>.
+		/// </summary>
+		/// <param name="stack">This <see cref="Stack{TElement}"/>.</param>
+		/// <param name="result">The result of the division.</param>
+		/// <returns>A <see	cref="Stack{TElement}"/> instance if successful; otherwise, <see langword="null"/>.</returns>
+		[return: MaybeNull]
+		public static Stack<Single> Div([AllowNull] this Stack<Single> stack, out Single result) {
+			stack.Read(out Single right);
+			stack.Read(out Single left);
+			result = left / right;
+			return stack;
+		}
+		#endregion
+
+		#region Double
+		/// <summary>
+		/// Divides the top two elements together, and pushes the result back onto the stack.
+		/// </summary>
+		/// <param name="stack">This <see cref="Stack{TElement}"/>.</param>
+		/// <returns>A <see	cref="Stack{TElement}"/> instance if successful; otherwise, <see langword="null"/>.</returns>
+		[return: MaybeNull]
+		public static Stack<Double> Div([AllowNull] this Stack<Double> stack) => stack.Div(out Double result).Write(result);
+
+		/// <summary>
+		/// Divides the top two elements together, and returns the <paramref name="result"/>.
+		/// </summary>
+		/// <param name="stack">This <see cref="Stack{TElement}"/>.</param>
+		/// <param name="result">The result of the division.</param>
+		/// <returns>A <see	cref="Stack{TElement}"/> instance if successful; otherwise, <see langword="null"/>.</returns>
+		[return: MaybeNull]
+		public static Stack<Double> Div([AllowNull] this Stack<Double> stack, out Double result) {
+			stack.Read(out Double right);
+			stack.Read(out Double left);
+			result = left / right;
+			return stack;
+		}
+		#endregion
 	}
 }
