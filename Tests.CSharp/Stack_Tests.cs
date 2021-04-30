@@ -69,6 +69,22 @@ namespace Langly {
 		}
 
 		[Fact]
+		public void Cbrt_Double() {
+			Stack<Double> stack = new Stack<Double>(2.0);
+			stack.Cbrt();
+			stack.Read(out Double result);
+			Assert.Equal(Math.Cbrt(2.0), result);
+		}
+
+		[Fact]
+		public void Ceiling_Double() {
+			Stack<Double> stack = new Stack<Double>(1.5);
+			stack.Ceiling();
+			stack.Read(out Double result);
+			Assert.Equal(Math.Ceiling(1.5), result);
+		}
+
+		[Fact]
 		public void Div_Int32() {
 			Stack<Int32> stack = new Stack<Int32>(1, 2);
 			stack.Div();
@@ -98,6 +114,22 @@ namespace Langly {
 			stack.Div();
 			stack.Read(out Double result);
 			Assert.Equal(0.5, result);
+		}
+
+		[Fact]
+		public void Exp_Double() {
+			Stack<Double> stack = new Stack<Double>(2.0);
+			stack.Exp();
+			stack.Read(out Double result);
+			Assert.Equal(Math.Exp(2.0), result);
+		}
+
+		[Fact]
+		public void Floor_Double() {
+			Stack<Double> stack = new Stack<Double>(1.5);
+			stack.Floor();
+			stack.Read(out Double result);
+			Assert.Equal(Math.Floor(1.5), result);
 		}
 
 		[Fact]
@@ -229,6 +261,14 @@ namespace Langly {
 		}
 
 		[Fact]
+		public void Pow_Double() {
+			Stack<Double> stack = new Stack<Double>(1.0, 2.0);
+			stack.Pow();
+			stack.Read(out Double result);
+			Assert.Equal(Math.Pow(1.0, 2.0), result);
+		}
+
+		[Fact]
 		public void Sub_Int32() {
 			Stack<Int32> stack = new Stack<Int32>(1, 2);
 			stack.Sub();
@@ -258,6 +298,14 @@ namespace Langly {
 			stack.Sub();
 			stack.Read(out Double result);
 			Assert.Equal(-1.0, result);
+		}
+
+		[Fact]
+		public void Truncate_Double() {
+			Stack<Double> stack = new Stack<Double>(1.5);
+			stack.Truncate();
+			stack.Read(out Double result);
+			Assert.Equal(Math.Truncate(1.5), result);
 		}
 	}
 }
