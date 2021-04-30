@@ -85,6 +85,14 @@ namespace Langly {
 		}
 
 		[Fact]
+		public void Cos_Double() {
+			Stack<Double> stack = new Stack<Double>(Math.PI / 2);
+			stack.Cos();
+			stack.Read(out Double result);
+			Assert.Equal(Math.Cos(Math.PI / 2), result);
+		}
+
+		[Fact]
 		public void Div_Int32() {
 			Stack<Int32> stack = new Stack<Int32>(1, 2);
 			stack.Div();
@@ -269,6 +277,14 @@ namespace Langly {
 		}
 
 		[Fact]
+		public void Sin_Double() {
+			Stack<Double> stack = new Stack<Double>(Math.PI / 2);
+			stack.Sin();
+			stack.Read(out Double result);
+			Assert.Equal(Math.Sin(Math.PI / 2), result);
+		}
+
+		[Fact]
 		public void Sub_Int32() {
 			Stack<Int32> stack = new Stack<Int32>(1, 2);
 			stack.Sub();
@@ -298,6 +314,14 @@ namespace Langly {
 			stack.Sub();
 			stack.Read(out Double result);
 			Assert.Equal(-1.0, result);
+		}
+
+		[Fact]
+		public void Tan_Double() {
+			Stack<Double> stack = new Stack<Double>(Math.PI / 2);
+			stack.Tan();
+			stack.Read(out Double result);
+			Assert.Equal(Math.Tan(Math.PI / 2), result);
 		}
 
 		[Fact]
