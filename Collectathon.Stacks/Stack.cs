@@ -12,7 +12,6 @@ namespace Collectathon.Stacks {
 	public sealed partial class Stack<TElement> :
 		IClear<Stack<TElement>>,
 		IPeek<TElement, Stack<TElement>>,
-		IRead<TElement, Stack<TElement>>,
 		ISequence<TElement, Stack<TElement>.Enumerator>,
 		IWrite<TElement, Stack<TElement>> {
 		/// <summary>

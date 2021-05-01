@@ -2,6 +2,7 @@
 
 open System
 open Collectathon.Arrays
+open Collectathon.Stacks
 open Numbersome
 open Xunit
 
@@ -123,6 +124,24 @@ module Tests =
 
     [<Fact(Skip = "Not implemented yet")>]
     let ``Slice`` () = raise(NotImplementedException()) |> ignore
+
+    [<Fact>]
+    let ``Stack`` () =
+        let stack = stack<double>()
+        stack
+        |> write -1.0
+        |> Stack.abs
+        |> ignore
+        Assert.Equal(1.0, peek stack)
+        stack
+        |> write 2.0
+        |> Stack.add
+        |> ignore
+        Assert.Equal(3.0, peek stack)
+        stack
+        |> Stack.cbrt
+        |> ignore
+        Assert.Equal(Math.Cbrt(3.0), peek stack)
 
     [<Fact>]
     let ``Sum`` () =

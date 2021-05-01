@@ -129,13 +129,29 @@ module Functions =
 
     //TODO: parse
 
-    //TODO: peek
+    /// <summary>
+    /// Peeks at an element from the <paramref name="stream"/>.
+    /// </summary>
+    /// <param name="stream">This stream.</param>
+    /// <returns>The value that was peeked.</returns>
+    let inline peek (stream:#IPeek< ^e, ^r>):^e =
+        let element:^e ref = ref Unchecked.defaultof< ^e>
+        stream.Peek(element) |> ignore
+        !element
 
     //TODO: postpend
 
     //TODO: prepend
 
-    //TODO: read
+    /// <summary>
+    /// Reads an element from the <paramref name="stream"/>.
+    /// </summary>
+    /// <param name="stream">This stream.</param>
+    /// <returns>The value that was read.</returns>
+    let inline read (stream:#IRead< ^e, ^r>):^e =
+        let element:^e ref = ref Unchecked.defaultof< ^e>
+        stream.Read(element) |> ignore
+        !element
 
     /// <summary>
     /// Can this be read from?
