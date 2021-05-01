@@ -18,6 +18,16 @@ namespace Collectathon.Arrays {
 			/// <summary>
 			/// Initializes a new <see cref="Enumerator"/>.
 			/// </summary>
+			/// <param name="collection">The collection to enumerate over.</param>
+			public Enumerator(TSelf collection) {
+				Memory = collection.Memory;
+				Count = collection.Count;
+				i = -1;
+			}
+
+			/// <summary>
+			/// Initializes a new <see cref="Enumerator"/>.
+			/// </summary>
 			/// <param name="memory">The memory to enumerate over.</param>
 			/// <param name="length">The length of the <paramref name="memory"/>.</param>
 			/// <remarks>

@@ -55,7 +55,7 @@ namespace Collectathon.Stacks {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public String ToString(nint amount) => throw new NotImplementedException();
+		public String ToString(nint amount) => ISequence<TElement, Enumerator>.ToString(this, amount);
 
 		/// <inheritdoc/>
 		[return: MaybeNull]
