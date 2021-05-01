@@ -9,9 +9,19 @@ open System.Runtime.InteropServices
 type bounded<'t> = BoundedArray<'t>
 
 /// <summary>
+/// Represents an associative bounded array, a type of flexible array who's size can not grow above its capacity, but can freely resize below that capacity.
+/// </summary>
+type bounded<'i, 'e> = BoundedArray<'i, 'e>
+
+/// <summary>
 /// Represents a dynamic array, a type of flexible array who's capacity can freely grow and shrink.
 /// </summary>
 type dynamic<'t> = DynamicArray<'t>
+
+/// <summary>
+/// Represents an associative dynamic array, a type of flexible array who's capacity can freely grow and shrink.
+/// </summary>
+type dynamic<'i, 'e> = DynamicArray<'i, 'e>
 
 [<AutoOpen>]
 module Functions =

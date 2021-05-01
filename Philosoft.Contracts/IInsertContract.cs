@@ -24,13 +24,14 @@ namespace System.Traits.Contracts {
 		}
 
 		/// <summary>
-		/// Standard test cases for <see cref="Insert_Element_Complex{TIndex, TElement}(TElement[], TElement[], TIndex, TElement)"/>.
+		/// Standard test cases for <see cref="Insert_Element_Complex{TIndex, TElement}(ValueTuple{TIndex, TElement}[], ValueTuple{TIndex, TElement}[], TIndex, TElement)"/>.
 		/// </summary>
 		/// <returns>The test cases.</returns>
 		public static IEnumerable<Object[]> Insert_Element_Complex_Data() {
-			foreach (Object[] entry in Insert_Element_Simple_Data()) {
-				yield return entry;
-			}
+			yield return new Object[] { new (Char, String)[] { ('a', "alpha") }, null, 'a', "alpha" };
+			yield return new Object[] { new (Char, String)[] { ('a', "alpha") }, Array.Empty<(Char, String)>(), 'a', "alpha" };
+			yield return new Object[] { new (Char, String)[] { ('a', "alpha"), ('b', "beta") }, new (Char, String)[] { ('a', "alpha") }, 'b', "beta" };
+			yield return new Object[] { new (Char, String)[] { ('b', "beta"), ('a', "alpha") }, new (Char, String)[] { ('b', "beta") }, 'a', "alpha" };
 		}
 
 		/// <summary>
@@ -74,7 +75,7 @@ namespace System.Traits.Contracts {
 		/// <param name="subject">The object being tested.</param>
 		/// <param name="index">The index at which to insert the <paramref name="value"/>.</param>
 		/// <param name="value">The value to insert into the <paramref name="subject"/>.</param>
-		public static void Test_Element<TIndex, TElement, TSubject>([AllowNull] TElement[] expected, [AllowNull] TSubject subject, [DisallowNull] TIndex index, [AllowNull] TElement value) where TSubject : IInsert<TIndex, TElement, TSubject>, IEnumerable<TElement> {
+		public static void Test_Element<TIndex, TElement, TSubject>([AllowNull] (TIndex, TElement)[] expected, [AllowNull] TSubject subject, [DisallowNull] TIndex index, [AllowNull] TElement value) where TSubject : IInsert<TIndex, TElement, TSubject>, IEnumerable<(TIndex, TElement)> {
 			Boolean opFailed = false;
 			subject = TraitExtensions.Insert(subject, index, value);
 			opFailed = subject is null;
@@ -198,7 +199,7 @@ namespace System.Traits.Contracts {
 		/// <param name="initial">The initial values of the subject.</param>
 		/// <param name="index">The index at which to insert the <paramref name="value"/>.</param>
 		/// <param name="value">The value to insert into the subject.</param>
-		void Insert_Element_Complex<TIndex, TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [DisallowNull] TIndex index, [AllowNull] TElement value);
+		void Insert_Element_Complex<TIndex, TElement>([AllowNull] (TIndex, TElement)[] expected, [AllowNull] (TIndex, TElement)[] initial, [DisallowNull] TIndex index, [AllowNull] TElement value);
 
 		/// <summary>
 		/// Validates <see cref="IInsert{TIndex, TElement, TResult}.Insert(TIndex, TElement)"/>.
@@ -276,6 +277,33 @@ namespace System.Traits.Contracts {
 		/// <param name="subject">The object being tested.</param>
 		/// <param name="opFailed">Whether the test operations failed.</param>
 		protected static void Validate<TElement>([AllowNull] TElement[] expected, [AllowNull] IEnumerable<TElement> subject, Boolean opFailed) {
+			if (opFailed) {
+				Assert.IsNull(subject);
+			} else if (expected is not null) {
+				Assert.Equals(expected, subject);
+			} else {
+				Assert.IsNull(subject);
+			}
+		}
+
+		/// <summary>
+		/// Validates that the <paramref name="subject"/> contains the <paramref name="expected"/> elements.
+		/// </summary>
+		/// <typeparam name="TIndex">The type of the indicies.</typeparam>
+		/// <typeparam name="TElement">The type of the elements.</typeparam>
+		/// <param name="expected">The expected values the <paramref name="subject"/> contains.</param>
+		/// <param name="subject">The object being tested.</param>
+		protected static void Validate<TIndex, TElement>([AllowNull] (TIndex, TElement)[] expected, [AllowNull] IEnumerable<(TIndex, TElement)> subject) => Validate(expected, subject, false);
+
+		/// <summary>
+		/// Validates that the <paramref name="subject"/> contains the <paramref name="expected"/> elements.
+		/// </summary>
+		/// <typeparam name="TIndex">The type of the indicies.</typeparam>
+		/// <typeparam name="TElement">The type of the elements.</typeparam>
+		/// <param name="expected">The expected values the <paramref name="subject"/> contains.</param>
+		/// <param name="subject">The object being tested.</param>
+		/// <param name="opFailed">Whether the test operations failed.</param>
+		protected static void Validate<TIndex, TElement>([AllowNull] (TIndex, TElement)[] expected, [AllowNull] IEnumerable<(TIndex, TElement)> subject, Boolean opFailed) {
 			if (opFailed) {
 				Assert.IsNull(subject);
 			} else if (expected is not null) {

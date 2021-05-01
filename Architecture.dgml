@@ -1,21 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <DirectedGraph GraphDirection="TopToBottom" Layout="Sugiyama" ZoomLevel="-1" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
   <Nodes>
-    <Node Id="CollectathonArrays" Bounds="116.7,215.76,86.9433333333334,41.9200000000001" Label="Collectathon&#xD;&#xA;Arrays" />
-    <Node Id="CollectathonFilters" Bounds="116.7,143.84,86.9433333333334,41.9200000000001" Label="Collectathon&#xD;&#xA;Filters" />
-    <Node Id="NumbersomeArithmetic" Bounds="0,71.9200000000001,92.3433333333334,41.92" Label="Numbersome&#xD;&#xA;Arithmetic" />
-    <Node Id="NumbersomeRandom" Bounds="228,71.9200000000001,92.3433333333333,41.92" ErrorMessage="Unreferenced node detected:Numbersome&#xD;&#xA;Random (NumbersomeRandom)" IsUnreferenced="True" Label="Numbersome&#xD;&#xA;Random" />
-    <Node Id="PhilosoftContracts" Bounds="234.021666666667,143.84,70.3,41.92" Label="Philosoft&#xD;&#xA;Contracts" />
-    <Node Id="PhilosoftExtensions" Bounds="122.36,71.9200000000001,75.6233333333333,41.92" ErrorMessage="Node 'Philosoft&#xD;&#xA;Extensions' has a hub value of 50." Hub="50" Label="Philosoft&#xD;&#xA;Extensions" />
-    <Node Id="PhilosoftTraits" Bounds="127.021666666667,0,66.3,41.92" ErrorMessage="Unreferenced node detected:Philosoft&#xD;&#xA;Traits (PhilosoftTraits)" IsUnreferenced="True" Label="Philosoft&#xD;&#xA;Traits" />
+    <Node Id="CollectathonArrays" Bounds="0,215.76,86.9433333333334,41.9200000000001" Label="Collectathon&#xD;&#xA;Arrays" />
+    <Node Id="CollectathonFilters" Bounds="0,143.84,86.9433333333334,41.9200000000001" Label="Collectathon&#xD;&#xA;Filters" />
+    <Node Id="CollectathonNodes" Bounds="117,143.84,86.9433333333333,41.92" Label="Collectathon&#xD;&#xA;Nodes" />
+    <Node Id="CollectathonStacks" Bounds="234,143.84,86.9433333333333,41.9200000000001" Label="Collectathon&#xD;&#xA;Stacks" />
+    <Node Id="Numbersome.Sets" Bounds="228.3,71.9200000000001,92.3433333333334,41.92" Label="Numbersome&#xD;&#xA;Sets" />
+    <Node Id="NumbersomeArithmetic" Bounds="0.300000000000011,71.9200000000001,92.3433333333334,41.92" Label="Numbersome&#xD;&#xA;Arithmetic" />
+    <Node Id="NumbersomeRandom" Bounds="351.3,71.9200000000001,92.3433333333332,41.92" ErrorMessage="Unreferenced node detected:Numbersome&#xD;&#xA;Random (NumbersomeRandom)" IsUnreferenced="True" Label="Numbersome&#xD;&#xA;Random" />
+    <Node Id="PhilosoftContracts" Bounds="351.321666666667,143.84,70.3,41.92" Label="Philosoft&#xD;&#xA;Contracts" />
+    <Node Id="PhilosoftExtensions" Bounds="122.66,71.9200000000001,75.6233333333333,41.92" ErrorMessage="Node 'Philosoft&#xD;&#xA;Extensions' has a hub value of 55." Hub="55" Label="Philosoft&#xD;&#xA;Extensions" />
+    <Node Id="PhilosoftTraits" Bounds="127.321666666667,0,66.3,41.92" ErrorMessage="Unreferenced node detected:Philosoft&#xD;&#xA;Traits (PhilosoftTraits)" IsUnreferenced="True" Label="Philosoft&#xD;&#xA;Traits" />
   </Nodes>
   <Links>
-    <Link Source="CollectathonFilters" Target="CollectathonArrays" Bounds="160.171661376953,185.759994506836,0,21" />
-    <Link Source="NumbersomeRandom" Target="PhilosoftContracts" Bounds="271.253021240234,113.839996337891,1.46145629882813,21.0216674804688" />
-    <Link Source="PhilosoftExtensions" Target="CollectathonFilters" Bounds="160.171661376953,113.839996337891,0,21" />
-    <Link Source="PhilosoftExtensions" Target="PhilosoftContracts" Bounds="191.938079833984,113.839996337891,37.9550628662109,25.0433807373047" />
-    <Link Source="PhilosoftTraits" Target="NumbersomeArithmetic" Bounds="87.0070571899414,41.2063293457031,41.0722579956055,25.9115524291992" />
-    <Link Source="PhilosoftTraits" Target="PhilosoftExtensions" Bounds="160.171661376953,41.9199981689453,0,21" />
+    <Link Source="CollectathonFilters" Target="CollectathonArrays" Bounds="43.4716682434082,185.759994506836,0,21" />
+    <Link Source="NumbersomeRandom" Target="PhilosoftContracts" Bounds="391.038146972656,113.839996337891,3.22772216796875,21.1034545898438" />
+    <Link Source="PhilosoftExtensions" Target="CollectathonFilters" Bounds="85.23681640625,113.839996337891,41.136962890625,25.2869262695313" />
+    <Link Source="PhilosoftExtensions" Target="CollectathonNodes" Bounds="160.471664428711,113.839996337891,0,21" />
+    <Link Source="PhilosoftExtensions" Target="CollectathonStacks" Bounds="194.569549560547,113.839996337891,41.136962890625,25.2869262695313" />
+    <Link Source="PhilosoftExtensions" Target="PhilosoftContracts" Bounds="198.283340454102,105.482559204102,144.544448852539,43.5888366699219" />
+    <Link Source="PhilosoftTraits" Target="Numbersome.Sets" Bounds="192.564010620117,41.2063293457031,41.072265625,25.9115524291992" />
+    <Link Source="PhilosoftTraits" Target="NumbersomeArithmetic" Bounds="87.3070602416992,41.2063293457031,41.0722579956055,25.9115524291992" />
+    <Link Source="PhilosoftTraits" Target="PhilosoftExtensions" Bounds="160.471664428711,41.9199981689453,0,21" />
   </Links>
   <Properties>
     <Property Id="Bounds" DataType="System.Windows.Rect" />
