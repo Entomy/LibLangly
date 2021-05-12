@@ -1,0 +1,2255 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Random
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Random
+   ">
+    <meta name="generator" content="docfx 2.57.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Numbersome.Random">
+  
+  
+  <h1 id="Numbersome_Random" data-uid="Numbersome.Random" class="text-break">Class Random
+  </h1>
+  <div class="markdown level0 summary"><p>Represents a pseudo-random number generator, which is an algorithm that produces a sequence of numbers that meet certain statistical requirements for randomness.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.random">Random</a></div>
+    <div class="level2"><span class="xref">Random</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.random.next#System_Random_Next">Random.Next()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.random.next#System_Random_Next_System_Int32_">Random.Next(Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.random.next#System_Random_Next_System_Int32_System_Int32_">Random.Next(Int32, Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.random.nextbytes#System_Random_NextBytes_System_Byte___">Random.NextBytes(Byte[])</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.random.sample#System_Random_Sample">Random.Sample()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_">Object.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_System_Object_">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#System_Object_GetHashCode">Object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#System_Object_GetType">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#System_Object_MemberwiseClone">Object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#System_Object_ReferenceEquals_System_Object_System_Object_">Object.ReferenceEquals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString">Object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Numbersome.html">Numbersome</a></h6>
+  <h6><strong>Assembly</strong>: Numbersome.Random.dll</h6>
+  <h5 id="Numbersome_Random_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class Random : Random</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random__ctor.md&amp;value=---%0Auid%3A%20Numbersome.Random.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.cs/#L12">View Source</a>
+  </span>
+  <a id="Numbersome_Random__ctor_" data-uid="Numbersome.Random.#ctor*"></a>
+  <h4 id="Numbersome_Random__ctor" data-uid="Numbersome.Random.#ctor">Random()</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Numbersome.Random.html">Random</a> class using a default seed value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Random()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random__ctor_System_Int32_.md&amp;value=---%0Auid%3A%20Numbersome.Random.%23ctor(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.cs/#L18">View Source</a>
+  </span>
+  <a id="Numbersome_Random__ctor_" data-uid="Numbersome.Random.#ctor*"></a>
+  <h4 id="Numbersome_Random__ctor_System_Int32_" data-uid="Numbersome.Random.#ctor(System.Int32)">Random(Int32)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Numbersome.Random.html">Random</a> class, using the specified <code data-dev-comment-type="paramref" class="paramref">seed</code> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Random(int seed)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">seed</span></td>
+        <td><p>A number used to calculate a starting value for the pseudo-random number sequence. If a negative number is specified, the absolute value of the number is used.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_NextBoolean.md&amp;value=---%0Auid%3A%20Numbersome.Random.NextBoolean%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.cs/#L24">View Source</a>
+  </span>
+  <a id="Numbersome_Random_NextBoolean_" data-uid="Numbersome.Random.NextBoolean*"></a>
+  <h4 id="Numbersome_Random_NextBoolean" data-uid="Numbersome.Random.NextBoolean">NextBoolean()</h4>
+  <div class="markdown level1 summary"><p>Generates a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool NextBoolean()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p>A random <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a> value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_NextBooleans_nint_.md&amp;value=---%0Auid%3A%20Numbersome.Random.NextBooleans(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.cs/#L39">View Source</a>
+  </span>
+  <a id="Numbersome_Random_NextBooleans_" data-uid="Numbersome.Random.NextBooleans*"></a>
+  <h4 id="Numbersome_Random_NextBooleans_nint_" data-uid="Numbersome.Random.NextBooleans(nint)">NextBooleans(nint)</h4>
+  <div class="markdown level1 summary"><p>Generates a sequence of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a> values.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;bool&gt; NextBooleans(nint amount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td><p>The amount of values to generate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a>&gt;</td>
+        <td><p>A sequence of random <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a> values.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_NextByte.md&amp;value=---%0Auid%3A%20Numbersome.Random.NextByte%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.cs/#L49">View Source</a>
+  </span>
+  <a id="Numbersome_Random_NextByte_" data-uid="Numbersome.Random.NextByte*"></a>
+  <h4 id="Numbersome_Random_NextByte" data-uid="Numbersome.Random.NextByte">NextByte()</h4>
+  <div class="markdown level1 summary"><p>Generates a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte NextByte()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><p>A random <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a> value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_NextByte_System_Byte_System_Byte_.md&amp;value=---%0Auid%3A%20Numbersome.Random.NextByte(System.Byte%2CSystem.Byte)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.cs/#L65">View Source</a>
+  </span>
+  <a id="Numbersome_Random_NextByte_" data-uid="Numbersome.Random.NextByte*"></a>
+  <h4 id="Numbersome_Random_NextByte_System_Byte_System_Byte_" data-uid="Numbersome.Random.NextByte(System.Byte,System.Byte)">NextByte(Byte, Byte)</h4>
+  <div class="markdown level1 summary"><p>Generates a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a> value within the range of <code data-dev-comment-type="paramref" class="paramref">min</code>..<code data-dev-comment-type="paramref" class="paramref">max</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte NextByte(byte min, byte max)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">min</span></td>
+        <td><p>The minimum possible value.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">max</span></td>
+        <td><p>The maximum possible value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><p>A random <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a> value within the range of <code data-dev-comment-type="paramref" class="paramref">min</code>..<code data-dev-comment-type="paramref" class="paramref">max</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_NextBytes_nint_.md&amp;value=---%0Auid%3A%20Numbersome.Random.NextBytes(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.cs/#L80">View Source</a>
+  </span>
+  <a id="Numbersome_Random_NextBytes_" data-uid="Numbersome.Random.NextBytes*"></a>
+  <h4 id="Numbersome_Random_NextBytes_nint_" data-uid="Numbersome.Random.NextBytes(nint)">NextBytes(nint)</h4>
+  <div class="markdown level1 summary"><p>Generates a sequence of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a> values.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;byte&gt; NextBytes(nint amount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td><p>The amount of values to generate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>&gt;</td>
+        <td><p>A sequence of random <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a> values.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_NextChar.md&amp;value=---%0Auid%3A%20Numbersome.Random.NextChar%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.cs/#L90">View Source</a>
+  </span>
+  <a id="Numbersome_Random_NextChar_" data-uid="Numbersome.Random.NextChar*"></a>
+  <h4 id="Numbersome_Random_NextChar" data-uid="Numbersome.Random.NextChar">NextChar()</h4>
+  <div class="markdown level1 summary"><p>Generates a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public char NextChar()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a></td>
+        <td><p>A random <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a> value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_NextChar_System_Char_System_Char_.md&amp;value=---%0Auid%3A%20Numbersome.Random.NextChar(System.Char%2CSystem.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.cs/#L108">View Source</a>
+  </span>
+  <a id="Numbersome_Random_NextChar_" data-uid="Numbersome.Random.NextChar*"></a>
+  <h4 id="Numbersome_Random_NextChar_System_Char_System_Char_" data-uid="Numbersome.Random.NextChar(System.Char,System.Char)">NextChar(Char, Char)</h4>
+  <div class="markdown level1 summary"><p>Generates a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a> value within the range of <code data-dev-comment-type="paramref" class="paramref">min</code>..<code data-dev-comment-type="paramref" class="paramref">max</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public char NextChar(char min, char max)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a></td>
+        <td><span class="parametername">min</span></td>
+        <td><p>The minimum possible value.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a></td>
+        <td><span class="parametername">max</span></td>
+        <td><p>The maximum possible value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a></td>
+        <td><p>A random <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a> value within the range of <code data-dev-comment-type="paramref" class="paramref">min</code>..<code data-dev-comment-type="paramref" class="paramref">max</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_NextChars_nint_.md&amp;value=---%0Auid%3A%20Numbersome.Random.NextChars(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.cs/#L123">View Source</a>
+  </span>
+  <a id="Numbersome_Random_NextChars_" data-uid="Numbersome.Random.NextChars*"></a>
+  <h4 id="Numbersome_Random_NextChars_nint_" data-uid="Numbersome.Random.NextChars(nint)">NextChars(nint)</h4>
+  <div class="markdown level1 summary"><p>Generates a sequence of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a> values.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;char&gt; NextChars(nint amount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td><p>The amount of values to generate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><p>A sequence of random <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a> values.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_NextDecimal.md&amp;value=---%0Auid%3A%20Numbersome.Random.NextDecimal%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.cs/#L133">View Source</a>
+  </span>
+  <a id="Numbersome_Random_NextDecimal_" data-uid="Numbersome.Random.NextDecimal*"></a>
+  <h4 id="Numbersome_Random_NextDecimal" data-uid="Numbersome.Random.NextDecimal">NextDecimal()</h4>
+  <div class="markdown level1 summary"><p>Generates a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.decimal">Decimal</a> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public decimal NextDecimal()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.decimal">Decimal</a></td>
+        <td><p>A random <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.decimal">Decimal</a> value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_NextDecimal_System_Decimal_System_Decimal_.md&amp;value=---%0Auid%3A%20Numbersome.Random.NextDecimal(System.Decimal%2CSystem.Decimal)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.cs/#L141">View Source</a>
+  </span>
+  <a id="Numbersome_Random_NextDecimal_" data-uid="Numbersome.Random.NextDecimal*"></a>
+  <h4 id="Numbersome_Random_NextDecimal_System_Decimal_System_Decimal_" data-uid="Numbersome.Random.NextDecimal(System.Decimal,System.Decimal)">NextDecimal(Decimal, Decimal)</h4>
+  <div class="markdown level1 summary"><p>Generates a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.decimal">Decimal</a> value within the range of <code data-dev-comment-type="paramref" class="paramref">min</code>..<code data-dev-comment-type="paramref" class="paramref">max</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public decimal NextDecimal(decimal min, decimal max)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.decimal">Decimal</a></td>
+        <td><span class="parametername">min</span></td>
+        <td><p>The minimum possible value.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.decimal">Decimal</a></td>
+        <td><span class="parametername">max</span></td>
+        <td><p>The maximum possible value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.decimal">Decimal</a></td>
+        <td><p>A random <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.decimal">Decimal</a> value within the range of <code data-dev-comment-type="paramref" class="paramref">min</code>..<code data-dev-comment-type="paramref" class="paramref">max</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_NextDecimals_nint_.md&amp;value=---%0Auid%3A%20Numbersome.Random.NextDecimals(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.cs/#L156">View Source</a>
+  </span>
+  <a id="Numbersome_Random_NextDecimals_" data-uid="Numbersome.Random.NextDecimals*"></a>
+  <h4 id="Numbersome_Random_NextDecimals_nint_" data-uid="Numbersome.Random.NextDecimals(nint)">NextDecimals(nint)</h4>
+  <div class="markdown level1 summary"><p>Generates a sequence of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.decimal">Decimal</a> values.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;decimal&gt; NextDecimals(nint amount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td><p>The amount of values to generate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.decimal">Decimal</a>&gt;</td>
+        <td><p>A sequence of random <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.decimal">Decimal</a> values.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_NextDouble.md&amp;value=---%0Auid%3A%20Numbersome.Random.NextDouble%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.cs/#L166">View Source</a>
+  </span>
+  <a id="Numbersome_Random_NextDouble_" data-uid="Numbersome.Random.NextDouble*"></a>
+  <h4 id="Numbersome_Random_NextDouble" data-uid="Numbersome.Random.NextDouble">NextDouble()</h4>
+  <div class="markdown level1 summary"><p>Generates a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double NextDouble()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a></td>
+        <td><p>A random <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a> value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_NextDouble_nint_.md&amp;value=---%0Auid%3A%20Numbersome.Random.NextDouble(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.cs/#L199">View Source</a>
+  </span>
+  <a id="Numbersome_Random_NextDouble_" data-uid="Numbersome.Random.NextDouble*"></a>
+  <h4 id="Numbersome_Random_NextDouble_nint_" data-uid="Numbersome.Random.NextDouble(nint)">NextDouble(nint)</h4>
+  <div class="markdown level1 summary"><p>Generates a sequence of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a> values.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;double&gt; NextDouble(nint amount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td><p>The amount of values to generate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a>&gt;</td>
+        <td><p>A sequence of random <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a> values.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_NextDouble_System_Double_System_Double_.md&amp;value=---%0Auid%3A%20Numbersome.Random.NextDouble(System.Double%2CSystem.Double)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.cs/#L184">View Source</a>
+  </span>
+  <a id="Numbersome_Random_NextDouble_" data-uid="Numbersome.Random.NextDouble*"></a>
+  <h4 id="Numbersome_Random_NextDouble_System_Double_System_Double_" data-uid="Numbersome.Random.NextDouble(System.Double,System.Double)">NextDouble(Double, Double)</h4>
+  <div class="markdown level1 summary"><p>Generates a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a> value within the range of <code data-dev-comment-type="paramref" class="paramref">min</code>..<code data-dev-comment-type="paramref" class="paramref">max</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double NextDouble(double min, double max)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a></td>
+        <td><span class="parametername">min</span></td>
+        <td><p>The minimum possible value.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a></td>
+        <td><span class="parametername">max</span></td>
+        <td><p>The maximum possible value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a></td>
+        <td><p>A random <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a> value within the range of <code data-dev-comment-type="paramref" class="paramref">min</code>..<code data-dev-comment-type="paramref" class="paramref">max</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_NextInt16.md&amp;value=---%0Auid%3A%20Numbersome.Random.NextInt16%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.cs/#L209">View Source</a>
+  </span>
+  <a id="Numbersome_Random_NextInt16_" data-uid="Numbersome.Random.NextInt16*"></a>
+  <h4 id="Numbersome_Random_NextInt16" data-uid="Numbersome.Random.NextInt16">NextInt16()</h4>
+  <div class="markdown level1 summary"><p>Generates a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int16">Int16</a> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public short NextInt16()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int16">Int16</a></td>
+        <td><p>A random <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int16">Int16</a> value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_NextInt16_System_Int16_System_Int16_.md&amp;value=---%0Auid%3A%20Numbersome.Random.NextInt16(System.Int16%2CSystem.Int16)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.cs/#L227">View Source</a>
+  </span>
+  <a id="Numbersome_Random_NextInt16_" data-uid="Numbersome.Random.NextInt16*"></a>
+  <h4 id="Numbersome_Random_NextInt16_System_Int16_System_Int16_" data-uid="Numbersome.Random.NextInt16(System.Int16,System.Int16)">NextInt16(Int16, Int16)</h4>
+  <div class="markdown level1 summary"><p>Generates a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int16">Int16</a> value within the range of <code data-dev-comment-type="paramref" class="paramref">min</code>..<code data-dev-comment-type="paramref" class="paramref">max</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public short NextInt16(short min, short max)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int16">Int16</a></td>
+        <td><span class="parametername">min</span></td>
+        <td><p>The minimum possible value.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int16">Int16</a></td>
+        <td><span class="parametername">max</span></td>
+        <td><p>The maximum possible value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int16">Int16</a></td>
+        <td><p>A random <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int16">Int16</a> value within the range of <code data-dev-comment-type="paramref" class="paramref">min</code>..<code data-dev-comment-type="paramref" class="paramref">max</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_NextInt16s_nint_.md&amp;value=---%0Auid%3A%20Numbersome.Random.NextInt16s(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.cs/#L242">View Source</a>
+  </span>
+  <a id="Numbersome_Random_NextInt16s_" data-uid="Numbersome.Random.NextInt16s*"></a>
+  <h4 id="Numbersome_Random_NextInt16s_nint_" data-uid="Numbersome.Random.NextInt16s(nint)">NextInt16s(nint)</h4>
+  <div class="markdown level1 summary"><p>Generates a sequence of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int16">Int16</a> values.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;short&gt; NextInt16s(nint amount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td><p>The amount of values to generate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int16">Int16</a>&gt;</td>
+        <td><p>A sequence of random <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int16">Int16</a> values.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_NextInt32.md&amp;value=---%0Auid%3A%20Numbersome.Random.NextInt32%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.cs/#L252">View Source</a>
+  </span>
+  <a id="Numbersome_Random_NextInt32_" data-uid="Numbersome.Random.NextInt32*"></a>
+  <h4 id="Numbersome_Random_NextInt32" data-uid="Numbersome.Random.NextInt32">NextInt32()</h4>
+  <div class="markdown level1 summary"><p>Generates a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int NextInt32()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><p>A random <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a> value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_NextInt32_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20Numbersome.Random.NextInt32(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.cs/#L270">View Source</a>
+  </span>
+  <a id="Numbersome_Random_NextInt32_" data-uid="Numbersome.Random.NextInt32*"></a>
+  <h4 id="Numbersome_Random_NextInt32_System_Int32_System_Int32_" data-uid="Numbersome.Random.NextInt32(System.Int32,System.Int32)">NextInt32(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Generates a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a> value within the range of <code data-dev-comment-type="paramref" class="paramref">min</code>..<code data-dev-comment-type="paramref" class="paramref">max</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int NextInt32(int min, int max)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">min</span></td>
+        <td><p>The minimum possible value.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">max</span></td>
+        <td><p>The maximum possible value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><p>A random <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a> value within the range of <code data-dev-comment-type="paramref" class="paramref">min</code>..<code data-dev-comment-type="paramref" class="paramref">max</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_NextInt32s_nint_.md&amp;value=---%0Auid%3A%20Numbersome.Random.NextInt32s(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.cs/#L285">View Source</a>
+  </span>
+  <a id="Numbersome_Random_NextInt32s_" data-uid="Numbersome.Random.NextInt32s*"></a>
+  <h4 id="Numbersome_Random_NextInt32s_nint_" data-uid="Numbersome.Random.NextInt32s(nint)">NextInt32s(nint)</h4>
+  <div class="markdown level1 summary"><p>Generates a sequence of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a> values.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;int&gt; NextInt32s(nint amount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td><p>The amount of values to generate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a>&gt;</td>
+        <td><p>A sequence of random <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a> values.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_NextInt64.md&amp;value=---%0Auid%3A%20Numbersome.Random.NextInt64%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.cs/#L295">View Source</a>
+  </span>
+  <a id="Numbersome_Random_NextInt64_" data-uid="Numbersome.Random.NextInt64*"></a>
+  <h4 id="Numbersome_Random_NextInt64" data-uid="Numbersome.Random.NextInt64">NextInt64()</h4>
+  <div class="markdown level1 summary"><p>Generates a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int64">Int64</a> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long NextInt64()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int64">Int64</a></td>
+        <td><p>A random <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int64">Int64</a> value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_NextInt64_System_Int64_System_Int64_.md&amp;value=---%0Auid%3A%20Numbersome.Random.NextInt64(System.Int64%2CSystem.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.cs/#L313">View Source</a>
+  </span>
+  <a id="Numbersome_Random_NextInt64_" data-uid="Numbersome.Random.NextInt64*"></a>
+  <h4 id="Numbersome_Random_NextInt64_System_Int64_System_Int64_" data-uid="Numbersome.Random.NextInt64(System.Int64,System.Int64)">NextInt64(Int64, Int64)</h4>
+  <div class="markdown level1 summary"><p>Generates a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int64">Int64</a> value within the range of <code data-dev-comment-type="paramref" class="paramref">min</code>..<code data-dev-comment-type="paramref" class="paramref">max</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long NextInt64(long min, long max)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int64">Int64</a></td>
+        <td><span class="parametername">min</span></td>
+        <td><p>The minimum possible value.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int64">Int64</a></td>
+        <td><span class="parametername">max</span></td>
+        <td><p>The maximum possible value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int64">Int64</a></td>
+        <td><p>A random <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int64">Int64</a> value within the range of <code data-dev-comment-type="paramref" class="paramref">min</code>..<code data-dev-comment-type="paramref" class="paramref">max</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_NextInt64s_nint_.md&amp;value=---%0Auid%3A%20Numbersome.Random.NextInt64s(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.cs/#L328">View Source</a>
+  </span>
+  <a id="Numbersome_Random_NextInt64s_" data-uid="Numbersome.Random.NextInt64s*"></a>
+  <h4 id="Numbersome_Random_NextInt64s_nint_" data-uid="Numbersome.Random.NextInt64s(nint)">NextInt64s(nint)</h4>
+  <div class="markdown level1 summary"><p>Generates a sequence of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int64">Int64</a> values.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;long&gt; NextInt64s(nint amount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td><p>The amount of values to generate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int64">Int64</a>&gt;</td>
+        <td><p>A sequence of random <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int64">Int64</a> values.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_NextIntPtr.md&amp;value=---%0Auid%3A%20Numbersome.Random.NextIntPtr%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.cs/#L338">View Source</a>
+  </span>
+  <a id="Numbersome_Random_NextIntPtr_" data-uid="Numbersome.Random.NextIntPtr*"></a>
+  <h4 id="Numbersome_Random_NextIntPtr" data-uid="Numbersome.Random.NextIntPtr">NextIntPtr()</h4>
+  <div class="markdown level1 summary"><p>Generates a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.intptr">IntPtr</a> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IntPtr NextIntPtr()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.intptr">IntPtr</a></td>
+        <td><p>A random <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.intptr">IntPtr</a> value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_NextIntPtr_System_IntPtr_System_IntPtr_.md&amp;value=---%0Auid%3A%20Numbersome.Random.NextIntPtr(System.IntPtr%2CSystem.IntPtr)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.cs/#L370">View Source</a>
+  </span>
+  <a id="Numbersome_Random_NextIntPtr_" data-uid="Numbersome.Random.NextIntPtr*"></a>
+  <h4 id="Numbersome_Random_NextIntPtr_System_IntPtr_System_IntPtr_" data-uid="Numbersome.Random.NextIntPtr(System.IntPtr,System.IntPtr)">NextIntPtr(IntPtr, IntPtr)</h4>
+  <div class="markdown level1 summary"><p>Generates a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.intptr">IntPtr</a> value within the range of <code data-dev-comment-type="paramref" class="paramref">min</code>..<code data-dev-comment-type="paramref" class="paramref">max</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IntPtr NextIntPtr(IntPtr min, IntPtr max)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.intptr">IntPtr</a></td>
+        <td><span class="parametername">min</span></td>
+        <td><p>The minimum possible value.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.intptr">IntPtr</a></td>
+        <td><span class="parametername">max</span></td>
+        <td><p>The maximum possible value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.intptr">IntPtr</a></td>
+        <td><p>A random <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.intptr">IntPtr</a> value within the range of <code data-dev-comment-type="paramref" class="paramref">min</code>..<code data-dev-comment-type="paramref" class="paramref">max</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_NextIntPtrs_nint_.md&amp;value=---%0Auid%3A%20Numbersome.Random.NextIntPtrs(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.cs/#L385">View Source</a>
+  </span>
+  <a id="Numbersome_Random_NextIntPtrs_" data-uid="Numbersome.Random.NextIntPtrs*"></a>
+  <h4 id="Numbersome_Random_NextIntPtrs_nint_" data-uid="Numbersome.Random.NextIntPtrs(nint)">NextIntPtrs(nint)</h4>
+  <div class="markdown level1 summary"><p>Generates a sequence of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.intptr">IntPtr</a> values.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;IntPtr&gt; NextIntPtrs(nint amount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td><p>The amount of values to generate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.intptr">IntPtr</a>&gt;</td>
+        <td><p>A sequence of random <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.intptr">IntPtr</a> values.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_NextSByte.md&amp;value=---%0Auid%3A%20Numbersome.Random.NextSByte%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.cs/#L395">View Source</a>
+  </span>
+  <a id="Numbersome_Random_NextSByte_" data-uid="Numbersome.Random.NextSByte*"></a>
+  <h4 id="Numbersome_Random_NextSByte" data-uid="Numbersome.Random.NextSByte">NextSByte()</h4>
+  <div class="markdown level1 summary"><p>Generates a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.sbyte">SByte</a> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public sbyte NextSByte()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.sbyte">SByte</a></td>
+        <td><p>A random <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.sbyte">SByte</a> value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_NextSByte_System_SByte_System_SByte_.md&amp;value=---%0Auid%3A%20Numbersome.Random.NextSByte(System.SByte%2CSystem.SByte)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.cs/#L412">View Source</a>
+  </span>
+  <a id="Numbersome_Random_NextSByte_" data-uid="Numbersome.Random.NextSByte*"></a>
+  <h4 id="Numbersome_Random_NextSByte_System_SByte_System_SByte_" data-uid="Numbersome.Random.NextSByte(System.SByte,System.SByte)">NextSByte(SByte, SByte)</h4>
+  <div class="markdown level1 summary"><p>Generates a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.sbyte">SByte</a> value within the range of <code data-dev-comment-type="paramref" class="paramref">min</code>..<code data-dev-comment-type="paramref" class="paramref">max</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public sbyte NextSByte(sbyte min, sbyte max)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.sbyte">SByte</a></td>
+        <td><span class="parametername">min</span></td>
+        <td><p>The minimum possible value.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.sbyte">SByte</a></td>
+        <td><span class="parametername">max</span></td>
+        <td><p>The maximum possible value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.sbyte">SByte</a></td>
+        <td><p>A random <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.sbyte">SByte</a> value within the range of <code data-dev-comment-type="paramref" class="paramref">min</code>..<code data-dev-comment-type="paramref" class="paramref">max</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_NextSBytes_nint_.md&amp;value=---%0Auid%3A%20Numbersome.Random.NextSBytes(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.cs/#L428">View Source</a>
+  </span>
+  <a id="Numbersome_Random_NextSBytes_" data-uid="Numbersome.Random.NextSBytes*"></a>
+  <h4 id="Numbersome_Random_NextSBytes_nint_" data-uid="Numbersome.Random.NextSBytes(nint)">NextSBytes(nint)</h4>
+  <div class="markdown level1 summary"><p>Generates a sequence of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.sbyte">SByte</a> values.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public IEnumerable&lt;sbyte&gt; NextSBytes(nint amount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td><p>The amount of values to generate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.sbyte">SByte</a>&gt;</td>
+        <td><p>A sequence of random <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.sbyte">SByte</a> values.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_NextSingle.md&amp;value=---%0Auid%3A%20Numbersome.Random.NextSingle%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.cs/#L439">View Source</a>
+  </span>
+  <a id="Numbersome_Random_NextSingle_" data-uid="Numbersome.Random.NextSingle*"></a>
+  <h4 id="Numbersome_Random_NextSingle" data-uid="Numbersome.Random.NextSingle">NextSingle()</h4>
+  <div class="markdown level1 summary"><p>Generates a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float NextSingle()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td><p>A random <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a> value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_NextSingle_System_Single_System_Single_.md&amp;value=---%0Auid%3A%20Numbersome.Random.NextSingle(System.Single%2CSystem.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.cs/#L457">View Source</a>
+  </span>
+  <a id="Numbersome_Random_NextSingle_" data-uid="Numbersome.Random.NextSingle*"></a>
+  <h4 id="Numbersome_Random_NextSingle_System_Single_System_Single_" data-uid="Numbersome.Random.NextSingle(System.Single,System.Single)">NextSingle(Single, Single)</h4>
+  <div class="markdown level1 summary"><p>Generates a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a> value within the range of <code data-dev-comment-type="paramref" class="paramref">min</code>..<code data-dev-comment-type="paramref" class="paramref">max</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float NextSingle(float min, float max)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td><span class="parametername">min</span></td>
+        <td><p>The minimum possible value.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td><span class="parametername">max</span></td>
+        <td><p>The maximum possible value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td><p>A random <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a> value within the range of <code data-dev-comment-type="paramref" class="paramref">min</code>..<code data-dev-comment-type="paramref" class="paramref">max</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_NextSingles_nint_.md&amp;value=---%0Auid%3A%20Numbersome.Random.NextSingles(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.cs/#L472">View Source</a>
+  </span>
+  <a id="Numbersome_Random_NextSingles_" data-uid="Numbersome.Random.NextSingles*"></a>
+  <h4 id="Numbersome_Random_NextSingles_nint_" data-uid="Numbersome.Random.NextSingles(nint)">NextSingles(nint)</h4>
+  <div class="markdown level1 summary"><p>Generates a sequence of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a> values.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;float&gt; NextSingles(nint amount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td><p>The amount of values to generate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a>&gt;</td>
+        <td><p>A sequence of random <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a> values.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_NextUInt16.md&amp;value=---%0Auid%3A%20Numbersome.Random.NextUInt16%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.cs/#L482">View Source</a>
+  </span>
+  <a id="Numbersome_Random_NextUInt16_" data-uid="Numbersome.Random.NextUInt16*"></a>
+  <h4 id="Numbersome_Random_NextUInt16" data-uid="Numbersome.Random.NextUInt16">NextUInt16()</h4>
+  <div class="markdown level1 summary"><p>Generates a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint16">UInt16</a> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public ushort NextUInt16()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint16">UInt16</a></td>
+        <td><p>A random <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint16">UInt16</a> value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_NextUInt16_System_UInt16_System_UInt16_.md&amp;value=---%0Auid%3A%20Numbersome.Random.NextUInt16(System.UInt16%2CSystem.UInt16)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.cs/#L501">View Source</a>
+  </span>
+  <a id="Numbersome_Random_NextUInt16_" data-uid="Numbersome.Random.NextUInt16*"></a>
+  <h4 id="Numbersome_Random_NextUInt16_System_UInt16_System_UInt16_" data-uid="Numbersome.Random.NextUInt16(System.UInt16,System.UInt16)">NextUInt16(UInt16, UInt16)</h4>
+  <div class="markdown level1 summary"><p>Generates a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint16">UInt16</a> value within the range of <code data-dev-comment-type="paramref" class="paramref">min</code>..<code data-dev-comment-type="paramref" class="paramref">max</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public ushort NextUInt16(ushort min, ushort max)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint16">UInt16</a></td>
+        <td><span class="parametername">min</span></td>
+        <td><p>The minimum possible value.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint16">UInt16</a></td>
+        <td><span class="parametername">max</span></td>
+        <td><p>The maximum possible value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint16">UInt16</a></td>
+        <td><p>A random <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint16">UInt16</a> value within the range of <code data-dev-comment-type="paramref" class="paramref">min</code>..<code data-dev-comment-type="paramref" class="paramref">max</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_NextUInt16s_nint_.md&amp;value=---%0Auid%3A%20Numbersome.Random.NextUInt16s(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.cs/#L517">View Source</a>
+  </span>
+  <a id="Numbersome_Random_NextUInt16s_" data-uid="Numbersome.Random.NextUInt16s*"></a>
+  <h4 id="Numbersome_Random_NextUInt16s_nint_" data-uid="Numbersome.Random.NextUInt16s(nint)">NextUInt16s(nint)</h4>
+  <div class="markdown level1 summary"><p>Generates a sequence of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint16">UInt16</a> values.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public IEnumerable&lt;ushort&gt; NextUInt16s(nint amount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td><p>The amount of values to generate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint16">UInt16</a>&gt;</td>
+        <td><p>A sequence of random <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint16">UInt16</a> values.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_NextUInt32.md&amp;value=---%0Auid%3A%20Numbersome.Random.NextUInt32%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.cs/#L528">View Source</a>
+  </span>
+  <a id="Numbersome_Random_NextUInt32_" data-uid="Numbersome.Random.NextUInt32*"></a>
+  <h4 id="Numbersome_Random_NextUInt32" data-uid="Numbersome.Random.NextUInt32">NextUInt32()</h4>
+  <div class="markdown level1 summary"><p>Generates a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public uint NextUInt32()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a></td>
+        <td><p>A random <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a> value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_NextUInt32_System_UInt32_System_UInt32_.md&amp;value=---%0Auid%3A%20Numbersome.Random.NextUInt32(System.UInt32%2CSystem.UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.cs/#L547">View Source</a>
+  </span>
+  <a id="Numbersome_Random_NextUInt32_" data-uid="Numbersome.Random.NextUInt32*"></a>
+  <h4 id="Numbersome_Random_NextUInt32_System_UInt32_System_UInt32_" data-uid="Numbersome.Random.NextUInt32(System.UInt32,System.UInt32)">NextUInt32(UInt32, UInt32)</h4>
+  <div class="markdown level1 summary"><p>Generates a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a> value within the range of <code data-dev-comment-type="paramref" class="paramref">min</code>..<code data-dev-comment-type="paramref" class="paramref">max</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public uint NextUInt32(uint min, uint max)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a></td>
+        <td><span class="parametername">min</span></td>
+        <td><p>The minimum possible value.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a></td>
+        <td><span class="parametername">max</span></td>
+        <td><p>The maximum possible value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a></td>
+        <td><p>A random <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a> value within the range of <code data-dev-comment-type="paramref" class="paramref">min</code>..<code data-dev-comment-type="paramref" class="paramref">max</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_NextUInt32s_nint_.md&amp;value=---%0Auid%3A%20Numbersome.Random.NextUInt32s(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.cs/#L563">View Source</a>
+  </span>
+  <a id="Numbersome_Random_NextUInt32s_" data-uid="Numbersome.Random.NextUInt32s*"></a>
+  <h4 id="Numbersome_Random_NextUInt32s_nint_" data-uid="Numbersome.Random.NextUInt32s(nint)">NextUInt32s(nint)</h4>
+  <div class="markdown level1 summary"><p>Generates a sequence of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a> values.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public IEnumerable&lt;uint&gt; NextUInt32s(nint amount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td><p>The amount of values to generate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a>&gt;</td>
+        <td><p>A sequence of random <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a> values.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_NextUInt64.md&amp;value=---%0Auid%3A%20Numbersome.Random.NextUInt64%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.cs/#L574">View Source</a>
+  </span>
+  <a id="Numbersome_Random_NextUInt64_" data-uid="Numbersome.Random.NextUInt64*"></a>
+  <h4 id="Numbersome_Random_NextUInt64" data-uid="Numbersome.Random.NextUInt64">NextUInt64()</h4>
+  <div class="markdown level1 summary"><p>Generates a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint64">UInt64</a> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public ulong NextUInt64()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint64">UInt64</a></td>
+        <td><p>A random <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint64">UInt64</a> value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_NextUInt64_System_UInt64_System_UInt64_.md&amp;value=---%0Auid%3A%20Numbersome.Random.NextUInt64(System.UInt64%2CSystem.UInt64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.cs/#L593">View Source</a>
+  </span>
+  <a id="Numbersome_Random_NextUInt64_" data-uid="Numbersome.Random.NextUInt64*"></a>
+  <h4 id="Numbersome_Random_NextUInt64_System_UInt64_System_UInt64_" data-uid="Numbersome.Random.NextUInt64(System.UInt64,System.UInt64)">NextUInt64(UInt64, UInt64)</h4>
+  <div class="markdown level1 summary"><p>Generates a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint64">UInt64</a> value within the range of <code data-dev-comment-type="paramref" class="paramref">min</code>..<code data-dev-comment-type="paramref" class="paramref">max</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public ulong NextUInt64(ulong min, ulong max)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint64">UInt64</a></td>
+        <td><span class="parametername">min</span></td>
+        <td><p>The minimum possible value.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint64">UInt64</a></td>
+        <td><span class="parametername">max</span></td>
+        <td><p>The maximum possible value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint64">UInt64</a></td>
+        <td><p>A random <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint64">UInt64</a> value within the range of <code data-dev-comment-type="paramref" class="paramref">min</code>..<code data-dev-comment-type="paramref" class="paramref">max</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_NextUInt64s_nint_.md&amp;value=---%0Auid%3A%20Numbersome.Random.NextUInt64s(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.cs/#L609">View Source</a>
+  </span>
+  <a id="Numbersome_Random_NextUInt64s_" data-uid="Numbersome.Random.NextUInt64s*"></a>
+  <h4 id="Numbersome_Random_NextUInt64s_nint_" data-uid="Numbersome.Random.NextUInt64s(nint)">NextUInt64s(nint)</h4>
+  <div class="markdown level1 summary"><p>Generates a sequence of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint64">UInt64</a> values.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public IEnumerable&lt;ulong&gt; NextUInt64s(nint amount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td><p>The amount of values to generate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint64">UInt64</a>&gt;</td>
+        <td><p>A sequence of random <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint64">UInt64</a> values.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_NextUIntPtr.md&amp;value=---%0Auid%3A%20Numbersome.Random.NextUIntPtr%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.cs/#L619">View Source</a>
+  </span>
+  <a id="Numbersome_Random_NextUIntPtr_" data-uid="Numbersome.Random.NextUIntPtr*"></a>
+  <h4 id="Numbersome_Random_NextUIntPtr" data-uid="Numbersome.Random.NextUIntPtr">NextUIntPtr()</h4>
+  <div class="markdown level1 summary"><p>Generates a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uintptr">UIntPtr</a> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public UIntPtr NextUIntPtr()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uintptr">UIntPtr</a></td>
+        <td><p>A random <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uintptr">UIntPtr</a> value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_NextUIntPtr_System_UIntPtr_System_UIntPtr_.md&amp;value=---%0Auid%3A%20Numbersome.Random.NextUIntPtr(System.UIntPtr%2CSystem.UIntPtr)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.cs/#L652">View Source</a>
+  </span>
+  <a id="Numbersome_Random_NextUIntPtr_" data-uid="Numbersome.Random.NextUIntPtr*"></a>
+  <h4 id="Numbersome_Random_NextUIntPtr_System_UIntPtr_System_UIntPtr_" data-uid="Numbersome.Random.NextUIntPtr(System.UIntPtr,System.UIntPtr)">NextUIntPtr(UIntPtr, UIntPtr)</h4>
+  <div class="markdown level1 summary"><p>Generates a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uintptr">UIntPtr</a> value within the range of <code data-dev-comment-type="paramref" class="paramref">min</code>..<code data-dev-comment-type="paramref" class="paramref">max</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public UIntPtr NextUIntPtr(UIntPtr min, UIntPtr max)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uintptr">UIntPtr</a></td>
+        <td><span class="parametername">min</span></td>
+        <td><p>The minimum possible value.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uintptr">UIntPtr</a></td>
+        <td><span class="parametername">max</span></td>
+        <td><p>The maximum possible value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uintptr">UIntPtr</a></td>
+        <td><p>A random <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uintptr">UIntPtr</a> value within the range of <code data-dev-comment-type="paramref" class="paramref">min</code>..<code data-dev-comment-type="paramref" class="paramref">max</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_NextUIntPtrs_nint_.md&amp;value=---%0Auid%3A%20Numbersome.Random.NextUIntPtrs(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.cs/#L668">View Source</a>
+  </span>
+  <a id="Numbersome_Random_NextUIntPtrs_" data-uid="Numbersome.Random.NextUIntPtrs*"></a>
+  <h4 id="Numbersome_Random_NextUIntPtrs_nint_" data-uid="Numbersome.Random.NextUIntPtrs(nint)">NextUIntPtrs(nint)</h4>
+  <div class="markdown level1 summary"><p>Generates a sequence of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uintptr">UIntPtr</a> values.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
+public IEnumerable&lt;UIntPtr&gt; NextUIntPtrs(nint amount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td><p>The amount of values to generate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uintptr">UIntPtr</a>&gt;</td>
+        <td><p>A sequence of random <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uintptr">UIntPtr</a> values.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random.md&amp;value=---%0Auid%3A%20Numbersome.Random%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.cs/#L8" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

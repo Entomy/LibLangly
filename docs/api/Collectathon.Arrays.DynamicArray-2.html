@@ -1,0 +1,516 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class DynamicArray&lt;TIndex, TElement&gt;
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class DynamicArray&lt;TIndex, TElement&gt;
+   ">
+    <meta name="generator" content="docfx 2.57.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Collectathon.Arrays.DynamicArray`2">
+  
+  
+  <h1 id="Collectathon_Arrays_DynamicArray_2" data-uid="Collectathon.Arrays.DynamicArray`2" class="text-break">Class DynamicArray&lt;TIndex, TElement&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>Represents an associative dynamic array, a type of flexible array who's capacity can freely grow and shrink.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><a class="xref" href="Collectathon.Arrays.FlexibleArray-3.html">FlexibleArray</a>&lt;TIndex, TElement, <a class="xref" href="Collectathon.Arrays.DynamicArray-2.html">DynamicArray</a>&lt;TIndex, TElement&gt;&gt;</div>
+    <div class="level2"><span class="xref">DynamicArray&lt;TIndex, TElement&gt;</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="System.Traits.IClear.html">IClear</a></div>
+    <div><a class="xref" href="System.Traits.IIndex-2.html">IIndex</a>&lt;TIndex, TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IIndexReadOnly-2.html">IIndexReadOnly</a>&lt;TIndex, TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IInsert-2.html">IInsert</a>&lt;TIndex, TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.ISequence-2.html">ISequence</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">ValueTuple</a>&lt;TIndex, TElement&gt;, <a class="xref" href="Collectathon.Arrays.FlexibleArray-3.Enumerator.html">FlexibleArray.Enumerator</a>&lt;&gt;&gt;</div>
+    <div><a class="xref" href="System.Traits.ICount.html">ICount</a></div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">ValueTuple</a>&lt;TIndex, TElement&gt;&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
+    <div><a class="xref" href="System.Traits.IResize.html">IResize</a></div>
+    <div><a class="xref" href="System.Traits.ICapacity.html">ICapacity</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Collectathon.Arrays.FlexibleArray-3.html#Collectathon_Arrays_FlexibleArray_3_Memory">FlexibleArray&lt;TIndex, TElement, DynamicArray&lt;TIndex, TElement&gt;&gt;.Memory</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Arrays.FlexibleArray-3.html#Collectathon_Arrays_FlexibleArray_3_Capacity">FlexibleArray&lt;TIndex, TElement, DynamicArray&lt;TIndex, TElement&gt;&gt;.Capacity</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Arrays.FlexibleArray-3.html#Collectathon_Arrays_FlexibleArray_3_Count">FlexibleArray&lt;TIndex, TElement, DynamicArray&lt;TIndex, TElement&gt;&gt;.Count</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Arrays.FlexibleArray-3.html#Collectathon_Arrays_FlexibleArray_3_Item__0_">FlexibleArray&lt;TIndex, TElement, DynamicArray&lt;TIndex, TElement&gt;&gt;.Item[TIndex]</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Arrays.FlexibleArray-3.html#Collectathon_Arrays_FlexibleArray_3_Clear">FlexibleArray&lt;TIndex, TElement, DynamicArray&lt;TIndex, TElement&gt;&gt;.Clear()</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Arrays.FlexibleArray-3.html#Collectathon_Arrays_FlexibleArray_3_GetEnumerator">FlexibleArray&lt;TIndex, TElement, DynamicArray&lt;TIndex, TElement&gt;&gt;.GetEnumerator()</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Arrays.FlexibleArray-3.html#Collectathon_Arrays_FlexibleArray_3_System_Collections_IEnumerable_GetEnumerator">FlexibleArray&lt;TIndex, TElement, DynamicArray&lt;TIndex, TElement&gt;&gt;.IEnumerable.GetEnumerator()</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Arrays.FlexibleArray-3.html#Collectathon_Arrays_FlexibleArray_3_System_Collections_Generic_IEnumerable__TIndexIndex_TElementElement___GetEnumerator">FlexibleArray&lt;TIndex, TElement, DynamicArray&lt;TIndex, TElement&gt;&gt;.IEnumerable&lt;(TIndex Index, TElement Element)&gt;.GetEnumerator()</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Arrays.FlexibleArray-3.html#Collectathon_Arrays_FlexibleArray_3_GetHashCode">FlexibleArray&lt;TIndex, TElement, DynamicArray&lt;TIndex, TElement&gt;&gt;.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Arrays.FlexibleArray-3.html#Collectathon_Arrays_FlexibleArray_3_Insert__0__1_">FlexibleArray&lt;TIndex, TElement, DynamicArray&lt;TIndex, TElement&gt;&gt;.Insert(TIndex, TElement)</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Arrays.FlexibleArray-3.html#Collectathon_Arrays_FlexibleArray_3_ToString">FlexibleArray&lt;TIndex, TElement, DynamicArray&lt;TIndex, TElement&gt;&gt;.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Arrays.FlexibleArray-3.html#Collectathon_Arrays_FlexibleArray_3_ToString_nint_">FlexibleArray&lt;TIndex, TElement, DynamicArray&lt;TIndex, TElement&gt;&gt;.ToString(nint)</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Arrays.FlexibleArray-3.html#Collectathon_Arrays_FlexibleArray_3_Add__0__1_">FlexibleArray&lt;TIndex, TElement, DynamicArray&lt;TIndex, TElement&gt;&gt;.Add(TIndex, TElement)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_">Object.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_System_Object_">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#System_Object_GetHashCode">Object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#System_Object_GetType">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#System_Object_MemberwiseClone">Object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#System_Object_ReferenceEquals_System_Object_System_Object_">Object.ReferenceEquals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString">Object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Collectathon.Arrays.html">Collectathon.Arrays</a></h6>
+  <h6><strong>Assembly</strong>: Collectathon.Arrays.dll</h6>
+  <h5 id="Collectathon_Arrays_DynamicArray_2_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class DynamicArray&lt;TIndex, TElement&gt; : FlexibleArray&lt;TIndex, TElement, DynamicArray&lt;TIndex, TElement&gt;&gt;, IClear, IIndex&lt;TIndex, TElement&gt;, IIndexReadOnly&lt;TIndex, TElement&gt;, IInsert&lt;TIndex, TElement&gt;, ISequence&lt;(TIndex Index, TElement Element), FlexibleArray&lt;TIndex, TElement, DynamicArray&lt;TIndex, TElement&gt;&gt;.Enumerator&gt;, ICount, IEnumerable&lt;(TIndex Index, TElement Element)&gt;, IEnumerable, IResize, ICapacity</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TIndex</span></td>
+        <td><p>The type of the indicies of the array.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of the elements of the array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_2__ctor.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%602.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`2.cs/#L15">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_DynamicArray_2__ctor_" data-uid="Collectathon.Arrays.DynamicArray`2.#ctor*"></a>
+  <h4 id="Collectathon_Arrays_DynamicArray_2__ctor" data-uid="Collectathon.Arrays.DynamicArray`2.#ctor">DynamicArray()</h4>
+  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Collectathon.Arrays.DynamicArray-2.html">DynamicArray&lt;TIndex, TElement&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DynamicArray()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_2__ctor_nint_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%602.%23ctor(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`2.cs/#L21">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_DynamicArray_2__ctor_" data-uid="Collectathon.Arrays.DynamicArray`2.#ctor*"></a>
+  <h4 id="Collectathon_Arrays_DynamicArray_2__ctor_nint_" data-uid="Collectathon.Arrays.DynamicArray`2.#ctor(nint)">DynamicArray(nint)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Collectathon.Arrays.DynamicArray-2.html">DynamicArray&lt;TIndex, TElement&gt;</a> with the given <code data-dev-comment-type="paramref" class="paramref">capacity</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DynamicArray(nint capacity)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">capacity</span></td>
+        <td><p>The maximum capacity.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_2__ctor_System_ValueTuple__0__1____.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%602.%23ctor(System.ValueTuple%7B%600%2C%601%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`2.cs/#L27">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_DynamicArray_2__ctor_" data-uid="Collectathon.Arrays.DynamicArray`2.#ctor*"></a>
+  <h4 id="Collectathon_Arrays_DynamicArray_2__ctor_System_ValueTuple__0__1____" data-uid="Collectathon.Arrays.DynamicArray`2.#ctor(System.ValueTuple{`0,`1}[])">DynamicArray((TIndex, TElement)[])</h4>
+  <div class="markdown level1 summary"><p>Conversion constructor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DynamicArray((TIndex, TElement)[] memory)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">ValueTuple</a>&lt;TIndex, TElement&gt;[]</td>
+        <td><span class="parametername">memory</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.array">Array</a> of (<code data-dev-comment-type="typeparamref" class="typeparamref">TIndex</code>, <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code>) to reuse.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_2_Capacity.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%602.Capacity%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`2.cs/#L30">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_DynamicArray_2_Capacity_" data-uid="Collectathon.Arrays.DynamicArray`2.Capacity*"></a>
+  <h4 id="Collectathon_Arrays_DynamicArray_2_Capacity" data-uid="Collectathon.Arrays.DynamicArray`2.Capacity">Capacity</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public nint Capacity { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_2_Add__0__1_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%602.Add(%600%2C%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`2.cs/#L51">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_DynamicArray_2_Add_" data-uid="Collectathon.Arrays.DynamicArray`2.Add*"></a>
+  <h4 id="Collectathon_Arrays_DynamicArray_2_Add__0__1_" data-uid="Collectathon.Arrays.DynamicArray`2.Add(`0,`1)">Add(TIndex, TElement)</h4>
+  <div class="markdown level1 summary"><p>Adds an element to this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Add(TIndex index, TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TIndex</span></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>The index of the element to add.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element to add.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Collectathon.Arrays.FlexibleArray&lt;TIndex, TElement, Collectathon.Arrays.DynamicArray&lt;TIndex, TElement&gt;&gt;.Add(TIndex, TElement)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_2_Resize_nint_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%602.Resize(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`2.cs/#L43">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_DynamicArray_2_Resize_" data-uid="Collectathon.Arrays.DynamicArray`2.Resize*"></a>
+  <h4 id="Collectathon_Arrays_DynamicArray_2_Resize_nint_" data-uid="Collectathon.Arrays.DynamicArray`2.Resize(nint)">Resize(nint)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Resize(nint capacity)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">capacity</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="operators">Operators
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_2_op_Implicit_System_ValueTuple__0__1_____Collectathon_Arrays_DynamicArray__0__1_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%602.op_Implicit(System.ValueTuple%7B%600%2C%601%7D%5B%5D)~Collectathon.Arrays.DynamicArray%7B%600%2C%601%7D%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`2.cs/#L39">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_DynamicArray_2_op_Implicit_" data-uid="Collectathon.Arrays.DynamicArray`2.op_Implicit*"></a>
+  <h4 id="Collectathon_Arrays_DynamicArray_2_op_Implicit_System_ValueTuple__0__1_____Collectathon_Arrays_DynamicArray__0__1_" data-uid="Collectathon.Arrays.DynamicArray`2.op_Implicit(System.ValueTuple{`0,`1}[])~Collectathon.Arrays.DynamicArray{`0,`1}">Implicit((TIndex, TElement)[] to DynamicArray&lt;TIndex, TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Converts the <code data-dev-comment-type="paramref" class="paramref">array</code> to a <a class="xref" href="Collectathon.Arrays.DynamicArray-2.html">DynamicArray&lt;TIndex, TElement&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator DynamicArray&lt;TIndex, TElement&gt;((TIndex, TElement)[] array)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">ValueTuple</a>&lt;TIndex, TElement&gt;[]</td>
+        <td><span class="parametername">array</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.array">Array</a> to convert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Collectathon.Arrays.DynamicArray-2.html">DynamicArray</a>&lt;TIndex, TElement&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="System.Traits.IClear.html">IClear</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IIndex-2.html">IIndex&lt;TIndex, TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IIndexReadOnly-2.html">IIndexReadOnly&lt;TIndex, TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IInsert-2.html">IInsert&lt;TIndex, TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.ISequence-2.html">ISequence&lt;TElement, TEnumerator&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.ICount.html">ICount</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">System.Collections.Generic.IEnumerable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">System.Collections.IEnumerable</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IResize.html">IResize</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.ICapacity.html">ICapacity</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Grow_System_Traits_IResize_">TraitExtensions.Grow(IResize)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Grow_System_Traits_IResize_nint_">TraitExtensions.Grow(IResize, nint)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Shrink_System_Traits_IResize_">TraitExtensions.Shrink(IResize)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_2.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%602%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`2.cs/#L11" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

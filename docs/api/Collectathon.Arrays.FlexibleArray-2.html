@@ -1,0 +1,2517 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class FlexibleArray&lt;TElement, TSelf&gt;
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class FlexibleArray&lt;TElement, TSelf&gt;
+   ">
+    <meta name="generator" content="docfx 2.57.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Collectathon.Arrays.FlexibleArray`2">
+  
+  
+  <h1 id="Collectathon_Arrays_FlexibleArray_2" data-uid="Collectathon.Arrays.FlexibleArray`2" class="text-break">Class FlexibleArray&lt;TElement, TSelf&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>Represents any dynamically sized array.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">FlexibleArray&lt;TElement, TSelf&gt;</span></div>
+      <div class="level2"><a class="xref" href="Collectathon.Arrays.BoundedArray-1.html">BoundedArray&lt;TElement&gt;</a></div>
+      <div class="level2"><a class="xref" href="Collectathon.Arrays.DynamicArray-1.html">DynamicArray&lt;TElement&gt;</a></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="System.Traits.IAddSpan-1.html">IAddSpan</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IAddMemory-1.html">IAddMemory</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IAdd-1.html">IAdd</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.ICapacity.html">ICapacity</a></div>
+    <div><a class="xref" href="System.Traits.IClear.html">IClear</a></div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;TSelf&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Collectathon.Arrays.FlexibleArray-2.html">FlexibleArray</a>&lt;TElement, TSelf&gt;&gt;</div>
+    <div><a class="xref" href="System.Traits.IIndex-2.html">IIndex</a>&lt;<span class="xref">nint</span>, TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IIndexReadOnly-2.html">IIndexReadOnly</a>&lt;<span class="xref">nint</span>, TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IInsertSpan-2.html">IInsertSpan</a>&lt;<span class="xref">nint</span>, TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IInsertMemory-2.html">IInsertMemory</a>&lt;<span class="xref">nint</span>, TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IInsert-2.html">IInsert</a>&lt;<span class="xref">nint</span>, TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IPostpendSpan-1.html">IPostpendSpan</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IPostpendMemory-1.html">IPostpendMemory</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IPostpend-1.html">IPostpend</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IPrependSpan-1.html">IPrependSpan</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IPrependMemory-1.html">IPrependMemory</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IPrepend-1.html">IPrepend</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IRemove-1.html">IRemove</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IReplace-1.html">IReplace</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IReplace-2.html">IReplace</a>&lt;TElement, TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.ISequence-2.html">ISequence</a>&lt;TElement, <a class="xref" href="Collectathon.Arrays.FlexibleArray-2.Enumerator.html">FlexibleArray.Enumerator</a>&lt;&gt;&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
+    <div><a class="xref" href="System.Traits.IShift.html">IShift</a></div>
+    <div><a class="xref" href="System.Traits.ISlice-1.html">ISlice</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;TElement&gt;&gt;</div>
+    <div><a class="xref" href="System.Traits.ICount.html">ICount</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_System_Object_">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#System_Object_GetType">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#System_Object_MemberwiseClone">Object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#System_Object_ReferenceEquals_System_Object_System_Object_">Object.ReferenceEquals(Object, Object)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Collectathon.Arrays.html">Collectathon.Arrays</a></h6>
+  <h6><strong>Assembly</strong>: Collectathon.Arrays.dll</h6>
+  <h5 id="Collectathon_Arrays_FlexibleArray_2_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class FlexibleArray&lt;TElement, TSelf&gt; : IAddSpan&lt;TElement&gt;, IAddMemory&lt;TElement&gt;, IAdd&lt;TElement&gt;, ICapacity, IClear, IEquatable&lt;TSelf&gt;, IEquatable&lt;FlexibleArray&lt;TElement, TSelf&gt;&gt;, IIndex&lt;nint, TElement&gt;, IIndexReadOnly&lt;nint, TElement&gt;, IInsertSpan&lt;nint, TElement&gt;, IInsertMemory&lt;nint, TElement&gt;, IInsert&lt;nint, TElement&gt;, IPostpendSpan&lt;TElement&gt;, IPostpendMemory&lt;TElement&gt;, IPostpend&lt;TElement&gt;, IPrependSpan&lt;TElement&gt;, IPrependMemory&lt;TElement&gt;, IPrepend&lt;TElement&gt;, IRemove&lt;TElement&gt;, IReplace&lt;TElement&gt;, IReplace&lt;TElement, TElement&gt;, ISequence&lt;TElement, FlexibleArray&lt;TElement, TSelf&gt;.Enumerator&gt;, IEnumerable&lt;TElement&gt;, IEnumerable, IShift, ISlice&lt;Memory&lt;TElement&gt;&gt;, ICount where TSelf : FlexibleArray&lt;TElement, TSelf&gt;</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of the elements in the array.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TSelf</span></td>
+        <td><p>The implementing type; itself.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2__ctor__0___nint_Collectathon_Filter_nint__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.%23ctor(%600%5B%5D%2Cnint%2CCollectathon.Filter%7Bnint%2C%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L74">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2__ctor_" data-uid="Collectathon.Arrays.FlexibleArray`2.#ctor*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2__ctor__0___nint_Collectathon_Filter_nint__0__" data-uid="Collectathon.Arrays.FlexibleArray`2.#ctor(`0[],nint,Collectathon.Filter{nint,`0})">FlexibleArray(TElement[], nint, Filter&lt;nint, TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Copy constructor</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected FlexibleArray(TElement[] memory, nint count, Filter&lt;nint, TElement&gt; filter)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TElement[]</td>
+        <td><span class="parametername">memory</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.array">Array</a> of <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> to reuse.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">count</span></td>
+        <td><p>The amount of elements in the array.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Collectathon.Filter-2.html">Filter</a>&lt;<span class="xref">nint</span>, TElement&gt;</td>
+        <td><span class="parametername">filter</span></td>
+        <td><p>The <a class="xref" href="Collectathon.Filter-2.html">Filter&lt;TIndex, TElement&gt;</a> to reuse.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2__ctor__0___nint_Collectathon_Filters_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.%23ctor(%600%5B%5D%2Cnint%2CCollectathon.Filters)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L62">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2__ctor_" data-uid="Collectathon.Arrays.FlexibleArray`2.#ctor*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2__ctor__0___nint_Collectathon_Filters_" data-uid="Collectathon.Arrays.FlexibleArray`2.#ctor(`0[],nint,Collectathon.Filters)">FlexibleArray(TElement[], nint, Filters)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Collectathon.Arrays.FlexibleArray-2.html">FlexibleArray&lt;TElement, TSelf&gt;</a> with the given <code data-dev-comment-type="paramref" class="paramref">memory</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected FlexibleArray(TElement[] memory, nint count, Filters filter)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TElement[]</td>
+        <td><span class="parametername">memory</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.array">Array</a> of <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> to reuse.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">count</span></td>
+        <td><p>The amount of elements in the array.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Collectathon.Filters.html">Filters</a></td>
+        <td><span class="parametername">filter</span></td>
+        <td><p>The type of filter to use.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2__ctor_nint_nint_Collectathon_Filters_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.%23ctor(nint%2Cnint%2CCollectathon.Filters)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L50">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2__ctor_" data-uid="Collectathon.Arrays.FlexibleArray`2.#ctor*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2__ctor_nint_nint_Collectathon_Filters_" data-uid="Collectathon.Arrays.FlexibleArray`2.#ctor(nint,nint,Collectathon.Filters)">FlexibleArray(nint, nint, Filters)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Collectathon.Arrays.FlexibleArray-2.html">FlexibleArray&lt;TElement, TSelf&gt;</a> with the given <code data-dev-comment-type="paramref" class="paramref">capacity</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected FlexibleArray(nint capacity, nint count, Filters filter)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">capacity</span></td>
+        <td><p>The initial capacity.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">count</span></td>
+        <td><p>The amount of elements in the array.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Collectathon.Filters.html">Filters</a></td>
+        <td><span class="parametername">filter</span></td>
+        <td><p>The type of filter to use.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Filter.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Filter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L36">View Source</a>
+  </span>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_Filter" data-uid="Collectathon.Arrays.FlexibleArray`2.Filter">Filter</h4>
+  <div class="markdown level1 summary"><p>The <a class="xref" href="Collectathon.Filter-2.html">Filter&lt;TIndex, TElement&gt;</a> being used.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly Filter&lt;nint, TElement&gt; Filter</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Collectathon.Filter-2.html">Filter</a>&lt;<span class="xref">nint</span>, TElement&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Collectathon_Arrays_FlexibleArray_2_Filter_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This is never <span class="xref">null</span>; a sentinel is used by default.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Memory.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Memory%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L42">View Source</a>
+  </span>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_Memory" data-uid="Collectathon.Arrays.FlexibleArray`2.Memory">Memory</h4>
+  <div class="markdown level1 summary"><p>The backing array of this <a class="xref" href="Collectathon.Arrays.FlexibleArray-2.html">FlexibleArray&lt;TElement, TSelf&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected TElement[] Memory</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TElement[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Capacity.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Capacity%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L81">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_Capacity_" data-uid="Collectathon.Arrays.FlexibleArray`2.Capacity*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_Capacity" data-uid="Collectathon.Arrays.FlexibleArray`2.Capacity">Capacity</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public nint Capacity { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Count.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Count%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L84">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_Count_" data-uid="Collectathon.Arrays.FlexibleArray`2.Count*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_Count" data-uid="Collectathon.Arrays.FlexibleArray`2.Count">Count</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public nint Count { get; protected set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Item_nint_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Item(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L87">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_Item_" data-uid="Collectathon.Arrays.FlexibleArray`2.Item*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_Item_nint_" data-uid="Collectathon.Arrays.FlexibleArray`2.Item(nint)">Item[nint]</h4>
+  <div class="markdown level1 summary"><p>Gets  the element at the specified index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TElement this[nint index] { get; set; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">index</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><p>The element at the specified index.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Add__0_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Add(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L126">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_Add_" data-uid="Collectathon.Arrays.FlexibleArray`2.Add*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_Add__0_" data-uid="Collectathon.Arrays.FlexibleArray`2.Add(`0)">Add(TElement)</h4>
+  <div class="markdown level1 summary"><p>Adds an element to this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element to add.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Collectathon_Arrays_FlexibleArray_2_Add__0__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Add__0___.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Add(%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L129">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_Add_" data-uid="Collectathon.Arrays.FlexibleArray`2.Add*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_Add__0___" data-uid="Collectathon.Arrays.FlexibleArray`2.Add(`0[])">Add(TElement[])</h4>
+  <div class="markdown level1 summary"><p>Adds the elements to this object, as a batch.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(params TElement[] elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TElement[]</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to add.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Collectathon_Arrays_FlexibleArray_2_Add__0____remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Add_System_Memory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Add(System.Memory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L132">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_Add_" data-uid="Collectathon.Arrays.FlexibleArray`2.Add*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_Add_System_Memory__0__" data-uid="Collectathon.Arrays.FlexibleArray`2.Add(System.Memory{`0})">Add(Memory&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Adds the elements to this object, as a batch.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(Memory&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to add.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Collectathon_Arrays_FlexibleArray_2_Add_System_Memory__0___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Add_System_ReadOnlyMemory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Add(System.ReadOnlyMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L135">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_Add_" data-uid="Collectathon.Arrays.FlexibleArray`2.Add*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_Add_System_ReadOnlyMemory__0__" data-uid="Collectathon.Arrays.FlexibleArray`2.Add(System.ReadOnlyMemory{`0})">Add(ReadOnlyMemory&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Adds the elements to this object, as a batch.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(ReadOnlyMemory&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to add.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Collectathon_Arrays_FlexibleArray_2_Add_System_ReadOnlyMemory__0___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Add_System_ReadOnlySpan__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Add(System.ReadOnlySpan%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L141">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_Add_" data-uid="Collectathon.Arrays.FlexibleArray`2.Add*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_Add_System_ReadOnlySpan__0__" data-uid="Collectathon.Arrays.FlexibleArray`2.Add(System.ReadOnlySpan{`0})">Add(ReadOnlySpan&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Adds the elements to this object, as a batch.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(ReadOnlySpan&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to add.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Collectathon_Arrays_FlexibleArray_2_Add_System_ReadOnlySpan__0___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Add_System_Span__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Add(System.Span%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L138">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_Add_" data-uid="Collectathon.Arrays.FlexibleArray`2.Add*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_Add_System_Span__0__" data-uid="Collectathon.Arrays.FlexibleArray`2.Add(System.Span{`0})">Add(Span&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Adds the elements to this object, as a batch.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(Span&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to add.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Collectathon_Arrays_FlexibleArray_2_Add_System_Span__0___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Clear.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Clear%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L144">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_Clear_" data-uid="Collectathon.Arrays.FlexibleArray`2.Clear*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_Clear" data-uid="Collectathon.Arrays.FlexibleArray`2.Clear">Clear()</h4>
+  <div class="markdown level1 summary"><p>Clears this collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Clear()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Equals__1_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Equals(%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L165">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_Equals_" data-uid="Collectathon.Arrays.FlexibleArray`2.Equals*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_Equals__1_" data-uid="Collectathon.Arrays.FlexibleArray`2.Equals(`1)">Equals(TSelf)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(TSelf other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TSelf</span></td>
+        <td><span class="parametername">other</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Equals_Collectathon_Arrays_FlexibleArray__0__1__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Equals(Collectathon.Arrays.FlexibleArray%7B%600%2C%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L168">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_Equals_" data-uid="Collectathon.Arrays.FlexibleArray`2.Equals*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_Equals_Collectathon_Arrays_FlexibleArray__0__1__" data-uid="Collectathon.Arrays.FlexibleArray`2.Equals(Collectathon.Arrays.FlexibleArray{`0,`1})">Equals(FlexibleArray&lt;TElement, TSelf&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(FlexibleArray&lt;TElement, TSelf&gt; other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Collectathon.Arrays.FlexibleArray-2.html">FlexibleArray</a>&lt;TElement, TSelf&gt;</td>
+        <td><span class="parametername">other</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Equals_System_Collections_Generic_IEnumerable__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Equals(System.Collections.Generic.IEnumerable%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L171">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_Equals_" data-uid="Collectathon.Arrays.FlexibleArray`2.Equals*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_Equals_System_Collections_Generic_IEnumerable__0__" data-uid="Collectathon.Arrays.FlexibleArray`2.Equals(System.Collections.Generic.IEnumerable{`0})">Equals(IEnumerable&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(IEnumerable&lt;TElement&gt; other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">other</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Equals_System_Object_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Equals(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L151">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_Equals_" data-uid="Collectathon.Arrays.FlexibleArray`2.Equals*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_Equals_System_Object_" data-uid="Collectathon.Arrays.FlexibleArray`2.Equals(System.Object)">Equals(Object)</h4>
+  <div class="markdown level1 summary"><p>Determines if the two values are equal.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override sealed bool Equals(object obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>The other object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><span class="xref">true</span> if the two values are equal; otherwise, <span class="xref">false</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_">Object.Equals(Object)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_GetEnumerator.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L174">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_GetEnumerator_" data-uid="Collectathon.Arrays.FlexibleArray`2.GetEnumerator*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_GetEnumerator" data-uid="Collectathon.Arrays.FlexibleArray`2.GetEnumerator">GetEnumerator()</h4>
+  <div class="markdown level1 summary"><p>Returns an enumerator that iterates through the sequence.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FlexibleArray&lt;TElement, TSelf&gt;.Enumerator GetEnumerator()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Collectathon.Arrays.FlexibleArray-2.Enumerator.html">FlexibleArray.Enumerator</a>&lt;&gt;</td>
+        <td><p>An enumerator that can be used to iterate through the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_GetHashCode.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.GetHashCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L185">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_GetHashCode_" data-uid="Collectathon.Arrays.FlexibleArray`2.GetHashCode*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_GetHashCode" data-uid="Collectathon.Arrays.FlexibleArray`2.GetHashCode">GetHashCode()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override sealed int GetHashCode()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#System_Object_GetHashCode">Object.GetHashCode()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Insert_nint__0_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Insert(nint%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L189">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_Insert_" data-uid="Collectathon.Arrays.FlexibleArray`2.Insert*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_Insert_nint__0_" data-uid="Collectathon.Arrays.FlexibleArray`2.Insert(nint,`0)">Insert(nint, TElement)</h4>
+  <div class="markdown level1 summary"><p>Insert an element into the collection at the specified index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Insert(nint index, TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">index</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element to insert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Insert_nint__0___.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Insert(nint%2C%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L196">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_Insert_" data-uid="Collectathon.Arrays.FlexibleArray`2.Insert*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_Insert_nint__0___" data-uid="Collectathon.Arrays.FlexibleArray`2.Insert(nint,`0[])">Insert(nint, TElement[])</h4>
+  <div class="markdown level1 summary"><p>Inserts the elements into the collection at the specified index, as a batch.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Insert(nint index, params TElement[] elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">index</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>TElement[]</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to insert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Insert_nint_System_Memory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Insert(nint%2CSystem.Memory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L199">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_Insert_" data-uid="Collectathon.Arrays.FlexibleArray`2.Insert*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_Insert_nint_System_Memory__0__" data-uid="Collectathon.Arrays.FlexibleArray`2.Insert(nint,System.Memory{`0})">Insert(nint, Memory&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Inserts the elements into the collection at the specified index, as a batch.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Insert(nint index, Memory&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">index</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to insert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Insert_nint_System_ReadOnlyMemory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Insert(nint%2CSystem.ReadOnlyMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L202">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_Insert_" data-uid="Collectathon.Arrays.FlexibleArray`2.Insert*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_Insert_nint_System_ReadOnlyMemory__0__" data-uid="Collectathon.Arrays.FlexibleArray`2.Insert(nint,System.ReadOnlyMemory{`0})">Insert(nint, ReadOnlyMemory&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Inserts the elements into the collection at the specified index, as a batch.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Insert(nint index, ReadOnlyMemory&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">index</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to insert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Insert_nint_System_ReadOnlySpan__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Insert(nint%2CSystem.ReadOnlySpan%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L208">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_Insert_" data-uid="Collectathon.Arrays.FlexibleArray`2.Insert*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_Insert_nint_System_ReadOnlySpan__0__" data-uid="Collectathon.Arrays.FlexibleArray`2.Insert(nint,System.ReadOnlySpan{`0})">Insert(nint, ReadOnlySpan&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Inserts the elements into the collection at the specified index, as a batch.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Insert(nint index, ReadOnlySpan&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">index</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to insert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Insert_nint_System_Span__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Insert(nint%2CSystem.Span%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L205">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_Insert_" data-uid="Collectathon.Arrays.FlexibleArray`2.Insert*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_Insert_nint_System_Span__0__" data-uid="Collectathon.Arrays.FlexibleArray`2.Insert(nint,System.Span{`0})">Insert(nint, Span&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Inserts the elements into the collection at the specified index, as a batch.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Insert(nint index, Span&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">index</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to insert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Postpend__0_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Postpend(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L215">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_Postpend_" data-uid="Collectathon.Arrays.FlexibleArray`2.Postpend*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_Postpend__0_" data-uid="Collectathon.Arrays.FlexibleArray`2.Postpend(`0)">Postpend(TElement)</h4>
+  <div class="markdown level1 summary"><p>Postpends the element onto this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Postpend(TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element to postpend.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Postpend__0___.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Postpend(%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L218">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_Postpend_" data-uid="Collectathon.Arrays.FlexibleArray`2.Postpend*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_Postpend__0___" data-uid="Collectathon.Arrays.FlexibleArray`2.Postpend(`0[])">Postpend(TElement[])</h4>
+  <div class="markdown level1 summary"><p>Postpends the elements onto this object, as a batch.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Postpend(params TElement[] elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TElement[]</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to postpend.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Postpend_System_Memory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Postpend(System.Memory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L221">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_Postpend_" data-uid="Collectathon.Arrays.FlexibleArray`2.Postpend*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_Postpend_System_Memory__0__" data-uid="Collectathon.Arrays.FlexibleArray`2.Postpend(System.Memory{`0})">Postpend(Memory&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Postpends the elements onto this object, as a batch.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Postpend(Memory&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to postpend.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Postpend_System_ReadOnlyMemory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Postpend(System.ReadOnlyMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L224">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_Postpend_" data-uid="Collectathon.Arrays.FlexibleArray`2.Postpend*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_Postpend_System_ReadOnlyMemory__0__" data-uid="Collectathon.Arrays.FlexibleArray`2.Postpend(System.ReadOnlyMemory{`0})">Postpend(ReadOnlyMemory&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Postpends the elements onto this object, as a batch.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Postpend(ReadOnlyMemory&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to postpend.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Postpend_System_ReadOnlySpan__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Postpend(System.ReadOnlySpan%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L230">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_Postpend_" data-uid="Collectathon.Arrays.FlexibleArray`2.Postpend*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_Postpend_System_ReadOnlySpan__0__" data-uid="Collectathon.Arrays.FlexibleArray`2.Postpend(System.ReadOnlySpan{`0})">Postpend(ReadOnlySpan&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Postpends the elements onto this object, a batch.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Postpend(ReadOnlySpan&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to postpend.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Postpend_System_Span__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Postpend(System.Span%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L227">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_Postpend_" data-uid="Collectathon.Arrays.FlexibleArray`2.Postpend*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_Postpend_System_Span__0__" data-uid="Collectathon.Arrays.FlexibleArray`2.Postpend(System.Span{`0})">Postpend(Span&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Postpends the elements onto this object, as a batch.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Postpend(Span&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to postpend.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Prepend__0_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Prepend(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L236">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_Prepend_" data-uid="Collectathon.Arrays.FlexibleArray`2.Prepend*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_Prepend__0_" data-uid="Collectathon.Arrays.FlexibleArray`2.Prepend(`0)">Prepend(TElement)</h4>
+  <div class="markdown level1 summary"><p>Prepends the element onto this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Prepend(TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element to prepend.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Prepend__0___.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Prepend(%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L243">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_Prepend_" data-uid="Collectathon.Arrays.FlexibleArray`2.Prepend*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_Prepend__0___" data-uid="Collectathon.Arrays.FlexibleArray`2.Prepend(`0[])">Prepend(TElement[])</h4>
+  <div class="markdown level1 summary"><p>Prepends the elements onto this object, as a batch.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Prepend(params TElement[] elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TElement[]</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to prepend.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Prepend_System_Memory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Prepend(System.Memory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L246">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_Prepend_" data-uid="Collectathon.Arrays.FlexibleArray`2.Prepend*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_Prepend_System_Memory__0__" data-uid="Collectathon.Arrays.FlexibleArray`2.Prepend(System.Memory{`0})">Prepend(Memory&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Prepends the elements onto this object, as a batch.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Prepend(Memory&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to prepend.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Prepend_System_ReadOnlyMemory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Prepend(System.ReadOnlyMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L249">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_Prepend_" data-uid="Collectathon.Arrays.FlexibleArray`2.Prepend*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_Prepend_System_ReadOnlyMemory__0__" data-uid="Collectathon.Arrays.FlexibleArray`2.Prepend(System.ReadOnlyMemory{`0})">Prepend(ReadOnlyMemory&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Prepends the elements onto this object, as a batch.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Prepend(ReadOnlyMemory&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to prepend.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Prepend_System_ReadOnlySpan__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Prepend(System.ReadOnlySpan%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L255">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_Prepend_" data-uid="Collectathon.Arrays.FlexibleArray`2.Prepend*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_Prepend_System_ReadOnlySpan__0__" data-uid="Collectathon.Arrays.FlexibleArray`2.Prepend(System.ReadOnlySpan{`0})">Prepend(ReadOnlySpan&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Prepends the elements onto this object, as a batch.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Prepend(ReadOnlySpan&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to prepend.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Prepend_System_Span__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Prepend(System.Span%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L252">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_Prepend_" data-uid="Collectathon.Arrays.FlexibleArray`2.Prepend*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_Prepend_System_Span__0__" data-uid="Collectathon.Arrays.FlexibleArray`2.Prepend(System.Span{`0})">Prepend(Span&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Prepends the elements onto this object, as a batch.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Prepend(Span&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to prepend.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Remove__0_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Remove(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L262">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_Remove_" data-uid="Collectathon.Arrays.FlexibleArray`2.Remove*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_Remove__0_" data-uid="Collectathon.Arrays.FlexibleArray`2.Remove(`0)">Remove(TElement)</h4>
+  <div class="markdown level1 summary"><p>Removes all instances of the element from this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Remove(TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element to remove.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_RemoveFirst__0_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.RemoveFirst(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L273">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_RemoveFirst_" data-uid="Collectathon.Arrays.FlexibleArray`2.RemoveFirst*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_RemoveFirst__0_" data-uid="Collectathon.Arrays.FlexibleArray`2.RemoveFirst(`0)">RemoveFirst(TElement)</h4>
+  <div class="markdown level1 summary"><p>Removes the first instance of the element from this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveFirst(TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element to remove.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_RemoveLast__0_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.RemoveLast(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L284">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_RemoveLast_" data-uid="Collectathon.Arrays.FlexibleArray`2.RemoveLast*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_RemoveLast__0_" data-uid="Collectathon.Arrays.FlexibleArray`2.RemoveLast(`0)">RemoveLast(TElement)</h4>
+  <div class="markdown level1 summary"><p>Removes the last instance of the element from this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveLast(TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element to remove.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Replace__0__0_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Replace(%600%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L287">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_Replace_" data-uid="Collectathon.Arrays.FlexibleArray`2.Replace*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_Replace__0__0_" data-uid="Collectathon.Arrays.FlexibleArray`2.Replace(`0,`0)">Replace(TElement, TElement)</h4>
+  <div class="markdown level1 summary"><p>Replaces all instances of <code data-dev-comment-type="paramref" class="paramref">search</code> with <code data-dev-comment-type="paramref" class="paramref">replace</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Replace(TElement search, TElement replace)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">search</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">replace</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_ShiftLeft.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.ShiftLeft%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L296">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_ShiftLeft_" data-uid="Collectathon.Arrays.FlexibleArray`2.ShiftLeft*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_ShiftLeft" data-uid="Collectathon.Arrays.FlexibleArray`2.ShiftLeft">ShiftLeft()</h4>
+  <div class="markdown level1 summary"><p>Shifts the collection left one position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ShiftLeft()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_ShiftLeft_nint_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.ShiftLeft(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L299">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_ShiftLeft_" data-uid="Collectathon.Arrays.FlexibleArray`2.ShiftLeft*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_ShiftLeft_nint_" data-uid="Collectathon.Arrays.FlexibleArray`2.ShiftLeft(nint)">ShiftLeft(nint)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ShiftLeft(nint amount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_ShiftRight.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.ShiftRight%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L307">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_ShiftRight_" data-uid="Collectathon.Arrays.FlexibleArray`2.ShiftRight*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_ShiftRight" data-uid="Collectathon.Arrays.FlexibleArray`2.ShiftRight">ShiftRight()</h4>
+  <div class="markdown level1 summary"><p>Shifts the collection right one position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ShiftRight()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_ShiftRight_nint_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.ShiftRight(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L310">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_ShiftRight_" data-uid="Collectathon.Arrays.FlexibleArray`2.ShiftRight*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_ShiftRight_nint_" data-uid="Collectathon.Arrays.FlexibleArray`2.ShiftRight(nint)">ShiftRight(nint)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ShiftRight(nint amount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Slice.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Slice%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L318">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_Slice_" data-uid="Collectathon.Arrays.FlexibleArray`2.Slice*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_Slice" data-uid="Collectathon.Arrays.FlexibleArray`2.Slice">Slice()</h4>
+  <div class="markdown level1 summary"><p>Forms a slice out of the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Memory&lt;TElement&gt; Slice()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;TElement&gt;</td>
+        <td><p>A slice that consists of all elements of the current collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Slice_nint_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Slice(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L321">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_Slice_" data-uid="Collectathon.Arrays.FlexibleArray`2.Slice*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_Slice_nint_" data-uid="Collectathon.Arrays.FlexibleArray`2.Slice(nint)">Slice(nint)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Memory&lt;TElement&gt; Slice(nint start)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">start</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;TElement&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Slice_nint_nint_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Slice(nint%2Cnint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L324">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_Slice_" data-uid="Collectathon.Arrays.FlexibleArray`2.Slice*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_Slice_nint_nint_" data-uid="Collectathon.Arrays.FlexibleArray`2.Slice(nint,nint)">Slice(nint, nint)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Memory&lt;TElement&gt; Slice(nint start, nint length)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">start</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">length</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;TElement&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_ToString.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L327">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_ToString_" data-uid="Collectathon.Arrays.FlexibleArray`2.ToString*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_ToString" data-uid="Collectathon.Arrays.FlexibleArray`2.ToString">ToString()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override sealed string ToString()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString">Object.ToString()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_ToString_nint_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.ToString(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L331">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_ToString_" data-uid="Collectathon.Arrays.FlexibleArray`2.ToString*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_ToString_nint_" data-uid="Collectathon.Arrays.FlexibleArray`2.ToString(nint)">ToString(nint)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ToString(nint amount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="operators">Operators
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_op_LeftShift_Collectathon_Arrays_FlexibleArray__0__1__System_Int32_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.op_LeftShift(Collectathon.Arrays.FlexibleArray%7B%600%2C%601%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L108">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_op_LeftShift_" data-uid="Collectathon.Arrays.FlexibleArray`2.op_LeftShift*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_op_LeftShift_Collectathon_Arrays_FlexibleArray__0__1__System_Int32_" data-uid="Collectathon.Arrays.FlexibleArray`2.op_LeftShift(Collectathon.Arrays.FlexibleArray{`0,`1},System.Int32)">LeftShift(FlexibleArray&lt;TElement, TSelf&gt;, Int32)</h4>
+  <div class="markdown level1 summary"><p>Shifts the <code data-dev-comment-type="paramref" class="paramref">array</code> left by <code data-dev-comment-type="paramref" class="paramref">amount</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static TSelf operator &lt;&lt;(FlexibleArray&lt;TElement, TSelf&gt; array, int amount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Collectathon.Arrays.FlexibleArray-2.html">FlexibleArray</a>&lt;TElement, TSelf&gt;</td>
+        <td><span class="parametername">array</span></td>
+        <td><p>The <a class="xref" href="Collectathon.Arrays.FlexibleArray-2.html">FlexibleArray&lt;TElement, TSelf&gt;</a> to shift.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">amount</span></td>
+        <td><p>The amount of positions to shift.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TSelf</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_op_RightShift_Collectathon_Arrays_FlexibleArray__0__1__System_Int32_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.op_RightShift(Collectathon.Arrays.FlexibleArray%7B%600%2C%601%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L119">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_op_RightShift_" data-uid="Collectathon.Arrays.FlexibleArray`2.op_RightShift*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_op_RightShift_Collectathon_Arrays_FlexibleArray__0__1__System_Int32_" data-uid="Collectathon.Arrays.FlexibleArray`2.op_RightShift(Collectathon.Arrays.FlexibleArray{`0,`1},System.Int32)">RightShift(FlexibleArray&lt;TElement, TSelf&gt;, Int32)</h4>
+  <div class="markdown level1 summary"><p>Shifts the <code data-dev-comment-type="paramref" class="paramref">array</code> right by <code data-dev-comment-type="paramref" class="paramref">amount</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static TSelf operator &gt;&gt;(FlexibleArray&lt;TElement, TSelf&gt; array, int amount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Collectathon.Arrays.FlexibleArray-2.html">FlexibleArray</a>&lt;TElement, TSelf&gt;</td>
+        <td><span class="parametername">array</span></td>
+        <td><p>The <a class="xref" href="Collectathon.Arrays.FlexibleArray-2.html">FlexibleArray&lt;TElement, TSelf&gt;</a> to shift.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">amount</span></td>
+        <td><p>The amount of positions to shift.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TSelf</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_System_Collections_Generic_IEnumerable_TElement__GetEnumerator.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.System%23Collections%23Generic%23IEnumerable%7BTElement%7D%23GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L181">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_System_Collections_Generic_IEnumerable_TElement__GetEnumerator_" data-uid="Collectathon.Arrays.FlexibleArray`2.System#Collections#Generic#IEnumerable{TElement}#GetEnumerator*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_System_Collections_Generic_IEnumerable_TElement__GetEnumerator" data-uid="Collectathon.Arrays.FlexibleArray`2.System#Collections#Generic#IEnumerable{TElement}#GetEnumerator">IEnumerable&lt;TElement&gt;.GetEnumerator()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerator&lt;TElement&gt; IEnumerable&lt;TElement&gt;.GetEnumerator()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1">IEnumerator</a>&lt;TElement&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_System_Collections_IEnumerable_GetEnumerator.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.System%23Collections%23IEnumerable%23GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L177">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_FlexibleArray_2_System_Collections_IEnumerable_GetEnumerator_" data-uid="Collectathon.Arrays.FlexibleArray`2.System#Collections#IEnumerable#GetEnumerator*"></a>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_System_Collections_IEnumerable_GetEnumerator" data-uid="Collectathon.Arrays.FlexibleArray`2.System#Collections#IEnumerable#GetEnumerator">IEnumerable.GetEnumerator()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerator IEnumerable.GetEnumerator()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="System.Traits.IAddSpan-1.html">IAddSpan&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IAddMemory-1.html">IAddMemory&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IAdd-1.html">IAdd&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.ICapacity.html">ICapacity</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IClear.html">IClear</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">System.IEquatable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">System.IEquatable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IIndex-2.html">IIndex&lt;TIndex, TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IIndexReadOnly-2.html">IIndexReadOnly&lt;TIndex, TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IInsertSpan-2.html">IInsertSpan&lt;TIndex, TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IInsertMemory-2.html">IInsertMemory&lt;TIndex, TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IInsert-2.html">IInsert&lt;TIndex, TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IPostpendSpan-1.html">IPostpendSpan&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IPostpendMemory-1.html">IPostpendMemory&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IPostpend-1.html">IPostpend&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IPrependSpan-1.html">IPrependSpan&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IPrependMemory-1.html">IPrependMemory&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IPrepend-1.html">IPrepend&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IRemove-1.html">IRemove&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IReplace-1.html">IReplace&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IReplace-2.html">IReplace&lt;TSearch, TReplace&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.ISequence-2.html">ISequence&lt;TElement, TEnumerator&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">System.Collections.Generic.IEnumerable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">System.Collections.IEnumerable</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IShift.html">IShift</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.ISlice-1.html">ISlice&lt;TResult&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.ICount.html">ICount</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Add__1_System_Traits_IAdd___0____0___">TraitExtensions.Add&lt;TElement&gt;(IAdd&lt;TElement&gt;, TElement[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Add__1_System_Traits_IAdd___0__System_Memory___0__">TraitExtensions.Add&lt;TElement&gt;(IAdd&lt;TElement&gt;, Memory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Add__1_System_Traits_IAdd___0__System_ReadOnlyMemory___0__">TraitExtensions.Add&lt;TElement&gt;(IAdd&lt;TElement&gt;, ReadOnlyMemory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Add__1_System_Traits_IAdd___0__System_Span___0__">TraitExtensions.Add&lt;TElement&gt;(IAdd&lt;TElement&gt;, Span&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Add__1_System_Traits_IAdd___0__System_ReadOnlySpan___0__">TraitExtensions.Add&lt;TElement&gt;(IAdd&lt;TElement&gt;, ReadOnlySpan&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Add__1_System_Traits_IAdd___0__System_Collections_Generic_IEnumerable___0__">TraitExtensions.Add&lt;TElement&gt;(IAdd&lt;TElement&gt;, IEnumerable&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Add__2_System_Traits_IAdd___0__System_Traits_ISequence___0___1__">TraitExtensions.Add&lt;TElement, TEnumerator&gt;(IAdd&lt;TElement&gt;, ISequence&lt;TElement, TEnumerator&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Contains__2_System_Traits_ISequence___0___1____0_">TraitExtensions.Contains&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, TElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsAll__2_System_Traits_ISequence___0___1____0___">TraitExtensions.ContainsAll&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, TElement[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsAny__2_System_Traits_ISequence___0___1____0___">TraitExtensions.ContainsAny&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, TElement[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_CopyTo__2_System_Traits_ISequence___0___1____0___">TraitExtensions.CopyTo&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, TElement[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_CopyTo__2_System_Traits_ISequence___0___1__System_Memory___0__">TraitExtensions.CopyTo&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Memory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_CopyTo__2_System_Traits_ISequence___0___1__System_Span___0__">TraitExtensions.CopyTo&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Span&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Fold__1_System_Collections_Generic_IEnumerable___0__System_Func___0___0___0____0_">TraitExtensions.Fold&lt;TElement&gt;(IEnumerable&lt;TElement&gt;, Func&lt;TElement, TElement, TElement&gt;, TElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Fold__2_System_Traits_ISequence___0___1__System_Func___0___0___0____0_">TraitExtensions.Fold&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Func&lt;TElement, TElement, TElement&gt;, TElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Occurrences__2_System_Traits_ISequence___0___1____0_">TraitExtensions.Occurrences&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, TElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Occurrences__2_System_Traits_ISequence___0___1__System_Predicate___0__">TraitExtensions.Occurrences&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Predicate&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Postpend__1_System_Traits_IPostpend___0____0___">TraitExtensions.Postpend&lt;TElement&gt;(IPostpend&lt;TElement&gt;, TElement[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Postpend__1_System_Traits_IPostpend___0__System_Memory___0__">TraitExtensions.Postpend&lt;TElement&gt;(IPostpend&lt;TElement&gt;, Memory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Postpend__1_System_Traits_IPostpend___0__System_ReadOnlyMemory___0__">TraitExtensions.Postpend&lt;TElement&gt;(IPostpend&lt;TElement&gt;, ReadOnlyMemory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Postpend__1_System_Traits_IPostpend___0__System_Span___0__">TraitExtensions.Postpend&lt;TElement&gt;(IPostpend&lt;TElement&gt;, Span&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Postpend__1_System_Traits_IPostpend___0__System_ReadOnlySpan___0__">TraitExtensions.Postpend&lt;TElement&gt;(IPostpend&lt;TElement&gt;, ReadOnlySpan&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Postpend__1_System_Traits_IPostpend___0__System_Collections_Generic_IEnumerable___0__">TraitExtensions.Postpend&lt;TElement&gt;(IPostpend&lt;TElement&gt;, IEnumerable&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Postpend__2_System_Traits_IPostpend___0__System_Traits_ISequence___0___1__">TraitExtensions.Postpend&lt;TElement, TEnumerator&gt;(IPostpend&lt;TElement&gt;, ISequence&lt;TElement, TEnumerator&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Prepend__1_System_Traits_IPrepend___0____0___">TraitExtensions.Prepend&lt;TElement&gt;(IPrepend&lt;TElement&gt;, TElement[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Prepend__1_System_Traits_IPrepend___0__System_Memory___0__">TraitExtensions.Prepend&lt;TElement&gt;(IPrepend&lt;TElement&gt;, Memory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Prepend__1_System_Traits_IPrepend___0__System_ReadOnlyMemory___0__">TraitExtensions.Prepend&lt;TElement&gt;(IPrepend&lt;TElement&gt;, ReadOnlyMemory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Prepend__1_System_Traits_IPrepend___0__System_Span___0__">TraitExtensions.Prepend&lt;TElement&gt;(IPrepend&lt;TElement&gt;, Span&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Prepend__1_System_Traits_IPrepend___0__System_ReadOnlySpan___0__">TraitExtensions.Prepend&lt;TElement&gt;(IPrepend&lt;TElement&gt;, ReadOnlySpan&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Prepend__1_System_Traits_IPrepend___0__System_Collections_Generic_IEnumerable___0__">TraitExtensions.Prepend&lt;TElement&gt;(IPrepend&lt;TElement&gt;, IEnumerable&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Prepend__2_System_Traits_IPrepend___0__System_Traits_ISequence___0___1__">TraitExtensions.Prepend&lt;TElement, TEnumerator&gt;(IPrepend&lt;TElement&gt;, ISequence&lt;TElement, TEnumerator&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Remove__1_System_Traits_IRemove___0____0___">TraitExtensions.Remove&lt;TElement&gt;(IRemove&lt;TElement&gt;, TElement[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Remove__1_System_Traits_IRemove___0__System_Memory___0__">TraitExtensions.Remove&lt;TElement&gt;(IRemove&lt;TElement&gt;, Memory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Remove__1_System_Traits_IRemove___0__System_ReadOnlyMemory___0__">TraitExtensions.Remove&lt;TElement&gt;(IRemove&lt;TElement&gt;, ReadOnlyMemory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Remove__1_System_Traits_IRemove___0__System_Span___0__">TraitExtensions.Remove&lt;TElement&gt;(IRemove&lt;TElement&gt;, Span&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Remove__1_System_Traits_IRemove___0__System_ReadOnlySpan___0__">TraitExtensions.Remove&lt;TElement&gt;(IRemove&lt;TElement&gt;, ReadOnlySpan&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Remove__1_System_Traits_IRemove___0__System_Collections_Generic_IEnumerable___0__">TraitExtensions.Remove&lt;TElement&gt;(IRemove&lt;TElement&gt;, IEnumerable&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Remove__2_System_Traits_IRemove___0__System_Traits_ISequence___0___1__">TraitExtensions.Remove&lt;TElement, TEnumerator&gt;(IRemove&lt;TElement&gt;, ISequence&lt;TElement, TEnumerator&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_RemoveFirst__1_System_Traits_IRemove___0____0___">TraitExtensions.RemoveFirst&lt;TElement&gt;(IRemove&lt;TElement&gt;, TElement[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_RemoveFirst__1_System_Traits_IRemove___0__System_Memory___0__">TraitExtensions.RemoveFirst&lt;TElement&gt;(IRemove&lt;TElement&gt;, Memory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_RemoveFirst__1_System_Traits_IRemove___0__System_ReadOnlyMemory___0__">TraitExtensions.RemoveFirst&lt;TElement&gt;(IRemove&lt;TElement&gt;, ReadOnlyMemory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_RemoveFirst__1_System_Traits_IRemove___0__System_Span___0__">TraitExtensions.RemoveFirst&lt;TElement&gt;(IRemove&lt;TElement&gt;, Span&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_RemoveFirst__1_System_Traits_IRemove___0__System_ReadOnlySpan___0__">TraitExtensions.RemoveFirst&lt;TElement&gt;(IRemove&lt;TElement&gt;, ReadOnlySpan&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_RemoveFirst__1_System_Traits_IRemove___0__System_Collections_Generic_IEnumerable___0__">TraitExtensions.RemoveFirst&lt;TElement&gt;(IRemove&lt;TElement&gt;, IEnumerable&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_RemoveFirst__2_System_Traits_IRemove___0__System_Traits_ISequence___0___1__">TraitExtensions.RemoveFirst&lt;TElement, TEnumerator&gt;(IRemove&lt;TElement&gt;, ISequence&lt;TElement, TEnumerator&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_RemoveLast__1_System_Traits_IRemove___0____0___">TraitExtensions.RemoveLast&lt;TElement&gt;(IRemove&lt;TElement&gt;, TElement[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_RemoveLast__1_System_Traits_IRemove___0__System_Memory___0__">TraitExtensions.RemoveLast&lt;TElement&gt;(IRemove&lt;TElement&gt;, Memory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_RemoveLast__1_System_Traits_IRemove___0__System_ReadOnlyMemory___0__">TraitExtensions.RemoveLast&lt;TElement&gt;(IRemove&lt;TElement&gt;, ReadOnlyMemory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_RemoveLast__1_System_Traits_IRemove___0__System_Span___0__">TraitExtensions.RemoveLast&lt;TElement&gt;(IRemove&lt;TElement&gt;, Span&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_RemoveLast__1_System_Traits_IRemove___0__System_ReadOnlySpan___0__">TraitExtensions.RemoveLast&lt;TElement&gt;(IRemove&lt;TElement&gt;, ReadOnlySpan&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_RemoveLast__1_System_Traits_IRemove___0__System_Collections_Generic_IEnumerable___0__">TraitExtensions.RemoveLast&lt;TElement&gt;(IRemove&lt;TElement&gt;, IEnumerable&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_RemoveLast__2_System_Traits_IRemove___0__System_Traits_ISequence___0___1__">TraitExtensions.RemoveLast&lt;TElement, TEnumerator&gt;(IRemove&lt;TElement&gt;, ISequence&lt;TElement, TEnumerator&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ToArray__2_System_Traits_ISequence___0___1__">TraitExtensions.ToArray&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.Enumerator.cs/#L9" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
