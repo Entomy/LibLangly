@@ -1,13 +1,13 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFramework>netstandard1.3</TargetFramework>
 		<LangVersion>9.0</LangVersion>
 		<Nullable>enable</Nullable>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-		<Description>Provides various string-search algorithms.</Description>
-		<PackageTags>string, strings, text, search, scan, rabin karp, rabin-karp, boyer moore, boyer-moore, horspool</PackageTags>
-		<AssemblyName>Stringier.Search</AssemblyName>
+		<Description>Provides various string-metric algorithms.</Description>
+		<PackageTags>string, strings, text, metric, metrics, edit distance, edit-distance, hamming, levenshtein</PackageTags>
+		<AssemblyName>Stringier.Metrics</AssemblyName>
 		<PackageIcon>Logo.png</PackageIcon>
 	</PropertyGroup>
 
@@ -17,11 +17,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="System.Memory" Version="4.5.4" />
+		<PackageReference Include="System.Memory" Version="4.5.4" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\Philosoft.NullableAttributes\Philosoft.NullableAttributes.csproj" />
+		<ProjectReference Include="..\Philosoft.NullableAttributes\Philosoft.NullableAttributes.csproj" />
 	</ItemGroup>
 
 </Project>
