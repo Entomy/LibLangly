@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+		<LangVersion>9.0</LangVersion>
+		<Nullable>enable</Nullable>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<Description>Meta-package for all of Numbersome.</Description>
+		<PackageTags>number, numbers, numeric, numerics, math, maths, mathematic, mathematics</PackageTags>
+		<AssemblyName>Numbersome</AssemblyName>
+		<PackageIcon>Logo.png</PackageIcon>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Include="..\GlobalSuppressions.cs" Link="GlobalSuppressions.cs" />
+		<None Include="Logo.png" Pack="true" Visible="true" PackagePath="\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Numbersome.Arithmetic\Numbersome.Arithmetic.csproj" />
+	  <ProjectReference Include="..\Numbersome.Counters\Numbersome.Counters.csproj" />
+	  <ProjectReference Include="..\Numbersome.Random\Numbersome.Random.csproj" />
+	  <ProjectReference Include="..\Numbersome.Sets\Numbersome.Sets.csproj" />
+	  <ProjectReference Include="..\Numbersome.Statistics\Numbersome.Statistics.csproj" />
+	</ItemGroup>
+
+</Project>

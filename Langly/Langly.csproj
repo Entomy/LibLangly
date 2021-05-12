@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>netstandard1.3;netstandard2.1</TargetFrameworks>
+		<Description>Meta-package for the entire LibLangly runtime.</Description>
+		<PackageTags>langly</PackageTags>
+		<AssemblyName>Langly</AssemblyName>
+		<PackageIcon>Logo.png</PackageIcon>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Include="..\GlobalSuppressions.cs" Link="GlobalSuppressions.cs" />
+		<None Include="Logo.png" Pack="true" Visible="true" PackagePath="\" />
+	</ItemGroup>
+
+</Project>

@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard1.3</TargetFramework>
+		<LangVersion>9.0</LangVersion>
+		<Nullable>enable</Nullable>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<Description>Provides various arithmetic extensions.</Description>
+		<PackageTags>number, numbers, numeric, numerics, math, maths, mathematic, mathematics, arithmetic</PackageTags>
+		<AssemblyName>Numbersome.Arithmetic</AssemblyName>
+		<PackageIcon>Logo.png</PackageIcon>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Include="..\GlobalSuppressions.cs" Link="GlobalSuppressions.cs" />
+		<None Include="Logo.png" Pack="true" Visible="true" PackagePath="\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Philosoft.Traits\Philosoft.Traits.csproj" />
+	</ItemGroup>
+
+</Project>

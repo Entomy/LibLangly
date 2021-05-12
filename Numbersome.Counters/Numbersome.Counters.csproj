@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>netstandard1.3;netstandard2.1</TargetFrameworks>
+		<LangVersion>9.0</LangVersion>
+		<Nullable>enable</Nullable>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<Description>Provides types to do more sophisticated counting operations.</Description>
+		<PackageTags>counter, counters, counting</PackageTags>
+		<AssemblyName>Numbersome.Counters</AssemblyName>
+		<PackageIcon>Logo.png</PackageIcon>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Include="..\GlobalSuppressions.cs" Link="GlobalSuppressions.cs" />
+		<None Include="Logo.png" Pack="true" Visible="true" PackagePath="\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Collectathon.Arrays\Collectathon.Arrays.csproj" />
+	</ItemGroup>
+
+	<Import Project="..\Collection\Collection.projitems" Label="Shared" />
+
+</Project>
