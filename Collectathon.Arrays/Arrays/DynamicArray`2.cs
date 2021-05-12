@@ -8,7 +8,7 @@ namespace Collectathon.Arrays {
 	/// </summary>
 	/// <typeparam name="TIndex">The type of the indicies of the array.</typeparam>
 	/// <typeparam name="TElement">The type of the elements of the array.</typeparam>
-	public sealed class DynamicArray<TIndex, TElement> : FlexibleArray<TIndex, TElement, DynamicArray<TIndex, TElement>>, IResize<DynamicArray<TIndex, TElement>> {
+	public sealed class DynamicArray<TIndex, TElement> : FlexibleArray<TIndex, TElement, DynamicArray<TIndex, TElement>>, IResize {
 		/// <summary>
 		/// Initializes a new <see cref="DynamicArray{TIndex, TElement}"/>.
 		/// </summary>
@@ -29,7 +29,7 @@ namespace Collectathon.Arrays {
 		/// <inheritdoc/>
 		new public nint Capacity {
 			get => base.Capacity;
-			set => ((IResize<DynamicArray<TIndex, TElement>>)this).Resize(value);
+			set => Resize(value);
 		}
 
 		/// <summary>
@@ -40,22 +40,19 @@ namespace Collectathon.Arrays {
 		public static implicit operator DynamicArray<TIndex, TElement>([AllowNull] (TIndex, TElement)[] array) => array is not null ? new(array) : null;
 
 		/// <inheritdoc/>
-		[return: NotNull]
-		DynamicArray<TIndex, TElement> IResize<DynamicArray<TIndex, TElement>>.Resize(nint capacity) {
+		public void Resize(nint capacity) {
 			(TIndex, TElement)[] newBuffer = new (TIndex, TElement)[capacity];
-			Memory.Slice(0, capacity > Capacity ? Capacity : capacity).CopyTo(newBuffer);
+			Memory.AsMemory(0, (Int32)(capacity > Capacity ? Capacity : capacity)).CopyTo(newBuffer);
 			Count = Count < capacity ? Count : capacity;
 			Memory = newBuffer;
-			return this;
 		}
 
 		/// <inheritdoc/>
-		[return: MaybeNull]
-		protected override DynamicArray<TIndex, TElement> Add([DisallowNull] TIndex index, [AllowNull] TElement element) {
+		protected override void Add([DisallowNull] TIndex index, [AllowNull] TElement element) {
 			if (Count == Capacity) {
-				((IResize<DynamicArray<TIndex, TElement>>)this).Grow();
+				this.Grow();
 			}
-			return base.Add(index, element);
+			base.Add(index, element);
 		}
 	}
 }

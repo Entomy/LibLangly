@@ -33,7 +33,13 @@ namespace Collectathon.Arrays {
 		public static implicit operator BoundedArray<TIndex, TElement>([AllowNull] (TIndex, TElement)[] array) => array is not null ? new(array) : null;
 
 		/// <inheritdoc/>
-		[return: MaybeNull]
-		protected override BoundedArray<TIndex, TElement> Add([DisallowNull] TIndex index, [AllowNull] TElement element) => Count < Capacity ? base.Add(index, element) : null;
+		/// <exception cref="InvalidOperationException">Thrown if the array is at maximum capacity.</exception>
+		protected override void Add([DisallowNull] TIndex index, [AllowNull] TElement element) {
+			if (Count < Capacity) {
+				base.Add(index, element);
+			} else {
+				throw new InvalidOperationException();
+			}
+		}
 	}
 }

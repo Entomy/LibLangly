@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 using System.Traits;
+using Langly;
 
 namespace Collectathon.Arrays {
 	public partial class FlexibleArray<TIndex, TElement, TSelf> {
@@ -43,11 +44,19 @@ namespace Collectathon.Arrays {
 			public (TIndex Index, TElement Element) Current => Memory.Span[(Int32)i];
 
 			/// <inheritdoc/>
+			[MaybeNull]
+			Object System.Collections.IEnumerator.Current => Current;
+
+			/// <inheritdoc/>
 			public nint Count { get; }
 
 			public static Boolean operator !=(Enumerator left, Enumerator right) => !left.Equals(right);
 
 			public static Boolean operator ==(Enumerator left, Enumerator right) => left.Equals(right);
+
+			/// <inheritdoc/>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public void Dispose() { /* No-op */ }
 
 			/// <inheritdoc/>
 			public override Boolean Equals([AllowNull] Object obj) {
@@ -73,8 +82,29 @@ namespace Collectathon.Arrays {
 			public void Reset() => i = -1;
 
 			/// <inheritdoc/>
+			[EditorBrowsable(EditorBrowsableState.Never)]
 			[return: NotNull]
-			public String ToString(nint amount) => throw new NotImplementedException();
+			public override String ToString() => Collection.ToString(this);
+
+			/// <inheritdoc/>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			[return: NotNull]
+			public String ToString(nint amount) => Collection.ToString(this, amount);
+
+			/// <inheritdoc/>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			[return: NotNull]
+			public IEnumerator<(TIndex Index, TElement Element)> GetEnumerator() => this;
+
+			/// <inheritdoc/>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			[return: NotNull]
+			System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() => this;
+
+			/// <inheritdoc/>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			[return: NotNull]
+			System.Collections.Generic.IEnumerator<(TIndex Index, TElement Element)> System.Collections.Generic.IEnumerable<(TIndex Index, TElement Element)>.GetEnumerator() => this;
 		}
 	}
 }

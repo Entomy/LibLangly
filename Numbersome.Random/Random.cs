@@ -22,7 +22,11 @@ namespace Numbersome {
 		/// </summary>
 		/// <returns>A random <see cref="Boolean"/> value.</returns>
 		public unsafe Boolean NextBoolean() {
+#if !NETSTANDARD1_3
 			Span<Byte> buffer = stackalloc Byte[sizeof(Boolean)];
+#else
+			Byte[] buffer = new Byte[sizeof(Boolean)];
+#endif
 			NextBytes(buffer);
 			return buffer[0] % 2 == 0; // even/odd checks ensure equal distribution, whereas casts would favor true.
 		}
@@ -43,7 +47,11 @@ namespace Numbersome {
 		/// </summary>
 		/// <returns>A random <see cref="Byte"/> value.</returns>
 		public unsafe Byte NextByte() {
+#if !NETSTANDARD1_3
 			Span<Byte> buffer = stackalloc Byte[sizeof(Byte)];
+#else
+			Byte[] buffer = new Byte[sizeof(Byte)];
+#endif
 			NextBytes(buffer);
 			return buffer[0];
 		}
@@ -80,9 +88,15 @@ namespace Numbersome {
 		/// </summary>
 		/// <returns>A random <see cref="Char"/> value.</returns>
 		public unsafe Char NextChar() {
+#if !NETSTANDARD1_3
 			Span<Byte> buffer = stackalloc Byte[sizeof(Char)];
 			NextBytes(buffer);
 			return BitConverter.ToChar(buffer);
+#else
+			Byte[] buffer = new Byte[sizeof(Char)];
+			NextBytes(buffer);
+			return BitConverter.ToChar(buffer, 0);
+#endif
 		}
 
 		/// <summary>
@@ -150,9 +164,15 @@ namespace Numbersome {
 		/// </summary>
 		/// <returns>A random <see cref="Double"/> value.</returns>
 		new public unsafe Double NextDouble() {
+#if !NETSTANDARD1_3
 			Span<Byte> buffer = stackalloc Byte[sizeof(Double)];
 			NextBytes(buffer);
 			return BitConverter.ToDouble(buffer);
+#else
+			Byte[] buffer = new Byte[sizeof(Double)];
+			NextBytes(buffer);
+			return BitConverter.ToDouble(buffer, 0);
+#endif
 		}
 
 		/// <summary>
@@ -187,9 +207,15 @@ namespace Numbersome {
 		/// </summary>
 		/// <returns>A random <see cref="Int16"/> value.</returns>
 		public unsafe Int16 NextInt16() {
+#if !NETSTANDARD1_3
 			Span<Byte> buffer = stackalloc Byte[sizeof(Int16)];
 			NextBytes(buffer);
 			return BitConverter.ToInt16(buffer);
+#else
+			Byte[] buffer = new Byte[sizeof(Int16)];
+			NextBytes(buffer);
+			return BitConverter.ToInt16(buffer, 0);
+#endif
 		}
 
 		/// <summary>
@@ -224,9 +250,15 @@ namespace Numbersome {
 		/// </summary>
 		/// <returns>A random <see cref="Int32"/> value.</returns>
 		public unsafe Int32 NextInt32() {
+#if !NETSTANDARD1_3
 			Span<Byte> buffer = stackalloc Byte[sizeof(Int32)];
 			NextBytes(buffer);
 			return BitConverter.ToInt32(buffer);
+#else
+			Byte[] buffer = new Byte[sizeof(Int32)];
+			NextBytes(buffer);
+			return BitConverter.ToInt32(buffer, 0);
+#endif
 		}
 
 		/// <summary>
@@ -261,9 +293,15 @@ namespace Numbersome {
 		/// </summary>
 		/// <returns>A random <see cref="Int64"/> value.</returns>
 		public unsafe Int64 NextInt64() {
+#if !NETSTANDARD1_3
 			Span<Byte> buffer = stackalloc Byte[sizeof(Int64)];
 			NextBytes(buffer);
 			return BitConverter.ToInt64(buffer);
+#else
+			Byte[] buffer = new Byte[sizeof(Int64)];
+			NextBytes(buffer);
+			return BitConverter.ToInt64(buffer, 0);
+#endif
 		}
 
 		/// <summary>
@@ -298,6 +336,7 @@ namespace Numbersome {
 		/// </summary>
 		/// <returns>A random <see cref="IntPtr"/> value.</returns>
 		public unsafe IntPtr NextIntPtr() {
+#if !NETSTANDARD1_3
 			Span<Byte> buffer = stackalloc Byte[sizeof(IntPtr)];
 			NextBytes(buffer);
 			switch (sizeof(IntPtr)) {
@@ -306,8 +345,20 @@ namespace Numbersome {
 			case 8:
 				return (IntPtr)BitConverter.ToInt64(buffer);
 			default:
-				throw new PlatformNotSupportedException("Langly only supports 32 and 64 bit platforms.");
+				throw new PlatformNotSupportedException("Numbersome only supports 32 and 64 bit platforms.");
 			}
+#else
+			Byte[] buffer = new Byte[sizeof(IntPtr)];
+			NextBytes(buffer);
+			switch (sizeof(IntPtr)) {
+			case 4:
+				return (IntPtr)BitConverter.ToInt32(buffer, 0);
+			case 8:
+				return (IntPtr)BitConverter.ToInt64(buffer, 0);
+			default:
+				throw new PlatformNotSupportedException("Numbersome only supports 32 and 64 bit platforms.");
+			}
+#endif
 		}
 
 		/// <summary>
@@ -343,7 +394,11 @@ namespace Numbersome {
 		/// <returns>A random <see cref="SByte"/> value.</returns>
 		[CLSCompliant(false)]
 		public unsafe SByte NextSByte() {
+#if !NETSTANDARD1_3
 			Span<Byte> buffer = stackalloc Byte[sizeof(SByte)];
+#else
+			Byte[] buffer = new Byte[sizeof(SByte)];
+#endif
 			NextBytes(buffer);
 			return unchecked((SByte)buffer[0]);
 		}
@@ -382,9 +437,15 @@ namespace Numbersome {
 		/// </summary>
 		/// <returns>A random <see cref="Single"/> value.</returns>
 		public unsafe Single NextSingle() {
+#if !NETSTANDARD1_3
 			Span<Byte> buffer = stackalloc Byte[sizeof(Single)];
 			NextBytes(buffer);
 			return BitConverter.ToSingle(buffer);
+#else
+			Byte[] buffer = new Byte[sizeof(Single)];
+			NextBytes(buffer);
+			return BitConverter.ToSingle(buffer, 0);
+#endif
 		}
 
 		/// <summary>
@@ -420,9 +481,15 @@ namespace Numbersome {
 		/// <returns>A random <see cref="UInt16"/> value.</returns>
 		[CLSCompliant(false)]
 		public unsafe UInt16 NextUInt16() {
+#if !NETSTANDARD1_3
 			Span<Byte> buffer = stackalloc Byte[sizeof(UInt16)];
 			NextBytes(buffer);
 			return BitConverter.ToUInt16(buffer);
+#else
+			Byte[] buffer = new Byte[sizeof(UInt16)];
+			NextBytes(buffer);
+			return BitConverter.ToUInt16(buffer, 0);
+#endif
 		}
 
 		/// <summary>
@@ -460,9 +527,15 @@ namespace Numbersome {
 		/// <returns>A random <see cref="UInt32"/> value.</returns>
 		[CLSCompliant(false)]
 		public unsafe UInt32 NextUInt32() {
+#if !NETSTANDARD1_3
 			Span<Byte> buffer = stackalloc Byte[sizeof(UInt32)];
 			NextBytes(buffer);
 			return BitConverter.ToUInt32(buffer);
+#else
+			Byte[] buffer = new Byte[sizeof(UInt32)];
+			NextBytes(buffer);
+			return BitConverter.ToUInt32(buffer, 0);
+#endif
 		}
 
 		/// <summary>
@@ -500,9 +573,15 @@ namespace Numbersome {
 		/// <returns>A random <see cref="UInt64"/> value.</returns>
 		[CLSCompliant(false)]
 		public unsafe UInt64 NextUInt64() {
+#if !NETSTANDARD1_3
 			Span<Byte> buffer = stackalloc Byte[sizeof(UInt64)];
 			NextBytes(buffer);
 			return BitConverter.ToUInt64(buffer);
+#else
+			Byte[] buffer = new Byte[sizeof(UInt64)];
+			NextBytes(buffer);
+			return BitConverter.ToUInt64(buffer, 0);
+#endif
 		}
 
 		/// <summary>
@@ -539,6 +618,7 @@ namespace Numbersome {
 		/// <returns>A random <see cref="UIntPtr"/> value.</returns>
 		[CLSCompliant(false)]
 		public unsafe UIntPtr NextUIntPtr() {
+#if !NETSTANDARD1_3
 			Span<Byte> buffer = stackalloc Byte[sizeof(UIntPtr)];
 			NextBytes(buffer);
 			switch (sizeof(UIntPtr)) {
@@ -549,6 +629,18 @@ namespace Numbersome {
 			default:
 				throw new PlatformNotSupportedException("Langly only supports 32 and 64 bit platforms.");
 			}
+#else
+			Byte[] buffer = new byte[sizeof(UIntPtr)];
+			NextBytes(buffer);
+			switch (sizeof(UIntPtr)) {
+			case 4:
+				return (UIntPtr)BitConverter.ToUInt32(buffer, 0);
+			case 8:
+				return (UIntPtr)BitConverter.ToUInt64(buffer, 0);
+			default:
+				throw new PlatformNotSupportedException("Langly only supports 32 and 64 bit platforms.");
+			}
+#endif
 		}
 
 		/// <summary>

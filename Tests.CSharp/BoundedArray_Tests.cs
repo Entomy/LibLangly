@@ -1,354 +1,527 @@
-﻿using Collectathon.Arrays;
-using System;
+﻿using System;
 using System.Diagnostics.CodeAnalysis;
-using System.Traits.Contracts;
+using Collectathon.Arrays;
 using Xunit;
 
 namespace Langly {
-	public class BoundedArray_Tests : IAddContract<xUnit>, IClearContract<xUnit>, IInsertContract<xUnit>, IPostpendContract<xUnit>, IPrependContract<xUnit>, IReplaceContract<xUnit>, ISequenceContract<xUnit>, IShiftContract<xUnit>, ISliceContract<xUnit> {
-		/// <inheritdoc/>
+	public class BoundedArray_Tests {
 		[Theory]
-		[MemberData(nameof(IAddContract<xUnit>.Add_Array_Data), MemberType = typeof(IAddContract<xUnit>))]
-		public void Add_Array<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values) {
-			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
-			IAddContract<xUnit>.Test_Array(expected, array, values);
+		[InlineData(new Int32[] { 0, 0 }, new Int32[] { }, new Int32[] { 0, 0 })]
+		public void Add_Array([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
+			BoundedArray<Int32> array = initial;
+			if (array.Count + elements.Length <= array.Capacity) {
+				array.Add(elements);
+				Assert.Equal(expected, array);
+			} else {
+				Assert.Throws<InvalidOperationException>(() => array.Add(elements));
+			}
 		}
 
-		/// <inheritdoc/>
 		[Theory]
-		[MemberData(nameof(IAddContract<xUnit>.Add_Element_Data), MemberType = typeof(IAddContract<xUnit>))]
-		public void Add_Element<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[] values) {
-			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
-			IAddContract<xUnit>.Test_Element(expected, array, values);
+		[InlineData(new Int32[] { 0 }, new Int32[] { }, 0)]
+		[InlineData(new Int32[] { 1, 2, }, new Int32[] { 1 }, 2)]
+		public void Add_Element([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32 value) {
+			BoundedArray<Int32> array = initial;
+			if (array.Count < array.Capacity) {
+				array.Add(value);
+				Assert.Equal(expected, array);
+			} else {
+				Assert.Throws<InvalidOperationException>(() => array.Add(value));
+			}
 		}
 
-		/// <inheritdoc/>
 		[Theory]
-		[MemberData(nameof(IAddContract<xUnit>.Add_Array_Data), MemberType = typeof(IAddContract<xUnit>))]
-		public void Add_Memory<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values) {
-			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
-			IAddContract<xUnit>.Test_Memory(expected, array, values);
+		[InlineData(new Int32[] { 0, 0 }, new Int32[] { }, new Int32[] { 0, 0 })]
+		public void Add_Memory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
+			BoundedArray<Int32> array = initial;
+			if (array.Count + elements.Length <= array.Capacity) {
+				array.Add(elements);
+				Assert.Equal(expected, array);
+			} else {
+				Assert.Throws<InvalidOperationException>(() => array.Add(elements));
+			}
 		}
 
-		/// <inheritdoc/>
-		public void Add_Pointer<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values) where TElement : unmanaged => throw new NotImplementedException();
-
-		/// <inheritdoc/>
 		[Theory]
-		[MemberData(nameof(IAddContract<xUnit>.Add_Array_Data), MemberType = typeof(IAddContract<xUnit>))]
-		public void Add_ReadOnlyMemory<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values) {
-			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
-			IAddContract<xUnit>.Test_ReadOnlyMemory(expected, array, values);
+		[InlineData(new Int32[] { 0, 0 }, new Int32[] { }, new Int32[] { 0, 0 })]
+		public void Add_ReadOnlyMemory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
+			BoundedArray<Int32> array = initial;
+			if (array.Count + elements.Length <= array.Capacity) {
+				array.Add((ReadOnlyMemory<Int32>)elements.AsMemory());
+				Assert.Equal(expected, array);
+			} else {
+				Assert.Throws<InvalidOperationException>(() => array.Add((ReadOnlyMemory<Int32>)elements.AsMemory()));
+			}
 		}
 
-		/// <inheritdoc/>
-		public void Add_ReadOnlySpan<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values) => throw new NotImplementedException();
-
-		/// <inheritdoc/>
-		public void Add_Span<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values) => throw new NotImplementedException();
-
-		/// <inheritdoc/>
 		[Theory]
-		[MemberData(nameof(IClearContract<xUnit>.Clear_Data), MemberType = typeof(IClearContract<xUnit>))]
-		public void Clear<TElement>([AllowNull] TElement[] initial) {
-			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
-			IClearContract<xUnit>.Test<TElement, BoundedArray<TElement>>(array);
+		[InlineData(new Int32[] { 0, 0 }, new Int32[] { }, new Int32[] { 0, 0 })]
+		public void Add_ReadOnlySpan([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
+			BoundedArray<Int32> array = initial;
+			if (array.Count + elements.Length <= array.Capacity) {
+				array.Add((ReadOnlySpan<Int32>)elements.AsSpan());
+				Assert.Equal(expected, array);
+			} else {
+				Assert.Throws<InvalidOperationException>(() => array.Add((ReadOnlySpan<Int32>)elements.AsSpan()));
+			}
 		}
 
-		/// <inheritdoc/>
 		[Theory]
-		[MemberData(nameof(ISequenceContract<xUnit>.Enumerator_Data), MemberType = typeof(ISequenceContract<xUnit>))]
-		public void Enumerator<TElement>([DisallowNull] TElement[] values) {
-			BoundedArray<TElement> array = values is not null ? new BoundedArray<TElement>(values) : null;
-			ISequenceContract<xUnit>.Test_Enumerator(values, array);
+		[InlineData(new Int32[] { 0, 0 }, new Int32[] { }, new Int32[] { 0, 0 })]
+		public void Add_Span([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
+			BoundedArray<Int32> array = initial;
+			if (array.Count + elements.Length <= array.Capacity) {
+				array.Add(elements.AsSpan());
+				Assert.Equal(expected, array);
+			} else {
+				Assert.Throws<InvalidOperationException>(() => array.Add(elements.AsSpan()));
+			}
 		}
 
-		/// <inheritdoc/>
+		[Theory]
+		[InlineData(new Int32[] { })]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 5 })]
+		public void Clear([DisallowNull] Int32[] initial) {
+			BoundedArray<Int32> array = initial;
+			array.Clear();
+			Assert.Empty(array);
+		}
+
 		[Theory]
 		[InlineData(new Int32[] { })]
 		[InlineData(new Int32[] { 1, 2, 3, 4, 5 })]
 
-		public void Equals([AllowNull] Int32[] values) {
-			BoundedArray<Int32> val = values is not null ? new BoundedArray<Int32>(values) : null;
-			Assert.Equal(values, val);
-			Assert.True(val.Equals(values));
-			BoundedArray<Int32> exp = values is not null ? new BoundedArray<Int32>(values) : null;
+		public void Equals([DisallowNull] Int32[] elements) {
+			BoundedArray<Int32> val = elements is not null ? new BoundedArray<Int32>(elements) : null;
+			Assert.Equal(elements, val);
+			Assert.True(val.Equals(elements));
+			BoundedArray<Int32> exp = elements is not null ? new BoundedArray<Int32>(elements) : null;
 			Assert.Equal(exp, val);
 			Assert.Equal<Int32>(exp, val);
 			Assert.True(val.Equals(exp));
-			DynamicArray<Int32> dval = values is not null ? new DynamicArray<Int32>(values) : null;
-			DynamicArray<Int32> dexp = values is not null ? new DynamicArray<Int32>(values) : null;
+			BoundedArray<Int32> dval = elements is not null ? new BoundedArray<Int32>(elements) : null;
+			BoundedArray<Int32> dexp = elements is not null ? new BoundedArray<Int32>(elements) : null;
 			Assert.True(val.Equals(dval));
 			Assert.True(dval.Equals(val));
 		}
 
-		/// <inheritdoc/>
 		[Theory]
-		[InlineData(0, null)]
 		[InlineData(0, new Int32[] { })]
 		[InlineData(15, new Int32[] { 1, 2, 3, 4, 5 })]
-		public void Fold(Int32 expected, [AllowNull] Int32[] values) {
-			BoundedArray<Int32> array = values is not null ? new BoundedArray<Int32>(values) : null;
-			ISequenceContract<xUnit>.Test_Fold(expected, array, (a, b) => a + b, 0);
+		public void Fold(Int32 expected, [DisallowNull] Int32[] elements) {
+			BoundedArray<Int32> array = elements;
+			Assert.Equal(expected, array.Fold((a, b) => a + b, 0));
 		}
 
-		/// <inheritdoc/>
 		[Theory]
-		[MemberData(nameof(IInsertContract<xUnit>.Insert_Array_Data), MemberType = typeof(IInsertContract<xUnit>))]
-		public void Insert_Array<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, Int32 index, [AllowNull] TElement[] values) {
-			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
-			IInsertContract<xUnit>.Test_Array(expected, array, index, values);
+		[InlineData(new Int32[] { 0, 0 }, new Int32[] { }, 0, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 0, 0, 1, 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 0, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 0, 0, 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 1, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 0, 0, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 2, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 3, 0, 0, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 3, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 0, 0, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 4, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 5, 0, 0 }, new Int32[] { 1, 2, 3, 4, 5 }, 5, new Int32[] { 0, 0 })]
+		public void Insert_Array([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 index, [DisallowNull] Int32[] elements) {
+			BoundedArray<Int32> array = initial;
+			if (array.Count + elements.Length <= array.Capacity) {
+				array.Insert(index, elements);
+				Assert.Equal(expected, array);
+			} else {
+				Assert.Throws<InvalidOperationException>(() => array.Insert(index, elements));
+			}
 		}
 
-		/// <inheritdoc/>
 		[Theory]
-		[MemberData(nameof(IInsertContract<xUnit>.Insert_Element_Complex_Data), MemberType = typeof(IInsertContract<xUnit>))]
-		public void Insert_Element_Complex<TIndex, TElement>([AllowNull] (TIndex, TElement)[] expected, [AllowNull] (TIndex, TElement)[] initial, [DisallowNull] TIndex index, [AllowNull] TElement value) {
-			BoundedArray<TIndex, TElement> array = initial is not null ? new BoundedArray<TIndex, TElement>(initial) : null;
-			IInsertContract<xUnit>.Test_Element(expected, array, index, value);
+		[InlineData(new Int32[] { 0 }, new Int32[] { }, 0, 0)]
+		[InlineData(new Int32[] { 0, 1, 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 0, 0)]
+		[InlineData(new Int32[] { 1, 0, 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 1, 0)]
+		[InlineData(new Int32[] { 1, 2, 0, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 2, 0)]
+		[InlineData(new Int32[] { 1, 2, 3, 0, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 3, 0)]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 0, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 4, 0)]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 5, 0 }, new Int32[] { 1, 2, 3, 4, 5 }, 5, 0)]
+		public void Insert_Element([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 index, Int32 element) {
+			BoundedArray<Int32> array = initial;
+			if (array.Count < array.Capacity) {
+				array.Insert(index, element);
+				Assert.Equal(expected, array);
+			} else {
+				Assert.Throws<InvalidOperationException>(() => array.Insert(index, element));
+			}
 		}
 
-		/// <inheritdoc/>
 		[Theory]
-		[MemberData(nameof(IInsertContract<xUnit>.Insert_Element_Simple_Data), MemberType = typeof(IInsertContract<xUnit>))]
-		public void Insert_Element_Simple<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, Int32 index, [AllowNull] TElement value) {
-			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
-			IInsertContract<xUnit>.Test_Element(expected, array, index, value);
+		[InlineData(new Int32[] { 0, 0 }, new Int32[] { }, 0, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 0, 0, 1, 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 0, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 0, 0, 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 1, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 0, 0, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 2, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 3, 0, 0, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 3, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 0, 0, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 4, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 5, 0, 0 }, new Int32[] { 1, 2, 3, 4, 5 }, 5, new Int32[] { 0, 0 })]
+		public void Insert_Memory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 index, [DisallowNull] Int32[] elements) {
+			BoundedArray<Int32> array = initial;
+			if (array.Count + elements.Length <= array.Capacity) {
+				array.Insert(index, elements.AsMemory());
+				Assert.Equal(expected, array);
+			} else {
+				Assert.Throws<InvalidOperationException>(() => array.Insert(index, elements.AsMemory()));
+			}
 		}
 
-		/// <inheritdoc/>
 		[Theory]
-		[MemberData(nameof(IInsertContract<xUnit>.Insert_Array_Data), MemberType = typeof(IInsertContract<xUnit>))]
-		public void Insert_Memory<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, Int32 index, [AllowNull] TElement[] values) {
-			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
-			IInsertContract<xUnit>.Test_Memory(expected, array, index, values);
+		[InlineData(new Int32[] { 0, 0 }, new Int32[] { }, 0, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 0, 0, 1, 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 0, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 0, 0, 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 1, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 0, 0, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 2, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 3, 0, 0, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 3, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 0, 0, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 4, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 5, 0, 0 }, new Int32[] { 1, 2, 3, 4, 5 }, 5, new Int32[] { 0, 0 })]
+		public void Insert_ReadOnlyMemory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 index, [DisallowNull] Int32[] elements) {
+			BoundedArray<Int32> array = initial;
+			if (array.Count + elements.Length <= array.Capacity) {
+				array.Insert(index, (ReadOnlyMemory<Int32>)elements.AsMemory());
+				Assert.Equal(expected, array);
+			} else {
+				Assert.Throws<InvalidOperationException>(() => array.Insert(index, (ReadOnlyMemory<Int32>)elements.AsMemory()));
+			}
 		}
 
-		/// <inheritdoc/>
-		public void Insert_Pointer<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, Int32 index, [AllowNull] TElement[] values) where TElement : unmanaged => throw new NotImplementedException();
-
-		/// <inheritdoc/>
 		[Theory]
-		[MemberData(nameof(IInsertContract<xUnit>.Insert_Array_Data), MemberType = typeof(IInsertContract<xUnit>))]
-		public void Insert_ReadOnlyMemory<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, Int32 index, [AllowNull] TElement[] values) {
-			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
-			IInsertContract<xUnit>.Test_ReadOnlyMemory(expected, array, index, values);
+		[InlineData(new Int32[] { 0, 0 }, new Int32[] { }, 0, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 0, 0, 1, 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 0, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 0, 0, 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 1, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 0, 0, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 2, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 3, 0, 0, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 3, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 0, 0, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 4, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 5, 0, 0 }, new Int32[] { 1, 2, 3, 4, 5 }, 5, new Int32[] { 0, 0 })]
+		public void Insert_ReadOnlySpan([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 index, [DisallowNull] Int32[] elements) {
+			BoundedArray<Int32> array = initial;
+			if (array.Count + elements.Length <= array.Capacity) {
+				array.Insert(index, (ReadOnlySpan<Int32>)elements.AsSpan());
+				Assert.Equal(expected, array);
+			} else {
+				Assert.Throws<InvalidOperationException>(() => array.Insert(index, (ReadOnlySpan<Int32>)elements.AsSpan()));
+			}
 		}
 
-		/// <inheritdoc/>
-		public void Insert_ReadOnlySpan<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, Int32 index, [AllowNull] TElement[] values) => throw new NotImplementedException();
-
-		/// <inheritdoc/>
-		public void Insert_Span<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, Int32 index, [AllowNull] TElement[] values) => throw new NotImplementedException();
-
-		/// <inheritdoc/>
 		[Theory]
-		[MemberData(nameof(ISequenceContract<xUnit>.Occurrences_Element_Data), MemberType = typeof(ISequenceContract<xUnit>))]
-		public void Occurrences_Element<TElement>(Int32 expected, [AllowNull] TElement[] values, [AllowNull] TElement element) {
-			BoundedArray<TElement> array = values is not null ? new BoundedArray<TElement>(values) : null;
-			ISequenceContract<xUnit>.Test_Occurrences(expected, array, element);
+		[InlineData(new Int32[] { 0, 0 }, new Int32[] { }, 0, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 0, 0, 1, 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 0, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 0, 0, 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 1, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 0, 0, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 2, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 3, 0, 0, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 3, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 0, 0, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 4, new Int32[] { 0, 0 })]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 5, 0, 0 }, new Int32[] { 1, 2, 3, 4, 5 }, 5, new Int32[] { 0, 0 })]
+		public void Insert_Span([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 index, [DisallowNull] Int32[] elements) {
+			BoundedArray<Int32> array = initial;
+			if (array.Count + elements.Length <= array.Capacity) {
+				array.Insert(index, elements.AsSpan());
+				Assert.Equal(expected, array);
+			} else {
+				Assert.Throws<InvalidOperationException>(() => array.Insert(index, elements.AsSpan()));
+			}
 		}
 
-		/// <inheritdoc/>
 		[Theory]
-		[InlineData(0, null)]
+		[InlineData(0, new Int32[] { 1, 2, 3, 4, 5 }, 0)]
+		[InlineData(3, new Int32[] { 1, 2, 1, 2, 1 }, 1)]
+		[InlineData(2, new Int32[] { 1, 2, 1, 2, 1 }, 2)]
+		public void Occurrences_Element(Int32 expected, [DisallowNull] Int32[] elements, Int32 element) {
+			BoundedArray<Int32> array = elements;
+			Assert.Equal(expected, array.Occurrences(element));
+		}
+
+		[Theory]
 		[InlineData(0, new Int32[] { })]
 		[InlineData(0, new Int32[] { 1 })]
 		[InlineData(0, new Int32[] { 1, 1, 1, 1, 1 })]
 		[InlineData(2, new Int32[] { 1, 2, 1, 2, 1 })]
 		[InlineData(3, new Int32[] { 2, 1, 2, 1, 2 })]
-		public void Occurrences_Predicate(Int32 expected, [AllowNull] Int32[] values) {
-			BoundedArray<Int32> array = values is not null ? new BoundedArray<Int32>(values) : null;
-			ISequenceContract<xUnit>.Test_Occurrences(expected, array, (x) => x % 2 == 0);
+		public void Occurrences_Predicate(Int32 expected, [DisallowNull] Int32[] elements) {
+			BoundedArray<Int32> array = elements;
+			Assert.Equal(expected, array.Occurrences((x) => x % 2 == 0));
 		}
 
-		/// <inheritdoc/>
 		[Theory]
-		[MemberData(nameof(IPostpendContract<xUnit>.Postpend_Array_Data), MemberType = typeof(IPostpendContract<xUnit>))]
-		public void Postpend_Array<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values) {
-			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
-			IPostpendContract<xUnit>.Test_Array(expected, array, values);
+		[InlineData(new Int32[] { }, new Int32[] { }, new Int32[] { })]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 1, 2 }, new Int32[] { 3, 4, 5 })]
+		public void Postpend_Array([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
+			BoundedArray<Int32> array = initial;
+			if (array.Count + elements.Length <= array.Capacity) {
+				array.Postpend(elements);
+				Assert.Equal(expected, array);
+			} else {
+				Assert.Throws<InvalidOperationException>(() => array.Postpend(elements));
+			}
 		}
 
-		/// <inheritdoc/>
 		[Theory]
-		[MemberData(nameof(IPostpendContract<xUnit>.Postpend_Element_Data), MemberType = typeof(IPostpendContract<xUnit>))]
-		public void Postpend_Element<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[] values) {
-			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
-			IPostpendContract<xUnit>.Test_Element(expected, array, values);
+		[InlineData(new Int32[] { 0 }, new Int32[] { }, 0)]
+		public void Postpend_Element([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 element) {
+			BoundedArray<Int32> array = initial;
+			if (array.Count < array.Capacity) {
+				array.Postpend(element);
+				Assert.Equal(expected, array);
+			} else {
+				Assert.Throws<InvalidOperationException>(() => array.Postpend(element));
+			}
 		}
 
-		/// <inheritdoc/>
 		[Theory]
-		[MemberData(nameof(IPostpendContract<xUnit>.Postpend_Array_Data), MemberType = typeof(IPostpendContract<xUnit>))]
-		public void Postpend_Memory<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values) {
-			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
-			IPostpendContract<xUnit>.Test_Memory(expected, array, values);
+		[InlineData(new Int32[] { }, new Int32[] { }, new Int32[] { })]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 1, 2 }, new Int32[] { 3, 4, 5 })]
+		public void Postpend_Memory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
+			BoundedArray<Int32> array = initial;
+			if (array.Count + elements.Length <= array.Capacity) {
+				array.Postpend(elements.AsMemory());
+				Assert.Equal(expected, array);
+			} else {
+				Assert.Throws<InvalidOperationException>(() => array.Postpend(elements.AsMemory()));
+			}
 		}
 
-		/// <inheritdoc/>
-		public void Postpend_Pointer<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values) => throw new NotImplementedException();
-
-		/// <inheritdoc/>
 		[Theory]
-		[MemberData(nameof(IPostpendContract<xUnit>.Postpend_Array_Data), MemberType = typeof(IPostpendContract<xUnit>))]
-		public void Postpend_ReadOnlyMemory<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values) {
-			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
-			IPostpendContract<xUnit>.Test_ReadOnlyMemory(expected, array, values);
+		[InlineData(new Int32[] { }, new Int32[] { }, new Int32[] { })]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 1, 2 }, new Int32[] { 3, 4, 5 })]
+		public void Postpend_ReadOnlyMemory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
+			BoundedArray<Int32> array = initial;
+			if (array.Count + elements.Length <= array.Capacity) {
+				array.Postpend((ReadOnlyMemory<Int32>)elements.AsMemory());
+				Assert.Equal(expected, array);
+			} else {
+				Assert.Throws<InvalidOperationException>(() => array.Postpend((ReadOnlyMemory<Int32>)elements.AsMemory()));
+			}
 		}
 
-		/// <inheritdoc/>
-		public void Postpend_ReadOnlySpan<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values) => throw new NotImplementedException();
-
-		/// <inheritdoc/>
-		public void Postpend_Span<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values) => throw new NotImplementedException();
-
-		/// <inheritdoc/>
 		[Theory]
-		[MemberData(nameof(IPrependContract<xUnit>.Prepend_Array_Data), MemberType = typeof(IPrependContract<xUnit>))]
-		public void Prepend_Array<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values) {
-			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
-			IPostpendContract<xUnit>.Test_Array(expected, array, values);
+		[InlineData(new Int32[] { }, new Int32[] { }, new Int32[] { })]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 1, 2 }, new Int32[] { 3, 4, 5 })]
+		public void Postpend_ReadOnlySpan([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
+			BoundedArray<Int32> array = initial;
+			if (array.Count + elements.Length <= array.Capacity) {
+				array.Postpend((ReadOnlySpan<Int32>)elements.AsSpan());
+				Assert.Equal(expected, array);
+			} else {
+				Assert.Throws<InvalidOperationException>(() => array.Postpend((ReadOnlySpan<Int32>)elements.AsSpan()));
+			}
 		}
 
-		/// <inheritdoc/>
 		[Theory]
-		[MemberData(nameof(IPrependContract<xUnit>.Prepend_Element_Data), MemberType = typeof(IPrependContract<xUnit>))]
-		public void Prepend_Element<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[] values) {
-			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
-			IPrependContract<xUnit>.Test_Element(expected, array, values);
+		[InlineData(new Int32[] { }, new Int32[] { }, new Int32[] { })]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 1, 2 }, new Int32[] { 3, 4, 5 })]
+		public void Postpend_Span([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
+			BoundedArray<Int32> array = initial;
+			if (array.Count + elements.Length <= array.Capacity) {
+				array.Postpend(elements.AsSpan());
+				Assert.Equal(expected, array);
+			} else {
+				Assert.Throws<InvalidOperationException>(() => array.Postpend(elements.AsSpan()));
+			}
 		}
 
-		/// <inheritdoc/>
 		[Theory]
-		[MemberData(nameof(IPrependContract<xUnit>.Prepend_Array_Data), MemberType = typeof(IPrependContract<xUnit>))]
-		public void Prepend_Memory<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values) {
-			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
-			IPrependContract<xUnit>.Test_Memory(expected, array, values);
+		[InlineData(new Int32[] { }, new Int32[] { }, new Int32[] { })]
+		[InlineData(new Int32[] { 3, 4, 5, 1, 2 }, new Int32[] { 1, 2 }, new Int32[] { 3, 4, 5 })]
+		public void Prepend_Array([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
+			BoundedArray<Int32> array = initial;
+			if (array.Count + elements.Length <= array.Capacity) {
+				array.Prepend(elements);
+				Assert.Equal(expected, array);
+			} else {
+				Assert.Throws<InvalidOperationException>(() => array.Prepend(elements));
+			}
 		}
 
-		/// <inheritdoc/>
-		public void Prepend_Pointer<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values) => throw new NotImplementedException();
-
-		/// <inheritdoc/>
 		[Theory]
-		[MemberData(nameof(IPrependContract<xUnit>.Prepend_Array_Data), MemberType = typeof(IPrependContract<xUnit>))]
-		public void Prepend_ReadOnlyMemory<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values) {
-			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
-			IPrependContract<xUnit>.Test_ReadOnlyMemory(expected, array, values);
+		[InlineData(new Int32[] { 0 }, new Int32[] { }, 0)]
+		public void Prepend_Element([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 element) {
+			BoundedArray<Int32> array = initial;
+			if (array.Count < array.Capacity) {
+				array.Prepend(element);
+				Assert.Equal(expected, array);
+			} else {
+				Assert.Throws<InvalidOperationException>(() => array.Prepend(element));
+			}
 		}
 
-		/// <inheritdoc/>
-		public void Prepend_ReadOnlySpan<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values) => throw new NotImplementedException();
-
-		/// <inheritdoc/>
-		public void Prepend_Span<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement[][] values) => throw new NotImplementedException();
-
-		/// <inheritdoc/>
-		public void Replace_Complex<TSearch, TReplace>([AllowNull] TSearch[] expected, [AllowNull] TSearch[] initial, [AllowNull] TSearch search, [AllowNull] TReplace replace) => throw new NotImplementedException();
-
-		/// <inheritdoc/>
 		[Theory]
-		[MemberData(nameof(IReplaceContract<xUnit>.Replace_Data), MemberType = typeof(IReplaceContract<xUnit>))]
-		public void Replace_Simple<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, [AllowNull] TElement search, [AllowNull] TElement replace) {
-			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
-			IReplaceContract<xUnit>.Test(expected, array, search, replace);
+		[InlineData(new Int32[] { }, new Int32[] { }, new Int32[] { })]
+		[InlineData(new Int32[] { 3, 4, 5, 1, 2 }, new Int32[] { 1, 2 }, new Int32[] { 3, 4, 5 })]
+		public void Prepend_Memory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
+			BoundedArray<Int32> array = initial;
+			if (array.Count + elements.Length <= array.Capacity) {
+				array.Prepend(elements.AsMemory());
+				Assert.Equal(expected, array);
+			} else {
+				Assert.Throws<InvalidOperationException>(() => array.Prepend(elements.AsMemory()));
+			}
 		}
 
-		/// <inheritdoc/>
 		[Theory]
-		[MemberData(nameof(IShiftContract<xUnit>.ShiftLeft_Data), MemberType = typeof(IShiftContract<xUnit>))]
-		public void ShiftLeft<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial) {
-			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
-			IShiftContract<xUnit>.Test_Left(expected, array);
+		[InlineData(new Int32[] { }, new Int32[] { }, new Int32[] { })]
+		[InlineData(new Int32[] { 3, 4, 5, 1, 2 }, new Int32[] { 1, 2 }, new Int32[] { 3, 4, 5 })]
+		public void Prepend_ReadOnlyMemory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
+			BoundedArray<Int32> array = initial;
+			if (array.Count + elements.Length <= array.Capacity) {
+				array.Prepend((ReadOnlyMemory<Int32>)elements.AsMemory());
+				Assert.Equal(expected, array);
+			} else {
+				Assert.Throws<InvalidOperationException>(() => array.Prepend((ReadOnlyMemory<Int32>)elements.AsMemory()));
+			}
 		}
 
-		/// <inheritdoc/>
 		[Theory]
-		[MemberData(nameof(IShiftContract<xUnit>.ShiftLeftBy_Data), MemberType = typeof(IShiftContract<xUnit>))]
-		public void ShiftLeftBy<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, Int32 amount) {
-			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
-			IShiftContract<xUnit>.Test_Left(expected, array, amount);
+		[InlineData(new Int32[] { }, new Int32[] { }, new Int32[] { })]
+		[InlineData(new Int32[] { 3, 4, 5, 1, 2 }, new Int32[] { 1, 2 }, new Int32[] { 3, 4, 5 })]
+		public void Prepend_ReadOnlySpan([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
+			BoundedArray<Int32> array = initial;
+			if (array.Count + elements.Length <= array.Capacity) {
+				array.Prepend((ReadOnlySpan<Int32>)elements.AsSpan());
+				Assert.Equal(expected, array);
+			} else {
+				Assert.Throws<InvalidOperationException>(() => array.Prepend((ReadOnlySpan<Int32>)elements.AsSpan()));
+			}
 		}
 
-		/// <inheritdoc/>
 		[Theory]
-		[MemberData(nameof(IShiftContract<xUnit>.ShiftLeftBy_Data), MemberType = typeof(IShiftContract<xUnit>))]
-		public void ShiftLeftOp<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, Int32 amount) {
-			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
-			IShiftContract<xUnit>.Validate(expected, array << amount);
+		[InlineData(new Int32[] { }, new Int32[] { }, new Int32[] { })]
+		[InlineData(new Int32[] { 3, 4, 5, 1, 2 }, new Int32[] { 1, 2 }, new Int32[] { 3, 4, 5 })]
+		public void Prepend_Span([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
+			BoundedArray<Int32> array = initial;
+			if (array.Count + elements.Length <= array.Capacity) {
+				array.Prepend(elements.AsSpan());
+				Assert.Equal(expected, array);
+			} else {
+				Assert.Throws<InvalidOperationException>(() => array.Prepend(elements.AsSpan()));
+			}
 		}
 
-		/// <inheritdoc/>
 		[Theory]
-		[MemberData(nameof(IShiftContract<xUnit>.ShiftRight_Data), MemberType = typeof(IShiftContract<xUnit>))]
-		public void ShiftRight<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial) {
-			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
-			IShiftContract<xUnit>.Test_Right(expected, array);
+		[InlineData(new Int32[] { }, new Int32[] { }, 0, 0)]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 0, 0)]
+		[InlineData(new Int32[] { 0, 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 1, 0)]
+		[InlineData(new Int32[] { 1, 0, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 2, 0)]
+		[InlineData(new Int32[] { 1, 2, 0, 4, 5, }, new Int32[] { 1, 2, 3, 4, 5 }, 3, 0)]
+		[InlineData(new Int32[] { 1, 2, 3, 0, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 4, 0)]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 0 }, new Int32[] { 1, 2, 3, 4, 5 }, 5, 0)]
+		[InlineData(new Int32[] { 0, 2, 0, 2, 0 }, new Int32[] { 1, 2, 1, 2, 1 }, 1, 0)]
+		[InlineData(new Int32[] { 0, 0, 0, 0, 0 }, new Int32[] { 1, 1, 1, 1, 1 }, 1, 0)]
+		public void Replace([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 search, Int32 replace) {
+			BoundedArray<Int32> array = initial;
+			array.Replace(search, replace);
+			Assert.Equal(expected, array);
 		}
 
-		/// <inheritdoc/>
 		[Theory]
-		[MemberData(nameof(IShiftContract<xUnit>.ShiftRightBy_Data), MemberType = typeof(IShiftContract<xUnit>))]
-		public void ShiftRightBy<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, Int32 amount) {
-			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
-			IShiftContract<xUnit>.Test_Right(expected, array, amount);
+		[InlineData(new Int32[] { }, new Int32[] { })]
+		[InlineData(new Int32[] { 2, 3, 4, 5, 0 }, new Int32[] { 1, 2, 3, 4, 5 })]
+		public void ShiftLeft([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial) {
+			BoundedArray<Int32> array = initial;
+			array.ShiftLeft();
+			Assert.Equal(expected, array);
 		}
 
-		/// <inheritdoc/>
 		[Theory]
-		[MemberData(nameof(IShiftContract<xUnit>.ShiftRightBy_Data), MemberType = typeof(IShiftContract<xUnit>))]
-		public void ShiftRightOp<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, Int32 amount) {
-			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
-			IShiftContract<xUnit>.Validate(expected, array >> amount);
+		[InlineData(new Int32[] { }, new Int32[] { }, 1)]
+		[InlineData(new Int32[] { 2, 3, 4, 5, 0 }, new Int32[] { 1, 2, 3, 4, 5 }, 1)]
+		[InlineData(new Int32[] { 3, 4, 5, 0, 0 }, new Int32[] { 1, 2, 3, 4, 5 }, 2)]
+		public void ShiftLeftBy([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 amount) {
+			BoundedArray<Int32> array = initial;
+			array.ShiftLeft(amount);
+			Assert.Equal(expected, array);
 		}
 
-		/// <inheritdoc/>
 		[Theory]
-		[MemberData(nameof(ISliceContract<xUnit>.Slice_Data), MemberType = typeof(ISliceContract<xUnit>))]
-		public void Slice<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial) {
-			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
-			ISliceContract<xUnit>.Test(expected, array);
+		[InlineData(new Int32[] { }, new Int32[] { }, 1)]
+		[InlineData(new Int32[] { 2, 3, 4, 5, 0 }, new Int32[] { 1, 2, 3, 4, 5 }, 1)]
+		[InlineData(new Int32[] { 3, 4, 5, 0, 0 }, new Int32[] { 1, 2, 3, 4, 5 }, 2)]
+		public void ShiftLeftOp([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 amount) {
+			BoundedArray<Int32> array = initial;
+			Assert.Equal(expected, array << amount);
 		}
 
-		/// <inheritdoc/>
 		[Theory]
-		[MemberData(nameof(ISliceContract<xUnit>.Slice_Range_Data), MemberType = typeof(ISliceContract<xUnit>))]
-		public void Slice_Range<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, Int32 start, Int32 end) {
-			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
-			ISliceContract<xUnit>.Validate(expected, array[start..end]);
+		[InlineData(new Int32[] { }, new Int32[] { })]
+		[InlineData(new Int32[] { 0, 1, 2, 3, 4 }, new Int32[] { 1, 2, 3, 4, 5 })]
+		public void ShiftRight([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial) {
+			BoundedArray<Int32> array = initial;
+			array.ShiftRight();
+			Assert.Equal(expected, array);
 		}
 
-		/// <inheritdoc/>
 		[Theory]
-		[MemberData(nameof(ISliceContract<xUnit>.Slice_Start_Data), MemberType = typeof(ISliceContract<xUnit>))]
-		public void Slice_Start<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, Int32 start) {
-			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
-			ISliceContract<xUnit>.Test(expected, array, start);
+		[InlineData(new Int32[] { }, new Int32[] { }, 1)]
+		[InlineData(new Int32[] { 0, 1, 2, 3, 4 }, new Int32[] { 1, 2, 3, 4, 5 }, 1)]
+		[InlineData(new Int32[] { 0, 0, 1, 2, 3 }, new Int32[] { 1, 2, 3, 4, 5 }, 2)]
+		public void ShiftRightBy([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 amount) {
+			BoundedArray<Int32> array = initial;
+			array.ShiftRight(amount);
+			Assert.Equal(expected, array);
 		}
 
-		/// <inheritdoc/>
 		[Theory]
-		[MemberData(nameof(ISliceContract<xUnit>.Slice_Start_Length_Data), MemberType = typeof(ISliceContract<xUnit>))]
-		public void Slice_Start_Length<TElement>([AllowNull] TElement[] expected, [AllowNull] TElement[] initial, Int32 start, Int32 length) {
-			BoundedArray<TElement> array = initial is not null ? new BoundedArray<TElement>(initial) : null;
-			ISliceContract<xUnit>.Test(expected, array, start, length);
+		[InlineData(new Int32[] { }, new Int32[] { }, 1)]
+		[InlineData(new Int32[] { 0, 1, 2, 3, 4 }, new Int32[] { 1, 2, 3, 4, 5 }, 1)]
+		[InlineData(new Int32[] { 0, 0, 1, 2, 3 }, new Int32[] { 1, 2, 3, 4, 5 }, 2)]
+		public void ShiftRightOp([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 amount) {
+			BoundedArray<Int32> array = initial;
+			Assert.Equal(expected, array >> amount);
 		}
 
-		/// <inheritdoc/>
 		[Theory]
-		[MemberData(nameof(ISequenceContract<xUnit>.ToArray_Data), MemberType = typeof(ISequenceContract<xUnit>))]
-		public void ToArray<TElement>([AllowNull] TElement[] values) {
-			BoundedArray<TElement> array = values is not null ? new BoundedArray<TElement>(values) : null;
-			ISequenceContract<xUnit>.Test_ToArray(values, array);
+		[InlineData(new Int32[] { }, new Int32[] { })]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 })]
+		public void Slice([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial) {
+			BoundedArray<Int32> array = initial;
+			Memory<Int32> slice = array.Slice();
+			Assert.Equal(expected, slice.ToArray());
 		}
 
-		/// <inheritdoc/>
 		[Theory]
-		[MemberData(nameof(ISequenceContract<xUnit>.ToString_Data), MemberType = typeof(ISequenceContract<xUnit>))]
-		public void ToString<TElement>([DisallowNull] String expected, [DisallowNull] TElement[] values, Int32 amount) {
-			BoundedArray<TElement> array = new BoundedArray<TElement>(values);
-			ISequenceContract<xUnit>.Test_ToString(expected, array, amount);
+		[InlineData(new Int32[] { }, new Int32[] { }, 0, 0)]
+		[InlineData(new Int32[] { }, new Int32[] { 1, 2, 3, 4, 5 }, 0, 0)]
+		[InlineData(new Int32[] { 2, 3 }, new Int32[] { 1, 2, 3, 4, 5 }, 1, 3)]
+		[InlineData(new Int32[] { 3, 4 }, new Int32[] { 1, 2, 3, 4, 5 }, 2, 4)]
+		[InlineData(new Int32[] { 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 1, 5)]
+		public void Slice_Range([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 start, Int32 end) {
+			BoundedArray<Int32> array = initial;
+			Memory<Int32> slice = array[start..end];
+			Assert.Equal(expected, slice.ToArray());
+		}
+
+		[Theory]
+		[InlineData(new Int32[] { 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 1)]
+		[InlineData(new Int32[] { 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 2)]
+		public void Slice_Start([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 start) {
+			BoundedArray<Int32> array = initial;
+			Memory<Int32> slice = array.Slice(start);
+			Assert.Equal(expected, slice.ToArray());
+		}
+
+		[Theory]
+		[InlineData(new Int32[] { 2, 3 }, new Int32[] { 1, 2, 3, 4, 5 }, 1, 2)]
+		[InlineData(new Int32[] { 3, 4 }, new Int32[] { 1, 2, 3, 4, 5 }, 2, 2)]
+		[InlineData(new Int32[] { 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 1, 4)]
+		public void Slice_Start_Length([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 start, Int32 length) {
+			BoundedArray<Int32> array = initial;
+			Memory<Int32> slice = array.Slice(start, length);
+			Assert.Equal(expected, slice.ToArray());
+		}
+
+		[Theory]
+		[InlineData(new Int32[] { })]
+		[InlineData(new Int32[] { 1, 2, 3, 4, 5 })]
+		public void ToArray([DisallowNull] Int32[] elements) {
+			BoundedArray<Int32> array = elements;
+			Assert.Equal(elements, array.ToArray());
+		}
+
+		[Theory]
+		[InlineData("[]", new Int32[] { }, 0)]
+		[InlineData("[1, 2, 3...]", new Int32[] { 1, 2, 3, 4, 5 }, 3)]
+		[InlineData("[1, 2, 3, 4, 5]", new Int32[] { 1, 2, 3, 4, 5 }, 5)]
+		public void ToString([DisallowNull] String expected, [DisallowNull] Int32[] elements, Int32 amount) {
+			BoundedArray<Int32> array = elements;
+			Assert.Equal(expected, array.ToString(amount));
 		}
 	}
 }

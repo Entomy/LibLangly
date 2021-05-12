@@ -1,5 +1,4 @@
-﻿using System;
-using System.Diagnostics.CodeAnalysis;
+﻿using System.Diagnostics.CodeAnalysis;
 
 namespace System.Traits {
 	/// <summary>
@@ -7,6 +6,7 @@ namespace System.Traits {
 	/// </summary>
 	/// <typeparam name="TResult">The resulting type; often itself.</typeparam>
 	public interface ISlice<out TResult> : ICount {
+#if !NETSTANDARD1_3
 		/// <summary>
 		/// Gets a slice out of the collection within the specified range.
 		/// </summary>
@@ -19,13 +19,18 @@ namespace System.Traits {
 				return Slice(start, length);
 			}
 		}
+#endif
 
 		/// <summary>
 		/// Forms a slice out of the collection.
 		/// </summary>
 		/// <returns>A slice that consists of all elements of the current collection.</returns>
 		[return: MaybeNull]
-		TResult Slice() => Slice(0, Count);
+		TResult Slice()
+#if !NETSTANDARD1_3
+			=> Slice(0, Count)
+#endif
+			;
 
 		/// <summary>
 		/// Forms a slice out of the collection that begins at a specified index.
@@ -33,7 +38,11 @@ namespace System.Traits {
 		/// <param name="start">The index at which to begin the slice</param>
 		/// <returns>A slice that consists of all elements of the current collection from <paramref name="start"/> to the end of the collection.</returns>
 		[return: MaybeNull]
-		TResult Slice(nint start) => Slice(start, Count - start);
+		TResult Slice(nint start)
+#if !NETSTANDARD1_3
+			=> Slice(start, Count - start)
+#endif
+			;
 
 		/// <summary>
 		/// Forms a slice out of the current span starting at a specified index for a specified length.

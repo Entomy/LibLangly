@@ -8,11 +8,6 @@ namespace Collectathon.Arrays {
 	/// <typeparam name="TElement">The type of elements in the array.</typeparam>
 	public sealed class BoundedArray<TElement> : FlexibleArray<TElement, BoundedArray<TElement>> {
 		/// <summary>
-		/// Initializes a new <see cref="BoundedArray{TElement}"/>.
-		/// </summary>
-		public BoundedArray() : this(0) { }
-
-		/// <summary>
 		/// Initializes a new <see cref="BoundedArray{TElement}"/> with the given <paramref name="capacity"/>.
 		/// </summary>
 		/// <param name="capacity">The maximum capacity.</param>
@@ -39,27 +34,63 @@ namespace Collectathon.Arrays {
 		public static implicit operator BoundedArray<TElement>([AllowNull] TElement[] array) => array is not null ? new(array) : null;
 
 		/// <inheritdoc/>
-		[return: MaybeNull]
-		protected override BoundedArray<TElement> Insert(nint index, [AllowNull] TElement element) => Count < Capacity ? base.Insert(index, element) : null;
+		/// <exception cref="InvalidOperationException">Thrown if the array is at maximum capacity.</exception>
+		public override void Insert(nint index, [AllowNull] TElement element) {
+			if (Count < Capacity) {
+				base.Insert(index, element);
+			} else {
+				throw new InvalidOperationException();
+			}
+		}
 
 		/// <inheritdoc/>
-		[return: MaybeNull]
-		protected override BoundedArray<TElement> Insert(nint index, ReadOnlyMemory<TElement> elements) => Count + elements.Length < Capacity ? base.Insert(index, elements) : null;
+		/// <exception cref="InvalidOperationException">Thrown if the array is at maximum capacity.</exception>
+		public override void Insert(nint index, ReadOnlySpan<TElement> elements) {
+			if (Count + elements.Length <= Capacity) {
+				base.Insert(index, elements);
+			} else {
+				throw new InvalidOperationException();
+			}
+		}
 
 		/// <inheritdoc/>
-		[return: MaybeNull]
-		protected override BoundedArray<TElement> Postpend([AllowNull] TElement element) => Count < Capacity ? base.Postpend(element) : null;
+		/// <exception cref="InvalidOperationException">Thrown if the array is at maximum capacity.</exception>
+		public override void Postpend([AllowNull] TElement element) {
+			if (Count < Capacity) {
+				base.Postpend(element);
+			} else {
+				throw new InvalidOperationException();
+			}
+		}
 
 		/// <inheritdoc/>
-		[return: MaybeNull]
-		protected override BoundedArray<TElement> Postpend(ReadOnlyMemory<TElement> elements) => Count + elements.Length < Capacity ? base.Postpend(elements) : null;
+		/// <exception cref="InvalidOperationException">Thrown if the array is at maximum capacity.</exception>
+		public override void Postpend(ReadOnlySpan<TElement> elements) {
+			if (Count + elements.Length <= Capacity) {
+				base.Postpend(elements);
+			} else {
+				throw new InvalidOperationException();
+			}
+		}
 
 		/// <inheritdoc/>
-		[return: MaybeNull]
-		protected override BoundedArray<TElement> Prepend([AllowNull] TElement element) => Count < Capacity ? base.Prepend(element) : null;
+		/// <exception cref="InvalidOperationException">Thrown if the array is at maximum capacity.</exception>
+		public override void Prepend([AllowNull] TElement element) {
+			if (Count < Capacity) {
+				base.Prepend(element);
+			} else {
+				throw new InvalidOperationException();
+			}
+		}
 
 		/// <inheritdoc/>
-		[return: MaybeNull]
-		protected override BoundedArray<TElement> Prepend(ReadOnlyMemory<TElement> elements) => Count + elements.Length < Capacity ? base.Prepend(elements) : null;
+		/// <exception cref="InvalidOperationException">Thrown if the array is at maximum capacity.</exception>
+		public override void Prepend(ReadOnlySpan<TElement> elements) {
+			if (Count + elements.Length <= Capacity) {
+				base.Prepend(elements);
+			} else {
+				throw new InvalidOperationException();
+			}
+		}
 	}
 }

@@ -7,7 +7,7 @@ namespace Collectathon.Arrays {
 	/// Represents a dynamic array, a type of flexible array who's capacity can freely grow and shrink.
 	/// </summary>
 	/// <typeparam name="TElement">The type of elements in the array.</typeparam>
-	public sealed class DynamicArray<TElement> : FlexibleArray<TElement, DynamicArray<TElement>>, IResize<DynamicArray<TElement>> {
+	public sealed class DynamicArray<TElement> : FlexibleArray<TElement, DynamicArray<TElement>>, IResize {
 		/// <summary>
 		/// Initializes a new <see cref="DynamicArray{TElement}"/>.
 		/// </summary>
@@ -35,7 +35,7 @@ namespace Collectathon.Arrays {
 		/// <inheritdoc/>
 		new public nint Capacity {
 			get => base.Capacity;
-			set => ((IResize<DynamicArray<TElement>>)this).Resize(value);
+			set => Resize(value);
 		}
 
 		/// <summary>
@@ -46,67 +46,59 @@ namespace Collectathon.Arrays {
 		public static implicit operator DynamicArray<TElement>([AllowNull] TElement[] array) => array is not null ? new(array) : null;
 
 		/// <inheritdoc/>
-		[return: NotNull]
-		DynamicArray<TElement> IResize<DynamicArray<TElement>>.Resize(nint capacity) {
+		public void Resize(nint capacity) {
 			TElement[] newBuffer = new TElement[capacity];
-			Memory.Slice(0, capacity > Capacity ? Capacity : capacity).CopyTo(newBuffer);
+			Memory.AsMemory(0, (Int32)(capacity > Capacity ? Capacity : capacity)).CopyTo(newBuffer);
 			Count = Count < capacity ? Count : capacity;
 			Memory = newBuffer;
-			return this;
 		}
 
 		/// <inheritdoc/>
-		[return: MaybeNull]
-		protected override DynamicArray<TElement> Insert(nint index, [AllowNull] TElement element) {
+		public override void Insert(nint index, [AllowNull] TElement element) {
 			if (Count == Capacity) {
-				((IResize<DynamicArray<TElement>>)this).Grow();
+				this.Grow();
 			}
-			return base.Insert(index, element);
+			base.Insert(index, element);
 		}
 
 		/// <inheritdoc/>
-		[return: MaybeNull]
-		protected override DynamicArray<TElement> Insert(nint index, ReadOnlyMemory<TElement> elements) {
+		public override void Insert(nint index, ReadOnlySpan<TElement> elements) {
 			if (Count + elements.Length >= Capacity) {
-				((IResize<DynamicArray<TElement>>)this).Resize(Capacity + elements.Length);
+				this.Grow(Capacity + elements.Length);
 			}
-			return base.Insert(index, elements);
+			base.Insert(index, elements);
 		}
 
 		/// <inheritdoc/>
-		[return: MaybeNull]
-		protected override DynamicArray<TElement> Postpend([AllowNull] TElement element) {
+		public override void Postpend([AllowNull] TElement element) {
 			if (Count == Capacity) {
-				((IResize<DynamicArray<TElement>>)this).Grow();
+				this.Grow();
 			}
-			return base.Postpend(element);
+			base.Postpend(element);
 		}
 
 		/// <inheritdoc/>
-		[return: MaybeNull]
-		protected override DynamicArray<TElement> Postpend(ReadOnlyMemory<TElement> elements) {
+		public override void Postpend(ReadOnlySpan<TElement> elements) {
 			if (Count + elements.Length >= Capacity) {
-				((IResize<DynamicArray<TElement>>)this).Resize(Capacity + elements.Length);
+				this.Grow(Capacity + elements.Length);
 			}
-			return base.Postpend(elements);
+			base.Postpend(elements);
 		}
 
 		/// <inheritdoc/>
-		[return: MaybeNull]
-		protected override DynamicArray<TElement> Prepend([AllowNull] TElement element) {
+		public override void Prepend([AllowNull] TElement element) {
 			if (Count == Capacity) {
-				((IResize<DynamicArray<TElement>>)this).Grow();
+				this.Grow();
 			}
-			return base.Prepend(element);
+			base.Prepend(element);
 		}
 
 		/// <inheritdoc/>
-		[return: MaybeNull]
-		protected override DynamicArray<TElement> Prepend(ReadOnlyMemory<TElement> elements) {
+		public override void Prepend(ReadOnlySpan<TElement> elements) {
 			if (Count + elements.Length >= Capacity) {
-				((IResize<DynamicArray<TElement>>)this).Resize(Capacity + elements.Length);
+				this.Grow(Capacity + elements.Length);
 			}
-			return base.Prepend(elements);
+			base.Prepend(elements);
 		}
 	}
 }

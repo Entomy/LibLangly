@@ -6,7 +6,9 @@ namespace System.Traits {
 	/// </summary>
 	/// <typeparam name="TElement">The type of elements in the sequence.</typeparam>
 	public interface IEnumerator<TElement> : Collections.Generic.IEnumerator<TElement>, ISequence<TElement, IEnumerator<TElement>> {
+#if !NETSTANDARD1_3
 		/// <inheritdoc/>
+		[MaybeNull]
 		[SuppressMessage("Performance", "HAA0601:Value type to reference type conversion causing boxing allocation", Justification = "There's nothing I can do about this.")]
 		Object Collections.IEnumerator.Current => Current;
 
@@ -21,5 +23,6 @@ namespace System.Traits {
 
 		/// <inheritdoc/>
 		Collections.IEnumerator Collections.IEnumerable.GetEnumerator() => this;
+#endif
 	}
 }

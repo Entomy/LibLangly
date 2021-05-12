@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Traits;
+using Langly;
 
 namespace Collectathon.Stacks {
 	/// <summary>
@@ -10,10 +11,10 @@ namespace Collectathon.Stacks {
 	/// <typeparam name="TElement">The type of elements in the stack.</typeparam>
 	[DebuggerDisplay("{ToString(5),nq}")]
 	public sealed partial class Stack<TElement> :
-		IClear<Stack<TElement>>,
-		IPeek<TElement, Stack<TElement>>,
+		IClear,
+		IPeek<TElement>,
 		ISequence<TElement, Stack<TElement>.Enumerator>,
-		IWrite<TElement, Stack<TElement>> {
+		IWrite<TElement> {
 		/// <summary>
 		/// The head of the stack; the first element.
 		/// </summary>
@@ -30,7 +31,7 @@ namespace Collectathon.Stacks {
 		/// </summary>
 		/// <param name="elements">The initial elements of the stack.</param>
 		public Stack([DisallowNull] params TElement[] elements) {
-			foreach	(TElement element in elements) {
+			foreach (TElement element in elements) {
 				Head = new Node(element, next: Head);
 			}
 			Count = elements.Length;
@@ -46,27 +47,10 @@ namespace Collectathon.Stacks {
 		public Boolean Writable => true;
 
 		/// <inheritdoc/>
-		public Enumerator GetEnumerator() => new Enumerator(this);
+		void IAdd<TElement>.Add([AllowNull] TElement element) => Write(element);
 
 		/// <inheritdoc/>
-		[return: NotNull]
-		public override String ToString() => ToString(Count);
-
-		/// <inheritdoc/>
-		[return: NotNull]
-		public String ToString(nint amount) => ISequence<TElement, Enumerator>.ToString(this, amount);
-
-		/// <inheritdoc/>
-		[return: MaybeNull]
-		Stack<TElement> IAdd<TElement, Stack<TElement>>.Add([AllowNull] TElement element) {
-			Head = new Node(element, next: Head);
-			Count++;
-			return this;
-		}
-
-		/// <inheritdoc/>
-		[return: NotNull]
-		Stack<TElement> IClear<Stack<TElement>>.Clear() {
+		public void Clear() {
 			Node P = null;
 			Node N = Head;
 			while (N is not null) {
@@ -75,35 +59,53 @@ namespace Collectathon.Stacks {
 				P.Next = null;
 			}
 			Count = 0;
-			return this;
 		}
 
 		/// <inheritdoc/>
-		[return: MaybeNull]
-		Stack<TElement> IPeek<TElement, Stack<TElement>>.Peek([AllowNull, MaybeNull] out TElement element) {
+		public Enumerator GetEnumerator() => new Enumerator(this);
+
+		/// <inheritdoc/>
+		[return: NotNull]
+		System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() => GetEnumerator();
+
+		/// <inheritdoc/>
+		[return: NotNull]
+		System.Collections.Generic.IEnumerator<TElement> System.Collections.Generic.IEnumerable<TElement>.GetEnumerator() => GetEnumerator();
+
+		/// <inheritdoc/>
+		public void Peek([AllowNull, MaybeNull] out TElement element) {
 			if (Head is not null) {
 				element = Head.Element;
-				return this;
 			} else {
-				element = default;
-				return null;
+				throw new InvalidOperationException();
 			}
 		}
 
 		/// <inheritdoc/>
-		[return: MaybeNull]
-		Stack<TElement> IRead<TElement, Stack<TElement>>.Read([AllowNull, MaybeNull] out TElement element) {
+		public void Read([AllowNull, MaybeNull] out TElement element) {
 			if (Head is not null) {
 				element = Head.Element;
 				Node old = Head;
 				Head = Head.Next;
 				old.Next = null;
 				Count--;
-				return this;
 			} else {
-				element = default;
-				return null;
+				throw new InvalidOperationException();
 			}
+		}
+
+		/// <inheritdoc/>
+		[return: NotNull]
+		public override String ToString() => Collection.ToString(this);
+
+		/// <inheritdoc/>
+		[return: NotNull]
+		public String ToString(nint amount) => Collection.ToString(this, amount);
+
+		/// <inheritdoc/>
+		public void Write([AllowNull] TElement element) {
+			Head = new Node(element, next: Head);
+			Count++;
 		}
 	}
 }

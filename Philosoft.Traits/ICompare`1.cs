@@ -1,5 +1,4 @@
-﻿using System;
-using System.Diagnostics.CodeAnalysis;
+﻿using System.Diagnostics.CodeAnalysis;
 
 namespace System.Traits {
 	/// <summary>
@@ -7,6 +6,7 @@ namespace System.Traits {
 	/// </summary>
 	/// <typeparam name="TElement">The type this can be compared to.</typeparam>
 	public interface ICompare<TElement> : IComparable, IComparable<TElement>, IEquatable<TElement> {
+#if !NETSTANDARD1_3
 		/// <inheritdoc/>
 		Int32 IComparable.CompareTo([AllowNull] Object obj) {
 			switch (obj) {
@@ -19,5 +19,6 @@ namespace System.Traits {
 
 		/// <inheritdoc/>
 		Boolean IEquatable<TElement>.Equals([AllowNull] TElement other) => CompareTo(other) == 0;
+#endif
 	}
 }

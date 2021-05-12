@@ -1,7 +1,7 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net5.0</TargetFramework>
+		<TargetFrameworks>netstandard1.3;netstandard2.1</TargetFrameworks>
 		<LangVersion>9.0</LangVersion>
 		<Nullable>enable</Nullable>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -17,8 +17,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\Philosoft.Contracts\Philosoft.Contracts.csproj" />
-	  <ProjectReference Include="..\Philosoft.Extensions.FSharp\Philosoft.Extensions.FSharp.fsproj" />
 	  <ProjectReference Include="..\Philosoft.Extensions\Philosoft.Extensions.csproj" />
 	  <ProjectReference Include="..\Philosoft.Traits\Philosoft.Traits.csproj" />
 	</ItemGroup>

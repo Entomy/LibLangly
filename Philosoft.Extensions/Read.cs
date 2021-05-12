@@ -1,111 +1,70 @@
-﻿using System;
-using System.Diagnostics.CodeAnalysis;
+﻿using System.Diagnostics.CodeAnalysis;
 using System.Traits;
 
 namespace System {
 	public static partial class TraitExtensions {
 		/// <summary>
-		/// Reads a <typeparamref name="TElement"/> from the <paramref name="stream"/>.
+		/// Reads until the <paramref name="elements"/> is filled.
 		/// </summary>
-		/// <typeparam name="TElement">The type of the element to read.</typeparam>
-		/// <typeparam name="TResult">The resulting type; often itself..</typeparam>
-		/// <param name="stream">This stream.</param>
-		/// <param name="element">The <typeparamref name="TElement"/> value that was read.</param>
-		/// <returns>A <typeparamref name="TResult"/> instance if successful; otherwise, <see langword="null"/>.</returns>
-		[return: MaybeNull]
-		public static TResult Read<TElement, TResult>([AllowNull] this IRead<TElement, TResult> stream, [MaybeNull] out TElement element) where TResult : IRead<TElement, TResult> {
-			if (stream is null) {
-				element = default;
-				return (TResult)stream;
+		/// <param name="collection">This collection.</param>
+		/// <param name="elements">The <see cref="Array"/> of <typeparamref name="TElement"/> to fill.</param>
+		public static void Read<TElement>([DisallowNull] this IRead<TElement> collection, [AllowNull] TElement[] elements) => Read(collection, elements.AsSpan());
+
+		/// <summary>
+		/// Reads until the <paramref name="elements"/> is filled.
+		/// </summary>
+		/// <param name="collection">This collection.</param>
+		/// <param name="elements">The <see cref="Memory{T}"/> of <typeparamref name="TElement"/> to fill.</param>
+		public static void Read<TElement>([DisallowNull] this IRead<TElement> collection, Memory<TElement> elements) => Read(collection, elements.Span);
+
+		/// <summary>
+		/// Reads <paramref name="amount"/> of <typeparamref name="TElement"/>.
+		/// </summary>
+		/// <param name="collection">This collection.</param>
+		/// <param name="amount">The amount of elements to read.</param>
+		/// <param name="elements">The <typeparamref name="TElement"/> values that were read.</param>
+		public static void Read<TElement>([DisallowNull] this IRead<TElement> collection, nint amount, out ReadOnlyMemory<TElement> elements) {
+			Memory<TElement> buffer = new TElement[amount];
+			Int32 i = 0;
+			for (; i < amount; i++) {
+				collection.Read(out buffer.Span[i]);
 			}
-			return stream.Read(out element);
+			elements = buffer.Slice(0, i);
 		}
 
 		/// <summary>
 		/// Reads until the <paramref name="elements"/> is filled.
 		/// </summary>
-		/// <typeparam name="TElement">The type of the element to read.</typeparam>
-		/// <typeparam name="TResult">The resulting type; often itself..</typeparam>
-		/// <param name="stream">This stream.</param>
-		/// <param name="elements">The <see cref="Array"/> of <typeparamref name="TElement"/> to fill.</param>
-		/// <returns>A <typeparamref name="TResult"/> instance if successful; otherwise, <see langword="null"/>.</returns>
-		[return: MaybeNull]
-		public static TResult Read<TElement, TResult>([AllowNull] this IRead<TElement, TResult> stream, [MaybeNull] TElement[] elements) where TResult : IRead<TElement, TResult> => stream is not null ? stream.Read(elements) : (TResult)stream;
+		/// <param name="collection">This collection.</param>
+		/// <param name="elements">The <see cref="Span{T}"/> of <typeparamref name="TElement"/> to fill.</param>
+		public static void Read<TElement>([DisallowNull] this IRead<TElement> collection, Span<TElement> elements) {
+			for (Int32 i = 0; i < elements.Length; i++) {
+				collection.Read(out elements[i]);
+			}
+		}
 
 		/// <summary>
 		/// Reads <paramref name="amount"/> of <typeparamref name="TElement"/>.
 		/// </summary>
-		/// <typeparam name="TElement">The type of the element to read.</typeparam>
-		/// <typeparam name="TResult">The resulting type; often itself..</typeparam>
-		/// <param name="stream">This stream.</param>
+		/// <param name="collection">This collection.</param>
 		/// <param name="amount">The amount of elements to read.</param>
 		/// <param name="elements">The <typeparamref name="TElement"/> values that were read.</param>
-		/// <returns>A <typeparamref name="TResult"/> instance if successful; otherwise, <see langword="null"/>.</returns>
-		[return: MaybeNull]
-		public static TResult Read<TElement, TResult>([AllowNull] this IRead<TElement, TResult> stream, nint amount, [MaybeNull] out TElement[] elements) where TResult : IRead<TElement, TResult> {
-			if (stream is null) {
-				elements = default;
-				return (TResult)stream;
-			}
-			return stream.Read(amount, out elements);
+		public static void Read<TElement>([DisallowNull] this IRead<TElement> collection, nint amount, out ReadOnlySpan<TElement> elements) {
+			Read(collection, amount, out ReadOnlyMemory<TElement> elmts);
+			elements = elmts.Span;
 		}
 
 		/// <summary>
 		/// Reads until the <paramref name="elements"/> is filled.
 		/// </summary>
-		/// <typeparam name="TElement">The type of the element to read.</typeparam>
-		/// <typeparam name="TResult">The resulting type; often itself..</typeparam>
-		/// <param name="stream">This stream.</param>
-		/// <param name="elements">The <see cref="Array"/> of <typeparamref name="TElement"/> to fill.</param>
-		/// <returns>A <typeparamref name="TResult"/> instance if successful; otherwise, <see langword="null"/>.</returns>
-		[return: MaybeNull]
-		public static TResult Read<TElement, TResult>([AllowNull] this IRead<TElement, TResult> stream, Memory<TElement> elements) where TResult : IRead<TElement, TResult> => stream is not null ? stream.Read(elements) : (TResult)stream;
-
-		/// <summary>
-		/// Reads <paramref name="amount"/> of <typeparamref name="TElement"/>.
-		/// </summary>
-		/// <typeparam name="TElement">The type of the element to read.</typeparam>
-		/// <typeparam name="TResult">The resulting type; often itself..</typeparam>
-		/// <param name="stream">This stream.</param>
-		/// <param name="amount">The amount of elements to read.</param>
-		/// <param name="elements">The <typeparamref name="TElement"/> values that were read.</param>
-		/// <returns>A <typeparamref name="TResult"/> instance if successful; otherwise, <see langword="null"/>.</returns>
-		[return: MaybeNull]
-		public static TResult Read<TElement, TResult>([AllowNull] this IRead<TElement, TResult> stream, nint amount, out ReadOnlyMemory<TElement> elements) where TResult : IRead<TElement, TResult> {
-			if (stream is null) {
-				elements = default;
-				return (TResult)stream;
+		/// <param name="collection">This collection.</param>
+		/// <param name="elements">The pointer of <typeparamref name="TElement"/> to fill.</param>
+		/// <param name="length">The length of the <paramref name="elements"/>.</param>
+		[CLSCompliant(false)]
+		public static unsafe void Read<TElement>([DisallowNull] this IRead<TElement> collection, [DisallowNull] TElement* elements, Int32 length) where TElement : unmanaged {
+			for (Int32 i = 0; i < length; i++) {
+				collection.Read(out elements[i]);
 			}
-			return stream.Read(amount, out elements);
-		}
-
-		/// <summary>
-		/// Reads until the <paramref name="elements"/> is filled.
-		/// </summary>
-		/// <typeparam name="TElement">The type of the element to read.</typeparam>
-		/// <typeparam name="TResult">The resulting type; often itself..</typeparam>
-		/// <param name="stream">This stream.</param>
-		/// <param name="elements">The <see cref="Array"/> of <typeparamref name="TElement"/> to fill.</param>
-		/// <returns>A <typeparamref name="TResult"/> instance if successful; otherwise, <see langword="null"/>.</returns>
-		[return: MaybeNull]
-		public static TResult Read<TElement, TResult>([AllowNull] this IRead<TElement, TResult> stream, Span<TElement> elements) where TResult : IRead<TElement, TResult> => stream is not null ? stream.Read(elements) : (TResult)stream;
-
-		/// <summary>
-		/// Reads <paramref name="amount"/> of <typeparamref name="TElement"/>.
-		/// </summary>
-		/// <typeparam name="TElement">The type of the element to read.</typeparam>
-		/// <typeparam name="TResult">The resulting type; often itself..</typeparam>
-		/// <param name="stream">This stream.</param>
-		/// <param name="amount">The amount of elements to read.</param>
-		/// <param name="elements">The <typeparamref name="TElement"/> values that were read.</param>
-		/// <returns>A <typeparamref name="TResult"/> instance if successful; otherwise, <see langword="null"/>.</returns>
-		[return: MaybeNull]
-		public static TResult Read<TElement, TResult>([AllowNull] this IRead<TElement, TResult> stream, nint amount, out ReadOnlySpan<TElement> elements) where TResult : IRead<TElement, TResult> {
-			if (stream is null) {
-				elements = default;
-				return (TResult)stream;
-			}
-			return stream.Read(amount, out elements);
 		}
 	}
 }

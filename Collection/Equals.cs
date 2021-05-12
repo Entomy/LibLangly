@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
 
 namespace Langly {
 	internal static partial class Collection {
@@ -11,6 +12,7 @@ namespace Langly {
 		/// <param name="first">The first object to compare.</param>
 		/// <param name="second">The second object to compare.</param>
 		/// <returns><see langword="true"/> if the collections are considered equal; otherwise, <see langword="false"/>.</returns>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static Boolean Equals<T>([AllowNull] IEnumerable<T> first, [AllowNull] IEnumerable<T> second) {
 			// If the two references are equal (includes both null)
 			if (ReferenceEquals(first, second)) {

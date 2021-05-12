@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net5.0-windows</TargetFramework>
+		<TargetFrameworks>netstandard1.3;netstandard2.1</TargetFrameworks>
 		<Description>Meta-package for the entire LibLangly runtime.</Description>
 		<PackageTags>langly</PackageTags>
 		<AssemblyName>Langly</AssemblyName>
@@ -11,14 +11,6 @@
 	<ItemGroup>
 		<Compile Include="..\GlobalSuppressions.cs" Link="GlobalSuppressions.cs" />
 		<None Include="Logo.png" Pack="true" Visible="true" PackagePath="\" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <ProjectReference Include="..\Collectathon.Arrays\Collectathon.Arrays.csproj" />
-	  <ProjectReference Include="..\Collectathon.Filters\Collectathon.Filters.csproj" />
-	  <ProjectReference Include="..\Numbersome.Sets\Numbersome.Sets.csproj" />
-	  <ProjectReference Include="..\Philosoft.Extensions\Philosoft.Extensions.csproj" />
-	  <ProjectReference Include="..\Philosoft.Traits\Philosoft.Traits.csproj" />
 	</ItemGroup>
 
 </Project>

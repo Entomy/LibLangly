@@ -103,7 +103,7 @@ namespace Numbersome {
 		public static Set<TElement> Range<TElement>([DisallowNull] TElement lower, [DisallowNull] TElement upper) where TElement : IComparable<TElement> => new((element) => lower.CompareTo(element) <= 0 && element.CompareTo(upper) <= 0);
 
 		/// <inheritdoc/>
-		Boolean IContains<TElement>.Contains([AllowNull] TElement element) => Predicate(element);
+		public Boolean Contains([AllowNull] TElement element) => Predicate(element);
 
 		[return: NotNull]
 		protected static Predicate<TElement> Compliment([AllowNull] Set<TElement> set) => set is not null ? (element) => !set.Predicate(element) : (element) => element is null;

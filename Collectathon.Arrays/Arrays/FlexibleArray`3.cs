@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Traits;
+using Langly;
 
 namespace Collectathon.Arrays {
 	/// <summary>
@@ -13,9 +14,9 @@ namespace Collectathon.Arrays {
 	[DebuggerDisplay("{ToString(5),nq}")]
 	public abstract partial class FlexibleArray<TIndex, TElement, TSelf> :
 		ICapacity,
-		IClear<TSelf>,
+		IClear,
 		IIndex<TIndex, TElement>,
-		IInsert<TIndex, TElement, TSelf>,
+		IInsert<TIndex, TElement>,
 		ISequence<(TIndex Index, TElement Element), FlexibleArray<TIndex, TElement, TSelf>.Enumerator>
 		where TSelf : FlexibleArray<TIndex, TElement, TSelf> {
 		/// <summary>
@@ -67,43 +68,45 @@ namespace Collectathon.Arrays {
 						return;
 					}
 				}
-				if (Add(index, value) is not null) {
-					throw new InvalidOperationException();
-				}
+				Add(index, value);
 			}
 		}
 
 		/// <inheritdoc/>
-		TSelf IClear<TSelf>.Clear() {
-			Count = 0;
-			return (TSelf)this;
-		}
+		public void Clear() => Count = 0;
 
 		/// <inheritdoc/>
 		public Enumerator GetEnumerator() => new Enumerator(Memory, Count);
+
+		/// <inheritdoc/>
+		[return: NotNull]
+		System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() => GetEnumerator();
+
+		/// <inheritdoc/>
+		[return: NotNull]
+		System.Collections.Generic.IEnumerator<(TIndex Index, TElement Element)> System.Collections.Generic.IEnumerable<(TIndex Index, TElement Element)>.GetEnumerator() => GetEnumerator();
 
 		/// <inheritdoc/>
 		[SuppressMessage("Major Bug", "S3249:Classes directly extending \"object\" should not call \"base\" in \"GetHashCode\" or \"Equals\"", Justification = "I'm literally enforcing correct behavior by ensuring downstream doesn't violate what this analyzer is trying to enforce...")]
 		public override Int32 GetHashCode() => base.GetHashCode();
 
 		/// <inheritdoc/>
-		[return: NotNull]
-		TSelf IInsert<TIndex, TElement, TSelf>.Insert([DisallowNull] TIndex index, [AllowNull] TElement element) {
+		public void Insert([DisallowNull] TIndex index, [AllowNull] TElement element) {
 			foreach ((TIndex Index, TElement Element) in Memory) {
 				if (Equals(Index, index)) {
-					return null;
+					return;
 				}
 			}
-			return Add(index, element);
+			Add(index, element);
 		}
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public override String ToString() => ToString(Count);
+		public override String ToString() => Collection.ToString(this);
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public String ToString(nint amount) => ISequence<(TIndex, TElement), Enumerator>.ToString(this, amount);
+		public String ToString(nint amount) => Collection.ToString(this, amount);
 
 		/// <summary>
 		/// Adds an element to this object.
@@ -112,9 +115,6 @@ namespace Collectathon.Arrays {
 		/// <param name="element">The element to add.</param>
 		/// <returns>If the add occurred successfully, returns a <typeparamref name="TSelf"/> containing the original and added elements; otherwise, <see langword="null"/>.</returns>
 		[return: MaybeNull]
-		protected virtual TSelf Add([DisallowNull] TIndex index, [AllowNull] TElement element) {
-			Memory[Count++] = (index, element);
-			return (TSelf)this;
-		}
+		protected virtual void Add([DisallowNull] TIndex index, [AllowNull] TElement element) => Memory[Count++] = (index, element);
 	}
 }

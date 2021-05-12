@@ -15,8 +15,10 @@ namespace System.Traits {
 		[AllowNull, MaybeNull]
 		new TElement this[[DisallowNull] TIndex index] { get; set; }
 
+#if !NETSTANDARD1_3
 		/// <inheritdoc/>
 		[AllowNull, MaybeNull]
 		TElement IIndexReadOnly<TIndex, TElement>.this[[DisallowNull] TIndex index] => this[index];
+#endif
 	}
 }

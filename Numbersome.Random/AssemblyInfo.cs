@@ -3,4 +3,4 @@ using System.Runtime.InteropServices;
 
 [assembly: CLSCompliant(true)]
 [assembly: ComVisible(true)]
-[assembly: Guid("34EBE317-BE74-491B-8BC2-C31E7F74020A")] 
+[assembly: Guid("C5DE5E51-0CC1-4AA6-AC46-F3E18C73DFBE")] 

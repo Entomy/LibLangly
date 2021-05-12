@@ -2,6 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Traits;
 using Collectathon.Arrays;
+using Langly;
 
 namespace Numbersome {
 	/// <summary>
@@ -12,8 +13,8 @@ namespace Numbersome {
 	/// <para>This isn't intended for counting a single thing over and over. Rather, it's meant for counting collections of things all at once, and then doing things with those counts.</para>
 	/// </remarks>
 	public sealed class Counter<TElement> :
-		IAdd<TElement, Counter<TElement>>,
-		IClear<Counter<TElement>>,
+		IAdd<TElement>,
+		IClear,
 		IContains<TElement>,
 		IIndexReadOnly<TElement, nint>,
 		ISequence<(TElement Element, nint Count), DynamicArray<TElement, nint>.Enumerator> {
@@ -37,7 +38,7 @@ namespace Numbersome {
 		[MaybeNull]
 		public TElement Highest {
 			get {
-				(TElement Element, nint Count) high = (default, nint.MinValue);
+				(TElement Element, nint Count) high = (default, (nint)(IntPtr.Size == 8 ? Int64.MinValue : Int32.MinValue));
 				foreach ((TElement Element, nint Count) in Elements) {
 					if (high.Count < Count) {
 						high.Element = Element;
@@ -54,7 +55,7 @@ namespace Numbersome {
 		[MaybeNull]
 		public TElement Lowest {
 			get {
-				(TElement Element, nint Count) low = (default, nint.MaxValue);
+				(TElement Element, nint Count) low = (default, (nint)(IntPtr.Size == 8 ? Int64.MaxValue : Int32.MaxValue));
 				foreach ((TElement Element, nint Count) in Elements) {
 					if (low.Count > Count) {
 						low.Element = Element;
@@ -69,22 +70,16 @@ namespace Numbersome {
 		public nint this[[AllowNull] TElement index] => Elements[index];
 
 		/// <inheritdoc/>
-		[return: MaybeNull]
-		public Counter<TElement> Add([AllowNull] TElement element) {
+		public void Add([AllowNull] TElement element) {
 			if (Contains(element)) {
 				Elements[element]++;
-				return this;
 			} else {
-				return Elements.Insert(element, 1) is not null ? this : null;
+				Elements.Insert(element, 1);
 			}
 		}
 
 		/// <inheritdoc/>
-		[return: NotNull]
-		public Counter<TElement> Clear() {
-			_ = Elements.Clear();
-			return this;
-		}
+		public void Clear() => Elements.Clear();
 
 		/// <inheritdoc/>
 		public Boolean Contains([AllowNull] TElement element) {
@@ -102,10 +97,18 @@ namespace Numbersome {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public override String ToString() => ToString(Count);
+		System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() => GetEnumerator();
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public String ToString(nint amount) => ISequence<(TElement, nint), DynamicArray<TElement, nint>.Enumerator>.ToString(this, amount);
+		System.Collections.Generic.IEnumerator<(TElement Element, nint Count)> System.Collections.Generic.IEnumerable<(TElement Element, nint Count)>.GetEnumerator() => GetEnumerator();
+
+		/// <inheritdoc/>
+		[return: NotNull]
+		public override String ToString() => Collection.ToString(this);
+
+		/// <inheritdoc/>
+		[return: NotNull]
+		public String ToString(nint amount) => Collection.ToString(this, amount);
 	}
 }

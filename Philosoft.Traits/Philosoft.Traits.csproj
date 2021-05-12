@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>netstandard2.1</TargetFramework>
+		<TargetFrameworks>netstandard1.3;netstandard2.1</TargetFrameworks>
 		<LangVersion>9.0</LangVersion>
 		<Nullable>enable</Nullable>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -24,5 +24,7 @@
 	<ItemGroup>
 	  <ProjectReference Include="..\Philosoft.NullableAttributes\Philosoft.NullableAttributes.csproj" />
 	</ItemGroup>
+
+	<Import Project="..\Collection\Collection.projitems" Label="Shared" />
 
 </Project>

@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 using System.Traits;
+using Langly;
 
 namespace Collectathon.Arrays {
 	public partial class FlexibleArray<TElement, TSelf> {
@@ -40,7 +41,12 @@ namespace Collectathon.Arrays {
 			}
 
 			/// <inheritdoc/>
+			[MaybeNull]
 			public TElement Current => Elements.Span[(Int32)i];
+
+			/// <inheritdoc/>
+			[MaybeNull]
+			Object System.Collections.IEnumerator.Current => Current;
 
 			/// <inheritdoc/>
 			public nint Count { get; }
@@ -48,6 +54,10 @@ namespace Collectathon.Arrays {
 			public static Boolean operator !=(Enumerator left, Enumerator right) => !left.Equals(right);
 
 			public static Boolean operator ==(Enumerator left, Enumerator right) => left.Equals(right);
+
+			/// <inheritdoc/>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			public void Dispose() { /* No-op */ }
 
 			/// <inheritdoc/>
 			public override Boolean Equals([AllowNull] Object obj) {
@@ -64,6 +74,21 @@ namespace Collectathon.Arrays {
 
 			/// <inheritdoc/>
 			[EditorBrowsable(EditorBrowsableState.Never)]
+			[return: NotNull]
+			public IEnumerator<TElement> GetEnumerator() => this;
+
+			/// <inheritdoc/>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			[return: NotNull]
+			System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() => this;
+
+			/// <inheritdoc/>
+			[EditorBrowsable(EditorBrowsableState.Never)]
+			[return: NotNull]
+			System.Collections.Generic.IEnumerator<TElement> System.Collections.Generic.IEnumerable<TElement>.GetEnumerator() => this;
+
+			/// <inheritdoc/>
+			[EditorBrowsable(EditorBrowsableState.Never)]
 			public override Int32 GetHashCode() => base.GetHashCode();
 
 			/// <inheritdoc/>
@@ -74,7 +99,11 @@ namespace Collectathon.Arrays {
 
 			/// <inheritdoc/>
 			[return: NotNull]
-			public String ToString(nint amount) => throw new NotImplementedException();
+			public override String ToString() => Collection.ToString(this);
+
+			/// <inheritdoc/>
+			[return: NotNull]
+			public String ToString(nint amount) => Collection.ToString(this, amount);
 		}
 	}
 }

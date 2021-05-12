@@ -12,17 +12,18 @@ namespace Collectathon.Arrays {
 	/// <typeparam name="TSelf">The implementing type; itself.</typeparam>
 	[DebuggerDisplay("{ToString(5),nq}")]
 	public abstract partial class FlexibleArray<TElement, TSelf> :
-		IAdd<TElement, TSelf>,
+		IAddSpan<TElement>,
 		ICapacity,
-		IClear<TSelf>,
-		IConcat<TElement, TSelf>,
+		IClear,
 		IEquatable<TSelf>, IEquatable<FlexibleArray<TElement, TSelf>>,
-		IIndex<TElement>,
-		IInsert<TElement, TSelf>,
-		IRemove<TElement, TSelf>,
-		IReplace<TElement, TSelf>,
+		IIndex<nint, TElement>,
+		IInsertSpan<nint, TElement>,
+		IPostpendSpan<TElement>,
+		IPrependSpan<TElement>,
+		IRemove<TElement>,
+		IReplace<TElement>,
 		ISequence<TElement, FlexibleArray<TElement, TSelf>.Enumerator>,
-		IShift<TSelf>,
+		IShift,
 		ISlice<Memory<TElement>>
 		where TSelf : FlexibleArray<TElement, TSelf> {
 		/// <summary>
@@ -89,6 +90,7 @@ namespace Collectathon.Arrays {
 			set => Memory[(Int32)index] = value;
 		}
 
+#if !NETSTANDARD1_3
 		/// <inheritdoc/>
 		public Memory<TElement> this[Range range] {
 			get {
@@ -96,6 +98,7 @@ namespace Collectathon.Arrays {
 				return ((ISlice<Memory<TElement>>)this).Slice(offset, length);
 			}
 		}
+#endif
 
 		/// <summary>
 		/// Shifts the <paramref name="array"/> left by <paramref name="amount"/>.
@@ -103,7 +106,10 @@ namespace Collectathon.Arrays {
 		/// <param name="array">The <see cref="FlexibleArray{TElement, TSelf}"/> to shift.</param>
 		/// <param name="amount">The amount of positions to shift.</param>
 		[return: MaybeNull, NotNullIfNotNull("array")]
-		public static TSelf operator <<([AllowNull] FlexibleArray<TElement, TSelf> array, Int32 amount) => array?.ShiftLeft(amount);
+		public static TSelf operator <<([AllowNull] FlexibleArray<TElement, TSelf> array, Int32 amount) {
+			array?.ShiftLeft(amount);
+			return (TSelf)array;
+		}
 
 		/// <summary>
 		/// Shifts the <paramref name="array"/> right by <paramref name="amount"/>.
@@ -111,18 +117,31 @@ namespace Collectathon.Arrays {
 		/// <param name="array">The <see cref="FlexibleArray{TElement, TSelf}"/> to shift.</param>
 		/// <param name="amount">The amount of positions to shift.</param>
 		[return: MaybeNull, NotNullIfNotNull("array")]
-		public static TSelf operator >>([AllowNull] FlexibleArray<TElement, TSelf> array, Int32 amount) => array?.ShiftRight(amount);
-
-		/// <inheritdoc/>
-		[return: MaybeNull]
-		TSelf IAdd<TElement, TSelf>.Add([AllowNull] TElement element) => Postpend(element);
-
-		/// <inheritdoc/>
-		[return: NotNull]
-		TSelf IClear<TSelf>.Clear() {
-			Count = 0;
-			return (TSelf)this;
+		public static TSelf operator >>([AllowNull] FlexibleArray<TElement, TSelf> array, Int32 amount) {
+			array?.ShiftRight(amount);
+			return (TSelf)array;
 		}
+
+		/// <inheritdoc/>
+		public void Add([AllowNull] TElement element) => Postpend(element);
+
+		/// <inheritdoc/>
+		public void Add([AllowNull] params TElement[] elements) => Postpend(elements);
+
+		/// <inheritdoc/>
+		public void Add(Memory<TElement> elements) => Postpend(elements);
+
+		/// <inheritdoc/>
+		public void Add(ReadOnlyMemory<TElement> elements) => Postpend(elements);
+
+		/// <inheritdoc/>
+		public void Add(Span<TElement> elements) => Postpend(elements);
+
+		/// <inheritdoc/>
+		public void Add(ReadOnlySpan<TElement> elements) => Postpend(elements);
+
+		/// <inheritdoc/>
+		public void Clear() => Count = 0;
 
 		/// <summary>
 		/// Determines if the two values are equal.
@@ -152,40 +171,95 @@ namespace Collectathon.Arrays {
 		public Boolean Equals([AllowNull] System.Collections.Generic.IEnumerable<TElement> other) => Collection.Equals(this, other);
 
 		/// <inheritdoc/>
-		[return: NotNull]
 		public Enumerator GetEnumerator() => new Enumerator(Memory, Count);
+
+		/// <inheritdoc/>
+		[return: NotNull]
+		System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() => GetEnumerator();
+
+		/// <inheritdoc/>
+		[return: NotNull]
+		System.Collections.Generic.IEnumerator<TElement> System.Collections.Generic.IEnumerable<TElement>.GetEnumerator() => GetEnumerator();
 
 		/// <inheritdoc/>
 		[SuppressMessage("Major Bug", "S3249:Classes directly extending \"object\" should not call \"base\" in \"GetHashCode\" or \"Equals\"", Justification = "I'm literally enforcing correct behavior by ensuring downstream doesn't violate what this analyzer is trying to enforce...")]
 		public sealed override Int32 GetHashCode() => base.GetHashCode();
 
 		/// <inheritdoc/>
-		[return: MaybeNull]
-		TSelf IInsert<nint, TElement, TSelf>.Insert(nint index, [AllowNull] TElement element) => Insert(index, element);
+		public virtual void Insert(nint index, [AllowNull] TElement element) {
+			Memory.AsMemory((Int32)index, (Int32)Count - (Int32)index).CopyTo(Memory.AsMemory((Int32)index + 1));
+			Memory[(Int32)index] = element;
+			Count++;
+		}
 
 		/// <inheritdoc/>
-		[return: MaybeNull]
-		TSelf IInsert<TElement, TSelf>.Insert(nint index, ReadOnlyMemory<TElement> elements) => Insert(index, elements);
+		public void Insert(nint index, [AllowNull] params TElement[] elements) => Insert(index, elements.AsSpan());
 
 		/// <inheritdoc/>
-		[return: MaybeNull]
-		TSelf IPostpend<TElement, TSelf>.Postpend([AllowNull] TElement element) => Postpend(element);
+		public void Insert(nint index, Memory<TElement> elements) => Insert(index, elements.Span);
 
 		/// <inheritdoc/>
-		[return: MaybeNull]
-		TSelf IPostpend<TElement, TSelf>.Postpend(ReadOnlyMemory<TElement> elements) => Postpend(elements);
+		public void Insert(nint index, ReadOnlyMemory<TElement> elements) => Insert(index, elements.Span);
 
 		/// <inheritdoc/>
-		[return: MaybeNull]
-		TSelf IPrepend<TElement, TSelf>.Prepend([AllowNull] TElement element) => Prepend(element);
+		public void Insert(nint index, Span<TElement> elements) => Insert(index, (ReadOnlySpan<TElement>)elements);
 
 		/// <inheritdoc/>
-		[return: MaybeNull]
-		TSelf IPrepend<TElement, TSelf>.Prepend(ReadOnlyMemory<TElement> elements) => Prepend(elements);
+		public virtual void Insert(nint index, ReadOnlySpan<TElement> elements) {
+			Memory.AsMemory((Int32)index, (Int32)Count - (Int32)index).CopyTo(Memory.AsMemory((Int32)index + elements.Length));
+			elements.CopyTo(Memory.AsSpan((Int32)index));
+			Count += elements.Length;
+		}
 
 		/// <inheritdoc/>
-		[return: NotNull]
-		TSelf IRemove<TElement, TSelf>.Remove([AllowNull] TElement element) {
+		public virtual void Postpend([AllowNull] TElement element) => Memory[Count++] = element;
+
+		/// <inheritdoc/>
+		public void Postpend([AllowNull] params TElement[] elements) => Postpend(elements.AsSpan());
+
+		/// <inheritdoc/>
+		public void Postpend(Memory<TElement> elements) => Postpend(elements.Span);
+
+		/// <inheritdoc/>
+		public void Postpend(ReadOnlyMemory<TElement> elements) => Postpend(elements.Span);
+
+		/// <inheritdoc/>
+		public void Postpend(Span<TElement> elements) => Postpend((ReadOnlySpan<TElement>)elements);
+
+		/// <inheritdoc/>
+		public virtual void Postpend(ReadOnlySpan<TElement> elements) {
+			elements.CopyTo(Memory.AsSpan((Int32)Count));
+			Count += elements.Length;
+		}
+
+		/// <inheritdoc/>
+		public virtual void Prepend([AllowNull] TElement element) {
+			ShiftRight();
+			Memory[0] = element;
+			Count++;
+		}
+
+		/// <inheritdoc/>
+		public void Prepend([AllowNull] params TElement[] elements) => Prepend(elements.AsSpan());
+
+		/// <inheritdoc/>
+		public void Prepend(Memory<TElement> elements) => Prepend(elements.Span);
+
+		/// <inheritdoc/>
+		public void Prepend(ReadOnlyMemory<TElement> elements) => Prepend(elements.Span);
+
+		/// <inheritdoc/>
+		public void Prepend(Span<TElement> elements) => Prepend((ReadOnlySpan<TElement>)elements);
+
+		/// <inheritdoc/>
+		public virtual void Prepend(ReadOnlySpan<TElement> elements) {
+			ShiftRight(elements.Length);
+			elements.CopyTo(Memory);
+			Count += elements.Length;
+		}
+
+		/// <inheritdoc/>
+		public void Remove([AllowNull] TElement element) {
 			for (nint i = 0; i < Count; i++) {
 				if (Equals(Memory[i], element)) {
 					Memory[i] = Memory[i + 1];
@@ -193,146 +267,68 @@ namespace Collectathon.Arrays {
 					Count--;
 				}
 			}
-			return (TSelf)this;
 		}
 
 		/// <inheritdoc/>
-		[return: NotNull]
-		TSelf IRemove<TElement, TSelf>.RemoveFirst([AllowNull] TElement element) {
-			for (nint i = 0; i < Count; i++) {
+		public void RemoveFirst([AllowNull] TElement element) {
+			for (Int32 i = 0; i < Count; i++) {
 				if (Equals(Memory[i], element)) {
-					Memory.Slice(i).CopyTo(Memory.Slice(--i));
+					Memory.AsMemory(i).CopyTo(Memory.AsMemory(--i));
 					Count--;
-					return (TSelf)this;
+					return;
 				}
 			}
-			return (TSelf)this;
 		}
 
 		/// <inheritdoc/>
-		[return: NotNull]
-		TSelf IRemove<TElement, TSelf>.RemoveLast([AllowNull] TElement element) => throw new NotImplementedException();
+		public void RemoveLast([AllowNull] TElement element) => throw new NotImplementedException();
 
 		/// <inheritdoc/>
-		[return: MaybeNull]
-		TSelf IReplace<TElement, TElement, TSelf>.Replace([AllowNull] TElement search, [AllowNull] TElement replace) {
+		public void Replace([AllowNull] TElement search, [AllowNull] TElement replace) {
 			for (Int32 i = 0; i < Count; i++) {
 				if (Equals(Memory[i], search)) {
 					Memory[i] = replace;
 				}
 			}
-			return (TSelf)this;
 		}
 
 		/// <inheritdoc/>
-		[return: NotNull]
-		TSelf IShift<TSelf>.ShiftLeft(nint amount) {
-			if (amount == 0 || Count == 0) {
-				return (TSelf)this;
+		public void ShiftLeft() => ShiftLeft(1);
+
+		/// <inheritdoc/>
+		public void ShiftLeft(nint amount) {
+			if (amount != 0 && Count != 0) {
+				Memory.AsMemory((Int32)amount).CopyTo(Memory);
+				Memory.AsMemory((Int32)Capacity - (Int32)amount).Span.Clear();
 			}
-			Memory.Slice(amount).CopyTo(Memory);
-			Memory.Slice(Capacity - amount).Span.Clear();
-			return (TSelf)this;
 		}
 
 		/// <inheritdoc/>
-		[return: NotNull]
-		TSelf IShift<TSelf>.ShiftRight(nint amount) {
-			if (amount == 0 || Count == 0) {
-				return (TSelf)this;
+		public void ShiftRight() => ShiftRight(1);
+
+		/// <inheritdoc/>
+		public void ShiftRight(nint amount) {
+			if (amount != 0 && Count != 0) {
+				Memory.AsMemory(0, (Int32)Capacity - (Int32)amount).CopyTo(Memory.AsMemory((Int32)amount));
+				Memory.AsMemory(0, (Int32)amount).Span.Clear();
 			}
-			Memory.Slice(0, Capacity - amount).CopyTo(Memory.Slice(amount));
-			Memory.Slice(0, amount).Span.Clear();
-			return (TSelf)this;
 		}
 
 		/// <inheritdoc/>
-		[return: NotNull]
-		Memory<TElement> ISlice<Memory<TElement>>.Slice(nint start, nint length) => Memory.Slice((Int32)start, (Int32)length);
+		public Memory<TElement> Slice() => Memory.AsMemory();
+
+		/// <inheritdoc/>
+		public Memory<TElement> Slice(nint start) => Memory.AsMemory((Int32)start);
+
+		/// <inheritdoc/>
+		public Memory<TElement> Slice(nint start, nint length) => Memory.AsMemory((Int32)start, (Int32)length);
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public sealed override String ToString() => ISequence<TElement, Enumerator>.ToString(this, Count);
+		public sealed override String ToString() => Collection.ToString(this);
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public String ToString(nint amount) => ISequence<TElement, Enumerator>.ToString(this, amount);
-
-		/// <summary>
-		/// Insert an element into the collection at the specified index.
-		/// </summary>
-		/// <param name="index">The index at which <paramref name="element"/> should be inserted.</param>
-		/// <param name="element">The element to insert.</param>
-		/// <returns>If the insert occurred successfully, returns a <typeparamref name="TSelf"/> containing the original and inserted elements; otherwise, <see langword="null"/>.</returns>
-		[return: MaybeNull]
-		protected virtual TSelf Insert(nint index, [AllowNull] TElement element) {
-			Memory.Slice(index, Count - index).CopyTo(Memory.Slice(index + 1));
-			Memory[(Int32)index] = element;
-			Count++;
-			return (TSelf)this;
-		}
-
-		/// <summary>
-		/// Insert the elements into the collection at the specified index.
-		/// </summary>
-		/// <param name="index">The index at which the <paramref name="elements"/> should be inserted.</param>
-		/// <param name="elements">The element to insert.</param>
-		/// <returns>If the insert occurred successfully, returns a <typeparamref name="TSelf"/> containing the original and inserted elements; otherwise, <see langword="null"/>.</returns>
-		[return: MaybeNull]
-		protected virtual TSelf Insert(nint index, ReadOnlyMemory<TElement> elements) {
-			Memory.Slice(index, Count - index).CopyTo(Memory.Slice(index + elements.Length));
-			elements.CopyTo(Memory.Slice(index));
-			Count += elements.Length;
-			return (TSelf)this;
-		}
-
-		/// <summary>
-		/// Postpends the element onto this object.
-		/// </summary>
-		/// <param name="element">The element to postpend.</param>
-		/// <returns>If the postpend occurred successfully, returns a <typeparamref name="TSelf"/> containing the original and postpended elements; otherwise, <see langword="null"/>.</returns>
-		[return: MaybeNull]
-		protected virtual TSelf Postpend([AllowNull] TElement element) {
-			Memory[Count++] = element;
-			return (TSelf)this;
-		}
-
-		/// <summary>
-		/// Postpends the elements onto this object.
-		/// </summary>
-		/// <param name="elements">The elements to postpend.</param>
-		/// <returns>If the postpend occurred successfully, returns a <typeparamref name="TSelf"/> containing the original and postpended elements; otherwise, <see langword="null"/>.</returns>
-		[return: MaybeNull]
-		protected virtual TSelf Postpend(ReadOnlyMemory<TElement> elements) {
-			elements.CopyTo(Memory.Slice(Count));
-			Count += elements.Length;
-			return (TSelf)this;
-		}
-
-		/// <summary>
-		/// Prepends the element onto this object.
-		/// </summary>
-		/// <param name="element">The element to prepend.</param>
-		/// <returns>If the prepend occurred successfully, returns a <typeparamref name="TSelf"/> containing the original and prepended elements; otherwise, <see langword="null"/>.</returns>
-		[return: MaybeNull]
-		protected virtual TSelf Prepend([AllowNull] TElement element) {
-			((IShift<TSelf>)this).ShiftRight(1);
-			Memory[0] = element;
-			Count++;
-			return (TSelf)this;
-		}
-
-		/// <summary>
-		/// Prepends the elements onto this object.
-		/// </summary>
-		/// <param name="elements">The elements to prepend.</param>
-		/// <returns>If the prepend occurred successfully, returns a <typeparamref name="TSelf"/> containing the original and prepended elements; otherwise, <see langword="null"/>.</returns>
-		[return: MaybeNull]
-		protected virtual TSelf Prepend(ReadOnlyMemory<TElement> elements) {
-			((IShift<TSelf>)this).ShiftRight(elements.Length);
-			elements.CopyTo(Memory);
-			Count += elements.Length;
-			return (TSelf)this;
-		}
+		public String ToString(nint amount) => Collection.ToString(this, amount);
 	}
 }

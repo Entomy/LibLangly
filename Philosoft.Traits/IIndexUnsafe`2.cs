@@ -1,5 +1,4 @@
-﻿using System;
-using System.Diagnostics.CodeAnalysis;
+﻿using System.Diagnostics.CodeAnalysis;
 
 namespace System.Traits {
 	/// <summary>
@@ -18,8 +17,10 @@ namespace System.Traits {
 		[AllowNull, MaybeNull]
 		new unsafe TElement this[[DisallowNull] TIndex* index, Int32 length] { get; set; }
 
+#if !NETSTANDARD1_3
 		/// <inheritdoc/>
 		[MaybeNull]
 		unsafe TElement IIndexReadOnlyUnsafe<TIndex, TElement>.this[[DisallowNull] TIndex* index, Int32 length] => this[index, length];
+#endif
 	}
 }

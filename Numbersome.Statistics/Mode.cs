@@ -11,6 +11,11 @@ namespace Numbersome {
 		/// <typeparam name="TEnumerator">The type of the enumerator of the <paramref name="values"/>.</typeparam>
 		/// <param name="values">The values to find the mode of.</param>
 		/// <returns>The mode of the <paramref name="values"/>.</returns>
-		public static TElement Mode<TElement, TEnumerator>([AllowNull] this ISequence<TElement, TEnumerator> values) where TEnumerator : IEnumerator<TElement> => new Counter<TElement>().Add(values).Highest;
+		[return: MaybeNull]
+		public static TElement Mode<TElement, TEnumerator>([AllowNull] this ISequence<TElement, TEnumerator> values) where TEnumerator : IEnumerator<TElement> {
+			Counter<TElement> counter = new Counter<TElement>();
+			counter.Add(values);
+			return counter.Highest;
+		}
 	}
 }
