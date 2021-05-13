@@ -27,15 +27,12 @@ namespace Collectathon.Stacks {
 			[AllowNull, MaybeNull]
 			private Node N;
 
-			private nint i;
-
 			/// <summary>
 			/// Initializes a new <see cref="Enumerator"/>.
 			/// </summary>
 			public Enumerator([DisallowNull] Stack<TElement> stack) {
 				Stack = stack;
 				N = null;
-				i = -1;
 			}
 
 			/// <inheritdoc/>
@@ -77,7 +74,6 @@ namespace Collectathon.Stacks {
 			/// <inheritdoc/>
 			public void Reset() {
 				N = null;
-				i = -1;
 			}
 
 			/// <inheritdoc/>

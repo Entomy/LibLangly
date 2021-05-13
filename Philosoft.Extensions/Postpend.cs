@@ -49,7 +49,7 @@ namespace System {
 		/// <param name="collection">This collection.</param>
 		/// <param name="elements">The elements to postpend.</param>
 		public static void Postpend<TElement>([DisallowNull] this IPostpend<TElement> collection, ReadOnlySpan<TElement> elements) {
-			for (Int32 i = elements.Length - 1; i >= 0; i--) {
+			for (Int32 i = 0; i < elements.Length; i++) {
 				collection.Postpend(elements[i]);
 			}
 		}
@@ -63,7 +63,7 @@ namespace System {
 		/// <param name="length">The length of the <paramref name="elements"/>.</param>
 		[CLSCompliant(false)]
 		public static unsafe void Postpend<TElement>([DisallowNull] this IPostpend<TElement> collection, [DisallowNull] TElement* elements, Int32 length) where TElement : unmanaged {
-			for (Int32 i = length - 1; i >= 0; i--) {
+			for (Int32 i = 0; i < length; i++) {
 				collection.Postpend(elements[i]);
 			}
 		}
