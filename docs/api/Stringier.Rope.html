@@ -1,0 +1,2188 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Rope
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Rope
+   ">
+    <meta name="generator" content="docfx 2.57.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Stringier.Rope">
+  
+  
+  <h1 id="Stringier_Rope" data-uid="Stringier.Rope" class="text-break">Class Rope
+  </h1>
+  <div class="markdown level0 summary"><p>Represent a Rope, a type of dynamic text structure.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">Rope</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="System.Traits.IAddMemory-1.html">IAddMemory</a>&lt;<span class="xref">Char</span>&gt;</div>
+    <div><a class="xref" href="System.Traits.IAdd-1.html">IAdd</a>&lt;<span class="xref">Char</span>&gt;</div>
+    <div><a class="xref" href="System.Traits.IClear.html">IClear</a></div>
+    <div><span class="xref">IEquatable</span>&lt;<a class="xref" href="Stringier.Rope.html">Rope</a>&gt;</div>
+    <div><a class="xref" href="System.Traits.IIndex-2.html">IIndex</a>&lt;<span class="xref">nint</span>, <span class="xref">Char</span>&gt;</div>
+    <div><a class="xref" href="System.Traits.IIndexReadOnly-2.html">IIndexReadOnly</a>&lt;<span class="xref">nint</span>, <span class="xref">Char</span>&gt;</div>
+    <div><a class="xref" href="System.Traits.IInsertMemory-2.html">IInsertMemory</a>&lt;<span class="xref">nint</span>, <span class="xref">Char</span>&gt;</div>
+    <div><a class="xref" href="System.Traits.IInsert-2.html">IInsert</a>&lt;<span class="xref">nint</span>, <span class="xref">Char</span>&gt;</div>
+    <div><a class="xref" href="System.Traits.IPostpendMemory-1.html">IPostpendMemory</a>&lt;<span class="xref">Char</span>&gt;</div>
+    <div><a class="xref" href="System.Traits.IPostpend-1.html">IPostpend</a>&lt;<span class="xref">Char</span>&gt;</div>
+    <div><a class="xref" href="System.Traits.IPrependMemory-1.html">IPrependMemory</a>&lt;<span class="xref">Char</span>&gt;</div>
+    <div><a class="xref" href="System.Traits.IPrepend-1.html">IPrepend</a>&lt;<span class="xref">Char</span>&gt;</div>
+    <div><a class="xref" href="System.Traits.IRemove-1.html">IRemove</a>&lt;<span class="xref">Char</span>&gt;</div>
+    <div><a class="xref" href="System.Traits.IReplace-1.html">IReplace</a>&lt;<span class="xref">Char</span>&gt;</div>
+    <div><a class="xref" href="System.Traits.IReplace-2.html">IReplace</a>&lt;<span class="xref">Char</span>, <span class="xref">Char</span>&gt;</div>
+    <div><a class="xref" href="System.Traits.ISequence-2.html">ISequence</a>&lt;<span class="xref">Char</span>, <a class="xref" href="Stringier.Rope.Enumerator.html">Rope.Enumerator</a>&gt;</div>
+    <div><a class="xref" href="System.Traits.ICount.html">ICount</a></div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<span class="xref">Char</span>&gt;</div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Stringier.html">Stringier</a></h6>
+  <h6><strong>Assembly</strong>: Stringier.Rope.dll</h6>
+  <h5 id="Stringier_Rope_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class Rope : object, IAddMemory&lt;Char&gt;, IAdd&lt;Char&gt;, IClear, IEquatable&lt;Rope&gt;, IIndex&lt;nint, Char&gt;, IIndexReadOnly&lt;nint, Char&gt;, IInsertMemory&lt;nint, Char&gt;, IInsert&lt;nint, Char&gt;, IPostpendMemory&lt;Char&gt;, IPostpend&lt;Char&gt;, IPrependMemory&lt;Char&gt;, IPrepend&lt;Char&gt;, IRemove&lt;Char&gt;, IReplace&lt;Char&gt;, IReplace&lt;Char, Char&gt;, ISequence&lt;Char, Rope.Enumerator&gt;, ICount, IEnumerable&lt;Char&gt;</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope__ctor.md&amp;value=---%0Auid%3A%20Stringier.Rope.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L38">View Source</a>
+  </span>
+  <a id="Stringier_Rope__ctor_" data-uid="Stringier.Rope.#ctor*"></a>
+  <h4 id="Stringier_Rope__ctor" data-uid="Stringier.Rope.#ctor">Rope()</h4>
+  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Stringier.Rope.html">Rope</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Rope()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope__ctor_Char_.md&amp;value=---%0Auid%3A%20Stringier.Rope.%23ctor(Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L44">View Source</a>
+  </span>
+  <a id="Stringier_Rope__ctor_" data-uid="Stringier.Rope.#ctor*"></a>
+  <h4 id="Stringier_Rope__ctor_Char_" data-uid="Stringier.Rope.#ctor(Char)">Rope(Char)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Stringier.Rope.html">Rope</a> with the initial <code data-dev-comment-type="paramref" class="paramref">element</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Rope(Char element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Char</span></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The initial element of the rope.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope__ctor_Char___.md&amp;value=---%0Auid%3A%20Stringier.Rope.%23ctor(Char%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L56">View Source</a>
+  </span>
+  <a id="Stringier_Rope__ctor_" data-uid="Stringier.Rope.#ctor*"></a>
+  <h4 id="Stringier_Rope__ctor_Char___" data-uid="Stringier.Rope.#ctor(Char[])">Rope(Char[])</h4>
+  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Stringier.Rope.html">Rope</a> with the initial <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Rope(params Char[] elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Char</span>[]</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The initial elements of the rope.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope__ctor_Memory_Char__.md&amp;value=---%0Auid%3A%20Stringier.Rope.%23ctor(Memory%7BChar%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L62">View Source</a>
+  </span>
+  <a id="Stringier_Rope__ctor_" data-uid="Stringier.Rope.#ctor*"></a>
+  <h4 id="Stringier_Rope__ctor_Memory_Char__" data-uid="Stringier.Rope.#ctor(Memory{Char})">Rope(Memory&lt;Char&gt;)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Stringier.Rope.html">Rope</a> with the initial <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Rope(Memory&lt;Char&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Memory</span>&lt;<span class="xref">Char</span>&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The initial elements of the rope.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope__ctor_ReadOnlyMemory_Char__.md&amp;value=---%0Auid%3A%20Stringier.Rope.%23ctor(ReadOnlyMemory%7BChar%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L68">View Source</a>
+  </span>
+  <a id="Stringier_Rope__ctor_" data-uid="Stringier.Rope.#ctor*"></a>
+  <h4 id="Stringier_Rope__ctor_ReadOnlyMemory_Char__" data-uid="Stringier.Rope.#ctor(ReadOnlyMemory{Char})">Rope(ReadOnlyMemory&lt;Char&gt;)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Stringier.Rope.html">Rope</a> with the initial <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Rope(ReadOnlyMemory&lt;Char&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ReadOnlyMemory</span>&lt;<span class="xref">Char</span>&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The initial elements of the rope.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope__ctor_String_.md&amp;value=---%0Auid%3A%20Stringier.Rope.%23ctor(String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L50">View Source</a>
+  </span>
+  <a id="Stringier_Rope__ctor_" data-uid="Stringier.Rope.#ctor*"></a>
+  <h4 id="Stringier_Rope__ctor_String_" data-uid="Stringier.Rope.#ctor(String)">Rope(String)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Stringier.Rope.html">Rope</a> with the initial <code data-dev-comment-type="paramref" class="paramref">elements</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Rope(String elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The initial elements of the rope.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Count.md&amp;value=---%0Auid%3A%20Stringier.Rope.Count%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L71">View Source</a>
+  </span>
+  <a id="Stringier_Rope_Count_" data-uid="Stringier.Rope.Count*"></a>
+  <h4 id="Stringier_Rope_Count" data-uid="Stringier.Rope.Count">Count</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public nint Count { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Item_nint_.md&amp;value=---%0Auid%3A%20Stringier.Rope.Item(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L74">View Source</a>
+  </span>
+  <a id="Stringier_Rope_Item_" data-uid="Stringier.Rope.Item*"></a>
+  <h4 id="Stringier_Rope_Item_nint_" data-uid="Stringier.Rope.Item(nint)">Item[nint]</h4>
+  <div class="markdown level1 summary"><p>Gets  the element at the specified index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Char this[nint index] { get; set; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">index</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Char</span></td>
+        <td><p>The element at the specified index.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Add_Char_.md&amp;value=---%0Auid%3A%20Stringier.Rope.Add(Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L283">View Source</a>
+  </span>
+  <a id="Stringier_Rope_Add_" data-uid="Stringier.Rope.Add*"></a>
+  <h4 id="Stringier_Rope_Add_Char_" data-uid="Stringier.Rope.Add(Char)">Add(Char)</h4>
+  <div class="markdown level1 summary"><p>Adds an element to this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(Char element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Char</span></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Stringier_Rope_Add_Char__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Add_Char___.md&amp;value=---%0Auid%3A%20Stringier.Rope.Add(Char%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L287">View Source</a>
+  </span>
+  <a id="Stringier_Rope_Add_" data-uid="Stringier.Rope.Add*"></a>
+  <h4 id="Stringier_Rope_Add_Char___" data-uid="Stringier.Rope.Add(Char[])">Add(Char[])</h4>
+  <div class="markdown level1 summary"><p>Adds the elements to this object, as a batch.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(params Char[] elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Char</span>[]</td>
+        <td><span class="parametername">elements</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Stringier_Rope_Add_Char____remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Add_Memory_Char__.md&amp;value=---%0Auid%3A%20Stringier.Rope.Add(Memory%7BChar%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L291">View Source</a>
+  </span>
+  <a id="Stringier_Rope_Add_" data-uid="Stringier.Rope.Add*"></a>
+  <h4 id="Stringier_Rope_Add_Memory_Char__" data-uid="Stringier.Rope.Add(Memory{Char})">Add(Memory&lt;Char&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(Memory&lt;Char&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Memory</span>&lt;<span class="xref">Char</span>&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Add_ReadOnlyMemory_Char__.md&amp;value=---%0Auid%3A%20Stringier.Rope.Add(ReadOnlyMemory%7BChar%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L295">View Source</a>
+  </span>
+  <a id="Stringier_Rope_Add_" data-uid="Stringier.Rope.Add*"></a>
+  <h4 id="Stringier_Rope_Add_ReadOnlyMemory_Char__" data-uid="Stringier.Rope.Add(ReadOnlyMemory{Char})">Add(ReadOnlyMemory&lt;Char&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(ReadOnlyMemory&lt;Char&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ReadOnlyMemory</span>&lt;<span class="xref">Char</span>&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Clear.md&amp;value=---%0Auid%3A%20Stringier.Rope.Clear%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L299">View Source</a>
+  </span>
+  <a id="Stringier_Rope_Clear_" data-uid="Stringier.Rope.Clear*"></a>
+  <h4 id="Stringier_Rope_Clear" data-uid="Stringier.Rope.Clear">Clear()</h4>
+  <div class="markdown level1 summary"><p>Clears this collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Clear()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Equals_Object_.md&amp;value=---%0Auid%3A%20Stringier.Rope.Equals(Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L313">View Source</a>
+  </span>
+  <a id="Stringier_Rope_Equals_" data-uid="Stringier.Rope.Equals*"></a>
+  <h4 id="Stringier_Rope_Equals_Object_" data-uid="Stringier.Rope.Equals(Object)">Equals(Object)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Boolean Equals(Object obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Object</span></td>
+        <td><span class="parametername">obj</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Equals_Stringier_Rope_.md&amp;value=---%0Auid%3A%20Stringier.Rope.Equals(Stringier.Rope)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L323">View Source</a>
+  </span>
+  <a id="Stringier_Rope_Equals_" data-uid="Stringier.Rope.Equals*"></a>
+  <h4 id="Stringier_Rope_Equals_Stringier_Rope_" data-uid="Stringier.Rope.Equals(Stringier.Rope)">Equals(Rope)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Boolean Equals(Rope other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Rope.html">Rope</a></td>
+        <td><span class="parametername">other</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_GetEnumerator.md&amp;value=---%0Auid%3A%20Stringier.Rope.GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L326">View Source</a>
+  </span>
+  <a id="Stringier_Rope_GetEnumerator_" data-uid="Stringier.Rope.GetEnumerator*"></a>
+  <h4 id="Stringier_Rope_GetEnumerator" data-uid="Stringier.Rope.GetEnumerator">GetEnumerator()</h4>
+  <div class="markdown level1 summary"><p>Returns an enumerator that iterates through the sequence.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Rope.Enumerator GetEnumerator()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Rope.Enumerator.html">Rope.Enumerator</a></td>
+        <td><p>An enumerator that can be used to iterate through the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Insert_nint_Char_.md&amp;value=---%0Auid%3A%20Stringier.Rope.Insert(nint%2CChar)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L337">View Source</a>
+  </span>
+  <a id="Stringier_Rope_Insert_" data-uid="Stringier.Rope.Insert*"></a>
+  <h4 id="Stringier_Rope_Insert_nint_Char_" data-uid="Stringier.Rope.Insert(nint,Char)">Insert(nint, Char)</h4>
+  <div class="markdown level1 summary"><p>Insert an element into the collection at the specified index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Insert(nint index, Char element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">index</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Char</span></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Insert_nint_Char___.md&amp;value=---%0Auid%3A%20Stringier.Rope.Insert(nint%2CChar%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L404">View Source</a>
+  </span>
+  <a id="Stringier_Rope_Insert_" data-uid="Stringier.Rope.Insert*"></a>
+  <h4 id="Stringier_Rope_Insert_nint_Char___" data-uid="Stringier.Rope.Insert(nint,Char[])">Insert(nint, Char[])</h4>
+  <div class="markdown level1 summary"><p>Inserts the elements into the collection at the specified index, as a batch.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Insert(nint index, params Char[] elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">index</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Char</span>[]</td>
+        <td><span class="parametername">elements</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Insert_nint_Memory_Char__.md&amp;value=---%0Auid%3A%20Stringier.Rope.Insert(nint%2CMemory%7BChar%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L408">View Source</a>
+  </span>
+  <a id="Stringier_Rope_Insert_" data-uid="Stringier.Rope.Insert*"></a>
+  <h4 id="Stringier_Rope_Insert_nint_Memory_Char__" data-uid="Stringier.Rope.Insert(nint,Memory{Char})">Insert(nint, Memory&lt;Char&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Insert(nint index, Memory&lt;Char&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">index</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Memory</span>&lt;<span class="xref">Char</span>&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Insert_nint_ReadOnlyMemory_Char__.md&amp;value=---%0Auid%3A%20Stringier.Rope.Insert(nint%2CReadOnlyMemory%7BChar%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L412">View Source</a>
+  </span>
+  <a id="Stringier_Rope_Insert_" data-uid="Stringier.Rope.Insert*"></a>
+  <h4 id="Stringier_Rope_Insert_nint_ReadOnlyMemory_Char__" data-uid="Stringier.Rope.Insert(nint,ReadOnlyMemory{Char})">Insert(nint, ReadOnlyMemory&lt;Char&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Insert(nint index, ReadOnlyMemory&lt;Char&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">index</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">ReadOnlyMemory</span>&lt;<span class="xref">Char</span>&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Postpend_Char_.md&amp;value=---%0Auid%3A%20Stringier.Rope.Postpend(Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L479">View Source</a>
+  </span>
+  <a id="Stringier_Rope_Postpend_" data-uid="Stringier.Rope.Postpend*"></a>
+  <h4 id="Stringier_Rope_Postpend_Char_" data-uid="Stringier.Rope.Postpend(Char)">Postpend(Char)</h4>
+  <div class="markdown level1 summary"><p>Postpends the element onto this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Postpend(Char element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Char</span></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Postpend_Char___.md&amp;value=---%0Auid%3A%20Stringier.Rope.Postpend(Char%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L492">View Source</a>
+  </span>
+  <a id="Stringier_Rope_Postpend_" data-uid="Stringier.Rope.Postpend*"></a>
+  <h4 id="Stringier_Rope_Postpend_Char___" data-uid="Stringier.Rope.Postpend(Char[])">Postpend(Char[])</h4>
+  <div class="markdown level1 summary"><p>Postpends the elements onto this object, as a batch.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Postpend(params Char[] elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Char</span>[]</td>
+        <td><span class="parametername">elements</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Postpend_Memory_Char__.md&amp;value=---%0Auid%3A%20Stringier.Rope.Postpend(Memory%7BChar%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L496">View Source</a>
+  </span>
+  <a id="Stringier_Rope_Postpend_" data-uid="Stringier.Rope.Postpend*"></a>
+  <h4 id="Stringier_Rope_Postpend_Memory_Char__" data-uid="Stringier.Rope.Postpend(Memory{Char})">Postpend(Memory&lt;Char&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Postpend(Memory&lt;Char&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Memory</span>&lt;<span class="xref">Char</span>&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Postpend_ReadOnlyMemory_Char__.md&amp;value=---%0Auid%3A%20Stringier.Rope.Postpend(ReadOnlyMemory%7BChar%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L500">View Source</a>
+  </span>
+  <a id="Stringier_Rope_Postpend_" data-uid="Stringier.Rope.Postpend*"></a>
+  <h4 id="Stringier_Rope_Postpend_ReadOnlyMemory_Char__" data-uid="Stringier.Rope.Postpend(ReadOnlyMemory{Char})">Postpend(ReadOnlyMemory&lt;Char&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Postpend(ReadOnlyMemory&lt;Char&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ReadOnlyMemory</span>&lt;<span class="xref">Char</span>&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Prepend_Char_.md&amp;value=---%0Auid%3A%20Stringier.Rope.Prepend(Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L513">View Source</a>
+  </span>
+  <a id="Stringier_Rope_Prepend_" data-uid="Stringier.Rope.Prepend*"></a>
+  <h4 id="Stringier_Rope_Prepend_Char_" data-uid="Stringier.Rope.Prepend(Char)">Prepend(Char)</h4>
+  <div class="markdown level1 summary"><p>Prepends the element onto this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Prepend(Char element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Char</span></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Prepend_Char___.md&amp;value=---%0Auid%3A%20Stringier.Rope.Prepend(Char%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L525">View Source</a>
+  </span>
+  <a id="Stringier_Rope_Prepend_" data-uid="Stringier.Rope.Prepend*"></a>
+  <h4 id="Stringier_Rope_Prepend_Char___" data-uid="Stringier.Rope.Prepend(Char[])">Prepend(Char[])</h4>
+  <div class="markdown level1 summary"><p>Prepends the elements onto this object, as a batch.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Prepend(params Char[] elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Char</span>[]</td>
+        <td><span class="parametername">elements</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Prepend_Memory_Char__.md&amp;value=---%0Auid%3A%20Stringier.Rope.Prepend(Memory%7BChar%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L529">View Source</a>
+  </span>
+  <a id="Stringier_Rope_Prepend_" data-uid="Stringier.Rope.Prepend*"></a>
+  <h4 id="Stringier_Rope_Prepend_Memory_Char__" data-uid="Stringier.Rope.Prepend(Memory{Char})">Prepend(Memory&lt;Char&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Prepend(Memory&lt;Char&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Memory</span>&lt;<span class="xref">Char</span>&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Prepend_ReadOnlyMemory_Char__.md&amp;value=---%0Auid%3A%20Stringier.Rope.Prepend(ReadOnlyMemory%7BChar%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L533">View Source</a>
+  </span>
+  <a id="Stringier_Rope_Prepend_" data-uid="Stringier.Rope.Prepend*"></a>
+  <h4 id="Stringier_Rope_Prepend_ReadOnlyMemory_Char__" data-uid="Stringier.Rope.Prepend(ReadOnlyMemory{Char})">Prepend(ReadOnlyMemory&lt;Char&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Prepend(ReadOnlyMemory&lt;Char&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ReadOnlyMemory</span>&lt;<span class="xref">Char</span>&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Remove_Char_.md&amp;value=---%0Auid%3A%20Stringier.Rope.Remove(Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L545">View Source</a>
+  </span>
+  <a id="Stringier_Rope_Remove_" data-uid="Stringier.Rope.Remove*"></a>
+  <h4 id="Stringier_Rope_Remove_Char_" data-uid="Stringier.Rope.Remove(Char)">Remove(Char)</h4>
+  <div class="markdown level1 summary"><p>Removes all instances of the element from this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Remove(Char element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Char</span></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_RemoveFirst_Char_.md&amp;value=---%0Auid%3A%20Stringier.Rope.RemoveFirst(Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L548">View Source</a>
+  </span>
+  <a id="Stringier_Rope_RemoveFirst_" data-uid="Stringier.Rope.RemoveFirst*"></a>
+  <h4 id="Stringier_Rope_RemoveFirst_Char_" data-uid="Stringier.Rope.RemoveFirst(Char)">RemoveFirst(Char)</h4>
+  <div class="markdown level1 summary"><p>Removes the first instance of the element from this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveFirst(Char element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Char</span></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_RemoveLast_Char_.md&amp;value=---%0Auid%3A%20Stringier.Rope.RemoveLast(Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L551">View Source</a>
+  </span>
+  <a id="Stringier_Rope_RemoveLast_" data-uid="Stringier.Rope.RemoveLast*"></a>
+  <h4 id="Stringier_Rope_RemoveLast_Char_" data-uid="Stringier.Rope.RemoveLast(Char)">RemoveLast(Char)</h4>
+  <div class="markdown level1 summary"><p>Removes the last instance of the element from this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveLast(Char element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Char</span></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Replace_Char_Char_.md&amp;value=---%0Auid%3A%20Stringier.Rope.Replace(Char%2CChar)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L554">View Source</a>
+  </span>
+  <a id="Stringier_Rope_Replace_" data-uid="Stringier.Rope.Replace*"></a>
+  <h4 id="Stringier_Rope_Replace_Char_Char_" data-uid="Stringier.Rope.Replace(Char,Char)">Replace(Char, Char)</h4>
+  <div class="markdown level1 summary"><p>Replaces all instances of <code data-dev-comment-type="paramref" class="paramref">search</code> with <code data-dev-comment-type="paramref" class="paramref">replace</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Replace(Char search, Char replace)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Char</span></td>
+        <td><span class="parametername">search</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Char</span></td>
+        <td><span class="parametername">replace</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_ToString.md&amp;value=---%0Auid%3A%20Stringier.Rope.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L586">View Source</a>
+  </span>
+  <a id="Stringier_Rope_ToString_" data-uid="Stringier.Rope.ToString*"></a>
+  <h4 id="Stringier_Rope_ToString" data-uid="Stringier.Rope.ToString">ToString()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override String ToString()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_ToString_nint_.md&amp;value=---%0Auid%3A%20Stringier.Rope.ToString(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L590">View Source</a>
+  </span>
+  <a id="Stringier_Rope_ToString_" data-uid="Stringier.Rope.ToString*"></a>
+  <h4 id="Stringier_Rope_ToString_nint_" data-uid="Stringier.Rope.ToString(nint)">ToString(nint)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public String ToString(nint amount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="operators">Operators
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Addition_Char_Stringier_Rope_.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Addition(Char%2CStringier.Rope)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L204">View Source</a>
+  </span>
+  <a id="Stringier_Rope_op_Addition_" data-uid="Stringier.Rope.op_Addition*"></a>
+  <h4 id="Stringier_Rope_op_Addition_Char_Stringier_Rope_" data-uid="Stringier.Rope.op_Addition(Char,Stringier.Rope)">Addition(Char, Rope)</h4>
+  <div class="markdown level1 summary"><p>Concats the two texts.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Rope operator +(Char left, Rope right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Char</span></td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The lefthand text.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Stringier.Rope.html">Rope</a></td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The righthand text.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Rope.html">Rope</a></td>
+        <td><p>A <a class="xref" href="Stringier.Rope.html">Rope</a> representing the concatenation of both texts.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Addition_Char___Stringier_Rope_.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Addition(Char%5B%5D%2CStringier.Rope)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L238">View Source</a>
+  </span>
+  <a id="Stringier_Rope_op_Addition_" data-uid="Stringier.Rope.op_Addition*"></a>
+  <h4 id="Stringier_Rope_op_Addition_Char___Stringier_Rope_" data-uid="Stringier.Rope.op_Addition(Char[],Stringier.Rope)">Addition(Char[], Rope)</h4>
+  <div class="markdown level1 summary"><p>Concats the two texts.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Rope operator +(Char[] left, Rope right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Char</span>[]</td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The lefthand text.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Stringier.Rope.html">Rope</a></td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The righthand text.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Rope.html">Rope</a></td>
+        <td><p>A <a class="xref" href="Stringier.Rope.html">Rope</a> representing the concatenation of both texts.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Addition_Memory_Char__Stringier_Rope_.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Addition(Memory%7BChar%7D%2CStringier.Rope)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L256">View Source</a>
+  </span>
+  <a id="Stringier_Rope_op_Addition_" data-uid="Stringier.Rope.op_Addition*"></a>
+  <h4 id="Stringier_Rope_op_Addition_Memory_Char__Stringier_Rope_" data-uid="Stringier.Rope.op_Addition(Memory{Char},Stringier.Rope)">Addition(Memory&lt;Char&gt;, Rope)</h4>
+  <div class="markdown level1 summary"><p>Concats the two texts.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Rope operator +(Memory&lt;Char&gt; left, Rope right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Memory</span>&lt;<span class="xref">Char</span>&gt;</td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The lefthand text.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Stringier.Rope.html">Rope</a></td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The righthand text.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Rope.html">Rope</a></td>
+        <td><p>A <a class="xref" href="Stringier.Rope.html">Rope</a> representing the concatenation of both texts.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Addition_ReadOnlyMemory_Char__Stringier_Rope_.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Addition(ReadOnlyMemory%7BChar%7D%2CStringier.Rope)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L272">View Source</a>
+  </span>
+  <a id="Stringier_Rope_op_Addition_" data-uid="Stringier.Rope.op_Addition*"></a>
+  <h4 id="Stringier_Rope_op_Addition_ReadOnlyMemory_Char__Stringier_Rope_" data-uid="Stringier.Rope.op_Addition(ReadOnlyMemory{Char},Stringier.Rope)">Addition(ReadOnlyMemory&lt;Char&gt;, Rope)</h4>
+  <div class="markdown level1 summary"><p>Concats the two texts.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Rope operator +(ReadOnlyMemory&lt;Char&gt; left, Rope right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ReadOnlyMemory</span>&lt;<span class="xref">Char</span>&gt;</td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The lefthand text.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Stringier.Rope.html">Rope</a></td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The righthand text.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Rope.html">Rope</a></td>
+        <td><p>A <a class="xref" href="Stringier.Rope.html">Rope</a> representing the concatenation of both texts.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Addition_String_Stringier_Rope_.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Addition(String%2CStringier.Rope)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L220">View Source</a>
+  </span>
+  <a id="Stringier_Rope_op_Addition_" data-uid="Stringier.Rope.op_Addition*"></a>
+  <h4 id="Stringier_Rope_op_Addition_String_Stringier_Rope_" data-uid="Stringier.Rope.op_Addition(String,Stringier.Rope)">Addition(String, Rope)</h4>
+  <div class="markdown level1 summary"><p>Concats the two texts.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Rope operator +(String left, Rope right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The lefthand text.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Stringier.Rope.html">Rope</a></td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The righthand text.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Rope.html">Rope</a></td>
+        <td><p>A <a class="xref" href="Stringier.Rope.html">Rope</a> representing the concatenation of both texts.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Addition_Stringier_Rope_Char_.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Addition(Stringier.Rope%2CChar)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L120">View Source</a>
+  </span>
+  <a id="Stringier_Rope_op_Addition_" data-uid="Stringier.Rope.op_Addition*"></a>
+  <h4 id="Stringier_Rope_op_Addition_Stringier_Rope_Char_" data-uid="Stringier.Rope.op_Addition(Stringier.Rope,Char)">Addition(Rope, Char)</h4>
+  <div class="markdown level1 summary"><p>Concats the two texts.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Rope operator +(Rope left, Char right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Rope.html">Rope</a></td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The lefthand text.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Char</span></td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The righthand text.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Rope.html">Rope</a></td>
+        <td><p>A <a class="xref" href="Stringier.Rope.html">Rope</a> representing the concatenation of both texts.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Addition_Stringier_Rope_Char___.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Addition(Stringier.Rope%2CChar%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L154">View Source</a>
+  </span>
+  <a id="Stringier_Rope_op_Addition_" data-uid="Stringier.Rope.op_Addition*"></a>
+  <h4 id="Stringier_Rope_op_Addition_Stringier_Rope_Char___" data-uid="Stringier.Rope.op_Addition(Stringier.Rope,Char[])">Addition(Rope, Char[])</h4>
+  <div class="markdown level1 summary"><p>Concats the two texts.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Rope operator +(Rope left, Char[] right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Rope.html">Rope</a></td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The lefthand text.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Char</span>[]</td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The righthand text.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Rope.html">Rope</a></td>
+        <td><p>A <a class="xref" href="Stringier.Rope.html">Rope</a> representing the concatenation of both texts.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Addition_Stringier_Rope_Memory_Char__.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Addition(Stringier.Rope%2CMemory%7BChar%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L172">View Source</a>
+  </span>
+  <a id="Stringier_Rope_op_Addition_" data-uid="Stringier.Rope.op_Addition*"></a>
+  <h4 id="Stringier_Rope_op_Addition_Stringier_Rope_Memory_Char__" data-uid="Stringier.Rope.op_Addition(Stringier.Rope,Memory{Char})">Addition(Rope, Memory&lt;Char&gt;)</h4>
+  <div class="markdown level1 summary"><p>Concats the two texts.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Rope operator +(Rope left, Memory&lt;Char&gt; right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Rope.html">Rope</a></td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The lefthand text.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Memory</span>&lt;<span class="xref">Char</span>&gt;</td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The righthand text.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Rope.html">Rope</a></td>
+        <td><p>A <a class="xref" href="Stringier.Rope.html">Rope</a> representing the concatenation of both texts.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Addition_Stringier_Rope_ReadOnlyMemory_Char__.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Addition(Stringier.Rope%2CReadOnlyMemory%7BChar%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L188">View Source</a>
+  </span>
+  <a id="Stringier_Rope_op_Addition_" data-uid="Stringier.Rope.op_Addition*"></a>
+  <h4 id="Stringier_Rope_op_Addition_Stringier_Rope_ReadOnlyMemory_Char__" data-uid="Stringier.Rope.op_Addition(Stringier.Rope,ReadOnlyMemory{Char})">Addition(Rope, ReadOnlyMemory&lt;Char&gt;)</h4>
+  <div class="markdown level1 summary"><p>Concats the two texts.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Rope operator +(Rope left, ReadOnlyMemory&lt;Char&gt; right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Rope.html">Rope</a></td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The lefthand text.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">ReadOnlyMemory</span>&lt;<span class="xref">Char</span>&gt;</td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The righthand text.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Rope.html">Rope</a></td>
+        <td><p>A <a class="xref" href="Stringier.Rope.html">Rope</a> representing the concatenation of both texts.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Addition_Stringier_Rope_String_.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Addition(Stringier.Rope%2CString)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L136">View Source</a>
+  </span>
+  <a id="Stringier_Rope_op_Addition_" data-uid="Stringier.Rope.op_Addition*"></a>
+  <h4 id="Stringier_Rope_op_Addition_Stringier_Rope_String_" data-uid="Stringier.Rope.op_Addition(Stringier.Rope,String)">Addition(Rope, String)</h4>
+  <div class="markdown level1 summary"><p>Concats the two texts.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Rope operator +(Rope left, String right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Rope.html">Rope</a></td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The lefthand text.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The righthand text.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Rope.html">Rope</a></td>
+        <td><p>A <a class="xref" href="Stringier.Rope.html">Rope</a> representing the concatenation of both texts.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Implicit_Char__Stringier_Rope.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Implicit(Char)~Stringier.Rope%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L83">View Source</a>
+  </span>
+  <a id="Stringier_Rope_op_Implicit_" data-uid="Stringier.Rope.op_Implicit*"></a>
+  <h4 id="Stringier_Rope_op_Implicit_Char__Stringier_Rope" data-uid="Stringier.Rope.op_Implicit(Char)~Stringier.Rope">Implicit(Char to Rope)</h4>
+  <div class="markdown level1 summary"><p>Converts the <code data-dev-comment-type="paramref" class="paramref">char</code> to a <a class="xref" href="Stringier.Rope.html">Rope</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Rope(Char char)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Char</span></td>
+        <td><span class="parametername">char</span></td>
+        <td><p>The <see cref="!:Char"></see> to convert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Rope.html">Rope</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Implicit_Char____Stringier_Rope.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Implicit(Char%5B%5D)~Stringier.Rope%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L97">View Source</a>
+  </span>
+  <a id="Stringier_Rope_op_Implicit_" data-uid="Stringier.Rope.op_Implicit*"></a>
+  <h4 id="Stringier_Rope_op_Implicit_Char____Stringier_Rope" data-uid="Stringier.Rope.op_Implicit(Char[])~Stringier.Rope">Implicit(Char[] to Rope)</h4>
+  <div class="markdown level1 summary"><p>Converts the <code data-dev-comment-type="paramref" class="paramref">array</code> to a <a class="xref" href="Stringier.Rope.html">Rope</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Rope(Char[] array)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Char</span>[]</td>
+        <td><span class="parametername">array</span></td>
+        <td><p>The <see cref="!:Array"></see> of <see cref="!:Char"></see> to convert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Rope.html">Rope</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Implicit_Memory_Char___Stringier_Rope.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Implicit(Memory%7BChar%7D)~Stringier.Rope%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L104">View Source</a>
+  </span>
+  <a id="Stringier_Rope_op_Implicit_" data-uid="Stringier.Rope.op_Implicit*"></a>
+  <h4 id="Stringier_Rope_op_Implicit_Memory_Char___Stringier_Rope" data-uid="Stringier.Rope.op_Implicit(Memory{Char})~Stringier.Rope">Implicit(Memory&lt;Char&gt; to Rope)</h4>
+  <div class="markdown level1 summary"><p>Converts the <code data-dev-comment-type="paramref" class="paramref">memory</code> to a <a class="xref" href="Stringier.Rope.html">Rope</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Rope(Memory&lt;Char&gt; memory)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Memory</span>&lt;<span class="xref">Char</span>&gt;</td>
+        <td><span class="parametername">memory</span></td>
+        <td><p>The <see cref="!:Memory&lt;T>"></see> of <see cref="!:Char"></see> to convert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Rope.html">Rope</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Implicit_ReadOnlyMemory_Char___Stringier_Rope.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Implicit(ReadOnlyMemory%7BChar%7D)~Stringier.Rope%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L111">View Source</a>
+  </span>
+  <a id="Stringier_Rope_op_Implicit_" data-uid="Stringier.Rope.op_Implicit*"></a>
+  <h4 id="Stringier_Rope_op_Implicit_ReadOnlyMemory_Char___Stringier_Rope" data-uid="Stringier.Rope.op_Implicit(ReadOnlyMemory{Char})~Stringier.Rope">Implicit(ReadOnlyMemory&lt;Char&gt; to Rope)</h4>
+  <div class="markdown level1 summary"><p>Converts the <code data-dev-comment-type="paramref" class="paramref">memory</code> to a <a class="xref" href="Stringier.Rope.html">Rope</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Rope(ReadOnlyMemory&lt;Char&gt; memory)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ReadOnlyMemory</span>&lt;<span class="xref">Char</span>&gt;</td>
+        <td><span class="parametername">memory</span></td>
+        <td><p>The <see cref="!:ReadOnlyMemory&lt;T>"></see> of <see cref="!:Char"></see> to convert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Rope.html">Rope</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Implicit_String__Stringier_Rope.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Implicit(String)~Stringier.Rope%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L90">View Source</a>
+  </span>
+  <a id="Stringier_Rope_op_Implicit_" data-uid="Stringier.Rope.op_Implicit*"></a>
+  <h4 id="Stringier_Rope_op_Implicit_String__Stringier_Rope" data-uid="Stringier.Rope.op_Implicit(String)~Stringier.Rope">Implicit(String to Rope)</h4>
+  <div class="markdown level1 summary"><p>Converts the <code data-dev-comment-type="paramref" class="paramref">string</code> to a <a class="xref" href="Stringier.Rope.html">Rope</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Rope(String string)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td><span class="parametername">string</span></td>
+        <td><p>The <see cref="!:String"></see> to convert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Rope.html">Rope</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="System.Traits.IAddMemory-1.html">IAddMemory&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IAdd-1.html">IAdd&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IClear.html">IClear</a>
+  </div>
+  <div>
+      <span class="xref">IEquatable&lt;&gt;</span>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IIndex-2.html">IIndex&lt;TIndex, TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IIndexReadOnly-2.html">IIndexReadOnly&lt;TIndex, TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IInsertMemory-2.html">IInsertMemory&lt;TIndex, TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IInsert-2.html">IInsert&lt;TIndex, TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IPostpendMemory-1.html">IPostpendMemory&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IPostpend-1.html">IPostpend&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IPrependMemory-1.html">IPrependMemory&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IPrepend-1.html">IPrepend&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IRemove-1.html">IRemove&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IReplace-1.html">IReplace&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IReplace-2.html">IReplace&lt;TSearch, TReplace&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.ISequence-2.html">ISequence&lt;TElement, TEnumerator&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.ICount.html">ICount</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">System.Collections.Generic.IEnumerable&lt;T&gt;</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope.md&amp;value=---%0Auid%3A%20Stringier.Rope%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.Node.cs/#L6" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

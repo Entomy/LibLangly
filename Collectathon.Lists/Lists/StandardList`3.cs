@@ -17,7 +17,11 @@ namespace Collectathon.Lists {
 		/// </summary>
 		/// <param name="elements">The initial elements of the list.</param>
 		/// <param name="filter">The type of filter to use.</param>
-		protected StandardList([DisallowNull] TElement[] elements, Filters filter) : base(elements, filter) { }
+		protected StandardList([DisallowNull] TElement[] elements, Filters filter) : base(filter) {
+			foreach (TElement element in elements) {
+				Add(element);
+			}
+		}
 
 		/// <summary>
 		/// Initializes a new <see cref="StandardList{TElement, TNode, TSelf}"/>.
@@ -32,6 +36,7 @@ namespace Collectathon.Lists {
 		protected StandardList([DisallowNull] Filter<nint, TElement> filter) : base(filter) { }
 
 		/// <inheritdoc/>
+		[AllowNull, MaybeNull]
 		public sealed override TElement this[nint index] {
 			get {
 				TNode? N = Head;
@@ -61,5 +66,14 @@ namespace Collectathon.Lists {
 
 		/// <inheritdoc/>
 		public sealed override Enumerator GetEnumerator() => new Enumerator(this);
+
+		/// <inheritdoc/>
+		public override void Replace([AllowNull] TElement search, [AllowNull] TElement replace) {
+			TNode? N = Head;
+			while (N is not null) {
+				N.Replace(search, replace);
+				N = N.Next;
+			}
+		}
 	}
 }

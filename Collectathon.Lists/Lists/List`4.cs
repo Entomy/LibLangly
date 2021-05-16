@@ -50,17 +50,6 @@ namespace Collectathon.Lists {
 		protected TNode Tail;
 
 		/// <summary>
-		/// Initializes a new <see cref="List{TElement, TNode, TSelf, TEnumerator}"/> with the given <paramref name="elements"/>.
-		/// </summary>
-		/// <param name="elements">The initial elements of the list.</param>
-		/// <param name="filter">The type of filter to use.</param>
-		protected List([DisallowNull] TElement[] elements, Filters filter) : this(filter) {
-			foreach (TElement element in elements) {
-				Add(element);
-			}
-		}
-
-		/// <summary>
 		/// Initializes a new <see cref="List{TElement, TNode, TSelf, TEnumerator}"/>.
 		/// </summary>
 		/// <param name="filter">The type of filter to use.</param>
@@ -174,13 +163,7 @@ namespace Collectathon.Lists {
 		public abstract void RemoveLast([AllowNull] TElement element);
 
 		/// <inheritdoc/>
-		public void Replace([AllowNull] TElement search, [AllowNull] TElement replace) {
-			TNode? N = Head;
-			while (N is not null) {
-				N.Replace(search, replace);
-				N = N.Next;
-			}
-		}
+		public abstract void Replace([AllowNull] TElement search, [AllowNull] TElement replace);
 
 		/// <inheritdoc/>
 		[return: NotNull]

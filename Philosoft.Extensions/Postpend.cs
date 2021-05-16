@@ -11,6 +11,13 @@ namespace System {
 		public static void Postpend([DisallowNull] this IPostpend<Char> collection, [AllowNull] String elements) => Postpend(collection, elements.AsSpan());
 
 		/// <summary>
+		/// Postpends the elements onto this object, as a batch.
+		/// </summary>
+		/// <param name="collection">This collection.</param>
+		/// <param name="elements">The elements to postpend.</param>
+		public static void Postpend([DisallowNull] this IPostpendMemory<Char> collection, [AllowNull] String elements) => collection.Postpend(elements.AsMemory());
+
+		/// <summary>
 		/// Postpends the elements onto this object, one by one.
 		/// </summary>
 		/// <typeparam name="TElement">The type of the elements in the collection.</typeparam>

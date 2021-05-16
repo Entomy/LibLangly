@@ -12,6 +12,14 @@ namespace System {
 		public static void Insert([DisallowNull] this IInsert<nint, Char> collection, nint index, [AllowNull] String elements) => Insert(collection, index, elements.AsSpan());
 
 		/// <summary>
+		/// Inserts the elements into the collection at the specified index, as a batch.
+		/// </summary>
+		/// <param name="collection">This collection.</param>
+		/// <param name="index">The index at which the <paramref name="elements"/> should be inserted.</param>
+		/// <param name="elements">The elements to insert.</param>
+		public static void Insert([DisallowNull] this IInsertMemory<nint, Char> collection, nint index, [AllowNull] String elements) => collection.Insert(index, elements.AsMemory());
+
+		/// <summary>
 		/// Inserts the elements into the collection at the specified index, one by one.
 		/// </summary>
 		/// <typeparam name="TElement">The type of the elements in the collection.</typeparam>

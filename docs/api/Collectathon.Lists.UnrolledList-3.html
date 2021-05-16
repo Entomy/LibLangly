@@ -1,0 +1,932 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class UnrolledList&lt;TElement, TNode, TSelf&gt;
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class UnrolledList&lt;TElement, TNode, TSelf&gt;
+   ">
+    <meta name="generator" content="docfx 2.57.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Collectathon.Lists.UnrolledList`3">
+  
+  
+  <h1 id="Collectathon_Lists_UnrolledList_3" data-uid="Collectathon.Lists.UnrolledList`3" class="text-break">Class UnrolledList&lt;TElement, TNode, TSelf&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>Represents any linked list where each node contains multiple elements.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><a class="xref" href="Collectathon.Lists.List-4.html">List</a>&lt;TElement, TNode, TSelf, <a class="xref" href="Collectathon.Lists.UnrolledList-3.Enumerator.html">UnrolledList.Enumerator</a>&lt;&gt;&gt;</div>
+    <div class="level2"><span class="xref">UnrolledList&lt;TElement, TNode, TSelf&gt;</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="System.Traits.IClear.html">IClear</a></div>
+    <div><span class="xref">IEquatable</span>&lt;TSelf&gt;</div>
+    <div><span class="xref">IEquatable</span>&lt;<a class="xref" href="Collectathon.Lists.List-4.html">List</a>&lt;TElement, TNode, TSelf, <a class="xref" href="Collectathon.Lists.UnrolledList-3.Enumerator.html">UnrolledList.Enumerator</a>&lt;&gt;&gt;&gt;</div>
+    <div><a class="xref" href="System.Traits.IIndex-2.html">IIndex</a>&lt;<span class="xref">nint</span>, TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IIndexReadOnly-2.html">IIndexReadOnly</a>&lt;<span class="xref">nint</span>, TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IRemove-1.html">IRemove</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IReplace-1.html">IReplace</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IReplace-2.html">IReplace</a>&lt;TElement, TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.ISequence-2.html">ISequence</a>&lt;TElement, <a class="xref" href="Collectathon.Lists.UnrolledList-3.Enumerator.html">UnrolledList.Enumerator</a>&lt;&gt;&gt;</div>
+    <div><a class="xref" href="System.Traits.ICount.html">ICount</a></div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IAddMemory-1.html">IAddMemory</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IAdd-1.html">IAdd</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IInsertMemory-2.html">IInsertMemory</a>&lt;<span class="xref">nint</span>, TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IInsert-2.html">IInsert</a>&lt;<span class="xref">nint</span>, TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IPostpendMemory-1.html">IPostpendMemory</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IPostpend-1.html">IPostpend</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IPrependMemory-1.html">IPrependMemory</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IPrepend-1.html">IPrepend</a>&lt;TElement&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Collectathon.Lists.List-4.html#Collectathon_Lists_List_4_Filter">List&lt;TElement, TNode, TSelf, UnrolledList&lt;TElement, TNode, TSelf&gt;.Enumerator&gt;.Filter</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Lists.List-4.html#Collectathon_Lists_List_4_Head">List&lt;TElement, TNode, TSelf, UnrolledList&lt;TElement, TNode, TSelf&gt;.Enumerator&gt;.Head</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Lists.List-4.html#Collectathon_Lists_List_4_Tail">List&lt;TElement, TNode, TSelf, UnrolledList&lt;TElement, TNode, TSelf&gt;.Enumerator&gt;.Tail</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Lists.List-4.html#Collectathon_Lists_List_4_Count">List&lt;TElement, TNode, TSelf, UnrolledList&lt;TElement, TNode, TSelf&gt;.Enumerator&gt;.Count</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Lists.List-4.html#Collectathon_Lists_List_4_Item_nint_">List&lt;TElement, TNode, TSelf, UnrolledList&lt;TElement, TNode, TSelf&gt;.Enumerator&gt;.Item[nint]</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Lists.List-4.html#Collectathon_Lists_List_4_Add__0_">List&lt;TElement, TNode, TSelf, UnrolledList&lt;TElement, TNode, TSelf&gt;.Enumerator&gt;.Add(TElement)</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Lists.List-4.html#Collectathon_Lists_List_4_Clear">List&lt;TElement, TNode, TSelf, UnrolledList&lt;TElement, TNode, TSelf&gt;.Enumerator&gt;.Clear()</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Lists.List-4.html#Collectathon_Lists_List_4_Equals_Object_">List&lt;TElement, TNode, TSelf, UnrolledList&lt;TElement, TNode, TSelf&gt;.Enumerator&gt;.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Lists.List-4.html#Collectathon_Lists_List_4_Equals__2_">List&lt;TElement, TNode, TSelf, UnrolledList&lt;TElement, TNode, TSelf&gt;.Enumerator&gt;.Equals(TSelf)</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Lists.List-4.html#Collectathon_Lists_List_4_Equals_Collectathon_Lists_List__0__1__2__3__">List&lt;TElement, TNode, TSelf, UnrolledList&lt;TElement, TNode, TSelf&gt;.Enumerator&gt;.Equals(List&lt;TElement, TNode, TSelf, UnrolledList.Enumerator&lt;&gt;&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Lists.List-4.html#Collectathon_Lists_List_4_Equals_System_Collections_Generic_IEnumerable__0__">List&lt;TElement, TNode, TSelf, UnrolledList&lt;TElement, TNode, TSelf&gt;.Enumerator&gt;.Equals(Collections.Generic.IEnumerable&lt;TElement&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Lists.List-4.html#Collectathon_Lists_List_4_GetEnumerator">List&lt;TElement, TNode, TSelf, UnrolledList&lt;TElement, TNode, TSelf&gt;.Enumerator&gt;.GetEnumerator()</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Lists.List-4.html#Collectathon_Lists_List_4_GetHashCode">List&lt;TElement, TNode, TSelf, UnrolledList&lt;TElement, TNode, TSelf&gt;.Enumerator&gt;.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Lists.List-4.html#Collectathon_Lists_List_4_Insert_nint__0_">List&lt;TElement, TNode, TSelf, UnrolledList&lt;TElement, TNode, TSelf&gt;.Enumerator&gt;.Insert(nint, TElement)</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Lists.List-4.html#Collectathon_Lists_List_4_Postpend__0_">List&lt;TElement, TNode, TSelf, UnrolledList&lt;TElement, TNode, TSelf&gt;.Enumerator&gt;.Postpend(TElement)</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Lists.List-4.html#Collectathon_Lists_List_4_Prepend__0_">List&lt;TElement, TNode, TSelf, UnrolledList&lt;TElement, TNode, TSelf&gt;.Enumerator&gt;.Prepend(TElement)</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Lists.List-4.html#Collectathon_Lists_List_4_Remove__0_">List&lt;TElement, TNode, TSelf, UnrolledList&lt;TElement, TNode, TSelf&gt;.Enumerator&gt;.Remove(TElement)</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Lists.List-4.html#Collectathon_Lists_List_4_RemoveFirst__0_">List&lt;TElement, TNode, TSelf, UnrolledList&lt;TElement, TNode, TSelf&gt;.Enumerator&gt;.RemoveFirst(TElement)</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Lists.List-4.html#Collectathon_Lists_List_4_RemoveLast__0_">List&lt;TElement, TNode, TSelf, UnrolledList&lt;TElement, TNode, TSelf&gt;.Enumerator&gt;.RemoveLast(TElement)</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Lists.List-4.html#Collectathon_Lists_List_4_Replace__0__0_">List&lt;TElement, TNode, TSelf, UnrolledList&lt;TElement, TNode, TSelf&gt;.Enumerator&gt;.Replace(TElement, TElement)</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Lists.List-4.html#Collectathon_Lists_List_4_ToString">List&lt;TElement, TNode, TSelf, UnrolledList&lt;TElement, TNode, TSelf&gt;.Enumerator&gt;.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Lists.List-4.html#Collectathon_Lists_List_4_ToString_nint_">List&lt;TElement, TNode, TSelf, UnrolledList&lt;TElement, TNode, TSelf&gt;.Enumerator&gt;.ToString(nint)</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Lists.List-4.html#Collectathon_Lists_List_4_NewUnlinkedNode__0_">List&lt;TElement, TNode, TSelf, UnrolledList&lt;TElement, TNode, TSelf&gt;.Enumerator&gt;.NewUnlinkedNode(TElement)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Collectathon.Lists.html">Collectathon.Lists</a></h6>
+  <h6><strong>Assembly</strong>: Collectathon.Lists.dll</h6>
+  <h5 id="Collectathon_Lists_UnrolledList_3_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class UnrolledList&lt;TElement, TNode, TSelf&gt; : List&lt;TElement, TNode, TSelf, UnrolledList&lt;TElement, TNode, TSelf&gt;.Enumerator&gt;, IClear, IEquatable&lt;TSelf&gt;, IEquatable&lt;List&lt;TElement, TNode, TSelf, UnrolledList&lt;TElement, TNode, TSelf&gt;.Enumerator&gt;&gt;, IIndex&lt;nint, TElement&gt;, IIndexReadOnly&lt;nint, TElement&gt;, IRemove&lt;TElement&gt;, IReplace&lt;TElement&gt;, IReplace&lt;TElement, TElement&gt;, ISequence&lt;TElement, UnrolledList&lt;TElement, TNode, TSelf&gt;.Enumerator&gt;, ICount, IEnumerable&lt;TElement&gt;, IAddMemory&lt;TElement&gt;, IAdd&lt;TElement&gt;, IInsertMemory&lt;nint, TElement&gt;, IInsert&lt;nint, TElement&gt;, IPostpendMemory&lt;TElement&gt;, IPostpend&lt;TElement&gt;, IPrependMemory&lt;TElement&gt;, IPrepend&lt;TElement&gt; where TNode : UnrolledListNode&lt;TElement, TNode&gt; where TSelf : UnrolledList&lt;TElement, TNode, TSelf&gt;</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of the elements in the list.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TNode</span></td>
+        <td><p>The type of the nodes of the list.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TSelf</span></td>
+        <td><p>The implementing type; itself.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_UnrolledList_3__ctor_Collectathon_Filter_nint__0__.md&amp;value=---%0Auid%3A%20Collectathon.Lists.UnrolledList%603.%23ctor(Collectathon.Filter%7Bnint%2C%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/UnrolledList`3.cs/#L30">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_UnrolledList_3__ctor_" data-uid="Collectathon.Lists.UnrolledList`3.#ctor*"></a>
+  <h4 id="Collectathon_Lists_UnrolledList_3__ctor_Collectathon_Filter_nint__0__" data-uid="Collectathon.Lists.UnrolledList`3.#ctor(Collectathon.Filter{nint,`0})">UnrolledList(Filter&lt;nint, TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Copy constructor</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected UnrolledList(Filter&lt;nint, TElement&gt; filter)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Collectathon.Filter-2.html">Filter</a>&lt;<span class="xref">nint</span>, TElement&gt;</td>
+        <td><span class="parametername">filter</span></td>
+        <td><p>The <a class="xref" href="Collectathon.Filter-2.html">Filter&lt;TIndex, TElement&gt;</a> to reuse.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_UnrolledList_3__ctor_Collectathon_Filters_.md&amp;value=---%0Auid%3A%20Collectathon.Lists.UnrolledList%603.%23ctor(Collectathon.Filters)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/UnrolledList`3.cs/#L24">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_UnrolledList_3__ctor_" data-uid="Collectathon.Lists.UnrolledList`3.#ctor*"></a>
+  <h4 id="Collectathon_Lists_UnrolledList_3__ctor_Collectathon_Filters_" data-uid="Collectathon.Lists.UnrolledList`3.#ctor(Collectathon.Filters)">UnrolledList(Filters)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Collectathon.Lists.UnrolledList-3.html">UnrolledList&lt;TElement, TNode, TSelf&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected UnrolledList(Filters filter)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Collectathon.Filters.html">Filters</a></td>
+        <td><span class="parametername">filter</span></td>
+        <td><p>The type of filter to use.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_UnrolledList_3_Item_nint_.md&amp;value=---%0Auid%3A%20Collectathon.Lists.UnrolledList%603.Item(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/UnrolledList`3.cs/#L33">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_UnrolledList_3_Item_" data-uid="Collectathon.Lists.UnrolledList`3.Item*"></a>
+  <h4 id="Collectathon_Lists_UnrolledList_3_Item_nint_" data-uid="Collectathon.Lists.UnrolledList`3.Item(nint)">Item[nint]</h4>
+  <div class="markdown level1 summary"><p>Gets  the element at the specified index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override sealed TElement this[nint index] { get; set; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">index</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><p>The element at the specified index.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Collectathon.Lists.List&lt;TElement, TNode, TSelf, Collectathon.Lists.UnrolledList&lt;TElement, TNode, TSelf&gt;.Enumerator&gt;.Item[nint]</span></div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_UnrolledList_3_Add__0___.md&amp;value=---%0Auid%3A%20Collectathon.Lists.UnrolledList%603.Add(%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/UnrolledList`3.cs/#L44">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_UnrolledList_3_Add_" data-uid="Collectathon.Lists.UnrolledList`3.Add*"></a>
+  <h4 id="Collectathon_Lists_UnrolledList_3_Add__0___" data-uid="Collectathon.Lists.UnrolledList`3.Add(`0[])">Add(TElement[])</h4>
+  <div class="markdown level1 summary"><p>Adds the elements to this object, as a batch.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(params TElement[] elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TElement[]</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to add.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Collectathon_Lists_UnrolledList_3_Add__0____remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_UnrolledList_3_Add_Memory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Lists.UnrolledList%603.Add(Memory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/UnrolledList`3.cs/#L47">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_UnrolledList_3_Add_" data-uid="Collectathon.Lists.UnrolledList`3.Add*"></a>
+  <h4 id="Collectathon_Lists_UnrolledList_3_Add_Memory__0__" data-uid="Collectathon.Lists.UnrolledList`3.Add(Memory{`0})">Add(Memory&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(Memory&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Memory</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_UnrolledList_3_Add_ReadOnlyMemory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Lists.UnrolledList%603.Add(ReadOnlyMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/UnrolledList`3.cs/#L50">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_UnrolledList_3_Add_" data-uid="Collectathon.Lists.UnrolledList`3.Add*"></a>
+  <h4 id="Collectathon_Lists_UnrolledList_3_Add_ReadOnlyMemory__0__" data-uid="Collectathon.Lists.UnrolledList`3.Add(ReadOnlyMemory{`0})">Add(ReadOnlyMemory&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(ReadOnlyMemory&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ReadOnlyMemory</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_UnrolledList_3_GetEnumerator.md&amp;value=---%0Auid%3A%20Collectathon.Lists.UnrolledList%603.GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/UnrolledList`3.cs/#L53">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_UnrolledList_3_GetEnumerator_" data-uid="Collectathon.Lists.UnrolledList`3.GetEnumerator*"></a>
+  <h4 id="Collectathon_Lists_UnrolledList_3_GetEnumerator" data-uid="Collectathon.Lists.UnrolledList`3.GetEnumerator">GetEnumerator()</h4>
+  <div class="markdown level1 summary"><p>Returns an enumerator that iterates through the sequence.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override sealed UnrolledList&lt;TElement, TNode, TSelf&gt;.Enumerator GetEnumerator()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Collectathon.Lists.UnrolledList-3.Enumerator.html">UnrolledList.Enumerator</a>&lt;&gt;</td>
+        <td><p>An enumerator that can be used to iterate through the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Collectathon.Lists.List&lt;TElement, TNode, TSelf, Collectathon.Lists.UnrolledList&lt;TElement, TNode, TSelf&gt;.Enumerator&gt;.GetEnumerator()</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_UnrolledList_3_Insert_nint__0___.md&amp;value=---%0Auid%3A%20Collectathon.Lists.UnrolledList%603.Insert(nint%2C%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/UnrolledList`3.cs/#L56">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_UnrolledList_3_Insert_" data-uid="Collectathon.Lists.UnrolledList`3.Insert*"></a>
+  <h4 id="Collectathon_Lists_UnrolledList_3_Insert_nint__0___" data-uid="Collectathon.Lists.UnrolledList`3.Insert(nint,`0[])">Insert(nint, TElement[])</h4>
+  <div class="markdown level1 summary"><p>Inserts the elements into the collection at the specified index, as a batch.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Insert(nint index, params TElement[] elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">index</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>TElement[]</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to insert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_UnrolledList_3_Insert_nint_Memory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Lists.UnrolledList%603.Insert(nint%2CMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/UnrolledList`3.cs/#L59">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_UnrolledList_3_Insert_" data-uid="Collectathon.Lists.UnrolledList`3.Insert*"></a>
+  <h4 id="Collectathon_Lists_UnrolledList_3_Insert_nint_Memory__0__" data-uid="Collectathon.Lists.UnrolledList`3.Insert(nint,Memory{`0})">Insert(nint, Memory&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Insert(nint index, Memory&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">index</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Memory</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_UnrolledList_3_Insert_nint_ReadOnlyMemory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Lists.UnrolledList%603.Insert(nint%2CReadOnlyMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/UnrolledList`3.cs/#L62">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_UnrolledList_3_Insert_" data-uid="Collectathon.Lists.UnrolledList`3.Insert*"></a>
+  <h4 id="Collectathon_Lists_UnrolledList_3_Insert_nint_ReadOnlyMemory__0__" data-uid="Collectathon.Lists.UnrolledList`3.Insert(nint,ReadOnlyMemory{`0})">Insert(nint, ReadOnlyMemory&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Insert(nint index, ReadOnlyMemory&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">index</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">ReadOnlyMemory</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_UnrolledList_3_NewUnlinkedNode_ReadOnlyMemory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Lists.UnrolledList%603.NewUnlinkedNode(ReadOnlyMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/UnrolledList`3.cs/#L106">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_UnrolledList_3_NewUnlinkedNode_" data-uid="Collectathon.Lists.UnrolledList`3.NewUnlinkedNode*"></a>
+  <h4 id="Collectathon_Lists_UnrolledList_3_NewUnlinkedNode_ReadOnlyMemory__0__" data-uid="Collectathon.Lists.UnrolledList`3.NewUnlinkedNode(ReadOnlyMemory{`0})">NewUnlinkedNode(ReadOnlyMemory&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Creates a new, unlinked, node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract TNode NewUnlinkedNode(ReadOnlyMemory&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ReadOnlyMemory</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to put into the node.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TNode</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Collectathon_Lists_UnrolledList_3_NewUnlinkedNode_ReadOnlyMemory__0___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>A node containing the <code data-dev-comment-type="paramref" class="paramref">elements</code> with no links to other nodes.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_UnrolledList_3_Postpend__0___.md&amp;value=---%0Auid%3A%20Collectathon.Lists.UnrolledList%603.Postpend(%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/UnrolledList`3.cs/#L65">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_UnrolledList_3_Postpend_" data-uid="Collectathon.Lists.UnrolledList`3.Postpend*"></a>
+  <h4 id="Collectathon_Lists_UnrolledList_3_Postpend__0___" data-uid="Collectathon.Lists.UnrolledList`3.Postpend(`0[])">Postpend(TElement[])</h4>
+  <div class="markdown level1 summary"><p>Postpends the elements onto this object, as a batch.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Postpend(params TElement[] elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TElement[]</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to postpend.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_UnrolledList_3_Postpend_Memory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Lists.UnrolledList%603.Postpend(Memory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/UnrolledList`3.cs/#L68">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_UnrolledList_3_Postpend_" data-uid="Collectathon.Lists.UnrolledList`3.Postpend*"></a>
+  <h4 id="Collectathon_Lists_UnrolledList_3_Postpend_Memory__0__" data-uid="Collectathon.Lists.UnrolledList`3.Postpend(Memory{`0})">Postpend(Memory&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Postpend(Memory&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Memory</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_UnrolledList_3_Postpend_ReadOnlyMemory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Lists.UnrolledList%603.Postpend(ReadOnlyMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/UnrolledList`3.cs/#L71">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_UnrolledList_3_Postpend_" data-uid="Collectathon.Lists.UnrolledList`3.Postpend*"></a>
+  <h4 id="Collectathon_Lists_UnrolledList_3_Postpend_ReadOnlyMemory__0__" data-uid="Collectathon.Lists.UnrolledList`3.Postpend(ReadOnlyMemory{`0})">Postpend(ReadOnlyMemory&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Postpend(ReadOnlyMemory&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ReadOnlyMemory</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_UnrolledList_3_Prepend__0___.md&amp;value=---%0Auid%3A%20Collectathon.Lists.UnrolledList%603.Prepend(%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/UnrolledList`3.cs/#L83">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_UnrolledList_3_Prepend_" data-uid="Collectathon.Lists.UnrolledList`3.Prepend*"></a>
+  <h4 id="Collectathon_Lists_UnrolledList_3_Prepend__0___" data-uid="Collectathon.Lists.UnrolledList`3.Prepend(`0[])">Prepend(TElement[])</h4>
+  <div class="markdown level1 summary"><p>Prepends the elements onto this object, as a batch.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Prepend(params TElement[] elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TElement[]</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to prepend.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_UnrolledList_3_Prepend_Memory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Lists.UnrolledList%603.Prepend(Memory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/UnrolledList`3.cs/#L86">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_UnrolledList_3_Prepend_" data-uid="Collectathon.Lists.UnrolledList`3.Prepend*"></a>
+  <h4 id="Collectathon_Lists_UnrolledList_3_Prepend_Memory__0__" data-uid="Collectathon.Lists.UnrolledList`3.Prepend(Memory{`0})">Prepend(Memory&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Prepend(Memory&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Memory</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_UnrolledList_3_Prepend_ReadOnlyMemory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Lists.UnrolledList%603.Prepend(ReadOnlyMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/UnrolledList`3.cs/#L89">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_UnrolledList_3_Prepend_" data-uid="Collectathon.Lists.UnrolledList`3.Prepend*"></a>
+  <h4 id="Collectathon_Lists_UnrolledList_3_Prepend_ReadOnlyMemory__0__" data-uid="Collectathon.Lists.UnrolledList`3.Prepend(ReadOnlyMemory{`0})">Prepend(ReadOnlyMemory&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Prepend(ReadOnlyMemory&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ReadOnlyMemory</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="System.Traits.IClear.html">IClear</a>
+  </div>
+  <div>
+      <span class="xref">IEquatable&lt;&gt;</span>
+  </div>
+  <div>
+      <span class="xref">IEquatable&lt;&gt;</span>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IIndex-2.html">IIndex&lt;TIndex, TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IIndexReadOnly-2.html">IIndexReadOnly&lt;TIndex, TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IRemove-1.html">IRemove&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IReplace-1.html">IReplace&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IReplace-2.html">IReplace&lt;TSearch, TReplace&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.ISequence-2.html">ISequence&lt;TElement, TEnumerator&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.ICount.html">ICount</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">System.Collections.Generic.IEnumerable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IAddMemory-1.html">IAddMemory&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IAdd-1.html">IAdd&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IInsertMemory-2.html">IInsertMemory&lt;TIndex, TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IInsert-2.html">IInsert&lt;TIndex, TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IPostpendMemory-1.html">IPostpendMemory&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IPostpend-1.html">IPostpend&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IPrependMemory-1.html">IPrependMemory&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IPrepend-1.html">IPrepend&lt;TElement&gt;</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_UnrolledList_3.md&amp;value=---%0Auid%3A%20Collectathon.Lists.UnrolledList%603%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/UnrolledList`3.Enumerator.cs/#L8" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

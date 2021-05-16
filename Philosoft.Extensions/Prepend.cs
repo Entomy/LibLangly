@@ -11,6 +11,13 @@ namespace System {
 		public static void Prepend([DisallowNull] this IPrepend<Char> collection, [AllowNull] String elements) => Prepend(collection, elements.AsSpan());
 
 		/// <summary>
+		/// Prepends the elements onto this object, as a batch.
+		/// </summary>
+		/// <param name="collection">This collection.</param>
+		/// <param name="elements">The elements to prepend.</param>
+		public static void Prepend([DisallowNull] this IPrependMemory<Char> collection, [AllowNull] String elements) => collection.Prepend(elements.AsMemory());
+
+		/// <summary>
 		/// Prepends the elements onto this object, one by one.
 		/// </summary>
 		/// <typeparam name="TElement">The type of the elements in the collection.</typeparam>

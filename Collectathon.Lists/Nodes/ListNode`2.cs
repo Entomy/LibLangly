@@ -11,13 +11,13 @@ namespace Collectathon.Nodes {
 	/// <typeparam name="TSelf">The implementing type; itself.</typeparam>
 	public abstract class ListNode<TElement, TSelf> :
 		IClear,
-		ICount,
-		IReplace<TElement>
+		ICount
 		where TSelf : ListNode<TElement, TSelf> {
 		/// <summary>
 		/// Initializes a new <see cref="ListNode{TElement, TSelf}"/>.
 		/// </summary>
-		protected ListNode() { }
+		/// <param name="next">The next node in the list.</param>
+		protected ListNode([AllowNull] TSelf next) => Next = next;
 
 		/// <summary>
 		/// The next node in the list.
@@ -32,7 +32,8 @@ namespace Collectathon.Nodes {
 		public abstract void Clear();
 
 		/// <inheritdoc/>
-		public abstract void Replace([AllowNull] TElement search, [AllowNull] TElement replace);
+		[SuppressMessage("Major Bug", "S3249:Classes directly extending \"object\" should not call \"base\" in \"GetHashCode\" or \"Equals\"", Justification = "I'm literally enforcing correct behavior by ensuring downstream doesn't violate what this analyzer is trying to enforce...")]
+		public sealed override Int32 GetHashCode() => base.GetHashCode();
 
 		/// <summary>
 		/// Postpends the <paramref name="element"/> onto this node.
