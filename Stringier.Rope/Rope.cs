@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
+using System.Text;
 using System.Traits;
 using Langly;
 
@@ -12,7 +13,7 @@ namespace Stringier {
 	public sealed partial class Rope :
 		IAddMemory<Char>,
 		IClear,
-		IEquatable<Rope>,
+		IEquatable<Rope>, IEquatable<String>, IEquatable<Char[]>, IEquatable<Memory<Char>>, IEquatable<ReadOnlyMemory<Char>>,
 		IIndex<nint, Char>,
 		IInsertMemory<nint, Char>,
 		IPostpendMemory<Char>,
@@ -67,12 +68,35 @@ namespace Stringier {
 		/// <param name="elements">The initial elements of the rope.</param>
 		public Rope(ReadOnlyMemory<Char> elements) : this() => Add(elements);
 
-		/// <inheritdoc/>
+		/// <summary>
+		/// Gets the number of <see cref="Char"/> contained in this collection.
+		/// </summary>
 		public nint Count { get; private set; }
 
-		/// <inheritdoc/>
+		/// <summary>
+		/// Gets the number of <see cref="Rune"/> contained in this collection.
+		/// </summary>
+		public nint RuneCount => throw new NotImplementedException();
+
+		/// <summary>
+		/// Gets or sets the <see cref="Char"/> at the specified <paramref name="index"/>.
+		/// </summary>
+		/// <param name="index">The index of the <see cref="Char"/> to get.</param>
+		/// <returns>The <see cref="Char"/> at the specified <paramref name="index"/>.</returns>
 		public Char this[nint index] {
-			get => throw new NotImplementedException();
+			get {
+				if (0 > index || index >= Count) {
+					throw new IndexOutOfRangeException();
+				}
+				Node? N = Head;
+				nint i = 0;
+				// Seeks to the node the element is in, and calculate the index offset (i)
+				while (N is not null && index >= i + N.Count) {
+					i += N.Count;
+					N = N.Next;
+				}
+				return N is not null ? N[index - i] : throw new IndexOutOfRangeException();
+			}
 			set => throw new NotImplementedException();
 		}
 
@@ -110,6 +134,110 @@ namespace Stringier {
 		/// <param name="memory">The <see cref="ReadOnlyMemory{T}"/> of <see cref="Char"/> to convert.</param>
 		[return: NotNull]
 		public static implicit operator Rope(ReadOnlyMemory<Char> memory) => new(memory);
+
+		/// <summary>
+		/// Determines whether the <paramref name="left"/> and <paramref name="right"/> texts are not equal.
+		/// </summary>
+		/// <param name="left">The lefthand text.</param>
+		/// <param name="right">The righthand text.</param>
+		/// <returns><see langword="true"/> if the <paramref name="left"/> text is not equal to the <paramref name="right"/> text; otherwise, <see langword="false"/>.</returns>
+		public static Boolean operator !=([AllowNull] Rope left, [AllowNull] Rope right) => !left?.Equals(right) ?? (right is not null && right.Count > 0);
+
+		/// <summary>
+		/// Determines whether the <paramref name="left"/> and <paramref name="right"/> texts are not equal.
+		/// </summary>
+		/// <param name="left">The lefthand text.</param>
+		/// <param name="right">The righthand text.</param>
+		/// <returns><see langword="true"/> if the <paramref name="left"/> text is not equal to the <paramref name="right"/> text; otherwise, <see langword="false"/>.</returns>
+		public static Boolean operator !=([AllowNull] Rope left, [AllowNull] String right) => !(left?.Equals(right) ?? String.IsNullOrEmpty(right));
+
+		/// <summary>
+		/// Determines whether the <paramref name="left"/> and <paramref name="right"/> texts are not equal.
+		/// </summary>
+		/// <param name="left">The lefthand text.</param>
+		/// <param name="right">The righthand text.</param>
+		/// <returns><see langword="true"/> if the <paramref name="left"/> text is not equal to the <paramref name="right"/> text; otherwise, <see langword="false"/>.</returns>
+		public static Boolean operator !=([AllowNull] String left, [AllowNull] Rope right) => !(right?.Equals(left) ?? String.IsNullOrEmpty(left));
+
+		/// <summary>
+		/// Determines whether the <paramref name="left"/> and <paramref name="right"/> texts are not equal.
+		/// </summary>
+		/// <param name="left">The lefthand text.</param>
+		/// <param name="right">The righthand text.</param>
+		/// <returns><see langword="true"/> if the <paramref name="left"/> text is not equal to the <paramref name="right"/> text; otherwise, <see langword="false"/>.</returns>
+		public static Boolean operator !=([AllowNull] Rope left, [AllowNull] Char[] right) => !left?.Equals(right) ?? (right is not null && right.Length > 0);
+
+		/// <summary>
+		/// Determines whether the <paramref name="left"/> and <paramref name="right"/> texts are not equal.
+		/// </summary>
+		/// <param name="left">The lefthand text.</param>
+		/// <param name="right">The righthand text.</param>
+		/// <returns><see langword="true"/> if the <paramref name="left"/> text is not equal to the <paramref name="right"/> text; otherwise, <see langword="false"/>.</returns>
+		public static Boolean operator !=([AllowNull] Char[] left, [AllowNull] Rope right) => !right?.Equals(left) ?? (left is not null && left.Length > 0);
+
+		/// <summary>
+		/// Determines whether the <paramref name="left"/> and <paramref name="right"/> texts are not equal.
+		/// </summary>
+		/// <param name="left">The lefthand text.</param>
+		/// <param name="right">The righthand text.</param>
+		/// <returns><see langword="true"/> if the <paramref name="left"/> text is not equal to the <paramref name="right"/> text; otherwise, <see langword="false"/>.</returns>
+		public static Boolean operator !=([AllowNull] Rope left, Memory<Char> right) => !(left?.Equals(right) ?? right.IsEmpty);
+
+		/// <summary>
+		/// Determines whether the <paramref name="left"/> and <paramref name="right"/> texts are not equal.
+		/// </summary>
+		/// <param name="left">The lefthand text.</param>
+		/// <param name="right">The righthand text.</param>
+		/// <returns><see langword="true"/> if the <paramref name="left"/> text is not equal to the <paramref name="right"/> text; otherwise, <see langword="false"/>.</returns>
+		public static Boolean operator !=(Memory<Char> left, [AllowNull] Rope right) => !(right?.Equals(left) ?? left.IsEmpty);
+
+		/// <summary>
+		/// Determines whether the <paramref name="left"/> and <paramref name="right"/> texts are not equal.
+		/// </summary>
+		/// <param name="left">The lefthand text.</param>
+		/// <param name="right">The righthand text.</param>
+		/// <returns><see langword="true"/> if the <paramref name="left"/> text is not equal to the <paramref name="right"/> text; otherwise, <see langword="false"/>.</returns>
+		public static Boolean operator !=([AllowNull] Rope left, ReadOnlyMemory<Char> right) => !(left?.Equals(right) ?? right.IsEmpty);
+
+		/// <summary>
+		/// Determines whether the <paramref name="left"/> and <paramref name="right"/> texts are not equal.
+		/// </summary>
+		/// <param name="left">The lefthand text.</param>
+		/// <param name="right">The righthand text.</param>
+		/// <returns><see langword="true"/> if the <paramref name="left"/> text is not equal to the <paramref name="right"/> text; otherwise, <see langword="false"/>.</returns>
+		public static Boolean operator !=(ReadOnlyMemory<Char> left, [AllowNull] Rope right) => !(right?.Equals(left) ?? left.IsEmpty);
+
+		/// <summary>
+		/// Determines whether the <paramref name="left"/> and <paramref name="right"/> texts are not equal.
+		/// </summary>
+		/// <param name="left">The lefthand text.</param>
+		/// <param name="right">The righthand text.</param>
+		/// <returns><see langword="true"/> if the <paramref name="left"/> text is not equal to the <paramref name="right"/> text; otherwise, <see langword="false"/>.</returns>
+		public static Boolean operator !=([AllowNull] Rope left, Span<Char> right) => !(left?.Equals(right) ?? right.IsEmpty);
+
+		/// <summary>
+		/// Determines whether the <paramref name="left"/> and <paramref name="right"/> texts are not equal.
+		/// </summary>
+		/// <param name="left">The lefthand text.</param>
+		/// <param name="right">The righthand text.</param>
+		/// <returns><see langword="true"/> if the <paramref name="left"/> text is not equal to the <paramref name="right"/> text; otherwise, <see langword="false"/>.</returns>
+		public static Boolean operator !=(Span<Char> left, [AllowNull] Rope right) => !(right?.Equals(left) ?? left.IsEmpty);
+
+		/// <summary>
+		/// Determines whether the <paramref name="left"/> and <paramref name="right"/> texts are not equal.
+		/// </summary>
+		/// <param name="left">The lefthand text.</param>
+		/// <param name="right">The righthand text.</param>
+		/// <returns><see langword="true"/> if the <paramref name="left"/> text is not equal to the <paramref name="right"/> text; otherwise, <see langword="false"/>.</returns>
+		public static Boolean operator !=([AllowNull] Rope left, ReadOnlySpan<Char> right) => !(left?.Equals(right) ?? right.IsEmpty);
+
+		/// <summary>
+		/// Determines whether the <paramref name="left"/> and <paramref name="right"/> texts are not equal.
+		/// </summary>
+		/// <param name="left">The lefthand text.</param>
+		/// <param name="right">The righthand text.</param>
+		/// <returns><see langword="true"/> if the <paramref name="left"/> text is not equal to the <paramref name="right"/> text; otherwise, <see langword="false"/>.</returns>
+		public static Boolean operator !=(ReadOnlySpan<Char> left, [AllowNull] Rope right) => !(right?.Equals(left) ?? left.IsEmpty);
 
 		/// <summary>
 		/// Concats the two texts.
@@ -279,6 +407,110 @@ namespace Stringier {
 			}
 		}
 
+		/// <summary>
+		/// Determines whether the <paramref name="left"/> and <paramref name="right"/> texts are equal.
+		/// </summary>
+		/// <param name="left">The lefthand text.</param>
+		/// <param name="right">The righthand text.</param>
+		/// <returns><see langword="true"/> if the <paramref name="left"/> text is equal to the <paramref name="right"/> text; otherwise, <see langword="false"/>.</returns>
+		public static Boolean operator ==([AllowNull] Rope left, [AllowNull] Rope right) => left?.Equals(right) ?? (right is null || right.Count <= 0);
+
+		/// <summary>
+		/// Determines whether the <paramref name="left"/> and <paramref name="right"/> texts are equal.
+		/// </summary>
+		/// <param name="left">The lefthand text.</param>
+		/// <param name="right">The righthand text.</param>
+		/// <returns><see langword="true"/> if the <paramref name="left"/> text is equal to the <paramref name="right"/> text; otherwise, <see langword="false"/>.</returns>
+		public static Boolean operator ==([AllowNull] Rope left, [AllowNull] String right) => left?.Equals(right) ?? String.IsNullOrEmpty(right);
+
+		/// <summary>
+		/// Determines whether the <paramref name="left"/> and <paramref name="right"/> texts are equal.
+		/// </summary>
+		/// <param name="left">The lefthand text.</param>
+		/// <param name="right">The righthand text.</param>
+		/// <returns><see langword="true"/> if the <paramref name="left"/> text is equal to the <paramref name="right"/> text; otherwise, <see langword="false"/>.</returns>
+		public static Boolean operator ==([AllowNull] String left, [AllowNull] Rope right) => right?.Equals(left) ?? String.IsNullOrEmpty(left);
+
+		/// <summary>
+		/// Determines whether the <paramref name="left"/> and <paramref name="right"/> texts are equal.
+		/// </summary>
+		/// <param name="left">The lefthand text.</param>
+		/// <param name="right">The righthand text.</param>
+		/// <returns><see langword="true"/> if the <paramref name="left"/> text is equal to the <paramref name="right"/> text; otherwise, <see langword="false"/>.</returns>
+		public static Boolean operator ==([AllowNull] Rope left, [AllowNull] Char[] right) => left?.Equals(right) ?? (right is null || right.Length <= 0);
+
+		/// <summary>
+		/// Determines whether the <paramref name="left"/> and <paramref name="right"/> texts are equal.
+		/// </summary>
+		/// <param name="left">The lefthand text.</param>
+		/// <param name="right">The righthand text.</param>
+		/// <returns><see langword="true"/> if the <paramref name="left"/> text is equal to the <paramref name="right"/> text; otherwise, <see langword="false"/>.</returns>
+		public static Boolean operator ==([AllowNull] Char[] left, [AllowNull] Rope right) => right?.Equals(left) ?? (left is null || left.Length <= 0);
+
+		/// <summary>
+		/// Determines whether the <paramref name="left"/> and <paramref name="right"/> texts are equal.
+		/// </summary>
+		/// <param name="left">The lefthand text.</param>
+		/// <param name="right">The righthand text.</param>
+		/// <returns><see langword="true"/> if the <paramref name="left"/> text is equal to the <paramref name="right"/> text; otherwise, <see langword="false"/>.</returns>
+		public static Boolean operator ==([AllowNull] Rope left, Memory<Char> right) => left?.Equals(right) ?? right.IsEmpty;
+
+		/// <summary>
+		/// Determines whether the <paramref name="left"/> and <paramref name="right"/> texts are equal.
+		/// </summary>
+		/// <param name="left">The lefthand text.</param>
+		/// <param name="right">The righthand text.</param>
+		/// <returns><see langword="true"/> if the <paramref name="left"/> text is equal to the <paramref name="right"/> text; otherwise, <see langword="false"/>.</returns>
+		public static Boolean operator ==(Memory<Char> left, [AllowNull] Rope right) => right?.Equals(left) ?? left.IsEmpty;
+
+		/// <summary>
+		/// Determines whether the <paramref name="left"/> and <paramref name="right"/> texts are equal.
+		/// </summary>
+		/// <param name="left">The lefthand text.</param>
+		/// <param name="right">The righthand text.</param>
+		/// <returns><see langword="true"/> if the <paramref name="left"/> text is equal to the <paramref name="right"/> text; otherwise, <see langword="false"/>.</returns>
+		public static Boolean operator ==([AllowNull] Rope left, ReadOnlyMemory<Char> right) => left?.Equals(right) ?? right.IsEmpty;
+
+		/// <summary>
+		/// Determines whether the <paramref name="left"/> and <paramref name="right"/> texts are equal.
+		/// </summary>
+		/// <param name="left">The lefthand text.</param>
+		/// <param name="right">The righthand text.</param>
+		/// <returns><see langword="true"/> if the <paramref name="left"/> text is equal to the <paramref name="right"/> text; otherwise, <see langword="false"/>.</returns>
+		public static Boolean operator ==(ReadOnlyMemory<Char> left, [AllowNull] Rope right) => right?.Equals(left) ?? left.IsEmpty;
+
+		/// <summary>
+		/// Determines whether the <paramref name="left"/> and <paramref name="right"/> texts are equal.
+		/// </summary>
+		/// <param name="left">The lefthand text.</param>
+		/// <param name="right">The righthand text.</param>
+		/// <returns><see langword="true"/> if the <paramref name="left"/> text is equal to the <paramref name="right"/> text; otherwise, <see langword="false"/>.</returns>
+		public static Boolean operator ==([AllowNull] Rope left, Span<Char> right) => left?.Equals(right) ?? right.IsEmpty;
+
+		/// <summary>
+		/// Determines whether the <paramref name="left"/> and <paramref name="right"/> texts are equal.
+		/// </summary>
+		/// <param name="left">The lefthand text.</param>
+		/// <param name="right">The righthand text.</param>
+		/// <returns><see langword="true"/> if the <paramref name="left"/> text is equal to the <paramref name="right"/> text; otherwise, <see langword="false"/>.</returns>
+		public static Boolean operator ==(Span<Char> left, [AllowNull] Rope right) => right?.Equals(left) ?? left.IsEmpty;
+
+		/// <summary>
+		/// Determines whether the <paramref name="left"/> and <paramref name="right"/> texts are equal.
+		/// </summary>
+		/// <param name="left">The lefthand text.</param>
+		/// <param name="right">The righthand text.</param>
+		/// <returns><see langword="true"/> if the <paramref name="left"/> text is equal to the <paramref name="right"/> text; otherwise, <see langword="false"/>.</returns>
+		public static Boolean operator ==([AllowNull] Rope left, ReadOnlySpan<Char> right) => left?.Equals(right) ?? right.IsEmpty;
+
+		/// <summary>
+		/// Determines whether the <paramref name="left"/> and <paramref name="right"/> texts are equal.
+		/// </summary>
+		/// <param name="left">The lefthand text.</param>
+		/// <param name="right">The righthand text.</param>
+		/// <returns><see langword="true"/> if the <paramref name="left"/> text is equal to the <paramref name="right"/> text; otherwise, <see langword="false"/>.</returns>
+		public static Boolean operator ==(ReadOnlySpan<Char> left, [AllowNull] Rope right) => right?.Equals(left) ?? left.IsEmpty;
+
 		/// <inheritdoc/>
 		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Add(Char element) => Postpend(element);
@@ -314,6 +546,38 @@ namespace Stringier {
 			switch (obj) {
 			case Rope other:
 				return Equals(other);
+			case String other:
+				return Equals(other);
+			case Char[] other:
+				return Equals(other);
+			case Memory<Char> other:
+				return Equals(other);
+			case ReadOnlyMemory<Char> other:
+				return Equals(other);
+			default:
+				return false;
+			}
+		}
+
+		/// <summary>
+		/// Determines whether the specified object is equal to the current object.
+		/// </summary>
+		/// <param name="obj">The object to compare with the current object.</param>
+		/// <param name="casing">The casing of the comparison.</param>
+		/// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
+		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
+		public Boolean Equals([AllowNull] Object obj, Case casing) {
+			switch (obj) {
+			case Rope other:
+				return Equals(other, casing);
+			case String other:
+				return Equals(other, casing);
+			case Char[] other:
+				return Equals(other, casing);
+			case Memory<Char> other:
+				return Equals(other, casing);
+			case ReadOnlyMemory<Char> other:
+				return Equals(other, casing);
 			default:
 				return false;
 			}
@@ -321,6 +585,162 @@ namespace Stringier {
 
 		/// <inheritdoc/>
 		public Boolean Equals([AllowNull] Rope other) => Collection.Equals(this, other);
+
+		/// <summary>
+		/// Determines whether the specified object is equal to another object of the same type.
+		/// </summary>
+		/// <param name="other">The object to compare with this object.</param>
+		/// <param name="casing">The casing of the comparison.</param>
+		/// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
+		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
+		public Boolean Equals([AllowNull] Rope other, Case casing) => throw new NotImplementedException();
+
+		/// <summary>
+		/// Determines whether the specified object is equal to the current object.
+		/// </summary>
+		/// <param name="other">The object to compare with the current object.</param>
+		/// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
+		public Boolean Equals([AllowNull] String other) => Equals(other.AsSpan());
+
+		/// <summary>
+		/// Determines whether the specified object is equal to the current object.
+		/// </summary>
+		/// <param name="other">The object to compare with the current object.</param>
+		/// <param name="casing">The casing of the comparison.</param>
+		/// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
+		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
+		public Boolean Equals([AllowNull] String other, Case casing) => Equals(other.AsSpan(), casing);
+
+		/// <summary>
+		/// Determines whether the specified object is equal to the current object.
+		/// </summary>
+		/// <param name="other">The object to compare with the current object.</param>
+		/// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
+		public Boolean Equals([AllowNull] Char[] other) => Equals(other.AsSpan());
+
+		/// <summary>
+		/// Determines whether the specified object is equal to the current object.
+		/// </summary>
+		/// <param name="other">The object to compare with the current object.</param>
+		/// <param name="casing">The casing of the comparison.</param>
+		/// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
+		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
+		public Boolean Equals([AllowNull] Char[] other, Case casing) => Equals(other.AsSpan(), casing);
+
+		/// <summary>
+		/// Determines whether the specified object is equal to the current object.
+		/// </summary>
+		/// <param name="other">The object to compare with the current object.</param>
+		/// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
+		public Boolean Equals(Memory<Char> other) => Equals(other.Span);
+
+		/// <summary>
+		/// Determines whether the specified object is equal to the current object.
+		/// </summary>
+		/// <param name="other">The object to compare with the current object.</param>
+		/// <param name="casing">The casing of the comparison.</param>
+		/// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
+		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
+		public Boolean Equals(Memory<Char> other, Case casing) => Equals(other.Span, casing);
+
+		/// <summary>
+		/// Determines whether the specified object is equal to the current object.
+		/// </summary>
+		/// <param name="other">The object to compare with the current object.</param>
+		/// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
+		public Boolean Equals(ReadOnlyMemory<Char> other) => Equals(other.Span);
+
+		/// <summary>
+		/// Determines whether the specified object is equal to the current object.
+		/// </summary>
+		/// <param name="other">The object to compare with the current object.</param>
+		/// <param name="casing">The casing of the comparison.</param>
+		/// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
+		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
+		public Boolean Equals(ReadOnlyMemory<Char> other, Case casing) => Equals(other.Span, casing);
+
+		/// <summary>
+		/// Determines whether the specified object is equal to the current object.
+		/// </summary>
+		/// <param name="other">The object to compare with the current object.</param>
+		/// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
+		public Boolean Equals(Span<Char> other) => Equals((ReadOnlySpan<Char>)other);
+
+		/// <summary>
+		/// Determines whether the specified object is equal to the current object.
+		/// </summary>
+		/// <param name="other">The object to compare with the current object.</param>
+		/// <param name="casing">The casing of the comparison.</param>
+		/// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
+		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
+		public Boolean Equals(Span<Char> other, Case casing) => Equals((ReadOnlySpan<Char>)other, casing);
+
+		/// <summary>
+		/// Determines whether the specified object is equal to the current object.
+		/// </summary>
+		/// <param name="other">The object to compare with the current object.</param>
+		/// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
+		public Boolean Equals(ReadOnlySpan<Char> other) {
+			if (Count != other.Length) return false;
+			Int32 i = 0;
+			foreach (Char item in this) {
+				if (!item.Equals(other[i++])) {
+					return false;
+				}
+			}
+			return true;
+		}
+
+		/// <summary>
+		/// Determines whether the specified object is equal to the current object.
+		/// </summary>
+		/// <param name="other">The object to compare with the current object.</param>
+		/// <param name="casing">The casing of the comparison.</param>
+		/// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
+		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
+		public Boolean Equals(ReadOnlySpan<Char> other, Case casing) {
+			if (Count != other.Length) return false;
+			Int32 i = 0;
+			switch (casing) {
+			case Case.Insensitive:
+				foreach (Char item in this) {
+					if (!Char.ToUpper(item).Equals(Char.ToUpper(other[i++]))) {
+						return false;
+					}
+				}
+				break;
+			case Case.Sensitive:
+				foreach (Char item in this) {
+					if (!item.Equals(other[i++])) {
+						return false;
+					}
+				}
+				break;
+			default:
+				throw new ArgumentException();
+			}
+			return true;
+		}
+
+		/// <summary>
+		/// Determines whether the specified object is equal to the current object.
+		/// </summary>
+		/// <param name="other">A pointer to the object to compare with the current object.</param>
+		/// <param name="length">The length of the <paramref name="other"/>.</param>
+		/// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
+		[CLSCompliant(false)]
+		public unsafe Boolean Equals([AllowNull] Char* other, Int32 length) => Equals(new ReadOnlySpan<Char>(other, length));
+
+		/// <summary>
+		/// Determines whether the specified object is equal to the current object.
+		/// </summary>
+		/// <param name="other">A pointer to the object to compare with the current object.</param>
+		/// <param name="length">The length of the <paramref name="other"/>.</param>
+		/// <param name="casing">The casing of the comparison.</param>
+		/// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
+		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
+		[CLSCompliant(false)]
+		public unsafe Boolean Equals([AllowNull] Char* other, Int32 length, Case casing) => Equals(new ReadOnlySpan<Char>(other, length), casing);
 
 		/// <inheritdoc/>
 		public Enumerator GetEnumerator() => new Enumerator(this);

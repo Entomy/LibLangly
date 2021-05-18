@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard1.3</TargetFramework>
+		<LangVersion>9.0</LangVersion>
+		<Nullable>enable</Nullable>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<Description>Provides various extensions to make strings better... Stringier.</Description>
+		<PackageTags>string, strings, text, text processing, text manipulation</PackageTags>
+		<AssemblyName>Stringier.Text</AssemblyName>
+		<PackageIcon>Logo.png</PackageIcon>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Include="..\GlobalSuppressions.cs" Link="GlobalSuppressions.cs" />
+		<None Include="Logo.png" Pack="true" Visible="true" PackagePath="\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="System.Memory" Version="4.5.4" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Stringier.Categories\Stringier.Categories.csproj" />
+	  <ProjectReference Include="..\Stringier.Rope\Stringier.Rope.csproj" />
+	</ItemGroup>
+
+</Project>
