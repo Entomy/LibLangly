@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard1.3</TargetFramework>
+		<LangVersion>9.0</LangVersion>
+		<Nullable>enable</Nullable>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<Description>Provides support for pattern matching based parsing.</Description>
+    <PackageTags>string, pattern, patterns, pattern matching, parser, parsers, parser combinator, combinator</PackageTags>
+		<AssemblyName>Stringier.Patterns</AssemblyName>
+		<PackageIcon>Logo.png</PackageIcon>
+		<RootNamespace>Stringier</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Include="..\GlobalSuppressions.cs" Link="GlobalSuppressions.cs" />
+		<None Include="Logo.png" Pack="true" Visible="true" PackagePath="\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="System.Memory" Version="4.5.4" />
+		<PackageReference Include="System.ValueTuple" Version="4.5.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Philosoft.NullableAttributes\Philosoft.NullableAttributes.csproj" />
+	  <ProjectReference Include="..\Stringier.Case\Stringier.Case.csproj" />
+	  <ProjectReference Include="..\Stringier.Rune\Stringier.Rune.csproj" />
+	  <ProjectReference Include="..\Stringier.Text\Stringier.Text.csproj" />
+	</ItemGroup>
+
+</Project>
