@@ -241,7 +241,7 @@ namespace Langly {
 		[InlineData(new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 1, 2 }, new Int32[] { 3, 4, 5 })]
 		public void Postpend_Memory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
 			DynamicArray<Int32> array = initial;
-			array.Postpend(elements);
+			array.Postpend(elements.AsMemory());
 			Assert.Equal(expected, array);
 		}
 

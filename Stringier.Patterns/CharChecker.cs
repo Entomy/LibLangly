@@ -20,12 +20,12 @@ namespace Stringier {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public override Pattern Or([AllowNull] Pattern right) {
-			switch (right) {
+		public override Pattern Or([AllowNull] Pattern other) {
+			switch (other) {
 			case CharChecker checker:
 				return new AlternateCharChecker(Check, checker.Check);
 			default:
-				return base.Or(right);
+				return base.Or(other);
 			}
 		}
 
