@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard1.3</TargetFramework>
+		<LangVersion>9.0</LangVersion>
+		<Nullable>enable</Nullable>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<Description>Provides queues, including the standard queue, a type of FILO data structure.</Description>
+		<PackageTags>collection, collections, container, containers, data structure, data structures, abstract data type, abstract data types, adt, trait, traits, queue, queues, filo, fi-lo</PackageTags>
+		<AssemblyName>Collection.Queues</AssemblyName>
+		<RootNamespace>Collectathon.Queues</RootNamespace>
+		<PackageIcon>Logo.png</PackageIcon>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Include="..\GlobalSuppressions.cs" Link="GlobalSuppressions.cs" />
+		<None Include="Logo.png" Pack="true" Visible="true" PackagePath="\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Philosoft.Extensions\Philosoft.Extensions.csproj" />
+	</ItemGroup>
+
+	<Import Project="..\Collection\Collection.projitems" Label="Shared" />
+
+</Project>

@@ -30,6 +30,7 @@ namespace Collectathon.Stacks {
 			/// <summary>
 			/// Initializes a new <see cref="Enumerator"/>.
 			/// </summary>
+			/// <param name="stack">The stack to enumerate.</param>
 			public Enumerator([DisallowNull] Stack<TElement> stack) {
 				Stack = stack;
 				N = null;
@@ -72,9 +73,7 @@ namespace Collectathon.Stacks {
 			}
 
 			/// <inheritdoc/>
-			public void Reset() {
-				N = null;
-			}
+			public void Reset() => N = null;
 
 			/// <inheritdoc/>
 			[return: NotNull]

@@ -47,7 +47,7 @@ namespace Collectathon.Stacks {
 		public Boolean Writable => true;
 
 		/// <inheritdoc/>
-		void IAdd<TElement>.Add([AllowNull] TElement element) => Write(element);
+		public void Add([AllowNull] TElement element) => Push(element);
 
 		/// <inheritdoc/>
 		public void Clear() {
@@ -73,12 +73,38 @@ namespace Collectathon.Stacks {
 		System.Collections.Generic.IEnumerator<TElement> System.Collections.Generic.IEnumerable<TElement>.GetEnumerator() => GetEnumerator();
 
 		/// <inheritdoc/>
-		public void Peek([AllowNull, MaybeNull] out TElement element) {
+		public void Peek([AllowNull, MaybeNull] out TElement element) => element = Peek();
+
+		/// <summary>
+		/// Peeks at the top element of this <see cref="Stack{TElement}"/>.
+		/// </summary>
+		/// <returns>The top element.</returns>
+		[return: NotNull]
+		public TElement Peek() {
 			if (Head is not null) {
-				element = Head.Element;
+				return Head.Element;
 			} else {
 				throw new InvalidOperationException();
 			}
+		}
+
+		/// <summary>
+		/// Pops the top element off this <see cref="Stack{TElement}"/>.
+		/// </summary>
+		/// <returns>The top element.</returns>
+		[return: MaybeNull]
+		public TElement Pop() {
+			Read(out TElement? element);
+			return element;
+		}
+
+		/// <summary>
+		/// Pushes the <paramref name="element"/> onto this <see cref="Stack{TElement}"/>.
+		/// </summary>
+		/// <param name="element">The element to push.</param>
+		public void Push([AllowNull] TElement element) {
+			Head = new Node(element, next: Head);
+			Count++;
 		}
 
 		/// <inheritdoc/>
@@ -103,9 +129,6 @@ namespace Collectathon.Stacks {
 		public String ToString(nint amount) => Collection.ToString(this, amount);
 
 		/// <inheritdoc/>
-		public void Write([AllowNull] TElement element) {
-			Head = new Node(element, next: Head);
-			Count++;
-		}
+		public void Write([AllowNull] TElement element) => Push(element);
 	}
 }
