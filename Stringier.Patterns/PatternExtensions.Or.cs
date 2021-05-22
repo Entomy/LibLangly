@@ -2,7 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
-namespace Stringier {
+namespace Stringier.Patterns {
 	public static partial class PatternExtensions {
 		/// <summary>
 		/// Declares <paramref name="other"/> to be an alternate of this <see cref="Pattern"/>.

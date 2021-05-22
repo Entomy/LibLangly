@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace Stringier {
+namespace Stringier.Patterns {
 	public partial class Pattern {
 		/// <summary>
 		/// Create a pattern representing the range from this <see cref="Pattern"/> until <paramref name="to"/>.

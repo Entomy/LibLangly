@@ -1,4 +1,4 @@
-﻿namespace Stringier {
+﻿namespace Stringier.Patterns {
 	/// <summary>
 	/// Represents any possible primative, the simplest components of a <see cref="Pattern"/>.
 	/// </summary>

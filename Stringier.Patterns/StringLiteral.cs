@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Stringier {
+namespace Stringier.Patterns {
 	/// <summary>	
 	/// Represents a string literal pattern, a pattern matching this exact string.
 	/// </summary>

@@ -1,4 +1,4 @@
-﻿namespace Stringier {
+﻿namespace Stringier.Patterns {
 	/// <summary>
 	/// Represents any possible checker, a <see cref="Pattern"/> <see cref="Pattern"/> which uses a generic function to describe the pattern, instead of literals.
 	/// </summary>

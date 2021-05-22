@@ -1,4 +1,4 @@
-﻿namespace Stringier {
+﻿namespace Stringier.Patterns {
 	/// <summary>
 	/// Represents a combinator, the combination of two or more <see cref="Pattern"/>s.
 	/// </summary>

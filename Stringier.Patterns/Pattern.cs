@@ -2,11 +2,26 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
-namespace Stringier {
+namespace Stringier.Patterns {
 	/// <summary>
 	/// Represents a textual pattern.
 	/// </summary>
 	public abstract partial class Pattern {
+		/// <summary>
+		/// Check for the end of the line.
+		/// </summary>
+		/// <remarks>
+		/// This checks for various OS line endings, properly handling Windows convention, not just single UNICODE line terminators.
+		/// </remarks>
+		[NotNull, DisallowNull]
+		public static readonly Pattern EndOfLine = new LineEndChecker();
+
+		/// <summary>
+		/// Check for the end of the source.
+		/// </summary>
+		[NotNull, DisallowNull]
+		public static readonly Pattern EndOfSource = new SourceEndChecker();
+
 		/// <summary>
 		/// Initialize a new <see cref="Pattern"/>.
 		/// </summary>
@@ -57,30 +72,15 @@ namespace Stringier {
 		/// <summary>
 		/// Converts to a <see cref="Pattern"/> matching exactly the <paramref name="capture"/>.
 		/// </summary>
-		/// <param name="capture">The <see cref="Stringier.Capture"/> to match.</param>
+		/// <param name="capture">The <see cref="Stringier.Patterns.Capture"/> to match.</param>
 		[return: MaybeNull, NotNullIfNotNull("capture")]
 		public static implicit operator Pattern([AllowNull] Capture capture) => capture is not null ? new CaptureLiteral(capture) : null;
 
 		/// <summary>
 		/// Converts to a <see cref="Pattern"/> matching exactly the <paramref name="capture"/>.
 		/// </summary>
-		/// <param name="capture">A <see cref="ValueTuple{T1, T2}"/> of <see cref="Stringier.Capture"/> to match and <see cref="Case"/> comparison.</param>
+		/// <param name="capture">A <see cref="ValueTuple{T1, T2}"/> of <see cref="Stringier.Patterns.Capture"/> to match and <see cref="Case"/> comparison.</param>
 		[return: NotNull]
 		public static implicit operator Pattern((Capture, Case) capture) => new CaptureLiteral(capture.Item1, capture.Item2);
-
-		/// <summary>
-		/// Check for the end of the source.
-		/// </summary>
-		[NotNull, DisallowNull]
-		public static readonly Pattern EndOfSource = new SourceEndChecker();
-
-		/// <summary>
-		/// Check for the end of the line.
-		/// </summary>
-		/// <remarks>
-		/// This checks for various OS line endings, properly handling Windows convention, not just single UNICODE line terminators.
-		/// </remarks>
-		[NotNull, DisallowNull]
-		public static readonly Pattern EndOfLine = new LineEndChecker();
 	}
 }

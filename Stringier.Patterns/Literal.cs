@@ -2,7 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
-namespace Stringier {
+namespace Stringier.Patterns {
 	/// <summary>
 	/// Represents any possible literal, a <see cref="Pattern"/> representing exactly itself.
 	/// </summary>

@@ -2,7 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
-namespace Stringier {
+namespace Stringier.Patterns {
 	public partial class Pattern {
 		/// <summary>
 		/// Declares the <paramref name="patterns"/> to be alternates of each other; one of them will match.

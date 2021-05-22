@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
-namespace Stringier {
+namespace Stringier.Patterns {
 	/// <summary>
 	/// Represents a rune literal, a pattern matching this exact rune.
 	/// </summary>

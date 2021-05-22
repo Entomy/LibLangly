@@ -1,4 +1,4 @@
-﻿namespace Stringier {
+﻿namespace Stringier.Patterns {
 	/// <summary>
 	/// Represents a modifier, a <see cref="Pattern"/> which modifies other <see cref="Pattern"/>s.
 	/// </summary>

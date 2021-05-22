@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace Stringier {
+namespace Stringier.Patterns {
 	/// <summary>
 	/// Represents the concatenation of two <see cref="Pattern"/>. That is, one <see cref="Pattern"/> directly after another.
 	/// </summary>

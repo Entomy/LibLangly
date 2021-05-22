@@ -2,7 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
-namespace Stringier {
+namespace Stringier.Patterns {
 	/// <summary>
 	/// Represents the alternation of more than two <see cref="Pattern"/>. That is, one of many <see cref="Pattern"/>.
 	/// </summary>

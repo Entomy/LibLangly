@@ -2,7 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
-namespace Stringier {
+namespace Stringier.Patterns {
 	public static partial class PatternExtensions {
 		/// <summary>
 		/// Marks this <see cref="Pattern"/> as repeating <paramref name="count"/> times.

@@ -2,7 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
-namespace Stringier {
+namespace Stringier.Patterns {
 	public static partial class PatternExtensions {
 		/// <summary>
 		/// Create a pattern representing the range from this <see cref="Pattern"/> until <paramref name="to"/>.

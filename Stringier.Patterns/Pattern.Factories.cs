@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Stringier {
+namespace Stringier.Patterns {
 	public partial class Pattern {
 		/// <summary>
 		/// Creates a pattern representing a line comment introduced by the <paramref name="from"/> and ended by the <paramref name="to"/> delimiters.

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Stringier {
+namespace Stringier.Patterns {
 	public partial class PatternExtensions {
 		/// <summary>
 		/// Marks this <see cref="String"/> as fuzzy.

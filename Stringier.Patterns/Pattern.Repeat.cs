@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Stringier {
+namespace Stringier.Patterns {
 	public partial class Pattern {
 		/// <summary>
 		/// Marks the <paramref name="pattern"/> as repeating <paramref name="count"/> times.

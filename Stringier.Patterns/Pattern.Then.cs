@@ -2,7 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
-namespace Stringier {
+namespace Stringier.Patterns {
 	public partial class Pattern {
 		/// <summary>
 		/// Declares <paramref name="right"/> to come after <paramref name="left"/>.

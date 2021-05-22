@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Stringier {
+namespace Stringier.Patterns {
 	/// <summary>
-	/// Represents a <see cref="Stringier.Pattern"/> whos content is optional.
+	/// Represents a <see cref="Stringier.Patterns.Pattern"/> whos content is optional.
 	/// </summary>
 	internal sealed class Optor : Modifier {
 		/// <summary>
-		/// The <see cref="Stringier.Pattern"/> to be parsed.
+		/// The <see cref="Stringier.Patterns.Pattern"/> to be parsed.
 		/// </summary>
 		[DisallowNull, NotNull]
 		private readonly Pattern Pattern;
@@ -15,7 +15,7 @@ namespace Stringier {
 		/// <summary>
 		/// Intialize a new <see cref="Optor"/> from the given <paramref name="pattern"/>.
 		/// </summary>
-		/// <param name="pattern">The <see cref="Stringier.Pattern"/> to be parsed.</param>
+		/// <param name="pattern">The <see cref="Stringier.Patterns.Pattern"/> to be parsed.</param>
 		internal Optor([DisallowNull] Pattern pattern) => Pattern = pattern;
 
 		/// <inheritdoc/>

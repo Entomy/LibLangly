@@ -2,7 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
-namespace Stringier {
+namespace Stringier.Patterns {
 	/// <summary>	
 	/// Represents a character literal, a pattern matching this exact character.
 	/// </summary>

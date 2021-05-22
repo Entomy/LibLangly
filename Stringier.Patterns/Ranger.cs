@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Stringier {
+namespace Stringier.Patterns {
 	/// <summary>
 	/// Represents a <see cref="Ranger"/>, a "range" of text between two <see cref="Pattern"/>.
 	/// </summary>
