@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
 namespace Stringier.Patterns {
@@ -29,6 +30,12 @@ namespace Stringier.Patterns {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public override System.String ToString() => Rune.ToString();
+		public override String ToString() => Rune.ToString();
+
+		/// <inheritdoc/>
+		protected override void Consume(ReadOnlyMemory<Char> source, ref Int32 length) => throw new NotImplementedException();
+
+		/// <inheritdoc/>
+		protected override void Neglect(ReadOnlyMemory<Char> source, ref Int32 length) => throw new NotImplementedException();
 	}
 }

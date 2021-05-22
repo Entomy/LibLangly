@@ -10,5 +10,11 @@ namespace Stringier.Patterns {
 		/// Initializes a new <see cref="LineEndChecker"/>.
 		/// </summary>
 		internal LineEndChecker() { }
+
+		/// <inheritdoc/>
+		protected override void Consume(ReadOnlyMemory<Char> source, ref Int32 length) => throw new NotImplementedException();
+
+		/// <inheritdoc/>
+		protected override void Neglect(ReadOnlyMemory<Char> source, ref Int32 length) => throw new NotImplementedException();
 	}
 }

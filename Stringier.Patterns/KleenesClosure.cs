@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Stringier.Patterns {
 	/// <summary>
@@ -16,5 +17,11 @@ namespace Stringier.Patterns {
 		/// </summary>
 		/// <param name="pattern">The <see cref="Stringier.Patterns.Pattern"/> to be parsed.</param>
 		internal KleenesClosure([DisallowNull] Pattern pattern) => Pattern = pattern;
+
+		/// <inheritdoc/>
+		protected override void Consume(ReadOnlyMemory<Char> source, ref Int32 length) => throw new NotImplementedException();
+
+		/// <inheritdoc/>
+		protected override void Neglect(ReadOnlyMemory<Char> source, ref Int32 length) => throw new NotImplementedException();
 	}
 }

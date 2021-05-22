@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Stringier.Patterns {
 	/// <summary>
@@ -9,7 +10,7 @@ namespace Stringier.Patterns {
 	/// </remarks>
 	internal sealed class Negator : Modifier {
 		/// <summary>
-		/// The <see cref="Stringier.Patterns.Pattern"/> to be parsed.
+		/// The <see cref="Patterns.Pattern"/> to be parsed.
 		/// </summary>
 		[DisallowNull, NotNull]
 		private readonly Pattern Pattern;
@@ -23,5 +24,11 @@ namespace Stringier.Patterns {
 		/// <inheritdoc/>
 		[return: NotNull]
 		public override Pattern Not() => Pattern;
+
+		/// <inheritdoc/>
+		protected override void Consume(ReadOnlyMemory<Char> source, ref Int32 length) => throw new NotImplementedException();
+
+		/// <inheritdoc/>
+		protected override void Neglect(ReadOnlyMemory<Char> source, ref Int32 length) => throw new NotImplementedException();
 	}
 }

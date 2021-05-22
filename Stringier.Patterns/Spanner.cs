@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Stringier.Patterns {
 	/// <summary>
@@ -24,5 +25,11 @@ namespace Stringier.Patterns {
 		/// <inheritdoc/>
 		[return: NotNull]
 		public override Pattern Many() => this;
+
+		/// <inheritdoc/>
+		protected override void Consume(ReadOnlyMemory<Char> source, ref Int32 length) => throw new NotImplementedException();
+
+		/// <inheritdoc/>
+		protected override void Neglect(ReadOnlyMemory<Char> source, ref Int32 length) => throw new NotImplementedException();
 	}
 }

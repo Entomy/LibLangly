@@ -134,7 +134,7 @@ namespace Stringier.Patterns {
 			if (Head is not null) {
 				Head = Head.Capture(out capture);
 			} else {
-				capture = new Capture();
+				capture = new CaptureDummy();
 			}
 			return this;
 		}
@@ -241,5 +241,11 @@ namespace Stringier.Patterns {
 			Head = Head?.ToNested(to);
 			return this;
 		}
+
+		/// <inheritdoc/>
+		protected override void Consume(ReadOnlyMemory<Char> source, ref Int32 length) => throw new NotImplementedException();
+
+		/// <inheritdoc/>
+		protected override void Neglect(ReadOnlyMemory<Char> source, ref Int32 length) => throw new NotImplementedException();
 	}
 }

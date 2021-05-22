@@ -4,24 +4,21 @@ using System.Text;
 
 namespace Stringier.Patterns {
 	/// <summary>
-	/// Represents a named capture component
+	/// Represents a parser result or named capture component.
 	/// </summary>
 	/// <remarks>
-	/// This is used primarily in the implementation of backreferences (which are like in [Regex](https://www.regular-expressions.info/backref.html)).
+	/// <para>Any parser result is itself a capture or sequence of captures. The most optimal approach is always taken. For instance, if the source is contiguous memory, the capture will be the entire captured region, but if the source is a stream or other non-contiguous data, the capture will be each individual step of the parse.</para>
+	/// <para>When used as name captures, attempts to reuse the same reference are made, only allocating a new capture if necessary.</para>
+	/// <para>This is used primarily in the implementation of backreferences (which are like in [Regex](https://www.regular-expressions.info/backref.html)).</para>
 	/// </remarks>
-	public sealed class Capture {
+	public abstract class Capture {
 		//! No matter how good of an idea it might seem like, do not add an implicit conversion to String inside this class. Resolution of conversions causes String to be favored over Pattern, in which case StringLiteral's will be formed over CaptureLiteral's, which causes lazy resolution to no longer be done, breaking a bunch of shit.
 		//! Higher performance could probably be acheived by making this a ref struct, however this would severely limit the usability of captures. It's often necessary to make the pattern a static member of a class, and capturing also winds up a static member, which can't be a ref struct.
 
 		/// <summary>
-		/// The captured <see cref="ReadOnlyMemory{T}"/> of <see cref="Char"/>.
-		/// </summary>
-		internal ReadOnlyMemory<Char> Value;
-
-		/// <summary>
 		/// Initialize a new <see cref="Capture"/> object.
 		/// </summary>
-		public Capture() => Value = ReadOnlyMemory<Char>.Empty;
+		protected Capture() { }
 
 		/// <summary>
 		/// Marks this <see cref="Pattern"/> as spanning.
@@ -146,6 +143,6 @@ namespace Stringier.Patterns {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public override String ToString() => $"{Value}";
+		public abstract override String ToString();
 	}
 }

@@ -73,7 +73,7 @@
   
   <h1 id="Stringier_Patterns_Capture" data-uid="Stringier.Patterns.Capture" class="text-break">Class Capture
   </h1>
-  <div class="markdown level0 summary"><p>Represents a named capture component</p>
+  <div class="markdown level0 summary"><p>Represents a parser result or named capture component.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -85,10 +85,12 @@
   <h6><strong>Assembly</strong>: Stringier.Patterns.dll</h6>
   <h5 id="Stringier_Patterns_Capture_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class Capture : object</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class Capture : object</code></pre>
   </div>
   <h5 id="Stringier_Patterns_Capture_remarks"><strong>Remarks</strong></h5>
-  <div class="markdown level0 remarks"><p>This is used primarily in the implementation of backreferences (which are like in <a href="https://www.regular-expressions.info/backref.html">Regex</a>).</p>
+  <div class="markdown level0 remarks"><p>Any parser result is itself a capture or sequence of captures. The most optimal approach is always taken. For instance, if the source is contiguous memory, the capture will be the entire captured region, but if the source is a stream or other non-contiguous data, the capture will be each individual step of the parse.</p>
+<p>When used as name captures, attempts to reuse the same reference are made, only allocating a new capture if necessary.</p>
+<p>This is used primarily in the implementation of backreferences (which are like in [Regex](https://www.regular-expressions.info/backref.html)).</p>
 </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -97,7 +99,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Capture__ctor.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Capture.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Capture.cs/#L24">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Capture.cs/#L21">View Source</a>
   </span>
   <a id="Stringier_Patterns_Capture__ctor_" data-uid="Stringier.Patterns.Capture.#ctor*"></a>
   <h4 id="Stringier_Patterns_Capture__ctor" data-uid="Stringier.Patterns.Capture.#ctor">Capture()</h4>
@@ -106,7 +108,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Capture()</code></pre>
+    <pre><code class="lang-csharp hljs">protected Capture()</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
@@ -115,7 +117,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Capture_Many.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Capture.Many%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Capture.cs/#L30">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Capture.cs/#L27">View Source</a>
   </span>
   <a id="Stringier_Patterns_Capture_Many_" data-uid="Stringier.Patterns.Capture.Many*"></a>
   <h4 id="Stringier_Patterns_Capture_Many" data-uid="Stringier.Patterns.Capture.Many">Many()</h4>
@@ -147,7 +149,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Capture_Maybe.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Capture.Maybe%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Capture.cs/#L37">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Capture.cs/#L34">View Source</a>
   </span>
   <a id="Stringier_Patterns_Capture_Maybe_" data-uid="Stringier.Patterns.Capture.Maybe*"></a>
   <h4 id="Stringier_Patterns_Capture_Maybe" data-uid="Stringier.Patterns.Capture.Maybe">Maybe()</h4>
@@ -179,7 +181,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Capture_Not.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Capture.Not%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Capture.cs/#L44">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Capture.cs/#L41">View Source</a>
   </span>
   <a id="Stringier_Patterns_Capture_Not_" data-uid="Stringier.Patterns.Capture.Not*"></a>
   <h4 id="Stringier_Patterns_Capture_Not" data-uid="Stringier.Patterns.Capture.Not">Not()</h4>
@@ -211,7 +213,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Capture_Or_Char_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Capture.Or(Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Capture.cs/#L60">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Capture.cs/#L57">View Source</a>
   </span>
   <a id="Stringier_Patterns_Capture_Or_" data-uid="Stringier.Patterns.Capture.Or*"></a>
   <h4 id="Stringier_Patterns_Capture_Or_Char_" data-uid="Stringier.Patterns.Capture.Or(Char)">Or(Char)</h4>
@@ -261,7 +263,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Capture_Or_String_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Capture.Or(String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Capture.cs/#L76">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Capture.cs/#L73">View Source</a>
   </span>
   <a id="Stringier_Patterns_Capture_Or_" data-uid="Stringier.Patterns.Capture.Or*"></a>
   <h4 id="Stringier_Patterns_Capture_Or_String_" data-uid="Stringier.Patterns.Capture.Or(String)">Or(String)</h4>
@@ -311,7 +313,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Capture_Or_Stringier_Patterns_Pattern_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Capture.Or(Stringier.Patterns.Pattern)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Capture.cs/#L52">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Capture.cs/#L49">View Source</a>
   </span>
   <a id="Stringier_Patterns_Capture_Or_" data-uid="Stringier.Patterns.Capture.Or*"></a>
   <h4 id="Stringier_Patterns_Capture_Or_Stringier_Patterns_Pattern_" data-uid="Stringier.Patterns.Capture.Or(Stringier.Patterns.Pattern)">Or(Pattern)</h4>
@@ -361,7 +363,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Capture_Or_System_Text_Rune_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Capture.Or(System.Text.Rune)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Capture.cs/#L68">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Capture.cs/#L65">View Source</a>
   </span>
   <a id="Stringier_Patterns_Capture_Or_" data-uid="Stringier.Patterns.Capture.Or*"></a>
   <h4 id="Stringier_Patterns_Capture_Or_System_Text_Rune_" data-uid="Stringier.Patterns.Capture.Or(System.Text.Rune)">Or(Rune)</h4>
@@ -411,7 +413,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Capture_Repeat_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Capture.Repeat(Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Capture.cs/#L84">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Capture.cs/#L81">View Source</a>
   </span>
   <a id="Stringier_Patterns_Capture_Repeat_" data-uid="Stringier.Patterns.Capture.Repeat*"></a>
   <h4 id="Stringier_Patterns_Capture_Repeat_Int32_" data-uid="Stringier.Patterns.Capture.Repeat(Int32)">Repeat(Int32)</h4>
@@ -461,7 +463,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Capture_Then_Char_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Capture.Then(Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Capture.cs/#L100">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Capture.cs/#L97">View Source</a>
   </span>
   <a id="Stringier_Patterns_Capture_Then_" data-uid="Stringier.Patterns.Capture.Then*"></a>
   <h4 id="Stringier_Patterns_Capture_Then_Char_" data-uid="Stringier.Patterns.Capture.Then(Char)">Then(Char)</h4>
@@ -511,7 +513,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Capture_Then_String_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Capture.Then(String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Capture.cs/#L116">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Capture.cs/#L113">View Source</a>
   </span>
   <a id="Stringier_Patterns_Capture_Then_" data-uid="Stringier.Patterns.Capture.Then*"></a>
   <h4 id="Stringier_Patterns_Capture_Then_String_" data-uid="Stringier.Patterns.Capture.Then(String)">Then(String)</h4>
@@ -561,7 +563,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Capture_Then_Stringier_Patterns_Pattern_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Capture.Then(Stringier.Patterns.Pattern)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Capture.cs/#L92">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Capture.cs/#L89">View Source</a>
   </span>
   <a id="Stringier_Patterns_Capture_Then_" data-uid="Stringier.Patterns.Capture.Then*"></a>
   <h4 id="Stringier_Patterns_Capture_Then_Stringier_Patterns_Pattern_" data-uid="Stringier.Patterns.Capture.Then(Stringier.Patterns.Pattern)">Then(Pattern)</h4>
@@ -611,7 +613,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Capture_Then_System_Text_Rune_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Capture.Then(System.Text.Rune)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Capture.cs/#L108">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Capture.cs/#L105">View Source</a>
   </span>
   <a id="Stringier_Patterns_Capture_Then_" data-uid="Stringier.Patterns.Capture.Then*"></a>
   <h4 id="Stringier_Patterns_Capture_Then_System_Text_Rune_" data-uid="Stringier.Patterns.Capture.Then(System.Text.Rune)">Then(Rune)</h4>
@@ -661,7 +663,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Capture_To_Stringier_Patterns_Pattern_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Capture.To(Stringier.Patterns.Pattern)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Capture.cs/#L123">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Capture.cs/#L120">View Source</a>
   </span>
   <a id="Stringier_Patterns_Capture_To_" data-uid="Stringier.Patterns.Capture.To*"></a>
   <h4 id="Stringier_Patterns_Capture_To_Stringier_Patterns_Pattern_" data-uid="Stringier.Patterns.Capture.To(Stringier.Patterns.Pattern)">To(Pattern)</h4>
@@ -710,7 +712,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Capture_To_Stringier_Patterns_Pattern_Stringier_Patterns_Pattern_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Capture.To(Stringier.Patterns.Pattern%2CStringier.Patterns.Pattern)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Capture.cs/#L134">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Capture.cs/#L131">View Source</a>
   </span>
   <a id="Stringier_Patterns_Capture_To_" data-uid="Stringier.Patterns.Capture.To*"></a>
   <h4 id="Stringier_Patterns_Capture_To_Stringier_Patterns_Pattern_Stringier_Patterns_Pattern_" data-uid="Stringier.Patterns.Capture.To(Stringier.Patterns.Pattern,Stringier.Patterns.Pattern)">To(Pattern, Pattern)</h4>
@@ -768,7 +770,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Capture_ToNested_Stringier_Patterns_Pattern_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Capture.ToNested(Stringier.Patterns.Pattern)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Capture.cs/#L144">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Capture.cs/#L141">View Source</a>
   </span>
   <a id="Stringier_Patterns_Capture_ToNested_" data-uid="Stringier.Patterns.Capture.ToNested*"></a>
   <h4 id="Stringier_Patterns_Capture_ToNested_Stringier_Patterns_Pattern_" data-uid="Stringier.Patterns.Capture.ToNested(Stringier.Patterns.Pattern)">ToNested(Pattern)</h4>
@@ -820,7 +822,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Capture_ToString.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Capture.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Capture.cs/#L148">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Capture.cs/#L145">View Source</a>
   </span>
   <a id="Stringier_Patterns_Capture_ToString_" data-uid="Stringier.Patterns.Capture.ToString*"></a>
   <h4 id="Stringier_Patterns_Capture_ToString" data-uid="Stringier.Patterns.Capture.ToString">ToString()</h4>
@@ -828,7 +830,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override String ToString()</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract override String ToString()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -856,7 +858,7 @@
                     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Capture.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Capture%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Capture.cs/#L12" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Capture.cs/#L14" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
