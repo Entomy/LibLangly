@@ -44,6 +44,7 @@ namespace Collectathon.Queues {
 
 		/// <inheritdoc/>
 		public Boolean Writable => true;
+
 		/// <inheritdoc/>
 		public void Add([AllowNull] TElement element) => Enqueue(element);
 

@@ -1,5 +1,7 @@
 ﻿//!! Do NOT add IComparable to this, even though that's correct. It was mistakenly forgotten from the earlier Rune implementations
 
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+
 #if NETSTANDARD1_3
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
