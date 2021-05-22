@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if NET5_0_OR_GREATER
+using System;
 using System.Diagnostics.CodeAnalysis;
 
 namespace Stringier.Patterns {
@@ -14,3 +15,4 @@ namespace Stringier.Patterns {
 		public override String ToString() => String.Empty;
 	}
 }
+#endif

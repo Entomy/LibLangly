@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if NET5_0_OR_GREATER
+using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
@@ -249,3 +250,4 @@ namespace Stringier.Patterns {
 		protected override void Neglect(ReadOnlyMemory<Char> source, ref Int32 length) => throw new NotImplementedException();
 	}
 }
+#endif
