@@ -67,14 +67,14 @@ namespace Stringier.Patterns {
 		/// <summary>
 		/// Converts to a <see cref="MutablePattern"/> matching exactly the <paramref name="capture"/>.
 		/// </summary>
-		/// <param name="capture">The <see cref="Stringier.Capture"/> to match.</param>
+		/// <param name="capture">The <see cref="Patterns.Capture"/> to match.</param>
 		[return: NotNull]
 		public static implicit operator MutablePattern([AllowNull] Capture capture) => new MutablePattern { Head = capture };
 
 		/// <summary>
 		/// Converts to a <see cref="MutablePattern"/> matching exactly the <paramref name="capture"/>.
 		/// </summary>
-		/// <param name="capture">A <see cref="ValueTuple{T1, T2}"/> of <see cref="Stringier.Capture"/> to match and <see cref="Case"/> comparison.</param>
+		/// <param name="capture">A <see cref="ValueTuple{T1, T2}"/> of <see cref="Patterns.Capture"/> to match and <see cref="Case"/> comparison.</param>
 		[return: NotNull]
 		public static implicit operator MutablePattern((Capture, Case) capture) => new MutablePattern { Head = capture };
 
@@ -244,10 +244,10 @@ namespace Stringier.Patterns {
 		}
 
 		/// <inheritdoc/>
-		protected override void Consume(ReadOnlyMemory<Char> source, ref Int32 length) => throw new NotImplementedException();
+		protected internal override void Consume(ReadOnlyMemory<Char> source, ref Int32 length) => Head?.Consume(source, ref length);
 
 		/// <inheritdoc/>
-		protected override void Neglect(ReadOnlyMemory<Char> source, ref Int32 length) => throw new NotImplementedException();
+		protected internal override void Neglect(ReadOnlyMemory<Char> source, ref Int32 length) => Head?.Neglect(source, ref length);
 	}
 }
 #endif

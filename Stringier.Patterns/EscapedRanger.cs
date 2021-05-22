@@ -21,5 +21,11 @@ namespace Stringier.Patterns {
 		/// <param name="to">The <see cref="Pattern"/> to read to.</param>
 		/// <param name="escape">The <see cref="Pattern"/> representing the escape sequence.</param>
 		internal EscapedRanger([DisallowNull] Pattern from, [DisallowNull] Pattern to, [DisallowNull] Pattern escape) : base(from, to) => Escape = escape;
+
+		/// <inheritdoc/>
+		protected internal override void Consume(ReadOnlyMemory<Char> source, ref Int32 length) => throw new NotImplementedException();
+
+		/// <inheritdoc/>
+		protected internal override void Neglect(ReadOnlyMemory<Char> source, ref Int32 length) => throw new NotImplementedException();
 	}
 }

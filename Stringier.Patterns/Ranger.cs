@@ -33,9 +33,9 @@ namespace Stringier.Patterns {
 		public override Pattern Not() => throw new InvalidOperationException("Ranges can not be negated, as there is no valid concept to describe this behavior");
 
 		/// <inheritdoc/>
-		protected override void Consume(ReadOnlyMemory<Char> source, ref Int32 length) => throw new NotImplementedException();
+		protected internal override void Consume(ReadOnlyMemory<Char> source, ref Int32 length) => throw new NotImplementedException();
 
 		/// <inheritdoc/>
-		protected override void Neglect(ReadOnlyMemory<Char> source, ref Int32 length) => throw new NotImplementedException();
+		protected internal override void Neglect(ReadOnlyMemory<Char> source, ref Int32 length) => throw new NotImplementedException();
 	}
 }

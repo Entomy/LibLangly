@@ -166,13 +166,13 @@ namespace Stringier.Patterns {
 		/// </summary>
 		/// <param name="source">The source to parse.</param>
 		/// <param name="length">The length of the captured text.</param>
-		protected abstract void Consume(ReadOnlyMemory<Char> source, ref Int32 length);
+		protected internal abstract void Consume(ReadOnlyMemory<Char> source, ref Int32 length);
 
 		/// <summary>
 		/// Calls the neglect parser for this <see cref="Pattern"/> on the <paramref name="source"/>.
 		/// </summary>
 		/// <param name="source">The source to parse.</param>
 		/// <param name="length">The length of the captured text.</param>
-		protected abstract void Neglect(ReadOnlyMemory<Char> source, ref Int32 length);
+		protected internal abstract void Neglect(ReadOnlyMemory<Char> source, ref Int32 length);
 	}
 }

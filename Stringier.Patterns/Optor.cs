@@ -27,9 +27,9 @@ namespace Stringier.Patterns {
 		public override Pattern Many() => throw new InvalidOperationException("Options can not span, as it creates an infinite loop. You probably want to make a span optional instead.");
 
 		/// <inheritdoc/>
-		protected override void Consume(ReadOnlyMemory<Char> source, ref Int32 length) => throw new NotImplementedException();
+		protected internal override void Consume(ReadOnlyMemory<Char> source, ref Int32 length) => throw new NotImplementedException();
 
 		/// <inheritdoc/>
-		protected override void Neglect(ReadOnlyMemory<Char> source, ref Int32 length) => throw new NotImplementedException();
+		protected internal override void Neglect(ReadOnlyMemory<Char> source, ref Int32 length) => throw new NotImplementedException();
 	}
 }

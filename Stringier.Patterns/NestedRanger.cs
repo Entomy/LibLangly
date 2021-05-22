@@ -17,5 +17,11 @@ namespace Stringier.Patterns {
 		/// <param name="from">The <see cref="Pattern"/> to start from.</param>
 		/// <param name="to">The <see cref="Pattern"/> to read to.</param>
 		internal NestedRanger([DisallowNull] Pattern from, [DisallowNull] Pattern to) : base(from, to) => Level = 0;
+
+		/// <inheritdoc/>
+		protected internal override void Consume(ReadOnlyMemory<Char> source, ref Int32 length) => throw new NotImplementedException();
+
+		/// <inheritdoc/>
+		protected internal override void Neglect(ReadOnlyMemory<Char> source, ref Int32 length) => throw new NotImplementedException();
 	}
 }

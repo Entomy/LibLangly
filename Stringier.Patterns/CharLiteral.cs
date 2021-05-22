@@ -37,9 +37,9 @@ namespace Stringier.Patterns {
 		public override String ToString() => Char.ToString();
 
 		/// <inheritdoc/>
-		protected override void Consume(ReadOnlyMemory<Char> source, ref Int32 length) => throw new NotImplementedException();
+		protected internal override void Consume(ReadOnlyMemory<Char> source, ref Int32 length) => throw new NotImplementedException();
 
 		/// <inheritdoc/>
-		protected override void Neglect(ReadOnlyMemory<Char> source, ref Int32 length) => throw new NotImplementedException();
+		protected internal override void Neglect(ReadOnlyMemory<Char> source, ref Int32 length) => throw new NotImplementedException();
 	}
 }
