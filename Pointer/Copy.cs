@@ -13,7 +13,7 @@ namespace Langly {
 		/// <exception cref="ArgumentOutOfRangeException"><paramref name="length"/> is less than zero.</exception>
 		public static unsafe void Copy<T>([AllowNull] T* source, Int32 length, [AllowNull] T[] destination) where T : unmanaged {
 			if (destination is null) {
-				throw new ArgumentNullException();
+				throw new ArgumentNullException(nameof(destination), "The destination is null.");
 			} else {
 				Copy(source, length, destination.AsSpan());
 			}
@@ -37,7 +37,7 @@ namespace Langly {
 		/// <exception cref="ArgumentOutOfRangeException"><paramref name="length"/> is less than zero.</exception>
 		public static unsafe void Copy<T>([AllowNull] T* source, Int32 length, Span<T> destination) where T : unmanaged {
 			if (length < 0) {
-				throw new ArgumentOutOfRangeException();
+				throw new ArgumentOutOfRangeException(nameof(length), "Length is less than zero.");
 			} else if (source is not null) {
 				for (Int32 i = 0; i < length; i++) {
 					destination[i] = source[i];
@@ -55,7 +55,7 @@ namespace Langly {
 		/// <exception cref="ArgumentOutOfRangeException"><paramref name="length"/> is less than zero.</exception>
 		public static unsafe void Copy<T>([AllowNull] T* source, [DisallowNull] T* destination, Int32 length) where T : unmanaged {
 			if (destination is null) {
-				throw new ArgumentNullException();
+				throw new ArgumentNullException(nameof(destination), "Destination is null.");
 			} else {
 				Copy(source, length, new Span<T>(destination, length));
 			}

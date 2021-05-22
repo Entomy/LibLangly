@@ -40,25 +40,21 @@ namespace Collectathon.Lists {
 		public sealed override TElement this[nint index] {
 			get {
 				TNode? N = Head;
-				nint i = 0;
-				while (N is not null) {
+				for (nint i = 0; N is not null; i++) {
 					if (i == index) {
 						return N.Element;
 					}
 					N = N.Next;
-					i++;
 				}
 				throw new IndexOutOfRangeException();
 			}
 			set {
 				TNode? N = Head;
-				nint i = 0;
-				while (N is not null) {
+				for (nint i = 0; N is not null; i++) {
 					if (i == index) {
 						N.Element = value;
 					}
 					N = N.Next;
-					i++;
 				}
 				throw new IndexOutOfRangeException();
 			}

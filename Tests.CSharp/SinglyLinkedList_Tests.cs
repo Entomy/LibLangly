@@ -162,7 +162,7 @@ namespace Langly {
 		[InlineData(new Int32[] { 1, 2, 3, 4, 5, 0, 0 }, new Int32[] { 1, 2, 3, 4, 5 }, 5, new Int32[] { 0, 0 })]
 		public void Insert_ReadOnlyMemory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 index, [DisallowNull] Int32[] elements) {
 			SinglyLinkedList<Int32> list = initial;
-			list.Insert(index, elements);
+			list.Insert(index, (ReadOnlyMemory<Int32>)elements.AsMemory());
 			Assert.Equal<Int32>(expected, list);
 		}
 
@@ -236,7 +236,7 @@ namespace Langly {
 		[InlineData(new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 1, 2 }, new Int32[] { 3, 4, 5 })]
 		public void Postpend_Memory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
 			SinglyLinkedList<Int32> list = initial;
-			list.Postpend(elements);
+			list.Postpend(elements.AsMemory());
 			Assert.Equal<Int32>(expected, list);
 		}
 

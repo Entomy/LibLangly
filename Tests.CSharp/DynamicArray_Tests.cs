@@ -167,7 +167,7 @@ namespace Langly {
 		[InlineData(new Int32[] { 1, 2, 3, 4, 5, 0, 0 }, new Int32[] { 1, 2, 3, 4, 5 }, 5, new Int32[] { 0, 0 })]
 		public void Insert_ReadOnlyMemory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 index, [DisallowNull] Int32[] elements) {
 			DynamicArray<Int32> array = initial;
-			array.Insert(index, elements);
+			array.Insert(index, (ReadOnlyMemory<Int32>)elements.AsMemory());
 			Assert.Equal(expected, array);
 		}
 

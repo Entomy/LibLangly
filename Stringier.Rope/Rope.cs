@@ -697,7 +697,7 @@ namespace Stringier {
 		/// <param name="other">The object to compare with the current object.</param>
 		/// <param name="casing">The casing of the comparison.</param>
 		/// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
-		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
+		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a valid <see cref="Case"/> value.</exception>
 		public Boolean Equals(ReadOnlySpan<Char> other, Case casing) {
 			if (Count != other.Length) return false;
 			Int32 i = 0;
@@ -717,7 +717,7 @@ namespace Stringier {
 				}
 				break;
 			default:
-				throw new ArgumentException();
+				throw new ArgumentException("Casing is not a valid Case value.", nameof(casing));
 			}
 			return true;
 		}

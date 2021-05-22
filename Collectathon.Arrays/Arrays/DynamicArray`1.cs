@@ -32,6 +32,7 @@ namespace Collectathon.Arrays {
 		/// <param name="memory">The <see cref="Array"/> of <typeparamref name="TElement"/> to reuse.</param>
 		public DynamicArray([DisallowNull] TElement[] memory) : base(memory, memory.Length, Filters.None) { }
 
+
 		/// <inheritdoc/>
 		new public nint Capacity {
 			get => base.Capacity;

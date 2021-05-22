@@ -154,7 +154,7 @@ namespace Langly {
 		[InlineData(new Char[] { 'a', 'b', 'c', 'd', 'e', '0', '0' }, new Char[] { 'a', 'b', 'c', 'd', 'e' }, 5, new Char[] { '0', '0' })]
 		public void Insert_ReadOnlyMemory([DisallowNull] Char[] expected, [DisallowNull] Char[] initial, Int32 index, [DisallowNull] Char[] elements) {
 			Rope rope = initial;
-			rope.Insert(index, elements);
+			rope.Insert(index, (ReadOnlyMemory<Char>)elements.AsMemory());
 			Assert.Equal<Char>(expected, rope);
 		}
 

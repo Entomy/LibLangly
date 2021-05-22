@@ -700,6 +700,7 @@ namespace System.Text {
 			return (int)returnValue;
 		}
 
+
 		// returns a negative number on failure
 		private static int ReadRuneFromString(string input, int index) {
 			if (input is null) {

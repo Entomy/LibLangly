@@ -35,7 +35,7 @@ namespace Langly {
 		public void Add_Memory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
 			BoundedArray<Int32> array = initial;
 			if (array.Count + elements.Length <= array.Capacity) {
-				array.Add(elements);
+				array.Add(elements.AsMemory());
 				Assert.Equal(expected, array);
 			} else {
 				Assert.Throws<InvalidOperationException>(() => array.Add(elements));

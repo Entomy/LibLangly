@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using Stringier;
 using Xunit;
 
 namespace Langly {
+	[SuppressMessage("Maintainability", "AV1564:Parameter in public or internal member is of type bool or bool?", Justification = "This is testing, and not public API.")]
 	public class Encoding_Tests {
 		private readonly Numbersome.Random Random = new();
 

@@ -125,6 +125,7 @@ namespace System.Text {
 		/// </remarks>
 		public static Rune GetRuneAt(this Span<Char> input, Int32 index, out Int32 newIndex) => GetRuneAt((ReadOnlySpan<Char>)input, index, out newIndex);
 
+
 		/// <summary>
 		/// Gets the <see cref="Rune"/> which begins at index <paramref name="index"/> in string <paramref name="input"/>.
 		/// </summary>

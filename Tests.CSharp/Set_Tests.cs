@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using Numbersome;
 using Xunit;
 
 namespace Langly {
+	[SuppressMessage("Maintainability", "AV1564:Parameter in public or internal member is of type bool or bool?", Justification = "This is testing, and not public API.")]
 	public class Set_Tests {
 		[Fact]
 		public void Compliment() {
