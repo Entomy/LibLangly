@@ -38,6 +38,48 @@ namespace Langly {
 		}
 
 		[Theory]
+		[InlineData("a", "a", 1, "a")]
+		[InlineData("a", "a", 1, "abc")]
+		[InlineData("b", "a", 1, "bbc")]
+		[InlineData("abc", "abc", 1, "abc")]
+		[InlineData("_bc", "abc", 1, "_bc")]
+		[InlineData("a_c", "abc", 1, "a_c")]
+		[InlineData("ab_", "abc", 1, "ab_")]
+		public unsafe void Fuzzer_Pointer(String expected, String pattern, Int32 maxEdits, String source) {
+			Pattern ptn = pattern.Fuzzy(maxEdits);
+			Int32 i = 0;
+			Capture? capture = null;
+			fixed (Char* src = source) {
+				capture = ptn.Parse(src, source.Length, ref i);
+				Assert.Equal(expected, capture);
+			}
+			Assert.Equal(expected.Length, i);
+		}
+
+		[Theory]
+		[InlineData("a", "a", 1, "a", false)]
+		[InlineData("a", "a", 1, "abc", false)]
+		[InlineData("b", "a", 1, "bbc", false)]
+		[InlineData("abc", "abc", 1, "abc", false)]
+		[InlineData("_bc", "abc", 1, "_bc", false)]
+		[InlineData("a_c", "abc", 1, "a_c", false)]
+		[InlineData("ab_", "abc", 1, "ab_", false)]
+		[InlineData("", "abc", 1, "___", true)]
+		public void Fuzzer_String(String expected, String pattern, Int32 maxEdits, String source, Boolean throws) {
+			Pattern ptn = pattern.Fuzzy(maxEdits);
+			Int32 i = 0;
+			Capture? capture = null;
+			if (!throws) {
+				capture = ptn.Parse(source, ref i);
+				Assert.Equal(expected, capture);
+			} else {
+				_ = Assert.ThrowsAny<Exception>(() => capture = ptn.Parse(source, ref i));
+				Assert.Null(capture);
+			}
+			Assert.Equal(expected.Length, i);
+		}
+
+		[Theory]
 		[InlineData("\u000A", "\u000A")]
 		[InlineData("\u000A\u000D", "\u000A\u000D")]
 		[InlineData("\u000B", "\u000B")]
