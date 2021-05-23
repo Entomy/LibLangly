@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Text;
+using System.Traits;
+using Langly;
 
 namespace Stringier.Patterns {
 	/// <summary>
@@ -8,17 +10,33 @@ namespace Stringier.Patterns {
 	/// </summary>
 	/// <remarks>
 	/// <para>Any parser result is itself a capture or sequence of captures. The most optimal approach is always taken. For instance, if the source is contiguous memory, the capture will be the entire captured region, but if the source is a stream or other non-contiguous data, the capture will be each individual step of the parse.</para>
-	/// <para>When used as name captures, attempts to reuse the same reference are made, only allocating a new capture if necessary.</para>
-	/// <para>This is used primarily in the implementation of backreferences (which are like in [Regex](https://www.regular-expressions.info/backref.html)).</para>
+	/// <para>This is also used in the implementation of backreferences (which are like in [Regex](https://www.regular-expressions.info/backref.html)).</para>
 	/// </remarks>
-	public abstract class Capture {
-		//! No matter how good of an idea it might seem like, do not add an implicit conversion to String inside this class. Resolution of conversions causes String to be favored over Pattern, in which case StringLiteral's will be formed over CaptureLiteral's, which causes lazy resolution to no longer be done, breaking a bunch of shit.
-		//! Higher performance could probably be acheived by making this a ref struct, however this would severely limit the usability of captures. It's often necessary to make the pattern a static member of a class, and capturing also winds up a static member, which can't be a ref struct.
-
+	public abstract class Capture :
+		IIndexReadOnly<nint, Char>,
+		ISequence<Char, IEnumerator<Char>> {
 		/// <summary>
 		/// Initialize a new <see cref="Capture"/> object.
 		/// </summary>
 		protected Capture() { }
+
+		/// <inheritdoc/>
+		public abstract nint Count { get; }
+
+		/// <inheritdoc/>
+		public abstract Char this[[DisallowNull] nint index] { get; }
+
+		/// <inheritdoc/>
+		[return: NotNull]
+		public abstract IEnumerator<Char> GetEnumerator();
+
+		/// <inheritdoc/>
+		[return: NotNull]
+		System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() => GetEnumerator();
+
+		/// <inheritdoc/>
+		[return: NotNull]
+		System.Collections.Generic.IEnumerator<Char> System.Collections.Generic.IEnumerable<Char>.GetEnumerator() => GetEnumerator();
 
 		/// <summary>
 		/// Marks this <see cref="Pattern"/> as spanning.
@@ -143,6 +161,10 @@ namespace Stringier.Patterns {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public abstract override String ToString();
+		public override String ToString() => Collection.ToString(this);
+
+		/// <inheritdoc/>
+		[return: NotNull]
+		public String ToString(nint amount) => Collection.ToString(this, amount);
 	}
 }

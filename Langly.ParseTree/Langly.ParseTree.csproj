@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+		<LangVersion>9.0</LangVersion>
+		<Nullable>enable</Nullable>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<Description>Provides support for pattern matching based parsing.</Description>
+    <PackageTags>parse, parser, syntax, syntax tree, abstract syntax tree, parse tree</PackageTags>
+		<AssemblyName>Langly.ParseTree</AssemblyName>
+		<PackageIcon>Logo.png</PackageIcon>
+		<RootNamespace>Langly</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Include="..\GlobalSuppressions.cs" Link="GlobalSuppressions.cs" />
+		<None Include="Logo.png" Pack="true" Visible="true" PackagePath="\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Stringier.Patterns\Stringier.Patterns.csproj" />
+	</ItemGroup>
+
+</Project>

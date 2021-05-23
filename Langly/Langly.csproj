@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>netstandard1.3;netstandard2.1</TargetFrameworks>
+		<TargetFramework>net5.0</TargetFramework>
 		<Description>Meta-package for the entire LibLangly runtime.</Description>
 		<PackageTags>langly</PackageTags>
 		<AssemblyName>Langly</AssemblyName>
@@ -11,6 +11,10 @@
 	<ItemGroup>
 		<Compile Include="..\GlobalSuppressions.cs" Link="GlobalSuppressions.cs" />
 		<None Include="Logo.png" Pack="true" Visible="true" PackagePath="\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Langly.ParseTree\Langly.ParseTree.csproj" />
 	</ItemGroup>
 
 </Project>

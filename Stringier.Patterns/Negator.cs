@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using System.Traits;
 
 namespace Stringier.Patterns {
 	/// <summary>
@@ -26,9 +27,15 @@ namespace Stringier.Patterns {
 		public override Pattern Not() => Pattern;
 
 		/// <inheritdoc/>
-		protected internal override void Consume(ReadOnlyMemory<Char> source, ref Int32 length) => Pattern.Neglect(source, ref length);
+		protected internal override void Consume(ReadOnlyMemory<Char> source, ref Int32 length, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
+			exception = null;
+			Pattern?.Neglect(source, ref length, out exception, trace);
+		}
 
 		/// <inheritdoc/>
-		protected internal override void Neglect(ReadOnlyMemory<Char> source, ref Int32 length) => Pattern.Consume(source, ref length);
+		protected internal override void Neglect(ReadOnlyMemory<Char> source, ref Int32 length, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
+			exception = null;
+			Pattern?.Consume(source, ref length, out exception, trace);
+		}
 	}
 }
