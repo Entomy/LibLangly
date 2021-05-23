@@ -109,5 +109,35 @@ namespace Langly {
 			}
 			Assert.Equal(expected.Length, i);
 		}
+
+		[Theory]
+		[InlineData("", "")]
+		public unsafe void SourceEndChecker_Pointer(String expected, String source) {
+			Pattern ptn = Pattern.EndOfSource;
+			Int32 i = 0;
+			Capture? capture = null;
+			fixed (Char* src = source) {
+				capture = ptn.Parse(source, ref i);
+				Assert.Equal(expected, capture);
+			}
+			Assert.Equal(expected.Length, i);
+		}
+
+		[Theory]
+		[InlineData("", "", false)]
+		[InlineData("", "a", true)]
+		public void SourceEndChecker_String(String expected, String source, Boolean throws) {
+			Pattern ptn = Pattern.EndOfSource;
+			Int32 i = 0;
+			Capture? capture = null;
+			if (!throws) {
+				capture = ptn.Parse(source, ref i);
+				Assert.Equal(expected, capture);
+			} else {
+				_ = Assert.ThrowsAny<Exception>(() => capture = ptn.Parse(source, ref i));
+				Assert.Null(capture);
+			}
+			Assert.Equal(expected.Length, i);
+		}
 	}
 }

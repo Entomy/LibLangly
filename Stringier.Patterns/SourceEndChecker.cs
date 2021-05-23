@@ -14,9 +14,25 @@ namespace Stringier.Patterns {
 		internal SourceEndChecker() { }
 
 		/// <inheritdoc/>
-		protected internal override void Consume(ReadOnlySpan<Char> source, ref Int32 length, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) => throw new NotImplementedException();
+		protected internal override void Consume(ReadOnlySpan<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
+			if (source.Length != location) {
+				exception = NoMatch;
+				trace?.Add(exception, location);
+			} else {
+				trace?.Add('␄', location);
+				exception = null;
+			}
+		}
 
 		/// <inheritdoc/>
-		protected internal override void Neglect(ReadOnlySpan<Char> source, ref Int32 length, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) => throw new NotImplementedException();
+		protected internal override void Neglect(ReadOnlySpan<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
+			if (source.Length == location) {
+				exception = NoMatch;
+				trace?.Add(exception, location);
+			} else {
+				trace?.Add('␄', location);
+				exception = null;
+			}
+		}
 	}
 }
