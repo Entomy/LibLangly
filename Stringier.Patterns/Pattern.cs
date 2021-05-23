@@ -29,6 +29,11 @@ namespace Stringier.Patterns {
 		protected static readonly Exception NoMatch = new InvalidOperationException("The parser failed to find a match for the pattern in the source.");
 
 		/// <summary>
+		/// Predefined <see cref="Exception"/> for when the end of the source was reached before finding a match.
+		/// </summary>
+		protected static readonly Exception AtEnd = new InvalidOperationException("The parser reached the end of the source before finding a match to this pattern.");
+
+		/// <summary>
 		/// Initialize a new <see cref="Pattern"/>.
 		/// </summary>
 		protected Pattern() { }
@@ -246,18 +251,24 @@ namespace Stringier.Patterns {
 		/// Calls the consume parser for this <see cref="Pattern"/> on the <paramref name="source"/>.
 		/// </summary>
 		/// <param name="source">The source to parse.</param>
-		/// <param name="length">The length of the captured text.</param>
+		/// <param name="location">The location within the <paramref name="source"/> to begin parsing, updated to the end of the match.</param>
 		/// <param name="exception">The exception that occurred during parsing, if any.</param>
 		/// <param name="trace">The object to trace the steps through the pattern graph in.</param>
-		protected internal abstract void Consume(ReadOnlySpan<Char> source, ref Int32 length, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace);
+		/// <remarks>
+		/// This looks in <paramref name="source"/> at the <paramref name="location"/> for this <see cref="Pattern"/>, advancing <paramref name="location"/> to the position just after the match, if found, and leaving it unchanged if not found. <paramref name="exception"/> is <see langword="null"/> if a match is found, and assigned with information on the failure that occurred. If <paramref name="trace"/> is a valid object, it is used to collection steps through the pattern graph for debugging purposes.
+		/// </remarks>
+		protected internal abstract void Consume(ReadOnlySpan<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace);
 
 		/// <summary>
 		/// Calls the neglect parser for this <see cref="Pattern"/> on the <paramref name="source"/>.
 		/// </summary>
 		/// <param name="source">The source to parse.</param>
-		/// <param name="length">The length of the captured text.</param>
+		/// <param name="location">The location within the <paramref name="source"/> to begin parsing, updated to the end of the match.</param>
 		/// <param name="exception">The exception that occurred during parsing, if any.</param>
 		/// <param name="trace">The object to trace the steps through the pattern graph in.</param>
-		protected internal abstract void Neglect(ReadOnlySpan<Char> source, ref Int32 length, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace);
+		/// <remarks>
+		/// This behaves identically to <see cref="Consume(ReadOnlySpan{Char}, ref Int32, out Exception, IAdd{Capture})"/>, except that a match is defined as anything the same length as this <see cref="Pattern"/>, but not equal to it. If the source is the same length and content as this <see cref="Pattern"/>, it is considered a failed match. This is used to implement <see cref="Not()"/>.
+		/// </remarks>
+		protected internal abstract void Neglect(ReadOnlySpan<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace);
 	}
 }

@@ -38,26 +38,32 @@ namespace Stringier.Patterns {
 		public override String ToString() => Char.ToString();
 
 		/// <inheritdoc/>
-		protected internal override void Consume(ReadOnlySpan<Char> source, ref Int32 length, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
-			if (Text.Equals(Char, source[length], Casing)) {
-				trace?.Add(source[length], length);
-				length++;
+		protected internal override void Consume(ReadOnlySpan<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
+			if (location == source.Length) {
+				exception = AtEnd;
+				trace?.Add(exception, location);
+			} else if (Text.Equals(Char, source[location], Casing)) {
+				trace?.Add(source[location], location);
+				location++;
 				exception = null;
 			} else {
 				exception = NoMatch;
-				trace?.Add(exception, length);
+				trace?.Add(exception, location);
 			}
 		}
 
 		/// <inheritdoc/>
-		protected internal override void Neglect(ReadOnlySpan<Char> source, ref Int32 length, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
-			if (!Text.Equals(Char, source[length], Casing)) {
-				trace?.Add(source[length], length);
-				length++;
+		protected internal override void Neglect(ReadOnlySpan<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
+			if (location == source.Length) {
+				exception = AtEnd;
+				trace?.Add(exception, location);
+			} else if (!Text.Equals(Char, source[location], Casing)) {
+				trace?.Add(source[location], location);
+				location++;
 				exception = null;
 			} else {
 				exception = NoMatch;
-				trace?.Add(exception, length);
+				trace?.Add(exception, location);
 			}
 		}
 	}

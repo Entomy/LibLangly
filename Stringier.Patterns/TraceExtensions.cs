@@ -57,6 +57,22 @@ namespace Stringier.Patterns {
 		/// Adds a step to the <paramref name="trace"/>.
 		/// </summary>
 		/// <param name="trace">This trace collector.</param>
+		/// <param name="text">The text captured at this step.</param>
+		/// <param name="location">The location of this step.</param>
+		internal static void Add([DisallowNull] this IAdd<Capture> trace, Span<Char> text, Int32 location) => throw new NotImplementedException();
+
+		/// <summary>
+		/// Adds a step to the <paramref name="trace"/>.
+		/// </summary>
+		/// <param name="trace">This trace collector.</param>
+		/// <param name="text">The text captured at this step.</param>
+		/// <param name="location">The location of this step.</param>
+		internal static void Add([DisallowNull] this IAdd<Capture> trace, ReadOnlySpan<Char> text, Int32 location) => throw new NotImplementedException();
+
+		/// <summary>
+		/// Adds a step to the <paramref name="trace"/>.
+		/// </summary>
+		/// <param name="trace">This trace collector.</param>
 		/// <param name="exception">The exception that occurred at this step.</param>
 		/// <param name="location">The location of this step.</param>
 		internal static void Add([DisallowNull] this IAdd<Capture> trace, [DisallowNull] Exception exception, Int32 location) => throw new NotImplementedException();
