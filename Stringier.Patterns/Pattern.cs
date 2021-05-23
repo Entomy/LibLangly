@@ -211,7 +211,7 @@ namespace Stringier.Patterns {
 		/// <returns>The captured text.</returns>
 		[return: NotNull]
 		public Capture Parse(ReadOnlyMemory<Char> source, ref Int32 location, [AllowNull] IAdd<Capture> trace) {
-			Consume(source, ref location, out Exception? exception, trace);
+			Consume(source.Span, ref location, out Exception? exception, trace);
 			if (exception is null) {
 				return new CaptureMemory(source.Slice(0, location));
 			} else {
@@ -227,7 +227,7 @@ namespace Stringier.Patterns {
 		/// <param name="length">The length of the captured text.</param>
 		/// <param name="exception">The exception that occurred during parsing, if any.</param>
 		/// <param name="trace">The object to trace the steps through the pattern graph in.</param>
-		protected internal abstract void Consume(ReadOnlyMemory<Char> source, ref Int32 length, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace);
+		protected internal abstract void Consume(ReadOnlySpan<Char> source, ref Int32 length, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace);
 
 		/// <summary>
 		/// Calls the neglect parser for this <see cref="Pattern"/> on the <paramref name="source"/>.
@@ -236,6 +236,6 @@ namespace Stringier.Patterns {
 		/// <param name="length">The length of the captured text.</param>
 		/// <param name="exception">The exception that occurred during parsing, if any.</param>
 		/// <param name="trace">The object to trace the steps through the pattern graph in.</param>
-		protected internal abstract void Neglect(ReadOnlyMemory<Char> source, ref Int32 length, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace);
+		protected internal abstract void Neglect(ReadOnlySpan<Char> source, ref Int32 length, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace);
 	}
 }

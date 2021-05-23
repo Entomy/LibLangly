@@ -38,10 +38,9 @@ namespace Stringier.Patterns {
 		public override String ToString() => Char.ToString();
 
 		/// <inheritdoc/>
-		protected internal override void Consume(ReadOnlyMemory<Char> source, ref Int32 length, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
-			Char peek = source.Span[length];
-			if (Text.Equals(Char, peek, Casing)) {
-				trace?.Add(peek, length);
+		protected internal override void Consume(ReadOnlySpan<Char> source, ref Int32 length, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
+			if (Text.Equals(Char, source[length], Casing)) {
+				trace?.Add(source[length], length);
 				length++;
 				exception = null;
 			} else {
@@ -51,10 +50,9 @@ namespace Stringier.Patterns {
 		}
 
 		/// <inheritdoc/>
-		protected internal override void Neglect(ReadOnlyMemory<Char> source, ref Int32 length, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
-			Char peek = source.Span[length];
-			if (!Text.Equals(Char, peek, Casing)) {
-				trace?.Add(peek, length);
+		protected internal override void Neglect(ReadOnlySpan<Char> source, ref Int32 length, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
+			if (!Text.Equals(Char, source[length], Casing)) {
+				trace?.Add(source[length], length);
 				length++;
 				exception = null;
 			} else {
