@@ -13,7 +13,7 @@ namespace Stringier {
 	public sealed partial class Rope :
 		IAddMemory<Char>,
 		IClear,
-		IEquatable<Rope>, IEquatable<String>, IEquatable<Char[]>, IEquatable<Memory<Char>>, IEquatable<ReadOnlyMemory<Char>>,
+		IEquatable<Rope>, IEquatable<Char>, IEquatable<Rune>, IEquatable<String>, IEquatable<Char[]>, IEquatable<Memory<Char>>, IEquatable<ReadOnlyMemory<Char>>,
 		IIndex<nint, Char>,
 		IInsertMemory<nint, Char>,
 		IPostpendMemory<Char>,
@@ -595,6 +595,30 @@ namespace Stringier {
 		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
 		public Boolean Equals([AllowNull] Rope other, Case casing) => throw new NotImplementedException();
 
+		/// <inheritdoc/>
+		public Boolean Equals(Char other) => throw new NotImplementedException();
+
+		/// <summary>
+		/// Determines whether the specified object is equal to another object of the same type.
+		/// </summary>
+		/// <param name="other">The object to compare with this object.</param>
+		/// <param name="casing">The casing of the comparison.</param>
+		/// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
+		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
+		public Boolean Equals(Char other, Case casing) => throw new NotImplementedException();
+
+		/// <inheritdoc/>
+		public Boolean Equals(Rune other) => throw new NotImplementedException();
+
+		/// <summary>
+		/// Determines whether the specified object is equal to another object of the same type.
+		/// </summary>
+		/// <param name="other">The object to compare with this object.</param>
+		/// <param name="casing">The casing of the comparison.</param>
+		/// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
+		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
+		public Boolean Equals(Rune other, Case casing) => throw new NotImplementedException();
+			
 		/// <summary>
 		/// Determines whether the specified object is equal to the current object.
 		/// </summary>

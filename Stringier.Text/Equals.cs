@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
+using System.Text;
 
 namespace Stringier {
 	public static partial class Text {
@@ -11,6 +13,14 @@ namespace Stringier {
 		/// <param name="second">The second text to compare.</param>
 		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
 		public static Boolean Equals(this Char first, Char second) => first.Equals(second);
+
+		/// <summary>
+		/// Determines whether two text objects have the same content.
+		/// </summary>
+		/// <param name="first">The first text to compare.</param>
+		/// <param name="second">The second text to compare.</param>
+		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
+		public static Boolean Equals(this Rune first, Char second) => first == new Rune(second);
 
 		/// <summary>
 		/// Determines whether two text objects have the same content.
@@ -107,6 +117,25 @@ namespace Stringier {
 		/// <param name="casing">The casing of the comparison.</param>
 		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
 		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
+		public static Boolean Equals(this Rune first, Char second, Case casing) {
+			switch (casing) {
+			case Case.Insensitive:
+				return Rune.ToUpper(first, CultureInfo.CurrentCulture) == Rune.ToUpper(new Rune(second), CultureInfo.CurrentCulture);
+			case Case.Sensitive:
+				return first == new Rune(second);
+			default:
+				throw new ArgumentException();
+			}
+		}
+
+		/// <summary>
+		/// Determines whether two text objects have the same content.
+		/// </summary>
+		/// <param name="first">The first text to compare.</param>
+		/// <param name="second">The second text to compare.</param>
+		/// <param name="casing">The casing of the comparison.</param>
+		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
+		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
 		public static Boolean Equals([AllowNull] this Rope first, Char second, Case casing) => first?.Equals(second, casing) ?? false;
 
 		/// <summary>
@@ -182,6 +211,212 @@ namespace Stringier {
 		public static unsafe Boolean Equals([AllowNull] Char* first, Int32 length, Char second, Case casing) => EqualsKernel(new ReadOnlySpan<Char>(first, length), second, casing);
 		#endregion
 
+		#region Equals(Text, Rune)
+		/// <summary>
+		/// Determines whether two text objects have the same content.
+		/// </summary>
+		/// <param name="first">The first text to compare.</param>
+		/// <param name="second">The second text to compare.</param>
+		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
+		public static Boolean Equals(this Char first, Rune second) => new Rune(first) == second;
+
+		/// <summary>
+		/// Determines whether two text objects have the same content.
+		/// </summary>
+		/// <param name="first">The first text to compare.</param>
+		/// <param name="second">The second text to compare.</param>
+		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
+		public static Boolean Equals(this Rune first, Rune second) => first == second;
+
+		/// <summary>
+		/// Determines whether two text objects have the same content.
+		/// </summary>
+		/// <param name="first">The first text to compare.</param>
+		/// <param name="second">The second text to compare.</param>
+		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
+		public static Boolean Equals([AllowNull] this Rope first, Rune second) => first?.Equals(second) ?? false;
+
+		/// <summary>
+		/// Determines whether two text objects have the same content.
+		/// </summary>
+		/// <param name="first">The first text to compare.</param>
+		/// <param name="second">The second text to compare.</param>
+		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
+		public static Boolean Equals([AllowNull] this String first, Rune second) => EqualsKernel(first.AsSpan(), second);
+
+		/// <summary>
+		/// Determines whether two text objects have the same content.
+		/// </summary>
+		/// <param name="first">The first text to compare.</param>
+		/// <param name="second">The second text to compare.</param>
+		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
+		public static Boolean Equals([AllowNull] this Char[] first, Rune second) => EqualsKernel(first, second);
+
+		/// <summary>
+		/// Determines whether two text objects have the same content.
+		/// </summary>
+		/// <param name="first">The first text to compare.</param>
+		/// <param name="second">The second text to compare.</param>
+		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
+		public static Boolean Equals(this Memory<Char> first, Rune second) => EqualsKernel(first.Span, second);
+
+		/// <summary>
+		/// Determines whether two text objects have the same content.
+		/// </summary>
+		/// <param name="first">The first text to compare.</param>
+		/// <param name="second">The second text to compare.</param>
+		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
+		public static Boolean Equals(this ReadOnlyMemory<Char> first, Rune second) => EqualsKernel(first.Span, second);
+
+		/// <summary>
+		/// Determines whether two text objects have the same content.
+		/// </summary>
+		/// <param name="first">The first text to compare.</param>
+		/// <param name="second">The second text to compare.</param>
+		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
+		public static Boolean Equals(this Span<Char> first, Rune second) => EqualsKernel(first, second);
+
+		/// <summary>
+		/// Determines whether two text objects have the same content.
+		/// </summary>
+		/// <param name="first">The first text to compare.</param>
+		/// <param name="second">The second text to compare.</param>
+		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
+		public static Boolean Equals(this ReadOnlySpan<Char> first, Rune second) => EqualsKernel(first, second);
+
+		/// <summary>
+		/// Determines whether two text objects have the same content.
+		/// </summary>
+		/// <param name="first">The first text to compare.</param>
+		/// <param name="length">The length of the <paramref name="second"/> text.</param>
+		/// <param name="second">The second text to compare.</param>
+		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
+		[CLSCompliant(false)]
+		public static unsafe Boolean Equals([AllowNull] Char* first, Int32 length, Rune second) => EqualsKernel(new ReadOnlySpan<Char>(first, length), second);
+		#endregion
+
+		#region Equals(Text, Rune, Case)
+		/// <summary>
+		/// Determines whether two text objects have the same content.
+		/// </summary>
+		/// <param name="first">The first text to compare.</param>
+		/// <param name="second">The second text to compare.</param>
+		/// <param name="casing">The casing of the comparison.</param>
+		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
+		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
+		public static Boolean Equals(this Char first, Rune second, Case casing) {
+			switch (casing) {
+			case Case.Insensitive:
+				return Rune.ToUpper(new Rune(first), CultureInfo.CurrentCulture) == Rune.ToUpper(second, CultureInfo.CurrentCulture);
+			case Case.Sensitive:
+				return new Rune(first) == second;
+			default:
+				throw new ArgumentException();
+			}
+		}
+
+		/// <summary>
+		/// Determines whether two text objects have the same content.
+		/// </summary>
+		/// <param name="first">The first text to compare.</param>
+		/// <param name="second">The second text to compare.</param>
+		/// <param name="casing">The casing of the comparison.</param>
+		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
+		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
+		public static Boolean Equals(this Rune first, Rune second, Case casing) {
+			switch (casing) {
+			case Case.Insensitive:
+				return Rune.ToUpper(first, CultureInfo.CurrentCulture) == Rune.ToUpper(second, CultureInfo.CurrentCulture);
+			case Case.Sensitive:
+				return first == second;
+			default:
+				throw new ArgumentException();
+			}
+		}
+
+		/// <summary>
+		/// Determines whether two text objects have the same content.
+		/// </summary>
+		/// <param name="first">The first text to compare.</param>
+		/// <param name="second">The second text to compare.</param>
+		/// <param name="casing">The casing of the comparison.</param>
+		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
+		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
+		public static Boolean Equals([AllowNull] this Rope first, Rune second, Case casing) => first?.Equals(second, casing) ?? false;
+
+		/// <summary>
+		/// Determines whether two text objects have the same content.
+		/// </summary>
+		/// <param name="first">The first text to compare.</param>
+		/// <param name="second">The second text to compare.</param>
+		/// <param name="casing">The casing of the comparison.</param>
+		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
+		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
+		public static Boolean Equals([AllowNull] this String first, Rune second, Case casing) => EqualsKernel(first.AsSpan(), second, casing);
+
+		/// <summary>
+		/// Determines whether two text objects have the same content.
+		/// </summary>
+		/// <param name="first">The first text to compare.</param>
+		/// <param name="second">The second text to compare.</param>
+		/// <param name="casing">The casing of the comparison.</param>
+		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
+		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
+		public static Boolean Equals([AllowNull] this Char[] first, Rune second, Case casing) => EqualsKernel(first, second, casing);
+
+		/// <summary>
+		/// Determines whether two text objects have the same content.
+		/// </summary>
+		/// <param name="first">The first text to compare.</param>
+		/// <param name="second">The second text to compare.</param>
+		/// <param name="casing">The casing of the comparison.</param>
+		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
+		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
+		public static Boolean Equals(this Memory<Char> first, Rune second, Case casing) => EqualsKernel(first.Span, second, casing);
+
+		/// <summary>
+		/// Determines whether two text objects have the same content.
+		/// </summary>
+		/// <param name="first">The first text to compare.</param>
+		/// <param name="second">The second text to compare.</param>
+		/// <param name="casing">The casing of the comparison.</param>
+		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
+		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
+		public static Boolean Equals(this ReadOnlyMemory<Char> first, Rune second, Case casing) => EqualsKernel(first.Span, second, casing);
+
+		/// <summary>
+		/// Determines whether two text objects have the same content.
+		/// </summary>
+		/// <param name="first">The first text to compare.</param>
+		/// <param name="second">The second text to compare.</param>
+		/// <param name="casing">The casing of the comparison.</param>
+		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
+		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
+		public static Boolean Equals(this Span<Char> first, Rune second, Case casing) => EqualsKernel(first, second, casing);
+
+		/// <summary>
+		/// Determines whether two text objects have the same content.
+		/// </summary>
+		/// <param name="first">The first text to compare.</param>
+		/// <param name="second">The second text to compare.</param>
+		/// <param name="casing">The casing of the comparison.</param>
+		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
+		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
+		public static Boolean Equals(this ReadOnlySpan<Char> first, Rune second, Case casing) => EqualsKernel(first, second, casing);
+
+		/// <summary>
+		/// Determines whether two text objects have the same content.
+		/// </summary>
+		/// <param name="first">The first text to compare.</param>
+		/// <param name="length">The length of the <paramref name="second"/> text.</param>
+		/// <param name="second">The second text to compare.</param>
+		/// <param name="casing">The casing of the comparison.</param>
+		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
+		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
+		[CLSCompliant(false)]
+		public static unsafe Boolean Equals([AllowNull] Char* first, Int32 length, Rune second, Case casing) => EqualsKernel(new ReadOnlySpan<Char>(first, length), second, casing);
+		#endregion
+
 		#region Equals(Text, Rope)
 		/// <summary>
 		/// Determines whether two text objects have the same content.
@@ -190,6 +425,14 @@ namespace Stringier {
 		/// <param name="second">The second text to compare.</param>
 		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
 		public static Boolean Equals(this Char first, [AllowNull] Rope second) => second?.Equals(first) ?? false;
+
+		/// <summary>
+		/// Determines whether two text objects have the same content.
+		/// </summary>
+		/// <param name="first">The first text to compare.</param>
+		/// <param name="second">The second text to compare.</param>
+		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
+		public static Boolean Equals(this Rune first, [AllowNull] Rope second) => second?.Equals(first) ?? false;
 
 		/// <summary>
 		/// Determines whether two text objects have the same content.
@@ -268,6 +511,16 @@ namespace Stringier {
 		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
 		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
 		public static Boolean Equals(this Char first, [AllowNull] Rope second, Case casing) => second?.Equals(first, casing) ?? false;
+
+		/// <summary>
+		/// Determines whether two text objects have the same content.
+		/// </summary>
+		/// <param name="first">The first text to compare.</param>
+		/// <param name="second">The second text to compare.</param>
+		/// <param name="casing">The casing of the comparison.</param>
+		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
+		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
+		public static Boolean Equals(this Rune first, [AllowNull] Rope second, Case casing) => second?.Equals(first, casing) ?? false;
 
 		/// <summary>
 		/// Determines whether two text objects have the same content.
@@ -367,6 +620,14 @@ namespace Stringier {
 		/// <param name="first">The first text to compare.</param>
 		/// <param name="second">The second text to compare.</param>
 		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
+		public static Boolean Equals(this Rune first, [AllowNull] String second) => EqualsKernel(first, second.AsSpan());
+
+		/// <summary>
+		/// Determines whether two text objects have the same content.
+		/// </summary>
+		/// <param name="first">The first text to compare.</param>
+		/// <param name="second">The second text to compare.</param>
+		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
 		public static Boolean Equals([AllowNull] this Rope first, [AllowNull] String second) => first?.Equals(second) ?? String.IsNullOrEmpty(second);
 
 		/// <summary>
@@ -438,6 +699,16 @@ namespace Stringier {
 		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
 		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
 		public static Boolean Equals(this Char first, [AllowNull] String second, Case casing) => EqualsKernel(first, second.AsSpan(), casing);
+
+		/// <summary>
+		/// Determines whether two text objects have the same content.
+		/// </summary>
+		/// <param name="first">The first text to compare.</param>
+		/// <param name="second">The second text to compare.</param>
+		/// <param name="casing">The casing of the comparison.</param>
+		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
+		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
+		public static Boolean Equals(this Rune first, [AllowNull] String second, Case casing) => EqualsKernel(first, second.AsSpan(), casing);
 
 		/// <summary>
 		/// Determines whether two text objects have the same content.
@@ -537,6 +808,14 @@ namespace Stringier {
 		/// <param name="first">The first text to compare.</param>
 		/// <param name="second">The second text to compare.</param>
 		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
+		public static Boolean Equals(this Rune first, [AllowNull] Char[] second) => EqualsKernel(first, second);
+
+		/// <summary>
+		/// Determines whether two text objects have the same content.
+		/// </summary>
+		/// <param name="first">The first text to compare.</param>
+		/// <param name="second">The second text to compare.</param>
+		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
 		public static Boolean Equals([AllowNull] this Rope first, [AllowNull] Char[] second) => first?.Equals(second) ?? (second is null || second.Length <= 0);
 
 		/// <summary>
@@ -608,6 +887,16 @@ namespace Stringier {
 		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
 		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
 		public static Boolean Equals(this Char first, [AllowNull] Char[] second, Case casing) => EqualsKernel(first, second, casing);
+
+		/// <summary>
+		/// Determines whether two text objects have the same content.
+		/// </summary>
+		/// <param name="first">The first text to compare.</param>
+		/// <param name="second">The second text to compare.</param>
+		/// <param name="casing">The casing of the comparison.</param>
+		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
+		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
+		public static Boolean Equals(this Rune first, [AllowNull] Char[] second, Case casing) => EqualsKernel(first, second, casing);
 
 		/// <summary>
 		/// Determines whether two text objects have the same content.
@@ -707,6 +996,14 @@ namespace Stringier {
 		/// <param name="first">The first text to compare.</param>
 		/// <param name="second">The second text to compare.</param>
 		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
+		public static Boolean Equals(this Rune first, Memory<Char> second) => EqualsKernel(first, second.Span);
+
+		/// <summary>
+		/// Determines whether two text objects have the same content.
+		/// </summary>
+		/// <param name="first">The first text to compare.</param>
+		/// <param name="second">The second text to compare.</param>
+		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
 		public static Boolean Equals([AllowNull] this Rope first, Memory<Char> second) => first?.Equals(second) ?? second.IsEmpty;
 
 		/// <summary>
@@ -778,6 +1075,16 @@ namespace Stringier {
 		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
 		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
 		public static Boolean Equals(this Char first, Memory<Char> second, Case casing) => EqualsKernel(first, second.Span, casing);
+
+		/// <summary>
+		/// Determines whether two text objects have the same content.
+		/// </summary>
+		/// <param name="first">The first text to compare.</param>
+		/// <param name="second">The second text to compare.</param>
+		/// <param name="casing">The casing of the comparison.</param>
+		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
+		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
+		public static Boolean Equals(this Rune first, Memory<Char> second, Case casing) => EqualsKernel(first, second.Span, casing);
 
 		/// <summary>
 		/// Determines whether two text objects have the same content.
@@ -877,6 +1184,14 @@ namespace Stringier {
 		/// <param name="first">The first text to compare.</param>
 		/// <param name="second">The second text to compare.</param>
 		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
+		public static Boolean Equals(this Rune first, ReadOnlyMemory<Char> second) => EqualsKernel(first, second.Span);
+
+		/// <summary>
+		/// Determines whether two text objects have the same content.
+		/// </summary>
+		/// <param name="first">The first text to compare.</param>
+		/// <param name="second">The second text to compare.</param>
+		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
 		public static Boolean Equals([AllowNull] this Rope first, ReadOnlyMemory<Char> second) => first?.Equals(second) ?? second.IsEmpty;
 
 		/// <summary>
@@ -948,6 +1263,16 @@ namespace Stringier {
 		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
 		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
 		public static Boolean Equals(this Char first, ReadOnlyMemory<Char> second, Case casing) => EqualsKernel(first, second.Span, casing);
+
+		/// <summary>
+		/// Determines whether two text objects have the same content.
+		/// </summary>
+		/// <param name="first">The first text to compare.</param>
+		/// <param name="second">The second text to compare.</param>
+		/// <param name="casing">The casing of the comparison.</param>
+		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
+		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
+		public static Boolean Equals(this Rune first, ReadOnlyMemory<Char> second, Case casing) => EqualsKernel(first, second.Span, casing);
 
 		/// <summary>
 		/// Determines whether two text objects have the same content.
@@ -1047,6 +1372,14 @@ namespace Stringier {
 		/// <param name="first">The first text to compare.</param>
 		/// <param name="second">The second text to compare.</param>
 		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
+		public static Boolean Equals(this Rune first, Span<Char> second) => EqualsKernel(first, second);
+
+		/// <summary>
+		/// Determines whether two text objects have the same content.
+		/// </summary>
+		/// <param name="first">The first text to compare.</param>
+		/// <param name="second">The second text to compare.</param>
+		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
 		public static Boolean Equals([AllowNull] this Rope first, Span<Char> second) => first?.Equals(second) ?? second.IsEmpty;
 
 		/// <summary>
@@ -1118,6 +1451,16 @@ namespace Stringier {
 		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
 		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
 		public static Boolean Equals(this Char first, Span<Char> second, Case casing) => EqualsKernel(first, second, casing);
+
+		/// <summary>
+		/// Determines whether two text objects have the same content.
+		/// </summary>
+		/// <param name="first">The first text to compare.</param>
+		/// <param name="second">The second text to compare.</param>
+		/// <param name="casing">The casing of the comparison.</param>
+		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
+		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
+		public static Boolean Equals(this Rune first, Span<Char> second, Case casing) => EqualsKernel(first, second, casing);
 
 		/// <summary>
 		/// Determines whether two text objects have the same content.
@@ -1217,6 +1560,14 @@ namespace Stringier {
 		/// <param name="first">The first text to compare.</param>
 		/// <param name="second">The second text to compare.</param>
 		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
+		public static Boolean Equals(this Rune first, ReadOnlySpan<Char> second) => EqualsKernel(first, second);
+
+		/// <summary>
+		/// Determines whether two text objects have the same content.
+		/// </summary>
+		/// <param name="first">The first text to compare.</param>
+		/// <param name="second">The second text to compare.</param>
+		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
 		public static Boolean Equals([AllowNull] this Rope first, ReadOnlySpan<Char> second) => first?.Equals(second) ?? second.IsEmpty;
 
 		/// <summary>
@@ -1288,6 +1639,16 @@ namespace Stringier {
 		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
 		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
 		public static Boolean Equals(this Char first, ReadOnlySpan<Char> second, Case casing) => EqualsKernel(first, second, casing);
+
+		/// <summary>
+		/// Determines whether two text objects have the same content.
+		/// </summary>
+		/// <param name="first">The first text to compare.</param>
+		/// <param name="second">The second text to compare.</param>
+		/// <param name="casing">The casing of the comparison.</param>
+		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
+		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
+		public static Boolean Equals(this Rune first, ReadOnlySpan<Char> second, Case casing) => EqualsKernel(first, second, casing);
 
 		/// <summary>
 		/// Determines whether two text objects have the same content.
@@ -1391,6 +1752,16 @@ namespace Stringier {
 		/// <param name="length">The length of the <paramref name="second"/> text.</param>
 		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
 		[CLSCompliant(false)]
+		public static unsafe Boolean Equals(this Rune first, [AllowNull] Char* second, Int32 length) => EqualsKernel(first, new ReadOnlySpan<Char>(second, length));
+
+		/// <summary>
+		/// Determines whether two text objects have the same content.
+		/// </summary>
+		/// <param name="first">The first text to compare.</param>
+		/// <param name="second">The second text to compare.</param>
+		/// <param name="length">The length of the <paramref name="second"/> text.</param>
+		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
+		[CLSCompliant(false)]
 		public static unsafe Boolean Equals([AllowNull] this Rope first, [AllowNull] Char* second, Int32 length) => first?.Equals(new ReadOnlySpan<Char>(second, length)) ?? (second is null || length <= 0);
 
 		/// <summary>
@@ -1477,6 +1848,18 @@ namespace Stringier {
 		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
 		[CLSCompliant(false)]
 		public static unsafe Boolean Equals(this Char first, [AllowNull] Char* second, Int32 length, Case casing) => EqualsKernel(first, new ReadOnlySpan<Char>(second, length), casing);
+
+		/// <summary>
+		/// Determines whether two text objects have the same content.
+		/// </summary>
+		/// <param name="first">The first text to compare.</param>
+		/// <param name="second">The second text to compare.</param>
+		/// <param name="length">The length of the <paramref name="second"/> text.</param>
+		/// <param name="casing">The casing of the comparison.</param>
+		/// <returns><see langword="true"/> if the value of the <paramref name="second"/> parameter is the same as the <paramref name="first"/>; otherwise, <see langword="false"/>.</returns>
+		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
+		[CLSCompliant(false)]
+		public static unsafe Boolean Equals(this Rune first, [AllowNull] Char* second, Int32 length, Case casing) => EqualsKernel(first, new ReadOnlySpan<Char>(second, length), casing);
 
 		/// <summary>
 		/// Determines whether two text objects have the same content.
@@ -1591,6 +1974,26 @@ namespace Stringier {
 				return Char.ToUpper(first[0]).Equals(Char.ToUpper(second));
 			case Case.Sensitive:
 				return first[0].Equals(second);
+			default:
+				throw new ArgumentException();
+			}
+		}
+		
+		private static Boolean EqualsKernel(Rune first, ReadOnlySpan<Char> second) => EqualsKernel(first, second, Case.Sensitive);
+
+		private static Boolean EqualsKernel(Rune first, ReadOnlySpan<Char> second, Case casing) => EqualsKernel(second, first, casing);
+
+		private static Boolean EqualsKernel(ReadOnlySpan<Char> first, Rune second) => EqualsKernel(first, second, Case.Sensitive);
+
+		private static Boolean EqualsKernel(ReadOnlySpan<Char> first, Rune second, Case casing) {
+			if (first.Length != second.Utf16SequenceLength) {
+				return false;
+			}
+			switch (casing) {
+			case Case.Insensitive:
+				return Rune.ToUpper(first.GetRuneAt(0), CultureInfo.CurrentCulture) == Rune.ToUpper(second, CultureInfo.CurrentCulture);
+			case Case.Sensitive:
+				return first.GetRuneAt(0) == second;
 			default:
 				throw new ArgumentException();
 			}

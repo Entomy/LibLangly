@@ -34,9 +34,35 @@ namespace Stringier.Patterns {
 		public override String ToString() => Rune.ToString();
 
 		/// <inheritdoc/>
-		protected internal override void Consume(ReadOnlySpan<Char> source, ref Int32 length, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) => throw new NotImplementedException();
+		protected internal override void Consume(ReadOnlySpan<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
+			Int32 length = Rune.Utf16SequenceLength;
+			if (location + length > source.Length) {
+				exception = AtEnd;
+				trace?.Add(exception, location);
+			} else if (Text.Equals(Rune, source.Slice(location, length), Casing)) {
+				trace?.Add(source.Slice(location, length), location);
+				location += length;
+				exception = null;
+			} else {
+				exception = NoMatch;
+				trace?.Add(exception, location);
+			}
+		}
 
 		/// <inheritdoc/>
-		protected internal override void Neglect(ReadOnlySpan<Char> source, ref Int32 length, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) => throw new NotImplementedException();
+		protected internal override void Neglect(ReadOnlySpan<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
+			Int32 length = Rune.Utf16SequenceLength;
+			if (location + length > source.Length) {
+				exception = AtEnd;
+				trace?.Add(exception, location);
+			} else if (!Text.Equals(Rune, source.Slice(location, length), Casing)) {
+				trace?.Add(source.Slice(location, length), location);
+				location += length;
+				exception = null;
+			} else {
+				exception = NoMatch;
+				trace?.Add(exception, location);
+			}
+		}
 	}
 }
