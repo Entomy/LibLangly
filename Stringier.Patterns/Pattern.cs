@@ -169,6 +169,17 @@ namespace Stringier.Patterns {
 		/// <returns>The captured text.</returns>
 		[return: NotNull]
 		public Capture Parse(ReadOnlyMemory<Char> source, ref Int32 location) => Parse(source, ref location, trace: null);
+
+		/// <summary>
+		/// Parses the <paramref name="source"/>.
+		/// </summary>
+		/// <param name="source">The source to parse.</param>
+		/// <param name="length">The length of the <paramref name="source"/>.</param>
+		/// <param name="location">The location within the <paramref name="source"/> to begin parsing, updated to the end of the match.</param>
+		/// <returns>The captured text.</returns>
+		[CLSCompliant(false)]
+		[return: NotNull]
+		public unsafe Capture Parse([AllowNull] Char* source, Int32 length, ref Int32 location) => Parse(source, length, ref location, trace: null);
 		#endregion
 
 		#region Parse(Source, ref Int32, Trace)
@@ -212,11 +223,22 @@ namespace Stringier.Patterns {
 		[return: NotNull]
 		public Capture Parse(ReadOnlyMemory<Char> source, ref Int32 location, [AllowNull] IAdd<Capture> trace) {
 			Consume(source.Span, ref location, out Exception? exception, trace);
-			if (exception is null) {
-				return new CaptureMemory(source.Slice(0, location));
-			} else {
-				throw exception;
-			}
+			return exception is null ? new CaptureMemory(source.Slice(0, location)) : throw exception;
+		}
+
+		/// <summary>
+		/// Parses the <paramref name="source"/>.
+		/// </summary>
+		/// <param name="source">The source to parse.</param>
+		/// <param name="length">The length of the <paramref name="source"/>.</param>
+		/// <param name="location">The location within the <paramref name="source"/> to begin parsing, updated to the end of the match.</param>
+		/// <param name="trace">The object to trace the steps through the pattern graph in.</param>
+		/// <returns>The captured text.</returns>
+		[CLSCompliant(false)]
+		[return: NotNull]
+		public unsafe Capture Parse([AllowNull] Char* source, Int32 length, ref Int32 location, [AllowNull] IAdd<Capture> trace) {
+			Consume(new ReadOnlySpan<Char>(source, length), ref location, out Exception? exception, trace);
+			return exception is null ? new CapturePointer(source, location) : throw exception;
 		}
 		#endregion
 
