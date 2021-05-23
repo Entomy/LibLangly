@@ -38,6 +38,52 @@ namespace Langly {
 		}
 
 		[Theory]
+		[InlineData("\u000A", "\u000A")]
+		[InlineData("\u000A\u000D", "\u000A\u000D")]
+		[InlineData("\u000B", "\u000B")]
+		[InlineData("\u000C", "\u000C")]
+		[InlineData("\u000D", "\u000D")]
+		[InlineData("\u000D\u000A", "\u000D\u000A")]
+		[InlineData("\u0085", "\u0085")]
+		[InlineData("\u2028", "\u2028")]
+		[InlineData("\u2029", "\u2029")]
+		public unsafe void LineEndChecker_Pointer(String expected, String source) {
+			Pattern ptn = Pattern.EndOfLine;
+			Int32 i = 0;
+			Capture? capture = null;
+			fixed (Char* src = source) {
+				capture = ptn.Parse(source, ref i);
+				Assert.Equal(expected, capture);
+			}
+			Assert.Equal(expected.Length, i);
+		}
+
+		[Theory]
+		[InlineData("\u000A", "\u000A", false)]
+		[InlineData("\u000A\u000D", "\u000A\u000D", false)]
+		[InlineData("\u000B", "\u000B", false)]
+		[InlineData("\u000C", "\u000C", false)]
+		[InlineData("\u000D", "\u000D", false)]
+		[InlineData("\u000D\u000A", "\u000D\u000A", false)]
+		[InlineData("\u0085", "\u0085", false)]
+		[InlineData("\u2028", "\u2028", false)]
+		[InlineData("\u2029", "\u2029", false)]
+		[InlineData("", "abc", true)]
+		public void LineEndChecker_String(String expected, String source, Boolean throws) {
+			Pattern ptn = Pattern.EndOfLine;
+			Int32 i = 0;
+			Capture? capture = null;
+			if (!throws) {
+				capture = ptn.Parse(source, ref i);
+				Assert.Equal(expected, capture);
+			} else {
+				_ = Assert.ThrowsAny<Exception>(() => capture = ptn.Parse(source, ref i));
+				Assert.Null(capture);
+			}
+			Assert.Equal(expected.Length, i);
+		}
+
+		[Theory]
 		[InlineData("a", 'a', "a")]
 		[InlineData("a", 'a', "abc")]
 		[InlineData("𝄞", 0x1D11E, "𝄞")]
@@ -75,6 +121,36 @@ namespace Langly {
 		}
 
 		[Theory]
+		[InlineData("", "")]
+		public unsafe void SourceEndChecker_Pointer(String expected, String source) {
+			Pattern ptn = Pattern.EndOfSource;
+			Int32 i = 0;
+			Capture? capture = null;
+			fixed (Char* src = source) {
+				capture = ptn.Parse(source, ref i);
+				Assert.Equal(expected, capture);
+			}
+			Assert.Equal(expected.Length, i);
+		}
+
+		[Theory]
+		[InlineData("", "", false)]
+		[InlineData("", "a", true)]
+		public void SourceEndChecker_String(String expected, String source, Boolean throws) {
+			Pattern ptn = Pattern.EndOfSource;
+			Int32 i = 0;
+			Capture? capture = null;
+			if (!throws) {
+				capture = ptn.Parse(source, ref i);
+				Assert.Equal(expected, capture);
+			} else {
+				_ = Assert.ThrowsAny<Exception>(() => capture = ptn.Parse(source, ref i));
+				Assert.Null(capture);
+			}
+			Assert.Equal(expected.Length, i);
+		}
+
+		[Theory]
 		[InlineData("a", "a", "a")]
 		[InlineData("a", "a", "abc")]
 		[InlineData("abc", "abc", "abc")]
@@ -98,36 +174,6 @@ namespace Langly {
 		[InlineData("", "a", "def", true)]
 		public void StringLiteral_String(String expected, String pattern, String source, Boolean throws) {
 			Pattern ptn = pattern;
-			Int32 i = 0;
-			Capture? capture = null;
-			if (!throws) {
-				capture = ptn.Parse(source, ref i);
-				Assert.Equal(expected, capture);
-			} else {
-				_ = Assert.ThrowsAny<Exception>(() => capture = ptn.Parse(source, ref i));
-				Assert.Null(capture);
-			}
-			Assert.Equal(expected.Length, i);
-		}
-
-		[Theory]
-		[InlineData("", "")]
-		public unsafe void SourceEndChecker_Pointer(String expected, String source) {
-			Pattern ptn = Pattern.EndOfSource;
-			Int32 i = 0;
-			Capture? capture = null;
-			fixed (Char* src = source) {
-				capture = ptn.Parse(source, ref i);
-				Assert.Equal(expected, capture);
-			}
-			Assert.Equal(expected.Length, i);
-		}
-
-		[Theory]
-		[InlineData("", "", false)]
-		[InlineData("", "a", true)]
-		public void SourceEndChecker_String(String expected, String source, Boolean throws) {
-			Pattern ptn = Pattern.EndOfSource;
 			Int32 i = 0;
 			Capture? capture = null;
 			if (!throws) {
