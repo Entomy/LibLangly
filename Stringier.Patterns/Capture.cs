@@ -10,7 +10,7 @@ namespace Stringier.Patterns {
 	/// </summary>
 	/// <remarks>
 	/// <para>Any parser result is itself a capture or sequence of captures. The most optimal approach is always taken. For instance, if the source is contiguous memory, the capture will be the entire captured region, but if the source is a stream or other non-contiguous data, the capture will be each individual step of the parse.</para>
-	/// <para>This is also used in the implementation of backreferences (which are like in [Regex](https://www.regular-expressions.info/backref.html)).</para>
+	/// <para>This is also used in the implementation of backreferences (which are like in <see href="https://www.regular-expressions.info/backref.html">Regex</see>.</para>
 	/// </remarks>
 	public abstract class Capture :
 		IIndexReadOnly<nint, Char>,
