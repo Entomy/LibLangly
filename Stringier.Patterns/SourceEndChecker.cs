@@ -14,7 +14,7 @@ namespace Stringier.Patterns {
 		internal SourceEndChecker() { }
 
 		/// <inheritdoc/>
-		protected internal override void Consume(ReadOnlySpan<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
+		protected internal override void Consume(ReadOnlyMemory<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
 			if (source.Length != location) {
 				exception = NoMatch;
 				trace?.Add(exception, location);
@@ -25,8 +25,29 @@ namespace Stringier.Patterns {
 		}
 
 		/// <inheritdoc/>
-		protected internal override void Neglect(ReadOnlySpan<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
+		protected internal override unsafe void Consume([DisallowNull] Char* source, Int32 length, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
+			if (length != location) {
+				exception = NoMatch;
+				trace?.Add(exception, location);
+			} else {
+				trace?.Add('␄', location);
+				exception = null;
+			}
+		}
+
+		/// <inheritdoc/>
+		protected internal override void Neglect(ReadOnlyMemory<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
 			if (source.Length == location) {
+				exception = NoMatch;
+				trace?.Add(exception, location);
+			} else {
+				trace?.Add('␄', location);
+				exception = null;
+			}
+		}
+
+		protected internal override unsafe void Neglect([DisallowNull] Char* source, Int32 length, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
+			if (length == location) {
 				exception = NoMatch;
 				trace?.Add(exception, location);
 			} else {

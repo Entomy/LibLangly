@@ -245,15 +245,29 @@ namespace Stringier.Patterns {
 		}
 
 		/// <inheritdoc/>
-		protected internal override void Consume(ReadOnlySpan<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
+		protected internal override void Consume(ReadOnlyMemory<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
 			exception = null;
 			Head?.Consume(source, ref location, out exception, trace);
 		}
 
 		/// <inheritdoc/>
-		protected internal override void Neglect(ReadOnlySpan<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
+		[CLSCompliant(false)]
+		protected internal override unsafe void Consume([DisallowNull] Char* source, Int32 length, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
+			exception = null;
+			Head?.Consume(source, length, ref location, out exception, trace);
+		}
+
+		/// <inheritdoc/>
+		protected internal override void Neglect(ReadOnlyMemory<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
 			exception = null;
 			Head?.Neglect(source, ref location, out exception, trace);
+		}
+
+		/// <inheritdoc/>
+		[CLSCompliant(false)]
+		protected internal override unsafe void Neglect([DisallowNull] Char* source, Int32 length, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
+			exception = null;
+			Head?.Neglect(source, length, ref location, out exception, trace);
 		}
 	}
 }
