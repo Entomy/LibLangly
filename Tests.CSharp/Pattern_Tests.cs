@@ -104,6 +104,36 @@ namespace Langly {
 		}
 
 		[Theory]
+		[InlineData("hello", "he", "llo", "hello")]
+		public unsafe void Concatenator_Pointer(String expected, String first, String second, String source) {
+			Pattern ptn = first.Then(second);
+			Int32 i = 0;
+			Capture? capture = null;
+			fixed (Char* src = source) {
+				capture = ptn.Parse(src, source.Length, ref i);
+				Assert.Equal(expected, capture);
+			}
+			Assert.Equal(expected.Length, i);
+		}
+
+		[Theory]
+		[InlineData("hello", "he", "llo", "hello", false)]
+		[InlineData("", "he", "lp", "hello", true)]
+		public void Concatenator_String(String expected, String first, String second, String source, Boolean throws) {
+			Pattern ptn = first.Then(second);
+			Int32 i = 0;
+			Capture? capture = null;
+			if (!throws) {
+				capture = ptn.Parse(source, ref i);
+				Assert.Equal(expected, capture);
+			} else {
+				_ = Assert.ThrowsAny<Exception>(() => capture = ptn.Parse(source, ref i));
+				Assert.Null(capture);
+			}
+			Assert.Equal(expected.Length, i);
+		}
+
+		[Theory]
 		[InlineData("a", "a", 1, "a")]
 		[InlineData("a", "a", 1, "abc")]
 		[InlineData("b", "a", 1, "bbc")]
