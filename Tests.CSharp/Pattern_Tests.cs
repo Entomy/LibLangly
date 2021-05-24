@@ -6,6 +6,38 @@ using Xunit;
 namespace Langly {
 	public class Pattern_Tests {
 		[Theory]
+		[InlineData("hello", "hello", "goodbye", "hello")]
+		[InlineData("goodbye", "hello", "goodbye", "goodbye")]
+		public unsafe void Alternator_Pointer(String expected, String first, String second, String source) {
+			Pattern ptn = first.Or(second);
+			Int32 i = 0;
+			Capture? capture = null;
+			fixed (Char* src = source) {
+				capture = ptn.Parse(src, source.Length, ref i);
+				Assert.Equal(expected, capture);
+			}
+			Assert.Equal(expected.Length, i);
+		}
+
+		[Theory]
+		[InlineData("hello", "hello", "goodbye", "hello", false)]
+		[InlineData("goodbye", "hello", "goodbye", "goodbye", false)]
+		[InlineData("", "hello", "goodbye", "potato", true)]
+		public void Alternator_String(String expected, String first, String second, String source, Boolean throws) {
+			Pattern ptn = first.Or(second);
+			Int32 i = 0;
+			Capture? capture = null;
+			if (!throws) {
+				capture = ptn.Parse(source, ref i);
+				Assert.Equal(expected, capture);
+			} else {
+				_ = Assert.ThrowsAny<Exception>(() => capture = ptn.Parse(source, ref i));
+				Assert.Null(capture);
+			}
+			Assert.Equal(expected.Length, i);
+		}
+
+		[Theory]
 		[InlineData("a", 'a', "a")]
 		[InlineData("a", 'a', "abc")]
 		public unsafe void CharLiteral_Pointer(String expected, Char pattern, String source) {
