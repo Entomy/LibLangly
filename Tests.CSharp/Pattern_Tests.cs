@@ -38,6 +38,40 @@ namespace Langly {
 		}
 
 		[Theory]
+		[InlineData("one", "one", "two", "three", "one")]
+		[InlineData("two", "one", "two", "three", "two")]
+		[InlineData("three", "one", "two", "three", "three")]
+		public unsafe void ChainAlternator_Pointer(String expected, String first, String second, String third, String source) {
+			Pattern ptn = first.Or(second).Or(third);
+			Int32 i = 0;
+			Capture? capture = null;
+			fixed (Char* src = source) {
+				capture = ptn.Parse(src, source.Length, ref i);
+				Assert.Equal(expected, capture);
+			}
+			Assert.Equal(expected.Length, i);
+		}
+
+		[Theory]
+		[InlineData("one", "one", "two", "three", "one", false)]
+		[InlineData("two", "one", "two", "three", "two", false)]
+		[InlineData("three", "one", "two", "three", "three", false)]
+		[InlineData("", "one", "two", "three", "four", true)]
+		public void ChainAlternator_String(String expected, String first, String second, String third, String source, Boolean throws) {
+			Pattern ptn = first.Or(second).Or(third);
+			Int32 i = 0;
+			Capture? capture = null;
+			if (!throws) {
+				capture = ptn.Parse(source, ref i);
+				Assert.Equal(expected, capture);
+			} else {
+				_ = Assert.ThrowsAny<Exception>(() => capture = ptn.Parse(source, ref i));
+				Assert.Null(capture);
+			}
+			Assert.Equal(expected.Length, i);
+		}
+
+		[Theory]
 		[InlineData("a", 'a', "a")]
 		[InlineData("a", 'a', "abc")]
 		public unsafe void CharLiteral_Pointer(String expected, Char pattern, String source) {
