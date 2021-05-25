@@ -12,72 +12,74 @@ namespace Stringier.Patterns {
 		[return: MaybeNull]
 		public static Pattern OneOf([AllowNull] params Pattern[] patterns) => (patterns is not null && patterns.Length > 0) ? new ChainAlternator(patterns) : null;
 
-		/// <summary>
-		/// Declares the <paramref name="patterns"/> to be alternates of each other; one of them will match.
-		/// </summary>
-		/// <param name="patterns">The set of <see cref="Char"/>.</param>
-		/// <returns>A new <see cref="Pattern"/> alternating all of the <paramref name="patterns"/>.</returns>
-		[return: MaybeNull]
-		public static Pattern OneOf([AllowNull] params Char[] patterns) => OneOf(default, patterns);
+		///// <summary>
+		///// Declares the <paramref name="patterns"/> to be alternates of each other; one of them will match.
+		///// </summary>
+		///// <param name="patterns">The set of <see cref="Char"/>.</param>
+		///// <returns>A new <see cref="Pattern"/> alternating all of the <paramref name="patterns"/>.</returns>
+		//[return: MaybeNull]
+		//public static Pattern OneOf([AllowNull] params Char[] patterns) => OneOf(default, patterns);
 
-		/// <summary>
-		/// Declares the <paramref name="patterns"/> to be alternates of each other; one of them will match.
-		/// </summary>
-		/// <param name="casing">The <see cref="Case"/> to use for all <paramref name="patterns"/>.</param>
-		/// <param name="patterns">The set of <see cref="Char"/>.</param>
-		/// <returns>A new <see cref="Pattern"/> alternating all of the <paramref name="patterns"/>.</returns>
-		[return: MaybeNull]
-		public static Pattern OneOf(Case casing, [AllowNull] params Char[] patterns) => throw new NotImplementedException();
+		///// <summary>
+		///// Declares the <paramref name="patterns"/> to be alternates of each other; one of them will match.
+		///// </summary>
+		///// <param name="casing">The <see cref="Case"/> to use for all <paramref name="patterns"/>.</param>
+		///// <param name="patterns">The set of <see cref="Char"/>.</param>
+		///// <returns>A new <see cref="Pattern"/> alternating all of the <paramref name="patterns"/>.</returns>
+		//[return: MaybeNull]
+		//public static Pattern OneOf(Case casing, [AllowNull] params Char[] patterns) => throw new NotImplementedException();
 
-		/// <summary>
-		/// Declares the <paramref name="patterns"/> to be alternates of each other; one of them will match.
-		/// </summary>
-		/// <param name="patterns">The set of <see cref="Rune"/>.</param>
-		/// <returns>A new <see cref="Pattern"/> alternating all of the <paramref name="patterns"/>.</returns>
-		[return: MaybeNull]
-		public static Pattern OneOf([AllowNull] params Rune[] patterns) => OneOf(default, patterns);
+		///// <summary>
+		///// Declares the <paramref name="patterns"/> to be alternates of each other; one of them will match.
+		///// </summary>
+		///// <param name="patterns">The set of <see cref="Rune"/>.</param>
+		///// <returns>A new <see cref="Pattern"/> alternating all of the <paramref name="patterns"/>.</returns>
+		//[return: MaybeNull]
+		//public static Pattern OneOf([AllowNull] params Rune[] patterns) => OneOf(default, patterns);
 
-		/// <summary>
-		/// Declares the <paramref name="patterns"/> to be alternates of each other; one of them will match.
-		/// </summary>
-		/// <param name="casing">The <see cref="Case"/> to use for all <paramref name="patterns"/>.</param>
-		/// <param name="patterns">The set of <see cref="Rune"/>.</param>
-		/// <returns>A new <see cref="Pattern"/> alternating all of the <paramref name="patterns"/>.</returns>
-		[return: MaybeNull]
-		public static Pattern OneOf(Case casing, [AllowNull] params Rune[] patterns) => throw new NotImplementedException();
+		///// <summary>
+		///// Declares the <paramref name="patterns"/> to be alternates of each other; one of them will match.
+		///// </summary>
+		///// <param name="casing">The <see cref="Case"/> to use for all <paramref name="patterns"/>.</param>
+		///// <param name="patterns">The set of <see cref="Rune"/>.</param>
+		///// <returns>A new <see cref="Pattern"/> alternating all of the <paramref name="patterns"/>.</returns>
+		//[return: MaybeNull]
+		//public static Pattern OneOf(Case casing, [AllowNull] params Rune[] patterns) => throw new NotImplementedException();
 
-		/// <summary>
-		/// Declares the <paramref name="patterns"/> to be alternates of each other; one of them will match.
-		/// </summary>
-		/// <param name="patterns">The set of <see cref="String"/>.</param>
-		/// <returns>A new <see cref="Pattern"/> alternating all of the <paramref name="patterns"/>.</returns>
-		[return: MaybeNull]
-		public static Pattern OneOf([AllowNull] params String[] patterns) => OneOf(default, patterns);
+		///// <summary>
+		///// Declares the <paramref name="patterns"/> to be alternates of each other; one of them will match.
+		///// </summary>
+		///// <param name="patterns">The set of <see cref="String"/>.</param>
+		///// <returns>A new <see cref="Pattern"/> alternating all of the <paramref name="patterns"/>.</returns>
+		//[return: MaybeNull]
+		//public static Pattern OneOf([AllowNull] params String[] patterns) => OneOf(default, patterns);
 
-		/// <summary>
-		/// Declares the <paramref name="patterns"/> to be alternates of each other; one of them will match.
-		/// </summary>
-		/// <param name="casing">The <see cref="Case"/> to use for all <paramref name="patterns"/>.</param>
-		/// <param name="patterns">The set of <see cref="String"/>.</param>
-		/// <returns>A new <see cref="Pattern"/> alternating all of the <paramref name="patterns"/>.</returns>
-		[return: MaybeNull]
-		public static Pattern OneOf(Case casing, [AllowNull] params String[] patterns) => throw new NotImplementedException();
+		///// <summary>
+		///// Declares the <paramref name="patterns"/> to be alternates of each other; one of them will match.
+		///// </summary>
+		///// <param name="casing">The <see cref="Case"/> to use for all <paramref name="patterns"/>.</param>
+		///// <param name="patterns">The set of <see cref="String"/>.</param>
+		///// <returns>A new <see cref="Pattern"/> alternating all of the <paramref name="patterns"/>.</returns>
+		//[return: MaybeNull]
+		//public static Pattern OneOf(Case casing, [AllowNull] params String[] patterns) => throw new NotImplementedException();
 
+#if !NETSTANDARD1_3
 		/// <summary>
 		/// Declares the names of <typeparamref name="E"/> to be alternates of each other; one of them will match.
 		/// </summary>
 		/// <typeparam name="E">The <see cref="Enum"/> providing names.</typeparam>
 		/// <returns>A new <see cref="Pattern"/> alternating all the names of <typeparamref name="E"/>.</returns>
 		[return: MaybeNull]
-		public static Pattern OneOf<E>() where E : Enum => OneOf<E>(default);
+		public static Pattern OneOf<E>() where E : struct, Enum => OneOf<E>(default);
 
 		/// <summary>
-		/// Declares the names of <typeparamref name="E"/> to be alternates of each other; one of them will match.
+		/// Declares the names of <typeparamref name="TEnum"/> to be alternates of each other; one of them should match.
 		/// </summary>
-		/// <param name="casing">The <see cref="Case"/> to use for all <typeparamref name="E"/>.</param>
-		/// <typeparam name="E">The <see cref="Enum"/> providing names.</typeparam>
-		/// <returns>A new <see cref="Pattern"/> alternating all the names of <typeparamref name="E"/>.</returns>
+		/// <param name="casing">The <see cref="Case"/> to use for all <typeparamref name="TEnum"/>.</param>
+		/// <typeparam name="TEnum">The <see cref="Enum"/> providing names.</typeparam>
+		/// <returns>A new <see cref="Pattern"/> alternating all the names of <typeparamref name="TEnum"/>.</returns>
 		[return: MaybeNull]
-		public static Pattern OneOf<E>(Case casing) where E : Enum => OneOf(casing, Enum.GetNames(typeof(E)));
+		public static Pattern OneOf<TEnum>(Case casing) where TEnum : struct, Enum => new ChainEnumAlternator<TEnum>(casing);
+#endif
 	}
 }

@@ -43,7 +43,7 @@ namespace Langly {
 		[InlineData("two", "one", "two", "three", "two")]
 		[InlineData("three", "one", "two", "three", "three")]
 		public unsafe void ChainAlternator_Pointer(String expected, String first, String second, String third, String source) {
-			Pattern ptn = first.Or(second).Or(third);
+			Pattern ptn = OneOf(first, second, third);
 			Int32 i = 0;
 			Capture? capture = null;
 			fixed (Char* src = source) {
@@ -59,7 +59,41 @@ namespace Langly {
 		[InlineData("three", "one", "two", "three", "three", false)]
 		[InlineData("", "one", "two", "three", "four", true)]
 		public void ChainAlternator_String(String expected, String first, String second, String third, String source, Boolean throws) {
-			Pattern ptn = first.Or(second).Or(third);
+			Pattern ptn = OneOf(first, second, third);
+			Int32 i = 0;
+			Capture? capture = null;
+			if (!throws) {
+				capture = ptn.Parse(source, ref i);
+				Assert.Equal(expected, capture);
+			} else {
+				_ = Assert.ThrowsAny<Exception>(() => capture = ptn.Parse(source, ref i));
+				Assert.Null(capture);
+			}
+			Assert.Equal(expected.Length, i);
+		}
+
+		[Theory]
+		[InlineData("Black", ConsoleColor.Black, "Black")]
+		[InlineData("Red", ConsoleColor.Black, "Red")]
+		[InlineData("DarkYellow", ConsoleColor.Black, "DarkYellow")]
+		public unsafe void ChainEnumAlternator_Pointer<TEnum>(String expected, TEnum @enum, String source) where TEnum : struct, Enum {
+			Pattern ptn = OneOf<TEnum>();
+			Int32 i = 0;
+			Capture? capture = null;
+			fixed (Char* src = source) {
+				capture = ptn.Parse(src, source.Length, ref i);
+				Assert.Equal(expected, capture);
+			}
+			Assert.Equal(expected.Length, i);
+		}
+
+		[Theory]
+		[InlineData("Black", ConsoleColor.Black, "Black", false)]
+		[InlineData("Red", ConsoleColor.Black, "Red", false)]
+		[InlineData("DarkYellow", ConsoleColor.Black, "DarkYellow", false)]
+		[InlineData("", ConsoleColor.Black, "Potato", true)]
+		public void ChainEnumAlternator_String<TEnum>(String expected, TEnum @enum, String source, Boolean throws) where TEnum : struct, Enum {
+			Pattern ptn = OneOf<TEnum>();
 			Int32 i = 0;
 			Capture? capture = null;
 			if (!throws) {

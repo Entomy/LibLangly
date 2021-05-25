@@ -338,10 +338,140 @@ public void ChainAlternator_String(string expected, string first, string second,
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Pattern_Tests_CharLiteral_Pointer_System_String_System_Char_System_String_.md&amp;value=---%0Auid%3A%20Langly.Pattern_Tests.CharLiteral_Pointer(System.String%2CSystem.Char%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Pattern_Tests_ChainEnumAlternator_Pointer__1_System_String___0_System_String_.md&amp;value=---%0Auid%3A%20Langly.Pattern_Tests.ChainEnumAlternator_Pointer%60%601(System.String%2C%60%600%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Tests.CSharp/Pattern_Tests.cs/#L75">View Source</a>
+  </span>
+  <a id="Langly_Pattern_Tests_ChainEnumAlternator_Pointer_" data-uid="Langly.Pattern_Tests.ChainEnumAlternator_Pointer*"></a>
+  <h4 id="Langly_Pattern_Tests_ChainEnumAlternator_Pointer__1_System_String___0_System_String_" data-uid="Langly.Pattern_Tests.ChainEnumAlternator_Pointer``1(System.String,``0,System.String)">ChainEnumAlternator_Pointer&lt;TEnum&gt;(String, TEnum, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Theory]
+[InlineData(new object[]{&quot;Black&quot;, ConsoleColor.Black, &quot;Black&quot;})]
+[InlineData(new object[]{&quot;Red&quot;, ConsoleColor.Black, &quot;Red&quot;})]
+[InlineData(new object[]{&quot;DarkYellow&quot;, ConsoleColor.Black, &quot;DarkYellow&quot;})]
+public void ChainEnumAlternator_Pointer&lt;TEnum&gt;(string expected, TEnum enum, string source)
+    where TEnum : struct, Enum</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">expected</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TEnum</span></td>
+        <td><span class="parametername">enum</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">source</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TEnum</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Pattern_Tests_ChainEnumAlternator_String__1_System_String___0_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20Langly.Pattern_Tests.ChainEnumAlternator_String%60%601(System.String%2C%60%600%2CSystem.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests.CSharp/Pattern_Tests.cs/#L90">View Source</a>
+  </span>
+  <a id="Langly_Pattern_Tests_ChainEnumAlternator_String_" data-uid="Langly.Pattern_Tests.ChainEnumAlternator_String*"></a>
+  <h4 id="Langly_Pattern_Tests_ChainEnumAlternator_String__1_System_String___0_System_String_System_Boolean_" data-uid="Langly.Pattern_Tests.ChainEnumAlternator_String``1(System.String,``0,System.String,System.Boolean)">ChainEnumAlternator_String&lt;TEnum&gt;(String, TEnum, String, Boolean)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Theory]
+[InlineData(new object[]{&quot;Black&quot;, ConsoleColor.Black, &quot;Black&quot;, false})]
+[InlineData(new object[]{&quot;Red&quot;, ConsoleColor.Black, &quot;Red&quot;, false})]
+[InlineData(new object[]{&quot;DarkYellow&quot;, ConsoleColor.Black, &quot;DarkYellow&quot;, false})]
+[InlineData(new object[]{&quot;&quot;, ConsoleColor.Black, &quot;Potato&quot;, true})]
+public void ChainEnumAlternator_String&lt;TEnum&gt;(string expected, TEnum enum, string source, bool throws)
+    where TEnum : struct, Enum</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">expected</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TEnum</span></td>
+        <td><span class="parametername">enum</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">source</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">throws</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TEnum</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Pattern_Tests_CharLiteral_Pointer_System_String_System_Char_System_String_.md&amp;value=---%0Auid%3A%20Langly.Pattern_Tests.CharLiteral_Pointer(System.String%2CSystem.Char%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests.CSharp/Pattern_Tests.cs/#L109">View Source</a>
   </span>
   <a id="Langly_Pattern_Tests_CharLiteral_Pointer_" data-uid="Langly.Pattern_Tests.CharLiteral_Pointer*"></a>
   <h4 id="Langly_Pattern_Tests_CharLiteral_Pointer_System_String_System_Char_System_String_" data-uid="Langly.Pattern_Tests.CharLiteral_Pointer(System.String,System.Char,System.String)">CharLiteral_Pointer(String, Char, String)</h4>
@@ -386,7 +516,7 @@ public void CharLiteral_Pointer(string expected, char pattern, string source)</c
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Pattern_Tests_CharLiteral_String_System_String_System_Char_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20Langly.Pattern_Tests.CharLiteral_String(System.String%2CSystem.Char%2CSystem.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests.CSharp/Pattern_Tests.cs/#L89">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests.CSharp/Pattern_Tests.cs/#L123">View Source</a>
   </span>
   <a id="Langly_Pattern_Tests_CharLiteral_String_" data-uid="Langly.Pattern_Tests.CharLiteral_String*"></a>
   <h4 id="Langly_Pattern_Tests_CharLiteral_String_System_String_System_Char_System_String_System_Boolean_" data-uid="Langly.Pattern_Tests.CharLiteral_String(System.String,System.Char,System.String,System.Boolean)">CharLiteral_String(String, Char, String, Boolean)</h4>
@@ -437,7 +567,7 @@ public void CharLiteral_String(string expected, char pattern, string source, boo
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Pattern_Tests_Concatenator_Pointer_System_String_System_String_System_String_System_String_.md&amp;value=---%0Auid%3A%20Langly.Pattern_Tests.Concatenator_Pointer(System.String%2CSystem.String%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests.CSharp/Pattern_Tests.cs/#L107">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests.CSharp/Pattern_Tests.cs/#L141">View Source</a>
   </span>
   <a id="Langly_Pattern_Tests_Concatenator_Pointer_" data-uid="Langly.Pattern_Tests.Concatenator_Pointer*"></a>
   <h4 id="Langly_Pattern_Tests_Concatenator_Pointer_System_String_System_String_System_String_System_String_" data-uid="Langly.Pattern_Tests.Concatenator_Pointer(System.String,System.String,System.String,System.String)">Concatenator_Pointer(String, String, String, String)</h4>
@@ -486,7 +616,7 @@ public void Concatenator_Pointer(string expected, string first, string second, s
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Pattern_Tests_Concatenator_String_System_String_System_String_System_String_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20Langly.Pattern_Tests.Concatenator_String(System.String%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests.CSharp/Pattern_Tests.cs/#L120">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests.CSharp/Pattern_Tests.cs/#L154">View Source</a>
   </span>
   <a id="Langly_Pattern_Tests_Concatenator_String_" data-uid="Langly.Pattern_Tests.Concatenator_String*"></a>
   <h4 id="Langly_Pattern_Tests_Concatenator_String_System_String_System_String_System_String_System_String_System_Boolean_" data-uid="Langly.Pattern_Tests.Concatenator_String(System.String,System.String,System.String,System.String,System.Boolean)">Concatenator_String(String, String, String, String, Boolean)</h4>
@@ -541,7 +671,7 @@ public void Concatenator_String(string expected, string first, string second, st
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Pattern_Tests_Fuzzer_Pointer_System_String_System_String_System_Int32_System_String_.md&amp;value=---%0Auid%3A%20Langly.Pattern_Tests.Fuzzer_Pointer(System.String%2CSystem.String%2CSystem.Int32%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests.CSharp/Pattern_Tests.cs/#L137">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests.CSharp/Pattern_Tests.cs/#L171">View Source</a>
   </span>
   <a id="Langly_Pattern_Tests_Fuzzer_Pointer_" data-uid="Langly.Pattern_Tests.Fuzzer_Pointer*"></a>
   <h4 id="Langly_Pattern_Tests_Fuzzer_Pointer_System_String_System_String_System_Int32_System_String_" data-uid="Langly.Pattern_Tests.Fuzzer_Pointer(System.String,System.String,System.Int32,System.String)">Fuzzer_Pointer(String, String, Int32, String)</h4>
@@ -596,7 +726,7 @@ public void Fuzzer_Pointer(string expected, string pattern, int maxEdits, string
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Pattern_Tests_Fuzzer_String_System_String_System_String_System_Int32_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20Langly.Pattern_Tests.Fuzzer_String(System.String%2CSystem.String%2CSystem.Int32%2CSystem.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests.CSharp/Pattern_Tests.cs/#L156">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests.CSharp/Pattern_Tests.cs/#L190">View Source</a>
   </span>
   <a id="Langly_Pattern_Tests_Fuzzer_String_" data-uid="Langly.Pattern_Tests.Fuzzer_String*"></a>
   <h4 id="Langly_Pattern_Tests_Fuzzer_String_System_String_System_String_System_Int32_System_String_System_Boolean_" data-uid="Langly.Pattern_Tests.Fuzzer_String(System.String,System.String,System.Int32,System.String,System.Boolean)">Fuzzer_String(String, String, Int32, String, Boolean)</h4>
@@ -657,7 +787,7 @@ public void Fuzzer_String(string expected, string pattern, int maxEdits, string 
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Pattern_Tests_KleenesClosure_Pointer_System_String_System_String_System_String_.md&amp;value=---%0Auid%3A%20Langly.Pattern_Tests.KleenesClosure_Pointer(System.String%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests.CSharp/Pattern_Tests.cs/#L179">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests.CSharp/Pattern_Tests.cs/#L213">View Source</a>
   </span>
   <a id="Langly_Pattern_Tests_KleenesClosure_Pointer_" data-uid="Langly.Pattern_Tests.KleenesClosure_Pointer*"></a>
   <h4 id="Langly_Pattern_Tests_KleenesClosure_Pointer_System_String_System_String_System_String_" data-uid="Langly.Pattern_Tests.KleenesClosure_Pointer(System.String,System.String,System.String)">KleenesClosure_Pointer(String, String, String)</h4>
@@ -705,7 +835,7 @@ public void KleenesClosure_Pointer(string expected, string pattern, string sourc
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Pattern_Tests_KleenesClosure_String_System_String_System_String_System_String_.md&amp;value=---%0Auid%3A%20Langly.Pattern_Tests.KleenesClosure_String(System.String%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests.CSharp/Pattern_Tests.cs/#L196">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests.CSharp/Pattern_Tests.cs/#L230">View Source</a>
   </span>
   <a id="Langly_Pattern_Tests_KleenesClosure_String_" data-uid="Langly.Pattern_Tests.KleenesClosure_String*"></a>
   <h4 id="Langly_Pattern_Tests_KleenesClosure_String_System_String_System_String_System_String_" data-uid="Langly.Pattern_Tests.KleenesClosure_String(System.String,System.String,System.String)">KleenesClosure_String(String, String, String)</h4>
@@ -753,7 +883,7 @@ public void KleenesClosure_String(string expected, string pattern, string source
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Pattern_Tests_LineEndChecker_Pointer_System_String_System_String_.md&amp;value=---%0Auid%3A%20Langly.Pattern_Tests.LineEndChecker_Pointer(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests.CSharp/Pattern_Tests.cs/#L211">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests.CSharp/Pattern_Tests.cs/#L245">View Source</a>
   </span>
   <a id="Langly_Pattern_Tests_LineEndChecker_Pointer_" data-uid="Langly.Pattern_Tests.LineEndChecker_Pointer*"></a>
   <h4 id="Langly_Pattern_Tests_LineEndChecker_Pointer_System_String_System_String_" data-uid="Langly.Pattern_Tests.LineEndChecker_Pointer(System.String,System.String)">LineEndChecker_Pointer(String, String)</h4>
@@ -800,7 +930,7 @@ public void LineEndChecker_Pointer(string expected, string source)</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Pattern_Tests_LineEndChecker_String_System_String_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20Langly.Pattern_Tests.LineEndChecker_String(System.String%2CSystem.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests.CSharp/Pattern_Tests.cs/#L232">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests.CSharp/Pattern_Tests.cs/#L266">View Source</a>
   </span>
   <a id="Langly_Pattern_Tests_LineEndChecker_String_" data-uid="Langly.Pattern_Tests.LineEndChecker_String*"></a>
   <h4 id="Langly_Pattern_Tests_LineEndChecker_String_System_String_System_String_System_Boolean_" data-uid="Langly.Pattern_Tests.LineEndChecker_String(System.String,System.String,System.Boolean)">LineEndChecker_String(String, String, Boolean)</h4>
@@ -853,7 +983,7 @@ public void LineEndChecker_String(string expected, string source, bool throws)</
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Pattern_Tests_Optor_Pointer_System_String_System_String_System_String_.md&amp;value=---%0Auid%3A%20Langly.Pattern_Tests.Optor_Pointer(System.String%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests.CSharp/Pattern_Tests.cs/#L257">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests.CSharp/Pattern_Tests.cs/#L291">View Source</a>
   </span>
   <a id="Langly_Pattern_Tests_Optor_Pointer_" data-uid="Langly.Pattern_Tests.Optor_Pointer*"></a>
   <h4 id="Langly_Pattern_Tests_Optor_Pointer_System_String_System_String_System_String_" data-uid="Langly.Pattern_Tests.Optor_Pointer(System.String,System.String,System.String)">Optor_Pointer(String, String, String)</h4>
@@ -899,7 +1029,7 @@ public void Optor_Pointer(string expected, string pattern, string source)</code>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Pattern_Tests_Optor_String_System_String_System_String_System_String_.md&amp;value=---%0Auid%3A%20Langly.Pattern_Tests.Optor_String(System.String%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests.CSharp/Pattern_Tests.cs/#L272">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests.CSharp/Pattern_Tests.cs/#L306">View Source</a>
   </span>
   <a id="Langly_Pattern_Tests_Optor_String_" data-uid="Langly.Pattern_Tests.Optor_String*"></a>
   <h4 id="Langly_Pattern_Tests_Optor_String_System_String_System_String_System_String_" data-uid="Langly.Pattern_Tests.Optor_String(System.String,System.String,System.String)">Optor_String(String, String, String)</h4>
@@ -945,7 +1075,7 @@ public void Optor_String(string expected, string pattern, string source)</code><
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Pattern_Tests_Repeater_Pattern_System_String_System_String_System_Int32_System_String_.md&amp;value=---%0Auid%3A%20Langly.Pattern_Tests.Repeater_Pattern(System.String%2CSystem.String%2CSystem.Int32%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests.CSharp/Pattern_Tests.cs/#L285">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests.CSharp/Pattern_Tests.cs/#L319">View Source</a>
   </span>
   <a id="Langly_Pattern_Tests_Repeater_Pattern_" data-uid="Langly.Pattern_Tests.Repeater_Pattern*"></a>
   <h4 id="Langly_Pattern_Tests_Repeater_Pattern_System_String_System_String_System_Int32_System_String_" data-uid="Langly.Pattern_Tests.Repeater_Pattern(System.String,System.String,System.Int32,System.String)">Repeater_Pattern(String, String, Int32, String)</h4>
@@ -995,7 +1125,7 @@ public void Repeater_Pattern(string expected, string pattern, int count, string 
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Pattern_Tests_Repeater_String_System_String_System_String_System_Int32_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20Langly.Pattern_Tests.Repeater_String(System.String%2CSystem.String%2CSystem.Int32%2CSystem.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests.CSharp/Pattern_Tests.cs/#L299">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests.CSharp/Pattern_Tests.cs/#L333">View Source</a>
   </span>
   <a id="Langly_Pattern_Tests_Repeater_String_" data-uid="Langly.Pattern_Tests.Repeater_String*"></a>
   <h4 id="Langly_Pattern_Tests_Repeater_String_System_String_System_String_System_Int32_System_String_System_Boolean_" data-uid="Langly.Pattern_Tests.Repeater_String(System.String,System.String,System.Int32,System.String,System.Boolean)">Repeater_String(String, String, Int32, String, Boolean)</h4>
@@ -1051,7 +1181,7 @@ public void Repeater_String(string expected, string pattern, int count, string s
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Pattern_Tests_RuneLiteral_Pointer_System_String_System_Int32_System_String_.md&amp;value=---%0Auid%3A%20Langly.Pattern_Tests.RuneLiteral_Pointer(System.String%2CSystem.Int32%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests.CSharp/Pattern_Tests.cs/#L317">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests.CSharp/Pattern_Tests.cs/#L351">View Source</a>
   </span>
   <a id="Langly_Pattern_Tests_RuneLiteral_Pointer_" data-uid="Langly.Pattern_Tests.RuneLiteral_Pointer*"></a>
   <h4 id="Langly_Pattern_Tests_RuneLiteral_Pointer_System_String_System_Int32_System_String_" data-uid="Langly.Pattern_Tests.RuneLiteral_Pointer(System.String,System.Int32,System.String)">RuneLiteral_Pointer(String, Int32, String)</h4>
@@ -1098,7 +1228,7 @@ public void RuneLiteral_Pointer(string expected, int scalar, string source)</cod
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Pattern_Tests_RuneLiteral_String_System_String_System_Int32_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20Langly.Pattern_Tests.RuneLiteral_String(System.String%2CSystem.Int32%2CSystem.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests.CSharp/Pattern_Tests.cs/#L333">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests.CSharp/Pattern_Tests.cs/#L367">View Source</a>
   </span>
   <a id="Langly_Pattern_Tests_RuneLiteral_String_" data-uid="Langly.Pattern_Tests.RuneLiteral_String*"></a>
   <h4 id="Langly_Pattern_Tests_RuneLiteral_String_System_String_System_Int32_System_String_System_Boolean_" data-uid="Langly.Pattern_Tests.RuneLiteral_String(System.String,System.Int32,System.String,System.Boolean)">RuneLiteral_String(String, Int32, String, Boolean)</h4>
@@ -1152,7 +1282,7 @@ public void RuneLiteral_String(string expected, int scalar, string source, bool 
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Pattern_Tests_SourceEndChecker_Pointer_System_String_System_String_.md&amp;value=---%0Auid%3A%20Langly.Pattern_Tests.SourceEndChecker_Pointer(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests.CSharp/Pattern_Tests.cs/#L354">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests.CSharp/Pattern_Tests.cs/#L388">View Source</a>
   </span>
   <a id="Langly_Pattern_Tests_SourceEndChecker_Pointer_" data-uid="Langly.Pattern_Tests.SourceEndChecker_Pointer*"></a>
   <h4 id="Langly_Pattern_Tests_SourceEndChecker_Pointer_System_String_System_String_" data-uid="Langly.Pattern_Tests.SourceEndChecker_Pointer(System.String,System.String)">SourceEndChecker_Pointer(String, String)</h4>
@@ -1191,7 +1321,7 @@ public void SourceEndChecker_Pointer(string expected, string source)</code></pre
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Pattern_Tests_SourceEndChecker_String_System_String_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20Langly.Pattern_Tests.SourceEndChecker_String(System.String%2CSystem.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests.CSharp/Pattern_Tests.cs/#L367">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests.CSharp/Pattern_Tests.cs/#L401">View Source</a>
   </span>
   <a id="Langly_Pattern_Tests_SourceEndChecker_String_" data-uid="Langly.Pattern_Tests.SourceEndChecker_String*"></a>
   <h4 id="Langly_Pattern_Tests_SourceEndChecker_String_System_String_System_String_System_Boolean_" data-uid="Langly.Pattern_Tests.SourceEndChecker_String(System.String,System.String,System.Boolean)">SourceEndChecker_String(String, String, Boolean)</h4>
@@ -1236,7 +1366,7 @@ public void SourceEndChecker_String(string expected, string source, bool throws)
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Pattern_Tests_Spanner_Pointer_System_String_System_String_System_String_.md&amp;value=---%0Auid%3A%20Langly.Pattern_Tests.Spanner_Pointer(System.String%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests.CSharp/Pattern_Tests.cs/#L384">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests.CSharp/Pattern_Tests.cs/#L418">View Source</a>
   </span>
   <a id="Langly_Pattern_Tests_Spanner_Pointer_" data-uid="Langly.Pattern_Tests.Spanner_Pointer*"></a>
   <h4 id="Langly_Pattern_Tests_Spanner_Pointer_System_String_System_String_System_String_" data-uid="Langly.Pattern_Tests.Spanner_Pointer(System.String,System.String,System.String)">Spanner_Pointer(String, String, String)</h4>
@@ -1283,7 +1413,7 @@ public void Spanner_Pointer(string expected, string pattern, string source)</cod
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Pattern_Tests_Spanner_String_System_String_System_String_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20Langly.Pattern_Tests.Spanner_String(System.String%2CSystem.String%2CSystem.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests.CSharp/Pattern_Tests.cs/#L400">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests.CSharp/Pattern_Tests.cs/#L434">View Source</a>
   </span>
   <a id="Langly_Pattern_Tests_Spanner_String_" data-uid="Langly.Pattern_Tests.Spanner_String*"></a>
   <h4 id="Langly_Pattern_Tests_Spanner_String_System_String_System_String_System_String_System_Boolean_" data-uid="Langly.Pattern_Tests.Spanner_String(System.String,System.String,System.String,System.Boolean)">Spanner_String(String, String, String, Boolean)</h4>
@@ -1336,7 +1466,7 @@ public void Spanner_String(string expected, string pattern, string source, bool 
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Pattern_Tests_StringLiteral_Pointer_System_String_System_String_System_String_.md&amp;value=---%0Auid%3A%20Langly.Pattern_Tests.StringLiteral_Pointer(System.String%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests.CSharp/Pattern_Tests.cs/#L420">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests.CSharp/Pattern_Tests.cs/#L454">View Source</a>
   </span>
   <a id="Langly_Pattern_Tests_StringLiteral_Pointer_" data-uid="Langly.Pattern_Tests.StringLiteral_Pointer*"></a>
   <h4 id="Langly_Pattern_Tests_StringLiteral_Pointer_System_String_System_String_System_String_" data-uid="Langly.Pattern_Tests.StringLiteral_Pointer(System.String,System.String,System.String)">StringLiteral_Pointer(String, String, String)</h4>
@@ -1383,7 +1513,7 @@ public void StringLiteral_Pointer(string expected, string pattern, string source
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Pattern_Tests_StringLiteral_String_System_String_System_String_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20Langly.Pattern_Tests.StringLiteral_String(System.String%2CSystem.String%2CSystem.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests.CSharp/Pattern_Tests.cs/#L436">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Tests.CSharp/Pattern_Tests.cs/#L470">View Source</a>
   </span>
   <a id="Langly_Pattern_Tests_StringLiteral_String_" data-uid="Langly.Pattern_Tests.StringLiteral_String*"></a>
   <h4 id="Langly_Pattern_Tests_StringLiteral_String_System_String_System_String_System_String_System_Boolean_" data-uid="Langly.Pattern_Tests.StringLiteral_String(System.String,System.String,System.String,System.Boolean)">StringLiteral_String(String, String, String, Boolean)</h4>
