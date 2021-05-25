@@ -166,7 +166,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void Add(Span&lt;TElement&gt; elements)</code></pre>
+    <pre><code class="lang-csharp hljs">virtual void Add(Span&lt;TElement&gt; elements)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -187,6 +187,119 @@
     </tbody>
   </table>
   <h5 id="System_Traits_IAddSpan_1_Add_System_Span__0___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.</p>
+</div>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_IAddSpan_1_System_Traits_IAddMemory_TElement__Add__0___.md&amp;value=---%0Auid%3A%20System.Traits.IAddSpan%601.System%23Traits%23IAddMemory%7BTElement%7D%23Add(%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Traits/IAddSpan`1.cs/#L13">View Source</a>
+  </span>
+  <a id="System_Traits_IAddSpan_1_System_Traits_IAddMemory_TElement__Add_" data-uid="System.Traits.IAddSpan`1.System#Traits#IAddMemory{TElement}#Add*"></a>
+  <h4 id="System_Traits_IAddSpan_1_System_Traits_IAddMemory_TElement__Add__0___" data-uid="System.Traits.IAddSpan`1.System#Traits#IAddMemory{TElement}#Add(`0[])">IAddMemory&lt;TElement&gt;.Add(TElement[])</h4>
+  <div class="markdown level1 summary"><p>Adds the elements to this object, as a batch.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IAddMemory&lt;TElement&gt;.Add(params TElement[] elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TElement[]</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to add.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="System_Traits_IAddSpan_1_System_Traits_IAddMemory_TElement__Add__0____remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_IAddSpan_1_System_Traits_IAddMemory_TElement__Add_System_Memory__0__.md&amp;value=---%0Auid%3A%20System.Traits.IAddSpan%601.System%23Traits%23IAddMemory%7BTElement%7D%23Add(System.Memory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Traits/IAddSpan`1.cs/#L16">View Source</a>
+  </span>
+  <a id="System_Traits_IAddSpan_1_System_Traits_IAddMemory_TElement__Add_" data-uid="System.Traits.IAddSpan`1.System#Traits#IAddMemory{TElement}#Add*"></a>
+  <h4 id="System_Traits_IAddSpan_1_System_Traits_IAddMemory_TElement__Add_System_Memory__0__" data-uid="System.Traits.IAddSpan`1.System#Traits#IAddMemory{TElement}#Add(System.Memory{`0})">IAddMemory&lt;TElement&gt;.Add(Memory&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Adds the elements to this object, as a batch.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IAddMemory&lt;TElement&gt;.Add(Memory&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to add.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="System_Traits_IAddSpan_1_System_Traits_IAddMemory_TElement__Add_System_Memory__0___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_IAddSpan_1_System_Traits_IAddMemory_TElement__Add_System_ReadOnlyMemory__0__.md&amp;value=---%0Auid%3A%20System.Traits.IAddSpan%601.System%23Traits%23IAddMemory%7BTElement%7D%23Add(System.ReadOnlyMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Traits/IAddSpan`1.cs/#L19">View Source</a>
+  </span>
+  <a id="System_Traits_IAddSpan_1_System_Traits_IAddMemory_TElement__Add_" data-uid="System.Traits.IAddSpan`1.System#Traits#IAddMemory{TElement}#Add*"></a>
+  <h4 id="System_Traits_IAddSpan_1_System_Traits_IAddMemory_TElement__Add_System_ReadOnlyMemory__0__" data-uid="System.Traits.IAddSpan`1.System#Traits#IAddMemory{TElement}#Add(System.ReadOnlyMemory{`0})">IAddMemory&lt;TElement&gt;.Add(ReadOnlyMemory&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Adds the elements to this object, as a batch.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IAddMemory&lt;TElement&gt;.Add(ReadOnlyMemory&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to add.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="System_Traits_IAddSpan_1_System_Traits_IAddMemory_TElement__Add_System_ReadOnlyMemory__0___remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.</p>
 </div>
   <h3 id="extensionmethods">Extension Methods</h3>

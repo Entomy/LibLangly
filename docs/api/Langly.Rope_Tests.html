@@ -125,9 +125,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{new char[]{'a', 'b'}, new char[]{}, new char[]{'a', 'b'}})]
-public void Add_Array(char[] expected, char[] initial, char[] values)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Add_Array(char[] expected, char[] initial, char[] values)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -169,10 +167,7 @@ public void Add_Array(char[] expected, char[] initial, char[] values)</code></pr
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{new char[]{'a'}, new char[]{}, 'a'})]
-[InlineData(new object[]{new char[]{'a', 'b'}, new char[]{'a'}, 'b'})]
-public void Add_Element(char[] expected, char[] initial, char value)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Add_Element(char[] expected, char[] initial, char value)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -214,9 +209,7 @@ public void Add_Element(char[] expected, char[] initial, char value)</code></pre
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{new char[]{'a', 'b'}, new char[]{}, new char[]{'a', 'b'}})]
-public void Add_Memory(char[] expected, char[] initial, char[] values)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Add_Memory(char[] expected, char[] initial, char[] values)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -258,9 +251,7 @@ public void Add_Memory(char[] expected, char[] initial, char[] values)</code></p
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{new char[]{'a', 'b'}, new char[]{}, new char[]{'a', 'b'}})]
-public void Add_Pointer(char[] expected, char[] initial, char[] values)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Add_Pointer(char[] expected, char[] initial, char[] values)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -302,9 +293,7 @@ public void Add_Pointer(char[] expected, char[] initial, char[] values)</code></
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{new char[]{'a', 'b'}, new char[]{}, new char[]{'a', 'b'}})]
-public void Add_ReadOnlyMemory(char[] expected, char[] initial, char[] values)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Add_ReadOnlyMemory(char[] expected, char[] initial, char[] values)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -346,9 +335,7 @@ public void Add_ReadOnlyMemory(char[] expected, char[] initial, char[] values)</
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{new char[]{'a', 'b'}, new char[]{}, new char[]{'a', 'b'}})]
-public void Add_ReadOnlySpan(char[] expected, char[] initial, char[] values)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Add_ReadOnlySpan(char[] expected, char[] initial, char[] values)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -390,9 +377,7 @@ public void Add_ReadOnlySpan(char[] expected, char[] initial, char[] values)</co
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{new char[]{'a', 'b'}, new char[]{}, new char[]{'a', 'b'}})]
-public void Add_Span(char[] expected, char[] initial, char[] values)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Add_Span(char[] expected, char[] initial, char[] values)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -434,10 +419,7 @@ public void Add_Span(char[] expected, char[] initial, char[] values)</code></pre
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{new char[]{}})]
-[InlineData(new object[]{new char[]{'a', 'b', 'c', 'd', 'e'}})]
-public void Clear(char[] initial)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Clear(char[] initial)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -469,10 +451,7 @@ public void Clear(char[] initial)</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{new char[]{}})]
-[InlineData(new object[]{new char[]{'a', 'b', 'c', 'd', 'e'}})]
-public void Equals(char[] values)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Equals(char[] values)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -504,15 +483,7 @@ public void Equals(char[] values)</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{new char[]{'a', 'b'}, new char[]{}, 0, new char[]{'a', 'b'}})]
-[InlineData(new object[]{new char[]{'0', '0', 'a', 'b', 'c', 'd', 'e'}, new char[]{'a', 'b', 'c', 'd', 'e'}, 0, new char[]{'0', '0'}})]
-[InlineData(new object[]{new char[]{'a', '0', '0', 'b', 'c', 'd', 'e'}, new char[]{'a', 'b', 'c', 'd', 'e'}, 1, new char[]{'0', '0'}})]
-[InlineData(new object[]{new char[]{'a', 'b', '0', '0', 'c', 'd', 'e'}, new char[]{'a', 'b', 'c', 'd', 'e'}, 2, new char[]{'0', '0'}})]
-[InlineData(new object[]{new char[]{'a', 'b', 'c', '0', '0', 'd', 'e'}, new char[]{'a', 'b', 'c', 'd', 'e'}, 3, new char[]{'0', '0'}})]
-[InlineData(new object[]{new char[]{'a', 'b', 'c', 'd', '0', '0', 'e'}, new char[]{'a', 'b', 'c', 'd', 'e'}, 4, new char[]{'0', '0'}})]
-[InlineData(new object[]{new char[]{'a', 'b', 'c', 'd', 'e', '0', '0'}, new char[]{'a', 'b', 'c', 'd', 'e'}, 5, new char[]{'0', '0'}})]
-public void Insert_Array(char[] expected, char[] initial, int index, char[] elements)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Insert_Array(char[] expected, char[] initial, int index, char[] elements)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -559,15 +530,7 @@ public void Insert_Array(char[] expected, char[] initial, int index, char[] elem
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{new char[]{'a'}, new char[]{}, 0, 'a'})]
-[InlineData(new object[]{new char[]{'0', 'a', 'b', 'c', 'd', 'e'}, new char[]{'a', 'b', 'c', 'd', 'e'}, 0, '0'})]
-[InlineData(new object[]{new char[]{'a', '0', 'b', 'c', 'd', 'e'}, new char[]{'a', 'b', 'c', 'd', 'e'}, 1, '0'})]
-[InlineData(new object[]{new char[]{'a', 'b', '0', 'c', 'd', 'e'}, new char[]{'a', 'b', 'c', 'd', 'e'}, 2, '0'})]
-[InlineData(new object[]{new char[]{'a', 'b', 'c', '0', 'd', 'e'}, new char[]{'a', 'b', 'c', 'd', 'e'}, 3, '0'})]
-[InlineData(new object[]{new char[]{'a', 'b', 'c', 'd', '0', 'e'}, new char[]{'a', 'b', 'c', 'd', 'e'}, 4, '0'})]
-[InlineData(new object[]{new char[]{'a', 'b', 'c', 'd', 'e', '0'}, new char[]{'a', 'b', 'c', 'd', 'e'}, 5, '0'})]
-public void Insert_Element(char[] expected, char[] initial, int index, char element)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Insert_Element(char[] expected, char[] initial, int index, char element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -614,15 +577,7 @@ public void Insert_Element(char[] expected, char[] initial, int index, char elem
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{new char[]{'a', 'b'}, new char[]{}, 0, new char[]{'a', 'b'}})]
-[InlineData(new object[]{new char[]{'0', '0', 'a', 'b', 'c', 'd', 'e'}, new char[]{'a', 'b', 'c', 'd', 'e'}, 0, new char[]{'0', '0'}})]
-[InlineData(new object[]{new char[]{'a', '0', '0', 'b', 'c', 'd', 'e'}, new char[]{'a', 'b', 'c', 'd', 'e'}, 1, new char[]{'0', '0'}})]
-[InlineData(new object[]{new char[]{'a', 'b', '0', '0', 'c', 'd', 'e'}, new char[]{'a', 'b', 'c', 'd', 'e'}, 2, new char[]{'0', '0'}})]
-[InlineData(new object[]{new char[]{'a', 'b', 'c', '0', '0', 'd', 'e'}, new char[]{'a', 'b', 'c', 'd', 'e'}, 3, new char[]{'0', '0'}})]
-[InlineData(new object[]{new char[]{'a', 'b', 'c', 'd', '0', '0', 'e'}, new char[]{'a', 'b', 'c', 'd', 'e'}, 4, new char[]{'0', '0'}})]
-[InlineData(new object[]{new char[]{'a', 'b', 'c', 'd', 'e', '0', '0'}, new char[]{'a', 'b', 'c', 'd', 'e'}, 5, new char[]{'0', '0'}})]
-public void Insert_Memory(char[] expected, char[] initial, int index, char[] values)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Insert_Memory(char[] expected, char[] initial, int index, char[] values)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -669,15 +624,7 @@ public void Insert_Memory(char[] expected, char[] initial, int index, char[] val
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{new char[]{'a', 'b'}, new char[]{}, 0, new char[]{'a', 'b'}})]
-[InlineData(new object[]{new char[]{'0', '0', 'a', 'b', 'c', 'd', 'e'}, new char[]{'a', 'b', 'c', 'd', 'e'}, 0, new char[]{'0', '0'}})]
-[InlineData(new object[]{new char[]{'a', '0', '0', 'b', 'c', 'd', 'e'}, new char[]{'a', 'b', 'c', 'd', 'e'}, 1, new char[]{'0', '0'}})]
-[InlineData(new object[]{new char[]{'a', 'b', '0', '0', 'c', 'd', 'e'}, new char[]{'a', 'b', 'c', 'd', 'e'}, 2, new char[]{'0', '0'}})]
-[InlineData(new object[]{new char[]{'a', 'b', 'c', '0', '0', 'd', 'e'}, new char[]{'a', 'b', 'c', 'd', 'e'}, 3, new char[]{'0', '0'}})]
-[InlineData(new object[]{new char[]{'a', 'b', 'c', 'd', '0', '0', 'e'}, new char[]{'a', 'b', 'c', 'd', 'e'}, 4, new char[]{'0', '0'}})]
-[InlineData(new object[]{new char[]{'a', 'b', 'c', 'd', 'e', '0', '0'}, new char[]{'a', 'b', 'c', 'd', 'e'}, 5, new char[]{'0', '0'}})]
-public void Insert_Pointer(char[] expected, char[] initial, int index, char[] elements)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Insert_Pointer(char[] expected, char[] initial, int index, char[] elements)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -724,15 +671,7 @@ public void Insert_Pointer(char[] expected, char[] initial, int index, char[] el
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{new char[]{'a', 'b'}, new char[]{}, 0, new char[]{'a', 'b'}})]
-[InlineData(new object[]{new char[]{'0', '0', 'a', 'b', 'c', 'd', 'e'}, new char[]{'a', 'b', 'c', 'd', 'e'}, 0, new char[]{'0', '0'}})]
-[InlineData(new object[]{new char[]{'a', '0', '0', 'b', 'c', 'd', 'e'}, new char[]{'a', 'b', 'c', 'd', 'e'}, 1, new char[]{'0', '0'}})]
-[InlineData(new object[]{new char[]{'a', 'b', '0', '0', 'c', 'd', 'e'}, new char[]{'a', 'b', 'c', 'd', 'e'}, 2, new char[]{'0', '0'}})]
-[InlineData(new object[]{new char[]{'a', 'b', 'c', '0', '0', 'd', 'e'}, new char[]{'a', 'b', 'c', 'd', 'e'}, 3, new char[]{'0', '0'}})]
-[InlineData(new object[]{new char[]{'a', 'b', 'c', 'd', '0', '0', 'e'}, new char[]{'a', 'b', 'c', 'd', 'e'}, 4, new char[]{'0', '0'}})]
-[InlineData(new object[]{new char[]{'a', 'b', 'c', 'd', 'e', '0', '0'}, new char[]{'a', 'b', 'c', 'd', 'e'}, 5, new char[]{'0', '0'}})]
-public void Insert_ReadOnlyMemory(char[] expected, char[] initial, int index, char[] elements)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Insert_ReadOnlyMemory(char[] expected, char[] initial, int index, char[] elements)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -779,15 +718,7 @@ public void Insert_ReadOnlyMemory(char[] expected, char[] initial, int index, ch
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{new char[]{'a', 'b'}, new char[]{}, 0, new char[]{'a', 'b'}})]
-[InlineData(new object[]{new char[]{'0', '0', 'a', 'b', 'c', 'd', 'e'}, new char[]{'a', 'b', 'c', 'd', 'e'}, 0, new char[]{'0', '0'}})]
-[InlineData(new object[]{new char[]{'a', '0', '0', 'b', 'c', 'd', 'e'}, new char[]{'a', 'b', 'c', 'd', 'e'}, 1, new char[]{'0', '0'}})]
-[InlineData(new object[]{new char[]{'a', 'b', '0', '0', 'c', 'd', 'e'}, new char[]{'a', 'b', 'c', 'd', 'e'}, 2, new char[]{'0', '0'}})]
-[InlineData(new object[]{new char[]{'a', 'b', 'c', '0', '0', 'd', 'e'}, new char[]{'a', 'b', 'c', 'd', 'e'}, 3, new char[]{'0', '0'}})]
-[InlineData(new object[]{new char[]{'a', 'b', 'c', 'd', '0', '0', 'e'}, new char[]{'a', 'b', 'c', 'd', 'e'}, 4, new char[]{'0', '0'}})]
-[InlineData(new object[]{new char[]{'a', 'b', 'c', 'd', 'e', '0', '0'}, new char[]{'a', 'b', 'c', 'd', 'e'}, 5, new char[]{'0', '0'}})]
-public void Insert_ReadOnlySpan(char[] expected, char[] initial, int index, char[] elements)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Insert_ReadOnlySpan(char[] expected, char[] initial, int index, char[] elements)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -834,15 +765,7 @@ public void Insert_ReadOnlySpan(char[] expected, char[] initial, int index, char
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{new char[]{'a', 'b'}, new char[]{}, 0, new char[]{'a', 'b'}})]
-[InlineData(new object[]{new char[]{'0', '0', 'a', 'b', 'c', 'd', 'e'}, new char[]{'a', 'b', 'c', 'd', 'e'}, 0, new char[]{'0', '0'}})]
-[InlineData(new object[]{new char[]{'a', '0', '0', 'b', 'c', 'd', 'e'}, new char[]{'a', 'b', 'c', 'd', 'e'}, 1, new char[]{'0', '0'}})]
-[InlineData(new object[]{new char[]{'a', 'b', '0', '0', 'c', 'd', 'e'}, new char[]{'a', 'b', 'c', 'd', 'e'}, 2, new char[]{'0', '0'}})]
-[InlineData(new object[]{new char[]{'a', 'b', 'c', '0', '0', 'd', 'e'}, new char[]{'a', 'b', 'c', 'd', 'e'}, 3, new char[]{'0', '0'}})]
-[InlineData(new object[]{new char[]{'a', 'b', 'c', 'd', '0', '0', 'e'}, new char[]{'a', 'b', 'c', 'd', 'e'}, 4, new char[]{'0', '0'}})]
-[InlineData(new object[]{new char[]{'a', 'b', 'c', 'd', 'e', '0', '0'}, new char[]{'a', 'b', 'c', 'd', 'e'}, 5, new char[]{'0', '0'}})]
-public void Insert_Span(char[] expected, char[] initial, int index, char[] elements)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Insert_Span(char[] expected, char[] initial, int index, char[] elements)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -889,10 +812,7 @@ public void Insert_Span(char[] expected, char[] initial, int index, char[] eleme
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{new char[]{}, new char[]{}, new char[]{}})]
-[InlineData(new object[]{new char[]{'a', 'b', 'c', 'd', 'e'}, new char[]{'a', 'b'}, new char[]{'c', 'd', 'e'}})]
-public void Postpend_Array(char[] expected, char[] initial, char[] elements)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Postpend_Array(char[] expected, char[] initial, char[] elements)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -934,9 +854,7 @@ public void Postpend_Array(char[] expected, char[] initial, char[] elements)</co
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{new char[]{'a'}, new char[]{}, 'a'})]
-public void Postpend_Element(char[] expected, char[] initial, char element)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Postpend_Element(char[] expected, char[] initial, char element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -978,10 +896,7 @@ public void Postpend_Element(char[] expected, char[] initial, char element)</cod
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{new char[]{}, new char[]{}, new char[]{}})]
-[InlineData(new object[]{new char[]{'a', 'b', 'c', 'd', 'e'}, new char[]{'a', 'b'}, new char[]{'c', 'd', 'e'}})]
-public void Postpend_Memory(char[] expected, char[] initial, char[] elements)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Postpend_Memory(char[] expected, char[] initial, char[] elements)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1023,10 +938,7 @@ public void Postpend_Memory(char[] expected, char[] initial, char[] elements)</c
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{new char[]{}, new char[]{}, new char[]{}})]
-[InlineData(new object[]{new char[]{'a', 'b', 'c', 'd', 'e'}, new char[]{'a', 'b'}, new char[]{'c', 'd', 'e'}})]
-public void Postpend_Pointer(char[] expected, char[] initial, char[] elements)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Postpend_Pointer(char[] expected, char[] initial, char[] elements)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1068,10 +980,7 @@ public void Postpend_Pointer(char[] expected, char[] initial, char[] elements)</
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{new char[]{}, new char[]{}, new char[]{}})]
-[InlineData(new object[]{new char[]{'a', 'b', 'c', 'd', 'e'}, new char[]{'a', 'b'}, new char[]{'c', 'd', 'e'}})]
-public void Postpend_ReadOnlyMemory(char[] expected, char[] initial, char[] elements)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Postpend_ReadOnlyMemory(char[] expected, char[] initial, char[] elements)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1113,10 +1022,7 @@ public void Postpend_ReadOnlyMemory(char[] expected, char[] initial, char[] elem
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{new char[]{}, new char[]{}, new char[]{}})]
-[InlineData(new object[]{new char[]{'a', 'b', 'c', 'd', 'e'}, new char[]{'a', 'b'}, new char[]{'c', 'd', 'e'}})]
-public void Postpend_ReadOnlySpan(char[] expected, char[] initial, char[] elements)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Postpend_ReadOnlySpan(char[] expected, char[] initial, char[] elements)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1158,10 +1064,7 @@ public void Postpend_ReadOnlySpan(char[] expected, char[] initial, char[] elemen
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{new char[]{}, new char[]{}, new char[]{}})]
-[InlineData(new object[]{new char[]{'a', 'b', 'c', 'd', 'e'}, new char[]{'a', 'b'}, new char[]{'c', 'd', 'e'}})]
-public void Postpend_Span(char[] expected, char[] initial, char[] elements)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Postpend_Span(char[] expected, char[] initial, char[] elements)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1203,10 +1106,7 @@ public void Postpend_Span(char[] expected, char[] initial, char[] elements)</cod
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{new char[]{}, new char[]{}, new char[]{}})]
-[InlineData(new object[]{new char[]{'c', 'd', 'e', 'a', 'b'}, new char[]{'a', 'b'}, new char[]{'c', 'd', 'e'}})]
-public void Prepend_Array(char[] expected, char[] initial, char[] elements)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Prepend_Array(char[] expected, char[] initial, char[] elements)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1248,9 +1148,7 @@ public void Prepend_Array(char[] expected, char[] initial, char[] elements)</cod
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{new char[]{'a'}, new char[]{}, 'a'})]
-public void Prepend_Element(char[] expected, char[] initial, char element)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Prepend_Element(char[] expected, char[] initial, char element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1292,10 +1190,7 @@ public void Prepend_Element(char[] expected, char[] initial, char element)</code
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{new char[]{}, new char[]{}, new char[]{}})]
-[InlineData(new object[]{new char[]{'c', 'd', 'e', 'a', 'b'}, new char[]{'a', 'b'}, new char[]{'c', 'd', 'e'}})]
-public void Prepend_Memory(char[] expected, char[] initial, char[] elements)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Prepend_Memory(char[] expected, char[] initial, char[] elements)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1337,10 +1232,7 @@ public void Prepend_Memory(char[] expected, char[] initial, char[] elements)</co
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{new char[]{}, new char[]{}, new char[]{}})]
-[InlineData(new object[]{new char[]{'c', 'd', 'e', 'a', 'b'}, new char[]{'a', 'b'}, new char[]{'c', 'd', 'e'}})]
-public void Prepend_Pointer(char[] expected, char[] initial, char[] elements)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Prepend_Pointer(char[] expected, char[] initial, char[] elements)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1382,10 +1274,7 @@ public void Prepend_Pointer(char[] expected, char[] initial, char[] elements)</c
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{new char[]{}, new char[]{}, new char[]{}})]
-[InlineData(new object[]{new char[]{'c', 'd', 'e', 'a', 'b'}, new char[]{'a', 'b'}, new char[]{'c', 'd', 'e'}})]
-public void Prepend_ReadOnlyMemory(char[] expected, char[] initial, char[] elements)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Prepend_ReadOnlyMemory(char[] expected, char[] initial, char[] elements)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1427,10 +1316,7 @@ public void Prepend_ReadOnlyMemory(char[] expected, char[] initial, char[] eleme
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{new char[]{}, new char[]{}, new char[]{}})]
-[InlineData(new object[]{new char[]{'c', 'd', 'e', 'a', 'b'}, new char[]{'a', 'b'}, new char[]{'c', 'd', 'e'}})]
-public void Prepend_ReadOnlySpan(char[] expected, char[] initial, char[] elements)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Prepend_ReadOnlySpan(char[] expected, char[] initial, char[] elements)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1472,10 +1358,7 @@ public void Prepend_ReadOnlySpan(char[] expected, char[] initial, char[] element
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{new char[]{}, new char[]{}, new char[]{}})]
-[InlineData(new object[]{new char[]{'c', 'd', 'e', 'a', 'b'}, new char[]{'a', 'b'}, new char[]{'c', 'd', 'e'}})]
-public void Prepend_Span(char[] expected, char[] initial, char[] elements)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Prepend_Span(char[] expected, char[] initial, char[] elements)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1517,17 +1400,7 @@ public void Prepend_Span(char[] expected, char[] initial, char[] elements)</code
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{new char[]{}, new char[]{}, '0', '0'})]
-[InlineData(new object[]{new char[]{'a', 'b', 'c', 'd', 'e'}, new char[]{'a', 'b', 'c', 'd', 'e'}, '0', '0'})]
-[InlineData(new object[]{new char[]{'0', 'b', 'c', 'd', 'e'}, new char[]{'a', 'b', 'c', 'd', 'e'}, 'a', '0'})]
-[InlineData(new object[]{new char[]{'a', '0', 'c', 'd', 'e'}, new char[]{'a', 'b', 'c', 'd', 'e'}, 'b', '0'})]
-[InlineData(new object[]{new char[]{'a', 'b', '0', 'd', 'e'}, new char[]{'a', 'b', 'c', 'd', 'e'}, 'c', '0'})]
-[InlineData(new object[]{new char[]{'a', 'b', 'c', '0', 'e'}, new char[]{'a', 'b', 'c', 'd', 'e'}, 'd', '0'})]
-[InlineData(new object[]{new char[]{'a', 'b', 'c', 'd', '0'}, new char[]{'a', 'b', 'c', 'd', 'e'}, 'e', '0'})]
-[InlineData(new object[]{new char[]{'0', 'b', '0', 'b', '0'}, new char[]{'a', 'b', 'a', 'b', 'a'}, 'a', '0'})]
-[InlineData(new object[]{new char[]{'0', '0', '0', '0', '0'}, new char[]{'a', 'a', 'a', 'a', 'a'}, 'a', '0'})]
-public void Replace(char[] expected, char[] initial, char search, char replace)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Replace(char[] expected, char[] initial, char search, char replace)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1574,10 +1447,7 @@ public void Replace(char[] expected, char[] initial, char search, char replace)<
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{&quot;&quot;, new char[]{}})]
-[InlineData(new object[]{&quot;abcde&quot;, new char[]{'a', 'b', 'c', 'd', 'e'}})]
-public void ToString(string expected, char[] values)</code></pre>
+    <pre><code class="lang-csharp hljs">public void ToString(string expected, char[] values)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1614,11 +1484,7 @@ public void ToString(string expected, char[] values)</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{&quot;&quot;, new char[]{}, 0})]
-[InlineData(new object[]{&quot;abc...&quot;, new char[]{'a', 'b', 'c', 'd', 'e'}, 3})]
-[InlineData(new object[]{&quot;abcde&quot;, new char[]{'a', 'b', 'c', 'd', 'e'}, 5})]
-public void ToString_Amount(string expected, char[] values, char amount)</code></pre>
+    <pre><code class="lang-csharp hljs">public void ToString_Amount(string expected, char[] values, char amount)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">

@@ -125,13 +125,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{0, 0})]
-[InlineData(new object[]{65, 65})]
-[InlineData(new object[]{127, 127})]
-[InlineData(new object[]{128, 128})]
-[InlineData(new object[]{255, 255})]
-public void UTF16_Decode_1(ushort first, int expected)</code></pre>
+    <pre><code class="lang-csharp hljs">public void UTF16_Decode_1(ushort first, int expected)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -168,10 +162,7 @@ public void UTF16_Decode_1(ushort first, int expected)</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{55348, 56606, 119070})]
-[InlineData(new object[]{55348, 56637, 119101})]
-public void UTF16_Decode_2(ushort first, ushort second, int expected)</code></pre>
+    <pre><code class="lang-csharp hljs">public void UTF16_Decode_2(ushort first, ushort second, int expected)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -213,8 +204,7 @@ public void UTF16_Decode_2(ushort first, ushort second, int expected)</code></pr
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Fact]
-public void UTF16_Decode_Gibberish()</code></pre>
+    <pre><code class="lang-csharp hljs">public void UTF16_Decode_Gibberish()</code></pre>
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
@@ -229,10 +219,7 @@ public void UTF16_Decode_Gibberish()</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{119070, new char[]{'\uD834', '\uDD1E'}})]
-[InlineData(new object[]{119101, new char[]{'\uD834', '\uDD3D'}})]
-public void UTF16_Encode(uint scalarValue, char[] expected)</code></pre>
+    <pre><code class="lang-csharp hljs">public void UTF16_Encode(uint scalarValue, char[] expected)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -269,8 +256,7 @@ public void UTF16_Encode(uint scalarValue, char[] expected)</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Fact]
-public void UTF16_Encode_Gibberish()</code></pre>
+    <pre><code class="lang-csharp hljs">public void UTF16_Encode_Gibberish()</code></pre>
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
@@ -285,21 +271,7 @@ public void UTF16_Encode_Gibberish()</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{0, true})]
-[InlineData(new object[]{55295, true})]
-[InlineData(new object[]{55296, true})]
-[InlineData(new object[]{55297, true})]
-[InlineData(new object[]{56318, true})]
-[InlineData(new object[]{56319, true})]
-[InlineData(new object[]{56320, false})]
-[InlineData(new object[]{56321, false})]
-[InlineData(new object[]{57342, false})]
-[InlineData(new object[]{57343, false})]
-[InlineData(new object[]{57344, true})]
-[InlineData(new object[]{57345, true})]
-[InlineData(new object[]{65535, true})]
-public void UTF16_IsFirstUnit(ushort unit, bool expected)</code></pre>
+    <pre><code class="lang-csharp hljs">public void UTF16_IsFirstUnit(ushort unit, bool expected)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -336,21 +308,7 @@ public void UTF16_IsFirstUnit(ushort unit, bool expected)</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{0, 0, 65535})]
-[InlineData(new object[]{55295, 0, 65535})]
-[InlineData(new object[]{55296, 56320, 57343})]
-[InlineData(new object[]{55297, 56320, 57343})]
-[InlineData(new object[]{56318, 56320, 57343})]
-[InlineData(new object[]{56319, 56320, 57343})]
-[InlineData(new object[]{56320, 0, 65535})]
-[InlineData(new object[]{56321, 0, 65535})]
-[InlineData(new object[]{57342, 0, 65535})]
-[InlineData(new object[]{57343, 0, 65535})]
-[InlineData(new object[]{57344, 0, 65535})]
-[InlineData(new object[]{57345, 0, 65535})]
-[InlineData(new object[]{65535, 0, 65535})]
-public void UTF16_NextUnitRange(ushort unit, ushort lowerExp, ushort upperExp)</code></pre>
+    <pre><code class="lang-csharp hljs">public void UTF16_NextUnitRange(ushort unit, ushort lowerExp, ushort upperExp)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -392,21 +350,7 @@ public void UTF16_NextUnitRange(ushort unit, ushort lowerExp, ushort upperExp)</
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{0, 1})]
-[InlineData(new object[]{55295, 1})]
-[InlineData(new object[]{55296, 2})]
-[InlineData(new object[]{55297, 2})]
-[InlineData(new object[]{56318, 2})]
-[InlineData(new object[]{56319, 2})]
-[InlineData(new object[]{56320, 0})]
-[InlineData(new object[]{56321, 0})]
-[InlineData(new object[]{57342, 0})]
-[InlineData(new object[]{57343, 0})]
-[InlineData(new object[]{57344, 1})]
-[InlineData(new object[]{57345, 1})]
-[InlineData(new object[]{65535, 1})]
-public void UTF16_SequenceLength(ushort unit, int expected)</code></pre>
+    <pre><code class="lang-csharp hljs">public void UTF16_SequenceLength(ushort unit, int expected)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -443,13 +387,7 @@ public void UTF16_SequenceLength(ushort unit, int expected)</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{0, 0})]
-[InlineData(new object[]{65, 65})]
-[InlineData(new object[]{127, 127})]
-[InlineData(new object[]{128, 65533})]
-[InlineData(new object[]{255, 65533})]
-public void UTF8_Decode_1(byte first, int expected)</code></pre>
+    <pre><code class="lang-csharp hljs">public void UTF8_Decode_1(byte first, int expected)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -486,10 +424,7 @@ public void UTF8_Decode_1(byte first, int expected)</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{195, 134, 198})]
-[InlineData(new object[]{206, 178, 946})]
-public void UTF8_Decode_2(byte first, byte second, int expected)</code></pre>
+    <pre><code class="lang-csharp hljs">public void UTF8_Decode_2(byte first, byte second, int expected)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -531,11 +466,7 @@ public void UTF8_Decode_2(byte first, byte second, int expected)</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{224, 174, 135, 2951})]
-[InlineData(new object[]{225, 130, 167, 4263})]
-[InlineData(new object[]{234, 156, 168, 42792})]
-public void UTF8_Decode_3(byte first, byte second, byte third, int expected)</code></pre>
+    <pre><code class="lang-csharp hljs">public void UTF8_Decode_3(byte first, byte second, byte third, int expected)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -582,10 +513,7 @@ public void UTF8_Decode_3(byte first, byte second, byte third, int expected)</co
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{240, 144, 140, 177, 66353})]
-[InlineData(new object[]{240, 159, 130, 161, 127137})]
-public void UTF8_Decode_4(byte first, byte second, byte third, byte fourth, int expected)</code></pre>
+    <pre><code class="lang-csharp hljs">public void UTF8_Decode_4(byte first, byte second, byte third, byte fourth, int expected)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -637,15 +565,7 @@ public void UTF8_Decode_4(byte first, byte second, byte third, byte fourth, int 
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{new byte[]{}, new int[]{}})]
-[InlineData(new object[]{new byte[]{(byte)0}, new int[]{0}})]
-[InlineData(new object[]{new byte[]{(byte)65, (byte)127}, new int[]{65, 127}})]
-[InlineData(new object[]{new byte[]{(byte)65, (byte)195, (byte)134}, new int[]{65, 198}})]
-[InlineData(new object[]{new byte[]{(byte)195, (byte)134, (byte)65}, new int[]{198, 65}})]
-[InlineData(new object[]{new byte[]{(byte)224, (byte)174, (byte)135}, new int[]{2951}})]
-[InlineData(new object[]{new byte[]{(byte)224, (byte)174, (byte)224}, new int[]{65533}})]
-public void UTF8_Decode_Buffer(byte[] buffer, int[] expected)</code></pre>
+    <pre><code class="lang-csharp hljs">public void UTF8_Decode_Buffer(byte[] buffer, int[] expected)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -682,8 +602,7 @@ public void UTF8_Decode_Buffer(byte[] buffer, int[] expected)</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Fact]
-public void UTF8_Decode_Gibberish()</code></pre>
+    <pre><code class="lang-csharp hljs">public void UTF8_Decode_Gibberish()</code></pre>
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
@@ -698,14 +617,7 @@ public void UTF8_Decode_Gibberish()</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{65, new byte[]{(byte)65}})]
-[InlineData(new object[]{198, new byte[]{(byte)195, (byte)134}})]
-[InlineData(new object[]{2951, new byte[]{(byte)224, (byte)174, (byte)135}})]
-[InlineData(new object[]{42792, new byte[]{(byte)234, (byte)156, (byte)168}})]
-[InlineData(new object[]{66353, new byte[]{(byte)240, (byte)144, (byte)140, (byte)177}})]
-[InlineData(new object[]{127137, new byte[]{(byte)240, (byte)159, (byte)130, (byte)161}})]
-public void UTF8_Encode(uint scalarValue, byte[] expected)</code></pre>
+    <pre><code class="lang-csharp hljs">public void UTF8_Encode(uint scalarValue, byte[] expected)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -742,8 +654,7 @@ public void UTF8_Encode(uint scalarValue, byte[] expected)</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Fact]
-public void UTF8_Encode_Gibberish()</code></pre>
+    <pre><code class="lang-csharp hljs">public void UTF8_Encode_Gibberish()</code></pre>
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
@@ -758,21 +669,7 @@ public void UTF8_Encode_Gibberish()</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{0, true})]
-[InlineData(new object[]{1, true})]
-[InlineData(new object[]{126, true})]
-[InlineData(new object[]{127, true})]
-[InlineData(new object[]{128, false})]
-[InlineData(new object[]{129, false})]
-[InlineData(new object[]{192, false})]
-[InlineData(new object[]{193, false})]
-[InlineData(new object[]{194, true})]
-[InlineData(new object[]{244, true})]
-[InlineData(new object[]{245, false})]
-[InlineData(new object[]{246, false})]
-[InlineData(new object[]{255, false})]
-public void UTF8_IsFirstUnit(byte byte, bool expected)</code></pre>
+    <pre><code class="lang-csharp hljs">public void UTF8_IsFirstUnit(byte byte, bool expected)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -809,21 +706,7 @@ public void UTF8_IsFirstUnit(byte byte, bool expected)</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{127, 128, 191})]
-[InlineData(new object[]{223, 128, 191})]
-[InlineData(new object[]{224, 160, 191})]
-[InlineData(new object[]{225, 128, 191})]
-[InlineData(new object[]{238, 128, 191})]
-[InlineData(new object[]{237, 128, 159})]
-[InlineData(new object[]{239, 128, 191})]
-[InlineData(new object[]{240, 144, 191})]
-[InlineData(new object[]{241, 128, 191})]
-[InlineData(new object[]{243, 128, 191})]
-[InlineData(new object[]{244, 128, 143})]
-[InlineData(new object[]{245, 128, 191})]
-[InlineData(new object[]{255, 128, 191})]
-public void UTF8_NextUnitRange(byte byte, byte lowerExp, byte upperExp)</code></pre>
+    <pre><code class="lang-csharp hljs">public void UTF8_NextUnitRange(byte byte, byte lowerExp, byte upperExp)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -865,25 +748,7 @@ public void UTF8_NextUnitRange(byte byte, byte lowerExp, byte upperExp)</code></
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{0, 1})]
-[InlineData(new object[]{127, 1})]
-[InlineData(new object[]{128, 0})]
-[InlineData(new object[]{193, 0})]
-[InlineData(new object[]{194, 2})]
-[InlineData(new object[]{223, 2})]
-[InlineData(new object[]{224, 3})]
-[InlineData(new object[]{225, 3})]
-[InlineData(new object[]{238, 3})]
-[InlineData(new object[]{239, 3})]
-[InlineData(new object[]{240, 4})]
-[InlineData(new object[]{241, 4})]
-[InlineData(new object[]{243, 4})]
-[InlineData(new object[]{244, 4})]
-[InlineData(new object[]{245, 0})]
-[InlineData(new object[]{246, 0})]
-[InlineData(new object[]{255, 0})]
-public void UTF8_SequenceLength(byte byte, int expected)</code></pre>
+    <pre><code class="lang-csharp hljs">public void UTF8_SequenceLength(byte byte, int expected)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">

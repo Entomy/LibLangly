@@ -125,12 +125,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{&quot;ram&quot;, &quot;ram&quot;, 0})]
-[InlineData(new object[]{&quot;ram&quot;, &quot;rom&quot;, 1})]
-[InlineData(new object[]{&quot;ram&quot;, &quot;rob&quot;, 2})]
-[InlineData(new object[]{&quot;ram&quot;, &quot;rma&quot;, 2})]
-public void Hamming(string source, string other, int expected)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Hamming(string source, string other, int expected)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -172,14 +167,7 @@ public void Hamming(string source, string other, int expected)</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{&quot;ram&quot;, &quot;rom&quot;, 1})]
-[InlineData(new object[]{&quot;ram&quot;, &quot;ra&#769;m&quot;, 1})]
-[InlineData(new object[]{&quot;r&#225;m&quot;, &quot;ra&#769;m&quot;, 2})]
-[InlineData(new object[]{&quot;ram&quot;, &quot;rob&quot;, 2})]
-[InlineData(new object[]{&quot;ram&quot;, &quot;random&quot;, 3})]
-[InlineData(new object[]{&quot;flaw&quot;, &quot;lawn&quot;, 2})]
-public void Levenshtein(string source, string other, int expected)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Levenshtein(string source, string other, int expected)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">

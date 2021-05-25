@@ -163,7 +163,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void Postpend(Span&lt;TElement&gt; elements)</code></pre>
+    <pre><code class="lang-csharp hljs">virtual void Postpend(Span&lt;TElement&gt; elements)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -177,6 +177,110 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to postpend.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_IPostpendSpan_1_System_Traits_IPostpendMemory_TElement__Postpend__0___.md&amp;value=---%0Auid%3A%20System.Traits.IPostpendSpan%601.System%23Traits%23IPostpendMemory%7BTElement%7D%23Postpend(%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Traits/IPostpendSpan`1.cs/#L13">View Source</a>
+  </span>
+  <a id="System_Traits_IPostpendSpan_1_System_Traits_IPostpendMemory_TElement__Postpend_" data-uid="System.Traits.IPostpendSpan`1.System#Traits#IPostpendMemory{TElement}#Postpend*"></a>
+  <h4 id="System_Traits_IPostpendSpan_1_System_Traits_IPostpendMemory_TElement__Postpend__0___" data-uid="System.Traits.IPostpendSpan`1.System#Traits#IPostpendMemory{TElement}#Postpend(`0[])">IPostpendMemory&lt;TElement&gt;.Postpend(TElement[])</h4>
+  <div class="markdown level1 summary"><p>Postpends the elements onto this object, as a batch.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IPostpendMemory&lt;TElement&gt;.Postpend(params TElement[] elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TElement[]</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to postpend.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_IPostpendSpan_1_System_Traits_IPostpendMemory_TElement__Postpend_System_Memory__0__.md&amp;value=---%0Auid%3A%20System.Traits.IPostpendSpan%601.System%23Traits%23IPostpendMemory%7BTElement%7D%23Postpend(System.Memory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Traits/IPostpendSpan`1.cs/#L16">View Source</a>
+  </span>
+  <a id="System_Traits_IPostpendSpan_1_System_Traits_IPostpendMemory_TElement__Postpend_" data-uid="System.Traits.IPostpendSpan`1.System#Traits#IPostpendMemory{TElement}#Postpend*"></a>
+  <h4 id="System_Traits_IPostpendSpan_1_System_Traits_IPostpendMemory_TElement__Postpend_System_Memory__0__" data-uid="System.Traits.IPostpendSpan`1.System#Traits#IPostpendMemory{TElement}#Postpend(System.Memory{`0})">IPostpendMemory&lt;TElement&gt;.Postpend(Memory&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Postpends the elements onto this object, as a batch.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IPostpendMemory&lt;TElement&gt;.Postpend(Memory&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td><p>The elements to postpend.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_IPostpendSpan_1_System_Traits_IPostpendMemory_TElement__Postpend_System_ReadOnlyMemory__0__.md&amp;value=---%0Auid%3A%20System.Traits.IPostpendSpan%601.System%23Traits%23IPostpendMemory%7BTElement%7D%23Postpend(System.ReadOnlyMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Traits/IPostpendSpan`1.cs/#L19">View Source</a>
+  </span>
+  <a id="System_Traits_IPostpendSpan_1_System_Traits_IPostpendMemory_TElement__Postpend_" data-uid="System.Traits.IPostpendSpan`1.System#Traits#IPostpendMemory{TElement}#Postpend*"></a>
+  <h4 id="System_Traits_IPostpendSpan_1_System_Traits_IPostpendMemory_TElement__Postpend_System_ReadOnlyMemory__0__" data-uid="System.Traits.IPostpendSpan`1.System#Traits#IPostpendMemory{TElement}#Postpend(System.ReadOnlyMemory{`0})">IPostpendMemory&lt;TElement&gt;.Postpend(ReadOnlyMemory&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Postpends the elements onto this object, as a batch.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IPostpendMemory&lt;TElement&gt;.Postpend(ReadOnlyMemory&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
         <td><p>The elements to postpend.</p>
 </td>

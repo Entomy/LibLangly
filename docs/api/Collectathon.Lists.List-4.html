@@ -85,27 +85,22 @@
   </div>
   <div classs="implements">
     <h5>Implements</h5>
-    <div><a class="xref" href="System.Traits.IAdd-1.html">IAdd</a>&lt;TElement&gt;</div>
-    <div><a class="xref" href="System.Traits.IClear.html">IClear</a></div>
-    <div><span class="xref">IEquatable</span>&lt;TSelf&gt;</div>
-    <div><span class="xref">IEquatable</span>&lt;<a class="xref" href="Collectathon.Lists.List-4.html">List</a>&lt;TElement, TNode, TSelf, TEnumerator&gt;&gt;</div>
-    <div><a class="xref" href="System.Traits.IIndex-2.html">IIndex</a>&lt;<span class="xref">nint</span>, TElement&gt;</div>
-    <div><a class="xref" href="System.Traits.IIndexReadOnly-2.html">IIndexReadOnly</a>&lt;<span class="xref">nint</span>, TElement&gt;</div>
-    <div><a class="xref" href="System.Traits.IInsert-2.html">IInsert</a>&lt;<span class="xref">nint</span>, TElement&gt;</div>
-    <div><a class="xref" href="System.Traits.IPostpend-1.html">IPostpend</a>&lt;TElement&gt;</div>
-    <div><a class="xref" href="System.Traits.IPrepend-1.html">IPrepend</a>&lt;TElement&gt;</div>
-    <div><a class="xref" href="System.Traits.IRemove-1.html">IRemove</a>&lt;TElement&gt;</div>
-    <div><a class="xref" href="System.Traits.IReplace-1.html">IReplace</a>&lt;TElement&gt;</div>
-    <div><a class="xref" href="System.Traits.IReplace-2.html">IReplace</a>&lt;TElement, TElement&gt;</div>
-    <div><a class="xref" href="System.Traits.ISequence-2.html">ISequence</a>&lt;TElement, TEnumerator&gt;</div>
-    <div><a class="xref" href="System.Traits.ICount.html">ICount</a></div>
-    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TElement&gt;</div>
+    <div><span class="xref">IClear</span></div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;TSelf&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Collectathon.Lists.List-4.html">List</a>&lt;TElement, TNode, TSelf, TEnumerator&gt;&gt;</div>
+    <div><span class="xref">IIndex</span>&lt;<span class="xref">nint</span>, TElement&gt;</div>
+    <div><span class="xref">IInsert</span>&lt;<span class="xref">nint</span>, TElement&gt;</div>
+    <div><span class="xref">IPostpend</span>&lt;TElement&gt;</div>
+    <div><span class="xref">IPrepend</span>&lt;TElement&gt;</div>
+    <div><span class="xref">IRemove</span>&lt;TElement&gt;</div>
+    <div><span class="xref">IReplace</span>&lt;TElement&gt;</div>
+    <div><span class="xref">ISequence</span>&lt;TElement, TEnumerator&gt;</div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Collectathon.Lists.html">Collectathon.Lists</a></h6>
   <h6><strong>Assembly</strong>: Collectathon.Lists.dll</h6>
   <h5 id="Collectathon_Lists_List_4_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class List&lt;TElement, TNode, TSelf, TEnumerator&gt; : object, IAdd&lt;TElement&gt;, IClear, IEquatable&lt;TSelf&gt;, IEquatable&lt;List&lt;TElement, TNode, TSelf, TEnumerator&gt;&gt;, IIndex&lt;nint, TElement&gt;, IIndexReadOnly&lt;nint, TElement&gt;, IInsert&lt;nint, TElement&gt;, IPostpend&lt;TElement&gt;, IPrepend&lt;TElement&gt;, IRemove&lt;TElement&gt;, IReplace&lt;TElement&gt;, IReplace&lt;TElement, TElement&gt;, ISequence&lt;TElement, TEnumerator&gt;, ICount, IEnumerable&lt;TElement&gt; where TNode : ListNode&lt;TElement, TNode&gt; where TSelf : List&lt;TElement, TNode, TSelf, TEnumerator&gt; where TEnumerator : struct, IEnumerator&lt;TElement&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class List&lt;TElement, TNode, TSelf, TEnumerator&gt; : IAdd&lt;TElement&gt;, IClear, IEquatable&lt;TSelf&gt;, IEquatable&lt;List&lt;TElement, TNode, TSelf, TEnumerator&gt;&gt;, IIndex&lt;nint, TElement&gt;, IInsert&lt;nint, TElement&gt;, IPostpend&lt;TElement&gt;, IPrepend&lt;TElement&gt;, IRemove&lt;TElement&gt;, IReplace&lt;TElement&gt;, ISequence&lt;TElement, TEnumerator&gt; where TNode : ListNode&lt;TElement, TNode&gt; where TSelf : List&lt;TElement, TNode, TSelf, TEnumerator&gt; where TEnumerator : struct, IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -444,7 +439,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Boolean Equals(TSelf other)</code></pre>
+    <pre><code class="lang-csharp hljs">public bool Equals(TSelf other)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -473,7 +468,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Boolean</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -491,7 +486,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Boolean Equals(List&lt;TElement, TNode, TSelf, TEnumerator&gt; other)</code></pre>
+    <pre><code class="lang-csharp hljs">public bool Equals(List&lt;TElement, TNode, TSelf, TEnumerator&gt; other)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -520,54 +515,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Boolean</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_List_4_Equals_Object_.md&amp;value=---%0Auid%3A%20Collectathon.Lists.List%604.Equals(Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L90">View Source</a>
-  </span>
-  <a id="Collectathon_Lists_List_4_Equals_" data-uid="Collectathon.Lists.List`4.Equals*"></a>
-  <h4 id="Collectathon_Lists_List_4_Equals_Object_" data-uid="Collectathon.Lists.List`4.Equals(Object)">Equals(Object)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override sealed Boolean Equals(Object obj)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Object</span></td>
-        <td><span class="parametername">obj</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Boolean</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -580,12 +528,12 @@
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L110">View Source</a>
   </span>
   <a id="Collectathon_Lists_List_4_Equals_" data-uid="Collectathon.Lists.List`4.Equals*"></a>
-  <h4 id="Collectathon_Lists_List_4_Equals_System_Collections_Generic_IEnumerable__0__" data-uid="Collectathon.Lists.List`4.Equals(System.Collections.Generic.IEnumerable{`0})">Equals(Collections.Generic.IEnumerable&lt;TElement&gt;)</h4>
+  <h4 id="Collectathon_Lists_List_4_Equals_System_Collections_Generic_IEnumerable__0__" data-uid="Collectathon.Lists.List`4.Equals(System.Collections.Generic.IEnumerable{`0})">Equals(IEnumerable&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Boolean Equals(Collections.Generic.IEnumerable&lt;TElement&gt; other)</code></pre>
+    <pre><code class="lang-csharp hljs">public bool Equals(IEnumerable&lt;TElement&gt; other)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -614,7 +562,54 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Boolean</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_List_4_Equals_System_Object_.md&amp;value=---%0Auid%3A%20Collectathon.Lists.List%604.Equals(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L90">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_List_4_Equals_" data-uid="Collectathon.Lists.List`4.Equals*"></a>
+  <h4 id="Collectathon_Lists_List_4_Equals_System_Object_" data-uid="Collectathon.Lists.List`4.Equals(System.Object)">Equals(Object)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override sealed bool Equals(object obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -662,7 +657,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override sealed Int32 GetHashCode()</code></pre>
+    <pre><code class="lang-csharp hljs">public override sealed int GetHashCode()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -674,7 +669,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Int32</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -978,7 +973,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override sealed String ToString()</code></pre>
+    <pre><code class="lang-csharp hljs">public override sealed string ToString()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -990,7 +985,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">String</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -1008,7 +1003,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public String ToString(nint amount)</code></pre>
+    <pre><code class="lang-csharp hljs">public string ToString(nint amount)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1037,56 +1032,103 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">String</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_List_4_System_Collections_Generic_IEnumerable_TElement__GetEnumerator.md&amp;value=---%0Auid%3A%20Collectathon.Lists.List%604.System%23Collections%23Generic%23IEnumerable%7BTElement%7D%23GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L120">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_List_4_System_Collections_Generic_IEnumerable_TElement__GetEnumerator_" data-uid="Collectathon.Lists.List`4.System#Collections#Generic#IEnumerable{TElement}#GetEnumerator*"></a>
+  <h4 id="Collectathon_Lists_List_4_System_Collections_Generic_IEnumerable_TElement__GetEnumerator" data-uid="Collectathon.Lists.List`4.System#Collections#Generic#IEnumerable{TElement}#GetEnumerator">IEnumerable&lt;TElement&gt;.GetEnumerator()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerator&lt;TElement&gt; IEnumerable&lt;TElement&gt;.GetEnumerator()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1">IEnumerator</a>&lt;TElement&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_List_4_System_Collections_IEnumerable_GetEnumerator.md&amp;value=---%0Auid%3A%20Collectathon.Lists.List%604.System%23Collections%23IEnumerable%23GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L116">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_List_4_System_Collections_IEnumerable_GetEnumerator_" data-uid="Collectathon.Lists.List`4.System#Collections#IEnumerable#GetEnumerator*"></a>
+  <h4 id="Collectathon_Lists_List_4_System_Collections_IEnumerable_GetEnumerator" data-uid="Collectathon.Lists.List`4.System#Collections#IEnumerable#GetEnumerator">IEnumerable.GetEnumerator()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerator IEnumerable.GetEnumerator()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <h3 id="implements">Implements</h3>
   <div>
-      <a class="xref" href="System.Traits.IAdd-1.html">IAdd&lt;TElement&gt;</a>
+      <span class="xref">IClear</span>
   </div>
   <div>
-      <a class="xref" href="System.Traits.IClear.html">IClear</a>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">System.IEquatable&lt;T&gt;</a>
   </div>
   <div>
-      <span class="xref">IEquatable&lt;&gt;</span>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">System.IEquatable&lt;T&gt;</a>
   </div>
   <div>
-      <span class="xref">IEquatable&lt;&gt;</span>
+      <span class="xref">IIndex&lt;, &gt;</span>
   </div>
   <div>
-      <a class="xref" href="System.Traits.IIndex-2.html">IIndex&lt;TIndex, TElement&gt;</a>
+      <span class="xref">IInsert&lt;, &gt;</span>
   </div>
   <div>
-      <a class="xref" href="System.Traits.IIndexReadOnly-2.html">IIndexReadOnly&lt;TIndex, TElement&gt;</a>
+      <span class="xref">IPostpend&lt;&gt;</span>
   </div>
   <div>
-      <a class="xref" href="System.Traits.IInsert-2.html">IInsert&lt;TIndex, TElement&gt;</a>
+      <span class="xref">IPrepend&lt;&gt;</span>
   </div>
   <div>
-      <a class="xref" href="System.Traits.IPostpend-1.html">IPostpend&lt;TElement&gt;</a>
+      <span class="xref">IRemove&lt;&gt;</span>
   </div>
   <div>
-      <a class="xref" href="System.Traits.IPrepend-1.html">IPrepend&lt;TElement&gt;</a>
+      <span class="xref">IReplace&lt;&gt;</span>
   </div>
   <div>
-      <a class="xref" href="System.Traits.IRemove-1.html">IRemove&lt;TElement&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="System.Traits.IReplace-1.html">IReplace&lt;TElement&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="System.Traits.IReplace-2.html">IReplace&lt;TSearch, TReplace&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="System.Traits.ISequence-2.html">ISequence&lt;TElement, TEnumerator&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="System.Traits.ICount.html">ICount</a>
-  </div>
-  <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">System.Collections.Generic.IEnumerable&lt;T&gt;</a>
+      <span class="xref">ISequence&lt;, &gt;</span>
   </div>
 </article>
           </div>

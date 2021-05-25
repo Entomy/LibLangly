@@ -125,10 +125,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{&quot;hello&quot;, &quot;hello&quot;, &quot;goodbye&quot;, &quot;hello&quot;})]
-[InlineData(new object[]{&quot;goodbye&quot;, &quot;hello&quot;, &quot;goodbye&quot;, &quot;goodbye&quot;})]
-public void Alternator_Pointer(string expected, string first, string second, string source)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Alternator_Pointer(string expected, string first, string second, string source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -175,11 +172,7 @@ public void Alternator_Pointer(string expected, string first, string second, str
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{&quot;hello&quot;, &quot;hello&quot;, &quot;goodbye&quot;, &quot;hello&quot;, false})]
-[InlineData(new object[]{&quot;goodbye&quot;, &quot;hello&quot;, &quot;goodbye&quot;, &quot;goodbye&quot;, false})]
-[InlineData(new object[]{&quot;&quot;, &quot;hello&quot;, &quot;goodbye&quot;, &quot;potato&quot;, true})]
-public void Alternator_String(string expected, string first, string second, string source, bool throws)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Alternator_String(string expected, string first, string second, string source, bool throws)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -231,11 +224,7 @@ public void Alternator_String(string expected, string first, string second, stri
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{&quot;one&quot;, &quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;one&quot;})]
-[InlineData(new object[]{&quot;two&quot;, &quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;two&quot;})]
-[InlineData(new object[]{&quot;three&quot;, &quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;three&quot;})]
-public void ChainAlternator_Pointer(string expected, string first, string second, string third, string source)</code></pre>
+    <pre><code class="lang-csharp hljs">public void ChainAlternator_Pointer(string expected, string first, string second, string third, string source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -287,12 +276,7 @@ public void ChainAlternator_Pointer(string expected, string first, string second
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{&quot;one&quot;, &quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;one&quot;, false})]
-[InlineData(new object[]{&quot;two&quot;, &quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;two&quot;, false})]
-[InlineData(new object[]{&quot;three&quot;, &quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;three&quot;, false})]
-[InlineData(new object[]{&quot;&quot;, &quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;, true})]
-public void ChainAlternator_String(string expected, string first, string second, string third, string source, bool throws)</code></pre>
+    <pre><code class="lang-csharp hljs">public void ChainAlternator_String(string expected, string first, string second, string third, string source, bool throws)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -349,11 +333,7 @@ public void ChainAlternator_String(string expected, string first, string second,
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{&quot;Black&quot;, ConsoleColor.Black, &quot;Black&quot;})]
-[InlineData(new object[]{&quot;Red&quot;, ConsoleColor.Black, &quot;Red&quot;})]
-[InlineData(new object[]{&quot;DarkYellow&quot;, ConsoleColor.Black, &quot;DarkYellow&quot;})]
-public void ChainEnumAlternator_Pointer&lt;TEnum&gt;(string expected, TEnum enum, string source)
+    <pre><code class="lang-csharp hljs">public void ChainEnumAlternator_Pointer&lt;TEnum&gt;(string expected, TEnum enum, string source)
     where TEnum : struct, Enum</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -411,12 +391,7 @@ public void ChainEnumAlternator_Pointer&lt;TEnum&gt;(string expected, TEnum enum
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{&quot;Black&quot;, ConsoleColor.Black, &quot;Black&quot;, false})]
-[InlineData(new object[]{&quot;Red&quot;, ConsoleColor.Black, &quot;Red&quot;, false})]
-[InlineData(new object[]{&quot;DarkYellow&quot;, ConsoleColor.Black, &quot;DarkYellow&quot;, false})]
-[InlineData(new object[]{&quot;&quot;, ConsoleColor.Black, &quot;Potato&quot;, true})]
-public void ChainEnumAlternator_String&lt;TEnum&gt;(string expected, TEnum enum, string source, bool throws)
+    <pre><code class="lang-csharp hljs">public void ChainEnumAlternator_String&lt;TEnum&gt;(string expected, TEnum enum, string source, bool throws)
     where TEnum : struct, Enum</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -479,10 +454,7 @@ public void ChainEnumAlternator_String&lt;TEnum&gt;(string expected, TEnum enum,
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{&quot;a&quot;, 'a', &quot;a&quot;})]
-[InlineData(new object[]{&quot;a&quot;, 'a', &quot;abc&quot;})]
-public void CharLiteral_Pointer(string expected, char pattern, string source)</code></pre>
+    <pre><code class="lang-csharp hljs">public void CharLiteral_Pointer(string expected, char pattern, string source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -524,11 +496,7 @@ public void CharLiteral_Pointer(string expected, char pattern, string source)</c
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{&quot;a&quot;, 'a', &quot;a&quot;, false})]
-[InlineData(new object[]{&quot;a&quot;, 'a', &quot;abc&quot;, false})]
-[InlineData(new object[]{&quot;&quot;, 'a', &quot;def&quot;, true})]
-public void CharLiteral_String(string expected, char pattern, string source, bool throws)</code></pre>
+    <pre><code class="lang-csharp hljs">public void CharLiteral_String(string expected, char pattern, string source, bool throws)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -575,9 +543,7 @@ public void CharLiteral_String(string expected, char pattern, string source, boo
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{&quot;hello&quot;, &quot;he&quot;, &quot;llo&quot;, &quot;hello&quot;})]
-public void Concatenator_Pointer(string expected, string first, string second, string source)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Concatenator_Pointer(string expected, string first, string second, string source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -624,10 +590,7 @@ public void Concatenator_Pointer(string expected, string first, string second, s
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{&quot;hello&quot;, &quot;he&quot;, &quot;llo&quot;, &quot;hello&quot;, false})]
-[InlineData(new object[]{&quot;&quot;, &quot;he&quot;, &quot;lp&quot;, &quot;hello&quot;, true})]
-public void Concatenator_String(string expected, string first, string second, string source, bool throws)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Concatenator_String(string expected, string first, string second, string source, bool throws)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -679,15 +642,7 @@ public void Concatenator_String(string expected, string first, string second, st
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{&quot;a&quot;, &quot;a&quot;, 1, &quot;a&quot;})]
-[InlineData(new object[]{&quot;a&quot;, &quot;a&quot;, 1, &quot;abc&quot;})]
-[InlineData(new object[]{&quot;b&quot;, &quot;a&quot;, 1, &quot;bbc&quot;})]
-[InlineData(new object[]{&quot;abc&quot;, &quot;abc&quot;, 1, &quot;abc&quot;})]
-[InlineData(new object[]{&quot;_bc&quot;, &quot;abc&quot;, 1, &quot;_bc&quot;})]
-[InlineData(new object[]{&quot;a_c&quot;, &quot;abc&quot;, 1, &quot;a_c&quot;})]
-[InlineData(new object[]{&quot;ab_&quot;, &quot;abc&quot;, 1, &quot;ab_&quot;})]
-public void Fuzzer_Pointer(string expected, string pattern, int maxEdits, string source)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Fuzzer_Pointer(string expected, string pattern, int maxEdits, string source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -734,16 +689,7 @@ public void Fuzzer_Pointer(string expected, string pattern, int maxEdits, string
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{&quot;a&quot;, &quot;a&quot;, 1, &quot;a&quot;, false})]
-[InlineData(new object[]{&quot;a&quot;, &quot;a&quot;, 1, &quot;abc&quot;, false})]
-[InlineData(new object[]{&quot;b&quot;, &quot;a&quot;, 1, &quot;bbc&quot;, false})]
-[InlineData(new object[]{&quot;abc&quot;, &quot;abc&quot;, 1, &quot;abc&quot;, false})]
-[InlineData(new object[]{&quot;_bc&quot;, &quot;abc&quot;, 1, &quot;_bc&quot;, false})]
-[InlineData(new object[]{&quot;a_c&quot;, &quot;abc&quot;, 1, &quot;a_c&quot;, false})]
-[InlineData(new object[]{&quot;ab_&quot;, &quot;abc&quot;, 1, &quot;ab_&quot;, false})]
-[InlineData(new object[]{&quot;&quot;, &quot;abc&quot;, 1, &quot;___&quot;, true})]
-public void Fuzzer_String(string expected, string pattern, int maxEdits, string source, bool throws)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Fuzzer_String(string expected, string pattern, int maxEdits, string source, bool throws)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -795,13 +741,7 @@ public void Fuzzer_String(string expected, string pattern, int maxEdits, string 
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{&quot;a&quot;, &quot;a&quot;, &quot;a&quot;})]
-[InlineData(new object[]{&quot;aaa&quot;, &quot;a&quot;, &quot;aaa&quot;})]
-[InlineData(new object[]{&quot;aaa&quot;, &quot;a&quot;, &quot;aaab&quot;})]
-[InlineData(new object[]{&quot;&quot;, &quot;a&quot;, &quot;baaa&quot;})]
-[InlineData(new object[]{&quot;&quot;, &quot;a&quot;, &quot;&quot;})]
-public void KleenesClosure_Pointer(string expected, string pattern, string source)</code></pre>
+    <pre><code class="lang-csharp hljs">public void KleenesClosure_Pointer(string expected, string pattern, string source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -843,13 +783,7 @@ public void KleenesClosure_Pointer(string expected, string pattern, string sourc
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{&quot;a&quot;, &quot;a&quot;, &quot;a&quot;})]
-[InlineData(new object[]{&quot;aaa&quot;, &quot;a&quot;, &quot;aaa&quot;})]
-[InlineData(new object[]{&quot;aaa&quot;, &quot;a&quot;, &quot;aaab&quot;})]
-[InlineData(new object[]{&quot;&quot;, &quot;a&quot;, &quot;baaa&quot;})]
-[InlineData(new object[]{&quot;&quot;, &quot;a&quot;, &quot;&quot;})]
-public void KleenesClosure_String(string expected, string pattern, string source)</code></pre>
+    <pre><code class="lang-csharp hljs">public void KleenesClosure_String(string expected, string pattern, string source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -891,17 +825,7 @@ public void KleenesClosure_String(string expected, string pattern, string source
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{&quot;\n&quot;, &quot;\n&quot;})]
-[InlineData(new object[]{&quot;\n\r&quot;, &quot;\n\r&quot;})]
-[InlineData(new object[]{&quot;\v&quot;, &quot;\v&quot;})]
-[InlineData(new object[]{&quot;\f&quot;, &quot;\f&quot;})]
-[InlineData(new object[]{&quot;\r&quot;, &quot;\r&quot;})]
-[InlineData(new object[]{&quot;\r\n&quot;, &quot;\r\n&quot;})]
-[InlineData(new object[]{&quot;\u0085&quot;, &quot;\u0085&quot;})]
-[InlineData(new object[]{&quot;\u2028&quot;, &quot;\u2028&quot;})]
-[InlineData(new object[]{&quot;\u2029&quot;, &quot;\u2029&quot;})]
-public void LineEndChecker_Pointer(string expected, string source)</code></pre>
+    <pre><code class="lang-csharp hljs">public void LineEndChecker_Pointer(string expected, string source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -938,18 +862,7 @@ public void LineEndChecker_Pointer(string expected, string source)</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{&quot;\n&quot;, &quot;\n&quot;, false})]
-[InlineData(new object[]{&quot;\n\r&quot;, &quot;\n\r&quot;, false})]
-[InlineData(new object[]{&quot;\v&quot;, &quot;\v&quot;, false})]
-[InlineData(new object[]{&quot;\f&quot;, &quot;\f&quot;, false})]
-[InlineData(new object[]{&quot;\r&quot;, &quot;\r&quot;, false})]
-[InlineData(new object[]{&quot;\r\n&quot;, &quot;\r\n&quot;, false})]
-[InlineData(new object[]{&quot;\u0085&quot;, &quot;\u0085&quot;, false})]
-[InlineData(new object[]{&quot;\u2028&quot;, &quot;\u2028&quot;, false})]
-[InlineData(new object[]{&quot;\u2029&quot;, &quot;\u2029&quot;, false})]
-[InlineData(new object[]{&quot;&quot;, &quot;abc&quot;, true})]
-public void LineEndChecker_String(string expected, string source, bool throws)</code></pre>
+    <pre><code class="lang-csharp hljs">public void LineEndChecker_String(string expected, string source, bool throws)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -991,11 +904,7 @@ public void LineEndChecker_String(string expected, string source, bool throws)</
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{&quot;hi!&quot;, &quot;hi!&quot;, &quot;hi!&quot;})]
-[InlineData(new object[]{&quot;&quot;, &quot;hi!&quot;, &quot;&quot;})]
-[InlineData(new object[]{&quot;&quot;, &quot;hi!&quot;, &quot;hello&quot;})]
-public void Optor_Pointer(string expected, string pattern, string source)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Optor_Pointer(string expected, string pattern, string source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1037,11 +946,7 @@ public void Optor_Pointer(string expected, string pattern, string source)</code>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{&quot;hi!&quot;, &quot;hi!&quot;, &quot;hi!&quot;})]
-[InlineData(new object[]{&quot;&quot;, &quot;hi!&quot;, &quot;&quot;})]
-[InlineData(new object[]{&quot;&quot;, &quot;hi!&quot;, &quot;hello&quot;})]
-public void Optor_String(string expected, string pattern, string source)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Optor_String(string expected, string pattern, string source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1083,10 +988,7 @@ public void Optor_String(string expected, string pattern, string source)</code><
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{&quot;hi!&quot;, &quot;hi!&quot;, 1, &quot;hi!&quot;})]
-[InlineData(new object[]{&quot;hi!hi!hi!&quot;, &quot;hi!&quot;, 3, &quot;hi!hi!hi!&quot;})]
-public void Repeater_Pattern(string expected, string pattern, int count, string source)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Repeater_Pattern(string expected, string pattern, int count, string source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1133,11 +1035,7 @@ public void Repeater_Pattern(string expected, string pattern, int count, string 
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{&quot;hi!&quot;, &quot;hi!&quot;, 1, &quot;hi!&quot;, false})]
-[InlineData(new object[]{&quot;hi!hi!hi!&quot;, &quot;hi!&quot;, 3, &quot;hi!hi!hi!&quot;, false})]
-[InlineData(new object[]{&quot;&quot;, &quot;hi!&quot;, 3, &quot;hi!&quot;, true})]
-public void Repeater_String(string expected, string pattern, int count, string source, bool throws)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Repeater_String(string expected, string pattern, int count, string source, bool throws)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1189,12 +1087,7 @@ public void Repeater_String(string expected, string pattern, int count, string s
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{&quot;a&quot;, 'a', &quot;a&quot;})]
-[InlineData(new object[]{&quot;a&quot;, 'a', &quot;abc&quot;})]
-[InlineData(new object[]{&quot;&#119070;&quot;, 119070, &quot;&#119070;&quot;})]
-[InlineData(new object[]{&quot;&#119070;&quot;, 119070, &quot;&#119070;abc&quot;})]
-public void RuneLiteral_Pointer(string expected, int scalar, string source)</code></pre>
+    <pre><code class="lang-csharp hljs">public void RuneLiteral_Pointer(string expected, int scalar, string source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1236,14 +1129,7 @@ public void RuneLiteral_Pointer(string expected, int scalar, string source)</cod
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{&quot;a&quot;, 'a', &quot;a&quot;, false})]
-[InlineData(new object[]{&quot;a&quot;, 'a', &quot;abc&quot;, false})]
-[InlineData(new object[]{&quot;&quot;, 'a', &quot;def&quot;, true})]
-[InlineData(new object[]{&quot;&#119070;&quot;, 119070, &quot;&#119070;&quot;, false})]
-[InlineData(new object[]{&quot;&#119070;&quot;, 119070, &quot;&#119070;abc&quot;, false})]
-[InlineData(new object[]{&quot;&quot;, 119070, &quot;def&quot;, true})]
-public void RuneLiteral_String(string expected, int scalar, string source, bool throws)</code></pre>
+    <pre><code class="lang-csharp hljs">public void RuneLiteral_String(string expected, int scalar, string source, bool throws)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1290,9 +1176,7 @@ public void RuneLiteral_String(string expected, int scalar, string source, bool 
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{&quot;&quot;, &quot;&quot;})]
-public void SourceEndChecker_Pointer(string expected, string source)</code></pre>
+    <pre><code class="lang-csharp hljs">public void SourceEndChecker_Pointer(string expected, string source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1329,10 +1213,7 @@ public void SourceEndChecker_Pointer(string expected, string source)</code></pre
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{&quot;&quot;, &quot;&quot;, false})]
-[InlineData(new object[]{&quot;&quot;, &quot;a&quot;, true})]
-public void SourceEndChecker_String(string expected, string source, bool throws)</code></pre>
+    <pre><code class="lang-csharp hljs">public void SourceEndChecker_String(string expected, string source, bool throws)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1374,12 +1255,7 @@ public void SourceEndChecker_String(string expected, string source, bool throws)
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{&quot;a&quot;, &quot;a&quot;, &quot;a&quot;})]
-[InlineData(new object[]{&quot;aa&quot;, &quot;a&quot;, &quot;aa&quot;})]
-[InlineData(new object[]{&quot;aaa&quot;, &quot;a&quot;, &quot;aaa&quot;})]
-[InlineData(new object[]{&quot;aaa&quot;, &quot;a&quot;, &quot;aaab&quot;})]
-public void Spanner_Pointer(string expected, string pattern, string source)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Spanner_Pointer(string expected, string pattern, string source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1421,13 +1297,7 @@ public void Spanner_Pointer(string expected, string pattern, string source)</cod
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{&quot;a&quot;, &quot;a&quot;, &quot;a&quot;, false})]
-[InlineData(new object[]{&quot;aa&quot;, &quot;a&quot;, &quot;aa&quot;, false})]
-[InlineData(new object[]{&quot;aaa&quot;, &quot;a&quot;, &quot;aaa&quot;, false})]
-[InlineData(new object[]{&quot;aaa&quot;, &quot;a&quot;, &quot;aaab&quot;, false})]
-[InlineData(new object[]{&quot;&quot;, &quot;a&quot;, &quot;baaa&quot;, true})]
-public void Spanner_String(string expected, string pattern, string source, bool throws)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Spanner_String(string expected, string pattern, string source, bool throws)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1474,12 +1344,7 @@ public void Spanner_String(string expected, string pattern, string source, bool 
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{&quot;a&quot;, &quot;a&quot;, &quot;a&quot;})]
-[InlineData(new object[]{&quot;a&quot;, &quot;a&quot;, &quot;abc&quot;})]
-[InlineData(new object[]{&quot;abc&quot;, &quot;abc&quot;, &quot;abc&quot;})]
-[InlineData(new object[]{&quot;abc&quot;, &quot;abc&quot;, &quot;abcde&quot;})]
-public void StringLiteral_Pointer(string expected, string pattern, string source)</code></pre>
+    <pre><code class="lang-csharp hljs">public void StringLiteral_Pointer(string expected, string pattern, string source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1521,13 +1386,7 @@ public void StringLiteral_Pointer(string expected, string pattern, string source
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Theory]
-[InlineData(new object[]{&quot;a&quot;, &quot;a&quot;, &quot;a&quot;, false})]
-[InlineData(new object[]{&quot;a&quot;, &quot;a&quot;, &quot;abc&quot;, false})]
-[InlineData(new object[]{&quot;abc&quot;, &quot;abc&quot;, &quot;abc&quot;, false})]
-[InlineData(new object[]{&quot;abc&quot;, &quot;abc&quot;, &quot;abcde&quot;, false})]
-[InlineData(new object[]{&quot;&quot;, &quot;a&quot;, &quot;def&quot;, true})]
-public void StringLiteral_String(string expected, string pattern, string source, bool throws)</code></pre>
+    <pre><code class="lang-csharp hljs">public void StringLiteral_String(string expected, string pattern, string source, bool throws)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
