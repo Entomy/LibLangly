@@ -321,6 +321,46 @@ namespace Langly {
 		}
 
 		[Theory]
+		[InlineData("a", "a", "a", false)]
+		[InlineData("aa", "a", "aa", false)]
+		[InlineData("aaa", "a", "aaa", false)]
+		[InlineData("aaa", "a", "aaab", false)]
+		[InlineData("", "a", "baaa", true)]
+		public unsafe void Spanner_Pointer(String expected, String pattern, String source, Boolean throws) {
+			Pattern ptn = pattern.Many();
+			Int32 i = 0;
+			Capture? capture = null;
+			if (!throws) {
+				capture = ptn.Parse(source, ref i);
+				Assert.Equal(expected, capture);
+			} else {
+				_ = Assert.ThrowsAny<Exception>(() => capture = ptn.Parse(source, ref i));
+				Assert.Null(capture);
+			}
+			Assert.Equal(expected.Length, i);
+		}
+
+		[Theory]
+		[InlineData("a", "a", "a", false)]
+		[InlineData("aa", "a", "aa", false)]
+		[InlineData("aaa", "a", "aaa", false)]
+		[InlineData("aaa", "a", "aaab", false)]
+		[InlineData("", "a", "baaa", true)]
+		public void Spanner_String(String expected, String pattern, String source, Boolean throws) {
+			Pattern ptn = pattern.Many();
+			Int32 i = 0;
+			Capture? capture = null;
+			if (!throws) {
+				capture = ptn.Parse(source, ref i);
+				Assert.Equal(expected, capture);
+			} else {
+				_ = Assert.ThrowsAny<Exception>(() => capture = ptn.Parse(source, ref i));
+				Assert.Null(capture);
+			}
+			Assert.Equal(expected.Length, i);
+		}
+
+		[Theory]
 		[InlineData("a", "a", "a")]
 		[InlineData("a", "a", "abc")]
 		[InlineData("abc", "abc", "abc")]
