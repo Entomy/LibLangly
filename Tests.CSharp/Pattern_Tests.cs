@@ -222,6 +222,34 @@ namespace Langly {
 		}
 
 		[Theory]
+		[InlineData("hi!", "hi!", "hi!")]
+		[InlineData("", "hi!", "")]
+		[InlineData("", "hi!", "hello")]
+		public unsafe void Optor_Pointer(String expected, String pattern, String source) {
+			Pattern ptn = pattern.Maybe();
+			Int32 i = 0;
+			Capture? capture = null;
+			fixed (Char* src = source) {
+				capture = ptn.Parse(source, ref i);
+				Assert.Equal(expected, capture);
+			}
+			Assert.Equal(expected.Length, i);
+		}
+
+		[Theory]
+		[InlineData("hi!", "hi!", "hi!")]
+		[InlineData("", "hi!", "")]
+		[InlineData("", "hi!", "hello")]
+		public void Optor_String(String expected, String pattern, String source) {
+			Pattern ptn = pattern.Maybe();
+			Int32 i = 0;
+			Capture? capture = null;
+			capture = ptn.Parse(source, ref i);
+			Assert.Equal(expected, capture);
+			Assert.Equal(expected.Length, i);
+		}
+
+		[Theory]
 		[InlineData("hi!", "hi!", 1, "hi!")]
 		[InlineData("hi!hi!hi!", "hi!", 3, "hi!hi!hi!")]
 		public unsafe void Repeater_Pattern(String expected, String pattern, Int32 count, String source) {

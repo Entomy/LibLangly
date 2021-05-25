@@ -8,7 +8,7 @@ namespace Stringier.Patterns {
 	/// </summary>
 	internal sealed class Optor : Modifier {
 		/// <summary>
-		/// The <see cref="Stringier.Patterns.Pattern"/> to be parsed.
+		/// The <see cref="Patterns.Pattern"/> to be parsed.
 		/// </summary>
 		[DisallowNull, NotNull]
 		private readonly Pattern Pattern;
@@ -28,19 +28,27 @@ namespace Stringier.Patterns {
 		public override Pattern Maybe() => this;
 
 		/// <inheritdoc/>
-		protected internal override void Consume(ReadOnlyMemory<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) => Consume(source.Span, ref location, out exception, trace);
+		protected internal override void Consume(ReadOnlyMemory<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
+			Pattern.Consume(source, ref location, out _, trace);
+			exception = null; // If a pattern is optional, it doesn't matter if it's there or not, so we never actually have an error
+		}
 
 		/// <inheritdoc/>
-		protected internal override unsafe void Consume([DisallowNull] Char* source, Int32 length, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) => Consume(new ReadOnlySpan<Char>(source, length), ref location, out exception, trace);
+		protected internal override unsafe void Consume([DisallowNull] Char* source, Int32 length, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
+			Pattern.Consume(source, length, ref location, out _, trace);
+			exception = null; // If a pattern is optional, it doesn't matter if it's there or not, so we never actually have an error
+		}
 
 		/// <inheritdoc/>
-		protected internal override void Neglect(ReadOnlyMemory<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) => Neglect(source.Span, ref location, out exception, trace);
+		protected internal override void Neglect(ReadOnlyMemory<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
+			Pattern.Neglect(source, ref location, out _, trace);
+			exception = null; // If a pattern is optional, it doesn't matter if it's there or not, so we never actually have an error
+		}
 
 		/// <inheritdoc/>
-		protected internal override unsafe void Neglect([DisallowNull] Char* source, Int32 length, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) => Neglect(new ReadOnlySpan<Char>(source, length), ref location, out exception, trace);
-
-		private void Consume(ReadOnlySpan<Char> source, ref Int32 length, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) => throw new NotImplementedException();
-
-		private void Neglect(ReadOnlySpan<Char> source, ref Int32 length, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) => throw new NotImplementedException();
+		protected internal override unsafe void Neglect([DisallowNull] Char* source, Int32 length, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
+			Pattern.Neglect(source, length, ref location, out _, trace);
+			exception = null; // If a pattern is optional, it doesn't matter if it's there or not, so we never actually have an error
+		}
 	}
 }
