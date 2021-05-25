@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text;
 using Stringier.Patterns;
+using static Stringier.Patterns.Pattern;
 using Xunit;
 
 namespace Langly {
@@ -182,7 +183,7 @@ namespace Langly {
 		[InlineData("", "a", "baaa")]
 		[InlineData("", "a", "")]
 		public unsafe void KleenesClosure_Pointer(String expected, String pattern, String source) {
-			Pattern ptn = pattern.Many().Maybe();
+			Pattern ptn = Maybe(Many(pattern));
 			Int32 i = 0;
 			Capture? capture = null;
 			fixed (Char* src = source) {
@@ -199,7 +200,7 @@ namespace Langly {
 		[InlineData("", "a", "baaa")]
 		[InlineData("", "a", "")]
 		public void KleenesClosure_String(String expected, String pattern, String source) {
-			Pattern ptn = pattern.Many().Maybe();
+			Pattern ptn = Maybe(Many(pattern));
 			Int32 i = 0;
 			Capture? capture = null;
 			capture = ptn.Parse(source, ref i);
@@ -258,7 +259,7 @@ namespace Langly {
 		[InlineData("", "hi!", "")]
 		[InlineData("", "hi!", "hello")]
 		public unsafe void Optor_Pointer(String expected, String pattern, String source) {
-			Pattern ptn = pattern.Maybe();
+			Pattern ptn = Maybe(pattern);
 			Int32 i = 0;
 			Capture? capture = null;
 			fixed (Char* src = source) {
@@ -273,7 +274,7 @@ namespace Langly {
 		[InlineData("", "hi!", "")]
 		[InlineData("", "hi!", "hello")]
 		public void Optor_String(String expected, String pattern, String source) {
-			Pattern ptn = pattern.Maybe();
+			Pattern ptn = Maybe(pattern);
 			Int32 i = 0;
 			Capture? capture = null;
 			capture = ptn.Parse(source, ref i);
@@ -285,7 +286,7 @@ namespace Langly {
 		[InlineData("hi!", "hi!", 1, "hi!")]
 		[InlineData("hi!hi!hi!", "hi!", 3, "hi!hi!hi!")]
 		public unsafe void Repeater_Pattern(String expected, String pattern, Int32 count, String source) {
-			Pattern ptn = pattern.Repeat(count);
+			Pattern ptn = Repeat(pattern, count);
 			Int32 i = 0;
 			Capture? capture = null;
 			fixed (Char* src = source) {
@@ -300,7 +301,7 @@ namespace Langly {
 		[InlineData("hi!hi!hi!", "hi!", 3, "hi!hi!hi!", false)]
 		[InlineData("", "hi!", 3, "hi!", true)]
 		public void Repeater_String(String expected, String pattern, Int32 count, String source, Boolean throws) {
-			Pattern ptn = pattern.Repeat(count);
+			Pattern ptn = Repeat(pattern, count);
 			Int32 i = 0;
 			Capture? capture = null;
 			if (!throws) {
@@ -386,7 +387,7 @@ namespace Langly {
 		[InlineData("aaa", "a", "aaa")]
 		[InlineData("aaa", "a", "aaab")]
 		public unsafe void Spanner_Pointer(String expected, String pattern, String source) {
-			Pattern ptn = pattern.Many();
+			Pattern ptn = Many(pattern);
 			Int32 i = 0;
 			Capture? capture = null;
 			fixed (Char* src = source) {
@@ -403,7 +404,7 @@ namespace Langly {
 		[InlineData("aaa", "a", "aaab", false)]
 		[InlineData("", "a", "baaa", true)]
 		public void Spanner_String(String expected, String pattern, String source, Boolean throws) {
-			Pattern ptn = pattern.Many();
+			Pattern ptn = Many(pattern);
 			Int32 i = 0;
 			Capture? capture = null;
 			if (!throws) {

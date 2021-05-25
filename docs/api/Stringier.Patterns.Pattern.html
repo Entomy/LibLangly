@@ -364,6 +364,62 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Capture_Stringier_Patterns_Pattern_Stringier_Patterns_Capture__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Capture(Stringier.Patterns.Pattern%2CStringier.Patterns.Capture%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Pattern.Capture.cs/#L19">View Source</a>
+  </span>
+  <a id="Stringier_Patterns_Pattern_Capture_" data-uid="Stringier.Patterns.Pattern.Capture*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Capture_Stringier_Patterns_Pattern_Stringier_Patterns_Capture__" data-uid="Stringier.Patterns.Pattern.Capture(Stringier.Patterns.Pattern,Stringier.Patterns.Capture@)">Capture(Pattern, out Capture)</h4>
+  <div class="markdown level1 summary"><p>Declares the <code data-dev-comment-type="paramref" class="paramref">pattern</code> should be captured into <code data-dev-comment-type="paramref" class="paramref">capture</code> for later reference.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern Capture(Pattern pattern, out Capture capture)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">pattern</span></td>
+        <td><p>The <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> to capture.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Capture.html">Capture</a></td>
+        <td><span class="parametername">capture</span></td>
+        <td><p>A <a class="xref" href="Stringier.Patterns.Capture.html">Capture</a> object to store into.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> which will capture its result into <code data-dev-comment-type="paramref" class="paramref">capture</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Consume_System_Char__System_Int32_System_Int32__System_Exception__System_Traits_IAdd_Stringier_Patterns_Capture__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Consume(System.Char*%2CSystem.Int32%2CSystem.Int32%40%2CSystem.Exception%40%2CSystem.Traits.IAdd%7BStringier.Patterns.Capture%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -563,6 +619,56 @@ protected abstract void Consume(char *source, int length, ref int location, out 
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Many_Stringier_Patterns_Pattern_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Many(Stringier.Patterns.Pattern)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Pattern.Many.cs/#L25">View Source</a>
+  </span>
+  <a id="Stringier_Patterns_Pattern_Many_" data-uid="Stringier.Patterns.Pattern.Many*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Many_Stringier_Patterns_Pattern_" data-uid="Stringier.Patterns.Pattern.Many(Stringier.Patterns.Pattern)">Many(Pattern)</h4>
+  <div class="markdown level1 summary"><p>Marks the <code data-dev-comment-type="paramref" class="paramref">pattern</code> as spanning.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern Many(Pattern pattern)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">pattern</span></td>
+        <td><p>The <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> to span.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> which spans, repeating as many times as necessary until it doesn't match anymore.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Maybe.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Maybe%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -577,6 +683,56 @@ protected abstract void Consume(char *source, int length, ref int location, out 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public virtual Pattern Maybe()</code></pre>
   </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> which may or may not be present in order to match.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Maybe_Stringier_Patterns_Pattern_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Maybe(Stringier.Patterns.Pattern)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Pattern.Maybe.cs/#L25">View Source</a>
+  </span>
+  <a id="Stringier_Patterns_Pattern_Maybe_" data-uid="Stringier.Patterns.Pattern.Maybe*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Maybe_Stringier_Patterns_Pattern_" data-uid="Stringier.Patterns.Pattern.Maybe(Stringier.Patterns.Pattern)">Maybe(Pattern)</h4>
+  <div class="markdown level1 summary"><p>Marks the <code data-dev-comment-type="paramref" class="paramref">pattern</code> as optional.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern Maybe(Pattern pattern)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">pattern</span></td>
+        <td><p>The <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> to make optional.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -738,6 +894,56 @@ protected abstract void Neglect(char *source, int length, ref int location, out 
       <tr>
         <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
         <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> which matches the negation of this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Not_Stringier_Patterns_Pattern_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Not(Stringier.Patterns.Pattern)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Pattern.Not.cs/#L25">View Source</a>
+  </span>
+  <a id="Stringier_Patterns_Pattern_Not_" data-uid="Stringier.Patterns.Pattern.Not*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Not_Stringier_Patterns_Pattern_" data-uid="Stringier.Patterns.Pattern.Not(Stringier.Patterns.Pattern)">Not(Pattern)</h4>
+  <div class="markdown level1 summary"><p>Marks the <code data-dev-comment-type="paramref" class="paramref">pattern</code> as negated.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern Not(Pattern pattern)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">pattern</span></td>
+        <td><p>The <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> to negate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> which matches the negation of the <code data-dev-comment-type="paramref" class="paramref">pattern</code>.</p>
 </td>
       </tr>
     </tbody>
@@ -1125,7 +1331,6 @@ protected abstract void Neglect(char *source, int length, ref int location, out 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Pattern OneOf&lt;E&gt;()
-
     where E : Enum</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
@@ -1175,7 +1380,6 @@ protected abstract void Neglect(char *source, int length, ref int location, out 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Pattern OneOf&lt;E&gt;(Case casing)
-
     where E : Enum</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2028,6 +2232,62 @@ public Capture Parse(char *source, int length, ref int location, IAdd&lt;Capture
       <tr>
         <td><a class="xref" href="Stringier.Patterns.Capture.html">Capture</a></td>
         <td><p>The captured text.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Repeat_Stringier_Patterns_Pattern_System_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Repeat(Stringier.Patterns.Pattern%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Pattern.Repeat.cs/#L29">View Source</a>
+  </span>
+  <a id="Stringier_Patterns_Pattern_Repeat_" data-uid="Stringier.Patterns.Pattern.Repeat*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Repeat_Stringier_Patterns_Pattern_System_Int32_" data-uid="Stringier.Patterns.Pattern.Repeat(Stringier.Patterns.Pattern,System.Int32)">Repeat(Pattern, Int32)</h4>
+  <div class="markdown level1 summary"><p>Marks the <code data-dev-comment-type="paramref" class="paramref">pattern</code> as repeating <code data-dev-comment-type="paramref" class="paramref">count</code> times.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Pattern Repeat(Pattern pattern, int count)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><span class="parametername">pattern</span></td>
+        <td><p>The <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> to repeat.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">count</span></td>
+        <td><p>The amount of times to repeat.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a></td>
+        <td><p>A new <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> repeated <code data-dev-comment-type="paramref" class="paramref">count</code> times.</p>
 </td>
       </tr>
     </tbody>
