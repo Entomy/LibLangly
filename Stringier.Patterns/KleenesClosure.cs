@@ -20,19 +20,61 @@ namespace Stringier.Patterns {
 		internal KleenesClosure([DisallowNull] Pattern pattern) => Pattern = pattern;
 
 		/// <inheritdoc/>
-		protected internal override void Consume(ReadOnlyMemory<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) => Consume(source.Span, ref location, out exception, trace);
+		protected internal override void Consume(ReadOnlyMemory<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
+			exception = null;
+			// Store the source position and result length, because backtracking has to be done on the entire span unit
+			Int32 start = location;
+			// Consume as much as possible
+			while (exception is null) {
+				// Update the positions so we can backtrack this unit
+				start = location;
+				// Try consuming
+				Pattern.Consume(source, ref location, out exception, trace);
+				if (exception is not null) {
+					// Before we break out, backtrack
+					location = start;
+				}
+			}
+			exception = null; // If a pattern is optional, it doesn't matter if it's there or not, so we never actually have an error
+		}
 
 		/// <inheritdoc/>
-		protected internal override unsafe void Consume([DisallowNull] Char* source, Int32 length, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) => Consume(new ReadOnlySpan<Char>(source, length), ref location, out exception, trace);
+		protected internal override unsafe void Consume([DisallowNull] Char* source, Int32 length, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
+			exception = null;
+			// Store the source position and result length, because backtracking has to be done on the entire span unit
+			Int32 start = location;
+			// Consume as much as possible
+			while (exception is null) {
+				// Update the positions so we can backtrack this unit
+				start = location;
+				// Try consuming
+				Pattern.Consume(source, length, ref location, out exception, trace);
+				if (exception is not null) {
+					// Before we break out, backtrack
+					location = start;
+				}
+			}
+			exception = null; // If a pattern is optional, it doesn't matter if it's there or not, so we never actually have an error
+		}
 
 		/// <inheritdoc/>
-		protected internal override void Neglect(ReadOnlyMemory<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) => Neglect(source.Span, ref location, out exception, trace);
+		protected internal override void Neglect(ReadOnlyMemory<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
+			exception = null;
+			// Consume as much as possible
+			while (exception is null) {
+				Pattern.Neglect(source, ref location, out exception, trace);
+			}
+			exception = null; // As long as the first pattern matched, this consume is successful; we just stop on the eventual fail
+		}
 
 		/// <inheritdoc/>
-		protected internal override unsafe void Neglect([DisallowNull] Char* source, Int32 length, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) => Neglect(new ReadOnlySpan<Char>(source, length), ref location, out exception, trace);
-
-		private void Consume(ReadOnlySpan<Char> source, ref Int32 length, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) => throw new NotImplementedException();
-
-		private void Neglect(ReadOnlySpan<Char> source, ref Int32 length, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) => throw new NotImplementedException();
+		protected internal override unsafe void Neglect([DisallowNull] Char* source, Int32 length, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
+			exception = null;
+			// Consume as much as possible
+			while (exception is null) {
+				Pattern.Neglect(source, length, ref location, out exception, trace);
+			}
+			exception = null; // As long as the first pattern matched, this consume is successful; we just stop on the eventual fail
+		}
 	}
 }

@@ -176,6 +176,38 @@ namespace Langly {
 		}
 
 		[Theory]
+		[InlineData("a", "a", "a")]
+		[InlineData("aaa", "a", "aaa")]
+		[InlineData("aaa", "a", "aaab")]
+		[InlineData("", "a", "baaa")]
+		[InlineData("", "a", "")]
+		public unsafe void KleenesClosure_Pointer(String expected, String pattern, String source) {
+			Pattern ptn = pattern.Many().Maybe();
+			Int32 i = 0;
+			Capture? capture = null;
+			fixed (Char* src = source) {
+				capture = ptn.Parse(source, ref i);
+				Assert.Equal(expected, capture);
+			}
+			Assert.Equal(expected.Length, i);
+		}
+
+		[Theory]
+		[InlineData("a", "a", "a")]
+		[InlineData("aaa", "a", "aaa")]
+		[InlineData("aaa", "a", "aaab")]
+		[InlineData("", "a", "baaa")]
+		[InlineData("", "a", "")]
+		public void KleenesClosure_String(String expected, String pattern, String source) {
+			Pattern ptn = pattern.Many().Maybe();
+			Int32 i = 0;
+			Capture? capture = null;
+			capture = ptn.Parse(source, ref i);
+			Assert.Equal(expected, capture);
+			Assert.Equal(expected.Length, i);
+		}
+
+		[Theory]
 		[InlineData("\u000A", "\u000A")]
 		[InlineData("\u000A\u000D", "\u000A\u000D")]
 		[InlineData("\u000B", "\u000B")]
@@ -349,21 +381,17 @@ namespace Langly {
 		}
 
 		[Theory]
-		[InlineData("a", "a", "a", false)]
-		[InlineData("aa", "a", "aa", false)]
-		[InlineData("aaa", "a", "aaa", false)]
-		[InlineData("aaa", "a", "aaab", false)]
-		[InlineData("", "a", "baaa", true)]
-		public unsafe void Spanner_Pointer(String expected, String pattern, String source, Boolean throws) {
+		[InlineData("a", "a", "a")]
+		[InlineData("aa", "a", "aa")]
+		[InlineData("aaa", "a", "aaa")]
+		[InlineData("aaa", "a", "aaab")]
+		public unsafe void Spanner_Pointer(String expected, String pattern, String source) {
 			Pattern ptn = pattern.Many();
 			Int32 i = 0;
 			Capture? capture = null;
-			if (!throws) {
-				capture = ptn.Parse(source, ref i);
+			fixed (Char* src = source) {
+				capture = ptn.Parse(src, source.Length, ref i);
 				Assert.Equal(expected, capture);
-			} else {
-				_ = Assert.ThrowsAny<Exception>(() => capture = ptn.Parse(source, ref i));
-				Assert.Null(capture);
 			}
 			Assert.Equal(expected.Length, i);
 		}
