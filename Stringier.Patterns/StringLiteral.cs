@@ -46,7 +46,7 @@ namespace Stringier.Patterns {
 		public override Pattern Repeat(Int32 count) {
 			Memory<Char> buffer = new Char[String.Length * count];
 			for (Int32 i = 0; i < count; i++) {
-				String.CopyTo(buffer.Slice(String.Length * count));
+				String.CopyTo(buffer.Slice(i * String.Length));
 			}
 			return new StringLiteral(buffer, Casing);
 		}

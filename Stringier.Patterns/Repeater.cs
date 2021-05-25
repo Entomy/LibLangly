@@ -4,7 +4,7 @@ using System.Traits;
 
 namespace Stringier.Patterns {
 	/// <summary>
-	/// Represents a <see cref="Stringier.Patterns.Pattern"/> whos content repeats a given number of times.
+	/// Represents a <see cref="Patterns.Pattern"/> whos content repeats a given number of times.
 	/// </summary>
 	internal sealed class Repeater : Modifier {
 		/// <summary>
@@ -13,7 +13,7 @@ namespace Stringier.Patterns {
 		private readonly Int32 Count;
 
 		/// <summary>
-		/// The <see cref="Stringier.Patterns.Pattern"/> to be parsed.
+		/// The <see cref="Patterns.Pattern"/> to be parsed.
 		/// </summary>
 		[DisallowNull, NotNull]
 		private readonly Pattern Pattern;
@@ -21,7 +21,7 @@ namespace Stringier.Patterns {
 		/// <summary>
 		/// Initialize a new <see cref="Repeater"/> from the given <paramref name="pattern"/> and <paramref name="count"/>
 		/// </summary>
-		/// <param name="pattern">The <see cref="Stringier.Patterns.Pattern"/> to be parsed.</param>
+		/// <param name="pattern">The <see cref="Patterns.Pattern"/> to be parsed.</param>
 		/// <param name="count">The amount of times to be parsed.</param>
 		/// <exception cref="ArgumentOutOfRangeException"><paramref name="count"/> must be a positive integer.</exception>
 		internal Repeater([DisallowNull] Pattern pattern, Int32 count) {
@@ -33,19 +33,39 @@ namespace Stringier.Patterns {
 		}
 
 		/// <inheritdoc/>
-		protected internal override void Consume(ReadOnlyMemory<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) => Consume(source.Span, ref location, out exception, trace);
+		protected internal override void Consume(ReadOnlyMemory<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
+			exception = null;
+			for (Int32 i = 0; i < Count; i++) {
+				Pattern.Consume(source, ref location, out exception, trace);
+				if (exception is not null) return;
+			}
+		}
 
 		/// <inheritdoc/>
-		protected internal override unsafe void Consume([DisallowNull] Char* source, Int32 length, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) => Consume(new ReadOnlySpan<Char>(source, length), ref location, out exception, trace);
+		protected internal override unsafe void Consume([DisallowNull] Char* source, Int32 length, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
+			exception = null;
+			for (Int32 i = 0; i < Count; i++) {
+				Pattern.Consume(source, length, ref location, out exception, trace);
+				if (exception is not null) return;
+			}
+		}
 
 		/// <inheritdoc/>
-		protected internal override void Neglect(ReadOnlyMemory<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) => Neglect(source.Span, ref location, out exception, trace);
+		protected internal override void Neglect(ReadOnlyMemory<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
+			exception = null;
+			for (Int32 i = 0; i < Count; i++) {
+				Pattern.Neglect(source, ref location, out exception, trace);
+				if (exception is not null) return;
+			}
+		}
 
 		/// <inheritdoc/>
-		protected internal override unsafe void Neglect([DisallowNull] Char* source, Int32 length, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) => Neglect(new ReadOnlySpan<Char>(source, length), ref location, out exception, trace);
-
-		private void Consume(ReadOnlySpan<Char> source, ref Int32 length, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) => throw new NotImplementedException();
-
-		private void Neglect(ReadOnlySpan<Char> source, ref Int32 length, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) => throw new NotImplementedException();
+		protected internal override unsafe void Neglect([DisallowNull] Char* source, Int32 length, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
+			exception = null;
+			for (Int32 i = 0; i < Count; i++) {
+				Pattern.Neglect(source, length, ref location, out exception, trace);
+				if (exception is not null) return;
+			}
+		}
 	}
 }

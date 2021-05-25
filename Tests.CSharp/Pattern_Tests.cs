@@ -222,6 +222,38 @@ namespace Langly {
 		}
 
 		[Theory]
+		[InlineData("hi!", "hi!", 1, "hi!")]
+		[InlineData("hi!hi!hi!", "hi!", 3, "hi!hi!hi!")]
+		public unsafe void Repeater_Pattern(String expected, String pattern, Int32 count, String source) {
+			Pattern ptn = pattern.Repeat(count);
+			Int32 i = 0;
+			Capture? capture = null;
+			fixed (Char* src = source) {
+				capture = ptn.Parse(src, source.Length, ref i);
+				Assert.Equal(expected, capture);
+			}
+			Assert.Equal(expected.Length, i);
+		}
+
+		[Theory]
+		[InlineData("hi!", "hi!", 1, "hi!", false)]
+		[InlineData("hi!hi!hi!", "hi!", 3, "hi!hi!hi!", false)]
+		[InlineData("", "hi!", 3, "hi!", true)]
+		public void Repeater_String(String expected, String pattern, Int32 count, String source, Boolean throws) {
+			Pattern ptn = pattern.Repeat(count);
+			Int32 i = 0;
+			Capture? capture = null;
+			if (!throws) {
+				capture = ptn.Parse(source, ref i);
+				Assert.Equal(expected, capture);
+			} else {
+				_ = Assert.ThrowsAny<Exception>(() => capture = ptn.Parse(source, ref i));
+				Assert.Null(capture);
+			}
+			Assert.Equal(expected.Length, i);
+		}
+
+		[Theory]
 		[InlineData("a", 'a', "a")]
 		[InlineData("a", 'a', "abc")]
 		[InlineData("𝄞", 0x1D11E, "𝄞")]
