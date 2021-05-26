@@ -85,8 +85,10 @@
   </div>
   <div classs="implements">
     <h5>Implements</h5>
-    <div><span class="xref">ICount</span></div>
-    <div><span class="xref">IReplace</span>&lt;TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IClear.html">IClear</a></div>
+    <div><a class="xref" href="System.Traits.ICount.html">ICount</a></div>
+    <div><a class="xref" href="System.Traits.IReplace-1.html">IReplace</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IReplace-2.html">IReplace</a>&lt;TElement, TElement&gt;</div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -116,7 +118,7 @@
   <h6><strong>Assembly</strong>: Collectathon.Lists.dll</h6>
   <h5 id="Collectathon_Nodes_StandardListNode_2_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class StandardListNode&lt;TElement, TSelf&gt; : ListNode&lt;TElement, TSelf&gt;, ICount, IReplace&lt;TElement&gt; where TSelf : StandardListNode&lt;TElement, TSelf&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class StandardListNode&lt;TElement, TSelf&gt; : ListNode&lt;TElement, TSelf&gt;, IClear, ICount, IReplace&lt;TElement&gt;, IReplace&lt;TElement, TElement&gt; where TSelf : StandardListNode&lt;TElement, TSelf&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -257,7 +259,8 @@
   </span>
   <a id="Collectathon_Nodes_StandardListNode_2_Replace_" data-uid="Collectathon.Nodes.StandardListNode`2.Replace*"></a>
   <h4 id="Collectathon_Nodes_StandardListNode_2_Replace__0__0_" data-uid="Collectathon.Nodes.StandardListNode`2.Replace(`0,`0)">Replace(TElement, TElement)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Replaces all instances of <code data-dev-comment-type="paramref" class="paramref">search</code> with <code data-dev-comment-type="paramref" class="paramref">replace</code>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -298,7 +301,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+    <pre><code class="lang-csharp hljs">public override String ToString()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -310,7 +313,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="xref">String</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -319,10 +322,16 @@
   <div><span class="xref">Collectathon.Nodes.ListNode&lt;TElement, TSelf&gt;.ToString()</span></div>
   <h3 id="implements">Implements</h3>
   <div>
-      <span class="xref">ICount</span>
+      <a class="xref" href="System.Traits.IClear.html">IClear</a>
   </div>
   <div>
-      <span class="xref">IReplace&lt;&gt;</span>
+      <a class="xref" href="System.Traits.ICount.html">ICount</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IReplace-1.html">IReplace&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IReplace-2.html">IReplace&lt;TSearch, TReplace&gt;</a>
   </div>
 </article>
           </div>

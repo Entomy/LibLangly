@@ -84,11 +84,16 @@
   </div>
   <div classs="implements">
     <h5>Implements</h5>
-    <div><span class="xref">IClear</span></div>
-    <div><span class="xref">IIndex</span>&lt;TIndex, TElement&gt;</div>
-    <div><span class="xref">IInsert</span>&lt;TIndex, TElement&gt;</div>
-    <div><span class="xref">ISequence</span>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">ValueTuple</a>&lt;TIndex, TElement&gt;, <a class="xref" href="Collectathon.Arrays.FlexibleArray-3.Enumerator.html">FlexibleArray.Enumerator</a>&lt;&gt;&gt;</div>
-    <div><span class="xref">IResize</span></div>
+    <div><a class="xref" href="System.Traits.IClear.html">IClear</a></div>
+    <div><a class="xref" href="System.Traits.IIndex-2.html">IIndex</a>&lt;TIndex, TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IIndexReadOnly-2.html">IIndexReadOnly</a>&lt;TIndex, TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IInsert-2.html">IInsert</a>&lt;TIndex, TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.ISequence-2.html">ISequence</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">ValueTuple</a>&lt;TIndex, TElement&gt;, <a class="xref" href="Collectathon.Arrays.FlexibleArray-3.Enumerator.html">FlexibleArray.Enumerator</a>&lt;&gt;&gt;</div>
+    <div><a class="xref" href="System.Traits.ICount.html">ICount</a></div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">ValueTuple</a>&lt;TIndex, TElement&gt;&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
+    <div><a class="xref" href="System.Traits.IResize.html">IResize</a></div>
+    <div><a class="xref" href="System.Traits.ICapacity.html">ICapacity</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -131,12 +136,33 @@
     <div>
       <a class="xref" href="Collectathon.Arrays.FlexibleArray-3.html#Collectathon_Arrays_FlexibleArray_3_Add__0__1_">FlexibleArray&lt;TIndex, TElement, DynamicArray&lt;TIndex, TElement&gt;&gt;.Add(TIndex, TElement)</a>
     </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_">Object.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_System_Object_">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#System_Object_GetHashCode">Object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#System_Object_GetType">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#System_Object_MemberwiseClone">Object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#System_Object_ReferenceEquals_System_Object_System_Object_">Object.ReferenceEquals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString">Object.ToString()</a>
+    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Collectathon.Arrays.html">Collectathon.Arrays</a></h6>
   <h6><strong>Assembly</strong>: Collectathon.Arrays.dll</h6>
   <h5 id="Collectathon_Arrays_DynamicArray_2_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class DynamicArray&lt;TIndex, TElement&gt; : FlexibleArray&lt;TIndex, TElement, DynamicArray&lt;TIndex, TElement&gt;&gt;, IClear, IIndex&lt;TIndex, TElement&gt;, IInsert&lt;TIndex, TElement&gt;, ISequence&lt;(TIndex Index, TElement Element), FlexibleArray&lt;TIndex, TElement, DynamicArray&lt;TIndex, TElement&gt;&gt;.Enumerator&gt;, IResize</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class DynamicArray&lt;TIndex, TElement&gt; : FlexibleArray&lt;TIndex, TElement, DynamicArray&lt;TIndex, TElement&gt;&gt;, IClear, IIndex&lt;TIndex, TElement&gt;, IIndexReadOnly&lt;TIndex, TElement&gt;, IInsert&lt;TIndex, TElement&gt;, ISequence&lt;(TIndex Index, TElement Element), FlexibleArray&lt;TIndex, TElement, DynamicArray&lt;TIndex, TElement&gt;&gt;.Enumerator&gt;, ICount, IEnumerable&lt;(TIndex Index, TElement Element)&gt;, IEnumerable, IResize, ICapacity</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -406,19 +432,44 @@
   </table>
   <h3 id="implements">Implements</h3>
   <div>
-      <span class="xref">IClear</span>
+      <a class="xref" href="System.Traits.IClear.html">IClear</a>
   </div>
   <div>
-      <span class="xref">IIndex&lt;, &gt;</span>
+      <a class="xref" href="System.Traits.IIndex-2.html">IIndex&lt;TIndex, TElement&gt;</a>
   </div>
   <div>
-      <span class="xref">IInsert&lt;, &gt;</span>
+      <a class="xref" href="System.Traits.IIndexReadOnly-2.html">IIndexReadOnly&lt;TIndex, TElement&gt;</a>
   </div>
   <div>
-      <span class="xref">ISequence&lt;, &gt;</span>
+      <a class="xref" href="System.Traits.IInsert-2.html">IInsert&lt;TIndex, TElement&gt;</a>
   </div>
   <div>
-      <span class="xref">IResize</span>
+      <a class="xref" href="System.Traits.ISequence-2.html">ISequence&lt;TElement, TEnumerator&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.ICount.html">ICount</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">System.Collections.Generic.IEnumerable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">System.Collections.IEnumerable</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IResize.html">IResize</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.ICapacity.html">ICapacity</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Grow_System_Traits_IResize_">TraitExtensions.Grow(IResize)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Grow_System_Traits_IResize_nint_">TraitExtensions.Grow(IResize, nint)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Shrink_System_Traits_IResize_">TraitExtensions.Shrink(IResize)</a>
   </div>
 </article>
           </div>

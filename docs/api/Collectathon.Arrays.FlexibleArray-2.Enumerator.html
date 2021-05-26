@@ -78,7 +78,14 @@
   <div class="markdown level0 conceptual"></div>
   <div classs="implements">
     <h5>Implements</h5>
-    <div><span class="xref">IEnumerator</span>&lt;TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IEnumerator-1.html">IEnumerator</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1">IEnumerator</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+    <div><a class="xref" href="System.Traits.ISequence-2.html">ISequence</a>&lt;TElement, <a class="xref" href="System.Traits.IEnumerator-1.html">IEnumerator</a>&lt;TElement&gt;&gt;</div>
+    <div><a class="xref" href="System.Traits.ICount.html">ICount</a></div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Collectathon.Arrays.FlexibleArray-2.Enumerator.html">FlexibleArray.Enumerator</a>&lt;&gt;&gt;</div>
   </div>
   <div class="inheritedMembers">
@@ -100,7 +107,7 @@
   <h6><strong>Assembly</strong>: Collectathon.Arrays.dll</h6>
   <h5 id="Collectathon_Arrays_FlexibleArray_2_Enumerator_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public struct Enumerator : IEnumerator&lt;TElement&gt;, IEquatable&lt;FlexibleArray&lt;TElement, TSelf&gt;.Enumerator&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public struct Enumerator : IEnumerator&lt;TElement&gt;, IEnumerator&lt;TElement&gt;, IEnumerator, IDisposable, ISequence&lt;TElement, IEnumerator&lt;TElement&gt;&gt;, ICount, IEnumerable&lt;TElement&gt;, IEnumerable, IEquatable&lt;FlexibleArray&lt;TElement, TSelf&gt;.Enumerator&gt;</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -605,10 +612,65 @@
   </table>
   <h3 id="implements">Implements</h3>
   <div>
-      <span class="xref">IEnumerator&lt;&gt;</span>
+      <a class="xref" href="System.Traits.IEnumerator-1.html">IEnumerator&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1">System.Collections.Generic.IEnumerator&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerator">System.Collections.IEnumerator</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable">System.IDisposable</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.ISequence-2.html">ISequence&lt;TElement, TEnumerator&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.ICount.html">ICount</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">System.Collections.Generic.IEnumerable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">System.Collections.IEnumerable</a>
   </div>
   <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">System.IEquatable&lt;T&gt;</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Contains__2_System_Traits_ISequence___0___1____0_">TraitExtensions.Contains&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, TElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsAll__2_System_Traits_ISequence___0___1____0___">TraitExtensions.ContainsAll&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, TElement[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsAny__2_System_Traits_ISequence___0___1____0___">TraitExtensions.ContainsAny&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, TElement[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_CopyTo__2_System_Traits_ISequence___0___1____0___">TraitExtensions.CopyTo&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, TElement[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_CopyTo__2_System_Traits_ISequence___0___1__System_Memory___0__">TraitExtensions.CopyTo&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Memory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_CopyTo__2_System_Traits_ISequence___0___1__System_Span___0__">TraitExtensions.CopyTo&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Span&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Fold__1_System_Collections_Generic_IEnumerable___0__System_Func___0___0___0____0_">TraitExtensions.Fold&lt;TElement&gt;(IEnumerable&lt;TElement&gt;, Func&lt;TElement, TElement, TElement&gt;, TElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Fold__2_System_Traits_ISequence___0___1__System_Func___0___0___0____0_">TraitExtensions.Fold&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Func&lt;TElement, TElement, TElement&gt;, TElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Occurrences__2_System_Traits_ISequence___0___1____0_">TraitExtensions.Occurrences&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, TElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Occurrences__2_System_Traits_ISequence___0___1__System_Predicate___0__">TraitExtensions.Occurrences&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Predicate&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ToArray__2_System_Traits_ISequence___0___1__">TraitExtensions.ToArray&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;)</a>
   </div>
 </article>
           </div>

@@ -66,6 +66,48 @@ namespace Stringier.Patterns {
 		public static implicit operator MutablePattern((String, Case) @string) => new MutablePattern { Head = @string };
 
 		/// <summary>
+		/// Converts to a <see cref="MutablePattern"/> matching exactly the <paramref name="array"/>.
+		/// </summary>
+		/// <param name="array">The <see cref="Array"/> of <see cref="Char"/> to match.</param>
+		[return: MaybeNull, NotNullIfNotNull("array")]
+		public static implicit operator MutablePattern([AllowNull] Char[] array) => new MutablePattern { Head = array };
+
+		/// <summary>
+		/// Converts to a <see cref="MutablePattern"/> matching exactly the <paramref name="array"/>.
+		/// </summary>
+		/// <param name="array">A <see cref="ValueTuple{T1, T2}"/> of <see cref="Array"/> of <see cref="Char"/> to match and <see cref="Case"/> comparison.</param>
+		[return: NotNull]
+		public static implicit operator MutablePattern((Char[], Case) array) => new MutablePattern { Head = array };
+
+		/// <summary>
+		/// Converts to a <see cref="MutablePattern"/> matching exactly the <paramref name="memory"/>.
+		/// </summary>
+		/// <param name="memory">The <see cref="Memory{T}"/> of <see cref="Char"/> to match.</param>
+		[return: NotNull]
+		public static implicit operator MutablePattern(Memory<Char> memory) => new MutablePattern { Head = memory };
+
+		/// <summary>
+		/// Converts to a <see cref="MutablePattern"/> matching exactly the <paramref name="memory"/>.
+		/// </summary>
+		/// <param name="memory">A <see cref="ValueTuple{T1, T2}"/> of <see cref="Memory{T}"/> of <see cref="Char"/> to match and <see cref="Case"/> comparison.</param>
+		[return: NotNull]
+		public static implicit operator MutablePattern((Memory<Char>, Case) memory) => new MutablePattern { Head = memory };
+
+		/// <summary>
+		/// Converts to a <see cref="MutablePattern"/> matching exactly the <paramref name="memory"/>.
+		/// </summary>
+		/// <param name="memory">The <see cref="ReadOnlyMemory{T}"/> of <see cref="Char"/> to match.</param>
+		[return: NotNull]
+		public static implicit operator MutablePattern(ReadOnlyMemory<Char> memory) => new MutablePattern { Head = memory };
+
+		/// <summary>
+		/// Converts to a <see cref="MutablePattern"/> matching exactly the <paramref name="memory"/>.
+		/// </summary>
+		/// <param name="memory">A <see cref="ValueTuple{T1, T2}"/> of <see cref="ReadOnlyMemory{T}"/> of <see cref="Char"/> to match and <see cref="Case"/> comparison.</param>
+		[return: NotNull]
+		public static implicit operator MutablePattern((ReadOnlyMemory<Char>, Case) memory) => new MutablePattern { Head = memory };
+
+		/// <summary>
 		/// Converts to a <see cref="MutablePattern"/> matching exactly the <paramref name="capture"/>.
 		/// </summary>
 		/// <param name="capture">The <see cref="Patterns.Capture"/> to match.</param>
