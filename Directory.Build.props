@@ -10,8 +10,14 @@
 		<PackageProjectUrl>https://github.com/Entomy/LibLangly</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/Entomy/LibLangly</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(TF_BUILD)' == 'true'">
+		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
 	</PropertyGroup>
 	<ItemGroup>
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All"/>
 		<PackageReference Include="ExceptionAnalyzer" Version="1.0.5" PrivateAssets="all" />
 		<PackageReference Include="Meziantou.Analyzer" Version="1.0.661" PrivateAssets="all" />
 		<PackageReference Include="Microsoft.CodeAnalysis" Version="3.9.0" PrivateAssets="all" />
