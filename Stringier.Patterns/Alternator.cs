@@ -32,6 +32,16 @@ namespace Stringier.Patterns {
 
 		/// <inheritdoc/>
 		[return: NotNull]
+		public override Pattern Many() {
+			if (Left is Optor || Right is Optor) {
+				throw new InvalidOperationException("One or more of the components of this alternator are optional, and the alternator is marked as spanning. Options can not span, as it creates an infinite loop. While this potentially could succeed, this is absolutely an error.");
+			} else {
+				return base.Many();
+			}
+		}
+
+		/// <inheritdoc/>
+		[return: NotNull]
 		public override Pattern Or([AllowNull] Pattern other) => other is not null ? new ChainAlternator(Left, Right, other) : this;
 
 		/// <inheritdoc/>
@@ -45,17 +55,6 @@ namespace Stringier.Patterns {
 		/// <inheritdoc/>
 		[return: NotNull]
 		public override Pattern Or([AllowNull] String other) => other is not null ? new ChainAlternator(Left, Right, new StringLiteral(other)) : this;
-
-		/// <inheritdoc/>
-		[return: NotNull]
-		public override Pattern Many() {
-			if (Left is Optor || Right is Optor) {
-				throw new InvalidOperationException("One or more of the components of this alternator are optional, and the alternator is marked as spanning. Options can not span, as it creates an infinite loop. While this potentially could succeed, this is absolutely an error.");
-			} else {
-				return base.Many();
-			}
-		}
-
 		/// <inheritdoc/>
 		protected internal override void Consume(ReadOnlyMemory<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
 			Left.Consume(source, ref location, out exception, trace);
@@ -79,6 +78,12 @@ namespace Stringier.Patterns {
 				}
 			}
 		}
+
+		/// <inheritdoc/>
+		protected internal override Boolean IsConsumeHeader(ReadOnlySpan<Char> source, Int32 location) => Left.IsConsumeHeader(source, location) || Right.IsConsumeHeader(source, location);
+
+		/// <inheritdoc/>
+		protected internal override Boolean IsNeglectHeader(ReadOnlySpan<Char> source, Int32 location) => Left.IsNeglectHeader(source, location) || Right.IsNeglectHeader(source, location);
 
 		/// <inheritdoc/>
 		protected internal override void Neglect(ReadOnlyMemory<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {

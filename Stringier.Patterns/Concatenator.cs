@@ -44,6 +44,12 @@ namespace Stringier.Patterns {
 		}
 
 		/// <inheritdoc/>
+		protected internal override Boolean IsConsumeHeader(ReadOnlySpan<Char> source, Int32 location) => Left.IsConsumeHeader(source, location);
+
+		/// <inheritdoc/>
+		protected internal override Boolean IsNeglectHeader(ReadOnlySpan<Char> source, Int32 location) => Left.IsNeglectHeader(source, location);
+
+		/// <inheritdoc/>
 		protected internal override void Neglect(ReadOnlyMemory<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
 			Left.Neglect(source, ref location, out exception, trace);
 			if (exception is null) return;

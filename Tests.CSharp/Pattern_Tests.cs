@@ -317,9 +317,43 @@ namespace Langly {
 		}
 
 		[Theory]
+		[InlineData("hello;", "hello", ";", "hello;")]
+		[InlineData("hello;", "hello", ";", "hello;goodbye;")]
+		[InlineData("hello world;", "hello", ";", "hello world;")]
+		public unsafe void Ranger_Pointer(String expected, String start, String end, String source) {
+			Pattern ptn = start.To(end);
+			Int32 i = 0;
+			Capture? capture = null;
+			fixed (Char* src = source) {
+				capture = ptn.Parse(src, source.Length, ref i);
+				Assert.Equal(expected, capture);
+			}
+			Assert.Equal(expected.Length, i);
+		}
+
+		[Theory]
+		[InlineData("hello;", "hello", ";", "hello;", false)]
+		[InlineData("hello;", "hello", ";", "hello;goodbye;", false)]
+		[InlineData("hello world;", "hello", ";", "hello world;", false)]
+		[InlineData("", "hello", ";", "hello world", true)]
+		public void Ranger_String(String expected, String start, String end, String source, Boolean throws) {
+			Pattern ptn = start.To(end);
+			Int32 i = 0;
+			Capture? capture = null;
+			if (!throws) {
+				capture = ptn.Parse(source, ref i);
+				Assert.Equal(expected, capture);
+			} else {
+				_ = Assert.ThrowsAny<Exception>(() => capture = ptn.Parse(source, ref i));
+				Assert.Null(capture);
+			}
+			Assert.Equal(expected.Length, i);
+		}
+
+		[Theory]
 		[InlineData("hi!", "hi!", 1, "hi!")]
 		[InlineData("hi!hi!hi!", "hi!", 3, "hi!hi!hi!")]
-		public unsafe void Repeater_Pattern(String expected, String pattern, Int32 count, String source) {
+		public unsafe void Repeater_Pointer(String expected, String pattern, Int32 count, String source) {
 			Pattern ptn = Repeat(pattern, count);
 			Int32 i = 0;
 			Capture? capture = null;

@@ -40,6 +40,12 @@ namespace Stringier.Patterns {
 		}
 
 		/// <inheritdoc/>
+		protected internal override Boolean IsConsumeHeader(ReadOnlySpan<Char> source, Int32 location) => Pattern.IsConsumeHeader(source, location);
+
+		/// <inheritdoc/>
+		protected internal override Boolean IsNeglectHeader(ReadOnlySpan<Char> source, Int32 location) => Pattern.IsConsumeHeader(source, location);
+
+		/// <inheritdoc/>
 		protected internal override void Neglect(ReadOnlyMemory<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
 			Pattern.Neglect(source, ref location, out _, trace);
 			exception = null; // If a pattern is optional, it doesn't matter if it's there or not, so we never actually have an error

@@ -44,6 +44,22 @@ namespace Stringier.Patterns {
 		}
 
 		/// <inheritdoc/>
+		protected internal override Boolean IsConsumeHeader(ReadOnlySpan<Char> source, Int32 location) {
+			foreach (String name in FastEnum.GetNames<TEnum>()) {
+				if (Text.Equals(name[0], source[location], Casing)) return true;
+			}
+			return false;
+		}
+
+		/// <inheritdoc/>
+		protected internal override Boolean IsNeglectHeader(ReadOnlySpan<Char> source, Int32 location) {
+			foreach (String name in FastEnum.GetNames<TEnum>()) {
+				if (Text.Equals(name[0], source[location], Casing)) return false;
+			}
+			return true;
+		}
+
+		/// <inheritdoc/>
 		protected internal override void Neglect(ReadOnlyMemory<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
 			exception = null;
 			Int32 start = location;

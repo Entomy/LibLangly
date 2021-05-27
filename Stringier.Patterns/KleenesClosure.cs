@@ -16,7 +16,7 @@ namespace Stringier.Patterns {
 		/// <summary>
 		/// Initialize a new <see cref="KleenesClosure"/> from the given <paramref name="pattern"/>.
 		/// </summary>
-		/// <param name="pattern">The <see cref="Stringier.Patterns.Pattern"/> to be parsed.</param>
+		/// <param name="pattern">The <see cref="Patterns.Pattern"/> to be parsed.</param>
 		internal KleenesClosure([DisallowNull] Pattern pattern) => Pattern = pattern;
 
 		/// <inheritdoc/>
@@ -56,6 +56,12 @@ namespace Stringier.Patterns {
 			}
 			exception = null; // If a pattern is optional, it doesn't matter if it's there or not, so we never actually have an error
 		}
+
+		/// <inheritdoc/>
+		protected internal override Boolean IsConsumeHeader(ReadOnlySpan<Char> source, Int32 location) => Pattern.IsConsumeHeader(source, location);
+
+		/// <inheritdoc/>
+		protected internal override Boolean IsNeglectHeader(ReadOnlySpan<Char> source, Int32 location) => Pattern.IsConsumeHeader(source, location);
 
 		/// <inheritdoc/>
 		protected internal override void Neglect(ReadOnlyMemory<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {

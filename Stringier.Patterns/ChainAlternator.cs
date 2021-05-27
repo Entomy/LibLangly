@@ -58,6 +58,17 @@ namespace Stringier.Patterns {
 
 		/// <inheritdoc/>
 		[return: NotNull]
+		public override Pattern Many() {
+			foreach (Pattern Pattern in Patterns) {
+				if (Pattern is Optor) {
+					throw new InvalidOperationException("One or more of the components of this alternator are optional, and the alternator is marked as spanning. Options can not span, as it creates an infinite loop.");
+				}
+			}
+			return base.Many();
+		}
+
+		/// <inheritdoc/>
+		[return: NotNull]
 		public override Pattern Or([AllowNull] Pattern other) {
 			switch (other) {
 			case ChainAlternator chain:
@@ -78,18 +89,6 @@ namespace Stringier.Patterns {
 		/// <inheritdoc/>
 		[return: NotNull]
 		public override Pattern Or([AllowNull] String other) => other is not null ? new ChainAlternator(Patterns, new StringLiteral(other)) : this;
-
-		/// <inheritdoc/>
-		[return: NotNull]
-		public override Pattern Many() {
-			foreach (Pattern Pattern in Patterns) {
-				if (Pattern is Optor) {
-					throw new InvalidOperationException("One or more of the components of this alternator are optional, and the alternator is marked as spanning. Options can not span, as it creates an infinite loop.");
-				}
-			}
-			return base.Many();
-		}
-
 		/// <inheritdoc/>
 		protected internal override void Consume(ReadOnlyMemory<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
 			exception = null;
@@ -110,6 +109,22 @@ namespace Stringier.Patterns {
 					return;
 				}
 			}
+		}
+
+		/// <inheritdoc/>
+		protected internal override Boolean IsConsumeHeader(ReadOnlySpan<Char> source, Int32 location) {
+			foreach (Pattern pattern in Patterns) {
+				if (pattern.IsConsumeHeader(source, location)) return true;
+			}
+			return false;
+		}
+
+		/// <inheritdoc/>
+		protected internal override Boolean IsNeglectHeader(ReadOnlySpan<Char> source, Int32 location) {
+			foreach (Pattern pattern in Patterns) {
+				if (pattern.IsNeglectHeader(source, location)) return true;
+			}
+			return false;
 		}
 
 		/// <inheritdoc/>

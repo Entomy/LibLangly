@@ -24,15 +24,14 @@ namespace Stringier.Patterns {
 		public static readonly Pattern EndOfSource = new SourceEndChecker();
 
 		/// <summary>
-		/// Predefined <see cref="Exception"/> for when no match could be found.
-		/// </summary>
-		protected static readonly Exception NoMatch = new InvalidOperationException("The parser failed to find a match for the pattern in the source.");
-
-		/// <summary>
 		/// Predefined <see cref="Exception"/> for when the end of the source was reached before finding a match.
 		/// </summary>
 		protected static readonly Exception AtEnd = new InvalidOperationException("The parser reached the end of the source before finding a match to this pattern.");
 
+		/// <summary>
+		/// Predefined <see cref="Exception"/> for when no match could be found.
+		/// </summary>
+		protected static readonly Exception NoMatch = new InvalidOperationException("The parser failed to find a match for the pattern in the source.");
 		/// <summary>
 		/// Initialize a new <see cref="Pattern"/>.
 		/// </summary>
@@ -272,6 +271,56 @@ namespace Stringier.Patterns {
 		/// </remarks>
 		[CLSCompliant(false)]
 		protected internal abstract unsafe void Consume([DisallowNull] Char* source, Int32 length, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace);
+
+		/// <summary>
+		/// Checks if the header for the consume parser is present. This is an efficient check to determine whether the consume parser should be called at all.
+		/// </summary>
+		/// <param name="source">The source to check.</param>
+		/// <param name="location">The location within the <paramref name="source"/> to check.</param>
+		/// <returns><see langword="true"/> if the pattern is potentially at this <paramref name="location"/>; otherwise, <see langword="false"/>.</returns>
+		protected internal Boolean IsConsumeHeader(ReadOnlyMemory<Char> source, Int32 location) => IsConsumeHeader(source.Span, location);
+
+		/// <summary>
+		/// Checks if the header for the consume parser is present. This is an efficient check to determine whether the consume parser should be called at all.
+		/// </summary>
+		/// <param name="source">The source to check.</param>
+		/// <param name="location">The location within the <paramref name="source"/> to check.</param>
+		/// <returns><see langword="true"/> if the pattern is potentially at this <paramref name="location"/>; otherwise, <see langword="false"/>.</returns>
+		[CLSCompliant(false)]
+		protected internal unsafe Boolean IsConsumeHeader(Char* source, Int32 location) => IsConsumeHeader(new ReadOnlySpan<Char>(source, location + 1), location);
+
+		/// <summary>
+		/// Checks if the header for the consume parser is present. This is an efficient check to determine whether the consume parser should be called at all.
+		/// </summary>
+		/// <param name="source">The source to check.</param>
+		/// <param name="location">The location within the <paramref name="source"/> to check.</param>
+		/// <returns><see langword="true"/> if the pattern is potentially at this <paramref name="location"/>; otherwise, <see langword="false"/>.</returns>
+		protected internal abstract Boolean IsConsumeHeader(ReadOnlySpan<Char> source, Int32 location);
+
+		/// <summary>
+		/// Checks if the header for the neglect parser is present. This is an efficient check to determine whether the neglect parser should be called at all.
+		/// </summary>
+		/// <param name="source">The source to check.</param>
+		/// <param name="location">The location within the <paramref name="source"/> to check.</param>
+		/// <returns><see langword="true"/> if the pattern is potentially at this <paramref name="location"/>; otherwise, <see langword="false"/>.</returns>
+		protected internal Boolean IsNeglectHeader(ReadOnlyMemory<Char> source, Int32 location) => IsNeglectHeader(source.Span, location);
+
+		/// <summary>
+		/// Checks if the header for the neglect parser is present. This is an efficient check to determine whether the neglect parser should be called at all.
+		/// </summary>
+		/// <param name="source">The source to check.</param>
+		/// <param name="location">The location within the <paramref name="source"/> to check.</param>
+		/// <returns><see langword="true"/> if the pattern is potentially at this <paramref name="location"/>; otherwise, <see langword="false"/>.</returns>
+		[CLSCompliant(false)]
+		protected internal unsafe Boolean IsNeglectHeader([DisallowNull] Char* source, Int32 location) => IsNeglectHeader(new ReadOnlySpan<Char>(source, location), location);
+
+		/// <summary>
+		/// Checks if the header for the neglect parser is present. This is an efficient check to determine whether the neglect parser should be called at all.
+		/// </summary>
+		/// <param name="source">The source to check.</param>
+		/// <param name="location">The location within the <paramref name="source"/> to check.</param>
+		/// <returns><see langword="true"/> if the pattern is potentially at this <paramref name="location"/>; otherwise, <see langword="false"/>.</returns>
+		protected internal abstract Boolean IsNeglectHeader(ReadOnlySpan<Char> source, Int32 location);
 
 		/// <summary>
 		/// Calls the neglect parser for this <see cref="Pattern"/> on the <paramref name="source"/>.
