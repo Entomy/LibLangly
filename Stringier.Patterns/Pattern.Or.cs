@@ -50,6 +50,6 @@ namespace Stringier.Patterns {
 		/// <param name="other">The <see cref="String"/> to check if this <see cref="Pattern"/> does not match.</param>
 		/// <returns>A new <see cref="Pattern"/> matching this <see cref="Pattern"/> or <paramref name="other"/>.</returns>
 		[return: NotNull]
-		public virtual Pattern Or([AllowNull] String other) => other is not null ? new Alternator(this, new StringLiteral(other)) : this;
+		public virtual Pattern Or([AllowNull] String other) => other is not null ? new Alternator(this, new MemoryLiteral(other)) : this;
 	}
 }

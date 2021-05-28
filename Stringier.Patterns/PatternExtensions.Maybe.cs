@@ -26,6 +26,6 @@ namespace Stringier.Patterns {
 		/// <param name="string">The string literal pattern.</param>
 		/// <returns>A new <see cref="Pattern"/> which may or may not be present in order to match.</returns>
 		[return: NotNull]
-		public static Pattern Maybe(this String @string) => new StringLiteral(@string).Maybe();
+		public static Pattern Maybe(this String @string) => new MemoryLiteral(@string).Maybe();
 	}
 }

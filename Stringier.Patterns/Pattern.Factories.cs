@@ -25,7 +25,7 @@ namespace Stringier.Patterns {
 		/// <param name="delimiter">The token delimiting the start of a line comment.</param>
 		/// <returns>A pattern representing a line comment.</returns>
 		[return: MaybeNull, NotNullIfNotNull("delimiter")]
-		public static Pattern LineComment([DisallowNull] String delimiter) => delimiter is not null ? delimiter & +!EndOfLine : null;
+		public static Pattern LineComment([DisallowNull] String delimiter) => delimiter is not null ? delimiter.Then(Many(Not(EndOfLine))) : null;
 
 		/// <summary>
 		/// Creates a pattern representing a string literal contained by the <paramref name="delimiter"/>.

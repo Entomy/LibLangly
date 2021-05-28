@@ -88,7 +88,7 @@ namespace Stringier.Patterns {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public override Pattern Or([AllowNull] String other) => other is not null ? new ChainAlternator(Patterns, new StringLiteral(other)) : this;
+		public override Pattern Or([AllowNull] String other) => other is not null ? new ChainAlternator(Patterns, new MemoryLiteral(other)) : this;
 		/// <inheritdoc/>
 		protected internal override void Consume(ReadOnlyMemory<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
 			exception = null;

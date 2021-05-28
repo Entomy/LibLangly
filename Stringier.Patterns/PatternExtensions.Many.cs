@@ -26,6 +26,6 @@ namespace Stringier.Patterns {
 		/// <param name="string">The string literal pattern.</param>
 		/// <returns>A new <see cref="Pattern"/> which spans, repeating as many times as necessary until it doesn't match anymore.</returns>
 		[return: NotNull]
-		public static Pattern Many([DisallowNull] this String @string) => new StringLiteral(@string).Many();
+		public static Pattern Many([DisallowNull] this String @string) => new MemoryLiteral(@string).Many();
 	}
 }

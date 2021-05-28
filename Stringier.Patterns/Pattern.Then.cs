@@ -43,6 +43,6 @@ namespace Stringier.Patterns {
 		/// <param name="other">The succeeding <see cref="String"/>.</param>
 		/// <returns>A new <see cref="Pattern"/> matching this <see cref="Pattern"/> then <paramref name="other"/>.</returns>
 		[return: NotNull]
-		public virtual Pattern Then([AllowNull] String other) => other is not null ? new Concatenator(this, new StringLiteral(other)) : this;
+		public virtual Pattern Then([AllowNull] String other) => other is not null ? new Concatenator(this, new MemoryLiteral(other)) : this;
 	}
 }

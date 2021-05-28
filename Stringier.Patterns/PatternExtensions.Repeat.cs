@@ -29,6 +29,6 @@ namespace Stringier.Patterns {
 		/// <param name="count">The amount of times to repeat.</param>
 		/// <returns>A new <see cref="Pattern"/> repeated <paramref name="count"/> times.</returns>
 		[return: NotNull]
-		public static Pattern Repeat([DisallowNull] this String @string, Int32 count) => new StringLiteral(@string).Repeat(count);
+		public static Pattern Repeat([DisallowNull] this String @string, Int32 count) => new MemoryLiteral(@string).Repeat(count);
 	}
 }

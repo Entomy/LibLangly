@@ -26,6 +26,6 @@ namespace Stringier.Patterns {
 		/// <param name="string">The string literal pattern.</param>
 		/// <returns>A new <see cref="Pattern"/> which matches the negation of this <see cref="Pattern"/>.</returns>
 		[return: NotNull]
-		public static Pattern Not([DisallowNull] this String @string) => new StringLiteral(@string).Not();
+		public static Pattern Not([DisallowNull] this String @string) => new MemoryLiteral(@string).Not();
 	}
 }

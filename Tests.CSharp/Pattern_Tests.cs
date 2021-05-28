@@ -243,6 +243,42 @@ namespace Langly {
 		}
 
 		[Theory]
+		[InlineData("//This is a comment", "//", "//This is a comment")]
+		[InlineData("--This is a comment", "--", "--This is a comment")]
+		[InlineData("//This is a comment", "//", "//This is a comment\nwith some extra text")]
+		[InlineData("--This is a comment", "--", "--This is a comment\nwith some extra text")]
+		public unsafe void LineComment_Pointer(String expected, String delimiter, String source) {
+			Pattern ptn = LineComment(delimiter);
+			Int32 i = 0;
+			Capture? capture = null;
+			fixed (Char* src = source) {
+				capture = ptn.Parse(src, source.Length, ref i);
+				Assert.Equal(expected, capture);
+			}
+			Assert.Equal(expected.Length, i);
+		}
+
+		[Theory]
+		[InlineData("//This is a comment", "//", "//This is a comment", false)]
+		[InlineData("--This is a comment", "--", "--This is a comment", false)]
+		[InlineData("//This is a comment", "//", "//This is a comment\nwith some extra text", false)]
+		[InlineData("--This is a comment", "--", "--This is a comment\nwith some extra text", false)]
+		[InlineData("", "//", "This isn't a comment", true)]
+		[InlineData("", "--", "This isn't a comment", true)]
+		public void LineComment_String(String expected, String delimiter, String source, Boolean throws) {
+			Pattern ptn = LineComment(delimiter);
+			Int32 i = 0;
+			Capture? capture = null;
+			if (!throws) {
+				capture = ptn.Parse(source, ref i);
+				Assert.Equal(expected, capture);
+			} else {
+				_ = Assert.ThrowsAny<Exception>(() => capture = ptn.Parse(source, ref i));
+				Assert.Null(capture);
+			}
+			Assert.Equal(expected.Length, i);
+		}
+		[Theory]
 		[InlineData("\u000A", "\u000A")]
 		[InlineData("\u000A\u000D", "\u000A\u000D")]
 		[InlineData("\u000B", "\u000B")]
@@ -276,6 +312,78 @@ namespace Langly {
 		[InlineData("", "abc", true)]
 		public void LineEndChecker_String(String expected, String source, Boolean throws) {
 			Pattern ptn = Pattern.EndOfLine;
+			Int32 i = 0;
+			Capture? capture = null;
+			if (!throws) {
+				capture = ptn.Parse(source, ref i);
+				Assert.Equal(expected, capture);
+			} else {
+				_ = Assert.ThrowsAny<Exception>(() => capture = ptn.Parse(source, ref i));
+				Assert.Null(capture);
+			}
+			Assert.Equal(expected.Length, i);
+		}
+
+		[Theory]
+		[InlineData("a", "a", "a")]
+		[InlineData("a", "a", "abc")]
+		[InlineData("abc", "abc", "abc")]
+		[InlineData("abc", "abc", "abcde")]
+		public unsafe void MemoryLiteral_Pointer(String expected, String pattern, String source) {
+			Pattern ptn = pattern;
+			Int32 i = 0;
+			Capture? capture = null;
+			fixed (Char* src = source) {
+				capture = ptn.Parse(src, source.Length, ref i);
+				Assert.Equal(expected, capture);
+			}
+			Assert.Equal(expected.Length, i);
+		}
+
+		[Theory]
+		[InlineData("a", "a", "a", false)]
+		[InlineData("a", "a", "abc", false)]
+		[InlineData("abc", "abc", "abc", false)]
+		[InlineData("abc", "abc", "abcde", false)]
+		[InlineData("", "a", "def", true)]
+		public void MemoryLiteral_String(String expected, String pattern, String source, Boolean throws) {
+			Pattern ptn = pattern;
+			Int32 i = 0;
+			Capture? capture = null;
+			if (!throws) {
+				capture = ptn.Parse(source, ref i);
+				Assert.Equal(expected, capture);
+			} else {
+				_ = Assert.ThrowsAny<Exception>(() => capture = ptn.Parse(source, ref i));
+				Assert.Null(capture);
+			}
+			Assert.Equal(expected.Length, i);
+		}
+
+		[Theory]
+		[InlineData("+-", "+", "-", "+-")]
+		[InlineData("++--", "+", "-", "++--")]
+		[InlineData("++  --", "+", "-", "++  --")]
+		[InlineData("+ + - -", "+", "-", "+ + - -")]
+		public unsafe void NestedRanger_Pointer(String expected, String start, String end, String source) {
+			Pattern ptn = start.ToNested(end);
+			Int32 i = 0;
+			Capture? capture = null;
+			fixed (Char* src = source) {
+				capture = ptn.Parse(src, source.Length, ref i);
+				Assert.Equal(expected, capture);
+			}
+			Assert.Equal(expected.Length, i);
+		}
+
+		[Theory]
+		[InlineData("+-", "+", "-", "+-", false)]
+		[InlineData("++--", "+", "-", "++--", false)]
+		[InlineData("++  --", "+", "-", "++  --", false)]
+		[InlineData("+ + - -", "+", "-", "+ + - -", false)]
+		[InlineData("", "+", "-", "++-", true)]
+		public void NestedRanger_String(String expected, String start, String end, String source, Boolean throws) {
+			Pattern ptn = start.ToNested(end);
 			Int32 i = 0;
 			Capture? capture = null;
 			if (!throws) {
@@ -486,12 +594,12 @@ namespace Langly {
 		}
 
 		[Theory]
-		[InlineData("a", "a", "a")]
-		[InlineData("a", "a", "abc")]
-		[InlineData("abc", "abc", "abc")]
-		[InlineData("abc", "abc", "abcde")]
-		public unsafe void StringLiteral_Pointer(String expected, String pattern, String source) {
-			Pattern ptn = pattern;
+		[InlineData("\"Hello World\"", "\"", "\\\"", "\"Hello World\"")]
+		[InlineData("\"Hello World\"", "\"", "\\\"", "\"Hello World\" Bacon")]
+		[InlineData("\"Hello\\\"World\"", "\"", "\\\"", "\"Hello\\\"World\"")]
+		[InlineData("\"Hello\\\"World\"", "\"", "\\\"", "\"Hello\\\"World\" Bacon")]
+		public unsafe void StringLiteral_Escape_Pointer(String expected, String delimiter, String escape, String source) {
+			Pattern ptn = StringLiteral(delimiter, escape);
 			Int32 i = 0;
 			Capture? capture = null;
 			fixed (Char* src = source) {
@@ -502,13 +610,48 @@ namespace Langly {
 		}
 
 		[Theory]
-		[InlineData("a", "a", "a", false)]
-		[InlineData("a", "a", "abc", false)]
-		[InlineData("abc", "abc", "abc", false)]
-		[InlineData("abc", "abc", "abcde", false)]
-		[InlineData("", "a", "def", true)]
-		public void StringLiteral_String(String expected, String pattern, String source, Boolean throws) {
-			Pattern ptn = pattern;
+		[InlineData("\"Hello World\"", "\"", "\\\"", "\"Hello World\"", false)]
+		[InlineData("\"Hello World\"", "\"", "\\\"", "\"Hello World\" Bacon", false)]
+		[InlineData("\"Hello\\\"World\"", "\"", "\\\"", "\"Hello\\\"World\"", false)]
+		[InlineData("\"Hello\\\"World\"", "\"", "\\\"", "\"Hello\\\"World\" Bacon", false)]
+		[InlineData("", "\"", "\\\"", "Hello World", true)]
+		[InlineData("", "\"", "\\\"", "\"Hello World", true)]
+		[InlineData("", "\"", "\\\"", "\"Hello World\\\"", true)]
+		public void StringLiteral_Escape_String(String expected, String delimiter, String escape, String source, Boolean throws) {
+			Pattern ptn = StringLiteral(delimiter, escape);
+			Int32 i = 0;
+			Capture? capture = null;
+			if (!throws) {
+				capture = ptn.Parse(source, ref i);
+				Assert.Equal(expected, capture);
+			} else {
+				_ = Assert.ThrowsAny<Exception>(() => capture = ptn.Parse(source, ref i));
+				Assert.Null(capture);
+			}
+			Assert.Equal(expected.Length, i);
+		}
+
+		[Theory]
+		[InlineData("\"Hello World\"", "\"", "\"Hello World\"")]
+		[InlineData("\"Hello World\"", "\"", "\"Hello World\" Bacon")]
+		public unsafe void StringLiteral_Pointer(String expected, String delimiter, String source) {
+			Pattern ptn = StringLiteral(delimiter);
+			Int32 i = 0;
+			Capture? capture = null;
+			fixed (Char* src = source) {
+				capture = ptn.Parse(src, source.Length, ref i);
+				Assert.Equal(expected, capture);
+			}
+			Assert.Equal(expected.Length, i);
+		}
+
+		[Theory]
+		[InlineData("\"Hello World\"", "\"", "\"Hello World\"", false)]
+		[InlineData("\"Hello World\"", "\"", "\"Hello World\" Bacon", false)]
+		[InlineData("", "\"", "Hello World", true)]
+		[InlineData("", "\"", "\"Hello World", true)]
+		public void StringLiteral_String(String expected, String delimiter, String source, Boolean throws) {
+			Pattern ptn = StringLiteral(delimiter);
 			Int32 i = 0;
 			Capture? capture = null;
 			if (!throws) {

@@ -70,15 +70,15 @@ namespace Stringier.Patterns {
 		}
 
 		/// <inheritdoc/>
-		protected internal override Boolean IsConsumeHeader(ReadOnlySpan<Char> source, Int32 location) => From.IsConsumeHeader(source, location);
+		protected internal sealed override Boolean IsConsumeHeader(ReadOnlySpan<Char> source, Int32 location) => From.IsConsumeHeader(source, location);
 
 		/// <inheritdoc/>
-		protected internal override Boolean IsNeglectHeader(ReadOnlySpan<Char> source, Int32 location) => From.IsConsumeHeader(source, location);
+		protected internal sealed override Boolean IsNeglectHeader(ReadOnlySpan<Char> source, Int32 location) => From.IsConsumeHeader(source, location);
 
 		/// <inheritdoc/>
-		protected internal override void Neglect(ReadOnlyMemory<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) => throw new InvalidOperationException("Ranges can not be negated, as there is no valid concept to describe this behavior");
+		protected internal sealed override void Neglect(ReadOnlyMemory<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) => throw new InvalidOperationException("Ranges can not be negated, as there is no valid concept to describe this behavior");
 
 		/// <inheritdoc/>
-		protected internal override unsafe void Neglect([DisallowNull] Char* source, Int32 length, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) => throw new InvalidOperationException("Ranges can not be negated, as there is no valid concept to describe this behavior");
+		protected internal sealed override unsafe void Neglect([DisallowNull] Char* source, Int32 length, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) => throw new InvalidOperationException("Ranges can not be negated, as there is no valid concept to describe this behavior");
 	}
 }

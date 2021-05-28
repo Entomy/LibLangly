@@ -71,56 +71,56 @@ namespace Stringier.Patterns {
 		/// </summary>
 		/// <param name="string">The <see cref="String"/> to match.</param>
 		[return: MaybeNull, NotNullIfNotNull("string")]
-		public static implicit operator Pattern([AllowNull] String @string) => @string is not null ? new StringLiteral(@string) : null;
+		public static implicit operator Pattern([AllowNull] String @string) => @string is not null ? new MemoryLiteral(@string) : null;
 
 		/// <summary>
 		/// Converts to a <see cref="Pattern"/> matching exactly the <paramref name="string"/>.
 		/// </summary>
 		/// <param name="string">A <see cref="ValueTuple{T1, T2}"/> of <see cref="String"/> to match and <see cref="Case"/> comparison.</param>
 		[return: NotNull]
-		public static implicit operator Pattern((String, Case) @string) => new StringLiteral(@string.Item1, @string.Item2);
+		public static implicit operator Pattern((String, Case) @string) => new MemoryLiteral(@string.Item1, @string.Item2);
 
 		/// <summary>
 		/// Converts to a <see cref="Pattern"/> matching exactly the <paramref name="array"/>.
 		/// </summary>
 		/// <param name="array">The <see cref="Array"/> of <see cref="Char"/> to match.</param>
 		[return: MaybeNull, NotNullIfNotNull("array")]
-		public static implicit operator Pattern([AllowNull] Char[] array) => array is not null ? new StringLiteral(array) : null;
+		public static implicit operator Pattern([AllowNull] Char[] array) => array is not null ? new MemoryLiteral(array) : null;
 
 		/// <summary>
 		/// Converts to a <see cref="Pattern"/> matching exactly the <paramref name="array"/>.
 		/// </summary>
 		/// <param name="array">A <see cref="ValueTuple{T1, T2}"/> of <see cref="Array"/> of <see cref="Char"/> to match and <see cref="Case"/> comparison.</param>
 		[return: NotNull]
-		public static implicit operator Pattern((Char[], Case) array) => new StringLiteral(array.Item1, array.Item2);
+		public static implicit operator Pattern((Char[], Case) array) => new MemoryLiteral(array.Item1, array.Item2);
 
 		/// <summary>
 		/// Converts to a <see cref="Pattern"/> matching exactly the <paramref name="memory"/>.
 		/// </summary>
 		/// <param name="memory">The <see cref="Memory{T}"/> of <see cref="Char"/> to match.</param>
 		[return: NotNull]
-		public static implicit operator Pattern(Memory<Char> memory) => new StringLiteral(memory);
+		public static implicit operator Pattern(Memory<Char> memory) => new MemoryLiteral(memory);
 
 		/// <summary>
 		/// Converts to a <see cref="Pattern"/> matching exactly the <paramref name="memory"/>.
 		/// </summary>
 		/// <param name="memory">A <see cref="ValueTuple{T1, T2}"/> of <see cref="Memory{T}"/> of <see cref="Char"/> to match and <see cref="Case"/> comparison.</param>
 		[return: NotNull]
-		public static implicit operator Pattern((Memory<Char>, Case) memory) => new StringLiteral(memory.Item1, memory.Item2);
+		public static implicit operator Pattern((Memory<Char>, Case) memory) => new MemoryLiteral(memory.Item1, memory.Item2);
 
 		/// <summary>
 		/// Converts to a <see cref="Pattern"/> matching exactly the <paramref name="memory"/>.
 		/// </summary>
 		/// <param name="memory">The <see cref="ReadOnlyMemory{T}"/> of <see cref="Char"/> to match.</param>
 		[return: NotNull]
-		public static implicit operator Pattern(ReadOnlyMemory<Char> memory) => new StringLiteral(memory);
+		public static implicit operator Pattern(ReadOnlyMemory<Char> memory) => new MemoryLiteral(memory);
 
 		/// <summary>
 		/// Converts to a <see cref="Pattern"/> matching exactly the <paramref name="memory"/>.
 		/// </summary>
 		/// <param name="memory">A <see cref="ValueTuple{T1, T2}"/> of <see cref="ReadOnlyMemory{T}"/> of <see cref="Char"/> to match and <see cref="Case"/> comparison.</param>
 		[return: NotNull]
-		public static implicit operator Pattern((ReadOnlyMemory<Char>, Case) memory) => new StringLiteral(memory.Item1, memory.Item2);
+		public static implicit operator Pattern((ReadOnlyMemory<Char>, Case) memory) => new MemoryLiteral(memory.Item1, memory.Item2);
 
 		/// <summary>
 		/// Converts to a <see cref="Pattern"/> matching exactly the <paramref name="capture"/>.

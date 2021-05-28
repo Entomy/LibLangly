@@ -124,6 +124,7 @@ namespace Stringier.Patterns {
 					trace?.Add(source[location], location++);
 					break;
 				}
+				location++;
 			}
 		}
 	}

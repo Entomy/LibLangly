@@ -83,7 +83,7 @@ namespace Stringier.Patterns {
 		/// <param name="other">The succeeding <see cref="Pattern"/>.</param>
 		/// <returns>A new <see cref="Pattern"/> matching this <see cref="Pattern"/> then <paramref name="other"/>.</returns>
 		[return: NotNull]
-		public static Pattern Then([DisallowNull] this String @char, [AllowNull] Pattern other) => new StringLiteral(@char).Then(other);
+		public static Pattern Then([DisallowNull] this String @char, [AllowNull] Pattern other) => new MemoryLiteral(@char).Then(other);
 
 		/// <summary>
 		/// Concatenates the patterns so that this <see cref="Pattern"/> comes before <paramref name="other"/>
@@ -92,7 +92,7 @@ namespace Stringier.Patterns {
 		/// <param name="other">The succeeding <see cref="Char"/></param>
 		/// <returns>A new <see cref="Pattern"/> concatenating this <see cref="Pattern"/> and <paramref name="other"/></returns>
 		[return: NotNull]
-		public static Pattern Then([DisallowNull] this String @char, Char other) => new StringLiteral(@char).Then(other);
+		public static Pattern Then([DisallowNull] this String @char, Char other) => new MemoryLiteral(@char).Then(other);
 
 		/// <summary>
 		/// Concatenates the patterns so that this <see cref="Pattern"/> comes before <paramref name="other"/>
@@ -101,7 +101,7 @@ namespace Stringier.Patterns {
 		/// <param name="other">The succeeding <see cref="Rune"/></param>
 		/// <returns>A new <see cref="Pattern"/> concatenating this <see cref="Pattern"/> and <paramref name="other"/></returns>
 		[return: NotNull]
-		public static Pattern Then([DisallowNull] this String @char, Rune other) => new StringLiteral(@char).Then(other);
+		public static Pattern Then([DisallowNull] this String @char, Rune other) => new MemoryLiteral(@char).Then(other);
 
 		/// <summary>
 		/// Concatenates the nodes so that this <see cref="Pattern"/> comes before the <paramref name="other"/> <see cref="String"/>.
@@ -110,6 +110,6 @@ namespace Stringier.Patterns {
 		/// <param name="other">The succeeding <see cref="String"/>.</param>
 		/// <returns>A new <see cref="Pattern"/> matching this <see cref="Pattern"/> then <paramref name="other"/>.</returns>
 		[return: NotNull]
-		public static Pattern Then([DisallowNull] this String @char, [AllowNull] String other) => new StringLiteral(@char).Then(other);
+		public static Pattern Then([DisallowNull] this String @char, [AllowNull] String other) => new MemoryLiteral(@char).Then(other);
 	}
 }

@@ -31,7 +31,7 @@ namespace Stringier.Patterns {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public override Pattern Repeat(Int32 count) => new StringLiteral(new String(Char, count), Casing);
+		public override Pattern Repeat(Int32 count) => new MemoryLiteral(new String(Char, count), Casing);
 
 		/// <inheritdoc/>
 		[return: NotNull]

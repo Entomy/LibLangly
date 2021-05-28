@@ -24,7 +24,7 @@ namespace Stringier.Patterns {
 			switch (other) {
 			case Literal literal:
 				if (Casing == literal.Casing) {
-					return new StringLiteral($"{this}{literal}", Casing);
+					return new MemoryLiteral($"{this}{literal}", Casing);
 				} else {
 					goto default;
 				}
@@ -38,7 +38,7 @@ namespace Stringier.Patterns {
 		public sealed override Pattern Then(Char other) {
 			switch (Casing) {
 			case Case.Insensitive:
-				return new StringLiteral($"{this}{other}");
+				return new MemoryLiteral($"{this}{other}");
 			default:
 				return new Concatenator(this, new CharLiteral(other));
 			}
@@ -49,7 +49,7 @@ namespace Stringier.Patterns {
 		public sealed override Pattern Then(Rune other) {
 			switch (Casing) {
 			case Case.Insensitive:
-				return new StringLiteral($"{this}{other}");
+				return new MemoryLiteral($"{this}{other}");
 			default:
 				return new Concatenator(this, new RuneLiteral(other));
 			}
@@ -60,9 +60,9 @@ namespace Stringier.Patterns {
 		public sealed override Pattern Then([AllowNull] String other) {
 			switch (Casing) {
 			case Case.Insensitive:
-				return new StringLiteral($"{this}{other}");
+				return new MemoryLiteral($"{this}{other}");
 			default:
-				return other is not null ? new Concatenator(this, new StringLiteral(other)) : this;
+				return other is not null ? new Concatenator(this, new MemoryLiteral(other)) : this;
 			}
 		}
 
