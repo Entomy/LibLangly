@@ -9,21 +9,6 @@ namespace Stringier.Patterns {
 	/// </summary>
 	public abstract partial class Pattern {
 		/// <summary>
-		/// Check for the end of the line.
-		/// </summary>
-		/// <remarks>
-		/// This checks for various OS line endings, properly handling Windows convention, not just single UNICODE line terminators.
-		/// </remarks>
-		[NotNull, DisallowNull]
-		public static readonly Pattern EndOfLine = new LineEndChecker();
-
-		/// <summary>
-		/// Check for the end of the source.
-		/// </summary>
-		[NotNull, DisallowNull]
-		public static readonly Pattern EndOfSource = new SourceEndChecker();
-
-		/// <summary>
 		/// Predefined <see cref="Exception"/> for when the end of the source was reached before finding a match.
 		/// </summary>
 		protected static readonly Exception AtEnd = new InvalidOperationException("The parser reached the end of the source before finding a match to this pattern.");
@@ -32,10 +17,26 @@ namespace Stringier.Patterns {
 		/// Predefined <see cref="Exception"/> for when no match could be found.
 		/// </summary>
 		protected static readonly Exception NoMatch = new InvalidOperationException("The parser failed to find a match for the pattern in the source.");
+
 		/// <summary>
 		/// Initialize a new <see cref="Pattern"/>.
 		/// </summary>
 		protected Pattern() { }
+
+		/// <summary>
+		/// Check for the end of the line.
+		/// </summary>
+		/// <remarks>
+		/// This checks for various OS line endings, properly handling Windows convention, not just single UNICODE line terminators.
+		/// </remarks>
+		[NotNull, DisallowNull]
+		public static Pattern EndOfLine { get; } = new LineEndChecker();
+
+		/// <summary>
+		/// Check for the end of the source.
+		/// </summary>
+		[NotNull, DisallowNull]
+		public static Pattern EndOfSource { get; } = new SourceEndChecker();
 
 		#region Conversions
 		/// <summary>
@@ -135,6 +136,13 @@ namespace Stringier.Patterns {
 		/// <param name="capture">A <see cref="ValueTuple{T1, T2}"/> of <see cref="Patterns.Capture"/> to match and <see cref="Case"/> comparison.</param>
 		[return: NotNull]
 		public static implicit operator Pattern((Capture, Case) capture) => new CaptureLiteral(capture.Item1, capture.Item2);
+
+		/// <summary>
+		/// Converts to a <see cref="Pattern"/> matching exactly the <paramref name="category"/>.
+		/// </summary>
+		/// <param name="category">The <see cref="Category"/> to match.</param>
+		[return: MaybeNull, NotNullIfNotNull("category")]
+		public static implicit operator Pattern([AllowNull] Category category) => category is not null ? new CategoryChecker(category) : null;
 		#endregion
 
 		#region Parse(Source, ref Int32)

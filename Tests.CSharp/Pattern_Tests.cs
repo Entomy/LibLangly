@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using Stringier;
 using Stringier.Patterns;
 using static Stringier.Patterns.Pattern;
 using Xunit;
@@ -26,6 +27,41 @@ namespace Langly {
 		[InlineData("", "hello", "goodbye", "potato", true)]
 		public void Alternator_String(String expected, String first, String second, String source, Boolean throws) {
 			Pattern ptn = first.Or(second);
+			Int32 i = 0;
+			Capture? capture = null;
+			if (!throws) {
+				capture = ptn.Parse(source, ref i);
+				Assert.Equal(expected, capture);
+			} else {
+				_ = Assert.ThrowsAny<Exception>(() => capture = ptn.Parse(source, ref i));
+				Assert.Null(capture);
+			}
+			Assert.Equal(expected.Length, i);
+		}
+
+		[Theory]
+		[InlineData("A", "A")]
+		[InlineData("A", "Abc")]
+		[InlineData("A", "ABC")]
+		public unsafe void CategoryChecker_Pointer(String expected, String source) {
+			Pattern ptn = Category.UppercaseLetter;
+			Int32 i = 0;
+			Capture? capture = null;
+			fixed (Char* src = source) {
+				capture = ptn.Parse(source, ref i);
+				Assert.Equal(expected, capture);
+			}
+			Assert.Equal(expected.Length, i);
+		}
+
+		[Theory]
+		[InlineData("A", "A", false)]
+		[InlineData("A", "Abc", false)]
+		[InlineData("A", "ABC", false)]
+		[InlineData("", "a", true)]
+		[InlineData("", "abc", true)]
+		public void CategoryChecker_String(String expected, String source, Boolean throws) {
+			Pattern ptn = Category.UppercaseLetter;
 			Int32 i = 0;
 			Capture? capture = null;
 			if (!throws) {
