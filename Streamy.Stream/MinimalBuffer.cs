@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
+using System.Text;
 using Collectathon.Buffers;
 using Streamy.Bases;
 
 namespace Streamy {
+	[DebuggerDisplay("{ToString(),nq}")]
 	internal sealed class MinimalBuffer : IReadBuffer {
 		/// <summary>
 		/// The <see cref="StreamBase"/> being buffered.
@@ -34,7 +37,7 @@ namespace Streamy {
 		/// <inheritdoc/>
 		public void Peek([MaybeNull] out Byte element) {
 			if (Count > 0) {
-				element = Memory[Count];
+				element = Memory[Count - 1];
 			} else {
 				Base.Read(out Memory[Count++]);
 				element = Memory[Count - 1];
@@ -54,9 +57,27 @@ namespace Streamy {
 			if (Count == 0) {
 				Base.Read(out element);
 			} else {
-				element = Memory[Count - 1];
-				Count--;
+				element = Memory[--Count];
 			}
+		}
+
+		/// <inheritdoc/>
+		[return: NotNull]
+		public override String ToString() {
+			StringBuilder builder = new StringBuilder();
+			nint i = 0;
+			foreach (Byte element in Memory) {
+				if (++i == Count) {
+					_ = builder.Append(element);
+					break;
+				} else if (i == 5) {
+					_ = builder.Append(element).Append("...");
+					break;
+				} else {
+					_ = builder.Append(element).Append(", ");
+				}
+			}
+			return $"[{builder}]";
 		}
 	}
 }

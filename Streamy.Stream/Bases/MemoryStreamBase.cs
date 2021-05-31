@@ -23,11 +23,7 @@ namespace Streamy.Bases {
 		public override Boolean Writable => Position < Memory.Length;
 
 		/// <inheritdoc/>
-		public override void Read(out Byte element) {
-			element = Memory.Span[0];
-			Memory.Slice(1).CopyTo(Memory);
-			Position--;
-		}
+		public override void Read(out Byte element) => element = Memory.Span[(Int32)Position++];
 
 		/// <inheritdoc/>
 		public override void Seek(nint offset) => Position += offset;

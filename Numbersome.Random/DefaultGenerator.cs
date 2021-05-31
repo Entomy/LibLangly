@@ -29,5 +29,9 @@ namespace Numbersome {
 			Random.NextBytes(buffer);
 			element = buffer[0];
 		}
+
+		/// <inheritdoc/>
+		[return: NotNull]
+		public override String ToString() => "System.Random";
 	}
 }
