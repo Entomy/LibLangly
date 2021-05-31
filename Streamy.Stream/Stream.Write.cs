@@ -57,7 +57,13 @@ namespace Streamy {
 
 		/// <inheritdoc/>
 		[CLSCompliant(false)]
-		public void Write(SByte element) => throw new NotImplementedException();
+		public void Write(SByte element) {
+			if (WriteBuffer is not null) {
+				WriteBuffer.Write((Byte)element);
+			} else {
+				Base.Write((Byte)element);
+			}
+		}
 
 		/// <inheritdoc/>
 		public void Write(Int16 element) {
@@ -167,11 +173,7 @@ namespace Streamy {
 		}
 
 		/// <inheritdoc/>
-		public void Write(Decimal element) {
-			foreach (Int32 @int in Decimal.GetBits(element)) {
-				Write(@int);
-			}
-		}
+		public void Write(Decimal element) => throw new NotImplementedException();
 
 		/// <inheritdoc/>
 		public void Write(Boolean element) {
