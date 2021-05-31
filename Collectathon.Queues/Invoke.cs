@@ -18,6 +18,7 @@ namespace Collectathon.Queues {
 		/// <typeparam name="TResult">The type of the result.</typeparam>
 		/// <param name="queue">This queue.</param>
 		/// <returns>The result of the next <see cref="Func{TResult}"/>.</returns>
+		/// <exception cref="InvalidOperationException">Thrown if the next <see cref="Func{TResult}"/> is <see langword="null"/>.</exception>
 		[return: MaybeNull]
 		public static TResult Invoke<TResult>([DisallowNull] this Queue<Func<TResult>> queue) {
 			queue.Read(out Func<TResult>? func);

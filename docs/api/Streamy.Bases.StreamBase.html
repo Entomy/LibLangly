@@ -1,0 +1,522 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class StreamBase
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class StreamBase
+   ">
+    <meta name="generator" content="docfx 2.57.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Streamy.Bases.StreamBase">
+  
+  
+  <h1 id="Streamy_Bases_StreamBase" data-uid="Streamy.Bases.StreamBase" class="text-break">Class StreamBase
+  </h1>
+  <div class="markdown level0 summary"><p>Represents the base of all <a class="xref" href="Streamy.Stream.html">Stream</a>.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">StreamBase</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="System.Traits.IRead-1.html">IRead</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>&gt;</div>
+    <div><a class="xref" href="System.Traits.ISeek.html">ISeek</a></div>
+    <div><a class="xref" href="System.Traits.IWrite-1.html">IWrite</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>&gt;</div>
+    <div><a class="xref" href="System.Traits.IAdd-1.html">IAdd</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_">Object.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_System_Object_">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#System_Object_GetHashCode">Object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#System_Object_GetType">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#System_Object_MemberwiseClone">Object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#System_Object_ReferenceEquals_System_Object_System_Object_">Object.ReferenceEquals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString">Object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Streamy.Bases.html">Streamy.Bases</a></h6>
+  <h6><strong>Assembly</strong>: Streamy.Stream.dll</h6>
+  <h5 id="Streamy_Bases_StreamBase_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class StreamBase : IRead&lt;byte&gt;, ISeek, IWrite&lt;byte&gt;, IAdd&lt;byte&gt;</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Bases_StreamBase_Position.md&amp;value=---%0Auid%3A%20Streamy.Bases.StreamBase.Position%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Bases/StreamBase.cs/#L11">View Source</a>
+  </span>
+  <a id="Streamy_Bases_StreamBase_Position_" data-uid="Streamy.Bases.StreamBase.Position*"></a>
+  <h4 id="Streamy_Bases_StreamBase_Position" data-uid="Streamy.Bases.StreamBase.Position">Position</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual nint Position { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Bases_StreamBase_Readable.md&amp;value=---%0Auid%3A%20Streamy.Bases.StreamBase.Readable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Bases/StreamBase.cs/#L14">View Source</a>
+  </span>
+  <a id="Streamy_Bases_StreamBase_Readable_" data-uid="Streamy.Bases.StreamBase.Readable*"></a>
+  <h4 id="Streamy_Bases_StreamBase_Readable" data-uid="Streamy.Bases.StreamBase.Readable">Readable</h4>
+  <div class="markdown level1 summary"><p>Can this be read from?</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract bool Readable { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Streamy_Bases_StreamBase_Readable_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This is a state indicator. Of course an <a class="xref" href="System.Traits.IRead-1.html">IRead&lt;TElement&gt;</a> can be read from, but that doesn't mean it can always be read from. Rather, this being <span class="xref">true</span> indicates the type can currently be read from.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Bases_StreamBase_Seekable.md&amp;value=---%0Auid%3A%20Streamy.Bases.StreamBase.Seekable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Bases/StreamBase.cs/#L17">View Source</a>
+  </span>
+  <a id="Streamy_Bases_StreamBase_Seekable_" data-uid="Streamy.Bases.StreamBase.Seekable*"></a>
+  <h4 id="Streamy_Bases_StreamBase_Seekable" data-uid="Streamy.Bases.StreamBase.Seekable">Seekable</h4>
+  <div class="markdown level1 summary"><p>Can this be seeked?</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract bool Seekable { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Streamy_Bases_StreamBase_Seekable_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This is a state indicator. Of course an <a class="xref" href="System.Traits.ISeek.html">ISeek</a> can be seeked, but that doesn't mean it can always be seeked. Rather, this being <span class="xref">true</span> indicates the type can currently be seeked.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Bases_StreamBase_Writable.md&amp;value=---%0Auid%3A%20Streamy.Bases.StreamBase.Writable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Bases/StreamBase.cs/#L20">View Source</a>
+  </span>
+  <a id="Streamy_Bases_StreamBase_Writable_" data-uid="Streamy.Bases.StreamBase.Writable*"></a>
+  <h4 id="Streamy_Bases_StreamBase_Writable" data-uid="Streamy.Bases.StreamBase.Writable">Writable</h4>
+  <div class="markdown level1 summary"><p>Can this be written to?</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract bool Writable { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Streamy_Bases_StreamBase_Writable_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This is a state indicator. Of course an <a class="xref" href="System.Traits.IWrite-1.html">IWrite&lt;TElement&gt;</a> can be written to, but that doesn't mean it can always be written to. Rather, this being <span class="xref">true</span> indicates the type can currently be written to.</p>
+</div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Bases_StreamBase_Add_System_Byte_.md&amp;value=---%0Auid%3A%20Streamy.Bases.StreamBase.Add(System.Byte)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Bases/StreamBase.cs/#L23">View Source</a>
+  </span>
+  <a id="Streamy_Bases_StreamBase_Add_" data-uid="Streamy.Bases.StreamBase.Add*"></a>
+  <h4 id="Streamy_Bases_StreamBase_Add_System_Byte_" data-uid="Streamy.Bases.StreamBase.Add(System.Byte)">Add(Byte)</h4>
+  <div class="markdown level1 summary"><p>Adds an element to this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(byte element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Streamy_Bases_StreamBase_Add_System_Byte__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Bases_StreamBase_Read_System_Byte__.md&amp;value=---%0Auid%3A%20Streamy.Bases.StreamBase.Read(System.Byte%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Bases/StreamBase.cs/#L26">View Source</a>
+  </span>
+  <a id="Streamy_Bases_StreamBase_Read_" data-uid="Streamy.Bases.StreamBase.Read*"></a>
+  <h4 id="Streamy_Bases_StreamBase_Read_System_Byte__" data-uid="Streamy.Bases.StreamBase.Read(System.Byte@)">Read(out Byte)</h4>
+  <div class="markdown level1 summary"><p>Reads a <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void Read(out byte element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Bases_StreamBase_Seek_nint_.md&amp;value=---%0Auid%3A%20Streamy.Bases.StreamBase.Seek(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Bases/StreamBase.cs/#L29">View Source</a>
+  </span>
+  <a id="Streamy_Bases_StreamBase_Seek_" data-uid="Streamy.Bases.StreamBase.Seek*"></a>
+  <h4 id="Streamy_Bases_StreamBase_Seek_nint_" data-uid="Streamy.Bases.StreamBase.Seek(nint)">Seek(nint)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void Seek(nint offset)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">offset</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Bases_StreamBase_Write_System_Byte_.md&amp;value=---%0Auid%3A%20Streamy.Bases.StreamBase.Write(System.Byte)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Bases/StreamBase.cs/#L32">View Source</a>
+  </span>
+  <a id="Streamy_Bases_StreamBase_Write_" data-uid="Streamy.Bases.StreamBase.Write*"></a>
+  <h4 id="Streamy_Bases_StreamBase_Write_System_Byte_" data-uid="Streamy.Bases.StreamBase.Write(System.Byte)">Write(Byte)</h4>
+  <div class="markdown level1 summary"><p>Writes a <code data-dev-comment-type="paramref" class="paramref">element</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void Write(byte element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="System.Traits.IRead-1.html">IRead&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.ISeek.html">ISeek</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IWrite-1.html">IWrite&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IAdd-1.html">IAdd&lt;TElement&gt;</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Add__1_System_Traits_IAdd___0____0___">TraitExtensions.Add&lt;TElement&gt;(IAdd&lt;TElement&gt;, TElement[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Add__1_System_Traits_IAdd___0__System_Memory___0__">TraitExtensions.Add&lt;TElement&gt;(IAdd&lt;TElement&gt;, Memory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Add__1_System_Traits_IAdd___0__System_ReadOnlyMemory___0__">TraitExtensions.Add&lt;TElement&gt;(IAdd&lt;TElement&gt;, ReadOnlyMemory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Add__1_System_Traits_IAdd___0__System_Span___0__">TraitExtensions.Add&lt;TElement&gt;(IAdd&lt;TElement&gt;, Span&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Add__1_System_Traits_IAdd___0__System_ReadOnlySpan___0__">TraitExtensions.Add&lt;TElement&gt;(IAdd&lt;TElement&gt;, ReadOnlySpan&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Add__1_System_Traits_IAdd___0____0__System_Int32_">TraitExtensions.Add&lt;TElement&gt;(IAdd&lt;TElement&gt;, TElement*, Int32)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Add__1_System_Traits_IAdd___0__System_Collections_Generic_IEnumerable___0__">TraitExtensions.Add&lt;TElement&gt;(IAdd&lt;TElement&gt;, IEnumerable&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Add__2_System_Traits_IAdd___0__System_Traits_ISequence___0___1__">TraitExtensions.Add&lt;TElement, TEnumerator&gt;(IAdd&lt;TElement&gt;, ISequence&lt;TElement, TEnumerator&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_EnsureLoaded__1_System_Traits_IWrite___0__nint_System_Traits_IRead___0__">TraitExtensions.EnsureLoaded&lt;TElement&gt;(IWrite&lt;TElement&gt;, nint, IRead&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Load__1_System_Traits_IWrite___0__System_Traits_IRead___0__">TraitExtensions.Load&lt;TElement&gt;(IWrite&lt;TElement&gt;, IRead&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Load__1_System_Traits_IWrite___0__nint_System_Traits_IRead___0__">TraitExtensions.Load&lt;TElement&gt;(IWrite&lt;TElement&gt;, nint, IRead&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Read__1_System_Traits_IRead___0____0___">TraitExtensions.Read&lt;TElement&gt;(IRead&lt;TElement&gt;, TElement[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Read__1_System_Traits_IRead___0__System_Memory___0__">TraitExtensions.Read&lt;TElement&gt;(IRead&lt;TElement&gt;, Memory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Read__1_System_Traits_IRead___0__nint_System_ReadOnlyMemory___0___">TraitExtensions.Read&lt;TElement&gt;(IRead&lt;TElement&gt;, nint, out ReadOnlyMemory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Read__1_System_Traits_IRead___0__System_Span___0__">TraitExtensions.Read&lt;TElement&gt;(IRead&lt;TElement&gt;, Span&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Read__1_System_Traits_IRead___0__nint_System_ReadOnlySpan___0___">TraitExtensions.Read&lt;TElement&gt;(IRead&lt;TElement&gt;, nint, out ReadOnlySpan&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Read__1_System_Traits_IRead___0____0__System_Int32_">TraitExtensions.Read&lt;TElement&gt;(IRead&lt;TElement&gt;, TElement*, Int32)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Write__1_System_Traits_IWrite___0____0___">TraitExtensions.Write&lt;TElement&gt;(IWrite&lt;TElement&gt;, TElement[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Write__1_System_Traits_IWrite___0__System_Memory___0__">TraitExtensions.Write&lt;TElement&gt;(IWrite&lt;TElement&gt;, Memory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Write__1_System_Traits_IWrite___0__System_ReadOnlyMemory___0__">TraitExtensions.Write&lt;TElement&gt;(IWrite&lt;TElement&gt;, ReadOnlyMemory&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Write__1_System_Traits_IWrite___0__System_Span___0__">TraitExtensions.Write&lt;TElement&gt;(IWrite&lt;TElement&gt;, Span&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Write__1_System_Traits_IWrite___0__System_ReadOnlySpan___0__">TraitExtensions.Write&lt;TElement&gt;(IWrite&lt;TElement&gt;, ReadOnlySpan&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Write__1_System_Traits_IWrite___0____0__System_Int32_">TraitExtensions.Write&lt;TElement&gt;(IWrite&lt;TElement&gt;, TElement*, Int32)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Write__1_System_Traits_IWrite___0__System_Collections_Generic_IEnumerable___0__">TraitExtensions.Write&lt;TElement&gt;(IWrite&lt;TElement&gt;, IEnumerable&lt;TElement&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Write__2_System_Traits_IWrite___0__System_Traits_ISequence___0___1__">TraitExtensions.Write&lt;TElement, TEnumerator&gt;(IWrite&lt;TElement&gt;, ISequence&lt;TElement, TEnumerator&gt;)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Bases_StreamBase.md&amp;value=---%0Auid%3A%20Streamy.Bases.StreamBase%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Bases/StreamBase.cs/#L9" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

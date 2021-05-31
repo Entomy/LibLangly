@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard1.3;net5.0-windows</TargetFrameworks>
+		<LangVersion>9.0</LangVersion>
+		<Nullable>enable</Nullable>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<Description>Provides a reimagining of the Stream type, with superior usability.</Description>
+		<PackageTags>stream, streams, serialize, deserialize, serialization</PackageTags>
+		<AssemblyName>Streamy.Stream</AssemblyName>
+		<RootNamespace>Streamy</RootNamespace>
+		<PackageIcon>Logo.png</PackageIcon>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Include="..\GlobalSuppressions.cs" Link="GlobalSuppressions.cs" />
+		<None Include="Logo.png" Pack="true" Visible="true" PackagePath="\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Collectathon.Buffers\Collectathon.Buffers.csproj" />
+	</ItemGroup>
+
+</Project>

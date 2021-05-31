@@ -1,34 +1,44 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
+#if NETCOREAPP3_0_OR_GREATER
+using System.Text;
+#endif
+using Streamy;
 
 namespace Numbersome {
 	/// <summary>
 	/// Represents a pseudo-random number generator, which is an algorithm that produces a sequence of numbers that meet certain statistical requirements for randomness.
 	/// </summary>
-	public sealed class Random : System.Random {
+	/// <remarks>
+	/// This is essentially a <see cref="System.Random"/> but with additional features. Not only is the standard type coverage considerably better, but generators are provided, and the whole thing is itself a <see cref="Stream"/>, and can be used anywhere streams can be used.
+	/// </remarks>
+	public sealed partial class Random : Stream {
 		/// <summary>
 		/// Initializes a new instance of the <see cref="Random"/> class using a default seed value.
 		/// </summary>
-		public Random() { }
+		public Random() : this(new DefaultGenerator()) { }
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="Random"/> class, using the specified <paramref name="seed"/> value.
 		/// </summary>
 		/// <param name="seed">A number used to calculate a starting value for the pseudo-random number sequence. If a negative number is specified, the absolute value of the number is used.</param>
-		public Random(Int32 seed) : base(seed) { }
+		public Random(Int32 seed) : this(new DefaultGenerator(seed)) { }
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="Random"/> class, using the specified <paramref name="base"/>.
+		/// </summary>
+		/// <param name="base">The <see cref="Generator"/> providing the raw random generator capabilities.</param>
+		public Random([DisallowNull] Generator @base) : base(@base) { }
+
+		#region Boolean
 		/// <summary>
 		/// Generates a <see cref="Boolean"/> value.
 		/// </summary>
 		/// <returns>A random <see cref="Boolean"/> value.</returns>
-		public unsafe Boolean NextBoolean() {
-#if !NETSTANDARD1_3
-			Span<Byte> buffer = stackalloc Byte[sizeof(Boolean)];
-#else
-			Byte[] buffer = new Byte[sizeof(Boolean)];
-#endif
-			NextBytes(buffer);
-			return buffer[0] % 2 == 0; // even/odd checks ensure equal distribution, whereas casts would favor true.
+		public Boolean NextBoolean() {
+			Read(out Boolean result);
+			return result;
 		}
 
 		/// <summary>
@@ -36,6 +46,7 @@ namespace Numbersome {
 		/// </summary>
 		/// <param name="amount">The amount of values to generate.</param>
 		/// <returns>A sequence of random <see cref="Boolean"/> values.</returns>
+		[return: NotNull]
 		public IEnumerable<Boolean> NextBooleans(nint amount) {
 			for (nint i = 0; i < amount; i++) {
 				yield return NextBoolean();
@@ -43,17 +54,36 @@ namespace Numbersome {
 		}
 
 		/// <summary>
+		/// Fills the elements of a specified array of <see cref="Boolean"/> with random  values.
+		/// </summary>
+		/// <param name="buffer">The array to be filled with random <see cref="Boolean"/> values.</param>
+		public void NextBooleans([AllowNull] Boolean[] buffer) => NextBooleans(buffer.AsSpan());
+
+		/// <summary>
+		/// Fills the elements of a specified array of <see cref="Boolean"/> with random values.
+		/// </summary>
+		/// <param name="buffer">The array to be filled with random <see cref="Boolean"/> values.</param>
+		public void NextBooleans(Memory<Boolean> buffer) => NextBooleans(buffer.Span);
+
+		/// <summary>
+		/// Fills the elements of a specified array of <see cref="Boolean"/> with random values.
+		/// </summary>
+		/// <param name="buffer">The array to be filled with random <see cref="Boolean"/> values.</param>
+		public void NextBooleans(Span<Boolean> buffer) {
+			for (Int32 i = 0; i < buffer.Length; i++) {
+				Read(out buffer[i]);
+			}
+		}
+		#endregion
+
+		#region Byte
+		/// <summary>
 		/// Generates a <see cref="Byte"/> value.
 		/// </summary>
 		/// <returns>A random <see cref="Byte"/> value.</returns>
-		public unsafe Byte NextByte() {
-#if !NETSTANDARD1_3
-			Span<Byte> buffer = stackalloc Byte[sizeof(Byte)];
-#else
-			Byte[] buffer = new Byte[sizeof(Byte)];
-#endif
-			NextBytes(buffer);
-			return buffer[0];
+		public Byte NextByte() {
+			Read(out Byte result);
+			return result;
 		}
 
 		/// <summary>
@@ -77,6 +107,7 @@ namespace Numbersome {
 		/// </summary>
 		/// <param name="amount">The amount of values to generate.</param>
 		/// <returns>A sequence of random <see cref="Byte"/> values.</returns>
+		[return: NotNull]
 		public IEnumerable<Byte> NextBytes(nint amount) {
 			for (nint i = 0; i < amount; i++) {
 				yield return NextByte();
@@ -84,19 +115,50 @@ namespace Numbersome {
 		}
 
 		/// <summary>
+		/// Generates a sequence of <see cref="Byte"/> values within the range of <paramref name="min"/>..<paramref name="max"/>.
+		/// </summary>
+		/// <param name="amount">The amount of values to generate.</param>
+		/// <param name="min">The minimum possible value.</param>
+		/// <param name="max">The maximum possible value.</param>
+		/// <returns>A sequence of random <see cref="Byte"/> values within the range of <paramref name="min"/>..<paramref name="max"/>.</returns>
+		[return: NotNull]
+		public IEnumerable<Byte> NextBytes(nint amount, Byte min, Byte max) {
+			for (nint i = 0; i < amount; i++) {
+				yield return NextByte(min, max);
+			}
+		}
+
+		/// <summary>
+		/// Fills the elements of a specified array of <see cref="Byte"/> with random numbers.
+		/// </summary>
+		/// <param name="buffer">The array to be filled with random numbers.</param>
+		public void NextBytes([AllowNull] Byte[] buffer) => NextBytes(buffer.AsSpan());
+
+		/// <summary>
+		/// Fills the elements of a specified array of <see cref="Byte"/> with random numbers.
+		/// </summary>
+		/// <param name="buffer">The array to be filled with random numbers.</param>
+		public void NextBytes(Memory<Byte> buffer) => NextBytes(buffer.Span);
+		
+		/// <summary>
+		/// Fills the elements of a specified array of <see cref="Byte"/> with random numbers.
+		/// </summary>
+		/// <param name="buffer">The array to be filled with random numbers.</param>
+		public void NextBytes(Span<Byte> buffer) {
+			for (Int32 i = 0; i < buffer.Length; i++) {
+				Read(out buffer[i]);
+			}
+		}
+		#endregion
+
+		#region Char
+		/// <summary>
 		/// Generates a <see cref="Char"/> value.
 		/// </summary>
 		/// <returns>A random <see cref="Char"/> value.</returns>
-		public unsafe Char NextChar() {
-#if !NETSTANDARD1_3
-			Span<Byte> buffer = stackalloc Byte[sizeof(Char)];
-			NextBytes(buffer);
-			return BitConverter.ToChar(buffer);
-#else
-			Byte[] buffer = new Byte[sizeof(Char)];
-			NextBytes(buffer);
-			return BitConverter.ToChar(buffer, 0);
-#endif
+		public Char NextChar() {
+			Read(out Int16 result);
+			return (Char)result;
 		}
 
 		/// <summary>
@@ -120,12 +182,51 @@ namespace Numbersome {
 		/// </summary>
 		/// <param name="amount">The amount of values to generate.</param>
 		/// <returns>A sequence of random <see cref="Char"/> values.</returns>
+		[return: NotNull]
 		public IEnumerable<Char> NextChars(nint amount) {
 			for (nint i = 0; i < amount; i++) {
 				yield return NextChar();
 			}
 		}
 
+		/// <summary>
+		/// Generates a sequence of <see cref="Char"/> values within the range of <paramref name="min"/>..<paramref name="max"/>.
+		/// </summary>
+		/// <param name="amount">The amount of values to generate.</param>
+		/// <param name="min">The minimum possible value.</param>
+		/// <param name="max">The maximum possible value.</param>
+		/// <returns>A sequence of random <see cref="Char"/> values within the range of <paramref name="min"/>..<paramref name="max"/>.</returns>
+		[return: NotNull]
+		public IEnumerable<Char> NextChars(nint amount, Char min, Char max) {
+			for (nint i = 0; i < amount; i++) {
+				yield return NextChar(min, max);
+			}
+		}
+
+		/// <summary>
+		/// Fills the elements of a specified array of <see cref="Char"/> with random values.
+		/// </summary>
+		/// <param name="buffer">The array to be filled with random values.</param>
+		public void NextChars([AllowNull] Char[] buffer) => NextChars(buffer.AsSpan());
+
+		/// <summary>
+		/// Fills the elements of a specified array of <see cref="Char"/> with random values.
+		/// </summary>
+		/// <param name="buffer">The array to be filled with random values.</param>
+		public void NextChars(Memory<Char> buffer) => NextChars(buffer.Span);
+
+		/// <summary>
+		/// Fills the elements of a specified array of <see cref="Char"/> with random values.
+		/// </summary>
+		/// <param name="buffer">The array to be filled with random values.</param>
+		public void NextChars(Span<Char> buffer) {
+			for (Int32 i = 0; i < buffer.Length; i++) {
+				buffer[i] = NextChar();
+			}
+		}
+		#endregion
+
+		#region Decimal
 		/// <summary>
 		/// Generates a <see cref="Decimal"/> value.
 		/// </summary>
@@ -153,6 +254,7 @@ namespace Numbersome {
 		/// </summary>
 		/// <param name="amount">The amount of values to generate.</param>
 		/// <returns>A sequence of random <see cref="Decimal"/> values.</returns>
+		[return: NotNull]
 		public IEnumerable<Decimal> NextDecimals(nint amount) {
 			for (nint i = 0; i < amount; i++) {
 				yield return NextDecimal();
@@ -160,19 +262,53 @@ namespace Numbersome {
 		}
 
 		/// <summary>
+		/// Generates a sequence of <see cref="Decimal"/> values within the range of <paramref name="min"/>..<paramref name="max"/>.
+		/// </summary>
+		/// <param name="amount">The amount of values to generate.</param>
+		/// <param name="min">The minimum possible value.</param>
+		/// <param name="max">The maximum possible value.</param>
+		/// <returns>A sequence of random <see cref="Decimal"/> values within the range of <paramref name="min"/>..<paramref name="max"/>.</returns>
+		[return: NotNull]
+		public IEnumerable<Decimal> NextDecimals(nint amount, Decimal min, Decimal max) {
+			for (nint i = 0; i < amount; i++) {
+				yield return NextDecimal(min, max);
+			}
+		}
+
+		/// <summary>
+		/// Fills the elements of a specified array of <see cref="Decimal"/> with random numbers.
+		/// </summary>
+		/// <param name="buffer">The array to be filled with random numbers.</param>
+		public void NextDecimals([AllowNull] Decimal[] buffer) => NextDecimals(buffer.AsSpan());
+
+		/// <summary>
+		/// Fills the elements of a specified array of <see cref="Decimal"/> with random numbers.
+		/// </summary>
+		/// <param name="buffer">The array to be filled with random numbers.</param>
+		public void NextDecimals(Memory<Decimal> buffer) => NextDecimals(buffer.Span);
+
+		/// <summary>
+		/// Fills the elements of a specified array of <see cref="Decimal"/> with random numbers.
+		/// </summary>
+		/// <param name="buffer">The array to be filled with random numbers.</param>
+		public void NextDecimals(Span<Decimal> buffer) {
+			for (Int32 i = 0; i < buffer.Length; i++) {
+				Read(out buffer[i]);
+			}
+		}
+		#endregion
+
+		#region Double
+		/// <summary>
 		/// Generates a <see cref="Double"/> value.
 		/// </summary>
 		/// <returns>A random <see cref="Double"/> value.</returns>
-		new public unsafe Double NextDouble() {
-#if !NETSTANDARD1_3
-			Span<Byte> buffer = stackalloc Byte[sizeof(Double)];
-			NextBytes(buffer);
-			return BitConverter.ToDouble(buffer);
-#else
-			Byte[] buffer = new Byte[sizeof(Double)];
-			NextBytes(buffer);
-			return BitConverter.ToDouble(buffer, 0);
-#endif
+		/// <remarks>
+		/// This works differently from <see cref="System.Random"/>'s <see cref="System.Random.NextDouble()"/> in that it covers the entire range of <see cref="Double.MinValue"/>..<see cref="Double.MaxValue"/>. If you need the constrained range, use <see cref="NextDouble(Double, Double)"/>.
+		/// </remarks>
+		public Double NextDouble() {
+			Read(out Double result);
+			return result;
 		}
 
 		/// <summary>
@@ -196,6 +332,7 @@ namespace Numbersome {
 		/// </summary>
 		/// <param name="amount">The amount of values to generate.</param>
 		/// <returns>A sequence of random <see cref="Double"/> values.</returns>
+		[return: NotNull]
 		public IEnumerable<Double> NextDouble(nint amount) {
 			for (nint i = 0; i < amount; i++) {
 				yield return NextDouble();
@@ -203,19 +340,50 @@ namespace Numbersome {
 		}
 
 		/// <summary>
+		/// Generates a sequence of <see cref="Double"/> values within the range of <paramref name="min"/>..<paramref name="max"/>.
+		/// </summary>
+		/// <param name="amount">The amount of values to generate.</param>
+		/// <param name="min">The minimum possible value.</param>
+		/// <param name="max">The maximum possible value.</param>
+		/// <returns>A sequence of random <see cref="Double"/> values within the range of <paramref name="min"/>..<paramref name="max"/>.</returns>
+		[return: NotNull]
+		public IEnumerable<Double> NextDoubles(nint amount, Double min, Double max) {
+			for (nint i = 0; i < amount; i++) {
+				yield return NextDouble(min, max);
+			}
+		}
+
+		/// <summary>
+		/// Fills the elements of a specified array of <see cref="Double"/> with random numbers.
+		/// </summary>
+		/// <param name="buffer">The array to be filled with random numbers.</param>
+		public void NextDoubles([AllowNull] Double[] buffer) => NextDoubles(buffer.AsSpan());
+
+		/// <summary>
+		/// Fills the elements of a specified array of <see cref="Double"/> with random numbers.
+		/// </summary>
+		/// <param name="buffer">The array to be filled with random numbers.</param>
+		public void NextDoubles(Memory<Double> buffer) => NextDoubles(buffer.Span);
+
+		/// <summary>
+		/// Fills the elements of a specified array of <see cref="Double"/> with random numbers.
+		/// </summary>
+		/// <param name="buffer">The array to be filled with random numbers.</param>
+		public void NextDoubles(Span<Double> buffer) {
+			for (Int32 i = 0; i < buffer.Length; i++) {
+				Read(out buffer[i]);
+			}
+		}
+		#endregion
+
+		#region Int16
+		/// <summary>
 		/// Generates a <see cref="Int16"/> value.
 		/// </summary>
 		/// <returns>A random <see cref="Int16"/> value.</returns>
-		public unsafe Int16 NextInt16() {
-#if !NETSTANDARD1_3
-			Span<Byte> buffer = stackalloc Byte[sizeof(Int16)];
-			NextBytes(buffer);
-			return BitConverter.ToInt16(buffer);
-#else
-			Byte[] buffer = new Byte[sizeof(Int16)];
-			NextBytes(buffer);
-			return BitConverter.ToInt16(buffer, 0);
-#endif
+		public Int16 NextInt16() {
+			Read(out Int16 result);
+			return result;
 		}
 
 		/// <summary>
@@ -239,6 +407,7 @@ namespace Numbersome {
 		/// </summary>
 		/// <param name="amount">The amount of values to generate.</param>
 		/// <returns>A sequence of random <see cref="Int16"/> values.</returns>
+		[return: NotNull]
 		public IEnumerable<Int16> NextInt16s(nint amount) {
 			for (nint i = 0; i < amount; i++) {
 				yield return NextInt16();
@@ -246,19 +415,50 @@ namespace Numbersome {
 		}
 
 		/// <summary>
+		/// Generates a sequence of <see cref="Int16"/> values within the range of <paramref name="min"/>..<paramref name="max"/>.
+		/// </summary>
+		/// <param name="amount">The amount of values to generate.</param>
+		/// <param name="min">The minimum possible value.</param>
+		/// <param name="max">The maximum possible value.</param>
+		/// <returns>A sequence of random <see cref="Int16"/> values within the range of <paramref name="min"/>..<paramref name="max"/>.</returns>
+		[return: NotNull]
+		public IEnumerable<Int16> NextInt16s(nint amount, Int16 min, Int16 max) {
+			for (nint i = 0; i < amount; i++) {
+				yield return NextInt16(min, max);
+			}
+		}
+
+		/// <summary>
+		/// Fills the elements of a specified array of <see cref="Int16"/> with random numbers.
+		/// </summary>
+		/// <param name="buffer">The array to be filled with random numbers.</param>
+		public void NextInt16s([AllowNull] Int16[] buffer) => NextInt16s(buffer.AsSpan());
+
+		/// <summary>
+		/// Fills the elements of a specified array of <see cref="Int16"/> with random numbers.
+		/// </summary>
+		/// <param name="buffer">The array to be filled with random numbers.</param>
+		public void NextInt16s(Memory<Int16> buffer) => NextInt16s(buffer.Span);
+
+		/// <summary>
+		/// Fills the elements of a specified array of <see cref="Int16"/> with random numbers.
+		/// </summary>
+		/// <param name="buffer">The array to be filled with random numbers.</param>
+		public void NextInt16s(Span<Int16> buffer) {
+			for (Int32 i = 0; i < buffer.Length; i++) {
+				Read(out buffer[i]);
+			}
+		}
+		#endregion
+
+		#region Int32
+		/// <summary>
 		/// Generates a <see cref="Int32"/> value.
 		/// </summary>
 		/// <returns>A random <see cref="Int32"/> value.</returns>
-		public unsafe Int32 NextInt32() {
-#if !NETSTANDARD1_3
-			Span<Byte> buffer = stackalloc Byte[sizeof(Int32)];
-			NextBytes(buffer);
-			return BitConverter.ToInt32(buffer);
-#else
-			Byte[] buffer = new Byte[sizeof(Int32)];
-			NextBytes(buffer);
-			return BitConverter.ToInt32(buffer, 0);
-#endif
+		public Int32 NextInt32() {
+			Read(out Int32 result);
+			return result;
 		}
 
 		/// <summary>
@@ -282,6 +482,7 @@ namespace Numbersome {
 		/// </summary>
 		/// <param name="amount">The amount of values to generate.</param>
 		/// <returns>A sequence of random <see cref="Int32"/> values.</returns>
+		[return: NotNull]
 		public IEnumerable<Int32> NextInt32s(nint amount) {
 			for (nint i = 0; i < amount; i++) {
 				yield return NextInt32();
@@ -289,19 +490,50 @@ namespace Numbersome {
 		}
 
 		/// <summary>
+		/// Generates a sequence of <see cref="Int32"/> values within the range of <paramref name="min"/>..<paramref name="max"/>.
+		/// </summary>
+		/// <param name="amount">The amount of values to generate.</param>
+		/// <param name="min">The minimum possible value.</param>
+		/// <param name="max">The maximum possible value.</param>
+		/// <returns>A sequence of random <see cref="Int32"/> values within the range of <paramref name="min"/>..<paramref name="max"/>.</returns>
+		[return: NotNull]
+		public IEnumerable<Int32> NextInt32s(nint amount, Int32 min, Int32 max) {
+			for (nint i = 0; i < amount; i++) {
+				yield return NextInt32(min, max);
+			}
+		}
+
+		/// <summary>
+		/// Fills the elements of a specified array of <see cref="Int32"/> with random numbers.
+		/// </summary>
+		/// <param name="buffer">The array to be filled with random numbers.</param>
+		public void NextInt32s([AllowNull] Int32[] buffer) => NextInt32s(buffer.AsSpan());
+
+		/// <summary>
+		/// Fills the elements of a specified array of <see cref="Int32"/> with random numbers.
+		/// </summary>
+		/// <param name="buffer">The array to be filled with random numbers.</param>
+		public void NextInt32s(Memory<Int32> buffer) => NextInt32s(buffer.Span);
+
+		/// <summary>
+		/// Fills the elements of a specified array of <see cref="Int32"/> with random numbers.
+		/// </summary>
+		/// <param name="buffer">The array to be filled with random numbers.</param>
+		public void NextInt32s(Span<Int32> buffer) {
+			for (Int32 i = 0; i < buffer.Length; i++) {
+				Read(out buffer[i]);
+			}
+		}
+		#endregion
+
+		#region Int64
+		/// <summary>
 		/// Generates a <see cref="Int64"/> value.
 		/// </summary>
 		/// <returns>A random <see cref="Int64"/> value.</returns>
-		public unsafe Int64 NextInt64() {
-#if !NETSTANDARD1_3
-			Span<Byte> buffer = stackalloc Byte[sizeof(Int64)];
-			NextBytes(buffer);
-			return BitConverter.ToInt64(buffer);
-#else
-			Byte[] buffer = new Byte[sizeof(Int64)];
-			NextBytes(buffer);
-			return BitConverter.ToInt64(buffer, 0);
-#endif
+		public Int64 NextInt64() {
+			Read(out Int64 result);
+			return result;
 		}
 
 		/// <summary>
@@ -325,6 +557,7 @@ namespace Numbersome {
 		/// </summary>
 		/// <param name="amount">The amount of values to generate.</param>
 		/// <returns>A sequence of random <see cref="Int64"/> values.</returns>
+		[return: NotNull]
 		public IEnumerable<Int64> NextInt64s(nint amount) {
 			for (nint i = 0; i < amount; i++) {
 				yield return NextInt64();
@@ -332,33 +565,58 @@ namespace Numbersome {
 		}
 
 		/// <summary>
+		/// Generates a sequence of <see cref="Int64"/> values within the range of <paramref name="min"/>..<paramref name="max"/>.
+		/// </summary>
+		/// <param name="amount">The amount of values to generate.</param>
+		/// <param name="min">The minimum possible value.</param>
+		/// <param name="max">The maximum possible value.</param>
+		/// <returns>A sequence of random <see cref="Int64"/> values within the range of <paramref name="min"/>..<paramref name="max"/>.</returns>
+		[return: NotNull]
+		public IEnumerable<Int64> NextInt64s(nint amount, Int64 min, Int64 max) {
+			for (nint i = 0; i < amount; i++) {
+				yield return NextInt64(min, max);
+			}
+		}
+
+		/// <summary>
+		/// Fills the elements of a specified array of <see cref="Int64"/> with random numbers.
+		/// </summary>
+		/// <param name="buffer">The array to be filled with random numbers.</param>
+		public void NextInt64s([AllowNull] Int64[] buffer) => NextInt64s(buffer.AsSpan());
+
+		/// <summary>
+		/// Fills the elements of a specified array of <see cref="Int64"/> with random numbers.
+		/// </summary>
+		/// <param name="buffer">The array to be filled with random numbers.</param>
+		public void NextInt64s(Memory<Int64> buffer) => NextInt64s(buffer.Span);
+
+		/// <summary>
+		/// Fills the elements of a specified array of <see cref="Int64"/> with random numbers.
+		/// </summary>
+		/// <param name="buffer">The array to be filled with random numbers.</param>
+		public void NextInt64s(Span<Int64> buffer) {
+			for (Int32 i = 0; i < buffer.Length; i++) {
+				Read(out buffer[i]);
+			}
+		}
+		#endregion
+
+		#region IntPtr
+		/// <summary>
 		/// Generates a <see cref="IntPtr"/> value.
 		/// </summary>
 		/// <returns>A random <see cref="IntPtr"/> value.</returns>
 		public unsafe IntPtr NextIntPtr() {
-#if !NETSTANDARD1_3
-			Span<Byte> buffer = stackalloc Byte[sizeof(IntPtr)];
-			NextBytes(buffer);
 			switch (sizeof(IntPtr)) {
 			case 4:
-				return (IntPtr)BitConverter.ToInt32(buffer);
+				Read(out Int32 int32);
+				return (IntPtr)int32;
 			case 8:
-				return (IntPtr)BitConverter.ToInt64(buffer);
+				Read(out Int64 int64);
+				return (IntPtr)int64;
 			default:
 				throw new PlatformNotSupportedException("Numbersome only supports 32 and 64 bit platforms.");
 			}
-#else
-			Byte[] buffer = new Byte[sizeof(IntPtr)];
-			NextBytes(buffer);
-			switch (sizeof(IntPtr)) {
-			case 4:
-				return (IntPtr)BitConverter.ToInt32(buffer, 0);
-			case 8:
-				return (IntPtr)BitConverter.ToInt64(buffer, 0);
-			default:
-				throw new PlatformNotSupportedException("Numbersome only supports 32 and 64 bit platforms.");
-			}
-#endif
 		}
 
 		/// <summary>
@@ -382,6 +640,7 @@ namespace Numbersome {
 		/// </summary>
 		/// <param name="amount">The amount of values to generate.</param>
 		/// <returns>A sequence of random <see cref="IntPtr"/> values.</returns>
+		[return: NotNull]
 		public IEnumerable<IntPtr> NextIntPtrs(nint amount) {
 			for (nint i = 0; i < amount; i++) {
 				yield return NextIntPtr();
@@ -389,18 +648,138 @@ namespace Numbersome {
 		}
 
 		/// <summary>
+		/// Generates a sequence of <see cref="IntPtr"/> values within the range of <paramref name="min"/>..<paramref name="max"/>.
+		/// </summary>
+		/// <param name="amount">The amount of values to generate.</param>
+		/// <param name="min">The minimum possible value.</param>
+		/// <param name="max">The maximum possible value.</param>
+		/// <returns>A sequence of random <see cref="IntPtr"/> values within the range of <paramref name="min"/>..<paramref name="max"/>.</returns>
+		[return: NotNull]
+		public IEnumerable<IntPtr> NextIntPtrs(nint amount, IntPtr min, IntPtr max) {
+			for (nint i = 0; i < amount; i++) {
+				yield return NextIntPtr(min, max);
+			}
+		}
+
+		/// <summary>
+		/// Fills the elements of a specified array of <see cref="IntPtr"/> with random numbers.
+		/// </summary>
+		/// <param name="buffer">The array to be filled with random numbers.</param>
+		public void NextIntPtrs([AllowNull] IntPtr[] buffer) => NextIntPtrs(buffer.AsSpan());
+
+		/// <summary>
+		/// Fills the elements of a specified array of <see cref="IntPtr"/> with random numbers.
+		/// </summary>
+		/// <param name="buffer">The array to be filled with random numbers.</param>
+		public void NextIntPtrs(Memory<IntPtr> buffer) => NextIntPtrs(buffer.Span);
+
+		/// <summary>
+		/// Fills the elements of a specified array of <see cref="IntPtr"/> with random numbers.
+		/// </summary>
+		/// <param name="buffer">The array to be filled with random numbers.</param>
+		public void NextIntPtrs(Span<IntPtr> buffer) {
+			for (Int32 i = 0; i < buffer.Length; i++) {
+				buffer[i] = NextIntPtr();
+			}
+		}
+		#endregion
+
+		#region Rune
+#if NETCOREAPP3_0_OR_GREATER
+		/// <summary>
+		/// Generates a <see cref="Rune"/> value.
+		/// </summary>
+		/// <returns>A random <see cref="Rune"/> value.</returns>
+		public unsafe Rune NextRune() {
+		TryAgain:
+			Read(out Int32 scalar);
+			if (scalar < 0) {
+				scalar = Math.Abs(scalar);
+			}
+			while (scalar > 0x10FFFF) {
+				scalar = scalar >> 2;
+			}
+			if (0xD800 <= scalar && scalar < 0xE000) {
+				scalar -= 0xD800;
+			}
+			return new Rune(scalar);
+		}
+
+		/// <summary>
+		/// Generates a <see cref="Rune"/> value within the range of <paramref name="min"/>..<paramref name="max"/>.
+		/// </summary>
+		/// <param name="min">The minimum possible value.</param>
+		/// <param name="max">The maximum possible value.</param>
+		/// <returns>A random <see cref="Rune"/> value within the range of <paramref name="min"/>..<paramref name="max"/>.</returns>
+		public Rune NextRune(Rune min, Rune max) {
+		TryAgain:
+			Rune rune = NextRune();
+			if (min <= rune && rune <= max) {
+				return rune;
+			} else {
+				goto TryAgain;
+			}
+		}
+
+		/// <summary>
+		/// Generates a sequence of <see cref="Rune"/> values.
+		/// </summary>
+		/// <param name="amount">The amount of values to generate.</param>
+		/// <returns>A sequence of random <see cref="Rune"/> values.</returns>
+		[return: NotNull]
+		public IEnumerable<Rune> NextRunes(nint amount) {
+			for (nint i = 0; i < amount; i++) {
+				yield return NextRune();
+			}
+		}
+
+		/// <summary>
+		/// Generates a sequence of <see cref="Rune"/> values within the range of <paramref name="min"/>..<paramref name="max"/>.
+		/// </summary>
+		/// <param name="amount">The amount of values to generate.</param>
+		/// <param name="min">The minimum possible value.</param>
+		/// <param name="max">The maximum possible value.</param>
+		/// <returns>A sequence of random <see cref="Rune"/> values within the range of <paramref name="min"/>..<paramref name="max"/>.</returns>
+		[return: NotNull]
+		public IEnumerable<Rune> NextRunes(nint amount, Rune min, Rune max) {
+			for (nint i = 0; i < amount; i++) {
+				yield return NextRune(min, max);
+			}
+		}
+
+		/// <summary>
+		/// Fills the elements of a specified array of <see cref="Rune"/> with random numbers.
+		/// </summary>
+		/// <param name="buffer">The array to be filled with random numbers.</param>
+		public void NextRunes([AllowNull] Rune[] buffer) => NextRunes(buffer.AsSpan());
+
+		/// <summary>
+		/// Fills the elements of a specified array of <see cref="Rune"/> with random numbers.
+		/// </summary>
+		/// <param name="buffer">The array to be filled with random numbers.</param>
+		public void NextRunes(Memory<Rune> buffer) => NextRunes(buffer.Span);
+
+		/// <summary>
+		/// Fills the elements of a specified array of <see cref="Rune"/> with random numbers.
+		/// </summary>
+		/// <param name="buffer">The array to be filled with random numbers.</param>
+		public void NextRunes(Span<Rune> buffer) {
+			for (Int32 i = 0; i < buffer.Length; i++) {
+				buffer[i] = NextRune();
+			}
+		}
+#endif
+		#endregion
+
+		#region SByte
+		/// <summary>
 		/// Generates a <see cref="SByte"/> value.
 		/// </summary>
 		/// <returns>A random <see cref="SByte"/> value.</returns>
 		[CLSCompliant(false)]
-		public unsafe SByte NextSByte() {
-#if !NETSTANDARD1_3
-			Span<Byte> buffer = stackalloc Byte[sizeof(SByte)];
-#else
-			Byte[] buffer = new Byte[sizeof(SByte)];
-#endif
-			NextBytes(buffer);
-			return unchecked((SByte)buffer[0]);
+		public SByte NextSByte() {
+			Read(out SByte result);
+			return result;
 		}
 
 		/// <summary>
@@ -426,6 +805,7 @@ namespace Numbersome {
 		/// <param name="amount">The amount of values to generate.</param>
 		/// <returns>A sequence of random <see cref="SByte"/> values.</returns>
 		[CLSCompliant(false)]
+		[return: NotNull]
 		public IEnumerable<SByte> NextSBytes(nint amount) {
 			for (nint i = 0; i < amount; i++) {
 				yield return NextSByte();
@@ -433,19 +813,54 @@ namespace Numbersome {
 		}
 
 		/// <summary>
+		/// Generates a sequence of <see cref="SByte"/> values within the range of <paramref name="min"/>..<paramref name="max"/>.
+		/// </summary>
+		/// <param name="amount">The amount of values to generate.</param>
+		/// <param name="min">The minimum possible value.</param>
+		/// <param name="max">The maximum possible value.</param>
+		/// <returns>A sequence of random <see cref="SByte"/> values within the range of <paramref name="min"/>..<paramref name="max"/>.</returns>
+		[CLSCompliant(false)]
+		[return: NotNull]
+		public IEnumerable<SByte> NextSBytes(nint amount, SByte min, SByte max) {
+			for (nint i = 0; i < amount; i++) {
+				yield return NextSByte(min, max);
+			}
+		}
+
+		/// <summary>
+		/// Fills the elements of a specified array of <see cref="SByte"/> with random numbers.
+		/// </summary>
+		/// <param name="buffer">The array to be filled with random numbers.</param>
+		[CLSCompliant(false)]
+		public void NextSBytes([AllowNull] SByte[] buffer) => NextSBytes(buffer.AsSpan());
+
+		/// <summary>
+		/// Fills the elements of a specified array of <see cref="SByte"/> with random numbers.
+		/// </summary>
+		/// <param name="buffer">The array to be filled with random numbers.</param>
+		[CLSCompliant(false)]
+		public void NextSBytes(Memory<SByte> buffer) => NextSBytes(buffer.Span);
+
+		/// <summary>
+		/// Fills the elements of a specified array of <see cref="SByte"/> with random numbers.
+		/// </summary>
+		/// <param name="buffer">The array to be filled with random numbers.</param>
+		[CLSCompliant(false)]
+		public void NextSBytes(Span<SByte> buffer) {
+			for (Int32 i = 0; i < buffer.Length; i++) {
+				Read(out buffer[i]);
+			}
+		}
+		#endregion
+
+		#region Single
+		/// <summary>
 		/// Generates a <see cref="Single"/> value.
 		/// </summary>
 		/// <returns>A random <see cref="Single"/> value.</returns>
-		public unsafe Single NextSingle() {
-#if !NETSTANDARD1_3
-			Span<Byte> buffer = stackalloc Byte[sizeof(Single)];
-			NextBytes(buffer);
-			return BitConverter.ToSingle(buffer);
-#else
-			Byte[] buffer = new Byte[sizeof(Single)];
-			NextBytes(buffer);
-			return BitConverter.ToSingle(buffer, 0);
-#endif
+		public Single NextSingle() {
+			Read(out Single result);
+			return result;
 		}
 
 		/// <summary>
@@ -469,6 +884,7 @@ namespace Numbersome {
 		/// </summary>
 		/// <param name="amount">The amount of values to generate.</param>
 		/// <returns>A sequence of random <see cref="Single"/> values.</returns>
+		[return: NotNull]
 		public IEnumerable<Single> NextSingles(nint amount) {
 			for (nint i = 0; i < amount; i++) {
 				yield return NextSingle();
@@ -476,20 +892,51 @@ namespace Numbersome {
 		}
 
 		/// <summary>
+		/// Generates a sequence of <see cref="Single"/> values within the range of <paramref name="min"/>..<paramref name="max"/>.
+		/// </summary>
+		/// <param name="amount">The amount of values to generate.</param>
+		/// <param name="min">The minimum possible value.</param>
+		/// <param name="max">The maximum possible value.</param>
+		/// <returns>A sequence of random <see cref="Single"/> values within the range of <paramref name="min"/>..<paramref name="max"/>.</returns>
+		[return: NotNull]
+		public IEnumerable<Single> NextSingles(nint amount, Single min, Single max) {
+			for (nint i = 0; i < amount; i++) {
+				yield return NextSingle(min, max);
+			}
+		}
+
+		/// <summary>
+		/// Fills the elements of a specified array of <see cref="Single"/> with random numbers.
+		/// </summary>
+		/// <param name="buffer">The array to be filled with random numbers.</param>
+		public void NextSingles([AllowNull] Single[] buffer) => NextSingles(buffer.AsSpan());
+
+		/// <summary>
+		/// Fills the elements of a specified array of <see cref="Single"/> with random numbers.
+		/// </summary>
+		/// <param name="buffer">The array to be filled with random numbers.</param>
+		public void NextSingles(Memory<Single> buffer) => NextSingles(buffer.Span);
+
+		/// <summary>
+		/// Fills the elements of a specified array of <see cref="Single"/> with random numbers.
+		/// </summary>
+		/// <param name="buffer">The array to be filled with random numbers.</param>
+		public void NextSingles(Span<Single> buffer) {
+			for (Int32 i = 0; i < buffer.Length; i++) {
+				Read(out buffer[i]);
+			}
+		}
+		#endregion
+
+		#region UInt16
+		/// <summary>
 		/// Generates a <see cref="UInt16"/> value.
 		/// </summary>
 		/// <returns>A random <see cref="UInt16"/> value.</returns>
 		[CLSCompliant(false)]
-		public unsafe UInt16 NextUInt16() {
-#if !NETSTANDARD1_3
-			Span<Byte> buffer = stackalloc Byte[sizeof(UInt16)];
-			NextBytes(buffer);
-			return BitConverter.ToUInt16(buffer);
-#else
-			Byte[] buffer = new Byte[sizeof(UInt16)];
-			NextBytes(buffer);
-			return BitConverter.ToUInt16(buffer, 0);
-#endif
+		public UInt16 NextUInt16() {
+			Read(out UInt16 result);
+			return result;
 		}
 
 		/// <summary>
@@ -515,6 +962,7 @@ namespace Numbersome {
 		/// <param name="amount">The amount of values to generate.</param>
 		/// <returns>A sequence of random <see cref="UInt16"/> values.</returns>
 		[CLSCompliant(false)]
+		[return: NotNull]
 		public IEnumerable<UInt16> NextUInt16s(nint amount) {
 			for (nint i = 0; i < amount; i++) {
 				yield return NextUInt16();
@@ -522,20 +970,55 @@ namespace Numbersome {
 		}
 
 		/// <summary>
+		/// Generates a sequence of <see cref="UInt16"/> values within the range of <paramref name="min"/>..<paramref name="max"/>.
+		/// </summary>
+		/// <param name="amount">The amount of values to generate.</param>
+		/// <param name="min">The minimum possible value.</param>
+		/// <param name="max">The maximum possible value.</param>
+		/// <returns>A sequence of random <see cref="UInt16"/> values within the range of <paramref name="min"/>..<paramref name="max"/>.</returns>
+		[CLSCompliant(false)]
+		[return: NotNull]
+		public IEnumerable<UInt16> NextUInt16s(nint amount, UInt16 min, UInt16 max) {
+			for (nint i = 0; i < amount; i++) {
+				yield return NextUInt16(min, max);
+			}
+		}
+
+		/// <summary>
+		/// Fills the elements of a specified array of <see cref="UInt16"/> with random numbers.
+		/// </summary>
+		/// <param name="buffer">The array to be filled with random numbers.</param>
+		[CLSCompliant(false)]
+		public void NextUInt16s([AllowNull] UInt16[] buffer) => NextUInt16s(buffer.AsSpan());
+
+		/// <summary>
+		/// Fills the elements of a specified array of <see cref="UInt16"/> with random numbers.
+		/// </summary>
+		/// <param name="buffer">The array to be filled with random numbers.</param>
+		[CLSCompliant(false)]
+		public void NextUInt16s(Memory<UInt16> buffer) => NextUInt16s(buffer.Span);
+
+		/// <summary>
+		/// Fills the elements of a specified array of <see cref="UInt16"/> with random numbers.
+		/// </summary>
+		/// <param name="buffer">The array to be filled with random numbers.</param>
+		[CLSCompliant(false)]
+		public void NextUInt16s(Span<UInt16> buffer) {
+			for (Int32 i = 0; i < buffer.Length; i++) {
+				Read(out buffer[i]);
+			}
+		}
+		#endregion
+
+		#region UInt32
+		/// <summary>
 		/// Generates a <see cref="UInt32"/> value.
 		/// </summary>
 		/// <returns>A random <see cref="UInt32"/> value.</returns>
 		[CLSCompliant(false)]
-		public unsafe UInt32 NextUInt32() {
-#if !NETSTANDARD1_3
-			Span<Byte> buffer = stackalloc Byte[sizeof(UInt32)];
-			NextBytes(buffer);
-			return BitConverter.ToUInt32(buffer);
-#else
-			Byte[] buffer = new Byte[sizeof(UInt32)];
-			NextBytes(buffer);
-			return BitConverter.ToUInt32(buffer, 0);
-#endif
+		public UInt32 NextUInt32() {
+			Read(out UInt32 result);
+			return result;
 		}
 
 		/// <summary>
@@ -561,6 +1044,7 @@ namespace Numbersome {
 		/// <param name="amount">The amount of values to generate.</param>
 		/// <returns>A sequence of random <see cref="UInt32"/> values.</returns>
 		[CLSCompliant(false)]
+		[return: NotNull]
 		public IEnumerable<UInt32> NextUInt32s(nint amount) {
 			for (nint i = 0; i < amount; i++) {
 				yield return NextUInt32();
@@ -568,20 +1052,55 @@ namespace Numbersome {
 		}
 
 		/// <summary>
+		/// Generates a sequence of <see cref="UInt32"/> values within the range of <paramref name="min"/>..<paramref name="max"/>.
+		/// </summary>
+		/// <param name="amount">The amount of values to generate.</param>
+		/// <param name="min">The minimum possible value.</param>
+		/// <param name="max">The maximum possible value.</param>
+		/// <returns>A sequence of random <see cref="UInt32"/> values within the range of <paramref name="min"/>..<paramref name="max"/>.</returns>
+		[CLSCompliant(false)]
+		[return: NotNull]
+		public IEnumerable<UInt32> NextUInt32s(nint amount, UInt32 min, UInt32 max) {
+			for (nint i = 0; i < amount; i++) {
+				yield return NextUInt32(min, max);
+			}
+		}
+
+		/// <summary>
+		/// Fills the elements of a specified array of <see cref="UInt32"/> with random numbers.
+		/// </summary>
+		/// <param name="buffer">The array to be filled with random numbers.</param>
+		[CLSCompliant(false)]
+		public void NextUInt32s([AllowNull] UInt32[] buffer) => NextUInt32s(buffer.AsSpan());
+
+		/// <summary>
+		/// Fills the elements of a specified array of <see cref="UInt32"/> with random numbers.
+		/// </summary>
+		/// <param name="buffer">The array to be filled with random numbers.</param>
+		[CLSCompliant(false)]
+		public void NextUInt32s(Memory<UInt32> buffer) => NextUInt32s(buffer.Span);
+
+		/// <summary>
+		/// Fills the elements of a specified array of <see cref="UInt32"/> with random numbers.
+		/// </summary>
+		/// <param name="buffer">The array to be filled with random numbers.</param>
+		[CLSCompliant(false)]
+		public void NextUInt32s(Span<UInt32> buffer) {
+			for (Int32 i = 0; i < buffer.Length; i++) {
+				Read(out buffer[i]);
+			}
+		}
+		#endregion
+
+		#region UInt64
+		/// <summary>
 		/// Generates a <see cref="UInt64"/> value.
 		/// </summary>
 		/// <returns>A random <see cref="UInt64"/> value.</returns>
 		[CLSCompliant(false)]
-		public unsafe UInt64 NextUInt64() {
-#if !NETSTANDARD1_3
-			Span<Byte> buffer = stackalloc Byte[sizeof(UInt64)];
-			NextBytes(buffer);
-			return BitConverter.ToUInt64(buffer);
-#else
-			Byte[] buffer = new Byte[sizeof(UInt64)];
-			NextBytes(buffer);
-			return BitConverter.ToUInt64(buffer, 0);
-#endif
+		public UInt64 NextUInt64() {
+			Read(out UInt64 result);
+			return result;
 		}
 
 		/// <summary>
@@ -607,40 +1126,71 @@ namespace Numbersome {
 		/// <param name="amount">The amount of values to generate.</param>
 		/// <returns>A sequence of random <see cref="UInt64"/> values.</returns>
 		[CLSCompliant(false)]
+		[return: NotNull]
 		public IEnumerable<UInt64> NextUInt64s(nint amount) {
 			for (nint i = 0; i < amount; i++) {
 				yield return NextUInt64();
 			}
 		}
+
+		/// <summary>
+		/// Generates a sequence of <see cref="UInt64"/> values within the range of <paramref name="min"/>..<paramref name="max"/>.
+		/// </summary>
+		/// <param name="amount">The amount of values to generate.</param>
+		/// <param name="min">The minimum possible value.</param>
+		/// <param name="max">The maximum possible value.</param>
+		/// <returns>A sequence of random <see cref="UInt64"/> values within the range of <paramref name="min"/>..<paramref name="max"/>.</returns>
+		[CLSCompliant(false)]
+		[return: NotNull]
+		public IEnumerable<UInt64> NextUInt64s(nint amount, UInt64 min, UInt64 max) {
+			for (nint i = 0; i < amount; i++) {
+				yield return NextUInt64(min, max);
+			}
+		}
+
+		/// <summary>
+		/// Fills the elements of a specified array of <see cref="UInt64"/> with random numbers.
+		/// </summary>
+		/// <param name="buffer">The array to be filled with random numbers.</param>
+		[CLSCompliant(false)]
+		public void NextUInt64s([AllowNull] UInt64[] buffer) => NextUInt64s(buffer.AsSpan());
+
+		/// <summary>
+		/// Fills the elements of a specified array of <see cref="UInt64"/> with random numbers.
+		/// </summary>
+		/// <param name="buffer">The array to be filled with random numbers.</param>
+		[CLSCompliant(false)]
+		public void NextUInt64s(Memory<UInt64> buffer) => NextUInt64s(buffer.Span);
+
+		/// <summary>
+		/// Fills the elements of a specified array of <see cref="UInt64"/> with random numbers.
+		/// </summary>
+		/// <param name="buffer">The array to be filled with random numbers.</param>
+		[CLSCompliant(false)]
+		public void NextUInt64s(Span<UInt64> buffer) {
+			for (Int32 i = 0; i < buffer.Length; i++) {
+				Read(out buffer[i]);
+			}
+		}
+		#endregion
+
+		#region UIntPtr
 		/// <summary>
 		/// Generates a <see cref="UIntPtr"/> value.
 		/// </summary>
 		/// <returns>A random <see cref="UIntPtr"/> value.</returns>
 		[CLSCompliant(false)]
 		public unsafe UIntPtr NextUIntPtr() {
-#if !NETSTANDARD1_3
-			Span<Byte> buffer = stackalloc Byte[sizeof(UIntPtr)];
-			NextBytes(buffer);
 			switch (sizeof(UIntPtr)) {
 			case 4:
-				return (UIntPtr)BitConverter.ToUInt32(buffer);
+				Read(out UInt32 uint32);
+				return (UIntPtr)uint32;
 			case 8:
-				return (UIntPtr)BitConverter.ToUInt64(buffer);
+				Read(out UInt64 uint64);
+				return (UIntPtr)uint64;
 			default:
 				throw new PlatformNotSupportedException("Langly only supports 32 and 64 bit platforms.");
 			}
-#else
-			Byte[] buffer = new byte[sizeof(UIntPtr)];
-			NextBytes(buffer);
-			switch (sizeof(UIntPtr)) {
-			case 4:
-				return (UIntPtr)BitConverter.ToUInt32(buffer, 0);
-			case 8:
-				return (UIntPtr)BitConverter.ToUInt64(buffer, 0);
-			default:
-				throw new PlatformNotSupportedException("Langly only supports 32 and 64 bit platforms.");
-			}
-#endif
 		}
 
 		/// <summary>
@@ -666,10 +1216,79 @@ namespace Numbersome {
 		/// <param name="amount">The amount of values to generate.</param>
 		/// <returns>A sequence of random <see cref="UIntPtr"/> values.</returns>
 		[CLSCompliant(false)]
+		[return: NotNull]
 		public IEnumerable<UIntPtr> NextUIntPtrs(nint amount) {
 			for (nint i = 0; i < amount; i++) {
 				yield return NextUIntPtr();
 			}
 		}
+
+		/// <summary>
+		/// Generates a sequence of <see cref="UIntPtr"/> values within the range of <paramref name="min"/>..<paramref name="max"/>.
+		/// </summary>
+		/// <param name="amount">The amount of values to generate.</param>
+		/// <param name="min">The minimum possible value.</param>
+		/// <param name="max">The maximum possible value.</param>
+		/// <returns>A sequence of random <see cref="UIntPtr"/> values within the range of <paramref name="min"/>..<paramref name="max"/>.</returns>
+		[CLSCompliant(false)]
+		[return: NotNull]
+		public IEnumerable<UIntPtr> NextUIntPtrs(nint amount, UIntPtr min, UIntPtr max) {
+			for (nint i = 0; i < amount; i++) {
+				yield return NextUIntPtr(min, max);
+			}
+		}
+
+		/// <summary>
+		/// Fills the elements of a specified array of <see cref="UIntPtr"/> with random numbers.
+		/// </summary>
+		/// <param name="buffer">The array to be filled with random numbers.</param>
+		[CLSCompliant(false)]
+		public void NextUIntPtrs([AllowNull] UIntPtr[] buffer) => NextUIntPtrs(buffer.AsSpan());
+
+		/// <summary>
+		/// Fills the elements of a specified array of <see cref="UIntPtr"/> with random numbers.
+		/// </summary>
+		/// <param name="buffer">The array to be filled with random numbers.</param>
+		[CLSCompliant(false)]
+		public void NextUIntPtrs(Memory<UIntPtr> buffer) => NextUIntPtrs(buffer.Span);
+
+		/// <summary>
+		/// Fills the elements of a specified array of <see cref="UIntPtr"/> with random numbers.
+		/// </summary>
+		/// <param name="buffer">The array to be filled with random numbers.</param>
+		[CLSCompliant(false)]
+		public void NextUIntPtrs(Span<UIntPtr> buffer) {
+			for (Int32 i = 0; i < buffer.Length; i++) {
+				buffer[i] = NextUIntPtr();
+			}
+		}
+		#endregion
+
+		#region System.Random compatibility
+		/// <summary>
+		/// Returns a non-negative random integer.
+		/// </summary>
+		/// <returns>A 32-bit signed integer that is greater than or equal to 0 and less than <see cref="Int32.MaxValue"/>.</returns>
+		[Obsolete("Use NextInt32() instead.")]
+		public Int32 Next() => NextInt32(0, Int32.MaxValue);
+
+		/// <summary>
+		/// Returns a non-negative random integer that is less than the specified maximum.
+		/// </summary>
+		/// <param name="maxValue">The exclusive upper bound of the random number to be generated. <paramref name="maxValue"/> must be greater than or equal to 0.</param>
+		/// <returns>A 32-bit signed integer that is greater than or equal to 0, and less than <paramref name="maxValue"/>; that is, the range of return values ordinarily includes 0 but not <paramref name="maxValue"/>. However, if <paramref name="maxValue"/> equals 0, <paramref name="maxValue"/> is returned.</returns>
+		/// <exception cref="ArgumentOutOfRangeException"><paramref name="maxValue"/> is less than 0.</exception>
+		[Obsolete("Use NextInt32() instead.")]
+		public Int32 Next(Int32 maxValue) => NextInt32(0, maxValue - 1);
+
+		/// <summary>
+		/// Returns a random integer that is within a specified range.
+		/// </summary>
+		/// <param name="minValue">The inclusive lower vound of the random number returned.</param>
+		/// <param name="maxValue">The exclusive upper bound of the random number returned. <paramref name="maxValue"/> must be greater than or equalt o <paramref name="minValue"/>.</param>
+		/// <returns>A 32-bit signed integer greater than or equal to <paramref name="minValue"/> and less than <paramref name="maxValue"/>; that is, the range of return values includes <paramref name="minValue"/> but not <paramref name="maxValue"/>. If <paramref name="minValue"/> equals <paramref name="maxValue"/>, <paramref name="minValue"/> is returned.</returns>
+		[Obsolete("Use NextInt32() instead.")]
+		public Int32 Next(Int32 minValue, Int32 maxValue) => NextInt32(minValue, maxValue - 1);
+		#endregion
 	}
 }

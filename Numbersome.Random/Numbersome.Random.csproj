@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>netstandard1.3;netstandard2.1</TargetFrameworks>
+		<TargetFrameworks>netstandard2.1;netcoreapp3.0</TargetFrameworks>
 		<LangVersion>9.0</LangVersion>
 		<Nullable>enable</Nullable>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -18,6 +18,10 @@
 
 	<ItemGroup>
 	  <PackageReference Include="System.Memory" Version="4.5.4" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Streamy.Stream\Streamy.Stream.csproj" />
 	</ItemGroup>
 
 </Project>
