@@ -1,0 +1,413 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Random.Generator
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Random.Generator
+   ">
+    <meta name="generator" content="docfx 2.57.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Numbersome.Random.Generator">
+  
+  
+  <h1 id="Numbersome_Random_Generator" data-uid="Numbersome.Random.Generator" class="text-break">Class Random.Generator
+  </h1>
+  <div class="markdown level0 summary"><p>Represents a pseudo-random number generator, which is an algorithm that produces a sequence of numbers that meet certain statistical requirements for randomness.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><a class="xref" href="Streamy.Bases.StreamBase.html">StreamBase</a></div>
+    <div class="level2"><span class="xref">Random.Generator</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="System.Traits.IControlled.html">IControlled</a></div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iasyncdisposable">IAsyncDisposable</a></div>
+    <div><a class="xref" href="System.Traits.IRead-1.html">IRead</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>&gt;</div>
+    <div><a class="xref" href="System.Traits.ISeek.html">ISeek</a></div>
+    <div><a class="xref" href="System.Traits.IWrite-1.html">IWrite</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>&gt;</div>
+    <div><a class="xref" href="System.Traits.IAdd-1.html">IAdd</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Streamy.Bases.StreamBase.html#Streamy_Bases_StreamBase_Disposed">StreamBase.Disposed</a>
+    </div>
+    <div>
+      <a class="xref" href="Streamy.Bases.StreamBase.html#Streamy_Bases_StreamBase_Position">StreamBase.Position</a>
+    </div>
+    <div>
+      <a class="xref" href="Streamy.Bases.StreamBase.html#Streamy_Bases_StreamBase_Add_System_Byte_">StreamBase.Add(Byte)</a>
+    </div>
+    <div>
+      <a class="xref" href="Streamy.Bases.StreamBase.html#Streamy_Bases_StreamBase_Dispose_System_Boolean_">StreamBase.Dispose(Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="Streamy.Bases.StreamBase.html#Streamy_Bases_StreamBase_Dispose">StreamBase.Dispose()</a>
+    </div>
+    <div>
+      <a class="xref" href="Streamy.Bases.StreamBase.html#Streamy_Bases_StreamBase_DisposeManaged">StreamBase.DisposeManaged()</a>
+    </div>
+    <div>
+      <a class="xref" href="Streamy.Bases.StreamBase.html#Streamy_Bases_StreamBase_DisposeUnmanaged">StreamBase.DisposeUnmanaged()</a>
+    </div>
+    <div>
+      <a class="xref" href="Streamy.Bases.StreamBase.html#Streamy_Bases_StreamBase_NullLargeFields">StreamBase.NullLargeFields()</a>
+    </div>
+    <div>
+      <a class="xref" href="Streamy.Bases.StreamBase.html#Streamy_Bases_StreamBase_Read_System_Byte__">StreamBase.Read(Byte)</a>
+    </div>
+    <div>
+      <a class="xref" href="Streamy.Bases.StreamBase.html#Streamy_Bases_StreamBase_ToString">StreamBase.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_">Object.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_System_Object_">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#System_Object_GetHashCode">Object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#System_Object_GetType">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#System_Object_MemberwiseClone">Object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#System_Object_ReferenceEquals_System_Object_System_Object_">Object.ReferenceEquals(Object, Object)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Numbersome.html">Numbersome</a></h6>
+  <h6><strong>Assembly</strong>: Numbersome.Random.dll</h6>
+  <h5 id="Numbersome_Random_Generator_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class Generator : StreamBase, IControlled, IDisposable, IAsyncDisposable, IRead&lt;byte&gt;, ISeek, IWrite&lt;byte&gt;, IAdd&lt;byte&gt;</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_Generator__ctor.md&amp;value=---%0Auid%3A%20Numbersome.Random.Generator.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.Generator.cs/#L16">View Source</a>
+  </span>
+  <a id="Numbersome_Random_Generator__ctor_" data-uid="Numbersome.Random.Generator.#ctor*"></a>
+  <h4 id="Numbersome_Random_Generator__ctor" data-uid="Numbersome.Random.Generator.#ctor">Generator()</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Numbersome.Random.Generator.html">Random.Generator</a> class using a default seed value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Generator()</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_Generator_Readable.md&amp;value=---%0Auid%3A%20Numbersome.Random.Generator.Readable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.Generator.cs/#L19">View Source</a>
+  </span>
+  <a id="Numbersome_Random_Generator_Readable_" data-uid="Numbersome.Random.Generator.Readable*"></a>
+  <h4 id="Numbersome_Random_Generator_Readable" data-uid="Numbersome.Random.Generator.Readable">Readable</h4>
+  <div class="markdown level1 summary"><p>Can this be read from?</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override sealed bool Readable { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Streamy.Bases.StreamBase.html#Streamy_Bases_StreamBase_Readable">StreamBase.Readable</a></div>
+  <h5 id="Numbersome_Random_Generator_Readable_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This is a state indicator. Of course an <a class="xref" href="System.Traits.IRead-1.html">IRead&lt;TElement&gt;</a> can be read from, but that doesn't mean it can always be read from. Rather, this being <span class="xref">true</span> indicates the type can currently be read from.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_Generator_Seekable.md&amp;value=---%0Auid%3A%20Numbersome.Random.Generator.Seekable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.Generator.cs/#L22">View Source</a>
+  </span>
+  <a id="Numbersome_Random_Generator_Seekable_" data-uid="Numbersome.Random.Generator.Seekable*"></a>
+  <h4 id="Numbersome_Random_Generator_Seekable" data-uid="Numbersome.Random.Generator.Seekable">Seekable</h4>
+  <div class="markdown level1 summary"><p>Can this be seeked?</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override sealed bool Seekable { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Streamy.Bases.StreamBase.html#Streamy_Bases_StreamBase_Seekable">StreamBase.Seekable</a></div>
+  <h5 id="Numbersome_Random_Generator_Seekable_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This is a state indicator. Of course an <a class="xref" href="System.Traits.ISeek.html">ISeek</a> can be seeked, but that doesn't mean it can always be seeked. Rather, this being <span class="xref">true</span> indicates the type can currently be seeked.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_Generator_Writable.md&amp;value=---%0Auid%3A%20Numbersome.Random.Generator.Writable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.Generator.cs/#L25">View Source</a>
+  </span>
+  <a id="Numbersome_Random_Generator_Writable_" data-uid="Numbersome.Random.Generator.Writable*"></a>
+  <h4 id="Numbersome_Random_Generator_Writable" data-uid="Numbersome.Random.Generator.Writable">Writable</h4>
+  <div class="markdown level1 summary"><p>Can this be written to?</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override sealed bool Writable { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Streamy.Bases.StreamBase.html#Streamy_Bases_StreamBase_Writable">StreamBase.Writable</a></div>
+  <h5 id="Numbersome_Random_Generator_Writable_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This is a state indicator. Of course an <a class="xref" href="System.Traits.IWrite-1.html">IWrite&lt;TElement&gt;</a> can be written to, but that doesn't mean it can always be written to. Rather, this being <span class="xref">true</span> indicates the type can currently be written to.</p>
+</div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_Generator_Seek_nint_.md&amp;value=---%0Auid%3A%20Numbersome.Random.Generator.Seek(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.Generator.cs/#L28">View Source</a>
+  </span>
+  <a id="Numbersome_Random_Generator_Seek_" data-uid="Numbersome.Random.Generator.Seek*"></a>
+  <h4 id="Numbersome_Random_Generator_Seek_nint_" data-uid="Numbersome.Random.Generator.Seek(nint)">Seek(nint)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override sealed void Seek(nint offset)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">nint</span></td>
+        <td><span class="parametername">offset</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_Generator_Write_System_Byte_.md&amp;value=---%0Auid%3A%20Numbersome.Random.Generator.Write(System.Byte)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.Generator.cs/#L31">View Source</a>
+  </span>
+  <a id="Numbersome_Random_Generator_Write_" data-uid="Numbersome.Random.Generator.Write*"></a>
+  <h4 id="Numbersome_Random_Generator_Write_System_Byte_" data-uid="Numbersome.Random.Generator.Write(System.Byte)">Write(Byte)</h4>
+  <div class="markdown level1 summary"><p>Writes a <code data-dev-comment-type="paramref" class="paramref">element</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override sealed void Write(byte element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Streamy.Bases.StreamBase.html#Streamy_Bases_StreamBase_Write_System_Byte_">StreamBase.Write(Byte)</a></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="System.Traits.IControlled.html">IControlled</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable">System.IDisposable</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iasyncdisposable">System.IAsyncDisposable</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IRead-1.html">IRead&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.ISeek.html">ISeek</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IWrite-1.html">IWrite&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IAdd-1.html">IAdd&lt;TElement&gt;</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_Generator.md&amp;value=---%0Auid%3A%20Numbersome.Random.Generator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.Generator.cs/#L11" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

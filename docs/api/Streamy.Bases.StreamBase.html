@@ -80,9 +80,13 @@
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
     <div class="level1"><span class="xref">StreamBase</span></div>
+      <div class="level2"><a class="xref" href="Numbersome.Random.Generator.html">Random.Generator</a></div>
+      <div class="level2"><a class="xref" href="Streamy.Bases.CharStreamBase.html">CharStreamBase</a></div>
   </div>
   <div classs="implements">
     <h5>Implements</h5>
+    <div><a class="xref" href="System.Traits.IControlled.html">IControlled</a></div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
     <div><a class="xref" href="System.Traits.IRead-1.html">IRead</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>&gt;</div>
     <div><a class="xref" href="System.Traits.ISeek.html">ISeek</a></div>
     <div><a class="xref" href="System.Traits.IWrite-1.html">IWrite</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>&gt;</div>
@@ -108,24 +112,52 @@
     <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#System_Object_ReferenceEquals_System_Object_System_Object_">Object.ReferenceEquals(Object, Object)</a>
     </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString">Object.ToString()</a>
-    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Streamy.Bases.html">Streamy.Bases</a></h6>
   <h6><strong>Assembly</strong>: Streamy.Stream.dll</h6>
   <h5 id="Streamy_Bases_StreamBase_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class StreamBase : IRead&lt;byte&gt;, ISeek, IWrite&lt;byte&gt;, IAdd&lt;byte&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class StreamBase : IControlled, IDisposable, IRead&lt;byte&gt;, ISeek, IWrite&lt;byte&gt;, IAdd&lt;byte&gt;</code></pre>
   </div>
   <h3 id="properties">Properties
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Bases_StreamBase_Disposed.md&amp;value=---%0Auid%3A%20Streamy.Bases.StreamBase.Disposed%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Bases/StreamBase.cs/#L16">View Source</a>
+  </span>
+  <a id="Streamy_Bases_StreamBase_Disposed_" data-uid="Streamy.Bases.StreamBase.Disposed*"></a>
+  <h4 id="Streamy_Bases_StreamBase_Disposed" data-uid="Streamy.Bases.StreamBase.Disposed">Disposed</h4>
+  <div class="markdown level1 summary"><p>Used to detect and handle redundant calls.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Disposed { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Bases_StreamBase_Position.md&amp;value=---%0Auid%3A%20Streamy.Bases.StreamBase.Position%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Bases/StreamBase.cs/#L11">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Bases/StreamBase.cs/#L19">View Source</a>
   </span>
   <a id="Streamy_Bases_StreamBase_Position_" data-uid="Streamy.Bases.StreamBase.Position*"></a>
   <h4 id="Streamy_Bases_StreamBase_Position" data-uid="Streamy.Bases.StreamBase.Position">Position</h4>
@@ -155,7 +187,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Bases_StreamBase_Readable.md&amp;value=---%0Auid%3A%20Streamy.Bases.StreamBase.Readable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Bases/StreamBase.cs/#L14">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Bases/StreamBase.cs/#L22">View Source</a>
   </span>
   <a id="Streamy_Bases_StreamBase_Readable_" data-uid="Streamy.Bases.StreamBase.Readable*"></a>
   <h4 id="Streamy_Bases_StreamBase_Readable" data-uid="Streamy.Bases.StreamBase.Readable">Readable</h4>
@@ -189,7 +221,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Bases_StreamBase_Seekable.md&amp;value=---%0Auid%3A%20Streamy.Bases.StreamBase.Seekable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Bases/StreamBase.cs/#L17">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Bases/StreamBase.cs/#L25">View Source</a>
   </span>
   <a id="Streamy_Bases_StreamBase_Seekable_" data-uid="Streamy.Bases.StreamBase.Seekable*"></a>
   <h4 id="Streamy_Bases_StreamBase_Seekable" data-uid="Streamy.Bases.StreamBase.Seekable">Seekable</h4>
@@ -223,7 +255,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Bases_StreamBase_Writable.md&amp;value=---%0Auid%3A%20Streamy.Bases.StreamBase.Writable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Bases/StreamBase.cs/#L20">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Bases/StreamBase.cs/#L28">View Source</a>
   </span>
   <a id="Streamy_Bases_StreamBase_Writable_" data-uid="Streamy.Bases.StreamBase.Writable*"></a>
   <h4 id="Streamy_Bases_StreamBase_Writable" data-uid="Streamy.Bases.StreamBase.Writable">Writable</h4>
@@ -259,7 +291,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Bases_StreamBase_Add_System_Byte_.md&amp;value=---%0Auid%3A%20Streamy.Bases.StreamBase.Add(System.Byte)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Bases/StreamBase.cs/#L23">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Bases/StreamBase.cs/#L31">View Source</a>
   </span>
   <a id="Streamy_Bases_StreamBase_Add_" data-uid="Streamy.Bases.StreamBase.Add*"></a>
   <h4 id="Streamy_Bases_StreamBase_Add_System_Byte_" data-uid="Streamy.Bases.StreamBase.Add(System.Byte)">Add(Byte)</h4>
@@ -292,10 +324,122 @@
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Bases_StreamBase_Dispose.md&amp;value=---%0Auid%3A%20Streamy.Bases.StreamBase.Dispose%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Bases/StreamBase.cs/#L46">View Source</a>
+  </span>
+  <a id="Streamy_Bases_StreamBase_Dispose_" data-uid="Streamy.Bases.StreamBase.Dispose*"></a>
+  <h4 id="Streamy_Bases_StreamBase_Dispose" data-uid="Streamy.Bases.StreamBase.Dispose">Dispose()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Dispose()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Bases_StreamBase_Dispose_System_Boolean_.md&amp;value=---%0Auid%3A%20Streamy.Bases.StreamBase.Dispose(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Bases/StreamBase.cs/#L34">View Source</a>
+  </span>
+  <a id="Streamy_Bases_StreamBase_Dispose_" data-uid="Streamy.Bases.StreamBase.Dispose*"></a>
+  <h4 id="Streamy_Bases_StreamBase_Dispose_System_Boolean_" data-uid="Streamy.Bases.StreamBase.Dispose(System.Boolean)">Dispose(Boolean)</h4>
+  <div class="markdown level1 summary"><p>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Dispose(bool disposing)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">disposing</span></td>
+        <td><p>Whether managed resources should be disposed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Bases_StreamBase_DisposeManaged.md&amp;value=---%0Auid%3A%20Streamy.Bases.StreamBase.DisposeManaged%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Bases/StreamBase.cs/#L52">View Source</a>
+  </span>
+  <a id="Streamy_Bases_StreamBase_DisposeManaged_" data-uid="Streamy.Bases.StreamBase.DisposeManaged*"></a>
+  <h4 id="Streamy_Bases_StreamBase_DisposeManaged" data-uid="Streamy.Bases.StreamBase.DisposeManaged">DisposeManaged()</h4>
+  <div class="markdown level1 summary"><p>Dispose of managed resources. Part of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable.dispose#System_IDisposable_Dispose">Dispose()</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void DisposeManaged()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Bases_StreamBase_DisposeUnmanaged.md&amp;value=---%0Auid%3A%20Streamy.Bases.StreamBase.DisposeUnmanaged%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Bases/StreamBase.cs/#L55">View Source</a>
+  </span>
+  <a id="Streamy_Bases_StreamBase_DisposeUnmanaged_" data-uid="Streamy.Bases.StreamBase.DisposeUnmanaged*"></a>
+  <h4 id="Streamy_Bases_StreamBase_DisposeUnmanaged" data-uid="Streamy.Bases.StreamBase.DisposeUnmanaged">DisposeUnmanaged()</h4>
+  <div class="markdown level1 summary"><p>Dispose of unmanaged resources. Part of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable.dispose#System_IDisposable_Dispose">Dispose()</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void DisposeUnmanaged()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Bases_StreamBase_Finalize.md&amp;value=---%0Auid%3A%20Streamy.Bases.StreamBase.Finalize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Bases/StreamBase.cs/#L12">View Source</a>
+  </span>
+  <a id="Streamy_Bases_StreamBase_Finalize_" data-uid="Streamy.Bases.StreamBase.Finalize*"></a>
+  <h4 id="Streamy_Bases_StreamBase_Finalize" data-uid="Streamy.Bases.StreamBase.Finalize">Finalize()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void Finalize()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Bases_StreamBase_NullLargeFields.md&amp;value=---%0Auid%3A%20Streamy.Bases.StreamBase.NullLargeFields%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Bases/StreamBase.cs/#L58">View Source</a>
+  </span>
+  <a id="Streamy_Bases_StreamBase_NullLargeFields_" data-uid="Streamy.Bases.StreamBase.NullLargeFields*"></a>
+  <h4 id="Streamy_Bases_StreamBase_NullLargeFields" data-uid="Streamy.Bases.StreamBase.NullLargeFields">NullLargeFields()</h4>
+  <div class="markdown level1 summary"><p>Null out large fields. Part of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable.dispose#System_IDisposable_Dispose">Dispose()</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void NullLargeFields()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Bases_StreamBase_Read_System_Byte__.md&amp;value=---%0Auid%3A%20Streamy.Bases.StreamBase.Read(System.Byte%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Bases/StreamBase.cs/#L26">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Bases/StreamBase.cs/#L61">View Source</a>
   </span>
   <a id="Streamy_Bases_StreamBase_Read_" data-uid="Streamy.Bases.StreamBase.Read*"></a>
   <h4 id="Streamy_Bases_StreamBase_Read_System_Byte__" data-uid="Streamy.Bases.StreamBase.Read(System.Byte@)">Read(out Byte)</h4>
@@ -328,7 +472,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Bases_StreamBase_Seek_nint_.md&amp;value=---%0Auid%3A%20Streamy.Bases.StreamBase.Seek(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Bases/StreamBase.cs/#L29">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Bases/StreamBase.cs/#L64">View Source</a>
   </span>
   <a id="Streamy_Bases_StreamBase_Seek_" data-uid="Streamy.Bases.StreamBase.Seek*"></a>
   <h4 id="Streamy_Bases_StreamBase_Seek_nint_" data-uid="Streamy.Bases.StreamBase.Seek(nint)">Seek(nint)</h4>
@@ -357,10 +501,42 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Bases_StreamBase_ToString.md&amp;value=---%0Auid%3A%20Streamy.Bases.StreamBase.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Bases/StreamBase.cs/#L67">View Source</a>
+  </span>
+  <a id="Streamy_Bases_StreamBase_ToString_" data-uid="Streamy.Bases.StreamBase.ToString*"></a>
+  <h4 id="Streamy_Bases_StreamBase_ToString" data-uid="Streamy.Bases.StreamBase.ToString">ToString()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract override string ToString()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString">Object.ToString()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Bases_StreamBase_Write_System_Byte_.md&amp;value=---%0Auid%3A%20Streamy.Bases.StreamBase.Write(System.Byte)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Bases/StreamBase.cs/#L32">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Bases/StreamBase.cs/#L71">View Source</a>
   </span>
   <a id="Streamy_Bases_StreamBase_Write_" data-uid="Streamy.Bases.StreamBase.Write*"></a>
   <h4 id="Streamy_Bases_StreamBase_Write_System_Byte_" data-uid="Streamy.Bases.StreamBase.Write(System.Byte)">Write(Byte)</h4>
@@ -389,6 +565,12 @@
     </tbody>
   </table>
   <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="System.Traits.IControlled.html">IControlled</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable">System.IDisposable</a>
+  </div>
   <div>
       <a class="xref" href="System.Traits.IRead-1.html">IRead&lt;TElement&gt;</a>
   </div>

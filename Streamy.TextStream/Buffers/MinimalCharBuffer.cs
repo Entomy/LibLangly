@@ -2,28 +2,27 @@
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Text;
-using Collectathon.Buffers;
 using Streamy.Bases;
 
-namespace Streamy {
+namespace Streamy.Buffers {
 	[DebuggerDisplay("{ToString(),nq}")]
-	internal sealed class MinimalBuffer : IReadBuffer {
+	internal sealed class MinimalCharBuffer : IReadCharBuffer {
 		/// <summary>
 		/// The <see cref="StreamBase"/> being buffered.
 		/// </summary>
 		[DisallowNull, NotNull]
-		private readonly StreamBase Base;
+		private readonly CharStreamBase Base;
 
 		/// <summary>
 		/// The backing memory of this buffer.
 		/// </summary>
-		private readonly Byte[] Memory = new Byte[sizeof(Decimal)];
+		private readonly Char[] Memory = new Char[sizeof(Decimal) / sizeof(Char)];
 
 		/// <inheritdoc/>
-		public MinimalBuffer([DisallowNull] StreamBase @base) => Base = @base;
+		public MinimalCharBuffer([DisallowNull] CharStreamBase @base) => Base = @base;
 
 		/// <inheritdoc/>
-		public nint Capacity => sizeof(Decimal);
+		public nint Capacity => sizeof(Decimal) / sizeof(Char);
 
 		/// <inheritdoc/>
 		public nint Count { get; private set; }
@@ -35,7 +34,21 @@ namespace Streamy {
 		public void Clear() => Count = 0;
 
 		/// <inheritdoc/>
-		public void Peek([MaybeNull] out Byte element) {
+		public void Peek([DisallowNull, NotNull] out Char[] elements, nint required) {
+			for (; Count < required; Count++) {
+				Base.Read(out Memory[Count]);
+			}
+			elements = Memory;
+		}
+
+		/// <inheritdoc/>
+		public void Peek([DisallowNull, NotNull] out Byte[] elements, nint required) => throw new NotImplementedException();
+
+		/// <inheritdoc/>
+		public void Peek([MaybeNull] out Byte element) => throw new NotImplementedException();
+
+		/// <inheritdoc/>
+		public void Peek([MaybeNull] out Char element) {
 			if (Count > 0) {
 				element = Memory[Count - 1];
 			} else {
@@ -45,15 +58,10 @@ namespace Streamy {
 		}
 
 		/// <inheritdoc/>
-		public void Peek([DisallowNull, NotNull] out Byte[] elements, nint required) {
-			for (; Count < required; Count++) {
-				Base.Read(out Memory[Count]);
-			}
-			elements = Memory;
-		}
+		public void Read([MaybeNull] out Byte element) => throw new NotImplementedException();
 
 		/// <inheritdoc/>
-		public void Read([MaybeNull] out Byte element) {
+		public void Read([MaybeNull] out Char element) {
 			if (Count == 0) {
 				Base.Read(out element);
 			} else {
@@ -74,10 +82,10 @@ namespace Streamy {
 					_ = builder.Append(element).Append("...");
 					break;
 				} else {
-					_ = builder.Append(element).Append(", ");
+					_ = builder.Append(element);
 				}
 			}
-			return $"[{builder}]";
+			return $"{builder}";
 		}
 	}
 }

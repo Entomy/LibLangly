@@ -6,13 +6,18 @@ namespace Streamy {
 		/// <inheritdoc/>
 		public Boolean Seekable => Base.Seekable;
 
-		/// <inheritdoc/>
-		public virtual nint Position {
+		/// <summary>
+		/// The position within the datastream, counted by a <see cref="Byte"/> offset from the start.
+		/// </summary>
+		public nint Position {
 			get => Base.Position;
 			set => Base.Position = value;
 		}
 
-		/// <inheritdoc/>
-		public virtual void Seek(nint offset) => Base.Seek(offset);
+		/// <summary>
+		/// Seeks to the <paramref name="offset"/>, counted by <see cref="Byte"/>.
+		/// </summary>
+		/// <param name="offset">The amount of <see cref="Byte"/> to seek.</param>
+		public void Seek(nint offset) => Base.Seek(offset);
 	}
 }

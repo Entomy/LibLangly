@@ -7,68 +7,68 @@ namespace Streamy {
 		public Boolean Readable => ReadBuffer.Readable || Base.Readable;
 
 		/// <inheritdoc/>
-		public void Read(out Byte element) => ReadBuffer.Read(out element);
+		public virtual void Read(out Byte element) => ReadBuffer.Read(out element);
 
 		/// <inheritdoc/>
 		[CLSCompliant(false)]
-		public void Read(out SByte element) {
+		public virtual void Read(out SByte element) {
 			ReadBuffer.Read(out Byte elmnt);
 			element = (SByte)elmnt;
 		}
 
 		/// <inheritdoc/>
-		public void Read(out Int16 element) {
+		public virtual void Read(out Int16 element) {
 			Peek(out element);
 			ReadBuffer.Clear();
 		}
 
 		/// <inheritdoc/>
 		[CLSCompliant(false)]
-		public void Read(out UInt16 element) {
+		public virtual void Read(out UInt16 element) {
 			Peek(out element);
 			ReadBuffer.Clear();
 		}
 
 		/// <inheritdoc/>
-		public void Read(out Int32 element) {
-			Peek(out element);
-			ReadBuffer.Clear();
-		}
-
-		/// <inheritdoc/>
-		[CLSCompliant(false)]
-		public void Read(out UInt32 element) {
-			Peek(out element);
-			ReadBuffer.Clear();
-		}
-
-		/// <inheritdoc/>
-		public void Read(out Int64 element) {
+		public virtual void Read(out Int32 element) {
 			Peek(out element);
 			ReadBuffer.Clear();
 		}
 
 		/// <inheritdoc/>
 		[CLSCompliant(false)]
-		public void Read(out UInt64 element) {
+		public virtual void Read(out UInt32 element) {
 			Peek(out element);
 			ReadBuffer.Clear();
 		}
 
 		/// <inheritdoc/>
-		public void Read(out Single element) {
+		public virtual void Read(out Int64 element) {
 			Peek(out element);
 			ReadBuffer.Clear();
 		}
 
 		/// <inheritdoc/>
-		public void Read(out Double element) {
+		[CLSCompliant(false)]
+		public virtual void Read(out UInt64 element) {
 			Peek(out element);
 			ReadBuffer.Clear();
 		}
 
 		/// <inheritdoc/>
-		public void Read(out Decimal element) {
+		public virtual void Read(out Single element) {
+			Peek(out element);
+			ReadBuffer.Clear();
+		}
+
+		/// <inheritdoc/>
+		public virtual void Read(out Double element) {
+			Peek(out element);
+			ReadBuffer.Clear();
+		}
+
+		/// <inheritdoc/>
+		public virtual void Read(out Decimal element) {
 			Read(out Int32 lo);
 			Read(out Int32 mid);
 			Read(out Int32 hi);
@@ -78,7 +78,7 @@ namespace Streamy {
 		}
 
 		/// <inheritdoc/>
-		public void Read(out Boolean element) {
+		public virtual void Read(out Boolean element) {
 			Peek(out element);
 			ReadBuffer.Clear();
 		}

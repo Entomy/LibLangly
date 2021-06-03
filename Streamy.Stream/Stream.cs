@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Traits;
-using Collectathon.Buffers;
 using Streamy.Bases;
+using Streamy.Buffers;
 
 namespace Streamy {
 	/// <summary>
@@ -50,6 +50,7 @@ namespace Streamy {
 			Base = new MemoryStreamBase(array);
 			ReadBuffer = new MinimalBuffer(Base);
 			WriteBuffer = null;
+			Endianness = BitConverter.IsLittleEndian ? Endian.Little : Endian.Big;
 		}
 
 		/// <summary>
@@ -61,6 +62,7 @@ namespace Streamy {
 			Base = new MemoryStreamBase(memory);
 			ReadBuffer = new MinimalBuffer(Base);
 			WriteBuffer = null;
+			Endianness = BitConverter.IsLittleEndian ? Endian.Little : Endian.Big;
 		}
 
 		/// <summary>
@@ -72,32 +74,35 @@ namespace Streamy {
 			Base = new ReadOnlyMemoryStreamBase(memory);
 			ReadBuffer = new MinimalBuffer(Base);
 			WriteBuffer = null;
+			Endianness = BitConverter.IsLittleEndian ? Endian.Little : Endian.Big;
 		}
 
 		/// <summary>
-		/// Initializes a new <see cref="Stream"/> with the given <paramref name="base"/>.
+		/// Initializes a new <see cref="Stream"/> with the given <paramref name="base"/>, the minimum necessary buffers, and the system endianness.
 		/// </summary>
 		/// <param name="base">The <see cref="StreamBase"/> of this <see cref="Stream"/>.</param>
-		[SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP003:Dispose previous before re-assigning.", Justification = "This is a constructor, it hasn't been assigned yet.")]
-		[CLSCompliant(false)]
-		protected Stream([DisallowNull] StreamBase @base) {
-			Base = @base;
-			ReadBuffer = new MinimalBuffer(Base);
-			WriteBuffer = null;
-		}
+		/// <remarks>
+		/// This should only be used for derived classes that are <see langword="sealed"/> and will not need a buffer in most situations. In practice, this is rarely the case, and you should chain with <see cref="Stream(StreamBase, IReadBuffer, IWriteBuffer, Endian)"/> instead.
+		/// </remarks>
+		protected Stream([DisallowNull] StreamBase @base) : this(@base, new MinimalBuffer(@base), null, BitConverter.IsLittleEndian ? Endian.Little : Endian.Big) { }
 
 		/// <summary>
-		/// Initializes a new <see cref="Stream"/> with the given <paramref name="base"/>, <paramref name="readBuffer"/>, and <paramref name="writeBuffer"/>.
+		/// Initializes a new <see cref="Stream"/> with the given <paramref name="base"/>, <paramref name="readBuffer"/>, <paramref name="writeBuffer"/>, and <paramref name="endianness"/>.
 		/// </summary>
 		/// <param name="base">The <see cref="StreamBase"/> of this <see cref="Stream"/>.</param>
 		/// <param name="readBuffer">The buffer used for reads.</param>
 		/// <param name="writeBuffer">The buffer used for writes.</param>
+		/// <param name="endianness">The byte ordering of this stream.</param>
+		/// <remarks>
+		/// This is the intended constructor for chaining with derived classes.
+		/// </remarks>
 		[SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP003:Dispose previous before re-assigning.", Justification = "This is a constructor, it hasn't been assigned yet.")]
 		[CLSCompliant(false)]
-		protected Stream([DisallowNull] StreamBase @base, [DisallowNull] IReadBuffer readBuffer, [AllowNull] IWriteBuffer writeBuffer) {
+		protected Stream([DisallowNull] StreamBase @base, [DisallowNull] IReadBuffer readBuffer, [AllowNull] IWriteBuffer writeBuffer, Endian endianness) {
 			Base = @base;
 			ReadBuffer = readBuffer;
 			WriteBuffer = writeBuffer;
+			Endianness = endianness;
 		}
 
 		/// <inheritdoc/>
@@ -117,6 +122,11 @@ namespace Streamy {
 			get => Base.Disposed;
 			set => Base.Disposed = value;
 		}
+
+		/// <summary>
+		/// The byte ordering of this stream.
+		/// </summary>
+		public Endian Endianness { get; }
 
 		/// <summary>
 		/// Streams the <paramref name="array"/>.

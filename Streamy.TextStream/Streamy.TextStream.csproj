@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard1.3</TargetFramework>
+		<LangVersion>9.0</LangVersion>
+		<Nullable>enable</Nullable>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<Description>Provides several text specialized Streams.</Description>
+		<PackageTags>stream, streams, serialize, deserialize, serialization, text, char, rune</PackageTags>
+		<AssemblyName>Streamy.TextStream</AssemblyName>
+		<RootNamespace>Streamy</RootNamespace>
+		<PackageIcon>Logo.png</PackageIcon>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Include="..\GlobalSuppressions.cs" Link="GlobalSuppressions.cs" />
+		<None Include="Logo.png" Pack="true" Visible="true" PackagePath="\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="System.Memory" Version="4.5.4" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Streamy.Stream\Streamy.Stream.csproj" />
+	  <ProjectReference Include="..\Stringier.Encodings\Stringier.Encodings.csproj" />
+	</ItemGroup>
+
+</Project>

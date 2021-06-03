@@ -4,68 +4,68 @@ using System.Traits;
 namespace Streamy {
 	public partial class Stream : IPeek<Byte>, IPeek<SByte>, IPeek<Int16>, IPeek<UInt16>, IPeek<Int32>, IPeek<UInt32>, IPeek<Int64>, IPeek<UInt64>, IPeek<Single>, IPeek<Double>, IPeek<Decimal>, IPeek<Boolean> {
 		/// <inheritdoc/>
-		public void Peek(out Byte element) => ReadBuffer.Peek(out element);
+		public virtual void Peek(out Byte element) => ReadBuffer.Peek(out element);
 
 		/// <inheritdoc/>
 		[CLSCompliant(false)]
-		public void Peek(out SByte element) {
+		public virtual void Peek(out SByte element) {
 			ReadBuffer.Peek(out Byte elmnt);
 			element = (SByte)elmnt;
 		}
 
 		/// <inheritdoc/>
-		public void Peek(out Int16 element) {
+		public virtual void Peek(out Int16 element) {
 			ReadBuffer.Peek(out Byte[] buffer, sizeof(Int16));
 			element = BitConverter.ToInt16(buffer, 0);
 		}
 
 		/// <inheritdoc/>
 		[CLSCompliant(false)]
-		public void Peek(out UInt16 element) {
+		public virtual void Peek(out UInt16 element) {
 			ReadBuffer.Peek(out Byte[] buffer, sizeof(UInt16));
 			element = BitConverter.ToUInt16(buffer, 0);
 		}
 
 		/// <inheritdoc/>
-		public void Peek(out Int32 element) {
+		public virtual void Peek(out Int32 element) {
 			ReadBuffer.Peek(out Byte[] buffer, sizeof(Int32));
 			element = BitConverter.ToInt32(buffer, 0);
 		}
 
 		/// <inheritdoc/>
 		[CLSCompliant(false)]
-		public void Peek(out UInt32 element) {
+		public virtual void Peek(out UInt32 element) {
 			ReadBuffer.Peek(out Byte[] buffer, sizeof(UInt32));
 			element = BitConverter.ToUInt32(buffer, 0);
 		}
 
 		/// <inheritdoc/>
-		public void Peek(out Int64 element) {
+		public virtual void Peek(out Int64 element) {
 			ReadBuffer.Peek(out Byte[] buffer, sizeof(Int64));
 			element = BitConverter.ToInt64(buffer, 0);
 		}
 
 		/// <inheritdoc/>
 		[CLSCompliant(false)]
-		public void Peek(out UInt64 element) {
+		public virtual void Peek(out UInt64 element) {
 			ReadBuffer.Peek(out Byte[] buffer, sizeof(UInt64));
 			element = BitConverter.ToUInt64(buffer, 0);
 		}
 
 		/// <inheritdoc/>
-		public void Peek(out Single element) {
+		public virtual void Peek(out Single element) {
 			ReadBuffer.Peek(out Byte[] buffer, sizeof(Single));
 			element = BitConverter.ToSingle(buffer, 0);
 		}
 
 		/// <inheritdoc/>
-		public void Peek(out Double element) {
+		public virtual void Peek(out Double element) {
 			ReadBuffer.Peek(out Byte[] buffer, sizeof(Double));
 			element = BitConverter.ToDouble(buffer, 0);
 		}
 
 		/// <inheritdoc/>
-		public void Peek(out Decimal element) {
+		public virtual void Peek(out Decimal element) {
 			ReadBuffer.Peek(out Byte[] buffer, sizeof(Decimal));
 			Int32 i = 0;
 			Int32 lo = BitConverter.ToInt32(buffer, i);
@@ -81,7 +81,7 @@ namespace Streamy {
 		}
 
 		/// <inheritdoc/>
-		public void Peek(out Boolean element) {
+		public virtual void Peek(out Boolean element) {
 			ReadBuffer.Peek(out Byte[] buffer, sizeof(Boolean));
 			element = BitConverter.ToBoolean(buffer, 0);
 		}

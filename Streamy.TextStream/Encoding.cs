@@ -1,4 +1,4 @@
-﻿namespace Stringier {
+﻿namespace Streamy {
 	/// <summary>
 	/// Represents the encoding of text.
 	/// </summary>

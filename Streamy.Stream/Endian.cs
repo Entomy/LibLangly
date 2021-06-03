@@ -7,6 +7,11 @@
 	/// </remarks>
 	public enum Endian {
 		/// <summary>
+		/// Unkown endianess.
+		/// </summary>
+		Unknown = 0,
+
+		/// <summary>
 		/// Most significant byte first.
 		/// </summary>
 		Big,

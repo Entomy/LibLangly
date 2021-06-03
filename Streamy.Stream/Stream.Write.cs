@@ -7,47 +7,47 @@ namespace Streamy {
 		public Boolean Writable => ((WriteBuffer as IWrite<Byte>)?.Writable ?? false) || Base.Writable;
 
 		/// <inheritdoc/>
-		public void Add(Byte element) => Write(element);
+		public virtual void Add(Byte element) => Write(element);
 
 		/// <inheritdoc/>
 		[CLSCompliant(false)]
-		public void Add(SByte element) => Write(element);
+		public virtual void Add(SByte element) => Write(element);
 
 		/// <inheritdoc/>
-		public void Add(Int16 element) => Write(element);
-
-		/// <inheritdoc/>
-		[CLSCompliant(false)]
-		public void Add(UInt16 element) => Write(element);
-
-		/// <inheritdoc/>
-		public void Add(Int32 element) => Write(element);
+		public virtual void Add(Int16 element) => Write(element);
 
 		/// <inheritdoc/>
 		[CLSCompliant(false)]
-		public void Add(UInt32 element) => Write(element);
+		public virtual void Add(UInt16 element) => Write(element);
 
 		/// <inheritdoc/>
-		public void Add(Int64 element) => Write(element);
+		public virtual void Add(Int32 element) => Write(element);
 
 		/// <inheritdoc/>
 		[CLSCompliant(false)]
-		public void Add(UInt64 element) => Write(element);
+		public virtual void Add(UInt32 element) => Write(element);
 
 		/// <inheritdoc/>
-		public void Add(Single element) => Write(element);
+		public virtual void Add(Int64 element) => Write(element);
 
 		/// <inheritdoc/>
-		public void Add(Double element) => Write(element);
+		[CLSCompliant(false)]
+		public virtual void Add(UInt64 element) => Write(element);
+
+		/// <inheritdoc/>
+		public virtual void Add(Single element) => Write(element);
+
+		/// <inheritdoc/>
+		public virtual void Add(Double element) => Write(element);
 
 		/// <inheritdoc/>
 		public void Add(Decimal element) => Write(element);
 
 		/// <inheritdoc/>
-		public void Add(Boolean element) => Write(element);
+		public virtual void Add(Boolean element) => Write(element);
 
 		/// <inheritdoc/>
-		public void Write(Byte element) {
+		public virtual void Write(Byte element) {
 			if (WriteBuffer is not null) {
 				WriteBuffer.Write(element);
 			} else {
@@ -57,7 +57,7 @@ namespace Streamy {
 
 		/// <inheritdoc/>
 		[CLSCompliant(false)]
-		public void Write(SByte element) {
+		public virtual void Write(SByte element) {
 			if (WriteBuffer is not null) {
 				WriteBuffer.Write((Byte)element);
 			} else {
@@ -66,7 +66,7 @@ namespace Streamy {
 		}
 
 		/// <inheritdoc/>
-		public void Write(Int16 element) {
+		public virtual void Write(Int16 element) {
 			if (WriteBuffer is not null) {
 				foreach (Byte @byte in BitConverter.GetBytes(element)) {
 					WriteBuffer.Write(@byte);
@@ -80,7 +80,7 @@ namespace Streamy {
 
 		/// <inheritdoc/>
 		[CLSCompliant(false)]
-		public void Write(UInt16 element) {
+		public virtual void Write(UInt16 element) {
 			if (WriteBuffer is not null) {
 				foreach (Byte @byte in BitConverter.GetBytes(element)) {
 					WriteBuffer.Write(@byte);
@@ -93,34 +93,7 @@ namespace Streamy {
 		}
 
 		/// <inheritdoc/>
-		public void Write(Int32 element) {
-			if (WriteBuffer is not null) {
-				foreach (Byte @byte in BitConverter.GetBytes(element)) {
-					WriteBuffer.Write(@byte);
-				}
-			} else {
-				foreach (Byte @byte in BitConverter.GetBytes(element)) {
-					Base.Write(@byte);
-				}
-			}
-		}
-
-		/// <inheritdoc/>
-		[CLSCompliant(false)]
-		public void Write(UInt32 element) {
-			if (WriteBuffer is not null) {
-				foreach (Byte @byte in BitConverter.GetBytes(element)) {
-					WriteBuffer.Write(@byte);
-				}
-			} else {
-				foreach (Byte @byte in BitConverter.GetBytes(element)) {
-					Base.Write(@byte);
-				}
-			}
-		}
-
-		/// <inheritdoc/>
-		public void Write(Int64 element) {
+		public virtual void Write(Int32 element) {
 			if (WriteBuffer is not null) {
 				foreach (Byte @byte in BitConverter.GetBytes(element)) {
 					WriteBuffer.Write(@byte);
@@ -134,7 +107,7 @@ namespace Streamy {
 
 		/// <inheritdoc/>
 		[CLSCompliant(false)]
-		public void Write(UInt64 element) {
+		public virtual void Write(UInt32 element) {
 			if (WriteBuffer is not null) {
 				foreach (Byte @byte in BitConverter.GetBytes(element)) {
 					WriteBuffer.Write(@byte);
@@ -147,7 +120,7 @@ namespace Streamy {
 		}
 
 		/// <inheritdoc/>
-		public void Write(Single element) {
+		public virtual void Write(Int64 element) {
 			if (WriteBuffer is not null) {
 				foreach (Byte @byte in BitConverter.GetBytes(element)) {
 					WriteBuffer.Write(@byte);
@@ -160,7 +133,8 @@ namespace Streamy {
 		}
 
 		/// <inheritdoc/>
-		public void Write(Double element) {
+		[CLSCompliant(false)]
+		public virtual void Write(UInt64 element) {
 			if (WriteBuffer is not null) {
 				foreach (Byte @byte in BitConverter.GetBytes(element)) {
 					WriteBuffer.Write(@byte);
@@ -173,10 +147,36 @@ namespace Streamy {
 		}
 
 		/// <inheritdoc/>
-		public void Write(Decimal element) => throw new NotImplementedException();
+		public virtual void Write(Single element) {
+			if (WriteBuffer is not null) {
+				foreach (Byte @byte in BitConverter.GetBytes(element)) {
+					WriteBuffer.Write(@byte);
+				}
+			} else {
+				foreach (Byte @byte in BitConverter.GetBytes(element)) {
+					Base.Write(@byte);
+				}
+			}
+		}
 
 		/// <inheritdoc/>
-		public void Write(Boolean element) {
+		public virtual void Write(Double element) {
+			if (WriteBuffer is not null) {
+				foreach (Byte @byte in BitConverter.GetBytes(element)) {
+					WriteBuffer.Write(@byte);
+				}
+			} else {
+				foreach (Byte @byte in BitConverter.GetBytes(element)) {
+					Base.Write(@byte);
+				}
+			}
+		}
+
+		/// <inheritdoc/>
+		public virtual void Write(Decimal element) => throw new NotImplementedException();
+
+		/// <inheritdoc/>
+		public virtual void Write(Boolean element) {
 			if (WriteBuffer is not null) {
 				foreach (Byte @byte in BitConverter.GetBytes(element)) {
 					WriteBuffer.Write(@byte);

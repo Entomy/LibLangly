@@ -81,9 +81,12 @@
     <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
     <div class="level1"><span class="xref">Stream</span></div>
       <div class="level2"><a class="xref" href="Numbersome.Random.html">Random</a></div>
+      <div class="level2"><a class="xref" href="Streamy.CharStream.html">CharStream</a></div>
   </div>
   <div classs="implements">
     <h5>Implements</h5>
+    <div><a class="xref" href="System.Traits.IControlled.html">IControlled</a></div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
     <div><a class="xref" href="System.Traits.IPeek-1.html">IPeek</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>&gt;</div>
     <div><a class="xref" href="System.Traits.IPeek-1.html">IPeek</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.sbyte">SByte</a>&gt;</div>
     <div><a class="xref" href="System.Traits.IPeek-1.html">IPeek</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int16">Int16</a>&gt;</div>
@@ -159,13 +162,13 @@
   <h6><strong>Assembly</strong>: Streamy.Stream.dll</h6>
   <h5 id="Streamy_Stream_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Stream : IPeek&lt;byte&gt;, IPeek&lt;sbyte&gt;, IPeek&lt;short&gt;, IPeek&lt;ushort&gt;, IPeek&lt;int&gt;, IPeek&lt;uint&gt;, IPeek&lt;long&gt;, IPeek&lt;ulong&gt;, IPeek&lt;float&gt;, IPeek&lt;double&gt;, IPeek&lt;decimal&gt;, IPeek&lt;bool&gt;, IRead&lt;byte&gt;, IRead&lt;sbyte&gt;, IRead&lt;short&gt;, IRead&lt;ushort&gt;, IRead&lt;int&gt;, IRead&lt;uint&gt;, IRead&lt;long&gt;, IRead&lt;ulong&gt;, IRead&lt;float&gt;, IRead&lt;double&gt;, IRead&lt;decimal&gt;, IRead&lt;bool&gt;, ISeek, IWrite&lt;byte&gt;, IAdd&lt;byte&gt;, IWrite&lt;sbyte&gt;, IAdd&lt;sbyte&gt;, IWrite&lt;short&gt;, IAdd&lt;short&gt;, IWrite&lt;ushort&gt;, IAdd&lt;ushort&gt;, IWrite&lt;int&gt;, IAdd&lt;int&gt;, IWrite&lt;uint&gt;, IAdd&lt;uint&gt;, IWrite&lt;long&gt;, IAdd&lt;long&gt;, IWrite&lt;ulong&gt;, IAdd&lt;ulong&gt;, IWrite&lt;float&gt;, IAdd&lt;float&gt;, IWrite&lt;double&gt;, IAdd&lt;double&gt;, IWrite&lt;decimal&gt;, IAdd&lt;decimal&gt;, IWrite&lt;bool&gt;, IAdd&lt;bool&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public class Stream : IControlled, IDisposable, IPeek&lt;byte&gt;, IPeek&lt;sbyte&gt;, IPeek&lt;short&gt;, IPeek&lt;ushort&gt;, IPeek&lt;int&gt;, IPeek&lt;uint&gt;, IPeek&lt;long&gt;, IPeek&lt;ulong&gt;, IPeek&lt;float&gt;, IPeek&lt;double&gt;, IPeek&lt;decimal&gt;, IPeek&lt;bool&gt;, IRead&lt;byte&gt;, IRead&lt;sbyte&gt;, IRead&lt;short&gt;, IRead&lt;ushort&gt;, IRead&lt;int&gt;, IRead&lt;uint&gt;, IRead&lt;long&gt;, IRead&lt;ulong&gt;, IRead&lt;float&gt;, IRead&lt;double&gt;, IRead&lt;decimal&gt;, IRead&lt;bool&gt;, ISeek, IWrite&lt;byte&gt;, IAdd&lt;byte&gt;, IWrite&lt;sbyte&gt;, IAdd&lt;sbyte&gt;, IWrite&lt;short&gt;, IAdd&lt;short&gt;, IWrite&lt;ushort&gt;, IAdd&lt;ushort&gt;, IWrite&lt;int&gt;, IAdd&lt;int&gt;, IWrite&lt;uint&gt;, IAdd&lt;uint&gt;, IWrite&lt;long&gt;, IAdd&lt;long&gt;, IWrite&lt;ulong&gt;, IAdd&lt;ulong&gt;, IWrite&lt;float&gt;, IAdd&lt;float&gt;, IWrite&lt;double&gt;, IAdd&lt;double&gt;, IWrite&lt;decimal&gt;, IAdd&lt;decimal&gt;, IWrite&lt;bool&gt;, IAdd&lt;bool&gt;</code></pre>
   </div>
   <h5 id="Streamy_Stream_remarks"><strong>Remarks</strong></h5>
   <div class="markdown level0 remarks"><p>This fundamentally operates differently from <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.io.stream">Stream</a>. While it is designed fairly similar in API, the way it operates, even at that level, differs greatly. There&apos;s three major components that make up the byte stream:</p>
 <p>This <a class="xref" href="Streamy.Stream.html">Stream</a> type provides orchestration logic around the other components, tying everything together. Through those, it provides a low level, byte-centric, API.</p>
 <p>The actual datastream is provided by <a class="xref" href="Streamy.Bases.StreamBase.html">StreamBase</a>, which implements the basic streaming API for the daatastream. Supporting additional stream types can be done by extended <a class="xref" href="Streamy.Bases.StreamBase.html">StreamBase</a>, which greatly simplifies adding new datastreams.</p>
-<p>Buffers are provided by implementers of <a class="xref" href="Collectathon.Buffers.IReadBuffer.html">IReadBuffer</a> and <a class="xref" href="Collectathon.Buffers.IWriteBuffer.html">IWriteBuffer</a>, which buffer the basic streaming from <a class="xref" href="Streamy.Bases.StreamBase.html">StreamBase</a>, enabling features like <a class="xref" href="System.Traits.IPeek-1.html#System_Traits_IPeek_1_Peek__0__">Peek(out TElement)</a> and limited <a class="xref" href="System.Traits.ISeek.html">ISeek</a> behavior even when the underlying stream is not capable.</p>
+<p>Buffers are provided by implementers of <a class="xref" href="Streamy.Buffers.IReadBuffer.html">IReadBuffer</a> and <a class="xref" href="Streamy.Buffers.IWriteBuffer.html">IWriteBuffer</a>, which buffer the basic streaming from <a class="xref" href="Streamy.Bases.StreamBase.html">StreamBase</a>, enabling features like <a class="xref" href="System.Traits.IPeek-1.html#System_Traits_IPeek_1_Peek__0__">Peek(out TElement)</a> and limited <a class="xref" href="System.Traits.ISeek.html">ISeek</a> behavior even when the underlying stream is not capable.</p>
 <p>Additional orchestration can be added by deriving from this type. However, most applications will not need to do this. Support for additional types should be done through the serialization mechanism.</p>
 </div>
   <h3 id="constructors">Constructors
@@ -175,17 +178,16 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream__ctor_Streamy_Bases_StreamBase_.md&amp;value=---%0Auid%3A%20Streamy.Stream.%23ctor(Streamy.Bases.StreamBase)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L76">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L87">View Source</a>
   </span>
   <a id="Streamy_Stream__ctor_" data-uid="Streamy.Stream.#ctor*"></a>
   <h4 id="Streamy_Stream__ctor_Streamy_Bases_StreamBase_" data-uid="Streamy.Stream.#ctor(Streamy.Bases.StreamBase)">Stream(StreamBase)</h4>
-  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Streamy.Stream.html">Stream</a> with the given <code data-dev-comment-type="paramref" class="paramref">base</code>.</p>
+  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Streamy.Stream.html">Stream</a> with the given <code data-dev-comment-type="paramref" class="paramref">base</code>, the minimum necessary buffers, and the system endianness.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
-protected Stream(StreamBase base)</code></pre>
+    <pre><code class="lang-csharp hljs">protected Stream(StreamBase base)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -205,22 +207,25 @@ protected Stream(StreamBase base)</code></pre>
       </tr>
     </tbody>
   </table>
+  <h5 id="Streamy_Stream__ctor_Streamy_Bases_StreamBase__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This should only be used for derived classes that are <span class="xref">sealed</span> and will not need a buffer in most situations. In practice, this is rarely the case, and you should chain with <a class="xref" href="Streamy.Stream.html#Streamy_Stream__ctor_Streamy_Bases_StreamBase_Streamy_Buffers_IReadBuffer_Streamy_Buffers_IWriteBuffer_Streamy_Endian_">Stream(StreamBase, IReadBuffer, IWriteBuffer, Endian)</a> instead.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream__ctor_Streamy_Bases_StreamBase_Collectathon_Buffers_IReadBuffer_Collectathon_Buffers_IWriteBuffer_.md&amp;value=---%0Auid%3A%20Streamy.Stream.%23ctor(Streamy.Bases.StreamBase%2CCollectathon.Buffers.IReadBuffer%2CCollectathon.Buffers.IWriteBuffer)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream__ctor_Streamy_Bases_StreamBase_Streamy_Buffers_IReadBuffer_Streamy_Buffers_IWriteBuffer_Streamy_Endian_.md&amp;value=---%0Auid%3A%20Streamy.Stream.%23ctor(Streamy.Bases.StreamBase%2CStreamy.Buffers.IReadBuffer%2CStreamy.Buffers.IWriteBuffer%2CStreamy.Endian)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L89">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L99">View Source</a>
   </span>
   <a id="Streamy_Stream__ctor_" data-uid="Streamy.Stream.#ctor*"></a>
-  <h4 id="Streamy_Stream__ctor_Streamy_Bases_StreamBase_Collectathon_Buffers_IReadBuffer_Collectathon_Buffers_IWriteBuffer_" data-uid="Streamy.Stream.#ctor(Streamy.Bases.StreamBase,Collectathon.Buffers.IReadBuffer,Collectathon.Buffers.IWriteBuffer)">Stream(StreamBase, IReadBuffer, IWriteBuffer)</h4>
-  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Streamy.Stream.html">Stream</a> with the given <code data-dev-comment-type="paramref" class="paramref">base</code>, <code data-dev-comment-type="paramref" class="paramref">readBuffer</code>, and <code data-dev-comment-type="paramref" class="paramref">writeBuffer</code>.</p>
+  <h4 id="Streamy_Stream__ctor_Streamy_Bases_StreamBase_Streamy_Buffers_IReadBuffer_Streamy_Buffers_IWriteBuffer_Streamy_Endian_" data-uid="Streamy.Stream.#ctor(Streamy.Bases.StreamBase,Streamy.Buffers.IReadBuffer,Streamy.Buffers.IWriteBuffer,Streamy.Endian)">Stream(StreamBase, IReadBuffer, IWriteBuffer, Endian)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Streamy.Stream.html">Stream</a> with the given <code data-dev-comment-type="paramref" class="paramref">base</code>, <code data-dev-comment-type="paramref" class="paramref">readBuffer</code>, <code data-dev-comment-type="paramref" class="paramref">writeBuffer</code>, and <code data-dev-comment-type="paramref" class="paramref">endianness</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
-protected Stream(StreamBase base, IReadBuffer readBuffer, IWriteBuffer writeBuffer)</code></pre>
+protected Stream(StreamBase base, IReadBuffer readBuffer, IWriteBuffer writeBuffer, Endian endianness)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -239,25 +244,34 @@ protected Stream(StreamBase base, IReadBuffer readBuffer, IWriteBuffer writeBuff
 </td>
       </tr>
       <tr>
-        <td><a class="xref" href="Collectathon.Buffers.IReadBuffer.html">IReadBuffer</a></td>
+        <td><a class="xref" href="Streamy.Buffers.IReadBuffer.html">IReadBuffer</a></td>
         <td><span class="parametername">readBuffer</span></td>
         <td><p>The buffer used for reads.</p>
 </td>
       </tr>
       <tr>
-        <td><a class="xref" href="Collectathon.Buffers.IWriteBuffer.html">IWriteBuffer</a></td>
+        <td><a class="xref" href="Streamy.Buffers.IWriteBuffer.html">IWriteBuffer</a></td>
         <td><span class="parametername">writeBuffer</span></td>
         <td><p>The buffer used for writes.</p>
 </td>
       </tr>
+      <tr>
+        <td><a class="xref" href="Streamy.Endian.html">Endian</a></td>
+        <td><span class="parametername">endianness</span></td>
+        <td><p>The byte ordering of this stream.</p>
+</td>
+      </tr>
     </tbody>
   </table>
+  <h5 id="Streamy_Stream__ctor_Streamy_Bases_StreamBase_Streamy_Buffers_IReadBuffer_Streamy_Buffers_IWriteBuffer_Streamy_Endian__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This is the intended constructor for chaining with derived classes.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream__ctor_System_Byte___.md&amp;value=---%0Auid%3A%20Streamy.Stream.%23ctor(System.Byte%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L46">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L48">View Source</a>
   </span>
   <a id="Streamy_Stream__ctor_" data-uid="Streamy.Stream.#ctor*"></a>
   <h4 id="Streamy_Stream__ctor_System_Byte___" data-uid="Streamy.Stream.#ctor(System.Byte[])">Stream(Byte[])</h4>
@@ -291,7 +305,7 @@ protected Stream(StreamBase base, IReadBuffer readBuffer, IWriteBuffer writeBuff
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream__ctor_System_Memory_System_Byte__.md&amp;value=---%0Auid%3A%20Streamy.Stream.%23ctor(System.Memory%7BSystem.Byte%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L56">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L60">View Source</a>
   </span>
   <a id="Streamy_Stream__ctor_" data-uid="Streamy.Stream.#ctor*"></a>
   <h4 id="Streamy_Stream__ctor_System_Memory_System_Byte__" data-uid="Streamy.Stream.#ctor(System.Memory{System.Byte})">Stream(Memory&lt;Byte&gt;)</h4>
@@ -325,7 +339,7 @@ protected Stream(StreamBase base, IReadBuffer readBuffer, IWriteBuffer writeBuff
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream__ctor_System_ReadOnlyMemory_System_Byte__.md&amp;value=---%0Auid%3A%20Streamy.Stream.%23ctor(System.ReadOnlyMemory%7BSystem.Byte%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L66">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L72">View Source</a>
   </span>
   <a id="Streamy_Stream__ctor_" data-uid="Streamy.Stream.#ctor*"></a>
   <h4 id="Streamy_Stream__ctor_System_ReadOnlyMemory_System_Byte__" data-uid="Streamy.Stream.#ctor(System.ReadOnlyMemory{System.Byte})">Stream(ReadOnlyMemory&lt;Byte&gt;)</h4>
@@ -361,7 +375,7 @@ protected Stream(StreamBase base, IReadBuffer readBuffer, IWriteBuffer writeBuff
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_Base.md&amp;value=---%0Auid%3A%20Streamy.Stream.Base%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L23">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L25">View Source</a>
   </span>
   <h4 id="Streamy_Stream_Base" data-uid="Streamy.Stream.Base">Base</h4>
   <div class="markdown level1 summary"><p>The <a class="xref" href="Streamy.Bases.StreamBase.html">StreamBase</a> of this <a class="xref" href="Streamy.Stream.html">Stream</a>.</p>
@@ -391,7 +405,7 @@ protected Stream(StreamBase base, IReadBuffer readBuffer, IWriteBuffer writeBuff
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_ReadBuffer.md&amp;value=---%0Auid%3A%20Streamy.Stream.ReadBuffer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L30">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L32">View Source</a>
   </span>
   <h4 id="Streamy_Stream_ReadBuffer" data-uid="Streamy.Stream.ReadBuffer">ReadBuffer</h4>
   <div class="markdown level1 summary"><p>The buffer used for reads.</p>
@@ -412,7 +426,7 @@ protected readonly IReadBuffer ReadBuffer</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Collectathon.Buffers.IReadBuffer.html">IReadBuffer</a></td>
+        <td><a class="xref" href="Streamy.Buffers.IReadBuffer.html">IReadBuffer</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -422,7 +436,7 @@ protected readonly IReadBuffer ReadBuffer</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_WriteBuffer.md&amp;value=---%0Auid%3A%20Streamy.Stream.WriteBuffer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L40">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L42">View Source</a>
   </span>
   <h4 id="Streamy_Stream_WriteBuffer" data-uid="Streamy.Stream.WriteBuffer">WriteBuffer</h4>
   <div class="markdown level1 summary"><p>The buffer used for writes.</p>
@@ -443,7 +457,7 @@ protected readonly IWriteBuffer WriteBuffer</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Collectathon.Buffers.IWriteBuffer.html">IWriteBuffer</a></td>
+        <td><a class="xref" href="Streamy.Buffers.IWriteBuffer.html">IWriteBuffer</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -455,18 +469,81 @@ protected readonly IWriteBuffer WriteBuffer</code></pre>
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_Position.md&amp;value=---%0Auid%3A%20Streamy.Stream.Position%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_Disposed.md&amp;value=---%0Auid%3A%20Streamy.Stream.Disposed%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.Seek.cs/#L10">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L121">View Source</a>
   </span>
-  <a id="Streamy_Stream_Position_" data-uid="Streamy.Stream.Position*"></a>
-  <h4 id="Streamy_Stream_Position" data-uid="Streamy.Stream.Position">Position</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="Streamy_Stream_Disposed_" data-uid="Streamy.Stream.Disposed*"></a>
+  <h4 id="Streamy_Stream_Disposed" data-uid="Streamy.Stream.Disposed">Disposed</h4>
+  <div class="markdown level1 summary"><p>Used to detect and handle redundant calls to <span class="xref">Streamy.Stream.Dispose(System.Boolean)</span>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual nint Position { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">protected bool Disposed { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_Endianness.md&amp;value=---%0Auid%3A%20Streamy.Stream.Endianness%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L129">View Source</a>
+  </span>
+  <a id="Streamy_Stream_Endianness_" data-uid="Streamy.Stream.Endianness*"></a>
+  <h4 id="Streamy_Stream_Endianness" data-uid="Streamy.Stream.Endianness">Endianness</h4>
+  <div class="markdown level1 summary"><p>The byte ordering of this stream.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Endian Endianness { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Streamy.Endian.html">Endian</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_Position.md&amp;value=---%0Auid%3A%20Streamy.Stream.Position%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.Seek.cs/#L12">View Source</a>
+  </span>
+  <a id="Streamy_Stream_Position_" data-uid="Streamy.Stream.Position*"></a>
+  <h4 id="Streamy_Stream_Position" data-uid="Streamy.Stream.Position">Position</h4>
+  <div class="markdown level1 summary"><p>The position within the datastream, counted by a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a> offset from the start.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public nint Position { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -601,7 +678,7 @@ protected readonly IWriteBuffer WriteBuffer</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Add(bool element)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void Add(bool element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -637,7 +714,7 @@ protected readonly IWriteBuffer WriteBuffer</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Add(byte element)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void Add(byte element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -709,7 +786,7 @@ protected readonly IWriteBuffer WriteBuffer</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Add(double element)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void Add(double element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -745,7 +822,7 @@ protected readonly IWriteBuffer WriteBuffer</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Add(short element)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void Add(short element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -781,7 +858,7 @@ protected readonly IWriteBuffer WriteBuffer</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Add(int element)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void Add(int element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -817,7 +894,7 @@ protected readonly IWriteBuffer WriteBuffer</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Add(long element)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void Add(long element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -854,7 +931,7 @@ protected readonly IWriteBuffer WriteBuffer</code></pre>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
-public void Add(sbyte element)</code></pre>
+public virtual void Add(sbyte element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -890,7 +967,7 @@ public void Add(sbyte element)</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Add(float element)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void Add(float element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -927,7 +1004,7 @@ public void Add(sbyte element)</code></pre>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
-public void Add(ushort element)</code></pre>
+public virtual void Add(ushort element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -964,7 +1041,7 @@ public void Add(ushort element)</code></pre>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
-public void Add(uint element)</code></pre>
+public virtual void Add(uint element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1001,7 +1078,7 @@ public void Add(uint element)</code></pre>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
-public void Add(ulong element)</code></pre>
+public virtual void Add(ulong element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1025,6 +1102,69 @@ public void Add(ulong element)</code></pre>
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_DisposeManaged.md&amp;value=---%0Auid%3A%20Streamy.Stream.DisposeManaged%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L174">View Source</a>
+  </span>
+  <a id="Streamy_Stream_DisposeManaged_" data-uid="Streamy.Stream.DisposeManaged*"></a>
+  <h4 id="Streamy_Stream_DisposeManaged" data-uid="Streamy.Stream.DisposeManaged">DisposeManaged()</h4>
+  <div class="markdown level1 summary"><p>Dispose of managed resources. Part of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable.dispose#System_IDisposable_Dispose">Dispose()</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void DisposeManaged()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_DisposeUnmanaged.md&amp;value=---%0Auid%3A%20Streamy.Stream.DisposeUnmanaged%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L179">View Source</a>
+  </span>
+  <a id="Streamy_Stream_DisposeUnmanaged_" data-uid="Streamy.Stream.DisposeUnmanaged*"></a>
+  <h4 id="Streamy_Stream_DisposeUnmanaged" data-uid="Streamy.Stream.DisposeUnmanaged">DisposeUnmanaged()</h4>
+  <div class="markdown level1 summary"><p>Dispose of unmanaged resources. Part of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable.dispose#System_IDisposable_Dispose">Dispose()</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void DisposeUnmanaged()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_Finalize.md&amp;value=---%0Auid%3A%20Streamy.Stream.Finalize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L109">View Source</a>
+  </span>
+  <a id="Streamy_Stream_Finalize_" data-uid="Streamy.Stream.Finalize*"></a>
+  <h4 id="Streamy_Stream_Finalize" data-uid="Streamy.Stream.Finalize">Finalize()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void Finalize()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_NullLargeFields.md&amp;value=---%0Auid%3A%20Streamy.Stream.NullLargeFields%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L184">View Source</a>
+  </span>
+  <a id="Streamy_Stream_NullLargeFields_" data-uid="Streamy.Stream.NullLargeFields*"></a>
+  <h4 id="Streamy_Stream_NullLargeFields" data-uid="Streamy.Stream.NullLargeFields">NullLargeFields()</h4>
+  <div class="markdown level1 summary"><p>Null out large fields. Part of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable.dispose#System_IDisposable_Dispose">Dispose()</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void NullLargeFields()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_Peek_System_Boolean__.md&amp;value=---%0Auid%3A%20Streamy.Stream.Peek(System.Boolean%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -1037,7 +1177,7 @@ public void Add(ulong element)</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Peek(out bool element)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void Peek(out bool element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1070,7 +1210,7 @@ public void Add(ulong element)</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Peek(out byte element)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void Peek(out byte element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1103,7 +1243,7 @@ public void Add(ulong element)</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Peek(out decimal element)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void Peek(out decimal element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1136,7 +1276,7 @@ public void Add(ulong element)</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Peek(out double element)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void Peek(out double element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1169,7 +1309,7 @@ public void Add(ulong element)</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Peek(out short element)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void Peek(out short element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1202,7 +1342,7 @@ public void Add(ulong element)</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Peek(out int element)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void Peek(out int element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1235,7 +1375,7 @@ public void Add(ulong element)</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Peek(out long element)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void Peek(out long element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1269,7 +1409,7 @@ public void Add(ulong element)</code></pre>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
-public void Peek(out sbyte element)</code></pre>
+public virtual void Peek(out sbyte element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1302,7 +1442,7 @@ public void Peek(out sbyte element)</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Peek(out float element)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void Peek(out float element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1336,7 +1476,7 @@ public void Peek(out sbyte element)</code></pre>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
-public void Peek(out ushort element)</code></pre>
+public virtual void Peek(out ushort element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1370,7 +1510,7 @@ public void Peek(out ushort element)</code></pre>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
-public void Peek(out uint element)</code></pre>
+public virtual void Peek(out uint element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1404,7 +1544,7 @@ public void Peek(out uint element)</code></pre>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
-public void Peek(out ulong element)</code></pre>
+public virtual void Peek(out ulong element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1437,7 +1577,7 @@ public void Peek(out ulong element)</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Read(out bool element)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void Read(out bool element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1470,7 +1610,7 @@ public void Peek(out ulong element)</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Read(out byte element)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void Read(out byte element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1503,7 +1643,7 @@ public void Peek(out ulong element)</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Read(out decimal element)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void Read(out decimal element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1536,7 +1676,7 @@ public void Peek(out ulong element)</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Read(out double element)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void Read(out double element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1569,7 +1709,7 @@ public void Peek(out ulong element)</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Read(out short element)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void Read(out short element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1602,7 +1742,7 @@ public void Peek(out ulong element)</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Read(out int element)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void Read(out int element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1635,7 +1775,7 @@ public void Peek(out ulong element)</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Read(out long element)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void Read(out long element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1669,7 +1809,7 @@ public void Peek(out ulong element)</code></pre>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
-public void Read(out sbyte element)</code></pre>
+public virtual void Read(out sbyte element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1702,7 +1842,7 @@ public void Read(out sbyte element)</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Read(out float element)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void Read(out float element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1736,7 +1876,7 @@ public void Read(out sbyte element)</code></pre>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
-public void Read(out ushort element)</code></pre>
+public virtual void Read(out ushort element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1770,7 +1910,7 @@ public void Read(out ushort element)</code></pre>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
-public void Read(out uint element)</code></pre>
+public virtual void Read(out uint element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1804,7 +1944,7 @@ public void Read(out uint element)</code></pre>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
-public void Read(out ulong element)</code></pre>
+public virtual void Read(out ulong element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1828,15 +1968,16 @@ public void Read(out ulong element)</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_Seek_nint_.md&amp;value=---%0Auid%3A%20Streamy.Stream.Seek(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.Seek.cs/#L13">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.Seek.cs/#L21">View Source</a>
   </span>
   <a id="Streamy_Stream_Seek_" data-uid="Streamy.Stream.Seek*"></a>
   <h4 id="Streamy_Stream_Seek_nint_" data-uid="Streamy.Stream.Seek(nint)">Seek(nint)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Seeks to the <code data-dev-comment-type="paramref" class="paramref">offset</code>, counted by <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void Seek(nint offset)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Seek(nint offset)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1851,7 +1992,8 @@ public void Read(out ulong element)</code></pre>
       <tr>
         <td><span class="xref">nint</span></td>
         <td><span class="parametername">offset</span></td>
-        <td></td>
+        <td><p>The amount of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a> to seek.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1860,7 +2002,7 @@ public void Read(out ulong element)</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_ToString.md&amp;value=---%0Auid%3A%20Streamy.Stream.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L115">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L168">View Source</a>
   </span>
   <a id="Streamy_Stream_ToString_" data-uid="Streamy.Stream.ToString*"></a>
   <h4 id="Streamy_Stream_ToString" data-uid="Streamy.Stream.ToString">ToString()</h4>
@@ -1892,7 +2034,7 @@ public void Read(out ulong element)</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_Write_System_Boolean_.md&amp;value=---%0Auid%3A%20Streamy.Stream.Write(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.Write.cs/#L177">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.Write.cs/#L179">View Source</a>
   </span>
   <a id="Streamy_Stream_Write_" data-uid="Streamy.Stream.Write*"></a>
   <h4 id="Streamy_Stream_Write_System_Boolean_" data-uid="Streamy.Stream.Write(System.Boolean)">Write(Boolean)</h4>
@@ -1901,7 +2043,7 @@ public void Read(out ulong element)</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Write(bool element)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void Write(bool element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1934,7 +2076,7 @@ public void Read(out ulong element)</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Write(byte element)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void Write(byte element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1958,7 +2100,7 @@ public void Read(out ulong element)</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_Write_System_Decimal_.md&amp;value=---%0Auid%3A%20Streamy.Stream.Write(System.Decimal)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.Write.cs/#L170">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.Write.cs/#L176">View Source</a>
   </span>
   <a id="Streamy_Stream_Write_" data-uid="Streamy.Stream.Write*"></a>
   <h4 id="Streamy_Stream_Write_System_Decimal_" data-uid="Streamy.Stream.Write(System.Decimal)">Write(Decimal)</h4>
@@ -1967,7 +2109,7 @@ public void Read(out ulong element)</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Write(decimal element)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void Write(decimal element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1991,7 +2133,7 @@ public void Read(out ulong element)</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_Write_System_Double_.md&amp;value=---%0Auid%3A%20Streamy.Stream.Write(System.Double)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.Write.cs/#L157">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.Write.cs/#L163">View Source</a>
   </span>
   <a id="Streamy_Stream_Write_" data-uid="Streamy.Stream.Write*"></a>
   <h4 id="Streamy_Stream_Write_System_Double_" data-uid="Streamy.Stream.Write(System.Double)">Write(Double)</h4>
@@ -2000,7 +2142,7 @@ public void Read(out ulong element)</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Write(double element)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void Write(double element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2024,7 +2166,7 @@ public void Read(out ulong element)</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_Write_System_Int16_.md&amp;value=---%0Auid%3A%20Streamy.Stream.Write(System.Int16)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.Write.cs/#L63">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.Write.cs/#L69">View Source</a>
   </span>
   <a id="Streamy_Stream_Write_" data-uid="Streamy.Stream.Write*"></a>
   <h4 id="Streamy_Stream_Write_System_Int16_" data-uid="Streamy.Stream.Write(System.Int16)">Write(Int16)</h4>
@@ -2033,7 +2175,7 @@ public void Read(out ulong element)</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Write(short element)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void Write(short element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2057,7 +2199,7 @@ public void Read(out ulong element)</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_Write_System_Int32_.md&amp;value=---%0Auid%3A%20Streamy.Stream.Write(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.Write.cs/#L90">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.Write.cs/#L96">View Source</a>
   </span>
   <a id="Streamy_Stream_Write_" data-uid="Streamy.Stream.Write*"></a>
   <h4 id="Streamy_Stream_Write_System_Int32_" data-uid="Streamy.Stream.Write(System.Int32)">Write(Int32)</h4>
@@ -2066,7 +2208,7 @@ public void Read(out ulong element)</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Write(int element)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void Write(int element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2090,7 +2232,7 @@ public void Read(out ulong element)</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_Write_System_Int64_.md&amp;value=---%0Auid%3A%20Streamy.Stream.Write(System.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.Write.cs/#L117">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.Write.cs/#L123">View Source</a>
   </span>
   <a id="Streamy_Stream_Write_" data-uid="Streamy.Stream.Write*"></a>
   <h4 id="Streamy_Stream_Write_System_Int64_" data-uid="Streamy.Stream.Write(System.Int64)">Write(Int64)</h4>
@@ -2099,7 +2241,7 @@ public void Read(out ulong element)</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Write(long element)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void Write(long element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2133,7 +2275,7 @@ public void Read(out ulong element)</code></pre>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
-public void Write(sbyte element)</code></pre>
+public virtual void Write(sbyte element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2157,7 +2299,7 @@ public void Write(sbyte element)</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_Write_System_Single_.md&amp;value=---%0Auid%3A%20Streamy.Stream.Write(System.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.Write.cs/#L144">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.Write.cs/#L150">View Source</a>
   </span>
   <a id="Streamy_Stream_Write_" data-uid="Streamy.Stream.Write*"></a>
   <h4 id="Streamy_Stream_Write_System_Single_" data-uid="Streamy.Stream.Write(System.Single)">Write(Single)</h4>
@@ -2166,7 +2308,7 @@ public void Write(sbyte element)</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Write(float element)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void Write(float element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2190,7 +2332,7 @@ public void Write(sbyte element)</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_Write_System_UInt16_.md&amp;value=---%0Auid%3A%20Streamy.Stream.Write(System.UInt16)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.Write.cs/#L76">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.Write.cs/#L82">View Source</a>
   </span>
   <a id="Streamy_Stream_Write_" data-uid="Streamy.Stream.Write*"></a>
   <h4 id="Streamy_Stream_Write_System_UInt16_" data-uid="Streamy.Stream.Write(System.UInt16)">Write(UInt16)</h4>
@@ -2200,7 +2342,7 @@ public void Write(sbyte element)</code></pre>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
-public void Write(ushort element)</code></pre>
+public virtual void Write(ushort element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2224,7 +2366,7 @@ public void Write(ushort element)</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_Write_System_UInt32_.md&amp;value=---%0Auid%3A%20Streamy.Stream.Write(System.UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.Write.cs/#L103">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.Write.cs/#L109">View Source</a>
   </span>
   <a id="Streamy_Stream_Write_" data-uid="Streamy.Stream.Write*"></a>
   <h4 id="Streamy_Stream_Write_System_UInt32_" data-uid="Streamy.Stream.Write(System.UInt32)">Write(UInt32)</h4>
@@ -2234,7 +2376,7 @@ public void Write(ushort element)</code></pre>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
-public void Write(uint element)</code></pre>
+public virtual void Write(uint element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2258,7 +2400,7 @@ public void Write(uint element)</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_Write_System_UInt64_.md&amp;value=---%0Auid%3A%20Streamy.Stream.Write(System.UInt64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.Write.cs/#L130">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.Write.cs/#L136">View Source</a>
   </span>
   <a id="Streamy_Stream_Write_" data-uid="Streamy.Stream.Write*"></a>
   <h4 id="Streamy_Stream_Write_System_UInt64_" data-uid="Streamy.Stream.Write(System.UInt64)">Write(UInt64)</h4>
@@ -2268,7 +2410,7 @@ public void Write(uint element)</code></pre>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
-public void Write(ulong element)</code></pre>
+public virtual void Write(ulong element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2294,7 +2436,7 @@ public void Write(ulong element)</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_op_Implicit_System_Byte____Streamy_Stream.md&amp;value=---%0Auid%3A%20Streamy.Stream.op_Implicit(System.Byte%5B%5D)~Streamy.Stream%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L100">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L135">View Source</a>
   </span>
   <a id="Streamy_Stream_op_Implicit_" data-uid="Streamy.Stream.op_Implicit*"></a>
   <h4 id="Streamy_Stream_op_Implicit_System_Byte____Streamy_Stream" data-uid="Streamy.Stream.op_Implicit(System.Byte[])~Streamy.Stream">Implicit(Byte[] to Stream)</h4>
@@ -2343,7 +2485,7 @@ public void Write(ulong element)</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_op_Implicit_System_Memory_System_Byte___Streamy_Stream.md&amp;value=---%0Auid%3A%20Streamy.Stream.op_Implicit(System.Memory%7BSystem.Byte%7D)~Streamy.Stream%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L106">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L141">View Source</a>
   </span>
   <a id="Streamy_Stream_op_Implicit_" data-uid="Streamy.Stream.op_Implicit*"></a>
   <h4 id="Streamy_Stream_op_Implicit_System_Memory_System_Byte___Streamy_Stream" data-uid="Streamy.Stream.op_Implicit(System.Memory{System.Byte})~Streamy.Stream">Implicit(Memory&lt;Byte&gt; to Stream)</h4>
@@ -2392,7 +2534,7 @@ public void Write(ulong element)</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_op_Implicit_System_ReadOnlyMemory_System_Byte___Streamy_Stream.md&amp;value=---%0Auid%3A%20Streamy.Stream.op_Implicit(System.ReadOnlyMemory%7BSystem.Byte%7D)~Streamy.Stream%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L112">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L147">View Source</a>
   </span>
   <a id="Streamy_Stream_op_Implicit_" data-uid="Streamy.Stream.op_Implicit*"></a>
   <h4 id="Streamy_Stream_op_Implicit_System_ReadOnlyMemory_System_Byte___Streamy_Stream" data-uid="Streamy.Stream.op_Implicit(System.ReadOnlyMemory{System.Byte})~Streamy.Stream">Implicit(ReadOnlyMemory&lt;Byte&gt; to Stream)</h4>
@@ -2436,7 +2578,143 @@ public void Write(ulong element)</code></pre>
       </tr>
     </tbody>
   </table>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_System_IDisposable_Dispose.md&amp;value=---%0Auid%3A%20Streamy.Stream.System%23IDisposable%23Dispose%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L153">View Source</a>
+  </span>
+  <a id="Streamy_Stream_System_IDisposable_Dispose_" data-uid="Streamy.Stream.System#IDisposable#Dispose*"></a>
+  <h4 id="Streamy_Stream_System_IDisposable_Dispose" data-uid="Streamy.Stream.System#IDisposable#Dispose">IDisposable.Dispose()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IDisposable.Dispose()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_System_Traits_IControlled_Dispose_System_Boolean_.md&amp;value=---%0Auid%3A%20Streamy.Stream.System%23Traits%23IControlled%23Dispose(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L150">View Source</a>
+  </span>
+  <a id="Streamy_Stream_System_Traits_IControlled_Dispose_" data-uid="Streamy.Stream.System#Traits#IControlled#Dispose*"></a>
+  <h4 id="Streamy_Stream_System_Traits_IControlled_Dispose_System_Boolean_" data-uid="Streamy.Stream.System#Traits#IControlled#Dispose(System.Boolean)">IControlled.Dispose(Boolean)</h4>
+  <div class="markdown level1 summary"><p>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IControlled.Dispose(bool disposing)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">disposing</span></td>
+        <td><p>Whether managed resources should be disposed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_System_Traits_IControlled_Disposed.md&amp;value=---%0Auid%3A%20Streamy.Stream.System%23Traits%23IControlled%23Disposed%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L113">View Source</a>
+  </span>
+  <a id="Streamy_Stream_System_Traits_IControlled_Disposed_" data-uid="Streamy.Stream.System#Traits#IControlled#Disposed*"></a>
+  <h4 id="Streamy_Stream_System_Traits_IControlled_Disposed" data-uid="Streamy.Stream.System#Traits#IControlled#Disposed">IControlled.Disposed</h4>
+  <div class="markdown level1 summary"><p>Used to detect and handle redundant calls.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IControlled.Disposed { get; set; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_System_Traits_IControlled_DisposeManaged.md&amp;value=---%0Auid%3A%20Streamy.Stream.System%23Traits%23IControlled%23DisposeManaged%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L159">View Source</a>
+  </span>
+  <a id="Streamy_Stream_System_Traits_IControlled_DisposeManaged_" data-uid="Streamy.Stream.System#Traits#IControlled#DisposeManaged*"></a>
+  <h4 id="Streamy_Stream_System_Traits_IControlled_DisposeManaged" data-uid="Streamy.Stream.System#Traits#IControlled#DisposeManaged">IControlled.DisposeManaged()</h4>
+  <div class="markdown level1 summary"><p>Dispose of managed resources. Part of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable.dispose#System_IDisposable_Dispose">Dispose()</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IControlled.DisposeManaged()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_System_Traits_IControlled_DisposeUnmanaged.md&amp;value=---%0Auid%3A%20Streamy.Stream.System%23Traits%23IControlled%23DisposeUnmanaged%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L162">View Source</a>
+  </span>
+  <a id="Streamy_Stream_System_Traits_IControlled_DisposeUnmanaged_" data-uid="Streamy.Stream.System#Traits#IControlled#DisposeUnmanaged*"></a>
+  <h4 id="Streamy_Stream_System_Traits_IControlled_DisposeUnmanaged" data-uid="Streamy.Stream.System#Traits#IControlled#DisposeUnmanaged">IControlled.DisposeUnmanaged()</h4>
+  <div class="markdown level1 summary"><p>Dispose of unmanaged resources. Part of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable.dispose#System_IDisposable_Dispose">Dispose()</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IControlled.DisposeUnmanaged()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_System_Traits_IControlled_NullLargeFields.md&amp;value=---%0Auid%3A%20Streamy.Stream.System%23Traits%23IControlled%23NullLargeFields%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L165">View Source</a>
+  </span>
+  <a id="Streamy_Stream_System_Traits_IControlled_NullLargeFields_" data-uid="Streamy.Stream.System#Traits#IControlled#NullLargeFields*"></a>
+  <h4 id="Streamy_Stream_System_Traits_IControlled_NullLargeFields" data-uid="Streamy.Stream.System#Traits#IControlled#NullLargeFields">IControlled.NullLargeFields()</h4>
+  <div class="markdown level1 summary"><p>Null out large fields. Part of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable.dispose#System_IDisposable_Dispose">Dispose()</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IControlled.NullLargeFields()</code></pre>
+  </div>
   <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="System.Traits.IControlled.html">IControlled</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable">System.IDisposable</a>
+  </div>
   <div>
       <a class="xref" href="System.Traits.IPeek-1.html">IPeek&lt;TElement&gt;</a>
   </div>

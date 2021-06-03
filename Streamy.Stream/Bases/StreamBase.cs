@@ -26,6 +26,7 @@ namespace Streamy.Bases {
 
 		/// <inheritdoc/>
 		public abstract Boolean Writable { get; }
+
 		/// <inheritdoc/>
 		public void Add([AllowNull] Byte element) => Write(element);
 

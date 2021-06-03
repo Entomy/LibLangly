@@ -2,7 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Traits;
 
-namespace Collectathon.Buffers {
+namespace Streamy.Buffers {
 	/// <summary>
 	/// Indicates the type can be used as a buffer for <see cref="IRead{TElement}"/> operations.
 	/// </summary>
