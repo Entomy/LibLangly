@@ -8,99 +8,62 @@ namespace Streamy {
 		public Boolean Writable => Sink.Writable;
 
 		/// <inheritdoc/>
-		public virtual void Add(Byte element) => Write(element);
+		public void Add(Byte element) => Write(element);
 
 		/// <inheritdoc/>
 		[CLSCompliant(false)]
-		public virtual void Add(SByte element) => Write(element);
+		public void Add(SByte element) => Write(element);
 
 		/// <inheritdoc/>
-		public virtual void Add(Int16 element) => Write(element);
-
-		/// <inheritdoc/>
-		[CLSCompliant(false)]
-		public virtual void Add(UInt16 element) => Write(element);
-
-		/// <inheritdoc/>
-		public virtual void Add(Int32 element) => Write(element);
+		public void Add(Int16 element) => Write(element);
 
 		/// <inheritdoc/>
 		[CLSCompliant(false)]
-		public virtual void Add(UInt32 element) => Write(element);
+		public void Add(UInt16 element) => Write(element);
 
 		/// <inheritdoc/>
-		public virtual void Add(Int64 element) => Write(element);
+		public void Add(Int32 element) => Write(element);
 
 		/// <inheritdoc/>
 		[CLSCompliant(false)]
-		public virtual void Add(UInt64 element) => Write(element);
+		public void Add(UInt32 element) => Write(element);
 
 		/// <inheritdoc/>
-		public virtual void Add(Single element) => Write(element);
+		public void Add(Int64 element) => Write(element);
 
 		/// <inheritdoc/>
-		public virtual void Add(Double element) => Write(element);
+		[CLSCompliant(false)]
+		public void Add(UInt64 element) => Write(element);
+
+		/// <inheritdoc/>
+		public void Add(Single element) => Write(element);
+
+		/// <inheritdoc/>
+		public void Add(Double element) => Write(element);
 
 		/// <inheritdoc/>
 		public void Add(Decimal element) => Write(element);
 
 		/// <inheritdoc/>
-		public virtual void Add(Boolean element) => Write(element);
+		public void Add(Boolean element) => Write(element);
 
 		/// <inheritdoc/>
-		public virtual void Write(Byte element) => Sink.Write(element);
-
-		/// <inheritdoc/>
-		[CLSCompliant(false)]
-		public virtual void Write(SByte element) => Sink.Write((Byte)(element));
-
-		/// <inheritdoc/>
-		public virtual void Write(Int16 element) {
-			switch (Endianness) {
-			case Endian.Big:
-				Sink.Write((Byte)(element >> 8));
-				Sink.Write((Byte)element);
-				break;
-			case Endian.Little:
-				Sink.Write((Byte)element);
-				Sink.Write((Byte)(element >> 8));
-				break;
-			default:
-				throw new NotSupportedException($"Not sure how to write '{Endianness}' endian streams.");
-			}
-		}
+		public void Write(Byte element) => Sink.Write(element);
 
 		/// <inheritdoc/>
 		[CLSCompliant(false)]
-		public virtual void Write(UInt16 element) {
-			switch (Endianness) {
-			case Endian.Big:
-				Sink.Write((Byte)(element >> 8));
-				Sink.Write((Byte)element);
-				break;
-			case Endian.Little:
-				Sink.Write((Byte)element);
-				Sink.Write((Byte)(element >> 8));
-				break;
-			default:
-				throw new NotSupportedException($"Not sure how to write '{Endianness}' endian streams.");
-			}
-		}
+		public void Write(SByte element) => Sink.Write((Byte)(element));
 
 		/// <inheritdoc/>
-		public virtual void Write(Int32 element) {
+		public void Write(Int16 element) {
 			switch (Endianness) {
 			case Endian.Big:
-				Sink.Write((Byte)(element >> 24));
-				Sink.Write((Byte)(element >> 16));
 				Sink.Write((Byte)(element >> 8));
 				Sink.Write((Byte)element);
 				break;
 			case Endian.Little:
 				Sink.Write((Byte)element);
 				Sink.Write((Byte)(element >> 8));
-				Sink.Write((Byte)(element >> 16));
-				Sink.Write((Byte)(element >> 24));
 				break;
 			default:
 				throw new NotSupportedException($"Not sure how to write '{Endianness}' endian streams.");
@@ -109,7 +72,23 @@ namespace Streamy {
 
 		/// <inheritdoc/>
 		[CLSCompliant(false)]
-		public virtual void Write(UInt32 element) {
+		public void Write(UInt16 element) {
+			switch (Endianness) {
+			case Endian.Big:
+				Sink.Write((Byte)(element >> 8));
+				Sink.Write((Byte)element);
+				break;
+			case Endian.Little:
+				Sink.Write((Byte)element);
+				Sink.Write((Byte)(element >> 8));
+				break;
+			default:
+				throw new NotSupportedException($"Not sure how to write '{Endianness}' endian streams.");
+			}
+		}
+
+		/// <inheritdoc/>
+		public void Write(Int32 element) {
 			switch (Endianness) {
 			case Endian.Big:
 				Sink.Write((Byte)(element >> 24));
@@ -129,7 +108,28 @@ namespace Streamy {
 		}
 
 		/// <inheritdoc/>
-		public virtual void Write(Int64 element) {
+		[CLSCompliant(false)]
+		public void Write(UInt32 element) {
+			switch (Endianness) {
+			case Endian.Big:
+				Sink.Write((Byte)(element >> 24));
+				Sink.Write((Byte)(element >> 16));
+				Sink.Write((Byte)(element >> 8));
+				Sink.Write((Byte)element);
+				break;
+			case Endian.Little:
+				Sink.Write((Byte)element);
+				Sink.Write((Byte)(element >> 8));
+				Sink.Write((Byte)(element >> 16));
+				Sink.Write((Byte)(element >> 24));
+				break;
+			default:
+				throw new NotSupportedException($"Not sure how to write '{Endianness}' endian streams.");
+			}
+		}
+
+		/// <inheritdoc/>
+		public void Write(Int64 element) {
 			switch (Endianness) {
 			case Endian.Big:
 				Sink.Write((Byte)(element >> 56));
@@ -158,7 +158,7 @@ namespace Streamy {
 
 		/// <inheritdoc/>
 		[CLSCompliant(false)]
-		public virtual void Write(UInt64 element) {
+		public void Write(UInt64 element) {
 			switch (Endianness) {
 			case Endian.Big:
 				Sink.Write((Byte)(element >> 56));
@@ -186,21 +186,21 @@ namespace Streamy {
 		}
 
 		/// <inheritdoc/>
-		public virtual void Write(Single element) {
+		public void Write(Single element) {
 			ref Int32 elmt = ref Unsafe.As<Single, Int32>(ref element);
 			Write(elmt);
 		}
 
 		/// <inheritdoc/>
-		public virtual void Write(Double element) {
+		public void Write(Double element) {
 			ref Int64 elmt = ref Unsafe.As<Double, Int64>(ref element);
 			Write(elmt);
 		}
 
 		/// <inheritdoc/>
-		public virtual void Write(Decimal element) => throw new NotImplementedException();
+		public void Write(Decimal element) => throw new NotImplementedException();
 
 		/// <inheritdoc/>
-		public virtual void Write(Boolean element) => Sink.Write((Byte)(element ? 1 : 0));
+		public void Write(Boolean element) => Sink.Write((Byte)(element ? 1 : 0));
 	}
 }

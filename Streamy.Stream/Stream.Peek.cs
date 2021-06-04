@@ -5,17 +5,17 @@ using System.Traits;
 namespace Streamy {
 	public partial class Stream : IPeek<Byte>, IPeek<SByte>, IPeek<Int16>, IPeek<UInt16>, IPeek<Int32>, IPeek<UInt32>, IPeek<Int64>, IPeek<UInt64>, IPeek<Single>, IPeek<Double>, IPeek<Decimal>, IPeek<Boolean> {
 		/// <inheritdoc/>
-		public virtual void Peek(out Byte element) => Source.Peek(out element);
+		public void Peek(out Byte element) => Source.Peek(out element);
 
 		/// <inheritdoc/>
 		[CLSCompliant(false)]
-		public virtual void Peek(out SByte element) {
+		public void Peek(out SByte element) {
 			Source.Peek(out Byte elmnt);
 			element = (SByte)elmnt;
 		}
 
 		/// <inheritdoc/>
-		public virtual void Peek(out Int16 element) {
+		public void Peek(out Int16 element) {
 			Source.Peek(out Byte[] buffer, sizeof(Int16));
 			switch (Endianness) {
 			case Endian.Big:
@@ -33,7 +33,7 @@ namespace Streamy {
 
 		/// <inheritdoc/>
 		[CLSCompliant(false)]
-		public virtual void Peek(out UInt16 element) {
+		public void Peek(out UInt16 element) {
 			Source.Peek(out Byte[] buffer, sizeof(UInt16));
 			switch (Endianness) {
 			case Endian.Big:
@@ -50,7 +50,7 @@ namespace Streamy {
 		}
 
 		/// <inheritdoc/>
-		public virtual void Peek(out Int32 element) {
+		public void Peek(out Int32 element) {
 			Source.Peek(out Byte[] buffer, sizeof(Int32));
 			switch (Endianness) {
 			case Endian.Big:
@@ -72,7 +72,7 @@ namespace Streamy {
 
 		/// <inheritdoc/>
 		[CLSCompliant(false)]
-		public virtual void Peek(out UInt32 element) {
+		public void Peek(out UInt32 element) {
 			Source.Peek(out Byte[] buffer, sizeof(UInt32));
 			switch (Endianness) {
 			case Endian.Big:
@@ -93,7 +93,7 @@ namespace Streamy {
 		}
 
 		/// <inheritdoc/>
-		public virtual void Peek(out Int64 element) {
+		public void Peek(out Int64 element) {
 			Source.Peek(out Byte[] buffer, sizeof(Int64));
 			switch (Endianness) {
 			case Endian.Big:
@@ -123,7 +123,7 @@ namespace Streamy {
 
 		/// <inheritdoc/>
 		[CLSCompliant(false)]
-		public virtual void Peek(out UInt64 element) {
+		public void Peek(out UInt64 element) {
 			Source.Peek(out Byte[] buffer, sizeof(UInt64));
 			switch (Endianness) {
 			case Endian.Big:
@@ -152,19 +152,19 @@ namespace Streamy {
 		}
 
 		/// <inheritdoc/>
-		public virtual void Peek(out Single element) {
+		public void Peek(out Single element) {
 			Peek(out Int32 elmt);
 			element = Unsafe.As<Int32, Single>(ref elmt);
 		}
 
 		/// <inheritdoc/>
-		public virtual void Peek(out Double element) {
+		public void Peek(out Double element) {
 			Peek(out Int64 elmt);
 			element = Unsafe.As<Int64, Double>(ref elmt);
 		}
 
 		/// <inheritdoc/>
-		public virtual void Peek(out Decimal element) {
+		public void Peek(out Decimal element) {
 			Source.Peek(out Byte[] buffer, sizeof(Decimal));
 			Int32 i = 0;
 			Int32 lo = BitConverter.ToInt32(buffer, i);
@@ -180,7 +180,7 @@ namespace Streamy {
 		}
 
 		/// <inheritdoc/>
-		public virtual void Peek(out Boolean element) {
+		public void Peek(out Boolean element) {
 			Source.Peek(out Byte elmt);
 			element = elmt > 0;
 		}

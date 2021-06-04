@@ -5,11 +5,11 @@ using Xunit;
 namespace Langly {
 	public class CharStream_Tests {
 		[Theory]
-		[InlineData(new Char[] { 'a', 'b', 'c', 'd' }, new Char[] { 'a', 'b', 'c', 'd' })]
-		[InlineData(new Char[] { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h' }, new Char[] { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h' })]
-		public void RoundTrip_Char_Array(Char[] expected, Char[] values) {
-			Char[] actual = new Char[expected.Length];
-			using CharStream stream = new(actual);
+		[InlineData(new Byte[] { 0, 0x61, 0, 0x62, 0, 0x63, 0, 0x64 }, new Char[] { 'a', 'b', 'c', 'd' }, Encoding.UTF16BE)]
+		[InlineData(new Byte[] { 0x61, 0, 0x62, 0, 0x63, 0, 0x64, 0 }, new Char[] { 'a', 'b', 'c', 'd' }, Encoding.UTF16LE)]
+		public void RoundTrip_Char_Array(Byte[] expected, Char[] values, Encoding encoding) {
+			Byte[] actual = new Byte[expected.Length];
+			using CharStream stream = new(actual, encoding);
 			// Write the values to the stream
 			foreach (Char @char in values) {
 				stream.Write(@char);
