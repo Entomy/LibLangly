@@ -116,7 +116,7 @@ namespace Streamy {
 		/// <inheritdoc/>
 		public void Read(out Char element) {
 			Peek(out element);
-			Source.Clear();
+			Source.ShiftLeft(sizeof(Char));
 		}
 
 		/// <inheritdoc/>

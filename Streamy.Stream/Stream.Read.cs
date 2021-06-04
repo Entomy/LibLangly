@@ -19,52 +19,52 @@ namespace Streamy {
 		/// <inheritdoc/>
 		public void Read(out Int16 element) {
 			Peek(out element);
-			Source.Clear();
+			Source.ShiftLeft(sizeof(Int16));
 		}
 
 		/// <inheritdoc/>
 		[CLSCompliant(false)]
 		public void Read(out UInt16 element) {
 			Peek(out element);
-			Source.Clear();
+			Source.ShiftLeft(sizeof(UInt16));
 		}
 
 		/// <inheritdoc/>
 		public void Read(out Int32 element) {
 			Peek(out element);
-			Source.Clear();
+			Source.ShiftLeft(sizeof(Int32));
 		}
 
 		/// <inheritdoc/>
 		[CLSCompliant(false)]
 		public void Read(out UInt32 element) {
 			Peek(out element);
-			Source.Clear();
+			Source.ShiftLeft(sizeof(UInt32));
 		}
 
 		/// <inheritdoc/>
 		public void Read(out Int64 element) {
 			Peek(out element);
-			Source.Clear();
+			Source.ShiftLeft(sizeof(Int64));
 		}
 
 		/// <inheritdoc/>
 		[CLSCompliant(false)]
 		public void Read(out UInt64 element) {
 			Peek(out element);
-			Source.Clear();
+			Source.ShiftLeft(sizeof(UInt64));
 		}
 
 		/// <inheritdoc/>
 		public void Read(out Single element) {
 			Peek(out element);
-			Source.Clear();
+			Source.ShiftLeft(sizeof(Single));
 		}
 
 		/// <inheritdoc/>
 		public void Read(out Double element) {
 			Peek(out element);
-			Source.Clear();
+			Source.ShiftLeft(sizeof(Double));
 		}
 
 		/// <inheritdoc/>
@@ -80,7 +80,7 @@ namespace Streamy {
 		/// <inheritdoc/>
 		public void Read(out Boolean element) {
 			Peek(out element);
-			Source.Clear();
+			Source.ShiftLeft(sizeof(Boolean));
 		}
 	}
 }

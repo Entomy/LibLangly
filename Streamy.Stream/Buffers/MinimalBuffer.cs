@@ -115,6 +115,18 @@ namespace Streamy.Buffers {
 		}
 
 		/// <inheritdoc/>
+		public void ShiftLeft() => Count--;
+
+		/// <inheritdoc/>
+		public void ShiftLeft(nint amount) => Count -= amount;
+
+		/// <inheritdoc/>
+		public void ShiftRight() => Count++;
+
+		/// <inheritdoc/>
+		public void ShiftRight(nint amount) => Count += amount;
+
+		/// <inheritdoc/>
 		[return: NotNull]
 		public override String ToString() => Base.ToString();
 

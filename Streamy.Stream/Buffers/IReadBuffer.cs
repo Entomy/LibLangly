@@ -7,7 +7,7 @@ namespace Streamy.Buffers {
 	/// Indicates the type can be used as a buffer for <see cref="IRead{TElement}"/> operations.
 	/// </summary>
 	[CLSCompliant(false)]
-	public interface IReadBuffer : ICapacity, IClear, ICount, IControlled, IPeek<Byte>, ISeek {
+	public interface IReadBuffer : ICapacity, IClear, ICount, IControlled, IPeek<Byte>, ISeek, IShift {
 		/// <summary>
 		/// Peeks at the <paramref name="required"/> amount of <see cref="Byte"/>.
 		/// </summary>
