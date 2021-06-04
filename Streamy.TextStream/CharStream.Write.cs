@@ -10,21 +10,17 @@ namespace Streamy {
 
 		/// <inheritdoc/>
 		public virtual void Write([AllowNull] Char element) {
-			switch (WriteBuffer) {
+			switch (Sink) {
 			case IWriteCharBuffer wcb:
 				wcb.Write(element);
 				break;
 			case IWriteBuffer wb:
 				throw new NotImplementedException();
-			default:
-				switch (Base) {
-				case CharStreamBase csb:
-					csb.Write(element);
-					break;
-				default:
-					throw new NotImplementedException();
-				}
+			case CharStreamBase csb:
+				csb.Write(element);
 				break;
+			default:
+				throw new NotImplementedException();
 			}
 		}
 	}

@@ -178,7 +178,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream__ctor_Streamy_Bases_StreamBase_.md&amp;value=---%0Auid%3A%20Streamy.Stream.%23ctor(Streamy.Bases.StreamBase)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L87">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L108">View Source</a>
   </span>
   <a id="Streamy_Stream__ctor_" data-uid="Streamy.Stream.#ctor*"></a>
   <h4 id="Streamy_Stream__ctor_Streamy_Bases_StreamBase_" data-uid="Streamy.Stream.#ctor(Streamy.Bases.StreamBase)">Stream(StreamBase)</h4>
@@ -215,7 +215,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream__ctor_Streamy_Bases_StreamBase_Streamy_Buffers_IReadBuffer_Streamy_Buffers_IWriteBuffer_Streamy_Endian_.md&amp;value=---%0Auid%3A%20Streamy.Stream.%23ctor(Streamy.Bases.StreamBase%2CStreamy.Buffers.IReadBuffer%2CStreamy.Buffers.IWriteBuffer%2CStreamy.Endian)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L99">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L120">View Source</a>
   </span>
   <a id="Streamy_Stream__ctor_" data-uid="Streamy.Stream.#ctor*"></a>
   <h4 id="Streamy_Stream__ctor_Streamy_Bases_StreamBase_Streamy_Buffers_IReadBuffer_Streamy_Buffers_IWriteBuffer_Streamy_Endian_" data-uid="Streamy.Stream.#ctor(Streamy.Bases.StreamBase,Streamy.Buffers.IReadBuffer,Streamy.Buffers.IWriteBuffer,Streamy.Endian)">Stream(StreamBase, IReadBuffer, IWriteBuffer, Endian)</h4>
@@ -302,10 +302,50 @@ protected Stream(StreamBase base, IReadBuffer readBuffer, IWriteBuffer writeBuff
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream__ctor_System_Byte___Streamy_Endian_.md&amp;value=---%0Auid%3A%20Streamy.Stream.%23ctor(System.Byte%5B%5D%2CStreamy.Endian)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L55">View Source</a>
+  </span>
+  <a id="Streamy_Stream__ctor_" data-uid="Streamy.Stream.#ctor*"></a>
+  <h4 id="Streamy_Stream__ctor_System_Byte___Streamy_Endian_" data-uid="Streamy.Stream.#ctor(System.Byte[],Streamy.Endian)">Stream(Byte[], Endian)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Streamy.Stream.html">Stream</a> over the given <code data-dev-comment-type="paramref" class="paramref">array</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Stream(byte[] array, Endian endianness)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>[]</td>
+        <td><span class="parametername">array</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.array">Array</a> of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a> to stream.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Streamy.Endian.html">Endian</a></td>
+        <td><span class="parametername">endianness</span></td>
+        <td><p>The byte ordering of this stream.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream__ctor_System_Memory_System_Byte__.md&amp;value=---%0Auid%3A%20Streamy.Stream.%23ctor(System.Memory%7BSystem.Byte%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L60">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L67">View Source</a>
   </span>
   <a id="Streamy_Stream__ctor_" data-uid="Streamy.Stream.#ctor*"></a>
   <h4 id="Streamy_Stream__ctor_System_Memory_System_Byte__" data-uid="Streamy.Stream.#ctor(System.Memory{System.Byte})">Stream(Memory&lt;Byte&gt;)</h4>
@@ -336,10 +376,50 @@ protected Stream(StreamBase base, IReadBuffer readBuffer, IWriteBuffer writeBuff
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream__ctor_System_Memory_System_Byte__Streamy_Endian_.md&amp;value=---%0Auid%3A%20Streamy.Stream.%23ctor(System.Memory%7BSystem.Byte%7D%2CStreamy.Endian)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L74">View Source</a>
+  </span>
+  <a id="Streamy_Stream__ctor_" data-uid="Streamy.Stream.#ctor*"></a>
+  <h4 id="Streamy_Stream__ctor_System_Memory_System_Byte__Streamy_Endian_" data-uid="Streamy.Stream.#ctor(System.Memory{System.Byte},Streamy.Endian)">Stream(Memory&lt;Byte&gt;, Endian)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Streamy.Stream.html">Stream</a> over the given <code data-dev-comment-type="paramref" class="paramref">memory</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Stream(Memory&lt;byte&gt; memory, Endian endianness)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>&gt;</td>
+        <td><span class="parametername">memory</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory&lt;T&gt;</a> of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a> to stream.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Streamy.Endian.html">Endian</a></td>
+        <td><span class="parametername">endianness</span></td>
+        <td><p>The byte ordering of this stream.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream__ctor_System_ReadOnlyMemory_System_Byte__.md&amp;value=---%0Auid%3A%20Streamy.Stream.%23ctor(System.ReadOnlyMemory%7BSystem.Byte%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L72">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L86">View Source</a>
   </span>
   <a id="Streamy_Stream__ctor_" data-uid="Streamy.Stream.#ctor*"></a>
   <h4 id="Streamy_Stream__ctor_System_ReadOnlyMemory_System_Byte__" data-uid="Streamy.Stream.#ctor(System.ReadOnlyMemory{System.Byte})">Stream(ReadOnlyMemory&lt;Byte&gt;)</h4>
@@ -364,6 +444,46 @@ protected Stream(StreamBase base, IReadBuffer readBuffer, IWriteBuffer writeBuff
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>&gt;</td>
         <td><span class="parametername">memory</span></td>
         <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory&lt;T&gt;</a> of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a> to stream.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream__ctor_System_ReadOnlyMemory_System_Byte__Streamy_Endian_.md&amp;value=---%0Auid%3A%20Streamy.Stream.%23ctor(System.ReadOnlyMemory%7BSystem.Byte%7D%2CStreamy.Endian)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L93">View Source</a>
+  </span>
+  <a id="Streamy_Stream__ctor_" data-uid="Streamy.Stream.#ctor*"></a>
+  <h4 id="Streamy_Stream__ctor_System_ReadOnlyMemory_System_Byte__Streamy_Endian_" data-uid="Streamy.Stream.#ctor(System.ReadOnlyMemory{System.Byte},Streamy.Endian)">Stream(ReadOnlyMemory&lt;Byte&gt;, Endian)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Streamy.Stream.html">Stream</a> over the given <code data-dev-comment-type="paramref" class="paramref">memory</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Stream(ReadOnlyMemory&lt;byte&gt; memory, Endian endianness)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>&gt;</td>
+        <td><span class="parametername">memory</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory&lt;T&gt;</a> of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a> to stream.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Streamy.Endian.html">Endian</a></td>
+        <td><span class="parametername">endianness</span></td>
+        <td><p>The byte ordering of this stream.</p>
 </td>
       </tr>
     </tbody>
@@ -472,7 +592,7 @@ protected readonly IWriteBuffer WriteBuffer</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_Disposed.md&amp;value=---%0Auid%3A%20Streamy.Stream.Disposed%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L121">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L142">View Source</a>
   </span>
   <a id="Streamy_Stream_Disposed_" data-uid="Streamy.Stream.Disposed*"></a>
   <h4 id="Streamy_Stream_Disposed" data-uid="Streamy.Stream.Disposed">Disposed</h4>
@@ -503,7 +623,7 @@ protected readonly IWriteBuffer WriteBuffer</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_Endianness.md&amp;value=---%0Auid%3A%20Streamy.Stream.Endianness%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L129">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L150">View Source</a>
   </span>
   <a id="Streamy_Stream_Endianness_" data-uid="Streamy.Stream.Endianness*"></a>
   <h4 id="Streamy_Stream_Endianness" data-uid="Streamy.Stream.Endianness">Endianness</h4>
@@ -1105,7 +1225,7 @@ public virtual void Add(ulong element)</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_DisposeManaged.md&amp;value=---%0Auid%3A%20Streamy.Stream.DisposeManaged%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L174">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L177">View Source</a>
   </span>
   <a id="Streamy_Stream_DisposeManaged_" data-uid="Streamy.Stream.DisposeManaged*"></a>
   <h4 id="Streamy_Stream_DisposeManaged" data-uid="Streamy.Stream.DisposeManaged">DisposeManaged()</h4>
@@ -1121,7 +1241,7 @@ public virtual void Add(ulong element)</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_DisposeUnmanaged.md&amp;value=---%0Auid%3A%20Streamy.Stream.DisposeUnmanaged%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L179">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L182">View Source</a>
   </span>
   <a id="Streamy_Stream_DisposeUnmanaged_" data-uid="Streamy.Stream.DisposeUnmanaged*"></a>
   <h4 id="Streamy_Stream_DisposeUnmanaged" data-uid="Streamy.Stream.DisposeUnmanaged">DisposeUnmanaged()</h4>
@@ -1137,7 +1257,7 @@ public virtual void Add(ulong element)</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_Finalize.md&amp;value=---%0Auid%3A%20Streamy.Stream.Finalize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L109">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L130">View Source</a>
   </span>
   <a id="Streamy_Stream_Finalize_" data-uid="Streamy.Stream.Finalize*"></a>
   <h4 id="Streamy_Stream_Finalize" data-uid="Streamy.Stream.Finalize">Finalize()</h4>
@@ -1152,7 +1272,7 @@ public virtual void Add(ulong element)</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_NullLargeFields.md&amp;value=---%0Auid%3A%20Streamy.Stream.NullLargeFields%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L184">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L187">View Source</a>
   </span>
   <a id="Streamy_Stream_NullLargeFields_" data-uid="Streamy.Stream.NullLargeFields*"></a>
   <h4 id="Streamy_Stream_NullLargeFields" data-uid="Streamy.Stream.NullLargeFields">NullLargeFields()</h4>
@@ -2002,7 +2122,7 @@ public virtual void Read(out ulong element)</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_ToString.md&amp;value=---%0Auid%3A%20Streamy.Stream.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L168">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L171">View Source</a>
   </span>
   <a id="Streamy_Stream_ToString_" data-uid="Streamy.Stream.ToString*"></a>
   <h4 id="Streamy_Stream_ToString" data-uid="Streamy.Stream.ToString">ToString()</h4>
@@ -2034,7 +2154,7 @@ public virtual void Read(out ulong element)</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_Write_System_Boolean_.md&amp;value=---%0Auid%3A%20Streamy.Stream.Write(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.Write.cs/#L179">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.Write.cs/#L183">View Source</a>
   </span>
   <a id="Streamy_Stream_Write_" data-uid="Streamy.Stream.Write*"></a>
   <h4 id="Streamy_Stream_Write_System_Boolean_" data-uid="Streamy.Stream.Write(System.Boolean)">Write(Boolean)</h4>
@@ -2100,7 +2220,7 @@ public virtual void Read(out ulong element)</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_Write_System_Decimal_.md&amp;value=---%0Auid%3A%20Streamy.Stream.Write(System.Decimal)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.Write.cs/#L176">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.Write.cs/#L180">View Source</a>
   </span>
   <a id="Streamy_Stream_Write_" data-uid="Streamy.Stream.Write*"></a>
   <h4 id="Streamy_Stream_Write_System_Decimal_" data-uid="Streamy.Stream.Write(System.Decimal)">Write(Decimal)</h4>
@@ -2133,7 +2253,7 @@ public virtual void Read(out ulong element)</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_Write_System_Double_.md&amp;value=---%0Auid%3A%20Streamy.Stream.Write(System.Double)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.Write.cs/#L163">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.Write.cs/#L167">View Source</a>
   </span>
   <a id="Streamy_Stream_Write_" data-uid="Streamy.Stream.Write*"></a>
   <h4 id="Streamy_Stream_Write_System_Double_" data-uid="Streamy.Stream.Write(System.Double)">Write(Double)</h4>
@@ -2199,7 +2319,7 @@ public virtual void Read(out ulong element)</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_Write_System_Int32_.md&amp;value=---%0Auid%3A%20Streamy.Stream.Write(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.Write.cs/#L96">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.Write.cs/#L100">View Source</a>
   </span>
   <a id="Streamy_Stream_Write_" data-uid="Streamy.Stream.Write*"></a>
   <h4 id="Streamy_Stream_Write_System_Int32_" data-uid="Streamy.Stream.Write(System.Int32)">Write(Int32)</h4>
@@ -2232,7 +2352,7 @@ public virtual void Read(out ulong element)</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_Write_System_Int64_.md&amp;value=---%0Auid%3A%20Streamy.Stream.Write(System.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.Write.cs/#L123">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.Write.cs/#L127">View Source</a>
   </span>
   <a id="Streamy_Stream_Write_" data-uid="Streamy.Stream.Write*"></a>
   <h4 id="Streamy_Stream_Write_System_Int64_" data-uid="Streamy.Stream.Write(System.Int64)">Write(Int64)</h4>
@@ -2299,7 +2419,7 @@ public virtual void Write(sbyte element)</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_Write_System_Single_.md&amp;value=---%0Auid%3A%20Streamy.Stream.Write(System.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.Write.cs/#L150">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.Write.cs/#L154">View Source</a>
   </span>
   <a id="Streamy_Stream_Write_" data-uid="Streamy.Stream.Write*"></a>
   <h4 id="Streamy_Stream_Write_System_Single_" data-uid="Streamy.Stream.Write(System.Single)">Write(Single)</h4>
@@ -2332,7 +2452,7 @@ public virtual void Write(sbyte element)</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_Write_System_UInt16_.md&amp;value=---%0Auid%3A%20Streamy.Stream.Write(System.UInt16)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.Write.cs/#L82">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.Write.cs/#L86">View Source</a>
   </span>
   <a id="Streamy_Stream_Write_" data-uid="Streamy.Stream.Write*"></a>
   <h4 id="Streamy_Stream_Write_System_UInt16_" data-uid="Streamy.Stream.Write(System.UInt16)">Write(UInt16)</h4>
@@ -2366,7 +2486,7 @@ public virtual void Write(ushort element)</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_Write_System_UInt32_.md&amp;value=---%0Auid%3A%20Streamy.Stream.Write(System.UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.Write.cs/#L109">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.Write.cs/#L113">View Source</a>
   </span>
   <a id="Streamy_Stream_Write_" data-uid="Streamy.Stream.Write*"></a>
   <h4 id="Streamy_Stream_Write_System_UInt32_" data-uid="Streamy.Stream.Write(System.UInt32)">Write(UInt32)</h4>
@@ -2400,7 +2520,7 @@ public virtual void Write(uint element)</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_Write_System_UInt64_.md&amp;value=---%0Auid%3A%20Streamy.Stream.Write(System.UInt64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.Write.cs/#L136">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.Write.cs/#L140">View Source</a>
   </span>
   <a id="Streamy_Stream_Write_" data-uid="Streamy.Stream.Write*"></a>
   <h4 id="Streamy_Stream_Write_System_UInt64_" data-uid="Streamy.Stream.Write(System.UInt64)">Write(UInt64)</h4>
@@ -2429,155 +2549,6 @@ public virtual void Write(ulong element)</code></pre>
       </tr>
     </tbody>
   </table>
-  <h3 id="operators">Operators
-  </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_op_Implicit_System_Byte____Streamy_Stream.md&amp;value=---%0Auid%3A%20Streamy.Stream.op_Implicit(System.Byte%5B%5D)~Streamy.Stream%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L135">View Source</a>
-  </span>
-  <a id="Streamy_Stream_op_Implicit_" data-uid="Streamy.Stream.op_Implicit*"></a>
-  <h4 id="Streamy_Stream_op_Implicit_System_Byte____Streamy_Stream" data-uid="Streamy.Stream.op_Implicit(System.Byte[])~Streamy.Stream">Implicit(Byte[] to Stream)</h4>
-  <div class="markdown level1 summary"><p>Streams the <code data-dev-comment-type="paramref" class="paramref">array</code>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static implicit operator Stream(byte[] array)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>[]</td>
-        <td><span class="parametername">array</span></td>
-        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.array">Array</a> of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a> to stream.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Streamy.Stream.html">Stream</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_op_Implicit_System_Memory_System_Byte___Streamy_Stream.md&amp;value=---%0Auid%3A%20Streamy.Stream.op_Implicit(System.Memory%7BSystem.Byte%7D)~Streamy.Stream%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L141">View Source</a>
-  </span>
-  <a id="Streamy_Stream_op_Implicit_" data-uid="Streamy.Stream.op_Implicit*"></a>
-  <h4 id="Streamy_Stream_op_Implicit_System_Memory_System_Byte___Streamy_Stream" data-uid="Streamy.Stream.op_Implicit(System.Memory{System.Byte})~Streamy.Stream">Implicit(Memory&lt;Byte&gt; to Stream)</h4>
-  <div class="markdown level1 summary"><p>Streams the <code data-dev-comment-type="paramref" class="paramref">memory</code>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static implicit operator Stream(Memory&lt;byte&gt; memory)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>&gt;</td>
-        <td><span class="parametername">memory</span></td>
-        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory&lt;T&gt;</a> of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a> to stream.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Streamy.Stream.html">Stream</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_op_Implicit_System_ReadOnlyMemory_System_Byte___Streamy_Stream.md&amp;value=---%0Auid%3A%20Streamy.Stream.op_Implicit(System.ReadOnlyMemory%7BSystem.Byte%7D)~Streamy.Stream%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L147">View Source</a>
-  </span>
-  <a id="Streamy_Stream_op_Implicit_" data-uid="Streamy.Stream.op_Implicit*"></a>
-  <h4 id="Streamy_Stream_op_Implicit_System_ReadOnlyMemory_System_Byte___Streamy_Stream" data-uid="Streamy.Stream.op_Implicit(System.ReadOnlyMemory{System.Byte})~Streamy.Stream">Implicit(ReadOnlyMemory&lt;Byte&gt; to Stream)</h4>
-  <div class="markdown level1 summary"><p>Streams the <code data-dev-comment-type="paramref" class="paramref">memory</code>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static implicit operator Stream(ReadOnlyMemory&lt;byte&gt; memory)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>&gt;</td>
-        <td><span class="parametername">memory</span></td>
-        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory&lt;T&gt;</a> of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a> to stream.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Streamy.Stream.html">Stream</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="eii">Explicit Interface Implementations
   </h3>
   <span class="small pull-right mobile-hide">
@@ -2585,7 +2556,7 @@ public virtual void Write(ulong element)</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_System_IDisposable_Dispose.md&amp;value=---%0Auid%3A%20Streamy.Stream.System%23IDisposable%23Dispose%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L153">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L156">View Source</a>
   </span>
   <a id="Streamy_Stream_System_IDisposable_Dispose_" data-uid="Streamy.Stream.System#IDisposable#Dispose*"></a>
   <h4 id="Streamy_Stream_System_IDisposable_Dispose" data-uid="Streamy.Stream.System#IDisposable#Dispose">IDisposable.Dispose()</h4>
@@ -2600,7 +2571,7 @@ public virtual void Write(ulong element)</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_System_Traits_IControlled_Dispose_System_Boolean_.md&amp;value=---%0Auid%3A%20Streamy.Stream.System%23Traits%23IControlled%23Dispose(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L150">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L153">View Source</a>
   </span>
   <a id="Streamy_Stream_System_Traits_IControlled_Dispose_" data-uid="Streamy.Stream.System#Traits#IControlled#Dispose*"></a>
   <h4 id="Streamy_Stream_System_Traits_IControlled_Dispose_System_Boolean_" data-uid="Streamy.Stream.System#Traits#IControlled#Dispose(System.Boolean)">IControlled.Dispose(Boolean)</h4>
@@ -2634,7 +2605,7 @@ public virtual void Write(ulong element)</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_System_Traits_IControlled_Disposed.md&amp;value=---%0Auid%3A%20Streamy.Stream.System%23Traits%23IControlled%23Disposed%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L113">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L134">View Source</a>
   </span>
   <a id="Streamy_Stream_System_Traits_IControlled_Disposed_" data-uid="Streamy.Stream.System#Traits#IControlled#Disposed*"></a>
   <h4 id="Streamy_Stream_System_Traits_IControlled_Disposed" data-uid="Streamy.Stream.System#Traits#IControlled#Disposed">IControlled.Disposed</h4>
@@ -2665,7 +2636,7 @@ public virtual void Write(ulong element)</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_System_Traits_IControlled_DisposeManaged.md&amp;value=---%0Auid%3A%20Streamy.Stream.System%23Traits%23IControlled%23DisposeManaged%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L159">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L162">View Source</a>
   </span>
   <a id="Streamy_Stream_System_Traits_IControlled_DisposeManaged_" data-uid="Streamy.Stream.System#Traits#IControlled#DisposeManaged*"></a>
   <h4 id="Streamy_Stream_System_Traits_IControlled_DisposeManaged" data-uid="Streamy.Stream.System#Traits#IControlled#DisposeManaged">IControlled.DisposeManaged()</h4>
@@ -2681,7 +2652,7 @@ public virtual void Write(ulong element)</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_System_Traits_IControlled_DisposeUnmanaged.md&amp;value=---%0Auid%3A%20Streamy.Stream.System%23Traits%23IControlled%23DisposeUnmanaged%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L162">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L165">View Source</a>
   </span>
   <a id="Streamy_Stream_System_Traits_IControlled_DisposeUnmanaged_" data-uid="Streamy.Stream.System#Traits#IControlled#DisposeUnmanaged*"></a>
   <h4 id="Streamy_Stream_System_Traits_IControlled_DisposeUnmanaged" data-uid="Streamy.Stream.System#Traits#IControlled#DisposeUnmanaged">IControlled.DisposeUnmanaged()</h4>
@@ -2697,7 +2668,7 @@ public virtual void Write(ulong element)</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Stream_System_Traits_IControlled_NullLargeFields.md&amp;value=---%0Auid%3A%20Streamy.Stream.System%23Traits%23IControlled%23NullLargeFields%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L165">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Stream.cs/#L168">View Source</a>
   </span>
   <a id="Streamy_Stream_System_Traits_IControlled_NullLargeFields_" data-uid="Streamy.Stream.System#Traits#IControlled#NullLargeFields*"></a>
   <h4 id="Streamy_Stream_System_Traits_IControlled_NullLargeFields" data-uid="Streamy.Stream.System#Traits#IControlled#NullLargeFields">IControlled.NullLargeFields()</h4>

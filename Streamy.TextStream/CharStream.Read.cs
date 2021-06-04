@@ -5,7 +5,7 @@ namespace Streamy {
 	public partial class CharStream {
 		/// <inheritdoc/>
 		public virtual void Read(out Char element) {
-			switch (ReadBuffer) {
+			switch (Source) {
 			case IReadCharBuffer rcb:
 				rcb.Read(out element);
 				break;

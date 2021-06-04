@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Traits;
-using Streamy.Bases;
+using Streamy.Buffers;
 
 namespace Streamy {
 	public partial class CharStream {
@@ -15,17 +15,17 @@ namespace Streamy {
 		/// </summary>
 		new public nint Position {
 			get {
-				switch (Base) {
-				case CharStreamBase csb:
-					return csb.Position;
+				switch (Source) {
+				case IReadCharBuffer rcb:
+					return rcb.Position;
 				default:
 					throw new NotImplementedException();
 				}
 			}
 			set {
-				switch (Base) {
-				case CharStreamBase csb:
-					csb.Position = value;
+				switch (Source) {
+				case IReadCharBuffer rcb:
+					rcb.Position = value;
 					break;
 				default:
 					throw new NotImplementedException();
@@ -41,9 +41,10 @@ namespace Streamy {
 		/// </summary>
 		/// <param name="offset">The amount of <see cref="Char"/> to seek.</param>
 		new public void Seek(nint offset) {
-			switch (Base) {
-			case CharStreamBase csb:
-				throw new NotImplementedException();
+			switch (Source) {
+			case IReadCharBuffer rcb:
+				rcb.Seek(offset);
+				break;
 			default:
 				throw new NotImplementedException();
 			}

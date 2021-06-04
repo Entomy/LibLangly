@@ -30,7 +30,14 @@ namespace Streamy {
 		/// Initializes a new <see cref="CharStream"/> over the given <paramref name="array"/>.
 		/// </summary>
 		/// <param name="array">The <see cref="Array"/> of <see cref="Byte"/> to stream.</param>
-		public CharStream([AllowNull] Byte[] array) : base(array) => Encoding = BitConverter.IsLittleEndian ? Encoding.UTF16LE : Encoding.UTF16BE;
+		public CharStream([AllowNull] Byte[] array) : this(array, BitConverter.IsLittleEndian ? Encoding.UTF16LE : Encoding.UTF16BE) { }
+
+		/// <summary>
+		/// Initializes a new <see cref="CharStream"/> over the given <paramref name="array"/>.
+		/// </summary>
+		/// <param name="array">The <see cref="Array"/> of <see cref="Byte"/> to stream.</param>
+		/// <param name="encoding">The encoding of the <paramref name="array"/>.</param>
+		public CharStream([AllowNull] Byte[] array, Encoding encoding) : base(array, encoding.Endianness()) => Encoding = encoding;
 
 		/// <summary>
 		/// Initializes a new <see cref="CharStream"/> over the given <paramref name="memory"/>.
@@ -42,7 +49,14 @@ namespace Streamy {
 		/// Initializes a new <see cref="CharStream"/> over the given <paramref name="memory"/>.
 		/// </summary>
 		/// <param name="memory">The <see cref="Memory{T}"/> of <see cref="Byte"/> to stream.</param>
-		public CharStream(Memory<Byte> memory) : base(memory) => Encoding = BitConverter.IsLittleEndian ? Encoding.UTF16LE : Encoding.UTF16BE;
+		public CharStream(Memory<Byte> memory) : this(memory, BitConverter.IsLittleEndian ? Encoding.UTF16LE : Encoding.UTF16BE) { }
+
+		/// <summary>
+		/// Initializes a new <see cref="CharStream"/> over the given <paramref name="memory"/>.
+		/// </summary>
+		/// <param name="memory">The <see cref="Memory{T}"/> of <see cref="Byte"/> to stream.</param>
+		/// <param name="encoding">The encoding of the <paramref name="memory"/>.</param>
+		public CharStream(Memory<Byte> memory, Encoding encoding) : base(memory, encoding.Endianness()) => Encoding = encoding;
 
 		/// <summary>
 		/// Initializes a new <see cref="CharStream"/> over the given <paramref name="memory"/>.
@@ -54,7 +68,14 @@ namespace Streamy {
 		/// Initializes a new <see cref="CharStream"/> over the given <paramref name="memory"/>.
 		/// </summary>
 		/// <param name="memory">The <see cref="ReadOnlyMemory{T}"/> of <see cref="Byte"/> to stream.</param>
-		public CharStream(ReadOnlyMemory<Byte> memory) : base(memory) => Encoding = BitConverter.IsLittleEndian ? Encoding.UTF16LE : Encoding.UTF16BE;
+		public CharStream(ReadOnlyMemory<Byte> memory) : this(memory, BitConverter.IsLittleEndian ? Encoding.UTF16LE : Encoding.UTF16BE) { }
+
+		/// <summary>
+		/// Initializes a new <see cref="CharStream"/> over the given <paramref name="memory"/>.
+		/// </summary>
+		/// <param name="memory">The <see cref="ReadOnlyMemory{T}"/> of <see cref="Byte"/> to stream.</param>
+		/// <param name="encoding">The encoding of the <paramref name="memory"/>.</param>
+		public CharStream(ReadOnlyMemory<Byte> memory, Encoding encoding) : base(memory, encoding.Endianness()) => Encoding = encoding;
 
 		/// <summary>
 		/// Initializes a new <see cref="CharStream"/> with the given <paramref name="base"/>, <paramref name="readBuffer"/>, and <paramref name="writeBuffer"/>.
@@ -79,41 +100,5 @@ namespace Streamy {
 		/// The <see cref="Streamy.Encoding"/> of this stream.
 		/// </summary>
 		public Encoding Encoding { get; }
-
-		/// <summary>
-		/// Streams the <paramref name="array"/>.
-		/// </summary>
-		/// <param name="array">The <see cref="Array"/> of <see cref="Char"/> to stream.</param>
-		public static implicit operator CharStream([AllowNull] Char[] array) => new CharStream(array);
-
-		/// <summary>
-		/// Streams the <paramref name="array"/>.
-		/// </summary>
-		/// <param name="array">The <see cref="Array"/> of <see cref="Byte"/> to stream.</param>
-		public static implicit operator CharStream([AllowNull] Byte[] array) => new CharStream(array);
-
-		/// <summary>
-		/// Streams the <paramref name="memory"/>.
-		/// </summary>
-		/// <param name="memory">The <see cref="Memory{T}"/> of <see cref="Char"/> to stream.</param>
-		public static implicit operator CharStream(Memory<Char> memory) => new CharStream(memory);
-
-		/// <summary>
-		/// Streams the <paramref name="memory"/>.
-		/// </summary>
-		/// <param name="memory">The <see cref="Memory{T}"/> of <see cref="Byte"/> to stream.</param>
-		public static implicit operator CharStream(Memory<Byte> memory) => new CharStream(memory);
-
-		/// <summary>
-		/// Streams the <paramref name="memory"/>.
-		/// </summary>
-		/// <param name="memory">The <see cref="ReadOnlyMemory{T}"/> of <see cref="Char"/> to stream.</param>
-		public static implicit operator CharStream(ReadOnlyMemory<Char> memory) => new CharStream(memory);
-
-		/// <summary>
-		/// Streams the <paramref name="memory"/>.
-		/// </summary>
-		/// <param name="memory">The <see cref="ReadOnlyMemory{T}"/> of <see cref="Byte"/> to stream.</param>
-		public static implicit operator CharStream(ReadOnlyMemory<Byte> memory) => new CharStream(memory);
 	}
 }

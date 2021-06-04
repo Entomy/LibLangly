@@ -18,63 +18,75 @@ namespace Streamy {
 	[SuppressMessage("Major Code Smell", "S3881:\"IDisposable\" should be implemented correctly", Justification = "We're using a slight variation of it that makes it safer to extend. Sonar doesn't understand that.")]
 	public partial class Stream : IControlled {
 		/// <summary>
-		/// The <see cref="StreamBase"/> of this <see cref="Stream"/>.
+		/// The sink the <see cref="Stream"/> internally writes to.
 		/// </summary>
 		[SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP008:Don't assign member with injected and created disposables.", Justification = "We're claiming ownership. A derived class can internally assign this during construction, but it would be an error to set this externally. It's readonly, so there's no resassignment errors. Just have to content with potentially stupid but bizarre derived class behavior.")]
 		[DisallowNull, NotNull]
-		protected readonly StreamBase Base;
+		protected readonly IWrite<Byte> Sink;
 
 		/// <summary>
-		/// The buffer used for reads.
+		/// The source the <see cref="Stream"/> internally reads from.
 		/// </summary>
+		[SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP008:Don't assign member with injected and created disposables.", Justification = "We're claiming ownership. A derived class can internally assign this during construction, but it would be an error to set this externally. It's readonly, so there's no resassignment errors. Just have to content with potentially stupid but bizarre derived class behavior.")]
 		[CLSCompliant(false)]
 		[DisallowNull, NotNull]
-		protected readonly IReadBuffer ReadBuffer;
-
-		/// <summary>
-		/// The buffer used for writes.
-		/// </summary>
-		/// <remarks>
-		/// This can be <see langword="null"/>, in which case no buffering is done, and writes occur directly to <see cref="Base"/>.
-		/// </remarks>
-		[CLSCompliant(false)]
-		[AllowNull, MaybeNull]
-		protected readonly IWriteBuffer WriteBuffer;
+		protected readonly IReadBuffer Source;
 
 		/// <summary>
 		/// Initializes a new <see cref="Stream"/> over the given <paramref name="array"/>.
 		/// </summary>
 		/// <param name="array">The <see cref="Array"/> of <see cref="Byte"/> to stream.</param>
+		public Stream([AllowNull] Byte[] array) : this(array, BitConverter.IsLittleEndian ? Endian.Little : Endian.Big) { }
+
+		/// <summary>
+		/// Initializes a new <see cref="Stream"/> over the given <paramref name="array"/>.
+		/// </summary>
+		/// <param name="array">The <see cref="Array"/> of <see cref="Byte"/> to stream.</param>
+		/// <param name="endianness">The byte ordering of this stream.</param>
 		[SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP003:Dispose previous before re-assigning.", Justification = "This is a constructor, it hasn't been assigned yet.")]
-		public Stream([AllowNull] Byte[] array) {
-			Base = new MemoryStreamBase(array);
-			ReadBuffer = new MinimalBuffer(Base);
-			WriteBuffer = null;
-			Endianness = BitConverter.IsLittleEndian ? Endian.Little : Endian.Big;
+		public Stream([AllowNull] Byte[] array, Endian endianness) {
+			StreamBase Base = new MemoryStreamBase(array);
+			Source = new MinimalBuffer(Base);
+			Sink = Base;
+			Endianness = endianness;
 		}
 
 		/// <summary>
 		/// Initializes a new <see cref="Stream"/> over the given <paramref name="memory"/>.
 		/// </summary>
 		/// <param name="memory">The <see cref="Memory{T}"/> of <see cref="Byte"/> to stream.</param>
+		public Stream(Memory<Byte> memory) : this(memory, BitConverter.IsLittleEndian ? Endian.Little : Endian.Big) { }
+
+		/// <summary>
+		/// Initializes a new <see cref="Stream"/> over the given <paramref name="memory"/>.
+		/// </summary>
+		/// <param name="memory">The <see cref="Memory{T}"/> of <see cref="Byte"/> to stream.</param>
+		/// <param name="endianness">The byte ordering of this stream.</param>
 		[SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP003:Dispose previous before re-assigning.", Justification = "This is a constructor, it hasn't been assigned yet.")]
-		public Stream(Memory<Byte> memory) {
-			Base = new MemoryStreamBase(memory);
-			ReadBuffer = new MinimalBuffer(Base);
-			WriteBuffer = null;
-			Endianness = BitConverter.IsLittleEndian ? Endian.Little : Endian.Big;
+		public Stream(Memory<Byte> memory, Endian endianness) {
+			StreamBase Base = new MemoryStreamBase(memory);
+			Source = new MinimalBuffer(Base);
+			Sink = Base;
+			Endianness = endianness;
 		}
 
 		/// <summary>
 		/// Initializes a new <see cref="Stream"/> over the given <paramref name="memory"/>.
 		/// </summary>
 		/// <param name="memory">The <see cref="ReadOnlyMemory{T}"/> of <see cref="Byte"/> to stream.</param>
+		public Stream(ReadOnlyMemory<Byte> memory) : this(memory, BitConverter.IsLittleEndian ? Endian.Little : Endian.Big) { }
+
+		/// <summary>
+		/// Initializes a new <see cref="Stream"/> over the given <paramref name="memory"/>.
+		/// </summary>
+		/// <param name="memory">The <see cref="ReadOnlyMemory{T}"/> of <see cref="Byte"/> to stream.</param>
+		/// <param name="endianness">The byte ordering of this stream.</param>
 		[SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP003:Dispose previous before re-assigning.", Justification = "This is a constructor, it hasn't been assigned yet.")]
-		public Stream(ReadOnlyMemory<Byte> memory) {
-			Base = new ReadOnlyMemoryStreamBase(memory);
-			ReadBuffer = new MinimalBuffer(Base);
-			WriteBuffer = null;
-			Endianness = BitConverter.IsLittleEndian ? Endian.Little : Endian.Big;
+		public Stream(ReadOnlyMemory<Byte> memory, Endian endianness) {
+			StreamBase Base = new ReadOnlyMemoryStreamBase(memory);
+			Source = new MinimalBuffer(Base);
+			Sink = Base;
+			Endianness = endianness;
 		}
 
 		/// <summary>
@@ -84,7 +96,11 @@ namespace Streamy {
 		/// <remarks>
 		/// This should only be used for derived classes that are <see langword="sealed"/> and will not need a buffer in most situations. In practice, this is rarely the case, and you should chain with <see cref="Stream(StreamBase, IReadBuffer, IWriteBuffer, Endian)"/> instead.
 		/// </remarks>
-		protected Stream([DisallowNull] StreamBase @base) : this(@base, new MinimalBuffer(@base), null, BitConverter.IsLittleEndian ? Endian.Little : Endian.Big) { }
+		protected Stream([DisallowNull] StreamBase @base) {
+			Source = new MinimalBuffer(@base);
+			Sink = @base;
+			Endianness = BitConverter.IsLittleEndian ? Endian.Little : Endian.Big;
+		}
 
 		/// <summary>
 		/// Initializes a new <see cref="Stream"/> with the given <paramref name="base"/>, <paramref name="readBuffer"/>, <paramref name="writeBuffer"/>, and <paramref name="endianness"/>.
@@ -99,9 +115,8 @@ namespace Streamy {
 		[SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP003:Dispose previous before re-assigning.", Justification = "This is a constructor, it hasn't been assigned yet.")]
 		[CLSCompliant(false)]
 		protected Stream([DisallowNull] StreamBase @base, [DisallowNull] IReadBuffer readBuffer, [AllowNull] IWriteBuffer writeBuffer, Endian endianness) {
-			Base = @base;
-			ReadBuffer = readBuffer;
-			WriteBuffer = writeBuffer;
+			Source = readBuffer;
+			Sink = writeBuffer is not null ? writeBuffer : @base;
 			Endianness = endianness;
 		}
 
@@ -116,35 +131,17 @@ namespace Streamy {
 		}
 
 		/// <summary>
-		/// Used to detect and handle redundant calls to <see cref="Dispose(Boolean)"/>.
-		/// </summary>
-		protected Boolean Disposed {
-			get => Base.Disposed;
-			set => Base.Disposed = value;
-		}
-
-		/// <summary>
 		/// The byte ordering of this stream.
 		/// </summary>
 		public Endian Endianness { get; }
 
 		/// <summary>
-		/// Streams the <paramref name="array"/>.
+		/// Used to detect and handle redundant calls to <see cref="Dispose(Boolean)"/>.
 		/// </summary>
-		/// <param name="array">The <see cref="Array"/> of <see cref="Byte"/> to stream.</param>
-		public static implicit operator Stream([AllowNull] Byte[] array) => new Stream(array);
-
-		/// <summary>
-		/// Streams the <paramref name="memory"/>.
-		/// </summary>
-		/// <param name="memory">The <see cref="Memory{T}"/> of <see cref="Byte"/> to stream.</param>
-		public static implicit operator Stream(Memory<Byte> memory) => new Stream(memory);
-
-		/// <summary>
-		/// Streams the <paramref name="memory"/>.
-		/// </summary>
-		/// <param name="memory">The <see cref="ReadOnlyMemory{T}"/> of <see cref="Byte"/> to stream.</param>
-		public static implicit operator Stream(ReadOnlyMemory<Byte> memory) => new Stream(memory);
+		protected Boolean Disposed {
+			get => Source.Disposed;
+			set => Source.Disposed = value;
+		}
 
 		/// <inheritdoc/>
 		void IControlled.Dispose(Boolean disposing) => Dispose(disposing);
@@ -166,7 +163,7 @@ namespace Streamy {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public override String ToString() => Base.ToString();
+		public override String ToString() => Source.ToString();
 
 		/// <summary>
 		/// Dispose of managed resources. Part of <see cref="IDisposable.Dispose()"/>.
@@ -190,7 +187,7 @@ namespace Streamy {
 		private void Dispose(Boolean disposing) {
 			if (!Disposed) {
 				if (disposing) {
-					Base.Dispose();
+					Source.Dispose(disposing: true);
 					DisposeManaged();
 				}
 				DisposeUnmanaged();

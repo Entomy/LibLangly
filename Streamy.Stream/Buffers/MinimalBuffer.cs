@@ -5,7 +5,7 @@ using System.Text;
 using Streamy.Bases;
 
 namespace Streamy.Buffers {
-	[DebuggerDisplay("{ToString(),nq}")]
+	[DebuggerDisplay("{ToString(5),nq}")]
 	internal sealed class MinimalBuffer : IReadBuffer {
 		/// <summary>
 		/// The <see cref="StreamBase"/> being buffered.
@@ -28,10 +28,55 @@ namespace Streamy.Buffers {
 		public nint Count { get; private set; }
 
 		/// <inheritdoc/>
+		public Boolean Disposed { get; set; }
+
+		/// <inheritdoc/>
+		public nint Position {
+			get => Base.Position;
+			set {
+				if (Count == 0) {
+					Base.Position = value;
+				} else {
+					throw new NotImplementedException();
+				}
+			}
+		}
+
+		/// <inheritdoc/>
 		public Boolean Readable => Count > 0;
 
 		/// <inheritdoc/>
+		public Boolean Seekable => Base.Seekable || Count > 0;
+
+		/// <inheritdoc/>
 		public void Clear() => Count = 0;
+
+		/// <inheritdoc/>
+		public void Dispose(Boolean disposing) {
+			if (!Disposed) {
+				if (disposing) {
+					DisposeManaged();
+				}
+				DisposeUnmanaged();
+				NullLargeFields();
+				Disposed = true;
+			}
+		}
+
+		/// <inheritdoc/>
+		public void Dispose() {
+			Dispose(disposing: true);
+			GC.SuppressFinalize(this);
+		}
+
+		/// <inheritdoc/>
+		public void DisposeManaged() => Base.Dispose();
+
+		/// <inheritdoc/>
+		public void DisposeUnmanaged() { /* No-op */ }
+
+		/// <inheritdoc/>
+		public void NullLargeFields() { /* No-op */ }
 
 		/// <inheritdoc/>
 		public void Peek([MaybeNull] out Byte element) {
@@ -61,15 +106,28 @@ namespace Streamy.Buffers {
 		}
 
 		/// <inheritdoc/>
+		public void Seek(nint offset) {
+			if (Count == 0) {
+				Base.Seek(offset);
+			} else {
+				throw new NotImplementedException();
+			}
+		}
+
+		/// <inheritdoc/>
 		[return: NotNull]
-		public override String ToString() {
+		public override String ToString() => Base.ToString();
+
+		/// <inheritdoc/>
+		[return: NotNull]
+		public String ToString(nint amount) {
 			StringBuilder builder = new StringBuilder();
 			nint i = 0;
 			foreach (Byte element in Memory) {
 				if (++i == Count) {
 					_ = builder.Append(element);
 					break;
-				} else if (i == 5) {
+				} else if (i == amount) {
 					_ = builder.Append(element).Append("...");
 					break;
 				} else {

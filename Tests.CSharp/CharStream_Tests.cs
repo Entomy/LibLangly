@@ -9,7 +9,7 @@ namespace Langly {
 		[InlineData(new Char[] { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h' }, new Char[] { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h' })]
 		public void RoundTrip_Char_Array(Char[] expected, Char[] values) {
 			Char[] actual = new Char[expected.Length];
-			using CharStream stream = actual;
+			using CharStream stream = new(actual);
 			// Write the values to the stream
 			foreach (Char @char in values) {
 				stream.Write(@char);
