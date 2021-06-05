@@ -25,7 +25,7 @@ namespace Stringier.Patterns {
 		internal EscapedRanger([DisallowNull] Pattern from, [DisallowNull] Pattern to, [DisallowNull] Pattern escape) : base(from, to) => Escape = escape;
 
 		/// <inheritdoc/>
-		protected internal override void Consume(ReadOnlyMemory<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
+		protected internal override void Consume(ReadOnlySpan<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
 			Int32 start = location;
 			From.Consume(source, ref location, out exception, trace);
 			if (exception is not null) return;
@@ -40,31 +40,6 @@ namespace Stringier.Patterns {
 				if (location == source.Length) break;
 				if (To.IsConsumeHeader(source, location)) {
 					To.Consume(source, ref location, out exception, trace);
-				} else {
-					location++;
-				}
-			}
-			if (exception is not null) {
-				location = start;
-			}
-		}
-
-		/// <inheritdoc/>
-		protected internal override unsafe void Consume([DisallowNull] Char* source, Int32 length, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
-			Int32 start = location;
-			From.Consume(source, length, ref location, out exception, trace);
-			if (exception is not null) return;
-			To.Consume(source, length, ref location, out exception, trace);
-			while (exception is not null) {
-				if (location == length) break;
-				// Check for the escape before checking for the end of the range
-				if (Escape.IsConsumeHeader(source, location)) {
-					Escape.Consume(source, length, ref location, out exception, trace);
-					exception = NoMatch; // We need an error to continue the loop, and this is the current error
-				}
-				if (location == length) break;
-				if (To.IsConsumeHeader(source, location)) {
-					To.Consume(source, length, ref location, out exception, trace);
 				} else {
 					location++;
 				}

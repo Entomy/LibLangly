@@ -26,19 +26,10 @@ namespace Stringier.Patterns {
 		internal ChainEnumAlternator(Case casing) => Casing = casing;
 
 		/// <inheritdoc/>
-		protected internal override void Consume(ReadOnlyMemory<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
+		protected internal override void Consume(ReadOnlySpan<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
 			exception = null;
 			foreach (String name in FastEnum.GetNames<TEnum>()) {
 				new MemoryLiteral(name).Consume(source, ref location, out exception, trace);
-				if (exception is null) return;
-			}
-		}
-
-		/// <inheritdoc/>
-		protected internal override unsafe void Consume([DisallowNull] Char* source, Int32 length, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
-			exception = null;
-			foreach (String name in FastEnum.GetNames<TEnum>()) {
-				new MemoryLiteral(name).Consume(source, length, ref location, out exception, trace);
 				if (exception is null) return;
 			}
 		}
@@ -60,31 +51,12 @@ namespace Stringier.Patterns {
 		}
 
 		/// <inheritdoc/>
-		protected internal override void Neglect(ReadOnlyMemory<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
+		protected internal override void Neglect(ReadOnlySpan<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
 			exception = null;
 			Int32 start = location;
 			Int32 shortest = Int32.MaxValue;
 			foreach (String name in FastEnum.GetNames<TEnum>().Reverse()) {
 				new MemoryLiteral(name).Neglect(source, ref location, out exception, trace);
-				if (location - start < shortest) {
-					shortest = location - start;
-				}
-				if (exception is null) {
-					location = start;
-				} else {
-					break;
-				}
-			}
-			location += shortest;
-		}
-
-		/// <inheritdoc/>
-		protected internal override unsafe void Neglect([DisallowNull] Char* source, Int32 length, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
-			exception = null;
-			Int32 start = location;
-			Int32 shortest = Int32.MaxValue;
-			foreach (String name in FastEnum.GetNames<TEnum>().Reverse()) {
-				new MemoryLiteral(name).Neglect(source, length, ref location, out exception, trace);
 				if (location - start < shortest) {
 					shortest = location - start;
 				}

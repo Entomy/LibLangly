@@ -59,24 +59,13 @@ namespace Stringier.Patterns {
 		/// <inheritdoc/>
 		[return: NotNull]
 		public override Pattern Or([AllowNull] String other) => other is not null ? new ChainAlternator(Left, Right, new MemoryLiteral(other)) : this;
+
 		/// <inheritdoc/>
-		protected internal override void Consume(ReadOnlyMemory<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
+		protected internal override void Consume(ReadOnlySpan<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
 			Left.Consume(source, ref location, out exception, trace);
 			if (exception is not null) {
 				Exception last = exception; // Store the exception
 				Right.Consume(source, ref location, out exception, trace);
-				if (exception is not null) {
-					exception = last; // Reassign the first error, since both failed and we want to be clear of that
-				}
-			}
-		}
-
-		/// <inheritdoc/>
-		protected internal override unsafe void Consume([DisallowNull] Char* source, Int32 length, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
-			Left.Consume(source, length, ref location, out exception, trace);
-			if (exception is not null) {
-				Exception last = exception; // Store the exception
-				Right.Consume(source, length, ref location, out exception, trace);
 				if (exception is not null) {
 					exception = last; // Reassign the first error, since both failed and we want to be clear of that
 				}
@@ -90,22 +79,12 @@ namespace Stringier.Patterns {
 		protected internal override Boolean IsNeglectHeader(ReadOnlySpan<Char> source, Int32 location) => Left.IsNeglectHeader(source, location) || Right.IsNeglectHeader(source, location);
 
 		/// <inheritdoc/>
-		protected internal override void Neglect(ReadOnlyMemory<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
+		protected internal override void Neglect(ReadOnlySpan<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
 			Int32 start = location;
 			Right.Neglect(source, ref location, out exception, trace);
 			if (exception is not null) {
 				location = start;
 				Left.Neglect(source, ref location, out exception, trace);
-			}
-		}
-
-		/// <inheritdoc/>
-		protected internal override unsafe void Neglect([DisallowNull] Char* source, Int32 length, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
-			Int32 start = location;
-			Right.Neglect(source, length, ref location, out exception, trace);
-			if (exception is not null) {
-				location = start;
-				Left.Neglect(source, length, ref location, out exception, trace);
 			}
 		}
 	}

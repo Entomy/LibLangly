@@ -4,7 +4,6 @@ using System.Diagnostics.CodeAnalysis;
 using System.Text;
 #endif
 using System.Traits;
-using Langly;
 
 namespace Stringier.Patterns {
 	/// <summary>
@@ -14,23 +13,28 @@ namespace Stringier.Patterns {
 	/// <para>Any parser result is itself a capture or sequence of captures. The most optimal approach is always taken. For instance, if the source is contiguous memory, the capture will be the entire captured region, but if the source is a stream or other non-contiguous data, the capture will be each individual step of the parse.</para>
 	/// <para>This is also used in the implementation of backreferences (which are like in <see href="https://www.regular-expressions.info/backref.html">Regex</see>).</para>
 	/// </remarks>
-	public abstract class Capture :
+	public sealed partial class Capture :
 		IIndexReadOnly<nint, Char>,
-		ISequence<Char, IEnumerator<Char>> {
+		ISequence<Char, Capture.Enumerator> {
+		/// <summary>
+		/// The captured text.
+		/// </summary>
+		internal ReadOnlyMemory<Char> Text;
+
 		/// <summary>
 		/// Initialize a new <see cref="Capture"/> object.
 		/// </summary>
-		protected Capture() { }
+		internal Capture() => Text = ReadOnlyMemory<Char>.Empty;
 
 		/// <inheritdoc/>
-		public abstract nint Count { get; }
+		public nint Count => Text.Length;
 
 		/// <inheritdoc/>
-		public abstract Char this[[DisallowNull] nint index] { get; }
+		public Char this[[DisallowNull] nint index] => Text.Span[(Int32)index];
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public abstract IEnumerator<Char> GetEnumerator();
+		public Enumerator GetEnumerator() => new Enumerator(Text);
 
 		/// <inheritdoc/>
 		[return: NotNull]
@@ -167,10 +171,10 @@ namespace Stringier.Patterns {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public override String ToString() => Collection.ToString(this);
+		public override String ToString() => Text.ToString();
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public String ToString(nint amount) => Collection.ToString(this, amount);
+		public String ToString(nint amount) => $"{Text.Slice(0, (Int32)amount)}...";
 	}
 }

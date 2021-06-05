@@ -1,34 +1,42 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 using System.Traits;
 
 namespace Stringier.Patterns {
-	internal partial class CapturePointer {
+	public partial class Capture {
 		/// <summary>
-		/// Provides enumeration over a <see cref="CapturePointer"/>.
+		/// Provides enumeration over a <see cref="Capture"/>.
 		/// </summary>
+		[EditorBrowsable(EditorBrowsableState.Advanced)]
 		[StructLayout(LayoutKind.Auto)]
-		private unsafe struct Enumerator : IEnumerator<Char> {
-			private readonly Char* Pointer;
+		public struct Enumerator : IEnumerator<Char> {
+			/// <summary>
+			/// The text being enumerated.
+			/// </summary>
+			private readonly ReadOnlyMemory<Char> Text;
 
 			private Int32 i;
 
-			public Enumerator(Char* pointer, Int32 length) {
-				Pointer = pointer;
-				Count = length;
+			/// <summary>
+			/// Initializes a new <see cref="Enumerator"/>.
+			/// </summary>
+			/// <param name="text">The text to enumerate.</param>
+			public Enumerator(ReadOnlyMemory<Char> text) {
+				Text = text;
 				i = -1;
 			}
 
 			/// <inheritdoc/>
-			public Char Current => Pointer[i];
+			public Char Current => Text.Span[i];
 
 			/// <inheritdoc/>
 			[NotNull]
 			Object System.Collections.IEnumerator.Current => Current;
 
 			/// <inheritdoc/>
-			public nint Count { get; }
+			public nint Count => Text.Length;
 
 			/// <inheritdoc/>
 			public readonly void Dispose() { /* No-op */ }
@@ -38,9 +46,11 @@ namespace Stringier.Patterns {
 			public IEnumerator<Char> GetEnumerator() => this;
 
 			/// <inheritdoc/>
+			[return: NotNull]
 			System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() => this;
 
 			/// <inheritdoc/>
+			[return: NotNull]
 			System.Collections.Generic.IEnumerator<Char> System.Collections.Generic.IEnumerable<Char>.GetEnumerator() => this;
 
 			/// <inheritdoc/>
@@ -50,11 +60,11 @@ namespace Stringier.Patterns {
 			public void Reset() => i = -1;
 
 			/// <inheritdoc/>
-			public override String ToString() => new String(Pointer, 0, (Int32)Count);
+			public override String ToString() => Text.ToString();
 
 			/// <inheritdoc/>
 			[return: NotNull]
-			public String ToString(nint amount) => $"{new String(Pointer, 0, (Int32)amount)}...";
+			public String ToString(nint amount) => $"{Text.Slice(0, (Int32)amount)}...";
 		}
 	}
 }

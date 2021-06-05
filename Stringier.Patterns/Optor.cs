@@ -28,14 +28,8 @@ namespace Stringier.Patterns {
 		public override Pattern Maybe() => this;
 
 		/// <inheritdoc/>
-		protected internal override void Consume(ReadOnlyMemory<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
+		protected internal override void Consume(ReadOnlySpan<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
 			Pattern.Consume(source, ref location, out _, trace);
-			exception = null; // If a pattern is optional, it doesn't matter if it's there or not, so we never actually have an error
-		}
-
-		/// <inheritdoc/>
-		protected internal override unsafe void Consume([DisallowNull] Char* source, Int32 length, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
-			Pattern.Consume(source, length, ref location, out _, trace);
 			exception = null; // If a pattern is optional, it doesn't matter if it's there or not, so we never actually have an error
 		}
 
@@ -46,14 +40,8 @@ namespace Stringier.Patterns {
 		protected internal override Boolean IsNeglectHeader(ReadOnlySpan<Char> source, Int32 location) => Pattern.IsConsumeHeader(source, location);
 
 		/// <inheritdoc/>
-		protected internal override void Neglect(ReadOnlyMemory<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
+		protected internal override void Neglect(ReadOnlySpan<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
 			Pattern.Neglect(source, ref location, out _, trace);
-			exception = null; // If a pattern is optional, it doesn't matter if it's there or not, so we never actually have an error
-		}
-
-		/// <inheritdoc/>
-		protected internal override unsafe void Neglect([DisallowNull] Char* source, Int32 length, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
-			Pattern.Neglect(source, length, ref location, out _, trace);
 			exception = null; // If a pattern is optional, it doesn't matter if it's there or not, so we never actually have an error
 		}
 	}

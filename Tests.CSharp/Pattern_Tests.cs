@@ -13,10 +13,10 @@ namespace Langly {
 		public unsafe void Alternator_Pointer(String expected, String first, String second, String source) {
 			Pattern ptn = first.Or(second);
 			Int32 i = 0;
-			Capture? capture = null;
+			ReadOnlySpan<Char> capture;
 			fixed (Char* src = source) {
 				capture = ptn.Parse(src, source.Length, ref i);
-				Assert.Equal(expected, capture);
+				Assert.Equal(expected, capture.ToString());
 			}
 			Assert.Equal(expected.Length, i);
 		}
@@ -28,13 +28,13 @@ namespace Langly {
 		public void Alternator_String(String expected, String first, String second, String source, Boolean throws) {
 			Pattern ptn = first.Or(second);
 			Int32 i = 0;
-			Capture? capture = null;
+			ReadOnlyMemory<Char> capture = ReadOnlyMemory<Char>.Empty;
 			if (!throws) {
 				capture = ptn.Parse(source, ref i);
-				Assert.Equal(expected, capture);
+				Assert.Equal(expected, capture.ToString());
 			} else {
 				_ = Assert.ThrowsAny<Exception>(() => capture = ptn.Parse(source, ref i));
-				Assert.Null(capture);
+				Assert.Empty(capture.ToString());
 			}
 			Assert.Equal(expected.Length, i);
 		}
@@ -46,10 +46,10 @@ namespace Langly {
 		public unsafe void CategoryChecker_Pointer(String expected, String source) {
 			Pattern ptn = Category.UppercaseLetter;
 			Int32 i = 0;
-			Capture? capture = null;
+			ReadOnlySpan<Char> capture;
 			fixed (Char* src = source) {
-				capture = ptn.Parse(source, ref i);
-				Assert.Equal(expected, capture);
+				capture = ptn.Parse(src, source.Length, ref i);
+				Assert.Equal(expected, capture.ToString());
 			}
 			Assert.Equal(expected.Length, i);
 		}
@@ -63,13 +63,13 @@ namespace Langly {
 		public void CategoryChecker_String(String expected, String source, Boolean throws) {
 			Pattern ptn = Category.UppercaseLetter;
 			Int32 i = 0;
-			Capture? capture = null;
+			ReadOnlyMemory<Char> capture = ReadOnlyMemory<Char>.Empty;
 			if (!throws) {
 				capture = ptn.Parse(source, ref i);
-				Assert.Equal(expected, capture);
+				Assert.Equal(expected, capture.ToString());
 			} else {
 				_ = Assert.ThrowsAny<Exception>(() => capture = ptn.Parse(source, ref i));
-				Assert.Null(capture);
+				Assert.Empty(capture.ToString());
 			}
 			Assert.Equal(expected.Length, i);
 		}
@@ -81,10 +81,10 @@ namespace Langly {
 		public unsafe void ChainAlternator_Pointer(String expected, String first, String second, String third, String source) {
 			Pattern ptn = OneOf(first, second, third);
 			Int32 i = 0;
-			Capture? capture = null;
+			ReadOnlySpan<Char> capture;
 			fixed (Char* src = source) {
 				capture = ptn.Parse(src, source.Length, ref i);
-				Assert.Equal(expected, capture);
+				Assert.Equal(expected, capture.ToString());
 			}
 			Assert.Equal(expected.Length, i);
 		}
@@ -97,13 +97,13 @@ namespace Langly {
 		public void ChainAlternator_String(String expected, String first, String second, String third, String source, Boolean throws) {
 			Pattern ptn = OneOf(first, second, third);
 			Int32 i = 0;
-			Capture? capture = null;
+			ReadOnlyMemory<Char> capture = ReadOnlyMemory<Char>.Empty;
 			if (!throws) {
 				capture = ptn.Parse(source, ref i);
-				Assert.Equal(expected, capture);
+				Assert.Equal(expected, capture.ToString());
 			} else {
 				_ = Assert.ThrowsAny<Exception>(() => capture = ptn.Parse(source, ref i));
-				Assert.Null(capture);
+				Assert.Empty(capture.ToString());
 			}
 			Assert.Equal(expected.Length, i);
 		}
@@ -115,10 +115,10 @@ namespace Langly {
 		public unsafe void ChainEnumAlternator_Pointer<TEnum>(String expected, TEnum @enum, String source) where TEnum : struct, Enum {
 			Pattern ptn = OneOf<TEnum>();
 			Int32 i = 0;
-			Capture? capture = null;
+			ReadOnlySpan<Char> capture;
 			fixed (Char* src = source) {
 				capture = ptn.Parse(src, source.Length, ref i);
-				Assert.Equal(expected, capture);
+				Assert.Equal(expected, capture.ToString());
 			}
 			Assert.Equal(expected.Length, i);
 		}
@@ -131,13 +131,13 @@ namespace Langly {
 		public void ChainEnumAlternator_String<TEnum>(String expected, TEnum @enum, String source, Boolean throws) where TEnum : struct, Enum {
 			Pattern ptn = OneOf<TEnum>();
 			Int32 i = 0;
-			Capture? capture = null;
+			ReadOnlyMemory<Char> capture = ReadOnlyMemory<Char>.Empty;
 			if (!throws) {
 				capture = ptn.Parse(source, ref i);
-				Assert.Equal(expected, capture);
+				Assert.Equal(expected, capture.ToString());
 			} else {
 				_ = Assert.ThrowsAny<Exception>(() => capture = ptn.Parse(source, ref i));
-				Assert.Null(capture);
+				Assert.Empty(capture.ToString());
 			}
 			Assert.Equal(expected.Length, i);
 		}
@@ -148,10 +148,10 @@ namespace Langly {
 		public unsafe void CharLiteral_Pointer(String expected, Char pattern, String source) {
 			Pattern ptn = pattern;
 			Int32 i = 0;
-			Capture? capture = null;
+			ReadOnlySpan<Char> capture;
 			fixed (Char* src = source) {
 				capture = ptn.Parse(src, source.Length, ref i);
-				Assert.Equal(expected, capture);
+				Assert.Equal(expected, capture.ToString());
 			}
 			Assert.Equal(expected.Length, i);
 		}
@@ -163,13 +163,13 @@ namespace Langly {
 		public void CharLiteral_String(String expected, Char pattern, String source, Boolean throws) {
 			Pattern ptn = pattern;
 			Int32 i = 0;
-			Capture? capture = null;
+			ReadOnlyMemory<Char> capture = ReadOnlyMemory<Char>.Empty;
 			if (!throws) {
 				capture = ptn.Parse(source, ref i);
-				Assert.Equal(expected, capture);
+				Assert.Equal(expected, capture.ToString());
 			} else {
 				_ = Assert.ThrowsAny<Exception>(() => capture = ptn.Parse(source, ref i));
-				Assert.Null(capture);
+				Assert.Empty(capture.ToString());
 			}
 			Assert.Equal(expected.Length, i);
 		}
@@ -179,10 +179,10 @@ namespace Langly {
 		public unsafe void Concatenator_Pointer(String expected, String first, String second, String source) {
 			Pattern ptn = first.Then(second);
 			Int32 i = 0;
-			Capture? capture = null;
+			ReadOnlySpan<Char> capture;
 			fixed (Char* src = source) {
 				capture = ptn.Parse(src, source.Length, ref i);
-				Assert.Equal(expected, capture);
+				Assert.Equal(expected, capture.ToString());
 			}
 			Assert.Equal(expected.Length, i);
 		}
@@ -193,13 +193,13 @@ namespace Langly {
 		public void Concatenator_String(String expected, String first, String second, String source, Boolean throws) {
 			Pattern ptn = first.Then(second);
 			Int32 i = 0;
-			Capture? capture = null;
+			ReadOnlyMemory<Char> capture = ReadOnlyMemory<Char>.Empty;
 			if (!throws) {
 				capture = ptn.Parse(source, ref i);
-				Assert.Equal(expected, capture);
+				Assert.Equal(expected, capture.ToString());
 			} else {
 				_ = Assert.ThrowsAny<Exception>(() => capture = ptn.Parse(source, ref i));
-				Assert.Null(capture);
+				Assert.Empty(capture.ToString());
 			}
 			Assert.Equal(expected.Length, i);
 		}
@@ -215,10 +215,10 @@ namespace Langly {
 		public unsafe void Fuzzer_Pointer(String expected, String pattern, Int32 maxEdits, String source) {
 			Pattern ptn = pattern.Fuzzy(maxEdits);
 			Int32 i = 0;
-			Capture? capture = null;
+			ReadOnlySpan<Char> capture;
 			fixed (Char* src = source) {
 				capture = ptn.Parse(src, source.Length, ref i);
-				Assert.Equal(expected, capture);
+				Assert.Equal(expected, capture.ToString());
 			}
 			Assert.Equal(expected.Length, i);
 		}
@@ -235,13 +235,13 @@ namespace Langly {
 		public void Fuzzer_String(String expected, String pattern, Int32 maxEdits, String source, Boolean throws) {
 			Pattern ptn = pattern.Fuzzy(maxEdits);
 			Int32 i = 0;
-			Capture? capture = null;
+			ReadOnlyMemory<Char> capture = ReadOnlyMemory<Char>.Empty;
 			if (!throws) {
 				capture = ptn.Parse(source, ref i);
-				Assert.Equal(expected, capture);
+				Assert.Equal(expected, capture.ToString());
 			} else {
 				_ = Assert.ThrowsAny<Exception>(() => capture = ptn.Parse(source, ref i));
-				Assert.Null(capture);
+				Assert.Empty(capture.ToString());
 			}
 			Assert.Equal(expected.Length, i);
 		}
@@ -255,10 +255,10 @@ namespace Langly {
 		public unsafe void KleenesClosure_Pointer(String expected, String pattern, String source) {
 			Pattern ptn = Maybe(Many(pattern));
 			Int32 i = 0;
-			Capture? capture = null;
+			ReadOnlySpan<Char> capture;
 			fixed (Char* src = source) {
-				capture = ptn.Parse(source, ref i);
-				Assert.Equal(expected, capture);
+				capture = ptn.Parse(src, source.Length, ref i);
+				Assert.Equal(expected, capture.ToString());
 			}
 			Assert.Equal(expected.Length, i);
 		}
@@ -272,9 +272,8 @@ namespace Langly {
 		public void KleenesClosure_String(String expected, String pattern, String source) {
 			Pattern ptn = Maybe(Many(pattern));
 			Int32 i = 0;
-			Capture? capture = null;
-			capture = ptn.Parse(source, ref i);
-			Assert.Equal(expected, capture);
+			ReadOnlyMemory<Char> capture = ptn.Parse(source, ref i);
+			Assert.Equal(expected, capture.ToString());
 			Assert.Equal(expected.Length, i);
 		}
 
@@ -286,10 +285,10 @@ namespace Langly {
 		public unsafe void LineComment_Pointer(String expected, String delimiter, String source) {
 			Pattern ptn = LineComment(delimiter);
 			Int32 i = 0;
-			Capture? capture = null;
+			ReadOnlySpan<Char> capture;
 			fixed (Char* src = source) {
 				capture = ptn.Parse(src, source.Length, ref i);
-				Assert.Equal(expected, capture);
+				Assert.Equal(expected, capture.ToString());
 			}
 			Assert.Equal(expected.Length, i);
 		}
@@ -304,13 +303,13 @@ namespace Langly {
 		public void LineComment_String(String expected, String delimiter, String source, Boolean throws) {
 			Pattern ptn = LineComment(delimiter);
 			Int32 i = 0;
-			Capture? capture = null;
+			ReadOnlyMemory<Char> capture = ReadOnlyMemory<Char>.Empty;
 			if (!throws) {
 				capture = ptn.Parse(source, ref i);
-				Assert.Equal(expected, capture);
+				Assert.Equal(expected, capture.ToString());
 			} else {
 				_ = Assert.ThrowsAny<Exception>(() => capture = ptn.Parse(source, ref i));
-				Assert.Null(capture);
+				Assert.Empty(capture.ToString());
 			}
 			Assert.Equal(expected.Length, i);
 		}
@@ -327,10 +326,10 @@ namespace Langly {
 		public unsafe void LineEndChecker_Pointer(String expected, String source) {
 			Pattern ptn = Pattern.EndOfLine;
 			Int32 i = 0;
-			Capture? capture = null;
+			ReadOnlySpan<Char> capture;
 			fixed (Char* src = source) {
-				capture = ptn.Parse(source, ref i);
-				Assert.Equal(expected, capture);
+				capture = ptn.Parse(src, source.Length, ref i);
+				Assert.Equal(expected, capture.ToString());
 			}
 			Assert.Equal(expected.Length, i);
 		}
@@ -349,13 +348,13 @@ namespace Langly {
 		public void LineEndChecker_String(String expected, String source, Boolean throws) {
 			Pattern ptn = Pattern.EndOfLine;
 			Int32 i = 0;
-			Capture? capture = null;
+			ReadOnlyMemory<Char> capture = ReadOnlyMemory<Char>.Empty;
 			if (!throws) {
 				capture = ptn.Parse(source, ref i);
-				Assert.Equal(expected, capture);
+				Assert.Equal(expected, capture.ToString());
 			} else {
 				_ = Assert.ThrowsAny<Exception>(() => capture = ptn.Parse(source, ref i));
-				Assert.Null(capture);
+				Assert.Empty(capture.ToString());
 			}
 			Assert.Equal(expected.Length, i);
 		}
@@ -368,10 +367,10 @@ namespace Langly {
 		public unsafe void MemoryLiteral_Pointer(String expected, String pattern, String source) {
 			Pattern ptn = pattern;
 			Int32 i = 0;
-			Capture? capture = null;
+			ReadOnlySpan<Char> capture;
 			fixed (Char* src = source) {
 				capture = ptn.Parse(src, source.Length, ref i);
-				Assert.Equal(expected, capture);
+				Assert.Equal(expected, capture.ToString());
 			}
 			Assert.Equal(expected.Length, i);
 		}
@@ -385,13 +384,13 @@ namespace Langly {
 		public void MemoryLiteral_String(String expected, String pattern, String source, Boolean throws) {
 			Pattern ptn = pattern;
 			Int32 i = 0;
-			Capture? capture = null;
+			ReadOnlyMemory<Char> capture = ReadOnlyMemory<Char>.Empty;
 			if (!throws) {
 				capture = ptn.Parse(source, ref i);
-				Assert.Equal(expected, capture);
+				Assert.Equal(expected, capture.ToString());
 			} else {
 				_ = Assert.ThrowsAny<Exception>(() => capture = ptn.Parse(source, ref i));
-				Assert.Null(capture);
+				Assert.Empty(capture.ToString());
 			}
 			Assert.Equal(expected.Length, i);
 		}
@@ -404,10 +403,10 @@ namespace Langly {
 		public unsafe void NestedRanger_Pointer(String expected, String start, String end, String source) {
 			Pattern ptn = start.ToNested(end);
 			Int32 i = 0;
-			Capture? capture = null;
+			ReadOnlySpan<Char> capture;
 			fixed (Char* src = source) {
 				capture = ptn.Parse(src, source.Length, ref i);
-				Assert.Equal(expected, capture);
+				Assert.Equal(expected, capture.ToString());
 			}
 			Assert.Equal(expected.Length, i);
 		}
@@ -421,13 +420,13 @@ namespace Langly {
 		public void NestedRanger_String(String expected, String start, String end, String source, Boolean throws) {
 			Pattern ptn = start.ToNested(end);
 			Int32 i = 0;
-			Capture? capture = null;
+			ReadOnlyMemory<Char> capture = ReadOnlyMemory<Char>.Empty;
 			if (!throws) {
 				capture = ptn.Parse(source, ref i);
-				Assert.Equal(expected, capture);
+				Assert.Equal(expected, capture.ToString());
 			} else {
 				_ = Assert.ThrowsAny<Exception>(() => capture = ptn.Parse(source, ref i));
-				Assert.Null(capture);
+				Assert.Empty(capture.ToString());
 			}
 			Assert.Equal(expected.Length, i);
 		}
@@ -439,10 +438,10 @@ namespace Langly {
 		public unsafe void Optor_Pointer(String expected, String pattern, String source) {
 			Pattern ptn = Maybe(pattern);
 			Int32 i = 0;
-			Capture? capture = null;
+			ReadOnlySpan<Char> capture;
 			fixed (Char* src = source) {
-				capture = ptn.Parse(source, ref i);
-				Assert.Equal(expected, capture);
+				capture = ptn.Parse(src, source.Length, ref i);
+				Assert.Equal(expected, capture.ToString());
 			}
 			Assert.Equal(expected.Length, i);
 		}
@@ -454,9 +453,8 @@ namespace Langly {
 		public void Optor_String(String expected, String pattern, String source) {
 			Pattern ptn = Maybe(pattern);
 			Int32 i = 0;
-			Capture? capture = null;
-			capture = ptn.Parse(source, ref i);
-			Assert.Equal(expected, capture);
+			ReadOnlyMemory<Char> capture = ptn.Parse(source, ref i);
+			Assert.Equal(expected, capture.ToString());
 			Assert.Equal(expected.Length, i);
 		}
 
@@ -467,10 +465,10 @@ namespace Langly {
 		public unsafe void Ranger_Pointer(String expected, String start, String end, String source) {
 			Pattern ptn = start.To(end);
 			Int32 i = 0;
-			Capture? capture = null;
+			ReadOnlySpan<Char> capture;
 			fixed (Char* src = source) {
 				capture = ptn.Parse(src, source.Length, ref i);
-				Assert.Equal(expected, capture);
+				Assert.Equal(expected, capture.ToString());
 			}
 			Assert.Equal(expected.Length, i);
 		}
@@ -483,13 +481,13 @@ namespace Langly {
 		public void Ranger_String(String expected, String start, String end, String source, Boolean throws) {
 			Pattern ptn = start.To(end);
 			Int32 i = 0;
-			Capture? capture = null;
+			ReadOnlyMemory<Char> capture = ReadOnlyMemory<Char>.Empty;
 			if (!throws) {
 				capture = ptn.Parse(source, ref i);
-				Assert.Equal(expected, capture);
+				Assert.Equal(expected, capture.ToString());
 			} else {
 				_ = Assert.ThrowsAny<Exception>(() => capture = ptn.Parse(source, ref i));
-				Assert.Null(capture);
+				Assert.Empty(capture.ToString());
 			}
 			Assert.Equal(expected.Length, i);
 		}
@@ -500,10 +498,10 @@ namespace Langly {
 		public unsafe void Repeater_Pointer(String expected, String pattern, Int32 count, String source) {
 			Pattern ptn = Repeat(pattern, count);
 			Int32 i = 0;
-			Capture? capture = null;
+			ReadOnlySpan<Char> capture;
 			fixed (Char* src = source) {
 				capture = ptn.Parse(src, source.Length, ref i);
-				Assert.Equal(expected, capture);
+				Assert.Equal(expected, capture.ToString());
 			}
 			Assert.Equal(expected.Length, i);
 		}
@@ -515,13 +513,13 @@ namespace Langly {
 		public void Repeater_String(String expected, String pattern, Int32 count, String source, Boolean throws) {
 			Pattern ptn = Repeat(pattern, count);
 			Int32 i = 0;
-			Capture? capture = null;
+			ReadOnlyMemory<Char> capture = ReadOnlyMemory<Char>.Empty;
 			if (!throws) {
 				capture = ptn.Parse(source, ref i);
-				Assert.Equal(expected, capture);
+				Assert.Equal(expected, capture.ToString());
 			} else {
 				_ = Assert.ThrowsAny<Exception>(() => capture = ptn.Parse(source, ref i));
-				Assert.Null(capture);
+				Assert.Empty(capture.ToString());
 			}
 			Assert.Equal(expected.Length, i);
 		}
@@ -534,10 +532,10 @@ namespace Langly {
 		public unsafe void RuneLiteral_Pointer(String expected, Int32 scalar, String source) {
 			Pattern ptn = new Rune(scalar);
 			Int32 i = 0;
-			Capture? capture = null;
+			ReadOnlySpan<Char> capture;
 			fixed (Char* src = source) {
 				capture = ptn.Parse(src, source.Length, ref i);
-				Assert.Equal(expected, capture);
+				Assert.Equal(expected, capture.ToString());
 			}
 			Assert.Equal(expected.Length, i);
 		}
@@ -552,13 +550,13 @@ namespace Langly {
 		public void RuneLiteral_String(String expected, Int32 scalar, String source, Boolean throws) {
 			Pattern ptn = new Rune(scalar);
 			Int32 i = 0;
-			Capture? capture = null;
+			ReadOnlyMemory<Char> capture = ReadOnlyMemory<Char>.Empty;
 			if (!throws) {
 				capture = ptn.Parse(source, ref i);
-				Assert.Equal(expected, capture);
+				Assert.Equal(expected, capture.ToString());
 			} else {
 				_ = Assert.ThrowsAny<Exception>(() => capture = ptn.Parse(source, ref i));
-				Assert.Null(capture);
+				Assert.Empty(capture.ToString());
 			}
 			Assert.Equal(expected.Length, i);
 		}
@@ -568,10 +566,10 @@ namespace Langly {
 		public unsafe void SourceEndChecker_Pointer(String expected, String source) {
 			Pattern ptn = Pattern.EndOfSource;
 			Int32 i = 0;
-			Capture? capture = null;
+			ReadOnlySpan<Char> capture;
 			fixed (Char* src = source) {
-				capture = ptn.Parse(source, ref i);
-				Assert.Equal(expected, capture);
+				capture = ptn.Parse(src, source.Length, ref i);
+				Assert.Equal(expected, capture.ToString());
 			}
 			Assert.Equal(expected.Length, i);
 		}
@@ -582,13 +580,13 @@ namespace Langly {
 		public void SourceEndChecker_String(String expected, String source, Boolean throws) {
 			Pattern ptn = Pattern.EndOfSource;
 			Int32 i = 0;
-			Capture? capture = null;
+			ReadOnlyMemory<Char> capture = ReadOnlyMemory<Char>.Empty;
 			if (!throws) {
 				capture = ptn.Parse(source, ref i);
-				Assert.Equal(expected, capture);
+				Assert.Equal(expected, capture.ToString());
 			} else {
 				_ = Assert.ThrowsAny<Exception>(() => capture = ptn.Parse(source, ref i));
-				Assert.Null(capture);
+				Assert.Empty(capture.ToString());
 			}
 			Assert.Equal(expected.Length, i);
 		}
@@ -601,10 +599,10 @@ namespace Langly {
 		public unsafe void Spanner_Pointer(String expected, String pattern, String source) {
 			Pattern ptn = Many(pattern);
 			Int32 i = 0;
-			Capture? capture = null;
+			ReadOnlySpan<Char> capture;
 			fixed (Char* src = source) {
 				capture = ptn.Parse(src, source.Length, ref i);
-				Assert.Equal(expected, capture);
+				Assert.Equal(expected, capture.ToString());
 			}
 			Assert.Equal(expected.Length, i);
 		}
@@ -618,13 +616,13 @@ namespace Langly {
 		public void Spanner_String(String expected, String pattern, String source, Boolean throws) {
 			Pattern ptn = Many(pattern);
 			Int32 i = 0;
-			Capture? capture = null;
+			ReadOnlyMemory<Char> capture = ReadOnlyMemory<Char>.Empty;
 			if (!throws) {
 				capture = ptn.Parse(source, ref i);
-				Assert.Equal(expected, capture);
+				Assert.Equal(expected, capture.ToString());
 			} else {
 				_ = Assert.ThrowsAny<Exception>(() => capture = ptn.Parse(source, ref i));
-				Assert.Null(capture);
+				Assert.Empty(capture.ToString());
 			}
 			Assert.Equal(expected.Length, i);
 		}
@@ -637,10 +635,10 @@ namespace Langly {
 		public unsafe void StringLiteral_Escape_Pointer(String expected, String delimiter, String escape, String source) {
 			Pattern ptn = StringLiteral(delimiter, escape);
 			Int32 i = 0;
-			Capture? capture = null;
+			ReadOnlySpan<Char> capture;
 			fixed (Char* src = source) {
 				capture = ptn.Parse(src, source.Length, ref i);
-				Assert.Equal(expected, capture);
+				Assert.Equal(expected, capture.ToString());
 			}
 			Assert.Equal(expected.Length, i);
 		}
@@ -656,13 +654,13 @@ namespace Langly {
 		public void StringLiteral_Escape_String(String expected, String delimiter, String escape, String source, Boolean throws) {
 			Pattern ptn = StringLiteral(delimiter, escape);
 			Int32 i = 0;
-			Capture? capture = null;
+			ReadOnlyMemory<Char> capture = ReadOnlyMemory<Char>.Empty;
 			if (!throws) {
 				capture = ptn.Parse(source, ref i);
-				Assert.Equal(expected, capture);
+				Assert.Equal(expected, capture.ToString());
 			} else {
 				_ = Assert.ThrowsAny<Exception>(() => capture = ptn.Parse(source, ref i));
-				Assert.Null(capture);
+				Assert.Empty(capture.ToString());
 			}
 			Assert.Equal(expected.Length, i);
 		}
@@ -673,10 +671,10 @@ namespace Langly {
 		public unsafe void StringLiteral_Pointer(String expected, String delimiter, String source) {
 			Pattern ptn = StringLiteral(delimiter);
 			Int32 i = 0;
-			Capture? capture = null;
+			ReadOnlySpan<Char> capture;
 			fixed (Char* src = source) {
 				capture = ptn.Parse(src, source.Length, ref i);
-				Assert.Equal(expected, capture);
+				Assert.Equal(expected, capture.ToString());
 			}
 			Assert.Equal(expected.Length, i);
 		}
@@ -689,13 +687,13 @@ namespace Langly {
 		public void StringLiteral_String(String expected, String delimiter, String source, Boolean throws) {
 			Pattern ptn = StringLiteral(delimiter);
 			Int32 i = 0;
-			Capture? capture = null;
+			ReadOnlyMemory<Char> capture = ReadOnlyMemory<Char>.Empty;
 			if (!throws) {
 				capture = ptn.Parse(source, ref i);
-				Assert.Equal(expected, capture);
+				Assert.Equal(expected, capture.ToString());
 			} else {
 				_ = Assert.ThrowsAny<Exception>(() => capture = ptn.Parse(source, ref i));
-				Assert.Null(capture);
+				Assert.Empty(capture.ToString());
 			}
 			Assert.Equal(expected.Length, i);
 		}

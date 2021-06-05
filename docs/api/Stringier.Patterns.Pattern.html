@@ -424,20 +424,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Consume_System_Char__System_Int32_System_Int32__System_Exception__System_Traits_IAdd_Stringier_Patterns_Capture__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Consume(System.Char*%2CSystem.Int32%2CSystem.Int32%40%2CSystem.Exception%40%2CSystem.Traits.IAdd%7BStringier.Patterns.Capture%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Consume_System_ReadOnlySpan_System_Char__System_Int32__System_Exception__System_Traits_IAdd_Stringier_Patterns_Capture__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Consume(System.ReadOnlySpan%7BSystem.Char%7D%2CSystem.Int32%40%2CSystem.Exception%40%2CSystem.Traits.IAdd%7BStringier.Patterns.Capture%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Pattern.cs/#L286">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Pattern.cs/#L312">View Source</a>
   </span>
   <a id="Stringier_Patterns_Pattern_Consume_" data-uid="Stringier.Patterns.Pattern.Consume*"></a>
-  <h4 id="Stringier_Patterns_Pattern_Consume_System_Char__System_Int32_System_Int32__System_Exception__System_Traits_IAdd_Stringier_Patterns_Capture__" data-uid="Stringier.Patterns.Pattern.Consume(System.Char*,System.Int32,System.Int32@,System.Exception@,System.Traits.IAdd{Stringier.Patterns.Capture})">Consume(Char*, Int32, ref Int32, out Exception, IAdd&lt;Capture&gt;)</h4>
+  <h4 id="Stringier_Patterns_Pattern_Consume_System_ReadOnlySpan_System_Char__System_Int32__System_Exception__System_Traits_IAdd_Stringier_Patterns_Capture__" data-uid="Stringier.Patterns.Pattern.Consume(System.ReadOnlySpan{System.Char},System.Int32@,System.Exception@,System.Traits.IAdd{Stringier.Patterns.Capture})">Consume(ReadOnlySpan&lt;Char&gt;, ref Int32, out Exception, IAdd&lt;Capture&gt;)</h4>
   <div class="markdown level1 summary"><p>Calls the consume parser for this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> on the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
-protected abstract void Consume(char *source, int length, ref int location, out Exception exception, IAdd&lt;Capture&gt; trace)</code></pre>
+    <pre><code class="lang-csharp hljs">protected abstract void Consume(ReadOnlySpan&lt;char&gt; source, ref int location, out Exception exception, IAdd&lt;Capture&gt; trace)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -450,68 +449,7 @@ protected abstract void Consume(char *source, int length, ref int location, out 
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>*</td>
-        <td><span class="parametername">source</span></td>
-        <td><p>The source to parse.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td><span class="parametername">length</span></td>
-        <td><p>The length of the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td><span class="parametername">location</span></td>
-        <td><p>The location within the <code data-dev-comment-type="paramref" class="paramref">source</code> to begin parsing, updated to the end of the match.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.exception">Exception</a></td>
-        <td><span class="parametername">exception</span></td>
-        <td><p>The exception that occurred during parsing, if any.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="System.Traits.IAdd-1.html">IAdd</a>&lt;<a class="xref" href="Stringier.Patterns.Capture.html">Capture</a>&gt;</td>
-        <td><span class="parametername">trace</span></td>
-        <td><p>The object to trace the steps through the pattern graph in.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Stringier_Patterns_Pattern_Consume_System_Char__System_Int32_System_Int32__System_Exception__System_Traits_IAdd_Stringier_Patterns_Capture___remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>This looks in <code data-dev-comment-type="paramref" class="paramref">source</code> at the <code data-dev-comment-type="paramref" class="paramref">location</code> for this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a>, advancing <code data-dev-comment-type="paramref" class="paramref">location</code> to the position just after the match, if found, and leaving it unchanged if not found. <code data-dev-comment-type="paramref" class="paramref">exception</code> is <span class="xref">null</span> if a match is found, and assigned with information on the failure that occurred. If <code data-dev-comment-type="paramref" class="paramref">trace</code> is a valid object, it is used to collection steps through the pattern graph for debugging purposes.</p>
-</div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Consume_System_ReadOnlyMemory_System_Char__System_Int32__System_Exception__System_Traits_IAdd_Stringier_Patterns_Capture__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Consume(System.ReadOnlyMemory%7BSystem.Char%7D%2CSystem.Int32%40%2CSystem.Exception%40%2CSystem.Traits.IAdd%7BStringier.Patterns.Capture%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Pattern.cs/#L273">View Source</a>
-  </span>
-  <a id="Stringier_Patterns_Pattern_Consume_" data-uid="Stringier.Patterns.Pattern.Consume*"></a>
-  <h4 id="Stringier_Patterns_Pattern_Consume_System_ReadOnlyMemory_System_Char__System_Int32__System_Exception__System_Traits_IAdd_Stringier_Patterns_Capture__" data-uid="Stringier.Patterns.Pattern.Consume(System.ReadOnlyMemory{System.Char},System.Int32@,System.Exception@,System.Traits.IAdd{Stringier.Patterns.Capture})">Consume(ReadOnlyMemory&lt;Char&gt;, ref Int32, out Exception, IAdd&lt;Capture&gt;)</h4>
-  <div class="markdown level1 summary"><p>Calls the consume parser for this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> on the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected abstract void Consume(ReadOnlyMemory&lt;char&gt; source, ref int location, out Exception exception, IAdd&lt;Capture&gt; trace)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
         <td><span class="parametername">source</span></td>
         <td><p>The source to parse.</p>
 </td>
@@ -536,128 +474,15 @@ protected abstract void Consume(char *source, int length, ref int location, out 
       </tr>
     </tbody>
   </table>
-  <h5 id="Stringier_Patterns_Pattern_Consume_System_ReadOnlyMemory_System_Char__System_Int32__System_Exception__System_Traits_IAdd_Stringier_Patterns_Capture___remarks">Remarks</h5>
+  <h5 id="Stringier_Patterns_Pattern_Consume_System_ReadOnlySpan_System_Char__System_Int32__System_Exception__System_Traits_IAdd_Stringier_Patterns_Capture___remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>This looks in <code data-dev-comment-type="paramref" class="paramref">source</code> at the <code data-dev-comment-type="paramref" class="paramref">location</code> for this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a>, advancing <code data-dev-comment-type="paramref" class="paramref">location</code> to the position just after the match, if found, and leaving it unchanged if not found. <code data-dev-comment-type="paramref" class="paramref">exception</code> is <span class="xref">null</span> if a match is found, and assigned with information on the failure that occurred. If <code data-dev-comment-type="paramref" class="paramref">trace</code> is a valid object, it is used to collection steps through the pattern graph for debugging purposes.</p>
 </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_IsConsumeHeader_System_Char__System_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.IsConsumeHeader(System.Char*%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Pattern.cs/#L303">View Source</a>
-  </span>
-  <a id="Stringier_Patterns_Pattern_IsConsumeHeader_" data-uid="Stringier.Patterns.Pattern.IsConsumeHeader*"></a>
-  <h4 id="Stringier_Patterns_Pattern_IsConsumeHeader_System_Char__System_Int32_" data-uid="Stringier.Patterns.Pattern.IsConsumeHeader(System.Char*,System.Int32)">IsConsumeHeader(Char*, Int32)</h4>
-  <div class="markdown level1 summary"><p>Checks if the header for the consume parser is present. This is an efficient check to determine whether the consume parser should be called at all.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
-protected bool IsConsumeHeader(char *source, int location)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>*</td>
-        <td><span class="parametername">source</span></td>
-        <td><p>The source to check.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td><span class="parametername">location</span></td>
-        <td><p>The location within the <code data-dev-comment-type="paramref" class="paramref">source</code> to check.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p><span class="xref">true</span> if the pattern is potentially at this <code data-dev-comment-type="paramref" class="paramref">location</code>; otherwise, <span class="xref">false</span>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_IsConsumeHeader_System_ReadOnlyMemory_System_Char__System_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.IsConsumeHeader(System.ReadOnlyMemory%7BSystem.Char%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Pattern.cs/#L295">View Source</a>
-  </span>
-  <a id="Stringier_Patterns_Pattern_IsConsumeHeader_" data-uid="Stringier.Patterns.Pattern.IsConsumeHeader*"></a>
-  <h4 id="Stringier_Patterns_Pattern_IsConsumeHeader_System_ReadOnlyMemory_System_Char__System_Int32_" data-uid="Stringier.Patterns.Pattern.IsConsumeHeader(System.ReadOnlyMemory{System.Char},System.Int32)">IsConsumeHeader(ReadOnlyMemory&lt;Char&gt;, Int32)</h4>
-  <div class="markdown level1 summary"><p>Checks if the header for the consume parser is present. This is an efficient check to determine whether the consume parser should be called at all.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected bool IsConsumeHeader(ReadOnlyMemory&lt;char&gt; source, int location)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
-        <td><span class="parametername">source</span></td>
-        <td><p>The source to check.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td><span class="parametername">location</span></td>
-        <td><p>The location within the <code data-dev-comment-type="paramref" class="paramref">source</code> to check.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p><span class="xref">true</span> if the pattern is potentially at this <code data-dev-comment-type="paramref" class="paramref">location</code>; otherwise, <span class="xref">false</span>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_IsConsumeHeader_System_ReadOnlySpan_System_Char__System_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.IsConsumeHeader(System.ReadOnlySpan%7BSystem.Char%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Pattern.cs/#L312">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Pattern.cs/#L320">View Source</a>
   </span>
   <a id="Stringier_Patterns_Pattern_IsConsumeHeader_" data-uid="Stringier.Patterns.Pattern.IsConsumeHeader*"></a>
   <h4 id="Stringier_Patterns_Pattern_IsConsumeHeader_System_ReadOnlySpan_System_Char__System_Int32_" data-uid="Stringier.Patterns.Pattern.IsConsumeHeader(System.ReadOnlySpan{System.Char},System.Int32)">IsConsumeHeader(ReadOnlySpan&lt;Char&gt;, Int32)</h4>
@@ -710,123 +535,10 @@ protected bool IsConsumeHeader(char *source, int location)</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_IsNeglectHeader_System_Char__System_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.IsNeglectHeader(System.Char*%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Pattern.cs/#L328">View Source</a>
-  </span>
-  <a id="Stringier_Patterns_Pattern_IsNeglectHeader_" data-uid="Stringier.Patterns.Pattern.IsNeglectHeader*"></a>
-  <h4 id="Stringier_Patterns_Pattern_IsNeglectHeader_System_Char__System_Int32_" data-uid="Stringier.Patterns.Pattern.IsNeglectHeader(System.Char*,System.Int32)">IsNeglectHeader(Char*, Int32)</h4>
-  <div class="markdown level1 summary"><p>Checks if the header for the neglect parser is present. This is an efficient check to determine whether the neglect parser should be called at all.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
-protected bool IsNeglectHeader(char *source, int location)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>*</td>
-        <td><span class="parametername">source</span></td>
-        <td><p>The source to check.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td><span class="parametername">location</span></td>
-        <td><p>The location within the <code data-dev-comment-type="paramref" class="paramref">source</code> to check.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p><span class="xref">true</span> if the pattern is potentially at this <code data-dev-comment-type="paramref" class="paramref">location</code>; otherwise, <span class="xref">false</span>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_IsNeglectHeader_System_ReadOnlyMemory_System_Char__System_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.IsNeglectHeader(System.ReadOnlyMemory%7BSystem.Char%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Pattern.cs/#L320">View Source</a>
-  </span>
-  <a id="Stringier_Patterns_Pattern_IsNeglectHeader_" data-uid="Stringier.Patterns.Pattern.IsNeglectHeader*"></a>
-  <h4 id="Stringier_Patterns_Pattern_IsNeglectHeader_System_ReadOnlyMemory_System_Char__System_Int32_" data-uid="Stringier.Patterns.Pattern.IsNeglectHeader(System.ReadOnlyMemory{System.Char},System.Int32)">IsNeglectHeader(ReadOnlyMemory&lt;Char&gt;, Int32)</h4>
-  <div class="markdown level1 summary"><p>Checks if the header for the neglect parser is present. This is an efficient check to determine whether the neglect parser should be called at all.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected bool IsNeglectHeader(ReadOnlyMemory&lt;char&gt; source, int location)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
-        <td><span class="parametername">source</span></td>
-        <td><p>The source to check.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td><span class="parametername">location</span></td>
-        <td><p>The location within the <code data-dev-comment-type="paramref" class="paramref">source</code> to check.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p><span class="xref">true</span> if the pattern is potentially at this <code data-dev-comment-type="paramref" class="paramref">location</code>; otherwise, <span class="xref">false</span>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_IsNeglectHeader_System_ReadOnlySpan_System_Char__System_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.IsNeglectHeader(System.ReadOnlySpan%7BSystem.Char%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Pattern.cs/#L337">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Pattern.cs/#L328">View Source</a>
   </span>
   <a id="Stringier_Patterns_Pattern_IsNeglectHeader_" data-uid="Stringier.Patterns.Pattern.IsNeglectHeader*"></a>
   <h4 id="Stringier_Patterns_Pattern_IsNeglectHeader_System_ReadOnlySpan_System_Char__System_Int32_" data-uid="Stringier.Patterns.Pattern.IsNeglectHeader(System.ReadOnlySpan{System.Char},System.Int32)">IsNeglectHeader(ReadOnlySpan&lt;Char&gt;, Int32)</h4>
@@ -1093,20 +805,19 @@ protected bool IsNeglectHeader(char *source, int location)</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Neglect_System_Char__System_Int32_System_Int32__System_Exception__System_Traits_IAdd_Stringier_Patterns_Capture__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Neglect(System.Char*%2CSystem.Int32%2CSystem.Int32%40%2CSystem.Exception%40%2CSystem.Traits.IAdd%7BStringier.Patterns.Capture%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Neglect_System_ReadOnlySpan_System_Char__System_Int32__System_Exception__System_Traits_IAdd_Stringier_Patterns_Capture__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Neglect(System.ReadOnlySpan%7BSystem.Char%7D%2CSystem.Int32%40%2CSystem.Exception%40%2CSystem.Traits.IAdd%7BStringier.Patterns.Capture%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Pattern.cs/#L362">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Pattern.cs/#L340">View Source</a>
   </span>
   <a id="Stringier_Patterns_Pattern_Neglect_" data-uid="Stringier.Patterns.Pattern.Neglect*"></a>
-  <h4 id="Stringier_Patterns_Pattern_Neglect_System_Char__System_Int32_System_Int32__System_Exception__System_Traits_IAdd_Stringier_Patterns_Capture__" data-uid="Stringier.Patterns.Pattern.Neglect(System.Char*,System.Int32,System.Int32@,System.Exception@,System.Traits.IAdd{Stringier.Patterns.Capture})">Neglect(Char*, Int32, ref Int32, out Exception, IAdd&lt;Capture&gt;)</h4>
+  <h4 id="Stringier_Patterns_Pattern_Neglect_System_ReadOnlySpan_System_Char__System_Int32__System_Exception__System_Traits_IAdd_Stringier_Patterns_Capture__" data-uid="Stringier.Patterns.Pattern.Neglect(System.ReadOnlySpan{System.Char},System.Int32@,System.Exception@,System.Traits.IAdd{Stringier.Patterns.Capture})">Neglect(ReadOnlySpan&lt;Char&gt;, ref Int32, out Exception, IAdd&lt;Capture&gt;)</h4>
   <div class="markdown level1 summary"><p>Calls the neglect parser for this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> on the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
-protected abstract void Neglect(char *source, int length, ref int location, out Exception exception, IAdd&lt;Capture&gt; trace)</code></pre>
+    <pre><code class="lang-csharp hljs">protected abstract void Neglect(ReadOnlySpan&lt;char&gt; source, ref int location, out Exception exception, IAdd&lt;Capture&gt; trace)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1119,68 +830,7 @@ protected abstract void Neglect(char *source, int length, ref int location, out 
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>*</td>
-        <td><span class="parametername">source</span></td>
-        <td><p>The source to parse.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td><span class="parametername">length</span></td>
-        <td><p>The length of the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td><span class="parametername">location</span></td>
-        <td><p>The location within the <code data-dev-comment-type="paramref" class="paramref">source</code> to begin parsing, updated to the end of the match.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.exception">Exception</a></td>
-        <td><span class="parametername">exception</span></td>
-        <td><p>The exception that occurred during parsing, if any.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="System.Traits.IAdd-1.html">IAdd</a>&lt;<a class="xref" href="Stringier.Patterns.Capture.html">Capture</a>&gt;</td>
-        <td><span class="parametername">trace</span></td>
-        <td><p>The object to trace the steps through the pattern graph in.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Stringier_Patterns_Pattern_Neglect_System_Char__System_Int32_System_Int32__System_Exception__System_Traits_IAdd_Stringier_Patterns_Capture___remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>This behaves identically to <a class="xref" href="Stringier.Patterns.Pattern.html#Stringier_Patterns_Pattern_Consume_System_ReadOnlyMemory_System_Char__System_Int32__System_Exception__System_Traits_IAdd_Stringier_Patterns_Capture__">Consume(ReadOnlyMemory&lt;Char&gt;, ref Int32, out Exception, IAdd&lt;Capture&gt;)</a>, except that a match is defined as anything the same length as this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a>, but not equal to it. If the source is the same length and content as this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a>, it is considered a failed match. This is used to implement <a class="xref" href="Stringier.Patterns.Pattern.html#Stringier_Patterns_Pattern_Not">Not()</a>.</p>
-</div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Neglect_System_ReadOnlyMemory_System_Char__System_Int32__System_Exception__System_Traits_IAdd_Stringier_Patterns_Capture__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Neglect(System.ReadOnlyMemory%7BSystem.Char%7D%2CSystem.Int32%40%2CSystem.Exception%40%2CSystem.Traits.IAdd%7BStringier.Patterns.Capture%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Pattern.cs/#L349">View Source</a>
-  </span>
-  <a id="Stringier_Patterns_Pattern_Neglect_" data-uid="Stringier.Patterns.Pattern.Neglect*"></a>
-  <h4 id="Stringier_Patterns_Pattern_Neglect_System_ReadOnlyMemory_System_Char__System_Int32__System_Exception__System_Traits_IAdd_Stringier_Patterns_Capture__" data-uid="Stringier.Patterns.Pattern.Neglect(System.ReadOnlyMemory{System.Char},System.Int32@,System.Exception@,System.Traits.IAdd{Stringier.Patterns.Capture})">Neglect(ReadOnlyMemory&lt;Char&gt;, ref Int32, out Exception, IAdd&lt;Capture&gt;)</h4>
-  <div class="markdown level1 summary"><p>Calls the neglect parser for this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a> on the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected abstract void Neglect(ReadOnlyMemory&lt;char&gt; source, ref int location, out Exception exception, IAdd&lt;Capture&gt; trace)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
         <td><span class="parametername">source</span></td>
         <td><p>The source to parse.</p>
 </td>
@@ -1205,8 +855,8 @@ protected abstract void Neglect(char *source, int length, ref int location, out 
       </tr>
     </tbody>
   </table>
-  <h5 id="Stringier_Patterns_Pattern_Neglect_System_ReadOnlyMemory_System_Char__System_Int32__System_Exception__System_Traits_IAdd_Stringier_Patterns_Capture___remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>This behaves identically to <a class="xref" href="Stringier.Patterns.Pattern.html#Stringier_Patterns_Pattern_Consume_System_ReadOnlyMemory_System_Char__System_Int32__System_Exception__System_Traits_IAdd_Stringier_Patterns_Capture__">Consume(ReadOnlyMemory&lt;Char&gt;, ref Int32, out Exception, IAdd&lt;Capture&gt;)</a>, except that a match is defined as anything the same length as this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a>, but not equal to it. If the source is the same length and content as this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a>, it is considered a failed match. This is used to implement <a class="xref" href="Stringier.Patterns.Pattern.html#Stringier_Patterns_Pattern_Not">Not()</a>.</p>
+  <h5 id="Stringier_Patterns_Pattern_Neglect_System_ReadOnlySpan_System_Char__System_Int32__System_Exception__System_Traits_IAdd_Stringier_Patterns_Capture___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This behaves identically to <a class="xref" href="Stringier.Patterns.Pattern.html#Stringier_Patterns_Pattern_Consume_System_ReadOnlySpan_System_Char__System_Int32__System_Exception__System_Traits_IAdd_Stringier_Patterns_Capture__">Consume(ReadOnlySpan&lt;Char&gt;, ref Int32, out Exception, IAdd&lt;Capture&gt;)</a>, except that a match is defined as anything the same length as this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a>, but not equal to it. If the source is the same length and content as this <a class="xref" href="Stringier.Patterns.Pattern.html">Pattern</a>, it is considered a failed match. This is used to implement <a class="xref" href="Stringier.Patterns.Pattern.html#Stringier_Patterns_Pattern_Not">Not()</a>.</p>
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
@@ -1495,7 +1145,7 @@ protected abstract void Neglect(char *source, int length, ref int location, out 
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Parse_System_Char__System_Int32_System_Int32__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Parse(System.Char*%2CSystem.Int32%2CSystem.Int32%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Pattern.cs/#L198">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Pattern.cs/#L210">View Source</a>
   </span>
   <a id="Stringier_Patterns_Pattern_Parse_" data-uid="Stringier.Patterns.Pattern.Parse*"></a>
   <h4 id="Stringier_Patterns_Pattern_Parse_System_Char__System_Int32_System_Int32__" data-uid="Stringier.Patterns.Pattern.Parse(System.Char*,System.Int32,System.Int32@)">Parse(Char*, Int32, ref Int32)</h4>
@@ -1505,7 +1155,7 @@ protected abstract void Neglect(char *source, int length, ref int location, out 
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
-public Capture Parse(char *source, int length, ref int location)</code></pre>
+public Span&lt;char&gt; Parse(char *source, int length, ref int location)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1547,7 +1197,7 @@ public Capture Parse(char *source, int length, ref int location)</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Stringier.Patterns.Capture.html">Capture</a></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
         <td><p>The captured text.</p>
 </td>
       </tr>
@@ -1558,7 +1208,7 @@ public Capture Parse(char *source, int length, ref int location)</code></pre>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Parse_System_Char__System_Int32_System_Int32__System_Traits_IAdd_Stringier_Patterns_Capture__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Parse(System.Char*%2CSystem.Int32%2CSystem.Int32%40%2CSystem.Traits.IAdd%7BStringier.Patterns.Capture%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Pattern.cs/#L255">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Pattern.cs/#L295">View Source</a>
   </span>
   <a id="Stringier_Patterns_Pattern_Parse_" data-uid="Stringier.Patterns.Pattern.Parse*"></a>
   <h4 id="Stringier_Patterns_Pattern_Parse_System_Char__System_Int32_System_Int32__System_Traits_IAdd_Stringier_Patterns_Capture__" data-uid="Stringier.Patterns.Pattern.Parse(System.Char*,System.Int32,System.Int32@,System.Traits.IAdd{Stringier.Patterns.Capture})">Parse(Char*, Int32, ref Int32, IAdd&lt;Capture&gt;)</h4>
@@ -1567,8 +1217,7 @@ public Capture Parse(char *source, int length, ref int location)</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
-public Capture Parse(char *source, int length, ref int location, IAdd&lt;Capture&gt; trace)</code></pre>
+    <pre><code class="lang-csharp hljs">public Span&lt;char&gt; Parse(char *source, int length, ref int location, IAdd&lt;Capture&gt; trace)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1616,7 +1265,7 @@ public Capture Parse(char *source, int length, ref int location, IAdd&lt;Capture
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Stringier.Patterns.Capture.html">Capture</a></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
         <td><p>The captured text.</p>
 </td>
       </tr>
@@ -1627,7 +1276,7 @@ public Capture Parse(char *source, int length, ref int location, IAdd&lt;Capture
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Parse_System_Char___System_Int32__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Parse(System.Char%5B%5D%2CSystem.Int32%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Pattern.cs/#L170">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Pattern.cs/#L169">View Source</a>
   </span>
   <a id="Stringier_Patterns_Pattern_Parse_" data-uid="Stringier.Patterns.Pattern.Parse*"></a>
   <h4 id="Stringier_Patterns_Pattern_Parse_System_Char___System_Int32__" data-uid="Stringier.Patterns.Pattern.Parse(System.Char[],System.Int32@)">Parse(Char[], ref Int32)</h4>
@@ -1636,7 +1285,7 @@ public Capture Parse(char *source, int length, ref int location, IAdd&lt;Capture
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Capture Parse(char[] source, ref int location)</code></pre>
+    <pre><code class="lang-csharp hljs">public Memory&lt;char&gt; Parse(char[] source, ref int location)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1672,7 +1321,7 @@ public Capture Parse(char *source, int length, ref int location, IAdd&lt;Capture
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Stringier.Patterns.Capture.html">Capture</a></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
         <td><p>The captured text.</p>
 </td>
       </tr>
@@ -1683,7 +1332,7 @@ public Capture Parse(char *source, int length, ref int location, IAdd&lt;Capture
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Parse_System_Char___System_Int32__System_Traits_IAdd_Stringier_Patterns_Capture__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Parse(System.Char%5B%5D%2CSystem.Int32%40%2CSystem.Traits.IAdd%7BStringier.Patterns.Capture%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Pattern.cs/#L221">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Pattern.cs/#L234">View Source</a>
   </span>
   <a id="Stringier_Patterns_Pattern_Parse_" data-uid="Stringier.Patterns.Pattern.Parse*"></a>
   <h4 id="Stringier_Patterns_Pattern_Parse_System_Char___System_Int32__System_Traits_IAdd_Stringier_Patterns_Capture__" data-uid="Stringier.Patterns.Pattern.Parse(System.Char[],System.Int32@,System.Traits.IAdd{Stringier.Patterns.Capture})">Parse(Char[], ref Int32, IAdd&lt;Capture&gt;)</h4>
@@ -1692,7 +1341,7 @@ public Capture Parse(char *source, int length, ref int location, IAdd&lt;Capture
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Capture Parse(char[] source, ref int location, IAdd&lt;Capture&gt; trace)</code></pre>
+    <pre><code class="lang-csharp hljs">public Memory&lt;char&gt; Parse(char[] source, ref int location, IAdd&lt;Capture&gt; trace)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1734,7 +1383,7 @@ public Capture Parse(char *source, int length, ref int location, IAdd&lt;Capture
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Stringier.Patterns.Capture.html">Capture</a></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
         <td><p>The captured text.</p>
 </td>
       </tr>
@@ -1745,7 +1394,7 @@ public Capture Parse(char *source, int length, ref int location, IAdd&lt;Capture
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Parse_System_Memory_System_Char__System_Int32__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Parse(System.Memory%7BSystem.Char%7D%2CSystem.Int32%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Pattern.cs/#L179">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Pattern.cs/#L177">View Source</a>
   </span>
   <a id="Stringier_Patterns_Pattern_Parse_" data-uid="Stringier.Patterns.Pattern.Parse*"></a>
   <h4 id="Stringier_Patterns_Pattern_Parse_System_Memory_System_Char__System_Int32__" data-uid="Stringier.Patterns.Pattern.Parse(System.Memory{System.Char},System.Int32@)">Parse(Memory&lt;Char&gt;, ref Int32)</h4>
@@ -1754,7 +1403,7 @@ public Capture Parse(char *source, int length, ref int location, IAdd&lt;Capture
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Capture Parse(Memory&lt;char&gt; source, ref int location)</code></pre>
+    <pre><code class="lang-csharp hljs">public Memory&lt;char&gt; Parse(Memory&lt;char&gt; source, ref int location)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1790,7 +1439,7 @@ public Capture Parse(char *source, int length, ref int location, IAdd&lt;Capture
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Stringier.Patterns.Capture.html">Capture</a></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
         <td><p>The captured text.</p>
 </td>
       </tr>
@@ -1801,7 +1450,7 @@ public Capture Parse(char *source, int length, ref int location, IAdd&lt;Capture
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Parse_System_Memory_System_Char__System_Int32__System_Traits_IAdd_Stringier_Patterns_Capture__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Parse(System.Memory%7BSystem.Char%7D%2CSystem.Int32%40%2CSystem.Traits.IAdd%7BStringier.Patterns.Capture%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Pattern.cs/#L231">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Pattern.cs/#L246">View Source</a>
   </span>
   <a id="Stringier_Patterns_Pattern_Parse_" data-uid="Stringier.Patterns.Pattern.Parse*"></a>
   <h4 id="Stringier_Patterns_Pattern_Parse_System_Memory_System_Char__System_Int32__System_Traits_IAdd_Stringier_Patterns_Capture__" data-uid="Stringier.Patterns.Pattern.Parse(System.Memory{System.Char},System.Int32@,System.Traits.IAdd{Stringier.Patterns.Capture})">Parse(Memory&lt;Char&gt;, ref Int32, IAdd&lt;Capture&gt;)</h4>
@@ -1810,7 +1459,7 @@ public Capture Parse(char *source, int length, ref int location, IAdd&lt;Capture
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Capture Parse(Memory&lt;char&gt; source, ref int location, IAdd&lt;Capture&gt; trace)</code></pre>
+    <pre><code class="lang-csharp hljs">public Memory&lt;char&gt; Parse(Memory&lt;char&gt; source, ref int location, IAdd&lt;Capture&gt; trace)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1852,7 +1501,7 @@ public Capture Parse(char *source, int length, ref int location, IAdd&lt;Capture
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Stringier.Patterns.Capture.html">Capture</a></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
         <td><p>The captured text.</p>
 </td>
       </tr>
@@ -1863,7 +1512,7 @@ public Capture Parse(char *source, int length, ref int location, IAdd&lt;Capture
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Parse_System_ReadOnlyMemory_System_Char__System_Int32__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Parse(System.ReadOnlyMemory%7BSystem.Char%7D%2CSystem.Int32%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Pattern.cs/#L188">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Pattern.cs/#L185">View Source</a>
   </span>
   <a id="Stringier_Patterns_Pattern_Parse_" data-uid="Stringier.Patterns.Pattern.Parse*"></a>
   <h4 id="Stringier_Patterns_Pattern_Parse_System_ReadOnlyMemory_System_Char__System_Int32__" data-uid="Stringier.Patterns.Pattern.Parse(System.ReadOnlyMemory{System.Char},System.Int32@)">Parse(ReadOnlyMemory&lt;Char&gt;, ref Int32)</h4>
@@ -1872,7 +1521,7 @@ public Capture Parse(char *source, int length, ref int location, IAdd&lt;Capture
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Capture Parse(ReadOnlyMemory&lt;char&gt; source, ref int location)</code></pre>
+    <pre><code class="lang-csharp hljs">public ReadOnlyMemory&lt;char&gt; Parse(ReadOnlyMemory&lt;char&gt; source, ref int location)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1908,7 +1557,7 @@ public Capture Parse(char *source, int length, ref int location, IAdd&lt;Capture
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Stringier.Patterns.Capture.html">Capture</a></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
         <td><p>The captured text.</p>
 </td>
       </tr>
@@ -1919,7 +1568,7 @@ public Capture Parse(char *source, int length, ref int location, IAdd&lt;Capture
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Parse_System_ReadOnlyMemory_System_Char__System_Int32__System_Traits_IAdd_Stringier_Patterns_Capture__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Parse(System.ReadOnlyMemory%7BSystem.Char%7D%2CSystem.Int32%40%2CSystem.Traits.IAdd%7BStringier.Patterns.Capture%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Pattern.cs/#L241">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Pattern.cs/#L258">View Source</a>
   </span>
   <a id="Stringier_Patterns_Pattern_Parse_" data-uid="Stringier.Patterns.Pattern.Parse*"></a>
   <h4 id="Stringier_Patterns_Pattern_Parse_System_ReadOnlyMemory_System_Char__System_Int32__System_Traits_IAdd_Stringier_Patterns_Capture__" data-uid="Stringier.Patterns.Pattern.Parse(System.ReadOnlyMemory{System.Char},System.Int32@,System.Traits.IAdd{Stringier.Patterns.Capture})">Parse(ReadOnlyMemory&lt;Char&gt;, ref Int32, IAdd&lt;Capture&gt;)</h4>
@@ -1928,7 +1577,7 @@ public Capture Parse(char *source, int length, ref int location, IAdd&lt;Capture
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Capture Parse(ReadOnlyMemory&lt;char&gt; source, ref int location, IAdd&lt;Capture&gt; trace)</code></pre>
+    <pre><code class="lang-csharp hljs">public ReadOnlyMemory&lt;char&gt; Parse(ReadOnlyMemory&lt;char&gt; source, ref int location, IAdd&lt;Capture&gt; trace)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1970,7 +1619,243 @@ public Capture Parse(char *source, int length, ref int location, IAdd&lt;Capture
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Stringier.Patterns.Capture.html">Capture</a></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><p>The captured text.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Parse_System_ReadOnlySpan_System_Char__System_Int32__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Parse(System.ReadOnlySpan%7BSystem.Char%7D%2CSystem.Int32%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Pattern.cs/#L201">View Source</a>
+  </span>
+  <a id="Stringier_Patterns_Pattern_Parse_" data-uid="Stringier.Patterns.Pattern.Parse*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Parse_System_ReadOnlySpan_System_Char__System_Int32__" data-uid="Stringier.Patterns.Pattern.Parse(System.ReadOnlySpan{System.Char},System.Int32@)">Parse(ReadOnlySpan&lt;Char&gt;, ref Int32)</h4>
+  <div class="markdown level1 summary"><p>Parses the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ReadOnlySpan&lt;char&gt; Parse(ReadOnlySpan&lt;char&gt; source, ref int location)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">source</span></td>
+        <td><p>The source to parse.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">location</span></td>
+        <td><p>The location within the <code data-dev-comment-type="paramref" class="paramref">source</code> to begin parsing, updated to the end of the match.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><p>The captured text.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Parse_System_ReadOnlySpan_System_Char__System_Int32__System_Traits_IAdd_Stringier_Patterns_Capture__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Parse(System.ReadOnlySpan%7BSystem.Char%7D%2CSystem.Int32%40%2CSystem.Traits.IAdd%7BStringier.Patterns.Capture%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Pattern.cs/#L282">View Source</a>
+  </span>
+  <a id="Stringier_Patterns_Pattern_Parse_" data-uid="Stringier.Patterns.Pattern.Parse*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Parse_System_ReadOnlySpan_System_Char__System_Int32__System_Traits_IAdd_Stringier_Patterns_Capture__" data-uid="Stringier.Patterns.Pattern.Parse(System.ReadOnlySpan{System.Char},System.Int32@,System.Traits.IAdd{Stringier.Patterns.Capture})">Parse(ReadOnlySpan&lt;Char&gt;, ref Int32, IAdd&lt;Capture&gt;)</h4>
+  <div class="markdown level1 summary"><p>Parses the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ReadOnlySpan&lt;char&gt; Parse(ReadOnlySpan&lt;char&gt; source, ref int location, IAdd&lt;Capture&gt; trace)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">source</span></td>
+        <td><p>The source to parse.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">location</span></td>
+        <td><p>The location within the <code data-dev-comment-type="paramref" class="paramref">source</code> to begin parsing, updated to the end of the match.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="System.Traits.IAdd-1.html">IAdd</a>&lt;<a class="xref" href="Stringier.Patterns.Capture.html">Capture</a>&gt;</td>
+        <td><span class="parametername">trace</span></td>
+        <td><p>The object to trace the steps through the pattern graph in.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><p>The captured text.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Parse_System_Span_System_Char__System_Int32__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Parse(System.Span%7BSystem.Char%7D%2CSystem.Int32%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Pattern.cs/#L193">View Source</a>
+  </span>
+  <a id="Stringier_Patterns_Pattern_Parse_" data-uid="Stringier.Patterns.Pattern.Parse*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Parse_System_Span_System_Char__System_Int32__" data-uid="Stringier.Patterns.Pattern.Parse(System.Span{System.Char},System.Int32@)">Parse(Span&lt;Char&gt;, ref Int32)</h4>
+  <div class="markdown level1 summary"><p>Parses the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Span&lt;char&gt; Parse(Span&lt;char&gt; source, ref int location)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">source</span></td>
+        <td><p>The source to parse.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">location</span></td>
+        <td><p>The location within the <code data-dev-comment-type="paramref" class="paramref">source</code> to begin parsing, updated to the end of the match.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><p>The captured text.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Parse_System_Span_System_Char__System_Int32__System_Traits_IAdd_Stringier_Patterns_Capture__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Parse(System.Span%7BSystem.Char%7D%2CSystem.Int32%40%2CSystem.Traits.IAdd%7BStringier.Patterns.Capture%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Pattern.cs/#L270">View Source</a>
+  </span>
+  <a id="Stringier_Patterns_Pattern_Parse_" data-uid="Stringier.Patterns.Pattern.Parse*"></a>
+  <h4 id="Stringier_Patterns_Pattern_Parse_System_Span_System_Char__System_Int32__System_Traits_IAdd_Stringier_Patterns_Capture__" data-uid="Stringier.Patterns.Pattern.Parse(System.Span{System.Char},System.Int32@,System.Traits.IAdd{Stringier.Patterns.Capture})">Parse(Span&lt;Char&gt;, ref Int32, IAdd&lt;Capture&gt;)</h4>
+  <div class="markdown level1 summary"><p>Parses the <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Span&lt;char&gt; Parse(Span&lt;char&gt; source, ref int location, IAdd&lt;Capture&gt; trace)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
+        <td><span class="parametername">source</span></td>
+        <td><p>The source to parse.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">location</span></td>
+        <td><p>The location within the <code data-dev-comment-type="paramref" class="paramref">source</code> to begin parsing, updated to the end of the match.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="System.Traits.IAdd-1.html">IAdd</a>&lt;<a class="xref" href="Stringier.Patterns.Capture.html">Capture</a>&gt;</td>
+        <td><span class="parametername">trace</span></td>
+        <td><p>The object to trace the steps through the pattern graph in.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
         <td><p>The captured text.</p>
 </td>
       </tr>
@@ -1990,7 +1875,7 @@ public Capture Parse(char *source, int length, ref int location, IAdd&lt;Capture
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Capture Parse(string source, ref int location)</code></pre>
+    <pre><code class="lang-csharp hljs">public ReadOnlyMemory&lt;char&gt; Parse(string source, ref int location)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2026,7 +1911,7 @@ public Capture Parse(char *source, int length, ref int location, IAdd&lt;Capture
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Stringier.Patterns.Capture.html">Capture</a></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
         <td><p>The captured text.</p>
 </td>
       </tr>
@@ -2037,7 +1922,7 @@ public Capture Parse(char *source, int length, ref int location, IAdd&lt;Capture
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Patterns_Pattern_Parse_System_String_System_Int32__System_Traits_IAdd_Stringier_Patterns_Capture__.md&amp;value=---%0Auid%3A%20Stringier.Patterns.Pattern.Parse(System.String%2CSystem.Int32%40%2CSystem.Traits.IAdd%7BStringier.Patterns.Capture%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Pattern.cs/#L211">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Patterns/Pattern.cs/#L222">View Source</a>
   </span>
   <a id="Stringier_Patterns_Pattern_Parse_" data-uid="Stringier.Patterns.Pattern.Parse*"></a>
   <h4 id="Stringier_Patterns_Pattern_Parse_System_String_System_Int32__System_Traits_IAdd_Stringier_Patterns_Capture__" data-uid="Stringier.Patterns.Pattern.Parse(System.String,System.Int32@,System.Traits.IAdd{Stringier.Patterns.Capture})">Parse(String, ref Int32, IAdd&lt;Capture&gt;)</h4>
@@ -2046,7 +1931,7 @@ public Capture Parse(char *source, int length, ref int location, IAdd&lt;Capture
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Capture Parse(string source, ref int location, IAdd&lt;Capture&gt; trace)</code></pre>
+    <pre><code class="lang-csharp hljs">public ReadOnlyMemory&lt;char&gt; Parse(string source, ref int location, IAdd&lt;Capture&gt; trace)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2088,7 +1973,7 @@ public Capture Parse(char *source, int length, ref int location, IAdd&lt;Capture
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Stringier.Patterns.Capture.html">Capture</a></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
         <td><p>The captured text.</p>
 </td>
       </tr>

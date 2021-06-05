@@ -20,7 +20,7 @@ namespace Stringier.Patterns {
 		internal NestedRanger([DisallowNull] Pattern from, [DisallowNull] Pattern to) : base(from, to) => Level = 0;
 
 		/// <inheritdoc/>
-		protected internal override void Consume(ReadOnlyMemory<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
+		protected internal override void Consume(ReadOnlySpan<Char> source, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
 			Int32 start = location;
 			From.Consume(source, ref location, out exception, trace);
 			if (exception is null) {
@@ -40,42 +40,6 @@ namespace Stringier.Patterns {
 				if (location == source.Length) break;
 				if (To.IsConsumeHeader(source, location)) {
 					To.Consume(source, ref location, out exception, trace);
-					if (exception is null) {
-						Level--;
-					}
-				} else {
-					location++;
-				}
-			}
-			if (Level != 0) {
-				exception = NoMatch;
-			}
-			if (exception is not null) {
-				location = start;
-			}
-		}
-
-		/// <inheritdoc/>
-		protected internal override unsafe void Consume([DisallowNull] Char* source, Int32 length, ref Int32 location, [AllowNull, MaybeNull] out Exception exception, [AllowNull] IAdd<Capture> trace) {
-			Int32 start = location;
-			From.Consume(source, length, ref location, out exception, trace);
-			if (exception is null) {
-				Level++;
-			} else {
-				exception = NoMatch;
-				return;
-			}
-			while (Level > 0) {
-				if (location == length) break;
-				if (From.IsConsumeHeader(source, location)) {
-					From.Consume(source, length, ref location, out exception, trace);
-					if (exception is null) {
-						Level++;
-					}
-				}
-				if (location == length) break;
-				if (To.IsConsumeHeader(source, location)) {
-					To.Consume(source, length, ref location, out exception, trace);
 					if (exception is null) {
 						Level--;
 					}
