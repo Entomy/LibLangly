@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+#if NETCOREAPP3_0_OR_GREATER
 using System.Text;
+#endif
 
 namespace Stringier.Patterns {
 	/// <summary>
@@ -44,6 +46,7 @@ namespace Stringier.Patterns {
 			}
 		}
 
+#if NETCOREAPP3_0_OR_GREATER
 		/// <inheritdoc/>
 		[return: NotNull]
 		public sealed override Pattern Then(Rune other) {
@@ -54,6 +57,7 @@ namespace Stringier.Patterns {
 				return new Concatenator(this, new RuneLiteral(other));
 			}
 		}
+#endif
 
 		/// <inheritdoc/>
 		[return: NotNull]

@@ -4,7 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 namespace Stringier {
 	public static partial class UTF16 {
 		/// <summary>
-		/// Big-Endian.
+		/// UTF-16 Big-Endian.
 		/// </summary>
 		[SuppressMessage("Design", "CA1034:Nested types should not be visible", Justification = "Nesting actually creates the proper structure, especially as endian variants unnested lose all context.")]
 		public static class BE {

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+#if NETCOREAPP3_0_OR_GREATER
 using System.Text;
+#endif
 
 namespace Stringier.Patterns {
 	public partial class Pattern {
@@ -36,6 +38,7 @@ namespace Stringier.Patterns {
 		[return: NotNull]
 		public virtual Pattern Or(Char other) => new Alternator(this, new CharLiteral(other));
 
+#if NETCOREAPP3_0_OR_GREATER
 		/// <summary>
 		/// Declares <paramref name="other"/> to be an alternate of this <see cref="Pattern"/>.
 		/// </summary>
@@ -43,6 +46,7 @@ namespace Stringier.Patterns {
 		/// <returns>A new <see cref="Pattern"/> matching this <see cref="Pattern"/> or <paramref name="other"/>.</returns>
 		[return: NotNull]
 		public virtual Pattern Or(Rune other) => new Alternator(this, new RuneLiteral(other));
+#endif
 
 		/// <summary>
 		/// Declares <paramref name="other"/> to be an alternate of this <see cref="Pattern"/>.

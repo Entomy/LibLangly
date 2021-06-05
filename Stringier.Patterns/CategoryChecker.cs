@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if NETCOREAPP3_0_OR_GREATER
+using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Traits;
 
@@ -63,3 +64,4 @@ namespace Stringier.Patterns {
 		}
 	}
 }
+#endif

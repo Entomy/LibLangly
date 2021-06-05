@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
+#if NETCOREAPP3_0_OR_GREATER
 using System.Text;
+#endif
 using System.Traits;
 using Langly;
 
@@ -13,7 +15,11 @@ namespace Stringier {
 	public sealed partial class Rope :
 		IAddMemory<Char>,
 		IClear,
-		IEquatable<Rope>, IEquatable<Char>, IEquatable<Rune>, IEquatable<String>, IEquatable<Char[]>, IEquatable<Memory<Char>>, IEquatable<ReadOnlyMemory<Char>>,
+		IEquatable<Rope>, IEquatable<Char>,
+#if NETCOREAPP3_0_OR_GREATER
+		IEquatable<Rune>,
+#endif
+		IEquatable<String>, IEquatable<Char[]>, IEquatable<Memory<Char>>, IEquatable<ReadOnlyMemory<Char>>,
 		IIndex<nint, Char>,
 		IInsertMemory<nint, Char>,
 		IPostpendMemory<Char>,
@@ -607,6 +613,7 @@ namespace Stringier {
 		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
 		public Boolean Equals(Char other, Case casing) => throw new NotImplementedException();
 
+#if NETCOREAPP3_0_OR_GREATER
 		/// <inheritdoc/>
 		public Boolean Equals(Rune other) => throw new NotImplementedException();
 
@@ -618,7 +625,8 @@ namespace Stringier {
 		/// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
 		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
 		public Boolean Equals(Rune other, Case casing) => throw new NotImplementedException();
-			
+#endif
+
 		/// <summary>
 		/// Determines whether the specified object is equal to the current object.
 		/// </summary>

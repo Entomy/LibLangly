@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+#if NETCOREAPP3_0_OR_GREATER
 using System.Text;
+#endif
 using System.Traits;
 
 namespace Stringier.Patterns {
@@ -53,6 +55,7 @@ namespace Stringier.Patterns {
 		[return: NotNull]
 		public static implicit operator Pattern((Char, Case) @char) => new CharLiteral(@char.Item1, @char.Item2);
 
+#if NETCOREAPP3_0_OR_GREATER
 		/// <summary>
 		/// Converts to a <see cref="Pattern"/> matching exactly the <paramref name="rune"/>.
 		/// </summary>
@@ -66,6 +69,7 @@ namespace Stringier.Patterns {
 		/// <param name="rune">A <see cref="ValueTuple{T1, T2}"/> of <see cref="Rune"/> to match and <see cref="Case"/> comparison.</param>
 		[return: NotNull]
 		public static implicit operator Pattern((Rune, Case) rune) => new RuneLiteral(rune.Item1, rune.Item2);
+#endif
 
 		/// <summary>
 		/// Converts to a <see cref="Pattern"/> matching exactly the <paramref name="string"/>.
@@ -137,12 +141,14 @@ namespace Stringier.Patterns {
 		[return: NotNull]
 		public static implicit operator Pattern((Capture, Case) capture) => new CaptureLiteral(capture.Item1, capture.Item2);
 
+#if NETCOREAPP3_0_OR_GREATER
 		/// <summary>
 		/// Converts to a <see cref="Pattern"/> matching exactly the <paramref name="category"/>.
 		/// </summary>
 		/// <param name="category">The <see cref="Category"/> to match.</param>
 		[return: MaybeNull, NotNullIfNotNull("category")]
 		public static implicit operator Pattern([AllowNull] Category category) => category is not null ? new CategoryChecker(category) : null;
+#endif
 		#endregion
 
 		#region Parse(Source, ref Int32)

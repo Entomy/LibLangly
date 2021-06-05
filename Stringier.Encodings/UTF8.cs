@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+#if NETCOREAPP3_0_OR_GREATER
 using System.Text;
+#endif
 
 namespace Stringier {
 	/// <summary>
@@ -15,6 +17,7 @@ namespace Stringier {
 		/// </summary>
 		public static ReadOnlyMemory<Byte> BOM { get; } = new Byte[] { 0xEF, 0xBB, 0xBF };
 
+#if NETCOREAPP3_0_OR_GREATER
 		/// <summary>
 		/// Decode the UTF-8 sequence into a <see cref="Rune"/>.
 		/// </summary>
@@ -287,6 +290,7 @@ namespace Stringier {
 		/// </remarks>
 		[CLSCompliant(false)]
 		public static unsafe ReadOnlyMemory<Byte> Encode([AllowNull] Rune* runes, Int32 length) => runes is not null ? Encode(new ReadOnlySpan<Rune>(runes, length)) : ReadOnlyMemory<Byte>.Empty;
+#endif
 
 		/// <summary>
 		/// Is the <paramref name="unit"/> the first unit of a UTF-8 sequence?
@@ -353,6 +357,7 @@ namespace Stringier {
 			}
 		}
 
+#if NETCOREAPP3_0_OR_GREATER
 		internal static Rune Decode(ReadOnlySpan<Byte> buffer, ref Int32 index) {
 			switch (SequenceLength(buffer[index])) {
 			case 1:
@@ -405,5 +410,6 @@ namespace Stringier {
 				throw new InvalidOperationException("A rune was somehow created that is invalid; this is a bug in the runtime.");
 			}
 		}
+#endif
 	}
 }

@@ -143,22 +143,19 @@
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="Streamy.Stream.html#Streamy_Stream_Base">Stream.Base</a>
+      <a class="xref" href="Streamy.Stream.html#Streamy_Stream_Sink">Stream.Sink</a>
     </div>
     <div>
-      <a class="xref" href="Streamy.Stream.html#Streamy_Stream_ReadBuffer">Stream.ReadBuffer</a>
-    </div>
-    <div>
-      <a class="xref" href="Streamy.Stream.html#Streamy_Stream_WriteBuffer">Stream.WriteBuffer</a>
+      <a class="xref" href="Streamy.Stream.html#Streamy_Stream_Source">Stream.Source</a>
     </div>
     <div>
       <a class="xref" href="Streamy.Stream.html#Streamy_Stream_System_Traits_IControlled_Disposed">Stream.IControlled.Disposed</a>
     </div>
     <div>
-      <a class="xref" href="Streamy.Stream.html#Streamy_Stream_Disposed">Stream.Disposed</a>
+      <a class="xref" href="Streamy.Stream.html#Streamy_Stream_Endianness">Stream.Endianness</a>
     </div>
     <div>
-      <a class="xref" href="Streamy.Stream.html#Streamy_Stream_Endianness">Stream.Endianness</a>
+      <a class="xref" href="Streamy.Stream.html#Streamy_Stream_Disposed">Stream.Disposed</a>
     </div>
     <div>
       <a class="xref" href="Streamy.Stream.html#Streamy_Stream_System_Traits_IControlled_Dispose_System_Boolean_">Stream.IControlled.Dispose(Boolean)</a>
@@ -366,8 +363,7 @@
     <pre><code class="lang-csharp hljs">public class CharStream : Stream, IControlled, IDisposable, IPeek&lt;byte&gt;, IPeek&lt;sbyte&gt;, IPeek&lt;short&gt;, IPeek&lt;ushort&gt;, IPeek&lt;int&gt;, IPeek&lt;uint&gt;, IPeek&lt;long&gt;, IPeek&lt;ulong&gt;, IPeek&lt;float&gt;, IPeek&lt;double&gt;, IPeek&lt;decimal&gt;, IPeek&lt;bool&gt;, IRead&lt;byte&gt;, IRead&lt;sbyte&gt;, IRead&lt;short&gt;, IRead&lt;ushort&gt;, IRead&lt;int&gt;, IRead&lt;uint&gt;, IRead&lt;long&gt;, IRead&lt;ulong&gt;, IRead&lt;float&gt;, IRead&lt;double&gt;, IRead&lt;decimal&gt;, IRead&lt;bool&gt;, IWrite&lt;byte&gt;, IAdd&lt;byte&gt;, IWrite&lt;sbyte&gt;, IAdd&lt;sbyte&gt;, IWrite&lt;short&gt;, IAdd&lt;short&gt;, IWrite&lt;ushort&gt;, IAdd&lt;ushort&gt;, IWrite&lt;int&gt;, IAdd&lt;int&gt;, IWrite&lt;uint&gt;, IAdd&lt;uint&gt;, IWrite&lt;long&gt;, IAdd&lt;long&gt;, IWrite&lt;ulong&gt;, IAdd&lt;ulong&gt;, IWrite&lt;float&gt;, IAdd&lt;float&gt;, IWrite&lt;double&gt;, IAdd&lt;double&gt;, IWrite&lt;decimal&gt;, IAdd&lt;decimal&gt;, IWrite&lt;bool&gt;, IAdd&lt;bool&gt;, IPeek&lt;char&gt;, IRead&lt;char&gt;, ISeek, IWrite&lt;char&gt;, IAdd&lt;char&gt;</code></pre>
   </div>
   <h5 id="Streamy_CharStream_remarks"><strong>Remarks</strong></h5>
-  <div class="markdown level0 remarks"><p>This is a specialization of <a class="xref" href="Streamy.Stream.html">Stream</a>, and as such, everything for <a class="xref" href="Streamy.Stream.html">Stream</a> applies here as well. There&apos;s one additional component that makes up a text stream:</p>
-<p>Encoders are injected through helper objects.</p>
+  <div class="markdown level0 remarks"><p>This is a specialization of <a class="xref" href="Streamy.Stream.html">Stream</a>, and as such, everything for <a class="xref" href="Streamy.Stream.html">Stream</a> applies here as well.</p>
 <p>Additional orchestration can be added by deriving from this type. However, most applications will not need to do this. Support for additional types should be done through the serialization mechanism.</p>
 </div>
   <h3 id="constructors">Constructors
@@ -377,7 +373,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_CharStream__ctor_Streamy_Bases_StreamBase_Streamy_Buffers_IReadBuffer_Streamy_Buffers_IWriteBuffer_Streamy_Encoding_.md&amp;value=---%0Auid%3A%20Streamy.CharStream.%23ctor(Streamy.Bases.StreamBase%2CStreamy.Buffers.IReadBuffer%2CStreamy.Buffers.IWriteBuffer%2CStreamy.Encoding)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.TextStream/CharStream.cs/#L87">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.TextStream/CharStream.cs/#L68">View Source</a>
   </span>
   <a id="Streamy_CharStream__ctor_" data-uid="Streamy.CharStream.#ctor*"></a>
   <h4 id="Streamy_CharStream__ctor_Streamy_Bases_StreamBase_Streamy_Buffers_IReadBuffer_Streamy_Buffers_IWriteBuffer_Streamy_Encoding_" data-uid="Streamy.CharStream.#ctor(Streamy.Bases.StreamBase,Streamy.Buffers.IReadBuffer,Streamy.Buffers.IWriteBuffer,Streamy.Encoding)">CharStream(StreamBase, IReadBuffer, IWriteBuffer, Encoding)</h4>
@@ -430,7 +426,7 @@ protected CharStream(StreamBase base, IReadBuffer readBuffer, IWriteBuffer write
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_CharStream__ctor_System_Byte___.md&amp;value=---%0Auid%3A%20Streamy.CharStream.%23ctor(System.Byte%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.TextStream/CharStream.cs/#L33">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.TextStream/CharStream.cs/#L26">View Source</a>
   </span>
   <a id="Streamy_CharStream__ctor_" data-uid="Streamy.CharStream.#ctor*"></a>
   <h4 id="Streamy_CharStream__ctor_System_Byte___" data-uid="Streamy.CharStream.#ctor(System.Byte[])">CharStream(Byte[])</h4>
@@ -464,7 +460,7 @@ protected CharStream(StreamBase base, IReadBuffer readBuffer, IWriteBuffer write
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_CharStream__ctor_System_Byte___Streamy_Encoding_.md&amp;value=---%0Auid%3A%20Streamy.CharStream.%23ctor(System.Byte%5B%5D%2CStreamy.Encoding)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.TextStream/CharStream.cs/#L40">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.TextStream/CharStream.cs/#L33">View Source</a>
   </span>
   <a id="Streamy_CharStream__ctor_" data-uid="Streamy.CharStream.#ctor*"></a>
   <h4 id="Streamy_CharStream__ctor_System_Byte___Streamy_Encoding_" data-uid="Streamy.CharStream.#ctor(System.Byte[],Streamy.Encoding)">CharStream(Byte[], Encoding)</h4>
@@ -501,44 +497,10 @@ protected CharStream(StreamBase base, IReadBuffer readBuffer, IWriteBuffer write
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_CharStream__ctor_System_Char___.md&amp;value=---%0Auid%3A%20Streamy.CharStream.%23ctor(System.Char%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.TextStream/CharStream.cs/#L27">View Source</a>
-  </span>
-  <a id="Streamy_CharStream__ctor_" data-uid="Streamy.CharStream.#ctor*"></a>
-  <h4 id="Streamy_CharStream__ctor_System_Char___" data-uid="Streamy.CharStream.#ctor(System.Char[])">CharStream(Char[])</h4>
-  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Streamy.CharStream.html">CharStream</a> over the given <code data-dev-comment-type="paramref" class="paramref">array</code>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CharStream(char[] array)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>[]</td>
-        <td><span class="parametername">array</span></td>
-        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.array">Array</a> of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a> to stream.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_CharStream__ctor_System_Memory_System_Byte__.md&amp;value=---%0Auid%3A%20Streamy.CharStream.%23ctor(System.Memory%7BSystem.Byte%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.TextStream/CharStream.cs/#L52">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.TextStream/CharStream.cs/#L39">View Source</a>
   </span>
   <a id="Streamy_CharStream__ctor_" data-uid="Streamy.CharStream.#ctor*"></a>
   <h4 id="Streamy_CharStream__ctor_System_Memory_System_Byte__" data-uid="Streamy.CharStream.#ctor(System.Memory{System.Byte})">CharStream(Memory&lt;Byte&gt;)</h4>
@@ -572,7 +534,7 @@ protected CharStream(StreamBase base, IReadBuffer readBuffer, IWriteBuffer write
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_CharStream__ctor_System_Memory_System_Byte__Streamy_Encoding_.md&amp;value=---%0Auid%3A%20Streamy.CharStream.%23ctor(System.Memory%7BSystem.Byte%7D%2CStreamy.Encoding)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.TextStream/CharStream.cs/#L59">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.TextStream/CharStream.cs/#L46">View Source</a>
   </span>
   <a id="Streamy_CharStream__ctor_" data-uid="Streamy.CharStream.#ctor*"></a>
   <h4 id="Streamy_CharStream__ctor_System_Memory_System_Byte__Streamy_Encoding_" data-uid="Streamy.CharStream.#ctor(System.Memory{System.Byte},Streamy.Encoding)">CharStream(Memory&lt;Byte&gt;, Encoding)</h4>
@@ -609,44 +571,10 @@ protected CharStream(StreamBase base, IReadBuffer readBuffer, IWriteBuffer write
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_CharStream__ctor_System_Memory_System_Char__.md&amp;value=---%0Auid%3A%20Streamy.CharStream.%23ctor(System.Memory%7BSystem.Char%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.TextStream/CharStream.cs/#L46">View Source</a>
-  </span>
-  <a id="Streamy_CharStream__ctor_" data-uid="Streamy.CharStream.#ctor*"></a>
-  <h4 id="Streamy_CharStream__ctor_System_Memory_System_Char__" data-uid="Streamy.CharStream.#ctor(System.Memory{System.Char})">CharStream(Memory&lt;Char&gt;)</h4>
-  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Streamy.CharStream.html">CharStream</a> over the given <code data-dev-comment-type="paramref" class="paramref">memory</code>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CharStream(Memory&lt;char&gt; memory)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
-        <td><span class="parametername">memory</span></td>
-        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory&lt;T&gt;</a> of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a> to stream.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_CharStream__ctor_System_ReadOnlyMemory_System_Byte__.md&amp;value=---%0Auid%3A%20Streamy.CharStream.%23ctor(System.ReadOnlyMemory%7BSystem.Byte%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.TextStream/CharStream.cs/#L71">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.TextStream/CharStream.cs/#L52">View Source</a>
   </span>
   <a id="Streamy_CharStream__ctor_" data-uid="Streamy.CharStream.#ctor*"></a>
   <h4 id="Streamy_CharStream__ctor_System_ReadOnlyMemory_System_Byte__" data-uid="Streamy.CharStream.#ctor(System.ReadOnlyMemory{System.Byte})">CharStream(ReadOnlyMemory&lt;Byte&gt;)</h4>
@@ -680,7 +608,7 @@ protected CharStream(StreamBase base, IReadBuffer readBuffer, IWriteBuffer write
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_CharStream__ctor_System_ReadOnlyMemory_System_Byte__Streamy_Encoding_.md&amp;value=---%0Auid%3A%20Streamy.CharStream.%23ctor(System.ReadOnlyMemory%7BSystem.Byte%7D%2CStreamy.Encoding)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.TextStream/CharStream.cs/#L78">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.TextStream/CharStream.cs/#L59">View Source</a>
   </span>
   <a id="Streamy_CharStream__ctor_" data-uid="Streamy.CharStream.#ctor*"></a>
   <h4 id="Streamy_CharStream__ctor_System_ReadOnlyMemory_System_Byte__Streamy_Encoding_" data-uid="Streamy.CharStream.#ctor(System.ReadOnlyMemory{System.Byte},Streamy.Encoding)">CharStream(ReadOnlyMemory&lt;Byte&gt;, Encoding)</h4>
@@ -715,74 +643,6 @@ protected CharStream(StreamBase base, IReadBuffer readBuffer, IWriteBuffer write
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_CharStream__ctor_System_ReadOnlyMemory_System_Char__.md&amp;value=---%0Auid%3A%20Streamy.CharStream.%23ctor(System.ReadOnlyMemory%7BSystem.Char%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.TextStream/CharStream.cs/#L65">View Source</a>
-  </span>
-  <a id="Streamy_CharStream__ctor_" data-uid="Streamy.CharStream.#ctor*"></a>
-  <h4 id="Streamy_CharStream__ctor_System_ReadOnlyMemory_System_Char__" data-uid="Streamy.CharStream.#ctor(System.ReadOnlyMemory{System.Char})">CharStream(ReadOnlyMemory&lt;Char&gt;)</h4>
-  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Streamy.CharStream.html">CharStream</a> over the given <code data-dev-comment-type="paramref" class="paramref">memory</code>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CharStream(ReadOnlyMemory&lt;char&gt; memory)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>&gt;</td>
-        <td><span class="parametername">memory</span></td>
-        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory&lt;T&gt;</a> of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a> to stream.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_CharStream__ctor_System_String_.md&amp;value=---%0Auid%3A%20Streamy.CharStream.%23ctor(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.TextStream/CharStream.cs/#L21">View Source</a>
-  </span>
-  <a id="Streamy_CharStream__ctor_" data-uid="Streamy.CharStream.#ctor*"></a>
-  <h4 id="Streamy_CharStream__ctor_System_String_" data-uid="Streamy.CharStream.#ctor(System.String)">CharStream(String)</h4>
-  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Streamy.CharStream.html">CharStream</a> over the given <code data-dev-comment-type="paramref" class="paramref">string</code>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CharStream(string string)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><span class="parametername">string</span></td>
-        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a> to stream.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="properties">Properties
   </h3>
   <span class="small pull-right mobile-hide">
@@ -790,7 +650,7 @@ protected CharStream(StreamBase base, IReadBuffer readBuffer, IWriteBuffer write
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_CharStream_Encoding.md&amp;value=---%0Auid%3A%20Streamy.CharStream.Encoding%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.TextStream/CharStream.cs/#L102">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.TextStream/CharStream.cs/#L74">View Source</a>
   </span>
   <a id="Streamy_CharStream_Encoding_" data-uid="Streamy.CharStream.Encoding*"></a>
   <h4 id="Streamy_CharStream_Encoding" data-uid="Streamy.CharStream.Encoding">Encoding</h4>
@@ -821,7 +681,7 @@ protected CharStream(StreamBase base, IReadBuffer readBuffer, IWriteBuffer write
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_CharStream_Position.md&amp;value=---%0Auid%3A%20Streamy.CharStream.Position%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.TextStream/CharStream.Seek.cs/#L16">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.TextStream/CharStream.cs/#L85">View Source</a>
   </span>
   <a id="Streamy_CharStream_Position_" data-uid="Streamy.CharStream.Position*"></a>
   <h4 id="Streamy_CharStream_Position" data-uid="Streamy.CharStream.Position">Position</h4>
@@ -854,7 +714,7 @@ protected CharStream(StreamBase base, IReadBuffer readBuffer, IWriteBuffer write
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_CharStream_Add_System_Char_.md&amp;value=---%0Auid%3A%20Streamy.CharStream.Add(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.TextStream/CharStream.Write.cs/#L9">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.TextStream/CharStream.cs/#L101">View Source</a>
   </span>
   <a id="Streamy_CharStream_Add_" data-uid="Streamy.CharStream.Add*"></a>
   <h4 id="Streamy_CharStream_Add_System_Char_" data-uid="Streamy.CharStream.Add(System.Char)">Add(Char)</h4>
@@ -890,7 +750,7 @@ protected CharStream(StreamBase base, IReadBuffer readBuffer, IWriteBuffer write
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_CharStream_Peek_System_Char__.md&amp;value=---%0Auid%3A%20Streamy.CharStream.Peek(System.Char%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.TextStream/CharStream.Peek.cs/#L7">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.TextStream/CharStream.cs/#L104">View Source</a>
   </span>
   <a id="Streamy_CharStream_Peek_" data-uid="Streamy.CharStream.Peek*"></a>
   <h4 id="Streamy_CharStream_Peek_System_Char__" data-uid="Streamy.CharStream.Peek(System.Char@)">Peek(out Char)</h4>
@@ -899,7 +759,7 @@ protected CharStream(StreamBase base, IReadBuffer readBuffer, IWriteBuffer write
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void Peek(out char element)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Peek(out char element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -923,7 +783,7 @@ protected CharStream(StreamBase base, IReadBuffer readBuffer, IWriteBuffer write
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_CharStream_Read_System_Char__.md&amp;value=---%0Auid%3A%20Streamy.CharStream.Read(System.Char%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.TextStream/CharStream.Read.cs/#L7">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.TextStream/CharStream.cs/#L117">View Source</a>
   </span>
   <a id="Streamy_CharStream_Read_" data-uid="Streamy.CharStream.Read*"></a>
   <h4 id="Streamy_CharStream_Read_System_Char__" data-uid="Streamy.CharStream.Read(System.Char@)">Read(out Char)</h4>
@@ -932,7 +792,7 @@ protected CharStream(StreamBase base, IReadBuffer readBuffer, IWriteBuffer write
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void Read(out char element)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Read(out char element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -956,11 +816,11 @@ protected CharStream(StreamBase base, IReadBuffer readBuffer, IWriteBuffer write
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_CharStream_Seek_nint_.md&amp;value=---%0Auid%3A%20Streamy.CharStream.Seek(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.TextStream/CharStream.Seek.cs/#L43">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.TextStream/CharStream.cs/#L129">View Source</a>
   </span>
   <a id="Streamy_CharStream_Seek_" data-uid="Streamy.CharStream.Seek*"></a>
   <h4 id="Streamy_CharStream_Seek_nint_" data-uid="Streamy.CharStream.Seek(nint)">Seek(nint)</h4>
-  <div class="markdown level1 summary"><p>Seeks to the <code data-dev-comment-type="paramref" class="paramref">offset</code>, counted by <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a>.</p>
+  <div class="markdown level1 summary"><p>Seeks to the <code data-dev-comment-type="paramref" class="paramref">offset</code>, counted by <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -980,7 +840,7 @@ protected CharStream(StreamBase base, IReadBuffer readBuffer, IWriteBuffer write
       <tr>
         <td><span class="xref">nint</span></td>
         <td><span class="parametername">offset</span></td>
-        <td><p>The amount of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a> to seek.</p>
+        <td><p>The amount of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a> to seek.</p>
 </td>
       </tr>
     </tbody>
@@ -990,7 +850,7 @@ protected CharStream(StreamBase base, IReadBuffer readBuffer, IWriteBuffer write
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_CharStream_Write_System_Char_.md&amp;value=---%0Auid%3A%20Streamy.CharStream.Write(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.TextStream/CharStream.Write.cs/#L12">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.TextStream/CharStream.cs/#L142">View Source</a>
   </span>
   <a id="Streamy_CharStream_Write_" data-uid="Streamy.CharStream.Write*"></a>
   <h4 id="Streamy_CharStream_Write_System_Char_" data-uid="Streamy.CharStream.Write(System.Char)">Write(Char)</h4>
@@ -999,7 +859,7 @@ protected CharStream(StreamBase base, IReadBuffer readBuffer, IWriteBuffer write
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void Write(char element)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Write(char element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1195,7 +1055,7 @@ protected CharStream(StreamBase base, IReadBuffer readBuffer, IWriteBuffer write
                     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_CharStream.md&amp;value=---%0Auid%3A%20Streamy.CharStream%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.TextStream/CharStream.Write.cs/#L7" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.TextStream/CharStream.cs/#L16" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

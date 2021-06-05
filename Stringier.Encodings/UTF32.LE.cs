@@ -4,7 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 namespace Stringier {
 	public static partial class UTF32 {
 		/// <summary>
-		/// Little-Endian.
+		/// UTF-32 Little-Endian.
 		/// </summary>
 		public static class LE {
 			/// <summary>

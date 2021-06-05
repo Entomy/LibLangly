@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+#if NETCOREAPP3_0_OR_GREATER
 using System.Text;
+#endif
 
 namespace Stringier.Patterns {
 	public partial class Pattern {
@@ -29,6 +31,7 @@ namespace Stringier.Patterns {
 		[return: NotNull]
 		public virtual Pattern Then(Char other) => new Concatenator(this, new CharLiteral(other));
 
+#if NETCOREAPP3_0_OR_GREATER
 		/// <summary>
 		/// Concatenates the nodes so that this <see cref="Pattern"/> comes before the <paramref name="other"/> <see cref="Rune"/>.
 		/// </summary>
@@ -36,6 +39,7 @@ namespace Stringier.Patterns {
 		/// <returns>A new <see cref="Pattern"/> matching this <see cref="Pattern"/> then <paramref name="other"/>.</returns>
 		[return: NotNull]
 		public virtual Pattern Then(Rune other) => new Concatenator(this, new RuneLiteral(other));
+#endif
 
 		/// <summary>
 		/// Concatenates the nodes so that this <see cref="Pattern"/> comes before the <paramref name="other"/> <see cref="String"/>.

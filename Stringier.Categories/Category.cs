@@ -196,7 +196,7 @@ namespace Stringier {
 		/// A superscript character.
 		/// </summary>
 		[DisallowNull, NotNull]
-		public static Category Superscript { get; } = new((element) => element == new Rune('\u00B2') || element == new Rune('\u00B3') || element == new Rune('\u00B9') || (new Rune('\u2070') <= element && element <= new Rune('\u207F')));
+		public static Category Superscript { get; } = new((element) => element.Value == '\u00B2' || element.Value == '\u00B3' || element.Value == '\u00B9' || ('\u2070' <= element.Value && element.Value <= '\u207F'));
 
 		/// <summary>
 		/// A surrogate code point.
@@ -295,7 +295,7 @@ namespace Stringier {
 		/// Initializes a new <see cref="Category"/>.
 		/// </summary>
 		/// <param name="collection">The elements of the set.</param>
-		protected Category([DisallowNull] IContains<Rune> collection) : base(collection) { }
+		protected Category([DisallowNull] IContains<Rune> collection ) : base(collection) { }
 
 		/// <summary>
 		/// Initializes a new <see cref="Category"/>
@@ -388,6 +388,14 @@ namespace Stringier {
 		/// <param name="upper">The upper bound.</param>
 		/// <returns>A <see cref="Set{TElement}"/> for the given range.</returns>
 		public static Category Range(Rune lower, Rune upper) => new((element) => lower <= element && element <= upper);
+
+		/// <summary>
+		/// Constructs a <see cref="Category"/> from the range <paramref name="lower"/>..<paramref name="upper"/>.
+		/// </summary>
+		/// <param name="lower">The lower bound.</param>
+		/// <param name="upper">The upper bound.</param>
+		/// <returns>A <see cref="Set{TElement}"/> for the given range.</returns>
+		public static Category Range(Char lower, Char upper) => new((element) => lower <= element.Value && element.Value <= upper);
 
 		/// <inheritdoc/>
 		public Boolean Contains(Char element) => Predicate(new Rune(element));

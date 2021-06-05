@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>netstandard1.3;netstandard2.0;netstandard2.1;net5.0</TargetFrameworks>
+		<TargetFrameworks>netstandard1.3;netstandard2.0;netstandard2.1;netcoreapp3.0;net5.0</TargetFrameworks>
 		<LangVersion>9.0</LangVersion>
 		<Nullable>enable</Nullable>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -18,14 +18,16 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\Stringier.Case\Stringier.Case.csproj" />
-	  <ProjectReference Include="..\Stringier.Categories\Stringier.Categories.csproj" />
 	  <ProjectReference Include="..\Stringier.Encodings\Stringier.Encodings.csproj" />
 	  <ProjectReference Include="..\Stringier.Metrics\Stringier.Metrics.csproj" />
 	  <ProjectReference Include="..\Stringier.Patterns\Stringier.Patterns.csproj" />
 	  <ProjectReference Include="..\Stringier.Rope\Stringier.Rope.csproj" />
-	  <ProjectReference Include="..\Stringier.Rune\Stringier.Rune.csproj" />
 	  <ProjectReference Include="..\Stringier.Search\Stringier.Search.csproj" />
 	  <ProjectReference Include="..\Stringier.Text\Stringier.Text.csproj" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.0' or '$(TargetFramework)' == 'net5.0'">
+		<ProjectReference Include="..\Stringier.Categories\Stringier.Categories.csproj" />
 	</ItemGroup>
 
 </Project>

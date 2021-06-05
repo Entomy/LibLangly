@@ -88,6 +88,24 @@
       <a class="xref" href="System.Traits.ICount.html#System_Traits_ICount_Count">ICount.Count</a>
     </div>
     <div>
+      <a class="xref" href="System.Traits.IControlled.html#System_Traits_IControlled_Disposed">IControlled.Disposed</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Traits.IControlled.html#System_Traits_IControlled_DisposeManaged">IControlled.DisposeManaged()</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Traits.IControlled.html#System_Traits_IControlled_DisposeUnmanaged">IControlled.DisposeUnmanaged()</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Traits.IControlled.html#System_Traits_IControlled_NullLargeFields">IControlled.NullLargeFields()</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Traits.IControlled.html#System_Traits_IControlled_Dispose_System_Boolean_">IControlled.Dispose(Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable.dispose#System_IDisposable_Dispose">IDisposable.Dispose()</a>
+    </div>
+    <div>
       <a class="xref" href="System.Traits.IPeek-1.html#System_Traits_IPeek_1_Peek__0__">IPeek&lt;Byte&gt;.Peek(Byte)</a>
     </div>
     <div>
@@ -96,13 +114,34 @@
     <div>
       <a class="xref" href="System.Traits.IRead-1.html#System_Traits_IRead_1_Read__0__">IRead&lt;Byte&gt;.Read(Byte)</a>
     </div>
+    <div>
+      <a class="xref" href="System.Traits.ISeek.html#System_Traits_ISeek_Seekable">ISeek.Seekable</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Traits.ISeek.html#System_Traits_ISeek_Position">ISeek.Position</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Traits.ISeek.html#System_Traits_ISeek_Seek_nint_">ISeek.Seek(nint)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Traits.IShift.html#System_Traits_IShift_ShiftLeft">IShift.ShiftLeft()</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Traits.IShift.html#System_Traits_IShift_ShiftLeft_nint_">IShift.ShiftLeft(nint)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Traits.IShift.html#System_Traits_IShift_ShiftRight">IShift.ShiftRight()</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Traits.IShift.html#System_Traits_IShift_ShiftRight_nint_">IShift.ShiftRight(nint)</a>
+    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Streamy.Buffers.html">Streamy.Buffers</a></h6>
   <h6><strong>Assembly</strong>: Streamy.Stream.dll</h6>
   <h5 id="Streamy_Buffers_IReadBuffer_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
-public interface IReadBuffer : ICapacity, IClear, ICount, IPeek&lt;byte&gt;, IRead&lt;byte&gt;</code></pre>
+public interface IReadBuffer : ICapacity, IClear, ICount, IControlled, IDisposable, IPeek&lt;byte&gt;, IRead&lt;byte&gt;, ISeek, IShift</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+#if NETCOREAPP3_0_OR_GREATER
 using System.Text;
+#endif
 
 namespace Stringier.Patterns {
 	public static partial class PatternExtensions {
@@ -12,6 +14,7 @@ namespace Stringier.Patterns {
 		[return: NotNull]
 		public static Pattern Maybe(this Char @char) => new CharLiteral(@char).Maybe();
 
+#if NETCOREAPP3_0_OR_GREATER
 		/// <summary>
 		/// Marks this <see cref="Pattern"/> as optional.
 		/// </summary>
@@ -19,6 +22,7 @@ namespace Stringier.Patterns {
 		/// <returns>A new <see cref="Pattern"/> which may or may not be present in order to match.</returns>
 		[return: NotNull]
 		public static Pattern Maybe(this Rune rune) => new RuneLiteral(rune).Maybe();
+#endif
 
 		/// <summary>
 		/// Marks this <see cref="Pattern"/> as optional.

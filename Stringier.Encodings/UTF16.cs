@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+#if NETCOREAPP3_0_OR_GREATER
 using System.Text;
+#endif
 
 namespace Stringier {
 	/// <summary>
@@ -10,6 +12,7 @@ namespace Stringier {
 	/// Most of these helpers assume working with a UTF-16 stream, not a buffer. This is important because it enables us to more easily support stream decoding. Buffered data doesn't need special considerations, so these operations still work with buffers.
 	/// </remarks>
 	public static partial class UTF16 {
+#if NETCOREAPP3_0_OR_GREATER
 		/// <summary>
 		/// Decode the UTF-16 sequence into a <see cref="Rune"/>.
 		/// </summary>
@@ -276,6 +279,7 @@ namespace Stringier {
 		/// </remarks>
 		[CLSCompliant(false)]
 		public static unsafe ReadOnlyMemory<Char> Encode([AllowNull] Rune* runes, Int32 length) => runes is not null ? Encode(new ReadOnlySpan<Rune>(runes, length)) : ReadOnlyMemory<Char>.Empty;
+#endif
 
 		/// <summary>
 		/// Is the <paramref name="unit"/> the first unit of a UTF-16 sequence?
@@ -403,6 +407,7 @@ namespace Stringier {
 			lowSurrogate = (Char)unchecked((smpScalarValue & 0x03FFu) + 0xDC00u);
 		}
 
+#if NETCOREAPP3_0_OR_GREATER
 		private static void Encode(Rune rune, Span<Char> result, ref Int32 index) {
 			switch (rune.Utf16SequenceLength) {
 			case 1:
@@ -413,5 +418,6 @@ namespace Stringier {
 				break;
 			}
 		}
+#endif
 	}
 }

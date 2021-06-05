@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>netstandard1.3;net5.0-windows</TargetFrameworks>
+		<TargetFrameworks>netstandard1.3;netcoreapp3.0;net5.0-windows</TargetFrameworks>
 		<LangVersion>9.0</LangVersion>
 		<Nullable>enable</Nullable>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -18,7 +18,7 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\Streamy.Stream\Streamy.Stream.csproj" />
-	  <ProjectReference Include="..\Streamy.TextStream\Streamy.TextStream.csproj" />
+		<ProjectReference Include="..\Streamy.TextStream\Streamy.TextStream.csproj" />
 	</ItemGroup>
-
+	
 </Project>

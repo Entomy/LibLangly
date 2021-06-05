@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+#if NETCOREAPP3_0_OR_GREATER
 using System.Text;
+#endif
 using System.Traits;
 using Langly;
 
@@ -75,6 +77,7 @@ namespace Stringier.Patterns {
 		[return: NotNull]
 		public Pattern Or(Char other) => new CaptureLiteral(this).Or(other);
 
+#if NETCOREAPP3_0_OR_GREATER
 		/// <summary>
 		/// Declares <paramref name="other"/> to be an alternate of this <see cref="Pattern"/>.
 		/// </summary>
@@ -82,6 +85,7 @@ namespace Stringier.Patterns {
 		/// <returns>A new <see cref="Pattern"/> matching this <see cref="Pattern"/> or <paramref name="other"/>.</returns>
 		[return: NotNull]
 		public Pattern Or(Rune other) => new CaptureLiteral(this).Or(other);
+#endif
 
 		/// <summary>
 		/// Declares <paramref name="other"/> to be an alternate of this <see cref="Pattern"/>.
@@ -115,6 +119,7 @@ namespace Stringier.Patterns {
 		[return: NotNull]
 		public Pattern Then(Char other) => new CaptureLiteral(this).Then(other);
 
+#if NETCOREAPP3_0_OR_GREATER
 		/// <summary>
 		/// Concatenates the patterns so that this <see cref="Pattern"/> comes before <paramref name="other"/>
 		/// </summary>
@@ -122,6 +127,7 @@ namespace Stringier.Patterns {
 		/// <returns>A new <see cref="Pattern"/> concatenating this <see cref="Pattern"/> and <paramref name="other"/></returns>
 		[return: NotNull]
 		public Pattern Then(Rune other) => new CaptureLiteral(this).Then(other);
+#endif
 
 		/// <summary>
 		/// Concatenates the nodes so that this <see cref="Pattern"/> comes before the <paramref name="other"/> <see cref="String"/>.

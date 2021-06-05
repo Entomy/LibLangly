@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+#if NETCOREAPP3_0_OR_GREATER
 using System.Text;
+#endif
 
 namespace Stringier.Patterns {
 	public static partial class PatternExtensions {
@@ -35,6 +37,7 @@ namespace Stringier.Patterns {
 		[return: NotNull]
 		public static Pattern ToNested(this Char @char, [DisallowNull] Pattern to) => new NestedRanger(@char, to);
 
+#if NETCOREAPP3_0_OR_GREATER
 		/// <summary>
 		/// Create a pattern representing the range from this <see cref="Pattern"/> until <paramref name="to"/>.
 		/// </summary>
@@ -65,6 +68,7 @@ namespace Stringier.Patterns {
 		/// <param name="to">The ending <see cref="Pattern"/>.</param>
 		[return: NotNull]
 		public static Pattern ToNested(this Rune rune, [DisallowNull] Pattern to) => new NestedRanger(rune, to);
+#endif
 
 		/// <summary>
 		/// Create a pattern representing the range from this <see cref="Pattern"/> until <paramref name="to"/>.

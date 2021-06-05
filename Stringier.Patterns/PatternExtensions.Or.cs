@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+#if NETCOREAPP3_0_OR_GREATER
 using System.Text;
+#endif
 
 namespace Stringier.Patterns {
 	public static partial class PatternExtensions {
@@ -22,6 +24,7 @@ namespace Stringier.Patterns {
 		[return: NotNull]
 		public static Pattern Or(this Char @char, Char other) => new CharLiteral(@char).Or(other);
 
+#if NETCOREAPP3_0_OR_GREATER
 		/// <summary>
 		/// Declares <paramref name="other"/> to be an alternate of this <see cref="Pattern"/>.
 		/// </summary>
@@ -30,6 +33,7 @@ namespace Stringier.Patterns {
 		/// <returns>A new <see cref="Pattern"/> matching this <see cref="Pattern"/> or <paramref name="other"/>.</returns>
 		[return: NotNull]
 		public static Pattern Or(this Char @char, Rune other) => new CharLiteral(@char).Or(other);
+#endif
 
 		/// <summary>
 		/// Declares <paramref name="other"/> to be an alternate of this <see cref="Pattern"/>.
@@ -40,6 +44,7 @@ namespace Stringier.Patterns {
 		[return: NotNull]
 		public static Pattern Or(this Char @char, [AllowNull] String other) => new CharLiteral(@char).Or(other);
 
+#if NETCOREAPP3_0_OR_GREATER
 		/// <summary>
 		/// Declares <paramref name="other"/> to be an alternate of this <see cref="Pattern"/>.
 		/// </summary>
@@ -75,6 +80,7 @@ namespace Stringier.Patterns {
 		/// <returns>A new <see cref="Pattern"/> matching this <see cref="Pattern"/> or <paramref name="other"/>.</returns>
 		[return: NotNull]
 		public static Pattern Or(this Rune rune, [AllowNull] String other) => new RuneLiteral(rune).Or(other);
+#endif
 
 		/// <summary>
 		/// Declares <paramref name="other"/> to be an alternate of this <see cref="Pattern"/>.
@@ -94,6 +100,7 @@ namespace Stringier.Patterns {
 		[return: NotNull]
 		public static Pattern Or([DisallowNull] this String rune, Char other) => new MemoryLiteral(rune).Or(other);
 
+#if NETCOREAPP3_0_OR_GREATER
 		/// <summary>
 		/// Declares <paramref name="other"/> to be an alternate of this <see cref="Pattern"/>.
 		/// </summary>
@@ -102,6 +109,7 @@ namespace Stringier.Patterns {
 		/// <returns>A new <see cref="Pattern"/> matching this <see cref="Pattern"/> or <paramref name="other"/>.</returns>
 		[return: NotNull]
 		public static Pattern Or([DisallowNull] this String rune, Rune other) => new MemoryLiteral(rune).Or(other);
+#endif
 
 		/// <summary>
 		/// Declares <paramref name="other"/> to be an alternate of this <see cref="Pattern"/>.

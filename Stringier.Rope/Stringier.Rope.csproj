@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>netstandard1.3;netstandard2.1</TargetFrameworks>
+		<TargetFrameworks>netstandard1.3;netcoreapp3.0</TargetFrameworks>
 		<LangVersion>9.0</LangVersion>
 		<Nullable>enable</Nullable>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -19,7 +19,6 @@
 	<ItemGroup>
 	  <ProjectReference Include="..\Collectathon.Lists\Collectathon.Lists.csproj" />
 	  <ProjectReference Include="..\Stringier.Case\Stringier.Case.csproj" />
-	  <ProjectReference Include="..\Stringier.Rune\Stringier.Rune.csproj" />
 	</ItemGroup>
 
 	<Import Project="..\Collection\Collection.projitems" Label="Shared" />

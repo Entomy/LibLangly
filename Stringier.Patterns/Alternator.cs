@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+#if NETCOREAPP3_0_OR_GREATER
 using System.Text;
+#endif
 using System.Traits;
 
 namespace Stringier.Patterns {
@@ -48,9 +50,11 @@ namespace Stringier.Patterns {
 		[return: NotNull]
 		public override Pattern Or(Char other) => new ChainAlternator(Left, Right, new CharLiteral(other));
 
+#if NETCOREAPP3_0_OR_GREATER
 		/// <inheritdoc/>
 		[return: NotNull]
 		public override Pattern Or(Rune other) => new ChainAlternator(Left, Right, new RuneLiteral(other));
+#endif
 
 		/// <inheritdoc/>
 		[return: NotNull]

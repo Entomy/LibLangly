@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+#if NETCOREAPP3_0_OR_GREATER
 using System.Text;
+#endif
 
 namespace Stringier.Patterns {
 	public static partial class PatternExtensions {
@@ -13,6 +15,7 @@ namespace Stringier.Patterns {
 		[return: NotNull]
 		public static Pattern Repeat(this Char @char, Int32 count) => new CharLiteral(@char).Repeat(count);
 
+#if NETCOREAPP3_0_OR_GREATER
 		/// <summary>
 		/// Marks this <see cref="Pattern"/> as repeating <paramref name="count"/> times.
 		/// </summary>
@@ -21,6 +24,7 @@ namespace Stringier.Patterns {
 		/// <returns>A new <see cref="Pattern"/> repeated <paramref name="count"/> times.</returns>
 		[return: NotNull]
 		public static Pattern Repeat(this Rune rune, Int32 count) => new RuneLiteral(rune).Repeat(count);
+#endif
 
 		/// <summary>
 		/// Marks this <see cref="Pattern"/> as repeating <paramref name="count"/> times.

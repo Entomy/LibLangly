@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+#if NETCOREAPP3_0_OR_GREATER
 using System.Text;
+#endif
 using System.Traits;
 
 namespace Stringier.Patterns {
@@ -13,6 +15,7 @@ namespace Stringier.Patterns {
 		/// <param name="location">The location of this step.</param>
 		internal static void Add([DisallowNull] this IAdd<Capture> trace, Char text, Int32 location) => throw new NotImplementedException();
 
+#if NETCOREAPP3_0_OR_GREATER
 		/// <summary>
 		/// Adds a step to the <paramref name="trace"/>.
 		/// </summary>
@@ -20,6 +23,7 @@ namespace Stringier.Patterns {
 		/// <param name="text">The text captured at this step.</param>
 		/// <param name="location">The location of this step.</param>
 		internal static void Add([DisallowNull] this IAdd<Capture> trace, Rune text, Int32 location) => throw new NotImplementedException();
+#endif
 
 		/// <summary>
 		/// Adds a step to the <paramref name="trace"/>.

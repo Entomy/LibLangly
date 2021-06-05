@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>netstandard1.3</TargetFramework>
+		<TargetFrameworks>netstandard1.3;netcoreapp3.0</TargetFrameworks>
 		<LangVersion>9.0</LangVersion>
 		<Nullable>enable</Nullable>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -21,8 +21,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\Stringier.Categories\Stringier.Categories.csproj" />
 	  <ProjectReference Include="..\Stringier.Rope\Stringier.Rope.csproj" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' != 'netstandard1.3'">
+		<ProjectReference Include="..\Stringier.Categories\Stringier.Categories.csproj" />
 	</ItemGroup>
 
 </Project>
