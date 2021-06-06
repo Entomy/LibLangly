@@ -15,6 +15,7 @@ namespace Collectathon.Arrays {
 		IAddSpan<TElement>,
 		ICapacity,
 		IClear,
+		IContains<TElement>,
 		IEquatable<TSelf>, IEquatable<FlexibleArray<TElement, TSelf>>,
 		IIndex<nint, TElement>,
 		IInsertSpan<nint, TElement>,
@@ -142,6 +143,14 @@ namespace Collectathon.Arrays {
 
 		/// <inheritdoc/>
 		public void Clear() => Count = 0;
+
+		/// <inheritdoc/>
+		public Boolean Contains([AllowNull] TElement element) {
+			for (Int32 i = 0; i < Count; i++) {
+				if (Equals(Memory[i], element)) return true;
+			}
+			return false;
+		}
 
 		/// <summary>
 		/// Determines if the two values are equal.

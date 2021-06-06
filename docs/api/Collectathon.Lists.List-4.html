@@ -87,6 +87,7 @@
     <h5>Implements</h5>
     <div><a class="xref" href="System.Traits.IAdd-1.html">IAdd</a>&lt;TElement&gt;</div>
     <div><a class="xref" href="System.Traits.IClear.html">IClear</a></div>
+    <div><a class="xref" href="System.Traits.IContains-1.html">IContains</a>&lt;TElement&gt;</div>
     <div><span class="xref">IEquatable</span>&lt;TSelf&gt;</div>
     <div><span class="xref">IEquatable</span>&lt;<a class="xref" href="Collectathon.Lists.List-4.html">List</a>&lt;TElement, TNode, TSelf, TEnumerator&gt;&gt;</div>
     <div><a class="xref" href="System.Traits.IIndex-2.html">IIndex</a>&lt;<span class="xref">nint</span>, TElement&gt;</div>
@@ -105,7 +106,7 @@
   <h6><strong>Assembly</strong>: Collectathon.Lists.dll</h6>
   <h5 id="Collectathon_Lists_List_4_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class List&lt;TElement, TNode, TSelf, TEnumerator&gt; : object, IAdd&lt;TElement&gt;, IClear, IEquatable&lt;TSelf&gt;, IEquatable&lt;List&lt;TElement, TNode, TSelf, TEnumerator&gt;&gt;, IIndex&lt;nint, TElement&gt;, IIndexReadOnly&lt;nint, TElement&gt;, IInsert&lt;nint, TElement&gt;, IPostpend&lt;TElement&gt;, IPrepend&lt;TElement&gt;, IRemove&lt;TElement&gt;, IReplace&lt;TElement&gt;, IReplace&lt;TElement, TElement&gt;, ISequence&lt;TElement, TEnumerator&gt;, ICount, IEnumerable&lt;TElement&gt; where TNode : ListNode&lt;TElement, TNode&gt; where TSelf : List&lt;TElement, TNode, TSelf, TEnumerator&gt; where TEnumerator : struct, IEnumerator&lt;TElement&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class List&lt;TElement, TNode, TSelf, TEnumerator&gt; : object, IAdd&lt;TElement&gt;, IClear, IContains&lt;TElement&gt;, IEquatable&lt;TSelf&gt;, IEquatable&lt;List&lt;TElement, TNode, TSelf, TEnumerator&gt;&gt;, IIndex&lt;nint, TElement&gt;, IIndexReadOnly&lt;nint, TElement&gt;, IInsert&lt;nint, TElement&gt;, IPostpend&lt;TElement&gt;, IPrepend&lt;TElement&gt;, IRemove&lt;TElement&gt;, IReplace&lt;TElement&gt;, IReplace&lt;TElement, TElement&gt;, ISequence&lt;TElement, TEnumerator&gt;, ICount, IEnumerable&lt;TElement&gt; where TNode : ListNode&lt;TElement, TNode&gt; where TSelf : List&lt;TElement, TNode, TSelf, TEnumerator&gt; where TEnumerator : struct, IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -145,7 +146,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_List_4__ctor_Collectathon_Filter_nint__0__.md&amp;value=---%0Auid%3A%20Collectathon.Lists.List%604.%23ctor(Collectathon.Filter%7Bnint%2C%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L62">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L63">View Source</a>
   </span>
   <a id="Collectathon_Lists_List_4__ctor_" data-uid="Collectathon.Lists.List`4.#ctor*"></a>
   <h4 id="Collectathon_Lists_List_4__ctor_Collectathon_Filter_nint__0__" data-uid="Collectathon.Lists.List`4.#ctor(Collectathon.Filter{nint,`0})">List(Filter&lt;nint, TElement&gt;)</h4>
@@ -179,7 +180,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_List_4__ctor_Collectathon_Filters_.md&amp;value=---%0Auid%3A%20Collectathon.Lists.List%604.%23ctor(Collectathon.Filters)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L56">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L57">View Source</a>
   </span>
   <a id="Collectathon_Lists_List_4__ctor_" data-uid="Collectathon.Lists.List`4.#ctor*"></a>
   <h4 id="Collectathon_Lists_List_4__ctor_Collectathon_Filters_" data-uid="Collectathon.Lists.List`4.#ctor(Collectathon.Filters)">List(Filters)</h4>
@@ -215,7 +216,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_List_4_Filter.md&amp;value=---%0Auid%3A%20Collectathon.Lists.List%604.Filter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L38">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L39">View Source</a>
   </span>
   <h4 id="Collectathon_Lists_List_4_Filter" data-uid="Collectathon.Lists.List`4.Filter">Filter</h4>
   <div class="markdown level1 summary"><p>The <a class="xref" href="Collectathon.Filter-2.html">Filter&lt;TIndex, TElement&gt;</a> being used.</p>
@@ -248,7 +249,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_List_4_Head.md&amp;value=---%0Auid%3A%20Collectathon.Lists.List%604.Head%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L44">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L45">View Source</a>
   </span>
   <h4 id="Collectathon_Lists_List_4_Head" data-uid="Collectathon.Lists.List`4.Head">Head</h4>
   <div class="markdown level1 summary"><p>The head node of the list; the first element.</p>
@@ -278,7 +279,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_List_4_Tail.md&amp;value=---%0Auid%3A%20Collectathon.Lists.List%604.Tail%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L50">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L51">View Source</a>
   </span>
   <h4 id="Collectathon_Lists_List_4_Tail" data-uid="Collectathon.Lists.List`4.Tail">Tail</h4>
   <div class="markdown level1 summary"><p>The tail node of the list; the last element.</p>
@@ -310,7 +311,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_List_4_Count.md&amp;value=---%0Auid%3A%20Collectathon.Lists.List%604.Count%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L65">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L66">View Source</a>
   </span>
   <a id="Collectathon_Lists_List_4_Count_" data-uid="Collectathon.Lists.List`4.Count*"></a>
   <h4 id="Collectathon_Lists_List_4_Count" data-uid="Collectathon.Lists.List`4.Count">Count</h4>
@@ -340,7 +341,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_List_4_Item_nint_.md&amp;value=---%0Auid%3A%20Collectathon.Lists.List%604.Item(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L68">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L69">View Source</a>
   </span>
   <a id="Collectathon_Lists_List_4_Item_" data-uid="Collectathon.Lists.List`4.Item*"></a>
   <h4 id="Collectathon_Lists_List_4_Item_nint_" data-uid="Collectathon.Lists.List`4.Item(nint)">Item[nint]</h4>
@@ -391,7 +392,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_List_4_Add__0_.md&amp;value=---%0Auid%3A%20Collectathon.Lists.List%604.Add(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L72">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L73">View Source</a>
   </span>
   <a id="Collectathon_Lists_List_4_Add_" data-uid="Collectathon.Lists.List`4.Add*"></a>
   <h4 id="Collectathon_Lists_List_4_Add__0_" data-uid="Collectathon.Lists.List`4.Add(`0)">Add(TElement)</h4>
@@ -428,7 +429,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_List_4_Clear.md&amp;value=---%0Auid%3A%20Collectathon.Lists.List%604.Clear%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L76">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L77">View Source</a>
   </span>
   <a id="Collectathon_Lists_List_4_Clear_" data-uid="Collectathon.Lists.List`4.Clear*"></a>
   <h4 id="Collectathon_Lists_List_4_Clear" data-uid="Collectathon.Lists.List`4.Clear">Clear()</h4>
@@ -441,10 +442,57 @@
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_List_4_Contains__0_.md&amp;value=---%0Auid%3A%20Collectathon.Lists.List%604.Contains(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L91">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_List_4_Contains_" data-uid="Collectathon.Lists.List`4.Contains*"></a>
+  <h4 id="Collectathon_Lists_List_4_Contains__0_" data-uid="Collectathon.Lists.List`4.Contains(`0)">Contains(TElement)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract Boolean Contains(TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_List_4_Equals__2_.md&amp;value=---%0Auid%3A%20Collectathon.Lists.List%604.Equals(%602)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L104">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L108">View Source</a>
   </span>
   <a id="Collectathon_Lists_List_4_Equals_" data-uid="Collectathon.Lists.List`4.Equals*"></a>
   <h4 id="Collectathon_Lists_List_4_Equals__2_" data-uid="Collectathon.Lists.List`4.Equals(`2)">Equals(TSelf)</h4>
@@ -491,7 +539,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_List_4_Equals_Collectathon_Lists_List__0__1__2__3__.md&amp;value=---%0Auid%3A%20Collectathon.Lists.List%604.Equals(Collectathon.Lists.List%7B%600%2C%601%2C%602%2C%603%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L107">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L111">View Source</a>
   </span>
   <a id="Collectathon_Lists_List_4_Equals_" data-uid="Collectathon.Lists.List`4.Equals*"></a>
   <h4 id="Collectathon_Lists_List_4_Equals_Collectathon_Lists_List__0__1__2__3__" data-uid="Collectathon.Lists.List`4.Equals(Collectathon.Lists.List{`0,`1,`2,`3})">Equals(List&lt;TElement, TNode, TSelf, TEnumerator&gt;)</h4>
@@ -538,7 +586,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_List_4_Equals_Object_.md&amp;value=---%0Auid%3A%20Collectathon.Lists.List%604.Equals(Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L90">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L94">View Source</a>
   </span>
   <a id="Collectathon_Lists_List_4_Equals_" data-uid="Collectathon.Lists.List`4.Equals*"></a>
   <h4 id="Collectathon_Lists_List_4_Equals_Object_" data-uid="Collectathon.Lists.List`4.Equals(Object)">Equals(Object)</h4>
@@ -585,7 +633,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_List_4_Equals_System_Collections_Generic_IEnumerable__0__.md&amp;value=---%0Auid%3A%20Collectathon.Lists.List%604.Equals(System.Collections.Generic.IEnumerable%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L110">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L114">View Source</a>
   </span>
   <a id="Collectathon_Lists_List_4_Equals_" data-uid="Collectathon.Lists.List`4.Equals*"></a>
   <h4 id="Collectathon_Lists_List_4_Equals_System_Collections_Generic_IEnumerable__0__" data-uid="Collectathon.Lists.List`4.Equals(System.Collections.Generic.IEnumerable{`0})">Equals(Collections.Generic.IEnumerable&lt;TElement&gt;)</h4>
@@ -632,7 +680,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_List_4_GetEnumerator.md&amp;value=---%0Auid%3A%20Collectathon.Lists.List%604.GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L113">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L117">View Source</a>
   </span>
   <a id="Collectathon_Lists_List_4_GetEnumerator_" data-uid="Collectathon.Lists.List`4.GetEnumerator*"></a>
   <h4 id="Collectathon_Lists_List_4_GetEnumerator" data-uid="Collectathon.Lists.List`4.GetEnumerator">GetEnumerator()</h4>
@@ -664,7 +712,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_List_4_GetHashCode.md&amp;value=---%0Auid%3A%20Collectathon.Lists.List%604.GetHashCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L124">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L128">View Source</a>
   </span>
   <a id="Collectathon_Lists_List_4_GetHashCode_" data-uid="Collectathon.Lists.List`4.GetHashCode*"></a>
   <h4 id="Collectathon_Lists_List_4_GetHashCode" data-uid="Collectathon.Lists.List`4.GetHashCode">GetHashCode()</h4>
@@ -694,7 +742,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_List_4_Insert_nint__0_.md&amp;value=---%0Auid%3A%20Collectathon.Lists.List%604.Insert(nint%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L128">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L132">View Source</a>
   </span>
   <a id="Collectathon_Lists_List_4_Insert_" data-uid="Collectathon.Lists.List`4.Insert*"></a>
   <h4 id="Collectathon_Lists_List_4_Insert_nint__0_" data-uid="Collectathon.Lists.List`4.Insert(nint,`0)">Insert(nint, TElement)</h4>
@@ -733,7 +781,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_List_4_NewUnlinkedNode__0_.md&amp;value=---%0Auid%3A%20Collectathon.Lists.List%604.NewUnlinkedNode(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L183">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L187">View Source</a>
   </span>
   <a id="Collectathon_Lists_List_4_NewUnlinkedNode_" data-uid="Collectathon.Lists.List`4.NewUnlinkedNode*"></a>
   <h4 id="Collectathon_Lists_List_4_NewUnlinkedNode__0_" data-uid="Collectathon.Lists.List`4.NewUnlinkedNode(`0)">NewUnlinkedNode(TElement)</h4>
@@ -785,7 +833,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_List_4_Postpend__0_.md&amp;value=---%0Auid%3A%20Collectathon.Lists.List%604.Postpend(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L132">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L136">View Source</a>
   </span>
   <a id="Collectathon_Lists_List_4_Postpend_" data-uid="Collectathon.Lists.List`4.Postpend*"></a>
   <h4 id="Collectathon_Lists_List_4_Postpend__0_" data-uid="Collectathon.Lists.List`4.Postpend(`0)">Postpend(TElement)</h4>
@@ -819,7 +867,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_List_4_Prepend__0_.md&amp;value=---%0Auid%3A%20Collectathon.Lists.List%604.Prepend(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L145">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L149">View Source</a>
   </span>
   <a id="Collectathon_Lists_List_4_Prepend_" data-uid="Collectathon.Lists.List`4.Prepend*"></a>
   <h4 id="Collectathon_Lists_List_4_Prepend__0_" data-uid="Collectathon.Lists.List`4.Prepend(`0)">Prepend(TElement)</h4>
@@ -853,7 +901,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_List_4_Remove__0_.md&amp;value=---%0Auid%3A%20Collectathon.Lists.List%604.Remove(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L157">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L161">View Source</a>
   </span>
   <a id="Collectathon_Lists_List_4_Remove_" data-uid="Collectathon.Lists.List`4.Remove*"></a>
   <h4 id="Collectathon_Lists_List_4_Remove__0_" data-uid="Collectathon.Lists.List`4.Remove(`0)">Remove(TElement)</h4>
@@ -887,7 +935,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_List_4_RemoveFirst__0_.md&amp;value=---%0Auid%3A%20Collectathon.Lists.List%604.RemoveFirst(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L160">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L164">View Source</a>
   </span>
   <a id="Collectathon_Lists_List_4_RemoveFirst_" data-uid="Collectathon.Lists.List`4.RemoveFirst*"></a>
   <h4 id="Collectathon_Lists_List_4_RemoveFirst__0_" data-uid="Collectathon.Lists.List`4.RemoveFirst(`0)">RemoveFirst(TElement)</h4>
@@ -921,7 +969,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_List_4_RemoveLast__0_.md&amp;value=---%0Auid%3A%20Collectathon.Lists.List%604.RemoveLast(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L163">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L167">View Source</a>
   </span>
   <a id="Collectathon_Lists_List_4_RemoveLast_" data-uid="Collectathon.Lists.List`4.RemoveLast*"></a>
   <h4 id="Collectathon_Lists_List_4_RemoveLast__0_" data-uid="Collectathon.Lists.List`4.RemoveLast(`0)">RemoveLast(TElement)</h4>
@@ -955,7 +1003,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_List_4_Replace__0__0_.md&amp;value=---%0Auid%3A%20Collectathon.Lists.List%604.Replace(%600%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L166">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L170">View Source</a>
   </span>
   <a id="Collectathon_Lists_List_4_Replace_" data-uid="Collectathon.Lists.List`4.Replace*"></a>
   <h4 id="Collectathon_Lists_List_4_Replace__0__0_" data-uid="Collectathon.Lists.List`4.Replace(`0,`0)">Replace(TElement, TElement)</h4>
@@ -993,7 +1041,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_List_4_ToString.md&amp;value=---%0Auid%3A%20Collectathon.Lists.List%604.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L169">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L173">View Source</a>
   </span>
   <a id="Collectathon_Lists_List_4_ToString_" data-uid="Collectathon.Lists.List`4.ToString*"></a>
   <h4 id="Collectathon_Lists_List_4_ToString" data-uid="Collectathon.Lists.List`4.ToString">ToString()</h4>
@@ -1023,7 +1071,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_List_4_ToString_nint_.md&amp;value=---%0Auid%3A%20Collectathon.Lists.List%604.ToString(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L173">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/List`4.cs/#L177">View Source</a>
   </span>
   <a id="Collectathon_Lists_List_4_ToString_" data-uid="Collectathon.Lists.List`4.ToString*"></a>
   <h4 id="Collectathon_Lists_List_4_ToString_nint_" data-uid="Collectathon.Lists.List`4.ToString(nint)">ToString(nint)</h4>
@@ -1071,6 +1119,9 @@
   </div>
   <div>
       <a class="xref" href="System.Traits.IClear.html">IClear</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IContains-1.html">IContains&lt;TElement&gt;</a>
   </div>
   <div>
       <span class="xref">IEquatable&lt;&gt;</span>

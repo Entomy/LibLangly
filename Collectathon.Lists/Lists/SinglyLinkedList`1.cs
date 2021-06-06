@@ -12,7 +12,7 @@ namespace Collectathon.Lists {
 		/// Initializes a new <see cref="SinglyLinkedList{TElement}"/> with the given <paramref name="elements"/>.
 		/// </summary>
 		/// <param name="elements">The initial elements of the list.</param>
-		public SinglyLinkedList([DisallowNull] TElement[] elements) : base(elements, Filters.None) { }
+		public SinglyLinkedList([DisallowNull] params TElement[] elements) : base(elements, Filters.None) { }
 
 		/// <summary>
 		/// Initializes a new <see cref="SinglyLinkedList{TElement}"/>.

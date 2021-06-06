@@ -5,7 +5,7 @@ using Spectre.Console;
 using Console = Spectre.Console.AnsiConsole;
 
 namespace Langly {
-	public static class Program {
+	public static partial class Program {
 		[SuppressMessage("Performance", "HAA0101:Array allocation for params parameter", Justification = "Yes, this is a simple benchmarking interface, it's fine.")]
 		[SuppressMessage("Performance", "HLQ010:Consider using a 'for' loop instead.", Justification = "Yes, this is a simple benchmarking interface, it's fine.")]
 		public static void Main() {
@@ -18,6 +18,7 @@ namespace Langly {
 				.InstructionsText("[grey](Press [blue]<space>[/] to toggle a benchmark, [green]<enter>[/] to accept and run)[/]")
 				.AddChoiceGroup(nameof(Collectathon), new[] {
 					nameof(Construction),
+					nameof(Contains),
 				})
 				.AddChoiceGroup(nameof(Langly), new[] {
 					""
@@ -34,6 +35,9 @@ namespace Langly {
 				switch (selection) {
 				case nameof(Construction):
 					BenchmarkRunner.Run<Construction>();
+					break;
+				case nameof(Contains):
+					BenchmarkRunner.Run<Contains>();
 					break;
 				default:
 					break;

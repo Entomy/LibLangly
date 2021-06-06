@@ -53,6 +53,7 @@ namespace Langly {
 
 		[Benchmark]
 		public void C5_TreeSet() => _ = new C5.TreeSet<Int32>();
+
 		[Benchmark]
 		public void Collectathon_AssociativeBoundedArray() => _ = new BoundedArray<Char, String>(32);
 

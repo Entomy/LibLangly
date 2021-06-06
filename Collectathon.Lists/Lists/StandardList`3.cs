@@ -61,6 +61,16 @@ namespace Collectathon.Lists {
 		}
 
 		/// <inheritdoc/>
+		public sealed override Boolean Contains([AllowNull] TElement element) {
+			TNode? N = Head;
+			while (N is not null) {
+				if (Equals(N.Element, element)) return true;
+				N = N.Next;
+			}
+			return false;
+		}
+
+		/// <inheritdoc/>
 		public sealed override Enumerator GetEnumerator() => new Enumerator(this);
 
 		/// <inheritdoc/>

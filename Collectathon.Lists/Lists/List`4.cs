@@ -17,6 +17,7 @@ namespace Collectathon.Lists {
 	public abstract class List<TElement, TNode, TSelf, TEnumerator> :
 		IAdd<TElement>,
 		IClear,
+		IContains<TElement>,
 		IEquatable<TSelf>, IEquatable<List<TElement, TNode, TSelf, TEnumerator>>,
 		IIndex<nint, TElement>,
 		IInsert<nint, TElement>,
@@ -85,6 +86,9 @@ namespace Collectathon.Lists {
 			Tail = null;
 			Count = 0;
 		}
+
+		/// <inheritdoc/>
+		public abstract Boolean Contains([AllowNull] TElement element);
 
 		/// <inheritdoc/>
 		public sealed override Boolean Equals([AllowNull] Object obj) {

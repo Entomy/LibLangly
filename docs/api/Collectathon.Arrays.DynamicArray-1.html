@@ -88,6 +88,7 @@
     <div><a class="xref" href="System.Traits.IAddMemory-1.html">IAddMemory</a>&lt;TElement&gt;</div>
     <div><a class="xref" href="System.Traits.IAdd-1.html">IAdd</a>&lt;TElement&gt;</div>
     <div><a class="xref" href="System.Traits.IClear.html">IClear</a></div>
+    <div><a class="xref" href="System.Traits.IContains-1.html">IContains</a>&lt;TElement&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Collectathon.Arrays.DynamicArray-1.html">DynamicArray</a>&lt;TElement&gt;&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Collectathon.Arrays.FlexibleArray-2.html">FlexibleArray</a>&lt;TElement, <a class="xref" href="Collectathon.Arrays.DynamicArray-1.html">DynamicArray</a>&lt;TElement&gt;&gt;&gt;</div>
     <div><a class="xref" href="System.Traits.IIndex-2.html">IIndex</a>&lt;<span class="xref">nint</span>, TElement&gt;</div>
@@ -150,6 +151,9 @@
     </div>
     <div>
       <a class="xref" href="Collectathon.Arrays.FlexibleArray-2.html#Collectathon_Arrays_FlexibleArray_2_Clear">FlexibleArray&lt;TElement, DynamicArray&lt;TElement&gt;&gt;.Clear()</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Arrays.FlexibleArray-2.html#Collectathon_Arrays_FlexibleArray_2_Contains__0_">FlexibleArray&lt;TElement, DynamicArray&lt;TElement&gt;&gt;.Contains(TElement)</a>
     </div>
     <div>
       <a class="xref" href="Collectathon.Arrays.FlexibleArray-2.html#Collectathon_Arrays_FlexibleArray_2_Equals_System_Object_">FlexibleArray&lt;TElement, DynamicArray&lt;TElement&gt;&gt;.Equals(Object)</a>
@@ -294,7 +298,7 @@
   <h6><strong>Assembly</strong>: Collectathon.Arrays.dll</h6>
   <h5 id="Collectathon_Arrays_DynamicArray_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class DynamicArray&lt;TElement&gt; : FlexibleArray&lt;TElement, DynamicArray&lt;TElement&gt;&gt;, IAddSpan&lt;TElement&gt;, IAddMemory&lt;TElement&gt;, IAdd&lt;TElement&gt;, IClear, IEquatable&lt;DynamicArray&lt;TElement&gt;&gt;, IEquatable&lt;FlexibleArray&lt;TElement, DynamicArray&lt;TElement&gt;&gt;&gt;, IIndex&lt;nint, TElement&gt;, IIndexReadOnly&lt;nint, TElement&gt;, IInsertSpan&lt;nint, TElement&gt;, IInsertMemory&lt;nint, TElement&gt;, IInsert&lt;nint, TElement&gt;, IPostpendSpan&lt;TElement&gt;, IPostpendMemory&lt;TElement&gt;, IPostpend&lt;TElement&gt;, IPrependSpan&lt;TElement&gt;, IPrependMemory&lt;TElement&gt;, IPrepend&lt;TElement&gt;, IRemove&lt;TElement&gt;, IReplace&lt;TElement&gt;, IReplace&lt;TElement, TElement&gt;, ISequence&lt;TElement, FlexibleArray&lt;TElement, DynamicArray&lt;TElement&gt;&gt;.Enumerator&gt;, IEnumerable&lt;TElement&gt;, IEnumerable, IShift, ISlice&lt;Memory&lt;TElement&gt;&gt;, ICount, IResize, ICapacity</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class DynamicArray&lt;TElement&gt; : FlexibleArray&lt;TElement, DynamicArray&lt;TElement&gt;&gt;, IAddSpan&lt;TElement&gt;, IAddMemory&lt;TElement&gt;, IAdd&lt;TElement&gt;, IClear, IContains&lt;TElement&gt;, IEquatable&lt;DynamicArray&lt;TElement&gt;&gt;, IEquatable&lt;FlexibleArray&lt;TElement, DynamicArray&lt;TElement&gt;&gt;&gt;, IIndex&lt;nint, TElement&gt;, IIndexReadOnly&lt;nint, TElement&gt;, IInsertSpan&lt;nint, TElement&gt;, IInsertMemory&lt;nint, TElement&gt;, IInsert&lt;nint, TElement&gt;, IPostpendSpan&lt;TElement&gt;, IPostpendMemory&lt;TElement&gt;, IPostpend&lt;TElement&gt;, IPrependSpan&lt;TElement&gt;, IPrependMemory&lt;TElement&gt;, IPrepend&lt;TElement&gt;, IRemove&lt;TElement&gt;, IReplace&lt;TElement&gt;, IReplace&lt;TElement, TElement&gt;, ISequence&lt;TElement, FlexibleArray&lt;TElement, DynamicArray&lt;TElement&gt;&gt;.Enumerator&gt;, IEnumerable&lt;TElement&gt;, IEnumerable, IShift, ISlice&lt;Memory&lt;TElement&gt;&gt;, ICount, IResize, ICapacity</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -795,6 +799,9 @@
       <a class="xref" href="System.Traits.IClear.html">IClear</a>
   </div>
   <div>
+      <a class="xref" href="System.Traits.IContains-1.html">IContains&lt;TElement&gt;</a>
+  </div>
+  <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">System.IEquatable&lt;T&gt;</a>
   </div>
   <div>
@@ -892,7 +899,13 @@
       <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Contains__2_System_Traits_ISequence___0___1____0_">TraitExtensions.Contains&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, TElement)</a>
   </div>
   <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsAll__1_System_Traits_IContains___0____0___">TraitExtensions.ContainsAll&lt;TElement&gt;(IContains&lt;TElement&gt;, TElement[])</a>
+  </div>
+  <div>
       <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsAll__2_System_Traits_ISequence___0___1____0___">TraitExtensions.ContainsAll&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, TElement[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsAny__1_System_Traits_IContains___0____0___">TraitExtensions.ContainsAny&lt;TElement&gt;(IContains&lt;TElement&gt;, TElement[])</a>
   </div>
   <div>
       <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsAny__2_System_Traits_ISequence___0___1____0___">TraitExtensions.ContainsAny&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, TElement[])</a>

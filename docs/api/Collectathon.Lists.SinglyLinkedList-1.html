@@ -87,6 +87,7 @@
     <h5>Implements</h5>
     <div><a class="xref" href="System.Traits.IAdd-1.html">IAdd</a>&lt;TElement&gt;</div>
     <div><a class="xref" href="System.Traits.IClear.html">IClear</a></div>
+    <div><a class="xref" href="System.Traits.IContains-1.html">IContains</a>&lt;TElement&gt;</div>
     <div><span class="xref">IEquatable</span>&lt;<a class="xref" href="Collectathon.Lists.SinglyLinkedList-1.html">SinglyLinkedList</a>&lt;TElement&gt;&gt;</div>
     <div><span class="xref">IEquatable</span>&lt;<a class="xref" href="Collectathon.Lists.List-4.html">List</a>&lt;TElement, <a class="xref" href="Collectathon.Lists.SinglyLinkedList-1.Node.html">SinglyLinkedList.Node</a>&lt;&gt;, <a class="xref" href="Collectathon.Lists.SinglyLinkedList-1.html">SinglyLinkedList</a>&lt;TElement&gt;, <a class="xref" href="Collectathon.Lists.StandardList-3.Enumerator.html">StandardList.Enumerator</a>&lt;&gt;&gt;&gt;</div>
     <div><a class="xref" href="System.Traits.IIndex-2.html">IIndex</a>&lt;<span class="xref">nint</span>, TElement&gt;</div>
@@ -105,6 +106,9 @@
     <h5>Inherited Members</h5>
     <div>
       <a class="xref" href="Collectathon.Lists.StandardList-3.html#Collectathon_Lists_StandardList_3_Item_nint_">StandardList&lt;TElement, SinglyLinkedList&lt;TElement&gt;.Node, SinglyLinkedList&lt;TElement&gt;&gt;.Item[nint]</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Lists.StandardList-3.html#Collectathon_Lists_StandardList_3_Contains__0_">StandardList&lt;TElement, SinglyLinkedList&lt;TElement&gt;.Node, SinglyLinkedList&lt;TElement&gt;&gt;.Contains(TElement)</a>
     </div>
     <div>
       <a class="xref" href="Collectathon.Lists.StandardList-3.html#Collectathon_Lists_StandardList_3_GetEnumerator">StandardList&lt;TElement, SinglyLinkedList&lt;TElement&gt;.Node, SinglyLinkedList&lt;TElement&gt;&gt;.GetEnumerator()</a>
@@ -132,6 +136,9 @@
     </div>
     <div>
       <a class="xref" href="Collectathon.Lists.List-4.html#Collectathon_Lists_List_4_Clear">List&lt;TElement, SinglyLinkedList&lt;TElement&gt;.Node, SinglyLinkedList&lt;TElement&gt;, StandardList&lt;TElement, SinglyLinkedList&lt;TElement&gt;.Node, SinglyLinkedList&lt;TElement&gt;&gt;.Enumerator&gt;.Clear()</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Lists.List-4.html#Collectathon_Lists_List_4_Contains__0_">List&lt;TElement, SinglyLinkedList&lt;TElement&gt;.Node, SinglyLinkedList&lt;TElement&gt;, StandardList&lt;TElement, SinglyLinkedList&lt;TElement&gt;.Node, SinglyLinkedList&lt;TElement&gt;&gt;.Enumerator&gt;.Contains(TElement)</a>
     </div>
     <div>
       <a class="xref" href="Collectathon.Lists.List-4.html#Collectathon_Lists_List_4_Equals_Object_">List&lt;TElement, SinglyLinkedList&lt;TElement&gt;.Node, SinglyLinkedList&lt;TElement&gt;, StandardList&lt;TElement, SinglyLinkedList&lt;TElement&gt;.Node, SinglyLinkedList&lt;TElement&gt;&gt;.Enumerator&gt;.Equals(Object)</a>
@@ -186,7 +193,7 @@
   <h6><strong>Assembly</strong>: Collectathon.Lists.dll</h6>
   <h5 id="Collectathon_Lists_SinglyLinkedList_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class SinglyLinkedList&lt;TElement&gt; : StandardList&lt;TElement, SinglyLinkedList&lt;TElement&gt;.Node, SinglyLinkedList&lt;TElement&gt;&gt;, IAdd&lt;TElement&gt;, IClear, IEquatable&lt;SinglyLinkedList&lt;TElement&gt;&gt;, IEquatable&lt;List&lt;TElement, SinglyLinkedList&lt;TElement&gt;.Node, SinglyLinkedList&lt;TElement&gt;, StandardList&lt;TElement, SinglyLinkedList&lt;TElement&gt;.Node, SinglyLinkedList&lt;TElement&gt;&gt;.Enumerator&gt;&gt;, IIndex&lt;nint, TElement&gt;, IIndexReadOnly&lt;nint, TElement&gt;, IInsert&lt;nint, TElement&gt;, IPostpend&lt;TElement&gt;, IPrepend&lt;TElement&gt;, IRemove&lt;TElement&gt;, IReplace&lt;TElement&gt;, IReplace&lt;TElement, TElement&gt;, ISequence&lt;TElement, StandardList&lt;TElement, SinglyLinkedList&lt;TElement&gt;.Node, SinglyLinkedList&lt;TElement&gt;&gt;.Enumerator&gt;, ICount, IEnumerable&lt;TElement&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class SinglyLinkedList&lt;TElement&gt; : StandardList&lt;TElement, SinglyLinkedList&lt;TElement&gt;.Node, SinglyLinkedList&lt;TElement&gt;&gt;, IAdd&lt;TElement&gt;, IClear, IContains&lt;TElement&gt;, IEquatable&lt;SinglyLinkedList&lt;TElement&gt;&gt;, IEquatable&lt;List&lt;TElement, SinglyLinkedList&lt;TElement&gt;.Node, SinglyLinkedList&lt;TElement&gt;, StandardList&lt;TElement, SinglyLinkedList&lt;TElement&gt;.Node, SinglyLinkedList&lt;TElement&gt;&gt;.Enumerator&gt;&gt;, IIndex&lt;nint, TElement&gt;, IIndexReadOnly&lt;nint, TElement&gt;, IInsert&lt;nint, TElement&gt;, IPostpend&lt;TElement&gt;, IPrepend&lt;TElement&gt;, IRemove&lt;TElement&gt;, IReplace&lt;TElement&gt;, IReplace&lt;TElement, TElement&gt;, ISequence&lt;TElement, StandardList&lt;TElement, SinglyLinkedList&lt;TElement&gt;.Node, SinglyLinkedList&lt;TElement&gt;&gt;.Enumerator&gt;, ICount, IEnumerable&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -236,7 +243,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public SinglyLinkedList(TElement[] elements)</code></pre>
+    <pre><code class="lang-csharp hljs">public SinglyLinkedList(params TElement[] elements)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -592,6 +599,9 @@
   </div>
   <div>
       <a class="xref" href="System.Traits.IClear.html">IClear</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IContains-1.html">IContains&lt;TElement&gt;</a>
   </div>
   <div>
       <span class="xref">IEquatable&lt;&gt;</span>

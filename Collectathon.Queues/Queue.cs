@@ -6,6 +6,7 @@ using Langly;
 namespace Collectathon.Queues {
 	public sealed partial class Queue<TElement> :
 		IClear,
+		IContains<TElement>,
 		IPeek<TElement>,
 		ISequence<TElement, Queue<TElement>.Enumerator>,
 		IWrite<TElement> {
@@ -60,6 +61,16 @@ namespace Collectathon.Queues {
 			Head = null;
 			Tail = null;
 			Count = 0;
+		}
+
+		/// <inheritdoc/>
+		public Boolean Contains([AllowNull] TElement element) {
+			Node? N = Head;
+			while (N is not null) {
+				if (Equals(N.Element, element)) return true;
+				N = N.Next;
+			}
+			return false;
 		}
 
 		/// <summary>

@@ -12,6 +12,7 @@ namespace Collectathon.Stacks {
 	[DebuggerDisplay("{ToString(5),nq}")]
 	public sealed partial class Stack<TElement> :
 		IClear,
+		IContains<TElement>,
 		IPeek<TElement>,
 		ISequence<TElement, Stack<TElement>.Enumerator>,
 		IWrite<TElement> {
@@ -59,6 +60,16 @@ namespace Collectathon.Stacks {
 				P.Next = null;
 			}
 			Count = 0;
+		}
+
+		/// <inheritdoc/>
+		public Boolean Contains([AllowNull] TElement element) {
+			Node? N = Head;
+			while (N is not null) {
+				if (Equals(N.Element, element)) return true;
+				N = N.Next;
+			}
+			return false;
 		}
 
 		/// <inheritdoc/>
