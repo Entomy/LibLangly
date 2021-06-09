@@ -21,6 +21,7 @@ namespace Langly {
 					"Add - Many",
 					nameof(Construction),
 					nameof(Contains),
+					nameof(Index),
 				})
 				.AddChoiceGroup(nameof(Langly), new[] {
 					""
@@ -46,6 +47,9 @@ namespace Langly {
 					break;
 				case nameof(Contains):
 					BenchmarkRunner.Run<Contains>();
+					break;
+				case nameof(Index):
+					BenchmarkRunner.Run<Index>();
 					break;
 				default:
 					break;
