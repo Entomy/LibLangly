@@ -79,12 +79,15 @@ namespace Collectathon.Arrays {
 		}
 
 		/// <inheritdoc/>
+		[O(1), Ω(1), Θ(1)]
 		public nint Capacity => Memory.Length;
 
 		/// <inheritdoc/>
+		[O(1), Ω(1), Θ(1)]
 		public nint Count { get; protected set; }
 
 		/// <inheritdoc/>
+		[O(1), Ω(1), Θ(1)]
 		[AllowNull, MaybeNull]
 		public TElement this[nint index] {
 			get => Memory[(Int32)index];
@@ -93,6 +96,7 @@ namespace Collectathon.Arrays {
 
 #if !NETSTANDARD1_3
 		/// <inheritdoc/>
+		[O(1), Ω(1), Θ(1)]
 		public Memory<TElement> this[Range range] {
 			get {
 				(Int32 offset, Int32 length) = range.GetOffsetAndLength((Int32)Count);
@@ -142,9 +146,11 @@ namespace Collectathon.Arrays {
 		public void Add(ReadOnlySpan<TElement> elements) => Postpend(elements);
 
 		/// <inheritdoc/>
+		[O(1), Ω(1), Θ(1)]
 		public void Clear() => Count = 0;
 
 		/// <inheritdoc/>
+		[O(Complexity.n), Ω(Complexity.n), Θ(Complexity.n)]
 		public Boolean Contains([AllowNull] TElement element) {
 			for (Int32 i = 0; i < Count; i++) {
 				if (Equals(Memory[i], element)) return true;
@@ -221,27 +227,34 @@ namespace Collectathon.Arrays {
 		}
 
 		/// <inheritdoc/>
+		[O(Complexity.n_plus_k), Ω(Complexity.n)]
 		public virtual void Postpend([AllowNull] TElement element) => Memory[Count++] = element;
 
 		/// <inheritdoc/>
+		[O(Complexity.n_plus_k), Ω(Complexity.n)]
 		public void Postpend([AllowNull] params TElement[] elements) => Postpend(elements.AsSpan());
 
 		/// <inheritdoc/>
+		[O(Complexity.n_plus_k), Ω(Complexity.n)]
 		public void Postpend(Memory<TElement> elements) => Postpend(elements.Span);
 
 		/// <inheritdoc/>
+		[O(Complexity.n_plus_k), Ω(Complexity.n)]
 		public void Postpend(ReadOnlyMemory<TElement> elements) => Postpend(elements.Span);
 
 		/// <inheritdoc/>
+		[O(Complexity.n_plus_k), Ω(Complexity.n)]
 		public void Postpend(Span<TElement> elements) => Postpend((ReadOnlySpan<TElement>)elements);
 
 		/// <inheritdoc/>
+		[O(Complexity.n_plus_k), Ω(Complexity.n)]
 		public virtual void Postpend(ReadOnlySpan<TElement> elements) {
 			elements.CopyTo(Memory.AsSpan((Int32)Count));
 			Count += elements.Length;
 		}
 
 		/// <inheritdoc/>
+		[O(Complexity.n_plus_k), Ω(Complexity.n)]
 		public virtual void Prepend([AllowNull] TElement element) {
 			ShiftRight();
 			Memory[0] = element;
@@ -249,18 +262,23 @@ namespace Collectathon.Arrays {
 		}
 
 		/// <inheritdoc/>
+		[O(Complexity.n_plus_k), Ω(Complexity.n)]
 		public void Prepend([AllowNull] params TElement[] elements) => Prepend(elements.AsSpan());
 
 		/// <inheritdoc/>
+		[O(Complexity.n_plus_k), Ω(Complexity.n)]
 		public void Prepend(Memory<TElement> elements) => Prepend(elements.Span);
 
 		/// <inheritdoc/>
+		[O(Complexity.n_plus_k), Ω(Complexity.n)]
 		public void Prepend(ReadOnlyMemory<TElement> elements) => Prepend(elements.Span);
 
 		/// <inheritdoc/>
+		[O(Complexity.n_plus_k), Ω(Complexity.n)]
 		public void Prepend(Span<TElement> elements) => Prepend((ReadOnlySpan<TElement>)elements);
 
 		/// <inheritdoc/>
+		[O(Complexity.n_plus_k), Ω(Complexity.n)]
 		public virtual void Prepend(ReadOnlySpan<TElement> elements) {
 			ShiftRight(elements.Length);
 			elements.CopyTo(Memory);
@@ -268,6 +286,7 @@ namespace Collectathon.Arrays {
 		}
 
 		/// <inheritdoc/>
+		[O(Complexity.n_plus_k), Ω(Complexity.n_plus_k)]
 		public void Remove([AllowNull] TElement element) {
 			for (nint i = 0; i < Count; i++) {
 				if (Equals(Memory[i], element)) {
@@ -279,6 +298,7 @@ namespace Collectathon.Arrays {
 		}
 
 		/// <inheritdoc/>
+		[O(Complexity.n_plus_k), Ω(Complexity.n_plus_k)]
 		public void RemoveFirst([AllowNull] TElement element) {
 			for (Int32 i = 0; i < Count; i++) {
 				if (Equals(Memory[i], element)) {
@@ -290,9 +310,11 @@ namespace Collectathon.Arrays {
 		}
 
 		/// <inheritdoc/>
+		[O(Complexity.n_plus_k), Ω(Complexity.n_plus_k)]
 		public void RemoveLast([AllowNull] TElement element) => throw new NotImplementedException();
 
 		/// <inheritdoc/>
+		[O(Complexity.n), Ω(Complexity.n), Θ(Complexity.n)]
 		public void Replace([AllowNull] TElement search, [AllowNull] TElement replace) {
 			for (Int32 i = 0; i < Count; i++) {
 				if (Equals(Memory[i], search)) {
@@ -324,19 +346,24 @@ namespace Collectathon.Arrays {
 		}
 
 		/// <inheritdoc/>
+		[O(1), Ω(1), Θ(1)]
 		public Memory<TElement> Slice() => Memory.AsMemory();
 
 		/// <inheritdoc/>
+		[O(1), Ω(1), Θ(1)]
 		public Memory<TElement> Slice(nint start) => Memory.AsMemory((Int32)start);
 
 		/// <inheritdoc/>
+		[O(1), Ω(1), Θ(1)]
 		public Memory<TElement> Slice(nint start, nint length) => Memory.AsMemory((Int32)start, (Int32)length);
 
 		/// <inheritdoc/>
+		[O(Complexity.n), Ω(Complexity.n), Θ(Complexity.n)]
 		[return: NotNull]
 		public sealed override String ToString() => Collection.ToString(this);
 
 		/// <inheritdoc/>
+		[O(Complexity.n), Ω(Complexity.n), Θ(Complexity.n)]
 		[return: NotNull]
 		public String ToString(nint amount) => Collection.ToString(this, amount);
 	}
