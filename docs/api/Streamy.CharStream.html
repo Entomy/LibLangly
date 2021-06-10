@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class CharStream
    ">
-    <meta name="generator" content="docfx 2.57.2.0">
+    <meta name="generator" content="docfx 2.58.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -702,7 +702,7 @@ protected CharStream(StreamBase base, IReadBuffer readBuffer, IWriteBuffer write
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">nint</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.intptr">IntPtr</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -813,13 +813,13 @@ protected CharStream(StreamBase base, IReadBuffer readBuffer, IWriteBuffer write
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_CharStream_Seek_nint_.md&amp;value=---%0Auid%3A%20Streamy.CharStream.Seek(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_CharStream_Seek_System_IntPtr_.md&amp;value=---%0Auid%3A%20Streamy.CharStream.Seek(System.IntPtr)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.TextStream/CharStream.cs/#L129">View Source</a>
   </span>
   <a id="Streamy_CharStream_Seek_" data-uid="Streamy.CharStream.Seek*"></a>
-  <h4 id="Streamy_CharStream_Seek_nint_" data-uid="Streamy.CharStream.Seek(nint)">Seek(nint)</h4>
+  <h4 id="Streamy_CharStream_Seek_System_IntPtr_" data-uid="Streamy.CharStream.Seek(System.IntPtr)">Seek(IntPtr)</h4>
   <div class="markdown level1 summary"><p>Seeks to the <code data-dev-comment-type="paramref" class="paramref">offset</code>, counted by <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -838,7 +838,7 @@ protected CharStream(StreamBase base, IReadBuffer readBuffer, IWriteBuffer write
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">nint</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.intptr">IntPtr</a></td>
         <td><span class="parametername">offset</span></td>
         <td><p>The amount of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a> to seek.</p>
 </td>
@@ -875,6 +875,73 @@ protected CharStream(StreamBase base, IReadBuffer readBuffer, IWriteBuffer write
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.char">Char</a></td>
         <td><span class="parametername">element</span></td>
         <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_CharStream_System_Traits_ISeek_Position.md&amp;value=---%0Auid%3A%20Streamy.CharStream.System%23Traits%23ISeek%23Position%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.TextStream/CharStream.cs/#L77">View Source</a>
+  </span>
+  <a id="Streamy_CharStream_System_Traits_ISeek_Position_" data-uid="Streamy.CharStream.System#Traits#ISeek#Position*"></a>
+  <h4 id="Streamy_CharStream_System_Traits_ISeek_Position" data-uid="Streamy.CharStream.System#Traits#ISeek#Position">ISeek.Position</h4>
+  <div class="markdown level1 summary"><p>The position within the datastream, counted by an offset from the start.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">nint ISeek.Position { get; set; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.intptr">IntPtr</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_CharStream_System_Traits_ISeek_Seek_System_IntPtr_.md&amp;value=---%0Auid%3A%20Streamy.CharStream.System%23Traits%23ISeek%23Seek(System.IntPtr)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.TextStream/CharStream.cs/#L123">View Source</a>
+  </span>
+  <a id="Streamy_CharStream_System_Traits_ISeek_Seek_" data-uid="Streamy.CharStream.System#Traits#ISeek#Seek*"></a>
+  <h4 id="Streamy_CharStream_System_Traits_ISeek_Seek_System_IntPtr_" data-uid="Streamy.CharStream.System#Traits#ISeek#Seek(System.IntPtr)">ISeek.Seek(IntPtr)</h4>
+  <div class="markdown level1 summary"><p>Seeks to the <code data-dev-comment-type="paramref" class="paramref">offset</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void ISeek.Seek(nint offset)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.intptr">IntPtr</a></td>
+        <td><span class="parametername">offset</span></td>
+        <td><p>The offset from the current position to seek to.</p>
+</td>
       </tr>
     </tbody>
   </table>

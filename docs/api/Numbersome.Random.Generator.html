@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class Random.Generator
    ">
-    <meta name="generator" content="docfx 2.57.2.0">
+    <meta name="generator" content="docfx 2.58.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -183,7 +183,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override sealed bool Readable { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed override bool Readable { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -219,7 +219,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override sealed bool Seekable { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed override bool Seekable { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -255,7 +255,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override sealed bool Writable { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed override bool Writable { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -281,18 +281,19 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_Generator_Seek_nint_.md&amp;value=---%0Auid%3A%20Numbersome.Random.Generator.Seek(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_Generator_Seek_System_IntPtr_.md&amp;value=---%0Auid%3A%20Numbersome.Random.Generator.Seek(System.IntPtr)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Random/Random.Generator.cs/#L28">View Source</a>
   </span>
   <a id="Numbersome_Random_Generator_Seek_" data-uid="Numbersome.Random.Generator.Seek*"></a>
-  <h4 id="Numbersome_Random_Generator_Seek_nint_" data-uid="Numbersome.Random.Generator.Seek(nint)">Seek(nint)</h4>
-  <div class="markdown level1 summary"></div>
+  <h4 id="Numbersome_Random_Generator_Seek_System_IntPtr_" data-uid="Numbersome.Random.Generator.Seek(System.IntPtr)">Seek(IntPtr)</h4>
+  <div class="markdown level1 summary"><p>Seeks to the <code data-dev-comment-type="paramref" class="paramref">offset</code>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override sealed void Seek(nint offset)</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed override void Seek(nint offset)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -305,12 +306,15 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">nint</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.intptr">IntPtr</a></td>
         <td><span class="parametername">offset</span></td>
-        <td></td>
+        <td><p>The offset from the current position to seek to.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Streamy.Bases.StreamBase.html#Streamy_Bases_StreamBase_Seek_System_IntPtr_">StreamBase.Seek(IntPtr)</a></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Random_Generator_Write_System_Byte_.md&amp;value=---%0Auid%3A%20Numbersome.Random.Generator.Write(System.Byte)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -325,7 +329,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override sealed void Write(byte element)</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed override void Write(byte element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">

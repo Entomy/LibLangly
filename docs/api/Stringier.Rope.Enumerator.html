@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Struct Rope.Enumerator
    ">
-    <meta name="generator" content="docfx 2.57.2.0">
+    <meta name="generator" content="docfx 2.58.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -158,11 +158,12 @@
   </span>
   <a id="Stringier_Rope_Enumerator_Count_" data-uid="Stringier.Rope.Enumerator.Count*"></a>
   <h4 id="Stringier_Rope_Enumerator_Count" data-uid="Stringier.Rope.Enumerator.Count">Count</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the number of elements contained in the collection.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public nint Count { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public readonly nint Count { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -174,7 +175,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">nint</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.intptr">IntPtr</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -192,7 +193,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public char Current { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public readonly char Current { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -290,14 +291,15 @@
   <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetype.tostring#System_ValueType_ToString">ValueType.ToString()</a></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Enumerator_ToString_nint_.md&amp;value=---%0Auid%3A%20Stringier.Rope.Enumerator.ToString(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Enumerator_ToString_System_IntPtr_.md&amp;value=---%0Auid%3A%20Stringier.Rope.Enumerator.ToString(System.IntPtr)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.Enumerator.cs/#L119">View Source</a>
   </span>
   <a id="Stringier_Rope_Enumerator_ToString_" data-uid="Stringier.Rope.Enumerator.ToString*"></a>
-  <h4 id="Stringier_Rope_Enumerator_ToString_nint_" data-uid="Stringier.Rope.Enumerator.ToString(nint)">ToString(nint)</h4>
-  <div class="markdown level1 summary"></div>
+  <h4 id="Stringier_Rope_Enumerator_ToString_System_IntPtr_" data-uid="Stringier.Rope.Enumerator.ToString(System.IntPtr)">ToString(IntPtr)</h4>
+  <div class="markdown level1 summary"><p>Returns a string that represents this sequence, with no more than <code data-dev-comment-type="paramref" class="paramref">amount</code> elements.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -314,9 +316,10 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">nint</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.intptr">IntPtr</a></td>
         <td><span class="parametername">amount</span></td>
-        <td></td>
+        <td><p>The maximum amount of elements to display.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -350,7 +353,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">object IEnumerator.Current { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">readonly object IEnumerator.Current { get; }</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -425,6 +428,9 @@
   </div>
   <div>
       <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ToArray__2_System_Traits_ISequence___0___1__">TraitExtensions.ToArray&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Numbersome.StatisticsExtensions.html#Numbersome_StatisticsExtensions_Mode__2_System_Traits_ISequence___0___1__">StatisticsExtensions.Mode&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;)</a>
   </div>
 </article>
           </div>
