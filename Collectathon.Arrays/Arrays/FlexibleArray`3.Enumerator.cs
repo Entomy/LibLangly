@@ -21,7 +21,7 @@ namespace Collectathon.Arrays {
 			/// </summary>
 			/// <param name="collection">The collection to enumerate over.</param>
 			public Enumerator(TSelf collection) {
-				Memory = collection.Memory;
+				Memory = collection.Entries;
 				Count = collection.Count;
 				i = -1;
 			}

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
-using Langly;
 
 namespace Collectathon.Lists {
 	/// <summary>
@@ -9,15 +8,15 @@ namespace Collectathon.Lists {
 	/// <typeparam name="TElement">The type of the elements in the list.</typeparam>
 	public sealed partial class SinglyLinkedList<TElement> : StandardList<TElement, SinglyLinkedList<TElement>.Node, SinglyLinkedList<TElement>> {
 		/// <summary>
+		/// Initializes a new <see cref="SinglyLinkedList{TElement}"/>.
+		/// </summary>
+		public SinglyLinkedList() : base(Filters.None) { }
+
+		/// <summary>
 		/// Initializes a new <see cref="SinglyLinkedList{TElement}"/> with the given <paramref name="elements"/>.
 		/// </summary>
 		/// <param name="elements">The initial elements of the list.</param>
 		public SinglyLinkedList([DisallowNull] params TElement[] elements) : base(elements, Filters.None) { }
-
-		/// <summary>
-		/// Initializes a new <see cref="SinglyLinkedList{TElement}"/>.
-		/// </summary>
-		public SinglyLinkedList() : base(Filters.None) { }
 
 		/// <summary>
 		/// Initializes a new <see cref="SinglyLinkedList{TElement}"/> with the given <paramref name="elements"/>.
@@ -76,6 +75,7 @@ namespace Collectathon.Lists {
 		public override void RemoveLast([AllowNull] TElement element) => throw new NotImplementedException();
 
 		/// <inheritdoc/>
+		[return: NotNull]
 		protected override Node NewUnlinkedNode([AllowNull] TElement element) => new Node(element, next: null);
 	}
 }

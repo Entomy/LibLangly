@@ -42,9 +42,9 @@ namespace Collectathon.Arrays {
 		/// <inheritdoc/>
 		public void Resize(nint capacity) {
 			(TIndex, TElement)[] newBuffer = new (TIndex, TElement)[capacity];
-			Memory.AsMemory(0, (Int32)(capacity > Capacity ? Capacity : capacity)).CopyTo(newBuffer);
+			Entries.AsMemory(0, (Int32)(capacity > Capacity ? Capacity : capacity)).CopyTo(newBuffer);
 			Count = Count < capacity ? Count : capacity;
-			Memory = newBuffer;
+			Entries = newBuffer;
 		}
 
 		/// <inheritdoc/>

@@ -19,9 +19,7 @@ namespace Langly {
 		private static C5.CircularQueue<Int32> c5_circularqueue = new C5.CircularQueue<Int32>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32 };
 
 		private static C5.HashBag<Int32> c5_hashbag = new C5.HashBag<Int32>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32 };
-		
-		private static C5.HashDictionary<Char, String> c5_hashdictionary;
-		
+				
 		private static C5.HashedArrayList<Int32> c5_hashedarraylist = new C5.HashedArrayList<Int32>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32 };
 		
 		private static C5.HashedLinkedList<Int32> c5_hashedlinkedlist = new C5.HashedLinkedList<Int32>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32 };
@@ -36,8 +34,6 @@ namespace Langly {
 
 		private static C5.TreeBag<Int32> c5_treebag = new C5.TreeBag<Int32>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32 };
 
-		private static C5.TreeDictionary<Char, String> c5_treedictionary;
-
 		private static C5.TreeSet<Int32> c5_treeset = new C5.TreeSet<Int32>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32 };
 
 		private static BoundedArray<Int32> collectathon_boundedarray = new BoundedArray<Int32>(array);
@@ -50,9 +46,9 @@ namespace Langly {
 
 		private static Stack<Int32> collectathon_stack = new Stack<Int32>(array);
 
-		private static MSFT.Dictionary<Char, String> msft_dictionary;
-
 		private static MSFT.HashSet<Int32> msft_hashset = new MSFT.HashSet<Int32>(array);
+
+		private static NetFabric.DoublyLinkedList<Int32> netfabric_doublylinkedlist = new NetFabric.DoublyLinkedList<Int32>(array);
 
 		private static MSFT.LinkedList<Int32> msft_linkedlist = new MSFT.LinkedList<Int32>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32 };
 
@@ -61,8 +57,6 @@ namespace Langly {
 		private static MSFT.Queue<Int32> msft_queue = new MSFT.Queue<Int32>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32 };
 
 		private static MSFT.SegmentedList<Int32> msft_segmentedlist = new MSFT.SegmentedList<Int32>(8) { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32 };
-
-		private static MSFT.SortedDictionary<Char, String> msft_sorteddictionary;
 
 		private static MSFT.SortedSet<Int32> msft_sortedset = new MSFT.SortedSet<Int32>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32 };
 

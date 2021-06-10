@@ -67,7 +67,7 @@ namespace Collectathon.Lists {
 
 		/// <inheritdoc/>
 		[AllowNull, MaybeNull]
-		public abstract TElement this[[DisallowNull] nint index] { get; set; }
+		public abstract TElement this[nint index] { get; set; }
 
 		/// <inheritdoc/>
 		[MemberNotNull(nameof(Head), nameof(Tail))] 

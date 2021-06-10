@@ -27,7 +27,8 @@ namespace Langly {
 					""
 				})
 				.AddChoiceGroup(nameof(Numbersome), new[] {
-					""
+					nameof(Sum),
+					nameof(Product),
 				})
 				.AddChoiceGroup(nameof(Streamy), new[] {
 					""
@@ -36,6 +37,7 @@ namespace Langly {
 					""
 				}))) {
 				switch (selection) {
+				#region Collectathon
 				case "Add - Single":
 					BenchmarkRunner.Run<AddSingle>();
 					break;
@@ -51,6 +53,21 @@ namespace Langly {
 				case nameof(Index):
 					BenchmarkRunner.Run<Index>();
 					break;
+				#endregion
+				#region Langly
+				#endregion
+				#region Numbersome
+				case nameof(Sum):
+					BenchmarkRunner.Run<Sum>();
+					break;
+				case nameof(Product):
+					BenchmarkRunner.Run<Product>();
+					break;
+				#endregion
+				#region Streamy
+				#endregion
+				#region Stringier
+				#endregion
 				default:
 					break;
 				}

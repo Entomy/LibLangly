@@ -43,6 +43,8 @@ namespace Langly {
 
 		private static Stack<Int32> collectathon_stack = new Stack<Int32>();
 
+		private static NetFabric.DoublyLinkedList<Int32> netfabric_doublylinkedlist = new NetFabric.DoublyLinkedList<Int32>();
+
 		private static MSFT.HashSet<Int32> msft_hashset = new MSFT.HashSet<Int32>(32);
 
 		private static MSFT.LinkedList<Int32> msft_linkedlist = new MSFT.LinkedList<Int32>();
@@ -111,6 +113,9 @@ namespace Langly {
 
 		[Benchmark]
 		public void Collectathon_Stack() => collectathon_stack.Add(Items);
+
+		[Benchmark]
+		public void NetFabric_Doubly_LinkedList() => netfabric_doublylinkedlist.AddLast(Items);
 
 		[Benchmark]
 		public void MSFT_HashSet() {

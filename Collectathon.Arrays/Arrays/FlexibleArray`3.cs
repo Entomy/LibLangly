@@ -22,7 +22,7 @@ namespace Collectathon.Arrays {
 		/// <summary>
 		/// The backing array of this <see cref="FlexibleArray{TIndex, TElement, TSelf}"/>.
 		/// </summary>
-		protected (TIndex Index, TElement Element)[] Memory;
+		protected (TIndex Index, TElement Element)[] Entries;
 
 		/// <summary>
 		/// Initializes a new <see cref="FlexibleArray{TElement, TSelf}"/> with the given <paramref name="capacity"/>.
@@ -30,22 +30,22 @@ namespace Collectathon.Arrays {
 		/// <param name="capacity">The initial capacity.</param>
 		/// <param name="count">The amount of elements in the array.</param>
 		protected FlexibleArray(nint capacity, nint count) {
-			Memory = new (TIndex, TElement)[capacity];
+			Entries = new (TIndex, TElement)[capacity];
 			Count = count;
 		}
 
 		/// <summary>
-		/// Initializes a new <see cref="FlexibleArray{TElement, TSelf}"/> with the given <paramref name="memory"/>.
+		/// Initializes a new <see cref="FlexibleArray{TElement, TSelf}"/> with the given <paramref name="entries"/>.
 		/// </summary>
-		/// <param name="memory">The <see cref="Array"/> of (<typeparamref name="TIndex"/>, <typeparamref name="TElement"/>) to reuse.</param>
+		/// <param name="entries">The initial entries of the list.</param>
 		/// <param name="count">The amount of elements in the array.</param>
-		protected FlexibleArray([DisallowNull] (TIndex, TElement)[] memory, nint count) {
-			Memory = memory;
+		protected FlexibleArray([DisallowNull] (TIndex, TElement)[] entries, nint count) {
+			Entries = entries;
 			Count = count;
 		}
 
 		/// <inheritdoc/>
-		public nint Capacity => Memory.Length;
+		public nint Capacity => Entries.Length;
 
 		/// <inheritdoc/>
 		public nint Count { get; protected set; }
@@ -54,7 +54,7 @@ namespace Collectathon.Arrays {
 		[AllowNull, MaybeNull]
 		public TElement this[[DisallowNull] TIndex index] {
 			get {
-				foreach ((TIndex Index, TElement Element) in Memory) {
+				foreach ((TIndex Index, TElement Element) in Entries) {
 					if (Equals(Index, index)) {
 						return Element;
 					}
@@ -63,8 +63,8 @@ namespace Collectathon.Arrays {
 			}
 			set {
 				for (nint i = 0; i < Count; i++) {
-					if (Equals(Memory[i].Index, index)) {
-						Memory[i].Element = value;
+					if (Equals(Entries[i].Index, index)) {
+						Entries[i].Element = value;
 						return;
 					}
 				}
@@ -76,7 +76,7 @@ namespace Collectathon.Arrays {
 		public void Clear() => Count = 0;
 
 		/// <inheritdoc/>
-		public Enumerator GetEnumerator() => new Enumerator(Memory, Count);
+		public Enumerator GetEnumerator() => new Enumerator(Entries, Count);
 
 		/// <inheritdoc/>
 		[return: NotNull]
@@ -92,7 +92,7 @@ namespace Collectathon.Arrays {
 
 		/// <inheritdoc/>
 		public void Insert([DisallowNull] TIndex index, [AllowNull] TElement element) {
-			foreach ((TIndex Index, TElement Element) in Memory) {
+			foreach ((TIndex Index, TElement Element) in Entries) {
 				if (Equals(Index, index)) {
 					return;
 				}
@@ -115,6 +115,6 @@ namespace Collectathon.Arrays {
 		/// <param name="element">The element to add.</param>
 		/// <returns>If the add occurred successfully, returns a <typeparamref name="TSelf"/> containing the original and added elements; otherwise, <see langword="null"/>.</returns>
 		[return: MaybeNull]
-		protected virtual void Add([DisallowNull] TIndex index, [AllowNull] TElement element) => Memory[Count++] = (index, element);
+		protected virtual void Add([DisallowNull] TIndex index, [AllowNull] TElement element) => Entries[Count++] = (index, element);
 	}
 }

@@ -49,6 +49,8 @@ namespace Langly {
 
 		private static Stack<Int32> collectathon_stack = new Stack<Int32>(array);
 
+		private static NetFabric.DoublyLinkedList<Int32> netfabric_doublylinkedlist = new NetFabric.DoublyLinkedList<Int32>(array);
+
 		private static MSFT.Dictionary<Char, String> msft_dictionary;
 
 		private static MSFT.HashSet<Int32> msft_hashset = new MSFT.HashSet<Int32>(array);

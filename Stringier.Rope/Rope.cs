@@ -79,10 +79,12 @@ namespace Stringier {
 		/// </summary>
 		public nint Count { get; private set; }
 
+#if NETCOREAPP3_0_OR_GREATER
 		/// <summary>
 		/// Gets the number of <see cref="Rune"/> contained in this collection.
 		/// </summary>
 		public nint RuneCount => throw new NotImplementedException();
+#endif
 
 		/// <summary>
 		/// Gets or sets the <see cref="Char"/> at the specified <paramref name="index"/>.

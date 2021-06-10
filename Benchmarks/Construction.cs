@@ -76,6 +76,9 @@ namespace Langly {
 		public void Collectathon_Stack() => _ = new Stack<Int32>();
 
 		[Benchmark]
+		public void NetFabric_DoublyLinkedList() => _ = new NetFabric.DoublyLinkedList<Int32>();
+
+		[Benchmark]
 		public void MSFT_Dictionary() => _ = new MSFT.Dictionary<Char, String>(32);
 
 		[Benchmark]

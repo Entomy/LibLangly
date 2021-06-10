@@ -1,0 +1,433 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class StandardList&lt;TIndex, TElement, TNode, TSelf&gt;
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class StandardList&lt;TIndex, TElement, TNode, TSelf&gt;
+   ">
+    <meta name="generator" content="docfx 2.57.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Collectathon.Lists.StandardList`4">
+  
+  
+  <h1 id="Collectathon_Lists_StandardList_4" data-uid="Collectathon.Lists.StandardList`4" class="text-break">Class StandardList&lt;TIndex, TElement, TNode, TSelf&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>Represents any associative linked list where each node contains a single element.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><a class="xref" href="Collectathon.Lists.List-5.html">List</a>&lt;TIndex, TElement, TNode, TSelf, <a class="xref" href="Collectathon.Lists.StandardList-4.Enumerator.html">StandardList.Enumerator</a>&lt;&gt;&gt;</div>
+    <div class="level2"><span class="xref">StandardList&lt;TIndex, TElement, TNode, TSelf&gt;</span></div>
+      <div class="level3"><a class="xref" href="Collectathon.Lists.SinglyLinkedList-2.html">SinglyLinkedList&lt;TIndex, TElement&gt;</a></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="System.Traits.IClear.html">IClear</a></div>
+    <div><a class="xref" href="System.Traits.IIndex-2.html">IIndex</a>&lt;TIndex, TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IIndexReadOnly-2.html">IIndexReadOnly</a>&lt;TIndex, TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IInsert-2.html">IInsert</a>&lt;TIndex, TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.ISequence-2.html">ISequence</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">ValueTuple</a>&lt;TIndex, TElement&gt;, <a class="xref" href="Collectathon.Lists.StandardList-4.Enumerator.html">StandardList.Enumerator</a>&lt;&gt;&gt;</div>
+    <div><a class="xref" href="System.Traits.ICount.html">ICount</a></div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">ValueTuple</a>&lt;TIndex, TElement&gt;&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Collectathon.Lists.List-5.html#Collectathon_Lists_List_5_Filter">List&lt;TIndex, TElement, TNode, TSelf, StandardList&lt;TIndex, TElement, TNode, TSelf&gt;.Enumerator&gt;.Filter</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Lists.List-5.html#Collectathon_Lists_List_5_Head">List&lt;TIndex, TElement, TNode, TSelf, StandardList&lt;TIndex, TElement, TNode, TSelf&gt;.Enumerator&gt;.Head</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Lists.List-5.html#Collectathon_Lists_List_5_Tail">List&lt;TIndex, TElement, TNode, TSelf, StandardList&lt;TIndex, TElement, TNode, TSelf&gt;.Enumerator&gt;.Tail</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Lists.List-5.html#Collectathon_Lists_List_5_Count">List&lt;TIndex, TElement, TNode, TSelf, StandardList&lt;TIndex, TElement, TNode, TSelf&gt;.Enumerator&gt;.Count</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Lists.List-5.html#Collectathon_Lists_List_5_Item__0_">List&lt;TIndex, TElement, TNode, TSelf, StandardList&lt;TIndex, TElement, TNode, TSelf&gt;.Enumerator&gt;.Item[TIndex]</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Lists.List-5.html#Collectathon_Lists_List_5_Clear">List&lt;TIndex, TElement, TNode, TSelf, StandardList&lt;TIndex, TElement, TNode, TSelf&gt;.Enumerator&gt;.Clear()</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Lists.List-5.html#Collectathon_Lists_List_5_GetEnumerator">List&lt;TIndex, TElement, TNode, TSelf, StandardList&lt;TIndex, TElement, TNode, TSelf&gt;.Enumerator&gt;.GetEnumerator()</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Lists.List-5.html#Collectathon_Lists_List_5_Insert__0__1_">List&lt;TIndex, TElement, TNode, TSelf, StandardList&lt;TIndex, TElement, TNode, TSelf&gt;.Enumerator&gt;.Insert(TIndex, TElement)</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Lists.List-5.html#Collectathon_Lists_List_5_ToString">List&lt;TIndex, TElement, TNode, TSelf, StandardList&lt;TIndex, TElement, TNode, TSelf&gt;.Enumerator&gt;.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Lists.List-5.html#Collectathon_Lists_List_5_ToString_nint_">List&lt;TIndex, TElement, TNode, TSelf, StandardList&lt;TIndex, TElement, TNode, TSelf&gt;.Enumerator&gt;.ToString(nint)</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Lists.List-5.html#Collectathon_Lists_List_5_NewUnlinkedNode__0__1_">List&lt;TIndex, TElement, TNode, TSelf, StandardList&lt;TIndex, TElement, TNode, TSelf&gt;.Enumerator&gt;.NewUnlinkedNode(TIndex, TElement)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Collectathon.Lists.html">Collectathon.Lists</a></h6>
+  <h6><strong>Assembly</strong>: Collectathon.Lists.dll</h6>
+  <h5 id="Collectathon_Lists_StandardList_4_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class StandardList&lt;TIndex, TElement, TNode, TSelf&gt; : List&lt;TIndex, TElement, TNode, TSelf, StandardList&lt;TIndex, TElement, TNode, TSelf&gt;.Enumerator&gt;, IClear, IIndex&lt;TIndex, TElement&gt;, IIndexReadOnly&lt;TIndex, TElement&gt;, IInsert&lt;TIndex, TElement&gt;, ISequence&lt;(TIndex Index, TElement Element), StandardList&lt;TIndex, TElement, TNode, TSelf&gt;.Enumerator&gt;, ICount, IEnumerable&lt;(TIndex Index, TElement Element)&gt; where TNode : StandardListNode&lt;TIndex, TElement, TNode&gt; where TSelf : StandardList&lt;TIndex, TElement, TNode, TSelf&gt;</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TIndex</span></td>
+        <td><p>The type of the indicies of the elements.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of the elements in the list.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TNode</span></td>
+        <td><p>The type of the nodes of the list.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TSelf</span></td>
+        <td><p>The implementing type; itself.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_StandardList_4__ctor_Collectathon_Filter__0__1__.md&amp;value=---%0Auid%3A%20Collectathon.Lists.StandardList%604.%23ctor(Collectathon.Filter%7B%600%2C%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/StandardList`4.cs/#L37">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_StandardList_4__ctor_" data-uid="Collectathon.Lists.StandardList`4.#ctor*"></a>
+  <h4 id="Collectathon_Lists_StandardList_4__ctor_Collectathon_Filter__0__1__" data-uid="Collectathon.Lists.StandardList`4.#ctor(Collectathon.Filter{`0,`1})">StandardList(Filter&lt;TIndex, TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Copy constructor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected StandardList(Filter&lt;TIndex, TElement&gt; filter)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Collectathon.Filter-2.html">Filter</a>&lt;TIndex, TElement&gt;</td>
+        <td><span class="parametername">filter</span></td>
+        <td><p>The <a class="xref" href="Collectathon.Filter-2.html">Filter&lt;TIndex, TElement&gt;</a> to reuse.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_StandardList_4__ctor_Collectathon_Filters_.md&amp;value=---%0Auid%3A%20Collectathon.Lists.StandardList%604.%23ctor(Collectathon.Filters)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/StandardList`4.cs/#L31">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_StandardList_4__ctor_" data-uid="Collectathon.Lists.StandardList`4.#ctor*"></a>
+  <h4 id="Collectathon_Lists_StandardList_4__ctor_Collectathon_Filters_" data-uid="Collectathon.Lists.StandardList`4.#ctor(Collectathon.Filters)">StandardList(Filters)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Collectathon.Lists.StandardList-4.html">StandardList&lt;TIndex, TElement, TNode, TSelf&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected StandardList(Filters filter)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Collectathon.Filters.html">Filters</a></td>
+        <td><span class="parametername">filter</span></td>
+        <td><p>The type of filter to use.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_StandardList_4__ctor_System_ValueTuple__0__1____Collectathon_Filters_.md&amp;value=---%0Auid%3A%20Collectathon.Lists.StandardList%604.%23ctor(System.ValueTuple%7B%600%2C%601%7D%5B%5D%2CCollectathon.Filters)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/StandardList`4.cs/#L21">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_StandardList_4__ctor_" data-uid="Collectathon.Lists.StandardList`4.#ctor*"></a>
+  <h4 id="Collectathon_Lists_StandardList_4__ctor_System_ValueTuple__0__1____Collectathon_Filters_" data-uid="Collectathon.Lists.StandardList`4.#ctor(System.ValueTuple{`0,`1}[],Collectathon.Filters)">StandardList((TIndex Index, TElement Element)[], Filters)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Collectathon.Lists.StandardList-4.html">StandardList&lt;TIndex, TElement, TNode, TSelf&gt;</a> witht he given <code data-dev-comment-type="paramref" class="paramref">entries</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected StandardList((TIndex Index, TElement Element)[] entries, Filters filter)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">ValueTuple</a>&lt;TIndex, TElement&gt;[]</td>
+        <td><span class="parametername">entries</span></td>
+        <td><p>The initial entries of the list.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Collectathon.Filters.html">Filters</a></td>
+        <td><span class="parametername">filter</span></td>
+        <td><p>The type of filter to use.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_StandardList_4_Item__0_.md&amp;value=---%0Auid%3A%20Collectathon.Lists.StandardList%604.Item(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/StandardList`4.cs/#L40">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_StandardList_4_Item_" data-uid="Collectathon.Lists.StandardList`4.Item*"></a>
+  <h4 id="Collectathon_Lists_StandardList_4_Item__0_" data-uid="Collectathon.Lists.StandardList`4.Item(`0)">Item[TIndex]</h4>
+  <div class="markdown level1 summary"><p>Gets  the element at the specified index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override sealed TElement this[TIndex index] { get; set; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TIndex</span></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>The index of the element to get.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><p>The element at the specified index.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Collectathon.Lists.List&lt;TIndex, TElement, TNode, TSelf, Collectathon.Lists.StandardList&lt;TIndex, TElement, TNode, TSelf&gt;.Enumerator&gt;.Item[TIndex]</span></div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_StandardList_4_GetEnumerator.md&amp;value=---%0Auid%3A%20Collectathon.Lists.StandardList%604.GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/StandardList`4.cs/#L65">View Source</a>
+  </span>
+  <a id="Collectathon_Lists_StandardList_4_GetEnumerator_" data-uid="Collectathon.Lists.StandardList`4.GetEnumerator*"></a>
+  <h4 id="Collectathon_Lists_StandardList_4_GetEnumerator" data-uid="Collectathon.Lists.StandardList`4.GetEnumerator">GetEnumerator()</h4>
+  <div class="markdown level1 summary"><p>Returns an enumerator that iterates through the sequence.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override sealed StandardList&lt;TIndex, TElement, TNode, TSelf&gt;.Enumerator GetEnumerator()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Collectathon.Lists.StandardList-4.Enumerator.html">StandardList.Enumerator</a>&lt;&gt;</td>
+        <td><p>An enumerator that can be used to iterate through the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Collectathon.Lists.List&lt;TIndex, TElement, TNode, TSelf, Collectathon.Lists.StandardList&lt;TIndex, TElement, TNode, TSelf&gt;.Enumerator&gt;.GetEnumerator()</span></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="System.Traits.IClear.html">IClear</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IIndex-2.html">IIndex&lt;TIndex, TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IIndexReadOnly-2.html">IIndexReadOnly&lt;TIndex, TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IInsert-2.html">IInsert&lt;TIndex, TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.ISequence-2.html">ISequence&lt;TElement, TEnumerator&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.ICount.html">ICount</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">System.Collections.Generic.IEnumerable&lt;T&gt;</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_StandardList_4.md&amp;value=---%0Auid%3A%20Collectathon.Lists.StandardList%604%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/StandardList`4.Enumerator.cs/#L8" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
