@@ -22,7 +22,7 @@ namespace Collectathon.Arrays {
 		IPrependSpan<TElement>,
 		IRemove<TElement>,
 		IReplace<TElement>,
-		ISequence<TElement, MemoryEnumerator<TElement>>,
+		ISequence<TElement, ArrayEnumerator<TElement>>,
 		IShift,
 		ISlice<Memory<TElement>>
 		where TSelf : FlexibleArray<TElement, TSelf> {
@@ -185,7 +185,7 @@ namespace Collectathon.Arrays {
 		public Boolean Equals([AllowNull] System.Collections.Generic.IEnumerable<TElement> other) => Collection.Equals(this, other);
 
 		/// <inheritdoc/>
-		public MemoryEnumerator<TElement> GetEnumerator() => new MemoryEnumerator<TElement>(Memory, Count);
+		public ArrayEnumerator<TElement> GetEnumerator() => new ArrayEnumerator<TElement>(Memory, Count);
 
 		/// <inheritdoc/>
 		[return: NotNull]

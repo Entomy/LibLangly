@@ -10,7 +10,7 @@ namespace Collectathon.Lists {
 	/// <typeparam name="TElement">The type of the elements in the list.</typeparam>
 	/// <typeparam name="TNode">The type of the nodes of the list.</typeparam>
 	/// <typeparam name="TSelf">The implementing type; itself.</typeparam>
-	public abstract partial class StandardList<TIndex, TElement, TNode, TSelf> : List<TIndex, TElement, TNode, TSelf, StandardList<TIndex, TElement, TNode, TSelf>.Enumerator>
+	public abstract class StandardList<TIndex, TElement, TNode, TSelf> : List<TIndex, TElement, TNode, TSelf, StandardListEnumerator<TIndex, TElement, TNode>>
 		where TNode : StandardListNode<TIndex, TElement, TNode>
 		where TSelf : StandardList<TIndex, TElement, TNode, TSelf> {
 		/// <summary>
@@ -62,6 +62,6 @@ namespace Collectathon.Lists {
 		}
 
 		/// <inheritdoc/>
-		public sealed override Enumerator GetEnumerator() => new Enumerator(this);
+		public sealed override StandardListEnumerator<TIndex, TElement, TNode> GetEnumerator() => new StandardListEnumerator<TIndex, TElement, TNode>(Head, Count);
 	}
 }

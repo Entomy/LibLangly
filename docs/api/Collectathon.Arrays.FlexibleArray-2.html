@@ -107,7 +107,7 @@
     <div><a class="xref" href="System.Traits.IRemove-1.html">IRemove</a>&lt;TElement&gt;</div>
     <div><a class="xref" href="System.Traits.IReplace-1.html">IReplace</a>&lt;TElement&gt;</div>
     <div><a class="xref" href="System.Traits.IReplace-2.html">IReplace</a>&lt;TElement, TElement&gt;</div>
-    <div><a class="xref" href="System.Traits.ISequence-2.html">ISequence</a>&lt;TElement, <a class="xref" href="Collectathon.MemoryEnumerator-1.html">MemoryEnumerator</a>&lt;TElement&gt;&gt;</div>
+    <div><a class="xref" href="System.Traits.ISequence-2.html">ISequence</a>&lt;TElement, <a class="xref" href="Collectathon.Arrays.ArrayEnumerator-1.html">ArrayEnumerator</a>&lt;TElement&gt;&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TElement&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
     <div><a class="xref" href="System.Traits.IShift.html">IShift</a></div>
@@ -133,7 +133,7 @@
   <h6><strong>Assembly</strong>: Collectathon.Arrays.dll</h6>
   <h5 id="Collectathon_Arrays_FlexibleArray_2_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class FlexibleArray&lt;TElement, TSelf&gt; : IAddSpan&lt;TElement&gt;, IAddMemory&lt;TElement&gt;, IAdd&lt;TElement&gt;, ICapacity, IClear, IContains&lt;TElement&gt;, IEquatable&lt;TSelf&gt;, IEquatable&lt;FlexibleArray&lt;TElement, TSelf&gt;&gt;, IIndex&lt;nint, TElement&gt;, IIndexReadOnly&lt;nint, TElement&gt;, IInsertSpan&lt;nint, TElement&gt;, IInsertMemory&lt;nint, TElement&gt;, IInsert&lt;nint, TElement&gt;, IPostpendSpan&lt;TElement&gt;, IPostpendMemory&lt;TElement&gt;, IPostpend&lt;TElement&gt;, IPrependSpan&lt;TElement&gt;, IPrependMemory&lt;TElement&gt;, IPrepend&lt;TElement&gt;, IRemove&lt;TElement&gt;, IReplace&lt;TElement&gt;, IReplace&lt;TElement, TElement&gt;, ISequence&lt;TElement, MemoryEnumerator&lt;TElement&gt;&gt;, IEnumerable&lt;TElement&gt;, IEnumerable, IShift, ISlice&lt;Memory&lt;TElement&gt;&gt;, ICount where TSelf : FlexibleArray&lt;TElement, TSelf&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class FlexibleArray&lt;TElement, TSelf&gt; : IAddSpan&lt;TElement&gt;, IAddMemory&lt;TElement&gt;, IAdd&lt;TElement&gt;, ICapacity, IClear, IContains&lt;TElement&gt;, IEquatable&lt;TSelf&gt;, IEquatable&lt;FlexibleArray&lt;TElement, TSelf&gt;&gt;, IIndex&lt;nint, TElement&gt;, IIndexReadOnly&lt;nint, TElement&gt;, IInsertSpan&lt;nint, TElement&gt;, IInsertMemory&lt;nint, TElement&gt;, IInsert&lt;nint, TElement&gt;, IPostpendSpan&lt;TElement&gt;, IPostpendMemory&lt;TElement&gt;, IPostpend&lt;TElement&gt;, IPrependSpan&lt;TElement&gt;, IPrependMemory&lt;TElement&gt;, IPrepend&lt;TElement&gt;, IRemove&lt;TElement&gt;, IReplace&lt;TElement&gt;, IReplace&lt;TElement, TElement&gt;, ISequence&lt;TElement, ArrayEnumerator&lt;TElement&gt;&gt;, IEnumerable&lt;TElement&gt;, IEnumerable, IShift, ISlice&lt;Memory&lt;TElement&gt;&gt;, ICount where TSelf : FlexibleArray&lt;TElement, TSelf&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -372,7 +372,8 @@
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_Capacity_" data-uid="Collectathon.Arrays.FlexibleArray`2.Capacity*"></a>
   <h4 id="Collectathon_Arrays_FlexibleArray_2_Capacity" data-uid="Collectathon.Arrays.FlexibleArray`2.Capacity">Capacity</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The maximum capacity of the collection.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -402,7 +403,8 @@
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_Count_" data-uid="Collectathon.Arrays.FlexibleArray`2.Count*"></a>
   <h4 id="Collectathon_Arrays_FlexibleArray_2_Count" data-uid="Collectathon.Arrays.FlexibleArray`2.Count">Count</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the number of elements contained in the collection.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -432,7 +434,8 @@
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_Item_" data-uid="Collectathon.Arrays.FlexibleArray`2.Item*"></a>
   <h4 id="Collectathon_Arrays_FlexibleArray_2_Item_System_IntPtr_" data-uid="Collectathon.Arrays.FlexibleArray`2.Item(System.IntPtr)">Item[IntPtr]</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets  the element at the specified index.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -466,7 +469,8 @@
     <tbody>
       <tr>
         <td><span class="xref">TElement</span></td>
-        <td></td>
+        <td><p>The element at the specified index.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -481,7 +485,8 @@
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_Add_" data-uid="Collectathon.Arrays.FlexibleArray`2.Add*"></a>
   <h4 id="Collectathon_Arrays_FlexibleArray_2_Add__0_" data-uid="Collectathon.Arrays.FlexibleArray`2.Add(`0)">Add(TElement)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds an element to this object.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -500,10 +505,14 @@
       <tr>
         <td><span class="xref">TElement</span></td>
         <td><span class="parametername">element</span></td>
-        <td></td>
+        <td><p>The element to add.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Collectathon_Arrays_FlexibleArray_2_Add__0__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Add__0___.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Add(%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -513,7 +522,8 @@
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_Add_" data-uid="Collectathon.Arrays.FlexibleArray`2.Add*"></a>
   <h4 id="Collectathon_Arrays_FlexibleArray_2_Add__0___" data-uid="Collectathon.Arrays.FlexibleArray`2.Add(`0[])">Add(TElement[])</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds the elements to this object, as a batch.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -532,10 +542,14 @@
       <tr>
         <td>TElement[]</td>
         <td><span class="parametername">elements</span></td>
-        <td></td>
+        <td><p>The elements to add.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Collectathon_Arrays_FlexibleArray_2_Add__0____remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Add_System_Memory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Add(System.Memory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -545,7 +559,8 @@
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_Add_" data-uid="Collectathon.Arrays.FlexibleArray`2.Add*"></a>
   <h4 id="Collectathon_Arrays_FlexibleArray_2_Add_System_Memory__0__" data-uid="Collectathon.Arrays.FlexibleArray`2.Add(System.Memory{`0})">Add(Memory&lt;TElement&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds the elements to this object, as a batch.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -564,10 +579,14 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
-        <td></td>
+        <td><p>The elements to add.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Collectathon_Arrays_FlexibleArray_2_Add_System_Memory__0___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Add_System_ReadOnlyMemory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Add(System.ReadOnlyMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -577,7 +596,8 @@
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_Add_" data-uid="Collectathon.Arrays.FlexibleArray`2.Add*"></a>
   <h4 id="Collectathon_Arrays_FlexibleArray_2_Add_System_ReadOnlyMemory__0__" data-uid="Collectathon.Arrays.FlexibleArray`2.Add(System.ReadOnlyMemory{`0})">Add(ReadOnlyMemory&lt;TElement&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds the elements to this object, as a batch.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -596,10 +616,14 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
-        <td></td>
+        <td><p>The elements to add.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Collectathon_Arrays_FlexibleArray_2_Add_System_ReadOnlyMemory__0___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Add_System_ReadOnlySpan__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Add(System.ReadOnlySpan%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -609,7 +633,8 @@
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_Add_" data-uid="Collectathon.Arrays.FlexibleArray`2.Add*"></a>
   <h4 id="Collectathon_Arrays_FlexibleArray_2_Add_System_ReadOnlySpan__0__" data-uid="Collectathon.Arrays.FlexibleArray`2.Add(System.ReadOnlySpan{`0})">Add(ReadOnlySpan&lt;TElement&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds the elements to this object, as a batch.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -628,10 +653,14 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
-        <td></td>
+        <td><p>The elements to add.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Collectathon_Arrays_FlexibleArray_2_Add_System_ReadOnlySpan__0___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Add_System_Span__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Add(System.Span%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -641,7 +670,8 @@
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_Add_" data-uid="Collectathon.Arrays.FlexibleArray`2.Add*"></a>
   <h4 id="Collectathon_Arrays_FlexibleArray_2_Add_System_Span__0__" data-uid="Collectathon.Arrays.FlexibleArray`2.Add(System.Span{`0})">Add(Span&lt;TElement&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds the elements to this object, as a batch.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -660,10 +690,14 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
-        <td></td>
+        <td><p>The elements to add.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Collectathon_Arrays_FlexibleArray_2_Add_System_Span__0___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Clear.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Clear%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -673,7 +707,8 @@
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_Clear_" data-uid="Collectathon.Arrays.FlexibleArray`2.Clear*"></a>
   <h4 id="Collectathon_Arrays_FlexibleArray_2_Clear" data-uid="Collectathon.Arrays.FlexibleArray`2.Clear">Clear()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Clears this collection.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -688,7 +723,8 @@
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_Contains_" data-uid="Collectathon.Arrays.FlexibleArray`2.Contains*"></a>
   <h4 id="Collectathon_Arrays_FlexibleArray_2_Contains__0_" data-uid="Collectathon.Arrays.FlexibleArray`2.Contains(`0)">Contains(TElement)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Determines whether this collection contains the specified <code data-dev-comment-type="paramref" class="paramref">element</code>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -707,7 +743,8 @@
       <tr>
         <td><span class="xref">TElement</span></td>
         <td><span class="parametername">element</span></td>
-        <td></td>
+        <td><p>The element to attempt to find.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -722,7 +759,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
+        <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">element</code> is contained in this collection; otherwise, <span class="xref">false</span>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -928,11 +966,12 @@
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_GetEnumerator_" data-uid="Collectathon.Arrays.FlexibleArray`2.GetEnumerator*"></a>
   <h4 id="Collectathon_Arrays_FlexibleArray_2_GetEnumerator" data-uid="Collectathon.Arrays.FlexibleArray`2.GetEnumerator">GetEnumerator()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns an enumerator that iterates through the sequence.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public MemoryEnumerator&lt;TElement&gt; GetEnumerator()</code></pre>
+    <pre><code class="lang-csharp hljs">public ArrayEnumerator&lt;TElement&gt; GetEnumerator()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -944,8 +983,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Collectathon.MemoryEnumerator-1.html">MemoryEnumerator</a>&lt;TElement&gt;</td>
-        <td></td>
+        <td><a class="xref" href="Collectathon.Arrays.ArrayEnumerator-1.html">ArrayEnumerator</a>&lt;TElement&gt;</td>
+        <td><p>An enumerator that can be used to iterate through the collection.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -990,7 +1030,8 @@
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_Insert_" data-uid="Collectathon.Arrays.FlexibleArray`2.Insert*"></a>
   <h4 id="Collectathon_Arrays_FlexibleArray_2_Insert_System_IntPtr__0_" data-uid="Collectathon.Arrays.FlexibleArray`2.Insert(System.IntPtr,`0)">Insert(IntPtr, TElement)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Insert an element into the collection at the specified index.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1014,7 +1055,8 @@
       <tr>
         <td><span class="xref">TElement</span></td>
         <td><span class="parametername">element</span></td>
-        <td></td>
+        <td><p>The element to insert.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1027,7 +1069,8 @@
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_Insert_" data-uid="Collectathon.Arrays.FlexibleArray`2.Insert*"></a>
   <h4 id="Collectathon_Arrays_FlexibleArray_2_Insert_System_IntPtr__0___" data-uid="Collectathon.Arrays.FlexibleArray`2.Insert(System.IntPtr,`0[])">Insert(IntPtr, TElement[])</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Inserts the elements into the collection at the specified index, as a batch.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1051,7 +1094,8 @@
       <tr>
         <td>TElement[]</td>
         <td><span class="parametername">elements</span></td>
-        <td></td>
+        <td><p>The elements to insert.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1064,7 +1108,8 @@
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_Insert_" data-uid="Collectathon.Arrays.FlexibleArray`2.Insert*"></a>
   <h4 id="Collectathon_Arrays_FlexibleArray_2_Insert_System_IntPtr_System_Memory__0__" data-uid="Collectathon.Arrays.FlexibleArray`2.Insert(System.IntPtr,System.Memory{`0})">Insert(IntPtr, Memory&lt;TElement&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Inserts the elements into the collection at the specified index, as a batch.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1088,7 +1133,8 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
-        <td></td>
+        <td><p>The elements to insert.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1101,7 +1147,8 @@
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_Insert_" data-uid="Collectathon.Arrays.FlexibleArray`2.Insert*"></a>
   <h4 id="Collectathon_Arrays_FlexibleArray_2_Insert_System_IntPtr_System_ReadOnlyMemory__0__" data-uid="Collectathon.Arrays.FlexibleArray`2.Insert(System.IntPtr,System.ReadOnlyMemory{`0})">Insert(IntPtr, ReadOnlyMemory&lt;TElement&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Inserts the elements into the collection at the specified index, as a batch.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1125,7 +1172,8 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
-        <td></td>
+        <td><p>The elements to insert.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1138,7 +1186,8 @@
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_Insert_" data-uid="Collectathon.Arrays.FlexibleArray`2.Insert*"></a>
   <h4 id="Collectathon_Arrays_FlexibleArray_2_Insert_System_IntPtr_System_ReadOnlySpan__0__" data-uid="Collectathon.Arrays.FlexibleArray`2.Insert(System.IntPtr,System.ReadOnlySpan{`0})">Insert(IntPtr, ReadOnlySpan&lt;TElement&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Inserts the elements into the collection at the specified index, as a batch.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1162,7 +1211,8 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
-        <td></td>
+        <td><p>The elements to insert.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1175,7 +1225,8 @@
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_Insert_" data-uid="Collectathon.Arrays.FlexibleArray`2.Insert*"></a>
   <h4 id="Collectathon_Arrays_FlexibleArray_2_Insert_System_IntPtr_System_Span__0__" data-uid="Collectathon.Arrays.FlexibleArray`2.Insert(System.IntPtr,System.Span{`0})">Insert(IntPtr, Span&lt;TElement&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Inserts the elements into the collection at the specified index, as a batch.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1199,7 +1250,8 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
-        <td></td>
+        <td><p>The elements to insert.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1212,7 +1264,8 @@
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_Postpend_" data-uid="Collectathon.Arrays.FlexibleArray`2.Postpend*"></a>
   <h4 id="Collectathon_Arrays_FlexibleArray_2_Postpend__0_" data-uid="Collectathon.Arrays.FlexibleArray`2.Postpend(`0)">Postpend(TElement)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Postpends the element onto this object.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1231,7 +1284,8 @@
       <tr>
         <td><span class="xref">TElement</span></td>
         <td><span class="parametername">element</span></td>
-        <td></td>
+        <td><p>The element to postpend.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1244,7 +1298,8 @@
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_Postpend_" data-uid="Collectathon.Arrays.FlexibleArray`2.Postpend*"></a>
   <h4 id="Collectathon_Arrays_FlexibleArray_2_Postpend__0___" data-uid="Collectathon.Arrays.FlexibleArray`2.Postpend(`0[])">Postpend(TElement[])</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Postpends the elements onto this object, as a batch.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1263,7 +1318,8 @@
       <tr>
         <td>TElement[]</td>
         <td><span class="parametername">elements</span></td>
-        <td></td>
+        <td><p>The elements to postpend.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1276,7 +1332,8 @@
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_Postpend_" data-uid="Collectathon.Arrays.FlexibleArray`2.Postpend*"></a>
   <h4 id="Collectathon_Arrays_FlexibleArray_2_Postpend_System_Memory__0__" data-uid="Collectathon.Arrays.FlexibleArray`2.Postpend(System.Memory{`0})">Postpend(Memory&lt;TElement&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Postpends the elements onto this object, as a batch.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1295,7 +1352,8 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
-        <td></td>
+        <td><p>The elements to postpend.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1308,7 +1366,8 @@
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_Postpend_" data-uid="Collectathon.Arrays.FlexibleArray`2.Postpend*"></a>
   <h4 id="Collectathon_Arrays_FlexibleArray_2_Postpend_System_ReadOnlyMemory__0__" data-uid="Collectathon.Arrays.FlexibleArray`2.Postpend(System.ReadOnlyMemory{`0})">Postpend(ReadOnlyMemory&lt;TElement&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Postpends the elements onto this object, as a batch.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1327,7 +1386,8 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
-        <td></td>
+        <td><p>The elements to postpend.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1340,7 +1400,8 @@
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_Postpend_" data-uid="Collectathon.Arrays.FlexibleArray`2.Postpend*"></a>
   <h4 id="Collectathon_Arrays_FlexibleArray_2_Postpend_System_ReadOnlySpan__0__" data-uid="Collectathon.Arrays.FlexibleArray`2.Postpend(System.ReadOnlySpan{`0})">Postpend(ReadOnlySpan&lt;TElement&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Postpends the elements onto this object, a batch.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1359,7 +1420,8 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
-        <td></td>
+        <td><p>The elements to postpend.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1372,7 +1434,8 @@
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_Postpend_" data-uid="Collectathon.Arrays.FlexibleArray`2.Postpend*"></a>
   <h4 id="Collectathon_Arrays_FlexibleArray_2_Postpend_System_Span__0__" data-uid="Collectathon.Arrays.FlexibleArray`2.Postpend(System.Span{`0})">Postpend(Span&lt;TElement&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Postpends the elements onto this object, as a batch.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1391,7 +1454,8 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
-        <td></td>
+        <td><p>The elements to postpend.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1404,7 +1468,8 @@
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_Prepend_" data-uid="Collectathon.Arrays.FlexibleArray`2.Prepend*"></a>
   <h4 id="Collectathon_Arrays_FlexibleArray_2_Prepend__0_" data-uid="Collectathon.Arrays.FlexibleArray`2.Prepend(`0)">Prepend(TElement)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Prepends the element onto this object.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1423,7 +1488,8 @@
       <tr>
         <td><span class="xref">TElement</span></td>
         <td><span class="parametername">element</span></td>
-        <td></td>
+        <td><p>The element to prepend.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1436,7 +1502,8 @@
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_Prepend_" data-uid="Collectathon.Arrays.FlexibleArray`2.Prepend*"></a>
   <h4 id="Collectathon_Arrays_FlexibleArray_2_Prepend__0___" data-uid="Collectathon.Arrays.FlexibleArray`2.Prepend(`0[])">Prepend(TElement[])</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Prepends the elements onto this object, as a batch.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1455,7 +1522,8 @@
       <tr>
         <td>TElement[]</td>
         <td><span class="parametername">elements</span></td>
-        <td></td>
+        <td><p>The elements to prepend.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1468,7 +1536,8 @@
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_Prepend_" data-uid="Collectathon.Arrays.FlexibleArray`2.Prepend*"></a>
   <h4 id="Collectathon_Arrays_FlexibleArray_2_Prepend_System_Memory__0__" data-uid="Collectathon.Arrays.FlexibleArray`2.Prepend(System.Memory{`0})">Prepend(Memory&lt;TElement&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Prepends the elements onto this object, as a batch.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1487,7 +1556,8 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
-        <td></td>
+        <td><p>The elements to prepend.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1500,7 +1570,8 @@
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_Prepend_" data-uid="Collectathon.Arrays.FlexibleArray`2.Prepend*"></a>
   <h4 id="Collectathon_Arrays_FlexibleArray_2_Prepend_System_ReadOnlyMemory__0__" data-uid="Collectathon.Arrays.FlexibleArray`2.Prepend(System.ReadOnlyMemory{`0})">Prepend(ReadOnlyMemory&lt;TElement&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Prepends the elements onto this object, as a batch.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1519,7 +1590,8 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
-        <td></td>
+        <td><p>The elements to prepend.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1532,7 +1604,8 @@
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_Prepend_" data-uid="Collectathon.Arrays.FlexibleArray`2.Prepend*"></a>
   <h4 id="Collectathon_Arrays_FlexibleArray_2_Prepend_System_ReadOnlySpan__0__" data-uid="Collectathon.Arrays.FlexibleArray`2.Prepend(System.ReadOnlySpan{`0})">Prepend(ReadOnlySpan&lt;TElement&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Prepends the elements onto this object, as a batch.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1551,7 +1624,8 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
-        <td></td>
+        <td><p>The elements to prepend.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1564,7 +1638,8 @@
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_Prepend_" data-uid="Collectathon.Arrays.FlexibleArray`2.Prepend*"></a>
   <h4 id="Collectathon_Arrays_FlexibleArray_2_Prepend_System_Span__0__" data-uid="Collectathon.Arrays.FlexibleArray`2.Prepend(System.Span{`0})">Prepend(Span&lt;TElement&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Prepends the elements onto this object, as a batch.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1583,7 +1658,8 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
-        <td></td>
+        <td><p>The elements to prepend.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1596,7 +1672,8 @@
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_Remove_" data-uid="Collectathon.Arrays.FlexibleArray`2.Remove*"></a>
   <h4 id="Collectathon_Arrays_FlexibleArray_2_Remove__0_" data-uid="Collectathon.Arrays.FlexibleArray`2.Remove(`0)">Remove(TElement)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Removes all instances of the element from this object.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1615,7 +1692,8 @@
       <tr>
         <td><span class="xref">TElement</span></td>
         <td><span class="parametername">element</span></td>
-        <td></td>
+        <td><p>The element to remove.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1628,7 +1706,8 @@
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_RemoveFirst_" data-uid="Collectathon.Arrays.FlexibleArray`2.RemoveFirst*"></a>
   <h4 id="Collectathon_Arrays_FlexibleArray_2_RemoveFirst__0_" data-uid="Collectathon.Arrays.FlexibleArray`2.RemoveFirst(`0)">RemoveFirst(TElement)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Removes the first instance of the element from this object.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1647,7 +1726,8 @@
       <tr>
         <td><span class="xref">TElement</span></td>
         <td><span class="parametername">element</span></td>
-        <td></td>
+        <td><p>The element to remove.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1660,7 +1740,8 @@
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_RemoveLast_" data-uid="Collectathon.Arrays.FlexibleArray`2.RemoveLast*"></a>
   <h4 id="Collectathon_Arrays_FlexibleArray_2_RemoveLast__0_" data-uid="Collectathon.Arrays.FlexibleArray`2.RemoveLast(`0)">RemoveLast(TElement)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Removes the last instance of the element from this object.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1679,7 +1760,8 @@
       <tr>
         <td><span class="xref">TElement</span></td>
         <td><span class="parametername">element</span></td>
-        <td></td>
+        <td><p>The element to remove.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1692,7 +1774,8 @@
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_Replace_" data-uid="Collectathon.Arrays.FlexibleArray`2.Replace*"></a>
   <h4 id="Collectathon_Arrays_FlexibleArray_2_Replace__0__0_" data-uid="Collectathon.Arrays.FlexibleArray`2.Replace(`0,`0)">Replace(TElement, TElement)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Replaces all instances of <code data-dev-comment-type="paramref" class="paramref">search</code> with <code data-dev-comment-type="paramref" class="paramref">replace</code>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1729,7 +1812,8 @@
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_ShiftLeft_" data-uid="Collectathon.Arrays.FlexibleArray`2.ShiftLeft*"></a>
   <h4 id="Collectathon_Arrays_FlexibleArray_2_ShiftLeft" data-uid="Collectathon.Arrays.FlexibleArray`2.ShiftLeft">ShiftLeft()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Shifts the collection left one position.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1744,7 +1828,8 @@
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_ShiftLeft_" data-uid="Collectathon.Arrays.FlexibleArray`2.ShiftLeft*"></a>
   <h4 id="Collectathon_Arrays_FlexibleArray_2_ShiftLeft_System_IntPtr_" data-uid="Collectathon.Arrays.FlexibleArray`2.ShiftLeft(System.IntPtr)">ShiftLeft(IntPtr)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Shifts the collection left by <code data-dev-comment-type="paramref" class="paramref">amount</code>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1763,7 +1848,8 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.intptr">IntPtr</a></td>
         <td><span class="parametername">amount</span></td>
-        <td></td>
+        <td><p>The amount of positions to shift.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1776,7 +1862,8 @@
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_ShiftRight_" data-uid="Collectathon.Arrays.FlexibleArray`2.ShiftRight*"></a>
   <h4 id="Collectathon_Arrays_FlexibleArray_2_ShiftRight" data-uid="Collectathon.Arrays.FlexibleArray`2.ShiftRight">ShiftRight()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Shifts the collection right one position.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1791,7 +1878,8 @@
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_ShiftRight_" data-uid="Collectathon.Arrays.FlexibleArray`2.ShiftRight*"></a>
   <h4 id="Collectathon_Arrays_FlexibleArray_2_ShiftRight_System_IntPtr_" data-uid="Collectathon.Arrays.FlexibleArray`2.ShiftRight(System.IntPtr)">ShiftRight(IntPtr)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Shifts the collection right by <code data-dev-comment-type="paramref" class="paramref">amount</code>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1810,7 +1898,8 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.intptr">IntPtr</a></td>
         <td><span class="parametername">amount</span></td>
-        <td></td>
+        <td><p>The amount of positions to shift.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1823,7 +1912,8 @@
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_Slice_" data-uid="Collectathon.Arrays.FlexibleArray`2.Slice*"></a>
   <h4 id="Collectathon_Arrays_FlexibleArray_2_Slice" data-uid="Collectathon.Arrays.FlexibleArray`2.Slice">Slice()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Forms a slice out of the collection.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1840,7 +1930,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;TElement&gt;</td>
-        <td></td>
+        <td><p>A slice that consists of all elements of the current collection.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1853,7 +1944,8 @@
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_Slice_" data-uid="Collectathon.Arrays.FlexibleArray`2.Slice*"></a>
   <h4 id="Collectathon_Arrays_FlexibleArray_2_Slice_System_IntPtr_" data-uid="Collectathon.Arrays.FlexibleArray`2.Slice(System.IntPtr)">Slice(IntPtr)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Forms a slice out of the collection that begins at a specified index.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1872,7 +1964,8 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.intptr">IntPtr</a></td>
         <td><span class="parametername">start</span></td>
-        <td></td>
+        <td><p>The index at which to begin the slice</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1887,7 +1980,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;TElement&gt;</td>
-        <td></td>
+        <td><p>A slice that consists of all elements of the current collection from <code data-dev-comment-type="paramref" class="paramref">start</code> to the end of the collection.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1900,7 +1994,8 @@
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_Slice_" data-uid="Collectathon.Arrays.FlexibleArray`2.Slice*"></a>
   <h4 id="Collectathon_Arrays_FlexibleArray_2_Slice_System_IntPtr_System_IntPtr_" data-uid="Collectathon.Arrays.FlexibleArray`2.Slice(System.IntPtr,System.IntPtr)">Slice(IntPtr, IntPtr)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Forms a slice out of the current span starting at a specified index for a specified length.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1919,12 +2014,14 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.intptr">IntPtr</a></td>
         <td><span class="parametername">start</span></td>
-        <td></td>
+        <td><p>The index at which to begin the slice.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.intptr">IntPtr</a></td>
         <td><span class="parametername">length</span></td>
-        <td></td>
+        <td><p>The desired length for the slice.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1939,7 +2036,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;TElement&gt;</td>
-        <td></td>
+        <td><p>A slice that consists of <code data-dev-comment-type="paramref" class="paramref">length</code> elements from the current collection starting at <code data-dev-comment-type="paramref" class="paramref">start</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1984,7 +2082,8 @@
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_ToString_" data-uid="Collectathon.Arrays.FlexibleArray`2.ToString*"></a>
   <h4 id="Collectathon_Arrays_FlexibleArray_2_ToString_System_IntPtr_" data-uid="Collectathon.Arrays.FlexibleArray`2.ToString(System.IntPtr)">ToString(IntPtr)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns a string that represents this sequence, with no more than <code data-dev-comment-type="paramref" class="paramref">amount</code> elements.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -2003,7 +2102,8 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.intptr">IntPtr</a></td>
         <td><span class="parametername">amount</span></td>
-        <td></td>
+        <td><p>The maximum amount of elements to display.</p>
+</td>
       </tr>
     </tbody>
   </table>

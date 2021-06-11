@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Traits;
 
@@ -7,7 +8,8 @@ namespace Collectathon.Stacks {
 		/// <summary>
 		/// Represents a stack node.
 		/// </summary>
-		private sealed class Node : IContains<TElement>, IElement<TElement>, INext<Node>, IUnlink {
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		public sealed class Node : IContains<TElement>, IElement<TElement>, INext<Node>, IUnlink {
 			/// <summary>
 			/// Initializes a new <see cref="Node"/>
 			/// </summary>

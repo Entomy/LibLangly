@@ -4,40 +4,40 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 using System.Traits;
 
-namespace Collectathon {
+namespace Collectathon.Lists {
 	/// <summary>
-	/// Provides enumeration over contiguous regions of memory.
+	/// Provides enumeration over a standard linked list.
 	/// </summary>
 	/// <typeparam name="TElement">The type of the elements being enumerated.</typeparam>
+	/// <typeparam name="TNode">The type of the nodes being enumerated.</typeparam>
 	[StructLayout(LayoutKind.Auto)]
-	public struct MemoryEnumerator<TElement> : IEnumerator<TElement> {
+	public struct StandardListEnumerator<TElement, TNode> : IEnumerator<TElement> where TNode : class, IElement<TElement>, INext<TNode> {
 		/// <summary>
-		/// The <see cref="ReadOnlyMemory{T}"/> being enumerated.
+		/// The head node.
 		/// </summary>
-		private readonly ReadOnlyMemory<TElement> Memory;
+		[AllowNull, MaybeNull]
+		private readonly TNode Head;
 
 		/// <summary>
-		/// The current index into the <see cref="Memory"/>.
+		/// The current node.
 		/// </summary>
-		private Int32 i;
+		[AllowNull, MaybeNull]
+		private TNode N;
 
 		/// <summary>
-		/// Initializes a new <see cref="MemoryEnumerator{TElement}"/>.
+		/// Initializes a new <see cref="StandardListEnumerator{TElement, TNode}"/>.
 		/// </summary>
-		/// <param name="memory">The memory to enumerate over.</param>
-		/// <param name="length">The length of the active <paramref name="memory"/>.</param>
-		/// <remarks>
-		/// At first it might seem like <paramref name="length"/> is superfluous, as <see cref="ReadOnlyMemory{T}"/> has a known length. However, many data structures use an array as an allocated chunk of memory, with the actual array as a portion of this, up to the entire chunk. <paramref name="length"/> is the actually used portion.
-		/// </remarks>
-		public MemoryEnumerator(ReadOnlyMemory<TElement> memory, nint length) {
-			Memory = memory;
+		/// <param name="head">The head node of the list.</param>
+		/// <param name="length">The length of the sequence.</param>
+		public StandardListEnumerator([AllowNull] TNode head, nint length) {
+			Head = head;
+			N = null;
 			Count = length;
-			i = -1;
 		}
 
 		/// <inheritdoc/>
 		[MaybeNull]
-		public TElement Current => Memory.Span[i];
+		public TElement Current => N.Element;
 
 		/// <inheritdoc/>
 		[EditorBrowsable(EditorBrowsableState.Never)]
@@ -67,20 +67,22 @@ namespace Collectathon {
 		System.Collections.Generic.IEnumerator<TElement> System.Collections.Generic.IEnumerable<TElement>.GetEnumerator() => this;
 
 		/// <inheritdoc/>
-		public Boolean MoveNext() => ++i < Count;
+		public Boolean MoveNext() {
+			N = N is null ? Head : N.Next;
+			return N is not null;
+		}
 
 		/// <inheritdoc/>
-		public void Reset() => i = -1;
-
-		/// <inheritdoc/>
-		[EditorBrowsable(EditorBrowsableState.Never)]
-		[return: NotNull]
-		public override String ToString() => Collection.ToString(Memory);
+		public void Reset() => N = null;
 
 		/// <inheritdoc/>
 		[EditorBrowsable(EditorBrowsableState.Never)]
 		[return: NotNull]
-		public String ToString(nint amount) => Collection.ToString(Memory, amount);
+		public override String ToString() => Collection.ToString(Head, Count);
 
+		/// <inheritdoc/>
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		[return: NotNull]
+		public String ToString(nint amount) => Collection.ToString(Head, Count, amount);
 	}
 }

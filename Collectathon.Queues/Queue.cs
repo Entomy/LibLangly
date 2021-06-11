@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Traits;
+using Collectathon.Lists;
 
 namespace Collectathon.Queues {
 	public sealed partial class Queue<TElement> :
 		IClear,
 		IContains<TElement>,
 		IPeek<TElement>,
-		ISequence<TElement, Queue<TElement>.Enumerator>,
+		ISequence<TElement, StandardListEnumerator<TElement, Queue<TElement>.Node>>,
 		IWrite<TElement> {
 		/// <summary>
 		/// The head of the queue; the first element.
@@ -86,7 +87,7 @@ namespace Collectathon.Queues {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public Enumerator GetEnumerator() => new Enumerator(this);
+		public StandardListEnumerator<TElement, Queue<TElement>.Node> GetEnumerator() => new StandardListEnumerator<TElement, Queue<TElement>.Node>(Head, Count);
 
 		/// <inheritdoc/>
 		[return: NotNull]

@@ -106,7 +106,7 @@
     <div><a class="xref" href="System.Traits.IRemove-1.html">IRemove</a>&lt;TElement&gt;</div>
     <div><a class="xref" href="System.Traits.IReplace-1.html">IReplace</a>&lt;TElement&gt;</div>
     <div><a class="xref" href="System.Traits.IReplace-2.html">IReplace</a>&lt;TElement, TElement&gt;</div>
-    <div><a class="xref" href="System.Traits.ISequence-2.html">ISequence</a>&lt;TElement, <a class="xref" href="Collectathon.MemoryEnumerator-1.html">MemoryEnumerator</a>&lt;TElement&gt;&gt;</div>
+    <div><a class="xref" href="System.Traits.ISequence-2.html">ISequence</a>&lt;TElement, <a class="xref" href="Collectathon.Arrays.ArrayEnumerator-1.html">ArrayEnumerator</a>&lt;TElement&gt;&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TElement&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
     <div><a class="xref" href="System.Traits.IShift.html">IShift</a></div>
@@ -297,7 +297,7 @@
   <h6><strong>Assembly</strong>: Collectathon.Arrays.dll</h6>
   <h5 id="Collectathon_Arrays_BoundedArray_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class BoundedArray&lt;TElement&gt; : FlexibleArray&lt;TElement, BoundedArray&lt;TElement&gt;&gt;, IAddSpan&lt;TElement&gt;, IAddMemory&lt;TElement&gt;, IAdd&lt;TElement&gt;, ICapacity, IClear, IContains&lt;TElement&gt;, IEquatable&lt;BoundedArray&lt;TElement&gt;&gt;, IEquatable&lt;FlexibleArray&lt;TElement, BoundedArray&lt;TElement&gt;&gt;&gt;, IIndex&lt;nint, TElement&gt;, IIndexReadOnly&lt;nint, TElement&gt;, IInsertSpan&lt;nint, TElement&gt;, IInsertMemory&lt;nint, TElement&gt;, IInsert&lt;nint, TElement&gt;, IPostpendSpan&lt;TElement&gt;, IPostpendMemory&lt;TElement&gt;, IPostpend&lt;TElement&gt;, IPrependSpan&lt;TElement&gt;, IPrependMemory&lt;TElement&gt;, IPrepend&lt;TElement&gt;, IRemove&lt;TElement&gt;, IReplace&lt;TElement&gt;, IReplace&lt;TElement, TElement&gt;, ISequence&lt;TElement, MemoryEnumerator&lt;TElement&gt;&gt;, IEnumerable&lt;TElement&gt;, IEnumerable, IShift, ISlice&lt;Memory&lt;TElement&gt;&gt;, ICount</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class BoundedArray&lt;TElement&gt; : FlexibleArray&lt;TElement, BoundedArray&lt;TElement&gt;&gt;, IAddSpan&lt;TElement&gt;, IAddMemory&lt;TElement&gt;, IAdd&lt;TElement&gt;, ICapacity, IClear, IContains&lt;TElement&gt;, IEquatable&lt;BoundedArray&lt;TElement&gt;&gt;, IEquatable&lt;FlexibleArray&lt;TElement, BoundedArray&lt;TElement&gt;&gt;&gt;, IIndex&lt;nint, TElement&gt;, IIndexReadOnly&lt;nint, TElement&gt;, IInsertSpan&lt;nint, TElement&gt;, IInsertMemory&lt;nint, TElement&gt;, IInsert&lt;nint, TElement&gt;, IPostpendSpan&lt;TElement&gt;, IPostpendMemory&lt;TElement&gt;, IPostpend&lt;TElement&gt;, IPrependSpan&lt;TElement&gt;, IPrependMemory&lt;TElement&gt;, IPrepend&lt;TElement&gt;, IRemove&lt;TElement&gt;, IReplace&lt;TElement&gt;, IReplace&lt;TElement, TElement&gt;, ISequence&lt;TElement, ArrayEnumerator&lt;TElement&gt;&gt;, IEnumerable&lt;TElement&gt;, IEnumerable, IShift, ISlice&lt;Memory&lt;TElement&gt;&gt;, ICount</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -436,7 +436,8 @@
   </span>
   <a id="Collectathon_Arrays_BoundedArray_1_Insert_" data-uid="Collectathon.Arrays.BoundedArray`1.Insert*"></a>
   <h4 id="Collectathon_Arrays_BoundedArray_1_Insert_System_IntPtr__0_" data-uid="Collectathon.Arrays.BoundedArray`1.Insert(System.IntPtr,`0)">Insert(IntPtr, TElement)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Insert an element into the collection at the specified index.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -460,7 +461,8 @@
       <tr>
         <td><span class="xref">TElement</span></td>
         <td><span class="parametername">element</span></td>
-        <td></td>
+        <td><p>The element to insert.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -491,7 +493,8 @@
   </span>
   <a id="Collectathon_Arrays_BoundedArray_1_Insert_" data-uid="Collectathon.Arrays.BoundedArray`1.Insert*"></a>
   <h4 id="Collectathon_Arrays_BoundedArray_1_Insert_System_IntPtr_System_ReadOnlySpan__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Insert(System.IntPtr,System.ReadOnlySpan{`0})">Insert(IntPtr, ReadOnlySpan&lt;TElement&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Inserts the elements into the collection at the specified index, as a batch.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -515,7 +518,8 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
-        <td></td>
+        <td><p>The elements to insert.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -546,7 +550,8 @@
   </span>
   <a id="Collectathon_Arrays_BoundedArray_1_Postpend_" data-uid="Collectathon.Arrays.BoundedArray`1.Postpend*"></a>
   <h4 id="Collectathon_Arrays_BoundedArray_1_Postpend__0_" data-uid="Collectathon.Arrays.BoundedArray`1.Postpend(`0)">Postpend(TElement)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Postpends the element onto this object.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -565,7 +570,8 @@
       <tr>
         <td><span class="xref">TElement</span></td>
         <td><span class="parametername">element</span></td>
-        <td></td>
+        <td><p>The element to postpend.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -596,7 +602,8 @@
   </span>
   <a id="Collectathon_Arrays_BoundedArray_1_Postpend_" data-uid="Collectathon.Arrays.BoundedArray`1.Postpend*"></a>
   <h4 id="Collectathon_Arrays_BoundedArray_1_Postpend_System_ReadOnlySpan__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Postpend(System.ReadOnlySpan{`0})">Postpend(ReadOnlySpan&lt;TElement&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Postpends the elements onto this object, a batch.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -615,7 +622,8 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
-        <td></td>
+        <td><p>The elements to postpend.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -646,7 +654,8 @@
   </span>
   <a id="Collectathon_Arrays_BoundedArray_1_Prepend_" data-uid="Collectathon.Arrays.BoundedArray`1.Prepend*"></a>
   <h4 id="Collectathon_Arrays_BoundedArray_1_Prepend__0_" data-uid="Collectathon.Arrays.BoundedArray`1.Prepend(`0)">Prepend(TElement)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Prepends the element onto this object.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -665,7 +674,8 @@
       <tr>
         <td><span class="xref">TElement</span></td>
         <td><span class="parametername">element</span></td>
-        <td></td>
+        <td><p>The element to prepend.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -696,7 +706,8 @@
   </span>
   <a id="Collectathon_Arrays_BoundedArray_1_Prepend_" data-uid="Collectathon.Arrays.BoundedArray`1.Prepend*"></a>
   <h4 id="Collectathon_Arrays_BoundedArray_1_Prepend_System_ReadOnlySpan__0__" data-uid="Collectathon.Arrays.BoundedArray`1.Prepend(System.ReadOnlySpan{`0})">Prepend(ReadOnlySpan&lt;TElement&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Prepends the elements onto this object, as a batch.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -715,7 +726,8 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;TElement&gt;</td>
         <td><span class="parametername">elements</span></td>
-        <td></td>
+        <td><p>The elements to prepend.</p>
+</td>
       </tr>
     </tbody>
   </table>

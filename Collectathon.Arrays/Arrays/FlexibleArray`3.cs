@@ -16,7 +16,7 @@ namespace Collectathon.Arrays {
 		IClear,
 		IIndex<TIndex, TElement>,
 		IInsert<TIndex, TElement>,
-		ISequence<(TIndex Index, TElement Element), MemoryEnumerator<(TIndex Index, TElement Element)>>
+		ISequence<(TIndex Index, TElement Element), ArrayEnumerator<(TIndex Index, TElement Element)>>
 		where TSelf : FlexibleArray<TIndex, TElement, TSelf> {
 		/// <summary>
 		/// The backing array of this <see cref="FlexibleArray{TIndex, TElement, TSelf}"/>.
@@ -75,7 +75,7 @@ namespace Collectathon.Arrays {
 		public void Clear() => Count = 0;
 
 		/// <inheritdoc/>
-		public MemoryEnumerator<(TIndex Index, TElement Element)> GetEnumerator() => new MemoryEnumerator<(TIndex Index, TElement Element)>(Entries, Count);
+		public ArrayEnumerator<(TIndex Index, TElement Element)> GetEnumerator() => new ArrayEnumerator<(TIndex Index, TElement Element)>(Entries, Count);
 
 		/// <inheritdoc/>
 		[return: NotNull]

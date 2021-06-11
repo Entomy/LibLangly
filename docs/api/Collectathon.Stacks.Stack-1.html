@@ -87,7 +87,7 @@
     <div><a class="xref" href="System.Traits.IContains-1.html">IContains</a>&lt;TElement&gt;</div>
     <div><a class="xref" href="System.Traits.IPeek-1.html">IPeek</a>&lt;TElement&gt;</div>
     <div><a class="xref" href="System.Traits.IRead-1.html">IRead</a>&lt;TElement&gt;</div>
-    <div><a class="xref" href="System.Traits.ISequence-2.html">ISequence</a>&lt;TElement, <a class="xref" href="Collectathon.Stacks.Stack-1.Enumerator.html">Stack.Enumerator</a>&lt;&gt;&gt;</div>
+    <div><a class="xref" href="System.Traits.ISequence-2.html">ISequence</a>&lt;TElement, <a class="xref" href="Collectathon.Lists.StandardListEnumerator-2.html">StandardListEnumerator</a>&lt;TElement, <span class="xref">Collectathon.Stacks.Stack.Node</span>&lt;&gt;&gt;&gt;</div>
     <div><a class="xref" href="System.Traits.ICount.html">ICount</a></div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TElement&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
@@ -119,7 +119,7 @@
   <h6><strong>Assembly</strong>: Collectathon.Stacks.dll</h6>
   <h5 id="Collectathon_Stacks_Stack_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class Stack&lt;TElement&gt; : IClear, IContains&lt;TElement&gt;, IPeek&lt;TElement&gt;, IRead&lt;TElement&gt;, ISequence&lt;TElement, Stack&lt;TElement&gt;.Enumerator&gt;, ICount, IEnumerable&lt;TElement&gt;, IEnumerable, IWrite&lt;TElement&gt;, IAdd&lt;TElement&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class Stack&lt;TElement&gt; : IClear, IContains&lt;TElement&gt;, IPeek&lt;TElement&gt;, IRead&lt;TElement&gt;, ISequence&lt;TElement, StandardListEnumerator&lt;TElement, Stack&lt;TElement&gt;.Node&gt;&gt;, ICount, IEnumerable&lt;TElement&gt;, IEnumerable, IWrite&lt;TElement&gt;, IAdd&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -144,7 +144,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Stacks_Stack_1__ctor.md&amp;value=---%0Auid%3A%20Collectathon.Stacks.Stack%601.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Stacks/Stack.cs/#L27">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Stacks/Stack.cs/#L28">View Source</a>
   </span>
   <a id="Collectathon_Stacks_Stack_1__ctor_" data-uid="Collectathon.Stacks.Stack`1.#ctor*"></a>
   <h4 id="Collectathon_Stacks_Stack_1__ctor" data-uid="Collectathon.Stacks.Stack`1.#ctor">Stack()</h4>
@@ -160,7 +160,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Stacks_Stack_1__ctor__0___.md&amp;value=---%0Auid%3A%20Collectathon.Stacks.Stack%601.%23ctor(%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Stacks/Stack.cs/#L33">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Stacks/Stack.cs/#L34">View Source</a>
   </span>
   <a id="Collectathon_Stacks_Stack_1__ctor_" data-uid="Collectathon.Stacks.Stack`1.#ctor*"></a>
   <h4 id="Collectathon_Stacks_Stack_1__ctor__0___" data-uid="Collectathon.Stacks.Stack`1.#ctor(`0[])">Stack(TElement[])</h4>
@@ -196,11 +196,12 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Stacks_Stack_1_Count.md&amp;value=---%0Auid%3A%20Collectathon.Stacks.Stack%601.Count%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Stacks/Stack.cs/#L41">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Stacks/Stack.cs/#L42">View Source</a>
   </span>
   <a id="Collectathon_Stacks_Stack_1_Count_" data-uid="Collectathon.Stacks.Stack`1.Count*"></a>
   <h4 id="Collectathon_Stacks_Stack_1_Count" data-uid="Collectathon.Stacks.Stack`1.Count">Count</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the number of elements contained in the collection.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -226,11 +227,12 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Stacks_Stack_1_Readable.md&amp;value=---%0Auid%3A%20Collectathon.Stacks.Stack%601.Readable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Stacks/Stack.cs/#L44">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Stacks/Stack.cs/#L45">View Source</a>
   </span>
   <a id="Collectathon_Stacks_Stack_1_Readable_" data-uid="Collectathon.Stacks.Stack`1.Readable*"></a>
   <h4 id="Collectathon_Stacks_Stack_1_Readable" data-uid="Collectathon.Stacks.Stack`1.Readable">Readable</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Can this be read from?</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -251,16 +253,20 @@
       </tr>
     </tbody>
   </table>
+  <h5 id="Collectathon_Stacks_Stack_1_Readable_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This is a state indicator. Of course an <a class="xref" href="System.Traits.IRead-1.html">IRead&lt;TElement&gt;</a> can be read from, but that doesn't mean it can always be read from. Rather, this being <span class="xref">true</span> indicates the type can currently be read from.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Stacks_Stack_1_Writable.md&amp;value=---%0Auid%3A%20Collectathon.Stacks.Stack%601.Writable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Stacks/Stack.cs/#L47">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Stacks/Stack.cs/#L48">View Source</a>
   </span>
   <a id="Collectathon_Stacks_Stack_1_Writable_" data-uid="Collectathon.Stacks.Stack`1.Writable*"></a>
   <h4 id="Collectathon_Stacks_Stack_1_Writable" data-uid="Collectathon.Stacks.Stack`1.Writable">Writable</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Can this be written to?</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -281,6 +287,9 @@
       </tr>
     </tbody>
   </table>
+  <h5 id="Collectathon_Stacks_Stack_1_Writable_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This is a state indicator. Of course an <a class="xref" href="System.Traits.IWrite-1.html">IWrite&lt;TElement&gt;</a> can be written to, but that doesn't mean it can always be written to. Rather, this being <span class="xref">true</span> indicates the type can currently be written to.</p>
+</div>
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
@@ -288,11 +297,12 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Stacks_Stack_1_Add__0_.md&amp;value=---%0Auid%3A%20Collectathon.Stacks.Stack%601.Add(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Stacks/Stack.cs/#L50">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Stacks/Stack.cs/#L51">View Source</a>
   </span>
   <a id="Collectathon_Stacks_Stack_1_Add_" data-uid="Collectathon.Stacks.Stack`1.Add*"></a>
   <h4 id="Collectathon_Stacks_Stack_1_Add__0_" data-uid="Collectathon.Stacks.Stack`1.Add(`0)">Add(TElement)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds an element to this object.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -311,20 +321,25 @@
       <tr>
         <td><span class="xref">TElement</span></td>
         <td><span class="parametername">element</span></td>
-        <td></td>
+        <td><p>The element to add.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Collectathon_Stacks_Stack_1_Add__0__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Stacks_Stack_1_Clear.md&amp;value=---%0Auid%3A%20Collectathon.Stacks.Stack%601.Clear%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Stacks/Stack.cs/#L53">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Stacks/Stack.cs/#L54">View Source</a>
   </span>
   <a id="Collectathon_Stacks_Stack_1_Clear_" data-uid="Collectathon.Stacks.Stack`1.Clear*"></a>
   <h4 id="Collectathon_Stacks_Stack_1_Clear" data-uid="Collectathon.Stacks.Stack`1.Clear">Clear()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Clears this collection.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -335,11 +350,12 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Stacks_Stack_1_Contains__0_.md&amp;value=---%0Auid%3A%20Collectathon.Stacks.Stack%601.Contains(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Stacks/Stack.cs/#L60">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Stacks/Stack.cs/#L61">View Source</a>
   </span>
   <a id="Collectathon_Stacks_Stack_1_Contains_" data-uid="Collectathon.Stacks.Stack`1.Contains*"></a>
   <h4 id="Collectathon_Stacks_Stack_1_Contains__0_" data-uid="Collectathon.Stacks.Stack`1.Contains(`0)">Contains(TElement)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Determines whether this collection contains the specified <code data-dev-comment-type="paramref" class="paramref">element</code>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -358,7 +374,8 @@
       <tr>
         <td><span class="xref">TElement</span></td>
         <td><span class="parametername">element</span></td>
-        <td></td>
+        <td><p>The element to attempt to find.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -373,7 +390,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
+        <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">element</code> is contained in this collection; otherwise, <span class="xref">false</span>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -382,15 +400,16 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Stacks_Stack_1_GetEnumerator.md&amp;value=---%0Auid%3A%20Collectathon.Stacks.Stack%601.GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Stacks/Stack.cs/#L63">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Stacks/Stack.cs/#L64">View Source</a>
   </span>
   <a id="Collectathon_Stacks_Stack_1_GetEnumerator_" data-uid="Collectathon.Stacks.Stack`1.GetEnumerator*"></a>
   <h4 id="Collectathon_Stacks_Stack_1_GetEnumerator" data-uid="Collectathon.Stacks.Stack`1.GetEnumerator">GetEnumerator()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns an enumerator that iterates through the sequence.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Stack&lt;TElement&gt;.Enumerator GetEnumerator()</code></pre>
+    <pre><code class="lang-csharp hljs">public StandardListEnumerator&lt;TElement, Stack&lt;TElement&gt;.Node&gt; GetEnumerator()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -402,8 +421,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Collectathon.Stacks.Stack-1.Enumerator.html">Stack.Enumerator</a>&lt;&gt;</td>
-        <td></td>
+        <td><a class="xref" href="Collectathon.Lists.StandardListEnumerator-2.html">StandardListEnumerator</a>&lt;TElement, <span class="xref">Collectathon.Stacks.Stack.Node</span>&lt;&gt;&gt;</td>
+        <td><p>An enumerator that can be used to iterate through the collection.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -412,7 +432,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Stacks_Stack_1_Peek.md&amp;value=---%0Auid%3A%20Collectathon.Stacks.Stack%601.Peek%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Stacks/Stack.cs/#L80">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Stacks/Stack.cs/#L81">View Source</a>
   </span>
   <a id="Collectathon_Stacks_Stack_1_Peek_" data-uid="Collectathon.Stacks.Stack`1.Peek*"></a>
   <h4 id="Collectathon_Stacks_Stack_1_Peek" data-uid="Collectathon.Stacks.Stack`1.Peek">Peek()</h4>
@@ -444,11 +464,12 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Stacks_Stack_1_Peek__0__.md&amp;value=---%0Auid%3A%20Collectathon.Stacks.Stack%601.Peek(%600%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Stacks/Stack.cs/#L74">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Stacks/Stack.cs/#L75">View Source</a>
   </span>
   <a id="Collectathon_Stacks_Stack_1_Peek_" data-uid="Collectathon.Stacks.Stack`1.Peek*"></a>
   <h4 id="Collectathon_Stacks_Stack_1_Peek__0__" data-uid="Collectathon.Stacks.Stack`1.Peek(`0@)">Peek(out TElement)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Peeks at the first element.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -467,7 +488,8 @@
       <tr>
         <td><span class="xref">TElement</span></td>
         <td><span class="parametername">element</span></td>
-        <td></td>
+        <td><p>The <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> value that was peeked.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -476,7 +498,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Stacks_Stack_1_Pop.md&amp;value=---%0Auid%3A%20Collectathon.Stacks.Stack%601.Pop%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Stacks/Stack.cs/#L93">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Stacks/Stack.cs/#L94">View Source</a>
   </span>
   <a id="Collectathon_Stacks_Stack_1_Pop_" data-uid="Collectathon.Stacks.Stack`1.Pop*"></a>
   <h4 id="Collectathon_Stacks_Stack_1_Pop" data-uid="Collectathon.Stacks.Stack`1.Pop">Pop()</h4>
@@ -508,7 +530,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Stacks_Stack_1_Push__0_.md&amp;value=---%0Auid%3A%20Collectathon.Stacks.Stack%601.Push(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Stacks/Stack.cs/#L103">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Stacks/Stack.cs/#L104">View Source</a>
   </span>
   <a id="Collectathon_Stacks_Stack_1_Push_" data-uid="Collectathon.Stacks.Stack`1.Push*"></a>
   <h4 id="Collectathon_Stacks_Stack_1_Push__0_" data-uid="Collectathon.Stacks.Stack`1.Push(`0)">Push(TElement)</h4>
@@ -542,11 +564,12 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Stacks_Stack_1_Read__0__.md&amp;value=---%0Auid%3A%20Collectathon.Stacks.Stack%601.Read(%600%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Stacks/Stack.cs/#L109">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Stacks/Stack.cs/#L110">View Source</a>
   </span>
   <a id="Collectathon_Stacks_Stack_1_Read_" data-uid="Collectathon.Stacks.Stack`1.Read*"></a>
   <h4 id="Collectathon_Stacks_Stack_1_Read__0__" data-uid="Collectathon.Stacks.Stack`1.Read(`0@)">Read(out TElement)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Reads a <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -565,7 +588,8 @@
       <tr>
         <td><span class="xref">TElement</span></td>
         <td><span class="parametername">element</span></td>
-        <td></td>
+        <td><p>The <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> value that was read.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -574,7 +598,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Stacks_Stack_1_ToString.md&amp;value=---%0Auid%3A%20Collectathon.Stacks.Stack%601.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Stacks/Stack.cs/#L122">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Stacks/Stack.cs/#L123">View Source</a>
   </span>
   <a id="Collectathon_Stacks_Stack_1_ToString_" data-uid="Collectathon.Stacks.Stack`1.ToString*"></a>
   <h4 id="Collectathon_Stacks_Stack_1_ToString" data-uid="Collectathon.Stacks.Stack`1.ToString">ToString()</h4>
@@ -606,11 +630,12 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Stacks_Stack_1_ToString_System_IntPtr_.md&amp;value=---%0Auid%3A%20Collectathon.Stacks.Stack%601.ToString(System.IntPtr)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Stacks/Stack.cs/#L126">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Stacks/Stack.cs/#L127">View Source</a>
   </span>
   <a id="Collectathon_Stacks_Stack_1_ToString_" data-uid="Collectathon.Stacks.Stack`1.ToString*"></a>
   <h4 id="Collectathon_Stacks_Stack_1_ToString_System_IntPtr_" data-uid="Collectathon.Stacks.Stack`1.ToString(System.IntPtr)">ToString(IntPtr)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns a string that represents this sequence, with no more than <code data-dev-comment-type="paramref" class="paramref">amount</code> elements.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -629,7 +654,8 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.intptr">IntPtr</a></td>
         <td><span class="parametername">amount</span></td>
-        <td></td>
+        <td><p>The maximum amount of elements to display.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -653,11 +679,12 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Stacks_Stack_1_Write__0_.md&amp;value=---%0Auid%3A%20Collectathon.Stacks.Stack%601.Write(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Stacks/Stack.cs/#L130">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Stacks/Stack.cs/#L131">View Source</a>
   </span>
   <a id="Collectathon_Stacks_Stack_1_Write_" data-uid="Collectathon.Stacks.Stack`1.Write*"></a>
   <h4 id="Collectathon_Stacks_Stack_1_Write__0_" data-uid="Collectathon.Stacks.Stack`1.Write(`0)">Write(TElement)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Writes a <code data-dev-comment-type="paramref" class="paramref">element</code>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -676,7 +703,8 @@
       <tr>
         <td><span class="xref">TElement</span></td>
         <td><span class="parametername">element</span></td>
-        <td></td>
+        <td><p>The <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code> value to write.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -687,7 +715,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Stacks_Stack_1_System_Collections_Generic_IEnumerable_TElement__GetEnumerator.md&amp;value=---%0Auid%3A%20Collectathon.Stacks.Stack%601.System%23Collections%23Generic%23IEnumerable%7BTElement%7D%23GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Stacks/Stack.cs/#L70">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Stacks/Stack.cs/#L71">View Source</a>
   </span>
   <a id="Collectathon_Stacks_Stack_1_System_Collections_Generic_IEnumerable_TElement__GetEnumerator_" data-uid="Collectathon.Stacks.Stack`1.System#Collections#Generic#IEnumerable{TElement}#GetEnumerator*"></a>
   <h4 id="Collectathon_Stacks_Stack_1_System_Collections_Generic_IEnumerable_TElement__GetEnumerator" data-uid="Collectathon.Stacks.Stack`1.System#Collections#Generic#IEnumerable{TElement}#GetEnumerator">IEnumerable&lt;TElement&gt;.GetEnumerator()</h4>
@@ -717,7 +745,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Stacks_Stack_1_System_Collections_IEnumerable_GetEnumerator.md&amp;value=---%0Auid%3A%20Collectathon.Stacks.Stack%601.System%23Collections%23IEnumerable%23GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Stacks/Stack.cs/#L66">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Stacks/Stack.cs/#L67">View Source</a>
   </span>
   <a id="Collectathon_Stacks_Stack_1_System_Collections_IEnumerable_GetEnumerator_" data-uid="Collectathon.Stacks.Stack`1.System#Collections#IEnumerable#GetEnumerator*"></a>
   <h4 id="Collectathon_Stacks_Stack_1_System_Collections_IEnumerable_GetEnumerator" data-uid="Collectathon.Stacks.Stack`1.System#Collections#IEnumerable#GetEnumerator">IEnumerable.GetEnumerator()</h4>
@@ -796,28 +824,10 @@
       <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Add__2_System_Traits_IAdd___0__System_Traits_ISequence___0___1__">TraitExtensions.Add&lt;TElement, TEnumerator&gt;(IAdd&lt;TElement&gt;, ISequence&lt;TElement, TEnumerator&gt;)</a>
   </div>
   <div>
-      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Contains__2_System_Traits_ISequence___0___1____0_">TraitExtensions.Contains&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, TElement)</a>
-  </div>
-  <div>
       <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsAll__1_System_Traits_IContains___0____0___">TraitExtensions.ContainsAll&lt;TElement&gt;(IContains&lt;TElement&gt;, TElement[])</a>
   </div>
   <div>
-      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsAll__2_System_Traits_ISequence___0___1____0___">TraitExtensions.ContainsAll&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, TElement[])</a>
-  </div>
-  <div>
       <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsAny__1_System_Traits_IContains___0____0___">TraitExtensions.ContainsAny&lt;TElement&gt;(IContains&lt;TElement&gt;, TElement[])</a>
-  </div>
-  <div>
-      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsAny__2_System_Traits_ISequence___0___1____0___">TraitExtensions.ContainsAny&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, TElement[])</a>
-  </div>
-  <div>
-      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_CopyTo__2_System_Traits_ISequence___0___1____0___">TraitExtensions.CopyTo&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, TElement[])</a>
-  </div>
-  <div>
-      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_CopyTo__2_System_Traits_ISequence___0___1__System_Memory___0__">TraitExtensions.CopyTo&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Memory&lt;TElement&gt;)</a>
-  </div>
-  <div>
-      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_CopyTo__2_System_Traits_ISequence___0___1__System_Span___0__">TraitExtensions.CopyTo&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Span&lt;TElement&gt;)</a>
   </div>
   <div>
       <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_EnsureLoaded__1_System_Traits_IWrite___0__System_IntPtr_System_Traits_IRead___0__">TraitExtensions.EnsureLoaded&lt;TElement&gt;(IWrite&lt;TElement&gt;, IntPtr, IRead&lt;TElement&gt;)</a>
@@ -826,19 +836,10 @@
       <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Fold__1_System_Collections_Generic_IEnumerable___0__System_Func___0___0___0____0_">TraitExtensions.Fold&lt;TElement&gt;(IEnumerable&lt;TElement&gt;, Func&lt;TElement, TElement, TElement&gt;, TElement)</a>
   </div>
   <div>
-      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Fold__2_System_Traits_ISequence___0___1__System_Func___0___0___0____0_">TraitExtensions.Fold&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Func&lt;TElement, TElement, TElement&gt;, TElement)</a>
-  </div>
-  <div>
       <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Load__1_System_Traits_IWrite___0__System_Traits_IRead___0__">TraitExtensions.Load&lt;TElement&gt;(IWrite&lt;TElement&gt;, IRead&lt;TElement&gt;)</a>
   </div>
   <div>
       <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Load__1_System_Traits_IWrite___0__System_IntPtr_System_Traits_IRead___0__">TraitExtensions.Load&lt;TElement&gt;(IWrite&lt;TElement&gt;, IntPtr, IRead&lt;TElement&gt;)</a>
-  </div>
-  <div>
-      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Occurrences__2_System_Traits_ISequence___0___1____0_">TraitExtensions.Occurrences&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, TElement)</a>
-  </div>
-  <div>
-      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Occurrences__2_System_Traits_ISequence___0___1__System_Predicate___0__">TraitExtensions.Occurrences&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Predicate&lt;TElement&gt;)</a>
   </div>
   <div>
       <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Read__1_System_Traits_IRead___0____0___">TraitExtensions.Read&lt;TElement&gt;(IRead&lt;TElement&gt;, TElement[])</a>
@@ -854,9 +855,6 @@
   </div>
   <div>
       <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Read__1_System_Traits_IRead___0__System_IntPtr_System_ReadOnlySpan___0___">TraitExtensions.Read&lt;TElement&gt;(IRead&lt;TElement&gt;, IntPtr, out ReadOnlySpan&lt;TElement&gt;)</a>
-  </div>
-  <div>
-      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ToArray__2_System_Traits_ISequence___0___1__">TraitExtensions.ToArray&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;)</a>
   </div>
   <div>
       <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Write__1_System_Traits_IWrite___0____0___">TraitExtensions.Write&lt;TElement&gt;(IWrite&lt;TElement&gt;, TElement[])</a>
@@ -893,7 +891,7 @@
                     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Stacks_Stack_1.md&amp;value=---%0Auid%3A%20Collectathon.Stacks.Stack%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Stacks/Stack.Node.cs/#L6" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Stacks/Stack.Node.cs/#L7" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
