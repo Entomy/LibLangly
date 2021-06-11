@@ -1,5 +1,5 @@
-﻿using System;
-using System.Diagnostics.CodeAnalysis;
+﻿using System.Diagnostics.CodeAnalysis;
+using Collectathon.Nodes;
 
 namespace Collectathon.Lists {
 	/// <summary>
@@ -7,7 +7,7 @@ namespace Collectathon.Lists {
 	/// </summary>
 	/// <typeparam name="TIndex">The type of the indicies of the elements.</typeparam>
 	/// <typeparam name="TElement">The type of the elements in the list.</typeparam>
-	public sealed partial class SinglyLinkedList<TIndex, TElement> : StandardList<TIndex, TElement, SinglyLinkedList<TIndex, TElement>.Node, SinglyLinkedList<TIndex, TElement>> {
+	public sealed class SinglyLinkedList<TIndex, TElement> : StandardList<TIndex, TElement, SinglyLinkedListNode<TIndex, TElement>, SinglyLinkedList<TIndex, TElement>> {
 		/// <summary>
 		/// initializes a new <see cref="SinglyLinkedList{TIndex, TElement}"/>.
 		/// </summary>
@@ -42,6 +42,6 @@ namespace Collectathon.Lists {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		protected override Node NewUnlinkedNode([DisallowNull] TIndex index, [AllowNull] TElement element) => new Node(index, element, next: null);
+		protected override SinglyLinkedListNode<TIndex, TElement> NewUnlinkedNode([DisallowNull] TIndex index, [AllowNull] TElement element) => new SinglyLinkedListNode<TIndex, TElement>(index, element, next: null);
 	}
 }

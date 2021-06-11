@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using Collectathon.Nodes;
 
 namespace Collectathon.Lists {
 	/// <summary>
 	/// Represents a singly-linked list.
 	/// </summary>
 	/// <typeparam name="TElement">The type of the elements in the list.</typeparam>
-	public sealed partial class SinglyLinkedList<TElement> : StandardList<TElement, SinglyLinkedList<TElement>.Node, SinglyLinkedList<TElement>> {
+	public sealed class SinglyLinkedList<TElement> : StandardList<TElement, SinglyLinkedListNode<TElement>, SinglyLinkedList<TElement>> {
 		/// <summary>
 		/// Initializes a new <see cref="SinglyLinkedList{TElement}"/>.
 		/// </summary>
@@ -47,8 +48,8 @@ namespace Collectathon.Lists {
 			} else if (index == Count) {
 				Postpend(element);
 			} else if (Count > 0) {
-				Node P = null!;
-				Node? N = Head;
+				SinglyLinkedListNode<TElement> P = null!;
+				SinglyLinkedListNode<TElement>? N = Head;
 				nint i = 0;
 				while (N is not null) {
 					P = N;
@@ -56,10 +57,10 @@ namespace Collectathon.Lists {
 					i++;
 					if (i == index) break;
 				}
-				P.Next = new Node(element, next: N);
+				P.Next = new SinglyLinkedListNode<TElement>(element, next: N);
 				Count++;
 			} else {
-				Head = new Node(element, next: null);
+				Head = new SinglyLinkedListNode<TElement>(element, next: null);
 				Tail = Head;
 				Count++;
 			}
@@ -76,6 +77,6 @@ namespace Collectathon.Lists {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		protected override Node NewUnlinkedNode([AllowNull] TElement element) => new Node(element, next: null);
+		protected override SinglyLinkedListNode<TElement> NewUnlinkedNode([AllowNull] TElement element) => new SinglyLinkedListNode<TElement>(element, next: null);
 	}
 }
