@@ -26,10 +26,18 @@ namespace Stringier {
 			}
 
 			/// <inheritdoc/>
-			public override Char this[[DisallowNull] nint index] => Pointer[(Int32)index];
+			public override Char this[nint index] => Pointer[index];
 
 			/// <inheritdoc/>
 			public override nint Count { get; }
+
+			/// <inheritdoc/>
+			public override Boolean Contains(Char element) {
+				for (nint i = 0; i < Count; i++) {
+					if (Equals(Pointer[i], element)) return true;
+				}
+				return false;
+			}
 
 			/// <inheritdoc/>
 			public override (Node Head, Node Tail) Insert(nint index, [AllowNull] Char element) {

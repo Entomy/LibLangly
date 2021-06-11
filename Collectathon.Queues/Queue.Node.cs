@@ -1,24 +1,13 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using System.Traits;
 
 namespace Collectathon.Queues {
 	public partial class Queue<TElement> {
 		/// <summary>
 		/// Represents a queue node.
 		/// </summary>
-		private sealed class Node {
-			/// <summary>
-			/// The next node of the stack.
-			/// </summary>
-			[AllowNull, MaybeNull]
-			public Node Next;
-
-			/// <summary>
-			/// The element contained in this node.
-			/// </summary>
-			[AllowNull, MaybeNull]
-			public readonly TElement Element;
-
+		private sealed class Node : IContains<TElement>, IElement<TElement>, INext<Node>, IUnlink {
 			/// <summary>
 			/// Initializes a new <see cref="Node"/>.
 			/// </summary>
@@ -36,8 +25,22 @@ namespace Collectathon.Queues {
 			}
 
 			/// <inheritdoc/>
+			[AllowNull, MaybeNull]
+			public TElement Element { get; }
+
+			/// <inheritdoc/>
+			[AllowNull, MaybeNull]
+			public Node Next { get; set; }
+
+			/// <inheritdoc/>
+			public Boolean Contains([AllowNull] TElement element) => Equals(Element, element);
+
+			/// <inheritdoc/>
 			[return: NotNull]
-			public override String ToString() => Element.ToString();
+			public override String ToString() => Element?.ToString() ?? "null";
+
+			/// <inheritdoc/>
+			public void Unlink() => Next = null;
 		}
 	}
 }

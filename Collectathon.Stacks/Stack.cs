@@ -2,7 +2,6 @@
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Traits;
-using Langly;
 
 namespace Collectathon.Stacks {
 	/// <summary>
@@ -52,25 +51,13 @@ namespace Collectathon.Stacks {
 
 		/// <inheritdoc/>
 		public void Clear() {
-			Node P = null;
-			Node N = Head;
-			while (N is not null) {
-				P = N;
-				N = N.Next;
-				P.Next = null;
-			}
+			if (Head is not null) Collection.Clear(Head);
+			Head = null;
 			Count = 0;
 		}
 
 		/// <inheritdoc/>
-		public Boolean Contains([AllowNull] TElement element) {
-			Node? N = Head;
-			while (N is not null) {
-				if (Equals(N.Element, element)) return true;
-				N = N.Next;
-			}
-			return false;
-		}
+		public Boolean Contains([AllowNull] TElement element) => Collection.Contains(Head, element);
 
 		/// <inheritdoc/>
 		public Enumerator GetEnumerator() => new Enumerator(this);
@@ -90,7 +77,7 @@ namespace Collectathon.Stacks {
 		/// Peeks at the top element of this <see cref="Stack{TElement}"/>.
 		/// </summary>
 		/// <returns>The top element.</returns>
-		[return: NotNull]
+		[return: MaybeNull]
 		public TElement Peek() {
 			if (Head is not null) {
 				return Head.Element;
@@ -124,7 +111,7 @@ namespace Collectathon.Stacks {
 				element = Head.Element;
 				Node old = Head;
 				Head = Head.Next;
-				old.Next = null;
+				old.Unlink();
 				Count--;
 			} else {
 				throw new InvalidOperationException();
@@ -133,11 +120,11 @@ namespace Collectathon.Stacks {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public override String ToString() => Collection.ToString(this);
+		public override String ToString() => Collection.ToString(Head, Count);
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public String ToString(nint amount) => Collection.ToString(this, amount);
+		public String ToString(nint amount) => Collection.ToString(Head, Count, amount);
 
 		/// <inheritdoc/>
 		public void Write([AllowNull] TElement element) => Push(element);

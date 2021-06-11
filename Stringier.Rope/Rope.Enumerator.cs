@@ -2,20 +2,19 @@
 using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Traits;
-using Langly;
 
 namespace Stringier {
 	public partial class Rope {
 		/// <summary>
-		/// Provides enumeration over a <see cref="Rope"/>.
+		/// Provides enumeration over a <see cref="Stringier.Rope"/>.
 		/// </summary>
 		[EditorBrowsable(EditorBrowsableState.Advanced)]
 		public struct Enumerator : IEnumerator<Char> {
 			/// <summary>
-			/// The list being enumerated.
+			/// The rope being enumerated.
 			/// </summary>
 			[AllowNull, MaybeNull]
-			private Rope List;
+			private Rope Rope;
 
 			/// <summary>
 			/// The current node.
@@ -31,9 +30,9 @@ namespace Stringier {
 			/// <summary>
 			/// Initializes a new <see cref="Enumerator"/>.
 			/// </summary>
-			/// <param name="list">The list to enumerate.</param>
-			public Enumerator([DisallowNull] Rope list) {
-				List = list;
+			/// <param name="rope">The rope to enumerate.</param>
+			public Enumerator([DisallowNull] Rope rope) {
+				Rope = rope;
 				N = default;
 				i = -1;
 			}
@@ -47,7 +46,7 @@ namespace Stringier {
 			Object System.Collections.IEnumerator.Current => Current;
 
 			/// <inheritdoc/>
-			public nint Count => List.Count;
+			public nint Count => Rope.Count;
 
 			/// <inheritdoc/>
 			[EditorBrowsable(EditorBrowsableState.Never)]
@@ -71,14 +70,14 @@ namespace Stringier {
 			/// <inheritdoc/>
 			public Boolean MoveNext() {
 				// If the list has been set to null
-				if (List is null) {
+				if (Rope is null) {
 					// We've finished
 					return false;
 				}
 				// If the current node is null, we've just started
 				if (N is null) {
 					// So set it to the ropes head
-					N = List.Head;
+					N = Rope.Head;
 					// If its still null
 					if (N is null) {
 						// The rope is empty
@@ -99,7 +98,7 @@ namespace Stringier {
 						return ++i < N.Count;
 					} else {
 						// Null the list to indicate we're finished
-						List = null;
+						Rope = null;
 						return false;
 					}
 				}
@@ -113,11 +112,11 @@ namespace Stringier {
 
 			/// <inheritdoc/>
 			[return: NotNull]
-			public override String ToString() => Collection.ToString(this);
+			public override String ToString() => Collection.ToString(Rope.Head, Rope.Count);
 
 			/// <inheritdoc/>
 			[return: NotNull]
-			public String ToString(nint amount) => Collection.ToString(this, amount);
+			public String ToString(nint amount) => Collection.ToString(Rope.Head, Rope.Count, amount);
 		}
 	}
 }

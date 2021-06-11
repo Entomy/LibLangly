@@ -11,14 +11,20 @@ namespace Collectathon.Nodes {
 	/// <typeparam name="TElement">The type of the elements in the nodes.</typeparam>
 	/// <typeparam name="TSelf">The implementing type; itself.</typeparam>
 	public abstract class ListNode<TIndex, TElement, TSelf> :
-		IClear,
-		ICount
+		IContains<TElement>,
+		ICount,
+		INext<TSelf>,
+		IReplace<TElement>,
+		IUnlink
 		where TSelf : ListNode<TIndex, TElement, TSelf> {
 		/// <summary>
 		/// Initializes a new <see cref="ListNode{TIndex, TElement, TSelf}"/>.
 		/// </summary>
 		/// <param name="next">The next node in the list.</param>
 		protected ListNode([AllowNull] TSelf next) => Next = next;
+
+		/// <inheritdoc/>
+		public abstract nint Count { get; }
 
 		/// <summary>
 		/// The next node in the list.
@@ -27,10 +33,7 @@ namespace Collectathon.Nodes {
 		public TSelf Next { get; set; }
 
 		/// <inheritdoc/>
-		public abstract nint Count { get; }
-
-		/// <inheritdoc/>
-		public abstract void Clear();
+		public abstract Boolean Contains([AllowNull] TElement element);
 
 		/// <inheritdoc/>
 		[SuppressMessage("Major Bug", "S3249:Classes directly extending \"object\" should not call \"base\" in \"GetHashCode\" or \"Equals\"", Justification = "I'm literally enforcing correct behavior by ensuring downstream doesn't violate what this analyzer is trying to enforce...")]
@@ -53,7 +56,13 @@ namespace Collectathon.Nodes {
 		public abstract TSelf Prepend([DisallowNull] TIndex index, [AllowNull] TElement element);
 
 		/// <inheritdoc/>
+		public abstract void Replace([AllowNull] TElement search, [AllowNull] TElement replace);
+
+		/// <inheritdoc/>
 		[return: NotNull]
 		public abstract override String ToString();
+
+		/// <inheritdoc/>
+		public abstract void Unlink();
 	}
 }

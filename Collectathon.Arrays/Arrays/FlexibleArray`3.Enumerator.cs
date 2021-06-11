@@ -3,7 +3,6 @@ using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 using System.Traits;
-using Langly;
 
 namespace Collectathon.Arrays {
 	public partial class FlexibleArray<TIndex, TElement, TSelf> {
@@ -84,12 +83,12 @@ namespace Collectathon.Arrays {
 			/// <inheritdoc/>
 			[EditorBrowsable(EditorBrowsableState.Never)]
 			[return: NotNull]
-			public override String ToString() => Collection.ToString(this);
+			public override String ToString() => Collection.ToString(Memory);
 
 			/// <inheritdoc/>
 			[EditorBrowsable(EditorBrowsableState.Never)]
 			[return: NotNull]
-			public String ToString(nint amount) => Collection.ToString(this, amount);
+			public String ToString(nint amount) => Collection.ToString(Memory, amount);
 
 			/// <inheritdoc/>
 			[EditorBrowsable(EditorBrowsableState.Never)]

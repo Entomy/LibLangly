@@ -17,10 +17,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\Collectathon.Lists\Collectathon.Lists.csproj" />
-	  <ProjectReference Include="..\Stringier.Case\Stringier.Case.csproj" />
+	  <PackageReference Include="System.Memory" Version="4.5.4" />
+	  <PackageReference Include="System.ValueTuple" Version="4.5.0" />
 	</ItemGroup>
 
-	<Import Project="..\Collection\Collection.projitems" Label="Shared" />
+	<ItemGroup>
+	  <ProjectReference Include="..\Collectathon.Traits\Collectathon.Traits.csproj" />
+	  <ProjectReference Include="..\Stringier.Case\Stringier.Case.csproj" />
+	</ItemGroup>
 
 </Project>

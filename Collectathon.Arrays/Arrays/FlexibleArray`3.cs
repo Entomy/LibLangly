@@ -2,7 +2,6 @@
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Traits;
-using Langly;
 
 namespace Collectathon.Arrays {
 	/// <summary>
@@ -102,11 +101,11 @@ namespace Collectathon.Arrays {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public override String ToString() => Collection.ToString(this);
+		public override String ToString() => Collection.ToString(Entries);
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public String ToString(nint amount) => Collection.ToString(this, amount);
+		public String ToString(nint amount) => Collection.ToString(Entries, amount);
 
 		/// <summary>
 		/// Adds an element to this object.

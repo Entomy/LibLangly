@@ -15,7 +15,7 @@ namespace Collectathon.Lists {
 			public Node([AllowNull] TElement element, [AllowNull] Node next) : base(element, next) { }
 
 			/// <inheritdoc/>
-			public override void Clear() => Next = null;
+			public override void Unlink() => Next = null;
 
 			/// <inheritdoc/>
 			[return: NotNull]

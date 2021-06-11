@@ -4,7 +4,6 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 using System.Traits;
-using Langly;
 
 namespace Collectathon.Queues {
 	public partial class Queue<TElement> {
@@ -77,11 +76,11 @@ namespace Collectathon.Queues {
 
 			/// <inheritdoc/>
 			[return: NotNull]
-			public override String ToString() => Collection.ToString(this);
+			public override String ToString() => Collection.ToString(Queue.Head, Queue.Count);
 
 			/// <inheritdoc/>
 			[return: NotNull]
-			public String ToString(nint amount) => Collection.ToString(this, amount);
+			public String ToString(nint amount) => Collection.ToString(Queue.Head, Queue.Count, amount);
 		}
 	}
 }

@@ -28,6 +28,9 @@ namespace Stringier {
 			public override nint Count => 1;
 
 			/// <inheritdoc/>
+			public override Boolean Contains([AllowNull] Char element) => Equals(Char, element);
+
+			/// <inheritdoc/>
 			public override (Node Head, Node Tail) Insert(nint index, [AllowNull] Char element) {
 				Node head;
 				Node tail;
@@ -81,6 +84,10 @@ namespace Stringier {
 					return (this, this);
 				}
 			}
+
+			/// <inheritdoc/>
+			[return: NotNull]
+			public override String ToString() => Char.ToString();
 		}
 	}
 }

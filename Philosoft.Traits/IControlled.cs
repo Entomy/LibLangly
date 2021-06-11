@@ -2,7 +2,6 @@
 #if !NETSTANDARD1_3
 using System.Threading.Tasks;
 #endif
-using Langly;
 
 namespace System.Traits {
 	/// <summary>
@@ -25,7 +24,10 @@ namespace System.Traits {
 
 #if !NETSTANDARD1_3
 		/// <inheritdoc/>
-		void IDisposable.Dispose() => Collection.Dispose(this);
+		void IDisposable.Dispose() {
+			Dispose(disposing: true);
+			GC.SuppressFinalize(this);
+		}
 #endif
 
 #if !NETSTANDARD1_3
@@ -43,6 +45,28 @@ namespace System.Traits {
 #endif
 
 		/// <summary>
+		/// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+		/// </summary>
+		/// <param name="disposing">Whether managed resources should be disposed.</param>
+		[SuppressMessage("Maintainability", "AV1564:Parameter in public or internal member is of type bool or bool?", Justification = "I don't control of this API.")]
+		[SuppressMessage("Blocker Code Smell", "S2953:Methods named \"Dispose\" should implement \"IDisposable.Dispose\"", Justification = "It is, ironically, Sonar is the one that's confused.")]
+		void Dispose(Boolean disposing)
+#if !NETSTANDARD1_3
+		{
+			if (!Disposed) {
+				if (disposing) {
+					DisposeManaged();
+				}
+				DisposeUnmanaged();
+				NullLargeFields();
+				Disposed = true;
+			}
+		}
+#else
+		;
+#endif
+
+		/// <summary>
 		/// Dispose of managed resources. Part of <see cref="IDisposable.Dispose()"/>.
 		/// </summary>
 		void DisposeManaged();
@@ -56,17 +80,5 @@ namespace System.Traits {
 		/// Null out large fields. Part of <see cref="IDisposable.Dispose()"/>.
 		/// </summary>
 		void NullLargeFields();
-
-		/// <summary>
-		/// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
-		/// </summary>
-		/// <param name="disposing">Whether managed resources should be disposed.</param>
-		[SuppressMessage("Maintainability", "AV1564:Parameter in public or internal member is of type bool or bool?", Justification = "I don't control of this API.")]
-		[SuppressMessage("Blocker Code Smell", "S2953:Methods named \"Dispose\" should implement \"IDisposable.Dispose\"", Justification = "It is, ironically, Sonar is the one that's confused.")]
-		void Dispose(Boolean disposing)
-#if !NETSTANDARD1_3
-			=> Collection.Dispose(this, disposing)
-#endif
-			;
 	}
 }

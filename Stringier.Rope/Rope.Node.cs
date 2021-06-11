@@ -1,53 +1,74 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
-using Collectathon.Nodes;
+using System.Traits;
 
 namespace Stringier {
 	public partial class Rope {
 		/// <summary>
 		/// Represents a node of a <see cref="Rope"/>.
 		/// </summary>
-		public abstract class Node : UnrolledListNode<Char, Node> {
+		public abstract class Node : IContains<Char>, IIndexReadOnly<nint, Char>, INext<Node>, IPrevious<Node>, IUnlink {
 			/// <summary>
 			/// Initializes a new <see cref="Node"/>.
 			/// </summary>
 			/// <param name="next">The next node in the list.</param>
 			/// <param name="previous">The previous node in the list.</param>
-			protected Node([AllowNull] Node next, [AllowNull] Node previous) : base(next) => Previous = previous;
+			protected Node([AllowNull] Node next, [AllowNull] Node previous) {
+				Next = next;
+				Previous = previous;
+			}
 
-			/// <summary>
-			/// The previous node in the list.
-			/// </summary>
+			/// <inheritdoc/>
+			public abstract nint Count { get; }
+
+			/// <inheritdoc/>
+			[AllowNull, MaybeNull]
+			public Node Next { get; set; }
+
+			/// <inheritdoc/>
 			[AllowNull, MaybeNull]
 			public Node Previous { get; set; }
 
 			/// <inheritdoc/>
-			public sealed override void Clear() {
-				Next = null;
-				Previous = null;
-			}
+			public abstract Char this[nint index] { get; }
+			/// <inheritdoc/>
+			public abstract Boolean Contains(Char element);
+
+			public abstract (Node Head, Node Tail) Insert(nint index, [AllowNull] Char element);
+
+			public abstract (Node Head, Node Tail) Insert(nint index, ReadOnlyMemory<Char> elements);
 
 			/// <inheritdoc/>
 			[return: NotNull]
-			public sealed override Node Postpend([AllowNull] Char element) {
+			public Node Postpend([AllowNull] Char element) {
 				Next = new CharNode(element, next: null, previous: this);
 				return Next;
 			}
 
 			/// <inheritdoc/>
 			[return: NotNull]
-			public sealed override Node Postpend(ReadOnlyMemory<Char> elements) {
+			public Node Postpend(ReadOnlyMemory<Char> elements) {
 				Next = new MemoryNode(elements, next: null, previous: this);
 				return Next;
 			}
 
 			/// <inheritdoc/>
 			[return: NotNull]
-			public sealed override Node Prepend([AllowNull] Char element) => new CharNode(element, next: this, previous: null);
+			public Node Prepend([AllowNull] Char element) => new CharNode(element, next: this, previous: null);
 
 			/// <inheritdoc/>
 			[return: NotNull]
-			public sealed override Node Prepend(ReadOnlyMemory<Char> elements) => new MemoryNode(elements, next: this, previous: null);
+			public Node Prepend(ReadOnlyMemory<Char> elements) => new MemoryNode(elements, next: this, previous: null);
+
+			public abstract (Node Head, Node Tail) Remove([AllowNull] Char element);
+
+			public abstract (Node Head, Node Tail) Replace(Char search, Char replace);
+
+			/// <inheritdoc/>
+			public void Unlink() {
+				Next = null;
+				Previous = null;
+			}
 		}
 	}
 }

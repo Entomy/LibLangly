@@ -1,5 +1,4 @@
-﻿using System;
-using System.Diagnostics.CodeAnalysis;
+﻿using System.Diagnostics.CodeAnalysis;
 using System.Traits;
 
 namespace Numbersome {
@@ -14,7 +13,11 @@ namespace Numbersome {
 		[return: MaybeNull]
 		public static TElement Mode<TElement, TEnumerator>([AllowNull] this ISequence<TElement, TEnumerator> values) where TEnumerator : IEnumerator<TElement> {
 			Counter<TElement> counter = new Counter<TElement>();
-			counter.Add(values);
+			if (values is not null) {
+				foreach (TElement value in values) {
+					counter.Add(value);
+				}
+			}
 			return counter.Highest;
 		}
 	}

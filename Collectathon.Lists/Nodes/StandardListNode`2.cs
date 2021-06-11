@@ -9,9 +9,7 @@ namespace Collectathon.Nodes {
 	/// </summary>
 	/// <typeparam name="TElement">The type of the elements in the nodes.</typeparam>
 	/// <typeparam name="TSelf">The implementing type; itself.</typeparam>
-	public abstract class StandardListNode<TElement, TSelf> : ListNode<TElement, TSelf>,
-		IReplace<TElement>
-		where TSelf : StandardListNode<TElement, TSelf> {
+	public abstract class StandardListNode<TElement, TSelf> : ListNode<TElement, TSelf>, IElement<TElement> where TSelf : StandardListNode<TElement, TSelf> {
 		/// <summary>
 		/// Initializes a new <see cref="StandardListNode{TElement, TSelf}"/>.
 		/// </summary>
@@ -22,14 +20,15 @@ namespace Collectathon.Nodes {
 		/// <inheritdoc/>
 		public override nint Count => 1;
 
-		/// <summary>
-		/// The element contained in this node.
-		/// </summary>
+		/// <inheritdoc/>
 		[AllowNull, MaybeNull]
 		public TElement Element { get; set; }
 
 		/// <inheritdoc/>
-		public void Replace([AllowNull] TElement search, [AllowNull] TElement replace) => Element = !Equals(Element, search) ? Element : replace;
+		public sealed override Boolean Contains([AllowNull] TElement element) => Equals(Element, element);
+
+		/// <inheritdoc/>
+		public sealed override void Replace([AllowNull] TElement search, [AllowNull] TElement replace) => Element = !Equals(Element, search) ? Element : replace;
 
 		/// <inheritdoc/>
 		[return: NotNull]

@@ -2,7 +2,6 @@
 using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Traits;
-using Langly;
 
 namespace Collectathon.Lists {
 	public partial class StandardList<TElement, TNode, TSelf> {
@@ -79,11 +78,11 @@ namespace Collectathon.Lists {
 
 			/// <inheritdoc/>
 			[return: NotNull]
-			public override String ToString() => Collection.ToString(this);
+			public override String ToString() => Collection.ToString(List.Head, List.Count);
 
 			/// <inheritdoc/>
 			[return: NotNull]
-			public String ToString(nint amount) => Collection.ToString(this, amount);
+			public String ToString(nint amount) => Collection.ToString(List.Head, List.Count, amount);
 		}
 	}
 }

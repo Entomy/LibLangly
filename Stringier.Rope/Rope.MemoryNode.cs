@@ -28,6 +28,14 @@ namespace Stringier {
 			public override nint Count => Memory.Length;
 
 			/// <inheritdoc/>
+			public override Boolean Contains([AllowNull] Char element) {
+				foreach (Char item in Memory.Span) {
+					if (Equals(item, element)) return true;
+				}
+				return false;
+			}
+
+			/// <inheritdoc/>
 			public override (Node Head, Node Tail) Insert(nint index, [AllowNull] Char element) {
 				Node head;
 				Node tail;
@@ -137,6 +145,10 @@ namespace Stringier {
 			/// <inheritdoc/>
 			[return: NotNull]
 			public MemoryNode Slice(nint start, nint length) => new MemoryNode(Memory.Slice((Int32)start, (Int32)length), previous: null, next: null);
+
+			/// <inheritdoc/>
+			[return: NotNull]
+			public override String ToString() => Memory.ToString();
 		}
 	}
 }

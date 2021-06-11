@@ -2,7 +2,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Traits;
 using Collectathon.Arrays;
-using Langly;
 
 namespace Numbersome {
 	/// <summary>
@@ -105,10 +104,10 @@ namespace Numbersome {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public override String ToString() => Collection.ToString(this);
+		public override String ToString() => Elements.ToString();
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public String ToString(nint amount) => Collection.ToString(this, amount);
+		public String ToString(nint amount) => Elements.ToString(amount);
 	}
 }

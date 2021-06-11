@@ -3,7 +3,6 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Traits;
 using Collectathon.Lists;
-using Langly;
 
 namespace Collectathon.Nodes {
 	/// <summary>
@@ -76,20 +75,12 @@ namespace Collectathon.Nodes {
 		/// <returns>A list section to be relinked.</returns>
 		public abstract (TSelf Head, TSelf Tail) Remove([AllowNull] TElement element);
 
-		/// <summary>
-		/// Replaces all instances of <paramref name="search"/> with <paramref name="replace"/>.
-		/// </summary>
-		/// <param name="search">The element to replace.</param>
-		/// <param name="replace">The element to use instead.</param>
-		/// <returns>A list section to be relinked.</returns>
-		public abstract (TSelf Head, TSelf Tail) Replace([AllowNull] TElement search, [AllowNull] TElement replace);
+		/// <inheritdoc/>
+		[return: NotNull]
+		public abstract override String ToString();
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public override String ToString() => Collection.ToString(this);
-
-		/// <inheritdoc/>
-		[return: NotNull]
-		public String ToString(nint amount) => Collection.ToString(this, amount);
+		public abstract String ToString(nint amount);
 	}
 }

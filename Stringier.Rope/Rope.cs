@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
-#if NETCOREAPP3_0_OR_GREATER
 using System.Text;
-#endif
 using System.Traits;
-using Langly;
 
 namespace Stringier {
 	/// <summary>
@@ -13,7 +10,7 @@ namespace Stringier {
 	/// </summary>
 	[DebuggerDisplay("{ToString(),nq}")]
 	public sealed partial class Rope :
-		IAddMemory<Char>,
+		IAddMemory<Char>, IAdd<String>,
 		IClear,
 		IEquatable<Rope>, IEquatable<Char>,
 #if NETCOREAPP3_0_OR_GREATER
@@ -21,9 +18,9 @@ namespace Stringier {
 #endif
 		IEquatable<String>, IEquatable<Char[]>, IEquatable<Memory<Char>>, IEquatable<ReadOnlyMemory<Char>>,
 		IIndex<nint, Char>,
-		IInsertMemory<nint, Char>,
-		IPostpendMemory<Char>,
-		IPrependMemory<Char>,
+		IInsertMemory<nint, Char>, IInsert<nint, String>,
+		IPostpendMemory<Char>, IPostpend<String>,
+		IPrependMemory<Char>, IPrepend<String>,
 		IRemove<Char>,
 		IReplace<Char>,
 		ISequence<Char, Rope.Enumerator> {
@@ -54,7 +51,7 @@ namespace Stringier {
 		/// Initializes a new <see cref="Rope"/> with the initial <paramref name="elements"/>.
 		/// </summary>
 		/// <param name="elements">The initial elements of the rope.</param>
-		public Rope([DisallowNull] String elements) : this() => this.Add(elements);
+		public Rope([DisallowNull] String elements) : this() => Add(elements);
 
 		/// <summary>
 		/// Initializes a new <see cref="Rope"/> with the initial <paramref name="elements"/>.
@@ -536,14 +533,11 @@ namespace Stringier {
 		public void Add(ReadOnlyMemory<Char> elements) => Postpend(elements);
 
 		/// <inheritdoc/>
+		public void Add([AllowNull] String element) => throw new NotImplementedException();
+
+		/// <inheritdoc/>
 		public void Clear() {
-			Node P = null!;
-			Node? N = Head;
-			while (N is not null) {
-				P = N;
-				N = N.Next;
-				P.Clear();
-			}
+			Collection.Clear(Head);
 			Head = null;
 			Tail = null;
 			Count = 0;
@@ -930,6 +924,9 @@ namespace Stringier {
 		}
 
 		/// <inheritdoc/>
+		public void Insert(nint index, [AllowNull] String element) => throw new NotImplementedException();
+
+		/// <inheritdoc/>
 		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Postpend(Char element) {
 			if (Count > 0) {
@@ -964,6 +961,9 @@ namespace Stringier {
 		}
 
 		/// <inheritdoc/>
+		public void Postpend([AllowNull] String element) => throw new NotImplementedException();
+
+		/// <inheritdoc/>
 		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Prepend(Char element) {
 			if (Count > 0) {
@@ -994,6 +994,9 @@ namespace Stringier {
 			}
 			Count++;
 		}
+
+		/// <inheritdoc/>
+		public void Prepend([AllowNull] String element) => throw new NotImplementedException();
 
 		/// <inheritdoc/>
 		public void Remove(Char element) => throw new NotImplementedException();
@@ -1038,10 +1041,38 @@ namespace Stringier {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public override String ToString() => Collection.ToString(this);
+		public override String ToString() {
+			StringBuilder builder = new StringBuilder();
+			if (Head is not null) {
+				Node? N = Head;
+				nint i = 0;
+				while (N is not null) {
+					_ = builder.Append(N);
+					N = N.Next;
+				}
+			}
+			return $"{builder}";
+		}
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public String ToString(nint amount) => Collection.ToString(this, amount);
+		public String ToString(nint amount) {
+			StringBuilder builder = new StringBuilder();
+			if (Head is not null) {
+				Node? N = Head;
+				nint i = 0;
+				while (N is not null) {
+					if (i + N.Count > amount) {
+						_ = builder.Append(N.ToString().Substring(0, (Int32)(amount - i))).Append("...");
+						break;
+					} else {
+						_ = builder.Append(N);
+					}
+					i += N.Count;
+					N = N.Next;
+				}
+			}
+			return $"{builder}";
+		}
 	}
 }

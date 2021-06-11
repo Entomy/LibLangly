@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Traits;
-using Langly;
 
 namespace Collectathon.Queues {
 	public sealed partial class Queue<TElement> :
@@ -51,27 +50,14 @@ namespace Collectathon.Queues {
 
 		/// <inheritdoc/>
 		public void Clear() {
-			Node P = null!;
-			Node? N = Head;
-			while (N is not null) {
-				P = N;
-				N = N.Next;
-				P.Next = null;
-			}
+			Collection.Clear(Head);
 			Head = null;
 			Tail = null;
 			Count = 0;
 		}
 
 		/// <inheritdoc/>
-		public Boolean Contains([AllowNull] TElement element) {
-			Node? N = Head;
-			while (N is not null) {
-				if (Equals(N.Element, element)) return true;
-				N = N.Next;
-			}
-			return false;
-		}
+		public Boolean Contains([AllowNull] TElement element) => Collection.Contains(Head, element);
 
 		/// <summary>
 		/// Dequeues the first element in this <see cref="Queue{TElement}"/>.
@@ -117,6 +103,7 @@ namespace Collectathon.Queues {
 		/// Peeks at the first element in this <see cref="Queue{TElement}"/>.
 		/// </summary>
 		/// <returns>The first element.</returns>
+		[return: MaybeNull]
 		public TElement Peek() => Head.Element;
 
 		/// <inheritdoc/>
@@ -129,11 +116,11 @@ namespace Collectathon.Queues {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public override String ToString() => Collection.ToString(this);
+		public override String ToString() => Collection.ToString(Head, Count);
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public String ToString(nint amount) => Collection.ToString(this, amount);
+		public String ToString(nint amount) => Collection.ToString(Head, Count, amount);
 
 		/// <inheritdoc/>
 		public void Write([AllowNull] TElement element) => Enqueue(element);

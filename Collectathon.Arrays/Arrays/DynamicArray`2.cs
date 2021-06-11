@@ -10,6 +10,12 @@ namespace Collectathon.Arrays {
 	/// <typeparam name="TElement">The type of the elements of the array.</typeparam>
 	public sealed class DynamicArray<TIndex, TElement> : FlexibleArray<TIndex, TElement, DynamicArray<TIndex, TElement>>, IResize {
 		/// <summary>
+		/// Phi, the golden ratio.
+		/// </summary>
+		[SuppressMessage("Naming", "AV1706:Identifier contains an abbreviation or is too short", Justification = "Phi is a well known math constant.")]
+		private const Double φ = 1.6180339887_4989484820_4586834365_6381177203_0917980576_2862135448_6227052604_6281890244_9707207204_1893911374_8475408807_5386891752;
+
+		/// <summary>
 		/// Initializes a new <see cref="DynamicArray{TIndex, TElement}"/>.
 		/// </summary>
 		public DynamicArray() : this(0) { }
@@ -50,9 +56,33 @@ namespace Collectathon.Arrays {
 		/// <inheritdoc/>
 		protected override void Add([DisallowNull] TIndex index, [AllowNull] TElement element) {
 			if (Count == Capacity) {
-				this.Grow();
+				Grow();
 			}
 			base.Add(index, element);
+		}
+
+		/// <summary>
+		/// Grows this collection by a computed factor.
+		/// </summary>
+		private void Grow() {
+			if (Capacity >= 8) {
+				Resize((nint)(Capacity * φ));
+			} else {
+				Resize(13);
+			}
+		}
+
+		/// <summary>
+		/// Grows this collection by a computed factor, to at least a specified <paramref name="minimum"/>.
+		/// </summary>
+		/// <param name="minimum">The minimum allowed size.</param>
+		private void Grow(nint minimum) {
+			Double size = Capacity;
+			while (size < minimum) {
+				size += 4.0;
+				size *= φ;
+			}
+			Resize((nint)size);
 		}
 	}
 }

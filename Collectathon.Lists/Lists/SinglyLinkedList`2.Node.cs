@@ -16,7 +16,7 @@ namespace Collectathon.Lists {
 			public Node([DisallowNull] TIndex index, [AllowNull] TElement element, [AllowNull] Node next) : base(index, element, next) { }
 
 			/// <inheritdoc/>
-			public override void Clear() => Next = null;
+			public override void Unlink() => Next = null;
 
 			/// <inheritdoc/>
 			[return: NotNull]

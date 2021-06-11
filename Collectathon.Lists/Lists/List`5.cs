@@ -3,7 +3,6 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Traits;
 using Collectathon.Nodes;
-using Langly;
 
 namespace Collectathon.Lists {
 	/// <summary>
@@ -65,13 +64,7 @@ namespace Collectathon.Lists {
 
 		/// <inheritdoc/>
 		public void Clear() {
-			TNode P = null!;
-			TNode? N = Head;
-			while (N is not null) {
-				P = N;
-				N = N.Next;
-				P.Clear();
-			}
+			Collection.Clear(Head);
 			Head = null;
 			Tail = null;
 			Count = 0;
@@ -101,11 +94,11 @@ namespace Collectathon.Lists {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public sealed override String ToString() => Collection.ToString(this);
+		public sealed override String ToString() => Collection.ToString(Head, Count);
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public String ToString(nint amount) => Collection.ToString(this, amount);
+		public String ToString(nint amount) => Collection.ToString(Head, Count, amount);
 
 		/// <summary>
 		/// Creates a new, unlinked, node.

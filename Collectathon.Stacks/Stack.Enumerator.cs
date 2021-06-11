@@ -4,7 +4,6 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 using System.Traits;
-using Langly;
 
 namespace Collectathon.Stacks {
 	public partial class Stack<TElement> {
@@ -77,11 +76,11 @@ namespace Collectathon.Stacks {
 
 			/// <inheritdoc/>
 			[return: NotNull]
-			public override String ToString() => Collection.ToString(this);
+			public override String ToString() => Collection.ToString(Stack.Head, Stack.Count);
 
 			/// <inheritdoc/>
 			[return: NotNull]
-			public String ToString(nint amount) => Collection.ToString(this, amount);
+			public String ToString(nint amount) => Collection.ToString(Stack.Head, Stack.Count, amount);
 		}
 	}
 }

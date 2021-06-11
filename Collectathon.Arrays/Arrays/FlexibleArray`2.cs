@@ -2,7 +2,6 @@
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Traits;
-using Langly;
 
 namespace Collectathon.Arrays {
 	/// <summary>
@@ -360,11 +359,11 @@ namespace Collectathon.Arrays {
 		/// <inheritdoc/>
 		[O(Complexity.n), Ω(Complexity.n), Θ(Complexity.n)]
 		[return: NotNull]
-		public sealed override String ToString() => Collection.ToString(this);
+		public sealed override String ToString() => Collection.ToString(Memory);
 
 		/// <inheritdoc/>
 		[O(Complexity.n), Ω(Complexity.n), Θ(Complexity.n)]
 		[return: NotNull]
-		public String ToString(nint amount) => Collection.ToString(this, amount);
+		public String ToString(nint amount) => Collection.ToString(Memory, amount);
 	}
 }
