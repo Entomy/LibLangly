@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Struct StandardList&lt;TElement, TNode, TSelf&gt;.Enumerator
+    <title>Struct MemoryEnumerator&lt;TElement&gt;
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Struct StandardList&lt;TElement, TNode, TSelf&gt;.Enumerator
+    <meta name="title" content="Struct MemoryEnumerator&lt;TElement&gt;
    ">
     <meta name="generator" content="docfx 2.58.0.0">
     
@@ -68,12 +68,12 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Collectathon.Lists.StandardList`3.Enumerator">
+            <article class="content wrap" id="_content" data-uid="Collectathon.MemoryEnumerator`1">
   
   
-  <h1 id="Collectathon_Lists_StandardList_3_Enumerator" data-uid="Collectathon.Lists.StandardList`3.Enumerator" class="text-break">Struct StandardList&lt;TElement, TNode, TSelf&gt;.Enumerator
+  <h1 id="Collectathon_MemoryEnumerator_1" data-uid="Collectathon.MemoryEnumerator`1" class="text-break">Struct MemoryEnumerator&lt;TElement&gt;
   </h1>
-  <div class="markdown level0 summary"><p>Provides enumeration over a <a class="xref" href="Collectathon.Lists.StandardList-3.html">StandardList&lt;TElement, TNode, TSelf&gt;</a>.</p>
+  <div class="markdown level0 summary"><p>Provides enumeration over contiguous regions of memory.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div classs="implements">
@@ -96,6 +96,9 @@
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetype.gethashcode#System_ValueType_GetHashCode">ValueType.GetHashCode()</a>
     </div>
     <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetype.tostring#System_ValueType_ToString">ValueType.ToString()</a>
+    </div>
+    <div>
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_System_Object_">Object.Equals(Object, Object)</a>
     </div>
     <div>
@@ -105,29 +108,45 @@
       <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#System_Object_ReferenceEquals_System_Object_System_Object_">Object.ReferenceEquals(Object, Object)</a>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="Collectathon.Lists.html">Collectathon.Lists</a></h6>
-  <h6><strong>Assembly</strong>: Collectathon.Lists.dll</h6>
-  <h5 id="Collectathon_Lists_StandardList_3_Enumerator_syntax">Syntax</h5>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Collectathon.html">Collectathon</a></h6>
+  <h6><strong>Assembly</strong>: Collectathon.Traits.dll</h6>
+  <h5 id="Collectathon_MemoryEnumerator_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public struct Enumerator : IEnumerator&lt;TElement&gt;, IEnumerator&lt;TElement&gt;, IEnumerator, IDisposable, ISequence&lt;TElement, IEnumerator&lt;TElement&gt;&gt;, ICount, IEnumerable&lt;TElement&gt;, IEnumerable</code></pre>
+    <pre><code class="lang-csharp hljs">public struct MemoryEnumerator&lt;TElement&gt; : IEnumerator&lt;TElement&gt;, IEnumerator&lt;TElement&gt;, IEnumerator, IDisposable, ISequence&lt;TElement, IEnumerator&lt;TElement&gt;&gt;, ICount, IEnumerable&lt;TElement&gt;, IEnumerable</code></pre>
   </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of the elements being enumerated.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="constructors">Constructors
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_StandardList_3_Enumerator__ctor_Collectathon_Lists_StandardList__0__1__2__.md&amp;value=---%0Auid%3A%20Collectathon.Lists.StandardList%603.Enumerator.%23ctor(Collectathon.Lists.StandardList%7B%600%2C%601%2C%602%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_MemoryEnumerator_1__ctor_System_ReadOnlyMemory__0__System_IntPtr_.md&amp;value=---%0Auid%3A%20Collectathon.MemoryEnumerator%601.%23ctor(System.ReadOnlyMemory%7B%600%7D%2CSystem.IntPtr)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/StandardList`3.Enumerator.cs/#L29">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Traits/MemoryEnumerator.cs/#L32">View Source</a>
   </span>
-  <a id="Collectathon_Lists_StandardList_3_Enumerator__ctor_" data-uid="Collectathon.Lists.StandardList`3.Enumerator.#ctor*"></a>
-  <h4 id="Collectathon_Lists_StandardList_3_Enumerator__ctor_Collectathon_Lists_StandardList__0__1__2__" data-uid="Collectathon.Lists.StandardList`3.Enumerator.#ctor(Collectathon.Lists.StandardList{`0,`1,`2})">Enumerator(StandardList&lt;TElement, TNode, TSelf&gt;)</h4>
-  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Collectathon.Lists.StandardList-3.Enumerator.html">StandardList&lt;TElement, TNode, TSelf&gt;.Enumerator</a>.</p>
+  <a id="Collectathon_MemoryEnumerator_1__ctor_" data-uid="Collectathon.MemoryEnumerator`1.#ctor*"></a>
+  <h4 id="Collectathon_MemoryEnumerator_1__ctor_System_ReadOnlyMemory__0__System_IntPtr_" data-uid="Collectathon.MemoryEnumerator`1.#ctor(System.ReadOnlyMemory{`0},System.IntPtr)">MemoryEnumerator(ReadOnlyMemory&lt;TElement&gt;, IntPtr)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Collectathon.MemoryEnumerator-1.html">MemoryEnumerator&lt;TElement&gt;</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Enumerator(StandardList&lt;TElement, TNode, TSelf&gt; list)</code></pre>
+    <pre><code class="lang-csharp hljs">public MemoryEnumerator(ReadOnlyMemory&lt;TElement&gt; memory, nint length)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -140,24 +159,33 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Collectathon.Lists.StandardList-3.html">StandardList</a>&lt;TElement, TNode, TSelf&gt;</td>
-        <td><span class="parametername">list</span></td>
-        <td><p>The list to enumerate.</p>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">memory</span></td>
+        <td><p>The memory to enumerate over.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.intptr">IntPtr</a></td>
+        <td><span class="parametername">length</span></td>
+        <td><p>The length of the active <code data-dev-comment-type="paramref" class="paramref">memory</code>.</p>
 </td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Collectathon_MemoryEnumerator_1__ctor_System_ReadOnlyMemory__0__System_IntPtr__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>At first it might seem like <code data-dev-comment-type="paramref" class="paramref">length</code> is superfluous, as <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory&lt;T&gt;</a> has a known length. However, many data structures use an array as an allocated chunk of memory, with the actual array as a portion of this, up to the entire chunk. <code data-dev-comment-type="paramref" class="paramref">length</code> is the actually used portion.</p>
+</div>
   <h3 id="properties">Properties
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_StandardList_3_Enumerator_Count.md&amp;value=---%0Auid%3A%20Collectathon.Lists.StandardList%603.Enumerator.Count%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_MemoryEnumerator_1_Count.md&amp;value=---%0Auid%3A%20Collectathon.MemoryEnumerator%601.Count%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/StandardList`3.Enumerator.cs/#L43">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Traits/MemoryEnumerator.cs/#L48">View Source</a>
   </span>
-  <a id="Collectathon_Lists_StandardList_3_Enumerator_Count_" data-uid="Collectathon.Lists.StandardList`3.Enumerator.Count*"></a>
-  <h4 id="Collectathon_Lists_StandardList_3_Enumerator_Count" data-uid="Collectathon.Lists.StandardList`3.Enumerator.Count">Count</h4>
+  <a id="Collectathon_MemoryEnumerator_1_Count_" data-uid="Collectathon.MemoryEnumerator`1.Count*"></a>
+  <h4 id="Collectathon_MemoryEnumerator_1_Count" data-uid="Collectathon.MemoryEnumerator`1.Count">Count</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -181,13 +209,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_StandardList_3_Enumerator_Current.md&amp;value=---%0Auid%3A%20Collectathon.Lists.StandardList%603.Enumerator.Current%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_MemoryEnumerator_1_Current.md&amp;value=---%0Auid%3A%20Collectathon.MemoryEnumerator%601.Current%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/StandardList`3.Enumerator.cs/#L35">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Traits/MemoryEnumerator.cs/#L39">View Source</a>
   </span>
-  <a id="Collectathon_Lists_StandardList_3_Enumerator_Current_" data-uid="Collectathon.Lists.StandardList`3.Enumerator.Current*"></a>
-  <h4 id="Collectathon_Lists_StandardList_3_Enumerator_Current" data-uid="Collectathon.Lists.StandardList`3.Enumerator.Current">Current</h4>
+  <a id="Collectathon_MemoryEnumerator_1_Current_" data-uid="Collectathon.MemoryEnumerator`1.Current*"></a>
+  <h4 id="Collectathon_MemoryEnumerator_1_Current" data-uid="Collectathon.MemoryEnumerator`1.Current">Current</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -213,13 +241,13 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_StandardList_3_Enumerator_MoveNext.md&amp;value=---%0Auid%3A%20Collectathon.Lists.StandardList%603.Enumerator.MoveNext%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_MemoryEnumerator_1_MoveNext.md&amp;value=---%0Auid%3A%20Collectathon.MemoryEnumerator%601.MoveNext%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/StandardList`3.Enumerator.cs/#L65">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Traits/MemoryEnumerator.cs/#L70">View Source</a>
   </span>
-  <a id="Collectathon_Lists_StandardList_3_Enumerator_MoveNext_" data-uid="Collectathon.Lists.StandardList`3.Enumerator.MoveNext*"></a>
-  <h4 id="Collectathon_Lists_StandardList_3_Enumerator_MoveNext" data-uid="Collectathon.Lists.StandardList`3.Enumerator.MoveNext">MoveNext()</h4>
+  <a id="Collectathon_MemoryEnumerator_1_MoveNext_" data-uid="Collectathon.MemoryEnumerator`1.MoveNext*"></a>
+  <h4 id="Collectathon_MemoryEnumerator_1_MoveNext" data-uid="Collectathon.MemoryEnumerator`1.MoveNext">MoveNext()</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -243,130 +271,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_StandardList_3_Enumerator_Reset.md&amp;value=---%0Auid%3A%20Collectathon.Lists.StandardList%603.Enumerator.Reset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_MemoryEnumerator_1_Reset.md&amp;value=---%0Auid%3A%20Collectathon.MemoryEnumerator%601.Reset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/StandardList`3.Enumerator.cs/#L77">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Traits/MemoryEnumerator.cs/#L73">View Source</a>
   </span>
-  <a id="Collectathon_Lists_StandardList_3_Enumerator_Reset_" data-uid="Collectathon.Lists.StandardList`3.Enumerator.Reset*"></a>
-  <h4 id="Collectathon_Lists_StandardList_3_Enumerator_Reset" data-uid="Collectathon.Lists.StandardList`3.Enumerator.Reset">Reset()</h4>
+  <a id="Collectathon_MemoryEnumerator_1_Reset_" data-uid="Collectathon.MemoryEnumerator`1.Reset*"></a>
+  <h4 id="Collectathon_MemoryEnumerator_1_Reset" data-uid="Collectathon.MemoryEnumerator`1.Reset">Reset()</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void Reset()</code></pre>
   </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_StandardList_3_Enumerator_ToString.md&amp;value=---%0Auid%3A%20Collectathon.Lists.StandardList%603.Enumerator.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/StandardList`3.Enumerator.cs/#L80">View Source</a>
-  </span>
-  <a id="Collectathon_Lists_StandardList_3_Enumerator_ToString_" data-uid="Collectathon.Lists.StandardList`3.Enumerator.ToString*"></a>
-  <h4 id="Collectathon_Lists_StandardList_3_Enumerator_ToString" data-uid="Collectathon.Lists.StandardList`3.Enumerator.ToString">ToString()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetype.tostring#System_ValueType_ToString">ValueType.ToString()</a></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_StandardList_3_Enumerator_ToString_System_IntPtr_.md&amp;value=---%0Auid%3A%20Collectathon.Lists.StandardList%603.Enumerator.ToString(System.IntPtr)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/StandardList`3.Enumerator.cs/#L84">View Source</a>
-  </span>
-  <a id="Collectathon_Lists_StandardList_3_Enumerator_ToString_" data-uid="Collectathon.Lists.StandardList`3.Enumerator.ToString*"></a>
-  <h4 id="Collectathon_Lists_StandardList_3_Enumerator_ToString_System_IntPtr_" data-uid="Collectathon.Lists.StandardList`3.Enumerator.ToString(System.IntPtr)">ToString(IntPtr)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string ToString(nint amount)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.intptr">IntPtr</a></td>
-        <td><span class="parametername">amount</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="eii">Explicit Interface Implementations
-  </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_StandardList_3_Enumerator_System_Collections_IEnumerator_Current.md&amp;value=---%0Auid%3A%20Collectathon.Lists.StandardList%603.Enumerator.System%23Collections%23IEnumerator%23Current%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/StandardList`3.Enumerator.cs/#L39">View Source</a>
-  </span>
-  <a id="Collectathon_Lists_StandardList_3_Enumerator_System_Collections_IEnumerator_Current_" data-uid="Collectathon.Lists.StandardList`3.Enumerator.System#Collections#IEnumerator#Current*"></a>
-  <h4 id="Collectathon_Lists_StandardList_3_Enumerator_System_Collections_IEnumerator_Current" data-uid="Collectathon.Lists.StandardList`3.Enumerator.System#Collections#IEnumerator#Current">IEnumerator.Current</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">readonly object IEnumerator.Current { get; }</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="System.Traits.IEnumerator-1.html">IEnumerator&lt;TElement&gt;</a>
@@ -437,10 +354,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Lists_StandardList_3_Enumerator.md&amp;value=---%0Auid%3A%20Collectathon.Lists.StandardList%603.Enumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_MemoryEnumerator_1.md&amp;value=---%0Auid%3A%20Collectathon.MemoryEnumerator%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Lists/StandardList`3.Enumerator.cs/#L11" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Traits/MemoryEnumerator.cs/#L12" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

@@ -10,7 +10,7 @@ namespace Collectathon.Arrays {
 	/// <typeparam name="TElement">The type of the elements in the array.</typeparam>
 	/// <typeparam name="TSelf">The implementing type; itself.</typeparam>
 	[DebuggerDisplay("{ToString(5),nq}")]
-	public abstract partial class FlexibleArray<TElement, TSelf> :
+	public abstract class FlexibleArray<TElement, TSelf> :
 		IAddSpan<TElement>,
 		ICapacity,
 		IClear,
@@ -22,7 +22,7 @@ namespace Collectathon.Arrays {
 		IPrependSpan<TElement>,
 		IRemove<TElement>,
 		IReplace<TElement>,
-		ISequence<TElement, FlexibleArray<TElement, TSelf>.Enumerator>,
+		ISequence<TElement, MemoryEnumerator<TElement>>,
 		IShift,
 		ISlice<Memory<TElement>>
 		where TSelf : FlexibleArray<TElement, TSelf> {
@@ -185,7 +185,7 @@ namespace Collectathon.Arrays {
 		public Boolean Equals([AllowNull] System.Collections.Generic.IEnumerable<TElement> other) => Collection.Equals(this, other);
 
 		/// <inheritdoc/>
-		public Enumerator GetEnumerator() => new Enumerator(Memory, Count);
+		public MemoryEnumerator<TElement> GetEnumerator() => new MemoryEnumerator<TElement>(Memory, Count);
 
 		/// <inheritdoc/>
 		[return: NotNull]

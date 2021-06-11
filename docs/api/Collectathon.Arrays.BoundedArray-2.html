@@ -89,7 +89,7 @@
     <div><a class="xref" href="System.Traits.IIndex-2.html">IIndex</a>&lt;TIndex, TElement&gt;</div>
     <div><a class="xref" href="System.Traits.IIndexReadOnly-2.html">IIndexReadOnly</a>&lt;TIndex, TElement&gt;</div>
     <div><a class="xref" href="System.Traits.IInsert-2.html">IInsert</a>&lt;TIndex, TElement&gt;</div>
-    <div><a class="xref" href="System.Traits.ISequence-2.html">ISequence</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">(T1, T2)</a>&lt;TIndex, TElement&gt;, <a class="xref" href="Collectathon.Arrays.FlexibleArray-3.Enumerator.html">FlexibleArray.Enumerator</a>&lt;&gt;&gt;</div>
+    <div><a class="xref" href="System.Traits.ISequence-2.html">ISequence</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">(T1, T2)</a>&lt;TIndex, TElement&gt;, <a class="xref" href="Collectathon.MemoryEnumerator-1.html">MemoryEnumerator</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">(T1, T2)</a>&lt;TIndex, TElement&gt;&gt;&gt;</div>
     <div><a class="xref" href="System.Traits.ICount.html">ICount</a></div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">(T1, T2)</a>&lt;TIndex, TElement&gt;&gt;</div>
     <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
@@ -161,7 +161,7 @@
   <h6><strong>Assembly</strong>: Collectathon.Arrays.dll</h6>
   <h5 id="Collectathon_Arrays_BoundedArray_2_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class BoundedArray&lt;TIndex, TElement&gt; : FlexibleArray&lt;TIndex, TElement, BoundedArray&lt;TIndex, TElement&gt;&gt;, ICapacity, IClear, IIndex&lt;TIndex, TElement&gt;, IIndexReadOnly&lt;TIndex, TElement&gt;, IInsert&lt;TIndex, TElement&gt;, ISequence&lt;(TIndex Index, TElement Element), FlexibleArray&lt;TIndex, TElement, BoundedArray&lt;TIndex, TElement&gt;&gt;.Enumerator&gt;, ICount, IEnumerable&lt;(TIndex Index, TElement Element)&gt;, IEnumerable</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class BoundedArray&lt;TIndex, TElement&gt; : FlexibleArray&lt;TIndex, TElement, BoundedArray&lt;TIndex, TElement&gt;&gt;, ICapacity, IClear, IIndex&lt;TIndex, TElement&gt;, IIndexReadOnly&lt;TIndex, TElement&gt;, IInsert&lt;TIndex, TElement&gt;, ISequence&lt;(TIndex Index, TElement Element), MemoryEnumerator&lt;(TIndex Index, TElement Element)&gt;&gt;, ICount, IEnumerable&lt;(TIndex Index, TElement Element)&gt;, IEnumerable</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -280,8 +280,7 @@
   </span>
   <a id="Collectathon_Arrays_BoundedArray_2_Add_" data-uid="Collectathon.Arrays.BoundedArray`2.Add*"></a>
   <h4 id="Collectathon_Arrays_BoundedArray_2_Add__0__1_" data-uid="Collectathon.Arrays.BoundedArray`2.Add(`0,`1)">Add(TIndex, TElement)</h4>
-  <div class="markdown level1 summary"><p>Adds an element to this object.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -300,14 +299,12 @@
       <tr>
         <td><span class="xref">TIndex</span></td>
         <td><span class="parametername">index</span></td>
-        <td><p>The index of the element to add.</p>
-</td>
+        <td></td>
       </tr>
       <tr>
         <td><span class="xref">TElement</span></td>
         <td><span class="parametername">element</span></td>
-        <td><p>The element to add.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>

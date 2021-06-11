@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Traits;
+using Collectathon;
 using Collectathon.Arrays;
 
 namespace Numbersome {
@@ -16,7 +17,7 @@ namespace Numbersome {
 		IClear,
 		IContains<TElement>,
 		IIndexReadOnly<TElement, nint>,
-		ISequence<(TElement Element, nint Count), DynamicArray<TElement, nint>.Enumerator> {
+		ISequence<(TElement Element, nint Count), MemoryEnumerator<(TElement Element, nint Count)>> {
 		/// <summary>
 		/// The backing association of this <see cref="Counter{TElement}"/>.
 		/// </summary>
@@ -92,7 +93,7 @@ namespace Numbersome {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public DynamicArray<TElement, nint>.Enumerator GetEnumerator() => new DynamicArray<TElement, nint>.Enumerator(Elements);
+		public MemoryEnumerator<(TElement Element, nint Count)> GetEnumerator() => Elements.GetEnumerator();
 
 		/// <inheritdoc/>
 		[return: NotNull]
