@@ -174,9 +174,7 @@ namespace Collectathon.Lists {
 		/// Creates a new, unlinked, node.
 		/// </summary>
 		/// <param name="element">The element to put into the node.</param>
-		/// <remarks>
-		/// A node containing the <paramref name="element"/> with no links to other nodes.
-		/// </remarks>
+		/// <returns>A node containing the <paramref name="element"/> with no links to other nodes.</returns>
 		[return: NotNull]
 		protected abstract TNode NewUnlinkedNode([AllowNull] TElement element);
 	}

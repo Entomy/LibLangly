@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Traits;
-using Collectathon.Lists;
+using Collectathon.Enumerators;
 using Collectathon.Nodes;
 
 namespace Collectathon.Stacks {
@@ -15,7 +15,7 @@ namespace Collectathon.Stacks {
 		IClear,
 		IContains<TElement>,
 		IPeek<TElement>,
-		ISequence<TElement, StandardListEnumerator<TElement, StackNode<TElement>>>,
+		ISequence<TElement, StackEnumerator<TElement>>,
 		IWrite<TElement> {
 		/// <summary>
 		/// The head of the stack; the first element.
@@ -62,7 +62,7 @@ namespace Collectathon.Stacks {
 		public Boolean Contains([AllowNull] TElement element) => Collection.Contains(Head, element);
 
 		/// <inheritdoc/>
-		public StandardListEnumerator<TElement, StackNode<TElement>> GetEnumerator() => new StandardListEnumerator<TElement, StackNode<TElement>>(Head, Count);
+		public StackEnumerator<TElement> GetEnumerator() => new StackEnumerator<TElement>(Head, Count);
 
 		/// <inheritdoc/>
 		[return: NotNull]

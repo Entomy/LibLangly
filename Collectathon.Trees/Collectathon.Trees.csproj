@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>netstandard1.3;netstandard2.1</TargetFrameworks>
+		<LangVersion>9.0</LangVersion>
+		<Nullable>enable</Nullable>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<Description>Provides more sophisticated trees, and a framework for the creation of new tree types.</Description>
+		<PackageTags>collection, collections, container, containers, data structure, data structures, abstract data type, abstract data types, adt, trait, traits, tree, trees</PackageTags>
+		<AssemblyName>Collectathon.Trees</AssemblyName>
+		<RootNamespace>Collectathon</RootNamespace>
+		<PackageIcon>Logo.png</PackageIcon>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Include="..\GlobalSuppressions.cs" Link="GlobalSuppressions.cs" />
+		<None Include="Logo.png" Pack="true" Visible="true" PackagePath="\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="System.ValueTuple" Version="4.5.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Collectathon.Arrays\Collectathon.Arrays.csproj" />
+	</ItemGroup>
+
+</Project>

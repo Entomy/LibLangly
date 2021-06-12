@@ -1,0 +1,621 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class BinaryTreeNode&lt;TElement&gt;
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class BinaryTreeNode&lt;TElement&gt;
+   ">
+    <meta name="generator" content="docfx 2.58.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Collectathon.Nodes.BinaryTreeNode`1">
+  
+  
+  <h1 id="Collectathon_Nodes_BinaryTreeNode_1" data-uid="Collectathon.Nodes.BinaryTreeNode`1" class="text-break">Class BinaryTreeNode&lt;TElement&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>Represents any <a class="xref" href="Collectathon.Trees.BinaryTree-1.html">BinaryTree&lt;TElement&gt;</a> node.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><a class="xref" href="Collectathon.Nodes.TreeNode-2.html">TreeNode</a>&lt;TElement, <a class="xref" href="Collectathon.Nodes.BinaryTreeNode-1.html">BinaryTreeNode</a>&lt;TElement&gt;&gt;</div>
+    <div class="level2"><span class="xref">BinaryTreeNode&lt;TElement&gt;</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="System.Traits.IAdd-1.html">IAdd</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IClear.html">IClear</a></div>
+    <div><a class="xref" href="System.Traits.IContains-1.html">IContains</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.ICount.html">ICount</a></div>
+    <div><a class="xref" href="System.Traits.IParent-1.html">IParent</a>&lt;<a class="xref" href="Collectathon.Nodes.BinaryTreeNode-1.html">BinaryTreeNode</a>&lt;TElement&gt;&gt;</div>
+    <div><a class="xref" href="System.Traits.IRemove-1.html">IRemove</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IReplace-1.html">IReplace</a>&lt;TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IReplace-2.html">IReplace</a>&lt;TElement, TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IUnlink.html">IUnlink</a></div>
+    <div><a class="xref" href="System.Traits.ILeft-1.html">ILeft</a>&lt;<a class="xref" href="Collectathon.Nodes.BinaryTreeNode-1.html">BinaryTreeNode</a>&lt;TElement&gt;&gt;</div>
+    <div><a class="xref" href="System.Traits.IRight-1.html">IRight</a>&lt;<a class="xref" href="Collectathon.Nodes.BinaryTreeNode-1.html">BinaryTreeNode</a>&lt;TElement&gt;&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Collectathon.Nodes.TreeNode-2.html#Collectathon_Nodes_TreeNode_2_Count">TreeNode&lt;TElement, BinaryTreeNode&lt;TElement&gt;&gt;.Count</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Nodes.TreeNode-2.html#Collectathon_Nodes_TreeNode_2_Parent">TreeNode&lt;TElement, BinaryTreeNode&lt;TElement&gt;&gt;.Parent</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Nodes.TreeNode-2.html#Collectathon_Nodes_TreeNode_2_Add__0_">TreeNode&lt;TElement, BinaryTreeNode&lt;TElement&gt;&gt;.Add(TElement)</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Nodes.TreeNode-2.html#Collectathon_Nodes_TreeNode_2_Clear">TreeNode&lt;TElement, BinaryTreeNode&lt;TElement&gt;&gt;.Clear()</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Nodes.TreeNode-2.html#Collectathon_Nodes_TreeNode_2_Contains__0_">TreeNode&lt;TElement, BinaryTreeNode&lt;TElement&gt;&gt;.Contains(TElement)</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Nodes.TreeNode-2.html#Collectathon_Nodes_TreeNode_2_Remove__0_">TreeNode&lt;TElement, BinaryTreeNode&lt;TElement&gt;&gt;.Remove(TElement)</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Nodes.TreeNode-2.html#Collectathon_Nodes_TreeNode_2_RemoveFirst__0_">TreeNode&lt;TElement, BinaryTreeNode&lt;TElement&gt;&gt;.RemoveFirst(TElement)</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Nodes.TreeNode-2.html#Collectathon_Nodes_TreeNode_2_RemoveLast__0_">TreeNode&lt;TElement, BinaryTreeNode&lt;TElement&gt;&gt;.RemoveLast(TElement)</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Nodes.TreeNode-2.html#Collectathon_Nodes_TreeNode_2_Replace__0__0_">TreeNode&lt;TElement, BinaryTreeNode&lt;TElement&gt;&gt;.Replace(TElement, TElement)</a>
+    </div>
+    <div>
+      <a class="xref" href="Collectathon.Nodes.TreeNode-2.html#Collectathon_Nodes_TreeNode_2_Unlink">TreeNode&lt;TElement, BinaryTreeNode&lt;TElement&gt;&gt;.Unlink()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_">Object.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_System_Object_">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#System_Object_GetHashCode">Object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#System_Object_GetType">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#System_Object_MemberwiseClone">Object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#System_Object_ReferenceEquals_System_Object_System_Object_">Object.ReferenceEquals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString">Object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Collectathon.Nodes.html">Collectathon.Nodes</a></h6>
+  <h6><strong>Assembly</strong>: Collectathon.Trees.dll</h6>
+  <h5 id="Collectathon_Nodes_BinaryTreeNode_1_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class BinaryTreeNode&lt;TElement&gt; : TreeNode&lt;TElement, BinaryTreeNode&lt;TElement&gt;&gt;, IAdd&lt;TElement&gt;, IClear, IContains&lt;TElement&gt;, ICount, IParent&lt;BinaryTreeNode&lt;TElement&gt;&gt;, IRemove&lt;TElement&gt;, IReplace&lt;TElement&gt;, IReplace&lt;TElement, TElement&gt;, IUnlink, ILeft&lt;BinaryTreeNode&lt;TElement&gt;&gt;, IRight&lt;BinaryTreeNode&lt;TElement&gt;&gt;</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of the elements in the node.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Nodes_BinaryTreeNode_1__ctor_Collectathon_Nodes_BinaryTreeNode__0__Collectathon_Nodes_BinaryTreeNode__0__Collectathon_Nodes_BinaryTreeNode__0__.md&amp;value=---%0Auid%3A%20Collectathon.Nodes.BinaryTreeNode%601.%23ctor(Collectathon.Nodes.BinaryTreeNode%7B%600%7D%2CCollectathon.Nodes.BinaryTreeNode%7B%600%7D%2CCollectathon.Nodes.BinaryTreeNode%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Trees/Nodes/BinaryTreeNode`1.cs/#L18">View Source</a>
+  </span>
+  <a id="Collectathon_Nodes_BinaryTreeNode_1__ctor_" data-uid="Collectathon.Nodes.BinaryTreeNode`1.#ctor*"></a>
+  <h4 id="Collectathon_Nodes_BinaryTreeNode_1__ctor_Collectathon_Nodes_BinaryTreeNode__0__Collectathon_Nodes_BinaryTreeNode__0__Collectathon_Nodes_BinaryTreeNode__0__" data-uid="Collectathon.Nodes.BinaryTreeNode`1.#ctor(Collectathon.Nodes.BinaryTreeNode{`0},Collectathon.Nodes.BinaryTreeNode{`0},Collectathon.Nodes.BinaryTreeNode{`0})">BinaryTreeNode(BinaryTreeNode&lt;TElement&gt;, BinaryTreeNode&lt;TElement&gt;, BinaryTreeNode&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Collectathon.Nodes.BinaryTreeNode-1.html">BinaryTreeNode&lt;TElement&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BinaryTreeNode(BinaryTreeNode&lt;TElement&gt; parent, BinaryTreeNode&lt;TElement&gt; left, BinaryTreeNode&lt;TElement&gt; right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Collectathon.Nodes.BinaryTreeNode-1.html">BinaryTreeNode</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">parent</span></td>
+        <td><p>The parent node in the tree.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Collectathon.Nodes.BinaryTreeNode-1.html">BinaryTreeNode</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The lefthand child node in the tree.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Collectathon.Nodes.BinaryTreeNode-1.html">BinaryTreeNode</a>&lt;TElement&gt;</td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The righthand child node in the tree.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Nodes_BinaryTreeNode_1_Left.md&amp;value=---%0Auid%3A%20Collectathon.Nodes.BinaryTreeNode%601.Left%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Trees/Nodes/BinaryTreeNode`1.cs/#L24">View Source</a>
+  </span>
+  <a id="Collectathon_Nodes_BinaryTreeNode_1_Left_" data-uid="Collectathon.Nodes.BinaryTreeNode`1.Left*"></a>
+  <h4 id="Collectathon_Nodes_BinaryTreeNode_1_Left" data-uid="Collectathon.Nodes.BinaryTreeNode`1.Left">Left</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BinaryTreeNode&lt;TElement&gt; Left { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Collectathon.Nodes.BinaryTreeNode-1.html">BinaryTreeNode</a>&lt;TElement&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Nodes_BinaryTreeNode_1_Right.md&amp;value=---%0Auid%3A%20Collectathon.Nodes.BinaryTreeNode%601.Right%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Trees/Nodes/BinaryTreeNode`1.cs/#L28">View Source</a>
+  </span>
+  <a id="Collectathon_Nodes_BinaryTreeNode_1_Right_" data-uid="Collectathon.Nodes.BinaryTreeNode`1.Right*"></a>
+  <h4 id="Collectathon_Nodes_BinaryTreeNode_1_Right" data-uid="Collectathon.Nodes.BinaryTreeNode`1.Right">Right</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BinaryTreeNode&lt;TElement&gt; Right { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Collectathon.Nodes.BinaryTreeNode-1.html">BinaryTreeNode</a>&lt;TElement&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Nodes_BinaryTreeNode_1_Add__0_.md&amp;value=---%0Auid%3A%20Collectathon.Nodes.BinaryTreeNode%601.Add(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Trees/Nodes/BinaryTreeNode`1.cs/#L32">View Source</a>
+  </span>
+  <a id="Collectathon_Nodes_BinaryTreeNode_1_Add_" data-uid="Collectathon.Nodes.BinaryTreeNode`1.Add*"></a>
+  <h4 id="Collectathon_Nodes_BinaryTreeNode_1_Add__0_" data-uid="Collectathon.Nodes.BinaryTreeNode`1.Add(`0)">Add(TElement)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Add(TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Collectathon.Nodes.TreeNode&lt;TElement, Collectathon.Nodes.BinaryTreeNode&lt;TElement&gt;&gt;.Add(TElement)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Nodes_BinaryTreeNode_1_Clear.md&amp;value=---%0Auid%3A%20Collectathon.Nodes.BinaryTreeNode%601.Clear%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Trees/Nodes/BinaryTreeNode`1.cs/#L35">View Source</a>
+  </span>
+  <a id="Collectathon_Nodes_BinaryTreeNode_1_Clear_" data-uid="Collectathon.Nodes.BinaryTreeNode`1.Clear*"></a>
+  <h4 id="Collectathon_Nodes_BinaryTreeNode_1_Clear" data-uid="Collectathon.Nodes.BinaryTreeNode`1.Clear">Clear()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Clear()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Collectathon.Nodes.TreeNode&lt;TElement, Collectathon.Nodes.BinaryTreeNode&lt;TElement&gt;&gt;.Clear()</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Nodes_BinaryTreeNode_1_Contains__0_.md&amp;value=---%0Auid%3A%20Collectathon.Nodes.BinaryTreeNode%601.Contains(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Trees/Nodes/BinaryTreeNode`1.cs/#L38">View Source</a>
+  </span>
+  <a id="Collectathon_Nodes_BinaryTreeNode_1_Contains_" data-uid="Collectathon.Nodes.BinaryTreeNode`1.Contains*"></a>
+  <h4 id="Collectathon_Nodes_BinaryTreeNode_1_Contains__0_" data-uid="Collectathon.Nodes.BinaryTreeNode`1.Contains(`0)">Contains(TElement)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Contains(TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Collectathon.Nodes.TreeNode&lt;TElement, Collectathon.Nodes.BinaryTreeNode&lt;TElement&gt;&gt;.Contains(TElement)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Nodes_BinaryTreeNode_1_Remove__0_.md&amp;value=---%0Auid%3A%20Collectathon.Nodes.BinaryTreeNode%601.Remove(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Trees/Nodes/BinaryTreeNode`1.cs/#L41">View Source</a>
+  </span>
+  <a id="Collectathon_Nodes_BinaryTreeNode_1_Remove_" data-uid="Collectathon.Nodes.BinaryTreeNode`1.Remove*"></a>
+  <h4 id="Collectathon_Nodes_BinaryTreeNode_1_Remove__0_" data-uid="Collectathon.Nodes.BinaryTreeNode`1.Remove(`0)">Remove(TElement)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Remove(TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Collectathon.Nodes.TreeNode&lt;TElement, Collectathon.Nodes.BinaryTreeNode&lt;TElement&gt;&gt;.Remove(TElement)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Nodes_BinaryTreeNode_1_RemoveFirst__0_.md&amp;value=---%0Auid%3A%20Collectathon.Nodes.BinaryTreeNode%601.RemoveFirst(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Trees/Nodes/BinaryTreeNode`1.cs/#L44">View Source</a>
+  </span>
+  <a id="Collectathon_Nodes_BinaryTreeNode_1_RemoveFirst_" data-uid="Collectathon.Nodes.BinaryTreeNode`1.RemoveFirst*"></a>
+  <h4 id="Collectathon_Nodes_BinaryTreeNode_1_RemoveFirst__0_" data-uid="Collectathon.Nodes.BinaryTreeNode`1.RemoveFirst(`0)">RemoveFirst(TElement)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void RemoveFirst(TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Collectathon.Nodes.TreeNode&lt;TElement, Collectathon.Nodes.BinaryTreeNode&lt;TElement&gt;&gt;.RemoveFirst(TElement)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Nodes_BinaryTreeNode_1_RemoveLast__0_.md&amp;value=---%0Auid%3A%20Collectathon.Nodes.BinaryTreeNode%601.RemoveLast(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Trees/Nodes/BinaryTreeNode`1.cs/#L47">View Source</a>
+  </span>
+  <a id="Collectathon_Nodes_BinaryTreeNode_1_RemoveLast_" data-uid="Collectathon.Nodes.BinaryTreeNode`1.RemoveLast*"></a>
+  <h4 id="Collectathon_Nodes_BinaryTreeNode_1_RemoveLast__0_" data-uid="Collectathon.Nodes.BinaryTreeNode`1.RemoveLast(`0)">RemoveLast(TElement)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void RemoveLast(TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Collectathon.Nodes.TreeNode&lt;TElement, Collectathon.Nodes.BinaryTreeNode&lt;TElement&gt;&gt;.RemoveLast(TElement)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Nodes_BinaryTreeNode_1_Replace__0__0_.md&amp;value=---%0Auid%3A%20Collectathon.Nodes.BinaryTreeNode%601.Replace(%600%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Trees/Nodes/BinaryTreeNode`1.cs/#L50">View Source</a>
+  </span>
+  <a id="Collectathon_Nodes_BinaryTreeNode_1_Replace_" data-uid="Collectathon.Nodes.BinaryTreeNode`1.Replace*"></a>
+  <h4 id="Collectathon_Nodes_BinaryTreeNode_1_Replace__0__0_" data-uid="Collectathon.Nodes.BinaryTreeNode`1.Replace(`0,`0)">Replace(TElement, TElement)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Replace(TElement search, TElement replace)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">search</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">replace</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Collectathon.Nodes.TreeNode&lt;TElement, Collectathon.Nodes.BinaryTreeNode&lt;TElement&gt;&gt;.Replace(TElement, TElement)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Nodes_BinaryTreeNode_1_Unlink.md&amp;value=---%0Auid%3A%20Collectathon.Nodes.BinaryTreeNode%601.Unlink%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Trees/Nodes/BinaryTreeNode`1.cs/#L53">View Source</a>
+  </span>
+  <a id="Collectathon_Nodes_BinaryTreeNode_1_Unlink_" data-uid="Collectathon.Nodes.BinaryTreeNode`1.Unlink*"></a>
+  <h4 id="Collectathon_Nodes_BinaryTreeNode_1_Unlink" data-uid="Collectathon.Nodes.BinaryTreeNode`1.Unlink">Unlink()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Unlink()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Collectathon.Nodes.TreeNode&lt;TElement, Collectathon.Nodes.BinaryTreeNode&lt;TElement&gt;&gt;.Unlink()</span></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="System.Traits.IAdd-1.html">IAdd&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IClear.html">IClear</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IContains-1.html">IContains&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.ICount.html">ICount</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IParent-1.html">IParent&lt;TSelf&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IRemove-1.html">IRemove&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IReplace-1.html">IReplace&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IReplace-2.html">IReplace&lt;TSearch, TReplace&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IUnlink.html">IUnlink</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.ILeft-1.html">ILeft&lt;TSelf&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IRight-1.html">IRight&lt;TSelf&gt;</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Nodes_BinaryTreeNode_1.md&amp;value=---%0Auid%3A%20Collectathon.Nodes.BinaryTreeNode%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Trees/Nodes/BinaryTreeNode`1.cs/#L11" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

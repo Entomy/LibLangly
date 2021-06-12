@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Traits;
-using Collectathon.Lists;
+using Collectathon.Enumerators;
 using Collectathon.Nodes;
 
 namespace Collectathon.Queues {
@@ -9,7 +9,7 @@ namespace Collectathon.Queues {
 		IClear,
 		IContains<TElement>,
 		IPeek<TElement>,
-		ISequence<TElement, StandardListEnumerator<TElement, QueueNode<TElement>>>,
+		ISequence<TElement, QueueEnumerator<TElement>>,
 		IWrite<TElement> {
 		/// <summary>
 		/// The head of the queue; the first element.
@@ -88,7 +88,7 @@ namespace Collectathon.Queues {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public StandardListEnumerator<TElement, QueueNode<TElement>> GetEnumerator() => new StandardListEnumerator<TElement, QueueNode<TElement>>(Head, Count);
+		public QueueEnumerator<TElement> GetEnumerator() => new QueueEnumerator<TElement>(Head, Count);
 
 		/// <inheritdoc/>
 		[return: NotNull]

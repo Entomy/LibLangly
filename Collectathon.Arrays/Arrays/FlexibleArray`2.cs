@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Traits;
+using Collectathon.Enumerators;
 
 namespace Collectathon.Arrays {
 	/// <summary>

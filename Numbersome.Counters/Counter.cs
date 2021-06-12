@@ -2,6 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Traits;
 using Collectathon.Arrays;
+using Collectathon.Enumerators;
 
 namespace Numbersome {
 	/// <summary>

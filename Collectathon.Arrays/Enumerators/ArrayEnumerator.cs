@@ -4,7 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 using System.Traits;
 
-namespace Collectathon.Arrays {
+namespace Collectathon.Enumerators {
 	/// <summary>
 	/// Provides enumeration over contiguous regions of memory.
 	/// </summary>

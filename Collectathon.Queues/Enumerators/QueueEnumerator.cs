@@ -3,41 +3,41 @@ using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 using System.Traits;
+using Collectathon.Nodes;
 
-namespace Collectathon.Lists {
+namespace Collectathon.Enumerators {
 	/// <summary>
-	/// Provides enumeration over a standard associative linked list.
+	/// Provides enumeration over a queue.
 	/// </summary>
-	/// <typeparam name="TIndex">The type of the indicies of the elements.</typeparam>
 	/// <typeparam name="TElement">The type of the elements being enumerated.</typeparam>
-	/// <typeparam name="TNode">The type of the nodes being enumerated.</typeparam>
 	[StructLayout(LayoutKind.Auto)]
-	public struct StandardListEnumerator<TIndex, TElement, TNode> : IEnumerator<(TIndex Index, TElement? Element)> where TNode : class, IElement<TElement>, IIndex<TIndex>, INext<TNode> {
+	public struct QueueEnumerator<TElement> : IEnumerator<TElement> {
 		/// <summary>
 		/// The head node.
 		/// </summary>
 		[AllowNull, MaybeNull]
-		private readonly TNode Head;
+		private readonly QueueNode<TElement> Head;
 
 		/// <summary>
 		/// The current node.
 		/// </summary>
 		[AllowNull, MaybeNull]
-		private TNode N;
+		private QueueNode<TElement> N;
 
 		/// <summary>
-		/// Initializes a new <see cref="StandardListEnumerator{TIndex, TElement, TNode}"/>.
+		/// Initializes a new <see cref="QueueEnumerator{TElement}"/>.
 		/// </summary>
 		/// <param name="head">The head node of the list.</param>
 		/// <param name="length">The length of the sequence.</param>
-		public StandardListEnumerator([AllowNull] TNode head, nint length) {
+		public QueueEnumerator([AllowNull] QueueNode<TElement> head, nint length) {
 			Head = head;
 			N = null;
 			Count = length;
 		}
 
 		/// <inheritdoc/>
-		public (TIndex Index, TElement? Element) Current => (N.Index, N.Element);
+		[MaybeNull]
+		public TElement Current => N.Element;
 
 		/// <inheritdoc/>
 		[EditorBrowsable(EditorBrowsableState.Never)]
@@ -54,7 +54,7 @@ namespace Collectathon.Lists {
 		/// <inheritdoc/>
 		[EditorBrowsable(EditorBrowsableState.Never)]
 		[return: NotNull]
-		public IEnumerator<(TIndex Index, TElement? Element)> GetEnumerator() => this;
+		public IEnumerator<TElement> GetEnumerator() => this;
 
 		/// <inheritdoc/>
 		[EditorBrowsable(EditorBrowsableState.Never)]
@@ -64,7 +64,7 @@ namespace Collectathon.Lists {
 		/// <inheritdoc/>
 		[EditorBrowsable(EditorBrowsableState.Never)]
 		[return: NotNull]
-		System.Collections.Generic.IEnumerator<(TIndex Index, TElement? Element)> System.Collections.Generic.IEnumerable<(TIndex Index, TElement? Element)>.GetEnumerator() => this;
+		System.Collections.Generic.IEnumerator<TElement> System.Collections.Generic.IEnumerable<TElement>.GetEnumerator() => this;
 
 		/// <inheritdoc/>
 		public Boolean MoveNext() {

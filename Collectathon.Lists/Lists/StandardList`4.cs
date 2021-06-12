@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using Collectathon.Enumerators;
 using Collectathon.Nodes;
 
 namespace Collectathon.Lists {
