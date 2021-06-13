@@ -135,7 +135,14 @@ namespace Collectathon.Stacks {
 
 		/// <inheritdoc/>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public void Read([AllowNull, MaybeNull] out TElement element) => element = Pop();
+		public void Read([AllowNull, MaybeNull] out TElement element) {
+			if (Head.Count == 0 && Head.Next is not null) {
+				StackNode<TElement?> old = Head;
+				Head = Head.Next;
+				old.Unlink();
+			}
+			element = Head.Elements[--Head.Count];
+		}
 
 		/// <inheritdoc/>
 		[return: NotNull]
