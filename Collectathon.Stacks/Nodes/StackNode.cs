@@ -8,11 +8,11 @@ namespace Collectathon.Nodes {
 	/// <summary>
 	/// Represents a node of a <see cref="Stack{TElement}"/>.
 	/// </summary>
-	public sealed class StackNode<TElement> : ICapacity, IContains<TElement>, IIndex<nint, TElement>, INext<StackNode<TElement>>, IUnlink {
+	public sealed class StackNode<TElement> : ICapacity, IContains<TElement>, INext<StackNode<TElement>>, IUnlink {
 		/// <summary>
 		/// The elements contained in the node.
 		/// </summary>
-		private readonly TElement?[] Elements;
+		internal readonly TElement?[] Elements;
 
 		/// <summary>
 		/// Initializes a new <see cref="StackNode{TElement}"/>.
@@ -26,17 +26,10 @@ namespace Collectathon.Nodes {
 
 		/// <inheritdoc/>
 		[AllowNull, MaybeNull]
-		public TElement this[nint index] {
-			get => Elements[index];
-			set => Elements[index] = value;
-		}
-
-		/// <inheritdoc/>
-		[AllowNull, MaybeNull]
 		public StackNode<TElement> Next { get; private set; }
 
 		/// <inheritdoc/>
-		public nint Count { get; private set; }
+		public nint Count { get; internal set; }
 
 		/// <inheritdoc/>
 		public nint Capacity => Elements.Length;

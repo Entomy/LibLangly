@@ -68,7 +68,12 @@ namespace Collectathon.Stacks {
 
 		/// <inheritdoc/>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public void Add([AllowNull] TElement element) => Push(element);
+		public void Add([AllowNull] TElement element) {
+			if (Head.Count == Head.Capacity) {
+				Head = new StackNode<TElement?>(Head);
+			}
+			Head.Elements[Head.Count++] = element;
+		}
 
 		/// <inheritdoc/>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -91,7 +96,7 @@ namespace Collectathon.Stacks {
 
 		/// <inheritdoc/>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public void Peek([AllowNull, MaybeNull] out TElement element) => element = Head.Peek();
+		public void Peek([AllowNull, MaybeNull] out TElement element) => element = Head.Elements[Head.Count - 1];
 
 		/// <summary>
 		/// Peeks at the top element of this <see cref="Stack{TElement}"/>.
@@ -99,7 +104,7 @@ namespace Collectathon.Stacks {
 		/// <returns>The top element.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[return: MaybeNull]
-		public TElement Peek() => Head.Peek();
+		public TElement Peek() => Head.Elements[Head.Count - 1];
 
 		/// <summary>
 		/// Pops the top element off this <see cref="Stack{TElement}"/>.
@@ -113,7 +118,7 @@ namespace Collectathon.Stacks {
 				Head = Head.Next;
 				old.Unlink();
 			}
-			return Head.Pop();
+			return Head.Elements[--Head.Count];
 		}
 
 		/// <summary>
@@ -125,7 +130,7 @@ namespace Collectathon.Stacks {
 			if (Head.Count == Head.Capacity) {
 				Head = new StackNode<TElement?>(Head);
 			}
-			Head.Push(element);
+			Head.Elements[Head.Count++] = element;
 		}
 
 		/// <inheritdoc/>
@@ -142,6 +147,11 @@ namespace Collectathon.Stacks {
 
 		/// <inheritdoc/>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public void Write([AllowNull] TElement element) => Push(element);
+		public void Write([AllowNull] TElement element) {
+			if (Head.Count == Head.Capacity) {
+				Head = new StackNode<TElement?>(Head);
+			}
+			Head.Elements[Head.Count++] = element;
+		}
 	}
 }

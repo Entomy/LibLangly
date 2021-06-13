@@ -43,7 +43,7 @@ namespace Collectathon.Enumerators {
 
 		/// <inheritdoc/>
 		[MaybeNull]
-		public TElement Current => N[i];
+		public TElement Current => N.Elements[i];
 
 		/// <inheritdoc/>
 		[EditorBrowsable(EditorBrowsableState.Never)]
