@@ -215,7 +215,6 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static void Add&lt;TElement&gt;(this IAdd&lt;TElement&gt; collection, TElement*elements, int length)
-
     where TElement : struct</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -637,7 +636,6 @@ public static void Add&lt;TElement&gt;(this IAdd&lt;TElement&gt; collection, TEl
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static void Add&lt;TElement&gt;(this IAddSpan&lt;TElement&gt; collection, TElement*elements, int length)
-
     where TElement : struct</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -704,7 +702,6 @@ public static void Add&lt;TElement&gt;(this IAddSpan&lt;TElement&gt; collection,
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Add&lt;TElement, TEnumerator&gt;(this IAdd&lt;TElement&gt; collection, ISequence&lt;TElement, TEnumerator&gt; elements)
-
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -770,7 +767,6 @@ public static void Add&lt;TElement&gt;(this IAddSpan&lt;TElement&gt; collection,
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static bool Contains&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, TElement element)
-
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -921,7 +917,6 @@ public static void Add&lt;TElement&gt;(this IAddSpan&lt;TElement&gt; collection,
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static bool ContainsAll&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, params TElement[] elements)
-
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1072,7 +1067,6 @@ public static void Add&lt;TElement&gt;(this IAddSpan&lt;TElement&gt; collection,
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static bool ContainsAny&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, params TElement[] elements)
-
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1151,7 +1145,6 @@ public static void Add&lt;TElement&gt;(this IAddSpan&lt;TElement&gt; collection,
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void CopyTo&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, TElement[] array)
-
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1233,7 +1226,6 @@ public static void Add&lt;TElement&gt;(this IAddSpan&lt;TElement&gt; collection,
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void CopyTo&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, Memory&lt;TElement&gt; memory)
-
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1310,7 +1302,6 @@ public static void Add&lt;TElement&gt;(this IAddSpan&lt;TElement&gt; collection,
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void CopyTo&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, Span&lt;TElement&gt; span)
-
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1531,7 +1522,6 @@ public static void Add&lt;TElement&gt;(this IAddSpan&lt;TElement&gt; collection,
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TElement Fold&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, Func&lt;TElement, TElement, TElement&gt; func, TElement identity)
-
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1787,7 +1777,6 @@ public static void Add&lt;TElement&gt;(this IAddSpan&lt;TElement&gt; collection,
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static void Insert&lt;TElement&gt;(this IInsert&lt;nint, TElement&gt; collection, nint index, TElement*elements, int length)
-
     where TElement : struct</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2169,7 +2158,6 @@ public static void Insert&lt;TElement&gt;(this IInsert&lt;nint, TElement&gt; col
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static void Insert&lt;TElement&gt;(this IInsertSpan&lt;nint, TElement&gt; collection, nint index, TElement*elements, int length)
-
     where TElement : struct</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2242,7 +2230,6 @@ public static void Insert&lt;TElement&gt;(this IInsertSpan&lt;nint, TElement&gt;
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Insert&lt;TElement, TEnumerator&gt;(this IInsert&lt;nint, TElement&gt; collection, nint index, ISequence&lt;TElement, TEnumerator&gt; elements)
-
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2545,7 +2532,6 @@ public static void Insert&lt;TElement&gt;(this IInsertSpan&lt;nint, TElement&gt;
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static nint Occurrences&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, TElement element)
-
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2624,7 +2610,6 @@ public static void Insert&lt;TElement&gt;(this IInsertSpan&lt;nint, TElement&gt;
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static nint Occurrences&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection, Predicate&lt;TElement&gt; predicate)
-
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2784,7 +2769,6 @@ public static void Insert&lt;TElement&gt;(this IInsertSpan&lt;nint, TElement&gt;
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static void Postpend&lt;TElement&gt;(this IPostpend&lt;TElement&gt; collection, TElement*elements, int length)
-
     where TElement : struct</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3185,7 +3169,6 @@ public static void Postpend&lt;TElement&gt;(this IPostpend&lt;TElement&gt; colle
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static void Postpend&lt;TElement&gt;(this IPostpendSpan&lt;TElement&gt; collection, TElement*elements, int length)
-
     where TElement : struct</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3249,7 +3232,6 @@ public static void Postpend&lt;TElement&gt;(this IPostpendSpan&lt;TElement&gt; c
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Postpend&lt;TElement, TEnumerator&gt;(this IPostpend&lt;TElement&gt; collection, ISequence&lt;TElement, TEnumerator&gt; elements)
-
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3393,7 +3375,6 @@ public static void Postpend&lt;TElement&gt;(this IPostpendSpan&lt;TElement&gt; c
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static void Prepend&lt;TElement&gt;(this IPrepend&lt;TElement&gt; collection, TElement*elements, int length)
-
     where TElement : struct</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3794,7 +3775,6 @@ public static void Prepend&lt;TElement&gt;(this IPrepend&lt;TElement&gt; collect
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static void Prepend&lt;TElement&gt;(this IPrependSpan&lt;TElement&gt; collection, TElement*elements, int length)
-
     where TElement : struct</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3858,7 +3838,6 @@ public static void Prepend&lt;TElement&gt;(this IPrependSpan&lt;TElement&gt; col
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Prepend&lt;TElement, TEnumerator&gt;(this IPrepend&lt;TElement&gt; collection, ISequence&lt;TElement, TEnumerator&gt; elements)
-
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -3922,7 +3901,6 @@ public static void Prepend&lt;TElement&gt;(this IPrependSpan&lt;TElement&gt; col
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static void Read&lt;TElement&gt;(this IRead&lt;TElement&gt; collection, TElement*elements, int length)
-
     where TElement : struct</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4313,7 +4291,6 @@ public static void Read&lt;TElement&gt;(this IRead&lt;TElement&gt; collection, T
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static void Remove&lt;TElement&gt;(this IRemove&lt;TElement&gt; collection, TElement*elements, int length)
-
     where TElement : struct</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4713,7 +4690,6 @@ public static void Remove&lt;TElement&gt;(this IRemove&lt;TElement&gt; collectio
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Remove&lt;TElement, TEnumerator&gt;(this IRemove&lt;TElement&gt; collection, ISequence&lt;TElement, TEnumerator&gt; elements)
-
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -4817,7 +4793,6 @@ public static void Remove&lt;TElement&gt;(this IRemove&lt;TElement&gt; collectio
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static void RemoveFirst&lt;TElement&gt;(this IRemove&lt;TElement&gt; collection, TElement*elements, int length)
-
     where TElement : struct</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5217,7 +5192,6 @@ public static void RemoveFirst&lt;TElement&gt;(this IRemove&lt;TElement&gt; coll
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void RemoveFirst&lt;TElement, TEnumerator&gt;(this IRemove&lt;TElement&gt; collection, ISequence&lt;TElement, TEnumerator&gt; elements)
-
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5321,7 +5295,6 @@ public static void RemoveFirst&lt;TElement&gt;(this IRemove&lt;TElement&gt; coll
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static void RemoveLast&lt;TElement&gt;(this IRemove&lt;TElement&gt; collection, TElement*elements, int length)
-
     where TElement : struct</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5721,7 +5694,6 @@ public static void RemoveLast&lt;TElement&gt;(this IRemove&lt;TElement&gt; colle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void RemoveLast&lt;TElement, TEnumerator&gt;(this IRemove&lt;TElement&gt; collection, ISequence&lt;TElement, TEnumerator&gt; elements)
-
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5818,7 +5790,6 @@ public static void RemoveLast&lt;TElement&gt;(this IRemove&lt;TElement&gt; colle
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static TElement[] ToArray&lt;TElement, TEnumerator&gt;(this ISequence&lt;TElement, TEnumerator&gt; collection)
-
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -5932,7 +5903,6 @@ public static void RemoveLast&lt;TElement&gt;(this IRemove&lt;TElement&gt; colle
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
 public static void Write&lt;TElement&gt;(this IWrite&lt;TElement&gt; collection, TElement*elements, int length)
-
     where TElement : struct</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -6332,7 +6302,6 @@ public static void Write&lt;TElement&gt;(this IWrite&lt;TElement&gt; collection,
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Write&lt;TElement, TEnumerator&gt;(this IWrite&lt;TElement&gt; collection, ISequence&lt;TElement, TEnumerator&gt; elements)
-
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>

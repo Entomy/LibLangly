@@ -15,29 +15,35 @@ namespace Collectathon.Enumerators {
 		/// <summary>
 		/// The head node.
 		/// </summary>
-		[AllowNull, MaybeNull]
-		private readonly StackNode<TElement> Head;
+		[DisallowNull, NotNull]
+		private readonly StackNode<TElement?> Head;
 
 		/// <summary>
 		/// The current node.
 		/// </summary>
 		[AllowNull, MaybeNull]
-		private StackNode<TElement> N;
+		private StackNode<TElement?> N;
+
+		/// <summary>
+		/// The index into the <see cref="N"/>.
+		/// </summary>
+		private nint i;
 
 		/// <summary>
 		/// Initializes a new <see cref="StackEnumerator{TElement}"/>.
 		/// </summary>
 		/// <param name="head">The head node of the list.</param>
 		/// <param name="length">The length of the sequence.</param>
-		public StackEnumerator([AllowNull] StackNode<TElement> head, nint length) {
+		public StackEnumerator([DisallowNull] StackNode<TElement?> head, nint length) {
 			Head = head;
 			N = null;
+			i = -1;
 			Count = length;
 		}
 
 		/// <inheritdoc/>
 		[MaybeNull]
-		public TElement Current => N.Element;
+		public TElement Current => N[i];
 
 		/// <inheritdoc/>
 		[EditorBrowsable(EditorBrowsableState.Never)]
@@ -49,12 +55,12 @@ namespace Collectathon.Enumerators {
 
 		/// <inheritdoc/>
 		[EditorBrowsable(EditorBrowsableState.Never)]
-		public void Dispose() { /* No-op */ }
+		public readonly void Dispose() { /* No-op */ }
 
 		/// <inheritdoc/>
 		[EditorBrowsable(EditorBrowsableState.Never)]
 		[return: NotNull]
-		public IEnumerator<TElement> GetEnumerator() => this;
+		public readonly IEnumerator<TElement> GetEnumerator() => this;
 
 		/// <inheritdoc/>
 		[EditorBrowsable(EditorBrowsableState.Never)]
@@ -68,8 +74,29 @@ namespace Collectathon.Enumerators {
 
 		/// <inheritdoc/>
 		public Boolean MoveNext() {
-			N = N is null ? Head : N.Next;
-			return N is not null;
+			// If the current node is null, we've just started
+			if (N is null) {
+				// So set it to the head
+				N = Head;
+				i = N.Count;
+			}
+			// We have a node, so try traversing it
+			if (i-- >= 0) {
+				// All good
+				return true;
+			} else {
+				// That node was finished, so grab the next one
+				N = N.Next;
+				// Was there another node?
+				if (N is not null) {
+					i = N.Count;
+					// Could it be traversed?
+					return i-- >= 0;
+				} else {
+					// We're finished
+					return false;
+				}
+			}
 		}
 
 		/// <inheritdoc/>
@@ -78,11 +105,11 @@ namespace Collectathon.Enumerators {
 		/// <inheritdoc/>
 		[EditorBrowsable(EditorBrowsableState.Never)]
 		[return: NotNull]
-		public override String ToString() => Collection.ToString(Head, Count);
+		public readonly override String ToString() => Collection.ToString(Head, Count);
 
 		/// <inheritdoc/>
 		[EditorBrowsable(EditorBrowsableState.Never)]
 		[return: NotNull]
-		public String ToString(nint amount) => Collection.ToString(Head, Count, amount);
+		public readonly String ToString(nint amount) => Collection.ToString(Head, Count, amount);
 	}
 }

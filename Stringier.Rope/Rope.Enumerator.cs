@@ -92,9 +92,9 @@ namespace Stringier {
 					// That node was finished, so grab the next one
 					N = N.Next;
 					i = -1;
-					// Was there another node, and could it be traversed?
+					// Was there another node
 					if (N is not null) {
-						// Count it be traversed?
+						// Could it be traversed?
 						return ++i < N.Count;
 					} else {
 						// Null the list to indicate we're finished
