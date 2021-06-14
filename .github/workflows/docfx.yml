@@ -15,11 +15,10 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.x
-    - name: Restore dependencies
-      run: dotnet restore
     - name: Build
-      run: dotnet build --no-restore --configuration=Documentation
-    - name: Commit/Push
+      uses: nikeee/docfx-action@v1.0.0
+      with: ./Documentation/docfx.json
+    - name: Publish
       uses: stefanzweifel/git-auto-commit-action@v4.11.0
       with:
         commit_message: Rebuilt docs
