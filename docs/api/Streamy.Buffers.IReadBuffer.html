@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface IReadBuffer
    ">
-    <meta name="generator" content="docfx 2.58.0.0">
+    <meta name="generator" content="docfx 2.56.7.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -91,7 +91,7 @@
       <a class="xref" href="System.Traits.IControlled.html#System_Traits_IControlled_Disposed">IControlled.Disposed</a>
     </div>
     <div>
-      <a class="xref" href="System.Traits.IControlled.html#System_Traits_IControlled_Dispose_System_Boolean_">IControlled.Dispose(Boolean)</a>
+      <a class="xref" href="System.Traits.IControlled.html#System_Traits_IControlled_Dispose_Boolean_">IControlled.Dispose(Boolean)</a>
     </div>
     <div>
       <a class="xref" href="System.Traits.IControlled.html#System_Traits_IControlled_DisposeManaged">IControlled.DisposeManaged()</a>
@@ -101,9 +101,6 @@
     </div>
     <div>
       <a class="xref" href="System.Traits.IControlled.html#System_Traits_IControlled_NullLargeFields">IControlled.NullLargeFields()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable.dispose#System_IDisposable_Dispose">IDisposable.Dispose()</a>
     </div>
     <div>
       <a class="xref" href="System.Traits.IPeek-1.html#System_Traits_IPeek_1_Peek__0__">IPeek&lt;Byte&gt;.Peek(Byte)</a>
@@ -121,45 +118,44 @@
       <a class="xref" href="System.Traits.ISeek.html#System_Traits_ISeek_Position">ISeek.Position</a>
     </div>
     <div>
-      <a class="xref" href="System.Traits.ISeek.html#System_Traits_ISeek_Seek_System_IntPtr_">ISeek.Seek(IntPtr)</a>
+      <a class="xref" href="System.Traits.ISeek.html#System_Traits_ISeek_Seek_nint_">ISeek.Seek(nint)</a>
     </div>
     <div>
       <a class="xref" href="System.Traits.IShift.html#System_Traits_IShift_ShiftLeft">IShift.ShiftLeft()</a>
     </div>
     <div>
-      <a class="xref" href="System.Traits.IShift.html#System_Traits_IShift_ShiftLeft_System_IntPtr_">IShift.ShiftLeft(IntPtr)</a>
+      <a class="xref" href="System.Traits.IShift.html#System_Traits_IShift_ShiftLeft_nint_">IShift.ShiftLeft(nint)</a>
     </div>
     <div>
       <a class="xref" href="System.Traits.IShift.html#System_Traits_IShift_ShiftRight">IShift.ShiftRight()</a>
     </div>
     <div>
-      <a class="xref" href="System.Traits.IShift.html#System_Traits_IShift_ShiftRight_System_IntPtr_">IShift.ShiftRight(IntPtr)</a>
+      <a class="xref" href="System.Traits.IShift.html#System_Traits_IShift_ShiftRight_nint_">IShift.ShiftRight(nint)</a>
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Streamy.Buffers.html">Streamy.Buffers</a></h6>
   <h6><strong>Assembly</strong>: Streamy.Stream.dll</h6>
   <h5 id="Streamy_Buffers_IReadBuffer_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[CLSCompliant(false)]
-public interface IReadBuffer : ICapacity, IClear, ICount, IControlled, IDisposable, IPeek&lt;byte&gt;, IRead&lt;byte&gt;, ISeek, IShift</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IReadBuffer : ICapacity, IClear, ICount, IControlled, IDisposable, IPeek&lt;Byte&gt;, IRead&lt;Byte&gt;, ISeek, IShift</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Buffers_IReadBuffer_Peek_System_Byte____System_IntPtr_.md&amp;value=---%0Auid%3A%20Streamy.Buffers.IReadBuffer.Peek(System.Byte%5B%5D%40%2CSystem.IntPtr)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Streamy_Buffers_IReadBuffer_Peek_Byte____nint_.md&amp;value=---%0Auid%3A%20Streamy.Buffers.IReadBuffer.Peek(Byte%5B%5D%40%2Cnint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Streamy.Stream/Buffers/IReadBuffer.cs/#L16">View Source</a>
   </span>
   <a id="Streamy_Buffers_IReadBuffer_Peek_" data-uid="Streamy.Buffers.IReadBuffer.Peek*"></a>
-  <h4 id="Streamy_Buffers_IReadBuffer_Peek_System_Byte____System_IntPtr_" data-uid="Streamy.Buffers.IReadBuffer.Peek(System.Byte[]@,System.IntPtr)">Peek(out Byte[], IntPtr)</h4>
-  <div class="markdown level1 summary"><p>Peeks at the <code data-dev-comment-type="paramref" class="paramref">required</code> amount of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>.</p>
+  <h4 id="Streamy_Buffers_IReadBuffer_Peek_Byte____nint_" data-uid="Streamy.Buffers.IReadBuffer.Peek(Byte[]@,nint)">Peek(out Byte[], nint)</h4>
+  <div class="markdown level1 summary"><p>Peeks at the <code data-dev-comment-type="paramref" class="paramref">required</code> amount of <see cref="!:Byte"></see>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void Peek(out byte[] elements, nint required)</code></pre>
+    <pre><code class="lang-csharp hljs">void Peek(out Byte[] elements, nint required)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -172,38 +168,19 @@ public interface IReadBuffer : ICapacity, IClear, ICount, IControlled, IDisposab
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a>[]</td>
+        <td><span class="xref">Byte</span>[]</td>
         <td><span class="parametername">elements</span></td>
-        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan&lt;T&gt;</a> of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a> that were read.</p>
+        <td><p>The <see cref="!:ReadOnlySpan&lt;T>"></see> of <see cref="!:Byte"></see> that were read.</p>
 </td>
       </tr>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.intptr">IntPtr</a></td>
+        <td><span class="xref">nint</span></td>
         <td><span class="parametername">required</span></td>
-        <td><p>The amount of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a> required to be read and returned.</p>
+        <td><p>The amount of <see cref="!:Byte"></see> required to be read and returned.</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <h3 id="extensionmethods">Extension Methods</h3>
-  <div>
-      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Read__1_System_Traits_IRead___0____0___">TraitExtensions.Read&lt;TElement&gt;(IRead&lt;TElement&gt;, TElement[])</a>
-  </div>
-  <div>
-      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Read__1_System_Traits_IRead___0__System_Memory___0__">TraitExtensions.Read&lt;TElement&gt;(IRead&lt;TElement&gt;, Memory&lt;TElement&gt;)</a>
-  </div>
-  <div>
-      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Read__1_System_Traits_IRead___0__System_IntPtr_System_ReadOnlyMemory___0___">TraitExtensions.Read&lt;TElement&gt;(IRead&lt;TElement&gt;, IntPtr, out ReadOnlyMemory&lt;TElement&gt;)</a>
-  </div>
-  <div>
-      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Read__1_System_Traits_IRead___0__System_Span___0__">TraitExtensions.Read&lt;TElement&gt;(IRead&lt;TElement&gt;, Span&lt;TElement&gt;)</a>
-  </div>
-  <div>
-      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Read__1_System_Traits_IRead___0__System_IntPtr_System_ReadOnlySpan___0___">TraitExtensions.Read&lt;TElement&gt;(IRead&lt;TElement&gt;, IntPtr, out ReadOnlySpan&lt;TElement&gt;)</a>
-  </div>
-  <div>
-      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Read__1_System_Traits_IRead___0____0__System_Int32_">TraitExtensions.Read&lt;TElement&gt;(IRead&lt;TElement&gt;, TElement*, Int32)</a>
-  </div>
 </article>
           </div>
           

@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Struct UnrolledListNode&lt;TElement, TSelf&gt;.Enumerator
    ">
-    <meta name="generator" content="docfx 2.58.0.0">
+    <meta name="generator" content="docfx 2.56.7.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -78,38 +78,13 @@
   <div class="markdown level0 conceptual"></div>
   <div classs="implements">
     <h5>Implements</h5>
-    <div><a class="xref" href="System.Traits.IEnumerator-1.html">IEnumerator</a>&lt;TElement&gt;</div>
-    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1">IEnumerator</a>&lt;TElement&gt;</div>
-    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></div>
-    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
-    <div><a class="xref" href="System.Traits.ISequence-2.html">ISequence</a>&lt;TElement, <a class="xref" href="System.Traits.IEnumerator-1.html">IEnumerator</a>&lt;TElement&gt;&gt;</div>
-    <div><a class="xref" href="System.Traits.ICount.html">ICount</a></div>
-    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TElement&gt;</div>
-    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
-  </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetype.equals#System_ValueType_Equals_System_Object_">ValueType.Equals(Object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetype.gethashcode#System_ValueType_GetHashCode">ValueType.GetHashCode()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_System_Object_">Object.Equals(Object, Object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#System_Object_GetType">Object.GetType()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#System_Object_ReferenceEquals_System_Object_System_Object_">Object.ReferenceEquals(Object, Object)</a>
-    </div>
+    <div><span class="xref">IEnumerator</span>&lt;TElement&gt;</div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Collectathon.Nodes.html">Collectathon.Nodes</a></h6>
   <h6><strong>Assembly</strong>: Collectathon.Lists.dll</h6>
   <h5 id="Collectathon_Nodes_UnrolledListNode_2_Enumerator_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public struct Enumerator : IEnumerator&lt;TElement&gt;, IEnumerator&lt;TElement&gt;, IEnumerator, IDisposable, ISequence&lt;TElement, IEnumerator&lt;TElement&gt;&gt;, ICount, IEnumerable&lt;TElement&gt;, IEnumerable</code></pre>
+    <pre><code class="lang-csharp hljs">public struct Enumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -162,7 +137,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly nint Count { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public nint Count { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -174,7 +149,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.intptr">IntPtr</a></td>
+        <td><span class="xref">nint</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -192,7 +167,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly TElement Current { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public TElement Current { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -213,18 +188,33 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Nodes_UnrolledListNode_2_Enumerator_MoveNext.md&amp;value=---%0Auid%3A%20Collectathon.Nodes.UnrolledListNode%602.Enumerator.MoveNext%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Nodes_UnrolledListNode_2_Enumerator_Dispose.md&amp;value=---%0Auid%3A%20Collectathon.Nodes.UnrolledListNode%602.Enumerator.Dispose%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Nodes/UnrolledListNode`2.Enumerator.cs/#L65">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Nodes/UnrolledListNode`2.Enumerator.cs/#L46">View Source</a>
   </span>
-  <a id="Collectathon_Nodes_UnrolledListNode_2_Enumerator_MoveNext_" data-uid="Collectathon.Nodes.UnrolledListNode`2.Enumerator.MoveNext*"></a>
-  <h4 id="Collectathon_Nodes_UnrolledListNode_2_Enumerator_MoveNext" data-uid="Collectathon.Nodes.UnrolledListNode`2.Enumerator.MoveNext">MoveNext()</h4>
+  <a id="Collectathon_Nodes_UnrolledListNode_2_Enumerator_Dispose_" data-uid="Collectathon.Nodes.UnrolledListNode`2.Enumerator.Dispose*"></a>
+  <h4 id="Collectathon_Nodes_UnrolledListNode_2_Enumerator_Dispose" data-uid="Collectathon.Nodes.UnrolledListNode`2.Enumerator.Dispose">Dispose()</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool MoveNext()</code></pre>
+    <pre><code class="lang-csharp hljs">public void Dispose()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Nodes_UnrolledListNode_2_Enumerator_GetEnumerator.md&amp;value=---%0Auid%3A%20Collectathon.Nodes.UnrolledListNode%602.Enumerator.GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Nodes/UnrolledListNode`2.Enumerator.cs/#L50">View Source</a>
+  </span>
+  <a id="Collectathon_Nodes_UnrolledListNode_2_Enumerator_GetEnumerator_" data-uid="Collectathon.Nodes.UnrolledListNode`2.Enumerator.GetEnumerator*"></a>
+  <h4 id="Collectathon_Nodes_UnrolledListNode_2_Enumerator_GetEnumerator" data-uid="Collectathon.Nodes.UnrolledListNode`2.Enumerator.GetEnumerator">GetEnumerator()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerator&lt;TElement&gt; GetEnumerator()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -236,7 +226,37 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="xref">IEnumerator</span>&lt;TElement&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Nodes_UnrolledListNode_2_Enumerator_MoveNext.md&amp;value=---%0Auid%3A%20Collectathon.Nodes.UnrolledListNode%602.Enumerator.MoveNext%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Nodes/UnrolledListNode`2.Enumerator.cs/#L65">View Source</a>
+  </span>
+  <a id="Collectathon_Nodes_UnrolledListNode_2_Enumerator_MoveNext_" data-uid="Collectathon.Nodes.UnrolledListNode`2.Enumerator.MoveNext*"></a>
+  <h4 id="Collectathon_Nodes_UnrolledListNode_2_Enumerator_MoveNext" data-uid="Collectathon.Nodes.UnrolledListNode`2.Enumerator.MoveNext">MoveNext()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Boolean MoveNext()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -269,7 +289,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+    <pre><code class="lang-csharp hljs">public override String ToString()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -281,27 +301,25 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="xref">String</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetype.tostring#System_ValueType_ToString">ValueType.ToString()</a></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Nodes_UnrolledListNode_2_Enumerator_ToString_System_IntPtr_.md&amp;value=---%0Auid%3A%20Collectathon.Nodes.UnrolledListNode%602.Enumerator.ToString(System.IntPtr)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Nodes_UnrolledListNode_2_Enumerator_ToString_nint_.md&amp;value=---%0Auid%3A%20Collectathon.Nodes.UnrolledListNode%602.Enumerator.ToString(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Nodes/UnrolledListNode`2.Enumerator.cs/#L74">View Source</a>
   </span>
   <a id="Collectathon_Nodes_UnrolledListNode_2_Enumerator_ToString_" data-uid="Collectathon.Nodes.UnrolledListNode`2.Enumerator.ToString*"></a>
-  <h4 id="Collectathon_Nodes_UnrolledListNode_2_Enumerator_ToString_System_IntPtr_" data-uid="Collectathon.Nodes.UnrolledListNode`2.Enumerator.ToString(System.IntPtr)">ToString(IntPtr)</h4>
+  <h4 id="Collectathon_Nodes_UnrolledListNode_2_Enumerator_ToString_nint_" data-uid="Collectathon.Nodes.UnrolledListNode`2.Enumerator.ToString(nint)">ToString(nint)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string ToString(nint amount)</code></pre>
+    <pre><code class="lang-csharp hljs">public String ToString(nint amount)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -314,7 +332,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.intptr">IntPtr</a></td>
+        <td><span class="xref">nint</span></td>
         <td><span class="parametername">amount</span></td>
         <td></td>
       </tr>
@@ -330,104 +348,14 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="eii">Explicit Interface Implementations
-  </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Nodes_UnrolledListNode_2_Enumerator_System_Collections_IEnumerator_Current.md&amp;value=---%0Auid%3A%20Collectathon.Nodes.UnrolledListNode%602.Enumerator.System%23Collections%23IEnumerator%23Current%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Lists/Nodes/UnrolledListNode`2.Enumerator.cs/#L39">View Source</a>
-  </span>
-  <a id="Collectathon_Nodes_UnrolledListNode_2_Enumerator_System_Collections_IEnumerator_Current_" data-uid="Collectathon.Nodes.UnrolledListNode`2.Enumerator.System#Collections#IEnumerator#Current*"></a>
-  <h4 id="Collectathon_Nodes_UnrolledListNode_2_Enumerator_System_Collections_IEnumerator_Current" data-uid="Collectathon.Nodes.UnrolledListNode`2.Enumerator.System#Collections#IEnumerator#Current">IEnumerator.Current</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">readonly object IEnumerator.Current { get; }</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="xref">String</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <h3 id="implements">Implements</h3>
   <div>
-      <a class="xref" href="System.Traits.IEnumerator-1.html">IEnumerator&lt;TElement&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1">System.Collections.Generic.IEnumerator&lt;T&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerator">System.Collections.IEnumerator</a>
-  </div>
-  <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable">System.IDisposable</a>
-  </div>
-  <div>
-      <a class="xref" href="System.Traits.ISequence-2.html">ISequence&lt;TElement, TEnumerator&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="System.Traits.ICount.html">ICount</a>
-  </div>
-  <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">System.Collections.Generic.IEnumerable&lt;T&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">System.Collections.IEnumerable</a>
-  </div>
-  <h3 id="extensionmethods">Extension Methods</h3>
-  <div>
-      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Contains__2_System_Traits_ISequence___0___1____0_">TraitExtensions.Contains&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, TElement)</a>
-  </div>
-  <div>
-      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsAll__2_System_Traits_ISequence___0___1____0___">TraitExtensions.ContainsAll&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, TElement[])</a>
-  </div>
-  <div>
-      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsAny__2_System_Traits_ISequence___0___1____0___">TraitExtensions.ContainsAny&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, TElement[])</a>
-  </div>
-  <div>
-      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_CopyTo__2_System_Traits_ISequence___0___1____0___">TraitExtensions.CopyTo&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, TElement[])</a>
-  </div>
-  <div>
-      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_CopyTo__2_System_Traits_ISequence___0___1__System_Memory___0__">TraitExtensions.CopyTo&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Memory&lt;TElement&gt;)</a>
-  </div>
-  <div>
-      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_CopyTo__2_System_Traits_ISequence___0___1__System_Span___0__">TraitExtensions.CopyTo&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Span&lt;TElement&gt;)</a>
-  </div>
-  <div>
-      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Fold__1_System_Collections_Generic_IEnumerable___0__System_Func___0___0___0____0_">TraitExtensions.Fold&lt;TElement&gt;(IEnumerable&lt;TElement&gt;, Func&lt;TElement, TElement, TElement&gt;, TElement)</a>
-  </div>
-  <div>
-      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Fold__2_System_Traits_ISequence___0___1__System_Func___0___0___0____0_">TraitExtensions.Fold&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Func&lt;TElement, TElement, TElement&gt;, TElement)</a>
-  </div>
-  <div>
-      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Occurrences__2_System_Traits_ISequence___0___1____0_">TraitExtensions.Occurrences&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, TElement)</a>
-  </div>
-  <div>
-      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_Occurrences__2_System_Traits_ISequence___0___1__System_Predicate___0__">TraitExtensions.Occurrences&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;, Predicate&lt;TElement&gt;)</a>
-  </div>
-  <div>
-      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ToArray__2_System_Traits_ISequence___0___1__">TraitExtensions.ToArray&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;)</a>
-  </div>
-  <div>
-      <a class="xref" href="Numbersome.StatisticsExtensions.html#Numbersome_StatisticsExtensions_Mode__2_System_Traits_ISequence___0___1__">StatisticsExtensions.Mode&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt;)</a>
+      <span class="xref">IEnumerator&lt;&gt;</span>
   </div>
 </article>
           </div>

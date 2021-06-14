@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class StandardListNode&lt;TElement, TSelf&gt;
    ">
-    <meta name="generator" content="docfx 2.58.0.0">
+    <meta name="generator" content="docfx 2.56.7.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -85,13 +85,11 @@
   </div>
   <div classs="implements">
     <h5>Implements</h5>
-    <div><a class="xref" href="System.Traits.IContains-1.html">IContains</a>&lt;TElement&gt;</div>
-    <div><a class="xref" href="System.Traits.ICount.html">ICount</a></div>
-    <div><a class="xref" href="System.Traits.INext-1.html">INext</a>&lt;TSelf&gt;</div>
-    <div><a class="xref" href="System.Traits.IReplace-1.html">IReplace</a>&lt;TElement&gt;</div>
-    <div><a class="xref" href="System.Traits.IReplace-2.html">IReplace</a>&lt;TElement, TElement&gt;</div>
-    <div><a class="xref" href="System.Traits.IUnlink.html">IUnlink</a></div>
-    <div><a class="xref" href="System.Traits.IElement-1.html">IElement</a>&lt;TElement&gt;</div>
+    <div><span class="xref">ICount</span></div>
+    <div><span class="xref">INext</span>&lt;TSelf&gt;</div>
+    <div><span class="xref">IReplace</span>&lt;TElement&gt;</div>
+    <div><span class="xref">IUnlink</span></div>
+    <div><span class="xref">IElement</span>&lt;TElement&gt;</div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -122,30 +120,12 @@
     <div>
       <a class="xref" href="Collectathon.Nodes.ListNode-2.html#Collectathon_Nodes_ListNode_2_Unlink">ListNode&lt;TElement, TSelf&gt;.Unlink()</a>
     </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_">Object.Equals(Object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_System_Object_">Object.Equals(Object, Object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#System_Object_GetHashCode">Object.GetHashCode()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#System_Object_GetType">Object.GetType()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#System_Object_MemberwiseClone">Object.MemberwiseClone()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#System_Object_ReferenceEquals_System_Object_System_Object_">Object.ReferenceEquals(Object, Object)</a>
-    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Collectathon.Nodes.html">Collectathon.Nodes</a></h6>
   <h6><strong>Assembly</strong>: Collectathon.Lists.dll</h6>
   <h5 id="Collectathon_Nodes_StandardListNode_2_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class StandardListNode&lt;TElement, TSelf&gt; : ListNode&lt;TElement, TSelf&gt;, IContains&lt;TElement&gt;, ICount, INext&lt;TSelf&gt;, IReplace&lt;TElement&gt;, IReplace&lt;TElement, TElement&gt;, IUnlink, IElement&lt;TElement&gt; where TSelf : StandardListNode&lt;TElement, TSelf&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class StandardListNode&lt;TElement, TSelf&gt; : ListNode&lt;TElement, TSelf&gt;, ICount, INext&lt;TSelf&gt;, IReplace&lt;TElement&gt;, IUnlink, IElement&lt;TElement&gt; where TSelf : StandardListNode&lt;TElement, TSelf&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -237,7 +217,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.intptr">IntPtr</a></td>
+        <td><span class="xref">nint</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -289,7 +269,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed override bool Contains(TElement element)</code></pre>
+    <pre><code class="lang-csharp hljs">public override sealed Boolean Contains(TElement element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -318,7 +298,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="xref">Boolean</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -338,7 +318,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed override void Replace(TElement search, TElement replace)</code></pre>
+    <pre><code class="lang-csharp hljs">public override sealed void Replace(TElement search, TElement replace)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -377,7 +357,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+    <pre><code class="lang-csharp hljs">public override String ToString()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -389,7 +369,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="xref">String</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -398,25 +378,19 @@
   <div><span class="xref">Collectathon.Nodes.ListNode&lt;TElement, TSelf&gt;.ToString()</span></div>
   <h3 id="implements">Implements</h3>
   <div>
-      <a class="xref" href="System.Traits.IContains-1.html">IContains&lt;TElement&gt;</a>
+      <span class="xref">ICount</span>
   </div>
   <div>
-      <a class="xref" href="System.Traits.ICount.html">ICount</a>
+      <span class="xref">INext&lt;&gt;</span>
   </div>
   <div>
-      <a class="xref" href="System.Traits.INext-1.html">INext&lt;TSelf&gt;</a>
+      <span class="xref">IReplace&lt;&gt;</span>
   </div>
   <div>
-      <a class="xref" href="System.Traits.IReplace-1.html">IReplace&lt;TElement&gt;</a>
+      <span class="xref">IUnlink</span>
   </div>
   <div>
-      <a class="xref" href="System.Traits.IReplace-2.html">IReplace&lt;TSearch, TReplace&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="System.Traits.IUnlink.html">IUnlink</a>
-  </div>
-  <div>
-      <a class="xref" href="System.Traits.IElement-1.html">IElement&lt;TElement&gt;</a>
+      <span class="xref">IElement&lt;&gt;</span>
   </div>
 </article>
           </div>

@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class Set&lt;TElement&gt;
    ">
-    <meta name="generator" content="docfx 2.58.0.0">
+    <meta name="generator" content="docfx 2.56.7.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -86,35 +86,11 @@
     <h5>Implements</h5>
     <div><a class="xref" href="System.Traits.IContains-1.html">IContains</a>&lt;TElement&gt;</div>
   </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_">Object.Equals(Object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_System_Object_">Object.Equals(Object, Object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#System_Object_GetHashCode">Object.GetHashCode()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#System_Object_GetType">Object.GetType()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#System_Object_MemberwiseClone">Object.MemberwiseClone()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#System_Object_ReferenceEquals_System_Object_System_Object_">Object.ReferenceEquals(Object, Object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString">Object.ToString()</a>
-    </div>
-  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Numbersome.html">Numbersome</a></h6>
   <h6><strong>Assembly</strong>: Numbersome.Sets.dll</h6>
   <h5 id="Numbersome_Set_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Set&lt;TElement&gt; : IContains&lt;TElement&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public class Set&lt;TElement&gt; : object, IContains&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -134,7 +110,7 @@
   </table>
   <h5 id="Numbersome_Set_1_remarks"><strong>Remarks</strong></h5>
   <div class="markdown level0 remarks"><p>A set is a collection in which any element can only exist once. All other collections are technically multi-sets, if you need such. Furthermore, sets don&apos;t care about data being ordered.</p>
-<p>Unlike <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.iset-1">ISet&lt;T&gt;</a> this adheres to Set Theory and Set Algebra, so its behavior should not be surprising, and existing techniques and solutions can easily be translated.</p>
+<p>Unlike <see cref="!:System.Collections.Generic.ISet&lt;T>"></see> this adheres to Set Theory and Set Algebra, so its behavior should not be surprising, and existing techniques and solutions can easily be translated.</p>
 </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -174,13 +150,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Set_1__ctor_System_Predicate__0__.md&amp;value=---%0Auid%3A%20Numbersome.Set%601.%23ctor(System.Predicate%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Set_1__ctor_Predicate__0__.md&amp;value=---%0Auid%3A%20Numbersome.Set%601.%23ctor(Predicate%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Sets/Set.cs/#L26">View Source</a>
   </span>
   <a id="Numbersome_Set_1__ctor_" data-uid="Numbersome.Set`1.#ctor*"></a>
-  <h4 id="Numbersome_Set_1__ctor_System_Predicate__0__" data-uid="Numbersome.Set`1.#ctor(System.Predicate{`0})">Set(Predicate&lt;TElement&gt;)</h4>
+  <h4 id="Numbersome_Set_1__ctor_Predicate__0__" data-uid="Numbersome.Set`1.#ctor(Predicate{`0})">Set(Predicate&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Numbersome.Set-1.html">Set&lt;TElement&gt;</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -199,9 +175,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.predicate-1">Predicate</a>&lt;TElement&gt;</td>
+        <td><span class="xref">Predicate</span>&lt;TElement&gt;</td>
         <td><span class="parametername">predicate</span></td>
-        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.predicate-1">Predicate&lt;T&gt;</a> used to determine inclusion into the set.</p>
+        <td><p>The <see cref="!:Predicate&lt;T>"></see> used to determine inclusion into the set.</p>
 </td>
       </tr>
     </tbody>
@@ -250,7 +226,7 @@
     <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Sets/Set.cs/#L20">View Source</a>
   </span>
   <h4 id="Numbersome_Set_1_Predicate" data-uid="Numbersome.Set`1.Predicate">Predicate</h4>
-  <div class="markdown level1 summary"><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.predicate-1">Predicate&lt;T&gt;</a> used to determine inclusion into the set.</p>
+  <div class="markdown level1 summary"><p>The <see cref="!:Predicate&lt;T>"></see> used to determine inclusion into the set.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -267,7 +243,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.predicate-1">Predicate</a>&lt;TElement&gt;</td>
+        <td><span class="xref">Predicate</span>&lt;TElement&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -380,7 +356,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.predicate-1">Predicate</a>&lt;TElement&gt;</td>
+        <td><span class="xref">Predicate</span>&lt;TElement&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -398,7 +374,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool Contains(TElement element)</code></pre>
+    <pre><code class="lang-csharp hljs">public Boolean Contains(TElement element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -427,7 +403,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="xref">Boolean</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -479,7 +455,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.predicate-1">Predicate</a>&lt;TElement&gt;</td>
+        <td><span class="xref">Predicate</span>&lt;TElement&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -531,7 +507,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.predicate-1">Predicate</a>&lt;TElement&gt;</td>
+        <td><span class="xref">Predicate</span>&lt;TElement&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -583,7 +559,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.predicate-1">Predicate</a>&lt;TElement&gt;</td>
+        <td><span class="xref">Predicate</span>&lt;TElement&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -603,7 +579,6 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Set&lt;TElement&gt; Range&lt;TElement&gt;(TElement lower, TElement upper)
-
     where TElement : IComparable&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -709,7 +684,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.predicate-1">Predicate</a>&lt;TElement&gt;</td>
+        <td><span class="xref">Predicate</span>&lt;TElement&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -993,13 +968,6 @@
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="System.Traits.IContains-1.html">IContains&lt;TElement&gt;</a>
-  </div>
-  <h3 id="extensionmethods">Extension Methods</h3>
-  <div>
-      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsAll__1_System_Traits_IContains___0____0___">TraitExtensions.ContainsAll&lt;TElement&gt;(IContains&lt;TElement&gt;, TElement[])</a>
-  </div>
-  <div>
-      <a class="xref" href="System.TraitExtensions.html#System_TraitExtensions_ContainsAny__1_System_Traits_IContains___0____0___">TraitExtensions.ContainsAny&lt;TElement&gt;(IContains&lt;TElement&gt;, TElement[])</a>
   </div>
 </article>
           </div>
