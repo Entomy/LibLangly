@@ -1,0 +1,27 @@
+name: .NET
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore --configuration=Documentation
+    - name: Commit/Push
+      uses: stefanzweifel/git-auto-commit-action@v4.11.0
+      with:
+        commit_message: Rebuilt docs
+        commit_user_name: DocFX
+        commit_author: DocFX
