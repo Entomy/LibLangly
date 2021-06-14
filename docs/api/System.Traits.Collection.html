@@ -131,6 +131,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Clear&lt;TNode&gt;(TNode head)
+
     where TNode : class, INext&lt;TNode&gt;, IUnlink</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -537,6 +538,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static bool Contains&lt;TNode, TElement&gt;(TNode head, TElement element)
+
     where TNode : class, IContains&lt;TElement&gt;, INext&lt;TNode&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -613,6 +615,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static bool Equals&lt;TElement, TEnumerator&gt;(IEnumerable&lt;TElement&gt; first, ISequence&lt;TElement, TEnumerator&gt; second)
+
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -691,6 +694,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static bool Equals&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt; first, IEnumerable&lt;TElement&gt; second)
+
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -769,6 +773,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static bool Equals&lt;TElement, TEnumerator&gt;(ISequence&lt;TElement, TEnumerator&gt; first, ISequence&lt;TElement, TEnumerator&gt; second)
+
     where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -847,6 +852,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Replace&lt;TNode, TElement&gt;(TNode head, TElement search, TElement replace)
+
     where TNode : class, INext&lt;TNode&gt;, IReplace&lt;TElement&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -913,6 +919,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static string ToString&lt;TNode&gt;(TNode head, nint count)
+
     where TNode : class, INext&lt;TNode&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -985,6 +992,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static string ToString&lt;TNode&gt;(TNode head, nint count, nint amount)
+
     where TNode : class, INext&lt;TNode&gt;</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
