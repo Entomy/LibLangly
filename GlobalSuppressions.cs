@@ -24,6 +24,7 @@ using System.Diagnostics.CodeAnalysis;
 [assembly: SuppressMessage("Design", "MA0012:Do not raise reserved exception type", Justification = "This is fine when used in the right situations, like IndexOfOutRangeException.")]
 [assembly: SuppressMessage("Design", "MA0048:File name must match type name", Justification = "Especially for large types, like extension method classes, it's easier to organize this way.")]
 [assembly: SuppressMessage("Design", "MA0051:Method is too long", Justification = "I agree with this in principal, but arbitrary limits are flawed.")]
+[assembly: SuppressMessage("Design", "MA0102:Make member readonly", Justification = "This analyzer doesn't work correctly.")]
 
 [assembly: SuppressMessage("Major Code Smell", "S112:General exceptions should never be thrown", Justification = "This is fine when used in the right situations, like IndexOfOutRangeException.")]
 [assembly: SuppressMessage("Major Code Smell", "S907:\"goto\" statement should not be used", Justification = "https://www.youtube.com/watch?v=OLpeX4RRo28")]

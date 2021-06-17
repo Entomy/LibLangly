@@ -36,7 +36,7 @@ namespace Collectathon.Nodes {
 
 		/// <inheritdoc/>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public Boolean Contains([AllowNull] TElement element) => Collection.Contains(Elements, element);
+		public Boolean Contains([AllowNull] TElement element) => Collection.Contains(Elements, Count, element);
 
 		/// <inheritdoc/>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]

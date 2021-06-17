@@ -43,6 +43,11 @@ namespace Collectathon.Arrays {
 		protected TElement[] Memory;
 
 		/// <summary>
+		/// The amount of elements contained in this collection.
+		/// </summary>
+		private nint count;
+
+		/// <summary>
 		/// Initializes a new <see cref="FlexibleArray{TElement, TSelf}"/> with the given <paramref name="capacity"/>.
 		/// </summary>
 		/// <param name="capacity">The initial capacity.</param>
@@ -84,7 +89,10 @@ namespace Collectathon.Arrays {
 
 		/// <inheritdoc/>
 		[O(1), Ω(1), Θ(1)]
-		public nint Count { get; protected set; }
+		public nint Count {
+			get => count;
+			protected set => count = value;
+		}
 
 		/// <inheritdoc/>
 		[O(1), Ω(1), Θ(1)]
@@ -151,12 +159,7 @@ namespace Collectathon.Arrays {
 
 		/// <inheritdoc/>
 		[O(Complexity.n), Ω(Complexity.n), Θ(Complexity.n)]
-		public Boolean Contains([AllowNull] TElement element) {
-			for (Int32 i = 0; i < Count; i++) {
-				if (Equals(Memory[i], element)) return true;
-			}
-			return false;
-		}
+		public Boolean Contains([AllowNull] TElement element) => Collection.Contains(Memory, Count, element);
 
 		/// <summary>
 		/// Determines if the two values are equal.
@@ -201,11 +204,7 @@ namespace Collectathon.Arrays {
 		public sealed override Int32 GetHashCode() => base.GetHashCode();
 
 		/// <inheritdoc/>
-		public virtual void Insert(nint index, [AllowNull] TElement element) {
-			Memory.AsMemory((Int32)index, (Int32)Count - (Int32)index).CopyTo(Memory.AsMemory((Int32)index + 1));
-			Memory[(Int32)index] = element;
-			Count++;
-		}
+		public virtual void Insert(nint index, [AllowNull] TElement element) => Collection.Insert(Memory, ref count, index, element);
 
 		/// <inheritdoc/>
 		public void Insert(nint index, [AllowNull] params TElement[] elements) => Insert(index, elements.AsSpan());
@@ -220,15 +219,11 @@ namespace Collectathon.Arrays {
 		public void Insert(nint index, Span<TElement> elements) => Insert(index, (ReadOnlySpan<TElement>)elements);
 
 		/// <inheritdoc/>
-		public virtual void Insert(nint index, ReadOnlySpan<TElement> elements) {
-			Memory.AsMemory((Int32)index, (Int32)Count - (Int32)index).CopyTo(Memory.AsMemory((Int32)index + elements.Length));
-			elements.CopyTo(Memory.AsSpan((Int32)index));
-			Count += elements.Length;
-		}
+		public virtual void Insert(nint index, ReadOnlySpan<TElement> elements) => Collection.Insert(Memory, ref count, index, elements);
 
 		/// <inheritdoc/>
 		[O(Complexity.n_plus_k), Ω(Complexity.n)]
-		public virtual void Postpend([AllowNull] TElement element) => Memory[Count++] = element;
+		public virtual void Postpend([AllowNull] TElement element) => Collection.Postpend(Memory, ref count, element);
 
 		/// <inheritdoc/>
 		[O(Complexity.n_plus_k), Ω(Complexity.n)]
@@ -248,18 +243,11 @@ namespace Collectathon.Arrays {
 
 		/// <inheritdoc/>
 		[O(Complexity.n_plus_k), Ω(Complexity.n)]
-		public virtual void Postpend(ReadOnlySpan<TElement> elements) {
-			elements.CopyTo(Memory.AsSpan((Int32)Count));
-			Count += elements.Length;
-		}
+		public virtual void Postpend(ReadOnlySpan<TElement> elements) => Collection.Postpend(Memory, ref count, elements);
 
 		/// <inheritdoc/>
 		[O(Complexity.n_plus_k), Ω(Complexity.n)]
-		public virtual void Prepend([AllowNull] TElement element) {
-			ShiftRight();
-			Memory[0] = element;
-			Count++;
-		}
+		public virtual void Prepend([AllowNull] TElement element) => Collection.Prepend(Memory, ref count, element);
 
 		/// <inheritdoc/>
 		[O(Complexity.n_plus_k), Ω(Complexity.n)]
@@ -279,71 +267,35 @@ namespace Collectathon.Arrays {
 
 		/// <inheritdoc/>
 		[O(Complexity.n_plus_k), Ω(Complexity.n)]
-		public virtual void Prepend(ReadOnlySpan<TElement> elements) {
-			ShiftRight(elements.Length);
-			elements.CopyTo(Memory);
-			Count += elements.Length;
-		}
+		public virtual void Prepend(ReadOnlySpan<TElement> elements) => Collection.Prepend(Memory, ref count, elements);
 
 		/// <inheritdoc/>
 		[O(Complexity.n_plus_k), Ω(Complexity.n_plus_k)]
-		public void Remove([AllowNull] TElement element) {
-			for (nint i = 0; i < Count; i++) {
-				if (Equals(Memory[i], element)) {
-					Memory[i] = Memory[i + 1];
-					i--;
-					Count--;
-				}
-			}
-		}
+		public void Remove([AllowNull] TElement element) => Collection.Remove(Memory, ref count, element);
 
 		/// <inheritdoc/>
 		[O(Complexity.n_plus_k), Ω(Complexity.n_plus_k)]
-		public void RemoveFirst([AllowNull] TElement element) {
-			for (Int32 i = 0; i < Count; i++) {
-				if (Equals(Memory[i], element)) {
-					Memory.AsMemory(i).CopyTo(Memory.AsMemory(--i));
-					Count--;
-					return;
-				}
-			}
-		}
+		public void RemoveFirst([AllowNull] TElement element) => Collection.RemoveFirst(Memory, ref count, element);
 
 		/// <inheritdoc/>
 		[O(Complexity.n_plus_k), Ω(Complexity.n_plus_k)]
-		public void RemoveLast([AllowNull] TElement element) => throw new NotImplementedException();
+		public void RemoveLast([AllowNull] TElement element) => Collection.RemoveLast(Memory, ref count, element);
 
 		/// <inheritdoc/>
 		[O(Complexity.n), Ω(Complexity.n), Θ(Complexity.n)]
-		public void Replace([AllowNull] TElement search, [AllowNull] TElement replace) {
-			for (Int32 i = 0; i < Count; i++) {
-				if (Equals(Memory[i], search)) {
-					Memory[i] = replace;
-				}
-			}
-		}
+		public void Replace([AllowNull] TElement search, [AllowNull] TElement replace) => Collection.Replace(Memory, Count, search, replace);
 
 		/// <inheritdoc/>
-		public void ShiftLeft() => ShiftLeft(1);
+		public void ShiftLeft() => Collection.ShiftLeft(Memory, Count, 1);
 
 		/// <inheritdoc/>
-		public void ShiftLeft(nint amount) {
-			if (amount != 0 && Count != 0) {
-				Memory.AsMemory((Int32)amount).CopyTo(Memory);
-				Memory.AsMemory((Int32)Capacity - (Int32)amount).Span.Clear();
-			}
-		}
+		public void ShiftLeft(nint amount) => Collection.ShiftLeft(Memory, Count, amount);
 
 		/// <inheritdoc/>
-		public void ShiftRight() => ShiftRight(1);
+		public void ShiftRight() => Collection.ShiftRight(Memory, Count, 1);
 
 		/// <inheritdoc/>
-		public void ShiftRight(nint amount) {
-			if (amount != 0 && Count != 0) {
-				Memory.AsMemory(0, (Int32)Capacity - (Int32)amount).CopyTo(Memory.AsMemory((Int32)amount));
-				Memory.AsMemory(0, (Int32)amount).Span.Clear();
-			}
-		}
+		public void ShiftRight(nint amount) => Collection.ShiftRight(Memory, Count, amount);
 
 		/// <inheritdoc/>
 		[O(1), Ω(1), Θ(1)]

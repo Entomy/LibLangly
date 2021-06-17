@@ -7,47 +7,52 @@ namespace System.Traits {
 		/// Determines whether this collection contains the specified <paramref name="element"/>.
 		/// </summary>
 		/// <param name="elements">The elements of this collection.</param>
+		/// <param name="count">The amount of elements in the collection; the amount currently in use.</param>
 		/// <param name="element">The element to attempt to find.</param>
 		/// <returns><see langword="true"/> if <paramref name="element"/> is contained in this collection; otherwise, <see langword="false"/>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static Boolean Contains<TElement>([AllowNull] TElement[] elements, [AllowNull] TElement element) => Contains(elements.AsSpan(), element);
+		public static Boolean Contains<TElement>([AllowNull] TElement[] elements, nint count, [AllowNull] TElement element) => Contains(elements.AsSpan(), count, element);
 
 		/// <summary>
 		/// Determines whether this collection contains the specified <paramref name="element"/>.
 		/// </summary>
 		/// <param name="elements">The elements of this collection.</param>
+		/// <param name="count">The amount of elements in the collection; the amount currently in use.</param>
 		/// <param name="element">The element to attempt to find.</param>
 		/// <returns><see langword="true"/> if <paramref name="element"/> is contained in this collection; otherwise, <see langword="false"/>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static Boolean Contains<TElement>(Memory<TElement> elements, [AllowNull] TElement element) => Contains(elements.Span, element);
+		public static Boolean Contains<TElement>(Memory<TElement> elements, nint count, [AllowNull] TElement element) => Contains(elements.Span, count, element);
 
 		/// <summary>
 		/// Determines whether this collection contains the specified <paramref name="element"/>.
 		/// </summary>
 		/// <param name="elements">The elements of this collection.</param>
+		/// <param name="count">The amount of elements in the collection; the amount currently in use.</param>
 		/// <param name="element">The element to attempt to find.</param>
 		/// <returns><see langword="true"/> if <paramref name="element"/> is contained in this collection; otherwise, <see langword="false"/>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static Boolean Contains<TElement>(ReadOnlyMemory<TElement> elements, [AllowNull] TElement element) => Contains(elements.Span, element);
+		public static Boolean Contains<TElement>(ReadOnlyMemory<TElement> elements, nint count, [AllowNull] TElement element) => Contains(elements.Span, count, element);
 
 		/// <summary>
 		/// Determines whether this collection contains the specified <paramref name="element"/>.
 		/// </summary>
 		/// <param name="elements">The elements of this collection.</param>
+		/// <param name="count">The amount of elements in the collection; the amount currently in use.</param>
 		/// <param name="element">The element to attempt to find.</param>
 		/// <returns><see langword="true"/> if <paramref name="element"/> is contained in this collection; otherwise, <see langword="false"/>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static Boolean Contains<TElement>(Span<TElement> elements, [AllowNull] TElement element) => Contains((ReadOnlySpan<TElement>)elements, element);
+		public static Boolean Contains<TElement>(Span<TElement> elements, nint count, [AllowNull] TElement element) => Contains((ReadOnlySpan<TElement>)elements, count, element);
 
 		/// <summary>
 		/// Determines whether this collection contains the specified <paramref name="element"/>.
 		/// </summary>
 		/// <param name="elements">The elements of this collection.</param>
+		/// <param name="count">The amount of elements in the collection; the amount currently in use.</param>
 		/// <param name="element">The element to attempt to find.</param>
 		/// <returns><see langword="true"/> if <paramref name="element"/> is contained in this collection; otherwise, <see langword="false"/>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static Boolean Contains<TElement>(ReadOnlySpan<TElement> elements, [AllowNull] TElement element) {
-			for (int i = 0; i < elements.Length; i++) {
+		public static Boolean Contains<TElement>(ReadOnlySpan<TElement> elements, nint count, [AllowNull] TElement element) {
+			for (Int32 i = 0; i < count; i++) {
 				if (Equals(elements[i], element)) return true;
 			}
 			return false;
