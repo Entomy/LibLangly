@@ -11,26 +11,13 @@ namespace Collectathon.Lists {
 		/// <summary>
 		/// Initializes a new <see cref="SinglyLinkedList{TElement}"/>.
 		/// </summary>
-		public SinglyLinkedList() : base(Filters.None) { }
+		public SinglyLinkedList() { }
 
 		/// <summary>
 		/// Initializes a new <see cref="SinglyLinkedList{TElement}"/> with the given <paramref name="elements"/>.
 		/// </summary>
 		/// <param name="elements">The initial elements of the list.</param>
-		public SinglyLinkedList([DisallowNull] params TElement[] elements) : base(elements, Filters.None) { }
-
-		/// <summary>
-		/// Initializes a new <see cref="SinglyLinkedList{TElement}"/> with the given <paramref name="elements"/>.
-		/// </summary>
-		/// <param name="elements">The initial elements of the list.</param>
-		/// <param name="filter">The type of filter to use.</param>
-		public SinglyLinkedList([DisallowNull] TElement[] elements, Filters filter) : base(elements, filter) { }
-
-		/// <summary>
-		/// Initializes a new <see cref="SinglyLinkedList{TElement}"/>.
-		/// </summary>
-		/// <param name="filter">The type of filter to use.</param>
-		public SinglyLinkedList(Filters filter) : base(filter) { }
+		public SinglyLinkedList([DisallowNull] params TElement[] elements) : base(elements) { }
 
 		/// <summary>
 		/// Converts the <paramref name="elements"/> to a <see cref="SinglyLinkedList{TElement}"/>.

@@ -20,14 +20,7 @@ namespace Collectathon.Lists {
 		/// <summary>
 		/// Initializes a new <see cref="UnrolledList{TElement, TNode, TSelf}"/>.
 		/// </summary>
-		/// <param name="filter">The type of filter to use.</param>
-		protected UnrolledList(Filters filter) : base(filter) { }
-
-		/// <summary>
-		/// Copy constructor
-		/// </summary>
-		/// <param name="filter">The <see cref="Filter{TIndex, TElement}"/> to reuse.</param>
-		protected UnrolledList([DisallowNull] Filter<nint, TElement> filter) : base(filter) { }
+		protected UnrolledList() { }
 
 		/// <inheritdoc/>
 		[AllowNull, MaybeNull]

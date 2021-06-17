@@ -23,15 +23,6 @@ namespace Collectathon.Lists {
 		where TSelf : List<TIndex, TElement, TNode, TSelf, TEnumerator>
 		where TEnumerator : struct, IEnumerator<(TIndex Index, TElement Element)> {
 		/// <summary>
-		/// The <see cref="Filter{TIndex, TElement}"/> being used.
-		/// </summary>
-		/// <remarks>
-		/// This is never <see langword="null"/>; a sentinel is used by default.
-		/// </remarks>
-		[NotNull, DisallowNull]
-		protected readonly Filter<TIndex, TElement> Filter;
-
-		/// <summary>
 		/// The head node of the list; the first element.
 		/// </summary>
 		[AllowNull, MaybeNull]
@@ -46,14 +37,7 @@ namespace Collectathon.Lists {
 		/// <summary>
 		/// Initializes a new <see cref="List{TIndex, TElement, TNode, TSelf, TEnumerator}"/>.
 		/// </summary>
-		/// <param name="filter">The type of filter to use.</param>
-		protected List(Filters filter) => Filter = Filter<TIndex, TElement>.Create(filter);
-
-		/// <summary>
-		/// Copy constructor
-		/// </summary>
-		/// <param name="filter">The <see cref="Filter{TIndex, TElement}"/> to reuse.</param>
-		protected List([DisallowNull] Filter<TIndex, TElement> filter) => Filter = filter;
+		protected List() { }
 
 		/// <inheritdoc/>
 		public nint Count { get; protected set; }

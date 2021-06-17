@@ -23,15 +23,6 @@ namespace Collectathon.Trees {
 		where TNode : TreeNode<TElement, TNode>
 		where TSelf : Tree<TElement, TNode, TSelf> {
 		/// <summary>
-		/// The <see cref="Filter{TIndex, TElement}"/> being used.
-		/// </summary>
-		/// <remarks>
-		/// This is never <see langword="null"/>; a sentinel is used by default.
-		/// </remarks>
-		[NotNull, DisallowNull]
-		protected readonly Filter<nint, TElement> Filter;
-
-		/// <summary>
 		/// The root node of the tree; the first element.
 		/// </summary>
 		[AllowNull, MaybeNull]
@@ -40,14 +31,7 @@ namespace Collectathon.Trees {
 		/// <summary>
 		/// Initializes a new <see cref="Tree{TElement, TNode, TSelf}"/>.
 		/// </summary>
-		/// <param name="filter">The type of filter to use.</param>
-		protected Tree(Filters filter) => Filter = Filter<nint, TElement>.Create(filter);
-
-		/// <summary>
-		/// Copy constructor
-		/// </summary>
-		/// <param name="filter">The <see cref="Filter{TIndex, TElement}"/> to reuse.</param>
-		protected Tree([DisallowNull] Filter<nint, TElement> filter) => Filter = filter;
+		protected Tree() { }
 
 		/// <inheritdoc/>
 		public nint Count { get; protected set; }

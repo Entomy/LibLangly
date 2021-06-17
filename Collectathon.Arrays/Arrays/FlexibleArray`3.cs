@@ -12,7 +12,7 @@ namespace Collectathon.Arrays {
 	/// <typeparam name="TElement">The type of the elements in the array.</typeparam>
 	/// <typeparam name="TSelf">The implementing type; itself.</typeparam>
 	[DebuggerDisplay("{ToString(5),nq}")]
-	public abstract partial class FlexibleArray<TIndex, TElement, TSelf> :
+	public abstract class FlexibleArray<TIndex, TElement, TSelf> :
 		ICapacity,
 		IClear,
 		IIndex<TIndex, TElement>,

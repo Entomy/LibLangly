@@ -14,27 +14,19 @@ namespace Collectathon.Lists {
 		where TNode : StandardListNode<TElement, TNode>
 		where TSelf : StandardList<TElement, TNode, TSelf> {
 		/// <summary>
+		/// Initializes a new <see cref="StandardList{TElement, TNode, TSelf}"/>.
+		/// </summary>
+		protected StandardList() { }
+
+		/// <summary>
 		/// Initializes a new <see cref="StandardList{TElement, TNode, TSelf}"/> with the given <paramref name="elements"/>.
 		/// </summary>
 		/// <param name="elements">The initial elements of the list.</param>
-		/// <param name="filter">The type of filter to use.</param>
-		protected StandardList([DisallowNull] TElement[] elements, Filters filter) : base(filter) {
+		protected StandardList([DisallowNull] TElement[] elements) {
 			foreach (TElement element in elements) {
 				Add(element);
 			}
 		}
-
-		/// <summary>
-		/// Initializes a new <see cref="StandardList{TElement, TNode, TSelf}"/>.
-		/// </summary>
-		/// <param name="filter">The type of filter to use.</param>
-		protected StandardList(Filters filter) : base(filter) { }
-
-		/// <summary>
-		/// Copy constructor
-		/// </summary>
-		/// <param name="filter">The <see cref="Filter{TIndex, TElement}"/> to reuse.</param>
-		protected StandardList([DisallowNull] Filter<nint, TElement> filter) : base(filter) { }
 
 		/// <inheritdoc/>
 		[AllowNull, MaybeNull]

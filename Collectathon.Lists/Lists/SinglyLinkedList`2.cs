@@ -11,26 +11,13 @@ namespace Collectathon.Lists {
 		/// <summary>
 		/// initializes a new <see cref="SinglyLinkedList{TIndex, TElement}"/>.
 		/// </summary>
-		public SinglyLinkedList() : base(Filters.None) { }
+		public SinglyLinkedList() { }
 
 		/// <summary>
 		/// Initializes a new <see cref="SinglyLinkedList{TIndex, TElement}"/> witht he given <paramref name="entries"/>.
 		/// </summary>
 		/// <param name="entries">The initial entries of the list.</param>
-		public SinglyLinkedList([DisallowNull] (TIndex Index, TElement Element)[] entries) : base(entries, Filters.None) { }
-
-		/// <summary>
-		/// Initializes a new <see cref="SinglyLinkedList{TIndex, TElement}"/> witht he given <paramref name="entries"/>.
-		/// </summary>
-		/// <param name="entries">The initial entries of the list.</param>
-		/// <param name="filter">The type of filter to use.</param>
-		public SinglyLinkedList([DisallowNull] (TIndex Index, TElement Element)[] entries, Filters filter) : base(entries, filter) { }
-
-		/// <summary>
-		/// Initializes a new <see cref="SinglyLinkedList{TIndex, TElement}"/>.
-		/// </summary>
-		/// <param name="filter">The type of filter to use.</param>
-		public SinglyLinkedList(Filters filter) : base(filter) { }
+		public SinglyLinkedList([DisallowNull] (TIndex Index, TElement Element)[] entries) : base(entries) { }
 
 		/// <summary>
 		/// Converts the <paramref name="entries"/> to a <see cref="SinglyLinkedList{TElement}"/>.

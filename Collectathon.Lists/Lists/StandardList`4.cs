@@ -15,27 +15,19 @@ namespace Collectathon.Lists {
 		where TNode : StandardListNode<TIndex, TElement, TNode>
 		where TSelf : StandardList<TIndex, TElement, TNode, TSelf> {
 		/// <summary>
+		/// Initializes a new <see cref="StandardList{TIndex, TElement, TNode, TSelf}"/>.
+		/// </summary>
+		protected StandardList() { }
+
+		/// <summary>
 		/// Initializes a new <see cref="StandardList{TIndex, TElement, TNode, TSelf}"/> witht he given <paramref name="entries"/>.
 		/// </summary>
 		/// <param name="entries">The initial entries of the list.</param>
-		/// <param name="filter">The type of filter to use.</param>
-		protected StandardList([DisallowNull] (TIndex Index, TElement Element)[] entries, Filters filter) : base(filter) {
+		protected StandardList([DisallowNull] (TIndex Index, TElement Element)[] entries) {
 			foreach ((TIndex Index, TElement Element) in entries) {
 				Insert(Index, Element);
 			}
 		}
-
-		/// <summary>
-		/// Initializes a new <see cref="StandardList{TIndex, TElement, TNode, TSelf}"/>.
-		/// </summary>
-		/// <param name="filter">The type of filter to use.</param>
-		protected StandardList(Filters filter) : base(filter) { }
-
-		/// <summary>
-		/// Copy constructor.
-		/// </summary>
-		/// <param name="filter">The <see cref="Filter{TIndex, TElement}"/> to reuse.</param>
-		protected StandardList([DisallowNull] Filter<TIndex, TElement> filter) : base(filter) { }
 
 		/// <inheritdoc/>
 		[AllowNull, MaybeNull]

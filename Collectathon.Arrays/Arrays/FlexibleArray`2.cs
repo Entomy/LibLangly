@@ -28,15 +28,6 @@ namespace Collectathon.Arrays {
 		ISlice<Memory<TElement>>
 		where TSelf : FlexibleArray<TElement, TSelf> {
 		/// <summary>
-		/// The <see cref="Filter{TIndex, TElement}"/> being used.
-		/// </summary>
-		/// <remarks>
-		/// This is never <see langword="null"/>; a sentinel is used by default.
-		/// </remarks>
-		[NotNull, DisallowNull]
-		protected readonly Filter<nint, TElement> Filter;
-
-		/// <summary>
 		/// The backing array of this <see cref="FlexibleArray{TElement, TSelf}"/>.
 		/// </summary>
 		[DisallowNull, NotNull]
@@ -52,11 +43,9 @@ namespace Collectathon.Arrays {
 		/// </summary>
 		/// <param name="capacity">The initial capacity.</param>
 		/// <param name="count">The amount of elements in the array.</param>
-		/// <param name="filter">The type of filter to use.</param>
-		protected FlexibleArray(nint capacity, nint count, Filters filter) {
+		protected FlexibleArray(nint capacity, nint count) {
 			Memory = new TElement[capacity];
 			Count = count;
-			Filter = Filter<nint, TElement>.Create(filter);
 		}
 
 		/// <summary>
@@ -64,23 +53,9 @@ namespace Collectathon.Arrays {
 		/// </summary>
 		/// <param name="memory">The <see cref="Array"/> of <typeparamref name="TElement"/> to reuse.</param>
 		/// <param name="count">The amount of elements in the array.</param>
-		/// <param name="filter">The type of filter to use.</param>
-		protected FlexibleArray([DisallowNull] TElement[] memory, nint count, Filters filter) {
+		protected FlexibleArray([DisallowNull] TElement[] memory, nint count) {
 			Memory = memory;
 			Count = count;
-			Filter = Filter<nint, TElement>.Create(filter);
-		}
-
-		/// <summary>
-		/// Copy constructor
-		/// </summary>
-		/// <param name="memory">The <see cref="Array"/> of <typeparamref name="TElement"/> to reuse.</param>
-		/// <param name="count">The amount of elements in the array.</param>
-		/// <param name="filter">The <see cref="Filter{TIndex, TElement}"/> to reuse.</param>
-		protected FlexibleArray([DisallowNull] TElement[] memory, nint count, [DisallowNull] Filter<nint, TElement> filter) {
-			Memory = memory;
-			Count = count;
-			Filter = filter;
 		}
 
 		/// <inheritdoc/>
