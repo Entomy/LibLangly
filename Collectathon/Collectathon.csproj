@@ -26,4 +26,8 @@
 	  <ProjectReference Include="..\Philosoft.Extensions\Philosoft.Extensions.csproj" />
 	</ItemGroup>
 
+	<ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.1'">
+		<ProjectReference Include="..\Collectathon.Pools\Collectathon.Pools.csproj" />
+	</ItemGroup>
+
 </Project>
