@@ -32,12 +32,7 @@ namespace Stringier {
 			public override nint Count { get; }
 
 			/// <inheritdoc/>
-			public override Boolean Contains(Char element) {
-				for (nint i = 0; i < Count; i++) {
-					if (Equals(Pointer[i], element)) return true;
-				}
-				return false;
-			}
+			public override Boolean Contains(Char element) => Collection.Contains(Pointer, Count, element);
 
 			/// <inheritdoc/>
 			public override (Node Head, Node Tail) Insert(nint index, [AllowNull] Char element) {

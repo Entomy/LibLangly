@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Traits;
-using Collectathon.Arrays;
-using Collectathon.Enumerators;
 
 namespace Numbersome {
 	/// <summary>
@@ -12,25 +10,53 @@ namespace Numbersome {
 	/// <remarks>
 	/// <para>This isn't intended for counting a single thing over and over. Rather, it's meant for counting collections of things all at once, and then doing things with those counts.</para>
 	/// </remarks>
-	public sealed class Counter<TElement> :
+	public sealed partial class Counter<TElement> :
 		IAdd<TElement>,
 		IClear,
 		IContains<TElement>,
 		IIndexReadOnly<TElement, nint>,
-		ISequence<(TElement Element, nint Count), ArrayEnumerator<(TElement Element, nint Count)>> {
+		ISequence<(TElement? Element, nint Count), Counter<TElement>.Enumerator> {
 		/// <summary>
-		/// The backing association of this <see cref="Counter{TElement}"/>.
+		/// The elements of this <see cref="Counter{TElement}"/>.
 		/// </summary>
+		/// <remarks>
+		/// This uses array parallelism together with <see cref="Counts"/>.
+		/// </remarks>
 		[DisallowNull, NotNull]
-		private readonly DynamicArray<TElement, nint> Elements;
+		private TElement?[] Elements;
+
+		/// <summary>
+		/// The counts of this <see cref="Counter{TElement}"/>.
+		/// </summary>
+		/// <remarks>
+		/// This uses array parallelism together with <see cref="Elements"/>.
+		/// </remarks>
+		[DisallowNull, NotNull]
+		private Int32[] Counts;
+
+		/// <summary>
+		/// The amount of entries in the <see cref="Counter{TElement}"/>.
+		/// </summary>
+		private Int32 count;
 
 		/// <summary>
 		/// Initializes a new <see cref="Counter{TElement}"/>.
 		/// </summary>
-		public Counter() => Elements = new DynamicArray<TElement, nint>();
+		public Counter() {
+			Elements = Array.Empty<TElement>();
+			Counts = Array.Empty<Int32>();
+		}
 
 		/// <inheritdoc/>
-		public nint Count => Elements.Count;
+		public nint Count {
+			get {
+				nint c = 0;
+				foreach (Int32 count in Counts) {
+					c += count;
+				}
+				return c;
+			}
+		}
 
 		/// <summary>
 		/// Get the element with the highest count.
@@ -38,14 +64,15 @@ namespace Numbersome {
 		[MaybeNull]
 		public TElement Highest {
 			get {
-				(TElement Element, nint Count) high = (default, (nint)(IntPtr.Size == 8 ? Int64.MinValue : Int32.MinValue));
-				foreach ((TElement Element, nint Count) in Elements) {
-					if (high.Count < Count) {
-						high.Element = Element;
-						high.Count = Count;
+				TElement? Element = default;
+				nint Count = (nint)(IntPtr.Size == 8 ? Int64.MinValue : Int32.MinValue);
+				for (nint i = 0; i < count; i++) {
+					if (Count < Counts[i]) {
+						Element = Elements[i];
+						Count = Counts[i];
 					}
 				}
-				return high.Element;
+				return Element;
 			}
 		}
 
@@ -55,45 +82,62 @@ namespace Numbersome {
 		[MaybeNull]
 		public TElement Lowest {
 			get {
-				(TElement Element, nint Count) low = (default, (nint)(IntPtr.Size == 8 ? Int64.MaxValue : Int32.MaxValue));
-				foreach ((TElement Element, nint Count) in Elements) {
-					if (low.Count > Count) {
-						low.Element = Element;
-						low.Count = Count;
+				TElement? Element = default;
+				nint Count = (nint)(IntPtr.Size == 8 ? Int64.MaxValue : Int32.MaxValue);
+				for (nint i = 0; i < count; i++) {
+					if (Count > Counts[i]) {
+						Element = Elements[i];
+						Count = Counts[i];
 					}
 				}
-				return low.Element;
+				return Element;
 			}
 		}
 
 		/// <inheritdoc/>
-		public nint this[[AllowNull] TElement index] => Elements[index];
+		public nint this[[AllowNull] TElement index] {
+			get {
+				for (nint i = 0; i < count; i++) {
+					if (Equals(Elements[i], index)) {
+						return Counts[i];
+					}
+				}
+				return 0;
+			}
+		}
 
 		/// <inheritdoc/>
 		public void Add([AllowNull] TElement element) {
-			if (Contains(element)) {
-				Elements[element]++;
-			} else {
-				Elements.Insert(element, 1);
-			}
-		}
-
-		/// <inheritdoc/>
-		public void Clear() => Elements.Clear();
-
-		/// <inheritdoc/>
-		public Boolean Contains([AllowNull] TElement element) {
-			foreach ((TElement Element, nint Count) in Elements) {
-				if (Equals(Element, element)) {
-					return true;
+			for (nint i = 0; i < count; i++) {
+				if (Equals(Elements[i], element)) {
+					Counts[i]++;
+					return;
 				}
 			}
-			return false;
+			// If we reach this point, the element didn't exist, so we need to add it
+			// Do the underlying arrays need resizing?
+			if (count >= Elements.Length) {
+				Elements = Collection.Grow(Elements);
+				Counts = Collection.Grow(Counts);
+			}
+			// Add the entry
+			Elements[count] = element;
+			Counts[count] = 1;
+			count++;
 		}
+
+		/// <inheritdoc/>
+		public void Clear() {
+			Elements = Array.Empty<TElement>();
+			Counts = Array.Empty<Int32>();
+		}
+
+		/// <inheritdoc/>
+		public Boolean Contains([AllowNull] TElement element) => Collection.Contains(Elements, Elements.Length, element);
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public ArrayEnumerator<(TElement Element, nint Count)> GetEnumerator() => Elements.GetEnumerator();
+		public Enumerator GetEnumerator() => new Enumerator(Elements, Counts, count);
 
 		/// <inheritdoc/>
 		[return: NotNull]
@@ -105,10 +149,10 @@ namespace Numbersome {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public override String ToString() => Elements.ToString();
+		public override String ToString() => Collection.ToString(Elements, count);
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public String ToString(nint amount) => Elements.ToString(amount);
+		public String ToString(nint amount) => Collection.ToString(Elements, count);
 	}
 }

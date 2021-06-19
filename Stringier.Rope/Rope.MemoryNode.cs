@@ -28,12 +28,7 @@ namespace Stringier {
 			public override nint Count => Memory.Length;
 
 			/// <inheritdoc/>
-			public override Boolean Contains([AllowNull] Char element) {
-				foreach (Char item in Memory.Span) {
-					if (Equals(item, element)) return true;
-				}
-				return false;
-			}
+			public override Boolean Contains([AllowNull] Char element) => Collection.Contains(Memory, Count, element);
 
 			/// <inheritdoc/>
 			public override (Node Head, Node Tail) Insert(nint index, [AllowNull] Char element) {
