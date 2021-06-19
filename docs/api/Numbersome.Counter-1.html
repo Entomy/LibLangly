@@ -86,13 +86,13 @@
     <div><span class="xref">IClear</span></div>
     <div><span class="xref">IContains</span>&lt;TElement&gt;</div>
     <div><span class="xref">IIndexReadOnly</span>&lt;TElement, <span class="xref">nint</span>&gt;</div>
-    <div><span class="xref">ISequence</span>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">ValueTuple</a>&lt;TElement, <span class="xref">nint</span>&gt;, <a class="xref" href="Collectathon.Enumerators.ArrayEnumerator-1.html">ArrayEnumerator</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">ValueTuple</a>&lt;TElement, <span class="xref">nint</span>&gt;&gt;&gt;</div>
+    <div><span class="xref">ISequence</span>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">ValueTuple</a>&lt;TElement, <span class="xref">nint</span>&gt;, <a class="xref" href="Numbersome.Counter-1.Enumerator.html">Counter.Enumerator</a>&lt;&gt;&gt;</div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Numbersome.html">Numbersome</a></h6>
   <h6><strong>Assembly</strong>: Numbersome.Counters.dll</h6>
   <h5 id="Numbersome_Counter_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class Counter&lt;TElement&gt; : IAdd&lt;TElement&gt;, IClear, IContains&lt;TElement&gt;, IIndexReadOnly&lt;TElement, nint&gt;, ISequence&lt;(TElement Element, nint Count), ArrayEnumerator&lt;(TElement Element, nint Count)&gt;&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class Counter&lt;TElement&gt; : IAdd&lt;TElement&gt;, IClear, IContains&lt;TElement&gt;, IIndexReadOnly&lt;TElement, nint&gt;, ISequence&lt;(TElement Element, nint Count), Counter&lt;TElement&gt;.Enumerator&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -120,7 +120,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Counter_1__ctor.md&amp;value=---%0Auid%3A%20Numbersome.Counter%601.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Counters/Counter.cs/#L30">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Counters/Counter.cs/#L45">View Source</a>
   </span>
   <a id="Numbersome_Counter_1__ctor_" data-uid="Numbersome.Counter`1.#ctor*"></a>
   <h4 id="Numbersome_Counter_1__ctor" data-uid="Numbersome.Counter`1.#ctor">Counter()</h4>
@@ -138,7 +138,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Counter_1_Count.md&amp;value=---%0Auid%3A%20Numbersome.Counter%601.Count%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Counters/Counter.cs/#L33">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Counters/Counter.cs/#L51">View Source</a>
   </span>
   <a id="Numbersome_Counter_1_Count_" data-uid="Numbersome.Counter`1.Count*"></a>
   <h4 id="Numbersome_Counter_1_Count" data-uid="Numbersome.Counter`1.Count">Count</h4>
@@ -168,7 +168,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Counter_1_Highest.md&amp;value=---%0Auid%3A%20Numbersome.Counter%601.Highest%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Counters/Counter.cs/#L38">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Counters/Counter.cs/#L64">View Source</a>
   </span>
   <a id="Numbersome_Counter_1_Highest_" data-uid="Numbersome.Counter`1.Highest*"></a>
   <h4 id="Numbersome_Counter_1_Highest" data-uid="Numbersome.Counter`1.Highest">Highest</h4>
@@ -199,7 +199,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Counter_1_Item__0_.md&amp;value=---%0Auid%3A%20Numbersome.Counter%601.Item(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Counters/Counter.cs/#L70">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Counters/Counter.cs/#L98">View Source</a>
   </span>
   <a id="Numbersome_Counter_1_Item_" data-uid="Numbersome.Counter`1.Item*"></a>
   <h4 id="Numbersome_Counter_1_Item__0_" data-uid="Numbersome.Counter`1.Item(`0)">Item[TElement]</h4>
@@ -246,7 +246,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Counter_1_Lowest.md&amp;value=---%0Auid%3A%20Numbersome.Counter%601.Lowest%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Counters/Counter.cs/#L55">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Counters/Counter.cs/#L82">View Source</a>
   </span>
   <a id="Numbersome_Counter_1_Lowest_" data-uid="Numbersome.Counter`1.Lowest*"></a>
   <h4 id="Numbersome_Counter_1_Lowest" data-uid="Numbersome.Counter`1.Lowest">Lowest</h4>
@@ -279,7 +279,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Counter_1_Add__0_.md&amp;value=---%0Auid%3A%20Numbersome.Counter%601.Add(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Counters/Counter.cs/#L73">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Counters/Counter.cs/#L110">View Source</a>
   </span>
   <a id="Numbersome_Counter_1_Add_" data-uid="Numbersome.Counter`1.Add*"></a>
   <h4 id="Numbersome_Counter_1_Add__0_" data-uid="Numbersome.Counter`1.Add(`0)">Add(TElement)</h4>
@@ -311,7 +311,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Counter_1_Clear.md&amp;value=---%0Auid%3A%20Numbersome.Counter%601.Clear%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Counters/Counter.cs/#L82">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Counters/Counter.cs/#L130">View Source</a>
   </span>
   <a id="Numbersome_Counter_1_Clear_" data-uid="Numbersome.Counter`1.Clear*"></a>
   <h4 id="Numbersome_Counter_1_Clear" data-uid="Numbersome.Counter`1.Clear">Clear()</h4>
@@ -326,7 +326,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Counter_1_Contains__0_.md&amp;value=---%0Auid%3A%20Numbersome.Counter%601.Contains(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Counters/Counter.cs/#L85">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Counters/Counter.cs/#L136">View Source</a>
   </span>
   <a id="Numbersome_Counter_1_Contains_" data-uid="Numbersome.Counter`1.Contains*"></a>
   <h4 id="Numbersome_Counter_1_Contains__0_" data-uid="Numbersome.Counter`1.Contains(`0)">Contains(TElement)</h4>
@@ -373,7 +373,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Counter_1_GetEnumerator.md&amp;value=---%0Auid%3A%20Numbersome.Counter%601.GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Counters/Counter.cs/#L95">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Counters/Counter.cs/#L139">View Source</a>
   </span>
   <a id="Numbersome_Counter_1_GetEnumerator_" data-uid="Numbersome.Counter`1.GetEnumerator*"></a>
   <h4 id="Numbersome_Counter_1_GetEnumerator" data-uid="Numbersome.Counter`1.GetEnumerator">GetEnumerator()</h4>
@@ -381,7 +381,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ArrayEnumerator&lt;(TElement Element, nint Count)&gt; GetEnumerator()</code></pre>
+    <pre><code class="lang-csharp hljs">public Counter&lt;TElement&gt;.Enumerator GetEnumerator()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -393,7 +393,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Collectathon.Enumerators.ArrayEnumerator-1.html">ArrayEnumerator</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">ValueTuple</a>&lt;TElement, <span class="xref">nint</span>&gt;&gt;</td>
+        <td><a class="xref" href="Numbersome.Counter-1.Enumerator.html">Counter.Enumerator</a>&lt;&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -403,7 +403,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Counter_1_ToString.md&amp;value=---%0Auid%3A%20Numbersome.Counter%601.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Counters/Counter.cs/#L107">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Counters/Counter.cs/#L151">View Source</a>
   </span>
   <a id="Numbersome_Counter_1_ToString_" data-uid="Numbersome.Counter`1.ToString*"></a>
   <h4 id="Numbersome_Counter_1_ToString" data-uid="Numbersome.Counter`1.ToString">ToString()</h4>
@@ -433,7 +433,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Counter_1_ToString_nint_.md&amp;value=---%0Auid%3A%20Numbersome.Counter%601.ToString(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Counters/Counter.cs/#L111">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Counters/Counter.cs/#L155">View Source</a>
   </span>
   <a id="Numbersome_Counter_1_ToString_" data-uid="Numbersome.Counter`1.ToString*"></a>
   <h4 id="Numbersome_Counter_1_ToString_nint_" data-uid="Numbersome.Counter`1.ToString(nint)">ToString(nint)</h4>
@@ -499,7 +499,7 @@
                     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Counter_1.md&amp;value=---%0Auid%3A%20Numbersome.Counter%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Counters/Counter.cs/#L15" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Counters/Counter.Enumerator.cs/#L7" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
