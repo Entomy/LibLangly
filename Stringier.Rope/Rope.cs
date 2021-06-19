@@ -703,6 +703,7 @@ namespace Stringier {
 		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
 		public Boolean Equals(Span<Char> other, Case casing) => Equals((ReadOnlySpan<Char>)other, casing);
 
+
 		/// <summary>
 		/// Determines whether the specified object is equal to the current object.
 		/// </summary>
