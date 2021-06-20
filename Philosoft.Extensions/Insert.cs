@@ -35,6 +35,15 @@ namespace System {
 		/// <param name="collection">This collection.</param>
 		/// <param name="index">The index at which the <paramref name="elements"/> should be inserted.</param>
 		/// <param name="elements">The elements to insert.</param>
+		public static void Insert<TElement>([DisallowNull] this IInsert<nint, TElement> collection, nint index, ArraySegment<TElement> elements) => Insert(collection, index, elements.AsSpan());
+
+		/// <summary>
+		/// Inserts the elements into the collection at the specified index, one by one.
+		/// </summary>
+		/// <typeparam name="TElement">The type of the elements in the collection.</typeparam>
+		/// <param name="collection">This collection.</param>
+		/// <param name="index">The index at which the <paramref name="elements"/> should be inserted.</param>
+		/// <param name="elements">The elements to insert.</param>
 		public static void Insert<TElement>([DisallowNull] this IInsert<nint, TElement> collection, nint index, Memory<TElement> elements) => Insert(collection, index, elements.Span);
 
 		/// <summary>

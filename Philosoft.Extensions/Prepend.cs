@@ -31,6 +31,14 @@ namespace System {
 		/// <typeparam name="TElement">The type of the elements in the collection.</typeparam>
 		/// <param name="collection">This collection.</param>
 		/// <param name="elements">The elements to prepend.</param>
+		public static void Prepend<TElement>([DisallowNull] this IPrepend<TElement> collection, ArraySegment<TElement> elements) => Prepend(collection, elements.AsSpan());
+
+		/// <summary>
+		/// Prepends the elements onto this object, one by one.
+		/// </summary>
+		/// <typeparam name="TElement">The type of the elements in the collection.</typeparam>
+		/// <param name="collection">This collection.</param>
+		/// <param name="elements">The elements to prepend.</param>
 		public static void Prepend<TElement>([DisallowNull] this IPrepend<TElement> collection, Memory<TElement> elements) => Prepend(collection, elements.Span);
 
 		/// <summary>

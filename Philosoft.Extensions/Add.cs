@@ -43,6 +43,17 @@ namespace System {
 		/// <remarks>
 		/// The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.
 		/// </remarks>
+		public static void Add<TElement>([DisallowNull] this IAdd<TElement> collection, ArraySegment<TElement> elements) => Add(collection, elements.AsSpan());
+
+		/// <summary>
+		/// Adds the elements to this collection, one by one.
+		/// </summary>
+		/// <typeparam name="TElement">The type of the elements in the collection.</typeparam>
+		/// <param name="collection">This collection.</param>
+		/// <param name="elements">The elements to add.</param>
+		/// <remarks>
+		/// The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.
+		/// </remarks>
 		public static void Add<TElement>([DisallowNull] this IAdd<TElement> collection, Memory<TElement> elements) => Add(collection, elements.Span);
 
 		/// <summary>

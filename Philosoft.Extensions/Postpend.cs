@@ -31,6 +31,14 @@ namespace System {
 		/// <typeparam name="TElement">The type of the elements in the collection.</typeparam>
 		/// <param name="collection">This collection.</param>
 		/// <param name="elements">The elements to postpend.</param>
+		public static void Postpend<TElement>([DisallowNull] this IPostpend<TElement> collection, ArraySegment<TElement> elements) => Postpend(collection, elements.AsSpan());
+
+		/// <summary>
+		/// Postpends the elements onto this object, one by one.
+		/// </summary>
+		/// <typeparam name="TElement">The type of the elements in the collection.</typeparam>
+		/// <param name="collection">This collection.</param>
+		/// <param name="elements">The elements to postpend.</param>
 		public static void Postpend<TElement>([DisallowNull] this IPostpend<TElement> collection, Memory<TElement> elements) => Postpend(collection, elements.Span);
 
 		/// <summary>

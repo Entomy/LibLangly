@@ -24,6 +24,14 @@ namespace System {
 		/// <typeparam name="TElement">The type of the elements in the collection.</typeparam>
 		/// <param name="collection">This collection.</param>
 		/// <param name="elements">The values to write.</param>
+		public static void Write<TElement>([DisallowNull] this IWrite<TElement> collection, ArraySegment<TElement> elements) => Write(collection, elements.AsSpan());
+
+		/// <summary>
+		/// Writes the <paramref name="elements"/>, one by one.
+		/// </summary>
+		/// <typeparam name="TElement">The type of the elements in the collection.</typeparam>
+		/// <param name="collection">This collection.</param>
+		/// <param name="elements">The values to write.</param>
 		public static void Write<TElement>([DisallowNull] this IWrite<TElement> collection, Memory<TElement> elements) => Write(collection, elements.Span);
 
 		/// <summary>
