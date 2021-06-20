@@ -13,11 +13,7 @@ namespace System.Traits {
 		/// <remarks>
 		/// The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.
 		/// </remarks>
-		void Add([AllowNull] params TElement[] elements)
-#if !NETSTANDARD1_3
-			=> Add(elements.AsMemory())
-#endif
-			;
+		void Add([AllowNull] params TElement?[] elements);
 
 		/// <summary>
 		/// Adds the elements to this object, as a batch.
@@ -26,11 +22,7 @@ namespace System.Traits {
 		/// <remarks>
 		/// The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.
 		/// </remarks>
-		void Add(Memory<TElement> elements)
-#if !NETSTANDARD1_3
-			=> Add((ReadOnlyMemory<TElement>)elements)
-#endif
-			;
+		void Add(ArraySegment<TElement?> elements);
 
 		/// <summary>
 		/// Adds the elements to this object, as a batch.
@@ -39,6 +31,15 @@ namespace System.Traits {
 		/// <remarks>
 		/// The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.
 		/// </remarks>
-		void Add(ReadOnlyMemory<TElement> elements);
+		void Add(Memory<TElement?> elements);
+
+		/// <summary>
+		/// Adds the elements to this object, as a batch.
+		/// </summary>
+		/// <param name="elements">The elements to add.</param>
+		/// <remarks>
+		/// The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.
+		/// </remarks>
+		void Add(ReadOnlyMemory<TElement?> elements);
 	}
 }

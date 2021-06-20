@@ -6,11 +6,7 @@
 		/// <summary>
 		/// Shifts the collection left one position.
 		/// </summary>
-		void ShiftLeft()
-#if !NETSTANDARD1_3
-			=> ShiftLeft(1)
-#endif
-			;
+		void ShiftLeft();
 
 		/// <summary>
 		/// Shifts the collection left by <paramref name="amount"/>.
@@ -21,11 +17,7 @@
 		/// <summary>
 		/// Shifts the collection right one position.
 		/// </summary>
-		void ShiftRight()
-#if !NETSTANDARD1_3
-			=> ShiftRight(1)
-#endif
-			;
+		void ShiftRight();
 
 		/// <summary>
 		/// Shifts the collection right by <paramref name="amount"/>.

@@ -10,26 +10,24 @@ namespace System.Traits {
 		/// Prepends the elements onto this object, as a batch.
 		/// </summary>
 		/// <param name="elements">The elements to prepend.</param>
-		void Prepend([AllowNull] params TElement[] elements)
-#if !NETSTANDARD1_3
-			=> Prepend(elements.AsMemory())
-#endif
-			;
+		void Prepend([AllowNull] params TElement?[] elements);
 
 		/// <summary>
 		/// Prepends the elements onto this object, as a batch.
 		/// </summary>
 		/// <param name="elements">The elements to prepend.</param>
-		void Prepend(Memory<TElement> elements)
-#if !NETSTANDARD1_3
-			=> Prepend((ReadOnlyMemory<TElement>)elements)
-#endif
-			;
+		void Prepend(ArraySegment<TElement?> elements);
 
 		/// <summary>
 		/// Prepends the elements onto this object, as a batch.
 		/// </summary>
 		/// <param name="elements">The elements to prepend.</param>
-		void Prepend(ReadOnlyMemory<TElement> elements);
+		void Prepend(Memory<TElement?> elements);
+
+		/// <summary>
+		/// Prepends the elements onto this object, as a batch.
+		/// </summary>
+		/// <param name="elements">The elements to prepend.</param>
+		void Prepend(ReadOnlyMemory<TElement?> elements);
 	}
 }

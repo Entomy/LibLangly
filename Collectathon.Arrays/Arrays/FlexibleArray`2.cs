@@ -31,7 +31,7 @@ namespace Collectathon.Arrays {
 		/// The backing array of this <see cref="FlexibleArray{TElement, TSelf}"/>.
 		/// </summary>
 		[DisallowNull, NotNull]
-		protected TElement[] Memory;
+		protected TElement?[] Memory;
 
 		/// <summary>
 		/// The amount of elements contained in this collection.
@@ -53,7 +53,7 @@ namespace Collectathon.Arrays {
 		/// </summary>
 		/// <param name="memory">The <see cref="Array"/> of <typeparamref name="TElement"/> to reuse.</param>
 		/// <param name="count">The amount of elements in the array.</param>
-		protected FlexibleArray([DisallowNull] TElement[] memory, nint count) {
+		protected FlexibleArray([DisallowNull] TElement?[] memory, nint count) {
 			Memory = memory;
 			Count = count;
 		}
@@ -114,19 +114,22 @@ namespace Collectathon.Arrays {
 		public void Add([AllowNull] TElement element) => Postpend(element);
 
 		/// <inheritdoc/>
-		public void Add([AllowNull] params TElement[] elements) => Postpend(elements);
+		public void Add([AllowNull] params TElement?[] elements) => Postpend(elements);
 
 		/// <inheritdoc/>
-		public void Add(Memory<TElement> elements) => Postpend(elements);
+		public void Add(ArraySegment<TElement?> elements) => Postpend(elements);
 
 		/// <inheritdoc/>
-		public void Add(ReadOnlyMemory<TElement> elements) => Postpend(elements);
+		public void Add(Memory<TElement?> elements) => Postpend(elements);
 
 		/// <inheritdoc/>
-		public void Add(Span<TElement> elements) => Postpend(elements);
+		public void Add(ReadOnlyMemory<TElement?> elements) => Postpend(elements);
 
 		/// <inheritdoc/>
-		public void Add(ReadOnlySpan<TElement> elements) => Postpend(elements);
+		public void Add(Span<TElement?> elements) => Postpend(elements);
+
+		/// <inheritdoc/>
+		public void Add(ReadOnlySpan<TElement?> elements) => Postpend(elements);
 
 		/// <inheritdoc/>
 		[O(1), Ω(1), Θ(1)]
@@ -182,19 +185,22 @@ namespace Collectathon.Arrays {
 		public virtual void Insert(nint index, [AllowNull] TElement element) => Collection.Insert(Memory, ref count, index, element);
 
 		/// <inheritdoc/>
-		public void Insert(nint index, [AllowNull] params TElement[] elements) => Insert(index, elements.AsSpan());
+		public void Insert(nint index, [AllowNull] params TElement?[] elements) => Insert(index, elements.AsSpan());
 
 		/// <inheritdoc/>
-		public void Insert(nint index, Memory<TElement> elements) => Insert(index, elements.Span);
+		public void Insert([DisallowNull] nint index, ArraySegment<TElement?> elements) => Insert(index, elements.AsSpan());
 
 		/// <inheritdoc/>
-		public void Insert(nint index, ReadOnlyMemory<TElement> elements) => Insert(index, elements.Span);
+		public void Insert(nint index, Memory<TElement?> elements) => Insert(index, elements.Span);
 
 		/// <inheritdoc/>
-		public void Insert(nint index, Span<TElement> elements) => Insert(index, (ReadOnlySpan<TElement>)elements);
+		public void Insert(nint index, ReadOnlyMemory<TElement?> elements) => Insert(index, elements.Span);
 
 		/// <inheritdoc/>
-		public virtual void Insert(nint index, ReadOnlySpan<TElement> elements) => Collection.Insert(Memory, ref count, index, elements);
+		public void Insert(nint index, Span<TElement?> elements) => Insert(index, (ReadOnlySpan<TElement>)elements);
+
+		/// <inheritdoc/>
+		public virtual void Insert(nint index, ReadOnlySpan<TElement?> elements) => Collection.Insert(Memory, ref count, index, elements);
 
 		/// <inheritdoc/>
 		[O(Complexity.n_plus_k), Ω(Complexity.n)]
@@ -202,11 +208,15 @@ namespace Collectathon.Arrays {
 
 		/// <inheritdoc/>
 		[O(Complexity.n_plus_k), Ω(Complexity.n)]
-		public void Postpend([AllowNull] params TElement[] elements) => Postpend(elements.AsSpan());
+		public void Postpend([AllowNull] params TElement?[] elements) => Postpend(elements.AsSpan());
 
 		/// <inheritdoc/>
 		[O(Complexity.n_plus_k), Ω(Complexity.n)]
-		public void Postpend(Memory<TElement> elements) => Postpend(elements.Span);
+		public void Postpend(ArraySegment<TElement?> elements) => Postpend(elements.AsSpan());
+
+		/// <inheritdoc/>
+		[O(Complexity.n_plus_k), Ω(Complexity.n)]
+		public void Postpend(Memory<TElement?> elements) => Postpend(elements.Span);
 
 		/// <inheritdoc/>
 		[O(Complexity.n_plus_k), Ω(Complexity.n)]
@@ -226,23 +236,27 @@ namespace Collectathon.Arrays {
 
 		/// <inheritdoc/>
 		[O(Complexity.n_plus_k), Ω(Complexity.n)]
-		public void Prepend([AllowNull] params TElement[] elements) => Prepend(elements.AsSpan());
+		public void Prepend([AllowNull] params TElement?[] elements) => Prepend(elements.AsSpan());
 
 		/// <inheritdoc/>
 		[O(Complexity.n_plus_k), Ω(Complexity.n)]
-		public void Prepend(Memory<TElement> elements) => Prepend(elements.Span);
+		public void Prepend(ArraySegment<TElement?> elements) => Postpend(elements.AsSpan());
 
 		/// <inheritdoc/>
 		[O(Complexity.n_plus_k), Ω(Complexity.n)]
-		public void Prepend(ReadOnlyMemory<TElement> elements) => Prepend(elements.Span);
+		public void Prepend(Memory<TElement?> elements) => Prepend(elements.Span);
 
 		/// <inheritdoc/>
 		[O(Complexity.n_plus_k), Ω(Complexity.n)]
-		public void Prepend(Span<TElement> elements) => Prepend((ReadOnlySpan<TElement>)elements);
+		public void Prepend(ReadOnlyMemory<TElement?> elements) => Prepend(elements.Span);
 
 		/// <inheritdoc/>
 		[O(Complexity.n_plus_k), Ω(Complexity.n)]
-		public virtual void Prepend(ReadOnlySpan<TElement> elements) => Collection.Prepend(Memory, ref count, elements);
+		public void Prepend(Span<TElement?> elements) => Prepend((ReadOnlySpan<TElement>)elements);
+
+		/// <inheritdoc/>
+		[O(Complexity.n_plus_k), Ω(Complexity.n)]
+		public virtual void Prepend(ReadOnlySpan<TElement?> elements) => Collection.Prepend(Memory, ref count, elements);
 
 		/// <inheritdoc/>
 		[O(Complexity.n_plus_k), Ω(Complexity.n_plus_k)]

@@ -12,29 +12,28 @@ namespace System.Traits {
 		/// </summary>
 		/// <param name="index">The index at which the <paramref name="elements"/> should be inserted.</param>
 		/// <param name="elements">The elements to insert.</param>
-		void Insert([DisallowNull] TIndex index, [AllowNull] params TElement[] elements)
-#if !NETSTANDARD1_3
-			=> Insert(index, elements.AsMemory())
-#endif
-			;
+		void Insert([DisallowNull] TIndex index, [AllowNull] params TElement?[] elements);
 
 		/// <summary>
 		/// Inserts the elements into the collection at the specified index, as a batch.
 		/// </summary>
 		/// <param name="index">The index at which the <paramref name="elements"/> should be inserted.</param>
 		/// <param name="elements">The elements to insert.</param>
-		void Insert([DisallowNull] TIndex index, Memory<TElement> elements)
-#if !NETSTANDARD1_3
-			=> Insert(index, (ReadOnlyMemory<TElement>)elements)
-#endif
-			;
+		void Insert([DisallowNull] TIndex index, ArraySegment<TElement?> elements);
 
 		/// <summary>
 		/// Inserts the elements into the collection at the specified index, as a batch.
 		/// </summary>
 		/// <param name="index">The index at which the <paramref name="elements"/> should be inserted.</param>
 		/// <param name="elements">The elements to insert.</param>
-		void Insert([DisallowNull] TIndex index, ReadOnlyMemory<TElement> elements);
+		void Insert([DisallowNull] TIndex index, Memory<TElement?> elements);
+
+		/// <summary>
+		/// Inserts the elements into the collection at the specified index, as a batch.
+		/// </summary>
+		/// <param name="index">The index at which the <paramref name="elements"/> should be inserted.</param>
+		/// <param name="elements">The elements to insert.</param>
+		void Insert([DisallowNull] TIndex index, ReadOnlyMemory<TElement?> elements);
 	}
 }
 

@@ -526,6 +526,10 @@ namespace Stringier {
 
 		/// <inheritdoc/>
 		[MemberNotNull(nameof(Head), nameof(Tail))]
+		public void Add(ArraySegment<Char> elements) => Postpend(elements);
+
+		/// <inheritdoc/>
+		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Add(Memory<Char> elements) => Postpend(elements);
 
 		/// <inheritdoc/>
@@ -533,7 +537,8 @@ namespace Stringier {
 		public void Add(ReadOnlyMemory<Char> elements) => Postpend(elements);
 
 		/// <inheritdoc/>
-		public void Add([AllowNull] String element) => throw new NotImplementedException();
+		[MemberNotNull(nameof(Head), nameof(Tail))]
+		public void Add([AllowNull] String element) => Postpend(element);
 
 		/// <inheritdoc/>
 		public void Clear() {
@@ -703,7 +708,6 @@ namespace Stringier {
 		/// <exception cref="ArgumentException"><paramref name="casing"/> is not a <see cref="Case"/> value.</exception>
 		public Boolean Equals(Span<Char> other, Case casing) => Equals((ReadOnlySpan<Char>)other, casing);
 
-
 		/// <summary>
 		/// Determines whether the specified object is equal to the current object.
 		/// </summary>
@@ -851,6 +855,10 @@ namespace Stringier {
 
 		/// <inheritdoc/>
 		[MemberNotNull(nameof(Head), nameof(Tail))]
+		public void Insert([DisallowNull] nint index, ArraySegment<Char> elements) => Insert(index, elements.AsMemory());
+
+		/// <inheritdoc/>
+		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Insert(nint index, [AllowNull] params Char[] elements) => Insert(index, elements.AsMemory());
 
 		/// <inheritdoc/>
@@ -925,7 +933,8 @@ namespace Stringier {
 		}
 
 		/// <inheritdoc/>
-		public void Insert(nint index, [AllowNull] String element) => throw new NotImplementedException();
+		[MemberNotNull(nameof(Head), nameof(Tail))]
+		public void Insert(nint index, [AllowNull] String element) => Insert(index, element.AsMemory());
 
 		/// <inheritdoc/>
 		[MemberNotNull(nameof(Head), nameof(Tail))]
@@ -946,6 +955,10 @@ namespace Stringier {
 
 		/// <inheritdoc/>
 		[MemberNotNull(nameof(Head), nameof(Tail))]
+		public void Postpend(ArraySegment<Char> elements) => Postpend(elements.AsMemory());
+
+		/// <inheritdoc/>
+		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Postpend(Memory<Char> elements) => Postpend((ReadOnlyMemory<Char>)elements);
 
 		/// <inheritdoc/>
@@ -962,7 +975,8 @@ namespace Stringier {
 		}
 
 		/// <inheritdoc/>
-		public void Postpend([AllowNull] String element) => throw new NotImplementedException();
+		[MemberNotNull(nameof(Head), nameof(Tail))]
+		public void Postpend([AllowNull] String element) => Postpend(element.AsMemory());
 
 		/// <inheritdoc/>
 		[MemberNotNull(nameof(Head), nameof(Tail))]
@@ -982,6 +996,10 @@ namespace Stringier {
 
 		/// <inheritdoc/>
 		[MemberNotNull(nameof(Head), nameof(Tail))]
+		public void Prepend(ArraySegment<Char> elements) => Prepend(elements.AsMemory());
+
+		/// <inheritdoc/>
+		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Prepend(Memory<Char> elements) => Prepend((ReadOnlyMemory<Char>)elements);
 
 		/// <inheritdoc/>
@@ -997,7 +1015,8 @@ namespace Stringier {
 		}
 
 		/// <inheritdoc/>
-		public void Prepend([AllowNull] String element) => throw new NotImplementedException();
+		[MemberNotNull(nameof(Head), nameof(Tail))]
+		public void Prepend([AllowNull] String element) => Prepend(element.AsMemory());
 
 		/// <inheritdoc/>
 		public void Remove(Char element) => throw new NotImplementedException();

@@ -28,6 +28,16 @@ namespace Stringier {
 			/// <inheritdoc/>
 			public override Char this[nint index] => Pointer[index];
 
+#if NETCOREAPP3_0_OR_GREATER
+			/// <inheritdoc/>
+			public PointerNode this[Range range] {
+				get {
+					(Int32 offset, Int32 length) = range.GetOffsetAndLength((Int32)Count);
+					return Slice(offset, length);
+				}
+			}
+#endif
+
 			/// <inheritdoc/>
 			public override nint Count { get; }
 

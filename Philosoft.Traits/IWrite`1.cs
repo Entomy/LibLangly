@@ -18,10 +18,6 @@ namespace System.Traits {
 		/// Writes a <paramref name="element"/>.
 		/// </summary>
 		/// <param name="element">The <typeparamref name="TElement"/> value to write.</param>
-		void Write([AllowNull] TElement element)
-#if !NETSTANDARD1_3
-			=> Add(element)
-#endif
-			;
+		void Write([AllowNull] TElement element);
 	}
 }

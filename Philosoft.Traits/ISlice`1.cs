@@ -13,12 +13,7 @@ namespace System.Traits {
 		/// <param name="range">The zero-based range of the elements.</param>
 		/// <returns>A slice that consists of all the elements of the current collection within the <paramref name="range"/>.</returns>
 		[MaybeNull, AllowNull]
-		TResult this[Range range] {
-			get {
-				(Int32 start, Int32 length) = range.GetOffsetAndLength((Int32)Count);
-				return Slice(start, length);
-			}
-		}
+		TResult this[Range range] { get; }
 #endif
 
 		/// <summary>
@@ -26,11 +21,7 @@ namespace System.Traits {
 		/// </summary>
 		/// <returns>A slice that consists of all elements of the current collection.</returns>
 		[return: MaybeNull]
-		TResult Slice()
-#if !NETSTANDARD1_3
-			=> Slice(0, Count)
-#endif
-			;
+		TResult Slice();
 
 		/// <summary>
 		/// Forms a slice out of the collection that begins at a specified index.
@@ -38,11 +29,7 @@ namespace System.Traits {
 		/// <param name="start">The index at which to begin the slice</param>
 		/// <returns>A slice that consists of all elements of the current collection from <paramref name="start"/> to the end of the collection.</returns>
 		[return: MaybeNull]
-		TResult Slice(nint start)
-#if !NETSTANDARD1_3
-			=> Slice(start, Count - start)
-#endif
-			;
+		TResult Slice(nint start);
 
 		/// <summary>
 		/// Forms a slice out of the current span starting at a specified index for a specified length.

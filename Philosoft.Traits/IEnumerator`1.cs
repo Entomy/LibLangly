@@ -1,4 +1,6 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿#if NETSTANDARD1_4_OR_GREATER
+using System.Diagnostics.CodeAnalysis;
+#endif
 
 namespace System.Traits {
 	/// <summary>
@@ -6,7 +8,7 @@ namespace System.Traits {
 	/// </summary>
 	/// <typeparam name="TElement">The type of elements in the sequence.</typeparam>
 	public interface IEnumerator<TElement> : Collections.Generic.IEnumerator<TElement>, ISequence<TElement, IEnumerator<TElement>> {
-#if !NETSTANDARD1_3
+#if NETSTANDARD1_4_OR_GREATER
 		/// <inheritdoc/>
 		[MaybeNull]
 		[SuppressMessage("Performance", "HAA0601:Value type to reference type conversion causing boxing allocation", Justification = "There's nothing I can do about this.")]

@@ -24,6 +24,16 @@ namespace Stringier {
 			/// <inheritdoc/>
 			public override Char this[[DisallowNull] nint index] => Memory.Span[(Int32)index];
 
+#if NETCOREAPP3_0_OR_GREATER
+			/// <inheritdoc/>
+			public MemoryNode this[Range range] {
+				get {
+					(Int32 offset, Int32 length) = range.GetOffsetAndLength((Int32)Count);
+					return Slice(offset, length);
+				}
+			}
+#endif
+
 			/// <inheritdoc/>
 			public override nint Count => Memory.Length;
 
