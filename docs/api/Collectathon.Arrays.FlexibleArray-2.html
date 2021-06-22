@@ -90,8 +90,8 @@
     <div><span class="xref">IContains</span>&lt;TElement&gt;</div>
     <div><span class="xref">IEquatable</span>&lt;TSelf&gt;</div>
     <div><span class="xref">IEquatable</span>&lt;<a class="xref" href="Collectathon.Arrays.FlexibleArray-2.html">FlexibleArray</a>&lt;TElement, TSelf&gt;&gt;</div>
-    <div><a class="xref" href="System.Traits.IIndex-2.html">IIndex</a>&lt;<span class="xref">nint</span>, TElement&gt;</div>
-    <div><span class="xref">IInsertSpan</span>&lt;<span class="xref">nint</span>, TElement&gt;</div>
+    <div><a class="xref" href="System.Traits.IIndex-2.html">IIndex</a>&lt;<span class="xref">Int32</span>, TElement&gt;</div>
+    <div><span class="xref">IInsertSpan</span>&lt;<span class="xref">Int32</span>, TElement&gt;</div>
     <div><span class="xref">IPostpendSpan</span>&lt;TElement&gt;</div>
     <div><span class="xref">IPrependSpan</span>&lt;TElement&gt;</div>
     <div><span class="xref">IRemove</span>&lt;TElement&gt;</div>
@@ -104,7 +104,7 @@
   <h6><strong>Assembly</strong>: Collectathon.Arrays.dll</h6>
   <h5 id="Collectathon_Arrays_FlexibleArray_2_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class FlexibleArray&lt;TElement, TSelf&gt; : IAddSpan&lt;TElement&gt;, ICapacity, IClear, IContains&lt;TElement&gt;, IEquatable&lt;TSelf&gt;, IEquatable&lt;FlexibleArray&lt;TElement, TSelf&gt;&gt;, IIndex&lt;nint, TElement&gt;, IInsertSpan&lt;nint, TElement&gt;, IPostpendSpan&lt;TElement&gt;, IPrependSpan&lt;TElement&gt;, IRemove&lt;TElement&gt;, IReplace&lt;TElement&gt;, ISequence&lt;TElement, ArrayEnumerator&lt;TElement&gt;&gt;, IShift, ISlice&lt;Memory&lt;TElement&gt;&gt; where TSelf : FlexibleArray&lt;TElement, TSelf&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class FlexibleArray&lt;TElement, TSelf&gt; : IAddSpan&lt;TElement&gt;, ICapacity, IClear, IContains&lt;TElement&gt;, IEquatable&lt;TSelf&gt;, IEquatable&lt;FlexibleArray&lt;TElement, TSelf&gt;&gt;, IIndex&lt;Int32, TElement&gt;, IInsertSpan&lt;Int32, TElement&gt;, IPostpendSpan&lt;TElement&gt;, IPrependSpan&lt;TElement&gt;, IRemove&lt;TElement&gt;, IReplace&lt;TElement&gt;, ISequence&lt;TElement, ArrayEnumerator&lt;TElement&gt;&gt;, IShift, ISlice&lt;Memory&lt;TElement&gt;&gt; where TSelf : FlexibleArray&lt;TElement, TSelf&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -131,19 +131,19 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2__ctor__0___nint_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.%23ctor(%600%5B%5D%2Cnint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2__ctor__0___Int32_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.%23ctor(%600%5B%5D%2CInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L56">View Source</a>
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2__ctor_" data-uid="Collectathon.Arrays.FlexibleArray`2.#ctor*"></a>
-  <h4 id="Collectathon_Arrays_FlexibleArray_2__ctor__0___nint_" data-uid="Collectathon.Arrays.FlexibleArray`2.#ctor(`0[],nint)">FlexibleArray(TElement[], nint)</h4>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2__ctor__0___Int32_" data-uid="Collectathon.Arrays.FlexibleArray`2.#ctor(`0[],Int32)">FlexibleArray(TElement[], Int32)</h4>
   <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Collectathon.Arrays.FlexibleArray-2.html">FlexibleArray&lt;TElement, TSelf&gt;</a> with the given <code data-dev-comment-type="paramref" class="paramref">memory</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected FlexibleArray(TElement[] memory, nint count)</code></pre>
+    <pre><code class="lang-csharp hljs">protected FlexibleArray(TElement[] memory, Int32 count)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -162,7 +162,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">nint</span></td>
+        <td><span class="xref">Int32</span></td>
         <td><span class="parametername">count</span></td>
         <td><p>The amount of elements in the array.</p>
 </td>
@@ -171,19 +171,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2__ctor_nint_nint_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.%23ctor(nint%2Cnint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2__ctor_Int32_Int32_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.%23ctor(Int32%2CInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L46">View Source</a>
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2__ctor_" data-uid="Collectathon.Arrays.FlexibleArray`2.#ctor*"></a>
-  <h4 id="Collectathon_Arrays_FlexibleArray_2__ctor_nint_nint_" data-uid="Collectathon.Arrays.FlexibleArray`2.#ctor(nint,nint)">FlexibleArray(nint, nint)</h4>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2__ctor_Int32_Int32_" data-uid="Collectathon.Arrays.FlexibleArray`2.#ctor(Int32,Int32)">FlexibleArray(Int32, Int32)</h4>
   <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Collectathon.Arrays.FlexibleArray-2.html">FlexibleArray&lt;TElement, TSelf&gt;</a> with the given <code data-dev-comment-type="paramref" class="paramref">capacity</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected FlexibleArray(nint capacity, nint count)</code></pre>
+    <pre><code class="lang-csharp hljs">protected FlexibleArray(Int32 capacity, Int32 count)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -196,13 +196,13 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">nint</span></td>
+        <td><span class="xref">Int32</span></td>
         <td><span class="parametername">capacity</span></td>
         <td><p>The initial capacity.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">nint</span></td>
+        <td><span class="xref">Int32</span></td>
         <td><span class="parametername">count</span></td>
         <td><p>The amount of elements in the array.</p>
 </td>
@@ -256,7 +256,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public nint Capacity { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Int32 Capacity { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -268,7 +268,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">nint</span></td>
+        <td><span class="xref">Int32</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -286,7 +286,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public nint Count { get; protected set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Int32 Count { get; protected set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -298,25 +298,25 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">nint</span></td>
+        <td><span class="xref">Int32</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Item_nint_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Item(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Item_Int32_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Item(Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L73">View Source</a>
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_Item_" data-uid="Collectathon.Arrays.FlexibleArray`2.Item*"></a>
-  <h4 id="Collectathon_Arrays_FlexibleArray_2_Item_nint_" data-uid="Collectathon.Arrays.FlexibleArray`2.Item(nint)">Item[nint]</h4>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_Item_Int32_" data-uid="Collectathon.Arrays.FlexibleArray`2.Item(Int32)">Item[Int32]</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public TElement this[nint index] { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public TElement this[Int32 index] { get; set; }</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -329,7 +329,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">nint</span></td>
+        <td><span class="xref">Int32</span></td>
         <td><span class="parametername">index</span></td>
         <td></td>
       </tr>
@@ -891,18 +891,18 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Insert_nint__0_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Insert(nint%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Insert_Int32__0_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Insert(Int32%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L185">View Source</a>
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_Insert_" data-uid="Collectathon.Arrays.FlexibleArray`2.Insert*"></a>
-  <h4 id="Collectathon_Arrays_FlexibleArray_2_Insert_nint__0_" data-uid="Collectathon.Arrays.FlexibleArray`2.Insert(nint,`0)">Insert(nint, TElement)</h4>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_Insert_Int32__0_" data-uid="Collectathon.Arrays.FlexibleArray`2.Insert(Int32,`0)">Insert(Int32, TElement)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void Insert(nint index, TElement element)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void Insert(Int32 index, TElement element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -915,7 +915,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">nint</span></td>
+        <td><span class="xref">Int32</span></td>
         <td><span class="parametername">index</span></td>
         <td></td>
       </tr>
@@ -928,18 +928,18 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Insert_nint__0___.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Insert(nint%2C%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Insert_Int32__0___.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Insert(Int32%2C%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L188">View Source</a>
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_Insert_" data-uid="Collectathon.Arrays.FlexibleArray`2.Insert*"></a>
-  <h4 id="Collectathon_Arrays_FlexibleArray_2_Insert_nint__0___" data-uid="Collectathon.Arrays.FlexibleArray`2.Insert(nint,`0[])">Insert(nint, TElement[])</h4>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_Insert_Int32__0___" data-uid="Collectathon.Arrays.FlexibleArray`2.Insert(Int32,`0[])">Insert(Int32, TElement[])</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Insert(nint index, params TElement[] elements)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Insert(Int32 index, params TElement[] elements)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -952,7 +952,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">nint</span></td>
+        <td><span class="xref">Int32</span></td>
         <td><span class="parametername">index</span></td>
         <td></td>
       </tr>
@@ -965,18 +965,18 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Insert_nint_ArraySegment__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Insert(nint%2CArraySegment%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Insert_Int32_ArraySegment__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Insert(Int32%2CArraySegment%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L191">View Source</a>
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_Insert_" data-uid="Collectathon.Arrays.FlexibleArray`2.Insert*"></a>
-  <h4 id="Collectathon_Arrays_FlexibleArray_2_Insert_nint_ArraySegment__0__" data-uid="Collectathon.Arrays.FlexibleArray`2.Insert(nint,ArraySegment{`0})">Insert(nint, ArraySegment&lt;TElement&gt;)</h4>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_Insert_Int32_ArraySegment__0__" data-uid="Collectathon.Arrays.FlexibleArray`2.Insert(Int32,ArraySegment{`0})">Insert(Int32, ArraySegment&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Insert(nint index, ArraySegment&lt;TElement&gt; elements)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Insert(Int32 index, ArraySegment&lt;TElement&gt; elements)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -989,7 +989,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">nint</span></td>
+        <td><span class="xref">Int32</span></td>
         <td><span class="parametername">index</span></td>
         <td></td>
       </tr>
@@ -1002,18 +1002,18 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Insert_nint_Memory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Insert(nint%2CMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Insert_Int32_Memory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Insert(Int32%2CMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L194">View Source</a>
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_Insert_" data-uid="Collectathon.Arrays.FlexibleArray`2.Insert*"></a>
-  <h4 id="Collectathon_Arrays_FlexibleArray_2_Insert_nint_Memory__0__" data-uid="Collectathon.Arrays.FlexibleArray`2.Insert(nint,Memory{`0})">Insert(nint, Memory&lt;TElement&gt;)</h4>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_Insert_Int32_Memory__0__" data-uid="Collectathon.Arrays.FlexibleArray`2.Insert(Int32,Memory{`0})">Insert(Int32, Memory&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Insert(nint index, Memory&lt;TElement&gt; elements)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Insert(Int32 index, Memory&lt;TElement&gt; elements)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1026,7 +1026,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">nint</span></td>
+        <td><span class="xref">Int32</span></td>
         <td><span class="parametername">index</span></td>
         <td></td>
       </tr>
@@ -1039,18 +1039,18 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Insert_nint_ReadOnlyMemory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Insert(nint%2CReadOnlyMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Insert_Int32_ReadOnlyMemory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Insert(Int32%2CReadOnlyMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L197">View Source</a>
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_Insert_" data-uid="Collectathon.Arrays.FlexibleArray`2.Insert*"></a>
-  <h4 id="Collectathon_Arrays_FlexibleArray_2_Insert_nint_ReadOnlyMemory__0__" data-uid="Collectathon.Arrays.FlexibleArray`2.Insert(nint,ReadOnlyMemory{`0})">Insert(nint, ReadOnlyMemory&lt;TElement&gt;)</h4>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_Insert_Int32_ReadOnlyMemory__0__" data-uid="Collectathon.Arrays.FlexibleArray`2.Insert(Int32,ReadOnlyMemory{`0})">Insert(Int32, ReadOnlyMemory&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Insert(nint index, ReadOnlyMemory&lt;TElement&gt; elements)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Insert(Int32 index, ReadOnlyMemory&lt;TElement&gt; elements)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1063,7 +1063,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">nint</span></td>
+        <td><span class="xref">Int32</span></td>
         <td><span class="parametername">index</span></td>
         <td></td>
       </tr>
@@ -1076,18 +1076,18 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Insert_nint_ReadOnlySpan__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Insert(nint%2CReadOnlySpan%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Insert_Int32_ReadOnlySpan__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Insert(Int32%2CReadOnlySpan%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L203">View Source</a>
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_Insert_" data-uid="Collectathon.Arrays.FlexibleArray`2.Insert*"></a>
-  <h4 id="Collectathon_Arrays_FlexibleArray_2_Insert_nint_ReadOnlySpan__0__" data-uid="Collectathon.Arrays.FlexibleArray`2.Insert(nint,ReadOnlySpan{`0})">Insert(nint, ReadOnlySpan&lt;TElement&gt;)</h4>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_Insert_Int32_ReadOnlySpan__0__" data-uid="Collectathon.Arrays.FlexibleArray`2.Insert(Int32,ReadOnlySpan{`0})">Insert(Int32, ReadOnlySpan&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void Insert(nint index, ReadOnlySpan&lt;TElement&gt; elements)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void Insert(Int32 index, ReadOnlySpan&lt;TElement&gt; elements)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1100,7 +1100,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">nint</span></td>
+        <td><span class="xref">Int32</span></td>
         <td><span class="parametername">index</span></td>
         <td></td>
       </tr>
@@ -1113,18 +1113,18 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Insert_nint_Span__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Insert(nint%2CSpan%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Insert_Int32_Span__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Insert(Int32%2CSpan%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L200">View Source</a>
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_Insert_" data-uid="Collectathon.Arrays.FlexibleArray`2.Insert*"></a>
-  <h4 id="Collectathon_Arrays_FlexibleArray_2_Insert_nint_Span__0__" data-uid="Collectathon.Arrays.FlexibleArray`2.Insert(nint,Span{`0})">Insert(nint, Span&lt;TElement&gt;)</h4>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_Insert_Int32_Span__0__" data-uid="Collectathon.Arrays.FlexibleArray`2.Insert(Int32,Span{`0})">Insert(Int32, Span&lt;TElement&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Insert(nint index, Span&lt;TElement&gt; elements)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Insert(Int32 index, Span&lt;TElement&gt; elements)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1137,7 +1137,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">nint</span></td>
+        <td><span class="xref">Int32</span></td>
         <td><span class="parametername">index</span></td>
         <td></td>
       </tr>
@@ -1746,18 +1746,18 @@
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_ShiftLeft_nint_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.ShiftLeft(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_ShiftLeft_Int32_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.ShiftLeft(Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L281">View Source</a>
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_ShiftLeft_" data-uid="Collectathon.Arrays.FlexibleArray`2.ShiftLeft*"></a>
-  <h4 id="Collectathon_Arrays_FlexibleArray_2_ShiftLeft_nint_" data-uid="Collectathon.Arrays.FlexibleArray`2.ShiftLeft(nint)">ShiftLeft(nint)</h4>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_ShiftLeft_Int32_" data-uid="Collectathon.Arrays.FlexibleArray`2.ShiftLeft(Int32)">ShiftLeft(Int32)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void ShiftLeft(nint amount)</code></pre>
+    <pre><code class="lang-csharp hljs">public void ShiftLeft(Int32 amount)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1770,7 +1770,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">nint</span></td>
+        <td><span class="xref">Int32</span></td>
         <td><span class="parametername">amount</span></td>
         <td></td>
       </tr>
@@ -1793,18 +1793,18 @@
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_ShiftRight_nint_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.ShiftRight(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_ShiftRight_Int32_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.ShiftRight(Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L287">View Source</a>
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_ShiftRight_" data-uid="Collectathon.Arrays.FlexibleArray`2.ShiftRight*"></a>
-  <h4 id="Collectathon_Arrays_FlexibleArray_2_ShiftRight_nint_" data-uid="Collectathon.Arrays.FlexibleArray`2.ShiftRight(nint)">ShiftRight(nint)</h4>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_ShiftRight_Int32_" data-uid="Collectathon.Arrays.FlexibleArray`2.ShiftRight(Int32)">ShiftRight(Int32)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void ShiftRight(nint amount)</code></pre>
+    <pre><code class="lang-csharp hljs">public void ShiftRight(Int32 amount)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1817,7 +1817,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">nint</span></td>
+        <td><span class="xref">Int32</span></td>
         <td><span class="parametername">amount</span></td>
         <td></td>
       </tr>
@@ -1855,18 +1855,18 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Slice_nint_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Slice(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Slice_Int32_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Slice(Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L294">View Source</a>
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_Slice_" data-uid="Collectathon.Arrays.FlexibleArray`2.Slice*"></a>
-  <h4 id="Collectathon_Arrays_FlexibleArray_2_Slice_nint_" data-uid="Collectathon.Arrays.FlexibleArray`2.Slice(nint)">Slice(nint)</h4>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_Slice_Int32_" data-uid="Collectathon.Arrays.FlexibleArray`2.Slice(Int32)">Slice(Int32)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Memory&lt;TElement&gt; Slice(nint start)</code></pre>
+    <pre><code class="lang-csharp hljs">public Memory&lt;TElement&gt; Slice(Int32 start)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1879,7 +1879,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">nint</span></td>
+        <td><span class="xref">Int32</span></td>
         <td><span class="parametername">start</span></td>
         <td></td>
       </tr>
@@ -1902,18 +1902,18 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Slice_nint_nint_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Slice(nint%2Cnint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_Slice_Int32_Int32_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.Slice(Int32%2CInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L298">View Source</a>
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_Slice_" data-uid="Collectathon.Arrays.FlexibleArray`2.Slice*"></a>
-  <h4 id="Collectathon_Arrays_FlexibleArray_2_Slice_nint_nint_" data-uid="Collectathon.Arrays.FlexibleArray`2.Slice(nint,nint)">Slice(nint, nint)</h4>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_Slice_Int32_Int32_" data-uid="Collectathon.Arrays.FlexibleArray`2.Slice(Int32,Int32)">Slice(Int32, Int32)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Memory&lt;TElement&gt; Slice(nint start, nint length)</code></pre>
+    <pre><code class="lang-csharp hljs">public Memory&lt;TElement&gt; Slice(Int32 start, Int32 length)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1926,12 +1926,12 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">nint</span></td>
+        <td><span class="xref">Int32</span></td>
         <td><span class="parametername">start</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">nint</span></td>
+        <td><span class="xref">Int32</span></td>
         <td><span class="parametername">length</span></td>
         <td></td>
       </tr>
@@ -1984,18 +1984,18 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_ToString_nint_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.ToString(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_FlexibleArray_2_ToString_Int32_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.FlexibleArray%602.ToString(Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/FlexibleArray`2.cs/#L307">View Source</a>
   </span>
   <a id="Collectathon_Arrays_FlexibleArray_2_ToString_" data-uid="Collectathon.Arrays.FlexibleArray`2.ToString*"></a>
-  <h4 id="Collectathon_Arrays_FlexibleArray_2_ToString_nint_" data-uid="Collectathon.Arrays.FlexibleArray`2.ToString(nint)">ToString(nint)</h4>
+  <h4 id="Collectathon_Arrays_FlexibleArray_2_ToString_Int32_" data-uid="Collectathon.Arrays.FlexibleArray`2.ToString(Int32)">ToString(Int32)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public String ToString(nint amount)</code></pre>
+    <pre><code class="lang-csharp hljs">public String ToString(Int32 amount)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2008,7 +2008,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">nint</span></td>
+        <td><span class="xref">Int32</span></td>
         <td><span class="parametername">amount</span></td>
         <td></td>
       </tr>
