@@ -9,7 +9,7 @@ namespace Numbersome {
 		/// Provides enumeration over a <see cref="Counter{TElement}"/>.
 		/// </summary>
 		[StructLayout(LayoutKind.Auto)]
-		public struct Enumerator : IEnumerator<(TElement? Element, nint Count)> {
+		public struct Enumerator : IEnumerator<(TElement? Element, Int32 Count)> {
 			private readonly ReadOnlyMemory<TElement?> Elements;
 
 			private readonly ReadOnlyMemory<Int32> Counts;
@@ -30,21 +30,21 @@ namespace Numbersome {
 			}
 
 			/// <inheritdoc/>
-			public (TElement? Element, nint Count) Current => (Elements.Span[i], Counts.Span[i]);
+			public (TElement? Element, Int32 Count) Current => (Elements.Span[i], Counts.Span[i]);
 
 			/// <inheritdoc/>
 			[MaybeNull]
 			Object System.Collections.IEnumerator.Current => Current;
 
 			/// <inheritdoc/>
-			public nint Count { get; private set; }
+			public Int32 Count { get; private set; }
 
 			/// <inheritdoc/>
 			public void Dispose() { /* No-op */ }
 
 			/// <inheritdoc/>
 			[return: NotNull]
-			public IEnumerator<(TElement Element, nint Count)> GetEnumerator() => this;
+			public IEnumerator<(TElement Element, Int32 Count)> GetEnumerator() => this;
 
 			/// <inheritdoc/>
 			[return: NotNull]
@@ -52,7 +52,7 @@ namespace Numbersome {
 
 			/// <inheritdoc/>
 			[return: NotNull]
-			System.Collections.Generic.IEnumerator<(TElement Element, nint Count)> System.Collections.Generic.IEnumerable<(TElement Element, nint Count)>.GetEnumerator() => this;
+			System.Collections.Generic.IEnumerator<(TElement Element, Int32 Count)> System.Collections.Generic.IEnumerable<(TElement Element, Int32 Count)>.GetEnumerator() => this;
 
 			/// <inheritdoc/>
 			public Boolean MoveNext() => ++i < Count;
@@ -66,7 +66,7 @@ namespace Numbersome {
 
 			/// <inheritdoc/>
 			[return: NotNull]
-			public String ToString(nint amount) => throw new NotImplementedException();
+			public String ToString(Int32 amount) => throw new NotImplementedException();
 		}
 	}
 }

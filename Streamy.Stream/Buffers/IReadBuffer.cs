@@ -13,6 +13,6 @@ namespace Streamy.Buffers {
 		/// </summary>
 		/// <param name="elements">The <see cref="ReadOnlySpan{T}"/> of <see cref="Byte"/> that were read.</param>
 		/// <param name="required">The amount of <see cref="Byte"/> required to be read and returned.</param>
-		public void Peek([DisallowNull, NotNull] out Byte[] elements, nint required);
+		public void Peek([DisallowNull, NotNull] out Byte[] elements, Int32 required);
 	}
 }

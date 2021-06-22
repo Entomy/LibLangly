@@ -14,12 +14,12 @@
 		/// <summary>
 		/// The position within the datastream, counted by an offset from the start.
 		/// </summary>
-		nint Position { get; set; }
+		Int32 Position { get; set; }
 
 		/// <summary>
 		/// Seeks to the <paramref name="offset"/>.
 		/// </summary>
 		/// <param name="offset">The offset from the current position to seek to.</param>
-		void Seek(nint offset);
+		void Seek(Int32 offset);
 	}
 }

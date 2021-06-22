@@ -29,10 +29,10 @@ namespace Collectathon.Nodes {
 		public StackNode<TElement> Next { get; private set; }
 
 		/// <inheritdoc/>
-		public nint Count { get; internal set; }
+		public Int32 Count { get; internal set; }
 
 		/// <inheritdoc/>
-		public nint Capacity => Elements.Length;
+		public Int32 Capacity => Elements.Length;
 
 		/// <inheritdoc/>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -18,8 +18,8 @@ namespace Collectathon.Lists {
 		IClear,
 		IContains<TElement>,
 		IEquatable<TSelf>, IEquatable<List<TElement, TNode, TSelf, TEnumerator>>,
-		IIndex<nint, TElement>,
-		IInsert<nint, TElement>,
+		IIndex<Int32, TElement>,
+		IInsert<Int32, TElement>,
 		IPostpend<TElement>,
 		IPrepend<TElement>,
 		IRemove<TElement>,
@@ -46,11 +46,11 @@ namespace Collectathon.Lists {
 		protected List() { }
 
 		/// <inheritdoc/>
-		public nint Count { get; protected set; }
+		public Int32 Count { get; protected set; }
 
 		/// <inheritdoc/>
 		[AllowNull, MaybeNull]
-		public abstract TElement this[nint index] { get; set; }
+		public abstract TElement this[Int32 index] { get; set; }
 
 		/// <inheritdoc/>
 		[MemberNotNull(nameof(Head), nameof(Tail))] 
@@ -107,7 +107,7 @@ namespace Collectathon.Lists {
 
 		/// <inheritdoc/>
 		[MemberNotNull(nameof(Head), nameof(Tail))]
-		public abstract void Insert(nint index, [AllowNull] TElement element);
+		public abstract void Insert(Int32 index, [AllowNull] TElement element);
 
 		/// <inheritdoc/>
 		[MemberNotNull(nameof(Head), nameof(Tail))]
@@ -152,7 +152,7 @@ namespace Collectathon.Lists {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public String ToString(nint amount) => Collection.ToString(Head, Count, amount);
+		public String ToString(Int32 amount) => Collection.ToString(Head, Count, amount);
 
 		/// <summary>
 		/// Creates a new, unlinked, node.

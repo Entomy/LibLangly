@@ -9,7 +9,7 @@ namespace Streamy {
 		/// <summary>
 		/// The position within the datastream, counted by a <see cref="Byte"/> offset from the start.
 		/// </summary>
-		public nint Position {
+		public Int32 Position {
 			get => Source.Position;
 			set => Source.Position = value;
 		}
@@ -18,6 +18,6 @@ namespace Streamy {
 		/// Seeks to the <paramref name="offset"/>, counted by <see cref="Byte"/>.
 		/// </summary>
 		/// <param name="offset">The amount of <see cref="Byte"/> to seek.</param>
-		public void Seek(nint offset) => Source.Seek(offset);
+		public void Seek(Int32 offset) => Source.Seek(offset);
 	}
 }

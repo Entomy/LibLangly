@@ -16,7 +16,7 @@ namespace Streamy.Bases {
 		public Boolean Disposed { get; set; }
 
 		/// <inheritdoc/>
-		public virtual nint Position { get; set; }
+		public virtual Int32 Position { get; set; }
 
 		/// <inheritdoc/>
 		public abstract Boolean Readable { get; }
@@ -61,7 +61,7 @@ namespace Streamy.Bases {
 		public abstract void Read([MaybeNull] out Byte element);
 
 		/// <inheritdoc/>
-		public abstract void Seek(nint offset);
+		public abstract void Seek(Int32 offset);
 
 		/// <inheritdoc/>
 		[return: NotNull]

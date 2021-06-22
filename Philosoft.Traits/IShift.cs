@@ -12,7 +12,7 @@
 		/// Shifts the collection left by <paramref name="amount"/>.
 		/// </summary>
 		/// <param name="amount">The amount of positions to shift.</param>
-		void ShiftLeft(nint amount);
+		void ShiftLeft(Int32 amount);
 
 		/// <summary>
 		/// Shifts the collection right one position.
@@ -23,6 +23,6 @@
 		/// Shifts the collection right by <paramref name="amount"/>.
 		/// </summary>
 		/// <param name="amount">The amount of positions to shift.</param>
-		void ShiftRight(nint amount);
+		void ShiftRight(Int32 amount);
 	}
 }

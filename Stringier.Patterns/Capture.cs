@@ -14,7 +14,7 @@ namespace Stringier.Patterns {
 	/// <para>This is also used in the implementation of backreferences (which are like in <see href="https://www.regular-expressions.info/backref.html">Regex</see>).</para>
 	/// </remarks>
 	public sealed partial class Capture :
-		IIndexReadOnly<nint, Char>,
+		IIndexReadOnly<Int32, Char>,
 		ISequence<Char, Capture.Enumerator> {
 		/// <summary>
 		/// The captured text.
@@ -27,10 +27,10 @@ namespace Stringier.Patterns {
 		internal Capture() => Text = ReadOnlyMemory<Char>.Empty;
 
 		/// <inheritdoc/>
-		public nint Count => Text.Length;
+		public Int32 Count => Text.Length;
 
 		/// <inheritdoc/>
-		public Char this[[DisallowNull] nint index] => Text.Span[(Int32)index];
+		public Char this[Int32 index] => Text.Span[index];
 
 		/// <inheritdoc/>
 		[return: NotNull]
@@ -175,6 +175,6 @@ namespace Stringier.Patterns {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public String ToString(nint amount) => $"{Text.Slice(0, (Int32)amount)}...";
+		public String ToString(Int32 amount) => $"{Text.Slice(0, amount)}...";
 	}
 }

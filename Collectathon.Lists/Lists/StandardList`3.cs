@@ -30,10 +30,10 @@ namespace Collectathon.Lists {
 
 		/// <inheritdoc/>
 		[AllowNull, MaybeNull]
-		public sealed override TElement this[nint index] {
+		public sealed override TElement this[Int32 index] {
 			get {
 				TNode? N = Head;
-				for (nint i = 0; N is not null; i++) {
+				for (Int32 i = 0; N is not null; i++) {
 					if (i == index) {
 						return N.Element;
 					}
@@ -43,7 +43,7 @@ namespace Collectathon.Lists {
 			}
 			set {
 				TNode? N = Head;
-				for (nint i = 0; N is not null; i++) {
+				for (Int32 i = 0; N is not null; i++) {
 					if (i == index) {
 						N.Element = value;
 					}

@@ -39,7 +39,7 @@ namespace Collectathon.Queues {
 		}
 
 		/// <inheritdoc/>
-		public nint Count { get; private set; }
+		public Int32 Count { get; private set; }
 
 		/// <inheritdoc/>
 		public Boolean Readable => Count > 0;
@@ -127,7 +127,7 @@ namespace Collectathon.Queues {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public String ToString(nint amount) => Collection.ToString(Head, Count, amount);
+		public String ToString(Int32 amount) => Collection.ToString(Head, Count, amount);
 
 		/// <inheritdoc/>
 		public void Write([AllowNull] TElement element) => Enqueue(element);

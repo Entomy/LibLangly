@@ -24,7 +24,7 @@ namespace Collectathon.Arrays {
 		/// Initializes a new <see cref="DynamicArray{TIndex, TElement}"/> with the given <paramref name="capacity"/>.
 		/// </summary>
 		/// <param name="capacity">The maximum capacity.</param>
-		public DynamicArray(nint capacity) : base(capacity, 0) { }
+		public DynamicArray(Int32 capacity) : base(capacity, 0) { }
 
 		/// <summary>
 		/// Conversion constructor.
@@ -33,7 +33,7 @@ namespace Collectathon.Arrays {
 		public DynamicArray([DisallowNull] (TIndex, TElement)[] memory) : base(memory, memory.Length) { }
 
 		/// <inheritdoc/>
-		new public nint Capacity {
+		new public Int32 Capacity {
 			get => base.Capacity;
 			set => Resize(value);
 		}
@@ -46,9 +46,9 @@ namespace Collectathon.Arrays {
 		public static implicit operator DynamicArray<TIndex, TElement>([AllowNull] (TIndex, TElement)[] array) => array is not null ? new(array) : null;
 
 		/// <inheritdoc/>
-		public void Resize(nint capacity) {
+		public void Resize(Int32 capacity) {
 			(TIndex, TElement)[] newBuffer = new (TIndex, TElement)[capacity];
-			Entries.AsMemory(0, (Int32)(capacity > Capacity ? Capacity : capacity)).CopyTo(newBuffer);
+			Entries.AsMemory(0, capacity > Capacity ? Capacity : capacity).CopyTo(newBuffer);
 			Count = Count < capacity ? Count : capacity;
 			Entries = newBuffer;
 		}
@@ -66,7 +66,7 @@ namespace Collectathon.Arrays {
 		/// </summary>
 		private void Grow() {
 			if (Capacity >= 8) {
-				Resize((nint)(Capacity * φ));
+				Resize((Int32)(Capacity * φ));
 			} else {
 				Resize(13);
 			}
@@ -76,13 +76,13 @@ namespace Collectathon.Arrays {
 		/// Grows this collection by a computed factor, to at least a specified <paramref name="minimum"/>.
 		/// </summary>
 		/// <param name="minimum">The minimum allowed size.</param>
-		private void Grow(nint minimum) {
+		private void Grow(Int32 minimum) {
 			Double size = Capacity;
 			while (size < minimum) {
 				size += 4.0;
 				size *= φ;
 			}
-			Resize((nint)size);
+			Resize((Int32)size);
 		}
 	}
 }

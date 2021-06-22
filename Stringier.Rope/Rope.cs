@@ -17,8 +17,8 @@ namespace Stringier {
 		IEquatable<Rune>,
 #endif
 		IEquatable<String>, IEquatable<Char[]>, IEquatable<Memory<Char>>, IEquatable<ReadOnlyMemory<Char>>,
-		IIndex<nint, Char>,
-		IInsertMemory<nint, Char>, IInsert<nint, String>,
+		IIndex<Int32, Char>,
+		IInsertMemory<Int32, Char>, IInsert<Int32, String>,
 		IPostpendMemory<Char>, IPostpend<String>,
 		IPrependMemory<Char>, IPrepend<String>,
 		IRemove<Char>,
@@ -74,7 +74,7 @@ namespace Stringier {
 		/// <summary>
 		/// Gets the number of <see cref="Char"/> contained in this collection.
 		/// </summary>
-		public nint Count { get; private set; }
+		public Int32 Count { get; private set; }
 
 #if NETCOREAPP3_0_OR_GREATER
 		/// <summary>
@@ -88,13 +88,13 @@ namespace Stringier {
 		/// </summary>
 		/// <param name="index">The index of the <see cref="Char"/> to get.</param>
 		/// <returns>The <see cref="Char"/> at the specified <paramref name="index"/>.</returns>
-		public Char this[nint index] {
+		public Char this[Int32 index] {
 			get {
 				if (0 > index || index >= Count) {
 					throw new IndexOutOfRangeException();
 				}
 				Node? N = Head;
-				nint i = 0;
+				Int32 i = 0;
 				// Seeks to the node the element is in, and calculate the index offset (i)
 				while (N is not null && index >= i + N.Count) {
 					i += N.Count;
@@ -788,14 +788,14 @@ namespace Stringier {
 
 		/// <inheritdoc/>
 		[MemberNotNull(nameof(Head), nameof(Tail))]
-		public void Insert(nint index, Char element) {
+		public void Insert(Int32 index, Char element) {
 			if (index == 0) {
 				Prepend(element);
 			} else if (index == Count) {
 				Postpend(element);
 			} else {
 				Node N = Head;
-				nint i = 0;
+				Int32 i = 0;
 				// Will the element be inserted into the only node in the chain?
 				if (ReferenceEquals(Head, Tail)) {
 					// Insert the element into the node, getting back a chain section
@@ -855,26 +855,26 @@ namespace Stringier {
 
 		/// <inheritdoc/>
 		[MemberNotNull(nameof(Head), nameof(Tail))]
-		public void Insert([DisallowNull] nint index, ArraySegment<Char> elements) => Insert(index, elements.AsMemory());
+		public void Insert(Int32 index, ArraySegment<Char> elements) => Insert(index, elements.AsMemory());
 
 		/// <inheritdoc/>
 		[MemberNotNull(nameof(Head), nameof(Tail))]
-		public void Insert(nint index, [AllowNull] params Char[] elements) => Insert(index, elements.AsMemory());
+		public void Insert(Int32 index, [AllowNull] params Char[] elements) => Insert(index, elements.AsMemory());
 
 		/// <inheritdoc/>
 		[MemberNotNull(nameof(Head), nameof(Tail))]
-		public void Insert(nint index, Memory<Char> elements) => Insert(index, (ReadOnlyMemory<Char>)elements);
+		public void Insert(Int32 index, Memory<Char> elements) => Insert(index, (ReadOnlyMemory<Char>)elements);
 
 		/// <inheritdoc/>
 		[MemberNotNull(nameof(Head), nameof(Tail))]
-		public void Insert(nint index, ReadOnlyMemory<Char> elements) {
+		public void Insert(Int32 index, ReadOnlyMemory<Char> elements) {
 			if (index == 0) {
 				Prepend(elements);
 			} else if (index == Count) {
 				Postpend(elements);
 			} else {
 				Node N = Head;
-				nint i = 0;
+				Int32 i = 0;
 				// Will the element be inserted into the only node in the chain?
 				if (ReferenceEquals(Head, Tail)) {
 					// Insert the element into the node, getting back a chain section
@@ -934,7 +934,7 @@ namespace Stringier {
 
 		/// <inheritdoc/>
 		[MemberNotNull(nameof(Head), nameof(Tail))]
-		public void Insert(nint index, [AllowNull] String element) => Insert(index, element.AsMemory());
+		public void Insert(Int32 index, [AllowNull] String element) => Insert(index, element.AsMemory());
 
 		/// <inheritdoc/>
 		[MemberNotNull(nameof(Head), nameof(Tail))]
@@ -1076,11 +1076,11 @@ namespace Stringier {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public String ToString(nint amount) {
+		public String ToString(Int32 amount) {
 			StringBuilder builder = new StringBuilder();
 			if (Head is not null) {
 				Node? N = Head;
-				nint i = 0;
+				Int32 i = 0;
 				while (N is not null) {
 					if (i + N.Count > amount) {
 						_ = builder.Append(N.ToString().Substring(0, (Int32)(amount - i))).Append("...");

@@ -40,7 +40,7 @@ namespace Collectathon.Lists {
 		protected List() { }
 
 		/// <inheritdoc/>
-		public nint Count { get; protected set; }
+		public Int32 Count { get; protected set; }
 
 		/// <inheritdoc/>
 		[AllowNull, MaybeNull]
@@ -82,7 +82,7 @@ namespace Collectathon.Lists {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public String ToString(nint amount) => Collection.ToString(Head, Count, amount);
+		public String ToString(Int32 amount) => Collection.ToString(Head, Count, amount);
 
 		/// <summary>
 		/// Creates a new, unlinked, node.

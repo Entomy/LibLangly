@@ -10,7 +10,7 @@ namespace System.Traits {
 		/// <param name="count">The amount of elements in the collection; the amount currently in use.</param>
 		/// <param name="element">The element to prepend.</param>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static void Prepend<TElement>([AllowNull] TElement[] collection, ref nint count, [AllowNull] TElement element) => Prepend(collection.AsSpan(), ref count, element);
+		public static void Prepend<TElement>([AllowNull] TElement[] collection, ref Int32 count, [AllowNull] TElement element) => Prepend(collection.AsSpan(), ref count, element);
 
 		/// <summary>
 		/// Prepends the elements onto this object, as a batch.
@@ -19,7 +19,7 @@ namespace System.Traits {
 		/// <param name="count">The amount of elements in the collection; the amount currently in use.</param>
 		/// <param name="element">The element to prepend.</param>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static void Prepend<TElement>(Memory<TElement> collection, ref nint count, [AllowNull] TElement element) => Prepend(collection.Span, ref count, element);
+		public static void Prepend<TElement>(Memory<TElement> collection, ref Int32 count, [AllowNull] TElement element) => Prepend(collection.Span, ref count, element);
 
 		/// <summary>
 		/// Prepends the elements onto this object, as a batch.
@@ -28,7 +28,7 @@ namespace System.Traits {
 		/// <param name="count">The amount of elements in the collection; the amount currently in use.</param>
 		/// <param name="element">The element to prepend.</param>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static void Prepend<TElement>(Span<TElement> collection, ref nint count, [AllowNull] TElement element) {
+		public static void Prepend<TElement>(Span<TElement> collection, ref Int32 count, [AllowNull] TElement element) {
 			ShiftRight(collection, count, 1);
 			collection[0] = element;
 			count++;
@@ -41,7 +41,7 @@ namespace System.Traits {
 		/// <param name="count">The amount of elements in the collection; the amount currently in use.</param>
 		/// <param name="elements">The elements to prepend.</param>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static void Prepend<TElement>([AllowNull] TElement[] collection, ref nint count, ReadOnlySpan<TElement> elements) => Prepend(collection.AsSpan(), ref count, elements);
+		public static void Prepend<TElement>([AllowNull] TElement[] collection, ref Int32 count, ReadOnlySpan<TElement> elements) => Prepend(collection.AsSpan(), ref count, elements);
 
 		/// <summary>
 		/// Prepends the elements onto this object, as a batch.
@@ -50,7 +50,7 @@ namespace System.Traits {
 		/// <param name="count">The amount of elements in the collection; the amount currently in use.</param>
 		/// <param name="elements">The elements to prepend.</param>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static void Prepend<TElement>(Memory<TElement> collection, ref nint count, ReadOnlySpan<TElement> elements) => Prepend(collection.Span, ref count, elements);
+		public static void Prepend<TElement>(Memory<TElement> collection, ref Int32 count, ReadOnlySpan<TElement> elements) => Prepend(collection.Span, ref count, elements);
 
 		/// <summary>
 		/// Prepends the elements onto this object, as a batch.
@@ -59,7 +59,7 @@ namespace System.Traits {
 		/// <param name="count">The amount of elements in the collection; the amount currently in use.</param>
 		/// <param name="elements">The elements to prepend.</param>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static void Prepend<TElement>(Span<TElement> collection, ref nint count, ReadOnlySpan<TElement> elements) {
+		public static void Prepend<TElement>(Span<TElement> collection, ref Int32 count, ReadOnlySpan<TElement> elements) {
 			ShiftRight(collection, count, elements.Length);
 			elements.CopyTo(collection);
 			count += elements.Length;

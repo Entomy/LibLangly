@@ -25,7 +25,7 @@ namespace Stringier {
 			/// <summary>
 			/// The index offset within <see cref="N"/>.
 			/// </summary>
-			private nint i;
+			private Int32 i;
 
 			/// <summary>
 			/// Initializes a new <see cref="Enumerator"/>.
@@ -46,7 +46,7 @@ namespace Stringier {
 			Object System.Collections.IEnumerator.Current => Current;
 
 			/// <inheritdoc/>
-			public nint Count => Rope.Count;
+			public Int32 Count => Rope.Count;
 
 			/// <inheritdoc/>
 			[EditorBrowsable(EditorBrowsableState.Never)]
@@ -116,7 +116,7 @@ namespace Stringier {
 
 			/// <inheritdoc/>
 			[return: NotNull]
-			public String ToString(nint amount) => Collection.ToString(Rope.Head, Rope.Count, amount);
+			public String ToString(Int32 amount) => Collection.ToString(Rope.Head, Rope.Count, amount);
 		}
 	}
 }

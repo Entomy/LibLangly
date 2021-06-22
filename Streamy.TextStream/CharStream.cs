@@ -17,7 +17,7 @@ namespace Streamy {
 		/// <summary>
 		/// The position within the datastream, counted by a <see cref="Char"/> offset from the start.
 		/// </summary>
-		private nint position = 0;
+		private Int32 position = 0;
 
 		/// <summary>
 		/// Initializes a new <see cref="CharStream"/> over the given <paramref name="array"/>.
@@ -74,7 +74,7 @@ namespace Streamy {
 		public Encoding Encoding { get; }
 
 		/// <inheritdoc/>
-		nint ISeek.Position {
+		Int32 ISeek.Position {
 			get => Position;
 			set => Position = value;
 		}
@@ -82,7 +82,7 @@ namespace Streamy {
 		/// <summary>
 		/// The position within the datastream, counted by a <see cref="Char"/> offset from the start.
 		/// </summary>
-		new public nint Position {
+		new public Int32 Position {
 			get => position;
 			set {
 				switch (Encoding) {
@@ -120,13 +120,13 @@ namespace Streamy {
 		}
 
 		/// <inheritdoc/>
-		void ISeek.Seek(nint offset) => Seek(offset);
+		void ISeek.Seek(Int32 offset) => Seek(offset);
 
 		/// <summary>
 		/// Seeks to the <paramref name="offset"/>, counted by <see cref="Byte"/>.
 		/// </summary>
 		/// <param name="offset">The amount of <see cref="Byte"/> to seek.</param>
-		new public void Seek(nint offset) {
+		new public void Seek(Int32 offset) {
 			switch (Encoding) {
 			case Encoding.UTF16BE:
 			case Encoding.UTF16LE:

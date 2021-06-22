@@ -26,7 +26,7 @@ namespace Collectathon.Nodes {
 		protected TreeNode([AllowNull] TSelf parent) => Parent = parent;
 
 		/// <inheritdoc/>
-		public nint Count { get; }
+		public Int32 Count { get; }
 
 		/// <inheritdoc/>
 		[AllowNull, MaybeNull]

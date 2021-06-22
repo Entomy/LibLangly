@@ -18,7 +18,7 @@ namespace Collectathon.Nodes {
 		protected StandardListNode([AllowNull] TElement element, [AllowNull] TSelf next) : base(next) => Element = element;
 
 		/// <inheritdoc/>
-		public override nint Count => 1;
+		public override Int32 Count => 1;
 
 		/// <inheritdoc/>
 		[AllowNull, MaybeNull]

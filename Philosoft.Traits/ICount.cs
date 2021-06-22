@@ -6,6 +6,6 @@
 		/// <summary>
 		/// Gets the number of elements contained in the collection.
 		/// </summary>
-		nint Count { get; }
+		Int32 Count { get; }
 	}
 }

@@ -33,6 +33,6 @@ namespace System.Traits {
 		/// </summary>
 		/// <param name="amount">The maximum amount of elements to display.</param>
 		[return: NotNull]
-		String ToString(nint amount);
+		String ToString(Int32 amount);
 	}
 }

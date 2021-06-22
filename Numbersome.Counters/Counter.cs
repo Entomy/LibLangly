@@ -14,8 +14,8 @@ namespace Numbersome {
 		IAdd<TElement>,
 		IClear,
 		IContains<TElement>,
-		IIndexReadOnly<TElement, nint>,
-		ISequence<(TElement? Element, nint Count), Counter<TElement>.Enumerator> {
+		IIndexReadOnly<TElement, Int32>,
+		ISequence<(TElement? Element, Int32 Count), Counter<TElement>.Enumerator> {
 		/// <summary>
 		/// The elements of this <see cref="Counter{TElement}"/>.
 		/// </summary>
@@ -48,9 +48,9 @@ namespace Numbersome {
 		}
 
 		/// <inheritdoc/>
-		public nint Count {
+		public Int32 Count {
 			get {
-				nint c = 0;
+				Int32 c = 0;
 				foreach (Int32 count in Counts) {
 					c += count;
 				}
@@ -65,8 +65,8 @@ namespace Numbersome {
 		public TElement Highest {
 			get {
 				TElement? Element = default;
-				nint Count = (nint)(IntPtr.Size == 8 ? Int64.MinValue : Int32.MinValue);
-				for (nint i = 0; i < count; i++) {
+				Int32 Count = Int32.MinValue;
+				for (Int32 i = 0; i < count; i++) {
 					if (Count < Counts[i]) {
 						Element = Elements[i];
 						Count = Counts[i];
@@ -83,8 +83,8 @@ namespace Numbersome {
 		public TElement Lowest {
 			get {
 				TElement? Element = default;
-				nint Count = (nint)(IntPtr.Size == 8 ? Int64.MaxValue : Int32.MaxValue);
-				for (nint i = 0; i < count; i++) {
+				Int32 Count = Int32.MaxValue;
+				for (Int32 i = 0; i < count; i++) {
 					if (Count > Counts[i]) {
 						Element = Elements[i];
 						Count = Counts[i];
@@ -95,7 +95,7 @@ namespace Numbersome {
 		}
 
 		/// <inheritdoc/>
-		public nint this[[AllowNull] TElement index] {
+		public Int32 this[[AllowNull] TElement index] {
 			get {
 				for (nint i = 0; i < count; i++) {
 					if (Equals(Elements[i], index)) {
@@ -108,7 +108,7 @@ namespace Numbersome {
 
 		/// <inheritdoc/>
 		public void Add([AllowNull] TElement element) {
-			for (nint i = 0; i < count; i++) {
+			for (Int32 i = 0; i < count; i++) {
 				if (Equals(Elements[i], element)) {
 					Counts[i]++;
 					return;
@@ -145,7 +145,7 @@ namespace Numbersome {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		System.Collections.Generic.IEnumerator<(TElement Element, nint Count)> System.Collections.Generic.IEnumerable<(TElement Element, nint Count)>.GetEnumerator() => GetEnumerator();
+		System.Collections.Generic.IEnumerator<(TElement Element, Int32 Count)> System.Collections.Generic.IEnumerable<(TElement Element, Int32 Count)>.GetEnumerator() => GetEnumerator();
 
 		/// <inheritdoc/>
 		[return: NotNull]
@@ -153,6 +153,6 @@ namespace Numbersome {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public String ToString(nint amount) => Collection.ToString(Elements, count);
+		public String ToString(Int32 amount) => Collection.ToString(Elements, count);
 	}
 }

@@ -7,6 +7,6 @@ namespace System {
 		/// Shrinks the collection by a computed factor.
 		/// </summary>
 		/// <param name="collection">This collection.</param>
-		public static void Shrink([DisallowNull] this IResize collection) => collection.Resize((nint)(collection.Capacity / φ));
+		public static void Shrink([DisallowNull] this IResize collection) => collection.Resize((Int32)(collection.Capacity / φ));
 	}
 }

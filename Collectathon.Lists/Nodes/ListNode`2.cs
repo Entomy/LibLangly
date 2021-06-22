@@ -23,7 +23,7 @@ namespace Collectathon.Nodes {
 		protected ListNode([AllowNull] TSelf next) => Next = next;
 
 		/// <inheritdoc/>
-		public abstract nint Count { get; }
+		public abstract Int32 Count { get; }
 
 		/// <summary>
 		/// The next node in the list.

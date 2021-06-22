@@ -29,7 +29,7 @@ namespace System.Traits {
 		/// <param name="start">The index at which to begin the slice</param>
 		/// <returns>A slice that consists of all elements of the current collection from <paramref name="start"/> to the end of the collection.</returns>
 		[return: MaybeNull]
-		TResult Slice(nint start);
+		TResult Slice(Int32 start);
 
 		/// <summary>
 		/// Forms a slice out of the current span starting at a specified index for a specified length.
@@ -38,6 +38,6 @@ namespace System.Traits {
 		/// <param name="length">The desired length for the slice.</param>
 		/// <returns>A slice that consists of <paramref name="length"/> elements from the current collection starting at <paramref name="start"/>.</returns>
 		[return: MaybeNull]
-		TResult Slice(nint start, nint length);
+		TResult Slice(Int32 start, Int32 length);
 	}
 }

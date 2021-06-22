@@ -15,7 +15,7 @@ namespace Stringier {
 			public CharNode(Char @char, [AllowNull] Node next, [AllowNull] Node previous) : base(next, previous) => Char = @char;
 
 			/// <inheritdoc/>
-			public override Char this[[DisallowNull] nint index] {
+			public override Char this[Int32 index] {
 				get {
 					if (index == 0) {
 						return Char;
@@ -25,13 +25,13 @@ namespace Stringier {
 			}
 
 			/// <inheritdoc/>
-			public override nint Count => 1;
+			public override Int32 Count => 1;
 
 			/// <inheritdoc/>
 			public override Boolean Contains([AllowNull] Char element) => Equals(Char, element);
 
 			/// <inheritdoc/>
-			public override (Node Head, Node Tail) Insert(nint index, [AllowNull] Char element) {
+			public override (Node Head, Node Tail) Insert(Int32 index, [AllowNull] Char element) {
 				Node head;
 				Node tail;
 				switch (index) {
@@ -52,7 +52,7 @@ namespace Stringier {
 			}
 
 			/// <inheritdoc/>
-			public override (Node Head, Node Tail) Insert(nint index, ReadOnlyMemory<Char> elements) {
+			public override (Node Head, Node Tail) Insert(Int32 index, ReadOnlyMemory<Char> elements) {
 				Node head;
 				Node tail;
 				switch (index) {

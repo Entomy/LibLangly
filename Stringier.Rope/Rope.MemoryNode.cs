@@ -22,7 +22,7 @@ namespace Stringier {
 			public MemoryNode(ReadOnlyMemory<Char> memory, [AllowNull] Node next, [AllowNull] Node previous) : base(next, previous) => Memory = memory;
 
 			/// <inheritdoc/>
-			public override Char this[[DisallowNull] nint index] => Memory.Span[(Int32)index];
+			public override Char this[Int32 index] => Memory.Span[(Int32)index];
 
 #if NETCOREAPP3_0_OR_GREATER
 			/// <inheritdoc/>
@@ -35,13 +35,13 @@ namespace Stringier {
 #endif
 
 			/// <inheritdoc/>
-			public override nint Count => Memory.Length;
+			public override Int32 Count => Memory.Length;
 
 			/// <inheritdoc/>
 			public override Boolean Contains([AllowNull] Char element) => Collection.Contains(Memory, Count, element);
 
 			/// <inheritdoc/>
-			public override (Node Head, Node Tail) Insert(nint index, [AllowNull] Char element) {
+			public override (Node Head, Node Tail) Insert(Int32 index, [AllowNull] Char element) {
 				Node head;
 				Node tail;
 				if (index == 0) {
@@ -63,7 +63,7 @@ namespace Stringier {
 			}
 
 			/// <inheritdoc/>
-			public override (Node Head, Node Tail) Insert(nint index, ReadOnlyMemory<Char> elements) {
+			public override (Node Head, Node Tail) Insert(Int32 index, ReadOnlyMemory<Char> elements) {
 				Node head;
 				Node tail;
 				if (index == 0) {
@@ -145,11 +145,11 @@ namespace Stringier {
 
 			/// <inheritdoc/>
 			[return: NotNull]
-			public MemoryNode Slice(nint start) => Slice(start, Count - start);
+			public MemoryNode Slice(Int32 start) => Slice(start, Count - start);
 
 			/// <inheritdoc/>
 			[return: NotNull]
-			public MemoryNode Slice(nint start, nint length) => new MemoryNode(Memory.Slice((Int32)start, (Int32)length), previous: null, next: null);
+			public MemoryNode Slice(Int32 start, Int32 length) => new MemoryNode(Memory.Slice((Int32)start, (Int32)length), previous: null, next: null);
 
 			/// <inheritdoc/>
 			[return: NotNull]

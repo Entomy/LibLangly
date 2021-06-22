@@ -18,7 +18,7 @@ namespace Collectathon.Enumerators {
 		Object System.Collections.IEnumerator.Current => Current;
 
 		/// <inheritdoc/>
-		public abstract nint Count { get; }
+		public abstract Int32 Count { get; }
 
 		/// <inheritdoc/>
 		public virtual void Dispose() { /* No-op */ }
@@ -47,6 +47,6 @@ namespace Collectathon.Enumerators {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public String ToString(nint amount) => throw new NotImplementedException();
+		public String ToString(Int32 amount) => throw new NotImplementedException();
 	}
 }

@@ -27,14 +27,14 @@ namespace Collectathon.Enumerators {
 		/// <summary>
 		/// The index into the <see cref="N"/>.
 		/// </summary>
-		private nint i;
+		private Int32 i;
 
 		/// <summary>
 		/// Initializes a new <see cref="StackEnumerator{TElement}"/>.
 		/// </summary>
 		/// <param name="head">The head node of the list.</param>
 		/// <param name="length">The length of the sequence.</param>
-		public StackEnumerator([DisallowNull] StackNode<TElement?> head, nint length) {
+		public StackEnumerator([DisallowNull] StackNode<TElement?> head, Int32 length) {
 			Head = head;
 			N = null;
 			i = -1;
@@ -51,7 +51,7 @@ namespace Collectathon.Enumerators {
 		Object System.Collections.IEnumerator.Current => Current;
 
 		/// <inheritdoc/>
-		public nint Count { get; }
+		public Int32 Count { get; }
 
 		/// <inheritdoc/>
 		[EditorBrowsable(EditorBrowsableState.Never)]
@@ -110,6 +110,6 @@ namespace Collectathon.Enumerators {
 		/// <inheritdoc/>
 		[EditorBrowsable(EditorBrowsableState.Never)]
 		[return: NotNull]
-		public readonly String ToString(nint amount) => Collection.ToString(Head, Count, amount);
+		public readonly String ToString(Int32 amount) => Collection.ToString(Head, Count, amount);
 	}
 }

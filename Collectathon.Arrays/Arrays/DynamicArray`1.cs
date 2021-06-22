@@ -17,7 +17,7 @@ namespace Collectathon.Arrays {
 		/// Initializes a new <see cref="DynamicArray{TElement}"/> with the given <paramref name="capacity"/>.
 		/// </summary>
 		/// <param name="capacity">The maximum capacity.</param>
-		public DynamicArray(nint capacity) : base(capacity, 0) { }
+		public DynamicArray(Int32 capacity) : base(capacity, 0) { }
 
 		/// <summary>
 		/// Initializes a new <see cref="DynamicArray{TElement}"/>.
@@ -26,7 +26,7 @@ namespace Collectathon.Arrays {
 		public DynamicArray([DisallowNull] TElement[] memory) : base(memory, memory.Length) { }
 
 		/// <inheritdoc/>
-		new public nint Capacity {
+		new public Int32 Capacity {
 			get => base.Capacity;
 			set => Resize(value);
 		}
@@ -39,7 +39,7 @@ namespace Collectathon.Arrays {
 		public static implicit operator DynamicArray<TElement>([AllowNull] TElement[] array) => array is not null ? new(array) : null;
 
 		/// <inheritdoc/>
-		public override void Insert(nint index, [AllowNull] TElement element) {
+		public override void Insert(Int32 index, [AllowNull] TElement element) {
 			if (Count == Capacity) {
 				Memory = Collection.Grow(Memory);
 			}
@@ -47,7 +47,7 @@ namespace Collectathon.Arrays {
 		}
 
 		/// <inheritdoc/>
-		public override void Insert(nint index, ReadOnlySpan<TElement> elements) {
+		public override void Insert(Int32 index, ReadOnlySpan<TElement> elements) {
 			if (Count + elements.Length >= Capacity) {
 				Memory = Collection.Grow(Memory, Capacity + elements.Length);
 			}
@@ -87,6 +87,6 @@ namespace Collectathon.Arrays {
 		}
 
 		/// <inheritdoc/>
-		public void Resize(nint capacity) => Memory = Collection.Resize(Memory, capacity);
+		public void Resize(Int32 capacity) => Memory = Collection.Resize(Memory, capacity);
 	}
 }

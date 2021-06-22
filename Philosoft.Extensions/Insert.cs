@@ -9,7 +9,7 @@ namespace System {
 		/// <param name="collection">This collection.</param>
 		/// <param name="index">The index at which the <paramref name="elements"/> should be inserted.</param>
 		/// <param name="elements">The elements to insert.</param>
-		public static void Insert([DisallowNull] this IInsert<nint, Char> collection, nint index, [AllowNull] String elements) => Insert(collection, index, elements.AsSpan());
+		public static void Insert([DisallowNull] this IInsert<Int32, Char> collection, Int32 index, [AllowNull] String elements) => Insert(collection, index, elements.AsSpan());
 
 		/// <summary>
 		/// Inserts the elements into the collection at the specified index, as a batch.
@@ -17,7 +17,7 @@ namespace System {
 		/// <param name="collection">This collection.</param>
 		/// <param name="index">The index at which the <paramref name="elements"/> should be inserted.</param>
 		/// <param name="elements">The elements to insert.</param>
-		public static void Insert([DisallowNull] this IInsertMemory<nint, Char> collection, nint index, [AllowNull] String elements) => collection.Insert(index, elements.AsMemory());
+		public static void Insert([DisallowNull] this IInsertMemory<Int32, Char> collection, Int32 index, [AllowNull] String elements) => collection.Insert(index, elements.AsMemory());
 
 		/// <summary>
 		/// Inserts the elements into the collection at the specified index, one by one.
@@ -26,7 +26,7 @@ namespace System {
 		/// <param name="collection">This collection.</param>
 		/// <param name="index">The index at which the <paramref name="elements"/> should be inserted.</param>
 		/// <param name="elements">The elements to insert.</param>
-		public static void Insert<TElement>([DisallowNull] this IInsert<nint, TElement> collection, nint index, [AllowNull] params TElement[] elements) => Insert(collection, index, elements.AsSpan());
+		public static void Insert<TElement>([DisallowNull] this IInsert<Int32, TElement> collection, Int32 index, [AllowNull] params TElement[] elements) => Insert(collection, index, elements.AsSpan());
 
 		/// <summary>
 		/// Inserts the elements into the collection at the specified index, one by one.
@@ -35,7 +35,7 @@ namespace System {
 		/// <param name="collection">This collection.</param>
 		/// <param name="index">The index at which the <paramref name="elements"/> should be inserted.</param>
 		/// <param name="elements">The elements to insert.</param>
-		public static void Insert<TElement>([DisallowNull] this IInsert<nint, TElement> collection, nint index, ArraySegment<TElement> elements) => Insert(collection, index, elements.AsSpan());
+		public static void Insert<TElement>([DisallowNull] this IInsert<Int32, TElement> collection, Int32 index, ArraySegment<TElement> elements) => Insert(collection, index, elements.AsSpan());
 
 		/// <summary>
 		/// Inserts the elements into the collection at the specified index, one by one.
@@ -44,7 +44,7 @@ namespace System {
 		/// <param name="collection">This collection.</param>
 		/// <param name="index">The index at which the <paramref name="elements"/> should be inserted.</param>
 		/// <param name="elements">The elements to insert.</param>
-		public static void Insert<TElement>([DisallowNull] this IInsert<nint, TElement> collection, nint index, Memory<TElement> elements) => Insert(collection, index, elements.Span);
+		public static void Insert<TElement>([DisallowNull] this IInsert<Int32, TElement> collection, Int32 index, Memory<TElement> elements) => Insert(collection, index, elements.Span);
 
 		/// <summary>
 		/// Inserts the elements into the collection at the specified index, one by one.
@@ -53,7 +53,7 @@ namespace System {
 		/// <param name="collection">This collection.</param>
 		/// <param name="index">The index at which the <paramref name="elements"/> should be inserted.</param>
 		/// <param name="elements">The elements to insert.</param>
-		public static void Insert<TElement>([DisallowNull] this IInsert<nint, TElement> collection, nint index, ReadOnlyMemory<TElement> elements) => Insert(collection, index, elements.Span);
+		public static void Insert<TElement>([DisallowNull] this IInsert<Int32, TElement> collection, Int32 index, ReadOnlyMemory<TElement> elements) => Insert(collection, index, elements.Span);
 
 		/// <summary>
 		/// Inserts the elements into the collection at the specified index, one by one.
@@ -62,7 +62,7 @@ namespace System {
 		/// <param name="collection">This collection.</param>
 		/// <param name="index">The index at which the <paramref name="elements"/> should be inserted.</param>
 		/// <param name="elements">The elements to insert.</param>
-		public static void Insert<TElement>([DisallowNull] this IInsert<nint, TElement> collection, nint index, Span<TElement> elements) => Insert(collection, index, (ReadOnlySpan<TElement>)elements);
+		public static void Insert<TElement>([DisallowNull] this IInsert<Int32, TElement> collection, Int32 index, Span<TElement> elements) => Insert(collection, index, (ReadOnlySpan<TElement>)elements);
 
 		/// <summary>
 		/// Inserts the elements into the collection at the specified index, one by one.
@@ -71,7 +71,7 @@ namespace System {
 		/// <param name="collection">This collection.</param>
 		/// <param name="index">The index at which the <paramref name="elements"/> should be inserted.</param>
 		/// <param name="elements">The elements to insert.</param>
-		public static void Insert<TElement>([DisallowNull] this IInsert<nint, TElement> collection, nint index, ReadOnlySpan<TElement> elements) {
+		public static void Insert<TElement>([DisallowNull] this IInsert<Int32, TElement> collection, Int32 index, ReadOnlySpan<TElement> elements) {
 			for (Int32 i = 0; i < elements.Length; i++) {
 				collection.Insert(index++, elements[i]);
 			}
@@ -86,7 +86,7 @@ namespace System {
 		/// <param name="elements">The elements to insert.</param>
 		/// <param name="length">The length of the <paramref name="elements"/>.</param>
 		[CLSCompliant(false)]
-		public static unsafe void Insert<TElement>([DisallowNull] this IInsert<nint, TElement> collection, nint index, [AllowNull] TElement* elements, Int32 length) where TElement : unmanaged {
+		public static unsafe void Insert<TElement>([DisallowNull] this IInsert<Int32, TElement> collection, Int32 index, [AllowNull] TElement* elements, Int32 length) where TElement : unmanaged {
 			for (Int32 i = 0; i < length; i++) {
 				collection.Insert(index++, elements[i]);
 			}
@@ -104,7 +104,7 @@ namespace System {
 		/// The behavior of this operation is type dependent, and no particular location in the collection should be assumed. It is further possible the type the element is added to is not a collection.
 		/// </remarks>
 		[CLSCompliant(false)]
-		public static unsafe void Insert<TElement>([DisallowNull] this IInsertSpan<nint, TElement> collection, nint index, [AllowNull] TElement* elements, Int32 length) where TElement : unmanaged => collection.Insert(index, new Span<TElement>(elements, length));
+		public static unsafe void Insert<TElement>([DisallowNull] this IInsertSpan<Int32, TElement> collection, Int32 index, [AllowNull] TElement* elements, Int32 length) where TElement : unmanaged => collection.Insert(index, new Span<TElement>(elements, length));
 
 		/// <summary>
 		/// Inserts the elements into the collection at the specified index, one by one.
@@ -114,7 +114,7 @@ namespace System {
 		/// <param name="collection">This collection.</param>
 		/// <param name="index">The index at which the <paramref name="elements"/> should be inserted.</param>
 		/// <param name="elements">The elements to insert.</param>
-		public static void Insert<TElement, TEnumerator>([DisallowNull] this IInsert<nint, TElement> collection, nint index, [AllowNull] ISequence<TElement, TEnumerator> elements) where TEnumerator : IEnumerator<TElement> {
+		public static void Insert<TElement, TEnumerator>([DisallowNull] this IInsert<Int32, TElement> collection, Int32 index, [AllowNull] ISequence<TElement, TEnumerator> elements) where TEnumerator : IEnumerator<TElement> {
 			if (elements is not null) {
 				foreach (TElement element in elements) {
 					collection.Insert(index++, element);

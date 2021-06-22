@@ -48,9 +48,9 @@ namespace Collectathon.Stacks {
 		}
 
 		/// <inheritdoc/>
-		public nint Count {
+		public Int32 Count {
 			get {
-				nint c = 0;
+				Int32 c = 0;
 				StackNode<TElement?>? N = Head;
 				while (N is not null) {
 					c += N.Count;
@@ -150,7 +150,7 @@ namespace Collectathon.Stacks {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public String ToString(nint amount) => Collection.ToString(Head, Count, amount);
+		public String ToString(Int32 amount) => Collection.ToString(Head, Count, amount);
 
 		/// <inheritdoc/>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]

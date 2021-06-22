@@ -9,17 +9,17 @@
 		/// <summary>
 		/// The current capacity of the collection before needing to be resized.
 		/// </summary>
-		new nint Capacity { get; set; }
+		new Int32 Capacity { get; set; }
 
 #if !NETSTANDARD1_3
 		/// <inheritdoc/>
-		nint ICapacity.Capacity => Capacity;
+		Int32 ICapacity.Capacity => Capacity;
 #endif
 
 		/// <summary>
 		/// Resize the collection to the specified <paramref name="capacity"/>.
 		/// </summary>
 		/// <param name="capacity">The new capacity of the collection.</param>
-		void Resize(nint capacity);
+		void Resize(Int32 capacity);
 	}
 }

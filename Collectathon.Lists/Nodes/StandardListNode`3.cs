@@ -23,7 +23,7 @@ namespace Collectathon.Nodes {
 		}
 
 		/// <inheritdoc/>
-		public override nint Count => 1;
+		public override Int32 Count => 1;
 
 		/// <inheritdoc/>
 		[DisallowNull, NotNull]

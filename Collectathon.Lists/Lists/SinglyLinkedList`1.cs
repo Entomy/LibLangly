@@ -29,7 +29,7 @@ namespace Collectathon.Lists {
 
 		/// <inheritdoc/>
 		[MemberNotNull(nameof(Head), nameof(Tail))]
-		public override void Insert(nint index, [AllowNull] TElement element) {
+		public override void Insert(Int32 index, [AllowNull] TElement element) {
 			if (index == 0) {
 				Prepend(element);
 			} else if (index == Count) {
@@ -37,7 +37,7 @@ namespace Collectathon.Lists {
 			} else if (Count > 0) {
 				SinglyLinkedListNode<TElement> P = null!;
 				SinglyLinkedListNode<TElement>? N = Head;
-				nint i = 0;
+				Int32 i = 0;
 				while (N is not null) {
 					P = N;
 					N = N.Next;

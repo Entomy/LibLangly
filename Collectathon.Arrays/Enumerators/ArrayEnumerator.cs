@@ -29,7 +29,7 @@ namespace Collectathon.Enumerators {
 		/// <remarks>
 		/// At first it might seem like <paramref name="length"/> is superfluous, as <see cref="ReadOnlyMemory{T}"/> has a known length. However, many data structures use an array as an allocated chunk of memory, with the actual array as a portion of this, up to the entire chunk. <paramref name="length"/> is the actually used portion.
 		/// </remarks>
-		public ArrayEnumerator(ReadOnlyMemory<TElement> memory, nint length) {
+		public ArrayEnumerator(ReadOnlyMemory<TElement> memory, Int32 length) {
 			Memory = memory;
 			Count = length;
 			i = -1;
@@ -45,7 +45,7 @@ namespace Collectathon.Enumerators {
 		Object System.Collections.IEnumerator.Current => Current;
 
 		/// <inheritdoc/>
-		public nint Count { get; }
+		public Int32 Count { get; }
 
 		/// <inheritdoc/>
 		[EditorBrowsable(EditorBrowsableState.Never)]
@@ -80,6 +80,6 @@ namespace Collectathon.Enumerators {
 		/// <inheritdoc/>
 		[EditorBrowsable(EditorBrowsableState.Never)]
 		[return: NotNull]
-		public String ToString(nint amount) => Collection.ToString(Memory, amount);
+		public String ToString(Int32 amount) => Collection.ToString(Memory, amount);
 	}
 }

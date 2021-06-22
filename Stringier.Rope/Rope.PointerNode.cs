@@ -26,7 +26,7 @@ namespace Stringier {
 			}
 
 			/// <inheritdoc/>
-			public override Char this[nint index] => Pointer[index];
+			public override Char this[Int32 index] => Pointer[index];
 
 #if NETCOREAPP3_0_OR_GREATER
 			/// <inheritdoc/>
@@ -39,13 +39,13 @@ namespace Stringier {
 #endif
 
 			/// <inheritdoc/>
-			public override nint Count { get; }
+			public override Int32 Count { get; }
 
 			/// <inheritdoc/>
 			public override Boolean Contains(Char element) => Collection.Contains(Pointer, Count, element);
 
 			/// <inheritdoc/>
-			public override (Node Head, Node Tail) Insert(nint index, [AllowNull] Char element) {
+			public override (Node Head, Node Tail) Insert(Int32 index, [AllowNull] Char element) {
 				Node head;
 				Node tail;
 				if (index == 0) {
@@ -67,7 +67,7 @@ namespace Stringier {
 			}
 
 			/// <inheritdoc/>
-			public override (Node Head, Node Tail) Insert(nint index, ReadOnlyMemory<Char> elements) {
+			public override (Node Head, Node Tail) Insert(Int32 index, ReadOnlyMemory<Char> elements) {
 				Node head;
 				Node tail;
 				if (index == 0) {
@@ -149,11 +149,11 @@ namespace Stringier {
 
 			/// <inheritdoc/>
 			[return: MaybeNull]
-			public PointerNode Slice(nint start) => Slice(start, Count - start);
+			public PointerNode Slice(Int32 start) => Slice(start, Count - start);
 
 			/// <inheritdoc/>
 			[return: MaybeNull]
-			public PointerNode Slice(nint start, nint length) => new PointerNode(&Pointer[(Int32)start], (Int32)length, previous: null, next: null);
+			public PointerNode Slice(Int32 start, Int32 length) => new PointerNode(&Pointer[(Int32)start], (Int32)length, previous: null, next: null);
 		}
 	}
 }

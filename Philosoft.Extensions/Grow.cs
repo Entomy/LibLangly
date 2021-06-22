@@ -9,7 +9,7 @@ namespace System {
 		/// <param name="collection">This collection.</param>
 		public static void Grow([DisallowNull] this IResize collection) {
 			if (collection.Capacity >= 8) {
-				collection.Resize((nint)(collection.Capacity * φ));
+				collection.Resize((Int32)(collection.Capacity * φ));
 			} else {
 				collection.Resize(13);
 			}
@@ -26,7 +26,7 @@ namespace System {
 				size += 4.0;
 				size *= φ;
 			}
-			collection.Resize((nint)size);
+			collection.Resize((Int32)size);
 		}
 	}
 }

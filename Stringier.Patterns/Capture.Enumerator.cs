@@ -36,7 +36,7 @@ namespace Stringier.Patterns {
 			Object System.Collections.IEnumerator.Current => Current;
 
 			/// <inheritdoc/>
-			public nint Count => Text.Length;
+			public Int32 Count => Text.Length;
 
 			/// <inheritdoc/>
 			public readonly void Dispose() { /* No-op */ }
@@ -64,7 +64,7 @@ namespace Stringier.Patterns {
 
 			/// <inheritdoc/>
 			[return: NotNull]
-			public String ToString(nint amount) => $"{Text.Slice(0, (Int32)amount)}...";
+			public String ToString(Int32 amount) => $"{Text.Slice(0, (Int32)amount)}...";
 		}
 	}
 }

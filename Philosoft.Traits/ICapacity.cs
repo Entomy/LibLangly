@@ -6,6 +6,6 @@
 		/// <summary>
 		/// The maximum capacity of the collection.
 		/// </summary>
-		nint Capacity { get; }
+		Int32 Capacity { get; }
 	}
 }

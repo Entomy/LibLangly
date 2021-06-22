@@ -23,10 +23,10 @@ namespace Streamy.Bases {
 		public override Boolean Writable => false;
 
 		/// <inheritdoc/>
-		public override void Read(out Byte element) => element = Memory.Span[(Int32)Position++];
+		public override void Read(out Byte element) => element = Memory.Span[Position++];
 
 		/// <inheritdoc/>
-		public override void Seek(nint offset) => Position += offset;
+		public override void Seek(Int32 offset) => Position += offset;
 
 		/// <inheritdoc/>
 		public override void Write(Byte element) => throw new NotSupportedException("Stream is read-only.");

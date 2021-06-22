@@ -25,7 +25,7 @@ namespace Numbersome {
 			public sealed override Boolean Writable => false;
 
 			/// <inheritdoc/>
-			public sealed override void Seek(nint offset) => throw new NotSupportedException("Random number generators can't be seeked");
+			public sealed override void Seek(Int32 offset) => throw new NotSupportedException("Random number generators can't be seeked");
 
 			/// <inheritdoc/>
 			public sealed override void Write([AllowNull] Byte element) => throw new NotSupportedException("Random number generators are read-only.");

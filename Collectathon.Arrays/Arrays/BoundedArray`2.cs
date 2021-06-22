@@ -17,7 +17,7 @@ namespace Collectathon.Arrays {
 		/// Initializes a new <see cref="BoundedArray{TIndex, TElement}"/> with the given <paramref name="capacity"/>.
 		/// </summary>
 		/// <param name="capacity"></param>
-		public BoundedArray(nint capacity) : base(capacity, 0) { }
+		public BoundedArray(Int32 capacity) : base(capacity, 0) { }
 
 		/// <summary>
 		/// Conversion constructor.

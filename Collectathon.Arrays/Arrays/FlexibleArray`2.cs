@@ -17,8 +17,8 @@ namespace Collectathon.Arrays {
 		IClear,
 		IContains<TElement>,
 		IEquatable<TSelf>, IEquatable<FlexibleArray<TElement, TSelf>>,
-		IIndex<nint, TElement>,
-		IInsertSpan<nint, TElement>,
+		IIndex<Int32, TElement>,
+		IInsertSpan<Int32, TElement>,
 		IPostpendSpan<TElement>,
 		IPrependSpan<TElement>,
 		IRemove<TElement>,
@@ -36,14 +36,14 @@ namespace Collectathon.Arrays {
 		/// <summary>
 		/// The amount of elements contained in this collection.
 		/// </summary>
-		private nint count;
+		private Int32 count;
 
 		/// <summary>
 		/// Initializes a new <see cref="FlexibleArray{TElement, TSelf}"/> with the given <paramref name="capacity"/>.
 		/// </summary>
 		/// <param name="capacity">The initial capacity.</param>
 		/// <param name="count">The amount of elements in the array.</param>
-		protected FlexibleArray(nint capacity, nint count) {
+		protected FlexibleArray(Int32 capacity, Int32 count) {
 			Memory = new TElement[capacity];
 			Count = count;
 		}
@@ -53,18 +53,18 @@ namespace Collectathon.Arrays {
 		/// </summary>
 		/// <param name="memory">The <see cref="Array"/> of <typeparamref name="TElement"/> to reuse.</param>
 		/// <param name="count">The amount of elements in the array.</param>
-		protected FlexibleArray([DisallowNull] TElement?[] memory, nint count) {
+		protected FlexibleArray([DisallowNull] TElement?[] memory, Int32 count) {
 			Memory = memory;
 			Count = count;
 		}
 
 		/// <inheritdoc/>
 		[O(1), Ω(1), Θ(1)]
-		public nint Capacity => Memory.Length;
+		public Int32 Capacity => Memory.Length;
 
 		/// <inheritdoc/>
 		[O(1), Ω(1), Θ(1)]
-		public nint Count {
+		public Int32 Count {
 			get => count;
 			protected set => count = value;
 		}
@@ -72,9 +72,9 @@ namespace Collectathon.Arrays {
 		/// <inheritdoc/>
 		[O(1), Ω(1), Θ(1)]
 		[AllowNull, MaybeNull]
-		public TElement this[nint index] {
-			get => Memory[(Int32)index];
-			set => Memory[(Int32)index] = value;
+		public TElement this[Int32 index] {
+			get => Memory[index];
+			set => Memory[index] = value;
 		}
 
 #if !NETSTANDARD1_3
@@ -182,25 +182,25 @@ namespace Collectathon.Arrays {
 		public sealed override Int32 GetHashCode() => base.GetHashCode();
 
 		/// <inheritdoc/>
-		public virtual void Insert(nint index, [AllowNull] TElement element) => Collection.Insert(Memory, ref count, index, element);
+		public virtual void Insert(Int32 index, [AllowNull] TElement element) => Collection.Insert(Memory, ref count, index, element);
 
 		/// <inheritdoc/>
-		public void Insert(nint index, [AllowNull] params TElement?[] elements) => Insert(index, elements.AsSpan());
+		public void Insert(Int32 index, [AllowNull] params TElement?[] elements) => Insert(index, elements.AsSpan());
 
 		/// <inheritdoc/>
-		public void Insert([DisallowNull] nint index, ArraySegment<TElement?> elements) => Insert(index, elements.AsSpan());
+		public void Insert([DisallowNull] Int32 index, ArraySegment<TElement?> elements) => Insert(index, elements.AsSpan());
 
 		/// <inheritdoc/>
-		public void Insert(nint index, Memory<TElement?> elements) => Insert(index, elements.Span);
+		public void Insert(Int32 index, Memory<TElement?> elements) => Insert(index, elements.Span);
 
 		/// <inheritdoc/>
-		public void Insert(nint index, ReadOnlyMemory<TElement?> elements) => Insert(index, elements.Span);
+		public void Insert(Int32 index, ReadOnlyMemory<TElement?> elements) => Insert(index, elements.Span);
 
 		/// <inheritdoc/>
-		public void Insert(nint index, Span<TElement?> elements) => Insert(index, (ReadOnlySpan<TElement>)elements);
+		public void Insert(Int32 index, Span<TElement?> elements) => Insert(index, (ReadOnlySpan<TElement>)elements);
 
 		/// <inheritdoc/>
-		public virtual void Insert(nint index, ReadOnlySpan<TElement?> elements) => Collection.Insert(Memory, ref count, index, elements);
+		public virtual void Insert(Int32 index, ReadOnlySpan<TElement?> elements) => Collection.Insert(Memory, ref count, index, elements);
 
 		/// <inheritdoc/>
 		[O(Complexity.n_plus_k), Ω(Complexity.n)]
@@ -278,13 +278,13 @@ namespace Collectathon.Arrays {
 		public void ShiftLeft() => Collection.ShiftLeft(Memory, Count, 1);
 
 		/// <inheritdoc/>
-		public void ShiftLeft(nint amount) => Collection.ShiftLeft(Memory, Count, amount);
+		public void ShiftLeft(Int32 amount) => Collection.ShiftLeft(Memory, Count, amount);
 
 		/// <inheritdoc/>
 		public void ShiftRight() => Collection.ShiftRight(Memory, Count, 1);
 
 		/// <inheritdoc/>
-		public void ShiftRight(nint amount) => Collection.ShiftRight(Memory, Count, amount);
+		public void ShiftRight(Int32 amount) => Collection.ShiftRight(Memory, Count, amount);
 
 		/// <inheritdoc/>
 		[O(1), Ω(1), Θ(1)]
@@ -292,11 +292,11 @@ namespace Collectathon.Arrays {
 
 		/// <inheritdoc/>
 		[O(1), Ω(1), Θ(1)]
-		public Memory<TElement> Slice(nint start) => Memory.AsMemory((Int32)start);
+		public Memory<TElement> Slice(Int32 start) => Memory.AsMemory(start);
 
 		/// <inheritdoc/>
 		[O(1), Ω(1), Θ(1)]
-		public Memory<TElement> Slice(nint start, nint length) => Memory.AsMemory((Int32)start, (Int32)length);
+		public Memory<TElement> Slice(Int32 start, Int32 length) => Memory.AsMemory(start, length);
 
 		/// <inheritdoc/>
 		[O(Complexity.n), Ω(Complexity.n), Θ(Complexity.n)]
@@ -306,6 +306,6 @@ namespace Collectathon.Arrays {
 		/// <inheritdoc/>
 		[O(Complexity.n), Ω(Complexity.n), Θ(Complexity.n)]
 		[return: NotNull]
-		public String ToString(nint amount) => Collection.ToString(Memory, amount);
+		public String ToString(Int32 amount) => Collection.ToString(Memory, amount);
 	}
 }

@@ -68,11 +68,11 @@ namespace System.Traits {
 		/// <returns>A <see cref="String"/> representing this collection.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[return: MaybeNull, NotNullIfNotNull("head")]
-		public static String ToString<TNode>([AllowNull] TNode head, nint count) where TNode : class, INext<TNode> {
+		public static String ToString<TNode>([AllowNull] TNode head, Int32 count) where TNode : class, INext<TNode> {
 			StringBuilder builder = new StringBuilder();
 			if (head is not null) {
 				TNode? N = head;
-				nint i = 0;
+				Int32 i = 0;
 				while (N is not null) {
 					if (++i == count) {
 						_ = builder.Append(N);
@@ -94,7 +94,7 @@ namespace System.Traits {
 		/// <returns>A <see cref="String"/> representing this collection.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[return: NotNull]
-		public static String ToString<TElement>([AllowNull] TElement[] elements, nint amount) => ToString(elements.AsSpan(), amount);
+		public static String ToString<TElement>([AllowNull] TElement[] elements, Int32 amount) => ToString(elements.AsSpan(), amount);
 
 		/// <summary>
 		/// Returns a string that represents this sequence.
@@ -104,7 +104,7 @@ namespace System.Traits {
 		/// <returns>A <see cref="String"/> representing this collection.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[return: NotNull]
-		public static String ToString<TElement>(Memory<TElement> elements, nint amount) => ToString(elements.Span, amount);
+		public static String ToString<TElement>(Memory<TElement> elements, Int32 amount) => ToString(elements.Span, amount);
 
 		/// <summary>
 		/// Returns a string that represents this sequence.
@@ -114,7 +114,7 @@ namespace System.Traits {
 		/// <returns>A <see cref="String"/> representing this collection.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[return: NotNull]
-		public static String ToString<TElement>(ReadOnlyMemory<TElement> elements, nint amount) => ToString(elements.Span, amount);
+		public static String ToString<TElement>(ReadOnlyMemory<TElement> elements, Int32 amount) => ToString(elements.Span, amount);
 
 		/// <summary>
 		/// Returns a string that represents this sequence.
@@ -124,7 +124,7 @@ namespace System.Traits {
 		/// <returns>A <see cref="String"/> representing this collection.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[return: NotNull]
-		public static String ToString<TElement>(Span<TElement> elements, nint amount) => ToString((ReadOnlySpan<TElement>)elements, amount);
+		public static String ToString<TElement>(Span<TElement> elements, Int32 amount) => ToString((ReadOnlySpan<TElement>)elements, amount);
 
 		/// <summary>
 		/// Returns a string that represents this sequence.
@@ -134,7 +134,7 @@ namespace System.Traits {
 		/// <returns>A <see cref="String"/> representing this collection.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[return: NotNull]
-		public static String ToString<TElement>(ReadOnlySpan<TElement> elements, nint amount) {
+		public static String ToString<TElement>(ReadOnlySpan<TElement> elements, Int32 amount) {
 			StringBuilder builder = new StringBuilder();
 			for (Int32 i = 0; i < elements.Length; i++) {
 				if (i + 1 == elements.Length) {
@@ -159,11 +159,11 @@ namespace System.Traits {
 		/// <returns>A <see cref="String"/> representing this collection.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[return: MaybeNull, NotNullIfNotNull("head")]
-		public static String ToString<TNode>([AllowNull] TNode head, nint count, nint amount) where TNode : class, INext<TNode> {
+		public static String ToString<TNode>([AllowNull] TNode head, Int32 count, Int32 amount) where TNode : class, INext<TNode> {
 			StringBuilder builder = new StringBuilder();
 			if (head is not null) {
 				TNode? N = head;
-				nint i = 0;
+				Int32 i = 0;
 				while (N is not null) {
 					if (++i == count) {
 						_ = builder.Append(N);

@@ -34,7 +34,7 @@ namespace Collectathon.Trees {
 		protected Tree() { }
 
 		/// <inheritdoc/>
-		public nint Count { get; protected set; }
+		public Int32 Count { get; protected set; }
 
 		/// <inheritdoc/>
 		public void Add([AllowNull] TElement element) => Root?.Add(element);
@@ -92,6 +92,6 @@ namespace Collectathon.Trees {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public String ToString(nint amount) => throw new NotImplementedException();
+		public String ToString(Int32 amount) => throw new NotImplementedException();
 	}
 }

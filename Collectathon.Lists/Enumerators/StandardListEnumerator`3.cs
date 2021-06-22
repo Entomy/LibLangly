@@ -30,7 +30,7 @@ namespace Collectathon.Enumerators {
 		/// </summary>
 		/// <param name="head">The head node of the list.</param>
 		/// <param name="length">The length of the sequence.</param>
-		public StandardListEnumerator([AllowNull] TNode head, nint length) {
+		public StandardListEnumerator([AllowNull] TNode head, Int32 length) {
 			Head = head;
 			N = null;
 			Count = length;
@@ -45,7 +45,7 @@ namespace Collectathon.Enumerators {
 		Object System.Collections.IEnumerator.Current => Current;
 
 		/// <inheritdoc/>
-		public nint Count { get; }
+		public Int32 Count { get; }
 
 		/// <inheritdoc/>
 		[EditorBrowsable(EditorBrowsableState.Never)]
@@ -83,6 +83,6 @@ namespace Collectathon.Enumerators {
 		/// <inheritdoc/>
 		[EditorBrowsable(EditorBrowsableState.Never)]
 		[return: NotNull]
-		public String ToString(nint amount) => Collection.ToString(Head, Count, amount);
+		public String ToString(Int32 amount) => Collection.ToString(Head, Count, amount);
 	}
 }

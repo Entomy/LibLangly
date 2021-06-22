@@ -66,9 +66,9 @@ namespace Collectathon.Enumerators {
 		Object System.Collections.IEnumerator.Current => Current;
 
 		/// <inheritdoc/>
-		public nint Count {
+		public Int32 Count {
 			get {
-				nint c = 0;
+				Int32 c = 0;
 				foreach (Boolean dlt in Dealt.Span) {
 					c += dlt ? (ListDealt ? 1 : 0) : (ListRemaining ? 1 : 0);
 				}
@@ -115,6 +115,6 @@ namespace Collectathon.Enumerators {
 		/// <inheritdoc/>
 		[EditorBrowsable(EditorBrowsableState.Never)]
 		[return: NotNull]
-		public String ToString(nint amount) => Collection.ToString(Cards, amount);
+		public String ToString(Int32 amount) => Collection.ToString(Cards, amount);
 	}
 }

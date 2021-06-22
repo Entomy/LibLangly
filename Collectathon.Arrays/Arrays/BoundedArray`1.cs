@@ -11,7 +11,7 @@ namespace Collectathon.Arrays {
 		/// Initializes a new <see cref="BoundedArray{TElement}"/> with the given <paramref name="capacity"/>.
 		/// </summary>
 		/// <param name="capacity">The maximum capacity.</param>
-		public BoundedArray(nint capacity) : base(capacity, 0) { }
+		public BoundedArray(Int32 capacity) : base(capacity, 0) { }
 
 		/// <summary>
 		/// Initializes a new <see cref="BoundedArray{TElement}"/>
@@ -28,7 +28,7 @@ namespace Collectathon.Arrays {
 
 		/// <inheritdoc/>
 		/// <exception cref="InvalidOperationException">Thrown if the array is at maximum capacity.</exception>
-		public override void Insert(nint index, [AllowNull] TElement element) {
+		public override void Insert(Int32 index, [AllowNull] TElement element) {
 			if (Count < Capacity) {
 				base.Insert(index, element);
 			} else {
@@ -38,7 +38,7 @@ namespace Collectathon.Arrays {
 
 		/// <inheritdoc/>
 		/// <exception cref="InvalidOperationException">Thrown if the array is at maximum capacity.</exception>
-		public override void Insert(nint index, ReadOnlySpan<TElement> elements) {
+		public override void Insert(Int32 index, ReadOnlySpan<TElement> elements) {
 			if (Count + elements.Length <= Capacity) {
 				base.Insert(index, elements);
 			} else {

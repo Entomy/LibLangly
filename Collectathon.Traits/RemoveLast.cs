@@ -10,6 +10,6 @@ namespace System.Traits {
 		/// <param name="count">The amount of elements in the collection; the amount currently in use.</param>
 		/// <param name="element">The element to remove.</param>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static void RemoveLast<TElement>(Span<TElement> collection, ref nint count, [AllowNull] TElement element) => throw new NotImplementedException();
+		public static void RemoveLast<TElement>(Span<TElement> collection, ref Int32 count, [AllowNull] TElement element) => throw new NotImplementedException();
 	}
 }

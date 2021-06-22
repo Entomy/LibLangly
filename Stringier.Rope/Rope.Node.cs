@@ -7,7 +7,7 @@ namespace Stringier {
 		/// <summary>
 		/// Represents a node of a <see cref="Rope"/>.
 		/// </summary>
-		public abstract class Node : IContains<Char>, IIndexReadOnly<nint, Char>, INext<Node>, IPrevious<Node>, IUnlink {
+		public abstract class Node : IContains<Char>, IIndexReadOnly<Int32, Char>, INext<Node>, IPrevious<Node>, IUnlink {
 			/// <summary>
 			/// Initializes a new <see cref="Node"/>.
 			/// </summary>
@@ -19,7 +19,7 @@ namespace Stringier {
 			}
 
 			/// <inheritdoc/>
-			public abstract nint Count { get; }
+			public abstract Int32 Count { get; }
 
 			/// <inheritdoc/>
 			[AllowNull, MaybeNull]
@@ -30,33 +30,30 @@ namespace Stringier {
 			public Node Previous { get; set; }
 
 			/// <inheritdoc/>
-			public abstract Char this[nint index] { get; }
+			public abstract Char this[Int32 index] { get; }
+
 			/// <inheritdoc/>
 			public abstract Boolean Contains(Char element);
 
-			public abstract (Node Head, Node Tail) Insert(nint index, [AllowNull] Char element);
+			public abstract (Node Head, Node Tail) Insert(Int32 index, [AllowNull] Char element);
 
-			public abstract (Node Head, Node Tail) Insert(nint index, ReadOnlyMemory<Char> elements);
+			public abstract (Node Head, Node Tail) Insert(Int32 index, ReadOnlyMemory<Char> elements);
 
-			/// <inheritdoc/>
 			[return: NotNull]
 			public Node Postpend([AllowNull] Char element) {
 				Next = new CharNode(element, next: null, previous: this);
 				return Next;
 			}
 
-			/// <inheritdoc/>
 			[return: NotNull]
 			public Node Postpend(ReadOnlyMemory<Char> elements) {
 				Next = new MemoryNode(elements, next: null, previous: this);
 				return Next;
 			}
 
-			/// <inheritdoc/>
 			[return: NotNull]
 			public Node Prepend([AllowNull] Char element) => new CharNode(element, next: this, previous: null);
 
-			/// <inheritdoc/>
 			[return: NotNull]
 			public Node Prepend(ReadOnlyMemory<Char> elements) => new MemoryNode(elements, next: this, previous: null);
 

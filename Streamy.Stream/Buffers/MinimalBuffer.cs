@@ -22,16 +22,16 @@ namespace Streamy.Buffers {
 		public MinimalBuffer([DisallowNull] StreamBase @base) => Base = @base;
 
 		/// <inheritdoc/>
-		public nint Capacity => sizeof(Decimal);
+		public Int32 Capacity => sizeof(Decimal);
 
 		/// <inheritdoc/>
-		public nint Count { get; private set; }
+		public Int32 Count { get; private set; }
 
 		/// <inheritdoc/>
 		public Boolean Disposed { get; set; }
 
 		/// <inheritdoc/>
-		public nint Position {
+		public Int32 Position {
 			get => Base.Position;
 			set {
 				if (Count == 0) {
@@ -89,7 +89,7 @@ namespace Streamy.Buffers {
 		}
 
 		/// <inheritdoc/>
-		public void Peek([DisallowNull, NotNull] out Byte[] elements, nint required) {
+		public void Peek([DisallowNull, NotNull] out Byte[] elements, Int32 required) {
 			for (; Count < required; Count++) {
 				Base.Read(out Memory[Count]);
 			}
@@ -106,7 +106,7 @@ namespace Streamy.Buffers {
 		}
 
 		/// <inheritdoc/>
-		public void Seek(nint offset) {
+		public void Seek(Int32 offset) {
 			if (Count == 0) {
 				Base.Seek(offset);
 			} else {
@@ -118,13 +118,13 @@ namespace Streamy.Buffers {
 		public void ShiftLeft() => Count--;
 
 		/// <inheritdoc/>
-		public void ShiftLeft(nint amount) => Count -= amount;
+		public void ShiftLeft(Int32 amount) => Count -= amount;
 
 		/// <inheritdoc/>
 		public void ShiftRight() => Count++;
 
 		/// <inheritdoc/>
-		public void ShiftRight(nint amount) => Count += amount;
+		public void ShiftRight(Int32 amount) => Count += amount;
 
 		/// <inheritdoc/>
 		[return: NotNull]
@@ -132,7 +132,7 @@ namespace Streamy.Buffers {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public String ToString(nint amount) {
+		public String ToString(Int32 amount) {
 			StringBuilder builder = new StringBuilder();
 			nint i = 0;
 			foreach (Byte element in Memory) {

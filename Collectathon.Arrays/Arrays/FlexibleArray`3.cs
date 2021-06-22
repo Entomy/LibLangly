@@ -29,7 +29,7 @@ namespace Collectathon.Arrays {
 		/// </summary>
 		/// <param name="capacity">The initial capacity.</param>
 		/// <param name="count">The amount of elements in the array.</param>
-		protected FlexibleArray(nint capacity, nint count) {
+		protected FlexibleArray(Int32 capacity, Int32 count) {
 			Entries = new (TIndex, TElement)[capacity];
 			Count = count;
 		}
@@ -39,16 +39,16 @@ namespace Collectathon.Arrays {
 		/// </summary>
 		/// <param name="entries">The initial entries of the list.</param>
 		/// <param name="count">The amount of elements in the array.</param>
-		protected FlexibleArray([DisallowNull] (TIndex, TElement)[] entries, nint count) {
+		protected FlexibleArray([DisallowNull] (TIndex, TElement)[] entries, Int32 count) {
 			Entries = entries;
 			Count = count;
 		}
 
 		/// <inheritdoc/>
-		public nint Capacity => Entries.Length;
+		public Int32 Capacity => Entries.Length;
 
 		/// <inheritdoc/>
-		public nint Count { get; protected set; }
+		public Int32 Count { get; protected set; }
 
 		/// <inheritdoc/>
 		[AllowNull, MaybeNull]
@@ -62,7 +62,7 @@ namespace Collectathon.Arrays {
 				throw new IndexOutOfRangeException();
 			}
 			set {
-				for (nint i = 0; i < Count; i++) {
+				for (Int32 i = 0; i < Count; i++) {
 					if (Equals(Entries[i].Index, index)) {
 						Entries[i].Element = value;
 						return;
@@ -106,7 +106,7 @@ namespace Collectathon.Arrays {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public String ToString(nint amount) => Collection.ToString(Entries, amount);
+		public String ToString(Int32 amount) => Collection.ToString(Entries, amount);
 
 		/// <summary>
 		/// Adds an element to this object.

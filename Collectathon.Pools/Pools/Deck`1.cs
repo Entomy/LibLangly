@@ -55,9 +55,9 @@ namespace Collectathon.Pools {
 		}
 
 		/// <inheritdoc/>
-		public nint Count {
+		public Int32 Count {
 			get {
-				nint c = 0;
+				Int32 c = 0;
 				foreach (Boolean dlt in dealt) {
 					c += dlt ? 0 : 1;
 				}
@@ -154,7 +154,7 @@ namespace Collectathon.Pools {
 
 		/// <inheritdoc/>
 		public void Remove([AllowNull] TElement element) {
-			for (nint i = 0; i < cards.Length; i++) {
+			for (Int32 i = 0; i < cards.Length; i++) {
 				if (Equals(cards[i], element)) {
 					dealt[i] = true;
 				}
@@ -163,7 +163,7 @@ namespace Collectathon.Pools {
 
 		/// <inheritdoc/>
 		public void RemoveFirst([AllowNull] TElement element) {
-			for (nint i = 0; i < cards.Length; i++) {
+			for (Int32 i = 0; i < cards.Length; i++) {
 				if (Equals(cards[i], element)) {
 					dealt[i] = true;
 					return;
@@ -173,7 +173,7 @@ namespace Collectathon.Pools {
 
 		/// <inheritdoc/>
 		public void RemoveLast([AllowNull] TElement element) {
-			for (nint i = cards.Length - 1; i >= 0; i--) {
+			for (Int32 i = cards.Length - 1; i >= 0; i--) {
 				if (Equals(cards[i], element)) {
 					dealt[i] = true;
 					return;
@@ -200,6 +200,6 @@ namespace Collectathon.Pools {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		public String ToString(nint amount) => Collection.ToString(cards, amount);
+		public String ToString(Int32 amount) => Collection.ToString(cards, amount);
 	}
 }
