@@ -85,14 +85,14 @@
     <h5>Implements</h5>
     <div><span class="xref">IClear</span></div>
     <div><span class="xref">IContains</span>&lt;TElement&gt;</div>
-    <div><span class="xref">IIndexReadOnly</span>&lt;TElement, <span class="xref">nint</span>&gt;</div>
-    <div><span class="xref">ISequence</span>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">ValueTuple</a>&lt;TElement, <span class="xref">nint</span>&gt;, <a class="xref" href="Numbersome.Counter-1.Enumerator.html">Counter.Enumerator</a>&lt;&gt;&gt;</div>
+    <div><span class="xref">IIndexReadOnly</span>&lt;TElement, <span class="xref">Int32</span>&gt;</div>
+    <div><span class="xref">ISequence</span>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">ValueTuple</a>&lt;TElement, <span class="xref">Int32</span>&gt;, <a class="xref" href="Numbersome.Counter-1.Enumerator.html">Counter.Enumerator</a>&lt;&gt;&gt;</div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Numbersome.html">Numbersome</a></h6>
   <h6><strong>Assembly</strong>: Numbersome.Counters.dll</h6>
   <h5 id="Numbersome_Counter_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class Counter&lt;TElement&gt; : IAdd&lt;TElement&gt;, IClear, IContains&lt;TElement&gt;, IIndexReadOnly&lt;TElement, nint&gt;, ISequence&lt;(TElement Element, nint Count), Counter&lt;TElement&gt;.Enumerator&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class Counter&lt;TElement&gt; : IAdd&lt;TElement&gt;, IClear, IContains&lt;TElement&gt;, IIndexReadOnly&lt;TElement, Int32&gt;, ISequence&lt;(TElement Element, Int32 Count), Counter&lt;TElement&gt;.Enumerator&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -146,7 +146,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public nint Count { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Int32 Count { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -158,7 +158,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">nint</span></td>
+        <td><span class="xref">Int32</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -207,7 +207,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public nint this[TElement index] { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Int32 this[TElement index] { get; }</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -236,7 +236,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">nint</span></td>
+        <td><span class="xref">Int32</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -430,18 +430,18 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Counter_1_ToString_nint_.md&amp;value=---%0Auid%3A%20Numbersome.Counter%601.ToString(nint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Numbersome_Counter_1_ToString_Int32_.md&amp;value=---%0Auid%3A%20Numbersome.Counter%601.ToString(Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Entomy/LibLangly/blob/master/Numbersome.Counters/Counter.cs/#L155">View Source</a>
   </span>
   <a id="Numbersome_Counter_1_ToString_" data-uid="Numbersome.Counter`1.ToString*"></a>
-  <h4 id="Numbersome_Counter_1_ToString_nint_" data-uid="Numbersome.Counter`1.ToString(nint)">ToString(nint)</h4>
+  <h4 id="Numbersome_Counter_1_ToString_Int32_" data-uid="Numbersome.Counter`1.ToString(Int32)">ToString(Int32)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public String ToString(nint amount)</code></pre>
+    <pre><code class="lang-csharp hljs">public String ToString(Int32 amount)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -454,7 +454,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">nint</span></td>
+        <td><span class="xref">Int32</span></td>
         <td><span class="parametername">amount</span></td>
         <td></td>
       </tr>
