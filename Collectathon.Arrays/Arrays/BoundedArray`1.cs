@@ -46,7 +46,7 @@ namespace Collectathon.Arrays {
 		/// Initializes a new <see cref="BoundedArray{TElement}"/>
 		/// </summary>
 		/// <param name="elements">The <see cref="Array"/> of <typeparamref name="TElement"/> to reuse.</param>
-		public BoundedArray([DisallowNull] TElement?[] elements) {
+		public BoundedArray([DisallowNull] params TElement?[] elements) {
 			Elements = elements;
 			count = elements.Length;
 		}

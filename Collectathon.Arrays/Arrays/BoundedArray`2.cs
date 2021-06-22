@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
+using System.Traits;
+using Collectathon.Enumerators;
 
 namespace Collectathon.Arrays {
 	/// <summary>
@@ -7,36 +10,118 @@ namespace Collectathon.Arrays {
 	/// </summary>
 	/// <typeparam name="TIndex">The type of the indicies of the array.</typeparam>
 	/// <typeparam name="TElement">The type of the elements in the array.</typeparam>
-	public sealed class BoundedArray<TIndex, TElement> : FlexibleArray<TIndex, TElement, BoundedArray<TIndex, TElement>> {
+	[DebuggerDisplay("{ToString(5),nq}")]
+	public sealed class BoundedArray<TIndex, TElement> :
+		ICapacity,
+		IClear,
+		IIndex<TIndex, TElement>,
+		IInsert<TIndex, TElement>,
+		ISequence<(TIndex Index, TElement Element), ArrayEnumerator<(TIndex Index, TElement Element)>> {
+		/// <summary>
+		/// The backing array of this <see cref="DynamicArray{TIndex, TElement}"/>.
+		/// </summary>
+		private readonly (TIndex Index, TElement? Element)[] Entries;
+
 		/// <summary>
 		/// Initializes a new <see cref="BoundedArray{TIndex, TElement}"/>.
 		/// </summary>
-		public BoundedArray() : this(0) { }
+		public BoundedArray() => Entries = Array.Empty<(TIndex, TElement?)>();
 
 		/// <summary>
 		/// Initializes a new <see cref="BoundedArray{TIndex, TElement}"/> with the given <paramref name="capacity"/>.
 		/// </summary>
-		/// <param name="capacity"></param>
-		public BoundedArray(Int32 capacity) : base(capacity, 0) { }
+		/// <param name="capacity">The maximum capacity.</param>
+		public BoundedArray(Int32 capacity) => Entries = new (TIndex, TElement?)[capacity];
 
 		/// <summary>
 		/// Conversion constructor.
 		/// </summary>
-		/// <param name="memory">The <see cref="Array"/> of (<typeparamref name="TIndex"/>, <typeparamref name="TElement"/>) to reuse.</param>
-		public BoundedArray([DisallowNull] (TIndex, TElement)[] memory) : base(memory, memory.Length) { }
+		/// <param name="entries">The <see cref="Array"/> of (<typeparamref name="TIndex"/>, <typeparamref name="TElement"/>) to reuse.</param>
+		public BoundedArray([DisallowNull] params (TIndex, TElement?)[] entries) {
+			Entries = entries;
+			Count = entries.Length;
+		}
+
+		/// <inheritdoc/>
+		public Int32 Capacity => Entries.Length;
+
+		/// <inheritdoc/>
+		public Int32 Count { get; private set; }
+
+		/// <inheritdoc/>
+		[AllowNull, MaybeNull]
+		public TElement this[[DisallowNull] TIndex index] {
+			get {
+				foreach ((TIndex Index, TElement? Element) in Entries) {
+					if (Equals(Index, index)) {
+						return Element;
+					}
+				}
+				throw new IndexOutOfRangeException();
+			}
+			set {
+				for (Int32 i = 0; i < Count; i++) {
+					if (Equals(Entries[i].Index, index)) {
+						Entries[i].Element = value;
+						return;
+					}
+				}
+				Add(index, value);
+			}
+		}
 
 		/// <summary>
 		/// Converts the <paramref name="array"/> to a <see cref="BoundedArray{TIndex, TElement}"/>.
 		/// </summary>
 		/// <param name="array">The <see cref="Array"/> to convert.</param>
 		[return: MaybeNull, NotNullIfNotNull("array")]
-		public static implicit operator BoundedArray<TIndex, TElement>([AllowNull] (TIndex, TElement)[] array) => array is not null ? new(array) : null;
+		public static implicit operator BoundedArray<TIndex, TElement?>([AllowNull] (TIndex, TElement?)[] array) => array is not null ? new(array) : null;
 
 		/// <inheritdoc/>
+		public void Clear() => Count = 0;
+
+		/// <inheritdoc/>
+		public ArrayEnumerator<(TIndex Index, TElement? Element)> GetEnumerator() => new ArrayEnumerator<(TIndex Index, TElement Element)>(Entries, Count);
+
+		/// <inheritdoc/>
+		[return: NotNull]
+		System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() => GetEnumerator();
+
+		/// <inheritdoc/>
+		[return: NotNull]
+		System.Collections.Generic.IEnumerator<(TIndex Index, TElement Element)> System.Collections.Generic.IEnumerable<(TIndex Index, TElement Element)>.GetEnumerator() => GetEnumerator();
+
+		/// <inheritdoc/>
+		[SuppressMessage("Major Bug", "S3249:Classes directly extending \"object\" should not call \"base\" in \"GetHashCode\" or \"Equals\"", Justification = "I'm literally enforcing correct behavior by ensuring downstream doesn't violate what this analyzer is trying to enforce...")]
+		public override Int32 GetHashCode() => base.GetHashCode();
+
+		/// <inheritdoc/>
+		public void Insert([DisallowNull] TIndex index, [AllowNull] TElement element) {
+			foreach ((TIndex Index, TElement Element) in Entries) {
+				if (Equals(Index, index)) {
+					return;
+				}
+			}
+			Add(index, element);
+		}
+
+		/// <inheritdoc/>
+		[return: NotNull]
+		public override String ToString() => Collection.ToString(Entries);
+
+		/// <inheritdoc/>
+		[return: NotNull]
+		public String ToString(Int32 amount) => Collection.ToString(Entries, amount);
+
+		/// <summary>
+		/// Adds an element to this object.
+		/// </summary>
+		/// <param name="index">The index of the element to add.</param>
+		/// <param name="element">The element to add.</param>
 		/// <exception cref="InvalidOperationException">Thrown if the array is at maximum capacity.</exception>
-		protected override void Add([DisallowNull] TIndex index, [AllowNull] TElement element) {
+		private void Add([DisallowNull] TIndex index, [AllowNull] TElement element) {
 			if (Count < Capacity) {
-				base.Add(index, element);
+				Entries[Count++] = (index, element);
 			} else {
 				throw new InvalidOperationException();
 			}

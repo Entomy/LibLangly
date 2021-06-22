@@ -27,10 +27,10 @@ namespace Collectathon.Arrays {
 		IShift,
 		ISlice<Memory<TElement?>> {
 		/// <summary>
-		/// The backing array of this <see cref="FlexibleArray{TElement, TSelf}"/>.
+		/// The backing array of this <see cref="DynamicArray{TElement}"/>.
 		/// </summary>
 		[DisallowNull, NotNull]
-		protected TElement?[] Elements;
+		private TElement?[] Elements;
 
 		/// <summary>
 		/// The amount of elements contained in this collection.
@@ -52,7 +52,7 @@ namespace Collectathon.Arrays {
 		/// Initializes a new <see cref="DynamicArray{TElement}"/>.
 		/// </summary>
 		/// <param name="elements">The <see cref="Array"/> of <typeparamref name="TElement"/> to reuse.</param>
-		public DynamicArray([DisallowNull] TElement[] elements) {
+		public DynamicArray([DisallowNull] params TElement[] elements) {
 			Elements = elements;
 			count = elements.Length;
 		}
