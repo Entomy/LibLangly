@@ -79,8 +79,7 @@
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
-    <div class="level1"><a class="xref" href="Collectathon.Arrays.FlexibleArray-3.html">FlexibleArray</a>&lt;TIndex, TElement, <a class="xref" href="Collectathon.Arrays.BoundedArray-2.html">BoundedArray</a>&lt;TIndex, TElement&gt;&gt;</div>
-    <div class="level2"><span class="xref">BoundedArray&lt;TIndex, TElement&gt;</span></div>
+    <div class="level1"><span class="xref">BoundedArray&lt;TIndex, TElement&gt;</span></div>
   </div>
   <div classs="implements">
     <h5>Implements</h5>
@@ -89,47 +88,11 @@
     <div><span class="xref">IInsert</span>&lt;TIndex, TElement&gt;</div>
     <div><span class="xref">ISequence</span>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">ValueTuple</a>&lt;TIndex, TElement&gt;, <a class="xref" href="Collectathon.Enumerators.ArrayEnumerator-1.html">ArrayEnumerator</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">ValueTuple</a>&lt;TIndex, TElement&gt;&gt;&gt;</div>
   </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
-    <div>
-      <a class="xref" href="Collectathon.Arrays.FlexibleArray-3.html#Collectathon_Arrays_FlexibleArray_3_Entries">FlexibleArray&lt;TIndex, TElement, BoundedArray&lt;TIndex, TElement&gt;&gt;.Entries</a>
-    </div>
-    <div>
-      <a class="xref" href="Collectathon.Arrays.FlexibleArray-3.html#Collectathon_Arrays_FlexibleArray_3_Capacity">FlexibleArray&lt;TIndex, TElement, BoundedArray&lt;TIndex, TElement&gt;&gt;.Capacity</a>
-    </div>
-    <div>
-      <a class="xref" href="Collectathon.Arrays.FlexibleArray-3.html#Collectathon_Arrays_FlexibleArray_3_Count">FlexibleArray&lt;TIndex, TElement, BoundedArray&lt;TIndex, TElement&gt;&gt;.Count</a>
-    </div>
-    <div>
-      <a class="xref" href="Collectathon.Arrays.FlexibleArray-3.html#Collectathon_Arrays_FlexibleArray_3_Item__0_">FlexibleArray&lt;TIndex, TElement, BoundedArray&lt;TIndex, TElement&gt;&gt;.Item[TIndex]</a>
-    </div>
-    <div>
-      <a class="xref" href="Collectathon.Arrays.FlexibleArray-3.html#Collectathon_Arrays_FlexibleArray_3_Clear">FlexibleArray&lt;TIndex, TElement, BoundedArray&lt;TIndex, TElement&gt;&gt;.Clear()</a>
-    </div>
-    <div>
-      <a class="xref" href="Collectathon.Arrays.FlexibleArray-3.html#Collectathon_Arrays_FlexibleArray_3_GetEnumerator">FlexibleArray&lt;TIndex, TElement, BoundedArray&lt;TIndex, TElement&gt;&gt;.GetEnumerator()</a>
-    </div>
-    <div>
-      <a class="xref" href="Collectathon.Arrays.FlexibleArray-3.html#Collectathon_Arrays_FlexibleArray_3_GetHashCode">FlexibleArray&lt;TIndex, TElement, BoundedArray&lt;TIndex, TElement&gt;&gt;.GetHashCode()</a>
-    </div>
-    <div>
-      <a class="xref" href="Collectathon.Arrays.FlexibleArray-3.html#Collectathon_Arrays_FlexibleArray_3_Insert__0__1_">FlexibleArray&lt;TIndex, TElement, BoundedArray&lt;TIndex, TElement&gt;&gt;.Insert(TIndex, TElement)</a>
-    </div>
-    <div>
-      <a class="xref" href="Collectathon.Arrays.FlexibleArray-3.html#Collectathon_Arrays_FlexibleArray_3_ToString">FlexibleArray&lt;TIndex, TElement, BoundedArray&lt;TIndex, TElement&gt;&gt;.ToString()</a>
-    </div>
-    <div>
-      <a class="xref" href="Collectathon.Arrays.FlexibleArray-3.html#Collectathon_Arrays_FlexibleArray_3_ToString_Int32_">FlexibleArray&lt;TIndex, TElement, BoundedArray&lt;TIndex, TElement&gt;&gt;.ToString(Int32)</a>
-    </div>
-    <div>
-      <a class="xref" href="Collectathon.Arrays.FlexibleArray-3.html#Collectathon_Arrays_FlexibleArray_3_Add__0__1_">FlexibleArray&lt;TIndex, TElement, BoundedArray&lt;TIndex, TElement&gt;&gt;.Add(TIndex, TElement)</a>
-    </div>
-  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Collectathon.Arrays.html">Collectathon.Arrays</a></h6>
   <h6><strong>Assembly</strong>: Collectathon.Arrays.dll</h6>
   <h5 id="Collectathon_Arrays_BoundedArray_2_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class BoundedArray&lt;TIndex, TElement&gt; : FlexibleArray&lt;TIndex, TElement, BoundedArray&lt;TIndex, TElement&gt;&gt;, IClear, IIndex&lt;TIndex, TElement&gt;, IInsert&lt;TIndex, TElement&gt;, ISequence&lt;(TIndex Index, TElement Element), ArrayEnumerator&lt;(TIndex Index, TElement Element)&gt;&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class BoundedArray&lt;TIndex, TElement&gt; : ICapacity, IClear, IIndex&lt;TIndex, TElement&gt;, IInsert&lt;TIndex, TElement&gt;, ISequence&lt;(TIndex Index, TElement Element), ArrayEnumerator&lt;(TIndex Index, TElement Element)&gt;&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -159,7 +122,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_2__ctor.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%602.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`2.cs/#L14">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`2.cs/#L28">View Source</a>
   </span>
   <a id="Collectathon_Arrays_BoundedArray_2__ctor_" data-uid="Collectathon.Arrays.BoundedArray`2.#ctor*"></a>
   <h4 id="Collectathon_Arrays_BoundedArray_2__ctor" data-uid="Collectathon.Arrays.BoundedArray`2.#ctor">BoundedArray()</h4>
@@ -175,7 +138,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_2__ctor_Int32_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%602.%23ctor(Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`2.cs/#L20">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`2.cs/#L34">View Source</a>
   </span>
   <a id="Collectathon_Arrays_BoundedArray_2__ctor_" data-uid="Collectathon.Arrays.BoundedArray`2.#ctor*"></a>
   <h4 id="Collectathon_Arrays_BoundedArray_2__ctor_Int32_" data-uid="Collectathon.Arrays.BoundedArray`2.#ctor(Int32)">BoundedArray(Int32)</h4>
@@ -199,7 +162,8 @@
       <tr>
         <td><span class="xref">Int32</span></td>
         <td><span class="parametername">capacity</span></td>
-        <td></td>
+        <td><p>The maximum capacity.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -208,7 +172,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_2__ctor_System_ValueTuple__0__1____.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%602.%23ctor(System.ValueTuple%7B%600%2C%601%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`2.cs/#L26">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`2.cs/#L40">View Source</a>
   </span>
   <a id="Collectathon_Arrays_BoundedArray_2__ctor_" data-uid="Collectathon.Arrays.BoundedArray`2.#ctor*"></a>
   <h4 id="Collectathon_Arrays_BoundedArray_2__ctor_System_ValueTuple__0__1____" data-uid="Collectathon.Arrays.BoundedArray`2.#ctor(System.ValueTuple{`0,`1}[])">BoundedArray((TIndex, TElement)[])</h4>
@@ -217,7 +181,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public BoundedArray((TIndex, TElement)[] memory)</code></pre>
+    <pre><code class="lang-csharp hljs">public BoundedArray(params (TIndex, TElement)[] entries)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -231,29 +195,88 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">ValueTuple</a>&lt;TIndex, TElement&gt;[]</td>
-        <td><span class="parametername">memory</span></td>
+        <td><span class="parametername">entries</span></td>
         <td><p>The <see cref="!:Array"></see> of (<code data-dev-comment-type="typeparamref" class="typeparamref">TIndex</code>, <code data-dev-comment-type="typeparamref" class="typeparamref">TElement</code>) to reuse.</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <h3 id="methods">Methods
+  <h3 id="properties">Properties
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_2_Add__0__1_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%602.Add(%600%2C%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_2_Capacity.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%602.Capacity%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`2.cs/#L37">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`2.cs/#L46">View Source</a>
   </span>
-  <a id="Collectathon_Arrays_BoundedArray_2_Add_" data-uid="Collectathon.Arrays.BoundedArray`2.Add*"></a>
-  <h4 id="Collectathon_Arrays_BoundedArray_2_Add__0__1_" data-uid="Collectathon.Arrays.BoundedArray`2.Add(`0,`1)">Add(TIndex, TElement)</h4>
-  <div class="markdown level1 summary"><p>Adds an element to this object.</p>
-</div>
+  <a id="Collectathon_Arrays_BoundedArray_2_Capacity_" data-uid="Collectathon.Arrays.BoundedArray`2.Capacity*"></a>
+  <h4 id="Collectathon_Arrays_BoundedArray_2_Capacity" data-uid="Collectathon.Arrays.BoundedArray`2.Capacity">Capacity</h4>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override void Add(TIndex index, TElement element)</code></pre>
+    <pre><code class="lang-csharp hljs">public Int32 Capacity { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_2_Count.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%602.Count%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`2.cs/#L49">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_BoundedArray_2_Count_" data-uid="Collectathon.Arrays.BoundedArray`2.Count*"></a>
+  <h4 id="Collectathon_Arrays_BoundedArray_2_Count" data-uid="Collectathon.Arrays.BoundedArray`2.Count">Count</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Int32 Count { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_2_Item__0_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%602.Item(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`2.cs/#L52">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_BoundedArray_2_Item_" data-uid="Collectathon.Arrays.BoundedArray`2.Item*"></a>
+  <h4 id="Collectathon_Arrays_BoundedArray_2_Item__0_" data-uid="Collectathon.Arrays.BoundedArray`2.Item(`0)">Item[TIndex]</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TElement this[TIndex index] { get; set; }</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -268,19 +291,216 @@
       <tr>
         <td><span class="xref">TIndex</span></td>
         <td><span class="parametername">index</span></td>
-        <td><p>The index of the element to add.</p>
-</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_2_Clear.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%602.Clear%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`2.cs/#L81">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_BoundedArray_2_Clear_" data-uid="Collectathon.Arrays.BoundedArray`2.Clear*"></a>
+  <h4 id="Collectathon_Arrays_BoundedArray_2_Clear" data-uid="Collectathon.Arrays.BoundedArray`2.Clear">Clear()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Clear()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_2_GetEnumerator.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%602.GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`2.cs/#L84">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_BoundedArray_2_GetEnumerator_" data-uid="Collectathon.Arrays.BoundedArray`2.GetEnumerator*"></a>
+  <h4 id="Collectathon_Arrays_BoundedArray_2_GetEnumerator" data-uid="Collectathon.Arrays.BoundedArray`2.GetEnumerator">GetEnumerator()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ArrayEnumerator&lt;(TIndex Index, TElement Element)&gt; GetEnumerator()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Collectathon.Enumerators.ArrayEnumerator-1.html">ArrayEnumerator</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">ValueTuple</a>&lt;TIndex, TElement&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_2_GetHashCode.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%602.GetHashCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`2.cs/#L95">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_BoundedArray_2_GetHashCode_" data-uid="Collectathon.Arrays.BoundedArray`2.GetHashCode*"></a>
+  <h4 id="Collectathon_Arrays_BoundedArray_2_GetHashCode" data-uid="Collectathon.Arrays.BoundedArray`2.GetHashCode">GetHashCode()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Int32 GetHashCode()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_2_Insert__0__1_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%602.Insert(%600%2C%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`2.cs/#L99">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_BoundedArray_2_Insert_" data-uid="Collectathon.Arrays.BoundedArray`2.Insert*"></a>
+  <h4 id="Collectathon_Arrays_BoundedArray_2_Insert__0__1_" data-uid="Collectathon.Arrays.BoundedArray`2.Insert(`0,`1)">Insert(TIndex, TElement)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Insert(TIndex index, TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TIndex</span></td>
+        <td><span class="parametername">index</span></td>
+        <td></td>
       </tr>
       <tr>
         <td><span class="xref">TElement</span></td>
         <td><span class="parametername">element</span></td>
-        <td><p>The element to add.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">Collectathon.Arrays.FlexibleArray&lt;TIndex, TElement, Collectathon.Arrays.BoundedArray&lt;TIndex, TElement&gt;&gt;.Add(TIndex, TElement)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_2_ToString.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%602.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`2.cs/#L109">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_BoundedArray_2_ToString_" data-uid="Collectathon.Arrays.BoundedArray`2.ToString*"></a>
+  <h4 id="Collectathon_Arrays_BoundedArray_2_ToString" data-uid="Collectathon.Arrays.BoundedArray`2.ToString">ToString()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override String ToString()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_2_ToString_Int32_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%602.ToString(Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`2.cs/#L113">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_BoundedArray_2_ToString_" data-uid="Collectathon.Arrays.BoundedArray`2.ToString*"></a>
+  <h4 id="Collectathon_Arrays_BoundedArray_2_ToString_Int32_" data-uid="Collectathon.Arrays.BoundedArray`2.ToString(Int32)">ToString(Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public String ToString(Int32 amount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Int32</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="operators">Operators
   </h3>
   <span class="small pull-right mobile-hide">
@@ -288,7 +508,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_2_op_Implicit_System_ValueTuple__0__1_____Collectathon_Arrays_BoundedArray__0__1_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%602.op_Implicit(System.ValueTuple%7B%600%2C%601%7D%5B%5D)~Collectathon.Arrays.BoundedArray%7B%600%2C%601%7D%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`2.cs/#L32">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`2.cs/#L77">View Source</a>
   </span>
   <a id="Collectathon_Arrays_BoundedArray_2_op_Implicit_" data-uid="Collectathon.Arrays.BoundedArray`2.op_Implicit*"></a>
   <h4 id="Collectathon_Arrays_BoundedArray_2_op_Implicit_System_ValueTuple__0__1_____Collectathon_Arrays_BoundedArray__0__1_" data-uid="Collectathon.Arrays.BoundedArray`2.op_Implicit(System.ValueTuple{`0,`1}[])~Collectathon.Arrays.BoundedArray{`0,`1}">Implicit((TIndex, TElement)[] to BoundedArray&lt;TIndex, TElement&gt;)</h4>
@@ -356,7 +576,7 @@
                     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_BoundedArray_2.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.BoundedArray%602%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`2.cs/#L10" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/BoundedArray`2.cs/#L13" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
