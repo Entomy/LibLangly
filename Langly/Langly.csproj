@@ -2,9 +2,13 @@
 
 	<PropertyGroup>
 		<TargetFramework>net5.0</TargetFramework>
-		<Description>Meta-package for the entire LibLangly runtime.</Description>
-		<PackageTags>langly</PackageTags>
+		<LangVersion>9.0</LangVersion>
+		<Nullable>enable</Nullable>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<Description>The Langly language definition, dynamic syntax, and unified parse tree framework.</Description>
+		<PackageTags>parse, parser, syntax, syntax tree, abstract syntax tree, parse tree</PackageTags>
 		<AssemblyName>Langly</AssemblyName>
+		<RootNamespace>Langly</RootNamespace>
 		<PackageIcon>Logo.png</PackageIcon>
 	</PropertyGroup>
 
@@ -14,7 +18,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\Langly.ParseTree\Langly.ParseTree.csproj" />
+		<ProjectReference Include="..\Collectathon.Traits\Collectathon.Traits.csproj" />
+		<ProjectReference Include="..\Stringier.Patterns\Stringier.Patterns.csproj" />
 	</ItemGroup>
 
 </Project>

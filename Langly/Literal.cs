@@ -8,7 +8,10 @@ namespace Langly {
 		/// <summary>
 		/// Initializes a new <see cref="Literal"/>.
 		/// </summary>
-		/// <param name="location">The location in the source this lexeme was found.</param>
+		/// <param name="location">The location in the source this literal was found.</param>
 		protected Literal(Int32 location) : base(location) { }
+
+		/// <inheritdoc/>
+		public sealed override Boolean Static => true;
 	}
 }

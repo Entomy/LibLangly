@@ -5,11 +5,11 @@
 		<LangVersion>9.0</LangVersion>
 		<Nullable>enable</Nullable>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-		<Description>Provides support for pattern matching based parsing.</Description>
-    <PackageTags>parse, parser, syntax, syntax tree, abstract syntax tree, parse tree</PackageTags>
-		<AssemblyName>Langly.ParseTree</AssemblyName>
+		<Description>Provides support parsing pattern expressions.</Description>
+		<PackageTags>parse, parser, syntax, syntax tree, abstract syntax tree, parse tree, pattern, patterns</PackageTags>
+		<AssemblyName>Langly.Patterns</AssemblyName>
+		<RootNamespace>Langly.Patterns</RootNamespace>
 		<PackageIcon>Logo.png</PackageIcon>
-		<RootNamespace>Langly</RootNamespace>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -18,8 +18,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\Collectathon.Trees\Collectathon.Trees.csproj" />
-	  <ProjectReference Include="..\Stringier.Patterns\Stringier.Patterns.csproj" />
+	  <ProjectReference Include="..\Langly\Langly.csproj" />
 	</ItemGroup>
 
 </Project>

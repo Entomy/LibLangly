@@ -5,7 +5,7 @@ namespace Langly {
 	/// <summary>
 	/// Represents any possible lexical element.
 	/// </summary>
-	public abstract class Lexeme {
+	public abstract partial class Lexeme {
 		/// <summary>
 		/// The location in the source this lexeme was found.
 		/// </summary>
@@ -16,6 +16,11 @@ namespace Langly {
 		/// </summary>
 		/// <param name="location">The location in the source this lexeme was found.</param>
 		protected Lexeme(Int32 location) => Location = location;
+
+		/// <summary>
+		/// Can this lexeme be statically evaluated?
+		/// </summary>
+		public abstract Boolean Static { get; }
 
 		/// <inheritdoc/>
 		[return: NotNull]

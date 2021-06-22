@@ -1,13 +1,40 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
+using System.Traits;
 using Collectathon.Nodes;
+using Collectathon.Enumerators;
 
 namespace Collectathon.Lists {
 	/// <summary>
 	/// Represents a singly-linked list.
 	/// </summary>
 	/// <typeparam name="TElement">The type of the elements in the list.</typeparam>
-	public sealed class SinglyLinkedList<TElement> : StandardList<TElement, SinglyLinkedListNode<TElement>, SinglyLinkedList<TElement>> {
+	[DebuggerDisplay("{ToString(5), nq}")]
+	public sealed class SinglyLinkedList<TElement> :
+		IAdd<TElement>,
+		IClear,
+		IContains<TElement>,
+		IEquatable<SinglyLinkedList<TElement>>,
+		IIndex<Int32, TElement>,
+		IInsert<Int32, TElement>,
+		IPostpend<TElement>,
+		IPrepend<TElement>,
+		IRemove<TElement>,
+		IReplace<TElement>,
+		ISequence<TElement, StandardListEnumerator<TElement, SinglyLinkedListNode<TElement>>> {
+		/// <summary>
+		/// The head node of the list; the first element.
+		/// </summary>
+		[AllowNull, MaybeNull]
+		private SinglyLinkedListNode<TElement> Head;
+
+		/// <summary>
+		/// The tail node of the list; the last element.
+		/// </summary>
+		[AllowNull, MaybeNull]
+		private SinglyLinkedListNode<TElement> Tail;
+
 		/// <summary>
 		/// Initializes a new <see cref="SinglyLinkedList{TElement}"/>.
 		/// </summary>
@@ -17,7 +44,39 @@ namespace Collectathon.Lists {
 		/// Initializes a new <see cref="SinglyLinkedList{TElement}"/> with the given <paramref name="elements"/>.
 		/// </summary>
 		/// <param name="elements">The initial elements of the list.</param>
-		public SinglyLinkedList([DisallowNull] params TElement[] elements) : base(elements) { }
+		public SinglyLinkedList([DisallowNull] params TElement?[] elements) {
+			foreach (TElement? element in elements) {
+				Add(element);
+			}
+		}
+
+		/// <inheritdoc/>
+		public Int32 Count { get; private set; }
+
+		/// <inheritdoc/>
+		[AllowNull, MaybeNull]
+		public TElement this[Int32 index] {
+			get {
+				SinglyLinkedListNode<TElement>? N = Head;
+				for (Int32 i = 0; N is not null; i++) {
+					if (i == index) {
+						return N.Element;
+					}
+					N = N.Next;
+				}
+				throw new IndexOutOfRangeException();
+			}
+			set {
+				SinglyLinkedListNode<TElement>? N = Head;
+				for (Int32 i = 0; N is not null; i++) {
+					if (i == index) {
+						N.Element = value;
+					}
+					N = N.Next;
+				}
+				throw new IndexOutOfRangeException();
+			}
+		}
 
 		/// <summary>
 		/// Converts the <paramref name="elements"/> to a <see cref="SinglyLinkedList{TElement}"/>.
@@ -25,11 +84,59 @@ namespace Collectathon.Lists {
 		/// <param name="elements">The elements to convert to a list.</param>
 		[return: MaybeNull, NotNullIfNotNull("elements")]
 
-		public static implicit operator SinglyLinkedList<TElement>([AllowNull] TElement[] elements) => elements is not null ? new(elements) : null;
+		public static implicit operator SinglyLinkedList<TElement?>([AllowNull] TElement?[] elements) => elements is not null ? new(elements) : null;
 
 		/// <inheritdoc/>
 		[MemberNotNull(nameof(Head), nameof(Tail))]
-		public override void Insert(Int32 index, [AllowNull] TElement element) {
+		public void Add([AllowNull] TElement element) => Postpend(element);
+
+		/// <inheritdoc/>
+		public void Clear() {
+			Collection.Clear(Head);
+			Head = null;
+			Tail = null;
+			Count = 0;
+		}
+
+		/// <inheritdoc/>
+		public Boolean Contains([AllowNull] TElement element) => Collection.Contains(Head, element);
+
+		/// <inheritdoc/>
+		public override Boolean Equals([AllowNull] Object obj) {
+			switch (obj) {
+			case SinglyLinkedList<TElement?> other:
+				return Equals(other);
+			case System.Collections.Generic.IEnumerable<TElement> other:
+				return Equals(other);
+			default:
+				return false;
+			}
+		}
+
+		/// <inheritdoc/>
+		public Boolean Equals([AllowNull] SinglyLinkedList<TElement?> other) => Collection.Equals(this, other);
+
+		/// <inheritdoc/>
+		public Boolean Equals([AllowNull] System.Collections.Generic.IEnumerable<TElement> other) => Collection.Equals(this, other);
+
+		/// <inheritdoc/>
+		public StandardListEnumerator<TElement, SinglyLinkedListNode<TElement>> GetEnumerator() => new StandardListEnumerator<TElement, SinglyLinkedListNode<TElement>>(Head, Count);
+
+		/// <inheritdoc/>
+		[return: NotNull]
+		System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() => GetEnumerator();
+
+		/// <inheritdoc/>
+		[return: NotNull]
+		System.Collections.Generic.IEnumerator<TElement> System.Collections.Generic.IEnumerable<TElement>.GetEnumerator() => GetEnumerator();
+
+		/// <inheritdoc/>
+		[SuppressMessage("Major Bug", "S3249:Classes directly extending \"object\" should not call \"base\" in \"GetHashCode\" or \"Equals\"", Justification = "I'm literally enforcing correct behavior by ensuring downstream doesn't violate what this analyzer is trying to enforce...")]
+		public override Int32 GetHashCode() => base.GetHashCode();
+
+		/// <inheritdoc/>
+		[MemberNotNull(nameof(Head), nameof(Tail))]
+		public void Insert(Int32 index, [AllowNull] TElement element) {
 			if (index == 0) {
 				Prepend(element);
 			} else if (index == Count) {
@@ -54,16 +161,48 @@ namespace Collectathon.Lists {
 		}
 
 		/// <inheritdoc/>
-		public override void Remove([AllowNull] TElement element) => throw new NotImplementedException();
+		[MemberNotNull(nameof(Head), nameof(Tail))]
+		public void Postpend([AllowNull] TElement element) {
+			if (Count > 0) {
+				Tail!.Next = Tail!.Postpend(element);
+				Tail = Tail.Next;
+			} else {
+				Head = new SinglyLinkedListNode<TElement>(element, next: null);
+				Tail = Head;
+			}
+			Count++;
+		}
 
 		/// <inheritdoc/>
-		public override void RemoveFirst([AllowNull] TElement element) => throw new NotImplementedException();
+		[MemberNotNull(nameof(Head), nameof(Tail))]
+		public void Prepend([AllowNull] TElement element) {
+			if (Count > 0) {
+				Head = Head!.Prepend(element);
+			} else {
+				Head = new SinglyLinkedListNode<TElement>(element, next: null);
+				Tail = Head;
+			}
+			Count++;
+		}
 
 		/// <inheritdoc/>
-		public override void RemoveLast([AllowNull] TElement element) => throw new NotImplementedException();
+		public void Remove([AllowNull] TElement element) => throw new NotImplementedException();
+
+		/// <inheritdoc/>
+		public void RemoveFirst([AllowNull] TElement element) => throw new NotImplementedException();
+
+		/// <inheritdoc/>
+		public void RemoveLast([AllowNull] TElement element) => throw new NotImplementedException();
+
+		/// <inheritdoc/>
+		public void Replace([AllowNull] TElement search, [AllowNull] TElement replace) => Collection.Replace(Head, search, replace);
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		protected override SinglyLinkedListNode<TElement> NewUnlinkedNode([AllowNull] TElement element) => new SinglyLinkedListNode<TElement>(element, next: null);
+		public override String ToString() => Collection.ToString(Head, Count);
+
+		/// <inheritdoc/>
+		[return: NotNull]
+		public String ToString(Int32 amount) => Collection.ToString(Head, Count, amount);
 	}
 }

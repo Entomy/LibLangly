@@ -8,7 +8,7 @@ namespace Langly {
 		/// <summary>
 		/// Initializes a new <see cref="Keyword"/>.
 		/// </summary>
-		/// <param name="location">The location in the source this lexeme was found.</param>
+		/// <param name="location">The location in the source this keyword was found.</param>
 		protected Keyword(Int32 location) : base(location) { }
 	}
 }
