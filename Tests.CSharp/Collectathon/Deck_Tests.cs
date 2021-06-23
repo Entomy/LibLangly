@@ -2,7 +2,7 @@
 using Collectathon.Pools;
 using Xunit;
 
-namespace Langly {
+namespace Collectathon {
 	public class Deck_Tests {
 		[Fact]
 		public void Constructor() {

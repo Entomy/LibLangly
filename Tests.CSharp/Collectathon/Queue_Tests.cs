@@ -2,7 +2,7 @@
 using Collectathon.Queues;
 using Xunit;
 
-namespace Langly {
+namespace Collectathon {
 	public class Queue_Tests {
 		[Fact]
 		public void Invoke_Action() {

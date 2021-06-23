@@ -2,7 +2,7 @@
 using Streamy;
 using Xunit;
 
-namespace Langly {
+namespace Streamy {
 	public class Stream_Tests {
 		[Theory]
 		[InlineData(new Byte[] { 1, 0, 1, 0 }, new Boolean[] { true, false, true, false }, Endian.Big)]

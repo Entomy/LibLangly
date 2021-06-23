@@ -5,7 +5,7 @@ using Stringier.Patterns;
 using static Stringier.Patterns.Pattern;
 using Xunit;
 
-namespace Langly {
+namespace Stringier {
 	public class Pattern_Tests {
 		[Theory]
 		[InlineData("hello", "hello", "goodbye", "hello")]

@@ -2,7 +2,7 @@
 using Stringier;
 using Xunit;
 
-namespace Langly {
+namespace Stringier {
 	public class EditDistanceTests {
 		[Theory]
 		[InlineData("ram", "ram", 0)]

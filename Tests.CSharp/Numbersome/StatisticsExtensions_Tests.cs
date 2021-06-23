@@ -3,7 +3,7 @@ using Collectathon.Arrays;
 using Numbersome;
 using Xunit;
 
-namespace Langly {
+namespace Numbersome {
 	public class StatisticsExtensions_Tests {
 		[Theory]
 		[InlineData(Double.NaN, null)]

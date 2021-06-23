@@ -3,7 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 using Collectathon.Lists;
 using Xunit;
 
-namespace Langly {
+namespace Collectathon {
 	public class SinglyLinkedList_Tests {
 		[Theory]
 		[InlineData(new Int32[] { 0, 0 }, new Int32[] { }, new Int32[] { 0, 0 })]

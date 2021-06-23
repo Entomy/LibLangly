@@ -2,7 +2,7 @@
 using Stringier;
 using Xunit;
 
-namespace Langly {
+namespace Stringier {
 	public class Search_Tests {
 		[Theory]
 		[InlineData("helloworld", "low", 3)]

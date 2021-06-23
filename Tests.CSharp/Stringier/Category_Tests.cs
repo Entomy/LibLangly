@@ -3,7 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 using Stringier;
 using Xunit;
 
-namespace Langly {
+namespace Stringier {
 	[SuppressMessage("Maintainability", "AV1564:Parameter in public or internal member is of type bool or bool?", Justification = "This is testing, and not public API.")]
 	public class Category_Tests {
 		[Theory]

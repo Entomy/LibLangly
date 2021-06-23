@@ -3,7 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 using Stringier;
 using Xunit;
 
-namespace Langly {
+namespace Stringier {
 	public class Rope_Tests {
 		[Theory]
 		[InlineData(new Char[] { 'a', 'b' }, new Char[] { }, new Char[] { 'a', 'b' })]

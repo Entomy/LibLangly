@@ -2,7 +2,7 @@
 using Streamy;
 using Xunit;
 
-namespace Langly {
+namespace Streamy {
 	public class CharStream_Tests {
 		[Theory]
 		[InlineData(new Byte[] { 0, 0x61, 0, 0x62, 0, 0x63, 0, 0x64 }, new Char[] { 'a', 'b', 'c', 'd' }, Encoding.UTF16BE)]

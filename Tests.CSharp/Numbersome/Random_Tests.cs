@@ -3,7 +3,7 @@ using System.Text;
 using Numbersome;
 using Xunit;
 
-namespace Langly {
+namespace Numbersome {
 	public class Random_Tests {
 		private readonly Numbersome.Random Random = new();
 
