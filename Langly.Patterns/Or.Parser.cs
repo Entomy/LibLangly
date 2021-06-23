@@ -10,6 +10,7 @@ namespace Langly.Patterns {
 		/// Represents a parser object for a <see cref="Or"/>.
 		/// </summary>
 		private sealed class Parser : Operator.Parser {
+			[DisallowNull, NotNull]
 			private static readonly Pattern Pattern = ("or", Case.Insensitive);
 
 			/// <inheritdoc/>

@@ -9,7 +9,8 @@ namespace Langly {
 		/// Initializes a new <see cref="Operator"/>.
 		/// </summary>
 		/// <param name="location">The location in the source this operator was found.</param>
-		protected Operator(Int32 location) : base(location) { }
+		/// <param name="length">The length of this lexeme in the source.</param>
+		protected Operator(Int32 location, Int32 length) : base(location, length) { }
 
 		/// <inheritdoc/>
 		public sealed override Boolean Static => true;

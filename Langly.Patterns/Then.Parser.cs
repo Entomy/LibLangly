@@ -10,6 +10,7 @@ namespace Langly.Patterns {
 		/// Represents a parser object for a <see cref="Then"/>.
 		/// </summary>
 		private sealed class Parser : Operator.Parser {
+			[DisallowNull, NotNull]
 			private static readonly Pattern Pattern = ("then", Case.Insensitive);
 
 			/// <inheritdoc/>

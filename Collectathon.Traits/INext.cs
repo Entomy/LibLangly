@@ -11,7 +11,7 @@ namespace System.Traits {
 		/// <summary>
 		/// The next node in the collection.
 		/// </summary>
-		[MaybeNull]
+		[AllowNull, MaybeNull]
 		TSelf Next { get; }
 	}
 }

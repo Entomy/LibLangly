@@ -9,6 +9,7 @@ namespace Langly {
 		/// Initializes a new <see cref="Expression"/>.
 		/// </summary>
 		/// <param name="location">The location in the source this expression was found.</param>
-		protected Expression(Int32 location) : base(location) { }
+		/// <param name="length">The length of this lexeme in the source.</param>
+		protected Expression(Int32 location, Int32 length) : base(location, length) { }
 	}
 }
