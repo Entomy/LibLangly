@@ -81,11 +81,18 @@
     <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
     <div class="level1"><a class="xref" href="Langly.Lexeme.html">Lexeme</a></div>
     <div class="level2"><span class="xref">Literal</span></div>
+      <div class="level3"><a class="xref" href="Langly.Patterns.Text.html">Text</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="Langly.Lexeme.html#Langly_Lexeme_ToString">Lexeme.ToString()</a>
+      <a class="xref" href="Langly.Lexeme.html#Langly_Lexeme_Length">Lexeme.Length</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.Lexeme.html#Langly_Lexeme_Location">Lexeme.Location</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.Lexeme.html#Langly_Lexeme_Register_Langly_Lexeme_Parser_">Lexeme.Register(Lexeme.Parser)</a>
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Langly.html">Langly</a></h6>
@@ -98,19 +105,19 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Literal__ctor_Int32_.md&amp;value=---%0Auid%3A%20Langly.Literal.%23ctor(Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Literal__ctor_Int32_Int32_.md&amp;value=---%0Auid%3A%20Langly.Literal.%23ctor(Int32%2CInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Langly/Literal.cs/#L12">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Langly/Literal.cs/#L26">View Source</a>
   </span>
   <a id="Langly_Literal__ctor_" data-uid="Langly.Literal.#ctor*"></a>
-  <h4 id="Langly_Literal__ctor_Int32_" data-uid="Langly.Literal.#ctor(Int32)">Literal(Int32)</h4>
+  <h4 id="Langly_Literal__ctor_Int32_Int32_" data-uid="Langly.Literal.#ctor(Int32,Int32)">Literal(Int32, Int32)</h4>
   <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Langly.Literal.html">Literal</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected Literal(Int32 location)</code></pre>
+    <pre><code class="lang-csharp hljs">protected Literal(Int32 location, Int32 length)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -128,6 +135,12 @@
         <td><p>The location in the source this literal was found.</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">Int32</span></td>
+        <td><span class="parametername">length</span></td>
+        <td><p>The length of this lexeme in the source.</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h3 id="properties">Properties
@@ -137,7 +150,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Literal_Static.md&amp;value=---%0Auid%3A%20Langly.Literal.Static%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Langly/Literal.cs/#L15">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Langly/Literal.cs/#L29">View Source</a>
   </span>
   <a id="Langly_Literal_Static_" data-uid="Langly.Literal.Static*"></a>
   <h4 id="Langly_Literal_Static" data-uid="Langly.Literal.Static">Static</h4>
@@ -165,6 +178,42 @@
   </table>
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="Langly.Lexeme.html#Langly_Lexeme_Static">Lexeme.Static</a></div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Literal_Register_Langly_Literal_Parser_.md&amp;value=---%0Auid%3A%20Langly.Literal.Register(Langly.Literal.Parser)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Langly/Literal.cs/#L35">View Source</a>
+  </span>
+  <a id="Langly_Literal_Register_" data-uid="Langly.Literal.Register*"></a>
+  <h4 id="Langly_Literal_Register_Langly_Literal_Parser_" data-uid="Langly.Literal.Register(Langly.Literal.Parser)">Register(Literal.Parser)</h4>
+  <div class="markdown level1 summary"><p>Registers the <code data-dev-comment-type="paramref" class="paramref">parser</code> as a specialization of a <a class="xref" href="Langly.Literal.html">Literal</a> <a class="xref" href="Langly.Literal.Parser.html">Literal.Parser</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static void Register(Literal.Parser parser)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Langly.Literal.Parser.html">Literal.Parser</a></td>
+        <td><span class="parametername">parser</span></td>
+        <td><p>The <a class="xref" href="Langly.Literal.Parser.html">Literal.Parser</a> to register.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
 </article>
           </div>
           
@@ -176,7 +225,7 @@
                     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Literal.md&amp;value=---%0Auid%3A%20Langly.Literal%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/master/Langly/Literal.cs/#L7" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Langly/Literal.Parser.cs/#L2" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

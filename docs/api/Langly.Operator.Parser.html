@@ -82,29 +82,42 @@
     <div class="level1"><a class="xref" href="Langly.Lexeme.Parser.html">Lexeme.Parser</a></div>
     <div class="level2"><span class="xref">Operator.Parser</span></div>
   </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="System.Traits.INext-1.html">INext</a>&lt;<a class="xref" href="Langly.Lexeme.Parser.html">Lexeme.Parser</a>&gt;</div>
+    <div><a class="xref" href="System.Traits.IPrevious-1.html">IPrevious</a>&lt;<a class="xref" href="Langly.Lexeme.Parser.html">Lexeme.Parser</a>&gt;</div>
+    <div><a class="xref" href="System.Traits.IUnlink.html">IUnlink</a></div>
+  </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="Langly.Lexeme.Parser.html#Langly_Lexeme_Parser_Parse_String_Int32__IAdd_Stringier_Patterns_Capture__">Lexeme.Parser.Parse(String, Int32, IAdd&lt;Capture&gt;)</a>
+      <a class="xref" href="Langly.Lexeme.Parser.html#Langly_Lexeme_Parser_Next">Lexeme.Parser.Next</a>
     </div>
     <div>
-      <a class="xref" href="Langly.Lexeme.Parser.html#Langly_Lexeme_Parser_Parse_Memory_Char__Int32__IAdd_Stringier_Patterns_Capture__">Lexeme.Parser.Parse(Memory&lt;Char&gt;, Int32, IAdd&lt;Capture&gt;)</a>
-    </div>
-    <div>
-      <a class="xref" href="Langly.Lexeme.Parser.html#Langly_Lexeme_Parser_Parse_ReadOnlyMemory_Char__Int32__IAdd_Stringier_Patterns_Capture__">Lexeme.Parser.Parse(ReadOnlyMemory&lt;Char&gt;, Int32, IAdd&lt;Capture&gt;)</a>
-    </div>
-    <div>
-      <a class="xref" href="Langly.Lexeme.Parser.html#Langly_Lexeme_Parser_Parse_Span_Char__Int32__IAdd_Stringier_Patterns_Capture__">Lexeme.Parser.Parse(Span&lt;Char&gt;, Int32, IAdd&lt;Capture&gt;)</a>
+      <a class="xref" href="Langly.Lexeme.Parser.html#Langly_Lexeme_Parser_Previous">Lexeme.Parser.Previous</a>
     </div>
     <div>
       <a class="xref" href="Langly.Lexeme.Parser.html#Langly_Lexeme_Parser_Parse_ReadOnlySpan_Char__Int32__IAdd_Stringier_Patterns_Capture__">Lexeme.Parser.Parse(ReadOnlySpan&lt;Char&gt;, Int32, IAdd&lt;Capture&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.Lexeme.Parser.html#Langly_Lexeme_Parser_Unlink">Lexeme.Parser.Unlink()</a>
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Langly.html">Langly</a></h6>
   <h6><strong>Assembly</strong>: Langly.dll</h6>
   <h5 id="Langly_Operator_Parser_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected abstract class Parser : Lexeme.Parser</code></pre>
+    <pre><code class="lang-csharp hljs">protected abstract class Parser : Lexeme.Parser, INext&lt;Lexeme.Parser&gt;, IPrevious&lt;Lexeme.Parser&gt;, IUnlink</code></pre>
+  </div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="System.Traits.INext-1.html">INext&lt;TSelf&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IPrevious-1.html">IPrevious&lt;TSelf&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.IUnlink.html">IUnlink</a>
   </div>
 </article>
           </div>

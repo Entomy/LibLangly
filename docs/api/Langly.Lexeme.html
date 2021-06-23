@@ -95,19 +95,19 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Lexeme__ctor_Int32_.md&amp;value=---%0Auid%3A%20Langly.Lexeme.%23ctor(Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Lexeme__ctor_Int32_Int32_.md&amp;value=---%0Auid%3A%20Langly.Lexeme.%23ctor(Int32%2CInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Langly/Lexeme.cs/#L18">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Langly/Lexeme.cs/#L26">View Source</a>
   </span>
   <a id="Langly_Lexeme__ctor_" data-uid="Langly.Lexeme.#ctor*"></a>
-  <h4 id="Langly_Lexeme__ctor_Int32_" data-uid="Langly.Lexeme.#ctor(Int32)">Lexeme(Int32)</h4>
+  <h4 id="Langly_Lexeme__ctor_Int32_Int32_" data-uid="Langly.Lexeme.#ctor(Int32,Int32)">Lexeme(Int32, Int32)</h4>
   <div class="markdown level1 summary"><p>Initializes a new <a class="xref" href="Langly.Lexeme.html">Lexeme</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected Lexeme(Int32 location)</code></pre>
+    <pre><code class="lang-csharp hljs">protected Lexeme(Int32 location, Int32 length)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -125,16 +125,84 @@
         <td><p>The location in the source this lexeme was found.</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">Int32</span></td>
+        <td><span class="parametername">length</span></td>
+        <td><p>The length of this lexeme in the source.</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h3 id="properties">Properties
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Lexeme_Length.md&amp;value=---%0Auid%3A%20Langly.Lexeme.Length%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Langly/Lexeme.cs/#L34">View Source</a>
+  </span>
+  <a id="Langly_Lexeme_Length_" data-uid="Langly.Lexeme.Length*"></a>
+  <h4 id="Langly_Lexeme_Length" data-uid="Langly.Lexeme.Length">Length</h4>
+  <div class="markdown level1 summary"><p>The length of this lexeme in the source.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Int32 Length { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Lexeme_Location.md&amp;value=---%0Auid%3A%20Langly.Lexeme.Location%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Langly/Lexeme.cs/#L39">View Source</a>
+  </span>
+  <a id="Langly_Lexeme_Location_" data-uid="Langly.Lexeme.Location*"></a>
+  <h4 id="Langly_Lexeme_Location" data-uid="Langly.Lexeme.Location">Location</h4>
+  <div class="markdown level1 summary"><p>The location in the source this lexeme was found.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Int32 Location { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Lexeme_Static.md&amp;value=---%0Auid%3A%20Langly.Lexeme.Static%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Langly/Lexeme.cs/#L23">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Langly/Lexeme.cs/#L44">View Source</a>
   </span>
   <a id="Langly_Lexeme_Static_" data-uid="Langly.Lexeme.Static*"></a>
   <h4 id="Langly_Lexeme_Static" data-uid="Langly.Lexeme.Static">Static</h4>
@@ -164,31 +232,35 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Lexeme_ToString.md&amp;value=---%0Auid%3A%20Langly.Lexeme.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_Lexeme_Register_Langly_Lexeme_Parser_.md&amp;value=---%0Auid%3A%20Langly.Lexeme.Register(Langly.Lexeme.Parser)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Langly/Lexeme.cs/#L26">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Langly/Lexeme.cs/#L50">View Source</a>
   </span>
-  <a id="Langly_Lexeme_ToString_" data-uid="Langly.Lexeme.ToString*"></a>
-  <h4 id="Langly_Lexeme_ToString" data-uid="Langly.Lexeme.ToString">ToString()</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="Langly_Lexeme_Register_" data-uid="Langly.Lexeme.Register*"></a>
+  <h4 id="Langly_Lexeme_Register_Langly_Lexeme_Parser_" data-uid="Langly.Lexeme.Register(Langly.Lexeme.Parser)">Register(Lexeme.Parser)</h4>
+  <div class="markdown level1 summary"><p>Registers the <code data-dev-comment-type="paramref" class="paramref">parser</code> as a specialization of a <a class="xref" href="Langly.Lexeme.html">Lexeme</a> <a class="xref" href="Langly.Lexeme.Parser.html">Lexeme.Parser</a>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract override String ToString()</code></pre>
+    <pre><code class="lang-csharp hljs">protected static void Register(Lexeme.Parser parser)</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
+  <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
         <th>Type</th>
+        <th>Name</th>
         <th>Description</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">String</span></td>
-        <td></td>
+        <td><a class="xref" href="Langly.Lexeme.Parser.html">Lexeme.Parser</a></td>
+        <td><span class="parametername">parser</span></td>
+        <td><p>The <a class="xref" href="Langly.Lexeme.Parser.html">Lexeme.Parser</a> to register.</p>
+</td>
       </tr>
     </tbody>
   </table>

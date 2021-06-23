@@ -5900,12 +5900,12 @@ references:
   commentId: T:Langly.Expression
   fullName: Langly.Expression
   nameWithType: Expression
-- uid: Langly.Expression.#ctor(Int32)
-  name: Expression(Int32)
-  href: api/Langly.Expression.html#Langly_Expression__ctor_Int32_
-  commentId: M:Langly.Expression.#ctor(Int32)
-  fullName: Langly.Expression.Expression(Int32)
-  nameWithType: Expression.Expression(Int32)
+- uid: Langly.Expression.#ctor(Int32,Int32)
+  name: Expression(Int32, Int32)
+  href: api/Langly.Expression.html#Langly_Expression__ctor_Int32_Int32_
+  commentId: M:Langly.Expression.#ctor(Int32,Int32)
+  fullName: Langly.Expression.Expression(Int32, Int32)
+  nameWithType: Expression.Expression(Int32, Int32)
 - uid: Langly.Expression.#ctor*
   name: Expression
   href: api/Langly.Expression.html#Langly_Expression__ctor_
@@ -5919,12 +5919,12 @@ references:
   commentId: T:Langly.Keyword
   fullName: Langly.Keyword
   nameWithType: Keyword
-- uid: Langly.Keyword.#ctor(Int32)
-  name: Keyword(Int32)
-  href: api/Langly.Keyword.html#Langly_Keyword__ctor_Int32_
-  commentId: M:Langly.Keyword.#ctor(Int32)
-  fullName: Langly.Keyword.Keyword(Int32)
-  nameWithType: Keyword.Keyword(Int32)
+- uid: Langly.Keyword.#ctor(Int32,Int32)
+  name: Keyword(Int32, Int32)
+  href: api/Langly.Keyword.html#Langly_Keyword__ctor_Int32_Int32_
+  commentId: M:Langly.Keyword.#ctor(Int32,Int32)
+  fullName: Langly.Keyword.Keyword(Int32, Int32)
+  nameWithType: Keyword.Keyword(Int32, Int32)
 - uid: Langly.Keyword.#ctor*
   name: Keyword
   href: api/Langly.Keyword.html#Langly_Keyword__ctor_
@@ -5938,12 +5938,12 @@ references:
   commentId: T:Langly.Lexeme
   fullName: Langly.Lexeme
   nameWithType: Lexeme
-- uid: Langly.Lexeme.#ctor(Int32)
-  name: Lexeme(Int32)
-  href: api/Langly.Lexeme.html#Langly_Lexeme__ctor_Int32_
-  commentId: M:Langly.Lexeme.#ctor(Int32)
-  fullName: Langly.Lexeme.Lexeme(Int32)
-  nameWithType: Lexeme.Lexeme(Int32)
+- uid: Langly.Lexeme.#ctor(Int32,Int32)
+  name: Lexeme(Int32, Int32)
+  href: api/Langly.Lexeme.html#Langly_Lexeme__ctor_Int32_Int32_
+  commentId: M:Langly.Lexeme.#ctor(Int32,Int32)
+  fullName: Langly.Lexeme.Lexeme(Int32, Int32)
+  nameWithType: Lexeme.Lexeme(Int32, Int32)
 - uid: Langly.Lexeme.#ctor*
   name: Lexeme
   href: api/Langly.Lexeme.html#Langly_Lexeme__ctor_
@@ -5951,30 +5951,51 @@ references:
   isSpec: "True"
   fullName: Langly.Lexeme.Lexeme
   nameWithType: Lexeme.Lexeme
+- uid: Langly.Lexeme.Length
+  name: Length
+  href: api/Langly.Lexeme.html#Langly_Lexeme_Length
+  commentId: P:Langly.Lexeme.Length
+  fullName: Langly.Lexeme.Length
+  nameWithType: Lexeme.Length
+- uid: Langly.Lexeme.Length*
+  name: Length
+  href: api/Langly.Lexeme.html#Langly_Lexeme_Length_
+  commentId: Overload:Langly.Lexeme.Length
+  isSpec: "True"
+  fullName: Langly.Lexeme.Length
+  nameWithType: Lexeme.Length
+- uid: Langly.Lexeme.Location
+  name: Location
+  href: api/Langly.Lexeme.html#Langly_Lexeme_Location
+  commentId: P:Langly.Lexeme.Location
+  fullName: Langly.Lexeme.Location
+  nameWithType: Lexeme.Location
+- uid: Langly.Lexeme.Location*
+  name: Location
+  href: api/Langly.Lexeme.html#Langly_Lexeme_Location_
+  commentId: Overload:Langly.Lexeme.Location
+  isSpec: "True"
+  fullName: Langly.Lexeme.Location
+  nameWithType: Lexeme.Location
 - uid: Langly.Lexeme.Parser
   name: Lexeme.Parser
   href: api/Langly.Lexeme.Parser.html
   commentId: T:Langly.Lexeme.Parser
   fullName: Langly.Lexeme.Parser
   nameWithType: Lexeme.Parser
-- uid: Langly.Lexeme.Parser.Parse(Memory{Char},Int32@,IAdd{Stringier.Patterns.Capture})
-  name: Parse(Memory<Char>, ref Int32, IAdd<Capture>)
-  href: api/Langly.Lexeme.Parser.html#Langly_Lexeme_Parser_Parse_Memory_Char__Int32__IAdd_Stringier_Patterns_Capture__
-  commentId: M:Langly.Lexeme.Parser.Parse(Memory{Char},Int32@,IAdd{Stringier.Patterns.Capture})
-  name.vb: Parse(Memory(Of Char), ByRef Int32, IAdd(Of Capture))
-  fullName: Langly.Lexeme.Parser.Parse(Memory<Char>, ref Int32, IAdd<Stringier.Patterns.Capture>)
-  fullName.vb: Langly.Lexeme.Parser.Parse(Memory(Of Char), ByRef Int32, IAdd(Of Stringier.Patterns.Capture))
-  nameWithType: Lexeme.Parser.Parse(Memory<Char>, ref Int32, IAdd<Capture>)
-  nameWithType.vb: Lexeme.Parser.Parse(Memory(Of Char), ByRef Int32, IAdd(Of Capture))
-- uid: Langly.Lexeme.Parser.Parse(ReadOnlyMemory{Char},Int32@,IAdd{Stringier.Patterns.Capture})
-  name: Parse(ReadOnlyMemory<Char>, ref Int32, IAdd<Capture>)
-  href: api/Langly.Lexeme.Parser.html#Langly_Lexeme_Parser_Parse_ReadOnlyMemory_Char__Int32__IAdd_Stringier_Patterns_Capture__
-  commentId: M:Langly.Lexeme.Parser.Parse(ReadOnlyMemory{Char},Int32@,IAdd{Stringier.Patterns.Capture})
-  name.vb: Parse(ReadOnlyMemory(Of Char), ByRef Int32, IAdd(Of Capture))
-  fullName: Langly.Lexeme.Parser.Parse(ReadOnlyMemory<Char>, ref Int32, IAdd<Stringier.Patterns.Capture>)
-  fullName.vb: Langly.Lexeme.Parser.Parse(ReadOnlyMemory(Of Char), ByRef Int32, IAdd(Of Stringier.Patterns.Capture))
-  nameWithType: Lexeme.Parser.Parse(ReadOnlyMemory<Char>, ref Int32, IAdd<Capture>)
-  nameWithType.vb: Lexeme.Parser.Parse(ReadOnlyMemory(Of Char), ByRef Int32, IAdd(Of Capture))
+- uid: Langly.Lexeme.Parser.Next
+  name: Next
+  href: api/Langly.Lexeme.Parser.html#Langly_Lexeme_Parser_Next
+  commentId: P:Langly.Lexeme.Parser.Next
+  fullName: Langly.Lexeme.Parser.Next
+  nameWithType: Lexeme.Parser.Next
+- uid: Langly.Lexeme.Parser.Next*
+  name: Next
+  href: api/Langly.Lexeme.Parser.html#Langly_Lexeme_Parser_Next_
+  commentId: Overload:Langly.Lexeme.Parser.Next
+  isSpec: "True"
+  fullName: Langly.Lexeme.Parser.Next
+  nameWithType: Lexeme.Parser.Next
 - uid: Langly.Lexeme.Parser.Parse(ReadOnlySpan{Char},Int32@,IAdd{Stringier.Patterns.Capture})
   name: Parse(ReadOnlySpan<Char>, ref Int32, IAdd<Capture>)
   href: api/Langly.Lexeme.Parser.html#Langly_Lexeme_Parser_Parse_ReadOnlySpan_Char__Int32__IAdd_Stringier_Patterns_Capture__
@@ -5984,24 +6005,6 @@ references:
   fullName.vb: Langly.Lexeme.Parser.Parse(ReadOnlySpan(Of Char), ByRef Int32, IAdd(Of Stringier.Patterns.Capture))
   nameWithType: Lexeme.Parser.Parse(ReadOnlySpan<Char>, ref Int32, IAdd<Capture>)
   nameWithType.vb: Lexeme.Parser.Parse(ReadOnlySpan(Of Char), ByRef Int32, IAdd(Of Capture))
-- uid: Langly.Lexeme.Parser.Parse(Span{Char},Int32@,IAdd{Stringier.Patterns.Capture})
-  name: Parse(Span<Char>, ref Int32, IAdd<Capture>)
-  href: api/Langly.Lexeme.Parser.html#Langly_Lexeme_Parser_Parse_Span_Char__Int32__IAdd_Stringier_Patterns_Capture__
-  commentId: M:Langly.Lexeme.Parser.Parse(Span{Char},Int32@,IAdd{Stringier.Patterns.Capture})
-  name.vb: Parse(Span(Of Char), ByRef Int32, IAdd(Of Capture))
-  fullName: Langly.Lexeme.Parser.Parse(Span<Char>, ref Int32, IAdd<Stringier.Patterns.Capture>)
-  fullName.vb: Langly.Lexeme.Parser.Parse(Span(Of Char), ByRef Int32, IAdd(Of Stringier.Patterns.Capture))
-  nameWithType: Lexeme.Parser.Parse(Span<Char>, ref Int32, IAdd<Capture>)
-  nameWithType.vb: Lexeme.Parser.Parse(Span(Of Char), ByRef Int32, IAdd(Of Capture))
-- uid: Langly.Lexeme.Parser.Parse(String,Int32@,IAdd{Stringier.Patterns.Capture})
-  name: Parse(String, ref Int32, IAdd<Capture>)
-  href: api/Langly.Lexeme.Parser.html#Langly_Lexeme_Parser_Parse_String_Int32__IAdd_Stringier_Patterns_Capture__
-  commentId: M:Langly.Lexeme.Parser.Parse(String,Int32@,IAdd{Stringier.Patterns.Capture})
-  name.vb: Parse(String, ByRef Int32, IAdd(Of Capture))
-  fullName: Langly.Lexeme.Parser.Parse(String, ref Int32, IAdd<Stringier.Patterns.Capture>)
-  fullName.vb: Langly.Lexeme.Parser.Parse(String, ByRef Int32, IAdd(Of Stringier.Patterns.Capture))
-  nameWithType: Lexeme.Parser.Parse(String, ref Int32, IAdd<Capture>)
-  nameWithType.vb: Lexeme.Parser.Parse(String, ByRef Int32, IAdd(Of Capture))
 - uid: Langly.Lexeme.Parser.Parse*
   name: Parse
   href: api/Langly.Lexeme.Parser.html#Langly_Lexeme_Parser_Parse_
@@ -6009,6 +6012,45 @@ references:
   isSpec: "True"
   fullName: Langly.Lexeme.Parser.Parse
   nameWithType: Lexeme.Parser.Parse
+- uid: Langly.Lexeme.Parser.Previous
+  name: Previous
+  href: api/Langly.Lexeme.Parser.html#Langly_Lexeme_Parser_Previous
+  commentId: P:Langly.Lexeme.Parser.Previous
+  fullName: Langly.Lexeme.Parser.Previous
+  nameWithType: Lexeme.Parser.Previous
+- uid: Langly.Lexeme.Parser.Previous*
+  name: Previous
+  href: api/Langly.Lexeme.Parser.html#Langly_Lexeme_Parser_Previous_
+  commentId: Overload:Langly.Lexeme.Parser.Previous
+  isSpec: "True"
+  fullName: Langly.Lexeme.Parser.Previous
+  nameWithType: Lexeme.Parser.Previous
+- uid: Langly.Lexeme.Parser.Unlink
+  name: Unlink()
+  href: api/Langly.Lexeme.Parser.html#Langly_Lexeme_Parser_Unlink
+  commentId: M:Langly.Lexeme.Parser.Unlink
+  fullName: Langly.Lexeme.Parser.Unlink()
+  nameWithType: Lexeme.Parser.Unlink()
+- uid: Langly.Lexeme.Parser.Unlink*
+  name: Unlink
+  href: api/Langly.Lexeme.Parser.html#Langly_Lexeme_Parser_Unlink_
+  commentId: Overload:Langly.Lexeme.Parser.Unlink
+  isSpec: "True"
+  fullName: Langly.Lexeme.Parser.Unlink
+  nameWithType: Lexeme.Parser.Unlink
+- uid: Langly.Lexeme.Register(Langly.Lexeme.Parser)
+  name: Register(Lexeme.Parser)
+  href: api/Langly.Lexeme.html#Langly_Lexeme_Register_Langly_Lexeme_Parser_
+  commentId: M:Langly.Lexeme.Register(Langly.Lexeme.Parser)
+  fullName: Langly.Lexeme.Register(Langly.Lexeme.Parser)
+  nameWithType: Lexeme.Register(Lexeme.Parser)
+- uid: Langly.Lexeme.Register*
+  name: Register
+  href: api/Langly.Lexeme.html#Langly_Lexeme_Register_
+  commentId: Overload:Langly.Lexeme.Register
+  isSpec: "True"
+  fullName: Langly.Lexeme.Register
+  nameWithType: Lexeme.Register
 - uid: Langly.Lexeme.Static
   name: Static
   href: api/Langly.Lexeme.html#Langly_Lexeme_Static
@@ -6022,31 +6064,18 @@ references:
   isSpec: "True"
   fullName: Langly.Lexeme.Static
   nameWithType: Lexeme.Static
-- uid: Langly.Lexeme.ToString
-  name: ToString()
-  href: api/Langly.Lexeme.html#Langly_Lexeme_ToString
-  commentId: M:Langly.Lexeme.ToString
-  fullName: Langly.Lexeme.ToString()
-  nameWithType: Lexeme.ToString()
-- uid: Langly.Lexeme.ToString*
-  name: ToString
-  href: api/Langly.Lexeme.html#Langly_Lexeme_ToString_
-  commentId: Overload:Langly.Lexeme.ToString
-  isSpec: "True"
-  fullName: Langly.Lexeme.ToString
-  nameWithType: Lexeme.ToString
 - uid: Langly.Literal
   name: Literal
   href: api/Langly.Literal.html
   commentId: T:Langly.Literal
   fullName: Langly.Literal
   nameWithType: Literal
-- uid: Langly.Literal.#ctor(Int32)
-  name: Literal(Int32)
-  href: api/Langly.Literal.html#Langly_Literal__ctor_Int32_
-  commentId: M:Langly.Literal.#ctor(Int32)
-  fullName: Langly.Literal.Literal(Int32)
-  nameWithType: Literal.Literal(Int32)
+- uid: Langly.Literal.#ctor(Int32,Int32)
+  name: Literal(Int32, Int32)
+  href: api/Langly.Literal.html#Langly_Literal__ctor_Int32_Int32_
+  commentId: M:Langly.Literal.#ctor(Int32,Int32)
+  fullName: Langly.Literal.Literal(Int32, Int32)
+  nameWithType: Literal.Literal(Int32, Int32)
 - uid: Langly.Literal.#ctor*
   name: Literal
   href: api/Langly.Literal.html#Langly_Literal__ctor_
@@ -6054,6 +6083,25 @@ references:
   isSpec: "True"
   fullName: Langly.Literal.Literal
   nameWithType: Literal.Literal
+- uid: Langly.Literal.Parser
+  name: Literal.Parser
+  href: api/Langly.Literal.Parser.html
+  commentId: T:Langly.Literal.Parser
+  fullName: Langly.Literal.Parser
+  nameWithType: Literal.Parser
+- uid: Langly.Literal.Register(Langly.Literal.Parser)
+  name: Register(Literal.Parser)
+  href: api/Langly.Literal.html#Langly_Literal_Register_Langly_Literal_Parser_
+  commentId: M:Langly.Literal.Register(Langly.Literal.Parser)
+  fullName: Langly.Literal.Register(Langly.Literal.Parser)
+  nameWithType: Literal.Register(Literal.Parser)
+- uid: Langly.Literal.Register*
+  name: Register
+  href: api/Langly.Literal.html#Langly_Literal_Register_
+  commentId: Overload:Langly.Literal.Register
+  isSpec: "True"
+  fullName: Langly.Literal.Register
+  nameWithType: Literal.Register
 - uid: Langly.Literal.Static
   name: Static
   href: api/Langly.Literal.html#Langly_Literal_Static
@@ -6073,12 +6121,12 @@ references:
   commentId: T:Langly.Operator
   fullName: Langly.Operator
   nameWithType: Operator
-- uid: Langly.Operator.#ctor(Int32)
-  name: Operator(Int32)
-  href: api/Langly.Operator.html#Langly_Operator__ctor_Int32_
-  commentId: M:Langly.Operator.#ctor(Int32)
-  fullName: Langly.Operator.Operator(Int32)
-  nameWithType: Operator.Operator(Int32)
+- uid: Langly.Operator.#ctor(Int32,Int32)
+  name: Operator(Int32, Int32)
+  href: api/Langly.Operator.html#Langly_Operator__ctor_Int32_Int32_
+  commentId: M:Langly.Operator.#ctor(Int32,Int32)
+  fullName: Langly.Operator.Operator(Int32, Int32)
+  nameWithType: Operator.Operator(Int32, Int32)
 - uid: Langly.Operator.#ctor*
   name: Operator
   href: api/Langly.Operator.html#Langly_Operator__ctor_
@@ -6130,19 +6178,25 @@ references:
   isSpec: "True"
   fullName: Langly.Patterns.Or.Or
   nameWithType: Or.Or
-- uid: Langly.Patterns.Or.ToString
-  name: ToString()
-  href: api/Langly.Patterns.Or.html#Langly_Patterns_Or_ToString
-  commentId: M:Langly.Patterns.Or.ToString
-  fullName: Langly.Patterns.Or.ToString()
-  nameWithType: Or.ToString()
-- uid: Langly.Patterns.Or.ToString*
-  name: ToString
-  href: api/Langly.Patterns.Or.html#Langly_Patterns_Or_ToString_
-  commentId: Overload:Langly.Patterns.Or.ToString
+- uid: Langly.Patterns.Text
+  name: Text
+  href: api/Langly.Patterns.Text.html
+  commentId: T:Langly.Patterns.Text
+  fullName: Langly.Patterns.Text
+  nameWithType: Text
+- uid: Langly.Patterns.Text.#ctor(Int32,Int32)
+  name: Text(Int32, Int32)
+  href: api/Langly.Patterns.Text.html#Langly_Patterns_Text__ctor_Int32_Int32_
+  commentId: M:Langly.Patterns.Text.#ctor(Int32,Int32)
+  fullName: Langly.Patterns.Text.Text(Int32, Int32)
+  nameWithType: Text.Text(Int32, Int32)
+- uid: Langly.Patterns.Text.#ctor*
+  name: Text
+  href: api/Langly.Patterns.Text.html#Langly_Patterns_Text__ctor_
+  commentId: Overload:Langly.Patterns.Text.#ctor
   isSpec: "True"
-  fullName: Langly.Patterns.Or.ToString
-  nameWithType: Or.ToString
+  fullName: Langly.Patterns.Text.Text
+  nameWithType: Text.Text
 - uid: Langly.Patterns.Then
   name: Then
   href: api/Langly.Patterns.Then.html
@@ -6162,19 +6216,6 @@ references:
   isSpec: "True"
   fullName: Langly.Patterns.Then.Then
   nameWithType: Then.Then
-- uid: Langly.Patterns.Then.ToString
-  name: ToString()
-  href: api/Langly.Patterns.Then.html#Langly_Patterns_Then_ToString
-  commentId: M:Langly.Patterns.Then.ToString
-  fullName: Langly.Patterns.Then.ToString()
-  nameWithType: Then.ToString()
-- uid: Langly.Patterns.Then.ToString*
-  name: ToString
-  href: api/Langly.Patterns.Then.html#Langly_Patterns_Then_ToString_
-  commentId: Overload:Langly.Patterns.Then.ToString
-  isSpec: "True"
-  fullName: Langly.Patterns.Then.ToString
-  nameWithType: Then.ToString
 - uid: Numbersome
   name: Numbersome
   href: api/Numbersome.html
