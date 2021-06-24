@@ -81,7 +81,7 @@ namespace Collectathon.Enumerators {
 				i = N.Count;
 			}
 			// We have a node, so try traversing it
-			if (i-- >= 0) {
+			if (i-- > 0) {
 				// All good
 				return true;
 			} else {
