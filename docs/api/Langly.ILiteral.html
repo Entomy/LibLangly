@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Namespace Langly
+    <title>Interface ILiteral
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Namespace Langly
+    <meta name="title" content="Interface ILiteral
    ">
     <meta name="generator" content="docfx 2.56.7.0">
     
@@ -68,41 +68,65 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Langly">
+            <article class="content wrap" id="_content" data-uid="Langly.ILiteral">
   
-  <h1 id="Langly" data-uid="Langly" class="text-break">Namespace Langly
+  
+  <h1 id="Langly_ILiteral" data-uid="Langly.ILiteral" class="text-break">Interface ILiteral
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Indicates the type is a literal.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
-  <div class="markdown level0 remarks"></div>
-    <h3 id="classes">Classes
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Langly.ILexeme.html#Langly_ILexeme_Length">ILexeme.Length</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.ILexeme.html#Langly_ILexeme_Location">ILexeme.Location</a>
+    </div>
+    <div>
+      <a class="xref" href="Langly.ILexeme.html#Langly_ILexeme_Static">ILexeme.Static</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Langly.html">Langly</a></h6>
+  <h6><strong>Assembly</strong>: Langly.dll</h6>
+  <h5 id="Langly_ILiteral_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface ILiteral : ILexeme</code></pre>
+  </div>
+  <h3 id="eii">Explicit Interface Implementations
   </h3>
-      <h4><a class="xref" href="Langly.ParseTree.html">ParseTree</a></h4>
-      <section><p>Represents a parse-tree, syntax or abstract, that was generated during parsing.</p>
-</section>
-      <h4><a class="xref" href="Langly.Token.html">Token</a></h4>
-      <section><p>Represents any token; any lexical unit.</p>
-</section>
-    <h3 id="interfaces">Interfaces
-  </h3>
-      <h4><a class="xref" href="Langly.IExpression.html">IExpression</a></h4>
-      <section><p>Indicates the type is an expression.</p>
-</section>
-      <h4><a class="xref" href="Langly.IExpressionElement.html">IExpressionElement</a></h4>
-      <section><p>Indicates the type can be an element within an <a class="xref" href="Langly.IExpression.html">IExpression</a>.</p>
-</section>
-      <h4><a class="xref" href="Langly.IKeyword.html">IKeyword</a></h4>
-      <section><p>Indicates the type is a keyword.</p>
-</section>
-      <h4><a class="xref" href="Langly.ILexeme.html">ILexeme</a></h4>
-      <section><p>Indicates the type is a lexeme.</p>
-</section>
-      <h4><a class="xref" href="Langly.ILiteral.html">ILiteral</a></h4>
-      <section><p>Indicates the type is a literal.</p>
-</section>
-      <h4><a class="xref" href="Langly.IOperator.html">IOperator</a></h4>
-      <section><p>Indicates the type is an operator.</p>
-</section>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_ILiteral_Langly_ILexeme_Static.md&amp;value=---%0Auid%3A%20Langly.ILiteral.Langly%23ILexeme%23Static%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Langly/ILiteral.cs/#L9">View Source</a>
+  </span>
+  <a id="Langly_ILiteral_Langly_ILexeme_Static_" data-uid="Langly.ILiteral.Langly#ILexeme#Static*"></a>
+  <h4 id="Langly_ILiteral_Langly_ILexeme_Static" data-uid="Langly.ILiteral.Langly#ILexeme#Static">ILexeme.Static</h4>
+  <div class="markdown level1 summary"><p>Can this lexeme be statically evaluated?</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Boolean ILexeme.Static { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
 </article>
           </div>
           
@@ -110,6 +134,12 @@
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Langly_ILiteral.md&amp;value=---%0Auid%3A%20Langly.ILiteral%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Langly/ILiteral.cs/#L7" class="contribution-link">View Source</a>
+                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
