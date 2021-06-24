@@ -1212,14 +1212,27 @@ namespace Stringier {
 		public static unsafe Int32 Hamming([AllowNull] Char* first, Int32 firstLength, [AllowNull] Char* second, Int32 secondLength, Case casing) => HammingKernel(new ReadOnlySpan<Char>(first, firstLength), new ReadOnlySpan<Char>(second, secondLength), casing);
 		#endregion
 
-		private static Int32 HammingKernel(ReadOnlySpan<Char> first, ReadOnlySpan<Char> second) => HammingKernel(first, second, Case.Sensitive);
+		private static Int32 HammingKernel(ReadOnlySpan<Char> first, ReadOnlySpan<Char> second) => HammingKernel(first, second, default);
 
 		private static Int32 HammingKernel(ReadOnlySpan<Char> first, ReadOnlySpan<Char> second, Case casing) {
 			Int32 d = 0;
-			for (Int32 i = 0; i < first.Length; i++) {
-				if (!Text.Equals(first[i], second[i], casing)) {
-					d++;
+			switch (casing) {
+			case Case.Insensitive:
+				for (Int32 i = 0; i < first.Length; i++) {
+					if (Char.ToUpperInvariant(first[i]) != Char.ToUpperInvariant(second[i])) {
+						d++;
+					}
 				}
+				break;
+			case Case.Sensitive:
+				for (Int32 i = 0; i < first.Length; i++) {
+					if (first[i] != second[i]) {
+						d++;
+					}
+				}
+				break;
+			default:
+				throw new ArgumentException();
 			}
 			return d;
 		}
