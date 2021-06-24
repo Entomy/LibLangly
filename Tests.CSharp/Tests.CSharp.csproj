@@ -4,7 +4,7 @@
 		<TargetFrameworks>net5.0-windows</TargetFrameworks>
 		<LangVersion>9.0</LangVersion>
 		<IsPackable>false</IsPackable>
-		<RootNamespace>Langly</RootNamespace>
+		<RootNamespace></RootNamespace>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 	</PropertyGroup>
 
@@ -34,15 +34,12 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\Collectathon\Collectathon.csproj" />
+	  <ProjectReference Include="..\Langly.Patterns\Langly.Patterns.csproj" />
 	  <ProjectReference Include="..\Langly\Langly.csproj" />
 	  <ProjectReference Include="..\Numbersome\Numbersome.csproj" />
 	  <ProjectReference Include="..\Philosoft\Philosoft.csproj" />
 	  <ProjectReference Include="..\Streamy\Streamy.csproj" />
 	  <ProjectReference Include="..\Stringier\Stringier.csproj" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Langly\" />
 	</ItemGroup>
 
 </Project>

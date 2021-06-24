@@ -1,39 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Langly.Expression" Collapsed="true">
-    <Position X="0.5" Y="3" Width="1.5" />
+  <Interface Name="Langly.IExpression" Collapsed="true">
+    <Position X="0.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Expression.cs</FileName>
+      <FileName>IExpression.cs</FileName>
     </TypeIdentifier>
-  </Class>
-  <Class Name="Langly.Keyword" Collapsed="true">
-    <Position X="5" Y="3" Width="1.5" />
+  </Interface>
+  <Interface Name="Langly.IExpressionElement" Collapsed="true">
+    <Position X="2.75" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Keyword.cs</FileName>
+      <FileName>IExpressionElement.cs</FileName>
     </TypeIdentifier>
-  </Class>
-  <Class Name="Langly.Lexeme" Collapsed="true">
-    <Position X="3.75" Y="1.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAEAAIAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
-      <FileName>Lexeme.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Langly.Literal" Collapsed="true">
-    <Position X="2.75" Y="3" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
-      <FileName>Literal.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Langly.Operator" Collapsed="true">
-    <Position X="7.25" Y="3" Width="1.5" />
+  </Interface>
+  <Interface Name="Langly.IKeyword" Collapsed="true">
+    <Position X="7.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Operator.cs</FileName>
+      <FileName>IKeyword.cs</FileName>
     </TypeIdentifier>
-  </Class>
+  </Interface>
+  <Interface Name="Langly.ILexeme" Collapsed="true">
+    <Position X="5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAABAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>ILexeme.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Langly.ILiteral" Collapsed="true">
+    <Position X="5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ILiteral.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Langly.IOperator" Collapsed="true">
+    <Position X="9.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IOperator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
