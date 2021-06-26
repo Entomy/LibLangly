@@ -184,5 +184,77 @@ namespace Streamy {
 			Source.Peek(out Byte elmt);
 			element = elmt > 0;
 		}
+
+		/// <inheritdoc/>
+		Byte IPeek<Byte>.Peek() {
+			Peek(out Byte value);
+			return value;
+		}
+
+		/// <inheritdoc/>
+		SByte IPeek<SByte>.Peek() {
+			Peek(out SByte value);
+			return value;
+		}
+
+		/// <inheritdoc/>
+		Int16 IPeek<Int16>.Peek() {
+			Peek(out Int16 value);
+			return value;
+		}
+
+		/// <inheritdoc/>
+		UInt16 IPeek<UInt16>.Peek() {
+			Peek(out UInt16 value);
+			return value;
+		}
+
+		/// <inheritdoc/>
+		Int32 IPeek<Int32>.Peek() {
+			Peek(out Int32 value);
+			return value;
+		}
+
+		/// <inheritdoc/>
+		UInt32 IPeek<UInt32>.Peek() {
+			Peek(out UInt32 value);
+			return value;
+		}
+
+		/// <inheritdoc/>
+		Int64 IPeek<Int64>.Peek() {
+			Peek(out Int64 value);
+			return value;
+		}
+
+		/// <inheritdoc/>
+		UInt64 IPeek<UInt64>.Peek() {
+			Peek(out UInt64 value);
+			return value;
+		}
+
+		/// <inheritdoc/>
+		Single IPeek<Single>.Peek() {
+			Peek(out Single value);
+			return value;
+		}
+
+		/// <inheritdoc/>
+		Double IPeek<Double>.Peek() {
+			Peek(out Double value);
+			return value;
+		}
+
+		/// <inheritdoc/>
+		Decimal IPeek<Decimal>.Peek() {
+			Peek(out Decimal value);
+			return value;
+		}
+
+		/// <inheritdoc/>
+		Boolean IPeek<Boolean>.Peek() {
+			Peek(out Boolean value);
+			return value;
+		}
 	}
 }

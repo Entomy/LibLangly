@@ -18,8 +18,11 @@ namespace Collectathon.Arrays {
 		IEquatable<BoundedArray<TElement>>,
 		IIndex<Int32, TElement>,
 		IInsertSpan<Int32, TElement>,
+		IPeek<TElement>,
+		IPop<TElement>,
 		IPostpendSpan<TElement>,
 		IPrependSpan<TElement>,
+		IPushSpan<TElement>,
 		IRemove<TElement>,
 		IReplace<TElement>,
 		ISequence<TElement, ArrayEnumerator<TElement>>,
@@ -216,6 +219,17 @@ namespace Collectathon.Arrays {
 		}
 
 		/// <inheritdoc/>
+		[return: MaybeNull]
+		public TElement Peek() => Elements[Count - 1];
+
+		/// <inheritdoc/>
+		public void Peek([MaybeNull] out TElement element) => element = Elements[Count - 1];
+
+		/// <inheritdoc/>
+		[return: MaybeNull]
+		public TElement Pop() => Elements[--Count];
+
+		/// <inheritdoc/>
 		/// <exception cref="InvalidOperationException">Thrown if the array is at maximum capacity.</exception>
 		public void Postpend([AllowNull] TElement element) {
 			if (Count < Capacity) {
@@ -294,6 +308,27 @@ namespace Collectathon.Arrays {
 				throw new InvalidOperationException();
 			}
 		}
+
+		/// <inheritdoc/>
+		public void Push([AllowNull] TElement element) => Postpend(element);
+
+		/// <inheritdoc/>
+		public void Push([AllowNull] params TElement?[] elements) => Postpend(elements);
+
+		/// <inheritdoc/>
+		public void Push(ArraySegment<TElement?> elements) => Postpend(elements);
+
+		/// <inheritdoc/>
+		public void Push(Memory<TElement?> elements) => Postpend(elements);
+
+		/// <inheritdoc/>
+		public void Push(ReadOnlyMemory<TElement?> elements) => Postpend(elements);
+
+		/// <inheritdoc/>
+		public void Push(Span<TElement?> elements) => Postpend(elements);
+
+		/// <inheritdoc/>
+		public void Push(ReadOnlySpan<TElement?> elements) => Postpend(elements);
 
 		/// <inheritdoc/>
 		[O(Complexity.n_plus_k), Ω(Complexity.n_plus_k)]

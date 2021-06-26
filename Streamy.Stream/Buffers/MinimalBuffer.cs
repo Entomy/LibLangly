@@ -97,6 +97,16 @@ namespace Streamy.Buffers {
 		}
 
 		/// <inheritdoc/>
+		public Byte Peek() {
+			if (Count > 0) {
+				return Memory[Count - 1];
+			} else {
+				Base.Read(out Memory[Count++]);
+				return Memory[Count - 1];
+			}
+		}
+
+		/// <inheritdoc/>
 		public void Read([MaybeNull] out Byte element) {
 			if (Count == 0) {
 				Base.Read(out element);

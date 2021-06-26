@@ -18,8 +18,11 @@ namespace Collectathon.Lists {
 		IEquatable<SinglyLinkedList<TElement>>,
 		IIndex<Int32, TElement>,
 		IInsert<Int32, TElement>,
+		IPeek<TElement>,
+		IPop<TElement>,
 		IPostpend<TElement>,
 		IPrepend<TElement>,
+		IPush<TElement>,
 		IRemove<TElement>,
 		IReplace<TElement>,
 		ISequence<TElement, StandardListEnumerator<TElement, SinglyLinkedListNode<TElement>>> {
@@ -160,6 +163,14 @@ namespace Collectathon.Lists {
 			}
 		}
 
+		[return: MaybeNull]
+		public TElement Peek() => throw new NotImplementedException();
+
+		public void Peek([MaybeNull] out TElement element) => throw new NotImplementedException();
+
+		[return: MaybeNull]
+		public TElement Pop() => throw new NotImplementedException();
+
 		/// <inheritdoc/>
 		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Postpend([AllowNull] TElement element) {
@@ -184,6 +195,8 @@ namespace Collectathon.Lists {
 			}
 			Count++;
 		}
+
+		public void Push([AllowNull] TElement element) => throw new NotImplementedException();
 
 		/// <inheritdoc/>
 		public void Remove([AllowNull] TElement element) => throw new NotImplementedException();

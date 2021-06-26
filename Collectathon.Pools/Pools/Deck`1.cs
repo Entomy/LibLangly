@@ -16,12 +16,6 @@ namespace Collectathon.Pools {
 		IRemove<TElement>,
 		ISequence<TElement, DeckEnumerator<TElement>> {
 		/// <summary>
-		/// The random number generator used for shuffling.
-		/// </summary>
-		[DisallowNull, NotNull]
-		private readonly Numbersome.Random Random = new();
-
-		/// <summary>
 		/// The elements of this deck.
 		/// </summary>
 		/// <remarks>
@@ -30,6 +24,11 @@ namespace Collectathon.Pools {
 		[DisallowNull, NotNull]
 		private readonly TElement[] cards;
 
+		/// <summary>
+		/// The random number generator used for shuffling.
+		/// </summary>
+		[DisallowNull, NotNull]
+		private readonly Numbersome.Random Random = new();
 		/// <summary>
 		/// Whether each corresponding card was dealt.
 		/// </summary>
@@ -65,6 +64,11 @@ namespace Collectathon.Pools {
 			}
 		}
 
+		/// <summary>
+		/// Gets the dealt elements from this deck.
+		/// </summary>
+		public DeckEnumerator<TElement> Dealt => new DeckEnumerator<TElement>(cards, dealt, listDealt: true, listRemaining: false);
+
 		/// <inheritdoc/>
 		Boolean IControlled.Disposed { get; set; }
 
@@ -77,12 +81,6 @@ namespace Collectathon.Pools {
 				return false;
 			}
 		}
-
-		/// <summary>
-		/// Gets the dealt elements from this deck.
-		/// </summary>
-		public DeckEnumerator<TElement> Dealt => new DeckEnumerator<TElement>(cards, dealt, listDealt: true, listRemaining: false);
-
 		/// <summary>
 		/// Gets the remaining elements in this deck.
 		/// </summary>
@@ -144,6 +142,15 @@ namespace Collectathon.Pools {
 				Shuffle();
 			}
 			element = cards[i];
+		}
+
+		/// <inheritdoc/>
+		[return: MaybeNull]
+		public TElement Peek() {
+			while (dealt[i]) {
+				Shuffle();
+			}
+			return cards[i];
 		}
 
 		/// <inheritdoc/>

@@ -40,7 +40,7 @@ namespace System {
 		/// <typeparam name="TElement">The type of the elements in the collection.</typeparam>
 		/// <param name="collection">This collection.</param>
 		/// <param name="elements">The values to write.</param>
-		public static void Write<TElement>([DisallowNull] this IWrite<TElement> collection, ReadOnlyMemory<TElement> elements) => Add(collection, elements.Span);
+		public static void Write<TElement>([DisallowNull] this IWrite<TElement> collection, ReadOnlyMemory<TElement> elements) => Write(collection, elements.Span);
 
 		/// <summary>
 		/// Writes the <paramref name="elements"/>, one by one.
@@ -85,7 +85,7 @@ namespace System {
 		public static void Write<TElement>([DisallowNull] this IWrite<TElement> collection, [AllowNull] Collections.Generic.IEnumerable<TElement> elements) {
 			if (elements is not null) {
 				foreach (TElement element in elements) {
-					collection.Add(element);
+					collection.Write(element);
 				}
 			}
 		}
@@ -100,7 +100,7 @@ namespace System {
 		public static void Write<TElement, TEnumerator>([DisallowNull] this IWrite<TElement> collection, [AllowNull] ISequence<TElement, TEnumerator> elements) where TEnumerator : IEnumerator<TElement> {
 			if (elements is not null) {
 				foreach (TElement element in elements) {
-					collection.Add(element);
+					collection.Write(element);
 				}
 			}
 		}

@@ -114,6 +114,13 @@ namespace Streamy {
 		}
 
 		/// <inheritdoc/>
+		[return: MaybeNull]
+		Char IPeek<Char>.Peek() {
+			Peek(out Char element);
+			return element;
+		}
+
+		/// <inheritdoc/>
 		public void Read(out Char element) {
 			Peek(out element);
 			Source.ShiftLeft(sizeof(Char));

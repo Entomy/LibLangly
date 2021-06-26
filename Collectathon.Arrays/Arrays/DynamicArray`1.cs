@@ -12,14 +12,16 @@ namespace Collectathon.Arrays {
 	[DebuggerDisplay("{ToString(5),nq}")]
 	public sealed class DynamicArray<TElement> :
 		IAddSpan<TElement>,
-		ICapacity,
 		IClear,
 		IContains<TElement>,
 		IEquatable<DynamicArray<TElement>>,
 		IIndex<Int32, TElement>,
 		IInsertSpan<Int32, TElement>,
+		IPeek<TElement>,
+		IPop<TElement>,
 		IPostpendSpan<TElement>,
 		IPrependSpan<TElement>,
+		IPushSpan<TElement>,
 		IRemove<TElement>,
 		IReplace<TElement>,
 		IResize,
@@ -27,15 +29,15 @@ namespace Collectathon.Arrays {
 		IShift,
 		ISlice<Memory<TElement?>> {
 		/// <summary>
+		/// The amount of elements contained in this collection.
+		/// </summary>
+		private Int32 count;
+
+		/// <summary>
 		/// The backing array of this <see cref="DynamicArray{TElement}"/>.
 		/// </summary>
 		[DisallowNull, NotNull]
 		private TElement?[] Elements;
-
-		/// <summary>
-		/// The amount of elements contained in this collection.
-		/// </summary>
-		private Int32 count;
 
 		/// <summary>
 		/// Initializes a new <see cref="DynamicArray{TElement}"/>.
@@ -215,6 +217,17 @@ namespace Collectathon.Arrays {
 		}
 
 		/// <inheritdoc/>
+		[return: MaybeNull]
+		public TElement Peek() => Elements[Count - 1];
+
+		/// <inheritdoc/>
+		public void Peek([MaybeNull] out TElement element) => element = Elements[Count - 1];
+
+		/// <inheritdoc/>
+		[return: MaybeNull]
+		public TElement Pop() => Elements[--Count];
+
+		/// <inheritdoc/>
 		public void Postpend([AllowNull] TElement element) {
 			if (Count == Capacity) {
 				Elements = Collection.Grow(Elements);
@@ -275,6 +288,27 @@ namespace Collectathon.Arrays {
 			}
 			Collection.Prepend(Elements, ref count, elements);
 		}
+
+		/// <inheritdoc/>
+		public void Push([AllowNull] TElement element) => Postpend(element);
+
+		/// <inheritdoc/>
+		public void Push([AllowNull] params TElement?[] elements) => Postpend(elements);
+
+		/// <inheritdoc/>
+		public void Push(ArraySegment<TElement?> elements) => Postpend(elements);
+
+		/// <inheritdoc/>
+		public void Push(Memory<TElement?> elements) => Postpend(elements);
+
+		/// <inheritdoc/>
+		public void Push(ReadOnlyMemory<TElement?> elements) => Postpend(elements);
+
+		/// <inheritdoc/>
+		public void Push(Span<TElement?> elements) => Postpend(elements);
+
+		/// <inheritdoc/>
+		public void Push(ReadOnlySpan<TElement?> elements) => Postpend(elements);
 
 		/// <inheritdoc/>
 		[O(Complexity.n_plus_k), Ω(Complexity.n_plus_k)]

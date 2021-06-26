@@ -5,7 +5,7 @@ namespace System.Traits {
 	/// Indicates the type can be written to.
 	/// </summary>
 	/// <typeparam name="TElement">The type of the element to write.</typeparam>
-	public interface IWrite<in TElement> : IAdd<TElement> {
+	public interface IWrite<in TElement> {
 		/// <summary>
 		/// Can this be written to?
 		/// </summary>
