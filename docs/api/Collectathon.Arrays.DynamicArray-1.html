@@ -83,14 +83,16 @@
   </div>
   <div classs="implements">
     <h5>Implements</h5>
-    <div><span class="xref">ICapacity</span></div>
     <div><span class="xref">IClear</span></div>
     <div><span class="xref">IContains</span>&lt;TElement&gt;</div>
     <div><span class="xref">IEquatable</span>&lt;<a class="xref" href="Collectathon.Arrays.DynamicArray-1.html">DynamicArray</a>&lt;TElement&gt;&gt;</div>
     <div><a class="xref" href="System.Traits.IIndex-2.html">IIndex</a>&lt;<span class="xref">Int32</span>, TElement&gt;</div>
     <div><span class="xref">IInsertSpan</span>&lt;<span class="xref">Int32</span>, TElement&gt;</div>
+    <div><span class="xref">IPeek</span>&lt;TElement&gt;</div>
+    <div><span class="xref">IPop</span>&lt;TElement&gt;</div>
     <div><span class="xref">IPostpendSpan</span>&lt;TElement&gt;</div>
     <div><span class="xref">IPrependSpan</span>&lt;TElement&gt;</div>
+    <div><span class="xref">IPushSpan</span>&lt;TElement&gt;</div>
     <div><span class="xref">IRemove</span>&lt;TElement&gt;</div>
     <div><span class="xref">IReplace</span>&lt;TElement&gt;</div>
     <div><span class="xref">IResize</span></div>
@@ -102,7 +104,7 @@
   <h6><strong>Assembly</strong>: Collectathon.Arrays.dll</h6>
   <h5 id="Collectathon_Arrays_DynamicArray_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class DynamicArray&lt;TElement&gt; : IAddSpan&lt;TElement&gt;, ICapacity, IClear, IContains&lt;TElement&gt;, IEquatable&lt;DynamicArray&lt;TElement&gt;&gt;, IIndex&lt;Int32, TElement&gt;, IInsertSpan&lt;Int32, TElement&gt;, IPostpendSpan&lt;TElement&gt;, IPrependSpan&lt;TElement&gt;, IRemove&lt;TElement&gt;, IReplace&lt;TElement&gt;, IResize, ISequence&lt;TElement, ArrayEnumerator&lt;TElement&gt;&gt;, IShift, ISlice&lt;Memory&lt;TElement&gt;&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class DynamicArray&lt;TElement&gt; : IAddSpan&lt;TElement&gt;, IClear, IContains&lt;TElement&gt;, IEquatable&lt;DynamicArray&lt;TElement&gt;&gt;, IIndex&lt;Int32, TElement&gt;, IInsertSpan&lt;Int32, TElement&gt;, IPeek&lt;TElement&gt;, IPop&lt;TElement&gt;, IPostpendSpan&lt;TElement&gt;, IPrependSpan&lt;TElement&gt;, IPushSpan&lt;TElement&gt;, IRemove&lt;TElement&gt;, IReplace&lt;TElement&gt;, IResize, ISequence&lt;TElement, ArrayEnumerator&lt;TElement&gt;&gt;, IShift, ISlice&lt;Memory&lt;TElement&gt;&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -127,7 +129,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1__ctor.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L43">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L45">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1__ctor_" data-uid="Collectathon.Arrays.DynamicArray`1.#ctor*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1__ctor" data-uid="Collectathon.Arrays.DynamicArray`1.#ctor">DynamicArray()</h4>
@@ -143,7 +145,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1__ctor__0___.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.%23ctor(%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L55">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L57">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1__ctor_" data-uid="Collectathon.Arrays.DynamicArray`1.#ctor*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1__ctor__0___" data-uid="Collectathon.Arrays.DynamicArray`1.#ctor(`0[])">DynamicArray(TElement[])</h4>
@@ -177,7 +179,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1__ctor_Int32_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.%23ctor(Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L49">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L51">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1__ctor_" data-uid="Collectathon.Arrays.DynamicArray`1.#ctor*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1__ctor_Int32_" data-uid="Collectathon.Arrays.DynamicArray`1.#ctor(Int32)">DynamicArray(Int32)</h4>
@@ -213,7 +215,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Capacity.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Capacity%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L61">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L63">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_Capacity_" data-uid="Collectathon.Arrays.DynamicArray`1.Capacity*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_Capacity" data-uid="Collectathon.Arrays.DynamicArray`1.Capacity">Capacity</h4>
@@ -243,7 +245,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Count.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Count%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L67">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L69">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_Count_" data-uid="Collectathon.Arrays.DynamicArray`1.Count*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_Count" data-uid="Collectathon.Arrays.DynamicArray`1.Count">Count</h4>
@@ -273,7 +275,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Item_Int32_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Item(Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L74">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L76">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_Item_" data-uid="Collectathon.Arrays.DynamicArray`1.Item*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_Item_Int32_" data-uid="Collectathon.Arrays.DynamicArray`1.Item(Int32)">Item[Int32]</h4>
@@ -322,7 +324,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Add__0_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Add(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L121">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L123">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_Add_" data-uid="Collectathon.Arrays.DynamicArray`1.Add*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_Add__0_" data-uid="Collectathon.Arrays.DynamicArray`1.Add(`0)">Add(TElement)</h4>
@@ -354,7 +356,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Add__0___.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Add(%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L124">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L126">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_Add_" data-uid="Collectathon.Arrays.DynamicArray`1.Add*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_Add__0___" data-uid="Collectathon.Arrays.DynamicArray`1.Add(`0[])">Add(TElement[])</h4>
@@ -386,7 +388,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Add_ArraySegment__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Add(ArraySegment%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L127">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L129">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_Add_" data-uid="Collectathon.Arrays.DynamicArray`1.Add*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_Add_ArraySegment__0__" data-uid="Collectathon.Arrays.DynamicArray`1.Add(ArraySegment{`0})">Add(ArraySegment&lt;TElement&gt;)</h4>
@@ -418,7 +420,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Add_Memory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Add(Memory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L130">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L132">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_Add_" data-uid="Collectathon.Arrays.DynamicArray`1.Add*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_Add_Memory__0__" data-uid="Collectathon.Arrays.DynamicArray`1.Add(Memory{`0})">Add(Memory&lt;TElement&gt;)</h4>
@@ -450,7 +452,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Add_ReadOnlyMemory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Add(ReadOnlyMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L133">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L135">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_Add_" data-uid="Collectathon.Arrays.DynamicArray`1.Add*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_Add_ReadOnlyMemory__0__" data-uid="Collectathon.Arrays.DynamicArray`1.Add(ReadOnlyMemory{`0})">Add(ReadOnlyMemory&lt;TElement&gt;)</h4>
@@ -482,7 +484,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Add_ReadOnlySpan__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Add(ReadOnlySpan%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L139">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L141">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_Add_" data-uid="Collectathon.Arrays.DynamicArray`1.Add*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_Add_ReadOnlySpan__0__" data-uid="Collectathon.Arrays.DynamicArray`1.Add(ReadOnlySpan{`0})">Add(ReadOnlySpan&lt;TElement&gt;)</h4>
@@ -514,7 +516,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Add_Span__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Add(Span%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L136">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L138">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_Add_" data-uid="Collectathon.Arrays.DynamicArray`1.Add*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_Add_Span__0__" data-uid="Collectathon.Arrays.DynamicArray`1.Add(Span{`0})">Add(Span&lt;TElement&gt;)</h4>
@@ -546,7 +548,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Clear.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Clear%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L142">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L144">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_Clear_" data-uid="Collectathon.Arrays.DynamicArray`1.Clear*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_Clear" data-uid="Collectathon.Arrays.DynamicArray`1.Clear">Clear()</h4>
@@ -561,7 +563,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Contains__0_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Contains(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L146">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L148">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_Contains_" data-uid="Collectathon.Arrays.DynamicArray`1.Contains*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_Contains__0_" data-uid="Collectathon.Arrays.DynamicArray`1.Contains(`0)">Contains(TElement)</h4>
@@ -608,7 +610,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Equals_Collectathon_Arrays_DynamicArray__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Equals(Collectathon.Arrays.DynamicArray%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L166">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L168">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_Equals_" data-uid="Collectathon.Arrays.DynamicArray`1.Equals*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_Equals_Collectathon_Arrays_DynamicArray__0__" data-uid="Collectathon.Arrays.DynamicArray`1.Equals(Collectathon.Arrays.DynamicArray{`0})">Equals(DynamicArray&lt;TElement&gt;)</h4>
@@ -655,7 +657,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Equals_Object_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Equals(Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L154">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L156">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_Equals_" data-uid="Collectathon.Arrays.DynamicArray`1.Equals*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_Equals_Object_" data-uid="Collectathon.Arrays.DynamicArray`1.Equals(Object)">Equals(Object)</h4>
@@ -705,7 +707,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Equals_System_Collections_Generic_IEnumerable__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Equals(System.Collections.Generic.IEnumerable%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L169">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L171">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_Equals_" data-uid="Collectathon.Arrays.DynamicArray`1.Equals*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_Equals_System_Collections_Generic_IEnumerable__0__" data-uid="Collectathon.Arrays.DynamicArray`1.Equals(System.Collections.Generic.IEnumerable{`0})">Equals(Collections.Generic.IEnumerable&lt;TElement&gt;)</h4>
@@ -752,7 +754,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_GetEnumerator.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L172">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L174">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_GetEnumerator_" data-uid="Collectathon.Arrays.DynamicArray`1.GetEnumerator*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_GetEnumerator" data-uid="Collectathon.Arrays.DynamicArray`1.GetEnumerator">GetEnumerator()</h4>
@@ -782,7 +784,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_GetHashCode.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.GetHashCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L183">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L185">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_GetHashCode_" data-uid="Collectathon.Arrays.DynamicArray`1.GetHashCode*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_GetHashCode" data-uid="Collectathon.Arrays.DynamicArray`1.GetHashCode">GetHashCode()</h4>
@@ -812,7 +814,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Insert_Int32__0_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Insert(Int32%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L187">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L189">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_Insert_" data-uid="Collectathon.Arrays.DynamicArray`1.Insert*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_Insert_Int32__0_" data-uid="Collectathon.Arrays.DynamicArray`1.Insert(Int32,`0)">Insert(Int32, TElement)</h4>
@@ -849,7 +851,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Insert_Int32__0___.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Insert(Int32%2C%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L195">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L197">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_Insert_" data-uid="Collectathon.Arrays.DynamicArray`1.Insert*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_Insert_Int32__0___" data-uid="Collectathon.Arrays.DynamicArray`1.Insert(Int32,`0[])">Insert(Int32, TElement[])</h4>
@@ -886,7 +888,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Insert_Int32_ArraySegment__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Insert(Int32%2CArraySegment%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L198">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L200">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_Insert_" data-uid="Collectathon.Arrays.DynamicArray`1.Insert*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_Insert_Int32_ArraySegment__0__" data-uid="Collectathon.Arrays.DynamicArray`1.Insert(Int32,ArraySegment{`0})">Insert(Int32, ArraySegment&lt;TElement&gt;)</h4>
@@ -923,7 +925,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Insert_Int32_Memory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Insert(Int32%2CMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L201">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L203">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_Insert_" data-uid="Collectathon.Arrays.DynamicArray`1.Insert*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_Insert_Int32_Memory__0__" data-uid="Collectathon.Arrays.DynamicArray`1.Insert(Int32,Memory{`0})">Insert(Int32, Memory&lt;TElement&gt;)</h4>
@@ -960,7 +962,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Insert_Int32_ReadOnlyMemory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Insert(Int32%2CReadOnlyMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L204">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L206">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_Insert_" data-uid="Collectathon.Arrays.DynamicArray`1.Insert*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_Insert_Int32_ReadOnlyMemory__0__" data-uid="Collectathon.Arrays.DynamicArray`1.Insert(Int32,ReadOnlyMemory{`0})">Insert(Int32, ReadOnlyMemory&lt;TElement&gt;)</h4>
@@ -997,7 +999,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Insert_Int32_ReadOnlySpan__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Insert(Int32%2CReadOnlySpan%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L210">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L212">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_Insert_" data-uid="Collectathon.Arrays.DynamicArray`1.Insert*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_Insert_Int32_ReadOnlySpan__0__" data-uid="Collectathon.Arrays.DynamicArray`1.Insert(Int32,ReadOnlySpan{`0})">Insert(Int32, ReadOnlySpan&lt;TElement&gt;)</h4>
@@ -1034,7 +1036,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Insert_Int32_Span__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Insert(Int32%2CSpan%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L207">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L209">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_Insert_" data-uid="Collectathon.Arrays.DynamicArray`1.Insert*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_Insert_Int32_Span__0__" data-uid="Collectathon.Arrays.DynamicArray`1.Insert(Int32,Span{`0})">Insert(Int32, Span&lt;TElement&gt;)</h4>
@@ -1068,10 +1070,102 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Peek.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Peek%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L220">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_DynamicArray_1_Peek_" data-uid="Collectathon.Arrays.DynamicArray`1.Peek*"></a>
+  <h4 id="Collectathon_Arrays_DynamicArray_1_Peek" data-uid="Collectathon.Arrays.DynamicArray`1.Peek">Peek()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TElement Peek()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Peek__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Peek(%600%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L224">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_DynamicArray_1_Peek_" data-uid="Collectathon.Arrays.DynamicArray`1.Peek*"></a>
+  <h4 id="Collectathon_Arrays_DynamicArray_1_Peek__0__" data-uid="Collectathon.Arrays.DynamicArray`1.Peek(`0@)">Peek(out TElement)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Peek(out TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Pop.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Pop%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L227">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_DynamicArray_1_Pop_" data-uid="Collectathon.Arrays.DynamicArray`1.Pop*"></a>
+  <h4 id="Collectathon_Arrays_DynamicArray_1_Pop" data-uid="Collectathon.Arrays.DynamicArray`1.Pop">Pop()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TElement Pop()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Postpend__0_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Postpend(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L218">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L231">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_Postpend_" data-uid="Collectathon.Arrays.DynamicArray`1.Postpend*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_Postpend__0_" data-uid="Collectathon.Arrays.DynamicArray`1.Postpend(`0)">Postpend(TElement)</h4>
@@ -1103,7 +1197,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Postpend__0___.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Postpend(%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L226">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L239">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_Postpend_" data-uid="Collectathon.Arrays.DynamicArray`1.Postpend*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_Postpend__0___" data-uid="Collectathon.Arrays.DynamicArray`1.Postpend(`0[])">Postpend(TElement[])</h4>
@@ -1135,7 +1229,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Postpend_ArraySegment__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Postpend(ArraySegment%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L229">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L242">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_Postpend_" data-uid="Collectathon.Arrays.DynamicArray`1.Postpend*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_Postpend_ArraySegment__0__" data-uid="Collectathon.Arrays.DynamicArray`1.Postpend(ArraySegment{`0})">Postpend(ArraySegment&lt;TElement&gt;)</h4>
@@ -1167,7 +1261,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Postpend_Memory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Postpend(Memory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L232">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L245">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_Postpend_" data-uid="Collectathon.Arrays.DynamicArray`1.Postpend*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_Postpend_Memory__0__" data-uid="Collectathon.Arrays.DynamicArray`1.Postpend(Memory{`0})">Postpend(Memory&lt;TElement&gt;)</h4>
@@ -1199,7 +1293,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Postpend_ReadOnlyMemory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Postpend(ReadOnlyMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L235">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L248">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_Postpend_" data-uid="Collectathon.Arrays.DynamicArray`1.Postpend*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_Postpend_ReadOnlyMemory__0__" data-uid="Collectathon.Arrays.DynamicArray`1.Postpend(ReadOnlyMemory{`0})">Postpend(ReadOnlyMemory&lt;TElement&gt;)</h4>
@@ -1231,7 +1325,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Postpend_ReadOnlySpan__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Postpend(ReadOnlySpan%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L241">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L254">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_Postpend_" data-uid="Collectathon.Arrays.DynamicArray`1.Postpend*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_Postpend_ReadOnlySpan__0__" data-uid="Collectathon.Arrays.DynamicArray`1.Postpend(ReadOnlySpan{`0})">Postpend(ReadOnlySpan&lt;TElement&gt;)</h4>
@@ -1263,7 +1357,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Postpend_Span__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Postpend(Span%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L238">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L251">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_Postpend_" data-uid="Collectathon.Arrays.DynamicArray`1.Postpend*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_Postpend_Span__0__" data-uid="Collectathon.Arrays.DynamicArray`1.Postpend(Span{`0})">Postpend(Span&lt;TElement&gt;)</h4>
@@ -1295,7 +1389,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Prepend__0_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Prepend(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L249">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L262">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_Prepend_" data-uid="Collectathon.Arrays.DynamicArray`1.Prepend*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_Prepend__0_" data-uid="Collectathon.Arrays.DynamicArray`1.Prepend(`0)">Prepend(TElement)</h4>
@@ -1327,7 +1421,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Prepend__0___.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Prepend(%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L257">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L270">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_Prepend_" data-uid="Collectathon.Arrays.DynamicArray`1.Prepend*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_Prepend__0___" data-uid="Collectathon.Arrays.DynamicArray`1.Prepend(`0[])">Prepend(TElement[])</h4>
@@ -1359,7 +1453,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Prepend_ArraySegment__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Prepend(ArraySegment%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L260">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L273">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_Prepend_" data-uid="Collectathon.Arrays.DynamicArray`1.Prepend*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_Prepend_ArraySegment__0__" data-uid="Collectathon.Arrays.DynamicArray`1.Prepend(ArraySegment{`0})">Prepend(ArraySegment&lt;TElement&gt;)</h4>
@@ -1391,7 +1485,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Prepend_Memory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Prepend(Memory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L263">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L276">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_Prepend_" data-uid="Collectathon.Arrays.DynamicArray`1.Prepend*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_Prepend_Memory__0__" data-uid="Collectathon.Arrays.DynamicArray`1.Prepend(Memory{`0})">Prepend(Memory&lt;TElement&gt;)</h4>
@@ -1423,7 +1517,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Prepend_ReadOnlyMemory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Prepend(ReadOnlyMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L266">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L279">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_Prepend_" data-uid="Collectathon.Arrays.DynamicArray`1.Prepend*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_Prepend_ReadOnlyMemory__0__" data-uid="Collectathon.Arrays.DynamicArray`1.Prepend(ReadOnlyMemory{`0})">Prepend(ReadOnlyMemory&lt;TElement&gt;)</h4>
@@ -1455,7 +1549,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Prepend_ReadOnlySpan__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Prepend(ReadOnlySpan%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L272">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L285">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_Prepend_" data-uid="Collectathon.Arrays.DynamicArray`1.Prepend*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_Prepend_ReadOnlySpan__0__" data-uid="Collectathon.Arrays.DynamicArray`1.Prepend(ReadOnlySpan{`0})">Prepend(ReadOnlySpan&lt;TElement&gt;)</h4>
@@ -1487,7 +1581,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Prepend_Span__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Prepend(Span%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L269">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L282">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_Prepend_" data-uid="Collectathon.Arrays.DynamicArray`1.Prepend*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_Prepend_Span__0__" data-uid="Collectathon.Arrays.DynamicArray`1.Prepend(Span{`0})">Prepend(Span&lt;TElement&gt;)</h4>
@@ -1516,10 +1610,234 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Push__0_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Push(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L293">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_DynamicArray_1_Push_" data-uid="Collectathon.Arrays.DynamicArray`1.Push*"></a>
+  <h4 id="Collectathon_Arrays_DynamicArray_1_Push__0_" data-uid="Collectathon.Arrays.DynamicArray`1.Push(`0)">Push(TElement)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Push(TElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TElement</span></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Push__0___.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Push(%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L296">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_DynamicArray_1_Push_" data-uid="Collectathon.Arrays.DynamicArray`1.Push*"></a>
+  <h4 id="Collectathon_Arrays_DynamicArray_1_Push__0___" data-uid="Collectathon.Arrays.DynamicArray`1.Push(`0[])">Push(TElement[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Push(params TElement[] elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TElement[]</td>
+        <td><span class="parametername">elements</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Push_ArraySegment__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Push(ArraySegment%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L299">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_DynamicArray_1_Push_" data-uid="Collectathon.Arrays.DynamicArray`1.Push*"></a>
+  <h4 id="Collectathon_Arrays_DynamicArray_1_Push_ArraySegment__0__" data-uid="Collectathon.Arrays.DynamicArray`1.Push(ArraySegment{`0})">Push(ArraySegment&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Push(ArraySegment&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ArraySegment</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Push_Memory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Push(Memory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L302">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_DynamicArray_1_Push_" data-uid="Collectathon.Arrays.DynamicArray`1.Push*"></a>
+  <h4 id="Collectathon_Arrays_DynamicArray_1_Push_Memory__0__" data-uid="Collectathon.Arrays.DynamicArray`1.Push(Memory{`0})">Push(Memory&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Push(Memory&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Memory</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Push_ReadOnlyMemory__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Push(ReadOnlyMemory%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L305">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_DynamicArray_1_Push_" data-uid="Collectathon.Arrays.DynamicArray`1.Push*"></a>
+  <h4 id="Collectathon_Arrays_DynamicArray_1_Push_ReadOnlyMemory__0__" data-uid="Collectathon.Arrays.DynamicArray`1.Push(ReadOnlyMemory{`0})">Push(ReadOnlyMemory&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Push(ReadOnlyMemory&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ReadOnlyMemory</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Push_ReadOnlySpan__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Push(ReadOnlySpan%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L311">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_DynamicArray_1_Push_" data-uid="Collectathon.Arrays.DynamicArray`1.Push*"></a>
+  <h4 id="Collectathon_Arrays_DynamicArray_1_Push_ReadOnlySpan__0__" data-uid="Collectathon.Arrays.DynamicArray`1.Push(ReadOnlySpan{`0})">Push(ReadOnlySpan&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Push(ReadOnlySpan&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ReadOnlySpan</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Push_Span__0__.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Push(Span%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L308">View Source</a>
+  </span>
+  <a id="Collectathon_Arrays_DynamicArray_1_Push_" data-uid="Collectathon.Arrays.DynamicArray`1.Push*"></a>
+  <h4 id="Collectathon_Arrays_DynamicArray_1_Push_Span__0__" data-uid="Collectathon.Arrays.DynamicArray`1.Push(Span{`0})">Push(Span&lt;TElement&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Push(Span&lt;TElement&gt; elements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Span</span>&lt;TElement&gt;</td>
+        <td><span class="parametername">elements</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Remove__0_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Remove(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L280">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L314">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_Remove_" data-uid="Collectathon.Arrays.DynamicArray`1.Remove*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_Remove__0_" data-uid="Collectathon.Arrays.DynamicArray`1.Remove(`0)">Remove(TElement)</h4>
@@ -1551,7 +1869,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_RemoveFirst__0_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.RemoveFirst(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L284">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L318">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_RemoveFirst_" data-uid="Collectathon.Arrays.DynamicArray`1.RemoveFirst*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_RemoveFirst__0_" data-uid="Collectathon.Arrays.DynamicArray`1.RemoveFirst(`0)">RemoveFirst(TElement)</h4>
@@ -1583,7 +1901,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_RemoveLast__0_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.RemoveLast(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L288">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L322">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_RemoveLast_" data-uid="Collectathon.Arrays.DynamicArray`1.RemoveLast*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_RemoveLast__0_" data-uid="Collectathon.Arrays.DynamicArray`1.RemoveLast(`0)">RemoveLast(TElement)</h4>
@@ -1615,7 +1933,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Replace__0__0_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Replace(%600%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L292">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L326">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_Replace_" data-uid="Collectathon.Arrays.DynamicArray`1.Replace*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_Replace__0__0_" data-uid="Collectathon.Arrays.DynamicArray`1.Replace(`0,`0)">Replace(TElement, TElement)</h4>
@@ -1652,7 +1970,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Resize_Int32_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Resize(Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L296">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L330">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_Resize_" data-uid="Collectathon.Arrays.DynamicArray`1.Resize*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_Resize_Int32_" data-uid="Collectathon.Arrays.DynamicArray`1.Resize(Int32)">Resize(Int32)</h4>
@@ -1684,7 +2002,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_ShiftLeft.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.ShiftLeft%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L299">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L333">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_ShiftLeft_" data-uid="Collectathon.Arrays.DynamicArray`1.ShiftLeft*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_ShiftLeft" data-uid="Collectathon.Arrays.DynamicArray`1.ShiftLeft">ShiftLeft()</h4>
@@ -1699,7 +2017,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_ShiftLeft_Int32_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.ShiftLeft(Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L302">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L336">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_ShiftLeft_" data-uid="Collectathon.Arrays.DynamicArray`1.ShiftLeft*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_ShiftLeft_Int32_" data-uid="Collectathon.Arrays.DynamicArray`1.ShiftLeft(Int32)">ShiftLeft(Int32)</h4>
@@ -1731,7 +2049,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_ShiftRight.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.ShiftRight%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L305">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L339">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_ShiftRight_" data-uid="Collectathon.Arrays.DynamicArray`1.ShiftRight*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_ShiftRight" data-uid="Collectathon.Arrays.DynamicArray`1.ShiftRight">ShiftRight()</h4>
@@ -1746,7 +2064,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_ShiftRight_Int32_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.ShiftRight(Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L308">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L342">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_ShiftRight_" data-uid="Collectathon.Arrays.DynamicArray`1.ShiftRight*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_ShiftRight_Int32_" data-uid="Collectathon.Arrays.DynamicArray`1.ShiftRight(Int32)">ShiftRight(Int32)</h4>
@@ -1778,7 +2096,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Slice.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Slice%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L311">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L345">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_Slice_" data-uid="Collectathon.Arrays.DynamicArray`1.Slice*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_Slice" data-uid="Collectathon.Arrays.DynamicArray`1.Slice">Slice()</h4>
@@ -1808,7 +2126,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Slice_Int32_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Slice(Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L315">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L349">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_Slice_" data-uid="Collectathon.Arrays.DynamicArray`1.Slice*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_Slice_Int32_" data-uid="Collectathon.Arrays.DynamicArray`1.Slice(Int32)">Slice(Int32)</h4>
@@ -1855,7 +2173,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_Slice_Int32_Int32_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.Slice(Int32%2CInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L319">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L353">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_Slice_" data-uid="Collectathon.Arrays.DynamicArray`1.Slice*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_Slice_Int32_Int32_" data-uid="Collectathon.Arrays.DynamicArray`1.Slice(Int32,Int32)">Slice(Int32, Int32)</h4>
@@ -1907,7 +2225,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_ToString.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L323">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L357">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_ToString_" data-uid="Collectathon.Arrays.DynamicArray`1.ToString*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_ToString" data-uid="Collectathon.Arrays.DynamicArray`1.ToString">ToString()</h4>
@@ -1937,7 +2255,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_ToString_Int32_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.ToString(Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L328">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L362">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_ToString_" data-uid="Collectathon.Arrays.DynamicArray`1.ToString*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_ToString_Int32_" data-uid="Collectathon.Arrays.DynamicArray`1.ToString(Int32)">ToString(Int32)</h4>
@@ -1986,7 +2304,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_op_Implicit__0____Collectathon_Arrays_DynamicArray__0_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.op_Implicit(%600%5B%5D)~Collectathon.Arrays.DynamicArray%7B%600%7D%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L96">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L98">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_op_Implicit_" data-uid="Collectathon.Arrays.DynamicArray`1.op_Implicit*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_op_Implicit__0____Collectathon_Arrays_DynamicArray__0_" data-uid="Collectathon.Arrays.DynamicArray`1.op_Implicit(`0[])~Collectathon.Arrays.DynamicArray{`0}">Implicit(TElement[] to DynamicArray&lt;TElement&gt;)</h4>
@@ -2035,7 +2353,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_op_LeftShift_Collectathon_Arrays_DynamicArray__0__Int32_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.op_LeftShift(Collectathon.Arrays.DynamicArray%7B%600%7D%2CInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L104">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L106">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_op_LeftShift_" data-uid="Collectathon.Arrays.DynamicArray`1.op_LeftShift*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_op_LeftShift_Collectathon_Arrays_DynamicArray__0__Int32_" data-uid="Collectathon.Arrays.DynamicArray`1.op_LeftShift(Collectathon.Arrays.DynamicArray{`0},Int32)">LeftShift(DynamicArray&lt;TElement&gt;, Int32)</h4>
@@ -2090,7 +2408,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Collectathon_Arrays_DynamicArray_1_op_RightShift_Collectathon_Arrays_DynamicArray__0__Int32_.md&amp;value=---%0Auid%3A%20Collectathon.Arrays.DynamicArray%601.op_RightShift(Collectathon.Arrays.DynamicArray%7B%600%7D%2CInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L115">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Collectathon.Arrays/Arrays/DynamicArray`1.cs/#L117">View Source</a>
   </span>
   <a id="Collectathon_Arrays_DynamicArray_1_op_RightShift_" data-uid="Collectathon.Arrays.DynamicArray`1.op_RightShift*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_1_op_RightShift_Collectathon_Arrays_DynamicArray__0__Int32_" data-uid="Collectathon.Arrays.DynamicArray`1.op_RightShift(Collectathon.Arrays.DynamicArray{`0},Int32)">RightShift(DynamicArray&lt;TElement&gt;, Int32)</h4>
@@ -2142,9 +2460,6 @@
   </table>
   <h3 id="implements">Implements</h3>
   <div>
-      <span class="xref">ICapacity</span>
-  </div>
-  <div>
       <span class="xref">IClear</span>
   </div>
   <div>
@@ -2160,10 +2475,19 @@
       <span class="xref">IInsertSpan&lt;, &gt;</span>
   </div>
   <div>
+      <span class="xref">IPeek&lt;&gt;</span>
+  </div>
+  <div>
+      <span class="xref">IPop&lt;&gt;</span>
+  </div>
+  <div>
       <span class="xref">IPostpendSpan&lt;&gt;</span>
   </div>
   <div>
       <span class="xref">IPrependSpan&lt;&gt;</span>
+  </div>
+  <div>
+      <span class="xref">IPushSpan&lt;&gt;</span>
   </div>
   <div>
       <span class="xref">IRemove&lt;&gt;</span>
