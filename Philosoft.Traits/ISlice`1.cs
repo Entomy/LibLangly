@@ -5,7 +5,7 @@ namespace System.Traits {
 	/// Indicates the collection is sliceable.
 	/// </summary>
 	/// <typeparam name="TResult">The resulting type; often itself.</typeparam>
-	public interface ISlice<out TResult> : ICount {
+	public interface ISlice<out TResult> {
 #if !NETSTANDARD1_3
 		/// <summary>
 		/// Gets a slice out of the collection within the specified range.

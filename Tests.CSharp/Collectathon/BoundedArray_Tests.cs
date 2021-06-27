@@ -472,7 +472,7 @@ namespace Collectathon {
 		[InlineData(new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 })]
 		public void Slice([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial) {
 			BoundedArray<Int32> array = initial;
-			Memory<Int32> slice = array.Slice();
+			Span<Int32> slice = array.Slice();
 			Assert.Equal(expected, slice.ToArray());
 		}
 
@@ -484,7 +484,7 @@ namespace Collectathon {
 		[InlineData(new Int32[] { 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 1, 5)]
 		public void Slice_Range([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 start, Int32 end) {
 			BoundedArray<Int32> array = initial;
-			Memory<Int32> slice = array[start..end];
+			Span<Int32> slice = array[start..end];
 			Assert.Equal(expected, slice.ToArray());
 		}
 
@@ -493,7 +493,7 @@ namespace Collectathon {
 		[InlineData(new Int32[] { 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 2)]
 		public void Slice_Start([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 start) {
 			BoundedArray<Int32> array = initial;
-			Memory<Int32> slice = array.Slice(start);
+			Span<Int32> slice = array.Slice(start);
 			Assert.Equal(expected, slice.ToArray());
 		}
 
@@ -503,7 +503,7 @@ namespace Collectathon {
 		[InlineData(new Int32[] { 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 1, 4)]
 		public void Slice_Start_Length([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 start, Int32 length) {
 			BoundedArray<Int32> array = initial;
-			Memory<Int32> slice = array.Slice(start, length);
+			Span<Int32> slice = array.Slice(start, length);
 			Assert.Equal(expected, slice.ToArray());
 		}
 

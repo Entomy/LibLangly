@@ -4,6 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Text;
 #endif
 using System.Traits;
+using System.Traits.Concepts;
 
 namespace Stringier.Patterns {
 	/// <summary>

@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Text;
 using System.Traits;
+using System.Traits.Concepts;
 
 namespace Stringier {
 	/// <summary>

@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Traits;
+using System.Traits.Concepts;
 using Collectathon.Enumerators;
 
 namespace Collectathon.Arrays {
@@ -12,22 +13,17 @@ namespace Collectathon.Arrays {
 	[DebuggerDisplay("{ToString(5),nq}")]
 	public sealed class BoundedArray<TElement> :
 		IAddSpan<TElement>,
-		ICapacity,
+		IArray<TElement>,
 		IClear,
-		IContains<TElement>,
 		IEquatable<BoundedArray<TElement>>,
-		IIndex<Int32, TElement>,
 		IInsertSpan<Int32, TElement>,
-		IPeek<TElement>,
-		IPop<TElement>,
+		IList<TElement>,
 		IPostpendSpan<TElement>,
 		IPrependSpan<TElement>,
 		IPushSpan<TElement>,
 		IRemove<TElement>,
-		IReplace<TElement>,
 		ISequence<TElement, ArrayEnumerator<TElement>>,
-		IShift,
-		ISlice<Memory<TElement?>> {
+		IStack<TElement> {
 		/// <summary>
 		/// The backing array of this <see cref="BoundedArray{TElement}"/>.
 		/// </summary>
@@ -76,10 +72,26 @@ namespace Collectathon.Arrays {
 #if !NETSTANDARD1_3
 		/// <inheritdoc/>
 		[O(1), Ω(1), Θ(1)]
-		public Memory<TElement?> this[Range range] {
+		public Span<TElement?> this[Range range] {
 			get {
 				(Int32 offset, Int32 length) = range.GetOffsetAndLength(Count);
-				return Slice(offset, length);
+				return Elements.AsSpan(offset, length);
+			}
+		}
+
+		/// <inheritdoc/>
+		Memory<TElement> ISlice<Memory<TElement>>.this[Range range] {
+			get {
+				(Int32 offset, Int32 length) = range.GetOffsetAndLength(Count);
+				return Elements.AsMemory(offset, length);
+			}
+		}
+
+		/// <inheritdoc/>
+		ReadOnlyMemory<TElement> ISlice<ReadOnlyMemory<TElement>>.this[Range range] {
+			get {
+				(Int32 offset, Int32 length) = range.GetOffsetAndLength(Count);
+				return Elements.AsMemory(offset, length);
 			}
 		}
 #endif
@@ -360,15 +372,33 @@ namespace Collectathon.Arrays {
 
 		/// <inheritdoc/>
 		[O(1), Ω(1), Θ(1)]
-		public Memory<TElement?> Slice() => Elements.AsMemory();
+		public Span<TElement?> Slice() => Elements.AsSpan();
 
 		/// <inheritdoc/>
 		[O(1), Ω(1), Θ(1)]
-		public Memory<TElement?> Slice(Int32 start) => Elements.AsMemory(start);
+		public Span<TElement?> Slice(Int32 start) => Elements.AsSpan(start);
 
 		/// <inheritdoc/>
 		[O(1), Ω(1), Θ(1)]
-		public Memory<TElement?> Slice(Int32 start, Int32 length) => Elements.AsMemory(start, length);
+		public Span<TElement?> Slice(Int32 start, Int32 length) => Elements.AsSpan(start, length);
+
+		ReadOnlySpan<TElement> IReadOnlyArray<TElement>.Slice() => Elements.AsSpan();
+
+		ReadOnlySpan<TElement> IReadOnlyArray<TElement>.Slice(Int32 start) => Elements.AsSpan(start);
+
+		ReadOnlySpan<TElement> IReadOnlyArray<TElement>.Slice(Int32 start, Int32 length) => Elements.AsSpan(start, length);
+
+		ReadOnlyMemory<TElement> ISlice<ReadOnlyMemory<TElement>>.Slice() => Elements.AsMemory();
+
+		ReadOnlyMemory<TElement> ISlice<ReadOnlyMemory<TElement>>.Slice(Int32 start) => Elements.AsMemory(start);
+
+		ReadOnlyMemory<TElement> ISlice<ReadOnlyMemory<TElement>>.Slice(Int32 start, Int32 length) => Elements.AsMemory(start, length);
+
+		Memory<TElement> ISlice<Memory<TElement>>.Slice() => Elements.AsMemory();
+
+		Memory<TElement> ISlice<Memory<TElement>>.Slice(Int32 start) => Elements.AsMemory(start);
+
+		Memory<TElement> ISlice<Memory<TElement>>.Slice(Int32 start, Int32 length) => Elements.AsMemory(start, length);
 
 		/// <inheritdoc/>
 		[O(Complexity.n), Ω(Complexity.n), Θ(Complexity.n)]
