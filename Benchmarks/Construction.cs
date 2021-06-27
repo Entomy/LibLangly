@@ -3,8 +3,6 @@ using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Jobs;
 using Collectathon.Arrays;
 using Collectathon.Lists;
-using Collectathon.Queues;
-using Collectathon.Stacks;
 using Numbersome;
 using MSFT = System.Collections.Generic;
 
@@ -67,13 +65,7 @@ namespace Langly {
 		public void Collectathon_DynamicArray() => _ = new DynamicArray<Int32>(32);
 
 		[Benchmark]
-		public void Collectathon_Queue() => _ = new Queue<Int32>();
-
-		[Benchmark]
 		public void Collectathon_SinglyLinkedList() => _ = new SinglyLinkedList<Int32>();
-
-		[Benchmark]
-		public void Collectathon_Stack() => _ = new Stack<Int32>();
 
 		[Benchmark]
 		public void NetFabric_DoublyLinkedList() => _ = new NetFabric.DoublyLinkedList<Int32>();

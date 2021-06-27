@@ -3,8 +3,6 @@ using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Jobs;
 using Collectathon.Arrays;
 using Collectathon.Lists;
-using Collectathon.Queues;
-using Collectathon.Stacks;
 using Numbersome;
 using MSFT = System.Collections.Generic;
 
@@ -40,11 +38,7 @@ namespace Langly {
 
 		private static DynamicArray<Int32> collectathon_dynamicarray = new DynamicArray<Int32>(array);
 
-		private static Queue<Int32> collectathon_queue = new Queue<Int32>(array);
-
 		private static SinglyLinkedList<Int32> collectathon_singlylinkedlist = new SinglyLinkedList<Int32>(array);
-
-		private static Stack<Int32> collectathon_stack = new Stack<Int32>(array);
 
 		private static MSFT.HashSet<Int32> msft_hashset = new MSFT.HashSet<Int32>(array);
 
@@ -125,13 +119,7 @@ namespace Langly {
 		public void Collectathon_DynamicArray() => collectathon_dynamicarray.Contains(Search);
 
 		[Benchmark]
-		public void Collectathon_Queue() => collectathon_queue.Contains(Search);
-
-		[Benchmark]
 		public void Collectathon_SinglyLinkedList() => collectathon_singlylinkedlist.Contains(Search);
-
-		[Benchmark]
-		public void Collectathon_Stack() => collectathon_stack.Contains(Search);
 
 		[Benchmark]
 		public void MSFT_HashSet() => msft_hashset.Contains(Search);
