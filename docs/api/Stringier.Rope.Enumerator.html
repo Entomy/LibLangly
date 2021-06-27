@@ -78,13 +78,17 @@
   <div class="markdown level0 conceptual"></div>
   <div classs="implements">
     <h5>Implements</h5>
-    <div><span class="xref">IEnumerator</span>&lt;<span class="xref">Char</span>&gt;</div>
+    <div><a class="xref" href="System.Traits.Concepts.IEnumerator-1.html">IEnumerator</a>&lt;<span class="xref">Char</span>&gt;</div>
+    <div><span class="xref">Collections.Generic.IEnumerator</span>&lt;<span class="xref">Char</span>&gt;</div>
+    <div><a class="xref" href="System.Traits.Concepts.ISequence-2.html">ISequence</a>&lt;<span class="xref">Char</span>, <a class="xref" href="System.Traits.Concepts.IEnumerator-1.html">IEnumerator</a>&lt;<span class="xref">Char</span>&gt;&gt;</div>
+    <div><a class="xref" href="System.Traits.ICount.html">ICount</a></div>
+    <div><span class="xref">IEnumerable</span>&lt;<span class="xref">Char</span>&gt;</div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Stringier.html">Stringier</a></h6>
   <h6><strong>Assembly</strong>: Stringier.Rope.dll</h6>
   <h5 id="Stringier_Rope_Enumerator_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public struct Enumerator : IEnumerator&lt;Char&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public struct Enumerator : IEnumerator&lt;Char&gt;, Collections.Generic.IEnumerator&lt;Char&gt;, ISequence&lt;Char, IEnumerator&lt;Char&gt;&gt;, ICount, IEnumerable&lt;Char&gt;</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -93,7 +97,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Enumerator__ctor_Stringier_Rope_.md&amp;value=---%0Auid%3A%20Stringier.Rope.Enumerator.%23ctor(Stringier.Rope)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.Enumerator.cs/#L34">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.Enumerator.cs/#L35">View Source</a>
   </span>
   <a id="Stringier_Rope_Enumerator__ctor_" data-uid="Stringier.Rope.Enumerator.#ctor*"></a>
   <h4 id="Stringier_Rope_Enumerator__ctor_Stringier_Rope_" data-uid="Stringier.Rope.Enumerator.#ctor(Stringier.Rope)">Enumerator(Rope)</h4>
@@ -129,7 +133,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Enumerator_Count.md&amp;value=---%0Auid%3A%20Stringier.Rope.Enumerator.Count%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.Enumerator.cs/#L49">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.Enumerator.cs/#L50">View Source</a>
   </span>
   <a id="Stringier_Rope_Enumerator_Count_" data-uid="Stringier.Rope.Enumerator.Count*"></a>
   <h4 id="Stringier_Rope_Enumerator_Count" data-uid="Stringier.Rope.Enumerator.Count">Count</h4>
@@ -159,7 +163,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Enumerator_Current.md&amp;value=---%0Auid%3A%20Stringier.Rope.Enumerator.Current%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.Enumerator.cs/#L41">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.Enumerator.cs/#L42">View Source</a>
   </span>
   <a id="Stringier_Rope_Enumerator_Current_" data-uid="Stringier.Rope.Enumerator.Current*"></a>
   <h4 id="Stringier_Rope_Enumerator_Current" data-uid="Stringier.Rope.Enumerator.Current">Current</h4>
@@ -191,7 +195,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Enumerator_Dispose.md&amp;value=---%0Auid%3A%20Stringier.Rope.Enumerator.Dispose%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.Enumerator.cs/#L52">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.Enumerator.cs/#L53">View Source</a>
   </span>
   <a id="Stringier_Rope_Enumerator_Dispose_" data-uid="Stringier.Rope.Enumerator.Dispose*"></a>
   <h4 id="Stringier_Rope_Enumerator_Dispose" data-uid="Stringier.Rope.Enumerator.Dispose">Dispose()</h4>
@@ -206,11 +210,12 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Enumerator_GetEnumerator.md&amp;value=---%0Auid%3A%20Stringier.Rope.Enumerator.GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.Enumerator.cs/#L56">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.Enumerator.cs/#L57">View Source</a>
   </span>
   <a id="Stringier_Rope_Enumerator_GetEnumerator_" data-uid="Stringier.Rope.Enumerator.GetEnumerator*"></a>
   <h4 id="Stringier_Rope_Enumerator_GetEnumerator" data-uid="Stringier.Rope.Enumerator.GetEnumerator">GetEnumerator()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns an enumerator that iterates through the sequence.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -226,8 +231,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IEnumerator</span>&lt;<span class="xref">Char</span>&gt;</td>
-        <td></td>
+        <td><a class="xref" href="System.Traits.Concepts.IEnumerator-1.html">IEnumerator</a>&lt;<span class="xref">Char</span>&gt;</td>
+        <td><p>An enumerator that can be used to iterate through the collection.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -236,7 +242,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Enumerator_MoveNext.md&amp;value=---%0Auid%3A%20Stringier.Rope.Enumerator.MoveNext%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.Enumerator.cs/#L71">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.Enumerator.cs/#L72">View Source</a>
   </span>
   <a id="Stringier_Rope_Enumerator_MoveNext_" data-uid="Stringier.Rope.Enumerator.MoveNext*"></a>
   <h4 id="Stringier_Rope_Enumerator_MoveNext" data-uid="Stringier.Rope.Enumerator.MoveNext">MoveNext()</h4>
@@ -266,7 +272,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Enumerator_Reset.md&amp;value=---%0Auid%3A%20Stringier.Rope.Enumerator.Reset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.Enumerator.cs/#L108">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.Enumerator.cs/#L109">View Source</a>
   </span>
   <a id="Stringier_Rope_Enumerator_Reset_" data-uid="Stringier.Rope.Enumerator.Reset*"></a>
   <h4 id="Stringier_Rope_Enumerator_Reset" data-uid="Stringier.Rope.Enumerator.Reset">Reset()</h4>
@@ -281,7 +287,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Enumerator_ToString.md&amp;value=---%0Auid%3A%20Stringier.Rope.Enumerator.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.Enumerator.cs/#L114">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.Enumerator.cs/#L115">View Source</a>
   </span>
   <a id="Stringier_Rope_Enumerator_ToString_" data-uid="Stringier.Rope.Enumerator.ToString*"></a>
   <h4 id="Stringier_Rope_Enumerator_ToString" data-uid="Stringier.Rope.Enumerator.ToString">ToString()</h4>
@@ -311,7 +317,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Enumerator_ToString_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Rope.Enumerator.ToString(Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.Enumerator.cs/#L118">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.Enumerator.cs/#L119">View Source</a>
   </span>
   <a id="Stringier_Rope_Enumerator_ToString_" data-uid="Stringier.Rope.Enumerator.ToString*"></a>
   <h4 id="Stringier_Rope_Enumerator_ToString_Int32_" data-uid="Stringier.Rope.Enumerator.ToString(Int32)">ToString(Int32)</h4>
@@ -355,7 +361,19 @@
   </table>
   <h3 id="implements">Implements</h3>
   <div>
-      <span class="xref">IEnumerator&lt;&gt;</span>
+      <a class="xref" href="System.Traits.Concepts.IEnumerator-1.html">IEnumerator&lt;TElement&gt;</a>
+  </div>
+  <div>
+      <span class="xref">Collections.Generic.IEnumerator&lt;&gt;</span>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.Concepts.ISequence-2.html">ISequence&lt;TElement, TEnumerator&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.ICount.html">ICount</a>
+  </div>
+  <div>
+      <span class="xref">IEnumerable&lt;&gt;</span>
   </div>
 </article>
           </div>
@@ -368,7 +386,7 @@
                     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Enumerator.md&amp;value=---%0Auid%3A%20Stringier.Rope.Enumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.Enumerator.cs/#L11" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.Enumerator.cs/#L12" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
