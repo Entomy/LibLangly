@@ -2,6 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 using System.Traits;
+using System.Traits.Concepts;
 
 namespace Numbersome {
 	public sealed partial class Counter<TElement> {

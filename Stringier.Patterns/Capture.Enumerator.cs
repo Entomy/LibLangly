@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 using System.Traits;
+using System.Traits.Concepts;
 
 namespace Stringier.Patterns {
 	public partial class Capture {

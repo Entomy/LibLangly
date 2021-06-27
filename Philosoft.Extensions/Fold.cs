@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Traits;
+using System.Traits.Concepts;
 
 namespace System {
 	public static partial class TraitExtensions {

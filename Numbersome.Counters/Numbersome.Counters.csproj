@@ -9,6 +9,7 @@
 		<PackageTags>counter, counters, counting</PackageTags>
 		<AssemblyName>Numbersome.Counters</AssemblyName>
 		<PackageIcon>Logo.png</PackageIcon>
+		<UserSecretsId>69948a84-7e57-4c27-8ca0-2e2254be64ff</UserSecretsId>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -17,7 +18,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\Collectathon.Traits\Collectathon.Traits.csproj" />
+	  <PackageReference Include="System.ValueTuple" Version="4.5.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Philosoft.Concepts\Philosoft.Concepts.csproj" />
 	</ItemGroup>
 
 </Project>

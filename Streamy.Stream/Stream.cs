@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Traits;
+using System.Traits.Concepts;
 using Streamy.Bases;
 using Streamy.Buffers;
 

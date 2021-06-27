@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Traits;
+using System.Traits.Concepts;
 
 namespace Stringier {
 	public partial class Rope {
@@ -22,7 +23,7 @@ namespace Stringier {
 			public MemoryNode(ReadOnlyMemory<Char> memory, [AllowNull] Node next, [AllowNull] Node previous) : base(next, previous) => Memory = memory;
 
 			/// <inheritdoc/>
-			public override Char this[Int32 index] => Memory.Span[(Int32)index];
+			public override Char this[Int32 index] => Memory.Span[index];
 
 #if NETCOREAPP3_0_OR_GREATER
 			/// <inheritdoc/>

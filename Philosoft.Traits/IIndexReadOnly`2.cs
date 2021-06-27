@@ -6,7 +6,7 @@ namespace System.Traits {
 	/// </summary>
 	/// <typeparam name="TIndex">The type used to index the collection.</typeparam>
 	/// <typeparam name="TElement">The type of the elements in the collection.</typeparam>
-	public interface IIndexReadOnly<in TIndex, out TElement> : ICount {
+	public interface IIndexReadOnly<in TIndex, out TElement> {
 		/// <summary>
 		/// Gets the element at the specified index.
 		/// </summary>

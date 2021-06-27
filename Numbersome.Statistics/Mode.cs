@@ -1,5 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using System.Traits;
+using System.Traits.Concepts;
 
 namespace Numbersome {
 	public static partial class StatisticsExtensions {

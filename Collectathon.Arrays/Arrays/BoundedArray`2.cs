@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Traits;
+using System.Traits.Concepts;
 using Collectathon.Enumerators;
 
 namespace Collectathon.Arrays {
@@ -12,10 +13,10 @@ namespace Collectathon.Arrays {
 	/// <typeparam name="TElement">The type of the elements in the array.</typeparam>
 	[DebuggerDisplay("{ToString(5),nq}")]
 	public sealed class BoundedArray<TIndex, TElement> :
-		ICapacity,
+		IArray<TIndex, TElement>,
 		IClear,
-		IIndex<TIndex, TElement>,
 		IInsert<TIndex, TElement>,
+		IList<TIndex, TElement>,
 		ISequence<(TIndex Index, TElement Element), ArrayEnumerator<(TIndex Index, TElement Element)>> {
 		/// <summary>
 		/// The backing array of this <see cref="DynamicArray{TIndex, TElement}"/>.
@@ -32,15 +33,6 @@ namespace Collectathon.Arrays {
 		/// </summary>
 		/// <param name="capacity">The maximum capacity.</param>
 		public BoundedArray(Int32 capacity) => Entries = new (TIndex, TElement?)[capacity];
-
-		/// <summary>
-		/// Conversion constructor.
-		/// </summary>
-		/// <param name="entries">The <see cref="Array"/> of (<typeparamref name="TIndex"/>, <typeparamref name="TElement"/>) to reuse.</param>
-		public BoundedArray([DisallowNull] params (TIndex, TElement?)[] entries) {
-			Entries = entries;
-			Count = entries.Length;
-		}
 
 		/// <inheritdoc/>
 		public Int32 Capacity => Entries.Length;
@@ -70,15 +62,11 @@ namespace Collectathon.Arrays {
 			}
 		}
 
-		/// <summary>
-		/// Converts the <paramref name="array"/> to a <see cref="BoundedArray{TIndex, TElement}"/>.
-		/// </summary>
-		/// <param name="array">The <see cref="Array"/> to convert.</param>
-		[return: MaybeNull, NotNullIfNotNull("array")]
-		public static implicit operator BoundedArray<TIndex, TElement?>([AllowNull] (TIndex, TElement?)[] array) => array is not null ? new(array) : null;
-
 		/// <inheritdoc/>
 		public void Clear() => Count = 0;
+
+		/// <inheritdoc/>
+		public Boolean Contains([AllowNull] TElement element) => throw new NotImplementedException();
 
 		/// <inheritdoc/>
 		public ArrayEnumerator<(TIndex Index, TElement? Element)> GetEnumerator() => new ArrayEnumerator<(TIndex Index, TElement Element)>(Entries, Count);
@@ -104,6 +92,9 @@ namespace Collectathon.Arrays {
 			}
 			Add(index, element);
 		}
+
+		/// <inheritdoc/>
+		public void Replace([AllowNull] TElement search, [AllowNull] TElement replace) => throw new NotImplementedException();
 
 		/// <inheritdoc/>
 		[return: NotNull]
