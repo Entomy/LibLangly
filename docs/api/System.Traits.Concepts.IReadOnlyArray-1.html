@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Interface ISlice&lt;TResult&gt;
+    <title>Interface IReadOnlyArray&lt;TElement&gt;
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Interface ISlice&lt;TResult&gt;
+    <meta name="title" content="Interface IReadOnlyArray&lt;TElement&gt;
    ">
     <meta name="generator" content="docfx 2.56.7.0">
     
@@ -68,19 +68,34 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="System.Traits.ISlice`1">
+            <article class="content wrap" id="_content" data-uid="System.Traits.Concepts.IReadOnlyArray`1">
   
   
-  <h1 id="System_Traits_ISlice_1" data-uid="System.Traits.ISlice`1" class="text-break">Interface ISlice&lt;TResult&gt;
+  <h1 id="System_Traits_Concepts_IReadOnlyArray_1" data-uid="System.Traits.Concepts.IReadOnlyArray`1" class="text-break">Interface IReadOnlyArray&lt;TElement&gt;
   </h1>
-  <div class="markdown level0 summary"><p>Indicates the collection is sliceable.</p>
+  <div class="markdown level0 summary"><p>Indicates the type can be used as a read-only array.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="System.Traits.html">System.Traits</a></h6>
-  <h6><strong>Assembly</strong>: Philosoft.Traits.dll</h6>
-  <h5 id="System_Traits_ISlice_1_syntax">Syntax</h5>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="System.Traits.ICapacity.html#System_Traits_ICapacity_Capacity">ICapacity.Capacity</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Traits.IContains-1.html#System_Traits_IContains_1_Contains__0_">IContains&lt;TElement&gt;.Contains(TElement)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Traits.ICount.html#System_Traits_ICount_Count">ICount.Count</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Traits.IIndexReadOnly-2.html#System_Traits_IIndexReadOnly_2_Item__0_">IIndexReadOnly&lt;Int32, TElement&gt;.Item[Int32]</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="System.Traits.Concepts.html">System.Traits.Concepts</a></h6>
+  <h6><strong>Assembly</strong>: Philosoft.Concepts.dll</h6>
+  <h5 id="System_Traits_Concepts_IReadOnlyArray_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface ISlice&lt;out TResult&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IReadOnlyArray&lt;TElement&gt; : IReadOnlyArray&lt;Int32, TElement&gt;, ICapacity, IContains&lt;TElement&gt;, ICount, IIndexReadOnly&lt;Int32, TElement&gt;, ISlice&lt;ReadOnlyMemory&lt;TElement&gt;&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -92,8 +107,8 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="parametername">TResult</span></td>
-        <td><p>The resulting type; often itself.</p>
+        <td><span class="parametername">TElement</span></td>
+        <td><p>The type of the elements.</p>
 </td>
       </tr>
     </tbody>
@@ -102,19 +117,19 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_ISlice_1_Slice.md&amp;value=---%0Auid%3A%20System.Traits.ISlice%601.Slice%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Concepts_IReadOnlyArray_1_Slice.md&amp;value=---%0Auid%3A%20System.Traits.Concepts.IReadOnlyArray%601.Slice%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Traits/ISlice`1.cs/#L23">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Concepts/IReadOnlyArray`1.cs/#L11">View Source</a>
   </span>
-  <a id="System_Traits_ISlice_1_Slice_" data-uid="System.Traits.ISlice`1.Slice*"></a>
-  <h4 id="System_Traits_ISlice_1_Slice" data-uid="System.Traits.ISlice`1.Slice">Slice()</h4>
+  <a id="System_Traits_Concepts_IReadOnlyArray_1_Slice_" data-uid="System.Traits.Concepts.IReadOnlyArray`1.Slice*"></a>
+  <h4 id="System_Traits_Concepts_IReadOnlyArray_1_Slice" data-uid="System.Traits.Concepts.IReadOnlyArray`1.Slice">Slice()</h4>
   <div class="markdown level1 summary"><p>Forms a slice out of the collection.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">TResult Slice()</code></pre>
+    <pre><code class="lang-csharp hljs">ReadOnlySpan&lt;TElement&gt; Slice()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -126,7 +141,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">TResult</span></td>
+        <td><span class="xref">ReadOnlySpan</span>&lt;TElement&gt;</td>
         <td><p>A slice that consists of all elements of the current collection.</p>
 </td>
       </tr>
@@ -134,19 +149,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_ISlice_1_Slice_Int32_.md&amp;value=---%0Auid%3A%20System.Traits.ISlice%601.Slice(Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Concepts_IReadOnlyArray_1_Slice_Int32_.md&amp;value=---%0Auid%3A%20System.Traits.Concepts.IReadOnlyArray%601.Slice(Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Traits/ISlice`1.cs/#L31">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Concepts/IReadOnlyArray`1.cs/#L18">View Source</a>
   </span>
-  <a id="System_Traits_ISlice_1_Slice_" data-uid="System.Traits.ISlice`1.Slice*"></a>
-  <h4 id="System_Traits_ISlice_1_Slice_Int32_" data-uid="System.Traits.ISlice`1.Slice(Int32)">Slice(Int32)</h4>
+  <a id="System_Traits_Concepts_IReadOnlyArray_1_Slice_" data-uid="System.Traits.Concepts.IReadOnlyArray`1.Slice*"></a>
+  <h4 id="System_Traits_Concepts_IReadOnlyArray_1_Slice_Int32_" data-uid="System.Traits.Concepts.IReadOnlyArray`1.Slice(Int32)">Slice(Int32)</h4>
   <div class="markdown level1 summary"><p>Forms a slice out of the collection that begins at a specified index.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">TResult Slice(Int32 start)</code></pre>
+    <pre><code class="lang-csharp hljs">ReadOnlySpan&lt;TElement&gt; Slice(Int32 start)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -176,7 +191,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">TResult</span></td>
+        <td><span class="xref">ReadOnlySpan</span>&lt;TElement&gt;</td>
         <td><p>A slice that consists of all elements of the current collection from <code data-dev-comment-type="paramref" class="paramref">start</code> to the end of the collection.</p>
 </td>
       </tr>
@@ -184,19 +199,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_ISlice_1_Slice_Int32_Int32_.md&amp;value=---%0Auid%3A%20System.Traits.ISlice%601.Slice(Int32%2CInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Concepts_IReadOnlyArray_1_Slice_Int32_Int32_.md&amp;value=---%0Auid%3A%20System.Traits.Concepts.IReadOnlyArray%601.Slice(Int32%2CInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Traits/ISlice`1.cs/#L40">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Concepts/IReadOnlyArray`1.cs/#L26">View Source</a>
   </span>
-  <a id="System_Traits_ISlice_1_Slice_" data-uid="System.Traits.ISlice`1.Slice*"></a>
-  <h4 id="System_Traits_ISlice_1_Slice_Int32_Int32_" data-uid="System.Traits.ISlice`1.Slice(Int32,Int32)">Slice(Int32, Int32)</h4>
+  <a id="System_Traits_Concepts_IReadOnlyArray_1_Slice_" data-uid="System.Traits.Concepts.IReadOnlyArray`1.Slice*"></a>
+  <h4 id="System_Traits_Concepts_IReadOnlyArray_1_Slice_Int32_Int32_" data-uid="System.Traits.Concepts.IReadOnlyArray`1.Slice(Int32,Int32)">Slice(Int32, Int32)</h4>
   <div class="markdown level1 summary"><p>Forms a slice out of the current span starting at a specified index for a specified length.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">TResult Slice(Int32 start, Int32 length)</code></pre>
+    <pre><code class="lang-csharp hljs">ReadOnlySpan&lt;TElement&gt; Slice(Int32 start, Int32 length)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -232,7 +247,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">TResult</span></td>
+        <td><span class="xref">ReadOnlySpan</span>&lt;TElement&gt;</td>
         <td><p>A slice that consists of <code data-dev-comment-type="paramref" class="paramref">length</code> elements from the current collection starting at <code data-dev-comment-type="paramref" class="paramref">start</code>.</p>
 </td>
       </tr>
@@ -246,10 +261,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_ISlice_1.md&amp;value=---%0Auid%3A%20System.Traits.ISlice%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=System_Traits_Concepts_IReadOnlyArray_1.md&amp;value=---%0Auid%3A%20System.Traits.Concepts.IReadOnlyArray%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Traits/ISlice`1.cs/#L8" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Philosoft.Concepts/IReadOnlyArray`1.cs/#L6" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

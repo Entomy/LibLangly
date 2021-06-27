@@ -91,7 +91,7 @@
     <div><span class="xref">IEquatable</span>&lt;<span class="xref">Char</span>[]&gt;</div>
     <div><span class="xref">IEquatable</span>&lt;<span class="xref">Memory</span>&lt;<span class="xref">Char</span>&gt;&gt;</div>
     <div><span class="xref">IEquatable</span>&lt;<span class="xref">ReadOnlyMemory</span>&lt;<span class="xref">Char</span>&gt;&gt;</div>
-    <div><a class="xref" href="System.Traits.IIndex-2.html">IIndex</a>&lt;<span class="xref">Int32</span>, <span class="xref">Char</span>&gt;</div>
+    <div><span class="xref">IIndex</span>&lt;<span class="xref">Int32</span>, <span class="xref">Char</span>&gt;</div>
     <div><span class="xref">IInsertMemory</span>&lt;<span class="xref">Int32</span>, <span class="xref">Char</span>&gt;</div>
     <div><span class="xref">IInsert</span>&lt;<span class="xref">Int32</span>, <span class="xref">String</span>&gt;</div>
     <div><span class="xref">IPostpendMemory</span>&lt;<span class="xref">Char</span>&gt;</div>
@@ -100,13 +100,15 @@
     <div><span class="xref">IPrepend</span>&lt;<span class="xref">String</span>&gt;</div>
     <div><span class="xref">IRemove</span>&lt;<span class="xref">Char</span>&gt;</div>
     <div><span class="xref">IReplace</span>&lt;<span class="xref">Char</span>&gt;</div>
-    <div><span class="xref">ISequence</span>&lt;<span class="xref">Char</span>, <a class="xref" href="Stringier.Rope.Enumerator.html">Rope.Enumerator</a>&gt;</div>
+    <div><a class="xref" href="System.Traits.Concepts.ISequence-2.html">ISequence</a>&lt;<span class="xref">Char</span>, <a class="xref" href="Stringier.Rope.Enumerator.html">Rope.Enumerator</a>&gt;</div>
+    <div><a class="xref" href="System.Traits.ICount.html">ICount</a></div>
+    <div><span class="xref">IEnumerable</span>&lt;<span class="xref">Char</span>&gt;</div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Stringier.html">Stringier</a></h6>
   <h6><strong>Assembly</strong>: Stringier.Rope.dll</h6>
   <h5 id="Stringier_Rope_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class Rope : IAddMemory&lt;Char&gt;, IAdd&lt;String&gt;, IClear, IEquatable&lt;Rope&gt;, IEquatable&lt;Char&gt;, IEquatable&lt;String&gt;, IEquatable&lt;Char[]&gt;, IEquatable&lt;Memory&lt;Char&gt;&gt;, IEquatable&lt;ReadOnlyMemory&lt;Char&gt;&gt;, IIndex&lt;Int32, Char&gt;, IInsertMemory&lt;Int32, Char&gt;, IInsert&lt;Int32, String&gt;, IPostpendMemory&lt;Char&gt;, IPostpend&lt;String&gt;, IPrependMemory&lt;Char&gt;, IPrepend&lt;String&gt;, IRemove&lt;Char&gt;, IReplace&lt;Char&gt;, ISequence&lt;Char, Rope.Enumerator&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class Rope : IAddMemory&lt;Char&gt;, IAdd&lt;String&gt;, IClear, IEquatable&lt;Rope&gt;, IEquatable&lt;Char&gt;, IEquatable&lt;String&gt;, IEquatable&lt;Char[]&gt;, IEquatable&lt;Memory&lt;Char&gt;&gt;, IEquatable&lt;ReadOnlyMemory&lt;Char&gt;&gt;, IIndex&lt;Int32, Char&gt;, IInsertMemory&lt;Int32, Char&gt;, IInsert&lt;Int32, String&gt;, IPostpendMemory&lt;Char&gt;, IPostpend&lt;String&gt;, IPrependMemory&lt;Char&gt;, IPrepend&lt;String&gt;, IRemove&lt;Char&gt;, IReplace&lt;Char&gt;, ISequence&lt;Char, Rope.Enumerator&gt;, ICount, IEnumerable&lt;Char&gt;</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -115,7 +117,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope__ctor.md&amp;value=---%0Auid%3A%20Stringier.Rope.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L42">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L43">View Source</a>
   </span>
   <a id="Stringier_Rope__ctor_" data-uid="Stringier.Rope.#ctor*"></a>
   <h4 id="Stringier_Rope__ctor" data-uid="Stringier.Rope.#ctor">Rope()</h4>
@@ -131,7 +133,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope__ctor_Char_.md&amp;value=---%0Auid%3A%20Stringier.Rope.%23ctor(Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L48">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L49">View Source</a>
   </span>
   <a id="Stringier_Rope__ctor_" data-uid="Stringier.Rope.#ctor*"></a>
   <h4 id="Stringier_Rope__ctor_Char_" data-uid="Stringier.Rope.#ctor(Char)">Rope(Char)</h4>
@@ -165,7 +167,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope__ctor_Char___.md&amp;value=---%0Auid%3A%20Stringier.Rope.%23ctor(Char%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L60">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L61">View Source</a>
   </span>
   <a id="Stringier_Rope__ctor_" data-uid="Stringier.Rope.#ctor*"></a>
   <h4 id="Stringier_Rope__ctor_Char___" data-uid="Stringier.Rope.#ctor(Char[])">Rope(Char[])</h4>
@@ -199,7 +201,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope__ctor_Memory_Char__.md&amp;value=---%0Auid%3A%20Stringier.Rope.%23ctor(Memory%7BChar%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L66">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L67">View Source</a>
   </span>
   <a id="Stringier_Rope__ctor_" data-uid="Stringier.Rope.#ctor*"></a>
   <h4 id="Stringier_Rope__ctor_Memory_Char__" data-uid="Stringier.Rope.#ctor(Memory{Char})">Rope(Memory&lt;Char&gt;)</h4>
@@ -233,7 +235,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope__ctor_ReadOnlyMemory_Char__.md&amp;value=---%0Auid%3A%20Stringier.Rope.%23ctor(ReadOnlyMemory%7BChar%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L72">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L73">View Source</a>
   </span>
   <a id="Stringier_Rope__ctor_" data-uid="Stringier.Rope.#ctor*"></a>
   <h4 id="Stringier_Rope__ctor_ReadOnlyMemory_Char__" data-uid="Stringier.Rope.#ctor(ReadOnlyMemory{Char})">Rope(ReadOnlyMemory&lt;Char&gt;)</h4>
@@ -267,7 +269,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope__ctor_String_.md&amp;value=---%0Auid%3A%20Stringier.Rope.%23ctor(String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L54">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L55">View Source</a>
   </span>
   <a id="Stringier_Rope__ctor_" data-uid="Stringier.Rope.#ctor*"></a>
   <h4 id="Stringier_Rope__ctor_String_" data-uid="Stringier.Rope.#ctor(String)">Rope(String)</h4>
@@ -303,7 +305,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Count.md&amp;value=---%0Auid%3A%20Stringier.Rope.Count%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L77">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L78">View Source</a>
   </span>
   <a id="Stringier_Rope_Count_" data-uid="Stringier.Rope.Count*"></a>
   <h4 id="Stringier_Rope_Count" data-uid="Stringier.Rope.Count">Count</h4>
@@ -334,7 +336,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Item_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Rope.Item(Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L91">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L92">View Source</a>
   </span>
   <a id="Stringier_Rope_Item_" data-uid="Stringier.Rope.Item*"></a>
   <h4 id="Stringier_Rope_Item_Int32_" data-uid="Stringier.Rope.Item(Int32)">Item[Int32]</h4>
@@ -386,7 +388,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Add_ArraySegment_Char__.md&amp;value=---%0Auid%3A%20Stringier.Rope.Add(ArraySegment%7BChar%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L528">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L529">View Source</a>
   </span>
   <a id="Stringier_Rope_Add_" data-uid="Stringier.Rope.Add*"></a>
   <h4 id="Stringier_Rope_Add_ArraySegment_Char__" data-uid="Stringier.Rope.Add(ArraySegment{Char})">Add(ArraySegment&lt;Char&gt;)</h4>
@@ -418,7 +420,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Add_Char_.md&amp;value=---%0Auid%3A%20Stringier.Rope.Add(Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L520">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L521">View Source</a>
   </span>
   <a id="Stringier_Rope_Add_" data-uid="Stringier.Rope.Add*"></a>
   <h4 id="Stringier_Rope_Add_Char_" data-uid="Stringier.Rope.Add(Char)">Add(Char)</h4>
@@ -450,7 +452,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Add_Char___.md&amp;value=---%0Auid%3A%20Stringier.Rope.Add(Char%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L524">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L525">View Source</a>
   </span>
   <a id="Stringier_Rope_Add_" data-uid="Stringier.Rope.Add*"></a>
   <h4 id="Stringier_Rope_Add_Char___" data-uid="Stringier.Rope.Add(Char[])">Add(Char[])</h4>
@@ -482,7 +484,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Add_Memory_Char__.md&amp;value=---%0Auid%3A%20Stringier.Rope.Add(Memory%7BChar%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L532">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L533">View Source</a>
   </span>
   <a id="Stringier_Rope_Add_" data-uid="Stringier.Rope.Add*"></a>
   <h4 id="Stringier_Rope_Add_Memory_Char__" data-uid="Stringier.Rope.Add(Memory{Char})">Add(Memory&lt;Char&gt;)</h4>
@@ -514,7 +516,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Add_ReadOnlyMemory_Char__.md&amp;value=---%0Auid%3A%20Stringier.Rope.Add(ReadOnlyMemory%7BChar%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L536">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L537">View Source</a>
   </span>
   <a id="Stringier_Rope_Add_" data-uid="Stringier.Rope.Add*"></a>
   <h4 id="Stringier_Rope_Add_ReadOnlyMemory_Char__" data-uid="Stringier.Rope.Add(ReadOnlyMemory{Char})">Add(ReadOnlyMemory&lt;Char&gt;)</h4>
@@ -546,7 +548,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Add_String_.md&amp;value=---%0Auid%3A%20Stringier.Rope.Add(String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L540">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L541">View Source</a>
   </span>
   <a id="Stringier_Rope_Add_" data-uid="Stringier.Rope.Add*"></a>
   <h4 id="Stringier_Rope_Add_String_" data-uid="Stringier.Rope.Add(String)">Add(String)</h4>
@@ -578,7 +580,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Clear.md&amp;value=---%0Auid%3A%20Stringier.Rope.Clear%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L544">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L545">View Source</a>
   </span>
   <a id="Stringier_Rope_Clear_" data-uid="Stringier.Rope.Clear*"></a>
   <h4 id="Stringier_Rope_Clear" data-uid="Stringier.Rope.Clear">Clear()</h4>
@@ -593,7 +595,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Equals_Char_.md&amp;value=---%0Auid%3A%20Stringier.Rope.Equals(Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L606">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L607">View Source</a>
   </span>
   <a id="Stringier_Rope_Equals_" data-uid="Stringier.Rope.Equals*"></a>
   <h4 id="Stringier_Rope_Equals_Char_" data-uid="Stringier.Rope.Equals(Char)">Equals(Char)</h4>
@@ -640,7 +642,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Equals_Char__Int32_.md&amp;value=---%0Auid%3A%20Stringier.Rope.Equals(Char*%2CInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L764">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L765">View Source</a>
   </span>
   <a id="Stringier_Rope_Equals_" data-uid="Stringier.Rope.Equals*"></a>
   <h4 id="Stringier_Rope_Equals_Char__Int32_" data-uid="Stringier.Rope.Equals(Char*,Int32)">Equals(Char*, Int32)</h4>
@@ -696,7 +698,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Equals_Char__Int32_Stringier_Case_.md&amp;value=---%0Auid%3A%20Stringier.Rope.Equals(Char*%2CInt32%2CStringier.Case)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L775">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L776">View Source</a>
   </span>
   <a id="Stringier_Rope_Equals_" data-uid="Stringier.Rope.Equals*"></a>
   <h4 id="Stringier_Rope_Equals_Char__Int32_Stringier_Case_" data-uid="Stringier.Rope.Equals(Char*,Int32,Stringier.Case)">Equals(Char*, Int32, Case)</h4>
@@ -758,7 +760,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Equals_Char_Stringier_Case_.md&amp;value=---%0Auid%3A%20Stringier.Rope.Equals(Char%2CStringier.Case)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L615">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L616">View Source</a>
   </span>
   <a id="Stringier_Rope_Equals_" data-uid="Stringier.Rope.Equals*"></a>
   <h4 id="Stringier_Rope_Equals_Char_Stringier_Case_" data-uid="Stringier.Rope.Equals(Char,Stringier.Case)">Equals(Char, Case)</h4>
@@ -814,7 +816,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Equals_Char___.md&amp;value=---%0Auid%3A%20Stringier.Rope.Equals(Char%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L652">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L653">View Source</a>
   </span>
   <a id="Stringier_Rope_Equals_" data-uid="Stringier.Rope.Equals*"></a>
   <h4 id="Stringier_Rope_Equals_Char___" data-uid="Stringier.Rope.Equals(Char[])">Equals(Char[])</h4>
@@ -864,7 +866,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Equals_Char___Stringier_Case_.md&amp;value=---%0Auid%3A%20Stringier.Rope.Equals(Char%5B%5D%2CStringier.Case)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L661">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L662">View Source</a>
   </span>
   <a id="Stringier_Rope_Equals_" data-uid="Stringier.Rope.Equals*"></a>
   <h4 id="Stringier_Rope_Equals_Char___Stringier_Case_" data-uid="Stringier.Rope.Equals(Char[],Stringier.Case)">Equals(Char[], Case)</h4>
@@ -920,7 +922,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Equals_Memory_Char__.md&amp;value=---%0Auid%3A%20Stringier.Rope.Equals(Memory%7BChar%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L668">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L669">View Source</a>
   </span>
   <a id="Stringier_Rope_Equals_" data-uid="Stringier.Rope.Equals*"></a>
   <h4 id="Stringier_Rope_Equals_Memory_Char__" data-uid="Stringier.Rope.Equals(Memory{Char})">Equals(Memory&lt;Char&gt;)</h4>
@@ -970,7 +972,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Equals_Memory_Char__Stringier_Case_.md&amp;value=---%0Auid%3A%20Stringier.Rope.Equals(Memory%7BChar%7D%2CStringier.Case)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L677">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L678">View Source</a>
   </span>
   <a id="Stringier_Rope_Equals_" data-uid="Stringier.Rope.Equals*"></a>
   <h4 id="Stringier_Rope_Equals_Memory_Char__Stringier_Case_" data-uid="Stringier.Rope.Equals(Memory{Char},Stringier.Case)">Equals(Memory&lt;Char&gt;, Case)</h4>
@@ -1026,7 +1028,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Equals_Object_.md&amp;value=---%0Auid%3A%20Stringier.Rope.Equals(Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L552">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L553">View Source</a>
   </span>
   <a id="Stringier_Rope_Equals_" data-uid="Stringier.Rope.Equals*"></a>
   <h4 id="Stringier_Rope_Equals_Object_" data-uid="Stringier.Rope.Equals(Object)">Equals(Object)</h4>
@@ -1073,7 +1075,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Equals_Object_Stringier_Case_.md&amp;value=---%0Auid%3A%20Stringier.Rope.Equals(Object%2CStringier.Case)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L576">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L577">View Source</a>
   </span>
   <a id="Stringier_Rope_Equals_" data-uid="Stringier.Rope.Equals*"></a>
   <h4 id="Stringier_Rope_Equals_Object_Stringier_Case_" data-uid="Stringier.Rope.Equals(Object,Stringier.Case)">Equals(Object, Case)</h4>
@@ -1129,7 +1131,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Equals_ReadOnlyMemory_Char__.md&amp;value=---%0Auid%3A%20Stringier.Rope.Equals(ReadOnlyMemory%7BChar%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L684">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L685">View Source</a>
   </span>
   <a id="Stringier_Rope_Equals_" data-uid="Stringier.Rope.Equals*"></a>
   <h4 id="Stringier_Rope_Equals_ReadOnlyMemory_Char__" data-uid="Stringier.Rope.Equals(ReadOnlyMemory{Char})">Equals(ReadOnlyMemory&lt;Char&gt;)</h4>
@@ -1179,7 +1181,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Equals_ReadOnlyMemory_Char__Stringier_Case_.md&amp;value=---%0Auid%3A%20Stringier.Rope.Equals(ReadOnlyMemory%7BChar%7D%2CStringier.Case)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L693">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L694">View Source</a>
   </span>
   <a id="Stringier_Rope_Equals_" data-uid="Stringier.Rope.Equals*"></a>
   <h4 id="Stringier_Rope_Equals_ReadOnlyMemory_Char__Stringier_Case_" data-uid="Stringier.Rope.Equals(ReadOnlyMemory{Char},Stringier.Case)">Equals(ReadOnlyMemory&lt;Char&gt;, Case)</h4>
@@ -1235,7 +1237,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Equals_ReadOnlySpan_Char__.md&amp;value=---%0Auid%3A%20Stringier.Rope.Equals(ReadOnlySpan%7BChar%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L716">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L717">View Source</a>
   </span>
   <a id="Stringier_Rope_Equals_" data-uid="Stringier.Rope.Equals*"></a>
   <h4 id="Stringier_Rope_Equals_ReadOnlySpan_Char__" data-uid="Stringier.Rope.Equals(ReadOnlySpan{Char})">Equals(ReadOnlySpan&lt;Char&gt;)</h4>
@@ -1285,7 +1287,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Equals_ReadOnlySpan_Char__Stringier_Case_.md&amp;value=---%0Auid%3A%20Stringier.Rope.Equals(ReadOnlySpan%7BChar%7D%2CStringier.Case)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L734">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L735">View Source</a>
   </span>
   <a id="Stringier_Rope_Equals_" data-uid="Stringier.Rope.Equals*"></a>
   <h4 id="Stringier_Rope_Equals_ReadOnlySpan_Char__Stringier_Case_" data-uid="Stringier.Rope.Equals(ReadOnlySpan{Char},Stringier.Case)">Equals(ReadOnlySpan&lt;Char&gt;, Case)</h4>
@@ -1341,7 +1343,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Equals_Span_Char__.md&amp;value=---%0Auid%3A%20Stringier.Rope.Equals(Span%7BChar%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L700">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L701">View Source</a>
   </span>
   <a id="Stringier_Rope_Equals_" data-uid="Stringier.Rope.Equals*"></a>
   <h4 id="Stringier_Rope_Equals_Span_Char__" data-uid="Stringier.Rope.Equals(Span{Char})">Equals(Span&lt;Char&gt;)</h4>
@@ -1391,7 +1393,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Equals_Span_Char__Stringier_Case_.md&amp;value=---%0Auid%3A%20Stringier.Rope.Equals(Span%7BChar%7D%2CStringier.Case)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L709">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L710">View Source</a>
   </span>
   <a id="Stringier_Rope_Equals_" data-uid="Stringier.Rope.Equals*"></a>
   <h4 id="Stringier_Rope_Equals_Span_Char__Stringier_Case_" data-uid="Stringier.Rope.Equals(Span{Char},Stringier.Case)">Equals(Span&lt;Char&gt;, Case)</h4>
@@ -1447,7 +1449,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Equals_String_.md&amp;value=---%0Auid%3A%20Stringier.Rope.Equals(String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L636">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L637">View Source</a>
   </span>
   <a id="Stringier_Rope_Equals_" data-uid="Stringier.Rope.Equals*"></a>
   <h4 id="Stringier_Rope_Equals_String_" data-uid="Stringier.Rope.Equals(String)">Equals(String)</h4>
@@ -1497,7 +1499,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Equals_String_Stringier_Case_.md&amp;value=---%0Auid%3A%20Stringier.Rope.Equals(String%2CStringier.Case)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L645">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L646">View Source</a>
   </span>
   <a id="Stringier_Rope_Equals_" data-uid="Stringier.Rope.Equals*"></a>
   <h4 id="Stringier_Rope_Equals_String_Stringier_Case_" data-uid="Stringier.Rope.Equals(String,Stringier.Case)">Equals(String, Case)</h4>
@@ -1553,7 +1555,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Equals_Stringier_Rope_.md&amp;value=---%0Auid%3A%20Stringier.Rope.Equals(Stringier.Rope)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L594">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L595">View Source</a>
   </span>
   <a id="Stringier_Rope_Equals_" data-uid="Stringier.Rope.Equals*"></a>
   <h4 id="Stringier_Rope_Equals_Stringier_Rope_" data-uid="Stringier.Rope.Equals(Stringier.Rope)">Equals(Rope)</h4>
@@ -1600,7 +1602,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Equals_Stringier_Rope_Stringier_Case_.md&amp;value=---%0Auid%3A%20Stringier.Rope.Equals(Stringier.Rope%2CStringier.Case)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L603">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L604">View Source</a>
   </span>
   <a id="Stringier_Rope_Equals_" data-uid="Stringier.Rope.Equals*"></a>
   <h4 id="Stringier_Rope_Equals_Stringier_Rope_Stringier_Case_" data-uid="Stringier.Rope.Equals(Stringier.Rope,Stringier.Case)">Equals(Rope, Case)</h4>
@@ -1656,11 +1658,12 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_GetEnumerator.md&amp;value=---%0Auid%3A%20Stringier.Rope.GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L779">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L780">View Source</a>
   </span>
   <a id="Stringier_Rope_GetEnumerator_" data-uid="Stringier.Rope.GetEnumerator*"></a>
   <h4 id="Stringier_Rope_GetEnumerator" data-uid="Stringier.Rope.GetEnumerator">GetEnumerator()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns an enumerator that iterates through the sequence.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -1677,7 +1680,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Stringier.Rope.Enumerator.html">Rope.Enumerator</a></td>
-        <td></td>
+        <td><p>An enumerator that can be used to iterate through the collection.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1686,7 +1690,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Insert_Int32_ArraySegment_Char__.md&amp;value=---%0Auid%3A%20Stringier.Rope.Insert(Int32%2CArraySegment%7BChar%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L857">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L858">View Source</a>
   </span>
   <a id="Stringier_Rope_Insert_" data-uid="Stringier.Rope.Insert*"></a>
   <h4 id="Stringier_Rope_Insert_Int32_ArraySegment_Char__" data-uid="Stringier.Rope.Insert(Int32,ArraySegment{Char})">Insert(Int32, ArraySegment&lt;Char&gt;)</h4>
@@ -1723,7 +1727,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Insert_Int32_Char_.md&amp;value=---%0Auid%3A%20Stringier.Rope.Insert(Int32%2CChar)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L790">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L791">View Source</a>
   </span>
   <a id="Stringier_Rope_Insert_" data-uid="Stringier.Rope.Insert*"></a>
   <h4 id="Stringier_Rope_Insert_Int32_Char_" data-uid="Stringier.Rope.Insert(Int32,Char)">Insert(Int32, Char)</h4>
@@ -1760,7 +1764,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Insert_Int32_Char___.md&amp;value=---%0Auid%3A%20Stringier.Rope.Insert(Int32%2CChar%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L861">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L862">View Source</a>
   </span>
   <a id="Stringier_Rope_Insert_" data-uid="Stringier.Rope.Insert*"></a>
   <h4 id="Stringier_Rope_Insert_Int32_Char___" data-uid="Stringier.Rope.Insert(Int32,Char[])">Insert(Int32, Char[])</h4>
@@ -1797,7 +1801,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Insert_Int32_Memory_Char__.md&amp;value=---%0Auid%3A%20Stringier.Rope.Insert(Int32%2CMemory%7BChar%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L865">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L866">View Source</a>
   </span>
   <a id="Stringier_Rope_Insert_" data-uid="Stringier.Rope.Insert*"></a>
   <h4 id="Stringier_Rope_Insert_Int32_Memory_Char__" data-uid="Stringier.Rope.Insert(Int32,Memory{Char})">Insert(Int32, Memory&lt;Char&gt;)</h4>
@@ -1834,7 +1838,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Insert_Int32_ReadOnlyMemory_Char__.md&amp;value=---%0Auid%3A%20Stringier.Rope.Insert(Int32%2CReadOnlyMemory%7BChar%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L869">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L870">View Source</a>
   </span>
   <a id="Stringier_Rope_Insert_" data-uid="Stringier.Rope.Insert*"></a>
   <h4 id="Stringier_Rope_Insert_Int32_ReadOnlyMemory_Char__" data-uid="Stringier.Rope.Insert(Int32,ReadOnlyMemory{Char})">Insert(Int32, ReadOnlyMemory&lt;Char&gt;)</h4>
@@ -1871,7 +1875,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Insert_Int32_String_.md&amp;value=---%0Auid%3A%20Stringier.Rope.Insert(Int32%2CString)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L936">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L937">View Source</a>
   </span>
   <a id="Stringier_Rope_Insert_" data-uid="Stringier.Rope.Insert*"></a>
   <h4 id="Stringier_Rope_Insert_Int32_String_" data-uid="Stringier.Rope.Insert(Int32,String)">Insert(Int32, String)</h4>
@@ -1908,7 +1912,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Postpend_ArraySegment_Char__.md&amp;value=---%0Auid%3A%20Stringier.Rope.Postpend(ArraySegment%7BChar%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L957">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L958">View Source</a>
   </span>
   <a id="Stringier_Rope_Postpend_" data-uid="Stringier.Rope.Postpend*"></a>
   <h4 id="Stringier_Rope_Postpend_ArraySegment_Char__" data-uid="Stringier.Rope.Postpend(ArraySegment{Char})">Postpend(ArraySegment&lt;Char&gt;)</h4>
@@ -1940,7 +1944,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Postpend_Char_.md&amp;value=---%0Auid%3A%20Stringier.Rope.Postpend(Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L940">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L941">View Source</a>
   </span>
   <a id="Stringier_Rope_Postpend_" data-uid="Stringier.Rope.Postpend*"></a>
   <h4 id="Stringier_Rope_Postpend_Char_" data-uid="Stringier.Rope.Postpend(Char)">Postpend(Char)</h4>
@@ -1972,7 +1976,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Postpend_Char___.md&amp;value=---%0Auid%3A%20Stringier.Rope.Postpend(Char%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L953">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L954">View Source</a>
   </span>
   <a id="Stringier_Rope_Postpend_" data-uid="Stringier.Rope.Postpend*"></a>
   <h4 id="Stringier_Rope_Postpend_Char___" data-uid="Stringier.Rope.Postpend(Char[])">Postpend(Char[])</h4>
@@ -2004,7 +2008,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Postpend_Memory_Char__.md&amp;value=---%0Auid%3A%20Stringier.Rope.Postpend(Memory%7BChar%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L961">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L962">View Source</a>
   </span>
   <a id="Stringier_Rope_Postpend_" data-uid="Stringier.Rope.Postpend*"></a>
   <h4 id="Stringier_Rope_Postpend_Memory_Char__" data-uid="Stringier.Rope.Postpend(Memory{Char})">Postpend(Memory&lt;Char&gt;)</h4>
@@ -2036,7 +2040,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Postpend_ReadOnlyMemory_Char__.md&amp;value=---%0Auid%3A%20Stringier.Rope.Postpend(ReadOnlyMemory%7BChar%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L965">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L966">View Source</a>
   </span>
   <a id="Stringier_Rope_Postpend_" data-uid="Stringier.Rope.Postpend*"></a>
   <h4 id="Stringier_Rope_Postpend_ReadOnlyMemory_Char__" data-uid="Stringier.Rope.Postpend(ReadOnlyMemory{Char})">Postpend(ReadOnlyMemory&lt;Char&gt;)</h4>
@@ -2068,7 +2072,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Postpend_String_.md&amp;value=---%0Auid%3A%20Stringier.Rope.Postpend(String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L978">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L979">View Source</a>
   </span>
   <a id="Stringier_Rope_Postpend_" data-uid="Stringier.Rope.Postpend*"></a>
   <h4 id="Stringier_Rope_Postpend_String_" data-uid="Stringier.Rope.Postpend(String)">Postpend(String)</h4>
@@ -2100,7 +2104,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Prepend_ArraySegment_Char__.md&amp;value=---%0Auid%3A%20Stringier.Rope.Prepend(ArraySegment%7BChar%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L998">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L999">View Source</a>
   </span>
   <a id="Stringier_Rope_Prepend_" data-uid="Stringier.Rope.Prepend*"></a>
   <h4 id="Stringier_Rope_Prepend_ArraySegment_Char__" data-uid="Stringier.Rope.Prepend(ArraySegment{Char})">Prepend(ArraySegment&lt;Char&gt;)</h4>
@@ -2132,7 +2136,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Prepend_Char_.md&amp;value=---%0Auid%3A%20Stringier.Rope.Prepend(Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L982">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L983">View Source</a>
   </span>
   <a id="Stringier_Rope_Prepend_" data-uid="Stringier.Rope.Prepend*"></a>
   <h4 id="Stringier_Rope_Prepend_Char_" data-uid="Stringier.Rope.Prepend(Char)">Prepend(Char)</h4>
@@ -2164,7 +2168,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Prepend_Char___.md&amp;value=---%0Auid%3A%20Stringier.Rope.Prepend(Char%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L994">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L995">View Source</a>
   </span>
   <a id="Stringier_Rope_Prepend_" data-uid="Stringier.Rope.Prepend*"></a>
   <h4 id="Stringier_Rope_Prepend_Char___" data-uid="Stringier.Rope.Prepend(Char[])">Prepend(Char[])</h4>
@@ -2196,7 +2200,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Prepend_Memory_Char__.md&amp;value=---%0Auid%3A%20Stringier.Rope.Prepend(Memory%7BChar%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L1002">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L1003">View Source</a>
   </span>
   <a id="Stringier_Rope_Prepend_" data-uid="Stringier.Rope.Prepend*"></a>
   <h4 id="Stringier_Rope_Prepend_Memory_Char__" data-uid="Stringier.Rope.Prepend(Memory{Char})">Prepend(Memory&lt;Char&gt;)</h4>
@@ -2228,7 +2232,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Prepend_ReadOnlyMemory_Char__.md&amp;value=---%0Auid%3A%20Stringier.Rope.Prepend(ReadOnlyMemory%7BChar%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L1006">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L1007">View Source</a>
   </span>
   <a id="Stringier_Rope_Prepend_" data-uid="Stringier.Rope.Prepend*"></a>
   <h4 id="Stringier_Rope_Prepend_ReadOnlyMemory_Char__" data-uid="Stringier.Rope.Prepend(ReadOnlyMemory{Char})">Prepend(ReadOnlyMemory&lt;Char&gt;)</h4>
@@ -2260,7 +2264,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Prepend_String_.md&amp;value=---%0Auid%3A%20Stringier.Rope.Prepend(String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L1018">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L1019">View Source</a>
   </span>
   <a id="Stringier_Rope_Prepend_" data-uid="Stringier.Rope.Prepend*"></a>
   <h4 id="Stringier_Rope_Prepend_String_" data-uid="Stringier.Rope.Prepend(String)">Prepend(String)</h4>
@@ -2292,7 +2296,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Remove_Char_.md&amp;value=---%0Auid%3A%20Stringier.Rope.Remove(Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L1022">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L1023">View Source</a>
   </span>
   <a id="Stringier_Rope_Remove_" data-uid="Stringier.Rope.Remove*"></a>
   <h4 id="Stringier_Rope_Remove_Char_" data-uid="Stringier.Rope.Remove(Char)">Remove(Char)</h4>
@@ -2324,7 +2328,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_RemoveFirst_Char_.md&amp;value=---%0Auid%3A%20Stringier.Rope.RemoveFirst(Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L1025">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L1026">View Source</a>
   </span>
   <a id="Stringier_Rope_RemoveFirst_" data-uid="Stringier.Rope.RemoveFirst*"></a>
   <h4 id="Stringier_Rope_RemoveFirst_Char_" data-uid="Stringier.Rope.RemoveFirst(Char)">RemoveFirst(Char)</h4>
@@ -2356,7 +2360,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_RemoveLast_Char_.md&amp;value=---%0Auid%3A%20Stringier.Rope.RemoveLast(Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L1028">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L1029">View Source</a>
   </span>
   <a id="Stringier_Rope_RemoveLast_" data-uid="Stringier.Rope.RemoveLast*"></a>
   <h4 id="Stringier_Rope_RemoveLast_Char_" data-uid="Stringier.Rope.RemoveLast(Char)">RemoveLast(Char)</h4>
@@ -2388,7 +2392,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_Replace_Char_Char_.md&amp;value=---%0Auid%3A%20Stringier.Rope.Replace(Char%2CChar)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L1031">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L1032">View Source</a>
   </span>
   <a id="Stringier_Rope_Replace_" data-uid="Stringier.Rope.Replace*"></a>
   <h4 id="Stringier_Rope_Replace_Char_Char_" data-uid="Stringier.Rope.Replace(Char,Char)">Replace(Char, Char)</h4>
@@ -2425,7 +2429,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_ToString.md&amp;value=---%0Auid%3A%20Stringier.Rope.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L1063">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L1064">View Source</a>
   </span>
   <a id="Stringier_Rope_ToString_" data-uid="Stringier.Rope.ToString*"></a>
   <h4 id="Stringier_Rope_ToString" data-uid="Stringier.Rope.ToString">ToString()</h4>
@@ -2455,7 +2459,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_ToString_Int32_.md&amp;value=---%0Auid%3A%20Stringier.Rope.ToString(Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L1078">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L1079">View Source</a>
   </span>
   <a id="Stringier_Rope_ToString_" data-uid="Stringier.Rope.ToString*"></a>
   <h4 id="Stringier_Rope_ToString_Int32_" data-uid="Stringier.Rope.ToString(Int32)">ToString(Int32)</h4>
@@ -2504,7 +2508,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Addition_Char_Stringier_Rope_.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Addition(Char%2CStringier.Rope)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L337">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L338">View Source</a>
   </span>
   <a id="Stringier_Rope_op_Addition_" data-uid="Stringier.Rope.op_Addition*"></a>
   <h4 id="Stringier_Rope_op_Addition_Char_Stringier_Rope_" data-uid="Stringier.Rope.op_Addition(Char,Stringier.Rope)">Addition(Char, Rope)</h4>
@@ -2560,7 +2564,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Addition_Char___Stringier_Rope_.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Addition(Char%5B%5D%2CStringier.Rope)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L371">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L372">View Source</a>
   </span>
   <a id="Stringier_Rope_op_Addition_" data-uid="Stringier.Rope.op_Addition*"></a>
   <h4 id="Stringier_Rope_op_Addition_Char___Stringier_Rope_" data-uid="Stringier.Rope.op_Addition(Char[],Stringier.Rope)">Addition(Char[], Rope)</h4>
@@ -2616,7 +2620,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Addition_Memory_Char__Stringier_Rope_.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Addition(Memory%7BChar%7D%2CStringier.Rope)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L389">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L390">View Source</a>
   </span>
   <a id="Stringier_Rope_op_Addition_" data-uid="Stringier.Rope.op_Addition*"></a>
   <h4 id="Stringier_Rope_op_Addition_Memory_Char__Stringier_Rope_" data-uid="Stringier.Rope.op_Addition(Memory{Char},Stringier.Rope)">Addition(Memory&lt;Char&gt;, Rope)</h4>
@@ -2672,7 +2676,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Addition_ReadOnlyMemory_Char__Stringier_Rope_.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Addition(ReadOnlyMemory%7BChar%7D%2CStringier.Rope)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L405">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L406">View Source</a>
   </span>
   <a id="Stringier_Rope_op_Addition_" data-uid="Stringier.Rope.op_Addition*"></a>
   <h4 id="Stringier_Rope_op_Addition_ReadOnlyMemory_Char__Stringier_Rope_" data-uid="Stringier.Rope.op_Addition(ReadOnlyMemory{Char},Stringier.Rope)">Addition(ReadOnlyMemory&lt;Char&gt;, Rope)</h4>
@@ -2728,7 +2732,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Addition_String_Stringier_Rope_.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Addition(String%2CStringier.Rope)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L353">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L354">View Source</a>
   </span>
   <a id="Stringier_Rope_op_Addition_" data-uid="Stringier.Rope.op_Addition*"></a>
   <h4 id="Stringier_Rope_op_Addition_String_Stringier_Rope_" data-uid="Stringier.Rope.op_Addition(String,Stringier.Rope)">Addition(String, Rope)</h4>
@@ -2784,7 +2788,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Addition_Stringier_Rope_Char_.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Addition(Stringier.Rope%2CChar)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L253">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L254">View Source</a>
   </span>
   <a id="Stringier_Rope_op_Addition_" data-uid="Stringier.Rope.op_Addition*"></a>
   <h4 id="Stringier_Rope_op_Addition_Stringier_Rope_Char_" data-uid="Stringier.Rope.op_Addition(Stringier.Rope,Char)">Addition(Rope, Char)</h4>
@@ -2840,7 +2844,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Addition_Stringier_Rope_Char___.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Addition(Stringier.Rope%2CChar%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L287">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L288">View Source</a>
   </span>
   <a id="Stringier_Rope_op_Addition_" data-uid="Stringier.Rope.op_Addition*"></a>
   <h4 id="Stringier_Rope_op_Addition_Stringier_Rope_Char___" data-uid="Stringier.Rope.op_Addition(Stringier.Rope,Char[])">Addition(Rope, Char[])</h4>
@@ -2896,7 +2900,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Addition_Stringier_Rope_Memory_Char__.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Addition(Stringier.Rope%2CMemory%7BChar%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L305">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L306">View Source</a>
   </span>
   <a id="Stringier_Rope_op_Addition_" data-uid="Stringier.Rope.op_Addition*"></a>
   <h4 id="Stringier_Rope_op_Addition_Stringier_Rope_Memory_Char__" data-uid="Stringier.Rope.op_Addition(Stringier.Rope,Memory{Char})">Addition(Rope, Memory&lt;Char&gt;)</h4>
@@ -2952,7 +2956,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Addition_Stringier_Rope_ReadOnlyMemory_Char__.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Addition(Stringier.Rope%2CReadOnlyMemory%7BChar%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L321">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L322">View Source</a>
   </span>
   <a id="Stringier_Rope_op_Addition_" data-uid="Stringier.Rope.op_Addition*"></a>
   <h4 id="Stringier_Rope_op_Addition_Stringier_Rope_ReadOnlyMemory_Char__" data-uid="Stringier.Rope.op_Addition(Stringier.Rope,ReadOnlyMemory{Char})">Addition(Rope, ReadOnlyMemory&lt;Char&gt;)</h4>
@@ -3008,7 +3012,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Addition_Stringier_Rope_String_.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Addition(Stringier.Rope%2CString)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L269">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L270">View Source</a>
   </span>
   <a id="Stringier_Rope_op_Addition_" data-uid="Stringier.Rope.op_Addition*"></a>
   <h4 id="Stringier_Rope_op_Addition_Stringier_Rope_String_" data-uid="Stringier.Rope.op_Addition(Stringier.Rope,String)">Addition(Rope, String)</h4>
@@ -3064,7 +3068,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Equality_Char___Stringier_Rope_.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Equality(Char%5B%5D%2CStringier.Rope)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L453">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L454">View Source</a>
   </span>
   <a id="Stringier_Rope_op_Equality_" data-uid="Stringier.Rope.op_Equality*"></a>
   <h4 id="Stringier_Rope_op_Equality_Char___Stringier_Rope_" data-uid="Stringier.Rope.op_Equality(Char[],Stringier.Rope)">Equality(Char[], Rope)</h4>
@@ -3120,7 +3124,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Equality_Memory_Char__Stringier_Rope_.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Equality(Memory%7BChar%7D%2CStringier.Rope)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L469">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L470">View Source</a>
   </span>
   <a id="Stringier_Rope_op_Equality_" data-uid="Stringier.Rope.op_Equality*"></a>
   <h4 id="Stringier_Rope_op_Equality_Memory_Char__Stringier_Rope_" data-uid="Stringier.Rope.op_Equality(Memory{Char},Stringier.Rope)">Equality(Memory&lt;Char&gt;, Rope)</h4>
@@ -3176,7 +3180,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Equality_ReadOnlyMemory_Char__Stringier_Rope_.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Equality(ReadOnlyMemory%7BChar%7D%2CStringier.Rope)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L485">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L486">View Source</a>
   </span>
   <a id="Stringier_Rope_op_Equality_" data-uid="Stringier.Rope.op_Equality*"></a>
   <h4 id="Stringier_Rope_op_Equality_ReadOnlyMemory_Char__Stringier_Rope_" data-uid="Stringier.Rope.op_Equality(ReadOnlyMemory{Char},Stringier.Rope)">Equality(ReadOnlyMemory&lt;Char&gt;, Rope)</h4>
@@ -3232,7 +3236,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Equality_ReadOnlySpan_Char__Stringier_Rope_.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Equality(ReadOnlySpan%7BChar%7D%2CStringier.Rope)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L517">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L518">View Source</a>
   </span>
   <a id="Stringier_Rope_op_Equality_" data-uid="Stringier.Rope.op_Equality*"></a>
   <h4 id="Stringier_Rope_op_Equality_ReadOnlySpan_Char__Stringier_Rope_" data-uid="Stringier.Rope.op_Equality(ReadOnlySpan{Char},Stringier.Rope)">Equality(ReadOnlySpan&lt;Char&gt;, Rope)</h4>
@@ -3288,7 +3292,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Equality_Span_Char__Stringier_Rope_.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Equality(Span%7BChar%7D%2CStringier.Rope)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L501">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L502">View Source</a>
   </span>
   <a id="Stringier_Rope_op_Equality_" data-uid="Stringier.Rope.op_Equality*"></a>
   <h4 id="Stringier_Rope_op_Equality_Span_Char__Stringier_Rope_" data-uid="Stringier.Rope.op_Equality(Span{Char},Stringier.Rope)">Equality(Span&lt;Char&gt;, Rope)</h4>
@@ -3344,7 +3348,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Equality_String_Stringier_Rope_.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Equality(String%2CStringier.Rope)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L437">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L438">View Source</a>
   </span>
   <a id="Stringier_Rope_op_Equality_" data-uid="Stringier.Rope.op_Equality*"></a>
   <h4 id="Stringier_Rope_op_Equality_String_Stringier_Rope_" data-uid="Stringier.Rope.op_Equality(String,Stringier.Rope)">Equality(String, Rope)</h4>
@@ -3400,7 +3404,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Equality_Stringier_Rope_Char___.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Equality(Stringier.Rope%2CChar%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L445">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L446">View Source</a>
   </span>
   <a id="Stringier_Rope_op_Equality_" data-uid="Stringier.Rope.op_Equality*"></a>
   <h4 id="Stringier_Rope_op_Equality_Stringier_Rope_Char___" data-uid="Stringier.Rope.op_Equality(Stringier.Rope,Char[])">Equality(Rope, Char[])</h4>
@@ -3456,7 +3460,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Equality_Stringier_Rope_Memory_Char__.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Equality(Stringier.Rope%2CMemory%7BChar%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L461">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L462">View Source</a>
   </span>
   <a id="Stringier_Rope_op_Equality_" data-uid="Stringier.Rope.op_Equality*"></a>
   <h4 id="Stringier_Rope_op_Equality_Stringier_Rope_Memory_Char__" data-uid="Stringier.Rope.op_Equality(Stringier.Rope,Memory{Char})">Equality(Rope, Memory&lt;Char&gt;)</h4>
@@ -3512,7 +3516,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Equality_Stringier_Rope_ReadOnlyMemory_Char__.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Equality(Stringier.Rope%2CReadOnlyMemory%7BChar%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L477">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L478">View Source</a>
   </span>
   <a id="Stringier_Rope_op_Equality_" data-uid="Stringier.Rope.op_Equality*"></a>
   <h4 id="Stringier_Rope_op_Equality_Stringier_Rope_ReadOnlyMemory_Char__" data-uid="Stringier.Rope.op_Equality(Stringier.Rope,ReadOnlyMemory{Char})">Equality(Rope, ReadOnlyMemory&lt;Char&gt;)</h4>
@@ -3568,7 +3572,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Equality_Stringier_Rope_ReadOnlySpan_Char__.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Equality(Stringier.Rope%2CReadOnlySpan%7BChar%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L509">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L510">View Source</a>
   </span>
   <a id="Stringier_Rope_op_Equality_" data-uid="Stringier.Rope.op_Equality*"></a>
   <h4 id="Stringier_Rope_op_Equality_Stringier_Rope_ReadOnlySpan_Char__" data-uid="Stringier.Rope.op_Equality(Stringier.Rope,ReadOnlySpan{Char})">Equality(Rope, ReadOnlySpan&lt;Char&gt;)</h4>
@@ -3624,7 +3628,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Equality_Stringier_Rope_Span_Char__.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Equality(Stringier.Rope%2CSpan%7BChar%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L493">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L494">View Source</a>
   </span>
   <a id="Stringier_Rope_op_Equality_" data-uid="Stringier.Rope.op_Equality*"></a>
   <h4 id="Stringier_Rope_op_Equality_Stringier_Rope_Span_Char__" data-uid="Stringier.Rope.op_Equality(Stringier.Rope,Span{Char})">Equality(Rope, Span&lt;Char&gt;)</h4>
@@ -3680,7 +3684,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Equality_Stringier_Rope_String_.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Equality(Stringier.Rope%2CString)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L429">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L430">View Source</a>
   </span>
   <a id="Stringier_Rope_op_Equality_" data-uid="Stringier.Rope.op_Equality*"></a>
   <h4 id="Stringier_Rope_op_Equality_Stringier_Rope_String_" data-uid="Stringier.Rope.op_Equality(Stringier.Rope,String)">Equality(Rope, String)</h4>
@@ -3736,7 +3740,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Equality_Stringier_Rope_Stringier_Rope_.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Equality(Stringier.Rope%2CStringier.Rope)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L421">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L422">View Source</a>
   </span>
   <a id="Stringier_Rope_op_Equality_" data-uid="Stringier.Rope.op_Equality*"></a>
   <h4 id="Stringier_Rope_op_Equality_Stringier_Rope_Stringier_Rope_" data-uid="Stringier.Rope.op_Equality(Stringier.Rope,Stringier.Rope)">Equality(Rope, Rope)</h4>
@@ -3792,7 +3796,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Implicit_Char__Stringier_Rope.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Implicit(Char)~Stringier.Rope%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L112">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L113">View Source</a>
   </span>
   <a id="Stringier_Rope_op_Implicit_" data-uid="Stringier.Rope.op_Implicit*"></a>
   <h4 id="Stringier_Rope_op_Implicit_Char__Stringier_Rope" data-uid="Stringier.Rope.op_Implicit(Char)~Stringier.Rope">Implicit(Char to Rope)</h4>
@@ -3841,7 +3845,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Implicit_Char____Stringier_Rope.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Implicit(Char%5B%5D)~Stringier.Rope%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L126">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L127">View Source</a>
   </span>
   <a id="Stringier_Rope_op_Implicit_" data-uid="Stringier.Rope.op_Implicit*"></a>
   <h4 id="Stringier_Rope_op_Implicit_Char____Stringier_Rope" data-uid="Stringier.Rope.op_Implicit(Char[])~Stringier.Rope">Implicit(Char[] to Rope)</h4>
@@ -3890,7 +3894,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Implicit_Memory_Char___Stringier_Rope.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Implicit(Memory%7BChar%7D)~Stringier.Rope%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L133">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L134">View Source</a>
   </span>
   <a id="Stringier_Rope_op_Implicit_" data-uid="Stringier.Rope.op_Implicit*"></a>
   <h4 id="Stringier_Rope_op_Implicit_Memory_Char___Stringier_Rope" data-uid="Stringier.Rope.op_Implicit(Memory{Char})~Stringier.Rope">Implicit(Memory&lt;Char&gt; to Rope)</h4>
@@ -3939,7 +3943,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Implicit_ReadOnlyMemory_Char___Stringier_Rope.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Implicit(ReadOnlyMemory%7BChar%7D)~Stringier.Rope%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L140">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L141">View Source</a>
   </span>
   <a id="Stringier_Rope_op_Implicit_" data-uid="Stringier.Rope.op_Implicit*"></a>
   <h4 id="Stringier_Rope_op_Implicit_ReadOnlyMemory_Char___Stringier_Rope" data-uid="Stringier.Rope.op_Implicit(ReadOnlyMemory{Char})~Stringier.Rope">Implicit(ReadOnlyMemory&lt;Char&gt; to Rope)</h4>
@@ -3988,7 +3992,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Implicit_String__Stringier_Rope.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Implicit(String)~Stringier.Rope%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L119">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L120">View Source</a>
   </span>
   <a id="Stringier_Rope_op_Implicit_" data-uid="Stringier.Rope.op_Implicit*"></a>
   <h4 id="Stringier_Rope_op_Implicit_String__Stringier_Rope" data-uid="Stringier.Rope.op_Implicit(String)~Stringier.Rope">Implicit(String to Rope)</h4>
@@ -4037,7 +4041,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Inequality_Char___Stringier_Rope_.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Inequality(Char%5B%5D%2CStringier.Rope)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L181">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L182">View Source</a>
   </span>
   <a id="Stringier_Rope_op_Inequality_" data-uid="Stringier.Rope.op_Inequality*"></a>
   <h4 id="Stringier_Rope_op_Inequality_Char___Stringier_Rope_" data-uid="Stringier.Rope.op_Inequality(Char[],Stringier.Rope)">Inequality(Char[], Rope)</h4>
@@ -4093,7 +4097,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Inequality_Memory_Char__Stringier_Rope_.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Inequality(Memory%7BChar%7D%2CStringier.Rope)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L197">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L198">View Source</a>
   </span>
   <a id="Stringier_Rope_op_Inequality_" data-uid="Stringier.Rope.op_Inequality*"></a>
   <h4 id="Stringier_Rope_op_Inequality_Memory_Char__Stringier_Rope_" data-uid="Stringier.Rope.op_Inequality(Memory{Char},Stringier.Rope)">Inequality(Memory&lt;Char&gt;, Rope)</h4>
@@ -4149,7 +4153,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Inequality_ReadOnlyMemory_Char__Stringier_Rope_.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Inequality(ReadOnlyMemory%7BChar%7D%2CStringier.Rope)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L213">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L214">View Source</a>
   </span>
   <a id="Stringier_Rope_op_Inequality_" data-uid="Stringier.Rope.op_Inequality*"></a>
   <h4 id="Stringier_Rope_op_Inequality_ReadOnlyMemory_Char__Stringier_Rope_" data-uid="Stringier.Rope.op_Inequality(ReadOnlyMemory{Char},Stringier.Rope)">Inequality(ReadOnlyMemory&lt;Char&gt;, Rope)</h4>
@@ -4205,7 +4209,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Inequality_ReadOnlySpan_Char__Stringier_Rope_.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Inequality(ReadOnlySpan%7BChar%7D%2CStringier.Rope)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L245">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L246">View Source</a>
   </span>
   <a id="Stringier_Rope_op_Inequality_" data-uid="Stringier.Rope.op_Inequality*"></a>
   <h4 id="Stringier_Rope_op_Inequality_ReadOnlySpan_Char__Stringier_Rope_" data-uid="Stringier.Rope.op_Inequality(ReadOnlySpan{Char},Stringier.Rope)">Inequality(ReadOnlySpan&lt;Char&gt;, Rope)</h4>
@@ -4261,7 +4265,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Inequality_Span_Char__Stringier_Rope_.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Inequality(Span%7BChar%7D%2CStringier.Rope)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L229">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L230">View Source</a>
   </span>
   <a id="Stringier_Rope_op_Inequality_" data-uid="Stringier.Rope.op_Inequality*"></a>
   <h4 id="Stringier_Rope_op_Inequality_Span_Char__Stringier_Rope_" data-uid="Stringier.Rope.op_Inequality(Span{Char},Stringier.Rope)">Inequality(Span&lt;Char&gt;, Rope)</h4>
@@ -4317,7 +4321,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Inequality_String_Stringier_Rope_.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Inequality(String%2CStringier.Rope)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L165">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L166">View Source</a>
   </span>
   <a id="Stringier_Rope_op_Inequality_" data-uid="Stringier.Rope.op_Inequality*"></a>
   <h4 id="Stringier_Rope_op_Inequality_String_Stringier_Rope_" data-uid="Stringier.Rope.op_Inequality(String,Stringier.Rope)">Inequality(String, Rope)</h4>
@@ -4373,7 +4377,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Inequality_Stringier_Rope_Char___.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Inequality(Stringier.Rope%2CChar%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L173">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L174">View Source</a>
   </span>
   <a id="Stringier_Rope_op_Inequality_" data-uid="Stringier.Rope.op_Inequality*"></a>
   <h4 id="Stringier_Rope_op_Inequality_Stringier_Rope_Char___" data-uid="Stringier.Rope.op_Inequality(Stringier.Rope,Char[])">Inequality(Rope, Char[])</h4>
@@ -4429,7 +4433,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Inequality_Stringier_Rope_Memory_Char__.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Inequality(Stringier.Rope%2CMemory%7BChar%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L189">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L190">View Source</a>
   </span>
   <a id="Stringier_Rope_op_Inequality_" data-uid="Stringier.Rope.op_Inequality*"></a>
   <h4 id="Stringier_Rope_op_Inequality_Stringier_Rope_Memory_Char__" data-uid="Stringier.Rope.op_Inequality(Stringier.Rope,Memory{Char})">Inequality(Rope, Memory&lt;Char&gt;)</h4>
@@ -4485,7 +4489,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Inequality_Stringier_Rope_ReadOnlyMemory_Char__.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Inequality(Stringier.Rope%2CReadOnlyMemory%7BChar%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L205">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L206">View Source</a>
   </span>
   <a id="Stringier_Rope_op_Inequality_" data-uid="Stringier.Rope.op_Inequality*"></a>
   <h4 id="Stringier_Rope_op_Inequality_Stringier_Rope_ReadOnlyMemory_Char__" data-uid="Stringier.Rope.op_Inequality(Stringier.Rope,ReadOnlyMemory{Char})">Inequality(Rope, ReadOnlyMemory&lt;Char&gt;)</h4>
@@ -4541,7 +4545,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Inequality_Stringier_Rope_ReadOnlySpan_Char__.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Inequality(Stringier.Rope%2CReadOnlySpan%7BChar%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L237">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L238">View Source</a>
   </span>
   <a id="Stringier_Rope_op_Inequality_" data-uid="Stringier.Rope.op_Inequality*"></a>
   <h4 id="Stringier_Rope_op_Inequality_Stringier_Rope_ReadOnlySpan_Char__" data-uid="Stringier.Rope.op_Inequality(Stringier.Rope,ReadOnlySpan{Char})">Inequality(Rope, ReadOnlySpan&lt;Char&gt;)</h4>
@@ -4597,7 +4601,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Inequality_Stringier_Rope_Span_Char__.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Inequality(Stringier.Rope%2CSpan%7BChar%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L221">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L222">View Source</a>
   </span>
   <a id="Stringier_Rope_op_Inequality_" data-uid="Stringier.Rope.op_Inequality*"></a>
   <h4 id="Stringier_Rope_op_Inequality_Stringier_Rope_Span_Char__" data-uid="Stringier.Rope.op_Inequality(Stringier.Rope,Span{Char})">Inequality(Rope, Span&lt;Char&gt;)</h4>
@@ -4653,7 +4657,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Inequality_Stringier_Rope_String_.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Inequality(Stringier.Rope%2CString)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L157">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L158">View Source</a>
   </span>
   <a id="Stringier_Rope_op_Inequality_" data-uid="Stringier.Rope.op_Inequality*"></a>
   <h4 id="Stringier_Rope_op_Inequality_Stringier_Rope_String_" data-uid="Stringier.Rope.op_Inequality(Stringier.Rope,String)">Inequality(Rope, String)</h4>
@@ -4709,7 +4713,7 @@
     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope_op_Inequality_Stringier_Rope_Stringier_Rope_.md&amp;value=---%0Auid%3A%20Stringier.Rope.op_Inequality(Stringier.Rope%2CStringier.Rope)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L149">View Source</a>
+    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.cs/#L150">View Source</a>
   </span>
   <a id="Stringier_Rope_op_Inequality_" data-uid="Stringier.Rope.op_Inequality*"></a>
   <h4 id="Stringier_Rope_op_Inequality_Stringier_Rope_Stringier_Rope_" data-uid="Stringier.Rope.op_Inequality(Stringier.Rope,Stringier.Rope)">Inequality(Rope, Rope)</h4>
@@ -4786,7 +4790,7 @@
       <span class="xref">IEquatable&lt;&gt;</span>
   </div>
   <div>
-      <a class="xref" href="System.Traits.IIndex-2.html">IIndex&lt;TIndex, TElement&gt;</a>
+      <span class="xref">IIndex&lt;, &gt;</span>
   </div>
   <div>
       <span class="xref">IInsertMemory&lt;, &gt;</span>
@@ -4813,7 +4817,13 @@
       <span class="xref">IReplace&lt;&gt;</span>
   </div>
   <div>
-      <span class="xref">ISequence&lt;, &gt;</span>
+      <a class="xref" href="System.Traits.Concepts.ISequence-2.html">ISequence&lt;TElement, TEnumerator&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Traits.ICount.html">ICount</a>
+  </div>
+  <div>
+      <span class="xref">IEnumerable&lt;&gt;</span>
   </div>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
@@ -4881,7 +4891,7 @@
                     <a href="https://github.com/Entomy/LibLangly/new/master/apiSpec/new?filename=Stringier_Rope.md&amp;value=---%0Auid%3A%20Stringier.Rope%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.PointerNode.cs/#L6" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Stringier.Rope/Rope.PointerNode.cs/#L7" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
