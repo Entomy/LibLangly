@@ -343,6 +343,71 @@ namespace Collectathon {
 		}
 
 		[Theory]
+		[InlineData(new Int32[] { }, new Int32[] { }, new Int32[] { })]
+		[InlineData(new Int32[] { 5, 4, 3, 1, 2 }, new Int32[] { 1, 2 }, new Int32[] { 3, 4, 5 })]
+		public void Push_Array([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
+			SinglyLinkedList<Int32> list = initial;
+			list.Push(elements);
+			Assert.Equal<Int32>(expected, list);
+		}
+
+		[Theory]
+		[InlineData(new Int32[] { 0 }, new Int32[] { }, 0)]
+		[InlineData(new Int32[] { 2, 1 }, new Int32[] { 1 }, 2)]
+		public void Push_Element([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32 value) {
+			SinglyLinkedList<Int32> list = initial;
+			list.Push(value);
+			Assert.Equal<Int32>(expected, list);
+		}
+
+		[Theory]
+		[InlineData(new Int32[] { }, new Int32[] { }, new Int32[] { })]
+		[InlineData(new Int32[] { 5, 4, 3, 1, 2 }, new Int32[] { 1, 2 }, new Int32[] { 3, 4, 5 })]
+		public void Push_Memory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
+			SinglyLinkedList<Int32> list = initial;
+			list.Push(elements.AsMemory());
+			Assert.Equal<Int32>(expected, list);
+		}
+
+		[Theory]
+		[InlineData(new Int32[] { }, new Int32[] { }, new Int32[] { })]
+		[InlineData(new Int32[] { 5, 4, 3, 1, 2 }, new Int32[] { 1, 2 }, new Int32[] { 3, 4, 5 })]
+		public void Push_ReadOnlyMemory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
+			SinglyLinkedList<Int32> list = initial;
+			list.Push((ReadOnlyMemory<Int32>)elements.AsMemory());
+			Assert.Equal<Int32>(expected, list);
+		}
+
+		[Theory]
+		[InlineData(new Int32[] { }, new Int32[] { }, new Int32[] { })]
+		[InlineData(new Int32[] { 5, 4, 3, 1, 2 }, new Int32[] { 1, 2 }, new Int32[] { 3, 4, 5 })]
+		public unsafe void Push_Pointer([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
+			SinglyLinkedList<Int32> list = initial;
+			fixed (Int32* elmts = elements) {
+				list.Push(elmts, elements.Length);
+			}
+			Assert.Equal<Int32>(expected, list);
+		}
+
+		[Theory]
+		[InlineData(new Int32[] { }, new Int32[] { }, new Int32[] { })]
+		[InlineData(new Int32[] { 5, 4, 3, 1, 2 }, new Int32[] { 1, 2 }, new Int32[] { 3, 4, 5 })]
+		public void Push_Span([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
+			SinglyLinkedList<Int32> list = initial;
+			list.Push(elements.AsSpan());
+			Assert.Equal<Int32>(expected, list);
+		}
+
+		[Theory]
+		[InlineData(new Int32[] { }, new Int32[] { }, new Int32[] { })]
+		[InlineData(new Int32[] { 5, 4, 3, 1, 2 }, new Int32[] { 1, 2 }, new Int32[] { 3, 4, 5 })]
+		public void Push_ReadOnlySpan([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
+			SinglyLinkedList<Int32> list = initial;
+			list.Push((ReadOnlySpan<Int32>)elements.AsSpan());
+			Assert.Equal<Int32>(expected, list);
+		}
+
+		[Theory]
 		[InlineData(new Int32[] { }, new Int32[] { }, 0, 0)]
 		[InlineData(new Int32[] { 1, 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 0, 0)]
 		[InlineData(new Int32[] { 0, 2, 3, 4, 5 }, new Int32[] { 1, 2, 3, 4, 5 }, 1, 0)]

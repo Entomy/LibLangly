@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Introduction </title>
+    <title>Collectathon </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Introduction ">
+    <meta name="title" content="Collectathon ">
     <meta name="generator" content="docfx 2.56.7.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -67,12 +67,11 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="introduction">Introduction</h1>
+<h1 id="collectathon">Collectathon</h1>
 
-<h2 id="what-is-liblangly">What is LibLangly?</h2>
-<p>Simply put, <strong>LibLangly</strong> is a collection of libraries meant to make text processing, parsing, and manipulation a far better experience than existing tooling out there. To help support this goal, numerous subprojects were spun off, and have become standalone libraries, but are managed under the same project umbrella.</p>
-<p>Because of the developmental history of this project, the organization and naming is a bit unique. Rather than a whole history dump, however, that history will be given when explaining why things were done, throughout the various introductory articles.</p>
-<p><strong>LibLangly</strong> is extremely modular as far as libraries typically go. This helps with keeping the size down if you use any of its components. This has become especially important as Microsoft thinks it's a good idea to bring back static linking. Furthermore, it improves build times, making contributors time better spent, and even helps with API design, since contributors are required to use the same public API as downstream.</p>
+<p><strong>Collectathon</strong> was one of the next things to show up. <strong>Stringier</strong> had a growing need for unique data structures and I was growing disatisfied with existing solutions out there. What I needed wasn't just solid data structures; I needed a way to rapidly create new data structures without duplicating large amounts of code. <strong>Collectathon</strong> was, first and foremost, a data structure framework. <em>Was</em>, because now it's just the proper collections. The framework part split off into <strong>Philosoft</strong> when I realized it was useful to more than just collections, if some additions were made. Things were clear again: a side project meant to support another has, itself, turned into a key project.</p>
+<p>One of the key design principals of <strong>Collectathon</strong> has always been that the types should be data structures, not abstract data types. Say you need a stack. Anything that provides stack traits can act as a stack. This could mean an array or a linked list. You chose the performanxe characteristics <em>you</em> need, and the design lets you easily switch data structures as those needs change.</p>
+<p>Also provided are some extension libraries to support some of these abstract data types. If you're working with stacks, for example, there's a set of extensions you can include that enhance data structures with stack traits for certain types. A major example is stacks of numeric types will have additional operations for stack math. Queues of delegates also have support for dequeuing and invoking as one simple operation. They're simple conveniences, but it makes your overall experience more enjoyable.</p>
 </article>
           </div>
           
@@ -81,7 +80,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/master/Documentation/articles/intro.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Documentation/articles/intro-collectathon.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

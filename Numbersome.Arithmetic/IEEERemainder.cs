@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
+using System.Traits.Concepts;
 
 namespace Numbersome {
 	public static partial class ArithmeticExtensions {
@@ -16,5 +18,15 @@ namespace Numbersome {
 		/// <seealso href="https://docs.microsoft.com/en-us/dotnet/api/system.math.ieeeremainder"/>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static Double IEEERemainder(this Double x, Double y) => Math.IEEERemainder(x, y);
+
+		/// <summary>
+		/// Takes the top two element of the <paramref name="stack"/>, divides them, and pushes the remainder back onto the <paramref name="stack"/>.
+		/// </summary>
+		/// <param name="stack">This stack.</param>
+		public static void IEEERemainder([DisallowNull] this IStack<Double> stack) {
+			Double y = stack.Pop();
+			Double x = stack.Pop();
+			stack.Push(Math.IEEERemainder(x, y));
+		}
 	}
 }

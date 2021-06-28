@@ -19,14 +19,13 @@ namespace Collectathon.Lists {
 		IEquatable<SinglyLinkedList<TElement>>,
 		IIndex<Int32, TElement>,
 		IInsert<Int32, TElement>,
-		IPeek<TElement>,
-		IPop<TElement>,
 		IPostpend<TElement>,
 		IPrepend<TElement>,
-		IPush<TElement>,
+		IQueue<TElement>,
 		IRemove<TElement>,
 		IReplace<TElement>,
-		ISequence<TElement, StandardListEnumerator<TElement, SinglyLinkedListNode<TElement>>> {
+		ISequence<TElement, StandardListEnumerator<TElement, SinglyLinkedListNode<TElement>>>,
+		IStack<TElement> {
 		/// <summary>
 		/// The head node of the list; the first element.
 		/// </summary>
@@ -106,6 +105,18 @@ namespace Collectathon.Lists {
 		public Boolean Contains([AllowNull] TElement element) => Collection.Contains(Head, element);
 
 		/// <inheritdoc/>
+		[return: MaybeNull]
+		public TElement Dequeue() {
+			SinglyLinkedListNode<TElement> oldHead = Head;
+			Head = Head.Next;
+			oldHead.Unlink();
+			return oldHead.Element;
+		}
+
+		/// <inheritdoc/>
+		public void Enqueue([AllowNull] TElement element) => Postpend(element);
+
+		/// <inheritdoc/>
 		public override Boolean Equals([AllowNull] Object obj) {
 			switch (obj) {
 			case SinglyLinkedList<TElement?> other:
@@ -164,13 +175,21 @@ namespace Collectathon.Lists {
 			}
 		}
 
+		/// <inheritdoc/>
 		[return: MaybeNull]
-		public TElement Peek() => throw new NotImplementedException();
+		public TElement Peek() => Head.Element;
 
-		public void Peek([MaybeNull] out TElement element) => throw new NotImplementedException();
+		/// <inheritdoc/>
+		public void Peek([MaybeNull] out TElement element) => element = Head.Element;
 
+		/// <inheritdoc/>
 		[return: MaybeNull]
-		public TElement Pop() => throw new NotImplementedException();
+		public TElement Pop() {
+			SinglyLinkedListNode<TElement> oldHead = Head;
+			Head = Head.Next;
+			oldHead.Unlink();
+			return oldHead.Element;
+		}
 
 		/// <inheritdoc/>
 		[MemberNotNull(nameof(Head), nameof(Tail))]
@@ -197,7 +216,8 @@ namespace Collectathon.Lists {
 			Count++;
 		}
 
-		public void Push([AllowNull] TElement element) => throw new NotImplementedException();
+		/// <inheritdoc/>
+		public void Push([AllowNull] TElement element) => Prepend(element);
 
 		/// <inheritdoc/>
 		public void Remove([AllowNull] TElement element) => throw new NotImplementedException();

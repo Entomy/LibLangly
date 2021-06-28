@@ -110,7 +110,8 @@ namespace Collectathon.Pools {
 		/// <returns>The next <typeparamref name="TElement"/>.</returns>
 		[return: MaybeNull]
 		public TElement Deal() {
-			Read(out TElement? element);
+			Peek(out TElement? element);
+			dealt[i] = true;
 			return element;
 		}
 
@@ -152,12 +153,6 @@ namespace Collectathon.Pools {
 				Shuffle();
 			}
 			return cards[i];
-		}
-
-		/// <inheritdoc/>
-		public void Read([MaybeNull] out TElement element) {
-			Peek(out element);
-			dealt[i] = true;
 		}
 
 		/// <inheritdoc/>

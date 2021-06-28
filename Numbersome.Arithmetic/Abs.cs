@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
+using System.Traits.Concepts;
 
 namespace Numbersome {
 	public static partial class ArithmeticExtensions {
@@ -13,6 +15,12 @@ namespace Numbersome {
 		public static Decimal Abs(this Decimal value) => Math.Abs(value);
 
 		/// <summary>
+		/// Takes the absolute value of the top element of the <paramref name="stack"/>, and pushes the result back onto the <paramref name="stack"/>.
+		/// </summary>
+		/// <param name="stack">This stack.</param>
+		public static void Abs([DisallowNull] this IStack<Decimal> stack) => stack.Push(stack.Pop().Abs());
+
+		/// <summary>
 		/// Returns the absolute value of a <see cref="Double"/> number.
 		/// </summary>
 		/// <param name="value">A number that is greater than or equal to <see cref="Double.MinValue"/>, but less than or equal to <see cref="Double.MaxValue"/>.</param>
@@ -20,6 +28,12 @@ namespace Numbersome {
 		/// <seealso href="https://docs.microsoft.com/en-us/dotnet/api/system.math.abs"/>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static Double Abs(this Double value) => Math.Abs(value);
+
+		/// <summary>
+		/// Takes the absolute value of the top element of the <paramref name="stack"/>, and pushes the result back onto the <paramref name="stack"/>.
+		/// </summary>
+		/// <param name="stack">This stack.</param>
+		public static void Abs([DisallowNull] this IStack<Double> stack) => stack.Push(stack.Pop().Abs());
 
 		/// <summary>
 		/// Returns the absolute value of a <see cref="Int16"/> number.
@@ -31,6 +45,12 @@ namespace Numbersome {
 		public static Int16 Abs(this Int16 value) => Math.Abs(value);
 
 		/// <summary>
+		/// Takes the absolute value of the top element of the <paramref name="stack"/>, and pushes the result back onto the <paramref name="stack"/>.
+		/// </summary>
+		/// <param name="stack">This stack.</param>
+		public static void Abs([DisallowNull] this IStack<Int16> stack) => stack.Push(stack.Pop().Abs());
+
+		/// <summary>
 		/// Returns the absolute value of a <see cref="Int32"/> number.
 		/// </summary>
 		/// <param name="value">A number that is greater than or equal to <see cref="Int32.MinValue"/>, but less than or equal to <see cref="Int32.MaxValue"/>.</param>
@@ -40,6 +60,12 @@ namespace Numbersome {
 		public static Int32 Abs(this Int32 value) => Math.Abs(value);
 
 		/// <summary>
+		/// Takes the absolute value of the top element of the <paramref name="stack"/>, and pushes the result back onto the <paramref name="stack"/>.
+		/// </summary>
+		/// <param name="stack">This stack.</param>
+		public static void Abs([DisallowNull] this IStack<Int32> stack) => stack.Push(stack.Pop().Abs());
+
+		/// <summary>
 		/// Returns the absolute value of a <see cref="Int64"/> number.
 		/// </summary>
 		/// <param name="value">A number that is greater than or equal to <see cref="Int64.MinValue"/>, but less than or equal to <see cref="Int64.MaxValue"/>.</param>
@@ -47,6 +73,12 @@ namespace Numbersome {
 		/// <seealso href="https://docs.microsoft.com/en-us/dotnet/api/system.math.abs"/>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static Int64 Abs(this Int64 value) => Math.Abs(value);
+
+		/// <summary>
+		/// Takes the absolute value of the top element of the <paramref name="stack"/>, and pushes the result back onto the <paramref name="stack"/>.
+		/// </summary>
+		/// <param name="stack">This stack.</param>
+		public static void Abs([DisallowNull] this IStack<Int64> stack) => stack.Push(stack.Pop().Abs());
 
 		/// <summary>
 		/// Returns the absolute value of a <see cref="SByte"/> number.
@@ -59,6 +91,12 @@ namespace Numbersome {
 		public static SByte Abs(this SByte value) => Math.Abs(value);
 
 		/// <summary>
+		/// Takes the absolute value of the top element of the <paramref name="stack"/>, and pushes the result back onto the <paramref name="stack"/>.
+		/// </summary>
+		/// <param name="stack">This stack.</param>
+		public static void Abs([DisallowNull] this IStack<SByte> stack) => stack.Push(stack.Pop().Abs());
+
+		/// <summary>
 		/// Returns the absolute value of a <see cref="Single"/> number.
 		/// </summary>
 		/// <param name="value">A number that is greater than or equal to <see cref="Single.MinValue"/>, but less than or equal to <see cref="Single.MaxValue"/>.</param>
@@ -66,5 +104,11 @@ namespace Numbersome {
 		/// <seealso href="https://docs.microsoft.com/en-us/dotnet/api/system.math.abs"/>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static Single Abs(this Single value) => Math.Abs(value);
+
+		/// <summary>
+		/// Takes the absolute value of the top element of the <paramref name="stack"/>, and pushes the result back onto the <paramref name="stack"/>.
+		/// </summary>
+		/// <param name="stack">This stack.</param>
+		public static void Abs([DisallowNull] this IStack<Single> stack) => stack.Push(stack.Pop().Abs());
 	}
 }

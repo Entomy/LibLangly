@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
+using System.Traits.Concepts;
 
 namespace Numbersome {
 	public static partial class ArithmeticExtensions {
@@ -13,6 +15,12 @@ namespace Numbersome {
 		public static Decimal Ceiling(this Decimal d) => Math.Ceiling(d);
 
 		/// <summary>
+		/// Takes the smallest integral value that is greater than or equal to the top element of the <paramref name="stack"/>, and pushes the result back onto the <paramref name="stack"/>.
+		/// </summary>
+		/// <param name="stack">This stack.</param>
+		public static void Ceiling([DisallowNull] this IStack<Decimal> stack) => stack.Push(stack.Pop().Ceiling());
+
+		/// <summary>
 		/// Returns the smallest integral value that is greater than or equal to the specified double-precision floating-point number.
 		/// </summary>
 		/// <param name="a">A double-precision floating-point number.</param>
@@ -20,6 +28,12 @@ namespace Numbersome {
 		/// <seealso href="https://docs.microsoft.com/en-us/dotnet/api/system.math.ceiling"/>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static Double Ceiling(this Double a) => Math.Ceiling(a);
+
+		/// <summary>
+		/// Takes the smallest integral value that is greater than or equal to the top element of the <paramref name="stack"/>, and pushes the result back onto the <paramref name="stack"/>.
+		/// </summary>
+		/// <param name="stack">This stack.</param>
+		public static void Ceiling([DisallowNull] this IStack<Double> stack) => stack.Push(stack.Pop().Ceiling());
 	}
 }
 

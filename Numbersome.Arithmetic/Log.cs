@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
+using System.Traits.Concepts;
 
 namespace Numbersome {
 	public static partial class ArithmeticExtensions {
@@ -21,5 +23,11 @@ namespace Numbersome {
 		/// <seealso href="https://docs.microsoft.com/en-us/dotnet/api/system.math.log"/>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static Double Log(this Double d) => Math.Log(d);
+
+		/// <summary>
+		/// Takes the natural (base <see cref="Math.E"/>) logarithm of the top element of the <paramref name="stack"/>, and pushes the result back onto the <paramref name="stack"/>.
+		/// </summary>
+		/// <param name="stack">This stack.</param>
+		public static void Log([DisallowNull] this IStack<Double> stack) => stack.Push(stack.Pop().Log());
 	}
 }
