@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Introduction </title>
+    <title>Stacks </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Introduction ">
+    <meta name="title" content="Stacks ">
     <meta name="generator" content="docfx 2.56.7.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -67,12 +67,13 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="introduction">Introduction</h1>
+<h1 id="stacks">Stacks</h1>
 
-<h2 id="what-is-liblangly">What is LibLangly?</h2>
-<p>Simply put, <strong>LibLangly</strong> is a collection of libraries meant to make text processing, parsing, and manipulation a far better experience than existing tooling out there. To help support this goal, numerous subprojects were spun off, and have become standalone libraries, but are managed under the same project umbrella.</p>
-<p>Because of the developmental history of this project, the organization and naming is a bit unique. Rather than a whole history dump, however, that history will be given when explaining why things were done, throughout the various introductory articles.</p>
-<p><strong>LibLangly</strong> is extremely modular as far as libraries typically go. This helps with keeping the size down if you use any of its components. This has become especially important as Microsoft thinks it's a good idea to bring back static linking. Furthermore, it improves build times, making contributors time better spent, and even helps with API design, since contributors are required to use the same public API as downstream.</p>
+<p>Stacks are a common collection type with many uses. Unlike most collections libraries <strong>Collectathon</strong> does not provide an explicit <code>Stack&lt;&gt;</code> type, instead opting to allow any compatible data structure as a stack. If a type has <code>Push</code> and <code>Pop</code> methods, congratulations, you've got a stack.</p>
+<p>Honestly though, that's not very interesting, so instead, let's discuss the things that make these stacks so special.</p>
+<h2 id="math-specializations">Math Specializations</h2>
+<p>Inside of the <strong>Numbersome</strong> libraries are extensions for stacks when they are of numeric types. Got a stack of <code>Double</code>? You'll see tons of additional operations that perform stack math, based on what operations <code>Math</code> from the standard library has.</p>
+<p>This is applied across all numeric types. Arithmetic operators are given their full name. Otherwise, the name and behavior is copied from <code>Math</code> or <code>MathF</code>. There is a limitation however: the return type must be compatible with the type of elements in the stack. If this is not the case, the operation will not be supported.</p>
 </article>
           </div>
           
@@ -81,7 +82,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/master/Documentation/articles/intro.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Documentation/articles/collection-stacks.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

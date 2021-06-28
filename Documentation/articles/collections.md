@@ -1,0 +1,15 @@
+# Collections
+
+**Collectathon** provides a lot of collections, and this number will only continue to grow. With so many options, how does one make a decision?
+
+First, I find it helps to describe a few things that are often conflated by other libraries. An abstract data type is a high level, abstract, view of a type. This is essentially its public API, and is how you work with it. Examples of ADTs are lists, stacks, queues, etc. A data structure on the other hand is the actual implementation of a type. This is how the data is structured, of course, but also how the whole thing works. Examples of DSs are binary trees, linked lists, partially-unrolled lists, etc. **Collectathon** takes the stance that these are significant differences, and that value is gained by keeping them distinct.
+
+## Choosing a Collection
+
+I find this works better with a top-down approach. That means we start with the ADT, or a set of traits we need, and then select a DS that provides those. Let's walk through an example:
+
+All a stack is, at its minimum, is a type that can have elements pushed onto it and popped off. The majority of data structures can implement this easily, with drastically different performance characteristics. If you know there's a maximum capacity that you won't, or cant, exceed, the `BoundedArray` is a good option. If the capacity is never, or rarely, going to change once established, consider the `DynamicArray`. But what if you don't know how much size the stack will take up? What if its size varies drastically over its lifetime? In these situations you may want a linked list instead. `UnrolledLinkedList` is generally a good middle ground between all possible options. However, if you need to always use as little memory as possible, a `SinglyLinkledList` may be your best bet.
+
+### Making Informed Decisions
+
+**Collectation** is predicated on the idea that it doesn't know what's best for you and that it's insulting to assume such. Instead, the approach taken you all the information you need to make informed decisions. You know what you need. You know how you're using the type. You know what constraits you have. **Collectathon** provides the options to chose from, and information you need to make those decisions. Because _you_ make that decision better than someone who's never even seen your code. It is a major goal to benchmark every single function of every single data structure defined in **Collectathon**. Furthermore, every single function _should_ have annotations of its time and space complexity. This means both microbenchmarks and performance curves are at your fingertips. And because **Collectathon** leverages the Traits API of **Philosoft**, all data structures have consistent API design for their relevant traits, meaning other data structures can be swapped in without requiring changes to your code, making macrobenchmarks easy.

@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Introduction </title>
+    <title>Philosoft </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Introduction ">
+    <meta name="title" content="Philosoft ">
     <meta name="generator" content="docfx 2.56.7.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -67,12 +67,13 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="introduction">Introduction</h1>
+<h1 id="philosoft">Philosoft</h1>
 
-<h2 id="what-is-liblangly">What is LibLangly?</h2>
-<p>Simply put, <strong>LibLangly</strong> is a collection of libraries meant to make text processing, parsing, and manipulation a far better experience than existing tooling out there. To help support this goal, numerous subprojects were spun off, and have become standalone libraries, but are managed under the same project umbrella.</p>
-<p>Because of the developmental history of this project, the organization and naming is a bit unique. Rather than a whole history dump, however, that history will be given when explaining why things were done, throughout the various introductory articles.</p>
-<p><strong>LibLangly</strong> is extremely modular as far as libraries typically go. This helps with keeping the size down if you use any of its components. This has become especially important as Microsoft thinks it's a good idea to bring back static linking. Furthermore, it improves build times, making contributors time better spent, and even helps with API design, since contributors are required to use the same public API as downstream.</p>
+<p><strong>Philosoft</strong> was split off at this point from some techniques that were used to help with developing <strong>Collectathon</strong> when I got some feedback about certain techniques being useful for developing non-collections. Originally it was a set of general interfaces, similar in nature to those in .NET's standard library. In time these interfaces would change and split into two varients, the Traits API and the Concepts API, inspired by the similarly named ideas from C++, within the limitations of C#.</p>
+<p>The Traits API is a set of extremely granular and minimal interfaces that indicate support for a single property or method, and possibly overloads of that method. While nothing is stopping you from defining these yourself, using the Traits API ensures a consistent design is communicated throughout large projects, and enables generalization of functions across a wide variety of types. Furthermore, documentation for this functionality can be inherited from the interfaces, meaning docs can be kept consistent and meaningful, with as little effort as possible.</p>
+<p>The Concepts API links multiple traits together in common patterns, more similar to the .NET collection interfaces, although it includes more, and isn't exclusive to collections. It also greatly modernizes these. Typically, these are a convenience to type designers, and should not be used as parameters to functions. Although there are exceptions. Using these when appropriate will ensure all relevant traits are supported. Do note that not all traits are wrapped up into concepts, especially as concepts are kept rather minimal, so you will likely need to include some additional traits when defining complex types like data structures.</p>
+<p>Both of these are additionally used to define a rich set of extensions that further enhance the developer experience. In their most basic form this is convenience methods, like if your type supports <code>Add(TElement)</code> you'll get additional extensions for adding entire arrays, spans, enumerables, and more; but only one element at a time. Many traits support additional derivations for these as well, so if your type can have entire groups of elements added in one operation, consider adding these traits and providing optimized operations. These APIs are designed to support this, and callers will prefer the optimized operations instead of the convenience ones. These extensions aren't limited to just generalized implementations though, as many of them are entirely new operations that you never need to implement. They <em>just work</em>! No Todd Howarding going on here. In some cases more optimal LINQ methods will be provided that are compatible with LINQ standards. In this case, the specializations will be chosen and you won't need to change a thing.</p>
+<p>As things progressed further, I recognized there was more need for basic developer conveniences. This is when <strong>Philosoft</strong> became a key library rather than just a simple offshoot. The purpose was generalized into: provide features that support developers managing complex software solutions. Now, it wasn't <em>just</em> traits and concepts. <strong>Philosoft</strong> is also home to numerous attributes, both backports for older runtimes, and entirely new ones. This enables annotating almost anything you would need to, like nullability for better fault tolerance, or asymptotic complexity to help downstream make informed decisions about the performance curves of operations.</p>
 </article>
           </div>
           
@@ -81,7 +82,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/Entomy/LibLangly/blob/master/Documentation/articles/intro.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/Entomy/LibLangly/blob/master/Documentation/articles/intro-philosoft.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
