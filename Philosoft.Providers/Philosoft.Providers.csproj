@@ -5,11 +5,11 @@
 		<LangVersion>9.0</LangVersion>
 		<Nullable>enable</Nullable>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-		<Description>Provides types to do more sophisticated counting operations.</Description>
-		<PackageTags>counter, counters, counting</PackageTags>
-		<AssemblyName>Numbersome.Counters</AssemblyName>
+		<Description>Provides a rich set of functions that provides implementations of trait methods for you.</Description>
+		<PackageTags>trait, traits, trait-based</PackageTags>
+		<AssemblyName>Philosoft.Providers</AssemblyName>
+		<RootNamespace>System.Traits</RootNamespace>
 		<PackageIcon>Logo.png</PackageIcon>
-		<UserSecretsId>69948a84-7e57-4c27-8ca0-2e2254be64ff</UserSecretsId>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -18,11 +18,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="System.ValueTuple" Version="4.5.0" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <ProjectReference Include="..\Philosoft.Providers\Philosoft.Providers.csproj" />
+		<ProjectReference Include="..\Philosoft.Concepts\Philosoft.Concepts.csproj" />
 	</ItemGroup>
 
 </Project>
