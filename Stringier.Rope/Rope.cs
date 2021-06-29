@@ -46,30 +46,35 @@ namespace Stringier {
 		/// Initializes a new <see cref="Rope"/> with the initial <paramref name="element"/>.
 		/// </summary>
 		/// <param name="element">The initial element of the rope.</param>
+		[LinksNewNode]
 		public Rope(Char element) : this() => Add(element);
 
 		/// <summary>
 		/// Initializes a new <see cref="Rope"/> with the initial <paramref name="elements"/>.
 		/// </summary>
 		/// <param name="elements">The initial elements of the rope.</param>
+		[LinksNewNode]
 		public Rope([DisallowNull] String elements) : this() => Add(elements);
 
 		/// <summary>
 		/// Initializes a new <see cref="Rope"/> with the initial <paramref name="elements"/>.
 		/// </summary>
 		/// <param name="elements">The initial elements of the rope.</param>
+		[LinksNewNode]
 		public Rope([DisallowNull] params Char[] elements) : this() => Add(elements);
 
 		/// <summary>
 		/// Initializes a new <see cref="Rope"/> with the initial <paramref name="elements"/>.
 		/// </summary>
 		/// <param name="elements">The initial elements of the rope.</param>
+		[LinksNewNode]
 		public Rope(Memory<Char> elements) : this() => Add(elements);
 
 		/// <summary>
 		/// Initializes a new <see cref="Rope"/> with the initial <paramref name="elements"/>.
 		/// </summary>
 		/// <param name="elements">The initial elements of the rope.</param>
+		[LinksNewNode]
 		public Rope(ReadOnlyMemory<Char> elements) : this() => Add(elements);
 
 		/// <summary>
@@ -110,6 +115,7 @@ namespace Stringier {
 		/// Converts the <paramref name="char"/> to a <see cref="Rope"/>.
 		/// </summary>
 		/// <param name="char">The <see cref="Char"/> to convert.</param>
+		[LinksNewNode]
 		[return: NotNull]
 		public static implicit operator Rope(Char @char) => new(@char);
 
@@ -117,6 +123,7 @@ namespace Stringier {
 		/// Converts the <paramref name="string"/> to a <see cref="Rope"/>.
 		/// </summary>
 		/// <param name="string">The <see cref="String"/> to convert.</param>
+		[LinksNewNode]
 		[return: MaybeNull, NotNullIfNotNull("string")]
 		public static implicit operator Rope([AllowNull] String @string) => @string is not null ? new(@string) : null;
 
@@ -124,6 +131,7 @@ namespace Stringier {
 		/// Converts the <paramref name="array"/> to a <see cref="Rope"/>.
 		/// </summary>
 		/// <param name="array">The <see cref="Array"/> of <see cref="Char"/> to convert.</param>
+		[LinksNewNode]
 		[return: MaybeNull, NotNullIfNotNull("array")]
 		public static implicit operator Rope([AllowNull] Char[] array) => array is not null ? new(array) : null;
 
@@ -131,6 +139,7 @@ namespace Stringier {
 		/// Converts the <paramref name="memory"/> to a <see cref="Rope"/>.
 		/// </summary>
 		/// <param name="memory">The <see cref="Memory{T}"/> of <see cref="Char"/> to convert.</param>
+		[LinksNewNode]
 		[return: NotNull]
 		public static implicit operator Rope(Memory<Char> memory) => new(memory);
 
@@ -138,6 +147,7 @@ namespace Stringier {
 		/// Converts the <paramref name="memory"/> to a <see cref="Rope"/>.
 		/// </summary>
 		/// <param name="memory">The <see cref="ReadOnlyMemory{T}"/> of <see cref="Char"/> to convert.</param>
+		[LinksNewNode]
 		[return: NotNull]
 		public static implicit operator Rope(ReadOnlyMemory<Char> memory) => new(memory);
 
@@ -251,6 +261,7 @@ namespace Stringier {
 		/// <param name="left">The lefthand text.</param>
 		/// <param name="right">The righthand text.</param>
 		/// <returns>A <see cref="Rope"/> representing the concatenation of both texts.</returns>
+		[LinksNewNode]
 		[return: NotNull]
 		public static Rope operator +([AllowNull] Rope left, Char right) {
 			if (left is not null) {
@@ -267,6 +278,7 @@ namespace Stringier {
 		/// <param name="left">The lefthand text.</param>
 		/// <param name="right">The righthand text.</param>
 		/// <returns>A <see cref="Rope"/> representing the concatenation of both texts.</returns>
+		[LinksNewNode]
 		[return: MaybeNull, NotNullIfNotNull("left"), NotNullIfNotNull("right")]
 		public static Rope operator +([AllowNull] Rope left, [AllowNull] String right) {
 			if (left is not null) {
@@ -285,6 +297,7 @@ namespace Stringier {
 		/// <param name="left">The lefthand text.</param>
 		/// <param name="right">The righthand text.</param>
 		/// <returns>A <see cref="Rope"/> representing the concatenation of both texts.</returns>
+		[LinksNewNode]
 		[return: MaybeNull, NotNullIfNotNull("left"), NotNullIfNotNull("right")]
 		public static Rope operator +([AllowNull] Rope left, [AllowNull] Char[] right) {
 			if (left is not null) {
@@ -303,6 +316,7 @@ namespace Stringier {
 		/// <param name="left">The lefthand text.</param>
 		/// <param name="right">The righthand text.</param>
 		/// <returns>A <see cref="Rope"/> representing the concatenation of both texts.</returns>
+		[LinksNewNode]
 		[return: NotNull]
 		public static Rope operator +([AllowNull] Rope left, Memory<Char> right) {
 			if (left is not null) {
@@ -319,6 +333,7 @@ namespace Stringier {
 		/// <param name="left">The lefthand text.</param>
 		/// <param name="right">The righthand text.</param>
 		/// <returns>A <see cref="Rope"/> representing the concatenation of both texts.</returns>
+		[LinksNewNode]
 		[return: NotNull]
 		public static Rope operator +([AllowNull] Rope left, ReadOnlyMemory<Char> right) {
 			if (left is not null) {
@@ -335,6 +350,7 @@ namespace Stringier {
 		/// <param name="left">The lefthand text.</param>
 		/// <param name="right">The righthand text.</param>
 		/// <returns>A <see cref="Rope"/> representing the concatenation of both texts.</returns>
+		[LinksNewNode]
 		[return: NotNull]
 		public static Rope operator +(Char left, [AllowNull] Rope right) {
 			if (right is not null) {
@@ -351,6 +367,7 @@ namespace Stringier {
 		/// <param name="left">The lefthand text.</param>
 		/// <param name="right">The righthand text.</param>
 		/// <returns>A <see cref="Rope"/> representing the concatenation of both texts.</returns>
+		[LinksNewNode]
 		[return: MaybeNull, NotNullIfNotNull("left"), NotNullIfNotNull("right")]
 		public static Rope operator +([AllowNull] String left, [AllowNull] Rope right) {
 			if (right is not null) {
@@ -369,6 +386,7 @@ namespace Stringier {
 		/// <param name="left">The lefthand text.</param>
 		/// <param name="right">The righthand text.</param>
 		/// <returns>A <see cref="Rope"/> representing the concatenation of both texts.</returns>
+		[LinksNewNode]
 		[return: MaybeNull, NotNullIfNotNull("left"), NotNullIfNotNull("right")]
 		public static Rope operator +([AllowNull] Char[] left, [AllowNull] Rope right) {
 			if (right is not null) {
@@ -387,6 +405,7 @@ namespace Stringier {
 		/// <param name="left">The lefthand text.</param>
 		/// <param name="right">The righthand text.</param>
 		/// <returns>A <see cref="Rope"/> representing the concatenation of both texts.</returns>
+		[LinksNewNode]
 		[return: NotNull]
 		public static Rope operator +(Memory<Char> left, [AllowNull] Rope right) {
 			if (right is not null) {
@@ -403,6 +422,7 @@ namespace Stringier {
 		/// <param name="left">The lefthand text.</param>
 		/// <param name="right">The righthand text.</param>
 		/// <returns>A <see cref="Rope"/> representing the concatenation of both texts.</returns>
+		[LinksNewNode]
 		[return: NotNull]
 		public static Rope operator +(ReadOnlyMemory<Char> left, [AllowNull] Rope right) {
 			if (right is not null) {
@@ -518,30 +538,37 @@ namespace Stringier {
 		public static Boolean operator ==(ReadOnlySpan<Char> left, [AllowNull] Rope right) => right?.Equals(left) ?? left.IsEmpty;
 
 		/// <inheritdoc/>
+		[LinksNewNode]
 		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Add(Char element) => Postpend(element);
 
 		/// <inheritdoc/>
+		[LinksNewNode]
 		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Add([AllowNull] params Char[] elements) => Postpend(elements);
 
 		/// <inheritdoc/>
+		[LinksNewNode]
 		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Add(ArraySegment<Char> elements) => Postpend(elements);
 
 		/// <inheritdoc/>
+		[LinksNewNode]
 		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Add(Memory<Char> elements) => Postpend(elements);
 
 		/// <inheritdoc/>
+		[LinksNewNode]
 		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Add(ReadOnlyMemory<Char> elements) => Postpend(elements);
 
 		/// <inheritdoc/>
+		[LinksNewNode]
 		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Add([AllowNull] String element) => Postpend(element);
 
 		/// <inheritdoc/>
+		[UnlinksNode]
 		public void Clear() {
 			Collection.Clear(Head);
 			Head = null;
@@ -788,6 +815,7 @@ namespace Stringier {
 		System.Collections.Generic.IEnumerator<Char> System.Collections.Generic.IEnumerable<Char>.GetEnumerator() => GetEnumerator();
 
 		/// <inheritdoc/>
+		[LinksNewNode]
 		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Insert(Int32 index, Char element) {
 			if (index == 0) {
@@ -855,18 +883,22 @@ namespace Stringier {
 		}
 
 		/// <inheritdoc/>
+		[LinksNewNode]
 		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Insert(Int32 index, ArraySegment<Char> elements) => Insert(index, elements.AsMemory());
 
 		/// <inheritdoc/>
+		[LinksNewNode]
 		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Insert(Int32 index, [AllowNull] params Char[] elements) => Insert(index, elements.AsMemory());
 
 		/// <inheritdoc/>
+		[LinksNewNode]
 		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Insert(Int32 index, Memory<Char> elements) => Insert(index, (ReadOnlyMemory<Char>)elements);
 
 		/// <inheritdoc/>
+		[LinksNewNode]
 		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Insert(Int32 index, ReadOnlyMemory<Char> elements) {
 			if (index == 0) {
@@ -934,10 +966,12 @@ namespace Stringier {
 		}
 
 		/// <inheritdoc/>
+		[LinksNewNode]
 		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Insert(Int32 index, [AllowNull] String element) => Insert(index, element.AsMemory());
 
 		/// <inheritdoc/>
+		[LinksNewNode]
 		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Postpend(Char element) {
 			if (Count > 0) {
@@ -951,18 +985,22 @@ namespace Stringier {
 		}
 
 		/// <inheritdoc/>
+		[LinksNewNode]
 		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Postpend([AllowNull] params Char[] elements) => Postpend(elements.AsMemory());
 
 		/// <inheritdoc/>
+		[LinksNewNode]
 		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Postpend(ArraySegment<Char> elements) => Postpend(elements.AsMemory());
 
 		/// <inheritdoc/>
+		[LinksNewNode]
 		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Postpend(Memory<Char> elements) => Postpend((ReadOnlyMemory<Char>)elements);
 
 		/// <inheritdoc/>
+		[LinksNewNode]
 		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Postpend(ReadOnlyMemory<Char> elements) {
 			if (Count > 0) {
@@ -976,10 +1014,12 @@ namespace Stringier {
 		}
 
 		/// <inheritdoc/>
+		[LinksNewNode]
 		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Postpend([AllowNull] String element) => Postpend(element.AsMemory());
 
 		/// <inheritdoc/>
+		[LinksNewNode]
 		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Prepend(Char element) {
 			if (Count > 0) {
@@ -992,18 +1032,22 @@ namespace Stringier {
 		}
 
 		/// <inheritdoc/>
+		[LinksNewNode]
 		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Prepend([AllowNull] params Char[] elements) => Prepend(elements.AsMemory());
 
 		/// <inheritdoc/>
+		[LinksNewNode]
 		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Prepend(ArraySegment<Char> elements) => Prepend(elements.AsMemory());
 
 		/// <inheritdoc/>
+		[LinksNewNode]
 		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Prepend(Memory<Char> elements) => Prepend((ReadOnlyMemory<Char>)elements);
 
 		/// <inheritdoc/>
+		[LinksNewNode]
 		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Prepend(ReadOnlyMemory<Char> elements) {
 			if (Count > 0) {
@@ -1016,19 +1060,24 @@ namespace Stringier {
 		}
 
 		/// <inheritdoc/>
+		[LinksNewNode]
 		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Prepend([AllowNull] String element) => Prepend(element.AsMemory());
 
 		/// <inheritdoc/>
+		[MaybeUnlinksNode]
 		public void Remove(Char element) => throw new NotImplementedException();
 
 		/// <inheritdoc/>
+		[MaybeUnlinksNode]
 		public void RemoveFirst(Char element) => throw new NotImplementedException();
 
 		/// <inheritdoc/>
+		[MaybeUnlinksNode]
 		public void RemoveLast(Char element) => throw new NotImplementedException();
 
 		/// <inheritdoc/>
+		[MaybeLinksNewNode]
 		public void Replace(Char search, Char replace) {
 			// If the head node is null
 			if (Head is null) {

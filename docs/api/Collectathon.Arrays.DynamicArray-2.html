@@ -83,25 +83,16 @@
   </div>
   <div classs="implements">
     <h5>Implements</h5>
-    <div><a class="xref" href="System.Traits.Concepts.IArray-2.html">IArray</a>&lt;TIndex, TElement&gt;</div>
-    <div><a class="xref" href="System.Traits.Concepts.IReadOnlyArray-2.html">IReadOnlyArray</a>&lt;TIndex, TElement&gt;</div>
-    <div><a class="xref" href="System.Traits.ICapacity.html">ICapacity</a></div>
-    <div><a class="xref" href="System.Traits.IContains-1.html">IContains</a>&lt;TElement&gt;</div>
-    <div><a class="xref" href="System.Traits.IIndexReadOnly-2.html">IIndexReadOnly</a>&lt;TIndex, TElement&gt;</div>
-    <div><a class="xref" href="System.Traits.IIndex-2.html">IIndex</a>&lt;TIndex, TElement&gt;</div>
-    <div><a class="xref" href="System.Traits.IReplace-1.html">IReplace</a>&lt;TElement&gt;</div>
     <div><span class="xref">IClear</span></div>
     <div><span class="xref">IInsert</span>&lt;TIndex, TElement&gt;</div>
     <div><span class="xref">IResize</span></div>
-    <div><a class="xref" href="System.Traits.Concepts.ISequence-2.html">ISequence</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">ValueTuple</a>&lt;TIndex, TElement&gt;, <a class="xref" href="Collectathon.Enumerators.ArrayEnumerator-1.html">ArrayEnumerator</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">ValueTuple</a>&lt;TIndex, TElement&gt;&gt;&gt;</div>
-    <div><a class="xref" href="System.Traits.ICount.html">ICount</a></div>
-    <div><span class="xref">IEnumerable</span>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">ValueTuple</a>&lt;TIndex, TElement&gt;&gt;</div>
+    <div><span class="xref">ISequence</span>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">ValueTuple</a>&lt;TIndex, TElement&gt;, <a class="xref" href="Collectathon.Enumerators.ArrayEnumerator-1.html">ArrayEnumerator</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">ValueTuple</a>&lt;TIndex, TElement&gt;&gt;&gt;</div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Collectathon.Arrays.html">Collectathon.Arrays</a></h6>
   <h6><strong>Assembly</strong>: Collectathon.Arrays.dll</h6>
   <h5 id="Collectathon_Arrays_DynamicArray_2_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class DynamicArray&lt;TIndex, TElement&gt; : object, IArray&lt;TIndex, TElement&gt;, IReadOnlyArray&lt;TIndex, TElement&gt;, ICapacity, IContains&lt;TElement&gt;, IIndexReadOnly&lt;TIndex, TElement&gt;, IIndex&lt;TIndex, TElement&gt;, IReplace&lt;TElement&gt;, IClear, IInsert&lt;TIndex, TElement&gt;, IResize, ISequence&lt;(TIndex Index, TElement Element), ArrayEnumerator&lt;(TIndex Index, TElement Element)&gt;&gt;, ICount, IEnumerable&lt;(TIndex Index, TElement Element)&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class DynamicArray&lt;TIndex, TElement&gt; : IArray&lt;TIndex, TElement&gt;, IClear, IInsert&lt;TIndex, TElement&gt;, IResize, ISequence&lt;(TIndex Index, TElement Element), ArrayEnumerator&lt;(TIndex Index, TElement Element)&gt;&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -358,8 +349,7 @@
   </span>
   <a id="Collectathon_Arrays_DynamicArray_2_GetEnumerator_" data-uid="Collectathon.Arrays.DynamicArray`2.GetEnumerator*"></a>
   <h4 id="Collectathon_Arrays_DynamicArray_2_GetEnumerator" data-uid="Collectathon.Arrays.DynamicArray`2.GetEnumerator">GetEnumerator()</h4>
-  <div class="markdown level1 summary"><p>Returns an enumerator that iterates through the sequence.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -376,8 +366,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Collectathon.Enumerators.ArrayEnumerator-1.html">ArrayEnumerator</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">ValueTuple</a>&lt;TIndex, TElement&gt;&gt;</td>
-        <td><p>An enumerator that can be used to iterate through the collection.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -596,27 +585,6 @@
   </table>
   <h3 id="implements">Implements</h3>
   <div>
-      <a class="xref" href="System.Traits.Concepts.IArray-2.html">IArray&lt;TIndex, TElement&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="System.Traits.Concepts.IReadOnlyArray-2.html">IReadOnlyArray&lt;TIndex, TElement&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="System.Traits.ICapacity.html">ICapacity</a>
-  </div>
-  <div>
-      <a class="xref" href="System.Traits.IContains-1.html">IContains&lt;TElement&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="System.Traits.IIndexReadOnly-2.html">IIndexReadOnly&lt;TIndex, TElement&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="System.Traits.IIndex-2.html">IIndex&lt;TIndex, TElement&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="System.Traits.IReplace-1.html">IReplace&lt;TElement&gt;</a>
-  </div>
-  <div>
       <span class="xref">IClear</span>
   </div>
   <div>
@@ -626,13 +594,7 @@
       <span class="xref">IResize</span>
   </div>
   <div>
-      <a class="xref" href="System.Traits.Concepts.ISequence-2.html">ISequence&lt;TElement, TEnumerator&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="System.Traits.ICount.html">ICount</a>
-  </div>
-  <div>
-      <span class="xref">IEnumerable&lt;&gt;</span>
+      <span class="xref">ISequence&lt;, &gt;</span>
   </div>
 </article>
           </div>

@@ -57,20 +57,19 @@ namespace Collectathon.Arrays {
 		}
 
 		/// <inheritdoc/>
+		[Resizes]
 		public Int32 Capacity {
 			get => Elements.Length;
 			set => Resize(value);
 		}
 
 		/// <inheritdoc/>
-		[O(1), Ω(1), Θ(1)]
 		public Int32 Count {
 			get => count;
 			private set => count = value;
 		}
 
 		/// <inheritdoc/>
-		[O(1), Ω(1), Θ(1)]
 		[AllowNull, MaybeNull]
 		public TElement this[Int32 index] {
 			get => Elements[index];
@@ -79,7 +78,6 @@ namespace Collectathon.Arrays {
 
 #if !NETSTANDARD1_3
 		/// <inheritdoc/>
-		[O(1), Ω(1), Θ(1)]
 		public Span<TElement?> this[Range range] {
 			get {
 				(Int32 offset, Int32 length) = range.GetOffsetAndLength(Count);
@@ -116,6 +114,7 @@ namespace Collectathon.Arrays {
 		/// </summary>
 		/// <param name="array">The <see cref="DynamicArray{TElement}"/> to shift.</param>
 		/// <param name="amount">The amount of positions to shift.</param>
+		[Shifts]
 		[return: MaybeNull, NotNullIfNotNull("array")]
 		public static DynamicArray<TElement> operator <<([AllowNull] DynamicArray<TElement> array, Int32 amount) {
 			array?.ShiftLeft(amount);
@@ -127,38 +126,45 @@ namespace Collectathon.Arrays {
 		/// </summary>
 		/// <param name="array">The <see cref="DynamicArray{TElement}"/> to shift.</param>
 		/// <param name="amount">The amount of positions to shift.</param>
+		[Shifts]
 		[return: MaybeNull, NotNullIfNotNull("array")]
 		public static DynamicArray<TElement> operator >>([AllowNull] DynamicArray<TElement> array, Int32 amount) {
 			array?.ShiftRight(amount);
 			return array;
 		}
+
 		/// <inheritdoc/>
+		[MaybeResizes]
 		public void Add([AllowNull] TElement element) => Postpend(element);
 
 		/// <inheritdoc/>
+		[MaybeResizes]
 		public void Add([AllowNull] params TElement?[] elements) => Postpend(elements);
 
 		/// <inheritdoc/>
+		[MaybeResizes]
 		public void Add(ArraySegment<TElement?> elements) => Postpend(elements);
 
 		/// <inheritdoc/>
+		[MaybeResizes]
 		public void Add(Memory<TElement?> elements) => Postpend(elements);
 
 		/// <inheritdoc/>
+		[MaybeResizes]
 		public void Add(ReadOnlyMemory<TElement?> elements) => Postpend(elements);
 
 		/// <inheritdoc/>
+		[MaybeResizes]
 		public void Add(Span<TElement?> elements) => Postpend(elements);
 
 		/// <inheritdoc/>
+		[MaybeResizes]
 		public void Add(ReadOnlySpan<TElement?> elements) => Postpend(elements);
 
 		/// <inheritdoc/>
-		[O(1), Ω(1), Θ(1)]
 		public void Clear() => Count = 0;
 
 		/// <inheritdoc/>
-		[O(Complexity.n), Ω(Complexity.n), Θ(Complexity.n)]
 		public Boolean Contains([AllowNull] TElement element) => Collection.Contains(Elements, Count, element);
 
 		/// <summary>
@@ -199,6 +205,7 @@ namespace Collectathon.Arrays {
 		public override Int32 GetHashCode() => base.GetHashCode();
 
 		/// <inheritdoc/>
+		[MaybeResizes, Shifts]
 		public void Insert(Int32 index, [AllowNull] TElement element) {
 			if (Count == Capacity) {
 				Elements = Collection.Grow(Elements);
@@ -207,21 +214,27 @@ namespace Collectathon.Arrays {
 		}
 
 		/// <inheritdoc/>
+		[MaybeResizes, Shifts]
 		public void Insert(Int32 index, [AllowNull] params TElement?[] elements) => Insert(index, elements.AsSpan());
 
 		/// <inheritdoc/>
+		[MaybeResizes, Shifts]
 		public void Insert(Int32 index, ArraySegment<TElement?> elements) => Insert(index, elements.AsSpan());
 
 		/// <inheritdoc/>
+		[MaybeResizes, Shifts]
 		public void Insert(Int32 index, Memory<TElement?> elements) => Insert(index, elements.Span);
 
 		/// <inheritdoc/>
+		[MaybeResizes, Shifts]
 		public void Insert(Int32 index, ReadOnlyMemory<TElement?> elements) => Insert(index, elements.Span);
 
 		/// <inheritdoc/>
+		[MaybeResizes, Shifts]
 		public void Insert(Int32 index, Span<TElement?> elements) => Insert(index, (ReadOnlySpan<TElement?>)elements);
 
 		/// <inheritdoc/>
+		[MaybeResizes, Shifts]
 		public void Insert(Int32 index, ReadOnlySpan<TElement?> elements) {
 			if (Count + elements.Length >= Capacity) {
 				Elements = Collection.Grow(Elements, Capacity + elements.Length);
@@ -241,6 +254,7 @@ namespace Collectathon.Arrays {
 		public TElement Pop() => Elements[--Count];
 
 		/// <inheritdoc/>
+		[MaybeResizes]
 		public void Postpend([AllowNull] TElement element) {
 			if (Count == Capacity) {
 				Elements = Collection.Grow(Elements);
@@ -249,21 +263,27 @@ namespace Collectathon.Arrays {
 		}
 
 		/// <inheritdoc/>
+		[MaybeResizes]
 		public void Postpend([AllowNull] params TElement?[] elements) => Postpend(elements.AsSpan());
 
 		/// <inheritdoc/>
+		[MaybeResizes]
 		public void Postpend(ArraySegment<TElement?> elements) => Postpend(elements.AsSpan());
 
 		/// <inheritdoc/>
+		[MaybeResizes]
 		public void Postpend(Memory<TElement?> elements) => Postpend(elements.Span);
 
 		/// <inheritdoc/>
+		[MaybeResizes]
 		public void Postpend(ReadOnlyMemory<TElement?> elements) => Postpend(elements.Span);
 
 		/// <inheritdoc/>
+		[MaybeResizes]
 		public void Postpend(Span<TElement?> elements) => Postpend((ReadOnlySpan<TElement?>)elements);
 
 		/// <inheritdoc/>
+		[MaybeResizes]
 		public void Postpend(ReadOnlySpan<TElement?> elements) {
 			if (Count + elements.Length >= Capacity) {
 				Elements = Collection.Grow(Elements, Capacity + elements.Length);
@@ -272,6 +292,7 @@ namespace Collectathon.Arrays {
 		}
 
 		/// <inheritdoc/>
+		[MaybeResizes, Shifts]
 		public void Prepend([AllowNull] TElement element) {
 			if (Count == Capacity) {
 				Elements = Collection.Grow(Elements);
@@ -280,21 +301,27 @@ namespace Collectathon.Arrays {
 		}
 
 		/// <inheritdoc/>
+		[MaybeResizes, Shifts]
 		public void Prepend([AllowNull] params TElement?[] elements) => Prepend(elements.AsSpan());
 
 		/// <inheritdoc/>
+		[MaybeResizes, Shifts]
 		public void Prepend(ArraySegment<TElement?> elements) => Prepend(elements.AsSpan());
 
 		/// <inheritdoc/>
+		[MaybeResizes, Shifts]
 		public void Prepend(Memory<TElement?> elements) => Prepend(elements.Span);
 
 		/// <inheritdoc/>
+		[MaybeResizes, Shifts]
 		public void Prepend(ReadOnlyMemory<TElement?> elements) => Prepend(elements.Span);
 
 		/// <inheritdoc/>
+		[MaybeResizes, Shifts]
 		public void Prepend(Span<TElement?> elements) => Prepend((ReadOnlySpan<TElement?>)elements);
 
 		/// <inheritdoc/>
+		[MaybeResizes, Shifts]
 		public void Prepend(ReadOnlySpan<TElement?> elements) {
 			if (Count + elements.Length >= Capacity) {
 				Elements = Collection.Grow(Elements, Capacity + elements.Length);
@@ -303,67 +330,75 @@ namespace Collectathon.Arrays {
 		}
 
 		/// <inheritdoc/>
+		[MaybeResizes]
 		public void Push([AllowNull] TElement element) => Postpend(element);
 
 		/// <inheritdoc/>
+		[MaybeResizes]
 		public void Push([AllowNull] params TElement?[] elements) => Postpend(elements);
 
 		/// <inheritdoc/>
+		[MaybeResizes]
 		public void Push(ArraySegment<TElement?> elements) => Postpend(elements);
 
 		/// <inheritdoc/>
+		[MaybeResizes]
 		public void Push(Memory<TElement?> elements) => Postpend(elements);
 
 		/// <inheritdoc/>
+		[MaybeResizes]
 		public void Push(ReadOnlyMemory<TElement?> elements) => Postpend(elements);
 
 		/// <inheritdoc/>
+		[MaybeResizes]
 		public void Push(Span<TElement?> elements) => Postpend(elements);
 
 		/// <inheritdoc/>
+		[MaybeResizes]
 		public void Push(ReadOnlySpan<TElement?> elements) => Postpend(elements);
 
 		/// <inheritdoc/>
-		[O(Complexity.n_plus_k), Ω(Complexity.n_plus_k)]
+		[MaybeShifts]
 		public void Remove([AllowNull] TElement element) => Collection.Remove(Elements, ref count, element);
 
 		/// <inheritdoc/>
-		[O(Complexity.n_plus_k), Ω(Complexity.n_plus_k)]
+		[MaybeShifts]
 		public void RemoveFirst([AllowNull] TElement element) => Collection.RemoveFirst(Elements, ref count, element);
 
 		/// <inheritdoc/>
-		[O(Complexity.n_plus_k), Ω(Complexity.n_plus_k)]
+		[MaybeShifts]
 		public void RemoveLast([AllowNull] TElement element) => Collection.RemoveLast(Elements, ref count, element);
 
 		/// <inheritdoc/>
-		[O(Complexity.n), Ω(Complexity.n), Θ(Complexity.n)]
 		public void Replace([AllowNull] TElement search, [AllowNull] TElement replace) => Collection.Replace(Elements, Count, search, replace);
 
 		/// <inheritdoc/>
+		[Resizes]
 		public void Resize(Int32 capacity) => Elements = Collection.Resize(Elements, capacity);
 
 		/// <inheritdoc/>
+		[Shifts]
 		public void ShiftLeft() => Collection.ShiftLeft(Elements, Count, 1);
 
 		/// <inheritdoc/>
+		[Shifts]
 		public void ShiftLeft(Int32 amount) => Collection.ShiftLeft(Elements, Count, amount);
 
 		/// <inheritdoc/>
+		[Shifts]
 		public void ShiftRight() => Collection.ShiftRight(Elements, Count, 1);
 
 		/// <inheritdoc/>
+		[Shifts]
 		public void ShiftRight(Int32 amount) => Collection.ShiftRight(Elements, Count, amount);
 
 		/// <inheritdoc/>
-		[O(1), Ω(1), Θ(1)]
 		public Span<TElement?> Slice() => Elements.AsSpan();
 
 		/// <inheritdoc/>
-		[O(1), Ω(1), Θ(1)]
 		public Span<TElement?> Slice(Int32 start) => Elements.AsSpan(start);
 
 		/// <inheritdoc/>
-		[O(1), Ω(1), Θ(1)]
 		public Span<TElement?> Slice(Int32 start, Int32 length) => Elements.AsSpan(start, length);
 
 		/// <inheritdoc/>
@@ -394,12 +429,10 @@ namespace Collectathon.Arrays {
 		Memory<TElement> ISlice<Memory<TElement>>.Slice(Int32 start, Int32 length) => Elements.AsMemory(start, length);
 
 		/// <inheritdoc/>
-		[O(Complexity.n), Ω(Complexity.n), Θ(Complexity.n)]
 		[return: NotNull]
 		public sealed override String ToString() => Collection.ToString(Elements);
 
 		/// <inheritdoc/>
-		[O(Complexity.n), Ω(Complexity.n), Θ(Complexity.n)]
 		[return: NotNull]
 		public String ToString(Int32 amount) => Collection.ToString(Elements, amount);
 	}
