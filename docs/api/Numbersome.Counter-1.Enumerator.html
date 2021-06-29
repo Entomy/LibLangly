@@ -78,17 +78,13 @@
   <div class="markdown level0 conceptual"></div>
   <div classs="implements">
     <h5>Implements</h5>
-    <div><a class="xref" href="System.Traits.Concepts.IEnumerator-1.html">IEnumerator</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">ValueTuple</a>&lt;TElement, <span class="xref">Int32</span>&gt;&gt;</div>
-    <div><span class="xref">Collections.Generic.IEnumerator</span>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">ValueTuple</a>&lt;TElement, <span class="xref">Int32</span>&gt;&gt;</div>
-    <div><a class="xref" href="System.Traits.Concepts.ISequence-2.html">ISequence</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">ValueTuple</a>&lt;TElement, <span class="xref">Int32</span>&gt;, <a class="xref" href="System.Traits.Concepts.IEnumerator-1.html">IEnumerator</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">ValueTuple</a>&lt;TElement, <span class="xref">Int32</span>&gt;&gt;&gt;</div>
-    <div><a class="xref" href="System.Traits.ICount.html">ICount</a></div>
-    <div><span class="xref">IEnumerable</span>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">ValueTuple</a>&lt;TElement, <span class="xref">Int32</span>&gt;&gt;</div>
+    <div><span class="xref">IEnumerator</span>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">ValueTuple</a>&lt;TElement, <span class="xref">Int32</span>&gt;&gt;</div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Numbersome.html">Numbersome</a></h6>
   <h6><strong>Assembly</strong>: Numbersome.Counters.dll</h6>
   <h5 id="Numbersome_Counter_1_Enumerator_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public struct Enumerator : IEnumerator&lt;(TElement Element, Int32 Count)&gt;, Collections.Generic.IEnumerator&lt;(TElement Element, Int32 Count)&gt;, ISequence&lt;(TElement Element, Int32 Count), IEnumerator&lt;(TElement Element, Int32 Count)&gt;&gt;, ICount, IEnumerable&lt;(TElement Element, Int32 Count)&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public struct Enumerator : IEnumerator&lt;(TElement Element, Int32 Count)&gt;</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -226,8 +222,7 @@
   </span>
   <a id="Numbersome_Counter_1_Enumerator_GetEnumerator_" data-uid="Numbersome.Counter`1.Enumerator.GetEnumerator*"></a>
   <h4 id="Numbersome_Counter_1_Enumerator_GetEnumerator" data-uid="Numbersome.Counter`1.Enumerator.GetEnumerator">GetEnumerator()</h4>
-  <div class="markdown level1 summary"><p>Returns an enumerator that iterates through the sequence.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -243,9 +238,8 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="System.Traits.Concepts.IEnumerator-1.html">IEnumerator</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">ValueTuple</a>&lt;TElement, <span class="xref">Int32</span>&gt;&gt;</td>
-        <td><p>An enumerator that can be used to iterate through the collection.</p>
-</td>
+        <td><span class="xref">IEnumerator</span>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.valuetuple-2">ValueTuple</a>&lt;TElement, <span class="xref">Int32</span>&gt;&gt;</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -373,19 +367,7 @@
   </table>
   <h3 id="implements">Implements</h3>
   <div>
-      <a class="xref" href="System.Traits.Concepts.IEnumerator-1.html">IEnumerator&lt;TElement&gt;</a>
-  </div>
-  <div>
-      <span class="xref">Collections.Generic.IEnumerator&lt;&gt;</span>
-  </div>
-  <div>
-      <a class="xref" href="System.Traits.Concepts.ISequence-2.html">ISequence&lt;TElement, TEnumerator&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="System.Traits.ICount.html">ICount</a>
-  </div>
-  <div>
-      <span class="xref">IEnumerable&lt;&gt;</span>
+      <span class="xref">IEnumerator&lt;&gt;</span>
   </div>
 </article>
           </div>

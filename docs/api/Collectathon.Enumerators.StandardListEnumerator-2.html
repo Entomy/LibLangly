@@ -78,17 +78,13 @@
   <div class="markdown level0 conceptual"></div>
   <div classs="implements">
     <h5>Implements</h5>
-    <div><a class="xref" href="System.Traits.Concepts.IEnumerator-1.html">IEnumerator</a>&lt;TElement&gt;</div>
-    <div><span class="xref">Collections.Generic.IEnumerator</span>&lt;TElement&gt;</div>
-    <div><a class="xref" href="System.Traits.Concepts.ISequence-2.html">ISequence</a>&lt;TElement, <a class="xref" href="System.Traits.Concepts.IEnumerator-1.html">IEnumerator</a>&lt;TElement&gt;&gt;</div>
-    <div><a class="xref" href="System.Traits.ICount.html">ICount</a></div>
-    <div><span class="xref">IEnumerable</span>&lt;TElement&gt;</div>
+    <div><span class="xref">IEnumerator</span>&lt;TElement&gt;</div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Collectathon.Enumerators.html">Collectathon.Enumerators</a></h6>
   <h6><strong>Assembly</strong>: Collectathon.Lists.dll</h6>
   <h5 id="Collectathon_Enumerators_StandardListEnumerator_2_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public struct StandardListEnumerator&lt;TElement, TNode&gt; : IEnumerator&lt;TElement&gt;, Collections.Generic.IEnumerator&lt;TElement&gt;, ISequence&lt;TElement, IEnumerator&lt;TElement&gt;&gt;, ICount, IEnumerable&lt;TElement&gt; where TNode : class, IElement&lt;TElement&gt;, INext&lt;TNode&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public struct StandardListEnumerator&lt;TElement, TNode&gt; : IEnumerator&lt;TElement&gt; where TNode : class, IElement&lt;TElement&gt;, INext&lt;TNode&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -241,8 +237,7 @@
   </span>
   <a id="Collectathon_Enumerators_StandardListEnumerator_2_GetEnumerator_" data-uid="Collectathon.Enumerators.StandardListEnumerator`2.GetEnumerator*"></a>
   <h4 id="Collectathon_Enumerators_StandardListEnumerator_2_GetEnumerator" data-uid="Collectathon.Enumerators.StandardListEnumerator`2.GetEnumerator">GetEnumerator()</h4>
-  <div class="markdown level1 summary"><p>Returns an enumerator that iterates through the sequence.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -258,9 +253,8 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="System.Traits.Concepts.IEnumerator-1.html">IEnumerator</a>&lt;TElement&gt;</td>
-        <td><p>An enumerator that can be used to iterate through the collection.</p>
-</td>
+        <td><span class="xref">IEnumerator</span>&lt;TElement&gt;</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -388,19 +382,7 @@
   </table>
   <h3 id="implements">Implements</h3>
   <div>
-      <a class="xref" href="System.Traits.Concepts.IEnumerator-1.html">IEnumerator&lt;TElement&gt;</a>
-  </div>
-  <div>
-      <span class="xref">Collections.Generic.IEnumerator&lt;&gt;</span>
-  </div>
-  <div>
-      <a class="xref" href="System.Traits.Concepts.ISequence-2.html">ISequence&lt;TElement, TEnumerator&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="System.Traits.ICount.html">ICount</a>
-  </div>
-  <div>
-      <span class="xref">IEnumerable&lt;&gt;</span>
+      <span class="xref">IEnumerator&lt;&gt;</span>
   </div>
 </article>
           </div>
