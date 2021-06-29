@@ -1,19 +1,20 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using System.Traits.Testing;
 using Collectathon.Arrays;
 using Xunit;
 
 namespace Collectathon {
-	public class BoundedArray_Tests {
+	public class BoundedArray_Tests : Tests {
 		[Theory]
 		[InlineData(new Int32[] { 0, 0 }, new Int32[] { }, new Int32[] { 0, 0 })]
 		public void Add_Array([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
 			BoundedArray<Int32> array = initial;
 			if (array.Count + elements.Length <= array.Capacity) {
 				array.Add(elements);
-				Assert.Equal(expected, array);
+				Assert(array).Equals(expected);
 			} else {
-				Assert.Throws<InvalidOperationException>(() => array.Add(elements));
+				Assert(() => array.Add(elements)).Throws<InvalidOperationException>();
 			}
 		}
 
@@ -24,9 +25,9 @@ namespace Collectathon {
 			BoundedArray<Int32> array = initial;
 			if (array.Count < array.Capacity) {
 				array.Add(value);
-				Assert.Equal(expected, array);
+				Assert(array).Equals(expected);
 			} else {
-				Assert.Throws<InvalidOperationException>(() => array.Add(value));
+				Assert(() => array.Add(value)).Throws<InvalidOperationException>();
 			}
 		}
 
@@ -36,9 +37,9 @@ namespace Collectathon {
 			BoundedArray<Int32> array = initial;
 			if (array.Count + elements.Length <= array.Capacity) {
 				array.Add(elements.AsMemory());
-				Assert.Equal(expected, array);
+				Assert(array).Equals(expected);
 			} else {
-				Assert.Throws<InvalidOperationException>(() => array.Add(elements));
+				Assert(() => array.Add(elements)).Throws<InvalidOperationException>();
 			}
 		}
 
@@ -48,9 +49,9 @@ namespace Collectathon {
 			BoundedArray<Int32> array = initial;
 			if (array.Count + elements.Length <= array.Capacity) {
 				array.Add((ReadOnlyMemory<Int32>)elements.AsMemory());
-				Assert.Equal(expected, array);
+				Assert(array).Equals(expected);
 			} else {
-				Assert.Throws<InvalidOperationException>(() => array.Add((ReadOnlyMemory<Int32>)elements.AsMemory()));
+				Assert(() => array.Add((ReadOnlyMemory<Int32>)elements.AsMemory())).Throws<InvalidOperationException>();
 			}
 		}
 
@@ -60,9 +61,9 @@ namespace Collectathon {
 			BoundedArray<Int32> array = initial;
 			if (array.Count + elements.Length <= array.Capacity) {
 				array.Add((ReadOnlySpan<Int32>)elements.AsSpan());
-				Assert.Equal(expected, array);
+				Assert(array).Equals(expected);
 			} else {
-				Assert.Throws<InvalidOperationException>(() => array.Add((ReadOnlySpan<Int32>)elements.AsSpan()));
+				Assert(() => array.Add((ReadOnlySpan<Int32>)elements.AsSpan())).Throws<InvalidOperationException>();
 			}
 		}
 
@@ -72,9 +73,9 @@ namespace Collectathon {
 			BoundedArray<Int32> array = initial;
 			if (array.Count + elements.Length <= array.Capacity) {
 				array.Add(elements.AsSpan());
-				Assert.Equal(expected, array);
+				Assert(array).Equals(expected);
 			} else {
-				Assert.Throws<InvalidOperationException>(() => array.Add(elements.AsSpan()));
+				Assert(() => array.Add(elements.AsSpan())).Throws<InvalidOperationException>();
 			}
 		}
 
@@ -84,7 +85,7 @@ namespace Collectathon {
 		public void Clear([DisallowNull] Int32[] initial) {
 			BoundedArray<Int32> array = initial;
 			array.Clear();
-			Assert.Empty(array);
+			Assert(array).Count(0);
 		}
 
 		[Theory]
@@ -93,16 +94,11 @@ namespace Collectathon {
 
 		public void Equals([DisallowNull] Int32[] elements) {
 			BoundedArray<Int32> val = elements is not null ? new BoundedArray<Int32>(elements) : null;
-			Assert.Equal(elements, val);
-			Assert.True(val.Equals(elements));
+			Assert(val).Equals(elements);
 			BoundedArray<Int32> exp = elements is not null ? new BoundedArray<Int32>(elements) : null;
-			Assert.Equal(exp, val);
-			Assert.Equal<Int32>(exp, val);
-			Assert.True(val.Equals(exp));
+			Assert(val).Equals(exp);
 			BoundedArray<Int32> dval = elements is not null ? new BoundedArray<Int32>(elements) : null;
-			BoundedArray<Int32> dexp = elements is not null ? new BoundedArray<Int32>(elements) : null;
-			Assert.True(val.Equals(dval));
-			Assert.True(dval.Equals(val));
+			Assert(val).Equals(dval);
 		}
 
 		[Theory]
@@ -110,7 +106,7 @@ namespace Collectathon {
 		[InlineData(15, new Int32[] { 1, 2, 3, 4, 5 })]
 		public void Fold(Int32 expected, [DisallowNull] Int32[] elements) {
 			BoundedArray<Int32> array = elements;
-			Assert.Equal(expected, array.Fold((a, b) => a + b, 0));
+			Assert(array.Fold((a, b) => a + b, 0)).Equals(expected);
 		}
 
 		[Theory]
@@ -125,9 +121,9 @@ namespace Collectathon {
 			BoundedArray<Int32> array = initial;
 			if (array.Count + elements.Length <= array.Capacity) {
 				array.Insert(index, elements);
-				Assert.Equal(expected, array);
+				Assert(array).Equals(expected);
 			} else {
-				Assert.Throws<InvalidOperationException>(() => array.Insert(index, elements));
+				Assert(() => array.Insert(index, elements)).Throws<InvalidOperationException>();
 			}
 		}
 
@@ -143,9 +139,9 @@ namespace Collectathon {
 			BoundedArray<Int32> array = initial;
 			if (array.Count < array.Capacity) {
 				array.Insert(index, element);
-				Assert.Equal(expected, array);
+				Assert(array).Equals(expected);
 			} else {
-				Assert.Throws<InvalidOperationException>(() => array.Insert(index, element));
+				Assert(() => array.Insert(index, element)).Throws<InvalidOperationException>();
 			}
 		}
 
@@ -161,9 +157,9 @@ namespace Collectathon {
 			BoundedArray<Int32> array = initial;
 			if (array.Count + elements.Length <= array.Capacity) {
 				array.Insert(index, elements.AsMemory());
-				Assert.Equal(expected, array);
+				Assert(array).Equals(expected);
 			} else {
-				Assert.Throws<InvalidOperationException>(() => array.Insert(index, elements.AsMemory()));
+				Assert(() => array.Insert(index, elements.AsMemory())).Throws<InvalidOperationException>();
 			}
 		}
 
@@ -179,9 +175,9 @@ namespace Collectathon {
 			BoundedArray<Int32> array = initial;
 			if (array.Count + elements.Length <= array.Capacity) {
 				array.Insert(index, (ReadOnlyMemory<Int32>)elements.AsMemory());
-				Assert.Equal(expected, array);
+				Assert(array).Equals(expected);
 			} else {
-				Assert.Throws<InvalidOperationException>(() => array.Insert(index, (ReadOnlyMemory<Int32>)elements.AsMemory()));
+				Assert(() => array.Insert(index, (ReadOnlyMemory<Int32>)elements.AsMemory())).Throws<InvalidOperationException>();
 			}
 		}
 
@@ -197,9 +193,9 @@ namespace Collectathon {
 			BoundedArray<Int32> array = initial;
 			if (array.Count + elements.Length <= array.Capacity) {
 				array.Insert(index, (ReadOnlySpan<Int32>)elements.AsSpan());
-				Assert.Equal(expected, array);
+				Assert(array).Equals(expected);
 			} else {
-				Assert.Throws<InvalidOperationException>(() => array.Insert(index, (ReadOnlySpan<Int32>)elements.AsSpan()));
+				Assert(() => array.Insert(index, (ReadOnlySpan<Int32>)elements.AsSpan())).Throws<InvalidOperationException>();
 			}
 		}
 
@@ -215,9 +211,9 @@ namespace Collectathon {
 			BoundedArray<Int32> array = initial;
 			if (array.Count + elements.Length <= array.Capacity) {
 				array.Insert(index, elements.AsSpan());
-				Assert.Equal(expected, array);
+				Assert(array).Equals(expected);
 			} else {
-				Assert.Throws<InvalidOperationException>(() => array.Insert(index, elements.AsSpan()));
+				Assert(() => array.Insert(index, elements.AsSpan())).Throws<InvalidOperationException>();
 			}
 		}
 
@@ -227,7 +223,7 @@ namespace Collectathon {
 		[InlineData(2, new Int32[] { 1, 2, 1, 2, 1 }, 2)]
 		public void Occurrences_Element(Int32 expected, [DisallowNull] Int32[] elements, Int32 element) {
 			BoundedArray<Int32> array = elements;
-			Assert.Equal(expected, array.Occurrences(element));
+			Assert(array.Occurrences(element)).Equals(expected);
 		}
 
 		[Theory]
@@ -238,7 +234,7 @@ namespace Collectathon {
 		[InlineData(3, new Int32[] { 2, 1, 2, 1, 2 })]
 		public void Occurrences_Predicate(Int32 expected, [DisallowNull] Int32[] elements) {
 			BoundedArray<Int32> array = elements;
-			Assert.Equal(expected, array.Occurrences((x) => x % 2 == 0));
+			Assert(array.Occurrences((x) => x % 2 == 0)).Equals(expected);
 		}
 
 		[Theory]
@@ -248,9 +244,9 @@ namespace Collectathon {
 			BoundedArray<Int32> array = initial;
 			if (array.Count + elements.Length <= array.Capacity) {
 				array.Postpend(elements);
-				Assert.Equal(expected, array);
+				Assert(array).Equals(expected);
 			} else {
-				Assert.Throws<InvalidOperationException>(() => array.Postpend(elements));
+				Assert(() => array.Postpend(elements)).Throws<InvalidOperationException>();
 			}
 		}
 
@@ -260,9 +256,9 @@ namespace Collectathon {
 			BoundedArray<Int32> array = initial;
 			if (array.Count < array.Capacity) {
 				array.Postpend(element);
-				Assert.Equal(expected, array);
+				Assert(array).Equals(expected);
 			} else {
-				Assert.Throws<InvalidOperationException>(() => array.Postpend(element));
+				Assert(() => array.Postpend(element)).Throws<InvalidOperationException>();
 			}
 		}
 
@@ -273,9 +269,9 @@ namespace Collectathon {
 			BoundedArray<Int32> array = initial;
 			if (array.Count + elements.Length <= array.Capacity) {
 				array.Postpend(elements.AsMemory());
-				Assert.Equal(expected, array);
+				Assert(array).Equals(expected);
 			} else {
-				Assert.Throws<InvalidOperationException>(() => array.Postpend(elements.AsMemory()));
+				Assert(() => array.Postpend(elements.AsMemory())).Throws<InvalidOperationException>();
 			}
 		}
 
@@ -286,9 +282,9 @@ namespace Collectathon {
 			BoundedArray<Int32> array = initial;
 			if (array.Count + elements.Length <= array.Capacity) {
 				array.Postpend((ReadOnlyMemory<Int32>)elements.AsMemory());
-				Assert.Equal(expected, array);
+				Assert(array).Equals(expected);
 			} else {
-				Assert.Throws<InvalidOperationException>(() => array.Postpend((ReadOnlyMemory<Int32>)elements.AsMemory()));
+				Assert(() => array.Postpend((ReadOnlyMemory<Int32>)elements.AsMemory())).Throws<InvalidOperationException>();
 			}
 		}
 
@@ -299,9 +295,9 @@ namespace Collectathon {
 			BoundedArray<Int32> array = initial;
 			if (array.Count + elements.Length <= array.Capacity) {
 				array.Postpend((ReadOnlySpan<Int32>)elements.AsSpan());
-				Assert.Equal(expected, array);
+				Assert(array).Equals(expected);
 			} else {
-				Assert.Throws<InvalidOperationException>(() => array.Postpend((ReadOnlySpan<Int32>)elements.AsSpan()));
+				Assert(() => array.Postpend((ReadOnlySpan<Int32>)elements.AsSpan())).Throws<InvalidOperationException>();
 			}
 		}
 
@@ -312,9 +308,9 @@ namespace Collectathon {
 			BoundedArray<Int32> array = initial;
 			if (array.Count + elements.Length <= array.Capacity) {
 				array.Postpend(elements.AsSpan());
-				Assert.Equal(expected, array);
+				Assert(array).Equals(expected);
 			} else {
-				Assert.Throws<InvalidOperationException>(() => array.Postpend(elements.AsSpan()));
+				Assert(() => array.Postpend(elements.AsSpan())).Throws<InvalidOperationException>();
 			}
 		}
 
@@ -325,9 +321,9 @@ namespace Collectathon {
 			BoundedArray<Int32> array = initial;
 			if (array.Count + elements.Length <= array.Capacity) {
 				array.Prepend(elements);
-				Assert.Equal(expected, array);
+				Assert(array).Equals(expected);
 			} else {
-				Assert.Throws<InvalidOperationException>(() => array.Prepend(elements));
+				Assert(() => array.Prepend(elements)).Throws<InvalidOperationException>();
 			}
 		}
 
@@ -337,9 +333,9 @@ namespace Collectathon {
 			BoundedArray<Int32> array = initial;
 			if (array.Count < array.Capacity) {
 				array.Prepend(element);
-				Assert.Equal(expected, array);
+				Assert(array).Equals(expected);
 			} else {
-				Assert.Throws<InvalidOperationException>(() => array.Prepend(element));
+				Assert(() => array.Prepend(element)).Throws<InvalidOperationException>();
 			}
 		}
 
@@ -350,9 +346,9 @@ namespace Collectathon {
 			BoundedArray<Int32> array = initial;
 			if (array.Count + elements.Length <= array.Capacity) {
 				array.Prepend(elements.AsMemory());
-				Assert.Equal(expected, array);
+				Assert(array).Equals(expected);
 			} else {
-				Assert.Throws<InvalidOperationException>(() => array.Prepend(elements.AsMemory()));
+				Assert(() => array.Prepend(elements.AsMemory())).Throws<InvalidOperationException>();
 			}
 		}
 
@@ -363,9 +359,9 @@ namespace Collectathon {
 			BoundedArray<Int32> array = initial;
 			if (array.Count + elements.Length <= array.Capacity) {
 				array.Prepend((ReadOnlyMemory<Int32>)elements.AsMemory());
-				Assert.Equal(expected, array);
+				Assert(array).Equals(expected);
 			} else {
-				Assert.Throws<InvalidOperationException>(() => array.Prepend((ReadOnlyMemory<Int32>)elements.AsMemory()));
+				Assert(() => array.Prepend((ReadOnlyMemory<Int32>)elements.AsMemory())).Throws<InvalidOperationException>();
 			}
 		}
 
@@ -376,9 +372,9 @@ namespace Collectathon {
 			BoundedArray<Int32> array = initial;
 			if (array.Count + elements.Length <= array.Capacity) {
 				array.Prepend((ReadOnlySpan<Int32>)elements.AsSpan());
-				Assert.Equal(expected, array);
+				Assert(array).Equals(expected);
 			} else {
-				Assert.Throws<InvalidOperationException>(() => array.Prepend((ReadOnlySpan<Int32>)elements.AsSpan()));
+				Assert(() => array.Prepend((ReadOnlySpan<Int32>)elements.AsSpan())).Throws<InvalidOperationException>();
 			}
 		}
 
@@ -389,9 +385,9 @@ namespace Collectathon {
 			BoundedArray<Int32> array = initial;
 			if (array.Count + elements.Length <= array.Capacity) {
 				array.Prepend(elements.AsSpan());
-				Assert.Equal(expected, array);
+				Assert(array).Equals(expected);
 			} else {
-				Assert.Throws<InvalidOperationException>(() => array.Prepend(elements.AsSpan()));
+				Assert(() => array.Prepend(elements.AsSpan())).Throws<InvalidOperationException>();
 			}
 		}
 
@@ -408,7 +404,7 @@ namespace Collectathon {
 		public void Replace([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 search, Int32 replace) {
 			BoundedArray<Int32> array = initial;
 			array.Replace(search, replace);
-			Assert.Equal(expected, array);
+			Assert(array).Equals(expected);
 		}
 
 		[Theory]
@@ -417,7 +413,7 @@ namespace Collectathon {
 		public void ShiftLeft([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial) {
 			BoundedArray<Int32> array = initial;
 			array.ShiftLeft();
-			Assert.Equal(expected, array);
+			Assert(array).Equals(expected);
 		}
 
 		[Theory]
@@ -427,7 +423,7 @@ namespace Collectathon {
 		public void ShiftLeftBy([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 amount) {
 			BoundedArray<Int32> array = initial;
 			array.ShiftLeft(amount);
-			Assert.Equal(expected, array);
+			Assert(array).Equals(expected);
 		}
 
 		[Theory]
@@ -436,7 +432,7 @@ namespace Collectathon {
 		[InlineData(new Int32[] { 3, 4, 5, 0, 0 }, new Int32[] { 1, 2, 3, 4, 5 }, 2)]
 		public void ShiftLeftOp([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 amount) {
 			BoundedArray<Int32> array = initial;
-			Assert.Equal(expected, array << amount);
+			Assert(array << amount).Equals(expected);
 		}
 
 		[Theory]
@@ -445,7 +441,7 @@ namespace Collectathon {
 		public void ShiftRight([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial) {
 			BoundedArray<Int32> array = initial;
 			array.ShiftRight();
-			Assert.Equal(expected, array);
+			Assert(array).Equals(expected);
 		}
 
 		[Theory]
@@ -455,7 +451,7 @@ namespace Collectathon {
 		public void ShiftRightBy([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 amount) {
 			BoundedArray<Int32> array = initial;
 			array.ShiftRight(amount);
-			Assert.Equal(expected, array);
+			Assert(array).Equals(expected);
 		}
 
 		[Theory]
@@ -464,7 +460,7 @@ namespace Collectathon {
 		[InlineData(new Int32[] { 0, 0, 1, 2, 3 }, new Int32[] { 1, 2, 3, 4, 5 }, 2)]
 		public void ShiftRightOp([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 amount) {
 			BoundedArray<Int32> array = initial;
-			Assert.Equal(expected, array >> amount);
+			Assert(array >> amount).Equals(expected);
 		}
 
 		[Theory]
@@ -473,7 +469,7 @@ namespace Collectathon {
 		public void Slice([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial) {
 			BoundedArray<Int32> array = initial;
 			Span<Int32> slice = array.Slice();
-			Assert.Equal(expected, slice.ToArray());
+			Assert(slice).Equals(expected);
 		}
 
 		[Theory]
@@ -485,7 +481,7 @@ namespace Collectathon {
 		public void Slice_Range([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 start, Int32 end) {
 			BoundedArray<Int32> array = initial;
 			Span<Int32> slice = array[start..end];
-			Assert.Equal(expected, slice.ToArray());
+			Assert(slice).Equals(expected);
 		}
 
 		[Theory]
@@ -494,7 +490,7 @@ namespace Collectathon {
 		public void Slice_Start([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 start) {
 			BoundedArray<Int32> array = initial;
 			Span<Int32> slice = array.Slice(start);
-			Assert.Equal(expected, slice.ToArray());
+			Assert(slice).Equals(expected);
 		}
 
 		[Theory]
@@ -504,7 +500,7 @@ namespace Collectathon {
 		public void Slice_Start_Length([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 start, Int32 length) {
 			BoundedArray<Int32> array = initial;
 			Span<Int32> slice = array.Slice(start, length);
-			Assert.Equal(expected, slice.ToArray());
+			Assert(slice).Equals(expected);
 		}
 
 		[Theory]
@@ -512,7 +508,7 @@ namespace Collectathon {
 		[InlineData(new Int32[] { 1, 2, 3, 4, 5 })]
 		public void ToArray([DisallowNull] Int32[] elements) {
 			BoundedArray<Int32> array = elements;
-			Assert.Equal(elements, array.ToArray());
+			Assert(array.ToArray()).Equals(elements);
 		}
 
 		[Theory]
@@ -521,7 +517,7 @@ namespace Collectathon {
 		[InlineData("[1, 2, 3, 4, 5]", new Int32[] { 1, 2, 3, 4, 5 }, 5)]
 		public void ToString([DisallowNull] String expected, [DisallowNull] Int32[] elements, Int32 amount) {
 			BoundedArray<Int32> array = elements;
-			Assert.Equal(expected, array.ToString(amount));
+			Assert(array.ToString(amount)).Equals(expected);
 		}
 	}
 }

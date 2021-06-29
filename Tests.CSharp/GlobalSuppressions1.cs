@@ -7,4 +7,6 @@ using System.Diagnostics.CodeAnalysis;
 
 [assembly: SuppressMessage("Performance", "HAA0302:Display class allocation to capture closure", Justification = "This is testing code, it's fine.")]
 
+[assembly: SuppressMessage("Style", "IDE0058:Expression value is never used", Justification = "This is testing code, it's fine.")]
+
 [assembly: SuppressMessage("Usage", "xUnit1024:Test methods cannot have overloads", Justification = "This is fine if it's used only for the Object overloads.")]

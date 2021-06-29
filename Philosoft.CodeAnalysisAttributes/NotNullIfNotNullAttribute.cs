@@ -1,7 +1,7 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-#if NETSTANDARD1_3
+#if !NETSTANDARD2_1_OR_GREATER && !NETCOREAPP
 namespace System.Diagnostics.CodeAnalysis {
 	/// <summary>Specifies that the output will be non-null if the named parameter is non-null.</summary>
 	[AttributeUsage(AttributeTargets.Parameter | AttributeTargets.Property | AttributeTargets.ReturnValue, AllowMultiple = true, Inherited = false)]
