@@ -39,6 +39,7 @@ namespace Collectathon.Lists {
 		/// Initializes a new <see cref="SinglyLinkedList{TIndex, TElement}"/> witht he given <paramref name="entries"/>.
 		/// </summary>
 		/// <param name="entries">The initial entries of the list.</param>
+		[LinksNewNode(1)]
 		public SinglyLinkedList([DisallowNull] params (TIndex Index, TElement? Element)[] entries) {
 			foreach ((TIndex Index, TElement? Element) in entries) {
 				Insert(Index, Element);
@@ -99,6 +100,7 @@ namespace Collectathon.Lists {
 		System.Collections.Generic.IEnumerator<(TIndex Index, TElement Element)> System.Collections.Generic.IEnumerable<(TIndex Index, TElement Element)>.GetEnumerator() => GetEnumerator();
 
 		/// <inheritdoc/>
+		[LinksNewNode(1)]
 		public void Insert([DisallowNull] TIndex index, [AllowNull] TElement element) {
 			if (Count > 0) {
 				Tail!.Next = Tail!.Postpend(index, element);

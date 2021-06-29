@@ -73,15 +73,6 @@ namespace Collectathon.Pools {
 		/// <inheritdoc/>
 		Boolean IControlled.Disposed { get; set; }
 
-		/// <inheritdoc/>
-		public Boolean Readable {
-			get {
-				foreach (Boolean dlt in dealt) {
-					if (!dlt) return true;
-				}
-				return false;
-			}
-		}
 		/// <summary>
 		/// Gets the remaining elements in this deck.
 		/// </summary>

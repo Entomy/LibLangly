@@ -47,6 +47,7 @@ namespace Collectathon.Lists {
 		/// Initializes a new <see cref="SinglyLinkedList{TElement}"/> with the given <paramref name="elements"/>.
 		/// </summary>
 		/// <param name="elements">The initial elements of the list.</param>
+		[MaybeLinksNewNode(1)]
 		public SinglyLinkedList([DisallowNull] params TElement?[] elements) {
 			foreach (TElement? element in elements) {
 				Add(element);
@@ -90,6 +91,7 @@ namespace Collectathon.Lists {
 		public static implicit operator SinglyLinkedList<TElement?>([AllowNull] TElement?[] elements) => elements is not null ? new(elements) : null;
 
 		/// <inheritdoc/>
+		[MaybeLinksNewNode(1)]
 		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Add([AllowNull] TElement element) => Postpend(element);
 
@@ -105,6 +107,7 @@ namespace Collectathon.Lists {
 		public Boolean Contains([AllowNull] TElement element) => Collection.Contains(Head, element);
 
 		/// <inheritdoc/>
+		[UnlinksNode]
 		[return: MaybeNull]
 		public TElement Dequeue() {
 			SinglyLinkedListNode<TElement> oldHead = Head;
@@ -114,6 +117,7 @@ namespace Collectathon.Lists {
 		}
 
 		/// <inheritdoc/>
+		[LinksNewNode(1)]
 		public void Enqueue([AllowNull] TElement element) => Postpend(element);
 
 		/// <inheritdoc/>
@@ -150,6 +154,7 @@ namespace Collectathon.Lists {
 		public override Int32 GetHashCode() => base.GetHashCode();
 
 		/// <inheritdoc/>
+		[LinksNewNode(1)]
 		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Insert(Int32 index, [AllowNull] TElement element) {
 			if (index == 0) {
@@ -183,6 +188,7 @@ namespace Collectathon.Lists {
 		public void Peek([MaybeNull] out TElement element) => element = Head.Element;
 
 		/// <inheritdoc/>
+		[UnlinksNode]
 		[return: MaybeNull]
 		public TElement Pop() {
 			SinglyLinkedListNode<TElement> oldHead = Head;
@@ -192,6 +198,7 @@ namespace Collectathon.Lists {
 		}
 
 		/// <inheritdoc/>
+		[LinksNewNode(1)]
 		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Postpend([AllowNull] TElement element) {
 			if (Count > 0) {
@@ -205,6 +212,7 @@ namespace Collectathon.Lists {
 		}
 
 		/// <inheritdoc/>
+		[LinksNewNode(1)]
 		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Prepend([AllowNull] TElement element) {
 			if (Count > 0) {
@@ -217,15 +225,19 @@ namespace Collectathon.Lists {
 		}
 
 		/// <inheritdoc/>
+		[LinksNewNode(1)]
 		public void Push([AllowNull] TElement element) => Prepend(element);
 
 		/// <inheritdoc/>
+		[UnlinksNode]
 		public void Remove([AllowNull] TElement element) => throw new NotImplementedException();
 
 		/// <inheritdoc/>
+		[UnlinksNode]
 		public void RemoveFirst([AllowNull] TElement element) => throw new NotImplementedException();
 
 		/// <inheritdoc/>
+		[UnlinksNode]
 		public void RemoveLast([AllowNull] TElement element) => throw new NotImplementedException();
 
 		/// <inheritdoc/>

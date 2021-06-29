@@ -108,6 +108,7 @@ namespace Numbersome {
 		}
 
 		/// <inheritdoc/>
+		[MaybeResizes]
 		public void Add([AllowNull] TElement element) {
 			for (Int32 i = 0; i < count; i++) {
 				if (Equals(Elements[i], element)) {
@@ -131,6 +132,7 @@ namespace Numbersome {
 		public void Clear() {
 			Elements = Array.Empty<TElement>();
 			Counts = Array.Empty<Int32>();
+			count = 0;
 		}
 
 		/// <inheritdoc/>

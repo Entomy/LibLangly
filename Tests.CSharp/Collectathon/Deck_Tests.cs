@@ -25,16 +25,12 @@ namespace Collectathon {
 			Deck<String> deck = new Deck<String>("heart", "club", "spade", "diamond");
 			String card = deck.Deal();
 			Assert.Equal(3, deck.Count);
-			Assert.True(deck.Readable);
 			card = deck.Deal();
 			Assert.Equal(2, deck.Count);
-			Assert.True(deck.Readable);
 			card = deck.Deal();
 			Assert.Equal(1, deck.Count);
-			Assert.True(deck.Readable);
 			card = deck.Deal();
 			Assert.Equal(0, deck.Count);
-			Assert.False(deck.Readable);
 		}
 
 		[Fact]

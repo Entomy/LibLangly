@@ -51,18 +51,15 @@ namespace Collectathon.Arrays {
 		}
 
 		/// <inheritdoc/>
-		[O(1), Ω(1), Θ(1)]
 		public Int32 Capacity => Elements.Length;
 
 		/// <inheritdoc/>
-		[O(1), Ω(1), Θ(1)]
 		public Int32 Count {
 			get => count;
 			private set => count = value;
 		}
 
 		/// <inheritdoc/>
-		[O(1), Ω(1), Θ(1)]
 		[AllowNull, MaybeNull]
 		public TElement this[Int32 index] {
 			get => Elements[index];
@@ -71,7 +68,6 @@ namespace Collectathon.Arrays {
 
 #if !NETSTANDARD1_3
 		/// <inheritdoc/>
-		[O(1), Ω(1), Θ(1)]
 		public Span<TElement?> this[Range range] {
 			get {
 				(Int32 offset, Int32 length) = range.GetOffsetAndLength(Count);
@@ -108,6 +104,7 @@ namespace Collectathon.Arrays {
 		/// </summary>
 		/// <param name="array">The <see cref="BoundedArray{TElement}"/> to shift.</param>
 		/// <param name="amount">The amount of positions to shift.</param>
+		[Shifts]
 		[return: MaybeNull, NotNullIfNotNull("array")]
 		public static BoundedArray<TElement?> operator <<([AllowNull] BoundedArray<TElement?> array, Int32 amount) {
 			array?.ShiftLeft(amount);
@@ -119,11 +116,13 @@ namespace Collectathon.Arrays {
 		/// </summary>
 		/// <param name="array">The <see cref="BoundedArray{TElement}"/> to shift.</param>
 		/// <param name="amount">The amount of positions to shift.</param>
+		[Shifts]
 		[return: MaybeNull, NotNullIfNotNull("array")]
 		public static BoundedArray<TElement?> operator >>([AllowNull] BoundedArray<TElement?> array, Int32 amount) {
 			array?.ShiftRight(amount);
 			return array;
 		}
+
 		/// <inheritdoc/>
 		public void Add([AllowNull] TElement element) => Postpend(element);
 
@@ -146,11 +145,9 @@ namespace Collectathon.Arrays {
 		public void Add(ReadOnlySpan<TElement?> elements) => Postpend(elements);
 
 		/// <inheritdoc/>
-		[O(1), Ω(1), Θ(1)]
 		public void Clear() => Count = 0;
 
 		/// <inheritdoc/>
-		[O(Complexity.n), Ω(Complexity.n), Θ(Complexity.n)]
 		public Boolean Contains([AllowNull] TElement element) => Collection.Contains(Elements, Count, element);
 
 		/// <summary>
@@ -283,6 +280,7 @@ namespace Collectathon.Arrays {
 
 		/// <inheritdoc/>
 		/// <exception cref="InvalidOperationException">Thrown if the array is at maximum capacity.</exception>
+		[Shifts]
 		public void Prepend([AllowNull] TElement element) {
 			if (Count < Capacity) {
 				Collection.Prepend(Elements, ref count, element);
@@ -293,26 +291,32 @@ namespace Collectathon.Arrays {
 
 		/// <inheritdoc/>
 		/// <exception cref="InvalidOperationException">Thrown if the array is at maximum capacity.</exception>
+		[Shifts]
 		public void Prepend([AllowNull] params TElement?[] elements) => Prepend(elements.AsSpan());
 
 		/// <inheritdoc/>
 		/// <exception cref="InvalidOperationException">Thrown if the array is at maximum capacity.</exception>
+		[Shifts]
 		public void Prepend(ArraySegment<TElement?> elements) => Prepend(elements.AsSpan());
 
 		/// <inheritdoc/>
 		/// <exception cref="InvalidOperationException">Thrown if the array is at maximum capacity.</exception>
+		[Shifts]
 		public void Prepend(Memory<TElement?> elements) => Prepend(elements.Span);
 
 		/// <inheritdoc/>
 		/// <exception cref="InvalidOperationException">Thrown if the array is at maximum capacity.</exception>
+		[Shifts]
 		public void Prepend(ReadOnlyMemory<TElement?> elements) => Prepend(elements.Span);
 
 		/// <inheritdoc/>
 		/// <exception cref="InvalidOperationException">Thrown if the array is at maximum capacity.</exception>
+		[Shifts]
 		public void Prepend(Span<TElement?> elements) => Prepend((ReadOnlySpan<TElement?>)elements);
 
 		/// <inheritdoc/>
 		/// <exception cref="InvalidOperationException">Thrown if the array is at maximum capacity.</exception>
+		[Shifts]
 		public void Prepend(ReadOnlySpan<TElement?> elements) {
 			if (Count + elements.Length <= Capacity) {
 				Collection.Prepend(Elements, ref count, elements);
@@ -343,43 +347,43 @@ namespace Collectathon.Arrays {
 		public void Push(ReadOnlySpan<TElement?> elements) => Postpend(elements);
 
 		/// <inheritdoc/>
-		[O(Complexity.n_plus_k), Ω(Complexity.n_plus_k)]
+		[MaybeShifts]
 		public void Remove([AllowNull] TElement element) => Collection.Remove(Elements, ref count, element);
 
 		/// <inheritdoc/>
-		[O(Complexity.n_plus_k), Ω(Complexity.n_plus_k)]
+		[MaybeShifts]
 		public void RemoveFirst([AllowNull] TElement element) => Collection.RemoveFirst(Elements, ref count, element);
 
 		/// <inheritdoc/>
-		[O(Complexity.n_plus_k), Ω(Complexity.n_plus_k)]
+		[MaybeShifts]
 		public void RemoveLast([AllowNull] TElement element) => Collection.RemoveLast(Elements, ref count, element);
 
 		/// <inheritdoc/>
-		[O(Complexity.n), Ω(Complexity.n), Θ(Complexity.n)]
 		public void Replace([AllowNull] TElement search, [AllowNull] TElement replace) => Collection.Replace(Elements, Count, search, replace);
 
 		/// <inheritdoc/>
+		[Shifts]
 		public void ShiftLeft() => Collection.ShiftLeft(Elements, Count, 1);
 
 		/// <inheritdoc/>
+		[Shifts]
 		public void ShiftLeft(Int32 amount) => Collection.ShiftLeft(Elements, Count, amount);
 
 		/// <inheritdoc/>
+		[Shifts]
 		public void ShiftRight() => Collection.ShiftRight(Elements, Count, 1);
 
 		/// <inheritdoc/>
+		[Shifts]
 		public void ShiftRight(Int32 amount) => Collection.ShiftRight(Elements, Count, amount);
 
 		/// <inheritdoc/>
-		[O(1), Ω(1), Θ(1)]
 		public Span<TElement?> Slice() => Elements.AsSpan();
 
 		/// <inheritdoc/>
-		[O(1), Ω(1), Θ(1)]
 		public Span<TElement?> Slice(Int32 start) => Elements.AsSpan(start);
 
 		/// <inheritdoc/>
-		[O(1), Ω(1), Θ(1)]
 		public Span<TElement?> Slice(Int32 start, Int32 length) => Elements.AsSpan(start, length);
 
 		ReadOnlySpan<TElement> IReadOnlyArray<TElement>.Slice() => Elements.AsSpan();
@@ -401,12 +405,10 @@ namespace Collectathon.Arrays {
 		Memory<TElement> ISlice<Memory<TElement>>.Slice(Int32 start, Int32 length) => Elements.AsMemory(start, length);
 
 		/// <inheritdoc/>
-		[O(Complexity.n), Ω(Complexity.n), Θ(Complexity.n)]
 		[return: NotNull]
 		public sealed override String ToString() => Collection.ToString(Elements);
 
 		/// <inheritdoc/>
-		[O(Complexity.n), Ω(Complexity.n), Θ(Complexity.n)]
 		[return: NotNull]
 		public String ToString(Int32 amount) => Collection.ToString(Elements, amount);
 	}
