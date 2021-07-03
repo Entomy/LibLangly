@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using System.Traits.Testing;
 using Collectathon.Lists;
 using Xunit;
 
 namespace Collectathon {
-	public class SinglyLinkedList_Tests {
+	public class SinglyLinkedList_Tests : Tests {
 		[Theory]
 		[InlineData(new Int32[] { 0, 0 }, new Int32[] { }, new Int32[] { 0, 0 })]
 		public void Add_Array([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] values) {
 			SinglyLinkedList<Int32> list = initial;
 			list.Add(values);
-			Assert.Equal<Int32>(expected, list);
+			Assert(list).Equals(expected);
 		}
 
 		[Theory]
@@ -19,7 +20,7 @@ namespace Collectathon {
 		public void Add_Element([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32 value) {
 			SinglyLinkedList<Int32> list = initial;
 			list.Add(value);
-			Assert.Equal<Int32>(expected, list);
+			Assert(list).Equals(expected);
 		}
 
 		[Theory]
@@ -27,7 +28,7 @@ namespace Collectathon {
 		public void Add_Memory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] values) {
 			SinglyLinkedList<Int32> list = initial;
 			list.Add(values.AsMemory());
-			Assert.Equal<Int32>(expected, list);
+			Assert(list).Equals(expected);
 		}
 
 		[Theory]
@@ -37,7 +38,7 @@ namespace Collectathon {
 			fixed (Int32* vals = values) {
 				list.Add(vals, values.Length);
 			}
-			Assert.Equal<Int32>(expected, list);
+			Assert(list).Equals(expected);
 		}
 
 		[Theory]
@@ -45,7 +46,7 @@ namespace Collectathon {
 		public void Add_ReadOnlyMemory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] values) {
 			SinglyLinkedList<Int32> list = initial;
 			list.Add((ReadOnlyMemory<Int32>)values.AsMemory());
-			Assert.Equal<Int32>(expected, list);
+			Assert(list).Equals(expected);
 		}
 
 		[Theory]
@@ -53,7 +54,7 @@ namespace Collectathon {
 		public void Add_ReadOnlySpan([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] values) {
 			SinglyLinkedList<Int32> list = initial;
 			list.Add((ReadOnlySpan<Int32>)values.AsSpan());
-			Assert.Equal<Int32>(expected, list);
+			Assert(list).Equals(expected);
 		}
 
 		[Theory]
@@ -61,7 +62,7 @@ namespace Collectathon {
 		public void Add_Span([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] values) {
 			SinglyLinkedList<Int32> list = initial;
 			list.Add(values.AsSpan());
-			Assert.Equal<Int32>(expected, list);
+			Assert(list).Equals(expected);
 		}
 
 		[Theory]
@@ -70,20 +71,19 @@ namespace Collectathon {
 		public void Clear([DisallowNull] Int32[] initial) {
 			SinglyLinkedList<Int32> list = initial;
 			list.Clear();
-			Assert.Empty(list);
+			Assert(list).Count(0);
 		}
 
 		[Theory]
 		[InlineData(new Int32[] { })]
 		[InlineData(new Int32[] { 1, 2, 3, 4, 5 })]
-		public void Equals([DisallowNull] Int32[] values) {
-			SinglyLinkedList<Int32> val = values;
-			Assert.Equal(values, val);
-			Assert.True(val.Equals(values));
-			SinglyLinkedList<Int32> exp = values;
-			Assert.Equal(exp, val);
-			Assert.Equal<Int32>(exp, val);
-			Assert.True(val.Equals(exp));
+		public void Equals([DisallowNull] Int32[] elements) {
+			SinglyLinkedList<Int32> val = elements is not null ? new SinglyLinkedList<Int32>(elements) : null;
+			Assert(val).Equals(elements);
+			SinglyLinkedList<Int32> exp = elements is not null ? new SinglyLinkedList<Int32>(elements) : null;
+			Assert(val).Equals(exp);
+			SinglyLinkedList<Int32> dval = elements is not null ? new SinglyLinkedList<Int32>(elements) : null;
+			Assert(val).Equals(dval);
 		}
 
 		[Theory]
@@ -91,7 +91,7 @@ namespace Collectathon {
 		[InlineData(15, new Int32[] { 1, 2, 3, 4, 5 })]
 		public void Fold(Int32 expected, [DisallowNull] Int32[] values) {
 			SinglyLinkedList<Int32> list = values;
-			Assert.Equal(expected, list.Fold((a, b) => a + b, 0));
+			Assert(list.Fold((a, b) => a + b, 0)).Equals(expected);
 		}
 
 		[Theory]
@@ -105,7 +105,7 @@ namespace Collectathon {
 		public void Insert_Array([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 index, [DisallowNull] Int32[] elements) {
 			SinglyLinkedList<Int32> list = initial;
 			list.Insert(index, elements);
-			Assert.Equal<Int32>(expected, list);
+			Assert(list).Equals(expected);
 		}
 
 		[Theory]
@@ -119,7 +119,7 @@ namespace Collectathon {
 		public void Insert_Element([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 index, Int32 element) {
 			SinglyLinkedList<Int32> list = initial;
 			list.Insert(index, element);
-			Assert.Equal<Int32>(expected, list);
+			Assert(list).Equals(expected);
 		}
 
 		[Theory]
@@ -133,7 +133,7 @@ namespace Collectathon {
 		public void Insert_Memory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 index, [DisallowNull] Int32[] values) {
 			SinglyLinkedList<Int32> list = initial;
 			list.Insert(index, values.AsMemory());
-			Assert.Equal<Int32>(expected, list);
+			Assert(list).Equals(expected);
 		}
 
 		[Theory]
@@ -149,7 +149,7 @@ namespace Collectathon {
 			fixed (Int32* elmts = elements) {
 				list.Insert(index, elmts, elements.Length);
 			}
-			Assert.Equal<Int32>(expected, list);
+			Assert(list).Equals(expected);
 		}
 
 		[Theory]
@@ -163,7 +163,7 @@ namespace Collectathon {
 		public void Insert_ReadOnlyMemory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 index, [DisallowNull] Int32[] elements) {
 			SinglyLinkedList<Int32> list = initial;
 			list.Insert(index, (ReadOnlyMemory<Int32>)elements.AsMemory());
-			Assert.Equal<Int32>(expected, list);
+			Assert(list).Equals(expected);
 		}
 
 		[Theory]
@@ -177,7 +177,7 @@ namespace Collectathon {
 		public void Insert_ReadOnlySpan([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 index, [DisallowNull] Int32[] elements) {
 			SinglyLinkedList<Int32> list = initial;
 			list.Insert(index, (ReadOnlySpan<Int32>)elements.AsSpan());
-			Assert.Equal<Int32>(expected, list);
+			Assert(list).Equals(expected);
 		}
 
 		[Theory]
@@ -191,7 +191,7 @@ namespace Collectathon {
 		public void Insert_Span([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 index, [DisallowNull] Int32[] elements) {
 			SinglyLinkedList<Int32> list = initial;
 			list.Insert(index, elements.AsSpan());
-			Assert.Equal<Int32>(expected, list);
+			Assert(list).Equals(expected);
 		}
 
 		[Theory]
@@ -200,7 +200,7 @@ namespace Collectathon {
 		[InlineData(2, new Int32[] { 1, 2, 1, 2, 1 }, 2)]
 		public void Occurrences_Element(Int32 expected, [DisallowNull] Int32[] values, Int32 element) {
 			SinglyLinkedList<Int32> list = values;
-			Assert.Equal(expected, list.Occurrences(element));
+			Assert(list.Occurrences(element)).Equals(expected);
 		}
 
 		[Theory]
@@ -211,7 +211,7 @@ namespace Collectathon {
 		[InlineData(3, new Int32[] { 2, 1, 2, 1, 2 })]
 		public void Occurrences_Predicate(Int32 expected, [DisallowNull] Int32[] values) {
 			SinglyLinkedList<Int32> list = values;
-			Assert.Equal(expected, list.Occurrences((x) => x % 2 == 0));
+			Assert(list.Occurrences((x) => x % 2 == 0)).Equals(expected);
 		}
 
 		[Theory]
@@ -220,7 +220,7 @@ namespace Collectathon {
 		public void Postpend_Array([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
 			SinglyLinkedList<Int32> list = initial;
 			list.Postpend(elements);
-			Assert.Equal<Int32>(expected, list);
+			Assert(list).Equals(expected);
 		}
 
 		[Theory]
@@ -228,7 +228,7 @@ namespace Collectathon {
 		public void Postpend_Element([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 element) {
 			SinglyLinkedList<Int32> list = initial;
 			list.Postpend(element);
-			Assert.Equal<Int32>(expected, list);
+			Assert(list).Equals(expected);
 		}
 
 		[Theory]
@@ -237,7 +237,7 @@ namespace Collectathon {
 		public void Postpend_Memory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
 			SinglyLinkedList<Int32> list = initial;
 			list.Postpend(elements.AsMemory());
-			Assert.Equal<Int32>(expected, list);
+			Assert(list).Equals(expected);
 		}
 
 		[Theory]
@@ -248,7 +248,7 @@ namespace Collectathon {
 			fixed (Int32* elmts = elements) {
 				list.Postpend(elmts, elements.Length);
 			}
-			Assert.Equal<Int32>(expected, list);
+			Assert(list).Equals(expected);
 		}
 
 		[Theory]
@@ -257,7 +257,7 @@ namespace Collectathon {
 		public void Postpend_ReadOnlyMemory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
 			SinglyLinkedList<Int32> list = initial;
 			list.Postpend((ReadOnlyMemory<Int32>)elements.AsMemory());
-			Assert.Equal<Int32>(expected, list);
+			Assert(list).Equals(expected);
 		}
 
 		[Theory]
@@ -266,7 +266,7 @@ namespace Collectathon {
 		public void Postpend_ReadOnlySpan([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
 			SinglyLinkedList<Int32> list = initial;
 			list.Postpend((ReadOnlySpan<Int32>)elements.AsSpan());
-			Assert.Equal<Int32>(expected, list);
+			Assert(list).Equals(expected);
 		}
 
 		[Theory]
@@ -275,7 +275,7 @@ namespace Collectathon {
 		public void Postpend_Span([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
 			SinglyLinkedList<Int32> list = initial;
 			list.Postpend(elements.AsSpan());
-			Assert.Equal<Int32>(expected, list);
+			Assert(list).Equals(expected);
 		}
 
 		[Theory]
@@ -284,7 +284,7 @@ namespace Collectathon {
 		public void Prepend_Array([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
 			SinglyLinkedList<Int32> list = initial;
 			list.Prepend(elements);
-			Assert.Equal<Int32>(expected, list);
+			Assert(list).Equals(expected);
 		}
 
 		[Theory]
@@ -292,7 +292,7 @@ namespace Collectathon {
 		public void Prepend_Element([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 element) {
 			SinglyLinkedList<Int32> list = initial;
 			list.Prepend(element);
-			Assert.Equal<Int32>(expected, list);
+			Assert(list).Equals(expected);
 		}
 
 		[Theory]
@@ -301,7 +301,7 @@ namespace Collectathon {
 		public void Prepend_Memory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
 			SinglyLinkedList<Int32> list = initial;
 			list.Prepend(elements.AsMemory());
-			Assert.Equal<Int32>(expected, list);
+			Assert(list).Equals(expected);
 		}
 
 		[Theory]
@@ -312,7 +312,7 @@ namespace Collectathon {
 			fixed (Int32* elmts = elements) {
 				list.Prepend(elmts, elements.Length);
 			}
-			Assert.Equal<Int32>(expected, list);
+			Assert(list).Equals(expected);
 		}
 
 		[Theory]
@@ -321,7 +321,7 @@ namespace Collectathon {
 		public void Prepend_ReadOnlyMemory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
 			SinglyLinkedList<Int32> list = initial;
 			list.Prepend((ReadOnlyMemory<Int32>)elements.AsMemory());
-			Assert.Equal<Int32>(expected, list);
+			Assert(list).Equals(expected);
 		}
 
 		[Theory]
@@ -330,7 +330,7 @@ namespace Collectathon {
 		public void Prepend_ReadOnlySpan([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
 			SinglyLinkedList<Int32> list = initial;
 			list.Prepend((ReadOnlySpan<Int32>)elements.AsSpan());
-			Assert.Equal<Int32>(expected, list);
+			Assert(list).Equals(expected);
 		}
 
 		[Theory]
@@ -339,7 +339,7 @@ namespace Collectathon {
 		public void Prepend_Span([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
 			SinglyLinkedList<Int32> list = initial;
 			list.Prepend(elements.AsSpan());
-			Assert.Equal<Int32>(expected, list);
+			Assert(list).Equals(expected);
 		}
 
 		[Theory]
@@ -348,7 +348,7 @@ namespace Collectathon {
 		public void Push_Array([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
 			SinglyLinkedList<Int32> list = initial;
 			list.Push(elements);
-			Assert.Equal<Int32>(expected, list);
+			Assert(list).Equals(expected);
 		}
 
 		[Theory]
@@ -357,7 +357,7 @@ namespace Collectathon {
 		public void Push_Element([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32 value) {
 			SinglyLinkedList<Int32> list = initial;
 			list.Push(value);
-			Assert.Equal<Int32>(expected, list);
+			Assert(list).Equals(expected);
 		}
 
 		[Theory]
@@ -366,7 +366,7 @@ namespace Collectathon {
 		public void Push_Memory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
 			SinglyLinkedList<Int32> list = initial;
 			list.Push(elements.AsMemory());
-			Assert.Equal<Int32>(expected, list);
+			Assert(list).Equals(expected);
 		}
 
 		[Theory]
@@ -375,7 +375,7 @@ namespace Collectathon {
 		public void Push_ReadOnlyMemory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
 			SinglyLinkedList<Int32> list = initial;
 			list.Push((ReadOnlyMemory<Int32>)elements.AsMemory());
-			Assert.Equal<Int32>(expected, list);
+			Assert(list).Equals(expected);
 		}
 
 		[Theory]
@@ -386,7 +386,7 @@ namespace Collectathon {
 			fixed (Int32* elmts = elements) {
 				list.Push(elmts, elements.Length);
 			}
-			Assert.Equal<Int32>(expected, list);
+			Assert(list).Equals(expected);
 		}
 
 		[Theory]
@@ -395,7 +395,7 @@ namespace Collectathon {
 		public void Push_Span([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
 			SinglyLinkedList<Int32> list = initial;
 			list.Push(elements.AsSpan());
-			Assert.Equal<Int32>(expected, list);
+			Assert(list).Equals(expected);
 		}
 
 		[Theory]
@@ -404,7 +404,7 @@ namespace Collectathon {
 		public void Push_ReadOnlySpan([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
 			SinglyLinkedList<Int32> list = initial;
 			list.Push((ReadOnlySpan<Int32>)elements.AsSpan());
-			Assert.Equal<Int32>(expected, list);
+			Assert(list).Equals(expected);
 		}
 
 		[Theory]
@@ -420,7 +420,7 @@ namespace Collectathon {
 		public void Replace([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 search, Int32 replace) {
 			SinglyLinkedList<Int32> list = initial;
 			list.Replace(search, replace);
-			Assert.Equal<Int32>(expected, list);
+			Assert(list).Equals(expected);
 		}
 
 		[Theory]
@@ -428,7 +428,7 @@ namespace Collectathon {
 		[InlineData(new Int32[] { 1, 2, 3, 4, 5 })]
 		public void ToArray([DisallowNull] Int32[] values) {
 			SinglyLinkedList<Int32> list = values;
-			Assert.Equal(values, list.ToArray());
+			Assert(list.ToArray()).Equals(values);
 		}
 
 		[Theory]
@@ -437,7 +437,7 @@ namespace Collectathon {
 		[InlineData("[1, 2, 3, 4, 5]", new Int32[] { 1, 2, 3, 4, 5 }, 5)]
 		public void ToString([DisallowNull] String expected, [DisallowNull] Int32[] values, Int32 amount) {
 			SinglyLinkedList<Int32> list = values;
-			Assert.Equal(expected, list.ToString(amount));
+			Assert(list.ToString(amount)).Equals(expected);
 		}
 	}
 }

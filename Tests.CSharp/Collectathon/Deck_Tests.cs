@@ -1,57 +1,58 @@
 ﻿using System;
+using System.Traits.Testing;
 using Collectathon.Pools;
 using Xunit;
 
 namespace Collectathon {
-	public class Deck_Tests {
+	public class Deck_Tests : Tests {
 		[Fact]
 		public void Constructor() {
 			Deck<String> deck = new Deck<String>("heart", "club", "spade", "diamond");
-			Assert.Equal(4, deck.Count);
-			Assert.True(deck.ContainsAll<String>("heart", "club", "spade", "diamond"));
+			Assert(deck.Count).Equals(4);
+			Assert(deck.ContainsAll<String>("heart", "club", "spade", "diamond")).True();
 		}
 
 		[Fact]
 		public void Clear() {
 			Deck<String> deck = new Deck<String>("heart", "club", "spade", "diamond");
 			foreach (String card in deck.Deal(4)) { }
-			Assert.Equal(0, deck.Count);
+			Assert(deck.Count).Equals(0);
 			deck.Clear();
-			Assert.Equal(4, deck.Count);
+			Assert(deck.Count).Equals(4);
 		}
 
 		[Fact]
 		public void Deal() {
 			Deck<String> deck = new Deck<String>("heart", "club", "spade", "diamond");
 			String card = deck.Deal();
-			Assert.Equal(3, deck.Count);
+			Assert(deck.Count).Equals(3);
 			card = deck.Deal();
-			Assert.Equal(2, deck.Count);
+			Assert(deck.Count).Equals(2);
 			card = deck.Deal();
-			Assert.Equal(1, deck.Count);
+			Assert(deck.Count).Equals(1);
 			card = deck.Deal();
-			Assert.Equal(0, deck.Count);
+			Assert(deck.Count).Equals(0);
 		}
 
 		[Fact]
 		public void Enumerator() {
 			Deck<String> deck = new Deck<String>("heart", "club", "spade", "diamond");
-			using var dealt = deck.Dealt;
-			using var remaining = deck.Remaining;
-			Assert.Equal(0, dealt.Count);
-			Assert.Equal(4, remaining.Count);
+			var dealt = deck.Dealt;
+			var remaining = deck.Remaining;
+			Assert(dealt.Count).Equals(0);
+			Assert(remaining.Count).Equals(4);
 			_ = deck.Deal();
-			Assert.Equal(1, dealt.Count);
-			Assert.Equal(3, remaining.Count);
+			Assert(dealt.Count).Equals(1);
+			Assert(remaining.Count).Equals(3);
 			_ = deck.Deal();
-			Assert.Equal(2, dealt.Count);
-			Assert.Equal(2, remaining.Count);
+			Assert(dealt.Count).Equals(2);
+			Assert(remaining.Count).Equals(2);
 			_ = deck.Deal();
-			Assert.Equal(3, dealt.Count);
-			Assert.Equal(1, remaining.Count);
+			Assert(dealt.Count).Equals(3);
+			Assert(remaining.Count).Equals(1);
 			_ = deck.Deal();
-			Assert.Equal(4, dealt.Count);
-			Assert.Equal(0, remaining.Count);
+			Assert(dealt.Count).Equals(4);
+			Assert(remaining.Count).Equals(0);
 		}
 	}
 }

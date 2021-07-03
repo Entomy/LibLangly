@@ -37,14 +37,6 @@ namespace Stringier.Patterns {
 		[return: NotNull]
 		public Enumerator GetEnumerator() => new Enumerator(Text);
 
-		/// <inheritdoc/>
-		[return: NotNull]
-		System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() => GetEnumerator();
-
-		/// <inheritdoc/>
-		[return: NotNull]
-		System.Collections.Generic.IEnumerator<Char> System.Collections.Generic.IEnumerable<Char>.GetEnumerator() => GetEnumerator();
-
 		/// <summary>
 		/// Marks this <see cref="Pattern"/> as spanning.
 		/// </summary>

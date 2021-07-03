@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using System.Traits.Testing;
 using Stringier;
 using Xunit;
 
 namespace Stringier {
-	public class Rope_Tests {
+	public class Rope_Tests : Tests {
 		[Theory]
 		[InlineData(new Char[] { 'a', 'b' }, new Char[] { }, new Char[] { 'a', 'b' })]
 		public void Add_Array([DisallowNull] Char[] expected, [DisallowNull] Char[] initial, [DisallowNull] Char[] values) {
 			Rope rope = initial;
 			rope.Add(values);
-			Assert.Equal<Char>(expected, rope);
+			Assert(rope).Equals(expected);
 		}
 
 		[Theory]
@@ -19,7 +20,7 @@ namespace Stringier {
 		public void Add_Element([DisallowNull] Char[] expected, [DisallowNull] Char[] initial, [DisallowNull] Char value) {
 			Rope rope = initial;
 			rope.Add(value);
-			Assert.Equal<Char>(expected, rope);
+			Assert(rope).Equals(expected);
 		}
 
 		[Theory]
@@ -27,7 +28,7 @@ namespace Stringier {
 		public void Add_Memory([DisallowNull] Char[] expected, [DisallowNull] Char[] initial, [DisallowNull] Char[] values) {
 			Rope rope = initial;
 			rope.Add(values.AsMemory());
-			Assert.Equal<Char>(expected, rope);
+			Assert(rope).Equals(expected);
 		}
 
 		[Theory]
@@ -37,7 +38,7 @@ namespace Stringier {
 			fixed (Char* vals = values) {
 				rope.Add(vals, values.Length);
 			}
-			Assert.Equal<Char>(expected, rope);
+			Assert(rope).Equals(expected);
 		}
 
 		[Theory]
@@ -45,7 +46,7 @@ namespace Stringier {
 		public void Add_ReadOnlyMemory([DisallowNull] Char[] expected, [DisallowNull] Char[] initial, [DisallowNull] Char[] values) {
 			Rope rope = initial;
 			rope.Add((ReadOnlyMemory<Char>)values.AsMemory());
-			Assert.Equal<Char>(expected, rope);
+			Assert(rope).Equals(expected);
 		}
 
 		[Theory]
@@ -53,7 +54,7 @@ namespace Stringier {
 		public void Add_ReadOnlySpan([DisallowNull] Char[] expected, [DisallowNull] Char[] initial, [DisallowNull] Char[] values) {
 			Rope rope = initial;
 			rope.Add((ReadOnlySpan<Char>)values.AsSpan());
-			Assert.Equal<Char>(expected, rope);
+			Assert(rope).Equals(expected);
 		}
 
 		[Theory]
@@ -61,7 +62,7 @@ namespace Stringier {
 		public void Add_Span([DisallowNull] Char[] expected, [DisallowNull] Char[] initial, [DisallowNull] Char[] values) {
 			Rope rope = initial;
 			rope.Add(values.AsSpan());
-			Assert.Equal<Char>(expected, rope);
+			Assert(rope).Equals(expected);
 		}
 
 		[Theory]
@@ -70,20 +71,19 @@ namespace Stringier {
 		public void Clear([DisallowNull] Char[] initial) {
 			Rope rope = initial;
 			rope.Clear();
-			Assert.Empty(rope);
+			Assert(rope).Count(0);
 		}
 
 		[Theory]
 		[InlineData(new Char[] { })]
 		[InlineData(new Char[] { 'a', 'b', 'c', 'd', 'e' })]
 		public void Equals([DisallowNull] Char[] values) {
-			Rope val = values;
-			Assert.Equal(values, val);
-			Assert.True(val.Equals(values));
-			Rope exp = values;
-			Assert.Equal(exp, val);
-			Assert.Equal<Char>(exp, val);
-			Assert.True(val.Equals(exp));
+			Rope val = values is not null ? new Rope(values) : null;
+			Assert(val).Equals(values);
+			Rope exp = values is not null ? new Rope(values) : null;
+			Assert(val).Equals(exp);
+			Rope dval = values is not null ? new Rope(values) : null;
+			Assert(val).Equals(dval);
 		}
 
 		[Theory]
@@ -97,7 +97,7 @@ namespace Stringier {
 		public void Insert_Array([DisallowNull] Char[] expected, [DisallowNull] Char[] initial, Int32 index, [DisallowNull] Char[] elements) {
 			Rope rope = initial;
 			rope.Insert(index, elements);
-			Assert.Equal<Char>(expected, rope);
+			Assert(rope).Equals(expected);
 		}
 
 		[Theory]
@@ -111,7 +111,7 @@ namespace Stringier {
 		public void Insert_Element([DisallowNull] Char[] expected, [DisallowNull] Char[] initial, Int32 index, Char element) {
 			Rope rope = initial;
 			rope.Insert(index, element);
-			Assert.Equal<Char>(expected, rope);
+			Assert(rope).Equals(expected);
 		}
 
 		[Theory]
@@ -125,7 +125,7 @@ namespace Stringier {
 		public void Insert_Memory([DisallowNull] Char[] expected, [DisallowNull] Char[] initial, Int32 index, [DisallowNull] Char[] values) {
 			Rope rope = initial;
 			rope.Insert(index, values.AsMemory());
-			Assert.Equal<Char>(expected, rope);
+			Assert(rope).Equals(expected);
 		}
 
 		[Theory]
@@ -141,7 +141,7 @@ namespace Stringier {
 			fixed (Char* elmts = elements) {
 				rope.Insert(index, elmts, elements.Length);
 			}
-			Assert.Equal<Char>(expected, rope);
+			Assert(rope).Equals(expected);
 		}
 
 		[Theory]
@@ -155,7 +155,7 @@ namespace Stringier {
 		public void Insert_ReadOnlyMemory([DisallowNull] Char[] expected, [DisallowNull] Char[] initial, Int32 index, [DisallowNull] Char[] elements) {
 			Rope rope = initial;
 			rope.Insert(index, (ReadOnlyMemory<Char>)elements.AsMemory());
-			Assert.Equal<Char>(expected, rope);
+			Assert(rope).Equals(expected);
 		}
 
 		[Theory]
@@ -169,7 +169,7 @@ namespace Stringier {
 		public void Insert_ReadOnlySpan([DisallowNull] Char[] expected, [DisallowNull] Char[] initial, Int32 index, [DisallowNull] Char[] elements) {
 			Rope rope = initial;
 			rope.Insert(index, (ReadOnlySpan<Char>)elements.AsSpan());
-			Assert.Equal<Char>(expected, rope);
+			Assert(rope).Equals(expected);
 		}
 
 		[Theory]
@@ -183,7 +183,7 @@ namespace Stringier {
 		public void Insert_Span([DisallowNull] Char[] expected, [DisallowNull] Char[] initial, Int32 index, [DisallowNull] Char[] elements) {
 			Rope rope = initial;
 			rope.Insert(index, elements.AsSpan());
-			Assert.Equal<Char>(expected, rope);
+			Assert(rope).Equals(expected);
 		}
 
 		[Theory]
@@ -191,14 +191,14 @@ namespace Stringier {
 		[InlineData(new Char[] { 'a', 'b', 'c', 'd', 'e' }, new Char[] { 'a', 'b' }, new Char[] { 'c', 'd', 'e' })]
 		public void Postpend_Array([DisallowNull] Char[] expected, [DisallowNull] Char[] initial, [DisallowNull] Char[] elements) {
 			Rope rope = initial;
-			Assert.Equal<Char>(expected, rope + elements);
+			Assert(rope + elements).Equals(expected);
 		}
 
 		[Theory]
 		[InlineData(new Char[] { 'a' }, new Char[] { }, 'a')]
 		public void Postpend_Element([DisallowNull] Char[] expected, [DisallowNull] Char[] initial, Char element) {
 			Rope rope = initial;
-			Assert.Equal<Char>(expected, rope + element);
+			Assert(rope + element).Equals(expected);
 		}
 
 		[Theory]
@@ -206,7 +206,7 @@ namespace Stringier {
 		[InlineData(new Char[] { 'a', 'b', 'c', 'd', 'e' }, new Char[] { 'a', 'b' }, new Char[] { 'c', 'd', 'e' })]
 		public void Postpend_Memory([DisallowNull] Char[] expected, [DisallowNull] Char[] initial, [DisallowNull] Char[] elements) {
 			Rope rope = initial;
-			Assert.Equal<Char>(expected, rope + elements.AsMemory());
+			Assert(rope + elements.AsMemory()).Equals(expected);
 		}
 
 		[Theory]
@@ -217,7 +217,7 @@ namespace Stringier {
 			fixed (Char* elmts = elements) {
 				rope.Postpend(elmts, elements.Length);
 			}
-			Assert.Equal<Char>(expected, rope);
+			Assert(rope).Equals(expected);
 		}
 
 		[Theory]
@@ -225,7 +225,7 @@ namespace Stringier {
 		[InlineData(new Char[] { 'a', 'b', 'c', 'd', 'e' }, new Char[] { 'a', 'b' }, new Char[] { 'c', 'd', 'e' })]
 		public void Postpend_ReadOnlyMemory([DisallowNull] Char[] expected, [DisallowNull] Char[] initial, [DisallowNull] Char[] elements) {
 			Rope rope = initial;
-			Assert.Equal<Char>(expected, rope + (ReadOnlyMemory<Char>)elements.AsMemory());
+			Assert(rope + (ReadOnlyMemory<Char>)elements.AsMemory()).Equals(expected);
 		}
 
 		[Theory]
@@ -234,7 +234,7 @@ namespace Stringier {
 		public void Postpend_ReadOnlySpan([DisallowNull] Char[] expected, [DisallowNull] Char[] initial, [DisallowNull] Char[] elements) {
 			Rope rope = initial;
 			rope.Postpend((ReadOnlySpan<Char>)elements.AsSpan());
-			Assert.Equal<Char>(expected, rope);
+			Assert(rope).Equals(expected);
 		}
 
 		[Theory]
@@ -243,7 +243,7 @@ namespace Stringier {
 		public void Postpend_Span([DisallowNull] Char[] expected, [DisallowNull] Char[] initial, [DisallowNull] Char[] elements) {
 			Rope rope = initial;
 			rope.Postpend(elements.AsSpan());
-			Assert.Equal<Char>(expected, rope);
+			Assert(rope).Equals(expected);
 		}
 
 		[Theory]
@@ -251,14 +251,14 @@ namespace Stringier {
 		[InlineData(new Char[] { 'c', 'd', 'e', 'a', 'b' }, new Char[] { 'a', 'b' }, new Char[] { 'c', 'd', 'e' })]
 		public void Prepend_Array([DisallowNull] Char[] expected, [DisallowNull] Char[] initial, [DisallowNull] Char[] elements) {
 			Rope rope = initial;
-			Assert.Equal<Char>(expected, elements + rope);
+			Assert(elements + rope).Equals(expected);
 		}
 
 		[Theory]
 		[InlineData(new Char[] { 'a' }, new Char[] { }, 'a')]
 		public void Prepend_Element([DisallowNull] Char[] expected, [DisallowNull] Char[] initial, Char element) {
 			Rope rope = initial;
-			Assert.Equal<Char>(expected, element + rope);
+			Assert(element + rope).Equals(expected);
 		}
 
 		[Theory]
@@ -266,7 +266,7 @@ namespace Stringier {
 		[InlineData(new Char[] { 'c', 'd', 'e', 'a', 'b' }, new Char[] { 'a', 'b' }, new Char[] { 'c', 'd', 'e' })]
 		public void Prepend_Memory([DisallowNull] Char[] expected, [DisallowNull] Char[] initial, [DisallowNull] Char[] elements) {
 			Rope rope = initial;
-			Assert.Equal<Char>(expected, elements.AsMemory() + rope);
+			Assert(elements.AsMemory() + rope).Equals(expected);
 		}
 
 		[Theory]
@@ -277,7 +277,7 @@ namespace Stringier {
 			fixed (Char* elmts = elements) {
 				rope.Prepend(elmts, elements.Length);
 			}
-			Assert.Equal<Char>(expected, rope);
+			Assert(rope).Equals(expected);
 		}
 
 		[Theory]
@@ -285,7 +285,7 @@ namespace Stringier {
 		[InlineData(new Char[] { 'c', 'd', 'e', 'a', 'b' }, new Char[] { 'a', 'b' }, new Char[] { 'c', 'd', 'e' })]
 		public void Prepend_ReadOnlyMemory([DisallowNull] Char[] expected, [DisallowNull] Char[] initial, [DisallowNull] Char[] elements) {
 			Rope rope = initial;
-			Assert.Equal<Char>(expected, (ReadOnlyMemory<Char>)elements.AsMemory() + rope);
+			Assert((ReadOnlyMemory<Char>)elements.AsMemory() + rope).Equals(expected);
 		}
 
 		[Theory]
@@ -294,7 +294,7 @@ namespace Stringier {
 		public void Prepend_ReadOnlySpan([DisallowNull] Char[] expected, [DisallowNull] Char[] initial, [DisallowNull] Char[] elements) {
 			Rope rope = initial;
 			rope.Prepend((ReadOnlySpan<Char>)elements.AsSpan());
-			Assert.Equal<Char>(expected, rope);
+			Assert(rope).Equals(expected);
 		}
 
 		[Theory]
@@ -303,7 +303,7 @@ namespace Stringier {
 		public void Prepend_Span([DisallowNull] Char[] expected, [DisallowNull] Char[] initial, [DisallowNull] Char[] elements) {
 			Rope rope = initial;
 			rope.Prepend(elements.AsSpan());
-			Assert.Equal<Char>(expected, rope);
+			Assert(rope).Equals(expected);
 		}
 
 		[Theory]
@@ -319,7 +319,7 @@ namespace Stringier {
 		public void Replace([DisallowNull] Char[] expected, [DisallowNull] Char[] initial, Char search, Char replace) {
 			Rope rope = initial;
 			rope.Replace(search, replace);
-			Assert.Equal<Char>(expected, rope);
+			Assert(rope).Equals(expected);
 		}
 
 		[Theory]
@@ -327,7 +327,7 @@ namespace Stringier {
 		[InlineData("abcde", new Char[] { 'a', 'b', 'c', 'd', 'e' })]
 		public void ToString([DisallowNull] String expected, [DisallowNull] Char[] values) {
 			Rope rope = values;
-			Assert.Equal(expected, rope.ToString());
+			Assert(rope.ToString()).Equals(expected);
 		}
 
 		[Theory]
@@ -336,7 +336,7 @@ namespace Stringier {
 		[InlineData("abcde", new Char[] { 'a', 'b', 'c', 'd', 'e' }, 5)]
 		public void ToString_Amount([DisallowNull] String expected, [DisallowNull] Char[] values, Char amount) {
 			Rope rope = values;
-			Assert.Equal(expected, rope.ToString(amount));
+			Assert(rope.ToString(amount)).Equals(expected);
 		}
 	}
 }

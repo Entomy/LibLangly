@@ -807,14 +807,6 @@ namespace Stringier {
 		public Enumerator GetEnumerator() => new Enumerator(this);
 
 		/// <inheritdoc/>
-		[return: NotNull]
-		System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() => GetEnumerator();
-
-		/// <inheritdoc/>
-		[return: NotNull]
-		System.Collections.Generic.IEnumerator<Char> System.Collections.Generic.IEnumerable<Char>.GetEnumerator() => GetEnumerator();
-
-		/// <inheritdoc/>
 		[LinksNewNode]
 		[MemberNotNull(nameof(Head), nameof(Tail))]
 		public void Insert(Int32 index, Char element) {
@@ -961,7 +953,7 @@ namespace Stringier {
 					next.Previous = tail;
 				}
 				// Increment the counter
-				Count++;
+				Count += elements.Length;
 			}
 		}
 
@@ -1056,7 +1048,7 @@ namespace Stringier {
 				Head = new MemoryNode(elements, next: null, previous: null);
 				Tail = Head;
 			}
-			Count++;
+			Count += elements.Length;
 		}
 
 		/// <inheritdoc/>
@@ -1133,7 +1125,7 @@ namespace Stringier {
 				Int32 i = 0;
 				while (N is not null) {
 					if (i + N.Count > amount) {
-						_ = builder.Append(N.ToString().Substring(0, (Int32)(amount - i))).Append("...");
+						_ = builder.Append(N.ToString().Substring(0, amount - i)).Append("...");
 						break;
 					} else {
 						_ = builder.Append(N);

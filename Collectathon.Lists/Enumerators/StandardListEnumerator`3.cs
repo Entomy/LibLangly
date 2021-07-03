@@ -41,11 +41,6 @@ namespace Collectathon.Enumerators {
 		public (TIndex Index, TElement? Element) Current => (N.Index, N.Element);
 
 		/// <inheritdoc/>
-		[EditorBrowsable(EditorBrowsableState.Never)]
-		[MaybeNull]
-		Object System.Collections.IEnumerator.Current => Current;
-
-		/// <inheritdoc/>
 		public Int32 Count { get; }
 
 		/// <inheritdoc/>
@@ -56,16 +51,6 @@ namespace Collectathon.Enumerators {
 		[EditorBrowsable(EditorBrowsableState.Never)]
 		[return: NotNull]
 		public IEnumerator<(TIndex Index, TElement? Element)> GetEnumerator() => this;
-
-		/// <inheritdoc/>
-		[EditorBrowsable(EditorBrowsableState.Never)]
-		[return: NotNull]
-		System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() => this;
-
-		/// <inheritdoc/>
-		[EditorBrowsable(EditorBrowsableState.Never)]
-		[return: NotNull]
-		System.Collections.Generic.IEnumerator<(TIndex Index, TElement? Element)> System.Collections.Generic.IEnumerable<(TIndex Index, TElement? Element)>.GetEnumerator() => this;
 
 		/// <inheritdoc/>
 		public Boolean MoveNext() {

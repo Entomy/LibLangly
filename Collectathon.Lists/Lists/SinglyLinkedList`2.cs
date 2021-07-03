@@ -94,12 +94,6 @@ namespace Collectathon.Lists {
 		public StandardListEnumerator<TIndex, TElement, SinglyLinkedListNode<TIndex, TElement>> GetEnumerator() => new StandardListEnumerator<TIndex, TElement, SinglyLinkedListNode<TIndex, TElement>>(Head, Count);
 
 		/// <inheritdoc/>
-		System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() => GetEnumerator();
-
-		/// <inheritdoc/>
-		System.Collections.Generic.IEnumerator<(TIndex Index, TElement Element)> System.Collections.Generic.IEnumerable<(TIndex Index, TElement Element)>.GetEnumerator() => GetEnumerator();
-
-		/// <inheritdoc/>
 		[LinksNewNode(1)]
 		public void Insert([DisallowNull] TIndex index, [AllowNull] TElement element) {
 			if (Count > 0) {

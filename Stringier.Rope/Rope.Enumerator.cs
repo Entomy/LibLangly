@@ -43,10 +43,6 @@ namespace Stringier {
 			public Char Current => N[i];
 
 			/// <inheritdoc/>
-			[MaybeNull]
-			Object System.Collections.IEnumerator.Current => Current;
-
-			/// <inheritdoc/>
 			public Int32 Count => Rope.Count;
 
 			/// <inheritdoc/>
@@ -57,16 +53,6 @@ namespace Stringier {
 			[EditorBrowsable(EditorBrowsableState.Never)]
 			[return: NotNull]
 			public IEnumerator<Char> GetEnumerator() => this;
-
-			/// <inheritdoc/>
-			[EditorBrowsable(EditorBrowsableState.Never)]
-			[return: NotNull]
-			System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() => this;
-
-			/// <inheritdoc/>
-			[EditorBrowsable(EditorBrowsableState.Never)]
-			[return: NotNull]
-			System.Collections.Generic.IEnumerator<Char> System.Collections.Generic.IEnumerable<Char>.GetEnumerator() => this;
 
 			/// <inheritdoc/>
 			public Boolean MoveNext() {

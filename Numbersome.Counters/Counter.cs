@@ -144,14 +144,6 @@ namespace Numbersome {
 
 		/// <inheritdoc/>
 		[return: NotNull]
-		System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() => GetEnumerator();
-
-		/// <inheritdoc/>
-		[return: NotNull]
-		System.Collections.Generic.IEnumerator<(TElement Element, Int32 Count)> System.Collections.Generic.IEnumerable<(TElement Element, Int32 Count)>.GetEnumerator() => GetEnumerator();
-
-		/// <inheritdoc/>
-		[return: NotNull]
 		public override String ToString() => Collection.ToString(Elements, count);
 
 		/// <inheritdoc/>

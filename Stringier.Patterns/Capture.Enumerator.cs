@@ -33,10 +33,6 @@ namespace Stringier.Patterns {
 			public Char Current => Text.Span[i];
 
 			/// <inheritdoc/>
-			[NotNull]
-			Object System.Collections.IEnumerator.Current => Current;
-
-			/// <inheritdoc/>
 			public Int32 Count => Text.Length;
 
 			/// <inheritdoc/>
@@ -45,14 +41,6 @@ namespace Stringier.Patterns {
 			/// <inheritdoc/>
 			[return: NotNull]
 			public IEnumerator<Char> GetEnumerator() => this;
-
-			/// <inheritdoc/>
-			[return: NotNull]
-			System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() => this;
-
-			/// <inheritdoc/>
-			[return: NotNull]
-			System.Collections.Generic.IEnumerator<Char> System.Collections.Generic.IEnumerable<Char>.GetEnumerator() => this;
 
 			/// <inheritdoc/>
 			public Boolean MoveNext() => ++i < Count;

@@ -14,8 +14,8 @@ namespace System.Traits.Concepts {
 			if (first is null && second is null) return true;
 			if (first is null || second is null) return false;
 			if (first.Count != second.Count) return false; // Because ISequence has a length/count property, we can check this upfront
-			using TEnumerator fst = first.GetEnumerator();
-			using TEnumerator snd = second.GetEnumerator();
+			TEnumerator fst = first.GetEnumerator();
+			TEnumerator snd = second.GetEnumerator();
 			while (fst.MoveNext() && snd.MoveNext()) {
 				if (!Equals(fst.Current, snd.Current)) return false;
 			}
@@ -33,7 +33,7 @@ namespace System.Traits.Concepts {
 		public static Boolean Equals<TElement, TEnumerator>([AllowNull] ISequence<TElement, TEnumerator> first, [AllowNull] Collections.Generic.IEnumerable<TElement> second) where TEnumerator : IEnumerator<TElement> {
 			if (first is null && second is null) return true;
 			if (first is null || second is null) return false;
-			using TEnumerator fst = first.GetEnumerator();
+			TEnumerator fst = first.GetEnumerator();
 			using Collections.Generic.IEnumerator<TElement> snd = second.GetEnumerator();
 			while (fst.MoveNext() && snd.MoveNext()) {
 				if (!Equals(fst.Current, snd.Current)) return false;
@@ -54,7 +54,7 @@ namespace System.Traits.Concepts {
 			if (first is null && second is null) return true;
 			if (first is null || second is null) return false;
 			using Collections.Generic.IEnumerator<TElement> fst = first.GetEnumerator();
-			using TEnumerator snd = second.GetEnumerator();
+			TEnumerator snd = second.GetEnumerator();
 			while (fst.MoveNext() && snd.MoveNext()) {
 				if (!Equals(fst.Current, snd.Current)) return false;
 			}

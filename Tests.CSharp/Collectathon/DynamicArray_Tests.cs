@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using System.Traits.Testing;
 using Collectathon.Arrays;
 using Xunit;
 
 namespace Collectathon {
-	public class DynamicArray_Tests {
+	public class DynamicArray_Tests : Tests {
 		[Theory]
 		[InlineData(new Int32[] { 0, 0 }, new Int32[] { }, new Int32[] { 0, 0 })]
 		public void Add_Array([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] values) {
 			DynamicArray<Int32> array = initial;
 			array.Add(values);
-			Assert.Equal(expected, array);
+			Assert(array).Equals(expected);
 		}
 
 		[Theory]
@@ -19,7 +20,7 @@ namespace Collectathon {
 		public void Add_Element([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32 value) {
 			DynamicArray<Int32> array = initial;
 			array.Add(value);
-			Assert.Equal(expected, array);
+			Assert(array).Equals(expected);
 		}
 
 		[Theory]
@@ -27,7 +28,7 @@ namespace Collectathon {
 		public void Add_Memory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] values) {
 			DynamicArray<Int32> array = initial;
 			array.Add(values.AsMemory());
-			Assert.Equal(expected, array);
+			Assert(array).Equals(expected);
 		}
 
 		[Theory]
@@ -37,7 +38,7 @@ namespace Collectathon {
 			fixed (Int32* vals = values) {
 				array.Add(vals, values.Length);
 			}
-			Assert.Equal(expected, array);
+			Assert(array).Equals(expected);
 		}
 
 		[Theory]
@@ -45,7 +46,7 @@ namespace Collectathon {
 		public void Add_ReadOnlyMemory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] values) {
 			DynamicArray<Int32> array = initial;
 			array.Add((ReadOnlyMemory<Int32>)values.AsMemory());
-			Assert.Equal(expected, array);
+			Assert(array).Equals(expected);
 		}
 
 		[Theory]
@@ -53,7 +54,7 @@ namespace Collectathon {
 		public void Add_ReadOnlySpan([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] values) {
 			DynamicArray<Int32> array = initial;
 			array.Add((ReadOnlySpan<Int32>)values.AsSpan());
-			Assert.Equal(expected, array);
+			Assert(array).Equals(expected);
 		}
 
 		[Theory]
@@ -61,7 +62,7 @@ namespace Collectathon {
 		public void Add_Span([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] values) {
 			DynamicArray<Int32> array = initial;
 			array.Add(values.AsSpan());
-			Assert.Equal(expected, array);
+			Assert(array).Equals(expected);
 		}
 
 		[Theory]
@@ -70,25 +71,20 @@ namespace Collectathon {
 		public void Clear([DisallowNull] Int32[] initial) {
 			DynamicArray<Int32> array = initial;
 			array.Clear();
-			Assert.Empty(array);
+			Assert(array).Count(0);
 		}
 
 		[Theory]
 		[InlineData(new Int32[] { })]
 		[InlineData(new Int32[] { 1, 2, 3, 4, 5 })]
 
-		public void Equals([DisallowNull] Int32[] values) {
-			DynamicArray<Int32> val = values is not null ? new DynamicArray<Int32>(values) : null;
-			Assert.Equal(values, val);
-			Assert.True(val.Equals(values));
-			DynamicArray<Int32> exp = values is not null ? new DynamicArray<Int32>(values) : null;
-			Assert.Equal(exp, val);
-			Assert.Equal<Int32>(exp, val);
-			Assert.True(val.Equals(exp));
-			BoundedArray<Int32> dval = values is not null ? new BoundedArray<Int32>(values) : null;
-			BoundedArray<Int32> dexp = values is not null ? new BoundedArray<Int32>(values) : null;
-			Assert.True(val.Equals(dval));
-			Assert.True(dval.Equals(val));
+		public void Equals([DisallowNull] Int32[] elements) {
+			DynamicArray<Int32> val = elements is not null ? new DynamicArray<Int32>(elements) : null;
+			Assert(val).Equals(elements);
+			DynamicArray<Int32> exp = elements is not null ? new DynamicArray<Int32>(elements) : null;
+			Assert(val).Equals(exp);
+			DynamicArray<Int32> dval = elements is not null ? new DynamicArray<Int32>(elements) : null;
+			Assert(val).Equals(dval);
 		}
 
 		[Theory]
@@ -96,7 +92,7 @@ namespace Collectathon {
 		[InlineData(15, new Int32[] { 1, 2, 3, 4, 5 })]
 		public void Fold(Int32 expected, [DisallowNull] Int32[] values) {
 			DynamicArray<Int32> array = values;
-			Assert.Equal(expected, array.Fold((a, b) => a + b, 0));
+			Assert(array.Fold((a, b) => a + b, 0)).Equals(expected);
 		}
 
 		[Theory]
@@ -110,7 +106,7 @@ namespace Collectathon {
 		public void Insert_Array([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 index, [DisallowNull] Int32[] elements) {
 			DynamicArray<Int32> array = initial;
 			array.Insert(index, elements);
-			Assert.Equal(expected, array);
+			Assert(array).Equals(expected);
 		}
 
 		[Theory]
@@ -124,7 +120,7 @@ namespace Collectathon {
 		public void Insert_Element([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 index, Int32 element) {
 			DynamicArray<Int32> array = initial;
 			array.Insert(index, element);
-			Assert.Equal(expected, array);
+			Assert(array).Equals(expected);
 		}
 
 		[Theory]
@@ -138,7 +134,7 @@ namespace Collectathon {
 		public void Insert_Memory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 index, [DisallowNull] Int32[] values) {
 			DynamicArray<Int32> array = initial;
 			array.Insert(index, values.AsMemory());
-			Assert.Equal(expected, array);
+			Assert(array).Equals(expected);
 		}
 
 		[Theory]
@@ -154,7 +150,7 @@ namespace Collectathon {
 			fixed (Int32* elmts = elements) {
 				array.Insert(index, elmts, elements.Length);
 			}
-			Assert.Equal(expected, array);
+			Assert(array).Equals(expected);
 		}
 
 		[Theory]
@@ -168,7 +164,7 @@ namespace Collectathon {
 		public void Insert_ReadOnlyMemory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 index, [DisallowNull] Int32[] elements) {
 			DynamicArray<Int32> array = initial;
 			array.Insert(index, (ReadOnlyMemory<Int32>)elements.AsMemory());
-			Assert.Equal(expected, array);
+			Assert(array).Equals(expected);
 		}
 
 		[Theory]
@@ -182,7 +178,7 @@ namespace Collectathon {
 		public void Insert_ReadOnlySpan([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 index, [DisallowNull] Int32[] elements) {
 			DynamicArray<Int32> array = initial;
 			array.Insert(index, (ReadOnlySpan<Int32>)elements.AsSpan());
-			Assert.Equal(expected, array);
+			Assert(array).Equals(expected);
 		}
 
 		[Theory]
@@ -196,7 +192,7 @@ namespace Collectathon {
 		public void Insert_Span([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 index, [DisallowNull] Int32[] elements) {
 			DynamicArray<Int32> array = initial;
 			array.Insert(index, elements.AsSpan());
-			Assert.Equal(expected, array);
+			Assert(array).Equals(expected);
 		}
 
 		[Theory]
@@ -205,7 +201,7 @@ namespace Collectathon {
 		[InlineData(2, new Int32[] { 1, 2, 1, 2, 1 }, 2)]
 		public void Occurrences_Element(Int32 expected, [DisallowNull] Int32[] values, Int32 element) {
 			DynamicArray<Int32> array = values;
-			Assert.Equal(expected, array.Occurrences(element));
+			Assert(array.Occurrences(element)).Equals(expected);
 		}
 
 		[Theory]
@@ -216,7 +212,7 @@ namespace Collectathon {
 		[InlineData(3, new Int32[] { 2, 1, 2, 1, 2 })]
 		public void Occurrences_Predicate(Int32 expected, [DisallowNull] Int32[] values) {
 			DynamicArray<Int32> array = values;
-			Assert.Equal(expected, array.Occurrences((x) => x % 2 == 0));
+			Assert(array.Occurrences((x) => x % 2 == 0)).Equals(expected);
 		}
 
 		[Theory]
@@ -225,7 +221,7 @@ namespace Collectathon {
 		public void Postpend_Array([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
 			DynamicArray<Int32> array = initial;
 			array.Postpend(elements);
-			Assert.Equal(expected, array);
+			Assert(array).Equals(expected);
 		}
 
 		[Theory]
@@ -233,7 +229,7 @@ namespace Collectathon {
 		public void Postpend_Element([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 element) {
 			DynamicArray<Int32> array = initial;
 			array.Postpend(element);
-			Assert.Equal(expected, array);
+			Assert(array).Equals(expected);
 		}
 
 		[Theory]
@@ -242,7 +238,7 @@ namespace Collectathon {
 		public void Postpend_Memory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
 			DynamicArray<Int32> array = initial;
 			array.Postpend(elements.AsMemory());
-			Assert.Equal(expected, array);
+			Assert(array).Equals(expected);
 		}
 
 		[Theory]
@@ -253,7 +249,7 @@ namespace Collectathon {
 			fixed (Int32* elmts = elements) {
 				array.Postpend(elmts, elements.Length);
 			}
-			Assert.Equal(expected, array);
+			Assert(array).Equals(expected);
 		}
 
 		[Theory]
@@ -262,7 +258,7 @@ namespace Collectathon {
 		public void Postpend_ReadOnlyMemory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
 			DynamicArray<Int32> array = initial;
 			array.Postpend((ReadOnlyMemory<Int32>)elements.AsMemory());
-			Assert.Equal(expected, array);
+			Assert(array).Equals(expected);
 		}
 
 		[Theory]
@@ -271,7 +267,7 @@ namespace Collectathon {
 		public void Postpend_ReadOnlySpan([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
 			DynamicArray<Int32> array = initial;
 			array.Postpend((ReadOnlySpan<Int32>)elements.AsSpan());
-			Assert.Equal(expected, array);
+			Assert(array).Equals(expected);
 		}
 
 		[Theory]
@@ -280,7 +276,7 @@ namespace Collectathon {
 		public void Postpend_Span([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
 			DynamicArray<Int32> array = initial;
 			array.Postpend(elements.AsSpan());
-			Assert.Equal(expected, array);
+			Assert(array).Equals(expected);
 		}
 
 		[Theory]
@@ -289,7 +285,7 @@ namespace Collectathon {
 		public void Prepend_Array([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
 			DynamicArray<Int32> array = initial;
 			array.Prepend(elements);
-			Assert.Equal(expected, array);
+			Assert(array).Equals(expected);
 		}
 
 		[Theory]
@@ -297,7 +293,7 @@ namespace Collectathon {
 		public void Prepend_Element([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 element) {
 			DynamicArray<Int32> array = initial;
 			array.Prepend(element);
-			Assert.Equal(expected, array);
+			Assert(array).Equals(expected);
 		}
 
 		[Theory]
@@ -306,7 +302,7 @@ namespace Collectathon {
 		public void Prepend_Memory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
 			DynamicArray<Int32> array = initial;
 			array.Prepend(elements.AsMemory());
-			Assert.Equal(expected, array);
+			Assert(array).Equals(expected);
 		}
 
 		[Theory]
@@ -317,7 +313,7 @@ namespace Collectathon {
 			fixed (Int32* elmts = elements) {
 				array.Prepend(elmts, elements.Length);
 			}
-			Assert.Equal(expected, array);
+			Assert(array).Equals(expected);
 		}
 
 		[Theory]
@@ -326,7 +322,7 @@ namespace Collectathon {
 		public void Prepend_ReadOnlyMemory([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
 			DynamicArray<Int32> array = initial;
 			array.Prepend((ReadOnlyMemory<Int32>)elements.AsMemory());
-			Assert.Equal(expected, array);
+			Assert(array).Equals(expected);
 		}
 
 		[Theory]
@@ -335,7 +331,7 @@ namespace Collectathon {
 		public void Prepend_ReadOnlySpan([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
 			DynamicArray<Int32> array = initial;
 			array.Prepend((ReadOnlySpan<Int32>)elements.AsSpan());
-			Assert.Equal(expected, array);
+			Assert(array).Equals(expected);
 		}
 
 		[Theory]
@@ -344,7 +340,7 @@ namespace Collectathon {
 		public void Prepend_Span([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, [DisallowNull] Int32[] elements) {
 			DynamicArray<Int32> array = initial;
 			array.Prepend(elements.AsSpan());
-			Assert.Equal(expected, array);
+			Assert(array).Equals(expected);
 		}
 
 		[Theory]
@@ -360,7 +356,7 @@ namespace Collectathon {
 		public void Replace([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 search, Int32 replace) {
 			DynamicArray<Int32> array = initial;
 			array.Replace(search, replace);
-			Assert.Equal(expected, array);
+			Assert(array).Equals(expected);
 		}
 
 		[Theory]
@@ -368,8 +364,8 @@ namespace Collectathon {
 		public void Resize([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 capacity) {
 			DynamicArray<Int32> array = initial;
 			array.Resize(capacity);
-			Assert.Equal(capacity, array.Capacity);
-			Assert.Equal(expected, array);
+			Assert(array.Capacity).Equals(capacity);
+			Assert(array).Equals(expected);
 		}
 
 		[Theory]
@@ -378,7 +374,7 @@ namespace Collectathon {
 		public void ShiftLeft([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial) {
 			DynamicArray<Int32> array = initial;
 			array.ShiftLeft();
-			Assert.Equal(expected, array);
+			Assert(array).Equals(expected);
 		}
 
 		[Theory]
@@ -388,7 +384,7 @@ namespace Collectathon {
 		public void ShiftLeftBy([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 amount) {
 			DynamicArray<Int32> array = initial;
 			array.ShiftLeft(amount);
-			Assert.Equal(expected, array);
+			Assert(array).Equals(expected);
 		}
 
 		[Theory]
@@ -397,7 +393,7 @@ namespace Collectathon {
 		[InlineData(new Int32[] { 3, 4, 5, 0, 0 }, new Int32[] { 1, 2, 3, 4, 5 }, 2)]
 		public void ShiftLeftOp([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 amount) {
 			DynamicArray<Int32> array = initial;
-			Assert.Equal(expected, array << amount);
+			Assert(array << amount).Equals(expected);
 		}
 
 		[Theory]
@@ -406,7 +402,7 @@ namespace Collectathon {
 		public void ShiftRight([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial) {
 			DynamicArray<Int32> array = initial;
 			array.ShiftRight();
-			Assert.Equal(expected, array);
+			Assert(array).Equals(expected);
 		}
 
 		[Theory]
@@ -416,7 +412,7 @@ namespace Collectathon {
 		public void ShiftRightBy([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 amount) {
 			DynamicArray<Int32> array = initial;
 			array.ShiftRight(amount);
-			Assert.Equal(expected, array);
+			Assert(array).Equals(expected);
 		}
 
 		[Theory]
@@ -425,7 +421,7 @@ namespace Collectathon {
 		[InlineData(new Int32[] { 0, 0, 1, 2, 3 }, new Int32[] { 1, 2, 3, 4, 5 }, 2)]
 		public void ShiftRightOp([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 amount) {
 			DynamicArray<Int32> array = initial;
-			Assert.Equal(expected, array >> amount);
+			Assert(array >> amount).Equals(expected);
 		}
 
 		[Theory]
@@ -434,7 +430,7 @@ namespace Collectathon {
 		public void Slice([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial) {
 			DynamicArray<Int32> array = initial;
 			Span<Int32> slice = array.Slice();
-			Assert.Equal(expected, slice.ToArray());
+			Assert(slice).Equals(expected);
 		}
 
 		[Theory]
@@ -446,7 +442,7 @@ namespace Collectathon {
 		public void Slice_Range([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 start, Int32 end) {
 			DynamicArray<Int32> array = initial;
 			Span<Int32> slice = array[start..end];
-			Assert.Equal(expected, slice.ToArray());
+			Assert(slice).Equals(expected);
 		}
 
 		[Theory]
@@ -455,7 +451,7 @@ namespace Collectathon {
 		public void Slice_Start([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 start) {
 			DynamicArray<Int32> array = initial;
 			Span<Int32> slice = array.Slice(start);
-			Assert.Equal(expected, slice.ToArray());
+			Assert(slice).Equals(expected);
 		}
 
 		[Theory]
@@ -465,7 +461,7 @@ namespace Collectathon {
 		public void Slice_Start_Length([DisallowNull] Int32[] expected, [DisallowNull] Int32[] initial, Int32 start, Int32 length) {
 			DynamicArray<Int32> array = initial;
 			Span<Int32> slice = array.Slice(start, length);
-			Assert.Equal(expected, slice.ToArray());
+			Assert(slice).Equals(expected);
 		}
 
 		[Theory]
@@ -473,7 +469,7 @@ namespace Collectathon {
 		[InlineData(new Int32[] { 1, 2, 3, 4, 5 })]
 		public void ToArray([DisallowNull] Int32[] values) {
 			DynamicArray<Int32> array = values;
-			Assert.Equal(values, array.ToArray());
+			Assert(array.ToArray()).Equals(values);
 		}
 
 		[Theory]
@@ -482,7 +478,7 @@ namespace Collectathon {
 		[InlineData("[1, 2, 3, 4, 5]", new Int32[] { 1, 2, 3, 4, 5 }, 5)]
 		public void ToString([DisallowNull] String expected, [DisallowNull] Int32[] values, Int32 amount) {
 			DynamicArray<Int32> array = values;
-			Assert.Equal(expected, array.ToString(amount));
+			Assert(array.ToString(amount)).Equals(expected);
 		}
 	}
 }

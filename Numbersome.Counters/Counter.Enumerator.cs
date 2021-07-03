@@ -34,10 +34,6 @@ namespace Numbersome {
 			public (TElement? Element, Int32 Count) Current => (Elements.Span[i], Counts.Span[i]);
 
 			/// <inheritdoc/>
-			[MaybeNull]
-			Object System.Collections.IEnumerator.Current => Current;
-
-			/// <inheritdoc/>
 			public Int32 Count { get; private set; }
 
 			/// <inheritdoc/>
@@ -46,14 +42,6 @@ namespace Numbersome {
 			/// <inheritdoc/>
 			[return: NotNull]
 			public IEnumerator<(TElement Element, Int32 Count)> GetEnumerator() => this;
-
-			/// <inheritdoc/>
-			[return: NotNull]
-			System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() => this;
-
-			/// <inheritdoc/>
-			[return: NotNull]
-			System.Collections.Generic.IEnumerator<(TElement Element, Int32 Count)> System.Collections.Generic.IEnumerable<(TElement Element, Int32 Count)>.GetEnumerator() => this;
 
 			/// <inheritdoc/>
 			public Boolean MoveNext() => ++i < Count;
