@@ -86,7 +86,7 @@
   <h6><strong>Assembly</strong>: Philosoft.Concepts.dll</h6>
   <h5 id="System_Traits_Concepts_ISequence_2_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface ISequence&lt;out TElement, TEnumerator&gt; : ICount where TEnumerator : IEnumerator&lt;TElement&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public interface ISequence&lt;out TElement, TEnumerator&gt; : ICount where TEnumerator : ICount, ICurrent&lt;TElement&gt;, IMoveNext, IReset</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
