@@ -9,7 +9,7 @@ namespace System.Traits.Concepts {
 	/// <remarks>
 	/// This interface devirtualizes the enumerator, and simplifies numerous parts of the interface through well defined defaults.
 	/// </remarks>
-	public interface ISequence<out TElement, TEnumerator> : ICount where TEnumerator : IEnumerator<TElement> {
+	public interface ISequence<out TElement, TEnumerator> : ICount where TEnumerator : ICount, ICurrent<TElement>, IMoveNext, IReset {
 		/// <summary>
 		/// Returns an enumerator that iterates through the sequence.
 		/// </summary>
