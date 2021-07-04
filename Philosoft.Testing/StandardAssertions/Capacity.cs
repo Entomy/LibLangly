@@ -1,5 +1,5 @@
 ﻿namespace System.Traits.Testing {
-	public static partial class TraitAssertions {
+	public static partial class StandardAssertions {
 		/// <summary>
 		/// Asserts that this instances <see cref="ICapacity.Capacity"/> is what was <paramref name="expected"/>.
 		/// </summary>
