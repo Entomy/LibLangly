@@ -82,14 +82,6 @@ namespace Collectathon.Lists {
 			}
 		}
 
-		/// <summary>
-		/// Converts the <paramref name="elements"/> to a <see cref="SinglyLinkedList{TElement}"/>.
-		/// </summary>
-		/// <param name="elements">The elements to convert to a list.</param>
-		[return: MaybeNull, NotNullIfNotNull("elements")]
-
-		public static implicit operator SinglyLinkedList<TElement?>([AllowNull] TElement?[] elements) => elements is not null ? new(elements) : null;
-
 		/// <inheritdoc/>
 		[MaybeLinksNewNode(1)]
 		[MemberNotNull(nameof(Head), nameof(Tail))]

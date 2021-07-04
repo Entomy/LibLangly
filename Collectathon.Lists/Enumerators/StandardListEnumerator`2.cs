@@ -1,5 +1,4 @@
 ﻿using System;
-using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 using System.Traits;
@@ -26,6 +25,11 @@ namespace Collectathon.Enumerators {
 		private TNode N;
 
 		/// <summary>
+		/// Whether enumeration is active or not.
+		/// </summary>
+		private Boolean Active;
+
+		/// <summary>
 		/// Initializes a new <see cref="StandardListEnumerator{TElement, TNode}"/>.
 		/// </summary>
 		/// <param name="head">The head node of the list.</param>
@@ -33,6 +37,7 @@ namespace Collectathon.Enumerators {
 		public StandardListEnumerator([AllowNull] TNode head, Int32 length) {
 			Head = head;
 			N = null;
+			Active = true;
 			Count = length;
 		}
 
@@ -44,31 +49,16 @@ namespace Collectathon.Enumerators {
 		public Int32 Count { get; }
 
 		/// <inheritdoc/>
-		[EditorBrowsable(EditorBrowsableState.Never)]
-		public void Dispose() { /* No-op */ }
-
-		/// <inheritdoc/>
-		[EditorBrowsable(EditorBrowsableState.Never)]
-		[return: NotNull]
-		public IEnumerator<TElement> GetEnumerator() => this;
-
-		/// <inheritdoc/>
 		public Boolean MoveNext() {
-			N = N is null ? Head : N.Next;
-			return N is not null;
+			if (Active) {
+				N = N is null ? Head : N.Next;
+				return Active = N is not null;
+			} else {
+				return false;
+			}
 		}
 
 		/// <inheritdoc/>
 		public void Reset() => N = null;
-
-		/// <inheritdoc/>
-		[EditorBrowsable(EditorBrowsableState.Never)]
-		[return: NotNull]
-		public override String ToString() => Collection.ToString(Head, Count);
-
-		/// <inheritdoc/>
-		[EditorBrowsable(EditorBrowsableState.Never)]
-		[return: NotNull]
-		public String ToString(Int32 amount) => Collection.ToString(Head, Count, amount);
 	}
 }

@@ -48,15 +48,5 @@ namespace Collectathon.Enumerators {
 
 		/// <inheritdoc/>
 		public void Reset() => i = -1;
-
-		/// <inheritdoc/>
-		[EditorBrowsable(EditorBrowsableState.Never)]
-		[return: NotNull]
-		public override String ToString() => Collection.ToString(Memory);
-
-		/// <inheritdoc/>
-		[EditorBrowsable(EditorBrowsableState.Never)]
-		[return: NotNull]
-		public String ToString(Int32 amount) => Collection.ToString(Memory, amount);
 	}
 }

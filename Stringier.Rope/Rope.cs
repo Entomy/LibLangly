@@ -112,46 +112,6 @@ namespace Stringier {
 		}
 
 		/// <summary>
-		/// Converts the <paramref name="char"/> to a <see cref="Rope"/>.
-		/// </summary>
-		/// <param name="char">The <see cref="Char"/> to convert.</param>
-		[LinksNewNode]
-		[return: NotNull]
-		public static implicit operator Rope(Char @char) => new(@char);
-
-		/// <summary>
-		/// Converts the <paramref name="string"/> to a <see cref="Rope"/>.
-		/// </summary>
-		/// <param name="string">The <see cref="String"/> to convert.</param>
-		[LinksNewNode]
-		[return: MaybeNull, NotNullIfNotNull("string")]
-		public static implicit operator Rope([AllowNull] String @string) => @string is not null ? new(@string) : null;
-
-		/// <summary>
-		/// Converts the <paramref name="array"/> to a <see cref="Rope"/>.
-		/// </summary>
-		/// <param name="array">The <see cref="Array"/> of <see cref="Char"/> to convert.</param>
-		[LinksNewNode]
-		[return: MaybeNull, NotNullIfNotNull("array")]
-		public static implicit operator Rope([AllowNull] Char[] array) => array is not null ? new(array) : null;
-
-		/// <summary>
-		/// Converts the <paramref name="memory"/> to a <see cref="Rope"/>.
-		/// </summary>
-		/// <param name="memory">The <see cref="Memory{T}"/> of <see cref="Char"/> to convert.</param>
-		[LinksNewNode]
-		[return: NotNull]
-		public static implicit operator Rope(Memory<Char> memory) => new(memory);
-
-		/// <summary>
-		/// Converts the <paramref name="memory"/> to a <see cref="Rope"/>.
-		/// </summary>
-		/// <param name="memory">The <see cref="ReadOnlyMemory{T}"/> of <see cref="Char"/> to convert.</param>
-		[LinksNewNode]
-		[return: NotNull]
-		public static implicit operator Rope(ReadOnlyMemory<Char> memory) => new(memory);
-
-		/// <summary>
 		/// Determines whether the <paramref name="left"/> and <paramref name="right"/> texts are not equal.
 		/// </summary>
 		/// <param name="left">The lefthand text.</param>

@@ -103,13 +103,6 @@ namespace Collectathon.Arrays {
 #endif
 
 		/// <summary>
-		/// Converts the <paramref name="array"/> to a <see cref="DynamicArray{TElement}"/>.
-		/// </summary>
-		/// <param name="array">The <see cref="Array"/> to convert.</param>
-		[return: MaybeNull, NotNullIfNotNull("array")]
-		public static implicit operator DynamicArray<TElement?>([AllowNull] TElement?[] array) => array is not null ? new(array) : null;
-
-		/// <summary>
 		/// Shifts the <paramref name="array"/> left by <paramref name="amount"/>.
 		/// </summary>
 		/// <param name="array">The <see cref="DynamicArray{TElement}"/> to shift.</param>

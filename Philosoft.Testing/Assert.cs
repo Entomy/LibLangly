@@ -44,6 +44,11 @@ namespace System.Traits.Testing {
 			return this;
 		}
 
+		/// <inheritdoc/>
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		[Obsolete("The asserter isn't meant to be used as a normal type.", error: true)]
+		public override Int32 GetHashCode() => throw new NotSupportedException();
+
 		/// <summary>
 		/// Asserts that the instance is of the <typeparamref name="TExpected"/> type.
 		/// </summary>

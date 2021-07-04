@@ -5,7 +5,7 @@
 		/// </summary>
 		/// <typeparam name="T">The type of the collection.</typeparam>
 		/// <param name="assert">This <see cref="Assert{T}"/>.</param>
-		/// <param name="expected"></param>
+		/// <param name="expected">The expected count.</param>
 		/// <returns>This <paramref name="assert"/>.</returns>
 		public static Assert<T> Count<T>(this Assert<T> assert, Int32 expected) where T : ICount {
 			if (!Equals(assert.Actual.Count, expected)) {
